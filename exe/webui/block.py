@@ -35,8 +35,9 @@ class Block(object):
     Edit, Preview, View, Hidden = range(4)
 
     def __init__(self, idevice):
-        self.idevice = idevice
-        self.id      = idevice.id
+        self.idevice   = idevice
+        self.id        = idevice.id
+        self.resources = []
 
         if idevice.edit:
             self.mode = Block.Edit
