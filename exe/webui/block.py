@@ -200,9 +200,10 @@ class Block(object):
         html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
         html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
         html += "href=\"Javascript:void(0)\"> " 
-        html += "<img src=\"/images/info.gif\" /></a>\n"
+        html += "<img src=\"/images/info.gif\" border=\"0\" align=\"middle\" /></a>\n"
         html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
         html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
+	html += "border=\"0\" align=\"middle\" "
         html += "onmousedown=\"Javascript:hideMe();\"/></div>"
         if self.purpose == "" and self.tip == "":
             html += "<b>Sorry, no help available.</b>"
