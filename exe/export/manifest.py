@@ -75,7 +75,7 @@ class Manifest(object):
                 </imsmd:general> 
                 </imsmd:lom> 
             </metadata> 
-            <organizations default = "Toc0"> 
+            <organizations default = "Toc1"> 
                 <organization identifier="Toc1" structure="hierarchical"> 
                  <title>%s</title> 
         """ % (self.title, self.title)
