@@ -59,6 +59,12 @@ class PackageStore:
         """
         return self.loaded[name]
     
+    def addPackage(self, package):
+        """
+        Add a package
+        """
+        self.loaded[package.name] = package
+    
 
 # nasty old global
 g_packageStore = PackageStore()
