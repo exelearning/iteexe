@@ -78,13 +78,15 @@ def launchBrowser(port):
         if not g_webInterface.config.browserPath:
             try:
                 import _winreg
-                registry = _winreg.ConnectRegistry(None, _winreg.HKEY_LOCAL_MACHINE)
+                registry = _winreg.ConnectRegistry(None, 
+                                                   _winreg.HKEY_LOCAL_MACHINE)
                 key1     = _winreg.OpenKey(registry, 
-                                     r"SOFTWARE\Mozilla\Mozilla Firefox")           
+                                           r"SOFTWARE\Mozilla\Mozilla Firefox")           
                 currentVersion  = _winreg.QueryValueEx(key1, 
-                                     "CurrentVersion")[0]
+                                                        "CurrentVersion")[0]
                 _winreg.CloseKey(key1)
-                regPath = "SOFTWARE\\Mozilla\\Mozilla Firefox\\" + currentVersion + "\\Main"
+                regPath = "SOFTWARE\\Mozilla\\Mozilla Firefox\\" + \
+                           currentVersion + "\\Main"
                 log.info("regPath Path:" + regPath)
                 key2    = _winreg.OpenKey(registry, regPath)
                 g_webInterface.config.browserPath = _winreg.QueryValueEx(key2, 

@@ -40,11 +40,20 @@ class ReflectionIdevice(Idevice):
         """
         Idevice.__init__(self, 
                          _("Reflection Questions"),
-                         _("University of Auckland"), "", "")
+                         _("University of Auckland"), 
+                         _("""Reflection is a teaching method often used to 
+connect theory to practice. Reflection tasks often provide learners with an 
+opportunity to observe and reflect on their observations before presenting 
+these as a piece of academic work. Journals, diaries, profiles and portfolios 
+are useful tools for collecting observation data. Rubrics and guides can be 
+effective feedback tools."""), "")
         self.activity       = activity
         self.answer          = answer
-        self.activityInstruc = "Type in reflective questions"
-        self.answerInstruc    = "Type in suggested answers"
+        self.activityInstruc = _("""Enter details of the activity learners 
+must reflect upon.""")
+        self.answerInstruc    = _("""Describe how learners will assess how 
+they have done in the exercise. (Rubrics are useful devices for providing 
+reflective feedback.)""")
 
 
 

@@ -219,8 +219,12 @@ class Block(object):
             html += "<img src=\"images/stock-stop.png\" title=\""+_("Close")+"\" "
             html += "border=\"0\" align=\"middle\" "
             html += "onmousedown=\"Javascript:hideMe();\"/></div>"
-            html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
-            html += "<b>Tip:</b><br/>%s<br/>" % self.tip
+            if self.purpose != "":
+                html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
+                
+            if self.tip != "":
+                html += "<b>Tip:</b><br/>%s<br/>" % self.tip
+                
             html += "</div>\n"        
         
         return html

@@ -34,7 +34,11 @@ class FreeTextIdevice(Idevice):
     """
     def __init__(self, content=""):
         Idevice.__init__(self, _("Free Text Area"), 
-                         _("University of Auckland"), "", "" )
+                         _("University of Auckland"), 
+                         _("""The majority of a learning resource will be 
+establishing context, delivering instructions and providing general information. 
+This provides the framework within which the learning activities are built and 
+delivered."""), "" )
         self.content = content
         if content:
             self.edit = False

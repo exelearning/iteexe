@@ -81,8 +81,8 @@ class SavePage(Resource):
                 log.info("saving " + fileName)
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
-                self.package.name = os.path.splitext(os.path.basename(fileName))[0]
-                self.message = _("The course package has been saved successfully.")
+                self.package.name=os.path.splitext(os.path.basename(fileName))[0]
+                self.message=_("The course package has been saved successfully.")
             else:
                 self.message = _("Invalid path, please enter an another one.")
                 

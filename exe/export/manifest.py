@@ -21,8 +21,6 @@ import logging
 import os
 import os.path
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
-from exe.engine.genericidevice     import GenericIdevice
-from exe.engine.multichoiceidevice import MultichoiceIdevice
 import zipfile
 import glob
 log = logging.getLogger(__name__)
@@ -30,6 +28,9 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Manifest(object):
     def __init__(self, package):
+        """
+        Initialize
+        """
         self.title       = str(package.root.title)
         self.node        = package.root
         self.xmlStr      = ""
