@@ -208,13 +208,15 @@ class Block(object):
         html += common.select("move", self.id, options)
 
         if self.purpose != "" or self.tip != "":
-            html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
+            html += "<a title=\""+_("Pedagogical Help")+"\" "
+            html += "onmousedown=\"Javascript:updateCoords(event);\" "
             html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
             html += "href=\"Javascript:void(0)\"> " 
-            html += "<img src=\"/images/info.gif\" border=\"0\" align=\"middle\" />"
-            html += "</a>\n"
+            html += "<img src=\"/images/info.gif\" border=\"0\" "
+            html += "align=\"middle\" /></a>\n"
             html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
-            html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
+            html += "<div style=\"float:right;\" "
+            html += "<img src=\"images/stock-stop.png\" title=\""+_("Close")+"\" "
             html += "border=\"0\" align=\"middle\" "
             html += "onmousedown=\"Javascript:hideMe();\"/></div>"
             html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
@@ -259,7 +261,9 @@ class Block(object):
         """
         Returns an XHTML string for the view buttons
         """
-        html  = common.submitImage("edit", self.id, "stock-edit.png")
+        html  = common.submitImage("edit", self.id, 
+                                   "stock-edit.png", 
+                                   _("Edit"))
         return html
 
 # ===========================================================================

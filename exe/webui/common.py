@@ -170,20 +170,22 @@ def option(name, checked, value):
     html += chkStr+' />\n'
     return html
 
-def elementInstructions(indent, instructions):
+def elementInstruc(indent, instruc):
     """add a help instruction for a element"""
-    if instructions == "":
+    if instruc == "":
         html = ""
     else:
         html  = "<a onmousedown=\"Javascript:updateCoords(event);\" "
+        html += " title=\"" + _("Instructions for completion") + "\" "
         html += "onclick=\"Javascript:showMe('i%s', 420, 100);\" " % indent
         html += "href=\"Javascript:void(0)\"> " 
         html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/>"
         html += "</a>\n"
         html += "<div id=\"i%s\" style=\"display:none;\">" % indent
-        html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
-        html += "onmousedown=\"Javascript:hideMe();\"/></div>"
-        html += "<b>Instructions:</b><br/>%s<br/>" % instructions                
+        html += "<div style=\"float:right;\" ><img src=\"images/stock-stop.png\""
+        html += " title=\"" + _("Close") + "\" "
+        html += " onmousedown=\"Javascript:hideMe();\"/></div>"
+        html += "<b>Instructions:</b><br/>%s<br/>" % instruc                
         html += "</div>\n"
     
     return html

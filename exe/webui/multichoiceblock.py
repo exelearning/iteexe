@@ -79,15 +79,15 @@ class MultichoiceBlock(Block):
         self.question = self.question.replace("\n","\\n")
         self.question = self.question.replace("'","\\'")
         html  = "<b>" + _("Question:") + " </b>"   
-        html += common.elementInstructions("question"+self.id, self.questionInstruc)
+        html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)
         html += "<div id=\"iDevice\" class=\"multichoice\">\n"
         html += "<table width =\"100%%\"><th>%s " % _("Key")
-        html += common.elementInstructions("key"+self.id, self.keyInstruc)
+        html += common.elementInstruc("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Answer")
-        html += common.elementInstructions("answer"+self.id, self.answerInstruc)
+        html += common.elementInstruc("answer"+self.id, self.answerInstruc)
         html += "</th><th>%s " % _("Feedback")
-        html += common.elementInstructions("feed"+self.id, self.feedbackInstruc)
+        html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
         html += "</th>"
 
         for element in self.optionElements:

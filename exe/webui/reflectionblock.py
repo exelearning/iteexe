@@ -53,8 +53,8 @@ class ReflectionBlock(Block):
         """
         Block.process(self, request)
         
-        if "acti"+self.id in request.args:
-            self.idevice.activity = request.args["acti"+self.id][0]
+        if "activity"+self.id in request.args:
+            self.idevice.activity = request.args["activity"+self.id][0]
 
         if "answer"+self.id in request.args:
             self.idevice.answer = request.args["answer"+self.id][0]
@@ -72,10 +72,10 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("'","\\'")
         html  = "<div id=\"iDevice\" class=\"reflection\">\n"
         html +=  _("Reflective question:") 
-        html += common.elementInstructions("acti"+self.id,self.activityInstruc)
-        html += "<br/>" + common.richTextArea("acti"+self.id, self.activity)
+        html += common.elementInstruc("activity"+self.id,self.activityInstruc)
+        html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)
         html += _("Response:")
-        html += common.elementInstructions("answer"+self.id,self.answerInstruc)
+        html += common.elementInstruc("answer"+self.id,self.answerInstruc)
         html += "<br/>" + common.richTextArea("answer"+self.id, self.answer)           
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"

@@ -92,7 +92,9 @@ class OptionElement(object):
         html += "</td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>\n"
-        html += common.submitImage("deleteOption", self.id, "stock-cancel.png")
+        html += common.submitImage("deleteOption", self.id, 
+                                   "stock-cancel.png",
+                                   _("Delete option"))
         html += "</td></tr>\n"
         html += "</p>\n"
         return html

@@ -26,14 +26,14 @@ from exe.webui import common
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-def createElement(elementType, name, class_, blockId, instructions):
+def createElement(elementType, name, class_, blockId, instruc):
     """
     Factory method for creating Elements
     """
     if elementType == "Text":
-        return TextElement(name, class_, blockId, instructions)
+        return TextElement(name, class_, blockId, instruc)
     elif elementType == "TextArea":
-        return TextAreaElement(name, class_, blockId, instructions)
+        return TextAreaElement(name, class_, blockId, instruc)
     return None
 
 # ===========================================================================
@@ -41,15 +41,15 @@ class Element(object):
     """
     Base class for a XHTML element.  Used by GenericBlock
     """
-    def __init__(self, name, class_, blockId, instruction):
+    def __init__(self, name, class_, blockId, instruc):
         """
         Initialize
         """
-        self.name         = name
-        self.class_       = class_
-        self.blockId      = blockId
-        self.id           = class_+blockId
-        self.instruction  = instruction
+        self.name     = name
+        self.class_   = class_
+        self.blockId  = blockId
+        self.id       = class_+blockId
+        self.instruc  = instruc
 
     def process(self, request):
         """
@@ -91,7 +91,7 @@ class TextElement(Element):
         Returns an XHTML string with the form element for editing this field
         """
         html  = "<b>"+self.name
-        html += common.elementInstructions(self.name+self.id, self.instruction)
+        html += common.elementInstruc(self.name+self.id, self.instruc)
         html += ":</b><br/>\n"
         html += common.textInput(self.id, content)
         html += "<br/>\n"
@@ -113,7 +113,7 @@ class TextAreaElement(Element):
         content = content.replace("'","\\'")
 
         html  = "<b>"+self.name
-        html += common.elementInstructions(self.name+self.id, self.instruction)
+        html += common.elementInstruc(self.name+self.id, self.instruc)
         html += ":</b><br/>\n"
         html += common.richTextArea(self.id, content, width, height)
         
