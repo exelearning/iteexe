@@ -97,7 +97,7 @@ class Package:
             _ = gettext.gettext
         else:
             exeDir = g_webInterface.config.exeDir
-            _ = gettext.GNUTranslations(open(exeDir + "\\po\\" + filename)).gettext
+            _ = gettext.GNUTranslations(open(exeDir + "/po/" + filename)).gettext
             
         self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
         self.draft       = Node(self, [0], _("Draft"))
