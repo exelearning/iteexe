@@ -47,36 +47,50 @@ class OutlinePane(object):
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     self.package.currentNode = node
+                else:
+                    log.error("changeNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "addChildNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.createChild()
+                else:
+                    log.error("addChildNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "deleteNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.delete()
+                else:
+                    log.error("deleteNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "movePrevNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.movePrev()
+                else:
+                    log.error("movePrevNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "moveNextNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.moveNext()
+                else:
+                    log.error("moveNextNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "promoteNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.promote()
+                else:
+                    log.error("promoteNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "demoteNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.demote()
+                else:
+                    log.error("demoteNode cannot locate "+nodeId)
 
             
     def render(self):
@@ -151,26 +165,26 @@ class OutlinePane(object):
         if len(node.id) > 2:
             html += common.submitImage("promoteNode", id, 
                                        "stock-goto-top.png", _("Promote"))
-#        else:
-#            html += common.image("stock-goto-top-off.png")
+        else:
+            html += common.image("stock-goto-top-off.png")
 
-        if len(node.id) > 3 and node.id[-1] > 0:
+        if len(node.id) > 1 and node.id[-1] > 0:
             html += common.submitImage("demoteNode", id, 
                                        "stock-goto-bottom.png", _("Demote"))
-#        else:
-#            html += common.image("stock-goto-bottom-off.png")
+        else:
+            html += common.image("stock-goto-bottom-off.png")
 
         if node.id[-1] > 0:
             html += common.submitImage("movePrevNode", id, 
                                        "stock-go-up.png", _("Move Up"))
-#        else:
-#            html += common.image("stock-go-up-off.png")
+        else:
+            html += common.image("stock-go-up-off.png")
 
         if node.id[-1] < len(node.parent.children) - 1:
             html += common.submitImage("moveNextNode", id, 
                                        "stock-go-down.png", _("Move Down"))
-#        else:
-#            html += common.image("stock-go-down-off.png")
+        else:
+            html += common.image("stock-go-down-off.png")
 
         return html
 
