@@ -1,0 +1,151 @@
+# ===========================================================================
+# eXe 
+# Copyright 2004-2005, University of Auckland
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+
+import logging
+import gettext
+from exe.webui.block               import Block
+from exe.webui.blockfactory        import g_blockFactory
+from exe.engine.multichoiceidevice import MultichoiceIdevice
+from exe.webui.optionelement       import OptionElement
+from exe.webui                     import common
+
+log = logging.getLogger(__name__)
+_   = gettext.gettext
+
+
+# ===========================================================================
+class MultichoiceBlock(Block):
+    """
+    GenericBlock can render and process GenericIdevices as XHTML
+    """
+    def __init__(self, idevice):
+        Block.__init__(self, idevice)
+        self.idevice = idevice
+        self.optionElements = []
+        self.question = idevice.question
+        i = 0
+        for option in idevice.options:
+            self.optionElements.append(OptionElement(i, idevice,option))
+                                               
+            i += 1
+
+
+    def process(self, request):
+        """
+        Process the request arguments from the web server
+        """
+        Block.process(self, request)
+        
+        quesId = "question"+str(self.id)
+        if quesId in request.args:
+            self.idevice.question = request.args[quesId][0]
+            
+        if ("addOption"+str(self.id)) in request.args: 
+            self.idevice.addOption()
+
+        for element in self.optionElements:
+            element.process(request)
+
+
+    def processMove(self, request):
+        """
+        Move this iDevice to a different node
+        """
+        Block.processMove(self, request)
+        nodeId = request.args["move"+self.id][0]
+        #TODO tidy this up
+        node   = self.idevice.parentNode.package.findNode(nodeId)
+        if node is not None:
+            self.idevice.setParentNode(node)
+        else:
+            log.error("addChildNode cannot locate "+nodeId)
+
+
+    def processMovePrev(self, request):
+        """
+        Move this block back to the previous position
+        """
+        Block.processMovePrev(self, request)
+        self.idevice.movePrev()
+
+
+    def processMoveNext(self, request):
+        """
+        Move this block forward to the next position
+        """
+        Block.processMoveNext(self, request)
+        self.idevice.moveNext()
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this block
+        """
+        self.question = self.question.replace("\r", "")
+        self.question = self.question.replace("\n","\\n")
+        self.question = self.question.replace("'","\\'")
+        html  = "<b>" + _("Question:") + "</b><br/>"       
+        html += common.richTextArea("question"+self.id, self.question)
+        html += "<div>\n"
+        html += "<table><th>%s</th>" % _("Key")
+        html += "<th>%s</th>" % _("Answer:")
+        html += "<th>%s</th>" % _("Feedback")
+
+        for element in self.optionElements:
+            html += element.renderEdit() 
+            
+        html += "</table>\n"
+            
+        html += common.submitButton("addOption"+str(self.id), _("AddOption"))+ "<br/>"
+        html += self.renderEditButtons()
+        html += "</div>\n"
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this block
+        """
+        html  = "<div id=\"iDevice\">\n"
+        html += "<b>" + self.question + "</b><br/>"
+        for element in self.optionElements:
+            html += element.renderView()
+       
+        html += "</div>\n"
+        return html
+    
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this block
+        """
+        html  = "<div id=\"iDevice\">\n"
+        html += "<b>" + self.question + "</b><br/>"
+        for element in self.optionElements:
+            html += element.renderView()
+      
+        html += self.renderViewButtons()
+        html += "</div>\n"
+        return html
+
+
+g_blockFactory.registerBlockType(MultichoiceBlock, MultichoiceIdevice)
+
+
+# ===========================================================================
