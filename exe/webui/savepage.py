@@ -62,8 +62,8 @@ class SavePage(Resource):
             dataDir = g_webInterface.config.getDataDir() 
             os.chdir(dataDir)
             fileName = request.args["fileName"][0]
-            if not fileName.endswith(".pkg"):
-                fileName = fileName + ".pkg"
+            if not fileName.endswith(".elp"):
+                fileName = fileName + ".elp"
               
             log.info("saving " + fileName)
             outfile = open(fileName, "w")
@@ -86,7 +86,7 @@ class SavePage(Resource):
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b>"           
         html += "<br/>%s<br/>" % _("Please enter a filename")
-        html += common.textInput("fileName", self.package.name+".pkg")
+        html += common.textInput("fileName", self.package.name+".elp")
         html += "<br/><br/>"
         html += common.submitButton("save", _("Save"))
         html += "<br/></form>"

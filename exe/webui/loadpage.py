@@ -62,7 +62,7 @@ class LoadPage(Resource):
             if "saveChk" in request.args:
                 dataDir = g_webInterface.config.getDataDir()
                 os.chdir(dataDir)
-                fileName = self.package.name + ".pkg"                
+                fileName = self.package.name + ".elp"                
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
                 outfile.close()
