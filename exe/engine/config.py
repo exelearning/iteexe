@@ -56,7 +56,7 @@ class Config:
             self.port = 8081
 
         if self.setting.has_option("system", "browser-path"):
-            self.browserPath = self.setting.getint("system", "browser-path")
+            self.browserPath = self.setting.get("system", "browser-path")
         else:
             self.browserPath = None
 
