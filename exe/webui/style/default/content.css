@@ -34,10 +34,9 @@ p.reading_reference {
 }
 
 p.reading_feedback {
-    border: 1px dashed #ADADAD;
     margin: 20px;
     padding: 8px;
-    background-color: #FFF;
+    font-style: italic;
 }
 
 /* --- iDevice Styles --- */
@@ -95,7 +94,4 @@ li.preknowledge {
     list-style-position: outside; 
 }
 
-li { 
-    list-style-image:    none; 
-    list-style-position: outside; 
-}
+

@@ -14,6 +14,10 @@ body {
     background: #9ca9af;
 }
 
+textarea { font-family: arial, verdana, helvetica, sans-serif;
+	   font-size: 13px;
+	}
+
 .popupDiv {
     background-color: #C0C0C0;
     border: 1px solid #000;
@@ -65,6 +69,7 @@ body {
     padding-bottom:5px;
 }	
 
+/* can probably delete these at some point
 .header_title {
     color: #51778A;
     font-size: 18px;
@@ -74,4 +79,4 @@ body {
 
 #footer {
 }
-
+*/
