@@ -38,7 +38,7 @@ class UniqueIdGenerator(object):
     def __init__(self, packageName):
         """Initialize the generator"""
         self.prefix  = "eXe" 
-        self.prefix += re.sub(r"\W", "", packageName)[:10]
+        self.prefix += re.sub(r"\W", "", packageName)[-10:]
 
         if UniqueIdGenerator.exePath:
             self.prefix += "%x" % int(getmtime(UniqueIdGenerator.exePath))
