@@ -52,7 +52,7 @@ class WebsitePage(object):
         Initialize
         """
         self.node = node
-        self._package = package
+       # self._package = package
         self.html = ""
 
     def save(self):
@@ -189,7 +189,7 @@ class WebsiteExport(object):
         """
         Recursive function for exporting a node
         """
-        page = WebsitePage(node, self.package)
+        page = WebsitePage(node)
         page.save()
 
         for child in node.children:
