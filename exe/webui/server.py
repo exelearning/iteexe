@@ -76,14 +76,24 @@ def launchBrowser(port):
     """
     if sys.platform[:3] == "win":
         if not g_webInterface.config.browserPath:
-            import _winreg
-            registry = _winreg.ConnectRegistry(None, _winreg.HKEY_LOCAL_MACHINE)
-            key      = _winreg.OpenKey(registry, 
-                                 r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
-            g_webInterface.config.browserPath = _winreg.QueryValueEx(key, 
-                                 "PathToExe")[0]
-            _winreg.CloseKey(key)
-            _winreg.CloseKey(registry)
+            try:
+                import _winreg
+                registry = _winreg.ConnectRegistry(None, _winreg.HKEY_LOCAL_MACHINE)
+                key1     = _winreg.OpenKey(registry, 
+                                     r"SOFTWARE\Mozilla\Mozilla Firefox")           
+                currentVersion  = _winreg.QueryValueEx(key1, 
+                                     "CurrentVersion")[0]
+                _winreg.CloseKey(key1)
+                regPath = "SOFTWARE\\Mozilla\\Mozilla Firefox\\" + currentVersion + "\\Main"
+                log.info("regPath Path:" + regPath)
+                key2    = _winreg.OpenKey(registry, regPath)
+                g_webInterface.config.browserPath = _winreg.QueryValueEx(key2, 
+                                     "PathToExe")[0]  
+                log.info("Firefox Path:" + g_webInterface.config.browserPath)
+                _winreg.CloseKey(key2)
+                _winreg.CloseKey(registry)
+            except WindowsError:
+                g_webInterface.config.browserPath = None
 
         if not g_webInterface.config.browserPath:
             standardPath = "c:/program files/mozilla/bin/firefox"
@@ -94,7 +104,11 @@ def launchBrowser(port):
             command = g_webInterface.config.browserPath
             url     = 'http://localhost:%d' % port
             log.info("Launch firefox with "+command)
-            os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
+            try:
+                os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
+            except OSError:
+                print "Cannot launch Firefox, please manually run Firefox"
+                print "and go to", url
 
     else:
         os.system("firefox http://localhost:%d&"%port)

@@ -87,11 +87,11 @@ class OptionElement(object):
         feedback = feedback.replace('"', '\\"')
         html = "<tr><td>"
         html += common.option(self.keyId, self.option.isCorrect, self.id)
-        html += "</td><td>"
+        html += "</td><td>\n"
         html += common.richTextArea(self.answerId, answer)
-        html += "</td><td>"
+        html += "</td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
-        html += "</td><td>"
+        html += "</td><td>\n"
         html += common.submitImage("deleteOption", self.id, "stock-cancel.png")
         html += "</td></tr>\n"
         html += "</p>\n"
@@ -112,7 +112,7 @@ class OptionElement(object):
         html += 'id = "%s"' % self.id
         html += 'onclick = "getFeedback(%d,%d,\'%s\')"/>' % (self.index, 
                                                 length, self.idevice.id)
-        html += '</td><td>'
+        html += '</td><td>\n'
         html += self.option.answer + "</td></tr>\n"
        
         return html

@@ -79,8 +79,6 @@ class SavePage(Resource):
                     fileName = fileName + ".elp"
               
                 log.info("saving " + fileName)
-                log.info("fileDir: " + fileDir)
-                log.info("dataDir: " + g_webInterface.config.getDataDir())
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
                 self.package.name = os.path.splitext(os.path.basename(fileName))[0]

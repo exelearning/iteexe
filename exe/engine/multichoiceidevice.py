@@ -83,7 +83,7 @@ http://www.ltu.mmu.ac.uk/ltia/issue4/higginstatham.shtml</a>)."""))
         self.questionInstruc = _("""Provide the text for the stem of the multiple choice question (MCQ). Do not number the question, this will be done automatically by eXe. The stem is the part of an MCQ that states the question. The alternatives which students select are called the options and are captured as separate fields below. Keep the following in mind when authoring the stem: 1) Before you start writing think about what you are assessing. For example: knowledge, application or understanding? 2) Clearly specify what the question is asking. 3) Where possible, avoid using negatives in the stem. If necessary make sure that negatives are clearly highlighted , for instance: Which of the following are NOT ...... 4) Keep common information in the stem rather than repeating it in each option. 5) A good stem is one where students who know the answer can "predict" or calcultate the answer (correct option or key) before reading the alternatives. 6) Phrase the stem so that there is only one correct answer, unless the MCQ provides the option for selecting more than one correct answer.""")
         self.keyInstruc      = _("Select a correct answer.")
         self.answerInstruc   = _("Type in answer for a option")
-        self.feedbackInstruc = _("Type in feedback for  answer")
+        self.feedbackInstruc = _("Type in feedback for a option")
         
 
     def addOption(self):

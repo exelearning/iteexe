@@ -29,7 +29,7 @@ function showMe(ident, w, h){
 
     hideMe()
         
-    if ((!elmDiv) || elmDiv.innerHTML !== document.getElementById(ident).innerHTML){
+    if (!elmDiv || elmDiv.innerHTML != document.getElementById(ident).innerHTML){
 
         var elmDiv = document.createElement('div')
         elmDiv.id  = 'popupmessage'
