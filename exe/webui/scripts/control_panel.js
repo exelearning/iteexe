@@ -1,10 +1,3 @@
-/*
-**  DTML instructions to set caching headers. Inside comments area to play nicer with CSS editors.
-**
-** **   
-**   
-**   
-** */
 
 var iewin = ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform == "Win32")) ? 1 : 0;
 var TABNAMES = ['outline', 'iDevices', 'styles'];
@@ -15,10 +8,11 @@ var gworkboxState;
 
 initTabs();
 
-// Initialization - calculate current state from cookies and then execute those states
+// Initialise ControlPanel - calculate current state from cookies and then execute those states
 function initTabs() {
     toggleFix(readCookie('fix', 0));
     toggleworkbox(readCookie('workbox', 1));
+    toggleTab(readCookie('tab', 0));
 }
 
 function readCookie(name, default_value) {
@@ -38,16 +32,37 @@ function setCookie(key, value) {
     document.cookie = key + '=' + value + '; expires=' + expdate.toGMTString() + '; path=/';
 }
 
-// ################################################################################
-// ########### Change between LINK (0), COURSE (1), and STYLE (2) tabs ############
-// ################################################################################
+// ### setting tab based on reading cookie
+function toggleTab(tab) {
+    if (tab==0) {
+        document.getElementById("workbox").className = "outline-on";
+        document.getElementById("outline-off").className = "on";
+        document.getElementById("iDevices-off").className = "off";
+        document.getElementById("styles-off").className = "off";
+    } else if (tab==1) {
+        document.getElementById("workbox").className = "iDevices-on";
+        document.getElementById("outline-off").className = "off";
+        document.getElementById("iDevices-off").className = "on";
+        document.getElementById("styles-off").className = "off";
+    } else if (tab==2) {
+        document.getElementById("workbox").className = "styles-on";
+        document.getElementById("outline-off").className="off";
+        document.getElementById("iDevices-off").className="off";
+        document.getElementById("styles-off").className="on";
+    }
+
+// alert("tab is: " + tab + "");
+
+}
+
+// ### Changing between outline (0), iDevices (1), and styles (2) tabs 
 
 function chooseTab(index) {
 	
 	setTab(TABNAMES[index]);
 	setCookie('tab', index);
-	
-	// Force workbox open since the user requested a tab
+//alert("index is: " + index + "");	
+	// Force controlpanel open if the user requests a tab
 	toggleworkbox(1);
 	toggleFix(1);
 }
@@ -89,9 +104,7 @@ function toggleFix(state){
 
 
 
-// ################################################################################
-// ########### HIDE/SHOW workbox (and turn it on if a tab is selected) ############
-// ################################################################################
+// ########### HIDE/SHOW controlpanel (and turn it on if a tab is selected) ############
 
 function toggleworkbox(state) {
 
@@ -100,6 +113,7 @@ function toggleworkbox(state) {
 	hiddenAndOrFixed();
 
 	setCookie('workbox', state);
+// alert("workbox cookie is: " + gworkboxState + "");
 }
 
 
@@ -107,6 +121,9 @@ function toggleworkbox(state) {
 
 function hiddenAndOrFixed(){
 	var name;
+
+//  alert("gFixState is: " + gFixState + ".");
+//  alert("gworkboxState is: " + gworkboxState + ".");
 
 if (document.getElementById("whole-enchilada")) {
 
@@ -137,8 +154,6 @@ if (document.getElementById("whole-enchilada")) {
 }
   
 
-//  alert("gFixState is: " + gFixState + ".");
-//  alert("gworkboxState is: " + gworkboxState + ".");
 //  alert("name is: " + name + ".");  
 
 

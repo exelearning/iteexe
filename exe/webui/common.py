@@ -45,7 +45,7 @@ def header():
 
 def banner(heading = _("eXe: eLearning XML editor")): 
     """Generates the common page banner XHTML"""
-    html  = "<body>\n"
+    html  = "<body onLoad=\"initTabs();\">\n"
 #    html += "<div id=\"header\">"+heading+"</div>\n"
     html += "<div id=\"main\">\n"
     return html
