@@ -26,6 +26,9 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Error(Exception):
+    """
+    Exception class used for eXe specific errors
+    """
     def __init__(self, value):
         """
         Initialize 

@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 from exe.engine.titleidevice import TitleIdevice
 
@@ -41,10 +40,16 @@ class Node:
 
 
     def getIdStr(self):
-        return ".".join([str(x) for x in self.id])
+        """
+        Return the node's id as a string
+        """
+        return ".".join([str(index) for index in self.id])
 
 
     def isAncestorOf(self, other):
+        """
+        Returns true if other node is an ancestor (or actually is) this node
+        """
         return self.id == other.id[:len(self.id)]
 
 

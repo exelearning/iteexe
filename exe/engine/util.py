@@ -27,9 +27,12 @@ log = logging.getLogger(__name__)
 """Useful Python functions"""
 
 #----------------------------------------------------------------------------
-# if I had Python 2.3 with os.walk I wouldn't need this
-# dare you to run deltree("/") !!! :-P
 def deltree(path):
+    """
+    Will recursively delete all the files under the given path
+    Redundant with Python 2.3's os.walk
+    dare you to run deltree("/") !!! :-P
+    """
     if os.path.isdir(path):
         children = os.listdir(path)
         for child in children:
@@ -41,9 +44,10 @@ def deltree(path):
     # if it's not a directory or a file, we just leave it alone
 
 #----------------------------------------------------------------------------
-# http://www.nedbatchelder.com/blog/200410.html
 def functionId(nFramesUp=1):
-    """ Create a string naming the function n frames up on the stack.
+    """ 
+    Create a string naming the function n frames up on the stack.
+    http://www.nedbatchelder.com/blog/200410.html
     """
     co = sys._getframe(nFramesUp+1).f_code
     return "%s (%s @ %d)" % (co.co_name, co.co_filename, co.co_firstlineno)
@@ -51,17 +55,20 @@ def functionId(nFramesUp=1):
 
 #----------------------------------------------------------------------------
 def get_all_files(path):
+    """ 
+    Recursively return all the files under a given path
+    """
     if path[-1] == ':':
         path = path + '\\'
-    #if true:
+    
     try:
         for i in os.listdir(path):
-            j = os.path.join(path, i)
-            if os.path.isdir(j):
-                for ii in get_all_files(j):
+            path = os.path.join(path, i)
+            if os.path.isdir(path):
+                for ii in get_all_files(path):
                     yield ii
             else:
-                yield j
+                yield path
     except:
         pass
       

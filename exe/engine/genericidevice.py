@@ -25,6 +25,10 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Field(object):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
     def __init__(self, name, fieldType=None, class_="", content=""):
         """
         Initialize 
@@ -50,12 +54,18 @@ class GenericIdevice(Idevice):
     XHTML fields.
     """
     def __init__(self, title, class_):
+        """
+        Initialize 
+        """
         Idevice.__init__(self)
         self.title     = title
         self.class_    = class_
         self.fields    = []
 
     def addField(self, name, fieldType, class_, content=""):
+        """
+        Add a new field to this iDevice.  Fields are indexed by their name.
+        """
         self.fields.append(Field(name, fieldType, class_, content))
 
     def __setitem__(self, name, value):

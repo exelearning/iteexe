@@ -19,19 +19,24 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
 class IdeviceStore:
+    """
+    The collection of iDevices available
+    at the moment this class is not being used
+    """
     def __init__(self):
         pass
 
     def addIdevice(self, idevice):
+        """
+        Register another iDevice as available
+        """
         log.debug("IdeviceStore.addIdevice")
-        pass
 
 
 # ===========================================================================

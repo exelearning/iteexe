@@ -29,6 +29,11 @@ import os.path
 
 # ===========================================================================
 class Config:
+    """
+    The Config class contains the configuration information for eXe.
+    It loads the settings from the exe.conf file which is in the same
+    directory as the eXe program.
+    """
     def __init__(self, configFile):
         """
         Initialize 
@@ -78,7 +83,7 @@ class Config:
     
     def getExeDir(self):
         """
-        get exe running directory
+        get eXe running directory
         """
         return self.exeDir
 

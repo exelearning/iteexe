@@ -17,8 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
-import types
+#import types
 import logging
 import gettext
 from exe.engine.node import Node
@@ -58,7 +57,7 @@ class Package:
         log.debug("findNode" + repr(nodeId))
 
         if type(nodeId) is str:
-            nodeId = [int(x) for x in nodeId.split(".")]
+            nodeId = [int(index) for index in nodeId.split(".")]
 
         if nodeId == self.draft.id: 
             return self.draft

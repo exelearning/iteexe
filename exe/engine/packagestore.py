@@ -17,13 +17,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
-import tempfile 
 import os
 import os.path
-from package import Package
+from exe.engine.package     import Package
 from exe.webui.webinterface import g_webInterface
 log = logging.getLogger(__name__)
 _   = gettext.gettext
