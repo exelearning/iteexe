@@ -102,16 +102,19 @@ class ExportPage(Resource):
         
         html  = common.header() + common.banner()
         html += self.menuPane.render()
+        html += "<div id=\"main\"> \n"
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b><br><br/>"   
-        html += """<select onchange="submit()" name="exportMethod">            
-        <option value="webpage" %s>%s</option>
-        <option value="scorm" %s>%s</option>
-        </select>
-        """ % (self.webStr, _("Web Page"), self.scormStr, _("SCORM"))
-        html += _(" Please select a export method") + "<br/>"
+        html += "<select onchange=\"submit();\" name=\"exportMethod\">\n"
+        html += "<option value=\"webpage\" "+self.webStr+">"+_("Web Page")
+        html += "</option>\n"
+        html += "<option value=\"scorm\" "+self.scormStr+">"+_("SCORM")
+        html += "</option>\n"
+        html += "</select>\n"
+        html += _(" Please select an export method") + "<br/>\n"
         html += "<br/>" + common.submitButton("export", _("Export"))
-        html += "<br/></form>"
+        html += "<br/></form>\n"
+        html += "</div> \n"
         html += common.footer()
         self.message = ""
         

@@ -22,7 +22,10 @@ body {
 }
 
 #main {
-    margin: 0px 0px 0px 0px;
+    margin: 60px 10px 10px 10px;
+}	
+
+#properties_pane {
 }	
 
 #header {

@@ -81,7 +81,7 @@ class AuthoringPage(Resource):
         self.stylePane.process(request, package)
         
         html  = self.__renderHeader(package)
-        html += common.banner()
+        html += "<body onload=\"initTabs();\">\n"
 
         if log.getEffectiveLevel() == logging.DEBUG:
             html += "<pre>"+repr(request.args)+"</pre>\n"
@@ -93,7 +93,6 @@ class AuthoringPage(Resource):
         html += common.hiddenField("object")
         html += self.menuPane.render()
 
-        html += "&nbsp;"
         # TODO: Move the Workbox into its own class?
         html += "   <!-- start worbox -->\n"
         html += "<div id=\"workbox\" class=\"outline-on\">\n"
@@ -119,15 +118,8 @@ class AuthoringPage(Resource):
         html += "<div id=\"workbox-content\">\n"
 
         html += "<div id=\"styles-above\" class=\"links\">\n"
-        #html += "<span id=\"name\">\n"
-        #html += "<select onchange=\"submitLink('style', '');\""
-        #html += " name=\"style\"><option value=\"default\"> "
-        #html += "default</option>"
-        #html += "<option value=\"garden\">garden</option>\n"
-        #html += "</select></span>\n"
         html += self.stylePane.render()
         html += "</div>"
-        
 
         html += "<div id=\"iDevices-above\" class=\"links\">\n"
         html += "<span class=\"name\">"
@@ -146,7 +138,7 @@ class AuthoringPage(Resource):
         html += "<!-- end workbox -->\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
-        html += common.footer()
+        html += "</body></html>\n"
         return html
 
     render_POST = render_GET
@@ -160,15 +152,15 @@ class AuthoringPage(Resource):
         html += "@import url(/css/exe.css);\n"
         html += "@import url(/css/controlpanel.css);\n"
         html += "@import url(/style/"+package.style+"/content.css);</style>\n"
-        html += "<link rel=\"alternate stylesheet\" type=\"text/css\" media=\"screen\"" 
+        html += "<link rel=\"alternate stylesheet\" type=\"text/css\" "
+        html += " media=\"screen\"" 
         html += "title=\"garden\" href=\"style/garden/content.css\" />" 
         html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
         html += "</script>\n"
         html += "<script language=\"JavaScript\" "
-        html += "    src=\"/scripts/control_panel.js\">"
-        html += "</script>\n"
-        html += "<script language=\"JavaScript\" src=\"/scripts/libot_drag.js\">"
-        html += "</script>\n"
+        html += "    src=\"/scripts/control_panel.js\"></script>\n"
+        html += "<script language=\"JavaScript\" "
+        html += "    src=\"/scripts/libot_drag.js\"><script>\n"
         html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
         html += "</script>\n"
         html += "<title>"+_("eXe")+"</title>\n"

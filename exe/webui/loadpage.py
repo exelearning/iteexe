@@ -100,7 +100,8 @@ class LoadPage(Resource):
         html  = common.header()
         html += common.banner()
         html += self.menuPane.render()
-        html += "<br/><b>" + self.message + "</b><br/>"
+        html += "<div id=\"main\"> \n"
+        html += "<b>" + self.message + "</b><br/>"
         html += "<form method=\"post\" name=\"contentForm\" "
         html += "onload=\"clearHidden();\"action=\"%s\">\n" % request.path
         html += common.hiddenField("action")
@@ -116,6 +117,7 @@ class LoadPage(Resource):
         html += " ""document.contentForm.fileName.value); \">"
         html += _("Load")
         html += "<br/></form>\n"        
+        html += "</div> \n"
         html += common.footer()
         self.message = ""
         

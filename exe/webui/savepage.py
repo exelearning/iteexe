@@ -99,8 +99,10 @@ class SavePage(Resource):
         path = self.dataDir+"/"+self.package.name+".elp"
                         
         # Rendering
-        html  = common.header() + common.banner()
+        html  = common.header() 
+        html += common.banner()
         html += self.menuPane.render()
+        html += "<div id=\"main\"> \n"
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b>"           
         html += "<br/>%s<br/>" % _("Please enter a filename")        
@@ -108,6 +110,7 @@ class SavePage(Resource):
         html += "<br/><br/>"
         html += common.submitButton("save", _("Save"))
         html += "<br/></form>"
+        html += "</div> \n"
         html += common.footer()
         self.message = ""
         

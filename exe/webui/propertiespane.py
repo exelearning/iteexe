@@ -81,12 +81,6 @@ class PropertiesPane(object):
         html += "<b>Description:</b><br/>\n"
         html += common.textArea("description", self.package.description)
         html += "<br/>\n"
-
-        options = [(style, style) for style in g_webInterface.config.styles]
-        html += "<b>Style:</b><br/>\n"
-        html += common.select("style", "", options, self.package.style)
-        html += "<p/>\n"
-
         html += "<b>Taxonomy:</b><br/>\n" 
         html += "Level 1 <br/>\n"
         html += common.textInput("level1", self.package.levelNames[0])

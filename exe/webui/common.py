@@ -53,13 +53,12 @@ def header():
 
 def banner(): 
     """Generates the common page banner XHTML"""
-    html  = "<body onLoad=\"initTabs();\">\n"
-    html += "<div id=\"main\">\n"
+    html  = "<body onload=\"initTabs();\">\n"
     return html
 
 def footer():
     """Generates the common page footer XHTML"""
-    html  = "</div></body></html>\n"
+    html  = "</body></html>\n"
     return html
     
 def hiddenField(name, value=""):
@@ -182,8 +181,8 @@ def elementInstruc(indent, instruc):
         html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/>"
         html += "</a>\n"
         html += "<div id=\"i%s\" style=\"display:none;\">" % indent
-        html += "<div style=\"float:right;\" ><img src=\"images/stock-stop.png\""
-        html += " title=\"" + _("Close") + "\" "
+        html += "<div style=\"float:right;\" >"
+        html += "<img src=\"images/stock-stop.png\" title=\""+_("Close")+"\" "
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
         html += "<b>Instructions:</b><br/>%s<br/>" % instruc                
         html += "</div>\n"

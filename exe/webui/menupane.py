@@ -52,7 +52,6 @@ class MenuPane(object):
         html = ""
         html = "   <!--- start header --->\n"
         html += "<div id=\"header\">\n"
-        html += "<p class=\"nodeTitle\">eXe</a>\n"        
         html += "<ul>\n"
             
         if self.prepath[-1] == "export":
@@ -91,7 +90,8 @@ class MenuPane(object):
                     (self.packageName, _("Authoring"))
 
         html += "</ul>\n" 
-        html += "</div>\n" 
+        html += "</div>" 
+        html += "&nbsp;\n"
         html += "   <!--- end header --->\n"
         return html
         

@@ -59,7 +59,9 @@ class PropertiesPage(Resource):
         # Rendering
         html  = common.header() + common.banner()
         html += self.menuPane.render()
+        html += "<div id=\"main\"> \n"
         html += self.propertiesPane.render()
+        html += "</div> \n"
         html += common.footer()
         return html
     

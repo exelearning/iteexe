@@ -94,11 +94,13 @@ class NewPackagePage(Resource):
         html += "\">\n"
         html += "</head>\n"
         html += common.banner()
+        html += "<div id=\"main\"> \n"
         html += _("Click here:")
         html += "<a href=\"http:/"
         html += package.name
         html += "\">"
         html += package.name
         html += "</a>\n "
+        html += "</div> \n"
         html += common.footer()
         return html
