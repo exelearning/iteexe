@@ -41,41 +41,31 @@ p.nodeTitle { color: #51778A;
         display: inline;
 	}
 	
-/* reading task iDevice styles (temporary)
-p.reading_what {
-	background-color: #F1F1DD;
-	padding: 4px;
-	border-top: 1px solid #ADADAD;
-	border-left: 1px solid #ADADAD;
-	border-right: 1px solid #ADADAD;
-	margin: 0px;
-	}
-
-p.reading_why {
-	background-color: #F1F1DD;
-	padding: 4px;
-	border-left: 1px solid #ADADAD;
-	border-right: 1px solid #ADADAD;
-	margin: 0px;
-	}	
-
 p.reading_reference {
-	background-color: #F1F1DD;
-	padding: 4px;
-	border-left: 1px solid #ADADAD;
-	border-right: 1px solid #ADADAD;
-	border-bottom: 1px solid #ADADAD;
-	margin: 0px;
+      font-style: italic;		
 	}
 
 p.reading_feedback {
-	font-style: italic;
+	border: 1px dashed #ADADAD;
+	margin: 20px;
+	padding: 8px;
+	background-color: #FFF;
 	}
-*/
 
 #iDevice {
 	background-color: #F1F1DD;
 	padding: 4px;
 	border: 1px solid #ADADAD;
 	margin: 8px;
+	}
+
+.icon {
+	color: #51778A;
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	position: relative;
+	top: -18px;
+	left: 5px;
+
 	}	
