@@ -49,53 +49,74 @@ class Page(Resource):
 
     gettext.textdomain('')
     gettext.bindtextdomain('', '')
-
+    
+    
     def __init__(self):
         Resource.__init__(self)
         self.blocks = {}
         self.nextId = 1
 
     def render_GET(self, request):
-            
-        html  = "<html><head><title>eXe: little packaging test</title></head>\n"
-        html += "<body>\n"
-        html += "<form method=\"post\" action=\"%s\"" % request.path
-        html += " name=\"contentForm\">\n"
-        html += """<select name="language">
-                <option value=\"English\" selected>English</option>
-                <option value=\"French\">French</option>
-                <option value=\"German\">German</option>
-        </select>"""
-        html += "<input type=\"submit\" name=\"add\" value=\"%s\"/>\n" % _("Add")
-        
-        
-        
-        html += "<pre>%s</pre>\n" % str(request.args)
-
+                  
         # Process args
-        for arg in request.args:
+        enStr=""
+        frStr=""
+        geStr=""
+        chStr=""
+        for arg in request.args:                    
             if arg == "add":
                 blockId = self.nextId
                 self.nextId += 1
                 self.blocks[blockId] = Block(blockId)
-                break
 
             elif arg.startswith("del"):
                 blockId = int(arg[3:])
                 del self.blocks[blockId]
-                break
 
             elif arg.startswith("edit"):
                 blockId = int(arg[4:])
                 self.blocks[blockId].mode = Block.Edit
-                break
 
             elif arg.startswith("done"):
                 blockId = int(arg[4:])
                 self.blocks[blockId].mode = Block.View
-                break
+                
+            elif arg == "language":
+                if request.args["language"][0]=="English":
+                    enStr="selected"     
+                    
+                elif request.args["language"][0]=='French':
+                    trans=gettext.GNUTranslations(open("po/fr.mo"))
+                    frStr="selected"
+                    
+                elif request.args["language"][0]=='German':
+                    trans=gettext.GNUTranslations(open("po/ge.mo"))
+                    geStr="selected"
+                    
+                elif request.args["language"][0]=='Chinese':
+                    trans=gettext.GNUTranslations(open("po/ch.mo"))
+                    chStr="selected"
+                global _            
+                _=trans.gettext
+                #break
 
         # Rendering
+        html  = "<html><head><title>eXe: little packaging test</title>\n"
+        html += """<meta http-equiv="content-type" content="text/html; charset=UTF-8">\n""";
+        html += "</head>\n"
+        html += "<body>\n"
+        html += "<form method=\"post\" action=\"%s\"" % request.path
+        html += " name=\"contentForm\">\n"
+        html += """<select onchange="submit()" name="language">            
+            <option value="English" %s>English</option>    
+            <option value="French" %s >French</option>
+            <option value="German" %s >German</option>
+            <option value="Chinese" %s >Chinese</option>
+            </select> Please select a language <br/>""" %(enStr,frStr,geStr,chStr) 
+        html += "<input type=\"submit\" name=\"add\" value=\"%s\"/>\n" % _("Add")
+                        
+        #html += "<pre>%s</pre>\n" % str(request.args)
+
         for block in self.blocks.itervalues():
             if "content%d"%block.id in request.args:
                 block.title   = request.args["title%d"%block.id][0]
@@ -106,7 +127,5 @@ class Page(Resource):
         html += "</form>\n"
         html += "</body></html>\n"
         return html
-        
     
-
     render_POST = render_GET
