@@ -31,8 +31,8 @@ class Config:
         self.setting = ConfigParser()
         self.setting.read(configFile)
 
-    def setupLogging(self):
-        hdlr = logging.FileHandler("exe.log")
+    def setupLogging(self, logFile):
+        hdlr = logging.FileHandler(logFile)
         form = logging.Formatter('%(asctime)s %(name)s %(levelname)s %(message)s')
         log  = logging.getLogger()
         hdlr.setFormatter(form)
