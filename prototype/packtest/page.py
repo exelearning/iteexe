@@ -1,4 +1,10 @@
 from twisted.web.resource import Resource
+import gettext
+import os
+
+def nothing(str):
+    return str
+_=nothing
 
 # A Page is a collection of Blocks
 class Block:
@@ -25,9 +31,9 @@ class Block:
         html += self.content
         html += "</textarea>\n"
         html += "<input type=\"submit\" name=\"done%d\"" % self.id
-        html += " value=\"Done\"/>\n"
+        html += " value=\"%s\"/>\n" % _("Done")
         html += "<input type=\"submit\" name=\"del%d\"" % self.id
-        html += " value=\"Delete\"/>\n"
+        html += " value=\"%s\"/>\n" % _("Delete")
         html += "<div>\n"
         return html
 
@@ -36,25 +42,35 @@ class Block:
         html += "<b>" + self.title + "</b><br/>\n"
         html += self.content
         html += "<input type=\"submit\" name=\"edit%d\" " % self.id
-        html += " value=\"Edit\"/>\n"
+        html += " value=\"%s\"/>\n" % _("Edit")
         html += "<div>\n"
         return html
-
-
 class Page(Resource):
+
+    gettext.textdomain('')
+    gettext.bindtextdomain('', '')
+
     def __init__(self):
         Resource.__init__(self)
         self.blocks = {}
         self.nextId = 1
 
     def render_GET(self, request):
+            
         html  = "<html><head><title>eXe: little packaging test</title></head>\n"
         html += "<body>\n"
         html += "<form method=\"post\" action=\"%s\"" % request.path
         html += " name=\"contentForm\">\n"
-        html += "<input type=\"submit\" name=\"add\" value=\"Add\"/>\n"
+        html += """<select name="language">
+                <option value=\"English\" selected>English</option>
+                <option value=\"French\">French</option>
+                <option value=\"German\">German</option>
+        </select>"""
+        html += "<input type=\"submit\" name=\"add\" value=\"%s\"/>\n" % _("Add")
         
-#        html += "<pre>%s</pre>\n" % str(request.args)
+        
+        
+        html += "<pre>%s</pre>\n" % str(request.args)
 
         # Process args
         for arg in request.args:
@@ -90,5 +106,7 @@ class Page(Resource):
         html += "</form>\n"
         html += "</body></html>\n"
         return html
+        
+    
 
     render_POST = render_GET
