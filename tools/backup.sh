@@ -33,3 +33,7 @@ gzip db$YYMMDD.sql
 # Backup the wiki (Reptile House)
 cd $MOIN
 tar cjvf $TOP/$YYMMDD/moin$YYMMDD.tar.bz2 data
+
+# Copy to another machine
+scp -r $TOP/$YYMMDD getback@d.moore.cfdl.auckland.ac.nz:/local/backup
+
