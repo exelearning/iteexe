@@ -25,6 +25,7 @@ anything it just redirects the user to a new package.
 import logging
 import gettext
 from twisted.web.resource import Resource
+from twisted.web.error    import ForbiddenResource
 from exe.webui import common
 from exe.engine.packagestore  import g_packageStore
 from exe.webui.authoringpage  import AuthoringPage
@@ -53,7 +54,9 @@ class NewPackagePage(Resource):
         """
         Get the child page for the name given
         """
-        if name == '':
+        if request.getClientIP() != '127.0.0.1':
+            return ForbiddenResource(_("Access from remote clients forbidden"))
+        elif name == '':
             return self
         else:
             return Resource.getChild(self, name, request)

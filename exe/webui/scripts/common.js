@@ -2,8 +2,6 @@
 // eXe
 // Copyright 2004-2005, University of Auckland
 //
-// This module is for the common Javascript used in all webpages.
-//
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; either version 2 of the License, or
@@ -19,35 +17,39 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // ===========================================================================
 
+// This module is for the common Javascript used in all webpages.
+
 // Called upon loading the page this function clears the hidden
 // action and object fields so they can be used by submitLink
 var objBrowse = navigator.appName;
 
-function showMe(ident, w, h){
-   
-    var elmDiv = document.getElementById('popupmessage')
+function showMe(ident, w, h)
+{
+    var elmDiv = document.getElementById('popupmessage');
 
-    hideMe()
+    hideMe();
         
-    if (!elmDiv || elmDiv.innerHTML != document.getElementById(ident).innerHTML){
+    if (!elmDiv || 
+        elmDiv.innerHTML != document.getElementById(ident).innerHTML){
 
-        var elmDiv = document.createElement('div')
-        elmDiv.id  = 'popupmessage'
-        elmDiv.className="popupDiv"
-        elmDiv.style.cssText = 'position:absolute; left: ' + (xpos) + 
-                               'px; top: '+(ypos - h/2) + 'px; width: ' + w + 'px;'
-        elmDiv.innerHTML = document.getElementById(ident).innerHTML
-        document.body.appendChild(elmDiv)
-        new dragElement('popupmessage')
-
+        var elmDiv = document.createElement('div');
+        elmDiv.id  = 'popupmessage';
+        elmDiv.className="popupDiv";
+        elmDiv.style.cssText = 'position:absolute; left: ' + 
+                               (xpos) + 'px; top: '+(ypos - h/2) + 
+                               'px; width: ' + w + 'px;';
+        elmDiv.innerHTML = document.getElementById(ident).innerHTML;
+        document.body.appendChild(elmDiv);
+        new dragElement('popupmessage');
     }
-    
 }
             
 function hideMe() {
-    var elmDiv = document.getElementById('popupmessage')
-    if (elmDiv)
-        elmDiv.parentNode.removeChild(elmDiv) // removes the div from the document
+    var elmDiv = document.getElementById('popupmessage');
+    if (elmDiv) {
+        // removes the div from the document
+        elmDiv.parentNode.removeChild(elmDiv);
+    }
 }
 
 
@@ -55,8 +57,8 @@ function updateCoords(e) {
     if (objBrowse == "Microsoft Internet Explorer") {
         xpos = e.offsetX;
         ypos = e.offsetY;
-    }
-    else {
+
+    } else {
         xpos = e.pageX;
         ypos = e.pageY;
     }
