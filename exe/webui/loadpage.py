@@ -53,9 +53,8 @@ class LoadPage(Resource):
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         
-        if "load" in request.args:
-            log.debug("saveChk" + repr(request.args[saveChk][0]))
-            if request.args["saveChk"][0]=="true":
+        if "load" in request.args: 
+            if "saveChk" in request.args:
                 fileName = self.package.name + ".pkg"                
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
@@ -77,27 +76,12 @@ class LoadPage(Resource):
         # Rendering
         
         html  = common.header()
-        html += """\
-        <script language="Javascript">
-        function setValue()
-        {
-            if document.saveForm.saveChk.checked {
-                document.saveForm.saveChk.value = "false"
-            }
-            else{
-                document.saveForm.saveChk.value = "true"
-            }
-        }
-        
-        </script>
-        """
         html += common.banner()
         html += self.menuPane.render()
         html += "<form method=\"post\" name = \"saveForm\" action=\"%s\">" % request.path
         html += "<br/>" + _("Would you like to save current changes?") + "<br/>"
-        html += "<pre>%s</pre>\n" % str(request.args)
-        html += "<input type = \"checkbox\" name = \"saveChk\" value = \"true\" checked"
-        html += " onclick = \"setValue\">"
+        #html += "<pre>%s</pre>\n" % str(request.args)
+        html += "<input type = \"checkbox\" name = \"saveChk\" checked>"
         html += _(" Save the current package") + "<br/><br/>"    
         html += _(" Please select a file") + "<br/>"
         html += "<input type = \"file\" name = \"fileName\">"
