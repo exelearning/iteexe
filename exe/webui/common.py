@@ -45,8 +45,29 @@ def footer():
     html  = "</body></html>\n"
     return html
     
+def textInput(name, value=""):
+    html  = "<input type=\"text\" name=\"%s\" " % name
+    html += "value=\"%s\"" % value
+    html += "size=\"60\">\n" 
+    return html
+
+def textArea(name, value=""):
+    html  = "<textarea name=\"%s\" " % name
+    html += "cols=\"59\" rows=\"8\">%s" % value
+    html += "</textarea><br/>" 
+    return html
+
+def submitButton(name, value):
+    html  = "<input type=\"submit\" name=\"%s\" " % name
+    html += "value=\"%s\">\n" %  value
+    return html
+
+
 
 if __name__ == "__main__":
     print header()
     print banner()
+    print textInput("text")
+    print textArea("area")
+    print submitButton("ok", "OK")
     print footer()
