@@ -16,6 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+OptionElment is responsible for a block of option.  Used by MultichoiceBlock
+"""
 
 import logging
 from exe.webui import common

@@ -17,6 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+This is the main authoring page.
+"""
+
 import logging
 import gettext
 from twisted.web.resource import Resource

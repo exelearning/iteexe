@@ -16,6 +16,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+PackageStore is responsible for managing the Packages which the eXe server
+has loaded, (and loading and saving them?)
+"""
 
 import logging
 import gettext

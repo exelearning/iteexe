@@ -15,7 +15,7 @@
 [MASTER]
 # Add <file or directory> to the black list. It should be a base name, not a
 # path. You may set this option multiple times.
-ignore=CVS
+ignore=CVS,winshell.py
 
 # Pickle collected data for later comparisons.
 persistent=yes
@@ -27,10 +27,10 @@ cache-size=500
 
 [REPORTS]
 # Tells wether to display a full report or only the messages
-reports=no
+reports=yes
 
 # Use HTML as output format instead of text
-html=no
+html=yes
 
 # Use a parseable text output format, so your favorite text editor will be able
 # to jump to the line corresponding to a message.
@@ -49,14 +49,14 @@ files-output=no
 # respectivly contain the number of errors / warnings messages and the total
 # number of statements analyzed. This is used by the global evaluation report
 # (R0004).
-evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+evaluation=10.0 - ((float(6*error + 4*warning + refactor + 2*convention) / statement) * 50)
 
 # Add a comment according to your evaluation note. This is used by the global
 # evaluation report (R0004).
-comment=yes
+comment=no
 
 # Include message's id in output
-include-ids=no
+include-ids=yes
 
 # Enable all messages in the listed categories.
 enable-msg-cat=
@@ -92,7 +92,7 @@ enable-variables=yes
 init-import=no
 
 # List of variable names used for dummy variables (i.e. not used).
-dummy-variables=_,dummy
+dummy-variables=_,dummy,request
 
 
 
@@ -199,7 +199,7 @@ max-args=5
 max-locals=15
 
 # Maximum number of return / yield for function / method body
-max-returns=6
+max-returns=3
 
 # Maximum number of branch for function / method body
 max-branchs=12
@@ -211,10 +211,10 @@ max-statements=50
 max-parents=7
 
 # Maximum number of attributes for a class (see R0902).
-max-attributes=7
+max-attributes=8
 
 # Minimum number of public methods for a class (see R0903).
-min-public-methods=2
+min-public-methods=1
 
 # Maximum number of public methods for a class (see R0904).
 max-public-methods=20
@@ -316,7 +316,8 @@ notes=FIXME,XXX,TODO
 enable-similarities=yes
 
 # Minimum lines number of a similarity.
-min-similarity-lines=4
+#min-similarity-lines=4
+min-similarity-lines=10
 
 # Ignore comments when computing similarities.
 ignore-comments=yes

@@ -16,6 +16,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+Block is the base class for the classes which are responsible for 
+rendering and processing Idevices in XHTML
+"""
 
 import logging
 import gettext

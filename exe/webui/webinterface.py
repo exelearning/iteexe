@@ -16,6 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+WebInterface is responsible for storing globals
+"""
 
 import logging
 import gettext
@@ -27,7 +30,7 @@ _   = gettext.gettext
 # ===========================================================================
 class WebInterface:
     """
-    WebInterface is responsible for storing the current root page
+    WebInterface is responsible for storing globals --- TODO refactor me!
     """
     def __init__(self):
         self.rootPage     = None

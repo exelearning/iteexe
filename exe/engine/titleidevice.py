@@ -16,6 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+TitleIdevice: has the title for a Node
+"""
 
 import logging
 from exe.engine.idevice import Idevice
@@ -27,6 +30,7 @@ _ = gettext.gettext
 class TitleIdevice(Idevice):
     """
     TitleIdevice: has the title for a Node
+    Not your normal iDevice
     """
     def __init__(self, parentNode, title=""):
         """Initialize"""

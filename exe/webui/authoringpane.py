@@ -16,6 +16,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+AuthoringPane is responsible for creating the XHTML for the authoring
+area of the eXe web user interface.  
+"""
 
 import logging
 import gettext

@@ -16,6 +16,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+Useful Python functions
+"""
+
 import logging
 import os
 import os.path
@@ -24,7 +28,6 @@ import sys
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-"""Useful Python functions"""
 
 #----------------------------------------------------------------------------
 def deltree(path):

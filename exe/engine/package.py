@@ -16,8 +16,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+Package represents the collection of resources the user is editing
+i.e. the "package".
+"""
 
-#import types
 import logging
 import gettext
 from exe.engine.node import Node

@@ -19,3 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+The export module manages the different export formats eXe supports
+Importing may also be added here in the future
+"""

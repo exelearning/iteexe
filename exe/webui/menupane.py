@@ -16,6 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+MenuPane is responsible for creating the XHTML for the menu links
+"""
 
 import logging
 import gettext

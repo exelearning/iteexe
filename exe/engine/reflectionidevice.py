@@ -17,6 +17,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+A Reflection Idevice presents question/s for the student to think about
+before they look at the answer/s
+"""
+
 import logging
 from exe.engine.idevice import Idevice
 import gettext
@@ -26,16 +31,15 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class ReflectionIdevice(Idevice):
     """
-    A Reflection Idevice is one built up from simple fields... as such it
-    can have a multitude of different forms all of which are just simple
-    XHTML fields.
+    A Reflection Idevice presents question/s for the student to think about
+    before they look at the answer/s
     """
     def __init__(self, activity = "", answer = ""):
         """
         Initialize 
         """
         Idevice.__init__(self, 
-                         _("Reflection Questios"),
+                         _("Reflection Questions"),
                          _("University of Auckland"), "", "")
         self.activity   = activity
         self.answer     = answer
