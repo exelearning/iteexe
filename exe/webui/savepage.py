@@ -27,6 +27,7 @@ from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
+from exe.webui.webinterface import g_webInterface
 from exe.webui.menupane import MenuPane
 
 
@@ -58,12 +59,13 @@ class SavePage(Resource):
         self.package = g_packageStore.getPackage(packageName)
         
         if "save" in request.args:
+            dataDir = g_webInterface.config.getDataDir()                
             fileName = request.args["fileName"][0]
             if not fileName.endswith(".pkg"):
                 fileName = fileName + ".pkg"
               
             log.info("saving " + fileName)
-            outfile = open(fileName, "w")
+            outfile = open(dataDir + "\\" + fileName, "w")
             pickle.dump(self.package, outfile)
             self.package.name = os.path.splitext(os.path.basename(fileName))[0]
             self.message = _("The course package has been saved successfully.")

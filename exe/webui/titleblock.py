@@ -111,6 +111,15 @@ class TitleBlock(Block):
         """
         html  = "<div>\n"
         html += "<h1 class=\"nodeTitle\">" + self.node.getTitle() + "</h1>"
+        html += "</div>\n"
+        return html
+    
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this title
+        """
+        html  = "<div>\n"
+        html += "<h1 class=\"nodeTitle\">" + self.node.getTitle() + "</h1>"
         html += common.submitButton("edit"+self.id, _("Edit"))
         html += "</div>\n"
         return html

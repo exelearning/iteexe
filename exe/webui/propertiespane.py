@@ -22,6 +22,7 @@ import logging
 import gettext
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
+from exe.export.websiteexport import WebsiteExport
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -34,6 +35,7 @@ class PropertiesPane(object):
     def __init__(self):
         self.package = None
         self.url     = ""
+        self.message = ""
 
     def process(self, request):
         """ 
@@ -42,6 +44,11 @@ class PropertiesPane(object):
         self.url    = request.path
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)  
+        
+        if "export" in request.args:
+            websiteExport = WebsiteExport()
+            websiteExport.export(self.package)
+            self.message = _("The course package has been exported successfully.")
             
         if "title" in request.args:
             self.package.root.title = request.args["title"][0]
@@ -67,6 +74,8 @@ class PropertiesPane(object):
         log.debug("render")
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
+        html += "<b>" + self.message + "</b><br/>"
+        html += common.submitButton("export", _("Export")) + "<br/>"
         html += "<b>Package title:</b><br/>"
         html += common.textInput("title", self.package.root.title) + "<br/>"
         html += "<b>Author:</b><br/>"

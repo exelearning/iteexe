@@ -26,6 +26,7 @@ from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
+from exe.webui.webinterface import g_webInterface
 from exe.webui.menupane import MenuPane
 from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
@@ -54,12 +55,15 @@ class LoadPage(Resource):
         self.package = g_packageStore.getPackage(packageName)
         
         if "load" in request.args: 
+            dataDir = g_webInterface.config.getDataDir()
+            os.chdir(dataDir)
             if "saveChk" in request.args:
                 fileName = self.package.name + ".pkg"                
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
                 outfile.close()
                 
+            
             infile = open(request.args["fileName"][0])
             package = pickle.load(infile)
             self.package = package

@@ -42,10 +42,12 @@ def main():
             sys.exit(1)
     else:
         port = 8081
-
+      
     config = Config("exe.conf")
+    g_webInterface.config = config
     config.setupLogging("exe.log")
     log.info("Starting eXe")
+    config.setDataDir()
     
     root   = NewPackagePage()
     g_webInterface.rootPage = root
@@ -60,7 +62,7 @@ def main():
 
 def launchBrowser(port):
     if sys.platform[:3] == "win":
-        os.system("start http://localhost:%d"%port)
+        os.system("start http://localhost:%d"%port)        
     else:
         os.system("htmlview http://localhost:%d&"%port)
     print "Welcome to eXe: the eLearning XML editor"

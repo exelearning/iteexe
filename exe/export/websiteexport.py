@@ -20,6 +20,7 @@
 import sys
 import logging
 import gettext
+import os.path
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.webui.linkblock    import LinkBlock
@@ -38,13 +39,14 @@ class WebsitePage(object):
         self.html = ""
 
     def save(self):
-        filename = self.node.idStr() + ".html"
+        filename = self.node.getIdStr() + ".html"
         out = open(filename, "w")
         out.write(self.render())
 
     def render(self):
         html  = common.header()
-        html += common.banner(self.node.title)
+        html  = "<body>\n"
+        html += "<div id=\"main\">\n"
         html += TitleBlock(self.node).renderView()
 
         for idevice in self.node.idevices:
@@ -55,8 +57,16 @@ class WebsitePage(object):
             html += block.renderView()
 
         for child in self.node.children:
-            html += "<a href=\"http:/%s.html>" % child.idStr()
-            html += child.title + "</a>\n"
+            html += "<a href=\"%s.html\">" % child.getIdStr()
+            value = ""
+            if child.title <> "":
+                value = child.title
+            else:
+                value = child.getIdStr()
+                
+            html += value + "</a><br/>\n"
+            
+        html += common.footer()
 
         return html
 
@@ -75,7 +85,9 @@ class WebsiteExport(object):
         Export
         """
         self.package = package
-        os.mkdir(package.name)
+        if not os.path.exists(package.name):
+            os.mkdir(package.name)
+            
         os.chdir(package.name)
         self.exportNode(package.root)
         
@@ -87,8 +99,10 @@ class WebsiteExport(object):
         page = WebsitePage(node)
         page.save()
 
-        for child in self.node.children:
+        for child in node.children:
             self.exportNode(child)
+            
+        os.chdir("..")
         
     
 # ===========================================================================

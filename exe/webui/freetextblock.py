@@ -41,7 +41,8 @@ class FreeTextBlock(Block):
         if idevice.edit:
             mode = Block.Edit
         else:
-            mode = Block.View
+            mode = Block.Preview
+            
         Block.__init__(self, parentNode, idevice.id, mode)
         self.idevice = idevice
 
@@ -103,6 +104,15 @@ class FreeTextBlock(Block):
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
+        """
+        html  = "<div>\n"
+        html += self.idevice.content
+        html += "</div>\n"
+        return html
+    
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this block
         """
         html  = "<div>\n"
         html += self.idevice.content

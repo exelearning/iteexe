@@ -37,7 +37,8 @@ class WebInterface:
     def __init__(self):
         self.rootPage = None
         self.packageStore = None
-
+        self.config = None
+ 
 
 # nasty old global
 g_webInterface = WebInterface()

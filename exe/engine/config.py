@@ -25,11 +25,13 @@ import logging
 from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import sys
 
+
 # ===========================================================================
 class Config:
     def __init__(self, configFile):
         self.setting = ConfigParser()
         self.setting.read(configFile)
+        self.dataDir = ""
 
     def setupLogging(self, logFile):
         hdlr   = logging.FileHandler(logFile)
@@ -43,5 +45,14 @@ class Config:
                 logging.getLogger().setLevel(globals()[level])
             else:
                 logging.getLogger(logger).setLevel(globals()[level])
+                
+    def setDataDir(self):
+        if sys.platform[:3] == "win":
+            from exe.engine.winshell import personal_folder
+            self.dataDir = personal_folder()
+        
+    def getDataDir(self):
+        return self.dataDir
+    
 
 # ===========================================================================

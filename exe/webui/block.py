@@ -32,7 +32,7 @@ class Block(object):
     rendering and processing Idevices in XHTML
     """
     nextId    = 0
-    Edit, View, Hidden = range(3)
+    Edit, View, Preview, Hidden = range(4)
 
     def __init__(self, parentNode, id, mode=Edit):
         self.parentNode = parentNode
@@ -75,7 +75,7 @@ class Block(object):
 
     def processDone(self, request):
         log.debug("processDone id="+self.id)
-        self.mode = Block.View
+        self.mode = Block.Preview
 
     def processEdit(self, request):
         log.debug("processEdit id="+self.id)
@@ -108,6 +108,9 @@ class Block(object):
 
         elif self.mode == Block.View:
             return self.renderView()
+        
+        elif self.mode == Block.Preview:
+            return self.renderPreview()
 
         else:
             return ""
@@ -142,6 +145,13 @@ class Block(object):
             options += self.__getNodeOptions(child)
         return options
             
+    def renderPreview(self):
+        """
+        Returns an XHTML string for viewing this block
+        """
+        log.error("renderPreview called directly")
+        return "ERROR Block.renderPreview called directly"
+    
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
