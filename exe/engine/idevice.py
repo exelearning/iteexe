@@ -29,7 +29,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Idevice(object):
     def __init__(self):
-        pass
+        self.edit = True
 
     def createBlock(self):
         pass
