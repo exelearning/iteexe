@@ -44,25 +44,39 @@ class OutlinePane(object):
             nodeId = request.args["object"][0]
 
             if request.args["action"][0] == "changeNode":
-                self.package.currentNode = self.package.findNode(nodeId)
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    self.package.currentNode = node
 
             elif request.args["action"][0] == "addChild":
-                self.package.findNode(nodeId).createChild()
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    node.createChild()
 
             elif request.args["action"][0] == "delete":
-                self.package.findNode(nodeId).delete()
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    node.delete()
 
             elif request.args["action"][0] == "movePrev":
-                self.package.findNode(nodeId).movePrev()
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    node.movePrev()
 
             elif request.args["action"][0] == "moveNext":
-                self.package.findNode(nodeId).moveNext()
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    node.moveNext()
 
             elif request.args["action"][0] == "promote":
-                self.package.findNode(nodeId).promote()
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    node.promote()
 
             elif request.args["action"][0] == "demote":
-                self.package.findNode(nodeId).demote()
+                node = self.package.findNode(nodeId)
+                if node is not None:
+                    node.demote()
 
             
     def render(self):
