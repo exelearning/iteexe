@@ -23,7 +23,7 @@ import gettext
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.webui.linkblock    import LinkBlock
-from exe.util.error         import Error
+from exe.engine.error       import Error
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
