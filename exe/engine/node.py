@@ -55,35 +55,38 @@ class Node:
 
     def movePrev(self):
         """Move  to the previous"""
-        index = self.id[-1]
-        
+        index  = self.id[-1]
+        parent = self.parent
+        selfId = self.id
         if index > 0:
-            temp = self.parent.children[index - 1]
-            self.parent.children[index - 1]    = self.parent.children[index] 
-            self.parent.children[index - 1].id = temp.id
-            self.parent.children[index]        = temp
-            self.parent.children[index].id     = self.id        
+            temp = parent.children[index - 1]
+            parent.children[index - 1]    = self 
+            parent.children[index - 1].id = temp.id
+            parent.children[index]        = temp
+            parent.children[index].id     = selfId       
             
 
     def moveNext(self):
         """Move to the next"""
-        index = self.id[-1]
-        
-        if index < len(self.parent.children) - 1:
-            temp = self.parent.children[index + 1]
-            self.parent.children[index + 1]     = self.parent.children[index] 
-            self.parent.children[index + 1].id  = temp.id
-            self.parent.children[index]         = temp
-            self.parent.children[index].id      = self.id 
+        index  = self.id[-1]
+        parent = self.parent
+        selfId = self.id
+        if index < len(parent.children) - 1:
+            temp = parent.children[index + 1]
+            parent.children[index + 1]     = self
+            parent.children[index + 1].id  = temp.id
+            parent.children[index]         = temp
+            parent.children[index].id      = selfId
             
 
     def delete(self):
         """Delete a node"""
         index = self.id[-1]
-        del(self.parent.children[index])
+        parent = self.parent
+        del(parent.children[index])
         
-        for i in range(index, len(self.parent.children)):
-            self.parent.children[i].id[-1] = i
+        for i in range(index, len(parent.children)):
+            parent.children[i].id[-1] = i
             
 
     def promote(self):
