@@ -26,7 +26,7 @@ from twisted.web import server
 import os
 import sys
 from exe.util.config import Config
-from newpackagepage import NewPackagePage
+from exe.webui.newpackagepage import NewPackagePage
 import logging
 
 log = logging.getLogger(__name__)
