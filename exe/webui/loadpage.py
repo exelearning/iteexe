@@ -54,13 +54,13 @@ class LoadPage(Resource):
         self.package = g_packageStore.getPackage(packageName)
         
         if "load" in request.args:
+            log.debug("saveChk" + repr(request.args[saveChk][0]))
             if request.args["saveChk"][0]=="true":
                 fileName = self.package.name + ".pkg"                
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
                 outfile.close()
                 
-            #newFileName = request.args["fileName"][0]
             infile = open(request.args["fileName"][0])
             package = pickle.load(infile)
             self.package = package
@@ -116,7 +116,7 @@ class LoadPage(Resource):
         package = g_packageStore.getPackage(self.package.name)
         log.info("getting an existing package name="+ package.name)
         authoringPage = AuthoringPage()
-        g_webInterface.root.putChild(package.name, authoringPage)
+        g_webInterface.rootPage.putChild(package.name, authoringPage)
         propertiesPage = PropertiesPage()
         authoringPage.putChild("properties", propertiesPage)
         savePage = SavePage()

@@ -21,6 +21,7 @@ import sys
 import logging
 import gettext
 import tempfile 
+import os
 import os.path
 from package import Package
 
@@ -45,7 +46,20 @@ class PackageStore:
         log.debug("createPackage: name=" + repr(name))
 
         if name is None:
-            filename = tempfile.mkstemp('.pkg', 'New-', '.')[1]
+            #filename = tempfile.mkstemp('.pkg', 'New-', '.')[1]
+            fileList = os.listdir(".")
+            isDoing = True
+            i = 1
+            
+            while isDoing:
+                name = "package" + str(i)
+                if name+".pkg" in fileList or name in self.loaded:
+                    i += 1                    
+                else:                        
+                    isDoing = False
+            
+            filename = "package" + str(i) + ".pkg"
+               
             name = os.path.splitext(os.path.basename(filename))[0]
 
         package = Package(name)
@@ -64,7 +78,7 @@ class PackageStore:
         Add a package
         """
         self.loaded[package.name] = package
-    
+    	
 
 # nasty old global
 g_packageStore = PackageStore()

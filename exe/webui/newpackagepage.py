@@ -55,7 +55,6 @@ class NewPackagePage(Resource):
 
         # Create new package
         package = g_packageStore.createPackage()
-        g_webInterface.root = package
         log.info("Creating a new package name="+ package.name)
         authoringPage = AuthoringPage()
         self.putChild(package.name, authoringPage)

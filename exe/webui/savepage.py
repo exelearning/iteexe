@@ -22,6 +22,7 @@ import os.path
 import logging
 import gettext
 import pickle
+import os
 from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
@@ -43,7 +44,7 @@ class SavePage(Resource):
         self.menuPane = MenuPane()
         self.package  = None
         self.url = ""
-        isSaved = False
+        self.message = ""
         
     def process(self, request):
         """
@@ -60,12 +61,12 @@ class SavePage(Resource):
             fileName = request.args["fileName"][0]
             if not fileName.endswith(".pkg"):
                 fileName = fileName + ".pkg"
-                
+              
             log.info("saving " + fileName)
             outfile = open(fileName, "w")
             pickle.dump(self.package, outfile)
             self.package.name = os.path.splitext(os.path.basename(fileName))[0]
-            self.isSaved = True
+            self.message = _("The course package has been saved successfully.")
 
     def render_GET(self, request):
         """Called for all requests to this object"""
@@ -79,11 +80,8 @@ class SavePage(Resource):
         
         html  = common.header() + common.banner()
         html += self.menuPane.render()
-        html += "<form method=\"post\" action=\"%s\">" % self.url
-        
-        if self.isSaved:
-            html += "<br/><b>" + _("The course package has been saved successfully.")+ "</b>"
-            
+        html += "<form method=\"post\" action=\"%s\">" % self.url        
+        html += "<br/><b>" + self.message+ "</b>"           
         html += "<br/>%s<br/>" % _("Please enter a filename")
         html += common.textInput("fileName", self.package.name+".pkg")
         html += "<br/><br/>"
