@@ -61,8 +61,11 @@ class OutlinePane(object):
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.delete()
+                    if node.isAncestorOf(self.package.currentNode):
+                        self.package.currentNode = self.package.root
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
+
 
             elif request.args["action"][0] == "movePrevNode":
                 node = self.package.findNode(nodeId)

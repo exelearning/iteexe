@@ -43,6 +43,8 @@ class Node:
     def getIdStr(self):
         return ".".join([str(x) for x in self.id])
 
+    def isAncestorOf(self, other):
+        return self.id == other.id[:len(self.id)]
 
     def createChild(self):
         """Create a child node"""
