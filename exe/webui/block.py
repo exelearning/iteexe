@@ -79,33 +79,40 @@ class Block(object):
             elif request.args["action"][0] == "demote":
                 self.processDemote(request)
 
+
     def processDone(self, request):
         log.debug("processDone id="+self.id)
         self.idevice.edit = False
+
 
     def processEdit(self, request):
         log.debug("processEdit id="+self.id)
         self.idevice.edit = True
 
+
     def processDelete(self, request):
         log.debug("processDelete id="+self.id)
-#        self.mode = Block.Hidden
+
 
     def processMove(self, request):
         log.debug("processMove id="+self.id)
-#        self.mode = Block.Hidden
+
 
     def processPromote(self, request):
         log.debug("processPromote id="+self.id)
 
+
     def processDemote(self, request):
         log.debug("processDemote id="+self.id)
+
 
     def processMovePrev(self, request):
         log.debug("processMovePrev id="+self.id)
 
+
     def processMoveNext(self, request):
         log.debug("processMoveNext id="+self.id)
+
 
     def render(self):
         if self.mode == Block.Edit:
@@ -120,6 +127,7 @@ class Block(object):
         else:
             return ""
 
+
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block
@@ -127,10 +135,8 @@ class Block(object):
         log.error("renderEdit called directly")
         return "ERROR Block.renderEdit called directly"
 
+
     def renderEditButtons(self):
-#        html  = common.submitLink("done",   self.id, _("Done"))
-#        html += common.submitLink("delete", self.id, _("Delete"))
-        
         html  = common.submitImage("done",     self.id, "stock-apply.png")
         html += common.submitImage("delete",   self.id, "stock-cancel.png")
         html += common.submitImage("movePrev", self.id, "stock-go-up.png")
@@ -143,6 +149,7 @@ class Block(object):
         html += common.select("move", self.id, options)
         return html
 
+
     # TODO We should probably get this list from elsewhere rather than
     # building it up for every block
     def __getNodeOptions(self, node):
@@ -152,12 +159,14 @@ class Block(object):
             options += self.__getNodeOptions(child)
         return options
             
+
     def renderPreview(self):
         """
         Returns an XHTML string for viewing this block
         """
         log.error("renderPreview called directly")
         return "ERROR Block.renderPreview called directly"
+
     
     def renderView(self):
         """
@@ -166,8 +175,8 @@ class Block(object):
         log.error("renderView called directly")
         return "ERROR Block.renderView called directly"
 
+
     def renderViewButtons(self):
-#        html  = common.submitLink("edit", self.id, _("Edit"))
         html  = common.submitImage("edit", self.id, "stock-edit.png")
         return html
 

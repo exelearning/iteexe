@@ -2,11 +2,6 @@
 # eXe 
 # Copyright 2004-2005, University of Auckland
 #
-# Idevices are mini templates which the user uses to create content in
-# the package
-# A generic Idevice is one built up from simple fields... as such it
-# can have a multitude of different forms all of which are just simple
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -28,13 +23,36 @@ from exe.engine.idevice import Idevice
 
 log = logging.getLogger(__name__)
 
+
+# ===========================================================================
+class Field(object):
+    def __init__(self, name, fieldType, content=""):
+        self.name      = name
+        self.fieldType = fieldType
+        self.content   = content
+
 # ===========================================================================
 class GenericIdevice(Idevice):
+    """
+    A generic Idevice is one built up from simple fields... as such it
+    can have a multitude of different forms all of which are just simple
+    XHTML fields.
+    """
     def __init__(self):
-        pass
+        Idevice.__init__(self)
+        self.fields = {}
 
-    def createBlock(self):
-        pass
+    def addField(self, name, fieldType, content=""):
+        self.fields[name] = Field(name, fieldType, content)
+
+    def __setitem__(self, name, value):
+        self.fields[name].content = value
+
+    def __getitem__(self, name):
+        return self.fields[name].content
+
+    def __iter__(self):
+        return self.fields.itervalues()
 
 
 # ===========================================================================

@@ -50,6 +50,8 @@ class BlockFactory(object):
         """
         for blockType, ideviceType in self.blockTypes:
             if isinstance(idevice, ideviceType):
+                log.info("createBlock "+blockType.__name__+" for "+
+                          type(idevice).__name__)
                 return blockType(idevice)
         
         log.error("No blocktype registered for "+ type(idevice).__name__)

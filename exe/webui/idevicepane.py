@@ -23,12 +23,15 @@ import gettext
 from exe.webui import common
 from exe.engine.simpleidevice   import SimpleIdevice
 from exe.engine.freetextidevice import FreeTextIdevice
+from exe.engine.genericidevice  import GenericIdevice
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
+# ug
 from exe.webui.simpleblock   import SimpleBlock
 from exe.webui.freetextblock import FreeTextBlock
+from exe.webui.genericblock  import GenericBlock
 
 
 # ===========================================================================
@@ -49,6 +52,15 @@ class IdevicePane(object):
 
             elif request.args["object"][0] == "SimpleIdevice":
                 package.currentNode.addIdevice(SimpleIdevice())
+
+            elif request.args["object"][0] == "ReadingActIdevice":
+                readingAct = GenericIdevice()
+                readingAct.addField("Reference", "Text")
+                readingAct.addField("URL", "Text")
+                readingAct.addField("Instructions", "TextArea")
+                readingAct.addField("Feedback", "TextArea")
+                package.currentNode.addIdevice(readingAct)
+            
             
             
     def render(self):
@@ -59,6 +71,9 @@ class IdevicePane(object):
         
         html  = "<div>\n"
         
+        html += common.submitLink("AddIdevice", "ReadingActIdevice",
+                                  _("Reading Activity"))
+        html += "<br/>\n"
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
                                   _("Free Text iDevice"))
         html += "<br/>\n"
@@ -68,8 +83,5 @@ class IdevicePane(object):
 
         return html
         
-        
-
-
     
 # ===========================================================================

@@ -21,48 +21,44 @@ import logging
 import gettext
 from exe.webui                  import common
 from exe.webui.block            import Block
-from exe.engine.freetextidevice import FreeTextIdevice
-from exe.webui.textareafield    import TextAreaField
 from exe.webui.blockfactory     import g_blockFactory
+from exe.engine.genericidevice  import GenericIdevice, Field
+from exe.webui.element          import Element, createElement
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
 # ===========================================================================
-class FreeTextBlock(Block):
+class GenericBlock(Block):
     """
-    FreeTextBlock can render and process FreeTextIdevices as XHTML
-
-    YES it's a cut and paste from SimpleBlock, GenericBlock will 
-    replace them both..... one day
+    GenericBlock can render and process GenericIdevices as XHTML
     """
     def __init__(self, idevice):
         Block.__init__(self, idevice)
-        self.contentField = TextAreaField("content", self.id)
-
+        self.fields = []
+        for field in self.idevice:
+            self.fields.append(createElement(field.fieldType, 
+                                             field.name, self.id))
 
     def process(self, request):
         Block.process(self, request)
-        content = self.contentField.process(request)
-        if content:
-            self.idevice.content = content
-
+        for field in self.fields:
+            content = field.process(request)
+            if content is not None:
+                self.idevice[field.name] = content
 
     def processDone(self, request):
         Block.processDone(self, request)
         self.idevice.edit = False
 
-
     def processEdit(self, request):
         Block.processEdit(self, request)
         self.idevice.edit = True
 
-
     def processDelete(self, request):
         Block.processDelete(self, request)
         self.idevice.delete()
-
 
     def processMove(self, request):
         Block.processMove(self, request)
@@ -74,48 +70,47 @@ class FreeTextBlock(Block):
         else:
             log.error("addChildNode cannot locate "+nodeId)
 
-
     def processMovePrev(self, request):
         Block.processMovePrev(self, request)
         self.idevice.movePrev()
 
-
     def processMoveNext(self, request):
         Block.processMoveNext(self, request)
         self.idevice.moveNext()
-
 
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div>\n"
-        html += self.contentField.renderEdit(self.idevice.content)
+        for field in self.fields:
+            html += field.renderEdit(self.idevice[field.name])
+
         html += self.renderEditButtons()
         html += "</div>\n"
         return html
-
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
         """
         html  = "<div>\n"
-        html += self.contentField.renderView(self.idevice.content)
+        for field in self.fields:
+            html += field.renderView(self.idevice[field.name])
         html += "</div>\n"
         return html
     
-
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this block
         """
         html  = "<div>\n"
-        html += self.contentField.renderView(self.idevice.content)
+        for field in self.fields:
+            html += field.renderView(self.idevice[field.name])
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
 
-g_blockFactory.registerBlockType(FreeTextBlock, FreeTextIdevice)
+g_blockFactory.registerBlockType(GenericBlock, GenericIdevice)
 
 # ===========================================================================
