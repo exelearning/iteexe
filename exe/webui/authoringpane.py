@@ -35,6 +35,7 @@ class AuthoringPane(object):
     area of the eXe web user interface.  
     """
     def __init__(self, topNode, maxDepth=1):
+        self.url        = ""
         self.topNode    = topNode
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
@@ -56,29 +57,32 @@ class AuthoringPane(object):
             self.blocks.append(block)
 
         if self.levelLimit is None or len(node.id) < self.levelLimit:
-		for child in node.children:
-		    self.addBlocks(child)
+            for child in node.children:
+                self.addBlocks(child)
 
         else:
             self.blocks.append(LinkBlock(node))
 
 
-    def process(self, args):
+    def process(self, request):
         """
         Delegates processing of args to blocks
         """
+        self.url = request.path
         for block in self.blocks:
-            block.process(args)
+            block.process(request)
 
 
     def render(self):
         """
         Returns an XHTML string for viewing this pane
         """
-        html = "" 
+        html  = "<form method=\"post\" action=\"%s\">\n" % self.url
+
         for block in self.blocks:
             html += block.render()
-            
+
+        html += "</form>\n"
         return html
         
 # ===========================================================================

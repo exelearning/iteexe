@@ -26,19 +26,25 @@ from twisted.web import server
 import os
 import sys
 from twisted.web.resource import Resource
-from propertiespane import PropertiesPane
+from authoringpane import AuthoringPane
 from exe.engine.packagestore import g_packageStore
 
 class TestPage(Resource):
     def __init__(self):
         Resource.__init__(self)
-        self.pane = PropertiesPane()
+        package = g_packageStore.getPackage("course1")
+        self.pane = AuthoringPane(package.root)
+
 
     def getChild(self, name, request):
         if name == '':
             return self
         else:
-            return Resource.getChild(self, name, request)
+#            if name not in self.listNames():
+#                self.putChild(name, TestPage())
+
+            childPage = Resource.getChild(self, name, request)
+            return childPage
 
     def render_GET(self, request):
         self.pane.process(request)
@@ -62,7 +68,9 @@ def main():
 
     
     root = TestPage()
-    root.putChild("course1", TestPage())
+    child = TestPage()
+#    child.isLeaf = True
+    root.putChild("course1", child)
     
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)

@@ -31,9 +31,12 @@ class Block(object):
     Block is the base class for the classes which are responsible for 
     rendering and processing Idevices in XHTML
     """
-    def __init__(self, id, edit=False):
-        self.id   = id
+    nextId    = 0
+
+    def __init__(self, edit=False):
+        self.id   = Block.nextId
         self.edit = edit
+        Block.nextId += 1 
 
     def process(self, request):
         if "done%d" % self.id in request.args:
@@ -42,10 +45,10 @@ class Block(object):
             self.processEdit(request)
 
     def processDone(self, request):
-        pass
+        self.edit = False
 
     def processEdit(self, request):
-        pass
+        self.edit = True
 
     def render(self):
         if self.edit:

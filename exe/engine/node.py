@@ -27,11 +27,11 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Node:
     def __init__(self):
-        self.id=[]
-        self.parent=None
-        self.children=[]
-        self.content=""
-        self.title=""
+        self.id       = []
+        self.parent   = None
+        self.children = []
+        self.title    = ""
+        self.idevices = []
 
     def createChild(self):
         child=Node()
