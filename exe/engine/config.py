@@ -99,7 +99,7 @@ class Config:
         styleDir    = self.exeDir + "/style"
 
         for subDir in os.listdir(styleDir):
-            styleSheet = os.path.join(styleDir, subDir, "main.css")
+            styleSheet = os.path.join(styleDir, subDir, "editing.css")
 
             if os.path.exists(styleSheet):
                 self.styles.append(subDir)

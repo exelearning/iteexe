@@ -37,7 +37,7 @@ def header():
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<head>\n"
     html += "<style type=\"text/css\">\n"
-    html += "@import url(/css/main.css);</style>\n"
+    html += "@import url(/css/exe.css);</style>\n"
     html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
     html += "</script>\n"
     html += "<title>"+_("eXe")+"</title>\n"

@@ -1,12 +1,27 @@
-/*  ===========================================================================
+/*  =================================================
      eXe
      Copyright 2004-2005, University of Auckland
 
-     default display styles.
-   =========================================================================== */
+     default styles for editing panel.
+   ================================================== */
+
+/* authoring pane */
+
+#authoring_pane {
+	position: absolute;
+	margin-left: 223px;
+	margin-top: 77px;
+        margin-right: 8px;
+	padding: 8px;
+	background-color: #EDEFF0;
+	border: 1px solid #000;
+	-moz-border-radius: 6px;
+	}	
+
+p.prev_edit { float: right;}
 
 p.nodeTitle { 
-    color: #lime;
+    color: #51778A;
     font-size: 18px;
     padding: 2px;
     border-top: 1px solid #FFF;
@@ -25,51 +40,17 @@ p.reading_feedback {
     background-color: #FFF;
 }
 
-/* LEFT-HAND NAVIGATION */
-
-#navcontainer {
-    background-color: #FFFFFF;
-    width: 169px;
-    float: left;
-}
-
-#navcontainer a {
-    display: block;
-    margin-left: 0px;
-    margin-top: 5px;
-    padding-left: 0px;
-    text-decoration: none;
-    background-color: #FFF;
-    border-bottom: 1px solid #CCC;
-}
-
-#navcontainer a:link, a:visited {
-    color: #96852C;
-    text-decoration: none;
-}
-
-#navcontainer a:hover {
-    background-color: #lime;
-    color: #EDEFF0;
-}
-
-#main {
-    padding: 18px;
-    margin: 10px 10px 10px 180px;
-    background-color: green;
-    line-height: 140%;
-}
-
+/* --- iDevice Styles --- */
 
 #iDevice {
-    background-color: #E1FFCD;
+    background-color: #F1F1DD;
     padding: 4px;
     border: 1px solid #ADADAD;
     margin: 8px;
 }
 
 .iDeviceTitle {
-    color: #lime;
+    color: #51778A;
     font-size: small;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
