@@ -53,7 +53,11 @@ class ScormPage(object):
         This is the main function.  It will render the page and save it to a
         file.  
         """
-        filename = self.node.getIdStr() + ".html"
+        if self.node.getIdStr() == "1":
+            filename = "index.html"
+        else:
+            filename = self.node.getIdStr() + ".html"
+            
         out = open(filename, "w")
         out.write(self.render())
         out.close()

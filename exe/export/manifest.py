@@ -123,7 +123,11 @@ class Manifest(object):
         """
         itemId = self.idGenerator.generate()
         resId  = self.idGenerator.generate()
-        filename = node.getIdStr()+ ".html"
+        if node.getIdStr() == "1":
+            filename = "index.html"
+        else:
+            filename = node.getIdStr() + ".html"
+            
         
         self.itemStr += """
             <item identifier="ITEM-%s" isvisible="true" identifierref="RES-%s">
