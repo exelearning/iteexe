@@ -83,7 +83,7 @@ li.activity-multichoice {
     list-style-position: outside; 
 }
 
-li.objectives { 
+#iDevice li.objectives { 
     margin-left: 20px;
     list-style-image: url(objectives.png); 
     list-style-position: outside; 
@@ -95,6 +95,7 @@ li.preknowledge {
     list-style-position: outside; 
 }
 
-#iDevice li { 
+li { 
     list-style-image:    none; 
+    list-style-position: outside; 
 }
