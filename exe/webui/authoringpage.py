@@ -160,7 +160,7 @@ class AuthoringPage(Resource):
         html += "<script language=\"JavaScript\" "
         html += "    src=\"/scripts/control_panel.js\"></script>\n"
         html += "<script language=\"JavaScript\" "
-        html += "    src=\"/scripts/libot_drag.js\"><script>\n"
+        html += "    src=\"/scripts/libot_drag.js\"></script>\n"
         html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
         html += "</script>\n"
         html += "<title>"+_("eXe")+"</title>\n"
