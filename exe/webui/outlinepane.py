@@ -67,7 +67,9 @@ class OutlinePane(object):
             
     def render(self):
         #Returns an XHTML string for viewing this pane
+        
         html = self.getChildrenTitles(self.package.root)
+        html += "<br/>"
         return html
         
         
