@@ -2,9 +2,7 @@ from twisted.web.resource import Resource
 import gettext
 import os
 
-def nothing(str):
-    return str
-_=nothing
+_ = gettext.gettext
 
 # A Page is a collection of Blocks
 class Block:
@@ -82,22 +80,22 @@ class Page(Resource):
                 self.blocks[blockId].mode = Block.View
                 
             elif arg == "language":
+                global _            
                 if request.args["language"][0]=="English":
+                    _ = gettext.gettext
                     enStr="selected"     
                     
                 elif request.args["language"][0]=='French':
-                    trans=gettext.GNUTranslations(open("po/fr.mo"))
+                    _ =gettext.GNUTranslations(open("po/fr.mo")).gettext
                     frStr="selected"
                     
                 elif request.args["language"][0]=='German':
-                    trans=gettext.GNUTranslations(open("po/ge.mo"))
+                    _ =gettext.GNUTranslations(open("po/ge.mo")).gettext
                     geStr="selected"
                     
                 elif request.args["language"][0]=='Chinese':
-                    trans=gettext.GNUTranslations(open("po/ch.mo"))
+                    _ = gettext.GNUTranslations(open("po/ch.mo")).gettext
                     chStr="selected"
-                global _            
-                _=trans.gettext
                 #break
 
         # Rendering
