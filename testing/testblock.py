@@ -1,6 +1,6 @@
 # ===========================================================================
-# config unittest
-# Copyright 2004, University of Auckland
+# testblockfactory
+# Copyright 2005, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,80 +18,34 @@
 # ===========================================================================
 
 import unittest
-from exe.engine.node import Node
+from exe.webui.block        import Block
+from exe.engine.idevice     import Idevice
+from exe.webui.blockfactory import g_blockFactory
 
 # ===========================================================================
-class TestNBlock(unittest.TestCase):
+class MyBlock(Block):
+    def __init__(self, idevice):
+        self.id   = idevice.id
+        self.name = idevice.name
+
+class MyIdevice(Idevice):
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+                                
+g_blockFactory.registerBlockType(MyBlock, MyIdevice)
+
+# ===========================================================================
+class TestBlock(unittest.TestCase):
     def setUp(self):
         pass
 
-    def testCreate(self, idevice):
-        block = g_blockFactory.createBlock(idevice)
+    def testBlock(self):
+        idevice = MyIdevice(22, "MyIdevice")
+        block   = g_blockFactory.createBlock(idevice)
+        self.assertEquals(block.id, 22)
+        self.assertEquals(block.name, "MyIdevice")
         
-    def testMove(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child0.title = "Child Nought"
-        child1 = root.createChild()
-        child1.title = "Child One"
 
-        child0.movePrev()
-        self.assertEqual(child0.id, [0,0])
-        self.assertEqual(child0.title, "Child Nought")
-
-        child1.movePrev()
-        self.assertEqual(child1.id, [0,0])
-        self.assertEqual(child1.title, "Child One")
-
-        child1.moveNext()
-        self.assertEqual(child1.id, [0,1])
-        self.assertEqual(child1.title, "Child One")
-
-        child0.moveNext()
-        self.assertEqual(child0.id, [0,1])
-        self.assertEqual(child0.title, "Child Nought")
-
-        child0.delete()
-        self.assertEqual(child1.id, [0,0])
-        
-    def testPromote(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child1 = root.createChild()
-        child3 = root.createChild()
-        child31 = child3.createChild()
-        child31.promote()
-        self.assertEqual(child31.id, [0,3])
-        
-    def testDemote(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child1 = root.createChild()
-        child3 = root.createChild()
-        child31 = child3.createChild()
-        child1.promote()
-        child1.demote()
-        self.assertEqual(child1.id, [0,0,0])
-        
-    def testGetIdStr(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child1 = root.createChild()
-        child11=child1.createChild()
-        self.assertEqual(child11.getIdStr(), "0.1.0")
-        
-    def testStr(self):
-        root = Node(None)
-        root.title = "root node"
-        child0 = root.createChild()
-        child0.title = "first child"
-        child1 = root.createChild()
-        child1.title = "second child"
-        child3 = root.createChild()
-        child3.title = "third child"
-        child31 = child3.createChild()
-        child31.title = "third child's first child"
-
-   
 if __name__ == "__main__":
     unittest.main()

@@ -19,22 +19,28 @@
 
 import unittest
 import pickle
-from exe.engine.package import Package
+import os.path
+from exe.engine.package      import Package
+from exe.engine.config       import Config
 from exe.engine.packagestore import PackageStore, g_packageStore
+from exe.webui.webinterface  import g_webInterface
 
 # ===========================================================================
 class TestPackage(unittest.TestCase):
     def setUp(self):
-        pass
+        g_webInterface.config = Config("exe.conf")
+        
 
     def testCreatePackage(self):
         package = g_packageStore.createPackage()
         self.assert_(package)
         self.assert_(package.name)
         
-    def testLoadExistingPackage(self, filePath):
+    def testLoadExistingPackage(self):
+        filePath = "C:\\exe data\\package2.elp"
         infile = open(filePath)
         package = pickle.load(infile)
+        g_packageStore.addPackage(package)
         self.assert_(package)
         self.assert_(package.name)
    
