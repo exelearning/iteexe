@@ -31,6 +31,10 @@ class Field(object):
         self.fieldType = fieldType
         self.content   = content
 
+    def __cmp__(self, other):
+        return cmp(self.name, other.name)
+
+
 # ===========================================================================
 class GenericIdevice(Idevice):
     """
@@ -40,19 +44,23 @@ class GenericIdevice(Idevice):
     """
     def __init__(self):
         Idevice.__init__(self)
-        self.fields = {}
+        self.fields    = []
 
     def addField(self, name, fieldType, content=""):
-        self.fields[name] = Field(name, fieldType, content)
+        self.fields.append(Field(name, fieldType, content))
 
     def __setitem__(self, name, value):
-        self.fields[name].content = value
+        key   = Field(name, None)
+        index = self.fields.index(key)
+        self.fields[index].content = value
 
     def __getitem__(self, name):
-        return self.fields[name].content
+        key   = Field(name, None)
+        index = self.fields.index(key)
+        return self.fields[index].content
 
     def __iter__(self):
-        return self.fields.itervalues()
+        return iter(self.fields)
 
 
 # ===========================================================================
