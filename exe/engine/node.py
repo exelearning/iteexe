@@ -143,8 +143,8 @@ class Node:
     
     def __str__(self):
         nodeStr = ""
-        nodeStr += self.title + " "
-        nodeStr += self.getIdStr() + "\n"
+        nodeStr += self.getIdStr() + " "
+        nodeStr += self.title + "\n"
         for child in self.children:
             nodeStr += child.__str__()
             
