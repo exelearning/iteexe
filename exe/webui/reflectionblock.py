@@ -103,7 +103,7 @@ class ReflectionBlock(Block):
         html += "//-->\n"
         html += "</script>\n"
 
-        html  = self.activity   
+        html += self.activity   
         html += '<div id="view%s" style="display:block;">' % self.id
         html += '<input type="button" name ="btnshow%s" ' % self.id
         html += 'value ="Click here" ' 

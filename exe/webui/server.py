@@ -60,8 +60,7 @@ def main():
         filePath = sys.argv[1] 
         print filePath
         try:  
-            infile = open(filePath)
-            package = pickle.load(infile)
+            package = g_packageStore.loadPackage(filePath)
         except:
             errMessage  = _("Wrong file format,")
             errMessage += _(" please shut down eXe and try again")
@@ -69,7 +68,6 @@ def main():
             root = ErrorPage(errMessage)
             isWrongfile = True
         else:
-            g_packageStore.addPackage(package)
             root = PackageRedirectPage(package)
     else:   
         root   = PackageRedirectPage()   
