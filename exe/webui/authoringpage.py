@@ -81,7 +81,7 @@ class AuthoringPage(Resource):
         html += common.hiddenField("object")
         html += self.menuPane.render()
         #html += self.addNodePane.render()
-	html += "<div id=\"workbox\" class=\"links-on\">\n"
+	html += "<div id=\"workbox\" class=\"outline-on\">\n"
 	html += "<div id=\"workbox-top\">"
 	html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" class=\"on\">Outline</a>"
 	html += "<a id=\"iDevices-off\" href=\"javascript:chooseTab(1)\" class=\"off\">iDevices</a>"
@@ -103,7 +103,7 @@ class AuthoringPage(Resource):
 	html += self.idevicePane.render()
 	html += "</span></div>\n"
 
-	html += "<div id=\"outline-on\" class=\"links\">\n"
+	html += "<div id=\"outline-above\" class=\"links\">\n"
        	html += "<span class=\"name\">"
 	html += self.outlinePane.render()
 	html += "</span></div>\n"
