@@ -73,11 +73,15 @@ When designing a MCQ test consider the following:
         self.questionInstruc = _("Type the question stem.")
         self.keyInstruc      = _("""To indicate the correct answer, click the 
 radio button next to the correct option.""")
-        self.answerInstruc   = _("""Type in the answer options using the ADD 
-ANOTHER OPTION button to add each new option.""")
-        self.feedbackInstruc = _("""Provide feedback for the each option. 
-Good feedback is relevant, timely and should provide appropriate cues to improve 
-performance of the task.""")
+        self.answerInstruc   = _("""Type in each option from which students must 
+choose into the appropriate options box. You can add options by clicking on the 
+"ADD ANOTHER OPTION" button. You can delete options by clicking on the "x" next 
+to each option.""")
+        self.feedbackInstruc = _("""Type in the feedback that you want the 
+student to see when selecting the particular option. If you don't complete this 
+box, eXe will automatically provide default feedback as follows: "Correct answer"
+ as indicated by the selection for the correct answer; or "Wrong answer" for the 
+other alternatives.""")
         
 
     def addOption(self):

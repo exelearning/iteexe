@@ -82,10 +82,11 @@ class MultichoiceBlock(Block):
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)
         html += "<div id=\"iDevice\" class=\"multichoice\">\n"
-        html += "<table width =\"100%%\"><th>%s " % _("Key")
-        html += common.elementInstruc("key"+self.id, self.keyInstruc)
-        html += "</th><th>%s " % _("Answer")
+        html += "<table width =\"100%%\">"
+        html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
+        html += "</th><th align = \"left\">%s<br/>%s" % (_("Correct"), _("Option"))
+        html += common.elementInstruc("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Feedback")
         html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
         html += "</th>"

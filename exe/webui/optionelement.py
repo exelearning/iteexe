@@ -86,9 +86,9 @@ class OptionElement(object):
         feedback = feedback.replace("'", "\\'")
         feedback = feedback.replace('"', '\\"')
         html = "<tr><td>"
-        html += common.option(self.keyId, self.option.isCorrect, self.id)
-        html += "</td><td>\n"
         html += common.richTextArea(self.answerId, answer)
+        html += "</td><td align = \"center\">\n"
+        html += common.option(self.keyId, self.option.isCorrect, self.id)        
         html += "</td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>\n"
@@ -130,9 +130,9 @@ class OptionElement(object):
             feedbackStr = self.option.feedback
         else:
             if self.option.isCorrect:
-                feedbackStr = _("Congratulations, your answer is correct!")
+                feedbackStr = _("Correct")
             else:
-                feedbackStr = _("Sorry, wrong answer.")
+                feedbackStr = _("Incorrect")
         html  = '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
         html += 'display: none;">' 
         html += feedbackStr + '</div>\n'
