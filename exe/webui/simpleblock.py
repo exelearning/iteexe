@@ -79,7 +79,6 @@ class SimpleBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div>\n"
-        html += str(self.id)
         html += "<b>" + self.idevice.title + "</b><br/>\n"
         html += self.idevice.content
         html += self.renderViewButtons()

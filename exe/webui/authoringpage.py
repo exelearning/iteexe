@@ -40,6 +40,9 @@ class AuthoringPage(Resource):
     
     def __init__(self):
         Resource.__init__(self)
+        self.addNodePane   = AddNodePane()
+        self.authoringPane = AuthoringPane()
+        self.idevicePane   = IdevicePane()
 
 
     def getChild(self, name, request):
@@ -52,14 +55,12 @@ class AuthoringPage(Resource):
     def render_GET(self, request):
         """Called for all requests to this object"""
         package       = g_packageStore.getPackage(request.prepath[0])
-        idevicePane   = IdevicePane(package.currentNode)
-        authoringPane = AuthoringPane(package.currentNode)
-        addNodePane   = AddNodePane()
+
         # Processing
-        
-        idevicePane.process(request)
-        authoringPane.process(request)
-        addNodePane.process(request)
+        self.addNodePane.process(request, package)
+        self.idevicePane.process(request)
+        self.authoringPane.process(request)
+
         
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
@@ -67,15 +68,16 @@ class AuthoringPage(Resource):
         html += "</head>\n"
         html += common.banner(_("eXe"))
 
-        #html += "<pre>"+repr(request.args)+"</pre>\n"
+        html += "<pre>"+repr(request.args)+"</pre>\n"
+        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
         html += "<form method=\"post\" action=\"%s\"" % request.path
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
         html += common.hiddenField("object")
-        html += idevicePane.render()
-        html += authoringPane.render()
-        html += addNodePane.render()
+        html += self.addNodePane.render()
+        html += self.idevicePane.render(package.currentNode)
+        html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
         html += common.footer()
         return html

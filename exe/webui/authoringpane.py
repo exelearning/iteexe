@@ -34,10 +34,7 @@ class AuthoringPane(object):
     AuthoringPane is responsible for creating the XHTML for the authoring
     area of the eXe web user interface.  
     """
-    def __init__(self, topNode, maxDepth=1):
-        self.url        = ""
-        self.topNode    = topNode
-        self.levelLimit = len(topNode.id) + maxDepth
+    def __init__(self):
         self.blocks     = []
 
 
@@ -45,10 +42,25 @@ class AuthoringPane(object):
         """
         Delegates processing of args to blocks
         """            
-        self.addBlocks(self.topNode)
         for block in self.blocks:
             block.process(request)
 
+
+    def render(self, topNode, maxDepth=1):
+        """
+        Returns an XHTML string for viewing this pane
+        """
+        self.topNode    = topNode
+        self.levelLimit = len(topNode.id) + maxDepth
+        self.blocks     = []
+        self.addBlocks(self.topNode)
+        html  = ""
+
+        for block in self.blocks:
+            html += block.render()
+
+        return html
+        
 
     def addBlocks(self, node):
         """
@@ -71,16 +83,4 @@ class AuthoringPane(object):
         else:
             self.blocks.append(LinkBlock(node))
 
-
-    def render(self):
-        """
-        Returns an XHTML string for viewing this pane
-        """
-        html  = ""
-
-        for block in self.blocks:
-            html += block.render()
-
-        return html
-        
 # ===========================================================================

@@ -34,7 +34,7 @@ class TestPage(Resource):
     def __init__(self):
         Resource.__init__(self)
         package = g_packageStore.getPackage("course1")
-        self.pane = AuthoringPane(package.root)
+        self.pane = AuthoringPane()
 
 
     def getChild(self, name, request):

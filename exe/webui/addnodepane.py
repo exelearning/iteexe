@@ -34,45 +34,46 @@ class AddNodePane(object):
     def __init__(self):
         self.package = None
 
-    def process(self, request):
+    def process(self, request, package):
         """ 
-        Write description
+        Will create a new node if that's what the user selected
         """
-        
-        packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)
-        
+        self.package = package
+
         if "action" in request.args:
-            if request.args["action"]=="AddLevel1Node":
+            if request.args["action"][0] == "AddLevel1Node":
                 self.package.currentNode = self.package.root.createChild()
                 
-            if request.args["action"]=="AddLevel2Node":
-                parentId = self.package.currentNode.id[0]
-                parentNode = self.package.root.findNode(parentId)
+            if request.args["action"][0] == "AddLevel2Node":
+                parentId   = self.package.currentNode.id[:1]
+                parentNode = self.package.findNode(parentId)
                 self.package.currentNode = parentNode.createChild()
                 
-            if request.args["action"]=="AddLevel3Node":
-                parentId = self.package.currentNode.id[ : 2]
-                parentNode = self.package.root.findNode(parentId)
+            if request.args["action"][0] == "AddLevel3Node":
+                parentId   = self.package.currentNode.id[:2]
+                parentNode = self.package.findNode(parentId)
                 self.package.currentNode = parentNode.createChild()
+
             
             
     def render(self):
-        #Returns an XHTML string for viewing this pane
-        
-        html = common.submitLink(_("Add") + self.package.levelNames[0], "AddLevel1Node", "")+ "<br/>" 
+        """
+        Returns an XHTML string for viewing this pane
+        """
+        html = common.submitLink(_("Add ") + self.package.levelNames[0], 
+                                 "AddLevel1Node", "") + "<br/>\n" 
        
         if len(self.package.currentNode.id) > 0:
-            html += common.submitLink(_("Add") + self.package.levelNames[1], "AddLevel2Node", "")
-            html += "<br/>"
+            html += common.submitLink(_("Add ") + self.package.levelNames[1], 
+                                      "AddLevel2Node", "") + "<br/>\n"
         else:
-            html += "Add %s<br/>" %self.package.levelNames[1]
+            html += _("Add ") + self.package.levelNames[1] + "<br/>\n"
             
         if len(self.package.currentNode.id) > 1:
-            html += common.submitLink(_("Add") + self.package.levelNames[2], "AddLevel3Node", "") 
-            html += "<br/>"
+            html += common.submitLink(_("Add ") + self.package.levelNames[2], 
+                                      "AddLevel3Node", "") + "<br/>\n"
         else:
-            html += "Add %s<br/>" %self.package.levelNames[2]    
+            html += _("Add ") + self.package.levelNames[2] + "<br/>\n"
             
         return html
         
