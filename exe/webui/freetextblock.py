@@ -60,7 +60,8 @@ class FreeTextBlock(Block):
 
     def processDelete(self, request):
         Block.processDelete(self, request)
-        self.parentNode.deleteIdevice(self.id)
+        oldIndex = self.parentNode.findIdevice(self.id)
+        del self.parentNode.idevices[oldIndex]
 
     def processMove(self, request):
         Block.processMove(self, request)
@@ -70,7 +71,7 @@ class FreeTextBlock(Block):
         node.idevices.append(self.idevice)
 
         oldIndex = self.parentNode.findIdevice(self.id)
-        del self.parentNode[oldIndex]
+        del self.parentNode.idevices[oldIndex]
         self.parentNode = node
 
     def processMovePrev(self, request):
