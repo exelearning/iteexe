@@ -69,9 +69,7 @@ class AuthoringPage(Resource):
         self.menuPane.process(request)
         
         # Rendering
-        html  = "<html><head><title>"+_("eXe")+"</title>\n"
-        html += common.genJavascript()
-        html += "</head>\n"
+        html  = common.header()
         title = package.currentNode.title
         if title == "":
             title = package.currentNode.idStr()

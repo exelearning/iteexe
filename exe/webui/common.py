@@ -28,17 +28,23 @@ _   = gettext.gettext
 
 
 def header():
-    html  = "<html>\n"
-    html  = "<head>\n"
+    
+    html = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
+    html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+    html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+    html += "<style type=\"text/css\">\n"
+    html += "@import url(css/main.css); </style>\n"
+    html += genJavascript()
+    html += "<head>\n"
     html += "<title>"+_("eXe")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
     html += "</head>\n"
     return html
 
-def banner(heading = _("eXe: eLearning XML Editor")): 
+def banner(heading = _("eXe: eLearning XML editor")): 
     html  = "<body>\n"
     html += "<h1>"+heading+"</h1>\n"
-    html += "<hr/>\n"
+    html += "<hr />\n"
     return html
 
 def footer():

@@ -23,6 +23,7 @@
 
 from twisted.internet import reactor
 from twisted.web import server
+from twisted.web import static
 import os
 import sys
 from exe.engine.config import Config
@@ -46,7 +47,9 @@ def main():
     log.info("Starting eXe")
     
     root   = NewPackagePage()
-    
+    root.putChild("images", static.File("images"))
+    root.putChild("css", static.File("css"))   
+ 
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)
     reactor.run()
