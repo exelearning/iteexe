@@ -38,6 +38,7 @@ def docType():
 def header():
     """Generates the common header XHTML"""
     # NB: Authoring Page has its own header
+    html  = docType()
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<head>\n"
     html += "<style type=\"text/css\">\n"
