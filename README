@@ -1,0 +1,23 @@
+Welcome to eXe: eLearning XML editor
+
+Unzip the package
+Run server.exe 
+
+The first time you run you may get asked if you want to allow eXe
+to access the internet.  eXe does NOT require access to the internet,
+just select the option to block its access.
+
+If Firefox is not your default browser, open Firefox and load the
+URL http://localhost:8081.
+
+This is a pre-release (0.1.183).  The interface will be changing.
+We only support Firefox for the browser.  This will not render
+well in Internet Explorer.  We have limited functionality.  
+There are bugs.  
+
+Have a nice day!
+
+
+2005-02-01 DJM
+If you have problems post on the wiki http://exe.cfdl.auckland.ac.nz
+or email me djm@software.net.nz.
