@@ -21,8 +21,8 @@ import logging
 import gettext
 from exe.webui.block               import Block
 from exe.webui.blockfactory        import g_blockFactory
-from exe.engine.multichoiceidevice import MultichoiceIdevice
-from exe.webui.optionelement       import OptionElement
+from exe.engine.reflectionidevice  import ReflectionIdevice
+from exe.webui.questionelement     import QuestionElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
@@ -30,9 +30,9 @@ _   = gettext.gettext
 
 
 # ===========================================================================
-class MultichoiceBlock(Block):
+class ReflectionBlock(Block):
     """
-    MultichoiceBlock can render and process MultichoiceIdevices as XHTML
+    ReflectionBlock can render and process ReflectionIdevices as XHTML
     """
     def __init__(self, idevice):
         """
@@ -40,11 +40,12 @@ class MultichoiceBlock(Block):
         """
         Block.__init__(self, idevice)
         self.idevice = idevice
-        self.optionElements = []
-        self.question = idevice.question
+        self.questionElements = []
+        self.description = idevice.description
+
         i = 0
-        for option in idevice.options:
-            self.optionElements.append(OptionElement(i, idevice, option))                                              
+        for question in idevice.questions:
+            self.questionElements.append(QuestionElement(i, idevice, question))                                              
             i += 1
 
     def process(self, request):
@@ -53,16 +54,16 @@ class MultichoiceBlock(Block):
         """
         Block.process(self, request)
         
-        quesId = "ques"+str(self.id)
-        if quesId in request.args:
-            self.idevice.question = request.args[quesId][0]
+        descId = "desc"+str(self.id)
+        if descId in request.args:
+            self.idevice.description = request.args[descId][0]
             
-        if ("addOption"+str(self.id)) in request.args: 
-            self.idevice.addOption()
+        if ("addQuestion"+str(self.id)) in request.args: 
+            self.idevice.addQuestion()
 
-        for element in self.optionElements:
+        for element in self.questionElements:
             element.process(request)
-
+        
 
     def processMove(self, request):
         """
@@ -97,23 +98,19 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-    
-        self.question = self.question.replace("\r", "")
-        self.question = self.question.replace("\n","\\n")
-        self.question = self.question.replace("'","\\'")
-        html  = "<b>" + _("Question:") + "</b><br/>"       
-        html += common.richTextArea("ques"+self.id, self.question)
+        html  = "<b>" + _("Description:") + "</b><br/>"       
+        html += common.textArea("desc"+self.id, self.description)
         html += "<div>\n"
-        html += "<table><th>%s</th>" % _("Key")
+        html += "<table><th>%s</th>" % ""
+        html += "<th>%s</th>" % _("Question:")
         html += "<th>%s</th>" % _("Answer:")
-        html += "<th>%s</th>" % _("Feedback")
 
-        for element in self.optionElements:
+        for element in self.questionElements:
             html += element.renderEdit() 
             
         html += "</table>\n"
             
-        html += common.submitButton("addOption"+str(self.id), _("AddOption"))
+        html += common.submitButton("addQuestion"+str(self.id), _("AddQuestion"))
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html
@@ -126,28 +123,31 @@ class MultichoiceBlock(Block):
         html  = "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
-                function getFeedback(optionId, optionsNum, ideviceId){
-                
-                    for (i = 0; i< optionsNum; i++){   
-                        id = "s" + i + "b" +ideviceId
-                        if(i == optionId)
-                            document.getElementById(id).style.display = "block";
-                        else
-                            document.getElementById(id).style.display = "None";
+                function showAnswer(blockId){
+                    var buttonName = "button" + blockId
+                    if (window.form[0].buttonName.value=="Show Answers") {              
+                        document.getElementById(id).style.display = "none";
+                        window.form[0].buttonName.value=="Hide Answers"
+                    }else{
+                        document.getElementById(id).style.display = "block";
+                        window.form[0].buttonName.value=="Show Answers"
                     }
-                }\n"""            
+                }\n"""           
         html += "//-->\n"
         html += "</script>\n"
         html += "<div id=\"iDevice\">\n"
         html += "<b>" + self.question + "</b><br/>"
         html += "<table>"
-        for element in self.optionElements:
-            html += element.renderAnswerView()
-            
+        for element in self.questionElements:
+            html += element.renderquestionView()       
+                       
         html += "</table>"
-            
-        for element in self.optionElements:
-            html += element.renderFeedbackView()
+        html += '<input type="button" name = "%s" value = "Show Answers"' % self.id
+        html += 'onclick = "showAnswer("%s")"/>' % self.id
+        html += ' View our suggested answers. <br/> \n'
+        
+        for element in self.questionElements:
+            html += element.renderAnswerView()
     
         html += "</div>\n"
         return html
@@ -160,35 +160,41 @@ class MultichoiceBlock(Block):
         html  = "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
-                function getFeedback(optionId, optionsNum, ideviceId){
-                
-                    for (i = 0; i< optionsNum; i++){   
-                        id = "s" + i + "b" +ideviceId
-                        if(i == optionId)
-                            document.getElementById(id).style.display = "block";
-                        else
-                            document.getElementById(id).style.display = "None";
-                    }
-                }\n"""            
+                function showAnswer(id){            
+                        document.getElementById(id).style.display = "block";
+                }\n"""           
         html += "//-->\n"
         html += "</script>\n"
         html += "<div id=\"iDevice\">\n"
-        html += "<b>" + self.question + "</b><br/>"
+        html += "<b>" + self.description + "</b><br/>"
         html += "<table>"
-        for element in self.optionElements:
+        for element in self.questionElements:
+            html += element.renderQuestionView()       
+        buttonName = "button" + self.id              
+        html += "</table>"
+        html += '<input type="button" name ="%s"' % buttonName
+        html += ' value ="%s"' % _("Click here")
+      #  buttonName1 = "document.contentForm." + buttonName
+        html += 'onclick ="showAnswer(\'%s\');"/>' %("s"+self.id) 
+        html += ' View our suggested answers. <br/> \n'
+        
+        html += '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
+        #display = "none"
+        html += 'display: none;">' 
+        
+        html += "<table>"       
+        for element in self.questionElements:
             html += element.renderAnswerView()
             
         html += "</table>"
             
-        for element in self.optionElements:
-            html += element.renderFeedbackView()
-      
+        html += '</div>\n'
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
 
 
-g_blockFactory.registerBlockType(MultichoiceBlock, MultichoiceIdevice)
+g_blockFactory.registerBlockType(ReflectionBlock, ReflectionIdevice)
 
 
 # ===========================================================================

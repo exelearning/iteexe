@@ -26,7 +26,7 @@ _   = gettext.gettext
 # ===========================================================================
 class OptionElement(object):
     """
-    OptionElment is responsible for a block of text.  Used by GenericBlock
+    OptionElment is responsible for a block of option.  Used by MultichoiceBlock
     """
     def __init__(self, index, idevice, option):
         """
