@@ -24,14 +24,24 @@
 var objBrowse = navigator.appName;
 
 function showMe(ident, w, h){
+   
+    var elmDiv = document.getElementById('popupmessage')
+
     hideMe()
-    var elmDiv = document.createElement('div')
-    elmDiv.id  = 'popupmessage'
-    elmDiv.className="popupDiv"
-    elmDiv.style.cssText = 'position:absolute; left: ' + (xpos - w/2) + 'px; top: ' + (ypos - h) + 'px; width: ' + w + 'px;'
-    elmDiv.innerHTML = document.getElementById(ident).innerHTML
-    document.body.appendChild(elmDiv)
-    new dragElement('popupmessage')
+        
+    if ((!elmDiv) || elmDiv.innerHTML !== document.getElementById(ident).innerHTML){
+
+        var elmDiv = document.createElement('div')
+        elmDiv.id  = 'popupmessage'
+        elmDiv.className="popupDiv"
+        elmDiv.style.cssText = 'position:absolute; left: ' + (xpos - w/2) + 
+                               'px; top: '+(ypos - h) + 'px; width: ' + w + 'px;'
+        elmDiv.innerHTML = document.getElementById(ident).innerHTML
+        document.body.appendChild(elmDiv)
+        new dragElement('popupmessage')
+
+    }
+    
 }
             
 function hideMe() {
@@ -43,12 +53,12 @@ function hideMe() {
 
 function updateCoords(e) {
     if (objBrowse == "Microsoft Internet Explorer") {
-        xpos = e.offsetX
-        ypos = e.offsetY
+        xpos = e.offsetX;
+        ypos = e.offsetY;
     }
     else {
-        xpos = e.pageX
-        ypos = e.pageY
+        xpos = e.pageX;
+        ypos = e.pageY;
     }
 }
 
