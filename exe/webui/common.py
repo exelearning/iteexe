@@ -30,10 +30,11 @@ _   = gettext.gettext
 def header():
     
     html = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
-    html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+    html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
+    html += "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<style type=\"text/css\">\n"
-    html += "@import url(css/main.css); </style>\n"
+    html += "@import url(http://localhost:8081/css/main.css); </style>\n"
     html += genJavascript()
     html += "<head>\n"
     html += "<title>"+_("eXe")+"</title>\n"
@@ -43,12 +44,12 @@ def header():
 
 def banner(heading = _("eXe: eLearning XML editor")): 
     html  = "<body>\n"
-    html += "<h1>"+heading+"</h1>\n"
-    html += "<hr />\n"
+    html += "<div id=\"header\">"+heading+"</div>\n"
+    html += "<div id=\"main\">\n"
     return html
 
 def footer():
-    html  = "</body></html>\n"
+    html  = "</div></body></html>\n"
     return html
     
 def hiddenField(name, value=""):
@@ -59,7 +60,7 @@ def hiddenField(name, value=""):
 def textInput(name, value=""):
     html  = "<input type=\"text\" name=\"%s\" " % name
     html += "value=\"%s\"" % value
-    html += "size=\"60\" />\n" 
+    html += "size=\"40\" />\n" 
     return html
 
 def textArea(name, value=""):
@@ -74,7 +75,7 @@ def submitButton(name, value, enabled=True):
     else:
         disable = "disabled"
     html  = "<input type=\"submit\" name=\"%s\" " % name
-    html += "value=\"%s\" " %  value
+    html += "value=\"%s\" " % value
     html += disable+" />\n"
     return html
 
@@ -96,8 +97,11 @@ function submitLink(action, object)
 """
     return html
 
-def submitLink(name, action, object):
-    html  = "<a href=\"#\" onclick=\"submitLink('" + action
+def submitLink(name, action, object, class_=""):
+    html  = "<a "
+    if class_ != "":
+        html += "class=\""+class_+"\" "
+    html += "href=\"#\" onclick=\"submitLink('" + action
     html += "', '" + object + "')\" >"
     html += name
     html += "</a>\n"

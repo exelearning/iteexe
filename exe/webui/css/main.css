@@ -1,0 +1,55 @@
+/*  ===========================================================================
+ eXe
+ Copyright 2004-2005, University of Auckland
+
+ webui styles.
+   =========================================================================== */
+   
+
+body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 6px 0px 6px;
+	font-family: arial, verdana, helvetica, sans-serif;
+	font-size: 13px;
+	background: #CCC;
+	}
+
+#main {
+	margin: 4px 8px 10px 8px;
+	}	
+
+#header {font-size: 20px;
+	 font-weight: bold;}	
+	
+/* outline container */
+
+#outline 
+	{ background-color: #FFFFFF;
+	  width: 200px;
+	  margin-top: 12px;
+	  float: left; 
+	  border: 1px solid #807D74;
+	  -moz-border-radius: 6px;}
+				
+#outline ul
+	{list-style-type: decimal;}
+
+#outline li  a.action
+	{font-size: 10px;
+	 }
+
+#outline li  a.action:hover
+	{background-color: #CCCC99;
+         border: 1px solid #000;
+	 text-decoration: none;
+	 }
+	 
+#outline a:link, #outline a:visited
+{
+color: #96852C;
+text-decoration: none;
+}
+
+#outline a:hover
+{text-decoration: underline;}	
+		

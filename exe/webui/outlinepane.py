@@ -54,7 +54,7 @@ class OutlinePane(object):
 
     def getChildrenTitles(self, node):
         """
-        Recursive function for getting childern's titles 
+        Recursive function for getting children's titles 
         """
         log.debug("getChildrenTitles for node="+node.idStr())
 
@@ -70,7 +70,7 @@ class OutlinePane(object):
 
         childLevel = self.package.levelName(len(node.id) - 1);
         html += common.submitLink(_(" Add ")+childLevel, 
-                                  "addChild", node.idStr())      
+                                  "addChild", node.idStr(), "action")      
 
         if len(node.children) > 0:
             html += "<ul>\n"
