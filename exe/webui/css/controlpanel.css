@@ -46,6 +46,7 @@ position: relative;
 z-index: 3;
 }
 
+
 #workbox-top a.img, body.hidden #workbox-top a.img{
 top: .3em;
 background: transparent;
@@ -54,9 +55,11 @@ padding-top: .2em;
 padding-bottom: -.4em;
 }
 
+
 body.hidden #workbox-top a{
 border-bottom-width: 2px;
 }
+
 
 .links, #other-modules{
 padding: .7em;
@@ -71,10 +74,11 @@ margin-top: -2px;
 width: 14.2em;
 }
 
+
 #other-modules{
 margin-top: 0;
-background-image: url(features.gif); background-repeat: repeat-x;
 }
+
 
 #workbox-top{
 width: 14.2em;
@@ -90,7 +94,17 @@ width: 15.9em;
 clear: both;
 }
 
-#workbox-content ul {list-style-type: none;}
+/* moves the list of added sections to the left, but adds some indentation */
+
+#workbox-content ul {list-style-type: none;
+margin-left: 0px;
+padding-left: 0px;}
+
+#node_actions li {
+margin-left: 10px;
+padding-left: 10px;
+}
+
 
 .link-section a, a.module, .style-choices a, .other-courses a, .other-modules{
 display: block;
@@ -133,9 +147,11 @@ width: 12.9em;
 display: block;
 }
 
+/*
 li>a.name{
 width: 15.1em;
 }
+*/
 
 .link-section, .style-choices, .other-courses{
 margin-bottom: .7em;
