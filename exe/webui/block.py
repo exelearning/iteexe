@@ -164,17 +164,17 @@ class Block(object):
         """
         Returns the appropriate XHTML string for whatever mode this block is in
         """
+        html = ""
         if self.mode == Block.Edit:
-            return self.renderEdit()
+            html = self.renderEdit()
 
         elif self.mode == Block.View:
-            return self.renderView()
+            html = self.renderView()
         
         elif self.mode == Block.Preview:
-            return self.renderPreview()
+            html = self.renderPreview()
 
-        else:
-            return ""
+        return html
 
 
     def renderEdit(self):
@@ -195,12 +195,21 @@ class Block(object):
         html += common.submitImage("delete", self.id, 
                                    "stock-cancel.png", 
                                    _("Delete"))
-        html += common.submitImage("movePrev", self.id, 
-                                   "stock-go-up.png", 
-                                   _("Move Up"))
-        html += common.submitImage("moveNext", self.id, 
-                                   "stock-go-down.png", 
-                                   _("Move Down"))
+
+        if self.idevice.isFirst():
+            html += common.image("stock-go-up-off.png")
+        else:
+            html += common.submitImage("movePrev", self.id, 
+                                       "stock-go-up.png", 
+                                       _("Move Up"))
+
+        if self.idevice.isLast():
+            html += common.image("stock-go-down-off.png")
+        else:
+            html += common.submitImage("moveNext", self.id, 
+                                       "stock-go-down.png", 
+                                       _("Move Down"))
+
         options  = [(_("---Move To---"), "")]
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
         options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
