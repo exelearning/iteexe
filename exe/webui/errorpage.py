@@ -18,8 +18,7 @@
 # ===========================================================================
 
 """
-PackageRedirectPage is the first screen the user loads.  It doesn't show
-anything it just redirects the user to a new package.
+Displays a page with an error message
 """
 
 import logging
@@ -34,9 +33,7 @@ _   = gettext.gettext
 
 class ErrorPage(Resource):
     """
-    PackageRedirectPage is the first screen the user loads.  It doesn't show
-    anything it just redirects the user to a new package or loads an existing 
-    package.
+    Displays a page with an error message
     """
     
     def __init__(self, errMessage):
@@ -50,9 +47,7 @@ class ErrorPage(Resource):
        """
        Get the child page for the name given
        """
-       if request.getClientIP() != '127.0.0.1':
-           return ForbiddenResource(_("Access from remote clients forbidden"))
-       elif name == '':
+       if name == '':
            return self
        else:
            return Resource.getChild(self, name, request)
