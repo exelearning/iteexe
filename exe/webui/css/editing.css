@@ -28,6 +28,8 @@ border:1px solid #C0C0C0;
 	-moz-border-radius: 6px;
 	}	
 
+p.prev_edit { float: right;}
+
 /* heading styles */
 
 
@@ -36,6 +38,7 @@ p.nodeTitle { color: #51778A;
         padding: 2px;
         border-top: 1px solid #FFF;
 	border-bottom: 1px solid #FFF;
+        display: inline;
 	}
 	
 		

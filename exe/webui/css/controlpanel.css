@@ -13,13 +13,14 @@ margin-left: 7px;
 }
 
 * html #workbox{
-width: 14.2em;
+  width: 14.2em;
 }
 
+/*
 body>#workbox{
 margin-right: 6px;
-
 }
+*/
 
 #workbox-top a{
 text-decoration: none;
@@ -37,6 +38,7 @@ z-index: 1;
 position: relative;
 float: left;
 }
+
 
 #workbox-top a.on{
 background: #eee;

@@ -115,16 +115,18 @@ class TitleBlock(Block):
         Returns an XHTML string for previewing this title
         """
         html  = "<div>\n"
-        html += self.renderView()
+        html += "<p class=\"prev_edit\">\n"
+	html += self.__renderNodeActions()
+        html += "</p>\n"
+	html += self.renderView()
         html += common.submitImage("edit", self.id,
-                                   "stock-edit.png", _("Edit"))
-        html += self.__renderNodeActions()
-        html += "</div>\n"
+                                   "stock-edit.png", _("Edit this Title"))
+	html += "</div>\n"
         return html
 
     def __renderNodeActions(self):
         html  = common.submitImage("PreviewAll", self.id,
-                                   "stock-apply.png", _("Preview All"))
+                                   "edit.gif", _("Preview All"))
         html += common.submitImage("EditAll", self.id,
                                    "stock-edit.png", _("Edit All"))
         return html
