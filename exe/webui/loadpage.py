@@ -48,32 +48,36 @@ class LoadPage(Resource):
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
+        self.err = False
+        self.message  = ""
         
     def process(self, request):
         log.debug("process" + repr(request.args))
         
+        self.err = False              
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
-        
-#        if "load" in request.args: 
-        if "action" in request.args and request.args["action"][0] == "Load":
-            dataDir = g_webInterface.config.getDataDir()
-            os.chdir(dataDir)
+
+        if "action" in request.args and request.args["action"][0] == "Load":           
             if "saveChk" in request.args:
+                dataDir = g_webInterface.config.getDataDir()
+                os.chdir(dataDir)
                 fileName = self.package.name + ".pkg"                
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
                 outfile.close()
                 
-#            log.debug("filename and path" + repr(request.args["fileName"][0]))
-#            infile = open(request.args["fileName"][0])
-            filePath = request.args["object"][0]
-            log.debug("filename and path" + filePath)
-            infile = open(filePath)
-            package = pickle.load(infile)
-            self.package = package
-            g_packageStore.addPackage(package)
-            
+            try:            
+                filePath = request.args["object"][0]
+                log.debug("filename and path" + filePath)
+                infile = open(filePath)
+                package = pickle.load(infile)                
+            except:
+                self.message = _("Sorry, wrong file format.")
+                self.err = True
+            else:
+                self.package = package
+                g_packageStore.addPackage(package)
 
     def render_GET(self, request):
         
@@ -87,11 +91,13 @@ class LoadPage(Resource):
         html  = common.header()
         html += common.banner()
         html += self.menuPane.render()
-        html += "<form method=\"post\" name=\"contentForm\" onload=\"clearHidden();\" action=\"%s\">\n" % request.path
+        html += "<br/><b>" + self.message + "</b><br/>"
+        html += "<form method=\"post\" name=\"contentForm\" onload=\"clearHidden();"
+        html += "\"action=\"%s\">\n" % request.path
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += "<br/>" + _("Would you like to save current changes?") + "<br/>\n"
-        #html += "<pre>%s</pre>\n" % str(request.args)
+        html += "<pre>%s</pre>\n" % str(request.args)
         html += "<input type=\"checkbox\" name=\"saveChk\" checked>\n"
         html += _(" Save the current package") + "<br/><br/>\n"    
         html += _(" Please select a file") + "<br/>\n"
@@ -101,6 +107,7 @@ class LoadPage(Resource):
         html += "<br/></form>\n"
         
         html += common.footer()
+        self.message = ""
         
         return html
     
@@ -109,30 +116,33 @@ class LoadPage(Resource):
         log.debug("render_POST" + repr(request.args))
         
         self.process(request)
-        package = g_packageStore.getPackage(self.package.name)
-        log.info("getting an existing package name="+ package.name)
-        authoringPage = AuthoringPage()
-        g_webInterface.rootPage.putChild(package.name, authoringPage)
-        propertiesPage = PropertiesPage()
-        authoringPage.putChild("properties", propertiesPage)
-        savePage = SavePage()
-        authoringPage.putChild("save", savePage)
-        loadpage = LoadPage()
-        authoringPage.putChild("load", loadpage) 
-        exportPage = ExportPage()
-        authoringPage.putChild("export", exportPage)
-                     
-        # Rendering
-        html  = "<html><head><title>"+_("eXe")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
-        html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
-        html += package.name
-        html += "\">\n"
-        html += "</head>\n"
-        html += common.banner(_("New Package"))
-        html += _("Welcome to eXe")
-        html += common.footer()
-        return html
+        if self.err:
+            return self.render_GET(request)
+        else:
+            package = g_packageStore.getPackage(self.package.name)
+            log.info("getting an existing package name="+ package.name)
+            authoringPage = AuthoringPage()
+            g_webInterface.rootPage.putChild(package.name, authoringPage)
+            propertiesPage = PropertiesPage()
+            authoringPage.putChild("properties", propertiesPage)
+            savePage = SavePage()
+            authoringPage.putChild("save", savePage)
+            loadpage = LoadPage()
+            authoringPage.putChild("load", loadpage) 
+            exportPage = ExportPage()
+            authoringPage.putChild("export", exportPage)
+                         
+            # Rendering
+            html  = "<html><head><title>"+_("eXe")+"</title>\n"
+            html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
+            html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
+            html += package.name
+            html += "\">\n"
+            html += "</head>\n"
+            html += common.banner(_("New Package"))
+            html += _("Welcome to eXe")
+            html += common.footer()
+            return html
 
     
     
