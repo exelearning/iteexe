@@ -49,7 +49,7 @@ def launchBrowser(port):
         os.system("start http://localhost:%d"%port)
     else:
         os.system("htmlview http://localhost:%d&"%port)
-    print "Welcome to the eXe: packtest"
+    print "Welcome to eXe: the eLearning XML editor"
 
 if __name__ == "__main__":
     main()
