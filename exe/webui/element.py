@@ -103,10 +103,11 @@ class TextAreaElement(Element):
     """
     TextAreaElement is responsible for a block of text
     """
-    def renderEdit(self, content):
+    def renderEdit(self, content, width="100%", height=100):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        log.debug("renderEdit content="+content+", height="+str(height))
         content = content.replace("\r", "")
         content = content.replace("\n","\\n")
         content = content.replace("'","\\'")
@@ -114,7 +115,7 @@ class TextAreaElement(Element):
         html  = "<b>"+self.name
         html += common.elementInstructions(self.name+self.id, self.instruction)
         html += ":</b><br/>\n"
-        html += common.richTextArea(self.id, content)
+        html += common.richTextArea(self.id, content, width, height)
         
         return html
 

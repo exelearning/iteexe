@@ -57,7 +57,7 @@ class FreeTextBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div>\n"
-        html += self.contentField.renderEdit(self.idevice.content)
+        html += self.contentField.renderEdit(self.idevice.content, height=200)
         html += self.renderEditButtons()
         html += "</div>\n"
         return html

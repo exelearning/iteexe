@@ -77,12 +77,14 @@ def textInput(name, value="", size=40):
 
 def textArea(name, value=""):
     """Adds a text area to a form"""
+    log.debug("textArea "+value)
     html  = "<textarea name=\"%s\" " % name
     html += "cols=\"52\" rows=\"8\">%s" % value
     html += "</textarea><br/>"
     return html
 
 def richTextArea(name, value="", width="100%", height=100):
+    log.debug("richTextArea "+value+", height="+str(height))
     html  = "<script type=\"text/javascript\">\n"
     html += "<!--\n"
     html += "    var editor = new FCKeditor('"+name+"', '"
