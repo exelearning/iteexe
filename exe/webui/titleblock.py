@@ -34,21 +34,21 @@ class TitleBlock(Block):
     TitleBlock is for rendering node titles
     """
     def __init__(self, node):
-        Block.__init__(self, edit=True)
+        Block.__init__(self, node.parent, node.idStr())
         self.node = node
 
-    def processDone(self, request):
-        Block.processDone(self, request)
-        if "title%d"%self.id in request.args:
-            self.node.title = request.args["title%d"%self.id][0]
+    def process(self, request):
+        Block.process(self, request)
+        if "nodeTitle"+self.id in request.args:
+            self.node.title = request.args["nodeTitle"+self.id][0]
 
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this title
         """
         html  = "<div>\n"
-        html += common.textInput("title%d"%self.id, self.node.title)
-        html += common.submitButton("done%d"%self.id, _("Done"))
+        html += common.textInput("nodeTitle"+self.id, self.node.title)
+        html += common.submitButton("done"+self.id, _("Done"))
         html += "</div>\n"
         return html
 
@@ -58,8 +58,8 @@ class TitleBlock(Block):
         Returns an XHTML string for viewing this title
         """
         html  = "<div>\n"
-        html += "<h1 class=\"title\">" + self.node.title + "</h1>"
-        html += common.submitButton("edit%d"%self.id, _("Edit"))
+        html += "<h1 class=\"nodeTitle\">" + self.node.title + "</h1>"
+        html += common.submitButton("edit"+self.id, _("Edit"))
         html += "</div>\n"
         return html
 

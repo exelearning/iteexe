@@ -26,8 +26,9 @@ from twisted.web import server
 import os
 import sys
 from twisted.web.resource import Resource
-from authoringpane import AuthoringPane
 from exe.engine.packagestore import g_packageStore
+from exe.webui.authoringpage import AuthoringPage
+from exe.webui.authoringpane import AuthoringPane
 
 class TestPage(Resource):
     def __init__(self):
@@ -68,8 +69,7 @@ def main():
 
     
     root = TestPage()
-    child = TestPage()
-#    child.isLeaf = True
+    child = AuthoringPage()
     root.putChild("course1", child)
     
     reactor.listenTCP(port, server.Site(root))

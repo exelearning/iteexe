@@ -39,7 +39,15 @@ class AuthoringPane(object):
         self.topNode    = topNode
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
-        self.addBlocks(topNode)
+
+
+    def process(self, request):
+        """
+        Delegates processing of args to blocks
+        """            
+        self.addBlocks(self.topNode)
+        for block in self.blocks:
+            block.process(request)
 
 
     def addBlocks(self, node):
@@ -50,7 +58,7 @@ class AuthoringPane(object):
         self.blocks.append(TitleBlock(node))
 
         for idevice in node.idevices:
-            block = g_blockFactory.createBlock(idevice)
+            block = g_blockFactory.createBlock(node, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
@@ -64,25 +72,15 @@ class AuthoringPane(object):
             self.blocks.append(LinkBlock(node))
 
 
-    def process(self, request):
-        """
-        Delegates processing of args to blocks
-        """
-        self.url = request.path
-        for block in self.blocks:
-            block.process(request)
-
-
     def render(self):
         """
         Returns an XHTML string for viewing this pane
         """
-        html  = "<form method=\"post\" action=\"%s\">\n" % self.url
+        html  = ""
 
         for block in self.blocks:
             html += block.render()
 
-        html += "</form>\n"
         return html
         
 # ===========================================================================

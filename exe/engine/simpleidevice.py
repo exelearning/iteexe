@@ -29,6 +29,7 @@ class SimpleIdevice(Idevice):
     SimpleIdevice 
     """
     def __init__(self, title="", content=""):
+        Idevice.__init__(self)
         self.title   = title
         self.content = content
 

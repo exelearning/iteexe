@@ -33,6 +33,7 @@ class LinkBlock(Block):
     LinkBlock can render nodes as links
     """
     def __init__(self, node):
+        Block.__init__(self, node.parent, node.idStr(), mode=Block.View)
         self.node = node
         self.url  = ""
 

@@ -28,11 +28,11 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Idevice(object):
+    nextId = 1
     def __init__(self):
         self.edit = True
-
-    def createBlock(self):
-        pass
+        self.id   = str(Idevice.nextId)
+        Idevice.nextId += 1
 
 
 # ===========================================================================

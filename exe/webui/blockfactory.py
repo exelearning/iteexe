@@ -45,13 +45,13 @@ class BlockFactory(object):
                   ideviceType.__name__)
         self.blockTypes.append((blockType, ideviceType))
 
-    def createBlock(self, idevice):
+    def createBlock(self, parentNode, idevice):
         """
         Returns a Block object which can render this Idevice
         """
         for blockType, ideviceType in self.blockTypes:
             if isinstance(idevice, ideviceType):
-                return blockType(idevice)
+                return blockType(parentNode, idevice)
         
         log.error("No blocktype registered for", type(idevice).__name__)
         return None

@@ -70,6 +70,13 @@ class Node:
     def idStr(self):
         return ".".join([str(x) for x in self.id])
 
+    def deleteIdevice(self, id):
+        index = 0
+        for idevice in self.idevices:
+            if idevice.id == id:
+                del self.idevices[index]
+                break
+            index += 1
         
             
         

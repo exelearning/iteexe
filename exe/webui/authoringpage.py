@@ -24,6 +24,8 @@ from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
+from exe.webui.idevicepane   import IdevicePane
+from exe.webui.authoringpane import AuthoringPane
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -39,29 +41,40 @@ class AuthoringPage(Resource):
         Resource.__init__(self)
 
 
-    def processAction(self, name, action):
-        if action == "Add":
-            if name not in self.listNames():
-                self.putChild(name, AuthoringPage())
-
-
     def getChild(self, name, request):
         if name == '':
             return self
         else:
-            if "action" in request.args:
-                self.processAction(name, request.args["action"][0])
-
             return Resource.getChild(self, name, request)
 
 
     def render_GET(self, request):
-        """Create a new package and redirect the webrowser to the URL for it"""
+        """Called for all requests to this object"""
+        package       = g_packageStore.getPackage(request.prepath[0])
+        idevicePane   = IdevicePane(package.currentNode)
+        authoringPane = AuthoringPane(package.currentNode)
+
+        # Processing
+        idevicePane.process(request)
+        authoringPane.process(request)
 
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
+        html += common.genJavascript()
         html += "</head>\n"
         html += common.banner(_("eXe"))
-        html += _("Welcome to eXe")
+
+        #html += "<pre>"+repr(request.args)+"</pre>\n"
+
+        html += "<form method=\"post\" action=\"%s\"" % request.path
+        html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
+        html += common.hiddenField("action")
+        html += common.hiddenField("object")
+        html += idevicePane.render()
+        html += authoringPane.render()
+        html += "</form>\n"
         html += common.footer()
         return html
+
+    render_POST = render_GET
+

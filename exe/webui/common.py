@@ -47,13 +47,13 @@ def footer():
     
 def hiddenField(name, value=""):
     html  = "<input type=\"hidden\" name=\"%s\" " % name
-    html += "value=\"%s\">\n" % value
+    html += "value=\"%s\" />\n" % value
     return html
 
 def textInput(name, value=""):
     html  = "<input type=\"text\" name=\"%s\" " % name
     html += "value=\"%s\"" % value
-    html += "size=\"60\">\n" 
+    html += "size=\"60\" />\n" 
     return html
 
 def textArea(name, value=""):
@@ -69,10 +69,33 @@ def submitButton(name, value, enabled=True):
         disable = "disabled"
     html  = "<input type=\"submit\" name=\"%s\" " % name
     html += "value=\"%s\" " %  value
-    html += disable+" >\n"
+    html += disable+" />\n"
     return html
 
+def genJavascript():
+    html = """\
+<script language="Javascript">
+function clearHidden()
+{
+    document.contentForm.action.value = "";
+    document.contentForm.object.value = "";
+}
+function submitLink(action, object) 
+{
+    document.contentForm.action.value = action;
+    document.contentForm.object.value = object;
+    document.contentForm.submit();
+}
+</script>
+"""
+    return html
 
+def submitLink(name, action, object):
+    html  = "<a href=\"#\" onclick=\"submitLink('" + action
+    html += "', '" + object + "')\" >"
+    html += name
+    html += "</a>\n"
+    return html
 
 if __name__ == "__main__":
     print header()

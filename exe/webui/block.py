@@ -32,29 +32,39 @@ class Block(object):
     rendering and processing Idevices in XHTML
     """
     nextId    = 0
+    Edit, View, Hidden = range(3)
 
-    def __init__(self, edit=False):
-        self.id   = Block.nextId
-        self.edit = edit
-        Block.nextId += 1 
+    def __init__(self, parentNode, id, mode=Edit):
+        self.parentNode = parentNode
+        self.id         = id
+        self.mode       = mode
 
     def process(self, request):
-        if "done%d" % self.id in request.args:
+        if "done"+self.id in request.args:
             self.processDone(request)
-        elif "edit%d" % self.id in request.args:
+        elif "edit"+self.id in request.args:
             self.processEdit(request)
+        elif "delete"+self.id in request.args:
+            self.processDelete(request)
 
     def processDone(self, request):
-        self.edit = False
+        self.mode = Block.View
 
     def processEdit(self, request):
-        self.edit = True
+        self.mode = Block.Edit
+
+    def processDelete(self, request):
+        self.mode = Block.Hidden
 
     def render(self):
-        if self.edit:
+        if self.mode == Block.Edit:
             return self.renderEdit()
-        else:
+
+        elif self.mode == Block.View:
             return self.renderView()
+
+        else:
+            return ""
 
     def renderEdit(self):
         """
@@ -64,8 +74,8 @@ class Block(object):
         return "ERROR Block.renderEdit called directly"
 
     def renderEditButtons(self):
-        html  = common.submitButton("done%d" % self.id,   _("Done"))
-        html += common.submitButton("delete%d" % self.id, _("Delete"))
+        html  = common.submitButton("done"+self.id,   _("Done"))
+        html += common.submitButton("delete"+self.id, _("Delete"))
         return html
 
     def renderView(self):
@@ -76,7 +86,7 @@ class Block(object):
         return "ERROR Block.renderView called directly"
 
     def renderViewButtons(self):
-        html  = common.submitButton("edit%d" % id, _("Edit"))
+        html  = common.submitButton("edit"+self.id, _("Edit"))
         return html
 
 # ===========================================================================
