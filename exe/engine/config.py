@@ -71,8 +71,16 @@ class Config:
             self.dataDir = self.setting.get("system", "data-dir")
         else:
             if sys.platform[:3] == "win":
-                from exe.engine.winshell import personal_folder
-                self.dataDir = personal_folder()
+                from ctypes import WinDLL, create_string_buffer
+                dll = WinDLL('shell32')
+                # The '5' and the '0' from the below call come from
+                # google: "ShellSpecialConstants site:msdn.microsoft.com"
+                p = create_string_buffer(260)
+                res = dll.SHGetFolderPathA(None, 5, None, 0, p)
+                if res != 0: 
+                    self.dataDir = '/'
+                else: 
+                    self.dataDir = p.value
             else:
                 self.dataDir = os.environ["HOME"]
                 
