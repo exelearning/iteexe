@@ -28,12 +28,16 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-def header():
-    """Generates the common header XHTML"""
-    # NB: Authoring Page has its own header
+def docType():
+    """Generates the documentation"""
     html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
     html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+    return html
+
+def header():
+    """Generates the common header XHTML"""
+    # NB: Authoring Page has its own header
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<head>\n"
     html += "<style type=\"text/css\">\n"
@@ -76,10 +80,6 @@ def textArea(name, value=""):
     html  = "<textarea name=\"%s\" " % name
     html += "cols=\"52\" rows=\"8\">%s" % value
     html += "</textarea><br/>"
-# TODO: Find out what Brent was thinking???
-#    html  = "<fieldset class=\"fieldset\"><textarea name=\"%s\" " % name
-#    html += "class=\"textfield\">%s" % value
-#    html += "</textarea></fieldset><br />" 
     return html
 
 def richTextArea(name, value="", width="100%", height=100):
