@@ -33,7 +33,7 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, package):
+    def __init__(self, package, addMetadata=True):
         """
         Initialize
         """
@@ -46,6 +46,7 @@ class Manifest(object):
         self.idGenerator = UniqueIdGenerator(package.name)
         self.itemStr     = ""
         self.resStr      = ""
+        self.addMetadata = addMetadata
 
     def save(self):
         """
@@ -72,40 +73,48 @@ class Manifest(object):
         manifestId = self.idGenerator.generate()
         orgId      = self.idGenerator.generate()
         
-        self.xmlStr += """<?xml version="1.0" encoding="UTF-8"?>
-        <manifest identifier="%s" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+        xmlStr = """<?xml version="1.0" encoding="UTF-8"?>
+        <manifest identifier="%s" 
+        xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
-        http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
         """ % manifestId 
+
+        if self.addMetadata:
+            xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" \n"
+
+        xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
+        xmlStr += "imscp_v1p1 imscp_v1p1.xsd \n"
+        xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
+        xmlStr += "> \n"
+        xmlStr += "<metadata> \n"
+        xmlStr += " <schema>IMS Content</schema> \n"
+        xmlStr += "<schemaversion>1.1.3</schemaversion> \n"
+
+        if self.addMetadata:
+            xmlStr += "<dc:title>"+self.title+"</dc:title>\n"
+            xmlStr += "<dc:creator>"+self.author+"</dc:creator>\n"
+            xmlStr += "<dc:description>"+self.desc+"</dc:description>\n"
+            xmlStr += "<dc:language>en-US</dc:language>\n"
+
+        xmlStr += "</metadata> \n"
+        xmlStr += "<organizations default=\""+orgId+"\">  \n"
+        xmlStr += "<organization identifier=\""+orgId
+        xmlStr += "\" structure=\"hierarchical\">  \n"
+        xmlStr += " <title>\""+self.title+"\"</title> \n "
         
-        self.xmlStr += """
-           <metadata>      
-               <schema>IMS Content</schema>
-               <schemaversion>1.1.3</schemaversion>
-               <dc:title>%s</dc:title>
-               <dc:creator>%s</dc:creator>
-               <dc:description>%s</dc:description>
-               <dc:language>en-US</dc:language>
-            </metadata>
-            <organizations default="%s"> 
-                <organization identifier="%s" structure="hierarchical"> 
-                 <title>%s</title> 
-        """ %(self.title, self.author, self.desc, orgId, orgId, self.title)
         
         self.genItemResStr(self.node)
         
-        self.xmlStr += self.itemStr
-        self.xmlStr += """
+        xmlStr += self.itemStr
+        xmlStr += """
             </organization>
         </organizations>
     <resources>
         """
-        self.xmlStr += self.resStr
-        self.xmlStr += "</resources>\n</manifest>\n"
-        return self.xmlStr
+        xmlStr += self.resStr
+        xmlStr += "</resources>\n</manifest>\n"
+        return xmlStr
         
             
     def genItemResStr(self, node):

@@ -45,12 +45,13 @@ class ExportPage(Resource):
         Initialize
         """
         Resource.__init__(self)
-        self.menuPane = MenuPane()
-        self.package  = None
-        self.url      = ""
-        self.message  = ""
-        self.scormStr = ""
-        self.webStr   = ""
+        self.menuPane  = MenuPane()
+        self.package   = None
+        self.url       = ""
+        self.message   = ""
+        self.scormStr  = ""
+        self.scormStr2 = ""
+        self.webStr    = ""
         
 
     def process(self, request):
@@ -59,11 +60,12 @@ class ExportPage(Resource):
         """
         log.debug("process " + repr(request.args))
         
-        self.url = request.path
-        packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)
-        self.scormStr = ""
-        self.webStr  = ""
+        self.url       = request.path
+        packageName    = request.prepath[0]
+        self.package   = g_packageStore.getPackage(packageName)
+        self.scormStr  = ""
+        self.scormStr2 = ""
+        self.webStr    = ""
         
         if "exportMethod" in request.args:
             if request.args["exportMethod"][0] == "webpage":
@@ -71,6 +73,9 @@ class ExportPage(Resource):
 
             elif request.args["exportMethod"][0] == "scorm":
                 self.scormStr = "selected"
+       
+            elif request.args["exportMethod"][0] == "scorm-no-metadata":
+                self.scormStr2 = "selected"
        
         if "export" in request.args:
             dataDir = g_webInterface.config.getDataDir() 
@@ -82,7 +87,11 @@ class ExportPage(Resource):
 
             elif request.args["exportMethod"][0] == "scorm":
                 scormExport = ScormExport()
-                scormExport.export(self.package)
+                scormExport.export(self.package, True)
+            
+            elif request.args["exportMethod"][0] == "scorm-no-metadata":
+                scormExport = ScormExport()
+                scormExport.export(self.package, False)
             
             self.message = \
                 _("The course package has been exported successfully.")
@@ -111,6 +120,9 @@ class ExportPage(Resource):
         html += "<option value=\"webpage\" "+self.webStr+">"+_("Web Page")
         html += "</option>\n"
         html += "<option value=\"scorm\" "+self.scormStr+">"+_("SCORM Package")
+        html += "</option>\n"
+        html += "<option value=\"scorm-no-metadata\" "+self.scormStr2+">"
+        html += _("SCORM Package - (WebCT)")
         html += "</option>\n"
         html += "</select>\n"
         html += "<br/><br/>" + common.submitButton("export", _("Export"))

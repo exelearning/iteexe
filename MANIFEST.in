@@ -1,0 +1,6 @@
+include README
+include exe/exe.conf
+recursive-include exe/webui/style *
+recursive-include exe/webui/css *
+recursive-include exe/webui/images *
+recursive-include exe/webui/scripts *

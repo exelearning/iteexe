@@ -109,7 +109,7 @@ class SavePage(Resource):
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b>"           
         html += "<br/>%s<br/>" % _("Enter a filename for your project")        
-        html += common.textInput("fileName", path, 50)
+        html += common.textInput("fileName", path, 70)
         html += "<br/><br/>"
         html += common.submitButton("save", _("Save"))
         html += "<br/></form>"

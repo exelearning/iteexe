@@ -110,7 +110,7 @@ class LoadPage(Resource):
         html += _(" Save the current project") + " \n"       
         html += "<input type=\"checkbox\" name=\"saveChk\" checked><br/><br/>\n"
         html += _("Select a project to load: ") + " \n"
-        html += "<input type = \"file\" name = \"fileName\">\n"
+        html += "<input type = \"file\" name = \"fileName\" size = \"65\">\n"
         html += "<br/><br/>"
         html += "<a href=\"#\" onclick=\"submitLink('Load',"
         html += " ""document.contentForm.fileName.value); \">"

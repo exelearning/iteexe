@@ -112,6 +112,9 @@ def launchBrowser(port):
                 print "Cannot launch Firefox, please manually run Firefox"
                 print "and go to", url  
                 
+    if sys.platform[:6] == "darwin":
+        os.system("/Applications/Firefox.app/Contents/MacOS/firefox http://localhost:%d&"%port)
+
     else:
         standardPath = g_webInterface.config.browserPath  
         if standardPath:
@@ -125,6 +128,7 @@ def launchBrowser(port):
         else:
             os.system("firefox http://localhost:%d&"%port)
         
+
     print "Welcome to eXe: the eLearning XML editor"
     log.info("eXe running...")
 

@@ -100,7 +100,7 @@ class ScormExport(object):
         """
         pass
 
-    def export(self, package):
+    def export(self, package, addMetadata=True):
         """ 
         Export SCORM package
         """
@@ -121,7 +121,7 @@ class ScormExport(object):
 
         self.exportNode(package.root)
         
-        manifest = Manifest(package)
+        manifest = Manifest(package, addMetadata)
         manifest.save()
         shutil.move(package.name+".zip", g_webInterface.config.getDataDir())
         shutil.rmtree(package.name)

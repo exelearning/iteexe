@@ -108,7 +108,7 @@ class MultichoiceBlock(Block):
         html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
         html += "<ul><li class=\"activity-multichoice\">\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.question+"&nbsp;</span>\n</li></ul>\n"
+        html += self.idevice.title+"</span>\n</li></ul>\n"
         html += self.renderBlockView()    
         html += "</div>\n"
         return html
@@ -121,7 +121,7 @@ class MultichoiceBlock(Block):
         html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
         html += "<ul><li class=\"activity-multichoice\">\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.question+"&nbsp;</span>\n</li></ul>\n"
+        html += self.idevice.title+"</span>\n</li></ul>\n"
         html += self.renderBlockView()      
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -146,6 +146,7 @@ class MultichoiceBlock(Block):
         }\n"""            
         html += "//-->\n"
         html += "</script>\n"
+        html += self.question+"<br/>\n"
         html += "<table>"
         for element in self.optionElements:
             html += element.renderAnswerView()

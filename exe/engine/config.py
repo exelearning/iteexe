@@ -27,30 +27,36 @@ import logging
 import sys
 import os
 import os.path
+import tempfile
 
 # ===========================================================================
 class Config:
     """
     The Config class contains the configuration information for eXe.
-    It loads the settings from the exe.conf file which is in the same
-    directory as the eXe program.
+    It loads the settings from the exe.conf file.
     """
     def __init__(self, configFile):
         """
         Initialize 
         """
+        self.exePath = os.path.abspath(sys.argv[0])
+ 
         if sys.platform[:3] == "win":
             from exe.engine.winshell import personal_folder
             self.dataDir = personal_folder()
+            self.exeDir  = os.path.dirname(self.exePath)
+
+        elif sys.platform[:5] == "linux":
+            self.dataDir = os.environ["HOME"]
+            self.exeDir  = "/usr/share/exe"
+
         else:
             self.dataDir = os.environ["HOME"]
+            self.exeDir  = os.path.dirname(self.exePath)
 
         if not os.path.isdir(self.dataDir):
-            self.dataDir = "/"
+            self.dataDir = tempfile.gettempdir()
 
-        self.exePath = os.path.abspath(sys.argv[0])
-        self.exeDir  = os.path.dirname(self.exePath)
- 
         self.setting = ConfigParser()
         self.setting.read(self.exeDir+"/"+configFile)
 
@@ -70,7 +76,7 @@ class Config:
         """
         setup logging file
         """
-        hdlr   = logging.FileHandler(self.exeDir+'/'+logFile)
+        hdlr   = logging.FileHandler(self.dataDir+'/'+logFile)
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log  = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
