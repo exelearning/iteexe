@@ -33,6 +33,9 @@ class Block(object):
     def __init__(self, edit=False):
         self.edit = edit
 
+    def process(self, request):
+        pass
+
     def render(self):
         if self.edit:
             return self.renderEdit()
