@@ -26,6 +26,7 @@ from exe.webui import common
 from exe.engine.packagestore import g_packageStore
 from exe.webui.idevicepane   import IdevicePane
 from exe.webui.authoringpane import AuthoringPane
+from exe.webui.addnodepane import AddNodePane
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -53,11 +54,13 @@ class AuthoringPage(Resource):
         package       = g_packageStore.getPackage(request.prepath[0])
         idevicePane   = IdevicePane(package.currentNode)
         authoringPane = AuthoringPane(package.currentNode)
-
+        addNodePane   = AddNodePane()
         # Processing
+        
         idevicePane.process(request)
         authoringPane.process(request)
-
+        addNodePane.process(request)
+        
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
         html += common.genJavascript()
@@ -72,6 +75,7 @@ class AuthoringPage(Resource):
         html += common.hiddenField("object")
         html += idevicePane.render()
         html += authoringPane.render()
+        html += addNodePane.render()
         html += "</form>\n"
         html += common.footer()
         return html
