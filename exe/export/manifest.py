@@ -119,7 +119,6 @@ class Manifest(object):
             <resource identifier="RES-%s" type="webcontent" href="%s">
                 <file href="%s"/>
                 <file href="content.css"/>
-                <file href="pngfix.js"/>
                 """ %(resId, filename, filename)
         fileStr = ""
         # TODO: Fix this hack with some real object-orientated code
