@@ -43,7 +43,7 @@ def header():
     html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\"></script>\n"
     html += "<title>"+_("eXe")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-    html += " charset=UTF-8\">\n";
+    html += " charset=UTF-8\" />\n";
     html += "</head>\n"
     return html
 

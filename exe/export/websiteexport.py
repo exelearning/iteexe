@@ -57,10 +57,18 @@ class WebsitePage(object):
         html += "@import url(style/main.css);</style>\n"
         html += "<title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\">\n";
+        html += " charset=UTF-8\" />\n";
         html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
+
+        html += "<div id=\"navcontainer\">\n"
+        for child in self.node.children:
+            html += "<a href=\"%s.html\">" % child.getIdStr()
+            html += str(child.title) + "</a><br/>\n"
+            
+        html += "</div>\n"
+
         html += "<div id=\"main\">\n"
         html += TitleBlock(self.node.title).renderView()
 
@@ -71,12 +79,6 @@ class WebsitePage(object):
                 raise Error("Unable to render iDevice.")
             html += block.renderView()
 
-        html += "</div>\n"
-        html += "<div id=\"navcontainer\">\n"
-        for child in self.node.children:
-            html += "<a href=\"%s.html\">" % child.getIdStr()
-            html += str(child.title) + "</a><br/>\n"
-            
         html += "</div>\n"
         html += common.footer()
 
