@@ -8,7 +8,7 @@
 #workbox {
     display: block;
     float: left;
-    margin: 50px;
+    margin: 77px;
     margin-left: 7px;
 }
 
@@ -60,7 +60,7 @@ body>#workbox {
 
 
 body.hidden #workbox-top {
-margin-top: -39px;
+margin-top: -13px;
 }
 
 body.hidden #workbox-top a{
@@ -147,6 +147,11 @@ body.hidden #workbox-top a{
 }
 
 #iDevices-above .name a {
+    color: #52788A;
+    text-decoration: none;
+}
+
+#styles-above a{
     color: #52788A;
     text-decoration: none;
 }
