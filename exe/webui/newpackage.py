@@ -30,9 +30,6 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-
-_ = gettext.gettext
-
 class NewPackage(Resource):
     """
     Newpackage is the first screen the user loads.  It doesn't show anything
