@@ -58,6 +58,8 @@ class Manifest(object):
         out.close()
         
         os.chdir("..")
+        #TODO: zipping the package up should be the responsibility of
+        # the ScormExporter?
         zipFileName = self.name + ".zip"
         zipFile = zipfile.ZipFile(zipFileName, "w")
         for name in glob.glob(self.name+"/*"):
