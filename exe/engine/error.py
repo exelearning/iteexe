@@ -21,18 +21,23 @@
 # ===========================================================================
 
 import logging
-import sys
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Error(Exception):
     def __init__(self, value):
+        """
+        Initialize 
+        """
         Exception.__init__(self)
         self.value = value
         log.debug("init", self.value)
 
     def __str__(self):
+        """
+        return the error string
+        """
         return repr(self.value)
 
 # ===========================================================================

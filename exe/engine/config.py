@@ -30,6 +30,9 @@ import os.path
 # ===========================================================================
 class Config:
     def __init__(self, configFile):
+        """
+        Initialize 
+        """
         if sys.platform[:3] == "win":
             from exe.engine.winshell import personal_folder
             self.dataDir = personal_folder()
@@ -43,6 +46,9 @@ class Config:
 
 
     def setupLogging(self, logFile):
+        """
+        setup logging file
+        """
         hdlr   = logging.FileHandler(self.exeDir+'/'+logFile)
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log  = logging.getLogger()
@@ -64,9 +70,15 @@ class Config:
                 
         
     def getDataDir(self):
+        """
+        get user My Documents directory
+        """
         return self.dataDir
     
     def getExeDir(self):
+        """
+        get exe running directory
+        """
         return self.exeDir
 
 g_Config = Config("exe.conf")

@@ -38,9 +38,10 @@ _   = gettext.gettext
 
 # ===========================================================================
 class WebsitePage(object):
-    def __init__(self, node):
+    def __init__(self, node, mode):
         self.node = node
         self.html = ""
+        self.mode = mode
 
     def save(self):
         filename = self.node.getIdStr() + ".html"
@@ -62,13 +63,14 @@ class WebsitePage(object):
         html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
-
-        html += "<div id=\"navcontainer\">\n"
-        for child in self.node.children:
-            html += "<a href=\"%s.html\">" % child.getIdStr()
-            html += str(child.title) + "</a><br/>\n"
-            
-        html += "</div>\n"
+        
+        if self.mode == 1:
+            html += "<div id=\"navcontainer\">\n"
+            for child in self.node.children:
+                html += "<a href=\"%s.html\">" % child.getIdStr()
+                html += str(child.title) + "</a><br/>\n"
+                
+            html += "</div>\n"
 
         html += "<div id=\"main\">\n"
         html += TitleBlock(self.node.title).renderView()
@@ -86,13 +88,14 @@ class WebsitePage(object):
         return html
 
         
-
 class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
     """
-    def __init__(self):
+    Web, SCORM = (1,2)
+    def __init__(self, mode):
         self.package = None
+        self.mode    = mode
 
 
     def exportWeb(self, package):
@@ -131,7 +134,7 @@ class WebsiteExport(object):
         """
         Recursive function for exporting a node
         """
-        page = WebsitePage(node)
+        page = WebsitePage(node, self.mode)
         page.save()
 
         for child in node.children:

@@ -30,10 +30,12 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Manifest(object):
     def __init__(self, package):
-        self.title = str(package.root.title)
-        self.node = package.root
-        self.xmlStr = ""
-        self.name = package.name
+        self.title       = str(package.root.title)
+        self.node        = package.root
+        self.xmlStr      = ""
+        self.name        = package.name
+        self.author      = package.author
+        self.description = package.description
 
     def save(self):
         """
@@ -59,25 +61,24 @@ class Manifest(object):
         """
         
         self.xmlStr += """<?xml version="1.0" encoding="UTF-8"?>
-<manifest identifier="MANIFEST1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+    <manifest identifier="MANIFEST1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
     xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
-       <metadata>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+    http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
+       <metadata>      
            <schema>IMS Content</schema>
            <schemaversion>1.1.3</schemaversion>
-            <imsmd:lom>
-            <imsmd:general>
-            <imsmd:title>
-            <imsmd:langstring xml:lang="en-US">%s</imsmd:langstring>
-            </imsmd:title>
-            </imsmd:general>
-            </imsmd:lom>
+           <dc:title>%s</dc:title>
+           <dc:creator>%s</dc:creator>
+           <dc:description>%s</dc:description>
+           <dc:language>en-US</dc:language>
         </metadata>
         <organizations default="Toc1"> 
             <organization identifier="Toc1" structure="hierarchical"> 
              <title>%s</title> 
-        """ % (self.title, self.title)
+        """ % (self.title, self.author, self.description,self.title)
         
         self.xmlStr += self.getItemStr(self.node)
         self.xmlStr += """

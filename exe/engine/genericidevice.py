@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 from exe.engine.idevice import Idevice
 
@@ -27,12 +26,19 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Field(object):
     def __init__(self, name, fieldType=None, class_="", content=""):
+        """
+        Initialize 
+        """
         self.name      = name
         self.fieldType = fieldType
         self.content   = content
         self.class_    = class_
 
     def __cmp__(self, other):
+        """
+        Compare fields by their name, so they can be searched for in 
+        GenericIdevice
+        """
         return cmp(self.name, other.name)
 
 

@@ -68,10 +68,12 @@ class ExportPage(Resource):
         if "export" in request.args:
             dataDir = g_webInterface.config.getDataDir() 
             os.chdir(dataDir)
-            websiteExport = WebsiteExport()
+            
             if request.args["exportMethod"][0]=="webpage":
+                websiteExport = WebsiteExport(WebsiteExport.Web)
                 websiteExport.exportWeb(self.package)
             elif request.args["exportMethod"][0]=="scorm":
+                websiteExport = WebsiteExport(WebsiteExport.SCORM)
                 websiteExport.exportScorm(self.package)
             
             self.message = \
