@@ -36,19 +36,19 @@ class GenericBlock(Block):
     """
     def __init__(self, idevice):
         Block.__init__(self, idevice)
-        self.fields = []
+        self.elements = []
         for field in self.idevice:
-            self.fields.append(createElement(field.fieldType, 
-                                             field.name, 
-                                             field.class_,
-                                             self.id))
+            self.elements.append(createElement(field.fieldType, 
+                                               field.name, 
+                                               field.class_,
+                                               self.id))
 
     def process(self, request):
         Block.process(self, request)
-        for field in self.fields:
-            content = field.process(request)
+        for element in self.elements:
+            content = element.process(request)
             if content is not None:
-                self.idevice[field.name] = content
+                self.idevice[element.name] = content
 
     def processDone(self, request):
         Block.processDone(self, request)
@@ -85,8 +85,8 @@ class GenericBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div>\n"
-        for field in self.fields:
-            html += field.renderEdit(self.idevice[field.name])
+        for element in self.elements:
+            html += element.renderEdit(self.idevice[element.name])
 
         html += self.renderEditButtons()
         html += "</div>\n"
@@ -97,8 +97,9 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div>\n"
-        for field in self.fields:
-            html += field.renderView(self.idevice[field.name])
+        html += "<b>"+self.idevice.title+"</b>\n"
+        for element in self.elements:
+            html += element.renderView(self.idevice[element.name])
         html += "</div>\n"
         return html
     
@@ -107,8 +108,9 @@ class GenericBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = "<div>\n"
-        for field in self.fields:
-            html += field.renderView(self.idevice[field.name])
+        html += "<b>"+self.idevice.title+"</b>\n"
+        for element in self.elements:
+            html += element.renderView(self.idevice[element.name])
         html += self.renderViewButtons()
         html += "</div>\n"
         return html

@@ -21,7 +21,6 @@ import sys
 import logging
 import gettext
 from exe.webui import common
-from exe.engine.simpleidevice   import SimpleIdevice
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.genericidevice  import GenericIdevice
 
@@ -29,7 +28,6 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ug
-from exe.webui.simpleblock   import SimpleBlock
 from exe.webui.freetextblock import FreeTextBlock
 from exe.webui.genericblock  import GenericBlock
 
@@ -50,26 +48,43 @@ class IdevicePane(object):
             if request.args["object"][0] == "FreeTextIdevice":
                 package.currentNode.addIdevice(FreeTextIdevice())
 
-            elif request.args["object"][0] == "SimpleIdevice":
-                package.currentNode.addIdevice(SimpleIdevice())
-
             elif request.args["object"][0] == "ReadingActIdevice":
-                readingAct = GenericIdevice()
+                readingAct = GenericIdevice(_("Reading Activity"))
                 readingAct.addField("icon", "Icon", "reading.png")
-                readingAct.addField("What to read", 
+                readingAct.addField(_("What to read"), 
                                     "TextArea", "reading_what")
-                readingAct.addField("Why it should be read", 
+                readingAct.addField(_("Why it should be read"), 
                                     "TextArea", "reading_why")
-                readingAct.addField("Reference", 
+                readingAct.addField(_("Reference"), 
                                     "TextArea", "reading_reference")
-                readingAct.addField("Feedback", 
+                readingAct.addField(_("Feedback"), 
                                     "TextArea", "reading_feedback")
                 package.currentNode.addIdevice(readingAct)
             
             elif request.args["object"][0] == "ObjectivesIdevice":
-                objectives = GenericIdevice()
-                objectives.addField("Objectives", "TextArea", "objectives")
+                objectives = GenericIdevice(_("Objectives"))
+                objectives.addField("icon", "Icon", "objectives.png")
+                objectives.addField(_("Objectives"), "TextArea", "objectives")
                 package.currentNode.addIdevice(objectives)
+
+            elif request.args["object"][0] == "PreknowledgeIdevice":
+                preknowledge = GenericIdevice(_("Preknowledge"))
+                preknowledge.addField("icon", "Icon", "preknowledge.png")
+                preknowledge.addField(_("Preknowledge"), 
+                                      "TextArea", "preknowledge")
+                package.currentNode.addIdevice(preknowledge)
+            
+            elif request.args["object"][0] == "CaseStudyIdevice":
+                casestudy = GenericIdevice(_("Case Study"))
+                casestudy.addField("icon", "Icon", "casestudy.png")
+                casestudy.addField(_("CaseStudy"), "TextArea", "casestudy")
+                package.currentNode.addIdevice(casestudy)
+            
+            elif request.args["object"][0] == "ActivityIdevice":
+                activity = GenericIdevice(_("Activity"))
+                activity.addField("icon", "Icon", "activity.png")
+                activity.addField(_("Activity"), "TextArea", "activity")
+                package.currentNode.addIdevice(activity)
             
             
     def render(self):
@@ -86,11 +101,17 @@ class IdevicePane(object):
         html += common.submitLink("AddIdevice", "ReadingActIdevice",
                                   _("Reading Activity"))
         html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "PreknowledgeIdevice",
+                                  _("Preknowledge"))
+        html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "CaseStudyIdevice",
+                                  _("CaseStudy"))
+        html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "ActivityIdevice",
+                                  _("Activity"))
+        html += "<br/>\n"
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
                                   _("Free Text iDevice"))
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "SimpleIdevice", 
-                                  _("Simple iDevice"))
         html += "</div> \n"
 
         return html
