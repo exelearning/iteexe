@@ -17,12 +17,16 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+Utility class to create (reasonably) unique identifiers
+"""
+
 import logging
 import re
-import sys
 import time
 
 from os.path import getmtime
+from exe.engine.config import g_Config
 
 log = logging.getLogger(__name__)
 
@@ -33,15 +37,14 @@ class UniqueIdGenerator(object):
     Utility class to create (reasonably) unique identifiers
     """
     nextId = 1
-    exePath = sys.argv[0]
 
     def __init__(self, packageName):
         """Initialize the generator"""
         self.prefix  = "eXe" 
         self.prefix += re.sub(r"\W", "", packageName)[-10:]
 
-        if UniqueIdGenerator.exePath:
-            self.prefix += "%x" % int(getmtime(UniqueIdGenerator.exePath))
+        if g_Config.exePath:
+            self.prefix += "%x" % int(getmtime(g_Config.exePath))
 
 
     def generate(self):
