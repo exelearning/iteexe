@@ -2,10 +2,6 @@
 # eXe 
 # Copyright 2004-2005, University of Auckland
 #
-# Idevice is the base class for all Idevices
-# Idevices are mini templates which the user uses to create content in
-# the package
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -23,16 +19,18 @@
 
 import sys
 import logging
+from exe.engine.idevice import Idevice
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class Idevice(object):
-    def __init__(self):
-        pass
-
-    def createBlock(self):
-        pass
+class SimpleIdevice(Idevice):
+    """
+    SimpleIdevice 
+    """
+    def __init__(self, title="", content=""):
+        self.title   = title
+        self.content = content
 
 
 # ===========================================================================
