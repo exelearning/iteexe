@@ -96,6 +96,7 @@ class SavePage(Resource):
         html += common.submitButton("save", _("Save"))
         html += "<br/></form>"
         html += common.footer()
+        self.message = ""
         
         return html
     

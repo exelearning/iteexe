@@ -35,3 +35,4 @@ function submitLink(action, object)
     document.contentForm.object.value = object;
     document.contentForm.submit();
 }
+

@@ -110,6 +110,7 @@ class ExportPage(Resource):
         html += "<br/>" + common.submitButton("export", _("Export"))
         html += "<br/></form>"
         html += common.footer()
+        self.message = ""
         
         return html
     

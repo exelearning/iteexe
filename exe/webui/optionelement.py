@@ -32,15 +32,15 @@ class OptionElement(object):
         """
         Initialize
         """
+        self.id         = id
         self.idevice    = idevice
         self.option     = option
         self.answer     = option.answer
         self.isCorrect  = option.isCorrect
         self.feedback   = option.feedback
         self.answerId   = "optionAnswer"+ str(id) + idevice.id
-        self.keyId      = "optionKey" + idevice.id
-        self.id         = id
-        self.value      = str(id) + idevice.id
+        self.keyId      = "optionKey" + idevice.id        
+        self.value      = str(id) + "b" + idevice.id
         self.feedbackId = "optionFeedback" + str(id) + idevice.id
         self.optionId   = "option" + idevice.id
         
@@ -98,18 +98,34 @@ class OptionElement(object):
         return html
 
 
-    def renderView(self):
+    def renderAnswerView(self):
         """
         Returns an XHTML string for viewing and previewing this option element
         """
         log.debug("renderView called")
         self.answer = self.answer.replace("\r", "")
         self.answer = self.answer.replace("\n", "\\n")
-        self.answer = self.answer.replace("'", "\\'")
-        self.answer = self.answer.replace("\"", "\\\"")
+      #  self.answer = self.answer.replace("'", "\\'")
+      #  self.answer = self.answer.replace("\"", "\\\"")
+        
+        
+#        self.feedback = self.feedback.replace('"', '\\"')
+        
+        length = len(self.idevice.options)
+        html  = '<tr><td>'
+        html += '<input type = "radio" name = "%s" ' % self.optionId
+        html += 'id = "%s"' % self.value
+        html += 'onclick = "getFeedback(%d,%d,\'%s\')"/>' % (self.id, 
+                                               length,self.idevice.id)
+        html += '</td><td>'
+        html += self.answer + "</td></tr>\n"
+       
+        return html
+    
+    def renderFeedbackView(self):
         self.feedback = self.feedback.replace("\r", "")
         self.feedback = self.feedback.replace("\n", "\\n")
-        self.feedback = self.feedback.replace("'", "\\'")
+    #    self.feedback = self.feedback.replace("'", "\\'")
         feedbackStr = ""
         if self.feedback != "":
             feedbackStr = self.feedback
@@ -118,15 +134,11 @@ class OptionElement(object):
                 feedbackStr = _("Congratulations, your answer is correct!")
             else:
                 feedbackStr = _("Sorry, wrong answer.")
-
-                        
-        html  = '<input type = "radio" name = "%s" ' % self.optionId
-        html += 'id = "%s" onclick = "alert(\'%s\')"/>' % (self.value, feedbackStr)
-        html += " " + self.answer + "<br/>\n"
-       
+        html  = '<div id="s%s" style="color: rgb(0, 51, 204);' % self.value
+        html += 'display: none;">' 
+        html += feedbackStr + '</div>\n'
+        
         return html
-    
-  
         
     
 # ===========================================================================
