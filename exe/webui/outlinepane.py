@@ -96,7 +96,8 @@ class OutlinePane(object):
         html += self.__renderNode(self.package.root)
         html += common.submitImage("addChildNode", 
                                    self.package.root.getIdStr(), 
-                                   "stock-new.png")
+                                   "stock-new.png",
+                                   title=_("Add ")+self.package.levelName(0))
         html += self.__renderChildren(self.package.root)
         html += "</div>" 
         html += "</li>\n" 
@@ -137,24 +138,40 @@ class OutlinePane(object):
         
     def __renderActions(self, node):
         html  = " "
-        childLevel = self.package.levelName(len(node.id) - 1);
-#        html += common.submitLink("addChild", node.getIdStr(), 
+        childLevel = self.package.levelName(len(node.id) - 1)
+#        html += common.submitLink("addChildNode", node.getIdStr(), 
 #                                  _("Add ")+childLevel, "action")      
         id = node.getIdStr()
-        html += common.submitImage("addChildNode", id, "stock-new.png",
-                                   title=_("Add ")+childLevel )
-        html += common.submitImage("deleteNode",   id, "stock-cancel.png",
-                                   title=_("Delete"))
-        html += common.submitImage("promoteNode",  id, "stock-goto-top.png", 
-                                   title=_("Promote"), enabled=(len(node.id) > 2))
-        html += common.submitImage("demoteNode",   id, "stock-goto-bottom.png",
-                                   title=_("Demote"), enabled=(len(node.id) >= 2 and 
-                                            node.id[-1] > 0))
-        html += common.submitImage("movePrevNode", id, "stock-go-up.png",
-                                   title=_("Move Up"), enabled=(node.id[-1] > 0))
-        html += common.submitImage("moveNextNode", id, "stock-go-down.png",
-                                   title=_("Move Down"), enabled=(node.id[-1] < 
-                                            len(node.parent.children)-1))
+
+        html += common.submitImage("addChildNode", id, 
+                                   "stock-new.png", _("Add ")+childLevel )
+        html += common.submitImage("deleteNode", id, 
+                                   "stock-cancel.png", _("Delete"))
+
+        if len(node.id) > 2:
+            html += common.submitImage("promoteNode", id, 
+                                       "stock-goto-top.png", _("Promote"))
+#        else:
+#            html += common.image("stock-goto-top-off.png")
+
+        if len(node.id) > 3 and node.id[-1] > 0:
+            html += common.submitImage("demoteNode", id, 
+                                       "stock-goto-bottom.png", _("Demote"))
+#        else:
+#            html += common.image("stock-goto-bottom-off.png")
+
+        if node.id[-1] > 0:
+            html += common.submitImage("movePrevNode", id, 
+                                       "stock-go-up.png", _("Move Up"))
+#        else:
+#            html += common.image("stock-go-up-off.png")
+
+        if node.id[-1] < len(node.parent.children) - 1:
+            html += common.submitImage("moveNextNode", id, 
+                                       "stock-go-down.png", _("Move Down"))
+#        else:
+#            html += common.image("stock-go-down-off.png")
+
         return html
 
 
