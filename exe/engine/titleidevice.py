@@ -32,7 +32,7 @@ class TitleIdevice(Idevice):
         log.debug("__init__ parentNode="+parentNode.getIdStr()+
                   ", title="+title)
         Idevice.__init__(self, parentNode)
-        self.package = parentNode.package
+        self.edit    = False
         self.title   = title
 
 

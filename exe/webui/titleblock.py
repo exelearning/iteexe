@@ -74,6 +74,9 @@ class TitleBlock(Block):
         html  = "<div>\n"
         html += common.textInput("nodeTitle"+self.id, self.idevice)
 
+        html += common.submitImage("done", self.id,
+                                   "stock-apply.png", _("Done"))
+
         #TODO ask the node canPromote? etc.
         if len(self.idevice.parentNode.id) > 2:
             html += common.submitImage("promote", self.id,
@@ -102,12 +105,7 @@ class TitleBlock(Block):
 #        else:
 #            html += common.image("stock-go-down-off.png")
         
-        html += common.submitImage("done", self.id,
-                                   "stock-apply.png", _("Done"))
-        html += common.submitImage("PreviewAll", self.id,
-                                   "stock-apply.png", _("Preview All"))
-        html += common.submitImage("EditAll", self.id,
-                                   "stock-edit.png", _("Edit All"))
+        html += self.__renderNodeActions()
         html += "</div>\n"
         return html
 
@@ -119,7 +117,15 @@ class TitleBlock(Block):
         html += self.renderView()
         html += common.submitImage("edit", self.id,
                                    "stock-edit.png", _("Edit"))
+        html += self.__renderNodeActions()
         html += "</div>\n"
+        return html
+
+    def __renderNodeActions(self):
+        html  = common.submitImage("PreviewAll", self.id,
+                                   "stock-apply.png", _("Preview All"))
+        html += common.submitImage("EditAll", self.id,
+                                   "stock-edit.png", _("Edit All"))
         return html
 
     def renderView(self):

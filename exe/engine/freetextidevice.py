@@ -31,6 +31,8 @@ class FreeTextIdevice(Idevice):
     def __init__(self, content=""):
         Idevice.__init__(self)
         self.content = content
+        if content:
+            self.edit = False
 
 
 # ===========================================================================

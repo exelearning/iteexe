@@ -41,11 +41,13 @@ class Package:
         self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
         self.name        = name
         self.draft       = Node(self, [0], _("Draft"))
-        self.draft.addIdevice(FreeTextIdevice())
         self.currentNode = self.draft
         self.root        = Node(self, [1], _("Package"))
         self.author      = ""
         self.description = ""
+        introduction     = "Welcome to eXe<br/>\n"
+        introduction    += "To edit this text click on the pencil icon\n"
+        self.draft.addIdevice(FreeTextIdevice(introduction))
         
 
     def findNode(self, nodeId):
