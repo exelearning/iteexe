@@ -95,7 +95,7 @@ class NewPackagePage(Resource):
 
         html += "<IFRAME src=\"http:/%s\" width=\"100%%\" " % package.name
         html += "name=\"contentFrame\" id= \"contentFrame\""
-        html += "height=\"99%%\" scrolling=\"auto\">" 
+        html += "height=\"99%%\">\n" 
         html += "</IFRAME>"
         html += common.footer()
         return html

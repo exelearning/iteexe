@@ -27,6 +27,7 @@ from exe.engine.freetextidevice    import FreeTextIdevice
 from exe.engine.genericidevice     import GenericIdevice
 from exe.engine.multichoiceidevice import MultichoiceIdevice
 from exe.engine.reflectionidevice  import ReflectionIdevice
+from exe.engine.casestudyidevice   import CasestudyIdevice
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -37,7 +38,7 @@ from exe.webui.freetextblock    import FreeTextBlock
 from exe.webui.genericblock     import GenericBlock
 from exe.webui.multichoiceblock import MultichoiceBlock
 from exe.webui.reflectionblock  import ReflectionBlock
-
+from exe.webui.casestudyblock   import CasestudyBlock
 
 # ===========================================================================
 class IdevicePane(object):
@@ -122,35 +123,35 @@ complete this learning."""))
                 
                 package.currentNode.addIdevice(preknowledge)
             
-            elif request.args["object"][0] == "CaseStudyIdevice":
-                casestudy = GenericIdevice(_("Case Study"), 
-                                           "activity-casestudy",
-                                           "", 
-_("""A case study is a story that conveys an educational message. A case study
-can be used to present a realistic situation that enables learners to apply
-their own knowledge and experience to.  When designing a case study you might
-want to consider the following:<ul> 
-<li>	What educational points are conveyed in the story</li>
-<li>	What preparation will the learners need to do prior to working on the 
-case study</li>
-<li>	Where the case study fits into the rest of the course</li>
-<li>	How the learners will interact with the materials and each other e.g.
-if run in a classroom situation can teams be setup to work on different aspects
-of the case and if so how are ideas feed back to the class</li></ul>"""), "")
+            #elif request.args["object"][0] == "CaseStudyIdevice":
+                #casestudy = GenericIdevice(_("Case Study"), 
+                                           #"activity-casestudy",
+                                           #"", 
+#_("""A case study is a story that conveys an educational message. A case study
+#can be used to present a realistic situation that enables learners to apply
+#their own knowledge and experience to.  When designing a case study you might
+#want to consider the following:<ul> 
+#<li>	What educational points are conveyed in the story</li>
+#<li>	What preparation will the learners need to do prior to working on the 
+#case study</li>
+#<li>	Where the case study fits into the rest of the course</li>
+#<li>	How the learners will interact with the materials and each other e.g.
+#if run in a classroom situation can teams be setup to work on different aspects
+#of the case and if so how are ideas feed back to the class</li></ul>"""), "")
 
-                casestudy.addField(_("Story"),     "TextArea", "story",
-_("""Create the case story.  A good case is one that describes a
-controversy."""))
+                #casestudy.addField(_("Story"),     "TextArea", "story",
+#_("""Create the case story.  A good case is one that describes a
+#controversy."""))
 
-                casestudy.addField(_("Questions"), "TextArea", "questions",
-_("""Enter the study question.  These questions should draw out the educational
-messages presented in the case.  Consider aspects of the case like, characters,
-timeliness, relevance, dilemmas."""))
+                #casestudy.addField(_("Questions"), "TextArea", "questions",
+#_("""Enter the study question.  These questions should draw out the educational
+#messages presented in the case.  Consider aspects of the case like, characters,
+#timeliness, relevance, dilemmas."""))
 
-                casestudy.addField(_("Feedback"),  "TextArea", "feedback",
-_("""Provide feedback on the case.  This may be a summary of the main points or
-concepts""")) 
-                package.currentNode.addIdevice(casestudy)
+                #casestudy.addField(_("Feedback"),  "TextArea", "feedback",
+#_("""Provide feedback on the case.  This may be a summary of the main points or
+#concepts""")) 
+                #package.currentNode.addIdevice(casestudy)
             
             elif request.args["object"][0] == "ActivityIdevice":
                 activity = GenericIdevice(_("Activity"), 
@@ -173,6 +174,10 @@ _("""Describe the tasks the learners should complete."""))
             elif request.args["object"][0] == "ReflectionIdevice":
                 reflection = ReflectionIdevice()
                 package.currentNode.addIdevice(reflection)
+                
+            elif request.args["object"][0] == "CaseStudyIdevice":
+                casestudy = CasestudyIdevice()
+                package.currentNode.addIdevice(casestudy)
                 
             elif request.args["object"][0] == "MultiModeIdevice":
                 multiMode = GenericIdevice("", "multimode", "", "", "")
