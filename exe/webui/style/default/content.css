@@ -60,37 +60,37 @@ p.reading_feedback {
 }    
 
 li.activity { 
-    margin-left: 60px;
+    margin-left: 20px;
     list-style-image: url(activity.png); 
     list-style-position: outside; 
 }
 
 li.activity-casestudy { 
-    margin-left: 60px;
+    margin-left: 20px;
     list-style-image: url(casestudy.png); 
     list-style-position: outside; 
 }
 
 li.activity-reading { 
-    margin-left: 60px;
+    margin-left: 20px;
     list-style-image: url(reading.png); 
     list-style-position: outside; 
 }
 
 li.activity-multichoice { 
-    margin-left: 60px;
+    margin-left: 20px;
     list-style-image: url(question.png); 
     list-style-position: outside; 
 }
 
 li.objectives { 
-    margin-left: 60px;
+    margin-left: 20px;
     list-style-image: url(objectives.png); 
     list-style-position: outside; 
 }
 
 li.preknowledge { 
-    margin-left: 60px;
+    margin-left: 20px;
     list-style-image: url(preknowledge.png); 
     list-style-position: outside; 
 }

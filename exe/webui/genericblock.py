@@ -76,9 +76,9 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div id=\"iDevice\">\n"
-        html += "<li class=\""+self.idevice.class_+"\">\n"
+        html += "<ul><li class=\""+self.idevice.class_+"\">\n"
         html += "<span class=\"iDeviceTitle\">"
-        html += self.idevice.title+"</span>\n</li>\n"
+        html += self.idevice.title+"</span>\n</li></ul>\n"
         html += self.__renderContent()
         html += "</div>\n"
         return html

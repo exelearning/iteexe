@@ -106,9 +106,9 @@ class MultichoiceBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
-        html += "<li class=\"activity-multichoice\">\n"
+        html += "<ul><li class=\"activity-multichoice\">\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.question+"&nbsp;</span>\n</li>\n"
+        html += self.idevice.question+"&nbsp;</span>\n</li></ul>\n"
         html += self.renderBlockView()    
         html += "</div>\n"
         return html
