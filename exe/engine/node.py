@@ -59,7 +59,7 @@ class Node:
         
         if index > 0:
             temp = self.parent.children[index - 1]
-            self.children[index - 1]    = self.parent.children[index] 
+            self.parent.children[index - 1]    = self.parent.children[index] 
             self.parent.children[index - 1].id = temp.id
             self.parent.children[index]        = temp
             self.parent.children[index].id     = self.id        
@@ -90,12 +90,12 @@ class Node:
         """
         Move to the upper level
         """
-        if len(self.id) > 2:
+        index = self.id[-1]
+        if len(self.id) > 2:            
             oldParent = self.parent
             self.parent = oldParent.parent
             self.id = self.parent.id + [len(self.parent.children)]           
-            self.parent.children.append(self)
-            index = self.id[-1]
+            self.parent.children.append(self)            
             for i in range(index, len(oldParent.children) - 1):
                 oldParent.children[i] = oldParent.children[i+1]
                 oldParent.children[i].id[-1] = i 
