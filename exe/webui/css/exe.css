@@ -26,6 +26,8 @@ body {
 	}	
 
 #header {
+      position: fixed;
+      z-index: 10;
       float:left;
       width:100%;
       background:#DAE0D2 url("../images/nav_bg.gif") repeat-x bottom;

@@ -39,6 +39,7 @@ class MenuPane(object):
         """ 
         Get package name
         """
+        log.debug("process")
         self.prepath      = request.prepath
         self.packageName  = request.prepath[0]
     
@@ -47,28 +48,17 @@ class MenuPane(object):
         """
         Returns an XHTML string for the menu
         """
+        log.debug("render")
         html = ""
         html = "   <!--- start header --->\n"
 	html += "<div id=\"header\">\n"
         html += "<ul>\n"
-
-        if len(self.prepath) == 1:
-            html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") + "</a></li>\n"
-        else:
-            html += "<li><a href = \"http:/%s\">%s</a></li>\n" % \
-                    (self.packageName, _("Authoring"))
             
-        if self.prepath[-1] == "properties":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Properties") + "</a></li>\n"
+        if self.prepath[-1] == "export":
+            html += "<li id=\"current\"><a href=\"#\">" + _("Export") + "</a></li>\n" 
         else:
-            html += "<li><a href = \"http:/%s/properties\">%s</a></li>\n" % \
-                    (self.packageName, _("Properties"))
-            
-        if self.prepath[-1] == "save":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Save") + "</a></li>\n"
-        else:
-            html += "<li><a href = \"http:/%s/save\">%s</a></li>\n" % \
-                    (self.packageName, _("Save"))
+            html += "<li><a href = \"http:/%s/export\">%s</a></li>\n" % \
+                    (self.packageName, _("Export"))
             
         if self.prepath[-1] == "load":
             html += "<li id=\"current\"><a href=\"#\">" + _("Load") + "</a></li>\n"
@@ -76,11 +66,24 @@ class MenuPane(object):
             html += "<li><a href = \"http:/%s/load\">%s</a></li>\n" % \
                     (self.packageName, _("Load")) 
             
-        if self.prepath[-1] == "export":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Export") + "</a></li>\n" 
+        if self.prepath[-1] == "save":
+            html += "<li id=\"current\"><a href=\"#\">" + _("Save") + "</a></li>\n"
         else:
-            html += "<li><a href = \"http:/%s/export\">%s</a></li>\n" % \
-                    (self.packageName, _("Export"))
+            html += "<li><a href = \"http:/%s/save\">%s</a></li>\n" % \
+                    (self.packageName, _("Save"))
+            
+        if self.prepath[-1] == "properties":
+            html += "<li id=\"current\"><a href=\"#\">" + _("Properties") + "</a></li>\n"
+        else:
+            html += "<li><a href = \"http:/%s/properties\">%s</a></li>\n" % \
+                    (self.packageName, _("Properties"))
+
+        if len(self.prepath) == 1:
+            html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") + "</a></li>\n"
+        else:
+            html += "<li><a href = \"http:/%s\">%s</a></li>\n" % \
+                    (self.packageName, _("Authoring"))
+
         html += "</ul>\n" 
 	html += "</div>\n" 
         html += "   <!--- end header --->\n"
