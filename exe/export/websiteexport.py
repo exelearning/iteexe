@@ -284,16 +284,16 @@ class WebsiteExport(object):
             
         shutil.copyfile( filesDir + sep + "mp3player.swf", \
          join( dataDir, package.name, "images", "mp3player.swf" ) )    
-        #if isdir( uploadedFileDir ) or islink( uploadedFileDir ) :
-        try:
-            shutil.copytree( uploadedFileDir,\
-             join( dataDir, package.name, "images", package.name ) )
-        except:
-            errmsg =  "fail to copy %s to %s" %\
+        if isdir( uploadedFileDir ):
+            try:
+                shutil.copytree( uploadedFileDir,\
+                        join( dataDir, package.name, "images", package.name ) )
+            except:
+                errmsg =  "fail to copy %s to %s" %\
                 ( uploadedFileDir, join( "images", package.name ) )
-            log.debug( errmsg )
-            print errmsg
-            return errmsg
+                log.debug( errmsg )
+                print errmsg
+                return errmsg
         ##generate nodes list into nodeList
         nodeList.append( package.root.id )
         self.genNodeList( package.root )
