@@ -44,7 +44,7 @@ class MultichoiceBlock(Block):
         self.question = idevice.question
         i = 0
         for option in idevice.options:
-            self.optionElements.append(OptionElement(i, idevice, option))                                              
+            self.optionElements.append(OptionElement(i, idevice, option))
             i += 1
 
     def process(self, request):
