@@ -35,18 +35,44 @@ class TestNode(unittest.TestCase):
         print "root id:", root.id
         self.assertEqual(child0.id[:-1], root.id)
         
-    def testMoveChild(self):
+    def testMove(self):
         root = Node()
         child0 = root.createChild()
         child1 = root.createChild()
-        root.moveChildPrev(child0.id)        
-        root.moveChildPrev(child1.id)
+        child0.movePrev()
+        child1.movePrev()
+        #root.moveChildPrev(child0.id)        
+        #root.moveChildPrev(child1.id)
         print "child1 id:", child1.id
-        root.moveChildNext(child1.id)
+        #root.moveChildNext(child1.id)
+        child1.moveNext()
         print "child1 id:", child1.id
-        root.moveChildNext(child0.id)
-        root.delChild(child0.id)
+        #root.moveChildNext(child0.id)
+        #root.delChild(child0.id)
+        child0.moveNext()
+        child0.delete()
         print "child1 id:", child1.id
+        
+    def testPromote(self):
+        root = Node()
+        child0 = root.createChild()
+        child1 = root.createChild()
+        child3 = root.createChild()
+        child31 = child3.createChild()
+        child31.promote()
+        print "test promote"
+        print "child31 id:", child31.id
+        
+    def testDemote(self):
+        root = Node()
+        child0 = root.createChild()
+        child1 = root.createChild()
+        child3 = root.createChild()
+        child31 = child3.createChild()
+        child1.promote()
+        child1.demote()
+        print "test demote"
+        print "child2 id:", child31.id
         
     def testidStr(self):
         root = Node()

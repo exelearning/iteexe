@@ -36,7 +36,7 @@ class Node:
         self.title    = title
         self.idevices = []
 
-    def createChild(self, title):
+    def createChild(self, title=""):
         """Create a child node"""
         
         child        = Node(self.id + [len(self.children)], title)
@@ -44,45 +44,72 @@ class Node:
         self.children.append(child)
         return child
 
-    def moveChildPrev(self, childId):
-        """Move the child to the previous"""
+    def movePrev(self):
+        """Move  to the previous"""
         
-        childIndex = childId[-1]
+        index = self.id[-1]
         
-        if childIndex > 0:
-            temp = self.children[childIndex - 1]
-            self.children[childIndex - 1]    = self.children[childIndex] 
-            self.children[childIndex - 1].id = temp.id
-            self.children[childIndex]        = temp
-            self.children[childIndex].id     = childId        
+        if index > 0:
+            temp = self.parent.children[index - 1]
+            self.parent.children[index - 1]    = self.parent.children[index] 
+            self.parent.children[index - 1].id = temp.id
+            self.parent.children[index]        = temp
+            self.parent.children[index].id     = self.id        
             
-    def moveChildNext(self, childId):
-        """Move the child to the next"""
-        childIndex = childId[-1]
+    def moveNext(self):
+        """Move to the next"""
+        index = self.id[-1]
         
-        if childIndex < len(self.children) - 1:
-            temp = self.children[childIndex + 1]
-            self.children[childIndex + 1]     = self.children[childIndex] 
-            self.children[childIndex + 1].id  = temp.id
-            self.children[childIndex]         = temp
-            self.children[childIndex].id      = childId 
+        if index < len(self.parent.children) - 1:
+            temp = self.parent.children[index + 1]
+            self.parent.children[index + 1]     = self.parent.children[index] 
+            self.parent.children[index + 1].id  = temp.id
+            self.parent.children[index]         = temp
+            self.parent.children[index].id      = self.id 
             
-    def delChild(self, childId):
-        """Delete a child"""
+    def delete(self):
+        """Delete a node"""
         
-        childIndex = childId[-1]
-        del(self.children[childIndex])
+        index = self.id[-1]
+        del(self.parent.children[index])
         
-        for i in range(childIndex, len(self.children)):
-            self.children[i].id[-1] = i
+        for i in range(index, len(self.parent.children)):
+            self.parent.children[i].id[-1] = i
             
     def promote(self):
-        """Move to the upper level"""
+        """
+        Move to the upper level
+        """
+              
+        if len(self.id) > 2:
+            oldParent = self.parent
+            self.parent = oldParent.parent
+            self.id = self.parent.id + [len(self.parent.children)]           
+            self.parent.children.append(self)
+            index = self.id[-1]
+            for i in range(index, len(oldParent.children) - 1):
+                oldParent.children[i] = oldParent.children[i+1]
+                oldParent.children[i].id[-1] = i 
+                
+            oldParent.children[len(oldParent.children) - 1].delete()
+            
+    def demote(self):
+        """
+        Move  down a level
+        """
+        index = self.id[-1]
+        if index > 0:
+            oldParent = self.parent
+            self.parent = oldParent.children[index - 1]
+            self.id = self.parent.id + [len(self.parent.children)]
+            self.parent.children.append(self)
+            for i in range(index, len(oldParent.children) - 1):
+                oldParent.children[i] = oldParent.children[i+1]
+                oldParent.children[i].id[-1] = i 
+                
+            oldParent.children[len(oldParent.children) - 1].delete()
         
-        
-        if len(self.id) > 1:
-            parent = self.parent
-            self.parent = parent.parent
+            
             
     def idStr(self):
         return ".".join([str(x) for x in self.id])

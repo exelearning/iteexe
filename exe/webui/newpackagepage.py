@@ -28,6 +28,7 @@ from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage import SavePage
 from exe.webui.loadpage import LoadPage
+from exe.webui.webinterface import g_webInterface
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -54,6 +55,7 @@ class NewPackagePage(Resource):
 
         # Create new package
         package = g_packageStore.createPackage()
+        g_webInterface.root = package
         log.info("Creating a new package name="+ package.name)
         authoringPage = AuthoringPage()
         self.putChild(package.name, authoringPage)

@@ -30,6 +30,7 @@ from exe.webui.menupane import MenuPane
 from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage import SavePage
+from exe.webui.webinterface import g_webInterface
 
 
 log = logging.getLogger(__name__)
@@ -115,7 +116,7 @@ class LoadPage(Resource):
         package = g_packageStore.getPackage(self.package.name)
         log.info("getting an existing package name="+ package.name)
         authoringPage = AuthoringPage()
-        self.putChild(package.name, authoringPage)
+        g_webInterface.root.putChild(package.name, authoringPage)
         propertiesPage = PropertiesPage()
         authoringPage.putChild("properties", propertiesPage)
         savePage = SavePage()
