@@ -220,8 +220,8 @@ class Block(object):
             html += "<a title=\""+_("Pedagogical Help")+"\" "
             html += "onmousedown=\"Javascript:updateCoords(event);\" "
             html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
-            html += "href=\"Javascript:void(0)\"> " 
-            html += "<img src=\"/images/info.gif\" border=\"0\" "
+            html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
+            html += "<img src=\"/images/info.png\" border=\"0\" "
             html += "align=\"middle\" /></a>\n"
             html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
             html += "<div style=\"float:right;\" "

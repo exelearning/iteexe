@@ -178,7 +178,7 @@ def elementInstruc(indent, instruc):
         html  = "<a onmousedown=\"Javascript:updateCoords(event);\" "
         html += " title=\"" + _("Instructions for completion") + "\" "
         html += "onclick=\"Javascript:showMe('i%s', 420, 100);\" " % indent
-        html += "href=\"Javascript:void(0)\"> " 
+        html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
         html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/>"
         html += "</a>\n"
         html += "<div id=\"i%s\" style=\"display:none; z-index:99;\">" % indent
