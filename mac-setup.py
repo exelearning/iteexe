@@ -4,7 +4,6 @@
 import glob
 from distutils.core import setup
 import py2app
-import bdist_mpkg
 
 setup(app=["exe/webui/server.py"],
       name="eXe",
