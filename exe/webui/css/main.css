@@ -28,13 +28,13 @@ body {
 
 /* Form elements for static iDevices */
 
-.fieldset {width:300px;
+.fieldset {width:100%;
 	   border:0px;}
 
 .fieldset .textfield {
 margin:3px;
 height:165px;
-width:600px;
+width:90%;
 border:1px solid #C0C0C0;
 }
 

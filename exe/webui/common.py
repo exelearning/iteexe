@@ -32,7 +32,7 @@ def header():
     html += "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<style type=\"text/css\">\n"
-    html += "@import url(http://localhost:8081/css/main.css); </style>\n"
+    html += "@import url(/css/main.css); </style>\n"
     html += genJavascript()
     html += "<head>\n"
     html += "<title>"+_("eXe")+"</title>\n"
@@ -64,7 +64,7 @@ def textInput(name, value=""):
 
 def textArea(name, value=""):
     html  = "<fieldset class=\"fieldset\"><textarea name=\"%s\" " % name
-    html += "cols=\"52\" rows=\"8\" class=\"textfield\">%s" % value
+    html += "class=\"textfield\">%s" % value
     html += "</textarea></fieldset><br />" 
     return html
 
@@ -104,12 +104,14 @@ def submitLink(action, object, value, class_=""):
     html += "</a>\n"
     return html
 
-def submitImage(action, object, image, class_="", enabled=True):
+def submitImage(action, object, image, class_="", title="", enabled=True):
     if not enabled:
         return " " 
     html  = "<a "
     if class_ != "":
         html += "class=\""+class_+"\" "
+    if title != "":
+        html += "title=\""+title+"\" "
     html += " href=\"#\" onclick=\"submitLink('" + action
     html += "', '" + object + "');\" >"
     html += "<img src=\"/images/"+image+"\" "

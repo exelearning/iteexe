@@ -137,21 +137,23 @@ class OutlinePane(object):
         
     def __renderActions(self, node):
         html  = " "
-#        childLevel = self.package.levelName(len(node.id) - 1);
+        childLevel = self.package.levelName(len(node.id) - 1);
 #        html += common.submitLink("addChild", node.getIdStr(), 
 #                                  _("Add ")+childLevel, "action")      
         id = node.getIdStr()
-        html += common.submitImage("addChild", id, "stock-new.png")
-        html += common.submitImage("delete",   id, "stock-cancel.png")
-        html += common.submitImage("promote",  id, "stock-go-back.png",
-                                   enabled=(len(node.id) > 2))
-        html += common.submitImage("demote",   id, "stock-go-forward.png",
-                                   enabled=(len(node.id) >= 2 and 
+        html += common.submitImage("addChild", id, "stock-new.png",
+                                   title=_("Add ")+childLevel )
+        html += common.submitImage("delete",   id, "stock-cancel.png",
+                                   title=_("Delete"))
+        html += common.submitImage("promote",  id, "stock-goto-top.png", 
+                                   title=_("Promote"), enabled=(len(node.id) > 2))
+        html += common.submitImage("demote",   id, "stock-goto-bottom.png",
+                                   title=_("Demote"), enabled=(len(node.id) >= 2 and 
                                             node.id[-1] > 0))
         html += common.submitImage("movePrev", id, "stock-go-up.png",
-                                   enabled=(node.id[-1] > 0))
+                                   title=_("Move Up"), enabled=(node.id[-1] > 0))
         html += common.submitImage("moveNext", id, "stock-go-down.png",
-                                   enabled=(node.id[-1] < 
+                                   title=_("Move Down"), enabled=(node.id[-1] < 
                                             len(node.parent.children)-1))
         return html
 
