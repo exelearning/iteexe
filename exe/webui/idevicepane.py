@@ -19,16 +19,19 @@
 
 import logging
 import gettext
-from exe.webui import common
-from exe.engine.freetextidevice import FreeTextIdevice
-from exe.engine.genericidevice  import GenericIdevice
+from exe.webui                     import common
+from exe.engine.freetextidevice    import FreeTextIdevice
+from exe.engine.genericidevice     import GenericIdevice
+from exe.engine.multichoiceidevice import MultichoiceIdevice
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-# ug
+# TODO: at the moment we have to import the blocks as well as the iDevices
+# so they are registered in the block factory
 from exe.webui.freetextblock import FreeTextBlock
 from exe.webui.genericblock  import GenericBlock
+from exe.webui.multichoiceblock  import MultichoiceBlock
 
 
 # ===========================================================================
@@ -85,6 +88,11 @@ class IdevicePane(object):
                 activity = GenericIdevice(_("Activity"), "activity")
                 activity.addField(_("Activity"), "TextArea", "activity")
                 package.currentNode.addIdevice(activity)
+                
+            elif request.args["object"][0] == "MultichoiceIdevice":
+                multichoice = MultichoiceIdevice()
+                multichoice.addOption()
+                package.currentNode.addIdevice(multichoice)
             
             
     def render(self):
@@ -112,6 +120,9 @@ class IdevicePane(object):
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
                                   _("Free Text"))
+        html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "MultichoiceIdevice",
+                                  _("Multichoice"))
         html += "</div> \n"
 
         return html

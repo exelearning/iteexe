@@ -107,16 +107,8 @@ class TextAreaElement(Element):
         content = content.replace("'","\\'")
 
         html  = "<b>"+self.name+":</b><br/>\n"
-        html += "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += "    var editor = new FCKeditor('"+self.id+"', "
-        html += "'100%', '100', 'Armadillo', '"+content+"');\n"
-        html += "    editor.BasePath = '/scripts/';\n"
-        html += "    editor.Config['CustomConfigurationsPath'] ="
-        html += " '/scripts/armadillo.js';\n"
-        html += "    editor.Create();\n"
-        html += "//-->\n"
-        html += "</script>\n"
+        html += common.richTextArea(self.id, content)
+        
         return html
 
 

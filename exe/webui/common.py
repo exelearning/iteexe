@@ -83,6 +83,19 @@ def textArea(name, value=""):
     html += "</textarea></fieldset><br />" 
     return html
 
+def richTextArea(name, value="", width="100%", height=100):
+    html  = "<script type=\"text/javascript\">\n"
+    html += "<!--\n"
+    html += "    var editor = new FCKeditor('"+name+"', '"
+    html += str(width)+"', '"+str(height)+"', 'Armadillo', '"+value+"');\n"
+    html += "    editor.BasePath = '/scripts/';\n"
+    html += "    editor.Config['CustomConfigurationsPath'] ="
+    html += " '/scripts/armadillo.js';\n"
+    html += "    editor.Create();\n"
+    html += "//-->\n"
+    html += "</script>\n"
+    return html
+        
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""
     html  = "<input type=\"submit\" name=\"%s\" " % name
@@ -145,6 +158,17 @@ def select(action, object_, options, selection=None):
     html += "</select>\n"
     return html
 
+def option(name, checked, value):
+    """Add a option input"""
+    chkStr = ""
+    if checked:
+        chkStr = "checked"
+        
+    html  = '<input type = "radio" name = "'+name+'"'
+    html += ' value="'+value+'" '
+    html += chkStr+' />\n'
+    return html
+    
 # ===========================================================================
 
 if __name__ == "__main__":

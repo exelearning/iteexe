@@ -132,7 +132,7 @@ class WebsiteExport(object):
     # TODO: The SCORM export should be handled by its own class
     def exportScorm(self, package):
         """ 
-        Export scom
+        Export scorm
         """
         self.exportWeb(package)
         
@@ -149,6 +149,6 @@ class WebsiteExport(object):
 
         for child in node.children:
             self.exportNode(child)
-            
+
     
 # ===========================================================================
