@@ -105,7 +105,7 @@ class MultichoiceBlock(Block):
         html += common.richTextArea("ques"+self.id, self.question)
         html += "<div id=\"iDevice\" class=\"multichoice\">\n"
         html += "<table width =\"100%%\"><th>%s</th>" % _("Key")
-        html += "<th>%s</th>" % _("Answer:")
+        html += "<th>%s</th>" % _("Answer")
         html += "<th>%s</th>" % _("Feedback")
 
         for element in self.optionElements:
@@ -113,8 +113,8 @@ class MultichoiceBlock(Block):
             
         html += "</table>\n"
             
-        html += common.submitButton("addOption"+str(self.id), _("AddOption"))
-        html += "<br/>" + self.renderEditButtons()
+        html += common.submitButton("addOption"+str(self.id), _("Add another option"))
+        html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
         return html
 

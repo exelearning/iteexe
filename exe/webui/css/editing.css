@@ -52,12 +52,21 @@ p.reading_feedback {
 	background-color: #FFF;
 	}
 
+/* iDevice styles - should move this out to seperate css file */
+
 #iDevice {
 	background-color: #F1F1DD;
 	padding: 4px;
 	border: 1px solid #ADADAD;
 	margin: 8px;
 	}
+
+#iDevice > div.feedback {
+	background: #EDEFF0;
+	border: 1px solid #ADADAD;
+	padding: 4px;
+	margin: 10px;
+}
 
 .icon {
 	color: #51778A;
@@ -68,4 +77,11 @@ p.reading_feedback {
 	top: -18px;
 	left: 5px;
 
-	}	
+	}
+
+
+
+
+
+
+

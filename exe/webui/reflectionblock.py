@@ -95,9 +95,9 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("\n","\\n")
         self.answer   = self.answer.replace("'","\\'")
         html  = "<div id=\"iDevice\" class=\"reflection\">\n"
-        html +=  _("Activity:") + "<br/>"
+        html +=  _("Reflective question:") + "<br/>"
         html += common.richTextArea("acti"+self.id, self.activity)
-        html += _("Answer:") + "<br/>"
+        html += _("Response:") + "<br/>"
         html += common.richTextArea("answer"+self.id, self.answer)           
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
@@ -128,13 +128,13 @@ class ReflectionBlock(Block):
         html += self.activity   
         html += '<div id="view%s" style="display:block";>' % self.id
         html += '<input type="button" name ="btnshow%s" ' % self.id
-        html += 'value ="Show answers"' 
+        html += 'value ="Click here"' 
         html += 'onclick ="showAnswer(\'%s\',1)"/></div>\n ' % self.id
         html += '<div id="hide%s" style="display:none";>' % self.id
         html += '<input type="button" name ="btnhide%s"'  % self.id 
-        html += 'value ="Hide answers"'
+        html += 'value ="Hide"'
         html += 'onclick ="showAnswer(\'%s\',0)"/></div>\n ' % self.id
-        html += '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
+        html += '<div id="s%s" class="feedback" style=" ' % self.id
         html += 'display: none;">'
         html += self.answer
         html += "</div>\n"
