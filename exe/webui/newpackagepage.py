@@ -18,7 +18,6 @@
 # ===========================================================================
 
 import sys
-import gettext
 import logging
 import gettext
 from twisted.web import static
@@ -26,6 +25,8 @@ from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
 from exe.webui.authoringpage import AuthoringPage
+from exe.webui.propertiespage import PropertiesPage
+from exe.webui.savepage import SavePage
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -52,7 +53,15 @@ class NewPackagePage(Resource):
         # Create new package
         package = g_packageStore.createPackage()
         log.info("creating a new Package name=",package.name)
-        self.putChild(package.name, AuthoringPage())
+        authoringPage = AuthoringPage()
+        self.putChild(package.name, authoringPage)
+        propertiesPage = PropertiesPage()
+        authoringPage.putChild("properties", propertiesPage)
+        savePage = SavePage()
+        authoringPage.putChild("save", savePage)
+        authoringPage.putChild("load",       static.File("."))
+        
+        
                   
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"

@@ -28,6 +28,7 @@ from exe.webui.idevicepane   import IdevicePane
 from exe.webui.authoringpane import AuthoringPane
 from exe.webui.addnodepane   import AddNodePane
 from exe.webui.outlinepane   import OutlinePane
+from exe.webui.menupane   import MenuPane
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -45,7 +46,7 @@ class AuthoringPage(Resource):
         self.addNodePane   = AddNodePane()
         self.authoringPane = AuthoringPane()
         self.idevicePane   = IdevicePane()
-
+        self.menuPane      = MenuPane()
 
     def getChild(self, name, request):
         if name == '':
@@ -63,7 +64,7 @@ class AuthoringPage(Resource):
         self.authoringPane.process(request)
         self.addNodePane.process(request, package)
         self.outlinePane.process(request, package)
-
+        self.menuPane.process(request)
         
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
@@ -81,6 +82,7 @@ class AuthoringPage(Resource):
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
         html += common.hiddenField("object")
+        html += self.menuPane.render()
         html += self.outlinePane.render()
         html += self.addNodePane.render()
         html += self.idevicePane.render(package.currentNode)
