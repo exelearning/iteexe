@@ -36,6 +36,9 @@ class Manifest(object):
         self.name = package.name
 
     def save(self):
+        """
+        save a imsmanifest file and zip it with html files
+        """
         filename = "imsmanifest.xml"
         out = open(filename, "w")
         out.write(self.createXML())
@@ -50,6 +53,9 @@ class Manifest(object):
             
         
     def createXML(self):
+        """
+        returning XLM string for manifest file
+        """
         
         self.xmlStr += """
             <?xml version="1.0" encoding="UTF-8"?> 
@@ -85,6 +91,9 @@ class Manifest(object):
         
             
     def getItemStr(self, node):
+        """
+        returning xlm string for items
+        """
         itemStr = ""
         i = 1
         for child in node.children:
@@ -99,6 +108,9 @@ class Manifest(object):
         return itemStr
 
     def getResourseStr(self, node):
+        """
+        Returning xml string for resourses
+        """
         resStr = ""
         i = 1
         for child in node.children:

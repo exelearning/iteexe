@@ -17,12 +17,9 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import os.path
 import logging
 import gettext
-import pickle
-import os
 from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
@@ -47,7 +44,7 @@ class ExportPage(Resource):
         self.package  = None
         self.url = ""
         self.message = ""
-        self.scomStr = ""
+        self.scormStr = ""
         self.webStr  = ""
         
     def process(self, request):
@@ -59,14 +56,14 @@ class ExportPage(Resource):
         self.url = request.path
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
-        self.scomStr = ""
+        self.scormStr = ""
         self.webStr  = ""
         
         if "exportMethod" in request.args:
             if request.args["exportMethod"][0]=="webpage":
                 self.webStr = "selected"
-            elif request.args["exportMethod"][0]=="scom":
-                self.scomStr = "selected"
+            elif request.args["exportMethod"][0]=="scorm":
+                self.scormStr = "selected"
        
         if "export" in request.args:
             dataDir = g_webInterface.config.getDataDir() 
@@ -74,8 +71,8 @@ class ExportPage(Resource):
             websiteExport = WebsiteExport()
             if request.args["exportMethod"][0]=="webpage":
                 websiteExport.exportWeb(self.package)
-            elif request.args["exportMethod"][0]=="scom":
-                websiteExport.exportScom(self.package)
+            elif request.args["exportMethod"][0]=="scorm":
+                websiteExport.exportScorm(self.package)
             
             self.message = \
                 _("The course package has been exported successfully.")
@@ -95,9 +92,10 @@ class ExportPage(Resource):
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b><br><br/>"   
         html += """<select onchange="submit()" name="exportMethod">            
-            <option value="webpage" %s>Web Page</option>
-            <option value="scom" %s>SCOM</option>
-            </select> Please select a export method <br/>""" % (self.webStr, self.scomStr)
+            <option value="webpage" %s>%s</option>
+            <option value="scorm" %s>%s</option>
+            </select> Please select a export method <br/>
+            """ % (self.webStr, _("Web Page"), self.scormStr, _("SCORM"))
         html += "<br/>" + common.submitButton("export", _("Export"))
         html += "<br/></form>"
         html += common.footer()

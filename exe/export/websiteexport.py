@@ -91,7 +91,7 @@ class WebsiteExport(object):
         self.exportNode(package.root)
         
         
-    def exportScom(self, package):
+    def exportScorm(self, package):
         """ 
         Export scom
         """
