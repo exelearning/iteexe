@@ -69,7 +69,10 @@ class AuthoringPage(Resource):
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
         html += common.genJavascript()
         html += "</head>\n"
-        html += common.banner(_("eXe"))
+        title = package.currentNode.title
+        if title == "":
+            title = package.currentNode.idStr()
+        html += common.banner(_("eXe: ")+title)
 
 #        html += "<pre>"+repr(request.args)+"</pre>\n"
 #        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
