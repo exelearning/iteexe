@@ -87,7 +87,7 @@ class AuthoringPage(Resource):
             html += "<pre>"+repr(request.args)+"</pre>\n"
             html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
-        html += "<form enctype=\"multipart/form-data\" method=\"post\" "
+        html += "<form method=\"post\" "
         html += "action=\"%s\"" % request.path
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
