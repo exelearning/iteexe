@@ -70,7 +70,7 @@ def main():
 
 def launchBrowser(port):
     if sys.platform[:3] == "win":
-        os.system("start http://localhost:%d"%port)
+        os.system("start http://localhost:%d/course1"%port)
     else:
         os.system("htmlview http://localhost:%d/course1&"%port)
     print "Welcome to the eXe: packtest"
