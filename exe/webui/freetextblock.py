@@ -83,7 +83,7 @@ class FreeTextBlock(Block):
         html += "<!--\n"
         html += "    var editor = new FCKeditor('content"+self.id+"');\n"
         html += "    editor.BasePath = '/scripts/';\n"
-        html += "    editor.Config['CustomConfigurationsPath'] = '/scripts/armadillo.js'\n"
+        html += "    editor.Config['CustomConfigurationsPath'] = '/scripts/armadillo.js';\n"
         html += "    editor.ToolbarSet = 'Armadillo'; \n"
         content = self.idevice.content.replace("\r", "")
         content = content.replace("\n","\\n")
