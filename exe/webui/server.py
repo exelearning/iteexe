@@ -38,7 +38,6 @@ import logging
 log = logging.getLogger(__name__)
 
 def main():
-
     port = 8081
     config = Config("exe.conf")
     g_webInterface.config = config
@@ -53,12 +52,12 @@ def main():
     root.putChild("scripts", static.File(config.exeDir+"/scripts"))
     root.putChild("style",   static.File(config.exeDir+"/style/default"))
 
+    launchBrowser(port)  
     try:
         reactor.listenTCP(port, server.Site(root))
     except CannotListenError:
-        launchBrowser(port)  
+        pass
     else:
-        reactor.callWhenRunning(launchBrowser, port)
         reactor.run()
 
 
