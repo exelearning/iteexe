@@ -18,24 +18,26 @@
 # ===========================================================================
 
 import logging
-import os
 import os.path
+from exe.engine.uniqueidgenerator import UniqueIdGenerator
+from exe.engine.genericidevice import GenericIdevice
+import os
 import zipfile
 import glob
 log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Manifest(object):
-    """
-    Manifest represents an IMSManifest file
-    """
     def __init__(self, package):
         self.title       = str(package.root.title)
         self.node        = package.root
         self.xmlStr      = ""
         self.name        = package.name
         self.author      = package.author
-        self.description = package.description
+        self.desc        = package.description
+        self.idGenerator = UniqueIdGenerator(package.name)
+        self.itemStr     = ""
+        self.resStr      = ""
 
     def save(self):
         """
@@ -59,74 +61,74 @@ class Manifest(object):
         """
         returning XLM string for manifest file
         """
+        manifestId = self.idGenerator.generate()
+        orgId      = self.idGenerator.generate()
         
         self.xmlStr += """<?xml version="1.0" encoding="UTF-8"?>
-    <manifest identifier="MANIFEST1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
-    xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
-    http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
-       <metadata>      
-           <schema>IMS Content</schema>
-           <schemaversion>1.1.3</schemaversion>
-           <dc:title>%s</dc:title>
-           <dc:creator>%s</dc:creator>
-           <dc:description>%s</dc:description>
-           <dc:language>en-US</dc:language>
-        </metadata>
-        <organizations default="Toc1"> 
-            <organization identifier="Toc1" structure="hierarchical"> 
-             <title>%s</title> 
-        """ % (self.title, self.author, self.description,self.title)
+        <manifest identifier="%s" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+        xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+        http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
+        """ % manifestId 
         
-        self.xmlStr += self.getItemStr(self.node)
+        self.xmlStr += """
+           <metadata>      
+               <schema>IMS Content</schema>
+               <schemaversion>1.1.3</schemaversion>
+               <dc:title>%s</dc:title>
+               <dc:creator>%s</dc:creator>
+               <dc:description>%s</dc:description>
+               <dc:language>en-US</dc:language>
+            </metadata>
+            <organizations default="%s"> 
+                <organization identifier="%s" structure="hierarchical"> 
+                 <title>%s</title> 
+        """ %(self.title, self.author, self.desc, orgId, orgId, self.title)
+        
+        self.genItemResStr(self.node)
+        
+        self.xmlStr += self.itemStr
         self.xmlStr += """
             </organization>
         </organizations>
         <resources>
         """
-        self.xmlStr += self.getResourseStr(self.node)
+        self.xmlStr += self.resStr
         self.xmlStr += "</resources> \n </manifest>\n"
         return self.xmlStr
         
             
-    def getItemStr(self, node):
+    def genItemResStr(self, node):
         """
-        returning xlm string for items
+        returning xlm string for items and resources
         """
-        itemStr = ""
-        nodeId = node.getIdStr().replace(".", "-")
-        itemStr += """
-            <item identifier="ITEM-%s" isvisible="true" identifierref="RESOURSE-%s">
-                <title>%s</title>
-            """ %(nodeId, nodeId, str(node.title))
-
-        for child in node.children:
-            itemStr += self.getItemStr(child)
-        itemStr += "</item>"  
-        
-        return itemStr
-
-    def getResourseStr(self, node):
-        """
-        Returning xml string for resourses
-        """
-        resStr = ""
+        itemId = self.idGenerator.generate()
+        resId  = self.idGenerator.generate()
         filename = node.getIdStr()+ ".html"
-        nodeId = node.getIdStr().replace(".", "-")
-        resStr += """
-            <resource identifier="RESOURSE-%s" type="webcontent" href="%s">
+        
+        self.itemStr += """
+            <item identifier="ITEM-%s" isvisible="true" identifierref="RES-%s">
+                <title>%s</title>
+            """ %(itemId, resId, str(node.title))
+        
+        self.resStr += """
+            <resource identifier="RES-%s" type="webcontent" href="%s">
                 <file href="%s"/>
-            </resource>
-            """ %(nodeId, filename, filename)
-            
+                <file href="main.css"/>""" %(resId, filename, filename)
+        fileStr = ""
+        for idevice in node.idevices:
+            if type(idevice) is GenericIdevice:
+                if fileStr.find(idevice.class_+".png")== -1:
+                    fileStr += '<file href="%s.png"/>' % idevice.class_
+                    
+        self.resStr += fileStr
+        self.resStr += "</resource>"
+
         for child in node.children:
-            resStr += self.getResourseStr(child)
+            self.genItemResStr(child)
         
-        return resStr       
-        
-        
-        
+        self.itemStr += "</item>"
             
-# ===========================================================================
+#===============================================================================
