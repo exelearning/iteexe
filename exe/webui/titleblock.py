@@ -37,10 +37,30 @@ class TitleBlock(Block):
         Block.__init__(self, node.parent, "i"+node.getIdStr())
         self.node = node
 
-    def process(self, request):
-        Block.process(self, request)
-        if "nodeTitle"+self.id in request.args:
-            self.node.title = request.args["nodeTitle"+self.id][0]
+#    def process(self, request):
+#        log.debug("process "+self.id+repr(request))
+#        Block.process(self, request)
+    def processDone(self, request):
+        self.node.title = request.args["nodeTitle"+self.id][0]
+        log.info("Changed "+self.id+" title to "+self.node.title)
+
+    def processMovePrev(self, request):
+        log.debug("processMovePrev "+self.id)
+        self.node.movePrev()
+
+    def processMoveNext(self, request):
+        log.debug("processMoveNext "+self.id)
+        self.node.moveNext()
+
+    def processPromote(self, request):
+        log.debug("processPromote "+self.id)
+        self.node.promote()
+
+    def processDemote(self, request):
+        log.debug("processDemote "+self.id)
+        self.node.demote()
+
+        
 
     def renderEdit(self):
         """
@@ -48,7 +68,36 @@ class TitleBlock(Block):
         """
         html  = "<div>\n"
         html += common.textInput("nodeTitle"+self.id, self.node.title)
-        html += common.submitButton("done"+self.id, _("Done"))
+
+        childLevel = self.node.package.levelName(len(self.node.id) - 1)
+
+        if len(self.node.id) > 2:
+            html += common.submitImage("promote", self.id,
+                                       "stock-goto-top.png", _("Promote"))
+#        else:
+#            html += common.image("stock-goto-top-off.png")
+
+        if len(self.node.id) > 1 and self.node.id[-1] > 0:
+            html += common.submitImage("demote", self.id,
+                                       "stock-goto-bottom.png", _("Demote"))
+#        else:
+#            html += common.image("stock-goto-bottom-off.png")
+
+        if self.node.id[-1] > 0:
+            html += common.submitImage("movePrev", self.id,
+                                       "stock-go-up.png", _("Move Up"))
+#        else:
+#            html += common.image("stock-go-up-off.png")
+
+        if (len(self.node.id) > 1 and 
+            self.node.id[-1] < len(self.node.parent.children) - 1):
+            html += common.submitImage("moveNext", self.id,
+                                       "stock-go-down.png", _("Move Down"))
+#        else:
+#            html += common.image("stock-go-down-off.png")
+
+        
+        html += common.submitLink("done", self.id, _("Done"))
         html += "</div>\n"
         return html
 

@@ -83,7 +83,7 @@ class AuthoringPane(object):
         for child in node.children:
             if self.levelLimit is None or len(child.id) < self.levelLimit:
                 self.addBlocks(child)
-            else:
-                self.blocks.append(LinkBlock(child))
+#            else:
+#                self.blocks.append(LinkBlock(child))
 
 # ===========================================================================
