@@ -55,15 +55,17 @@ class MultichoiceIdevice(Idevice):
                          _("Multi-Choice Question"),
                          _("University of Auckland"),
                          _("""Although more often used in formal testing 
-situations MCQ’s can be used as a testing tool to stimulate thought and  
+situations MCQs can be used as a testing tool to stimulate thought and  
 discussion on topics students may feel a little reticent in responding to. 
 
 When designing a MCQ test consider the following:
-•	What are the learning outcomes are the questions testing
-•	What intellectual skills are being tested
-•	What are the language skills of the audience
-•	Gender and cultural issues
-•	Avoid grammar language and question structures that might provide clues 
+<ul>
+<li>	What are the learning outcomes are the questions testing</li>
+<li>    What intellectual skills are being tested</li>
+<li>	What are the language skills of the audience</li>
+<li>	Gender and cultural issues</li>
+<li>	Avoid grammar language and question structures that might provide clues</li>
+</ul>
  """), "")
                          
         self.question   = question
