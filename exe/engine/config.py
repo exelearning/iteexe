@@ -39,7 +39,11 @@ class Config:
         """
         Initialize 
         """
+
+        self.setting = ConfigParser()
         self.exePath = os.path.abspath(sys.argv[0])
+        self.exeDir  = os.path.dirname(self.exePath)
+        self.setting.read(self.exeDir+"/"+configFile)
  
         if sys.platform[:3] == "win":
             from exe.engine.winshell import personal_folder
@@ -56,10 +60,7 @@ class Config:
 
         if not os.path.isdir(self.dataDir):
             self.dataDir = tempfile.gettempdir()
-
-        self.setting = ConfigParser()
-        self.setting.read(self.exeDir+"/"+configFile)
-
+        
         if self.setting.has_option("system", "port"):
             self.port = self.setting.getint("system", "port")
         else:
@@ -69,7 +70,24 @@ class Config:
             self.browserPath = self.setting.get("system", "browser-path")
         else:
             self.browserPath = None
-
+            
+        if self.setting.has_option("system", "data-dir"):
+            self.dataDir = self.setting.get("system", "data-dir")
+        else:
+            if sys.platform[:3] == "win":
+                from exe.engine.winshell import personal_folder
+                self.dataDir = personal_folder()
+            else:
+                self.dataDir = os.environ["HOME"]
+                
+        if not os.path.isdir(self.dataDir):
+            self.dataDir = "/"    
+        #if self.setting.has_option("system", "exe-dir"):
+            #self.exeDir = self.setting.get("system", "exe-dir")
+        #else:
+            #self.exePath = os.path.abspath(sys.argv[0])
+            #self.exeDir  = os.path.dirname(self.exePath)
+ 
         self.styles = []
 
     def setupLogging(self, logFile):

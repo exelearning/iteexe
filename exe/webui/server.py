@@ -76,6 +76,7 @@ def launchBrowser(port):
     """
     if sys.platform[:3] == "win":
         #TODO refactor this into a separate function or class
+        
         if not g_webInterface.config.browserPath:
             try:
                 import _winreg
@@ -104,29 +105,24 @@ def launchBrowser(port):
         
         if g_webInterface.config.browserPath:
             command = g_webInterface.config.browserPath
+            log.info("Broswer path: " + command)
             url     = 'http://localhost:%d' % port
             log.info("Launch firefox with "+command)
             try:
                 os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
             except OSError:
                 print "Cannot launch Firefox, please manually run Firefox"
-                print "and go to", url  
-                
-    if sys.platform[:6] == "darwin":
-        os.system("/Applications/Firefox.app/Contents/MacOS/firefox http://localhost:%d&"%port)
-
+                print "and go to", url     
     else:
-        standardPath = g_webInterface.config.browserPath  
-        if standardPath:
-            log.info("Linux-1 Firefox Path:" + standardPath)
-        else:
-            log.info("Linux-1 Firefox Path: no browser path")
-               
         if g_webInterface.config.browserPath:            
             os.system("%s http://localhost:%d&"%(standardPath, port))
             log.info("Linux Firefox Path:" + standardPath)
         else:
-            os.system("firefox http://localhost:%d&"%port)
+            if sys.platform[:6] == "darwin":
+                macPath = "/Applications/Firefox.app/Contents/MacOS/firefox"
+                os.system("%s http://localhost:%d&"%(macPath, port))
+            else:
+                os.system("firefox http://localhost:%d&"%port)
         
 
     print "Welcome to eXe: the eLearning XML editor"
