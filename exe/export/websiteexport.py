@@ -39,8 +39,8 @@ class WebsitePage(object):
 
     def save(self):
         filename = self.node.idStr() + ".html"
-        file = open(filename, "w")
-        file.write(self.render())
+        out = open(filename, "w")
+        out.write(self.render())
 
     def render(self):
         html  = common.header()
@@ -84,8 +84,8 @@ class WebsiteExport(object):
         """
         Recursive function for exporting a node
         """
-        WebsitePage page(node)
-        node.save()
+        page = WebsitePage(node)
+        page.save()
 
         for child in self.node.children:
             self.exportNode(child)
