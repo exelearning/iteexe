@@ -44,7 +44,7 @@ class PropertiesPane(object):
         self.package = g_packageStore.getPackage(packageName)  
             
         if "title" in request.args:
-            self.package.title = request.args["title"][0]
+            self.package.root.title = request.args["title"][0]
             
         if "author" in request.args:   
             self.package.author = request.args["author"][0]
@@ -67,7 +67,7 @@ class PropertiesPane(object):
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
         html += "<b>Course title:</b><br/>"
-        html += common.textInput("title", self.package.title) + "<br/>"
+        html += common.textInput("title", self.package.root.title) + "<br/>"
         html += "<b>Author:</b><br/>"
         html += common.textInput("author", self.package.author) + "<br/>"
         html += "<b>Description:</b><br/>"

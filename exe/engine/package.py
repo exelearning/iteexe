@@ -36,7 +36,6 @@ class Package:
         self.name = name
         self.root = Node()
         self.currentNode = self.root
-        self.title=""
         self.author=""
         self.description=""
         self.levelNames = [_("Topic"), _("Section"), _("Unit")]
