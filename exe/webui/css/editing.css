@@ -1,0 +1,31 @@
+/*  ===========================================================================
+ eXe
+ Copyright 2004-2005, University of Auckland
+
+ webui styles.
+   =========================================================================== */
+
+/* Form elements for static iDevices */
+
+.fieldset {width:100%;
+	   border:0px;}
+
+.fieldset .textfield {
+margin:3px;
+height:165px;
+width:90%;
+border:1px solid #C0C0C0;
+}
+
+/* authoring pane */
+
+#authoring_pane {
+	margin-left: 216px;
+	margin-top: 12px;
+	padding: 8px;
+	background-color: #FFFFFF;
+	border: 1px solid #000;
+	-moz-border-radius: 6px;
+	}	
+	
+		
