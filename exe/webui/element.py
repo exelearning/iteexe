@@ -20,6 +20,7 @@
 import sys
 import logging
 from exe.webui import common
+from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 
@@ -39,9 +40,11 @@ class Element(object):
         self.class_   = class_
         self.blockId  = blockId
         self.id       = class_+blockId
+        self.package  = None
 
 
     def process(self, request):
+        self.package = g_packageStore.getPackage(request.prepath[0])
         if self.id in request.args:
             return request.args[self.id][0]
         else:
@@ -65,6 +68,7 @@ class Element(object):
 class TextElement(Element):
     """ TextElement is a single line of text"""
     def renderEdit(self, content):
+        _ = self.package.getLanguage()
         html  = "<b>"+self.name+":</b><br/>\n"
         html += common.textInput(self.id, content)
         html += "<br/>\n"
@@ -80,6 +84,7 @@ class TextAreaElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        #_ = self.package.getLanguage()
         content = content.replace("\r", "")
         content = content.replace("\n","\\n")
         content = content.replace("'","\\'")

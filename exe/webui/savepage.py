@@ -92,6 +92,8 @@ class SavePage(Resource):
         html += "<br/></form>"
         html += common.footer()
         
+        self.message = ""
+        
         return html
     
     render_POST = render_GET

@@ -78,7 +78,7 @@ class WebsitePage(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView(True)
+            html += block.renderView()
 
         html += "</div>\n"
         html += common.footer()

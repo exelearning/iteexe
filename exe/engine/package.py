@@ -34,7 +34,7 @@ class Package:
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    def __init__(self, name, language = "English"):
+    def __init__(self, name):
         """
         Initialize 
         """
@@ -46,7 +46,7 @@ class Package:
         self.root        = Node(self, [1], _("Home"))
         self.author      = ""
         self.description = ""
-        self.language    = language  
+        self.language    = "English"  
         introduction     = _("Welcome to eXe") + "<br/>"
         introduction    += _("To edit this text click on the pencil icon")
         self.draft.addIdevice(FreeTextIdevice(introduction))
@@ -94,10 +94,16 @@ class Package:
             filename = "ch.mo"
         
         if filename == "":
-            return gettext.gettext
+            _ = gettext.gettext
         else:
             exeDir = g_webInterface.config.exeDir
-            return gettext.GNUTranslations(open(exeDir + "/po/" + filename)).gettext
+            _ = gettext.GNUTranslations(open(exeDir + "\\po\\" + filename)).gettext
+            
+        self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
+        self.draft       = Node(self, [0], _("Draft"))
+        self.root        = Node(self, [1], _("Home"))
+        
+        return _
         
 
 # ===========================================================================

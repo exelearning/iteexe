@@ -77,7 +77,7 @@ class TitleBlock(Block):
         """
         Returns an XHTML string with the form element for editing this title
         """
-	_ = self.package.getLanguage()
+	#_ = self.package.getLanguage()
         html  = "<div>\n"
         html += common.textInput("nodeTitle"+self.id, self.idevice)
 
