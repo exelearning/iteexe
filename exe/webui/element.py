@@ -139,7 +139,9 @@ class ImageElement( Element ):
     """
     for image element processing
     """
-    def __init__( self, name, class_, blockId, instruc, titleMessage="Image", width="200px", height="150px", border="0" ):
+    def __init__( self, name, class_, blockId, instruc, titleMessage="Image", \
+        width="200px", height="150px", border="0" ):
+        
         Element.__init__( self, name, class_, blockId , instruc )
         self.titleMessage = titleMessage
         self.width = width
@@ -157,7 +159,8 @@ class ImageElement( Element ):
             ##get the image file extension, if is post from form
             if ( self.id +"_filename" ) in request.args: 
                 
-                fileExtension = splitext( basename( request.args[ self.id + "_filename" ][0] ) )[1]
+                fileExtension = splitext( basename( request.args[ self.id + \
+                "_filename" ][0] ) )[1]
                 #assign fileExtension (.xxx) to filename
                 filename = self.id +  fileExtension
                 
@@ -191,20 +194,31 @@ class ImageElement( Element ):
         ## if file exists=>update, else, add
         if exists( filename ):
             ##update, show previous file 
-            html += """<strong>Previous %s</strong>:<br /><img src="/images/%s" class="%s" width="%s" height="%s" border="%s" /><br />\n""" \
-            %(  self.titleMessage, filename, self.class_, self.width, self.height, self.border )
-            html += """<strong>Change to</strong>:<input type="file" name="%s" onchange="document.contentForm.%s_filename.value=this.value"/> <br />\n""" % (  self.id, self.id )
-            html += """<input type="hidden" name="old_%s" value="%s" />""" %( self.id, filename )
+            html += """<strong>Previous %s</strong>:<br /><img src="/images/%s" \
+            class="%s" width="%s" height="%s" border="%s" /><br />\n""" \
+            %(  self.titleMessage, filename, self.class_, self.width, \
+              self.height, self.border )
+              
+            html += """<strong>Change to</strong>:<input type="file" name="%s" \
+                    onchange="document.contentForm.%s_filename.value=this.value"/>\
+                    <br />\n"""  % (  self.id, self.id )
+                    
+            html += """<input type="hidden" name="old_%s" value="%s" />""" \
+                        %( self.id, filename )
         else:     
             ##add
-            html += """<strong>%s</strong>:<input type="file" name="%s"  onchange="document.contentForm.%s_filename.value=this.value"/> <br />\n""" % ( self.titleMessage, self.id, self.id )
+            html += """<strong>%s</strong>:<input type="file" name="%s"  \
+            onchange="document.contentForm.%s_filename.value=this.value"/> \
+            <br />\n""" % ( self.titleMessage, self.id, self.id )
         
         html += """<input type="hidden" name="%s_filename">""" %( self.id )
         return html
         
     def renderView( self, filename ):
         
-        return """<img src="/images/%s" class="%s" width="%s" height="%s" border="%s" align="left" style="margin-right: 5px;"/><br />\n""" %( filename, self.class_, self.width, self.height, self.border )
+        return """<img src="/images/%s" class="%s" width="%s" height="%s" border="%s" \
+        align="left" style="margin-right: 5px;"/><br />\n""" \
+        %( filename, self.class_, self.width, self.height, self.border )
         
 # ===========================================================================
 class AudioElement( Element ):
@@ -261,12 +275,17 @@ class AudioElement( Element ):
         if exists( filename ):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>: %s<br />\n""" \
-            %(  self.titleMessage, self.renderView( filename ) )
-            html += """<strong>Change to</strong>:<input type="file" name="%s"  onchange="document.contentForm.%s_filename.value=this.value"/> <br />\n""" % (  self.id, self.id )
-            html += """<input type=hidden name="old_%s" value="%s" />""" %( self.id, filename )
+                    %(  self.titleMessage, self.renderView( filename ) )
+            html += """<strong>Change to</strong>:<input type="file" name="%s" \
+                    onchange="document.contentForm.%s_filename.value=this.value"/> \
+                    <br />\n""" % (  self.id, self.id )
+            html += """<input type=hidden name="old_%s" value="%s" />"""\
+                         %( self.id, filename )
         else:     
             ##add
-            html += """<strong>%s</strong>:<input type="file" name="%s" onchange="document.contentForm.%s_filename.value=this.value"/> <br />\n""" % ( self.titleMessage, self.id, self.id )
+            html += """<strong>%s</strong>:<input type="file" name="%s" \
+             onchange="document.contentForm.%s_filename.value=this.value"/>\
+              <br />\n""" % ( self.titleMessage, self.id, self.id )
         html += """<input type="hidden" name="%s_filename">""" %( self.id )
         
         return html
@@ -287,16 +306,26 @@ class AudioElement( Element ):
         fileExtension = splitext( filename )[ 1 ].lower()
         
         mp3String = """
-<object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" id="mp3player" height="15" width="90"> 
+<object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ id="mp3player" height="15" width="90"> 
 <param name="movie" value="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s"> 
 <param name="quality" value="high"> 
 <param name="bgcolor" value="#333333"> 
-<param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
-<embed src="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s" quality="high" bgcolor="#333333" name="mp3player" type="application/x-shockwave-flash" flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;" pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="90">
+<param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;
+btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;
+trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
+<embed src="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s" quality="high"
+ bgcolor="#333333" name="mp3player" type="application/x-shockwave-flash"
+  flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;
+ iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;
+ handleColour=ffffff&amp;loaderColour=ffffff&amp;"
+  pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="90">
 </object>&nbsp;&nbsp;
-        
-        
-        <object id="mp3player" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" classid="D27CDB6E-AE6D-11cf-96B8-444553540000" height="15" width="90">
+                
+<object id="mp3player" 
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ classid="D27CDB6E-AE6D-11cf-96B8-444553540000" height="15" width="90">
 <!--param value="741" name="_cx">
 <param value="381" name="_cy"-->
 <param value="741" name="FlashVars">
@@ -317,12 +346,15 @@ class AudioElement( Element ):
 <param name="SWRemote">
 </object>"""
         wavString = """
-        <input type="button" value="Hear it" OnClick="document.getElementById('dummy_%(id)s').innerHTML='<embed src=/images/%(audiofile)s  hidden=true loop=false>';"
+        <input type="button" value="Hear it" 
+ OnClick="document.getElementById('dummy_%(id)s').innerHTML='<embed src=/images/%(audiofile)s
+ hidden=true loop=false>';"
         <div id="dummy_%(id)s"></div>
         """
         wmvString = """
-        <p class="mediaplugin"><object classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95"'
-        codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" 
+        <p class="mediaplugin">
+        <object classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95"'
+codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" 
         standby="Loading Microsoft Windows Media Player components..." 
         id="msplayer" align="" type="application/x-oleobject">
         <param name="Filename" value="/images/%(audiofile)s">"
@@ -336,9 +368,10 @@ class AudioElement( Element ):
         <param name="ShowGotoBar" value=false />
         <param name="EnableFullScreenControls" value=true />
         <embed src="/images/%(audio_file)s" name="msplayer" type="video/x-ms" 
-         ShowControls="1" AutoRewind="1" AutoStart="0" Autosize="0" EnableContextMenu="1"
-         TransparentAtStart="0" AnimationAtStart="0" ShowGotoBar="0" EnableFullScreenControls="1"
-         pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/">
+         ShowControls="1" AutoRewind="1" AutoStart="0" Autosize="0" 
+         EnableContextMenu="1" TransparentAtStart="0" AnimationAtStart="0" 
+         ShowGotoBar="0" EnableFullScreenControls="1" 
+pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/">
         </embed>
         </object></p>
         """
@@ -366,7 +399,8 @@ class AudioElement( Element ):
         <param name="src" value="/images/%(audiofile)s">
         <param name="controller" value="true">
         <param name="autoplay" value="false">
-        <embed src="/images/%(audiofile)s" width="240" height="180" controller="true" autoplay="false"> </embed>
+        <embed src="/images/%(audiofile)s" width="240" height="180"
+        controller="true" autoplay="false"> </embed>
         </object></p>
         """
         
@@ -375,13 +409,15 @@ class AudioElement( Element ):
         <param name="src" value="/images/%(audiofile)s">
         <param name="controller" value="true">
         <param name="autoplay" value="false">
-        <embed src="/images/%(audiofile)s" width="240" height="180" controller="true" autoplay="false"> </embed>
+        <embed src="/images/%(audiofile)s" width="240" height="180" 
+        controller="true" autoplay="false"> </embed>
         </object></p>
         """
         
         swfString = """
-        <p class="mediaplugin"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-         codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" 
+        <p class="mediaplugin">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" 
          width="400" height="300" id="mp3player" align="">
          <param name=movie value="/images/%(audiofile)s">
          <param name=quality value=high>
