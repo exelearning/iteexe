@@ -109,7 +109,9 @@ _("""Type the learning objectives for this resource."""))
                 preknowledge = GenericIdevice(_("Preknowledge"), 
                                               "preknowledge",
                                               "", 
-_("""Prerequisite knowledge refers to the knowledge learners should already have in order to be able to effectively complete the learning. Examples of pre-knowledge can be: <ul>
+_("""Prerequisite knowledge refers to the knowledge learners should already
+  have in order to be able to effectively complete the learning. Examples of
+  pre-knowledge can be: <ul>
 <li>	Learners must have level 4 English </li>
 <li>	Learners must be able to assemble standard power tools </li></ul>
 """), "")
