@@ -62,9 +62,17 @@ class Node:
             temp = parent.children[index - 1]
             parent.children[index - 1]    = self 
             parent.children[index - 1].id = temp.id
+            parent.children[index - 1].__updateChildrenIds()
             parent.children[index]        = temp
-            parent.children[index].id     = selfId       
+            parent.children[index].id     = selfId               
+            parent.children[index].__updateChildrenIds()
             
+    def __updateChildrenIds(self):
+        """ recursive update a node's children ids"""
+        for child in self.children:
+            child.id = self.id + [child.id[-1]]
+            child.__updateChildrenIds()
+                    
 
     def moveNext(self):
         """Move to the next"""
@@ -75,10 +83,11 @@ class Node:
             temp = parent.children[index + 1]
             parent.children[index + 1]     = self
             parent.children[index + 1].id  = temp.id
+            parent.children[index + 1].__updateChildrenIds()
             parent.children[index]         = temp
-            parent.children[index].id      = selfId
+            parent.children[index].id      = selfId            
+            parent.children[index].__updateChildrenIds()
             
-
     def delete(self):
         """Delete a node"""
         index = self.id[-1]
@@ -87,6 +96,7 @@ class Node:
         
         for i in range(index, len(parent.children)):
             parent.children[i].id[-1] = i
+            parent.children[i].__updateChildrenIds()
             
 
     def promote(self):
@@ -94,15 +104,16 @@ class Node:
         Move to the upper level
         """
         index = self.id[-1]
-        #id = self.id
+        
         if len(self.id) > 2:
             parent      = self.parent
             grandParent = parent.parent
             grandParent.children.append(self)
-            parent.children[index].delete()
+            # delete the node in old position
+            self.delete()
             self.parent = grandParent
             self.id = grandParent.id + [len(grandParent.children) - 1]
-            
+            self.__updateChildrenIds()
 
     def demote(self):
         """
@@ -113,10 +124,11 @@ class Node:
             oldParent = self.parent
             newParent = oldParent.children[index - 1]
             newParent.children.append(self)
+            # delete the node in old position
             self.delete()
             self.id     = newParent.id + [len(newParent.children) - 1]
             self.parent = newParent
-    
+            self.__updateChildrenIds()
             
     def findIdevice(self, id):
         index = 0
