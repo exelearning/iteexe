@@ -71,7 +71,7 @@ class LoadPage(Resource):
             self.package.ischanged = 0
             if "saveChk" in request.args:
                 self.package.save()
-                
+ 
             try:  
                 filePath = request.args["object"][0]
                 log.debug("filename and path" + filePath)

@@ -100,7 +100,7 @@ class SavePage(Resource):
         log.debug("render_GET")
         self.process(request)
         self.menuPane.process(request)
-        path = self.dataDir+"/"+self.package.name+".elp"
+        path = os.path.join(self.dataDir, self.package.name+".elp")
                         
         # Rendering
         html  = common.header() 

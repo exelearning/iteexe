@@ -433,17 +433,16 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#ve
         """
         
         wmvString = """
-          <p><object
-classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" 
-codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=9" 
-type="application/x-oleobject" align="middle" 
-standby="Loading Microsoft&reg; Windows&reg; Media Player components..." id="MediaPlayer1">
-<param name="FileName" value="images/%(audiofile)s">
-<param name="ShowStatusBar" value="True">
-<embed 
-src="images/%(audiofile)s" align="middle" type="application/x-mplayer2" 
-pluginspage = "http://www.microsoft.com/Windows/MediaPlayer/" 
-showstatusbar=True filename="images/%(audiofile)s"> </embed>
+         <p class="mediaplugin">
+           <object id="MediaPlayer1"
+ classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
+ standby="Loading Microsoft Windows Media Player components...">
+<param name="Filename" value="images/%(audiofile)s">
+<param name="AnimationAtStart" value="true">
+<param name="TransparentAtStart" value="false">
+<param name="ShowControls" value="true">
+<param name="PlayCount" value="true">
+<embed width="320" height="285" src="images/%(audiofile)s" controller=true autoplay=false  playeveryframe=false pluginspage="plugin.html">
 </object></p>
         """
         

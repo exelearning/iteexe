@@ -102,13 +102,13 @@ class Package(jelly.Jellyable):
         self.isChanged = 0
         os.chdir(path)
         fileName = self.name + ".elp" 
-        outFile = open(fileName, "w")
+        outFile = open(fileName, 'wb')
         outFile.write(banana.encode(jelly.jelly(self)))
         outFile.close()      
 
     def load(path):
         """Load package from disk, returns a package"""
-        inFile = open(path)
+        inFile = open(path, 'rb')
         return jelly.unjelly(banana.decode(inFile.read()))
     load = staticmethod(load)
 
