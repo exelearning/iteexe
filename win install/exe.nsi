@@ -2,7 +2,8 @@
 
 ; Define your application name
 !define APPNAME "exe"
-!define APPNAMEANDVERSION "exe 0.7"
+!define EXE_VERSION "0.8"
+!define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
@@ -16,8 +17,7 @@ OutFile "exeinstall.exe"
 
 !define MUI_ABORTWARNING
 !define MUI_FINISHPAGE_RUN "$INSTDIR\server.exe"
-!define MUI_FINISHPAGE_RUN_PARAMETERS package12.elp
-;!define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\README.txt, $INSTDIR\package8.elp"
+!define MUI_FINISHPAGE_RUN_PARAMETERS exe-user-guide.elp
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "..\..\exe\dist\exeLicense.txt"
@@ -32,7 +32,38 @@ OutFile "exeinstall.exe"
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_RESERVEFILE_LANGDLL
 
-Section "exe" Section1
+Function UninstallMSI
+  ; $R0 should contain the GUID of the application
+  push $R1
+  ReadRegStr $R1 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$R0" "UninstallString"
+  StrCmp $R1 "" UninstallMSI_nomsi
+    ExecWait '"msiexec.exe" /x $R0 /qn /passive'
+UninstallMSI_nomsi: 
+  pop $R1
+FunctionEnd
+
+Section "Remove Old Version" Section1
+	; Remove any previous nsis install...
+  IfFileExists "$INSTDIR\uninstall.exe" 0 Next
+	  ExecWait '"$INSTDIR\uninstall.exe" /S _?=$INSTDIR'
+		Delete "$INSTDIR\uninstall.exe"
+	Next:
+	; Uninstall previous msi packages...
+  StrCpy $R0 "{053B45FD-255C-4E20-AA9D-218BB8A2B215}";  the MSI's ProductID of my package
+  Call UninstallMSI
+  StrCpy $R0 "{B4E5B5BC-087B-44D3-AD94-9DA209C70979}";  the MSI's ProductID of my package
+  Call UninstallMSI
+	StrCpy $R0 "{3BEEE1AE-B96C-4E83-A63A-5886E4C1707C}";  the MSI's ProductID of my package
+	Call UninstallMSI
+	; If still there, tell them to manually uninstall it!
+  IfFileExists "C:\program files\exe\server.exe" 0 Done
+	  MessageBox MB_OK "Before continuing please manually uninstall the old version of exe using the controla panel, 'add remove programs' utility. Press OK when this is done"
+	Done:
+SectionEnd
+	
+
+
+Section "exe" Section2
 
 	; Set Section properties
 	SetOverwrite ifnewer
@@ -40,7 +71,7 @@ Section "exe" Section1
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
 	File /r "C:\exe\dist\*.*"
-	CreateShortCut "$DESKTOP\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
+	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
 	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
 	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
@@ -93,7 +124,7 @@ Section Uninstall
 	Delete "$INSTDIR\uninstall.exe"
 
 	; Delete Shortcuts
-	Delete "$DESKTOP\exe.lnk"
+	Delete "$DESKTOP\exe-${EXE_VERSION}.lnk"
 	Delete "$SMPROGRAMS\exe\exe.lnk"
 	Delete "$SMPROGRAMS\exe\Uninstall.lnk"
 	

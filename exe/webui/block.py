@@ -62,7 +62,8 @@ class Block(object):
         log.debug("process id="+self.id)
         
         if "action" in request.args:
-            if request.args["action"][0] == "PreviewAll":
+            if (request.args["action"][0] == "PreviewAll" or 
+                request.args["action"][0] == "edit"):
                 self.processDone(request)
 
             elif request.args["action"][0] == "EditAll":
@@ -171,7 +172,9 @@ class Block(object):
         """
         html = ""
         if self.mode == Block.Edit:
-            html = self.renderEdit()
+            html += self.renderEdit()
+            html += '<a name="currentBlock"></a>\n'
+
 
         elif self.mode == Block.View:
             html = self.renderView()

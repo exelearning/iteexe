@@ -87,6 +87,8 @@ class Node(jelly.Jellyable):
         Add the idevice to this node, sets idevice's parentNode 
         """
         idevice.parentNode = self
+        for oldIdevice in self.idevices:
+            oldIdevice.edit = False
         self.idevices.append(idevice)
 
 

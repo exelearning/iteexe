@@ -89,7 +89,7 @@ class AuthoringPage(Resource):
             html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
         html += "<form method=\"post\" "
-        html += "action=\"%s\"" % request.path
+        html += "action=\"%s#currentBlock\"" % request.path
         html += " id=\"contentForm\" name=\"contentForm\" "
         html += "onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
