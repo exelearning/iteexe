@@ -70,7 +70,20 @@ class TestNode(unittest.TestCase):
         child1 = root.createChild()
         child11=child1.createChild()
         print "child11 string id:", child11.getIdStr()
-        self.assertEqual(child11.idStr(), "0.1.0"])
+        self.assertEqual(child11.getIdStr(), "0.1.0")
+        
+    def testStr(self):
+        root = Node(None)
+        root.title = "root node"
+        child0 = root.createChild()
+        child0.title = "first child"
+        child1 = root.createChild()
+        child1.title = "second child"
+        child3 = root.createChild()
+        child3.title = "third child"
+        child31 = child3.createChild()
+        child31.title = "third child's first child"
+        print str(root)
 
    
 if __name__ == "__main__":
