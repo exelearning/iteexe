@@ -27,28 +27,29 @@ _   = gettext.gettext
 
 
 def header():
+    # TODO we need to split out the Javascript in here!!!
     """Generates the common header XHTML"""
     html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
     html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+    html += "<head>\n"
     html += "<style type=\"text/css\">\n"
     html += "@import url(/css/main.css);"
     html += "@import url(/css/controlpanel.css);"
     html += "@import url(/css/editing.css);</style>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/control_panel.js\")></script>\n"
-    html += genJavascript()
-    html += "<head>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/common.js\"></script>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/control_panel.js\"></script>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\"></script>\n"
     html += "<title>"+_("eXe")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\">\n";
     html += "</head>\n"
     return html
 
-def banner(heading = _("eXe: eLearning XML editor")): 
+def banner(): 
     """Generates the common page banner XHTML"""
     html  = "<body onLoad=\"initTabs();\">\n"
-#    html += "<div id=\"header\">"+heading+"</div>\n"
     html += "<div id=\"main\">\n"
     return html
 
@@ -84,24 +85,6 @@ def submitButton(name, value, enabled=True):
     if not enabled:
         html += " disabled"
     html += "/>\n"
-    return html
-
-def genJavascript():
-    html = """\
-<script language="Javascript">
-function clearHidden()
-{
-    document.contentForm.action.value = "";
-    document.contentForm.object.value = "";
-}
-function submitLink(action, object) 
-{
-    document.contentForm.action.value = action;
-    document.contentForm.object.value = object;
-    document.contentForm.submit();
-}
-</script>
-"""
     return html
 
 def submitLink(action, object, value, class_=""):

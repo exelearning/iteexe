@@ -83,7 +83,7 @@ class NewPackagePage(Resource):
         html += package.name
         html += "\">\n"
         html += "</head>\n"
-        html += common.banner(_("New Package"))
+        html += common.banner()
         html += _("Click here:")
         html += "<a href=\"http:/"
         html += package.name

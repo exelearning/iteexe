@@ -138,7 +138,7 @@ class LoadPage(Resource):
             html += package.name
             html += "\">\n"
             html += "</head>\n"
-            html += common.banner(_("New Package"))
+            html += common.banner()
             html += _("Welcome to eXe")
             html += common.footer()
             return html

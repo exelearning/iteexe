@@ -79,7 +79,18 @@ class FreeTextBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div>\n"
-        html += common.textArea("content"+self.id, self.idevice.content)
+        html += "<script type=\"text/javascript\">\n"
+        html += "<!--\n"
+        html += "    var editor = new FCKeditor('content"+self.id+"');\n"
+        html += "    editor.BasePath = '/scripts/';\n"
+        html += "    editor.Config['CustomConfigurationsPath'] = '/scripts/armadillo.js'\n"
+        html += "    editor.ToolbarSet = 'Armadillo'; \n"
+        content = self.idevice.content.replace("\r", "")
+        content = content.replace("\n","\\n")
+        html += "    editor.Value      = '"+content+"'; \n"
+        html += "    editor.Create();\n"
+        html += "//-->\n"
+        html += "</script>\n"
         html += self.renderEditButtons()
         html += "</div>\n"
         return html

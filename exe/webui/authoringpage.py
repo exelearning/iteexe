@@ -81,37 +81,37 @@ class AuthoringPage(Resource):
         html += common.hiddenField("object")
         html += self.menuPane.render()
         #html += self.addNodePane.render()
-	html += "<div id=\"workbox\" class=\"outline-on\">\n"
-	html += "<div id=\"workbox-top\">"
-	html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" class=\"on\">Outline</a>"
-	html += "<a id=\"iDevices-off\" href=\"javascript:chooseTab(1)\" class=\"off\">iDevices</a>"
-	html += "<a id=\"styles-off\" href=\"javascript:chooseTab(2)\" class=\"off\">Styles</a>"
-	html += "<a id=\"close-workbox\" class=\"img\" href=\"javascript:toggleworkbox(0), toggleFix(0);\">"
+        html += "<div id=\"workbox\" class=\"outline-on\">\n"
+        html += "<div id=\"workbox-top\">"
+        html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" class=\"on\">Outline</a>"
+        html += "<a id=\"iDevices-off\" href=\"javascript:chooseTab(1)\" class=\"off\">iDevices</a>"
+        html += "<a id=\"styles-off\" href=\"javascript:chooseTab(2)\" class=\"off\">Styles</a>"
+        html += "<a id=\"close-workbox\" class=\"img\" href=\"javascript:toggleworkbox(0), toggleFix(0);\">"
         html += "<img border=\"0\" src=\"/images/hide.gif\" /></a>\n"
-	html += "<a id=\"open-workbox\" class=\"img\" href=\"javascript:toggleworkbox(1), toggleFix(1);\">"
+        html += "<a id=\"open-workbox\" class=\"img\" href=\"javascript:toggleworkbox(1), toggleFix(1);\">"
         html += "<img border=\"0\" src=\"/images/show.gif\" /></a>\n"
         html += "</div>\n"
-	
-	# workbox content
-	
+        
+        # workbox content
+        
         html += "<div id=\"workbox-content\">\n"
 
-	html += "<div id=\"styles-above\" class=\"links\">\n"
-	html += "<span id=\"no-links\">eXe styles</span>\n"
-	html += "</div>"
+        html += "<div id=\"styles-above\" class=\"links\">\n"
+        html += "<span id=\"no-links\">eXe styles</span>\n"
+        html += "</div>"
 
-	html += "<div id=\"iDevices-above\" class=\"links\">\n"
-	html += "<span class=\"name\">"
-	html += self.idevicePane.render()
-	html += "</span></div>\n"
+        html += "<div id=\"iDevices-above\" class=\"links\">\n"
+        html += "<span class=\"name\">"
+        html += self.idevicePane.render()
+        html += "</span></div>\n"
 
-	html += "<div id=\"outline-above\" class=\"links\">\n"
-       	html += "<span class=\"name\">"
-	html += self.outlinePane.render()
-	html += "</span></div>\n"
-	html += "<div id=\"other-modules\">\n"
-	html += "</div>"
-      	html += "</div>"
+        html += "<div id=\"outline-above\" class=\"links\">\n"
+        html += "<span class=\"name\">"
+        html += self.outlinePane.render()
+        html += "</span></div>\n"
+        html += "<div id=\"other-modules\">\n"
+        html += "</div>"
+        html += "</div>"
         html += "</div>\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
