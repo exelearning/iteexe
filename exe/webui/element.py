@@ -259,17 +259,19 @@ class AudioElement( Element ):
             
             ##get the image file extension, if is post from form
             #if user had choose a file
-            if ( self.id +"_filename" ) in request.args and request.args[ self.id + "_filename"][0].strip() != "": 
+            if ( self.id +"_filename" ) in request.args and \
+                request.args[ self.id + "_filename"][0].strip() != "": 
                 ##get file extension
                 fileExtension = splitext( basename( request.args[ self.id + \
-                "_filename" ][0] ) )[1].lower()
+                                            "_filename" ][0] ) )[1].lower()
                 #assign fileExtension (.xxx) to filename
                 filename = self.id +  fileExtension
             
                 imgDir = getImageDataDir( )
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile( request.args[ self.id + "_filename"][0], "%s/%s" %(imgDir, filename) )
+                    copyfile( request.args[ self.id + "_filename"][0],\
+                               "%s/%s" %(imgDir, filename) )
                 except:
                     return "%s audio file not copied" % filename
             
