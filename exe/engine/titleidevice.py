@@ -19,8 +19,9 @@
 
 import logging
 from exe.engine.idevice import Idevice
-
+import gettext
 log = logging.getLogger(__name__)
+_ = gettext.gettext
 
 # ===========================================================================
 class TitleIdevice(Idevice):
@@ -31,7 +32,8 @@ class TitleIdevice(Idevice):
         """Initialize"""
         log.debug("__init__ parentNode="+parentNode.getIdStr()+
                   ", title="+title)
-        Idevice.__init__(self, parentNode)
+        Idevice.__init__(self, title, 
+                         _("University of Auckland"), "", "", parentNode)
         self.edit    = False
         self.title   = title
 

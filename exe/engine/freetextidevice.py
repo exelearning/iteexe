@@ -19,7 +19,8 @@
 
 import logging
 from exe.engine.idevice import Idevice
-
+import gettext
+_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -28,7 +29,8 @@ class FreeTextIdevice(Idevice):
     FreeTextIdevice: just has a block of text
     """
     def __init__(self, content=""):
-        Idevice.__init__(self)
+        Idevice.__init__(self, _("Free Text Area"), 
+                         _("University of Auckland"), "", "" )
         self.content = content
         if content:
             self.edit = False

@@ -19,7 +19,8 @@
 
 import logging
 from exe.engine.idevice import Idevice
-
+import gettext
+_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 
@@ -57,7 +58,7 @@ class GenericIdevice(Idevice):
         """
         Initialize 
         """
-        Idevice.__init__(self)
+        Idevice.__init__(self, title, _("University of Auckalnd"), "", "")
         self.title     = title
         self.class_    = class_
         self.fields    = []

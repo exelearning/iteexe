@@ -19,7 +19,8 @@
 
 import logging
 from exe.engine.idevice import Idevice
-
+import gettext
+_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -33,7 +34,9 @@ class ReflectionIdevice(Idevice):
         """
         Initialize 
         """
-        Idevice.__init__(self)
+        Idevice.__init__(self, 
+                         _("Reflection Questios"),
+                         _("University of Auckland"), "", "")
         self.activity   = activity
         self.answer     = answer
 
