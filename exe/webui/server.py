@@ -63,7 +63,7 @@ def main():
 
     launchBrowser(config.port)  
     try:
-        reactor.listenTCP(config.port, server.Site(root))
+        reactor.listenTCP(config.port, server.Site(root), interface="127.0.0.1")
     except CannotListenError:
         pass
     else:
