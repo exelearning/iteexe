@@ -78,6 +78,7 @@ class LoadPage(Resource):
             else:
                 self.package = package
                 g_packageStore.addPackage(package)
+                
 
     def render_GET(self, request):
         

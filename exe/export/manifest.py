@@ -97,7 +97,7 @@ class Manifest(object):
         itemStr = ""
         id = node.getIdStr().replace(".", "-")
         itemStr += """
-            <item identifier="ITEM%s" isvisible="true" identifierref="RESOURSE%s">
+            <item identifier="ITEM-%s" isvisible="true" identifierref="RESOURSE-%s">
                 <title>%s</title>
             """ %(id, id, str(node.title))
 
@@ -115,7 +115,7 @@ class Manifest(object):
         filename = node.getIdStr()+ ".html"
         id = node.getIdStr().replace(".", "-")
         resStr += """
-            <resource identifier="RESOURSE%s" type="webcontent" href="%s">
+            <resource identifier="RESOURSE-%s" type="webcontent" href="%s">
                 <file href="%s"/>
             </resource>
             """ %(id, filename, filename)
