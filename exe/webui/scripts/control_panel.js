@@ -127,12 +127,19 @@ if (document.getElementById("whole-enchilada")) {
         if (gFixState==1 && gworkboxState==1) {
 		name = "fixed";
         } else if (gFixState==1 && gworkboxState==0) {
-		name = "hidden fixed";
+		name = "hidden";
         } else if (gFixState==0 && gworkboxState==0) {
 		name = "hidden";
         } else if (gFixState==0 && gworkboxState==1) {
-		name = "";
+		name = "fixed";
 	}
 	document.getElementsByTagName("body")[0].className = name;
 }
+  
+
+//  alert("gFixState is: " + gFixState + ".");
+//  alert("gworkboxState is: " + gworkboxState + ".");
+//  alert("name is: " + name + ".");  
+
+
 }

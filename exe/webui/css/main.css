@@ -335,12 +335,7 @@ position: fixed;
 left: 0;
 }
 
-/* expands authoring pane when control panel is hidden 
-.fixed #authoring_pane {
-margin-left: 10px;
-}
 
-*/
 
 .fixed{
 padding-right: 0px;
@@ -377,6 +372,12 @@ display: none;
 .fixed #workbox-top #unfix-workbox, body.hidden #workbox-top #open-workbox{
 display: block;
 }
+
+/* expands authoring pane when control panel is hidden */
+body.hidden #authoring_pane {
+margin-left: 10px;
+}
+
 
 /* ######### Tab Choice Styling ######## */
                                                                                 
