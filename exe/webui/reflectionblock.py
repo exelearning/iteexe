@@ -22,7 +22,6 @@ import gettext
 from exe.webui.block               import Block
 from exe.webui.blockfactory        import g_blockFactory
 from exe.engine.reflectionidevice  import ReflectionIdevice
-from exe.webui.questionelement     import QuestionElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
@@ -39,14 +38,9 @@ class ReflectionBlock(Block):
         Initialize a new Block object
         """
         Block.__init__(self, idevice)
-        self.idevice = idevice
-        self.questionElements = []
-        self.description = idevice.description
+        self.activity    = idevice.activity 
+        self.answer      = idevice.answer
 
-        i = 0
-        for question in idevice.questions:
-            self.questionElements.append(QuestionElement(i, idevice, question))                                              
-            i += 1
 
     def process(self, request):
         """
@@ -54,15 +48,11 @@ class ReflectionBlock(Block):
         """
         Block.process(self, request)
         
-        descId = "desc"+str(self.id)
-        if descId in request.args:
-            self.idevice.description = request.args[descId][0]
-            
-        if ("addQuestion"+str(self.id)) in request.args: 
-            self.idevice.addQuestion()
+        if "acti"+self.id in request.args:
+            self.idevice.activity = request.args["acti"+self.id][0]
 
-        for element in self.questionElements:
-            element.process(request)
+        if "answer"+self.id in request.args:
+            self.idevice.answer = request.args["answer"+self.id][0]
         
 
     def processMove(self, request):
@@ -98,97 +88,70 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = "<b>" + _("Description:") + "</b><br/>"       
-        html += common.textArea("desc"+self.id, self.description)
-        html += "<div>\n"
-        html += "<table><th>%s</th>" % ""
-        html += "<th>%s</th>" % _("Question:")
-        html += "<th>%s</th>" % _("Answer:")
-
-        for element in self.questionElements:
-            html += element.renderEdit() 
-            
-        html += "</table>\n"
-            
-        html += common.submitButton("addQuestion"+str(self.id), _("AddQuestion"))
+        self.activity = self.activity.replace("\r", "")
+        self.activity = self.activity.replace("\n","\\n")
+        self.activity = self.activity.replace("'","\\'")
+        self.answer   = self.answer.replace("\r", "")
+        self.answer   = self.answer.replace("\n","\\n")
+        self.answer   = self.answer.replace("'","\\'")
+        html  =  _("Activity:") + "<br/>"
+        html += common.richTextArea("acti"+self.id, self.activity)
+        html += _("Answer:") + "<br/>"
+        html += common.richTextArea("answer"+self.id, self.answer)           
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html
 
 
-    def renderView(self):
+    def renderPage(self):
         """
-        Returns an XHTML string for viewing this block
+        Returns an XHTML string for this block
         """
         html  = "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
-                function showAnswer(blockId){
-                    var buttonName = "button" + blockId
-                    if (window.form[0].buttonName.value=="Show Answers") {              
-                        document.getElementById(id).style.display = "none";
-                        window.form[0].buttonName.value=="Hide Answers"
-                    }else{
-                        document.getElementById(id).style.display = "block";
-                        window.form[0].buttonName.value=="Show Answers"
-                    }
-                }\n"""           
+            function showAnswer(id,isShow){
+                if (isShow==1){
+                    document.getElementById("s"+id).style.display = "block";
+                    document.getElementById("hide"+id).style.display = "block";
+                    document.getElementById("view"+id).style.display = "none";
+                }else{
+                    document.getElementById("s"+id).style.display = "none";
+                    document.getElementById("hide"+id).style.display = "none";
+                    document.getElementById("view"+id).style.display = "block";
+                }
+            }\n"""           
         html += "//-->\n"
         html += "</script>\n"
         html += "<div id=\"iDevice\">\n"
-        html += "<b>" + self.question + "</b><br/>"
-        html += "<table>"
-        for element in self.questionElements:
-            html += element.renderquestionView()       
-                       
-        html += "</table>"
-        html += '<input type="button" name = "%s" value = "Show Answers"' % self.id
-        html += 'onclick = "showAnswer("%s")"/>' % self.id
-        html += ' View our suggested answers. <br/> \n'
-        
-        for element in self.questionElements:
-            html += element.renderAnswerView()
-    
+        html += self.activity   
+        html += '<div id="view%s" style="display:block";>' % self.id
+        html += '<input type="button" name ="btnshow%s" ' % self.id
+        html += 'value ="Show answers"' 
+        html += 'onclick ="showAnswer(\'%s\',1)"/></div>\n ' % self.id
+        html += '<div id="hide%s" style="display:none";>' % self.id
+        html += '<input type="button" name ="btnhide%s"'  % self.id 
+        html += 'value ="Hide answers"'
+        html += 'onclick ="showAnswer(\'%s\',0)"/></div>\n ' % self.id
+        html += '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
+        html += 'display: none;">'
+        html += self.answer
         html += "</div>\n"
         return html
     
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this block
+        """
+        html = self.renderPage()
+        html += "</div>\n"
+        return html
 
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += """
-                function showAnswer(id){            
-                        document.getElementById(id).style.display = "block";
-                }\n"""           
-        html += "//-->\n"
-        html += "</script>\n"
-        html += "<div id=\"iDevice\">\n"
-        html += "<b>" + self.description + "</b><br/>"
-        html += "<table>"
-        for element in self.questionElements:
-            html += element.renderQuestionView()       
-        buttonName = "button" + self.id              
-        html += "</table>"
-        html += '<input type="button" name ="%s"' % buttonName
-        html += ' value ="%s"' % _("Click here")
-      #  buttonName1 = "document.contentForm." + buttonName
-        html += 'onclick ="showAnswer(\'%s\');"/>' %("s"+self.id) 
-        html += ' View our suggested answers. <br/> \n'
-        
-        html += '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
-        #display = "none"
-        html += 'display: none;">' 
-        
-        html += "<table>"       
-        for element in self.questionElements:
-            html += element.renderAnswerView()
-            
-        html += "</table>"
-            
-        html += '</div>\n'
+        html  = self.renderPage()
         html += self.renderViewButtons()
         html += "</div>\n"
         return html

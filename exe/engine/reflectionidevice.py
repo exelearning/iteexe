@@ -22,42 +22,20 @@ from exe.engine.idevice import Idevice
 
 log = logging.getLogger(__name__)
 
-
-# ===========================================================================
-class Question(object):
-    """
-    A Reflection iDevice is built up of these questions.  Each question can be
-    rendered as an XHTML element
-    """
-    def __init__(self):
-        """
-        Initialize 
-        """
-        self.question   = ""
-        self.answer     = ""
-        self.showAmswer = False
- 
-
 # ===========================================================================
 class ReflectionIdevice(Idevice):
     """
-    A generic Idevice is one built up from simple fields... as such it
+    A Reflection Idevice is one built up from simple fields... as such it
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    def __init__(self, description=""):
+    def __init__(self, activity = "", answer = ""):
         """
         Initialize 
         """
         Idevice.__init__(self)
-        self.description = description
-        self.questions   = []
-
-    def addQuestion(self):
-        """
-        Add a new question to this iDevice.
-        """
-        self.questions.append(Question())
+        self.activity   = activity
+        self.answer     = answer
 
 
 

@@ -98,7 +98,6 @@ class IdevicePane(object):
                 
             elif request.args["object"][0] == "ReflectionIdevice":
                 reflection = ReflectionIdevice()
-                reflection.addQuestion()
                 package.currentNode.addIdevice(reflection)
             
             

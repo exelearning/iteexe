@@ -118,10 +118,9 @@ class MultichoiceBlock(Block):
         html += "</div>\n"
         return html
 
-
-    def renderView(self):
+    def renderBlockView(self):
         """
-        Returns an XHTML string for viewing this block
+        Returns an XHTML string for this block
         """
         html  = "<script type=\"text/javascript\">\n"
         html += "<!--\n"
@@ -148,7 +147,14 @@ class MultichoiceBlock(Block):
             
         for element in self.optionElements:
             html += element.renderFeedbackView()
+            
+        return html
     
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this block
+        """
+        html  =self.renderBlockView()    
         html += "</div>\n"
         return html
     
@@ -157,32 +163,7 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += """
-                function getFeedback(optionId, optionsNum, ideviceId){
-                
-                    for (i = 0; i< optionsNum; i++){   
-                        id = "s" + i + "b" +ideviceId
-                        if(i == optionId)
-                            document.getElementById(id).style.display = "block";
-                        else
-                            document.getElementById(id).style.display = "None";
-                    }
-                }\n"""            
-        html += "//-->\n"
-        html += "</script>\n"
-        html += "<div id=\"iDevice\">\n"
-        html += "<b>" + self.question + "</b><br/>"
-        html += "<table>"
-        for element in self.optionElements:
-            html += element.renderAnswerView()
-            
-        html += "</table>"
-            
-        for element in self.optionElements:
-            html += element.renderFeedbackView()
-      
+        html  =self.renderBlockView()      
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
