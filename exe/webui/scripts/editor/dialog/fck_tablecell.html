@@ -11,8 +11,8 @@
  * File Name: fck_tablecell.html
  * 	Cell properties dialog window.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-02-09 13:48:22
+ * Version:  2.0 RC2
+ * Modified: 2004-12-19 23:47:03
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -23,7 +23,7 @@
 		<title>Table Cell Properties</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="robots" content="noindex, nofollow" />
-		<script src="common/fck_dialog_common.js" type="text/javascript"></script>
+		<script src="js/fck_dialog_common.js" type="text/javascript"></script>
 		<script type="text/javascript">
 
 var oEditor = window.parent.InnerDialogLoaded() ;
@@ -33,15 +33,15 @@ var oDOM = oEditor.FCK.EditorDocument ;
 
 // Array of selected Cells
 var aCells = oEditor.FCKTableHandler.GetSelectedCells() ;
-
+	
 window.onload = function()
 {
 	// First of all, translate the dialog box texts
 	oEditor.FCKLanguageManager.TranslatePage( document ) ;
-
+	
 	SetStartupValue() ;
 
-	window.parent.SetOkButton( true ) ;
+	window.parent.SetOkButton( true ) ;	
 	window.parent.SetAutoSize( true ) ;
 }
 
@@ -51,13 +51,13 @@ function SetStartupValue()
 	{
 		var oCell = aCells[0] ;
 		var iWidth = GetAttribute( oCell, 'width' ) ;
-
+		
 		if ( iWidth.indexOf && iWidth.indexOf( '%' ) >= 0 )
 		{
 			iWidth = iWidth.substr( 0, iWidth.length - 1 ) ;
 			GetE('selWidthType').value = 'percent' ;
 		}
-
+		
 		if ( oCell.attributes['noWrap'] != null && oCell.attributes['noWrap'].specified )
 			GetE('selWordWrap').value = !oCell.noWrap ;
 
@@ -80,12 +80,12 @@ function Ok()
 	{
 		if ( GetE('txtWidth').value.length > 0 )
 			aCells[i].width	= GetE('txtWidth').value + ( GetE('selWidthType').value == 'percent' ? '%' : '') ;
-		else
+		else 
 			aCells[i].removeAttribute( 'width', 0 ) ;
 
-		if ( GetE('selWordWrap').value == 'false' )
-			aCells[i].noWrap = true ;
-		else
+		if ( GetE('selWordWrap').value == 'false' ) 
+			aCells[i].noWrap = true ; 
+		else 
 			aCells[i].removeAttribute( 'noWrap' ) ;
 
 		SetAttribute( aCells[i], 'height'		, GetE('txtHeight').value ) ;
@@ -97,19 +97,19 @@ function Ok()
 		SetAttribute( aCells[i], 'borderColor'	, GetE('txtBorderColor').value ) ;
 //		SetAttribute( aCells[i], 'className'	, GetE('cmbFontStyle').value ) ;
 	}
-
+	
 	return true ;
 }
 
 function SelectBackColor( color )
 {
-	if ( color && color.length > 0 )
+	if ( color && color.length > 0 ) 
 		GetE('txtBackColor').value = color ;
 }
 
 function SelectBorderColor( color )
 {
-	if ( color && color.length > 0 )
+	if ( color && color.length > 0 ) 
 		GetE('txtBorderColor').value = color ;
 }
 

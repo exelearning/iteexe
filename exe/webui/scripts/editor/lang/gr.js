@@ -1,4 +1,4 @@
-﻿/*
+/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: gr.js
  * 	Greek language file.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-03-01 17:26:17
+ * Version:  2.0 RC2
+ * Modified: 2004-11-29 09:51:40
  * 
  * File Authors:
  * 		Spyros Barbatos (sbarbatos{at}users.sourceforge.net)
@@ -41,7 +41,6 @@ RemoveFormat		: "Αφαίρεση Μορφοποίησης",
 InsertLinkLbl		: "Σύνδεσμος (Link)",
 InsertLink			: "Εισαγωγή/Μεταβολή Συνδέσμου (Link)",
 RemoveLink			: "Αφαίρεση Συνδέσμου (Link)",
-Anchor				: "Insert/Edit Anchor",	//MISSING
 InsertImageLbl		: "Εικόνα",
 InsertImage			: "Εισαγωγή/Μεταβολή Εικόνας",
 InsertTableLbl		: "Πίνακας",
@@ -82,18 +81,6 @@ BGColor				: "Χρώμα Υποβάθρου",
 Source				: "HTML κώδικας",
 Find				: "Αναζήτηση",
 Replace				: "Αντικατάσταση",
-SpellCheck			: "Check Spell",	//MISSING
-UniversalKeyboard	: "Universal Keyboard",	//MISSING
-
-Form			: "Form",	//MISSING
-Checkbox		: "Checkbox",	//MISSING
-RadioButton		: "Radio Button",	//MISSING
-TextField		: "Text Field",	//MISSING
-Textarea		: "Textarea",	//MISSING
-HiddenField		: "Hidden Field",	//MISSING
-Button			: "Button",	//MISSING
-SelectionField	: "Selection Field",	//MISSING
-ImageButton		: "Image Button",	//MISSING
 
 // Context Menu
 EditLink			: "Μεταβολή Συνδέσμου (Link)",
@@ -109,18 +96,7 @@ CellProperties		: "Ιδιότητες Κελιού",
 TableProperties		: "Ιδιότητες Πίνακα",
 ImageProperties		: "Ιδιότητες Εικόνας",
 
-AnchorProp			: "Anchor Properties",	//MISSING
-ButtonProp			: "Button Properties",	//MISSING
-CheckboxProp		: "Checkbox Properties",	//MISSING
-HiddenFieldProp		: "Hidden Field Properties",	//MISSING
-RadioButtonProp		: "Radio Button Properties",	//MISSING
-ImageButtonProp		: "Image Button Properties",	//MISSING
-TextFieldProp		: "Text Field Properties",	//MISSING
-SelectionFieldProp	: "Selection Field Properties",	//MISSING
-TextareaProp		: "Textarea Properties",	//MISSING
-FormProp			: "Form Properties",	//MISSING
-
-FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",	// 2.0: The last entry has been added.
+FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",
 
 // Alerts and Messages
 ProcessingXHTML		: "Επεξεργασία XHTML. Παρακαλώ περιμένετε...",
@@ -136,9 +112,7 @@ UnknownToolbarSet	: "Η μπάρα εργαλείων \"%1\" δεν υπάρχε
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Ακύρωση",
 DlgBtnClose			: "Κλείσιμο",
-DlgBtnBrowseServer	: "Browse Server",	//MISSING
 DlgAdvancedTag		: "Για προχωρημένους",
-DlgOpOther			: "&lt;Other&gt;",	//MISSING
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;χωρίς&gt;",
@@ -163,6 +137,7 @@ DlgImgInfoTab		: "Πληροφορίες Εικόνας",
 DlgImgBtnUpload		: "Αποστολή στον Διακομιστή",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Αποστολή",
+DlgImgBtnBrowse		: "Προβολή Αρχείων Διακομιστή",
 DlgImgAlt			: "Εναλλακτικό Κείμενο (ALT)",
 DlgImgWidth			: "Πλάτος",
 DlgImgHeight		: "Ύψος",
@@ -182,6 +157,8 @@ DlgImgAlignRight	: "Δεξιά (Right)",
 DlgImgAlignTextTop	: "Κορυφή Κειμένου (Text Top)",
 DlgImgAlignTop		: "Πάνω (Top)",
 DlgImgPreview		: "Προεπισκόπιση",
+DlgImgMsgWrongExt	: "Δυστυχώς μόνο οι παρακάτω τύποι αρχείων επιτρέπεται να αποσταλλούν:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nΗ εργασία ακυρώθηκε.",
+DlgImgAlertSelect	: "Επιλέξτε μία εικόνα για μεταφορά.",
 DlgImgAlertUrl		: "Εισάγετε την τοποθεσία (URL) της εικόνας",
 
 // Link Dialog
@@ -196,6 +173,7 @@ DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protocol",
 DlgLnkProtoOther	: "&lt;άλλο&gt;",
 DlgLnkURL			: "URL",
+DlgLnkBtnBrowse		: "Προβολή Αρχείων Διακομιστή",
 DlgLnkAnchorSel		: "Επιλέξτε ένα Anchor",
 DlgLnkAnchorByName	: "Βάσει του Ονόματος (Name)του Anchor",
 DlgLnkAnchorById	: "Βάσει του Element Id",
@@ -213,7 +191,7 @@ DlgLnkTargetBlank	: "Νέο Παράθυρο (_blank)",
 DlgLnkTargetParent	: "Γονικό Παράθυρο (_parent)",
 DlgLnkTargetSelf	: "Ίδιο Παράθυρο (_self)",
 DlgLnkTargetTop		: "Ανώτατο Παράθυρο (_top)",
-DlgLnkTargetFrameName	: "Target Frame Name",	//MISSING
+DlgLnkTargetFrame	: "Όνομα Target Frame",
 DlgLnkPopWinName	: "Όνομα Popup Window",
 DlgLnkPopWinFeat	: "Επιλογές Popup Window",
 DlgLnkPopResize		: "Με αλλαγή Μεγέθους",
@@ -228,6 +206,9 @@ DlgLnkPopWidth		: "Πλάτος",
 DlgLnkPopHeight		: "Ύψος",
 DlgLnkPopLeft		: "Τοποθεσία Αριστερής Άκρης",
 DlgLnkPopTop		: "Τοποθεσία Πάνω Άκρης",
+
+DlgLnkMsgWrongExtA	: "Δυστυχώς μόνο οι παρακάτω τύποι αρχείων επιτρέπεται να αποσταλλούν:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nΗ εργασία ακυρώθηκε.",
+DlgLnkMsgWrongExtD	: "Δυστυχώς οι παρακάτω τύποι αρχείων δεν επιτρέπεται να αποσταλλούν:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nΗ εργασία ακυρώθηκε.",
 
 DlnLnkMsgNoUrl		: "Εισάγετε την τοποθεσία (URL) του υπερσυνδέσμου (Link)",
 DlnLnkMsgNoEMail	: "Εισάγετε την διεύθυνση ηλεκτρονικού ταχυδρομείου",
@@ -318,131 +299,8 @@ DlgPasteMsg		: "Ο επεξεργαστής κειμένου δεν μπορεί
 ColorAutomatic	: "Αυτόματο",
 ColorMoreColors	: "Περισσότερα χρώματα...",
 
-// Document Properties
-DocProps		: "Document Properties",	//MISSING
-
-// Anchor Dialog
-DlgAnchorTitle		: "Anchor Properties",	//MISSING
-DlgAnchorName		: "Anchor Name",	//MISSING
-DlgAnchorErrorName	: "Please type the anchor name",	//MISSING
-
-// Speller Pages Dialog
-DlgSpellNotInDic		: "Not in dictionary",	//MISSING
-DlgSpellChangeTo		: "Change to",	//MISSING
-DlgSpellBtnIgnore		: "Ignore",	//MISSING
-DlgSpellBtnIgnoreAll	: "Ignore All",	//MISSING
-DlgSpellBtnReplace		: "Replace",	//MISSING
-DlgSpellBtnReplaceAll	: "Replace All",	//MISSING
-DlgSpellBtnUndo			: "Undo",	//MISSING
-DlgSpellNoSuggestions	: "- No suggestions -",	//MISSING
-DlgSpellProgress		: "Spell check in progress...",	//MISSING
-DlgSpellNoMispell		: "Spell check complete: No misspellings found",	//MISSING
-DlgSpellNoChanges		: "Spell check complete: No words changed",	//MISSING
-DlgSpellOneChange		: "Spell check complete: One word changed",	//MISSING
-DlgSpellManyChanges		: "Spell check complete: %1 words changed",	//MISSING
-
-IeSpellDownload			: "Spell checker not installed. Do you want to download it now?",	//MISSING
-
-// Button Dialog
-DlgButtonText	: "Text (Value)",	//MISSING
-DlgButtonType	: "Type",	//MISSING
-
-// Checkbox and Radio Button Dialogs
-DlgCheckboxName		: "Name",	//MISSING
-DlgCheckboxValue	: "Value",	//MISSING
-DlgCheckboxSelected	: "Selected",	//MISSING
-
-// Form Dialog
-DlgFormName		: "Name",	//MISSING
-DlgFormAction	: "Action",	//MISSING
-DlgFormMethod	: "Method",	//MISSING
-
-// Select Field Dialog
-DlgSelectName		: "Name",	//MISSING
-DlgSelectValue		: "Value",	//MISSING
-DlgSelectSize		: "Size",	//MISSING
-DlgSelectLines		: "lines",	//MISSING
-DlgSelectChkMulti	: "Allow multiple selections",	//MISSING
-DlgSelectOpAvail	: "Available Options",	//MISSING
-DlgSelectOpText		: "Text",	//MISSING
-DlgSelectOpValue	: "Value",	//MISSING
-DlgSelectBtnAdd		: "Add",	//MISSING
-DlgSelectBtnModify	: "Modify",	//MISSING
-DlgSelectBtnUp		: "Up",	//MISSING
-DlgSelectBtnDown	: "Down",	//MISSING
-DlgSelectBtnSetValue : "Set as selected value",	//MISSING
-DlgSelectBtnDelete	: "Delete",	//MISSING
-
-// Textarea Dialog
-DlgTextareaName	: "Name",	//MISSING
-DlgTextareaCols	: "Columns",	//MISSING
-DlgTextareaRows	: "Rows",	//MISSING
-
-// Text Field Dialog
-DlgTextName			: "Name",	//MISSING
-DlgTextValue		: "Value",	//MISSING
-DlgTextCharWidth	: "Character Width",	//MISSING
-DlgTextMaxChars		: "Maximum Characters",	//MISSING
-DlgTextType			: "Type",	//MISSING
-DlgTextTypeText		: "Text",	//MISSING
-DlgTextTypePass		: "Password",	//MISSING
-
-// Hidden Field Dialog
-DlgHiddenName	: "Name",	//MISSING
-DlgHiddenValue	: "Value",	//MISSING
-
-// Bulleted List Dialog
-BulletedListProp	: "Bulleted List Properties",	//MISSING
-NumberedListProp	: "Numbered List Properties",	//MISSING
-DlgLstType			: "Type",	//MISSING
-DlgLstTypeCircle	: "Circle",	//MISSING
-DlgLstTypeDisk		: "Disk",	//MISSING
-DlgLstTypeSquare	: "Square",	//MISSING
-DlgLstTypeNumbers	: "Numbers (1, 2, 3)",	//MISSING
-DlgLstTypeLCase		: "Lowercase Letters (a, b, c)",	//MISSING
-DlgLstTypeUCase		: "Uppercase Letters (A, B, C)",	//MISSING
-DlgLstTypeSRoman	: "Small Roman Numerals (i, ii, iii)",	//MISSING
-DlgLstTypeLRoman	: "Large Roman Numerals (I, II, III)",	//MISSING
-
-// Document Properties Dialog
-DlgDocGeneralTab	: "General",	//MISSING
-DlgDocBackTab		: "Background",	//MISSING
-DlgDocColorsTab		: "Colors and Margins",	//MISSING
-DlgDocMetaTab		: "Meta Data",	//MISSING
-
-DlgDocPageTitle		: "Page Title",	//MISSING
-DlgDocLangDir		: "Language Direction",	//MISSING
-DlgDocLangDirLTR	: "Left to Right (LTR)",	//MISSING
-DlgDocLangDirRTL	: "Right to Left (RTL)",	//MISSING
-DlgDocLangCode		: "Language Code",	//MISSING
-DlgDocCharSet		: "Character Set Encoding",	//MISSING
-DlgDocCharSetOther	: "Other Character Set Encoding",	//MISSING
-
-DlgDocDocType		: "Document Type Heading",	//MISSING
-DlgDocDocTypeOther	: "Other Document Type Heading",	//MISSING
-DlgDocIncXHTML		: "Include XHTML Declarations",	//MISSING
-DlgDocBgColor		: "Background Color",	//MISSING
-DlgDocBgImage		: "Background Image URL",	//MISSING
-DlgDocBgNoScroll	: "Nonscrolling Background",	//MISSING
-DlgDocCText			: "Text",	//MISSING
-DlgDocCLink			: "Link",	//MISSING
-DlgDocCVisited		: "Visited Link",	//MISSING
-DlgDocCActive		: "Active Link",	//MISSING
-DlgDocMargins		: "Page Margins",	//MISSING
-DlgDocMaTop			: "Top",	//MISSING
-DlgDocMaLeft		: "Left",	//MISSING
-DlgDocMaRight		: "Right",	//MISSING
-DlgDocMaBottom		: "Bottom",	//MISSING
-DlgDocMeIndex		: "Document Indexing Keywords (comma separated)",	//MISSING
-DlgDocMeDescr		: "Document Description",	//MISSING
-DlgDocMeAuthor		: "Author",	//MISSING
-DlgDocMeCopy		: "Copyright",	//MISSING
-DlgDocPreview		: "Preview",	//MISSING
-
 // About Dialog
-DlgAboutAboutTab	: "About",	//MISSING
-DlgAboutBrowserInfoTab	: "Browser Info",	//MISSING
-DlgAboutVersion		: "έκδοση",
-DlgAboutLicense		: "Άδεια χρήσης υπό τους όρους της GNU Lesser General Public License",
-DlgAboutInfo		: "Για περισσότερες πληροφορίες"
+DlgAboutVersion	: "έκδοση",
+DlgAboutLicense	: "Άδεια χρήσης υπό τους όρους της GNU Lesser General Public License",
+DlgAboutInfo	: "Για περισσότερες πληροφορίες"
 }

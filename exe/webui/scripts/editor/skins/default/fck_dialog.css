@@ -11,8 +11,8 @@
  * File Name: fck_dialog.css
  * 	Styles used by the dialog boxes.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-02-10 13:10:27
+ * Version:  2.0 RC2
+ * Modified: 2004-05-31 23:07:54
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -22,17 +22,13 @@ body
 {
 	margin: 0px;
 	padding: 10px;
+	background-color: #f1f1e3;
 }
 
 body, td, input, select, textarea
 {
 	font-size: 11px;
 	font-family: 'Microsoft Sans Serif' , Arial, Helvetica, Verdana;
-}
-
-body, .BackColor
-{
-	background-color: #f1f1e3;
 }
 
 .PopupBody

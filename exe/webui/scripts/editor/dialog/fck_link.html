@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <!--
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
@@ -11,20 +12,19 @@
  * File Name: fck_link.html
  * 	Link dialog window.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-02-18 23:55:22
+ * Version:  2.0 RC2
+ * Modified: 2004-11-30 10:33:35
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
 -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 	<head>
 		<title>Link Properties</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="robots" content="noindex, nofollow" />
-		<script src="common/fck_dialog_common.js" type="text/javascript"></script>
-		<script src="fck_link/fck_link.js" type="text/javascript"></script>
+		<script src="js/fck_dialog_common.js" type="text/javascript"></script>
+		<script src="js/fck_link.js" type="text/javascript"></script>
 	</head>
 	<body scroll="no" style="OVERFLOW: hidden">
 		<div id="divInfo" style="DISPLAY: none">
@@ -58,7 +58,7 @@
 				</table>
 				<br />
 				<div id="divBrowseServer">
-				<input type="button" value="Browse Server" fckLang="DlgBtnBrowseServer" onclick="BrowseServer();" />
+				<input type="button" value="Browse Server" fckLang="DlgLnkBtnBrowse" onclick="BrowseServer();" />
 				</div>
 			</div>
 			<div id="divLinkTypeAnchor" style="DISPLAY: none" align="center">
@@ -125,7 +125,7 @@
 					</td>
 					<td>&nbsp;</td>
 					<td id="tdTargetFrame" nowrap="nowrap" width="100%">
-						<span fckLang="DlgLnkTargetFrameName">Target Frame Name</span><br />
+						<span fckLang="DlgLnkTargetFrame">Target Frame Name</span><br />
 						<input id="txtTargetFrame" style="WIDTH: 100%" type="text" onkeyup="OnTargetNameChange();"
 							onchange="OnTargetNameChange();" />
 					</td>

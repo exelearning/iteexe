@@ -11,8 +11,8 @@
  * File Name: fck_table.html
  * 	Table dialog window.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-02-19 00:38:53
+ * Version:  2.0 RC2
+ * Modified: 2004-12-19 22:38:24
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -42,7 +42,7 @@ if ( e && e.tagName == "TABLE" )
 
 // Fired when the window loading process is finished. It sets the fields with the
 // actual values if a table is selected in the editor.
-window.onload = function()
+function OnLoad()
 {
 	// First of all, translate the dialog box texts
 	oEditor.FCKLanguageManager.TranslatePage(document) ;
@@ -154,7 +154,7 @@ function IsDigit( e )
 
 		</script>
 	</head>
-	<body bottommargin="5" leftmargin="5" topmargin="5" rightmargin="5" scroll="no" style="OVERFLOW: hidden">
+	<body bottommargin="5" leftmargin="5" topmargin="5" rightmargin="5" onload="OnLoad()" scroll="no" style="OVERFLOW: hidden">
 		<table id="otable" cellSpacing="0" cellPadding="0" width="100%" border="0" height="100%">
 			<tr>
 				<td>
@@ -240,7 +240,7 @@ function IsDigit( e )
 						</tr>
 					-->
 						<tr>
-							<td nowrap><span fckLang="DlgTableCaption">Caption</span>:</td>
+							<td><span fckLang="DlgTableCaption">Caption</span>:</td>
 							<td>&nbsp;</td>
 							<td width="100%">&nbsp;
 								<input id="txtCaption" type="text" style="WIDTH: 100%"></td>

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -10,20 +10,20 @@
  * 
  * File Name: fckeditor.js
  * 	This is the integration file for JavaScript.
- * 
+ * 	
  * 	It defines the FCKeditor class that can be used to create editor
  * 	instances in a HTML page in the client side. For server side
  * 	operations, use the specific integration system.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-02-27 19:04:39
+ * Version:  2.0 RC2
+ * Modified: 2004-11-23 20:35:14
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
  */
 
 // FCKeditor Class
-var FCKeditor = function( instanceName, width, height, toolbarSet, value )
+var FCKeditor = function( instanceName, width, height, toolbarSet, value)
 {
 	// Properties
 	this.InstanceName	= instanceName ;
@@ -34,7 +34,7 @@ var FCKeditor = function( instanceName, width, height, toolbarSet, value )
 	this.BasePath		= '/fckeditor/' ;
 	this.CheckBrowser	= true ;
 	this.DisplayErrors	= true ;
-
+	
 	this.Config			= new Object() ;
 
 	// Events
@@ -51,7 +51,7 @@ FCKeditor.prototype.Create = function()
 	}
 
 	document.write( '<div>' ) ;
-
+	
 	if ( !this.CheckBrowser || this._IsCompatibleBrowser() )
 	{
 		document.write( '<input type="hidden" id="' + this.InstanceName + '" name="' + this.InstanceName + '" value="' + this._HTMLEncode( this.Value ) + '">' ) ;
@@ -72,17 +72,7 @@ FCKeditor.prototype.ReplaceTextarea = function()
 {
 	if ( !this.CheckBrowser || this._IsCompatibleBrowser() )
 	{
-		var oTextarea = document.getElementById( this.InstanceName ) ;
-		
-		if ( !oTextarea )
-			oTextarea = document.getElementsByName( this.InstanceName )[0] ;
-		
-		if ( !oTextarea || oTextarea.tagName != 'TEXTAREA' )
-		{
-			alert( 'Error: The TEXTAREA id "' + this.InstanceName + '" was not found' ) ;
-			return ;
-		}
-
+		var oTextarea = document.getElementsByName( this.InstanceName )[0] ;
 		oTextarea.style.display = 'none' ;
 		this._InsertHtmlBefore( this._GetConfigHtml(), oTextarea ) ;
 		this._InsertHtmlBefore( this._GetIFrameHtml(), oTextarea ) ;
@@ -108,7 +98,7 @@ FCKeditor.prototype._GetConfigHtml = function()
 	for ( var o in this.Config )
 	{
 		if ( sConfig.length > 0 ) sConfig += '&' ;
-		sConfig += escape(o) + '=' + escape( this.Config[o] ) ;
+		sConfig += this._HTMLEncode(o) + '=' + this._HTMLEncode( this.Config[o] ) ;
 	}
 
 	return '<input type="hidden" id="' + this.InstanceName + '___Config" value="' + sConfig + '">' ;
@@ -159,7 +149,7 @@ FCKeditor.prototype._HTMLEncode = function( text )
 {
 	if ( typeof( text ) != "string" )
 		text = text.toString() ;
-
+	
 	text = text.replace(/&/g, "&amp;") ;
 	text = text.replace(/"/g, "&quot;") ;
 	text = text.replace(/</g, "&lt;") ;

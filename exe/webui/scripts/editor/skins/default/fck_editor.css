@@ -11,8 +11,8 @@
  * File Name: fck_editor.css
  * 	Styles used by the editor IFRAME and Toolbar.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-03-01 15:49:28
+ * Version:  2.0 RC2
+ * Modified: 2004-12-16 23:55:06
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -40,7 +40,7 @@ body
 	font-family: Monospace;
 }
 
-/*
+/* 
 	### Toolbar Styles
 */
 
@@ -147,9 +147,4 @@ body
 .TB_ButtonType_Text .TB_Text
 {
 	padding-left: 5px;
-}
-
-.TB_Break
-{
-	height: 23px;
 }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -9,10 +9,10 @@
  * 		http://www.fckeditor.net/
  * 
  * File Name: ko.js
- * 	Danish language file.
+ * 	Korean language file.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-03-01 17:26:17
+ * Version:  2.0 RC2
+ * Modified: 2004-11-30 09:18:34
  * 
  * File Authors:
  * 		Taehwan Kwag (thkwag@nate.com)
@@ -41,7 +41,6 @@ RemoveFormat		: "포맷 지우기",
 InsertLinkLbl		: "링크",
 InsertLink			: "링크 삽입/변경",
 RemoveLink			: "링크 삭제",
-Anchor				: "책갈피 삽입/변경",
 InsertImageLbl		: "이미지",
 InsertImage			: "이미지 삽입/변경",
 InsertTableLbl		: "표",
@@ -82,18 +81,6 @@ BGColor				: "배경 색상",
 Source				: "소스",
 Find				: "찾기",
 Replace				: "바꾸기",
-SpellCheck			: "철자검사",
-UniversalKeyboard	: "다국어 입력기",
-
-Form			: "폼",
-Checkbox		: "체크박스",
-RadioButton		: "라디오버튼",
-TextField		: "입력필드",
-Textarea		: "입력영역",
-HiddenField		: "숨김필드",
-Button			: "버튼",
-SelectionField	: "펼침목록",
-ImageButton		: "이미지버튼",
 
 // Context Menu
 EditLink			: "링크 수정",
@@ -109,18 +96,7 @@ CellProperties		: "셀 속성",
 TableProperties		: "표 속성",
 ImageProperties		: "이미지 속성",
 
-AnchorProp			: "책갈피 속성",
-ButtonProp			: "버튼 속성",
-CheckboxProp		: "체크박스 속성",
-HiddenFieldProp		: "숨김필드 속성",
-RadioButtonProp		: "라디오버튼 속성",
-ImageButtonProp		: "이미지버튼 속성",
-TextFieldProp		: "입력필드 속성",
-SelectionFieldProp	: "펼침목록 속성",
-TextareaProp		: "입력영역 속성",
-FormProp			: "폼 속성",
-
-FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",	// 2.0: The last entry has been added.
+FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",
 
 // Alerts and Messages
 ProcessingXHTML		: "XHTML 처리중. 잠시만 기다려주십시요.",
@@ -136,9 +112,7 @@ UnknownToolbarSet	: "툴바 설정이 없습니다. : \"%1\"",
 DlgBtnOK			: "예",
 DlgBtnCancel		: "아니오",
 DlgBtnClose			: "닫기",
-DlgBtnBrowseServer	: "서버 보기",
 DlgAdvancedTag		: "자세히",
-DlgOpOther			: "&lt;기타&gt;",
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;설정되지 않음&gt;",
@@ -163,6 +137,7 @@ DlgImgInfoTab		: "이미지 정보",
 DlgImgBtnUpload		: "서버로 전송",
 DlgImgURL			: "URL",
 DlgImgUpload		: "업로드",
+DlgImgBtnBrowse		: "서버 보기",
 DlgImgAlt			: "이미지 설명",
 DlgImgWidth			: "너비",
 DlgImgHeight		: "높이",
@@ -182,6 +157,8 @@ DlgImgAlignRight	: "오른쪽",
 DlgImgAlignTextTop	: "글자위(Text Top)",
 DlgImgAlignTop		: "위",
 DlgImgPreview		: "미리보기",
+DlgImgMsgWrongExt	: "죄송합니다. 다음 확장자를 가진 파일만 업로드 할 수 있습니다. :\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\n작업이 취소되었습니다.",
+DlgImgAlertSelect	: "업로드 할 이미지를 선택하십시요.",
 DlgImgAlertUrl		: "이미지 URL을 입력하십시요",
 
 // Link Dialog
@@ -196,6 +173,7 @@ DlgLnkTypeEMail		: "이메일",
 DlgLnkProto			: "프로토콜",
 DlgLnkProtoOther	: "&lt;기타&gt;",
 DlgLnkURL			: "URL",
+DlgLnkBtnBrowse		: "서버 보기",
 DlgLnkAnchorSel		: "책갈피 선택",
 DlgLnkAnchorByName	: "책갈피 이름",
 DlgLnkAnchorById	: "책갈피 ID",
@@ -213,7 +191,7 @@ DlgLnkTargetBlank	: "새 창 (_blank)",
 DlgLnkTargetParent	: "부모 창 (_parent)",
 DlgLnkTargetSelf	: "현재 창 (_self)",
 DlgLnkTargetTop		: "최 상위 창 (_top)",
-DlgLnkTargetFrameName	: "타겟 프레임 이름",
+DlgLnkTargetFrame	: "타겟 프레임 이름",
 DlgLnkPopWinName	: "팝업창 이름",
 DlgLnkPopWinFeat	: "팝업창 설정",
 DlgLnkPopResize		: "크기조정",
@@ -229,9 +207,12 @@ DlgLnkPopHeight		: "높이",
 DlgLnkPopLeft		: "왼쪽 위치",
 DlgLnkPopTop		: "윗쪽 위치",
 
-DlnLnkMsgNoUrl		: "링크 URL을 입력하십시요.",
-DlnLnkMsgNoEMail	: "이메일주소를 입력하십시요.",
-DlnLnkMsgNoAnchor	: "책갈피명을 입력하십시요.",
+DlgLnkMsgWrongExtA	: "죄송합니다. 다음 확장자를 가진 파일만 업로드 할 수 있습니다. :\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\n작업이 취소되었습니다.",
+DlgLnkMsgWrongExtD	: "죄송합니다. 다음 확장자를 가진 파일은 업로드 할 수 없습니다. :\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\n작업이 취소되었습니다.",
+
+DlnLnkMsgNoUrl		: "링크 URL을 입력하십시요.",	
+DlnLnkMsgNoEMail	: "이메일주소를 입력하십시요.",	
+DlnLnkMsgNoAnchor	: "책갈피명을 입력하십시요.",	
 
 // Color Dialog
 DlgColorTitle		: "색상 선택",
@@ -318,131 +299,8 @@ DlgPasteMsg		: "브라우저의 <STRONG>보안설정/STRONG> 때문에 붙여넣
 ColorAutomatic	: "기본색상",
 ColorMoreColors	: "색상선택...",
 
-// Document Properties
-DocProps		: "문서 속성",
-
-// Anchor Dialog
-DlgAnchorTitle		: "책갈피 속성",
-DlgAnchorName		: "책갈피 이름",
-DlgAnchorErrorName	: "책갈피 이름을 입력하십시요.",
-
-// Speller Pages Dialog
-DlgSpellNotInDic		: "사전에 없는 단어",
-DlgSpellChangeTo		: "변경할 단어",
-DlgSpellBtnIgnore		: "건너뜀",
-DlgSpellBtnIgnoreAll	: "모두 건너뜀",
-DlgSpellBtnReplace		: "변경",
-DlgSpellBtnReplaceAll	: "모두 변경",
-DlgSpellBtnUndo			: "취소",
-DlgSpellNoSuggestions	: "- 추천단어 없음 -",
-DlgSpellProgress		: "철자검사를 진행중입니다...",
-DlgSpellNoMispell		: "철자검사 완료: 잘못된 철자가 없습니다.",
-DlgSpellNoChanges		: "철자검사 완료: 변경된 단어가 없습니다.",
-DlgSpellOneChange		: "철자검사 완료: 단어가 변경되었습니다.",
-DlgSpellManyChanges		: "철자검사 완료: %1 단어가 변경되었습니다.",
-
-IeSpellDownload			: "철자 검사기가 철치되지 않았습니다. 지금 다운로드하시겠습니까?",
-
-// Button Dialog
-DlgButtonText	: "버튼글자(값)",
-DlgButtonType	: "버튼종류",
-
-// Checkbox and Radio Button Dialogs
-DlgCheckboxName		: "이름",
-DlgCheckboxValue	: "값",
-DlgCheckboxSelected	: "선택됨",
-
-// Form Dialog
-DlgFormName		: "폼이름",
-DlgFormAction	: "실행경로(Action)",
-DlgFormMethod	: "방법(Method)",
-
-// Select Field Dialog
-DlgSelectName		: "이름",
-DlgSelectValue		: "값",
-DlgSelectSize		: "세로크기",
-DlgSelectLines		: "줄",
-DlgSelectChkMulti	: "여러항목 선택 허용",
-DlgSelectOpAvail	: "선택옵션",
-DlgSelectOpText		: "이름",
-DlgSelectOpValue	: "값",
-DlgSelectBtnAdd		: "추가",
-DlgSelectBtnModify	: "변경",
-DlgSelectBtnUp		: "위로",
-DlgSelectBtnDown	: "아래로",
-DlgSelectBtnSetValue : "선택된것으로 설정",
-DlgSelectBtnDelete	: "삭제",
-
-// Textarea Dialog
-DlgTextareaName	: "이름",
-DlgTextareaCols	: "칸수",
-DlgTextareaRows	: "줄수",
-
-// Text Field Dialog
-DlgTextName			: "이름",
-DlgTextValue		: "값",
-DlgTextCharWidth	: "글자 너비",
-DlgTextMaxChars		: "최대 글자수",
-DlgTextType			: "종류",
-DlgTextTypeText		: "문자열",
-DlgTextTypePass		: "비밀번호",
-
-// Hidden Field Dialog
-DlgHiddenName	: "이름",
-DlgHiddenValue	: "값",
-
-// Bulleted List Dialog
-BulletedListProp	: "순서없는 목록 속성",
-NumberedListProp	: "순서있는 목록 속성",
-DlgLstType			: "종류",
-DlgLstTypeCircle	: "원(Circle)",
-DlgLstTypeDisk		: "둥근점(Disk)",
-DlgLstTypeSquare	: "네모점(Square)",
-DlgLstTypeNumbers	: "번호 (1, 2, 3)",
-DlgLstTypeLCase		: "소문자 (a, b, c)",
-DlgLstTypeUCase		: "대문자 (A, B, C)",
-DlgLstTypeSRoman	: "로마자 수문자 (i, ii, iii)",
-DlgLstTypeLRoman	: "로마자 대문자 (I, II, III)",
-
-// Document Properties Dialog
-DlgDocGeneralTab	: "일반",
-DlgDocBackTab		: "배경",
-DlgDocColorsTab		: "색상 및 여백",
-DlgDocMetaTab		: "메타데이터",
-
-DlgDocPageTitle		: "페이지명",
-DlgDocLangDir		: "문자 쓰기방향",
-DlgDocLangDirLTR	: "왼쪽에서 오른쪽 (LTR)",
-DlgDocLangDirRTL	: "오른쪽에서 왼쪽 (RTL)",
-DlgDocLangCode		: "언어코드",
-DlgDocCharSet		: "캐릭터셋 인코딩",
-DlgDocCharSetOther	: "다른 캐릭터셋 인코딩",
-
-DlgDocDocType		: "문서 헤드",
-DlgDocDocTypeOther	: "다른 문서헤드",
-DlgDocIncXHTML		: "XHTML 문서정의 포함",
-DlgDocBgColor		: "배경색상",
-DlgDocBgImage		: "배경이미지 URL",
-DlgDocBgNoScroll	: "스크롤되지않는 배경",
-DlgDocCText			: "텍스트",
-DlgDocCLink			: "링크",
-DlgDocCVisited		: "방문한 링크(Visited)",
-DlgDocCActive		: "활성화된 링크(Active)",
-DlgDocMargins		: "페이지 여백",
-DlgDocMaTop			: "위",
-DlgDocMaLeft		: "왼쪽",
-DlgDocMaRight		: "오른쪽",
-DlgDocMaBottom		: "아래",
-DlgDocMeIndex		: "문서 키워드 (콤마로 구분)",
-DlgDocMeDescr		: "문서 설명",
-DlgDocMeAuthor		: "작성자",
-DlgDocMeCopy		: "저작권",
-DlgDocPreview		: "미리보기",
-
 // About Dialog
-DlgAboutAboutTab	: "About",
-DlgAboutBrowserInfoTab	: "브라우저 정보",
-DlgAboutVersion		: "버전",
-DlgAboutLicense		: "Licensed under the terms of the GNU Lesser General Public License",
-DlgAboutInfo		: "For further information go to"
+DlgAboutVersion	: "버전",
+DlgAboutLicense	: "Licensed under the terms of the GNU Lesser General Public License",
+DlgAboutInfo	: "For further information go to"
 }

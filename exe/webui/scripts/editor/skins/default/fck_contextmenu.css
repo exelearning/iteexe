@@ -11,8 +11,8 @@
  * File Name: fck_contextmenu.css
  * 	Styles used by the context menu and panels.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-02-23 18:58:26
+ * Version:  2.0 RC2
+ * Modified: 2004-12-01 00:15:55
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -50,7 +50,7 @@
 
 .CM_Option .CM_Icon IMG
 {
-	filter: alpha(opacity=70);
+	filter: alpha(opacity=70); 
 	-moz-opacity:0.70;
 }
 
@@ -94,9 +94,9 @@
 
 .FCK_Panel
 {
-	border: #8f8f73 1px solid;
+	border: #8f8f73 1px solid; 
 	padding: 2px;
-	background-color: #ffffff;
+	background-color: #ffffff; 
 }
 
 .FCK_Panel, .FCK_Panel TD
@@ -111,7 +111,7 @@
 
 .ColorBoxBorder
 {
-	border: #808080 1px solid;
+	border: #808080 1px solid; 
 	position: static;
 }
 
@@ -149,6 +149,7 @@
 
 .SC_Panel
 {
+	overflow: -moz-scrollbars-vertical;
 	overflow-y: auto;
 	white-space: nowrap;
 	cursor: default;
@@ -198,9 +199,8 @@
 	overflow: visible;
 	padding-right: 5px;
 	padding-left: 5px;
-	filter: alpha(opacity=70);
+	filter: alpha(opacity=70); 
 	-moz-opacity:0.75;
-	height: 23px;
 }
 
 .SC_FieldLabel
@@ -225,7 +225,7 @@
 
 .SC_FieldDisabled .SC_FieldButton, .SC_FieldDisabled .SC_FieldCaption
 {
-	filter: gray() alpha(opacity=30);
+	filter: gray() alpha(opacity=30); 
 	-moz-opacity:0.30;
 }
 

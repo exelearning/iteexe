@@ -1,4 +1,4 @@
-﻿/*
+/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: sr-latn.js
  * 	Serbian (Latin) language file.
  * 
- * Version:  2.0 RC3
- * Modified: 2005-03-01 17:26:18
+ * Version:  2.0 RC2
+ * Modified: 2004-11-26 02:03:24
  * 
  * File Authors:
  * 		Zoran Subić (zoran@tf.zr.ac.yu)
@@ -22,9 +22,6 @@ var FCKLang =
 {
 // Language direction : "ltr" (left to right) or "rtl" (right to left).
 Dir					: "ltr",
-
-ToolbarCollapse		: "Collapse Toolbar",	//MISSING
-ToolbarExpand		: "Expand Toolbar",	//MISSING
 
 // Toolbar Items and Context Menu
 Save				: "Sačuvaj",
@@ -41,7 +38,6 @@ RemoveFormat		: "Ukloni formatiranje",
 InsertLinkLbl		: "Link",
 InsertLink			: "Unesi/izmeni link",
 RemoveLink			: "Ukloni link",
-Anchor				: "Insert/Edit Anchor",	//MISSING
 InsertImageLbl		: "Slika",
 InsertImage			: "Unesi/izmeni sliku",
 InsertTableLbl		: "Tabela",
@@ -82,18 +78,6 @@ BGColor				: "Boja pozadine",
 Source				: "K&ocirc;d",
 Find				: "Pretraga",
 Replace				: "Zamena",
-SpellCheck			: "Check Spell",	//MISSING
-UniversalKeyboard	: "Universal Keyboard",	//MISSING
-
-Form			: "Form",	//MISSING
-Checkbox		: "Checkbox",	//MISSING
-RadioButton		: "Radio Button",	//MISSING
-TextField		: "Text Field",	//MISSING
-Textarea		: "Textarea",	//MISSING
-HiddenField		: "Hidden Field",	//MISSING
-Button			: "Button",	//MISSING
-SelectionField	: "Selection Field",	//MISSING
-ImageButton		: "Image Button",	//MISSING
 
 // Context Menu
 EditLink			: "Izmeni link",
@@ -109,18 +93,7 @@ CellProperties		: "Osobine ćelije",
 TableProperties		: "Osobine tabele",
 ImageProperties		: "Osobine slike",
 
-AnchorProp			: "Anchor Properties",	//MISSING
-ButtonProp			: "Button Properties",	//MISSING
-CheckboxProp		: "Checkbox Properties",	//MISSING
-HiddenFieldProp		: "Hidden Field Properties",	//MISSING
-RadioButtonProp		: "Radio Button Properties",	//MISSING
-ImageButtonProp		: "Image Button Properties",	//MISSING
-TextFieldProp		: "Text Field Properties",	//MISSING
-SelectionFieldProp	: "Selection Field Properties",	//MISSING
-TextareaProp		: "Textarea Properties",	//MISSING
-FormProp			: "Form Properties",	//MISSING
-
-FontFormats			: "Normal;Formatirano;Adresa;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",	// 2.0: The last entry has been added.
+FontFormats			: "Normal;Formatirano;Adresa;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",
 
 // Alerts and Messages
 ProcessingXHTML		: "Obrađujem XHTML. Malo strpljenja...",
@@ -136,9 +109,7 @@ UnknownToolbarSet	: "Toolbar \"%1\" ne postoji",
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Otkaži",
 DlgBtnClose			: "Zatvori",
-DlgBtnBrowseServer	: "Browse Server",	//MISSING
 DlgAdvancedTag		: "Napredni tagovi",
-DlgOpOther			: "&lt;Other&gt;",	//MISSING
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;nije postavljeno&gt;",
@@ -163,6 +134,7 @@ DlgImgInfoTab		: "Info slike",
 DlgImgBtnUpload		: "Pošalji na server",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Pošalji",
+DlgImgBtnBrowse		: "Pretraži server",
 DlgImgAlt			: "Alternativni tekst",
 DlgImgWidth			: "Širina",
 DlgImgHeight		: "Visina",
@@ -182,6 +154,8 @@ DlgImgAlignRight	: "Desno",
 DlgImgAlignTextTop	: "Vrh teksta",
 DlgImgAlignTop		: "Vrh",
 DlgImgPreview		: "Izgled",
+DlgImgMsgWrongExt	: "Dozvoljeno je slanje samo sledećih vrsta datoteka::\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nOperacija je otkazana.",
+DlgImgAlertSelect	: "Odaberite sliku za slanje.",
 DlgImgAlertUrl		: "Unesite URL slike",
 
 // Link Dialog
@@ -196,6 +170,7 @@ DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protokol",
 DlgLnkProtoOther	: "&lt;drugo&gt;",
 DlgLnkURL			: "URL",
+DlgLnkBtnBrowse		: "Pretraži server",
 DlgLnkAnchorSel		: "Odaberi sidro",
 DlgLnkAnchorByName	: "Po nazivu sidra",
 DlgLnkAnchorById	: "Po Id-ju elementa",
@@ -213,7 +188,7 @@ DlgLnkTargetBlank	: "Novi prozor (_blank)",
 DlgLnkTargetParent	: "Roditeljski prozor (_parent)",
 DlgLnkTargetSelf	: "Isti prozor (_self)",
 DlgLnkTargetTop		: "Prozor na vrhu (_top)",
-DlgLnkTargetFrameName	: "Target Frame Name",	//MISSING
+DlgLnkTargetFrame	: "Okvir (frejm)",
 DlgLnkPopWinName	: "Naziv popup prozora",
 DlgLnkPopWinFeat	: "Mogućnosti popup prozora",
 DlgLnkPopResize		: "Promenljiva veličina",
@@ -229,9 +204,8 @@ DlgLnkPopHeight		: "Visina",
 DlgLnkPopLeft		: "Od leve ivice ekrana (px)",
 DlgLnkPopTop		: "Od vrha ekrana (px)",
 
-DlnLnkMsgNoUrl		: "Please type the link URL",	//MISSING
-DlnLnkMsgNoEMail	: "Please type the e-mail address",	//MISSING
-DlnLnkMsgNoAnchor	: "Please select an anchor",	//MISSING
+DlgLnkMsgWrongExtA	: "Dozvoljeno je slanje samo sledećih datoteka:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nOperacija je otkazana.",
+DlgLnkMsgWrongExtD	: "Slanje sledećih vrsta datoteka nije dozvoljeno:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nOperacija je otkazana.",
 
 // Color Dialog
 DlgColorTitle		: "Odaberite boju",
@@ -277,7 +251,7 @@ DlgCellHorAlign		: "Vodoravno ravnanje",
 DlgCellHorAlignNotSet	: "<nije postavljeno>",
 DlgCellHorAlignLeft	: "Levo",
 DlgCellHorAlignCenter	: "Sredina",
-DlgCellHorAlignRight: "Desno",
+DlgCellHorAlignRight	: "Desno",
 DlgCellVerAlign		: "Vertikalno ravnanje",
 DlgCellVerAlignNotSet	: "<nije postavljeno>",
 DlgCellVerAlignTop	: "Gornje",
@@ -296,13 +270,13 @@ DlgFindFindBtn		: "Pronađi",
 DlgFindNotFoundMsg	: "Traženi tekst nije pronađen.",
 
 // Replace Dialog
-DlgReplaceTitle			: "Zameni",
-DlgReplaceFindLbl		: "Pronađi:",
+DlgReplaceTitle		: "Zameni",
+DlgReplaceFindLbl	: "Pronađi:",
 DlgReplaceReplaceLbl	: "Zameni sa:",
-DlgReplaceCaseChk		: "Razlikuj mala i velika slova",
+DlgReplaceCaseChk	: "Razlikuj mala i velika slova",
 DlgReplaceReplaceBtn	: "Zameni",
 DlgReplaceReplAllBtn	: "Zameni sve",
-DlgReplaceWordChk		: "Uporedi cele reči",
+DlgReplaceWordChk	: "Uporedi cele reči",
 
 // Paste Operations / Dialog
 PasteErrorPaste	: "Sigurnosna podešavanja Vašeg pretraživača ne dozvoljavaju operacije automatskog lepljenja teksta. Molimo Vas da koristite prečicu sa tastature (Ctrl+V).",
@@ -310,7 +284,7 @@ PasteErrorCut	: "Sigurnosna podešavanja Vašeg pretraživača ne dozvoljavaju o
 PasteErrorCopy	: "Sigurnosna podešavanja Vašeg pretraživača ne dozvoljavaju operacije automatskog kopiranja teksta. Molimo Vas da koristite prečicu sa tastature (Ctrl+C).",
 
 PasteAsText		: "Zalepi kao čist tekst",
-PasteFromWord	: "Zalepi iz Worda",
+PasteFromWord		: "Zalepi iz Worda",
 
 DlgPasteMsg		: "Editor nije mogao izvršiti automatsko lepljenje zbog  <STRONG>sigurnosnih postavki</STRONG> Vašeg pretraživača.<BR>Molimo da zalepite sadržaj unutar sledeće površine koristeći tastaturnu prečicu (<STRONG>Ctrl+V</STRONG>), a zatim kliknite na <STRONG>OK</STRONG>.",
 
@@ -318,131 +292,8 @@ DlgPasteMsg		: "Editor nije mogao izvršiti automatsko lepljenje zbog  <STRONG>s
 ColorAutomatic	: "Automatski",
 ColorMoreColors	: "Više boja...",
 
-// Document Properties
-DocProps		: "Document Properties",	//MISSING
-
-// Anchor Dialog
-DlgAnchorTitle		: "Anchor Properties",	//MISSING
-DlgAnchorName		: "Anchor Name",	//MISSING
-DlgAnchorErrorName	: "Please type the anchor name",	//MISSING
-
-// Speller Pages Dialog
-DlgSpellNotInDic		: "Not in dictionary",	//MISSING
-DlgSpellChangeTo		: "Change to",	//MISSING
-DlgSpellBtnIgnore		: "Ignore",	//MISSING
-DlgSpellBtnIgnoreAll	: "Ignore All",	//MISSING
-DlgSpellBtnReplace		: "Replace",	//MISSING
-DlgSpellBtnReplaceAll	: "Replace All",	//MISSING
-DlgSpellBtnUndo			: "Undo",	//MISSING
-DlgSpellNoSuggestions	: "- No suggestions -",	//MISSING
-DlgSpellProgress		: "Spell check in progress...",	//MISSING
-DlgSpellNoMispell		: "Spell check complete: No misspellings found",	//MISSING
-DlgSpellNoChanges		: "Spell check complete: No words changed",	//MISSING
-DlgSpellOneChange		: "Spell check complete: One word changed",	//MISSING
-DlgSpellManyChanges		: "Spell check complete: %1 words changed",	//MISSING
-
-IeSpellDownload			: "Spell checker not installed. Do you want to download it now?",	//MISSING
-
-// Button Dialog
-DlgButtonText	: "Text (Value)",	//MISSING
-DlgButtonType	: "Type",	//MISSING
-
-// Checkbox and Radio Button Dialogs
-DlgCheckboxName		: "Name",	//MISSING
-DlgCheckboxValue	: "Value",	//MISSING
-DlgCheckboxSelected	: "Selected",	//MISSING
-
-// Form Dialog
-DlgFormName		: "Name",	//MISSING
-DlgFormAction	: "Action",	//MISSING
-DlgFormMethod	: "Method",	//MISSING
-
-// Select Field Dialog
-DlgSelectName		: "Name",	//MISSING
-DlgSelectValue		: "Value",	//MISSING
-DlgSelectSize		: "Size",	//MISSING
-DlgSelectLines		: "lines",	//MISSING
-DlgSelectChkMulti	: "Allow multiple selections",	//MISSING
-DlgSelectOpAvail	: "Available Options",	//MISSING
-DlgSelectOpText		: "Text",	//MISSING
-DlgSelectOpValue	: "Value",	//MISSING
-DlgSelectBtnAdd		: "Add",	//MISSING
-DlgSelectBtnModify	: "Modify",	//MISSING
-DlgSelectBtnUp		: "Up",	//MISSING
-DlgSelectBtnDown	: "Down",	//MISSING
-DlgSelectBtnSetValue : "Set as selected value",	//MISSING
-DlgSelectBtnDelete	: "Delete",	//MISSING
-
-// Textarea Dialog
-DlgTextareaName	: "Name",	//MISSING
-DlgTextareaCols	: "Columns",	//MISSING
-DlgTextareaRows	: "Rows",	//MISSING
-
-// Text Field Dialog
-DlgTextName			: "Name",	//MISSING
-DlgTextValue		: "Value",	//MISSING
-DlgTextCharWidth	: "Character Width",	//MISSING
-DlgTextMaxChars		: "Maximum Characters",	//MISSING
-DlgTextType			: "Type",	//MISSING
-DlgTextTypeText		: "Text",	//MISSING
-DlgTextTypePass		: "Password",	//MISSING
-
-// Hidden Field Dialog
-DlgHiddenName	: "Name",	//MISSING
-DlgHiddenValue	: "Value",	//MISSING
-
-// Bulleted List Dialog
-BulletedListProp	: "Bulleted List Properties",	//MISSING
-NumberedListProp	: "Numbered List Properties",	//MISSING
-DlgLstType			: "Type",	//MISSING
-DlgLstTypeCircle	: "Circle",	//MISSING
-DlgLstTypeDisk		: "Disk",	//MISSING
-DlgLstTypeSquare	: "Square",	//MISSING
-DlgLstTypeNumbers	: "Numbers (1, 2, 3)",	//MISSING
-DlgLstTypeLCase		: "Lowercase Letters (a, b, c)",	//MISSING
-DlgLstTypeUCase		: "Uppercase Letters (A, B, C)",	//MISSING
-DlgLstTypeSRoman	: "Small Roman Numerals (i, ii, iii)",	//MISSING
-DlgLstTypeLRoman	: "Large Roman Numerals (I, II, III)",	//MISSING
-
-// Document Properties Dialog
-DlgDocGeneralTab	: "General",	//MISSING
-DlgDocBackTab		: "Background",	//MISSING
-DlgDocColorsTab		: "Colors and Margins",	//MISSING
-DlgDocMetaTab		: "Meta Data",	//MISSING
-
-DlgDocPageTitle		: "Page Title",	//MISSING
-DlgDocLangDir		: "Language Direction",	//MISSING
-DlgDocLangDirLTR	: "Left to Right (LTR)",	//MISSING
-DlgDocLangDirRTL	: "Right to Left (RTL)",	//MISSING
-DlgDocLangCode		: "Language Code",	//MISSING
-DlgDocCharSet		: "Character Set Encoding",	//MISSING
-DlgDocCharSetOther	: "Other Character Set Encoding",	//MISSING
-
-DlgDocDocType		: "Document Type Heading",	//MISSING
-DlgDocDocTypeOther	: "Other Document Type Heading",	//MISSING
-DlgDocIncXHTML		: "Include XHTML Declarations",	//MISSING
-DlgDocBgColor		: "Background Color",	//MISSING
-DlgDocBgImage		: "Background Image URL",	//MISSING
-DlgDocBgNoScroll	: "Nonscrolling Background",	//MISSING
-DlgDocCText			: "Text",	//MISSING
-DlgDocCLink			: "Link",	//MISSING
-DlgDocCVisited		: "Visited Link",	//MISSING
-DlgDocCActive		: "Active Link",	//MISSING
-DlgDocMargins		: "Page Margins",	//MISSING
-DlgDocMaTop			: "Top",	//MISSING
-DlgDocMaLeft		: "Left",	//MISSING
-DlgDocMaRight		: "Right",	//MISSING
-DlgDocMaBottom		: "Bottom",	//MISSING
-DlgDocMeIndex		: "Document Indexing Keywords (comma separated)",	//MISSING
-DlgDocMeDescr		: "Document Description",	//MISSING
-DlgDocMeAuthor		: "Author",	//MISSING
-DlgDocMeCopy		: "Copyright",	//MISSING
-DlgDocPreview		: "Preview",	//MISSING
-
 // About Dialog
-DlgAboutAboutTab	: "About",	//MISSING
-DlgAboutBrowserInfoTab	: "Browser Info",	//MISSING
-DlgAboutVersion		: "verzija",
-DlgAboutLicense		: "Licencirano pod uslovima GNU Lesser General Public License",
-DlgAboutInfo		: "Za više informacija posetite"
+DlgAboutVersion	: "verzija",
+DlgAboutLicense	: "Licencirano pod uslovima GNU Lesser General Public License",
+DlgAboutInfo	: "Za više informacija posetite"
 }
