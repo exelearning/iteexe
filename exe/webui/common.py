@@ -180,7 +180,7 @@ def elementInstruc(indent, instruc):
         html += "href=\"Javascript:void(0)\"> " 
         html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/>"
         html += "</a>\n"
-        html += "<div id=\"i%s\" style=\"display:none;\">" % indent
+        html += "<div id=\"i%s\" style=\"display:none; z-index:99;\">" % indent
         html += "<div style=\"float:right;\" >"
         html += "<img src=\"images/stock-stop.png\" title=\""+_("Close")+"\" "
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"

@@ -49,6 +49,8 @@ body>#workbox {
     z-index: 3;
 }
 
+
+/* styles the little up/down arrow on top of the Control panel */
 #workbox-top a.img, body.hidden #workbox-top a.img{
     top: .3em;
     background: transparent;
@@ -81,13 +83,6 @@ body.hidden #workbox-top a{
 }
 
 
-#workbox-top{
-    width: 14.2em;
-}
-
-#workbox>#workbox-top[id]{
-    width: 17.4em;
-}
 
 /* ####################### ControlPanel Contents ####################### */
 
@@ -108,31 +103,6 @@ body.hidden #workbox-top a{
     padding-left: 10px;
 }
 
-
-.link-section a, a.module, .style-choices a, .other-courses a, .other-modules{
-    display: block;
-    font-size: .75em;
-    color: #4a4a4a;
-}
-
-.other-modules{
-    margin: .5em 0;
-    color: #cde;
-}
-
-#no-links{
-    color: #258;
-    font-style: italic;
-}
-
-.link-section a{
-    margin-left: 17px;
-}
-
-.link-section a img{
-    vertical-align: -1px;
-    margin-left: -17px;
-}
 
 .link-section .name, .style-choices .name, .other-courses .name, #other-modules .name, #iDevices-above .name{
     display: block;
@@ -160,22 +130,10 @@ a.name{
     display: block;
 }
 
-/*
-li>a.name{
-    width: 15.1em;
-}
-*/
-
 .link-section, .style-choices, .other-courses{
     margin-bottom: .7em;
 }
 
-.other-courses{
-    margin-top: 1.5em;
-}
-
-
-/* ####################### Turned on/off on default ######################## */
 
 /* fixed height of box so that it doesn't flow off of screen not purty but it works */
 #outline-above {
@@ -210,20 +168,6 @@ li>a.name{
 
 .fixed{
     padding-right: 0px;
-}
-
-* html .fixed{
-    padding-right: 15.5em;
-}
-
-.fixed #name-box{
-    margin-right: -9.65em;
-    padding-right: 10.27em; 
-}
-
-* html .fixed #name-box{
-    margin-right: -8.68em;
-    padding-right: 9.2em;
 }
 
 .fixed #about-links{

@@ -74,25 +74,25 @@ class PropertiesPane(object):
         log.debug("render")
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
-        html += "<b>Package title:</b><br/>\n"
-        html += common.textInput("title", self.package.root.title) + "<br/>\n"
-        html += "<b>Author:</b><br/>\n"
-        html += common.textInput("author", self.package.author) + "<br/>\n"
-        html += "<b>Description:</b><br/>\n"
+        html += "<table border=\"0\" cellspacing=\"6\">\n"
+        html += "<tr><td><b>Project title:</b></td><td>\n"
+        html += common.textInput("title", self.package.root.title, 54) + "</td>"
+        html += "</tr><tr><td><b>Author:</b></td><td>\n"
+        html += common.textInput("author", self.package.author, 54) + "</td></tr>\n"
+        html += "<tr><td valign=\"top\"><b>Description:</b></td><td>\n"
         html += common.textArea("description", self.package.description)
-        html += "<br/>\n"
-        html += "<b>Taxonomy:</b><br/>\n" 
-        html += "Level 1 <br/>\n"
-        html += common.textInput("level1", self.package.levelNames[0])
-        html += "<br/>\n"
-        html += "Level 2 <br/>\n"
-        html += common.textInput("level2", self.package.levelNames[1])
-        html += "<br/>\n"
-        html += "Level 3 <br/>\n"
-        html += common.textInput("level3", self.package.levelNames[2])
-        html += "<br/>\n"
+        html += "</td></tr>\n"
+        html += "<tr><td valign=\"top\"><b>Taxonomy:</b></td>"
+        html += "<td valign=\"top\">Level 1: "
+        html += common.textInput("level1", self.package.levelNames[0], 20)
+        html += "<p>Level 2: "
+        html += common.textInput("level2", self.package.levelNames[1], 20)
+        html += "<p/>\n"
+        html += "<p>Level 3: "
+        html += common.textInput("level3", self.package.levelNames[2], 20)
+        html += "<p/></td></tr><tr><td align=\"right\">\n"
         html += common.submitButton("done", _("Done"))
-        html += "<br/></form>\n"
+        html += "</td><td>&nbsp;</td></tr></table></form>\n"
                              
         return html
         

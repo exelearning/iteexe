@@ -31,9 +31,6 @@ body {
     z-index: 10;
     width:100%;
     background:#DAE0D2 url("../images/nav_bg.gif") repeat-x bottom;
-    /*
-    background-color: lime;
-    */
     font-size:93%;
     line-height:normal;
 }

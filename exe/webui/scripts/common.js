@@ -34,8 +34,8 @@ function showMe(ident, w, h){
         var elmDiv = document.createElement('div')
         elmDiv.id  = 'popupmessage'
         elmDiv.className="popupDiv"
-        elmDiv.style.cssText = 'position:absolute; left: ' + (xpos - w/2) + 
-                               'px; top: '+(ypos - h) + 'px; width: ' + w + 'px;'
+        elmDiv.style.cssText = 'position:absolute; left: ' + (xpos) + 
+                               'px; top: '+(ypos - h/2) + 'px; width: ' + w + 'px;'
         elmDiv.innerHTML = document.getElementById(ident).innerHTML
         document.body.appendChild(elmDiv)
         new dragElement('popupmessage')
