@@ -48,7 +48,7 @@ class WebsitePage(object):
 
     def render(self):
         html  = common.header()
-        html  = "<body>\n"
+        html += "<body>\n"
         html += "<div id=\"main\">\n"
         html += TitleBlock(self.node.title).renderView()
 

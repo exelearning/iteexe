@@ -29,6 +29,7 @@ import os
 import os.path
 import sys
 from exe.engine.config import Config
+from exe.engine import util
 from exe.webui.newpackagepage import NewPackagePage
 from exe.webui.webinterface import g_webInterface
 import logging
@@ -40,17 +41,7 @@ def main():
     exeDir = os.path.dirname(sys.argv[0])
     if not exeDir:
         exeDir = "."
-    #if len(sys.argv) > 1:
-        #try:
-            #port = int(sys.argv[1])
-        #except ValueError:
-            #print "Usage:",sys.argv[0],"[port]"
-            #sys.exit(1)
-    #else:
-        #port = 8081
-    #print "first arg: ", sys.argv[0]
-    
-        
+ 
     port = 8081
     config = Config(exeDir+"/exe.conf")
     g_webInterface.config = config
@@ -84,9 +75,10 @@ def launchBrowser(port):
         _winreg.CloseKey(key)
         _winreg.CloseKey(registry)
         
-        command = '"'+path+'" http://localhost:%d'%port
+        command = path
+        url = 'http://localhost:%d'%port
         log.info("Launch firefox with "+command)
-        os.system(command)     
+        os.spawnl(os.P_NOWAIT, command, '"' + command + '"', url)
     else:
         os.system("firefox http://localhost:%d&"%port)
     print "Welcome to eXe: the eLearning XML editor"
