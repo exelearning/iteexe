@@ -42,8 +42,9 @@ class TitleBlock(Block):
 #        Block.process(self, request)
     def processDone(self, request):
         Block.processDone(self, request)
-        self.idevice.title = request.args["nodeTitle"+self.id][0]
-        log.info("Changed "+self.id+" title to "+str(self.idevice))
+        if "nodeTitle"+self.id in request.args:
+            self.idevice.title = request.args["nodeTitle"+self.id][0]
+            log.info("Changed "+self.id+" title to "+str(self.idevice))
 
     def processMovePrev(self, request):
         Block.processMovePrev(self, request)
