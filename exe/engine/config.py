@@ -43,8 +43,26 @@ class Config:
         self.setting = ConfigParser()
         self.exePath = os.path.abspath(sys.argv[0])
         self.exeDir  = os.path.dirname(self.exePath)
+        
+        exeConf = None
+        
+        if os.environ["EXECONF"] and os.path.isfile(os.environ["EXECONF"]):
+            exeConf = os.environ["EXECONF"]              
+        elif sys.platform[:3] == "win":
+            confPath = "C:\\Program Files\\exe\\" + configFile
+            if os.path.isfile(confPath):
+                exeConf = confPath
+        elif sys.platform[:5] == "linux":
+            confPath = "/usr/share/exe" + configFile
+            if os.path.isfile(confPath):
+                exeConf = confPath
+                
+        if not exeConf:
+            exeConf = self.exeDir+"/"+configFile 
+                
+        self.setting.read(exeConf)
+        
        # print "exeDir: %s \n" %self.exeDir
-        self.setting.read(self.exeDir+"/"+configFile)
  
         if sys.platform[:3] == "win":
             self.exeDir  = os.path.dirname(self.exePath)

@@ -57,7 +57,7 @@ def main():
     root = None
     if len(sys.argv) > 1:
         filePath = sys.argv[1] 
-        print filePath
+       # print filePath
         try:  
             package = g_packageStore.loadPackage(filePath)
         except:
