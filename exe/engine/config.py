@@ -48,12 +48,19 @@ class Config:
         log  = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
+
+        loggingLevels = {"DEBUG"    : DEBUG,
+                         "INFO"     : INFO,
+                         "WARNING"  : WARNING,
+                         "ERROR"    : ERROR,
+                         "CRITICAL" : CRITICAL }
+
     
         for logger, level in self.setting.items("logging"):
             if logger == "root":
-                logging.getLogger().setLevel(globals()[level])
+                logging.getLogger().setLevel(loggingLevels[level])
             else:
-                logging.getLogger(logger).setLevel(globals()[level])
+                logging.getLogger(logger).setLevel(loggingLevels[level])
                 
         
     def getDataDir(self):
