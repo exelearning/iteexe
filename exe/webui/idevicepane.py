@@ -125,21 +125,11 @@ class IdevicePane(object):
         log.debug("render")
         
         html  = "<div>\n"
-        
-        html += common.submitLink("AddIdevice", "ObjectivesIdevice",
-                                  _("Objectives"))
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "ReadingActIdevice",
-                                  _("Reading Activity"))
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "PreknowledgeIdevice",
-                                  _("Preknowledge"))
+        html += common.submitLink("AddIdevice", "ActivityIdevice",
+                                  _("Activity"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "CaseStudyIdevice",
                                   _("Case Study"))
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "ActivityIdevice",
-                                  _("Activity"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
                                   _("Free Text"))
@@ -147,6 +137,15 @@ class IdevicePane(object):
         html += common.submitLink("AddIdevice", "MultichoiceIdevice",
                                   _("Multichoice Question"))
         html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "ObjectivesIdevice",
+                                  _("Objectives"))
+        html += "<br/>\n"        
+        html += common.submitLink("AddIdevice", "PreknowledgeIdevice",
+                                  _("Preknowledge"))
+        html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "ReadingActIdevice",
+                                  _("Reading Activity"))
+        html += "<br/>\n"        
         html += common.submitLink("AddIdevice", "ReflectionIdevice",
                                   _("Reflection"))
         html += "</div> \n"
