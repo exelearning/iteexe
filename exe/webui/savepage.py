@@ -75,14 +75,15 @@ class SavePage(Resource):
             if os.path.isdir(fileDir):
                 self.dataDir = fileDir
                 os.chdir(fileDir)
+                self.package.name = \
+                        os.path.splitext(os.path.basename(fileName))[0]
                 if not fileName.endswith(".elp"):
                     fileName = fileName + ".elp"
               
                 log.info("saving " + fileName)
                 outfile = open(fileName, "w")
                 pickle.dump(self.package, outfile)
-                self.package.name = \
-                        os.path.splitext(os.path.basename(fileName))[0]
+                
                 self.message = _("The course package has been "\
                                  +"saved successfully.")
             else:
