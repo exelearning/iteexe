@@ -105,7 +105,7 @@ class IconElement(Element):
     """ IconElement is a picture thing"""
 
     def renderView(self, content):
-        html  = "<img src=\"style/"+self.class_+"\"/>\n"
+        html  = "<img style=\"float: left;\" src=\"style/"+self.class_+"\"/>\n"
         return html
 
     def renderEdit(self, content):

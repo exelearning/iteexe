@@ -41,4 +41,24 @@ p.nodeTitle { color: #51778A;
         display: inline;
 	}
 	
-		
+/* reading task iDevice styles (temporary) */
+p.reading_what {
+	background-color: #FFF;
+	border-top: 1px solid #CECECE;
+	border-left: 1px solid #CECECE;
+	border-right: 1px solid #CECECE;
+	}
+
+p.reading_why {
+	background-color: #FFF;
+	border-bottom: 1px solid #CECECE;
+	border-left: 1px solid #CECECE;
+	border-right: 1px solid #CECECE;
+
+	}	
+
+p.reading_reference {
+
+	}
+
+	
