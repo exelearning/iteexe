@@ -67,6 +67,8 @@ class Node:
         for i in range(childIndex, len(self.children)):
             self.children[i].id[-1] = i
             
+    def idStr(self):
+        return ".".join([str(x) for x in self.id])
 
         
             
