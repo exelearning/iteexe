@@ -43,6 +43,7 @@ class Config:
         self.setting = ConfigParser()
         self.exePath = os.path.abspath(sys.argv[0])
         self.exeDir  = os.path.dirname(self.exePath)
+        print "exeDir: %s \n" %self.exeDir
         self.setting.read(self.exeDir+"/"+configFile)
  
         if sys.platform[:3] == "win":
@@ -53,7 +54,9 @@ class Config:
 
         else:
             self.exeDir  = os.path.dirname(self.exePath)
-
+        
+        
+        
         if self.setting.has_option("system", "port"):
             self.port = self.setting.getint("system", "port")
         else:

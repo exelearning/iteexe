@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: de.js
  * 	German language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-12-20 01:02:38
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 17:26:17
  * 
  * File Authors:
  * 		Maik Unruh (m.unruh@mm-concept.de)
@@ -42,6 +42,7 @@ RemoveFormat		: "Formatierungen entfernen",
 InsertLinkLbl		: "Link",
 InsertLink			: "Link einfuegen/editieren",
 RemoveLink			: "Link entfernen",
+Anchor				: "Anker einfuegen/editieren",
 InsertImageLbl		: "Bild",
 InsertImage			: "Bild einfuegen/editieren",
 InsertTableLbl		: "Tabelle",
@@ -82,6 +83,18 @@ BGColor				: "Hintergrundfarbe",
 Source				: "Quellcode",
 Find				: "Finden",
 Replace				: "Ersetzen",
+SpellCheck			: "Rechtschreibpruefung",
+UniversalKeyboard	: "unverselle Tastatur",
+
+Form			: "Formular",
+Checkbox		: "Checkbox",
+RadioButton		: "Radiobutton",
+TextField		: "Textfeld einzeilig",
+Textarea		: "Textfeld mehrzeilig",
+HiddenField		: "verstecktes Feld",
+Button			: "Klickbutton",
+SelectionField	: "Auswahlfeld",
+ImageButton		: "Bildbutton",
 
 // Context Menu
 EditLink			: "Link editieren",
@@ -97,12 +110,23 @@ CellProperties		: "Zellen Eigenschaften",
 TableProperties		: "Tabellen Eigenschaften",
 ImageProperties		: "Bild Eigenschaften",
 
-FontFormats			: "Normal;Formattiert; Addresse;Kopfzeile 1;Kopfzeile 2;Kopfzeile 3;Kopfzeile 4;Kopfzeile 5;Kopfzeile 6",
+AnchorProp			: "Anker Eigenschaften",
+ButtonProp			: "Button Eigenschaften",
+CheckboxProp		: "Checkbox Eigenschaften",
+HiddenFieldProp		: "verstecktes Feld Eigenschaften",
+RadioButtonProp		: "Radiobutton Eigenschaften",
+ImageButtonProp		: "Bildbutton Eigenschaften",
+TextFieldProp		: "Textfeld einzeilig Eigenschaften",
+SelectionFieldProp	: "Auswahlfeld Eigenschaften",
+TextareaProp		: "Textfeld mehrzeilig Eigenschaften",
+FormProp			: "Formular Eigenschaften",
+
+FontFormats			: "Normal;Formattiert; Addresse;Kopfzeile 1;Kopfzeile 2;Kopfzeile 3;Kopfzeile 4;Kopfzeile 5;Kopfzeile 6",	// 2.0: The last entry has been added.
 
 // Alerts and Messages
 ProcessingXHTML		: "Bearbeite XHTML. Bitte warten...",
 Done				: "Fertig",
-PasteWordConfirm	: "Den Text, den Sie einfuegen moechten, scheint aus Word kopiert zu sein. Moechten Sie ihn zuvor bereinigen lassen?",
+PasteWordConfirm	: "Der Text, den Sie einfuegen moechten, scheint aus Word kopiert zu sein. Moechten Sie ihn zuvor bereinigen lassen?",
 NotCompatiblePaste	: "Diese Funktion steht nur im Internet Explorer ab Version 5.5 zur Verfuegung. Moechten Sie den Text unbereinigt einfuegen?",
 UnknownToolbarItem	: "Unbekanntes Menueleisten-Objekt \"%1\"",
 UnknownCommand		: "Unbekannter Befehl \"%1\"",
@@ -113,7 +137,9 @@ UnknownToolbarSet	: "Menueleiste \"%1\" existiert nicht",
 DlgBtnOK			: "ok",
 DlgBtnCancel		: "abbrechen",
 DlgBtnClose			: "schliessen",
+DlgBtnBrowseServer	: "Server durchsuchen",
 DlgAdvancedTag		: "erweitert",
+DlgOpOther			: "&lt;andere&gt;",
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt; nichts &gt;",
@@ -138,7 +164,6 @@ DlgImgInfoTab		: "bild info",
 DlgImgBtnUpload		: "zum Server senden",
 DlgImgURL			: "Bildauswahl",
 DlgImgUpload		: "Upload",
-DlgImgBtnBrowse		: "Server durchsuchen",
 DlgImgAlt			: "Alternativer Text",
 DlgImgWidth			: "Breite",
 DlgImgHeight		: "Hoehe",
@@ -158,8 +183,6 @@ DlgImgAlignRight	: "Rechts",
 DlgImgAlignTextTop	: "Text Oben",
 DlgImgAlignTop		: "Oben",
 DlgImgPreview		: "Vorschau",
-DlgImgMsgWrongExt	: "Nur Bilder mit folgenden Formaten duerfen hochgeladen werden:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nVorgang abgebrochen.",
-DlgImgAlertSelect	: "Bitte Bild zum upload auswaehlen.",
 DlgImgAlertUrl		: "Bitte geben Sie die Bild-URL an",
 
 // Link Dialog
@@ -169,14 +192,11 @@ DlgLnkTargetTab		: "zielseite",
 
 DlgLnkType			: "Link Typ",
 DlgLnkTypeURL		: "URL",
-DlgLnkTypeCMSTarget  :  "CMS Target",
-DlgLnkTypeDownload  :  "Datei Download",
 DlgLnkTypeAnchor	: "Anker in dieser Seite",
 DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protokol",
 DlgLnkProtoOther	: "&lt;anderes&gt;",
 DlgLnkURL			: "URL",
-DlgLnkBtnBrowse		: "Server durchsuchen",
 DlgLnkAnchorSel		: "Anker auswaehlen",
 DlgLnkAnchorByName	: "nach Anker Name",
 DlgLnkAnchorById	: "nach Element Id",
@@ -188,13 +208,13 @@ DlgLnkUpload		: "Upload",
 DlgLnkBtnUpload		: "zum Server senden",
 
 DlgLnkTarget		: "Zielseite",
-DlgLnkTargetFrame	: "&lt;frame&gt;",
+DlgLnkTargetFrame	: "&lt;Frame&gt;",
 DlgLnkTargetPopup	: "&lt;Pop-up Fenster&gt;",
 DlgLnkTargetBlank	: "Neues Fenster (_blank)",
 DlgLnkTargetParent	: "oberes Fenster (_parent)",
 DlgLnkTargetSelf	: "gleiches Fenster (_self)",
 DlgLnkTargetTop		: "oberstes Fenster (_top)",
-DlgLnkTargetFrame	: "Ziel Frame-Name",
+DlgLnkTargetFrameName	: "Ziel-Frame Name",
 DlgLnkPopWinName	: "Pop-up Fenster Name",
 DlgLnkPopWinFeat	: "Pop-up Fenster Eigenschaften",
 DlgLnkPopResize		: "Vergroesserbar",
@@ -209,10 +229,6 @@ DlgLnkPopWidth		: "Breite",
 DlgLnkPopHeight		: "Hoehe",
 DlgLnkPopLeft		: "Linke Position",
 DlgLnkPopTop		: "Obere Position",
-
-
-DlgLnkMsgWrongExtA	: "Nur Dateien der folgenden Formate duerfen hochgeladen werden\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nVorgang abgebrochen.",
-DlgLnkMsgWrongExtD	: "Dateien der folgenden Formate sind nicht erlaubt:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nVorgang abgebrochen.",
 
 DlnLnkMsgNoUrl		: "Bitte geben Sie die Link-URL an",
 DlnLnkMsgNoEMail	: "Bitte geben Sie e-Mail Adresse an",
@@ -303,8 +319,131 @@ DlgPasteMsg		: "Der Text konnte nicht automatisch eingefuegt werden, da die Sich
 ColorAutomatic	: "Automatisch",
 ColorMoreColors	: "weitere Farben...",
 
+// Document Properties
+DocProps		: "Dokument Eigenschaften",
+
+// Anchor Dialog
+DlgAnchorTitle		: "Anker Eigenschaften",
+DlgAnchorName		: "Anker Name",
+DlgAnchorErrorName	: "Bitte geben Sie den Namen des Ankers ein",
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "nicht im Woerterbuch",
+DlgSpellChangeTo		: "Aendern in",
+DlgSpellBtnIgnore		: "Ignorieren",
+DlgSpellBtnIgnoreAll	: "Alle Ignorieren",
+DlgSpellBtnReplace		: "Ersetzen",
+DlgSpellBtnReplaceAll	: "Alle Ersetzen",
+DlgSpellBtnUndo			: "Undo",
+DlgSpellNoSuggestions	: " - keine Vorschlaege - ",
+DlgSpellProgress		: "Rechtschreibpruefung laeuft...",
+DlgSpellNoMispell		: "Rechschreibpruefung abgeschlossen - keine Fehler gefunden",
+DlgSpellNoChanges		: "Rechschreibpruefung abgeschlossen - keine Worte geaendert",
+DlgSpellOneChange		: "Rechschreibpruefung abgeschlossen - ein Wort geaendert",
+DlgSpellManyChanges		: "Rechschreibpruefung abgeschlossen - %1 Wrter geaendert",
+
+IeSpellDownload			: "Rechschreibpruefung nicht installiert. Moechten Sie sie jetzt herunterladen?",
+
+// Button Dialog
+DlgButtonText	: "Text (Wert)",
+DlgButtonType	: "Typ",
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Name",
+DlgCheckboxValue	: "Wert",
+DlgCheckboxSelected	: "Ausgewaehlt",
+
+// Form Dialog
+DlgFormName		: "Name",
+DlgFormAction	: "Action",
+DlgFormMethod	: "Method",
+
+// Select Field Dialog
+DlgSelectName		: "Name",
+DlgSelectValue		: "Wert",
+DlgSelectSize		: "Groesse",
+DlgSelectLines		: "Linien",
+DlgSelectChkMulti	: "Erlaube Mehrfachauswahl",
+DlgSelectOpAvail	: "Moegliche Optionen",
+DlgSelectOpText		: "Text",
+DlgSelectOpValue	: "Wert",
+DlgSelectBtnAdd		: "Hinzufuegen",
+DlgSelectBtnModify	: "Aendern",
+DlgSelectBtnUp		: "Hoch",
+DlgSelectBtnDown	: "Runter",
+DlgSelectBtnSetValue : "Setze als Standardwert",
+DlgSelectBtnDelete	: "Entfernen",
+
+// Textarea Dialog
+DlgTextareaName	: "Name",
+DlgTextareaCols	: "Spalten",
+DlgTextareaRows	: "Reihen",
+
+// Text Field Dialog
+DlgTextName			: "Name",
+DlgTextValue		: "Wert",
+DlgTextCharWidth	: "Zeichenbreite",
+DlgTextMaxChars		: "Max. Zeichen",
+DlgTextType			: "Typ",
+DlgTextTypeText		: "Text",
+DlgTextTypePass		: "Passwort",
+
+// Hidden Field Dialog
+DlgHiddenName	: "Name",
+DlgHiddenValue	: "Wert",
+
+// Bulleted List Dialog
+BulletedListProp	: "Liste Eigenschaften",
+NumberedListProp	: "Nummerierte Liste Eigenschaften",
+DlgLstType			: "Typ",
+DlgLstTypeCircle	: "Kreis",
+DlgLstTypeDisk		: "Disk",
+DlgLstTypeSquare	: "Quadrat",
+DlgLstTypeNumbers	: "Nummern (1, 2, 3)",
+DlgLstTypeLCase		: "Kleinbuchstaben (a, b, c)",
+DlgLstTypeUCase		: "Grossbuchstaben (A, B, C)",
+DlgLstTypeSRoman	: "kleine roemische Zahlen (i, ii, iii)",
+DlgLstTypeLRoman	: "grosse roemische Zahlen (I, II, III)",
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "Allgemein",
+DlgDocBackTab		: "Hintergrund",
+DlgDocColorsTab		: "Farben und Abstaende",
+DlgDocMetaTab		: "Meta Daten",
+
+DlgDocPageTitle		: "Seitentitel",
+DlgDocLangDir		: "Schriftrichtung",
+DlgDocLangDirLTR	: "Links nach Rechts",
+DlgDocLangDirRTL	: "rechts nach Links",
+DlgDocLangCode		: "Sprachkuerzel",
+DlgDocCharSet		: "Zeichenkodierung",
+DlgDocCharSetOther	: "andere Zeichenkodierung",
+
+DlgDocDocType		: "Dokumententyp",
+DlgDocDocTypeOther	: "anderer Dokumententyp",
+DlgDocIncXHTML		: "Beziehe XHTML Deklarationen ein",
+DlgDocBgColor		: "Hintergrundfarbe",
+DlgDocBgImage		: "Hintergrundbild URL",
+DlgDocBgNoScroll	: "Nicht-Scrollender Hintergrund",
+DlgDocCText			: "Text",
+DlgDocCLink			: "Link",
+DlgDocCVisited		: "besuchter Link",
+DlgDocCActive		: "aktiver Link",
+DlgDocMargins		: "Seitenraender",
+DlgDocMaTop			: "oben",
+DlgDocMaLeft		: "links",
+DlgDocMaRight		: "rechts",
+DlgDocMaBottom		: "unten",
+DlgDocMeIndex		: "Keywords (Komma-getrennt)",
+DlgDocMeDescr		: "Dokument-Beschreibung",
+DlgDocMeAuthor		: "Autor",
+DlgDocMeCopy		: "Copyright",
+DlgDocPreview		: "Vorschau",
+
 // About Dialog
-DlgAboutVersion	: "version",
-DlgAboutLicense	: "Lizensiert unter den Richtlinien der GNU Lesser General Public License",
-DlgAboutInfo	: "Fuer weitere Informationen siehe"
+DlgAboutAboutTab	: "ber",
+DlgAboutBrowserInfoTab	: "Browser Info",
+DlgAboutVersion		: "version",
+DlgAboutLicense		: "Lizensiert unter den Richtlinien der GNU Lesser General Public License",
+DlgAboutInfo		: "Fuer weitere Informationen siehe"
 }

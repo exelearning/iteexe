@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: da.js
  * 	Danish language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-12-21 01:38:30
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 17:26:17
  * 
  * File Authors:
  * 		Jesper Michelsen (jm@i-deVision.dk)
@@ -22,6 +22,9 @@ var FCKLang =
 {
 // Language direction : "ltr" (left to right) or "rtl" (right to left).
 Dir					: "ltr",
+
+ToolbarCollapse		: "Collapse Toolbar",	//MISSING
+ToolbarExpand		: "Expand Toolbar",	//MISSING
 
 // Toolbar Items and Context Menu
 Save				: "Gem",
@@ -38,6 +41,7 @@ RemoveFormat		: "Slet formatering",
 InsertLinkLbl		: "Link",
 InsertLink			: "Indsæt/rediger Link",
 RemoveLink			: "Slet Link",
+Anchor				: "Insert/Edit Anchor",	//MISSING
 InsertImageLbl		: "Billede",
 InsertImage			: "Indsæt/rediger billede",
 InsertTableLbl		: "Table",
@@ -78,6 +82,18 @@ BGColor				: "Baggrundsfarve",
 Source				: "Kilde",
 Find				: "Søg",
 Replace				: "Erstat",
+SpellCheck			: "Check Spell",	//MISSING
+UniversalKeyboard	: "Universal Keyboard",	//MISSING
+
+Form			: "Form",	//MISSING
+Checkbox		: "Checkbox",	//MISSING
+RadioButton		: "Radio Button",	//MISSING
+TextField		: "Text Field",	//MISSING
+Textarea		: "Textarea",	//MISSING
+HiddenField		: "Hidden Field",	//MISSING
+Button			: "Button",	//MISSING
+SelectionField	: "Selection Field",	//MISSING
+ImageButton		: "Image Button",	//MISSING
 
 // Context Menu
 EditLink			: "Rediger link",
@@ -93,7 +109,18 @@ CellProperties		: "Celleegenskaber",
 TableProperties		: "Tabelegenskaber",
 ImageProperties		: "Billedegenskaber",
 
-FontFormats			: "Normal;Formateret;Adresse;Overskrift 1;Overskrift 2;Overskrift 3;Overskrift 4;Overskrift 5;Overskrift 6",
+AnchorProp			: "Anchor Properties",	//MISSING
+ButtonProp			: "Button Properties",	//MISSING
+CheckboxProp		: "Checkbox Properties",	//MISSING
+HiddenFieldProp		: "Hidden Field Properties",	//MISSING
+RadioButtonProp		: "Radio Button Properties",	//MISSING
+ImageButtonProp		: "Image Button Properties",	//MISSING
+TextFieldProp		: "Text Field Properties",	//MISSING
+SelectionFieldProp	: "Selection Field Properties",	//MISSING
+TextareaProp		: "Textarea Properties",	//MISSING
+FormProp			: "Form Properties",	//MISSING
+
+FontFormats			: "Normal;Formateret;Adresse;Overskrift 1;Overskrift 2;Overskrift 3;Overskrift 4;Overskrift 5;Overskrift 6",	// 2.0: The last entry has been added.
 
 // Alerts and Messages
 ProcessingXHTML		: "Behandler XHTML. Vent venligst...",
@@ -109,7 +136,9 @@ UnknownToolbarSet	: "Værktøjslinjen \"%1\" eksisterer ikke",
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Anuller",
 DlgBtnClose			: "Luk",
+DlgBtnBrowseServer	: "Browse Server",	//MISSING
 DlgAdvancedTag		: "Avanceret",
+DlgOpOther			: "&lt;Other&gt;",	//MISSING
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;ikke sat&gt;",
@@ -134,7 +163,6 @@ DlgImgInfoTab		: "Billed info",
 DlgImgBtnUpload		: "Send til serveren",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Upload",
-DlgImgBtnBrowse		: "Gennemse server",
 DlgImgAlt			: "Alternativ tekst",
 DlgImgWidth			: "Bredde",
 DlgImgHeight		: "Højde",
@@ -154,8 +182,6 @@ DlgImgAlignRight	: "Højre",
 DlgImgAlignTextTop	: "Tekst top",
 DlgImgAlignTop		: "Top",
 DlgImgPreview		: "Vis eksempel",
-DlgImgMsgWrongExt	: "Der kan kun uploades følgende filtyper:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nOperation canceled.",
-DlgImgAlertSelect	: "Vælg det billede der skal uploades",
 DlgImgAlertUrl		: "Indtast stien til billedet",
 
 // Link Dialog
@@ -170,7 +196,6 @@ DlgLnkTypeEMail		: "Email",
 DlgLnkProto			: "Protokol",
 DlgLnkProtoOther	: "&lt;anden&gt;",
 DlgLnkURL			: "URL",
-DlgLnkBtnBrowse		: "Gennemse serveren",
 DlgLnkAnchorSel		: "Vælg et anker",
 DlgLnkAnchorByName	: "Efter anker navn",
 DlgLnkAnchorById	: "Efter element Id",
@@ -188,7 +213,7 @@ DlgLnkTargetBlank	: "Nyt vindue (_blank)",
 DlgLnkTargetParent	: "Overliggende vindue (_parent)",
 DlgLnkTargetSelf	: "Samme vindue (_self)",
 DlgLnkTargetTop		: "Øverste vindue (_top)",
-DlgLnkTargetFrame	: "Målrammens navn",
+DlgLnkTargetFrameName	: "Target Frame Name",	//MISSING
 DlgLnkPopWinName	: "Popup vinduets navn",
 DlgLnkPopWinFeat	: "Popup vinduets egenskaber",
 DlgLnkPopResize		: "Skalering",
@@ -204,8 +229,9 @@ DlgLnkPopHeight		: "Højde",
 DlgLnkPopLeft		: "Position fra venstre",
 DlgLnkPopTop		: "Position fra toppen",
 
-DlgLnkMsgWrongExtA	: "Kun de følgende filtyper kan uploades:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nOperation canceled.",
-DlgLnkMsgWrongExtD	: "Følgende filtyper kan ikke uploades:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nOperation canceled.",
+DlnLnkMsgNoUrl		: "Please type the link URL",	//MISSING
+DlnLnkMsgNoEMail	: "Please type the e-mail address",	//MISSING
+DlnLnkMsgNoAnchor	: "Please select an anchor",	//MISSING
 
 // Color Dialog
 DlgColorTitle		: "Vælg farve",
@@ -292,8 +318,131 @@ DlgPasteMsg		: "Editoren kunne ikke indsætte teksten automatisk på grund af di
 ColorAutomatic	: "Automatisk",
 ColorMoreColors	: "Flere farver...",
 
+// Document Properties
+DocProps		: "Document Properties",	//MISSING
+
+// Anchor Dialog
+DlgAnchorTitle		: "Anchor Properties",	//MISSING
+DlgAnchorName		: "Anchor Name",	//MISSING
+DlgAnchorErrorName	: "Please type the anchor name",	//MISSING
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "Not in dictionary",	//MISSING
+DlgSpellChangeTo		: "Change to",	//MISSING
+DlgSpellBtnIgnore		: "Ignore",	//MISSING
+DlgSpellBtnIgnoreAll	: "Ignore All",	//MISSING
+DlgSpellBtnReplace		: "Replace",	//MISSING
+DlgSpellBtnReplaceAll	: "Replace All",	//MISSING
+DlgSpellBtnUndo			: "Undo",	//MISSING
+DlgSpellNoSuggestions	: "- No suggestions -",	//MISSING
+DlgSpellProgress		: "Spell check in progress...",	//MISSING
+DlgSpellNoMispell		: "Spell check complete: No misspellings found",	//MISSING
+DlgSpellNoChanges		: "Spell check complete: No words changed",	//MISSING
+DlgSpellOneChange		: "Spell check complete: One word changed",	//MISSING
+DlgSpellManyChanges		: "Spell check complete: %1 words changed",	//MISSING
+
+IeSpellDownload			: "Spell checker not installed. Do you want to download it now?",	//MISSING
+
+// Button Dialog
+DlgButtonText	: "Text (Value)",	//MISSING
+DlgButtonType	: "Type",	//MISSING
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Name",	//MISSING
+DlgCheckboxValue	: "Value",	//MISSING
+DlgCheckboxSelected	: "Selected",	//MISSING
+
+// Form Dialog
+DlgFormName		: "Name",	//MISSING
+DlgFormAction	: "Action",	//MISSING
+DlgFormMethod	: "Method",	//MISSING
+
+// Select Field Dialog
+DlgSelectName		: "Name",	//MISSING
+DlgSelectValue		: "Value",	//MISSING
+DlgSelectSize		: "Size",	//MISSING
+DlgSelectLines		: "lines",	//MISSING
+DlgSelectChkMulti	: "Allow multiple selections",	//MISSING
+DlgSelectOpAvail	: "Available Options",	//MISSING
+DlgSelectOpText		: "Text",	//MISSING
+DlgSelectOpValue	: "Value",	//MISSING
+DlgSelectBtnAdd		: "Add",	//MISSING
+DlgSelectBtnModify	: "Modify",	//MISSING
+DlgSelectBtnUp		: "Up",	//MISSING
+DlgSelectBtnDown	: "Down",	//MISSING
+DlgSelectBtnSetValue : "Set as selected value",	//MISSING
+DlgSelectBtnDelete	: "Delete",	//MISSING
+
+// Textarea Dialog
+DlgTextareaName	: "Name",	//MISSING
+DlgTextareaCols	: "Columns",	//MISSING
+DlgTextareaRows	: "Rows",	//MISSING
+
+// Text Field Dialog
+DlgTextName			: "Name",	//MISSING
+DlgTextValue		: "Value",	//MISSING
+DlgTextCharWidth	: "Character Width",	//MISSING
+DlgTextMaxChars		: "Maximum Characters",	//MISSING
+DlgTextType			: "Type",	//MISSING
+DlgTextTypeText		: "Text",	//MISSING
+DlgTextTypePass		: "Password",	//MISSING
+
+// Hidden Field Dialog
+DlgHiddenName	: "Name",	//MISSING
+DlgHiddenValue	: "Value",	//MISSING
+
+// Bulleted List Dialog
+BulletedListProp	: "Bulleted List Properties",	//MISSING
+NumberedListProp	: "Numbered List Properties",	//MISSING
+DlgLstType			: "Type",	//MISSING
+DlgLstTypeCircle	: "Circle",	//MISSING
+DlgLstTypeDisk		: "Disk",	//MISSING
+DlgLstTypeSquare	: "Square",	//MISSING
+DlgLstTypeNumbers	: "Numbers (1, 2, 3)",	//MISSING
+DlgLstTypeLCase		: "Lowercase Letters (a, b, c)",	//MISSING
+DlgLstTypeUCase		: "Uppercase Letters (A, B, C)",	//MISSING
+DlgLstTypeSRoman	: "Small Roman Numerals (i, ii, iii)",	//MISSING
+DlgLstTypeLRoman	: "Large Roman Numerals (I, II, III)",	//MISSING
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "General",	//MISSING
+DlgDocBackTab		: "Background",	//MISSING
+DlgDocColorsTab		: "Colors and Margins",	//MISSING
+DlgDocMetaTab		: "Meta Data",	//MISSING
+
+DlgDocPageTitle		: "Page Title",	//MISSING
+DlgDocLangDir		: "Language Direction",	//MISSING
+DlgDocLangDirLTR	: "Left to Right (LTR)",	//MISSING
+DlgDocLangDirRTL	: "Right to Left (RTL)",	//MISSING
+DlgDocLangCode		: "Language Code",	//MISSING
+DlgDocCharSet		: "Character Set Encoding",	//MISSING
+DlgDocCharSetOther	: "Other Character Set Encoding",	//MISSING
+
+DlgDocDocType		: "Document Type Heading",	//MISSING
+DlgDocDocTypeOther	: "Other Document Type Heading",	//MISSING
+DlgDocIncXHTML		: "Include XHTML Declarations",	//MISSING
+DlgDocBgColor		: "Background Color",	//MISSING
+DlgDocBgImage		: "Background Image URL",	//MISSING
+DlgDocBgNoScroll	: "Nonscrolling Background",	//MISSING
+DlgDocCText			: "Text",	//MISSING
+DlgDocCLink			: "Link",	//MISSING
+DlgDocCVisited		: "Visited Link",	//MISSING
+DlgDocCActive		: "Active Link",	//MISSING
+DlgDocMargins		: "Page Margins",	//MISSING
+DlgDocMaTop			: "Top",	//MISSING
+DlgDocMaLeft		: "Left",	//MISSING
+DlgDocMaRight		: "Right",	//MISSING
+DlgDocMaBottom		: "Bottom",	//MISSING
+DlgDocMeIndex		: "Document Indexing Keywords (comma separated)",	//MISSING
+DlgDocMeDescr		: "Document Description",	//MISSING
+DlgDocMeAuthor		: "Author",	//MISSING
+DlgDocMeCopy		: "Copyright",	//MISSING
+DlgDocPreview		: "Preview",	//MISSING
+
 // About Dialog
-DlgAboutVersion	: "version",
-DlgAboutLicense	: "Licenseret under vilkårene for GNU Lesser General Public License",
-DlgAboutInfo	: "For yderligere informationer gå til"
+DlgAboutAboutTab	: "About",	//MISSING
+DlgAboutBrowserInfoTab	: "Browser Info",	//MISSING
+DlgAboutVersion		: "version",
+DlgAboutLicense		: "Licenseret under vilkårene for GNU Lesser General Public License",
+DlgAboutInfo		: "For yderligere informationer gå til"
 }

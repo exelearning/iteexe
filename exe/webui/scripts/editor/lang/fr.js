@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: fr.js
  * 	French language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-12-20 01:57:31
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 17:26:17
  * 
  * File Authors:
  * 		Hubert Garrido (webmaster@liane.net)
@@ -24,7 +24,7 @@ var FCKLang =
 Dir					: "ltr",
 
 ToolbarCollapse		: "Masquer Outils",
-ToolbarExpand		: "Afficher Outils",	
+ToolbarExpand		: "Afficher Outils",
 
 // Toolbar Items and Context Menu
 Save				: "Enregistrer",
@@ -41,6 +41,7 @@ RemoveFormat		: "Supprimer Format",
 InsertLinkLbl		: "Lien",
 InsertLink			: "Insérer/Modifier Lien",
 RemoveLink			: "Supprimer Lien",
+Anchor				: "Insérer/Modifier Ancre",
 InsertImageLbl		: "Image",
 InsertImage			: "Insérer/Modifier Image",
 InsertTableLbl		: "Tableau",
@@ -81,6 +82,18 @@ BGColor				: "Couleur de Fond",
 Source				: "Source",
 Find				: "Chercher",
 Replace				: "Remplacer",
+SpellCheck			: "Orthographe",
+UniversalKeyboard	: "Clavier Universel",
+
+Form			: "Formulaire",
+Checkbox		: "Case à cocher",
+RadioButton		: "Bouton Radio",
+TextField		: "Champ Texte",
+Textarea		: "Zone Texte",
+HiddenField		: "Champ caché",
+Button			: "Bouton",
+SelectionField	: "Liste/Menu",
+ImageButton		: "Bouton Image",
 
 // Context Menu
 EditLink			: "Modifier Lien",
@@ -96,7 +109,18 @@ CellProperties		: "Propriétés de Cellule",
 TableProperties		: "Propriétés de Tableau",
 ImageProperties		: "Propriétés d'Image",
 
-FontFormats			: "Normal;Formatted;Address;Titre 1;Titre 2;Heading 3;Titre 4;Titre 5;Titre 6",
+AnchorProp			: "Propriétés d'Ancre",
+ButtonProp			: "Propriétés de Bouton",
+CheckboxProp		: "Propriétés de Case à Cocher",
+HiddenFieldProp		: "Propriétés de Champ Caché",
+RadioButtonProp		: "Propriétés de Bouton Radio",
+ImageButtonProp		: "Propriétés de Bouton Image",
+TextFieldProp		: "Propriétés de Champ Texte",
+SelectionFieldProp	: "Propriétés de Liste/Menu",
+TextareaProp		: "Propriétés de Zone Texte",
+FormProp			: "Propriétés de Formulaire",
+
+FontFormats			: "Normal;Formatted;Address;Titre 1;Titre 2;Titre 3;Titre 4;Titre 5;Titre 6",	// 2.0: The last entry has been added.
 
 // Alerts and Messages
 ProcessingXHTML		: "Calcul XHTML. Veuillez patienter...",
@@ -112,7 +136,9 @@ UnknownToolbarSet	: "La barre d'outils \"%1\" n'existe pas",
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Annuler",
 DlgBtnClose			: "Fermer",
+DlgBtnBrowseServer	: "Parcourir le Serveur",
 DlgAdvancedTag		: "Avancé",
+DlgOpOther			: "&lt;Autre&gt;",
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;Par Défaut&gt;",
@@ -137,7 +163,6 @@ DlgImgInfoTab		: "Informations sur l'Image",
 DlgImgBtnUpload		: "Envoyer au Serveur",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Upload",
-DlgImgBtnBrowse		: "Parcourir le Serveur",
 DlgImgAlt			: "Texte de Remplacement",
 DlgImgWidth			: "Largeur",
 DlgImgHeight		: "Hauteur",
@@ -157,8 +182,6 @@ DlgImgAlignRight	: "Droite",
 DlgImgAlignTextTop	: "Haut du texte",
 DlgImgAlignTop		: "Haut",
 DlgImgPreview		: "Prévisualisation",
-DlgImgMsgWrongExt	: "Désolé, seuls les types de fichiers suivants sont permis:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nOpération annulée.",
-DlgImgAlertSelect	: "Veuillez sélectionner une image à envoyer.",
 DlgImgAlertUrl		: "Veuillez saisir l'URL de l'image",
 
 // Link Dialog
@@ -173,7 +196,6 @@ DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protocole",
 DlgLnkProtoOther	: "&lt;autre&gt;",
 DlgLnkURL			: "URL",
-DlgLnkBtnBrowse		: "Parcourir le Serveur",
 DlgLnkAnchorSel		: "Sélectionner une Ancre",
 DlgLnkAnchorByName	: "Par Nom d'Ancre",
 DlgLnkAnchorById	: "Par Id d'Elément",
@@ -191,7 +213,7 @@ DlgLnkTargetBlank	: "Nouvelle Fenêtre (_blank)",
 DlgLnkTargetParent	: "Fenêtre Mère (_parent)",
 DlgLnkTargetSelf	: "Même Fenêtre (_self)",
 DlgLnkTargetTop		: "Fenêtre Supérieure (_top)",
-DlgLnkTargetFrame	: "Nom du Cadre de Destination",
+DlgLnkTargetFrameName	: "Nom du Cadre de Destination",
 DlgLnkPopWinName	: "Nom de la Fenêtre Popup",
 DlgLnkPopWinFeat	: "Caractéristiques de la Fenêtre Popup",
 DlgLnkPopResize		: "Taille Modifiable",
@@ -207,12 +229,9 @@ DlgLnkPopHeight		: "Hauteur",
 DlgLnkPopLeft		: "Position Gauche",
 DlgLnkPopTop		: "Position Haut",
 
-DlgLnkMsgWrongExtA	: "Désolé, seuls les types de fichiers suivants sont permis:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nOpération annulée.",
-DlgLnkMsgWrongExtD	: "Désolé, les types de fichiers suivants sont interdits:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nOpération annulée.",
-
-DlnLnkMsgNoUrl		: "Veuillez saisir l'URL",		
-DlnLnkMsgNoEMail	: "Veuillez saisir l'adresse e-mail",	
-DlnLnkMsgNoAnchor	: "Veuillez sélectionner une ancre",		
+DlnLnkMsgNoUrl		: "Veuillez saisir l'URL",
+DlnLnkMsgNoEMail	: "Veuillez saisir l'adresse e-mail",
+DlnLnkMsgNoAnchor	: "Veuillez sélectionner une ancre",
 
 // Color Dialog
 DlgColorTitle		: "Sélectionner",
@@ -299,8 +318,131 @@ DlgPasteMsg		: "L'éditeur n'a pu coller automatiquement vos données à cause d
 ColorAutomatic	: "Automatique",
 ColorMoreColors	: "Plus de Couleurs...",
 
+// Document Properties
+DocProps		: "Propriétés du Document",
+
+// Anchor Dialog
+DlgAnchorTitle		: "Propriétés de l'Ancre",
+DlgAnchorName		: "Nom de l'Ancre",
+DlgAnchorErrorName	: "Veuillez saisir le nom de l'ancre",
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "Pas dans le dictionnaire",
+DlgSpellChangeTo		: "Changer en",
+DlgSpellBtnIgnore		: "Ignorer",
+DlgSpellBtnIgnoreAll	: "Ignorer Tout",
+DlgSpellBtnReplace		: "Remplacer",
+DlgSpellBtnReplaceAll	: "Remplacer Tout",
+DlgSpellBtnUndo			: "Annuler",
+DlgSpellNoSuggestions	: "- Aucune suggestion -",
+DlgSpellProgress		: "Vérification d'orthographe en cours...",
+DlgSpellNoMispell		: "Vérification d'orthographe terminée: Aucune erreur trouvée",
+DlgSpellNoChanges		: "Vérification d'orthographe terminée: Pas de modifications",
+DlgSpellOneChange		: "Vérification d'orthographe terminée: Un mot modifié",
+DlgSpellManyChanges		: "Vérification d'orthographe terminée: %1 mots modifiés",
+
+IeSpellDownload			: "Le Correcteur n'est pas installé. Souhaitez-vous le télécharger maintenant?",
+
+// Button Dialog
+DlgButtonText	: "Texte (Valeur)",
+DlgButtonType	: "Type",
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Nom",
+DlgCheckboxValue	: "Valeur",
+DlgCheckboxSelected	: "Sélectionné",
+
+// Form Dialog
+DlgFormName		: "Nom",
+DlgFormAction	: "Action",
+DlgFormMethod	: "Méthode",
+
+// Select Field Dialog
+DlgSelectName		: "Nom",
+DlgSelectValue		: "Valeur",
+DlgSelectSize		: "Taille",
+DlgSelectLines		: "lignes",
+DlgSelectChkMulti	: "Sélection multiple",
+DlgSelectOpAvail	: "Options Disponibles",
+DlgSelectOpText		: "Texte",
+DlgSelectOpValue	: "Valeur",
+DlgSelectBtnAdd		: "Ajouter",
+DlgSelectBtnModify	: "Modifier",
+DlgSelectBtnUp		: "Monter",
+DlgSelectBtnDown	: "Descendre",
+DlgSelectBtnSetValue : "Valeur sélectionnée",
+DlgSelectBtnDelete	: "Supprimer",
+
+// Textarea Dialog
+DlgTextareaName	: "Nom",
+DlgTextareaCols	: "Colonnes",
+DlgTextareaRows	: "Lignes",
+
+// Text Field Dialog
+DlgTextName			: "Nom",
+DlgTextValue		: "Valeur",
+DlgTextCharWidth	: "Largeur en Caractères",
+DlgTextMaxChars		: "Nombre Maximum de Caractères",
+DlgTextType			: "Type",
+DlgTextTypeText		: "Texte",
+DlgTextTypePass		: "Mot de Passe",
+
+// Hidden Field Dialog
+DlgHiddenName	: "Nom",
+DlgHiddenValue	: "Valeur",
+
+// Bulleted List Dialog
+BulletedListProp	: "Propriétés de Liste à puces",
+NumberedListProp	: "Propriétés de Numérotée",
+DlgLstType			: "Type",
+DlgLstTypeCircle	: "Cercle",
+DlgLstTypeDisk		: "Disque",
+DlgLstTypeSquare	: "Carré",
+DlgLstTypeNumbers	: "Nombres (1, 2, 3)",
+DlgLstTypeLCase		: "Lettres Minuscules (a, b, c)",
+DlgLstTypeUCase		: "Lettres Majuscules (A, B, C)",
+DlgLstTypeSRoman	: "Chiffres Romains Minuscules (i, ii, iii)",
+DlgLstTypeLRoman	: "Chiffres Romains Majuscules (I, II, III)",
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "Général",
+DlgDocBackTab		: "Fond",
+DlgDocColorsTab		: "Couleurs et Marges",
+DlgDocMetaTab		: "Métadonnées",
+
+DlgDocPageTitle		: "Titre de la Page",
+DlgDocLangDir		: "Sens d'Ecriture",
+DlgDocLangDirLTR	: "Gauche vers Droite (LTR)",
+DlgDocLangDirRTL	: "Droite vers Gauche (RTL)",
+DlgDocLangCode		: "Code Langue",
+DlgDocCharSet		: "Encodage de Caractère",
+DlgDocCharSetOther	: "Autre Encodage de Caractère",
+
+DlgDocDocType		: "Type de Document",
+DlgDocDocTypeOther	: "Autre Type de Document",
+DlgDocIncXHTML		: "Inclure les déclarations XHTML",
+DlgDocBgColor		: "Couleur de Fond",
+DlgDocBgImage		: "Image de Fond",
+DlgDocBgNoScroll	: "Image fixe sans défilement",
+DlgDocCText			: "Texte",
+DlgDocCLink			: "Lien",
+DlgDocCVisited		: "Lien Visité",
+DlgDocCActive		: "Lien Activé",
+DlgDocMargins		: "Marges",
+DlgDocMaTop			: "Haut",
+DlgDocMaLeft		: "Gauche",
+DlgDocMaRight		: "Droite",
+DlgDocMaBottom		: "Bas",
+DlgDocMeIndex		: "Mots Clés (séparés par des virgules)",
+DlgDocMeDescr		: "Description",
+DlgDocMeAuthor		: "Auteur",
+DlgDocMeCopy		: "Copyright",
+DlgDocPreview		: "Prévisualisation",
+
 // About Dialog
-DlgAboutVersion	: "version",
-DlgAboutLicense	: "License selon les termes de GNU Lesser General Public License",
-DlgAboutInfo	: "Pour plus d'informations, aller à"
+DlgAboutAboutTab	: "A propos de",
+DlgAboutBrowserInfoTab	: "Navigateur",
+DlgAboutVersion		: "version",
+DlgAboutLicense		: "License selon les termes de GNU Lesser General Public License",
+DlgAboutInfo		: "Pour plus d'informations, aller à"
 }

@@ -12,8 +12,8 @@
  * File Name: fck_find.html
  * 	"Find" dialog window.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-11-30 10:26:37
+ * Version:  2.0 RC3
+ * Modified: 2005-02-09 13:52:09
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -40,7 +40,7 @@ function OnLoad()
 
 function btnStat(frm)
 {
-	document.getElementById('btnFind').disabled = 
+	document.getElementById('btnFind').disabled =
 		( document.getElementById('txtFind').value.length == 0 ) ;
 }
 
@@ -74,11 +74,11 @@ function GetRegexExpr()
 		var sExpr = '\\b' + document.getElementById('txtFind').value + '\\b' ;
 	else
 		var sExpr = document.getElementById('txtFind').value ;
-		
+
 	return sExpr ;
 }
 
-function GetCase() 
+function GetCase()
 {
 	return ( document.getElementById('chkCase').checked ? '' : 'i' ) ;
 }
@@ -89,7 +89,7 @@ function Ok()
 {
 	if ( document.getElementById('txtFind').value.length == 0 )
 		return ;
-	
+
 	if ( oEditor.FCKBrowserInfo.IsIE )
 		FindIE() ;
 	else
@@ -99,15 +99,15 @@ function Ok()
 function FindIE()
 {
 	var iFlags = 0 ;
-	
+
 	if ( chkCase.checked )
 		iFlags = iFlags | 4 ;
-	
+
 	if ( chkWord.checked )
 		iFlags = iFlags | 2 ;
-	
+
 	var bFound = oRange.findText( document.getElementById('txtFind').value, 1, iFlags ) ;
-	
+
 	if ( bFound )
 	{
 		oRange.scrollIntoView() ;
@@ -126,10 +126,10 @@ function FindGecko()
 {
 	var bCase = document.getElementById('chkCase').checked ;
 	var bWord = document.getElementById('chkWord').checked ;
-	
+
 	// window.find( searchString, caseSensitive, backwards, wrapAround, wholeWord, searchInFrames, showDialog ) ;
 	oEditor.FCK.EditorWindow.find( document.getElementById('txtFind').value, bCase, false, false, bWord, false, false ) ;
-	
+
 }
 		</script>
 	</head>
@@ -149,11 +149,11 @@ function FindGecko()
 			</tr>
 			<tr>
 				<td valign="bottom" colSpan="3">
-					&nbsp;<input id="chkCase" tabIndex="3" type="checkbox"><label for="chkCase" fckLang="DlgReplaceCaseChk">Match 
+					&nbsp;<input id="chkCase" tabIndex="3" type="checkbox"><label for="chkCase" fckLang="DlgReplaceCaseChk">Match
 						case</label>
 					<br>
 					<div id="divWord" style="DISPLAY: none">
-						&nbsp;<input id="chkWord" tabIndex="4" type="checkbox"><label for="chkWord" fckLang="DlgReplaceWordChk">Match 
+						&nbsp;<input id="chkWord" tabIndex="4" type="checkbox"><label for="chkWord" fckLang="DlgReplaceWordChk">Match
 							whole word</label>
 					</div>
 				</td>

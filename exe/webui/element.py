@@ -20,13 +20,12 @@
 Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
-import re
-from exe.webui import common
+from exe.webui                  import common
 from exe.webui.webinterface     import g_webInterface
-from exe.engine.packagestore import g_packageStore
-from os import chdir, getcwd, mkdir
-from os.path import exists, splitext, basename
-from  shutil import copyfile
+from exe.engine.packagestore    import g_packageStore
+from os                         import chdir, getcwd, mkdir
+from os.path                    import exists, splitext, basename, join, sep
+from  shutil                    import copyfile
 #from PIL import Image
 
 log = logging.getLogger(__name__)
@@ -46,8 +45,8 @@ def createElement(elementType, name, class_, blockId, instruc):
         return AudioElement(name, class_, blockId, instruc )
     return None
 
-def getImageDataDir():
-    return  g_webInterface.config.getExeDir() + "/images"
+def getUploadedFileDir():
+    return  join( g_webInterface.config.getExeDir(), "images" )
     
     
 # ===========================================================================
@@ -80,7 +79,7 @@ class Element(object):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        html  = "<p class=\""+self.class_+"\">\n"
+        html  = "<p class=\""+ self.class_ + "\">\n"
         html += content
         html += "</p>\n"
         return html
@@ -140,7 +139,7 @@ class ImageElement( Element ):
     """
     for image element processing
     """
-    def __init__( self, name, class_, blockId, instruc, titleMessage="Image", \
+    def __init__( self, name, class_, blockId, instruc, titleMessage="Image",\
         width="200px", height="150px", border="0" ):
         
         Element.__init__( self, name, class_, blockId , instruc )
@@ -154,40 +153,62 @@ class ImageElement( Element ):
     
         fileExtension = ""
         filename = ""
-
+        packageName = request.prepath[0]
+        
+        if packageName=="":
+            errmsg = "package not specified while processing image element \n"
+            log.debug( errmsg )
+            print errmsg
+            return errmsg
+            
         if self.id in request.args:
             
             ##get the image file extension, if is post from form
             #if file is choosen#
-            if ( self.id +"_filename" ) in request.args and request.args[ self.id + "_filename"][0].strip() != "": 
+            if ( self.id +"_filename" ) in request.args and \
+                request.args[ self.id + "_filename"][0].strip() != "": 
                 
                 fileExtension = splitext( basename( request.args[ self.id + \
                 "_filename" ][0] ) )[1].lower()
-                #assign fileExtension (.xxx) to filename
-                filename = self.id +  fileExtension
+                
+                #assign path + id + fileExtension (.xxx) to filename
+                filename =   packageName  + sep + self.id +  fileExtension 
             
-                imgDir = getImageDataDir( )
+                imgDir = getUploadedFileDir( )
+                
+                ##check if the image directory for this package exist or not
+                if not exists( join ( imgDir, packageName ) ):
+                    try:
+                        mkdir( join( imgDir, packageName )  )
+                    except OSError:
+                        errmsg = "Error while creating image directory: %s" \
+                            % ( join ( imgDir, packageName ) )
+                        print errmsg
+                        log.debug( errmsg )
+                        return errmsg
+                        
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile( request.args[ self.id + "_filename"][0], "%s/%s" %(imgDir, filename) )
-                except:
+                    copyfile( request.args[ self.id + "_filename"][0], \
+                                 join( imgDir,  filename ) )
+                except OSError:
                     return "%s image file not copied" % filename
                 ##resize image file
                 #im = Image.open( filename )
             
             ##else see if there is old file
-            elif "old_%s"%self.id in request.args and request.args[ "old_%s" % self.id ][0] != "":
+            elif "old_%s"%self.id in request.args and \
+                    request.args[ "old_%s" % self.id ][0] != "":
                 filename = request.args[ "old_"+self.id][0]
-               
-           
+                
             return filename
         else:
             return None
         
         
     def renderEdit( self, filename ):
-        
-        imgDir = getImageDataDir()
+       
+        imgDir = getUploadedFileDir()
         
         html = ""        
         ## if file exists=>update, else, add
@@ -198,12 +219,12 @@ class ImageElement( Element ):
             %(  self.titleMessage, filename, self.class_, self.width, \
               self.height, self.border )
               
-            html += """<strong>Change to</strong>:<input type="file" name="%s" \
-                    onchange="document.contentForm.%s_filename.value=this.value"/>\
+            html += """<strong>Change to</strong>:<input type="file" name="%s"\
+                 onchange="document.contentForm.%s_filename.value=this.value"/>\
                     <br />\n"""  % (  self.id, self.id )
                     
             html += """<input type="hidden" name="old_%s" value="%s" />""" \
-                        %( self.id, filename )
+                        % ( self.id, filename )
         else:     
             ##add
             html += """<strong>%s</strong>:<input type="file" name="%s"  \
@@ -214,31 +235,16 @@ class ImageElement( Element ):
         return html
         
     def renderView( self, filename ):
-    
-        dataDir = g_webInterface.config.getDataDir() 
-        if dataDir[-1:]=="/":
-            dataDir = dataDir[:-1]
+        """
+        return the xhtml component of this image element
+        """
         
-        currentDir = getcwd()
-
-        if currentDir[-1:]=="/":
-            currentDir = currentDir[:-1]
-        
-        #if is export mode, this is the possible way I know it is in export mode
-        if dataDir.find( currentDir ) < 0:
-            ##create images dir to hold necessary data file
-            if not exists( "%s/images" %currentDir ):
-                try:
-                    mkdir( "%s/images" %currentDir )
-                except:
-                    return "can not create images directory <br />\n"
-        
-            ##copy file into images dir
-            copyfile(  dataDir+ "/images/" + filename, currentDir + "/images/"+ filename )
-            
-        return """<img src="images/%s" class="%s" width="%s" height="%s" border="%s" \
-        align="left" style="margin-right: 5px;" /><br />\n""" \
-        %( filename, self.class_, self.width, self.height, self.border )
+        if filename.strip() != "":
+            return """<img src="images/%s" class="%s" width="%s" height="%s"\
+            border="%s" align="left" style="margin-right: 5px;" />\n"""\
+            %( filename, self.class_, self.width, self.height, self.border )
+        else:
+            return ""
         
 # ===========================================================================
 class AudioElement( Element ):
@@ -247,55 +253,81 @@ class AudioElement( Element ):
     """
     
     def __init__( self, name, class_, blockId, instruc, titleMessage="Audio File" ):
+        """initial function for audio element
+        """
         Element.__init__( self, name, class_, blockId, instruc )
         self.titleMessage = titleMessage
         
-        
     def process( self, request ):
-    
+        """
+        process audio field information from http request
+        """
+        
         fileExtension = ""
         filename = ""
-
-        if self.id in request.args:
+        ##get the package name,store uploaded file into that package subdirectory
+        packageName = request.prepath[0]
+        
+        if packageName=="":
+            errmsg = "package not specified while processing audio element"
+            log.debug( errmsg )
+            return errmsg
             
-            ##get the image file extension, if is post from form
-            #if user had choose a file
-            if ( self.id +"_filename" ) in request.args and \
+        if self.id in request.args:            
+            
+            #if file is choosen#
+            if ( self.id + "_filename" ) in request.args and \
                 request.args[ self.id + "_filename"][0].strip() != "": 
-                ##get file extension
+                
+                ##get the audio file extension
                 fileExtension = splitext( basename( request.args[ self.id + \
-                                            "_filename" ][0] ) )[1].lower()
-                #assign fileExtension (.xxx) to filename
-                filename = self.id +  fileExtension
-            
-                imgDir = getImageDataDir( )
+                "_filename" ][0] ) )[1].lower()
+                
+                ##assign path + id + fileExtension (.xxx) to filename
+                filename =   packageName  + sep + self.id +  fileExtension 
+                
+                ##use this image data directory to store file, a mock up way
+                imgDir = getUploadedFileDir( )
+                
+                ##check if the image directory for this package exist or not
+                if not exists( join ( imgDir, packageName ) ):
+                    try:
+                        mkdir( join( imgDir, packageName )  )
+                    except OSError:
+                        errmsg = "Error while creating audio directory: %s" \
+                                          % ( join ( imgDir, packageName ) )
+                        log.debug( errmsg )
+                        return errmsg
+                        
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile( request.args[ self.id + "_filename"][0],\
-                               "%s/%s" %(imgDir, filename) )
-                except:
-                    return "%s audio file not copied" % filename
+                    copyfile( request.args[ self.id + "_filename" ][0], \
+                                join( imgDir,  filename ) )
+                except OSError:
+                    return "%s image file not copied" % filename
+                ##resize image file
+                #im = Image.open( filename )
             
-            ##else see if there is old file
-            elif ( "old_" + self.id ) in request.args and \
-             request.args[ "old_%s" % self.id ][0] != "":
+            ##if file not chosen, then see if there is old file
+            elif "old_%s"%self.id in request.args and \
+                    request.args[ "old_%s" % self.id ][0] != "":
                 filename = request.args[ "old_"+self.id][0]
-               
+                
             return filename
         else:
-            return None
-                
+            return None                
+            
     def renderEdit( self, filename ):
  
         ## if file exists=>update, else, add
-        imgDir = getImageDataDir()
+        imgDir = getUploadedFileDir()
         html = ""
-        if filename.strip()!="" and exists( "%s/%s" %( imgDir, filename )):
+        if filename.strip()!="" and exists( join( imgDir, filename ) ):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>: %s<br />\n""" \
                     %(  self.titleMessage, self.renderView( filename ) )
-            html += """<strong>Change to</strong>:<input type="file" name="%s" \
-                    onchange="document.contentForm.%s_filename.value=this.value"/> \
+            html += """<strong>Change to</strong>:<input type="file" name="%s"\
+                  onchange="document.contentForm.%s_filename.value=this.value"/> \
                     <br />\n""" % (  self.id, self.id )
             html += """<input type=hidden name="old_%s" value="%s" />"""\
                          %( self.id, filename )
@@ -309,11 +341,8 @@ class AudioElement( Element ):
         return html
                 
     def renderView( self, filename ):
-    
+        """
         dataDir = g_webInterface.config.getDataDir() 
-        if dataDir[-1:]=="/":
-            dataDir = dataDir[:-1]
-        
         currentDir = getcwd()
 
         if currentDir[-1:]=="/":
@@ -334,13 +363,16 @@ class AudioElement( Element ):
             ##copy files into images dir
             copyfile(  dataDir+ "/images/" + filename,\
                      currentDir + "/images/"+ filename )
-            
-        tmp_array = {}
-        tmp_array["id"] = self.id
-        tmp_array["host"] = "images"
-        tmp_array["audiofile"] = filename
-        filterStr = self.mmfilter( filename )
-        html = filterStr % ( tmp_array )
+        """    
+        if filename.strip() != "":
+            tmp_array = {}
+            tmp_array["id"] = self.id
+            tmp_array["hostUrl"] = "images"
+            tmp_array["audiofile"] = filename
+            filterStr = self.mmfilter( filename )
+            html = filterStr % ( tmp_array )
+        else:
+            html = ""
         return html
         
     def mmfilter( self, filename ):
@@ -354,13 +386,13 @@ class AudioElement( Element ):
 <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
  codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
  id="mp3player" height="15" width="90"> 
-<param name="movie" value="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s"> 
+<param name="movie" value="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s"> 
 <param name="quality" value="high"> 
 <param name="bgcolor" value="#333333"> 
 <param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;
 btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;
 trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
-<embed src="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s" quality="high"
+<embed src="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s" quality="high"
  bgcolor="#333333" name="mp3player" type="application/x-shockwave-flash"
   flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;
  iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;
@@ -374,8 +406,8 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#ve
 <!--param value="741" name="_cx">
 <param value="381" name="_cy"-->
 <param value="741" name="FlashVars">
-<param value="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s" name="Movie">
-<param value="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s" name="Src">
+<param value="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s" name="Movie">
+<param value="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s" name="Src">
 <param value="Window" name="WMode">
 <param value="0" name="Play">
 <param value="-1" name="Loop">

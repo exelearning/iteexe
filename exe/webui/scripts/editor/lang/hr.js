@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: hr.js
  * 	Croatian language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-11-24 23:38:22
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 17:26:17
  * 
  * File Authors:
  * 		Alex Varga (avarga@globaldizajn.hr)
@@ -32,15 +32,16 @@ NewPage				: "Nova stranica",
 Preview				: "Pregledaj",
 Cut					: "Izreži",
 Copy				: "Kopiraj",
-Paste				: "Zaljepi",
-PasteText			: "Zaljepi kao čisti tekst",
-PasteWord			: "Zaljepi iz Worda",
+Paste				: "Zalijepi",
+PasteText			: "Zalijepi kao čisti tekst",
+PasteWord			: "Zalijepi iz Worda",
 Print				: "Ispiši",
 SelectAll			: "Odaberi sve",
 RemoveFormat		: "Ukloni formatiranje",
 InsertLinkLbl		: "Link",
 InsertLink			: "Ubaci/promjeni link",
 RemoveLink			: "Ukloni link",
+Anchor				: "Ubaci/promjeni sidro",
 InsertImageLbl		: "Slika",
 InsertImage			: "Ubaci/promjeni sliku",
 InsertTableLbl		: "Tablica",
@@ -51,7 +52,7 @@ InsertSpecialCharLbl: "Posebni karakteri",
 InsertSpecialChar	: "Ubaci posebne karaktere",
 InsertSmileyLbl		: "Smješko",
 InsertSmiley		: "Ubaci smješka",
-About				: "O FCKeditor",
+About				: "O FCKeditoru",
 Bold				: "Bold",
 Italic				: "Italic",
 Underline			: "Podcrtano",
@@ -81,6 +82,18 @@ BGColor				: "Boja pozadine",
 Source				: "K&ocirc;d",
 Find				: "Pronađi",
 Replace				: "Zamijeni",
+SpellCheck			: "Provjeri pravopis",
+UniversalKeyboard	: "Univerzalna tipkovnica",
+
+Form			: "Form",
+Checkbox		: "Checkbox",
+RadioButton		: "Radio Button",
+TextField		: "Text Field",
+Textarea		: "Textarea",
+HiddenField		: "Hidden Field",
+Button			: "Button",
+SelectionField	: "Selection Field",
+ImageButton		: "Image Button",
 
 // Context Menu
 EditLink			: "Promjeni link",
@@ -96,7 +109,18 @@ CellProperties		: "Svojstva ćelije",
 TableProperties		: "Svojstva tablice",
 ImageProperties		: "Svojstva slike",
 
-FontFormats			: "Normal;Formatirano;Adresa;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",
+AnchorProp			: "Svojstva sidra",
+ButtonProp			: "Image Button svojstva",
+CheckboxProp		: "Checkbox svojstva",
+HiddenFieldProp		: "Hidden Field svojstva",
+RadioButtonProp		: "Radio Button svojstva",
+ImageButtonProp		: "Image Button svojstva",
+TextFieldProp		: "Text Field svojstva",
+SelectionFieldProp	: "Selection svojstva",
+TextareaProp		: "Textarea svojstva",
+FormProp			: "Form svojstva",
+
+FontFormats			: "Normal;Formatirano;Adresa;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",	// 2.0: The last entry has been added.
 
 // Alerts and Messages
 ProcessingXHTML		: "Obrađujem XHTML. Molimo pričekajte...",
@@ -112,7 +136,9 @@ UnknownToolbarSet	: "Traka s alatima \"%1\" ne postoji",
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Poništi",
 DlgBtnClose			: "Zatvori",
+DlgBtnBrowseServer	: "Pretraži server",
 DlgAdvancedTag		: "Napredno",
+DlgOpOther			: "&lt;Drugo&gt;",
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;nije postavljeno&gt;",
@@ -137,7 +163,6 @@ DlgImgInfoTab		: "Info slike",
 DlgImgBtnUpload		: "Pošalji na server",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Pošalji",
-DlgImgBtnBrowse		: "Pretraži server",
 DlgImgAlt			: "Alternativni tekst",
 DlgImgWidth			: "Širina",
 DlgImgHeight		: "Visina",
@@ -146,7 +171,7 @@ DlgBtnResetSize		: "Obriši veličinu",
 DlgImgBorder		: "Okvir",
 DlgImgHSpace		: "HSpace",
 DlgImgVSpace		: "VSpace",
-DlgImgAlign			: "Poravnja",
+DlgImgAlign			: "Poravnaj",
 DlgImgAlignLeft		: "Lijevo",
 DlgImgAlignAbsBottom: "Abs dolje",
 DlgImgAlignAbsMiddle: "Abs sredina",
@@ -157,8 +182,6 @@ DlgImgAlignRight	: "Desno",
 DlgImgAlignTextTop	: "Vrh teksta",
 DlgImgAlignTop		: "Vrh",
 DlgImgPreview		: "Pregledaj",
-DlgImgMsgWrongExt	: "Žao nam je, dozvoljeno je slanje samo sljedećih vrsta datoteka::\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nOperacija je poništena.",
-DlgImgAlertSelect	: "Odaberite sliku za slanje.",
 DlgImgAlertUrl		: "Unesite URL slike",
 
 // Link Dialog
@@ -173,7 +196,6 @@ DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protokol",
 DlgLnkProtoOther	: "&lt;drugo&gt;",
 DlgLnkURL			: "URL",
-DlgLnkBtnBrowse		: "Pretraži server",
 DlgLnkAnchorSel		: "Odaberi sidro",
 DlgLnkAnchorByName	: "Po nazivu sidra",
 DlgLnkAnchorById	: "Po Id elementa",
@@ -191,7 +213,7 @@ DlgLnkTargetBlank	: "Novi prozor (_blank)",
 DlgLnkTargetParent	: "Roditeljski prozor (_parent)",
 DlgLnkTargetSelf	: "Isti prozor (_self)",
 DlgLnkTargetTop		: "Vršni prozor (_top)",
-DlgLnkTargetFrame	: "Naziv ciljanog okvira",
+DlgLnkTargetFrameName	: "Ime ciljnog okvira",
 DlgLnkPopWinName	: "Naziv popup prozora",
 DlgLnkPopWinFeat	: "Mogućnosti popup prozora",
 DlgLnkPopResize		: "Promjenjljive veličine",
@@ -206,9 +228,6 @@ DlgLnkPopWidth		: "Širina",
 DlgLnkPopHeight		: "Visina",
 DlgLnkPopLeft		: "Lijeva pozicija",
 DlgLnkPopTop		: "Gornja pozicija",
-
-DlgLnkMsgWrongExtA	: "Žao nam je, dozvoljeno je slanje samo sljedećih datoteka:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nOperacija je poništena.",
-DlgLnkMsgWrongExtD	: "Žao nam je, slanje sljedećih vrsta datoteka nije dozvoljeno:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nOperacija je poništena.",
 
 DlnLnkMsgNoUrl		: "Molimo upišite URL link",
 DlnLnkMsgNoEMail	: "Molimo upišite e-mail adresu",
@@ -290,17 +309,140 @@ PasteErrorPaste	: "Sigurnosne postavke Vašeg pretraživača ne dozvoljavaju ope
 PasteErrorCut	: "Sigurnosne postavke Vašeg pretraživača ne dozvoljavaju operacije automatskog izrezivanja. Molimo koristite kraticu na tipkovnici (Ctrl+X).",
 PasteErrorCopy	: "Sigurnosne postavke Vašeg pretraživača ne dozvoljavaju operacije automatskog kopiranja. Molimo koristite kraticu na tipkovnici (Ctrl+C).",
 
-PasteAsText		: "Zaljepi kao čisti tekst",
-PasteFromWord	: "Zaljepi iz Worda",
+PasteAsText		: "Zalijepi kao čisti tekst",
+PasteFromWord	: "Zalijepi iz Worda",
 
-DlgPasteMsg		: "Editor nije mogao automatski zaljepiti zbog  <STRONG>sigurnosnih postavki</STRONG> Vašeg pretraživača.<BR>Molimo zaljepite unutar sljedeće kocke koristeći tipkovnicu (<STRONG>Ctrl+V</STRONG>) i pritisnite na <STRONG>OK</STRONG>.",
+DlgPasteMsg		: "Editor nije mogao automatski zalijepiti zbog  <STRONG>sigurnosnih postavki</STRONG> Vašeg pretraživača.<BR>Molimo zalijepite unutar sljedeće kocke koristeći tipkovnicu (<STRONG>Ctrl+V</STRONG>) i pritisnite na <STRONG>OK</STRONG>.",
 
 // Color Picker
 ColorAutomatic	: "Automatski",
 ColorMoreColors	: "Više boja...",
 
+// Document Properties
+DocProps		: "Svojstva dokumenta",
+
+// Anchor Dialog
+DlgAnchorTitle		: "Svojstva sidra",
+DlgAnchorName		: "Ime sidra",
+DlgAnchorErrorName	: "Molimo unesite ime sidra",
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "Nije u rječniku",
+DlgSpellChangeTo		: "Promjeni u",
+DlgSpellBtnIgnore		: "Zanemari",
+DlgSpellBtnIgnoreAll	: "Zanemari sve",
+DlgSpellBtnReplace		: "Zamijeni",
+DlgSpellBtnReplaceAll	: "Zamijeni sve",
+DlgSpellBtnUndo			: "Vrati",
+DlgSpellNoSuggestions	: "-Nema preporuke-",
+DlgSpellProgress		: "Provjera u tijeku...",
+DlgSpellNoMispell		: "Provjera završena: Nema greaka",
+DlgSpellNoChanges		: "Provjera završena: Nije napravljena promjena",
+DlgSpellOneChange		: "Provjera završena: Jedna riječ promjenjena",
+DlgSpellManyChanges		: "Provjera završena: Promjenjeno %1 riječi",
+
+IeSpellDownload			: "Provjera pravopisa nije instalirana. Želite li skinuti provjeru pravopisa?",
+
+// Button Dialog
+DlgButtonText	: "Tekst (vrijednost)",
+DlgButtonType	: "Vrsta",
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Ime",
+DlgCheckboxValue	: "Vrijednost",
+DlgCheckboxSelected	: "Odabrano",
+
+// Form Dialog
+DlgFormName		: "Ime",
+DlgFormAction	: "Akcija",
+DlgFormMethod	: "Metoda",
+
+// Select Field Dialog
+DlgSelectName		: "Ime",
+DlgSelectValue		: "Vrijednost",
+DlgSelectSize		: "Veličina",
+DlgSelectLines		: "linija",
+DlgSelectChkMulti	: "Dozvoli višestruki odabir",
+DlgSelectOpAvail	: "Dostupne opcije",
+DlgSelectOpText		: "Tekst",
+DlgSelectOpValue	: "Vrijednost",
+DlgSelectBtnAdd		: "Dodaj",
+DlgSelectBtnModify	: "Promjeni",
+DlgSelectBtnUp		: "Gore",
+DlgSelectBtnDown	: "Dolje",
+DlgSelectBtnSetValue : "Postavi kao odabranu vrijednost",
+DlgSelectBtnDelete	: "Obriši",
+
+// Textarea Dialog
+DlgTextareaName	: "Ime",
+DlgTextareaCols	: "Kolona",
+DlgTextareaRows	: "Redova",
+
+// Text Field Dialog
+DlgTextName			: "Ime",
+DlgTextValue		: "Vrijednost",
+DlgTextCharWidth	: "irina",
+DlgTextMaxChars		: "Najviše karaktera",
+DlgTextType			: "Vrsta",
+DlgTextTypeText		: "Tekst",
+DlgTextTypePass		: "Šifra",
+
+// Hidden Field Dialog
+DlgHiddenName	: "Ime",
+DlgHiddenValue	: "Vrijednost",
+
+// Bulleted List Dialog
+BulletedListProp	: "Svojstva liste",
+NumberedListProp	: "Svojstva brojčane liste",
+DlgLstType			: "Vrsta",
+DlgLstTypeCircle	: "Krug",
+DlgLstTypeDisk		: "Disk",
+DlgLstTypeSquare	: "Kvadrat",
+DlgLstTypeNumbers	: "Brojevi (1, 2, 3)",
+DlgLstTypeLCase		: "Mala slova (a, b, c)",
+DlgLstTypeUCase		: "Velika slova (A, B, C)",
+DlgLstTypeSRoman	: "Male rimske brojke (i, ii, iii)",
+DlgLstTypeLRoman	: "Velike rimske brojke (I, II, III)",
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "Općenito",
+DlgDocBackTab		: "Pozadina",
+DlgDocColorsTab		: "Boje i margine",
+DlgDocMetaTab		: "Meta Data",
+
+DlgDocPageTitle		: "Naslov stranice",
+DlgDocLangDir		: "Smjer jezika",
+DlgDocLangDirLTR	: "S lijeva na desno",
+DlgDocLangDirRTL	: "S desna na lijevo",
+DlgDocLangCode		: "K&ocirc;d jezika",
+DlgDocCharSet		: "Enkodiranje znakova",
+DlgDocCharSetOther	: "Ostalo enkodiranje znakova",
+
+DlgDocDocType		: "Zaglavlje vrste dokumenta",
+DlgDocDocTypeOther	: "Ostalo zaglavlje vrste dokumenta",
+DlgDocIncXHTML		: "Ubaci XHTML deklaracije",
+DlgDocBgColor		: "Boja pozadine",
+DlgDocBgImage		: "URL slike pozadine",
+DlgDocBgNoScroll	: "Pozadine se ne pomiče",
+DlgDocCText			: "Tekst",
+DlgDocCLink			: "Link",
+DlgDocCVisited		: "Posjećeni link",
+DlgDocCActive		: "Aktivni link",
+DlgDocMargins		: "Margine stranice",
+DlgDocMaTop			: "Vrh",
+DlgDocMaLeft		: "Lijevo",
+DlgDocMaRight		: "Desno",
+DlgDocMaBottom		: "Dolje",
+DlgDocMeIndex		: "Ključne riječi dokumenta (odvojene zarezom)",
+DlgDocMeDescr		: "Opis dokumenta",
+DlgDocMeAuthor		: "Autor",
+DlgDocMeCopy		: "Autorska prava",
+DlgDocPreview		: "Pregledaj",
+
 // About Dialog
-DlgAboutVersion	: "inačica",
-DlgAboutLicense	: "Licencirano pod uvijetima GNU Lesser General Public License",
-DlgAboutInfo	: "Za više informacija posjetite"
+DlgAboutAboutTab	: "O FCKEditoru",
+DlgAboutBrowserInfoTab	: "Podaci o pretraživaču",
+DlgAboutVersion		: "inačica",
+DlgAboutLicense		: "Licencirano pod uvijetima GNU Lesser General Public License",
+DlgAboutInfo		: "Za više informacija posjetite"
 }

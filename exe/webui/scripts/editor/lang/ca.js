@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: ca.js
  * 	Catalan language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-11-28 19:53:54
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 17:26:17
  * 
  * File Authors:
  * 		Jordi Cerdan (nan@myp.ad)
@@ -22,6 +22,9 @@ var FCKLang =
 {
 // Language direction : "ltr" (left to right) or "rtl" (right to left).
 Dir					: "ltr",
+
+ToolbarCollapse		: "Col·lapsar barra",
+ToolbarExpand		: "Expandir barra",
 
 // Toolbar Items and Context Menu
 Save				: "Guardar",
@@ -38,6 +41,7 @@ RemoveFormat		: "Eliminar Format",
 InsertLinkLbl		: "Enllaç",
 InsertLink			: "Afegir/Editar Enllaç",
 RemoveLink			: "Eliminar Enllaç",
+Anchor				: "Afegir/Editar Àncora",
 InsertImageLbl		: "Imatge",
 InsertImage			: "Afegir/Editar Imatge",
 InsertTableLbl		: "Taula",
@@ -78,6 +82,18 @@ BGColor				: "Color de Fons",
 Source				: "Font",
 Find				: "Cercar",
 Replace				: "Remplaçar",
+SpellCheck			: "Verificar sintaxi",
+UniversalKeyboard	: "Teclat universal",
+
+Form			: "Formulari",
+Checkbox		: "Casella de verificació",
+RadioButton		: "Botó ràdio",
+TextField		: "Camp de text",
+Textarea		: "Àrea de text",
+HiddenField		: "Camp ocult",
+Button			: "botó",
+SelectionField	: "Camp de selecció",
+ImageButton		: "Botó imatge",
 
 // Context Menu
 EditLink			: "Editar Enllaç",
@@ -93,7 +109,18 @@ CellProperties		: "Proprietats de Cel·la",
 TableProperties		: "Proprietats de Taula",
 ImageProperties		: "Proprietats d'Image",
 
-FontFormats			: "Normal;Formatejat;Adreça;Capçalera 1;Capçalera 2;Capçalera 3;Capçalera 4;Capçalera 5;Capçalera 6",
+AnchorProp			: "Proprietats d'àncora",
+ButtonProp			: "Proprietats de botó",
+CheckboxProp		: "Proprietats de casella de verificació",
+HiddenFieldProp		: "Proprietats de camp ocult",
+RadioButtonProp		: "Proprietats de botó ràdio",
+ImageButtonProp		: "Proprietats de botó imatge",
+TextFieldProp		: "Proprietats de camp de text",
+SelectionFieldProp	: "Proprietats de camp de selecció",
+TextareaProp		: "Proprietats de camp de text",
+FormProp			: "Proprietats de formulari",
+
+FontFormats			: "Normal;Formatejat;Adreça;Capçalera 1;Capçalera 2;Capçalera 3;Capçalera 4;Capçalera 5;Capçalera 6",	// 2.0: The last entry has been added.
 
 // Alerts and Messages
 ProcessingXHTML		: "Processant XHTML. Si us plau esperi...",
@@ -109,7 +136,9 @@ UnknownToolbarSet	: "Conjunt de barra d'eines \"%1\" inexistent",
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Cancelar",
 DlgBtnClose			: "Tancar",
+DlgBtnBrowseServer	: "Veure servidor",
 DlgAdvancedTag		: "Avançat",
+DlgOpOther			: "Altres",
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;no definit&gt;",
@@ -134,7 +163,6 @@ DlgImgInfoTab		: "Informació d'Imatge",
 DlgImgBtnUpload		: "Enviar-la al servidor",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Pujar",
-DlgImgBtnBrowse		: "Veure Servidor",
 DlgImgAlt			: "Text Alternatiu",
 DlgImgWidth			: "Amplada",
 DlgImgHeight		: "Alçada",
@@ -154,8 +182,6 @@ DlgImgAlignRight	: "Right",
 DlgImgAlignTextTop	: "Text Top",
 DlgImgAlignTop		: "Top",
 DlgImgPreview		: "Vista Prèvia",
-DlgImgMsgWrongExt	: "Només els següents tipus d'imatge poden ser pujats al servidor:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nOperació Cancelada.",
-DlgImgAlertSelect	: "Si us plau, seleccioni una imatge per pujar.",
 DlgImgAlertUrl		: "Si us plau, escriviu la URL de la imatge",
 
 // Link Dialog
@@ -170,7 +196,6 @@ DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protocol",
 DlgLnkProtoOther	: "&lt;altra&gt;",
 DlgLnkURL			: "URL",
-DlgLnkBtnBrowse		: "Veure Servidor",
 DlgLnkAnchorSel		: "Seleccionar una àncora",
 DlgLnkAnchorByName	: "Per nom d'àncora",
 DlgLnkAnchorById	: "Per Id d'element",
@@ -188,7 +213,7 @@ DlgLnkTargetBlank	: "Nova Finestra (_blank)",
 DlgLnkTargetParent	: "Finestra Pare (_parent)",
 DlgLnkTargetSelf	: "Mateixa Finestra (_self)",
 DlgLnkTargetTop		: "Finestra Major (_top)",
-DlgLnkTargetFrame	: "Nom Marc Destí",
+DlgLnkTargetFrameName	: "Nom del marc de destí",
 DlgLnkPopWinName	: "Nom Finestra Popup",
 DlgLnkPopWinFeat	: "Característiques Finestra Popup",
 DlgLnkPopResize		: "Redimensionable",
@@ -204,8 +229,9 @@ DlgLnkPopHeight		: "Alçada",
 DlgLnkPopLeft		: "Posició Esquerra",
 DlgLnkPopTop		: "Posició Dalt",
 
-DlgLnkMsgWrongExtA	: "Només els següents tipus d'arxiu poden ser pujats al servidor:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nOperació cancelada.",
-DlgLnkMsgWrongExtD	: "Els següents tipus d'arxiu no poden ser pujats al servidor:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nOperació cancelada.",
+DlnLnkMsgNoUrl		: "Si us plau, escrigui l'enllaç URL",
+DlnLnkMsgNoEMail	: "Si us plau, escrigui l'adreça e-mail",
+DlnLnkMsgNoAnchor	: "Si us plau, escrigui l'àncora",
 
 // Color Dialog
 DlgColorTitle		: "Seleccioni Color",
@@ -292,8 +318,131 @@ DlgPasteMsg		: "L'editor no ha pogut executar automàticament l'operació d'enga
 ColorAutomatic	: "Automàtic",
 ColorMoreColors	: "Més Colors...",
 
+// Document Properties
+DocProps		: "Proprietats de document",
+
+// Anchor Dialog
+DlgAnchorTitle		: "Proprietats d'àncora",
+DlgAnchorName		: "Nom d'àncora",
+DlgAnchorErrorName	: "Si us plau, escrigui el nom de l'ancora",
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "No és al diccionari",
+DlgSpellChangeTo		: "Canviar a",
+DlgSpellBtnIgnore		: "Ignorar",
+DlgSpellBtnIgnoreAll	: "Ignorar tot",
+DlgSpellBtnReplace		: "Remplaçar",
+DlgSpellBtnReplaceAll	: "Replaçar tot",
+DlgSpellBtnUndo			: "Desfer",
+DlgSpellNoSuggestions	: "Cap suggestió",
+DlgSpellProgress		: "Comprovació de sintaxi en progrés",
+DlgSpellNoMispell		: "Comprovació de sintaxi completada",
+DlgSpellNoChanges		: "Comprovació de sintaxi: cap paraulada canviada",
+DlgSpellOneChange		: "Comprovació de sintaxi: una paraula canviada",
+DlgSpellManyChanges		: "Comprovació de sintaxi %1 paraules canviades",
+
+IeSpellDownload			: "Comprovació de sintaxi no instal·lat. Voleu descarregar-ho ara?",
+
+// Button Dialog
+DlgButtonText	: "Text (Valor)",
+DlgButtonType	: "Tipus",
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Nom",
+DlgCheckboxValue	: "Valor",
+DlgCheckboxSelected	: "Seleccionat",
+
+// Form Dialog
+DlgFormName		: "Nom",
+DlgFormAction	: "Acció",
+DlgFormMethod	: "Mètode",
+
+// Select Field Dialog
+DlgSelectName		: "Nom",
+DlgSelectValue		: "Valor",
+DlgSelectSize		: "Tamany",
+DlgSelectLines		: "Línies",
+DlgSelectChkMulti	: "Permetre múltiples seleccions",
+DlgSelectOpAvail	: "Opcions disponibles",
+DlgSelectOpText		: "Text",
+DlgSelectOpValue	: "Valor",
+DlgSelectBtnAdd		: "Afegir",
+DlgSelectBtnModify	: "Modificar",
+DlgSelectBtnUp		: "Amunt",
+DlgSelectBtnDown	: "Avall",
+DlgSelectBtnSetValue : "Seleccionar per defecte",
+DlgSelectBtnDelete	: "Esborrar",
+
+// Textarea Dialog
+DlgTextareaName	: "Nom",
+DlgTextareaCols	: "Columnes",
+DlgTextareaRows	: "Files",
+
+// Text Field Dialog
+DlgTextName			: "Nom",
+DlgTextValue		: "Valor",
+DlgTextCharWidth	: "Amplada de caràcter",
+DlgTextMaxChars		: "Màxim de caràcters",
+DlgTextType			: "Tipus",
+DlgTextTypeText		: "Text",
+DlgTextTypePass		: "Contrassenya",
+
+// Hidden Field Dialog
+DlgHiddenName	: "Nom",
+DlgHiddenValue	: "Valor",
+
+// Bulleted List Dialog
+BulletedListProp	: "Proprietats de llista marcada",
+NumberedListProp	: "Proprietats de llista numerada",
+DlgLstType			: "Tipus",
+DlgLstTypeCircle	: "Cercle",
+DlgLstTypeDisk		: "Disc",
+DlgLstTypeSquare	: "Quadrat",
+DlgLstTypeNumbers	: "Números (1, 2, 3)",
+DlgLstTypeLCase		: "Lletres minúscules (a, b, c)",
+DlgLstTypeUCase		: "Lletres majúscules (A, B, C)",
+DlgLstTypeSRoman	: "Números romans minúscules (i, ii, iii)",
+DlgLstTypeLRoman	: "Números romans majúscules (I, II, III)",
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "General",
+DlgDocBackTab		: "Fons",
+DlgDocColorsTab		: "Colors i marges",
+DlgDocMetaTab		: "Dades Meta",
+
+DlgDocPageTitle		: "Títol de la pàgina",
+DlgDocLangDir		: "Direcció llenguatge",
+DlgDocLangDirLTR	: "Esquerra a dreta (LTR)",
+DlgDocLangDirRTL	: "Dreta a esquerra (RTL)",
+DlgDocLangCode		: "Codi de llenguatge",
+DlgDocCharSet		: "Codificació de conjunt de caràcters",
+DlgDocCharSetOther	: "Altra codificació de conjunt de caràcters",
+
+DlgDocDocType		: "Capçalera de tipus de document",
+DlgDocDocTypeOther	: "Altra Capçalera de tipus de document",
+DlgDocIncXHTML		: "Incloure declaracions XHTML",
+DlgDocBgColor		: "Color de fons",
+DlgDocBgImage		: "URL de la imatge de fons",
+DlgDocBgNoScroll	: "Fons fixe",
+DlgDocCText			: "Text",
+DlgDocCLink			: "Enllaç",
+DlgDocCVisited		: "Enllaç visitat",
+DlgDocCActive		: "Enllaç actiu",
+DlgDocMargins		: "Marges de pàgina",
+DlgDocMaTop			: "Cap",
+DlgDocMaLeft		: "Esquerra",
+DlgDocMaRight		: "Dreta",
+DlgDocMaBottom		: "Peu",
+DlgDocMeIndex		: "Mots clau per a indexació (separats per coma)",
+DlgDocMeDescr		: "Descripció del document",
+DlgDocMeAuthor		: "Autor",
+DlgDocMeCopy		: "Copyright",
+DlgDocPreview		: "Vista prèvia",
+
 // About Dialog
-DlgAboutVersion	: "versió",
-DlgAboutLicense	: "Sota els termes de la Llicència GNU Lesser General Public License",
-DlgAboutInfo	: "Per a més informació aneu a"
+DlgAboutAboutTab	: "Sobre",
+DlgAboutBrowserInfoTab	: "Informació del navigador",
+DlgAboutVersion		: "versió",
+DlgAboutLicense		: "Sota els termes de la Llicència GNU Lesser General Public License",
+DlgAboutInfo		: "Per a més informació aneu a"
 }

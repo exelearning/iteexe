@@ -1,44 +1,441 @@
-/*  =================================================
-     eXe
-     Copyright 2004-2005, University of Auckland
+/*  Copyright University of Auckland 2004
+	Created by Brent Simpson, brent.simpson@auckland.ac.nz
+	Centre for Flexible and Distance Learning
+*/
 
-     default styles for editing panel.
-   ================================================== */
+body {
+	background-color: #FFFFFF;
+	margin: 0 0 0 0; padding: 0 0 0 0;
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+	}
 
+a:link, a:visited {
+	text-decoration: none;
+	color: #00468C;
+	}
+	
+a:hover {
+	color: #8B7B73;
+	}
+	   
+/* MAIN HEADER */
+
+.header {
+	background-color: #125E92;
+	}
+	
+.bar {
+	background-color: #8B7B73;
+	text-align: right;
+	border-top: 1px solid #fff;
+	}
+	
+.bar a:link, .bar a:visited {
+	font-size: small;
+	text-decoration: none;
+	color: #CCC !important;
+	padding-left: 5px;
+	padding-right: 5px;
+	}
+	
+.bar a:hover {
+	color: #F1F7FF !important;
+	}
+	
+.header_title {
+	color: #000;
+	}
+	
+.header_nav a {
+	border-left: 1px solid #fff;
+	}
+	
+#navtpr {
+	color: #000;
+	}
+
+/* ABOUT page NAV see: http://www2.auckland.ac.nz/cfdl/nursing704/index.html for example*/
+
+#about_nav {
+	display: block;
+	font-size: medium;
+	font-weight: bolder;
+	color: #737373;
+	border-bottom: 1px solid #CCC;
+	}
+
+#about_nav a {
+	font-size: medium;
+	}
+
+#about_nav_sub {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	}
+
+#about_nav_sub a {
+	display: block;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	}
 
 /* LEFT-HAND NAVIGATION */
 
 #navcontainer {
-    background-color: #FFFFFF;
-    width: 169px;
-    float: left;
-}
+	background-color: #FFFFFF;
+	width: 169px;
+	float: left;
+	margin-top: 10px;
+	}
+				
+#navcontainer ul {
+	margin-left: 0px;
+	padding-left: 0;
+	margin-top: 0;
+	list-style-type: none;
+	font-family: Arial, Helvetica, sans-serif;
+	}
 
 #navcontainer a {
-    display: block;
-    margin-left: 0px;
-    margin-top: 5px;
-    padding-left: 0px;
-    text-decoration: none;
-    background-color: #FFF;
-    border-bottom: 1px solid #CCC;
-}
+	display: block;
+	padding: 3px 0 3px 6px;
+	background-color: #FFF;
+	border-bottom: 1px solid #CCC;
+	width: 163px;
+	}
 
-#navcontainer a:link, a:visited {
-    color: #96852C;
-    text-decoration: none;
-}
+#navcontainer a:link, #navlist a:visited {
+	color: #96852C;
+	text-decoration: none;
+	}
 
 #navcontainer a:hover {
-    background-color: #51778A;
-    color: #EDEFF0;
-}
+	color: #51778A;
+	background-color: #EDEFF0;
+	}
 
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+ 
+* html #navcontainer {
+  margin-right: 10px;
+  }
+ 
+* html p {
+  height: 1%;
+  margin-left: 0;
+  }
+ 
+/* End hide from IE5/mac */
+
+div #active {
+	padding: 3px 0 3px 6px;
+	width: 163px;
+	background-color: #51778A;
+	color: #EDEFF0;
+	border-bottom: 1px solid #CCC;
+	}
+
+div #subnav {
+	border-bottom: 1px solid #CCC;
+	}
+	
+#subnav a {
+	display: block;
+	border: 0 !important;
+	width: 153px;
+	margin-left: 10px;
+	padding: 3px 0 3px 6px;
+	font-size: x-small;
+	border-bottom: 1px solid #FFF;
+	}
+
+#subnav a:hover {
+	color: #51778A;
+	background-color: #EDEFF0;
+	}	
+	
+#subnav #active {
+	margin-left: 10px;
+	background-color: #51778A;
+	width: 153px;
+	color: #EDEFF0;
+	font-size: x-small;
+	border-bottom: 1px solid #FFF;
+	}	
+	
+	
+/* MAIN CONTENT STYLES */
+
+#container {
+	border-top: 1px solid #CCC;
+	}
 
 #main {
-    padding: 18px;
-    margin: 10px 10px 10px 180px;
-	background-color: #F5D291;
-    line-height: 140%;
+	padding: 18px;
+	margin: 10px 10px 10px 180px;
+	background-color: #EDEFF0;
+	line-height: 140%;
+	}
+	
+#tasks {
+	padding: 18px;
+	margin: 10px 10px 10px 180px;
+	background-color: #EEEBDB;
+	line-height: 140%;
+	}
+
+#resources {
+	padding: 18px;
+	margin: 10px 10px 10px 180px;
+	background-color: #F1F1DD;
+	line-height: 140%;
+	}
+	
+#title {
+	border-top: 1px solid #FFFFFF;	
+	border-bottom: 1px solid #FFFFFF;
+	}
+	
+H1 {
+	color: #51778A;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin: 0px;
+	padding: 2px;
+	border-top: 1px solid #FFFFFF;	
+	border-bottom: 1px solid #FFFFFF;
+	}
+
+H2 {
+	color: #51778A;
+	font-size: medium;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+		
+h3 {
+	color: #51778A;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	}		
+
+
+.icon {
+	color: #51778A;
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	position: relative;
+	top: -18px;
+	left: 5px;
+}
+	
+.quote {
+	display: block;
+	margin: 0px 0px 10px 20px;
+	}
+	
+.highlight {
+	border: 1px solid rgb(173, 173, 173);
+	background-color: #F5F5F5;
+	padding: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	}
+	
+.resource {
+	border: 1px solid rgb(173, 173, 173);
+	background-color: #F1F1DD;
+	padding: 10px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	}
+	
+.task {
+	border: 1px solid rgb(173, 173, 173);
+	background-color: #EEEBDB;
+	padding: 10px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	}
+	
+#question {
 }
 
+#question span {
+	padding-top: 6px;
+	margin-left: 40px;
+	display: block;
+}
+
+#question img {
+	float: left;
+}
+
+li {
+	margin-bottom: 0px;
+	line-height: 140%;
+	}
+	
+.mediaFile {
+	background-color: #CCCCCC;
+	border: solid 1px #000000;
+	padding: 0 10px 10px 10px;
+	position: absolute;
+}
+
+.mediaLinkQ {
+	background-color:#1963AA;
+	margin-left:5px;
+}
+
+.mediaLinkW {
+	background-color:#1580E6;
+	margin-left:5px;
+}
+
+.mediaLinkQ a:link, .mediaLinkQ a:visited, .mediaLinkW a:link, .mediaLinkW a:visited {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none !important;
+}
+
+.mediaLinkQ a:hover, .mediaLinkW a:hover {
+	background-color: #999999;
+}
+
+#bullets {
+	margin-bottom: 0px;
+	margin-top: 15px;
+	}
+	
+#bullets li {
+	margin-bottom: 7px;
+	line-height: 140%;
+	}
+	
+hr {
+	margin-top: 5px;
+	}
+
+.arrows a:link, .arrows a:visited {
+	color: #9D9DA1 !important;
+	}
+
+/* SCHEDULE TABLE */
+
+#schedule {
+	border-bottom: 1px solid #a9a9a9;	
+	border-right: 1px solid #a9a9a9;
+	border-collapse: collapse;
+	background-color: #fff;
+	}
+	
+#schedule td {
+	border-top: 1px solid #a9a9a9;	
+	border-left: 1px solid #a9a9a9;
+	padding: 5px;
+	vertical-align: top;
+	}
+	
+.tickbox {
+	margin: 4px 4px 6px 0px;
+	}
+	
+/* drop-shadow for green background */
+
+.p-shadow {
+	float: left;
+	background: url(images/shadowAlpha.png) no-repeat bottom right !important;
+	background: url(images/shadow3.gif) no-repeat bottom right;
+	margin: 0px 10px 5px 10px !important;
+	margin: 0px 10px 5px 10px;
+}
+
+.p-shadow div {
+  background: none !important;
+  background: url(images/shadow4.gif) no-repeat left top;
+  padding: 0 !important;
+  padding: 0px 6px 6px 0px;
+  }
+
+.p-shadow p {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  padding: 4px;
+  margin: -6px 6px 6px -6px !important;
+  margin: 0;
+  }
+  
+  .p-shadowHighlight {
+	float: left;
+	background: url(images/shadowAlpha.png) no-repeat bottom right !important;
+	background: url(images/shadow6.gif) no-repeat bottom right;
+	margin: 0px 10px 5px 10px !important;
+	margin: 0px 10px 5px 10px;
+}
+  
+  .p-shadowHighlight div {
+  background: none !important;
+  background: url(images/shadow5.gif) no-repeat left top;
+  padding: 0 !important;
+  padding: 0px 6px 6px 0px;
+  }
+
+.p-shadowHighlight p {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  padding: 4px;
+  margin: -6px 6px 6px -6px !important;
+  margin: 0;
+  }
+  
+   .p-shadowTasks {
+	float: left;
+	background: url(images/shadowAlpha.png) no-repeat bottom right !important;
+	background: url(images/shadow8.gif) no-repeat bottom right;
+	margin: 0px 10px 5px 10px !important;
+	margin: 0px 10px 5px 10px;
+}
+  
+  .p-shadowTasks div {
+  background: none !important;
+  background: url(images/shadow7.gif) no-repeat left top;
+  padding: 0 !important;
+  padding: 0px 6px 6px 0px;
+  }
+
+.p-shadowTasks p {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  padding: 4px;
+  margin: -6px 6px 6px -6px !important;
+  margin: 0;
+  }
+  
+ #caption {
+   color: #777;
+	display:block;
+	border-top: 1px solid #CCCCCC;
+	font: italic 0.8em Arial, Helvetica, sans-serif;
+ }
+
+/* FOOTER */
+
+#footer {
+	background-color: #BDBDBD;
+	font-size: 10px;
+	color: #FFFFFF;
+	margin: 10px 10px 10px 180px;
+	}
+	
+#footer a {
+	color: #fff;
+	}
+
+@media print {.noprt {display: none}}

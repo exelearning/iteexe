@@ -20,25 +20,31 @@
 Transforms an eXe node into a page on a self-contained website
 """
 
+
 import logging
 import gettext
-import os
-import os.path
+from   os.path  import exists, basename, join, isdir, islink, sep
 import shutil
 import glob
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
-from exe.webui              import common
+from exe.webui import common
 from exe.webui.webinterface import g_webInterface
+from exe.export.manifest import Manifest
+from element import getUploadedFileDir
+
+import os
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 identSpace = " "*4
+nodeList = []
+
 def isParent( sourceId, destId ):
     """check if destId is a parent id of sourceId"""
     result = 0
-    if sourceId.len()>=len( destId ) and sourceId[: len( destId ) ] == destId:
+    if len( sourceId )>=len( destId ) and sourceId[: len( destId ) ] == destId:
         result = 1
     return result
     
@@ -52,12 +58,11 @@ class WebsitePage(object):
         Initialize
         """
         self.node = node
-       # self._package = package
         self.html = ""
-
+    
     def save(self):
         """
-        This is the main function.  It will render the page and save it to a file.
+        This is the main function. It will render the page and save it to a file.
         """
         if self.node.getIdStr() == "1":
             filename = "index.html"
@@ -67,47 +72,124 @@ class WebsitePage(object):
         out = open(filename, "w")
         out.write(self.render())
         out.close()
-    
-    def printSibling( self, node ):
+        
+    def getNaviLink( self ):
+        """
+        return the next link url of this page
+        """
+        
+        nextHtmlPattern = """| <a href="%s.html">next &raquo;</a>"""
+        previousHtmlPattern = """<a href="%s.html">&laquo; previous</a>"""
+        totalNode = len( nodeList )
+        i = nodeList.index( self.node.id )
+       
+        if  i == 0:
+            ##is first node
+            previousHtml = ""
+            
+            if totalNode >1:
+                nextHtml = nextHtmlPattern % \
+                      ".".join( [str(index) for index in nodeList[ i + 1 ] ] )
+            else:
+                nextHtml = ""
+        elif i == ( totalNode - 1 ):
+            ##is last node
+            nextHtml = ""
+            
+            if i != 1:
+                previousHtml = previousHtmlPattern % \
+                    ".".join( [str(index) for index in nodeList[ i - 1 ] ] ) 
+            else:
+                ##if previous page is home page
+                previousHtml = previousHtmlPattern % "index"
+        else:
+            if i != 1:
+                previousHtml = previousHtmlPattern % \
+                    ".".join( [str(index) for index in nodeList[ i - 1 ] ] ) 
+            else:
+                ##if previous page is home page
+                previousHtml = previousHtmlPattern % "index"             
+            nextHtml = nextHtmlPattern %  \
+                    ".".join( [str(index) for index in nodeList[ i + 1 ] ] )
+            
+        return """<div class="noprt" align="right">%s %s </div>"""\
+                                %( previousHtml, nextHtml ) 
+            
+        
+    def printChildren( self, node ):
         ##print out sibiling
         html = ""
         for child in node.children:
-            ##check if is direct parent
-            if self.node.id[ -1 ] == child.id:
-                html += spaceIdent * len( child.node ) + """<div ID="subnav">\n""" \
-#                         + printSibling( child )
+            ##check if is direct parent node
+            
+            if self.node.id == child.id:
+                html += identSpace * ( len( child.id ) ) + \
+                       """<div id="active">%s</div> \n"""  %( child.title )
+                if len( self.node.children ) >0 :
+                    html += identSpace * len( child.id )  \
+                            + """<div ID="subnav">\n""" \
+                            + self.printChildren( child ) +  "</div>\n"
+                 
             elif isParent( self.node.id, child.id ):
-                html += printSibling( child )
+                html += identSpace * len( child.id ) \
+                    + """<div><a href="%s.html">%s</a></div>\n""" % \
+                       ( child.getIdStr(), child.title )
+                html += identSpace * len( child.id )  \
+                        + """<div ID="subnav">\n"""   \
+                        + self.printChildren( child ) \
+                        +  identSpace * len( child.id ) + "</div>\n"
             else:
                 html += identSpace * len( child.id ) \
-                    + """<div><a href="%s.html">%s</a></div>""" % ( child.getIdStr(), child.title )
+                    + """<div><a href="%s.html">%s</a></div>\n""" % \
+                        ( child.getIdStr(), child.title )
         return html
         
     def leftNavibar( self ):
-        html = """<ul id="navlist">"""
+        """
+        generate the left navigatior string for this page
+        """
+    
+        html = """<ul id="navlist">\n"""
+        
+        ##add home node
+        if self.node.package.root.id == self.node.id:
+            html += """<div id="active">%s</div>\n""" % self.node.title
+        else:
+            html += """<div><a href="index.html">%s</a></div>\n""" % \
+                    ( self.node.package.root.title )
+                    
         nodeLength = len( self.node.id )
         
-        for level1Node in self.node.package.root:
+        for level1Node in self.node.package.root.children:
             ##if is parent node, then print out its sibiling
             ##if is current node, active and print its children
             ##else, print title
             
             if level1Node.id == self.node.id:
                 ## print active tag
-                html += ident * ( nodeLength - 1 ) + """<div id="active">%s</div> \n""" \
-                                                        %( self.node.title )
+                html += identSpace * ( nodeLength - 1 )  \
+                     + """<div id="active">%s</div> \n"""  % \
+                        ( self.node.title )
+                        
                 ## print direct child title
-                if self.node.children != []:
+                if len( self.node.children ) > 0:
+                    ##show direct child, using id="subnav"
                     html += identSpace * nodeLength + """<div ID="subnav">\n"""
+                    
                     for node in self.node.children:
-                        html += identSpace * ( nodeLength +1 ) + """<a href="%s.html">%s</a> \n""" \
-                                                                % ( node.getIdStr(), node.title )
+                        html += identSpace * ( nodeLength )  \
+                                + """<a href="%s.html">%s</a> \n""" \
+                                % ( node.getIdStr(), node.title )
+                        
                     html += identSpace * nodeLength + "</div>\n"
                 
             else:
-                html += """<div><a href="%s.html">%s</a></div> \n""" % ( level1Node.getIdStr(), level1Node.title )
-                if isParentNode( self.node.id, level1Node.id ):
-                    html += self.printSibling( level1Node )
+                html += """<div><a href="%s.html">%s</a></div> \n""" % \
+                        ( level1Node.getIdStr(), level1Node.title )
+                if isParent( self.node.id, level1Node.id ):
+                    html += identSpace * len( level1Node.id ) \
+                            + """<div ID="subnav">\n""" \
+                            + self.printChildren( level1Node ) + """</div>\n"""
                 
         html += "</ul>"
         return html
@@ -124,22 +206,21 @@ class WebsitePage(object):
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
         html += "@import url(nav.css);</style>\n"
-        html += "<title>"+_("eXe")+"</title>\n"
+        html += "<title>"+ self.node.title.title +"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
         html += "</head>\n"
         html += "<body>\n"
-        html += "<div id=\"outer\">\n"
         
         html += "<div id=\"navcontainer\">\n"
         
-        for child in self.node.children:
-            html += "<a href=\"%s.html\">" % child.getIdStr()
-            html += str(child.title) + "</a><br/>\n"
+        ##add left navigation html
+        html += self.leftNavibar()       
                 
         html += "</div>\n"
-
+        
         html += "<div id=\"main\">\n"
+        #html += "<div id=\"authoring_pane\">\n"
         html += TitleBlock(self.node.title).renderView()
 
         for idevice in self.node.idevices:
@@ -148,8 +229,10 @@ class WebsitePage(object):
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
             html += block.renderView()
-
+        
+        html += self.getNaviLink()
         html += "</div>\n"
+        
         html += common.footer()
  
         return html
@@ -162,29 +245,69 @@ class WebsiteExport(object):
     def __init__(self):
         self.package = None
 
-
     def export(self, package):
         """ 
         Export web page
         """
         self.package = package
+        
+        exeDir  = g_webInterface.config.getExeDir()
+        dataDir = g_webInterface.config.getDataDir()
 
-
-        os.chdir(g_webInterface.config.getDataDir())
-        if os.path.exists(package.name):
+        os.chdir(dataDir)
+        if exists(package.name):
             shutil.rmtree(package.name)
 
         os.mkdir(package.name)
         os.chdir(package.name)
-        exeDir = g_webInterface.config.getExeDir()
 
-        for styleFile in glob.glob(os.path.join(exeDir, 
+        for styleFile in glob.glob(join(exeDir, \
                                                 "style", package.style, "*")):
-            shutil.copyfile(styleFile, os.path.basename(styleFile))
-
+            shutil.copyfile(styleFile, basename(styleFile))
+        
+        ##copy image directory into 
+        ##
+        filesDir = getUploadedFileDir()
+        ##course uploaded files directory
+        uploadedFileDir = join ( filesDir, package.name )
+        ##export files directory
+        exportFilesDir = join( dataDir, package.name, "images", package.name )
+        print "uploadedFileDir: %s , dst:%s\n" %\
+            ( uploadedFileDir, exportFilesDir )
+        
+        try:
+            os.mkdir("images")    
+        except:
+            errmsg = "Error while creating images directory \n"
+            log.debug( errmsg )
+            return errmsg
+            
+        shutil.copyfile( filesDir + sep + "mp3player.swf", \
+         join( dataDir, package.name, "images", "mp3player.swf" ) )    
+        #if isdir( uploadedFileDir ) or islink( uploadedFileDir ) :
+        try:
+            shutil.copytree( uploadedFileDir,\
+             join( dataDir, package.name, "images", package.name ) )
+        except:
+            errmsg =  "fail to copy %s to %s" %\
+                ( uploadedFileDir, join( "images", package.name ) )
+            log.debug( errmsg )
+            print errmsg
+            return errmsg
+        ##generate nodes list into nodeList
+        nodeList.append( package.root.id )
+        self.genNodeList( package.root )
         self.exportNode(package.root)
-        
-        
+    
+    def genNodeList( self, node ):
+        """
+        generate nodes id list and store in nodeList global variable
+        for retrieving next previous link later
+        """           
+        for child in node.children:
+            nodeList.append( child.id )
+            self.genNodeList( child )
+            
     def exportNode(self, node):
         """
         Recursive function for exporting a node
@@ -195,4 +318,3 @@ class WebsiteExport(object):
         for child in node.children:
             self.exportNode(child)
     
-# ===========================================================================

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: he.js
  * 	Hebrew language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-11-26 13:01:45
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 17:26:17
  * 
  * File Authors:
  * 		Ophir Radnitz (ophir@liqweed.net)
@@ -41,6 +41,7 @@ RemoveFormat		: "הסרת העיצוב",
 InsertLinkLbl		: "קישור",
 InsertLink			: "הוספת/עריכת קישור",
 RemoveLink			: "הסרת הקישור",
+Anchor				: "Insert/Edit Anchor",	//MISSING
 InsertImageLbl		: "תמונה",
 InsertImage			: "הוספת/עריכת תמונה",
 InsertTableLbl		: "טבלה",
@@ -81,6 +82,18 @@ BGColor				: "צבע רקע",
 Source				: "מקור",
 Find				: "חיפוש",
 Replace				: "החלפה",
+SpellCheck			: "Check Spell",	//MISSING
+UniversalKeyboard	: "Universal Keyboard",	//MISSING
+
+Form			: "Form",	//MISSING
+Checkbox		: "Checkbox",	//MISSING
+RadioButton		: "Radio Button",	//MISSING
+TextField		: "Text Field",	//MISSING
+Textarea		: "Textarea",	//MISSING
+HiddenField		: "Hidden Field",	//MISSING
+Button			: "Button",	//MISSING
+SelectionField	: "Selection Field",	//MISSING
+ImageButton		: "Image Button",	//MISSING
 
 // Context Menu
 EditLink			: "עריכת קישור",
@@ -96,7 +109,18 @@ CellProperties		: "תכונות התא",
 TableProperties		: "תכונות הטבלה",
 ImageProperties		: "תכונות התמונה",
 
-FontFormats			: "נורמלי;קוד;כתובת;כותרת;כותרת 2;כותרת 3;כותרת 4;כותרת 5;כותרת 6",
+AnchorProp			: "Anchor Properties",	//MISSING
+ButtonProp			: "Button Properties",	//MISSING
+CheckboxProp		: "Checkbox Properties",	//MISSING
+HiddenFieldProp		: "Hidden Field Properties",	//MISSING
+RadioButtonProp		: "Radio Button Properties",	//MISSING
+ImageButtonProp		: "Image Button Properties",	//MISSING
+TextFieldProp		: "Text Field Properties",	//MISSING
+SelectionFieldProp	: "Selection Field Properties",	//MISSING
+TextareaProp		: "Textarea Properties",	//MISSING
+FormProp			: "Form Properties",	//MISSING
+
+FontFormats			: "נורמלי;קוד;כתובת;כותרת;כותרת 2;כותרת 3;כותרת 4;כותרת 5;כותרת 6",	// 2.0: The last entry has been added.
 
 // Alerts and Messages
 ProcessingXHTML		: "מעבד XHTML, נא להמתין...",
@@ -112,7 +136,9 @@ UnknownToolbarSet	: "ערכת סרגל הכלים \"%1\" לא קיימת",
 DlgBtnOK			: "אישור",
 DlgBtnCancel		: "ביטול",
 DlgBtnClose			: "סגירה",
+DlgBtnBrowseServer	: "Browse Server",	//MISSING
 DlgAdvancedTag		: "אפשרויות מתקדמות",
+DlgOpOther			: "&lt;Other&gt;",	//MISSING
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;לא נקבע&gt;",
@@ -137,7 +163,6 @@ DlgImgInfoTab		: "מידע על התמונה",
 DlgImgBtnUpload		: "שליחה לשרת",
 DlgImgURL			: "כתובת (URL)",
 DlgImgUpload		: "העלאה",
-DlgImgBtnBrowse		: "דפדוף בשרת",
 DlgImgAlt			: "טקסט חלופי",
 DlgImgWidth			: "רוחב",
 DlgImgHeight		: "גובה",
@@ -157,8 +182,6 @@ DlgImgAlignRight	: "לימין",
 DlgImgAlignTextTop	: "לראש הטקסט",
 DlgImgAlignTop		: "למעלה",
 DlgImgPreview		: "תצוגה מקדימה",
-DlgImgMsgWrongExt	: "מצטערים, אך טיפוסי הקבצים היחידים אותם ניתן להעלות הם:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nהפעולה בוטלה.",
-DlgImgAlertSelect	: "נא לבחור תמונה להעלאה.",
 DlgImgAlertUrl		: "נא להקליד את כתובת התמונה",
 
 // Link Dialog
@@ -173,7 +196,6 @@ DlgLnkTypeEMail		: "דוא''ל",
 DlgLnkProto			: "פרוטוקול",
 DlgLnkProtoOther	: "&lt;אחר&gt;",
 DlgLnkURL			: "כתובת (URL)",
-DlgLnkBtnBrowse		: "דפדוף בשרת",
 DlgLnkAnchorSel		: "בחירת עוגן",
 DlgLnkAnchorByName	: "עפ''י שם העוגן",
 DlgLnkAnchorById	: "עפ''י זיהוי (Id) הרכיב",
@@ -191,7 +213,7 @@ DlgLnkTargetBlank	: "חלון חדש (_blank)",
 DlgLnkTargetParent	: "חלון האב (_parent)",
 DlgLnkTargetSelf	: "באותו החלון (_self)",
 DlgLnkTargetTop		: "חלון ראשי (_top)",
-DlgLnkTargetFrame	: "Frame בשם מסויים",
+DlgLnkTargetFrameName	: "Target Frame Name",	//MISSING
 DlgLnkPopWinName	: "שם החלון הקופץ",
 DlgLnkPopWinFeat	: "תכונות החלון הקופץ",
 DlgLnkPopResize		: "בעל גודל ניתן לשינוי",
@@ -206,9 +228,6 @@ DlgLnkPopWidth		: "רוחב",
 DlgLnkPopHeight		: "גובה",
 DlgLnkPopLeft		: "מיקום צד שמאל",
 DlgLnkPopTop		: "מיקום צד עליון",
-
-DlgLnkMsgWrongExtA	: "מצטערים, אך טיפוסי הקבצים היחידים אותם ניתן להעלות הם:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nהפעולה בוטלה.",
-DlgLnkMsgWrongExtD	: "מצטערים, אך את טיפוסי הקבצים הבאים לא ניתן להעלות:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nהפעולה בוטלה.",
 
 DlnLnkMsgNoUrl		: "נא להקליד את כתובת הקישור (URL)",
 DlnLnkMsgNoEMail	: "נא להקליד את כתובת הדוא''ל",
@@ -299,8 +318,131 @@ DlgPasteMsg		: "העורך לא הצליח לבצע הדבקה אוטומטית 
 ColorAutomatic	: "אוטומטי",
 ColorMoreColors	: "צבעים נוספים...",
 
+// Document Properties
+DocProps		: "Document Properties",	//MISSING
+
+// Anchor Dialog
+DlgAnchorTitle		: "Anchor Properties",	//MISSING
+DlgAnchorName		: "Anchor Name",	//MISSING
+DlgAnchorErrorName	: "Please type the anchor name",	//MISSING
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "Not in dictionary",	//MISSING
+DlgSpellChangeTo		: "Change to",	//MISSING
+DlgSpellBtnIgnore		: "Ignore",	//MISSING
+DlgSpellBtnIgnoreAll	: "Ignore All",	//MISSING
+DlgSpellBtnReplace		: "Replace",	//MISSING
+DlgSpellBtnReplaceAll	: "Replace All",	//MISSING
+DlgSpellBtnUndo			: "Undo",	//MISSING
+DlgSpellNoSuggestions	: "- No suggestions -",	//MISSING
+DlgSpellProgress		: "Spell check in progress...",	//MISSING
+DlgSpellNoMispell		: "Spell check complete: No misspellings found",	//MISSING
+DlgSpellNoChanges		: "Spell check complete: No words changed",	//MISSING
+DlgSpellOneChange		: "Spell check complete: One word changed",	//MISSING
+DlgSpellManyChanges		: "Spell check complete: %1 words changed",	//MISSING
+
+IeSpellDownload			: "Spell checker not installed. Do you want to download it now?",	//MISSING
+
+// Button Dialog
+DlgButtonText	: "Text (Value)",	//MISSING
+DlgButtonType	: "Type",	//MISSING
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Name",	//MISSING
+DlgCheckboxValue	: "Value",	//MISSING
+DlgCheckboxSelected	: "Selected",	//MISSING
+
+// Form Dialog
+DlgFormName		: "Name",	//MISSING
+DlgFormAction	: "Action",	//MISSING
+DlgFormMethod	: "Method",	//MISSING
+
+// Select Field Dialog
+DlgSelectName		: "Name",	//MISSING
+DlgSelectValue		: "Value",	//MISSING
+DlgSelectSize		: "Size",	//MISSING
+DlgSelectLines		: "lines",	//MISSING
+DlgSelectChkMulti	: "Allow multiple selections",	//MISSING
+DlgSelectOpAvail	: "Available Options",	//MISSING
+DlgSelectOpText		: "Text",	//MISSING
+DlgSelectOpValue	: "Value",	//MISSING
+DlgSelectBtnAdd		: "Add",	//MISSING
+DlgSelectBtnModify	: "Modify",	//MISSING
+DlgSelectBtnUp		: "Up",	//MISSING
+DlgSelectBtnDown	: "Down",	//MISSING
+DlgSelectBtnSetValue : "Set as selected value",	//MISSING
+DlgSelectBtnDelete	: "Delete",	//MISSING
+
+// Textarea Dialog
+DlgTextareaName	: "Name",	//MISSING
+DlgTextareaCols	: "Columns",	//MISSING
+DlgTextareaRows	: "Rows",	//MISSING
+
+// Text Field Dialog
+DlgTextName			: "Name",	//MISSING
+DlgTextValue		: "Value",	//MISSING
+DlgTextCharWidth	: "Character Width",	//MISSING
+DlgTextMaxChars		: "Maximum Characters",	//MISSING
+DlgTextType			: "Type",	//MISSING
+DlgTextTypeText		: "Text",	//MISSING
+DlgTextTypePass		: "Password",	//MISSING
+
+// Hidden Field Dialog
+DlgHiddenName	: "Name",	//MISSING
+DlgHiddenValue	: "Value",	//MISSING
+
+// Bulleted List Dialog
+BulletedListProp	: "Bulleted List Properties",	//MISSING
+NumberedListProp	: "Numbered List Properties",	//MISSING
+DlgLstType			: "Type",	//MISSING
+DlgLstTypeCircle	: "Circle",	//MISSING
+DlgLstTypeDisk		: "Disk",	//MISSING
+DlgLstTypeSquare	: "Square",	//MISSING
+DlgLstTypeNumbers	: "Numbers (1, 2, 3)",	//MISSING
+DlgLstTypeLCase		: "Lowercase Letters (a, b, c)",	//MISSING
+DlgLstTypeUCase		: "Uppercase Letters (A, B, C)",	//MISSING
+DlgLstTypeSRoman	: "Small Roman Numerals (i, ii, iii)",	//MISSING
+DlgLstTypeLRoman	: "Large Roman Numerals (I, II, III)",	//MISSING
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "General",	//MISSING
+DlgDocBackTab		: "Background",	//MISSING
+DlgDocColorsTab		: "Colors and Margins",	//MISSING
+DlgDocMetaTab		: "Meta Data",	//MISSING
+
+DlgDocPageTitle		: "Page Title",	//MISSING
+DlgDocLangDir		: "Language Direction",	//MISSING
+DlgDocLangDirLTR	: "Left to Right (LTR)",	//MISSING
+DlgDocLangDirRTL	: "Right to Left (RTL)",	//MISSING
+DlgDocLangCode		: "Language Code",	//MISSING
+DlgDocCharSet		: "Character Set Encoding",	//MISSING
+DlgDocCharSetOther	: "Other Character Set Encoding",	//MISSING
+
+DlgDocDocType		: "Document Type Heading",	//MISSING
+DlgDocDocTypeOther	: "Other Document Type Heading",	//MISSING
+DlgDocIncXHTML		: "Include XHTML Declarations",	//MISSING
+DlgDocBgColor		: "Background Color",	//MISSING
+DlgDocBgImage		: "Background Image URL",	//MISSING
+DlgDocBgNoScroll	: "Nonscrolling Background",	//MISSING
+DlgDocCText			: "Text",	//MISSING
+DlgDocCLink			: "Link",	//MISSING
+DlgDocCVisited		: "Visited Link",	//MISSING
+DlgDocCActive		: "Active Link",	//MISSING
+DlgDocMargins		: "Page Margins",	//MISSING
+DlgDocMaTop			: "Top",	//MISSING
+DlgDocMaLeft		: "Left",	//MISSING
+DlgDocMaRight		: "Right",	//MISSING
+DlgDocMaBottom		: "Bottom",	//MISSING
+DlgDocMeIndex		: "Document Indexing Keywords (comma separated)",	//MISSING
+DlgDocMeDescr		: "Document Description",	//MISSING
+DlgDocMeAuthor		: "Author",	//MISSING
+DlgDocMeCopy		: "Copyright",	//MISSING
+DlgDocPreview		: "Preview",	//MISSING
+
 // About Dialog
-DlgAboutVersion	: "גירסא",
-DlgAboutLicense	: "ברשיון תחת תנאי GNU Lesser General Public License",
-DlgAboutInfo	: "מידע נוסף ניתן למצוא כאן:"
+DlgAboutAboutTab	: "About",	//MISSING
+DlgAboutBrowserInfoTab	: "Browser Info",	//MISSING
+DlgAboutVersion		: "גירסא",
+DlgAboutLicense		: "ברשיון תחת תנאי GNU Lesser General Public License",
+DlgAboutInfo		: "מידע נוסף ניתן למצוא כאן:"
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * FCKeditor - The text editor for internet
  * Copyright (C) 2003-2004 Frederico Caldeira Knabben
  * 
@@ -11,8 +11,8 @@
  * File Name: en.js
  * 	English language file.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-12-19 23:51:20
+ * Version:  2.0 RC3
+ * Modified: 2005-03-01 16:50:48
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -41,6 +41,7 @@ RemoveFormat		: "Remove Format",
 InsertLinkLbl		: "Link",
 InsertLink			: "Insert/Edit Link",
 RemoveLink			: "Remove Link",
+Anchor				: "Insert/Edit Anchor",
 InsertImageLbl		: "Image",
 InsertImage			: "Insert/Edit Image",
 InsertTableLbl		: "Table",
@@ -81,6 +82,18 @@ BGColor				: "Background Color",
 Source				: "Source",
 Find				: "Find",
 Replace				: "Replace",
+SpellCheck			: "Check Spell",
+UniversalKeyboard	: "Universal Keyboard",
+
+Form			: "Form",
+Checkbox		: "Checkbox",
+RadioButton		: "Radio Button",
+TextField		: "Text Field",
+Textarea		: "Textarea",
+HiddenField		: "Hidden Field",
+Button			: "Button",
+SelectionField	: "Selection Field",
+ImageButton		: "Image Button",
 
 // Context Menu
 EditLink			: "Edit Link",
@@ -95,6 +108,17 @@ SplitCell			: "Split Cell",
 CellProperties		: "Cell Properties",
 TableProperties		: "Table Properties",
 ImageProperties		: "Image Properties",
+
+AnchorProp			: "Anchor Properties",
+ButtonProp			: "Button Properties",
+CheckboxProp		: "Checkbox Properties",
+HiddenFieldProp		: "Hidden Field Properties",
+RadioButtonProp		: "Radio Button Properties",
+ImageButtonProp		: "Image Button Properties",
+TextFieldProp		: "Text Field Properties",
+SelectionFieldProp	: "Selection Field Properties",
+TextareaProp		: "Textarea Properties",
+FormProp			: "Form Properties",
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6;Paragraph (DIV)",	// 2.0: The last entry has been added.
 
@@ -112,7 +136,9 @@ UnknownToolbarSet	: "Toolbar set \"%1\" doesn't exist",
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Cancel",
 DlgBtnClose			: "Close",
+DlgBtnBrowseServer	: "Browse Server",
 DlgAdvancedTag		: "Advanced",
+DlgOpOther			: "&lt;Other&gt;",
 
 // General Dialogs Labels
 DlgGenNotSet		: "&lt;not set&gt;",
@@ -137,7 +163,6 @@ DlgImgInfoTab		: "Image Info",
 DlgImgBtnUpload		: "Send it to the Server",
 DlgImgURL			: "URL",
 DlgImgUpload		: "Upload",
-DlgImgBtnBrowse		: "Browse Server",
 DlgImgAlt			: "Alternative Text",
 DlgImgWidth			: "Width",
 DlgImgHeight		: "Height",
@@ -157,8 +182,6 @@ DlgImgAlignRight	: "Right",
 DlgImgAlignTextTop	: "Text Top",
 DlgImgAlignTop		: "Top",
 DlgImgPreview		: "Preview",
-DlgImgMsgWrongExt	: "Sorry, only the following file types uploads are allowed:\n\n" + FCKConfig.ImageUploadAllowedExtensions + "\n\nOperation canceled.",
-DlgImgAlertSelect	: "Please select an image to upload.",
 DlgImgAlertUrl		: "Please type the image URL",
 
 // Link Dialog
@@ -173,7 +196,6 @@ DlgLnkTypeEMail		: "E-Mail",
 DlgLnkProto			: "Protocol",
 DlgLnkProtoOther	: "&lt;other&gt;",
 DlgLnkURL			: "URL",
-DlgLnkBtnBrowse		: "Browse Server",
 DlgLnkAnchorSel		: "Select an Anchor",
 DlgLnkAnchorByName	: "By Anchor Name",
 DlgLnkAnchorById	: "By Element Id",
@@ -191,7 +213,7 @@ DlgLnkTargetBlank	: "New Window (_blank)",
 DlgLnkTargetParent	: "Parent Window (_parent)",
 DlgLnkTargetSelf	: "Same Window (_self)",
 DlgLnkTargetTop		: "Topmost Window (_top)",
-DlgLnkTargetFrame	: "Target Frame Name",
+DlgLnkTargetFrameName	: "Target Frame Name",
 DlgLnkPopWinName	: "Popup Window Name",
 DlgLnkPopWinFeat	: "Popup Window Features",
 DlgLnkPopResize		: "Resizable",
@@ -206,9 +228,6 @@ DlgLnkPopWidth		: "Width",
 DlgLnkPopHeight		: "Height",
 DlgLnkPopLeft		: "Left Position",
 DlgLnkPopTop		: "Top Position",
-
-DlgLnkMsgWrongExtA	: "Sorry, only the following file types uploads are allowed:\n\n" + FCKConfig.LinkUploadAllowedExtensions + "\n\nOperation canceled.",
-DlgLnkMsgWrongExtD	: "Sorry, the following file types uploads are not allowed:\n\n" + FCKConfig.LinkUploadDeniedExtensions + "\n\nOperation canceled.",
 
 DlnLnkMsgNoUrl		: "Please type the link URL",
 DlnLnkMsgNoEMail	: "Please type the e-mail address",
@@ -299,8 +318,131 @@ DlgPasteMsg		: "The editor was not able to automaticaly execute pasting because 
 ColorAutomatic	: "Automatic",
 ColorMoreColors	: "More Colors...",
 
+// Document Properties
+DocProps		: "Document Properties",
+
+// Anchor Dialog
+DlgAnchorTitle		: "Anchor Properties",
+DlgAnchorName		: "Anchor Name",
+DlgAnchorErrorName	: "Please type the anchor name",
+
+// Speller Pages Dialog
+DlgSpellNotInDic		: "Not in dictionary",
+DlgSpellChangeTo		: "Change to",
+DlgSpellBtnIgnore		: "Ignore",
+DlgSpellBtnIgnoreAll	: "Ignore All",
+DlgSpellBtnReplace		: "Replace",
+DlgSpellBtnReplaceAll	: "Replace All",
+DlgSpellBtnUndo			: "Undo",
+DlgSpellNoSuggestions	: "- No suggestions -",
+DlgSpellProgress		: "Spell check in progress...",
+DlgSpellNoMispell		: "Spell check complete: No misspellings found",
+DlgSpellNoChanges		: "Spell check complete: No words changed",
+DlgSpellOneChange		: "Spell check complete: One word changed",
+DlgSpellManyChanges		: "Spell check complete: %1 words changed",
+
+IeSpellDownload			: "Spell checker not installed. Do you want to download it now?",
+
+// Button Dialog
+DlgButtonText	: "Text (Value)",
+DlgButtonType	: "Type",
+
+// Checkbox and Radio Button Dialogs
+DlgCheckboxName		: "Name",
+DlgCheckboxValue	: "Value",
+DlgCheckboxSelected	: "Selected",
+
+// Form Dialog
+DlgFormName		: "Name",
+DlgFormAction	: "Action",
+DlgFormMethod	: "Method",
+
+// Select Field Dialog
+DlgSelectName		: "Name",
+DlgSelectValue		: "Value",
+DlgSelectSize		: "Size",
+DlgSelectLines		: "lines",
+DlgSelectChkMulti	: "Allow multiple selections",
+DlgSelectOpAvail	: "Available Options",
+DlgSelectOpText		: "Text",
+DlgSelectOpValue	: "Value",
+DlgSelectBtnAdd		: "Add",
+DlgSelectBtnModify	: "Modify",
+DlgSelectBtnUp		: "Up",
+DlgSelectBtnDown	: "Down",
+DlgSelectBtnSetValue : "Set as selected value",
+DlgSelectBtnDelete	: "Delete",
+
+// Textarea Dialog
+DlgTextareaName	: "Name",
+DlgTextareaCols	: "Columns",
+DlgTextareaRows	: "Rows",
+
+// Text Field Dialog
+DlgTextName			: "Name",
+DlgTextValue		: "Value",
+DlgTextCharWidth	: "Character Width",
+DlgTextMaxChars		: "Maximum Characters",
+DlgTextType			: "Type",
+DlgTextTypeText		: "Text",
+DlgTextTypePass		: "Password",
+
+// Hidden Field Dialog
+DlgHiddenName	: "Name",
+DlgHiddenValue	: "Value",
+
+// Bulleted List Dialog
+BulletedListProp	: "Bulleted List Properties",
+NumberedListProp	: "Numbered List Properties",
+DlgLstType			: "Type",
+DlgLstTypeCircle	: "Circle",
+DlgLstTypeDisk		: "Disk",
+DlgLstTypeSquare	: "Square",
+DlgLstTypeNumbers	: "Numbers (1, 2, 3)",
+DlgLstTypeLCase		: "Lowercase Letters (a, b, c)",
+DlgLstTypeUCase		: "Uppercase Letters (A, B, C)",
+DlgLstTypeSRoman	: "Small Roman Numerals (i, ii, iii)",
+DlgLstTypeLRoman	: "Large Roman Numerals (I, II, III)",
+
+// Document Properties Dialog
+DlgDocGeneralTab	: "General",
+DlgDocBackTab		: "Background",
+DlgDocColorsTab		: "Colors and Margins",
+DlgDocMetaTab		: "Meta Data",
+
+DlgDocPageTitle		: "Page Title",
+DlgDocLangDir		: "Language Direction",
+DlgDocLangDirLTR	: "Left to Right (LTR)",
+DlgDocLangDirRTL	: "Right to Left (RTL)",
+DlgDocLangCode		: "Language Code",
+DlgDocCharSet		: "Character Set Encoding",
+DlgDocCharSetOther	: "Other Character Set Encoding",
+
+DlgDocDocType		: "Document Type Heading",
+DlgDocDocTypeOther	: "Other Document Type Heading",
+DlgDocIncXHTML		: "Include XHTML Declarations",
+DlgDocBgColor		: "Background Color",
+DlgDocBgImage		: "Background Image URL",
+DlgDocBgNoScroll	: "Nonscrolling Background",
+DlgDocCText			: "Text",
+DlgDocCLink			: "Link",
+DlgDocCVisited		: "Visited Link",
+DlgDocCActive		: "Active Link",
+DlgDocMargins		: "Page Margins",
+DlgDocMaTop			: "Top",
+DlgDocMaLeft		: "Left",
+DlgDocMaRight		: "Right",
+DlgDocMaBottom		: "Bottom",
+DlgDocMeIndex		: "Document Indexing Keywords (comma separated)",
+DlgDocMeDescr		: "Document Description",
+DlgDocMeAuthor		: "Author",
+DlgDocMeCopy		: "Copyright",
+DlgDocPreview		: "Preview",
+
 // About Dialog
-DlgAboutVersion	: "version",
-DlgAboutLicense	: "Licensed under the terms of the GNU Lesser General Public License",
-DlgAboutInfo	: "For further information go to"
+DlgAboutAboutTab	: "About",
+DlgAboutBrowserInfoTab	: "Browser Info",
+DlgAboutVersion		: "version",
+DlgAboutLicense		: "Licensed under the terms of the GNU Lesser General Public License",
+DlgAboutInfo		: "For further information go to"
 }

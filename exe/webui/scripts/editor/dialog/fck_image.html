@@ -11,8 +11,8 @@
  * File Name: fck_image.html
  * 	Image Properties dialog window.
  * 
- * Version:  2.0 RC2
- * Modified: 2004-11-30 12:08:59
+ * Version:  2.0 RC3
+ * Modified: 2005-02-18 23:54:52
  * 
  * File Authors:
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
@@ -23,9 +23,9 @@
 		<title>Image Properties</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="robots" content="noindex, nofollow">
-		<script src="js/fck_dialog_common.js" type="text/javascript"></script>
-		<script src="js/fck_image.js" type="text/javascript"></script>
-		<link href="css/common.css" rel="stylesheet" type="text/css" />
+		<script src="common/fck_dialog_common.js" type="text/javascript"></script>
+		<script src="fck_image/fck_image.js" type="text/javascript"></script>
+		<link href="common/fck_dialog_common.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body scroll="no" style="OVERFLOW: hidden">
 		<div id="divInfo">
@@ -40,7 +40,7 @@
 								<td id="tdBrowse" style="DISPLAY: none" nowrap rowspan="2">
 									&nbsp;
 									<input id="btnBrowse" onclick="BrowseServer();" type="button"
-										value="Browse Server" fckLang="DlgImgBtnBrowse" NAME="btnBrowse">
+										value="Browse Server" fckLang="DlgBtnBrowseServer" NAME="btnBrowse">
 								</td>
 							</tr>
 							<tr>
@@ -65,10 +65,10 @@
 									<br>
 									<table cellspacing="0" cellpadding="0" border="0">
 										<tr>
-											<td><span fckLang="DlgImgWidth">Width</span>&nbsp;</td>
+											<td nowrap><span fckLang="DlgImgWidth">Width</span>&nbsp;</td>
 											<td>
 												<input type="text" size="3" id="txtWidth" onkeyup="OnSizeChanged('Width',this.value);"></td>
-											<td rowspan="2">
+											<td nowrap rowspan="2">
 												<div id="btnLockSizes" class="BtnLocked" onmouseover="this.className = (bLockRatio ? 'BtnLocked' : 'BtnUnlocked' ) + ' BtnOver';" onmouseout="this.className = (bLockRatio ? 'BtnLocked' : 'BtnUnlocked' );"
 													title="Lock Sizes" onclick="SwitchLock(this);"></div>
 												<div id="btnResetSize" class="BtnReset" onmouseover="this.className='BtnReset BtnOver';" onmouseout="this.className='BtnReset';"
@@ -76,7 +76,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td><span fckLang="DlgImgHeight">Height</span>&nbsp;</td>
+											<td nowrap><span fckLang="DlgImgHeight">Height</span>&nbsp;</td>
 											<td>
 												<input type="text" size="3" id="txtHeight" onkeyup="OnSizeChanged('Height',this.value);"></td>
 										</tr>
@@ -84,22 +84,22 @@
 									<br>
 									<table cellspacing="0" cellpadding="0" border="0">
 										<tr>
-											<td><span fckLang="DlgImgBorder">Border</span>&nbsp;</td>
+											<td nowrap><span fckLang="DlgImgBorder">Border</span>&nbsp;</td>
 											<td>
 												<input type="text" size="2" value="" id="txtBorder" onkeyup="UpdatePreview();"></td>
 										</tr>
 										<tr>
-											<td><span fckLang="DlgImgHSpace">HSpace</span>&nbsp;</td>
+											<td nowrap><span fckLang="DlgImgHSpace">HSpace</span>&nbsp;</td>
 											<td>
 												<input type="text" size="2" id="txtHSpace" onkeyup="UpdatePreview();"></td>
 										</tr>
 										<tr>
-											<td><span fckLang="DlgImgVSpace">VSpace</span>&nbsp;</td>
+											<td nowrap><span fckLang="DlgImgVSpace">VSpace</span>&nbsp;</td>
 											<td>
 												<input type="text" size="2" id="txtVSpace" onkeyup="UpdatePreview();"></td>
 										</tr>
 										<tr>
-											<td><span fckLang="DlgImgAlign">Align</span>&nbsp;</td>
+											<td nowrap><span fckLang="DlgImgAlign">Align</span>&nbsp;</td>
 											<td><select id="cmbAlign" onchange="UpdatePreview();">
 													<option value="" selected></option>
 													<option fckLang="DlgImgAlignLeft" value="left">Left</option>
