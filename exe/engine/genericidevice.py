@@ -43,9 +43,10 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    def __init__(self, title):
+    def __init__(self, title, class_):
         Idevice.__init__(self)
         self.title     = title
+        self.class_    = class_
         self.fields    = []
 
     def addField(self, name, fieldType, class_, content=""):

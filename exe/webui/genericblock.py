@@ -92,14 +92,13 @@ class GenericBlock(Block):
         html += "</div>\n"
         return html
 
+
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div>\n"
-        html += "<b>"+self.idevice.title+"</b>\n"
-        for element in self.elements:
-            html += element.renderView(self.idevice[element.name])
+        html  = "<div id=\"iDevice\">\n"
+        html += self.__renderContent()
         html += "</div>\n"
         return html
     
@@ -108,11 +107,16 @@ class GenericBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = "<div id=\"iDevice\">\n"
-        html += "<b>"+self.idevice.title+"</b>\n"
-        for element in self.elements:
-            html += element.renderView(self.idevice[element.name])
+        html += self.__renderContent()
         html += self.renderViewButtons()
         html += "</div>\n"
+        return html
+
+    def __renderContent(self):
+        html  = "<p><img src=\"style/"+self.idevice.class_+".png\"/>\n"
+        html += "<span class=\"icon\">"+self.idevice.title+"</span></p>\n"
+        for element in self.elements:
+            html += element.renderView(self.idevice[element.name])
         return html
 
 g_blockFactory.registerBlockType(GenericBlock, GenericIdevice)

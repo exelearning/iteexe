@@ -49,8 +49,7 @@ class IdevicePane(object):
                 package.currentNode.addIdevice(FreeTextIdevice())
 
             elif request.args["object"][0] == "ReadingActIdevice":
-                readingAct = GenericIdevice(_("Reading Activity"))
-                readingAct.addField("icon", "Icon", "reading.png")
+                readingAct = GenericIdevice(_("Reading Activity"), "reading")
                 readingAct.addField(_("What to read"), 
                                     "TextArea", "reading_what")
                 readingAct.addField(_("Why it should be read"), 
@@ -62,27 +61,23 @@ class IdevicePane(object):
                 package.currentNode.addIdevice(readingAct)
             
             elif request.args["object"][0] == "ObjectivesIdevice":
-                objectives = GenericIdevice(_("Objectives"))
-                objectives.addField("icon", "Icon", "objectives.png")
+                objectives = GenericIdevice(_("Objectives"), "objectives")
                 objectives.addField(_("Objectives"), "TextArea", "objectives")
                 package.currentNode.addIdevice(objectives)
 
             elif request.args["object"][0] == "PreknowledgeIdevice":
-                preknowledge = GenericIdevice(_("Preknowledge"))
-                preknowledge.addField("icon", "Icon", "preknowledge.png")
+                preknowledge = GenericIdevice(_("Preknowledge"), "preknowledge")
                 preknowledge.addField(_("Preknowledge"), 
                                       "TextArea", "preknowledge")
                 package.currentNode.addIdevice(preknowledge)
             
             elif request.args["object"][0] == "CaseStudyIdevice":
-                casestudy = GenericIdevice(_("Case Study"))
-                casestudy.addField("icon", "Icon", "casestudy.png")
+                casestudy = GenericIdevice(_("Case Study"), "casestudy")
                 casestudy.addField(_("CaseStudy"), "TextArea", "casestudy")
                 package.currentNode.addIdevice(casestudy)
             
             elif request.args["object"][0] == "ActivityIdevice":
-                activity = GenericIdevice(_("Activity"))
-                activity.addField("icon", "Icon", "activity.png")
+                activity = GenericIdevice(_("Activity"), "activity")
                 activity.addField(_("Activity"), "TextArea", "activity")
                 package.currentNode.addIdevice(activity)
             

@@ -30,8 +30,7 @@ def createElement(elementType, name, class_, blockId):
         return TextElement(name, class_, blockId)
     elif elementType == "TextArea":
         return TextAreaElement(name, class_, blockId)
-    elif elementType == "Icon":
-        return IconElement(name, class_, blockId)
+    return None
 
 # ===========================================================================
 class Element(object):
@@ -97,19 +96,6 @@ class TextAreaElement(Element):
         html += "//-->\n"
         html += "</script>\n"
         return html
-
-
-# ===========================================================================
-class IconElement(Element):
-    """ IconElement is a picture thing"""
-
-    def renderView(self, content):
-        html  = "<img style=\"float: left;\" src=\"style/"+self.class_+"\"/>\n"
-        return html
-
-    def renderEdit(self, content):
-        return ""
-
 
 
 # ===========================================================================
