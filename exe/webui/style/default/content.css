@@ -59,43 +59,42 @@ p.reading_feedback {
     left: 5px;
 }    
 
-#iDevice li[class|="activity"] { 
+li.activity { 
     margin-left: 60px;
-    list-style-image: url("activity.png"); 
+    list-style-image: url(activity.png); 
     list-style-position: outside; 
 }
 
-#iDevice li[class|="activity-casestudy"] { 
+li.activity-casestudy { 
     margin-left: 60px;
-    list-style-image: url("casestudy.png"); 
+    list-style-image: url(casestudy.png); 
     list-style-position: outside; 
 }
 
-#iDevice li[class|="activity-reading"] { 
+li.activity-reading { 
     margin-left: 60px;
-    list-style-image: url("reading.png"); 
+    list-style-image: url(reading.png); 
     list-style-position: outside; 
 }
 
-#iDevice li[class|="activity-multichoice"] { 
+li.activity-multichoice { 
     margin-left: 60px;
-    list-style-image: url("question.png"); 
+    list-style-image: url(question.png); 
     list-style-position: outside; 
 }
 
-#iDevice li[class|="objectives"] { 
+li.objectives { 
     margin-left: 60px;
-    list-style-image: url("objectives.png"); 
+    list-style-image: url(objectives.png); 
     list-style-position: outside; 
 }
 
-#iDevice li[class|="preknowledge"] { 
+li.preknowledge { 
     margin-left: 60px;
-    list-style-image: url("preknowledge.png"); 
+    list-style-image: url(preknowledge.png); 
     list-style-position: outside; 
 }
 
 #iDevice li { 
     list-style-image:    none; 
-    list-style-position: outside; 
 }
