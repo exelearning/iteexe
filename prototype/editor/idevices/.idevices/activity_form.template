@@ -1,0 +1,50 @@
+<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+<table>
+	<tr>
+		<td>Activity:</td>
+		<td><textarea id="description" name="description" cols="80" rows="15" />$description</textarea></td>
+	</tr>
+	<tr>
+		<td>Case Study:</td>
+		<td><textarea id="casestudy" name="casestudy" cols="80" rows="15" />$casestudy</textarea></td>
+	</tr>
+	<tr>
+		<td>Portofolio:</td>
+		<td><textarea id="portofolio" name="portofolio" cols="80" rows="15" />$portofolio</textarea></td>
+	</tr>
+<p />
+	<tr>
+		<input type=hidden name=courseidentifier value="$courseidentifier">
+		<input type=hidden name=topicidentifier value="$topicidentifier">
+		<input type=hidden name=sectionidentifier value="$sectionidentifier">
+		#if $varExists('unitidentifier')
+			<input type=hidden name=unitidentifier value="$unitidentifier">
+		#end if
+		<input type=hidden name=resource value="activity">
+		#if $subunitidentifier<>""
+			<input type=hidden name=subunitidentifier value="$subunitidentifier">
+			<input type=hidden name=cmd value="update_idevice">
+			<td><input type="submit" name=send value="Update activity"></td>			
+		#else
+			<td><input type="submit" name="send" value="Add new activity" /></td>
+			<input type=hidden name=cmd value="save_new_idevice">
+		#end if
+		<td><input type="reset"></td>
+	</tr>
+</table>
+
+
+</form>
+<script language="javascript" type="text/javascript" defer="1">
+var editor = null;
+function initEditor() {
+editor1 = new HTMLArea("description");
+editor1.generate();
+editor2 = new HTMLArea("casestudy");
+editor2.generate();
+editor3 = new HTMLArea("portofolio");
+editor3.generate();
+return false
+}
+initEditor();
+</script>

@@ -1,0 +1,14 @@
+
+<span class="header">Description</span>
+$description
+
+<div>
+<span class="header">Casestudy</span>
+$casestudy
+</div>
+<div>
+<span class="header">Portofolio</span>
+$portofolio
+</div>
+
+<hr size="4" width="100%"/>

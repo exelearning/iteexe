@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>eXe: Course Test Publish</title>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+			<style type="text/css" media="screen">
+			@import url("../eXe.css");
+		   </style>
+		<script language="JavaScript">
+		function openpopup(url,name,height,width) {
+			fullurl = "http://w.hol.cfdl.auckland.ac.nz" + url;
+			options = "menubar=0,location=0,scrollbars,resizable,width="+width+",height="+height;
+			windowobj = window.open(fullurl,name, options);
+			windowobj.focus();
+		}
+		</script>
+ 
+	</head>
+	<body>
+	<!--body-->
+		<!-- header BEGIN -->
+		<div id="eXe-header">
+			<div id="eXe-header-logo">
+				<a href="/"><img src="../images/exeheader.gif" alt="eLearning XML editor"></a>
+			</div>		
+		</div>
+		<div id="eXe-nav"></div>
+		<!-- header END -->
+		
+		<!-- leftside BEGIN -->
+		<div id="eXe-side-left">
+		<div id="eXe-side-nav-label">Site Navigation:</div>
+
+		    	<ul id="eXe-side-nav">
+				<li><strong><a href="../start.pyg?cmd=outline_course&courseidentifier=$courseidentifier">Outline</a></strong></li>
+
+				<li><a href="../preview.pyg?courseidentifier=$courseidentifier">Preview</a></li>
+				<li><a href="../publish/publish.pyg?courseidentifier=$courseidentifier">Publish</a></li>
+				<li><a href="/docs/">Help</a></li>
+
+			</ul>
+
+		</div>
+		<!-- leftside end -->
+		
+		<!-- main begin -->
+		<div id="eXe-middle-three">
+		
+			<div class="eXe-corner-tr">&nbsp;</div>
+			<div class="eXe-corner-tl">&nbsp;</div>
+			
+				<div id="eXe-content">
+
+			
+					<div id="page-main">
+					<h2><p><h3>$title</h3><p></h2>
+					
+					
+					<center>$crumb<br>
+
+<div>
+$content
+</div>
+<hr size="4" width="100%"/>
+<center>Choose a template to publish the course:<select style="width:120px;font:10px verdana, arial, sans-serif;text-decoration:none;background-color:#cccccc;" name=url onchange="javascript:if( options[selectedIndex].value != 'template') openpopup( options[selectedIndex].value,'popup','600','800')  "><option value="template" selected>template</option>
+<option value="/publish/publish.pyg?cmd=publish_course_preview&courseidentifier=$courseidentifier&publish_dir=1">1</option>
+<option value="/publish/publish.pyg?cmd=publish_course_preview&courseidentifier=$courseidentifier&publish_dir=2">2</option>
+<option value="/publish/publish.pyg?cmd=publish_course_preview&courseidentifier=$courseidentifier&publish_dir=3">3</option>
+<option value="/publish/publish.pyg?cmd=publish_course_preview&courseidentifier=$courseidentifier&publish_dir=4">4</option>
+</select></center>
+
+<br>
+</div>
+			
+				</div>
+			<div class="eXe-corner-br">&nbsp;</div>
+
+			<div class="eXe-corner-bl">&nbsp;</div>
+		
+		</div>
+		
+		<!-- main end -->
+		
+		
+		
+		</body>
+		</html>

@@ -1,0 +1,10 @@
+#if $icon_dir==""
+<p><img src='/preview/1/images/activity.gif' style='float: left;' align='middle'>  
+#else
+<p><img src='$icon_dir/activity.gif' style='float: left;' align='middle'>  
+#end if
+<div>
+<span class="idevice_header">$actname</span>
+$description
+</div>
+

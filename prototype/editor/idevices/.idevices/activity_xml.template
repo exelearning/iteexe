@@ -1,0 +1,7 @@
+	<idevice>       
+		<title>activity</title>
+		<description>$description</description>
+		<casestudy>$casestudy</casestudy>
+		<portofolio>$portofolio</portofolio>
+		<subunitidentifier>$subunitidentifier</subunitidentifier>
+	</idevice>

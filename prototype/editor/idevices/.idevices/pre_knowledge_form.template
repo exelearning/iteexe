@@ -1,0 +1,37 @@
+<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+<table>
+<tr>
+<tr>
+	<td>&nbsp;</td>
+	<td><input type=textarea id="description" name=description cols="50" rows="15" />$description</textarea></td>
+</tr>
+
+<p />
+	<tr>
+		<input type=hidden name=courseidentifier value="$courseidentifier">
+		<input type=hidden name=topicidentifier value="$topicidentifier">
+		<input type=hidden name=sectionidentifier value="$sectionidentifier">
+		<input type=hidden name=unitidentifier value="$unitidentifier">
+		#if $subunitidentifier<>""
+			<input type=hidden name=subunitidentifier value="$subunitidentifier">
+			<input type=hidden name=cmd value="update_preknowledge">
+			<td><input type="submit" name=send value="Update Pre_knowledge"></td>			
+		#else
+			<td><input type="submit" name="send" value="Add new Pre_knowledge" /></td>
+			<input type=hidden name=cmd value="save_new_preknowledge">
+		#end if
+		<td><input type="reset"></td>
+	</tr>
+</table>
+
+
+</form>
+<script language="javascript" type="text/javascript" defer="1">
+var editor = null;
+function initEditor() {
+editor1 = new HTMLArea("description");
+editor1.generate();
+return false;
+}
+initEditor();
+</script>

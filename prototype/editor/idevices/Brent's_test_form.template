@@ -1,0 +1,52 @@
+
+			<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+			<table>Idevice Name:Brent's test<p/>
+<input type="hidden" name="idevice_name" value="Brent's test"/>
+Description:this is brent's idevice<p/>
+<input type="hidden" name="idevice_description" value="this is brent's idevice"/>
+<tr><td>name:</td><td><input type="text" name="name" size="40" maxlength="80" value="$name" /></td></tr>
+<p/><tr><td>description:</td><td><textarea id="description" name="description" rows="15" cols="70" width="100%">$description</textarea></td></tr>
+<p/><tr><td>favorite color:</td><td><select name="favorite_color" >
+ 
+						#if $varExists('$favorite_color') and ( $favorite_color.__contains__("red") )
+						<option value="red" selected>red</option>
+						#else
+						<option value="red">red</option>
+						#end if
+						 
+						#if $varExists('$favorite_color') and ( $favorite_color.__contains__("blue") )
+						<option value="blue" selected>blue</option>
+						#else
+						<option value="blue">blue</option>
+						#end if
+						</select></td></tr>
+<p/>
+			<p />
+			<tr>
+			<input type=hidden name="courseidentifier" value="$courseidentifier">
+		
+			#if $varExists('topicidentifier') and $topicidentifier<>""
+			<input type="hidden" name="topicidentifier" value="$topicidentifier">
+			#end if
+		
+			#if $varExists('sectionidentifier') and $sectionidentifier<>""
+			<input type="hidden" name="sectionidentifier" value="$sectionidentifier">
+			#end if
+		
+			#if $varExists('unitidentifier') and $unitidentifier<>""
+			<input type="hidden" name="unitidentifier" value="$unitidentifier">
+			#end if
+		
+			<input type="hidden" name="idevice_shortname" value="Brent's_test">
+			#if $subunitidentifier<>""
+			<input type="hidden" name="subunitidentifier" value="$subunitidentifier">
+			<input type="hidden" name="cmd" value="update_idevice">
+			<td><input type="submit" name="send" value="Update Brent's test"></td>			
+			#else
+			<td><input type="submit" name="send" value="Add Brent's test" /></td>
+			<input type="hidden" name="cmd" value="save_new_idevice">
+			#end if
+			<td><input type="reset"></td>
+			</tr>
+		</table>
+		</form>

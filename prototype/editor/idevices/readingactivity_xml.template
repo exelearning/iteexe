@@ -1,0 +1,8 @@
+	<idevice>
+		<idevice_name>readingactivity</idevice_name>       
+		<reference>$reference</reference>
+		<url>$url</url>
+		<instruction>$instruction</instruction>
+		<feedback>$feedback</feedback>
+		<subunitidentifier>$subunitidentifier</subunitidentifier>
+	</idevice>

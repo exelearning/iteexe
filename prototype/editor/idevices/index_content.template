@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>eXe: eLearning XML editor</title>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+			<style type="text/css" media="screen">
+			@import url("eXe.css");
+		   </style>
+	<script type="text/javascript">
+      // the _editor_url is REQUIRED!  don't forget to set it.
+     _editor_url = "/htmlarea";
+      // implicit language will be "en", but let's set it for brevity
+     _editor_lang = "en";
+	 function clickOnce() {
+		if (clicks == 1) 
+		{ return true; }
+		else { return false; }
+	 }	 
+	</script>
+	<script type="text/javascript" src="/htmlarea/htmlarea.js"></script>
+	<script type="text/javascript">
+	HTMLArea.loadPlugin("ImageManager");
+	HTMLArea.loadPlugin("SpellChecker");
+	function initEditor( i) {
+  	// create an editor for the "ta" textbox
+  	editor = new HTMLArea(i);
+    // register the SpellChecker plugin
+  	editor.registerPlugin("SpellChecker");
+  	editor.generate();
+  	return false;
+	}
+	</script>
+	
+
+		<!--
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="icon" href="/images/favicon.ico">
+		-->
+		
+	</head>
+
+	<!--body onload="initEditor()"-->
+	<body onLoad="clicks=0;">
+	<!--body-->
+	<!--body-->
+		<!-- header BEGIN -->
+		<div id="eXe-header">
+			<div id="eXe-header-logo">
+				<a href="/"><img src="images/exeheader.gif" alt="eLearning XML editor"></a>
+			</div>		
+		</div>
+		
+		<!-- leftside BEGIN -->
+		<div id="eXe-side-left">
+		<div id="eXe-side-nav-label">Site Navigation:</div>
+		    	<ul id="eXe-side-nav">
+				<li><a href="$outline">Outline</a></li>
+
+				<li><a href="$preview">Preview</a></li>
+				<li><a href="/publish.pyg?courseidentifier=$courseidentifier">Publish</a></li>
+				#if $varExists('$speakit') 
+				<li><a href="$speakit">Speak this article</a></li>
+				#end if
+				<li><a href="/docs/">Help</a></li>
+			</ul>
+
+		</div>
+		<!-- leftside end -->
+		
+		<!-- main begin -->
+		<div id="eXe-middle-three">
+		
+			
+				<div id="eXe-content">
+					<p align="right">
+					#if $varExists('previouspage') and $previouspage<>""
+					&lt;&lt;<a href="$previouspage">Previous</a>&nbsp;
+					#end if
+					#if $varExists('nextpage') and $nextpage<>""
+					<a href="$nextpage">Next</a>&gt;&gt;
+					#end if
+			
+					<div id="page-main">
+					#if $varExists('crumb') and $crumb<>""
+					<h2>$crumb</h2>
+					#end if
+					#if $varExists('heading') and $heading<>""
+					<h2>$heading</h2>
+					#end if
+					
+					$content
+					
+					</div>
+			
+				
+					<p align="right">
+					#if $varExists('previouspage') and $previouspage<>""
+					&lt;&lt;<a href="$previouspage">Previous</a>&nbsp;
+					#end if
+					#if $varExists('nextpage') and $nextpage<>""
+					<a href="$nextpage">Next</a>&gt;&gt;
+					#end if
+				</p>
+				</div>
+		
+		</div>
+		<script type="text/javascript" defer="1">    
+			var tas = document.getElementsByTagName("textarea");
+			for (var i = tas.length; i > 0; initEditor(tas[--i]) );
+		</script>
+		
+		</body>
+		</html>

@@ -1,0 +1,31 @@
+#if $icon_dir==""
+<p><img src='/preview/1/images/write.gif' style='float: left;' align='middle'>  
+#else
+<p><img src='$icon_dir/write.gif' style='float: left;' align='middle'>  
+#end if
+<div ID='idevice_header'>Reading Activity</div><p>
+
+#if $reference<>""
+<div>
+$reference
+</div>
+#end if
+
+#if $url<>""
+<div>
+$url
+</div>
+#end if
+
+#if $instruction<>""
+<div>
+$instruction
+</div>
+#end if
+
+#if $feedback<>""
+<div>
+$feedback
+</div>
+#end if
+<hr size="4" width="100%"/>

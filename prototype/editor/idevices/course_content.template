@@ -1,0 +1,34 @@
+<table><tbody>
+
+#if not ( ( $varExists('cmd') and $cmd=="publish_course" ) or  $varExists('preview_dir')  )
+<tr>
+	<td colsapn="2">
+ 
+		<div>
+		#if ($varExists('graphic') and $graphic<>"" )
+		<img src="/$courseidentifier/images/$graphic">
+		#else
+		<img src="/$courseidentifier/images/course.gif">
+		#end if
+		</div>
+	</td>
+</tr>
+#end if
+
+
+<tr><td colsapn="2"></td></tr>
+<tr>
+	<td>
+	<div>
+	$description
+	</div>
+	</td>
+	<td aligh="right">
+		#if $varExists('right_nav') and $right_nav<>""
+		$right_nav
+		#end if
+	</td>
+
+</tr>
+
+</tbody></table>

@@ -1,0 +1,6 @@
+	<idevice>
+		<idevice_name>scope</idevice_name>
+		<description>$description</description>
+		<timetocomplete>$timetocomplete</timetocomplete>
+		<subunitidentifier>$subunitidentifier</subunitidentifier>
+	</idevice>

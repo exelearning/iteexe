@@ -1,0 +1,23 @@
+<H2>Brent's test</H2><p>
+
+				#if $name<>""
+				<div>
+				<span class="idevice_header">name</span>
+				$name
+				</div>
+				#end if 
+
+				#if $description<>""
+				<div>
+				<span class="idevice_header">description</span>
+				$description
+				</div>
+				#end if 
+
+				#if $favorite_color<>""
+				<div>
+				<span class="idevice_header">favorite color</span>
+				$favorite_color
+				</div>
+				#end if 
+<hr size="4" width="100%"/>

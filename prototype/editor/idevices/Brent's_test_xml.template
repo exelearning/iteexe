@@ -1,0 +1,8 @@
+<idevice>
+<idevice_name>Brent's test</idevice_name>
+<idevice_description>this is brent's idevice</idevice_description>
+<name>$name</name>
+<description>$description</description>
+<favorite_color>$favorite_color</favorite_color>
+<subunitidentifier>$subunitidentifier</subunitidentifier>
+</idevice>

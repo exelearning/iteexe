@@ -1,0 +1,40 @@
+
+			<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+			<table>Idevice Name:Expression of Interest<p/>
+<input type="hidden" name="idevice_name" value="Expression of Interest"/>
+Description:<p/>
+<input type="hidden" name="idevice_description" value=""/>
+<tr><td>ProjectCourse:</td><td><input type="text" name="ProjectCourse" size="40" maxlength="80" value="$ProjectCourse" /></td></tr>
+<p/><tr><td>Faculty:</td><td><input type="text" name="Faculty" size="40" maxlength="80" value="$Faculty" /></td></tr>
+<p/><tr><td> Why are you considering flexible and distance learning for this project:</td><td><textarea id="_Why_are_you_considering_flexible_and_distance_learning_for_this_project" name="_Why_are_you_considering_flexible_and_distance_learning_for_this_project" rows="15" cols="70" width="100%">$_Why_are_you_considering_flexible_and_distance_learning_for_this_project</textarea></td></tr>
+<p/><tr><td> What does the course or resource aim to teach:</td><td><textarea id="_What_does_the_course_or_resource_aim_to_teach" name="_What_does_the_course_or_resource_aim_to_teach" rows="15" cols="70" width="100%">$_What_does_the_course_or_resource_aim_to_teach</textarea></td></tr>
+<p/>
+			<p />
+			<tr>
+			<input type=hidden name="courseidentifier" value="$courseidentifier">
+		
+			#if $varExists('topicidentifier') and $topicidentifier<>""
+			<input type="hidden" name="topicidentifier" value="$topicidentifier">
+			#end if
+		
+			#if $varExists('sectionidentifier') and $sectionidentifier<>""
+			<input type="hidden" name="sectionidentifier" value="$sectionidentifier">
+			#end if
+		
+			#if $varExists('unitidentifier') and $unitidentifier<>""
+			<input type="hidden" name="unitidentifier" value="$unitidentifier">
+			#end if
+		
+			<input type="hidden" name="idevice_shortname" value="Expression_of_Interest">
+			#if $subunitidentifier<>""
+			<input type="hidden" name="subunitidentifier" value="$subunitidentifier">
+			<input type="hidden" name="cmd" value="update_idevice">
+			<td><input type="submit" name="send" value="Update Expression of Interest"></td>			
+			#else
+			<td><input type="submit" name="send" value="Add Expression of Interest" /></td>
+			<input type="hidden" name="cmd" value="save_new_idevice">
+			#end if
+			<td><input type="reset"></td>
+			</tr>
+		</table>
+		</form>

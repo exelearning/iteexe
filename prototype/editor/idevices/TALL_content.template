@@ -1,0 +1,57 @@
+<H2>TALL</H2><p>
+
+				#if $Section_Title<>""
+				<div>
+				<span class="idevice_header">Section_Title</span>
+				$Section_Title
+				</div>
+				#end if 
+
+				#if $Authors_Name<>""
+				<div>
+				<span class="idevice_header">Authors_Name</span>
+				$Authors_Name
+				</div>
+				#end if 
+
+				#if $Type_a_description_of_the_section<>""
+				<div>
+				<span class="idevice_header">Type_a_description_of_the_section</span>
+				$Type_a_description_of_the_section
+				</div>
+				#end if 
+
+				#if $Type_learning_objectives_here<>""
+				<div>
+				<span class="idevice_header">Type_learning_objectives_here</span>
+				$Type_learning_objectives_here
+				</div>
+				#end if 
+
+				#if $Key_words<>""
+				<div>
+				<span class="idevice_header">Key_words</span>
+				$Key_words
+				</div>
+				#end if 
+
+				#if $Keywords<>""
+				<div>
+				<span class="idevice_header">Keywords</span>
+				$Keywords
+				</div>
+				#end if 
+
+				#if $Content_text<>""
+				<div>
+				<span class="idevice_header">Content_text</span>
+				$Content_text
+				</div>
+				#end if 
+
+				#if $Event_Type_Exercise<>""
+				<div>
+				<span class="idevice_header">Event_Type_Exercise</span>
+				$Event_Type_Exercise
+				</div>
+				#end if 

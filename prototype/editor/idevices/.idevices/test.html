@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>eXe: eLearning XML editor</title>
+		<meta http-equiv="Content-Type" content="text/html">
+			<style type="text/css" media="screen">
+			@import url("../eXe.css");
+		   </style>
+		<!--
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="icon" href="/images/favicon.ico">
+		-->
+	</head>
+	<script type="text/javascript" src="/htmlarea/htmlarea.js"></script>
+	<script type="text/javascript" src="/htmlarea/lang/en.js"></script>
+	<script type="text/javascript" src="/htmlarea/dialog.js"></script>
+	<body>
+		<!-- header BEGIN -->
+		<div id="eXe-header">
+			<div id="eXe-header-logo">
+				<a href="/"><img src="images/eXe-logo.png" alt="eLearning XML editor"></a>
+
+			</div>
+
+		<!-- potential area for preview, publish, docs, etc...	
+			<div id="rhlp-header-items">
+				<span class="rhlp-header-icon">
+					<a href="/download/"><img src="../images/header-download.png" alt=" ">Download</a>
+					<a href="/projects/"><img src="/images/header-projects.png" alt=" ">Projects</a>
+					<a href="/about/faq/"><img src="/images/header-faq.png" alt=" ">FAQ</a></span>
+			</div>
+		-->
+		
+		</div>
+		<div id="eXe-nav"></div>
+		<!-- header END -->
+		
+		<!-- leftside BEGIN -->
+		<div id="eXe-side-left">
+		<div id="eXe-side-nav-label">Site Navigation:</div>
+		    	<ul id="eXe-side-nav">
+				<li><strong><a href="/">Outline</a></strong></li>
+
+				<li><a href="/preview/">Preview</a></li>
+				<li><a href="/publish/">Publish</a></li>
+				<li><a href="/export/">Export</a></li>
+				<li><a href="/docs/">Help</a></li>
+			</ul>
+
+		</div>
+		<!-- leftside end -->
+		
+		<!-- main begin -->
+		<div id="eXe-middle-three">
+		
+			<div class="eXe-corner-tr">&nbsp;</div>
+			<div class="eXe-corner-tl">&nbsp;</div>
+			
+				<div id="eXe-content">
+			
+					<div id="page-main">
+					
+					<h2>$heading</h2>
+		<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+<table>
+	<tr>
+		<td>Reference:</td>
+		<td><textarea id="reference" name=reference style="width:100%" rows="15" cols="29">$reference</textarea></td>
+    </tr>
+	<tr>
+		<td>URL Link:</td><td><input type="text" size="45" name=url value="$url"/></td>
+	</tr>
+	<tr>
+		<td>Instructions:</td>
+		<td><textarea id="instruction" name=instruction cols="29" rows="15" />$instruction</textarea></td>
+	</tr>
+	<tr>
+		<td>Feedback:</td>
+		<td><textarea id="feedback" name=feedback cols="29" rows="15" />$feedback</textarea></td>
+	</tr>
+
+<p />
+	<tr>
+		<input type=hidden name=courseidentifier value="$courseidentifier">
+		<input type=hidden name=topicidentifier value="$topicidentifier">
+		<input type=hidden name=sectionidentifier value="$sectionidentifier">
+		<input type=hidden name=unitidentifier value="$unitidentifier">
+		#if $subunitidentifier<>""
+			<input type=hidden name=subunitidentifier value="$subunitidentifier">
+			<input type=hidden name=cmd value="update_reading_activity">
+			<td><input type="submit" name=send value="Update reading activity"></td>			
+		#else
+			<td><input type="submit" name="send" value="Add new reading activity" /></td>
+			<input type=hidden name=cmd value="save_new_reading_activity">
+		#end if
+		<td><input type="reset"></td>
+	</tr>
+</table>
+
+
+</form>
+<script language="javascript" type="text/javascript" defer="3">
+var editor = null;
+function initEditor() {
+editor1 = new HTMLArea("reference");
+editor1.generate();
+editor2 = new HTMLArea("instruction");
+editor2.generate();
+editor3 = new HTMLArea("feedback");
+editor3.generate();
+return false;
+}
+initEditor();
+</script>
+					</div>
+			
+				</div>
+			<div class="eXe-corner-br">&nbsp;</div>
+			<div class="eXe-corner-bl">&nbsp;</div>
+		
+		</div>
+		
+		
+			
+			
+		
+		
+		
+		<!-- main end -->
+		
+		
+		
+		</body>
+		</html>
+		
+		
+		
+		
+		
+		
+		
+		

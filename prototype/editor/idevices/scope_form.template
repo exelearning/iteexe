@@ -1,0 +1,37 @@
+<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+<table>
+<tr>
+	<td>Scope:</td>
+	<td><textarea id="description" name=description cols="60" rows="10" />$description</textarea></td>
+</tr>
+<tr>
+	<td>Time to Complete:</td>
+	<td><input type=text name=timetocomplete value="$timetocomplete"></td>
+</tr>
+<p />
+	<tr>
+		<input type=hidden name=courseidentifier value="$courseidentifier">
+		#if $varExists('topicidentifier') and $topicidentifier<>""
+		<input type=hidden name=topicidentifier value="$topicidentifier">
+		#end if
+		#if $varExists('sectionidentifier') and $sectionidentifier<>""
+		<input type=hidden name=sectionidentifier value="$sectionidentifier">
+		#end if
+		#if $varExists('unitidentifier') and $unitidentifier<>""
+			<input type=hidden name=unitidentifier value="$unitidentifier">
+		#end if
+		<input type=hidden name="idevice_shortname" value="scope">
+		#if $subunitidentifier<>""
+			<input type=hidden name=subunitidentifier value="$subunitidentifier">
+			<input type=hidden name=cmd value="update_idevice">
+			<td><input type="submit" name=send value="Update scope"></td>			
+		#else
+			<td><input type="submit" name="send" value="Add new scope" /></td>
+			<input type=hidden name=cmd value="save_new_idevice">
+		#end if
+		<td><input type="reset"></td>
+	</tr>
+</table>
+
+
+</form>

@@ -1,0 +1,63 @@
+
+
+<form action="start.pyg" method="post" id="edit" name="edit" ENCTYPE="multipart/form-data">
+<table>
+	<tr>
+		<td>Activity type:
+			<select name=actname>
+			#if $varExists('actname') and ( $actname=="Activity" or  $actname =="" )
+			<option value="Activity" selected>Activity</option>
+			#else
+			<option value="Activity">Activity</option>
+			#end if
+			
+			#if $varExists('actname') and $actname=="Case Study"
+			<option value="Case Study" selected>Case Study</option>
+			#else
+			<option value="Case Study">Case Study</option>
+			#end if
+			
+			#if $varExists('actname') and $actname=="Learning Tasks"
+			<option value="Learning Tasks" selected>Learning Tasks</option>
+			#else
+			<option value="Learning Tasks">Learning Tasks</option>
+			#end if
+			
+			#if $varExists('actname') and $actname=="Portofolio"
+			<option value="Portofolio" selected>Portofolio</option>
+			#else
+			<option value="Portofolio">Portofolio</option>
+			#end if
+			</select>
+		</td>
+		<td><textarea id="description" name="description" cols="90" rows="15" />$description</textarea></td>
+	</tr>
+
+	<tr>
+		<input type=hidden name=courseidentifier value="$courseidentifier">
+		#if $varExists('topicidentifier') and $topicidentifier<>""
+		<input type=hidden name=topicidentifier value="$topicidentifier">
+		#end if
+		
+		#if $varExists('sectionidentifier') and $sectionidentifier<>""
+		<input type=hidden name=sectionidentifier value="$sectionidentifier">
+		#end if
+		
+		#if $varExists('unitidentifier') and $unitidentifier<>""
+		<input type=hidden name=unitidentifier value="$unitidentifier">
+		#end if
+		<input type=hidden name="idevice_shortname" value="activity">
+		#if $subunitidentifier<>""
+			<input type=hidden name=subunitidentifier value="$subunitidentifier">
+			<input type=hidden name=cmd value="update_idevice">
+			<td><input type="submit" name=send value="Update activity"></td>			
+		#else
+			<td><input type="submit" name="send" value="Add new activity" /></td>
+			<input type=hidden name=cmd value="save_new_idevice">
+		#end if
+		<td><input type="reset"></td>
+	</tr>
+</table>
+
+
+</form>

@@ -1,0 +1,22 @@
+
+	#if $graphic<>""
+	<div>
+		<table>
+			<tbody>
+				<tr>
+					<td>
+					#if $varExists('cmd') and $cmd=="publish_course"
+					<img src="images/$graphic">
+					#else
+					<img src="/courseidentifier/$topicidentifier/$sectionidentifier/images/$graphic">
+					#end if
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	#end if
+
+<div>
+$description
+</div>

@@ -1,0 +1,107 @@
+	def process_idevice( form, action ):
+		
+		#initialize the tmp resouce dict#
+		resource_dict = {}
+		
+		#read the course identifier#
+		self.read_unit_dict()
+		self.unit_read_form( form )
+		
+		if self.unit_dict["courseidentifier"]:
+			self.get_course_detail( self.unit_dict["courseidentifier"] )
+		else:
+			print "Error, cant get course detail of this unit"
+			return
+		
+		if self.unit_dict["topicidentifier"]:
+			self.get_topic_detail( self.unit_dict["topicidentifier"] )
+		else:
+			print "Error, can't get topic detail of this unit"
+			return
+		
+		if self.unit_dict["sectionidentifier"]:
+			self.get_section_detail( self.unit_dict["sectionidentifier"] )
+		else:
+			print "Error, can't get section detail of this unit"
+			return
+		
+		resource = form["resource"].value
+		
+		
+		if form.has_key("subunitidentifier"):
+			resource_dict.update( self.get_idevice_detail( form["subunitidentifier"].value, resource ) )
+		
+		
+		#if action == "view":
+		#	self.get_unit_detail( self.unit_dict["unitidentifier"] )
+		#	self.show_unit_content()
+		#	return
+			
+		if action == "add":
+			
+			#determine the max identifier#
+			idevicexmlfilepath = doc_root + self.unit_dict["courseidentifier"] + "/" + self.unit_dict["topicidentifier"] +  '/' + self.unit_dict["sectionidentifier"]+ '/'+ self.unit_dict["unitidentifier"] + '/' + idevicexmlfile
+			maxidentifier = self.max_identifier( idevicexmlfilepath, "idevices", "subunitidentifier" )
+			resource_dict["subunitidentifier"] = str( maxidentifier + 1 )
+			
+			"""
+			#uncoment when upload images is needed#		
+			##create directory#
+			#unit_directory = doc_root + self.unit_dict["courseidentifier"] + "/" + self.unit_dict["topicidentifier"] + '/' + self.unit_dict["sectionidentifier"] + '/'+ self.unit_dict["unitidentifier"]
+			
+			#read course picture if file uploaded#
+			#image_dir = unit_directory + "/images/"
+			#if self.create_dir( unit_directory ):
+			#	self.unit_dict["graphic"] = self.process_graphic( form, image_dir, "graphic", "graphic" )
+			#else:
+			#	print "Error while creating unit directory"
+			#	return
+			"""
+			
+		if action == "edit":
+
+			if form.has_key( "subunitidentifier" ):
+				#self.unit_dict[ "unitidentifier" ] =  form["unitidentifier"].value
+				#resouce_dict.update( self.get_idevice_detail( form[ "subunitidentifier" ], resource ) )
+				heading = ""
+
+				form = doc_root + template_directory + resource + "_form.template"
+				
+				content = self.idevice_xml_string( form, resource_dict )
+				crumb = "<p><H3><a href=%s?cmd=view_course&courseidentifier=%s>%s</a> ->\
+			 	<a href=%s?cmd=view_topic&courseidentifier=%s&topicidentifier=%s>%s</a> ->\
+			 	<a href=%s?cmd=view_section&courseidentifier=%s&topicidentifier=%s&sectionidentifier=%s>%s</a>->\
+				<a href=%s?cmd=view_section&courseidentifier=%s&topicidentifier=%s&sectionidentifier=%s&unitidentifier=%s>%s</a> ->Edit %s"\
+					 % ( startcgi, self.dict["courseidentifier"], self.dict["title"],\
+						 startcgi, self.topic_dict["courseidentifier"], self.topic_dict["topicidentifier"], self.topic_dict["title"],\
+						 startcgi, self.section_dict["courseidentifier"], self.section_dict["topicidentifier"], self.section_dict["sectionidentifier"], self.section_dict["title"],\
+						 startcgi, self.unit_dict["courseidentifier"], self.unit_dict["topicidentifier"], self.unit_dict["sectionidentifier"], self.unit_dict["unitidentifier"], self.unit_dict["title"], resource)
+
+			self.showexe( theme_template, heading, content, crumb )
+			return
+
+		if action=="update":
+			"""
+			#read topic picture if file uploaded#
+			target_dir = doc_root  + self.unit_dict["courseidentifier"] + '/'+ self.unit_dict["topicidentifier"] + '/'+ self.unit_dict["sectionidentifier"] + '/' + self.unit_dict["unitidentifier"]+ "/images/"
+			if form.has_key("new_graphic"):
+				self.unit_dict["graphic"] = self.process_graphic( form, target_dir, "graphic", "new_graphic" )
+			else:
+				self.unit_dict["graphic"] = self.process_graphic( form, target_dir, "graphic", "graphic" )	
+			"""
+		
+		if action == "delete":
+			if self.unit_dict["unitidentifier"] and self.unit_dict["courseidentifier"] and self.unit_dict["topicidentifier"] and self.unit_dict["sectionidentifier"] and form["subunitidentifier"] and resource:
+				"""		
+				rm_identifier = doc_root + self.unit_dict["courseidentifier"] + "/" + self.unit_dict["topicidentifier"]+ "/" + self.unit_dict["sectionidentifier"]+ "/" + self.unit_dict["unitidentifier"]
+				rm_identifier_dest = doc_root + self.unit_dict["courseidentifier"] + "/" + self.unit_dict["topicidentifier"]+ "/" + self.unit_dict["sectionidentifier"]+ "/." + self.unit_dict["unitidentifier"]
+				#print "directory to be removed:%s" %rm_identifier
+				#print "directory to move to:%s" %rm_identifier_dest
+				#try:
+				#removedirs( rm_identifier )
+				rmtree( rm_identifier)
+				"""
+				
+		self.save_idevice_file( action, resource_dict )
+		self.view_unit( form )
+	

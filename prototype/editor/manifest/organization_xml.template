@@ -1,0 +1,5 @@
+
+		<organization identifier="$identifier" structure="hierarchical" identifierref="$idref">
+			<title>$title</title>
+			$item
+		</organization>

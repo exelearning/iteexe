@@ -1,0 +1,9 @@
+  <unit>
+        <title>$title</title>
+        <graphic>$graphic</graphic>
+        <description>$description</description>       
+        <courseidentifier>$courseidentifier</courseidentifier>
+        <topicidentifier>$topicidentifier</topicidentifier>
+        <sectionidentifier>$sectionidentifier</sectionidentifier>
+        <unitidentifier>$unitidentifier</unitidentifier>
+   </unit>

@@ -1,0 +1,11 @@
+#if $icon_dir==""
+<p><img src='/preview/1/images/preknowledge.gif' style='float: left;' align='middle'>  
+#else
+<p><img src='$icon_dir/preknowledge.gif' style='float: left;' align='middle'>  
+#end if
+<h2>Preknowledge</h2><p>
+
+<div>
+$description
+</div>
+<hr size="4" width="100%"/>
