@@ -27,9 +27,9 @@ import sys
 
 # ===========================================================================
 class Config:
-    def __init__(self):
-        self.configs = ConfigParser()
-        self.configs.read("exe.conf")
+    def __init__(self, configFile):
+        self.setting = ConfigParser()
+        self.setting.read(configFile)
 
     def setupLogging(self):
         hdlr = logging.FileHandler("exe.log")
@@ -38,7 +38,7 @@ class Config:
         hdlr.setFormatter(form)
         log.addHandler(hdlr)
     
-        for logger, level in self.configs.items("logging"):
+        for logger, level in self.setting.items("logging"):
             if logger == "root":
                 logging.getLogger().setLevel(globals()[level])
             else:
