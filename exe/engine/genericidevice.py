@@ -26,10 +26,11 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Field(object):
-    def __init__(self, name, fieldType, content=""):
+    def __init__(self, name, fieldType=None, class_="", content=""):
         self.name      = name
         self.fieldType = fieldType
         self.content   = content
+        self.class_    = class_
 
     def __cmp__(self, other):
         return cmp(self.name, other.name)
@@ -46,16 +47,16 @@ class GenericIdevice(Idevice):
         Idevice.__init__(self)
         self.fields    = []
 
-    def addField(self, name, fieldType, content=""):
-        self.fields.append(Field(name, fieldType, content))
+    def addField(self, name, fieldType, class_, content=""):
+        self.fields.append(Field(name, fieldType, class_, content))
 
     def __setitem__(self, name, value):
-        key   = Field(name, None)
+        key   = Field(name)
         index = self.fields.index(key)
         self.fields[index].content = value
 
     def __getitem__(self, name):
-        key   = Field(name, None)
+        key   = Field(name)
         index = self.fields.index(key)
         return self.fields[index].content
 

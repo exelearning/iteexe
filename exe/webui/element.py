@@ -24,21 +24,22 @@ from exe.webui import common
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-def createElement(elementType, name, blockId):
+def createElement(elementType, name, class_, blockId):
     """Factory method for creating Elements"""
     if elementType == "Text":
-        return TextElement(name, blockId)
+        return TextElement(name, class_, blockId)
     elif elementType == "TextArea":
-        return TextAreaElement(name, blockId)
+        return TextAreaElement(name, class_, blockId)
     elif elementType == "Icon":
-        return IconElement(name, blockId)
+        return IconElement(name, class_, blockId)
 
 # ===========================================================================
 class Element(object):
-    def __init__(self, name, blockId):
+    def __init__(self, name, class_, blockId):
         self.name     = name
+        self.class_   = class_
         self.blockId  = blockId
-        self.id       = name+blockId
+        self.id       = class_+blockId
 
 
     def process(self, request):
@@ -49,7 +50,7 @@ class Element(object):
 
 
     def renderView(self, content):
-        html  = "<p class=\""+self.name+"\">\n"
+        html  = "<p class=\""+self.class_+"\">\n"
         html += content
         html += "</p>\n"
         return html
@@ -104,7 +105,7 @@ class IconElement(Element):
     """ IconElement is a picture thing"""
 
     def renderView(self, content):
-        html  = "<img src=\"style/"+self.name+"\"/>\n"
+        html  = "<img src=\"style/"+self.class_+"\"/>\n"
         return html
 
     def renderEdit(self, content):

@@ -39,7 +39,7 @@ class FreeTextBlock(Block):
     """
     def __init__(self, idevice):
         Block.__init__(self, idevice)
-        self.contentField = TextAreaElement("content", self.id)
+        self.contentField = TextAreaElement("content", "freetext", self.id)
 
 
     def process(self, request):

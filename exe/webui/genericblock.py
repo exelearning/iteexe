@@ -39,7 +39,9 @@ class GenericBlock(Block):
         self.fields = []
         for field in self.idevice:
             self.fields.append(createElement(field.fieldType, 
-                                             field.name, self.id))
+                                             field.name, 
+                                             field.class_,
+                                             self.id))
 
     def process(self, request):
         Block.process(self, request)

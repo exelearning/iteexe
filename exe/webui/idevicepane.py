@@ -55,16 +55,20 @@ class IdevicePane(object):
 
             elif request.args["object"][0] == "ReadingActIdevice":
                 readingAct = GenericIdevice()
-                readingAct.addField("reading.png", "Icon")
-                readingAct.addField("Reference", "Text")
-                readingAct.addField("URL", "Text")
-                readingAct.addField("Instructions", "TextArea")
-                readingAct.addField("Feedback", "TextArea")
+                readingAct.addField("icon", "Icon", "reading.png")
+                readingAct.addField("What to read", 
+                                    "TextArea", "reading_what")
+                readingAct.addField("Why it should be read", 
+                                    "TextArea", "reading_why")
+                readingAct.addField("Reference", 
+                                    "TextArea", "reading_reference")
+                readingAct.addField("Feedback", 
+                                    "TextArea", "reading_feedback")
                 package.currentNode.addIdevice(readingAct)
             
             elif request.args["object"][0] == "ObjectivesIdevice":
                 objectives = GenericIdevice()
-                objectives.addField("Objectives", "TextArea")
+                objectives.addField("Objectives", "TextArea", "objectives")
                 package.currentNode.addIdevice(objectives)
             
             
