@@ -127,7 +127,7 @@ class Package(jelly.Jellyable):
         data = []
         decoder.expressionReceived = data.append
         decoder.dataReceived(zippedFile.read("content.data"))
-        package.close()
+        zippedFile.close()
         return jelly.unjelly(data[0])
 
     load = staticmethod(load)

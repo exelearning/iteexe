@@ -46,12 +46,14 @@ class Config:
         
         exeConf = None
         
+
         if "EXECONF" in os.environ and os.path.isfile(os.environ["EXECONF"]):
             exeConf = os.environ["EXECONF"]              
 
         elif sys.platform[:3] == "win":
             # what's the windows equivalent of /etc????
-            confPath = "C:\\Program Files\\exe\\" + configFile
+            programFilesDir = self.getDirectory(0x0026)
+            confPath = programFilesDir + "/" +configFile
             if os.path.isfile(confPath):
                 exeConf = confPath
                 
@@ -59,6 +61,7 @@ class Config:
             confPath = "/etc/exe" + configFile
             if os.path.isfile(confPath):
                 exeConf = confPath
+
                 
         if not exeConf:
             exeConf = self.exeDir+"/"+configFile 
@@ -76,7 +79,7 @@ class Config:
             self.exeDir  = os.path.dirname(self.exePath)
         
         if self.setting.has_option("system", "exe-dir"):
-            self.dataDir = self.setting.get("system", "exe-dir")
+            self.exeDir = self.setting.get("system", "exe-dir")
 
         if self.setting.has_option("system", "port"):
             self.port = self.setting.getint("system", "port")
@@ -92,16 +95,7 @@ class Config:
             self.dataDir = self.setting.get("system", "data-dir")
         else:
             if sys.platform[:3] == "win":
-                from ctypes import WinDLL, create_string_buffer
-                dll = WinDLL('shell32')
-                # The '5' and the '0' from the below call come from
-                # google: "ShellSpecialConstants site:msdn.microsoft.com"
-                p = create_string_buffer(260)
-                res = dll.SHGetFolderPathA(None, 5, None, 0, p)
-                if res != 0: 
-                    self.dataDir = '/'
-                else: 
-                    self.dataDir = p.value
+                self.dataDir = self.getDirectory(5)
             else:
                 self.dataDir = os.environ["HOME"]
                 
@@ -159,6 +153,19 @@ class Config:
         get eXe running directory
         """
         return self.exeDir
+    
+    def getDirectory(self, code):
+        from ctypes import WinDLL, create_string_buffer
+        dll = WinDLL('shell32')
+        # The '5' and the '0' from the below call come from
+        # google: "ShellSpecialConstants site:msdn.microsoft.com"
+        p = create_string_buffer(260)
+        res = dll.SHGetFolderPathA(None, code, None, 0, p)
+        if res != 0: 
+            return '/'
+        else: 
+            return p.value
+        
 
 #g_Config = Config("exe.conf")
 # ===========================================================================
