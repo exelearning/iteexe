@@ -27,15 +27,14 @@ from exe.webui.blockfactory   import g_blockFactory
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-g_blockFactory.register(SimpleBlock, SimpleIdevice)
 
 # ===========================================================================
 class SimpleBlock(Block):
     """
     SimpleBlock can render and process SimpleIdevices as XHTML
     """
-    def __init__(self):
-        pass
+    def __init__(self, idevice):
+        self.idevice = idevice
 
     def renderEdit(self):
         """
@@ -48,5 +47,7 @@ class SimpleBlock(Block):
         Returns an XHTML string for viewing this block
         """
         pass
+
+g_blockFactory.registerBlockType(SimpleBlock, SimpleIdevice)
 
 # ===========================================================================
