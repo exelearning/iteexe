@@ -114,9 +114,9 @@ def launchBrowser(port):
                 print "Cannot launch Firefox, please manually run Firefox"
                 print "and go to", url     
     else:
-        if g_webInterface.config.browserPath:            
+        standardPath = g_webInterface.config.browserPath
+        if standardPath:            
             os.system("%s http://localhost:%d&"%(standardPath, port))
-            log.info("Linux Firefox Path:" + standardPath)
         else:
             if sys.platform[:6] == "darwin":
                 macPath = "/Applications/Firefox.app/Contents/MacOS/firefox"
