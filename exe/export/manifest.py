@@ -57,13 +57,10 @@ class Manifest(object):
         returning XLM string for manifest file
         """
         
-        self.xmlStr += """
-            <?xml version="1.0" encoding="UTF-8"?> 
-            <manifest identifier="MANIFEST1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
-            xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 
-            imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd"> 
+        self.xmlStr += """<manifest identifier="MANIFEST1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+    xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
                 <metadata> 
                     <schema>IMS Content</schema> 
                     <imsmd:lom> 
@@ -73,7 +70,7 @@ class Manifest(object):
                     </imsmd:title> 
                     </imsmd:general> 
                     </imsmd:lom> 
-                </metadata>  
+                </metadata> 
                 <organizations default = "Toc0"> 
                     <organization identifier="Toc1" structure="hierarchical"> 
                      <title>%s</title> 
