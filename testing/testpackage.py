@@ -29,21 +29,19 @@ from exe.engine.node         import Node
 class TestPackage(unittest.TestCase):
     def setUp(self):
         g_webInterface.config = Config("exe.conf")
-        
 
     def testCreatePackage(self):
         package = g_packageStore.createPackage()
         self.assert_(package)
         self.assert_(package.name)
         
-    def testSave(self):
+    def testSaveAndLoad(self):
         package = g_packageStore.createPackage()
         package.name = "package1"
         package.author = "UoA"
         fileDir = g_webInterface.config.getDataDir()
         package.save(fileDir)
         
-    def testLoad(self):
         filePath = join(g_webInterface.config.getDataDir(), "package1.elp")
         package1 = g_packageStore.loadPackage(filePath)
         self.assert_(package1)
