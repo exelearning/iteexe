@@ -45,6 +45,11 @@ def footer():
     html  = "</body></html>\n"
     return html
     
+def hiddenField(name, value=""):
+    html  = "<input type=\"hidden\" name=\"%s\" " % name
+    html += "value=\"%s\">\n" % value
+    return html
+
 def textInput(name, value=""):
     html  = "<input type=\"text\" name=\"%s\" " % name
     html += "value=\"%s\"" % value
@@ -57,7 +62,11 @@ def textArea(name, value=""):
     html += "</textarea><br/>" 
     return html
 
-def submitButton(name, value):
+def submitButton(name, value, enabled=True):
+    if enabled:
+        disable = ""
+    else:
+        disable = "disabled"
     html  = "<input type=\"submit\" name=\"%s\" " % name
     html += "value=\"%s\">\n" %  value
     return html
