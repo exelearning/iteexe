@@ -32,10 +32,10 @@ class Config:
         self.setting.read(configFile)
 
     def setupLogging(self, logFile):
-        hdlr = logging.FileHandler(logFile)
-        form = logging.Formatter('%(asctime)s %(name)s %(levelname)s %(message)s')
+        hdlr   = logging.FileHandler(logFile)
+        format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log  = logging.getLogger()
-        hdlr.setFormatter(form)
+        hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
     
         for logger, level in self.setting.items("logging"):
