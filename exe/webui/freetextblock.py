@@ -87,6 +87,7 @@ class FreeTextBlock(Block):
         html += "    editor.ToolbarSet = 'Armadillo'; \n"
         content = self.idevice.content.replace("\r", "")
         content = content.replace("\n","\\n")
+        content = content.replace("'","\\'")
         html += "    editor.Value      = '"+content+"'; \n"
         html += "    editor.Create();\n"
         html += "//-->\n"
