@@ -76,11 +76,10 @@ class AuthoringPane(object):
                 raise Error("Unable to render iDevice.")
             self.blocks.append(block)
 
-        if self.levelLimit is None or len(node.id) < self.levelLimit:
-            for child in node.children:
+        for child in node.children:
+            if self.levelLimit is None or len(child.id) < self.levelLimit:
                 self.addBlocks(child)
-
-        else:
-            self.blocks.append(LinkBlock(node))
+            else:
+                self.blocks.append(LinkBlock(child))
 
 # ===========================================================================

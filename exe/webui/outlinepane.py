@@ -34,25 +34,27 @@ class OutlinePane(object):
     def __init__(self):
         self.package = None
 
-    def process(self, request):
+    def process(self, request, package):
         """ 
         Get current package
         """
-        
-        packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)
+        self.package = package
         
         if "action" in request.args:
-            if request.args["action"] == "changeNode":
-                nodeId = request.args["object"][0]
-                self.package.currentNode = self.package.findNode(nodeId.split("."))
+            if request.args["action"][0] == "changeNode":
+                nodeId = [int(x) for x in request.args["object"][0].split(".")]
+                self.package.currentNode = self.package.findNode(nodeId)
 
                 
     def getChildrenTitles(self, node):
         """
         Recursive function for getting childern's titles 
         """
-        html  =  common.submitLink(node.title, "changeNode", node.idStr())      
+        title = node.title
+        if title == "":
+            title = node.idStr()
+
+        html  =  common.submitLink(title, "changeNode", node.idStr())      
         if len(node.children) > 0:
             html += "<ul>\n"
             for i in range (0, len(node.children)):

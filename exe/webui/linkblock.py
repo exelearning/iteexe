@@ -20,8 +20,10 @@
 import sys
 import logging
 import gettext
+from exe.webui import common
 from exe.engine.node import Node
 from exe.webui.block import Block
+from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -35,17 +37,25 @@ class LinkBlock(Block):
     def __init__(self, node):
         Block.__init__(self, node.parent, node.idStr(), mode=Block.View)
         self.node = node
-        self.url  = ""
 
     def process(self, request):
-        self.url  = "http:/%s/%s" % (request.prepath[0], self.node.idStr())
+        package       = g_packageStore.getPackage(request.prepath[0])
+
+        if "action" in request.args:
+            if request.args["action"][0] == "changeNode2":
+                nodeId = [int(x) for x in request.args["object"][0].split(".")]
+                package.currentNode = package.findNode(nodeId)
 
     def render(self):
         """
         Returns an XHTML string for viewing this link
         """
-        html  = "<a href=\""+self.url+"\">"
-        html += self.node.title
-        html += "</a>\n"
+        title = self.node.title
+        if title == "":
+            title = self.node.idStr()
+
+        html  = common.submitLink(title, "changeNode2", self.node.idStr())
+        html += "<br/>\n"
+        return html
       
 # ===========================================================================

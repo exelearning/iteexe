@@ -25,6 +25,7 @@ from twisted.internet import reactor
 from twisted.web import server
 import os
 import sys
+from exe.util.config import Config
 from newpackagepage import NewPackagePage
 
 def main():
@@ -37,12 +38,13 @@ def main():
     else:
         port = 8081
 
-    
-    root = NewPackagePage()
+    config = Config("exe.conf")
+    root   = NewPackagePage()
     
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)
     reactor.run()
+
 
 def launchBrowser(port):
     if sys.platform[:3] == "win":
