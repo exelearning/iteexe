@@ -1,5 +1,5 @@
 # ===========================================================================
-# testblockfactory
+# testblock
 # Copyright 2005, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
