@@ -73,7 +73,7 @@ class LoadPage(Resource):
                 pickle.dump(self.package, outfile)
                 outfile.close()
                 
-            try:            
+            try:  
                 filePath = request.args["object"][0]
                 log.debug("filename and path" + filePath)
                 infile = open(filePath)

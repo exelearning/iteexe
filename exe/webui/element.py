@@ -141,7 +141,9 @@ class ImageElement( Element ):
     """
     def __init__( self, name, class_, blockId, instruc, titleMessage="Image", \
         width="200px", height="150px", border="0" ):
-        
+        """
+        Initialize
+        """
         Element.__init__( self, name, class_, blockId , instruc )
         self.titleMessage = titleMessage
         self.width = width
@@ -150,7 +152,10 @@ class ImageElement( Element ):
         
         
     def process( self, request ):
-    
+        """
+        Process arguments from the webserver.  Return any which apply to this 
+        element.
+        """
         fileExtension = ""
         filename = ""
 
@@ -173,7 +178,7 @@ class ImageElement( Element ):
             else:
                 ##update
                 #if photo was chosen and uploaded
-                if request.args[self.id][0]<>"" and filename<>"":
+                if request.args[self.id][0] != "" and filename != "":
                     outputStream = open( filename, 'wb' )
                     outputStream.write( request.args[self.id][0] )
                     outputStream.close()
@@ -187,7 +192,9 @@ class ImageElement( Element ):
         
         
     def renderEdit( self, filename ):
-        
+        """
+        Returns an XHTML string for editing this element
+        """
         gotoImageDataDir()
         
         html = ""        
@@ -215,8 +222,11 @@ class ImageElement( Element ):
         return html
         
     def renderView( self, filename ):
-        
-        return """<img src="/images/%s" class="%s" width="%s" height="%s" border="%s" \
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        return """<img src="/images/%s" class="%s" width="%s" height="%s" 
+        border="%s" \
         align="left" style="margin-right: 5px;"/><br />\n""" \
         %( filename, self.class_, self.width, self.height, self.border )
         
@@ -226,13 +236,20 @@ class AudioElement( Element ):
     for audio element processing
     """
     
-    def __init__( self, name, class_, blockId, instruc, titleMessage="Audio File" ):
+    def __init__( self, name, class_, blockId, instruc, 
+                  titleMessage="Audio File" ):
+        """
+        Initialize
+        """
         Element.__init__( self, name, class_, blockId, instruc )
         self.titleMessage = titleMessage
         
         
     def process( self, request ):
-    
+        """
+        Process arguments from the webserver.  Return any which apply to this 
+        element.
+        """
         fileExtension = ""
         filename = ""
 
@@ -241,7 +258,8 @@ class AudioElement( Element ):
             ##get the image file extension, if is post from form
             if ( self.id +"_filename" ) in request.args: 
                 
-                fileExtension = splitext( basename( request.args[ self.id + "_filename" ][0] ) )[1]
+                fileExtension = splitext( basename( request.args[ self.id +
+                                          "_filename" ][0] ) )[1]
                 #assign fileExtension (.xxx) to filename
                 filename = self.id +  fileExtension
                 
@@ -254,7 +272,7 @@ class AudioElement( Element ):
             else:
                 ##update
                 #if audio was chosen and uploaded
-                if request.args[self.id][0]<>"" and filename<>"":
+                if request.args[self.id][0] != "" and filename != "":
                     outputStream = open( filename, 'wb' )
                     outputStream.write( request.args[self.id][0] )
                     outputStream.close()
@@ -268,7 +286,9 @@ class AudioElement( Element ):
         
                 
     def renderEdit( self, filename ):
- 
+        """
+        Returns an XHTML string for editing this element
+        """
         ## if file exists=>update, else, add
         html = ""
         gotoImageDataDir()
@@ -291,6 +311,9 @@ class AudioElement( Element ):
         return html
                 
     def renderView( self, filename ):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
         tmp_array = {}
         tmp_array["id"] = self.id
         tmp_array["host"] = "http://localhost:8081/images"
@@ -307,7 +330,8 @@ class AudioElement( Element ):
         
         mp3String = """
 <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
- codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ codebase=
+"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
  id="mp3player" height="15" width="90"> 
 <param name="movie" value="%(host)s/mp3player.swf?src=%(host)s/%(audiofile)s"> 
 <param name="quality" value="high"> 
@@ -324,7 +348,8 @@ trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
 </object>&nbsp;&nbsp;
                 
 <object id="mp3player" 
-codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+codebase=
+"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
  classid="D27CDB6E-AE6D-11cf-96B8-444553540000" height="15" width="90">
 <!--param value="741" name="_cx">
 <param value="381" name="_cy"-->
@@ -347,17 +372,19 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#ve
 </object>"""
         wavString = """
         <input type="button" value="Hear it" 
- OnClick="document.getElementById('dummy_%(id)s').innerHTML='<embed src=/images/%(audiofile)s
+ OnClick="document.getElementById('dummy_%(id)s').innerHTML=
+'<embed src=/images/%(audiofile)s
  hidden=true loop=false>';"
         <div id="dummy_%(id)s"></div>
         """
         wmvString = """
         <p class="mediaplugin">
         <object classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95"'
-codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" 
+codebase=
+"http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" 
         standby="Loading Microsoft Windows Media Player components..." 
         id="msplayer" align="" type="application/x-oleobject">
-        <param name="Filename" value="/images/%(audiofile)s">"
+        <param name="Filename" value="/images/%(audiofile)s">
         <param name="ShowControls" value=true />
         <param name="AutoRewind" value=true />
         <param name="AutoStart" value=false />
@@ -367,17 +394,19 @@ codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#
         <param name="AnimationAtStart" value=false />
         <param name="ShowGotoBar" value=false />
         <param name="EnableFullScreenControls" value=true />
-        <embed src="/images/%(audio_file)s" name="msplayer" type="video/x-ms" 
+        <embed src="/images/%(audiofile)s" name="msplayer" type="video/x-ms" 
          ShowControls="1" AutoRewind="1" AutoStart="0" Autosize="0" 
          EnableContextMenu="1" TransparentAtStart="0" AnimationAtStart="0" 
          ShowGotoBar="0" EnableFullScreenControls="1" 
-pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/">
+         pluginspage=
+"http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/">
         </embed>
         </object></p>
         """
         
         movString = """
-        <p class="mediaplugin"><object classid="CLSID:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+        <p class="mediaplugin"><object classid=
+        "CLSID:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
                 codebase="http://www.apple.com/qtactivex/qtplugin.cab" 
                 height="300" width="400"
                 id="quicktime" align="" type="application/x-oleobject">
@@ -386,7 +415,8 @@ pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaP
         <param name="loop" value=true />
         <param name="controller" value=true />
         <param name="scale" value="aspect" />
-        <embed src="/images/%(audiofile)s" name="quicktime" type="video/quicktime" 
+        <embed src="/images/%(audiofile)s" name="quicktime" 
+        type="video/quicktime" 
          height="300" width="400" scale="aspect" 
          autoplay="false" controller="true" loop="true" 
          pluginspage="http://quicktime.apple.com/">
@@ -417,7 +447,9 @@ pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaP
         swfString = """
         <p class="mediaplugin">
         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
- codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" 
+        codebase=
+"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=
+6,0,0,0" 
          width="400" height="300" id="mp3player" align="">
          <param name=movie value="/images/%(audiofile)s">
          <param name=quality value=high>

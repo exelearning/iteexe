@@ -178,7 +178,8 @@ _("""Describe the tasks the learners should complete."""))
                 multiMode = GenericIdevice("", "multimode", "", "", "")
                 multiMode.addField( "photoFile", "Photo", "image", "" )
                 multiMode.addField( "caption", "Text", "nodeTitle", "" )
-                multiMode.addField( "learningText", "TextArea", "learningText", "" )
+                multiMode.addField( "learningText", "TextArea", "learningText", 
+                                    "" )
                 multiMode.addField( "audioFile", "Audio", "audio", "" )
                 package.currentNode.addIdevice( multiMode )
             

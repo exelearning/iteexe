@@ -23,7 +23,7 @@
  */
 
 // FCKeditor Class
-var FCKeditor = function( instanceName, width, height, toolbarSet, value )
+var FCKeditor = function( instanceName, width, height, toolbarSet, value)
 {
 	// Properties
 	this.InstanceName	= instanceName ;
@@ -34,7 +34,7 @@ var FCKeditor = function( instanceName, width, height, toolbarSet, value )
 	this.BasePath		= '/fckeditor/' ;
 	this.CheckBrowser	= true ;
 	this.DisplayErrors	= true ;
-
+	
 	this.Config			= new Object() ;
 
 	// Events

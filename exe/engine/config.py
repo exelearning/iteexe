@@ -46,21 +46,14 @@ class Config:
         self.setting.read(self.exeDir+"/"+configFile)
  
         if sys.platform[:3] == "win":
-            from exe.engine.winshell import personal_folder
-            self.dataDir = personal_folder()
             self.exeDir  = os.path.dirname(self.exePath)
 
         elif sys.platform[:5] == "linux":
-            self.dataDir = os.environ["HOME"]
             self.exeDir  = "/usr/share/exe"
 
         else:
-            self.dataDir = os.environ["HOME"]
             self.exeDir  = os.path.dirname(self.exePath)
 
-        if not os.path.isdir(self.dataDir):
-            self.dataDir = tempfile.gettempdir()
-        
         if self.setting.has_option("system", "port"):
             self.port = self.setting.getint("system", "port")
         else:
@@ -82,11 +75,6 @@ class Config:
                 
         if not os.path.isdir(self.dataDir):
             self.dataDir = "/"    
-        #if self.setting.has_option("system", "exe-dir"):
-            #self.exeDir = self.setting.get("system", "exe-dir")
-        #else:
-            #self.exePath = os.path.abspath(sys.argv[0])
-            #self.exeDir  = os.path.dirname(self.exePath)
  
         self.styles = []
 
