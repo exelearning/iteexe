@@ -26,13 +26,46 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Node:
-    def __init__(self, configFile):
-        pass
+    def __init__(self):
+        self.id=[0]
+        self.parent=None
+        self.children=[]
+        self.content=""
+        self.title=""
 
-    def addNode(self, node):
-        pass
+    def createChild(self):
+        child=Node()
+        child.id=self.id +[len(self.children)]
+        child.parent=self
+        self.children.append(child)
+        return child
 
-    def addBlock(self, block):
-        pass
+    def moveChildPrev(self, childId):
+        childIndex = childId[-1]
+        
+        if childIndex > 0:
+            temp = self.children[childIndex - 1]
+            self.children[childIndex - 1]    = self.children[childIndex] 
+            self.children[childIndex - 1].id = temp.id
+            self.children[childIndex]        = temp
+            self.children[childIndex].id     = childId        
+            
+    def moveChildNext(self, childId):
+        childIndex = childId[-1]
+        
+        if childIndex < len(self.children)-1:
+            temp = self.children[childIndex+1]
+            self.children[childIndex + 1]     = self.children[childIndex] 
+            self.children[childIndex + 1].id  = temp.id
+            self.children[childIndex]         = temp
+            self.children[childIndex].id      = childId 
+            
+    def delChild(self, childId):
+        childIndex = childId[-1]
+        del(self.children[childIndex])
+        
+        for i in range(childIndex, len(self.children)):
+            self.children[i].id[-1] = i
+        
 
 # ===========================================================================

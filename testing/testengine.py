@@ -17,9 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+import unittest
 from exe.engine.packagestore import PackageStore, g_packageStore
 from exe.engine.package      import Package
-import unittest
+from exe.engine.node         import Node
 
 # ===========================================================================
 class TestENGINE(unittest.TestCase):
@@ -31,6 +32,22 @@ class TestENGINE(unittest.TestCase):
         self.assert_(package)
         self.assert_(package.name)
         
+    def testAddNode(self):
+        root = Node()
+        child0 = root.createChild()
+        print "child0 id:", child0.id
+        print "root id:", root.id
+        #self.assertEqual(child0.id[:-1], root.id)
+        child1 = root.createChild()
+        root.moveChildPrev(child0.id)        
+        root.moveChildPrev(child1.id)
+        print "child1 id:", child1.id
+        root.moveChildNext(child1.id)
+        print "child1 id:", child1.id
+        root.moveChildNext(child0.id)
+        root.delChild(child0.id)
+        print "child1 id:", child1.id
+
 
 if __name__ == "__main__":
     unittest.main()

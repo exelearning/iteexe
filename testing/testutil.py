@@ -49,8 +49,8 @@ class TestConfig(unittest.TestCase):
         barLog.error("Massachusetts")
 
         results = ["root ERROR software", "root CRITICAL you can", 
-                   "foo DEBUG distribute", "foo INFO is free", "foo ERROR and/or modify",
-                   "bar ERROR Massachusetts"]
+                   "foo DEBUG distribute", "foo INFO is free", 
+                   "foo ERROR and/or modify", "bar ERROR Massachusetts"]
         resultFile = open("test.log")
         i = 0
         for line in resultFile.readlines():
