@@ -25,7 +25,7 @@ from twisted.internet import reactor
 from twisted.web import server
 import os
 import sys
-from newpackage     import NewPackage
+from newpackagepage import NewPackagePage
 
 def main():
     if len(sys.argv) > 1:
@@ -38,7 +38,7 @@ def main():
         port = 8081
 
     
-    root = NewPackage()
+    root = NewPackagePage()
     
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)
