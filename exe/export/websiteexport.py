@@ -34,7 +34,14 @@ from exe.webui.webinterface import g_webInterface
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-
+identSpace = " "*4
+def isParent( sourceId, destId ):
+    """check if destId is a parent id of sourceId"""
+    result = 0
+    if sourceId.len()>=len( destId ) and sourceId[: len( destId ) ] == destId:
+        result = 1
+    return result
+    
 # ===========================================================================
 class WebsitePage(object):
     """
@@ -45,6 +52,7 @@ class WebsitePage(object):
         Initialize
         """
         self.node = node
+        self._package = package
         self.html = ""
 
     def save(self):
@@ -59,7 +67,51 @@ class WebsitePage(object):
         out = open(filename, "w")
         out.write(self.render())
         out.close()
-
+    
+    def printSibling( self, node ):
+        ##print out sibiling
+        html = ""
+        for child in node.children:
+            ##check if is direct parent
+            if self.node.id[ -1 ] == child.id:
+                html += spaceIdent * len( child.node ) + """<div ID="subnav">\n""" \
+#                         + printSibling( child )
+            elif isParent( self.node.id, child.id ):
+                html += printSibling( child )
+            else:
+                html += identSpace * len( child.id ) \
+                    + """<div><a href="%s.html">%s</a></div>""" % ( child.getIdStr(), child.title )
+        return html
+        
+    def leftNavibar( self ):
+        html = """<ul id="navlist">"""
+        nodeLength = len( self.node.id )
+        
+        for level1Node in self.node.package.root:
+            ##if is parent node, then print out its sibiling
+            ##if is current node, active and print its children
+            ##else, print title
+            
+            if level1Node.id == self.node.id:
+                ## print active tag
+                html += ident * ( nodeLength - 1 ) + """<div id="active">%s</div> \n""" \
+                                                        %( self.node.title )
+                ## print direct child title
+                if self.node.children != []:
+                    html += identSpace * nodeLength + """<div ID="subnav">\n"""
+                    for node in self.node.children:
+                        html += identSpace * ( nodeLength +1 ) + """<a href="%s.html">%s</a> \n""" \
+                                                                % ( node.getIdStr(), node.title )
+                    html += identSpace * nodeLength + "</div>\n"
+                
+            else:
+                html += """<div><a href="%s.html">%s</a></div> \n""" % ( level1Node.getIdStr(), level1Node.title )
+                if isParentNode( self.node.id, level1Node.id ):
+                    html += self.printSibling( level1Node )
+                
+        html += "</ul>"
+        return html
+        
     def render(self):
         """
         Returns an XHTML string rendering this page.
@@ -80,6 +132,7 @@ class WebsitePage(object):
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"navcontainer\">\n"
+        
         for child in self.node.children:
             html += "<a href=\"%s.html\">" % child.getIdStr()
             html += str(child.title) + "</a><br/>\n"
@@ -98,7 +151,7 @@ class WebsitePage(object):
 
         html += "</div>\n"
         html += common.footer()
-
+ 
         return html
 
         
@@ -136,7 +189,7 @@ class WebsiteExport(object):
         """
         Recursive function for exporting a node
         """
-        page = WebsitePage(node)
+        page = WebsitePage(node, self.package)
         page.save()
 
         for child in node.children:

@@ -277,7 +277,8 @@ class AudioElement( Element ):
                     return "%s audio file not copied" % filename
             
             ##else see if there is old file
-            elif request.args[ "old_%s" % self.id ][0] != "":
+            elif ( "old_" + self.id ) in request.args and \
+             request.args[ "old_%s" % self.id ][0] != "":
                 filename = request.args[ "old_"+self.id][0]
                
             return filename
@@ -492,6 +493,5 @@ pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaP
         elif fileExtension == ".swf":
             return swfString 
         else:
-            return mp3String
-
+            return ""
 # ===========================================================================
