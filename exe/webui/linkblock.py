@@ -20,37 +20,31 @@
 import sys
 import logging
 import gettext
+from exe.engine.node import Node
+from exe.webui.block import Block
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
+
 # ===========================================================================
-class Block(object):
+class LinkBlock(Block):
     """
-    Block is the base class for the classes which are responsible for 
-    rendering and processing Idevices in XHTML
+    LinkBlock can render nodes as links
     """
-    def __init__(self, edit=False):
-        self.edit = edit
+    def __init__(self, node):
+        self.node = node
+        self.url  = ""
+
+    def process(self, request):
+        self.url  = "http:/%s/%s" % (request.prepath[0], self.node.idStr())
 
     def render(self):
-        if self.edit:
-            return self.renderEdit()
-        else:
-            return self.renderView()
-
-    def renderEdit(self):
         """
-        Returns an XHTML string with the form element for editing this block
+        Returns an XHTML string for viewing this link
         """
-        log.error("renderEdit called directly")
-        return "ERROR Block.renderEdit called directly"
-
-    def renderView(self):
-        """
-        Returns an XHTML string for viewing this block
-        """
-        log.error("renderView called directly")
-        return "ERROR Block.renderView called directly"
-
+        html  = "<a href=\""+self.url+"\">"
+        html += self.node.title
+        html += "</a>\n"
+      
 # ===========================================================================
