@@ -19,40 +19,18 @@
 
 import sys
 import logging
-import gettext
-from exe.webui import common
-from exe.engine.node import Node
-from exe.webui.block import Block
-from exe.engine.packagestore import g_packageStore
+from exe.engine.idevice import Idevice
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
-
 
 # ===========================================================================
-class LinkBlock(Block):
+class FreeTextIdevice(Idevice):
     """
-    LinkBlock can render nodes as links
+    FreeTextIdevice: just has a block of text
     """
-    def __init__(self, node):
-        Block.__init__(self, node.parent, node.getIdStr(), mode=Block.View)
-        self.node    = node
-        self.package = None
+    def __init__(self, content=""):
+        Idevice.__init__(self)
+        self.content = content
 
-    def process(self, request):
-        package       = g_packageStore.getPackage(request.prepath[0])
 
-        if "action" in request.args:
-            if request.args["action"][0] == "changeNode2":
-                nodeId = [int(x) for x in request.args["object"][0].split(".")]
-                package.currentNode = package.findNode(nodeId)
-
-    def render(self):
-        """
-        Returns an XHTML string for viewing this link
-        """
-        html  = common.submitLink("changeNode2", self.node.getIdStr(), self.node.getTitle())
-        html += "<br/>\n"
-        return html
-      
 # ===========================================================================

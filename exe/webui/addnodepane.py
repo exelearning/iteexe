@@ -62,18 +62,18 @@ class AddNodePane(object):
         """
         log.debug("render")
         
-        html = common.submitLink(_("Add ") + self.package.levelNames[0], 
-                                 "AddLevel1Node", "") + "<br/>\n" 
+        html = common.submitLink("AddLevel1Node", "", 
+                                 _("Add ") + self.package.levelNames[0]) + "<br/>\n" 
        
         if len(self.package.currentNode.id) > 1:
-            html += common.submitLink(_("Add ") + self.package.levelNames[1], 
-                                      "AddLevel2Node", "") + "<br/>\n"
+            html += common.submitLink("AddLevel2Node", "",
+                                      _("Add ") + self.package.levelNames[1]) + "<br/>\n" 
         else:
             html += _("Add ") + self.package.levelNames[1] + "<br/>\n"
             
         if len(self.package.currentNode.id) > 2:
-            html += common.submitLink(_("Add ") + self.package.levelNames[2], 
-                                      "AddLevel3Node", "") + "<br/>\n"
+            html += common.submitLink("AddLevel3Node", "",
+                                      _("Add ") + self.package.levelNames[2]) + "<br/>\n" 
         else:
             html += _("Add ") + self.package.levelNames[2] + "<br/>\n"
             

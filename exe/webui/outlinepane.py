@@ -49,7 +49,7 @@ class OutlinePane(object):
             elif request.args["action"][0] == "addChild":
                 nodeId = request.args["object"][0]
                 parent = self.package.findNode(nodeId)
-                self.package.currentNode = parent.createChild()
+                parent.createChild()
                 
 
     def getChildrenTitles(self, node):
@@ -62,13 +62,13 @@ class OutlinePane(object):
         if node == self.package.currentNode:
             html += "<b>" + node.getTitle() + "</b>"
         else:
-            html += common.submitLink(node.getTitle(), "changeNode", 
-                                      node.getIdStr())
+            html += common.submitLink("changeNode", node.getIdStr(), 
+                                      node.getTitle())
 
         html += " "
         childLevel = self.package.levelName(len(node.id) - 1);
-        html += common.submitLink(_("Add ")+childLevel, 
-                                  "addChild", node.getIdStr(), "action")      
+        html += common.submitLink("addChild", node.getIdStr(), 
+                                  _("Add ")+childLevel, "action")      
 
         if len(node.children) > 0:
             html += "<ul>\n"
@@ -94,8 +94,8 @@ class OutlinePane(object):
         if self.package.draft == self.package.currentNode:
             html += "<b>" + self.package.draft.title + "</b>"
         else:
-            html += common.submitLink(self.package.draft.title, "changeNode", 
-                                      self.package.draft.getIdStr())      
+            html += common.submitLink("changeNode", self.package.draft.getIdStr(),
+                                      self.package.draft.title)      
         html += "</li>\n"
         html += "<li>" 
         html += self.getChildrenTitles(self.package.root)

@@ -40,12 +40,18 @@ class Block(object):
         self.mode       = mode
 
     def process(self, request):
-        if "done"+self.id in request.args:
-            self.processDone(request)
-        elif "edit"+self.id in request.args:
-            self.processEdit(request)
-        elif "delete"+self.id in request.args:
-            self.processDelete(request)
+        if "object" in request.args and request.args["object"][0] == self.id:
+            if request.args["action"][0] == "done":
+                self.processDone(request)
+
+            elif request.args["action"][0] == "edit":
+                self.processEdit(request)
+
+            elif request.args["action"][0] == "delete":
+                self.processDelete(request)
+
+            elif request.args["action"][0] == "move":
+                self.processMove(request)
 
     def processDone(self, request):
         self.mode = Block.View
@@ -54,6 +60,9 @@ class Block(object):
         self.mode = Block.Edit
 
     def processDelete(self, request):
+        self.mode = Block.Hidden
+
+    def processMove(self, request):
         self.mode = Block.Hidden
 
     def render(self):
@@ -74,10 +83,22 @@ class Block(object):
         return "ERROR Block.renderEdit called directly"
 
     def renderEditButtons(self):
-        html  = common.submitButton("done"+self.id,   _("Done"))
-        html += common.submitButton("delete"+self.id, _("Delete"))
+        html  = common.submitLink("done",   self.id, _("Done"))
+        html += common.submitLink("delete", self.id, _("Delete"))
+        options  = [_("---Move To---")]
+        options += self.__getNodeOptions(self.parentNode.package.draft)
+        options += self.__getNodeOptions(self.parentNode.package.root)
+        html += common.select("move", self.id, options)
         return html
 
+    # TODO We should probably get this list from elsewhere rather than
+    # building it up for every block
+    def __getNodeOptions(self, node):
+        options = [node.getIdStr()+": "+node.getTitle()]
+        for child in node.children:
+            options += self.__getNodeOptions(child)
+        return options
+            
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
@@ -86,7 +107,7 @@ class Block(object):
         return "ERROR Block.renderView called directly"
 
     def renderViewButtons(self):
-        html  = common.submitButton("edit"+self.id, _("Edit"))
+        html  = common.submitLink("edit", self.id, _("Edit"))
         return html
 
 # ===========================================================================

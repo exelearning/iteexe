@@ -20,19 +20,19 @@
 import sys
 import logging
 import gettext
-from exe.webui                import common
-from exe.webui.block          import Block
-from exe.engine.simpleidevice import SimpleIdevice
-from exe.webui.blockfactory   import g_blockFactory
+from exe.webui                  import common
+from exe.webui.block            import Block
+from exe.engine.freetextidevice import FreeTextIdevice
+from exe.webui.blockfactory     import g_blockFactory
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
 # ===========================================================================
-class SimpleBlock(Block):
+class FreeTextBlock(Block):
     """
-    SimpleBlock can render and process SimpleIdevices as XHTML
+    FreeTextBlock can render and process FreeTextIdevices as XHTML
     """
     def __init__(self, parentNode, idevice):
         if idevice.edit:
@@ -44,8 +44,6 @@ class SimpleBlock(Block):
 
     def process(self, request):
         Block.process(self, request)
-        if "title"+self.id in request.args:
-            self.idevice.title = request.args["title"+self.id][0]
         if "content"+self.id in request.args:
             self.idevice.content = request.args["content"+self.id][0]
 
@@ -70,14 +68,12 @@ class SimpleBlock(Block):
         self.parentNode.deleteIdevice(self.id)
         self.parentNode = node
 
+
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div>\n"
-        html += common.textInput("title"+self.id, 
-                                 self.idevice.title)
-        html += "<br/>\n"
         html += common.textArea("content"+self.id, self.idevice.content)
         html += self.renderEditButtons()
         html += "</div>\n"
@@ -88,12 +84,11 @@ class SimpleBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div>\n"
-        html += "<b>" + self.idevice.title + "</b><br/>\n"
         html += self.idevice.content
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
 
-g_blockFactory.registerBlockType(SimpleBlock, SimpleIdevice)
+g_blockFactory.registerBlockType(FreeTextBlock, FreeTextIdevice)
 
 # ===========================================================================

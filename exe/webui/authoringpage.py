@@ -43,10 +43,10 @@ class AuthoringPage(Resource):
     def __init__(self):
         Resource.__init__(self)
         self.outlinePane   = OutlinePane()
-        #self.addNodePane   = AddNodePane()
         self.authoringPane = AuthoringPane()
         self.idevicePane   = IdevicePane()
         self.menuPane      = MenuPane()
+
 
     def getChild(self, name, request):
         if name == '':
@@ -59,18 +59,17 @@ class AuthoringPage(Resource):
         """Called for all requests to this object"""
         log.debug("render_GET" + repr(request.args))
         
-        package       = g_packageStore.getPackage(request.prepath[0])
+        package = g_packageStore.getPackage(request.prepath[0])
 
         # Processing
         self.idevicePane.process(request)
         self.authoringPane.process(request)
-        #self.addNodePane.process(request, package)
         self.outlinePane.process(request, package)
         self.menuPane.process(request)
         
         # Rendering
         html  = common.header()
-        html += common.banner(_("eXe: ")+package.currentNode.getTitle())
+        html += common.banner()
 
 #        html += "<pre>"+repr(request.args)+"</pre>\n"
 #        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
@@ -80,9 +79,8 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
-        html += self.outlinePane.render()
-        #html += self.addNodePane.render()
         html += self.idevicePane.render(package.currentNode)
+        html += self.outlinePane.render()
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
         html += common.footer()

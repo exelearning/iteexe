@@ -46,26 +46,19 @@ class PackageStore:
         log.debug("createPackage: name=" + repr(name))
 
         if name is None:
-            #filename = tempfile.mkstemp('.pkg', 'New-', '.')[1]
             fileList = os.listdir(".")
-            isDoing = True
-            i = 1
+            i    = 1
+            name = "package" + str(i)
             
-            while isDoing:
+            while name+".pkg" in fileList or name in self.loaded:
+                i   += 1                    
                 name = "package" + str(i)
-                if name+".pkg" in fileList or name in self.loaded:
-                    i += 1                    
-                else:                        
-                    isDoing = False
             
-            filename = "package" + str(i) + ".pkg"
-               
-            name = os.path.splitext(os.path.basename(filename))[0]
-
         package = Package(name)
         self.loaded[package.name] = package
 
         return package
+
 
     def getPackage(self, name):
         """
@@ -73,6 +66,7 @@ class PackageStore:
         """
         return self.loaded[name]
     
+
     def addPackage(self, package):
         """
         Add a package

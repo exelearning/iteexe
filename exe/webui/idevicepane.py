@@ -21,13 +21,14 @@ import sys
 import logging
 import gettext
 from exe.webui import common
-from exe.engine.simpleidevice import SimpleIdevice
-
-#FOR TESTING
-from exe.webui.simpleblock import SimpleBlock
+from exe.engine.simpleidevice   import SimpleIdevice
+from exe.engine.freetextidevice import FreeTextIdevice
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
+
+from exe.webui.simpleblock   import SimpleBlock
+from exe.webui.freetextblock import FreeTextBlock
 
 
 # ===========================================================================
@@ -46,7 +47,10 @@ class IdevicePane(object):
         """
         if ("action" in request.args and 
             request.args["action"][0] == "AddIdevice"):
-            self.node.idevices.append(SimpleIdevice())
+            if request.args["object"][0] == "FreeTextIdevice":
+                self.node.idevices.append(FreeTextIdevice())
+            elif request.args["object"][0] == "SimpleIdevice":
+                self.node.idevices.append(SimpleIdevice())
             
             
     def render(self, node):
@@ -58,8 +62,11 @@ class IdevicePane(object):
         self.node = node
 
         html  = "<div> \n"
-        html += common.submitLink(_("Simple iDevice"), 
-                                  "AddIdevice", "SimpleIdevice")
+        html += common.submitLink("AddIdevice", "FreeTextIdevice",
+                                  _("Free Text iDevice"))
+        html += "<br/>\n"
+        html += common.submitLink("AddIdevice", "SimpleIdevice", 
+                                  _("Simple iDevice"))
         html += "</div> \n"
 
         return html

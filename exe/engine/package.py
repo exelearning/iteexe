@@ -22,6 +22,7 @@ import types
 import logging
 import gettext
 from exe.engine.node import Node
+from exe.engine.freetextidevice import FreeTextIdevice
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -39,6 +40,7 @@ class Package:
         self.draft       = Node(self)
         self.draft.id    = [0]
         self.draft.title = _("Draft")
+        self.draft.idevices.append(FreeTextIdevice())
         self.currentNode = self.draft
         self.root        = Node(self)
         self.root.id     = [1]

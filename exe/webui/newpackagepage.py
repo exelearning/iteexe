@@ -36,8 +36,8 @@ _   = gettext.gettext
 
 class NewPackagePage(Resource):
     """
-    NewPackagePage is the first screen the user loads.  It doesn't show anything
-    it just redirects the user to a new package.
+    NewPackagePage is the first screen the user loads.  It doesn't show
+    anything it just redirects the user to a new package.
     """
     
     def __init__(self):
@@ -50,24 +50,31 @@ class NewPackagePage(Resource):
             return Resource.getChild(self, name, request)
 
     def render_GET(self, request):
-        """Create a new package and redirect the webrowser to the URL for it"""
+        """
+        Create a new package and redirect the webrowser to the URL for it
+        """
         log.debug("render_GET" + repr(request.args))
 
         # Create new package
         package = g_packageStore.createPackage()
         log.info("Creating a new package name="+ package.name)
+
         authoringPage = AuthoringPage()
         self.putChild(package.name, authoringPage)
+
         propertiesPage = PropertiesPage()
         authoringPage.putChild("properties", propertiesPage)
+
         savePage = SavePage()
         authoringPage.putChild("save", savePage)
+
         loadpage = LoadPage()
         authoringPage.putChild("load", loadpage)        
                      
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
+        html += "<meta http-equiv=\"content-type\" content=\"text/html;"
+        html += " charset=UTF-8\">\n";
         html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
         html += package.name
         html += "\">\n"

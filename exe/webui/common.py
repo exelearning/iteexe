@@ -28,8 +28,7 @@ _   = gettext.gettext
 
 
 def header():
-    
-    html = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
+    html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
     html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
     html += "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -38,7 +37,8 @@ def header():
     html += genJavascript()
     html += "<head>\n"
     html += "<title>"+_("eXe")+"</title>\n"
-    html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
+    html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+    html += " charset=UTF-8\">\n";
     html += "</head>\n"
     return html
 
@@ -97,15 +97,33 @@ function submitLink(action, object)
 """
     return html
 
-def submitLink(name, action, object, class_=""):
+def submitLink(action, object, value, class_=""):
     html  = "<a "
     if class_ != "":
         html += "class=\""+class_+"\" "
     html += "href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object + "')\" >"
-    html += name
+    html += "', '" + object + "');\" >"
+    html += value
     html += "</a>\n"
     return html
+
+def select(action, object, options, selection=None):
+    html  = "<select onchange=\"submitLink('" + action
+    html += "', '" + object + "');\" "
+    html += "name=\""+action+object+"\" >"
+
+    for option in options:
+        if selection == option:
+            selected = "selected"
+        else:
+            selected = ""
+
+        html += " <option "+selected+">"+option+"</option>\n"
+
+    html += "</select>\n"
+    return html
+
+# ===========================================================================
 
 if __name__ == "__main__":
     print header()
