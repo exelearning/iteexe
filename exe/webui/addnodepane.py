@@ -45,12 +45,12 @@ class AddNodePane(object):
                 self.package.currentNode = self.package.root.createChild()
                 
             if request.args["action"][0] == "AddLevel2Node":
-                parentId   = self.package.currentNode.id[:1]
+                parentId   = self.package.currentNode.id[:2]
                 parentNode = self.package.findNode(parentId)
                 self.package.currentNode = parentNode.createChild()
                 
             if request.args["action"][0] == "AddLevel3Node":
-                parentId   = self.package.currentNode.id[:2]
+                parentId   = self.package.currentNode.id[:3]
                 parentNode = self.package.findNode(parentId)
                 self.package.currentNode = parentNode.createChild()
 

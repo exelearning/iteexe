@@ -45,7 +45,7 @@ class Package:
     def findNode(self, nodeId):
         log.debug("findNode", nodeId)
         node  = self.root
-        level = 0
+        level = 1
 
         while level < len(nodeId):
             if nodeId[level] < len(node.children):
