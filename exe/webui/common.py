@@ -136,7 +136,7 @@ def submitImage(action, object_, imageFile, title=""):
 def image(imageFile):
     """returns the XHTML for an image"""
     html  = "<img src=\"/images/"+imageFile+"\" "
-    html += " border=\"0\" />"
+    html += " align=\"middle\" border=\"0\" />"
     return html
 
 def select(action, object_, options, selection=None):
