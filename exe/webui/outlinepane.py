@@ -48,32 +48,32 @@ class OutlinePane(object):
                 if node is not None:
                     self.package.currentNode = node
 
-            elif request.args["action"][0] == "addChild":
+            elif request.args["action"][0] == "addChildNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.createChild()
 
-            elif request.args["action"][0] == "delete":
+            elif request.args["action"][0] == "deleteNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.delete()
 
-            elif request.args["action"][0] == "movePrev":
+            elif request.args["action"][0] == "movePrevNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.movePrev()
 
-            elif request.args["action"][0] == "moveNext":
+            elif request.args["action"][0] == "moveNextNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.moveNext()
 
-            elif request.args["action"][0] == "promote":
+            elif request.args["action"][0] == "promoteNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.promote()
 
-            elif request.args["action"][0] == "demote":
+            elif request.args["action"][0] == "demoteNode":
                 node = self.package.findNode(nodeId)
                 if node is not None:
                     node.demote()
@@ -94,7 +94,7 @@ class OutlinePane(object):
         html += "<li>" 
         html += "<div id=\"node_actions\">" 
         html += self.__renderNode(self.package.root)
-        html += common.submitImage("addChild", 
+        html += common.submitImage("addChildNode", 
                                    self.package.root.getIdStr(), 
                                    "stock-new.png")
         html += self.__renderChildren(self.package.root)
@@ -141,18 +141,18 @@ class OutlinePane(object):
 #        html += common.submitLink("addChild", node.getIdStr(), 
 #                                  _("Add ")+childLevel, "action")      
         id = node.getIdStr()
-        html += common.submitImage("addChild", id, "stock-new.png",
+        html += common.submitImage("addChildNode", id, "stock-new.png",
                                    title=_("Add ")+childLevel )
-        html += common.submitImage("delete",   id, "stock-cancel.png",
+        html += common.submitImage("deleteNode",   id, "stock-cancel.png",
                                    title=_("Delete"))
-        html += common.submitImage("promote",  id, "stock-goto-top.png", 
+        html += common.submitImage("promoteNode",  id, "stock-goto-top.png", 
                                    title=_("Promote"), enabled=(len(node.id) > 2))
-        html += common.submitImage("demote",   id, "stock-goto-bottom.png",
+        html += common.submitImage("demoteNode",   id, "stock-goto-bottom.png",
                                    title=_("Demote"), enabled=(len(node.id) >= 2 and 
                                             node.id[-1] > 0))
-        html += common.submitImage("movePrev", id, "stock-go-up.png",
+        html += common.submitImage("movePrevNode", id, "stock-go-up.png",
                                    title=_("Move Up"), enabled=(node.id[-1] > 0))
-        html += common.submitImage("moveNext", id, "stock-go-down.png",
+        html += common.submitImage("moveNextNode", id, "stock-go-down.png",
                                    title=_("Move Down"), enabled=(node.id[-1] < 
                                             len(node.parent.children)-1))
         return html
