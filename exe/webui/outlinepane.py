@@ -67,8 +67,12 @@ class OutlinePane(object):
 
         html += " "
         childLevel = self.package.levelName(len(node.id) - 1);
+        if len(node.id) <= len(self.package.levelNames) :
+            addAction = _("Add")+" "+childLevel
+        else:
+            addAction = _("Add")
         html += common.submitLink("addChild", node.getIdStr(), 
-                                  _("Add ")+childLevel, "action")      
+                                  addAction, "action")      
 
         if len(node.children) > 0:
             html += "<ul>\n"

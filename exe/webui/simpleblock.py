@@ -64,8 +64,8 @@ class SimpleBlock(Block):
 
     def processMove(self, request):
         Block.processDelete(self, request)
-        selected = request.args["move"+self.id][0]
-        nodeId   = selected.split(":", 1)[0]
+        nodeId = request.args["move"+self.id][0]
+#        nodeId   = selected.split(":", 1)[0]
         node     = self.parentNode.package.findNode(nodeId)
         node.idevices.append(self.idevice)
         oldIndex = self.parentNode.findIdevice(self.id)

@@ -114,7 +114,7 @@ class Block(object):
         html += common.submitImage("delete",   self.id, "stock-cancel.png")
         html += common.submitImage("movePrev", self.id, "stock-go-up.png")
         html += common.submitImage("moveNext", self.id, "stock-go-down.png")
-        options  = [_("---Move To---")]
+        options  = [(_("---Move To---"),""),]
         options += self.__getNodeOptions(self.parentNode.package.draft)
         options += self.__getNodeOptions(self.parentNode.package.root)
         html += common.select("move", self.id, options)
@@ -123,7 +123,8 @@ class Block(object):
     # TODO We should probably get this list from elsewhere rather than
     # building it up for every block
     def __getNodeOptions(self, node):
-        options = [node.getIdStr()+": "+node.getTitle()]
+        options = [("&nbsp;&nbsp;&nbsp;"*(len(node.id)-1) + node.getTitle(), 
+                   node.getIdStr(),)]
         for child in node.children:
             options += self.__getNodeOptions(child)
         return options

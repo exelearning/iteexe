@@ -32,7 +32,8 @@ body {
 	  -moz-border-radius: 6px;}
 				
 #outline ul
-	{list-style-type: decimal;}
+	{list-style-type: none;
+	margin-left: -20px;}
 
 #outline li  a.action
 	{font-size: 10px;
@@ -52,4 +53,9 @@ text-decoration: none;
 
 #outline a:hover
 {text-decoration: underline;}	
-		
+
+/* authoring pane */
+
+#authoring_pane {
+	margin-left: 216px;
+	}		

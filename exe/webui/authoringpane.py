@@ -56,11 +56,13 @@ class AuthoringPane(object):
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
         self.addBlocks(self.topNode)
-        html  = ""
+        html = "<!-- start authoring pane -->\n"
+	html  += "<div id=\"authoring_pane\">\n"
 
         for block in self.blocks:
             html += block.render()
-
+	html += "</div>\n"
+	html += "<!-- end authoring pane -->\n"
         return html
         
 

@@ -120,13 +120,15 @@ def select(action, object, options, selection=None):
     html += "', '" + object + "');\" "
     html += "name=\""+action+object+"\" >"
 
-    for option in options:
+    for option, value in options:
         if selection == option:
             selected = "selected"
         else:
             selected = ""
 
-        html += " <option "+selected+">"+option+"</option>\n"
+        html += " <option value=\""+value+"\""+selected+">"
+        html += option
+        html += "</option>\n"
 
     html += "</select>\n"
     return html

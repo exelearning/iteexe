@@ -79,6 +79,6 @@ class Package:
         if level < len(self.levelNames):
             return self.levelNames[level]
         else:
-            return _("Child")
+            return _("#")
             
 # ===========================================================================

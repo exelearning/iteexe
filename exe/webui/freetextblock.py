@@ -65,8 +65,8 @@ class FreeTextBlock(Block):
 
     def processMove(self, request):
         Block.processMove(self, request)
-        selected = request.args["move"+self.id][0]
-        nodeId   = selected.split(":", 1)[0]
+        nodeId = request.args["move"+self.id][0]
+#        nodeId   = selected.split(":", 1)[0]
         node     = self.parentNode.package.findNode(nodeId)
         node.idevices.append(self.idevice)
 
