@@ -106,7 +106,7 @@ def submitButton(name, value, enabled=True):
     html += "/>\n"
     return html
 
-def submitLink(action, object_, value, class_="",isChanged=0):
+def submitLink(action, object_, value, class_="", isChanged=0):
     """
     Adds a link which will trigger the javascript needed to
     post a form with the action and object passed in the args

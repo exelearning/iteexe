@@ -32,7 +32,6 @@ from twisted.web import static
 import os
 import os.path
 import sys
-import pickle
 from exe.engine.config import Config
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.webinterface   import g_webInterface

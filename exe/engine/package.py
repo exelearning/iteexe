@@ -96,7 +96,7 @@ class Package(jelly.Jellyable):
     def save(self, path=None):
         """Save package to disk"""
         if not path:
-             path = g_webInterface.config.getDataDir()
+            path = g_webInterface.config.getDataDir()
              
         log.debug("data directory: " + path)
         self.isChanged = 0
@@ -105,6 +105,7 @@ class Package(jelly.Jellyable):
         outFile = open(fileName, 'wb')
         outFile.write(banana.encode(jelly.jelly(self)))
         outFile.close()      
+
 
     def load(path):
         """Load package from disk, returns a package"""

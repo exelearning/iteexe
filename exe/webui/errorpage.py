@@ -25,7 +25,6 @@ import logging
 import gettext
 from exe.webui import common
 from twisted.web.resource import Resource
-from twisted.web.error    import ForbiddenResource
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -44,13 +43,13 @@ class ErrorPage(Resource):
         self.errMessage = errMessage
         
     def getChild(self, name, request):
-       """
-       Get the child page for the name given
-       """
-       if name == '':
-           return self
-       else:
-           return Resource.getChild(self, name, request)
+        """
+        Get the child page for the name given
+        """
+        if name == '':
+            return self
+        else:
+            return Resource.getChild(self, name, request)
 
 
     def render_GET(self, request):
@@ -58,10 +57,8 @@ class ErrorPage(Resource):
         Create a new package and redirect the webrowser to the URL for it
         """
         log.info("render_GET" + repr(request.args))
-       
                      
         # Rendering
-                   
         html = "<html><body>" 
         html += "<b>" + self.errMessage + "</b>"
         html += common.footer()

@@ -85,7 +85,8 @@ class MultichoiceBlock(Block):
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
-        html += "</th><th align = \"left\">%s<br/>%s" % (_("Correct"), _("Option"))
+        html += "</th><th align = \"left\">" + _("Correct")
+        html += "<br/>" + _("Option")
         html += common.elementInstruc("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Feedback")
         html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)

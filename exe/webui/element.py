@@ -23,10 +23,9 @@ import logging
 from exe.webui                  import common
 from exe.webui.webinterface     import g_webInterface
 from exe.engine.packagestore    import g_packageStore
-from os                         import chdir, getcwd, mkdir
+from os                         import mkdir
 from os.path                    import exists, splitext, basename, join, sep
 from  shutil                    import copyfile
-#from PIL import Image
 
 log = logging.getLogger(__name__)
 
@@ -40,13 +39,13 @@ def createElement(elementType, name, class_, blockId, instruc):
     elif elementType == "TextArea":
         return TextAreaElement(name, class_, blockId, instruc)
     elif elementType == "Photo":
-        return ImageElement(name, class_, blockId, instruc )
+        return ImageElement(name, class_, blockId, instruc)
     elif elementType == "Audio":
-        return AudioElement(name, class_, blockId, instruc )
+        return AudioElement(name, class_, blockId, instruc)
     return None
 
 def getUploadedFileDir():
-    return  join( g_webInterface.config.getExeDir(), "images" )
+    return  join(g_webInterface.config.getExeDir(), "images")
     
     
 # ===========================================================================
@@ -134,74 +133,72 @@ class TextAreaElement(Element):
 
 
 # ===========================================================================
-# ===========================================================================
-class ImageElement( Element ):
+class ImageElement(Element):
     """
     for image element processing
     """
-    def __init__( self, name, class_, blockId, instruc, titleMessage="Image",\
-        width="200px", height="150px", border="0" ):
-        
-        Element.__init__( self, name, class_, blockId , instruc )
+    def __init__(self, name, class_, blockId, 
+                 instruc, titleMessage="Image",
+                 width="200px", height="150px", border="0"):
+        """ Initialize """
+        Element.__init__(self, name, class_, blockId , instruc)
         self.titleMessage = titleMessage
         self.width = width
         self.height = height
         self.border = border
         
         
-    def process( self, request ):
+    def process(self, request):
         """
         process audio field information from http request
         """
         
         fileExtension = ""
         filename = ""
-        ##get the package name,store uploaded file into that package subdirectory
-        packageName = request.prepath[0]
-        
-        if packageName=="":
+
+        # get the package name,store uploaded file into that package
+        # subdirectory packageName = request.prepath[0]
+        if packageName == "":
             errmsg = "package not specified while processing audio element"
-            log.debug( errmsg )
+            log.debug(errmsg)
             return errmsg
             
         if self.id in request.args:            
             
             #if file is choosen#
-            if ( self.id + "_filename" ) in request.args and \
-                request.args[ self.id + "_filename"][0].strip() != "": 
+            if ((self.id + "_filename") in request.args and 
+                request.args[ self.id + "_filename"][0].strip() != ""): 
                 
                 ##get the audio file extension
-                fileExtension = splitext( basename( request.args[ self.id + \
-                "_filename" ][0] ) )[1].lower()
+                fileExtension = splitext(basename(request.args[ self.id + \
+                "_filename" ][0]))[1].lower()
                 
                 ##assign path + id + fileExtension (.xxx) to filename
                 filename =   packageName  + sep + self.id +  fileExtension 
                 
                 ##use this image data directory to store file, a mock up way
-                imgDir = getUploadedFileDir( )
+                imgDir = getUploadedFileDir()
                 
                 ##check if the image directory for this package exist or not
-                if not exists( join ( imgDir, packageName ) ):
+                if not exists(join (imgDir, packageName)):
                     try:
-                        mkdir( join( imgDir, packageName )  )
+                        mkdir(join(imgDir, packageName) )
                     except OSError:
                         errmsg = "Error while creating audio directory: %s" \
-                                          % ( join ( imgDir, packageName ) )
-                        log.debug( errmsg )
+                                          % (join (imgDir, packageName))
+                        log.debug(errmsg)
                         return errmsg
                         
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile( request.args[ self.id + "_filename" ][0], \
-                                join( imgDir,  filename ) )
+                    copyfile(request.args[ self.id + "_filename" ][0], \
+                                join(imgDir,  filename))
                 except OSError:
                     return "%s image file not copied" % filename
-                ##resize image file
-                #im = Image.open( filename )
             
             ##if file not chosen, then see if there is old file
-            elif "old_%s"%self.id in request.args and \
-                    request.args[ "old_%s" % self.id ][0] != "":
+            elif ("old_%s"%self.id in request.args and 
+                    request.args[ "old_%s" % self.id ][0] != ""):
                 filename = request.args[ "old_"+self.id][0]
                 
             return filename
@@ -209,35 +206,37 @@ class ImageElement( Element ):
             return None                
         
         
-    def renderEdit( self, filename ):
-       
+    def renderEdit(self, filename):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
         imgDir = getUploadedFileDir()
         
         html = ""        
         ## if file exists=>update, else, add
-        if filename.strip()!="" and exists( join( imgDir, filename ) ):
+        if filename.strip() != "" and exists(join(imgDir, filename)):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>:<br /><img src="images/%s" \
             class="%s" width="%s" height="%s" border="%s" /><br />\n""" \
-            %(  self.titleMessage, filename, self.class_, self.width, \
-              self.height, self.border )
+            %( self.titleMessage, filename, self.class_, self.width, \
+              self.height, self.border)
               
             html += """<strong>Change to</strong>:<input type="file" name="%s"\
                  onchange="document.contentForm.%s_filename.value=this.value"/>\
-                    <br />\n"""  % (  self.id, self.id )
+                    <br />\n"""  % ( self.id, self.id)
                     
             html += """<input type="hidden" name="old_%s" value="%s" />""" \
-                        % ( self.id, filename )
+                        % (self.id, filename)
         else:     
             ##add
             html += """<strong>%s</strong>:<input type="file" name="%s"  \
             onchange="document.contentForm.%s_filename.value=this.value"/> \
-            <br />\n""" % ( self.titleMessage, self.id, self.id )
+            <br />\n""" % (self.titleMessage, self.id, self.id)
         
-        html += """<input type="hidden" name="%s_filename">""" %( self.id )
+        html += """<input type="hidden" name="%s_filename">""" %(self.id)
         return html
         
-    def renderView( self, filename ):
+    def renderView(self, filename):
         """
         return the xhtml component of this image element
         """
@@ -245,71 +244,76 @@ class ImageElement( Element ):
         if filename.strip() != "":
             return """<img src="images/%s" class="%s" width="%s" height="%s"\
             border="%s" align="left" style="margin-right: 5px;" />\n"""\
-            %( filename.replace( "\\", "/") , self.class_, self.width, self.height, self.border )
+            % (filename.replace("\\", "/") , 
+               self.class_, 
+               self.width, 
+               self.height, 
+               self.border)
         else:
             return ""
         
 # ===========================================================================
-class AudioElement( Element ):
+class AudioElement(Element):
     """
     for audio element processing
     """
     
-    def __init__( self, name, class_, blockId, instruc, titleMessage="Audio File" ):
+    def __init__(self, name, class_, blockId, 
+                 instruc, titleMessage="Audio File"):
         """initial function for audio element
         """
-        Element.__init__( self, name, class_, blockId, instruc )
+        Element.__init__(self, name, class_, blockId, instruc)
         self.titleMessage = titleMessage
         
-    def process( self, request ):
+    def process(self, request):
         """
         process audio field information from http request
         """
         
         fileExtension = ""
         filename = ""
-        ##get the package name,store uploaded file into that package subdirectory
-        packageName = request.prepath[0]
+        # get the package name,store uploaded file into that package
+        # subdirectory packageName = request.prepath[0]
         
         if packageName=="":
             errmsg = "package not specified while processing audio element"
-            log.debug( errmsg )
+            log.debug(errmsg)
             return errmsg
             
         if self.id in request.args:            
             
             #if file is choosen#
-            if ( self.id + "_filename" ) in request.args and \
+            if (self.id + "_filename") in request.args and \
                 request.args[ self.id + "_filename"][0].strip() != "": 
                 
                 ##get the audio file extension
-                fileExtension = splitext( basename( request.args[ self.id + \
-                "_filename" ][0] ) )[1].lower()
+                fileExtension = splitext(basename(request.args[ self.id + \
+                "_filename" ][0]))[1].lower()
                 
                 ##assign path + id + fileExtension (.xxx) to filename
                 filename =   packageName  + sep + self.id +  fileExtension 
                 
                 ##use this image data directory to store file, a mock up way
-                imgDir = getUploadedFileDir( )
+                imgDir = getUploadedFileDir()
                 
                 ##check if the image directory for this package exist or not
-                if not exists( join ( imgDir, packageName ) ):
+                if not exists(join (imgDir, packageName)):
                     try:
-                        mkdir( join( imgDir, packageName )  )
+                        mkdir(join(imgDir, packageName) )
                     except OSError:
                         errmsg = "Error while creating audio directory: %s" \
-                                          % ( join ( imgDir, packageName ) )
-                        log.debug( errmsg )
+                                          % (join (imgDir, packageName))
+                        log.debug(errmsg)
                         return errmsg
                         
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile( request.args[ self.id + "_filename" ][0], \
-                                join( imgDir,  filename ) )
+                    copyfile(request.args[ self.id + "_filename" ][0], \
+                                join(imgDir,  filename))
                 except OSError:
                     return "%s image file not copied" % filename
                 ##resize image file
-                #im = Image.open( filename )
+                #im = Image.open(filename)
             
             ##if file not chosen, then see if there is old file
             elif "old_%s"%self.id in request.args and \
@@ -320,30 +324,30 @@ class AudioElement( Element ):
         else:
             return None                
             
-    def renderEdit( self, filename ):
+    def renderEdit(self, filename):
  
         ## if file exists=>update, else, add
         imgDir = getUploadedFileDir()
         html = ""
-        if filename.strip()!="" and exists( join( imgDir, filename ) ):
+        if filename.strip()!="" and exists(join(imgDir, filename)):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>: %s<br />\n""" \
-                    %(  self.titleMessage, self.renderView( filename ) )
+                    %( self.titleMessage, self.renderView(filename))
             html += """<strong>Change to</strong>:<input type="file" name="%s"\
                   onchange="document.contentForm.%s_filename.value=this.value"/> \
-                    <br />\n""" % (  self.id, self.id )
+                    <br />\n""" % ( self.id, self.id)
             html += """<input type=hidden name="old_%s" value="%s" />"""\
-                         %( self.id, filename )
+                         %(self.id, filename)
         else:     
             ##add
             html += """<strong>%s</strong>:<input type="file" name="%s" \
              onchange="document.contentForm.%s_filename.value=this.value"/>\
-              <br />\n""" % ( self.titleMessage, self.id, self.id )
-        html += """<input type="hidden" name="%s_filename">""" %( self.id )
+              <br />\n""" % (self.titleMessage, self.id, self.id)
+        html += """<input type="hidden" name="%s_filename">""" %(self.id)
         
         return html
                 
-    def renderView( self, filename ):
+    def renderView(self, filename):
         """
         dataDir = g_webInterface.config.getDataDir() 
         currentDir = getcwd()
@@ -353,37 +357,37 @@ class AudioElement( Element ):
 
         
         #if is export mode, this is the possible way I know it is in export mode
-        if dataDir.find( currentDir ) < 0:
+        if dataDir.find(currentDir) < 0:
             ##create images dir to hold necessary data file
-            if not exists( "%s/images" %currentDir ):
+            if not exists("%s/images" %currentDir):
                 try:
-                    mkdir( "%s/images" %currentDir )
-                    copyfile(  dataDir+ "/images/mp3player.swf", \
-                             currentDir + "/images/mp3player.swf" )
+                    mkdir("%s/images" %currentDir)
+                    copyfile( dataDir+ "/images/mp3player.swf", \
+                             currentDir + "/images/mp3player.swf")
                 except:
                     return "can not create images directory <br />\n"
         
             ##copy files into images dir
-            copyfile(  dataDir+ "/images/" + filename,\
-                     currentDir + "/images/"+ filename )
+            copyfile( dataDir+ "/images/" + filename,\
+                     currentDir + "/images/"+ filename)
         """    
         if filename.strip() != "":
             tmp_array = {}
             tmp_array["id"] = self.id
             tmp_array["hostUrl"] = "images"
-            tmp_array["audiofile"] = filename.replace( "\\", "/")
-            filterStr = self.mmfilter( filename )
-            html = filterStr % ( tmp_array )
+            tmp_array["audiofile"] = filename.replace("\\", "/")
+            filterStr = self.mmfilter(filename)
+            html = filterStr % (tmp_array)
         else:
             html = ""
         return html
         
-    def mmfilter( self, filename ):
+    def mmfilter(self, filename):
         """
         generate html code bits according to the uploaded file type
         """
         
-        fileExtension = splitext( filename )[ 1 ].lower()
+        fileExtension = splitext(filename)[ 1 ].lower()
         
         mp3String = """
 <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
@@ -514,4 +518,5 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#ve
             return swfString 
         else:
             return ""
+
 # ===========================================================================

@@ -22,7 +22,6 @@ The LoadPage is responsible for loading an existing package
 
 import logging
 import gettext
-import pickle
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
