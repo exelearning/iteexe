@@ -17,12 +17,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
-import tempfile 
-import os.path
-from exe.engine.package import Package
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -34,9 +30,9 @@ class WebInterface:
     WebInterface is responsible for storing the current root page
     """
     def __init__(self):
-        self.rootPage = None
+        self.rootPage     = None
         self.packageStore = None
-        self.config = None
+        self.config       = None
  
 
 # nasty old global

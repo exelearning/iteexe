@@ -17,13 +17,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import os.path
 import logging
 import gettext
 import pickle
 import os
-from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
@@ -41,15 +39,19 @@ class SavePage(Resource):
     """
     
     def __init__(self):
+        """
+        Initialize
+        """
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
-        self.url = ""
-        self.message = ""
+        self.url      = ""
+        self.message  = ""
+        self.isSaved  = False
         
     def process(self, request):
         """
-        save the current package 
+        Save the current package 
         """
         log.debug("process " + repr(request.args))
         

@@ -38,6 +38,9 @@ class ExportPage(Resource):
     """
     
     def __init__(self):
+        """
+        Initialize
+        """
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
@@ -62,6 +65,7 @@ class ExportPage(Resource):
         if "exportMethod" in request.args:
             if request.args["exportMethod"][0] == "webpage":
                 self.webStr = "selected"
+
             elif request.args["exportMethod"][0] == "scorm":
                 self.scormStr = "selected"
        
@@ -69,10 +73,11 @@ class ExportPage(Resource):
             dataDir = g_webInterface.config.getDataDir() 
             os.chdir(dataDir)
             
-            if request.args["exportMethod"][0]=="webpage":
+            if request.args["exportMethod"][0] == "webpage":
                 websiteExport = WebsiteExport(WebsiteExport.Web)
                 websiteExport.exportWeb(self.package)
-            elif request.args["exportMethod"][0]=="scorm":
+
+            elif request.args["exportMethod"][0] == "scorm":
                 websiteExport = WebsiteExport(WebsiteExport.SCORM)
                 websiteExport.exportScorm(self.package)
             

@@ -19,8 +19,6 @@
 
 import logging
 import gettext
-from exe.webui import common
-from exe.engine.packagestore import g_packageStore
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 

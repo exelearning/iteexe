@@ -17,13 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
-from twisted.web import static
-from twisted.web.resource import Resource
 from exe.webui import common
-from exe.engine.packagestore import g_packageStore
+from twisted.web.resource import Resource
 from exe.webui.propertiespane import PropertiesPane
 from exe.webui.menupane import MenuPane
 
@@ -37,15 +34,20 @@ class PropertiesPage(Resource):
     """
     
     def __init__(self):
+        """
+        Initialize
+        """
         Resource.__init__(self)
         self.menuPane       = MenuPane()
         self.propertiesPane = PropertiesPane()
 
     def render_GET(self, request):
+        """
+        Render the XHTML for the properties page
+        """
         log.debug("render_GET"+ repr(request.args))
         
-        # processing
-      
+        # Processing
         log.info("creating the properties page")
         self.propertiesPane.process(request)
         self.menuPane.process(request)
