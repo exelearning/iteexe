@@ -56,6 +56,22 @@ class Idevice(object):
             self.parentNode = None
 
 
+    def isFirst(self):
+        """
+        Return true if this is the first iDevice in this node
+        """
+        index = self.parentNode.idevices.index(self)
+        return index == 0
+
+
+    def isLast(self):
+        """
+        Return true if this is the last iDevice in this node
+        """
+        index = self.parentNode.idevices.index(self)
+        return index == len(self.parentNode.idevices) - 1
+
+
     def movePrev(self):
         """
         Move to the previous position
