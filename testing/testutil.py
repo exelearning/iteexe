@@ -26,6 +26,7 @@ class TestConfig(unittest.TestCase):
         pass
 
     def testTest(self):
+        myconfig = Config()
         self.assert_(1+2==3)
 
 if __name__ == "__main__":
