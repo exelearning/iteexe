@@ -55,18 +55,19 @@ class AuthoringPane(object):
         self.topNode    = topNode
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
-        self.addBlocks(self.topNode)
+        self.__addBlocks(self.topNode)
         html  = "<!-- start authoring pane -->\n"
         html += "<div id=\"authoring_pane\">\n"
 
         for block in self.blocks:
             html += block.render()
+
         html += "</div>\n"
         html += "<!-- end authoring pane -->\n"
         return html
         
 
-    def addBlocks(self, node):
+    def __addBlocks(self, node):
         """
         Recursively add blocks for all the nodes down to the level limit 
         which was set
@@ -81,7 +82,7 @@ class AuthoringPane(object):
             self.blocks.append(block)
 
         for child in node.children:
-            if self.levelLimit is None or len(child.id) < self.levelLimit:
+            if len(child.id) < self.levelLimit:
                 self.addBlocks(child)
 #            else:
 #                self.blocks.append(LinkBlock(child))

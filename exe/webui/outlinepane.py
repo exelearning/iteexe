@@ -31,38 +31,38 @@ class OutlinePane(object):
     OutlinePane is responsible for creating the XHTML for the package outline
     """
     def __init__(self):
-        self.package = None
+        self.__package = None
 
     def process(self, request, package):
         """ 
         Get current package
         """
         log.debug("process")
-        self.package = package
+        self.__package = package
         
         if "action" in request.args:
             nodeId = request.args["object"][0]
 
             if request.args["action"][0] == "changeNode":
-                node = self.package.findNode(nodeId)
+                node = self.__package.findNode(nodeId)
                 if node is not None:
-                    self.package.currentNode = node
+                    self.__package.currentNode = node
                 else:
                     log.error("changeNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "addChildNode":
-                node = self.package.findNode(nodeId)
+                node = self.__package.findNode(nodeId)
                 if node is not None:
-                    self.package.currentNode = node.createChild()
+                    self.__package.currentNode = node.createChild()
                 else:
                     log.error("addChildNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "deleteNode":
-                node = self.package.findNode(nodeId)
+                node = self.__package.findNode(nodeId)
                 if node is not None:
                     node.delete()
-                    if node.isAncestorOf(self.package.currentNode):
-                        self.package.currentNode = self.package.root
+                    if node.isAncestorOf(self.__package.currentNode):
+                        self.__package.currentNode = self.__package.root
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
 
@@ -78,16 +78,16 @@ class OutlinePane(object):
         html += "<div id=\"outline\">\n"
         html += "<ul>\n"
         html += "<li>" 
-        html += self.__renderNode(self.package.draft)
+        html += self.__renderNode(self.__package.draft)
         html += "</li>\n" 
         html += "<li>" 
         html += "<div id=\"node_actions\">" 
-        html += self.__renderNode(self.package.root)
+        html += self.__renderNode(self.__package.root)
         html += common.submitImage("addChildNode", 
-                                   self.package.root.getIdStr(), 
+                                   self.__package.root.getIdStr(), 
                                    "stock-new.png",
-                                   title=_("Add ")+self.package.levelName(0))
-        html += self.__renderChildren(self.package.root)
+                                   title=_("Add ")+self.__package.levelName(0))
+        html += self.__renderChildren(self.__package.root)
         html += "</div>" 
         html += "</li>\n" 
         html += "</ul>\n"
@@ -119,7 +119,7 @@ class OutlinePane(object):
     def __renderNode(self, node):
         """Renders a node either as a link, or as the bold current node"""
         html = ""
-        if node == self.package.currentNode:
+        if node == self.__package.currentNode:
             html += "<b>" + str(node.title) + "</b>"
         else:
             html += common.submitLink("changeNode", node.getIdStr(), 
@@ -130,8 +130,8 @@ class OutlinePane(object):
     def __renderActions(self, node):
         """Renders the add and delete action icons"""
         html  = " "
-        if len(node.id) - 1 < len(self.package.levelNames):
-            addAction = _("Add %s") % self.package.levelName(len(node.id) - 1)
+        if len(node.id) - 1 < len(self.__package.levelNames):
+            addAction = _("Add %s") % self.__package.levelName(len(node.id) - 1)
         else:
             addAction = _("Add")
 

@@ -64,7 +64,8 @@ class ExportPage(Resource):
             os.chdir(dataDir)
             websiteExport = WebsiteExport()
             websiteExport.export(self.package)
-            self.message = _("The course package has been exported successfully.")
+            self.message = \
+                _("The course package has been exported successfully.")
 
     def render_GET(self, request):
         """Called for all requests to this object"""

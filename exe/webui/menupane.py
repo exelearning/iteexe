@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui import common
@@ -29,7 +28,7 @@ _   = gettext.gettext
 # ===========================================================================
 class MenuPane(object):
     """
-    MenuPane is responsible for creating the XHTML for add menu links
+    MenuPane is responsible for creating the XHTML for the menu links
     """
     def __init__(self):
         self.prepath = ()
@@ -44,39 +43,40 @@ class MenuPane(object):
     
     
     def render(self):
-        #Returns an XHTML string for viewing this pane
-        
+        """
+        Returns an XHTML string for the menu
+        """
         html = ""
         if len(self.prepath) == 1:
             html += _("Authoring") + " | "
         else:
-            html += "<a href = \"http:/%s\">%s </a> | " %(self.packageName, _("Authoring"))
+            html += "<a href = \"http:/%s\">%s</a> | \n" %\
+                    (self.packageName, _("Authoring"))
             
         if self.prepath[-1] == "properties":
             html += _("Properties") + " | "
         else:
-            html += "<a href = \"http:/%s/properties\">%s </a> | " %(self.packageName, _("Properties"))
+            html += "<a href = \"http:/%s/properties\">%s</a> | \n" %\
+                    (self.packageName, _("Properties"))
             
         if self.prepath[-1] == "save":
             html += _("Save") + " | "
         else:
-            html += "<a href = \"http:/%s/save\">%s </a> | " %(self.packageName, _("Save"))
+            html += "<a href = \"http:/%s/save\">%s</a> | \n" %\
+                    (self.packageName, _("Save"))
             
         if self.prepath[-1] == "load":
             html += _("Load") + " | "
         else:
-            html += "<a href = \"http:/%s/load\">%s </a> | " %(self.packageName, _("Load")) 
+            html += "<a href = \"http:/%s/load\">%s</a> | \n" %\
+                    (self.packageName, _("Load")) 
             
         if self.prepath[-1] == "export":
             html += _("Export") 
         else:
-            html += "<a href = \"http:/%s/export\">%s </a><br/>" %(self.packageName, _("Export"))
+            html += "<a href = \"http:/%s/export\">%s</a><br/>\n" %\
+                    (self.packageName, _("Export"))
         
         return html
         
-        
-         
-
-
-    
 # ===========================================================================

@@ -36,31 +36,27 @@ class IdevicePane(object):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
-    def __init__(self):
-        self.node = None
-
-
-    def process(self, request):
+    def process(self, request, package):
         """ 
         Process the request arguments to see if we're supposed to 
         add an iDevice
         """
         if ("action" in request.args and 
             request.args["action"][0] == "AddIdevice"):
+
             if request.args["object"][0] == "FreeTextIdevice":
-                self.node.addIdevice(FreeTextIdevice())
+                package.currentNode.addIdevice(FreeTextIdevice())
+
             elif request.args["object"][0] == "SimpleIdevice":
-                self.node.addIdevice(SimpleIdevice())
+                package.currentNode.addIdevice(SimpleIdevice())
             
             
-    def render(self, node):
+    def render(self):
         """
         Returns an XHTML string for viewing this pane
         """
         log.debug("render")
         
-        self.node = node
-
         html  = "<div id=\"iDevice_pane\">\n"
         
         html += common.submitLink("AddIdevice", "FreeTextIdevice",

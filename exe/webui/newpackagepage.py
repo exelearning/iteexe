@@ -23,13 +23,13 @@ import gettext
 from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
-from exe.engine.packagestore import g_packageStore
-from exe.webui.authoringpage import AuthoringPage
+from exe.engine.packagestore  import g_packageStore
+from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
-from exe.webui.savepage import SavePage
-from exe.webui.loadpage import LoadPage
-from exe.webui.exportpage import ExportPage
-from exe.webui.webinterface import g_webInterface
+from exe.webui.savepage       import SavePage
+from exe.webui.loadpage       import LoadPage
+from exe.webui.exportpage     import ExportPage
+from exe.webui.webinterface   import g_webInterface
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext

@@ -42,7 +42,7 @@ class Package:
         self.name        = name
         self.draft       = Node(self, [0], _("Draft"))
         self.currentNode = self.draft
-        self.root        = Node(self, [1], _("Package"))
+        self.root        = Node(self, [1], _("Home"))
         self.author      = ""
         self.description = ""
         introduction     = "Welcome to eXe<br/>\n"
