@@ -82,8 +82,6 @@ class WebsitePage(object):
 
         html += "</div>\n"
         html += common.footer()
-        # temp solution
-        html = html.replace('img src="style/', 'img src="')
 
         return html
 
@@ -121,7 +119,7 @@ class WebsiteExport(object):
         
     def exportScorm(self, package):
         """ 
-        Export scorm package
+        Export scom
         """
         self.exportWeb(package)
         
@@ -138,7 +136,8 @@ class WebsiteExport(object):
 
         for child in node.children:
             self.exportNode(child)
-        
+            
+       # os.chdir("..")
         
     
 # ===========================================================================

@@ -86,7 +86,6 @@ class ExportPage(Resource):
         self.menuPane.process(request)
                         
         # Rendering
-        _ = self.package.getLanguage()
         
         html  = common.header() + common.banner()
         html += self.menuPane.render()
@@ -101,8 +100,6 @@ class ExportPage(Resource):
         html += "<br/>" + common.submitButton("export", _("Export"))
         html += "<br/></form>"
         html += common.footer()
-        
-        self.message = ""
         
         return html
     

@@ -23,7 +23,6 @@ import logging
 import gettext
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
-from exe.webui.webinterface import g_webInterface
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -46,9 +45,8 @@ class Package:
         self.root        = Node(self, [1], _("Home"))
         self.author      = ""
         self.description = ""
-        self.language    = "English"  
-        introduction     = _("Welcome to eXe") + "<br/>"
-        introduction    += _("To edit this text click on the pencil icon")
+        introduction     = "Welcome to eXe<br/>"
+        introduction    += "To edit this text click on the pencil icon"
         self.draft.addIdevice(FreeTextIdevice(introduction))
         
 
@@ -83,27 +81,5 @@ class Package:
             return self.levelNames[level]
         else:
             return _("?????")
-        
-    def getLanguage(self):
-        filename = ""
-        if self.language == "French":
-            filename = "fr.mo"
-        elif self.language == "German":
-            filename = "ge.mo"
-        elif self.language == "Chinese":
-            filename = "ch.mo"
-        
-        if filename == "":
-            _ = gettext.gettext
-        else:
-            exeDir = g_webInterface.config.exeDir
-            _ = gettext.GNUTranslations(open(exeDir + "/po/" + filename)).gettext
             
-        self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
-        self.draft       = Node(self, [0], _("Draft"))
-        self.root        = Node(self, [1], _("Home"))
-        
-        return _
-        
-
 # ===========================================================================

@@ -66,21 +66,21 @@ class PropertiesPane(object):
     def render(self):
         """Returns an XHTML string for viewing this pane"""
         log.debug("render")
-        _ = self.package.getLanguage()
+        
         html  = "<form method=\"post\" action=\"%s\">" % self.url
-        html += "<b>" + _("Package title:") + "</b><br/>"
+        html += "<b>Package title:</b><br/>"
         html += common.textInput("title", self.package.root.title) + "<br/>"
-        html += "<b>" + _("Author:") + "</b><br/>"
+        html += "<b>Author:</b><br/>"
         html += common.textInput("author", self.package.author) + "<br/>"
-        html += "<b>" + _("Description:") + "</b><br/>"
+        html += "<b>Description:</b><br/>"
         html += common.textArea("description", self.package.description)
         html += "<br/>"
-        html += "<b>" + _("Taxonomy:") + "</b><br/>" 
-        html += _("Level 1") + "<br/>"
+        html += "<b>Taxonomy:</b><br/>" 
+        html += "Level 1 <br/>"
         html += common.textInput("level1", self.package.levelNames[0]) + "<br/>"
-        html += _("Level 2") + "<br/>"
+        html += "Level 2 <br/>"
         html += common.textInput("level2", self.package.levelNames[1]) + "<br/>"
-        html += _("Level 3") + "<br/>"
+        html += "Level 3 <br/>"
         html += common.textInput("level3", self.package.levelNames[2]) + "<br/>"
         html += "<br/>" + common.submitButton("done", _("Done"))
         html += "<br/></form>"

@@ -20,7 +20,6 @@
 import logging
 from exe.engine.idevice import Idevice
 
-
 log = logging.getLogger(__name__)
 
 # ===========================================================================

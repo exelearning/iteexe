@@ -23,7 +23,6 @@ import gettext
 from exe.webui import common
 from exe.webui.block          import Block
 from exe.webui.blockfactory   import g_blockFactory
-from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -37,47 +36,42 @@ class TitleBlock(Block):
     def __init__(self, titleIdevice):
         #log.debug("__init__"+titleIdevice.title)
         Block.__init__(self, titleIdevice)
-	self.package = None
 
 #    def process(self, request):
 #        log.debug("process "+self.id+repr(request))
 #        Block.process(self, request)
     def processDone(self, request):
-	self.package = g_packageStore.getPackage(request.prepath[0])
-        Block.processDone(self, request)	
+        Block.processDone(self, request)
         if "nodeTitle"+self.id in request.args:
             self.idevice.title = request.args["nodeTitle"+self.id][0]
             log.info("Changed "+self.id+" title to "+str(self.idevice))
-	
+
     def processMovePrev(self, request):
-	self.package = g_packageStore.getPackage(request.prepath[0])
         Block.processMovePrev(self, request)
         log.debug("processMovePrev "+self.id)
         self.idevice.parentNode.movePrev()
 
     def processMoveNext(self, request):
-	self.package = g_packageStore.getPackage(request.prepath[0])
         Block.processMoveNext(self, request)
         log.debug("processMoveNext "+self.id)
         self.idevice.parentNode.moveNext()
 
     def processPromote(self, request):
-	self.package = g_packageStore.getPackage(request.prepath[0])
         Block.processPromote(self, request)
         log.debug("processPromote "+self.id)
         self.idevice.parentNode.promote()
 
     def processDemote(self, request):
-	self.package = g_packageStore.getPackage(request.prepath[0])
         Block.processDemote(self, request)
         log.debug("processDemote "+self.id)
         self.idevice.parentNode.demote()
-    
+
+        
+
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this title
         """
-	#_ = self.package.getLanguage()
         html  = "<div>\n"
         html += common.textInput("nodeTitle"+self.id, self.idevice)
 
@@ -121,7 +115,6 @@ class TitleBlock(Block):
         """
         Returns an XHTML string for previewing this title
         """
-	#_ = self.package.getLanguage()
         html  = "<div>\n"
         html += "<p class=\"prev_edit\">\n"
 	html += self.__renderNodeActions()
@@ -134,8 +127,6 @@ class TitleBlock(Block):
 
 
     def __renderNodeActions(self):
-	#self.package = g_packageStore.getPackage(request.prepath[0])
-	#_ = self.package.getLanguage()
         html  = common.submitImage("PreviewAll", self.id,
                                    "edit.gif", _("Preview All"))
         html += common.submitImage("EditAll", self.id,

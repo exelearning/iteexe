@@ -100,7 +100,7 @@ class GenericBlock(Block):
         html  = "<div id=\"iDevice\">\n"
         html  = "<p><img src=\""+self.idevice.class_+".png\"/>\n"
         html += "<span class=\"icon\">"+self.idevice.title+"</span></p>\n"
-        html += self.__renderContent(forExport)
+        html += self.__renderContent()
         html += "</div>\n"
         return html
     
@@ -117,6 +117,7 @@ class GenericBlock(Block):
         return html
 
     def __renderContent(self):
+        html  = ""
         for element in self.elements:
             html += element.renderView(self.idevice[element.name])
         return html
