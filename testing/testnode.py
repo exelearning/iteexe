@@ -25,23 +25,34 @@ class TestNode(unittest.TestCase):
     def setUp(self):
         pass
 
-        
     def testCreate(self):
         root = Node(None)
         child0 = root.createChild()
-        print "child0 id:", child0.id
-        print "root id:", root.id
         self.assertEqual(child0.id[:-1], root.id)
         
     def testMove(self):
         root = Node(None)
         child0 = root.createChild()
+        child0.title = "Child Nought"
         child1 = root.createChild()
+        child1.title = "Child One"
+
         child0.movePrev()
+        self.assertEqual(child0.id, [0,0])
+        self.assertEqual(child0.title, "Child Nought")
+
         child1.movePrev()
         self.assertEqual(child1.id, [0,0])
+        self.assertEqual(child1.title, "Child One")
+
         child1.moveNext()
         self.assertEqual(child1.id, [0,1])
+        self.assertEqual(child1.title, "Child One")
+
+        child0.moveNext()
+        self.assertEqual(child0.id, [0,1])
+        self.assertEqual(child0.title, "Child Nought")
+
         child0.delete()
         self.assertEqual(child1.id, [0,0])
         
@@ -69,7 +80,6 @@ class TestNode(unittest.TestCase):
         child0 = root.createChild()
         child1 = root.createChild()
         child11=child1.createChild()
-        print "child11 string id:", child11.getIdStr()
         self.assertEqual(child11.getIdStr(), "0.1.0")
         
     def testStr(self):
