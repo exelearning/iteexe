@@ -50,6 +50,7 @@ def banner():
     """Generates the common page banner XHTML"""
     html  = "<body onLoad=\"initTabs();\">\n"
     html += "<div id=\"main\">\n"
+    html += "<p class=\"header_title\"><b>eXe</b> : elearning XHTML editor</p>"
     return html
 
 def footer():

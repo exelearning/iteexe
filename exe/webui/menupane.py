@@ -50,7 +50,7 @@ class MenuPane(object):
         html = ""
         html = "   <!--- start header --->\n"
 	html += "<div id=\"header\">\n"
-	html += "<ul>\n"
+        html += "<ul>\n"
 
         if len(self.prepath) == 1:
             html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") + "</a></li>\n"

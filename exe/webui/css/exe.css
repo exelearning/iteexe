@@ -63,6 +63,12 @@ body {
       padding-bottom:5px;
       }	
 
+.header_title {
+	color: #51778A;
+	font-size: 18px;
+	border-bottom: 1px solid #FFF;
+        padding-left: 8px;	
+	}
  
 #footer {
     }
