@@ -319,7 +319,7 @@ margin-left: 8em;
 
 /* ####################### Turned on/off on default ######################## */
 
-#workbox-top #open-workbox, #course-above, #style-above, 
+#workbox-top #open-workbox, #outline-above, #styles-above, 
 #workbox-top #unfix-workbox, #workbox-top #fix-workbox{
 display: none;
 }
@@ -378,14 +378,14 @@ display: block;
 
 /* ######### Tab Choice Styling ######## */
                                                                                 
-#workbox.course-on #links-above, #workbox.course-on #style-above,
-#workbox.style-on #links-above, #workbox.style-on #course-above,
-#workbox.links-on #course-above, #workbox.links-on #style-above{
+#workbox.outline-on #styles-above, #workbox.outline-on #iDevices-above,
+#workbox.styles-on #outline-above, #workbox.styles-on #iDevices-above,
+#workbox.iDevices-on #styles-above, #workbox.iDevices-on #outline-above{
 display: none;
 }
                                                                                 
-#workbox.course-on #course-above, #workbox.style-on #style-above,
-#workbox.links-on #links-above{
+#workbox.outline-on #outline-above, #workbox.styles-on #styles-above,
+#workbox.iDevices-on #iDevices-above{
 display: block;
 }
 

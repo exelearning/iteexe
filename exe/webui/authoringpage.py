@@ -93,23 +93,21 @@ class AuthoringPage(Resource):
 	# workbox content
 	
         html += "<div id=\"workbox-content\">\n"
-	html += "<div id=\"links-above\" class=\"links\">\n"
-	html += "<span id=\"no-links\">eXe functions</span>\n"
+
+	html += "<div id=\"styles-above\" class=\"links\">\n"
+	html += "<span id=\"no-links\">eXe styles</span>\n"
 	html += "</div>"
-	html += "<div id=\"course-above\" class=\"links\"></div>\n"
-	html += "<div id=\"style-above\" class=\"links\">\n"
-	html += "<div class=\"style-choices\">\n"
-	html += "<span class=\"name\">Preferences</span>"
-	html += "<a href=\"#\">Refresh Preview Pane</a>\n"
-	html += "</div>"
-	html += "</div>"
-	html += "<div id=\"other-modules\">\n"
+
+	html += "<div id=\"iDevices-above\" class=\"links\">\n"
 	html += "<span class=\"name\">"
 	html += self.idevicePane.render()
-	html += "</span>\n"
-	html += "<span class=\"name\">"
+	html += "</span></div>\n"
+
+	html += "<div id=\"outline-on\" class=\"links\">\n"
+       	html += "<span class=\"name\">"
 	html += self.outlinePane.render()
-	html += "</span>\n"
+	html += "</span></div>\n"
+	html += "<div id=\"other-modules\">\n"
 	html += "</div>"
       	html += "</div>"
         html += "</div>\n"

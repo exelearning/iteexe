@@ -7,7 +7,7 @@
 ** */
 
 var iewin = ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform == "Win32")) ? 1 : 0;
-var TABNAMES = ['links', 'course', 'style'];
+var TABNAMES = ['outline', 'iDevices', 'styles'];
 
 // Global state variables
 var gFixState;
@@ -55,21 +55,21 @@ function chooseTab(index) {
 
 function setTab(tab) {
     
-    if (tab=='course') {
-	document.getElementById("workbox").className = "course-on";
-	document.getElementById("links-off").className = "off";
-	document.getElementById("style-off").className = "off";
-	document.getElementById("course-off").className = "on";
-    } else if (tab=='style') {
-	document.getElementById("workbox").className = "style-on";
-	document.getElementById("links-off").className = "off";
-	document.getElementById("style-off").className = "on";
-	document.getElementById("course-off").className = "off";
-    } else if (tab=='links') { 
-	document.getElementById("workbox").className = "links-on";
-	document.getElementById("links-off").className="on";
-	document.getElementById("style-off").className="off";
-	document.getElementById("course-off").className="off";
+    if (tab=='outline') {
+	document.getElementById("workbox").className = "outline-on";
+	document.getElementById("outline-off").className = "on";
+	document.getElementById("iDevices-off").className = "off";
+	document.getElementById("styles-off").className = "off";
+    } else if (tab=='iDevices') {
+	document.getElementById("workbox").className = "iDevices-on";
+	document.getElementById("outline-off").className = "off";
+	document.getElementById("iDevices-off").className = "on";
+	document.getElementById("styles-off").className = "off";
+    } else if (tab=='styles') { 
+	document.getElementById("workbox").className = "styles-on";
+	document.getElementById("outline-off").className="off";
+	document.getElementById("iDevices-off").className="off";
+	document.getElementById("styles-off").className="on";
     }
 }
 
