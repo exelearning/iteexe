@@ -49,7 +49,7 @@ class SavePage(Resource):
         """
         save the current package 
         """
-        log.debug("process " repr(request.args))
+        log.debug("process " + repr(request.args))
         
         self.isSaved = False
         self.url = request.path

@@ -41,7 +41,7 @@ class BlockFactory(object):
         Block classes call this function when they are imported
         """
         log.debug("registerBlockType "+ 
-                  blockType.__name__ + "<=>" ideviceType.__name__)
+                  blockType.__name__ + "<=>" +  ideviceType.__name__)
         self.blockTypes.append((blockType, ideviceType))
 
     def createBlock(self, parentNode, idevice):
