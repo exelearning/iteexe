@@ -38,25 +38,20 @@ import logging
 log = logging.getLogger(__name__)
 
 def main():
-    exeDir = os.path.dirname(sys.argv[0])
-    if not exeDir:
-        exeDir = "."
- 
+
     port = 8081
-    config = Config(exeDir+"/exe.conf")
+    config = Config("exe.conf")
     g_webInterface.config = config
-    config.setupLogging(exeDir+"/exe.log")
+    config.setupLogging("exe.log")
     log.info("Starting eXe")
-    
-    config.setDataDir()
     
     root   = NewPackagePage()
     g_webInterface.rootPage = root
     
-    root.putChild("images", static.File(exeDir+"/images"))
-    root.putChild("css", static.File(exeDir+"/css"))   
-    root.putChild("scripts", static.File(exeDir+"/scripts"))
-    root.putChild("style", static.File(exeDir+"/style/default"))
+    root.putChild("images",  static.File(config.exeDir+"/images"))
+    root.putChild("css",     static.File(config.exeDir+"/css"))   
+    root.putChild("scripts", static.File(config.exeDir+"/scripts"))
+    root.putChild("style",   static.File(config.exeDir+"/style/default"))
 
     try:
         reactor.listenTCP(port, server.Site(root))

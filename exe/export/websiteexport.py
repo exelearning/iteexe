@@ -21,6 +21,7 @@ import sys
 import logging
 import gettext
 import os.path
+import shutil
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.webui.linkblock    import LinkBlock
@@ -82,12 +83,19 @@ class WebsiteExport(object):
         Export web page
         """
         self.package = package
+
+        exeDir  = g_webInterface.config.getExeDir()
         dataDir = g_webInterface.config.getDataDir()
+
         os.chdir(dataDir)
-        if not os.path.exists(package.name):
-            os.mkdir(package.name)
-            
+        if os.path.exists(package.name):
+            shutil.rmtree(package.name)
+
+        os.mkdir(package.name)
         os.chdir(package.name)
+
+        shutil.copytree(exeDir+"/style/default", "style");
+
         self.exportNode(package.root)
         
         
