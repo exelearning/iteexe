@@ -22,7 +22,6 @@ FreeTextBlock can render and process FreeTextIdevices as XHTML
 
 import logging
 import gettext
-from exe.webui                  import common
 from exe.webui.block            import Block
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.element          import TextAreaElement
@@ -43,11 +42,14 @@ class FreeTextBlock(Block):
     def __init__(self, idevice):
         Block.__init__(self, idevice)
         self.contentField = TextAreaElement("content", "freetext", self.id, 
-                                            _("""This is a free text field 
-general learning content can be entered."""))
+_("""This is a free text field general learning content can be entered."""))
 
 
     def process(self, request):
+        """
+        Process the request arguments from the web server to see if any
+        apply to this block
+        """
         Block.process(self, request)
         content = self.contentField.process(request)
         if content:

@@ -50,7 +50,8 @@ class ScormPage(object):
 
     def save(self):
         """
-        This is the main function.  It will render the page and save it to a file.
+        This is the main function.  It will render the page and save it to a
+        file.  
         """
         filename = self.node.getIdStr() + ".html"
         out = open(filename, "w")
@@ -93,6 +94,12 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
+    def __init__(self, node):
+        """
+        Initialize
+        """
+        pass
+
     def export(self, package):
         """ 
         Export SCORM package

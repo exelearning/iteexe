@@ -24,7 +24,6 @@ Is responsible for the system-wide settings we use
 
 from ConfigParser import ConfigParser
 import logging
-from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import sys
 import os
 import os.path
@@ -77,11 +76,11 @@ class Config:
         hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
 
-        loggingLevels = {"DEBUG"    : DEBUG,
-                         "INFO"     : INFO,
-                         "WARNING"  : WARNING,
-                         "ERROR"    : ERROR,
-                         "CRITICAL" : CRITICAL }
+        loggingLevels = {"DEBUG"    : logging.DEBUG,
+                         "INFO"     : logging.INFO,
+                         "WARNING"  : logging.WARNING,
+                         "ERROR"    : logging.ERROR,
+                         "CRITICAL" : logging.CRITICAL }
 
     
         for logger, level in self.setting.items("logging"):

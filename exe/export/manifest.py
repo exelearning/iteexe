@@ -16,6 +16,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+"""
+Represents an imsmanifest xml file
+"""
 
 import logging
 import os
@@ -27,6 +30,9 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Manifest(object):
+    """
+    Represents an imsmanifest xml file
+    """
     def __init__(self, package):
         """
         Initialize

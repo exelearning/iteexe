@@ -65,62 +65,58 @@ class IdevicePane(object):
                 readingAct = GenericIdevice(_("Reading Activity"), 
                                             "activity-reading",
                                             _("University of Auckland"), 
-                                            _("""Provide learners with structure 
-to their reading activity. This helps put the activity in context for the 
-learner. It is also important to correctly reference any reading materials you 
-refer to as this models best practice to the learners. Not always essential if 
-covered in the course content but providing feedback to the learner on some of 
-the main points covered in the reading may also add value to the activity."""),                                            "")
+_("""Provide learners with structure to their reading activity. This helps put
+the activity in context for the learner. It is also important to correctly
+reference any reading materials you refer to as this models best practice to
+the learners. Not always essential if covered in the course content but
+providing feedback to the learner on some of the main points covered in the
+reading may also add value to the activity."""), 
+                                             "") 
                 readingAct.addField(_("What to read"), 
                                     "TextArea", "reading_what",
-                                    _("""Provide details of the reading materials
- learners should  read."""))
+_("""Provide details of the reading materials learners should  read."""))
                 readingAct.addField(_("Why it should be read"), 
                                     "TextArea", "reading_why",
-                                    _("""Describe the rationale behind the 
-selection of the reading and how it will enrich the learning."""))
+_("""Describe the rationale behind the selection of the reading and how it will
+enrich the learning."""))
                 readingAct.addField(_("Reference"), 
                                     "TextArea", "reading_reference",
-                                    _("""Provide full reference details to the 
-reading materials selected. The reference style used will depend on the 
-preference of your department or faculty."""))
+_("""Provide full reference details to the reading materials selected. The
+reference style used will depend on the preference of your department or
+faculty."""))
                 readingAct.addField(_("Feedback"), 
                                     "TextArea", "reading_feedback",
-                                    _("""The use of this element is flexible. 
-Use it to provide a summary of the points covered in the reading, or as a 
-starting point for further analysis of the reading by posing a question or 
-providing a statement to begin a debate."""))
+_("""The use of this element is flexible.  Use it to provide a summary of the
+points covered in the reading, or as a starting point for further analysis of
+the reading by posing a question or providing a statement to begin a
+debate."""))
                 package.currentNode.addIdevice(readingAct)
             
             elif request.args["object"][0] == "ObjectivesIdevice":
                 objectives = GenericIdevice(_("Objectives"), 
                                             "objectives",
                                             _("University of Auckland"), 
-                                            _("""Objectives describe the expected
- outcomes of the learning and should define what the learners will be able to do 
-when they have completed the learning tasks."""), 
+_("""Objectives describe the expected outcomes of the learning and should
+define what the learners will be able to do when they have completed the
+learning tasks."""), 
                                             _(""))
 
                 objectives.addField(_("Objectives"), "TextArea", "objectives",
-                                    _("""Type the learning objectives for this 
-resource."""))
+_("""Type the learning objectives for this resource."""))
                 package.currentNode.addIdevice(objectives)
 
             elif request.args["object"][0] == "PreknowledgeIdevice":
                 preknowledge = GenericIdevice(_("Preknowledge"), 
                                               "preknowledge",
                                               "", 
-                                              _("""Prerequisite knowledge refers 
-to the knowledge learners should already have in order to be able to effectively 
-complete the learning. Examples of pre-knowledge can be:
-•	Learners must have level 4 English
-•	Learners must be able to assemble standard power tools
+_("""Prerequisite knowledge refers to the knowledge learners should already have in order to be able to effectively complete the learning. Examples of pre-knowledge can be: <ul>
+<li>	Learners must have level 4 English </li>
+<li>	Learners must be able to assemble standard power tools </li></ul>
 """), "")
-                                             
                 preknowledge.addField(_("Preknowledge"), 
                                       "TextArea", "preknowledge",
-                                      _("""Describe the prerequisite knowledge 
-learners should have to effectively complete this learning."""))
+_("""Describe the prerequisite knowledge learners should have to effectively
+complete this learning."""))
                 
                 package.currentNode.addIdevice(preknowledge)
             
@@ -128,42 +124,42 @@ learners should have to effectively complete this learning."""))
                 casestudy = GenericIdevice(_("Case Study"), 
                                            "activity-casestudy",
                                            "", 
-                                           _("""A case study is a story that 
-conveys an educational message. A case study can be used to present a realistic 
-situation that enables learners to apply their own knowledge and experience to. 
-When designing a case study you might want to consider the following:
-•	What educational points are conveyed in the story
-•	What preparation will the learners need to do prior to working on the 
-case study
-•	Where the case study fits into the rest of the course
-•	How the learners will interact with the materials and each other e.g. 
-if run in a classroom situation can teams be setup to work on different aspects 
-of the case and if so how are ideas feed back to the class
-"""), "")
+_("""A case study is a story that conveys an educational message. A case study
+can be used to present a realistic situation that enables learners to apply
+their own knowledge and experience to.  When designing a case study you might
+want to consider the following:<ul> 
+<li>	What educational points are conveyed in the story</li>
+<li>	What preparation will the learners need to do prior to working on the 
+case study</li>
+<li>	Where the case study fits into the rest of the course</li>
+<li>	How the learners will interact with the materials and each other e.g.
+if run in a classroom situation can teams be setup to work on different aspects
+of the case and if so how are ideas feed back to the class</li></ul>"""), "")
+
                 casestudy.addField(_("Story"),     "TextArea", "story",
-                                   _("""Create the case story.  A good case is 
-one that describes a controversy."""))
+_("""Create the case story.  A good case is one that describes a
+controversy."""))
+
                 casestudy.addField(_("Questions"), "TextArea", "questions",
-                                   _("""Enter the study question.  These 
-questions should draw out the educational
-messages presented in the case.  Consider aspects of the case like, characters, 
+_("""Enter the study question.  These questions should draw out the educational
+messages presented in the case.  Consider aspects of the case like, characters,
 timeliness, relevance, dilemmas."""))
+
                 casestudy.addField(_("Feedback"),  "TextArea", "feedback",
-                                   _("""Provide feedback on the case.  This may 
-be a summary of the main points or concepts"""))
+_("""Provide feedback on the case.  This may be a summary of the main points or
+concepts""")) 
                 package.currentNode.addIdevice(casestudy)
             
             elif request.args["object"][0] == "ActivityIdevice":
                 activity = GenericIdevice(_("Activity"), 
                                           "activity",
                                           _("University of Auckland"), 
-                                          _("""An activity can be defined as a 
-task or set of tasks a learner must complete. Provide a clear statement of the 
-task and consider any conditions that may help or hinder the learner in the 
-performance of the task."""),                                             "")
+_("""An activity can be defined as a task or set of tasks a learner must
+complete. Provide a clear statement of the task and consider any conditions
+that may help or hinder the learner in the performance of the task."""),
+"")
                 activity.addField(_("Activity"), "TextArea", "activity",
-                                  _("""Describe the tasks the learners should 
-complete."""))
+_("""Describe the tasks the learners should complete."""))
                                           
                 package.currentNode.addIdevice(activity)
                 

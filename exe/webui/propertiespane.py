@@ -78,7 +78,8 @@ class PropertiesPane(object):
         html += "<tr><td><b>Project title:</b></td><td>\n"
         html += common.textInput("title", self.package.root.title, 54) + "</td>"
         html += "</tr><tr><td><b>Author:</b></td><td>\n"
-        html += common.textInput("author", self.package.author, 54) + "</td></tr>\n"
+        html += common.textInput("author", self.package.author, 54) 
+        html += "</td></tr>\n"
         html += "<tr><td valign=\"top\"><b>Description:</b></td><td>\n"
         html += common.textArea("description", self.package.description)
         html += "</td></tr>\n"

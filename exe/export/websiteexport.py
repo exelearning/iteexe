@@ -31,7 +31,6 @@ from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.webui              import common
 from exe.webui.webinterface import g_webInterface
-from exe.export.manifest    import Manifest
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 

@@ -72,11 +72,11 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("'","\\'")
         html  = "<div id=\"iDevice\" class=\"reflection\">\n"
         html +=  _("Reflective question:") 
-        html += common.elementInstruc("activity"+self.id,self.activityInstruc)
+        html += common.elementInstruc("activity"+self.id, self.activityInstruc)
         html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)
         html += _("Response:")
-        html += common.elementInstruc("answer"+self.id,self.answerInstruc)
-        html += "<br/>" + common.richTextArea("answer"+self.id, self.answer)           
+        html += common.elementInstruc("answer"+self.id, self.answerInstruc)
+        html += "<br/>" + common.richTextArea("answer"+self.id, self.answer)
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html

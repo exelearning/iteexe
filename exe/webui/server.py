@@ -75,22 +75,22 @@ def launchBrowser(port):
     Launch the webbrowser (Firefox) for this platform
     """
     if sys.platform[:3] == "win":
+        #TODO refactor this into a separate function or class
         if not g_webInterface.config.browserPath:
             try:
                 import _winreg
                 registry = _winreg.ConnectRegistry(None, 
                                                    _winreg.HKEY_LOCAL_MACHINE)
-                key1     = _winreg.OpenKey(registry, 
-                                           r"SOFTWARE\Mozilla\Mozilla Firefox")           
-                currentVersion  = _winreg.QueryValueEx(key1, 
-                                                        "CurrentVersion")[0]
+                key1 = _winreg.OpenKey(registry, 
+                                       r"SOFTWARE\Mozilla\Mozilla Firefox")
+                currentVersion = _winreg.QueryValueEx(key1, "CurrentVersion")[0]
                 _winreg.CloseKey(key1)
                 regPath = "SOFTWARE\\Mozilla\\Mozilla Firefox\\" + \
-                           currentVersion + "\\Main"
+                          currentVersion + "\\Main"
                 log.info("regPath Path:" + regPath)
-                key2    = _winreg.OpenKey(registry, regPath)
-                g_webInterface.config.browserPath = _winreg.QueryValueEx(key2, 
-                                     "PathToExe")[0]  
+                key2 = _winreg.OpenKey(registry, regPath)
+                g_webInterface.config.browserPath = \
+                          _winreg.QueryValueEx(key2, "PathToExe")[0]  
                 log.info("Firefox Path:" + g_webInterface.config.browserPath)
                 _winreg.CloseKey(key2)
                 _winreg.CloseKey(registry)

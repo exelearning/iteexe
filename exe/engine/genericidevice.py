@@ -34,7 +34,8 @@ class Field(object):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    def __init__(self, name, fieldType=None, class_="", instruction="", content=""):
+    def __init__(self, name, fieldType=None, class_="", 
+                 instruction="", content=""):
         """
         Initialize 
         """

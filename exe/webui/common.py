@@ -83,6 +83,7 @@ def textArea(name, value=""):
     return html
 
 def richTextArea(name, value="", width="100%", height=100):
+    """Adds a FCKEditor to a form"""
     log.debug("richTextArea "+value+", height="+str(height))
     html  = "<script type=\"text/javascript\">\n"
     html += "<!--\n"
