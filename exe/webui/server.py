@@ -110,14 +110,21 @@ def launchBrowser(port):
                 os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
             except OSError:
                 print "Cannot launch Firefox, please manually run Firefox"
-                print "and go to", url
-
+                print "and go to", url  
+                
     else:
-        if g_webInterface.config.browserPath:
-            standardPath = g_webInterface.config.browserPath
-            os.system(standardPath + " http://localhost:%d&"%port)
+        standardPath = g_webInterface.config.browserPath  
+        if standardPath:
+            log.info("Linux-1 Firefox Path:" + standardPath)
+        else:
+            log.info("Linux-1 Firefox Path: no browser path")
+               
+        if g_webInterface.config.browserPath:            
+            os.system("%s http://localhost:%d&"%(standardPath, port))
+            log.info("Linux Firefox Path:" + standardPath)
         else:
             os.system("firefox http://localhost:%d&"%port)
+        
     print "Welcome to eXe: the eLearning XML editor"
     log.info("eXe running...")
 
