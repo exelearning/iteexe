@@ -42,7 +42,7 @@ class PackageStore:
         """
         Creates a package
         """
-        log.debug("createPackage: name=",name)
+        log.debug("createPackage: name=" + repr(name))
 
         if name is None:
             filename = tempfile.mkstemp('.pkg', 'New-', '.')[1]

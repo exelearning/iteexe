@@ -27,6 +27,9 @@ import os
 import sys
 from exe.util.config import Config
 from newpackagepage import NewPackagePage
+import logging
+
+log = logging.getLogger(__name__)
 
 def main():
     if len(sys.argv) > 1:
@@ -39,6 +42,9 @@ def main():
         port = 8081
 
     config = Config("exe.conf")
+    config.setupLogging("exe.log")
+    log.info("Starting eXe")
+    
     root   = NewPackagePage()
     
     reactor.listenTCP(port, server.Site(root))
@@ -52,6 +58,7 @@ def launchBrowser(port):
     else:
         os.system("htmlview http://localhost:%d&"%port)
     print "Welcome to eXe: the eLearning XML editor"
+    log.info("eXe running...")
 
 if __name__ == "__main__":
     main()

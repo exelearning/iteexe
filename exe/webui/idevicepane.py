@@ -53,6 +53,8 @@ class IdevicePane(object):
         """
         Returns an XHTML string for viewing this pane
         """
+        log.debug("render")
+        
         self.node = node
 
         html  = "<div> \n"

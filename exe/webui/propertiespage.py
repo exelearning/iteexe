@@ -42,6 +42,7 @@ class PropertiesPage(Resource):
         self.propertiesPane = PropertiesPane()
 
     def render_GET(self, request):
+        log.debug("render_GET", repr(request.args))
         
         # processing
       

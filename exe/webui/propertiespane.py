@@ -63,7 +63,8 @@ class PropertiesPane(object):
         
             
     def render(self):
-        #Returns an XHTML string for viewing this pane
+        """Returns an XHTML string for viewing this pane"""
+        log.debug("render")
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
         html += "<b>Course title:</b><br/>"

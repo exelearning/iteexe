@@ -60,6 +60,8 @@ class AddNodePane(object):
         """
         Returns an XHTML string for viewing this pane
         """
+        log.debug("render")
+        
         html = common.submitLink(_("Add ") + self.package.levelNames[0], 
                                  "AddLevel1Node", "") + "<br/>\n" 
        

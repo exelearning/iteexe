@@ -48,24 +48,24 @@ class MenuPane(object):
         
         html = ""
         if len(self.prepath) == 1:
-            html += "Authoring | "
+            html += _("Authoring") + " | "
         else:
-            html += "<a href = \"http:/%s\">Authoring </a> | " %self.packageName
+            html += "<a href = \"http:/%s\">%s </a> | " %(self.packageName, _("Authoring"))
             
         if self.prepath[-1] == "properties":
-            html += " Properties | "
+            html += _("Properties") + " | "
         else:
-            html += "<a href = \"http:/%s/properties\">Properties </a> | " %self.packageName
+            html += "<a href = \"http:/%s/properties\">%s </a> | " %(self.packageName, _("Properties"))
             
         if self.prepath[-1] == "save":
-            html += " Save | "
+            html += _("Save") + " | "
         else:
-            html += "<a href = \"http:/%s/save\">Save </a> | " %self.packageName
+            html += "<a href = \"http:/%s/save\">%s </a> | " %(self.packageName, _("Save"))
             
         if self.prepath[-1] == "load":
-            html += " Load | "
+            html += _("Load") 
         else:
-            html += "<a href = \"http:/%s/load\">Load </a><br/>" %self.packageName   
+            html += "<a href = \"http:/%s/load\">%s </a><br/>" %(self.packageName, _("Load"))  
         
         return html
         

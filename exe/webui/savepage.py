@@ -42,21 +42,22 @@ class SavePage(Resource):
         self.package  = None
         
     def process(self, request):
+        log.debug("process", request.args)
         
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         
         if "action" in request.args and "Save" == request.args["action"][0]:
-            fileName = request.args["fileName"]
+            fileName = request.args["fileName"]            
+            log.info("saving",fileName)
             outfile = open(fileName, "w")
             pickle.dump(self.package, outfile)
             
 
     def render_GET(self, request):
         
-        # processing
-      
-        log.info("creating the save page")
+        # processing 
+        log.debug("render_GET")
         self.process(request)
         self.menuPane.process(request)
                         
@@ -64,9 +65,10 @@ class SavePage(Resource):
         
         html  = common.header() + common.banner()
         html += self.menuPane.render()
-        html += "<br/>Please enter a file name<br/>"
+        html += "<br/>%s<br/>" % _("Please enter a filename")
         html += common.textInput("fileName") + "<br/><br/>"
         html += common.submitLink("Save", "Save", "")
+        html += common.footer()
         
         return html
     

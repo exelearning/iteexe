@@ -57,6 +57,8 @@ class AuthoringPage(Resource):
 
     def render_GET(self, request):
         """Called for all requests to this object"""
+        log.debug("render_GET" + repr(request.args))
+        
         package       = g_packageStore.getPackage(request.prepath[0])
 
         # Processing

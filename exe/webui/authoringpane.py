@@ -50,6 +50,8 @@ class AuthoringPane(object):
         """
         Returns an XHTML string for viewing this pane
         """
+        log.debug("render")
+        
         self.topNode    = topNode
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []

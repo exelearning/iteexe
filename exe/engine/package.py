@@ -32,7 +32,7 @@ class Package:
     i.e. the "package".
     """
     def __init__(self, name):
-        log.debug("init", name)
+        log.debug("init " + repr(name))
         self.name = name
         self.root = Node()
         self.currentNode = self.root
@@ -42,7 +42,7 @@ class Package:
         
 
     def findNode(self, nodeId):
-        log.debug("findNode", nodeId)
+        log.debug("findNode" + repr(nodeId))
         node  = self.root
         level = 1
 

@@ -49,20 +49,19 @@ class NewPackagePage(Resource):
 
     def render_GET(self, request):
         """Create a new package and redirect the webrowser to the URL for it"""
+        log.debug("render_GET" + repr(request.args))
 
         # Create new package
         package = g_packageStore.createPackage()
-        log.info("creating a new Package name=",package.name)
+        log.info("Creating a new package name="+ package.name)
         authoringPage = AuthoringPage()
         self.putChild(package.name, authoringPage)
         propertiesPage = PropertiesPage()
         authoringPage.putChild("properties", propertiesPage)
         savePage = SavePage()
         authoringPage.putChild("save", savePage)
-        authoringPage.putChild("load",       static.File("."))
-        
-        
-                  
+        authoringPage.putChild("load",       static.File("."))        
+                     
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
