@@ -25,7 +25,7 @@ from twisted.internet import reactor
 from twisted.web import server
 import os
 import sys
-from exe.util.config import Config
+from exe.util.engine import Config
 from exe.webui.newpackagepage import NewPackagePage
 import logging
 
