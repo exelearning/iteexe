@@ -39,7 +39,8 @@ class Config:
         else:
             self.dataDir = os.environ["HOME"]
 
-        self.exeDir = os.path.abspath(os.path.dirname(sys.argv[0]))
+        self.exePath = os.path.abspath(sys.argv[0])
+        self.exeDir  = os.path.dirname(self.exePath)
  
         self.setting = ConfigParser()
         self.setting.read(self.exeDir+"/"+configFile)

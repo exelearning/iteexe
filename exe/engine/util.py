@@ -16,12 +16,15 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+import logging
 import os
 import os.path
-import time
+import sys
+
+log = logging.getLogger(__name__)
 
 # ===========================================================================
-"""Useful Python functions from LinuxSoftware.co.nz"""
+"""Useful Python functions"""
 
 #----------------------------------------------------------------------------
 # if I had Python 2.3 with os.walk I wouldn't need this
@@ -38,33 +41,6 @@ def deltree(path):
     # if it's not a directory or a file, we just leave it alone
 
 #----------------------------------------------------------------------------
-# Stevens, pg 202
-def detach(prog, *args):
-    pid = os.fork()
-    if pid < 0:
-        return pid
-
-    elif pid == 0:
-        pid = os.fork()
-        if pid < 0:
-            os._exit(pid)
-        elif pid > 0:
-            # child exits
-            os._exit(0)
-
-        # grandchild (adopted by init) runs program
-        time.sleep(1)
-        os.execl(prog, *args)
-
-    else:
-        # no zombies!
-        pid, status = os.waitpid(pid, 0)
-        return status
-
-    # should never get here
-    return -1
-
-#----------------------------------------------------------------------------
 # http://www.nedbatchelder.com/blog/200410.html
 def functionId(nFramesUp=1):
     """ Create a string naming the function n frames up on the stack.
@@ -73,19 +49,20 @@ def functionId(nFramesUp=1):
     return "%s (%s @ %d)" % (co.co_name, co.co_filename, co.co_firstlineno)
 
 
-# ===========================================================================
-
+#----------------------------------------------------------------------------
 def get_all_files(path):
     if path[-1] == ':':
         path = path + '\\'
     #if true:
     try:
         for i in os.listdir(path):
-          j = os.path.join(path, i)
-          if os.path.isdir(j):
-            for ii in get_all_files(j):
-              yield ii
-          else:
-            yield j
-    except:pass
+            j = os.path.join(path, i)
+            if os.path.isdir(j):
+                for ii in get_all_files(j):
+                    yield ii
+            else:
+                yield j
+    except:
+        pass
       
+# ===========================================================================
