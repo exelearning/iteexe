@@ -107,7 +107,7 @@ class GenericBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div>\n"
+        html  = "<div id=\"iDevice\">\n"
         html += "<b>"+self.idevice.title+"</b>\n"
         for element in self.elements:
             html += element.renderView(self.idevice[element.name])

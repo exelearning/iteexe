@@ -41,24 +41,41 @@ p.nodeTitle { color: #51778A;
         display: inline;
 	}
 	
-/* reading task iDevice styles (temporary) */
+/* reading task iDevice styles (temporary)
 p.reading_what {
-	background-color: #FFF;
-	border-top: 1px solid #CECECE;
-	border-left: 1px solid #CECECE;
-	border-right: 1px solid #CECECE;
+	background-color: #F1F1DD;
+	padding: 4px;
+	border-top: 1px solid #ADADAD;
+	border-left: 1px solid #ADADAD;
+	border-right: 1px solid #ADADAD;
+	margin: 0px;
 	}
 
 p.reading_why {
-	background-color: #FFF;
-	border-bottom: 1px solid #CECECE;
-	border-left: 1px solid #CECECE;
-	border-right: 1px solid #CECECE;
-
+	background-color: #F1F1DD;
+	padding: 4px;
+	border-left: 1px solid #ADADAD;
+	border-right: 1px solid #ADADAD;
+	margin: 0px;
 	}	
 
 p.reading_reference {
-
+	background-color: #F1F1DD;
+	padding: 4px;
+	border-left: 1px solid #ADADAD;
+	border-right: 1px solid #ADADAD;
+	border-bottom: 1px solid #ADADAD;
+	margin: 0px;
 	}
 
-	
+p.reading_feedback {
+	font-style: italic;
+	}
+*/
+
+#iDevice {
+	background-color: #F1F1DD;
+	padding: 4px;
+	border: 1px solid #ADADAD;
+	margin: 8px;
+	}	
