@@ -45,7 +45,7 @@ class PackageStore:
         log.debug("createPackage: name=",name)
 
         if name is None:
-            filename = tempfile.mkstemp(suffix='.pkg', prefix='New-', dir='.')[1]
+            filename = tempfile.mkstemp('.pkg', 'New-', '.')[1]
             name = os.path.splitext(os.path.basename(filename))[0]
 
         package = Package(name)
