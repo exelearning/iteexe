@@ -32,13 +32,14 @@ from exe.engine.config import Config
 from exe.webui.newpackagepage import NewPackagePage
 from exe.webui.webinterface import g_webInterface
 import logging
-import _winreg
  
 
 log = logging.getLogger(__name__)
 
 def main():
     exeDir = os.path.dirname(sys.argv[0])
+    if not exeDir:
+        exeDir = "."
     #if len(sys.argv) > 1:
         #try:
             #port = int(sys.argv[1])
@@ -76,6 +77,7 @@ def main():
 
 def launchBrowser(port):
     if sys.platform[:3] == "win":
+        import _winreg
         registry = _winreg.ConnectRegistry(None,_winreg.HKEY_LOCAL_MACHINE)
         key      = _winreg.OpenKey(registry, r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
         path     = _winreg.QueryValueEx(key, "PathToExe")[0]
