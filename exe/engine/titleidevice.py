@@ -51,6 +51,7 @@ class TitleIdevice(Idevice):
                                     len(self.parentNode.id) - 2)
 
     def setTitle(self, title):
+        """Set the title, if it's been changed from the default"""
         if title != self.parentNode.package.levelName(
                                     len(self.parentNode.id) - 2):
             log.info("Changed "+self.id+" title to "+title)

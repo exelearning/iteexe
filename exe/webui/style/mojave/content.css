@@ -62,9 +62,43 @@ p.reading_feedback {
     left: 5px;
 }    
 
+li.activity { 
+    margin-left: 20px;
+    list-style-image: url(cactus_icon.gif); 
+    list-style-position: outside; 
+}
 
-#iDevice li { 
-    margin-left:         60px;
-    list-style-image:    url("cactus_icon.gif"); 
+li.activity-casestudy { 
+    margin-left: 20px;
+    list-style-image: url(cactus_icon.gif); 
+    list-style-position: outside; 
+}
+
+li.activity-reading { 
+    margin-left: 20px;
+    list-style-image: url(cactus_icon.gif); 
+    list-style-position: outside; 
+}
+
+li.activity-multichoice { 
+    margin-left: 20px;
+    list-style-image: url(cactus_icon.gif); 
+    list-style-position: outside; 
+}
+
+li.objectives { 
+    margin-left: 20px;
+    list-style-image: url(cactus_icon.gif); 
+    list-style-position: outside; 
+}
+
+li.preknowledge { 
+    margin-left: 20px;
+    list-style-image: url(cactus_icon.gif); 
+    list-style-position: outside; 
+}
+
+li { 
+    list-style-image:    none; 
     list-style-position: outside; 
 }
