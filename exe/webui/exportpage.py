@@ -92,10 +92,11 @@ class ExportPage(Resource):
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b><br><br/>"   
         html += """<select onchange="submit()" name="exportMethod">            
-            <option value="webpage" %s>%s</option>
-            <option value="scorm" %s>%s</option>
-            </select> Please select a export method <br/>
-            """ % (self.webStr, _("Web Page"), self.scormStr, _("SCORM"))
+        <option value="webpage" %s>%s</option>
+        <option value="scorm" %s>%s</option>
+        </select>
+        """ % (self.webStr, _("Web Page"), self.scormStr, _("SCORM"))
+        html += _(" Please select a export method") + "<br/>"
         html += "<br/>" + common.submitButton("export", _("Export"))
         html += "<br/></form>"
         html += common.footer()

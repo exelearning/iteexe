@@ -42,6 +42,7 @@ class Manifest(object):
         filename = "imsmanifest.xml"
         out = open(filename, "w")
         out.write(self.createXML())
+        out.close()
         
         os.chdir("..")
         zipFileName = self.name + ".zip"
@@ -57,31 +58,34 @@ class Manifest(object):
         returning XLM string for manifest file
         """
         
-        self.xmlStr += """<manifest identifier="MANIFEST1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
-    xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
-                <metadata> 
-                    <schema>IMS Content</schema> 
-                    <imsmd:lom> 
-                    <imsmd:general> 
-                    <imsmd:title>
-                    <imsmd:langstring xml:lang="en-US">%s</imsmd:langstring> 
-                    </imsmd:title> 
-                    </imsmd:general> 
-                    </imsmd:lom> 
-                </metadata> 
-                <organizations default = "Toc0"> 
-                    <organization identifier="Toc1" structure="hierarchical"> 
-                     <title>%s</title> 
-            """ % (self.title, self.title)
+        self.xmlStr += """<?xml version="1.0" encoding="UTF-8"?>
+        <manifest identifier="MANIFEST1"
+        xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+        xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd 
+        http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
+            <metadata> 
+                <schema>IMS Content</schema> 
+                <imsmd:lom> 
+                <imsmd:general> 
+                <imsmd:title>
+                <imsmd:langstring xml:lang="en-US">%s</imsmd:langstring> 
+                </imsmd:title> 
+                </imsmd:general> 
+                </imsmd:lom> 
+            </metadata> 
+            <organizations default = "Toc0"> 
+                <organization identifier="Toc1" structure="hierarchical"> 
+                 <title>%s</title> 
+        """ % (self.title, self.title)
         
         self.xmlStr += self.getItemStr(self.node)
         self.xmlStr += """
-                    </organization>
-                </organizations>
-                <resourses>
-                """
+            </organization>
+        </organizations>
+        <resourses>
+        """
         self.xmlStr += self.getResourseStr(self.node)
         self.xmlStr += "</resourses> \n </manifest>\n"
         return self.xmlStr
@@ -95,9 +99,9 @@ class Manifest(object):
         i = 1
         for child in node.children:
             itemStr += """
-                <item identifier="ITEM%s" identifierref="RESOURSE%s">
-                    <title>%s</title>
-                """ %(child.getIdStr(), child.getIdStr(), str(child.title))
+            <item identifier="ITEM%s" identifierref="RESOURSE%s">
+                <title>%s</title>
+            """ %(child.getIdStr(), child.getIdStr(), str(child.title))
             itemStr += self.getItemStr(child)
             itemStr += "</item>"
             i += 1        
@@ -113,10 +117,10 @@ class Manifest(object):
         for child in node.children:
             filename = child.getIdStr()+ ".html"
             resStr += """
-                <resource identifier="RESOURSE%s" type="webcontent" href="%s">
-                    <file href="%s"/>
-                </resource>
-                """ %(child.getIdStr(), filename, filename)
+            <resource identifier="RESOURSE%s" type="webcontent" href="%s">
+                <file href="%s"/>
+            </resource>
+            """ %(child.getIdStr(), filename, filename)
             resStr += self.getResourseStr(child)
             i += 1
         
