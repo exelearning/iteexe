@@ -129,6 +129,7 @@ class OutlinePane(object):
         
     def __renderActions(self, node):
         """Renders the add and delete action icons"""
+        _ = self.__package.getLanguage()
         html  = " "
         if len(node.id) - 1 < len(self.__package.levelNames):
             addAction = _("Add %s") % self.__package.levelName(len(node.id) - 1)

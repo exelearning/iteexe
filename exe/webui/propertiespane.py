@@ -66,7 +66,7 @@ class PropertiesPane(object):
     def render(self):
         """Returns an XHTML string for viewing this pane"""
         log.debug("render")
-        
+        _ = self.package.getLanguage()
         html  = "<form method=\"post\" action=\"%s\">" % self.url
         html += "<b>Package title:</b><br/>"
         html += common.textInput("title", self.package.root.title) + "<br/>"

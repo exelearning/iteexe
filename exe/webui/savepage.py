@@ -80,7 +80,7 @@ class SavePage(Resource):
         self.menuPane.process(request)
                         
         # Rendering
-        
+        _ = self.package.getLanguage()
         html  = common.header() + common.banner()
         html += self.menuPane.render()
         html += "<form method=\"post\" action=\"%s\">" % self.url        

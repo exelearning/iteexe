@@ -86,6 +86,7 @@ class ExportPage(Resource):
         self.menuPane.process(request)
                         
         # Rendering
+        _ = self.package.getLanguage()
         
         html  = common.header() + common.banner()
         html += self.menuPane.render()

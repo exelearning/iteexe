@@ -33,6 +33,7 @@ class MenuPane(object):
     def __init__(self):
         self.prepath = ()
         self.packageName = ""
+        self.package = None
                 
     def process(self, request):
         """ 
@@ -40,12 +41,14 @@ class MenuPane(object):
         """
         self.prepath      = request.prepath
         self.packageName  = request.prepath[0]
+        self.package = g_packageStore.getPackage(self.packageName)
     
     
     def render(self):
         """
         Returns an XHTML string for the menu
         """
+        _ = self.package.getLanguage()
         html = ""
         if len(self.prepath) == 1:
             html += _("Authoring") + " | "

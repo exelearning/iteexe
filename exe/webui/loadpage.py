@@ -88,6 +88,7 @@ class LoadPage(Resource):
         self.menuPane.process(request)
                         
         # Rendering
+        _ = self.package.getLanguage()
         
         html  = common.header()
         html += common.banner()
@@ -118,6 +119,7 @@ class LoadPage(Resource):
         log.debug("render_POST" + repr(request.args))
         
         self.process(request)
+        _ = self.package.getLanguage()
         if self.err:
             return self.render_GET(request)
         else:

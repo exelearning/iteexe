@@ -28,6 +28,7 @@ from exe.webui.idevicepane   import IdevicePane
 from exe.webui.authoringpane import AuthoringPane
 from exe.webui.outlinepane   import OutlinePane
 from exe.webui.menupane      import MenuPane
+from exe.webui.languagepane  import LanguagePane
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -45,7 +46,7 @@ class AuthoringPage(Resource):
         self.authoringPane = AuthoringPane()
         self.idevicePane   = IdevicePane()
         self.menuPane      = MenuPane()
-
+        self.languagePane  = LanguagePane()
 
     def getChild(self, name, request):
         if name == '':
@@ -61,12 +62,13 @@ class AuthoringPage(Resource):
         log.debug("render_GET" + repr(request.args))
         
         package = g_packageStore.getPackage(request.prepath[0])
-
+        _ = package.getLanguage()
         # Processing
         self.idevicePane.process(request, package)
         self.authoringPane.process(request)
         self.outlinePane.process(request, package)
         self.menuPane.process(request)
+        self.languagePane.process(request)
         
         html  = common.header()
         html += common.banner()
@@ -80,6 +82,7 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
+        html += "<br/>" + self.languagePane.render()
         #html += self.addNodePane.render()
         html += "<div id=\"workbox\" class=\"outline-on\">\n"
         html += "<div id=\"workbox-top\">"

@@ -26,7 +26,6 @@ import os.path
 from package import Package
 from exe.webui.webinterface import g_webInterface
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================
