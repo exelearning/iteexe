@@ -176,10 +176,18 @@ class Block(object):
         """
         Returns an XHTML string for the edit buttons
         """
-        html  = common.submitImage("done",     self.id, "stock-apply.png", _("Done"))
-        html += common.submitImage("delete",   self.id, "stock-cancel.png", _("Delete"))
-        html += common.submitImage("movePrev", self.id, "stock-go-up.png", _("Move Up"))
-        html += common.submitImage("moveNext", self.id, "stock-go-down.png", _("Move Down"))
+        html  = common.submitImage("done", self.id, 
+                                   "stock-apply.png", 
+                                   _("Done"))
+        html += common.submitImage("delete", self.id, 
+                                   "stock-cancel.png", 
+                                   _("Delete"))
+        html += common.submitImage("movePrev", self.id, 
+                                   "stock-go-up.png", 
+                                   _("Move Up"))
+        html += common.submitImage("moveNext", self.id, 
+                                   "stock-go-down.png", 
+                                   _("Move Down"))
         options  = [(_("---Move To---"), "")]
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
         options += self.__getNodeOptions(self.idevice.parentNode.package.draft)

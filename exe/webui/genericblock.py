@@ -102,8 +102,9 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div id=\"iDevice\">\n"
-        html += "<p><img src=\""+self.idevice.class_+".png\"/>\n"
-        html += "<span class=\"icon\">"+self.idevice.title+"</span></p>\n"
+        html += "<li class=\""+self.idevice.class_+"\">\n"
+        html += "<span class=\"iDeviceTitle\">"
+        html += self.idevice.title+"</span>\n</li>\n"
         html += self.__renderContent()
         html += "</div>\n"
         return html
@@ -114,8 +115,9 @@ class GenericBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = "<div id=\"iDevice\">\n"
-        html += "<p><img src=\"style/"+self.idevice.class_+".png\"/>\n"
-        html += "<span class=\"icon\">"+self.idevice.title+"</span></p>\n"
+        html += "<li class=\""+self.idevice.class_+"\">\n"
+        html += "<span class=\"iDeviceTitle\">"
+        html += self.idevice.title+"</span>\n</li>\n"
         html += self.__renderContent()
         html += self.renderViewButtons()
         html += "</div>\n"

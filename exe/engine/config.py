@@ -2,9 +2,6 @@
 # eXe config
 # Copyright 2004, University of Auckland
 #
-# Config settings loaded from exe.conf
-# Is responsible for the system-wide settings we use
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -19,6 +16,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+
+"""
+Config settings loaded from exe.conf
+Is responsible for the system-wide settings we use
+"""
 
 from ConfigParser import ConfigParser
 import logging
@@ -60,6 +62,8 @@ class Config:
         else:
             self.browserPath = None
 
+        self.styles = []
+
     def setupLogging(self, logFile):
         """
         setup logging file
@@ -83,6 +87,20 @@ class Config:
             else:
                 logging.getLogger(logger).setLevel(loggingLevels[level])
                 
+
+    def loadStyles(self):
+        """
+        Scans the eXe style directory and builds a list of styles
+        """
+#        self.styles = []
+        styleDir    = self.exeDir + "/style"
+
+        for subDir in os.listdir(styleDir):
+            styleSheet = os.path.join(styleDir, subDir, "main.css")
+
+            if os.path.exists(styleSheet):
+                self.styles.append(subDir)
+
         
     def getDataDir(self):
         """
@@ -96,5 +114,5 @@ class Config:
         """
         return self.exeDir
 
-g_Config = Config("exe.conf")
+#g_Config = Config("exe.conf")
 # ===========================================================================

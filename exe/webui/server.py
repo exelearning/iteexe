@@ -34,7 +34,8 @@ import os.path
 import sys
 from exe.engine.config import Config
 from exe.webui.newpackagepage import NewPackagePage
-from exe.webui.webinterface import g_webInterface
+from exe.webui.webinterface   import g_webInterface
+from exe.engine.packagestore  import g_packageStore
 import logging
  
 log = logging.getLogger(__name__)
@@ -44,17 +45,21 @@ def main():
     Main function, starts the webserver
     """
     config = Config("exe.conf")
-    g_webInterface.config = config
     config.setupLogging("exe.log")
+    config.loadStyles()
+    g_webInterface.config = config
     log.info("Starting eXe")
     
     root   = NewPackagePage()
     g_webInterface.rootPage = root
+
+    #TODO Find a better way to deal with these globals :-(
+    g_webInterface.packageStore = g_packageStore
     
     root.putChild("images",  static.File(config.exeDir+"/images"))
     root.putChild("css",     static.File(config.exeDir+"/css"))   
     root.putChild("scripts", static.File(config.exeDir+"/scripts"))
-    root.putChild("style",   static.File(config.exeDir+"/style/default"))
+    root.putChild("style",   static.File(config.exeDir+"/style"))
 
     launchBrowser(config.port)  
     try:

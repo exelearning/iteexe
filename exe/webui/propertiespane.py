@@ -24,7 +24,7 @@ PropertiesPane is responsible for creating the XHTML for the properties pane
 import logging
 import gettext
 from exe.webui import common
-from exe.engine.packagestore import g_packageStore
+from exe.webui.webinterface import g_webInterface
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -45,7 +45,7 @@ class PropertiesPane(object):
         """
         self.url    = request.path
         packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)  
+        self.package = g_webInterface.packageStore.getPackage(packageName)  
              
         if "title" in request.args:
             self.package.root.title.title = request.args["title"][0]
@@ -55,6 +55,9 @@ class PropertiesPane(object):
             
         if "description" in request.args:    
             self.package.description = request.args["description"][0]
+            
+        if "style" in request.args:    
+            self.package.style = request.args["style"][0]
             
         if "level1" in request.args:    
             self.package.levelNames[0] = request.args["level1"][0]
@@ -71,22 +74,31 @@ class PropertiesPane(object):
         log.debug("render")
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
-        html += "<b>Package title:</b><br/>"
-        html += common.textInput("title", self.package.root.title) + "<br/>"
-        html += "<b>Author:</b><br/>"
-        html += common.textInput("author", self.package.author) + "<br/>"
-        html += "<b>Description:</b><br/>"
+        html += "<b>Package title:</b><br/>\n"
+        html += common.textInput("title", self.package.root.title) + "<br/>\n"
+        html += "<b>Author:</b><br/>\n"
+        html += common.textInput("author", self.package.author) + "<br/>\n"
+        html += "<b>Description:</b><br/>\n"
         html += common.textArea("description", self.package.description)
-        html += "<br/>"
-        html += "<b>Taxonomy:</b><br/>" 
-        html += "Level 1 <br/>"
-        html += common.textInput("level1", self.package.levelNames[0]) + "<br/>"
-        html += "Level 2 <br/>"
-        html += common.textInput("level2", self.package.levelNames[1]) + "<br/>"
-        html += "Level 3 <br/>"
-        html += common.textInput("level3", self.package.levelNames[2]) + "<br/>"
-        html += "<br/>" + common.submitButton("done", _("Done"))
-        html += "<br/></form>"
+        html += "<br/>\n"
+
+        options = [(style, style) for style in g_webInterface.config.styles]
+        html += "<b>Style:</b><br/>\n"
+        html += common.select("style", "", options, self.package.style)
+        html += "<p/>\n"
+
+        html += "<b>Taxonomy:</b><br/>\n" 
+        html += "Level 1 <br/>\n"
+        html += common.textInput("level1", self.package.levelNames[0])
+        html += "<br/>\n"
+        html += "Level 2 <br/>\n"
+        html += common.textInput("level2", self.package.levelNames[1])
+        html += "<br/>\n"
+        html += "Level 3 <br/>\n"
+        html += common.textInput("level3", self.package.levelNames[2])
+        html += "<br/>\n"
+        html += common.submitButton("done", _("Done"))
+        html += "<br/></form>\n"
                              
         return html
         

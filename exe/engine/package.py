@@ -44,6 +44,7 @@ class Package:
         self.root        = Node(self, [1], _("Home"))
         self.author      = ""
         self.description = ""
+        self.style       = "default"
         introduction     = "Welcome to eXe<br/>"
         introduction    += "To edit this text click on the pencil icon"
         self.draft.addIdevice(FreeTextIdevice(introduction))

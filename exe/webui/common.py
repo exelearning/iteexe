@@ -29,25 +29,17 @@ _   = gettext.gettext
 
 
 def header():
-    # TODO we need to split out the Javascript in here!!!
     """Generates the common header XHTML"""
+    # NB: Authoring Page has its own header
     html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
     html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<head>\n"
     html += "<style type=\"text/css\">\n"
-    html += "@import url(/css/main.css);"
-    html += "@import url(/css/controlpanel.css);"
-    html += "@import url(/css/editing.css);</style>\n"
+    html += "@import url(/css/main.css);</style>\n"
     html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
     html += "</script>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/control_panel.js\">"
-    html += "</script>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
-    html += "</script>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/libot_drag.js\">"
-    html += "</script>\n" 
     html += "<title>"+_("eXe")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\"></meta>\n";
@@ -80,9 +72,13 @@ def textInput(name, value=""):
 
 def textArea(name, value=""):
     """Adds a text area to a form"""
-    html  = "<fieldset class=\"fieldset\"><textarea name=\"%s\" " % name
-    html += "class=\"textfield\">%s" % value
-    html += "</textarea></fieldset><br />" 
+    html  = "<textarea name=\"%s\" " % name
+    html += "cols=\"52\" rows=\"8\">%s" % value
+    html += "</textarea><br/>"
+# TODO: Find out what Brent was thinking???
+#    html  = "<fieldset class=\"fieldset\"><textarea name=\"%s\" " % name
+#    html += "class=\"textfield\">%s" % value
+#    html += "</textarea></fieldset><br />" 
     return html
 
 def richTextArea(name, value="", width="100%", height=100):

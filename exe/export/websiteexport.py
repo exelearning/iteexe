@@ -113,17 +113,16 @@ class WebsiteExport(object):
         """
         self.package = package
 
-        exeDir  = g_webInterface.config.getExeDir()
-        dataDir = g_webInterface.config.getDataDir()
 
-        os.chdir(dataDir)
+        os.chdir(g_webInterface.config.getDataDir())
         if os.path.exists(package.name):
             shutil.rmtree(package.name)
 
         os.mkdir(package.name)
         os.chdir(package.name)
 
-        for styleFile in glob.glob(exeDir+"/style/default/*"):
+        for styleFile in glob.glob(os.path.join(g_webInterface.config.getExeDir(), 
+                                                "style", package.style, "*")):
             shutil.copyfile(styleFile, os.path.basename(styleFile))
 
         self.exportNode(package.root)

@@ -26,7 +26,7 @@ import re
 import time
 
 from os.path import getmtime
-from exe.engine.config import g_Config
+from exe.webui.webinterface import g_webInterface
 
 log = logging.getLogger(__name__)
 
@@ -43,8 +43,8 @@ class UniqueIdGenerator(object):
         self.prefix  = "eXe" 
         self.prefix += re.sub(r"\W", "", packageName)[-10:]
 
-        if g_Config.exePath:
-            self.prefix += "%x" % int(getmtime(g_Config.exePath))
+        if g_webInterface.config.exePath:
+            self.prefix += "%x" % int(getmtime(g_webInterface.config.exePath))
 
 
     def generate(self):

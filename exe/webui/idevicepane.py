@@ -59,7 +59,8 @@ class IdevicePane(object):
                 package.currentNode.addIdevice(FreeTextIdevice())
 
             elif request.args["object"][0] == "ReadingActIdevice":
-                readingAct = GenericIdevice(_("Reading Activity"), "reading",
+                readingAct = GenericIdevice(_("Reading Activity"), 
+                                            "activity-reading",
                                             "", "", "")
                 readingAct.addField(_("What to read"), 
                                     "TextArea", "reading_what")
@@ -72,7 +73,8 @@ class IdevicePane(object):
                 package.currentNode.addIdevice(readingAct)
             
             elif request.args["object"][0] == "ObjectivesIdevice":
-                objectives = GenericIdevice(_("Objectives"), "objectives",
+                objectives = GenericIdevice(_("Objectives"), 
+                                            "objectives",
                                             "", _("""The purpose of a learning objective is to inform the learners what they should be able to do after completing a specific part of the learning materials. Objectives do facilitate access to the learning content, and direct learners to what teachers consider important. However, they do have the disadvantage of potentially suppressing incidental learning."""), 
                                             _("""When thinking about learning objectives ask yourself: What must the learner be able to do after completing this course, section or unit? Think about the levels of difficulty for your objectives. It useful to distinguish between two levels: 1. The knowledge level (usually easy) and relates to facts, concepts. methods etc. 2. Knowledge plus application (more difficult), for instance applying, integrating or evaluating."""))
 
@@ -80,20 +82,23 @@ class IdevicePane(object):
                 package.currentNode.addIdevice(objectives)
 
             elif request.args["object"][0] == "PreknowledgeIdevice":
-                preknowledge = GenericIdevice(_("Preknowledge"), "preknowledge",
+                preknowledge = GenericIdevice(_("Preknowledge"), 
+                                              "preknowledge",
                                               "", "", "")
                 preknowledge.addField(_("Preknowledge"), 
                                       "TextArea", "preknowledge")
                 package.currentNode.addIdevice(preknowledge)
             
             elif request.args["object"][0] == "CaseStudyIdevice":
-                casestudy = GenericIdevice(_("Case Study"), "casestudy",
+                casestudy = GenericIdevice(_("Case Study"), 
+                                           "activity-casestudy",
                                            "", "", "")
                 casestudy.addField(_("CaseStudy"), "TextArea", "casestudy")
                 package.currentNode.addIdevice(casestudy)
             
             elif request.args["object"][0] == "ActivityIdevice":
-                activity = GenericIdevice(_("Activity"), "activity",
+                activity = GenericIdevice(_("Activity"), 
+                                          "activity",
                                           "", "", "")
                 activity.addField(_("Activity"), "TextArea", "activity")
                 package.currentNode.addIdevice(activity)

@@ -10,7 +10,6 @@ SVNTOOLS=/usr/share/doc/subversion-1.1.1/tools/
 SVNPARENT=/svn
 TOP=/local/backup
 YYMMDD=$(date "+%y%m%d")
-DBNAME=mantis
 DBUSER=root
 DBPASS=""
 MOIN=/local/web/moin/reptilehouse
@@ -25,10 +24,12 @@ for REPO in $SVNPARENT/*; do
     fi
 done
 
-# Backup the database (Mantis)
+# Backup the databases (mantis and exe)
 cd $TOP/$YYMMDD
-mysqldump --add-drop-table -e -u$DBUSER $DBNAME > db$YYMMDD.sql
-gzip db$YYMMDD.sql
+mysqldump --add-drop-table -e -u$DBUSER mantis > mantis$YYMMDD.sql
+gzip mantis$YYMMDD.sql
+mysqldump --add-drop-table -e -u$DBUSER exe > exe$YYMMDD.sql
+gzip exe$YYMMDD.sql
 
 # Backup the wiki (Reptile House)
 cd $MOIN

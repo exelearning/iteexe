@@ -73,7 +73,7 @@ class AuthoringPage(Resource):
         self.outlinePane.process(request, package)
         self.menuPane.process(request)
         
-        html  = common.header()
+        html  = self.__renderHeader(package)
         html += common.banner()
 
         if log.getEffectiveLevel() == logging.DEBUG:
@@ -85,9 +85,11 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
+
+        # TODO: Move the Workbox into its own class?
         html += "   <!-- start worbox -->\n"
         html += "<div id=\"workbox\" class=\"outline-on\">\n"
-	html += "   <!-- start workbox-top -->\n"
+        html += "   <!-- start workbox-top -->\n"
         html += "<div id=\"workbox-top\">"
         html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" "
         html += "class=\"on\">Outline</a>"
@@ -102,10 +104,10 @@ class AuthoringPage(Resource):
         html += " href=\"javascript:toggleworkbox(1), toggleFix(1);\">"
         html += "<img border=\"0\" src=\"/images/show.gif\" /></a>\n"
         html += "</div>\n"
-	html += "   <!-- end worbox-top -->\n"
+        html += "   <!-- end worbox-top -->\n"
         
         # workbox content
-	html += "   <!-- start worbox-content -->\n"
+        html += "   <!-- start worbox-content -->\n"
         html += "<div id=\"workbox-content\">\n"
 
         html += "<div id=\"styles-above\" class=\"links\">\n"
@@ -124,9 +126,9 @@ class AuthoringPage(Resource):
         html += "<div id=\"other-modules\">\n"
         html += "</div>\n"
         html += "</div>\n"
-	html += "   <!-- end worbox-content -->\n"
+        html += "   <!-- end worbox-content -->\n"
         html += "</div>\n"
-	html += "<!-- end workbox -->\n"
+        html += "<!-- end workbox -->\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
         html += common.footer()
@@ -134,4 +136,29 @@ class AuthoringPage(Resource):
 
     render_POST = render_GET
 
-
+    def __renderHeader(self, package):
+        """Generates the header for AuthoringPage"""
+        html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
+        html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
+        html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head>\n"
+        html += "<style type=\"text/css\">\n"
+        html += "@import url(/css/main.css);\n"
+        html += "@import url(/css/controlpanel.css);\n"
+        html += "@import url(/css/editing.css);\n"
+        html += "@import url(/style/"+package.style+"/main.css);</style>\n"
+        html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
+        html += "</script>\n"
+        html += "<script language=\"JavaScript\" "
+        html += "    src=\"/scripts/control_panel.js\">"
+        html += "</script>\n"
+        html += "<script language=\"JavaScript\" src=\"/scripts/libot_drag.js\">"
+        html += "</script>\n"
+        html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
+        html += "</script>\n"
+        html += "<title>"+_("eXe")+"</title>\n"
+        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += " charset=UTF-8\" />\n";
+        html += "</head>\n"
+        return html
