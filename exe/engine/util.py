@@ -54,7 +54,7 @@ def detach(prog, *args):
 
         # grandchild (adopted by init) runs program
         time.sleep(1)
-        os.execlp(prog, *args)
+        os.execl(prog, *args)
 
     else:
         # no zombies!

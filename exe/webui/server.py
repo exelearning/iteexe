@@ -74,7 +74,7 @@ def launchBrowser(port):
         command = path
         url = 'http://localhost:%d'%port
         log.info("Launch firefox with "+command)
-        os.spawnl(os.P_NOWAIT, command, '"' + command + '"', url)
+        os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
     else:
         os.system("firefox http://localhost:%d&"%port)
     print "Welcome to eXe: the eLearning XML editor"

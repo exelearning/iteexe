@@ -138,12 +138,18 @@ class LoadPage(Resource):
             html  = "<html><head><title>"+_("eXe")+"</title>\n"
             html += "<meta http-equiv=\"content-type\" content=\"text/html; "
             html += "charset=UTF-8\">\n";
-            html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
+            html += "<meta http-equiv=\"Refresh\" content=\"0; URL=http:/"
             html += package.name
             html += "\">\n"
             html += "</head>\n"
             html += common.banner()
             html += _("Welcome to eXe")
+            html += _("Click here:")
+            html += "<a href=\"http:/"
+            html += package.name
+            html += "\">"
+            html += package.name
+            html += "</a>\n "            
             html += common.footer()
             return html
 

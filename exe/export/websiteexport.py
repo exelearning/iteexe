@@ -48,7 +48,17 @@ class WebsitePage(object):
         out.close()
 
     def render(self):
-        html  = common.header()
+        html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
+        html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
+        html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head>\n"
+        html += "<style type=\"text/css\">\n"
+        html += "@import url(/style/main.css);</style>\n"
+        html += "<title>"+_("eXe")+"</title>\n"
+        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += " charset=UTF-8\">\n";
+        html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"main\">\n"
         html += TitleBlock(self.node.title).renderView()
@@ -60,10 +70,12 @@ class WebsitePage(object):
                 raise Error("Unable to render iDevice.")
             html += block.renderView()
 
+        html += "<div id=\"navcontainer\">\n"
         for child in self.node.children:
             html += "<a href=\"%s.html\">" % child.getIdStr()
             html += str(child.title) + "</a><br/>\n"
             
+        html += "</div>\n"
         html += common.footer()
 
         return html
