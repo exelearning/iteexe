@@ -335,10 +335,12 @@ position: fixed;
 left: 0;
 }
 
-/* expands authoring pane when control panel is hidden */
+/* expands authoring pane when control panel is hidden 
 .fixed #authoring_pane {
 margin-left: 10px;
 }
+
+*/
 
 .fixed{
 padding-right: 0px;
