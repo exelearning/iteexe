@@ -61,6 +61,10 @@ class IdevicePane(object):
                 readingAct.addField("Feedback", "TextArea")
                 package.currentNode.addIdevice(readingAct)
             
+            elif request.args["object"][0] == "ObjectivesIdevice":
+                objectives = GenericIdevice()
+                objectives.addField("Objectives", "TextArea")
+                package.currentNode.addIdevice(objectives)
             
             
     def render(self):
@@ -71,6 +75,9 @@ class IdevicePane(object):
         
         html  = "<div>\n"
         
+        html += common.submitLink("AddIdevice", "ObjectivesIdevice",
+                                  _("Objectives"))
+        html += "<br/>\n"
         html += common.submitLink("AddIdevice", "ReadingActIdevice",
                                   _("Reading Activity"))
         html += "<br/>\n"
