@@ -6,7 +6,7 @@
 # ===========================================================================
 set -x
 
-SVNTOOLS=/usr/lib/subversion/tools
+SVNTOOLS=/usr/share/doc/subversion-1.1.1/tools/
 SVNPARENT=/svn
 TOP=/local/backup
 YYMMDD=$(date "+%y%m%d")
@@ -27,7 +27,7 @@ done
 
 # Backup the database (Mantis)
 cd $TOP/$YYMMDD
-mysqldump --add-drop-table -e -u$DBUSER -p$DBPASS $DBNAME > db$YYMMDD.sql
+mysqldump --add-drop-table -e -u$DBUSER $DBNAME > db$YYMMDD.sql
 gzip db$YYMMDD.sql
 
 # Backup the wiki (Reptile House)
