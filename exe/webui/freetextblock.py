@@ -22,7 +22,7 @@ import gettext
 from exe.webui                  import common
 from exe.webui.block            import Block
 from exe.engine.freetextidevice import FreeTextIdevice
-from exe.webui.textareafield    import TextAreaField
+from exe.webui.element          import TextAreaElement
 from exe.webui.blockfactory     import g_blockFactory
 
 log = logging.getLogger(__name__)
@@ -39,7 +39,7 @@ class FreeTextBlock(Block):
     """
     def __init__(self, idevice):
         Block.__init__(self, idevice)
-        self.contentField = TextAreaField("content", self.id)
+        self.contentField = TextAreaElement("content", self.id)
 
 
     def process(self, request):
