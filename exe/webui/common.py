@@ -53,7 +53,7 @@ def textInput(name, value=""):
 
 def textArea(name, value=""):
     html  = "<textarea name=\"%s\" " % name
-    html += "cols=\"59\" rows=\"8\">%s" % value
+    html += "cols=\"52\" rows=\"8\">%s" % value
     html += "</textarea><br/>" 
     return html
 

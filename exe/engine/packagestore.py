@@ -35,7 +35,7 @@ class PackageStore:
     has loaded, (and loading and saving them?)
     """
     def __init__(self):
-        self.loaded = []
+        self.loaded = {}
 
 
     def createPackage(self, name=None):
@@ -49,11 +49,16 @@ class PackageStore:
             name = os.path.splitext(os.path.basename(filename))[0]
 
         package = Package(name)
-        self.loaded.append(package)
+        self.loaded[package.name] = package
 
         return package
 
-
+    def getPackage(self, name):
+        """
+        Get package using the name
+        """
+        return self.loaded[name]
+    
 
 # nasty old global
 g_packageStore = PackageStore()

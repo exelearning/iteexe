@@ -35,6 +35,11 @@ class Package:
         log.debug("init", name)
         self.name = name
         self.root = Node()
+        self.title=""
+        self.author=""
+        self.description=""
+        self.levelNames = [_("Topic"), _("Section"), _("Unit")]
+        
 
     def findNode(self, nodeId):
         log.debug("findNode", nodeId)

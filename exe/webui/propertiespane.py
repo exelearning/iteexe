@@ -20,6 +20,7 @@
 import sys
 import logging
 import gettext
+from exe.webui import common
 from exe.engine.packagestore import g_packageStore
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -40,7 +41,8 @@ class PropertiesPane(object):
         """
         self.url    = request.path
         packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)      
+        self.package = g_packageStore.getPackage(packageName)  
+            
         if "title" in request.args:
             self.package.title = request.args["title"][0]
             
@@ -49,6 +51,15 @@ class PropertiesPane(object):
             
         if "description" in request.args:    
             self.package.description = request.args["description"][0]
+            
+        if "level1" in request.args:    
+            self.package.levelNames[0] = request.args["level1"][0]
+            
+        if "level2" in request.args:    
+            self.package.levelNames[1] = request.args["level2"][0]
+            
+        if "level3" in request.args:    
+            self.package.levelNames[2] = request.args["level3"][0]
         
             
     def render(self):
@@ -56,19 +67,20 @@ class PropertiesPane(object):
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
         html += "<b>Course title:</b><br/>"
-        html += "<input type=\"text\" name=\"title\" " 
-        html += "value=\"%s\" " % self.package.title
-        html += "size=\"60\"><br/>" 
+        html += common.textInput("title", self.package.title) + "<br/>"
         html += "<b>Author:</b><br/>"
-        html += "<input type=\"text\" name=\"author\" "
-        html += "value=\"%s\"" % self.package.author
-        html += "size=\"60\"><br/>" 
+        html += common.textInput("author", self.package.author) + "<br/>"
         html += "<b>Description:</b><br/>"
-        html += "<textarea name=\"description\" "
-        html += "cols=\"59\" rows=\"8\">%s" % self.package.description
-        html += "</textarea><br/>" 
-        html += "<input type=\"submit\" name=\"done\" "
-        html += "value=\"%s\">" %  _("Done")
+        html += common.textArea("description", self.package.description)
+        html += "<br/>"
+        html += "<b>Taxonomy:</b><br/>" 
+        html += "Level 1 <br/>"
+        html += common.textInput("level1", self.package.levelNames[0]) + "<br/>"
+        html += "Level 2 <br/>"
+        html += common.textInput("level2", self.package.levelNames[1]) + "<br/>"
+        html += "Level 3 <br/>"
+        html += common.textInput("level3", self.package.levelNames[2]) + "<br/>"
+        html += "<br/>" + common.submitButton("done", _("Done"))
         html += "<br/></form>"
                              
         return html
