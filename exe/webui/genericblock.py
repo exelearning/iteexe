@@ -93,12 +93,12 @@ class GenericBlock(Block):
         return html
 
 
-    def renderView(self):
+    def renderView(self, forExport=False):
         """
         Returns an XHTML string for viewing this block
         """
         html  = "<div id=\"iDevice\">\n"
-        html += self.__renderContent()
+        html += self.__renderContent(forExport)
         html += "</div>\n"
         return html
     
@@ -112,8 +112,12 @@ class GenericBlock(Block):
         html += "</div>\n"
         return html
 
-    def __renderContent(self):
-        html  = "<p><img src=\"style/"+self.idevice.class_+".png\"/>\n"
+    def __renderContent(self, forExport=False):
+        if forExport:
+            html  = "<p><img src=\""+self.idevice.class_+".png\"/>\n"
+        else:
+            html  = "<p><img src=\"style/"+self.idevice.class_+".png\"/>\n"
+
         html += "<span class=\"icon\">"+self.idevice.title+"</span></p>\n"
         for element in self.elements:
             html += element.renderView(self.idevice[element.name])

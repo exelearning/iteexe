@@ -22,6 +22,7 @@ import logging
 import gettext
 import os.path
 import shutil
+import glob
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.webui.linkblock    import LinkBlock
@@ -54,7 +55,7 @@ class WebsitePage(object):
         html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += "<head>\n"
         html += "<style type=\"text/css\">\n"
-        html += "@import url(style/main.css);</style>\n"
+        html += "@import url(main.css);</style>\n"
         html += "<title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
@@ -77,7 +78,7 @@ class WebsitePage(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView()
+            html += block.renderView(True)
 
         html += "</div>\n"
         html += common.footer()
@@ -110,7 +111,8 @@ class WebsiteExport(object):
         os.mkdir(package.name)
         os.chdir(package.name)
 
-        shutil.copytree(exeDir+"/style/default", "style");
+        for styleFile in glob.glob(exeDir+"/style/default/*"):
+            shutil.copyfile(styleFile, os.path.basename(styleFile))
 
         self.exportNode(package.root)
         
