@@ -1,0 +1,44 @@
+/*  =================================================
+     eXe
+     Copyright 2004-2005, University of Auckland
+
+     default styles for editing panel.
+   ================================================== */
+
+
+/* LEFT-HAND NAVIGATION */
+
+#navcontainer {
+    background-color: #FFFFFF;
+    width: 169px;
+    float: left;
+}
+
+#navcontainer a {
+    display: block;
+    margin-left: 0px;
+    margin-top: 5px;
+    padding-left: 0px;
+    text-decoration: none;
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+#navcontainer a:link, a:visited {
+    color: #96852C;
+    text-decoration: none;
+}
+
+#navcontainer a:hover {
+    background-color: #51778A;
+    color: #EDEFF0;
+}
+
+
+#main {
+    padding: 18px;
+    margin: 10px 10px 10px 180px;
+	background-color: #E1F799;
+    line-height: 140%;
+}
+

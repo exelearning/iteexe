@@ -23,12 +23,13 @@ The ExportPage is responsible for exporting the current project
 import os.path
 import logging
 import gettext
-from twisted.web.resource import Resource
-from exe.webui import common
-from exe.engine.packagestore import g_packageStore
-from exe.webui.webinterface import g_webInterface
-from exe.webui.menupane import MenuPane
+from twisted.web.resource     import Resource
+from exe.webui                import common
+from exe.engine.packagestore  import g_packageStore
+from exe.webui.webinterface   import g_webInterface
+from exe.webui.menupane       import MenuPane
 from exe.export.websiteexport import WebsiteExport
+from exe.export.scormexport   import ScormExport
 
 
 log = logging.getLogger(__name__)
@@ -76,12 +77,12 @@ class ExportPage(Resource):
             os.chdir(dataDir)
             
             if request.args["exportMethod"][0] == "webpage":
-                websiteExport = WebsiteExport(WebsiteExport.Web)
-                websiteExport.exportWeb(self.package)
+                websiteExport = WebsiteExport()
+                websiteExport.export(self.package)
 
             elif request.args["exportMethod"][0] == "scorm":
-                websiteExport = WebsiteExport(WebsiteExport.SCORM)
-                websiteExport.exportScorm(self.package)
+                scormExport = ScormExport()
+                scormExport.export(self.package)
             
             self.message = \
                 _("The course package has been exported successfully.")

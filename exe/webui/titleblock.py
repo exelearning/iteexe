@@ -39,6 +39,7 @@ class TitleBlock(Block):
         #log.debug("__init__"+titleIdevice.title)
         Block.__init__(self, titleIdevice)
 
+
     def processDone(self, request):
         """
         User has finished editing this block
@@ -48,37 +49,38 @@ class TitleBlock(Block):
             self.idevice.title = request.args["nodeTitle"+self.id][0]
             log.info("Changed "+self.id+" title to "+str(self.idevice))
 
+
     def processMovePrev(self, request):
         """
         Move this iDevice back to the previous position
         """
-        Block.processMovePrev(self, request)
         log.debug("processMovePrev "+self.id)
         self.idevice.parentNode.movePrev()
+
 
     def processMoveNext(self, request):
         """
         Move this iDevice forward to the next position
         """
-        Block.processMoveNext(self, request)
         log.debug("processMoveNext "+self.id)
         self.idevice.parentNode.moveNext()
+
 
     def processPromote(self, request):
         """
         Promote this iDevice up the hierarchy tree
         """
-        Block.processPromote(self, request)
         log.debug("processPromote "+self.id)
         self.idevice.parentNode.promote()
+
 
     def processDemote(self, request):
         """
         Demote this iDevice down the hierarchy tree
         """
-        Block.processDemote(self, request)
         log.debug("processDemote "+self.id)
         self.idevice.parentNode.demote()
+
 
     def renderEdit(self):
         """

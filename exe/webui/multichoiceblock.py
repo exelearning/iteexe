@@ -42,9 +42,9 @@ class MultichoiceBlock(Block):
         Initialize a new Block object
         """
         Block.__init__(self, idevice)
-        self.idevice = idevice
-        self.optionElements = []
-        self.question = idevice.question
+        self.idevice         = idevice
+        self.optionElements  = []
+        self.question        = idevice.question
         self.questionInstruc = idevice.questionInstruc
         self.keyInstruc      = idevice.keyInstruc
         self.answerInstruc   = idevice.answerInstruc
@@ -60,9 +60,9 @@ class MultichoiceBlock(Block):
         """
         Block.process(self, request)
         
-        quesId = "ques"+str(self.id)
-        if quesId in request.args:
-            self.idevice.question = request.args[quesId][0]
+        questionId = "question"+str(self.id)
+        if questionId in request.args:
+            self.idevice.question = request.args[questionId][0]
             
         if ("addOption"+str(self.id)) in request.args: 
             self.idevice.addOption()
@@ -71,51 +71,21 @@ class MultichoiceBlock(Block):
             element.process(request)
 
 
-    def processMove(self, request):
-        """
-        Move this iDevice to a different node
-        """
-        Block.processMove(self, request)
-        nodeId = request.args["move"+self.id][0]
-        node   = self.idevice.parentNode.package.findNode(nodeId)
-        if node is not None:
-            self.idevice.setParentNode(node)
-        else:
-            log.error("addChildNode cannot locate "+nodeId)
-
-
-    def processMovePrev(self, request):
-        """
-        Move this block back to the previous position
-        """
-        Block.processMovePrev(self, request)
-        self.idevice.movePrev()
-
-
-    def processMoveNext(self, request):
-        """
-        Move this block forward to the next position
-        """
-        Block.processMoveNext(self, request)
-        self.idevice.moveNext()
-
-
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block
         """
-    
         self.question = self.question.replace("\r", "")
         self.question = self.question.replace("\n","\\n")
         self.question = self.question.replace("'","\\'")
         html  = "<b>" + _("Question:") + " </b>"   
-        html += common.elementInstructions("ques"+self.id, self.questionInstruc)
-        html += common.richTextArea("ques"+self.id, self.question)
+        html += common.elementInstructions("question"+self.id, self.questionInstruc)
+        html += common.richTextArea("question"+self.id, self.question)
         html += "<div id=\"iDevice\" class=\"multichoice\">\n"
         html += "<table width =\"100%%\"><th>%s " % _("Key")
         html += common.elementInstructions("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Answer")
-        html += common.elementInstructions("ans"+self.id, self.answerInstruc)
+        html += common.elementInstructions("answer"+self.id, self.answerInstruc)
         html += "</th><th>%s " % _("Feedback")
         html += common.elementInstructions("feed"+self.id, self.feedbackInstruc)
         html += "</th>"
@@ -130,42 +100,15 @@ class MultichoiceBlock(Block):
         html += "</div>\n"
         return html
 
-    def renderBlockView(self):
-        """
-        Returns an XHTML string for this block
-        """
-        html  = "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += """
-                function getFeedback(optionId, optionsNum, ideviceId){
-                
-                    for (i = 0; i< optionsNum; i++){   
-                        id = "s" + i + "b" +ideviceId
-                        if(i == optionId)
-                            document.getElementById(id).style.display = "block";
-                        else
-                            document.getElementById(id).style.display = "None";
-                    }
-                }\n"""            
-        html += "//-->\n"
-        html += "</script>\n"
-        html += "<b>" + self.question + "</b><br/>"
-        html += "<table>"
-        for element in self.optionElements:
-            html += element.renderAnswerView()
-            
-        html += "</table>"
-            
-        for element in self.optionElements:
-            html += element.renderFeedbackView()
-            
-        return html
     
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
         """
         html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
+        html += "<li class=\"activity-multichoice\">\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.question+"&nbsp;</span>\n</li>\n"
         html += self.renderBlockView()    
         html += "</div>\n"
         return html
@@ -176,11 +119,43 @@ class MultichoiceBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
+        html += "<li class=\"activity-multichoice\">\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.question+"&nbsp;</span>\n</li>\n"
         html += self.renderBlockView()      
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
 
+
+    def renderBlockView(self):
+        """
+        Returns an XHTML string for this block
+        """
+        html  = "<script type=\"text/javascript\">\n"
+        html += "<!--\n"
+        html += """
+        function getFeedback(optionId, optionsNum, ideviceId) {
+            for (i = 0; i< optionsNum; i++) {   
+                id = "s" + i + "b" +ideviceId
+                if(i == optionId)
+                    document.getElementById(id).style.display = "block";
+                else
+                    document.getElementById(id).style.display = "None";
+            }
+        }\n"""            
+        html += "//-->\n"
+        html += "</script>\n"
+        html += "<table>"
+        for element in self.optionElements:
+            html += element.renderAnswerView()
+            
+        html += "</table>"
+            
+        for element in self.optionElements:
+            html += element.renderFeedbackView()
+            
+        return html
 
 g_blockFactory.registerBlockType(MultichoiceBlock, MultichoiceIdevice)
 

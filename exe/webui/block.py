@@ -121,6 +121,13 @@ class Block(object):
         Move this iDevice to a different node
         """
         log.debug("processMove id="+self.id)
+        nodeId = request.args["move"+self.id][0]
+        #TODO tidy this up
+        node   = self.idevice.parentNode.package.findNode(nodeId)
+        if node is not None:
+            self.idevice.setParentNode(node)
+        else:
+            log.error("addChildNode cannot locate "+nodeId)
 
 
     def processPromote(self, request):
@@ -142,6 +149,7 @@ class Block(object):
         Move this block back to the previous position
         """
         log.debug("processMovePrev id="+self.id)
+        self.idevice.movePrev()
 
 
     def processMoveNext(self, request):
@@ -149,6 +157,7 @@ class Block(object):
         Move this block forward to the next position
         """
         log.debug("processMoveNext id="+self.id)
+        self.idevice.moveNext()
 
 
     def render(self):
@@ -197,16 +206,17 @@ class Block(object):
         options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
         options += self.__getNodeOptions(self.idevice.parentNode.package.root)
         html += common.select("move", self.id, options)
-	if self.purpose != "" or self.tip != "":
-	    html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
-	    html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
-	    html += "href=\"Javascript:void(0)\"> " 
-	    html += "<img src=\"/images/info.gif\" border=\"0\" align=\"middle\" />"
-	    html += "</a>\n"
-	    html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
-	    html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
-	    html += "border=\"0\" align=\"middle\" "
-	    html += "onmousedown=\"Javascript:hideMe();\"/></div>"
+
+        if self.purpose != "" or self.tip != "":
+            html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
+            html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
+            html += "href=\"Javascript:void(0)\"> " 
+            html += "<img src=\"/images/info.gif\" border=\"0\" align=\"middle\" />"
+            html += "</a>\n"
+            html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
+            html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
+            html += "border=\"0\" align=\"middle\" "
+            html += "onmousedown=\"Javascript:hideMe();\"/></div>"
             html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
             html += "<b>Tip:</b><br/>%s<br/>" % self.tip
             html += "</div>\n"        

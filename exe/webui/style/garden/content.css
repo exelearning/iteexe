@@ -11,7 +11,7 @@
 	position: absolute;
 	margin-left: 223px;
 	margin-top: 77px;
-        margin-right: 8px;
+    margin-right: 8px;
 	padding: 8px;
 	background-color: #E1F799;
 	border: 1px solid #000;
@@ -75,6 +75,11 @@ p.reading_feedback {
 #iDevice li[class|="activity-reading"] { 
     margin-left: 60px;
     list-style-image: url("reading.png"); 
+}
+
+#iDevice li[class|="activity-multichoice"] { 
+    margin-left: 60px;
+    list-style-image: url("question.png"); 
 }
 
 #iDevice li[class|="objectives"] { 

@@ -52,27 +52,6 @@ class FreeTextBlock(Block):
             self.idevice.content = content
 
 
-    def processMove(self, request):
-        Block.processMove(self, request)
-        nodeId = request.args["move"+self.id][0]
-        #TODO tidy this up
-        node   = self.idevice.parentNode.package.findNode(nodeId)
-        if node is not None:
-            self.idevice.setParentNode(node)
-        else:
-            log.error("addChildNode cannot locate "+nodeId)
-
-
-    def processMovePrev(self, request):
-        Block.processMovePrev(self, request)
-        self.idevice.movePrev()
-
-
-    def processMoveNext(self, request):
-        Block.processMoveNext(self, request)
-        self.idevice.moveNext()
-
-
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block

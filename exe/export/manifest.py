@@ -18,10 +18,11 @@
 # ===========================================================================
 
 import logging
-import os.path
-from exe.engine.uniqueidgenerator import UniqueIdGenerator
-from exe.engine.genericidevice import GenericIdevice
 import os
+import os.path
+from exe.engine.uniqueidgenerator  import UniqueIdGenerator
+from exe.engine.genericidevice     import GenericIdevice
+from exe.engine.multichoiceidevice import MultichoiceIdevice
 import zipfile
 import glob
 log = logging.getLogger(__name__)
@@ -93,10 +94,10 @@ class Manifest(object):
         self.xmlStr += """
             </organization>
         </organizations>
-        <resources>
+    <resources>
         """
         self.xmlStr += self.resStr
-        self.xmlStr += "</resources> \n </manifest>\n"
+        self.xmlStr += "</resources>\n</manifest>\n"
         return self.xmlStr
         
             
@@ -116,19 +117,21 @@ class Manifest(object):
         self.resStr += """
             <resource identifier="RES-%s" type="webcontent" href="%s">
                 <file href="%s"/>
-                <file href="main.css"/>""" %(resId, filename, filename)
+                <file href="content.css"/>
+                """ %(resId, filename, filename)
         fileStr = ""
-        for idevice in node.idevices:
-            if type(idevice) is GenericIdevice:
-                if fileStr.find(idevice.class_+".png")== -1:
-                    fileStr += '<file href="%s.png"/>' % idevice.class_
+        # TODO: Fix this hack with some real object-orientated code
+        for pngFile in glob.glob("*.png"):
+            fileStr += "                <file href=\""+pngFile+"\"/>\n"
+        for gifFile in glob.glob("*.gif"):
+            fileStr += "                <file href=\""+gifFile+"\"/>\n"
                     
         self.resStr += fileStr
-        self.resStr += "</resource>"
+        self.resStr += "            </resource>\n"
 
         for child in node.children:
             self.genItemResStr(child)
         
-        self.itemStr += "</item>"
+        self.itemStr += "            </item>\n"
             
 #===============================================================================

@@ -145,7 +145,7 @@ class IdevicePane(object):
                                   _("Free Text"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "MultichoiceIdevice",
-                                  _("Multichoice"))
+                                  _("Multichoice Question"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "ReflectionIdevice",
                                   _("Reflection"))

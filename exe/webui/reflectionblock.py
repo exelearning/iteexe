@@ -46,6 +46,7 @@ class ReflectionBlock(Block):
         self.activityInstruc = idevice.activityInstruc
         self.answerInstruc   = idevice.answerInstruc
 
+
     def process(self, request):
         """
         Process the request arguments from the web server
@@ -58,35 +59,6 @@ class ReflectionBlock(Block):
         if "answer"+self.id in request.args:
             self.idevice.answer = request.args["answer"+self.id][0]
         
-
-    def processMove(self, request):
-        """
-        Move this iDevice to a different node
-        """
-        Block.processMove(self, request)
-        nodeId = request.args["move"+self.id][0]
-        node   = self.idevice.parentNode.package.findNode(nodeId)
-        if node is not None:
-            self.idevice.setParentNode(node)
-        else:
-            log.error("addChildNode cannot locate "+nodeId)
-
-
-    def processMovePrev(self, request):
-        """
-        Move this block back to the previous position
-        """
-        Block.processMovePrev(self, request)
-        self.idevice.movePrev()
-
-
-    def processMoveNext(self, request):
-        """
-        Move this block forward to the next position
-        """
-        Block.processMoveNext(self, request)
-        self.idevice.moveNext()
-
 
     def renderEdit(self):
         """
@@ -146,6 +118,7 @@ class ReflectionBlock(Block):
         html += "</div>\n"
         return html
     
+
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
@@ -154,6 +127,7 @@ class ReflectionBlock(Block):
         html += self.renderPage()
         html += "</div>\n"
         return html
+
 
     def renderPreview(self):
         """

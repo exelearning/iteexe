@@ -29,7 +29,7 @@ _   = gettext.gettext
 
 
 def docType():
-    """Generates the documentation"""
+    """Generates the documentation type string"""
     html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
     html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"

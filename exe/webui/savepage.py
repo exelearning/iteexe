@@ -21,11 +21,11 @@
 The SavePage is responsible for saving the current project
 """
 
+import os
 import os.path
 import logging
 import gettext
 import pickle
-import os
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore

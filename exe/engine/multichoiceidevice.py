@@ -52,7 +52,7 @@ class MultichoiceIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         _("Multi-Choice Questions"),
+                         _("Multi-Choice Question"),
                          _("University of Auckland"),
                          _("""This is an iDevice that is used to promote 
 student interaction with the learning content. The text-based version of this 
