@@ -32,7 +32,7 @@ class Block:
         html += " value=\"%s\"/>\n" % _("Done")
         html += "<input type=\"submit\" name=\"del%d\"" % self.id
         html += " value=\"%s\"/>\n" % _("Delete")
-        html += "<div>\n"
+        html += "</div>\n"
         return html
 
     def renderView(self):
@@ -41,7 +41,7 @@ class Block:
         html += self.content
         html += "<input type=\"submit\" name=\"edit%d\" " % self.id
         html += " value=\"%s\"/>\n" % _("Edit")
-        html += "<div>\n"
+        html += "</div>\n"
         return html
 
 class Page(Resource):
@@ -106,6 +106,13 @@ class Page(Resource):
         html += """<meta http-equiv="content-type" content="text/html; charset=UTF-8">\n""";
         html += "</head>\n"
         html += "<body>\n"
+        html += "<pre>"
+        html += "<br/>path:"+str(request.path)
+        html += "<br/>uri:"+str(request.uri)
+        html += "<br/>prepath:"+str(request.prepath)
+        html += "<br/>postpath:"+str(request.postpath)
+        html += "<br/>childLink:"+str(request.childLink("example"))
+        html += "</pre>"
         html += "<form method=\"post\" action=\"%s\"" % request.path
         html += " name=\"contentForm\">\n"
         html += """<select onchange="submit()" name="language">            
