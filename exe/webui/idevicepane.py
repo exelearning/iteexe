@@ -173,6 +173,14 @@ _("""Describe the tasks the learners should complete."""))
             elif request.args["object"][0] == "ReflectionIdevice":
                 reflection = ReflectionIdevice()
                 package.currentNode.addIdevice(reflection)
+                
+            elif request.args["object"][0] == "MultiModeIdevice":
+                multiMode = GenericIdevice("", "multimode", "", "", "")
+                multiMode.addField( "photoFile", "Photo", "image", "" )
+                multiMode.addField( "caption", "Text", "nodeTitle", "" )
+                multiMode.addField( "learningText", "TextArea", "learningText", "" )
+                multiMode.addField( "audioFile", "Audio", "audio", "" )
+                package.currentNode.addIdevice( multiMode )
             
             
     def render(self):
@@ -205,6 +213,10 @@ _("""Describe the tasks the learners should complete."""))
         html += "<br/>\n"        
         html += common.submitLink("AddIdevice", "ReflectionIdevice",
                                   _("Reflection"))
+        html += "<br/>\n"                        
+        html += common.submitLink("AddIdevice", "MultiModeIdevice",
+                                  _("Multi Mode"))
+                                  
         html += "</div> \n"
 
         return html
