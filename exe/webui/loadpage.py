@@ -55,7 +55,8 @@ class LoadPage(Resource):
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         
-        if "load" in request.args: 
+#        if "load" in request.args: 
+        if "action" in request.args and request.args["action"][0] == "Load":
             dataDir = g_webInterface.config.getDataDir()
             os.chdir(dataDir)
             if "saveChk" in request.args:
@@ -64,8 +65,11 @@ class LoadPage(Resource):
                 pickle.dump(self.package, outfile)
                 outfile.close()
                 
-            log.debug("filename and path" + repr(request.args["fileName"][0]))
-            infile = open(request.args["fileName"][0])
+#            log.debug("filename and path" + repr(request.args["fileName"][0]))
+#            infile = open(request.args["fileName"][0])
+            filePath = request.args["object"][0]
+            log.debug("filename and path" + filePath)
+            infile = open(filePath)
             package = pickle.load(infile)
             self.package = package
             g_packageStore.addPackage(package)
@@ -83,16 +87,19 @@ class LoadPage(Resource):
         html  = common.header()
         html += common.banner()
         html += self.menuPane.render()
-        html += "<form method=\"post\" name = \"saveForm\" action=\"%s\">" % request.path
-        html += "<br/>" + _("Would you like to save current changes?") + "<br/>"
+        html += "<form method=\"post\" name=\"contentForm\" onload=\"clearHidden();\" action=\"%s\">\n" % request.path
+        html += common.hiddenField("action")
+        html += common.hiddenField("object")
+        html += "<br/>" + _("Would you like to save current changes?") + "<br/>\n"
         #html += "<pre>%s</pre>\n" % str(request.args)
-        html += "<input type = \"checkbox\" name = \"saveChk\" checked>"
-        html += _(" Save the current package") + "<br/><br/>"    
-        html += _(" Please select a file") + "<br/>"
-        html += "<input type = \"file\" name = \"fileName\">"
+        html += "<input type=\"checkbox\" name=\"saveChk\" checked>\n"
+        html += _(" Save the current package") + "<br/><br/>\n"    
+        html += _(" Please select a file") + "<br/>\n"
+        html += "<input type = \"file\" name = \"fileName\">\n"
         html += "<br/><br/>"
-        html += common.submitButton("load", _("Load"))
-        html += "<br/></form>"
+        html += "<a href=\"#\" onclick=\"submitLink('Load',   document.contentForm.fileName.value); \">%s</a>\n" % _("Load")
+        html += "<br/></form>\n"
+        
         html += common.footer()
         
         return html
