@@ -1,8 +1,0 @@
-    <idevice>    
-        <title>multimedia</title> 
-        <description>$description</description>
-        <instruction>$instruction</instruction>
-        <mediafile>$mediafile</mediafile>
-        <thumbnail>$thumbnail</thumbnail>
-        <subunitidentifier>$subunitidentifier</subunitidentifier>
-	</idevice>

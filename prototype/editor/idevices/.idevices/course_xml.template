@@ -1,7 +1,0 @@
-    <course>
-        <title>$title</title>
-        <shorttitle>$shorttitle</shorttitle>
-        <graphic>$graphic</graphic>
-        <courseidentifier>$courseidentifier</courseidentifier>
-        <description>$description</description>
-    </course>
