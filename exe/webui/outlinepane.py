@@ -49,8 +49,7 @@ class OutlinePane(object):
             elif request.args["action"][0] == "addChild":
                 nodeId = request.args["object"][0]
                 parent = self.package.findNode(nodeId)
-                childLevel = self.package.levelName(len(parent.id) - 1);
-                self.package.currentNode = parent.createChild(childLevel)
+                self.package.currentNode = parent.createChild("")
                 
 
     def getChildrenTitles(self, node):
@@ -59,10 +58,18 @@ class OutlinePane(object):
         """
         log.debug("getChildrenTitles for node="+node.idStr())
 
-        childLevel = self.package.levelName(len(node.id) - 1);
+        html  = ""
+        title = node.title
+        if title == "":
+            title = self.package.levelName(len(node.id) - 2);
 
-        html  = common.submitLink(node.title, "changeNode", node.idStr())      
-        html += common.submitLink(_("Add ")+childLevel, 
+        if node == self.package.currentNode:
+            html += title
+        else:
+            html += common.submitLink(title, "changeNode", node.idStr())      
+
+        childLevel = self.package.levelName(len(node.id) - 1);
+        html += common.submitLink(_(" Add ")+childLevel, 
                                   "addChild", node.idStr())      
 
         if len(node.children) > 0:
@@ -74,8 +81,8 @@ class OutlinePane(object):
                 
             html += "</ul>\n"
         
-        
         return html
+
             
     def render(self):
         """
@@ -83,16 +90,20 @@ class OutlinePane(object):
         """
         log.debug("render")
         
-        html  = "<ul>\n"
+        html  = "<div id=\"outline\">\n"
+        html += "<ul>\n"
         html += "<li>" 
-        html += common.submitLink(self.package.draft.title, "changeNode", 
-                                  self.package.draft.idStr())      
+        if self.package.draft == self.package.currentNode:
+            html += self.package.draft.title
+        else:
+            html += common.submitLink(self.package.draft.title, "changeNode", 
+                                      self.package.draft.idStr())      
         html += "</li>\n"
         html += "<li>" 
         html += self.getChildrenTitles(self.package.root)
         html += "</li>\n"
         html += "</ul>\n"
-        html += "<br/>\n"
+        html += "</div>\n"
         return html
         
         

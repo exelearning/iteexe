@@ -37,7 +37,7 @@ class PropertiesPane(object):
 
     def process(self, request):
         """ 
-        Write description
+        Process what the user has submitted
         """
         self.url    = request.path
         packageName = request.prepath[0]
