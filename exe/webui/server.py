@@ -22,6 +22,7 @@
 
 
 from twisted.internet import reactor
+from twisted.internet.error import CannotListenError
 from twisted.web import server
 from twisted.web import static
 import os
@@ -31,6 +32,8 @@ from exe.engine.config import Config
 from exe.webui.newpackagepage import NewPackagePage
 from exe.webui.webinterface import g_webInterface
 import logging
+import _winreg
+ 
 
 log = logging.getLogger(__name__)
 
@@ -47,16 +50,11 @@ def main():
     #print "first arg: ", sys.argv[0]
     
         
-    port = 8081 
+    port = 8081
     config = Config(exeDir+"/exe.conf")
     g_webInterface.config = config
     config.setupLogging(exeDir+"/exe.log")
-    #log.info("Starting eXe")
-    log.info("first arg:"+ repr(sys.argv[0]))
-    #log.debug("first arg: " + repr(sys.argv[0]))
-    if len(sys.argv) > 1:       
-        #log.debug("second arg: " + repr(sys.argv[1]))
-        log.info("second arg: " + repr(sys.argv[1]))
+    log.info("Starting eXe")
     
     config.setDataDir()
     
@@ -66,9 +64,10 @@ def main():
     root.putChild("images", static.File(exeDir+"/images"))
     root.putChild("css", static.File(exeDir+"/css"))   
     root.putChild("scripts", static.File(exeDir+"/scripts"))
+
     try:
         reactor.listenTCP(port, server.Site(root))
-    except:
+    except CannotListenError:
         launchBrowser(port)  
     else:
         reactor.callWhenRunning(launchBrowser, port)
@@ -77,9 +76,17 @@ def main():
 
 def launchBrowser(port):
     if sys.platform[:3] == "win":
-        os.system("start http://localhost:%d"%port)        
+        registry = _winreg.ConnectRegistry(None,_winreg.HKEY_LOCAL_MACHINE)
+        key      = _winreg.OpenKey(registry, r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
+        path     = _winreg.QueryValueEx(key, "PathToExe")[0]
+        _winreg.CloseKey(key)
+        _winreg.CloseKey(registry)
+        
+        command = '"'+path+'" http://localhost:%d'%port
+        log.info("Launch firefox with "+command)
+        os.system(command)     
     else:
-        os.system("htmlview http://localhost:%d&"%port)
+        os.system("firefox http://localhost:%d&"%port)
     print "Welcome to eXe: the eLearning XML editor"
     log.info("eXe running...")
 
