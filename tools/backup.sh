@@ -18,7 +18,7 @@ mkdir -p $TOP/$YYMMDD
 
 # Backup the Subversion repositories
 for REPO in $SVNPARENT/*; do
-    if [ -d $REPO ]; then
+    if [ -d $REPO ] && [ "$REPO" != "lost+found" ]; then
         echo $REPO
         $SVNTOOLS/backup/hot-backup.py $REPO $TOP/$YYMMDD
     fi
