@@ -69,6 +69,9 @@ class ScormPage(object):
         html += "<title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
+        html += "<!--[if gte IE 5.5000]>\n"
+        html += "<script type=\"text/javascript\" src=\"pngfix.js\"></script>\n"
+        html += "<![endif]-->\n"
         html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
