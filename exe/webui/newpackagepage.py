@@ -25,6 +25,7 @@ from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
+from exe.webui.authoringpage import AuthoringPage
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -32,7 +33,7 @@ _   = gettext.gettext
 
 class NewPackagePage(Resource):
     """
-    Newpackage is the first screen the user loads.  It doesn't show anything
+    NewPackagePage is the first screen the user loads.  It doesn't show anything
     it just redirects the user to a new package.
     """
     
@@ -51,7 +52,7 @@ class NewPackagePage(Resource):
         # Create new package
         package = g_packageStore.createPackage()
         log.info("creating a new Package name=",package.name)
-        self.putChild(package.name, static.File("."))
+        self.putChild(package.name, AuthoringPage())
                   
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"

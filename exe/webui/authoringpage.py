@@ -68,8 +68,8 @@ class AuthoringPage(Resource):
         html += "</head>\n"
         html += common.banner(_("eXe"))
 
-        html += "<pre>"+repr(request.args)+"</pre>\n"
-        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
+#        html += "<pre>"+repr(request.args)+"</pre>\n"
+#        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
         html += "<form method=\"post\" action=\"%s\"" % request.path
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
