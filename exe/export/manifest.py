@@ -17,18 +17,18 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
-import gettext
-import os.path
-from exe.webui.webinterface import g_webInterface
 import os
+import os.path
 import zipfile
 import glob
 log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Manifest(object):
+    """
+    Manifest represents an IMSManifest file
+    """
     def __init__(self, package):
         self.title       = str(package.root.title)
         self.node        = package.root
@@ -96,11 +96,11 @@ class Manifest(object):
         returning xlm string for items
         """
         itemStr = ""
-        id = node.getIdStr().replace(".", "-")
+        nodeId = node.getIdStr().replace(".", "-")
         itemStr += """
             <item identifier="ITEM-%s" isvisible="true" identifierref="RESOURSE-%s">
                 <title>%s</title>
-            """ %(id, id, str(node.title))
+            """ %(nodeId, nodeId, str(node.title))
 
         for child in node.children:
             itemStr += self.getItemStr(child)
@@ -114,12 +114,12 @@ class Manifest(object):
         """
         resStr = ""
         filename = node.getIdStr()+ ".html"
-        id = node.getIdStr().replace(".", "-")
+        nodeId = node.getIdStr().replace(".", "-")
         resStr += """
             <resource identifier="RESOURSE-%s" type="webcontent" href="%s">
                 <file href="%s"/>
             </resource>
-            """ %(id, filename, filename)
+            """ %(nodeId, filename, filename)
             
         for child in node.children:
             resStr += self.getResourseStr(child)
