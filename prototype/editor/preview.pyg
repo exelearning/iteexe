@@ -1,0 +1,82 @@
+#!/usr/bin/python
+
+import cgi, os
+from os.path import exists
+from Cheetah.Template import Template
+from coursemanager import CourseManager
+
+
+##enable cgi traceback
+import cgitb
+cgitb.enable( display=0, logdir="/var/tmp/httpd/exe" )
+
+debug = 0
+
+def show_preview_choice( form ):
+	#read the pre-designed form and show it
+	if am.dict["coursetype"]<>"":
+		preview_choice_form = "/var/www/html/python/eXe/%s/choose_preview_form.template" % am.dict["coursetype"]
+	else:
+		#preview_doc_root = "/var/www/html/python/eXe/preview/"
+		preview_choice_form = "/var/www/html/python/eXe/choose_preview_form.template"
+	
+	content_dict = {}
+	
+	#read some info:courseidentifier, crumb, headings, etc, into content_dict if necessary #
+	
+	for item in form.keys():
+		content_dict[item]=form[item].value
+	host =  os.environ.get( 'HTTP_HOST', '' )
+	if not host:
+		host = os.environ.get( 'SERVER_NAME', 'localhost' )
+		port = os.environ.get( 'SERVER_PORT', '80' )
+	content_dict["host"]= host
+	content_dict["title"]=""
+	content_dict["crumb"]=""
+	content_dict["content"]=""
+	if exists( preview_choice_form ):
+		x = Template( file="%s" %preview_choice_form, searchList=[ content_dict ])
+		print x
+	else:
+		print "Error, preview choice form:%s not exist" % preview_choice_form
+	
+def show_course_preview( form ):
+	content_dict = {}
+	#read form input and #
+	for item in form.keys():
+		content_dict[item]=form[item].value
+	#if user choose the preview identifier#
+	if content_dict.has_key( "preview_dir" ):
+		#am.get_course_detail( content_dict["courseidentifier"] )
+		#if debug:
+		#	print "Theme template:%s<br> \n" % am.theme_template
+		
+		if exists( am.theme_template ):
+			am.view_course( form )
+		else:
+			print "Error, preview template:%s not exist" % am.theme_template
+	else:
+		print "Error, preview template not given"
+
+##################################################################################
+if __name__=="__main__":
+	print "Content-type:text/html"
+	print
+
+	query = cgi.FieldStorage()
+	if query.has_key("preview_dir"):
+		am = CourseManager( query["preview_dir"].value )
+	else:
+		am = CourseManager()
+	am.get_course_detail( query["courseidentifier"].value )
+	if query.has_key("cmd"):
+		cmd = query["cmd"].value
+		#am.cmd=cmd
+		if cmd == "show_course_preview":
+			show_course_preview( query )
+			
+		elif cmd == "show_preview_choice":
+			show_preview_choice( query )
+		
+	else:
+		show_preview_choice( query )

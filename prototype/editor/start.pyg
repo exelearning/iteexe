@@ -1,0 +1,234 @@
+#!/usr/bin/python
+
+# Import Psyco if available
+try:
+	import psyco
+	psyco.full()
+except ImportError:
+	pass
+	
+import cgi
+import os
+
+from coursemanager import CourseManager
+from login import islogin, require_login
+from sys import exit
+
+query = cgi.FieldStorage()
+referer = "start.cgi"
+
+referer = "http://localhost/start.pyg"
+#referer = os.environ.get( 'SCRIPT_NAME', '' )
+
+
+##enable cgi traceback
+import cgitb
+#cgitb.enable( display=0, logdir="/var/tmp/httpd" )
+cgitb.enable()
+
+print "Content-type:text/html"
+print
+
+print "A1 Ug"
+
+## use this block to enable login check###
+u_id = islogin( query )
+if  not u_id:
+	i = 0
+	if query.has_key("cmd"):
+		for item in query:
+			if i == 0 :
+				referer += "?"
+			else:
+				referer += "&"
+			referer = referer + "%s=%s" %( item, query[item].value )
+			i += 1
+	require_login( "", referer="%s"%referer)
+	exit(0)
+#####
+
+if query.has_key("cmd"):
+	cmd = query["cmd"].value
+	
+        print "A8 have cmd",cmd
+        print "A9  query",str(query)
+
+	if query.has_key("preview_dir"):
+		if cmd.find( "course" ) > 0:
+			from course import Course
+			am = Course( query["preview_dir"].value )
+		elif cmd.find( "topic" ) > 0:
+			from topic import Topic
+			am = Topic( query["preview_dir"].value )
+		elif cmd.find( "section" ) > 0:
+			from section import Section
+			am = Section( query["preview_dir"].value )
+		elif cmd.find( "unit" ) > 0:
+			from unit import Unit
+			am = Unit( query["preview_dir"].value )
+		else:
+			from course import Course
+			am = Course( query["preview_dir"].value )
+	else:
+		if cmd.find( "course" ) > 0:
+			from course import Course
+			am = Course()
+		elif cmd.find( "topic" ) > 0:
+			from topic import Topic
+			am = Topic()
+		elif cmd.find( "section" ) > 0:
+			from section import Section
+			am = Section()
+		elif cmd.find( "unit" ) > 0:
+			from unit import Unit
+			am = Unit()
+		else:
+			if query.has_key("unitidentifier"):
+				from unit import Unit
+				am = Unit()
+			elif query.has_key("sectionidentifier"):
+				from section import Section
+				am = Section()
+			elif query.has_key("topicidentifier"):
+				from topic import Topic
+				am = Topic()
+			else:
+				from course import Course
+				am = Course()
+
+			#am = CourseManager()
+		
+	#am.cmd = cmd
+	
+	if cmd == "showallcourse":
+		am.showallcourse()
+	
+	elif cmd == "outline_course":
+		am.outline_course(query)
+	
+	elif cmd == "publish_course":
+		am.publish_course(query)
+
+				
+	#view one article	
+	elif cmd == "view_course":
+		am.view_course(query)
+		
+	elif cmd == "showaddcourse":		
+		am.showaddcourse()
+		
+	elif cmd == "save_new_course":
+		am.save_new_course(query)
+	
+	elif cmd == "update_course":
+		am.update_course(query)
+
+	elif cmd == "edit_course":
+		am.edit_course(query)
+
+	elif cmd == "delete_course":
+		am.delete_course(query)
+		
+	elif cmd == "up_course":
+		am.up_course(query)
+
+	elif cmd == "down_course":
+		am.down_course(query)
+	
+	elif cmd == "edit_topic":
+		am.edit_topic(query)
+	
+	elif cmd == "view_topic":
+		am.view_topic(query)
+				
+	elif cmd == "save_new_topic":
+		am.save_new_topic(query)
+	
+	elif cmd == "update_topic":
+		am.update_topic(query)
+		
+	elif cmd == "up_topic":
+		am.up_topic(query)
+	
+	elif cmd == "down_topic":
+		am.down_topic(query)
+	
+	elif cmd == "delete_topic":
+		am.delete_topic(query)
+		
+	elif cmd == "edit_topic":
+		am.edit_topic(query)
+	
+	
+	elif cmd == "edit_section":
+		am.edit_section(query)
+
+	elif cmd == "view_section":
+		am.view_section(query)
+			
+	elif cmd == "save_new_section":
+		am.save_new_section(query)
+	
+	elif cmd == "update_section":
+		am.update_section(query)
+		
+	elif cmd == "up_section":
+		am.up_section(query)
+	
+	elif cmd == "down_section":
+		am.down_section(query)
+	
+	elif cmd == "delete_section":
+		am.delete_section(query)
+	
+	elif cmd == "edit_unit":
+		am.process_unit(query, "edit" )
+	
+	elif cmd == "view_unit":
+		am.process_unit(query, "view" )
+	
+				
+	elif cmd == "save_new_unit":
+		am.process_unit(query, "add" )
+	
+	elif cmd == "update_unit":
+		am.process_unit(query, "update" )
+		
+	elif cmd == "up_unit":
+		am.process_unit(query, "up" )
+	
+	elif cmd == "down_unit":
+		am.process_unit(query, "down" )
+		
+	elif cmd == "delete_unit":
+		am.process_unit(query, "delete")
+	
+	elif cmd == "show_idev_form":
+		am.show_idev_form( query )
+	
+	elif cmd == "save_new_idevice":
+		am.process_idevice( query, "add" )
+	
+	elif cmd == "update_idevice":
+		am.process_idevice( query, "update" )
+	
+	elif cmd == "edit_idevice":
+		am.process_idevice( query, "edit" )
+	
+	elif cmd == "up_idevice":
+		am.process_idevice(query, "up" )
+	
+	elif cmd == "down_idevice":
+		am.process_idevice(query, "down" )
+		
+	elif cmd == "delete_idevice":
+		am.process_idevice(query, "delete")
+
+	elif cmd == "speak_it":
+		am.speak_it( query )
+
+else:
+        print "A10"
+	from course import Course
+	am = Course()
+	am.showallcourse()
