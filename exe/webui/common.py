@@ -68,7 +68,8 @@ def submitButton(name, value, enabled=True):
     else:
         disable = "disabled"
     html  = "<input type=\"submit\" name=\"%s\" " % name
-    html += "value=\"%s\">\n" %  value
+    html += "value=\"%s\" " %  value
+    html += disable+" >\n"
     return html
 
 
