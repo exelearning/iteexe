@@ -24,6 +24,8 @@ i.e. the "package".
 import logging
 import gettext
 import os.path
+import zipfile 
+import cStringIO
 from twisted.spread  import jelly
 from twisted.spread  import banana
 from exe.engine.node import Node
@@ -99,18 +101,35 @@ class Package(jelly.Jellyable):
             path = g_webInterface.config.getDataDir()
              
         log.debug("data directory: " + path)
+
         self.isChanged = 0
         os.chdir(path)
-        fileName = self.name + ".elp" 
-        outFile = open(fileName, 'wb')
-        outFile.write(banana.encode(jelly.jelly(self)))
-        outFile.close()      
 
+        fileName = self.name + ".elp" 
+        zippedFile = zipfile.ZipFile(fileName, "w", zipfile.ZIP_DEFLATED)
+
+        encoder = banana.Banana()
+        encoder.connectionMade()
+        encoder._selectDialect("none")
+        strBuffer = cStringIO.StringIO()
+        encoder.transport = strBuffer
+        encoder.sendEncoded(jelly.jelly(self))
+        zippedFile.writestr("content.data", strBuffer.getvalue())
+        zippedFile.close()
+        
 
     def load(path):
         """Load package from disk, returns a package"""
-        inFile = open(path, 'rb')
-        return jelly.unjelly(banana.decode(inFile.read()))
+        zippedFile = zipfile.ZipFile(path, "r", zipfile.ZIP_DEFLATED)
+        decoder = banana.Banana()
+        decoder.connectionMade()
+        decoder._selectDialect("none")
+        data = []
+        decoder.expressionReceived = data.append
+        decoder.dataReceived(zippedFile.read("content.data"))
+        package.close()
+        return jelly.unjelly(data[0])
+
     load = staticmethod(load)
 
 # ===========================================================================
