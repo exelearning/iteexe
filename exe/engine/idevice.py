@@ -21,11 +21,12 @@ The base class for all iDevices
 """
 
 import logging
+from twisted.spread  import jelly
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class Idevice(object):
+class Idevice(jelly.Jellyable):
     """
     The base class for all iDevices
     iDevices are mini templates which the user uses to create content in the 

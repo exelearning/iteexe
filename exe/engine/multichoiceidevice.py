@@ -22,13 +22,14 @@ A multichoice Idevice is one built up from question and options
 
 import logging
 import gettext
+from twisted.spread     import jelly
 from exe.engine.idevice import Idevice
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class Option(object):
+class Option(jelly.Jellyable):
     """
     A Multichoice iDevice is built up of question and options.  Each option can be
     rendered as an XHTML element

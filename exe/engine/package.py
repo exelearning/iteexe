@@ -24,7 +24,8 @@ i.e. the "package".
 import logging
 import gettext
 import os.path
-import pickle
+from twisted.spread  import jelly
+from twisted.spread  import banana
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.webinterface import g_webInterface
@@ -33,7 +34,7 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
-class Package:
+class Package(jelly.Jellyable):
     """
     Package represents the collection of resources the user is editing
     i.e. the "package".
@@ -101,7 +102,14 @@ class Package:
         self.isChanged = 0
         os.chdir(path)
         fileName = self.name + ".elp" 
-        outfile = open(fileName, "w")
-        pickle.dump(self, outfile)
-        outfile.close()      
+        outFile = open(fileName, "w")
+        outFile.write(banana.encode(jelly.jelly(self)))
+        outFile.close()      
+
+    def load(path):
+        """Load package from disk, returns a package"""
+        inFile = open(path)
+        return jelly.unjelly(banana.decode(inFile.read()))
+    load = staticmethod(load)
+
 # ===========================================================================

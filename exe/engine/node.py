@@ -21,12 +21,13 @@ Nodes provide the structure to the package hierarchy
 """
 
 import logging
+from twisted.spread  import jelly
 from exe.engine.titleidevice import TitleIdevice
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class Node:
+class Node(jelly.Jellyable):
     """
     Nodes provide the structure to the package hierarchy
     """

@@ -22,13 +22,14 @@ A multichoice Idevice is one built up from question and options
 
 import logging
 import gettext
+from twisted.spread     import jelly
 from exe.engine.idevice import Idevice
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class Question(object):
+class Question(jelly.Jellyable):
     """
     A Case iDevice is built up of question and options.  Each option can 
     be rendered as an XHTML element
@@ -65,13 +66,13 @@ case study</li>
 if run in a classroom situation can teams be setup to work on different aspects
 of the case and if so how are ideas feed back to the class</li></ul>"""), "")
                          
-        self.story   = story
+        self.story        = story
         self.questions    = []
-        self.storyInstruc = _("""Create the case story.  A good case is one that 
-describes a controversy.""")
+        self.storyInstruc = _("""Create the case story.  A good case is one 
+that describes a controversy.""")
         self.questionInstruc = _("""Enter the study question.  These questions 
-should draw out the educational messages presented in the case.  Consider aspects
- of the case like, characters, timeliness, relevance, dilemmas.""")
+should draw out the educational messages presented in the case.  Consider 
+aspects of the case like, characters, timeliness, relevance, dilemmas.""")
         self.feedbackInstruc = _("""Provide feedback on the question.  This may 
 be a summary of the main points or concepts.""")
         

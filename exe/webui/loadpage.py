@@ -50,7 +50,7 @@ class LoadPage(Resource):
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
-        self.err      = False
+        self.error    = False
         self.message  = ""
         
     def process(self, request):
@@ -59,7 +59,7 @@ class LoadPage(Resource):
         """
         log.debug("process" + repr(request.args))
         
-        self.err = False              
+        self.error = False              
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         
@@ -75,14 +75,10 @@ class LoadPage(Resource):
             try:  
                 filePath = request.args["object"][0]
                 log.debug("filename and path" + filePath)
-                infile = open(filePath)
-                package = pickle.load(infile)
+                self.package = g_packageStore.loadPackage(filePath)
             except:
                 self.message = _("Sorry, wrong file format.")
-                self.err = True
-            else:
-                self.package = package               
-                g_packageStore.addPackage(package)
+                self.error = True
                     
 
     def render_GET(self, request):
@@ -129,7 +125,7 @@ class LoadPage(Resource):
         log.debug("render_POST" + repr(request.args))
         
         self.process(request)
-        if self.err:
+        if self.error:
             return self.render_GET(request)
         else:
             package = g_packageStore.getPackage(self.package.name)

@@ -91,7 +91,7 @@ class AuthoringPage(Resource):
 
         html += "<form method=\"post\" "
         html += "action=\"%s\"" % request.path
-        html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
+        html += " id=\"contentForm\" name=\"contentForm\" onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", package.isChanged)

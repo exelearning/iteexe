@@ -77,6 +77,25 @@ class PackageStore:
         self.loaded[package.name] = package
 
 
+    def saveAll(self):
+        """
+        Save all the packages in the package store out to disk
+        """
+        for package in self.loaded.values():
+            package.save()
+
+
+    def loadPackage(self, path):
+        """
+        Load a package from disk, add it to the store and return it
+        """
+        package = Package.load(path)
+        self.loaded[package.name] = package
+        return package
+
+
+
+
 # nasty old global
 g_packageStore = PackageStore()
 

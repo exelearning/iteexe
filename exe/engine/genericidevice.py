@@ -22,6 +22,7 @@ An iDevice built up from simple fields.
 """
 
 import logging
+from twisted.spread     import jelly
 from exe.engine.idevice import Idevice
 import gettext
 _ = gettext.gettext
@@ -29,7 +30,7 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class Field(object):
+class Field(jelly.Jellyable):
     """
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
@@ -68,6 +69,7 @@ class GenericIdevice(Idevice):
         self.class_    = class_
         self.fields    = []
 
+
     def addField(self, name, fieldType, class_, instruction="", content=""):
         """
         Add a new field to this iDevice.  Fields are indexed by their name.
@@ -79,10 +81,12 @@ class GenericIdevice(Idevice):
         index = self.fields.index(key)
         self.fields[index].content = value
 
+
     def __getitem__(self, name):
         key   = Field(name)
         index = self.fields.index(key)
         return self.fields[index].content
+
 
     def __iter__(self):
         return iter(self.fields)
