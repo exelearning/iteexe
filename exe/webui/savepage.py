@@ -18,6 +18,7 @@
 # ===========================================================================
 
 import sys
+import os.path
 import logging
 import gettext
 import pickle
@@ -26,6 +27,7 @@ from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
 from exe.webui.menupane import MenuPane
+
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -40,19 +42,27 @@ class SavePage(Resource):
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
+        self.url = ""
+        isSaved = False
         
     def process(self, request):
         log.debug("process", request.args)
         
+        self.isSaved = False
+        self.url = request.path
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         
-        if "action" in request.args and "Save" == request.args["action"][0]:
-            fileName = request.args["fileName"]            
+        if "save" in request.args:
+            fileName = request.args["fileName"][0]
+            if not fileName.endswith(".pkg"):
+                fileName = fileName + ".pkg"
+                
             log.info("saving",fileName)
             outfile = open(fileName, "w")
             pickle.dump(self.package, outfile)
-            
+            self.package.name = os.path.splitext(os.path.basename(fileName))[0]
+            self.isSaved = True
 
     def render_GET(self, request):
         
@@ -65,9 +75,16 @@ class SavePage(Resource):
         
         html  = common.header() + common.banner()
         html += self.menuPane.render()
+        html += "<form method=\"post\" action=\"%s\">" % self.url
+        
+        if self.isSaved:
+            html += "<br/><b>" + _("The course package has been saved successfully.")+ "</b>"
+            
         html += "<br/>%s<br/>" % _("Please enter a filename")
-        html += common.textInput("fileName") + "<br/><br/>"
-        html += common.submitLink("Save", "Save", "")
+        html += common.textInput("fileName", self.package.name+".pkg")
+        html += "<br/><br/>"
+        html += common.submitButton("save", _("Save"))
+        html += "<br/></form>"
         html += common.footer()
         
         return html
