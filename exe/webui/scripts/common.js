@@ -28,7 +28,7 @@ function showMe(ident, w, h){
     var elmDiv = document.createElement('div')
     elmDiv.id  = 'popupmessage'
     elmDiv.className="popupDiv"
-    elmDiv.style.cssText = 'position:absolute; left: ' + (xpos - w/1.7) + 'px; top: ' + (ypos - h - 90) + 'px; width: ' + w + 'px;'
+    elmDiv.style.cssText = 'position:absolute; left: ' + (xpos - w/2) + 'px; top: ' + (ypos - h) + 'px; width: ' + w + 'px;'
     elmDiv.innerHTML = document.getElementById(ident).innerHTML
     document.body.appendChild(elmDiv)
     new dragElement('popupmessage')
@@ -47,8 +47,8 @@ function updateCoords(e) {
         ypos = e.offsetY
     }
     else {
-                xpos = e.pageX
-                ypos = e.pageY
+        xpos = e.pageX
+        ypos = e.pageY
     }
 }
 
@@ -67,4 +67,5 @@ function submitLink(action, object)
     document.contentForm.object.value = object;
     document.contentForm.submit();
 }
+
 

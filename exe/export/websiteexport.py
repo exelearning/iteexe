@@ -123,8 +123,9 @@ class WebsiteExport(object):
 
         os.mkdir(package.name)
         os.chdir(package.name)
+        exeDir = g_webInterface.config.getExeDir()
 
-        for styleFile in glob.glob(os.path.join(g_webInterface.config.getExeDir(), 
+        for styleFile in glob.glob(os.path.join(exeDir, 
                                                 "style", package.style, "*")):
             shutil.copyfile(styleFile, os.path.basename(styleFile))
 

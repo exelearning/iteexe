@@ -197,21 +197,20 @@ class Block(object):
         options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
         options += self.__getNodeOptions(self.idevice.parentNode.package.root)
         html += common.select("move", self.id, options)
-        html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
-        html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
-        html += "href=\"Javascript:void(0)\"> " 
-        html += "<img src=\"/images/info.gif\" border=\"0\" align=\"middle\" /></a>\n"
-        html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
-        html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
-	html += "border=\"0\" align=\"middle\" "
-        html += "onmousedown=\"Javascript:hideMe();\"/></div>"
-        if self.purpose == "" and self.tip == "":
-            html += "<b>Sorry, no help available.</b>"
-        else:
+	if self.purpose != "" or self.tip != "":
+	    html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
+	    html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
+	    html += "href=\"Javascript:void(0)\"> " 
+	    html += "<img src=\"/images/info.gif\" border=\"0\" align=\"middle\" />"
+	    html += "</a>\n"
+	    html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
+	    html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
+	    html += "border=\"0\" align=\"middle\" "
+	    html += "onmousedown=\"Javascript:hideMe();\"/></div>"
             html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
             html += "<b>Tip:</b><br/>%s<br/>" % self.tip
-                    
-        html += "</div>\n"
+            html += "</div>\n"        
+        
         return html
 
 

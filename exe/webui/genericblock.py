@@ -43,7 +43,8 @@ class GenericBlock(Block):
             self.elements.append(createElement(field.fieldType, 
                                                field.name, 
                                                field.class_,
-                                               self.id))
+                                               self.id,
+                                               field.instruction))
 
 
     def process(self, request):

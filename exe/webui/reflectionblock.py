@@ -41,9 +41,10 @@ class ReflectionBlock(Block):
         Initialize a new Block object
         """
         Block.__init__(self, idevice)
-        self.activity    = idevice.activity 
-        self.answer      = idevice.answer
-
+        self.activity        = idevice.activity 
+        self.answer          = idevice.answer
+        self.activityInstruc = idevice.activityInstruc
+        self.answerInstruc   = idevice.answerInstruc
 
     def process(self, request):
         """
@@ -98,10 +99,12 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("\n","\\n")
         self.answer   = self.answer.replace("'","\\'")
         html  = "<div id=\"iDevice\" class=\"reflection\">\n"
-        html +=  _("Reflective question:") + "<br/>"
-        html += common.richTextArea("acti"+self.id, self.activity)
-        html += _("Response:") + "<br/>"
-        html += common.richTextArea("answer"+self.id, self.answer)           
+        html +=  _("Reflective question:") 
+        html += common.elementInstructions("acti"+self.id,self.activityInstruc)
+        html += "<br/>" + common.richTextArea("acti"+self.id, self.activity)
+        html += _("Response:")
+        html += common.elementInstructions("answer"+self.id,self.answerInstruc)
+        html += "<br/>" + common.richTextArea("answer"+self.id, self.answer)           
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html

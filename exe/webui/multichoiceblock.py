@@ -45,6 +45,10 @@ class MultichoiceBlock(Block):
         self.idevice = idevice
         self.optionElements = []
         self.question = idevice.question
+        self.questionInstruc = idevice.questionInstruc
+        self.keyInstruc      = idevice.keyInstruc
+        self.answerInstruc   = idevice.answerInstruc
+        self.feedbackInstruc = idevice.feedbackInstruc
         i = 0
         for option in idevice.options:
             self.optionElements.append(OptionElement(i, idevice, option))
@@ -104,19 +108,24 @@ class MultichoiceBlock(Block):
         self.question = self.question.replace("\r", "")
         self.question = self.question.replace("\n","\\n")
         self.question = self.question.replace("'","\\'")
-        html  = "<b>" + _("Question:") + "</b><br/>"       
+        html  = "<b>" + _("Question:") + " </b>"   
+        html += common.elementInstructions("ques"+self.id, self.questionInstruc)
         html += common.richTextArea("ques"+self.id, self.question)
         html += "<div id=\"iDevice\" class=\"multichoice\">\n"
-        html += "<table width =\"100%%\"><th>%s</th>" % _("Key")
-        html += "<th>%s</th>" % _("Answer")
-        html += "<th>%s</th>" % _("Feedback")
+        html += "<table width =\"100%%\"><th>%s " % _("Key")
+        html += common.elementInstructions("key"+self.id, self.keyInstruc)
+        html += "</th><th>%s " % _("Answer")
+        html += common.elementInstructions("ans"+self.id, self.answerInstruc)
+        html += "</th><th>%s " % _("Feedback")
+        html += common.elementInstructions("feed"+self.id, self.feedbackInstruc)
+        html += "</th>"
 
         for element in self.optionElements:
             html += element.renderEdit() 
             
         html += "</table>\n"
-            
-        html += common.submitButton("addOption"+str(self.id), _("Add another option"))
+        value = _("Add another option")    
+        html += common.submitButton("addOption"+str(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
         return html

@@ -46,6 +46,9 @@ class Config:
         else:
             self.dataDir = os.environ["HOME"]
 
+        if not os.path.isdir(self.dataDir):
+            self.dataDir = "/"
+
         self.exePath = os.path.abspath(sys.argv[0])
         self.exeDir  = os.path.dirname(self.exePath)
  

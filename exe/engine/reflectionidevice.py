@@ -41,8 +41,10 @@ class ReflectionIdevice(Idevice):
         Idevice.__init__(self, 
                          _("Reflection Questions"),
                          _("University of Auckland"), "", "")
-        self.activity   = activity
-        self.answer     = answer
+        self.activity       = activity
+        self.answer          = answer
+        self.activityInstruc = "Type in reflective questions"
+        self.answerInstruc    = "Type in suggested answers"
 
 
 

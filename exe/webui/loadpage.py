@@ -112,7 +112,9 @@ class LoadPage(Resource):
         html += _(" Please select a file") + "<br/>\n"
         html += "<input type = \"file\" name = \"fileName\">\n"
         html += "<br/><br/>"
-        html += "<a href=\"#\" onclick=\"submitLink('Load', ""document.contentForm.fileName.value); \">%s</a>\n" % _("Load")
+        html += "<a href=\"#\" onclick=\"submitLink('Load',"
+        html += " ""document.contentForm.fileName.value); \">"
+        html += _("Load")
         html += "<br/></form>\n"        
         html += common.footer()
         self.message = ""

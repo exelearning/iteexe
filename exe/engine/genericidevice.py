@@ -34,14 +34,15 @@ class Field(object):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    def __init__(self, name, fieldType=None, class_="", content=""):
+    def __init__(self, name, fieldType=None, class_="", instruction="", content=""):
         """
         Initialize 
         """
-        self.name      = name
-        self.fieldType = fieldType
-        self.content   = content
-        self.class_    = class_
+        self.name        = name
+        self.fieldType   = fieldType
+        self.content     = content
+        self.class_      = class_
+        self.instruction = instruction
 
     def __cmp__(self, other):
         """
@@ -66,11 +67,11 @@ class GenericIdevice(Idevice):
         self.class_    = class_
         self.fields    = []
 
-    def addField(self, name, fieldType, class_, content=""):
+    def addField(self, name, fieldType, class_, instruction="", content=""):
         """
         Add a new field to this iDevice.  Fields are indexed by their name.
         """
-        self.fields.append(Field(name, fieldType, class_, content))
+        self.fields.append(Field(name, fieldType, class_, instruction, content)) 
 
     def __setitem__(self, name, value):
         key   = Field(name)
