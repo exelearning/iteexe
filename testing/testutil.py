@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-from exe.util.config import Config
+from exe.engine.config import Config
 import logging
 from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import unittest
