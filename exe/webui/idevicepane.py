@@ -48,9 +48,9 @@ class IdevicePane(object):
         if ("action" in request.args and 
             request.args["action"][0] == "AddIdevice"):
             if request.args["object"][0] == "FreeTextIdevice":
-                self.node.idevices.append(FreeTextIdevice())
+                self.node.idevices.addIdevice(FreeTextIdevice())
             elif request.args["object"][0] == "SimpleIdevice":
-                self.node.idevices.append(SimpleIdevice())
+                self.node.idevices.addIdevice(SimpleIdevice())
             
             
     def render(self, node):

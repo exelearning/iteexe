@@ -34,17 +34,16 @@ class Package:
     i.e. the "package".
     """
     def __init__(self, name):
+        """
+        Initialize 
+        """
         log.debug("init " + repr(name))
         self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
         self.name        = name
-        self.draft       = Node(self)
-        self.draft.id    = [0]
-        self.draft.title = _("Draft")
-        self.draft.idevices.append(FreeTextIdevice())
+        self.draft       = Node(self, [0], _("Draft"))
+        self.draft.addIdevice(FreeTextIdevice())
         self.currentNode = self.draft
-        self.root        = Node(self)
-        self.root.id     = [1]
-        self.root.title  = _("Package")
+        self.root        = Node(self, [1], _("Package"))
         self.author      = ""
         self.description = ""
         
@@ -79,6 +78,6 @@ class Package:
         if level < len(self.levelNames):
             return self.levelNames[level]
         else:
-            return _("#")
+            return _("?????")
             
 # ===========================================================================

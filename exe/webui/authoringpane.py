@@ -56,13 +56,13 @@ class AuthoringPane(object):
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
         self.addBlocks(self.topNode)
-        html = "<!-- start authoring pane -->\n"
-	html  += "<div id=\"authoring_pane\">\n"
+        html  = "<!-- start authoring pane -->\n"
+        html += "<div id=\"authoring_pane\">\n"
 
         for block in self.blocks:
             html += block.render()
-	html += "</div>\n"
-	html += "<!-- end authoring pane -->\n"
+        html += "</div>\n"
+        html += "<!-- end authoring pane -->\n"
         return html
         
 
@@ -71,10 +71,10 @@ class AuthoringPane(object):
         Recursively add blocks for all the nodes down to the level limit 
         which was set
         """
-        self.blocks.append(TitleBlock(node))
+        self.blocks.append(TitleBlock(node.title))
 
         for idevice in node.idevices:
-            block = g_blockFactory.createBlock(node, idevice)
+            block = g_blockFactory.createBlock(idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")

@@ -37,13 +37,8 @@ class FreeTextBlock(Block):
     YES it's a cut and paste from SimpleBlock, GenericBlock will 
     replace them both..... one day
     """
-    def __init__(self, parentNode, idevice):
-        if idevice.edit:
-            mode = Block.Edit
-        else:
-            mode = Block.Preview
-            
-        Block.__init__(self, parentNode, idevice.id, mode)
+    def __init__(self, idevice):
+        Block.__init__(self, idevice)
         self.idevice = idevice
 
     def process(self, request):
@@ -61,23 +56,22 @@ class FreeTextBlock(Block):
 
     def processDelete(self, request):
         Block.processDelete(self, request)
-        oldIndex = self.parentNode.findIdevice(self.id)
-        del self.parentNode.idevices[oldIndex]
+        self.idevice.delete()
 
     def processMove(self, request):
         Block.processMove(self, request)
+        self.idevice.delete()
         nodeId = request.args["move"+self.id][0]
-#        nodeId   = selected.split(":", 1)[0]
-        node     = self.parentNode.package.findNode(nodeId)
-        node.idevices.append(self.idevice)
-
-        oldIndex = self.parentNode.findIdevice(self.id)
-        del self.parentNode.idevices[oldIndex]
-        self.parentNode = node
+        #TODO tidy this up
+        node   = self.idevice.node.package.findNode(nodeId)
+        if node is not None:
+            node.addIdevice(self.idevice)
+        else:
+            log.error("addChildNode cannot locate "+nodeId)
 
     def processMovePrev(self, request):
         Block.processMovePrev(self, request)
-        index = self.parentNode.findIdevice(self.id)
+        index = self.parentNode.idevices.index(self.idevice)
         if index > 0:
             temp = self.parentNode.idevices[index - 1]
             self.parentNode.idevices[index - 1] = self.idevice
@@ -85,7 +79,7 @@ class FreeTextBlock(Block):
 
     def processMoveNext(self, request):
         Block.processMoveNext(self, request)
-        index = self.parentNode.findIdevice(self.id)
+        index = self.parentNode.index(self.idevice)
         if index < len(self.parentNode.idevices) - 1:
             temp = self.parentNode.idevices[index + 1]
             self.parentNode.idevices[index + 1] = self.idevice

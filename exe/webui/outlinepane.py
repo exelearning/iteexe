@@ -120,19 +120,23 @@ class OutlinePane(object):
         """Renders a node either as a link, or as the bold current node"""
         html = ""
         if node == self.package.currentNode:
-            html += "<b>" + node.getTitle() + "</b>"
+            html += "<b>" + str(node.title) + "</b>"
         else:
             html += common.submitLink("changeNode", node.getIdStr(), 
-                                      node.getTitle())
+                                      str(node.title))
         return html
 
         
     def __renderActions(self, node):
         """Renders the add and delete action icons"""
         html  = " "
-        childLevel = self.package.levelName(len(node.id) - 1)
+        if len(node.id) - 1 < len(self.package.levelNames):
+            addAction = _("Add %s") % self.package.levelName(len(node.id) - 1)
+        else:
+            addAction = _("Add")
+
         html += common.submitImage("addChildNode", node.getIdStr(),
-                                   "stock-new.png", _("Add ")+childLevel )
+                                   "stock-new.png", addAction)
         html += common.submitImage("deleteNode", node.getIdStr(),
                                    "stock-cancel.png", _("Delete"))
 

@@ -31,13 +31,18 @@ class Block(object):
     Block is the base class for the classes which are responsible for 
     rendering and processing Idevices in XHTML
     """
-    nextId    = 0
-    Edit, View, Preview, Hidden = range(4)
+    nextId = 0
+    Edit, Preview, View, Hidden = range(4)
 
-    def __init__(self, parentNode, id, mode=Edit):
-        self.parentNode = parentNode
-        self.id         = id
-        self.mode       = mode
+    def __init__(self, idevice):
+        self.idevice = idevice
+        self.id      = idevice.id
+
+        if idevice.edit:
+            self.mode = Block.Edit
+        else:
+            self.mode = Block.Preview
+
 
     def process(self, request):
         log.debug("process id="+self.id)
@@ -45,6 +50,7 @@ class Block(object):
         if "action" in request.args:
             if request.args["action"][0] == "PreviewAll":
                 self.processDone(request)
+
             elif request.args["action"][0] == "EditAll":
                 self.processEdit(request)
             
@@ -75,19 +81,19 @@ class Block(object):
 
     def processDone(self, request):
         log.debug("processDone id="+self.id)
-        self.mode = Block.Preview
+        self.idevice.edit = False
 
     def processEdit(self, request):
         log.debug("processEdit id="+self.id)
-        self.mode = Block.Edit
+        self.idevice.edit = True
 
     def processDelete(self, request):
         log.debug("processDelete id="+self.id)
-        self.mode = Block.Hidden
+#        self.mode = Block.Hidden
 
     def processMove(self, request):
         log.debug("processMove id="+self.id)
-        self.mode = Block.Hidden
+#        self.mode = Block.Hidden
 
     def processPromote(self, request):
         log.debug("processPromote id="+self.id)
@@ -100,7 +106,6 @@ class Block(object):
 
     def processMoveNext(self, request):
         log.debug("processMoveNext id="+self.id)
-
 
     def render(self):
         if self.mode == Block.Edit:
@@ -131,15 +136,17 @@ class Block(object):
         html += common.submitImage("movePrev", self.id, "stock-go-up.png")
         html += common.submitImage("moveNext", self.id, "stock-go-down.png")
         options  = [(_("---Move To---"),""),]
-        options += self.__getNodeOptions(self.parentNode.package.draft)
-        options += self.__getNodeOptions(self.parentNode.package.root)
+
+        #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
+        options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
+        options += self.__getNodeOptions(self.idevice.parentNode.package.root)
         html += common.select("move", self.id, options)
         return html
 
     # TODO We should probably get this list from elsewhere rather than
     # building it up for every block
     def __getNodeOptions(self, node):
-        options = [("&nbsp;&nbsp;&nbsp;"*(len(node.id)-1) + node.getTitle(), 
+        options = [("&nbsp;&nbsp;&nbsp;"*(len(node.id)-1) + str(node.title), 
                    node.getIdStr(),)]
         for child in node.children:
             options += self.__getNodeOptions(child)

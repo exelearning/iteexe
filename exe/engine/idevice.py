@@ -2,10 +2,6 @@
 # eXe 
 # Copyright 2004-2005, University of Auckland
 #
-# Idevice is the base class for all Idevices
-# Idevices are mini templates which the user uses to create content in
-# the package
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -28,11 +24,29 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Idevice(object):
+    """
+    The base class for all iDevices
+    iDevices are mini templates which the user uses to create content in the 
+    package
+    """
     nextId = 1
-    def __init__(self):
-        self.edit = True
-        self.id   = str(Idevice.nextId)
-        Idevice.nextId += 1
 
+    def __init__(self, parentNode=None):
+        """Initialize a new iDevice, setting a unique id"""
+        self.edit       = True
+        self.id         = str(Idevice.nextId)
+        Idevice.nextId += 1
+        self.parentNode = parentNode
+
+
+    def __cmp__(self, other):
+        return cmp(self.id, other.id)
+
+
+    def delete(self):
+        """delete an iDevice from it's parentNode"""
+        if self.parentNode:
+            self.parentNode.remove(self)
+            self.parentNode = None
 
 # ===========================================================================
