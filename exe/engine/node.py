@@ -120,13 +120,14 @@ class Node:
             oldParent.children[len(oldParent.children) - 1].delete()
             
             
-    def deleteIdevice(self, id):
+    def findIdevice(self, id):
         index = 0
         for idevice in self.idevices:
             if idevice.id == id:
-                del self.idevices[index]
-                break
+                return index
             index += 1
+
+        return None
         
 
 # ===========================================================================

@@ -33,6 +33,9 @@ _   = gettext.gettext
 class FreeTextBlock(Block):
     """
     FreeTextBlock can render and process FreeTextIdevices as XHTML
+
+    YES it's a cut and paste from SimpleBlock, GenericBlock will 
+    replace them both..... one day
     """
     def __init__(self, parentNode, idevice):
         if idevice.edit:
@@ -60,14 +63,31 @@ class FreeTextBlock(Block):
         self.parentNode.deleteIdevice(self.id)
 
     def processMove(self, request):
-        Block.processDelete(self, request)
+        Block.processMove(self, request)
         selected = request.args["move"+self.id][0]
         nodeId   = selected.split(":", 1)[0]
         node     = self.parentNode.package.findNode(nodeId)
         node.idevices.append(self.idevice)
-        self.parentNode.deleteIdevice(self.id)
+
+        oldIndex = self.parentNode.findIdevice(self.id)
+        del self.parentNode[oldIndex]
         self.parentNode = node
 
+    def processMovePrev(self, request):
+        Block.processMovePrev(self, request)
+        index = self.parentNode.findIdevice(self.id)
+        if index > 0:
+            temp = self.parentNode.idevices[index - 1]
+            self.parentNode.idevices[index - 1] = self.idevice
+            self.parentNode.idevices[index]     = temp
+
+    def processMoveNext(self, request):
+        Block.processMoveNext(self, request)
+        index = self.parentNode.findIdevice(self.id)
+        if index < len(self.parentNode.idevices) - 1:
+            temp = self.parentNode.idevices[index + 1]
+            self.parentNode.idevices[index + 1] = self.idevice
+            self.parentNode.idevices[index]     = temp
 
     def renderEdit(self):
         """

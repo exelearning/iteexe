@@ -40,6 +40,7 @@ class Block(object):
         self.mode       = mode
 
     def process(self, request):
+        log.debug("process id="+self.id)
         if "object" in request.args and request.args["object"][0] == self.id:
             if request.args["action"][0] == "done":
                 self.processDone(request)
@@ -53,17 +54,40 @@ class Block(object):
             elif request.args["action"][0] == "move":
                 self.processMove(request)
 
+            elif request.args["action"][0] == "movePrev":
+                self.processMovePrev(request)
+
+            elif request.args["action"][0] == "moveNext":
+                self.processMoveNext(request)
+
     def processDone(self, request):
+        log.debug("processDone id="+self.id)
         self.mode = Block.View
 
     def processEdit(self, request):
+        log.debug("processEdit id="+self.id)
         self.mode = Block.Edit
 
     def processDelete(self, request):
+        log.debug("processDelete id="+self.id)
         self.mode = Block.Hidden
 
     def processMove(self, request):
+        log.debug("processMove id="+self.id)
         self.mode = Block.Hidden
+
+    def processPromote(self, request):
+        log.debug("processPromote id="+self.id)
+
+    def processDemote(self, request):
+        log.debug("processDemote id="+self.id)
+
+    def processMovePrev(self, request):
+        log.debug("processMovePrev id="+self.id)
+
+    def processMoveNext(self, request):
+        log.debug("processMoveNext id="+self.id)
+
 
     def render(self):
         if self.mode == Block.Edit:
@@ -83,8 +107,13 @@ class Block(object):
         return "ERROR Block.renderEdit called directly"
 
     def renderEditButtons(self):
-        html  = common.submitLink("done",   self.id, _("Done"))
-        html += common.submitLink("delete", self.id, _("Delete"))
+#        html  = common.submitLink("done",   self.id, _("Done"))
+#        html += common.submitLink("delete", self.id, _("Delete"))
+        
+        html  = common.submitImage("done",     self.id, "stock-apply.png")
+        html += common.submitImage("delete",   self.id, "stock-cancel.png")
+        html += common.submitImage("movePrev", self.id, "stock-go-up.png")
+        html += common.submitImage("moveNext", self.id, "stock-go-down.png")
         options  = [_("---Move To---")]
         options += self.__getNodeOptions(self.parentNode.package.draft)
         options += self.__getNodeOptions(self.parentNode.package.root)
@@ -107,7 +136,8 @@ class Block(object):
         return "ERROR Block.renderView called directly"
 
     def renderViewButtons(self):
-        html  = common.submitLink("edit", self.id, _("Edit"))
+#        html  = common.submitLink("edit", self.id, _("Edit"))
+        html  = common.submitImage("edit", self.id, "stock-edit.png")
         return html
 
 # ===========================================================================

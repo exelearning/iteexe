@@ -70,6 +70,22 @@ class SimpleBlock(Block):
         self.parentNode.deleteIdevice(self.id)
         self.parentNode = node
 
+    def processMovePrev(self, request):
+        Block.processMovePrev(self, request)
+        index = self.parentNode.findIdevice(self.id)
+        if index > 0:
+            temp = self.parentNode.idevices[index - 1]
+            self.parentNode.idevices[index - 1] = self.idevice
+            self.parentNode.idevices[index]     = temp
+
+    def processMoveNext(self, request):
+        Block.processMoveNext(self, request)
+        index = self.parentNode.findIdevice(self.id)
+        if index < len(self.parentNode.idevices) - 1:
+            temp = self.parentNode.idevices[index + 1]
+            self.parentNode.idevices[index + 1] = self.idevice
+            self.parentNode.idevices[index]     = temp
+
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block

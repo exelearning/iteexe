@@ -71,8 +71,9 @@ class AuthoringPage(Resource):
         html  = common.header()
         html += common.banner()
 
-#        html += "<pre>"+repr(request.args)+"</pre>\n"
-#        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
+        if log.getEffectiveLevel() == logging.DEBUG:
+            html += "<pre>"+repr(request.args)+"</pre>\n"
+            html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
         html += "<form method=\"post\" action=\"%s\"" % request.path
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"

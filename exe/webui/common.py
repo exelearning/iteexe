@@ -19,7 +19,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 
@@ -70,13 +69,11 @@ def textArea(name, value=""):
     return html
 
 def submitButton(name, value, enabled=True):
-    if enabled:
-        disable = ""
-    else:
-        disable = "disabled"
     html  = "<input type=\"submit\" name=\"%s\" " % name
     html += "value=\"%s\" " % value
-    html += disable+" />\n"
+    if not enabled:
+        html += " disabled"
+    html += "/>\n"
     return html
 
 def genJavascript():
@@ -104,6 +101,17 @@ def submitLink(action, object, value, class_=""):
     html += "href=\"#\" onclick=\"submitLink('" + action
     html += "', '" + object + "');\" >"
     html += value
+    html += "</a>\n"
+    return html
+
+def submitImage(action, object, image, class_=""):
+    html  = "<a "
+    if class_ != "":
+        html += "class=\""+class_+"\" "
+    html += "href=\"#\" onclick=\"submitLink('" + action
+    html += "', '" + object + "');\" >"
+    html += "<img src=\"/images/"+image+"\" "
+    html += " align=\"bottom\" border=\"0\" />\n"
     html += "</a>\n"
     return html
 
