@@ -20,6 +20,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+Webserver module
+"""
+
 
 from twisted.internet import reactor
 from twisted.internet.error import CannotListenError
@@ -33,7 +37,6 @@ from exe.webui.newpackagepage import NewPackagePage
 from exe.webui.webinterface import g_webInterface
 import logging
  
-
 log = logging.getLogger(__name__)
 
 def main():
@@ -67,18 +70,27 @@ def launchBrowser(port):
     Launch the webbrowser (Firefox) for this platform
     """
     if sys.platform[:3] == "win":
-        import _winreg
-        registry = _winreg.ConnectRegistry(None, _winreg.HKEY_LOCAL_MACHINE)
-        key      = _winreg.OpenKey(registry, 
-                                   r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
-        path     = _winreg.QueryValueEx(key, "PathToExe")[0]
-        _winreg.CloseKey(key)
-        _winreg.CloseKey(registry)
+        if not g_webInterface.config.browserPath:
+            import _winreg
+            registry = _winreg.ConnectRegistry(None, _winreg.HKEY_LOCAL_MACHINE)
+            key      = _winreg.OpenKey(registry, 
+                                 r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
+            g_webInterface.config.browserPath = _winreg.QueryValueEx(key, 
+                                 "PathToExe")[0]
+            _winreg.CloseKey(key)
+            _winreg.CloseKey(registry)
+
+        if not g_webInterface.config.browserPath:
+            standardPath = "c:/program files/mozilla/bin/firefox"
+            if os.path.exists(standardPath):
+                g_webInterface.config.browserPath = standardPath
         
-        command = path
-        url = 'http://localhost:%d' % port
-        log.info("Launch firefox with "+command)
-        os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
+        if g_webInterface.config.browserPath:
+            command = g_webInterface.config.browserPath
+            url     = 'http://localhost:%d' % port
+            log.info("Launch firefox with "+command)
+            os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
+
     else:
         os.system("firefox http://localhost:%d&"%port)
     print "Welcome to eXe: the eLearning XML editor"

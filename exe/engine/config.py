@@ -55,6 +55,11 @@ class Config:
         else:
             self.port = 8081
 
+        if self.setting.has_option("system", "browser-path"):
+            self.browserPath = self.setting.getint("system", "browser-path")
+        else:
+            self.browserPath = None
+
     def setupLogging(self, logFile):
         """
         setup logging file
