@@ -29,7 +29,6 @@ import os
 import os.path
 import sys
 from exe.engine.config import Config
-from exe.engine import util
 from exe.webui.newpackagepage import NewPackagePage
 from exe.webui.webinterface import g_webInterface
 import logging
@@ -38,6 +37,9 @@ import logging
 log = logging.getLogger(__name__)
 
 def main():
+    """
+    Main function, starts the webserver
+    """
     port = 8081
     config = Config("exe.conf")
     g_webInterface.config = config
@@ -62,16 +64,20 @@ def main():
 
 
 def launchBrowser(port):
+    """
+    Launch the webbrowser (Firefox) for this platform
+    """
     if sys.platform[:3] == "win":
         import _winreg
-        registry = _winreg.ConnectRegistry(None,_winreg.HKEY_LOCAL_MACHINE)
-        key      = _winreg.OpenKey(registry, r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
+        registry = _winreg.ConnectRegistry(None, _winreg.HKEY_LOCAL_MACHINE)
+        key      = _winreg.OpenKey(registry, 
+                                   r"SOFTWARE\Mozilla\Mozilla Firefox 1.0\bin")
         path     = _winreg.QueryValueEx(key, "PathToExe")[0]
         _winreg.CloseKey(key)
         _winreg.CloseKey(registry)
         
         command = path
-        url = 'http://localhost:%d'%port
+        url = 'http://localhost:%d' % port
         log.info("Launch firefox with "+command)
         os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
     else:

@@ -17,6 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+The SavePage is responsible for saving the current project
+"""
+
 import os.path
 import logging
 import gettext
@@ -76,13 +80,12 @@ class SavePage(Resource):
     def render_GET(self, request):
         """Called for all requests to this object"""
         
-        # processing 
+        # Processing 
         log.debug("render_GET")
         self.process(request)
         self.menuPane.process(request)
                         
         # Rendering
-        
         html  = common.header() + common.banner()
         html += self.menuPane.render()
         html += "<form method=\"post\" action=\"%s\">" % self.url        

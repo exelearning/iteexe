@@ -17,10 +17,13 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
+"""
+NewPackagePage is the first screen the user loads.  It doesn't show
+anything it just redirects the user to a new package.
+"""
+
 import logging
 import gettext
-from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore  import g_packageStore
@@ -29,7 +32,6 @@ from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage       import SavePage
 from exe.webui.loadpage       import LoadPage
 from exe.webui.exportpage     import ExportPage
-from exe.webui.webinterface   import g_webInterface
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -42,9 +44,15 @@ class NewPackagePage(Resource):
     """
     
     def __init__(self):
+        """
+        Initialize
+        """
         Resource.__init__(self)
 
     def getChild(self, name, request):
+        """
+        Get the child page for the name given
+        """
         if name == '':
             return self
         else:

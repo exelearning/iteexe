@@ -17,12 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import os.path
 import logging
 import gettext
 import pickle
-from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
@@ -31,7 +29,6 @@ from exe.webui.menupane import MenuPane
 from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage import SavePage
-from exe.webui.webinterface import g_webInterface
 from exe.webui.exportpage import ExportPage
 
 
@@ -45,20 +42,26 @@ class LoadPage(Resource):
     """
     
     def __init__(self):
+        """
+        Initialize
+        """
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
-        self.err = False
+        self.err      = False
         self.message  = ""
         
     def process(self, request):
+        """
+        Process the save request
+        """
         log.debug("process" + repr(request.args))
         
         self.err = False              
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
 
-        if "action" in request.args and request.args["action"][0] == "Load":           
+        if "action" in request.args and request.args["action"][0] == "Load":
             if "saveChk" in request.args:
                 dataDir = g_webInterface.config.getDataDir()
                 os.chdir(dataDir)
@@ -81,14 +84,16 @@ class LoadPage(Resource):
                 
 
     def render_GET(self, request):
+        """
+        Display the saving dialog
+        """
         
-        # processing 
+        # Processing 
         log.debug("render_GET")
         self.process(request)
         self.menuPane.process(request)
                         
         # Rendering
-        
         html  = common.header()
         html += common.banner()
         html += self.menuPane.render()
@@ -104,7 +109,7 @@ class LoadPage(Resource):
         html += _(" Please select a file") + "<br/>\n"
         html += "<input type = \"file\" name = \"fileName\">\n"
         html += "<br/><br/>"
-        html += "<a href=\"#\" onclick=\"submitLink('Load', document.contentForm.fileName.value); \">%s</a>\n" % _("Load")
+        html += "<a href=\"#\" onclick=\"submitLink('Load', ""document.contentForm.fileName.value); \">%s</a>\n" % _("Load")
         html += "<br/></form>\n"        
         html += common.footer()
         self.message = ""

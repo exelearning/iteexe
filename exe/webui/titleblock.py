@@ -17,12 +17,14 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
+"""
+TitleBlock is for rendering node titles
+"""
+
 import logging
 import gettext
 from exe.webui import common
 from exe.webui.block          import Block
-from exe.webui.blockfactory   import g_blockFactory
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -37,36 +39,46 @@ class TitleBlock(Block):
         #log.debug("__init__"+titleIdevice.title)
         Block.__init__(self, titleIdevice)
 
-#    def process(self, request):
-#        log.debug("process "+self.id+repr(request))
-#        Block.process(self, request)
     def processDone(self, request):
+        """
+        User has finished editing this block
+        """
         Block.processDone(self, request)
         if "nodeTitle"+self.id in request.args:
             self.idevice.title = request.args["nodeTitle"+self.id][0]
             log.info("Changed "+self.id+" title to "+str(self.idevice))
 
     def processMovePrev(self, request):
+        """
+        Move this iDevice back to the previous position
+        """
         Block.processMovePrev(self, request)
         log.debug("processMovePrev "+self.id)
         self.idevice.parentNode.movePrev()
 
     def processMoveNext(self, request):
+        """
+        Move this iDevice forward to the next position
+        """
         Block.processMoveNext(self, request)
         log.debug("processMoveNext "+self.id)
         self.idevice.parentNode.moveNext()
 
     def processPromote(self, request):
+        """
+        Promote this iDevice up the hierarchy tree
+        """
         Block.processPromote(self, request)
         log.debug("processPromote "+self.id)
         self.idevice.parentNode.promote()
 
     def processDemote(self, request):
+        """
+        Demote this iDevice down the hierarchy tree
+        """
         Block.processDemote(self, request)
         log.debug("processDemote "+self.id)
         self.idevice.parentNode.demote()
-
-        
 
     def renderEdit(self):
         """
@@ -117,16 +129,19 @@ class TitleBlock(Block):
         """
         html  = "<div>\n"
         html += "<p class=\"prev_edit\">\n"
-	html += self.__renderNodeActions()
+        html += self.__renderNodeActions()
         html += "</p>\n"
-	html += self.renderView()
+        html += self.renderView()
         html += common.submitImage("edit", self.id,
                                    "stock-edit.png", _("Edit this Title"))
-	html += "</div>\n"
+        html += "</div>\n"
         return html
 
 
     def __renderNodeActions(self):
+        """
+        Common XHTML used by both renderEdit and renderPreview
+        """
         html  = common.submitImage("PreviewAll", self.id,
                                    "edit.gif", _("Preview All"))
         html += common.submitImage("EditAll", self.id,

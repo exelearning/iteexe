@@ -17,10 +17,13 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+OutlinePane is responsible for creating the XHTML for the package outline
+"""
+
 import logging
 import gettext
 from exe.webui import common
-from exe.engine.packagestore import g_packageStore
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 

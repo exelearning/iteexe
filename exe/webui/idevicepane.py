@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui import common
@@ -37,6 +36,12 @@ class IdevicePane(object):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
+    def __init__(self):
+        """ 
+        Initialize
+        """ 
+        pass
+
     def process(self, request, package):
         """ 
         Process the request arguments to see if we're supposed to 

@@ -17,6 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+"""
+PropertiesPane is responsible for creating the XHTML for the properties pane
+"""
+
 import logging
 import gettext
 from exe.webui import common
@@ -29,7 +33,7 @@ _   = gettext.gettext
 # ===========================================================================
 class PropertiesPane(object):
     """
-    PropertiesPane is responsible for creating the XHTML for the package pane
+    PropertiesPane is responsible for creating the XHTML for the properties pane
     """
     def __init__(self):
         self.package = None
