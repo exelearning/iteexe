@@ -116,7 +116,7 @@ class AuthoringPage(Resource):
 
         html += "<div id=\"styles-above\" class=\"links\">\n"
         html += "<span id=\"name\">\n"
-	html += "<select onchange=\"submitLink('style', '');\""
+        html += "<select onchange=\"submitLink('style', '');\""
         html += " name=\"style\"><option value=\"default\"> "
         html += "default</option>"
         html += "<option value=\"garden\">garden</option>\n"

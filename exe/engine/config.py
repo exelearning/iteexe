@@ -95,7 +95,7 @@ class Config:
         """
         Scans the eXe style directory and builds a list of styles
         """
-#        self.styles = []
+        self.styles = []
         styleDir    = self.exeDir + "/style"
 
         for subDir in os.listdir(styleDir):
