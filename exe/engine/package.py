@@ -18,6 +18,7 @@
 # ===========================================================================
 
 import sys
+import types
 import logging
 import gettext
 from exe.engine.node import Node
@@ -33,16 +34,28 @@ class Package:
     """
     def __init__(self, name):
         log.debug("init " + repr(name))
-        self.name = name
-        self.root = Node()
-        self.currentNode = self.root
-        self.author=""
-        self.description=""
-        self.levelNames = [_("Topic"), _("Section"), _("Unit")]
+        self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
+        self.name        = name
+        self.draft       = Node([0], _("Drafts"))
+        self.currentNode = self.draft
+        self.root        = Node([1], _("Course"))
+        self.author      = ""
+        self.description = ""
         
 
     def findNode(self, nodeId):
+        """
+        Finds a node from its nodeId
+        (nodeId can be a string or a list/tuple)
+        """
         log.debug("findNode" + repr(nodeId))
+
+        if type(nodeId) is str:
+            nodeId = [int(x) for x in nodeId.split(".")]
+
+        if nodeId == self.draft.id: 
+            return self.draft
+
         node  = self.root
         level = 1
 
@@ -54,6 +67,12 @@ class Package:
             level += 1
 
         return node
-            
 
+
+    def levelName(self, level):
+        if level < len(self.levelNames):
+            return self.levelNames[level]
+        else:
+            return _("Child")
+            
 # ===========================================================================

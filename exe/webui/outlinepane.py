@@ -29,7 +29,7 @@ _   = gettext.gettext
 # ===========================================================================
 class OutlinePane(object):
     """
-    OutlinePane is responsible for creating the XHTML for add course outline
+    OutlinePane is responsible for creating the XHTML for the package outline
     """
     def __init__(self):
         self.package = None
@@ -38,27 +38,39 @@ class OutlinePane(object):
         """ 
         Get current package
         """
+        log.debug("process")
         self.package = package
         
         if "action" in request.args:
             if request.args["action"][0] == "changeNode":
-                nodeId = [int(x) for x in request.args["object"][0].split(".")]
+                nodeId = request.args["object"][0]
                 self.package.currentNode = self.package.findNode(nodeId)
 
+            elif request.args["action"][0] == "addChild":
+                nodeId = request.args["object"][0]
+                parent = self.package.findNode(nodeId)
+                childLevel = self.package.levelName(len(parent.id) - 1);
+                self.package.currentNode = parent.createChild(childLevel)
                 
+
     def getChildrenTitles(self, node):
         """
         Recursive function for getting childern's titles 
         """
-        title = node.title
-        if title == "":
-            title = node.idStr()
+        log.debug("getChildrenTitles for node="+node.idStr())
 
-        html  =  common.submitLink(title, "changeNode", node.idStr())      
+        childLevel = self.package.levelName(len(node.id) - 1);
+
+        html  = common.submitLink(node.title, "changeNode", node.idStr())      
+        html += common.submitLink(_("Add ")+childLevel, 
+                                  "addChild", node.idStr())      
+
         if len(node.children) > 0:
             html += "<ul>\n"
             for i in range (0, len(node.children)):
-                html += "<li>" + self.getChildrenTitles(node.children[i]) + "</li>\n"
+                html += "<li>" 
+                html += self.getChildrenTitles(node.children[i]) 
+                html += "</li>\n"
                 
             html += "</ul>\n"
         
@@ -66,11 +78,21 @@ class OutlinePane(object):
         return html
             
     def render(self):
-        #Returns an XHTML string for viewing this pane
+        """
+        Returns an XHTML string for viewing this pane
+        """
         log.debug("render")
         
-        html = self.getChildrenTitles(self.package.root)
-        html += "<br/>"
+        html  = "<ul>\n"
+        html += "<li>" 
+        html += common.submitLink(self.package.draft.title, "changeNode", 
+                                  self.package.draft.idStr())      
+        html += "</li>\n"
+        html += "<li>" 
+        html += self.getChildrenTitles(self.package.root)
+        html += "</li>\n"
+        html += "</ul>\n"
+        html += "<br/>\n"
         return html
         
         

@@ -40,9 +40,8 @@ class BlockFactory(object):
         """
         Block classes call this function when they are imported
         """
-        log.debug("registerBlockType", 
-                  blockType.__name__, 
-                  ideviceType.__name__)
+        log.debug("registerBlockType "+ 
+                  blockType.__name__ + "<=>" ideviceType.__name__)
         self.blockTypes.append((blockType, ideviceType))
 
     def createBlock(self, parentNode, idevice):
@@ -53,7 +52,7 @@ class BlockFactory(object):
             if isinstance(idevice, ideviceType):
                 return blockType(parentNode, idevice)
         
-        log.error("No blocktype registered for", type(idevice).__name__)
+        log.error("No blocktype registered for "+ type(idevice).__name__)
         return None
         
 

@@ -43,7 +43,7 @@ class AuthoringPage(Resource):
     def __init__(self):
         Resource.__init__(self)
         self.outlinePane   = OutlinePane()
-        self.addNodePane   = AddNodePane()
+        #self.addNodePane   = AddNodePane()
         self.authoringPane = AuthoringPane()
         self.idevicePane   = IdevicePane()
         self.menuPane      = MenuPane()
@@ -64,7 +64,7 @@ class AuthoringPage(Resource):
         # Processing
         self.idevicePane.process(request)
         self.authoringPane.process(request)
-        self.addNodePane.process(request, package)
+        #self.addNodePane.process(request, package)
         self.outlinePane.process(request, package)
         self.menuPane.process(request)
         
@@ -86,7 +86,7 @@ class AuthoringPage(Resource):
         html += common.hiddenField("object")
         html += self.menuPane.render()
         html += self.outlinePane.render()
-        html += self.addNodePane.render()
+        #html += self.addNodePane.render()
         html += self.idevicePane.render(package.currentNode)
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"

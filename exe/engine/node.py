@@ -26,19 +26,21 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Node:
-    def __init__(self):
-        self.id       = [0]
+    def __init__(self, id=None, title=""):
+        if id is None:
+            self.id   = [0]
+        else:
+            self.id   = id
         self.parent   = None
         self.children = []
-        self.title    = ""
+        self.title    = title
         self.idevices = []
 
-    def createChild(self):
+    def createChild(self, title):
         """Create a child node"""
         
-        child=Node()
-        child.id=self.id + [len(self.children)]
-        child.parent=self
+        child        = Node(self.id + [len(self.children)], title)
+        child.parent = self
         self.children.append(child)
         return child
 
@@ -81,8 +83,6 @@ class Node:
         if len(self.id) > 1:
             parent = self.parent
             self.parent = parent.parent
-            
-    
             
     def idStr(self):
         return ".".join([str(x) for x in self.id])

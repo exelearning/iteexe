@@ -49,7 +49,7 @@ class SavePage(Resource):
         """
         save the current package 
         """
-        log.debug("process", request.args)
+        log.debug("process " repr(request.args))
         
         self.isSaved = False
         self.url = request.path
@@ -61,7 +61,7 @@ class SavePage(Resource):
             if not fileName.endswith(".pkg"):
                 fileName = fileName + ".pkg"
                 
-            log.info("saving",fileName)
+            log.info("saving " + fileName)
             outfile = open(fileName, "w")
             pickle.dump(self.package, outfile)
             self.package.name = os.path.splitext(os.path.basename(fileName))[0]
