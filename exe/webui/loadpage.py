@@ -93,18 +93,18 @@ class LoadPage(Resource):
         html += common.banner()
         html += self.menuPane.render()
         html += "<br/><b>" + self.message + "</b><br/>"
-        html += "<form method=\"post\" name=\"contentForm\" onload=\"clearHidden();"
-        html += "\"action=\"%s\">\n" % request.path
+        html += "<form method=\"post\" name=\"contentForm\" "
+        html += "onload=\"clearHidden();\"action=\"%s\">\n" % request.path
         html += common.hiddenField("action")
         html += common.hiddenField("object")
-        html += "<br/>" + _("Would you like to save current changes?") + "<br/>\n"
-        html += "<pre>%s</pre>\n" % str(request.args)
+        html += "<br/>" + _("Would you like to save current changes?") 
+        html += "<br/>\n"
         html += "<input type=\"checkbox\" name=\"saveChk\" checked>\n"
         html += _(" Save the current package") + "<br/><br/>\n"    
         html += _(" Please select a file") + "<br/>\n"
         html += "<input type = \"file\" name = \"fileName\">\n"
         html += "<br/><br/>"
-        html += "<a href=\"#\" onclick=\"submitLink('Load',   document.contentForm.fileName.value); \">%s</a>\n" % _("Load")
+        html += "<a href=\"#\" onclick=\"submitLink('Load', document.contentForm.fileName.value); \">%s</a>\n" % _("Load")
         html += "<br/></form>\n"        
         html += common.footer()
         self.message = ""
@@ -112,7 +112,9 @@ class LoadPage(Resource):
         return html
     
     def render_POST(self, request):
-        """Get an existing package and redirect the webrowser to the URL for it"""
+        """
+        Get an existing package and redirect the webrowser to the URL for it
+        """
         log.debug("render_POST" + repr(request.args))
         
         self.process(request)
@@ -134,7 +136,8 @@ class LoadPage(Resource):
                          
             # Rendering
             html  = "<html><head><title>"+_("eXe")+"</title>\n"
-            html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
+            html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+            html += "charset=UTF-8\">\n";
             html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
             html += package.name
             html += "\">\n"
@@ -144,5 +147,3 @@ class LoadPage(Resource):
             html += common.footer()
             return html
 
-    
-    

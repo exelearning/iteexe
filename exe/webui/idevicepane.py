@@ -105,13 +105,13 @@ class IdevicePane(object):
                                   _("Preknowledge"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "CaseStudyIdevice",
-                                  _("CaseStudy"))
+                                  _("Case Study"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "ActivityIdevice",
                                   _("Activity"))
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
-                                  _("Free Text iDevice"))
+                                  _("Free Text"))
         html += "</div> \n"
 
         return html
