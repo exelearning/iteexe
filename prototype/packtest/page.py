@@ -98,7 +98,7 @@ class Page(Resource):
                 
             elif arg == "language":
                 global _            
-                if request.args["language"][0]=="English":
+                if request.args["language"][0]=='English':
                     _ = gettext.gettext
                     enStr="selected"     
                     
