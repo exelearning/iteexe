@@ -6,7 +6,6 @@ FCKConfig.ToolbarSets["Armadillo"] = [
      'Subscript','Superscript','-',
      'Link','Unlink','-',
      'UnorderedList','OrderedList','Outdent','Indent','-',
-     'Image','-',
      'Undo','Redo','-',
      'Find','Replace','SelectAll','-',
      'RemoveFormat', 'Source']
