@@ -18,6 +18,7 @@
 # ===========================================================================
 
 from exe.util.config import Config
+import logging
 import unittest
 
 # ===========================================================================
@@ -26,8 +27,11 @@ class TestConfig(unittest.TestCase):
         pass
 
     def testTest(self):
-        myconfig = Config()
-        self.assert_(1+2==3)
+        myconfig = Config("test.conf")
+        open("test.log").write("")
+        myconfig.setupLogging("test.log")
+        self.assert_(logging.getLogger("foo").level == logging.DEBUG)
+        self.assert_(logging.getLogger("bar").level == logging.ERROR)
 
 if __name__ == "__main__":
     unittest.main()
