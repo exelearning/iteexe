@@ -49,21 +49,6 @@ class FreeTextBlock(Block):
             self.idevice.content = content
 
 
-    def processDone(self, request):
-        Block.processDone(self, request)
-        self.idevice.edit = False
-
-
-    def processEdit(self, request):
-        Block.processEdit(self, request)
-        self.idevice.edit = True
-
-
-    def processDelete(self, request):
-        Block.processDelete(self, request)
-        self.idevice.delete()
-
-
     def processMove(self, request):
         Block.processMove(self, request)
         nodeId = request.args["move"+self.id][0]

@@ -55,6 +55,7 @@ class IdevicePane(object):
 
             elif request.args["object"][0] == "ReadingActIdevice":
                 readingAct = GenericIdevice()
+                readingAct.addField("reading.png", "Icon")
                 readingAct.addField("Reference", "Text")
                 readingAct.addField("URL", "Text")
                 readingAct.addField("Instructions", "TextArea")

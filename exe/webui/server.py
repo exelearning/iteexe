@@ -56,6 +56,7 @@ def main():
     root.putChild("images", static.File(exeDir+"/images"))
     root.putChild("css", static.File(exeDir+"/css"))   
     root.putChild("scripts", static.File(exeDir+"/scripts"))
+    root.putChild("style", static.File(exeDir+"/style/default"))
 
     try:
         reactor.listenTCP(port, server.Site(root))

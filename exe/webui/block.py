@@ -92,6 +92,7 @@ class Block(object):
 
     def processDelete(self, request):
         log.debug("processDelete id="+self.id)
+        self.idevice.delete()
 
 
     def processMove(self, request):

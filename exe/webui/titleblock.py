@@ -110,6 +110,7 @@ class TitleBlock(Block):
         html += "</div>\n"
         return html
 
+
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this title
@@ -124,12 +125,14 @@ class TitleBlock(Block):
 	html += "</div>\n"
         return html
 
+
     def __renderNodeActions(self):
         html  = common.submitImage("PreviewAll", self.id,
                                    "edit.gif", _("Preview All"))
         html += common.submitImage("EditAll", self.id,
                                    "stock-edit.png", _("Edit All"))
         return html
+
 
     def renderView(self):
         """

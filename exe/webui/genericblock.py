@@ -113,4 +113,5 @@ class GenericBlock(Block):
 
 g_blockFactory.registerBlockType(GenericBlock, GenericIdevice)
 
+
 # ===========================================================================
