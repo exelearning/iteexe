@@ -39,17 +39,11 @@ class TestNode(unittest.TestCase):
         child1 = root.createChild()
         child0.movePrev()
         child1.movePrev()
-        #root.moveChildPrev(child0.id)        
-        #root.moveChildPrev(child1.id)
-        print "child1 id:", child1.id
-        #root.moveChildNext(child1.id)
+        self.assertEqual(child1.id, [0,0])
         child1.moveNext()
-        print "child1 id:", child1.id
-        #root.moveChildNext(child0.id)
-        #root.delChild(child0.id)
-        child0.moveNext()
+        self.assertEqual(child1.id, [0,1])
         child0.delete()
-        print "child1 id:", child1.id
+        self.assertEqual(child1.id, [0,0])
         
     def testPromote(self):
         root = Node(None)
@@ -58,8 +52,7 @@ class TestNode(unittest.TestCase):
         child3 = root.createChild()
         child31 = child3.createChild()
         child31.promote()
-        print "test promote"
-        print "child31 id:", child31.id
+        self.assertEqual(child31.id, [0,3])
         
     def testDemote(self):
         root = Node(None)
@@ -69,8 +62,7 @@ class TestNode(unittest.TestCase):
         child31 = child3.createChild()
         child1.promote()
         child1.demote()
-        print "test demote"
-        print "child2 id:", child31.id
+        self.assertEqual(child1.id, [0,0,0])
         
     def testGetIdStr(self):
         root = Node(None)
@@ -78,6 +70,7 @@ class TestNode(unittest.TestCase):
         child1 = root.createChild()
         child11=child1.createChild()
         print "child11 string id:", child11.getIdStr()
+        self.assertEqual(child11.idStr(), "0.1.0"])
 
    
 if __name__ == "__main__":
