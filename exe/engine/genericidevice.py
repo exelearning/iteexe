@@ -54,12 +54,11 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    def __init__(self, title, class_):
+    def __init__(self, title, class_, author, purpose, tip):
         """
         Initialize 
         """
-        Idevice.__init__(self, title, _("University of Auckalnd"), "", "")
-        self.title     = title
+        Idevice.__init__(self, title, author, purpose, tip)
         self.class_    = class_
         self.fields    = []
 
