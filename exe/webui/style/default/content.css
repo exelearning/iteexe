@@ -62,33 +62,40 @@ p.reading_feedback {
 #iDevice li[class|="activity"] { 
     margin-left: 60px;
     list-style-image: url("activity.png"); 
+    list-style-position: outside; 
 }
 
 #iDevice li[class|="activity-casestudy"] { 
     margin-left: 60px;
     list-style-image: url("casestudy.png"); 
+    list-style-position: outside; 
 }
 
 #iDevice li[class|="activity-reading"] { 
     margin-left: 60px;
     list-style-image: url("reading.png"); 
+    list-style-position: outside; 
 }
 
 #iDevice li[class|="activity-multichoice"] { 
     margin-left: 60px;
     list-style-image: url("question.png"); 
+    list-style-position: outside; 
 }
 
 #iDevice li[class|="objectives"] { 
     margin-left: 60px;
     list-style-image: url("objectives.png"); 
+    list-style-position: outside; 
 }
 
 #iDevice li[class|="preknowledge"] { 
     margin-left: 60px;
     list-style-image: url("preknowledge.png"); 
+    list-style-position: outside; 
 }
 
 #iDevice li { 
-    list-style-image: none; 
+    list-style-image:    none; 
+    list-style-position: outside; 
 }

@@ -40,15 +40,14 @@ class TitleBlock(Block):
         Block.__init__(self, titleIdevice)
 
 
-    def processDone(self, request):
+    def process(self, request):
         """
         User has finished editing this block
         """
-        Block.processDone(self, request)
+        Block.process(self, request)
+        
         if "nodeTitle"+self.id in request.args:
-            self.idevice.title = request.args["nodeTitle"+self.id][0]
-            log.info("Changed "+self.id+" title to "+str(self.idevice))
-
+            self.idevice.setTitle(request.args["nodeTitle"+self.id][0])
 
     def processMovePrev(self, request):
         """

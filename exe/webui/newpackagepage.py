@@ -84,7 +84,9 @@ class NewPackagePage(Resource):
         authoringPage.putChild("export", exportPage)
                      
         # Rendering
-        html  = "<html><head><title>"+_("eXe")+"</title>\n"
+        html  = common.docType()
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head><title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html;"
         html += " charset=UTF-8\">\n";
         html += "<meta http-equiv=\"Refresh\" content=\"0; URL=http:/"

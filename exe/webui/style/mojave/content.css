@@ -64,6 +64,7 @@ p.reading_feedback {
 
 
 #iDevice li { 
-    margin-left: 60px;
-    list-style-image: url("cactus_icon.gif"); 
+    margin-left:         60px;
+    list-style-image:    url("cactus_icon.gif"); 
+    list-style-position: outside; 
 }

@@ -87,7 +87,7 @@ class AuthoringPage(Resource):
             html += "<pre>"+repr(request.args)+"</pre>\n"
             html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
-        html += "<form method=\"post\" action=\"%s\"" % request.path
+        html += "<form method=\"post\" action=\"%s#bottom\"" % request.path
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
         html += common.hiddenField("object")
@@ -152,9 +152,7 @@ class AuthoringPage(Resource):
 
     def __renderHeader(self, package):
         """Generates the header for AuthoringPage"""
-        html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
-        html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
-        html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+        html  = common.docType()
         html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += "<head>\n"
         html += "<style type=\"text/css\">\n"
