@@ -4,6 +4,19 @@ import os
 
 _ = gettext.gettext
 
+def genMyPost():
+    html = """\
+<script language="Javascript">
+function myPost(action) 
+{
+    document.contentForm.action.value = action;
+    document.contentForm.submit();
+}
+</script>
+"""
+    return html
+
+###    document.getElementsByName('action').data = action;
 # A Page is a collection of Blocks
 class Block:
     Edit, View = (1,2)
@@ -64,8 +77,9 @@ class Page(Resource):
         frStr=""
         geStr=""
         chStr=""
-        for arg in request.args:                    
-            if arg == "add":
+        for arg,value in request.args.iteritems():                    
+            #print arg,value
+            if arg == "action" and value[0] == "add":
                 blockId = self.nextId
                 self.nextId += 1
                 self.blocks[blockId] = Block(blockId)
@@ -104,6 +118,7 @@ class Page(Resource):
         # Rendering
         html  = "<html><head><title>eXe: little packaging test</title>\n"
         html += """<meta http-equiv="content-type" content="text/html; charset=UTF-8">\n""";
+        html += genMyPost()
         html += "</head>\n"
         html += "<body>\n"
         html += "<pre>"
@@ -115,13 +130,15 @@ class Page(Resource):
         html += "</pre>"
         html += "<form method=\"post\" action=\"%s\"" % request.path
         html += " name=\"contentForm\">\n"
+        html += "<input type=\"hidden\" name=\"action\" value=\"\" />\n"
         html += """<select onchange="submit()" name="language">            
             <option value="English" %s>English</option>    
             <option value="French" %s >French</option>
             <option value="German" %s >German</option>
             <option value="Chinese" %s >Chinese</option>
             </select> Please select a language <br/>""" %(enStr,frStr,geStr,chStr) 
-        html += "<input type=\"submit\" name=\"add\" value=\"%s\"/>\n" % _("Add")
+#        html += "<input type=\"submit\" name=\"add\" value=\"%s\"/>\n" % _("Add")
+        html += "<a href=\"#\" onclick=\"myPost('add');\" >%s</a>" % _("Add")
                         
         #html += "<pre>%s</pre>\n" % str(request.args)
 
