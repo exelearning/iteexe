@@ -75,7 +75,7 @@ class NewPackagePage(Resource):
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html;"
         html += " charset=UTF-8\">\n";
-#        html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
+        html += "<meta http-equiv=\"REFRESH\" content=\"0;url=http:/"
         html += package.name
         html += "\">\n"
         html += "</head>\n"
