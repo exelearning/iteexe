@@ -50,6 +50,10 @@ class Config:
         self.setting = ConfigParser()
         self.setting.read(self.exeDir+"/"+configFile)
 
+        if self.setting.has_option("system", "port"):
+            self.port = self.setting.getint("system", "port")
+        else:
+            self.port = 8081
 
     def setupLogging(self, logFile):
         """

@@ -40,7 +40,6 @@ def main():
     """
     Main function, starts the webserver
     """
-    port = 8081
     config = Config("exe.conf")
     g_webInterface.config = config
     config.setupLogging("exe.log")
@@ -54,9 +53,9 @@ def main():
     root.putChild("scripts", static.File(config.exeDir+"/scripts"))
     root.putChild("style",   static.File(config.exeDir+"/style/default"))
 
-    launchBrowser(port)  
+    launchBrowser(config.port)  
     try:
-        reactor.listenTCP(port, server.Site(root))
+        reactor.listenTCP(config.port, server.Site(root))
     except CannotListenError:
         pass
     else:
