@@ -35,16 +35,17 @@ class MultichoiceBlock(Block):
     GenericBlock can render and process GenericIdevices as XHTML
     """
     def __init__(self, idevice):
+        """
+        Initialize a new Block object
+        """
         Block.__init__(self, idevice)
         self.idevice = idevice
         self.optionElements = []
         self.question = idevice.question
         i = 0
         for option in idevice.options:
-            self.optionElements.append(OptionElement(i, idevice,option))
-                                               
+            self.optionElements.append(OptionElement(i, idevice, option))                                              
             i += 1
-
 
     def process(self, request):
         """
@@ -69,7 +70,6 @@ class MultichoiceBlock(Block):
         """
         Block.processMove(self, request)
         nodeId = request.args["move"+self.id][0]
-        #TODO tidy this up
         node   = self.idevice.parentNode.package.findNode(nodeId)
         if node is not None:
             self.idevice.setParentNode(node)
@@ -112,8 +112,8 @@ class MultichoiceBlock(Block):
             
         html += "</table>\n"
             
-        html += common.submitButton("addOption"+str(self.id), _("AddOption"))+ "<br/>"
-        html += self.renderEditButtons()
+        html += common.submitButton("addOption"+str(self.id), _("AddOption"))
+        html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html
 

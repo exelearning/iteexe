@@ -28,24 +28,18 @@ class OptionElement(object):
     """
     OptionElment is responsible for a block of text.  Used by GenericBlock
     """
-    def __init__(self, id, idevice, option):
+    def __init__(self, index, idevice, option):
         """
         Initialize
         """
-        self.id         = id
+        self.index      = index
+        self.id         = str(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.option     = option
-        self.answer     = option.answer
-        self.isCorrect  = option.isCorrect
-        self.feedback   = option.feedback
-        self.answerId   = "optionAnswer"+ str(id) + idevice.id
+        self.answerId   = "optionAnswer"+ str(index) + "b" + idevice.id
         self.keyId      = "optionKey" + idevice.id        
-        self.value      = str(id) + "b" + idevice.id
-        self.feedbackId = "optionFeedback" + str(id) + idevice.id
-        self.optionId   = "option" + idevice.id
+        self.feedbackId = "optionFeedback" + str(index) + "b" + idevice.id    
         
-        
-
 
     def process(self, request):
         """
@@ -58,7 +52,7 @@ class OptionElement(object):
             self.option.answer = request.args[self.answerId][0]
                         
         if self.keyId in request.args:
-            if request.args[self.keyId][0] == self.value:
+            if request.args[self.keyId][0] == self.id:
                 self.option.isCorrect = True 
                 log.debug("option " + repr(self.option.isCorrect))
             else:
@@ -67,7 +61,7 @@ class OptionElement(object):
         if self.feedbackId in request.args:
             self.option.feedback = request.args[self.feedbackId][0]
             
-        if "object" in request.args and request.args["object"][0] == str(self.id):
+        if "object" in request.args and request.args["object"][0] == self.id:
             if request.args["action"][0] == "deleteOption":
                 self.idevice.options.remove(self.option)
 
@@ -76,23 +70,26 @@ class OptionElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        self.answer = self.answer.replace("\r", "")
-        self.answer = self.answer.replace("\n", "\\n")
-        self.answer = self.answer.replace("'", "\\'")
-        self.answer = self.answer.replace("\"", "\\\"")
+        answer   = self.option.answer
+        feedback = self.option.feedback
         
-        self.feedback = self.feedback.replace("\r", "")
-        self.feedback = self.feedback.replace("\n", "\\n")
-        self.feedback = self.feedback.replace("'", "\\'")
-        self.feedback = self.feedback.replace('"', '\\"')
+        answer = answer.replace("\r", "")
+        answer = answer.replace("\n", "\\n")
+        answer = answer.replace("'", "\\'")
+        answer = answer.replace("\"", "\\\"")
+        
+        feedback = feedback.replace("\r", "")
+        feedback = feedback.replace("\n", "\\n")
+        feedback = feedback.replace("'", "\\'")
+        feedback = feedback.replace('"', '\\"')
         html = "<tr><td>"
-        html += common.option(self.keyId, self.isCorrect, self.value)#+ "<br/>"
+        html += common.option(self.keyId, self.option.isCorrect, self.id)
         html += "</td><td>"
-        html += common.richTextArea(self.answerId, self.answer)
+        html += common.richTextArea(self.answerId, answer)
         html += "</td><td>"
-        html += common.richTextArea(self.feedbackId, self.feedback)
+        html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>"
-        html += common.submitImage("deleteOption",   str(self.id), "stock-cancel.png")
+        html += common.submitImage("deleteOption", self.id, "stock-cancel.png")
         html += "</td></tr>\n"
         html += "</p>\n"
         return html
@@ -103,38 +100,35 @@ class OptionElement(object):
         Returns an XHTML string for viewing and previewing this option element
         """
         log.debug("renderView called")
-        self.answer = self.answer.replace("\r", "")
-        self.answer = self.answer.replace("\n", "\\n")
-      #  self.answer = self.answer.replace("'", "\\'")
-      #  self.answer = self.answer.replace("\"", "\\\"")
-        
-        
-#        self.feedback = self.feedback.replace('"', '\\"')
-        
+        self.option.answer = self.option.answer.replace("\r", "")
+        self.option.answer = self.option.answer.replace("\n", "\\n")
+  
         length = len(self.idevice.options)
         html  = '<tr><td>'
-        html += '<input type = "radio" name = "%s" ' % self.optionId
-        html += 'id = "%s"' % self.value
-        html += 'onclick = "getFeedback(%d,%d,\'%s\')"/>' % (self.id, 
-                                               length,self.idevice.id)
+        html += '<input type = "radio" name = "option%s" ' % self.idevice.id
+        html += 'id = "%s"' % self.id
+        html += 'onclick = "getFeedback(%d,%d,\'%s\')"/>' % (self.index, 
+                                                length, self.idevice.id)
         html += '</td><td>'
-        html += self.answer + "</td></tr>\n"
+        html += self.option.answer + "</td></tr>\n"
        
         return html
     
     def renderFeedbackView(self):
-        self.feedback = self.feedback.replace("\r", "")
-        self.feedback = self.feedback.replace("\n", "\\n")
-    #    self.feedback = self.feedback.replace("'", "\\'")
+        """
+        return xhtml string for display this option's feedback
+        """
+        self.option.feedback = self.option.feedback.replace("\r", "")
+        self.option.feedback = self.option.feedback.replace("\n", "\\n")
         feedbackStr = ""
-        if self.feedback != "":
-            feedbackStr = self.feedback
+        if self.option.feedback != "":
+            feedbackStr = self.option.feedback
         else:
-            if self.isCorrect:
+            if self.option.isCorrect:
                 feedbackStr = _("Congratulations, your answer is correct!")
             else:
                 feedbackStr = _("Sorry, wrong answer.")
-        html  = '<div id="s%s" style="color: rgb(0, 51, 204);' % self.value
+        html  = '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
         html += 'display: none;">' 
         html += feedbackStr + '</div>\n'
         
