@@ -60,6 +60,12 @@ class Block(object):
             elif request.args["action"][0] == "moveNext":
                 self.processMoveNext(request)
 
+            elif request.args["action"][0] == "promote":
+                self.processPromote(request)
+
+            elif request.args["action"][0] == "demote":
+                self.processDemote(request)
+
     def processDone(self, request):
         log.debug("processDone id="+self.id)
         self.mode = Block.View

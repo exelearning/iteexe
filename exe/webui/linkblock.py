@@ -41,34 +41,29 @@ class LinkBlock(Block):
 
     def processDelete(self, request):
         log.debug("processDelete id="+self.id)
-        nodeId = request.args["object"][0]
-        self.package.findNode(nodeId).delete()
+        self.package.findNode(self.node.id).delete()
 
     def processPromote(self, request):
         log.debug("processPromote id="+self.id)
-        nodeId = request.args["object"][0]
-        self.package.findNode(nodeId).promote()
+        self.package.findNode(self.node.id).promote()
 
     def processDemote(self, request):
         log.debug("processDemote id="+self.id)
-        nodeId = request.args["object"][0]
-        self.package.findNode(nodeId).demote()
+        self.package.findNode(self.node.id).demote()
 
     def processMovePrev(self, request):
         log.debug("processMovePrev id="+self.id)
-        nodeId = request.args["object"][0]
-        self.package.findNode(nodeId).movePrev()
+        self.package.findNode(self.node.id).movePrev()
 
     def processMoveNext(self, request):
         log.debug("processMoveNext id="+self.id)
-        nodeId = request.args["object"][0]
-        self.package.findNode(nodeId).moveNext()
+        self.package.findNode(self.node.id).moveNext()
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this link
         """
-        log.debug("renderView")
+        log.debug("renderView "+self.id)
         id    = self.node.getIdStr()
 
         #NB: We depend on OutlinePane handling this action
