@@ -59,13 +59,14 @@ class SavePage(Resource):
         self.package = g_packageStore.getPackage(packageName)
         
         if "save" in request.args:
-            dataDir = g_webInterface.config.getDataDir()                
+            dataDir = g_webInterface.config.getDataDir() 
+            os.chdir(dataDir)
             fileName = request.args["fileName"][0]
             if not fileName.endswith(".pkg"):
                 fileName = fileName + ".pkg"
               
             log.info("saving " + fileName)
-            outfile = open(dataDir + "\\" + fileName, "w")
+            outfile = open(fileName, "w")
             pickle.dump(self.package, outfile)
             self.package.name = os.path.splitext(os.path.basename(fileName))[0]
             self.message = _("The course package has been saved successfully.")

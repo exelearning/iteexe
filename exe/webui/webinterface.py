@@ -22,7 +22,6 @@ import logging
 import gettext
 import tempfile 
 import os.path
-from exe.engine.packagestore import PackageStore
 from exe.engine.package import Package
 
 log = logging.getLogger(__name__)

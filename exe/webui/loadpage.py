@@ -32,6 +32,7 @@ from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage import SavePage
 from exe.webui.webinterface import g_webInterface
+from exe.webui.exportpage import ExportPage
 
 
 log = logging.getLogger(__name__)
@@ -63,7 +64,7 @@ class LoadPage(Resource):
                 pickle.dump(self.package, outfile)
                 outfile.close()
                 
-            
+            log.debug("filename and path" + repr(request.args["fileName"][0]))
             infile = open(request.args["fileName"][0])
             package = pickle.load(infile)
             self.package = package
@@ -110,7 +111,9 @@ class LoadPage(Resource):
         savePage = SavePage()
         authoringPage.putChild("save", savePage)
         loadpage = LoadPage()
-        authoringPage.putChild("load", loadpage)        
+        authoringPage.putChild("load", loadpage) 
+        exportPage = ExportPage()
+        authoringPage.putChild("export", exportPage)
                      
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"

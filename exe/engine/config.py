@@ -55,4 +55,5 @@ class Config:
         return self.dataDir
     
 
+g_Config = Config("exe.conf")
 # ===========================================================================

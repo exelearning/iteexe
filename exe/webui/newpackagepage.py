@@ -28,6 +28,7 @@ from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage import SavePage
 from exe.webui.loadpage import LoadPage
+from exe.webui.exportpage import ExportPage
 from exe.webui.webinterface import g_webInterface
 
 log = logging.getLogger(__name__)
@@ -69,7 +70,10 @@ class NewPackagePage(Resource):
         authoringPage.putChild("save", savePage)
 
         loadpage = LoadPage()
-        authoringPage.putChild("load", loadpage)        
+        authoringPage.putChild("load", loadpage) 
+        
+        exportPage = ExportPage()
+        authoringPage.putChild("export", exportPage)
                      
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"

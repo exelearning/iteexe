@@ -27,6 +27,7 @@ from exe.webui.linkblock    import LinkBlock
 from exe.engine.error       import Error
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
+from exe.webui.webinterface import g_webInterface
 import os
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -47,10 +48,10 @@ class WebsitePage(object):
         html  = common.header()
         html  = "<body>\n"
         html += "<div id=\"main\">\n"
-        html += TitleBlock(self.node).renderView()
+        html += TitleBlock(self.node.title).renderView()
 
         for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(self.node, idevice)
+            block = g_blockFactory.createBlock(idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
@@ -58,13 +59,7 @@ class WebsitePage(object):
 
         for child in self.node.children:
             html += "<a href=\"%s.html\">" % child.getIdStr()
-            value = ""
-            if child.title <> "":
-                value = child.title
-            else:
-                value = child.getIdStr()
-                
-            html += value + "</a><br/>\n"
+            html += str(child.title) + "</a><br/>\n"
             
         html += common.footer()
 
@@ -85,6 +80,8 @@ class WebsiteExport(object):
         Export
         """
         self.package = package
+        dataDir = g_webInterface.config.getDataDir()
+        os.chdir(dataDir)
         if not os.path.exists(package.name):
             os.mkdir(package.name)
             

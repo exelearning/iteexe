@@ -63,9 +63,14 @@ class MenuPane(object):
             html += "<a href = \"http:/%s/save\">%s </a> | " %(self.packageName, _("Save"))
             
         if self.prepath[-1] == "load":
-            html += _("Load") 
+            html += _("Load") + " | "
         else:
-            html += "<a href = \"http:/%s/load\">%s </a><br/>" %(self.packageName, _("Load"))  
+            html += "<a href = \"http:/%s/load\">%s </a> | " %(self.packageName, _("Load")) 
+            
+        if self.prepath[-1] == "export":
+            html += _("Export") 
+        else:
+            html += "<a href = \"http:/%s/export\">%s </a><br/>" %(self.packageName, _("Export"))
         
         return html
         

@@ -24,7 +24,7 @@ import tempfile
 import os
 import os.path
 from package import Package
-
+from exe.webui.webinterface import g_webInterface
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -44,9 +44,10 @@ class PackageStore:
         Creates a package
         """
         log.debug("createPackage: name=" + repr(name))
+        dataDir = g_webInterface.config.getDataDir()
 
         if name is None:
-            fileList = os.listdir(".")
+            fileList = os.listdir(dataDir)
             i    = 1
             name = "package" + str(i)
             
@@ -72,7 +73,7 @@ class PackageStore:
         Add a package
         """
         self.loaded[package.name] = package
-    	
+
 
 # nasty old global
 g_packageStore = PackageStore()

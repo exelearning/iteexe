@@ -34,7 +34,7 @@ class TitleBlock(Block):
     TitleBlock is for rendering node titles
     """
     def __init__(self, titleIdevice):
-        log.debug("__init__ "+titleIdevice.title)
+        #log.debug("__init__"+titleIdevice.title)
         Block.__init__(self, titleIdevice)
 
 #    def process(self, request):
