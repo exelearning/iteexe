@@ -23,8 +23,8 @@ Several of the shell items have two variants: personal and common,
 
 __VERSION__ = "0.1"
 
-from win32com import storagecon
 from win32com.shell import shell, shellcon
+from win32com import storagecon
 import win32api
 import pythoncom
 

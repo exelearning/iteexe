@@ -51,7 +51,7 @@ class PackageStore:
             i    = 1
             name = "package" + str(i)
             
-            while name+".pkg" in fileList or name in self.loaded:
+            while name+".elp" in fileList or name in self.loaded:
                 i   += 1                    
                 name = "package" + str(i)
             

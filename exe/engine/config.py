@@ -26,7 +26,6 @@ from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import sys
 import os
 
-
 # ===========================================================================
 class Config:
     def __init__(self, configFile):
