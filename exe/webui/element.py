@@ -27,7 +27,7 @@ from exe.engine.packagestore import g_packageStore
 from os import chdir, getcwd, mkdir
 from os.path import exists, splitext, basename
 from  shutil import copyfile
-from PIL import Image
+#from PIL import Image
 
 log = logging.getLogger(__name__)
 
@@ -172,13 +172,14 @@ class ImageElement( Element ):
                     copyfile( request.args[ self.id + "_filename"][0], "%s/%s" %(imgDir, filename) )
                 except:
                     return "%s image file not copied" % filename
+                ##resize image file
+                #im = Image.open( filename )
             
             ##else see if there is old file
-            elif request.args[ "old_%s" % self.id ][0] != "":
+            elif "old_%s"%self.id in request.args and request.args[ "old_%s" % self.id ][0] != "":
                 filename = request.args[ "old_"+self.id][0]
                
-            ##resize image file
-            #im = Image.open( filename )
+           
             return filename
         else:
             return None
