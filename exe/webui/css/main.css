@@ -21,56 +21,53 @@ body {
 #header {font-size: 20px;
 	 font-weight: bold;
 	 }	
+	 
+#footer {
+	}
+	
 
+/* start panel styles associated with eXe functionality
+   main content panel is defined in editing.css as it will change based on templates */	
+	
+
+   			 
 #left_panel {margin-top:10px; 
-	    float: left;
-	   	}
-
-/* Form elements for static iDevices */
-
-.fieldset {width:100%;
-	   border:0px;}
-
-.fieldset .textfield {
-margin:3px;
-height:165px;
-width:90%;
-border:1px solid #C0C0C0;
-}
+	     display: block;
+	     float: left;}
 
 			 	
 /* outline container in left_panel */
 
-#outline 
+#outline_pane 
 	{ background-color: #FFFFFF;
 	  width: 200px;
 	  margin-top: 12px;
 	  padding: 4px;
-	   
+	  display: block; 
 	  border: 1px solid #000;
 	  -moz-border-radius: 6px;}
 				
-#outline ul
+#outline_pane ul
 	{list-style-type: none;
-	margin-left: -30px;}
+	 margin-left: -30px;}
 
-#outline li  a.action
+#outline_pane li  a.action
 	{font-size: 10px;
 	 }
 
-#outline li  a.action:hover
+#outline_pane li  a.action:hover
 	{background-color: #CCCC99;
          border: 1px solid #000;
 	 text-decoration: none;
 	 }
 	 
-#outline a:link, #outline a:visited
+#outline_pane a:link, #outline_pane a:visited
 {
 color: #96852C;
 text-decoration: none;
 }
 
-#outline a:hover
+#outline_pane a:hover
 {text-decoration: underline;}	
 
 
@@ -80,7 +77,9 @@ text-decoration: none;
 #iDevice_pane { background-color: #FFFFFF;
 	  width: 200px;
 	  margin-top: 12px;
-	  padding: 4px; 
+	  padding: 4px;
+	  display: block; 
+	  visibility: hidden;
 	  border: 1px solid #000;
 	  -moz-border-radius: 6px;
 
@@ -93,7 +92,7 @@ text-decoration: none;
 #iDevice_pane a:hover
 {text-decoration: underline;}
 
-
+                                                                                
 
 /* authoring pane */
 
@@ -107,3 +106,291 @@ text-decoration: none;
 	}	
 	
 		
+/* test nav_pane styles */
+
+/* 
+CSS for left side nav box. 
+ */
+
+#workbox{
+display: block;
+float: left;
+margin: 0px;
+margin-left: 7px;
+}
+
+* html #workbox{
+width: 14.2em;
+}
+
+body>#workbox{
+margin-right: 6px;
+
+}
+
+#workbox-top a{
+text-decoration: none;
+display: block;
+font-weight: bold;
+color: #000;
+font-size: .75em;
+padding: .1em .6em .55em .6em;
+border: 2px solid #4a4a4a;
+border-top-color: #a9a9a9;
+border-left-color: #a9a9a9;
+border-bottom-width: 0;
+background: #bdcedf;
+z-index: 1;
+position: relative;
+float: left;
+}
+
+#workbox-top a.on{
+background: #eee;
+position: relative;
+z-index: 3;
+}
+
+#workbox-top a.img, body.hidden #workbox-top a.img{
+top: .3em;
+background: transparent;
+border: 0 solid;
+padding-top: .2em;
+padding-bottom: -.4em;
+}
+
+body.hidden #workbox-top a{
+border-bottom-width: 2px;
+}
+
+.links, #other-modules{
+padding: .7em;
+background: #eee;
+clear: both;
+border: 2px solid #4a4a4a;
+border-top-color: #a9a9a9;
+border-left-color: #a9a9a9;
+z-index: 2;
+position: relative;
+margin-top: -2px;
+width: 14.2em;
+}
+
+#other-modules{
+margin-top: 0;
+background-image: url(features.gif); background-repeat: repeat-x;
+}
+
+#workbox-top{
+width: 14.2em;
+}
+
+#workbox>#workbox-top[id]{
+width: 15.9em;
+}
+
+/* ####################### workbox Contents ####################### */
+
+#workbox-content{
+clear: both;
+}
+
+.link-section a, a.module, .style-choices a, .other-courses a, .other-modules{
+display: block;
+font-size: .75em;
+color: #4a4a4a;
+}
+
+.other-modules{
+margin: .5em 0;
+color: #cde;
+}
+
+#no-links{
+color: #258;
+font-style: italic;
+}
+
+.link-section a{
+margin-left: 17px;
+}
+
+.link-section a img{
+vertical-align: -1px;
+margin-left: -17px;
+}
+
+.link-section .name, .style-choices .name, .other-courses .name, #other-modules .name, #course-above .name{
+display: block;
+margin-bottom: .4em;
+color: #556677;
+}
+
+/* ####################### Course Menu ###################### */
+
+/*
+.chapter{
+margin: 0;
+padding: 0;
+margin-left: 1.3em;
+font-size: .75em;
+}
+
+.chapter-content{
+display: none;
+margin: 0;
+padding: 0;
+}
+
+.chapter li, .chapter-content li{
+list-style-image: url(sky/arrow-closed.gif);
+margin: 0;
+padding: 0;
+list-style-position: outside;
+color: #def;
+}
+
+.chapter li .chapter-content li{
+list-style-type: none;
+list-style-image: none;
+margin-left: 1.3em;
+}
+
+.chapter li ul li.on, li.on a{
+text-decoration: none;
+*/
+/*background: #7ad;*/
+/*
+font-weight: bold;
+}
+
+a.name{
+color: #fff;
+height: 1.4em;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+width: 12.9em;
+display: block;
+}
+
+li>a.name{
+width: 15.1em;
+}
+
+.chapter-content .chapter-content a.name{width: 11.6em;}
+.chapter-content .chapter-content li>a.name{width: 13.8em;}
+.chapter-content .chapter-content .chapter-content a.name{width: 10.3em;}
+.chapter-content .chapter-content .chapter-content li>a.name{width: 12.5em;}
+.chapter-content .chapter-content .chapter-content .chapter-content a.name{width: 9em;}
+.chapter-content .chapter-content .chapter-content .chapter-content li>a.name{width: 11.2em;}
+
+.link-section, .style-choices, .other-courses{
+margin-bottom: .7em;
+}
+
+.other-courses{
+margin-top: 1.5em;
+}
+*/
+
+/* ###################### Previous & Next ######################## */
+
+.previous-next{
+padding-top: .5em;
+margin-top: 2.2em;
+border: 0px #fc3 solid;
+border-top-width: 1px;
+text-align: center;
+font-size: .75em;
+}
+
+html>body .previous-next{
+margin-bottom: 1.2em;
+}
+
+.previous-next a{
+text-decoration: none;
+color: #fff;
+}
+
+.previous, .next{
+font-weight: bold;
+}
+
+.next{
+margin-left: 8em;
+}
+
+/* ####################### Turned on/off on default ######################## */
+
+#workbox-top #open-workbox, #course-above, #style-above, 
+#workbox-top #unfix-workbox, #workbox-top #fix-workbox{
+display: none;
+}
+
+#close-workbox, #links-above, #workbox-top>#fix-workbox{
+display: block;
+}
+
+/* ############### Elements affected by fix ################# */
+
+.fixed #workbox{
+position: fixed;
+left: 0;
+}
+
+.fixed{
+padding-right: 16.9em;
+}
+
+* html .fixed{
+padding-right: 15.5em;
+}
+
+.fixed #name-box{
+margin-right: -9.65em;
+padding-right: 10.27em; 
+}
+
+* html .fixed #name-box{
+margin-right: -8.68em;
+padding-right: 9.2em;
+}
+
+.fixed #about-links{
+margin-right: -21.1em;
+padding-right: 22.45em;
+}
+
+* html .fixed #about-links{
+margin-right: -19.7em;
+padding-right: 22.2em;
+}
+
+.fixed #workbox-top #fix-workbox, body.hidden #close-workbox, body.hidden #workbox-content{
+display: none;
+}
+
+.fixed #workbox-top #unfix-workbox, body.hidden #workbox-top #open-workbox{
+display: block;
+}
+
+/* ######### Tab Choice Styling ######## */
+                                                                                
+#workbox.course-on #links-above, #workbox.course-on #style-above,
+#workbox.style-on #links-above, #workbox.style-on #course-above,
+#workbox.links-on #course-above, #workbox.links-on #style-above{
+display: none;
+}
+                                                                                
+#workbox.course-on #course-above, #workbox.style-on #style-above,
+#workbox.links-on #links-above{
+display: block;
+}
+
+/* ######### for Mac IE's float inadequacy ######## */
+
+#workbox a:hover{
+cursor: pointer;
+}

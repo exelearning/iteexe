@@ -80,9 +80,44 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
+<<<<<<< .mine
+        #html += self.addNodePane.render()
+	html += "<div id=\"workbox\" class=\"links-on\">\n"
+	html += "<div id=\"workbox-top\">"
+	html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" class=\"on\">Outline</a>"
+	html += "<a id=\"iDevices-off\" href=\"javascript:chooseTab(1)\" class=\"off\">iDevices</a>"
+	html += "<a id=\"styles-off\" href=\"javascript:chooseTab(2)\" class=\"off\">Styles</a>"
+	html += "<a id=\"close-workbox\" class=\"img\" href=\"javascript:toggleworkbox(0), toggleFix(0);\"><img border=\"0\" src=\"/images/hide.gif\" /></a>\n"
+	html += "<a id=\"open-workbox\" class=\"img\" href=\"javascript:toggleworkbox(1), toggleFix(1);\"><img border=\"0\" src=\"/images/show.gif\" /></a>\n"
+        html += "</div>\n"
+	
+	# workbox content
+	
+        html += "<div id=\"workbox-content\">\n"
+	html += "<div id=\"links-above\" class=\"links\">\n"
+	html += "<span id=\"no-links\">eXe functions</span>\n"
+	html += "</div>"
+	html += "<div id=\"course-above\" class=\"links\"></div>\n"
+	html += "<div id=\"style-above\" class=\"links\">\n"
+	html += "<div class=\"style-choices\">\n"
+	html += "<span class=\"name\">Preferences</span>"
+	html += "<a href=\"#\">Refresh Preview Pane</a>\n"
+	html += "</div>"
+	html += "</div>"
+	html += "<div id=\"other-modules\">\n"
+	html += "<span class=\"name\">"
+	html += self.idevicePane.render(package.currentNode)
+	html += "</span>\n"
+	html += "<span class=\"name\">"
+	html += self.outlinePane.render()
+	html += "</span>\n"
+	html += "</div>"
+      	html += "</div>"
+=======
         html += "<div id=\"left_panel\">\n"
         html += self.idevicePane.render()
         html += self.outlinePane.render()
+>>>>>>> .r159
         html += "</div>\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"

@@ -57,7 +57,7 @@ class IdevicePane(object):
         """
         log.debug("render")
         
-        html  = "<div id=\"iDevice_pane\">\n"
+        html  = "<div>\n"
         
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
                                   _("Free Text iDevice"))

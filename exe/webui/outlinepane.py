@@ -75,7 +75,7 @@ class OutlinePane(object):
         log.debug("render")
         
         html  = "<!-- start outline pane -->\n"
-        html += "<div id=\"outline\">\n"
+        html += "<div>\n"
         html += "<ul>\n"
         html += "<li>" 
         html += self.__renderNode(self.__package.draft)
