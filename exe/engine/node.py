@@ -70,7 +70,7 @@ class Node:
             parent.children[index].__updateChildrenIds()
             
     def __updateChildrenIds(self):
-        """ recursive update a node's children ids"""
+        """ Recursive function fro updating a node's children ids"""
         for child in self.children:
             child.id = self.id + [child.id[-1]]
             child.__updateChildrenIds()
@@ -140,6 +140,16 @@ class Node:
             index += 1
 
         return None
+    
+    def __str__(self):
+        nodeStr = ""
+        nodeStr += self.title + " "
+        nodeStr += self.getIdStr() + "\n"
+        for child in self.children:
+            nodeStr += child.__str__()
+            
+        return nodeStr
+        
         
 
 # ===========================================================================
