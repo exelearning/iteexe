@@ -32,6 +32,7 @@ from twisted.web import static
 import os
 import os.path
 import sys
+import pickle
 from exe.engine.config import Config
 from exe.webui.newpackagepage import NewPackagePage
 from exe.webui.webinterface   import g_webInterface
@@ -50,7 +51,24 @@ def main():
     g_webInterface.config = config
     log.info("Starting eXe")
     
-    root   = NewPackagePage()
+    filePath = ""
+    if len(sys.argv) > 1:
+        filePath = sys.argv[1]
+        print filePath  
+        fileName = os.path.basename(filePath)
+        packageName = \
+                     os.path.splitext(os.path.basename(fileName))[0]
+        try:  
+            infile = open(filePath)
+            package = pickle.load(infile)
+        except:
+            print "Wrong file format"
+        else:
+            g_packageStore.addPackage(package)
+            root = NewPackagePage(package)
+    else:   
+        root   = NewPackagePage()
+        
     g_webInterface.rootPage = root
 
     #TODO Find a better way to deal with these globals :-(
@@ -76,7 +94,11 @@ def launchBrowser(port):
     """
     if sys.platform[:3] == "win":
         #TODO refactor this into a separate function or class
-        
+        exeDir = g_webInterface.config.exeDir
+        if not g_webInterface.config.browserPath:
+            if "firefox.exe" in os.listdir(exeDir):
+                g_webInterface.config.browserPath = exeDir + "\\firefox"
+                
         if not g_webInterface.config.browserPath:
             try:
                 import _winreg
@@ -99,7 +121,7 @@ def launchBrowser(port):
                 g_webInterface.config.browserPath = None
 
         if not g_webInterface.config.browserPath:
-            standardPath = "c:/program files/mozilla/bin/firefox"
+            standardPath = "c:/program files/mozilla/firefox"
             if os.path.exists(standardPath):
                 g_webInterface.config.browserPath = standardPath
         

@@ -44,11 +44,12 @@ class NewPackagePage(Resource):
     anything it just redirects the user to a new package.
     """
     
-    def __init__(self):
+    def __init__(self, package = None):
         """
         Initialize
         """
         Resource.__init__(self)
+        self.package = package
 
     def getChild(self, name, request):
         """
@@ -66,9 +67,11 @@ class NewPackagePage(Resource):
         Create a new package and redirect the webrowser to the URL for it
         """
         log.debug("render_GET" + repr(request.args))
-
+        if self.package:
+            package = self.package
+        else:
         # Create new package
-        package = g_packageStore.createPackage()
+            package = g_packageStore.createPackage()
         log.info("Creating a new package name="+ package.name)
 
         authoringPage = AuthoringPage()

@@ -32,7 +32,7 @@ from exe.engine.error       import Error
 from exe.webui import common
 from exe.webui.webinterface import g_webInterface
 from exe.export.manifest import Manifest
-from element import getUploadedFileDir
+from exe.webui.element import getUploadedFileDir
 
 import os
 log = logging.getLogger(__name__)

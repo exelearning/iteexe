@@ -150,30 +150,34 @@ class ImageElement( Element ):
         
         
     def process( self, request ):
-    
+        """
+        process audio field information from http request
+        """
+        
         fileExtension = ""
         filename = ""
+        ##get the package name,store uploaded file into that package subdirectory
         packageName = request.prepath[0]
         
         if packageName=="":
-            errmsg = "package not specified while processing image element \n"
+            errmsg = "package not specified while processing audio element"
             log.debug( errmsg )
-            print errmsg
             return errmsg
             
-        if self.id in request.args:
+        if self.id in request.args:            
             
-            ##get the image file extension, if is post from form
             #if file is choosen#
-            if ( self.id +"_filename" ) in request.args and \
+            if ( self.id + "_filename" ) in request.args and \
                 request.args[ self.id + "_filename"][0].strip() != "": 
                 
+                ##get the audio file extension
                 fileExtension = splitext( basename( request.args[ self.id + \
                 "_filename" ][0] ) )[1].lower()
                 
-                #assign path + id + fileExtension (.xxx) to filename
+                ##assign path + id + fileExtension (.xxx) to filename
                 filename =   packageName  + sep + self.id +  fileExtension 
-            
+                
+                ##use this image data directory to store file, a mock up way
                 imgDir = getUploadedFileDir( )
                 
                 ##check if the image directory for this package exist or not
@@ -181,29 +185,28 @@ class ImageElement( Element ):
                     try:
                         mkdir( join( imgDir, packageName )  )
                     except OSError:
-                        errmsg = "Error while creating image directory: %s" \
-                            % ( join ( imgDir, packageName ) )
-                        print errmsg
+                        errmsg = "Error while creating audio directory: %s" \
+                                          % ( join ( imgDir, packageName ) )
                         log.debug( errmsg )
                         return errmsg
                         
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile( request.args[ self.id + "_filename"][0], \
-                                 join( imgDir,  filename ) )
+                    copyfile( request.args[ self.id + "_filename" ][0], \
+                                join( imgDir,  filename ) )
                 except OSError:
                     return "%s image file not copied" % filename
                 ##resize image file
                 #im = Image.open( filename )
             
-            ##else see if there is old file
+            ##if file not chosen, then see if there is old file
             elif "old_%s"%self.id in request.args and \
                     request.args[ "old_%s" % self.id ][0] != "":
                 filename = request.args[ "old_"+self.id][0]
                 
             return filename
         else:
-            return None
+            return None                
         
         
     def renderEdit( self, filename ):
@@ -212,7 +215,7 @@ class ImageElement( Element ):
         
         html = ""        
         ## if file exists=>update, else, add
-        if filename.strip()!="" and exists( "%s/%s" % ( imgDir, filename ) ):
+        if filename.strip()!="" and exists( join( imgDir, filename ) ):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>:<br /><img src="images/%s" \
             class="%s" width="%s" height="%s" border="%s" /><br />\n""" \

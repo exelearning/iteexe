@@ -68,8 +68,10 @@ class SavePage(Resource):
            ("action" in request.args and 
             request.args["action"][0]=="saveChange"):
             filePathName = request.args["fileName"][0]
+            log.debug("filePathName: " + filePathName)
             fileDir  = os.path.dirname(filePathName)
             fileName = os.path.basename(filePathName)
+            log.debug("fileName: " + fileName)
             if fileDir == "":
                 fileDir = self.dataDir
                 
