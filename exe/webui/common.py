@@ -50,7 +50,7 @@ def header():
     html += "</script>\n" 
     html += "<title>"+_("eXe")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-    html += " charset=UTF-8\" />\n";
+    html += " charset=UTF-8\"></meta>\n";
     html += "</head>\n"
     return html
 
@@ -75,7 +75,7 @@ def textInput(name, value=""):
     """Adds a text input to a form"""
     html  = "<input type=\"text\" name=\"%s\" " % name
     html += "value=\"%s\"" % value
-    html += "size=\"40\" />\n" 
+    html += " size=\"40\" />\n" 
     return html
 
 def textArea(name, value=""):

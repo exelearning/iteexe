@@ -85,7 +85,9 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
+        html += "   <!-- start worbox -->\n"
         html += "<div id=\"workbox\" class=\"outline-on\">\n"
+	html += "   <!-- start workbox-top -->\n"
         html += "<div id=\"workbox-top\">"
         html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" "
         html += "class=\"on\">Outline</a>"
@@ -100,8 +102,10 @@ class AuthoringPage(Resource):
         html += " href=\"javascript:toggleworkbox(1), toggleFix(1);\">"
         html += "<img border=\"0\" src=\"/images/show.gif\" /></a>\n"
         html += "</div>\n"
+	html += "   <!-- end worbox-top -->\n"
         
         # workbox content
+	html += "   <!-- start worbox-content -->\n"
         html += "<div id=\"workbox-content\">\n"
 
         html += "<div id=\"styles-above\" class=\"links\">\n"
@@ -118,9 +122,11 @@ class AuthoringPage(Resource):
         html += self.outlinePane.render()
         html += "</span></div>\n"
         html += "<div id=\"other-modules\">\n"
-        html += "</div>"
-        html += "</div>"
         html += "</div>\n"
+        html += "</div>\n"
+	html += "   <!-- end worbox-content -->\n"
+        html += "</div>\n"
+	html += "<!-- end workbox -->\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
         html += common.footer()

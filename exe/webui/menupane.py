@@ -45,36 +45,42 @@ class MenuPane(object):
         Returns an XHTML string for the menu
         """
         html = ""
+        html = "   <!--- start header --->\n"
+	html += "<div id=\"header\">\n"
+	html += "<ul>\n"
+
         if len(self.prepath) == 1:
-            html += _("Authoring") + " | "
+            html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") + "</a></li>\n"
         else:
-            html += "<a href = \"http:/%s\">%s</a> | \n" % \
+            html += "<li><a href = \"http:/%s\">%s</a></li>\n" % \
                     (self.packageName, _("Authoring"))
             
         if self.prepath[-1] == "properties":
-            html += _("Properties") + " | "
+            html += "<li id=\"current\"><a href=\"#\">" + _("Properties") + "</a></li>\n"
         else:
-            html += "<a href = \"http:/%s/properties\">%s</a> | \n" % \
+            html += "<li><a href = \"http:/%s/properties\">%s</a></li>\n" % \
                     (self.packageName, _("Properties"))
             
         if self.prepath[-1] == "save":
-            html += _("Save") + " | "
+            html += "<li id=\"current\"><a href=\"#\">" + _("Save") + "</a></li>\n"
         else:
-            html += "<a href = \"http:/%s/save\">%s</a> | \n" % \
+            html += "<li><a href = \"http:/%s/save\">%s</a></li>\n" % \
                     (self.packageName, _("Save"))
             
         if self.prepath[-1] == "load":
-            html += _("Load") + " | "
+            html += "<li id=\"current\"><a href=\"#\">" + _("Load") + "</a></li>\n"
         else:
-            html += "<a href = \"http:/%s/load\">%s</a> | \n" % \
+            html += "<li><a href = \"http:/%s/load\">%s</a></li>\n" % \
                     (self.packageName, _("Load")) 
             
         if self.prepath[-1] == "export":
-            html += _("Export") 
+            html += "<li id=\"current\"><a href=\"#\">" + _("Export") + "</a></li>\n" 
         else:
-            html += "<a href = \"http:/%s/export\">%s</a><br/>\n" % \
+            html += "<li><a href = \"http:/%s/export\">%s</a></li>\n" % \
                     (self.packageName, _("Export"))
-        
+        html += "</ul>\n" 
+	html += "</div>\n" 
+        html += "   <!--- end header --->\n"
         return html
         
 # ===========================================================================

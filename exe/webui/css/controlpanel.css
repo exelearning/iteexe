@@ -8,7 +8,7 @@
 #workbox {
     display: block;
     float: left;
-    margin: 0px;
+    margin: 50px;
     margin-left: 7px;
 }
 
@@ -58,6 +58,10 @@ body>#workbox {
     padding-bottom: -.4em;
 }
 
+
+body.hidden #workbox-top {
+margin-top: -39px;
+}
 
 body.hidden #workbox-top a{
     border-bottom-width: 2px;
