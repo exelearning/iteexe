@@ -39,6 +39,8 @@ class Block(object):
         """
         self.idevice = idevice
         self.id      = idevice.id
+        self.purpose = idevice.purpose
+        self.tip     = idevice.tip
 
         if idevice.edit:
             self.mode = Block.Edit
@@ -179,11 +181,24 @@ class Block(object):
         html += common.submitImage("movePrev", self.id, "stock-go-up.png", _("Move Up"))
         html += common.submitImage("moveNext", self.id, "stock-go-down.png", _("Move Down"))
         options  = [(_("---Move To---"), "")]
-
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
         options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
         options += self.__getNodeOptions(self.idevice.parentNode.package.root)
         html += common.select("move", self.id, options)
+        html += "<a onmousedown=\"Javascript:updateCoords(event);\" "
+        html += "onclick=\"Javascript:showMe('p%s', 420, 240);\" " % self.id
+        html += "href=\"Javascript:void(0)\"> " 
+        html += "<img src=\"/images/info.gif\" /></a>\n"
+        html += "<div id=\"p%s\" style=\"display:none;\">" % self.id
+        html += "<div style=\"float:right;\" <img src=\"images/stock-stop.png\" "
+        html += "onmousedown=\"Javascript:hideMe();\"/></div>"
+        if self.purpose == "" and self.tip == "":
+            html += "<b>Sorry, no help available.</b>"
+        else:
+            html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
+            html += "<b>Tip:</b><br/>%s<br/>" % self.tip
+                    
+        html += "</div>\n"
         return html
 
 

@@ -13,8 +13,16 @@ body {
     font-size: 13px;
     background: #9ca9af;
     }
+	
+.popupDiv {
+    background-color: #C0C0C0;
+    border: 1px solid #000;
+    padding: 10px 10px 10px 10px;
+    margin-left: 15px;
+}
 
 #main {
+
     margin: 4px 10px 10px 10px;
     }    
 

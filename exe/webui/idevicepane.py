@@ -73,7 +73,9 @@ class IdevicePane(object):
             
             elif request.args["object"][0] == "ObjectivesIdevice":
                 objectives = GenericIdevice(_("Objectives"), "objectives",
-                                            "", "", "")
+                                            "", _("""The purpose of a learning objective is to inform the learners what they should be able to do after completing a specific part of the learning materials. Objectives do facilitate access to the learning content, and direct learners to what teachers consider important. However, they do have the disadvantage of potentially suppressing incidental learning."""), 
+                                            _("""When thinking about learning objectives ask yourself: What must the learner be able to do after completing this course, section or unit? Think about the levels of difficulty for your objectives. It useful to distinguish between two levels: 1. The knowledge level (usually easy) and relates to facts, concepts. methods etc. 2. Knowledge plus application (more difficult), for instance applying, integrating or evaluating."""))
+
                 objectives.addField(_("Objectives"), "TextArea", "objectives")
                 package.currentNode.addIdevice(objectives)
 

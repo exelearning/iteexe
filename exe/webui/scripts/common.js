@@ -21,6 +21,38 @@
 
 // Called upon loading the page this function clears the hidden
 // action and object fields so they can be used by submitLink
+var objBrowse = navigator.appName;
+
+function showMe(ident, w, h){
+    hideMe()
+    var elmDiv = document.createElement('div')
+    elmDiv.id  = 'popupmessage'
+    elmDiv.className="popupDiv"
+    elmDiv.style.cssText = 'position:absolute; left: ' + (xpos - w/1.7) + 'px; top: ' + (ypos - h - 90) + 'px; width: ' + w + 'px;'
+    elmDiv.innerHTML = document.getElementById(ident).innerHTML
+    document.body.appendChild(elmDiv)
+    new dragElement('popupmessage')
+}
+            
+function hideMe() {
+    var elmDiv = document.getElementById('popupmessage')
+    if (elmDiv)
+        elmDiv.parentNode.removeChild(elmDiv) // removes the div from the document
+}
+
+
+function updateCoords(e) {
+    if (objBrowse == "Microsoft Internet Explorer") {
+        xpos = e.offsetX
+        ypos = e.offsetY
+    }
+    else {
+                xpos = e.pageX
+                ypos = e.pageY
+    }
+}
+
+
 function clearHidden()
 {
     document.contentForm.action.value = "";
