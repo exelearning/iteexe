@@ -82,6 +82,8 @@ class WebsitePage(object):
 
         html += "</div>\n"
         html += common.footer()
+        # temp solution
+        html = html.replace('img src="style/', 'img src="')
 
         return html
 
