@@ -5,6 +5,7 @@ from twisted.web import server
 from twisted.web import script
 import os
 import sys
+from page import Page
 
 def main():
     if len(sys.argv) > 1:
@@ -16,9 +17,8 @@ def main():
     else:
         port = 8081
 
-    root = static.File("web") 
-    root.processors = {".rpy": script.ResourceScript}
-    root.indexNames = ['packtest.rpy']
+    root = Page()
+    root.putChild("course1", Page())
 
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)

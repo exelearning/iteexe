@@ -1,8 +1,6 @@
 # ===========================================================================
-# eXe
+# eXe 
 # Copyright 2004-2005, University of Auckland
-#
-# This module is for the common HTML used in all webpages.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,31 +20,43 @@
 import sys
 import logging
 import gettext
+import tempfile 
+import os.path
+from package import Package
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-def header():
-    html  = "<html>\n"
-    html  = "<head>\n"
-    html += "<title>"+_("eXe")+"</title>\n"
-    html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
-    html += "</head>\n"
-    return html
+# ===========================================================================
+class PackageStore:
+    """
+    PackageStore is responsible for managing the Packages which the eXe server
+    has loaded, (and loading and saving them?)
+    """
+    def __init__(self):
+        self.loaded = []
 
-def banner(heading = _("eXe: eLearning XML Editor")): 
-    html  = "<body>\n"
-    html += "<h1>"+heading+"</h1>\n"
-    html += "<hr/>\n"
-    return html
 
-def footer():
-    html  = "</body></html>\n"
-    return html
-    
+    def createPackage(self, name=None):
+        """
+        Creates a package
+        """
+        log.debug("createPackage: name=",name)
 
-if __name__ == "__main__":
-    print header()
-    print banner()
-    print footer()
+        if name is None:
+            filename = tempfile.mkstemp(suffix='.pkg', prefix='New-', dir='.')[1]
+            name = os.path.splitext(os.path.basename(filename))[0]
+
+        package = Package(name)
+        self.loaded.append(package)
+
+        return package
+
+
+
+# nasty old global
+g_packageStore = PackageStore()
+
+
+# ===========================================================================

@@ -43,16 +43,19 @@ class Block:
         html += " value=\"%s\"/>\n" % _("Edit")
         html += "<div>\n"
         return html
+
 class Page(Resource):
 
-    gettext.textdomain('')
-    gettext.bindtextdomain('', '')
-    
-    
     def __init__(self):
         Resource.__init__(self)
         self.blocks = {}
         self.nextId = 1
+
+    def getChild(self, name, request):
+        if name == '':
+            return self
+        else:
+            return Resource.getChild(self, name, request)
 
     def render_GET(self, request):
                   

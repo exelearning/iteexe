@@ -1,8 +1,6 @@
 # ===========================================================================
-# eXe
-# Copyright 2004-2005, University of Auckland
-#
-# This module is for the common HTML used in all webpages.
+# config unittest
+# Copyright 2004, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,34 +17,20 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
-import logging
-import gettext
+from exe.engine.packagestore import PackageStore, g_packageStore
+from exe.engine.package      import Package
+import unittest
 
-log = logging.getLogger(__name__)
-_   = gettext.gettext
+# ===========================================================================
+class TestENGINE(unittest.TestCase):
+    def setUp(self):
+        pass
 
-
-def header():
-    html  = "<html>\n"
-    html  = "<head>\n"
-    html += "<title>"+_("eXe")+"</title>\n"
-    html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
-    html += "</head>\n"
-    return html
-
-def banner(heading = _("eXe: eLearning XML Editor")): 
-    html  = "<body>\n"
-    html += "<h1>"+heading+"</h1>\n"
-    html += "<hr/>\n"
-    return html
-
-def footer():
-    html  = "</body></html>\n"
-    return html
-    
+    def testCreatePackage(self):
+        package = g_packageStore.createPackage()
+        self.assert_(package)
+        self.assert_(package.name)
+        
 
 if __name__ == "__main__":
-    print header()
-    print banner()
-    print footer()
+    unittest.main()

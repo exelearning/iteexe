@@ -1,8 +1,6 @@
 # ===========================================================================
-# eXe
+# eXe 
 # Copyright 2004-2005, University of Auckland
-#
-# This module is for the common HTML used in all webpages.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,27 +24,15 @@ import gettext
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
+# ===========================================================================
+class Package:
+    """
+    Package represents the collection of resources the user is editing
+    i.e. the "package".
+    """
+    def __init__(self, name):
+        self.name = name
 
-def header():
-    html  = "<html>\n"
-    html  = "<head>\n"
-    html += "<title>"+_("eXe")+"</title>\n"
-    html += "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n";
-    html += "</head>\n"
-    return html
 
-def banner(heading = _("eXe: eLearning XML Editor")): 
-    html  = "<body>\n"
-    html += "<h1>"+heading+"</h1>\n"
-    html += "<hr/>\n"
-    return html
 
-def footer():
-    html  = "</body></html>\n"
-    return html
-    
-
-if __name__ == "__main__":
-    print header()
-    print banner()
-    print footer()
+# ===========================================================================
