@@ -31,6 +31,7 @@ from exe.webui.idevicepane   import IdevicePane
 from exe.webui.authoringpane import AuthoringPane
 from exe.webui.outlinepane   import OutlinePane
 from exe.webui.menupane      import MenuPane
+from exe.webui.stylepane     import StylePane
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -51,6 +52,7 @@ class AuthoringPage(Resource):
         self.authoringPane = AuthoringPane()
         self.idevicePane   = IdevicePane()
         self.menuPane      = MenuPane()
+        self.stylePane     = StylePane()
 
 
     def getChild(self, name, request):
@@ -76,6 +78,7 @@ class AuthoringPage(Resource):
         self.authoringPane.process(request)
         self.outlinePane.process(request, package)
         self.menuPane.process(request)
+        self.stylePane.process(request, package)
         
         html  = self.__renderHeader(package)
         html += common.banner()
@@ -115,13 +118,15 @@ class AuthoringPage(Resource):
         html += "<div id=\"workbox-content\">\n"
 
         html += "<div id=\"styles-above\" class=\"links\">\n"
-        html += "<span id=\"name\">\n"
-        html += "<select onchange=\"submitLink('style', '');\""
-        html += " name=\"style\"><option value=\"default\"> "
-        html += "default</option>"
-        html += "<option value=\"garden\">garden</option>\n"
-        html += "</select></span>\n"
+        #html += "<span id=\"name\">\n"
+        #html += "<select onchange=\"submitLink('style', '');\""
+        #html += " name=\"style\"><option value=\"default\"> "
+        #html += "default</option>"
+        #html += "<option value=\"garden\">garden</option>\n"
+        #html += "</select></span>\n"
+        html += self.stylePane.render()
         html += "</div>"
+        
 
         html += "<div id=\"iDevices-above\" class=\"links\">\n"
         html += "<span class=\"name\">"
