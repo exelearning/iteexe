@@ -7,6 +7,8 @@ import os
 import sys
 from page import Page
 
+
+
 def main():
     if len(sys.argv) > 1:
         try:
@@ -18,7 +20,10 @@ def main():
         port = 8081
 
     root = Page()
-    root.putChild("course1", Page())
+    course1 = Page()
+    root.putChild("course1", course1)
+    node01 = Page()
+    course1.putChild("0.1", node01)
 
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)
