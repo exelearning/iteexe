@@ -37,10 +37,8 @@ class TestPackage(unittest.TestCase):
         self.assert_(package.name)
         
     def testLoadExistingPackage(self):
-        filePath = "C:\\exe data\\package2.elp"
-        infile = open(filePath)
-        package = pickle.load(infile)
-        g_packageStore.addPackage(package)
+        filePath = "C:\\exe data\\package8.elp"
+        package = g_packageStore.loadPackage(filePath)
         self.assert_(package)
         self.assert_(package.name)
    
