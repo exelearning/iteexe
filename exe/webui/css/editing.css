@@ -23,9 +23,19 @@ border:1px solid #C0C0C0;
 	margin-left: 216px;
 	margin-top: 22px;
 	padding: 8px;
-	background-color: #FFFFFF;
+	background-color: #EDEFF0;
 	border: 1px solid #000;
 	-moz-border-radius: 6px;
 	}	
+
+/* heading styles */
+
+
+p.nodeTitle { color: #51778A;
+	font-size: 18px;
+        padding: 2px;
+        border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	}
 	
 		

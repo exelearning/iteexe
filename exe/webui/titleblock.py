@@ -133,7 +133,7 @@ class TitleBlock(Block):
         """
         Returns an XHTML string for viewing this title
         """
-        html = "<h1 class=\"nodeTitle\">" + str(self.idevice) + "</h1>"
+        html = "<p class=\"nodeTitle\">" + str(self.idevice) + "</p>"
         return html
     
 
