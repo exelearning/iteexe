@@ -74,3 +74,18 @@ def functionId(nFramesUp=1):
 
 
 # ===========================================================================
+
+def get_all_files(path):
+    if path[-1] == ':':
+        path = path + '\\'
+    #if true:
+    try:
+        for i in os.listdir(path):
+          j = os.path.join(path, i)
+          if os.path.isdir(j):
+            for ii in get_all_files(j):
+              yield ii
+          else:
+            yield j
+    except:pass
+      
