@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui                import common
@@ -34,13 +33,8 @@ class SimpleBlock(Block):
     """
     SimpleBlock can render and process SimpleIdevices as XHTML
     """
-    def __init__(self, parentNode, idevice):
-        if idevice.edit:
-            mode = Block.Edit
-        else:
-            mode = Block.Preview
-        Block.__init__(self, parentNode, idevice.id, mode)
-        self.idevice = idevice
+    def __init__(self, idevice):
+        Block.__init__(self, idevice)
 
     def process(self, request):
         Block.process(self, request)
@@ -59,34 +53,27 @@ class SimpleBlock(Block):
 
     def processDelete(self, request):
         Block.processDelete(self, request)
-        oldIndex = self.parentNode.findIdevice(self.id)
-        del self.parentNode.idevices[oldIndex]
+        self.idevice.delete()
 
     def processMove(self, request):
-        Block.processDelete(self, request)
+        Block.processMove(self, request)
         nodeId = request.args["move"+self.id][0]
-#        nodeId   = selected.split(":", 1)[0]
-        node     = self.parentNode.package.findNode(nodeId)
-        node.idevices.append(self.idevice)
-        oldIndex = self.parentNode.findIdevice(self.id)
-        del self.parentNode.idevices[oldIndex]
-        self.parentNode = node
+        #TODO tidy this up
+        node   = self.idevice.parentNode.package.findNode(nodeId)
+        if node is not None:
+            self.idevice.setParentNode(node)
+        else:
+            log.error("addChildNode cannot locate "+nodeId)
 
     def processMovePrev(self, request):
         Block.processMovePrev(self, request)
-        index = self.parentNode.findIdevice(self.id)
-        if index > 0:
-            temp = self.parentNode.idevices[index - 1]
-            self.parentNode.idevices[index - 1] = self.idevice
-            self.parentNode.idevices[index]     = temp
+        self.idevice.movePrev()
 
     def processMoveNext(self, request):
         Block.processMoveNext(self, request)
-        index = self.parentNode.findIdevice(self.id)
-        if index < len(self.parentNode.idevices) - 1:
-            temp = self.parentNode.idevices[index + 1]
-            self.parentNode.idevices[index + 1] = self.idevice
-            self.parentNode.idevices[index]     = temp
+        self.idevice.moveNext()
+
+
 
     def renderEdit(self):
         """

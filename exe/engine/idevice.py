@@ -46,7 +46,39 @@ class Idevice(object):
     def delete(self):
         """delete an iDevice from it's parentNode"""
         if self.parentNode:
-            self.parentNode.remove(self)
+            self.parentNode.idevices.remove(self)
             self.parentNode = None
+
+
+    def movePrev(self):
+        """
+        Move to the previous position
+        """
+        parentNode = self.parentNode
+        index = parentNode.idevices.index(self)
+        if index > 0:
+            temp = parentNode.idevices[index - 1]
+            parentNode.idevices[index - 1] = self
+            parentNode.idevices[index]     = temp
+
+
+    def moveNext(self):
+        """
+        Move to the next position
+        """
+        parentNode = self.parentNode
+        index = parentNode.idevices.index(self)
+        if index < len(parentNode.idevices) - 1:
+            temp = parentNode.idevices[index + 1]
+            parentNode.idevices[index + 1] = self
+            parentNode.idevices[index]     = temp
+
+
+    def setParentNode(self, parentNode):
+        """
+        Change parentNode
+        """
+        self.delete()
+        parentNode.addIdevice(self)
 
 # ===========================================================================

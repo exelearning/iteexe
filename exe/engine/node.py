@@ -83,7 +83,7 @@ class Node:
 
     def movePrev(self):
         """
-        Move to the previous
+        Move to the previous position
         """
         index  = self.id[-1]
         parent = self.parent
@@ -100,7 +100,7 @@ class Node:
 
     def moveNext(self):
         """
-        Move to the next
+        Move to the next position
         """
         index  = self.id[-1]
         parent = self.parent

@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui                  import common
@@ -39,7 +38,6 @@ class FreeTextBlock(Block):
     """
     def __init__(self, idevice):
         Block.__init__(self, idevice)
-        self.idevice = idevice
 
     def process(self, request):
         Block.process(self, request)
@@ -60,30 +58,21 @@ class FreeTextBlock(Block):
 
     def processMove(self, request):
         Block.processMove(self, request)
-        self.idevice.delete()
         nodeId = request.args["move"+self.id][0]
         #TODO tidy this up
-        node   = self.idevice.node.package.findNode(nodeId)
+        node   = self.idevice.parentNode.package.findNode(nodeId)
         if node is not None:
-            node.addIdevice(self.idevice)
+            self.idevice.setParentNode(node)
         else:
             log.error("addChildNode cannot locate "+nodeId)
 
     def processMovePrev(self, request):
         Block.processMovePrev(self, request)
-        index = self.parentNode.idevices.index(self.idevice)
-        if index > 0:
-            temp = self.parentNode.idevices[index - 1]
-            self.parentNode.idevices[index - 1] = self.idevice
-            self.parentNode.idevices[index]     = temp
+        self.idevice.movePrev()
 
     def processMoveNext(self, request):
         Block.processMoveNext(self, request)
-        index = self.parentNode.index(self.idevice)
-        if index < len(self.parentNode.idevices) - 1:
-            temp = self.parentNode.idevices[index + 1]
-            self.parentNode.idevices[index + 1] = self.idevice
-            self.parentNode.idevices[index]     = temp
+        self.idevice.moveNext()
 
     def renderEdit(self):
         """
