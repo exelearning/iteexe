@@ -21,6 +21,8 @@ import sys
 import logging
 import gettext
 from exe.webui.blockfactory import g_blockFactory
+from exe.webui.titleblock   import TitleBlock
+from exe.webui.linkblock    import LinkBlock
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -31,20 +33,34 @@ class AuthoringPane(object):
     AuthoringPane is responsible for creating the XHTML for the authoring
     area of the eXe web user interface.  
     """
-    def __init__(self, topNode, levelLimit=None):
-        self.topNode   = topNode
-        self.blocks    = []
-        self.addBlocks(topNode, levelLimit)
+    def __init__(self, topNode, maxDepth=1):
+        self.topNode    = topNode
+        self.levelLimit = len(topNode.id) + maxDepth
+        self.blocks     = []
+        self.addBlocks(topNode)
 
-    def addBlocks(self, node, levelLimit):
+
+    def addBlocks(self, node):
+        """
+        Recursively add blocks for all the nodes down to the level limit 
+        which was set
+        """
+        self.blocks.append(TitleBlock(node))
+
         for idevice in node.idevices:
             block = g_blockFactory.createBlock(idevice)
-            assert(block)
+            if not block:
+                log.critical("Unable to render iDevice.")
+                raise "Unable to render iDevice."
             self.blocks.append(block)
 
         if self.levelLimit is None or len(node.id) < self.levelLimit:
 		for child in node.children:
 		    self.addBlocks(child)
+
+        else:
+            self.blocks.append(LinkBlock(node))
+
 
     def render(self):
         """
@@ -59,8 +75,6 @@ class AuthoringPane(object):
     def process(self, args):
         for block in self.blocks:
             block.process(args)
-        
-        
 
 
 # ===========================================================================
