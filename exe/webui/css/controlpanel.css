@@ -40,6 +40,9 @@ position: relative;
 float: left;
 }
 
+#workbox-top a:hover {
+color: #FFF;
+}
 
 #workbox-top a.on{
 background: #eee;
@@ -95,7 +98,7 @@ width: 17.4em;
 clear: both;
 }
 
-/* moves the list of added sections to the left, but adds some indentation */
+/* moves the list of added sections to the left, but li style adds some indentation */
 
 #workbox-content ul {list-style-type: none;
 margin-left: 0px;
@@ -136,6 +139,11 @@ margin-left: -17px;
 display: block;
 margin-bottom: .4em;
 color: #556677;
+}
+
+#iDevices-above .name a {
+color: #52788A;
+text-decoration: none;
 }
 
 a.name{
@@ -242,7 +250,16 @@ display: none;
 display: block;
 }
 
-#workbox a:hover{
-color: #6d6d6d;
-cursor: pointer;
+#outline-above a{
+color: #556677;
+text-decoration: none;
 }
+
+#workbox-content a:hover{
+color: #FFCC00;
+}
+
+#iDevices-above a:hover:before{
+content: "Add " ;
+}
+
