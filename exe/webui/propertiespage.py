@@ -60,6 +60,7 @@ class PropertiesPage(Resource):
         html  = common.header() + common.banner()
         html += self.menuPane.render()
         html += "<div id=\"main\"> \n"
+        html += "<h3>Project Properties</h3>\n"
         html += self.propertiesPane.render()
         html += "</div> \n"
         html += common.footer()

@@ -101,21 +101,20 @@ class LoadPage(Resource):
         html += common.banner()
         html += self.menuPane.render()
         html += "<div id=\"main\"> \n"
+        html += "<h3>Load Project</h3>\n"
         html += "<b>" + self.message + "</b><br/>"
         html += "<form method=\"post\" name=\"contentForm\" "
         html += "onload=\"clearHidden();\"action=\"%s\">\n" % request.path
         html += common.hiddenField("action")
         html += common.hiddenField("object")
-        html += "<br/>" + _("Would you like to save current changes?") 
-        html += "<br/>\n"
-        html += "<input type=\"checkbox\" name=\"saveChk\" checked>\n"
-        html += _(" Save the current package") + "<br/><br/>\n"    
-        html += _(" Please select a file") + "<br/>\n"
+        html += _(" Save the current project") + " \n"       
+        html += "<input type=\"checkbox\" name=\"saveChk\" checked><br/><br/>\n"
+        html += _("Select a project to load: ") + " \n"
         html += "<input type = \"file\" name = \"fileName\">\n"
         html += "<br/><br/>"
         html += "<a href=\"#\" onclick=\"submitLink('Load',"
         html += " ""document.contentForm.fileName.value); \">"
-        html += _("Load")
+        html += _("Load selected project")
         html += "<br/></form>\n"        
         html += "</div> \n"
         html += common.footer()

@@ -45,7 +45,7 @@ def header():
     html += "@import url(/css/exe.css);</style>\n"
     html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
     html += "</script>\n"
-    html += "<title>"+_("eXe")+"</title>\n"
+    html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\"></meta>\n";
     html += "</head>\n"

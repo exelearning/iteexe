@@ -105,10 +105,11 @@ class SavePage(Resource):
         html += common.banner()
         html += self.menuPane.render()
         html += "<div id=\"main\"> \n"
+        html += "<h3>Save Project</h3>\n"        
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b>"           
-        html += "<br/>%s<br/>" % _("Please enter a filename")        
-        html += common.textInput("fileName", path, 70)
+        html += "<br/>%s<br/>" % _("Enter a filename for your project")        
+        html += common.textInput("fileName", path, 50)
         html += "<br/><br/>"
         html += common.submitButton("save", _("Save"))
         html += "<br/></form>"

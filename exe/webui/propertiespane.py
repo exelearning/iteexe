@@ -76,9 +76,9 @@ class PropertiesPane(object):
         html  = "<form method=\"post\" action=\"%s\">" % self.url
         html += "<table border=\"0\" cellspacing=\"6\">\n"
         html += "<tr><td><b>Project title:</b></td><td>\n"
-        html += common.textInput("title", self.package.root.title, 54) + "</td>"
+        html += common.textInput("title", self.package.root.title, 53) + "</td>"
         html += "</tr><tr><td><b>Author:</b></td><td>\n"
-        html += common.textInput("author", self.package.author, 54) 
+        html += common.textInput("author", self.package.author, 53) 
         html += "</td></tr>\n"
         html += "<tr><td valign=\"top\"><b>Description:</b></td><td>\n"
         html += common.textArea("description", self.package.description)

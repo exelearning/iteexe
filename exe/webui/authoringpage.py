@@ -155,6 +155,9 @@ class AuthoringPage(Resource):
         html += "<link rel=\"alternate stylesheet\" type=\"text/css\" "
         html += " media=\"screen\"" 
         html += "title=\"garden\" href=\"style/garden/content.css\" />" 
+        html += "<link rel=\"alternate stylesheet\" type=\"text/css\" "
+        html += " media=\"screen\"" 
+        html += "title=\"mojave\" href=\"style/mojave/content.css\" />" 
         html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
         html += "</script>\n"
         html += "<script language=\"JavaScript\" "
@@ -163,7 +166,7 @@ class AuthoringPage(Resource):
         html += "    src=\"/scripts/libot_drag.js\"></script>\n"
         html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
         html += "</script>\n"
-        html += "<title>"+_("eXe")+"</title>\n"
+        html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
         html += "</head>\n"
