@@ -1,26 +1,26 @@
 /*  ===========================================================================
- eXe
- Copyright 2004-2005, University of Auckland
+     eXe
+     Copyright 2004-2005, University of Auckland
 
- webui styles.
+     webui styles.
    =========================================================================== */
    
 
 body {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-	font-family: arial, verdana, helvetica, sans-serif;
-	font-size: 13px;
-	background: #9ca9af;
-	}
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-family: arial, verdana, helvetica, sans-serif;
+    font-size: 13px;
+    background: #9ca9af;
+    }
 
 #main {
-	margin: 4px 10px 10px 10px;
-	}	
+    margin: 4px 10px 10px 10px;
+    }    
 
 #header {font-size: 20px;
-	 font-weight: bold;}	
-	 
+     font-weight: bold;}    
+     
 #footer {
-	}
-	
+    }
+    

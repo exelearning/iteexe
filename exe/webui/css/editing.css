@@ -1,83 +1,85 @@
 /*  ===========================================================================
- eXe
- Copyright 2004-2005, University of Auckland
+     eXe
+     Copyright 2004-2005, University of Auckland
 
- webui styles.
+     webui styles.
    =========================================================================== */
 
 /* Form elements for static iDevices */
 
-.fieldset {width:100%;
-	   border:0px;}
+.fieldset {
+    width:100%;
+    border:0px;
+}
 
 .fieldset .textfield {
-margin:3px;
-height:165px;
-width:90%;
-border:1px solid #C0C0C0;
+    margin:3px;
+    height:165px;
+    width:90%;
+    border:1px solid #C0C0C0;
 }
 
 /* authoring pane */
 
 #authoring_pane {
-	margin-left: 216px;
-	margin-top: 27px;
-	padding: 8px;
-	background-color: #EDEFF0;
-	border: 1px solid #000;
-	-moz-border-radius: 6px;
-	}	
+    margin-left: 216px;
+    margin-top: 27px;
+    padding: 8px;
+    background-color: #EDEFF0;
+    border: 1px solid #000;
+    -moz-border-radius: 6px;
+}    
 
 p.prev_edit { float: right;}
 
 /* heading styles */
 
 
-p.nodeTitle { color: #51778A;
-	font-size: 18px;
-        padding: 2px;
-        border-top: 1px solid #FFF;
-	border-bottom: 1px solid #FFF;
-        display: inline;
-	}
-	
+p.nodeTitle { 
+    color: #51778A;
+    font-size: 18px;
+    padding: 2px;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    display: inline;
+}
+    
 p.reading_reference {
-      font-style: italic;		
-	}
+    font-style: italic;        
+}
 
 p.reading_feedback {
-	border: 1px dashed #ADADAD;
-	margin: 20px;
-	padding: 8px;
-	background-color: #FFF;
-	}
+    border: 1px dashed #ADADAD;
+    margin: 20px;
+    padding: 8px;
+    background-color: #FFF;
+}
 
 /* iDevice styles - should move this out to seperate css file */
 
 #iDevice {
-	background-color: #F1F1DD;
-	padding: 4px;
-	border: 1px solid #ADADAD;
-	margin: 8px;
-	}
+    background-color: #F1F1DD;
+    padding: 4px;
+    border: 1px solid #ADADAD;
+    margin: 8px;
+}
 
 #iDevice > div.feedback {
-	background: #EDEFF0;
-	border: 1px solid #ADADAD;
-	padding: 4px;
-	margin: 10px;
+    background: #EDEFF0;
+    border: 1px solid #ADADAD;
+    padding: 4px;
+    margin: 10px;
 }
 
 .icon {
-	color: #51778A;
-	font-size: small;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	position: relative;
-	top: -18px;
-	left: 5px;
-
-	}
+    color: #51778A;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    position: relative;
+    top: -18px;
+    left: 5px;
+}
 
 
 
