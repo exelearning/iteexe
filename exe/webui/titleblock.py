@@ -123,7 +123,9 @@ class TitleBlock(Block):
         else:
             html += common.image("stock-go-down-off.png")
         
+        html += "<p class=\"prev_edit\">\n"
         html += self.__renderNodeActions()
+        html += "</p>\n"
         html += "</div>\n"
         return html
 
