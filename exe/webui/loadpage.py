@@ -20,7 +20,6 @@
 The LoadPage is responsible for loading an existing package
 """
 
-import os.path
 import logging
 import gettext
 import pickle
@@ -63,28 +62,28 @@ class LoadPage(Resource):
         self.err = False              
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
-
+        
+        if ("action" in request.args and 
+            request.args["action"][0] == "saveChange"):
+            self.package.save()
+            
         if "action" in request.args and request.args["action"][0] == "Load":
+            self.package.ischanged = 0
             if "saveChk" in request.args:
-                dataDir = g_webInterface.config.getDataDir()
-                os.chdir(dataDir)
-                fileName = self.package.name + ".elp"                
-                outfile = open(fileName, "w")
-                pickle.dump(self.package, outfile)
-                outfile.close()
+                self.package.save()
                 
             try:  
                 filePath = request.args["object"][0]
                 log.debug("filename and path" + filePath)
                 infile = open(filePath)
-                package = pickle.load(infile)                
+                package = pickle.load(infile)
             except:
                 self.message = _("Sorry, wrong file format.")
                 self.err = True
             else:
                 self.package = package
                 g_packageStore.addPackage(package)
-                
+                    
 
     def render_GET(self, request):
         """
@@ -107,6 +106,7 @@ class LoadPage(Resource):
         html += "onload=\"clearHidden();\"action=\"%s\">\n" % request.path
         html += common.hiddenField("action")
         html += common.hiddenField("object")
+        html += common.hiddenField("isChanged", self.package.isChanged)
         html += _(" Save the current project") + " \n"       
         html += "<input type=\"checkbox\" name=\"saveChk\" checked><br/><br/>\n"
         html += _("Select a project to load: ") + " \n"
@@ -152,15 +152,17 @@ class LoadPage(Resource):
             html += "<meta http-equiv=\"Refresh\" content=\"0; URL=http:/"
             html += package.name
             html += "\">\n"
-            html += "</head>\n"
-            html += common.banner()
-            html += _("Welcome to eXe")
+            
+            html += "<div id=\"main\"> \n"
             html += _("Click here:")
             html += "<a href=\"http:/"
             html += package.name
             html += "\">"
             html += package.name
-            html += "</a>\n "            
+            html += "</a>\n "
+            html += "</div> \n"
+           
             html += common.footer()
             return html
+
 

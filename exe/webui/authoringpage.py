@@ -76,6 +76,7 @@ class AuthoringPage(Resource):
         # Processing
         self.idevicePane.process(request, package)
         self.authoringPane.process(request)
+        log.debug("after authoringPane process" + repr(request.args))
         self.outlinePane.process(request, package)
         self.menuPane.process(request)
         self.stylePane.process(request, package)
@@ -87,11 +88,13 @@ class AuthoringPage(Resource):
             html += "<pre>"+repr(request.args)+"</pre>\n"
             html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"
 
+
         html += "<form method=\"post\" "
         html += "action=\"%s\"" % request.path
         html += " name=\"contentForm\" onload=\"clearHidden();\" >\n"
         html += common.hiddenField("action")
         html += common.hiddenField("object")
+        html += common.hiddenField("isChanged", package.isChanged)
         html += self.menuPane.render()
 
         # TODO: Move the Workbox into its own class?

@@ -192,31 +192,31 @@ _("""Describe the tasks the learners should complete."""))
         
         html  = "<div>\n"
         html += common.submitLink("AddIdevice", "ActivityIdevice",
-                                  _("Activity"))
+                                  _("Activity"), "", 1)
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "CaseStudyIdevice",
-                                  _("Case Study"))
+                                  _("Case Study"), "", 1)
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "FreeTextIdevice",
-                                  _("Free Text"))
+                                  _("Free Text"), "", 1)
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "MultichoiceIdevice",
-                                  _("Multichoice Question"))
+                                  _("Multichoice Question"), "", 1)
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "ObjectivesIdevice",
-                                  _("Objectives"))
+                                  _("Objectives"), "", 1)
         html += "<br/>\n"        
         html += common.submitLink("AddIdevice", "PreknowledgeIdevice",
-                                  _("Preknowledge"))
+                                  _("Preknowledge"), "", 1)
         html += "<br/>\n"
         html += common.submitLink("AddIdevice", "ReadingActIdevice",
-                                  _("Reading Activity"))
+                                  _("Reading Activity"), "", 1)
         html += "<br/>\n"        
         html += common.submitLink("AddIdevice", "ReflectionIdevice",
-                                  _("Reflection"))
+                                  _("Reflection"), "", 1)
         html += "<br/>\n"                        
         html += common.submitLink("AddIdevice", "MultiModeIdevice",
-                                  _("Multi Mode"))
+                                  _("Multi Mode"), "", 1)
                                   
         html += "</div> \n"
 

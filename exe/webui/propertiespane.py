@@ -1,4 +1,4 @@
-# ===========================================================================
+# ==========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
 #
@@ -17,8 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+
 """
-PropertiesPane is responsible for creating the XHTML for the properties pane
+PropertiesPane is responsible for creating the XHTML for the properties 
+pane
 """
 
 import logging
@@ -30,10 +32,11 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-# ===========================================================================
+# ==========================================================================
 class PropertiesPane(object):
     """
-    PropertiesPane is responsible for creating the XHTML for the properties pane
+    PropertiesPane is responsible for creating the XHTML for the properties
+    pane
     """
     def __init__(self):
         self.package = None
@@ -45,9 +48,17 @@ class PropertiesPane(object):
         """
         self.url    = request.path
         packageName = request.prepath[0]
-        self.package = g_webInterface.packageStore.getPackage(packageName)  
+        self.package = g_webInterface.packageStore.getPackage(packageName) 
+        
+        if ("action" in request.args and 
+            request.args["action"][0] == "saveChange"):
+            log.debug("process save change for propertity pane")
+            self.package.save()
              
-        if "title" in request.args:
+        if "done" in request.args:
+            self.package.isChanged = 1
+        
+        if "title" in request.args:            
             self.package.root.title.title = request.args["title"][0]
             
         if "author" in request.args:   
@@ -72,11 +83,15 @@ class PropertiesPane(object):
     def render(self):
         """Returns an XHTML string for viewing this pane"""
         log.debug("render")
-        
-        html  = "<form method=\"post\" action=\"%s\">" % self.url
+        html  = common.header()
+        html += "<form method=\"post\" action=\"%s\" " % self.url
+        html += "name=\"contentForm\">" 
+        html += common.hiddenField("action")
+        html += common.hiddenField("isChanged", self.package.isChanged)
         html += "<table border=\"0\" cellspacing=\"6\">\n"
         html += "<tr><td><b>Project title:</b></td><td>\n"
-        html += common.textInput("title", self.package.root.title, 53) + "</td>"
+        html += common.textInput("title", self.package.root.title, 53) 
+        html += "</td>"
         html += "</tr><tr><td><b>Author:</b></td><td>\n"
         html += common.textInput("author", self.package.author, 53) 
         html += "</td></tr>\n"
@@ -91,14 +106,11 @@ class PropertiesPane(object):
         html += "<p/>\n"
         html += "<p>Level 3: "
         html += common.textInput("level3", self.package.levelNames[2], 20)
-        html += "<p/></td></tr><tr><td align=\"right\">\n"
+        html += "<p/></td></tr><tr><td align=\"right\">\n"       
         html += common.submitButton("done", _("Done"))
         html += "</td><td>&nbsp;</td></tr></table></form>\n"
                              
         return html
         
         
-
-
-    
-# ===========================================================================
+# ==========================================================================

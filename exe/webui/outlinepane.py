@@ -126,7 +126,7 @@ class OutlinePane(object):
             html += "<b>" + str(node.title) + "</b>"
         else:
             html += common.submitLink("changeNode", node.getIdStr(), 
-                                      str(node.title))
+                                      str(node.title), "", self.__package.isChanged)
         return html
 
         

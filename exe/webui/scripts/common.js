@@ -73,11 +73,25 @@ function clearHidden()
 
 // Sets the hidden action and object fields, then submits the 
 // contentForm to the server
-function submitLink(action, object) 
+function submitLink(action, object, changed) 
 {
     document.contentForm.action.value = action;
     document.contentForm.object.value = object;
+    document.contentForm.isChanged.value = changed
     document.contentForm.submit();
+}
+
+function beforeUnload(){
+    if (document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value=="1")
+        if (window.confirm("Do you want to save the package?"))
+            saveChange("saveChange")
+}
+
+function saveChange(action){
+    document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value = 0
+    document.getElementById("contentFrame").contentDocument.contentForm.action.value = action;
+    document.getElementById("contentFrame").contentDocument.contentForm.submit();
+    
 }
 
 

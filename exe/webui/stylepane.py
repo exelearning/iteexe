@@ -58,7 +58,7 @@ class StylePane(object):
         html = "<div>\n"
         options = [(style, style) for style in g_webInterface.config.styles]
         for option, value in options:
-            html += common.submitLink("ChangeStyle", option, value)
+            html += common.submitLink("ChangeStyle", option, value, "", 1)
             html += "<br/>\n"
         
         html += "</div>\n"

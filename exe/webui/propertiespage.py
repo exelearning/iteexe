@@ -54,6 +54,7 @@ class PropertiesPage(Resource):
         # Processing
         log.info("creating the properties page")
         self.propertiesPane.process(request)
+        log.info("after propertityPane process:"+ repr(request.args))
         self.menuPane.process(request)
                         
         # Rendering

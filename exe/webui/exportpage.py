@@ -20,16 +20,16 @@
 The ExportPage is responsible for exporting the current project
 """
 
-import os.path
 import logging
 import gettext
+import os.path
 from twisted.web.resource     import Resource
 from exe.webui                import common
 from exe.engine.packagestore  import g_packageStore
-from exe.webui.webinterface   import g_webInterface
 from exe.webui.menupane       import MenuPane
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
+from exe.webui.webinterface   import g_webInterface
 
 
 log = logging.getLogger(__name__)
@@ -63,6 +63,7 @@ class ExportPage(Resource):
         self.url       = request.path
         packageName    = request.prepath[0]
         self.package   = g_packageStore.getPackage(packageName)
+        dataDir = g_webInterface.config.getDataDir()
         self.scormStr  = ""
         self.scormStr2 = ""
         self.webStr    = ""
@@ -77,8 +78,7 @@ class ExportPage(Resource):
             elif request.args["exportMethod"][0] == "scorm-no-metadata":
                 self.scormStr2 = "selected"
        
-        if "export" in request.args:
-            dataDir = g_webInterface.config.getDataDir() 
+        if "export" in request.args:            
             os.chdir(dataDir)
             
             if request.args["exportMethod"][0] == "webpage":
@@ -95,6 +95,11 @@ class ExportPage(Resource):
             
             self.message = \
                 _("The course package has been exported successfully.")
+            
+        if ("action" in request.args and 
+            request.args["action"][0] == "saveChange"):
+            log.debug("process save change:")
+            self.package.save()
 
 
     def render_GET(self, request):
@@ -113,7 +118,10 @@ class ExportPage(Resource):
         html += self.menuPane.render()
         html += "<div id=\"main\"> \n"
         html += "<h3>Export Project</h3>\n"
-        html += "<form method=\"post\" action=\"%s\">" % self.url        
+        html += "<form method=\"post\" action=\"%s\" " % self.url
+        html += "name=\"contentForm\">" 
+        html += common.hiddenField("action")
+        html += common.hiddenField("isChanged", self.package.isChanged)
         html += "<br/><b>" + self.message+ "</b><br><br/>"   
         html += _("Export project as:") + "<br/>\n"
         html += "<select onchange=\"submit();\" name=\"exportMethod\">\n"

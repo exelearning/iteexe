@@ -87,23 +87,15 @@ class NewPackagePage(Resource):
         authoringPage.putChild("export", exportPage)
                      
         # Rendering
-        html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head><title>"+_("eXe")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html;"
-        html += " charset=UTF-8\">\n";
-        html += "<meta http-equiv=\"Refresh\" content=\"0; URL=http:/"
-        html += package.name
-        html += "\">\n"
-        html += "</head>\n"
-        html += common.banner()
-        html += "<div id=\"main\"> \n"
-        html += _("Click here:")
-        html += "<a href=\"http:/"
-        html += package.name
-        html += "\">"
-        html += package.name
-        html += "</a>\n "
-        html += "</div> \n"
+                   
+        html = "<html><body onload=\"initTabs();\"\n"       
+        html += "onbeforeunload = \"beforeUnload();\">\n" 
+        html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
+        html += "</script>\n"
+
+        html += "<IFRAME src=\"http:/%s\" width=\"100%%\" " % package.name
+        html += "name=\"contentFrame\" id= \"contentFrame\""
+        html += "height=\"99%%\" scrolling=\"auto\">" 
+        html += "</IFRAME>"
         html += common.footer()
         return html

@@ -25,6 +25,7 @@ import logging
 import gettext
 from exe.webui import common
 
+
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -45,6 +46,7 @@ class Block(object):
         self.id      = idevice.id
         self.purpose = idevice.purpose
         self.tip     = idevice.tip
+        self.package = idevice.parentNode.package
 
         if idevice.edit:
             self.mode = Block.Edit
@@ -67,29 +69,32 @@ class Block(object):
                 self.processEdit(request)
             
         if "object" in request.args and request.args["object"][0] == self.id:
-            if request.args["action"][0] == "done":
+            self.package.isChanged = 1
+            if request.args["action"][0] == "done":               
                 self.processDone(request)
+                
 
             elif request.args["action"][0] == "edit":
                 self.processEdit(request)
-
+              
             elif request.args["action"][0] == "delete":
                 self.processDelete(request)
-
+                
             elif request.args["action"][0] == "move":
                 self.processMove(request)
-
+                
             elif request.args["action"][0] == "movePrev":
                 self.processMovePrev(request)
-
+                
             elif request.args["action"][0] == "moveNext":
                 self.processMoveNext(request)
-
+                
             elif request.args["action"][0] == "promote":
                 self.processPromote(request)
-
+                
             elif request.args["action"][0] == "demote":
                 self.processDemote(request)
+                
 
 
     def processDone(self, request):
@@ -191,24 +196,24 @@ class Block(object):
         """
         html  = common.submitImage("done", self.id, 
                                    "stock-apply.png", 
-                                   _("Done"))
+                                   _("Done"),1)
         html += common.submitImage("delete", self.id, 
                                    "stock-cancel.png", 
-                                   _("Delete"))
+                                   _("Delete"),1)
 
         if self.idevice.isFirst():
             html += common.image("stock-go-up-off.png")
         else:
             html += common.submitImage("movePrev", self.id, 
                                        "stock-go-up.png", 
-                                       _("Move Up"))
+                                       _("Move Up"),1)
 
         if self.idevice.isLast():
             html += common.image("stock-go-down-off.png")
         else:
             html += common.submitImage("moveNext", self.id, 
                                        "stock-go-down.png", 
-                                       _("Move Down"))
+                                       _("Move Down"),1)
 
         options  = [(_("---Move To---"), "")]
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
@@ -276,7 +281,7 @@ class Block(object):
         """
         html  = common.submitImage("edit", self.id, 
                                    "stock-edit.png", 
-                                   _("Edit"))
+                                   _("Edit"), self.package.isChanged)
         return html
 
 # ===========================================================================

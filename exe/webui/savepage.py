@@ -25,7 +25,6 @@ import os
 import os.path
 import logging
 import gettext
-import pickle
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
@@ -65,7 +64,9 @@ class SavePage(Resource):
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         
-        if "save" in request.args:
+        if "save" in request.args or \
+           ("action" in request.args and 
+            request.args["action"][0]=="saveChange"):
             filePathName = request.args["fileName"][0]
             fileDir  = os.path.dirname(filePathName)
             fileName = os.path.basename(filePathName)
@@ -81,9 +82,7 @@ class SavePage(Resource):
                     fileName = fileName + ".elp"
               
                 log.info("saving " + fileName)
-                outfile = open(fileName, "w")
-                pickle.dump(self.package, outfile)
-                
+                self.package.save(fileDir)                
                 self.message = _("The course package has been "\
                                  +"saved successfully.")
             else:
@@ -107,7 +106,10 @@ class SavePage(Resource):
         html += self.menuPane.render()
         html += "<div id=\"main\"> \n"
         html += "<h3>Save Project</h3>\n"        
-        html += "<form method=\"post\" action=\"%s\">" % self.url        
+        html += "<form method=\"post\" action=\"%s\" " % self.url
+        html += "name=\"contentForm\" >"  
+        html += common.hiddenField("action")
+        html += common.hiddenField("isChanged", self.package.isChanged)
         html += "<br/><b>" + self.message+ "</b>"           
         html += "<br/>%s<br/>" % _("Enter a filename for your project")        
         html += common.textInput("fileName", path, 70)

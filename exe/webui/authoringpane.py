@@ -26,6 +26,7 @@ import gettext
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
+from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -47,7 +48,14 @@ class AuthoringPane(object):
     def process(self, request):
         """
         Delegates processing of args to blocks
-        """            
+        """  
+        if ("action" in request.args and 
+            request.args["action"][0] == "saveChange"):
+            log.debug("process savachange:::::")
+            packageName = request.prepath[0]
+            package = g_packageStore.getPackage(packageName)
+            package.save()
+            log.debug("package name: " + packageName)
         for block in self.blocks:
             block.process(request)
 

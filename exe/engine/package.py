@@ -23,8 +23,11 @@ i.e. the "package".
 
 import logging
 import gettext
+import os.path
+import pickle
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
+from exe.webui.webinterface import g_webInterface
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -51,6 +54,7 @@ class Package:
         introduction     = "Welcome to eXe<br/>"
         introduction    += "To edit this text click on the pencil icon"
         self.draft.addIdevice(FreeTextIdevice(introduction))
+        self.isChanged   = 0
         
 
     def findNode(self, nodeId):
@@ -86,5 +90,18 @@ class Package:
             return self.levelNames[level]
         else:
             return _("?????")
-            
+        
+    
+    def save(self, path=None):
+        """Save package to disk"""
+        if not path:
+             path = g_webInterface.config.getDataDir()
+             
+        log.debug("data directory: " + path)
+        self.isChanged = 0
+        os.chdir(path)
+        fileName = self.name + ".elp" 
+        outfile = open(fileName, "w")
+        pickle.dump(self, outfile)
+        outfile.close()      
 # ===========================================================================

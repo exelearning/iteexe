@@ -106,7 +106,7 @@ def submitButton(name, value, enabled=True):
     html += "/>\n"
     return html
 
-def submitLink(action, object_, value, class_=""):
+def submitLink(action, object_, value, class_="",isChanged=0):
     """
     Adds a link which will trigger the javascript needed to
     post a form with the action and object passed in the args
@@ -115,12 +115,12 @@ def submitLink(action, object_, value, class_=""):
     if class_ != "":
         html += "class=\""+class_+"\" "
     html += "href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object_ + "');\" >"
+    html += "', '" + object_ + "', %d );\" >" % isChanged
     html += value
     html += "</a>\n"
     return html
 
-def submitImage(action, object_, imageFile, title=""):
+def submitImage(action, object_, imageFile, title="", isChanged=1):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
@@ -129,9 +129,9 @@ def submitImage(action, object_, imageFile, title=""):
     if title != "":
         html += "title=\""+title+"\" "
     html += " href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object_ + "');\" >"
+    html += "', '" + object_ + "', %d);\" >" % isChanged
     html += image(imageFile)
-    html += "</a>\n"
+    html += "</a>\n" 
     return html
 
 def image(imageFile):
