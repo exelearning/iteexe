@@ -52,6 +52,7 @@ class MenuPane(object):
         html = ""
         html = "   <!--- start header --->\n"
 	html += "<div id=\"header\">\n"
+        html += "<p class=\"nodeTitle\">eXe</a>\n"        
         html += "<ul>\n"
             
         if self.prepath[-1] == "export":
