@@ -63,9 +63,9 @@ def textInput(name, value=""):
     return html
 
 def textArea(name, value=""):
-    html  = "<textarea name=\"%s\" " % name
-    html += "cols=\"52\" rows=\"8\">%s" % value
-    html += "</textarea><br/>" 
+    html  = "<fieldset class=\"fieldset\"><textarea name=\"%s\" " % name
+    html += "cols=\"52\" rows=\"8\" class=\"textfield\">%s" % value
+    html += "</textarea></fieldset><br />" 
     return html
 
 def submitButton(name, value, enabled=True):

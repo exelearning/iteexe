@@ -22,17 +22,31 @@ body {
 	 font-weight: bold;
 	 }	
 
-#left_panel { float: left;}
+#left_panel {margin-top:10px; 
+	    float: left;
+	   	}
 
-	 	
-/* outline container */
+/* Form elements for static iDevices */
+
+.fieldset {width:300px;
+	   border:0px;}
+
+.fieldset .textfield {
+margin:3px;
+height:165px;
+width:600px;
+border:1px solid #C0C0C0;
+}
+
+			 	
+/* outline container in left_panel */
 
 #outline 
 	{ background-color: #FFFFFF;
 	  width: 200px;
 	  margin-top: 12px;
 	  padding: 4px;
-	  float: left; 
+	   
 	  border: 1px solid #000;
 	  -moz-border-radius: 6px;}
 				
@@ -59,6 +73,8 @@ text-decoration: none;
 #outline a:hover
 {text-decoration: underline;}	
 
+
+
 /* iDevice Pane */
 
 #iDevice_pane { background-color: #FFFFFF;
@@ -76,6 +92,7 @@ text-decoration: none;
 	
 #iDevice_pane a:hover
 {text-decoration: underline;}
+
 
 
 /* authoring pane */
