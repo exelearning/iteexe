@@ -104,11 +104,13 @@ def submitLink(action, object, value, class_=""):
     html += "</a>\n"
     return html
 
-def submitImage(action, object, image, class_=""):
+def submitImage(action, object, image, class_="", enabled=True):
+    if not enabled:
+        return " " 
     html  = "<a "
     if class_ != "":
         html += "class=\""+class_+"\" "
-    html += "href=\"#\" onclick=\"submitLink('" + action
+    html += " href=\"#\" onclick=\"submitLink('" + action
     html += "', '" + object + "');\" >"
     html += "<img src=\"/images/"+image+"\" "
     html += " align=\"bottom\" border=\"0\" />\n"

@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui import common
@@ -42,44 +41,28 @@ class OutlinePane(object):
         self.package = package
         
         if "action" in request.args:
+            nodeId = request.args["object"][0]
+
             if request.args["action"][0] == "changeNode":
-                nodeId = request.args["object"][0]
                 self.package.currentNode = self.package.findNode(nodeId)
 
             elif request.args["action"][0] == "addChild":
-                nodeId = request.args["object"][0]
-                parent = self.package.findNode(nodeId)
-                parent.createChild()
-                
+                self.package.findNode(nodeId).createChild()
 
-    def getChildrenTitles(self, node):
-        """
-        Recursive function for getting children's titles 
-        """
-        log.debug("getChildrenTitles for node="+node.getIdStr())
+            elif request.args["action"][0] == "delete":
+                self.package.findNode(nodeId).delete()
 
-        html  = ""
-        if node == self.package.currentNode:
-            html += "<b>" + node.getTitle() + "</b>"
-        else:
-            html += common.submitLink("changeNode", node.getIdStr(), 
-                                      node.getTitle())
+            elif request.args["action"][0] == "movePrev":
+                self.package.findNode(nodeId).movePrev()
 
-        html += " "
-        childLevel = self.package.levelName(len(node.id) - 1);
-        html += common.submitLink("addChild", node.getIdStr(), 
-                                  _("Add ")+childLevel, "action")      
+            elif request.args["action"][0] == "moveNext":
+                self.package.findNode(nodeId).moveNext()
 
-        if len(node.children) > 0:
-            html += "<ul>\n"
-            for i in range (0, len(node.children)):
-                html += "<li>" 
-                html += self.getChildrenTitles(node.children[i]) 
-                html += "</li>\n"
-                
-            html += "</ul>\n"
-        
-        return html
+            elif request.args["action"][0] == "promote":
+                self.package.findNode(nodeId).promote()
+
+            elif request.args["action"][0] == "demote":
+                self.package.findNode(nodeId).demote()
 
             
     def render(self):
@@ -88,24 +71,75 @@ class OutlinePane(object):
         """
         log.debug("render")
         
-        html  = "<div id=\"outline\">\n"
+        html  = "<!-- start outline pane -->\n"
+        html += "<div id=\"outline\">\n"
         html += "<ul>\n"
         html += "<li>" 
-        if self.package.draft == self.package.currentNode:
-            html += "<b>" + self.package.draft.title + "</b>"
-        else:
-            html += common.submitLink("changeNode", self.package.draft.getIdStr(),
-                                      self.package.draft.title)      
-        html += "</li>\n"
+        html += self.__renderNode(self.package.draft)
+        html += "</li>\n" 
         html += "<li>" 
-        html += self.getChildrenTitles(self.package.root)
-        html += "</li>\n"
+        html += "<div id=\"node_actions\">" 
+        html += self.__renderNode(self.package.root)
+        html += common.submitImage("addChild", 
+                                   self.package.root.getIdStr(), 
+                                   "stock-new.png")
+        html += self.__renderChildren(self.package.root)
+        html += "</div>" 
+        html += "</li>\n" 
         html += "</ul>\n"
         html += "</div>\n"
+        html += "<!-- end outline pane -->\n"
+
         return html
+
+
+    def __renderChildren(self, node):
+        html = ""
+        if node.children:
+            html += "<ul>\n"
+            for child in node.children:
+                html += "<li>" 
+                html += "<div id=\"node_actions\">" 
+                html += self.__renderNode(child)
+                html += self.__renderActions(child)
+                html += "</div>" 
+                html += self.__renderChildren(child)
+                html += "</li>\n" 
+                
+            html += "</ul>\n"
+
+        return html
+
+
+    def __renderNode(self, node):
+        html = ""
+        if node == self.package.currentNode:
+            html += "<b>" + node.getTitle() + "</b>"
+        else:
+            html += common.submitLink("changeNode", node.getIdStr(), 
+                                      node.getTitle())
+        return html
+
         
-        
-         
+    def __renderActions(self, node):
+        html  = " "
+#        childLevel = self.package.levelName(len(node.id) - 1);
+#        html += common.submitLink("addChild", node.getIdStr(), 
+#                                  _("Add ")+childLevel, "action")      
+        id = node.getIdStr()
+        html += common.submitImage("addChild", id, "stock-new.png")
+        html += common.submitImage("delete",   id, "stock-cancel.png")
+        html += common.submitImage("promote",  id, "stock-go-back.png",
+                                   enabled=(len(node.id) > 2))
+        html += common.submitImage("demote",   id, "stock-go-forward.png",
+                                   enabled=(len(node.id) >= 2 and 
+                                            node.id[-1] > 0))
+        html += common.submitImage("movePrev", id, "stock-go-up.png",
+                                   enabled=(node.id[-1] > 0))
+        html += common.submitImage("moveNext", id, "stock-go-down.png",
+                                   enabled=(node.id[-1] < 
+                                            len(node.parent.children)-1))
+        return html
 
 
     
