@@ -26,36 +26,45 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 class Node:
-    def __init__(self, id=None, title=""):
-        if id is None:
-            self.id   = [0]
-        else:
-            self.id   = id
+    def __init__(self, package):
+        self.id       = [0]
+        self.package  = package
         self.parent   = None
+        self.title    = ""
         self.children = []
-        self.title    = title
         self.idevices = []
 
-    def createChild(self, title=""):
+    def getTitle(self):
+        if self.title:
+            return self.title
+        else:
+            return self.package.levelName(len(self.id) - 2);
+
+    def getIdStr(self):
+        return ".".join([str(x) for x in self.id])
+
+
+    def createChild(self):
         """Create a child node"""
-        
-        child        = Node(self.id + [len(self.children)], title)
-        child.parent = self
+        child         = Node(self.package)
+        child.id      = self.id + [len(self.children)]
+        child.parent  = self
         self.children.append(child)
         return child
 
+
     def movePrev(self):
         """Move  to the previous"""
-        
         index = self.id[-1]
         
         if index > 0:
             temp = self.parent.children[index - 1]
-            self.parent.children[index - 1]    = self.parent.children[index] 
+            self.children[index - 1]    = self.parent.children[index] 
             self.parent.children[index - 1].id = temp.id
             self.parent.children[index]        = temp
             self.parent.children[index].id     = self.id        
             
+
     def moveNext(self):
         """Move to the next"""
         index = self.id[-1]
@@ -67,20 +76,20 @@ class Node:
             self.parent.children[index]         = temp
             self.parent.children[index].id      = self.id 
             
+
     def delete(self):
         """Delete a node"""
-        
         index = self.id[-1]
         del(self.parent.children[index])
         
         for i in range(index, len(self.parent.children)):
             self.parent.children[i].id[-1] = i
             
+
     def promote(self):
         """
         Move to the upper level
         """
-              
         if len(self.id) > 2:
             oldParent = self.parent
             self.parent = oldParent.parent
@@ -93,6 +102,7 @@ class Node:
                 
             oldParent.children[len(oldParent.children) - 1].delete()
             
+
     def demote(self):
         """
         Move  down a level
@@ -108,12 +118,8 @@ class Node:
                 oldParent.children[i].id[-1] = i 
                 
             oldParent.children[len(oldParent.children) - 1].delete()
-        
             
             
-    def idStr(self):
-        return ".".join([str(x) for x in self.id])
-
     def deleteIdevice(self, id):
         index = 0
         for idevice in self.idevices:
@@ -121,8 +127,6 @@ class Node:
                 del self.idevices[index]
                 break
             index += 1
-        
-            
         
 
 # ===========================================================================

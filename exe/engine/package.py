@@ -36,9 +36,13 @@ class Package:
         log.debug("init " + repr(name))
         self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
         self.name        = name
-        self.draft       = Node([0], _("Drafts"))
+        self.draft       = Node(self)
+        self.draft.id    = [0]
+        self.draft.title = _("Draft")
         self.currentNode = self.draft
-        self.root        = Node([1], _("Course"))
+        self.root        = Node(self)
+        self.root.id     = [1]
+        self.root.title  = _("Package")
         self.author      = ""
         self.description = ""
         

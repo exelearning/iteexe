@@ -18,9 +18,7 @@
 # ===========================================================================
 
 import unittest
-from exe.engine.packagestore import PackageStore, g_packageStore
-from exe.engine.package      import Package
-from exe.engine.node         import Node
+from exe.engine.node import Node
 
 # ===========================================================================
 class TestNode(unittest.TestCase):
@@ -29,14 +27,14 @@ class TestNode(unittest.TestCase):
 
         
     def testCreate(self):
-        root = Node()
+        root = Node(None)
         child0 = root.createChild()
         print "child0 id:", child0.id
         print "root id:", root.id
         self.assertEqual(child0.id[:-1], root.id)
         
     def testMove(self):
-        root = Node()
+        root = Node(None)
         child0 = root.createChild()
         child1 = root.createChild()
         child0.movePrev()
@@ -54,7 +52,7 @@ class TestNode(unittest.TestCase):
         print "child1 id:", child1.id
         
     def testPromote(self):
-        root = Node()
+        root = Node(None)
         child0 = root.createChild()
         child1 = root.createChild()
         child3 = root.createChild()
@@ -64,7 +62,7 @@ class TestNode(unittest.TestCase):
         print "child31 id:", child31.id
         
     def testDemote(self):
-        root = Node()
+        root = Node(None)
         child0 = root.createChild()
         child1 = root.createChild()
         child3 = root.createChild()
@@ -74,12 +72,12 @@ class TestNode(unittest.TestCase):
         print "test demote"
         print "child2 id:", child31.id
         
-    def testidStr(self):
-        root = Node()
+    def testGetIdStr(self):
+        root = Node(None)
         child0 = root.createChild()
         child1 = root.createChild()
         child11=child1.createChild()
-        print "child11 string id:", child11.idStr()
+        print "child11 string id:", child11.getIdStr()
 
    
 if __name__ == "__main__":

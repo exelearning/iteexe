@@ -34,7 +34,7 @@ class TitleBlock(Block):
     TitleBlock is for rendering node titles
     """
     def __init__(self, node):
-        Block.__init__(self, node.parent, "i"+node.idStr())
+        Block.__init__(self, node.parent, "i"+node.getIdStr())
         self.node = node
 
     def process(self, request):
@@ -58,7 +58,7 @@ class TitleBlock(Block):
         Returns an XHTML string for viewing this title
         """
         html  = "<div>\n"
-        html += "<h1 class=\"nodeTitle\">" + self.node.title + "</h1>"
+        html += "<h1 class=\"nodeTitle\">" + self.node.getTitle() + "</h1>"
         html += common.submitButton("edit"+self.id, _("Edit"))
         html += "</div>\n"
         return html

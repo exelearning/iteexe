@@ -49,28 +49,26 @@ class OutlinePane(object):
             elif request.args["action"][0] == "addChild":
                 nodeId = request.args["object"][0]
                 parent = self.package.findNode(nodeId)
-                self.package.currentNode = parent.createChild("")
+                self.package.currentNode = parent.createChild()
                 
 
     def getChildrenTitles(self, node):
         """
         Recursive function for getting children's titles 
         """
-        log.debug("getChildrenTitles for node="+node.idStr())
+        log.debug("getChildrenTitles for node="+node.getIdStr())
 
         html  = ""
-        title = node.title
-        if title == "":
-            title = self.package.levelName(len(node.id) - 2);
-
         if node == self.package.currentNode:
-            html += title
+            html += "<b>" + node.getTitle() + "</b>"
         else:
-            html += common.submitLink(title, "changeNode", node.idStr())      
+            html += common.submitLink(node.getTitle(), "changeNode", 
+                                      node.getIdStr())
 
+        html += " "
         childLevel = self.package.levelName(len(node.id) - 1);
-        html += common.submitLink(_(" Add ")+childLevel, 
-                                  "addChild", node.idStr(), "action")      
+        html += common.submitLink(_("Add ")+childLevel, 
+                                  "addChild", node.getIdStr(), "action")      
 
         if len(node.children) > 0:
             html += "<ul>\n"
@@ -94,10 +92,10 @@ class OutlinePane(object):
         html += "<ul>\n"
         html += "<li>" 
         if self.package.draft == self.package.currentNode:
-            html += self.package.draft.title
+            html += "<b>" + self.package.draft.title + "</b>"
         else:
             html += common.submitLink(self.package.draft.title, "changeNode", 
-                                      self.package.draft.idStr())      
+                                      self.package.draft.getIdStr())      
         html += "</li>\n"
         html += "<li>" 
         html += self.getChildrenTitles(self.package.root)

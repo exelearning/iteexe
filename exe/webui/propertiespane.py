@@ -67,7 +67,7 @@ class PropertiesPane(object):
         log.debug("render")
         
         html  = "<form method=\"post\" action=\"%s\">" % self.url
-        html += "<b>Course title:</b><br/>"
+        html += "<b>Package title:</b><br/>"
         html += common.textInput("title", self.package.root.title) + "<br/>"
         html += "<b>Author:</b><br/>"
         html += common.textInput("author", self.package.author) + "<br/>"

@@ -70,10 +70,7 @@ class AuthoringPage(Resource):
         
         # Rendering
         html  = common.header()
-        title = package.currentNode.title
-        if title == "":
-            title = package.currentNode.idStr()
-        html += common.banner(_("eXe: ")+title)
+        html += common.banner(_("eXe: ")+package.currentNode.getTitle())
 
 #        html += "<pre>"+repr(request.args)+"</pre>\n"
 #        html += "<pre>"+repr(package.currentNode.id)+"</pre>\n"

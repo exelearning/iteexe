@@ -35,8 +35,9 @@ class LinkBlock(Block):
     LinkBlock can render nodes as links
     """
     def __init__(self, node):
-        Block.__init__(self, node.parent, node.idStr(), mode=Block.View)
-        self.node = node
+        Block.__init__(self, node.parent, node.getIdStr(), mode=Block.View)
+        self.node    = node
+        self.package = None
 
     def process(self, request):
         package       = g_packageStore.getPackage(request.prepath[0])
@@ -50,11 +51,7 @@ class LinkBlock(Block):
         """
         Returns an XHTML string for viewing this link
         """
-        title = self.node.title
-        if title == "":
-            title = self.node.idStr()
-
-        html  = common.submitLink(title, "changeNode2", self.node.idStr())
+        html  = common.submitLink(self.node.getTitle(), "changeNode2", self.node.getIdStr())
         html += "<br/>\n"
         return html
       
