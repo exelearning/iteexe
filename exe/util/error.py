@@ -28,6 +28,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Error(Exception):
     def __init__(self, value):
+        Exception.__init__(self)
         self.value = value
         log.debug("init", self.value)
 
@@ -35,3 +36,4 @@ class Error(Exception):
         return repr(self.value)
 
 # ===========================================================================
+
