@@ -28,6 +28,7 @@ import os
 import sys
 from exe.engine.config import Config
 from exe.webui.newpackagepage import NewPackagePage
+from exe.webui.webinterface import g_webInterface
 import logging
 
 log = logging.getLogger(__name__)
@@ -47,6 +48,8 @@ def main():
     log.info("Starting eXe")
     
     root   = NewPackagePage()
+    g_webInterface.rootPage = root
+    
     root.putChild("images", static.File("images"))
     root.putChild("css", static.File("css"))   
  
