@@ -20,8 +20,7 @@
 import sys
 import logging
 import gettext
-from twisted.web.resource import Resource
-
+from exe.engine.packagestore import g_packageStore
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -32,40 +31,50 @@ class PropertiesPane(object):
     PropertiesPane is responsible for creating the XHTML for the package pane
     """
     def __init__(self):
-        pass
+        self.package = None
+        self.url     = ""
 
-
-    def render(self):
-        """
-        Returns an XHTML string for viewing this pane
-        """
-        return ""
-        
     def process(self, request):
-        """
+        """ 
         Write description
         """
-        pass
+        self.url    = request.path
+        packageName = request.prepath[0]
+        self.package = g_packageStore.getPackage(packageName)      
+        if "title" in request.args:
+            self.package.title = request.args["title"][0]
+            
+        if "author" in request.args:   
+            self.package.author = request.args["author"][0]
+            
+        if "description" in request.args:    
+            self.package.description = request.args["description"][0]
         
+            
+    def render(self):
+        #Returns an XHTML string for viewing this pane
         
-class TestPage(Resource):
-    def __init__(self):
-        Resource.__init__(self)
-        self.pane = PropertiesPane()
-
-    def getChild(self, name, request):
-        if name == '':
-            return self
-        else:
-            return Resource.getChild(self, name, request)
-
-    def render_GET(self, request):
-        self.pane.process(request)
-        html = "<html><head><title>TestPage</title></head><body>"
-        html += self.pane.render()
-        html += "</body></html>"
+        html  = "<form method=\"post\" action=\"%s\">" % self.url
+        html += "<b>Course title:</b><br/>"
+        html += "<input type=\"text\" name=\"title\" " 
+        html += "value=\"%s\" " % self.package.title
+        html += "size=\"60\"><br/>" 
+        html += "<b>Author:</b><br/>"
+        html += "<input type=\"text\" name=\"author\" "
+        html += "value=\"%s\"" % self.package.author
+        html += "size=\"60\"><br/>" 
+        html += "<b>Description:</b><br/>"
+        html += "<textarea name=\"description\" "
+        html += "cols=\"59\" rows=\"8\">%s" % self.package.description
+        html += "</textarea><br/>" 
+        html += "<input type=\"submit\" name=\"done\" "
+        html += "value=\"%s\">" %  _("Done")
+        html += "<br/></form>"
+                             
         return html
-                  
+        
+        
 
 
+    
 # ===========================================================================
