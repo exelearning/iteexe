@@ -81,29 +81,29 @@ class TitleBlock(Block):
         if len(self.idevice.parentNode.id) > 2:
             html += common.submitImage("promote", self.id,
                                        "stock-goto-top.png", _("Promote"))
-#        else:
-#            html += common.image("stock-goto-top-off.png")
+        else:
+            html += common.image("stock-goto-top-off.png")
 
         if (len(self.idevice.parentNode.id) > 1 and 
             self.idevice.parentNode.id[-1] > 0):
             html += common.submitImage("demote", self.id,
                                        "stock-goto-bottom.png", _("Demote"))
-#        else:
-#            html += common.image("stock-goto-bottom-off.png")
+        else:
+            html += common.image("stock-goto-bottom-off.png")
 
         if self.idevice.parentNode.id[-1] > 0:
             html += common.submitImage("movePrev", self.id,
                                        "stock-go-up.png", _("Move Up"))
-#        else:
-#            html += common.image("stock-go-up-off.png")
+        else:
+            html += common.image("stock-go-up-off.png")
 
         if (len(self.idevice.parentNode.id) > 1 and 
             self.idevice.parentNode.id[-1] < 
                len(self.idevice.parentNode.parent.children) - 1):
             html += common.submitImage("moveNext", self.id,
                                        "stock-go-down.png", _("Move Down"))
-#        else:
-#            html += common.image("stock-go-down-off.png")
+        else:
+            html += common.image("stock-go-down-off.png")
         
         html += self.__renderNodeActions()
         html += "</div>\n"

@@ -80,7 +80,6 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
-<<<<<<< .mine
         #html += self.addNodePane.render()
 	html += "<div id=\"workbox\" class=\"links-on\">\n"
 	html += "<div id=\"workbox-top\">"
@@ -106,18 +105,13 @@ class AuthoringPage(Resource):
 	html += "</div>"
 	html += "<div id=\"other-modules\">\n"
 	html += "<span class=\"name\">"
-	html += self.idevicePane.render(package.currentNode)
+	html += self.idevicePane.render()
 	html += "</span>\n"
 	html += "<span class=\"name\">"
 	html += self.outlinePane.render()
 	html += "</span>\n"
 	html += "</div>"
       	html += "</div>"
-=======
-        html += "<div id=\"left_panel\">\n"
-        html += self.idevicePane.render()
-        html += self.outlinePane.render()
->>>>>>> .r159
         html += "</div>\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"

@@ -19,8 +19,7 @@ body {
 	}	
 
 #header {font-size: 20px;
-	 font-weight: bold;
-	 }	
+	 font-weight: bold;}	
 	 
 #footer {
 	}
@@ -32,9 +31,7 @@ body {
 
    			 
 #left_panel {margin-top:10px; 
-	     display: block;
 	     float: left;}
-
 			 	
 /* outline container in left_panel */
 

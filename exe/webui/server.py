@@ -54,7 +54,7 @@ def main():
     
     root.putChild("images", static.File("images"))
     root.putChild("css", static.File("css"))   
- 
+    root.putChild("scripts", static.File("scripts"))
     reactor.listenTCP(port, server.Site(root))
     reactor.callWhenRunning(launchBrowser, port)
     reactor.run()

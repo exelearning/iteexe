@@ -35,6 +35,7 @@ def header():
     html += "<style type=\"text/css\">\n"
     html += "@import url(/css/main.css); @import url(/css/editing.css); </style>\n"
     html += "<script type=\"text/javascript\" src=\"/css/pane_nav.js\"></script>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/left_panel.js\")></script>\n"
     html += genJavascript()
     html += "<head>\n"
     html += "<title>"+_("eXe")+"</title>\n"
