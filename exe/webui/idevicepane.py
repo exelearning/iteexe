@@ -98,7 +98,14 @@ class IdevicePane(object):
                 casestudy = GenericIdevice(_("Case Study"), 
                                            "activity-casestudy",
                                            "", "", "")
-                casestudy.addField(_("CaseStudy"), "TextArea", "casestudy")
+                casestudy.addField(_("Story"),     "TextArea", "story",
+                                   _("""Create the case story.  A good case is one that describes a controversy."""))
+                casestudy.addField(_("Questions"), "TextArea", "questions",
+                                   _("""Enter the study question.  These questions should draw out the educational
+messages presented in the case.  Consider aspects of the case like, characters, timeliness, relevance, dilemmas."""))
+                casestudy.addField(_("Feedback"),  "TextArea", "feedback",
+                                   _("""Provide feedback on the case.  This may be a summary of the main points or 
+concepts"""))
                 package.currentNode.addIdevice(casestudy)
             
             elif request.args["object"][0] == "ActivityIdevice":
