@@ -94,7 +94,8 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("\r", "")
         self.answer   = self.answer.replace("\n","\\n")
         self.answer   = self.answer.replace("'","\\'")
-        html  =  _("Activity:") + "<br/>"
+        html  = "<div id=\"iDevice\" class=\"reflection\">\n"
+        html +=  _("Activity:") + "<br/>"
         html += common.richTextArea("acti"+self.id, self.activity)
         html += _("Answer:") + "<br/>"
         html += common.richTextArea("answer"+self.id, self.answer)           
@@ -123,7 +124,7 @@ class ReflectionBlock(Block):
             }\n"""           
         html += "//-->\n"
         html += "</script>\n"
-        html += "<div id=\"iDevice\">\n"
+
         html += self.activity   
         html += '<div id="view%s" style="display:block";>' % self.id
         html += '<input type="button" name ="btnshow%s" ' % self.id
@@ -143,7 +144,8 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = self.renderPage()
+        html  = "<div id=\"iDevice\" class=\"reflection\">\n"
+        html += self.renderPage()
         html += "</div>\n"
         return html
 
@@ -151,7 +153,8 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = self.renderPage()
+        html  = "<div id=\"iDevice\" class=\"reflection\">\n"
+        html += self.renderPage()
         html += self.renderViewButtons()
         html += "</div>\n"
         return html

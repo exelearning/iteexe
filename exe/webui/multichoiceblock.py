@@ -103,8 +103,8 @@ class MultichoiceBlock(Block):
         self.question = self.question.replace("'","\\'")
         html  = "<b>" + _("Question:") + "</b><br/>"       
         html += common.richTextArea("ques"+self.id, self.question)
-        html += "<div>\n"
-        html += "<table><th>%s</th>" % _("Key")
+        html += "<div id=\"iDevice\" class=\"multichoice\">\n"
+        html += "<table width =\"100%%\"><th>%s</th>" % _("Key")
         html += "<th>%s</th>" % _("Answer:")
         html += "<th>%s</th>" % _("Feedback")
 
@@ -137,7 +137,6 @@ class MultichoiceBlock(Block):
                 }\n"""            
         html += "//-->\n"
         html += "</script>\n"
-        html += "<div id=\"iDevice\">\n"
         html += "<b>" + self.question + "</b><br/>"
         html += "<table>"
         for element in self.optionElements:
@@ -154,7 +153,8 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  =self.renderBlockView()    
+        html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
+        html += self.renderBlockView()    
         html += "</div>\n"
         return html
     
@@ -163,7 +163,8 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  =self.renderBlockView()      
+        html  = "<div id=\"iDevice\" class=\"multichoice\">\n"
+        html += self.renderBlockView()      
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
