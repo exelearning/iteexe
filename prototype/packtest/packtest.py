@@ -14,7 +14,7 @@ def main():
             print "Usage:",sys.argv[0],"[port]"
             sys.exit(1)
     else:
-        port = 8080
+        port = 8081
 
     root = static.File("web") 
     root.processors = {".rpy": script.ResourceScript}
