@@ -30,7 +30,7 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class NewPackage(Resource):
+class NewPackagePage(Resource):
     """
     Newpackage is the first screen the user loads.  It doesn't show anything
     it just redirects the user to a new package.
