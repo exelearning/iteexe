@@ -19,11 +19,10 @@
 
 import logging
 import gettext
-from exe.webui                  import common
 from exe.webui.block            import Block
 from exe.webui.blockfactory     import g_blockFactory
-from exe.engine.genericidevice  import GenericIdevice, Field
-from exe.webui.element          import Element, createElement
+from exe.engine.genericidevice  import GenericIdevice
+from exe.webui.element          import createElement
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -43,26 +42,22 @@ class GenericBlock(Block):
                                                field.class_,
                                                self.id))
 
+
     def process(self, request):
+        """
+        Process the request arguments from the web server
+        """
         Block.process(self, request)
         for element in self.elements:
             content = element.process(request)
             if content is not None:
                 self.idevice[element.name] = content
 
-    def processDone(self, request):
-        Block.processDone(self, request)
-        self.idevice.edit = False
-
-    def processEdit(self, request):
-        Block.processEdit(self, request)
-        self.idevice.edit = True
-
-    def processDelete(self, request):
-        Block.processDelete(self, request)
-        self.idevice.delete()
 
     def processMove(self, request):
+        """
+        Move this iDevice to a different node
+        """
         Block.processMove(self, request)
         nodeId = request.args["move"+self.id][0]
         #TODO tidy this up
@@ -72,13 +67,22 @@ class GenericBlock(Block):
         else:
             log.error("addChildNode cannot locate "+nodeId)
 
+
     def processMovePrev(self, request):
+        """
+        Move this block back to the previous position
+        """
         Block.processMovePrev(self, request)
         self.idevice.movePrev()
 
+
     def processMoveNext(self, request):
+        """
+        Move this block forward to the next position
+        """
         Block.processMoveNext(self, request)
         self.idevice.moveNext()
+
 
     def renderEdit(self):
         """
@@ -104,6 +108,7 @@ class GenericBlock(Block):
         html += "</div>\n"
         return html
     
+
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this block
@@ -116,7 +121,11 @@ class GenericBlock(Block):
         html += "</div>\n"
         return html
 
+
     def __renderContent(self):
+        """
+        Common rendering function for both view and preview modes
+        """
         html  = ""
         for element in self.elements:
             html += element.renderView(self.idevice[element.name])

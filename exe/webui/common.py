@@ -40,9 +40,12 @@ def header():
     html += "@import url(/css/main.css);"
     html += "@import url(/css/controlpanel.css);"
     html += "@import url(/css/editing.css);</style>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/common.js\"></script>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/control_panel.js\"></script>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\"></script>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
+    html += "</script>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/control_panel.js\">"
+    html += "</script>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
+    html += "</script>\n"
     html += "<title>"+_("eXe")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\" />\n";
@@ -89,7 +92,7 @@ def submitButton(name, value, enabled=True):
     html += "/>\n"
     return html
 
-def submitLink(action, object, value, class_=""):
+def submitLink(action, object_, value, class_=""):
     """
     Adds a link which will trigger the javascript needed to
     post a form with the action and object passed in the args
@@ -98,12 +101,12 @@ def submitLink(action, object, value, class_=""):
     if class_ != "":
         html += "class=\""+class_+"\" "
     html += "href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object + "');\" >"
+    html += "', '" + object_ + "');\" >"
     html += value
     html += "</a>\n"
     return html
 
-def submitImage(action, object, imageFile, title=""):
+def submitImage(action, object_, imageFile, title=""):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
@@ -112,7 +115,7 @@ def submitImage(action, object, imageFile, title=""):
     if title != "":
         html += "title=\""+title+"\" "
     html += " href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object + "');\" >"
+    html += "', '" + object_ + "');\" >"
     html += image(imageFile)
     html += "</a>\n"
     return html
@@ -123,11 +126,11 @@ def image(imageFile):
     html += " border=\"0\" />"
     return html
 
-def select(action, object, options, selection=None):
+def select(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
     html  = "<select onchange=\"submitLink('" + action
-    html += "', '" + object + "');\" "
-    html += "name=\""+action+object+"\" >"
+    html += "', '" + object_ + "');\" "
+    html += "name=\""+action+object_+"\" >"
 
     for option, value in options:
         if selection == option:

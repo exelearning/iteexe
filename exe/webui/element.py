@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 from exe.webui import common
 
@@ -25,7 +24,9 @@ log = logging.getLogger(__name__)
 
 # ===========================================================================
 def createElement(elementType, name, class_, blockId):
-    """Factory method for creating Elements"""
+    """
+    Factory method for creating Elements
+    """
     if elementType == "Text":
         return TextElement(name, class_, blockId)
     elif elementType == "TextArea":
@@ -34,7 +35,13 @@ def createElement(elementType, name, class_, blockId):
 
 # ===========================================================================
 class Element(object):
+    """
+    Base class for a XHTML element.  Used by GenericBlock
+    """
     def __init__(self, name, class_, blockId):
+        """
+        Initialize
+        """
         self.name     = name
         self.class_   = class_
         self.blockId  = blockId
@@ -42,6 +49,10 @@ class Element(object):
 
 
     def process(self, request):
+        """
+        Process arguments from the webserver.  Return any which apply to this 
+        element.
+        """
         if self.id in request.args:
             return request.args[self.id][0]
         else:
@@ -49,13 +60,19 @@ class Element(object):
 
 
     def renderView(self, content):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
         html  = "<p class=\""+self.class_+"\">\n"
         html += content
         html += "</p>\n"
         return html
 
 
-    def renderEdit(self, content):
+    def renderEdit(self, dummy):
+        """
+        Returns an XHTML string for editing this element
+        """
         log.error("renderEdit called directly")
         return "ERROR: Element.renderEdit called directly"
 
@@ -63,8 +80,13 @@ class Element(object):
 
 # ===========================================================================
 class TextElement(Element):
-    """ TextElement is a single line of text"""
+    """ 
+    TextElement is a single line of text
+    """
     def renderEdit(self, content):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
         html  = "<b>"+self.name+":</b><br/>\n"
         html += common.textInput(self.id, content)
         html += "<br/>\n"

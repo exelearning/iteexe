@@ -50,31 +50,31 @@ class MenuPane(object):
         if len(self.prepath) == 1:
             html += _("Authoring") + " | "
         else:
-            html += "<a href = \"http:/%s\">%s</a> | \n" %\
+            html += "<a href = \"http:/%s\">%s</a> | \n" % \
                     (self.packageName, _("Authoring"))
             
         if self.prepath[-1] == "properties":
             html += _("Properties") + " | "
         else:
-            html += "<a href = \"http:/%s/properties\">%s</a> | \n" %\
+            html += "<a href = \"http:/%s/properties\">%s</a> | \n" % \
                     (self.packageName, _("Properties"))
             
         if self.prepath[-1] == "save":
             html += _("Save") + " | "
         else:
-            html += "<a href = \"http:/%s/save\">%s</a> | \n" %\
+            html += "<a href = \"http:/%s/save\">%s</a> | \n" % \
                     (self.packageName, _("Save"))
             
         if self.prepath[-1] == "load":
             html += _("Load") + " | "
         else:
-            html += "<a href = \"http:/%s/load\">%s</a> | \n" %\
+            html += "<a href = \"http:/%s/load\">%s</a> | \n" % \
                     (self.packageName, _("Load")) 
             
         if self.prepath[-1] == "export":
             html += _("Export") 
         else:
-            html += "<a href = \"http:/%s/export\">%s</a><br/>\n" %\
+            html += "<a href = \"http:/%s/export\">%s</a><br/>\n" % \
                     (self.packageName, _("Export"))
         
         return html

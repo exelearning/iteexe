@@ -17,12 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
-from exe.webui.linkblock    import LinkBlock
 from exe.engine.error       import Error
 
 log = logging.getLogger(__name__)
@@ -35,7 +33,11 @@ class AuthoringPane(object):
     area of the eXe web user interface.  
     """
     def __init__(self):
+        """
+        Initialize
+        """
         self.blocks     = []
+        self.levelLimit = 0
 
 
     def process(self, request):
@@ -52,10 +54,9 @@ class AuthoringPane(object):
         """
         log.debug("render")
         
-        self.topNode    = topNode
         self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
-        self.__addBlocks(self.topNode)
+        self.__addBlocks(topNode)
         html  = "<!-- start authoring pane -->\n"
         html += "<div id=\"authoring_pane\">\n"
 
@@ -83,8 +84,6 @@ class AuthoringPane(object):
 
         for child in node.children:
             if len(child.id) < self.levelLimit:
-                self.addBlocks(child)
-#            else:
-#                self.blocks.append(LinkBlock(child))
+                self.__addBlocks(child)
 
 # ===========================================================================

@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from twisted.web.resource import Resource
@@ -40,6 +39,9 @@ class AuthoringPage(Resource):
     """
     
     def __init__(self):
+        """
+        Initialize a new authoring page
+        """
         Resource.__init__(self)
         self.outlinePane   = OutlinePane()
         self.authoringPane = AuthoringPane()
@@ -48,6 +50,9 @@ class AuthoringPage(Resource):
 
 
     def getChild(self, name, request):
+        """
+        Try and find the child for the name given
+        """
         if name == '':
             return self
         else:
@@ -80,20 +85,23 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
-        #html += self.addNodePane.render()
         html += "<div id=\"workbox\" class=\"outline-on\">\n"
         html += "<div id=\"workbox-top\">"
-        html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" class=\"on\">Outline</a>"
-        html += "<a id=\"iDevices-off\" href=\"javascript:chooseTab(1)\" class=\"off\">iDevices</a>"
-        html += "<a id=\"styles-off\" href=\"javascript:chooseTab(2)\" class=\"off\">Styles</a>"
-        html += "<a id=\"close-workbox\" class=\"img\" href=\"javascript:toggleworkbox(0), toggleFix(0);\">"
+        html += "<a id=\"outline-off\" href=\"javascript:chooseTab(0)\" "
+        html += "class=\"on\">Outline</a>"
+        html += "<a id=\"iDevices-off\" href=\"javascript:chooseTab(1)\"  "
+        html += " class=\"off\">iDevices</a>"
+        html += "<a id=\"styles-off\" href=\"javascript:chooseTab(2)\" "
+        html += "class=\"off\">Styles</a>"
+        html += "<a id=\"close-workbox\" class=\"img\" "
+        html += "href=\"javascript:toggleworkbox(0), toggleFix(0);\">"
         html += "<img border=\"0\" src=\"/images/hide.gif\" /></a>\n"
-        html += "<a id=\"open-workbox\" class=\"img\" href=\"javascript:toggleworkbox(1), toggleFix(1);\">"
+        html += "<a id=\"open-workbox\" class=\"img\" "
+        html += " href=\"javascript:toggleworkbox(1), toggleFix(1);\">"
         html += "<img border=\"0\" src=\"/images/show.gif\" /></a>\n"
         html += "</div>\n"
         
         # workbox content
-        
         html += "<div id=\"workbox-content\">\n"
 
         html += "<div id=\"styles-above\" class=\"links\">\n"

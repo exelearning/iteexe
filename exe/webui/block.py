@@ -17,7 +17,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
 from exe.webui import common
@@ -35,6 +34,9 @@ class Block(object):
     Edit, Preview, View, Hidden = range(4)
 
     def __init__(self, idevice):
+        """
+        Initialize a new Block object
+        """
         self.idevice = idevice
         self.id      = idevice.id
 
@@ -45,6 +47,10 @@ class Block(object):
 
 
     def process(self, request):
+        """
+        Process the request arguments from the web server to see if any
+        apply to this block
+        """
         log.debug("process id="+self.id)
         
         if "action" in request.args:
@@ -81,41 +87,68 @@ class Block(object):
 
 
     def processDone(self, request):
+        """
+        User has finished editing this block
+        """
         log.debug("processDone id="+self.id)
         self.idevice.edit = False
 
 
     def processEdit(self, request):
+        """
+        User has started editing this block
+        """
         log.debug("processEdit id="+self.id)
         self.idevice.edit = True
 
 
     def processDelete(self, request):
+        """
+        Delete this block and the associated iDevice
+        """
         log.debug("processDelete id="+self.id)
         self.idevice.delete()
 
 
     def processMove(self, request):
+        """
+        Move this iDevice to a different node
+        """
         log.debug("processMove id="+self.id)
 
 
     def processPromote(self, request):
+        """
+        Promote this node up the hierarchy tree
+        """
         log.debug("processPromote id="+self.id)
 
 
     def processDemote(self, request):
+        """
+        Demote this node down the hierarchy tree
+        """
         log.debug("processDemote id="+self.id)
 
 
     def processMovePrev(self, request):
+        """
+        Move this block back to the previous position
+        """
         log.debug("processMovePrev id="+self.id)
 
 
     def processMoveNext(self, request):
+        """
+        Move this block forward to the next position
+        """
         log.debug("processMoveNext id="+self.id)
 
 
     def render(self):
+        """
+        Returns the appropriate XHTML string for whatever mode this block is in
+        """
         if self.mode == Block.Edit:
             return self.renderEdit()
 
@@ -138,11 +171,14 @@ class Block(object):
 
 
     def renderEditButtons(self):
+        """
+        Returns an XHTML string for the edit buttons
+        """
         html  = common.submitImage("done",     self.id, "stock-apply.png")
         html += common.submitImage("delete",   self.id, "stock-cancel.png")
         html += common.submitImage("movePrev", self.id, "stock-go-up.png")
         html += common.submitImage("moveNext", self.id, "stock-go-down.png")
-        options  = [(_("---Move To---"),""),]
+        options  = [(_("---Move To---"), "")]
 
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
         options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
@@ -151,9 +187,11 @@ class Block(object):
         return html
 
 
-    # TODO We should probably get this list from elsewhere rather than
-    # building it up for every block
     def __getNodeOptions(self, node):
+        """
+        TODO We should probably get this list from elsewhere rather than
+        building it up for every block
+        """
         options = [("&nbsp;&nbsp;&nbsp;"*(len(node.id)-1) + str(node.title), 
                    node.getIdStr(),)]
         for child in node.children:
@@ -163,7 +201,8 @@ class Block(object):
 
     def renderPreview(self):
         """
-        Returns an XHTML string for viewing this block
+        Returns an XHTML string for previewing this block during editing
+        overriden by derieved classes
         """
         log.error("renderPreview called directly")
         return "ERROR Block.renderPreview called directly"
@@ -171,13 +210,18 @@ class Block(object):
     
     def renderView(self):
         """
-        Returns an XHTML string for viewing this block
+        Returns an XHTML string for viewing this block, 
+        i.e. when exported as a webpage or SCORM package
+        overriden by derieved classes
         """
         log.error("renderView called directly")
         return "ERROR Block.renderView called directly"
 
 
     def renderViewButtons(self):
+        """
+        Returns an XHTML string for the view buttons
+        """
         html  = common.submitImage("edit", self.id, "stock-edit.png")
         return html
 

@@ -20,7 +20,6 @@
 import os.path
 import logging
 import gettext
-from twisted.web import static
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
@@ -42,14 +41,15 @@ class ExportPage(Resource):
         Resource.__init__(self)
         self.menuPane = MenuPane()
         self.package  = None
-        self.url = ""
-        self.message = ""
+        self.url      = ""
+        self.message  = ""
         self.scormStr = ""
-        self.webStr  = ""
+        self.webStr   = ""
         
+
     def process(self, request):
         """
-        save the current package 
+        Save the current package 
         """
         log.debug("process " + repr(request.args))
         
@@ -60,9 +60,9 @@ class ExportPage(Resource):
         self.webStr  = ""
         
         if "exportMethod" in request.args:
-            if request.args["exportMethod"][0]=="webpage":
+            if request.args["exportMethod"][0] == "webpage":
                 self.webStr = "selected"
-            elif request.args["exportMethod"][0]=="scorm":
+            elif request.args["exportMethod"][0] == "scorm":
                 self.scormStr = "selected"
        
         if "export" in request.args:
@@ -79,8 +79,11 @@ class ExportPage(Resource):
             self.message = \
                 _("The course package has been exported successfully.")
 
+
     def render_GET(self, request):
-        """Called for all requests to this object"""
+        """
+        Called for all requests to this object
+        """
         
         # processing 
         log.debug("render_GET")

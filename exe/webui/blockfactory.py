@@ -17,11 +17,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import sys
 import logging
 import gettext
-from exe.engine.idevice import Idevice
-from exe.webui.block    import Block
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
