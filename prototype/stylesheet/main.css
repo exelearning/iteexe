@@ -1,0 +1,95 @@
+/*  ===========================================================================
+ eXe
+ Copyright 2004-2005, University of Auckland
+
+ default display styles.
+   =========================================================================== */
+
+p.nodeTitle { color: #51778A;
+	font-size: 18px;
+        padding: 2px;
+        border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+        display: inline;
+	}
+	
+p.reading_reference {
+      font-style: italic;		
+	}
+
+p.reading_feedback {
+	border: 1px dashed #ADADAD;
+	margin: 20px;
+	padding: 8px;
+	background-color: #FFF;
+	}
+
+
+#navcontainer {
+	background-color: #FFFFFF;
+	width: 169px;
+	float: left;
+	}
+
+#navcontainer a {
+	display: block;
+	margin-left: 0px;
+	margin-top: 5px;
+	padding-left: 0px;
+	text-decoration: none;
+	background-color: #FFF;
+	border-bottom: 1px solid #CCC;
+	}
+
+#navcontainer a:link, a:visited {
+	color: #96852C;
+	text-decoration: none;
+	}
+
+#navcontainer a:hover {
+	background-color: #51778A;
+	color: #EDEFF0;
+	}
+
+#main {
+	padding: 18px;
+	margin: 10px 10px 10px 180px;
+	background-color: #EDEFF0;
+	line-height: 140%;
+	}
+
+
+#iDevice {
+	background-color: #F1F1DD;
+	padding: 4px;
+	border: 1px solid #ADADAD;
+	margin: 8px;
+	}
+
+.icon {
+	color: #51778A;
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	position: relative;
+	top: -18px;
+	left: 5px;
+	}	
+
+
+#iDevice li[class~="activity"] { 
+    margin-left: 60px;
+    list-style-image: url("activity.png"); 
+}
+#iDevice li[class~="activity-reading"] { 
+    margin-left: 60px;
+    list-style-image: url("reading.png"); 
+}
+#iDevice li[class~="activity-reading-journal"] { 
+    margin-left: 60px;
+    list-style-image: url("objectives.png"); 
+}
+
+#iDevice li { 
+    list-style-image: none; 
+}
