@@ -33,7 +33,9 @@ def header():
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<style type=\"text/css\">\n"
-    html += "@import url(/css/main.css); @import url(/css/editing.css); </style>\n"
+    html += "@import url(/css/main.css);"
+    html += "@import url(/css/controlpanel.css);"
+    html += "@import url(/css/editing.css);</style>\n"
     html += "<script language=\"JavaScript\" src=\"/scripts/control_panel.js\")></script>\n"
     html += genJavascript()
     html += "<head>\n"

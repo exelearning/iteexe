@@ -1,0 +1,223 @@
+/*  ===========================================================================
+ eXe
+ Copyright 2004-2005, University of Auckland
+
+ control panel styles.
+   =========================================================================== */
+   			 
+#workbox{
+display: block;
+float: left;
+margin: 0px;
+margin-left: 7px;
+}
+
+* html #workbox{
+width: 14.2em;
+}
+
+body>#workbox{
+margin-right: 6px;
+
+}
+
+#workbox-top a{
+text-decoration: none;
+display: block;
+font-weight: bold;
+color: #000;
+font-size: .75em;
+padding: .1em .6em .55em .6em;
+border: 2px solid #4a4a4a;
+border-top-color: #a9a9a9;
+border-left-color: #a9a9a9;
+border-bottom-width: 0;
+background: #bdcedf;
+z-index: 1;
+position: relative;
+float: left;
+}
+
+#workbox-top a.on{
+background: #eee;
+position: relative;
+z-index: 3;
+}
+
+#workbox-top a.img, body.hidden #workbox-top a.img{
+top: .3em;
+background: transparent;
+border: 0 solid;
+padding-top: .2em;
+padding-bottom: -.4em;
+}
+
+body.hidden #workbox-top a{
+border-bottom-width: 2px;
+}
+
+.links, #other-modules{
+padding: .7em;
+background: #eee;
+clear: both;
+border: 2px solid #4a4a4a;
+border-top-color: #a9a9a9;
+border-left-color: #a9a9a9;
+z-index: 2;
+position: relative;
+margin-top: -2px;
+width: 14.2em;
+}
+
+#other-modules{
+margin-top: 0;
+background-image: url(features.gif); background-repeat: repeat-x;
+}
+
+#workbox-top{
+width: 14.2em;
+}
+
+#workbox>#workbox-top[id]{
+width: 15.9em;
+}
+
+/* ####################### ControlPanel Contents ####################### */
+
+#workbox-content{
+clear: both;
+}
+
+#workbox-content ul {list-style-type: none;}
+
+.link-section a, a.module, .style-choices a, .other-courses a, .other-modules{
+display: block;
+font-size: .75em;
+color: #4a4a4a;
+}
+
+.other-modules{
+margin: .5em 0;
+color: #cde;
+}
+
+#no-links{
+color: #258;
+font-style: italic;
+}
+
+.link-section a{
+margin-left: 17px;
+}
+
+.link-section a img{
+vertical-align: -1px;
+margin-left: -17px;
+}
+
+.link-section .name, .style-choices .name, .other-courses .name, #other-modules .name, #iDevices-above .name{
+display: block;
+margin-bottom: .4em;
+color: #556677;
+}
+
+a.name{
+color: #fff;
+height: 1.4em;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+width: 12.9em;
+display: block;
+}
+
+li>a.name{
+width: 15.1em;
+}
+
+.link-section, .style-choices, .other-courses{
+margin-bottom: .7em;
+}
+
+.other-courses{
+margin-top: 1.5em;
+}
+
+
+/* ####################### Turned on/off on default ######################## */
+
+#workbox-top #open-workbox, #outline-above, #styles-above, 
+#workbox-top #unfix-workbox, #workbox-top #fix-workbox{
+display: none;
+}
+
+#close-workbox, #links-above, #workbox-top>#fix-workbox{
+display: block;
+}
+
+/* ############### Elements affected by fix ################# */
+
+.fixed #workbox{
+position: fixed;
+left: 0;
+}
+
+.fixed{
+padding-right: 0px;
+}
+
+* html .fixed{
+padding-right: 15.5em;
+}
+
+.fixed #name-box{
+margin-right: -9.65em;
+padding-right: 10.27em; 
+}
+
+* html .fixed #name-box{
+margin-right: -8.68em;
+padding-right: 9.2em;
+}
+
+.fixed #about-links{
+margin-right: -21.1em;
+padding-right: 22.45em;
+}
+
+* html .fixed #about-links{
+margin-right: -19.7em;
+padding-right: 22.2em;
+}
+
+.fixed #workbox-top #fix-workbox, body.hidden #close-workbox, body.hidden #workbox-content{
+display: none;
+}
+
+.fixed #workbox-top #unfix-workbox, body.hidden #workbox-top #open-workbox{
+display: block;
+}
+
+/* expands authoring pane when control panel is hidden */
+body.hidden #authoring_pane {
+margin-left: 10px;
+}
+
+
+/* ######### Tab Display ######## */
+                                                                                
+#workbox.outline-on #styles-above, #workbox.outline-on #iDevices-above,
+#workbox.styles-on #outline-above, #workbox.styles-on #iDevices-above,
+#workbox.iDevices-on #styles-above, #workbox.iDevices-on #outline-above{
+display: none;
+}
+                                                                                
+#workbox.outline-on #outline-above, #workbox.styles-on #styles-above,
+#workbox.iDevices-on #iDevices-above{
+display: block;
+}
+
+#workbox a:hover{
+color: #6d6d6d;
+cursor: pointer;
+}
