@@ -94,16 +94,14 @@ class Node:
         Move to the upper level
         """
         index = self.id[-1]
-        if len(self.id) > 2:            
-            oldParent = self.parent
-            self.parent = oldParent.parent
-            self.id = self.parent.id + [len(self.parent.children)]           
-            self.parent.children.append(self)            
-            for i in range(index, len(oldParent.children) - 1):
-                oldParent.children[i] = oldParent.children[i+1]
-                oldParent.children[i].id[-1] = i 
-                
-            oldParent.children[len(oldParent.children) - 1].delete()
+        #id = self.id
+        if len(self.id) > 2:
+            parent      = self.parent
+            grandParent = parent.parent
+            grandParent.children.append(self)
+            parent.children[index].delete()
+            self.parent = grandParent
+            self.id = grandParent.id + [len(grandParent.children) - 1]
             
 
     def demote(self):
@@ -113,15 +111,12 @@ class Node:
         index = self.id[-1]
         if index > 0:
             oldParent = self.parent
-            self.parent = oldParent.children[index - 1]
-            self.id = self.parent.id + [len(self.parent.children)]
-            self.parent.children.append(self)
-            for i in range(index, len(oldParent.children) - 1):
-                oldParent.children[i] = oldParent.children[i+1]
-                oldParent.children[i].id[-1] = i 
-                
-            oldParent.children[len(oldParent.children) - 1].delete()
-            
+            newParent = oldParent.children[index - 1]
+            newParent.children.append(self)
+            self.delete()
+            self.id     = newParent.id + [len(newParent.children) - 1]
+            self.parent = newParent
+    
             
     def findIdevice(self, id):
         index = 0
