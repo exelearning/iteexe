@@ -8,32 +8,37 @@
 
 body {
 	margin: 0px 0px 0px 0px;
-	padding: 0px 6px 0px 6px;
+	padding: 0px 0px 0px 0px;
 	font-family: arial, verdana, helvetica, sans-serif;
 	font-size: 13px;
-	background: #CCC;
+	background: #9ca9af;
 	}
 
 #main {
-	margin: 4px 8px 10px 8px;
+	margin: 4px 10px 10px 10px;
 	}	
 
 #header {font-size: 20px;
-	 font-weight: bold;}	
-	
+	 font-weight: bold;
+	 }	
+
+#left_panel { float: left;}
+
+	 	
 /* outline container */
 
 #outline 
 	{ background-color: #FFFFFF;
 	  width: 200px;
 	  margin-top: 12px;
+	  padding: 4px;
 	  float: left; 
-	  border: 1px solid #807D74;
+	  border: 1px solid #000;
 	  -moz-border-radius: 6px;}
 				
 #outline ul
 	{list-style-type: none;
-	margin-left: -20px;}
+	margin-left: -30px;}
 
 #outline li  a.action
 	{font-size: 10px;
@@ -54,8 +59,34 @@ text-decoration: none;
 #outline a:hover
 {text-decoration: underline;}	
 
+/* iDevice Pane */
+
+#iDevice_pane { background-color: #FFFFFF;
+	  width: 200px;
+	  margin-top: 12px;
+	  padding: 4px; 
+	  border: 1px solid #000;
+	  -moz-border-radius: 6px;
+
+}
+
+#iDevice_pane a:link, #iDevice_pane a:visited
+	{color: #96852C;
+	text-decoration: none;}
+	
+#iDevice_pane a:hover
+{text-decoration: underline;}
+
+
 /* authoring pane */
 
 #authoring_pane {
 	margin-left: 216px;
-	}		
+	margin-top: 12px;
+	padding: 8px;
+	background-color: #FFFFFF;
+	border: 1px solid #000;
+	-moz-border-radius: 6px;
+	}	
+	
+		

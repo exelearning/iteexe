@@ -26,7 +26,7 @@ from exe.webui import common
 from exe.engine.packagestore import g_packageStore
 from exe.webui.idevicepane   import IdevicePane
 from exe.webui.authoringpane import AuthoringPane
-from exe.webui.addnodepane   import AddNodePane
+#from exe.webui.addnodepane   import AddNodePane
 from exe.webui.outlinepane   import OutlinePane
 from exe.webui.menupane   import MenuPane
 
@@ -46,7 +46,7 @@ class AuthoringPage(Resource):
         self.authoringPane = AuthoringPane()
         self.idevicePane   = IdevicePane()
         self.menuPane      = MenuPane()
-        self.addNodePane   = AddNodePane()
+        #self.addNodePane   = AddNodePane()
 
 
     def getChild(self, name, request):
@@ -66,7 +66,7 @@ class AuthoringPage(Resource):
         self.idevicePane.process(request)
         self.authoringPane.process(request)
         self.outlinePane.process(request, package)
-        self.addNodePane.process(request, package)
+        #self.addNodePane.process(request, package)
         self.menuPane.process(request)
         
         # Rendering
@@ -82,9 +82,11 @@ class AuthoringPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += self.menuPane.render()
-        html += self.addNodePane.render()
+        #html += self.addNodePane.render()
+	html += "<div id=\"left_panel\">\n"
         html += self.idevicePane.render(package.currentNode)
         html += self.outlinePane.render()
+	html += "</div>\n"
         html += self.authoringPane.render(package.currentNode)
         html += "</form>\n"
         html += common.footer()
