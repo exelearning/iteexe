@@ -19,6 +19,7 @@
 
 from exe.util.config import Config
 import logging
+from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import unittest
 
 # ===========================================================================
@@ -26,12 +27,36 @@ class TestConfig(unittest.TestCase):
     def setUp(self):
         pass
 
-    def testTest(self):
+    def testSetupLogging(self):
         myconfig = Config("test.conf")
-        open("test.log").write("")
+        open("test.log", "w").write("")
         myconfig.setupLogging("test.log")
-        self.assert_(logging.getLogger("foo").level == logging.DEBUG)
-        self.assert_(logging.getLogger("bar").level == logging.ERROR)
+        rootLog = logging.getLogger()
+        fooLog  = logging.getLogger("foo")
+        barLog  = logging.getLogger("bar")
+        self.assertEqual(fooLog.level,  DEBUG)
+        self.assertEqual(rootLog.level, ERROR)
+
+        rootLog.debug("This")
+        rootLog.warning("is free")
+        rootLog.error("software")
+        rootLog.critical("you can")
+        fooLog.debug("distribute")
+        fooLog.info("is free")
+        fooLog.error("and/or modify")
+        barLog.debug("Temple Place")
+        barLog.warning("Boston")
+        barLog.error("Massachusetts")
+
+        results = ["root ERROR software", "root CRITICAL you can", 
+                   "foo DEBUG distribute", "foo INFO is free", "foo ERROR and/or modify",
+                   "bar ERROR Massachusetts"]
+        resultFile = open("test.log")
+        i = 0
+        for line in resultFile.readlines():
+            self.assertEqual(line[24:].strip(), results[i])
+            i += 1
+                
 
 if __name__ == "__main__":
     unittest.main()
