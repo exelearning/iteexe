@@ -30,12 +30,16 @@ class Idevice(object):
     """
     nextId = 1
 
-    def __init__(self, parentNode=None):
+    def __init__(self, title, author, purpose, tip, parentNode=None):
         """Initialize a new iDevice, setting a unique id"""
         self.edit       = True
         self.id         = str(Idevice.nextId)
         Idevice.nextId += 1
         self.parentNode = parentNode
+        self.title      = title
+        self.author     = author
+        self.purpose    = purpose
+        self.tip        = tip
 
 
     def __cmp__(self, other):
