@@ -24,6 +24,7 @@ from ConfigParser import ConfigParser
 import logging
 from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import sys
+import os
 
 
 # ===========================================================================
@@ -50,6 +51,8 @@ class Config:
         if sys.platform[:3] == "win":
             from exe.engine.winshell import personal_folder
             self.dataDir = personal_folder()
+        else:
+            self.dataDir = os.environ["HOME"]
         
     def getDataDir(self):
         return self.dataDir
