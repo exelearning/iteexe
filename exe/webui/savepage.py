@@ -46,6 +46,9 @@ class SavePage(Resource):
         isSaved = False
         
     def process(self, request):
+        """
+        save the current package 
+        """
         log.debug("process", request.args)
         
         self.isSaved = False
@@ -65,6 +68,7 @@ class SavePage(Resource):
             self.isSaved = True
 
     def render_GET(self, request):
+        """Called for all requests to this object"""
         
         # processing 
         log.debug("render_GET")

@@ -34,6 +34,8 @@ class Node:
         self.idevices = []
 
     def createChild(self):
+        """Create a child node"""
+        
         child=Node()
         child.id=self.id + [len(self.children)]
         child.parent=self
@@ -41,6 +43,8 @@ class Node:
         return child
 
     def moveChildPrev(self, childId):
+        """Move the child to the previous"""
+        
         childIndex = childId[-1]
         
         if childIndex > 0:
@@ -51,6 +55,7 @@ class Node:
             self.children[childIndex].id     = childId        
             
     def moveChildNext(self, childId):
+        """Move the child to the next"""
         childIndex = childId[-1]
         
         if childIndex < len(self.children) - 1:
@@ -61,11 +66,23 @@ class Node:
             self.children[childIndex].id      = childId 
             
     def delChild(self, childId):
+        """Delete a child"""
+        
         childIndex = childId[-1]
         del(self.children[childIndex])
         
         for i in range(childIndex, len(self.children)):
             self.children[i].id[-1] = i
+            
+    def promote(self):
+        """Move to the upper level"""
+        
+        
+        if len(self.id) > 1:
+            parent = self.parent
+            self.parent = parent.parent
+            
+    
             
     def idStr(self):
         return ".".join([str(x) for x in self.id])

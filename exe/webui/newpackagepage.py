@@ -27,6 +27,7 @@ from exe.engine.packagestore import g_packageStore
 from exe.webui.authoringpage import AuthoringPage
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage import SavePage
+from exe.webui.loadpage import LoadPage
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -60,7 +61,8 @@ class NewPackagePage(Resource):
         authoringPage.putChild("properties", propertiesPage)
         savePage = SavePage()
         authoringPage.putChild("save", savePage)
-        authoringPage.putChild("load",       static.File("."))        
+        loadpage = LoadPage()
+        authoringPage.putChild("load", loadpage)        
                      
         # Rendering
         html  = "<html><head><title>"+_("eXe")+"</title>\n"
