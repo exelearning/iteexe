@@ -47,6 +47,8 @@ class TestEngine(unittest.TestCase):
         root.moveChildNext(child0.id)
         root.delChild(child0.id)
         print "child1 id:", child1.id
+        child11=child1.createChild()
+        print "child11 string id:", child11.idStr()
 
     def testFindNode(self):
         package = g_packageStore.createPackage()
