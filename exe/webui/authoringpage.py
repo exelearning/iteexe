@@ -93,6 +93,7 @@ class AuthoringPage(Resource):
         html += common.hiddenField("object")
         html += self.menuPane.render()
 
+        html += "&nbsp;"
         # TODO: Move the Workbox into its own class?
         html += "   <!-- start worbox -->\n"
         html += "<div id=\"workbox\" class=\"outline-on\">\n"

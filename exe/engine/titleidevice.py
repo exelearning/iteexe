@@ -38,8 +38,8 @@ class TitleIdevice(Idevice):
                   ", title="+title)
         Idevice.__init__(self, title, 
                          _("University of Auckland"), "", "", parentNode)
-        self.edit    = False
-        self.title   = title
+        self.edit         = False
+        self.title        = title
 
 
     def __str__(self):
@@ -47,6 +47,13 @@ class TitleIdevice(Idevice):
         if self.title:
             return self.title
         else:
-            return self.parentNode.package.levelName(len(self.parentNode.id)-2)
+            return self.parentNode.package.levelName(
+                                    len(self.parentNode.id) - 2)
+
+    def setTitle(self, title):
+        if title != self.parentNode.package.levelName(
+                                    len(self.parentNode.id) - 2):
+            log.info("Changed "+self.id+" title to "+title)
+            self.title = title
 
 # ===========================================================================

@@ -51,42 +51,47 @@ class MenuPane(object):
         log.debug("render")
         html = ""
         html = "   <!--- start header --->\n"
-	html += "<div id=\"header\">\n"
+        html += "<div id=\"header\">\n"
         html += "<p class=\"nodeTitle\">eXe</a>\n"        
         html += "<ul>\n"
             
         if self.prepath[-1] == "export":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Export") + "</a></li>\n" 
+            html += "<li id=\"current\"><a href=\"#\">" + _("Export") 
+            html += "</a></li>\n" 
         else:
             html += "<li><a href = \"http:/%s/export\">%s</a></li>\n" % \
                     (self.packageName, _("Export"))
             
         if self.prepath[-1] == "load":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Load") + "</a></li>\n"
+            html += "<li id=\"current\"><a href=\"#\">" + _("Load") 
+            html += "</a></li>\n"
         else:
             html += "<li><a href = \"http:/%s/load\">%s</a></li>\n" % \
                     (self.packageName, _("Load")) 
             
         if self.prepath[-1] == "save":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Save") + "</a></li>\n"
+            html += "<li id=\"current\"><a href=\"#\">" + _("Save") 
+            html += "</a></li>\n"
         else:
             html += "<li><a href = \"http:/%s/save\">%s</a></li>\n" % \
                     (self.packageName, _("Save"))
             
         if self.prepath[-1] == "properties":
-            html += "<li id=\"current\"><a href=\"#\">" + _("Properties") + "</a></li>\n"
+            html += "<li id=\"current\"><a href=\"#\">" + _("Properties") 
+            html += "</a></li>\n"
         else:
             html += "<li><a href = \"http:/%s/properties\">%s</a></li>\n" % \
                     (self.packageName, _("Properties"))
 
         if len(self.prepath) == 1:
-            html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") + "</a></li>\n"
+            html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") 
+            html += "</a></li>\n"
         else:
             html += "<li><a href = \"http:/%s\">%s</a></li>\n" % \
                     (self.packageName, _("Authoring"))
 
         html += "</ul>\n" 
-	html += "</div>\n" 
+        html += "</div>\n" 
         html += "   <!--- end header --->\n"
         return html
         

@@ -49,7 +49,6 @@ body>#workbox {
     z-index: 3;
 }
 
-
 #workbox-top a.img, body.hidden #workbox-top a.img{
     top: .3em;
     background: transparent;
@@ -59,14 +58,9 @@ body>#workbox {
 }
 
 
-body.hidden #workbox-top {
-margin-top: -13px;
-}
-
 body.hidden #workbox-top a{
     border-bottom-width: 2px;
 }
-
 
 .links, #other-modules{
     padding: .7em;
@@ -201,8 +195,17 @@ li>a.name{
 /* ############### Elements affected by fix ################# */
 
 .fixed #workbox{
+    margin-top: 35px;
     position: fixed;
     left: 0;
+    z-index: 11;
+}
+
+.hidden #workbox{
+    margin-top: 35px;
+    position: fixed;
+    left: 0;
+    z-index: 11;
 }
 
 .fixed{
@@ -245,6 +248,17 @@ li>a.name{
 body.hidden #authoring_pane {
     margin-left: 8px;
 }
+
+#authoring_pane {
+	position: absolute;
+	margin-left: 223px;
+	margin-top: 90px;
+        margin-right: 8px;
+	padding: 8px;
+	background-color: #EDEFF0;
+	border: 1px solid #000;
+	-moz-border-radius: 6px;
+	}	
 
 
 /* ######### Tab Display ######## */
