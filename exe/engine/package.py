@@ -20,6 +20,7 @@
 import sys
 import logging
 import gettext
+from exe.engine.node import Node
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -31,8 +32,23 @@ class Package:
     i.e. the "package".
     """
     def __init__(self, name):
+        log.debug("init", name)
         self.name = name
+        self.root = Node()
 
+    def findNode(self, nodeId):
+        log.debug("findNode", nodeId)
+        node  = self.root
+        level = 0
 
+        while level < len(nodeId):
+            if nodeId[level] < len(node.children):
+                node = node.children[nodeId[level]]
+            else:
+                return None
+            level += 1
+
+        return node
+            
 
 # ===========================================================================
