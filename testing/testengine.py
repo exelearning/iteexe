@@ -23,7 +23,7 @@ from exe.engine.package      import Package
 from exe.engine.node         import Node
 
 # ===========================================================================
-class TestENGINE(unittest.TestCase):
+class TestEngine(unittest.TestCase):
     def setUp(self):
         pass
 
@@ -37,7 +37,7 @@ class TestENGINE(unittest.TestCase):
         child0 = root.createChild()
         print "child0 id:", child0.id
         print "root id:", root.id
-        #self.assertEqual(child0.id[:-1], root.id)
+        self.assertEqual(child0.id[:-1], root.id)
         child1 = root.createChild()
         root.moveChildPrev(child0.id)        
         root.moveChildPrev(child1.id)
@@ -48,6 +48,19 @@ class TestENGINE(unittest.TestCase):
         root.delChild(child0.id)
         print "child1 id:", child1.id
 
+    def testFindNode(self):
+        package = g_packageStore.createPackage()
+        node0  = package.root.createChild()
+        node1  = package.root.createChild()
+        node10 = node1.createChild()
+        found  = package.findNode([1,0])
+        self.assertEqual(found, node10)
+        found  = package.findNode([])
+        self.assertEqual(found, package.root)
+        found  = package.findNode([0])
+        self.assertEqual(found, node0)
+        found  = package.findNode([1,2])
+        self.assertEqual(found, None)
 
 if __name__ == "__main__":
     unittest.main()
