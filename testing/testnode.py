@@ -93,7 +93,6 @@ class TestNode(unittest.TestCase):
         child3.title = "third child"
         child31 = child3.createChild()
         child31.title = "third child's first child"
-        print str(root)
 
    
 if __name__ == "__main__":

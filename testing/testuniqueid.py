@@ -20,10 +20,13 @@
 import os.path
 import unittest
 from exe.engine.uniqueidgenerator import UniqueIdGenerator
+from exe.engine.config            import Config
+from exe.webui.webinterface       import g_webInterface
 
 # ===========================================================================
 class TestUniqueId(unittest.TestCase):
     def setUp(self):
+        g_webInterface.config = Config("test.conf")
         self.generator = UniqueIdGenerator("David's Gen")
 
     def testGenerate(self):
