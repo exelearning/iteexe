@@ -34,10 +34,13 @@ import os.path
 import sys
 import pickle
 from exe.engine.config import Config
-from exe.webui.newpackagepage import NewPackagePage
+from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.webinterface   import g_webInterface
 from exe.engine.packagestore  import g_packageStore
+from exe.webui.errorpage      import ErrorPage
 import logging
+import gettext
+_   = gettext.gettext
  
 log = logging.getLogger(__name__)
 
@@ -51,33 +54,35 @@ def main():
     g_webInterface.config = config
     log.info("Starting eXe")
     
-    filePath = ""
+    isWrongfile = False
+    root = None
     if len(sys.argv) > 1:
-        filePath = sys.argv[1]
-        print filePath  
-        fileName = os.path.basename(filePath)
-        packageName = \
-                     os.path.splitext(os.path.basename(fileName))[0]
+        filePath = sys.argv[1] 
+        print filePath
         try:  
             infile = open(filePath)
             package = pickle.load(infile)
         except:
-            print "Wrong file format"
+            errMessage  = _("Wrong file format,")
+            errMessage += _(" please shut down eXe and try again")
+            print errMessage
+            root = ErrorPage(errMessage)
+            isWrongfile = True
         else:
             g_packageStore.addPackage(package)
-            root = NewPackagePage(package)
+            root = PackageRedirectPage(package)
     else:   
-        root   = NewPackagePage()
-        
-    g_webInterface.rootPage = root
-
-    #TODO Find a better way to deal with these globals :-(
-    g_webInterface.packageStore = g_packageStore
+        root   = PackageRedirectPage()   
     
-    root.putChild("images",  static.File(config.exeDir+"/images"))
-    root.putChild("css",     static.File(config.exeDir+"/css"))   
-    root.putChild("scripts", static.File(config.exeDir+"/scripts"))
-    root.putChild("style",   static.File(config.exeDir+"/style"))
+    if not isWrongfile:
+        g_webInterface.rootPage = root
+    #TODO Find a better way to deal with these globals :-(
+        g_webInterface.packageStore = g_packageStore
+        
+        root.putChild("images",  static.File(config.exeDir+"/images"))
+        root.putChild("css",     static.File(config.exeDir+"/css"))   
+        root.putChild("scripts", static.File(config.exeDir+"/scripts"))
+        root.putChild("style",   static.File(config.exeDir+"/style"))
 
     launchBrowser(config.port)  
     try:

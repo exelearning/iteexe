@@ -18,7 +18,7 @@
 # ===========================================================================
 
 """
-NewPackagePage is the first screen the user loads.  It doesn't show
+PackageRedirectPage is the first screen the user loads.  It doesn't show
 anything it just redirects the user to a new package.
 """
 
@@ -38,10 +38,11 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class NewPackagePage(Resource):
+class PackageRedirectPage(Resource):
     """
-    NewPackagePage is the first screen the user loads.  It doesn't show
-    anything it just redirects the user to a new package.
+    PackageRedirectPage is the first screen the user loads.  It doesn't show
+    anything it just redirects the user to a new package or loads an existing 
+    package.
     """
     
     def __init__(self, package = None):
@@ -72,7 +73,7 @@ class NewPackagePage(Resource):
         else:
         # Create new package
             package = g_packageStore.createPackage()
-        log.info("Creating a new package name="+ package.name)
+            log.info("Creating a new package name="+ package.name)
 
         authoringPage = AuthoringPage()
         self.putChild(package.name, authoringPage)

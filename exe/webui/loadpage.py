@@ -81,7 +81,7 @@ class LoadPage(Resource):
                 self.message = _("Sorry, wrong file format.")
                 self.err = True
             else:
-                self.package = package
+                self.package = package               
                 g_packageStore.addPackage(package)
                     
 

@@ -245,7 +245,7 @@ class ImageElement( Element ):
         if filename.strip() != "":
             return """<img src="images/%s" class="%s" width="%s" height="%s"\
             border="%s" align="left" style="margin-right: 5px;" />\n"""\
-            %( filename, self.class_, self.width, self.height, self.border )
+            %( filename.replace( "\\", "/") , self.class_, self.width, self.height, self.border )
         else:
             return ""
         
@@ -371,7 +371,7 @@ class AudioElement( Element ):
             tmp_array = {}
             tmp_array["id"] = self.id
             tmp_array["hostUrl"] = "images"
-            tmp_array["audiofile"] = filename
+            tmp_array["audiofile"] = filename.replace( "\\", "/")
             filterStr = self.mmfilter( filename )
             html = filterStr % ( tmp_array )
         else:
@@ -433,32 +433,18 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#ve
         """
         
         wmvString = """
-        <p class="mediaplugin">
-        <object classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95"'
-codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" 
-        standby="Loading Microsoft Windows Media Player components..." 
-        id="msplayer" align="" type="application/x-oleobject">
-        <param name="Filename" value="images/%(audiofile)s">
-        <param name="ShowControls" value=true />
-        <param name="AutoRewind" value=true />
-        <param name="AutoStart" value=false />
-        <param name="Autosize" value=true />
-        <param name="EnableContextMenu" value=true />
-        <param name="TransparentAtStart" value=false />
-        <param name="AnimationAtStart" value=false />
-        <param name="ShowGotoBar" value=false />
-        <param name="EnableFullScreenControls" value=true />
-        <!--embed type="application/x-mplayer2" 
-pluginspage="http://www.microsoft.com/windows/mediaplayer/download/default.asp"
- name="WMPlay" src="mms:images/%(audiofile)s" autostart="1"
- transparentatstart="1" showcontrols="1" showdisplay="0" showstatusbar="0" animationatstart="0"-->
-        <embed src="images/%(audiofile)s" name="msplayer" type="video/x-ms" 
-         ShowControls="1" AutoRewind="1" AutoStart="0" Autosize="0" 
-         EnableContextMenu="1" TransparentAtStart="0" AnimationAtStart="0" 
-         ShowGotoBar="0" EnableFullScreenControls="1" 
-pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/">
-        </embed>
-        </object></p>
+          <p><object
+classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" 
+codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=9" 
+type="application/x-oleobject" align="middle" 
+standby="Loading Microsoft&reg; Windows&reg; Media Player components..." id="MediaPlayer1">
+<param name="FileName" value="images/%(audiofile)s">
+<param name="ShowStatusBar" value="True">
+<embed 
+src="images/%(audiofile)s" align="middle" type="application/x-mplayer2" 
+pluginspage = "http://www.microsoft.com/Windows/MediaPlayer/" 
+showstatusbar=True filename="images/%(audiofile)s"> </embed>
+</object></p>
         """
         
         movString = """

@@ -36,6 +36,7 @@ class WebInterface:
         self.rootPage     = None
         self.packageStore = None
         self.config       = None
+        self.message      = ""
  
 
 # nasty old global
