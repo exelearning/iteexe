@@ -47,6 +47,8 @@ class ExportPage(Resource):
         self.package  = None
         self.url = ""
         self.message = ""
+        self.scomStr = ""
+        self.webStr  = ""
         
     def process(self, request):
         """
@@ -54,16 +56,27 @@ class ExportPage(Resource):
         """
         log.debug("process " + repr(request.args))
         
-        self.isSaved = False
         self.url = request.path
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
+        self.scomStr = ""
+        self.webStr  = ""
         
+        if "exportMethod" in request.args:
+            if request.args["exportMethod"][0]=="webpage":
+                self.webStr = "selected"
+            elif request.args["exportMethod"][0]=="scom":
+                self.scomStr = "selected"
+       
         if "export" in request.args:
             dataDir = g_webInterface.config.getDataDir() 
             os.chdir(dataDir)
             websiteExport = WebsiteExport()
-            websiteExport.export(self.package)
+            if request.args["exportMethod"][0]=="webpage":
+                websiteExport.exportWeb(self.package)
+            elif request.args["exportMethod"][0]=="scom":
+                websiteExport.exportScom(self.package)
+            
             self.message = \
                 _("The course package has been exported successfully.")
 
@@ -80,8 +93,12 @@ class ExportPage(Resource):
         html  = common.header() + common.banner()
         html += self.menuPane.render()
         html += "<form method=\"post\" action=\"%s\">" % self.url        
-        html += "<br/><b>" + self.message+ "</b><br><br/>"           
-        html += common.submitButton("export", _("Export"))
+        html += "<br/><b>" + self.message+ "</b><br><br/>"   
+        html += """<select onchange="submit()" name="exportMethod">            
+            <option value="webpage" %s>Web Page</option>
+            <option value="scom" %s>SCOM</option>
+            </select> Please select a export method <br/>""" % (self.webStr, self.scomStr)
+        html += "<br/>" + common.submitButton("export", _("Export"))
         html += "<br/></form>"
         html += common.footer()
         

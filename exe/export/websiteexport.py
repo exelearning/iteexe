@@ -28,6 +28,7 @@ from exe.engine.error       import Error
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
 from exe.webui.webinterface import g_webInterface
+from exe.export.manifest import Manifest
 import os
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -43,6 +44,7 @@ class WebsitePage(object):
         filename = self.node.getIdStr() + ".html"
         out = open(filename, "w")
         out.write(self.render())
+        out.close()
 
     def render(self):
         html  = common.header()
@@ -75,9 +77,9 @@ class WebsiteExport(object):
         self.package = None
 
 
-    def export(self, package):
+    def exportWeb(self, package):
         """ 
-        Export
+        Export web page
         """
         self.package = package
         dataDir = g_webInterface.config.getDataDir()
@@ -87,6 +89,16 @@ class WebsiteExport(object):
             
         os.chdir(package.name)
         self.exportNode(package.root)
+        
+        
+    def exportScom(self, package):
+        """ 
+        Export scom
+        """
+        self.exportWeb(package)
+        
+        manifest = Manifest(package)
+        manifest.save()
         
                 
     def exportNode(self, node):
@@ -99,7 +111,7 @@ class WebsiteExport(object):
         for child in node.children:
             self.exportNode(child)
             
-        os.chdir("..")
+       # os.chdir("..")
         
     
 # ===========================================================================
