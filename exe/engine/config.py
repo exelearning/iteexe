@@ -46,14 +46,17 @@ class Config:
         
         exeConf = None
         
-        if os.environ["EXECONF"] and os.path.isfile(os.environ["EXECONF"]):
+        if "EXECONF" in os.environ and os.path.isfile(os.environ["EXECONF"]):
             exeConf = os.environ["EXECONF"]              
+
         elif sys.platform[:3] == "win":
+            # what's the windows equivalent of /etc????
             confPath = "C:\\Program Files\\exe\\" + configFile
             if os.path.isfile(confPath):
                 exeConf = confPath
+                
         elif sys.platform[:5] == "linux":
-            confPath = "/usr/share/exe" + configFile
+            confPath = "/etc/exe" + configFile
             if os.path.isfile(confPath):
                 exeConf = confPath
                 
@@ -69,12 +72,12 @@ class Config:
 
         elif sys.platform[:5] == "linux":
             self.exeDir  = "/usr/share/exe"
-
         else:
             self.exeDir  = os.path.dirname(self.exePath)
         
-        
-        
+        if self.setting.has_option("system", "exe-dir"):
+            self.dataDir = self.setting.get("system", "exe-dir")
+
         if self.setting.has_option("system", "port"):
             self.port = self.setting.getint("system", "port")
         else:
