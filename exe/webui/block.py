@@ -41,6 +41,13 @@ class Block(object):
 
     def process(self, request):
         log.debug("process id="+self.id)
+        
+        if "action" in request.args:
+            if request.args["action"][0] == "PreviewAll":
+                self.processDone(request)
+            elif request.args["action"][0] == "EditAll":
+                self.processEdit(request)
+            
         if "object" in request.args and request.args["object"][0] == self.id:
             if request.args["action"][0] == "done":
                 self.processDone(request)

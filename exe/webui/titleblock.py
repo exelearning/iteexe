@@ -95,9 +95,12 @@ class TitleBlock(Block):
                                        "stock-go-down.png", _("Move Down"))
 #        else:
 #            html += common.image("stock-go-down-off.png")
-
         
-        html += common.submitLink("done", self.id, _("Done"))
+        html += common.submitLink("done", self.id, _("Done")) + " "
+        html += common.submitImage("PreviewAll", self.id,
+                                       "stock-apply.png", _("Preview"))
+        html += common.submitImage("EditAll", self.id,
+                                       "stock-edit.png", _("Edit view"))
         html += "</div>\n"
         return html
 
