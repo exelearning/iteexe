@@ -94,7 +94,7 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self, node):
+    def __init__(self):
         """
         Initialize
         """
