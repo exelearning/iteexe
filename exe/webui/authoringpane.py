@@ -23,6 +23,7 @@ import gettext
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.webui.linkblock    import LinkBlock
+from exe.util.error         import Error
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -51,7 +52,7 @@ class AuthoringPane(object):
             block = g_blockFactory.createBlock(idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
-                raise "Unable to render iDevice."
+                raise Error("Unable to render iDevice.")
             self.blocks.append(block)
 
         if self.levelLimit is None or len(node.id) < self.levelLimit:
@@ -60,6 +61,14 @@ class AuthoringPane(object):
 
         else:
             self.blocks.append(LinkBlock(node))
+
+
+    def process(self, args):
+        """
+        Delegates processing of args to blocks
+        """
+        for block in self.blocks:
+            block.process(args)
 
 
     def render(self):
@@ -72,9 +81,4 @@ class AuthoringPane(object):
             
         return html
         
-    def process(self, args):
-        for block in self.blocks:
-            block.process(args)
-
-
 # ===========================================================================

@@ -21,59 +21,43 @@ import sys
 import logging
 import gettext
 from exe.webui import common
+from exe.webui.block          import Block
+from exe.webui.blockfactory   import g_blockFactory
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-# ===========================================================================
-class Block(object):
-    """
-    Block is the base class for the classes which are responsible for 
-    rendering and processing Idevices in XHTML
-    """
-    def __init__(self, id, edit=False):
-        self.id   = id
-        self.edit = edit
 
-    def process(self, request):
-        if "done%d" % self.id in request.args:
-            self.processDone(request)
-        elif "edit%d" % self.id in request.args:
-            self.processEdit(request)
+# ===========================================================================
+class TitleBlock(Block):
+    """
+    TitleBlock is for rendering node titles
+    """
+    def __init__(self, node):
+        self.node = node
 
     def processDone(self, request):
-        pass
-
-    def processEdit(self, request):
-        pass
-
-    def render(self):
-        if self.edit:
-            return self.renderEdit()
-        else:
-            return self.renderView()
+        if "title%d"%self.id in request.args:
+            self.node.title = request["title%d"%self.id]
 
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        log.error("renderEdit called directly")
-        return "ERROR Block.renderEdit called directly"
+        html  = "<div>\n"
+        html += common.textInput("title%d"%self.id, self.node.title)
+        html += common.submitButton("done%d"%self.id, _("Done"))
+        html += "</div>\n"
 
-    def renderEditButtons(self):
-        html  = common.submitButton("done%d" % self.id,   _("Done"))
-        html += common.submitButton("delete%d" % self.id, _("Delete"))
-        return html
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this block
         """
-        log.error("renderView called directly")
-        return "ERROR Block.renderView called directly"
-
-    def renderViewButtons(self):
-        html  = common.submitButton("edit%d" % id, _("Edit"))
+        html  = "<div>\n"
+        html += "<h1 class=\"title\">" + self.node.title + "</h1>"
+        html += common.submitButton("edit"+self.node.idStr(), _("Edit"))
+        html += "</div>\n"
         return html
 
 # ===========================================================================
