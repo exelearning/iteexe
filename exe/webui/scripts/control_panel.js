@@ -83,13 +83,6 @@ function toggleFix(state){
 
     gFixState = state;
 
-    if (iewin == 1) {
-	document.getElementById("fix-workbox").style.display = 'none';
-	document.getElementById("unfix-workbox").style.display = 'none';
-    } else {
-	setTimeout("hiddenAndOrFixed()",1); // prevents Safari from crashing on toggleFix()
-    }
-
     setCookie('fix', state);
 
 }
