@@ -31,27 +31,57 @@ class AddNodePane(object):
     """
     AddNodePane is responsible for creating the XHTML for add nodes links
     """
-    def __init__(self):
+    def __init__(self, node):
         self.package = None
+        self.node = node
         self.url     = ""
 
     def process(self, request):
         """ 
         Write description
         """
-        self.url    = request.path
+        
         packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)  
+        self.package = g_packageStore.getPackage(packageName)
+        
+        if self.package.levelNames[0] in request.args:
+            self.package.currentNode = self.package.root.createChild()
+            
+        if self.package.levelNames[1] in request.args:
+            parentId = self.package.currentNode.id[0]
+            parentNode = self.package.root.findNode(parentId)
+            self.package.currentNode = parentNode.createChild()
+            
+        if self.package.levelNames[2] in request.args:
+            parentId = self.package.currentNode.id[1 : 2]
+            parentNode = self.package.root.findNode(parentId)
+            self.package.currentNode = parentNode.createChild()
             
             
     def render(self):
         #Returns an XHTML string for viewing this pane
         
-        html += ""
-                             
+        html = common.submitButton("%s", "Add %s")+ "<br/>" 
+        html += %(self.package.levelNames[0], self.package.levelNames[0])
+        
+        if len(self.node.id) < 1:
+            html += common.submitButton("%s", "Add %s",False) + "<br/>"
+            html += %(self.package.levelNames[1], self.package.levelNames[1])
+        else:
+            html += common.submitButton("%s", "Add %s") + "<br/>"
+            html += %(self.package.levelNames[1], self.package.levelNames[1])
+            
+        if len(self.node.id) < 2:
+            html += common.submitButton("%s", "Add %s",False) + "<br/>"
+            html += %(self.package.levelNames[2], self.package.levelNames[2])
+        else:
+            html += common.submitButton("%s", "Add %s") + "<br/>"    
+            html += %(self.package.levelNames[2], self.package.levelNames[2])   
+            
         return html
         
         
+         
 
 
     

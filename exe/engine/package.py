@@ -35,6 +35,7 @@ class Package:
         log.debug("init", name)
         self.name = name
         self.root = Node()
+        self.currentNode = self.root
         self.title=""
         self.author=""
         self.description=""
