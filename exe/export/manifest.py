@@ -59,26 +59,13 @@ class Manifest(object):
         """
         
         self.xmlStr += """<?xml version="1.0" encoding="UTF-8"?>
-        <manifest identifier="MANIFEST1"
-        xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
-        xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd 
-        http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
-            <metadata> 
-                <schema>IMS Content</schema> 
-                <imsmd:lom> 
-                <imsmd:general> 
-                <imsmd:title>
-                <imsmd:langstring xml:lang="en-US">%s</imsmd:langstring> 
-                </imsmd:title> 
-                </imsmd:general> 
-                </imsmd:lom> 
-            </metadata> 
-            <organizations default = "Toc1"> 
+<!--This is a Reload version 2.0.1 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-942DE505-084F-5979-5843-B76BFE75364E" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+            <organizations default="Toc1"> 
                 <organization identifier="Toc1" structure="hierarchical"> 
                  <title>%s</title> 
-        """ % (self.title, self.title)
+        """ % (self.title)
         
         self.xmlStr += self.getItemStr(self.node)
         self.xmlStr += """
@@ -96,15 +83,15 @@ class Manifest(object):
         returning xlm string for items
         """
         itemStr = ""
-        i = 1
-        for child in node.children:
-            itemStr += """
-            <item identifier="ITEM%s" identifierref="RESOURSE%s">
+        id = node.getIdStr().replace(".", "-")
+        itemStr += """
+            <item identifier="ITEM%s" isvisible="true" identifierref="RESOURSE%s">
                 <title>%s</title>
-            """ %(child.getIdStr(), child.getIdStr(), str(child.title))
+            """ %(id, id, str(node.title))
+
+        for child in node.children:
             itemStr += self.getItemStr(child)
-            itemStr += "</item>"
-            i += 1        
+        itemStr += "</item>"  
         
         return itemStr
 
@@ -113,16 +100,17 @@ class Manifest(object):
         Returning xml string for resourses
         """
         resStr = ""
-        i = 1
-        for child in node.children:
-            filename = child.getIdStr()+ ".html"
-            resStr += """
-            <resource identifier="RESOURSE%s" type="webcontent" href="%s">
+        filename = node.getIdStr()+ ".html"
+        id = node.getIdStr().replace(".", "-")
+        resStr += """
+            <resource identifier="RESOURSE%s" type="webcontent" 
+            adlcp:scormtype="asset" href="%s">
                 <file href="%s"/>
             </resource>
-            """ %(child.getIdStr(), filename, filename)
+            """ %(id, filename, filename)
+            
+        for child in node.children:
             resStr += self.getResourseStr(child)
-            i += 1
         
         return resStr       
         
