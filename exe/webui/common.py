@@ -64,11 +64,11 @@ def hiddenField(name, value=""):
     html += "value=\"%s\" />\n" % value
     return html
 
-def textInput(name, value=""):
+def textInput(name, value="", size=40):
     """Adds a text input to a form"""
     html  = "<input type=\"text\" name=\"%s\" " % name
     html += "value=\"%s\"" % value
-    html += " size=\"40\" />\n" 
+    html += " size=\"%s\" />\n" % size
     return html
 
 def textArea(name, value=""):

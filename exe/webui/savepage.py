@@ -52,6 +52,7 @@ class SavePage(Resource):
         self.url      = ""
         self.message  = ""
         self.isSaved  = False
+        self.dataDir  = g_webInterface.config.getDataDir()
         
     def process(self, request):
         """
@@ -65,17 +66,30 @@ class SavePage(Resource):
         self.package = g_packageStore.getPackage(packageName)
         
         if "save" in request.args:
-            dataDir = g_webInterface.config.getDataDir() 
-            os.chdir(dataDir)
-            fileName = request.args["fileName"][0]
-            if not fileName.endswith(".elp"):
-                fileName = fileName + ".elp"
+            filePathName = request.args["fileName"][0]
+            fileDir  = os.path.dirname(filePathName)
+            fileName = os.path.basename(filePathName)
+            if fileDir == "":
+                fileDir = self.dataDir
+                
+            if os.path.isdir(fileDir):
+                self.dataDir = fileDir
+                os.chdir(fileDir)
+                if not fileName.endswith(".elp"):
+                    fileName = fileName + ".elp"
               
-            log.info("saving " + fileName)
-            outfile = open(fileName, "w")
-            pickle.dump(self.package, outfile)
-            self.package.name = os.path.splitext(os.path.basename(fileName))[0]
-            self.message = _("The course package has been saved successfully.")
+                log.info("saving " + fileName)
+                log.info("fileDir: " + fileDir)
+                log.info("dataDir: " + g_webInterface.config.getDataDir())
+                outfile = open(fileName, "w")
+                pickle.dump(self.package, outfile)
+                self.package.name = os.path.splitext(os.path.basename(fileName))[0]
+                self.message = _("The course package has been saved successfully.")
+            else:
+                self.message = _("Invalid path, please enter an another one.")
+                
+            
+            
 
     def render_GET(self, request):
         """Called for all requests to this object"""
@@ -84,14 +98,15 @@ class SavePage(Resource):
         log.debug("render_GET")
         self.process(request)
         self.menuPane.process(request)
+        path = self.dataDir+"/"+self.package.name+".elp"
                         
         # Rendering
         html  = common.header() + common.banner()
         html += self.menuPane.render()
         html += "<form method=\"post\" action=\"%s\">" % self.url        
         html += "<br/><b>" + self.message+ "</b>"           
-        html += "<br/>%s<br/>" % _("Please enter a filename")
-        html += common.textInput("fileName", self.package.name+".elp")
+        html += "<br/>%s<br/>" % _("Please enter a filename")        
+        html += common.textInput("fileName", path, 70)
         html += "<br/><br/>"
         html += common.submitButton("save", _("Save"))
         html += "<br/></form>"
