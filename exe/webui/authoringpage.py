@@ -157,6 +157,8 @@ class AuthoringPage(Resource):
         html += "@import url(/css/controlpanel.css);\n"
 #       html += "@import url(/css/editing.css);\n"
         html += "@import url(/style/"+package.style+"/editing.css);</style>\n"
+        html += "<link rel=\"alternate stylesheet\" type=\"text/css\" media=\"screen\"" 
+        html += "title=\"garden\" href=\"style/garden/editing.css\" />" 
         html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
         html += "</script>\n"
         html += "<script language=\"JavaScript\" "
