@@ -67,7 +67,6 @@ class AuthoringPane(object):
         for block in self.blocks:
             html += block.render()
 
-        html += "<a name=\"bottom\"></a>\n"
         html += "</div>\n"
         html += "<!-- end authoring pane -->\n"
         return html
