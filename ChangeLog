@@ -1,0 +1,3207 @@
+2005-04-07 23:50  djm
+
+	* NEWS, README, doc/eXe-tutorial.elp, exe/idevices,
+	  exe/idevices/simpleblock.py, exe/idevices/simpleidevice.py,
+	  exe/webui/reflectionblock.py, exe/webui/server.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css, exe/webui/titleblock.py, win
+	  install/exe.nsi: Merged in changes from revisions 423:431 from 0.3
+	  branch
+
+2005-04-06 23:11  djm
+
+	* doc/eXe-tutorial.elp: make the tutorial start up nicely
+
+2005-04-06 23:08  djm
+
+	* doc/eXe-tutorial.elp: new zipped format for tutorial
+
+2005-04-06 23:06  djm
+
+	* doc/exe-user-guide.elp: user-guide.elp no more
+
+2005-04-06 23:06  djm
+
+	* doc/eXe-tutorial.elp: renamed the User Guide as a Tutorial
+
+2005-04-06 22:53  jenny
+
+	* exe/engine/config.py, exe/engine/package.py: Fixed bug in
+	  package.py and merged changes in config.py
+
+2005-04-06 22:36  djm
+
+	* exe/engine/package.py: save elp packages as a collection of zipped
+	  files
+
+2005-04-06 21:44  djm
+
+	* exe/engine/config.py: check if EXECONF is set
+
+2005-04-06 20:13  djm
+
+	* exe/export/manifest.py: added comment
+
+2005-04-06 08:53  jenny
+
+	* exe/engine/config.py, exe/webui/server.py, win install/exe.nsi:
+	  modified config.py to determine exe.conf path.
+
+2005-04-05 04:22  jenny
+
+	* exe/engine/node.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/idevicepane.py, win install/exe.nsi,
+	  win-setup.py: modified exe.nsi and try to bring up edit block on
+	  authoring page.
+
+2005-04-04 19:26  djm
+
+	* testing/runtests.py, testing/testpackage.py: Merged testSave and
+	  testLoad due to dependencies. Added tests to runtests.
+
+2005-04-04 05:39  djm
+
+	* exe/engine/package.py, exe/export/websiteexport.py,
+	  exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/element.py, exe/webui/errorpage.py,
+	  exe/webui/loadpage.py, exe/webui/multichoiceblock.py,
+	  exe/webui/outlinepane.py, exe/webui/server.py: small code tidyups
+
+2005-04-04 03:24  jenny
+
+	* win install/exe.nsi, win install/exeLicense.txt: added exe.nsi and
+	  exeLicense.txt for using Venis installation.
+
+2005-04-04 03:18  djm
+
+	* doc/exe-user-guide.elp, doc/test3.txt: Added eXe user guide
+
+2005-04-01 02:03  jenny
+
+	* exe/webui/server.py, testing/testblock.py, testing/testidevice.py,
+	  testing/testpackage.py: added unit test for idevice
+
+2005-03-30 21:08  jenny
+
+	* exe/webui/reflectionblock.py, exe/webui/server.py: fixed
+	  reflectionblock and server bugs
+
+2005-03-30 03:44  jenny
+
+	* testing/testpackage.py: fixed testpackage bugs
+
+2005-03-30 02:44  jenny
+
+	* exe/engine/package.py, exe/webui/element.py,
+	  exe/webui/loadpage.py, exe/webui/savepage.py: fixed loading
+	  existing file bugs
+
+2005-03-30 01:34  jenny
+
+	* exe/export/websiteexport.py: fixed exporting bugs
+
+2005-03-29 22:38  jenny
+
+	* testing/testblock.py, testing/testpackage.py: modified
+	  testblock.py and testpackage.py
+
+2005-03-29 07:14  jenny
+
+	* testing/testblock.py, testing/testpackage.py: add unit test for
+	  block and package
+
+2005-03-24 04:48  brent
+
+	* exe/webui/css/exe.css, exe/webui/style/default/content.css: minor
+	  changes to css files for reading task iDevice.
+
+2005-03-24 00:40  djm
+
+	* exe/engine/casestudyidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/multichoiceidevice.py,
+	  exe/engine/node.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/webui/authoringpage.py,
+	  exe/webui/loadpage.py: Save packages as Jelly
+
+2005-03-23 22:09  djm
+
+	* exe/webui/errorpage.py: fixed docstrings
+
+2005-03-22 21:18  jenny
+
+	* exe/webui/errorpage.py: added error page for loading wrong files.
+
+2005-03-22 03:13  jenny
+
+	* exe/webui/element.py, exe/webui/loadpage.py,
+	  exe/webui/newpackagepage.py, exe/webui/packageredirectpage.py,
+	  exe/webui/server.py, exe/webui/webinterface.py: change
+	  newpackagepage.py to packageredirectpage.py for loading a new
+	  package or an existing package.
+
+2005-03-21 04:20  jenny
+
+	* exe/engine/config.py, exe/export/websiteexport.py,
+	  exe/webui/element.py, exe/webui/newpackagepage.py,
+	  exe/webui/savepage.py, exe/webui/server.py: added file extension
+
+2005-03-21 03:27  jenny
+
+	* exe/engine/multichoiceidevice.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py: modified multichice idevice for issue
+	  #24, 25 Multi-choice iDevice usability refinements
+
+2005-03-21 03:23  matthew
+
+	* exe/engine/config.py, exe/engine/winshell.py: Made it use ctypes
+	  instead of win32all for getting the path to "My Documents"
+
+2005-03-21 02:15  djm
+
+	* exe/webui/server.py: listen only on 127.0.0.1, save us from probs
+	  with firewalls
+
+2005-03-21 01:08  djm
+
+	* exe/webui/scripts/editor/css/fck_editorarea.css,
+	  exe/webui/scripts/editor/dialog/fck_about.html,
+	  exe/webui/scripts/editor/dialog/fck_colorselector.html,
+	  exe/webui/scripts/editor/dialog/fck_find.html,
+	  exe/webui/scripts/editor/dialog/fck_image.html,
+	  exe/webui/scripts/editor/dialog/fck_link.html,
+	  exe/webui/scripts/editor/dialog/fck_paste.html,
+	  exe/webui/scripts/editor/dialog/fck_replace.html,
+	  exe/webui/scripts/editor/dialog/fck_smiley.html,
+	  exe/webui/scripts/editor/dialog/fck_specialchar.html,
+	  exe/webui/scripts/editor/dialog/fck_table.html,
+	  exe/webui/scripts/editor/dialog/fck_tablecell.html,
+	  exe/webui/scripts/editor/fckdebug.html,
+	  exe/webui/scripts/editor/fckdialog.html,
+	  exe/webui/scripts/editor/fckeditor.html,
+	  exe/webui/scripts/editor/fckeditor.original.html,
+	  exe/webui/scripts/editor/fckeditorarea.html,
+	  exe/webui/scripts/editor/js/fck_startup.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_2.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_2.js,
+	  exe/webui/scripts/editor/lang/ar.js,
+	  exe/webui/scripts/editor/lang/bs.js,
+	  exe/webui/scripts/editor/lang/ca.js,
+	  exe/webui/scripts/editor/lang/cs.js,
+	  exe/webui/scripts/editor/lang/da.js,
+	  exe/webui/scripts/editor/lang/de.js,
+	  exe/webui/scripts/editor/lang/en.js,
+	  exe/webui/scripts/editor/lang/es.js,
+	  exe/webui/scripts/editor/lang/et.js,
+	  exe/webui/scripts/editor/lang/fcklanguagemanager.js,
+	  exe/webui/scripts/editor/lang/fi.js,
+	  exe/webui/scripts/editor/lang/fr.js,
+	  exe/webui/scripts/editor/lang/gr.js,
+	  exe/webui/scripts/editor/lang/he.js,
+	  exe/webui/scripts/editor/lang/hr.js,
+	  exe/webui/scripts/editor/lang/it.js,
+	  exe/webui/scripts/editor/lang/ko.js,
+	  exe/webui/scripts/editor/lang/lt.js,
+	  exe/webui/scripts/editor/lang/nl.js,
+	  exe/webui/scripts/editor/lang/no.js,
+	  exe/webui/scripts/editor/lang/pl.js,
+	  exe/webui/scripts/editor/lang/pt.js,
+	  exe/webui/scripts/editor/lang/ru.js,
+	  exe/webui/scripts/editor/lang/sl.js,
+	  exe/webui/scripts/editor/lang/sr-latn.js,
+	  exe/webui/scripts/editor/lang/sr.js,
+	  exe/webui/scripts/editor/lang/sv.js,
+	  exe/webui/scripts/editor/lang/zh-cn.js,
+	  exe/webui/scripts/editor/skins/default/fck_contextmenu.css,
+	  exe/webui/scripts/editor/skins/default/fck_dialog.css,
+	  exe/webui/scripts/editor/skins/default/fck_editor.css,
+	  exe/webui/scripts/fckconfig.js, exe/webui/scripts/fckeditor.js:
+	  Roll out changes to FCKEditor commited in revision 378
+
+2005-03-18 02:08  wen
+
+	* exe/engine/config.py, exe/export/websiteexport.py,
+	  exe/webui/element.py,
+	  exe/webui/scripts/editor/css/fck_editorarea.css,
+	  exe/webui/scripts/editor/dialog/fck_about.html,
+	  exe/webui/scripts/editor/dialog/fck_colorselector.html,
+	  exe/webui/scripts/editor/dialog/fck_find.html,
+	  exe/webui/scripts/editor/dialog/fck_image.html,
+	  exe/webui/scripts/editor/dialog/fck_link.html,
+	  exe/webui/scripts/editor/dialog/fck_paste.html,
+	  exe/webui/scripts/editor/dialog/fck_replace.html,
+	  exe/webui/scripts/editor/dialog/fck_smiley.html,
+	  exe/webui/scripts/editor/dialog/fck_specialchar.html,
+	  exe/webui/scripts/editor/dialog/fck_table.html,
+	  exe/webui/scripts/editor/dialog/fck_tablecell.html,
+	  exe/webui/scripts/editor/fckdebug.html,
+	  exe/webui/scripts/editor/fckdialog.html,
+	  exe/webui/scripts/editor/fckeditor.html,
+	  exe/webui/scripts/editor/fckeditor.original.html,
+	  exe/webui/scripts/editor/fckeditorarea.html,
+	  exe/webui/scripts/editor/js/fck_startup.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_2.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_2.js,
+	  exe/webui/scripts/editor/lang/ar.js,
+	  exe/webui/scripts/editor/lang/bs.js,
+	  exe/webui/scripts/editor/lang/ca.js,
+	  exe/webui/scripts/editor/lang/cs.js,
+	  exe/webui/scripts/editor/lang/da.js,
+	  exe/webui/scripts/editor/lang/de.js,
+	  exe/webui/scripts/editor/lang/en.js,
+	  exe/webui/scripts/editor/lang/es.js,
+	  exe/webui/scripts/editor/lang/et.js,
+	  exe/webui/scripts/editor/lang/fcklanguagemanager.js,
+	  exe/webui/scripts/editor/lang/fi.js,
+	  exe/webui/scripts/editor/lang/fr.js,
+	  exe/webui/scripts/editor/lang/gr.js,
+	  exe/webui/scripts/editor/lang/he.js,
+	  exe/webui/scripts/editor/lang/hr.js,
+	  exe/webui/scripts/editor/lang/it.js,
+	  exe/webui/scripts/editor/lang/ko.js,
+	  exe/webui/scripts/editor/lang/lt.js,
+	  exe/webui/scripts/editor/lang/nl.js,
+	  exe/webui/scripts/editor/lang/no.js,
+	  exe/webui/scripts/editor/lang/pl.js,
+	  exe/webui/scripts/editor/lang/pt.js,
+	  exe/webui/scripts/editor/lang/ru.js,
+	  exe/webui/scripts/editor/lang/sl.js,
+	  exe/webui/scripts/editor/lang/sr-latn.js,
+	  exe/webui/scripts/editor/lang/sr.js,
+	  exe/webui/scripts/editor/lang/sv.js,
+	  exe/webui/scripts/editor/lang/zh-cn.js,
+	  exe/webui/scripts/editor/skins/default/fck_contextmenu.css,
+	  exe/webui/scripts/editor/skins/default/fck_dialog.css,
+	  exe/webui/scripts/editor/skins/default/fck_editor.css,
+	  exe/webui/scripts/fckconfig.js, exe/webui/scripts/fckeditor.js,
+	  exe/webui/style/default/nav.css, exe/webui/style/garden/nav.css,
+	  exe/webui/style/mojave/nav.css: wen update websiteexport.py
+
+2005-03-17 02:05  jenny
+
+	* exe/engine/casestudyidevice.py, exe/webui/casestudyblock.py,
+	  exe/webui/questionelement.py: add case study classes
+
+2005-03-17 01:51  jenny
+
+	* exe/webui/idevicepane.py, exe/webui/newpackagepage.py,
+	  exe/webui/reflectionblock.py: modify the case study idevice
+
+2005-03-16 02:33  jenny
+
+	* exe/export/websiteexport.py: fix the exporting bugs
+
+2005-03-16 02:14  jenny
+
+	* exe/engine/package.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/exportpage.py,
+	  exe/webui/idevicepane.py, exe/webui/loadpage.py,
+	  exe/webui/newpackagepage.py, exe/webui/outlinepane.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/scripts/common.js,
+	  exe/webui/stylepane.py: add warning when user close the browser
+
+2005-03-15 03:38  djm
+
+	* testing/testcourseline.py, testing/testcourseoutline.py,
+	  testing/testnode.py, testing/testuniqueid.py: fixed unittests
+
+2005-03-15 03:27  wen
+
+	* exe/export/websiteexport.py, exe/webui/element.py: wen update
+	  element.py
+
+2005-03-14 22:10  djm
+
+	* exe/webui/Icon1.ico: Merged in Icon1.ico from 0.2 branch revisions
+	  357:370
+
+2005-03-13 23:20  djm
+
+	* exe/webui/newpackagepage.py, exe/webui/scripts/common.js: Check
+	  connections are coming from 127.0.0.1, forbid remote clients
+
+2005-03-11 01:59  wen
+
+	* exe/webui/element.py: Wen little fix for image/audio not showing
+	  after publish
+
+2005-03-11 01:46  wen
+
+	* exe/webui/element.py: Wen little fix for image/audio not showing
+	  after publish
+
+2005-03-11 01:43  wen
+
+	* exe/webui/authoringpage.py, exe/webui/element.py: Wen little fix
+	  for image/audio not showing after publish
+
+2005-03-10 01:14  jenny
+
+	* exe/engine/config.py, exe/webui/authoringpage.py,
+	  exe/webui/element.py, exe/webui/idevicepane.py,
+	  exe/webui/loadpage.py, exe/webui/scripts/fckeditor.js: tidy up the
+	  code.
+
+2005-03-09 20:44  wen
+
+	* exe/webui/images/mp3player.swf: Wen put mp3player.swf
+
+2005-03-09 20:30  jenny
+
+	* exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py: Fixed issue#10 - Save root page as
+	  index.html.
+
+2005-03-09 03:14  jenny
+
+	* exe/webui/savepage.py: fixed filename bugs 14
+
+2005-03-09 03:13  wen
+
+	* exe/webui/element.py: Here wen add 3 changes:authoringpane
+	  idevicepane element.py
+
+2005-03-09 02:58  wen
+
+	* exe/webui/authoringpage.py, exe/webui/element.py,
+	  exe/webui/idevicepane.py: Here wen add 3 changes:authoringpane
+	  idevicepane element.py
+
+2005-03-09 00:40  jenny
+
+	* exe/webui/server.py: Fixed issue#13 - user can override location
+	  of Firefox and data directory.
+
+2005-03-08 22:13  jenny
+
+	* exe/engine/config.py, exe/webui/savepage.py, exe/webui/server.py:
+	  work on browser and data directory settings
+
+2005-03-08 11:48  djm
+
+	* MANIFEST.in, exe/engine/config.py, exe/exe.conf,
+	  exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/webui/exportpage.py, exe/webui/loadpage.py,
+	  exe/webui/multichoiceblock.py, exe/webui/savepage.py,
+	  exe/webui/server.py, setup.py, win-setup.py: Merged in changes
+	  from revisions 345:352 from 0.2 branch
+
+2005-03-08 03:09  jenny
+
+	* exe/webui/server.py: Work on browser path for linux.
+
+2005-03-08 00:51  jenny
+
+	* exe/webui/server.py: allow user setting browser path in exe.conf
+
+2005-03-06 21:02  djm
+
+	* exe/exe.conf, exe/export/scormexport.py: Merged in changes from
+	  revisions 343, 344 from 0.2 branch
+
+2005-03-06 21:01  djm
+
+	* prototype/stylesheet/main.css: Trying to get something working
+	  with Windows
+
+2005-03-06 07:43  brent
+
+	* exe/webui/block.py, exe/webui/common.py,
+	  exe/webui/images/info.png: changed cursor that appears over
+	  instructions and ped tips; also changed that ugly pedagogical tip
+	  icon to one more purty :-)
+
+2005-03-05 08:03  brent
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/exportpage.py, exe/webui/loadpage.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py: added some labels and tidied up the save,
+	  load, and export page.
+
+2005-03-05 00:32  djm
+
+	* exe/webui/idevicepane.py: fixed long line
+
+2005-03-05 00:29  djm
+
+	* exe/engine/util.py, exe/webui/block.py: Code tidyups --- Pylint
+	  now rates this code at 7.51/10
+
+2005-03-05 00:19  djm
+
+	* exe/engine/idevice.py: added isFirst and isLast methods
+
+2005-03-04 22:59  djm
+
+	* exe/engine/config.py, exe/engine/genericidevice.py,
+	  exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/freetextblock.py,
+	  exe/webui/idevicepane.py, exe/webui/propertiespane.py,
+	  exe/webui/reflectionblock.py, exe/webui/savepage.py,
+	  exe/webui/server.py: tidied up source code
+
+2005-03-04 22:20  djm
+
+	* exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/style/default/pngfix.js,
+	  exe/webui/style/garden/pngfix.js,
+	  exe/webui/style/mojave/pngfix.js: Removed PNGFix code (r333)
+
+2005-03-04 02:56  brent
+
+	* exe/engine/multichoiceidevice.py: changed formatting of
+	  multichoice iDevice.
+
+2005-03-04 02:14  djm
+
+	* exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/style/default/pngfix.js,
+	  exe/webui/style/garden/pngfix.js,
+	  exe/webui/style/mojave/pngfix.js: Add PNGfix for IE
+
+2005-03-04 01:59  djm
+
+	* exe/engine/titleidevice.py, exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css: Work around IE limitations for
+	  mojave and garden themes
+
+2005-03-04 01:53  brent
+
+	* exe/webui/common.py, exe/webui/css/controlpanel.css,
+	  exe/webui/css/exe.css, exe/webui/images/stock-goto-bottom-off.png,
+	  exe/webui/images/stock-goto-top-off.png,
+	  exe/webui/propertiespane.py, exe/webui/scripts/common.js: removed
+	  unwanted stuff from controlpanel.css and styles the properties
+	  page a bit, eh? also added greyed out gifs for promoting and
+	  demoting.
+
+2005-03-04 01:52  djm
+
+	* exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/style/default/content.css: Works with Firefox... need to
+	  test IE now
+
+2005-03-04 01:44  djm
+
+	* exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/style/default/content.css: Put lis in uls for IE
+
+2005-03-04 01:42  djm
+
+	* exe/webui/style/default/content.css: can't use attrib selectors
+	  for IE
+
+2005-03-04 00:05  jenny
+
+	* exe/engine/freetextidevice.py, exe/engine/multichoiceidevice.py,
+	  exe/engine/reflectionidevice.py, exe/export/manifest.py,
+	  exe/webui/block.py, exe/webui/freetextblock.py,
+	  exe/webui/idevicepane.py, exe/webui/savepage.py,
+	  exe/webui/server.py: added idevice help tips
+
+2005-03-03 23:58  djm
+
+	* exe/webui/idevicepane.py: added extra fields to case study iDevice
+
+2005-03-03 05:25  djm
+
+	* exe/webui/authoringpage.py: fixed bug with header
+
+2005-03-03 05:23  djm
+
+	* exe/webui/authoringpage.py, exe/webui/authoringpane.py: remove go
+	  to bottom anchor
+
+2005-03-03 05:21  djm
+
+	* exe/webui/css/exe.css: no need for a properties_pane div
+
+2005-03-03 05:20  djm
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/css/exe.css, exe/webui/exportpage.py,
+	  exe/webui/loadpage.py, exe/webui/menupane.py,
+	  exe/webui/newpackagepage.py, exe/webui/propertiespage.py,
+	  exe/webui/propertiespane.py, exe/webui/savepage.py: added margins
+	  for pages other than authoring
+
+2005-03-03 04:20  djm
+
+	* exe/webui/block.py, exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/multichoiceblock.py, exe/webui/optionelement.py,
+	  exe/webui/reflectionblock.py: Added missing title tips. Corrected
+	  code which wasn't using standard abbreviations
+
+2005-03-03 02:49  brent
+
+	* exe/webui/titleblock.py: Fix narrow column problem
+
+2005-03-03 02:37  jenny
+
+	* exe/webui/idevicepane.py: change idevice list in an alphabetical
+	  order.
+
+2005-03-03 01:47  djm
+
+	* exe/engine/titleidevice.py, exe/webui/authoringpage.py,
+	  exe/webui/css/controlpanel.css, exe/webui/css/exe.css,
+	  exe/webui/menupane.py: fixed problem with authoring page bouncing
+
+2005-03-03 01:47  jenny
+
+	* exe/engine/multichoiceidevice.py, exe/webui/optionelement.py,
+	  exe/webui/savepage.py, exe/webui/scripts/common.js,
+	  exe/webui/server.py: fixed lanuching firefox bugs
+
+2005-03-02 21:38  djm
+
+	* exe/webui/authoringpage.py, exe/webui/authoringpane.py,
+	  exe/webui/newpackagepage.py, exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css, exe/webui/titleblock.py: User
+	  no longer needs to click done when changing a node title. Small
+	  style change for IE.
+
+2005-03-02 21:03  jenny
+
+	* exe/webui/scripts/common.js: modified help tip
+
+2005-03-02 20:20  brent
+
+	* exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py: increased Free Text iDevice textarea
+	  height, aaight?
+
+2005-03-02 09:17  brent
+
+	* exe/webui/css/controlpanel.css,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css: still hacking the damn
+	  interface!... control panel be damned!
+
+2005-03-02 08:37  brent
+
+	* exe/webui/common.py, exe/webui/css/exe.css, exe/webui/menupane.py:
+	  minor interface changes
+
+2005-03-02 08:31  djm
+
+	* exe/engine/multichoiceidevice.py, exe/export/manifest.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/block.py, exe/webui/common.py, exe/webui/exportpage.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/multichoiceblock.py,
+	  exe/webui/reflectionblock.py, exe/webui/savepage.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css,
+	  exe/webui/style/default/question.png,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/garden/nav.css,
+	  exe/webui/style/garden/question.png,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/mojave/nav.css, exe/webui/titleblock.py: Allow
+	  exporting of different styles. SCORM export split from website
+	  export. Other bits and bobs.
+
+2005-03-02 04:41  brent
+
+	* exe/webui/style/mojave/cactus_icon.gif,
+	  exe/webui/style/mojave/content.css: added mojave style!!!
+
+2005-03-02 03:38  brent
+
+	* exe/webui/css/exe.css, exe/webui/menupane.py: fcked order of
+	  menupane. other stuff... can't remember.
+
+2005-03-02 03:13  jenny
+
+	* exe/webui/authoringpage.py, exe/webui/stylepane.py: add style pane
+
+2005-03-02 03:05  djm
+
+	* exe/engine/config.py: look for content.css
+
+2005-03-02 03:03  djm
+
+	* exe/webui/common.py: use docType
+
+2005-03-02 03:02  djm
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/editing.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/garden/editing.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/mojave/editing.css: Rename editing.css to
+	  content.css
+
+2005-03-02 02:44  djm
+
+	* tools/backup.sh: lost+found isn't a repository
+
+2005-03-02 02:10  brent
+
+	* exe/webui/style/garden/editing.css, exe/webui/style/mojave,
+	  exe/webui/style/mojave/editing.css: adding new mojave style
+
+2005-03-01 05:31  brent
+
+	* exe/webui/authoringpage.py: added preview of style change
+	  functionality. can now use the right bottom icon that appears in
+	  Firefox for quick style previews.
+
+2005-03-01 03:15  jenny
+
+	* exe/webui/common.py, exe/webui/savepage.py: fixed saving bugs
+
+2005-03-01 03:01  djm
+
+	* exe/engine/config.py, exe/webui/authoringpage.py: got rid of a tab
+
+2005-03-01 02:36  brent
+
+	* exe/webui/common.py, exe/webui/css/exe.css, exe/webui/menupane.py:
+	  added a title!
+
+2005-03-01 02:11  brent
+
+	* exe/engine/config.py, exe/webui/authoringpage.py,
+	  exe/webui/common.py, exe/webui/css/exe.css,
+	  exe/webui/css/main.css, exe/webui/style/default/editing.css,
+	  exe/webui/style/default/main.css,
+	  exe/webui/style/garden/editing.css,
+	  exe/webui/style/garden/main.css: seperated editing area css from
+	  main exe css, and other css skullduggery!
+
+2005-03-01 01:22  jenny
+
+	* exe/engine/config.py, exe/engine/genericidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/reflectionidevice.py,
+	  exe/export/websiteexport.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/loadpage.py,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/scripts/common.js: add instructions for idevice's
+	  fields.
+
+2005-03-01 00:26  djm
+
+	* doc/test.txt, doc/test3.txt: testing svn
+
+2005-03-01 00:26  djm
+
+	* doc/test.txt: this is a test
+
+2005-02-28 19:27  djm
+
+	* exe/webui/style/garden, exe/webui/style/garden/activity.png,
+	  exe/webui/style/garden/casestudy.png,
+	  exe/webui/style/garden/main.css,
+	  exe/webui/style/garden/objectives.png,
+	  exe/webui/style/garden/preknowledge.png,
+	  exe/webui/style/garden/reading.png: Added garden theme (more for
+	  testing than anything else)
+
+2005-02-28 08:35  brent
+
+	* exe/webui/block.py, exe/webui/css/editing.css,
+	  exe/webui/scripts/editor/css/fck_editorarea.css: small style
+	  changes. removed border from 'i', etc...
+
+2005-02-28 07:15  djm
+
+	* exe/__init__.py, exe/engine/__init__.py, exe/engine/error.py,
+	  exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/engine/reflectionidevice.py, exe/engine/titleidevice.py,
+	  exe/engine/util.py, exe/export/__init__.py,
+	  exe/export/websiteexport.py, exe/webui/__init__.py,
+	  exe/webui/authoringpage.py, exe/webui/authoringpane.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/element.py, exe/webui/exportpage.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/linkblock.py,
+	  exe/webui/loadpage.py, exe/webui/menupane.py,
+	  exe/webui/multichoiceblock.py, exe/webui/optionelement.py,
+	  exe/webui/reflectionblock.py, exe/webui/webinterface.py,
+	  tools/dot.pylintrc: Code tidyups
+
+2005-02-28 03:24  djm
+
+	* exe/engine/config.py, exe/engine/package.py,
+	  exe/engine/uniqueidgenerator.py, exe/export/websiteexport.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/css/editing.css,
+	  exe/webui/genericblock.py, exe/webui/idevicepane.py,
+	  exe/webui/propertiespane.py, exe/webui/server.py,
+	  exe/webui/style/default/main.css, exe/webui/titleblock.py,
+	  tools/backup.sh: Added ability to change the packages style.
+
+2005-02-28 02:33  brent
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/css/controlpanel.css, exe/webui/css/editing.css,
+	  exe/webui/css/main.css, exe/webui/images/nav_bg.gif,
+	  exe/webui/images/nav_left.gif, exe/webui/images/nav_left_on.gif,
+	  exe/webui/images/nav_right.gif, exe/webui/images/nav_right_on.gif,
+	  exe/webui/menupane.py, exe/webui/reflectionblock.py: added global
+	  nav and fixed some 'not well-formed' errors in iDevice html.
+
+2005-02-28 02:22  jenny
+
+	* exe/webui/block.py, exe/webui/common.py, exe/webui/css/main.css,
+	  exe/webui/idevicepane.py, exe/webui/images/help.gif,
+	  exe/webui/scripts/common.js, exe/webui/scripts/libot_drag.js: add
+	  help tip for idevice
+
+2005-02-28 00:01  djm
+
+	* exe/webui/css/controlpanel.css, exe/webui/css/editing.css,
+	  exe/webui/css/main.css: whitespace cleanup
+
+2005-02-27 21:26  djm
+
+	* exe/webui/images/info.gif: Added for Ped tip
+
+2005-02-27 19:37  djm
+
+	* prototype/stylesheet/.main.css.swp: don't check in swapfile
+
+2005-02-27 09:41  djm
+
+	* prototype/stylesheet/main.css, prototype/stylesheet/play.html,
+	  tools/subversion.config: style updates
+
+2005-02-27 09:36  brent
+
+	* exe/webui/css/controlpanel.css, exe/webui/css/editing.css,
+	  exe/webui/scripts/editor/css/fck_editorarea.css: minor css changes
+
+2005-02-27 03:35  brent
+
+	* exe/webui/css/controlpanel.css,
+	  exe/webui/scripts/editor/css/fck_editorarea.css: minor css changes
+	  to interface
+
+2005-02-25 18:27  djm
+
+	* prototype/stylesheet/.play.html.swp: delete swp file
+
+2005-02-25 03:05  djm
+
+	* prototype/stylesheet, prototype/stylesheet/.main.css.swp,
+	  prototype/stylesheet/.play.html.swp,
+	  prototype/stylesheet/activity.png,
+	  prototype/stylesheet/casestudy.png, prototype/stylesheet/main.css,
+	  prototype/stylesheet/objectives.png,
+	  prototype/stylesheet/play.html,
+	  prototype/stylesheet/preknowledge.png,
+	  prototype/stylesheet/reading.png: Example of using
+	  list-style-image
+
+2005-02-25 03:00  brent
+
+	* exe/webui/block.py, exe/webui/css/editing.css,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py:
+	  aesthetic additions to idevices, etc...
+
+2005-02-24 22:15  jenny
+
+	* exe/engine/genericidevice.py, exe/webui/idevicepane.py: work on
+	  generic idevice metadata
+
+2005-02-24 21:57  jenny
+
+	* exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/reflectionidevice.py,
+	  exe/engine/titleidevice.py: add metadata to idevice
+
+2005-02-24 21:11  djm
+
+	* exe/engine/idevice.py, exe/engine/multichoiceidevice.py: Started
+	  on adding iDevice meta data
+
+2005-02-24 04:50  djm
+
+	* mac-setup.py, setup.py, win-setup.py: Added windows and mac
+	  specific versions of setup.py.... merge these into one which
+	  detects the OS later
+
+2005-02-24 02:52  jenny
+
+	* exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py: work
+	  on reflection idevice
+
+2005-02-24 00:25  jenny
+
+	* exe/engine/reflectionidevice.py, exe/webui/idevicepane.py,
+	  exe/webui/multichoiceblock.py, exe/webui/questionelement.py,
+	  exe/webui/reflectionblock.py: added reflection idevice
+
+2005-02-23 21:32  djm
+
+	* exe/webui/multichoiceblock.py: removed excess whitespace
+
+2005-02-23 21:30  jenny
+
+	* exe/engine/multichoiceidevice.pyc: delete multichoiceidevice.pyc
+	  file
+
+2005-02-23 19:36  jenny
+
+	* exe/engine/multichoiceidevice.py: added multichoiceidevice.py file
+
+2005-02-23 07:16  jenny
+
+	* exe/engine/reflectionidevice.py, exe/webui/idevicepane.py,
+	  exe/webui/multichoiceblock.py, exe/webui/optionelement.py,
+	  exe/webui/questionelement.py, exe/webui/reflectionblock.py: add
+	  reflection idevice
+
+2005-02-23 04:35  brent
+
+	* exe/webui/common.py: tiny change to alignment of images in
+	  controlpanel. brent.
+
+2005-02-23 04:22  brent
+
+	* exe/webui/css/controlpanel.css: fix for problem of structure tree
+	  going off of screen and not being able to scroll down. not ideal
+	  but probably as close as we're going to get if box is to remail
+	  'fixed' rather than scrolling. brent.
+
+2005-02-22 22:52  brent
+
+	* exe/webui/css/controlpanel.css: fixed the control panel list of
+	  added sections showing up too far to the right.
+
+2005-02-22 21:00  jenny
+
+	* exe/webui/multichoiceblock.py, exe/webui/optionelement.py: tidy up
+	  multichoice idevice code
+
+2005-02-22 02:43  jenny
+
+	* exe/webui/exportpage.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py, exe/webui/savepage.py,
+	  exe/webui/scripts/common.js: work on multichoice idevice
+
+2005-02-21 22:38  djm
+
+	* exe/webui/genericblock.py: fixed unmatched div
+
+2005-02-21 19:54  jenny
+
+	* exe/engine/multichoiceidevice.pyc, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py: add multichoice idevice classes
+
+2005-02-21 04:38  djm
+
+	* tools/backup.sh: copy off to another machine
+
+2005-02-21 04:12  djm
+
+	* tools/backup.sh: fix for paths on exe box
+
+2005-02-21 04:05  djm
+
+	* tools/backup.sh: initial checkin
+
+2005-02-21 03:13  djm
+
+	* tools/subversion.config: initial checkin
+
+2005-02-21 03:07  djm
+
+	* README: testing properties
+
+2005-02-21 03:04  djm
+
+	* COPYING, README, exe/__init__.py, exe/engine/__init__.py,
+	  exe/engine/config.py, exe/engine/error.py,
+	  exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/engine/node.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/engine/titleidevice.py,
+	  exe/engine/uniqueidgenerator.py, exe/engine/util.py,
+	  exe/engine/winshell.py, exe/exe.conf, exe/export/__init__.py,
+	  exe/export/manifest.py, exe/export/websiteexport.py,
+	  exe/webui/__init__.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/common.py,
+	  exe/webui/element.py, exe/webui/exportpage.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/linkblock.py,
+	  exe/webui/loadpage.py, exe/webui/menupane.py,
+	  exe/webui/newpackagepage.py, exe/webui/outlinepane.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/server.py,
+	  exe/webui/titleblock.py, exe/webui/webinterface.py,
+	  testing/outlinePaneForTest.py, testing/runtests.py,
+	  testing/serverForTest.py, testing/testblockfactory.py,
+	  testing/testconfig.py, testing/testcourseline.py,
+	  testing/testengine.py, testing/testnode.py,
+	  testing/testuniqueid.py: Set Date, Revision and Id properties on
+	  all source files
+
+2005-02-21 02:20  jenny
+
+	* exe/export/manifest.py, exe/export/websiteexport.py,
+	  exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/idevicepane.py, exe/webui/scripts/armadillo.js,
+	  setup.py: add multichoice idevice
+
+2005-02-21 00:48  djm
+
+	* exe/exe.conf: don't specify exe-path for now
+
+2005-02-20 20:30  djm
+
+	* exe/engine/uniqueidgenerator.py: Use exePath from Config class
+
+2005-02-20 20:12  djm
+
+	* exe/engine/config.py: path isn't an integer
+
+2005-02-18 02:17  djm
+
+	* testing/runtests.py, testing/testconfig.py: Added runtests.py
+
+2005-02-18 01:00  djm
+
+	* exe/engine/config.py, exe/exe.conf, exe/webui/server.py: Added
+	  option to set browser path in exe.conf. If that's not set and path
+	  isn't in registry fall back to c:/program
+	  files/mozilla/bin/firefox. If none of those exist start the server
+	  without the browser
+
+2005-02-18 00:01  djm
+
+	* exe/engine/config.py, exe/exe.conf, exe/webui/server.py: Added
+	  config option for port number
+
+2005-02-17 23:39  djm
+
+	* exe/webui/idevicepane.py, exe/webui/loadpage.py,
+	  exe/webui/newpackagepage.py, exe/webui/outlinepane.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/server.py,
+	  exe/webui/titleblock.py: More code tidy-ups
+
+2005-02-17 21:40  djm
+
+	* exe/webui/exportpage.py, exe/webui/menupane.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/webinterface.py: More code tidy
+	  up
+
+2005-02-17 01:52  djm
+
+	* exe/engine/uniqueidgenerator.py: take last 10 alphanumerics of
+	  package name
+
+2005-02-16 06:41  jenny
+
+	* exe/export/manifest.py: modified scorm exporting
+
+2005-02-16 04:45  djm
+
+	* exe/engine/config.py, exe/engine/error.py,
+	  exe/engine/genericidevice.py, exe/engine/idevice.py,
+	  exe/engine/idevicestore.py, exe/engine/imageactidevice.py,
+	  exe/engine/node.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/engine/simpleidevice.py,
+	  exe/engine/util.py, exe/webui/simpleblock.py: Tidyied up source
+	  code.
+
+2005-02-15 22:29  djm
+
+	* exe/export/manifest.py, exe/export/websiteexport.py: Tidyied up
+	  source code.
+
+2005-02-15 04:41  djm
+
+	* exe/webui/authoringpage.py, exe/webui/authoringpane.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/exportpage.py, exe/webui/genericblock.py,
+	  exe/webui/menupane.py: Tidied up the code
+
+2005-02-15 03:50  djm
+
+	* exe/webui/addnodepane.py: remove AddNodePane, the OutlinePane
+	  replaced it
+
+2005-02-15 02:45  djm
+
+	* exe/engine/config.py, exe/engine/uniqueidgenerator.py,
+	  exe/engine/util.py, testing/testuniqueid.py: Added
+	  UniqueIdGenerator and test script. Tidied up some code.
+
+2005-02-15 02:21  jenny
+
+	* exe/engine/config.py, exe/engine/error.py,
+	  exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/package.py, exe/export/manifest.py,
+	  exe/export/websiteexport.py, exe/webui/exportpage.py: tidy up
+	  codes
+
+2005-02-14 22:16  djm
+
+	* exe/webui/common.py: Added a docstring
+
+2005-02-14 20:48  djm
+
+	* tools/dot.pylintrc: Added config file for PyLint
+
+2005-02-14 20:46  djm
+
+	* exe/engine/config.py, exe/engine/winshell.py: small tidy up of
+	  code.
+
+2005-02-14 03:20  djm
+
+	* exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/engine/titleidevice.py, exe/export/websiteexport.py,
+	  exe/webui/addnodepane.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/element.py, exe/webui/exportpage.py,
+	  exe/webui/genericblock.py, exe/webui/idevicepane.py,
+	  exe/webui/languagepane.py, exe/webui/loadpage.py,
+	  exe/webui/menupane.py, exe/webui/outlinepane.py, exe/webui/po,
+	  exe/webui/propertiespane.py, exe/webui/savepage.py,
+	  exe/webui/titleblock.py, exe/webui/webinterface.py,
+	  prototype/packtest/setup.py: Backed out internationalization code.
+	  Kept export fix.
+
+2005-02-13 20:57  djm
+
+	* exe/webui/block.py: First step to tracking resources
+
+2005-02-11 02:20  jenny
+
+	* exe/export/websiteexport.py: fixed exporting bugs
+
+2005-02-10 05:29  djm
+
+	* exe/engine/package.py: temp fix for Linux
+
+2005-02-10 05:22  djm
+
+	* exe/webui/genericblock.py: Remove forExport flag
+
+2005-02-10 02:46  jenny
+
+	* exe/engine/package.py, exe/export/websiteexport.py,
+	  exe/webui/element.py, exe/webui/exportpage.py,
+	  exe/webui/propertiespane.py, exe/webui/savepage.py,
+	  exe/webui/titleblock.py: work on language translation
+
+2005-02-09 08:26  jenny
+
+	* exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/engine/titleidevice.py, exe/export/websiteexport.py,
+	  exe/webui/addnodepane.py, exe/webui/authoringpage.py,
+	  exe/webui/exportpage.py, exe/webui/idevicepane.py,
+	  exe/webui/languagepane.py, exe/webui/loadpage.py,
+	  exe/webui/menupane.py, exe/webui/outlinepane.py, exe/webui/po,
+	  exe/webui/po/ch.mo, exe/webui/po/ch.po, exe/webui/po/fr.mo,
+	  exe/webui/po/fr.po, exe/webui/po/ge.mo, exe/webui/po/ge.po,
+	  exe/webui/propertiespane.py, exe/webui/savepage.py,
+	  exe/webui/titleblock.py, exe/webui/webinterface.py,
+	  prototype/packtest/setup.py: add language translation functions
+
+2005-02-08 03:25  jenny
+
+	* win install/eXe.sln, win install/eXe.vdproj: new version of
+	  installation files
+
+2005-02-08 02:26  djm
+
+	* exe/export/websiteexport.py, exe/webui/genericblock.py: UGLY
+	  UGGGLY hack to knock the Ugly Armadillo out!
+
+2005-02-08 01:35  jenny
+
+	* exe/exe.conf: Use ERROR for release
+
+2005-02-08 01:19  jenny
+
+	* exe/engine/util.py: added get_all_files
+
+2005-02-08 01:17  djm
+
+	* README: Created README for 1st release
+
+2005-02-08 01:07  jenny
+
+	* exe/webui/server.py: Possible fix for the shutting down bug.
+
+2005-02-08 01:03  brent
+
+	* exe/webui/style/default/main.css: style sheet for Web Page export
+	  added
+
+2005-02-08 00:21  djm
+
+	* exe/export/websiteexport.py, exe/webui/common.py: Fixed bug with
+	  meta. Put navcontainer first.
+
+2005-02-08 00:09  djm
+
+	* exe/export/websiteexport.py: fixed style
+
+2005-02-08 00:08  djm
+
+	* exe/export/websiteexport.py: Added a div for Brent
+
+2005-02-07 23:41  jenny
+
+	* exe/engine/util.py, exe/export/websiteexport.py,
+	  exe/webui/loadpage.py, exe/webui/newpackagepage.py,
+	  exe/webui/server.py: Changed header for WebsiteExport
+
+2005-02-07 23:21  brent
+
+	* exe/webui/css/editing.css: fixed positioning of icons and labels,
+	  added styles to reading list, and all idevices except freetext.
+
+2005-02-07 23:13  djm
+
+	* setup.py: Added all the ("cutdown") editor subdirs
+
+2005-02-07 23:11  djm
+
+	* exe/webui/scripts/editor, exe/webui/scripts/editor/css,
+	  exe/webui/scripts/editor/css/fck_editorarea.css,
+	  exe/webui/scripts/editor/dialog,
+	  exe/webui/scripts/editor/dialog/css,
+	  exe/webui/scripts/editor/dialog/css/common.css,
+	  exe/webui/scripts/editor/dialog/fck_about.html,
+	  exe/webui/scripts/editor/dialog/fck_colorselector.html,
+	  exe/webui/scripts/editor/dialog/fck_find.html,
+	  exe/webui/scripts/editor/dialog/fck_image.html,
+	  exe/webui/scripts/editor/dialog/fck_link.html,
+	  exe/webui/scripts/editor/dialog/fck_paste.html,
+	  exe/webui/scripts/editor/dialog/fck_replace.html,
+	  exe/webui/scripts/editor/dialog/fck_smiley.html,
+	  exe/webui/scripts/editor/dialog/fck_specialchar.html,
+	  exe/webui/scripts/editor/dialog/fck_table.html,
+	  exe/webui/scripts/editor/dialog/fck_tablecell.html,
+	  exe/webui/scripts/editor/dialog/images,
+	  exe/webui/scripts/editor/dialog/images/locked.gif,
+	  exe/webui/scripts/editor/dialog/images/logo_fckeditor.gif,
+	  exe/webui/scripts/editor/dialog/images/logo_fredck.gif,
+	  exe/webui/scripts/editor/dialog/images/reset.gif,
+	  exe/webui/scripts/editor/dialog/images/unlocked.gif,
+	  exe/webui/scripts/editor/dialog/js,
+	  exe/webui/scripts/editor/dialog/js/fck_dialog_common.js,
+	  exe/webui/scripts/editor/dialog/js/fck_image.js,
+	  exe/webui/scripts/editor/dialog/js/fck_link.js,
+	  exe/webui/scripts/editor/fckdebug.html,
+	  exe/webui/scripts/editor/fckdialog.html,
+	  exe/webui/scripts/editor/fckeditor.html,
+	  exe/webui/scripts/editor/fckeditor.original.html,
+	  exe/webui/scripts/editor/fckeditorarea.html,
+	  exe/webui/scripts/editor/images,
+	  exe/webui/scripts/editor/images/spacer.gif,
+	  exe/webui/scripts/editor/js,
+	  exe/webui/scripts/editor/js/fck_startup.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_2.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_2.js,
+	  exe/webui/scripts/editor/lang,
+	  exe/webui/scripts/editor/lang/ar.js,
+	  exe/webui/scripts/editor/lang/bs.js,
+	  exe/webui/scripts/editor/lang/ca.js,
+	  exe/webui/scripts/editor/lang/cs.js,
+	  exe/webui/scripts/editor/lang/da.js,
+	  exe/webui/scripts/editor/lang/de.js,
+	  exe/webui/scripts/editor/lang/en.js,
+	  exe/webui/scripts/editor/lang/es.js,
+	  exe/webui/scripts/editor/lang/et.js,
+	  exe/webui/scripts/editor/lang/fcklanguagemanager.js,
+	  exe/webui/scripts/editor/lang/fi.js,
+	  exe/webui/scripts/editor/lang/fr.js,
+	  exe/webui/scripts/editor/lang/gr.js,
+	  exe/webui/scripts/editor/lang/he.js,
+	  exe/webui/scripts/editor/lang/hr.js,
+	  exe/webui/scripts/editor/lang/it.js,
+	  exe/webui/scripts/editor/lang/ko.js,
+	  exe/webui/scripts/editor/lang/lt.js,
+	  exe/webui/scripts/editor/lang/nl.js,
+	  exe/webui/scripts/editor/lang/no.js,
+	  exe/webui/scripts/editor/lang/pl.js,
+	  exe/webui/scripts/editor/lang/pt.js,
+	  exe/webui/scripts/editor/lang/ru.js,
+	  exe/webui/scripts/editor/lang/sl.js,
+	  exe/webui/scripts/editor/lang/sr-latn.js,
+	  exe/webui/scripts/editor/lang/sr.js,
+	  exe/webui/scripts/editor/lang/sv.js,
+	  exe/webui/scripts/editor/lang/zh-cn.js,
+	  exe/webui/scripts/editor/lang/zh-hk.js,
+	  exe/webui/scripts/editor/lang/zh-tw.js,
+	  exe/webui/scripts/editor/skins,
+	  exe/webui/scripts/editor/skins/default,
+	  exe/webui/scripts/editor/skins/default/fck_contextmenu.css,
+	  exe/webui/scripts/editor/skins/default/fck_dialog.css,
+	  exe/webui/scripts/editor/skins/default/fck_editor.css,
+	  exe/webui/scripts/editor/skins/default/images,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.arrowright.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.buttonarrow.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.collapse.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.end.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.expand.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.separator.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.start.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.about.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.bgcolor.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.bold.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.copy.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.cut.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.find.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.image.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.indent.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.inserthorizontalrule.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.insertorderedlist.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.insertunorderedlist.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.italic.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifycenter.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifyfull.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifyleft.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifyright.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.link.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.newpage.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.outdent.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.paste.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.pastetext.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.pasteword.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.preview.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.print.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.redo.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.removeformat.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.replace.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.save.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.selectall.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.showdetails.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.showtableborders.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.smiley.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.source.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.specialchar.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.spellcheck.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.strikethrough.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.subscript.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.superscript.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.table.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tablecell.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tabledeletecells.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tabledeletecolumns.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tabledeleterows.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tableinsertcell.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tableinsertcolumn.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tableinsertrow.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tablemergecells.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tablesplitcell.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.textcolor.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.underline.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.undo.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.unlink.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.unorderedlist.gif:
+	  Add "cut-down" version of FCKEditor
+
+2005-02-07 21:53  djm
+
+	* tools/editor: cutting back editor
+
+2005-02-07 21:52  djm
+
+	* exe/webui/scripts/editor: cutting back editor
+
+2005-02-07 21:39  djm
+
+	* exe/engine/genericidevice.py, exe/webui/element.py,
+	  exe/webui/genericblock.py, exe/webui/idevicepane.py: Added class
+	  attribute to GenericIdevice. Removed IconElement (use class+.png).
+
+2005-02-07 21:20  djm
+
+	* exe/engine/config.py, exe/export/websiteexport.py,
+	  exe/webui/server.py: Moved exeDir into Config object. Copy
+	  style/default directory in websiteexport.py.
+
+2005-02-07 21:09  brent
+
+	* exe/webui/css/editing.css, exe/webui/genericblock.py: more stylish
+	  shiznizzle from brent.
+
+2005-02-07 05:03  djm
+
+	* exe/webui/element.py: made the FCKEditor smaller
+
+2005-02-07 04:45  djm
+
+	* exe/webui/idevicepane.py, exe/webui/loadpage.py: Removed debugging
+	  from loadpage, little bit of tidy-up
+
+2005-02-07 04:38  djm
+
+	* exe/webui/style/default/activity.png,
+	  exe/webui/style/default/casestudy.png,
+	  exe/webui/style/default/objectives.png,
+	  exe/webui/style/default/preknowledge.png: Added icons for iDevices
+
+2005-02-07 04:06  djm
+
+	* exe/engine/genericidevice.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py: Hacked in preknowledge, case study and
+	  activity iDevices. Added title to GenericIdevice.
+
+2005-02-07 03:00  brent
+
+	* exe/webui/css/editing.css, exe/webui/element.py,
+	  exe/webui/style/default/reading.png: added image for reading task.
+
+2005-02-07 02:57  jenny
+
+	* setup.py: 
+
+2005-02-07 02:57  jenny
+
+	* win install, win install/eXe.sln, win install/eXe.vdproj: added
+	  win install files
+
+2005-02-07 00:43  djm
+
+	* exe/engine/genericidevice.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py: Added class_ to elements
+
+2005-02-07 00:27  djm
+
+	* exe/webui/block.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/server.py,
+	  exe/webui/titleblock.py: Added IconElement. General cleanup
+
+2005-02-07 00:01  jenny
+
+	* exe/engine/util.py, exe/export/websiteexport.py,
+	  exe/webui/server.py: fixed export bugs
+
+2005-02-06 23:55  djm
+
+	* exe/webui/style, exe/webui/style/default: Created style directory
+
+2005-02-06 23:39  djm
+
+	* exe/engine/genericidevice.py: Fixed bug with ordering of
+	  genericIdevice fields. -- now using a list instead of a dictionary
+
+2005-02-06 23:25  brent
+
+	* exe/webui/server.py: fix for linux geeks
+
+2005-02-06 22:06  djm
+
+	* exe/engine/util.py: need detach
+
+2005-02-06 21:40  jenny
+
+	* exe/webui/server.py: explictly open firefox browser
+
+2005-02-06 20:32  jenny
+
+	* exe/export/manifest.py, exe/webui/loadpage.py,
+	  exe/webui/server.py, setup.py: if server is running then it will
+	  lauch another browser
+
+2005-02-04 04:07  djm
+
+	* doc/exe_class.dia: updated documentation
+
+2005-02-04 02:54  djm
+
+	* exe/webui/scripts/armadillo.js: Removed image button
+
+2005-02-04 02:49  djm
+
+	* exe/webui/idevicepane.py: added objectives
+
+2005-02-04 01:08  jenny
+
+	* exe/engine/config.py, exe/engine/packagestore.py,
+	  exe/engine/winshell.py: change file extension from .pkg to .elp
+
+2005-02-02 20:04  djm
+
+	* exe/webui/freetextblock.py: changed FreeTextArea to
+	  FreeTextElement
+
+2005-02-02 09:02  djm
+
+	* doc/exe_class.dia, exe/engine/areafield.py, exe/engine/field.py,
+	  exe/engine/genericidevice.py, exe/engine/imagefield.py,
+	  exe/engine/textfield.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py: Added GenericIdevice
+
+2005-02-02 04:49  brent
+
+	* exe/webui/css/controlpanel.css, exe/webui/css/editing.css,
+	  exe/webui/images/edit.gif, exe/webui/titleblock.py: added new
+	  image for preview all and moved to right. would like to move
+	  outside of main div.
+
+2005-02-02 03:12  jenny
+
+	* exe/webui/loadpage.py, exe/webui/savepage.py: changed file
+	  extension from pkg to elp
+
+2005-02-01 21:06  djm
+
+	* README: init checkin
+
+2005-02-01 04:47  djm
+
+	* exe/webui/freetextblock.py: Add semicolon
+
+2005-02-01 03:28  jenny
+
+	* setup.py: updated
+
+2005-02-01 02:26  jenny
+
+	* setup.py: added style sheet
+
+2005-02-01 00:58  djm
+
+	* exe/webui/freetextblock.py: escape quotes in editor
+
+2005-02-01 00:50  djm
+
+	* exe/engine/package.py, exe/webui/authoringpage.py,
+	  exe/webui/common.py, exe/webui/freetextblock.py,
+	  exe/webui/loadpage.py, exe/webui/newpackagepage.py,
+	  exe/webui/scripts/armadillo.js, exe/webui/scripts/common.js,
+	  exe/webui/scripts/editor, exe/webui/scripts/editor/_source,
+	  exe/webui/scripts/editor/_source/classes,
+	  exe/webui/scripts/editor/_source/classes/fckcontextmenugroup.js,
+	  exe/webui/scripts/editor/_source/classes/fckcontextmenuitem.js,
+	  exe/webui/scripts/editor/_source/classes/fckcontextmenuseparator.js,
+	  exe/webui/scripts/editor/_source/classes/fckevents.js,
+	  exe/webui/scripts/editor/_source/classes/fckpanel_gecko.js,
+	  exe/webui/scripts/editor/_source/classes/fckpanel_ie.js,
+	  exe/webui/scripts/editor/_source/classes/fckplugin.js,
+	  exe/webui/scripts/editor/_source/classes/fckspecialcombo.js,
+	  exe/webui/scripts/editor/_source/classes/fckstyledef.js,
+	  exe/webui/scripts/editor/_source/classes/fckstyledef_gecko.js,
+	  exe/webui/scripts/editor/_source/classes/fckstyledef_ie.js,
+	  exe/webui/scripts/editor/_source/classes/fckstylesloader.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbar.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarbutton.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarcombo.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarfontformatcombo.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarfontscombo.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarfontsizecombo.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarpanelbutton.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarspecialcombo.js,
+	  exe/webui/scripts/editor/_source/classes/fcktoolbarstylecombo.js,
+	  exe/webui/scripts/editor/_source/classes/fckxml.js,
+	  exe/webui/scripts/editor/_source/commandclasses,
+	  exe/webui/scripts/editor/_source/commandclasses/fck_othercommands.js,
+	  exe/webui/scripts/editor/_source/commandclasses/fcknamedcommand.js,
+	  exe/webui/scripts/editor/_source/commandclasses/fckpasteplaintextcommand.js,
+	  exe/webui/scripts/editor/_source/commandclasses/fckpastewordcommand.js,
+	  exe/webui/scripts/editor/_source/commandclasses/fckstylecommand.js,
+	  exe/webui/scripts/editor/_source/commandclasses/fcktablecommand.js,
+	  exe/webui/scripts/editor/_source/commandclasses/fcktextcolorcommand.js,
+	  exe/webui/scripts/editor/_source/globals,
+	  exe/webui/scripts/editor/_source/globals/fck_constants.js,
+	  exe/webui/scripts/editor/_source/globals/fckeditorapi.js,
+	  exe/webui/scripts/editor/_source/internals,
+	  exe/webui/scripts/editor/_source/internals/fck.js,
+	  exe/webui/scripts/editor/_source/internals/fck_1.js,
+	  exe/webui/scripts/editor/_source/internals/fck_1_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fck_1_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fck_2.js,
+	  exe/webui/scripts/editor/_source/internals/fck_2_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fck_2_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fck_last.js,
+	  exe/webui/scripts/editor/_source/internals/fck_onload.js,
+	  exe/webui/scripts/editor/_source/internals/fckbrowserinfo.js,
+	  exe/webui/scripts/editor/_source/internals/fckcommands.js,
+	  exe/webui/scripts/editor/_source/internals/fckconfig.js,
+	  exe/webui/scripts/editor/_source/internals/fckcontextmenu.js,
+	  exe/webui/scripts/editor/_source/internals/fckcontextmenu_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fckcontextmenu_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fckcoreextensions.js,
+	  exe/webui/scripts/editor/_source/internals/fckdebug.js,
+	  exe/webui/scripts/editor/_source/internals/fckdialog.js,
+	  exe/webui/scripts/editor/_source/internals/fckdialog_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fckdialog_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fcklanguagemanager.js,
+	  exe/webui/scripts/editor/_source/internals/fckplugins.js,
+	  exe/webui/scripts/editor/_source/internals/fckregexlib.js,
+	  exe/webui/scripts/editor/_source/internals/fckscriptloader.js,
+	  exe/webui/scripts/editor/_source/internals/fckselection.js,
+	  exe/webui/scripts/editor/_source/internals/fckselection_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fckselection_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fcktablehandler.js,
+	  exe/webui/scripts/editor/_source/internals/fcktablehandler_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fcktablehandler_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fcktoolbaritems.js,
+	  exe/webui/scripts/editor/_source/internals/fcktoolbarset.js,
+	  exe/webui/scripts/editor/_source/internals/fcktools.js,
+	  exe/webui/scripts/editor/_source/internals/fcktools_gecko.js,
+	  exe/webui/scripts/editor/_source/internals/fcktools_ie.js,
+	  exe/webui/scripts/editor/_source/internals/fckurlparams.js,
+	  exe/webui/scripts/editor/_source/internals/fckxhtml.js,
+	  exe/webui/scripts/editor/_source/internals/fckxhtmlentities.js,
+	  exe/webui/scripts/editor/css,
+	  exe/webui/scripts/editor/css/fck_editorarea.css,
+	  exe/webui/scripts/editor/dialog,
+	  exe/webui/scripts/editor/dialog/css,
+	  exe/webui/scripts/editor/dialog/css/common.css,
+	  exe/webui/scripts/editor/dialog/fck_about.html,
+	  exe/webui/scripts/editor/dialog/fck_colorselector.html,
+	  exe/webui/scripts/editor/dialog/fck_find.html,
+	  exe/webui/scripts/editor/dialog/fck_image.html,
+	  exe/webui/scripts/editor/dialog/fck_link.html,
+	  exe/webui/scripts/editor/dialog/fck_paste.html,
+	  exe/webui/scripts/editor/dialog/fck_replace.html,
+	  exe/webui/scripts/editor/dialog/fck_smiley.html,
+	  exe/webui/scripts/editor/dialog/fck_specialchar.html,
+	  exe/webui/scripts/editor/dialog/fck_table.html,
+	  exe/webui/scripts/editor/dialog/fck_tablecell.html,
+	  exe/webui/scripts/editor/dialog/images,
+	  exe/webui/scripts/editor/dialog/images/locked.gif,
+	  exe/webui/scripts/editor/dialog/images/logo_fckeditor.gif,
+	  exe/webui/scripts/editor/dialog/images/logo_fredck.gif,
+	  exe/webui/scripts/editor/dialog/images/reset.gif,
+	  exe/webui/scripts/editor/dialog/images/unlocked.gif,
+	  exe/webui/scripts/editor/dialog/js,
+	  exe/webui/scripts/editor/dialog/js/fck_dialog_common.js,
+	  exe/webui/scripts/editor/dialog/js/fck_image.js,
+	  exe/webui/scripts/editor/dialog/js/fck_link.js,
+	  exe/webui/scripts/editor/fckdebug.html,
+	  exe/webui/scripts/editor/fckdialog.html,
+	  exe/webui/scripts/editor/fckeditor.html,
+	  exe/webui/scripts/editor/fckeditor.original.html,
+	  exe/webui/scripts/editor/fckeditorarea.html,
+	  exe/webui/scripts/editor/filemanager,
+	  exe/webui/scripts/editor/filemanager/browser,
+	  exe/webui/scripts/editor/filemanager/browser/default,
+	  exe/webui/scripts/editor/filemanager/browser/default/Browser.css,
+	  exe/webui/scripts/editor/filemanager/browser/default/browser.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp/basexml.asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp/class_upload.asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp/commands.asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp/connector.asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp/io.asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/asp/util.asp,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/aspx,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/aspx/connector.aspx,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/cfm,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/cfm/connector.cfm,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/php,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/php/basexml.php,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/php/commands.php,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/php/connector.php,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/php/io.php,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/php/util.php,
+	  exe/webui/scripts/editor/filemanager/browser/default/connectors/test.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/frmactualfolder.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/frmcreatefolder.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/frmfolders.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/frmresourceslist.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/frmresourcetype.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/frmupload.html,
+	  exe/webui/scripts/editor/filemanager/browser/default/images,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/ButtonArrow.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/Folder.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/Folder32.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/FolderOpened.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/FolderOpened32.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/FolderUp.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/ai.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/avi.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/bmp.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/cs.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/default.icon.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/dll.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/doc.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/exe.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/fla.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/gif.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/htm.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/html.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/jpg.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/js.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/mdb.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/mp3.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/pdf.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/ppt.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/rdp.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/swf.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/swt.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/txt.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/vsd.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/xls.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/xml.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/32/zip.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/ai.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/avi.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/bmp.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/cs.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/default.icon.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/dll.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/doc.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/exe.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/fla.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/gif.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/htm.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/html.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/jpg.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/js.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/mdb.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/mp3.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/pdf.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/ppt.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/rdp.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/swf.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/swt.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/txt.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/vsd.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/xls.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/xml.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/icons/zip.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/images/spacer.gif,
+	  exe/webui/scripts/editor/filemanager/browser/default/js,
+	  exe/webui/scripts/editor/filemanager/browser/default/js/common.js,
+	  exe/webui/scripts/editor/filemanager/browser/default/js/fckxml.js,
+	  exe/webui/scripts/editor/images,
+	  exe/webui/scripts/editor/images/smiley,
+	  exe/webui/scripts/editor/images/smiley/fun,
+	  exe/webui/scripts/editor/images/smiley/fun/aiua.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/ak.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/alien.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/alien2.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/angry.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/angry1.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/apophys.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/assjani.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/asthanos.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/bazuzeus.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/beaute.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/bigsmile.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/blush.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/boid.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/bonk.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/bored.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/borg.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/capo.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/confused.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/cool.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/crazy.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/cwm14.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/demis_roussos.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/devil.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/devil2.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/double0smile.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/eek3.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/eltaf.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/gele.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/halm.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/happy.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon12.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon23.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon26.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon_angel.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon_bandit.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon_bravo.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/icon_clown.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/jesors.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/jesors1.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/lol3.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/love.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/mad.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/megaphone.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/mmm.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/music.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/notify.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/nuts.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/obanon.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/ouaip.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/pleure.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/plugin.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/question.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/question2.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/rasta2.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/rastapop.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/rosebud.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sad.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sad2.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/shocked.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sick.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sick2.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/slaap.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sleep.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/smile.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/smiley_peur.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sors.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/sovxx.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/spamafote.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/tap67.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/thumbdown.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/thumbup.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/tigi.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/toad666.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/tongue.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/tuffgong.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/urgeman.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/vanadium.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/wink.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/worship.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/wouaf.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/wow.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/xp1700.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/yltype.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/yopyopyop.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/youpi.gif,
+	  exe/webui/scripts/editor/images/smiley/fun/zoor.gif,
+	  exe/webui/scripts/editor/images/smiley/msn,
+	  exe/webui/scripts/editor/images/smiley/msn/angel_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/angry_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/broken_heart.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/cake.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/confused_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/cry_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/devil_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/embaressed_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/envelope.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/heart.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/kiss.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/lightbulb.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/omg_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/regular_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/sad_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/shades_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/teeth_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/thumbs_down.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/thumbs_up.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/tounge_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/whatchutalkingabout_smile.gif,
+	  exe/webui/scripts/editor/images/smiley/msn/wink_smile.gif,
+	  exe/webui/scripts/editor/images/spacer.gif,
+	  exe/webui/scripts/editor/js,
+	  exe/webui/scripts/editor/js/fck_startup.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_gecko_2.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_1.js,
+	  exe/webui/scripts/editor/js/fckeditorcode_ie_2.js,
+	  exe/webui/scripts/editor/lang,
+	  exe/webui/scripts/editor/lang/ar.js,
+	  exe/webui/scripts/editor/lang/bs.js,
+	  exe/webui/scripts/editor/lang/ca.js,
+	  exe/webui/scripts/editor/lang/cs.js,
+	  exe/webui/scripts/editor/lang/da.js,
+	  exe/webui/scripts/editor/lang/de.js,
+	  exe/webui/scripts/editor/lang/en.js,
+	  exe/webui/scripts/editor/lang/es.js,
+	  exe/webui/scripts/editor/lang/et.js,
+	  exe/webui/scripts/editor/lang/fcklanguagemanager.js,
+	  exe/webui/scripts/editor/lang/fi.js,
+	  exe/webui/scripts/editor/lang/fr.js,
+	  exe/webui/scripts/editor/lang/gr.js,
+	  exe/webui/scripts/editor/lang/he.js,
+	  exe/webui/scripts/editor/lang/hr.js,
+	  exe/webui/scripts/editor/lang/it.js,
+	  exe/webui/scripts/editor/lang/ko.js,
+	  exe/webui/scripts/editor/lang/lt.js,
+	  exe/webui/scripts/editor/lang/nl.js,
+	  exe/webui/scripts/editor/lang/no.js,
+	  exe/webui/scripts/editor/lang/pl.js,
+	  exe/webui/scripts/editor/lang/pt.js,
+	  exe/webui/scripts/editor/lang/ru.js,
+	  exe/webui/scripts/editor/lang/sl.js,
+	  exe/webui/scripts/editor/lang/sr-latn.js,
+	  exe/webui/scripts/editor/lang/sr.js,
+	  exe/webui/scripts/editor/lang/sv.js,
+	  exe/webui/scripts/editor/lang/zh-cn.js,
+	  exe/webui/scripts/editor/lang/zh-hk.js,
+	  exe/webui/scripts/editor/lang/zh-tw.js,
+	  exe/webui/scripts/editor/plugins, exe/webui/scripts/editor/skins,
+	  exe/webui/scripts/editor/skins/default,
+	  exe/webui/scripts/editor/skins/default/fck_contextmenu.css,
+	  exe/webui/scripts/editor/skins/default/fck_dialog.css,
+	  exe/webui/scripts/editor/skins/default/fck_editor.css,
+	  exe/webui/scripts/editor/skins/default/images,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.arrowright.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.buttonarrow.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.collapse.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.end.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.expand.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.separator.gif,
+	  exe/webui/scripts/editor/skins/default/images/toolbar.start.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.about.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.bgcolor.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.bold.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.copy.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.cut.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.find.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.image.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.indent.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.inserthorizontalrule.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.insertorderedlist.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.insertunorderedlist.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.italic.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifycenter.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifyfull.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifyleft.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.justifyright.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.link.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.newpage.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.outdent.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.paste.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.pastetext.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.pasteword.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.preview.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.print.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.redo.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.removeformat.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.replace.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.save.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.selectall.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.showdetails.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.showtableborders.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.smiley.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.source.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.specialchar.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.spellcheck.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.strikethrough.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.subscript.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.superscript.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.table.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tablecell.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tabledeletecells.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tabledeletecolumns.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tabledeleterows.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tableinsertcell.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tableinsertcolumn.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tableinsertrow.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tablemergecells.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.tablesplitcell.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.textcolor.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.underline.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.undo.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.unlink.gif,
+	  exe/webui/scripts/editor/skins/default/toolbar/button.unorderedlist.gif,
+	  exe/webui/scripts/editor/skins/office2003,
+	  exe/webui/scripts/editor/skins/office2003/fck_contextmenu.css,
+	  exe/webui/scripts/editor/skins/office2003/fck_dialog.css,
+	  exe/webui/scripts/editor/skins/office2003/fck_editor.css,
+	  exe/webui/scripts/editor/skins/office2003/images,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.arrowright.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.bg.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.buttonarrow.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.collapse.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.end.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.expand.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.separator.gif,
+	  exe/webui/scripts/editor/skins/office2003/images/toolbar.start.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.about.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.anchor.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.bgcolor.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.bold.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.button.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.checkbox.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.copy.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.cut.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.find.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.flash.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.fontstyleadv.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.form.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.hidden.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.image.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.imagebutton.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.indent.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.input.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.inserthorizontalrule.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.insertorderedlist.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.insertunorderedlist.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.italic.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.justifycenter.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.justifyfull.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.justifyleft.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.justifyright.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.link.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.mail.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.new.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.newpage.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.open.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.outdent.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.paste.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.pastetext.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.pasteword.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.preview.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.print.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.radio.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.redo.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.removeformat.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.replace.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.save.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.select.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.selectall.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.showdetails.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.showtableborders.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.smiley.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.source.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.specialchar.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.spellcheck.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.strikethrough.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.subscript.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.superscript.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.table.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tablecell.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tabledeletecells.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tabledeletecolumns.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tabledeleterows.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tableinsertcell.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tableinsertcolumn.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tableinsertrow.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tablemergecells.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.tablesplitcell.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.textarea.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.textcolor.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.underline.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.undo.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.universalkey.gif,
+	  exe/webui/scripts/editor/skins/office2003/toolbar/button.unlink.gif,
+	  exe/webui/scripts/editor/skins/silver,
+	  exe/webui/scripts/editor/skins/silver/fck_contextmenu.css,
+	  exe/webui/scripts/editor/skins/silver/fck_dialog.css,
+	  exe/webui/scripts/editor/skins/silver/fck_editor.css,
+	  exe/webui/scripts/editor/skins/silver/images,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.arrowright.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.buttonarrow.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.buttonbg.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.collapse.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.end.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.expand.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.separator.gif,
+	  exe/webui/scripts/editor/skins/silver/images/toolbar.start.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.about.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.bgcolor.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.bold.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.copy.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.cut.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.find.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.image.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.indent.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.inserthorizontalrule.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.insertorderedlist.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.insertunorderedlist.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.italic.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.justifycenter.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.justifyfull.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.justifyleft.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.justifyright.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.link.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.newpage.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.outdent.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.paste.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.pastetext.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.pasteword.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.preview.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.print.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.redo.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.removeformat.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.replace.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.save.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.selectall.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.showdetails.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.showtableborders.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.smiley.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.source.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.specialchar.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.spellcheck.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.strikethrough.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.subscript.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.superscript.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.table.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tablecell.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tabledeletecells.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tabledeletecolumns.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tabledeleterows.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tableinsertcell.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tableinsertcolumn.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tableinsertrow.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tablemergecells.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.tablesplitcell.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.textcolor.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.underline.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.undo.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.unlink.gif,
+	  exe/webui/scripts/editor/skins/silver/toolbar/button.unorderedlist.gif,
+	  exe/webui/scripts/fckconfig.js, exe/webui/scripts/fckeditor.js:
+	  Added FCKEditor to FreeTextBlock
+
+2005-01-31 23:37  brent
+
+	* exe/webui/css/editing.css, exe/webui/titleblock.py: minor style
+	  changes to editing.css
+
+2005-01-31 20:49  jenny
+
+	* exe/webui/propertiespane.py: fixed title idevice bug.
+
+2005-01-31 08:51  brent
+
+	* exe/webui/common.py, exe/webui/css/controlpanel.css,
+	  exe/webui/css/main.css: split out controlpanel css into seperate
+	  file
+
+2005-01-31 00:58  brent
+
+	* exe/webui/common.py, exe/webui/scripts/control_panel.js: fixed
+	  control panel, now stays on the correct tab after you have done a
+	  a post.
+
+2005-01-28 03:25  jenny
+
+	* exe/export/manifest.py: modified manifest file
+
+2005-01-28 02:15  brent
+
+	* exe/webui/css/editing.css, exe/webui/css/main.css,
+	  exe/webui/scripts/control_panel.js: pretty damn functional
+	  controlpanel seeks cookie monster.
+
+2005-01-28 01:51  jenny
+
+	* exe/export/manifest.py, exe/webui/loadpage.py: change xml
+	  identifier "." to "-"
+
+2005-01-28 00:02  brent
+
+	* exe/webui/authoringpage.py, exe/webui/css/main.css: small tab
+	  change
+
+2005-01-27 21:38  jenny
+
+	* exe/webui/loadpage.py: added try catch exception to loadpage.py
+
+2005-01-27 20:42  brent
+
+	* exe/webui/authoringpage.py, exe/webui/css/main.css: controlpanel
+	  top tabs now working
+
+2005-01-27 03:36  brent
+
+	* exe/webui/authoringpage.py, exe/webui/css/main.css,
+	  exe/webui/scripts/control_panel.js: more controlpanel tomfoolery
+
+2005-01-27 02:28  jenny
+
+	* exe/webui/loadpage.py: get file full path
+
+2005-01-27 00:41  jenny
+
+	* exe/export/manifest.py: set default orangnizations same as
+	  orangnization1
+
+2005-01-27 00:22  jenny
+
+	* exe/webui/titleblock.py: fixed the bug with Preview all
+
+2005-01-27 00:14  brent
+
+	* exe/webui/css/main.css, exe/webui/scripts/control_panel.js: small
+	  changes to js and css files, authoring pane now increases as
+	  controlpanel is minimized.
+
+2005-01-26 23:54  jenny
+
+	* exe/export/manifest.py, exe/webui/exportpage.py: finished scorm
+	  exporting
+
+2005-01-26 22:22  jenny
+
+	* exe/export/manifest.py: fixed bugs with xml file
+
+2005-01-26 21:25  brent
+
+	* exe/webui/common.py, exe/webui/css/editing.css,
+	  exe/webui/images/hide.gif, exe/webui/images/show.gif,
+	  exe/webui/scripts, exe/webui/scripts/control_panel.js: seperated
+	  CSS files. added js files for controlpanel
+
+2005-01-26 20:33  jenny
+
+	* exe/export/manifest.py, exe/export/websiteexport.py,
+	  exe/webui/exportpage.py: modified scorm exporting
+
+2005-01-26 20:10  brent
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/css/main.css, exe/webui/images/stock-go-down-off.png,
+	  exe/webui/images/stock-go-up-off.png, exe/webui/server.py,
+	  exe/webui/titleblock.py: Brent's crazy interface stuff
+
+2005-01-26 09:43  brent
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/css/main.css, exe/webui/idevicepane.py,
+	  exe/webui/outlinepane.py: semi-functional function toolbox. still
+	  needs heaps of work.
+
+2005-01-26 04:31  jenny
+
+	* exe/export/manifest.py, exe/export/websiteexport.py,
+	  exe/webui/exportpage.py: added scom export
+
+2005-01-25 22:56  djm
+
+	* doc/exe_class.dia, exe/engine/package.py,
+	  exe/webui/authoringpage.py, exe/webui/authoringpane.py,
+	  exe/webui/exportpage.py, exe/webui/idevicepane.py,
+	  exe/webui/menupane.py, exe/webui/newpackagepage.py,
+	  exe/webui/outlinepane.py: Made some small changes while
+	  documenting the architecture
+
+2005-01-25 08:39  djm
+
+	* exe/engine/config.py: Use /home/djm for dataDir on non-legacy
+	  operating systems
+
+2005-01-25 07:37  jenny
+
+	* exe/webui/exportpage.py: added exportpage
+
+2005-01-25 02:11  jenny
+
+	* exe/engine/config.py, exe/engine/packagestore.py,
+	  exe/export/websiteexport.py, exe/webui/loadpage.py,
+	  exe/webui/menupane.py, exe/webui/newpackagepage.py,
+	  exe/webui/propertiespane.py, exe/webui/savepage.py,
+	  exe/webui/titleblock.py, exe/webui/webinterface.py: modified
+	  datadirectory
+
+2005-01-25 01:55  djm
+
+	* prototype/editor/19, prototype/editor/19/imsmanifest.xml: example
+	  imsmanifest.xml
+
+2005-01-25 01:22  djm
+
+	* prototype/editor/idevices/.idevices,
+	  prototype/editor/publish/coursemanager.pyc,
+	  prototype/editor/publish/publish.pyg,
+	  prototype/editor/publish/xmlreader.pyc: oops python
+
+2005-01-25 01:22  djm
+
+	* prototype/editor/idevices, prototype/editor/idevices/.idevices,
+	  prototype/editor/idevices/.idevices/activity_content.template,
+	  prototype/editor/idevices/.idevices/activity_form.template,
+	  prototype/editor/idevices/.idevices/activity_xml.template,
+	  prototype/editor/idevices/.idevices/course_content.template,
+	  prototype/editor/idevices/.idevices/course_form.template,
+	  prototype/editor/idevices/.idevices/course_xml.template,
+	  prototype/editor/idevices/.idevices/freetext.html,
+	  prototype/editor/idevices/.idevices/freetext_content.template,
+	  prototype/editor/idevices/.idevices/freetext_form.template,
+	  prototype/editor/idevices/.idevices/freetext_xml.template,
+	  prototype/editor/idevices/.idevices/idevices_xml.template,
+	  prototype/editor/idevices/.idevices/index.html,
+	  prototype/editor/idevices/.idevices/index_content.template,
+	  prototype/editor/idevices/.idevices/index_content.template.org,
+	  prototype/editor/idevices/.idevices/multimedia.html,
+	  prototype/editor/idevices/.idevices/multimedia_content.template,
+	  prototype/editor/idevices/.idevices/multimedia_form.template,
+	  prototype/editor/idevices/.idevices/multimedia_xml.template,
+	  prototype/editor/idevices/.idevices/objectives.html,
+	  prototype/editor/idevices/.idevices/objectives_content.template,
+	  prototype/editor/idevices/.idevices/objectives_form.template,
+	  prototype/editor/idevices/.idevices/objectives_xml.template,
+	  prototype/editor/idevices/.idevices/pre_knowledge_form.template,
+	  prototype/editor/idevices/.idevices/preknowledge_content.template,
+	  prototype/editor/idevices/.idevices/preknowledge_form.template,
+	  prototype/editor/idevices/.idevices/preknowledge_xml.template,
+	  prototype/editor/idevices/.idevices/reading_activity_form.template,
+	  prototype/editor/idevices/.idevices/reading_activity_xml.template,
+	  prototype/editor/idevices/.idevices/readingactivity.html,
+	  prototype/editor/idevices/.idevices/readingactivity_content.template,
+	  prototype/editor/idevices/.idevices/readingactivity_form.template,
+	  prototype/editor/idevices/.idevices/readingactivity_xml.template,
+	  prototype/editor/idevices/.idevices/scope.html,
+	  prototype/editor/idevices/.idevices/scope_content.template,
+	  prototype/editor/idevices/.idevices/scope_form.template,
+	  prototype/editor/idevices/.idevices/scope_xml.template,
+	  prototype/editor/idevices/.idevices/section_content.template,
+	  prototype/editor/idevices/.idevices/section_form.template,
+	  prototype/editor/idevices/.idevices/section_xml.template,
+	  prototype/editor/idevices/.idevices/test.html,
+	  prototype/editor/idevices/.idevices/topic.html,
+	  prototype/editor/idevices/.idevices/topic_content.template,
+	  prototype/editor/idevices/.idevices/topic_form.template,
+	  prototype/editor/idevices/.idevices/topic_xml.template,
+	  prototype/editor/idevices/.idevices/tt,
+	  prototype/editor/idevices/.idevices/unit_content.template,
+	  prototype/editor/idevices/.idevices/unit_form.template,
+	  prototype/editor/idevices/.idevices/unit_xml.template,
+	  prototype/editor/idevices/.idevices/unit_xml.template.org,
+	  prototype/editor/idevices/Biography_content.template,
+	  prototype/editor/idevices/Biography_form.template,
+	  prototype/editor/idevices/Biography_xml.template,
+	  prototype/editor/idevices/Brent's_test_content.template,
+	  prototype/editor/idevices/Brent's_test_form.template,
+	  prototype/editor/idevices/Brent's_test_xml.template,
+	  prototype/editor/idevices/Expression_of_Interest_1_content.template,
+	  prototype/editor/idevices/Expression_of_Interest_1_form.template,
+	  prototype/editor/idevices/Expression_of_Interest_1_xml.template,
+	  prototype/editor/idevices/Expression_of_Interest_content.template,
+	  prototype/editor/idevices/Expression_of_Interest_form.template,
+	  prototype/editor/idevices/Expression_of_Interest_xml.template,
+	  prototype/editor/idevices/TALL_content.template,
+	  prototype/editor/idevices/TALL_form.template,
+	  prototype/editor/idevices/TALL_xml.template,
+	  prototype/editor/idevices/activity_content.template,
+	  prototype/editor/idevices/activity_form.template,
+	  prototype/editor/idevices/activity_xml.template,
+	  prototype/editor/idevices/course_content.template,
+	  prototype/editor/idevices/course_form.template,
+	  prototype/editor/idevices/course_xml.template,
+	  prototype/editor/idevices/freetext_content.template,
+	  prototype/editor/idevices/freetext_form.template,
+	  prototype/editor/idevices/freetext_xml.template,
+	  prototype/editor/idevices/idevice_xml.template,
+	  prototype/editor/idevices/idevices_xml.template,
+	  prototype/editor/idevices/index_content.template,
+	  prototype/editor/idevices/multimedia.html,
+	  prototype/editor/idevices/multimedia_content.template,
+	  prototype/editor/idevices/multimedia_form.template,
+	  prototype/editor/idevices/multimedia_xml.template,
+	  prototype/editor/idevices/objectives_content.template,
+	  prototype/editor/idevices/objectives_form.template,
+	  prototype/editor/idevices/objectives_xml.template,
+	  prototype/editor/idevices/pre_knowledge_form.template,
+	  prototype/editor/idevices/preknowledge_content.template,
+	  prototype/editor/idevices/preknowledge_form.template,
+	  prototype/editor/idevices/preknowledge_xml.template,
+	  prototype/editor/idevices/publish_content.template,
+	  prototype/editor/idevices/reading_activity_form.template,
+	  prototype/editor/idevices/reading_activity_xml.template,
+	  prototype/editor/idevices/readingactivity.html,
+	  prototype/editor/idevices/readingactivity_content.template,
+	  prototype/editor/idevices/readingactivity_form.template,
+	  prototype/editor/idevices/readingactivity_form.template.org,
+	  prototype/editor/idevices/readingactivity_xml.template,
+	  prototype/editor/idevices/scope_content.template,
+	  prototype/editor/idevices/scope_form.template,
+	  prototype/editor/idevices/scope_xml.template,
+	  prototype/editor/idevices/section_content.template,
+	  prototype/editor/idevices/section_form.template,
+	  prototype/editor/idevices/section_xml.template,
+	  prototype/editor/idevices/topic_content.template,
+	  prototype/editor/idevices/topic_form.template,
+	  prototype/editor/idevices/topic_xml.template,
+	  prototype/editor/idevices/unit_content.template,
+	  prototype/editor/idevices/unit_form.template,
+	  prototype/editor/idevices/unit_xml.template,
+	  prototype/editor/manifest,
+	  prototype/editor/manifest/imsmanifest_xml.template,
+	  prototype/editor/manifest/item_xml.template,
+	  prototype/editor/manifest/metadata_xml.template,
+	  prototype/editor/manifest/organization_xml.template,
+	  prototype/editor/manifest/organizations_xml.template,
+	  prototype/editor/manifest/resource_xml.template,
+	  prototype/editor/manifest/resources_xml.template,
+	  prototype/editor/manifest/unit_item_xml.template,
+	  prototype/editor/publish,
+	  prototype/editor/publish/choose_preview_form.template,
+	  prototype/editor/publish/choose_publish_form.template,
+	  prototype/editor/publish/coursemanager.pyc,
+	  prototype/editor/publish/publish.pyg,
+	  prototype/editor/publish/xmlreader.pyc: added prototype templates
+
+2005-01-24 23:09  djm
+
+	* exe/engine/freetextidevice.py, exe/engine/package.py,
+	  exe/engine/titleidevice.py, exe/webui/titleblock.py: Start
+	  TitleIdevice and intoduction FreeTextIdevice in preview mode
+
+2005-01-24 22:44  djm
+
+	* exe/engine/idevice.py, exe/engine/node.py,
+	  exe/webui/freetextblock.py, exe/webui/idevicepane.py,
+	  exe/webui/simpleblock.py: Moved logic for moving iDevices into the
+	  idevice class. Fixed moving bugs.
+
+2005-01-24 20:45  jenny
+
+	* testing/README: Added a newline
+
+2005-01-24 19:52  jenny
+
+	* exe/engine/winshell.py: added winsell.py for importing
+	  personal_folder to get My document directory.
+
+2005-01-24 06:47  djm
+
+	* exe/engine/titleidevice.py: added titleidevice
+
+2005-01-24 06:47  djm
+
+	* doc/exe_class.dia, exe/engine/idevice.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/webui/authoringpane.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/common.py, exe/webui/freetextblock.py,
+	  exe/webui/idevicepane.py, exe/webui/outlinepane.py,
+	  exe/webui/titleblock.py: Node titles are now instances of
+	  TitleIdevice
+
+2005-01-24 03:23  jenny
+
+	* exe/engine/config.py, exe/export/websiteexport.py,
+	  exe/webui/block.py, exe/webui/freetextblock.py,
+	  exe/webui/loadpage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/server.py,
+	  exe/webui/simpleblock.py, exe/webui/titleblock.py,
+	  exe/webui/webinterface.py: added expport function to the package
+
+2005-01-24 03:15  djm
+
+	* doc, doc/exe_class.dia: Added class diagram
+
+2005-01-23 21:54  djm
+
+	* testing/testnode.py: more testing, less output
+
+2005-01-21 01:52  jenny
+
+	* exe/webui/block.py, exe/webui/titleblock.py: added preview all and
+	  edit all icon to the title block
+
+2005-01-21 00:40  djm
+
+	* exe/webui/newpackagepage.py: added refresh
+
+2005-01-21 00:26  djm
+
+	* exe/webui/newpackagepage.py: Added link for when refresh doesn't
+	  work
+
+2005-01-20 22:33  djm
+
+	* exe/webui/authoringpane.py, exe/webui/outlinepane.py,
+	  exe/webui/titleblock.py: improved the interface
+
+2005-01-20 22:32  jenny
+
+	* exe/engine/node.py: modified __str__ fuction
+
+2005-01-20 22:29  jenny
+
+	* testing/testnode.py: add testing for __str__ function of Node
+
+2005-01-20 22:28  jenny
+
+	* exe/engine/node.py: added __str__ fuction
+
+2005-01-20 06:37  djm
+
+	* exe/engine/node.py, exe/webui/outlinepane.py: Handle the case
+	  where the current node is deleted
+
+2005-01-20 06:27  djm
+
+	* exe/webui/outlinepane.py: log error if we can't find a nodeId
+	  fixed demotion criteria
+
+2005-01-20 05:51  djm
+
+	* exe/webui/common.py, exe/webui/outlinepane.py: titied up outline
+	  pane code
+
+2005-01-20 03:33  djm
+
+	* exe/webui/outlinepane.py: fix bug with deleting iDevices
+
+2005-01-20 02:24  brent
+
+	* exe/webui/common.py, exe/webui/css/main.css,
+	  exe/webui/outlinepane.py: blah
+
+2005-01-20 02:11  jenny
+
+	* exe/webui/outlinepane.py: Check we find the node before using it
+
+2005-01-20 00:47  djm
+
+	* exe/webui/common.py, exe/webui/outlinepane.py: Added extra actions
+	  to the outline
+
+2005-01-20 00:41  brent
+
+	* exe/webui/images/stock-go-back-off.png,
+	  exe/webui/images/stock-go-down-off.png,
+	  exe/webui/images/stock-go-forward-off.png,
+	  exe/webui/images/stock-go-up-off.png: off pngs
+
+2005-01-19 22:12  jenny
+
+	* testing/testnode.py: added test updateChildrenIds function
+
+2005-01-19 21:47  brent
+
+	* exe/webui/common.py, exe/webui/css/main.css: minor change to form
+	  styles. test on Win please
+
+2005-01-19 21:28  jenny
+
+	* exe/engine/node.py: added a recursive function updateChildrenIds
+
+2005-01-19 03:59  jenny
+
+	* exe/webui/block.py, exe/webui/linkblock.py: fixed promote and
+	  demote bugs
+
+2005-01-19 01:18  jenny
+
+	* exe/engine/node.py: fixed promote and demote bugs
+
+2005-01-19 00:54  brent
+
+	* exe/webui/authoringpage.py, exe/webui/css/main.css,
+	  exe/webui/idevicepane.py, exe/webui/outlinepane.py: user interface
+	  changes
+
+2005-01-18 23:15  brent
+
+	* exe/engine/package.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/css/main.css,
+	  exe/webui/freetextblock.py, exe/webui/idevicepane.py,
+	  exe/webui/outlinepane.py, exe/webui/simpleblock.py: User interface
+	  changes
+
+2005-01-18 22:38  jenny
+
+	* exe/engine/node.py: fixed movePrev and moveNext bugs
+
+2005-01-18 20:15  jenny
+
+	* exe/engine/node.py: fixed movePrev bugs
+
+2005-01-18 15:04  djm
+
+	* exe/webui/freetextblock.py, exe/webui/simpleblock.py: Fixed bug
+	  with deleting iDevices
+
+2005-01-18 14:55  djm
+
+	* COPYING, exe/engine/node.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/common.py,
+	  exe/webui/freetextblock.py, exe/webui/images,
+	  exe/webui/images/stock-about.png, exe/webui/images/stock-add.png,
+	  exe/webui/images/stock-apply.png,
+	  exe/webui/images/stock-attach.png,
+	  exe/webui/images/stock-bold.png, exe/webui/images/stock-book.png,
+	  exe/webui/images/stock-bookmark-page.png,
+	  exe/webui/images/stock-bookmarks.png,
+	  exe/webui/images/stock-cancel.png,
+	  exe/webui/images/stock-cdrom.png,
+	  exe/webui/images/stock-clear.png,
+	  exe/webui/images/stock-close.png,
+	  exe/webui/images/stock-connect.png,
+	  exe/webui/images/stock-convert.png,
+	  exe/webui/images/stock-copy.png, exe/webui/images/stock-cut.png,
+	  exe/webui/images/stock-delete.png,
+	  exe/webui/images/stock-disconnect.png,
+	  exe/webui/images/stock-dnd-multiple.png,
+	  exe/webui/images/stock-dnd.png,
+	  exe/webui/images/stock-download.png,
+	  exe/webui/images/stock-edit.png,
+	  exe/webui/images/stock-execute.png,
+	  exe/webui/images/stock-export.png,
+	  exe/webui/images/stock-find-and-replace.png,
+	  exe/webui/images/stock-find.png, exe/webui/images/stock-font.png,
+	  exe/webui/images/stock-foo.png,
+	  exe/webui/images/stock-fullscreen.png,
+	  exe/webui/images/stock-go-back.png,
+	  exe/webui/images/stock-go-down.png,
+	  exe/webui/images/stock-go-forward.png,
+	  exe/webui/images/stock-go-up.png,
+	  exe/webui/images/stock-goto-bottom.png,
+	  exe/webui/images/stock-goto-first.png,
+	  exe/webui/images/stock-goto-last.png,
+	  exe/webui/images/stock-goto-top.png,
+	  exe/webui/images/stock-help.png,
+	  exe/webui/images/stock-history.png,
+	  exe/webui/images/stock-home.png,
+	  exe/webui/images/stock-import.png,
+	  exe/webui/images/stock-insert-image.png,
+	  exe/webui/images/stock-insert-object.png,
+	  exe/webui/images/stock-insert-table.png,
+	  exe/webui/images/stock-italic.png,
+	  exe/webui/images/stock-jump-to.png,
+	  exe/webui/images/stock-justify-center.png,
+	  exe/webui/images/stock-justify-fill.png,
+	  exe/webui/images/stock-justify-left.png,
+	  exe/webui/images/stock-justify-right.png,
+	  exe/webui/images/stock-line-in.png,
+	  exe/webui/images/stock-lockscreen.png,
+	  exe/webui/images/stock-media-eject.png,
+	  exe/webui/images/stock-media-ffwd.png,
+	  exe/webui/images/stock-media-next.png,
+	  exe/webui/images/stock-media-pause.png,
+	  exe/webui/images/stock-media-play.png,
+	  exe/webui/images/stock-media-prev.png,
+	  exe/webui/images/stock-media-rec.png,
+	  exe/webui/images/stock-media-rewind.png,
+	  exe/webui/images/stock-media-stop.png,
+	  exe/webui/images/stock-mic.png,
+	  exe/webui/images/stock-missing-image.png,
+	  exe/webui/images/stock-new-tab.png,
+	  exe/webui/images/stock-new.png, exe/webui/images/stock-open.png,
+	  exe/webui/images/stock-panel-accessories.png,
+	  exe/webui/images/stock-panel-amusements.png,
+	  exe/webui/images/stock-panel-drawer.png,
+	  exe/webui/images/stock-panel-internet.png,
+	  exe/webui/images/stock-panel-launcher.png,
+	  exe/webui/images/stock-panel-multimedia.png,
+	  exe/webui/images/stock-panel-screenshot.png,
+	  exe/webui/images/stock-paste.png,
+	  exe/webui/images/stock-preferences.png,
+	  exe/webui/images/stock-print-preview.png,
+	  exe/webui/images/stock-print.png,
+	  exe/webui/images/stock-printer-broken.png,
+	  exe/webui/images/stock-printer-default.png,
+	  exe/webui/images/stock-properties.png,
+	  exe/webui/images/stock-quit.png, exe/webui/images/stock-redo.png,
+	  exe/webui/images/stock-refresh.png,
+	  exe/webui/images/stock-remove.png,
+	  exe/webui/images/stock-revert-to-saved.png,
+	  exe/webui/images/stock-save-as.png,
+	  exe/webui/images/stock-save.png,
+	  exe/webui/images/stock-select-color.png,
+	  exe/webui/images/stock-send-link.png,
+	  exe/webui/images/stock-sort-ascending.png,
+	  exe/webui/images/stock-sort-descending.png,
+	  exe/webui/images/stock-spell-check.png,
+	  exe/webui/images/stock-stop.png,
+	  exe/webui/images/stock-strikethrough.png,
+	  exe/webui/images/stock-undelete.png,
+	  exe/webui/images/stock-underline.png,
+	  exe/webui/images/stock-undo.png,
+	  exe/webui/images/stock-volume-max.png,
+	  exe/webui/images/stock-volume-med.png,
+	  exe/webui/images/stock-volume-min.png,
+	  exe/webui/images/stock-volume-zero.png,
+	  exe/webui/images/stock-volume.png,
+	  exe/webui/images/stock-zoom-100.png,
+	  exe/webui/images/stock-zoom-fit.png,
+	  exe/webui/images/stock-zoom-in.png,
+	  exe/webui/images/stock-zoom-out.png, exe/webui/linkblock.py,
+	  exe/webui/simpleblock.py: Added BlueCurve images (GPL) Added links
+	  for moving idevices and nodes
+
+2005-01-18 07:05  djm
+
+	* testing/testconfig.py, testing/testutil.py: rename to testconfig
+
+2005-01-18 07:05  djm
+
+	* testing/testutil.py: use exe.engine.config
+
+2005-01-18 07:03  djm
+
+	* exe/export/websiteexport.py: use exe.engine.error
+
+2005-01-18 06:57  djm
+
+	* exe/engine/freetextidevice.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/webui/addnodepane.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/freetextblock.py,
+	  exe/webui/idevicepane.py, exe/webui/linkblock.py,
+	  exe/webui/newpackagepage.py, exe/webui/outlinepane.py,
+	  exe/webui/simpleblock.py: Added (simple)FreeText iDevices and Move
+	  To action for blocks
+
+2005-01-18 04:03  djm
+
+	* exe/engine/node.py, exe/engine/package.py,
+	  exe/webui/authoringpage.py, exe/webui/linkblock.py,
+	  exe/webui/outlinepane.py, exe/webui/propertiespane.py,
+	  exe/webui/titleblock.py, testing/testnode.py: A node knows what
+	  package it belongs to and what it's taxonomy is
+
+2005-01-18 03:27  jenny
+
+	* exe/webui/loadpage.py: finished loadpage
+
+2005-01-18 03:27  jenny
+
+	* exe/webui/server.py: merged conflicts
+
+2005-01-18 02:36  jenny
+
+	* exe/engine/packagestore.py, exe/webui/loadpage.py,
+	  exe/webui/newpackagepage.py, exe/webui/savepage.py,
+	  exe/webui/webinterface.py: added webinterface class and modified
+	  package name
+
+2005-01-18 02:32  brent
+
+	* exe/webui/common.py, exe/webui/css, exe/webui/css/main.css,
+	  exe/webui/outlinepane.py: made somewhat purty
+
+2005-01-18 00:01  jenny
+
+	* exe/engine/node.py, exe/webui/loadpage.py,
+	  exe/webui/newpackagepage.py, testing/testnode.py: update node
+	  class
+
+2005-01-17 22:52  djm
+
+	* exe/webui/outlinepane.py, exe/webui/propertiespane.py: don't link
+	  current node
+
+2005-01-17 22:29  brent
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/server.py: Added document type declaration and CSS
+	  import.
+
+2005-01-17 22:00  djm
+
+	* exe/webui/authoringpane.py, exe/webui/server.py: removed
+	  references to util
+
+2005-01-17 21:58  djm
+
+	* exe/engine/config.py, exe/engine/error.py, exe/util,
+	  exe/webui/server.py: moved util classes into engine
+
+2005-01-17 21:53  djm
+
+	* exe/webui/outlinePaneForTest.py, exe/webui/serverForTest.py,
+	  testing/outlinePaneForTest.py, testing/serverForTest.py: moved
+	  testing code into testing/
+
+2005-01-17 20:37  brent
+
+	* exe/webui/blockfactory.py, exe/webui/savepage.py: Fixed David's
+	  moronic logging errors
+
+2005-01-17 04:08  djm
+
+	* exe/engine/node.py, exe/engine/package.py,
+	  exe/webui/authoringpage.py, exe/webui/blockfactory.py,
+	  exe/webui/outlinepane.py, exe/webui/propertiespage.py,
+	  exe/webui/savepage.py: Added draft node and add links on all nodes
+	  under root Fixed logging
+
+2005-01-17 03:21  jenny
+
+	* exe/webui/loadpage.py: adding loadpage
+
+2005-01-17 03:21  jenny
+
+	* exe/engine/packagestore.py: creating loadpage class
+
+2005-01-17 02:01  jenny
+
+	* exe/engine/node.py, exe/webui/newpackagepage.py,
+	  exe/webui/savepage.py:
+
+2005-01-13 20:49  jenny
+
+	* exe/webui/savepage.py: finished savepage
+
+2005-01-13 04:31  djm
+
+	* exe/webui/server.py, setup.py: created setup.py for packaging
+
+2005-01-13 04:01  djm
+
+	* setup.py: init checkin
+
+2005-01-12 21:37  jenny
+
+	* exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/webui/addnodepane.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/idevicepane.py,
+	  exe/webui/menupane.py, exe/webui/newpackagepage.py,
+	  exe/webui/outlinepane.py, exe/webui/propertiespage.py,
+	  exe/webui/propertiespane.py, exe/webui/savepage.py,
+	  exe/webui/server.py: Fixed logging
+
+2005-01-12 20:30  djm
+
+	* exe/exe.conf: init checkin
+
+2005-01-12 03:26  jenny
+
+	* exe/webui/authoringpage.py, exe/webui/menupane.py,
+	  exe/webui/newpackagepage.py, exe/webui/propertiespage.py,
+	  exe/webui/savepage.py: adding menu pane
+
+2005-01-12 03:21  djm
+
+	* exe/export/__init__.py: Make this a module
+
+2005-01-12 03:19  djm
+
+	* exe/export/websiteexport.py: I must be tired
+
+2005-01-12 03:17  djm
+
+	* exe/export/websiteexport.py: inital checkin
+
+2005-01-11 21:38  jenny
+
+	* exe/engine/package.py, exe/webui/propertiespane.py: changed
+	  package title to root title
+
+2005-01-11 21:28  jenny
+
+	* exe/engine/package.py, exe/webui/addnodepane.py: bug fixes for
+	  node id
+
+2005-01-11 21:15  jenny
+
+	* exe/engine/node.py, exe/webui/addnodepane.py,
+	  exe/webui/outlinepane.py: changed root node id=[0]
+
+2005-01-11 21:01  djm
+
+	* exe/webui/authoringpage.py: add currentNode title to banner
+
+2005-01-11 04:48  djm
+
+	* exe/webui/authoringpage.py, exe/webui/authoringpane.py,
+	  exe/webui/linkblock.py, exe/webui/outlinepane.py,
+	  exe/webui/server.py: Outlines and links are working
+
+2005-01-11 03:15  jenny
+
+	* exe/webui/outlinePaneForTest.py, exe/webui/outlinepane.py,
+	  prototype/packtest/page.py, testing/testcourseline.py: Added
+	  OutlinePane class and tested
+
+2005-01-10 22:53  djm
+
+	* exe/webui/server.py: fix message
+
+2005-01-10 22:51  djm
+
+	* exe/webui/authoringpage.py, exe/webui/newpackagepage.py:
+	  NewPackagePage now loads AuthoringPage
+
+2005-01-10 22:44  djm
+
+	* exe/webui/addnodepane.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/idevicepane.py,
+	  exe/webui/serverForTest.py, exe/webui/simpleblock.py,
+	  exe/webui/titleblock.py: addnodepane is working
+
+2005-01-10 21:04  jenny
+
+	* exe/webui/addnodepane.py: finish AddNodePane class
+
+2005-01-10 21:03  jenny
+
+	* exe/webui/authoringpage.py: add addnodepane into authoring page
+
+2005-01-10 19:49  djm
+
+	* exe/webui/idevicepane.py: add idevicepane
+
+2005-01-10 07:11  djm
+
+	* exe/engine/idevice.py, exe/engine/node.py,
+	  exe/engine/simpleidevice.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/common.py,
+	  exe/webui/linkblock.py, exe/webui/serverForTest.py,
+	  exe/webui/simpleblock.py, exe/webui/titleblock.py: got SimpleBlock
+	  working
+
+2005-01-10 03:26  jenny
+
+	* exe/engine/package.py, exe/webui/addnodepane.py: 
+
+2005-01-10 03:22  djm
+
+	* prototype/packtest/page.py: Using a link instead of a button
+
+2005-01-10 02:04  djm
+
+	* exe/webui/common.py: added enabled flag to submitButton
+
+2005-01-10 02:03  djm
+
+	* exe/webui/common.py: added enabled flag to submitButton
+
+2005-01-09 23:44  djm
+
+	* exe/engine/node.py, exe/webui/authoringpane.py,
+	  exe/webui/block.py, exe/webui/serverForTest.py,
+	  exe/webui/titleblock.py: Got node titles working
+
+2005-01-09 22:01  djm
+
+	* exe/webui/addnodepane.py: inital checkin
+
+2005-01-09 21:59  djm
+
+	* exe/webui/newpackage.py, exe/webui/newpackagepage.py,
+	  exe/webui/server.py: renamed newpackage to newpackagepage
+
+2005-01-09 21:58  djm
+
+	* exe/webui/newpackage.py: changed name
+
+2005-01-09 21:51  djm
+
+	* exe/webui/authoringpage.py: created AuthoringPage
+
+2005-01-07 03:25  djm
+
+	* exe/webui/authoringpane.py, exe/webui/block.py,
+	  exe/webui/titleblock.py: Added TitleBlock
+
+2005-01-07 03:00  djm
+
+	* exe/util/error.py: call baseclass
+
+2005-01-07 02:48  djm
+
+	* exe/util/error.py: Created base exception class
+
+2005-01-06 21:41  jenny
+
+	* exe/webui/serverForTest.py: changed url
+
+2005-01-06 21:26  jenny
+
+	* exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/webui/common.py, exe/webui/propertiespane.py: added taxonomy
+
+2005-01-06 20:52  djm
+
+	* exe/webui/common.py: Added textInput, textArea, submitButton
+	  functions
+
+2005-01-06 03:24  jenny
+
+	* exe/webui/server.py: backed out test code
+
+2005-01-06 03:23  djm
+
+	* prototype/packtest/packtest.py: testing urls
+
+2005-01-06 03:22  jenny
+
+	* exe/webui/propertiespane.py: create PropertiesPane class to get
+	  package's properties
+
+2005-01-06 03:22  djm
+
+	* prototype/packtest/page.py: testing urls
+
+2005-01-06 03:21  djm
+
+	* exe/webui/block.py: added process funciton
+
+2005-01-06 03:21  djm
+
+	* exe/webui/authoringpane.py: filled in addBlocks function
+
+2005-01-06 03:20  jenny
+
+	* exe/webui/serverForTest.py: added server for testing
+	  propertiespane
+
+2005-01-06 02:44  djm
+
+	* exe/webui/block.py, exe/webui/linkblock.py: Added LinkBlock
+
+2005-01-06 00:49  djm
+
+	* exe/webui/propertiespane.py, exe/webui/server.py: Created
+	  propertiespane.. hacked server to test it
+
+2005-01-06 00:12  djm
+
+	* exe/engine/idevice.py: Added edit flag
+
+2005-01-05 21:11  jenny
+
+	* exe/engine/node.py: added idStr function.
+
+2005-01-05 21:09  jenny
+
+	* testing/testnode.py: splited node test into own test case.
+
+2005-01-05 21:00  jenny
+
+	* testing/testengine.py: check idStr()
+
+2005-01-05 04:18  djm
+
+	* exe/webui/authoringpane.py: Initial checkin
+
+2005-01-05 04:18  djm
+
+	* exe/webui/simpleblock.py: Create from blockfactory
+
+2005-01-05 03:34  djm
+
+	* testing/testengine.py: Added test for findNode
+
+2005-01-05 03:16  djm
+
+	* exe/engine/package.py: Add findNode function
+
+2005-01-05 03:16  jenny
+
+	* exe/engine/node.py: changed root id to [].
+
+2005-01-05 02:42  djm
+
+	* exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/newpackage.py, exe/webui/simpleblock.py: Created block
+	  classes
+
+2005-01-05 02:39  jenny
+
+	* exe/engine/node.py, testing/testengine.py, testing/testutil.py:
+	  Created node class and tests
+
+2005-01-05 02:34  djm
+
+	* exe/engine/idevice.py, exe/engine/simpleidevice.py: added simple
+	  idevice
+
+2005-01-05 02:32  djm
+
+	* testing/testblockfactory.py: A very limited test for BlockFactory
+
+2004-12-31 08:54  djm
+
+	* exe/webui/__init__.py: make webui a module
+
+2004-12-31 01:43  djm
+
+	* exe/webui/newpackage.py, exe/webui/server.py: New webui files for
+	  creating a new package
+
+2004-12-31 01:39  jenny
+
+	* prototype/packtest/updatePo.sh: This is the scrip of updating the
+	  po files.
+
+2004-12-31 01:19  djm
+
+	* exe/engine/packagestore.py: minor tidyup
+
+2004-12-31 01:16  djm
+
+	* prototype/editor/login.pyg, prototype/editor/preview.pyg,
+	  prototype/editor/publish.pyg, prototype/editor/speak_it.pyg,
+	  prototype/editor/start.pyg: Added pyg files
+
+2004-12-31 01:15  djm
+
+	* exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/webui/common.py, prototype/packtest/packtest.py,
+	  prototype/packtest/page.py, testing/testengine.py: Added
+	  PackageStore and associated classes
+
+2004-12-30 21:01  djm
+
+	* exe/webui/common.py: File with common HTML strings
+
+2004-12-30 04:38  djm
+
+	* exe/engine/areafield.py, exe/engine/field.py,
+	  exe/engine/genericidevice.py, exe/engine/idevice.py,
+	  exe/engine/idevicestore.py, exe/engine/imageactidevice.py,
+	  exe/engine/imagefield.py, exe/engine/node.py,
+	  exe/engine/textfield.py: Initial checkins
+
+2004-12-30 03:40  djm
+
+	* prototype/editor, prototype/exe, prototype/packtest/packtest.py:
+	  Too many directories called exe
+
+2004-12-30 03:00  djm
+
+	* prototype/packtest/packtest.py: Changed port number to 8080
+
+2004-12-30 02:55  jenny
+
+	* prototype/packtest/packtest.py: changed port number
+
+2004-12-30 02:51  jenny
+
+	* prototype/packtest/exe4.sln, prototype/packtest/exe4.vdproj: Added
+	  setup files
+
+2004-12-30 02:48  jenny
+
+	* prototype/packtest/Icon1.ico: Added icon file for Windows
+
+2004-12-30 01:34  djm
+
+	* prototype/packtest/packtest.py: can now select port from command
+	  line
+
+2004-12-30 00:05  djm
+
+	* prototype/packtest/page.py: fixed small problem with changing back
+	  to English
+
+2004-12-29 03:16  djm
+
+	* exe/util/config.py: Formatting
+
+2004-12-29 03:08  djm
+
+	* __init__.py: this should not be here
+
+2004-12-29 03:05  djm
+
+	* testing/README: A reminder
+
+2004-12-29 03:03  djm
+
+	* testing/test.conf, testing/testutil.py: Created test for
+	  Config.setupLogging
+
+2004-12-29 02:43  djm
+
+	* prototype/packtest/po/makemo.sh: Script to create mo files
+
+2004-12-29 02:40  jenny
+
+	* prototype/packtest/page.py, prototype/packtest/po,
+	  prototype/packtest/po/ch.po, prototype/packtest/po/fr.po,
+	  prototype/packtest/po/ge.po: Added multi-language interface
+
+2004-12-29 02:15  djm
+
+	* exe, exe/__init__.py, exe/engine, exe/export, exe/util, exe/webui,
+	  src, testing/testutil.py: For testing
+
+2004-12-29 01:30  djm
+
+	* src/util/config.py: another small change
+
+2004-12-29 01:27  djm
+
+	* src/util/config.py: Small change
+
+2004-12-29 01:12  
+
+	* testing/testutil.py: This is a ci
+
+2004-12-29 00:59  
+
+	* testing/testutil.py: test for config
+
+2004-12-28 23:56  
+
+	* __init__.py, src/__init__.py, src/engine/__init__.py,
+	  src/util/__init__.py: __init__.py turning directories into modules
+	  since 1995
+
+2004-12-28 23:49  
+
+	* testing/engine, testing/export, testing/util, testing/webui: don't
+	  need subdirs... least not yet
+
+2004-12-28 23:33  
+
+	* testing/engine, testing/export, testing/util, testing/webui:
+	  Initial checkin
+
+2004-12-28 22:21  
+
+	* prototype/packtest/page.py: Adding multilanguage support
+
+2004-12-28 22:04  
+
+	* testing: Initial checkin
+
+2004-12-28 22:04  
+
+	* src, src/engine, src/export, src/util, src/util/config.py,
+	  src/webui, tools: Initial checkin
+
+2004-12-28 21:55  
+
+	* prototype/exe/tag_stripper.py, prototype/exe/test.py,
+	  prototype/exe/xmlbuilder.py: Removed files which are not used
+
+2004-12-28 21:53  
+
+	* prototype/packtest/README, prototype/packtest/packtest.py,
+	  prototype/packtest/page.py, prototype/packtest/setup.py,
+	  prototype/packtest/web, prototype/packtest/web/packtest.rpy:
+	  initial checkin
+
+2004-12-28 21:50  
+
+	* prototype/editor, prototype/exe: setting up directory structure II
+
+2004-12-28 21:50  
+
+	* prototype/config.py, prototype/course.py,
+	  prototype/coursemanager.py, prototype/editor,
+	  prototype/editor/config.py, prototype/editor/course.py,
+	  prototype/editor/coursemanager.py, prototype/editor/login.py,
+	  prototype/editor/section.py, prototype/editor/tag_stripper.py,
+	  prototype/editor/test.py, prototype/editor/topic.py,
+	  prototype/editor/unit.py, prototype/editor/xmlbuilder.py,
+	  prototype/editor/xmlreader.py, prototype/login.py,
+	  prototype/packtest, prototype/section.py,
+	  prototype/tag_stripper.py, prototype/test.py, prototype/topic.py,
+	  prototype/unit.py, prototype/xmlbuilder.py,
+	  prototype/xmlreader.py: setting up directory structure
+
+2004-12-06 22:50  
+
+	* branches, tags, ., prototype, prototype/config.py,
+	  prototype/course.py, prototype/coursemanager.py,
+	  prototype/login.py, prototype/section.py,
+	  prototype/tag_stripper.py, prototype/test.py, prototype/topic.py,
+	  prototype/unit.py, prototype/xmlbuilder.py,
+	  prototype/xmlreader.py: initial import
+
