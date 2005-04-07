@@ -86,6 +86,13 @@ li.activity-multichoice {
     list-style-position: outside; 
 }
 
+
+li.activity-reflection { 
+    margin-left: 20px;
+    list-style-image: url(question.png); 
+    list-style-position: outside; 
+}
+
 li.objectives { 
     margin-left: 20px;
     list-style-image: url(objectives.png); 

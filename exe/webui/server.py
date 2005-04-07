@@ -98,7 +98,7 @@ def launchBrowser(port):
         #TODO refactor this into a separate function or class
         exeDir = g_webInterface.config.exeDir
         if not g_webInterface.config.browserPath:
-            if "firefox.exe" in os.listdir(exeDir):
+            if "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox"):
                 g_webInterface.config.browserPath = exeDir + \
                                                     "\\Mozilla Firefox\\firefox"
                 

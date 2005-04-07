@@ -124,7 +124,7 @@ class TitleBlock(Block):
             html += common.image("stock-go-down-off.png")
         
         html += "<p class=\"prev_edit\">\n"
-        html += self.__renderNodeActions()
+        html += "&nbsp;"
         html += "</p>\n"
         html += "</div>\n"
         return html
@@ -136,23 +136,12 @@ class TitleBlock(Block):
         """
         html  = "<div>\n"
         html += "<p class=\"prev_edit\">\n"
-        html += self.__renderNodeActions()
+        html += "&nbsp;"
         html += "</p>\n"
         html += self.renderView()
         html += common.submitImage("edit", self.id,
                                    "stock-edit.png", _("Edit this Title"))
         html += "</div>\n"
-        return html
-
-
-    def __renderNodeActions(self):
-        """
-        Common XHTML used by both renderEdit and renderPreview
-        """
-        html  = common.submitImage("PreviewAll", self.id,
-                                   "edit.gif", _("Preview All"))
-        html += common.submitImage("EditAll", self.id,
-                                   "stock-edit.png", _("Edit All"))
         return html
 
 

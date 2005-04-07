@@ -26,31 +26,27 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 SUPPORT
 =======
-This is an early (the first!) release of the eXe project.  It is intended
+This is an early release of the eXe project.  It is intended
 to elicit feedback from the user community.  We expect file formats will
 change.  It would be a bad idea to invest a lot of time in creating a 
-large package with this release. This release is just for playing.
+large package with this release.
 
-If you have any problems or have any feedback please post them on the Eduforge
-forum https://eduforge.org/forum/forum.php?forum_id=284 or email them to
-d.moore@auckland.ac.nz. 
+If you have any problems or have any feedback please report them at
+http://exe.cfdl.auckland.ac.nz or email exe@auckland.ac.nz.
 
-REQUIREMENTS
-============
-The interface for eXe requires the Mozilla Firefox browser.  (This can be
-downloaded from http://www.mozilla.org/products/firefox).  You do not
-need to set Firefox as your default browser (but it doesn't hurt ;-) ).
 
 WINDOWS
 =======
 
 INSTALLATION
 ------------
-- Download exe-0.1.223.msi and double click it then follow the instructions. 
+- Download exeinstall.exe and double click it then follow the instructions. 
 - You will be asked what directory to install eXe in.  The default will normally
   be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under 
   "All Programs".
+- If you leave "Run eXe 0.3" selected the installer will launch eXe
+  once it is installed.
 
 
 RUNNING
@@ -62,29 +58,13 @@ will start.  To close eXe you will need to exit both of these.  Remember to
 save your content before exiting.
 
 The first time you run you may get asked if you want to allow eXe
-to access the Internet.  eXe does NOT require access to the Internet,
-just select the option to block its access.
+to access the Internet.  eXe does NOT require access to the Internet.
+With the XP firewall you can just select the option to block its access.
+With the McAfee firewall you will need to allow access.
 
 Packages are saved to your "My Documents" folder with the .elp extension 
 (eXe eLearning Package).
 
-
-LINUX
-=====
-These instructions are tailored for Windows users.  eXe does work on Linux
-as well, but does not have an automated installer.  Linux users will need
-to untar the source files and have Python 2.3.4 (http://python.org) and 
-Twisted 1.3.0 (http://twistedmatrix.com) installed.
-
-
-KNOWN BUGS
-==========
-- I you have changed content on the Authoring page and change to another page
-  without clicking on a Done (green tick) the changes will be lost.
-- I you have changed the fields on the Properties page and change to another page
-  without clicking on a Done the changes will be lost.
-- The Outline Pane in the Control Panel has problems with large trees - we're
-  working on it!  If you know XUL please contact us!
 
 Have a nice day!
 

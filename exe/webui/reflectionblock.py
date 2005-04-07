@@ -124,6 +124,9 @@ class ReflectionBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div id=\"iDevice\" class=\"reflection\">\n"
+        html += "<ul><li class=\"activity-reflection\">\n"
+        html += "<span class=\"iDeviceTitle\">"
+        html += self.idevice.title+"</span>\n</li></ul>\n"
         html += self.renderPage()
         html += "</div>\n"
         return html
@@ -134,6 +137,9 @@ class ReflectionBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = "<div id=\"iDevice\" class=\"reflection\">\n"
+        html += "<ul><li class=\"activity-reflection\">\n"
+        html += "<span class=\"iDeviceTitle\">"
+        html += self.idevice.title+"</span>\n</li></ul>\n"
         html += self.renderPage()
         html += self.renderViewButtons()
         html += "</div>\n"

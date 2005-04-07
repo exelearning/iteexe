@@ -1,0 +1,17 @@
+Version 0.3 - Scrawny Pukeko
+* modified Case Study iDevice
+* new Web Site export
+* Firefox bundled with eXe as one install
+* Improved file format (not sure it will be final)
+* A new installer which will launch the User Guide when finished
+  and will remove old versions of eXe
+* Fixes for bugs # 7, 13, 14, 10, 9, 22, 24, 25, 4, 37, 15, 18, 34, 35
+
+Version 0.2 - Lazy Wombat
+* significant improvements in the user interface
+* the addition of more iDevices
+* the ability to change Styles
+* the addition of pedagogical help and tips to iDevices.
+
+Version 0.1 - Ugly Armadillo
+* initial release

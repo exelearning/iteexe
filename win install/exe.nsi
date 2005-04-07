@@ -2,14 +2,14 @@
 
 ; Define your application name
 !define APPNAME "exe"
-!define EXE_VERSION "0.5"
+!define EXE_VERSION "0.3"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-Icon "c:\exe\dist\icon1.ico"
+Icon "C:\eXe branches\dist\icon1.ico"
 OutFile "exeinstall.exe"
 
 ; Modern interface settings
@@ -17,10 +17,10 @@ OutFile "exeinstall.exe"
 
 !define MUI_ABORTWARNING
 !define MUI_FINISHPAGE_RUN "$INSTDIR\server.exe"
-!define MUI_FINISHPAGE_RUN_PARAMETERS exe-user-guide.elp
+!define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "..\..\exe\dist\exeLicense.txt"
+!insertmacro MUI_PAGE_LICENSE "C:\eXe branches\dist\exeLicense.txt"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -44,9 +44,16 @@ FunctionEnd
 
 Section "Remove Old Version" Section1
 	; Remove any previous nsis install...
-  IfFileExists "$INSTDIR\uninstall.exe" 0 Next
-	  ExecWait '"$INSTDIR\uninstall.exe" /S _?=$INSTDIR'
-		Delete "$INSTDIR\uninstall.exe"
+	; Read where the last nsis install was
+	ReadRegStr $R1 HKLM "Software\${APPNAME}" ""
+	StrCmp $R1 "" SetR1 DoUninstall
+	SetR1:
+	  StrCpy $R1 "$PROGRAMFILES\exe"
+	DoUninstall:
+		IfFileExists "$R1\uninstall.exe" 0 Next
+			ExecWait '"$R1\uninstall.exe" /S _?=$R1'
+			Delete "$R1\uninstall.exe"
+			RMDir "$R1"
 	Next:
 	; Uninstall previous msi packages...
   StrCpy $R0 "{053B45FD-255C-4E20-AA9D-218BB8A2B215}";  the MSI's ProductID of my package
@@ -56,7 +63,7 @@ Section "Remove Old Version" Section1
 	StrCpy $R0 "{3BEEE1AE-B96C-4E83-A63A-5886E4C1707C}";  the MSI's ProductID of my package
 	Call UninstallMSI
 	; If still there, tell them to manually uninstall it!
-  IfFileExists "C:\program files\exe\server.exe" 0 Done
+  IfFileExists "$PROGRAMFILES\exe\server.exe" 0 Done
 	  MessageBox MB_OK "Before continuing please manually uninstall the old version of exe using the controla panel, 'add remove programs' utility. Press OK when this is done"
 	Done:
 SectionEnd
@@ -70,7 +77,7 @@ Section "exe" Section2
 
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
-	File /r "C:\exe\dist\*.*"
+	File /r "C:\eXe branches\dist\*.*"
 	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
 	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
