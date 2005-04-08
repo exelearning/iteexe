@@ -1,0 +1,5 @@
+#!/bin/bash
+
+XSLPATH=$0.xsl
+
+svn log --xml --verbose | xsltproc --stringparam strip-prefix trunk $XSLPATH - > ChangeLog
