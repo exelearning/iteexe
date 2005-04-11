@@ -58,8 +58,7 @@ class PropertiesPage(Resource):
         self.menuPane.process(request)
                         
         # Rendering
-        html  = common.header() + common.banner()
-        html += self.menuPane.render()
+        html  = common.header() + common.banner(request)
         html += "<div id=\"main\"> \n"
         html += "<h3>Project Properties</h3>\n"
         html += self.propertiesPane.render()

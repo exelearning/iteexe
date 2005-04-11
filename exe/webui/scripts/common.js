@@ -32,8 +32,8 @@ function showMe(ident, w, h)
     if (!elmDiv || 
         elmDiv.innerHTML != document.getElementById(ident).innerHTML){
 
-        var elmDiv = document.createElement('div');
-        elmDiv.id  = 'popupmessage';
+        elmDiv = document.createElement('div');
+        elmDiv.id = 'popupmessage';
         elmDiv.className="popupDiv";
         elmDiv.style.cssText = 'position:absolute; left: ' + 
                                (xpos) + 'px; top: '+(ypos - h/2) + 
@@ -75,10 +75,11 @@ function clearHidden()
 // contentForm to the server
 function submitLink(action, object, changed) 
 {
-    document.contentForm.action.value = action;
-    document.contentForm.object.value = object;
-    document.contentForm.isChanged.value = changed
-    document.contentForm.submit();
+    var form = top["authoringIFrame1"].document.getElementById('contentForm')
+    form.action.value = action;
+    form.object.value = object;
+    form.isChanged.value = changed;
+    form.submit();
 }
 
 function beforeUnload(){
@@ -91,7 +92,6 @@ function saveChange(action){
     document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value = 0
     document.getElementById("contentFrame").contentDocument.contentForm.action.value = action;
     document.getElementById("contentFrame").contentDocument.contentForm.submit();
-    
 }
 
 

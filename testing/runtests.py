@@ -22,6 +22,7 @@ import unittest
 from testconfig   import TestConfig
 from testnode     import TestNode
 from testuniqueid import TestUniqueId
+from testxmlhttp  import TestOutline
 from testpackage  import TestPackage
 from testblock    import TestBlock
 from testidevice  import TestIdevice
@@ -33,7 +34,8 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestConfig))
     suite.addTest(unittest.makeSuite(TestNode))
     suite.addTest(unittest.makeSuite(TestUniqueId))
-    suite.addTest(unittest.makeSuite(TestIdevice))
+    suite.addTest(unittest.makeSuite(TestOutline))
     suite.addTest(unittest.makeSuite(TestPackage))
     suite.addTest(unittest.makeSuite(TestBlock))
+    suite.addTest(unittest.makeSuite(TestIdevice))
     unittest.TextTestRunner(verbosity=2).run(suite)

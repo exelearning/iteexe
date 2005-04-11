@@ -45,13 +45,13 @@ class IdevicePane(object):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
-    def __init__(self):
+    def __init__(self, package):
         """ 
         Initialize
         """ 
-        pass
+        self.package = package
 
-    def process(self, request, package):
+    def process(self, request):
         """ 
         Process the request arguments to see if we're supposed to 
         add an iDevice
@@ -60,7 +60,7 @@ class IdevicePane(object):
             request.args["action"][0] == "AddIdevice"):
 
             if request.args["object"][0] == "FreeTextIdevice":
-                package.currentNode.addIdevice(FreeTextIdevice())
+                self.package.currentNode.addIdevice(FreeTextIdevice())
 
             elif request.args["object"][0] == "ReadingActIdevice":
                 readingAct = GenericIdevice(_("Reading Activity"), 
@@ -91,7 +91,7 @@ _("""The use of this element is flexible.  Use it to provide a summary of the
 points covered in the reading, or as a starting point for further analysis of
 the reading by posing a question or providing a statement to begin a
 debate."""))
-                package.currentNode.addIdevice(readingAct)
+                self.package.currentNode.addIdevice(readingAct)
             
             elif request.args["object"][0] == "ObjectivesIdevice":
                 objectives = GenericIdevice(_("Objectives"), 
@@ -104,7 +104,7 @@ learning tasks."""),
 
                 objectives.addField(_("Objectives"), "TextArea", "objectives",
 _("""Type the learning objectives for this resource."""))
-                package.currentNode.addIdevice(objectives)
+                self.package.currentNode.addIdevice(objectives)
 
             elif request.args["object"][0] == "PreknowledgeIdevice":
                 preknowledge = GenericIdevice(_("Preknowledge"), 
@@ -121,7 +121,7 @@ _("""Prerequisite knowledge refers to the knowledge learners should already
 _("""Describe the prerequisite knowledge learners should have to effectively
 complete this learning."""))
                 
-                package.currentNode.addIdevice(preknowledge)
+                self.package.currentNode.addIdevice(preknowledge)
             
             elif request.args["object"][0] == "ActivityIdevice":
                 activity = GenericIdevice(_("Activity"), 
@@ -134,20 +134,20 @@ that may help or hinder the learner in the performance of the task."""),
                 activity.addField(_("Activity"), "TextArea", "activity",
 _("""Describe the tasks the learners should complete."""))
                                           
-                package.currentNode.addIdevice(activity)
+                self.package.currentNode.addIdevice(activity)
                 
             elif request.args["object"][0] == "MultichoiceIdevice":
                 multichoice = MultichoiceIdevice()
                 multichoice.addOption()
-                package.currentNode.addIdevice(multichoice)
+                self.package.currentNode.addIdevice(multichoice)
                 
             elif request.args["object"][0] == "ReflectionIdevice":
                 reflection = ReflectionIdevice()
-                package.currentNode.addIdevice(reflection)
+                self.package.currentNode.addIdevice(reflection)
                 
             elif request.args["object"][0] == "CaseStudyIdevice":
                 casestudy = CasestudyIdevice()
-                package.currentNode.addIdevice(casestudy)
+                self.package.currentNode.addIdevice(casestudy)
                 
             elif request.args["object"][0] == "MultiModeIdevice":
                 multiMode = GenericIdevice("", "multimode", "", "", "")
@@ -156,46 +156,31 @@ _("""Describe the tasks the learners should complete."""))
                 multiMode.addField( "learningText", "TextArea", "learningText", 
                                     "" )
                 multiMode.addField( "audioFile", "Audio", "audio", "" )
-                package.currentNode.addIdevice( multiMode )
+                self.package.currentNode.addIdevice( multiMode )
             
             
     def render(self):
         """
-        Returns an XHTML string for viewing this pane
+        Returns an XUL string for viewing this pane
         """
         log.debug("render")
-        
-        html  = "<div>\n"
-        html += common.submitLink("AddIdevice", "ActivityIdevice",
-                                  _("Activity"), "", 1)
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "CaseStudyIdevice",
-                                  _("Case Study"), "", 1)
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "FreeTextIdevice",
-                                  _("Free Text"), "", 1)
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "MultichoiceIdevice",
-                                  _("Multichoice Question"), "", 1)
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "ObjectivesIdevice",
-                                  _("Objectives"), "", 1)
-        html += "<br/>\n"        
-        html += common.submitLink("AddIdevice", "PreknowledgeIdevice",
-                                  _("Preknowledge"), "", 1)
-        html += "<br/>\n"
-        html += common.submitLink("AddIdevice", "ReadingActIdevice",
-                                  _("Reading Activity"), "", 1)
-        html += "<br/>\n"        
-        html += common.submitLink("AddIdevice", "ReflectionIdevice",
-                                  _("Reflection"), "", 1)
-        html += "<br/>\n"                        
-        html += common.submitLink("AddIdevice", "MultiModeIdevice",
-                                  _("Multi Mode"), "", 1)
-                                  
-        html += "</div> \n"
-
-        return html
+        itemTemplate = """  <listitem label="%s" onclick="submitLink('AddIdevice', '%s', 1)"/>"""
+        ##itemTemplate = """  <listitem label="%s" onclick="alert('hello %s')"/>"""
+        xul = ('<!-- IDevice Pane Start -->',
+               '<listbox>',
+               itemTemplate % (_("Activity"), "ActivityIdevice"),
+               itemTemplate % (_("Case Study"), "CaseStudyIdevice"),
+               itemTemplate % (_("Free Text"), "FreeTextIdevice"),
+               itemTemplate % (_("Multichoice Question"), "MultichoiceIdevice"),
+               itemTemplate % (_("Objectives"), "ObjectivesIdevice"),
+               itemTemplate % (_("Preknowledge"), "PreknowledgeIdevice"),
+               itemTemplate % (_("Reading Activity"), "ReadingActIdevice"),
+               itemTemplate % (_("Reflection"), "ReflectionIdevice"),
+               itemTemplate % (_("Multi Mode"), "MultiModeIdevice"),
+               '</listbox>',
+               '<!-- IDevice Pane End -->',
+              )
+        return '\n'.join(xul) # Add in the newlines
         
     
 # ===========================================================================

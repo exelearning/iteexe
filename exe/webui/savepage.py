@@ -77,16 +77,20 @@ class SavePage(Resource):
                 
             if os.path.isdir(fileDir):
                 self.dataDir = fileDir
+                oldDir = os.path.abspath('.')
                 os.chdir(fileDir)
-                self.package.name = \
-                        os.path.splitext(os.path.basename(fileName))[0]
-                if not fileName.endswith(".elp"):
-                    fileName = fileName + ".elp"
-              
-                log.info("saving " + fileName)
-                self.package.save(fileDir)                
-                self.message = _("The course package has been "\
-                                 +"saved successfully.")
+                try:
+                    self.package.name = \
+                            os.path.splitext(os.path.basename(fileName))[0]
+                    if not fileName.endswith(".elp"):
+                        fileName = fileName + ".elp"
+                  
+                    log.info("saving " + fileName)
+                    self.package.save(fileDir)                
+                    self.message = _("The course package has been "\
+                                     +"saved successfully.")
+                finally:
+                    os.chdir(oldDir)
             else:
                 self.message = _("Invalid path, please enter an another one.")
                 
@@ -104,8 +108,7 @@ class SavePage(Resource):
                         
         # Rendering
         html  = common.header() 
-        html += common.banner()
-        html += self.menuPane.render()
+        html += common.banner(request)
         html += "<div id=\"main\"> \n"
         html += "<h3>Save Project</h3>\n"        
         html += "<form method=\"post\" action=\"%s\" " % self.url

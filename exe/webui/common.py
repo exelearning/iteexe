@@ -35,30 +35,36 @@ def docType():
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     return html
 
-def header():
+def header(style='default'):
     """Generates the common header XHTML"""
     # NB: Authoring Page has its own header
     html  = docType()
     html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
     html += "<head>\n"
     html += "<style type=\"text/css\">\n"
-    html += "@import url(/css/exe.css);</style>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
-    html += "</script>\n"
+    html += "@import url(/css/exe.css);\n"
+    html += "@import url(/style/"+style+"/content.css);</style>\n"
+    html += "<script language=\"JavaScript\" src=\"/scripts/common.js\"/>"
+    html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\"/>" 
     html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\"></meta>\n";
     html += "</head>\n"
     return html
 
-def banner(): 
+def banner(request): 
     """Generates the common page banner XHTML"""
-    html  = "<body onload=\"initTabs();\">\n"
-    return html
+    html = ('<body>',
+            '<form method="post" action="%s" id="contentForm" name="contentForm" onload="clearHidden();">' % request.path,
+            '    <input type="hidden" name="action" value=""/>',
+            '    <input type="hidden" name="object" value=""/>',
+            '    <input type="hidden" name="isChanged" value="0"/>',
+            '')
+    return '\n'.join(html)
 
 def footer():
     """Generates the common page footer XHTML"""
-    html  = "</body></html>\n"
+    html  = "</form></body></html>\n"
     return html
     
 def hiddenField(name, value=""):
@@ -69,7 +75,7 @@ def hiddenField(name, value=""):
 
 def textInput(name, value="", size=40):
     """Adds a text input to a form"""
-    html  = "<input type=\"text\" name=\"%s\" " % name
+    html  = "<input type=\"text\" name=\"%s\" id=\"%s\" " % (name, name)
     html += "value=\"%s\"" % value
     html += " size=\"%s\" />\n" % size
     return html

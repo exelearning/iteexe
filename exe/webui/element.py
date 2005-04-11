@@ -23,7 +23,7 @@ import logging
 from exe.webui                  import common
 from exe.webui.webinterface     import g_webInterface
 from exe.engine.packagestore    import g_packageStore
-from os                         import mkdir
+from os                         import getcwd, mkdir
 from os.path                    import exists, splitext, basename, join, sep
 from  shutil                    import copyfile
 
@@ -218,12 +218,12 @@ class ImageElement(Element):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>:<br /><img src="images/%s" \
             class="%s" width="%s" height="%s" border="%s" /><br />\n""" \
-            %( self.titleMessage, filename, self.class_, self.width, \
+            %(self.titleMessage, filename, self.class_, self.width, \
               self.height, self.border)
               
             html += """<strong>Change to</strong>:<input type="file" name="%s"\
                  onchange="document.contentForm.%s_filename.value=this.value"/>\
-                    <br />\n"""  % ( self.id, self.id)
+                    <br />\n"""  % (self.id, self.id)
                     
             html += """<input type="hidden" name="old_%s" value="%s" />""" \
                         % (self.id, filename)
@@ -332,10 +332,10 @@ class AudioElement(Element):
         if filename.strip()!="" and exists(join(imgDir, filename)):
             ##update, show previous file 
             html += """<strong>Previous %s</strong>: %s<br />\n""" \
-                    %( self.titleMessage, self.renderView(filename))
+                    %(self.titleMessage, self.renderView(filename))
             html += """<strong>Change to</strong>:<input type="file" name="%s"\
                   onchange="document.contentForm.%s_filename.value=this.value"/> \
-                    <br />\n""" % ( self.id, self.id)
+                    <br />\n""" % (self.id, self.id)
             html += """<input type=hidden name="old_%s" value="%s" />"""\
                          %(self.id, filename)
         else:     
@@ -362,13 +362,13 @@ class AudioElement(Element):
             if not exists("%s/images" %currentDir):
                 try:
                     mkdir("%s/images" %currentDir)
-                    copyfile( dataDir+ "/images/mp3player.swf", \
+                    copyfile(dataDir + "/images/mp3player.swf", \
                              currentDir + "/images/mp3player.swf")
                 except:
                     return "can not create images directory <br />\n"
         
             ##copy files into images dir
-            copyfile( dataDir+ "/images/" + filename,\
+            copyfile(dataDir + "/images/" + filename,\
                      currentDir + "/images/"+ filename)
         """    
         if filename.strip() != "":

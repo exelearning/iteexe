@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-OptionElment is responsible for a block of option.  Used by MultichoiceBlock
+QuestionElement is responsible for a block of option.  Used by MultichoiceBlock
 """
 
 import logging

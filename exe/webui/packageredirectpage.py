@@ -28,11 +28,7 @@ from twisted.web.resource import Resource
 from twisted.web.error    import ForbiddenResource
 from exe.webui import common
 from exe.engine.packagestore  import g_packageStore
-from exe.webui.authoringpage  import AuthoringPage
-from exe.webui.propertiespage import PropertiesPage
-from exe.webui.savepage       import SavePage
-from exe.webui.loadpage       import LoadPage
-from exe.webui.exportpage     import ExportPage
+from exe.webui.mainpage  import MainPage
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -71,35 +67,12 @@ class PackageRedirectPage(Resource):
         if self.package:
             package = self.package
         else:
-        # Create new package
+            # Create new package
             package = g_packageStore.createPackage()
             log.info("Creating a new package name="+ package.name)
 
-        authoringPage = AuthoringPage()
-        self.putChild(package.name, authoringPage)
-
-        propertiesPage = PropertiesPage()
-        authoringPage.putChild("properties", propertiesPage)
-
-        savePage = SavePage()
-        authoringPage.putChild("save", savePage)
-
-        loadpage = LoadPage()
-        authoringPage.putChild("load", loadpage) 
-        
-        exportPage = ExportPage()
-        authoringPage.putChild("export", exportPage)
-                     
+        mainPage = MainPage(package)
+        self.putChild(package.name, mainPage)
         # Rendering
-                   
-        html = "<html><body onload=\"initTabs();\"\n"       
-        html += "onbeforeunload = \"beforeUnload();\">\n" 
-        html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
-        html += "</script>\n"
-
-        html += "<IFRAME src=\"http:/%s\" width=\"100%%\" " % package.name
-        html += "name=\"contentFrame\" id= \"contentFrame\""
-        html += "height=\"99%%\">\n" 
-        html += "</IFRAME>"
-        html += common.footer()
-        return html
+        request.redirect(package.name)
+        return ''

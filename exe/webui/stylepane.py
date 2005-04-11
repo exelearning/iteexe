@@ -34,36 +34,37 @@ class StylePane(object):
     """
     StylePane is responsible for creating the XHTML for the styles tab
     """
-    def __init__(self):
-        self.__package = None
+    def __init__(self, package):
+        self.package = package
 
-    def process(self, request, package):
+    def process(self, request):
         """ 
         Get current package
         """
         log.debug("process")
-        self.__package = package
         
         if ("action" in request.args and 
             request.args["action"][0] == "ChangeStyle"):
-            self.__package.style = request.args["object"][0]
+            self.package.style = request.args["object"][0]
             
             
     def render(self):
         """
-        Returns an XHTML string for viewing this pane
+        Returns an XUL string for viewing this pane
         """
         log.debug("render")
-        
-        html = "<div>\n"
+        # Render the start tags
+        xul = ('<!-- Styles Pane Start -->',
+               '<listbox>',)
+        # Render each style individually
+        itemTemplate = """  <listitem label="%s" onclick="submitLink('ChangeStyle', '%s', 1)"/>"""
         options = [(style, style) for style in g_webInterface.config.styles]
         for option, value in options:
-            html += common.submitLink("ChangeStyle", option, value, "", 1)
-            html += "<br/>\n"
-        
-        html += "</div>\n"
-        return html
-
+            xul += (itemTemplate % (option, value),)
+        # Render the end tags
+        xul += ('</listbox>',
+                '<!-- Styles Pane End -->',)
+        return '\n'.join(xul) # Add in the newlines
         
     
 

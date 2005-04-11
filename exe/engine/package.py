@@ -103,19 +103,22 @@ class Package(jelly.Jellyable):
         log.debug("data directory: " + path)
 
         self.isChanged = 0
+        oldDir = os.getcwd()
         os.chdir(path)
+        try:
+            fileName = self.name + ".elp" 
+            zippedFile = zipfile.ZipFile(fileName, "w", zipfile.ZIP_DEFLATED)
 
-        fileName = self.name + ".elp" 
-        zippedFile = zipfile.ZipFile(fileName, "w", zipfile.ZIP_DEFLATED)
-
-        encoder = banana.Banana()
-        encoder.connectionMade()
-        encoder._selectDialect("none")
-        strBuffer = cStringIO.StringIO()
-        encoder.transport = strBuffer
-        encoder.sendEncoded(jelly.jelly(self))
-        zippedFile.writestr("content.data", strBuffer.getvalue())
-        zippedFile.close()
+            encoder = banana.Banana()
+            encoder.connectionMade()
+            encoder._selectDialect("none")
+            strBuffer = cStringIO.StringIO()
+            encoder.transport = strBuffer
+            encoder.sendEncoded(jelly.jelly(self))
+            zippedFile.writestr("content.data", strBuffer.getvalue())
+            zippedFile.close()
+        finally:
+            os.chdir(oldDir)
         
 
     def load(path):

@@ -27,7 +27,7 @@ Webserver module
 
 from twisted.internet import reactor
 from twisted.internet.error import CannotListenError
-from twisted.web import server
+from nevow import appserver
 from twisted.web import static
 import os
 import os.path
@@ -57,7 +57,6 @@ def main():
     root = None
     if len(sys.argv) > 1:
         filePath = sys.argv[1] 
-       # print filePath
         try:  
             package = g_packageStore.loadPackage(filePath)
         except:
@@ -73,7 +72,7 @@ def main():
     
     if not isWrongfile:
         g_webInterface.rootPage = root
-    #TODO Find a better way to deal with these globals :-(
+        #TODO Find a better way to deal with these globals :-(
         g_webInterface.packageStore = g_packageStore
         
         root.putChild("images",  static.File(config.exeDir+"/images"))
@@ -83,7 +82,7 @@ def main():
 
     launchBrowser(config.port)  
     try:
-        reactor.listenTCP(config.port, server.Site(root), interface="127.0.0.1")
+        reactor.listenTCP(config.port, appserver.NevowSite(root), interface="127.0.0.1")
     except CannotListenError:
         pass
     else:

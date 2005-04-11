@@ -79,22 +79,25 @@ class ExportPage(Resource):
                 self.scormStr2 = "selected"
        
         if "export" in request.args:            
+            oldDir = os.path.abspath('.')
             os.chdir(dataDir)
-            
-            if request.args["exportMethod"][0] == "webpage":
-                websiteExport = WebsiteExport()
-                websiteExport.export(self.package)
+            try:
+                if request.args["exportMethod"][0] == "webpage":
+                    websiteExport = WebsiteExport()
+                    websiteExport.export(self.package)
 
-            elif request.args["exportMethod"][0] == "scorm":
-                scormExport = ScormExport()
-                scormExport.export(self.package, True)
-            
-            elif request.args["exportMethod"][0] == "scorm-no-metadata":
-                scormExport = ScormExport()
-                scormExport.export(self.package, False)
-            
-            self.message = \
-                _("The course package has been exported successfully.")
+                elif request.args["exportMethod"][0] == "scorm":
+                    scormExport = ScormExport()
+                    scormExport.export(self.package, True)
+                
+                elif request.args["exportMethod"][0] == "scorm-no-metadata":
+                    scormExport = ScormExport()
+                    scormExport.export(self.package, False)
+                
+                self.message = \
+                    _("The course package has been exported successfully.")
+            finally:
+                os.chdir(oldDir)
             
         if ("action" in request.args and 
             request.args["action"][0] == "saveChange"):
@@ -114,8 +117,7 @@ class ExportPage(Resource):
                         
         # Rendering
         
-        html  = common.header() + common.banner()
-        html += self.menuPane.render()
+        html  = common.header() + common.banner(request)
         html += "<div id=\"main\"> \n"
         html += "<h3>Export Project</h3>\n"
         html += "<form method=\"post\" action=\"%s\" " % self.url

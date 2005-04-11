@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-OptionElment is responsible for a block of option.  Used by MultichoiceBlock
+OptionElement is responsible for a block of option.  Used by MultichoiceBlock
 """
 
 import logging
@@ -29,7 +29,7 @@ _   = gettext.gettext
 # ===========================================================================
 class OptionElement(object):
     """
-    OptionElment is responsible for a block of option.  Used by MultichoiceBlock
+    OptionElement is responsible for a block of option.  Used by MultichoiceBlock
     """
     def __init__(self, index, idevice, option):
         """

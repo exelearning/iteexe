@@ -23,6 +23,7 @@ OutlinePane is responsible for creating the XHTML for the package outline
 
 import logging
 import gettext
+from nevow.livepage import document
 from exe.webui import common
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -33,121 +34,128 @@ class OutlinePane(object):
     """
     OutlinePane is responsible for creating the XHTML for the package outline
     """
-    def __init__(self):
-        self.__package = None
+    def __init__(self, package):
+        """'parent' is our authoring page"""
+        self.package = package
 
-    def process(self, request, package):
+    def process(self, request):
         """ 
         Get current package
         """
         log.debug("process")
-        self.__package = package
         
         if "action" in request.args:
             nodeId = request.args["object"][0]
 
             if request.args["action"][0] == "changeNode":
-                node = self.__package.findNode(nodeId)
+                node = self.package.findNode(nodeId)
                 if node is not None:
-                    self.__package.currentNode = node
+                    self.package.currentNode = node
                 else:
                     log.error("changeNode cannot locate "+nodeId)
-
-            elif request.args["action"][0] == "addChildNode":
-                node = self.__package.findNode(nodeId)
+            # The Draft node has an id of '0' and cannot be added to or deleted
+            elif nodeId != '0' and request.args["action"][0] == "addChildNode":
+                node = self.package.findNode(nodeId)
                 if node is not None:
-                    self.__package.currentNode = node.createChild()
+                    self.package.currentNode = node.createChild()
                 else:
                     log.error("addChildNode cannot locate "+nodeId)
-
-            elif request.args["action"][0] == "deleteNode":
-                node = self.__package.findNode(nodeId)
+            # Don't let them delete the Draft or Home nodes (also checked on client)
+            elif nodeId not in ('0', '1') and request.args["action"][0] == "deleteNode":
+                node = self.package.findNode(nodeId)
                 if node is not None:
                     node.delete()
-                    if node.isAncestorOf(self.__package.currentNode):
-                        self.__package.currentNode = self.__package.root
+                    if node.isAncestorOf(self.package.currentNode):
+                        self.package.currentNode = self.package.root
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
-
-
             
+    def handleAddChild(self, client, nodeId):
+        """Called from client via xmlhttp. When the addChild button is called.
+        Hooked up by authoringPage.py
+        """
+        if nodeId == '0': return # Can't add a child to the draft node!
+        node = self.package.findNode(nodeId)
+        if node is not None:
+            self.package.currentNode = newNode = node.createChild()
+            client.call('XHAddChildTreeItem', newNode.getIdStr(), str(newNode.title))
+
+    def handleDelNode(self, client, confirm, nodeId):
+        """Called from xmlhttp. 
+        'confirm' is a string. It is 'false' if the user or the gui has cancelled the deletion
+        'nodeId' is the nodeId
+        """
+        if confirm == 'true' and nodeId not in ('0', '1'):
+            node = self.package.findNode(nodeId)
+            if node is not None:
+                # Actually remove the elements in the dom
+                client.call('XHDelNode', nodeId)
+                if node.isAncestorOf(self.package.currentNode):
+                    self.package.currentNode = node.parent
+                node.delete()
+            else:
+                log.error("deleteNode cannot locate " + nodeId)
+
+    def handleRenNode(self, client, nodeId, newName):
+        """Called from xmlhttp"""
+        if newName in ('', 'null'): return
+        node = self.package.findNode(nodeId)
+        node.title.setTitle(newName)
+        client.call('XHRenNode', newName)
+
+    def handleDrop(self, ctx, sourceNodeId, parentNodeId, nextSiblingNodeId):
+        """Handles the end of a drag drop operation..."""
+        print sourceNodeId, parentNodeId, nextSiblingNodeId
+        return "alert('hello'); return true" # Will be evaluated as JS on client
+
     def render(self):
         """
-        Returns an XHTML string for viewing this pane
+        Returns an xul string for viewing this pane.
+        The xul is stored in a tuple inside the methods of this class
+        then new lines are added when we actually return it
         """
         log.debug("render")
-        
-        html  = "<!-- start outline pane -->\n"
-        html += "<div>\n"
-        html += "<ul>\n"
-        html += "<li>" 
-        html += self.__renderNode(self.__package.draft)
-        html += "</li>\n" 
-        html += "<li>" 
-        html += "<div id=\"node_actions\">" 
-        html += self.__renderNode(self.__package.root)
-        html += common.submitImage("addChildNode", 
-                                   self.__package.root.getIdStr(), 
-                                   "stock-new.png",
-                                   title=_("Add ")+self.__package.levelName(0))
-        html += self.__renderChildren(self.__package.root)
-        html += "</div>" 
-        html += "</li>\n" 
-        html += "</ul>\n"
-        html += "</div>\n"
-        html += "<!-- end outline pane -->\n"
+        xul = ('<!-- start outline pane -->',
+               '    <tree id="outlineTree" hidecolumnpicker="true" onselect="outlineClick()" ',
+               '          context="outlineMenu" flex="1"',
+               '          ondraggesture="treeDragGesture(event)"'
+               '          ondragenter="treeDragEnter(event)"',
+               '          ondragover="treeDragOver(event)"',
+               '          ondragexit="treeDragExit(event)"',
+               '          ondragdrop="treeDragDrop(event)">',
+               '        <treecols>',
+               '            <treecol id="sectionCol" primary="true" label="Section" flex="1"/>',
+               '        </treecols>',
+               '        <treechildren>',)
+        xul += self.__renderNode(self.package.draft, 12)
+        xul += self.__renderNode(self.package.root, 12)
+        xul += ('       </treechildren>',
+                '    </tree>',
+                '<!-- end outline pane -->')
+        return '\n'.join(xul)
 
-        return html
-
-
-    def __renderChildren(self, node):
-        """Renders all the children of a node as a list"""
-        html = ""
+    def __renderNode(self, node, indent, extraIndent=2):
+        """Renders all children recursively.
+        'indent' is the number of spaces to put in front of each line of xul
+        'extraIndent' is the extra number of spaces to put for the next level when recursing
+        (this is really used as a local static constant)"""
         if node.children:
-            html += "<ul>\n"
+            start = '<treeitem container="true" open="true">'
+        else:
+            start = '<treeitem>'
+        # Render the inner bits
+        xul = ('%s' % start,
+               """    <treerow _exe_nodeid="%s"> """ % node.getIdStr(),
+               '        <treecell label="%s"/>' % node.title,
+               '    </treerow>')
+        # Recursively render children if necessary
+        if node.children:
+            xul += ('    <treechildren>',)
             for child in node.children:
-                html += "<li>" 
-                html += "<div id=\"node_actions\">" 
-                html += self.__renderNode(child)
-                html += self.__renderActions(child)
-                html += "</div>" 
-                html += self.__renderChildren(child)
-                html += "</li>\n" 
-                
-            html += "</ul>\n"
-
-        return html
-
-
-    def __renderNode(self, node):
-        """Renders a node either as a link, or as the bold current node"""
-        html = ""
-        if node == self.__package.currentNode:
-            html += "<b>" + str(node.title) + "</b>"
-        else:
-            html += common.submitLink("changeNode", 
-                                      node.getIdStr(), 
-                                      str(node.title), 
-                                      "", 
-                                      self.__package.isChanged)
-        return html
-
-        
-    def __renderActions(self, node):
-        """Renders the add and delete action icons"""
-        html  = " "
-        if len(node.id) - 1 < len(self.__package.levelNames):
-            addAction = _("Add %s") % self.__package.levelName(len(node.id) - 1)
-        else:
-            addAction = _("Add")
-
-        html += common.submitImage("addChildNode", node.getIdStr(),
-                                   "stock-new.png", addAction)
-        html += common.submitImage("deleteNode", node.getIdStr(),
-                                   "stock-cancel.png", _("Delete"))
-
-        return html
-
-
+                xul += self.__renderNode(child, indent + extraIndent)
+            xul += ('    </treechildren>',)
+        xul += ('</treeitem>',)
+        # Return nicely indented xul
+        return tuple([(' ' * indent) + line for line in xul])
     
 # ===========================================================================

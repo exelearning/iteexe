@@ -86,7 +86,7 @@ class TitleBlock(Block):
         Returns an XHTML string with the form element for editing this title
         """
         html  = "<div>\n"
-        html += common.textInput("nodeTitle"+self.id, self.idevice)
+        html += common.textInput("nodeTitle", self.idevice)
 
         html += common.submitImage("done", self.id,
                                    "stock-apply.png", _("Done"))
@@ -124,19 +124,18 @@ class TitleBlock(Block):
             html += common.image("stock-go-down-off.png")
         
         html += "<p class=\"prev_edit\">\n"
-        html += "&nbsp;"
+        html += self.__renderNodeActions()
         html += "</p>\n"
         html += "</div>\n"
         return html
-
 
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this title
         """
         html  = "<div>\n"
-        html += "<p class=\"prev_edit\">\n"
-        html += "&nbsp;"
+        html += '<p class="prev_edit">\n'
+        html += self.__renderNodeActions()
         html += "</p>\n"
         html += self.renderView()
         html += common.submitImage("edit", self.id,
@@ -144,12 +143,22 @@ class TitleBlock(Block):
         html += "</div>\n"
         return html
 
+    def __renderNodeActions(self):
+        """
+        Common XHTML used by both renderEdit and renderPreview
+        """
+        html  = common.submitImage("PreviewAll", self.id,
+                                   "edit.gif", _("Preview All"))
+        html += common.submitImage("EditAll", self.id,
+                                   "stock-edit.png", _("Edit All"))
+        return html
+
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this title
         """
-        html = "<p class=\"nodeTitle\">" + str(self.idevice) + "</p>\n"
+        html = '<p id="nodeTitle" class="nodeTitle">%s</p>\n' % str(self.idevice)
         return html
     
 

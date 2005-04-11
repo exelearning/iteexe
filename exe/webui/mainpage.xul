@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="mainWindow" title="eXe : elearning XHTML editor"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:n="http://nevow.com/ns/nevow/0.1"
+        onload="initWindow()">
+    <n:invisible n:render="liveid" />
+    <n:invisible n:render="liveglue" /> 
+
+    <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
+    <script language="JavaScript" src="/scripts/draganddrop.js"/>
+    <script language="JavaScript" src="/scripts/common.js"/>
+    <script language="JavaScript" src="/scripts/mainpage.js"/>
+    <keyset>
+        <key n:render="addChild" id="addChildKey" key="+"/>
+        <key n:render="delNode" id="delNodeKey" key="-"/>
+        <key n:render="renNode" id="renNodeKey" key="r"/>
+    </keyset>
+    <vbox flex="1">
+        <label value="debugInfo" n:render="debugInfo"/>
+        <hbox flex="1" id="main">
+            <tabbox selectedTab="Outline">
+                <tabs>
+                    <tab label="Outline"/>
+                    <tab label="I-Devices"/>
+                    <tab label="Styles"/>
+                </tabs>
+                <tabpanels flex="1">
+                    <tabpanel id="outlinePane">
+                        <vbox flex="1">
+                           <toolbox>
+                               <toolbar>
+                                   <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
+                                   <toolbarbutton n:render="delNode" key="delNodeKey" label="Del"/>
+                                   <toolbarbutton n:render="renNode" key="renNodeKey" label="Ren"/>
+                               </toolbar>
+                           </toolbox>
+                           <label value="outlinePane" n:render="outlinePane"/>
+                        </vbox>
+                    </tabpanel>
+                    <tabpanel id="idevicePane">
+                        <label value="idevicePane" n:render="idevicePane"/>
+                    </tabpanel>
+                    <tabpanel id="stylesPane">
+                        <label value="stylePane" n:render="stylePane"/>
+                    </tabpanel>
+                </tabpanels>
+            </tabbox>
+            <splitter collapse="before"><grippy/></splitter>
+            <tabbox flex="1" selectedTab="Authoring">
+                <tabs align="end" pack="end">
+                    <tab label="Authoring"/>
+                    <tab label="Properties"/>
+                    <tab label="Save"/>
+                    <tab label="Load"/>
+                    <tab label="Export"/>
+                </tabs>
+                <tabpanels flex="1">
+                    <tabpanel id="authoringPane">
+                        <iframe flex="1" n:render="prePath" name="authoringIFrame1" id="authoringIFrame" src="authoring"/>
+                    </tabpanel>
+                    <tabpanel id="propertiesPane">
+                        <iframe flex="1" n:render="prePath" src="properties"/>
+                    </tabpanel>
+                    <tabpanel id="savePane">
+                        <iframe flex="1" n:render="prePath" src="save"/>
+                    </tabpanel>
+                    <tabpanel id="loadPane">
+                        <iframe flex="1" n:render="prePath" src="load"/>
+                    </tabpanel>
+                    <tabpanel id="exportPane">
+                        <iframe flex="1" n:render="prePath" src="export"/>
+                    </tabpanel>
+                </tabpanels>
+            </tabbox>
+        </hbox>
+    </vbox>
+</window>
