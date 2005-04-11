@@ -53,7 +53,7 @@ class Config:
         elif sys.platform[:3] == "win":
             # what's the windows equivalent of /etc????
             programFilesDir = self.getDirectory(0x0026)
-            confPath = programFilesDir + "/" +configFile
+            confPath = programFilesDir + "/exe/" +configFile
             if os.path.isfile(confPath):
                 exeConf = confPath
                 

@@ -103,7 +103,7 @@ class Manifest(object):
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
-        xmlStr += " <title>\""+self.title+"\"</title> \n "
+        xmlStr += " <title>"+self.title+"</title> \n "
         
         
         self.genItemResStr(self.node)
