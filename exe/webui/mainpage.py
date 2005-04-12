@@ -37,6 +37,7 @@ from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage       import SavePage
 from exe.webui.loadpage       import LoadPage
 from exe.webui.exportpage     import ExportPage
+from twisted.web import static
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -70,6 +71,7 @@ class MainPage(LivePage):
         self.putChild("load", self.loadpage) 
         self.exportPage = ExportPage()
         self.putChild("export", self.exportPage)
+        self.putChild("editor", static.File("C:\\"))
 
     def getChild(self, name, request):
         """

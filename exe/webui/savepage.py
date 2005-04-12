@@ -46,7 +46,7 @@ class SavePage(Resource):
         Initialize
         """
         Resource.__init__(self)
-        self.menuPane = MenuPane()
+      #  self.menuPane = MenuPane()
         self.package  = None
         self.url      = ""
         self.message  = ""
@@ -103,7 +103,7 @@ class SavePage(Resource):
         # Processing 
         log.debug("render_GET")
         self.process(request)
-        self.menuPane.process(request)
+       # self.menuPane.process(request)
         path = os.path.join(self.dataDir, self.package.name+".elp")
                         
         # Rendering

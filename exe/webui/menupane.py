@@ -81,6 +81,13 @@ class MenuPane(object):
         else:
             html += "<li><a href = \"http:/%s/properties\">%s</a></li>\n" % \
                     (self.packageName, _("Properties"))
+            
+        if self.prepath[-1] == "iDeviceEditor":
+            html += "<li id=\"current\"><a href=\"#\">" + _("iDevice Editor") 
+            html += "</a></li>\n"
+        else:
+            html += "<li><a href = \"http:/%s/iDeviceEditor\">%s</a></li>\n" % \
+                    (self.packageName, _("iDevice Editor"))
 
         if len(self.prepath) == 1:
             html += "<li id=\"current\"><a href=\"#\">" + _("Authoring") 

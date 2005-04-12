@@ -30,7 +30,7 @@ cache-size=500
 reports=yes
 
 # Use HTML as output format instead of text
-html=yes
+html=no
 
 # Use a parseable text output format, so your favorite text editor will be able
 # to jump to the line corresponding to a message.

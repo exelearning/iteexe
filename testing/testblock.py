@@ -23,6 +23,11 @@ from exe.engine.idevice     import Idevice
 from exe.webui.blockfactory import g_blockFactory
 
 # ===========================================================================
+
+class MyRequest:
+    def __init__(self, args):
+        self.args = args
+        
 class MyBlock(Block):
     def __init__(self, idevice):
         self.id   = idevice.id

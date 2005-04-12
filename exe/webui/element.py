@@ -92,7 +92,6 @@ class Element(object):
         return "ERROR: Element.renderEdit called directly"
 
 
-
 # ===========================================================================
 class TextElement(Element):
     """ 
@@ -107,6 +106,19 @@ class TextElement(Element):
         html += ":</b><br/>\n"
         html += common.textInput(self.id, content)
         html += "<br/>\n"
+        return html
+    
+# ===========================================================================
+class LabelElement(Element):
+    """ 
+    TextElement is a single line of text
+    """
+    def renderEdit(self, content="Type label here"):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        html  = common.textInput(self.id, content) + "\n"
+       
         return html
 
 
