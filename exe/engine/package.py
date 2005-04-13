@@ -47,26 +47,22 @@ class Package(jelly.Jellyable):
         Initialize 
         """
         log.debug("init " + repr(name))
-        self.levelNames  = [_("Topic"), _("Section"), _("Unit")]
-        self.name        = name
-        self.draft       = Node(self, [0], _("Draft"))
-        self.editor      = Node(self, [2], _("iDevice Editor"))
-        self.currentNode = self.draft
-        self.root        = Node(self, [1], _("Home"))
-        self.author      = ""
-        self.description = ""
-        self.style       = "default"
-        introduction     = "Welcome to eXe<br/>"
-        introduction    += "To edit this text click on the pencil icon"
+        self.levelNames    = [_("Topic"), _("Section"), _("Unit")]
+        self.name          = name
+        self.draft         = Node(self, [0], _("Draft"))
+        self.editor        = Node(self, [2], _("iDevice Editor"))
+        self.currentNode   = self.draft
+        self.root          = Node(self, [1], _("Home"))
+        self.style         = "default"
+        self.author        = ""
+        self.description   = ""
+        introduction       = "Welcome to eXe<br/>"
+        introduction      += "To edit this text click on the pencil icon"
         self.draft.addIdevice(FreeTextIdevice(introduction))
-        self.isChanged   = 0
-        newIdevice       = GenericIdevice("", "", "", "", "")
-        newIdevice.addField(_("Name"), "Text", "name", "")
-        newIdevice.addField(_("Author"), "Text", "author" "")
-        newIdevice.addField(_("Description"), "TextArea", "description", "")
-        newIdevice.addField(_("Purpose"), "TextArea", "purpose", "")
-        newIdevice.addField(_("Help Tip"), "TextArea", "tip", "")
-        self.editor.addIdevice(newIdevice)
+        self.isChanged     = 0
+        idevice            = GenericIdevice("", "", "", "", "")
+        idevice.parentNode = self.editor
+        self.editor.addIdevice(idevice)
         
 
     def findNode(self, nodeId):
