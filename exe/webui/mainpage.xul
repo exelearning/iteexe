@@ -34,8 +34,8 @@
                            <toolbox>
                                <toolbar>
                                    <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
-                                   <toolbarbutton n:render="delNode" key="delNodeKey" label="Del"/>
-                                   <toolbarbutton n:render="renNode" key="renNodeKey" label="Ren"/>
+                                   <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
+                                   <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
                                </toolbar>
                            </toolbox>
                            <label value="outlinePane" n:render="outlinePane"/>
