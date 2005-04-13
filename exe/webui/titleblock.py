@@ -138,8 +138,8 @@ class TitleBlock(Block):
         html += self.__renderNodeActions()
         html += "</p>\n"
         html += self.renderView()
-        html += common.submitImage("edit", self.id,
-                                   "stock-edit.png", _("Edit this Title"))
+#        html += common.submitImage("edit", self.id,
+#                                   "stock-edit.png", _("Edit this Title"))
         html += "</div>\n"
         return html
 

@@ -25,7 +25,7 @@
             <tabbox selectedTab="Outline">
                 <tabs>
                     <tab label="Outline"/>
-                    <tab label="I-Devices"/>
+                    <tab label="iDevices"/>
                     <tab label="Styles"/>
                 </tabs>
                 <tabpanels flex="1">
