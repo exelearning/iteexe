@@ -9,7 +9,7 @@
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-Icon "C:\eXe branches\dist\icon1.ico"
+Icon "C:\eXe branches\dist\eXe_icon.ico"
 OutFile "exeinstall.exe"
 
 ; Modern interface settings
@@ -78,9 +78,9 @@ Section "exe" Section2
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
 	File /r "C:\eXe branches\dist\*.*"
-	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
+	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
-	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\icon1.ico"
+	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 	
 	; Associtate elp files with server.exe
@@ -95,7 +95,7 @@ Section "exe" Section2
     StrCmp $0 "" 0 "${Index}-Skip"
 	  WriteRegStr HKCR "exePackageFile" "" "eXe Package File"
 	  WriteRegStr HKCR "exePackageFile\shell" "" "open"
-	  WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\icon1.ico"
+	  WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\eXe_icon.ico"
   "${Index}-Skip:"
     WriteRegStr HKCR "exePackageFile\shell\open\command" "" \
     '$INSTDIR\server.exe "%1"'
