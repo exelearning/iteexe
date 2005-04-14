@@ -44,8 +44,9 @@ def header(style='default'):
     html += "<style type=\"text/css\">\n"
     html += "@import url(/css/exe.css);\n"
     html += "@import url(/style/"+style+"/content.css);</style>\n"
-    html += "<script language=\"JavaScript\" src=\"/scripts/common.js\"/>"
-    html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\"/>" 
+    html += '<script language="JavaScript" src="/scripts/common.js"/>'
+    html += '<script language="JavaScript" src="/scripts/fckeditor.js"/>'
+    html += '<script language="JavaScript" src="/scripts/libot_drag.js"/>'
     html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\"></meta>\n";

@@ -23,7 +23,6 @@ OutlinePane is responsible for creating the XHTML for the package outline
 
 import logging
 import gettext
-from nevow.livepage import document
 from exe.webui import common
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -46,51 +45,55 @@ class OutlinePane(object):
         
         if "action" in request.args:
             nodeId = request.args["object"][0]
+            p = self.package
 
             if request.args["action"][0] == "changeNode":
-                node = self.package.findNode(nodeId)
+                node = p.findNode(nodeId)
                 if node is not None:
-                    self.package.currentNode = node
+                    p.currentNode = node
                 else:
                     log.error("changeNode cannot locate "+nodeId)
             # The Draft node has an id of '0' and cannot be added to or deleted
-            elif nodeId != '0' and request.args["action"][0] == "addChildNode":
-                node = self.package.findNode(nodeId)
+            elif nodeId != p.draft.id and request.args["action"][0] == "addChildNode":
+                node = p.findNode(nodeId)
                 if node is not None:
-                    self.package.currentNode = node.createChild()
+                    p.currentNode = node.createChild()
                 else:
                     log.error("addChildNode cannot locate "+nodeId)
             # Don't let them delete the Draft or Home nodes (also checked on client)
-            elif nodeId not in ('0', '1') and request.args["action"][0] == "deleteNode":
-                node = self.package.findNode(nodeId)
+            elif nodeId not in (p.draft.id, p.root.id) and request.args["action"][0] == "deleteNode":
+                node = p.findNode(nodeId)
                 if node is not None:
                     node.delete()
-                    if node.isAncestorOf(self.package.currentNode):
-                        self.package.currentNode = self.package.root
+                    if node.isAncestorOf(p.currentNode):
+                        p.currentNode = p.root
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
             
-    def handleAddChild(self, client, nodeId):
+    def handleAddChild(self, client, parentNodeId):
         """Called from client via xmlhttp. When the addChild button is called.
         Hooked up by authoringPage.py
         """
-        if nodeId == '0': return # Can't add a child to the draft node!
-        node = self.package.findNode(nodeId)
+        # Can't add a child to the draft node!
+        p = self.package
+        if parentNodeId in (p.draft.id, p.editor.id): return 
+        node = p.findNode(parentNodeId)
         if node is not None:
-            self.package.currentNode = newNode = node.createChild()
-            client.call('XHAddChildTreeItem', newNode.getIdStr(), str(newNode.title))
+            p.currentNode = newNode = node.createChild()
+            client.call('XHAddChildTreeItem', newNode.id, str(newNode.title))
 
     def handleDelNode(self, client, confirm, nodeId):
         """Called from xmlhttp. 
         'confirm' is a string. It is 'false' if the user or the gui has cancelled the deletion
         'nodeId' is the nodeId
         """
-        if confirm == 'true' and nodeId not in ('0', '1'):
+        if confirm == 'true' and nodeId not in ('0', '1', '2'):
             node = self.package.findNode(nodeId)
             if node is not None:
                 # Actually remove the elements in the dom
                 client.call('XHDelNode', nodeId)
-                if node.isAncestorOf(self.package.currentNode):
+                # Update our server version of the package
+                if node.isAncestorOf(self.package.currentNode) or node is self.package.currentNode:
                     self.package.currentNode = node.parent
                 node.delete()
             else:
@@ -105,8 +108,34 @@ class OutlinePane(object):
 
     def handleDrop(self, ctx, sourceNodeId, parentNodeId, nextSiblingNodeId):
         """Handles the end of a drag drop operation..."""
-        print sourceNodeId, parentNodeId, nextSiblingNodeId
-        return "alert('hello'); return true" # Will be evaluated as JS on client
+        source = self.package.findNode(sourceNodeId)
+        parent = self.package.findNode(parentNodeId)
+        nextSibling = self.package.findNode(nextSiblingNodeId)
+        if source and parent:
+            # If the node has a default title and is changing levels
+            # Make the client rename the node after we've moved it
+            doRename = not source.title.title and parent is not source.parent
+            # Do the move
+            if nextSibling:
+                assert nextSibling.parent is parent, 'sibling has different parent: [%s/%s] [%s/%s]' % \
+                        (parent.id, str(parent.title), nextSibling.id, str(nextSibling.title))
+                source.move(parent, nextSibling)
+                log.info("Dragging %s under %s before %s" % (source.title, parent.title, nextSibling.title))
+            else:
+                source.move(parent)
+                log.info("Dragging %s under %s at start" % (source.title, parent.title))
+            # Rename on client if it will have changed
+            if doRename:
+                # Recursively rename all nodes on the client
+                def rename(node):
+                    if not node.title.title:
+                        ctx.call('XHRenNode', str(node.title), node.id)
+                    for child in node.children: rename(child)
+                rename(source)
+        else:
+            log.error("Can't drag and drop tree items")
+
+
 
     def render(self):
         """
@@ -145,7 +174,7 @@ class OutlinePane(object):
             start = '<treeitem>'
         # Render the inner bits
         xul = ('%s' % start,
-               """    <treerow _exe_nodeid="%s"> """ % node.getIdStr(),
+               """    <treerow _exe_nodeid="%s"> """ % node.id,
                '        <treecell label="%s"/>' % node.title,
                '    </treerow>')
         # Recursively render children if necessary

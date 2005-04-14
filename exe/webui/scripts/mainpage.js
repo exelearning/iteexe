@@ -19,21 +19,33 @@
 
 // This file contains all the js related to the main xul page
 
+// This var is needed, because initWindow is called twice for some reason
 var haveLoaded = false
 
-// Takes a server tree node id eg. 1.0.2.3 and returns a xul tree index
-// Don't store this because this index changes when branches above the element
-// are collapsed and expanded
-function serverId2TreeId(serverId) {
+// Takes a server tree node id eg. '1' and returns a xul treeitem elemtent reference
+function serverId2treeitem(serverId) {
     // Enumerate the tree elements until we find the correct one
     var tree = document.getElementById('outlineTree')
     var items = tree.getElementsByTagName('treeitem')
     for (var i=0; i<items.length; i++) {
-        if (items[i].getAttribute('_exe_nodeid') == serverId) {
-            return tree.contentView.getIndexOfItem(items[i])
+        if (items[i].firstChild.getAttribute('_exe_nodeid') == serverId) {
+            return items[i]
         }
     }
-    return '0' // Should never really reach here
+    return null // Should never really reach here
+}
+
+// Takes a server tree node id eg. '1' and returns a xul tree index
+// Don't store this because this index changes when branches above the element
+// are collapsed and expanded
+function serverId2TreeId(serverId) {
+    var tree = document.getElementById('outlineTree')
+    var item = serverId2treeitem(serverId)
+    if (item) {
+        return tree.contentView.getIndexOfItem(item)
+    } else {
+        return '0' // Should never really reach here
+    }
 }
 
 function initWindow() {
@@ -139,9 +151,9 @@ function XHAddChildTreeItem(nodeid, name) {
 
 // Delete's the currently selected node
 // XH means that the func is actually called by the server over xmlhttp
-function XHDelNode() {
+function XHDelNode(treeitem) {
     var tree = document.getElementById('outlineTree');
-    var treeitem = currentOutlineItem(tree)
+    if (!treeitem) { var treeitem = currentOutlineItem(tree) }
     var parentItem = treeitem.parentNode.parentNode
     // Select the parent node
     if (parentItem.tagName == 'treeitem') { 
@@ -157,9 +169,11 @@ function XHDelNode() {
     }
 }
 
-// Renames the currently selected node to 'newName'
-function XHRenNode(newName) {
-    var treeitem = currentOutlineItem()
+// Renames the node associated with 'treeitem' to 'newName'
+// If 'treeitem' is not passed, uses currently selected node
+function XHRenNode(newName, id) { 
+    if (!id) { var treeitem = currentOutlineItem() }
+    else { var treeitem = serverId2treeitem(id) }
     treeitem.getElementsByTagName('treecell')[0].setAttribute('label', newName)
     // Update the authoring page iframe
     var ele = top.frames[0].document.getElementById('nodeTitle')

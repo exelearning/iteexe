@@ -34,7 +34,7 @@ class TitleIdevice(Idevice):
     """
     def __init__(self, parentNode, title=""):
         """Initialize"""
-        log.debug("__init__ parentNode="+parentNode.getIdStr()+
+        log.debug("__init__ parentNode="+parentNode.id+
                   ", title="+title)
         Idevice.__init__(self, title, 
                          _("University of Auckland"), "", "", parentNode)
@@ -48,12 +48,11 @@ class TitleIdevice(Idevice):
             return self.title
         else:
             return self.parentNode.package.levelName(
-                                    len(self.parentNode.id) - 2)
+                                    self.parentNode.level - 1)
 
     def setTitle(self, title):
         """Set the title, if it's been changed from the default"""
-        if title != self.parentNode.package.levelName(
-                                    len(self.parentNode.id) - 2):
+        if title != str(self):
             log.info("Changed "+self.id+" title to "+title)
             self.title = title
 

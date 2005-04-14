@@ -18,82 +18,25 @@
 # ===========================================================================
 
 import unittest
+from exe.engine.config import Config
 from exe.engine.node import Node
+from exe.engine.packagestore import g_packageStore
+from exe.webui.webinterface  import g_webInterface
 
 # ===========================================================================
 class TestNode(unittest.TestCase):
     def setUp(self):
-        pass
+        g_webInterface.config = Config("exe.conf")
+        self.package = g_packageStore.createPackage()
 
     def testCreate(self):
-        root = Node(None)
+        root = self.package.root
         child0 = root.createChild()
-        self.assertEqual(child0.id[:-1], root.id)
+        self.assertEqual(child0.id, '3')
+        self.assert_(child0.parent is root)
+        self.assert_(child0 in root.children)
+        self.assert_(self.package.findNode('3') is child0)
+
         
-    def testMove(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child0.title = "Child Nought"
-        child1 = root.createChild()
-        child1.title = "Child One"
-
-        child0.movePrev()
-        self.assertEqual(child0.id, [0,0])
-        self.assertEqual(child0.title, "Child Nought")
-
-        child1.movePrev()
-        self.assertEqual(child1.id, [0,0])
-        self.assertEqual(child1.title, "Child One")
-
-        child1.moveNext()
-        self.assertEqual(child1.id, [0,1])
-        self.assertEqual(child1.title, "Child One")
-
-        child0.moveNext()
-        self.assertEqual(child0.id, [0,1])
-        self.assertEqual(child0.title, "Child Nought")
-
-        child0.delete()
-        self.assertEqual(child1.id, [0,0])
-        
-    def testPromote(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child1 = root.createChild()
-        child3 = root.createChild()
-        child31 = child3.createChild()
-        child31.promote()
-        self.assertEqual(child31.id, [0,3])
-        
-    def testDemote(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child1 = root.createChild()
-        child3 = root.createChild()
-        child31 = child3.createChild()
-        child1.promote()
-        child1.demote()
-        self.assertEqual(child1.id, [0,0,0])
-        
-    def testGetIdStr(self):
-        root = Node(None)
-        child0 = root.createChild()
-        child1 = root.createChild()
-        child11=child1.createChild()
-        self.assertEqual(child11.getIdStr(), "0.1.0")
-        
-    def testStr(self):
-        root = Node(None)
-        root.title = "root node"
-        child0 = root.createChild()
-        child0.title = "first child"
-        child1 = root.createChild()
-        child1.title = "second child"
-        child3 = root.createChild()
-        child3.title = "third child"
-        child31 = child3.createChild()
-        child31.title = "third child's first child"
-
-   
 if __name__ == "__main__":
     unittest.main()

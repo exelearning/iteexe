@@ -293,21 +293,27 @@ class WebsiteExport(object):
                 (uploadedFileDir, join("images", package.name))
                 log.error(errmsg)
                 return errmsg
-        ##generate nodes list into nodeList
+        self.doExport(package)
+
+    def doExport(self, package):
+        """Cleans up the previous packages nodeList
+        and performs the export"""
+        # Clean up the last nodeList generated
+        global nodeList
+        nodeList = []
+        # Fill the newly made nodeList
         nodeList.append(package.root.id)
         self.genNodeList(package.root)
         self.exportNode(package.root)
-    
 
     def genNodeList(self, node):
         """
-        generate nodes id list and store in nodeList global variable
+        recusively generate nodes id list and store in nodeList global variable
         for retrieving next previous link later
         """           
         for child in node.children:
             nodeList.append(child.id)
             self.genNodeList(child)
-            
 
     def exportNode(self, node):
         """

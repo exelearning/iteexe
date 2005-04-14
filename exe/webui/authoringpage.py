@@ -45,7 +45,6 @@ class AuthoringPage(Resource):
         'parent' is our MainPage instance that created us
         """
         self.blocks     = []
-        self.levelLimit = 0
         self.parent = parent
         self.package = parent.package
 
@@ -68,13 +67,10 @@ class AuthoringPage(Resource):
     def render_GET(self, request):
         """
         Returns an XHTML string for viewing this page
-        TODO: needs to get topNode, maxDepth=1 from somewhere
         """
         log.debug("render")
         self._process(request)
         topNode = self.package.currentNode
-        maxDepth = 1
-        self.levelLimit = len(topNode.id) + maxDepth
         self.blocks     = []
         self.__addBlocks(topNode)
         html = self.__renderHeader()
@@ -102,13 +98,15 @@ class AuthoringPage(Resource):
         html += "@import url(/style/"+self.package.style+"/content.css);</style>\n"
         html += "<link rel=\"alternate stylesheet\" type=\"text/css\" "
         html += " media=\"screen\"" 
-        html += "title=\"garden\" href=\"style/garden/content.css\" />" 
+        html += "title=\"garden\" href=\"style/garden/content.css\" />\n" 
         html += "<link rel=\"alternate stylesheet\" type=\"text/css\" "
         html += " media=\"screen\"" 
-        html += "title=\"mojave\" href=\"style/mojave/content.css\" />" 
+        html += "title=\"mojave\" href=\"style/mojave/content.css\" />\n" 
         html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
         html += "</script>\n"
         html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
+        html += "</script>\n"
+        html += '<script language="JavaScript" src="/scripts/libot_drag.js">'
         html += "</script>\n"
         html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
@@ -118,8 +116,7 @@ class AuthoringPage(Resource):
 
     def __addBlocks(self, node):
         """
-        Recursively add blocks for all the nodes down to the level limit 
-        which was set
+        Add All the blocks for the currently selected node
         """
         self.blocks.append(TitleBlock(node.title))
 
@@ -129,9 +126,5 @@ class AuthoringPage(Resource):
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
             self.blocks.append(block)
-
-        for child in node.children:
-            if len(child.id) < self.levelLimit:
-                self.__addBlocks(child)
 
 # ===========================================================================

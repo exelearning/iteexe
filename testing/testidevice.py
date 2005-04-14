@@ -20,11 +20,12 @@
 import unittest
 from exe.engine.node    import Node
 from exe.engine.idevice import Idevice
+from exe.engine.packagestore import g_packageStore
 
 
 class TestIdevice(unittest.TestCase):
     def setUp(self):
-        pass
+        self.package = g_packageStore.createPackage()
 
     def testIdevice(self):
         myIdevice = Idevice("My Idevice", "UoA", "Testing", "Help tip")
@@ -34,14 +35,13 @@ class TestIdevice(unittest.TestCase):
         self.assertEquals(myIdevice.tip, "Help tip")
         
     def testSetParentNode(self):
-        parentNode = Node(None)
+        parentNode = Node(self.package)
         idevice0 = Idevice("FirstIdevice", "", "", "")
         idevice0.setParentNode(parentNode)
-        self.assert_(idevice0.parentNode)
-        self.assertEquals(idevice0.parentNode.id, [0])
+        self.assert_(idevice0.parentNode is parentNode)
         
     def testIsfirstAndIsLast(self):
-        parentNode = Node(None)
+        parentNode = Node(self.package)
         idevice0 = Idevice("FirstIdevice", "", "", "")
         idevice0.setParentNode(parentNode)
         idevice1 = Idevice("SecondIdevice", "", "", "")
@@ -62,7 +62,7 @@ class TestIdevice(unittest.TestCase):
         self.assertEquals(idevice0.__cmp__(idevice2), -1)
         
     def testDelete(self):
-        parentNode = Node(None)
+        parentNode = Node(self.package)
         idevice0 = Idevice("FirstIdevice", "", "", "")
         idevice0.setParentNode(parentNode)
         idevice1 = Idevice("SecondIdevice", "", "", "")
@@ -74,7 +74,7 @@ class TestIdevice(unittest.TestCase):
             print "delete failed"
     
     def testMove(self):
-        parentNode = Node(None)
+        parentNode = Node(self.package)
         idevice0 = Idevice("FirstIdevice", "", "", "")
         idevice0.setParentNode(parentNode)
         idevice1 = Idevice("SecondIdevice", "", "", "")

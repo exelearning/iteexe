@@ -252,7 +252,7 @@ class Block(object):
         building it up for every block
         """
         options = [("&nbsp;&nbsp;&nbsp;"*(len(node.id)-1) + str(node.title), 
-                   node.getIdStr(),)]
+                   node.id)]
         for child in node.children:
             options += self.__getNodeOptions(child)
         return options

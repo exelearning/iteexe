@@ -147,14 +147,6 @@ function treeDragDrop(event) {
     }
     // Now we can work out our sibling if we don't already have it
     if (before) { sibling = container.firstChild }
-    // Tell the server what's happening...
-    var nextSiblingNodeId = null
-    if (before) {
-        if (sibling) { nextSiblingNodeId = sibling.firstChild.getAttribute('_exe_nodeid') }
-    } else {
-        if (sibling.nextSibling) { nextSiblingNodeId = sibling.nextSibling.firstChild.getAttribute('_exe_nodeid') }
-    }
-    nevow_clientToServerEvent('outlinePane.handleDrop',this,'', sourceNode.firstChild.getAttribute('_exe_nodeid'), parentItemId, nextSiblingNodeId)
     // Move the node
     var oldContainer = sourceNode.parentNode
     try { oldContainer.removeChild(sourceNode) } catch(e) { } // For some reason works, but still raises exception!
@@ -183,4 +175,11 @@ function treeDragDrop(event) {
         oldContainer.parentNode.setAttribute('container', 'false')
         oldContainer.parentNode.removeChild(oldContainer) // Remove the treechildren node
     }
+    // Tell the server what happened
+    var nextSiblingNodeId = null
+    var sibling = sourceNode.nextSibling
+    if (sibling) {
+        nextSiblingNodeId = sibling.firstChild.getAttribute('_exe_nodeid')
+    }
+    nevow_clientToServerEvent('outlinePane.handleDrop', this, '', sourceNode.firstChild.getAttribute('_exe_nodeid'), parentItemId, nextSiblingNodeId)
 }

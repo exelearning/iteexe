@@ -28,6 +28,7 @@ import zipfile
 import cStringIO
 from twisted.spread  import jelly
 from twisted.spread  import banana
+from twisted.persisted.styles import Versioned, doUpgrade
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.webinterface import g_webInterface
@@ -37,22 +38,26 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
-class Package(jelly.Jellyable):
+class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
+    persistenceVersion = 1
+
     def __init__(self, name):
         """
         Initialize 
         """
         log.debug("init " + repr(name))
+        self._nextNodeId   = 0
+        self._nodeIdDict   = {} # For looking up nodes by ids
         self.levelNames    = [_("Topic"), _("Section"), _("Unit")]
         self.name          = name
-        self.draft         = Node(self, [0], _("Draft"))
-        self.editor        = Node(self, [2], _("iDevice Editor"))
+        self.draft         = Node(self, None, _("Draft"))
+        self.editor        = Node(self, None, _("iDevice Editor"))
         self.currentNode   = self.draft
-        self.root          = Node(self, [1], _("Home"))
+        self.root          = Node(self, None, _("Home"))
         self.style         = "default"
         self.author        = ""
         self.description   = ""
@@ -64,6 +69,12 @@ class Package(jelly.Jellyable):
         idevice.parentNode = self.editor
         self.editor.addIdevice(idevice)
         
+    def getStateFor(self, jellier):
+        """
+        Call Versioned.__getstate__ to store
+        persistenceVersion etc...
+        """
+        return self.__getstate__()
 
     def findNode(self, nodeId):
         """
@@ -71,24 +82,9 @@ class Package(jelly.Jellyable):
         (nodeId can be a string or a list/tuple)
         """
         log.debug("findNode" + repr(nodeId))
-
-        if type(nodeId) is str:
-            nodeId = [int(index) for index in nodeId.split(".")]
-
-        if nodeId == self.draft.id: 
-            return self.draft
-
-        node  = self.root
-        level = 1
-
-        while level < len(nodeId):
-            if nodeId[level] < len(node.children):
-                node = node.children[nodeId[level]]
-            else:
-                return None
-            level += 1
-
-        return node
+        node = self._nodeIdDict.get(nodeId)
+        if node and node.package is self: return node
+        else: return None
 
 
     def levelName(self, level):
@@ -126,6 +122,16 @@ class Package(jelly.Jellyable):
             os.chdir(oldDir)
         
 
+    def _regNewNode(self, node):
+        """
+        Called only by nodes, generates a new unique id
+        and stores the node in our id lookup dict
+        """
+        node._id = str(self._nextNodeId)
+        node.package = self
+        self._nextNodeId += 1
+        self._nodeIdDict[node.id] = node
+
     def load(path):
         """Load package from disk, returns a package"""
         zippedFile = zipfile.ZipFile(path, "r", zipfile.ZIP_DEFLATED)
@@ -136,8 +142,24 @@ class Package(jelly.Jellyable):
         decoder.expressionReceived = data.append
         decoder.dataReceived(zippedFile.read("content.data"))
         zippedFile.close()
-        return jelly.unjelly(data[0])
-
+        package = jelly.unjelly(data[0])
+        doUpgrade()
+        return package
     load = staticmethod(load)
+
+    def upgradeToVersion1(self):
+        """Called to upgrade from 0.3 release"""
+        self._nextNodeId = 0
+        self._nodeIdDict = {}
+        # Also upgrade all the nodes.
+        # This needs to be done here so that draft gets id 0
+        # If it's done in the nodes, the ids are assigned in reverse order
+        self._regNewNode(self.draft)
+        self.editor = Node(self, None, _("iDevice Editor"))
+        def superReg(node):
+            self._regNewNode(node)
+            for child in node.children:
+                superReg(child)
+        superReg(self.root)
 
 # ===========================================================================

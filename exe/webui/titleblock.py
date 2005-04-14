@@ -90,38 +90,6 @@ class TitleBlock(Block):
 
         html += common.submitImage("done", self.id,
                                    "stock-apply.png", _("Done"))
-
-        #TODO ask the node canPromote? etc.
-        if len(self.idevice.parentNode.id) > 2:
-            html += common.submitImage("promote", self.id,
-                                       "stock-goto-top.png", 
-                                       _("Promote"))
-        else:
-            html += common.image("stock-goto-top-off.png")
-
-        if (len(self.idevice.parentNode.id) > 1 and 
-            self.idevice.parentNode.id[-1] > 0):
-            html += common.submitImage("demote", self.id,
-                                       "stock-goto-bottom.png", 
-                                       _("Demote"))
-        else:
-            html += common.image("stock-goto-bottom-off.png")
-
-        if self.idevice.parentNode.id[-1] > 0:
-            html += common.submitImage("movePrev", self.id,
-                                       "stock-go-up.png", 
-                                       _("Move Up"))
-        else:
-            html += common.image("stock-go-up-off.png")
-
-        if (len(self.idevice.parentNode.id) > 1 and 
-            self.idevice.parentNode.id[-1] < 
-               len(self.idevice.parentNode.parent.children) - 1):
-            html += common.submitImage("moveNext", self.id,
-                                       "stock-go-down.png", 
-                                       _("Move Down"))
-        else:
-            html += common.image("stock-go-down-off.png")
         
         html += "<p class=\"prev_edit\">\n"
         html += self.__renderNodeActions()
@@ -138,8 +106,6 @@ class TitleBlock(Block):
         html += self.__renderNodeActions()
         html += "</p>\n"
         html += self.renderView()
-#        html += common.submitImage("edit", self.id,
-#                                   "stock-edit.png", _("Edit this Title"))
         html += "</div>\n"
         return html
 
