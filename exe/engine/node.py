@@ -107,16 +107,15 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         Moves the node around in the tree
         """
-        if self.parent is not newParent:
-            if newParent:
-                assert newParent.package is self.package, \
-                       "Can't change a node into a different package"
-            if self.parent: self.parent.children.remove(self)
-            self.parent = newParent
-            if newParent:
-                c = newParent.children
-                if nextSibling: c.insert(c.index(nextSibling), self)
-                else: newParent.children.insert(0, self)
+        if newParent:
+            assert newParent.package is self.package, \
+                   "Can't change a node into a different package"
+        if self.parent: self.parent.children.remove(self)
+        self.parent = newParent
+        if newParent:
+            c = newParent.children
+            if nextSibling: c.insert(c.index(nextSibling), self)
+            else: newParent.children.append(self)
 
     def __str__(self):
         """
