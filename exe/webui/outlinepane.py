@@ -103,7 +103,7 @@ class OutlinePane(object):
         """Called from xmlhttp"""
         if newName in ('', 'null'): return
         node = self.package.findNode(nodeId)
-        node.title.setTitle(newName)
+        node.title = newName
         client.call('XHRenNode', newName)
 
     def handleDrop(self, ctx, sourceNodeId, parentNodeId, nextSiblingNodeId):
