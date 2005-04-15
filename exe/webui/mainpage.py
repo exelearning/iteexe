@@ -24,23 +24,23 @@ This is the main XUL page.
 import logging
 import gettext
 import os
-from twisted.web.resource import Resource
-from nevow import loaders, inevow, stan
-from nevow.livepage import handler, LivePage, js
-from exe.webui import common
-from exe.webui.webinterface  import g_webInterface
-from exe.engine.packagestore import g_packageStore
-from exe.webui.idevicepane   import IdevicePane
-from exe.webui.authoringpage import AuthoringPage
-from exe.webui.outlinepane   import OutlinePane
-from exe.webui.menupane      import MenuPane
-from exe.webui.stylepane     import StylePane
+from twisted.web.resource     import Resource
+from nevow                    import loaders, inevow, stan
+from nevow.livepage           import handler, LivePage, js
+from exe.webui                import common
+from exe.webui.webinterface   import g_webInterface
+from exe.engine.packagestore  import g_packageStore
+from exe.webui.idevicepane    import IdevicePane
+from exe.webui.authoringpage  import AuthoringPage
+from exe.webui.outlinepane    import OutlinePane
+from exe.webui.menupane       import MenuPane
+from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage       import SavePage
 from exe.webui.loadpage       import LoadPage
 from exe.webui.exportpage     import ExportPage
 from exe.webui.editorpage     import EditorPage
-from twisted.web import static
+from twisted.web              import static
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -55,8 +55,8 @@ class MainPage(LivePage):
         """
         Initialize a new XUL page
         """
-        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'mainpage.xul'))
         LivePage.__init__(self)
+        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'templates/mainpage.xul'))
         self.package = package
         # Create all the children on the left
         self.outlinePane   = OutlinePane(package)

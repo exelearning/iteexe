@@ -45,8 +45,8 @@ class LoadPage(LivePage):
         Initialize
         'parent' is a MainPage instance
         """
-        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'loadpage.xul'))
         LivePage.__init__(self)
+        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'templates/loadpage.xul'))
         self.parent   = parent
         self.package  = parent.package
         self.error    = False
