@@ -41,6 +41,8 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             assert parent is not package.draft, "Draft can't have child nodes"
             assert parent is not package.editor, "Editor can't have child nodes"
             parent.children.append(self)
+        self._id      = ""
+        self.package  = None
         package._regNewNode(self) # Sets self.id and self.package
         self.parent   = parent
         self._title   = TitleIdevice(self, title)
@@ -72,22 +74,26 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 node = node.parent
                 yield node
 
+
     def isAncestorOf(self, node):
         """If we are an ancestor of 'node' returns 'true'"""
         return node in self.ancestors()
 
-    def getStateFor(self, jellier):
+
+    def getStateFor(self, dummy):
         """
         Call Versioned.__getstate__ to store
         persistenceVersion etc...
         """
         return self.__getstate__()
 
+
     def createChild(self):
         """
         Create a child node
         """
         return Node(self.package, self)
+
 
     def delete(self):
         """
@@ -96,8 +102,10 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         # Remove ourself from the id dict and our parents child thing
         del self.package._nodeIdDict[self.id]
         if self.parent: self.parent.children.remove(self)
-        # Remove all our children from our package id-dict and our own children list
+        # Remove all our children from our package id-dict and our own children
+        # list
         while self.children: self.children[0].delete()
+
 
     def addIdevice(self, idevice):
         """
@@ -107,6 +115,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         for oldIdevice in self.idevices:
             oldIdevice.edit = False
         self.idevices.append(idevice)
+
 
     def move(self, newParent, nextSibling=None):
         """
@@ -125,6 +134,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 else: c.insert(c.index(nextSibling), self)
             else: newParent.children.append(self)
 
+
     def promote(self):
         """Convenience function.
         Moves the node one step closer to the tree root.
@@ -134,6 +144,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             self.move(self.parent.parent, None)
             return True
         return False
+
 
     def demote(self):
         """Convenience function.
@@ -149,6 +160,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 return True
         return False
 
+
     def up(self):
         """Moves the node up one node vertically
         keeping its same level in the tree.
@@ -163,6 +175,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 return True
         return False
 
+
     def down(self):
         """Moves the node down one vertically
         keeping its level the same.
@@ -176,6 +189,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             return True
         return False
 
+
     def nextSibling(self):
         """Returns our next sibling or None"""
         if self.parent:
@@ -184,6 +198,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             return i < len(c) and c[i] or None
         else:
             return None
+
 
     def __str__(self):
         """
@@ -195,6 +210,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         for child in self.children:
             nodeStr += child.__str__()
         return nodeStr
+
 
     def upgradeToVersion2(self):
         self._title = self.__dict__['title']

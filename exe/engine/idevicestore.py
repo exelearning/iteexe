@@ -2,8 +2,6 @@
 # eXe 
 # Copyright 2004-2005, University of Auckland
 #
-# IdeviceStore is simply the collection of all the Idevices available
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -22,6 +20,8 @@
 The collection of iDevices available
 """
 
+from exe.engine.config  import g_config
+
 import logging
 
 log = logging.getLogger(__name__)
@@ -33,7 +33,11 @@ class IdeviceStore:
     at the moment this class is not being used
     """
     def __init__(self):
-        pass
+        # TODO I originally planned Extended and Generic iDevices to
+        # be handled polymorphically, need to reconsider this
+        self.extended = []
+        self.generic  = []
+
 
     def addIdevice(self, idevice):
         """
@@ -41,5 +45,39 @@ class IdeviceStore:
         """
         log.debug("IdeviceStore.addIdevice")
 
+
+    def load(self):
+        """
+        Load iDevices from the generic iDevices and the extended ones
+        """
+        log.debug("load iDevices")
+        self.loadExtended()
+        self.loadGeneric()
+
+    def loadExtended(self):
+        from exe.engine.freetextidevice    import FreeTextIdevice
+        from exe.engine.multichoiceidevice import MultichoiceIdevice
+        from exe.engine.reflectionidevice  import ReflectionIdevice
+        from exe.engine.casestudyidevice   import CasestudyIdevice
+
+        self.extended.append(FreeTextIdevice())
+        
+        multichoice = MultichoiceIdevice()
+        multichoice.addOption()
+        self.extended.append(multichoice)
+                
+        self.extended.append(ReflectionIdevice())
+                
+        self.extended.append(CasestudyIdevice())
+  
+
+    def loadGeneric(self):
+        """
+        Load the Generic iDevices from the appdata directory
+        """
+
+
+
+     
 
 # ===========================================================================

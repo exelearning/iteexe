@@ -37,6 +37,8 @@ class Idevice(jelly.Jellyable):
     def __init__(self, title, author, purpose, tip, parentNode=None):
         """Initialize a new iDevice, setting a unique id"""
         self.edit       = True
+        self.emphasis   = 0
+        self.version    = 0
         self.id         = str(Idevice.nextId)
         Idevice.nextId += 1
         self.parentNode = parentNode

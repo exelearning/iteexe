@@ -46,7 +46,6 @@ class Config:
         
         exeConf = None
         
-
         if "EXECONF" in os.environ and os.path.isfile(os.environ["EXECONF"]):
             exeConf = os.environ["EXECONF"]              
 
@@ -61,7 +60,6 @@ class Config:
             confPath = "/etc/exe" + configFile
             if os.path.isfile(confPath):
                 exeConf = confPath
-
                 
         if not exeConf:
             exeConf = self.exeDir+"/"+configFile 
@@ -102,7 +100,13 @@ class Config:
         if not os.path.isdir(self.dataDir):
             self.dataDir = "/"    
  
+        # TODO: get appDataDir from
+        # Documents and Settings\$USER\Application Data on Windows
+        # or $HOME\.exe on Linux
+        self.appDataDir = self.dataDir
+
         self.styles = []
+
 
     def setupLogging(self, logFile):
         """
@@ -147,12 +151,14 @@ class Config:
         get user My Documents directory
         """
         return self.dataDir
+
     
     def getExeDir(self):
         """
         get eXe running directory
         """
         return self.exeDir
+
     
     def getDirectory(self, code):
         from ctypes import WinDLL, create_string_buffer
@@ -167,5 +173,4 @@ class Config:
             return p.value
         
 
-#g_Config = Config("exe.conf")
 # ===========================================================================

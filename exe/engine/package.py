@@ -33,6 +33,7 @@ from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.webinterface import g_webInterface
 from exe.engine.genericidevice  import GenericIdevice
+from exe.engine import persist
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -68,6 +69,8 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         idevice            = GenericIdevice("", "", "", "", "")
         idevice.parentNode = self.editor
         self.editor.addIdevice(idevice)
+        self.idevices      = []
+
         
     def getStateFor(self, jellier):
         """
@@ -75,6 +78,7 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         persistenceVersion etc...
         """
         return self.__getstate__()
+
 
     def findNode(self, nodeId):
         """
@@ -109,43 +113,19 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         try:
             fileName = self.name + ".elp" 
             zippedFile = zipfile.ZipFile(fileName, "w", zipfile.ZIP_DEFLATED)
-
-            encoder = banana.Banana()
-            encoder.connectionMade()
-            encoder._selectDialect("none")
-            strBuffer = cStringIO.StringIO()
-            encoder.transport = strBuffer
-            encoder.sendEncoded(jelly.jelly(self))
-            zippedFile.writestr("content.data", strBuffer.getvalue())
+            zippedFile.writestr("content.data", persist.encodeObject(self))
             zippedFile.close()
         finally:
             os.chdir(oldDir)
-        
 
-    def _regNewNode(self, node):
-        """
-        Called only by nodes, generates a new unique id
-        and stores the node in our id lookup dict
-        """
-        node._id = str(self._nextNodeId)
-        node.package = self
-        self._nextNodeId += 1
-        self._nodeIdDict[node.id] = node
 
     def load(path):
         """Load package from disk, returns a package"""
         zippedFile = zipfile.ZipFile(path, "r", zipfile.ZIP_DEFLATED)
-        decoder = banana.Banana()
-        decoder.connectionMade()
-        decoder._selectDialect("none")
-        data = []
-        decoder.expressionReceived = data.append
-        decoder.dataReceived(zippedFile.read("content.data"))
-        zippedFile.close()
-        package = jelly.unjelly(data[0])
-        doUpgrade()
-        return package
+        toDecode = zippedFile.read("content.data")
+        return persist.decodeObject(toDecode)
     load = staticmethod(load)
+
 
     def upgradeToVersion1(self):
         """Called to upgrade from 0.3 release"""
@@ -161,5 +141,16 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             for child in node.children:
                 superReg(child)
         superReg(self.root)
+
+        
+    def _regNewNode(self, node):
+        """
+        Called only by nodes, generates a new unique id
+        and stores the node in our id lookup dict
+        """
+        node._id = str(self._nextNodeId)
+        node.package = self
+        self._nextNodeId += 1
+        self._nodeIdDict[node.id] = node
 
 # ===========================================================================

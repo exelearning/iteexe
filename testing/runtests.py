@@ -26,6 +26,7 @@ from testxmlhttp  import TestOutline
 from testpackage  import TestPackage
 from testblock    import TestBlock
 from testidevice  import TestIdevice
+from testpersist  import TestPersist
 
 # ===========================================================================
 
@@ -38,4 +39,5 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestPackage))
     suite.addTest(unittest.makeSuite(TestBlock))
     suite.addTest(unittest.makeSuite(TestIdevice))
+    suite.addTest(unittest.makeSuite(TestPersist))
     unittest.TextTestRunner(verbosity=2).run(suite)

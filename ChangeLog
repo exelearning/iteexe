@@ -1,3 +1,153 @@
+2005-04-15 04:11  matthew
+
+	* exe/webui/mainpage.py, exe/webui/outlinepane.py,
+	  testing/testxmlhttp.py: Code tidy up on mainpage.py Fixed tests
+	  for node renaming
+
+2005-04-15 03:31  matthew
+
+	* exe/engine/node.py, exe/webui/mainpage.py,
+	  exe/webui/outlinepane.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul: Added promote, demote, up, and
+	  down buttons to node tree.
+
+2005-04-15 00:50  matthew
+
+	* exe/webui/outlinepane.py: Issue: 0000042 Now can rename nodes with
+	  & < > etc.
+
+2005-04-15 00:42  matthew
+
+	* exe/webui/loadpage.py, exe/webui/loadpage.xul,
+	  exe/webui/mainpage.py, exe/webui/mainpage.xul,
+	  exe/webui/templates, exe/webui/templates/loadpage.xul,
+	  exe/webui/templates/mainpage.xul: Moved xul templates to templates
+	  dir. Realigned import statements in mainpage.py
+
+2005-04-15 00:38  matthew
+
+	* exe/engine/config.py, exe/webui/loadpage.py,
+	  exe/webui/mainpage.py: Issue: 0000044 Can now launch from a
+	  different directory Tidied config.py a bit.
+
+2005-04-15 00:23  matthew
+
+	* exe/webui/scripts/mainpage.js: No longer selects after adding a
+	  child node
+
+2005-04-15 00:21  matthew
+
+	* exe/webui/authoringpage.py: Quick fix for passing title idevices
+	  instead of title strings
+
+2005-04-15 00:19  matthew
+
+	* exe/webui/outlinepane.py: Fix a quick node renaming bug in
+	  outlinepane.py
+
+2005-04-15 00:14  matthew
+
+	* exe/engine/node.py, exe/webui/outlinepane.py,
+	  exe/webui/propertiespane.py, testing/testnode.py, tools/svimdiff:
+	  Improvements and tests for node Can now node.title and get a
+	  string :)
+
+2005-04-14 04:51  matthew
+
+	* exe/engine/node.py: Fixed a small drag and drop bug
+
+2005-04-14 03:02  matthew
+
+	* exe/engine/node.py, exe/engine/package.py,
+	  exe/engine/titleidevice.py, exe/export/websiteexport.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/outlinepane.py,
+	  exe/webui/scripts/draganddrop.js, exe/webui/scripts/mainpage.js,
+	  exe/webui/titleblock.py, testing/testidevice.py,
+	  testing/testnode.py, testing/testpackage.py,
+	  testing/testxmlhttp.py: Workingish bad drag and drop. Still a
+	  couple of bugs. Export broken. Deleted some tests no longer
+	  applicable tests Still need to add more tests
+
+2005-04-13 23:25  djm
+
+	* exe/webui/eXe_icon.ico, win install/exe.nsi, win-setup.py: Merged
+	  in changes from 0.3 branch from revisions 435:438
+
+2005-04-13 09:48  brent
+
+	* exe/webui/common.py, exe/webui/css/exe.css,
+	  exe/webui/mainpage.xul, exe/webui/titleblock.py: minor css changes
+	  to authoringpane, removed icon to edit title as this functionality
+	  is now in sidebar.
+
+2005-04-13 05:56  brent
+
+	* exe/webui/mainpage.xul: tiny usability change to mainpage.xul
+	  interface
+
+2005-04-13 04:42  jenny
+
+	* exe/engine/package.py, exe/webui/editorelement.py,
+	  exe/webui/editorpage.py, exe/webui/mainpage.py: adding iDevice
+	  Editor interface
+
+2005-04-12 04:08  jenny
+
+	* exe/engine/package.py, exe/webui/element.py,
+	  exe/webui/mainpage.py, exe/webui/mainpage.xul,
+	  exe/webui/menupane.py, exe/webui/savepage.py,
+	  testing/testblock.py, tools/dot.pylintrc: adding idevice editor
+
+2005-04-11 21:32  jenny
+
+	* exe/webui/server.py: fixed launching firefox bug
+
+2005-04-11 06:47  matthew
+
+	* exe/webui/scripts/loadpage.js: Loadpage.js needed for loading
+	  packages with the new xul interface
+
+2005-04-11 06:47  matthew
+
+	* exe/webui/element.py: Fix typos. Was causing error on post.
+
+2005-04-11 06:34  matthew
+
+	* exe/engine/package.py, exe/webui/authoringpage.py,
+	  exe/webui/authoringpane.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/exportpage.py, exe/webui/idevicepane.py,
+	  exe/webui/loadpage.py, exe/webui/loadpage.xul,
+	  exe/webui/mainpage.py, exe/webui/mainpage.xul,
+	  exe/webui/optionelement.py, exe/webui/outlinepane.py,
+	  exe/webui/packageredirectpage.py, exe/webui/propertiespage.py,
+	  exe/webui/questionelement.py, exe/webui/savepage.py,
+	  exe/webui/scripts/common.js, exe/webui/scripts/control_panel.js,
+	  exe/webui/scripts/draganddrop.js, exe/webui/scripts/mainpage.js,
+	  exe/webui/server.py, exe/webui/stylepane.py,
+	  exe/webui/titleblock.py, testing/runtests.py,
+	  testing/testxmlhttp.py: Merge with XUL branch!
+
+2005-04-11 05:09  matthew
+
+	* exe/webui/authoringpage.py: Renaming to mainpage.py. Have to
+	  commit so authoringpane.py can be renamed to authoringpage.py
+
+2005-04-11 03:17  jenny
+
+	* exe/engine/config.py, exe/export/manifest.py: fixed exporting
+	  bugs.
+
+2005-04-08 00:00  djm
+
+	* tools/svn2cl, tools/svn2cl.xsl: Added neat tool for generating
+	  ChangeLogs
+
+2005-04-07 23:55  djm
+
+	* ChangeLog: Add ChangeLog
+
 2005-04-07 23:50  djm
 
 	* NEWS, README, doc/eXe-tutorial.elp, exe/idevices,
