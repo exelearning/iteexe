@@ -114,7 +114,7 @@ class OutlinePane(object):
         if source and parent:
             # If the node has a default title and is changing levels
             # Make the client rename the node after we've moved it
-            doRename = not source.title.title and parent is not source.parent
+            doRename = not source.title and parent is not source.parent
             # Do the move
             if nextSibling:
                 assert nextSibling.parent is parent, 'sibling has different parent: [%s/%s] [%s/%s]' % \
@@ -128,7 +128,7 @@ class OutlinePane(object):
             if doRename:
                 # Recursively rename all nodes on the client
                 def rename(node):
-                    if not node.title.title:
+                    if not node.title:
                         ctx.call('XHRenNode', str(node.title), node.id)
                     for child in node.children: rename(child)
                 rename(source)

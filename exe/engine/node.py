@@ -43,7 +43,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             parent.children.append(self)
         package._regNewNode(self) # Sets self.id and self.package
         self.parent   = parent
-        self.title    = TitleIdevice(self, title)
+        self._title    = TitleIdevice(self, title)
         self.children = []
         self.idevices = []
 
@@ -56,6 +56,11 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     # level
     def getLevel(self): return len(list(self.ancestors()))
     level = property(getLevel)
+
+    # title
+    def getTitle(self): return str(self._title)
+    def setTitle(self, title): self._title.setTitle(title)
+    title = property(getTitle, setTitle)
 
     # Normal methods
 
@@ -123,7 +128,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         nodeStr = ""
         nodeStr += self.id + " "
-        nodeStr += self.title.title + "\n"
+        nodeStr += self.title + "\n"
         for child in self.children:
             nodeStr += child.__str__()
         return nodeStr

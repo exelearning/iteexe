@@ -59,7 +59,7 @@ class PropertiesPane(object):
             self.package.isChanged = 1
         
         if "title" in request.args:            
-            self.package.root.title.title = request.args["title"][0]
+            self.package.root.title = request.args["title"][0]
             
         if "author" in request.args:   
             self.package.author = request.args["author"][0]
