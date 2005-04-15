@@ -23,10 +23,12 @@ This is the main XUL page.
 
 import logging
 import gettext
+import os
 from twisted.web.resource import Resource
 from nevow import loaders, inevow, stan
 from nevow.livepage import handler, LivePage, js
 from exe.webui import common
+from exe.webui.webinterface  import g_webInterface
 from exe.engine.packagestore import g_packageStore
 from exe.webui.idevicepane   import IdevicePane
 from exe.webui.authoringpage import AuthoringPage
@@ -49,12 +51,11 @@ class MainPage(LivePage):
     Rendering and processing is delegated to the Pane classes.
     """
     
-    docFactory = loaders.xmlfile('mainpage.xul')
-
     def __init__(self, package):
         """
         Initialize a new XUL page
         """
+        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'mainpage.xul'))
         LivePage.__init__(self)
         self.package = package
         # Create all the children on the left

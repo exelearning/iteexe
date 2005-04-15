@@ -22,6 +22,7 @@ The LoadPage is responsible for loading an existing package
 
 import logging
 import gettext
+import os
 from exe.webui import common
 from nevow import loaders, inevow
 from nevow.livepage import handler, LivePage, js
@@ -39,13 +40,12 @@ class LoadPage(LivePage):
     The LoadPage is responsible for loading an existing package
     """
 
-    docFactory = loaders.xmlfile('loadpage.xul')
-    
     def __init__(self, parent):
         """
         Initialize
         'parent' is a MainPage instance
         """
+        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'loadpage.xul'))
         LivePage.__init__(self)
         self.parent   = parent
         self.package  = parent.package
