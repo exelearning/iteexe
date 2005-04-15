@@ -117,6 +117,15 @@ class MainPage(LivePage):
         request = inevow.IRequest(ctx)
         return ctx.tag(src=request.prepath[0] + '/' + ctx.tag.attributes['src'])
 
+    # The node moving buttons
+    def _passHandle(self, ctx, name):
+        attr = getattr(self.outlinePane, 'handle%s' % name)
+        return ctx.tag(oncommand=handler(attr, js('currentOutlineId()')))
+    def render_promote(self, ctx, data): return self._passHandle(ctx, 'Promote')
+    def render_demote(self, ctx, data): return self._passHandle(ctx, 'Demote')
+    def render_up(self, ctx, data): return self._passHandle(ctx, 'Up')
+    def render_down(self, ctx, data): return self._passHandle(ctx, 'Down')
+
     def render_debugInfo(self, ctx, data):
         if log.getEffectiveLevel() == logging.DEBUG:
             # TODO: Needs to be updated by xmlhttp or xmlrpc

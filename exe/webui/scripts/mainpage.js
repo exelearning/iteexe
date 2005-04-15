@@ -21,6 +21,7 @@
 
 // This var is needed, because initWindow is called twice for some reason
 var haveLoaded = false
+var clickon = true // Set to false to stop selects doing page reloads
 
 // Takes a server tree node id eg. '1' and returns a xul treeitem elemtent reference
 function serverId2treeitem(serverId) {
@@ -130,21 +131,29 @@ function XHAddChildTreeItem(nodeid, name) {
     newTreeRow.setAttribute('_exe_nodeid', nodeid)
     var newTreeItem = document.createElement('treeitem')
     newTreeItem.appendChild(newTreeRow)
+    insertChildTreeItem(treeitem, newTreeItem)
+}
+
+function insertChildTreeItem(parentItem, newTreeItem, nextSibling) {
     // If we're not at the top level of the tree, become a container
-    var container = treeitem.getAttribute('container')
+    var container = parentItem.getAttribute('container')
     if ((!container) || (container == 'false')) {
-        treeitem.setAttribute('container', 'true')
-        treeitem.setAttribute('open', 'true')
-        container = treeitem.appendChild(document.createElement('treechildren'))
+        parentItem.setAttribute('container', 'true')
+        parentItem.setAttribute('open', 'true')
+        container = parentItem.appendChild(document.createElement('treechildren'))
     } else {
-        container = treeitem.getElementsByTagName('treechildren')[0]
+        container = parentItem.getElementsByTagName('treechildren')[0]
         // If still haven't got a 'treechildren' node, then make one
         if (!container) {
-            container = treeitem.appendChild(document.createElement('treechildren'))
+            container = parentItem.appendChild(document.createElement('treechildren'))
         }
     }
-    // Append the new node
-    container.appendChild(newTreeItem)
+    // Append/insert the new node
+    if (nextSibling) {
+        container.insertBefore(newTreeItem, nextSibling)
+    } else { 
+        container.appendChild(newTreeItem)
+    }
 }
 
 // Delete's the currently selected node
@@ -182,6 +191,35 @@ function XHRenNode(newName, id) {
     }
 }
 
+// Moves a node in the tree
+function XHMoveNode(id, parentId, nextSiblingId) {
+    clickon = false
+    try {
+        var node = serverId2treeitem(id)
+        var oldParent = node.parentNode.parentNode
+        var newParent = serverId2treeitem(parentId)
+        if (nextSiblingId != 'null') {
+            var nextSibling = serverId2treeitem(nextSiblingId)
+        } else {
+            var nextSibling = null
+        }
+        // Remove ourselves from old parent
+        XHDelNode(node)
+        // Insert ourselves in new parent
+        if (nextSibling) {
+            insertChildTreeItem(newParent, node, nextSibling)
+        } else {
+            insertChildTreeItem(newParent, node)
+        }
+    } finally {
+        clickon = true
+    }
+    // Re-select the node we just moved
+    var tree = document.getElementById('outlineTree')
+    tree.view.selection.select(tree.view.getIndexOfItem(node))
+}
+    
+
 // Asks the user for a new name for the currently selected node
 function askNodeName() {
     var treeitem = currentOutlineItem()
@@ -192,6 +230,9 @@ function askNodeName() {
 
 function delTreeItem() { submitLink('deleteNode', currentOutlineId(), 1) }
 
+// This is called when a different tree node is selected
 function outlineClick() {
-    submitLink('changeNode', currentOutlineId(), 0)
+    if (clickon) {
+        submitLink('changeNode', currentOutlineId(), 0)
+    }
 }

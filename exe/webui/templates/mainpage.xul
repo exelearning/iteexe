@@ -18,6 +18,10 @@
         <key n:render="addChild" id="addChildKey" key="+"/>
         <key n:render="delNode" id="delNodeKey" key="-"/>
         <key n:render="renNode" id="renNodeKey" key="r"/>
+        <key n:render="promote" id="promoteKey" key="+"/>
+        <key n:render="demote" id="demoteKey" key="-"/>
+        <key n:render="up" id="upKey" key="r"/>
+        <key n:render="down" id="downKey" key="r"/>
     </keyset>
     <vbox flex="1">
         <label value="debugInfo" n:render="debugInfo"/>
@@ -38,7 +42,13 @@
                                    <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
                                </toolbar>
                            </toolbox>
-                           <label value="outlinePane" n:render="outlinePane"/>
+                           <label flex="1" value="outlinePane" n:render="outlinePane"/>
+                           <hbox>
+                               <button n:render="promote" key="promoteKey" label="&#8592;"/>
+                               <button n:render="demote" key="demoteKey" label="&#8594;"/>
+                               <button n:render="up" key="upKey" label="&#8593;"/>
+                               <button n:render="down" key="downKey" label="&#8595;"/>
+                           </hbox>
                         </vbox>
                     </tabpanel>
                     <tabpanel id="idevicePane">

@@ -106,7 +106,7 @@ class OutlinePane(object):
         node.title = newName
         client.sendScript('XHRenNode("%s")' % newName)
 
-    def handleDrop(self, ctx, sourceNodeId, parentNodeId, nextSiblingNodeId):
+    def handleDrop(self, client, sourceNodeId, parentNodeId, nextSiblingNodeId):
         """Handles the end of a drag drop operation..."""
         source = self.package.findNode(sourceNodeId)
         parent = self.package.findNode(parentNodeId)
@@ -129,13 +129,43 @@ class OutlinePane(object):
                 # Recursively rename all nodes on the client
                 def rename(node):
                     if not node.title:
-                        ctx.call('XHRenNode', str(node.title), node.id)
+                        client.call('XHRenNode', str(node.title), node.id)
                     for child in node.children: rename(child)
                 rename(source)
         else:
             log.error("Can't drag and drop tree items")
 
+    def _doJsMove(self, client, node):
+        """Makes the javascipt move a node,
+        the 'node' param should already have been moved 
+        to the new position. This makes the client catch up
+        to the server"""
+        pid = node.parent and node.parent.id or 'null'
+        s = node.nextSibling() 
+        sid = s and s.id or 'null'
+        if node.parent:
+            client.call('XHMoveNode', node.id, pid, sid)
+            print node.id, pid, sid
 
+    def handlePromote(self, client, sourceNodeId):
+        """Promotes a node"""
+        node = self.package.findNode(sourceNodeId)
+        if node.promote(): self._doJsMove(client, node)
+
+    def handleDemote(self, client, sourceNodeId):
+        """Demotes a node"""
+        node = self.package.findNode(sourceNodeId)
+        if node.demote(): self._doJsMove(client, node)
+
+    def handleUp(self, client, sourceNodeId):
+        """Moves a node up its list of siblings"""
+        node = self.package.findNode(sourceNodeId)
+        if node.up(): self._doJsMove(client, node)
+
+    def handleDown(self, client, sourceNodeId):
+        """Moves a node down its list of siblings"""
+        node = self.package.findNode(sourceNodeId)
+        if node.down(): self._doJsMove(client, node)
 
     def render(self):
         """

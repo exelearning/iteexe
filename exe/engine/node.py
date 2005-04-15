@@ -34,7 +34,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
 
     # Class attributes
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, package, parent=None, title=""):
         if parent:
@@ -43,7 +43,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             parent.children.append(self)
         package._regNewNode(self) # Sets self.id and self.package
         self.parent   = parent
-        self._title    = TitleIdevice(self, title)
+        self._title   = TitleIdevice(self, title)
         self.children = []
         self.idevices = []
 
@@ -110,7 +110,8 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
 
     def move(self, newParent, nextSibling=None):
         """
-        Moves the node around in the tree
+        Moves the node around in the tree.
+        nextSibling can be a node object or an integer index
         """
         if newParent:
             assert newParent.package is self.package, \
@@ -119,8 +120,70 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self.parent = newParent
         if newParent:
             c = newParent.children
-            if nextSibling: c.insert(c.index(nextSibling), self)
+            if nextSibling: 
+                if type(nextSibling) is int: c.insert(nextSibling, self)
+                else: c.insert(c.index(nextSibling), self)
             else: newParent.children.append(self)
+
+    def promote(self):
+        """Convenience function.
+        Moves the node one step closer to the tree root.
+        Returns True is successful
+        """
+        if self.parent and self.parent.parent:
+            self.move(self.parent.parent, None)
+            return True
+        return False
+
+    def demote(self):
+        """Convenience function.
+        Moves the node one step further away from its parent,
+        tries to keep the same position in the tree.
+        Returns True is successful
+        """
+        if self.parent:
+            idx = self.parent.children.index(self)
+            if idx > 0:
+                newParent = self.parent.children[idx - 1]
+                self.move(newParent)
+                return True
+        return False
+
+    def up(self):
+        """Moves the node up one node vertically
+        keeping its same level in the tree.
+        Returns True is successful.
+        """
+        if self.parent:
+            c = self.parent.children
+            i = c.index(self)
+            if i > 0:
+                c.remove(self)
+                c.insert(i-1, self)
+                return True
+        return False
+
+    def down(self):
+        """Moves the node down one vertically
+        keeping its level the same.
+        Returns True is successful.
+        """
+        if self.parent:
+            c = self.parent.children
+            i = c.index(self)
+            c.remove(self)
+            c.insert(i+1, self)
+            return True
+        return False
+
+    def nextSibling(self):
+        """Returns our next sibling or None"""
+        if self.parent:
+            c = self.parent.children
+            i = c.index(self) + 1
+            return i < len(c) and c[i] or None
+        else:
+            return None
 
     def __str__(self):
         """
@@ -132,5 +195,8 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         for child in self.children:
             nodeStr += child.__str__()
         return nodeStr
+
+    def upgradeToVersion2(self):
+        self._title = self.__dict__['title']
         
 # ===========================================================================
