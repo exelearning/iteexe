@@ -145,8 +145,6 @@ function XHAddChildTreeItem(nodeid, name) {
     }
     // Append the new node
     container.appendChild(newTreeItem)
-    // Select it
-    tree.view.selection.select(tree.view.getIndexOfItem(newTreeItem))
 }
 
 // Delete's the currently selected node
