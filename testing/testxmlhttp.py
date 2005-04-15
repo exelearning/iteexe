@@ -139,10 +139,10 @@ class TestOutline(unittest.TestCase):
         """Should be able to rename nodes"""
         self.outline.handleRenNode(self.client, '0', 'Scratch Pad')
         assert str(self.package.findNode('0').title) == 'Scratch Pad'
-        assert ('call', ('XHRenNode', 'Scratch Pad'), {}) in self.client.calls, self.client.calls
+        assert ('sendScript', ('XHRenNode("Scratch Pad")',), {}) in self.client.calls, self.client.calls
         self.outline.handleRenNode(self.client, '1', 'Genesis')
         assert str(self.package.findNode('1').title) == 'Genesis'
-        assert ('call', ('XHRenNode', 'Genesis'), {}) in self.client.calls, self.client.calls
+        assert ('sendScript', ('XHRenNode("Genesis")',), {}) in self.client.calls, self.client.calls
 
     def testAddChildDraft(self):
         # Shuoldn't do anything for Draft object

@@ -27,23 +27,20 @@ import os
 from twisted.web.resource     import Resource
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, LivePage, js
-from exe.webui                import common
 from exe.webui.webinterface   import g_webInterface
-from exe.engine.packagestore  import g_packageStore
 from exe.webui.idevicepane    import IdevicePane
 from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.outlinepane    import OutlinePane
-from exe.webui.menupane       import MenuPane
 from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage       import SavePage
 from exe.webui.loadpage       import LoadPage
 from exe.webui.exportpage     import ExportPage
 from exe.webui.editorpage     import EditorPage
-from twisted.web              import static
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
+
 
 class MainPage(LivePage):
     """
@@ -56,7 +53,9 @@ class MainPage(LivePage):
         Initialize a new XUL page
         """
         LivePage.__init__(self)
-        self.docFactory = loaders.xmlfile(os.path.join(g_webInterface.config.exeDir, 'templates/mainpage.xul'))
+        path = os.path.join(g_webInterface.config.exeDir,
+                            'templates', 'mainpage.xul')
+        self.docFactory = loaders.xmlfile(path)
         self.package = package
         # Create all the children on the left
         self.outlinePane   = OutlinePane(package)
@@ -97,36 +96,66 @@ class MainPage(LivePage):
         # Could be changed into print statements on the server)
 
     def goingLive(self, ctx, client):
+        """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type',
                                        'application/vnd.mozilla.xul+xml')
 
     def render_addChild(self, ctx, data):
-        return ctx.tag(oncommand=handler(self.outlinePane.handleAddChild, js('currentOutlineId()')))
+        """Fills in the oncommand handler for the 
+        add child button and short cut key"""
+        return ctx.tag(oncommand=handler(self.outlinePane.handleAddChild,
+                       js('currentOutlineId()')))
 
     def render_delNode(self, ctx, data):
+        """Fills in the oncommand handler for the 
+        delete child button and short cut key"""
         return ctx.tag(oncommand=handler(self.outlinePane.handleDelNode,
                        js("confirmDelete()"),
                        js('currentOutlineId()')))
 
     def render_renNode(self, ctx, data):
+        """Fills in the oncommand handler for the 
+        rename node button and short cut key"""
         return ctx.tag(oncommand=handler(self.outlinePane.handleRenNode,
                        js('currentOutlineId()'),
                        js('askNodeName()')))
 
     def render_prePath(self, ctx, data):
+        """Fills in the package name to certain urls in the xul"""
         request = inevow.IRequest(ctx)
         return ctx.tag(src=request.prepath[0] + '/' + ctx.tag.attributes['src'])
 
     # The node moving buttons
     def _passHandle(self, ctx, name):
+        """Ties up a handler for the promote, demote,
+        up and down buttons. (Called by below funcs)"""
         attr = getattr(self.outlinePane, 'handle%s' % name)
         return ctx.tag(oncommand=handler(attr, js('currentOutlineId()')))
-    def render_promote(self, ctx, data): return self._passHandle(ctx, 'Promote')
-    def render_demote(self, ctx, data): return self._passHandle(ctx, 'Demote')
-    def render_up(self, ctx, data): return self._passHandle(ctx, 'Up')
-    def render_down(self, ctx, data): return self._passHandle(ctx, 'Down')
+
+    def render_promote(self, ctx, data):
+        """Fills in the oncommand handler for the 
+        Promote button and shortcut key"""
+        return self._passHandle(ctx, 'Promote')
+
+    def render_demote(self, ctx, data):
+        """Fills in the oncommand handler for the 
+        Demote button and shortcut key"""
+        return self._passHandle(ctx, 'Demote')
+
+    def render_up(self, ctx, data):
+        """Fills in the oncommand handler for the 
+        Up button and shortcut key"""
+        return self._passHandle(ctx, 'Up')
+
+    def render_down(self, ctx, data):
+        """Fills in the oncommand handler for the 
+        Down button and shortcut key"""
+        return self._passHandle(ctx, 'Down')
 
     def render_debugInfo(self, ctx, data):
+        """Renders debug info to the top
+        of the screen if logging is set to debug level
+        """
         if log.getEffectiveLevel() == logging.DEBUG:
             # TODO: Needs to be updated by xmlhttp or xmlrpc
             request = inevow.IRequest(ctx)
@@ -139,15 +168,21 @@ class MainPage(LivePage):
             return ''
 
     def render_outlinePane(self, ctx, data):
+        """Renders the outline tree"""
         # Create a scecial server side func that the 
         # Drag and drop js can call
-        h = handler(self.outlinePane.handleDrop, identifier='outlinePane.handleDrop')
-        h(ctx, data) # Calling this stores the handler...
+        dropHandler = handler(self.outlinePane.handleDrop,
+                              identifier='outlinePane.handleDrop')
+        # The below call stores the handler so we can call it
+        # as a server 
+        dropHandler(ctx, data) 
         return stan.xml(self.outlinePane.render())
 
     def render_idevicePane(self, ctx, data):
+        """Renders the idevice pane"""
         return stan.xml(self.idevicePane.render())
 
     def render_stylePane(self, ctx, data):
+        """Renders the style pane"""
         return stan.xml(self.stylePane.render())
 

@@ -145,7 +145,6 @@ class OutlinePane(object):
         sid = s and s.id or 'null'
         if node.parent:
             client.call('XHMoveNode', node.id, pid, sid)
-            print node.id, pid, sid
 
     def handlePromote(self, client, sourceNodeId):
         """Promotes a node"""
