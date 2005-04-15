@@ -104,7 +104,7 @@ class OutlinePane(object):
         if newName in ('', 'null'): return
         node = self.package.findNode(nodeId)
         node.title = newName
-        client.call('XHRenNode', newName)
+        client.sendScript('XHRenNode("%s")' % newName)
 
     def handleDrop(self, ctx, sourceNodeId, parentNodeId, nextSiblingNodeId):
         """Handles the end of a drag drop operation..."""
