@@ -26,12 +26,16 @@
     <vbox flex="1">
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
+
+<!-- start tabbox for outline, iDevices, Styles -->
+	
             <tabbox selectedTab="Outline">
                 <tabs>
                     <tab label="Outline"/>
-                    <tab label="iDevices"/>
+             <!--   <tab label="iDevices"/> -->
                     <tab label="Styles"/>
                 </tabs>
+
                 <tabpanels flex="1">
                     <tabpanel id="outlinePane">
                         <vbox flex="1">
@@ -49,16 +53,32 @@
                                <button n:render="up" key="upKey" label="&#8593;" tooltiptext="Move node up"/>
                                <button n:render="down" key="downKey" label="&#8595;" tooltiptext="Move node down"/>
                            </hbox>
+
+		<!-- start iDevices -->	
+
+          		<vbox>
+				<label value="idevicePane" n:render="idevicePane"/>
+			</vbox>
+
+		<!-- end iDevices -->
+
                         </vbox>
+		
                     </tabpanel>
+<!--
                     <tabpanel id="idevicePane">
                         <label value="idevicePane" n:render="idevicePane"/>
                     </tabpanel>
+-->
                     <tabpanel id="stylesPane">
                         <label value="stylePane" n:render="stylePane"/>
                     </tabpanel>
+
                 </tabpanels>
             </tabbox>
+
+<!-- end tabbox -->
+
             <splitter collapse="before"><grippy/></splitter>
             <tabbox flex="1" selectedTab="Authoring">
                 <tabs align="end" pack="end">
