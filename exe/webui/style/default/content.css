@@ -2,28 +2,16 @@
      eXe
      Copyright 2004-2005, University of Auckland
 
-     default styles for editing panel.
+     default styles for web page export.
    ================================================== */
 
-/* authoring pane */
-
-#authoring_pane {
-	position: absolute;
-	margin-left: 223px;
-	margin-top: 90px;
-        margin-right: 8px;
-	padding: 8px;
-	background-color: #EDEFF0;
-	border: 1px solid #000;
-	-moz-border-radius: 6px;
-	}	
-
-p.prev_edit { float: right;}
+p.prev_edit { float: right;} 
 
 p.nodeTitle { 
-    color: #51778A;
+    color: #3C5866;
     font-size: 18px;
-    padding: 2px;
+    font-weight: bold;
+    letter-spacing: 3px;
     border-top: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
     display: inline;
@@ -42,15 +30,15 @@ p.reading_feedback {
 /* --- iDevice Styles --- */
 
 #iDevice {
-    background-color: #F1F1DD;
-    padding: 4px;
-    border: 1px solid #ADADAD;
+    background-color: #B1C0C7;
+    padding-left: 8px;
+    border: 1px solid #3C5866;
     margin: 8px;
 }
 
 .iDeviceTitle {
-    color: #51778A;
-    font-size: small;
+    color: #3C5866;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     position: relative;
@@ -88,7 +76,7 @@ li.activity-reflection {
     list-style-position: outside; 
 }
 
-#iDevice li.objectives { 
+li.objectives { 
     margin-left: 20px;
     list-style-image: url(objectives.png); 
     list-style-position: outside; 

@@ -93,13 +93,13 @@ class EditorPage(Resource):
         
             
     def renderIdevice(self, request):
-        html  = "<b>" + _("Idevice Name") + "</b><br/>\n"
+        html  = "<b>" + _("iDevice Name") + "</b><br/>\n"
         html += common.textInput("title", self.idevice.title) + "<br/>"
         html += "<b>" + _("Author") + "</b><br/>\n"
         html += common.textInput("author", self.idevice.author) + "<br/>"
         html += "<b>" + _("Description") + "</b><br/>\n"
         html += common.textArea("description", self.idevice.purpose) + "<br/>"
-        html += "<b>" + _("Help Tip") + "</b><br/>\n"
+        html += "<b>" + _("Pedagogical Help") + "</b><br/>\n"
         html += common.textArea("tip", self.idevice.tip) + "<br/>\n"
         
         for element in self.elements:
