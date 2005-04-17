@@ -31,19 +31,20 @@ p.reading_feedback {
 
 #iDevice {
     background-color: #B1C0C7;
-    padding-left: 8px;
+    padding-left: 10px;
     border: 1px solid #3C5866;
     margin: 8px;
 }
 
 .iDeviceTitle {
     color: #3C5866;
-    font-size: 15px;
+    font-size: 17px;
+    letter-spacing: 1px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     position: relative;
     top: -18px;
-    left: 5px;
+    left: 0px;
 }    
 
 li.activity { 

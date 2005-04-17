@@ -166,8 +166,8 @@ _("""Describe the tasks the learners should complete."""))
         log.debug("render")
         itemTemplate = """  <listitem label="%s" onclick="submitLink('AddIdevice', '%s', 1)"/>"""
         ##itemTemplate = """  <listitem label="%s" onclick="alert('hello %s')"/>"""
-        xul = ('<!-- IDevice Pane Start -->',
-               '<listbox>',
+        xul = ('<!-- iDevice Pane Start -->',
+               '<listbox style="background-color: #DFDFDF;">',
                itemTemplate % (_("Activity"), "ActivityIdevice"),
                itemTemplate % (_("Case Study"), "CaseStudyIdevice"),
                itemTemplate % (_("Free Text"), "FreeTextIdevice"),
@@ -178,7 +178,7 @@ _("""Describe the tasks the learners should complete."""))
                itemTemplate % (_("Reflection"), "ReflectionIdevice"),
                itemTemplate % (_("Multi Mode"), "MultiModeIdevice"),
                '</listbox>',
-               '<!-- IDevice Pane End -->',
+               '<!-- iDevice Pane End -->',
               )
         return '\n'.join(xul) # Add in the newlines
         
