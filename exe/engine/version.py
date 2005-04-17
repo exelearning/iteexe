@@ -25,7 +25,7 @@ Version Information
 
 project = "eXe"
 release  = '0.4'
-revision = '$REVISON$'[11:-2]
+revision = '$Revison$'[11:-2]
 
 if __name__ == '__main__':
     print project, release, revision
