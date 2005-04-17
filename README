@@ -65,8 +65,30 @@ With the McAfee firewall you will need to allow access.
 Packages are saved to your "My Documents" folder with the .elp extension 
 (eXe eLearning Package).
 
+BUILDING
+--------
 
-Have a nice day!
+To build exe you'll need the following packages:
+* python2.3 - http://www.python.org
+* Zope Interfaces - http://www.zope.org/Products/ZopeInterface
+* twisted2 - http://twistedmatrix.com
+* nevow - http://nevow.com/
+* firefox - http://www.mozilla.org/products/firefox
 
+Check the source out of svn:
+svn co http://exe.cfdl.auckland.ac.nz/svn/exe/trunk exe
 
-2005-02-08 DJM
+To run from source:
+cd exe/webui
+cp ../exe.conf
+
+# exe by default runs from /usr/local/exe
+# but because we're developing we'll edit the
+# config file to make it run from our projects directory
+vim exe.conf
+# Insert this line in the server section
+exe-dir = /myprojectsdir/exe/exe/webui
+
+export PYTHONPATH=/myprojectsdir/exe  # The same place you checked it out to
+./server.py
+
