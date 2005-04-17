@@ -24,6 +24,19 @@ a given Idevice.
 import logging
 import gettext
 
+from exe.engine.freetextidevice    import FreeTextIdevice
+from exe.engine.genericidevice     import GenericIdevice
+from exe.engine.multichoiceidevice import MultichoiceIdevice
+from exe.engine.reflectionidevice  import ReflectionIdevice
+from exe.engine.casestudyidevice   import CasestudyIdevice
+
+from exe.webui.freetextblock       import FreeTextBlock
+from exe.webui.genericblock        import GenericBlock
+from exe.webui.multichoiceblock    import MultichoiceBlock
+from exe.webui.reflectionblock     import ReflectionBlock
+from exe.webui.casestudyblock      import CasestudyBlock
+
+
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -35,7 +48,17 @@ class BlockFactory(object):
     which Idevices they can render
     """
     def __init__(self):
-        self.blockTypes = []
+        """Tie together all known block types with all known iDevice types"""
+        self.blockTypes = [(ReflectionBlock,  ReflectionIdevice),
+                           (MultichoiceBlock, MultichoiceIdevice),
+                           (GenericBlock,     GenericIdevice),
+                           (FreeTextBlock,    FreeTextIdevice),
+                           (CasestudyBlock,   CasestudyIdevice)]
+        # Log the the registration has happened
+        for blockType, ideviceType in self.blockTypes:
+            log.debug("registerBlockType "+ 
+                      blockType.__name__ + "<=>" +  ideviceType.__name__)
+
 
     def registerBlockType(self, blockType, ideviceType):
         """
@@ -61,5 +84,6 @@ class BlockFactory(object):
 
 # TODO move this global into a WebUI class???
 g_blockFactory = BlockFactory()
+
 
 # ===========================================================================

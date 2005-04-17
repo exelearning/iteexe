@@ -59,7 +59,7 @@ def main():
         filePath = sys.argv[1] 
         try:  
             package = g_packageStore.loadPackage(filePath)
-        except:
+        except Exception:
             errMessage  = _("Wrong file format,")
             errMessage += _(" please shut down eXe and try again")
             print errMessage
@@ -82,7 +82,11 @@ def main():
 
     launchBrowser(config.port)  
     try:
-        reactor.listenTCP(config.port, appserver.NevowSite(root), interface="127.0.0.1")
+        # Listen only on the loopback interface (127.0.0.1)
+        # so no outside connections allowed
+        reactor.listenTCP(config.port,
+                          appserver.NevowSite(root),
+                          interface="127.0.0.1")
     except CannotListenError:
         pass
     else:
@@ -94,51 +98,9 @@ def launchBrowser(port):
     Launch the webbrowser (Firefox) for this platform
     """
     if sys.platform[:3] == "win":
-        #TODO refactor this into a separate function or class
-        exeDir = g_webInterface.config.exeDir
-        if not g_webInterface.config.browserPath:
-            if "Mozilla Firefox" in os.listdir(exeDir) and \
-                "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox"):
-                g_webInterface.config.browserPath = exeDir + \
-                                                    "\\Mozilla Firefox\\firefox"
-                
-        if not g_webInterface.config.browserPath:
-            try:
-                import _winreg
-                registry = _winreg.ConnectRegistry(None, 
-                                                   _winreg.HKEY_LOCAL_MACHINE)
-                key1 = _winreg.OpenKey(registry, 
-                                       r"SOFTWARE\Mozilla\Mozilla Firefox")
-                currentVersion = _winreg.QueryValueEx(key1, "CurrentVersion")[0]
-                _winreg.CloseKey(key1)
-                regPath = "SOFTWARE\\Mozilla\\Mozilla Firefox\\" + \
-                          currentVersion + "\\Main"
-                log.info("regPath Path:" + regPath)
-                key2 = _winreg.OpenKey(registry, regPath)
-                g_webInterface.config.browserPath = \
-                          _winreg.QueryValueEx(key2, "PathToExe")[0]  
-                log.info("Firefox Path:" + g_webInterface.config.browserPath)
-                _winreg.CloseKey(key2)
-                _winreg.CloseKey(registry)
-            except WindowsError:
-                g_webInterface.config.browserPath = None
-
-        if not g_webInterface.config.browserPath:
-            standardPath = "c:/program files/mozilla/firefox"
-            if os.path.exists(standardPath):
-                g_webInterface.config.browserPath = standardPath
-        
-        if g_webInterface.config.browserPath:
-            command = g_webInterface.config.browserPath
-            log.info("Broswer path: " + command)
-            url     = 'http://localhost:%d' % port
-            log.info("Launch firefox with "+command)
-            try:
-                os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
-            except OSError:
-                print "Cannot launch Firefox, please manually run Firefox"
-                print "and go to", url     
+        launchBrowserWin(port)
     else:
+        # Must be *n*x
         standardPath = g_webInterface.config.browserPath
         if standardPath:            
             os.system("%s http://localhost:%d&"%(standardPath, port))
@@ -148,6 +110,54 @@ def launchBrowser(port):
                 os.system("%s http://localhost:%d&"%(macPath, port))
             else:
                 os.system("firefox http://localhost:%d&"%port)
+
+def launchBrowserWin(port):
+    """
+    Launch the webbrowser (Firefox) for Win32 only
+    """
+    exeDir = g_webInterface.config.exeDir
+    if not g_webInterface.config.browserPath:
+        if "Mozilla Firefox" in os.listdir(exeDir) and \
+            "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox"):
+            g_webInterface.config.browserPath = exeDir + \
+                                                "\\Mozilla Firefox\\firefox"
+            
+    if not g_webInterface.config.browserPath:
+        try:
+            import _winreg
+            registry = _winreg.ConnectRegistry(None, 
+                                               _winreg.HKEY_LOCAL_MACHINE)
+            key1 = _winreg.OpenKey(registry, 
+                                   r"SOFTWARE\Mozilla\Mozilla Firefox")
+            currentVersion = _winreg.QueryValueEx(key1, "CurrentVersion")[0]
+            _winreg.CloseKey(key1)
+            regPath = "SOFTWARE\\Mozilla\\Mozilla Firefox\\" + \
+                      currentVersion + "\\Main"
+            log.info("regPath Path:" + regPath)
+            key2 = _winreg.OpenKey(registry, regPath)
+            g_webInterface.config.browserPath = \
+                      _winreg.QueryValueEx(key2, "PathToExe")[0]  
+            log.info("Firefox Path:" + g_webInterface.config.browserPath)
+            _winreg.CloseKey(key2)
+            _winreg.CloseKey(registry)
+        except WindowsError:
+            g_webInterface.config.browserPath = None
+
+    if not g_webInterface.config.browserPath:
+        standardPath = "c:/program files/mozilla/firefox"
+        if os.path.exists(standardPath):
+            g_webInterface.config.browserPath = standardPath
+    
+    if g_webInterface.config.browserPath:
+        command = g_webInterface.config.browserPath
+        log.info("Broswer path: " + command)
+        url     = 'http://localhost:%d' % port
+        log.info("Launch firefox with "+command)
+        try:
+            os.spawnl(os.P_DETACH, command, '"' + command + '"', url)
+        except OSError:
+            print "Cannot launch Firefox, please manually run Firefox"
+            print "and go to", url     
         
 
     print "Welcome to eXe: the eLearning XML editor"

@@ -22,30 +22,34 @@ Classes to XHTML elements.  Used by GenericBlock
 import logging
 from exe.webui                  import common
 from exe.webui.webinterface     import g_webInterface
-from exe.engine.packagestore    import g_packageStore
-from os                         import getcwd, mkdir
+from os                         import mkdir
 from os.path                    import exists, splitext, basename, join, sep
 from  shutil                    import copyfile
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
+
 def createElement(elementType, name, class_, blockId, instruc):
     """
     Factory method for creating Elements
     """
-    if elementType == "Text":
-        return TextElement(name, class_, blockId, instruc)
-    elif elementType == "TextArea":
-        return TextAreaElement(name, class_, blockId, instruc)
-    elif elementType == "Photo":
-        return ImageElement(name, class_, blockId, instruc)
-    elif elementType == "Audio":
-        return AudioElement(name, class_, blockId, instruc)
-    return None
+    # This dict will convert an element type name to an actual element class
+    elementTypeMap = {'Text':     TextElement,
+                      'TextArea': TextAreaElement,
+                      'Photo':    ImageElement,
+                      'Audio':    AudioElement}
+    # Get the appropriate class
+    cls = elementTypeMap.get(elementType)
+    if cls:
+        # Create an instance of the appropriate element class
+        return cls(name, class_, blockId, instruc)
+    else:
+        return None
 
 def getUploadedFileDir():
-    return  join(g_webInterface.config.getExeDir(), "images")
+    """Returns the directory where files will be uploaded to"""
+    return join(g_webInterface.config.getExeDir(), "images")
     
     
 # ===========================================================================
@@ -84,7 +88,7 @@ class Element(object):
         return html
 
 
-    def renderEdit(self, dummy):
+    def renderEdit(self, content):
         """
         Returns an XHTML string for editing this element
         """
@@ -246,7 +250,7 @@ class ImageElement(Element):
             onchange="document.contentForm.%s_filename.value=this.value"/> \
             <br />\n""" % (self.titleMessage, self.id, self.id)
         
-        html += """<input type="hidden" name="%s_filename">""" %(self.id)
+        html += """<input type="hidden" name="%s_filename">""" % self.id
         return html
         
     def renderView(self, filename):
@@ -288,7 +292,7 @@ class AudioElement(Element):
         # get the package name,store uploaded file into that package
         # subdirectory
         packageName = request.prepath[0]
-        if packageName=="":
+        if packageName == "":
             errmsg = "package not specified while processing audio element"
             log.debug(errmsg)
             return errmsg
@@ -338,6 +342,7 @@ class AudioElement(Element):
             return None                
             
     def renderEdit(self, filename):
+        """Renders ourselves with edit controls"""
  
         ## if file exists=>update, else, add
         imgDir = getUploadedFileDir()
@@ -356,7 +361,7 @@ class AudioElement(Element):
             html += """<strong>%s</strong>:<input type="file" name="%s" \
              onchange="document.contentForm.%s_filename.value=this.value"/>\
               <br />\n""" % (self.titleMessage, self.id, self.id)
-        html += """<input type="hidden" name="%s_filename">""" %(self.id)
+        html += """<input type="hidden" name="%s_filename">""" % self.id
         
         return html
                 

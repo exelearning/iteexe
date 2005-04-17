@@ -23,7 +23,6 @@ CasestudyBlock can render and process CasestudyIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block               import Block
-from exe.webui.blockfactory        import g_blockFactory
 from exe.engine.casestudyidevice   import CasestudyIdevice
 from exe.webui.questionelement     import QuestionElement
 from exe.webui                     import common
@@ -131,8 +130,5 @@ class CasestudyBlock(Block):
             html += element.renderView()
             
         return html
-
-g_blockFactory.registerBlockType(CasestudyBlock, CasestudyIdevice)
-
 
 # ===========================================================================

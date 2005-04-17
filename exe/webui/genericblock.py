@@ -23,7 +23,6 @@ GenericBlock can render and process GenericIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block            import Block
-from exe.webui.blockfactory     import g_blockFactory
 from exe.engine.genericidevice  import GenericIdevice
 from exe.webui.element          import createElement
 
@@ -106,8 +105,5 @@ class GenericBlock(Block):
         for element in self.elements:
             html += element.renderView(self.idevice[element.name])
         return html
-
-g_blockFactory.registerBlockType(GenericBlock, GenericIdevice)
-
 
 # ===========================================================================

@@ -34,16 +34,15 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
 
     # Class attributes
-    persistenceVersion = 2
+    persistenceVersion = 1
 
     def __init__(self, package, parent=None, title=""):
         if parent:
             assert parent is not package.draft, "Draft can't have child nodes"
             assert parent is not package.editor, "Editor can't have child nodes"
             parent.children.append(self)
-        self._id      = ""
-        self.package  = None
-        package._regNewNode(self) # Sets self.id and self.package
+        self._package = package
+        self._id      = package._regNewNode(self)
         self.parent   = parent
         self._title   = TitleIdevice(self, title)
         self.children = []
@@ -52,16 +51,43 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     # Properties
 
     # id
-    def getId(self): return self._id
+    def getId(self):
+        """
+        Returns our id.
+        Used property to make it read only
+        """
+        return self._id
     id = property(getId)
 
+    # package
+    def getPackage(self):
+        """
+        Returns our package.
+        Makes it read only
+        """
+        return self._package
+    package = property(getPackage)
+
     # level
-    def getLevel(self): return len(list(self.ancestors()))
+    def getLevel(self):
+        """
+        Calculates and returns our current level
+        """
+        return len(list(self.ancestors()))
     level = property(getLevel)
 
     # title
-    def getTitle(self): return str(self._title)
-    def setTitle(self, title): self._title.setTitle(title)
+    def getTitle(self):
+        """
+        Returns our title as a string
+        """
+        return str(self._title)
+
+    def setTitle(self, title):
+        """
+        Allows one to set the title as a string
+        """
+        self._title.setTitle(title)
     title = property(getTitle, setTitle)
 
     # Normal methods
@@ -101,10 +127,11 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         # Remove ourself from the id dict and our parents child thing
         del self.package._nodeIdDict[self.id]
-        if self.parent: self.parent.children.remove(self)
-        # Remove all our children from our package id-dict and our own children
-        # list
-        while self.children: self.children[0].delete()
+        if self.parent:
+            self.parent.children.remove(self)
+        # Remove all children from package id-dict and our own children list
+        while self.children:
+            self.children[0].delete()
 
 
     def addIdevice(self, idevice):
@@ -125,13 +152,16 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         if newParent:
             assert newParent.package is self.package, \
                    "Can't change a node into a different package"
-        if self.parent: self.parent.children.remove(self)
+        if self.parent:
+            self.parent.children.remove(self)
         self.parent = newParent
         if newParent:
-            c = newParent.children
+            children = newParent.children
             if nextSibling: 
-                if type(nextSibling) is int: c.insert(nextSibling, self)
-                else: c.insert(c.index(nextSibling), self)
+                if type(nextSibling) is int:
+                    children.insert(nextSibling, self)
+                else:
+                    children.insert(children.index(nextSibling), self)
             else: newParent.children.append(self)
 
 
@@ -167,11 +197,11 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         Returns True is successful.
         """
         if self.parent:
-            c = self.parent.children
-            i = c.index(self)
+            children = self.parent.children
+            i = children.index(self)
             if i > 0:
-                c.remove(self)
-                c.insert(i-1, self)
+                children.remove(self)
+                children.insert(i-1, self)
                 return True
         return False
 
@@ -182,10 +212,10 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         Returns True is successful.
         """
         if self.parent:
-            c = self.parent.children
-            i = c.index(self)
-            c.remove(self)
-            c.insert(i+1, self)
+            children = self.parent.children
+            i = children.index(self)
+            children.remove(self)
+            children.insert(i+1, self)
             return True
         return False
 
@@ -193,9 +223,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     def nextSibling(self):
         """Returns our next sibling or None"""
         if self.parent:
-            c = self.parent.children
-            i = c.index(self) + 1
-            return i < len(c) and c[i] or None
+            children = self.parent.children
+            i = children.index(self) + 1
+            return i < len(children) and children[i] or None
         else:
             return None
 
@@ -211,8 +241,8 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             nodeStr += child.__str__()
         return nodeStr
 
-
-    def upgradeToVersion2(self):
+    def upgradeToVersion1(self):
+        """Upgrades the node from version 0 to 1."""
         self._title = self.__dict__['title']
         
 # ===========================================================================

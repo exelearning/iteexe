@@ -83,7 +83,7 @@ class EditorElement(object):
         log.error("renderEdit called directly")
         return "ERROR: Element.renderEdit called directly"
     
-    def renderEdit(self, dummy):
+    def renderEdit(self, content):
         """
         Returns an XHTML string for editing this element
         """

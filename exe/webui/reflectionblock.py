@@ -23,7 +23,6 @@ ReflectionBlock can render and process ReflectionIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block               import Block
-from exe.webui.blockfactory        import g_blockFactory
 from exe.engine.reflectionidevice  import ReflectionIdevice
 from exe.webui                     import common
 
@@ -144,9 +143,6 @@ class ReflectionBlock(Block):
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
-
-
-g_blockFactory.registerBlockType(ReflectionBlock, ReflectionIdevice)
 
 
 # ===========================================================================

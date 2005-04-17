@@ -22,7 +22,6 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 
 import logging
 import gettext
-from exe.webui                     import common
 from exe.engine.freetextidevice    import FreeTextIdevice
 from exe.engine.genericidevice     import GenericIdevice
 from exe.engine.multichoiceidevice import MultichoiceIdevice
@@ -31,14 +30,6 @@ from exe.engine.casestudyidevice   import CasestudyIdevice
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
-
-# TODO: at the moment we have to import the blocks as well as the iDevices
-# so they are registered in the block factory
-from exe.webui.freetextblock    import FreeTextBlock
-from exe.webui.genericblock     import GenericBlock
-from exe.webui.multichoiceblock import MultichoiceBlock
-from exe.webui.reflectionblock  import ReflectionBlock
-from exe.webui.casestudyblock   import CasestudyBlock
 
 # ===========================================================================
 class IdevicePane(object):
@@ -164,8 +155,8 @@ _("""Describe the tasks the learners should complete."""))
         Returns an XUL string for viewing this pane
         """
         log.debug("render")
-        itemTemplate = """  <listitem label="%s" onclick="submitLink('AddIdevice', '%s', 1)"/>"""
-        ##itemTemplate = """  <listitem label="%s" onclick="alert('hello %s')"/>"""
+        itemTemplate = ('  <listitem label="%s" '
+                        """onclick="submitLink('AddIdevice', '%s', 1)"/>""")
         xul = ('<!-- iDevice Pane Start -->',
                '<listbox style="background-color: #DFDFDF;">',
                itemTemplate % (_("Activity"), "ActivityIdevice"),

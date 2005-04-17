@@ -25,10 +25,8 @@ import logging
 import gettext
 import os.path
 import zipfile 
-import cStringIO
 from twisted.spread  import jelly
-from twisted.spread  import banana
-from twisted.persisted.styles import Versioned, doUpgrade
+from twisted.persisted.styles import Versioned
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.webinterface import g_webInterface
@@ -87,7 +85,8 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         log.debug("findNode" + repr(nodeId))
         node = self._nodeIdDict.get(nodeId)
-        if node and node.package is self: return node
+        if node and node.package is self:
+            return node
         else: return None
 
 
@@ -118,14 +117,12 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         finally:
             os.chdir(oldDir)
 
-
     def load(path):
         """Load package from disk, returns a package"""
         zippedFile = zipfile.ZipFile(path, "r", zipfile.ZIP_DEFLATED)
         toDecode = zippedFile.read("content.data")
         return persist.decodeObject(toDecode)
     load = staticmethod(load)
-
 
     def upgradeToVersion1(self):
         """Called to upgrade from 0.3 release"""
@@ -137,20 +134,24 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self._regNewNode(self.draft)
         self.editor = Node(self, None, _("iDevice Editor"))
         def superReg(node):
+            """Registers all our nodes
+            because in v0 they were not registered
+            in this way"""
             self._regNewNode(node)
             for child in node.children:
                 superReg(child)
         superReg(self.root)
 
-        
     def _regNewNode(self, node):
         """
-        Called only by nodes, generates a new unique id
-        and stores the node in our id lookup dict
+        Called only by nodes, 
+        stores the node in our id lookup dict
+        returns a new unique id
         """
-        node._id = str(self._nextNodeId)
-        node.package = self
+        id_ = str(self._nextNodeId)
         self._nextNodeId += 1
-        self._nodeIdDict[node.id] = node
+        self._nodeIdDict[id_] = node
+        return id_
 
+        
 # ===========================================================================

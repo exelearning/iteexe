@@ -25,7 +25,6 @@ import gettext
 from exe.webui.block            import Block
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.element          import TextAreaElement
-from exe.webui.blockfactory     import g_blockFactory
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -86,7 +85,5 @@ _("""This is a free text field general learning content can be entered."""))
         html += self.renderViewButtons()
         html += "</div>\n"
         return html
-
-g_blockFactory.registerBlockType(FreeTextBlock, FreeTextIdevice)
 
 # ===========================================================================
