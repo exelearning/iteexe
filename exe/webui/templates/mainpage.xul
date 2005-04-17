@@ -47,12 +47,12 @@
                                </toolbar>
                            </toolbox>
                            <label flex="1" value="outlinePane" n:render="outlinePane"/>
-                           <hbox>
-                               <button n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-top.png" tooltiptext="Promote node up in heirarchy"/>
-                               <button n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-bottom.png" tooltiptext="Demote node down in heirarchy"/>
-                               <button n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
-                               <button n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
-                           </hbox>
+                           <toolbar>
+                               <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-top.png" tooltiptext="Promote node up in heirarchy"/>
+                               <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-bottom.png" tooltiptext="Demote node down in heirarchy"/>
+                               <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
+                               <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
+                           </toolbar>
 
 		<!-- start iDevices -->	
 
