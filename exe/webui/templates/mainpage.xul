@@ -46,17 +46,21 @@
                                    <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
                                </toolbar>
                            </toolbox>
-                           <label flex="1" value="outlinePane" n:render="outlinePane"/>
-                           <toolbar>
-                               <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-top.png" tooltiptext="Promote node up in heirarchy"/>
-                               <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-bottom.png" tooltiptext="Demote node down in heirarchy"/>
-                               <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
-                               <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
-                           </toolbar>
+                           <label flex="2" value="outlinePane" n:render="outlinePane"/>
+
+                           <splitter collapse="none"><grippy/></splitter>
+
+                           <toolbox> 
+			       <toolbar>
+                                  <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-top.png" tooltiptext="Promote node up in heirarchy"/>
+                                  <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-bottom.png" tooltiptext="Demote node down in heirarchy"/>
+                                  <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
+                                  <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
+                              </toolbar>
+                           </toolbox>
 
 		<!-- start iDevices -->	
-
-          		<vbox>
+                       	<vbox flex="1">
 				<label value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
 			</vbox>
 
@@ -79,7 +83,7 @@
 
 <!-- end tabbox -->
 
-            <splitter collapse="before"><grippy/></splitter>
+            <splitter collapse="none"><grippy/></splitter>
             <tabbox flex="1" selectedTab="Authoring">
                 <tabs align="end" pack="end">
                     <tab label="Authoring"/>

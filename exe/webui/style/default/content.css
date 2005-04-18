@@ -2,7 +2,7 @@
      eXe
      Copyright 2004-2005, University of Auckland
 
-     default styles for web page export.
+     style for default in editing environment.
    ================================================== */
 
 p.prev_edit { float: right;} 
@@ -33,7 +33,11 @@ p.reading_feedback {
     background-color: #B1C0C7;
     padding-left: 10px;
     border: 1px solid #3C5866;
-    margin: 8px;
+    margin: 10px;
+}
+
+#iDevice p {
+	padding-left: 24px;
 }
 
 .iDeviceTitle {
@@ -43,48 +47,48 @@ p.reading_feedback {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     position: relative;
-    top: -18px;
-    left: 0px;
+    top: -18px;   /* aligns title up with middle of icon */
+
 }    
 
 li.activity { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(activity.png); 
     list-style-position: outside; 
 }
 
 li.activity-casestudy { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(casestudy.png); 
     list-style-position: outside; 
 }
 
 li.activity-reading { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(reading.png); 
     list-style-position: outside; 
 }
 
 li.activity-multichoice { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(question.png); 
     list-style-position: outside; 
 }
 
 li.activity-reflection { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(question.png); 
     list-style-position: outside; 
 }
 
 li.objectives { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(objectives.png); 
     list-style-position: outside; 
 }
 
 li.preknowledge { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(preknowledge.png); 
     list-style-position: outside; 
 }
