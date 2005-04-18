@@ -131,13 +131,15 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         # Also upgrade all the nodes.
         # This needs to be done here so that draft gets id 0
         # If it's done in the nodes, the ids are assigned in reverse order
-        self._regNewNode(self.draft)
+        self.draft._id = self._regNewNode(self.draft)
+        self.draft._package = self
         self.editor = Node(self, None, _("iDevice Editor"))
         def superReg(node):
             """Registers all our nodes
             because in v0 they were not registered
             in this way"""
-            self._regNewNode(node)
+            node._id = self._regNewNode(node)
+            node._package = self
             for child in node.children:
                 superReg(child)
         superReg(self.root)

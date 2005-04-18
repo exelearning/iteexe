@@ -34,7 +34,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
 
     # Class attributes
-    persistenceVersion = 2
+    persistenceVersion = 1
 
     def __init__(self, package, parent=None, title=""):
         if parent:
@@ -243,10 +243,6 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
-        # Nothing to do
-
-    def upgradeToVersion2(self):
-        """Upgrades the node from version 1 to 2."""
         self._title = self.__dict__['title']
         
 # ===========================================================================
