@@ -40,13 +40,6 @@ _   = gettext.gettext
 identSpace = " "*4
 nodeList = []
 
-def isParent(sourceId, destId):
-    """check if destId is a parent id of sourceId"""
-    result = 0
-    if len(sourceId)>=len(destId) and sourceId[: len(destId) ] == destId:
-        result = 1
-    return result
-    
 # ===========================================================================
 class WebsitePage(object):
     """
@@ -87,8 +80,7 @@ class WebsitePage(object):
             previousHtml = ""
             
             if totalNode > 1:
-                nextHtml = nextHtmlPattern % \
-                      ".".join([str(index) for index in nodeList[ i + 1 ] ])
+                nextHtml = nextHtmlPattern % nodeList[i + 1]
             else:
                 nextHtml = ""
         elif i == (totalNode - 1):
@@ -96,20 +88,17 @@ class WebsitePage(object):
             nextHtml = ""
             
             if i != 1:
-                previousHtml = previousHtmlPattern % \
-                    ".".join([str(index) for index in nodeList[ i - 1 ] ]) 
+                previousHtml = previousHtmlPattern % nodeList[i - 1]
             else:
                 ##if previous page is home page
                 previousHtml = previousHtmlPattern % "index"
         else:
             if i != 1:
-                previousHtml = previousHtmlPattern % \
-                    ".".join([str(index) for index in nodeList[ i - 1 ] ]) 
+                previousHtml = previousHtmlPattern % nodeList[i - 1]
             else:
                 ##if previous page is home page
                 previousHtml = previousHtmlPattern % "index"             
-            nextHtml = nextHtmlPattern %  \
-                    ".".join([str(index) for index in nodeList[ i + 1 ] ])
+            nextHtml = nextHtmlPattern %  nodeList[i + 1]
             
         return """<div class="noprt" align="right">%s %s </div>"""\
                                 %(previousHtml, nextHtml) 
@@ -122,23 +111,23 @@ class WebsitePage(object):
             ##check if is direct parent node
             
             if self.node.id == child.id:
-                html += identSpace * (len(child.id)) + \
+                html += identSpace * (child.level + 1) + \
                        """<div id="active">%s</div> \n"""  %(child.title)
                 if len(self.node.children) >0 :
-                    html += identSpace * len(child.id)  \
+                    html += identSpace * (child.level + 1)  \
                             + """<div ID="subnav">\n""" \
                             + self.printChildren(child) +  "</div>\n"
                  
-            elif isParent(self.node.id, child.id):
-                html += identSpace * len(child.id) \
+            elif child in self.node.ancestors():
+                html += identSpace * (child.level + 1) \
                     + """<div><a href="%s.html">%s</a></div>\n""" % \
                        (child.id, child.title)
-                html += identSpace * len(child.id)  \
+                html += identSpace * (child.level + 1)  \
                         + """<div ID="subnav">\n"""   \
                         + self.printChildren(child) \
-                        +  identSpace * len(child.id) + "</div>\n"
+                        +  identSpace * (child.level + 1) + "</div>\n"
             else:
-                html += identSpace * len(child.id) \
+                html += identSpace * (child.level + 1) \
                     + """<div><a href="%s.html">%s</a></div>\n""" % \
                         (child.id, child.title)
         return html
@@ -158,7 +147,7 @@ class WebsitePage(object):
             html += """<div><a href="index.html">%s</a></div>\n""" % \
                     (self.node.package.root.title)
                     
-        nodeLength = len(self.node.id)
+        nodeLength = (self.node.level + 1)
         
         for level1Node in self.node.package.root.children:
             ##if is parent node, then print out its sibiling
@@ -186,8 +175,8 @@ class WebsitePage(object):
             else:
                 html += """<div><a href="%s.html">%s</a></div> \n""" % \
                         (level1Node.id, level1Node.title)
-                if isParent(self.node.id, level1Node.id):
-                    html += identSpace * len(level1Node.id) \
+                if level1Node in self.node.ancestors():
+                    html += identSpace * (level1Node.level + 1) \
                             + """<div ID="subnav">\n""" \
                             + self.printChildren(level1Node) + """</div>\n"""
                 
@@ -270,7 +259,7 @@ class WebsiteExport(object):
         ##
         filesDir = getUploadedFileDir()
         ##course uploaded files directory
-        uploadedFileDir = join (filesDir, package.name)
+        uploadedFileDir = join(filesDir, package.name)
         ##export files directory
         exportFilesDir = join(dataDir, package.name, "images", package.name)
         print "uploadedFileDir: %s , dst:%s\n" % (uploadedFileDir, exportFilesDir)
