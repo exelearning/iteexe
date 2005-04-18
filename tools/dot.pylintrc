@@ -34,7 +34,7 @@ html=no
 
 # Use a parseable text output format, so your favorite text editor will be able
 # to jump to the line corresponding to a message.
-parseable=no
+parseable=yes
 
 # Colorizes text output using ansi escape codes
 color=no
@@ -68,7 +68,7 @@ disable-msg-cat=
 enable-msg=
 
 # Disable the message with the given id.
-disable-msg=
+disable-msg=E0221,R0901,R0904
 
 # Enable the report with the given id.
 enable-report=
@@ -92,9 +92,7 @@ enable-variables=yes
 init-import=no
 
 # List of variable names used for dummy variables (i.e. not used).
-dummy-variables=_,dummy,request
-
-
+dummy-variables=_,dummy,request,ctx,client,data,jellier,content
 
 # checks for
 #     * external modules dependencies
@@ -211,7 +209,7 @@ max-statements=50
 max-parents=7
 
 # Maximum number of attributes for a class (see R0902).
-max-attributes=8
+max-attributes=20
 
 # Minimum number of public methods for a class (see R0903).
 min-public-methods=1
