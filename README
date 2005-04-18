@@ -82,7 +82,7 @@ To run from source:
 cd exe/webui
 cp ../exe.conf
 
-# exe by default runs from /usr/local/exe
+# exe by default runs from /usr/share/exe
 # but because we're developing we'll edit the
 # config file to make it run from our projects directory
 vim exe.conf
