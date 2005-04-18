@@ -2,32 +2,26 @@
      eXe
      Copyright 2004-2005, University of Auckland
 
-     default display styles.
+     styles for Mojave style.
    =========================================================================== */
 
-/* authoring pane */
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    font-family: arial, verdana, helvetica, sans-serif;
+    font-size: 13px;
+    background: #CCCC99;
+}
 
-#authoring_pane {
-	position: absolute;
-	margin-left: 223px;
-	margin-top: 90px;
-    margin-right: 8px;
-	padding: 8px;
-	background-color: #F5D291;
-	border: 1px solid #0A0A0A;
-	-moz-border-radius: 6px;
-	}	
 
 p.prev_edit { float: right;}
 
-
-
 p.nodeTitle { 
-    color: #A89063;
-    font-size: 18px;
+    color: #336633;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 5px;
     padding: 2px;
-    border-top: 1px solid #F5F5F5;
-    border-bottom: 1px solid #F5F5F5;
     display: inline;
 }
 
@@ -47,64 +41,60 @@ p.reading_feedback {
 
 #iDevice {
     background-color: #ACBFC2;
-    padding: 4px;
-    border: 1px solid #F5F5F5;
-    margin: 8px;
+    padding-left: 10px;
+    border: 1px solid #FFFFCC;
+    margin: 10px;
 }
 
 .iDeviceTitle {
     color: #FFF;
-    font-size: small;
+    font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     position: relative;
     top: -18px;
-    left: 5px;
+  
 }    
 
 li.activity { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
 li.activity-casestudy { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
 li.activity-reading { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
 li.activity-multichoice { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
 li.activity-reflection { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
 li.objectives { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
 li.preknowledge { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(cactus_icon.gif); 
     list-style-position: outside; 
 }
 
-li { 
-    list-style-image:    none; 
-    list-style-position: outside; 
-}

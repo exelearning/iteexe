@@ -2,32 +2,36 @@
      eXe
      Copyright 2004-2005, University of Auckland
 
-     default display styles.
+     garden theme display styles.
    =========================================================================== */
 
-/* authoring pane */
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    font-family: arial, verdana, helvetica, sans-serif;
+    font-size: 13px;
+    background: #F2FFBF;
+}
 
-#authoring_pane {
-	position: absolute;
-	margin-left: 223px;
-	margin-top: 90px;
-    margin-right: 8px;
-	padding: 8px;
-	background-color: #E1F799;
-	border: 1px solid #000;
-	-moz-border-radius: 6px;
-	}	
+a { color: #FF6600;
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline;
+	  color: #B34700;
+}
 
 p.prev_edit { float: right;}
 
 
 
 p.nodeTitle { 
-    color: #71AC6B;
+    color: #ACBF60;
     font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 2px;
     padding: 2px;
-    border-top: 1px solid #ABABAB;
-    border-bottom: 1px solid #ABABAB;
+    border-bottom: 2px solid #ACBF60;
     display: inline;
 }
 
@@ -45,67 +49,66 @@ p.reading_feedback {
 
 /* --- iDevice Styles -- */
 
-{
-    background-color: #BFD182;
+#iDevice {
+    background-color: #FAFFE6;
     padding: 4px;
-    border: 1px solid #71AC6B;
+    border: 1px solid #ACBF60;
     margin: 8px;
 }
 
+#iDevice p {
+	padding-left: 24px;
+}
+
 .iDeviceTitle {
-    color: #798552;
-    font-size: small;
+    color: #ACBF60;
+    font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     position: relative;
     top: -18px;
-    left: 5px;
 }    
 
 li.activity { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(activity.png); 
     list-style-position: outside; 
 }
 
 li.activity-casestudy { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(casestudy.png); 
     list-style-position: outside; 
 }
 
 li.activity-reading { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(reading.png); 
     list-style-position: outside; 
 }
 
 li.activity-multichoice { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(question.png); 
     list-style-position: outside; 
 }
 
 
 li.activity-reflection { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(question.png); 
     list-style-position: outside; 
 }
 
 li.objectives { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(objectives.png); 
     list-style-position: outside; 
 }
 
 li.preknowledge { 
-    margin-left: 20px;
+    margin-left: 16px;
     list-style-image: url(preknowledge.png); 
     list-style-position: outside; 
 }
 
-li { 
-    list-style-image:    none; 
-    list-style-position: outside; 
-}
