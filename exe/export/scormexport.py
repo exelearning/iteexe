@@ -53,10 +53,10 @@ class ScormPage(object):
         This is the main function.  It will render the page and save it to a
         file.  
         """
-        if self.node.getIdStr() == "1":
+        if self.node is self.node.package.root:
             filename = "index.html"
         else:
-            filename = self.node.getIdStr() + ".html"
+            filename = self.node.id + ".html"
             
         out = open(filename, "w")
         out.write(self.render())
@@ -79,7 +79,7 @@ class ScormPage(object):
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
-        html += TitleBlock(self.node.title).renderView()
+        html += TitleBlock(self.node._title).renderView()
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(idevice)

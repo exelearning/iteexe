@@ -125,10 +125,10 @@ class Manifest(object):
         """
         itemId = self.idGenerator.generate()
         resId  = self.idGenerator.generate()
-        if node.getIdStr() == "1":
+        if node is node.package.root:
             filename = "index.html"
         else:
-            filename = node.getIdStr() + ".html"
+            filename = node.id + ".html"
             
         
         self.itemStr += """

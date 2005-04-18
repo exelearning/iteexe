@@ -63,10 +63,10 @@ class WebsitePage(object):
         """
         This is the main function. It will render the page and save it to a file.
         """
-        if self.node.getIdStr() == "1":
+        if self.node is self.node.package.root:
             filename = "index.html"
         else:
-            filename = self.node.getIdStr() + ".html"
+            filename = self.node.id + ".html"
             
         out = open(filename, "w")
         out.write(self.render())
@@ -132,7 +132,7 @@ class WebsitePage(object):
             elif isParent(self.node.id, child.id):
                 html += identSpace * len(child.id) \
                     + """<div><a href="%s.html">%s</a></div>\n""" % \
-                       (child.getIdStr(), child.title)
+                       (child.id, child.title)
                 html += identSpace * len(child.id)  \
                         + """<div ID="subnav">\n"""   \
                         + self.printChildren(child) \
@@ -140,7 +140,7 @@ class WebsitePage(object):
             else:
                 html += identSpace * len(child.id) \
                     + """<div><a href="%s.html">%s</a></div>\n""" % \
-                        (child.getIdStr(), child.title)
+                        (child.id, child.title)
         return html
 
         
@@ -179,13 +179,13 @@ class WebsitePage(object):
                     for node in self.node.children:
                         html += identSpace * (nodeLength)  \
                                 + """<a href="%s.html">%s</a> \n""" \
-                                % (node.getIdStr(), node.title)
+                                % (node.id, node.title)
                         
                     html += identSpace * nodeLength + "</div>\n"
                 
             else:
                 html += """<div><a href="%s.html">%s</a></div> \n""" % \
-                        (level1Node.getIdStr(), level1Node.title)
+                        (level1Node.id, level1Node.title)
                 if isParent(self.node.id, level1Node.id):
                     html += identSpace * len(level1Node.id) \
                             + """<div ID="subnav">\n""" \
@@ -207,7 +207,7 @@ class WebsitePage(object):
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
         html += "@import url(nav.css);</style>\n"
-        html += "<title>"+ self.node.title.title +"</title>\n"
+        html += "<title>"+ self.node.title +"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
         html += "</head>\n"
@@ -222,7 +222,7 @@ class WebsitePage(object):
         
         html += "<div id=\"main\">\n"
         #html += "<div id=\"authoring_pane\">\n"
-        html += TitleBlock(self.node.title).renderView()
+        html += TitleBlock(self.node._title).renderView()
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(idevice)
