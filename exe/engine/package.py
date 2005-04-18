@@ -134,6 +134,10 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self.draft._id = self._regNewNode(self.draft)
         self.draft._package = self
         self.editor = Node(self, None, _("iDevice Editor"))
+        # Add a default idevice to the editor
+        idevice            = GenericIdevice("", "", "", "", "")
+        idevice.parentNode = self.editor
+        self.editor.addIdevice(idevice)
         def superReg(node):
             """Registers all our nodes
             because in v0 they were not registered
