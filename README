@@ -71,7 +71,7 @@ BUILDING
 To build exe you'll need the following packages:
 * python2.3 - http://www.python.org
 * Zope Interfaces - http://www.zope.org/Products/ZopeInterface
-* twisted2 - http://twistedmatrix.com
+* twisted2 - http://twistedmatrix.com (You need twisted core and twisted web)
 * nevow - http://nevow.com/
 * firefox - http://www.mozilla.org/products/firefox
 
