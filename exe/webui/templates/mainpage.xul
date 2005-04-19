@@ -24,11 +24,24 @@
         <key n:render="down" id="downKey" key="r"/>
     </keyset>
     <vbox flex="1">
+        <!-- Start Menus -->
+        <toolbox>
+          <menubar>
+            <menu id="file-menu" label="File">
+              <menupopup id="file-popup">
+                <menuitem label="New" oncommand="window.top.location = '/'"/>
+                <menuitem label="Open" oncommand="chooseFile()"/>
+                <menuitem label="Save" oncommand="alert(screen.availWidth)"/>
+                <menuseparator/>
+                <menuitem label="Exit"/>
+              </menupopup>
+            </menu>
+          </menubar>
+        </toolbox>
+        <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
-
-<!-- start tabbox for outline & Styles -->
-	
+            <!-- start tabbox for outline & Styles -->
             <tabbox selectedTab="Outline">
                 <tabs>
                     <tab label="Outline"/>
@@ -83,7 +96,7 @@
                 </tabpanels>
             </tabbox>
 
-<!-- end tabbox -->
+            <!-- end tabbox -->
 
             <splitter collapse="none"><grippy/></splitter>
             <tabbox flex="1" selectedTab="Authoring">
@@ -91,7 +104,6 @@
                     <tab label="Authoring"/>
                     <tab label="Properties"/>
                     <tab label="Save"/>
-                    <tab label="Load"/>
                     <tab label="Export"/>
                     <tab label="iDevice Editor"/>
                 </tabs>
@@ -104,9 +116,6 @@
                     </tabpanel>
                     <tabpanel id="savePane">
                         <iframe flex="1" n:render="prePath" src="save"/>
-                    </tabpanel>
-                    <tabpanel id="loadPane">
-                        <iframe flex="1" n:render="prePath" src="load"/>
                     </tabpanel>
                     <tabpanel id="exportPane">
                         <iframe flex="1" n:render="prePath" src="export"/>

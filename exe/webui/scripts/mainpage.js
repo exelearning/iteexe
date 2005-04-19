@@ -22,6 +22,7 @@
 // This var is needed, because initWindow is called twice for some reason
 var haveLoaded = false
 var clickon = true // Set to false to stop selects doing page reloads
+var isPackageDirty = false // Ask the server 'isPackageDirty' and it will set this var
 
 // Takes a server tree node id eg. '1' and returns a xul treeitem elemtent reference
 function serverId2treeitem(serverId) {
@@ -235,4 +236,56 @@ function outlineClick() {
     if (clickon) {
         submitLink('changeNode', currentOutlineId(), 0)
     }
+}
+
+// This is called when a user wants to open a new file
+// It starts a chain of chooseFileX() funcs...
+function chooseFile() {
+  // Ask the server if the current package needs changing
+  // And once we have the answer, go to chooseFile2()
+  // The ansert is stored by the server in the global variable
+  // isPackageDirty
+  nevow_clientToServerEvent('isPackageDirty', this, 'chooseFile2()')
+}
+
+function chooseFile2() {
+  // isPackageDirty has been set by the server
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+  if (isPackageDirty == true) {
+    var promptClass = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
+    var promptService = promptClass.getService(Components.interfaces.nsIPromptService)
+    var flags = promptService.BUTTON_TITLE_SAVE * promptService.BUTTON_POS_0 +
+                promptService.BUTTON_TITLE_DONT_SAVE * promptService.BUTTON_POS_1 +
+                promptService.BUTTON_TITLE_CANCEL * promptService.BUTTON_POS_2
+    var res = promptService.confirmEx(window,"Save Package first?",
+                                      "The current package has been modified and not yet saved." +
+                                      "Would you like to save it before loading the new package?",
+                                      flags, null, null, null, '', {});
+    if (res == 0) {
+      // If to be saved, tell the server
+      nevow_clientToServerEvent('savePackage', this, 'chooseFile3()')
+    } else if (res == 1) {
+      // If Not to be saved, contiue loading
+      chooseFile3()
+    } else if (res == 2) {
+      // If cancel loading, cancel the whole process
+      return
+    }
+  } else {
+    // If the package is not dirty, continue with the loading process
+    chooseFile3()
+  }
+}
+
+// Shows the the load dialog and actually loads the new package
+function chooseFile3() {
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+  var nsIFilePicker = Components.interfaces.nsIFilePicker;
+  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+  fp.init(window, "Select a File", nsIFilePicker.modeOpen);
+  fp.appendFilter("eXe Package Files","*.elp");
+  var res = fp.show();
+  if (res == nsIFilePicker.returnOK) {
+    nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
+  }
 }

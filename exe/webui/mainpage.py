@@ -27,6 +27,7 @@ import os
 from twisted.web.resource     import Resource
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, LivePage, js
+from exe.engine.packagestore  import g_packageStore
 from exe.webui.webinterface   import g_webInterface
 from exe.webui.idevicepane    import IdevicePane
 from exe.webui.authoringpage  import AuthoringPage
@@ -34,7 +35,6 @@ from exe.webui.outlinepane    import OutlinePane
 from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.savepage       import SavePage
-from exe.webui.loadpage       import LoadPage
 from exe.webui.exportpage     import ExportPage
 from exe.webui.editorpage     import EditorPage
 
@@ -68,8 +68,6 @@ class MainPage(LivePage):
         self.putChild("properties", self.propertiesPage)
         self.savePage = SavePage()
         self.putChild("save", self.savePage)
-        self.loadpage = LoadPage(self)
-        self.putChild("load", self.loadpage) 
         self.exportPage = ExportPage()
         self.putChild("export", self.exportPage)
         self.editorPage = EditorPage()
@@ -99,6 +97,14 @@ class MainPage(LivePage):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type',
                                        'application/vnd.mozilla.xul+xml')
+        # Set up named server side funcs that js can call
+        def setUpHandler(func, name, *args, **kwargs):
+            kwargs['identifier'] = name
+            hndlr = handler(func, *args, **kwargs)
+            hndlr(ctx, client) # Stores it
+        setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
+        setUpHandler(self.handleSavePackage, 'savePackage')
+        setUpHandler(self.handleLoadPackage, 'loadPackage')
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
@@ -186,3 +192,32 @@ class MainPage(LivePage):
         """Renders the style pane"""
         return stan.xml(self.stylePane.render())
 
+    def handleIsPackageDirty(self, client):
+        """Called by js to know if the package is dirty or not"""
+        if self.package.isChanged: client.sendScript('isPackageDirty = true')
+        else: client.sendScript('isPackageDirty = false')
+        print 'package dirty = ', self.package.isChanged
+
+    def handleSavePackage(self, client):
+        """Save the current package"""
+        self.package.save()
+        print 'package saved'
+
+    def handleLoadPackage(self, client, filename):
+        """Load the current package"""
+        print 'loading package', filename
+        try:  
+            log.debug("filename and path" + filename)
+            package = g_packageStore.loadPackage(filename)
+            from exe.webui.mainpage import MainPage
+            mainPage = MainPage(package)
+            g_webInterface.rootPage.putChild(package.name, mainPage)
+            client.sendScript('top.location = "/%s"' % package.name)
+        except Exception, e:
+            print 'ERROR:',
+            print str(e)
+            client.sendScript('alert("Sorry, wrong file format")')
+            log.error('Error loading package "%s": %s' % (filename, str(e)))
+            self.error = True
+            return
+        print 'package loaded'
