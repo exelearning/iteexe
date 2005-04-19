@@ -61,7 +61,6 @@ class EditorElement(object):
         if self.instrucId in request.args:
             self.field.instruction = request.args[self.instrucId][0]
                         
-            
         if "object" in request.args and request.args["object"][0] == self.id:
             if request.args["action"][0] == "deleteField":
                 self.idevice.fields.remove(self.field)
@@ -100,18 +99,29 @@ class TextField(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        
         html  = common.textInput(self.nameId, self.field.name, 25)
-        html += common.elementInstruc(self.instrucId, self.instruc)
+        html += "<a onclick = \"showInstruc('%s')\" " % self.instrucId
+        html += "href=\"#\" style=\"cursor:help;\"> \n"
+        html += "<img src=\"/images/help.gif\" border=\"0\" "
+        html += "align=\"middle\"/></a>\n"
+        html += common.submitImage("deleteField", self.id, 
+                                   "stock-cancel.png", 
+                                   _("Delete"),1)
         html += "<br/>\n"
         html += common.textInput(self.contentId, self.field.content)
-        html += "<br/><br/>\n"
+        html += "<br/>\n"
+        if self.instruc == "":
+            self.instruc = "Type field instruction here."
+        html += '<div id="%s" style="display:none;">' % self.instrucId
+        html += common.textArea(self.instrucId, self.instruc) + "</div><br/>\n"
         return html
     
     def renderPreview(self, request):
-        html  = "<b>" + self.field.name + "</b><br/>"
-        html += common.elementInstruc(self.instrucId, self.instruc)
-        html += "<br/>\n"
-        html += common.textInput(self.contentId, self.field.content)
+        html  = "<b>" + self.field.name + "</b> "
+        if self.instruc <> "":
+            html += common.elementInstruc(self.instrucId, self.instruc)
+        html += "<br/>\n" + common.textInput(self.contentId, self.field.content)
         html += "<br/><br/>\n"
         return html
     
@@ -126,9 +136,18 @@ class TextAreaField(EditorElement):
         Returns an XHTML string with the form element for editing this field
         """
         html  = common.textInput(self.nameId, self.field.name, 25)
-        html += common.elementInstruc(self.instrucId, self.instruc)
+        html += "<a onclick = \"showInstruc('%s')\" " % self.instrucId
+        html += "href=\"#\" style=\"cursor:help;\"> \n"
+        html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/></a> "
+        html += common.submitImage("deleteField", self.id, 
+                                   "stock-cancel.png", 
+                                   _("Delete"),1)
         html += "<br/>\n"
         html += common.textArea(self.contentId, self.field.content)
+        if self.instruc == "":
+            self.instruc = "Type field instruction here."
+        html += '<div id="%s" style="display:none;">' % self.instrucId
+        html += common.textArea(self.instrucId, self.instruc) + "</div>\n"
         html += "<br/>\n"
         return html
     
@@ -136,10 +155,10 @@ class TextAreaField(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = "<b>" + self.field.name + "</b><br/>"
-        html += common.elementInstruc(self.instrucId, self.instruc)
-        html += "<br/>\n"
-        html += common.textArea(self.contentId, self.field.content)
+        html  = "<b>" + self.field.name + "</b> "
+        if self.instruc <> "":
+            html += common.elementInstruc(self.instrucId, self.instruc)
+        html += "<br/>" + common.textArea(self.contentId, self.field.content)
         html += "<br/>\n"
         return html
     

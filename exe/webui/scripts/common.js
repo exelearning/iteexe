@@ -82,6 +82,7 @@ function submitLink(action, object, changed)
     form.submit();
 }
 
+
 function beforeUnload(){
     if (document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value=="1")
         if (window.confirm("Do you want to save the package?"))
@@ -93,5 +94,7 @@ function saveChange(action){
     document.getElementById("contentFrame").contentDocument.contentForm.action.value = action;
     document.getElementById("contentFrame").contentDocument.contentForm.submit();
 }
+
+
 
 

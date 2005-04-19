@@ -44,9 +44,9 @@ def header(style='default'):
     html += "<style type=\"text/css\">\n"
     html += "@import url(/css/exe.css);\n"
     html += "@import url(/style/"+style+"/content.css);</style>\n"
-    html += '<script language="JavaScript" src="/scripts/common.js"/>'
-    html += '<script language="JavaScript" src="/scripts/fckeditor.js"/>'
-    html += '<script language="JavaScript" src="/scripts/libot_drag.js"/>'
+    html += '<script language="JavaScript" src="/scripts/common.js"></script>\n'
+    html += '<script language="JavaScript" src="/scripts/fckeditor.js"></script>\n'
+    html += '<script language="JavaScript" src="/scripts/libot_drag.js"></script>\n'
     html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\"></meta>\n";
@@ -113,20 +113,6 @@ def submitButton(name, value, enabled=True):
     html += "/>\n"
     return html
 
-def submitLink(action, object_, value, class_="", isChanged=0):
-    """
-    Adds a link which will trigger the javascript needed to
-    post a form with the action and object passed in the args
-    """
-    html  = "<a "
-    if class_ != "":
-        html += "class=\""+class_+"\" "
-    html += "href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object_ + "', %d );\" >" % isChanged
-    html += value
-    html += "</a>\n"
-    return html
-
 def submitImage(action, object_, imageFile, title="", isChanged=1):
     """
     Adds an image link which will trigger the javascript needed to
@@ -140,6 +126,7 @@ def submitImage(action, object_, imageFile, title="", isChanged=1):
     html += image(imageFile)
     html += "</a>\n" 
     return html
+
 
 def image(imageFile):
     """returns the XHTML for an image"""
@@ -184,7 +171,7 @@ def elementInstruc(indent, instruc):
     else:
         html  = "<a onmousedown=\"Javascript:updateCoords(event);\" "
         html += " title=\"" + _("Instructions for completion") + "\" "
-        html += "onclick=\"Javascript:showMe('i%s', 420, 100);\" " % indent
+        html += "onclick=\"Javascript:showMe('i%s', 350, 100);\" " % indent
         html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
         html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/>"
         html += "</a>\n"

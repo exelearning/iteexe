@@ -29,6 +29,7 @@ from exe.engine.packagestore import g_packageStore
 from exe.webui.webinterface  import g_webInterface
 from exe.webui.menupane      import MenuPane
 from exe.webui.editorelement import TextField, TextAreaField
+from exe.engine.genericidevice import GenericIdevice
 
 
 log = logging.getLogger(__name__)
@@ -39,7 +40,7 @@ class EditorPage(Resource):
     """
     The SavePage is responsible for saving the current project
     """
-    
+   # Edit, Preview, View = range(3)
     def __init__(self):
         """
         Initialize
@@ -50,6 +51,7 @@ class EditorPage(Resource):
         self.elements = []
         self.idevice  = None
         self.menuPane = MenuPane()
+        self.mode = 1
         
     def process(self, request):
         """
@@ -61,8 +63,12 @@ class EditorPage(Resource):
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         self.idevice = self.package.editor.idevices[0]
+        if self.idevice.edit:
+            self.mode = 1
+        else:
+            self.mode = 2
         
-        self.elements = []
+        
         
         if "addText" in request.args:
             self.idevice.addField("Type label here", "Text", "", "")
@@ -78,7 +84,23 @@ class EditorPage(Resource):
             self.idevice.purpose = request.args["description"][0] 
         if "tip" in request.args:
             self.idevice.tip = request.args["tip"][0] 
+        if "preview" in request.args:
+            self.idevice.edit = False
+        if "edit" in request.args:
+            self.idevice.edit = True
+        if "reset" in request.args:
+            idevice = GenericIdevice("", "", "", "", "")
+            idevice.parentNode = self.package.editor
+            self.package.editor.idevices.remove(self.idevice)
+            self.package.editor.addIdevice(idevice)
+            self.idevice = idevice
+
+        self.__buildElements()      
         
+        
+    def __buildElements(self):
+        
+        self.elements = []
         i = 0    
         for field in self.idevice.fields:
             if field.fieldType == "Text":
@@ -86,25 +108,47 @@ class EditorPage(Resource):
             elif field.fieldType == "TextArea":
                 self.elements.append(TextAreaField(i,self.idevice, field))
             i += 1
-      
-        for element in self.elements:
-            element.process(request)
-            
         
             
     def renderIdevice(self, request):
-        html  = "<b>" + _("iDevice Name") + "</b><br/>\n"
-        html += common.textInput("title", self.idevice.title) + "<br/>"
-        html += "<b>" + _("Author") + "</b><br/>\n"
-        html += common.textInput("author", self.idevice.author) + "<br/>"
-        html += "<b>" + _("Description") + "</b><br/>\n"
-        html += common.textArea("description", self.idevice.purpose) + "<br/>"
-        html += "<b>" + _("Pedagogical Help") + "</b><br/>\n"
-        html += common.textArea("tip", self.idevice.tip) + "<br/>\n"
         
-        for element in self.elements:
-            html += element.renderEdit(request)
+        html  = "<script type=\"text/javascript\">\n"
+        html += "<!--\n"
+        html += """
+            function submitLink(action, object, changed) 
+            {
+                var form = document.contentForm
             
+                form.action.value = action;
+                form.object.value = object;
+                form.isChanged.value = changed;
+                form.submit();
+            }
+
+            function showInstruc(id){
+                if (document.getElementById(id).style.display == "block")
+                    document.getElementById(id).style.display = "none";
+                else
+                    document.getElementById(id).style.display = "block";
+            }\n"""
+        html += "//-->\n"
+        html += "</script>\n"
+        
+        if self.idevice.edit:
+            html += "<b>" + _("Idevice Name") + "</b><br/>\n"
+            html += common.textInput("title", self.idevice.title) + "<br/>"
+            html += "<b>" + _("Author") + "</b><br/>\n"
+            html += common.textInput("author", self.idevice.author) + "<br/>"
+            html += "<b>" + _("Description") + "</b><br/>\n"
+            html += common.textArea("description", self.idevice.purpose) + "<br/>"
+            html += "<b>" + _("Pedagogical Help") + "</b><br/>\n"
+            html += common.richTextArea("tip", self.idevice.tip) + "<br/>\n"           
+            for element in self.elements:
+                html += element.renderEdit(request)       
+        else:
+            for element in self.elements:
+                html += element.renderPreview(request) 
+                
         return html
         
 
@@ -114,16 +158,22 @@ class EditorPage(Resource):
         # Processing 
         log.debug("render_GET")
         self.process(request)
-        self.menuPane.process(request)               
+        self.menuPane.process(request) 
+        
+        for element in self.elements:
+            element.process(request)
+            
+        self.__buildElements()
         # Rendering
         html  = common.header() 
-        html += common.banner(request)
+        html += "<body>\n"
         html += "<div id=\"main\"> \n"     
         html += "<form method=\"post\" action=\"%s\" " % self.url
         html += "name=\"contentForm\" >"  
         html += common.hiddenField("action")
         html += common.hiddenField("object")
-        html += common.hiddenField("isChanged", self.package.isChanged)         
+        html += common.hiddenField("isChanged", self.package.isChanged) 
+        html += "<pre>%s</pre>\n" % str(request.args) # to be deleted later
         html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td>\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
@@ -131,6 +181,15 @@ class EditorPage(Resource):
         html += common.submitButton("addTextArea", _("Add Text Area")) + "<br/>"
         html += "</td><td>\n"
         html += self.renderIdevice(request)
+        html += "</td></tr><tr><td></td><td>\n"
+        if self.idevice.edit:
+            html += common.submitButton("edit", _("Edit"), False)
+            html += "&nbsp;&nbsp;"+common.submitButton("preview", _("Preview"))
+        else:
+            html += common.submitButton("edit", _("Edit")) + "&nbsp;&nbsp;"
+            html += common.submitButton("preview", _("Preview"), False)
+        html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
+        html += "&nbsp;&nbsp" + common.submitButton("reset", _("Reset"))
         html += "</td></tr></table>\n"
         html += "<br/></form>"
         html += "</div> \n"
