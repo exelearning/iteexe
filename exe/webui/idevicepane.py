@@ -158,7 +158,7 @@ _("""Describe the tasks the learners should complete."""))
         itemTemplate = ('  <listitem label="%s" '
                         """onclick="submitLink('AddIdevice', '%s', 1)"/>""")
         xul = ('<!-- iDevice Pane Start -->',
-               '<listbox style="background-color: #DFDFDF;">',
+               '<listbox flex="1" style="background-color: #DFDFDF;">',
                itemTemplate % (_("Activity"), "ActivityIdevice"),
                itemTemplate % (_("Case Study"), "CaseStudyIdevice"),
                itemTemplate % (_("Free Text"), "FreeTextIdevice"),
