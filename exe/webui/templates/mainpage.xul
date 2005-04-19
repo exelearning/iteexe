@@ -27,12 +27,11 @@
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
 
-<!-- start tabbox for outline, iDevices, Styles -->
+<!-- start tabbox for outline & Styles -->
 	
             <tabbox selectedTab="Outline">
                 <tabs>
                     <tab label="Outline"/>
-             <!--   <tab label="iDevices"/> -->
                     <tab label="Styles"/>
                 </tabs>
 
@@ -46,34 +45,37 @@
                                    <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
                                </toolbar>
                            </toolbox>
+                           <!-- This label is actually rendered as a tree -->
                            <label flex="2" value="outlinePane" n:render="outlinePane"/>
 
                            <splitter collapse="none"><grippy/></splitter>
 
-                           <toolbox> 
-			       <toolbar>
-                                  <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-top.png" tooltiptext="Promote node up in heirarchy"/>
-                                  <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-bottom.png" tooltiptext="Demote node down in heirarchy"/>
-                                  <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
-                                  <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
-                              </toolbar>
-                           </toolbox>
+                           <vbox flex="1">
+                             <toolbox> 
+                               <toolbar>
+                                  <toolbarbutton n:render="promote" key="promoteKey"
+                                                 image="http://localhost:8081/images/stock-goto-top.png"
+                                                 tooltiptext="Promote node up in heirarchy"/>
+                                  <toolbarbutton n:render="demote" key="demoteKey"
+                                                 image="http://localhost:8081/images/stock-goto-bottom.png"
+                                                 tooltiptext="Demote node down in heirarchy"/>
+                                  <toolbarbutton n:render="up" key="upKey"
+                                                 image="http://localhost:8081/images/stock-go-up.png"
+                                                 tooltiptext="Move node up"/>
+                                  <toolbarbutton n:render="down" key="downKey"
+                                                 image="http://localhost:8081/images/stock-go-down.png"
+                                                 tooltiptext="Move node down"/>
+                                </toolbar>
+                             </toolbox>
 
-		<!-- start iDevices -->	
-                       	<vbox flex="1">
-				<label value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
-			</vbox>
-
-		<!-- end iDevices -->
+                           <!-- start iDevices -->	
+                             <label flex="1" value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
+                           </vbox>
+                           <!-- end iDevices -->
 
                         </vbox>
 		
                     </tabpanel>
-<!--
-                    <tabpanel id="idevicePane">
-                        <label value="idevicePane" n:render="idevicePane"/>
-                    </tabpanel>
--->
                     <tabpanel id="stylesPane">
                         <label value="stylePane" n:render="stylePane"/>
                     </tabpanel>
