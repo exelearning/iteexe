@@ -39,7 +39,6 @@ class TitleBlock(Block):
         #log.debug("__init__"+titleIdevice.title)
         Block.__init__(self, titleIdevice)
 
-
     def process(self, request):
         """
         User has finished editing this block
@@ -48,77 +47,15 @@ class TitleBlock(Block):
         
         if "nodeTitle"+self.id in request.args:
             self.idevice.setTitle(request.args["nodeTitle"+self.id][0])
-
-    def processMovePrev(self, request):
-        """
-        Move this iDevice back to the previous position
-        """
-        log.debug("processMovePrev "+self.id)
-        self.idevice.parentNode.movePrev()
-
-
-    def processMoveNext(self, request):
-        """
-        Move this iDevice forward to the next position
-        """
-        log.debug("processMoveNext "+self.id)
-        self.idevice.parentNode.moveNext()
-
-
-    def processPromote(self, request):
-        """
-        Promote this iDevice up the hierarchy tree
-        """
-        log.debug("processPromote "+self.id)
-        self.idevice.parentNode.promote()
-
-
-    def processDemote(self, request):
-        """
-        Demote this iDevice down the hierarchy tree
-        """
-        log.debug("processDemote "+self.id)
-        self.idevice.parentNode.demote()
-
-
-    def renderEdit(self):
-        """
-        Returns an XHTML string with the form element for editing this title
-        """
-        html  = "<div>\n"
-        html += common.textInput("nodeTitle", self.idevice)
-
-        html += common.submitImage("done", self.id,
-                                   "stock-apply.png", _("Done"))
         
-        html += "<p class=\"prev_edit\">\n"
-        html += self.__renderNodeActions()
-        html += "</p>\n"
-        html += "</div>\n"
-        return html
-
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this title
         """
         html  = "<div>\n"
-        html += '<p class="prev_edit">\n'
-        html += self.__renderNodeActions()
-        html += "</p>\n"
         html += self.renderView()
         html += "</div>\n"
         return html
-
-    def __renderNodeActions(self):
-        """
-        Common XHTML used by both renderEdit and renderPreview
-        """
-        html  = common.submitImage("PreviewAll", self.id,
-                                   "edit.gif", _("Preview All"))
-        html += common.submitImage("EditAll", self.id,
-                                   "stock-edit.png", _("Edit All"))
-        return html
-
 
     def renderView(self):
         """
