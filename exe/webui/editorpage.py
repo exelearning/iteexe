@@ -29,7 +29,7 @@ from exe.engine.packagestore import g_packageStore
 from exe.webui.webinterface  import g_webInterface
 from exe.webui.menupane      import MenuPane
 from exe.webui.editorelement import TextField, TextAreaField
-from exe.engine.genericidevice import GenericIdevice
+from exe.engine.newidevice   import NewIdevice
 
 
 log = logging.getLogger(__name__)
@@ -89,7 +89,7 @@ class EditorPage(Resource):
         if "edit" in request.args:
             self.idevice.edit = True
         if "reset" in request.args:
-            idevice = GenericIdevice("", "", "", "", "")
+            idevice = NewIdevice("", "", "", "", "")
             idevice.parentNode = self.package.editor
             self.package.editor.idevices.remove(self.idevice)
             self.package.editor.addIdevice(idevice)
@@ -123,13 +123,6 @@ class EditorPage(Resource):
                 form.object.value = object;
                 form.isChanged.value = changed;
                 form.submit();
-            }
-
-            function showInstruc(id){
-                if (document.getElementById(id).style.display == "block")
-                    document.getElementById(id).style.display = "none";
-                else
-                    document.getElementById(id).style.display = "block";
             }\n"""
         html += "//-->\n"
         html += "</script>\n"

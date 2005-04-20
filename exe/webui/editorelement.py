@@ -62,6 +62,11 @@ class EditorElement(object):
             self.field.instruction = request.args[self.instrucId][0]
                         
         if "object" in request.args and request.args["object"][0] == self.id:
+            if request.args["action"][0] == "showHide":
+                if self.field.showInstruc:
+                    self.field.showInstruc = False
+                else:
+                    self.field.showInstruc = True
             if request.args["action"][0] == "deleteField":
                 self.idevice.fields.remove(self.field)
 
@@ -101,10 +106,10 @@ class TextField(EditorElement):
         """
         
         html  = common.textInput(self.nameId, self.field.name, 25)
-        html += "<a onclick = \"showInstruc('%s')\" " % self.instrucId
-        html += "href=\"#\" style=\"cursor:help;\"> \n"
+        html += "<a href=\"#\" style=\"cursor:help;\" "
+        html += "onclick=\"submitLink('%s','%s',%d)\" " %("showHide",self.id,1)
         html += "<img src=\"/images/help.gif\" border=\"0\" "
-        html += "align=\"middle\"/></a>\n"
+        html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "stock-cancel.png", 
                                    _("Delete"),1)
@@ -113,8 +118,11 @@ class TextField(EditorElement):
         html += "<br/>\n"
         if self.instruc == "":
             self.instruc = "Type field instruction here."
-        html += '<div id="%s" style="display:none;">' % self.instrucId
-        html += common.textArea(self.instrucId, self.instruc) + "</div><br/>\n"
+        if self.field.showInstruc:
+            html += common.richTextArea(self.instrucId, self.instruc)
+        else:
+            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+        html += "<br/>"
         return html
     
     def renderPreview(self, request):
@@ -136,9 +144,10 @@ class TextAreaField(EditorElement):
         Returns an XHTML string with the form element for editing this field
         """
         html  = common.textInput(self.nameId, self.field.name, 25)
-        html += "<a onclick = \"showInstruc('%s')\" " % self.instrucId
-        html += "href=\"#\" style=\"cursor:help;\"> \n"
-        html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/></a> "
+        html += "<a href=\"#\" style=\"cursor:help;\" "
+        html += "onclick=\"submitLink('%s','%s',%d)\" " %("showHide",self.id,1)
+        html += "<img src=\"/images/help.gif\" border=\"0\" "
+        html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "stock-cancel.png", 
                                    _("Delete"),1)
@@ -146,9 +155,11 @@ class TextAreaField(EditorElement):
         html += common.textArea(self.contentId, self.field.content)
         if self.instruc == "":
             self.instruc = "Type field instruction here."
-        html += '<div id="%s" style="display:none;">' % self.instrucId
-        html += common.textArea(self.instrucId, self.instruc) + "</div>\n"
-        html += "<br/>\n"
+        if self.field.showInstruc:
+            html += common.richTextArea(self.instrucId, self.instruc)
+        else:
+            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+        html += "<br/>"
         return html
     
     def renderPreview(self, request):
