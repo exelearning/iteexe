@@ -159,9 +159,12 @@ function insertChildTreeItem(parentItem, newTreeItem, nextSibling) {
 
 // Delete's the currently selected node
 // XH means that the func is actually called by the server over xmlhttp
-function XHDelNode(treeitem) {
+// item can be a dom node or a server node id
+function XHDelNode(item) {
     var tree = document.getElementById('outlineTree');
-    if (!treeitem) { var treeitem = currentOutlineItem(tree) }
+    if (!item) { var treeitem = currentOutlineItem(tree) }
+    else if (typeof(item) == 'string') { var treeitem = serverId2treeitem(item) }
+    else { var treeitem = item }
     var parentItem = treeitem.parentNode.parentNode
     // Select the parent node
     if (parentItem.tagName == 'treeitem') { 
@@ -177,18 +180,22 @@ function XHDelNode(treeitem) {
     }
 }
 
-// Renames the node associated with 'treeitem' to 'newName'
-// If 'treeitem' is not passed, uses currently selected node
+// Renames the node associated with 'treeitem' to 'newName' // If 'treeitem' is not passed, uses currently selected node
 function XHRenNode(newName, id) { 
     if (!id) { var treeitem = currentOutlineItem() }
     else { var treeitem = serverId2treeitem(id) }
     treeitem.getElementsByTagName('treecell')[0].setAttribute('label', newName)
     // Update the authoring page iframe
-    var ele = top.frames[0].document.getElementById('nodeTitle')
-    if (ele.tagName == "INPUT") {
-        ele.setAttribute('value', newName)
+    var titleElement = top.frames[0].document.getElementById('nodeTitle')
+    // Sometimes when promoting/demoting nodes
+    // the title element isn't there/renedered for some reason
+    // Looping doesn't fix that, so we just tell firefox
+    // to reload the page
+    if (!titleElement) { top.frames[0].src = top.frames[0].src }
+    else if (titleElement.tagName == "INPUT") {
+        titleElement.setAttribute('value', newName)
     } else {
-        ele.firstChild.nodeValue = newName
+        titleElement.firstChild.nodeValue = newName
     }
 }
 
@@ -204,9 +211,9 @@ function XHMoveNode(id, parentId, nextSiblingId) {
         } else {
             var nextSibling = null
         }
-        // Remove ourselves from old parent
+        // Remove ourselves from our old parent
         XHDelNode(node)
-        // Insert ourselves in new parent
+        // Insert ourselves in our new parent
         if (nextSibling) {
             insertChildTreeItem(newParent, node, nextSibling)
         } else {

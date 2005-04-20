@@ -118,7 +118,7 @@ class AuthoringPage(Resource):
         """
         Add All the blocks for the currently selected node
         """
-        self.blocks.append(TitleBlock(node._title))
+        self.blocks.append(TitleBlock(node.titleIdevice))
 
         for idevice in node.idevices:
             block = g_blockFactory.createBlock(idevice)

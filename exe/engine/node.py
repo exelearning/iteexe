@@ -90,6 +90,12 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self._title.setTitle(title)
     title = property(getTitle, setTitle)
 
+    # titleIDevice
+    def getTitleIDevice(self):
+        """Returns our title idevice"""
+        return self._title
+    titleIdevice = property(getTitleIDevice)
+
     # Normal methods
 
     def ancestors(self):
@@ -243,6 +249,6 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
-        self._title = self.__dict__['title']
+        self.titleIdevice = self.__dict__['title']
         
 # ===========================================================================

@@ -106,6 +106,15 @@ class OutlinePane(object):
         node.title = newName
         client.sendScript('XHRenNode("%s")' % newName)
 
+    def _doJsRename(self, client, node):
+        """
+        Recursively renames all children to their default names on
+        the client if the node's default name has not been overriden
+        """
+        if not node.titleIdevice.title:
+            client.call('XHRenNode', str(node.title), node.id)
+        for child in node.children: self._doJsRename(client, child)
+
     def handleDrop(self, client, sourceNodeId, parentNodeId, nextSiblingNodeId):
         """Handles the end of a drag drop operation..."""
         source = self.package.findNode(sourceNodeId)
@@ -114,11 +123,11 @@ class OutlinePane(object):
         if source and parent:
             # If the node has a default title and is changing levels
             # Make the client rename the node after we've moved it
-            doRename = not source.title and parent is not source.parent
+            doRename = not source.titleIdevice.title and parent is not source.parent
             # Do the move
             if nextSibling:
-                assert nextSibling.parent is parent, 'sibling has different parent: [%s/%s] [%s/%s]' % \
-                        (parent.id, str(parent.title), nextSibling.id, str(nextSibling.title))
+                assert nextSibling.parent is parent, '"sibling" has different parent: [%s/%s] [%s/%s]' % \
+                        (parent.id, parent.title, nextSibling.id, nextSibling.title)
                 source.move(parent, nextSibling)
                 log.info("Dragging %s under %s before %s" % (source.title, parent.title, nextSibling.title))
             else:
@@ -127,11 +136,7 @@ class OutlinePane(object):
             # Rename on client if it will have changed
             if doRename:
                 # Recursively rename all nodes on the client
-                def rename(node):
-                    if not node.title:
-                        client.call('XHRenNode', str(node.title), node.id)
-                    for child in node.children: rename(child)
-                rename(source)
+                self._doJsRename(client, source)
         else:
             log.error("Can't drag and drop tree items")
 
@@ -149,22 +154,30 @@ class OutlinePane(object):
     def handlePromote(self, client, sourceNodeId):
         """Promotes a node"""
         node = self.package.findNode(sourceNodeId)
-        if node.promote(): self._doJsMove(client, node)
+        if node.promote():
+            self._doJsMove(client, node)
+            self._doJsRename(client, node)
 
     def handleDemote(self, client, sourceNodeId):
         """Demotes a node"""
         node = self.package.findNode(sourceNodeId)
-        if node.demote(): self._doJsMove(client, node)
+        if node.demote():
+            self._doJsMove(client, node)
+            self._doJsRename(client, node)
 
     def handleUp(self, client, sourceNodeId):
         """Moves a node up its list of siblings"""
         node = self.package.findNode(sourceNodeId)
-        if node.up(): self._doJsMove(client, node)
+        if node.up():
+            self._doJsMove(client, node)
+            self._doJsRename(client, node)
 
     def handleDown(self, client, sourceNodeId):
         """Moves a node down its list of siblings"""
         node = self.package.findNode(sourceNodeId)
-        if node.down(): self._doJsMove(client, node)
+        if node.down():
+            self._doJsMove(client, node)
+            self._doJsRename(client, node)
 
     def render(self):
         """
