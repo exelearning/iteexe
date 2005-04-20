@@ -192,20 +192,23 @@ class MainPage(LivePage):
         """Renders the style pane"""
         return stan.xml(self.stylePane.render())
 
-    def handleIsPackageDirty(self, client):
-        """Called by js to know if the package is dirty or not"""
-        if self.package.isChanged: client.sendScript('isPackageDirty = true')
-        else: client.sendScript('isPackageDirty = false')
-        print 'package dirty = ', self.package.isChanged
+    def handleIsPackageDirty(self, client, ifClean, ifDirty):
+        """
+        Called by js to know if the package is dirty or not.
+        ifClean is JS to be evaled on the client if the package has been changed
+        ifDirty is JS to be evaled on the client if the package has not been changed
+        """
+        if self.package.isChanged:
+            client.sendScript(ifDirty)
+        else:
+            client.sendScript(ifClean)
 
     def handleSavePackage(self, client):
         """Save the current package"""
         self.package.save()
-        print 'package saved'
 
     def handleLoadPackage(self, client, filename):
-        """Load the current package"""
-        print 'loading package', filename
+        """Load the package named 'filename'"""
         try:  
             log.debug("filename and path" + filename)
             package = g_packageStore.loadPackage(filename)
@@ -214,10 +217,7 @@ class MainPage(LivePage):
             g_webInterface.rootPage.putChild(package.name, mainPage)
             client.sendScript('top.location = "/%s"' % package.name)
         except Exception, e:
-            print 'ERROR:',
-            print str(e)
             client.sendScript('alert("Sorry, wrong file format")')
             log.error('Error loading package "%s": %s' % (filename, str(e)))
             self.error = True
             return
-        print 'package loaded'

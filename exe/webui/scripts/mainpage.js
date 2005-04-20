@@ -22,7 +22,6 @@
 // This var is needed, because initWindow is called twice for some reason
 var haveLoaded = false
 var clickon = true // Set to false to stop selects doing page reloads
-var isPackageDirty = false // Ask the server 'isPackageDirty' and it will set this var
 
 // Takes a server tree node id eg. '1' and returns a xul treeitem elemtent reference
 function serverId2treeitem(serverId) {
@@ -245,20 +244,28 @@ function outlineClick() {
     }
 }
 
-// This is called when a user wants to open a new file
-// It starts a chain of chooseFileX() funcs...
-function chooseFile() {
-  // Ask the server if the current package needs changing
-  // And once we have the answer, go to chooseFile2()
-  // The ansert is stored by the server in the global variable
-  // isPackageDirty
-  nevow_clientToServerEvent('isPackageDirty', this, 'chooseFile2()')
+// Call this to ask the server if the package is dirty
+// 'ifDirty' will be evaled if the package is dirty
+function checkDirty(ifDirty, ifClean) {
+    nevow_clientToServerEvent('isPackageDirty', this, '', ifClean, ifDirty)
 }
 
-function chooseFile2() {
-  // isPackageDirty has been set by the server
-  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
-  if (isPackageDirty == true) {
+// Call this to ask the server if the package is dirty
+// This is higher level than checkDirty; if the package is dirty, the user will 
+// be asked if they want to save their changes
+// 'nextStep' is a string that will be evaled if the package is clean, or if the user wants to
+// discard the changes, or after the package has been saved, if the user chooses cancel
+// nextStep will not be called
+function askDirty(nextStep) {
+    checkDirty('askSave("'+nextStep+'")', nextStep)
+}
+
+// This is called by the server to ask the user if they want to save their
+// package before changing filenew/fileopen
+// 'onProceed' is a string that is evaluated after the package has been saved or
+// the user has chosen not to save the package
+function askSave(onProceed) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var promptClass = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
     var promptService = promptClass.getService(Components.interfaces.nsIPromptService)
     var flags = promptService.BUTTON_TITLE_SAVE * promptService.BUTTON_POS_0 +
@@ -270,22 +277,34 @@ function chooseFile2() {
                                       flags, null, null, null, '', {});
     if (res == 0) {
       // If to be saved, tell the server
-      nevow_clientToServerEvent('savePackage', this, 'chooseFile3()')
+      nevow_clientToServerEvent('savePackage', this, onProceed)
     } else if (res == 1) {
-      // If Not to be saved, contiue loading
-      chooseFile3()
+      // If Not to be saved, contiue the process
+      eval(onProceed)
     } else if (res == 2) {
       // If cancel loading, cancel the whole process
       return
     }
-  } else {
-    // If the package is not dirty, continue with the loading process
-    chooseFile3()
-  }
+}
+
+// This is called when a user wants to create a new package
+function fileNew1() {
+    // Ask the server if the current package is dirty
+    askDirty("window.top.location = '/'")
+}
+
+// This is called when a user wants to open a new file
+// It starts a chain of fileOpenX() funcs...
+function fileOpen1() {
+  // Ask the server if the current package needs changing
+  // And once we have the answer, go to fileOpen2()
+  // The ansert is stored by the server in the global variable
+  // isPackageDirty
+  askDirty('fileOpen2()')
 }
 
 // Shows the the load dialog and actually loads the new package
-function chooseFile3() {
+function fileOpen2() {
   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
