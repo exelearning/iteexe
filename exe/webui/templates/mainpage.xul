@@ -29,11 +29,9 @@
           <menubar>
             <menu id="file-menu" label="File">
               <menupopup id="file-popup">
-                <menuitem label="New" oncommand="fileNew1()"/>
-                <menuitem label="Open" oncommand="fileOpen1()"/>
-                <menuitem label="Save" oncommand="alert(screen.availWidth)"/>
-                <menuseparator/>
-                <menuitem label="Exit"/>
+                <menuitem label="New" oncommand="fileNew()"/>
+                <menuitem label="Open" oncommand="fileOpen()"/>
+                <menuitem label="Save" oncommand="fileSave()"/>
               </menupopup>
             </menu>
           </menubar>

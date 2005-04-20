@@ -288,30 +288,41 @@ function askSave(onProceed) {
 }
 
 // This is called when a user wants to create a new package
-function fileNew1() {
+function fileNew() {
     // Ask the server if the current package is dirty
     askDirty("window.top.location = '/'")
 }
 
 // This is called when a user wants to open a new file
 // It starts a chain of fileOpenX() funcs...
-function fileOpen1() {
-  // Ask the server if the current package needs changing
-  // And once we have the answer, go to fileOpen2()
-  // The ansert is stored by the server in the global variable
-  // isPackageDirty
-  askDirty('fileOpen2()')
+function fileOpen() {
+    // Ask the server if the current package needs changing
+    // And once we have the answer, go to fileOpen2()
+    // The ansert is stored by the server in the global variable
+    // isPackageDirty
+    askDirty('fileOpen2()')
 }
 
 // Shows the the load dialog and actually loads the new package
 function fileOpen2() {
-  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
-  var nsIFilePicker = Components.interfaces.nsIFilePicker;
-  var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-  fp.init(window, "Select a File", nsIFilePicker.modeOpen);
-  fp.appendFilter("eXe Package Files","*.elp");
-  var res = fp.show();
-  if (res == nsIFilePicker.returnOK) {
-    nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
-  }
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a File", nsIFilePicker.modeOpen);
+    fp.appendFilter("eXe Package Files","*.elp");
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
+    }
+}
+
+// Called by the user when they want to save their package
+function fileSave() {
+    nevow_clientToServerEvent('savePackage', this, '')
+}
+
+function fileQuit() {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+    top.hideChrome = true
+    top.close()
 }
