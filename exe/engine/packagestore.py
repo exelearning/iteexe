@@ -25,8 +25,9 @@ import logging
 import gettext
 import os
 import os.path
-from exe.engine.package     import Package
-from exe.webui.webinterface import g_webInterface
+from exe.engine.package      import Package
+from exe.engine.idevicestore import IdeviceStore
+#from exe.webui.webinterface  import g_webInterface
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -35,10 +36,11 @@ _   = gettext.gettext
 class PackageStore:
     """
     PackageStore is responsible for managing the Packages which the eXe server
-    has loaded, (and loading and saving them?)
+    has loaded, and loading and saving them
     """
     def __init__(self):
-        self.loaded = {}
+        self.loaded       = {}
+        self.ideviceStore = IdeviceStore()
 
 
     def createPackage(self, name=None):
@@ -46,14 +48,13 @@ class PackageStore:
         Creates a package
         """
         log.debug("createPackage: name=" + repr(name))
-        dataDir = g_webInterface.config.getDataDir()
 
         if name is None:
-            fileList = os.listdir(dataDir)
+            # Find a unique name
             i    = 1
             name = "package" + str(i)
             
-            while name+".elp" in fileList or name in self.loaded:
+            while name in self.loaded:
                 i   += 1                    
                 name = "package" + str(i)
             
@@ -94,6 +95,13 @@ class PackageStore:
         return package
 
 
+    def getIdevices(self, package):
+        """
+        Get all the iDevices which could be used in this package
+        (and in the current node?)
+        """
+        return self.ideviceStore.getIdevices(package)
+        
 
 
 # nasty old global

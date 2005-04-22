@@ -22,14 +22,13 @@ from os.path                 import join
 from exe.engine.package      import Package
 from exe.engine.config       import Config
 from exe.engine.packagestore import PackageStore, g_packageStore
-from exe.webui.webinterface  import g_webInterface
 from exe.engine.node         import Node
 from exe.engine.titleidevice import TitleIdevice
 
 # ===========================================================================
 class TestPackage(unittest.TestCase):
     def setUp(self):
-        g_webInterface.config = Config("exe.conf")
+        pass
 
     def testCreatePackage(self):
         package = g_packageStore.createPackage()
@@ -40,10 +39,10 @@ class TestPackage(unittest.TestCase):
         package = g_packageStore.createPackage()
         package.name = "package1"
         package.author = "UoA"
-        fileDir = g_webInterface.config.getDataDir()
-        package.save(fileDir)
+        config  = Config("exe.conf")
+        package.save(config.dataDir)
         
-        filePath = join(g_webInterface.config.getDataDir(), "package1.elp")
+        filePath = join(config.dataDir, "package1.elp")
         package1 = g_packageStore.loadPackage(filePath)
         self.assert_(package1)
         self.assertEquals(package1.author, "UoA")

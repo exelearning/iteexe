@@ -21,7 +21,6 @@ Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
 from exe.webui                  import common
-from exe.webui.webinterface     import g_webInterface
 from os                         import mkdir
 from os.path                    import exists, splitext, basename, join, sep
 from  shutil                    import copyfile
@@ -49,7 +48,8 @@ def createElement(elementType, name, class_, blockId, instruc):
 
 def getUploadedFileDir():
     """Returns the directory where files will be uploaded to"""
-    return join(g_webInterface.config.getExeDir(), "images")
+    # TODO!!!
+    return "TODO"
     
     
 # ===========================================================================
@@ -353,29 +353,6 @@ class AudioElement(Element):
         return html
                 
     def renderView(self, filename):
-        """
-        dataDir = g_webInterface.config.getDataDir() 
-        currentDir = getcwd()
-
-        if currentDir[-1:]=="/":
-            currentDir = currentDir[:-1]
-
-        
-        #if is export mode, this is the possible way I know it is in export mode
-        if dataDir.find(currentDir) < 0:
-            ##create images dir to hold necessary data file
-            if not exists("%s/images" %currentDir):
-                try:
-                    mkdir("%s/images" %currentDir)
-                    copyfile(dataDir + "/images/mp3player.swf", \
-                             currentDir + "/images/mp3player.swf")
-                except:
-                    return "can not create images directory <br />\n"
-        
-            ##copy files into images dir
-            copyfile(dataDir + "/images/" + filename,\
-                     currentDir + "/images/"+ filename)
-        """    
         if filename.strip() != "":
             tmp_array = {}
             tmp_array["id"] = self.id

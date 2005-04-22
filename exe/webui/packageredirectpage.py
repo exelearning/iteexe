@@ -24,11 +24,11 @@ anything it just redirects the user to a new package.
 
 import logging
 import gettext
-from twisted.web.resource import Resource
-from twisted.web.error    import ForbiddenResource
-from exe.webui import common
+from twisted.web.resource     import Resource
+from twisted.web.error        import ForbiddenResource
+from exe.webui                import common
 from exe.engine.packagestore  import g_packageStore
-from exe.webui.mainpage  import MainPage
+from exe.webui.mainpage       import MainPage
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -41,23 +41,24 @@ class PackageRedirectPage(Resource):
     package.
     """
     
-    def __init__(self, package = None):
+    def __init__(self, config, package = None):
         """
         Initialize
         """
         Resource.__init__(self)
+        self.config  = config
         self.package = package
+
 
     def getChild(self, name, request):
         """
         Get the child page for the name given
         """
-        if request.getClientIP() != '127.0.0.1':
-            return ForbiddenResource(_("Access from remote clients forbidden"))
-        elif name == '':
+        if name == '':
             return self
         else:
             return Resource.getChild(self, name, request)
+
 
     def render_GET(self, request):
         """
@@ -71,8 +72,9 @@ class PackageRedirectPage(Resource):
             package = g_packageStore.createPackage()
             log.info("Creating a new package name="+ package.name)
 
-        mainPage = MainPage(package)
+        mainPage = MainPage(self.config, package)
         self.putChild(package.name, mainPage)
         # Rendering
         request.redirect(package.name)
         return ''
+

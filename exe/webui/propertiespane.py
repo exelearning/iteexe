@@ -26,7 +26,7 @@ pane
 import logging
 import gettext
 from exe.webui import common
-from exe.webui.webinterface import g_webInterface
+from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -48,7 +48,7 @@ class PropertiesPane(object):
         """
         self.url    = request.path
         packageName = request.prepath[0]
-        self.package = g_webInterface.packageStore.getPackage(packageName) 
+        self.package = g_packageStore.getPackage(packageName) 
         
         if ("action" in request.args and 
             request.args["action"][0] == "saveChange"):

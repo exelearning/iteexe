@@ -20,6 +20,7 @@
 """
 Config settings loaded from exe.conf
 Is responsible for the system-wide settings we use
+O/S specific config classes are derieved from here
 """
 
 from ConfigParser import ConfigParser
@@ -33,86 +34,60 @@ import tempfile
 class Config:
     """
     The Config class contains the configuration information for eXe.
-    It loads the settings from the exe.conf file.
     """
     def __init__(self, configFile):
         """
         Initialize 
         """
-
-        self.setting = ConfigParser()
         self.exePath = os.path.abspath(sys.argv[0])
         self.exeDir  = os.path.dirname(self.exePath)
+        self.configPath = self.exeDir+"/"+configFile
+
+        self.port       = 8081
+        self.webDir     = "."
+        self.dataDir    = "."
+        self.appDataDir = "."
+        self.styles     = []
+
         
-        exeConf = None
-        
+    def loadSettings(self):
+        """
+        Loads the settings from the exe.conf file.
+        Overrides the defaults set in __init__
+        """
         if "EXECONF" in os.environ and os.path.isfile(os.environ["EXECONF"]):
-            exeConf = os.environ["EXECONF"]              
-
-        elif sys.platform[:3] == "win":
-            # what's the windows equivalent of /etc????
-            programFilesDir = self.getDirectory(0x0026)
-            confPath = programFilesDir + "/exe/" +configFile
-            if os.path.isfile(confPath):
-                exeConf = confPath
-                
-        elif sys.platform[:5] == "linux":
-            confPath = "/etc/exe" + configFile
-            if os.path.isfile(confPath):
-                exeConf = confPath
-                
-        if not exeConf:
-            exeConf = self.exeDir+"/"+configFile 
-                
-        self.setting.read(exeConf)
-        
-       # print "exeDir: %s \n" %self.exeDir
- 
-        if sys.platform[:3] == "win":
-            self.exeDir  = os.path.dirname(self.exePath)
-
-        elif sys.platform[:5] == "linux":
-            self.exeDir  = "/usr/share/exe"
-        else:
-            self.exeDir  = os.path.dirname(self.exePath)
-        
-        if self.setting.has_option("system", "exe-dir"):
-            self.exeDir = self.setting.get("system", "exe-dir")
-
-        if self.setting.has_option("system", "port"):
-            self.port = self.setting.getint("system", "port")
-        else:
-            self.port = 8081
-
-        if self.setting.has_option("system", "browser-path"):
-            self.browserPath = self.setting.get("system", "browser-path")
-        else:
-            self.browserPath = None
+            self.configPath = os.environ["EXECONF"]
             
-        if self.setting.has_option("system", "data-dir"):
-            self.dataDir = self.setting.get("system", "data-dir")
-        else:
-            if sys.platform[:3] == "win":
-                self.dataDir = self.getDirectory(5)
-            else:
-                self.dataDir = os.environ["HOME"]
+        setting = ConfigParser()
+        setting.read(self.configPath)
+
+        if setting.has_option("system", "exe-dir"):
+            self.exeDir = setting.get("system", "exe-dir")
+
+        if setting.has_option("system", "web-dir"):
+            self.webDir = setting.get("system", "web-dir")
+
+        if setting.has_option("system", "port"):
+            self.port = setting.getint("system", "port")
+
+        if setting.has_option("system", "browser-path"):
+            self.browserPath = setting.get("system", "browser-path")
+            
+        if setting.has_option("system", "data-dir"):
+            self.dataDir = setting.get("system", "data-dir")
                 
         if not os.path.isdir(self.dataDir):
-            self.dataDir = "/"    
- 
-        # TODO: get appDataDir from
-        # Documents and Settings\$USER\Application Data on Windows
-        # or $HOME\.exe on Linux
-        self.appDataDir = self.dataDir
-
-        self.styles = []
+            self.dataDir = tempfile.gettempdir()
 
 
     def setupLogging(self, logFile):
         """
         setup logging file
         """
-        hdlr   = logging.FileHandler(self.dataDir+'/'+logFile)
+        setting = ConfigParser()
+        setting.read(self.configPath)
+
+        hdlr   = logging.FileHandler(self.appDataDir+'/'+logFile)
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log  = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
@@ -125,7 +100,7 @@ class Config:
                          "CRITICAL" : logging.CRITICAL }
 
     
-        for logger, level in self.setting.items("logging"):
+        for logger, level in setting.items("logging"):
             if logger == "root":
                 logging.getLogger().setLevel(loggingLevels[level])
             else:
@@ -145,32 +120,6 @@ class Config:
             if os.path.exists(styleSheet):
                 self.styles.append(subDir)
 
-        
-    def getDataDir(self):
-        """
-        get user My Documents directory
-        """
-        return self.dataDir
 
-    
-    def getExeDir(self):
-        """
-        get eXe running directory
-        """
-        return self.exeDir
-
-    
-    def getDirectory(self, code):
-        from ctypes import WinDLL, create_string_buffer
-        dll = WinDLL('shell32')
-        # The '5' and the '0' from the below call come from
-        # google: "ShellSpecialConstants site:msdn.microsoft.com"
-        p = create_string_buffer(260)
-        res = dll.SHGetFolderPathA(None, code, None, 0, p)
-        if res != 0: 
-            return '/'
-        else: 
-            return p.value
-        
 
 # ===========================================================================

@@ -33,7 +33,7 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, package, addMetadata=True):
+    def __init__(self, config, package, addMetadata=True):
         """
         Initialize
         """
@@ -43,7 +43,7 @@ class Manifest(object):
         self.name        = package.name
         self.author      = package.author
         self.desc        = package.description
-        self.idGenerator = UniqueIdGenerator(package.name)
+        self.idGenerator = UniqueIdGenerator(package.name, config.exePath)
         self.itemStr     = ""
         self.resStr      = ""
         self.addMetadata = addMetadata

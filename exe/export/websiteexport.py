@@ -30,7 +30,6 @@ from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.webui              import common
-from exe.webui.webinterface import g_webInterface
 from exe.webui.element      import getUploadedFileDir
 
 import os
@@ -232,8 +231,9 @@ class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
     """
-    def __init__(self):
+    def __init__(self, config):
         self.package = None
+        self.config  = config
 
     def export(self, package):
         """ 
@@ -241,8 +241,8 @@ class WebsiteExport(object):
         """
         self.package = package
         
-        exeDir  = g_webInterface.config.getExeDir()
-        dataDir = g_webInterface.config.getDataDir()
+        exeDir  = self.config.getExeDir()
+        dataDir = self.config.getDataDir()
 
         os.chdir(dataDir)
         if exists(package.name):

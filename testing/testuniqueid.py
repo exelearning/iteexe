@@ -17,17 +17,15 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+import sys
 import os.path
 import unittest
 from exe.engine.uniqueidgenerator import UniqueIdGenerator
-from exe.engine.config            import Config
-from exe.webui.webinterface       import g_webInterface
 
 # ===========================================================================
 class TestUniqueId(unittest.TestCase):
     def setUp(self):
-        g_webInterface.config = Config("test.conf")
-        self.generator = UniqueIdGenerator("David's Gen")
+        self.generator = UniqueIdGenerator("David's Gen", sys.argv[0])
 
     def testGenerate(self):
         howMany = 10000

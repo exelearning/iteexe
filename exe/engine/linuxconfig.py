@@ -22,6 +22,8 @@ The LinuxConfig overrides the Config class with Linux specific
 configuration
 """
 
+import os
+import os.path
 from exe.engine.config import Config
 import logging
 
@@ -35,19 +37,20 @@ class LinuxConfig(Config):
         """
         Initialize 
         """
-        Config.__init__(self)
+        Config.__init__(self, configFile)
 
         confPath = "/etc/exe/" + configFile
         if os.path.isfile(confPath):
             self.configPath = confPath
                 
-        self.webuiDir  = "/usr/share/exe"
+        self.webDir  = "/usr/share/exe"
         self.dataDir = os.environ["HOME"]
                 
         # TODO: get appDataDir from
         # or $HOME\.exe on Linux
-        self.appDataDir = self.dataDir
-        self.styles = []
+        self.appDataDir  = self.dataDir
+        self.browserPath = "firefox"
+        self.styles      = []
 
 
 # ===========================================================================

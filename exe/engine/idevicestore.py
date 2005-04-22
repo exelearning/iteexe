@@ -20,7 +20,7 @@
 The collection of iDevices available
 """
 
-from exe.engine.config  import g_config
+#from exe.engine.config  import g_config
 
 import logging
 
@@ -75,6 +75,7 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
+        pass
 
 
 

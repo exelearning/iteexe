@@ -28,7 +28,6 @@ import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
-from exe.webui.webinterface import g_webInterface
 from exe.webui.menupane import MenuPane
 
 
@@ -41,7 +40,7 @@ class SavePage(Resource):
     The SavePage is responsible for saving the current project
     """
     
-    def __init__(self):
+    def __init__(self, config):
         """
         Initialize
         """
@@ -51,7 +50,7 @@ class SavePage(Resource):
         self.url      = ""
         self.message  = ""
         self.isSaved  = False
-        self.dataDir  = g_webInterface.config.getDataDir()
+        self.dataDir  = config.dataDir
         
     def process(self, request):
         """

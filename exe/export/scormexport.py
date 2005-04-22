@@ -31,7 +31,6 @@ from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
-from exe.webui.webinterface import g_webInterface
 from exe.export.manifest    import Manifest
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -98,11 +97,11 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self):
+    def __init__(self, config):
         """
         Initialize
         """
-        pass
+        self.config = config
 
     def export(self, package, addMetadata=True):
         """ 
@@ -114,7 +113,7 @@ class ScormExport(object):
 
         os.mkdir(package.name)
         os.chdir(package.name)
-        exeDir = g_webInterface.config.getExeDir()
+        exeDir = self.config.getExeDir()
 
         for styleFile in glob.glob(os.path.join(exeDir, 
                                                 "style", package.style, "*")):
@@ -125,9 +124,9 @@ class ScormExport(object):
 
         self.exportNode(package.root)
         
-        manifest = Manifest(package, addMetadata)
+        manifest = Manifest(package, self.config, addMetadata)
         manifest.save()
-        shutil.move(package.name+".zip", g_webInterface.config.getDataDir())
+        shutil.move(package.name+".zip", self.config.getDataDir())
         shutil.rmtree(package.name)
 
                 

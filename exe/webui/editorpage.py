@@ -26,7 +26,6 @@ import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
-from exe.webui.webinterface  import g_webInterface
 from exe.webui.menupane      import MenuPane
 from exe.webui.editorelement import TextField, TextAreaField
 from exe.engine.newidevice   import NewIdevice

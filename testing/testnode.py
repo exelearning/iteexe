@@ -1,5 +1,5 @@
 # ===========================================================================
-# config unittest
+# node unittest
 # Copyright 2004, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
@@ -18,15 +18,12 @@
 # ===========================================================================
 
 import unittest
-from exe.engine.config import Config
 from exe.engine.node import Node
 from exe.engine.packagestore import g_packageStore
-from exe.webui.webinterface  import g_webInterface
 
 # ===========================================================================
 class TestNode(unittest.TestCase):
     def setUp(self):
-        g_webInterface.config = Config("exe.conf")
         package = g_packageStore.createPackage()
         n2 = package.root       # 02
         n3 = n2.createChild()   #  |_03                               

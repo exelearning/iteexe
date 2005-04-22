@@ -29,7 +29,6 @@ from exe.engine.packagestore  import g_packageStore
 from exe.webui.menupane       import MenuPane
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
-from exe.webui.webinterface   import g_webInterface
 
 
 log = logging.getLogger(__name__)
@@ -40,7 +39,7 @@ class ExportPage(Resource):
     """
     The ExportPage is responsible for exporting the current project
     """
-    def __init__(self):
+    def __init__(self, config):
         """
         Initialize
         """
@@ -52,6 +51,7 @@ class ExportPage(Resource):
         self.scormStr  = ""
         self.scormStr2 = ""
         self.webStr    = ""
+        self.config    = config
         
 
     def process(self, request):
@@ -63,7 +63,7 @@ class ExportPage(Resource):
         self.url       = request.path
         packageName    = request.prepath[0]
         self.package   = g_packageStore.getPackage(packageName)
-        dataDir = g_webInterface.config.getDataDir()
+        dataDir        = self.config.dataDir
         self.scormStr  = ""
         self.scormStr2 = ""
         self.webStr    = ""

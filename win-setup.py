@@ -4,9 +4,10 @@
 import glob
 from distutils.core import setup
 import py2exe
+from exe.engine import version
 
 setup(console=["exe/webui/server.py"],
-      version="0.3",
+      version=version.release,
       packages=["exe", "exe.engine", "exe.webui", "exe.export"],
       data_files=[('.', ["exe/exe.conf",]),
                   ('.', ["README"]),

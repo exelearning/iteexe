@@ -29,7 +29,6 @@ from twisted.spread  import jelly
 from twisted.persisted.styles import Versioned
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
-from exe.webui.webinterface import g_webInterface
 from exe.engine.genericidevice  import GenericIdevice
 from exe.engine.newidevice  import NewIdevice
 from exe.engine import persist
@@ -103,7 +102,9 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     def save(self, path=None):
         """Save package to disk"""
         if not path:
-            path = g_webInterface.config.getDataDir()
+            #TODO this changes?
+            #path = g_webInterface.config.getDataDir()
+            path = "."
              
         log.debug("data directory: " + path)
 

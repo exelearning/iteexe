@@ -5,6 +5,7 @@ import glob
 import os.path
 from distutils.command.install import install
 from distutils.core            import setup
+from exe.engine import version
 
 
 g_files = { '/usr/share/exe': ["exe/exe.conf", "README",]}
@@ -31,14 +32,14 @@ dataFiles(["exe/webui/style",
            "exe/webui/images",
            "exe/webui/scripts"])
 
-setup(name         = "eXe",
-      version      = "0.2",
+setup(name         = version.project,
+      version      = version.release,
       description  = "eLearning XHTML editor",
       url          = "http://exe.cfdl.auckland.ac.nz",
       author       = "University of Auckland",
       author_email = "exe@auckland.ac.nz",
       license      = "GPL",
-      scripts      = ["exe/eXe",],
+      scripts      = ["exe/exe",],
       packages     = ["exe", "exe.webui", "exe.engine", "exe.export"],
       data_files   = g_files.items()
      )

@@ -28,7 +28,6 @@ from twisted.web.resource     import Resource
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, LivePage, js
 from exe.engine.packagestore  import g_packageStore
-from exe.webui.webinterface   import g_webInterface
 from exe.webui.idevicepane    import IdevicePane
 from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.outlinepane    import OutlinePane
@@ -48,27 +47,26 @@ class MainPage(LivePage):
     Rendering and processing is delegated to the Pane classes.
     """
     
-    def __init__(self, package):
+    def __init__(self, config, package):
         """
         Initialize a new XUL page
         """
         LivePage.__init__(self)
-        path = os.path.join(g_webInterface.config.exeDir,
-                            'templates', 'mainpage.xul')
+        path = os.path.join(config.exeDir, 'templates', 'mainpage.xul')
         self.docFactory = loaders.xmlfile(path)
         self.package = package
         # Create all the children on the left
-        self.outlinePane   = OutlinePane(package)
-        self.idevicePane   = IdevicePane(package)
-        self.stylePane     = StylePane(package)
+        self.outlinePane = OutlinePane(package)
+        self.idevicePane = IdevicePane(package)
+        self.stylePane   = StylePane(config, package)
         # And in the main section
         self.authoringPage = AuthoringPage(self) # This is really a page now...
         self.putChild("authoring", self.authoringPage)
         self.propertiesPage = PropertiesPage()
         self.putChild("properties", self.propertiesPage)
-        self.savePage = SavePage()
+        self.savePage = SavePage(config)
         self.putChild("save", self.savePage)
-        self.exportPage = ExportPage()
+        self.exportPage = ExportPage(config)
         self.putChild("export", self.exportPage)
         self.editorPage = EditorPage()
         self.putChild("editor", self.editorPage)
@@ -195,8 +193,10 @@ class MainPage(LivePage):
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
-        ifClean is JS to be evaled on the client if the package has been changed
-        ifDirty is JS to be evaled on the client if the package has not been changed
+        ifClean is JavaScript to be evaled on the client if the package has
+        been changed 
+        ifDirty is JavaScript to be evaled on the client if the package has not
+        been changed
         """
         if self.package.isChanged:
             client.sendScript(ifDirty)
@@ -209,15 +209,18 @@ class MainPage(LivePage):
 
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
-        try:  
+#        try:  
+        if True:
             log.debug("filename and path" + filename)
+
             package = g_packageStore.loadPackage(filename)
-            from exe.webui.mainpage import MainPage
+            #from exe.webui.mainpage import MainPage
             mainPage = MainPage(package)
-            g_webInterface.rootPage.putChild(package.name, mainPage)
-            client.sendScript('top.location = "/%s"' % package.name)
-        except Exception, e:
+            
+            #g_webInterface.rootPage.putChild(package.name, mainPage)
+            #client.sendScript('top.location = "/%s"' % package.name)
+#        except Exception, e:
             client.sendScript('alert("Sorry, wrong file format")')
-            log.error('Error loading package "%s": %s' % (filename, str(e)))
+#            log.error('Error loading package "%s": %s' % (filename, str(e)))
             self.error = True
             return

@@ -24,7 +24,6 @@ StylePane is responsible for creating the XHTML for the styles tab
 import logging
 import gettext
 from exe.webui import common
-from exe.webui.webinterface import g_webInterface
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -34,7 +33,8 @@ class StylePane(object):
     """
     StylePane is responsible for creating the XHTML for the styles tab
     """
-    def __init__(self, package):
+    def __init__(self, config, package):
+        self.config  = config
         self.package = package
 
     def process(self, request):
@@ -58,7 +58,7 @@ class StylePane(object):
                '<listbox>',)
         # Render each style individually
         itemTemplate = """  <listitem label="%s" onclick="submitLink('ChangeStyle', '%s', 1)"/>"""
-        options = [(style, style) for style in g_webInterface.config.styles]
+        options = [(style, style) for style in self.config.styles]
         for option, value in options:
             xul += (itemTemplate % (option, value),)
         # Render the end tags

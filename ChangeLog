@@ -1,3 +1,187 @@
+2005-04-21 02:20  djm
+
+	* exe/engine/linuxconfig.py, exe/engine/macconfig.py,
+	  exe/engine/winconfig.py: OS specific configurations
+
+2005-04-20 20:08  brent
+
+	* exe/webui/templates/mainpage.xul: promote/demote button
+	  switcherooni
+
+2005-04-20 05:02  jenny
+
+	* exe/engine/newidevice.py, exe/engine/package.py,
+	  exe/webui/editorelement.py, exe/webui/editorpage.py: added
+	  newidevice.py for idevice editor
+
+2005-04-20 03:33  matthew
+
+	* exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul:
+	  Now have file-save. file-quite can't be done unless our page and
+	  scripts are run from a local, chrome safe directory.
+
+2005-04-20 02:34  matthew
+
+	* exe/webui/mainpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul: Now have file-new and file-open
+	  working
+
+2005-04-20 01:47  matthew
+
+	* exe/webui/titleblock.py: Removed editability from the titleblock
+	  because now it is all implemented in xul
+
+2005-04-20 01:34  matthew
+
+	* exe/engine/node.py, exe/webui/authoringpage.py,
+	  exe/webui/outlinepane.py, exe/webui/scripts/mainpage.js: Now
+	  promote/demote/up/down, del node and drag and drop are fixed
+
+2005-04-19 23:02  matthew
+
+	* exe/webui/loadpage.py, exe/webui/mainpage.py,
+	  exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul:
+	  Moved loadpage into a menu.
+
+2005-04-19 01:59  jenny
+
+	* exe/webui/common.py, exe/webui/editorelement.py,
+	  exe/webui/editorpage.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: work on idvice editor interface
+
+2005-04-19 00:18  matthew
+
+	* exe/webui/idevicepane.py: Make idevice pane flex
+
+2005-04-19 00:18  matthew
+
+	* exe/webui/templates/mainpage.xul: Tidy xul and make idevice pane
+	  flex
+
+2005-04-18 22:40  jenny
+
+	* exe/engine/package.py: Improved backwards compatibility more, now
+	  generates a default generic idevice for the idevice editor when
+	  loading and older package. (MS)
+
+2005-04-18 22:24  jenny
+
+	* exe/engine/node.py, exe/engine/package.py: Fixed backward
+	  compatability properly this time (MS)
+
+2005-04-18 03:23  brent
+
+	* exe/webui/css/exe.css, exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css: more styles shenanigans... has
+	  he finally managed to get a garden style that doesn't look like
+	  bile?????!!!##&&
+
+2005-04-18 03:06  matthew
+
+	* exe/engine/node.py: Restored backwards compat to 0.3
+
+2005-04-18 02:38  matthew
+
+	* README: Updated (MS)
+
+2005-04-18 02:27  matthew
+
+	* exe/exe.conf: Added a couple more lines of doco to exe.conf
+
+2005-04-18 02:19  matthew
+
+	* exe/export/websiteexport.py: Fixed website export for new style
+	  node ids.
+
+2005-04-18 01:03  matthew
+
+	* exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py: Made all exports work. Haven't tested
+	  them with importing yet, all file names will be different now.
+	  Instead of 1.0.0.html, they'll all be just 1.html, 2.html ..
+	  999.html etc...
+
+2005-04-18 01:02  matthew
+
+	* tools/dot.pylintrc: Make pylint a bit more forgiving
+
+2005-04-18 00:29  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/templates/mainpage.xul: addeds splitter with grippy
+	  between outline and iDevice pane, moved outline tree mover buttons
+	  to toolbar. tightened default style up a little.
+
+2005-04-18 00:21  matthew
+
+	* README, exe/exe.conf: Fix docs on where exe runs from by default
+
+2005-04-18 00:19  matthew
+
+	* exe/exe.conf: Added some documentation to config file
+
+2005-04-17 23:26  matthew
+
+	* README: Added build instructions
+
+2005-04-17 23:09  matthew
+
+	* exe/engine/node.py, exe/engine/package.py,
+	  exe/webui/blockfactory.py, exe/webui/casestudyblock.py,
+	  exe/webui/editorelement.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/multichoiceblock.py,
+	  exe/webui/reflectionblock.py, exe/webui/server.py: Major code tidu
+	  up with pylint
+
+2005-04-17 23:07  djm
+
+	* exe/engine/version.py: I wish I could spell
+
+2005-04-17 23:06  djm
+
+	* exe/engine/version.py: changed revision string
+
+2005-04-17 23:02  djm
+
+	* testing/testpersist.py: Added new test for persist.py
+
+2005-04-17 23:00  djm
+
+	* exe/engine/version.py: Added one place for all version info
+
+2005-04-17 10:25  brent
+
+	* exe/webui/templates/mainpage.xul: just graphics now as
+	  demote/promote buttons. made a toolbar instead of a box with
+	  buttons... must go to bed.
+
+2005-04-17 08:29  brent
+
+	* exe/webui/idevicepane.py, exe/webui/style/default/content.css,
+	  exe/webui/templates/mainpage.xul: a little css on default, a
+	  little work on mainpage.xul - added images on buttons.
+
+2005-04-16 09:52  brent
+
+	* exe/webui/templates/mainpage.xul: modified xul template so that
+	  iDevices show up under outline tree.
+
+2005-04-16 07:43  brent
+
+	* exe/webui/editorpage.py, exe/webui/style/default/content.css,
+	  exe/webui/templates/mainpage.xul: added some tooltips to the
+	  promote, demote buttons. worked on the default style.
+
+2005-04-15 04:38  djm
+
+	* ChangeLog, exe/engine/config.py, exe/engine/idevice.py,
+	  exe/engine/idevicestore.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/persist.py, testing/runtests.py:
+	  Factored out encodeObject and decodeObject from package so we can
+	  also use them elsewhere Bit more work on iDevices
+
 2005-04-15 04:11  matthew
 
 	* exe/webui/mainpage.py, exe/webui/outlinepane.py,
