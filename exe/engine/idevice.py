@@ -33,11 +33,12 @@ class Idevice(jelly.Jellyable):
     package
     """
     nextId = 1
+    NoEmphasis, SomeEmphasis, StrongEmphasis = range(3)
 
     def __init__(self, title, author, purpose, tip, parentNode=None):
         """Initialize a new iDevice, setting a unique id"""
         self.edit       = True
-        self.emphasis   = 0
+        self.emphasis   = Idevice.NoEmphasis
         self.version    = 0
         self.id         = str(Idevice.nextId)
         Idevice.nextId += 1
