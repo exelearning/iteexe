@@ -1,3 +1,28 @@
+2005-04-23 19:06  djm
+
+	* exe/exe, exe/webui/browser.py: Add exe start script and browser.py
+
+2005-04-22 03:26  djm
+
+	* exe/engine/idevice.py: added emphasis constants
+
+2005-04-22 02:29  djm
+
+	* ChangeLog, exe/engine/config.py, exe/engine/idevicestore.py,
+	  exe/engine/linuxconfig.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/engine/uniqueidgenerator.py,
+	  exe/engine/version.py, exe/exe.conf, exe/export/manifest.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/editorpage.py, exe/webui/element.py,
+	  exe/webui/exportpage.py, exe/webui/mainpage.py,
+	  exe/webui/packageredirectpage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/server.py,
+	  exe/webui/stylepane.py, exe/webui/webinterface.py,
+	  exe/webui/webserver.py, mac-setup.py, setup.py,
+	  testing/testnode.py, testing/testpackage.py,
+	  testing/testuniqueid.py, win-setup.py: Split Config class by OS.
+	  Removed webInterface global.
+
 2005-04-21 02:20  djm
 
 	* exe/engine/linuxconfig.py, exe/engine/macconfig.py,
