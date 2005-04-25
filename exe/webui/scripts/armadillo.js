@@ -5,16 +5,8 @@ FCKConfig.ToolbarSets["Armadillo"] = [
 	['Bold','Italic','-',
      'Subscript','Superscript','-',
      'Link','Unlink'],
-     ['UnorderedList','OrderedList','Outdent','Indent'],
+     ['UnorderedList','OrderedList','Outdent','Indent','Table'],
      ['Undo','Redo','-',
      'Find','Replace','SelectAll','-',
      'RemoveFormat', 'Source']
 ];
-
-
-// Enables the debug window
-// FCKConfig.Debug = true ;
-
-FCKConfig.ToolbarStartExpanded	= false ;
-
-
