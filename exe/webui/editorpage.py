@@ -18,7 +18,7 @@
 # ===========================================================================
 
 """
-The SavePage is responsible for saving the current project
+The EditorPage is responsible for creating new idevice
 """
 
 import logging
@@ -26,7 +26,6 @@ import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.engine.packagestore import g_packageStore
-from exe.webui.menupane      import MenuPane
 from exe.webui.editorelement import TextField, TextAreaField
 from exe.engine.newidevice   import NewIdevice
 
@@ -37,20 +36,20 @@ _   = gettext.gettext
 
 class EditorPage(Resource):
     """
-    The SavePage is responsible for saving the current project
+    The EditorPage is responsible for creating new idevice
     """
-   # Edit, Preview, View = range(3)
     def __init__(self):
         """
         Initialize
         """
         Resource.__init__(self)
-        self.package  = None
-        self.url      = ""
-        self.elements = []
-        self.idevice  = None
-        self.menuPane = MenuPane()
-        self.mode = 1
+        self.package   = None
+        self.url       = ""
+        self.elements  = []
+        self.idevice   = None
+        self.noStr     = ""
+        self.someStr   = ""
+        self.strongStr = ""
         
     def process(self, request):
         """
@@ -62,12 +61,8 @@ class EditorPage(Resource):
         packageName = request.prepath[0]
         self.package = g_packageStore.getPackage(packageName)
         self.idevice = self.package.editor.idevices[0]
-        if self.idevice.edit:
-            self.mode = 1
-        else:
-            self.mode = 2
         
-        
+        self.__buildElements()  
         
         if "addText" in request.args:
             self.idevice.addField("Type label here", "Text", "", "")
@@ -93,23 +88,47 @@ class EditorPage(Resource):
             self.package.editor.idevices.remove(self.idevice)
             self.package.editor.addIdevice(idevice)
             self.idevice = idevice
+            
+        self.noStr     = ""
+        self.someStr   = ""
+        self.strongStr = ""
+                
+        if "emphasis" in request.args:
+            if request.args["emphasis"][0] == "no":
+                self.noStr = "selected"
+                self.idevice.emphasis = 0
 
-        self.__buildElements()      
+            elif request.args["emphasis"][0] == "some":
+                self.someStr = "selected"
+                self.idevice.emphasis = 1
+       
+            elif request.args["emphasis"][0] == "strong":
+                self.strongStr = "selected"
+                self.idevice.emphasis = 2
+
+            
         
         
     def __buildElements(self):
+        
+        """
+        Building up element array
+        """
         
         self.elements = []
         i = 0    
         for field in self.idevice.fields:
             if field.fieldType == "Text":
-                self.elements.append(TextField(i,self.idevice, field))
+                self.elements.append(TextField(i, self.idevice, field))
             elif field.fieldType == "TextArea":
-                self.elements.append(TextAreaField(i,self.idevice, field))
+                self.elements.append(TextAreaField(i, self.idevice, field))
             i += 1
         
             
     def renderIdevice(self, request):
+        """
+        Returns an XHTML string for rendering the new idevice
+        """
         
         html  = "<script type=\"text/javascript\">\n"
         html += "<!--\n"
@@ -128,18 +147,48 @@ class EditorPage(Resource):
         
         if self.idevice.edit:
             html += "<b>" + _("Idevice Name") + "</b><br/>\n"
-            html += common.textInput("title", self.idevice.title) + "<br/>"
+            html += common.textInput("title", self.idevice.title) + "<br/>\n"
             html += "<b>" + _("Author") + "</b><br/>\n"
-            html += common.textInput("author", self.idevice.author) + "<br/>"
+            html += common.textInput("author", self.idevice.author) + "<br/>\n"
             html += "<b>" + _("Description") + "</b><br/>\n"
-            html += common.textArea("description", self.idevice.purpose) + "<br/>"
+            html += common.textArea("description", self.idevice.purpose) 
             html += "<b>" + _("Pedagogical Help") + "</b><br/>\n"
-            html += common.richTextArea("tip", self.idevice.tip) + "<br/>\n"           
+            html += common.richTextArea("tip", self.idevice.tip) + "<br/>\n"  
+            html += "<b>" + _("Emphasis") + "</b> "
+            html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
+            html += "<option value=\"no\" "+self.noStr+">"+_("No emphasis")
+            html += "</option>\n"
+            html += "<option value=\"some\" "+self.someStr+">"+_("Some emphasis")
+            html += "</option>\n"
+            html += "<option value=\"strong\" "+self.strongStr+">"
+            html += _("Strong emphasis")
+            html += "</option>\n"
+            html += "</select><br/><br/>\n"
             for element in self.elements:
                 html += element.renderEdit(request)       
         else:
+            html += "<b>" + self.idevice.title + "</b><br/><br/>"
             for element in self.elements:
-                html += element.renderPreview(request) 
+                html += element.renderPreview(request)               
+            if self.idevice.purpose != "" or self.idevice.tip != "":
+                html += "<a title=\""+_("Pedagogical Help")+"\" "
+                html += "onmousedown=\"Javascript:updateCoords(event);\" "
+                html += "onclick=\"Javascript:showMe('phelp', 420, 240);\" " 
+                html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
+                html += "<img src=\"/images/info.png\" border=\"0\" "
+                html += "align=\"middle\" /></a>\n"
+                html += "<div id=\"phelp\" style=\"display:none;\">"
+                html += "<div style=\"float:right;\" "
+                html += "<img src=\"images/stock-stop.png\" "
+                html += " title='"+_("Close")+"' border='0' align='middle' "
+                html += "onmousedown=\"Javascript:hideMe();\"/></div>"
+                if self.idevice.purpose != "":
+                    html += "<b>Purpose:</b><br/>%s<br/>" % self.idevice.purpose
+                    
+                if self.idevice.tip != "":
+                    html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
+                    
+                html += "</div>\n"    
                 
         return html
         
@@ -150,7 +199,6 @@ class EditorPage(Resource):
         # Processing 
         log.debug("render_GET")
         self.process(request)
-        self.menuPane.process(request) 
         
         for element in self.elements:
             element.process(request)
@@ -165,7 +213,7 @@ class EditorPage(Resource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", self.package.isChanged) 
-        html += "<pre>%s</pre>\n" % str(request.args) # to be deleted later
+       # html += "<pre>%s</pre>\n" % str(request.args) # to be deleted later
         html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td>\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"

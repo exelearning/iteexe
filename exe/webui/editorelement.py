@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-EditorElement is responsible for a block of fields.  Used by iDevice Editor
+EditorElement is responsible for a block of field. Used by iDevice Editor
 """
 
 import logging
@@ -29,7 +29,7 @@ _   = gettext.gettext
 # ===========================================================================
 class EditorElement(object):
     """
-    EditorElement is responsible for a block of fields.  Used by iDevice Editor
+    EditorElement is responsible for a block of field.  Used by iDevice Editor
     """
     def __init__(self, index, idevice, field):
         """
@@ -54,10 +54,7 @@ class EditorElement(object):
         
         if self.nameId in request.args:
             self.field.name = request.args[self.nameId][0]
-            
-        if self.contentId in request.args:
-            self.field.content = request.args[self.contentId][0]
-            
+                 
         if self.instrucId in request.args:
             self.field.instruction = request.args[self.instrucId][0]
                         
@@ -75,7 +72,7 @@ class EditorElement(object):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        html  = "<p class=\""+ self.class_ + "\">\n"
+        html  = "<p class=\""+ self.field.class_ + "\">\n"
         html += content
         html += "</p>\n"
         return html
@@ -107,14 +104,15 @@ class TextField(EditorElement):
         
         html  = common.textInput(self.nameId, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('%s','%s',%d)\" " %("showHide",self.id,1)
+        html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
         html += "<img src=\"/images/help.gif\" border=\"0\" "
         html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "stock-cancel.png", 
                                    _("Delete"),1)
         html += "<br/>\n"
-        html += common.textInput(self.contentId, self.field.content)
+        html += common.textInput(self.contentId, "", 40, "Disabled")
+                                 
         html += "<br/>\n"
         if self.instruc == "":
             self.instruc = "Type field instruction here."
@@ -126,8 +124,11 @@ class TextField(EditorElement):
         return html
     
     def renderPreview(self, request):
+        """
+        Returns an XHTML string with the form element for previewing this field
+        """
         html  = "<b>" + self.field.name + "</b> "
-        if self.instruc <> "":
+        if self.instruc != "":
             html += common.elementInstruc(self.instrucId, self.instruc)
         html += "<br/>\n" + common.textInput(self.contentId, self.field.content)
         html += "<br/><br/>\n"
@@ -145,14 +146,14 @@ class TextAreaField(EditorElement):
         """
         html  = common.textInput(self.nameId, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('%s','%s',%d)\" " %("showHide",self.id,1)
+        html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
         html += "<img src=\"/images/help.gif\" border=\"0\" "
         html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "stock-cancel.png", 
                                    _("Delete"),1)
         html += "<br/>\n"
-        html += common.textArea(self.contentId, self.field.content)
+        html += common.textArea(self.contentId, "", "Disabled")
         if self.instruc == "":
             self.instruc = "Type field instruction here."
         if self.field.showInstruc:
@@ -164,10 +165,10 @@ class TextAreaField(EditorElement):
     
     def renderPreview(self, request):
         """
-        Returns an XHTML string with the form element for editing this field
+        Returns an XHTML string with the form element for previewing this field
         """
         html  = "<b>" + self.field.name + "</b> "
-        if self.instruc <> "":
+        if self.instruc != "":
             html += common.elementInstruc(self.instrucId, self.instruc)
         html += "<br/>" + common.textArea(self.contentId, self.field.content)
         html += "<br/>\n"

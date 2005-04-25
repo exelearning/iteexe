@@ -74,18 +74,18 @@ def hiddenField(name, value=""):
     html += "value=\"%s\" />\n" % value
     return html
 
-def textInput(name, value="", size=40):
+def textInput(name, value="", size=40, disabled=""):
     """Adds a text input to a form"""
     html  = "<input type=\"text\" name=\"%s\" id=\"%s\" " % (name, name)
     html += "value=\"%s\"" % value
-    html += " size=\"%s\" />\n" % size
+    html += " size=\"%s\" %s />\n" % (size, disabled)
     return html
 
-def textArea(name, value=""):
+def textArea(name, value="", disabled=""):
     """Adds a text area to a form"""
     log.debug("textArea "+value)
     html  = "<textarea name=\"%s\" " % name
-    html += "cols=\"52\" rows=\"8\">%s" % value
+    html += "cols=\"52\" rows=\"8\" %s>%s" % (disabled, value)
     html += "</textarea><br/>"
     return html
 

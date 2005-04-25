@@ -66,9 +66,10 @@ class NewIdevice(Idevice):
 
     def addField(self, name, fieldType, class_, instruction="", content=""):
         """
-        Add a new field to this iDevice.  Fields are indexed by their name.
+        Add a new field to this iDevice. 
         """
-        self.fields.append(NewField(name, fieldType, class_, instruction, content)) 
+        self.fields.append(NewField(name, fieldType, class_, 
+                                    instruction, content)) 
 
    
 

@@ -41,7 +41,7 @@ def launchBrowser(config):
     """
     if sys.platform[:3] == "win":
         log.info("Broswer path: " + config.browserPath)
-        url     = 'http://localhost:%d' % port
+        url     = 'http://localhost:%d' % config.port
         log.info("Launch firefox with "+config.browserPath)
         try:
             os.spawnl(os.P_DETACH, config.browserPath, 

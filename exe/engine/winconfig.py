@@ -38,18 +38,18 @@ class WinConfig(Config):
         """
         Initialize 
         """
-        Config.__init__(self)
+        Config.__init__(self, configFile)
 
         # what's the windows equivalent of /etc????
         # Documents and Settings.... Application Data
-        programFilesDir = self.getDirectory(0x0026)
+        programFilesDir = self.__getDirectory(0x0026)
         exeConf = programFilesDir + "/exe/" + configFile
         if os.path.isfile(exeConf):
             self.configPath = exeConf
         
-        if ("Mozilla Firefox" in os.listdir(exeDir) and 
+        if ("Mozilla Firefox" in os.listdir(self.exeDir) and 
             "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox")):
-            self.browserPath = exeDir + "\\Mozilla Firefox\\firefox"
+            self.browserPath = self.exeDir + "\\Mozilla Firefox\\firefox"
         self.dataDir = self.__getDirectory(5)
                 
         # TODO: get appDataDir from

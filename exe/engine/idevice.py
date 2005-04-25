@@ -33,6 +33,7 @@ class Idevice(jelly.Jellyable):
     package
     """
     nextId = 1
+
     NoEmphasis, SomeEmphasis, StrongEmphasis = range(3)
 
     def __init__(self, title, author, purpose, tip, parentNode=None):
@@ -47,6 +48,7 @@ class Idevice(jelly.Jellyable):
         self.author     = author
         self.purpose    = purpose
         self.tip        = tip
+        self.emphasis   = Idevice.NoEmphasis
 
 
     def __cmp__(self, other):
