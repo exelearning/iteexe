@@ -26,8 +26,6 @@ import gettext
 import os
 import os.path
 from exe.engine.package      import Package
-from exe.engine.idevicestore import IdeviceStore
-#from exe.webui.webinterface  import g_webInterface
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -40,7 +38,6 @@ class PackageStore:
     """
     def __init__(self):
         self.loaded       = {}
-        self.ideviceStore = IdeviceStore()
 
 
     def createPackage(self, name=None):
@@ -100,7 +97,7 @@ class PackageStore:
         Get all the iDevices which could be used in this package
         (and in the current node?)
         """
-        return self.ideviceStore.getIdevices(package)
+        return None
         
 
 
