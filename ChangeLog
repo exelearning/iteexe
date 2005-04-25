@@ -1,3 +1,11 @@
+2005-04-25 00:50  djm
+
+	* exe/exe.conf: restored to defaults
+
+2005-04-23 19:07  djm
+
+	* ChangeLog: lastest changes in the ChangeLog
+
 2005-04-23 19:06  djm
 
 	* exe/exe, exe/webui/browser.py: Add exe start script and browser.py

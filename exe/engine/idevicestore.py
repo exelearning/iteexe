@@ -23,6 +23,7 @@ The collection of iDevices available
 #from exe.engine.config  import g_config
 
 import logging
+from exe.engine import persist
 
 log = logging.getLogger(__name__)
 
@@ -32,9 +33,10 @@ class IdeviceStore:
     The collection of iDevices available
     at the moment this class is not being used
     """
-    def __init__(self):
+    def __init__(self, config):
         # TODO I originally planned Extended and Generic iDevices to
         # be handled polymorphically, need to reconsider this
+        self.config   = config
         self.extended = []
         self.generic  = []
 
@@ -53,6 +55,7 @@ class IdeviceStore:
         log.debug("load iDevices")
         self.loadExtended()
         self.loadGeneric()
+
 
     def loadExtended(self):
         from exe.engine.freetextidevice    import FreeTextIdevice
@@ -75,7 +78,99 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
-        pass
+        fileIn = open(self.config.appDir + "/idevices/generic.data")
+        if fileIn:
+            self.generic = persist.decodeObject(fileIn.read())
+        else:
+            self.generic = self.createGeneric()
+            self.save()
+
+
+    def createGeneric(self):
+        readingAct = GenericIdevice(_("Reading Activity"), 
+                                    "activity-reading",
+                                    _("University of Auckland"), 
+_("""Provide learners with structure to their reading activity. This helps put
+the activity in context for the learner. It is also important to correctly
+reference any reading materials you refer to as this models best practice to
+the learners. Not always essential if covered in the course content but
+providing feedback to the learner on some of the main points covered in the
+reading may also add value to the activity."""), 
+                                     "") 
+        readingAct.addField(_("What to read"), 
+                            "TextArea", "reading_what",
+_("""Provide details of the reading materials learners should  read."""))
+        readingAct.addField(_("Why it should be read"), 
+                            "TextArea", "reading_why",
+_("""Describe the rationale behind the selection of the reading and how it will
+enrich the learning."""))
+        readingAct.addField(_("Reference"), 
+                            "TextArea", "reading_reference",
+_("""Provide full reference details to the reading materials selected. The
+reference style used will depend on the preference of your department or
+faculty."""))
+        readingAct.addField(_("Feedback"), 
+                            "TextArea", "reading_feedback",
+_("""The use of this element is flexible.  Use it to provide a summary of the
+points covered in the reading, or as a starting point for further analysis of
+the reading by posing a question or providing a statement to begin a
+debate."""))
+        self.generic.append(readingAct)
+    
+        objectives = GenericIdevice(_("Objectives"), 
+                                    "objectives",
+                                    _("University of Auckland"), 
+_("""Objectives describe the expected outcomes of the learning and should
+define what the learners will be able to do when they have completed the
+learning tasks."""), 
+                                    _(""))
+
+        objectives.addField(_("Objectives"), "TextArea", "objectives",
+_("""Type the learning objectives for this resource."""))
+        self.generic.append(objectives)
+
+        preknowledge = GenericIdevice(_("Preknowledge"), 
+                                      "preknowledge",
+                                      "", 
+_("""Prerequisite knowledge refers to the knowledge learners should already
+have in order to be able to effectively complete the learning. Examples of
+pre-knowledge can be: <ul>
+<li>	Learners must have level 4 English </li>
+<li>	Learners must be able to assemble standard power tools </li></ul>
+"""), "")
+        preknowledge.addField(_("Preknowledge"), 
+                              "TextArea", "preknowledge",
+_("""Describe the prerequisite knowledge learners should have to effectively
+complete this learning."""))
+        self.generic.append(preknowledge)
+        
+        activity = GenericIdevice(_("Activity"), 
+                                  "activity",
+                                  _("University of Auckland"), 
+_("""An activity can be defined as a task or set of tasks a learner must
+complete. Provide a clear statement of the task and consider any conditions
+that may help or hinder the learner in the performance of the task."""),
+"")
+        activity.addField(_("Activity"), "TextArea", "activity",
+_("""Describe the tasks the learners should complete."""))
+        self.generic.append(activity)
+                                  
+        multiMode = GenericIdevice("", "multimode", "", "", "")
+        multiMode.addField( "photoFile", "Photo", "image", "" )
+        multiMode.addField( "caption", "Text", "nodeTitle", "" )
+        multiMode.addField( "learningText", "TextArea", "learningText", 
+                            "" )
+        multiMode.addField( "audioFile", "Audio", "audio", "" )
+        self.generic.append(multiMode)
+
+
+
+    def save(self):
+        """
+        Save the Generic iDevices to the appdata directory
+        """
+        fileOut = open(self.config.appDir + "/idevices/generic.data", "w")
+        fileOut.write(persist.encodeObject(self.generic))
 
 
 
