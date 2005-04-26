@@ -142,6 +142,7 @@ class Manifest(object):
              href="%s">
                 <file href="%s"/>
                 <file href="content.css"/>
+                <file href="APIWrapper.js"/>
                 """ %(resId, filename, filename)
         fileStr = ""
         # TODO: Fix this hack with some real object-orientated code
