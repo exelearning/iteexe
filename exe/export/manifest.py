@@ -84,9 +84,10 @@ class Manifest(object):
 
         if self.addMetadata:
             xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" \n"
-
+            
+        xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\" "
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
-        xmlStr += "imscp_v1p1 imscp_v1p1.xsd \n"
+        xmlStr += "imscp_v1p1 imscp_v1p1.xsd \n"        
         xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
         xmlStr += "> \n"
         xmlStr += "<metadata> \n"
@@ -137,7 +138,8 @@ class Manifest(object):
             """ %(itemId, resId, str(node.title))
         
         self.resStr += """
-            <resource identifier="RES-%s" type="webcontent" href="%s">
+            <resource identifier="RES-%s" type="webcontent" adlcp:scormType="sco"
+             href="%s">
                 <file href="%s"/>
                 <file href="content.css"/>
                 """ %(resId, filename, filename)
