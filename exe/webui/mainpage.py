@@ -232,8 +232,7 @@ class MainPage(LivePage):
 
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
-        #try:
-        if True:
+        try:
             log.debug("filename and path" + filename)
 
             packageStore = self.webserver.application.packageStore
@@ -243,7 +242,7 @@ class MainPage(LivePage):
             self.webserver.root.putChild(package.name, mainPage)
             client.sendScript('top.location = "/%s"' % package.name)
 
-#        except Exception, e:
-#            client.sendScript('alert("Sorry, wrong file format")')
-#            log.error('Error loading package "%s": %s' % (filename, str(e)))
-#            self.error = True
+        except Exception, e:
+            client.sendScript('alert("Sorry, wrong file format")')
+            log.error('Error loading package "%s": %s' % (filename, str(e)))
+            self.error = True
