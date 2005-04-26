@@ -33,8 +33,8 @@ class StylePane(object):
     """
     StylePane is responsible for creating the XHTML for the styles tab
     """
-    def __init__(self, config, package):
-        self.config  = config
+    def __init__(self, webserver, package):
+        self.config  = webserver.application.config
         self.package = package
 
     def process(self, request):

@@ -20,12 +20,13 @@
 import unittest
 from exe.engine.node    import Node
 from exe.engine.idevice import Idevice
-from exe.engine.packagestore import g_packageStore
+from exe.engine.packagestore import PackageStore
 
 
 class TestIdevice(unittest.TestCase):
     def setUp(self):
-        self.package = g_packageStore.createPackage()
+        self.packageStore = PackageStore()
+        self.package      = self.packageStore.createPackage()
 
     def testIdevice(self):
         myIdevice = Idevice("My Idevice", "UoA", "Testing", "Help tip")

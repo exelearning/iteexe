@@ -29,7 +29,8 @@ from getopt import getopt, GetoptError
 from exe.engine.config       import Config
 from exe.webui.webserver     import WebServer
 from exe.webui.browser       import launchBrowser
-from exe.engine.packagestore import g_packageStore
+from exe.engine.idevicestore import IdeviceStore
+from exe.engine.packagestore import PackageStore
 from exe.engine import version
 import logging
 import gettext
@@ -37,66 +38,81 @@ _   = gettext.gettext
  
 log = logging.getLogger(__name__)
 
-def main():
-    """
-    Main function, starts eXe
-    """
-    # Process args
-    try:
-        options, packages = getopt(sys.argv[1:], "hV", ["help", "version"])
-    except GetoptError:
-        usage()
-        sys.exit(2)
+class Application:
+    def __init__(self):
+        """
+        Initialize
+        """
+        self.config       = None
+        self.packageStore = None
+        self.ideviceStore = None
 
-    for option, arg in options:
-        if option in ("-V", "--version"):
-            print "eXe", version.version
-            sys.exit()
-        if option in ("-h", "--help"):
-            usage()
-            sys.exit()
 
-    # Get configuration
-    configFile = "exe.conf"
-    if sys.platform[:3] == "win":
-        from exe.engine.winconfig import WinConfig
-        config = WinConfig(configFile)
-
-    elif sys.platform[:6] == "darwin":
-        from exe.engine.macconfig import MacConfig
-        config = MacConfig(configFile)
-
-    else:
-        from exe.engine.linuxconfig import LinuxConfig
-        config = LinuxConfig(configFile)
-
-    config.loadSettings()
-    config.setupLogging("exe.log")
-    config.loadStyles()
-    g_config = config
+    def main(self):
+        """
+        Main function, starts eXe
+        """
+        # Process args
+        try:
+            options, packages = getopt(sys.argv[1:], 
+                                       "hV", ["help", "version"])
+        except GetoptError:
+            self.usage()
+            sys.exit(2)
     
-    # Start user interface
-    launchBrowser(config)
-
-    print "Welcome to eXe: the eLearning XML editor"
-    log.info("eXe running...")
+        for option, arg in options:
+            if option in ("-V", "--version"):
+                print "eXe", version.version
+                sys.exit()
+            if option in ("-h", "--help"):
+                self.usage()
+                sys.exit()
     
-    server = WebServer(config)
-    server.run()
+        # Get configuration
+        configFile = "exe.conf"
+        if sys.platform[:3] == "win":
+            from exe.engine.winconfig import WinConfig
+            self.config = WinConfig(configFile)
+    
+        elif sys.platform[:6] == "darwin":
+            from exe.engine.macconfig import MacConfig
+            self.config = MacConfig(configFile)
+    
+        else:
+            from exe.engine.linuxconfig import LinuxConfig
+            self.config = LinuxConfig(configFile)
+    
+        self.config.loadSettings()
+        self.config.setupLogging("exe.log")
+        self.config.loadStyles()
 
-
-def usage():
-    """
-    Print usage info
-    """
-    print "Usage: "+os.path.basename(sys.argv[0])+" [OPTION] PACKAGE"
-    print "  -V, --version    print version information and exit"
-    print "  -h, --help       display this help and exit"
-    print "Settings are read from exe.conf"
-    print "in $HOME/.exe on Linux/Unix or"
-    print "in Documents and Settings\\<user>\\Application Data\\exe on Windows"
-
-
+        self.ideviceStore = IdeviceStore(self.config)
+        self.packageStore = PackageStore()
+        
+        # Start user interface
+        launchBrowser(self.config)
+    
+        print "Welcome to eXe: the eLearning XML editor"
+        log.info("eXe running...")
+        
+        server = WebServer(self)
+        server.run()
+    
+    
+    def usage(self):
+        """
+        Print usage info
+        """
+        print "Usage: "+os.path.basename(sys.argv[0])+" [OPTION] PACKAGE"
+        print "  -V, --version    print version information and exit"
+        print "  -h, --help       display this help and exit"
+        print "Settings are read from exe.conf"
+        print "in $HOME/.exe on Linux/Unix or"
+        print "in Documents and Settings\\<user>\\Application Data\\exe",
+        print "on Windows"
+    
+g_application = Application()
 
 if __name__ == "__main__":
-    main()
+    application = Application()
+    application.main()

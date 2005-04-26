@@ -1,3 +1,50 @@
+2005-04-26 23:09  brent
+
+	* exe/export/manifest.py, exe/export/scormexport.py: added line to
+	  include the APIWrapper.js in all html files exported as SCORM and
+	  added the onload and onunload calls to do LMSInitilize and
+	  LMSFinish. Currently this happens on every file (we are treating
+	  every page as a SCO). Also added APIWrapper.js into manifest.py to
+	  that it is added as an resource in imsmanifest.xml.
+
+2005-04-26 04:23  jenny
+
+	* exe/export/manifest.py: added scorm type to manifest file
+
+2005-04-26 01:44  jenny
+
+	* exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/editorelement.py, exe/webui/editorpage.py,
+	  exe/webui/exportpage.py: fixed exporting bugs
+
+2005-04-25 22:57  djm
+
+	* exe/exe.conf, exe/sample_exe.conf: Renamed exe.conf to
+	  sample_exe.conf to keep out of developers way.
+
+2005-04-25 22:54  brent
+
+	* exe/webui/scripts/armadillo.js: added tables to FCK and defaulted
+	  to open.
+
+2005-04-25 21:07  jenny
+
+	* exe/engine/idevice.py, exe/engine/newidevice.py,
+	  exe/engine/winconfig.py, exe/webui/browser.py,
+	  exe/webui/common.py, exe/webui/editorelement.py,
+	  exe/webui/editorpage.py: resolved conflics and some changes for
+	  editorpage.
+
+2005-04-25 20:44  djm
+
+	* exe/engine/packagestore.py: remove reference to IdeviceStore for
+	  now
+
+2005-04-25 10:20  djm
+
+	* ChangeLog, exe/engine/idevicestore.py: Still working on storing
+	  iDevices, but need sleep now
+
 2005-04-25 00:50  djm
 
 	* exe/exe.conf: restored to defaults

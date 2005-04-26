@@ -25,8 +25,6 @@ import gettext
 import os.path
 from twisted.web.resource     import Resource
 from exe.webui                import common
-from exe.engine.packagestore  import g_packageStore
-from exe.webui.menupane       import MenuPane
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 
@@ -39,19 +37,19 @@ class ExportPage(Resource):
     """
     The ExportPage is responsible for exporting the current project
     """
-    def __init__(self, config):
+    def __init__(self, webserver):
         """
         Initialize
         """
         Resource.__init__(self)
-        self.menuPane  = MenuPane()
-        self.package   = None
-        self.url       = ""
-        self.message   = ""
-        self.scormStr  = ""
-        self.scormStr2 = ""
-        self.webStr    = ""
-        self.config    = config
+        self.package      = None
+        self.packageStore = webserver.application.packageStore
+        self.url          = ""
+        self.message      = ""
+        self.scormStr     = ""
+        self.scormStr2    = ""
+        self.webStr       = ""
+        self.config       = webserver.application.config
         
 
     def process(self, request):
@@ -62,7 +60,7 @@ class ExportPage(Resource):
         
         self.url       = request.path
         packageName    = request.prepath[0]
-        self.package   = g_packageStore.getPackage(packageName)
+        self.package   = self.packageStore.getPackage(packageName)
         dataDir        = self.config.dataDir
         self.scormStr  = ""
         self.scormStr2 = ""
@@ -113,7 +111,6 @@ class ExportPage(Resource):
         # processing 
         log.debug("render_GET")
         self.process(request)
-        self.menuPane.process(request)
                         
         # Rendering
         

@@ -28,7 +28,6 @@ from exe.webui import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
-from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -44,8 +43,8 @@ class AuthoringPage(Resource):
         Initialize
         'parent' is our MainPage instance that created us
         """
-        self.blocks     = []
-        self.parent = parent
+        self.blocks  = []
+        self.parent  = parent
         self.package = parent.package
 
     def _process(self, request):

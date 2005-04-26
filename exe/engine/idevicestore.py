@@ -22,8 +22,12 @@ The collection of iDevices available
 
 #from exe.engine.config  import g_config
 
-import logging
+import os.path
 from exe.engine import persist
+
+import logging
+import gettext
+_   = gettext.gettext
 
 log = logging.getLogger(__name__)
 
@@ -78,15 +82,18 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
-        fileIn = open(self.config.appDir + "/idevices/generic.data")
-        if fileIn:
+        genericPath = self.config.appDataDir + "/idevices/generic.data"
+        if os.path.exists(genericPath):
+            fileIn = open(genericPath)
             self.generic = persist.decodeObject(fileIn.read())
         else:
-            self.generic = self.createGeneric()
+            self.createGeneric()
             self.save()
 
 
     def createGeneric(self):
+        from exe.engine.genericidevice import GenericIdevice
+
         readingAct = GenericIdevice(_("Reading Activity"), 
                                     "activity-reading",
                                     _("University of Auckland"), 
@@ -164,12 +171,11 @@ _("""Describe the tasks the learners should complete."""))
         self.generic.append(multiMode)
 
 
-
     def save(self):
         """
         Save the Generic iDevices to the appdata directory
         """
-        fileOut = open(self.config.appDir + "/idevices/generic.data", "w")
+        fileOut = open(self.config.appDataDir + "/idevices/generic.data", "w")
         fileOut.write(persist.encodeObject(self.generic))
 
 

@@ -19,14 +19,15 @@
 # ===========================================================================
 
 import unittest
-from testconfig   import TestConfig
-from testnode     import TestNode
-from testuniqueid import TestUniqueId
-from testxmlhttp  import TestOutline
-from testpackage  import TestPackage
-from testblock    import TestBlock
-from testidevice  import TestIdevice
-from testpersist  import TestPersist
+from testconfig        import TestConfig
+from testnode          import TestNode
+from testuniqueid      import TestUniqueId
+from testxmlhttp       import TestOutline
+from testpackage       import TestPackage
+from testblock         import TestBlock
+from testidevice       import TestIdevice
+from testidevicestore  import TestIdeviceStore
+from testpersist       import TestPersist
 
 # ===========================================================================
 
@@ -39,5 +40,6 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestPackage))
     suite.addTest(unittest.makeSuite(TestBlock))
     suite.addTest(unittest.makeSuite(TestIdevice))
+    suite.addTest(unittest.makeSuite(TestIdeviceStore))
     suite.addTest(unittest.makeSuite(TestPersist))
     unittest.TextTestRunner(verbosity=2).run(suite)

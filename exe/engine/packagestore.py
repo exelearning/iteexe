@@ -97,12 +97,7 @@ class PackageStore:
         Get all the iDevices which could be used in this package
         (and in the current node?)
         """
-        return None
+        return []
         
-
-
-# nasty old global
-g_packageStore = PackageStore()
-
 
 # ===========================================================================

@@ -27,7 +27,6 @@ import gettext
 from twisted.web.resource     import Resource
 from twisted.web.error        import ForbiddenResource
 from exe.webui                import common
-from exe.engine.packagestore  import g_packageStore
 from exe.webui.mainpage       import MainPage
 
 log = logging.getLogger(__name__)
@@ -41,13 +40,14 @@ class PackageRedirectPage(Resource):
     package.
     """
     
-    def __init__(self, config, package = None):
+    def __init__(self, webserver, package = None):
         """
         Initialize
         """
         Resource.__init__(self)
-        self.config  = config
-        self.package = package
+        self.webserver    = webserver
+        self.packageStore = webserver.application.packageStore
+        self.package      = package
 
 
     def getChild(self, name, request):
@@ -69,10 +69,10 @@ class PackageRedirectPage(Resource):
             package = self.package
         else:
             # Create new package
-            package = g_packageStore.createPackage()
+            package = self.packageStore.createPackage()
             log.info("Creating a new package name="+ package.name)
 
-        mainPage = MainPage(self.config, package)
+        mainPage = MainPage(self.webserver, package)
         self.putChild(package.name, mainPage)
         # Rendering
         request.redirect(package.name)

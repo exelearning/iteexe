@@ -36,11 +36,12 @@ class IdevicePane(object):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
-    def __init__(self, package):
+    def __init__(self, webserver, package):
         """ 
         Initialize
         """ 
-        self.package = package
+        self.package      = package
+        self.packageStore = webserver.application.packageStore
 
     def process(self, request):
         """ 

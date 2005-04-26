@@ -23,9 +23,8 @@ The EditorPage is responsible for creating new idevice
 
 import logging
 import gettext
-from twisted.web.resource import Resource
-from exe.webui import common
-from exe.engine.packagestore import g_packageStore
+from twisted.web.resource    import Resource
+from exe.webui               import common
 from exe.webui.editorelement import TextField, TextAreaField
 from exe.engine.newidevice   import NewIdevice
 
@@ -38,20 +37,21 @@ class EditorPage(Resource):
     """
     The EditorPage is responsible for creating new idevice
     """
-    def __init__(self):
+    def __init__(self, webserver):
         """
         Initialize
         """
         Resource.__init__(self)
-        self.package   = None
-        self.url       = ""
-        self.elements  = []
-        self.idevice   = None
-        self.noStr     = ""
-        self.someStr   = ""
-        self.strongStr = ""
-        self.purpose   = ""
-        self.tip       = ""
+        self.package      = None
+        self.packageStore = webserver.application.packageStore
+        self.url          = ""
+        self.elements     = []
+        self.idevice      = None
+        self.noStr        = ""
+        self.someStr      = ""
+        self.strongStr    = ""
+        self.purpose      = ""
+        self.tip          = ""
         
     def process(self, request):
         """
@@ -61,7 +61,7 @@ class EditorPage(Resource):
         
         self.url = request.path
         packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)
+        self.package = self.packageStore.getPackage(packageName)
         self.idevice = self.package.editor.idevices[0]
         
         self.__buildElements()  

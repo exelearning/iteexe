@@ -28,7 +28,6 @@ Browser module
 import os
 import os.path
 import sys
-from exe.engine.config import Config
 import logging
 import gettext
 _   = gettext.gettext

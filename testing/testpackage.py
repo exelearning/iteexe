@@ -21,46 +21,46 @@ import unittest
 from os.path                 import join
 from exe.engine.package      import Package
 from exe.engine.config       import Config
-from exe.engine.packagestore import PackageStore, g_packageStore
+from exe.engine.packagestore import PackageStore
 from exe.engine.node         import Node
 from exe.engine.titleidevice import TitleIdevice
 
 # ===========================================================================
 class TestPackage(unittest.TestCase):
     def setUp(self):
-        pass
+        self.packageStore = PackageStore()
 
     def testCreatePackage(self):
-        package = g_packageStore.createPackage()
+        package      = self.packageStore.createPackage()
         self.assert_(package)
         self.assert_(package.name)
         
     def testSaveAndLoad(self):
-        package = g_packageStore.createPackage()
+        package = self.packageStore.createPackage()
         package.name = "package1"
         package.author = "UoA"
         config  = Config("exe.conf")
         package.save(config.dataDir)
         
         filePath = join(config.dataDir, "package1.elp")
-        package1 = g_packageStore.loadPackage(filePath)
+        package1 = self.packageStore.loadPackage(filePath)
         self.assert_(package1)
         self.assertEquals(package1.author, "UoA")
         
     def testfindNode(self):
-        package = g_packageStore.createPackage()
+        package = self.packageStore.createPackage()
         node1 = package.root.createChild()
         self.assertEquals(package.findNode(node1.id), node1)
         
     def testLevelName(self):
-        package = g_packageStore.createPackage()
+        package = self.packageStore.createPackage()
         package.levelNames = ["Month", "Week", "Day"]
         self.assertEquals(package.levelName(0), "Month")
         self.assertEquals(package.levelName(1), "Week")
         self.assertEquals(package.levelName(2), "Day")
 
     def testNodeIds(self):
-        package = g_packageStore.createPackage()
+        package = self.packageStore.createPackage()
         assert package._nextNodeId == 3, package._nextNodeId # Should be two after draft, root and editor are created
         assert package.findNode(package.draft.id) is package.draft
         assert package.findNode(package.root.id) is package.root

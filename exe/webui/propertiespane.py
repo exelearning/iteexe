@@ -26,7 +26,6 @@ pane
 import logging
 import gettext
 from exe.webui import common
-from exe.engine.packagestore import g_packageStore
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -38,17 +37,18 @@ class PropertiesPane(object):
     PropertiesPane is responsible for creating the XHTML for the properties
     pane
     """
-    def __init__(self):
-        self.package = None
-        self.url     = ""
+    def __init__(self, webserver):
+        self.package      = None
+        self.packageStore = webserver.application.packageStore
+        self.url          = ""
 
     def process(self, request):
         """ 
         Process what the user has submitted
         """
-        self.url    = request.path
-        packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName) 
+        self.url     = request.path
+        packageName  = request.prepath[0]
+        self.package = self.packageStore.getPackage(packageName) 
         
         if ("action" in request.args and 
             request.args["action"][0] == "saveChange"):

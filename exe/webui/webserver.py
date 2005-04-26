@@ -34,7 +34,6 @@ import os.path
 import sys
 from exe.engine.config import Config
 from exe.webui.packageredirectpage import PackageRedirectPage
-#from exe.engine.packagestore  import g_packageStore
 from exe.webui.errorpage import ErrorPage
 import logging
 import gettext
@@ -43,12 +42,13 @@ _   = gettext.gettext
 log = logging.getLogger(__name__)
 
 class WebServer:
-    def __init__(self, config):
-        self.config = config
-        self.root   = None
+    def __init__(self, application):
+        self.application = application
+        self.config      = application.config
+        self.root        = None
 
     def run(self):
-        root = PackageRedirectPage(self.config)   
+        root = PackageRedirectPage(self)   
         webDir = self.config.webDir
         root.putChild("images",  static.File(webDir+"/images"))
         root.putChild("css",     static.File(webDir+"/css"))   
@@ -109,5 +109,9 @@ if __name__ == "__main__":
             self.webDir  = "."
             self.exeDir  = "."
             self.styles  = ["default"]
-    server = WebServer(MyConfig())
+    class MyApplication:
+        def __init__(self):
+            self.config = MyConfig()
+
+    server = WebServer(MyApplication())
     server.run()

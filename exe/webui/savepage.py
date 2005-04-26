@@ -27,8 +27,6 @@ import logging
 import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
-from exe.engine.packagestore import g_packageStore
-from exe.webui.menupane import MenuPane
 
 
 log = logging.getLogger(__name__)
@@ -40,17 +38,18 @@ class SavePage(Resource):
     The SavePage is responsible for saving the current project
     """
     
-    def __init__(self, config):
+    def __init__(self, webserver):
         """
         Initialize
         """
         Resource.__init__(self)
-      #  self.menuPane = MenuPane()
-        self.package  = None
-        self.url      = ""
-        self.message  = ""
-        self.isSaved  = False
-        self.dataDir  = config.dataDir
+        self.package      = None
+        self.packageStore = webserver.application.packageStore
+        self.url          = ""
+        self.message      = ""
+        self.isSaved      = False
+        self.dataDir      = webserver.application.config.dataDir
+
         
     def process(self, request):
         """
@@ -59,9 +58,9 @@ class SavePage(Resource):
         log.debug("process " + repr(request.args))
         
         self.isSaved = False
-        self.url = request.path
-        packageName = request.prepath[0]
-        self.package = g_packageStore.getPackage(packageName)
+        self.url     = request.path
+        packageName  = request.prepath[0]
+        self.package = self.packageStore.getPackage(packageName)
         
         if "save" in request.args or \
            ("action" in request.args and 
@@ -102,7 +101,6 @@ class SavePage(Resource):
         # Processing 
         log.debug("render_GET")
         self.process(request)
-       # self.menuPane.process(request)
         path = os.path.join(self.dataDir, self.package.name+".elp")
                         
         # Rendering

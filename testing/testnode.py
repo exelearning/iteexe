@@ -19,12 +19,13 @@
 
 import unittest
 from exe.engine.node import Node
-from exe.engine.packagestore import g_packageStore
+from exe.engine.packagestore import PackageStore
 
 # ===========================================================================
 class TestNode(unittest.TestCase):
     def setUp(self):
-        package = g_packageStore.createPackage()
+        packageStore = PackageStore()
+        package      = packageStore.createPackage()
         n2 = package.root       # 02
         n3 = n2.createChild()   #  |_03                               
         n4 = n3.createChild()   #  |  |_04                            
