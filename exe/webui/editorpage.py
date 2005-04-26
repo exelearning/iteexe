@@ -50,6 +50,8 @@ class EditorPage(Resource):
         self.noStr     = ""
         self.someStr   = ""
         self.strongStr = ""
+        self.purpose   = ""
+        self.tip       = ""
         
     def process(self, request):
         """
@@ -145,6 +147,12 @@ class EditorPage(Resource):
         html += "//-->\n"
         html += "</script>\n"
         
+        self.purpose = self.idevice.purpose.replace("\r", "<br/>")
+        
+        self.tip = self.idevice.tip.replace("\r", "")
+        self.tip = self.tip.replace("\n","\\n")
+        self.tip = self.tip.replace("'","\\'")
+        
         if self.idevice.edit:
             html += "<b>" + _("Idevice Name") + "</b><br/>\n"
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
@@ -153,7 +161,7 @@ class EditorPage(Resource):
             html += "<b>" + _("Description") + "</b><br/>\n"
             html += common.textArea("description", self.idevice.purpose) 
             html += "<b>" + _("Pedagogical Help") + "</b><br/>\n"
-            html += common.richTextArea("tip", self.idevice.tip) + "<br/>\n"  
+            html += common.richTextArea("tip", self.tip) + "<br/>\n"  
             html += "<b>" + _("Emphasis") + "</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
             html += "<option value=\"no\" "+self.noStr+">"+_("No emphasis")
@@ -183,7 +191,7 @@ class EditorPage(Resource):
                 html += " title='"+_("Close")+"' border='0' align='middle' "
                 html += "onmousedown=\"Javascript:hideMe();\"/></div>"
                 if self.idevice.purpose != "":
-                    html += "<b>Purpose:</b><br/>%s<br/>" % self.idevice.purpose
+                    html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
                     
                 if self.idevice.tip != "":
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip

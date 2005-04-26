@@ -113,7 +113,7 @@ class ScormExport(object):
 
         os.mkdir(package.name)
         os.chdir(package.name)
-        exeDir = self.config.getExeDir()
+        exeDir = self.config.exeDir
 
         for styleFile in glob.glob(os.path.join(exeDir, 
                                                 "style", package.style, "*")):
@@ -124,9 +124,9 @@ class ScormExport(object):
 
         self.exportNode(package.root)
         
-        manifest = Manifest(package, self.config, addMetadata)
+        manifest = Manifest(self.config, package, addMetadata)
         manifest.save()
-        shutil.move(package.name+".zip", self.config.getDataDir())
+        shutil.move(package.name+".zip", self.config.dataDir)
         shutil.rmtree(package.name)
 
                 

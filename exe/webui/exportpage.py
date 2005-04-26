@@ -83,15 +83,15 @@ class ExportPage(Resource):
             os.chdir(dataDir)
             try:
                 if request.args["exportMethod"][0] == "webpage":
-                    websiteExport = WebsiteExport()
+                    websiteExport = WebsiteExport(self.config)
                     websiteExport.export(self.package)
 
                 elif request.args["exportMethod"][0] == "scorm":
-                    scormExport = ScormExport()
+                    scormExport = ScormExport(self.config)
                     scormExport.export(self.package, True)
                 
                 elif request.args["exportMethod"][0] == "scorm-no-metadata":
-                    scormExport = ScormExport()
+                    scormExport = ScormExport(self.config)
                     scormExport.export(self.package, False)
                 
                 self.message = \

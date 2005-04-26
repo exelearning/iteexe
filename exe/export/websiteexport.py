@@ -241,8 +241,8 @@ class WebsiteExport(object):
         """
         self.package = package
         
-        exeDir  = self.config.getExeDir()
-        dataDir = self.config.getDataDir()
+        exeDir  = self.config.exeDir
+        dataDir = self.config.dataDir
 
         os.chdir(dataDir)
         if exists(package.name):
@@ -271,17 +271,17 @@ class WebsiteExport(object):
             log.error(errmsg)
             return errmsg
             
-        shutil.copyfile(filesDir + sep + "mp3player.swf", \
-         join(dataDir, package.name, "images", "mp3player.swf"))    
-        if isdir(uploadedFileDir):
-            try:
-                shutil.copytree(uploadedFileDir,\
-                        join(dataDir, package.name, "images", package.name))
-            except:
-                errmsg =  "fail to copy %s to %s" %\
-                (uploadedFileDir, join("images", package.name))
-                log.error(errmsg)
-                return errmsg
+#        shutil.copyfile(filesDir + sep + "mp3player.swf", \
+#         join(dataDir, package.name, "images", "mp3player.swf"))    
+        #if isdir(uploadedFileDir):
+            #try:
+                #shutil.copytree(uploadedFileDir,\
+                        #join(dataDir, package.name, "images", package.name))
+            #except:
+                #errmsg =  "fail to copy %s to %s" %\
+                #(uploadedFileDir, join("images", package.name))
+                #log.error(errmsg)
+                #return errmsg
         self.doExport(package)
 
     def doExport(self, package):

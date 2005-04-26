@@ -102,6 +102,10 @@ class TextField(EditorElement):
         Returns an XHTML string with the form element for editing this field
         """
         
+        self.instruc = self.instruc.replace("\r", "")
+        self.instruc = self.instruc.replace("\n","\\n")
+        self.instruc = self.instruc.replace("'","\\'")
+        
         html  = common.textInput(self.nameId, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
         html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
@@ -144,6 +148,10 @@ class TextAreaField(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        
+        self.instruc = self.instruc.replace("\r", "")
+        self.instruc = self.instruc.replace("\n","\\n")
+        self.instruc = self.instruc.replace("'","\\'")
         html  = common.textInput(self.nameId, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
         html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
