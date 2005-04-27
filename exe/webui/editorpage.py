@@ -187,7 +187,7 @@ class EditorPage(Resource):
                 html += "align=\"middle\" /></a>\n"
                 html += "<div id=\"phelp\" style=\"display:none;\">"
                 html += "<div style=\"float:right;\" "
-                html += "<img src=\"images/stock-stop.png\" "
+                html += "<img src=\"/images/stock-stop.png\" "
                 html += " title='"+_("Close")+"' border='0' align='middle' "
                 html += "onmousedown=\"Javascript:hideMe();\"/></div>"
                 if self.idevice.purpose != "":
