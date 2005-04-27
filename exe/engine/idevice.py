@@ -20,6 +20,7 @@
 The base class for all iDevices
 """
 
+import copy
 import logging
 from twisted.spread  import jelly
 
@@ -33,7 +34,6 @@ class Idevice(jelly.Jellyable):
     package
     """
     nextId = 1
-
     NoEmphasis, SomeEmphasis, StrongEmphasis = range(3)
 
     def __init__(self, title, author, purpose, tip, parentNode=None):
@@ -55,6 +55,17 @@ class Idevice(jelly.Jellyable):
         return cmp(self.id, other.id)
 
 
+    def clone(self):
+        """
+        Clone an iDevice just like this one
+        """
+        #I'm thinking I should override __deepcopy__, but I just don't get it
+        newIdevice = copy.deepcopy(self)
+        self.id    = str(Idevice.nextId)
+        Idevice.nextId += 1
+        return newIdevice
+
+        
     def delete(self):
         """delete an iDevice from it's parentNode"""
         if self.parentNode:

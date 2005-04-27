@@ -35,7 +35,6 @@ log = logging.getLogger(__name__)
 class IdeviceStore:
     """
     The collection of iDevices available
-    at the moment this class is not being used
     """
     def __init__(self, config):
         # TODO I originally planned Extended and Generic iDevices to
@@ -43,6 +42,15 @@ class IdeviceStore:
         self.config   = config
         self.extended = []
         self.generic  = []
+
+
+    def getIdevices(self, package):
+        """
+        Get the idevices which are applicable for the current node of
+        this package
+        Sorted by title
+        """
+        return self.extended + self.generic
 
 
     def addIdevice(self, idevice):
@@ -162,7 +170,7 @@ that may help or hinder the learner in the performance of the task."""),
 _("""Describe the tasks the learners should complete."""))
         self.generic.append(activity)
                                   
-        multiMode = GenericIdevice("", "multimode", "", "", "")
+        multiMode = GenericIdevice(_("Multimode"), "multimode", "", "", "")
         multiMode.addField( "photoFile", "Photo", "image", "" )
         multiMode.addField( "caption", "Text", "nodeTitle", "" )
         multiMode.addField( "learningText", "TextArea", "learningText", 
@@ -175,7 +183,10 @@ _("""Describe the tasks the learners should complete."""))
         """
         Save the Generic iDevices to the appdata directory
         """
-        fileOut = open(self.config.appDataDir + "/idevices/generic.data", "w")
+        idevicesDir = self.config.appDataDir + "/idevices"
+        if not os.path.exists(idevicesDir):
+            os.mkdir(idevicesDir)
+        fileOut = open(idevicesDir + "/generic.data", "w")
         fileOut.write(persist.encodeObject(self.generic))
 
 

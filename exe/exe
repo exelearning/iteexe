@@ -86,8 +86,9 @@ class Application:
         self.config.setupLogging("exe.log")
         self.config.loadStyles()
 
-        self.ideviceStore = IdeviceStore(self.config)
         self.packageStore = PackageStore()
+        self.ideviceStore = IdeviceStore(self.config)
+        self.ideviceStore.load()
         
         # Start user interface
         launchBrowser(self.config)

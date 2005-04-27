@@ -1,3 +1,67 @@
+2005-04-27 05:51  djm
+
+	* exe/export/scormexport.py: fixed bug in copying APIWrapper.js
+
+2005-04-27 05:07  jenny
+
+	* exe/export/scormexport.py, exe/webui/scripts/APIWrapper.js, win
+	  install/exe.nsi, win-setup.py: added APIWrapper.js for conforming
+	  to SCORM run time environment and modified windows installation
+	  setup files.
+
+2005-04-27 02:19  djm
+
+	* exe/export/scormexport.py, exe/export/websiteexport.py: fixed no
+	  closing quote
+
+2005-04-27 02:17  djm
+
+	* exe/export/scormexport.py, exe/export/websiteexport.py: fixed tag
+
+2005-04-27 02:13  djm
+
+	* exe/export/scormexport.py, exe/export/websiteexport.py: removed
+	  unmatched </form> tag
+
+2005-04-27 01:37  djm
+
+	* exe/sample_exe.conf: added prefixes on to loggers
+
+2005-04-27 01:09  djm
+
+	* tools/dot.pylintrc: can't check winconfig.py and macconfig.py on a
+	  Linux server
+
+2005-04-27 00:51  djm
+
+	* testing/idevices, testing/testidevicestore.py: Added test for
+	  IdeviceStore
+
+2005-04-27 00:37  brent
+
+	* exe/webui/block.py, exe/webui/editorpage.py: fixed the missing
+	  close icon in the pedagogical tips.
+
+2005-04-26 23:27  djm
+
+	* exe/webui/mainpage.py: Restored checking for invalid elp packages.
+
+2005-04-26 23:24  djm
+
+	* ChangeLog, exe/engine/idevicestore.py, exe/engine/packagestore.py,
+	  exe/exe, exe/webui/authoringpage.py, exe/webui/browser.py,
+	  exe/webui/editorpage.py, exe/webui/exportpage.py,
+	  exe/webui/idevicepane.py, exe/webui/mainpage.py,
+	  exe/webui/menupane.py, exe/webui/packageredirectpage.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/stylepane.py,
+	  exe/webui/webserver.py, testing/outlinePaneForTest.py,
+	  testing/runtests.py, testing/serverForTest.py,
+	  testing/testengine.py, testing/testidevice.py,
+	  testing/testnode.py, testing/testpackage.py: Fixed loading
+	  packages. Pass webserver to webui pages. Removed references to
+	  g_packageStore. Removed MenuPane. Removed obsolete tests.
+
 2005-04-26 23:09  brent
 
 	* exe/export/manifest.py, exe/export/scormexport.py: added line to
