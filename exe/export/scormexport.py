@@ -116,16 +116,16 @@ class ScormExport(object):
 
         os.mkdir(package.name)
         os.chdir(package.name)
-        exeDir = self.config.exeDir
+        webDir = self.config.webDir
 
-        for styleFile in glob.glob(os.path.join(exeDir, 
+        for styleFile in glob.glob(os.path.join(webDir, 
                                                 "style", package.style, "*")):
             # Don't copy the nav.css file  
             # TODO: Find a better way to handle nav.css
             if os.path.basename(styleFile) != "nav.css":
                 shutil.copyfile(styleFile, os.path.basename(styleFile))
-	    
-	shutil.copyfile(exeDir + "/scripts/APIWrapper.js", os.path("APIWrapper.js"))
+
+        shutil.copyfile(webDir + "/scripts/APIWrapper.js", "APIWrapper.js")
         self.exportNode(package.root)
         
         manifest = Manifest(self.config, package, addMetadata)
