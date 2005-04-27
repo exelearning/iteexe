@@ -59,11 +59,11 @@ class EditorElement(object):
             self.field.instruction = request.args[self.instrucId][0]
                         
         if "object" in request.args and request.args["object"][0] == self.id:
-            if request.args["action"][0] == "showHide":
-                if self.field.showInstruc:
-                    self.field.showInstruc = False
-                else:
-                    self.field.showInstruc = True
+#            if request.args["action"][0] == "showHide":
+#                if self.field.showInstruc:
+#                    self.field.showInstruc = False
+#                else:
+#                    self.field.showInstruc = True
             if request.args["action"][0] == "deleteField":
                 self.idevice.fields.remove(self.field)
 
@@ -120,10 +120,10 @@ class TextField(EditorElement):
         html += "<br/>\n"
         if self.instruc == "":
             self.instruc = "Type field instruction here."
-        if self.field.showInstruc:
-            html += common.richTextArea(self.instrucId, self.instruc)
-        else:
-            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+#        if self.field.showInstruc:
+        html += common.richTextArea(self.instrucId, self.instruc)
+#        else:
+#            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
         html += "<br/>"
         return html
     
@@ -164,10 +164,10 @@ class TextAreaField(EditorElement):
         html += common.textArea(self.contentId, "", "Disabled")
         if self.instruc == "":
             self.instruc = "Type field instruction here."
-        if self.field.showInstruc:
-            html += common.richTextArea(self.instrucId, self.instruc)
-        else:
-            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+#        if self.field.showInstruc:
+        html += common.richTextArea(self.instrucId, self.instruc)
+#        else:
+#            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
         html += "<br/>"
         return html
     

@@ -58,6 +58,7 @@ class IdeviceStore:
         Register another iDevice as available
         """
         log.debug("IdeviceStore.addIdevice")
+        self.generic.append(idevice)
 
 
     def load(self):

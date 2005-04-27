@@ -26,7 +26,7 @@ import gettext
 from twisted.web.resource    import Resource
 from exe.webui               import common
 from exe.webui.editorelement import TextField, TextAreaField
-from exe.engine.newidevice   import NewIdevice
+from exe.engine.genericidevice import GenericIdevice
 
 
 log = logging.getLogger(__name__)
@@ -44,6 +44,7 @@ class EditorPage(Resource):
         Resource.__init__(self)
         self.package      = None
         self.packageStore = webserver.application.packageStore
+        self.ideviceStore = webserver.application.ideviceStore
         self.url          = ""
         self.elements     = []
         self.idevice      = None
@@ -85,11 +86,14 @@ class EditorPage(Resource):
         if "edit" in request.args:
             self.idevice.edit = True
         if "reset" in request.args:
-            idevice = NewIdevice("", "", "", "", "")
+            idevice = GenericIdevice("", "", "", "", "")
             idevice.parentNode = self.package.editor
             self.package.editor.idevices.remove(self.idevice)
             self.package.editor.addIdevice(idevice)
             self.idevice = idevice
+        if "save" in request.args:
+            self.ideviceStore.addIdevice(self.idevice.clone())
+            self.ideviceStore.save()
             
         self.noStr     = ""
         self.someStr   = ""
@@ -108,8 +112,6 @@ class EditorPage(Resource):
                 self.strongStr = "selected"
                 self.idevice.emphasis = 2
 
-            
-        
         
     def __buildElements(self):
         
@@ -197,7 +199,6 @@ class EditorPage(Resource):
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
                     
                 html += "</div>\n"    
-                
         return html
         
 

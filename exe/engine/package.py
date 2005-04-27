@@ -30,7 +30,6 @@ from twisted.persisted.styles import Versioned
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.genericidevice  import GenericIdevice
-from exe.engine.newidevice  import NewIdevice
 from exe.engine import persist
 
 log = logging.getLogger(__name__)
@@ -64,7 +63,7 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         introduction      += "To edit this text click on the pencil icon"
         self.draft.addIdevice(FreeTextIdevice(introduction))
         self.isChanged     = 0
-        idevice            = NewIdevice("", "", "", "", "")
+        idevice            = GenericIdevice("", "", "", "", "")
         idevice.parentNode = self.editor
         self.editor.addIdevice(idevice)
         self.idevices      = []
