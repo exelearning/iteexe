@@ -92,7 +92,7 @@ class ScormPage(object):
             html += block.renderView()
 
         html += "</div>\n"
-        html += "</body></html>\n
+        html += "</body></html>\n"
         return html
 
         

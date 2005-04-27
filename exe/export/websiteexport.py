@@ -221,7 +221,7 @@ class WebsitePage(object):
         
         html += self.getNavigationLink()
         html += "</div>\n"
-        html += "</body></html>\n
+        html += "</body></html>\n"
         return html
 
         
