@@ -221,9 +221,7 @@ class WebsitePage(object):
         
         html += self.getNavigationLink()
         html += "</div>\n"
-        
-        html += common.footer()
- 
+        html  = "</body></html>\n
         return html
 
         

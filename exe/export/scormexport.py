@@ -92,8 +92,7 @@ class ScormPage(object):
             html += block.renderView()
 
         html += "</div>\n"
-        html += common.footer()
-
+        html  = "</body></html>\n
         return html
 
         
