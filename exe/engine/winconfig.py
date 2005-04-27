@@ -48,7 +48,7 @@ class WinConfig(Config):
             self.configPath = exeConf
         
         if ("Mozilla Firefox" in os.listdir(self.exeDir) and 
-            "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox")):
+            "firefox.exe" in os.listdir(self.exeDir + "\\Mozilla Firefox")):
             self.browserPath = self.exeDir + "\\Mozilla Firefox\\firefox"
         self.dataDir = self.__getDirectory(5)
                 

@@ -187,7 +187,7 @@ _("""Describe the tasks the learners should complete."""))
         idevicesDir = self.config.appDataDir + "/idevices"
         if not os.path.exists(idevicesDir):
             os.mkdir(idevicesDir)
-        fileOut = open(idevicesDir + "/generic.data", "w")
+        fileOut = open(idevicesDir + "/generic.data", "wb")
         fileOut.write(persist.encodeObject(self.generic))
 
 
