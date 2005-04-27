@@ -195,7 +195,7 @@ class OutlinePane(object):
                '          ondragexit="treeDragExit(event)"',
                '          ondragdrop="treeDragDrop(event)">',
                '        <treecols>',
-               '            <treecol id="sectionCol" primary="true" label="Section" flex="1"/>',
+               '            <treecol id="sectionCol" primary="true" label="Outline" flex="1"/>',
                '        </treecols>',
                '        <treechildren>',)
         xul += self.__renderNode(self.package.draft, 12)
