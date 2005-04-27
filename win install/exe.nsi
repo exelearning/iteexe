@@ -2,7 +2,7 @@
 
 ; Define your application name
 !define APPNAME "exe"
-!define EXE_VERSION "0.3"
+!define EXE_VERSION "0.4"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
@@ -16,7 +16,7 @@ OutFile "exeinstall.exe"
 !include "MUI.nsh"
 
 !define MUI_ABORTWARNING
-!define MUI_FINISHPAGE_RUN "$INSTDIR\server.exe"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\exe.exe"
 !define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
 
 !insertmacro MUI_PAGE_WELCOME
@@ -78,9 +78,9 @@ Section "exe" Section2
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
 	File /r "C:\eXe branches\dist\*.*"
-	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\eXe_icon.ico"
+	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
-	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\eXe_icon.ico"
+	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 	
 	; Associtate elp files with server.exe
