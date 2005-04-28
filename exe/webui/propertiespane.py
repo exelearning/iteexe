@@ -26,20 +26,23 @@ pane
 import logging
 import gettext
 from exe.webui import common
+from exe.webui.renderable import Renderable
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
 # ==========================================================================
-class PropertiesPane(object):
+class PropertiesPane(Renderable):
     """
     PropertiesPane is responsible for creating the XHTML for the properties
     pane
     """
-    def __init__(self, webserver):
-        self.package      = None
-        self.packageStore = webserver.application.packageStore
+    
+    name = 'propertiesPane'
+
+    def __init__(self, parent):
+        Renderable.__init__(self, parent)
         self.url          = ""
 
     def process(self, request):
@@ -48,7 +51,6 @@ class PropertiesPane(object):
         """
         self.url     = request.path
         packageName  = request.prepath[0]
-        self.package = self.packageStore.getPackage(packageName) 
         
         if ("action" in request.args and 
             request.args["action"][0] == "saveChange"):

@@ -161,6 +161,7 @@ class ImageElement(Element):
 
         # get the package name,store uploaded file into that package
         # subdirectory
+        # TODO: Wen or David must fix this or explain it to me (MS)
         packageName = request.prepath[0]
         if packageName == "":
             errmsg = "package not specified while processing audio element"
@@ -278,6 +279,7 @@ class AudioElement(Element):
         filename = ""
         # get the package name,store uploaded file into that package
         # subdirectory
+        # TODO: Wen or David must fix this or explain it to me (MS)
         packageName = request.prepath[0]
         if packageName == "":
             errmsg = "package not specified while processing audio element"

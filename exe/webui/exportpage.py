@@ -27,30 +27,30 @@ from twisted.web.resource     import Resource
 from exe.webui                import common
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
+from exe.webui.renderable import RenderableResource
 
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class ExportPage(Resource):
+class ExportPage(RenderableResource):
     """
     The ExportPage is responsible for exporting the current project
     """
-    def __init__(self, webserver):
+
+    name = 'export'
+
+    def __init__(self, parent):
         """
         Initialize
         """
-        Resource.__init__(self)
-        self.package      = None
-        self.packageStore = webserver.application.packageStore
-        self.url          = ""
-        self.message      = ""
-        self.scormStr     = ""
-        self.scormStr2    = ""
-        self.webStr       = ""
-        self.config       = webserver.application.config
-        
+        RenderableResource.__init__(self, parent)
+        self.url       = ""
+        self.message   = ""
+        self.scormStr  = ""
+        self.scormStr2 = ""
+        self.webStr    = ""
 
     def process(self, request):
         """
@@ -59,8 +59,6 @@ class ExportPage(Resource):
         log.debug("process " + repr(request.args))
         
         self.url       = request.path
-        packageName    = request.prepath[0]
-        self.package   = self.packageStore.getPackage(packageName)
         dataDir        = self.config.dataDir
         self.scormStr  = ""
         self.scormStr2 = ""

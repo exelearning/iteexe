@@ -24,18 +24,18 @@ StylePane is responsible for creating the XHTML for the styles tab
 import logging
 import gettext
 from exe.webui import common
+from exe.webui.renderable import Renderable
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
 # ===========================================================================
-class StylePane(object):
+class StylePane(Renderable):
     """
     StylePane is responsible for creating the XHTML for the styles tab
     """
-    def __init__(self, webserver, package):
-        self.config  = webserver.application.config
-        self.package = package
+    
+    name = 'stylePane'
 
     def process(self, request):
         """ 

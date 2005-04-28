@@ -27,24 +27,27 @@ from twisted.web.resource    import Resource
 from exe.webui               import common
 from exe.webui.editorelement import TextField, TextAreaField
 from exe.engine.genericidevice import GenericIdevice
+from exe.webui.renderable import RenderableResource
 
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class EditorPage(Resource):
+class EditorPage(RenderableResource):
     """
     The EditorPage is responsible for creating new idevice
     """
-    def __init__(self, webserver):
+
+    name = 'editor'
+
+    def __init__(self, parent):
         """
         Initialize
         """
-        Resource.__init__(self)
-        self.package      = None
-        self.packageStore = webserver.application.packageStore
-        self.ideviceStore = webserver.application.ideviceStore
+        RenderableResource.__init__(self, parent)
+        self.packageStore = self.webserver.application.packageStore
+        self.ideviceStore = self.webserver.application.ideviceStore
         self.url          = ""
         self.elements     = []
         self.idevice      = None
@@ -56,13 +59,11 @@ class EditorPage(Resource):
         
     def process(self, request):
         """
-        process current package 
+        Process current package 
         """
         log.debug("process " + repr(request.args))
         
         self.url = request.path
-        packageName = request.prepath[0]
-        self.package = self.packageStore.getPackage(packageName)
         self.idevice = self.package.editor.idevices[0]
         
         self.__buildElements()  
@@ -111,10 +112,8 @@ class EditorPage(Resource):
             elif request.args["emphasis"][0] == "strong":
                 self.strongStr = "selected"
                 self.idevice.emphasis = 2
-
         
     def __buildElements(self):
-        
         """
         Building up element array
         """

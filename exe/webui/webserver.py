@@ -45,22 +45,20 @@ class WebServer:
     def __init__(self, application):
         self.application = application
         self.config      = application.config
-        self.root        = None
+        self.root        = PackageRedirectPage(self)   
 
     def run(self):
-        root = PackageRedirectPage(self)   
         webDir = self.config.webDir
-        root.putChild("images",  static.File(webDir+"/images"))
-        root.putChild("css",     static.File(webDir+"/css"))   
-        root.putChild("scripts", static.File(webDir+"/scripts"))
-        root.putChild("style",   static.File(webDir+"/style"))
-        self.root = root
+        self.root.putChild("images",  static.File(webDir+"/images"))
+        self.root.putChild("css",     static.File(webDir+"/css"))   
+        self.root.putChild("scripts", static.File(webDir+"/scripts"))
+        self.root.putChild("style",   static.File(webDir+"/style"))
 
         try:
-            reactor.listenTCP(self.config.port, appserver.NevowSite(root), 
+            reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),
                               interface="127.0.0.1")
-        except CannotListenError:
-            pass
+        except CannotListenError, e:
+            log.error("Can't listen on interface 127.0.0.1, port %s: %s" % (self.config.port, str(e)))
         else:
             reactor.run()
 

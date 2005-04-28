@@ -27,12 +27,12 @@ import os
 from twisted.web.resource     import Resource
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, LivePage, js
+from exe.webui.renderable     import RenderableLivePage
 from exe.webui.idevicepane    import IdevicePane
 from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.outlinepane    import OutlinePane
 from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
-from exe.webui.savepage       import SavePage
 from exe.webui.exportpage     import ExportPage
 from exe.webui.editorpage     import EditorPage
 
@@ -40,40 +40,34 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class MainPage(LivePage):
+class MainPage(RenderableLivePage):
     """
     This is the main XUL page.  Responsible for handling URLs.
     Rendering and processing is delegated to the Pane classes.
     """
     
-    def __init__(self, webserver, package):
+    _templateFileName = 'mainpage.xul'
+    name = 'to_be_defined'
+    
+    def __init__(self, parent, package):
         """
         Initialize a new XUL page
+        'package' is the package that we look after
         """
-        LivePage.__init__(self)
-        self.webserver = webserver
-
-        config = webserver.application.config
-        path   = os.path.join(config.exeDir, 'templates', 'mainpage.xul')
+        self.name = package.name
+        RenderableLivePage.__init__(self, parent, package)
+        path = os.path.join(self.config.exeDir, 'templates', 'mainpage.xul')
         self.docFactory = loaders.xmlfile(path)
-        self.package = package
 
         # Create all the children on the left
-        self.outlinePane = OutlinePane(package)
-        self.idevicePane = IdevicePane(webserver, package)
-        self.stylePane   = StylePane(webserver, package)
-
+        self.outlinePane = OutlinePane(self)
+        self.idevicePane = IdevicePane(self)
+        self.stylePane   = StylePane(self)
         # And in the main section
-        self.authoringPage = AuthoringPage(self) # This is really a page now...
-        self.putChild("authoring", self.authoringPage)
-        self.propertiesPage = PropertiesPage(webserver)
-        self.putChild("properties", self.propertiesPage)
-        self.savePage = SavePage(webserver)
-        self.putChild("save", self.savePage)
-        self.exportPage = ExportPage(webserver)
-        self.putChild("export", self.exportPage)
-        self.editorPage = EditorPage(webserver)
-        self.putChild("editor", self.editorPage)
+        self.authoringPage = AuthoringPage(self)
+        self.propertiesPage = PropertiesPage(self)
+        self.exportPage = ExportPage(self)
+        self.editorPage = EditorPage(self)
 
 
     def getChild(self, name, request):
@@ -83,20 +77,7 @@ class MainPage(LivePage):
         if name == '':
             return self
         else:
-            return Resource.getChild(self, name, request)
-
-
-    def process(self, request):
-        """Because all posts go to our child forms now,
-        self.authoringPage who receives the POST call,
-        actually calls process on us, its parent
-        and we in turn call process on all our trees and stuff"""
-        self.outlinePane.process(request)
-        self.idevicePane.process(request)
-        self.stylePane.process(request)
-        # TODO: Put debug info into the XUL page? (Ask if anyone needs it.
-        # Could be changed into print statements on the server)
-
+            return super(self, self.__class__).getChild(self, name, request)
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
@@ -138,7 +119,7 @@ class MainPage(LivePage):
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
         request = inevow.IRequest(ctx)
-        return ctx.tag(src=request.prepath[0] + '/' + ctx.tag.attributes['src'])
+        return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'])
 
 
     # The node moving buttons
@@ -184,7 +165,7 @@ class MainPage(LivePage):
                              '    <label>%s</label>\n'
                              '    <label>%s</label>\n'
                              '</hbox>\n' %
-                             (request.prepath, request.prepath[0])))
+                             (request.prepath, self.package.name)))
         else:
             return ''
 
@@ -224,25 +205,30 @@ class MainPage(LivePage):
         else:
             client.sendScript(ifClean)
 
-
-    def handleSavePackage(self, client):
+    def handleSavePackage(self, client, filename=None):
         """Save the current package"""
-        self.package.save()
+        oldName = self.package.name
+        self.package.save(filename)
+        # Redirect the client if the package name has changed
+        if self.package.name != oldName:
+            g_webInterface.rootPage.delEntity(oldName)
+            g_webInterface.rootPage.putChild(self.package.name, self)
+            client.sendScript('top.location = "/%s"' % self.package.name)
 
 
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
             log.debug("filename and path" + filename)
-
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
-            #from exe.webui.mainpage import MainPage
-            mainPage = MainPage(self.webserver, package)
-            self.webserver.root.putChild(package.name, mainPage)
+            self.root.bindNewPackage(package)
             client.sendScript('top.location = "/%s"' % package.name)
-
         except Exception, e:
+            #from exe.webui.mainpage import MainPage
             client.sendScript('alert("Sorry, wrong file format")')
+            client.sendScript('alert("%s")' % str(e))
             log.error('Error loading package "%s": %s' % (filename, str(e)))
             self.error = True
+            raise
+            return

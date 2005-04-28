@@ -24,31 +24,31 @@ anything it just redirects the user to a new package.
 
 import logging
 import gettext
-from twisted.web.resource     import Resource
 from twisted.web.error        import ForbiddenResource
 from exe.webui                import common
 from exe.webui.mainpage       import MainPage
+from exe.webui.renderable     import RenderableResource
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class PackageRedirectPage(Resource):
+class PackageRedirectPage(RenderableResource):
     """
     PackageRedirectPage is the first screen the user loads.  It doesn't show
     anything it just redirects the user to a new package or loads an existing 
     package.
     """
     
-    def __init__(self, webserver, package = None):
+    name = '/'
+
+    def __init__(self, server):
         """
         Initialize
         """
-        Resource.__init__(self)
-        self.webserver    = webserver
-        self.packageStore = webserver.application.packageStore
-        self.package      = package
-
+        RenderableResource.__init__(self, None, None, server)
+        self.server = server
+        self.mainPages = {}
 
     def getChild(self, name, request):
         """
@@ -57,24 +57,24 @@ class PackageRedirectPage(Resource):
         if name == '':
             return self
         else:
-            return Resource.getChild(self, name, request)
+            return RenderableResource.getChild(self, name, request)
 
+    def bindNewPackage(self, package):
+        """Binds 'package' to the appropriate url
+        and creates a MainPage instance for it"""
+        mainPage = MainPage(self, package)
+        self.mainPages[package.name] = mainPage
 
     def render_GET(self, request):
         """
         Create a new package and redirect the webrowser to the URL for it
         """
         log.debug("render_GET" + repr(request.args))
-        if self.package:
-            package = self.package
-        else:
-            # Create new package
-            package = self.packageStore.createPackage()
-            log.info("Creating a new package name="+ package.name)
-
-        mainPage = MainPage(self.webserver, package)
-        self.putChild(package.name, mainPage)
-        # Rendering
+        # Create new package
+        package = self.packageStore.createPackage()
+        self.bindNewPackage(package)
+        log.info("Created a new package name="+ package.name)
+        # Tell the web browser to show it
         request.redirect(package.name)
         return ''
 

@@ -23,28 +23,29 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 import logging
 import gettext
 from exe.webui import common
+from exe.webui.renderable          import Renderable
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
-class IdevicePane(object):
+class IdevicePane(Renderable):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
-    def __init__(self, webserver, package):
+
+    name = 'idevicePane'
+
+    def __init__(self, parent):
         """ 
         Initialize
         """ 
+        Renderable.__init__(self, parent)
         log.debug("Load appropriate iDevices")
-        self.package    = package
         self.prototypes = {}
-
-        ideviceStore    = webserver.application.ideviceStore
-        for prototype in ideviceStore.getIdevices(package):
+        for prototype in self.ideviceStore.getIdevices(self.package):
             log.debug("add "+prototype.title)
             self.prototypes[prototype.id] = prototype
-
 
     def process(self, request):
         """ 

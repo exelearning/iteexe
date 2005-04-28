@@ -321,8 +321,15 @@ function fileSave() {
     nevow_clientToServerEvent('savePackage', this, '')
 }
 
-function fileQuit() {
+// Called by the user when they want to save their package
+function fileSaveAs() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
-    top.hideChrome = true
-    top.close()
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a File", nsIFilePicker.modeSave);
+    fp.appendFilter("eXe Package Files","*.elp");
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+        nevow_clientToServerEvent('savePackage', this, '', fp.file.path)
+    }
 }

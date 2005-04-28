@@ -43,6 +43,8 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
     persistenceVersion = 1
 
+    filename = None
+
     def __init__(self, name):
         """
         Initialize 
@@ -67,7 +69,6 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         idevice.parentNode = self.editor
         self.editor.addIdevice(idevice)
         self.idevices      = []
-
         
     def getStateFor(self, jellier):
         """
@@ -88,7 +89,6 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             return node
         else: return None
 
-
     def levelName(self, level):
         """return the level name"""
         
@@ -97,32 +97,44 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         else:
             return _("?????")
         
-    
-    def save(self, path=None):
-        """Save package to disk"""
-        if not path:
-            #TODO this changes?
-            #path = g_webInterface.config.getDataDir()
-            path = "."
-             
-        log.debug("data directory: " + path)
-
+    def save(self, filename=None):
+        """
+        Save package to disk
+        pass an optional filename
+        """
+        if filename:
+            # If we are bieng given a new filename...
+            # Change our name to match our new filename
+            name = os.path.split(filename)[1]
+            self.name = os.path.splitext(name)[0]
+        elif self.filename:
+            # Otherwise use our last saved/loaded from filename
+            filename = self.filename
+        else:
+            # If we don't have a last saved/loaded from filename,
+            # raise an exception because, we need to have a new
+            # file passed when a brand new package is saved
+            raise AssertionError('No name passed when saving a new package')
+        # Store our new filename for next file|save
+        self.filename = filename
+        # Add the extension if its not already there
+        if not filename.lower().endswith('.elp'):
+            filename += '.elp'
+        log.debug("Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
-        oldDir = os.getcwd()
-        os.chdir(path)
+        zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
         try:
-            fileName = self.name + ".elp" 
-            zippedFile = zipfile.ZipFile(fileName, "w", zipfile.ZIP_DEFLATED)
             zippedFile.writestr("content.data", persist.encodeObject(self))
-            zippedFile.close()
         finally:
-            os.chdir(oldDir)
+            zippedFile.close()
 
-    def load(path):
+    def load(filename):
         """Load package from disk, returns a package"""
-        zippedFile = zipfile.ZipFile(path, "r", zipfile.ZIP_DEFLATED)
+        zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
         toDecode = zippedFile.read("content.data")
-        return persist.decodeObject(toDecode)
+        newPackage = persist.decodeObject(toDecode)
+        newPackage.filename = filename # Store the original filename so file|save will work
+        return newPackage
     load = staticmethod(load)
 
     def upgradeToVersion1(self):
@@ -159,6 +171,7 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self._nextNodeId += 1
         self._nodeIdDict[id_] = node
         return id_
+    
 
         
 # ===========================================================================

@@ -26,22 +26,25 @@ import gettext
 from exe.webui import common
 from twisted.web.resource import Resource
 from exe.webui.propertiespane import PropertiesPane
+from exe.webui.renderable import RenderableResource
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
-class PropertiesPage(Resource):
+class PropertiesPage(RenderableResource):
     """
     The PropertiesPage is for user to enter or edit package's properties
     """
     
-    def __init__(self, webserver):
+    name = 'properties'
+
+    def __init__(self, parent):
         """
         Initialize
         """
-        Resource.__init__(self)
-        self.propertiesPane = PropertiesPane(webserver)
+        RenderableResource.__init__(self, parent)
+        self.propertiesPane = PropertiesPane(self)
 
     def render_GET(self, request):
         """

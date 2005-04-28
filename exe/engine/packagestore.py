@@ -45,16 +45,12 @@ class PackageStore:
         Creates a package
         """
         log.debug("createPackage: name=" + repr(name))
-
-        if name is None:
-            # Find a unique name
-            i    = 1
-            name = "package" + str(i)
-            
-            while name in self.loaded:
-                i   += 1                    
-                name = "package" + str(i)
-            
+        # Make up an initial unique name
+        i = 1
+        name = "newPackage"
+        while name in self.loaded:
+            name = "newPackage" + str(i)
+            i += 1                    
         package = Package(name)
         self.loaded[package.name] = package
 

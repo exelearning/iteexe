@@ -32,6 +32,7 @@
                 <menuitem label="New" oncommand="fileNew()"/>
                 <menuitem label="Open" oncommand="fileOpen()"/>
                 <menuitem label="Save" oncommand="fileSave()"/>
+                <menuitem label="Save As" oncommand="fileSaveAs()"/>
               </menupopup>
             </menu>
           </menubar>

@@ -24,18 +24,18 @@ OutlinePane is responsible for creating the XHTML for the package outline
 import logging
 import gettext
 from exe.webui import common
+from exe.webui.renderable import Renderable
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
 # ===========================================================================
-class OutlinePane(object):
+class OutlinePane(Renderable):
     """
     OutlinePane is responsible for creating the XHTML for the package outline
     """
-    def __init__(self, package):
-        """'parent' is our authoring page"""
-        self.package = package
+
+    name = 'outlinePane'
 
     def process(self, request):
         """ 

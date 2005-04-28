@@ -28,36 +28,38 @@ from exe.webui import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
+from exe.webui.renderable import RenderableResource
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
-class AuthoringPage(Resource):
+class AuthoringPage(RenderableResource):
     """
     AuthoringPage is responsible for creating the XHTML for the authoring
     area of the eXe web user interface.  
     """
+    
+    name = 'authoring'
+
     def __init__(self, parent):
         """
         Initialize
         'parent' is our MainPage instance that created us
         """
-        self.blocks  = []
-        self.parent  = parent
-        self.package = parent.package
+        RenderableResource.__init__(self, parent)
+        self.blocks     = []
 
     def _process(self, request):
         """
         Delegates processing of args to blocks
         """  
-        packageName = request.prepath[0]
         self.parent.process(request)
         if ("action" in request.args and 
             request.args["action"][0] == "saveChange"):
             log.debug("process savachange:::::")
             self.package.save()
-            log.debug("package name: " + packageName)
+            log.debug("package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
         log.debug("after authoringPage process" + repr(request.args))
