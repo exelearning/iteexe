@@ -73,23 +73,23 @@ class ScormPage(object):
         html += "<title>"+_("eXe")+"</title>\n"
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
-	html += "</style>\n"
+        html += "</style>\n"
         html += "<script type=\"text/javascript\" language=\"javascript\" "
-	html += "src=\"APIWrapper.js\"></script>\n" 
+        html += "src=\"APIWrapper.js\"></script>\n" 
         html += "</head>\n"
         html += "<body onLoad=\"doLMSInitialize();\" "
         html += "onunLoad=\"doLMSFinish();\">\n"
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
-        html += TitleBlock(self.node._title).renderView()
+        html += TitleBlock(self.node._title).renderView(self.node.package.style)
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView()
+            html += block.renderView(self.node.package.style)
 
         html += "</div>\n"
         html += "</div>\n"

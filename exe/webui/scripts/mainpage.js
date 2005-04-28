@@ -21,9 +21,12 @@
 
 // This var is needed, because initWindow is called twice for some reason
 var haveLoaded = false
-var clickon = true // Set to false to stop selects doing page reloads
 
-// Takes a server tree node id eg. '1' and returns a xul treeitem elemtent reference
+// Set to false to stop selects doing page reloads
+var clickon = true 
+
+// Takes a server tree node id eg. '1' and returns a xul treeitem elemtent
+// reference
 function serverId2treeitem(serverId) {
     // Enumerate the tree elements until we find the correct one
     var tree = document.getElementById('outlineTree')
@@ -356,3 +359,10 @@ function fileSaveAs() {
         'alert("Package saved to '+fp.file.path+'")', fp.file.path)
     }
 }
+
+// Launch the iDevice Editor Window
+function toolsEditor() {
+    var features  = "width=800,height=700,status=yes,resizeable=yes";
+    var editorWin = window.open("/editor", "iDevice Editor", features);
+}
+

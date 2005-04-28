@@ -165,26 +165,26 @@ class Block(object):
         self.idevice.moveNext()
 
 
-    def render(self):
+    def render(self, style):
         """
         Returns the appropriate XHTML string for whatever mode this block is in
         """
         html = ""
         if self.mode == Block.Edit:
-            html += self.renderEdit()
+            html += self.renderEdit(style)
             html += '<a name="currentBlock"></a>\n'
 
 
         elif self.mode == Block.View:
-            html = self.renderView()
+            html = self.renderView(style)
         
         elif self.mode == Block.Preview:
-            html = self.renderPreview()
+            html = self.renderPreview(style)
 
         return html
 
 
-    def renderEdit(self):
+    def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
@@ -258,7 +258,7 @@ class Block(object):
         return options
             
 
-    def renderPreview(self):
+    def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block during editing
         overriden by derieved classes
@@ -267,7 +267,7 @@ class Block(object):
         return "ERROR Block.renderPreview called directly"
 
     
-    def renderView(self):
+    def renderView(self, style):
         """
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package

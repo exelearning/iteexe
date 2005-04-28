@@ -35,6 +35,11 @@
                 <menuitem label="Save As" oncommand="fileSaveAs()"/>
               </menupopup>
             </menu>
+            <menu id="tools-menu" label="Tools">
+              <menupopup id="tools-popup">
+                <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
+              </menupopup>
+            </menu>
           </menubar>
         </toolbox>
         <!-- End Menus -->

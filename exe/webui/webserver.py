@@ -34,6 +34,7 @@ import os.path
 import sys
 from exe.engine.config import Config
 from exe.webui.packageredirectpage import PackageRedirectPage
+from exe.webui.editorpage import EditorPage
 from exe.webui.errorpage import ErrorPage
 import logging
 import gettext
@@ -54,12 +55,14 @@ class WebServer:
         self.root.putChild("css",     static.File(webDir+"/css"))   
         self.root.putChild("scripts", static.File(webDir+"/scripts"))
         self.root.putChild("style",   static.File(webDir+"/style"))
+        self.root.putChild("editor",  EditorPage(self.root))
 
         try:
             reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),
                               interface="127.0.0.1")
         except CannotListenError, e:
-            log.error("Can't listen on interface 127.0.0.1, port %s: %s" % (self.config.port, str(e)))
+            log.error("Can't listen on interface 127.0.0.1, port %s: %s" % 
+                      (self.config.port, str(e)))
         else:
             reactor.run()
 

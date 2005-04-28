@@ -210,14 +210,14 @@ class WebsitePage(object):
         
         html += "<div id=\"main\">\n"
         #html += "<div id=\"authoring_pane\">\n"
-        html += TitleBlock(self.node._title).renderView()
+        html += TitleBlock(self.node._title).renderView(self.node.package.style)
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView()
+            html += block.renderView(self.node.package.style)
         
         html += self.getNavigationLink()
         html += "</div>\n"

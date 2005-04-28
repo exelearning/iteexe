@@ -22,9 +22,9 @@
 The eXe main script
 """
 
-from application import Application
+from exe.application import Application
     
-g_application = Application()
 
 if __name__ == "__main__":
-    g_application.main()
+    application = Application()
+    application.main()

@@ -55,7 +55,7 @@ _("""This is a free text field general learning content can be entered."""))
             self.idevice.content = content
 
 
-    def renderEdit(self):
+    def renderEdit(self, dummy):
         """
         Returns an XHTML string with the form element for editing this block
         """
@@ -66,7 +66,7 @@ _("""This is a free text field general learning content can be entered."""))
         return html
 
 
-    def renderView(self):
+    def renderView(self, dummy):
         """
         Returns an XHTML string for viewing this block
         """
@@ -76,7 +76,7 @@ _("""This is a free text field general learning content can be entered."""))
         return html
     
 
-    def renderPreview(self):
+    def renderPreview(self, dummy):
         """
         Returns an XHTML string for previewing this block
         """

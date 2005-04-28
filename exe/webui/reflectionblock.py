@@ -59,7 +59,7 @@ class ReflectionBlock(Block):
             self.idevice.answer = request.args["answer"+self.id][0]
         
 
-    def renderEdit(self):
+    def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
@@ -118,30 +118,26 @@ class ReflectionBlock(Block):
         return html
     
 
-    def renderView(self):
+    def renderView(self, style):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div id=\"iDevice\" class=\"reflection\">\n"
-        html += "<ul><li class=\"activity-reflection\">\n"
-        html += "<span class=\"iDeviceTitle\">"
-        html += self.idevice.title+"</span>\n</li></ul>\n"
+        html  = "<img src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</span>\n"
         html += self.renderPage()
-        html += "</div>\n"
         return html
 
 
-    def renderPreview(self):
+    def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div id=\"iDevice\" class=\"reflection\">\n"
-        html += "<ul><li class=\"activity-reflection\">\n"
-        html += "<span class=\"iDeviceTitle\">"
-        html += self.idevice.title+"</span>\n</li></ul>\n"
+        html  = "<img src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</span>\n"
         html += self.renderPage()
         html += self.renderViewButtons()
-        html += "</div>\n"
         return html
 
 

@@ -57,7 +57,7 @@ class GenericBlock(Block):
                 self.idevice[element.name] = content
 
 
-    def renderEdit(self):
+    def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
@@ -70,30 +70,31 @@ class GenericBlock(Block):
         return html
 
 
-    def renderView(self):
+    def renderView(self, style):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
-        html += "<ul><li class=\""+self.idevice.class_+"\">\n"
+        html  = "<img src=\"generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
-        html += self.idevice.title+"</span>\n</li></ul>\n"
+        html += self.idevice.title+"</span>\n"
         html += self.__renderContent()
-        html += "</div>\n"
         return html
     
 
-    def renderPreview(self):
+    def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
-        html += "<ul><li class=\""+self.idevice.class_+"\">\n"
+        if self.idevice.class_ in ("objectives", "activity", 
+                                   "reading", "preknowledge"):
+            html  = "<img src=\"/style/"+style+"/"
+            html += self.idevice.class_+".gif\" />\n"
+        else:
+            html  = "<img src=\"/style/"+style+"/generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
-        html += self.idevice.title+"</span>\n</li></ul>\n"
+        html += self.idevice.title+"</span>\n"
         html += self.__renderContent()
         html += self.renderViewButtons()
-        html += "</div>\n"
         return html
 
 

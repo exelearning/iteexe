@@ -50,6 +50,17 @@ class AuthoringPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.blocks     = []
 
+
+    def getChild(self, name, request):
+        """
+        Try and find the child for the name given
+        """
+        if name == "":
+            return self
+        else:
+            return Resource.getChild(self, name, request)
+
+
     def _process(self, request):
         """
         Delegates processing of args to blocks
@@ -80,7 +91,7 @@ class AuthoringPage(RenderableResource):
         html += "<div id=\"authoring_page\">\n"
 
         for block in self.blocks:
-            html += block.render()
+            html += block.render(self.package.style)
 
         html += "</div>\n"
         html += common.footer()

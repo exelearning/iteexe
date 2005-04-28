@@ -69,7 +69,7 @@ class CasestudyBlock(Block):
             element.process(request)
 
 
-    def renderEdit(self):
+    def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
@@ -93,30 +93,26 @@ class CasestudyBlock(Block):
         return html
 
     
-    def renderView(self):
+    def renderView(self, style):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div id=\"iDevice\" class=\"casestudy\">\n"
-        html += "<ul><li class=\"activity-casestudy\">\n"
+        html  = "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n</li></ul>\n"
+        html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()    
-        html += "</div>\n"
         return html
     
 
-    def renderPreview(self):
+    def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div id=\"iDevice\" class=\"casestudy\">\n"
-        html += "<ul><li class=\"activity-casestudy\">\n"
+        html  = "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n</li></ul>\n"
+        html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()      
         html += self.renderViewButtons()
-        html += "</div>\n"
         return html
 
 

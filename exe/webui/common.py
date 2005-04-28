@@ -35,6 +35,7 @@ def docType():
     html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
     return html
 
+
 def header(style='default'):
     """Generates the common header XHTML"""
     # NB: Authoring Page has its own header
@@ -45,34 +46,41 @@ def header(style='default'):
     html += "@import url(/css/exe.css);\n"
     html += "@import url(/style/"+style+"/content.css);</style>\n"
     html += '<script language="JavaScript" src="/scripts/common.js"></script>\n'
-    html += '<script language="JavaScript" src="/scripts/fckeditor.js"></script>\n'
-    html += '<script language="JavaScript" src="/scripts/libot_drag.js"></script>\n'
+    html += '<script language="JavaScript" src="/scripts/fckeditor.js">'
+    html += '</script>\n'
+    html += '<script language="JavaScript" src="/scripts/libot_drag.js">'
+    html += '</script>\n'
     html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
     html += "<meta http-equiv=\"content-type\" content=\"text/html; "
     html += " charset=UTF-8\"></meta>\n";
     html += "</head>\n"
     return html
 
+
 def banner(request): 
     """Generates the common page banner XHTML"""
-    html = ('<body>',
-            '<form method="post" action="%s" id="contentForm" name="contentForm" onload="clearHidden();">' % request.path,
-            '    <input type="hidden" name="action" value=""/>',
-            '    <input type="hidden" name="object" value=""/>',
-            '    <input type="hidden" name="isChanged" value="0"/>',
-            '')
-    return '\n'.join(html)
+    html  = "<body>\n"
+    html += "<form method=\"post\" action=\""+request.path+"\""
+    html += " id=\"contentForm\" name=\"contentForm\""
+    html += " onload=\"clearHidden();\">\n"
+    html += hiddenField("action")
+    html += hiddenField("object")
+    html += hiddenField("isChanged", "0")
+    return html
+
 
 def footer():
     """Generates the common page footer XHTML"""
     html  = "</form></body></html>\n"
     return html
+
     
 def hiddenField(name, value=""):
     """Adds a hidden field to a form"""
     html  = "<input type=\"hidden\" name=\"%s\" " % name
     html += "value=\"%s\" />\n" % value
     return html
+
 
 def textInput(name, value="", size=40, disabled=""):
     """Adds a text input to a form"""
@@ -81,6 +89,7 @@ def textInput(name, value="", size=40, disabled=""):
     html += " size=\"%s\" %s />\n" % (size, disabled)
     return html
 
+
 def textArea(name, value="", disabled=""):
     """Adds a text area to a form"""
     log.debug("textArea "+value)
@@ -88,6 +97,7 @@ def textArea(name, value="", disabled=""):
     html += "cols=\"52\" rows=\"8\" %s>%s" % (disabled, value)
     html += "</textarea><br/>"
     return html
+
 
 def richTextArea(name, value="", width="100%", height=100):
     """Adds a FCKEditor to a form"""
@@ -104,6 +114,7 @@ def richTextArea(name, value="", width="100%", height=100):
     html += "</script>\n"
     return html
         
+
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""
     html  = "<input type=\"submit\" name=\"%s\" " % name
@@ -112,6 +123,7 @@ def submitButton(name, value, enabled=True):
         html += " disabled"
     html += "/>\n"
     return html
+
 
 def submitImage(action, object_, imageFile, title="", isChanged=1):
     """
@@ -134,6 +146,7 @@ def image(imageFile):
     html += " align=\"middle\" border=\"0\" />"
     return html
 
+
 def select(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
     html  = "<select onchange=\"submitLink('" + action
@@ -153,6 +166,7 @@ def select(action, object_, options, selection=None):
     html += "</select>\n"
     return html
 
+
 def option(name, checked, value):
     """Add a option input"""
     chkStr = ""
@@ -163,6 +177,7 @@ def option(name, checked, value):
     html += ' value="'+value+'" '
     html += chkStr+' />\n'
     return html
+
 
 def elementInstruc(indent, instruc):
     """add a help instruction for a element"""
@@ -188,8 +203,11 @@ def elementInstruc(indent, instruc):
 # ===========================================================================
 
 if __name__ == "__main__":
+    class MyRequest:
+        def __init__(self):
+            self.path = ""
     print header()
-    print banner()
+    print banner(MyRequest())
     print textInput("text")
     print textArea("area")
     print submitButton("ok", "OK")

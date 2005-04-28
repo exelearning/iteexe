@@ -104,7 +104,7 @@ class IdeviceStore:
         from exe.engine.genericidevice import GenericIdevice
 
         readingAct = GenericIdevice(_("Reading Activity"), 
-                                    "activity-reading",
+                                    "reading",
                                     _("University of Auckland"), 
 _("""Provide learners with structure to their reading activity. This helps put
 the activity in context for the learner. It is also important to correctly
@@ -171,13 +171,6 @@ that may help or hinder the learner in the performance of the task."""),
 _("""Describe the tasks the learners should complete."""))
         self.generic.append(activity)
                                   
-        multiMode = GenericIdevice(_("Multimode"), "multimode", "", "", "")
-        multiMode.addField( "photoFile", "Photo", "image", "" )
-        multiMode.addField( "caption", "Text", "nodeTitle", "" )
-        multiMode.addField( "learningText", "TextArea", "learningText", 
-                            "" )
-        multiMode.addField( "audioFile", "Audio", "audio", "" )
-        self.generic.append(multiMode)
 
 
     def save(self):

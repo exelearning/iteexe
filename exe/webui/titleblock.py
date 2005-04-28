@@ -48,16 +48,16 @@ class TitleBlock(Block):
         if "nodeTitle"+self.id in request.args:
             self.idevice.setTitle(request.args["nodeTitle"+self.id][0])
         
-    def renderPreview(self):
+    def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this title
         """
         html  = "<div>\n"
-        html += self.renderView()
+        html += self.renderView(style)
         html += "</div>\n"
         return html
 
-    def renderView(self):
+    def renderView(self, style):
         """
         Returns an XHTML string for viewing this title
         """
