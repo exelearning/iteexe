@@ -365,3 +365,13 @@ function toolsEditor() {
     var features  = "width=800,height=700,status=yes,resizeable=yes";
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
+
+// This function takes care of all
+// exports. At the moment, this means web page export
+// and scorm packages, with and without meta data
+// 'exportType' is passed straight to the server
+// Currently valid values are:
+// 'scormMeta' 'scormNoMeta' 'webSite'
+function exportPackage(exportType) {
+    alert('Not implemented yet!')
+}
