@@ -54,6 +54,7 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self._nodeIdDict   = {} # For looking up nodes by ids
         self.levelNames    = [_("Topic"), _("Section"), _("Unit")]
         self.name          = name
+        self.filename      = '' # Empty if never saved/loaded
         self.draft         = Node(self, None, _("Draft"))
         self.editor        = Node(self, None, _("iDevice Editor"))
         self.currentNode   = self.draft

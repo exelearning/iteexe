@@ -48,7 +48,6 @@ class PackageRedirectPage(RenderableResource):
         """
         RenderableResource.__init__(self, None, None, server)
         self.server = server
-        self.mainPages = {}
 
     def getChild(self, name, request):
         """
@@ -63,7 +62,6 @@ class PackageRedirectPage(RenderableResource):
         """Binds 'package' to the appropriate url
         and creates a MainPage instance for it"""
         mainPage = MainPage(self, package)
-        self.mainPages[package.name] = mainPage
 
     def render_GET(self, request):
         """

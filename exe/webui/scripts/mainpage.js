@@ -246,7 +246,7 @@ function outlineClick() {
 
 // Call this to ask the server if the package is dirty
 // 'ifDirty' will be evaled if the package is dirty
-function checkDirty(ifDirty, ifClean) {
+function checkDirty(ifClean, ifDirty) {
     nevow_clientToServerEvent('isPackageDirty', this, '', ifClean, ifDirty)
 }
 
@@ -257,7 +257,7 @@ function checkDirty(ifDirty, ifClean) {
 // discard the changes, or after the package has been saved, if the user chooses cancel
 // nextStep will not be called
 function askDirty(nextStep) {
-    checkDirty('askSave("'+nextStep+'")', nextStep)
+    checkDirty(nextStep, 'askSave("'+nextStep+'")')
 }
 
 // This is called by the server to ask the user if they want to save their
@@ -276,8 +276,9 @@ function askSave(onProceed) {
                                       "Would you like to save it before loading the new package?",
                                       flags, null, null, null, '', {});
     if (res == 0) {
-      // If to be saved, tell the server
-      nevow_clientToServerEvent('savePackage', this, onProceed)
+      // If we need to save the file
+      // go through the whole save process
+      fileSave(onProceed)
     } else if (res == 1) {
       // If Not to be saved, contiue the process
       eval(onProceed)
@@ -317,8 +318,29 @@ function fileOpen2() {
 }
 
 // Called by the user when they want to save their package
-function fileSave() {
-    nevow_clientToServerEvent('savePackage', this, '')
+// Also called by some java script to cause a whole
+// proper save process.
+// 'onProceed' is optional, if passed it will be evaluated
+// once the whole package has been saved or the save process
+// has been cancelled by the user.
+function fileSave(onProceed) {
+    if (!onProceed)
+        var onProceed = '' 
+    nevow_clientToServerEvent('getPackageFileName', this, onProceed, 'fileSave2')
+}
+
+// Takes the server's response after we asked it for the
+// filename of the package we are currently editing
+function fileSave2(filename) {
+    if (filename) {
+        // If the package has been previously saved/loaded
+        // Just save it over the old file
+        nevow_clientToServerEvent('savePackage', this, 'alert("Package saved to '+filename+'")')
+    } else {
+        // If the package is new (never saved/loaded) show a
+        // fileSaveAs dialog
+        fileSaveAs()
+    }
 }
 
 // Called by the user when they want to save their package
@@ -330,6 +352,7 @@ function fileSaveAs() {
     fp.appendFilter("eXe Package Files","*.elp");
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-        nevow_clientToServerEvent('savePackage', this, '', fp.file.path)
+        nevow_clientToServerEvent('savePackage', this,
+        'alert("Package saved to '+fp.file.path+'")', fp.file.path)
     }
 }

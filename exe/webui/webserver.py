@@ -41,6 +41,7 @@ _   = gettext.gettext
  
 log = logging.getLogger(__name__)
 
+
 class WebServer:
     def __init__(self, application):
         self.application = application
@@ -61,43 +62,6 @@ class WebServer:
             log.error("Can't listen on interface 127.0.0.1, port %s: %s" % (self.config.port, str(e)))
         else:
             reactor.run()
-
-"""
-    isWrongfile = False
-    root = None
-    if len(sys.argv) > 1:
-        filePath = sys.argv[1] 
-        try:  
-            package = g_packageStore.loadPackage(filePath)
-        except:
-            errMessage  = _("Wrong file format,")
-            errMessage += _(" please shut down eXe and try again")
-            print errMessage
-            root = ErrorPage(errMessage)
-            isWrongfile = True
-        else:
-            root = PackageRedirectPage(package)
-    else:   
-        root   = PackageRedirectPage()   
-    
-    if not isWrongfile:
-        g_webInterface.rootPage = root
-        #TODO Find a better way to deal with these globals :-(
-        g_webInterface.packageStore = g_packageStore
-        
-        root.putChild("images",  static.File(config.exeDir+"/images"))
-        root.putChild("css",     static.File(config.exeDir+"/css"))   
-        root.putChild("scripts", static.File(config.exeDir+"/scripts"))
-        root.putChild("style",   static.File(config.exeDir+"/style"))
-
-    launchBrowser(config.port)  
-    try:
-        reactor.listenTCP(config.port, appserver.NevowSite(root), interface="127.0.0.1")
-    except CannotListenError:
-        pass
-    else:
-        reactor.run()
-"""
 
 if __name__ == "__main__":
     class MyConfig:

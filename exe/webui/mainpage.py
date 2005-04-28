@@ -89,9 +89,9 @@ class MainPage(RenderableLivePage):
             hndlr = handler(func, *args, **kwargs)
             hndlr(ctx, client) # Stores it
         setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
+        setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
-
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
@@ -205,14 +205,22 @@ class MainPage(RenderableLivePage):
         else:
             client.sendScript(ifClean)
 
+    def handlePackageFileName(self, client, onDone):
+        """
+        Calls the javascript func named by 'onDone' passing as the
+        only parameter the filename of our package. If the package
+        has never been saved or loaded, it passes an empty string
+        """
+        client.call(onDone, self.package.filename)
+
     def handleSavePackage(self, client, filename=None):
         """Save the current package"""
         oldName = self.package.name
         self.package.save(filename)
         # Redirect the client if the package name has changed
         if self.package.name != oldName:
-            g_webInterface.rootPage.delEntity(oldName)
-            g_webInterface.rootPage.putChild(self.package.name, self)
+            self.webserver.root.delEntity(oldName)
+            self.webserver.root.putChild(self.package.name, self)
             client.sendScript('top.location = "/%s"' % self.package.name)
 
 
