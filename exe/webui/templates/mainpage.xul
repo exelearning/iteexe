@@ -15,6 +15,7 @@
     <script language="JavaScript" src="/scripts/common.js"/>
     <script language="JavaScript" src="/scripts/mainpage.js"/>
     <keyset>
+        <!-- Outline Tree Short cut keys -->
         <key n:render="addChild" id="addChildKey" key="+"/>
         <key n:render="delNode" id="delNodeKey" key="-"/>
         <key n:render="renNode" id="renNodeKey" key="r"/>
@@ -22,6 +23,10 @@
         <key n:render="demote" id="demoteKey" key="-"/>
         <key n:render="up" id="upKey" key="r"/>
         <key n:render="down" id="downKey" key="r"/>
+        <!-- File menu short cut keys -->
+        <key id="file-new-key"  modifiers="control" key="N" oncommand="fileNew()"/>
+        <key id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
+        <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
     </keyset>
     <vbox flex="1">
         <!-- Start Menus -->
@@ -29,10 +34,10 @@
           <menubar>
             <menu id="file-menu" label="File">
               <menupopup id="file-popup">
-                <menuitem label="New" oncommand="fileNew()"/>
-                <menuitem label="Open" oncommand="fileOpen()"/>
-                <menuitem label="Save" oncommand="fileSave()"/>
-                <menuitem label="Save As" oncommand="fileSaveAs()"/>
+                <menuitem label="New"     key="file-new-key"  oncommand="fileNew()"/>
+                <menuitem label="Open"    key="file-open-key" oncommand="fileOpen()"/>
+                <menuitem label="Save"    key="file-save-key" oncommand="fileSave()"/>
+                <menuitem label="Save As"                oncommand="fileSaveAs()"/>
               </menupopup>
             </menu>
             <menu id="tools-menu" label="Tools">

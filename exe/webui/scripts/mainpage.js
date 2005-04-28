@@ -365,4 +365,3 @@ function toolsEditor() {
     var features  = "width=800,height=700,status=yes,resizeable=yes";
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
-
