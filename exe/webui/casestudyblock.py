@@ -97,10 +97,12 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
+        html  = "<div id=\"iDevice\">\n"
+        html += "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()    
+        html += "</div>\n"
         return html
     
 
@@ -108,11 +110,13 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
+        html  = "<div id=\"iDevice\">\n"
+        html += "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()      
         html += self.renderViewButtons()
+        html += "</div>\n"
         return html
 
 

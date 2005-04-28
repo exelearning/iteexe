@@ -122,10 +122,12 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<img src=\"/style/"+style+"/reflection.gif\" />\n"
+        html  = "<div id=\"iDevice\">\n"
+        html += "<img src=\"/style/"+style+"/reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderPage()
+        html += "</div>\n"
         return html
 
 
@@ -133,11 +135,13 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<img src=\"/style/"+style+"/reflection.gif\" />\n"
+        html  = "<div id=\"iDevice\">\n"
+        html += "<img src=\"/style/"+style+"/reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderPage()
         html += self.renderViewButtons()
+        html += "</div>\n"
         return html
 
 

@@ -106,10 +106,12 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<img src=\"/style/"+style+"/multichoice.gif\" />\n"
+        html  = "<div id=\"iDevice\">\n"
+        html += "<img src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()    
+        html += "</div>\n"
         return html
     
 
@@ -117,11 +119,13 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<img src=\"/style/"+style+"/multichoice.gif\" />\n"
+        html  = "<div id=\"iDevice\">\n"
+        html += "<img src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()      
         html += self.renderViewButtons()
+        html += "</div>\n"
         return html
 
 
