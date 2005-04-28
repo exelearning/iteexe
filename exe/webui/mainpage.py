@@ -170,11 +170,6 @@ class MainPage(RenderableLivePage):
             return ''
 
 
-    def render_stylePane(self, ctx, data):
-        """Renders the style pane"""
-        return stan.xml(self.stylePane.render())
-
-
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.

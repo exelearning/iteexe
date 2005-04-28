@@ -25,6 +25,7 @@ import logging
 import gettext
 from exe.webui import common
 from exe.webui.renderable import Renderable
+from nevow import stan
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -48,7 +49,7 @@ class StylePane(Renderable):
             self.package.style = request.args["object"][0]
             
             
-    def render(self):
+    def render(self, ctx, data):
         """
         Returns an XUL string for viewing this pane
         """
@@ -64,7 +65,8 @@ class StylePane(Renderable):
         # Render the end tags
         xul += ('</listbox>',
                 '<!-- Styles Pane End -->',)
-        return '\n'.join(xul) # Add in the newlines
+        xul = '\n'.join(xul)
+        return stan.xml(xul)
         
     
 
