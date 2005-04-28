@@ -55,7 +55,7 @@ class TestOutline(unittest.TestCase):
         self.client = FakeClient()
         self.package = Package('temp')
         app.server.root.bindNewPackage(self.package)
-        self.outline = app.server.root.mainPages['temp'].outlinePane
+        self.outline = app.server.root.children['temp'].outlinePane
         #self.outline = OutlinePane(None, None, None, server)
 
     def testAddAndDel(self):
