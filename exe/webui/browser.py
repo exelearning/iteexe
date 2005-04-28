@@ -41,10 +41,11 @@ def launchBrowser(config):
     if sys.platform[:3] == "win":
         log.info("Broswer path: " + config.browserPath)
         url     = 'http://localhost:%d' % config.port
+        profile = config.exeDir+'/exeprofile'
         log.info("Launch firefox with "+config.browserPath)
         try:
             os.spawnl(os.P_DETACH, config.browserPath, 
-                      '"'+config.browserPath+'"', url)
+                      '"'+config.browserPath+'"', '-profile', profile, url)
         except OSError:
             print "Cannot launch Firefox, please manually run Firefox"
             print "and go to", url     
