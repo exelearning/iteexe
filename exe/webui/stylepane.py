@@ -56,14 +56,14 @@ class StylePane(Renderable):
         log.debug("render")
         # Render the start tags
         xul = ('<!-- Styles Pane Start -->',
-               '<listbox>',)
+               '<menupopup>',)
         # Render each style individually
-        itemTemplate = """  <listitem label="%s" onclick="submitLink('ChangeStyle', '%s', 1)"/>"""
+        itemTemplate = """  <menuitem label="%s" onclick="submitLink('ChangeStyle', '%s', 1)"/>"""
         options = [(style, style) for style in self.config.styles]
         for option, value in options:
             xul += (itemTemplate % (option, value),)
         # Render the end tags
-        xul += ('</listbox>',
+        xul += ('</menupopup>',
                 '<!-- Styles Pane End -->',)
         xul = '\n'.join(xul)
         return stan.xml(xul)

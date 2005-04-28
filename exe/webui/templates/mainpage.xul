@@ -1,14 +1,8 @@
 <?xml version="1.0"?>
-
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-
-<window id="mainWindow" title="eXe : elearning XHTML editor"
-        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-        xmlns:html="http://www.w3.org/1999/xhtml"
-        xmlns:n="http://nevow.com/ns/nevow/0.1"
-        onload="initWindow()">
-    <n:invisible n:render="liveid" />
-    <n:invisible n:render="liveglue" /> 
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:n="http://nevow.com/ns/nevow/0.1" id="mainWindow" title="eXe : elearning XHTML editor" onload="initWindow()">
+    <n:invisible n:render="liveid"/>
+    <n:invisible n:render="liveglue"/> 
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
     <script language="JavaScript" src="/scripts/draganddrop.js"/>
@@ -24,7 +18,7 @@
         <key n:render="up" id="upKey" key="r"/>
         <key n:render="down" id="downKey" key="r"/>
         <!-- File menu short cut keys -->
-        <key id="file-new-key"  modifiers="control" key="N" oncommand="fileNew()"/>
+        <key id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
         <key id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
         <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
         <key id="file-export-website-key" modifiers="control" key="W" oncommand="exportPackage('webSite')"/>
@@ -35,35 +29,15 @@
           <menubar>
             <menu id="file-menu" label="File" accesskey="f">
               <menupopup id="file-popup">
-                <menuitem label="New"     
-                          key="file-new-key"  
-                          accesskey="n"
-                          oncommand="fileNew()"/>
-                <menuitem label="Open"    
-                          key="file-open-key" 
-                          accesskey="o" 
-                          oncommand="fileOpen()"/>
-                <menuitem label="Save"    
-                          key="file-save-key" 
-                          accesskey="s" 
-                          oncommand="fileSave()"/>
-                <menuitem label="Save As"  
-                          accesskey="a" 
-                          oncommand="fileSaveAs()"/>
-                <menu id="export-menu"
-                      label="Export" 
-                      accesskey="e">
+                <menuitem label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
+                <menuitem label="Open" key="file-open-key" accesskey="o" oncommand="fileOpen()"/>
+                <menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
+                <menuitem label="Save As" accesskey="a" oncommand="fileSaveAs()"/>
+                <menu id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem label="Scorm Package"      
-                              accesskey="s"
-                              oncommand="exportPackage('scormMeta')"/>
-                    <menuitem label="Scorm Package (no metadata)"
-                              accesskey="c"
-                              oncommand="exportPackage('scormNoMeta')"/>
-                    <menuitem label="Web Site"
-                              key="file-export-website-key"
-                              accesskey="w"
-                              oncommand="exportPackage('webSite')"/>
+                    <menuitem label="Scorm Package" accesskey="s" oncommand="exportPackage('scormMeta')"/>
+                    <menuitem label="Scorm Package (no metadata)" accesskey="c" oncommand="exportPackage('scormNoMeta')"/>
+                    <menuitem label="Web Site" key="file-export-website-key" accesskey="w" oncommand="exportPackage('webSite')"/>
                   </menupopup>
                 </menu>
               </menupopup>
@@ -73,66 +47,46 @@
                 <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
               </menupopup>
             </menu>
+	    <menu id="styles-menu" label="Styles" accesskey="s">
+	      <menupopup id="styles-popup" n:render="stylePane">     
+              </menupopup>	
+	    </menu>
           </menubar>
         </toolbox>
         <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
-            <!-- start tabbox for outline & Styles -->
-            <tabbox selectedTab="Outline">
-                <tabs>
-                    <tab label="Outline"/>
-                    <tab label="Styles"/>
-                </tabs>
-                <tabpanels flex="1">
-                    <tabpanel id="outlinePane">
-                        <vbox flex="1">
-                           <toolbox>
-                               <toolbar>
-                                   <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
-                                   <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
-                                   <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
-                               </toolbar>
-                           </toolbox>
-                           <!-- This label is actually rendered as a tree -->
-                           <label flex="2" value="outlinePane" n:render="outlinePane"/>
+            <!-- start vbox for outline -->
+	   <vbox>
+	      <toolbox>
+		  <toolbar>
+		      <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
+		      <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
+		      <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
+		  </toolbar>
+	      </toolbox>
+	      <!-- This label is actually rendered as a tree -->
+	      <label flex="2" value="outlinePane" n:render="outlinePane"/>
 
-                           <splitter collapse="none"><grippy/></splitter>
+	      <splitter collapse="none"><grippy/></splitter>
 
-                           <vbox flex="1">
-                             <toolbox> 
-                               <toolbar>
-                                  <toolbarbutton n:render="promote" key="promoteKey"
-                                                 image="http://localhost:8081/images/stock-goto-first.png"
-                                                 tooltiptext="Promote node up in heirarchy"/>
-                                  <toolbarbutton n:render="demote" key="demoteKey"
-                                                 image="http://localhost:8081/images/stock-goto-last.png"
-                                                 tooltiptext="Demote node down in heirarchy"/>
-                                  <toolbarbutton n:render="up" key="upKey"
-                                                 image="http://localhost:8081/images/stock-go-up.png"
-                                                 tooltiptext="Move node up"/>
-                                  <toolbarbutton n:render="down" key="downKey"
-                                                 image="http://localhost:8081/images/stock-go-down.png"
-                                                 tooltiptext="Move node down"/>
-                                </toolbar>
-                             </toolbox>
+	    <vbox>
+	      <toolbox> 
+		<toolbar>
+		   <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
+		   <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
+		   <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
+		   <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
+		 </toolbar>
+	      </toolbox>
+	    <!-- start iDevices -->	
+	      <label flex="1" value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
+	    </vbox>
+	    <!-- end iDevices -->
+	   </vbox>
+			 
 
-                           <!-- start iDevices -->	
-                             <label flex="1" value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
-                           </vbox>
-                           <!-- end iDevices -->
-
-                        </vbox>
-		
-                    </tabpanel>
-                    <tabpanel id="stylesPane">
-                        <label value="stylePane" n:render="stylePane"/>
-                    </tabpanel>
-
-                </tabpanels>
-            </tabbox>
-
-            <!-- end tabbox -->
+            <!-- end outline vbox-->
 
             <splitter collapse="none"><grippy/></splitter>
             <tabbox flex="1" selectedTab="Authoring">
