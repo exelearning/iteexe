@@ -52,16 +52,15 @@ class TitleBlock(Block):
         """
         Returns an XHTML string for previewing this title
         """
-        html  = "<div>\n"
-        html += self.renderView(style)
-        html += "</div>\n"
-        return html
+        return self.renderView(style)
 
     def renderView(self, style):
         """
         Returns an XHTML string for viewing this title
         """
-        html = '<p id="nodeTitle" class="nodeTitle">%s</p>\n' % str(self.idevice)
+        html  = "<div id=\"nodeDecoration\">\n"
+        html += '<p id=\"nodeTitle\">%s</p>\n' % str(self.idevice)
+        html += "</div>\n"
         return html
     
 
