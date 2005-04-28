@@ -107,7 +107,6 @@
                 <tabs align="end" pack="end">
                     <tab label="Authoring"/>
                     <tab label="Properties"/>
-                    <tab label="Save"/>
                     <tab label="Export"/>
                     <tab label="iDevice Editor"/>
                 </tabs>
@@ -117,9 +116,6 @@
                     </tabpanel>
                     <tabpanel id="propertiesPane">
                         <iframe flex="1" n:render="prePath" src="properties"/>
-                    </tabpanel>
-                    <tabpanel id="savePane">
-                        <iframe flex="1" n:render="prePath" src="save"/>
                     </tabpanel>
                     <tabpanel id="exportPane">
                         <iframe flex="1" n:render="prePath" src="export"/>

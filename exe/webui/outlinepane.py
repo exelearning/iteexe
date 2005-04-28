@@ -23,6 +23,8 @@ OutlinePane is responsible for creating the XHTML for the package outline
 
 import logging
 import gettext
+from nevow import loaders, inevow, stan
+from nevow.livepage import handler, LivePage, js
 from exe.webui import common
 from exe.webui.renderable import Renderable
 log = logging.getLogger(__name__)
@@ -179,12 +181,20 @@ class OutlinePane(Renderable):
             self._doJsMove(client, node)
             self._doJsRename(client, node)
 
-    def render(self):
+    def render(self, ctx, data):
         """
         Returns an xul string for viewing this pane.
         The xul is stored in a tuple inside the methods of this class
         then new lines are added when we actually return it
         """
+        # Create a scecial server side func that the 
+        # Drag and drop js can call
+        dropHandler = handler(self.handleDrop,
+                              identifier='outlinePane.handleDrop')
+        # The below call stores the handler so we can call it
+        # as a server 
+        dropHandler(ctx, data) 
+        # Now do the rendering
         log.debug("render")
         xul = ('<!-- start outline pane -->',
                '    <tree id="outlineTree" hidecolumnpicker="true" onselect="outlineClick()" ',
@@ -203,7 +213,7 @@ class OutlinePane(Renderable):
         xul += ('       </treechildren>',
                 '    </tree>',
                 '<!-- end outline pane -->')
-        return '\n'.join(xul)
+        return stan.xml('\n'.join(xul))
 
     def __renderNode(self, node, indent, extraIndent=2):
         """Renders all children recursively.

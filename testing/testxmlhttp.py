@@ -18,8 +18,11 @@
 # ===========================================================================
 
 import unittest
-from exe.webui.outlinepane import OutlinePane
-from exe.engine.package import Package
+from exe.webui.outlinepane         import OutlinePane
+from exe.engine.package            import Package
+from exe.webui.webserver           import WebServer
+from exe.webui.packageredirectpage import PackageRedirectPage
+from exe.application               import Application
 
 class FakeClient(object):
     """Pretends to be a webnow client object"""
@@ -38,9 +41,22 @@ class FakeClient(object):
 class TestOutline(unittest.TestCase):
 
     def setUp(self):
+        class MyConfig:
+            def __init__(self):
+                self.port       = 8081
+                self.dataDir    = "."
+                self.webDir     = "."
+                self.exeDir     = "."
+                self.appDataDir = "."
+                self.styles     = ["default"]
+        app = Application()
+        app.config = MyConfig()
+        app.preLaunch()
         self.client = FakeClient()
         self.package = Package('temp')
-        self.outline = OutlinePane(self.package)
+        app.server.root.bindNewPackage(self.package)
+        self.outline = app.server.root.mainPages['temp'].outlinePane
+        #self.outline = OutlinePane(None, None, None, server)
 
     def testAddAndDel(self):
         """Should be able to add a node to the package"""

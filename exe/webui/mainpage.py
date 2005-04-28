@@ -170,18 +170,6 @@ class MainPage(RenderableLivePage):
             return ''
 
 
-    def render_outlinePane(self, ctx, data):
-        """Renders the outline tree"""
-        # Create a scecial server side func that the 
-        # Drag and drop js can call
-        dropHandler = handler(self.outlinePane.handleDrop,
-                              identifier='outlinePane.handleDrop')
-        # The below call stores the handler so we can call it
-        # as a server 
-        dropHandler(ctx, data) 
-        return stan.xml(self.outlinePane.render())
-
-
     def render_idevicePane(self, ctx, data):
         """Renders the idevice pane"""
         return stan.xml(self.idevicePane.render())

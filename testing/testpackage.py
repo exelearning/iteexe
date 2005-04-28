@@ -37,15 +37,19 @@ class TestPackage(unittest.TestCase):
         
     def testSaveAndLoad(self):
         package = self.packageStore.createPackage()
-        package.name = "package1"
+        # Check that it has been given a default name
+        self.assertEquals(package.name, "newPackage")
         package.author = "UoA"
         config  = Config("exe.conf")
-        package.save(config.dataDir)
+        package.save(config.dataDir + '/package1.elp')
         
         filePath = join(config.dataDir, "package1.elp")
         package1 = self.packageStore.loadPackage(filePath)
         self.assert_(package1)
         self.assertEquals(package1.author, "UoA")
+        # Package name should have been set when it was saved
+        self.assertEquals(package.name, "package1")
+        self.assertEquals(package1.name, "package1")
         
     def testfindNode(self):
         package = self.packageStore.createPackage()
@@ -69,7 +73,7 @@ class TestPackage(unittest.TestCase):
         assert package.findNode(newNode.id) is newNode
         # Save the package
         package.name = 'testing'
-        package.save('.')
+        package.save('testing.elp')
         # load the package
         package2 = package.load('testing.elp')
         def checkInst(inst1, inst2):
