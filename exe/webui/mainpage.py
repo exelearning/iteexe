@@ -170,11 +170,6 @@ class MainPage(RenderableLivePage):
             return ''
 
 
-    def render_idevicePane(self, ctx, data):
-        """Renders the idevice pane"""
-        return stan.xml(self.idevicePane.render())
-
-
     def render_stylePane(self, ctx, data):
         """Renders the style pane"""
         return stan.xml(self.stylePane.render())

@@ -23,7 +23,8 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 import logging
 import gettext
 from exe.webui import common
-from exe.webui.renderable          import Renderable
+from exe.webui.renderable import Renderable
+from nevow import stan
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -61,7 +62,7 @@ class IdevicePane(Renderable):
                 self.package.currentNode.addIdevice(prototype.clone())
 
             
-    def render(self):
+    def render(self, ctx, data):
         """
         Returns an XUL string for viewing this pane
         """
@@ -77,8 +78,7 @@ class IdevicePane(Renderable):
 
         xul += "</listbox>\n"
         xul += "<!-- IDevice Pane End -->\n"
-        return xul
-
+        return stan.xml(xul)
 
     def __renderPrototype(self, prototype):
         """
