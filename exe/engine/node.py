@@ -249,6 +249,6 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
-        self.titleIdevice = self.__dict__['title']
+        self._title = self.__dict__['title']
         
 # ===========================================================================
