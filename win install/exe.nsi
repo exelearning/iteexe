@@ -9,7 +9,7 @@
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-Icon "C:\eXe branches\dist\eXe_icon.ico"
+Icon "C:\exe\dist\eXe_icon.ico"
 OutFile "exeinstall.exe"
 
 ; Modern interface settings
@@ -20,7 +20,7 @@ OutFile "exeinstall.exe"
 !define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "C:\eXe branches\dist\exeLicense.txt"
+!insertmacro MUI_PAGE_LICENSE "C:\exe\dist\exeLicense.txt"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -77,10 +77,10 @@ Section "exe" Section2
 
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
-	File /r "C:\eXe branches\dist\*.*"
+	File /r "C:\exe\dist\*.*"
 	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
-	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
+	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 	
 	; Associtate elp files with server.exe
