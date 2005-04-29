@@ -21,9 +21,6 @@ a:hover { text-decoration: underline;
 	  color: #B34700;
 }
 
-p.prev_edit { float: right;}
-
-
 
 p.nodeTitle { 
     color: #ACBF60;
@@ -49,14 +46,14 @@ p.reading_feedback {
 
 /* --- iDevice Styles -- */
 
-#iDevice {
+.iDevice {
     background-color: #FAFFE6;
     padding: 4px;
     border: 1px solid #ACBF60;
     margin: 8px;
 }
 
-#iDevice p {
+.iDevice p {
 	padding-left: 24px;
 }
 
@@ -68,47 +65,4 @@ p.reading_feedback {
     position: relative;
     top: -18px;
 }    
-
-li.activity { 
-    margin-left: 16px;
-    list-style-image: url(activity.png); 
-    list-style-position: outside; 
-}
-
-li.activity-casestudy { 
-    margin-left: 16px;
-    list-style-image: url(casestudy.png); 
-    list-style-position: outside; 
-}
-
-li.activity-reading { 
-    margin-left: 16px;
-    list-style-image: url(reading.png); 
-    list-style-position: outside; 
-}
-
-li.activity-multichoice { 
-    margin-left: 16px;
-    list-style-image: url(question.png); 
-    list-style-position: outside; 
-}
-
-
-li.activity-reflection { 
-    margin-left: 16px;
-    list-style-image: url(question.png); 
-    list-style-position: outside; 
-}
-
-li.objectives { 
-    margin-left: 16px;
-    list-style-image: url(objectives.png); 
-    list-style-position: outside; 
-}
-
-li.preknowledge { 
-    margin-left: 16px;
-    list-style-image: url(preknowledge.png); 
-    list-style-position: outside; 
-}
 

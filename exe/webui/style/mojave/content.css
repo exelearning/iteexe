@@ -14,8 +14,6 @@ body {
 }
 
 
-p.prev_edit { float: right;}
-
 p.nodeTitle { 
     color: #336633;
     font-size: 22px;
@@ -39,7 +37,7 @@ p.reading_feedback {
 
 /* --- iDevice Styles -- */
 
-#iDevice {
+.iDevice {
     background-color: #ACBFC2;
     padding-left: 10px;
     border: 1px solid #FFFFCC;
@@ -56,45 +54,4 @@ p.reading_feedback {
   
 }    
 
-li.activity { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
-
-li.activity-casestudy { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
-
-li.activity-reading { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
-
-li.activity-multichoice { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
-
-li.activity-reflection { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
-
-li.objectives { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
-
-li.preknowledge { 
-    margin-left: 16px;
-    list-style-image: url(cactus_icon.gif); 
-    list-style-position: outside; 
-}
 
