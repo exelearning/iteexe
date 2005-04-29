@@ -97,7 +97,7 @@ class EditorPage(RenderableResource):
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", "1") 
         html += "<pre>%s</pre>\n" % str(request.args) # to be deleted later
-        html += self.renderList()
+#        html += self.renderList()
         html += self.editorPane.render(request)
         html += "<br/></form>"
         html += "</div> \n"
