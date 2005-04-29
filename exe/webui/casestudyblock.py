@@ -79,7 +79,7 @@ class CasestudyBlock(Block):
         html  = "<b>" + _("Story:") + " </b>" 
         html += common.elementInstruc("story"+self.id, self.storyInstruc)
         html += common.richTextArea("story"+self.id, self.story)
-        html += "<div id=\"iDevice\" class=\"casestudy\">\n"
+        html += "<div class=\"iDevice\">\n"
         html += "<table width =\"100%%\">\n"
         
         for element in self.questionElements:
@@ -97,7 +97,7 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
@@ -110,7 +110,7 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += "<img src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"

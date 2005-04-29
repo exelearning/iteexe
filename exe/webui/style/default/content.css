@@ -2,7 +2,7 @@
      eXe
      Copyright 2004-2005, University of Auckland
 
-     style for default in editing environment.
+     style for default.
    ================================================== */
 
 
@@ -29,27 +29,20 @@ p#nodeTitle {
     display: inline;
 }
 
-p.reading_reference {
-    font-style: italic;        
-}
 
-p.reading_feedback {
-    margin: 20px;
-    padding: 8px;
-    font-style: italic;
-}
 
 /* --- iDevice Styles --- */
 
-#iDevice {
+.iDevice {
     background-color: #B1C0C7;
     padding-left: 10px;
     border: 1px solid #3C5866;
     margin: 10px;
 }
 
-#iDevice p {
+.iDevice p {
 	padding-left: 24px;
+	padding-right: 20px;
 }
 
 .iDeviceTitle {
@@ -60,8 +53,17 @@ p.reading_feedback {
     font-weight: normal;
     position: relative;
     top: -18px;   /* aligns title up with middle of icon */
-
 }    
+
+p.reading_reference {
+    font-style: italic;        
+}
+
+p.reading_feedback {
+    margin: 20px;
+    padding: 8px;
+    font-style: italic;
+
 
 li.activity { 
     margin-left: 16px;

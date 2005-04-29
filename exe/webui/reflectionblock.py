@@ -69,7 +69,7 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("\r", "")
         self.answer   = self.answer.replace("\n","\\n")
         self.answer   = self.answer.replace("'","\\'")
-        html  = "<div id=\"iDevice\" class=\"reflection\">\n"
+        html  = "<div class=\"iDevice\" class=\"reflection\">\n"
         html +=  _("Reflective question:") 
         html += common.elementInstruc("activity"+self.id, self.activityInstruc)
         html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)
@@ -122,7 +122,7 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += "<img src=\"/style/"+style+"/reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
@@ -135,7 +135,7 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += "<img src=\"/style/"+style+"/reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"

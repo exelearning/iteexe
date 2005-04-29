@@ -80,7 +80,7 @@ class MultichoiceBlock(Block):
         html  = "<b>" + _("Question:") + " </b>"   
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)
-        html += "<div id=\"iDevice\" class=\"multichoice\">\n"
+        html += "<div class=\"iDevice\">\n"
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
@@ -106,7 +106,7 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += "<img src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
@@ -119,7 +119,7 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div id=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += "<img src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"

@@ -42,14 +42,14 @@ p.reading_feedback {
 
 /* --- iDevice Styles --- */
 
-#iDevice {
+.iDevice {
     background-color: #FFF;
     padding-left: 10px;
     border: 1px solid #DDD;
     margin: 10px;
 }
 
-#iDevice p {
+.iDevice p {
 	padding-left: 24px;
 }
 
