@@ -49,6 +49,7 @@ class EditorPane(object):
         self.strongStr    = ""
         self.purpose      = ""
         self.tip          = ""
+        self.message      = ""
 
         
     def process(self, request):
@@ -56,6 +57,7 @@ class EditorPane(object):
         Process
         """
         log.debug("process " + repr(request.args))
+        self.message = ""
 
         for element in self.elements:
             element.process(request)
@@ -79,7 +81,10 @@ class EditorPane(object):
             self.idevice.tip = request.args["tip"][0] 
 
         if "preview" in request.args:
-            self.idevice.edit = False
+            if self.idevice.title == "":
+                self.message = _("Please enter an idevice name.")
+            else:
+                self.idevice.edit = False
 
         if "edit" in request.args:
             self.idevice.edit = True
@@ -90,8 +95,11 @@ class EditorPane(object):
             self.idevice = idevice
 
         if "save" in request.args:
-            self.ideviceStore.addIdevice(self.idevice.clone())
-            self.ideviceStore.save()
+            if self.idevice.title == "":
+                self.message = _("Please enter an idevice name.")
+            else:
+                self.ideviceStore.addIdevice(self.idevice.clone())
+                self.ideviceStore.save()
             
         self.noStr     = ""
         self.someStr   = ""
@@ -129,7 +137,8 @@ class EditorPane(object):
             
     def render(self, request):
         """render the idevice being edited"""
-        html  = "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
+        html  = "<font color=\"red\"<b>" + self.message + "</b></font><br/>"
+        html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td>\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
         html += common.submitButton("addText", _("Add Text Field"))+"<br/>"
