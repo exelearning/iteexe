@@ -179,18 +179,19 @@ def option(name, checked, value):
     return html
 
 
-def elementInstruc(indent, instruc):
+def elementInstruc(instrucId, instruc):
     """add a help instruction for a element"""
     if instruc == "":
         html = ""
     else:
         html  = "<a onmousedown=\"Javascript:updateCoords(event);\" "
         html += " title=\"" + _("Instructions for completion") + "\" "
-        html += "onclick=\"Javascript:showMe('i%s', 350, 100);\" " % indent
+        html += "onclick=\"Javascript:showMe('i%s', 350, 100);\" " % instrucId
         html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
         html += "<img src=\"/images/help.gif\" border=\"0\" align=\"middle\"/>"
         html += "</a>\n"
-        html += "<div id=\"i%s\" style=\"display:none; z-index:99;\">" % indent
+        html += "<div id=\"i%s\" style=\"display:none; z-index:99;\">" % \
+                instrucId
         html += "<div style=\"float:right;\" >"
         html += "<img src=\"/images/stock-stop.png\" title=\""+_("Close")+"\" "
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"

@@ -106,7 +106,7 @@ class TextElement(Element):
         Returns an XHTML string with the form element for editing this field
         """
         html  = "<b>"+self.name
-        html += common.elementInstruc(self.name+self.id, self.instruc)
+        html += common.elementInstruc(self.id, self.instruc)
         html += ":</b><br/>\n"
         html += common.textInput(self.id, content)
         html += "<br/>\n"
@@ -128,7 +128,7 @@ class TextAreaElement(Element):
         content = content.replace("'","\\'")
 
         html  = "<b>"+self.name
-        html += common.elementInstruc(self.name+self.id, self.instruc)
+        html += common.elementInstruc(self.id, self.instruc)
         html += ":</b><br/>\n"
         html += common.richTextArea(self.id, content, width, height)
         
