@@ -363,7 +363,8 @@ function fileSaveAs() {
 
 // Launch the iDevice Editor Window
 function toolsEditor() {
-    var features  = "width=800,height=700,status=yes,resizeable=yes";
+    var features  = "width=800,height=700,status=yes,resizeable=yes,"+
+                    "scrollbars=yes";
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
 

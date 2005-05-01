@@ -41,10 +41,7 @@ class EditorPane(object):
         """
         Initialize
         """
-        #self.package      = None
-        #self.packageStore = webserver.application.packageStore
         self.ideviceStore = webserver.application.ideviceStore
-        self.url          = ""
         self.elements     = []
         self.idevice      = GenericIdevice("", "", "", "", "")
         self.noStr        = ""
@@ -56,14 +53,12 @@ class EditorPane(object):
         
     def process(self, request):
         """
-        process current package 
+        Process
         """
         log.debug("process " + repr(request.args))
 
-        self.url = request.path
-        #packageName = request.prepath[0]
-        #self.package = self.packageStore.getPackage(packageName)
-        #self.idevice = self.package.editor.idevices[0]
+        for element in self.elements:
+            element.process(request)
         
         if "addText" in request.args:
             self.idevice.addField("Type label here", "Text", "", "")
@@ -91,10 +86,7 @@ class EditorPane(object):
 
         if "reset" in request.args:
             idevice = GenericIdevice("", "", "", "", "")
-            #idevice.parentNode = self.package.editor
             idevice.parentNode = None
-            self.package.editor.idevices.remove(self.idevice)
-            self.package.editor.addIdevice(idevice)
             self.idevice = idevice
 
         if "save" in request.args:
@@ -117,9 +109,6 @@ class EditorPane(object):
             elif request.args["emphasis"][0] == "strong":
                 self.strongStr = "selected"
                 self.idevice.emphasis = 2
-        
-        for element in self.elements:
-            element.process(request)
         
         self.__buildElements()  
             
