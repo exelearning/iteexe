@@ -64,7 +64,7 @@ class Element(object):
         self.name     = name
         self.class_   = class_
         self.blockId  = blockId
-        self.id       = class_+blockId
+        self.id       = name+class_+blockId
         self.instruc  = instruc
 
     def process(self, request):
