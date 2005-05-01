@@ -78,7 +78,8 @@ class ScormPage(object):
         html += "src=\"APIWrapper.js\"></script>\n" 
         html += "</head>\n"
         html += "<body onLoad=\"doLMSInitialize();\" "
-        html += "onunLoad=\"doLMSFinish();\">\n"
+        html += "onunLoad=\"doLMSFinish();\" "
+        html += "onbeforeunload=\"doLMSFinish();\">\n"
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"

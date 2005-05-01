@@ -75,7 +75,7 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div class=\"iDevice\">\n"
-        html += "<img src=\"generic.gif\" />\n"
+        html += "<img class=\"iDevice_icon\" src=\"generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
         html += self.idevice.title+"</span>\n"
         html += self.__renderContent()
@@ -90,10 +90,10 @@ class GenericBlock(Block):
         html  = "<div class=\"iDevice\">\n"
         if self.idevice.class_ in ("objectives", "activity", 
                                    "reading", "preknowledge"):
-            html += "<img src=\"/style/"+style+"/"
+            html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/"
             html += self.idevice.class_+".gif\" />\n"
         else:
-            html += "<img src=\"/style/"+style+"/generic.gif\" />\n"
+            html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
         html += self.idevice.title+"</span>\n"
         html += self.__renderContent()
