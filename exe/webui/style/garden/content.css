@@ -22,25 +22,18 @@ a:hover { text-decoration: underline;
 }
 
 
-p.nodeTitle { 
+p#nodeTitle { 
     color: #ACBF60;
     font-size: 18px;
     font-weight: bolder;
     letter-spacing: 2px;
-    padding: 2px;
-    border-bottom: 2px solid #ACBF60;
     display: inline;
 }
 
-p.reading_reference {
-    font-style: italic;        
-}
+div#nodeDecoration {
+    padding: 2px;
+    border-bottom: 2px solid #ACBF60;
 
-p.reading_feedback {
-    border: 1px dashed #ADADAD;
-    margin: 20px;
-    padding: 8px;
-    background-color: #FFF;
 }
 
 
@@ -48,9 +41,9 @@ p.reading_feedback {
 
 .iDevice {
     background-color: #FAFFE6;
-    padding: 4px;
+    padding-left: 10px;
     border: 1px solid #ACBF60;
-    margin: 8px;
+    margin: 10px;
 }
 
 .iDevice p {
@@ -65,4 +58,21 @@ p.reading_feedback {
     position: relative;
     top: -18px;
 }    
+
+.iDevice_icon {
+	padding-top: 10px;
+}
+
+
+
+p.reading_reference {
+    font-style: italic;        
+}
+
+p.reading_feedback {
+    border: 1px dashed #ADADAD;
+    margin: 20px;
+    padding: 8px;
+    background-color: #FFF;
+}
 

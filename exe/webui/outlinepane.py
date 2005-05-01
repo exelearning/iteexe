@@ -214,7 +214,7 @@ class OutlinePane(Renderable):
         The xul is stored in a tuple inside the methods of this class
         then new lines are added when we actually return it
         """
-        # Create a scecial server side func that the 
+        # Create a special server side func that the 
         # Drag and drop js can call
         dropHandler = handler(self.handleDrop,
                               identifier='outlinePane.handleDrop')

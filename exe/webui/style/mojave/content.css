@@ -13,8 +13,12 @@ body {
     background: #CCCC99;
 }
 
+div#nodeDecoration {
+	border-top: 1px solid #FFFFCC;
+	border-bottom: 1px solid #FFFFCC;
+}
 
-p.nodeTitle { 
+p#nodeTitle { 
     color: #336633;
     font-size: 22px;
     font-weight: bold;
@@ -23,16 +27,6 @@ p.nodeTitle {
     display: inline;
 }
 
-p.reading_reference {
-    font-style: italic;        
-}
-
-p.reading_feedback {
-    border: 1px dashed #ADADAD;
-    margin: 20px;
-    padding: 8px;
-    background-color: #FFF;
-}
 
 
 /* --- iDevice Styles -- */
@@ -42,6 +36,10 @@ p.reading_feedback {
     padding-left: 10px;
     border: 1px solid #FFFFCC;
     margin: 10px;
+}
+
+.iDevice p {
+	padding-left: 24px;
 }
 
 .iDeviceTitle {
@@ -54,4 +52,18 @@ p.reading_feedback {
   
 }    
 
+.iDevice_icon {
+	padding-top: 10px;
+}
+
+p.reading_reference {
+    font-style: italic;        
+}
+
+p.reading_feedback {
+    border: 1px dashed #ADADAD;
+    margin: 20px;
+    padding: 8px;
+    background-color: #FFF;
+}
 
