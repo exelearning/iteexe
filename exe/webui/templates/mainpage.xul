@@ -94,7 +94,6 @@
                     <tab label="Authoring"/>
                     <tab label="Properties"/>
                     <tab label="Export"/>
-                    <tab label="iDevice Editor"/>
                 </tabs>
                 <tabpanels flex="1">
                     <tabpanel id="authoringPane">
@@ -105,9 +104,6 @@
                     </tabpanel>
                     <tabpanel id="exportPane">
                         <iframe flex="1" n:render="prePath" src="export"/>
-                    </tabpanel>
-                    <tabpanel id="editor">
-                        <iframe flex="1" n:render="prePath" src="editor"/>
                     </tabpanel>
                 </tabpanels>
             </tabbox>

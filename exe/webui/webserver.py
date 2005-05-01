@@ -48,14 +48,18 @@ class WebServer:
         self.application = application
         self.config      = application.config
         self.root        = PackageRedirectPage(self)   
+        self.editor      = EditorPage(self.root)
 
     def run(self):
+        """
+        Start serving webpages from the local webserver
+        """
         webDir = self.config.webDir
         self.root.putChild("images",  static.File(webDir+"/images"))
         self.root.putChild("css",     static.File(webDir+"/css"))   
         self.root.putChild("scripts", static.File(webDir+"/scripts"))
         self.root.putChild("style",   static.File(webDir+"/style"))
-        self.root.putChild("editor",  EditorPage(self.root))
+        self.root.putChild("editor",  self.editor)
 
         try:
             reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),
@@ -68,6 +72,7 @@ class WebServer:
 
 if __name__ == "__main__":
     class MyConfig:
+        """Dummy config"""
         def __init__(self):
             self.port    = 8081
             self.dataDir = "."
@@ -75,6 +80,7 @@ if __name__ == "__main__":
             self.exeDir  = "."
             self.styles  = ["default"]
     class MyApplication:
+        """Dummy application"""
         def __init__(self):
             self.config = MyConfig()
 

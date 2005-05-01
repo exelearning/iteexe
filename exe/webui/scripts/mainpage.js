@@ -360,11 +360,26 @@ function fileSaveAs() {
     }
 }
 
+
 // Launch the iDevice Editor Window
 function toolsEditor() {
     var features  = "width=800,height=700,status=yes,resizeable=yes";
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
+
+
+// Appends an iDevice
+// XH means that the func is actually called by the server over xmlhttp
+function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
+    var list = document.getElementById('ideviceList');
+    // Create the new listitem
+    var newListItem = document.createElement('listitem')
+    newListItem.setAttribute("onclick", 
+                             "submitLink('AddIdevice', "+ideviceId+", 1);")
+    newListItem.setAttribute("label", ideviceTitle)
+    list.appendChild(newListItem)
+}
+
 
 // This function takes care of all
 // exports. At the moment, this means web page export

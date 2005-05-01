@@ -35,7 +35,6 @@ class OutlinePane(Renderable):
     """
     OutlinePane is responsible for creating the XHTML for the package outline
     """
-
     name = 'outlinePane'
 
     def process(self, request):

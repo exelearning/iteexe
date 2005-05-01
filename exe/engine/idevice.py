@@ -60,8 +60,8 @@ class Idevice(jelly.Jellyable):
         Clone an iDevice just like this one
         """
         #I'm thinking I should override __deepcopy__, but I just don't get it
-        newIdevice = copy.deepcopy(self)
-        self.id    = str(Idevice.nextId)
+        newIdevice    = copy.deepcopy(self)
+        newIdevice.id = str(Idevice.nextId)
         Idevice.nextId += 1
         return newIdevice
 

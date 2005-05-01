@@ -1,3 +1,244 @@
+2005-05-01 09:28  brent
+
+	* exe/webui/outlinepane.py, exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css: still fixing styles.
+
+2005-05-01 06:34  brent
+
+	* exe/export/scormexport.py, exe/webui/casestudyblock.py,
+	  exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/reflectionblock.py,
+	  exe/webui/style/standardwhite/content.css: added onbeforeunload to
+	  scorm exported files for Internet Explorer. all iDevice icons now
+	  have class="iDevice_icon".
+
+2005-04-29 23:56  djm
+
+	* exe/webui/style/default/generic.gif,
+	  exe/webui/style/default/multichoice.gif,
+	  exe/webui/style/default/question.gif,
+	  exe/webui/style/default/reflection.gif,
+	  exe/webui/style/garden/generic.gif,
+	  exe/webui/style/garden/multichoice.gif,
+	  exe/webui/style/garden/question.gif,
+	  exe/webui/style/garden/reflection.gif,
+	  exe/webui/style/mojave/activity.gif,
+	  exe/webui/style/mojave/casestudy.gif,
+	  exe/webui/style/mojave/generic.gif,
+	  exe/webui/style/mojave/multichoice.gif,
+	  exe/webui/style/mojave/objectives.gif,
+	  exe/webui/style/mojave/preknowledge.gif,
+	  exe/webui/style/mojave/reading.gif,
+	  exe/webui/style/mojave/reflection.gif,
+	  exe/webui/style/standardwhite/generic.gif: added icons for all
+	  idevices/all themes.
+
+2005-04-29 23:10  djm
+
+	* exe/webui/outlinepane.py: Tidied up code
+
+2005-04-29 04:25  djm
+
+	* exe/webui/editorpage.py: stop listing idevices in the page
+
+2005-04-29 04:08  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css: fixing style madness...
+
+2005-04-29 02:25  brent
+
+	* exe/webui/casestudyblock.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/standardwhite/activity.gif,
+	  exe/webui/style/standardwhite/casestudy.gif,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/style/standardwhite/multichoice.gif,
+	  exe/webui/style/standardwhite/objectives.gif,
+	  exe/webui/style/standardwhite/preknowledge.gif,
+	  exe/webui/style/standardwhite/reading.gif,
+	  exe/webui/style/standardwhite/reflection.gif: added icons to
+	  standard white theme and changed the iDevice DIVs from id to
+	  class.
+
+2005-04-29 02:08  jenny
+
+	* win install/exe.nsi: modified exe.nsi for version 0.4.
+
+2005-04-28 23:48  jenny
+
+	* exe/webui/browser.py: fixed firefox profile bug.
+
+2005-04-28 21:31  matthew
+
+	* testing/testidevicestore.py, testing/testxmlhttp.py: Fixed tests
+
+2005-04-28 21:28  brent
+
+	* exe/webui/stylepane.py, exe/webui/templates/mainpage.xul: removed
+	  outline and style tabs and put styles into menu item. so take
+	  that!!!
+
+2005-04-28 21:20  jenny
+
+	* exe/webui/browser.py: use exe profile.
+
+2005-04-28 04:46  matthew
+
+	* exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul:
+	  Added export menu (non-functional yet) and lots of shortcut keys
+	  for all menus.
+
+2005-04-28 04:02  matthew
+
+	* exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul:
+	  Added shortcut keys for file menu
+
+2005-04-28 03:54  brent
+
+	* exe/webui/authoringpage.py, exe/webui/style/default/activity.gif,
+	  exe/webui/style/default/activity.png,
+	  exe/webui/style/default/casestudy.gif,
+	  exe/webui/style/default/casestudy.png,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/objectives.gif,
+	  exe/webui/style/default/objectives.png,
+	  exe/webui/style/default/preknowledge.gif,
+	  exe/webui/style/default/preknowledge.png,
+	  exe/webui/style/default/question.gif,
+	  exe/webui/style/default/question.png,
+	  exe/webui/style/default/reading.gif,
+	  exe/webui/style/default/reading.png,
+	  exe/webui/style/garden/activity.gif,
+	  exe/webui/style/garden/activity.png,
+	  exe/webui/style/garden/casestudy.gif,
+	  exe/webui/style/garden/casestudy.png,
+	  exe/webui/style/garden/objectives.gif,
+	  exe/webui/style/garden/objectives.png,
+	  exe/webui/style/garden/preknowledge.gif,
+	  exe/webui/style/garden/preknowledge.png,
+	  exe/webui/style/garden/question.gif,
+	  exe/webui/style/garden/question.png,
+	  exe/webui/style/garden/reading.gif,
+	  exe/webui/style/garden/reading.png, exe/webui/style/standardwhite,
+	  exe/webui/style/standardwhite/activity.gif,
+	  exe/webui/style/standardwhite/casestudy.gif,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/style/standardwhite/icon_assignment.gif,
+	  exe/webui/style/standardwhite/nodeTitle_bg.jpg,
+	  exe/webui/style/standardwhite/objectives.gif,
+	  exe/webui/style/standardwhite/preknowledge.gif,
+	  exe/webui/titleblock.py: changed icons to gifs :-( and added
+	  standardwhite style
+
+2005-04-28 03:53  matthew
+
+	* exe/webui/mainpage.py, exe/webui/stylepane.py: Moved stylepane
+	  stuff out of main page
+
+2005-04-28 03:49  matthew
+
+	* exe/webui/idevicepane.py, exe/webui/mainpage.py: Moved idevicepane
+	  stuff out of mainpage
+
+2005-04-28 03:47  djm
+
+	* exe/webui/casestudyblock.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py:
+	  restored the iDevice div
+
+2005-04-28 03:46  matthew
+
+	* exe/webui/mainpage.py, exe/webui/outlinepane.py,
+	  exe/webui/templates/mainpage.xul, testing/testpackage.py,
+	  testing/testxmlhttp.py: Made tests work. Moved outlinepane stuff
+	  out of mainpage
+
+2005-04-28 03:38  djm
+
+	* exe/webui/editorpane.py: forgot the editorpane
+
+2005-04-28 03:35  djm
+
+	* exe/engine/idevicestore.py, exe/exe, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/casestudyblock.py,
+	  exe/webui/common.py, exe/webui/editorpage.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/scripts/common.js, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul, exe/webui/titleblock.py,
+	  exe/webui/webserver.py: Changed how we do icons and a bit of work
+	  on the editor
+
+2005-04-28 03:26  matthew
+
+	* exe/engine/package.py, exe/webui/mainpage.py,
+	  exe/webui/packageredirectpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/webserver.py: File save and saveas working more or less
+	  :)
+
+2005-04-28 02:34  matthew
+
+	* exe/application.py: Needed :)
+
+2005-04-28 01:35  matthew
+
+	* exe/engine/package.py, exe/engine/packagestore.py, exe/exe,
+	  exe/webui/authoringpage.py, exe/webui/editorpage.py,
+	  exe/webui/element.py, exe/webui/exportpage.py,
+	  exe/webui/idevicepane.py, exe/webui/mainpage.py,
+	  exe/webui/outlinepane.py, exe/webui/packageredirectpage.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/renderable.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/stylepane.py, exe/webui/templates/mainpage.xul,
+	  exe/webui/webserver.py: Implementing new frame work, will allow
+	  easy integration of templating renders. To be done soon. Can now
+	  access self.webserver.application attributes with just
+	  self.attrib... Getting ready for menu stuff. Sorry for big change
+
+2005-04-28 01:31  jenny
+
+	* exe/engine/node.py: Can now open old versions of packages again
+	  (MS+JL)
+
+2005-04-27 23:28  djm
+
+	* exe/export/scormexport.py: fixed unclosed div
+
+2005-04-27 23:22  jenny
+
+	* exe/webui/scripts/nevow_glue.js: Added nevow_glue.js to scripts.
+	  This is not used by any of our code but on windows we changed
+	  nevow/livepage.py to search in /scripts/ for nevow_glue.js,
+	  because it didn't run when compiled into a zip file by py2exe.
+
+2005-04-27 22:35  jenny
+
+	* exe/engine/idevicestore.py, exe/engine/winconfig.py: fixed
+	  idevicestore bugs,
+
+2005-04-27 18:55  brent
+
+	* exe/webui/outlinepane.py: changed section label of tree to
+	  outline.
+
+2005-04-27 11:03  djm
+
+	* exe/engine/idevicestore.py, exe/engine/package.py,
+	  exe/webui/blockfactory.py, exe/webui/editorelement.py,
+	  exe/webui/editorpage.py: able to edit and save generic iDevices
+
+2005-04-27 05:54  djm
+
+	* ChangeLog, exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/exe, exe/idevices/__init__.py, exe/webui/blockfactory.py,
+	  exe/webui/idevicepane.py: Now get idevices from the IdeviceStore.
+	  One more step towards the Idevice Editor.
+
 2005-04-27 05:51  djm
 
 	* exe/export/scormexport.py: fixed bug in copying APIWrapper.js

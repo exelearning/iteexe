@@ -42,6 +42,7 @@ class IdeviceStore:
         self.config   = config
         self.extended = []
         self.generic  = []
+        self.listeners = []
 
 
     def getIdevices(self, package):
@@ -53,12 +54,23 @@ class IdeviceStore:
         return self.extended + self.generic
 
 
+    def register(self, listener):
+        """
+        Register a listener who is interested in changes to the
+        IdeviceStore.  
+        Created for IdevicePanes, but could be used by other objects
+        """
+        self.listeners.append(listener)
+
+
     def addIdevice(self, idevice):
         """
         Register another iDevice as available
         """
         log.debug("IdeviceStore.addIdevice")
         self.generic.append(idevice)
+        for listener in self.listeners:
+            listener.addIdevice(idevice)
 
 
     def load(self):

@@ -34,7 +34,6 @@ from exe.webui.outlinepane    import OutlinePane
 from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.exportpage     import ExportPage
-from exe.webui.editorpage     import EditorPage
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -67,7 +66,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
         self.exportPage = ExportPage(self)
-        self.editorPage = EditorPage(self)
 
 
     def getChild(self, name, request):
@@ -92,6 +90,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
+        self.idevicePane.client = client
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
