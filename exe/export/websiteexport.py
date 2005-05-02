@@ -29,6 +29,7 @@ import glob
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
+from exe.engine.path        import path
 from exe.webui              import common
 from exe.webui.element      import getUploadedFileDir
 
@@ -51,18 +52,20 @@ class WebsitePage(object):
         self.node = node
         self.html = ""
     
-    def save(self):
+    def save(self, outputDir):
         """
         This is the main function. It will render the page and save it to a file.
+        'outputDir' is the directory where the filenames will be saved
+        (a 'path' instance)
         """
         if self.node is self.node.package.root:
             filename = "index.html"
         else:
             filename = self.node.id + ".html"
             
-        out = open(filename, "w")
-        out.write(self.render())
-        out.close()
+        outfile = open(outputDir / filename, "w")
+        outfile.write(self.render())
+        outfile.close()
         
     def getNavigationLink(self):
         """
@@ -229,32 +232,31 @@ class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
     """
-    def __init__(self, config):
+    def __init__(self, stylesDir, outputDir):
+        """
+        'stylesDir' is the directory where we can copy the stylesheets from
+        'outputDir' is the directory that will be [over]written
+        with the website
+        """
         self.package = None
-        self.config  = config
+        self.stylesDir = path(stylesDir)
+        self.outputDir = path(outputDir)
 
     def export(self, package):
         """ 
         Export web page
         """
         self.package = package
-        
-        exeDir  = self.config.exeDir
-        dataDir = self.config.dataDir
-
-        os.chdir(dataDir)
-        if exists(package.name):
-            shutil.rmtree(package.name)
-
-        os.mkdir(package.name)
-        os.chdir(package.name)
-
-        for styleFile in glob.glob(join(exeDir, \
-                                                "style", package.style, "*")):
-            shutil.copyfile(styleFile, basename(styleFile))
-        
-        ##copy image directory into 
-        ##
+        out = self.outputDir
+        # Create the output dir if it doesn't already exist
+        if not out.exists(): out.mkdir()
+        # Copy the style sheets to the output dir
+        for styleFile in self.stylesDir.files():
+            styleFile.copy(out)
+        # TODO: All below is broken code for the multimedia idevice
+        # it will work in the 0.5 release
+        """    
+        # Copy the image directory
         filesDir = getUploadedFileDir()
         ##course uploaded files directory
         uploadedFileDir = join(filesDir, package.name)
@@ -280,6 +282,7 @@ class WebsiteExport(object):
                 #(uploadedFileDir, join("images", package.name))
                 #log.error(errmsg)
                 #return errmsg
+         """       
         self.doExport(package)
 
     def doExport(self, package):
@@ -307,7 +310,7 @@ class WebsiteExport(object):
         Recursive function for exporting a node
         """
         page = WebsitePage(node)
-        page.save()
+        page.save(self.outputDir)
 
         for child in node.children:
             self.exportNode(child)

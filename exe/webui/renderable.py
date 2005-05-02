@@ -16,27 +16,10 @@ from nevow import loaders
 from nevow.livepage import LivePage
 from twisted.web.resource import Resource
 
-class RenderableMetaClass(type):
-    """
-    Checks that all classes derived from
-    'Renderable' and 'RenderablePage'
-    have the correct attributes
-    """
-
-    def __new__(cls, name, bases, dct):
-        if name not in ('Renderable', '_RenderablePage', 'RenderableResource', 'RenderableLivePage'):
-            # Check that it has a nice name
-            assert dct.has_key('name') and dct['name'], \
-                'Must specify a "name" attribute'
-        return type.__new__(cls, name, bases, dct)
-
-
 class Renderable(object):
     """
     A base class for all things rendered
     """
-
-    __metaclass__ = RenderableMetaClass
 
     # Set this to a template filename if you are use a template page to do 
     # your rendering
@@ -67,12 +50,17 @@ class Renderable(object):
             self.package = None
         if webserver:
             self.webserver = webserver
-        else:
-            assert parent
+        elif parent:
             self.webserver = parent.webserver
+        else:
+            self.webserver = None
         if self._templateFileName:
-            path = os.path.join(self.config.exeDir, 'templates', self._templateFileName)
-            self.docFactory = loaders.xmlfile(path)
+            if hasattr(self, 'config') and self.config:
+                path = os.path.join(self.config.exeDir, 'templates', self._templateFileName)
+                self.docFactory = loaders.xmlfile(path)
+            else:
+                # Assume directory is included in the filename
+                self.docFactory = loaders.xmlfile(self._templateFileName)
 
     # Properties
     def getRoot(self):
@@ -102,7 +90,7 @@ class Renderable(object):
         if attr.startswith('render_'):
             name = attr.split('_', 1)[-1]
             return self.renderChildren[name].render
-        else:
+        elif self.webserver:
             # If not, see if what they're looking for is in the application object
             return getattr(self.webserver.application, attr)
 

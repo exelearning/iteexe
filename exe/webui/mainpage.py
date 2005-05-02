@@ -34,6 +34,9 @@ from exe.webui.outlinepane    import OutlinePane
 from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.webui.exportpage     import ExportPage
+from exe.export.websiteexport import WebsiteExport
+from exe.export.scormexport   import ScormExport
+from exe.engine.path          import path
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -55,9 +58,8 @@ class MainPage(RenderableLivePage):
         """
         self.name = package.name
         RenderableLivePage.__init__(self, parent, package)
-        path = os.path.join(self.config.exeDir, 'templates', 'mainpage.xul')
-        self.docFactory = loaders.xmlfile(path)
-
+        mainxul = path(self.config.exeDir).joinpath('templates', 'mainpage.xul')
+        self.docFactory = loaders.xmlfile(mainxul)
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
         self.idevicePane = IdevicePane(self)
@@ -90,6 +92,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
+        setUpHandler(self.handleExport, 'exportPackage')
         self.idevicePane.client = client
 
     def render_addChild(self, ctx, data):
@@ -200,7 +203,6 @@ class MainPage(RenderableLivePage):
             self.webserver.root.putChild(self.package.name, self)
             client.sendScript('top.location = "/%s"' % self.package.name)
 
-
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
@@ -217,3 +219,29 @@ class MainPage(RenderableLivePage):
             self.error = True
             raise
             return
+
+    def handleExport(self, client, exportType, filename):
+        """
+        Called by js. 
+        'exportType' can be one of 'scormMeta' 'scormNoMeta' 'webSite'
+        Exports the current package to one of the above formats
+        'filename' is a file for scorm pages, and a directory for websites
+        """
+        if exportType == 'webSite':
+            # filename is a directory where we will export the website to
+            # We assume that the user knows what they are doing
+            # and don't check if the directory is already full or not
+            # and we just overwrite what's already there
+            stylesDir = path(self.config.exeDir).joinpath('style', self.package.style)
+            websiteExport = WebsiteExport(stylesDir, filename)
+            websiteExport.export(self.package)
+        else:
+            # Append an extension if required
+            if not filename.lower().endswith('.zip'): 
+                filename += '.zip'
+            if exportType == 'scormMeta':
+                scormExport = ScormExport(self.config)
+                scormExport.export(self.package, True)
+            elif exportType == 'scormNoMeta':
+                scormExport = ScormExport(self.config)
+                scormExport.export(self.package, False)

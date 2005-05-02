@@ -389,5 +389,22 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
 // Currently valid values are:
 // 'scormMeta' 'scormNoMeta' 'webSite'
 function exportPackage(exportType) {
-    alert('Not implemented yet!')
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    if (exportType == 'webSite') {
+        fp.init(window, "Select a folder to export to", nsIFilePicker.modeGetFolder);
+        var res = fp.show();
+        if (res == nsIFilePicker.returnOK) {
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+        }
+    } else {
+        fp.init(window, "Export scorm package as", nsIFilePicker.modeSave);
+        fp.appendFilter("Scorm Packages", "*.zip");
+        fp.appendFilter("All Files", "*.*");
+        var res = fp.show();
+        if (res == nsIFilePicker.returnOK) {
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+        }
+    }
 }
