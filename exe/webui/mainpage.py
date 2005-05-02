@@ -238,8 +238,10 @@ class MainPage(RenderableLivePage):
             if not filename.lower().endswith('.zip'): 
                 filename += '.zip'
             else:
-                scormExport = ScormExport(stylesDir, exeDir / 'scripts', filename)
+                scormExport = ScormExport(self.config, stylesDir, 
+                                          exeDir / 'scripts', filename)
                 if exportType == 'scormMeta':
+                    print "exporting"
                     scormExport.export(self.package, True)
                 elif exportType == 'scormNoMeta':
                     scormExport.export(self.package, False)

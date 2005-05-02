@@ -1,3 +1,103 @@
+2005-05-02 04:44  matthew
+
+	* exe/engine/path.py, exe/export/manifest.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/exportpage.py, exe/webui/mainpage.py,
+	  exe/webui/templates/mainpage.xul, testing/runtests.py: Export
+	  webpage and scorm packages now moved to menus
+
+2005-05-02 04:09  brent
+
+	* exe/webui/scripts/SCOFunctions.js: added SCOFunctions.js to svn
+
+2005-05-02 04:04  brent
+
+	* exe/webui/casestudyblock.py: wee fixy wixy
+
+2005-05-02 03:54  djm
+
+	* exe/webui/authoringpage.py: removed debug info
+
+2005-05-02 03:50  djm
+
+	* exe/webui/authoringpage.py, exe/webui/casestudyblock.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py: Added
+	  ondblclick to edit
+
+2005-05-02 03:45  brent
+
+	* exe/webui/casestudyblock.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/templates/mainpage.xul: added div iDevice_inner for
+	  styling iDevice content.
+
+2005-05-02 03:44  matthew
+
+	* testing/testPackage.elp: A package used by the testing suite
+
+2005-05-02 02:55  matthew
+
+	* exe/webui/templates/mainpage.xul: Removed tabs and extra
+	  whitespace
+
+2005-05-02 02:35  matthew
+
+	* exe/webui/idevicepane.py: Changed xul word to html to be more
+	  correct
+
+2005-05-02 01:26  brent
+
+	* exe/export/scormexport.py: naughty tabs!
+
+2005-05-02 01:18  brent
+
+	* exe/export/scormexport.py, exe/webui/templates/mainpage.xul: added
+	  SCOFunctions.js to SCORM export minor change to File menu
+
+2005-05-02 01:06  matthew
+
+	* testing/runtests.py: Included export tests in the main runtests
+	  script
+
+2005-05-02 01:03  matthew
+
+	* exe/engine/path.py, exe/export/websiteexport.py,
+	  exe/webui/mainpage.py, exe/webui/renderable.py,
+	  exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul,
+	  testing/testxmlhttp.py: Almost got all export stuff in to menu.
+	  Simplified renderable.py
+
+2005-05-01 22:45  djm
+
+	* exe/webui/common.py, exe/webui/element.py: Use name+class_+block
+	  Id to identify a GenericIdevice Element.
+
+2005-05-01 22:39  djm
+
+	* exe/webui/element.py: Use the name in the element ID as well as
+	  the class
+
+2005-05-01 22:33  jenny
+
+	* exe/webui/editorpane.py: check if an idevice has a name.
+
+2005-05-01 21:28  djm
+
+	* exe/webui/editorpane.py, exe/webui/scripts/mainpage.js: Fixed bugs
+	  with iDevice editor, reset, save and having no scrollbars
+
+2005-05-01 20:33  djm
+
+	* ChangeLog, exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/webui/authoringpage.py, exe/webui/editorpage.py,
+	  exe/webui/idevicepane.py, exe/webui/mainpage.py,
+	  exe/webui/outlinepane.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul, exe/webui/webserver.py: iDevice
+	  Pane will now update when iDevices are added using the iDevice
+	  editor. All still very very alphaish.
+
 2005-05-01 09:28  brent
 
 	* exe/webui/outlinepane.py, exe/webui/style/default/content.css,

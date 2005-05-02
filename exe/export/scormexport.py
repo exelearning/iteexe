@@ -101,15 +101,16 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self, styleDir, scriptsDir, filename):
+    def __init__(self, config, styleDir, scriptsDir, filename):
         """ Initialize
         'styleDir' is the directory from which we will copy our style sheets (and some gifs)
         'scriptsDir' is the directory from which we will copy our javascripts
         'filename' is the name of the scorm package to be output
         """
-        self.styleDir = path(styleDir)
+        self.styleDir   = path(styleDir)
         self.scriptsDir = path(scriptsDir)
-        self.filename = path(filename)
+        self.filename   = path(filename)
+        self.config     = config
 
     def export(self, package, addMetadata=True):
         """ 
@@ -125,7 +126,7 @@ class ScormExport(object):
         # Export the package content
         self.exportNode(package.root, outdir)
         # Create the manifest file
-        manifest = Manifest(outdir, package, addMetadata)
+        manifest = Manifest(self.config, outdir, package, addMetadata)
         manifest.save()
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
