@@ -28,6 +28,7 @@ from testblock         import TestBlock
 from testidevice       import TestIdevice
 from testidevicestore  import TestIdeviceStore
 from testpersist       import TestPersist
+from testexport        import TestWebsiteExport
 
 # ===========================================================================
 
@@ -42,4 +43,5 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestIdevice))
     suite.addTest(unittest.makeSuite(TestIdeviceStore))
     suite.addTest(unittest.makeSuite(TestPersist))
+    suite.addTest(unittest.makeSuite(TestWebsiteExport))
     unittest.TextTestRunner(verbosity=2).run(suite)
