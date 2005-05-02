@@ -6,7 +6,7 @@
         id="mainWindow" title="eXe : elearning XHTML editor"
         onload="initWindow()">
     <n:invisible n:render="liveid"/>
-    <n:invisible n:render="liveglue"/> 
+    <n:invisible n:render="liveglue"/>
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
     <script language="JavaScript" src="/scripts/draganddrop.js"/>
@@ -35,11 +35,11 @@
               <menupopup id="file-popup">
                 <menuitem label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
                 <menuitem label="Open" key="file-open-key" accesskey="o" oncommand="fileOpen()"/>
-       		<menuseparator/>         
-		<menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
+                       <menuseparator/>
+                <menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
                 <menuitem label="Save As" accesskey="a" oncommand="fileSaveAs()"/>
-                <menuseparator/> 
-	        <menu id="export-menu" label="Export" accesskey="e">
+                <menuseparator/>
+                <menu id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
                     <menuitem label="Scorm Package" accesskey="s" oncommand="exportPackage('scormMeta')"/>
                     <menuitem label="Scorm Package (no metadata)" accesskey="c" oncommand="exportPackage('scormNoMeta')"/>
@@ -53,44 +53,43 @@
                 <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
               </menupopup>
             </menu>
-	    <menu id="styles-menu" label="Styles" accesskey="s">
-	      <menupopup id="styles-popup" n:render="stylePane">     
-              </menupopup>	
-	    </menu>
+            <menu id="styles-menu" label="Styles" accesskey="s">
+              <menupopup id="styles-popup" n:render="stylePane">
+              </menupopup>
+            </menu>
           </menubar>
         </toolbox>
         <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
             <!-- start vbox for outline -->
-	   <vbox>
-	      <toolbox>
-		  <toolbar>
-		      <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
-		      <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
-		      <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
-		  </toolbar>
-	      </toolbox>
-	      <!-- This label is actually rendered as a tree -->
-	      <label flex="2" value="outlinePane" n:render="outlinePane"/>
+           <vbox>
+              <toolbox>
+                  <toolbar>
+                      <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
+                      <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
+                      <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
+                  </toolbar>
+              </toolbox>
+              <!-- This label is actually rendered as a tree -->
+              <label flex="2" value="outlinePane" n:render="outlinePane"/>
 
-	      <splitter collapse="none"><grippy/></splitter>
+              <splitter collapse="none"><grippy/></splitter>
 
-	    <vbox>
-	      <toolbox> 
-		<toolbar>
-		   <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
-		   <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
-		   <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
-		   <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
-		 </toolbar>
-	      </toolbox>
-	    <!-- start iDevices -->	
-	      <label flex="1" value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
-	    </vbox>
-	    <!-- end iDevices -->
-	   </vbox>
-			 
+            <vbox>
+              <toolbox>
+                <toolbar>
+                   <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
+                   <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
+                   <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
+                   <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
+                 </toolbar>
+              </toolbox>
+            <!-- start iDevices -->
+              <label flex="1" value="idevicePane" style="background:#CCC;" n:render="idevicePane"/>
+            </vbox>
+            <!-- end iDevices -->
+           </vbox>
 
             <!-- end outline vbox-->
 
