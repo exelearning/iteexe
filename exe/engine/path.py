@@ -33,6 +33,7 @@ Date:    7 Mar 2004
 from __future__ import generators
 
 import sys, os, fnmatch, glob, shutil, codecs, md5
+from tempfile import mkdtemp
 
 __version__ = '2.0.4'
 __all__ = ['path']
@@ -71,7 +72,7 @@ class path(_base):
 
     # Adding a path and a string yields a path.
     def __add__(self, more):
-        return path(_base(self), more)
+        return path(_base(self) + _base(more))
 
     def __radd__(self, other):
         return path(other + _base(self))
@@ -673,22 +674,6 @@ class path(_base):
         getsize, None, None,
         """ Size of the file, in bytes. """)
 
-    def getMd5(self):
-        """Returns an md5 hash for an object with read() method."""
-        try:
-            f = file(self, 'rb')
-        except:
-            raise Exception("Could not open %s" % self)
-        m = md5.new()
-        while True:
-            d = f.read(8096)
-            if not d:
-                break
-            m.update(d)
-        f.close()
-        return m.hexdigest()
-    md5 = property(getMd5)
-
     if hasattr(os, 'access'):
         def access(self, mode):
             """ Return true if current user has access to this path.
@@ -801,16 +786,15 @@ class path(_base):
 
     # --- High-level functions from shutil
 
-    copyfile = lambda s, o: shutil.copyfile(str(s), str(o))
-    copymode = lambda s, o: shutil.copymode(str(s), str(o))
-    copystat = lambda s, o: shutil.copystat(str(s), str(o))
-    copy = lambda s, o: shutil.copy(str(s), str(o))
-    copy2 = lambda s, o: shutil.copy2(str(s), str(o))
-    copytree = lambda s, o: shutil.copytree(str(s), str(o))
+    copyfile = lambda s, o: shutil.copyfile(_base(s), _base(o))
+    copymode = lambda s, o: shutil.copymode(_base(s), _base(o))
+    copystat = lambda s, o: shutil.copystat(_base(s), _base(o))
+    copy = lambda s, o: shutil.copy(_base(s), _base(o))
+    copy2 = lambda s, o: shutil.copy2(_base(s), _base(o))
+    copytree = lambda s, o: shutil.copytree(_base(s), _base(o))
     if hasattr(shutil, 'move'):
-        move = lambda s, o: shutil.move(str(s), str(o))
-    rmtree = lambda s: shutil.rmtree(str(s))
-
+        move = lambda s, o: shutil.move(_base(s), _base(o))
+    rmtree = lambda s: shutil.rmtree(_base(s))
 
     # --- Special stuff from os
 
@@ -822,3 +806,64 @@ class path(_base):
         def startfile(self):
             os.startfile(self)
 
+    # Extra icing
+
+    def copyglob(self, globStr, destination):
+        """
+        >>> x = path('~')
+        >>> path('~/tmp').mkdir()
+        >>> x.copyglob('.*', '~/tmp')
+        # Copies all invisible files (and dirs) recursively to ~/tmp
+        """
+        for fn in self.glob(globStr):
+            fn.copy(destination)
+
+    def copylist(self, fnlist, destination):
+        """
+        Given a sequence of relative file names ('fnlist')
+        copies them to 'destination'
+        """
+        for fn in fnlist:
+            (self / fn).copy(destination)
+
+    def copyfiles(self, destination):
+        """
+        Copies the content of files to 'destination' directory
+        """
+        for fn in self.files():
+            fn.copy(destination)
+
+    def getMd5(self):
+        """Returns an md5 hash for an object with read() method."""
+        try:
+            f = file(self, 'rb')
+        except:
+            raise Exception("Could not open %s" % self)
+        m = md5.new()
+        while True:
+            d = f.read(8096)
+            if not d:
+                break
+            m.update(d)
+        f.close()
+        return m.hexdigest()
+    md5 = property(getMd5)
+
+
+class TempDirPath(path):
+    """
+    This object, when created gives you a path object
+    pointing to a newly created temporary directory.
+    When this object goes out of scope, the directory
+    is obliterated.
+    You can call 'rmtree' yourself if you want before
+    dropping the object to make sure.
+    """
+
+    def __new__(cls):
+        return path.__new__(cls, mkdtemp())
+
+    def __del__(self):
+        """Destroy the temporary directory"""
+        if self.exists():
+            self.rmtree()

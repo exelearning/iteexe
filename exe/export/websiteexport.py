@@ -247,12 +247,10 @@ class WebsiteExport(object):
         Export web page
         """
         self.package = package
-        out = self.outputDir
         # Create the output dir if it doesn't already exist
-        if not out.exists(): out.mkdir()
+        if not self.outputDir.exists(): self.outputDir.mkdir()
         # Copy the style sheets to the output dir
-        for styleFile in self.stylesDir.files():
-            styleFile.copy(out)
+        self.stylesDir.copyfiles(self.outputDir)
         # TODO: All below is broken code for the multimedia idevice
         # it will work in the 0.5 release
         """    

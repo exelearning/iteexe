@@ -28,7 +28,7 @@ from testblock         import TestBlock
 from testidevice       import TestIdevice
 from testidevicestore  import TestIdeviceStore
 from testpersist       import TestPersist
-from testexport        import TestWebsiteExport
+from testexport        import TestWebsiteExport, TestScormMetaExport, TestScormNoMetaExport
 
 # ===========================================================================
 
@@ -44,4 +44,6 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestIdeviceStore))
     suite.addTest(unittest.makeSuite(TestPersist))
     suite.addTest(unittest.makeSuite(TestWebsiteExport))
+    suite.addTest(unittest.makeSuite(TestScormMetaExport))
+    suite.addTest(unittest.makeSuite(TestScormNoMetaExport))
     unittest.TextTestRunner(verbosity=2).run(suite)

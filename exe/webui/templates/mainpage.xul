@@ -99,7 +99,6 @@
                 <tabs align="end" pack="end">
                     <tab label="Authoring"/>
                     <tab label="Properties"/>
-                    <tab label="Export"/>
                 </tabs>
                 <tabpanels flex="1">
                     <tabpanel id="authoringPane">
@@ -107,9 +106,6 @@
                     </tabpanel>
                     <tabpanel id="propertiesPane">
                         <iframe flex="1" n:render="prePath" src="properties"/>
-                    </tabpanel>
-                    <tabpanel id="exportPane">
-                        <iframe flex="1" n:render="prePath" src="export"/>
                     </tabpanel>
                 </tabpanels>
             </tabbox>

@@ -33,7 +33,6 @@ from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.outlinepane    import OutlinePane
 from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
-from exe.webui.exportpage     import ExportPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from exe.engine.path          import path
@@ -67,8 +66,6 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.authoringPage = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
-        self.exportPage = ExportPage(self)
-
 
     def getChild(self, name, request):
         """
@@ -227,21 +224,24 @@ class MainPage(RenderableLivePage):
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
         """
+        exeDir = path(self.config.exeDir)
+        stylesDir = exeDir.joinpath('style', self.package.style)
         if exportType == 'webSite':
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
             # and don't check if the directory is already full or not
             # and we just overwrite what's already there
-            stylesDir = path(self.config.exeDir).joinpath('style', self.package.style)
             websiteExport = WebsiteExport(stylesDir, filename)
             websiteExport.export(self.package)
         else:
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 
                 filename += '.zip'
-            if exportType == 'scormMeta':
-                scormExport = ScormExport(self.config)
-                scormExport.export(self.package, True)
-            elif exportType == 'scormNoMeta':
-                scormExport = ScormExport(self.config)
-                scormExport.export(self.package, False)
+            else:
+                scormExport = ScormExport(stylesDir, exeDir / 'scripts', filename)
+                if exportType == 'scormMeta':
+                    scormExport.export(self.package, True)
+                elif exportType == 'scormNoMeta':
+                    scormExport.export(self.package, False)
+                else:
+                    log.error('Wrong exportType passed to handleExport: %s' % exportType)

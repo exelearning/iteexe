@@ -21,11 +21,8 @@ Represents an imsmanifest xml file
 """
 
 import logging
-import os
-import os.path
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
-import zipfile
-import glob
+from exe.engine.uid  import UIDGenerator
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -33,47 +30,39 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, package, addMetadata=True):
+    def __init__(self, outdir, package, addMetadata=True):
         """
         Initialize
+        'outdir' is the directory that we read the html from and also output the mainfest.xml
         """
+        self.outdir      = outdir
+        self.package     = package
+        self.addMetadata = addMetadata
         self.title       = str(package.root.title)
         self.node        = package.root
         self.xmlStr      = ""
         self.name        = package.name
         self.author      = package.author
         self.desc        = package.description
-        self.idGenerator = UniqueIdGenerator(package.name, config.exePath)
+        self.idGenerator = UIDGenerator(package.name)
         self.itemStr     = ""
         self.resStr      = ""
-        self.addMetadata = addMetadata
 
     def save(self):
         """
-        save a imsmanifest file and zip it with html files
+        Save a imsmanifest file to self.outdir
         """
         filename = "imsmanifest.xml"
-        out = open(filename, "w")
+        out = open(self.outdir / filename, "w")
         out.write(self.createXML())
         out.close()
-        
-        os.chdir("..")
-        #TODO: zipping the package up should be the responsibility of
-        # the ScormExporter?
-        zipFileName = self.name + ".zip"
-        zipFile = zipfile.ZipFile(zipFileName, "w")
-        for name in glob.glob(self.name+"/*"):
-            zipFile.write(name, os.path.basename(name), zipfile.ZIP_DEFLATED)
-            
-        zipFile.close()
-            
         
     def createXML(self):
         """
         returning XLM string for manifest file
         """
-        manifestId = self.idGenerator.generate()
-        orgId      = self.idGenerator.generate()
+        manifestId = str(self.idGenerator.generate())
+        orgId      = str(self.idGenerator.generate())
         
         xmlStr = """<?xml version="1.0" encoding="UTF-8"?>
         <manifest identifier="%s" 
@@ -122,10 +111,10 @@ class Manifest(object):
             
     def genItemResStr(self, node):
         """
-        returning xlm string for items and resources
+        Returning xlm string for items and resources
         """
-        itemId = self.idGenerator.generate()
-        resId  = self.idGenerator.generate()
+        itemId = str(self.idGenerator.generate())
+        resId  = str(self.idGenerator.generate())
         if node is node.package.root:
             filename = "index.html"
         else:
@@ -143,13 +132,15 @@ class Manifest(object):
                 <file href="%s"/>
                 <file href="content.css"/>
                 <file href="APIWrapper.js"/>
+                <file href="SCOFunctions.js"/>
                 """ %(resId, filename, filename)
         fileStr = ""
         # TODO: Fix this hack with some real object-orientated code
-        for pngFile in glob.glob("*.png"):
-            fileStr += "                <file href=\""+pngFile+"\"/>\n"
-        for gifFile in glob.glob("*.gif"):
-            fileStr += "                <file href=\""+gifFile+"\"/>\n"
+        # TODO: Should parse html files to find references to images
+        for pngFile in self.outdir.glob("*.png"):
+            fileStr += "                <file href=\""+pngFile.basename()+"\"/>\n"
+        for gifFile in self.outdir.glob("*.gif"):
+            fileStr += "                <file href=\""+gifFile.basename()+"\"/>\n"
                     
         self.resStr += fileStr
         self.resStr += "            </resource>\n"
