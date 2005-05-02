@@ -35,9 +35,11 @@
               <menupopup id="file-popup">
                 <menuitem label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
                 <menuitem label="Open" key="file-open-key" accesskey="o" oncommand="fileOpen()"/>
-                <menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
+       		<menuseparator/>         
+		<menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
                 <menuitem label="Save As" accesskey="a" oncommand="fileSaveAs()"/>
-                <menu id="export-menu" label="Export" accesskey="e">
+                <menuseparator/> 
+	        <menu id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
                     <menuitem label="Scorm Package" accesskey="s" oncommand="exportPackage('scormMeta')"/>
                     <menuitem label="Scorm Package (no metadata)" accesskey="c" oncommand="exportPackage('scormNoMeta')"/>

@@ -31,6 +31,7 @@ from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
+from exe.engine.path        import path
 from exe.export.manifest    import Manifest
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -77,9 +78,9 @@ class ScormPage(object):
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"APIWrapper.js\"></script>\n" 
         html += "</head>\n"
-        html += "<body onLoad=\"doLMSInitialize();\" "
-        html += "onunLoad=\"doLMSFinish();\" "
-        html += "onbeforeunload=\"doLMSFinish();\">\n"
+        html += "<body onLoad=\"loadPage();\" "
+        html += "onunLoad=\"doContinue('completed'); return unloadPage();\" "
+        html += "onbeforeunload=\"unloadPage();\">\n"
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
@@ -127,7 +128,9 @@ class ScormExport(object):
             if os.path.basename(styleFile) != "nav.css":
                 shutil.copyfile(styleFile, os.path.basename(styleFile))
 
-        shutil.copyfile(webDir + "/scripts/APIWrapper.js", "APIWrapper.js")
+	webDir = path(webDir)
+	webDir.joinpath('scripts/APIWrapper.js').copy('.')
+	webDir.joinpath('scripts/SCOFunctions.js').copy('.')
         self.exportNode(package.root)
         
         manifest = Manifest(self.config, package, addMetadata)
