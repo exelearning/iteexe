@@ -76,10 +76,10 @@ class CasestudyBlock(Block):
         self.story = self.story.replace("\r", "")
         self.story = self.story.replace("\n","\\n")
         self.story = self.story.replace("'","\\'")
-        html  = "<b>" + _("Story:") + " </b>" 
+        html  = "<div class=\"iDevice\">\n"
+        html += "<b>" + _("Story:") + " </b>" 
         html += common.elementInstruc("story"+self.id, self.storyInstruc)
         html += common.richTextArea("story"+self.id, self.story)
-        html += "<div class=\"iDevice\">\n"
         html += "<table width =\"100%%\">\n"
         
         for element in self.questionElements:
