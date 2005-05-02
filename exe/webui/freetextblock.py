@@ -80,7 +80,8 @@ _("""This is a free text field general learning content can be entered."""))
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div>\n"
+        html  = "<div "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentField.renderView(self.idevice.content)
         html += self.renderViewButtons()
         html += "</div>\n"

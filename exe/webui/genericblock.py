@@ -61,7 +61,7 @@ class GenericBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = "<div>\n"
+        html  = "<div ondblclick=submitLink('edit',9, 0);>\n"
         for element in self.elements:
             html += element.renderEdit(self.idevice[element.name])
 
@@ -75,7 +75,13 @@ class GenericBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = "<div class=\"iDevice\">\n"
-        html += "<img class=\"iDevice_icon\" src=\"generic.gif\" />\n"
+        if self.idevice.class_ in ("objectives", "activity", 
+                                   "reading", "preknowledge"):
+            html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/"
+            html += self.idevice.class_+".gif\" />\n"
+        else:
+            html += "<img class=\"iDevice_icon\" "
+            html += "src=\"/style/"+style+"/generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
         html += self.idevice.title+"</span>\n"
         html += self.__renderContent()
@@ -87,7 +93,8 @@ class GenericBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         if self.idevice.class_ in ("objectives", "activity", 
                                    "reading", "preknowledge"):
             html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/"

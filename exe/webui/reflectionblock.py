@@ -87,7 +87,7 @@ class ReflectionBlock(Block):
         """
         html  = "<div class=\"iDevice\">\n"
         html += "<img class=\"iDevice_icon\" "
-	html += "src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "src=\"/style/"+style+"/reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlock()
@@ -99,9 +99,10 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += "<img class=\"iDevice_icon\" "
-	html += "src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "src=\"/style/"+style+"/reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlock()
