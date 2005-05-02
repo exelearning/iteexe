@@ -87,7 +87,6 @@ class AuthoringPage(RenderableResource):
         self.__addBlocks(topNode)
         html = self.__renderHeader()
         html += common.banner(request)
-        html += "<pre>"+repr(request.args)+"</pre>"
         html += "<!-- start authoring page -->\n"
         html += "<div id=\"authoring_page\">\n"
 
