@@ -77,7 +77,7 @@ class IdevicePane(Renderable):
         
     def render(self, ctx, data):
         """
-        Returns an XUL string for viewing this pane
+        Returns an html string for viewing this pane
         """
         # Create a scecial server side func that the 
         # Idevice editor js can call
@@ -90,18 +90,18 @@ class IdevicePane(Renderable):
         # Now do the rendering
         log.debug("Render")
 
-        xul  = "<!-- IDevice Pane Start -->\n"
-        xul += "<listbox id=\"ideviceList\" flex=\"1\" "
-        xul += "style=\"background-color: #DFDFDF;\">\n"
+        html  = "<!-- IDevice Pane Start -->\n"
+        html += "<listbox id=\"ideviceList\" flex=\"1\" "
+        html += "style=\"background-color: #DFDFDF;\">\n"
 
         prototypes = self.prototypes.values()
         prototypes.sort(lambda x, y: cmp(x.title, y.title))
         for prototype in prototypes:
-            xul += self.__renderPrototype(prototype)
+            html += self.__renderPrototype(prototype)
 
-        xul += "</listbox>\n"
-        xul += "<!-- IDevice Pane End -->\n"
-        return stan.xml(xul)
+        html += "</listbox>\n"
+        html += "<!-- IDevice Pane End -->\n"
+        return stan.xml(html)
 
 
     def __renderPrototype(self, prototype):
