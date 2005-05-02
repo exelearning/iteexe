@@ -81,11 +81,41 @@ class ReflectionBlock(Block):
         return html
 
 
-    def renderPage(self):
+    def renderView(self, style):
+        """
+        Returns an XHTML string for viewing this block
+        """
+        html  = "<div class=\"iDevice\">\n"
+        html += "<img class=\"iDevice_icon\" "
+	html += "src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</span>\n"
+        html += self.renderBlock()
+        html += "</div>\n"
+        return html
+
+
+    def renderPreview(self, style):
+        """
+        Returns an XHTML string for previewing this block
+        """
+        html  = "<div class=\"iDevice\">\n"
+        html += "<img class=\"iDevice_icon\" "
+	html += "src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</span>\n"
+        html += self.renderBlock()
+        html += self.renderViewButtons()
+        html += "</div>\n"
+        return html
+
+
+    def renderBlock(self):
         """
         Returns an XHTML string for this block
         """
-        html  = "<script type=\"text/javascript\">\n"
+        html  = "<div class=\"iDevice_inner\">\n"
+        html += "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
             function showAnswer(id,isShow){
@@ -115,36 +145,8 @@ class ReflectionBlock(Block):
         html += 'display: none;">'
         html += self.answer
         html += "</div>\n"
+        html += "</div>\n"
         return html
     
-
-    def renderView(self, style):
-        """
-        Returns an XHTML string for viewing this block
-        """
-        html  = "<div class=\"iDevice\">\n"
-        html += "<img class=\"iDevice_icon\" "
-	html += "src=\"/style/"+style+"/reflection.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
-        html += self.renderPage()
-        html += "</div>\n"
-        return html
-
-
-    def renderPreview(self, style):
-        """
-        Returns an XHTML string for previewing this block
-        """
-        html  = "<div class=\"iDevice\">\n"
-        html += "<img class=\"iDevice_icon\" "
-	html += "src=\"/style/"+style+"/reflection.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
-        html += self.renderPage()
-        html += self.renderViewButtons()
-        html += "</div>\n"
-        return html
-
 
 # ===========================================================================

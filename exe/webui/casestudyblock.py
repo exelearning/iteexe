@@ -102,7 +102,9 @@ class CasestudyBlock(Block):
 	html += "src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
+        html += "<div class=\"iDevice_inner\">\n"
         html += self.renderBlockView()    
+        html += "</div>\n" 
         html += "</div>\n"
         return html
     
@@ -116,7 +118,9 @@ class CasestudyBlock(Block):
 	html += "src=\"/style/"+style+"/casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
+        html += "<div class=\"iDevice_inner\">\n"
         html += self.renderBlockView()      
+        html += "</div>\n" 
         html += self.renderViewButtons()
         html += "</div>\n"
         return html

@@ -77,10 +77,10 @@ class MultichoiceBlock(Block):
         self.question = self.question.replace("\r", "")
         self.question = self.question.replace("\n","\\n")
         self.question = self.question.replace("'","\\'")
-        html  = "<b>" + _("Question:") + " </b>"   
+        html  = "<div class=\"iDevice\">\n"
+        html += "<b>" + _("Question:") + " </b>"   
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)
-        html += "<div class=\"iDevice\">\n"
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
@@ -99,6 +99,7 @@ class MultichoiceBlock(Block):
         html += common.submitButton("addOption"+str(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
+
         return html
 
     
@@ -113,6 +114,7 @@ class MultichoiceBlock(Block):
         html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()    
         html += "</div>\n"
+
         return html
     
 
@@ -128,6 +130,7 @@ class MultichoiceBlock(Block):
         html += self.renderBlockView()      
         html += self.renderViewButtons()
         html += "</div>\n"
+
         return html
 
 
@@ -135,7 +138,8 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = "<script type=\"text/javascript\">\n"
+        html  = "<div class=\"iDevice_inner\">\n"
+        html += "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
         function getFeedback(optionId, optionsNum, ideviceId) {
@@ -158,7 +162,8 @@ class MultichoiceBlock(Block):
             
         for element in self.optionElements:
             html += element.renderFeedbackView()
-            
+        html += "</div>\n"    
+
         return html
 
 # ===========================================================================

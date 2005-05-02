@@ -36,12 +36,14 @@ p#nodeTitle {
 .iDevice {
     background-color: #FFF;
     padding-left: 10px;
-    border: 1px solid #DDD;
+    border-top: 1px solid #DDD;
     margin: 10px;
 }
 
-.iDevice p {
-	padding-left: 24px;
+.iDevice_inner {
+	margin-left: 55px;
+	margin-right: 12px;
+	border-bottom: 1px solid #DDD;
 }
 
 .iDeviceTitle {

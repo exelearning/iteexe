@@ -93,7 +93,8 @@ class GenericBlock(Block):
             html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/"
             html += self.idevice.class_+".gif\" />\n"
         else:
-            html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/generic.gif\" />\n"
+            html += "<img class=\"iDevice_icon\" "
+            html += "src=\"/style/"+style+"/generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
         html += self.idevice.title+"</span>\n"
         html += self.__renderContent()
@@ -106,9 +107,10 @@ class GenericBlock(Block):
         """
         Common rendering function for both view and preview modes
         """
-        html  = ""
+        html  = "<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderView(self.idevice[element.name])
+        html += "</div>\n"
         return html
 
 # ===========================================================================

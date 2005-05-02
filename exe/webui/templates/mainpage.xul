@@ -91,6 +91,7 @@
             <!-- end iDevices -->
            </vbox>
 
+
             <!-- end outline vbox-->
 
             <splitter collapse="none"><grippy/></splitter>
