@@ -128,9 +128,9 @@ class ScormExport(object):
             if os.path.basename(styleFile) != "nav.css":
                 shutil.copyfile(styleFile, os.path.basename(styleFile))
 
-	webDir = path(webDir)
-	webDir.joinpath('scripts/APIWrapper.js').copy('.')
-	webDir.joinpath('scripts/SCOFunctions.js').copy('.')
+        webDir = path(webDir)
+        webDir.joinpath('scripts/APIWrapper.js').copy('.')
+        webDir.joinpath('scripts/SCOFunctions.js').copy('.')
         self.exportNode(package.root)
         
         manifest = Manifest(self.config, package, addMetadata)
