@@ -24,6 +24,7 @@ from exe.webui                  import common
 from os                         import mkdir
 from os.path                    import exists, splitext, basename, join, sep
 from  shutil                    import copyfile
+import re
 
 log = logging.getLogger(__name__)
 
@@ -64,7 +65,7 @@ class Element(object):
         self.name     = name
         self.class_   = class_
         self.blockId  = blockId
-        self.id       = name+class_+blockId
+        self.id       = re.sub(r"\W","",name)+class_+blockId
         self.instruc  = instruc
 
     def process(self, request):
