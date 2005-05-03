@@ -61,19 +61,18 @@ class Block(object):
         """
         log.debug("process id="+self.id)
         
-        if "action" in request.args:
-            if request.args["action"][0] == "PreviewAll":
-                self.processDone(request)
+        #if "action" in request.args:
+            #if request.args["action"][0] == "PreviewAll":
+                #self.processDone(request)
 
-            elif request.args["action"][0] == "EditAll":
-                self.processEdit(request)
+            #elif request.args["action"][0] == "EditAll":
+                #self.processEdit(request)
             
         if "object" in request.args and request.args["object"][0] == self.id:
             self.package.isChanged = 1
             if request.args["action"][0] == "done":               
                 self.processDone(request)
                 
-
             elif request.args["action"][0] == "edit":
                 self.processEdit(request)
               
@@ -94,7 +93,9 @@ class Block(object):
                 
             elif request.args["action"][0] == "demote":
                 self.processDemote(request)
-                
+        
+        else:
+            self.processDone(request)
 
 
     def processDone(self, request):

@@ -60,7 +60,7 @@ def header(style='default'):
 def banner(request): 
     """Generates the common page banner XHTML"""
     html  = "<body>\n"
-    html += "<form method=\"post\" action=\""+request.path+"\""
+    html += "<form method=\"post\" action=\""+request.path+"/#currentBlock\""
     html += " id=\"contentForm\" name=\"contentForm\""
     html += " onload=\"clearHidden();\">\n"
     html += hiddenField("action")
