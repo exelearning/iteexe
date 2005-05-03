@@ -24,6 +24,7 @@ This is the main XUL page.
 import logging
 import gettext
 import os
+from urllib                   import pathname2url
 from twisted.web.resource     import Resource
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, LivePage, js
@@ -233,6 +234,15 @@ class MainPage(RenderableLivePage):
             # and we just overwrite what's already there
             websiteExport = WebsiteExport(stylesDir, filename)
             websiteExport.export(self.package)
+            filename = os.path.join(filename, 'index.html')
+            # Show the newly exported web site in a new window
+            if hasattr(os, 'startfile'):
+                os.startfile(filename)
+            else:
+                os.spawnv(os.P_NOWAIT, 
+                          self.config.browserPath, 
+                          (os.path.basename(self.config.browserPath), filename,))
+
         else:
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 
@@ -245,5 +255,9 @@ class MainPage(RenderableLivePage):
                     scormExport.export(self.package, True)
                 elif exportType == 'scormNoMeta':
                     scormExport.export(self.package, False)
+                    client.alert('Exported to %s' % filename)
                 else:
                     log.error('Wrong exportType passed to handleExport: %s' % exportType)
+                import pdb
+                pdb.set_trace()
+                client.alert('Exported to %s' % filename)
