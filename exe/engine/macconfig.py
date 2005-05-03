@@ -22,6 +22,7 @@ The MacConfig overrides the Config class with Mac specific
 configuration
 """
 
+import os
 from exe.engine.config import Config
 import logging
 
@@ -35,15 +36,16 @@ class MacConfig(Config):
         """
         Initialize 
         """
-        Config.__init__(self)
+        Config.__init__(self, configFile)
 
+        self.webDir  = "/usr/share/exe"
         self.dataDir = os.environ["HOME"]
                 
         # TODO: get appDataDir from
         # or $HOME\.exe on Mac
         self.appDataDir = self.dataDir
 
-        self.browserDir = "/Applications/Firefox.app/Contents/MacOS/firefox"
+        self.browserPath = "/Applications/Firefox.app/Contents/MacOS/firefox"
 
 
 # ===========================================================================
