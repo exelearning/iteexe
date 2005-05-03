@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>Keith Devens - Weblog: Changing program data locations - April 19, 2005</title>
+		<link rel="stylesheet" type="text/css" href="/include_main.css" />
+<meta name="keywords" content="Keith, Devens, Keith Devens, programming, weblog, blog" /><meta name="description" content="The web site of Keith Devens" /><link rel="alternate" type="application/rss+xml" title="RSS" href="/weblog/rss" /><link rel="SHORTCUT ICON" href="/favicon.ico" /><link rel="home" title="Weblog home" href="/weblog" /><link rel="prev" title="Restore properties for My Documents folder" href="/weblog/archive/2005/Apr/18/mydocs.properties" /><link rel="next" title="TextDrive Weblog: The decommissioning of one, barclay, bidwell and haro" href="/weblog/archive/2005/Apr/19/TxD.news" /><link rel="alternate" type="application/rss+xml" title="RSS" href="/weblog/archive/2005/Apr/19/program-data-locations/rss" /><link rel="stylesheet" type="text/css" href="/include_weblog.css" /><style type="text/css">
+.asides li{list-style-type: hebrew}
+.comment-form-fields input{width: 170px;}
+</style></head>
+<body>
+<table class="header no-print" cellspacing="0" cellpadding="0" style="height: 48px">
+	<tr class="header-top">
+		<td rowspan="2">
+			<a href="/"><img src="/images/kbd.gif" alt="KBD" /></a>
+			<h1 style="font-weight: normal; display: inline; margin-left: 7px; color: white; font-size: 25pt; vertical-align: top">Keith Devens .com</h1>
+		</td>
+		<td style="text-align: right; vertical-align: top; color: white; font-weight: bold">Thursday, April 28, 2005</td>
+		<td rowspan="2" align="right"><img src="/images/us_flag_waving.gif" alt="Flag waving" /></td>
+	</tr>
+	<tr class="header-top"><td align="right" valign="bottom" class="small"></td></tr>
+	<tr><td class="layout-separator" colspan="3"></td></tr>
+	<tr class="header-bottom"><td colspan="3"><ul class="tab-navigation"><li><a href="/weblog" title="Keith Devens .com Weblog" class="active">Weblog</a></li><li><a href="/wiki" title="Wiki">Wiki</a></li><li><a href="/about" title="About me">About</a></li><li><a href="/software" title="Software I've written">Software</a></li><li><a href="/programming" title="Programming Resources">Programming</a></li><li><a href="/downloads" title="Useful Downloads and Software">Downloads</a></li><li><a href="/links" title="Miscellaneous Links">Links</a></li><li><a href="/Christianity" title="Christian Resources">Christianity</a></li><li><a href="/pictures" title="Pictures!">Pictures</a></li><li><a href="/mail" title="E-mail me!">E-mail me</a></li><li><a href="/admin" title="Website administration">Admin</a></li></ul></td></tr>
+	<tr class="layout-separator"><td colspan="3"></td></tr>
+</table>
+
+<table class="content-main" cellpadding="0" cellspacing="0">
+<tr valign="top">
+	<td class="content-middle">
+	<div class="breadcrumbs">
+<a href="/weblog">Home</a> &raquo;
+<a href="/weblog/archive">Archive</a> &raquo;
+<a href="/weblog/archive/2005">2005</a> &raquo;
+<a href="/weblog/archive/2005/Apr">April</a> &raquo;
+<a href="/weblog/archive/2005/Apr/19">19</a> &raquo;
+Changing program data locations</div>	<table class="prevnext"><tr><td style="text-align: left">&larr;&nbsp;<a href="/weblog/archive/2005/Apr/18/mydocs.properties">Restore properties for My Documents folder</a></td><td style="text-align: right"><a href="/weblog/archive/2005/Apr/19/TxD.news">TextDrive Weblog: The decommissioning of one, barclay, bidwell and haro</a>&nbsp;&rarr;</td></tr></table>
+		<h2 id="day19" class="weblog"><a class="weblog" title="permanent link for April 19, 2005" href="/weblog/archive/2005/Apr/19">
+		<img alt="Daily link icon" src="/images/dailyLinkIcon.gif" />
+		Tuesday, April 19, 2005</a></h2>
+			<div id="id6854" class="weblog-entry">
+				<h3 class="weblog"><a href="/weblog/archive/2005/Apr/19/program-data-locations">Changing program data locations</a></h3>
+						<ul class="st-markup">
+	<li><a href="http://kb.mozillazine.org/Profile_folder#Thunderbird">Thunderbird</a>: C:\Documents and Settings\user\Application Data\Thunderbird\ and change the Path location in profile.ini, and every path contained in prefs.js (or user.js?) in your profile directory to match</li>
+	<li><a href="http://www.palmpower.com/issuesprint/issue199906/sharesync.html">Palm Desktop</a>: //HKEY_CURRENT_USER/Software/U.S. Robotics/Pilot Desktop/Core</li>
+	<li>Trillian: Preferences-&gt;Activity History-&gt;Save History to...</li>
+	<li><a href="http://kb.mozillazine.org/Profile_folder#Firefox">Firefox</a>: Stored in C:\Documents and Settings\user\Application Data\Mozilla\Firefox\, but practically the only thing worth moving is your bookmarks. You can specify the location of your bookmarks by setting 'browser.bookmarks.file' to the location of your bookmarks file in about:config (<strong>update</strong>: tried this and it didn't work. I may just wind up making Linux use a symbolic link to the bookmarks file). I tried moving the whole folder, but there are so many places you have to change the paths to extensions that I didn't get them all and the browser would freeze on startup. It would be nice to be able to share cache, cookies, and saved passwords between Linux and Windows, but it seems that's more trouble than it's worth. Firefox doesn't use relative paths in enough places (with extensions in particular). Though, extensions are often platform-specific, so it's not possible to share those anyway. Also see <a href="http://kb.mozillazine.org/Roaming_profile">http://kb.mozillazine.org/Roaming_profile</a>.</li>
+	<li>K9: Go to <a href="http://keir.net/k9_statistics.html">the statistics tab</a> and click &quot;Change data storage location&quot;.</li>
+</ul>
+
+<p class="st-markup">The goal of all this is to have as much as possible shared between my Linux install and my Windows install. Unfortunately, since I use K9 on Windows, I connect to my mail servers through <kbd>localhost</kbd>, but on Linux I obviously don't have it set up that way, and included in the profile I'm sharing is the connection info. So if I change it to match my Linux install it won't work on Windows, and vice versa. Argh. But since <a href="http://textdrive.com/">TextDrive</a> is about to role out service-wide server-size Bayesian spam filtering with <a href="http://www.nuclearelephant.com/projects/dspam/">DSPAM</a>, I won't need my local K9 anymore, so I'll switch things to use my POP server directly.</p>
+
+		<div class="weblog-entry-footer">
+			<div class="weblog-links">
+				<a rel="bookmark" href="/weblog/archive/2005/Apr/19/program-data-locations" title="permanent link for entry #6854">
+				<img alt="Chain link icon" src="/images/chain_link.gif" /> Permalink</a> | <a href="/weblog/archive/2005/Apr/19/program-data-locations#comments">1 Comment</a>  | id 6854			</div>
+			<div class="weblog-time">00:30				<span style="font-size: smaller">(utc-4)</span>
+				<br />edited: 17:43 <span style="font-size: smaller">(utc-4)</span>			</div>
+			&nbsp;
+		</div>
+	</div><h3 id="comments" class="no-print">Comments <a href="/weblog/archive/2005/Apr/19/program-data-locations/rss" rel="nofollow" title="RSS feed for this entry's comments"><img src="/images/xml.gif" alt="XML gif" /></a></h3>
+
+<p class="weblog-comment-name">Breyten <span style="font-size: smaller">(<a href="http://bje.nu/">http://bje.nu/</a>)</span> wrote:</p>
+	<div class="weblog-comment" id="comment7500">
+		<p class="st-markup">You can also just use <a href="http://johnhaller.com/jh/mozilla/portable_firefox/">Portable Firefox</a> or <a href="http://johnhaller.com/jh/mozilla/portable_thunderbird/">Portable Thunberbird</a></p>
+
+	</div>
+	<div class="weblog-comment-info">
+		&there4; Breyten | 19-Apr-2005 10:17am est | <a href="http://bje.nu/">http://bje.nu/</a> | <a href="/weblog/archive/2005/Apr/19/program-data-locations#comment7500" title="Permalink to this comment">#7500</a>	</div>		<div class="weblog-comment-form no-print">
+		<hr />
+		<p>Feel free to post a comment below. Please see <a href="/weblog/archive/2004/Oct/23/comment-policy">my comment policy</a>.</p>
+
+		<p style="margin: 0"><strong>Rules:</strong></p>
+		<ul class="flat-list" style="margin-bottom: 1em">
+			<li><strong style="color: maroon; font-weight: bold">No HTML Allowed</strong></li>
+			<li>Formatting: <kbd>**</kbd><strong>bold</strong><kbd>**</kbd>, <kbd>*</kbd><em>italic</em><kbd>*</kbd>, <kbd style="font-weight: bold">_</kbd><span style="text-decoration: underline">underlined</span><kbd style="font-weight: bold">_</kbd>, <kbd>--</kbd><span style="text-decoration: line-through">strikeout</span><kbd>--</kbd> (and they can be combined)</li>
+			<li>Links: <kbd>"</kbd>text<kbd>"="</kbd>url<kbd>"</kbd> means &lt;a href="url"&gt;text&lt;/a&gt;, though URLs are auto-highlighted</li>
+			<li>Blockquote: begin your paragraph with a <kbd>></kbd> (greater-than sign)</li>
+			<li>Lists: paragraphs begin with <kbd>*</kbd>,<kbd>-</kbd>, or <kbd>+</kbd> (unordered), or <kbd>#</kbd> (ordered)</li>
+			<li>Code block: <kbd>?!code:language=perl|php|sql|javascript|etc.</kbd>{newline}...{newline}<kbd>?!/code</kbd></li>
+		</ul>
+		<hr />
+		</div>
+		<a id="newcomment" />		<form method="post" id="weblog_postcomment" action="#newcomment" class="Formation weblog-comment-form no-print">
+			
+		<table><tr class="comment-form-fields">
+			<td><label for="name_id" >Name</label>: <br />(will be your <strong style="text-decoration: underline">IP address</strong> if blank)<br /><input type="text" name="name" id="name_id" size="35" value="" /></td>
+			<td><label for="email_id" >E-mail</label>: (optional)<br />(Will <strong style="text-decoration: underline">not</strong> be shown on site<!--,<br />but is necessary to subscribe-->)<br /><input type="text" name="email" id="email_id" size="35" value="" /></td>
+			<td><br /><label for="website_id" >Website</label>: (optional)<br /><input type="text" name="website" id="website_id" size="35" value="" /></td>
+		</tr>
+		<tr><td colspan="3"><label for="comment_id" >Comment</label>: <br /><textarea name="comment" id="comment_id"  rows="15" cols="64"></textarea></td></tr><tr><td colspan="3">			<input type="submit" name="submit" value="PREVIEW comment" />
+					<input type="submit" name="submit" value="POST comment" />
+					</td></tr></table>
+				<p>		<input type="hidden" name="action" value="weblog_postcomment" />
+			<input type="hidden" name="id" value="6854" /></p>
+		</form>
+	</td>
+	<td class="content-right no-print">
+	<div style="width: 15em; overflow: hidden">
+<table class="calendar">
+<caption class="calendar-month"><a href="/weblog/archive/2005/Apr">April&nbsp;2005</a></caption>
+<tr><th abbr="Sunday">Sun</th><th abbr="Monday">Mon</th><th abbr="Tuesday">Tue</th><th abbr="Wednesday">Wed</th><th abbr="Thursday">Thu</th><th abbr="Friday">Fri</th><th abbr="Saturday">Sat</th></tr>
+<tr><td colspan="5">&nbsp;</td><td class="linked-day"><a href="/weblog/archive/2005/Apr/01">1</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/02">2</a></td></tr>
+<tr><td>3</td><td class="linked-day"><a href="/weblog/archive/2005/Apr/04">4</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/05">5</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/06">6</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/07">7</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/08">8</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/09">9</a></td></tr>
+<tr><td class="linked-day"><a href="/weblog/archive/2005/Apr/10">10</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/11">11</a></td><td>12</td><td class="linked-day"><a href="/weblog/archive/2005/Apr/13">13</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/14">14</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/15">15</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/16">16</a></td></tr>
+<tr><td class="linked-day"><a href="/weblog/archive/2005/Apr/17">17</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/18">18</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/19">19</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/20">20</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/21">21</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/22">22</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/23">23</a></td></tr>
+<tr><td class="linked-day"><a href="/weblog/archive/2005/Apr/24">24</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/25">25</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/26">26</a></td><td class="linked-day"><a href="/weblog/archive/2005/Apr/27">27</a></td><td>28</td><td>29</td><td>30</td></tr>
+</table>
+
+<form method="get" class="weblog-search-form" action="/weblog"><p>
+<input type="text" name="search" value="" /><br />
+<input type="submit" value="Search weblog" /><br />
+</p></form>
+
+<p>
+		<a title="RSS feed for Keith's Weblog" href="/weblog/rss">RSS feed <img alt="RSS feed for Keith's Weblog" src="/images/xml.gif" /></a><br />
+	<a href="/weblog/archive">Weblog archive</a><br />
+			<a href="#recent-comments">Recent comments</a><br />
+		&nbsp;&nbsp;on 15 posts<br />
+		<a href="#blogroll">Blogroll</a>
+</p>
+
+<h2 style="margin-bottom: 0">Countdowns</h2>
+
+<ol style="list-style-type: none; margin-left: 0; padding-left: .2em; margin-top: 0; font-size: smaller">
+<li>4 days until classes end</li>
+<li>13 days until finals end</li>
+<li>155 days until <a href="http://www.serenitymovie.com/">Serenity</a> opens</li>
+</ol>
+
+<h2 id="must-reads" style="margin-bottom: 0">Must-read sites</h2>
+
+<ul style="list-style-type: none; margin-left: 0; padding-left: .2em; margin-top: 0; font-size: smaller">
+	<li><a href="http://littlegreenfootballs.com/weblog/">Little Green Footballs</a></li>
+	<li><a href="http://instapundit.com/">InstaPundit.com</a></li>
+	<li><a href="http://belmontclub.blogspot.com/">Belmont Club</a></li>
+	<li><a href="http://polipundit.com/">PoliPundit</a></li>
+	<li><a href="http://powerlineblog.com/">Power Line</a></li>
+	<li><a href="http://rogerlsimon.com/">Roger Simon</a></li>
+	<li><a href="http://drudgereport.com/">Drudge Report</a></li>
+</ul>
+
+
+
+<h2 id="recent-comments"><a href="/weblog/comments">Recent comments</a> <a href="/weblog/comments/rss"><img src="/images/xml.gif" alt="XML" /></a></h2>
+
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2003/Aug/13/HATE-PHP">I hate PHP</a></p>
+		<p class="comment-body">I&nbsp;hate&nbsp;PHP.&nbsp;PHP​sucks.<br />
+<br />
+Unfortunately&nbsp;there's&nbsp;no​entirely&nbsp;feasible&nbsp;altern...</p>
+		<p class="comment-date"><strong><a href="http://dev.gauldong.net/">Hendy Irawan</a></strong>:
+			<a href="/weblog/archive/2003/Aug/13/HATE-PHP#comment7554">Apr 27, 7:33pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2003/Apr/25/HatePHP-Cookies">Aaaaargh.... I hate PHP, yet again</a></p>
+		<p class="comment-body">I&nbsp;can't&nbsp;agree&nbsp;more.&nbsp;PHP&nbsp;sucks.&nbsp;And​I&nbsp;hate&nbsp;it.<br />
+<br />
+Actually&nbsp;I&nbsp;don't​particula...</p>
+		<p class="comment-date"><strong><a href="http://dev.gauldong.net/">Hendy Irawan</a></strong>:
+			<a href="/weblog/archive/2003/Apr/25/HatePHP-Cookies#comment7553">Apr 27, 7:33pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2004/Jul/28/Times.PHP.MySQL">How to handle international dates and times in PHP and MySQL</a></p>
+		<p class="comment-body">&gt;&nbsp;Does&nbsp;this&nbsp;provide&nbsp;a&nbsp;different​offset&nbsp;depending&nbsp;on&nbsp;whether​Daylight&nbsp;Saving...</p>
+		<p class="comment-date"><strong><a href="http://keithdevens.com/" style="color: #600">Keith</a></strong>:
+			<a href="/weblog/archive/2004/Jul/28/Times.PHP.MySQL#comment7552">Apr 27, 5:53pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2005/Apr/20/Ubuntu.proggy-fonts">Proggy fonts on Ubuntu :(</a></p>
+		<p class="comment-body">Ah,&nbsp;but&nbsp;you&nbsp;have&nbsp;never&nbsp;experienced​decent&nbsp;antialiasing.&nbsp;Freetype&nbsp;makes​a&nbsp;co...</p>
+		<p class="comment-date"><strong><a href="http://talideon.com/">Keith Gaughan</a></strong>:
+			<a href="/weblog/archive/2005/Apr/20/Ubuntu.proggy-fonts#comment7551">Apr 27, 5:43pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2003/Sep/22/User-mode-Linux">User-mode Linux</a></p>
+		<p class="comment-body">I&nbsp;am&nbsp;very&nbsp;unhappy&nbsp;with&nbsp;Redwood​Virtual.&nbsp;&nbsp;It&nbsp;has&nbsp;been&nbsp;4&nbsp;days&nbsp;since​I&nbsp;signed&nbsp;...</p>
+		<p class="comment-date"><strong>SKaReCRoW</strong>:
+			<a href="/weblog/archive/2003/Sep/22/User-mode-Linux#comment7549">Apr 27, 4:07pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2005/Apr/27/Fortress-language">The Fortress Language Spec, from Sun</a></p>
+		<p class="comment-body">Hahaha....</p>
+		<p class="comment-date"><strong><a href="http://keithdevens.com/" style="color: #600">Keith</a></strong>:
+			<a href="/weblog/archive/2005/Apr/27/Fortress-language#comment7547">Apr 27, 9:38am</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2005/Apr/26/Serenity.trailer.available">WHEDONesque: Serenity Trailer Now Online!</a></p>
+		<p class="comment-body">I'll&nbsp;probably&nbsp;still&nbsp;go&nbsp;see&nbsp;it.​Maybe&nbsp;I'll&nbsp;wait&nbsp;for&nbsp;rental.<br />
+<br />
+I​did&nbsp;sit&nbsp;thr...</p>
+		<p class="comment-date"><strong>M. Bean</strong>:
+			<a href="/weblog/archive/2005/Apr/26/Serenity.trailer.available#comment7545">Apr 27, 2:29am</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><span class="new-comment-marker">new&rArr;<!-- &#x261E; right-pointing finger--></span><a href="/weblog/archive/2003/Mar/21/MapsOfIraq">Maps of Iraq</a></p>
+		<p class="comment-body">Hi&nbsp;Shelley,<br />
+My&nbsp;husband&nbsp;is&nbsp;in​Scania&nbsp;too.&nbsp;He&nbsp;is&nbsp;also&nbsp;working&nbsp;on​the&nbsp;compute...</p>
+		<p class="comment-date"><strong>Kassie</strong>:
+			<a href="/weblog/archive/2003/Mar/21/MapsOfIraq#comment7544">Apr 27, 1:35am</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2005/Apr/26/Aardvark.Firefox-ext">Aardvark Firefox Extension</a></p>
+		<p class="comment-body">You&nbsp;can&nbsp;already&nbsp;do&nbsp;this&nbsp;with&nbsp;a​powerful&nbsp;extension&nbsp;called​'ColorZilla'&nbsp;&nbsp;It&nbsp;w...</p>
+		<p class="comment-date"><strong><a href="http://r4nt.com">David</a></strong>:
+			<a href="/weblog/archive/2005/Apr/26/Aardvark.Firefox-ext#comment7541">Apr 26, 10:35am</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2002/May/21/HateNortonAntivirus">I hate Norton Antivirus</a></p>
+		<p class="comment-body">I&nbsp;have&nbsp;received&nbsp;three&nbsp;times&nbsp;as&nbsp;much​SPAM&nbsp;since&nbsp;installing&nbsp;this​anti-crap,&nbsp;N...</p>
+		<p class="comment-date"><strong>Marty Dowell</strong>:
+			<a href="/weblog/archive/2002/May/21/HateNortonAntivirus#comment7539">Apr 25, 9:41pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2005/Apr/02/Carrie-Underwood">Carrie Underwood rules</a></p>
+		<p class="comment-body">You&nbsp;get&nbsp;some&nbsp;weird&nbsp;commentors,​Keith.<br />
+<br />
+As&nbsp;for&nbsp;Carrie,&nbsp;I&nbsp;don't​really&nbsp;care...</p>
+		<p class="comment-date"><strong>M. Bean</strong>:
+			<a href="/weblog/archive/2005/Apr/02/Carrie-Underwood#comment7538">Apr 25, 7:15pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2005/Apr/16/triclosan">Toothpaste cancer alert</a></p>
+		<p class="comment-body">It's&nbsp;not&nbsp;sensationalism...and&nbsp;it's​not&nbsp;the&nbsp;fact&nbsp;that&nbsp;it&nbsp;might&nbsp;be&nbsp;only​a&nbsp;sma...</p>
+		<p class="comment-date"><strong><a href="http://www.terrigilchrist.us">Terri Gilchrist</a></strong>:
+			<a href="/weblog/archive/2005/Apr/16/triclosan#comment7532">Apr 25, 10:44am</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2005/Apr/24/SVN.book">Version Control with Subversion (free book)</a></p>
+		<p class="comment-body">You&nbsp;may&nbsp;be&nbsp;interested&nbsp;in&nbsp;this&nbsp;post​by&nbsp;Bram​Cohen:<br />
+http://www.livejournal.c...</p>
+		<p class="comment-date"><strong><a href="http://keithdevens.com/" style="color: #600">Keith</a></strong>:
+			<a href="/weblog/archive/2005/Apr/24/SVN.book#comment7529">Apr 25, 2:31am</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2003/Nov/26/SuperMarioBrothers3">Super Mario Brothers 3... in 11 minutes</a></p>
+		<p class="comment-body">Some&nbsp;of&nbsp;the&nbsp;movie&nbsp;may&nbsp;be&nbsp;fake,&nbsp;but​I&nbsp;beleive&nbsp;that&nbsp;a&nbsp;lot&nbsp;of&nbsp;it&nbsp;isn't.​me&nbsp;and...</p>
+		<p class="comment-date"><strong>Smobo</strong>:
+			<a href="/weblog/archive/2003/Nov/26/SuperMarioBrothers3#comment7526">Apr 24, 9:26pm</a>
+		</p>
+	</div>
+	<div class="weblog-recent-comment">
+		<p class="entry-title"><a href="/weblog/archive/2005/Apr/22/Procmail.blacklist">How to create a procmail spam blacklist</a></p>
+		<p class="comment-body">Thanks&nbsp;for&nbsp;the&nbsp;info&nbsp;about​Mailfilter,&nbsp;since&nbsp;I&nbsp;hadn't&nbsp;heard&nbsp;of​it&nbsp;before.&nbsp;Bu...</p>
+		<p class="comment-date"><strong><a href="http://keithdevens.com/" style="color: #600">Keith</a></strong>:
+			<a href="/weblog/archive/2005/Apr/22/Procmail.blacklist#comment7523">Apr 23, 11:24pm</a>
+		</p>
+	</div>
+		<h2 id="blogroll">Blogroll</h2>
+		<p style="margin-top: -1em">powered by <a href="http://blo.gs/">blo.gs</a></p>
+					<a href="http://zephyrfalcon.org/weblog2/">Efectos Especiales</a><br />
+			22 minutes<br />
+					<a href="http://littlegreenfootballs.com/weblog/">Little Green Footballs</a><br />
+			28 minutes<br />
+					<a href="http://aconstrainedvision.blogspot.com/">A Constrained Vision</a><br />
+			33 minutes<br />
+					<a href="http://keithdevens.com/weblog">Keith's Weblog</a><br />
+			38 minutes<br />
+					<a href="http://www.myelin.co.nz/post/">Second p0st</a><br />
+			43 minutes<br />
+					<a href="http://smallestminority.blogspot.com/">The Smallest Minority</a><br />
+			53 minutes<br />
+					<a href="http://info.answersingenesis.org/aroundtheworld/">Around the World with AiG's Ken Ham</a><br />
+			58 minutes<br />
+					<a href="http://www.intertwingly.net/blog/">Sam Ruby</a><br />
+			1 hour, 42 minutes<br />
+					<a href="http://www.nationalcenter.org/Blog.html">Amy Ridenour's National Center Blog</a><br />
+			2 hours, 20 minutes<br />
+					<a href="http://jeremy.zawodny.com/blog">Jeremy Zawodny's blog</a><br />
+			2 hours, 57 minutes<br />
+					<a href="http://instapundit.com/">Instapundit.com</a><br />
+			3 hours, 7 minutes<br />
+					<a href="http://www.coxandforkum.com/">Cox &amp; Forkum</a><br />
+			3 hours, 16 minutes<br />
+					<a href="http://realpolitik.us/">American RealPolitik</a><br />
+			4 hours, 1 minute<br />
+					<a href="http://www.alexking.org/blog/">alexking.org: Blog</a><br />
+			4 hours, 26 minutes<br />
+					<a href="http://www.rightwingnews.com/">Right Wing News</a><br />
+			4 hours, 58 minutes<br />
+					<a href="http://traumwind.de/blog/">Sender Traumwind</a><br />
+			6 hours, 12 minutes<br />
+					<a href="http://joseph.randomnetworks.com/">Joseph Scott's Blog</a><br />
+			6 hours, 58 minutes<br />
+					<a href="http://www.lifehacker.com/">Lifehacker</a><br />
+			7 hours, 21 minutes<br />
+					<a href="http://farm.tucows.com/blog">The Farm: The Tucows Developers' Hangout</a><br />
+			7 hours, 52 minutes<br />
+					<a href="http://www.rogerlsimon.com/">Roger L. Simon</a><br />
+			8 hours, 24 minutes<br />
+					<a href="http://countrystore.blogspot.com/">Country Store</a><br />
+			10 hours, 35 minutes<br />
+					<a href="http://www.photomatt.net/">Photo Matt</a><br />
+			10 hours, 53 minutes<br />
+					<a href="http://lsolum.blogspot.com/">Legal Theory Blog</a><br />
+			13 hours, 42 minutes<br />
+					<a href="http://vsbabu.org/mt/">vsbabu.org</a><br />
+			16 hours, 59 minutes<br />
+					<a href="http://fishbowl.pastiche.org/">The Fishbowl</a><br />
+			21 hours, 21 minutes<br />
+					<a href="http://www.esv.org/blog/">ESV Bible Blog</a><br />
+			23 hours, 55 minutes<br />
+					<a href="http://dawnsearlylight.blogs.com/del/">By Dawn's Early Light</a><br />
+			1 day, 7 hours<br />
+					<a href="http://www.powerlineblog.com/">Power Line</a><br />
+			1 day, 11 hours<br />
+					<a href="http://www.claytoncramer.com/weblog/blogger.html">Clayton Cramer's BLOG</a><br />
+			1 day, 11 hours<br />
+					<a href="http://www.wunderkinder.org/">Wunderkinder.org</a><br />
+			1 day, 13 hours<br />
+					<a href="http://chrenkoff.blogspot.com/">Chrenkoff</a><br />
+			1 day, 21 hours<br />
+					<a href="http://www.pythonware.com/daily/">Daily Python-URL</a><br />
+			2 days, 10 hours<br />
+					<a href="http://lambda-the-ultimate.org/">Lambda the Ultimate - Programming Languages Weblog</a><br />
+			2 days, 12 hours<br />
+					<a href="http://www.whedonesque.com/">WHEDONesque</a><br />
+			2 days, 14 hours<br />
+					<a href="http://www.tinyapps.org/blog/">TinyApps.Org</a><br />
+			2 days, 20 hours<br />
+					<a href="http://talideon.com/linklog/">Talideon.com Linklog</a><br />
+			3 days, 5 hours<br />
+					<a href="http://www.imperialviolet.org/">Imperialviolet</a><br />
+			3 days, 17 hours<br />
+					<a href="http://iraqthemodel.blogspot.com/">IRAQ THE MODEL</a><br />
+			4 days, 9 hours<br />
+					<a href="http://tbray.org/ongoing/">ongoing</a><br />
+			6 days, 9 hours<br />
+					<a href="http://whytheluckystiff.net/">why the lucky stiff</a><br />
+			6 days, 11 hours<br />
+					<a href="http://pingomatic.com/blog">Ping-O-Matic</a><br />
+			1 week<br />
+					<a href="http://internetalchemy.org/">Internet Alchemy</a><br />
+			1 week<br />
+					<a href="http://fallenearth.org/blogs/caiuschen/">Pinging Knight</a><br />
+			1 week, 2 days<br />
+					<a href="http://nothing-more.blogspot.com/">only this, and nothing more</a><br />
+			1 week, 2 days<br />
+					<a href="http://www.sidhe.org/~dan/blog/">Squawks of the Parrot</a><br />
+			1 week, 2 days<br />
+					<a href="http://www.claytoncramer.com/gundefenseblog/blogger.html">Civilian Gun Self-Defense Blog</a><br />
+			1 week, 4 days<br />
+					<a href="http://simon.incutio.com/">Simon Willison's Weblog</a><br />
+			1 week, 4 days<br />
+					<a href="http://manalang.com/">manalang.com</a><br />
+			2 weeks, 1 day<br />
+					<a href="http://www.donaldsensing.com/index.html">One Hand Clapping</a><br />
+			2 weeks, 2 days<br />
+					<a href="http://kalsey.com/simplelinks">Simplelinks</a><br />
+			2 weeks, 5 days<br />
+					<a href="http://www.ideoplastos.net/blog/">ideoplastos</a><br />
+			4 weeks<br />
+					<a href="http://talideon.com/weblog/">Keith's Inklings</a><br />
+			1 month<br />
+					<a href="http://www.nedbatchelder.com/blog/index.html">Ned Batchelder</a><br />
+			1 month<br />
+					<a href="http://wmf.editthispage.com/">Hack the Planet Prime</a><br />
+			1 month, 1 week<br />
+					<a href="http://www.procata.com/blog">Jeff Moore's Blog</a><br />
+			1 month, 2 weeks<br />
+					<a href="http://www.loudthinking.com/">Loud Thinking</a><br />
+			1 month, 3 weeks<br />
+					<a href="http://www.1976design.com/blog/">Dunstan's blog</a><br />
+			1 month, 3 weeks<br />
+					<a href="http://www.joelonsoftware.com/">Joel on Software</a><br />
+			1 month, 3 weeks<br />
+					<a href="http://www.inluminent.com/weblog/">inluminent</a><br />
+			1 month, 3 weeks<br />
+					<a href="http://www.blog.se/">blog.se</a><br />
+			2 months, 2 weeks<br />
+					<a href="http://www.paranoidfish.org/">paranoidfish</a><br />
+			2 months, 2 weeks<br />
+					<a href="http://textdrive.com/weblog/">TextDrive Weblog</a><br />
+			2 months, 2 weeks<br />
+					<a href="http://amazinasian.com/weblog/">The Amazin Asian</a><br />
+			2 months, 3 weeks<br />
+					<a href="http://www.kayodeok.co.uk/weblog/">Kayodeok's Weblog</a><br />
+			3 months, 2 weeks<br />
+					<a href="http://esr.ibiblio.org/index.php">Armed and Dangerous</a><br />
+			4 months, 3 weeks<br />
+					<a href="http://blog.colorstudy.com/ianb/weblog/">Ian Bicking</a><br />
+			5 months, 1 week<br />
+					<a href="http://TheDailyWTF.com/">The Daily WTF</a><br />
+			5 months, 1 week<br />
+					<a href="http://thephpwtf.com/index.php?blog=1">The PHP WTF</a><br />
+			5 months, 3 weeks<br />
+		</div>
+<p style="font-size: smaller">Generated in about 1.746s.</p>	</td>
+</tr>
+</table>
+
+<table class="footer no-print" cellpadding="0" cellspacing="0" style="font-size: smaller">
+	<tr><td colspan="7" class="layout-separator"></td></tr>
+	<tr class="footer-top"><td colspan="7" align="right" valign="bottom">&nbsp;</td></tr>
+	<tr><td colspan="7" class="layout-separator"></td></tr>
+
+	<tr class="footer-bottom"><td colspan="7">&nbsp;</td></tr>
+	<tr><td class="layout-separator" colspan="7"></td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+# HTTP Cookie File
+# http://www.netscape.com/newsref/std/cookie_spec.html
+# This is a generated file!  Do not edit.
+# To delete cookies, use the Cookie Manager.
+
+.google.com	TRUE	/	FALSE	2147368446	PREF	ID=75329c858f47dcff:CR=1:TM=1111095946:LM=1111095946:S=VQDmt_iTL160L7pN
+.google.co.nz	TRUE	/	FALSE	2147368447	PREF	ID=54a54d4cd3cb8f07:LD=en:TM=1111095946:LM=1111095946:S=WKTq0IG2-ij3Kvji
+jclark.org	FALSE	/	FALSE	1146196697	style	True Blue
+www.oreillynet.com	FALSE	/	FALSE	1577836800	CP	null*
+.doubleclick.net	TRUE	/	FALSE	1209268461	id	80000053dc3fc49
+.ehg-oreilly.hitbox.com	TRUE	/	FALSE	1146195902	DM52032830WVV6	V1rrrrr"rz%%%CeQ^^r%i%rrQBz%zrzr"%%%CeQ^^r%z%%%CeQ^^r%"%%%CeQ^^r%"%%%CeQ^^r%i%rrQB"rzNW::W~axBr#akxBr{aI~IT_`72ha7:KxBrGh:72~axBrFaff2TWxBrk2fOxBrG3fO:Tz(xB$haF:DhcaxQ$caTfahFxB$8IdaxBr$2ha7:KxBrk2fOxBrS:Dz7}z)OuKr6%QzA6haF:DhcavcaTfahF68IdaH$2ha7:KHk2fOHS:DzOffGxXjxB$xB$kkkxB(W::W~axB(c:xB(TUxB$FaIhcOxX$c~2aTfxX[72ha7:KxB[IxBeh~FxX[:hWxB(m:U2~~IxBQXjaTxB[=}xBQXj:772c2I~xQ$FxBeO~xX[aTxBepxX[72ha7:KxBrGh:72~axBrFaff2TWxBrk2fOxBrG3fO:TxBemafIxX[xBeufTVxX[V::W~axBr}aIhcO
+.hitbox.com	TRUE	/	FALSE	1146196461	WSS_GW	V1z%%%CeQ^^r%
+.hitbox.com	TRUE	/	FALSE	1115265261	CTG	1114660461
+.ehg-oreilly.hitbox.com	TRUE	/	FALSE	1146196461	DM52040214SVV6	V1rrrrr"rz%%%CeerCe%^@r@X^z%zrzr"%%%CeerCe%z%%%CeerCe%"%%%CeerCe%"%%%CeerCe%^@r@X^"rzNW::W~axBr#akxBr{aI~IT_`72ha7:KxBrGh:72~axBrFaff2TWxBrk2fOxBrG3fO:Tz(xB$GDuxB$IxB$m:U2~~IxB$aKcahGfxB$$2ha7:K'IcdFxQ$cOIGr%xB$<xB@ya2~~3xBr#afk:hdxB[xBr'Icd2TWxBr$2ha7:Kz7}z)OuKr6X@zA6GDu6I6m:U2~~I6aKcahGf6$2ha7:K'IcdFvcOIGr%6<?ya2~~3H#afk:hd"H'Icd2TWH$2ha7:KzOffGxXjxB$xB$kkkxB(W::W~axB(c:xB(TUxB$FaIhcOxX$pxX[72ha7:KxBrGh:72~axBrFaff2TWxBrk2fOxBrG3fO:TxBeO~xX[aTxBe~hxX[xBec~2aTfxX[72ha7:KxB[IxBeh~FxX[:hWxB(m:U2~~IxXjaTxB[=}xXj:772c2I~xQ$FxBeFfIhfxX[XrxBeFIxX[#
+.ehg-oreilly.hitbox.com	TRUE	/	FALSE	1146196461	DM520404M4ZRV6	V1rrrrr"rz%%%CeQ^^r%i%rrQBz%zrzQer"%%%CeQ^^r%z%%%CeQ^^r%"%%%CeerCe%"%%%CeQ^^r%i%rrQB"QerzNW::W~axBr#akxBr{aI~IT_`72ha7:KxBrGh:72~axBrFaff2TWxBrk2fOxBrG3fO:Tz(xB$haF:DhcaxQ$caTfahFxB$8IdaxBr$2ha7:KxBrk2fOxBrS:Dz7}z)OuKr6%QzA6haF:DhcavcaTfahF68IdaH$2ha7:KHk2fOHS:DA6GDu6I6m:U2~~I6aKcahGf6$2ha7:K'IcdFvcOIGr%6<?ya2~~3H#afk:hd"H'Icd2TWH$2ha7:KzOffGxXjxB$xB$kkkxB(W::W~axB(c:xB(TUxB$FaIhcOxX$c~2aTfxX[72ha7:KxB[IxBeh~FxX[:hWxB(m:U2~~IxBQXjaTxB[=}xBQXj:772c2I~xQ$FxBeO~xX[aTxBepxX[72ha7:KxBrGh:72~axBrFaff2TWxBrk2fOxBrG3fO:TxBemafIxX[xBeufTVxX[V::W~axBr}aIhcO
+hacks.oreilly.com	FALSE	/	FALSE	1577836800	CP	null*

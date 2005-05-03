@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<link rel="alternate" type="application/rss+xml" title="jclark.org - All Posts (RSS)" href="http://jclark.org/weblog/index.rss" />
+
+<link rel="stylesheet" href="/style/trueblue.css" type="text/css" title="True Blue"/>
+<link rel="alternate stylesheet" href="/style/cleangreen.css" type="text/css" title="Clean Green"/>
+<link rel="alternate stylesheet" href="/style/rosecoloredglasses.css" type="text/css" title="Rose Colored Glasses"/>
+<link rel="alternate stylesheet" href="/style/greatpumpkin.css" type="text/css" title="The Great Pumpkin"/>
+<link rel="alternate stylesheet" href="/style/eagles.css" type="text/css" title="Philadelphia Eagles"/>
+
+
+<link rel="alternate" type="application/rss+xml" title="jclark.org - All Posts in CoolStuff (RSS) " href="http://jclark.org/weblog/CoolStuff/index.rss" />
+<meta name="robots" content="index,follow" />
+
+
+
+<!-- path_info: CoolStuff/takeitwith.html -->
+<!-- path_into_yr:  -->
+<title>jclark.org : You CAN take it with you...</title>
+<script type="text/javascript" src="/scripts/styleswitcher.js"></script>
+</head>
+
+<body>
+<div id="main">
+<h1><a href="http://jclark.org/weblog/index.html">jclark.org</a></h1>
+
+
+:: (Single Entry)
+
+
+
+<h3>Mon, 19 Jul 2004</h3>
+<div class="story">
+<h4><a id="id_takeitwith" href="http://jclark.org/weblog/CoolStuff/takeitwith.html">You CAN take it with you...</a></h4>
+<p>...at least in the case of <a href="http://www.mozilla.org/products/firefox/">Mozilla Firebird</a>.  David Tenser's <a href="http://texturizer.net/firefox/">Firefox Help</a> has a set of <a href="http://texturizer.net/firefox/tips.html#oth&#95;usb">simple instructions</a> for setting up Firefox for Windows to run from a USB memory stick or other removable media device, including a copy of your profile.  Now you can run Firefox (with all of your bookmarks, plugins, skins, and settings) from any Windows PC with a USB port, in moments.  Groovy.</p>
+
+<p>While my primary personal machine is my Mac Powerbook, I do use a Win2K machine all day at work, and I have Firefox customized for my use.  I'd bet that creating a similar portable setup for OS X or Linux would be just as easy, however, carrying a Win install around on my 64 Meg USB thumb drive is probably the best for flexibility.  For example, the internet cafe I used in St. Andrews, New Brunswick recently while on vacation had PCs, not Macs.  Wish I'd had Firefox on my thumbdrive then.</p>
+
+	<div class="storytail">
+		<span class="timestamp"> Posted Mon, July 19, 2004 at 3:56 PM EDT
+ </span> [<a href="http://jclark.org/weblog/CoolStuff">/CoolStuff</a>] 
+		<a href="http://jclark.org/weblog/CoolStuff/takeitwith.html">2 comments</a>
+<!-- Trackback Auto-Discovery Bits -->
+
+<!--
+<Rdf:Rdf Xmlns:Rdf="Http://Www.W3.Org/1999/02/22-Rdf-Syntax-Ns#"
+  Xmlns:Dc="Http://Purl.Org/Dc/Elements/1.1/"
+  Xmlns:Trackback="Http://Madskills.Com/Public/Xml/Rss/Module/Trackback/">
+
+  <Rdf:Description
+    Rdf:About="http://jclark.org/weblog/CoolStuff/takeitwith.html"
+    Dc:Identifier="http://jclark.org/weblog/CoolStuff/takeitwith.html"
+    Dc:Title="You CAN take it with you..."
+    Trackback:Ping="http://jclark.org/weblog/CoolStuff/takeitwith.Trackback" />
+
+</Rdf:Rdf>
+-->
+	</div>
+
+</div>
+
+
+<h3>WriteBacks...</h3>
+
+<!-- WriteBacks for this story -->
+<p id="response"></p>
+
+
+<div class="comment">
+  <h4>Why not dual-platform?</h4>
+
+    <p>The <strong>really</strong> cool trick would have to be installing a Mac version of firefox on the stick as well, and having both copies point to the same directory.  That way you could plug it into your Mac at home...</p>
+
+<p>Of course, I prefer Safari myself (spellchecking in textareas is the greatest thing ever)</p>
+ 
+
+
+  <div class="storytail">
+  Comment 
+   from <a href="http://jay.shao.org ">Jason Shao  </a>
+  at 9/1/2004 16:56:58
+  </div>
+</div>
+<div class="comment">
+  <h4>Double up</h4>
+
+    <p>Excellent Idea, Jason.  I may add the OS X Version of Firefox to my  mem stick, although my Powerbook is the only Mac I usually come in contact with, and I've already got Firefox on it, setup just like my home &amp; work Win boxes.</p>
+
+<p>I was a big fan of Safari when it was first released (it introduced me to tabbed browsing, for which I'm eternally grateful), but I switched to Firefox (when it was still Phoenix) so I could have the same browser environment across platforms.  Add to that some of the developer features (DOM inspector; Chris Pederick's awsome <a href="http://www.chrispederick.com/work/firefox/webdeveloper/">Developer toolbar extension</a>, which I need to blog about), and I haven't really looked back.</p>
+ 
+
+
+  <div class="storytail">
+  Comment 
+   from <a href="http://jclark.org/weblog ">Jason  </a>
+  at 9/1/2004 22:52:51
+  </div>
+</div>
+
+
+
+
+<h3>Comment on this Entry</h3>
+
+<!-- The right URL for a TrackBack ping; notice the flavour is trackback -->
+
+<div class="input">
+<h4>TrackBacks</h4>
+<p>TrackBack ping me at:</p>
+<p>http://jclark.org/weblog/CoolStuff/takeitwith.trackback</p>
+</div>
+
+<div class="input">
+  <h4>Comments</h4>
+
+<!-- A simple comments form -->
+
+<form method="POST" action="http://jclark.org/weblog/CoolStuff/takeitwith.html">
+  <p>Name:<input name="name"  value="" class="text" /></p>
+  <p>URL/Email:<input name="url"  value="" class="text" /><br />
+  <!--<span class="hint">[http://... or mailto:you@wherever] (optional)</span>--></p>
+  <p>Title:<input name="title" class="text"  /><br />
+  <span class="hint">(optional)</span></p>
+  <p>Comments:<textarea name="comment" rows="5"></textarea></p>
+<p><strong>Note:</strong> The comment system is currently being overhauled.  Preview is not ready yet, so you only get one shot.  Comments should now be entered using <a href="http://daringfireball.net/projects/markdown">Markdown</a>.  If you don't know what it is, just pretend you're writing a plaintext email and you should be OK.  If you want to play with Markdown a bit and get the hang of it, check out the Markdown <a href="http://daringfireball.net/projects/markdown/dingus">Dingus</a>.  Inline HTML is not allowed, and will be escaped.
+</p>
+  <p><input class="checkbox" type="checkbox" name="save_preferences" value="1" checked /> Save my Name and URL/Email for next time</p>
+  <input type="hidden" name="plugin" value="jclark.org.comments" />
+  <input type="submit" value="Post" />
+</form>
+<!--
+<p>Unfortunately, I have again been forced to disable comments.  If you wish to contact me, please drop me an e-mail; my address is on the right.  I'd really love to hear from you.</p>
+<p>If you are a spammer of any stripe, especially a comment spammer, I invite you to take one for humanity and end your own miserable life, you misbegotten sack of offal.</p>
+-->
+
+
+<div class="nextprev">
+<span class="prev"></span>
+<span class="next"></span>
+</div>
+
+</div>
+<div id="etc">
+
+<div id="recommended">
+<h3>Get Firefox</h3>
+<a href="http://getfirefox.com" >
+  <img src="/images/ffxsmall.png" alt="Take Back the Web.  Get Firefox." />
+</a>
+</div>
+
+<div id="calendar">
+<h3>Lately</h3>
+<table class="month-calendar"><caption class="month-calendar-head"><a title="June 2004 (1)" href="http://jclark.org/weblog/2004/06/">&larr;</a><a title="July 2004 (3)" href="http://jclark.org/weblog/2004/07/">July</a><a title="August 2004 (2)" href="http://jclark.org/weblog/2004/08/">&rarr;</a></caption>
+<tr>
+<th class="month-calendar-day-head Sunday">Sun</th>
+<th class="month-calendar-day-head Monday">Mon</th>
+<th class="month-calendar-day-head Tuesday">Tue</th>
+<th class="month-calendar-day-head Wednesday">Wed</th>
+<th class="month-calendar-day-head Thursday">Thu</th>
+<th class="month-calendar-day-head Friday">Fri</th>
+<th class="month-calendar-day-head Saturday">Sat</th>
+</tr>
+<tr>
+<td class="month-calendar-day-noday Sunday">&nbsp;</td>
+<td class="month-calendar-day-noday Monday">&nbsp;</td>
+<td class="month-calendar-day-noday Tuesday">&nbsp;</td>
+<td class="month-calendar-day-noday Wednesday">&nbsp;</td>
+<td class="month-calendar-day-nolink Thursday">1</td>
+<td class="month-calendar-day-nolink Friday">2</td>
+<td class="month-calendar-day-nolink Saturday">3</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">4</td>
+<td class="month-calendar-day-nolink Monday">5</td>
+<td class="month-calendar-day-nolink Tuesday">6</td>
+<td class="month-calendar-day-nolink Wednesday">7</td>
+<td class="month-calendar-day-nolink Thursday">8</td>
+<td class="month-calendar-day-nolink Friday">9</td>
+<td class="month-calendar-day-nolink Saturday">10</td>
+</tr>
+<tr>
+<td class="month-calendar-day-link Sunday"><a title="Sunday, 11 July 2004 (1)" href="http://jclark.org/weblog/2004/07/11/">11</a></td>
+<td class="month-calendar-day-nolink Monday">12</td>
+<td class="month-calendar-day-link Tuesday"><a title="Tuesday, 13 July 2004 (1)" href="http://jclark.org/weblog/2004/07/13/">13</a></td>
+<td class="month-calendar-day-nolink Wednesday">14</td>
+<td class="month-calendar-day-nolink Thursday">15</td>
+<td class="month-calendar-day-nolink Friday">16</td>
+<td class="month-calendar-day-nolink Saturday">17</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">18</td>
+<td class="month-calendar-day-this-day Monday"><a title="Monday, 19 July 2004 (current) (1)" href="http://jclark.org/weblog/2004/07/19/">19</a></td>
+<td class="month-calendar-day-nolink Tuesday">20</td>
+<td class="month-calendar-day-nolink Wednesday">21</td>
+<td class="month-calendar-day-nolink Thursday">22</td>
+<td class="month-calendar-day-nolink Friday">23</td>
+<td class="month-calendar-day-nolink Saturday">24</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">25</td>
+<td class="month-calendar-day-nolink Monday">26</td>
+<td class="month-calendar-day-nolink Tuesday">27</td>
+<td class="month-calendar-day-nolink Wednesday">28</td>
+<td class="month-calendar-day-nolink Thursday">29</td>
+<td class="month-calendar-day-nolink Friday">30</td>
+<td class="month-calendar-day-nolink Saturday">31</td>
+</tr>
+</table>
+
+</div>
+
+<div id="categories">
+<h3>More</h3>
+<ul class="categories">
+<li><a href="http://jclark.org/weblog/index.html">Root</a> (272)
+<ul>
+<li><a href="http://jclark.org/weblog/Apple/index.html">Apple</a> (21)
+<ul>
+<li><a href="http://jclark.org/weblog/Apple/OSX/index.html">OSX</a> (15)
+</li>
+</ul>
+</li>
+<li class="this-category">Cool Stuff (20)
+<ul>
+<li><a href="http://jclark.org/weblog/CoolStuff/Potpourri/index.html">Potpourri</a> (6)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/Hardware/index.html">Hardware</a> (13)
+<ul>
+<li><a href="http://jclark.org/weblog/Hardware/Toys/index.html">Toys</a> (4)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/Miscellany/index.html">Miscellany</a> (76)
+<ul>
+<li><a href="http://jclark.org/weblog/Miscellany/About/index.html">About</a> (17)
+</li>
+<li><a href="http://jclark.org/weblog/Miscellany/Ideas/index.html">Ideas</a> (1)
+</li>
+<li><a href="http://jclark.org/weblog/Miscellany/Personal/index.html">Personal</a> (27)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/Music/index.html">Music</a> (10)
+</li>
+<li><a href="http://jclark.org/weblog/Programming/index.html">Programming</a> (15)
+<ul>
+<li><a href="http://jclark.org/weblog/Programming/Microsoftish/index.html">Microsoftish</a> (4)
+</li>
+<li><a href="http://jclark.org/weblog/Programming/Perl/index.html">Perl</a> (8)
+<ul>
+<li><a href="http://jclark.org/weblog/Programming/Perl/Perlthon/index.html">Perlthon</a> (1)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/Programming/Python/index.html">Python</a> (1)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/Rants/index.html">Rants</a> (8)
+</li>
+<li><a href="http://jclark.org/weblog/Spanish/index.html">Spanish</a> (3)
+</li>
+<li><a href="http://jclark.org/weblog/WebDev/index.html">Web Dev</a> (103)
+<ul>
+<li><a href="http://jclark.org/weblog/WebDev/Blogging/index.html">Blogging</a> (13)
+</li>
+<li><a href="http://jclark.org/weblog/WebDev/Blosxom/index.html">Blosxom</a> (18)
+<ul>
+<li><a href="http://jclark.org/weblog/WebDev/Blosxom/plugins/index.html">plugins</a> (6)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/WebDev/Browsers/index.html">Browsers</a> (17)
+</li>
+<li><a href="http://jclark.org/weblog/WebDev/ThisSite/index.html">This Site</a> (37)
+</li>
+<li><a href="http://jclark.org/weblog/WebDev/XML/index.html">XML</a> (1)
+</li>
+</ul>
+</li>
+<li><a href="http://jclark.org/weblog/XML/index.html">XML</a> (3)
+<ul>
+<li><a href="http://jclark.org/weblog/XML/XSLT/index.html">XSLT</a> (2)
+<ul>
+<li><a href="http://jclark.org/weblog/XML/XSLT/Tools/index.html">Tools</a> (1)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="blogroll">
+<h3>Blogroll</h3>
+<ul class="categories">
+<li>Favorites<ul><li><a href="http://www.decafbad.com/">0xDECAFBAD Blog</a></li><li><a href="http://www.decafbad.com/links/">0xDECAFBAD Links</a></li><li><a href="http://applematters.com/index.php/weblog/index/">applematters.com</a></li><li><a href="http://www.pycs.net/bbum/">Bill Bumgarner</a></li><li><a href="http://bitworking.org/news/">BitWorking</a></li><li><a href="http://daringfireball.net/">Daring Fireball</a></li><li><a href="http://www.decafbad.com/twiki/bin/view/Main">DecafbadWiki.Main</a></li><li><a href="http://www.zeldman.com/">Zeldman: The Daily Report</a></li><li><a href="http://www.folklore.org/">Folklore.org</a></li><li><a href="http://jclark.org/weblog">jclark.org</a></li><li><a href="http://jeffcroft.com/">JeffCroft.com Journal</a></li><li><a href="http://www.unix-girl.com/blog/">kasia in a nutshell</a></li><li><a href="http://LowGradePanic.bloghorn.com">LowGradePanic</a></li><li><a href="http://www.ibm.com/developerworks/blogs/dw_blog.jspa?blog=354&amp;ca=drs-bl">Mark Pilgrim @ IBM</a></li><li><a href="http://www.megatokyo.com">Megatokyo</a></li><li><a href="http://del.icio.us/jason">My del.ico.us bookmarks</a></li><li><a href="http://www.tbray.org/ongoing/">ongoing</a></li><li><a href="http://www.rivinus.com/">Our web diary</a></li><li><a href="http://sp.ookee.com">spookee</a></li><li><a href="http://www.intertwingly.net/blog/">Sam Ruby</a></li><li><a href="http://simon.incutio.com/">Simon Willison's Weblog</a></li><li><a href="http://soulkerfuffle.blogspot.com">Soul Kerfuffle</a></li><li><a href="http://www.subtraction.com/">Subtraction</a></li><li><a href="http://weblogs.mozillazine.org/hyatt/">Surfin' Safari</a></li><li><a href="http://the.taoofmac.com/space">The Tao of Mac</a></li><li><a href="http://wellformedweb.org/news/">The Well-Formed Web</a></li><li><a href="http://urbanmainframe.com/">Urban Mainframe</a></li></ul></li>
+<li>Techish<ul><li><a href="http://2lmc.org/spool/">2lmc spool</a></li><li><a href="http://www.burningdoor.com/dick/">802.11me</a></li><li><a href="http://www.alistapart.com/">A List Apart</a></li><li><a href="http://afongen.com/blog/">afongen</a></li><li><a href="http://alpha-geek.com/">Alpha-Geek.com</a></li><li><a href="http://www.dehora.net/journal/">Bill de h&#xD3;ra</a></li><li><a href="http://blosxom.ookee.com/blog">Blosxom User Group</a></li><li><a href="http://www.codepoetry.net">codepoetry</a></li><li><a href="http://www.benhammersley.com/">Dangerous Precedent </a></li><li><a href="http://www.datalibre.com">DataLibre</a></li><li><a href="http://dirtsimple.org/">dirtSimple.org</a></li><li><a href="http://www.hecker.org">Frank Hecker</a></li><li><a href="http://farrokhi.net/blog/">Geek Style</a></li><li><a href="http://www.hackaday.com/">hack a day</a></li><li><a href="http://inessential.com/">inessential.com</a></li><li><a href="http://weblogs.mozillazine.org/ben/">Inside Firefox</a></li><li><a href="http://www.xmldatabases.org/WK/blog">Inspirational Technology</a></li><li><a href="http://www.veen.com/jeff/">Jeffrey Veen</a></li><li><a href="http://jeremy.zawodny.com/blog/">Jeremy Zawodny's blog</a></li><li><a href="http://www.joelonsoftware.com">Joel on Software</a></li><li><a href="http://weblog.infoworld.com/udell/">Jon's Radio</a></li><li><a href="http://www.koziarski.net">Koz Speaks</a></li><li><a href="http://www.lathi.net/diary">Lathi's Log</a></li><li><a href="http://www.lazyweb.org/">Lazyweb</a></li><li><a href="http://livingcode.blogspot.com">Living Code</a></li><li><a href="http://www.macgeekery.com">Mac Geekery</a></li><li><a href="http://mpt.net.nz">Matthew Thomas</a></li><li><a href="http://michael-mccracken.net/blog/blosxom.pl">michael-mccracken.net</a></li><li><a href="http://members.shaw.ca/akochoi/index.html">My OS X Programming Blog</a></li><li><a href="http://www.nedbatchelder.com/blog">Ned Batchelder's blog</a></li><li><a href="http://addons.update.mozilla.org">Newest Firefox Extensions</a></li><li><a href="http://philringnalda.com/">phil ringnalda</a></li><li><a href="http://del.icio.us/tag/osxcli">OSX CLI Tips</a></li><li><a href="http://www.raelity.org">raelity bytes</a></li><li><a href="http://www.megginson.com/blogs/quoderat">Quoderat</a></li><li><a href="http://saladwithsteve.com/">saladwithsteve</a></li><li><a href="http://dannyayers.com">Raw</a></li><li><a href="http://www.sitepoint.com/blog-view.php?blogid=5">Stylish Scripting</a></li><li><a href="http://rentzsch.com">Tales from the Red Shed</a></li><li><a href="http://ken.coar.org/burrow/index">The Rodent's Burrow</a></li><li><a href="http://www.timeistight.com">Time Is Tight</a></li><li><a href="http://webstandards.org/buzz/">Web Standards Project</a></li><li><a href="http://stevenf.com/mt/">~stevenf</a></li></ul></li>
+<li>Tech Newsish<ul><li><a href="http://dangillmor.typepad.com/dan_gillmor_on_grassroots/">Dan Gillmor</a></li><li><a href="http://www.engadget.com/">Engadget</a></li><li><a href="http://www.macmischief.com/">MacMischief</a></li><li><a href="http://www.mozillazine.org/">mozillaZine.org</a></li><li><a href="http://www.tuaw.com">The Unofficial Apple Weblog (TUAW)</a></li><li><a href="http://www.thinksecret.com/">Think Secret</a></li><li><a href="http://wifinetnews.com/">Wi-Fi Networking News</a></li></ul></li>
+<li>Nontechish<ul><li><a href="http://www.aaronsw.com/weblog/">Aaron Swartz: The Weblog</a></li><li><a href="http://www.curry.com/">Adam Curry's Weblog</a></li><li><a href="http://www.lessig.org/blog/">Lessig Blog</a></li><li><a href="http://www.ookee.com">OOKEE.com</a></li><li><a href="http://www.ordinary-life.net/">Ordinary-Life.net</a></li><li><a href="http://www.sinasohn.net/notebooks">Uncle Roger's Notebooks</a></li><li><a href="http://www.wilwheaton.net/">Wil Wheaton dot Net</a></li></ul></li>
+<li>Dailys<ul><li><a href="">Boondocks by email</a></li><li><a href="http://dictionary.reference.com/wordoftheday/">Dictionary.com WotD</a></li></ul></li>
+<li>Corporate<ul><li><a href="http://www.info.apple.com/kbnum/n75185">Apple KB Changes</a></li><li><a href="http://www.apple.com/support/">Apple Top OS X Docs</a></li><li><a href="http://www.bloglines.com">Bloglines | News</a></li><li><a href="http://www.macdevcenter.com/">MacDevCenter.com</a></li><li><a href="http://weblogs.oreilly.com/">O'Reilly Weblogs</a></li><li><a href="http://www.perl.com/">Perl.com Perl.com</a></li><li><a href="http://www.xml.com/">XML.com</a></li></ul></li>
+<li>Astronomy<ul><li><a href="http://space.about.com/">About Space/Astronomy</a></li><li><a href="http://www.backyard-astro.com/pMachinePro2.3/weblog.php">backyard-astro</a></li></ul></li>
+</ul>
+
+</div>
+
+<div id="style">
+  <h3>Style</h3>
+  <ul>
+    <li id="cleangreen"><a href="#" onclick="setActiveStyleSheet('Clean Green'); return false;">Clean Green</a></li>
+    <li id="trueblue"><a href="#" onclick="setActiveStyleSheet('True Blue'); return false;">True Blue</a></li>
+    <li id="rosecoloredglasses"><a href="#" onclick="setActiveStyleSheet('Rose Colored Glasses'); return false;">Rose Colored Glasses</a></li>
+    <li id="greatpumpkin"><a href="#" onclick="setActiveStyleSheet('The Great Pumpkin'); return false;">The Great Pumpkin</a></li>
+    <li id="eagles"><a href="#" onclick="setActiveStyleSheet('Philadelphia Eagles'); return false;">Philadelphia Eagles</a></li>
+  </ul>
+</div>
+
+<div id="feeds">
+<h3>Subscribe</h3>
+<ul>
+  <li><a href="http://jclark.org/weblog/index.rss"><img src="/images/rss2.gif" alt="RSS 2.0 Feed" /></a></li>
+  <li><a href="http://www.bloglines.com/sub/http://jclark.org/weblog/index.rss">
+<img src="http://www.bloglines.com/images/sub_modern5.gif" alt="Subscribe with Bloglines" />
+</a></li>
+  <li><a href="http://jclark.org/weblog/index.atom"><img src="/images/atom0.3.png" alt="Atom 0.3 Feed" /></a></li>
+</ul>
+</div>
+
+<div id="about">
+<h3>Author</h3>
+<p><a href="mailto:jason@jclark.org">jason@jclark.org</a></p>
+<p><a href="http://www.technorati.com/profile/JasonClark/1293251/98686921e1527b2740598856df2526b9">Technorati Profile</a></p>
+</div>
+
+<div id="madprops">
+<h3>Made Possible By</h3>
+<ul>
+<li><a href="http://validator.w3.org/check/referer">
+  <img src="/images/xhtml11.png" alt="Valid XHTML 1.1" />
+</a></li>
+<li><a href="http://jigsaw.w3.org/css-validator/check/referer">
+  <img src="/images/css.png" alt="Valid CSS" />
+</a></li>
+<li><a href="http://feedvalidator.org/check?url=http://jclark.org/weblog/index.rss"><img src="/images/rssvalid.gif" alt="Valid RSS 2.0" /></a></li>
+<li><a href="http://www.atomenabled.org/feedvalidator/check.cgi?url=http://jclark.org/weblog/index.atom"><img src="/images/atom-en.png" alt="Valid Atom 0.3" /></a></li>
+<li><a href="http://www.apple.com"><img src="/images/apple2.gif" alt="Made on a Mac" /></a></li>
+<li><a href="http://www.blosxom.com"><img src="/images/blosxom.gif" alt="Powered by Blosxom" /></a></li>
+</ul>
+  </div>
+
+<div id="indexes">
+<h3>Inroads</h3>
+<ul>
+<li><a href="http://blogdex.net" title="blogdex.net - the weblog diffustion index">
+  <img src="/images/blogdex2.gif" alt="blogdex.net" /></a></li>
+<li><a href="http://bloglines.com" title="Bloglines.com - Web-based feed aggregator">
+  <img src="/images/bloglines.png" alt="bloglines.com" /></a></li>
+<li><a href="http://www.blogrolling.com" title="Blogrolling.com - Blogroll Management Tools">
+  <img src="/images/blogrolling.png" alt="Blogrolling.com" /></a></li>
+<li><a href="http://blo.gs" title="Blo.gs - Recently updated blogs; notification services">
+  <img src="/images/blo.gs.png" alt="Blo.gs" /></a></li>
+<li><a href="http://blogshares.com/blogs.php?blog=http%3A%2F%2Fjclark.org%2Fweblog&amp;user=19383"><img src="/images/blogshares2.gif" title="Blogshares.com - Fantasy Blog Shares Market" alt="Listed on Blogshares"></img></a></li>
+<li><a href="http://www.dansanderson.com/blogtracker/" title="Blogtracker - Blog list management; recent update notification" >
+  <img src="/images/blogtracker.png" alt="Blogtracker.com" /></a></li>
+<!-- <li><a href="http://www.technorati.com">Technorati</a></li> -->
+<li><a href="http://feedster.com" title="Feedster.com - Blog (Feed) Search Engine">
+  <img src="/images/feedster.png" alt="Feedster.com" /></a></li>
+<li><a href="http://www.syndic8.com" title="Syndic8.com - Feed directory">
+  <img src="/images/syndic8.gif" alt="Syndic8.com" /></a></li>
+<li><a href="http://www.weblogs.com" title="Weblogs.com - Lists recently updated blogs">
+  <img src="/images/weblogs.png" alt="Weblogs.com" /></a></li>
+
+</ul>
+</div>
+<!--
+<div id="also">
+<h3>See Also</h3>
+<p><a href="http://www.technorati.com/profile/JasonClark/1260024/9a2d00178dbe0971d5248683187cc30b">Technorati Profile</a></p>
+</div>
+
+<div id="blogroll">
+<h3>Blogroll*</h3>
+<script language="javascript" type="text/javascript" src="http://rpc.bloglines.com/blogroll?id=jclark"></script>
+<p>*experimental</p>
+</div>
+-->
+<div id="copyright">
+<h3>Legalease</h3>
+<p><a href="http://creativecommons.org/licenses/by-sa/1.0/"><img src="/images/cc.gif" alt="Creative Commons Licence" /></a></p>
+<p><a href="/weblog/WebDev/ThisSite/imagelinking.html" />Linking Policy</a></p>
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-sa/1.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-sa/1.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/1">
+	<title>mg.to &raquo; Basic Firefox tweaks - Michael Geary to Earth (and vice versa)</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="WordPress 1.5" /> <!-- leave this for stats -->
+
+	<style type="text/css" media="screen">
+		@import url( http://mg.to/wp-content/themes/mike/style.css );
+	</style>
+
+	<link rel="stylesheet" type="text/css" media="print" href="http://mg.to/print.css" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://mg.to/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://mg.to/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://mg.to/feed/atom/" />
+
+	<link rel="pingback" href="http://mg.to/xmlrpc.php" />
+    	<link rel='archives' title='April 2005' href='http://mg.to/2005/04/' />
+	<link rel='archives' title='March 2005' href='http://mg.to/2005/03/' />
+	<link rel='archives' title='February 2005' href='http://mg.to/2005/02/' />
+	<link rel='archives' title='January 2005' href='http://mg.to/2005/01/' />
+	<link rel='archives' title='December 2004' href='http://mg.to/2004/12/' />
+	<link rel='archives' title='November 2004' href='http://mg.to/2004/11/' />
+	<link rel='archives' title='October 2004' href='http://mg.to/2004/10/' />
+	<link rel='archives' title='September 2004' href='http://mg.to/2004/09/' />
+	<link rel='archives' title='August 2004' href='http://mg.to/2004/08/' />
+		</head>
+
+<body>
+<div id="rap">
+<h1 id="header"><a href="http://mg.to">mg.to</a><span id="tagline">&nbsp;&nbsp;Michael Geary to Earth (and vice versa)</span></h1>
+
+<div id="content">
+
+<h2>November 11, 2004</h2>
+<div class="post">
+	 <h3 class="storytitle" id="post-51"><a href="http://mg.to/2004/11/11/basic-firefox-tweaks" rel="bookmark" title="Permanent Link: Basic Firefox tweaks">Basic Firefox tweaks</a></h3>
+	<div class="meta">Filed under: <ul class="post-categories">
+	<li><a href="http://mg.to/category/software/" title="View all posts in Software" rel="category tag">Software</a></li>
+	<li><a href="http://mg.to/category/software/browsers/" title="View all posts in Browsers" rel="category tag">Browsers</a></li></ul> &#8212; Michael Geary @ 12:39 am </div>
+
+	<div class="storycontent">
+			<p><a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=33276&amp;t=78"><img border="0" alt="Get Firefox!" title="Get Firefox!" src="http://www.spreadfirefox.com/community/images/affiliates/Buttons/180x60/rediscover.gif"/></a></p>
+	<p><a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=33276&amp;t=78">Mozilla Firefox</a> is a mighty fine browser right out of the box. If you haven&#8217;t tried it out yet, I highly recommend it.</p>
+	<p>Firefox is also highly customizable. Here are some basic tweaks that make Firefox even better.</p>
+	<p><strong>Fonts</strong></p>
+	<p>The first thing I do when I install Firefox is open the <strong>Tools/Options</strong> dialog and adjust a few of the settings there. On the <strong>General</strong> page, I click the <strong>Fonts &#038; Colors</strong> button and choose better fonts. By default, Firefox uses the mediocre Times New Roman and Arial fonts. <strong>Georgia</strong> and <strong>Verdana</strong> are much more readable choices for the <strong>Serif</strong> and <strong>Sans-serif</strong> fonts.</p>
+	<p>I also change both of the <strong>Size (pixels)</strong> settings to <strong>18</strong>, and the <strong>Minimum font size</strong> to <strong>14</strong>. Finally, I change the <strong>Display resolution</strong> to <strong>120 dpi</strong> to match my Windows setting.</p>
+	<p>Here are my font settings:</p>
+	<p><img src="/images/firefox-fonts.png" alt="Firefox Fonts &#038; Colors dialog" /></p>
+	<p>These are tuned to look good on the high-density 1600 x 1200 15&#8243; display on my <a href="http://www.thinkpad.com/">ThinkPad</a>. On a lower-density display you may prefer other settings, but in any case you&#8217;ll find it worthwhile to spend some time in this dialog.</p>
+	<p>The Display resolution setting has an unusual user interface. You don&#8217;t specify the resolution directly; instead you select Other&#8230; in the dropdown combo box, and then another dialog pops up with a line you&#8217;re supposed to measure. That&#8217;s nifty, but I just wanted to set it to 120 dpi, so I tried various values in the dialog until I found that 6.35 centimeters was the magic number.</p>
+	<p><strong>Downloads</strong></p>
+	<p>By default, Firefox saves all downloaded files on your desktop. I keep a Downloads folder with subfolders for the various programs and files I download. So back in the Options dialog&#8217;s <strong>Downloads</strong> page, I set it to <strong>Ask me where to save every file</strong>.</p>
+	<p><strong>Tabbed Browsing</strong></p>
+	<p>In the <strong>Advanced</strong> page of the Options dialog, I change the <strong>Open links from other applications in</strong> setting to <strong>a new window</strong>. The default setting is <strong>the most recent tab/window</strong>, which I don&#8217;t like at all. When I click a link in some other application such as my email client, I don&#8217;t want it to replace a website that I had already open, I want a new window.</p>
+	<p>Firefox&#8217;s tabbed browsing is wonderful, BTW. I use it to group related sites together in a single window. For example, I often investigate several topics in parallel. Typically I start by opening a new Firefox window and doing a Google search. Then I hold down the Ctrl key and click on various links from the search results. These pages all open as tabs in that same window.</p>
+	<p>Then I may have some other topic to research, so I open another new window and repeat the same procedure. So each window contains a set of related search results. It&#8217;s a great way to organize related pages, and you can save the entire set of tabs in a window together in a bookmark folder to re-open them as a group later.</p>
+	<p><strong>Extensions</strong></p>
+	<p>Firefox has hundreds of extensions available from the <a href="https://update.mozilla.org/extensions/">official site</a> and the unofficial <a href="http://texturizer.net/firefox/extensions/">Texturizer</a> site. I like to keep my Firefox lean and fast, so I only use a few of them. Here&#8217;s my basic set:</p>
+	<p><strong><a href="https://update.mozilla.org/extensions/moreinfo.php?application=firefox&#038;id=35">IE View</a></strong></p>
+	<p>Alas, there are still some websites that are hard coded to work only with Internet Explorer, and <a href="https://update.mozilla.org/extensions/moreinfo.php?application=firefox&#038;id=35">IE View</a> makes it convenient to get to those sites.</p>
+	<p><strong><a href="http://www.pikey.me.uk/mozilla/">Clone Window</a></strong></p>
+	<p>I like the way IE duplicates a window&#8217;s current state when you use Ctrl+N to open a new window. Firefox by default opens your home page in a new window when you use Ctrl+N, and if you use Ctrl+T to open a new tab, the new tab is blank.</p>
+	<p>I like IE&#8217;s window cloning, so the <a href="http://www.pikey.me.uk/mozilla/">Clone Window</a> extension fixes this. I set its Options to <strong>New Window command should open: Cloned Window</strong> and <strong>New Tab command should open: Cloned Tab</strong>.</p>
+	<p>Clone Window isn&#8217;t listed on the official Firefox update site, so when you click the installation link it you&#8217;ll get a warning at the top of the Firefox window that www.pikey.me.uk is trying to install software on your computer. Click the Edit Options button which will open the Allowed Sites dialog, then click Allow and OK. Finally, click the installation link again to install the Clone Window extension.</p>
+	<p><strong><a href="http://googlebar.mozdev.org/">Googlebar</a></strong></p>
+	<p>Firefox includes a basic Google search (along with several other searches) in its standard toolbar, but it doesn&#8217;t have all of the features of the Google toolbar for IE. The <a href="http://googlebar.mozdev.org/">Googlebar</a> brings these goodies to Firefox. One thing it doesn&#8217;t have is <a href="http://www.google.com/technology/">PageRank</a>, but there are a number of <a href="http://www.google.com/search?q=firefox+googlebar">variations of the Googlebar</a> that include PageRank.</p>
+	<p>Like Clone Window, Googlebar isn&#8217;t listed on the official Firefox update site yet. The installer is located <a href="http://downloads.mozdev.org/googlebar/XPI-stable.xpi">here</a> (or via the link above). Follow the same procedure described for Clone Window to install it.</p>
+	<p>There are a lot more extensions than that. Every time I look at one of the Firefox extension sites I see something else I&#8217;m tempted to try, such as the nifty <a href="https://update.mozilla.org/extensions/moreinfo.php?application=firefox&#038;id=318&#038;vid=1075">Wayback</a> extension which gives you easy access to historical versions of sites from the <a href="http://www.archive.org/">Internet Archive&#8217;s</a> Wayback Machine.</p>
+	<p><strong>Keyboard shortcuts</strong></p>
+	<p>You probably know that Internet Explorer lets you go to a .com site without typing the www. and .com; just enter the domain name without those and hit <strong>Ctrl+Enter</strong>. Firefox does that too, and it also lets you use <strong>Shift+Enter</strong> for a .net site and <strong>Ctrl+Shift+Enter</strong> for a .org site. So, you can type &#8220;archive&#8221; in the address bar, hit Ctrl+Shift+Enter, and you&#8217;re at the Internet Archive.</p>
+	<p>You can increase the text size of any site (<em>any</em> site) with <strong>Ctrl+Plus</strong> (you don&#8217;t need the Shift key, so I suppose it&#8217;s really Ctrl+=, but it&#8217;s easier to remember it as Ctrl+Plus), and decrease the text size with <strong>Ctrl+Minus</strong>.</p>
+	<p><strong>Ctrl+B</strong> opens the handy Bookmarks sidebar. Even if you like to use the Bookmarks menu to access your bookmarks, the sidebar is a great for creating them. To the left of the site address (URL) in the address bar there is an icon for the website you&#8217;re viewing. Drag that into the Bookmarks sidebar wherever you want it. (If there&#8217;s no icon, the blank spot to the left of http: will work as an icon anyway.)</p>
+	<p>The rest of the keyboard shortcuts are listed in the Firefox help.</p>
+	<p><strong>Sorting your bookmarks</strong></p>
+	<p>Firefox displays its bookmarks in some peculiar order by default. You can easily sort them by name, though.</p>
+	<p>For the Bookmarks menu, open the menu and right-click on any of the bookmarks, then select <strong>Sort by Name</strong>.</p>
+	<p>You can sort the Bookmarks sidebar (Ctrl+B) by opening the separate Bookmarks Manager using <strong>Bookmarks/Manage Bookmarks</strong>.  On the <strong>View</strong> menu are several sort options which apply to the Bookmarks sidebar as well as the Bookmarks Manager.</p>
+	<p><strong>Advanced tweaks</strong></p>
+	<p>Fans of <a href="http://www.reason.com/">Reason Magazine&#8217;s</a> lively <a href="http://www.reason.com/hitandrun/">Hit &#038; Run</a> blog may have noticed that the text on this blog comes out really tiny in Firefox, because of some unfortunate font choices in in the style sheets used on this site. This is likely to improve now that some of the Reason staffers have <a href="http://www.reason.com/hitandrun/2004/11/foxy_software.shtml#007388">switched to Firefox</a>.</p>
+	<p>But there&#8217;s no need to wait for Reason to fix their site. The font settings I listed above will fix most of the problems at Hit &#038; Run. The one remaining problem is that the type used for comment text is still too small. It&#8217;s easy enough to fix this with Ctrl+Plus, but a better fix is to override Reason&#8217;s style sheet. If you don&#8217;t mind a bit of text editing, this is easy to do.</p>
+	<p>First, you need to find the &#8220;profile&#8221; folder for Firefox. On a Windows 2000 or XP system, this is located in:</p>
+	<p><code>C:&#092;Documents and Settings&#092;<em>your name</em>&#092;Application Data&#092;Mozilla&#092;Firefox&#092;Profiles</code></p>
+	<p>That&#8217;s a hidden folder, so you&#8217;ll need to use <strong>Tools/Options</strong> on the Windows Explorer folder window and go to the <strong>View</strong> tab, then turn on the <strong>Show hidden files and folders</strong> option.</p>
+	<p>On a Windows 98 or Windows Me system, the Firefox profile is likely to be in:</p>
+	<p><code>C:&#092;Windows&#092;Application Data&#092;Mozilla&#092;Firefox&#092;Profiles</code></p>
+	<p>That location may be different if you&#8217;ve enabled multi-user settings in the Users control panel. If you don&#8217;t find it, use <strong>Start/Find/Files or Folders</strong> to search for the Firefox folder.</p>
+	<p>Inside the <code>Mozilla&#092;Firefox&#092;Profiles</code> folder on your system, you&#8217;ll see a folder with a name like <code><br />
+v7qf3bzn.default</code>. This is your actual Firefox profile folder. Firefox uses randomized names like this to help protect your profile against intruders.</p>
+	<p>Inside <em>that</em> folder is a folder called <code>chrome</code>. This is where you can do some interesting customization. In a fresh Firefox installation, there are two files here with a few examples of what you can do. <code>userChrome-example.css</code> is for customizing the &#8220;chrome&#8221;, things like the menu bar, toolbars, and such. <code>userContent-example.css</code> is about the content of a web page, and it&#8217;s the one we&#8217;re interested in here.</p>
+	<p>Copy <code>userContent-example.css</code> to <code>userContent.css</code> and then edit that new file. Add this text to the end and save the file:</p>
+	<pre>/* Override Reason Hit &#038; Run comment style */
+	
+div.comments-body {
+  font-family: Georgia,serif !important;
+  font-size: .95em !important;
+}
+</pre>
+	<p>Now close all Firefox browser windows, re-open Firefox and visit Hit &#038; Run again. The comment text will display in the more readable Georgia font at a decent size, instead of the small Times font it uses by default.</p>
+	<p>One limitation here is that changes in <code>userChrome.css</code> apply to <em>all</em> sites that happen to use the same style tag, so this may affect other sites besides the one you want to customize. But it can still be very useful for sites like this.</p>
+	<p>Update: added installation information for Clone Window and Googlebar, and bookmark sorting information.
+</p>
+	</div>
+
+	<div class="feedback">
+                        	</div>
+
+	<!--
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://mg.to/2004/11/11/basic-firefox-tweaks"
+    dc:identifier="http://mg.to/2004/11/11/basic-firefox-tweaks"
+    dc:title="Basic Firefox tweaks"
+    trackback:ping="http://mg.to/2004/11/11/basic-firefox-tweaks/trackback/" />
+</rdf:RDF>	-->
+
+
+<!-- You can start editing here. -->
+
+
+   
+		<!-- If comments are open, but there are no comments. -->
+		
+	 
+
+
+<h3 id="respond">Leave a Reply</h3>
+
+
+<form action="http://mg.to/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name </small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type="hidden" name="comment_post_ID" value="51" />
+</p>
+
+</form>
+
+
+ 
+</div>
+
+</div>
+
+
+
+<div id="menu">
+
+<ul>
+		<li id="linkcat-2"><h2>Blogs</h2>
+	<ul>
+<li><a href='http://blogs.msdn.com/Matt_Pietrek/'>Matt Pietrek</a></li>
+<li><a href='http://www.sax.net/live/'>Mike Sax</a></li>
+<li><a href='http://weblogs.asp.net/oldnewthing/'>Raymond Chen</a></li>
+<li><a href='http://rob.crabapples.net/'>Rob Fahrni</a></li>
+<li><a href='http://radio.weblogs.com/0001011/'>Robert Scoble</a></li>
+
+	</ul>
+</li>
+	<li id="linkcat-1"><h2>Mike's Sites</h2>
+	<ul>
+<li><a href='http://www.geary.com/'>Geary Central</a></li>
+<li><a href='http://pix.mg.to/'>My Photos</a></li>
+<li><a href='http://www.geary.com/Michael_Geary_-_Software_Inventor'>Who&#039;s Michael Geary?</a></li>
+
+	</ul>
+</li>
+ <li id="categories"><h2>Categories:</h2>
+	<ul>
+		<li><a href="http://mg.to/category/general/" title="View all posts filed under General">General</a>
+</li>
+	<li><a href="http://mg.to/category/blogging/" title="Weblogging">Blogging</a>
+</li>
+	<li><a href="http://mg.to/category/blogging/wordpress-patches/" title="View all posts filed under WordPress Patches">WordPress Patches</a>
+</li>
+	<li><a href="http://mg.to/category/programming/win32/" title="View all posts filed under Win32">Win32</a>
+</li>
+	<li><a href="http://mg.to/category/programming/" title="View all posts filed under Programming">Programming</a>
+</li>
+	<li><a href="http://mg.to/category/programming/c/" title="View all posts filed under C#">C#</a>
+</li>
+	<li><a href="http://mg.to/category/programming/python/" title="View all posts filed under Python">Python</a>
+</li>
+	<li><a href="http://mg.to/category/programming/ruby/" title="View all posts filed under Ruby">Ruby</a>
+</li>
+	<li><a href="http://mg.to/category/programming/javascript/" title="View all posts filed under JavaScript">JavaScript</a>
+</li>
+	<li><a href="http://mg.to/category/programming/cc/" title="View all posts filed under C/C++">C/C++</a>
+</li>
+	<li><a href="http://mg.to/category/programming/acrobat/" title="View all posts filed under Acrobat">Acrobat</a>
+</li>
+	<li><a href="http://mg.to/category/software/" title="View all posts filed under Software">Software</a>
+</li>
+	<li><a href="http://mg.to/category/hardware/" title="View all posts filed under Hardware">Hardware</a>
+</li>
+	<li><a href="http://mg.to/category/hardware/thinkpad/" title="View all posts filed under ThinkPad">ThinkPad</a>
+</li>
+	<li><a href="http://mg.to/category/design/" title="View all posts filed under Design">Design</a>
+</li>
+	<li><a href="http://mg.to/category/hardware/wireless/" title="View all posts filed under Wireless">Wireless</a>
+</li>
+	<li><a href="http://mg.to/category/politics/" title="View all posts filed under Politics">Politics</a>
+</li>
+	<li><a href="http://mg.to/category/software/browsers/" title="View all posts filed under Browsers">Browsers</a>
+</li>
+	<li><a href="http://mg.to/category/software/windows/" title="View all posts filed under Windows">Windows</a>
+</li>
+	<li><a href="http://mg.to/category/software/drupal/" title="View all posts filed under Drupal">Drupal</a>
+</li>
+	</ul>
+ </li>
+ <li id="search">
+   <label for="s"><h2>Search:</h2></label>
+   <form id="searchform" method="get" action="/index.php">
+	<div>
+		<input type="text" name="s" id="s" size="15" /><br />
+		<input type="submit" name="submit" value="Search" />
+	</div>
+	</form>
+ </li>
+ <li id="archives"><h2>Archives:</h2>
+ 	<ul>
+	 	<li><a href='http://mg.to/2005/04/' title='April 2005'>April 2005</a></li>
+	<li><a href='http://mg.to/2005/03/' title='March 2005'>March 2005</a></li>
+	<li><a href='http://mg.to/2005/02/' title='February 2005'>February 2005</a></li>
+	<li><a href='http://mg.to/2005/01/' title='January 2005'>January 2005</a></li>
+	<li><a href='http://mg.to/2004/12/' title='December 2004'>December 2004</a></li>
+	<li><a href='http://mg.to/2004/11/' title='November 2004'>November 2004</a></li>
+	<li><a href='http://mg.to/2004/10/' title='October 2004'>October 2004</a></li>
+	<li><a href='http://mg.to/2004/09/' title='September 2004'>September 2004</a></li>
+	<li><a href='http://mg.to/2004/08/' title='August 2004'>August 2004</a></li>
+ 	</ul>
+ </li>
+ <li id="calendar">
+	<table id="wp-calendar">
+    <caption>November 2004</caption>
+    <thead>
+    <tr>
+		<th abbr="Monday" scope="col" title="Monday">M</th>
+		<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+		<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+		<th abbr="Thursday" scope="col" title="Thursday">T</th>
+		<th abbr="Friday" scope="col" title="Friday">F</th>
+		<th abbr="Saturday" scope="col" title="Saturday">S</th>
+		<th abbr="Sunday" scope="col" title="Sunday">S</th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+		<td abbr="October" colspan="3" id="prev"><a href="http://mg.to/2004/10/" title="View posts for October 2004">&laquo; Oct</a></td>
+		<td class="pad">&nbsp;</td>
+		<td abbr="December" colspan="3" id="next"><a href="http://mg.to/2004/12/" title="View posts for December 2004">Dec &raquo;</a></td>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr><td>1</td><td><a href="http://mg.to/2004/11/02/" title="The Firefox vote">2</a></td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>8</td><td>9</td><td>10</td><td><a href="http://mg.to/2004/11/11/" title="Basic Firefox tweaks, Cyberguys does it again">11</a></td><td>12</td><td>13</td><td>14</td>
+	</tr>
+	<tr>
+		<td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+	</tr>
+	<tr>
+		<td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+	</tr>
+	<tr>
+		<td>29</td><td>30</td>
+		<td class="pad" colspan="5">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table> </li>
+ <li id="other"><h2>Other:</h2>
+	<ul>
+		<li><a href="http://mg.to/wp-login.php">Login</a></li>
+		<li><a href="http://mg.to/wp-register.php">Register</a></li>
+		<li><a href="http://www.bloglines.com/sub/http://mg.to/feed/rss2/">Subscribe at Bloglines</a></li>
+	</ul>
+ </li>
+ <li id="meta"><h2>Meta:</h2>
+ 	<ul>
+		<li><a href="http://mg.to/feed/" title="Syndicate this site using RSS"><abbr title="Really Simple Syndication">RSS</abbr> 2.0</a></li>
+		<li><a href="http://mg.to/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr> 2.0</a></li>
+		<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+		<li><a href="http://wordpress.org/" title="Powered by WordPress; state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+	</ul>
+ </li>
+
+</ul>
+
+</div>
+
+</div>
+
+<p class="credit"><!--18 queries. 0.684 seconds. --> <cite>Powered by <a href='http://wordpress.org' title='Powered by WordPress, state-of-the-art semantic personal publishing platform'><strong>WordPress</strong></a></cite></p>
+</body>
+</html>
+

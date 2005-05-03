@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>roachfiend.com</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css" media="screen">
+	@import url( http://roachfiend.com/wp-content/themes/MinimaPlus/style.css );	
+</style>
+
+<script type="text/javascript" src="http://roachfiend.com/wp-content/themes/MinimaPlus/nicetitle.js"></script>
+<link rel="stylesheet" href="http://roachfiend.com/wp-content/themes/MinimaPlus/nicetitle.css" />
+
+</head>
+
+<body>
+<div id="menu">
+<br />
+<div id="blogTitle"><a href="http://roachfiend.com" title="roachfiend.com">roachfiend.com</a></div>
+<p class="profile-link" style="text-align: right;"><a href="http://roachfiend.com" title="Go home">Home</a> &nbsp;&nbsp; <a href="http://roachfiend.com/archives/category/extensions/" title="Extensions">Extensions</a> &nbsp;&nbsp; <a href="http://roachfiend.com/archives/category/tutorials/" title="Tutorials">Tutorials</a> &nbsp;&nbsp; <a href="http://roachfiend.com/faq/" title="Frequently Asked Questions">FAQ</a></p>
+</div>
+
+<div id="masthead" onclick="location.href='http://roachfiend.com/';" style="cursor: pointer;"></div>
+
+<!-- Begin #content -->
+<div id="content">
+
+<!-- Begin #main -->
+<div id="main"><div id="main2">
+
+
+<!-- Begin .post -->
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/09/enabling-extension-updates/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Enabling Extension Updates">
+	 Enabling Extension Updates</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>So you&#8217;ve learned how to <a href="http://roachfiend.com/archives/2004/12/08/how-to-create-firefox-extensions/">write your own extension</a>. This tutorial will show you how to keep your users up to date with your latest version automatically.</p>
+
+<p><a href="http://roachfiend.com/archives/2005/03/09/enabling-extension-updates/#more-20">Read the rest of this entry &raquo;</a></p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/09/enabling-extension-updates/">03.09.05</a> @ 5:16 pm</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/09/enabling-extension-updates/#comments"><em><a href="http://roachfiend.com/archives/2005/03/09/enabling-extension-updates/#comments">15 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/08/alphabetical-hack-in-place/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Alphabetical hack in place">
+	 Alphabetical hack in place</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>I finally figured out how to hack the categories to display in alphabetical order. The archives are untouched, so if for some reason you wanted to see them in chronological order, you can. If anyone else wanted to know how to do this, you modify the wp-includes/classes.php file. Go to line 462, and add in this:</p>
+
+<pre>
+// Alphabetical hack for categories
+if ($whichcat)
+    {
+        $q['orderby'] = 'title';
+        $q['order'] = 'ASC';
+    }
+</pre>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/08/alphabetical-hack-in-place/">03.08.05</a> @ 3:33 pm</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/08/alphabetical-hack-in-place/#comments"><em><a href="http://roachfiend.com/archives/2005/03/08/alphabetical-hack-in-place/#comments">2 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/06/ext2abc/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Ext2Abc">
+	 Ext2Abc</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>Adds a &#8220;Sort&#8221; button on the extension manager to arrange your extensions alphabetically. There&#8217;s no permanent change to the order, as this had a possibility of corrupting the extension manager&#8217;s files.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/ext2abc.xpi">Install Ext2Abc 0.2.1</a><br />
+<small>(<b>Size</b>: <i>12kb</i> <b>Release Date</b>: <i>September 24th 2004</i>)</small><br/>
+<i><small>Tested on Firefox 0.9 - 0.10.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/06/ext2abc/">03.06.05</a> @ 3:55 pm</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/06/ext2abc/#comments"><em><a href="http://roachfiend.com/archives/2005/03/06/ext2abc/#comments">9 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/06/teleflip/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Teleflip">
+	 Teleflip</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>Send instant messages to cell phones via Firefox. It uses the free service <a href="http://www.teleflip.com/">Teleflip</a> and the freeware <acronym title="Simple Mail Transfer Protocol">SMTP</acronym> mailer <a href="http://www.blat.net">Blat</a>. Currently only compatibile with Windows and service areas of North America.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/teleflip.xpi">Install Teleflip 0.1.1</a><br />
+<small>(<b>Size</b>: <i>37kb</i> <b>Release Date</b>: <i>September 2nd 2004</i>)</small><br/>
+<i><small>  Tested on Firefox 0.9 - 0.10.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/06/teleflip/">03.06.05</a> @ 3:53 pm</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/06/teleflip/#comments"><em><a href="http://roachfiend.com/archives/2005/03/06/teleflip/#comments">6 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/06/google-images-re-linker/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Google Images Re-Linker">
+	 Google Images Re-Linker</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>This will let you click the thumbnail images on <a href="http://images.google.com">images.google.com</a>, skip the referred framed page, and jump straight to the full-size image.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/girl.xpi">Install Google Images Re-Linker 0.1.2</a><br />
+<small>(<b>Size</b>: <i>6kb</i> <b>Release Date</b>: <i>February 17th 2004</i>)</small><br/>
+<i><small>  Tested on Firefox 0.9 - 0.10.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/06/google-images-re-linker/">03.06.05</a> @ 3:44 pm</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/06/google-images-re-linker/#comments"><em><a href="http://roachfiend.com/archives/2005/03/06/google-images-re-linker/#comments">16 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/06/still-updating-files/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Still Updating Files&#8230;">
+	 Still Updating Files&#8230;</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>I&#8217;ve just (hopefully) fixed the BugMeNot timeout. Also fixed the xpi file recognition in the .htaccess file. I&#8217;m still adding a few extensions, and most of the hacks are back to the way they were. One thing that&#8217;s still annoying me is the alphabetical hack that worked in WordPress 1.2 won&#8217;t work here, so I&#8217;m looking for another way to list the extensions alphabetically without having to hack the sql database with incorrect post dates.</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/06/still-updating-files/">03.06.05</a> @ 3:38 pm</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/06/still-updating-files/#comments"><em><a href="http://roachfiend.com/archives/2005/03/06/still-updating-files/#comments">3 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/03/word-count/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Word Count">
+	 Word Count</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>Will count the number of words in any text that is selected. Simply highlight the text, right-click,
+and select &#8220;Word Count&#8221;. A pop-up window will show you how many words are in that selection.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/wordcount.xpi">Install Word Count 0.1.1</a><br />
+<small>(<b>Size</b>: <i>8kb</i> <b>Release Date</b>: <i>August 10th 2004</i>)</small><br/>
+<i><small>  Tested on Firebird 0.7, Firefox 0.8 - 0.10, Mozilla 1.6, 1.7b and Netscape 7.1.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/03/word-count/">03.03.05</a> @ 11:26 am</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/03/word-count/#comments"><em><a href="http://roachfiend.com/archives/2005/03/03/word-count/#comments">4 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/03/goonmenu/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: GoonMenu">
+	 GoonMenu</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>Allows easy navigation through the <a href="http://forums.somethingawful.com" title="Home page of Something Awful Forums">
+Something Awful</a> forums via a right-click context menu.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/goonmenu.xpi">Install GoonMenu 0.3.2</a><br />
+<small>(<b>Size</b>: <i>16kb</i> <b>Release Date</b>: <i>June 2nd 2004</i>)</small><br/>
+<i><small>  Tested on Firebird 0.7, Firefox 0.8 - 1.0.2, Mozilla 1.6, 1.7b and Netscape 7.1.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/03/goonmenu/">03.03.05</a> @ 11:25 am</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/03/goonmenu/#comments"><em><a href="http://roachfiend.com/archives/2005/03/03/goonmenu/#comments">3 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/03/listzilla/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: ListZilla">
+	 ListZilla</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>Outputs either a plain text, <acronym title="vBulletin">vB</acronym> code, or <acronym title="Hyper Text Markup Language">HTML</acronym> file that lists all installed themes or extensions. The HTML/vB code versions
+will also link all extensions and themes to the authors&#8217; respective pages. Not mozilla compatibile; current Firefox
+releases only. This will not list the default theme, the <acronym title="Document Object Model">DOM</acronym> Inspector (which is installed by default), or any
+extensions that do not use the extension manager.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/listzilla.xpi">Install ListZilla 0.5.1</a><br />
+<small>(<b>Size</b>: <i>16kb</i> <b>Release Date</b>: <i>August 30th 2004</i>)</small><br/>
+<i><small>  Tested on Firefox 0.9 - 0.10.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/03/listzilla/">03.03.05</a> @ 11:24 am</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/03/listzilla/#comments"><em><a href="http://roachfiend.com/archives/2005/03/03/listzilla/#comments">19 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+
+
+  <div class="post">
+    <h3 class="post-title">
+	 <a href="http://roachfiend.com/archives/2005/03/03/always-remember-password/" style="text-decoration:none;" rel="bookmark" title="Permanent Link: Always Remember Password">
+	 Always Remember Password</a>
+    </h3>
+
+
+	         <div class="post-body">
+	<div>
+      	<p>Instructs web sites to always remember your password. Some sites like Yahoo Mail, Hotmail,
+and banking sites instruct the browser to never allow your password manager to retain your
+information. If you use a shared workspace, then this is probably not desirable. If you are
+the sole user, then it&#8217;s quite handy. </p>
+<p><b>Note</b>: This extension uses javascript which may affect other forms in web sites, such as
+a forum&#8217;s &#8220;quick reply&#8221; feature, gmail-related links, or other javascript-enabled submission calls. If you notice
+web pages behaving strangely after you install it, then you can disable or uninstall it and
+they will return to normal. Still working on ironing out the kinks, so treat this as a beta
+release.</p>
+<p>If you want the functionality without the constant presence as an extension, you can use a
+<a href="http://www.squarefree.com/bookmarklets/forms.html#remember_password">bookmarklet</a> written
+by Jesse Ruderman that this extension is based on.</p>
+
+<p>
+<a href="http://extensions.roachfiend.com/password.xpi">Install Always Remember Password 0.1.1</a><br />
+<small>(<b>Size</b>: <i>6kb</i> <b>Release Date</b>: <i>July 22nd 2004</i>)</small><br/>
+<i><small>Tested on Firebird 0.7, Firefox 0.8 - 0.10, Mozilla 1.6, 1.7b and Netscape 7.1.</small></i>
+</p>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by Eric on <a href="http://roachfiend.com/archives/2005/03/03/always-remember-password/">03.03.05</a> @ 11:21 am</em> | <a class="comment-link" href="http://roachfiend.com/archives/2005/03/03/always-remember-password/#comments"><em><a href="http://roachfiend.com/archives/2005/03/03/always-remember-password/#comments">16 Comments</a></em></a>
+    </p>
+  
+
+  </div>
+
+<!-- End .post -->
+
+
+  
+ <div class="right"><a href="http://roachfiend.com/page/2/">previous &raquo;</a></div>
+ <div class="left"><a href="http://roachfiend.com/page/2/"></a></div>
+
+<br /><br /><br />
+
+
+
+</div>
+<p class="post-footer" style="text-align: center"><em>All content copyright &copy; Eric Hamiter 2004-2005.</em></p>
+<p class="post-footer" style="text-align: center"><em><a href="http://roachfiend.com/feed/">RSS</a> <a href="http://validator.w3.org/check/referer">XHTML</a> <a class="footerLink" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> <a href="http://www.contentquality.com/mynewtester/cynthia.exe?Url1=http://roachfiend.com">508</a></em></p>
+</div>
+
+<!-- Begin #sidebar -->
+<div id="sidebar"><div id="sidebar2">
+  <!-- Begin #profile-container -->
+  <!-- End #profile -->
+
+<!-- SiteSearch Google -->
+<h2 class="sidebar-title">Search</h2>
+<form style="padding: 0px; margin-top: 0px; margin-bottom: 0px;" method="get" action="http://www.google.com/custom">
+<p style="margin: 0px; padding: 0px;">
+<input type="hidden" name="domains" value="roachfiend.com" />
+<input type="text" name="q" size="19" maxlength="255" value="" />
+<input type="submit" name="sa" value="Go" />
+<br />
+<input type="radio" name="sitesearch" value="" checked="checked"/>
+<font face="arial" size="-1" color="#000000">web</font>
+
+<input type="radio" name="sitesearch" value="roachfiend.com"/>
+<font face="arial" size="-1" color="#000000">roachfiend.com</font>
+
+<input type="hidden" name="client" value="pub-7088946648990221"/>
+<input type="hidden" name="forid" value="1"/>
+<input type="hidden" name="ie" value="ISO-8859-1"/>
+<input type="hidden" name="oe" value="ISO-8859-1"/>
+<input type="hidden" name="cof" value="GALT:#006699;GL:1;DIV:#FFFFFF;VLC:006699;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:C06000;LC:C06000;T:000000;GFNT:006699;GIMP:006699;LH:22;LW:49;L:http://roachfiend.com/search.png;S:http://;FORID:1;"/>
+<input type="hidden" name="hl" value="en"/>
+
+</p>
+</form>
+<!-- SiteSearch Google -->
+
+
+<ul><li></li></ul>
+
+<!--<p class="post-footer"><em><a class="footerLink" href="http://tinyurl.com/4yc3n" title="Donate to roachfiend.com">Donate to roachfiend.com</a></em></p>-->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick"/>
+<input type="hidden" name="business" value="ehamiter@gmail.com"/>
+<input type="hidden" name="item_name" value="roachfiend.com firefox extensions"/>
+<input type="hidden" name="no_shipping" value="1"/>
+<input type="hidden" name="return" value="http://roachfiend.com/thanks-for-donating/"/>
+<input type="hidden" name="no_note" value="1"/>
+<input type="hidden" name="currency_code" value="USD"/>
+<input type="hidden" name="tax" value="0"/>
+<input type="image" src="http://roachfiend.com/donate.png" name="submit" title="Donate to roachfiend.com" alt="Make payments with PayPal - it's fast, free and secure!"/>
+</form>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7088946648990221";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_channel ="";
+google_ad_type = "text";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "C06000";
+google_color_url = "006699";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7088946648990221";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_channel ="";
+google_ad_type = "text";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "C06000";
+google_color_url = "006699";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div></div>
+<!-- End #sidebar -->
+
+</div>
+<!-- End #content -->
+
+<!-- Begin #footer -->
+<div id="footer"><hr />
+  <p><!--This is an optional footer. If you want text here, place it inside these tags, and remove this comment. -->&nbsp;</p>
+
+</div>
+<!-- End #footer -->
+
+
+
+</body>
+</html>
+

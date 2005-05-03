@@ -1,0 +1,862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="STYLESHEET" href="lib.css" type='text/css' />
+<link rel="SHORTCUT ICON" href="../icons/pyfav.png" type="image/png" />
+<link rel='start' href='../index.html' title='Python Documentation Index' />
+<link rel="first" href="lib.html" title='Python Library Reference' />
+<link rel='contents' href='contents.html' title="Contents" />
+<link rel='index' href='genindex.html' title='Index' />
+<link rel='last' href='about.html' title='About this document...' />
+<link rel='help' href='about.html' title='About this document...' />
+<link rel="next" href="os-path.html" />
+<link rel="prev" href="os-file-dir.html" />
+<link rel="parent" href="module-os.html" />
+<link rel="next" href="os-path.html" />
+<meta name='aesop' content='information' />
+<title>6.1.5 Process Management </title>
+</head>
+<body>
+<DIV CLASS="navigation">
+<div id='top-navigation-panel' xml:id='top-navigation-panel'>
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class='online-navigation'><a rel="prev" title="6.1.4 Files and Directories"
+  href="os-file-dir.html"><img src='../icons/previous.png'
+  border='0' height='32'  alt='Previous Page' width='32' /></A></td>
+<td class='online-navigation'><a rel="parent" title="6.1 os  "
+  href="module-os.html"><img src='../icons/up.png'
+  border='0' height='32'  alt='Up One Level' width='32' /></A></td>
+<td class='online-navigation'><a rel="next" title="6.1.6 Miscellaneous System Information"
+  href="os-path.html"><img src='../icons/next.png'
+  border='0' height='32'  alt='Next Page' width='32' /></A></td>
+<td align="center" width="100%">Python Library Reference</td>
+<td class='online-navigation'><a rel="contents" title="Table of Contents"
+  href="contents.html"><img src='../icons/contents.png'
+  border='0' height='32'  alt='Contents' width='32' /></A></td>
+<td class='online-navigation'><a href="modindex.html" title="Module Index"><img src='../icons/modules.png'
+  border='0' height='32'  alt='Module Index' width='32' /></a></td>
+<td class='online-navigation'><a rel="index" title="Index"
+  href="genindex.html"><img src='../icons/index.png'
+  border='0' height='32'  alt='Index' width='32' /></A></td>
+</tr></table>
+<div class='online-navigation'>
+<b class="navlabel">Previous:</b>
+<a class="sectref" rel="prev" href="os-file-dir.html">6.1.4 Files and Directories</A>
+<b class="navlabel">Up:</b>
+<a class="sectref" rel="parent" href="module-os.html">6.1 os  </A>
+<b class="navlabel">Next:</b>
+<a class="sectref" rel="next" href="os-path.html">6.1.6 Miscellaneous System Information</A>
+</div>
+<hr /></div>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION008150000000000000000"></A><A NAME="os-process"></A>
+<BR>
+6.1.5 Process Management 
+</H2>
+
+<P>
+These functions may be used to create and manage processes.
+
+<P>
+The various <tt class="function">exec*()</tt> functions take a list of arguments for
+the new program loaded into the process.  In each case, the first of
+these arguments is passed to the new program as its own name rather
+than as an argument a user may have typed on a command line.  For the
+C programmer, this is the <code>argv[0]</code> passed to a program's
+<tt class="cfunction">main()</tt>.  For example, "<tt class="samp">os.execv('/bin/echo', ['foo',
+'bar'])</tt>" will only print "<tt class="samp">bar</tt>" on standard output; "<tt class="samp">foo</tt>"will seem to be ignored.
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1637' xml:id='l2h-1637' class="function">abort</tt></b>(</nobr></td>
+  <td><var></var>)</td></tr></table></dt>
+<dd>
+Generate a <tt class="constant">SIGABRT</tt> signal to the current process.  On
+<span class="Unix">Unix</span>, the default behavior is to produce a core dump; on Windows, the
+process immediately returns an exit code of <code>3</code>.  Be aware that
+programs which use <tt class="function">signal.signal()</tt> to register a handler
+for <tt class="constant">SIGABRT</tt> will behave differently.
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1638' xml:id='l2h-1638' class="function">execl</tt></b>(</nobr></td>
+  <td><var>path, arg0, arg1, ...</var>)</td></tr></table></dt>
+<dd>
+<dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execle</tt></b>(</nobr></td>
+  <td><var>path, arg0, arg1, ..., env</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execlp</tt></b>(</nobr></td>
+  <td><var>file, arg0, arg1, ...</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execlpe</tt></b>(</nobr></td>
+  <td><var>file, arg0, arg1, ..., env</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execv</tt></b>(</nobr></td>
+  <td><var>path, args</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execve</tt></b>(</nobr></td>
+  <td><var>path, args, env</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execvp</tt></b>(</nobr></td>
+  <td><var>file, args</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">execvpe</tt></b>(</nobr></td>
+  <td><var>file, args, env</var>)</td></tr></table></dt>
+<dd>These functions all execute a new program, replacing the current
+process; they do not return.  On <span class="Unix">Unix</span>, the new executable is loaded
+into the current process, and will have the same process ID as the
+caller.  Errors will be reported as <tt class="exception">OSError</tt> exceptions.
+
+<P>
+The "<tt class="character">l</tt>" and "<tt class="character">v</tt>" variants of the
+<tt class="function">exec*()</tt> functions differ in how command-line arguments are
+passed.  The "<tt class="character">l</tt>" variants are perhaps the easiest to work
+with if the number of parameters is fixed when the code is written;
+the individual parameters simply become additional parameters to the
+<tt class="function">execl*()</tt> functions.  The "<tt class="character">v</tt>" variants are good
+when the number of parameters is variable, with the arguments being
+passed in a list or tuple as the <var>args</var> parameter.  In either
+case, the arguments to the child process should start with the name of
+the command being run, but this is not enforced.
+
+<P>
+The variants which include a "<tt class="character">p</tt>" near the end
+(<tt class="function">execlp()</tt>, <tt class="function">execlpe()</tt>, <tt class="function">execvp()</tt>,
+and <tt class="function">execvpe()</tt>) will use the <a class="envvar" id='l2h-1697' xml:id='l2h-1697'>PATH</a> environment
+variable to locate the program <var>file</var>.  When the environment is
+being replaced (using one of the <tt class="function">exec*e()</tt> variants,
+discussed in the next paragraph), the
+new environment is used as the source of the <a class="envvar" id='l2h-1698' xml:id='l2h-1698'>PATH</a> variable.
+The other variants, <tt class="function">execl()</tt>, <tt class="function">execle()</tt>,
+<tt class="function">execv()</tt>, and <tt class="function">execve()</tt>, will not use the
+<a class="envvar" id='l2h-1699' xml:id='l2h-1699'>PATH</a> variable to locate the executable; <var>path</var> must
+contain an appropriate absolute or relative path.
+
+<P>
+For <tt class="function">execle()</tt>, <tt class="function">execlpe()</tt>, <tt class="function">execve()</tt>,
+and <tt class="function">execvpe()</tt> (note that these all end in "<tt class="character">e</tt>"),
+the <var>env</var> parameter must be a mapping which is used to define the
+environment variables for the new process; the <tt class="function">execl()</tt>,
+<tt class="function">execlp()</tt>, <tt class="function">execv()</tt>, and <tt class="function">execvp()</tt>
+all cause the new process to inherit the environment of the current
+process.
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1646' xml:id='l2h-1646' class="function">_exit</tt></b>(</nobr></td>
+  <td><var>n</var>)</td></tr></table></dt>
+<dd>
+Exit to the system with status <var>n</var>, without calling cleanup
+handlers, flushing stdio buffers, etc.
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+
+<P>
+<div class="note"><b class="label">Note:</b>
+The standard way to exit is <code>sys.exit(<var>n</var>)</code>.
+<tt class="function">_exit()</tt> should normally only be used in the child process
+after a <tt class="function">fork()</tt>.
+</div>
+</dl>
+
+<P>
+The following exit codes are a defined, and can be used with
+<tt class="function">_exit()</tt>, although they are not required.  These are
+typically used for system programs written in Python, such as a
+mail server's external command delivery program.
+
+<P>
+<dl><dt><b><tt id='l2h-1647' xml:id='l2h-1647'>EX_OK</tt></b></dt>
+<dd>
+Exit code that means no error occurred.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1648' xml:id='l2h-1648'>EX_USAGE</tt></b></dt>
+<dd>
+Exit code that means the command was used incorrectly, such as when
+the wrong number of arguments are given.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1649' xml:id='l2h-1649'>EX_DATAERR</tt></b></dt>
+<dd>
+Exit code that means the input data was incorrect.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1650' xml:id='l2h-1650'>EX_NOINPUT</tt></b></dt>
+<dd>
+Exit code that means an input file did not exist or was not readable.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1651' xml:id='l2h-1651'>EX_NOUSER</tt></b></dt>
+<dd>
+Exit code that means a specified user did not exist.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1652' xml:id='l2h-1652'>EX_NOHOST</tt></b></dt>
+<dd>
+Exit code that means a specified host did not exist.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1653' xml:id='l2h-1653'>EX_UNAVAILABLE</tt></b></dt>
+<dd>
+Exit code that means that a required service is unavailable.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1654' xml:id='l2h-1654'>EX_SOFTWARE</tt></b></dt>
+<dd>
+Exit code that means an internal software error was detected.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1655' xml:id='l2h-1655'>EX_OSERR</tt></b></dt>
+<dd>
+Exit code that means an operating system error was detected, such as
+the inability to fork or create a pipe.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1656' xml:id='l2h-1656'>EX_OSFILE</tt></b></dt>
+<dd>
+Exit code that means some system file did not exist, could not be
+opened, or had some other kind of error.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1657' xml:id='l2h-1657'>EX_CANTCREAT</tt></b></dt>
+<dd>
+Exit code that means a user specified output file could not be created.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1658' xml:id='l2h-1658'>EX_IOERR</tt></b></dt>
+<dd>
+Exit code that means that an error occurred while doing I/O on some file.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1659' xml:id='l2h-1659'>EX_TEMPFAIL</tt></b></dt>
+<dd>
+Exit code that means a temporary failure occurred.  This indicates
+something that may not really be an error, such as a network
+connection that couldn't be made during a retryable operation.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1660' xml:id='l2h-1660'>EX_PROTOCOL</tt></b></dt>
+<dd>
+Exit code that means that a protocol exchange was illegal, invalid, or
+not understood.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1661' xml:id='l2h-1661'>EX_NOPERM</tt></b></dt>
+<dd>
+Exit code that means that there were insufficient permissions to
+perform the operation (but not intended for file system problems).
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1662' xml:id='l2h-1662'>EX_CONFIG</tt></b></dt>
+<dd>
+Exit code that means that some kind of configuration error occurred.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1663' xml:id='l2h-1663'>EX_NOTFOUND</tt></b></dt>
+<dd>
+Exit code that means something like ``an entry was not found''.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1664' xml:id='l2h-1664' class="function">fork</tt></b>(</nobr></td>
+  <td><var></var>)</td></tr></table></dt>
+<dd>
+Fork a child process.  Return <code>0</code> in the child, the child's
+process id in the parent.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1665' xml:id='l2h-1665' class="function">forkpty</tt></b>(</nobr></td>
+  <td><var></var>)</td></tr></table></dt>
+<dd>
+Fork a child process, using a new pseudo-terminal as the child's
+controlling terminal. Return a pair of <code>(<var>pid</var>, <var>fd</var>)</code>,
+where <var>pid</var> is <code>0</code> in the child, the new child's process id
+in the parent, and <var>fd</var> is the file descriptor of the master end
+of the pseudo-terminal.  For a more portable approach, use the
+<tt class="module"><a href="module-pty.html">pty</a></tt> module.
+Availability: Macintosh, Some flavors of <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1666' xml:id='l2h-1666' class="function">kill</tt></b>(</nobr></td>
+  <td><var>pid, sig</var>)</td></tr></table></dt>
+<dd>
+<a id='l2h-1700' xml:id='l2h-1700'></a>
+Kill the process <var>pid</var> with signal <var>sig</var>.  Constants for the
+specific signals available on the host platform are defined in the
+<tt class="module"><a href="module-signal.html">signal</a></tt> module.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1667' xml:id='l2h-1667' class="function">killpg</tt></b>(</nobr></td>
+  <td><var>pgid, sig</var>)</td></tr></table></dt>
+<dd>
+<a id='l2h-1701' xml:id='l2h-1701'></a>
+Kill the process group <var>pgid</var> with the signal <var>sig</var>.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1668' xml:id='l2h-1668' class="function">nice</tt></b>(</nobr></td>
+  <td><var>increment</var>)</td></tr></table></dt>
+<dd>
+Add <var>increment</var> to the process's ``niceness''.  Return the new
+niceness.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1669' xml:id='l2h-1669' class="function">plock</tt></b>(</nobr></td>
+  <td><var>op</var>)</td></tr></table></dt>
+<dd>
+Lock program segments into memory.  The value of <var>op</var>
+(defined in <code>&lt;sys/lock.h&gt;</code>) determines which segments are locked.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">popen</tt></b>(</nobr></td>
+  <td><var>...</var>)</td></tr></table></dt>
+<dd>
+<dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">popen2</tt></b>(</nobr></td>
+  <td><var>...</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">popen3</tt></b>(</nobr></td>
+  <td><var>...</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">popen4</tt></b>(</nobr></td>
+  <td><var>...</var>)</td></tr></table></dt>
+<dd>Run child processes, returning opened pipes for communications.  These
+functions are described in section <A href="os-newstreams.html#os-newstreams">6.1.2</A>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1670' xml:id='l2h-1670' class="function">spawnl</tt></b>(</nobr></td>
+  <td><var>mode, path, ...</var>)</td></tr></table></dt>
+<dd>
+<dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnle</tt></b>(</nobr></td>
+  <td><var>mode, path, ..., env</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnlp</tt></b>(</nobr></td>
+  <td><var>mode, file, ...</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnlpe</tt></b>(</nobr></td>
+  <td><var>mode, file, ..., env</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnv</tt></b>(</nobr></td>
+  <td><var>mode, path, args</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnve</tt></b>(</nobr></td>
+  <td><var>mode, path, args, env</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnvp</tt></b>(</nobr></td>
+  <td><var>mode, file, args</var>)</td></tr></table></dt>
+<dd><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt class="function">spawnvpe</tt></b>(</nobr></td>
+  <td><var>mode, file, args, env</var>)</td></tr></table></dt>
+<dd>Execute the program <var>path</var> in a new process.  If <var>mode</var> is
+<tt class="constant">P_NOWAIT</tt>, this function returns the process ID of the new
+process; if <var>mode</var> is <tt class="constant">P_WAIT</tt>, returns the process's
+exit code if it exits normally, or <code>-<var>signal</var></code>, where
+<var>signal</var> is the signal that killed the process.  On Windows, the
+process ID will actually be the process handle, so can be used with
+the <tt class="function">waitpid()</tt> function.
+
+<P>
+The "<tt class="character">l</tt>" and "<tt class="character">v</tt>" variants of the
+<tt class="function">spawn*()</tt> functions differ in how command-line arguments are
+passed.  The "<tt class="character">l</tt>" variants are perhaps the easiest to work
+with if the number of parameters is fixed when the code is written;
+the individual parameters simply become additional parameters to the
+<tt class="function">spawnl*()</tt> functions.  The "<tt class="character">v</tt>" variants are good
+when the number of parameters is variable, with the arguments being
+passed in a list or tuple as the <var>args</var> parameter.  In either
+case, the arguments to the child process must start with the name of
+the command being run.
+
+<P>
+The variants which include a second "<tt class="character">p</tt>" near the end
+(<tt class="function">spawnlp()</tt>, <tt class="function">spawnlpe()</tt>, <tt class="function">spawnvp()</tt>,
+and <tt class="function">spawnvpe()</tt>) will use the <a class="envvar" id='l2h-1702' xml:id='l2h-1702'>PATH</a> environment
+variable to locate the program <var>file</var>.  When the environment is
+being replaced (using one of the <tt class="function">spawn*e()</tt> variants,
+discussed in the next paragraph), the new environment is used as the
+source of the <a class="envvar" id='l2h-1703' xml:id='l2h-1703'>PATH</a> variable.  The other variants,
+<tt class="function">spawnl()</tt>, <tt class="function">spawnle()</tt>, <tt class="function">spawnv()</tt>, and
+<tt class="function">spawnve()</tt>, will not use the <a class="envvar" id='l2h-1704' xml:id='l2h-1704'>PATH</a> variable to
+locate the executable; <var>path</var> must contain an appropriate absolute
+or relative path.
+
+<P>
+For <tt class="function">spawnle()</tt>, <tt class="function">spawnlpe()</tt>, <tt class="function">spawnve()</tt>,
+and <tt class="function">spawnvpe()</tt> (note that these all end in "<tt class="character">e</tt>"),
+the <var>env</var> parameter must be a mapping which is used to define the
+environment variables for the new process; the <tt class="function">spawnl()</tt>,
+<tt class="function">spawnlp()</tt>, <tt class="function">spawnv()</tt>, and <tt class="function">spawnvp()</tt>
+all cause the new process to inherit the environment of the current
+process.
+
+<P>
+As an example, the following calls to <tt class="function">spawnlp()</tt> and
+<tt class="function">spawnvpe()</tt> are equivalent:
+
+<P>
+<div class="verbatim"><pre>
+import os
+os.spawnlp(os.P_WAIT, 'cp', 'cp', 'index.html', '/dev/null')
+
+L = ['cp', 'index.html', '/dev/null']
+os.spawnvpe(os.P_WAIT, 'cp', L, os.environ)
+</pre></div>
+
+<P>
+Availability: <span class="Unix">Unix</span>, Windows.  <tt class="function">spawnlp()</tt>,
+<tt class="function">spawnlpe()</tt>, <tt class="function">spawnvp()</tt> and <tt class="function">spawnvpe()</tt>
+are not available on Windows.
+
+<span class="versionnote">New in version 1.6.</span>
+
+</dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1678' xml:id='l2h-1678'>P_NOWAIT</tt></b></dt>
+<dd>
+<dt><b><tt id='l2h-1705' xml:id='l2h-1705'>P_NOWAITO</tt></b></dt><dd>
+Possible values for the <var>mode</var> parameter to the <tt class="function">spawn*()</tt>
+family of functions.  If either of these values is given, the
+<tt class="function">spawn*()</tt> functions will return as soon as the new process
+has been created, with the process ID as the return value.
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+
+<span class="versionnote">New in version 1.6.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1679' xml:id='l2h-1679'>P_WAIT</tt></b></dt>
+<dd>
+Possible value for the <var>mode</var> parameter to the <tt class="function">spawn*()</tt>
+family of functions.  If this is given as <var>mode</var>, the
+<tt class="function">spawn*()</tt> functions will not return until the new process
+has run to completion and will return the exit code of the process the
+run is successful, or <code>-<var>signal</var></code> if a signal kills the
+process.
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+
+<span class="versionnote">New in version 1.6.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1680' xml:id='l2h-1680'>P_DETACH</tt></b></dt>
+<dd>
+<dt><b><tt id='l2h-1706' xml:id='l2h-1706'>P_OVERLAY</tt></b></dt><dd>
+Possible values for the <var>mode</var> parameter to the
+<tt class="function">spawn*()</tt> family of functions.  These are less portable than
+those listed above.
+<tt class="constant">P_DETACH</tt> is similar to <tt class="constant">P_NOWAIT</tt>, but the new
+process is detached from the console of the calling process.
+If <tt class="constant">P_OVERLAY</tt> is used, the current process will be replaced;
+the <tt class="function">spawn*()</tt> function will not return.
+Availability: Windows.
+
+<span class="versionnote">New in version 1.6.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1681' xml:id='l2h-1681' class="function">startfile</tt></b>(</nobr></td>
+  <td><var>path</var>)</td></tr></table></dt>
+<dd>
+Start a file with its associated application.  This acts like
+double-clicking the file in Windows Explorer, or giving the file name
+as an argument to the <b class="program">start</b> command from the interactive
+command shell: the file is opened with whatever application (if any)
+its extension is associated.
+
+<P>
+<tt class="function">startfile()</tt> returns as soon as the associated application
+is launched.  There is no option to wait for the application to close,
+and no way to retrieve the application's exit status.  The <var>path</var>
+parameter is relative to the current directory.  If you want to use an
+absolute path, make sure the first character is not a slash
+("<tt class="character">/</tt>"); the underlying Win32 <tt class="cfunction">ShellExecute()</tt>
+function doesn't work if it is.  Use the <tt class="function">os.path.normpath()</tt>
+function to ensure that the path is properly encoded for Win32.
+Availability: Windows.
+
+<span class="versionnote">New in version 2.0.</span>
+
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1682' xml:id='l2h-1682' class="function">system</tt></b>(</nobr></td>
+  <td><var>command</var>)</td></tr></table></dt>
+<dd>
+Execute the command (a string) in a subshell.  This is implemented by
+calling the Standard C function <tt class="cfunction">system()</tt>, and has the
+same limitations.  Changes to <code>posix.environ</code>, <code>sys.stdin</code>,
+etc. are not reflected in the environment of the executed command.
+
+<P>
+On <span class="Unix">Unix</span>, the return value is the exit status of the process encoded in the
+format specified for <tt class="function">wait()</tt>.  Note that POSIX does not
+specify the meaning of the return value of the C <tt class="cfunction">system()</tt>
+function, so the return value of the Python function is system-dependent.
+
+<P>
+On Windows, the return value is that returned by the system shell after
+running <var>command</var>, given by the Windows environment variable
+<a class="envvar" id='l2h-1707' xml:id='l2h-1707'>COMSPEC</a>: on <b class="program">command.com</b> systems (Windows 95, 98 and ME)
+this is always <code>0</code>; on <b class="program">cmd.exe</b> systems (Windows NT, 2000
+and XP) this is the exit status of the command run; on systems using
+a non-native shell, consult your shell documentation.
+
+<P>
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1683' xml:id='l2h-1683' class="function">times</tt></b>(</nobr></td>
+  <td><var></var>)</td></tr></table></dt>
+<dd>
+Return a 5-tuple of floating point numbers indicating accumulated
+(processor or other)
+times, in seconds.  The items are: user time, system time, children's
+user time, children's system time, and elapsed real time since a fixed
+point in the past, in that order.  See the <span class="Unix">Unix</span> manual page
+<span class="manpage"><i>times</i>(2)</span> or the corresponding Windows Platform API
+documentation.
+Availability: Macintosh, <span class="Unix">Unix</span>, Windows.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1684' xml:id='l2h-1684' class="function">wait</tt></b>(</nobr></td>
+  <td><var></var>)</td></tr></table></dt>
+<dd>
+Wait for completion of a child process, and return a tuple containing
+its pid and exit status indication: a 16-bit number, whose low byte is
+the signal number that killed the process, and whose high byte is the
+exit status (if the signal number is zero); the high bit of the low
+byte is set if a core file was produced.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1685' xml:id='l2h-1685' class="function">waitpid</tt></b>(</nobr></td>
+  <td><var>pid, options</var>)</td></tr></table></dt>
+<dd>
+The details of this function differ on <span class="Unix">Unix</span> and Windows.
+
+<P>
+On <span class="Unix">Unix</span>:
+Wait for completion of a child process given by process id <var>pid</var>,
+and return a tuple containing its process id and exit status
+indication (encoded as for <tt class="function">wait()</tt>).  The semantics of the
+call are affected by the value of the integer <var>options</var>, which
+should be <code>0</code> for normal operation.
+
+<P>
+If <var>pid</var> is greater than <code>0</code>, <tt class="function">waitpid()</tt> requests
+status information for that specific process.  If <var>pid</var> is
+<code>0</code>, the request is for the status of any child in the process
+group of the current process.  If <var>pid</var> is <code>-1</code>, the request
+pertains to any child of the current process.  If <var>pid</var> is less
+than <code>-1</code>, status is requested for any process in the process
+group <code>-<var>pid</var></code> (the absolute value of <var>pid</var>).
+
+<P>
+On Windows:
+Wait for completion of a process given by process handle <var>pid</var>,
+and return a tuple containing <var>pid</var>,
+and its exit status shifted left by 8 bits (shifting makes cross-platform
+use of the function easier).
+A <var>pid</var> less than or equal to <code>0</code> has no special meaning on
+Windows, and raises an exception.
+The value of integer <var>options</var> has no effect.
+<var>pid</var> can refer to any process whose id is known, not necessarily a
+child process.
+The <tt class="function">spawn()</tt> functions called with <tt class="constant">P_NOWAIT</tt>
+return suitable process handles.
+</dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1686' xml:id='l2h-1686'>WNOHANG</tt></b></dt>
+<dd>
+The option for <tt class="function">waitpid()</tt> to avoid hanging if no child
+process status is available immediately.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1687' xml:id='l2h-1687'>WCONTINUED</tt></b></dt>
+<dd>
+This option causes child processes to be reported if they have been
+continued from a job control stop since their status was last
+reported.
+Availability: Some <span class="Unix">Unix</span> systems.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+<dl><dt><b><tt id='l2h-1688' xml:id='l2h-1688'>WUNTRACED</tt></b></dt>
+<dd>
+This option causes child processes to be reported if they have been
+stopped but their current state has not been reported since they were
+stopped.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dd></dl>
+
+<P>
+The following functions take a process status code as returned by
+<tt class="function">system()</tt>, <tt class="function">wait()</tt>, or <tt class="function">waitpid()</tt> as a
+parameter.  They may be used to determine the disposition of a
+process.
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1689' xml:id='l2h-1689' class="function">WCOREDUMP</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Returns <code>True</code> if a core dump was generated for the process,
+otherwise it returns <code>False</code>.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1690' xml:id='l2h-1690' class="function">WIFCONTINUED</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Returns <code>True</code> if the process has been continued from a job
+control stop, otherwise it returns <code>False</code>.
+Availability: <span class="Unix">Unix</span>.
+
+<span class="versionnote">New in version 2.3.</span>
+
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1691' xml:id='l2h-1691' class="function">WIFSTOPPED</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Returns <code>True</code> if the process has been stopped, otherwise it
+returns <code>False</code>.
+Availability: <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1692' xml:id='l2h-1692' class="function">WIFSIGNALED</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Returns <code>True</code> if the process exited due to a signal, otherwise
+it returns <code>False</code>.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1693' xml:id='l2h-1693' class="function">WIFEXITED</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Returns <code>True</code> if the process exited using the <span class="manpage"><i>exit</i>(2)</span>
+system call, otherwise it returns <code>False</code>.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1694' xml:id='l2h-1694' class="function">WEXITSTATUS</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+If <code>WIFEXITED(<var>status</var>)</code> is true, return the integer
+parameter to the <span class="manpage"><i>exit</i>(2)</span> system call.  Otherwise, the return
+value is meaningless.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1695' xml:id='l2h-1695' class="function">WSTOPSIG</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Return the signal which caused the process to stop.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+<dl><dt><table cellpadding="0" cellspacing="0"><tr valign="baseline">
+  <td><nobr><b><tt id='l2h-1696' xml:id='l2h-1696' class="function">WTERMSIG</tt></b>(</nobr></td>
+  <td><var>status</var>)</td></tr></table></dt>
+<dd>
+Return the signal which caused the process to exit.
+Availability: Macintosh, <span class="Unix">Unix</span>.
+</dl>
+
+<P>
+
+<DIV CLASS="navigation">
+<div class='online-navigation'>
+<p></p><hr />
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class='online-navigation'><a rel="prev" title="6.1.4 Files and Directories"
+  href="os-file-dir.html"><img src='../icons/previous.png'
+  border='0' height='32'  alt='Previous Page' width='32' /></A></td>
+<td class='online-navigation'><a rel="parent" title="6.1 os  "
+  href="module-os.html"><img src='../icons/up.png'
+  border='0' height='32'  alt='Up One Level' width='32' /></A></td>
+<td class='online-navigation'><a rel="next" title="6.1.6 Miscellaneous System Information"
+  href="os-path.html"><img src='../icons/next.png'
+  border='0' height='32'  alt='Next Page' width='32' /></A></td>
+<td align="center" width="100%">Python Library Reference</td>
+<td class='online-navigation'><a rel="contents" title="Table of Contents"
+  href="contents.html"><img src='../icons/contents.png'
+  border='0' height='32'  alt='Contents' width='32' /></A></td>
+<td class='online-navigation'><a href="modindex.html" title="Module Index"><img src='../icons/modules.png'
+  border='0' height='32'  alt='Module Index' width='32' /></a></td>
+<td class='online-navigation'><a rel="index" title="Index"
+  href="genindex.html"><img src='../icons/index.png'
+  border='0' height='32'  alt='Index' width='32' /></A></td>
+</tr></table>
+<div class='online-navigation'>
+<b class="navlabel">Previous:</b>
+<a class="sectref" rel="prev" href="os-file-dir.html">6.1.4 Files and Directories</A>
+<b class="navlabel">Up:</b>
+<a class="sectref" rel="parent" href="module-os.html">6.1 os  </A>
+<b class="navlabel">Next:</b>
+<a class="sectref" rel="next" href="os-path.html">6.1.6 Miscellaneous System Information</A>
+</div>
+</div>
+<hr />
+<span class="release-info">Release 2.4.1, documentation updated on 30 March 2005.</span>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+See <i><a href="about.html">About this document...</a></i> for information on suggesting changes.
+</ADDRESS>
+</BODY>
+</HTML>

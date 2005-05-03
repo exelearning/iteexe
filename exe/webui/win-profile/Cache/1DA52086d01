@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>milov.nl: by category: coding</title>
+    <meta name="ICBM" content="52.0214,4.28" />
+    <meta name="DC.title" content="milov.nl" />
+    <meta name="author" content="Milo Vermeulen" />
+    <meta name="description" content="Weblog/photolog/forum and DHTML experiments/artworks by Milo Vermeulen, Wateringen, Netherlands" />
+    <meta name="keywords" content="weblog, blog, photolog, photography, javascript, dhtml, php, forum, experimental, web art, coding, foto, foto's, fotolog, nederland" />
+    <meta name="geo.country" content="NL" />
+    <meta name="dc.language" content="en" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for category 'coding' only" href="http://milov.nl/cat/coding/rss" />
+    <link rel="shortcut icon" href="/g/favicon_cat.gif" />
+    <link rel="stylesheet" type="text/css" href="/milov.css" title="milov.nl default stylesheet" />
+    <script type="text/javascript" src="/milov.js"></script>
+    <script type="text/javascript" src="/imgClick.js"></script>
+  </head>
+  <body>
+
+        <a href="/" id="header"></a>    <div class="menucol">
+
+<h1 class="logo"><span class="side">weblog/photolog by Milo Vermeulen</span> <a href="/">milov.nl</a></h1>
+<ul class="links">
+<li><a href="/">weblog</a></li>
+<li><a href="/?archive">archive</a></li>
+<li><a href="/comments/">comments</a></li>
+<li><a href="/tags/">tags</a></li>
+<!--<li><a href="/?about">about</a></li> // need to update this -->
+<li><a href="/?coding">coding</a></li>
+<li><a href="/?design">design</a></li>
+<li><a href="/forum/">forum</a></li>
+<li><a href="/links/">links</a></li>
+<!--<li><a href="/feeds/">feeds</a></li> // disabled for now -->
+<li><a href="/iambald/" title="i.am/bald - dhtml artworks and experiments">experiments</a></li>
+<li><a href="/entry/random" title="jump to a random weblog/photolog entry">random</a></li>
+</ul>
+
+<ul class="contact">
+<li>email/msn: <span class="mailto">milov.nl,milo</span></li>
+<li>gmail: <span class="mailto">gmail.com,milovermeulen,milovermeulen</span></li>
+<li>aim: milovdotnl</li>
+<li>icq: 275795</li>
+</ul>
+
+
+
+
+
+
+
+<ul class="plain debug">
+<li>1.009896</li>
+</ul>
+
+    </div>
+    <div class="contentcol">
+
+
+
+
+
+
+
+<h1 class="cat">
+      <span class="side">
+      pages:
+              <a href="/cat/coding/3032">1</a>
+              <a href="/cat/coding/2762">2</a>
+              <a href="/cat/coding/2543">3</a>
+              <a href="/cat/coding/2219">4</a>
+              <a href="/cat/coding/1687">5</a>
+              <a href="/cat/coding/1394">6</a>
+              <a href="/cat/coding/1123">7</a>
+              <a href="/cat/coding/914">8</a>
+              <a href="/cat/coding/649">9</a>
+              <a href="/cat/coding/393">10</a>
+          </span>
+        20-37 of 
+    174 entries in category 'coding'</h1>
+
+
+
+
+
+<h2><a href="/2760" id="entry2760" title="permalink to 'Unobtrusive Javascript'">2760</a> &nbsp;</h2><div class="entry">
+  <div id="etext2760"><a href="http://www.onlinetools.org/articles/unobtrusivejavascript/">Unobtrusive Javascript</a> [<a href="http://www.simiandesign.com/blog-fu/2004/10/unobtrusive_jav.php">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Sunday, October 17, 2004</div>
+    <a href="/2760">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2757" id="entry2757" title="permalink to 'naar voren - structuur in de chaos'">2757</a> &nbsp;</h2><div class="entry">
+  <div id="etext2757"><a href="http://www.naarvoren.nl/artikel/structuur.html">naar voren - structuur in de chaos</a></div>
+  <div class="entryfooter">
+    <div class="date">posted Thursday, October 14, 2004</div>
+    <a href="/2757">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2752" id="entry2752" title="permalink to 'negative text-indent'">2752</a> &nbsp;</h2><div class="entry">
+  <div id="etext2752">Negative(!) text-indent is in effect in the quicklinks list (over there on the left of the <a href="/">front page</a>). Handy... applying a style like <code>padding-left: 10px; text-indent: -10px;</code> to an element makes all lines of that element appear indented except the first one.</div>
+  <div class="entryfooter">
+    <div class="date">posted Tuesday, October 12, 2004</div>
+    2 comments:    &nbsp;
+  </div>
+  <div class="inline">
+  <h4><a id="comment5346" href="/2752#comment5346">
+    1</a>. posted by <a href="http://arthur.is.verweg.com">Arthur!</a> at 16:26 on
+    October 12, 2004    </h4>
+  <div class="notetext">
+    That's exactly the style of referencing according to the APA (psychiatry crap) and I've been wondering how to implement that in HTML. Thanks for teh tip.  </div>
+  <h4><a id="comment5364" href="/2752#comment5364">
+    2</a>. posted by <a href="http://dady.org/">Brent Dady</a> at 09:17 on
+    October 15, 2004    </h4>
+  <div class="notetext">
+    that's the sexiest non-flash interface thingy i've ever seen.  </div>
+    <a href="/2752#commentform">add a comment</a>
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2733" id="entry2733" title="permalink to 'PHP/SWF Charts'">2733</a> &nbsp;</h2><div class="entry">
+  <div id="etext2733"><a href="http://www.maani.us/charts/index.php">PHP/SWF Charts</a> [<a href="http://waxy.org/links/">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Tuesday, September 28, 2004</div>
+    <a href="/2733">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2728" id="entry2728" title="permalink to 'Wikipedia: Hello world program'">2728</a> &nbsp;</h2><div class="entry">
+  <div id="etext2728"><a href="http://en.wikipedia.org/wiki/Hello_world_program">Wikipedia: Hello world program</a> [<a href="http://en.wikipedia.org/wiki/Fibonacci_number_program">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Thursday, September 23, 2004</div>
+    <a href="/2728">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2718" id="entry2718" title="permalink to 'Funny Things Seen In Source Code And Documentation'">2718</a> &nbsp;</h2><div class="entry">
+  <div id="etext2718"><a href="http://c2.com/cgi/wiki?FunnyThingsSeenInSourceCodeAndDocumentation">Funny Things Seen In Source Code And Documentation</a> [<a href="http://forevergeek.com/programming/funny_code.php">via</a> [<a href="http://www.timmietv.nl/">via</a>]]</div>
+  <div class="entryfooter">
+    <div class="date">posted Saturday, September 18, 2004</div>
+    <a href="/2718">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2710" id="entry2710" title="permalink to 'Unpolluted - Tests for RSS Scalability'">2710</a> &nbsp;</h2><div class="entry">
+  <div id="etext2710"><a href="http://www.kafsemo.org/2004/09/12.html">Unpolluted - Tests for RSS Scalability</a> (req. <a href="http://python.org/">Python</a>) [<a href="http://philringnalda.com/blog/2004/09/unpolluted.php">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Wednesday, September 15, 2004</div>
+    1 comment:    &nbsp;
+  </div>
+  <div class="inline">
+  <h4><a id="comment5215" href="/2710#comment5215">
+    1</a>. posted by <a href="http://milov.nl/">milov</a> at 12:15 on
+    September 15, 2004    </h4>
+  <div class="notetext">
+    Results for my own rss feed:<br />
+<br />
+URL: <a href="http://milov.nl/rss.xml">http://milov.nl/rss.xml</a><br />
+[pass] The URL shouldn't redirect<br />
+[pass] If clients ask for compression, then provide it<br />
+[pass] Don't disable caching with Cache-Control<br />
+[pass] Supply a Date header, to indicate the server time<br />
+[pass] The server clock should be accurate ( &lt; 10 minutes difference)<br />
+[FAIL] Use an Expires header to tell clients how often to poll<br />
+[    ] Expiry must be in the future<br />
+[pass] Last-Modified headers tell clients how often content is updated<br />
+[pass] The Last-Modified date must be in the past<br />
+[good] Provide an ETag<br />
+[pass] Provide Last-Modified or ETag, so clients can make conditional requests<br />
+[good] Feed size should be less than 64 KiB<br />
+[pass] Conditional requests, using Last-Modified and ETag, save bandwidth and reduce server load<br />
+[good] If-Modified-Since alone should be honoured<br />
+[good] If-None-Match alone should be honoured  </div>
+    <a href="/2710#commentform">add a comment</a>
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2690" id="entry2690" title="permalink to 'Web development mistakes'">2690</a> &nbsp;</h2><div class="entry">
+  <div id="etext2690"><a href="http://www.456bereastreet.com/archive/200408/web_development_mistakes/">Web development mistakes</a> [<a href="http://www.sashadesign.com/comments/945/">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Tuesday, September 07, 2004</div>
+    <a href="/2690">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2661" id="entry2661" title="permalink to 'iamcal.com tutorials'">2661</a> &nbsp;</h2><div class="entry">
+  <div id="etext2661"><a href="http://iamcal.com/publish/">iamcal.com tutorials</a> [<a href="http://sylloge.com/personal/2004/08/some-links-caterina-on-misbehaving.html">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Monday, August 23, 2004</div>
+    <a href="/2661">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2618" id="entry2618" title="permalink to 'The Daily WTF'">2618</a> &nbsp;</h2><div class="entry">
+  <div id="etext2618"><a href="http://thedailywtf.com/">The Daily WTF: Curious Perversions In Information Technology</a> [<a href="http://mikedimmick.blogspot.com/2004/07/daily-wtf.html">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Wednesday, July 28, 2004</div>
+    <a href="/2618">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2608" id="entry2608" title="permalink to 'fixed width font in Gmail'">2608</a> fixed width font in Gmail&nbsp;</h2><div class="entry">
+  <div id="etext2608"><p style="margin-top: 0;">Does <a href="http://gmail.google.com/">Gmail</a> have a setting somewhere to make message text appear in a fixed width font? 'Cause if it does, I sure can't find it...</p>
+
+<p>To force it to use a fixed width font anyway, I added the following to userContent.css in my <a href="http://www.mozilla.org/products/firefox/">Firefox</a> profile:</p>
+
+<pre class="code">div.msg div.mb {
+  font-family: monospace !important;
+  font-size: 12px !important;
+}</pre>
+
+(Firefox's 'View Selection Source' came in real handy trying to figure out these classnames; regular View Source is a pain on Gmail because the whole thing's Javascript-generated.)</div>
+  <div class="entryfooter">
+    <div class="date">posted Wednesday, July 21, 2004</div>
+    10 comments:    &nbsp;
+  </div>
+  <div class="inline">
+  <h4><a id="comment4990" href="/2608#comment4990">
+    1</a>. posted by <a href="http://www.p01.org">P01</a> at 23:19 on
+    July 21, 2004    </h4>
+  <div class="notetext">
+    Per user style sheets have been popular these days.<br />
+<br />
+Though the chances that that CSS rule may interfere with another site are small, I suggest you to try one of these extensions :<br />
+<br />
+* URIid ( <a href="http://extensionroom.mozdev.org/more-info/uriid">http://extensionroom.mozdev.org/more-info/uriid</a> ) which adds an id of the form <a href="http://www.milov-nl">www.milov-nl</a> to the body tag of every page you visit.<br />
+<br />
+<br />
+* MyOwnCSS ( <a href="http://www.raphinou.com/cgi-bin/myowncss/main.cgi">http://www.raphinou.com/cgi-bin/myowncss/main.cgi</a> ) does the same as URIid, except that the CSS are stored on an external server and shared between the users. In a way, it the del.icio.us of the CSS customization. <br />
+<br />
+<br />
+Notice, that I haven't tried them yet, but I gonna install URIid and give it a try.  </div>
+  <h4><a id="comment4992" href="/2608#comment4992">
+    2</a>. posted by <a href="http://milov.nl/">milov</a> at 00:04 on
+    July 22, 2004    </h4>
+  <div class="notetext">
+    Neato... And add these two extensions to really make the most of it:<br />
+<a href="http://extensionroom.mozdev.org/more-info/chromedit">http://extensionroom.mozdev.org/more-info/chromedit</a><br />
+<a href="http://extensionroom.mozdev.org/more-info/editcss">http://extensionroom.mozdev.org/more-info/editcss</a>  </div>
+  <h4><a id="comment4993" href="/2608#comment4993">
+    3</a>. posted by <a href="http://www.p01.org">P01</a> at 00:11 on
+    July 22, 2004    </h4>
+  <div class="notetext">
+    Yep, EditCSS is a must.<br />
+damn, I love FireFox.  </div>
+  <h4><a id="comment4995" href="/2608#comment4995">
+    4</a>. posted by <a href="http://milov.nl/">milov</a> at 00:18 on
+    July 22, 2004    </h4>
+  <div class="notetext">
+    *sniff* I've known Firefox since it was just a little Phoenix, standing no taller than 0.1... It's certainly grown up to be one fine browser. <a href="http://milov.nl/1594">http://milov.nl/1594</a>  </div>
+  <h4><a id="comment4999" href="/2608#comment4999">
+    5</a>. posted by <a href="http://www.huphtur.nl/">huphtur</a> at 09:48 on
+    July 22, 2004    </h4>
+  <div class="notetext">
+    Web Developer Extension comes with it's own &quot;Edit CSS&quot;. <br />
+<a href="http://www.chrispederick.com/work/firefox/webdeveloper/">http://www.chrispederick.com/work/firefox/webdeveloper/</a>  </div>
+  <h4><a id="comment5004" href="/2608#comment5004">
+    6</a>. posted by <span class="mailto">yahoo.com,rwoudsma,Woudloper</span> at 09:16 on
+    July 23, 2004    </h4>
+  <div class="notetext">
+    As I do not have a qmail account and I am a regular reader of your blog I would like to know what the use is of a 'fixed font size' for the mail?<br />
+<br />
+And indead 'EditCSS' is a must for everyone who is editing (and doing other stuff) with websites!  </div>
+  <h4><a id="comment5005" href="/2608#comment5005">
+    7</a>. posted by <a href="http://milov.nl/">milov</a> at 09:25 on
+    July 23, 2004    </h4>
+  <div class="notetext">
+    Woudloper: It's not about the size, it's about the width. I like the characters in my mail to be evenly spaced; I'm used to that from way back, when every mail reader used a fixed width font, that way ascii art etc. doesn't get all squished together.<br />
+<br />
+I even forced Outlook Express to use fixed width by setting its 'Proportional font' to 'Courier New'.  </div>
+  <h4><a id="comment5006" href="/2608#comment5006">
+    8</a>. posted by <span class="mailto">yahoo.com,rwoudsma,Woudloper</span> at 11:50 on
+    July 23, 2004    </h4>
+  <div class="notetext">
+    milov: you are absolutely right. I was reading 'size' in-stead-of 'width'. My mistake...<br />
+<br />
+Does this fix (or tweak) also works for HTML email messages or did you set your presence (if that is possible within QMail) to ignore HTML messages?  </div>
+  <h4><a id="comment5007" href="/2608#comment5007">
+    9</a>. posted by <a href="http://www.p01.org">Mathieu 'P01' HENRI</a> at 12:22 on
+    July 23, 2004    </h4>
+  <div class="notetext">
+    fixed font size is a must to make CODE pasted as is in the body of emails readable. Not to mention, in text editors. Damn, it always scares the s**t out of me when I see some body using a proportionnal font in a text/code editor.  </div>
+  <h4><a id="comment5141" href="/2608#comment5141">
+    10</a>. posted by <span class="mailto">gmail.com,gillamhall,g.</span> at 03:52 on
+    August 26, 2004    </h4>
+  <div class="notetext">
+    used your code above in Firefox's serContent.css with no luck (Mac OS X, Firefox 091).  Idea as to what I could have done wrong?  Seemed so straightforward ...  </div>
+    <a href="/2608#commentform">add a comment</a>
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2606" id="entry2606" title="permalink to 'using text-overflow: ellipsis'">2606</a> &nbsp;</h2><div class="entry">
+  <div id="etext2606"><a href="http://www.blakems.com/archives/000077.html">using text-overflow: ellipsis</a> [<a href="http://www.paranoidfish.org/links/2004/07/21/">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Wednesday, July 21, 2004</div>
+    3 comments:    &nbsp;
+  </div>
+  <div class="inline">
+  <h4><a id="comment4991" href="/2606#comment4991">
+    1</a>. posted by <a href="http://drunkmenworkhere.org/">drunkmen</a> at 00:03 on
+    July 22, 2004    </h4>
+  <div class="notetext">
+    textarea {overflow:visible} is nice too in IE, used it in breedster.  </div>
+  <h4><a id="comment4994" href="/2606#comment4994">
+    2</a>. posted by <a href="http://milov.nl/">milov</a> at 00:13 on
+    July 22, 2004    </h4>
+  <div class="notetext">
+    Whoa.... That's cool.  </div>
+  <h4><a id="comment5011" href="/2606#comment5011">
+    3</a>. posted by <a href="http://www.braincast.nl">Calm_Pear</a> at 10:27 on
+    July 25, 2004    </h4>
+  <div class="notetext">
+    Whoa! that is very cool indeed...  </div>
+    <a href="/2606#commentform">add a comment</a>
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2594" id="entry2594" title="permalink to 'How to write Firefox extensions'">2594</a> &nbsp;</h2><div class="entry">
+  <div id="etext2594"><a href="http://extensions.roachfiend.com/howto.html">How to write Firefox extensions</a> [<a href="http://simon.incutio.com/">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Friday, July 16, 2004</div>
+    <a href="/2594">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2576" id="entry2576" title="permalink to 'PHP, XML, and Character Encodings with regard to Feed on Feeds'">2576</a> &nbsp;</h2><div class="entry">
+  <div id="etext2576"><a href="http://minutillo.com/steve/weblog/2004/6/17/php-xml-and-character-encodings-a-tale-of-sadness-rage-and-data-loss">PHP, XML, and Character Encodings with regard to Feed on Feeds</a> [<a href="http://simon.incutio.com/">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Tuesday, June 29, 2004</div>
+    <a href="/2576">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2553" id="entry2553" title="permalink to 'IE -&gt; Mozilla Guide for Web Application Developers'">2553</a> &nbsp;</h2><div class="entry">
+  <div id="etext2553"><a href="http://nexgenmedia.net/evang/iemozguide/">IE -&gt; Mozilla Guide for Web Application Developers</a> [<a href="http://arjenvr.nl/">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Tuesday, June 15, 2004</div>
+    <a href="/2553">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2548" id="entry2548" title="permalink to 'new 5K compo deadline is July 14th'">2548</a> &nbsp;</h2><div class="entry">
+  <div id="etext2548"><a href="http://www.siggraph.org/s2004/cfp/web/5k.php">new 5K compo deadline is July 14th</a> [<a href="http://the-inbetween.com/archives/000299.php">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Sunday, June 13, 2004</div>
+    1 comment:    &nbsp;
+  </div>
+  <div class="inline">
+  <h4><a id="comment4869" href="/2548#comment4869">
+    1</a>. posted by <a href="http://www.timmietv.nl">Ruben</a> at 15:48 on
+    June 25, 2004    </h4>
+  <div class="notetext">
+    Are you competing this time, Milo? If you are, good luck!  </div>
+    <a href="/2548#commentform">add a comment</a>
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2546" id="entry2546" title="permalink to 'ODYSSEY - Universele kleurenklok'">2546</a> &nbsp;</h2><div class="entry">
+  <div id="etext2546"><a href="http://odyssey.nl/universiteit/000039.html">ODYSSEY - Universele kleurenklok</a> [<a href="http://www.perpetualmotionpioneers.nl/shapeamp/index.php">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Thursday, June 10, 2004</div>
+    <a href="/2546">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+<h2><a href="/2543" id="entry2543" title="permalink to 'Formatting SQL Statements'">2543</a> &nbsp;</h2><div class="entry">
+  <div id="etext2543"><a href="http://www.hk8.org/old_web/oracle/prog2/ch03_02.htm">Formatting SQL Statements</a> [<a href="http://www.inf.hs-zigr.de/~maetti01/1086633720">via</a>]</div>
+  <div class="entryfooter">
+    <div class="date">posted Tuesday, June 08, 2004</div>
+    <a href="/2543">add a comment</a>    &nbsp;
+  </div>
+
+
+</div>
+
+
+
+  <p>
+    <span class="side">
+      pages:
+              <a style="text-decoration: none;" href="/cat/coding/3032">1</a>
+              <a style="text-decoration: none;" href="/cat/coding/2762">2</a>
+              <a style="text-decoration: none;" href="/cat/coding/2543">3</a>
+              <a style="text-decoration: none;" href="/cat/coding/2219">4</a>
+              <a style="text-decoration: none;" href="/cat/coding/1687">5</a>
+              <a style="text-decoration: none;" href="/cat/coding/1394">6</a>
+              <a style="text-decoration: none;" href="/cat/coding/1123">7</a>
+              <a style="text-decoration: none;" href="/cat/coding/914">8</a>
+              <a style="text-decoration: none;" href="/cat/coding/649">9</a>
+              <a style="text-decoration: none;" href="/cat/coding/393">10</a>
+          </span>
+  </p>
+
+
+
+    </div>
+    
+    <script type="text/javascript">
+      setMailtoLinks();
+    </script>
+
+  </body>
+</html>

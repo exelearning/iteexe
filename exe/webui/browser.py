@@ -40,7 +40,7 @@ def launchBrowser(config, packageName):
     """
     log.info("Broswer path: " + config.browserPath)
     url     = 'http://localhost:%d/%s' % (config.port, packageName)
-    profile = config.exeDir+'/exeprofile'
+    profile = config.exeDir+'/win-profile'
     log.info("Launch firefox with "+config.browserPath)
     log.info("profile "+profile)
     log.info("url "+url)

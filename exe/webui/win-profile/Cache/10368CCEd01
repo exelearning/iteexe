@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title>Seth Nickell - Design Fu : sabayon</title>
+    <link rel="icon" type="image/png" href="http://www.gnome.org/~seth/images/seth-16.png" />
+    <link rel="stylesheet" type="text/css" href="http://www.gnome.org/~seth/stylesheets/blog.css" />
+    <base href="http://www.gnome.org/~seth" />
+    <meta http-equiv="Content-type" content='text/html; charset=UTF-8'></meta>
+    <meta name="description" content="Seth Nickell's blog, Design Fu"/>
+    <meta name="keywords" content="seth nickell, design fu, usability, design, gnome usability, gnome, interaction design, designfu"/>
+</head>
+
+<body>
+<div id="banner"><div id="headshot"><img align="left" src="http://www.gnome.org/~seth/images/seth-tint.png"/>
+<div id="contact"><div id="name">Seth Nickell</a></div>Interaction Designer<br /><a href="mailto:seth@gnome.org">seth@gnome.org</a></div></div>Design Fu : sabayon<div class="description">Beating the sh*t out of bad apps</div></div>
+
+<div id="content">
+<br />
+<span class="date">Fri, 18 Feb 2005</span>
+<div class="blog">
+<div class="blogbody">
+<a id="fn"></a><div class="title"><a href="http://www.gnome.org/~seth/blog/sabayon" title="Link to this blurb">Improving the User Experience for Desktop Sysadmins - Sabayon</a></div>
+<p><p>The three immediate design stakeholders in the 'enterprise desktop' are: end users, help desk staff, and desktop system administrators. Most design work for GNOME has gone into improving the end user experience, which is really the dominant stakeholder of those three. Some improvements aimed at end-users, like promoting preferences instead of settings you can get wrong, have also made life a little easier for help desk staff (as people are that much less likely to hose things). Recently Mark's work on <a href="http://cvs.gnome.org/viewcvs/vino/">Vino</a> has added a very large improvement for help desk staff: the ability to remotely view and operate user's desktops (there is nothing more frustrating than blindly stepping people through computer operations over the phone).</p>
+
+<p>So what about sysadmins? <b>Sabayon is GNOME's first major design targeted at improving the user experience for people who administer GNOME systems</b>, and hopefully the start of an initiative toward designing for this important group of users. I'm jazzed about Sabayon as the first step toward a historic goal: GNOME as <i>the</i> definitive desktop management experience for sysadmins. We have a long way to go, but if there's a hundred possible improvements to make over Windows and MacOS/X toward the end-user experience, there's a thousand for admins. But big things start with small steps, right? I see promise for Sabayon as the ground floor of the revolution! &lt;seth takes a deep breath and returns back to earth&gt; In any case, whatever the future holds, this is fertile territory because the status quo is so much worse than it needs to be.</p>
+
+<p>GConf, with its support for mandatory settings and system defaults, was supposed to be a big improvement for system administrators, but it ended up being something of a boondogle because the features were hard for sysadmins to use. In most cases it actually made things harder as sysadmins struggled through the giant XML files for defaults (most probably tried to edit schemas instead, which isn't even the right thing, but its not their fault because we didn't publicize this well). Even apart from the XML files being long and verbose, remember that most sysadmins in the world (think Windows), esp. desktop sysadmins, are not uber-leet Unix haxors who adore vi and the command-line.</p>
+
+<p>Speaking of leetness, two super-leet Red Hat desktop hackers with funny accents are kicking off work on Sabayon: <a href="http://www.gnome.org/~markmc/blog">Mark McLoughlin</a> (panel maintainer, etc) and <a href="http://veillard.com/">Daniel Veillard</a> (libxml & gamin maintainer). There was a tuffle over the name, but the French (what with their centuries of cultural sophistication and all) beat out the elves. As Mark explains it, <b>DV probably just wanted to be able to say, "Hello I'm Daniel Veillard and I pronounce Sabayon 'Sa-ba-yon'"</b>. Our Irish hackers really <i>are</i> like little elves that write code. You go to bed and when you wake up in morning a bunch of code has magically appeared. In retaliation, I was assigned the mythical character of a "Troll" by DV, but this does not hinder my speaking the truth. I may be a troll, but I am a truthful troll. The only thing that serves to dampen Mark's elf-nature is when he lights up like a chimney stack, strangles me with scarves, whacks me with bats, drives through red lights and otherwise engages in behavior liable to result in death. But back to Sabayon.</p>
+
+<h2>Humble Beginnings, What Sabayon Does Today</h2>
+
+<p>First and foremost, Sabayon provides a sane way to edit GConf defaults and GConf mandatory keys: the same way you edit your desktop. Sabayon launches profiles in an Xnest window. Any changes you make in the Xnest window are saved back to the profile file, which can then be applied to user's accounts. Want to add a new applet to the panel? Right click on the panel and add one just like you usually would. Of course, you're also free to use gconf-editor to change keys at a lower level, or download any GNOME setting tweaking program from the internet and use that. Sabayon also uses gamin to watch changes you make to the filesystem. So if you want to change the font for your users, you can drag a TTF to ~/.fonts, change it in "Font Preferences", and voila. When you're done making changes, you can save the profile. A change log will automatically be generated so an organization with a number of sysadmins can track down what changed when. Hopefully in the future we'll also have revision support for desktop profiles.</p>
+
+<p>Right now Sabayon has support for tracking: GConf settings, panel applet addition/removal, general files and special Firefox profile support.</p>
+
+<h2>The Illustrated Tour of Sabayon HEAD</h2>
+<ol>
+<li>
+First we launch Sabayon (if a non-root user it uses console helper to get root).<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-1.png"/><br/>
+</li>
+
+<li>
+Lets create a new profile for panty-waist designers. We base it off our existing Office Desktop profile.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-2.png"/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-3.png"/><br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-4.png"/>
+</li>
+
+<li>
+Sabayon starts an instance of that profile in an Xnest, including the sabayon monitor window.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-5.png"/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-6.png"/>
+</li>
+
+<li>
+Designers need to be coddled, we create a welcoming text file for them and save it to the desktop.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-7.png"/>
+</li>
+
+<li>
+In response to saving the new text file, two new entries appear in the sabayon monitor. We don't actually want to change the recently used list, so we tell sabayon to ignore that setting.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-8.png"/>
+</li>
+
+<li>
+We drag a new Gimp launcher to the panel. Gimp is like crack for designers.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-9.png"/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-10.png"/>
+</li>
+
+<li>
+In response to the new launcher, sabayon monitor shows some new entries (and I have a continuity error in taking screenshots, there should still be the two items for creating the text file because we haven't yet saved, oops). Notice that Sabayon records a "Panel object added" change rather than a dozen GConf keys being added. Sabayon can be taught to aggregate standard groups of changes together to make it clearer to admins what's going on when they read through the change log.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-11.png"/>
+</li>
+
+<li>
+Designers like pretty things, lets change the background. <font size="-1">(As a total aside... the background capplet rewrites its GConf keys constantly a couple times a second whether they have changed or not, which makes the sabayon monitor flash a bunch in the background. The monitor has been interesting in revealing a lot of apps that are setting keys / saving settings files at weird times, which would be sucky in a networked environment)</font><br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-12.png"/><br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-13.png"/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-14.png"/>
+</li>
+
+<li>
+And, as expected, the Sabayon monitor shows a bunch of GConf keys being changed. We've also gone ahead and checked the keys for adding the Gimp launcher to be "mandatory". That means users that have this profile applied will be unable to remove the Gimp launcher. <font size="-1">Unexpectedly, there's a bunch of ".fonts.cache" files in the list too. Sabayon has a list of files and directories to ignore, but its not complete yet. For now, some operations will generate a bunch of file change noise.</font><br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-15.png"/>
+</li>
+<li>
+If we just quit now, the all-in-one Desktop Designer.zip profile in /etc/desktop-profiles would not have been updated. If we're happy with the changes, we can save them back to the profile.<br/>
+<img src="http://www.gnome.org/~seth/blog-images/sabayon/sabayon-16.png"/>
+</li>
+<li>
+<p>The profile can then be distributed to computer(s) and applied to the relevant user's homedirs. We haven't started working on the mechanisms for this yet, Sabayon is the first piece in a bigger framework. For example, once we get the Netscape directory server code released and have a robust free ldap server, we can potentially host e.g. the GConf settings there and push to the server instead of applying bits to actual hard drives (or NFS shares).</p>
+
+<p>In the interim, the SabayonProfile class already knows how to apply profiles onto a directory. Actually, every time you edit a profile, a new temp directory is created first, and the profile is then applied to it. Consequently, it should be pretty easy for sysadmins to cook up their own python scripts using the SabayonProfile class that work on their custom systems today.</p>
+</li>
+</ol>
+<h2>To Infinity, And Beyond!</h2>
+<p>Sabayon is just the first step in improving the manageability of GNOME. We (well, I) wanted to get something concrete landed that will help us focus on sysadmins as users, rather than designing a bunch of abstract features. It also exposes manageability features GNOME has theoretically had, but never exposed in a way people could easily exploit, which is good. I'm rambling now, again, but here are some random things markmc, dv and jdennis might be working on in the future:</p>
+<ul>
+<li>Making sabayon solid. Its still a very young project (its one month birthday is tomorrow), and is rather rough around the edges. Things are falling into place pretty quickly now, but there's a lot of work still to go just in making the current feature set work better. Some simple improvements like expanding the "ignore changes to these directories" list will make things a lot better. We also have a number of UI features that aren't in the current codebase.</li>
+<li>Supporting revision history on profiles</li>
+<li>Figure out how <a href="http://fedora.redhat.com/projects/stateless/">Stateless Linux</a> (in a nutshell, where the root partition is mounted read-only and synched transparently with a central source, giving the central-state advantages of thin client with the low hardware and network infrastructure costs of cheap-intel-box thick client) and Sabayon work together. Stateless Linux makes it easier for one admin to support many machines. Sabayon (particularly sabayon of the future) will make it easier for one admin to support many users. The intersection of these two is a very nice place to be!</li>
+<li>We might try to figuring out a short term solution to distributing profiles to user home-directories (whether those be on an NFS share or spread across a couple dozen computer hard drives).</li>
+<li>A real icon and a logo, because self-respecting GNOME projects these days need kewl logos from day one. By showing the world the icon I barfed up (<img src="http://www.gnome.org/~seth/blog-images/sabayon.png">), Diana will be <i>forced</i> to make us a new icon, pronto. Designers can't stand ugly graphics.</li>
+<li>Backing GConf with some sort of network store, perhaps LDAP. If we could get a drop in and run GConf server using the better-be-freed-soon netscape directory code, that would be awesome.</li>
+<li>Reducing the pain of panel management and upgrading by moving to a new layout/storing model where applets are either "on" or "off". Panel cursors allow control over where applets go. This means adding/removing/changing applets in upgrades becomes possible. Currently it breaks everything, which is a management nightmare for distros, let alone the lone sysadmin</li>
+<li>Figuring out how to improve managebility of the Frankendesktop (word thanks to Luis). OO.o and Firefox mean that GConf support alone isn't enough for now. But if we're tied into supporting all these systems, we may never have the ability to do something as nice and universal as Windows group policy. So one project is to figure out if we can back OO.o and Firefox preferences using GConf. Then we can support GConf with all our heart, soul and mind in the tools and on the server.</li>
+<li>Extend GConf to support features that allow small numbers of admins to support hundreds or thousands of users (such as group policy). We don't just want to copy giant technical architectures blindly, and we haven't started looking into this design yet, so its very vague for now.</li>
+</ul>
+<h2>Getting Sabayon</h2>
+<p>Sabayon is a little buggy atm, but its pretty easy to get running :-). Python source is available from <a href="http://cvs.gnome.org/viewcvs/sabayon/">the sabayon module</a> in GNOME cvs. The major dependencies are pygtk and the gamin python bindings (these are available in fedora core HEAD, but gamin-python is not in FC3, I think). I <i>think</i> the GConf parts will still work even if you don't have the gamin python bindings, but YMMV. You'll also have to paste in two one-line text files in /etc/gconf/2 as per the README, but its pretty easy.</p>
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="links">
+
+<div class="side">
+<!--<br />
+<a title="Back to Home" href="http://www.gnome.org/~seth">[Blog Home]</a><br />-->
+<br />
+<img src="http://www.gnome.org/~seth/images/pose-logo.png" alt="kung-fu poser"/>
+</div>
+
+<div class="sidetitle">Where I Work</div>
+<div class="side">
+<a href="http://www.redhat.com">Red Hat</a><br/>
+(in the infamous super cube)<br />
+</div>
+
+<div class="sidetitle">Stuff I Work On</div>
+<div class="side">
+<a href="http://fedora.redhat.com">Fedora</a> (desktop)<br />
+<a href="http://cvs.gnome.org/viewcvs/yarrr/">Yarrr</a><br />
+<a href="http://www.gnome.org/projects/sabayon/">Sabayon</a><br />
+<a href="http://usability.gnome.org">GNOME Usability</a><br />
+<a href="http://usability.gnome.org/hig">GNOME HIG</a><br />
+<a href="http://www.gnome.org/~seth/gnome-blog">Gnome Blog</a><br />
+</div>
+
+<div class="sidetitle">Past Issues</div>
+<div class="side">
+<a href="http://www.gnome.org/~seth/blog/2005/Mar">2005-Mar</a><br />
+<a href="http://www.gnome.org/~seth/blog/2005/Feb">2005-Feb</a><br />
+<a href="http://www.gnome.org/~seth/blog/2005/Jan">2005-Jan</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Dec">2004-Dec</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Sep">2004-Sep</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Aug">2004-Aug</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Jul">2004-Jul</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Jun">2004-Jun</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/May">2004-May</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Apr">2004-Apr</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Mar">2004-Mar</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Feb">2004-Feb</a><br />
+<a href="http://www.gnome.org/~seth/blog/2004/Jan">2004-Jan</a><br />
+<a href="http://www.gnome.org/~seth/blog/2003/Dec">2003-Dec</a><br />
+<a href="http://www.gnome.org/~seth/blog/2003/Nov">2003-Nov</a><br />
+<a href="http://www.gnome.org/~seth/blog/2003/Oct">2003-Oct</a><br />
+<a href="http://www.gnome.org/~seth/blog/2003/Sep">2003-Sep</a><br />
+<a href="http://www.gnome.org/~seth/blog/2003/Aug">2003-Aug</a><br />
+</div>
+
+
+<div class="sidetitle">Technical Brewhaha</div>
+<div class="side">
+<a href="http://www.gnome.org/~seth/blog/sabayon/?flav=rss">RSS Feed <img src="http://www.gnome.org/~seth/images/xml.png" alt="XML button" /></a><br />
+<p>To link to Seth Nickell's blog as a whole, please link to <a href="http://www.designfu.org">http://www.designfu.org</a>. Eventually that will be my home, for now it redirects.</p><br/>
+
+</div>
+
+</div>
+
+<p align="center">
+<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="http://www.gnome.org/~seth/images/pb_pyblosxom_blue.png" alt="pybloxsom logo" /></a><br />
+</p>
+
+</body>
+
+</html>
+

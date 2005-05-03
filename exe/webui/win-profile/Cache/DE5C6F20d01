@@ -1,0 +1,864 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>O'Reilly Network: Hacking Firefox</title>
+	<meta name="keywords" content="O'Reilly Network,O'Reilly Network,oreillynet,oreillynet.com,O'Reilly,OREILLY,,Mozilla,,Making a Bottom-Up Overlay,overlays,Firefox Hacks" >
+	<meta name="description" content="This excerpt from Firefox Hacks shows you how to use overlays (essentially hunks of UI data) to  make something you want to appear in the Firefox default application, perhaps to carry out a particular function of your extension. For example, you might..." />
+	<meta name="date" content="Apr. 22, 2005" />
+	<meta name="pagename" content="Hacking Firefox" />
+	<meta name="site" content="O'Reilly Network" />
+	<meta name="author" content="" />
+	<meta name="safariu_url" content="" />
+
+<link rel="alternate" type="application/rss+xml" title="O'Reilly Network Mozilla DevCenter Articles" href="http://www.oreillynet.com/meerkat/?_fl=rss10&t=ALL&c=2387" />
+<link rel="alternate" type="application/atom+xml" title="O'Reilly Network Mozilla DevCenter Articles" href="http://www.oreillynet.com/meerkat/?_fl=atom&t=ALL&c=2387" />
+<!--  sc/388 Common JavaScript  -->
+<script language="JavaScript" type="text/javascript" src="http://www.oreillynet.com/common.js"></script>
+<noscript>
+</noscript>
+<link rel="STYLESHEET" type="text/css" href="http://www.oreillynet.com/styles/main.css">
+ <!--WEBSIDESTORY CODE HBX1.0 (Universal)-->
+<!--COPYRIGHT 1997-2004 WEBSIDESTORY,INC. ALL RIGHTS RESERVED. U.S.PATENT No. 6,393,479B1. MORE INFO:http://websidestory.com/privacy-->
+<script language="javascript" type="text/javascript">
+var _hbEC=0,_hbE=new Array;function _hbEvent(a,b){b=_hbE[_hbEC++]=new Object();b._N=a;b._C=0;return b;}
+var hbx=_hbEvent("pv");hbx.vpc="HBX0100u";hbx.gn="ehg-oreilly.hitbox.com";
+
+hbx.acct="DM52040214SV;DM520404M4ZR"; //ACCOUNT NUMBER(S)
+hbx.pn="PUT+PAGE+NAME+HERE"; //PAGE NAME(S)
+hbx.mlc="CONTENT+CATEGORY"; //MULTI-LEVEL CONTENT CATEGORY
+hbx.pndef="title"; //DEFAULT PAGE NAME
+hbx.ctdef="full"; //DEFAULT CONTENT CATEGORY
+
+hbx.lt="auto"; //LINK TRACKING 
+hbx.dlf="n"; //DOWNLOAD FILTER
+hbx.dft="n"; //DOWNLOAD FILE NAMING
+hbx.elf="n"; //EXIT LINK FILTER
+
+//SEGMENTS AND FUNNELS
+hbx.seg=""; //VISITOR SEGMENTATION
+hbx.fnl=""; //FUNNELS
+
+//CAMPAIGNS
+hbx.cmp=""; //CAMPAIGN ID
+hbx.cmpn="CMP"; //CAMPAIGN ID IN QUERY
+hbx.hra=""; //RESPONSE ATTRIBUTE
+hbx.hqsr=""; //RESPONSE ATTRIBUTE IN REFERRAL QUERY
+hbx.hqsp="ATT"; //RESPONSE ATTRIBUTE IN QUERY
+hbx.hlt=""; //LEAD TRACKING
+hbx.hla=""; //LEAD ATTRIBUTE
+hbx.gp=""; //CAMPAIGN GOAL
+hbx.gpn=""; //CAMPAIGN GOAL IN QUERY
+hbx.hcn=""; //CONVERSION ATTRIBUTE
+hbx.hcv=""; //CONVERSION VALUE
+hbx.cp="null"; //LEGACY CAMPAIGN
+hbx.cpd=""; //CAMPAIGN DOMAIN
+
+//CUSTOM VARIABLES
+hbx.ci="";//CUSTOMER ID
+hbx.hc1="";//CUSTOM 1
+hbx.hc2="";//CUSTOM 2
+hbx.hc3="";//CUSTOM 3
+hbx.hc4="";//CUSTOM 4
+hbx.pec="";//ERROR CODES
+</script><script language="javascript1.1" defer="defer"  src="http://www.oreillynet.com/hbx.js" type="text/javascript"></script><!--//-->
+<!-- END WEBSIDESTORY CODE  -->
+
+<!--  end hitbox  -->
+</head>
+
+<body  bgcolor="#ffffff" text="#000000"  marginwidth="0" marginheight="0" leftmargin="0" rightmargin="0" topmargin="0"><!--  389 body  -->
+
+<noindex>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="bottom"><!--  top left logo  -->
+<a href="/mozilla/"><img src="/images/mozilla/header_mozilla_devcenter.gif" alt="Mozilla DevCenter" width="204" height="88" border="0"></a>
+</td>
+<td valign="middle" align="right">
+<table border="0" cellspacing="0" width="468"><tr><td><!-- dy -->
+				<iframe src="http://ad.doubleclick.net/adi/oreillynet.ds/mozillaart;pos=_mozillaart;sz=468x60;ord=1485398606?" width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+				<script type="text/javascript" language="JavaScript1.1" src="http://ad.doubleclick.net/adj/oreillynet.ds/mozillaart;abr=!ie;pos=_mozillaart;sz=468x60;ord=1485398606?"></script>
+				</iframe>
+				<noscript>
+				<a href="http://ad.doubleclick.net/jump/oreillynet.ds/mozillaart;abr=!ie;pos=_mozillaart;sz=468x60;ord=1485398606?"><img src="http://ad.doubleclick.net/ad/oreillynet.ds/mozillaart;abr=!ie;pos=_mozillaart;sz=468x60;ord=1485398606?" border="0" width="468" height="60" alt="Advertisement" /></a>
+				</noscript></td></tr></table>
+</td>
+</tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top">
+<!--  tabs (generic)  --><nobr><a href="http://www.oreillynet.com/"><img src="/images/tabs/orn_black.gif" alt="O'Reilly Network." width="113" height="16" hspace="0" vspace="0" border="0" /></a><a href="http://www.oreilly.com/"><img src="/images/tabs/ora_gray.gif" alt="oreilly.com" width="82" height="16" hspace="0" vspace="0" border="0" /></a><a href="http://safari.oreilly.com/"><img src="/images/tabs/safari_gray.gif" alt="Safari Bookshelf." width="114" height="16" hspace="0" vspace="0" border="0" /></a><a href="http://conferences.oreilly.com/"><img src="/images/tabs/conf_gray.gif" alt="Conferences." width="88" height="16" hspace="0" vspace="0" border="0" /></a></nobr></td>
+<td align="right" class="tiny">
+ <nobr><a href="/cs/user/login?x-redirect=/cs/user/home">Sign In/My Account</a> | <a href="http://epoch.oreilly.com/shop/cart.orm">View Cart</a>&nbsp;&nbsp;&nbsp;</nobr></td>
+</tr>
+<tr>
+<tr>
+<td colspan="2" bgcolor="#ffffff">
+<!--  horizontal nav (generic)  --><table border="0" cellpadding="0" cellspacing="1" height="25" width="100%" bgcolor="#ffffff"><tr bgcolor="#ffffff">
+<td align="center" bgcolor="#000000"  style="padding-left: 8px; padding-right: 8px"><a href="http://www.oreillynet.com/pub/q/articles" class="nolinewhite">Articles</a></td>
+<td align="center" bgcolor="#000000"  style="padding-left: 8px; padding-right: 8px"><a href="http://weblogs.oreillynet.com/" class="nolinewhite">Weblogs</a></td>
+<td align="center" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px"><a class="nolinewhite" href="http://www.oreilly.com/catalog/">Books</a></td>
+<!-- td align="center" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px"><a class="nolinewhite" href="http://meerkat.oreillynet.com/">Meerkat&nbsp;Feeds</a></td -->
+<td align="center" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px"><a class="nolinewhite" href="http://learninglab.oreilly.com/">Learning&nbsp;Lab</a></td>
+<td align="center" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px"><a class="nolinewhite" href="http://edocuments.oreilly.com/">eDocuments</a></td>
+<!-- td align="center" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px"><a class="nolinewhite" href="http://news.oreillynet.com/">News</a></td -->
+<!-- td align="center" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px"><a class="nolinewhite" href="http://www.oreillynet.com/forums/">Forums</a></td -->
+<td width="100%" nowrap="nowrap" bgcolor="#000000" style="padding-left: 8px; padding-right: 8px">&nbsp;<!--  right-most cell (empty) --></td>
+</tr></table>
+</td>
+</tr>
+</tr>
+<tr height="24">
+<td colspan="2" valign="middle" bgcolor="#669900" height="24" align="center" style="border-left: 1px #FFF solid;border-right: 1px #FFF solid;"><!--  tagline/text add -- generic, same as on hub page  -->
+<span class="tinywhite">
+<a href="http://conferences.oreillynet.com/where" class="tinywhite">Where 2.0 Conference</a>: June 29-30, 2005, San Francisco, CA</span>
+<!--  ad co="dc" site="oreillynet" page="mozilla" width="550" height="21"  -->
+</td>
+</tr>
+</table>
+</noindex>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td width="160" rowspan="3" valign="top" bgcolor="#000000" style="border-left: 1px #FFF solid;">
+<noindex>
+<!--  begin left navbar  -->
+<table width="160" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+<tr>
+<td colspan="2" bgcolor="#000000"><img src="/images/trans.gif" alt=" " width="160" height="6" border="0" /></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#000000" width="10"><img src="/images/trans.gif" alt="" width="10" height="10" border="0" /></td>
+<td valign="top" bcolor="#000000" width="150">
+<!--  search  -->
+<noindex><form method="get" action="http://catsearch.atomz.com/search/catsearch/" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="sp-a" value="sp1000a5a9">
+<input type="hidden" name="sp-f" value="ISO-8859-1">
+<input type="hidden" name="sp-t" value="cat_search">
+<p class="smalllist"><span class="navheader">Search</span></p>
+<input type="text" name="sp-q"  size="10" maxlength="80" />&nbsp;<input type="submit" name="search" value="Go" />
+<p class="smalllist">&nbsp;<a class="nav3" href="/search/index.ncsp">Advanced Search&nbsp;&raquo;</a></p></form>
+</noindex>
+
+<!--  login  -->
+<p><a href="http://www.oreillynet.com/cs/user/login?x-redirect=http://www.oreillynet.com" class="nav3" title="Login to manage your newsletter subscriptions, post talkbacks as yourself, or change your profile.">Login</a><br />
+<a href="/cs/user/register?x-redirect=http%3A%2F%2Fwww%2Eoreillynet%2Ecom%2Fcs%2Fuser%2Flogin%3Fx%2Dredirect%3D%252F" class="nav3" title="Create a an account.">Register</a><br />
+<a href="http://www.oreillynet.com/cs/nl/home" class="nav3" title="Choose which newsletters you'd like to receive.">Manage&nbsp;Newsletters</a><br />
+<a href="http://register.oreilly.com" class="nav3" title="Register Your Books.">Register&nbsp;Your&nbsp;Books</a></p>
+
+<!--  Sponsored Zones - also check xml.com, perl.com and macdevcenter.com which have manual placements of this  -->
+
+<p><span class="navheader">Sponsored Zones</span><br />
+<a class="nav3" href="http://www.onjava.com/onjava/borland/">Borland Risk Management Center</a></p>
+<!--  sites  -->
+<noindex>
+<p><span class="navheader">Sites</span><br />
+<a class="nav3" href="http://www.codezoo.com/">codezoo.com</a><br />
+<a class="nav3" href="http://www.linuxdevcenter.com/">LinuxDevCenter.com</a><br />
+<a class="nav3" href="http://www.macdevcenter.com/">MacDevCenter.com</a><br />
+<a class="nav3" href="http://www.windowsdevcenter.com/">WindowsDevCenter.com</a><br />
+<a class="nav3" href="http://www.oreillynet.com/mozilla/">Mozilla DevCenter</a><br />
+<a class="nav3" href="http://www.ondotnet.com/">ONDotnet.com</a><br />
+<a class="nav3" href="http://www.onjava.com/">ONJava.com</a><br />
+<a class="nav3" href="http://www.onlamp.com/">ONLamp.com</a><br />
+<a class="navtab" href="http://www.onlamp.com/apache/">Apache</a><br />
+<a class="navtab" href="http://www.onlamp.com/bsd/">BSD</a><br />
+<a class="navtab" href="http://www.onlamp.com/onlamp/general/mysql.csp">MySQL</a><br />
+<a class="navtab" href="http://www.onlamp.com/php/">PHP</a><br />
+<a class="navtab" href="http://www.onlamp.com/python/">Python</a><br />
+<a class="navtab" href="http://www.onlamp.com/security/">Security</a><br />
+<a class="nav3" href="http://www.openp2p.com/">OpenP2P.com</a><br />
+<a class="nav3" href="http://www.perl.com/">Perl.com</a><br />
+<a class="nav3" href="http://www.oreillynet.com/policy/">Policy DevCenter</a><br />
+<a class="nav3" href="http://oreilly.wirelessdevnet.com/">Wireless DevCenter</a><br />
+<a class="nav3" href="http://www.xml.com/">XML.com</a><br />
+<a class="navtab" href="http://webservices.xml.com/">WebServices.XML.com</a></p>
+</noindex>
+<noindex>
+<p><span class="navheader">Affiliate Sites</span><br />
+<a class="nav3" href="http://www.linuxquestions.org/">LinuxQuestions.org</a><br />
+<a class="nav3" href="http://www.mobilewhack.com/">MobileWhack</a><br />
+<a class="nav3" href="http://www.osdir.com/">OSDir.com</a><br />
+<a class="nav3" href="http://servlets.com/">Servlets.com</a><br />
+<a class="nav3" href="http://symbianone.com/">SymbianOne.com</a></p>
+</noindex>
+
+<!-- 
+<img src="/images/trans.gif" alt="" width="10" height="5" border="0" /><br />
+<table border="0" cellpadding="1" cellspacing="0" width="136">
+<tr><td bgcolor="#336699">
+<table border="0" cellpadding="0" cellspacing="0" width="136">
+<tr><td><a href="http://www.developershed.com/" target="_new"><img src="/images/ads/dev-shed.gif" alt="Developer Resources Partner" width="136" height="21" border="0" /></a>
+<div style="background:#336699; margin-right:4px; padding:2px; font-weight:normal;" class="nav">
+<ul style="margin:0;padding-left:1.6em;list-style-image:url;">
+<li style="margin-bottom:0.1em;"><a href="http://www.devshed.com" class="nav" style="text-decoration: underline" target="_new">Open Source</a></li>
+<li style="margin-bottom:0.1em;"><a href="http://www.aspfree.com" class="nav" style="text-decoration: underline" target="_new">ASP Help</a></li>
+<li style="margin-bottom:0.1em;"><a href="http://www.devarticles.com" class="nav" style="text-decoration: underline" target="_new">Developer Tutorials</a></li>
+<li style="margin-bottom:0.1em;"><a href="http://www.devhardware.com" class="nav" style="text-decoration: underline" target="_new">Computer Hardware</a></li>
+<li style="margin-bottom:0.1em;"><a href="http://www.SEOChat.com" class="nav" style="text-decoration: underline" target="_new">Search Engine Optimization</a></li>
+<li style="margin-bottom:0.1em;"><a href="http://www.scripts.com" class="nav" style="text-decoration: underline" target="_new">Scripts</a></li>
+</ul>
+</div>
+</td></tr></table>
+</td></tr></table>
+<img src="/images/trans.gif" alt="" width="10" height="5" border="0" /><br />
+ -->
+
+<!--  resource centers -->
+<noindex>
+<p><span class="navheader">Resource Centers</span><br />
+<a href="http://bio.oreilly.com/" class="nav3">Bioinformatics</a><br />
+<a href="http://cprog.oreilly.com/" class="nav3">C/C++</a><br />
+<a href="http://databases.oreilly.com/" class="nav3">Databases</a><br />
+<a href="http://digitalmedia.oreilly.com/" class="nav3">Digital&nbsp;Media</a><br />
+<a href="http://enterprisedev.oreilly.com/" class="nav3">Enterprise&nbsp;Development</a><br />
+<a href="http://gamedev.oreilly.com/" class="nav3">Game&nbsp;Development</a><br />
+<a href="http://java.oreilly.com/" class="nav3">Java</a><br />
+<a href="http://linux.oreilly.com/" class="nav3">Linux/Unix</a><br />
+<a href="http://mac.oreilly.com/" class="nav3">Macintosh/OS X</a><br />
+<a href="http://dotnet.oreilly.com/" class="nav3">.NET</a><br />
+<a href="http://opensource.oreilly.com/" class="nav3">Open Source</a><br />
+<a href="http://oracle.oreilly.com/" class="nav3">Oracle</a><br />
+<a href="http://perl.oreilly.com/" class="nav3">Perl</a><br />
+<a href="http://python.oreilly.com/" class="nav3">Python</a><br />
+<a href="http://scripting.oreilly.com/" class="nav3">Scripting</a><br />
+<a href="http://security.oreilly.com/" class="nav3">Security</a><br />
+<a href="http://networking.oreilly.com/" class="nav3">SysAdm/Networking</a><br />
+<a href="http://web.oreilly.com/" class="nav3">Web</a><br />
+<a href="http://webservices.oreilly.com/" class="nav3">Web Services</a><br />
+<a href="http://windows.oreilly.com/" class="nav3">Windows</a><br />
+<a href="http://wireless.oreilly.com/" class="nav3">Wireless</a><br />
+<a href="http://xml.oreilly.com/" class="nav3">XML</a>
+&nbsp;</p>
+</noindex>
+<!--  rss -->
+<p><a href="http://www.oreillynet.com/meerkat/?_fl=atom&t=ALL&c=2387"><img src="/images/icons/atom.gif" alt="Atom Feed" width="80" height="15" border="0" vspace="10" /></a><br />
+<a href="http://www.oreillynet.com/meerkat/?_fl=rss10&t=ALL&c=2387"><img src="/images/icons/rss1.gif" alt="RSS Feed" width="80" height="15" border="0" /></a><br />
+<a href="http://www.oreillynet.com/meerkat/?_fl=rss10&t=ALL&c=2387" class="nav3">RSS Feed</a><br />
+<a href="http://oreillynet.com/getorn.csp" class="nav3">Using our RSS Feeds</a></p>
+<!--  oreilly books  -->
+<img src="/images/related_books.gif" alt="Related O'Reilly Books" width="140" height="23" /><div style="background:#ddd; margin-right:10px; padding:2px; font-weight:normal;" class="smalltext"><ul style="margin:0 2px 0 0;padding-left:1.6em;list-style-image:url(/images/bullet_arrow.gif);"><li style="margin-bottom:0.5em;"><a href="http://www.oreilly.com/catalog/mozilla/">Creating Applications with Mozilla</a></li></ul>
+</div>
+<br />
+<br /></td>
+</tr>
+<!-- tr>
+<td colspan="2" bgcolor="#000000">
+<center>
+125x125 ad spot if needed
+</center>
+<br />
+</td>
+</tr -->
+<tr>
+<td colspan="2" valign="top" bgcolor="#000000">
+<!--  sponsored links  -->
+<div class="noindex">
+<table cellpadding="2" cellspacing="1" align="center" bgcolor="#efefef">
+<tr>
+<td height="10" align="center" bgcolor="#000099" class="tinywhite">Traveling to<br />
+a tech show?</td></tr>
+<tr><td>
+<table cellpadding="3" cellspacing="0"  style="border-width: 1px; border-style: solid; border-color: #efefef;">
+<tr>
+<td bgcolor="#efefef">
+<p class="tiny"> <a href="http://www.freehotelsearch.com/us/Virginia-hotels/Richmond-hotels.html">Richmond 
+              Hotels</a><br />
+              <a href="http://www.freehotelsearch.com/international/India-hotels.html">India 
+              Hotels</a><br />
+              <a href="http://www.freehotelsearch.com/us/Arizona-hotels/Scottsdale-hotels.html">Scottsdale 
+              Hotels</a><br />
+              <a href="http://www.freehotelsearch.com/us/Ohio-hotels/Columbus-hotels.html">Columbus 
+              Hotels</a><br />
+              <a href="http://www.freehotelsearch.com/ca/British_Columbia-hotels/Whistler-hotels.html">Whistler 
+              Hotels</a><br />
+              <a href="http://www.freehotelsearch.com/international/Mexico-hotels/Mexico_City-hotels.html">Mexico 
+              City Hotels</a><br />
+              <a href="http://www.saint-louis.mo.usa.freehotelguide.com/">St Louis 
+              Hotels</a><br />
+              <a href="http://www.freehotelsearch.com/us/New_York-hotels/Manhattan-hotels.html">Manhattan 
+              Hotels</a><br />
+
+</p>
+</td>
+</tr>
+</table>
+</td></tr></table><br />
+
+
+</div>
+<br />
+<br />
+<br />
+
+<img src="/images/trans.gif" alt=" " width="150" height="6" border="0" />
+</td>
+</tr>
+</table>
+<!--  end left navbar  -->
+</noindex>
+</td>
+<td width="10"><!--  space between left nav and center  -->
+<img src="/images/trans.gif" alt=" " width="10" height="1" border="0" /></td>
+
+<td width="100%" valign="top">
+<img src="/images/trans.gif" height="6" width="1" border="0" alt="" /><br />
+
+
+<!--  begin discuss-print-email-spanish-blog-safariu options  -->
+<table cellspacing="1" cellpadding="0" border="0" align="right" width="70">
+
+<!--  code to add print option  -->
+<tr><td rowspan="99">&nbsp;&nbsp;&nbsp;<!-- spacer column  --></td><td align="right" width="18"><a class="secondary" title="Go to a print-friendly version of this page." href="/lpt/a/5786"><img src="/images/icons/print_18.gif" width="18" height="18" hspace="3" vspace="0" alt="Print." border="0" /></a></td><td align="left" class="secondary" nowrap><a class="secondary" title="Go to a print-friendly version of this page." href="/lpt/a/5786">Print</a></td></tr>
+
+<!--  code to add email option  -->
+<tr><td align="right" width="18"><a class="secondary" title="Send a link to this article to a friend." href="mailto:?subject=Hacking Firefox&body=http://www.oreillynet.com/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html"><img src="/images/icons/mail_18.gif" width="18" height="18" hspace="3" vspace="0" border="0" alt="Email." /></a></td><td align="left" class="secondary" nowrap><a class="secondary" title="Send a link to this article to a friend." href="mailto:?subject=Hacking Firefox&body=http://www.oreillynet.com/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html">Email article link</a></td></tr>
+
+<!--  code add discuss option  -->
+
+<tr><td align="right" width="18"><a class="secondary" title="Join the talkback discussion about this article" href="/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html?page=last#thread"><img src="/images/icons/discuss_18.gif" width="18" height="18" hspace="3" vspace="0" alt="Discuss." border="0" /></td><td align="left" class="secondary" nowrap><a class="secondary" title="Join the talkback discussion about this article" href="/pub/a//mozilla/excerpt/FirefoxHacks_chap01/index.html?page=last#thread">Discuss</a></td></tr>
+
+
+
+<!--  code to add trackbacks link  -->
+<tr><td align="right" width="18"><a class="secondary" title="Trackbacks" href="/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html?page=last#trackbacks"><img src="/images/icons/trackback_18.gif" width="18" height="18" hspace="3" vspace="0" alt="Trackbacks." border="0" /></a></td><td align="left" class="secondary" nowrap><a class="secondary" title="View trackbacks for this article." href="/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html?page=last#trackbacks">Trackbacks</a></td></tr>
+
+<!--  code to add spanish option  -->
+
+
+<!--  code to add blog this option  -->
+<tr><td align="right" width="18"><a class="secondary" title="Get info to copy for a weblog post." href="http://www.oreillynet.com/cs/user/print/a/5786?x-t=blog_this.view" onClick="window.open('/cs/user/print/a/5786?x-t=blog_this.view','Blogthis','toolbar=no,width=600,height=400,status=no,location=no,scrollbars=yes,resizable=yes,menubar=yes');return false"><img src="/images/icons/blog_18.gif" width="18" height="18" hspace="3" vspace="0" border="0" alt="Blog this." /></a></td><td align="left" class="secondary" nowrap><a class="secondary" title="Get info to copy for a weblog post." href="http://www.oreillynet.com/cs/user/print/a/5786?x-t=blog_this.view" onClick="window.open('http://www.oreillynet.com/cs/user/print/a/5786?x-t=blog_this.view','Blogthis','toolbar=no,width=600,height=400,status=no,location=no,scrollbars=yes,resizable=yes,menubar=yes');return false">Blog this</a></td></tr>
+
+<!--  code to add add-to-project option  -->
+
+
+<!--  row to add some space  --><tr><td colspan="2"><img src="/images/trans.gif" width="18" height="18" hspace="3" vspace="0" border="0" alt=" " /></td></tr>
+</table>
+<!--  end discuss-print-email-spanish-blog-safariu options  -->
+
+<!--  begin trackback  -->
+<!--  commented out so page will still validate  -->
+<!--  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+    rdf:about="http://www.oreillynet.com/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html"
+    dc:identifier="http://www.oreillynet.com/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html"
+    dc:title="Hacking Firefox"
+    trackback:ping="http://www.oreillynet.com/cs/user/trackback/cs_msg?x-lr=cs_disc/13124&x-lr2=a/5786&x-a=submit&trackback=1" />
+</rdf:RDF>  -->
+<!--  end trackback  -->
+
+<!--  content here  -->
+
+	<!-- mega preparse mp: -->
+<!-- CS_PAGE_BREAK -->
+<span class="secondary"><a href="/pub/q/excerpts">O'Reilly Book Excerpts:</a></span> <span class="headline">Firefox Hacks</span>
+<h2>Hacking Firefox</h2>
+<span class="secondary">
+</span>
+
+
+<p><img src="/mozilla/excerpt/FirefoxHacks_chap01/graphics/expert.gif" width="14" height="36" alt="expert"/><img src="/mozilla/excerpt/FirefoxHacks_chap01/graphics/hack87.gif" width="36" height="36" alt="Hack 87"/></p>
+
+<p><b>Bottom-up (RDF-driven) overlays allow existing
+Firefox GUIs to be enhanced</b>.</p>
+
+<p>In the context of Mozilla, an <em>overlay</em>is
+a hunk of user-interface (UI) data, most commonly
+XUL,
+that is extracted to separate files and pulled in at runtime to parts
+of the UI that include it. Think of it as a reusable widget or set of
+widgets.</p>
+<!--  sidebar begins  -->
+<table width="140" border="1" cellspacing="2" cellpadding="10" align="right" style="border: 1px solid #333333; margin: 8px;"><tr>
+<td width="140" valign="top" bgcolor="#ffffff" style="border: none;">
+<p class="headline">Related Reading</p>
+
+<a href="http://www.oreilly.com/catalog/firefoxhks/index.html?CMP=ILL-4GV796923290"><img src="http://www.oreilly.com/catalog/covers/firefoxhks.s.gif" alt="Firefox Hacks" border="0" /></a>
+<p class="medlist"><span class="title"><a href="http://www.oreilly.com/catalog/firefoxhks/index.html?CMP=ILL-4GV796923290">Firefox Hacks</a></span><strong><br />
+
+Tips &amp; Tools for Next-Generation Web Browsing <br />
+
+By <a href="http://www.oreillynet.com/cs/catalog/view/au/2073?x-t=book.view&CMP=IL7015">Nigel McFarlane</a></strong>
+</p>
+<div class="secondary">
+<!--  builds links to list in sidebar  -->
+ <a href="http://www.oreilly.com/catalog/firefoxhks/toc.html?CMP=ILL-4GV796923290">Table of Contents</a><br /> 
+  <a href="http://www.oreilly.com/catalog/firefoxhks/inx.html?CMP=ILL-4GV796923290">Index</a><br /> 
+ 
+
+
+
+<br /><b><a href="http://safari.oreilly.com/0596009283">Read Online--Safari</a></b>
+<span class="tiny">Search this book on Safari:</span>
+<form action="http://safari.oreilly.com/JVXSL.asp" method="post">
+<input type="hidden" name="s" value="1" /><input type="hidden" name="b" value="1" />
+<input type="hidden" name="t" value="1" /><input type="hidden" name="f" value="1" />
+<input type="hidden" name="c" value="1" /><input type="hidden" name="l" value="1" />
+<input type="hidden" name="view" value="section" />
+<input tabindex="1" name="se_text" type="text" value="" size="15" />&nbsp;<input name="go" type="image" title="Execute the search" src="http://www.oreillynet.com/images/safari_btn_go.gif" width="23" height="17" border="0" align="absmiddle"  alt="Go" /><br />
+<select name="se_isbn">
+<option value="0-596-00928-3">Only This Book</option>
+<option value="">All of Safari</option>
+</select><br />
+<input type="checkbox" name="code" value="1" /><span class="tiny">Code Fragments only</span>
+</form>						  
+
+</div>
+</td>
+</tr></table>
+<!--  sidebar ends  -->
+<p>In general, there are two types of overlays. One is a directly
+specified overlay that you put in your extension. These are used to
+keep your code modular or to reuse in multiple places in the
+extension. The second type is something that you want to appear in
+the Firefox default application, perhaps to carry out a particular
+function of your extension. For example, you might want to add a menu
+item to the Tools menu to launch your extension. In a sense, in that
+case, you are adding to the default UI for Firefox.</p>
+
+<p>This hack focuses on the latter approach, with instructions on which
+type of overlays you can have, how to make them, and some general
+insight into how Firefox handles the overlays.</p>
+
+<h3>Adding an Item</h3>
+<p>For the overlay puzzle to fall into place, you need three parts of
+the puzzle:</p>
+
+<ul><li>
+<p>Entries in <em>contents.rdf</em> to register the overlay</p>
+</li>
+<li>
+<p>The name of file that is the target of the overlay</p>
+</li>
+<li>
+<p>The code that will be pulled in from the overlay to its destination</p>
+</li>
+</ul>
+
+<p>The best way to understand each piece is by walking through an
+example. Here, we are going to add a menu item to the Firefox Tools
+menu to launch the <code>chromeEdit</code> application.</p>
+
+<h3>Register the overlay</h3>
+<p><b>[Hack #86]</b>  explained
+<em>contents.rdf</em> files for the purpose of
+registering extensions. Lets add to the sample
+<em>contents.rdf</em> file in that hack to show how to
+register overlays:</p>
+
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:chrome="http://www.mozilla.org/rdf/chrome#"&gt;
+  ...&lt;!-- extension information omitted --&gt;
+
+  &lt;!-- overlay information --&gt;
+  <b>&lt;RDF:Seq about="urn:mozilla:overlays"&gt;</b>
+    <b>&lt;RDF:li resource="chrome://browser/content/browser.xul"/&gt;</b>
+
+  &lt;/RDF:Seq&gt;
+  <b>&lt;RDF:Seq about="chrome://browser/content/browser.xul"&gt;</b>
+    <b>&lt;RDF:li&gt;chrome://chromedit/content/chromeditBrowserOverlay.xul&lt;/RDF:li&gt;</b>
+  &lt;/RDF:Seq&gt;
+&lt;/RDF:RDF&gt;</code></pre>
+
+<p>This time, we skip over the extension information and move on to
+overlay information. This information tells Firefox to take some
+extra chrome from the
+<em>chromeditBrowserOverlay.xul</em> file. The first
+bolded sequence says that this extension has overlays that it wants
+registered and lists the files in Firefox that will be overlaid. In
+this instance, it is the main browser window file,
+
+<em>browser.xul</em>.</p>
+
+<p>The second highlighted sequence lists all the extension overlay files
+that will be pulled into the overlaid Firefox file. So, at this
+point, all we have is a correlation between Firefox files and an
+extension file, defining their connection from a high level. The
+low-level detail of what widget goes where is done in the overlay
+file.</p>
+
+<h3>The overlay file</h3>
+<p>Now that we've registered the
+<em>chromeditBrowserOverlay.xul</em>,
+let's look inside the overlay file to create the
+menu item and place it in the Tools menu. The structure of an overlay
+file is the same as any XUL file, with the main difference being that
+the root element is <code>&lt;overlay&gt;</code>. This tag
+needs a namespace attribute only, though an ID is also recommended:</p>
+
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE overlay SYSTEM "chrome://chromedit/locale/chromeditMenuOverlay.dtd"&gt;
+&lt;?xml-stylesheet href="chrome://chromedit/skin/chromedit.css" type="text/css"?&gt;
+<b>&lt;overlay id="ceTasksOverlay</b>"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"&gt;
+  &lt;script type="application/x-javascript"&gt;
+  &lt;![CDATA[
+    // functions go here
+  ]]&gt;
+  &lt;/script&gt;
+
+  <b>&lt;menupopup id="taskPopup"&gt;</b><b>&lt;menuitem oncommand="showChromEdit( )</b>"
+              <b>label="Edit User Files</b>" 
+              <b>id="chromedit-aviary</b>"
+              <b>insertbefore="menu_preferences</b>" 
+              <b>class="menuitem-iconic menu-iconic icon-chromedit16"/&gt;</b>
+  <b>&lt;/menupopup&gt;</b>
+<b>&lt;/overlay&gt;</b></code></pre>
+
+<p>The overlay has a name: <code>ceTasksOverlay</code>. The chunk
+to be placed in the browser UI is a menu-item widget. It is to be
+placed in an existing, identified container tag. In this case, this
+is the Tools <code>&lt;menupopup&gt;</code>, which has an
+
+<code>id</code> of <code>taskPopup</code>. The
+<code>id</code> is the bit of the overlay that is matched up
+with an identical <code>id</code> in the Firefox target file,
+so this must not be left out. Everything contained within that
+<code>id</code> tag in the overlay will be placed in the
+<code>&lt;menupopup&gt;</code> in the target file. The new
+
+<code>&lt;menuitem&gt;</code> has a label, and a command to
+call a function to launch the extension. Separate from the detail
+that coordinates the overlay fragment with the rest of Firefox, the
+<code>class</code> attribute is used by the
+<code>chromedit</code> package to apply icon-laden styles to
+the menu item, for a pleasing effect.</p>
+
+<p>At runtime, Firefox looks up the list of overlay files, scans then,
+find matches for widget IDs, and merges the new XUL into the UI.
+Figure 8-4 shows how the new Edit User Files menu
+item looks for <code>chromEdit</code>. Note the styled-in icon.</p>
+
+<p><img src="/mozilla/excerpt/FirefoxHacks_chap01/graphics/ffxh_0804.gif" width="431" height="327" alt="Figure 8-4"/><br/>
+<em>Figure 8-4. Overlaid Tools menu in Firefox</em></p>
+
+<h3>Other Places to Overlay</h3>
+<p>So far, our example has concerned adding a menu item to the Firefox
+Tools menu, but there are other areas of the Firefox UI into which
+you can overlay. It's possible to overlay into any
+area of the visible UI, once you know the <code>id</code> of
+the widget to which you want to add. For example, the Download
+Manager Tweak extension (<a href="http://dmextension.mozdev.org">http://dmextension.mozdev.org</a>) adds a button
+to the Downloads panel in Firefox's Options window.</p>
+
+<p>The ForecastFox extension (http://forecastfox.mozdev.org) gives the
+option of showing temperatures and conditions in either the menu bar,
+the main toolbar, or the status bar. Here is a list of the most-used
+areas where
+extensions
+put overlays, but it is by no means definitive:</p>
+
+<ul><li>
+<p>Menu bar</p>
+</li>
+<li>
+<p>Main toolbar</p>
+</li>
+<li>
+<p>Personal toolbar</p>
+</li>
+<li>
+
+<p>Status bar</p>
+</li>
+<li>
+<p>Options</p>
+</li>
+</ul>
+
+<h3>Adding a Sidebar</h3>
+<p>Firefox has a sidebar that can be accessed via the
+View&rarr;Sidebar menu item. The default features that are
+available as sidebar panels are Bookmarks, History, and Downloads.
+You can add a sidebar panel for your extension.
+Here's an example of how to do so with
+<code>chromEdit</code>:</p>
+
+<pre><code><b>&lt;menupopup id="viewSidebarMenu"&gt;</b>
+  <b>&lt;menuitem observes="viewChromEditSidebar" class="icon-chromedit16"/&gt;</b>
+  &lt;/menupopup&gt;
+
+  <b>&lt;broadcasterset id="mainBroadcasterSet"&gt;</b>
+    <b>&lt;broadcaster id="viewChromEditSidebar</b>"
+      autoCheck="false"
+      label="ChromEdit"
+      type="checkbox" group="sidebar"
+      sidebarurl="chrome://chromedit/content/"
+
+      sidebartitle="ChromEdit"
+      oncommand="toggleSidebar('viewChromEditSidebar');"/&gt;
+  &lt;/broadcasterset&gt;</code></pre>
+
+<p>The first thing to note in this example is that a sidebar needs two
+XUL blocks. Similar to the Tools menu overlay, we have a menu item.
+In this case, it is attached to the View&rarr;Sidebar menu using
+the <code>viewSidebarMenu</code><code>id</code>, which
+opens or closes <code>chromEdit</code> in the sidebar when
+activated. The menu item is then hooked up to a broadcaster via the
+<code>observes</code> attribute. The new broadcaster for the
+sidebar is overlaid into Firefox's main broadcaster
+set. The menu-item attributes are abstracted to the overlay simply to
+allow it to be used in more than one place.</p>
+
+<blockquote><p><b>TIP: </b>
+The sidebar holds the information on what file to open in the sidebar
+(<code>sidebarurl</code>), and the name it will have there
+(<code>sidebartitle</code>).<br/><br/>
+
+</p></blockquote>
+
+<h3>Under the Covers</h3>
+<p>Just for debugging purposes, there is a place to look to see if your
+overlays are being pulled into Firefox&mdash;a section of
+chrome
+called <em>overlayinfo</em>. You will find it in two
+places on disk. The first is in the install area under
+<em>chrome/overlayinfo</em>, and the second is in the
+profile area under <em>chrome/overlayinfo</em>. Because
+Firefox extensions are installed in the user profile directory, you
+will find your overlay information in the latter.</p>
+
+<p>Under the <em>overlayinfo</em> folder you will find
+multiple subfolders, but the relevant one for Firefox is
+<em>browser</em>. Enter the content folder and locate the
+file <em>overlays.rdf</em>. If the completed
+<code>chromedit</code><em>contents.rdf</em> file
+registered correctly when Firefox was restarted, you should see the
+following entry in that overlay file:</p>
+
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;RDF:RDF xmlns:c="http://www.mozilla.org/rdf/chrome#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+
+  <b>&lt;RDF:Seq RDF:about="chrome://browser/content/browser.xul"&gt;</b>
+    <b>&lt;RDF:li&gt;chrome://chromedit/content/chromeditBrowserOverlay.xul&lt;/RDF:li&gt;</b>
+    <b>&lt;/RDF:Seq&gt;</b>
+&lt;/RDF:RDF&gt;</code></pre>
+
+<p>If your overlay file is not listed here, there was a problem with
+registration and you should go back and double-check your
+<em>contents.rdf</em> file. You should not manually add
+entries to this file.</p>
+
+<h3>Skin Overlays</h3>
+<p>When you overlay the browser, the widgets you add are now in that
+scope. You might also want to add styles to those widgets. For
+example, you might want to add an icon to the menu item via a
+<code>class</code> attribute. The best way to do this is via a
+skin
+overlay.</p>
+
+<p>The first step is to add entries to the skin
+<em>contents.rdf</em> manifest with target and stylesheet
+information. Start with the standard skin registration contents.rdf
+manifest  <b>[Hack #86]</b> . Then, add the
+following entries:</p>
+
+<pre><code>
+  <b>&lt;RDF:Seq about="urn:mozilla:stylesheets"&gt;</b>
+  <b>&lt;RDF:li resource="chrome://global/content/customizeToolbar.xul"/&gt;</b>
+<b>&lt;RDF:li resource="chrome://browser/content/browser.xul"/&gt;</b>
+  &lt;/RDF:Seq&gt;
+
+  <b>&lt;RDF:Seq about="chrome://global/content/customizeToolbar.xul"&gt;</b>
+    <b>&lt;RDF:li&gt;chrome://chromedit/skin/chromedit.css&lt;/RDF:li&gt;</b>
+  &lt;/RDF:Seq&gt;
+
+  <b>&lt;RDF:Seq about="chrome://browser/content/browser.xul"&gt;</b>
+    <b>&lt;RDF:li&gt;chrome://chromedit/skin/chromedit.css&lt;/RDF:li&gt;</b>
+  &lt;/RDF:Seq&gt;</code></pre>
+
+<p>The stylesheet sequence (<code>urn:mozilla:stylesheets</code>)
+lists the Firefox files to be overlaid. The
+<em>chromedit.css</em> file is added to each one. This is
+the same system that is used to develop a theme  <b>[Hack #89]</b> .</p>
+
+<p>Inside <em>overlayinfo</em>, the location to search for
+the stylesheet overlay listing is in a file called
+<em>stylesheets.rdf</em> in the profile area under
+<em>chrome/overlayinfo/browser/skin</em>.</p>
+
+<p>&mdash;<em>Brian King</em></p>
+<p><i>
+
+</i></p>
+
+<p><i>
+
+</i></p>
+
+<hr size="1" noshade />
+
+<p>View catalog information for <a href="http://www.oreilly.com/catalog/firefoxhks/">Firefox Hacks</a></p>
+
+<p>Return to <a href="http://www.oreillynet.com/mozilla/">Mozilla DevCenter</a>.</p>
+
+
+
+<!--  end content  -->
+<img src="/images/trans.gif" alt=" " width="490" height="1" /><br />
+
+<!--  <csperl file="childarticles">  -->
+
+
+<a name="thread"></a>
+
+<div class="feedback">
+<div class="rbox">
+<div class="rboxtop"><div></div></div>
+<div class="rbcontent">
+<b class="headline">Questions or comments about this excerpt? Ask them here.</b><br />
+<span class="smalltext">You must be <a href="http://www.oreillynet.com/cs/user/login?x-redirect=http://www.oreillynet.com/pub/a/mozilla/excerpt/FirefoxHacks_chap01/index.html">logged in</a> to the O'Reilly Network to post a talkback.<br />
+<a href="#trackbacks">Trackbacks</a> appear below the discussion thread.</span>
+<div class="clear"></div>
+<div class="tb_left"><a href="http://www.oreillynet.com/cs/user/create/cs_msg?x-lr=cs_disc/13124&x-lr2=a/5786&page="><img src="/images/button_post.gif" border="0" width="118" height="20" alt="Post Comment" /></a>
+</div>
+
+<!--  rbcontent & rbox closed in cs_disc/thread_header.view  -->
+
+<div class="tb_right">
+
+</div>
+<div class="clear"></div>
+<!--  closing divs from a/print.view, et al  -->
+
+</div>
+<div class="rboxbot"><div></div></div>
+</div>
+
+
+
+<!--  thread_footer.view  -->
+
+
+
+
+
+<a name="trackbacks"></a>
+<div class="rbox">
+<div class="rboxtop"><div></div></div>
+<div class="rbcontent"><b class="headline">Trackbacks</b><br />
+<span class="smalltext" style="padding-bottom:4px;">Comments made on other sites via trackbacks appear below.</span>
+<div class="clear"></div>
+</div>
+<div class="rboxbot"><div></div></div>
+</div>
+<br />
+
+
+</div>
+
+<br /><br >
+
+
+			<!--  http://safari.oreilly.com/safariapi.asp?search=(security)%20AND%20(PUBLISHER%3DO'Reilly)&sortorder=desc&T=BBF03897BF094FCD9F10526E15EBAB29  -->
+			<a name="safaribox"></a>
+			<table border="0" width="100%" class="box" style="padding: 12px;">
+			<tr><td colspan="2" height="50">
+			<table border="0" cellpadding="0" class="box" width="100%">
+			<tr><td rowspan="2"><a href="https://members.oreilly.com/cs/promo/rlogin?x-url=https%3A//secure.safaribooksonline.com/scso%2Fregister%2Easp%3Fmode%3Dpromo%26portal%3Doreilly%26promoCode%3DORA14%26CMP%3DILC-BM0090245209"><img src="http://www.oreillynet.com/images/safari/safari-logo2.gif" alt="Safari Bookshelf" border="0" width="185" height="75" /></a></td><td width="100%"><span class="header-box">Search Results</span><br /><span class="sub-header-box">Books and Excerpts Related to this Article</span></td></tr>
+			<tr><td  class="trial"><a href="https://members.oreilly.com/cs/promo/rlogin?x-url=https%3A//secure.safaribooksonline.com/scso%2Fregister%2Easp%3Fmode%3Dpromo%26portal%3Doreilly%26promoCode%3DORA14%26CMP%3DILC-BM0090245209">Click here</a> to get your first 14 days on Safari free.</td></tr>
+			</table>
+			</td>
+			</tr>
+			<tr>
+			<td width="60%" valign="top" style="padding-right:2em;">
+		<p class="box-main2"><a href="http://safari.oreilly.com/0596001576?CMP=ILC-BM0090245209"><img src="http://www.oreilly.com/catalog/covers/javasec2.s.gif" class="cover" align="left" border="0" alt="book cover" /></a><b><a href="http://safari.oreilly.com/0596001576?CMP=ILC-BM0090245209" class="headline">Java Security, 2nd Edition</a></b></p><p class="secondary">The second edition focuses on the platform features of Java that provide security--the class loader, bytecode verifier, and security manager--and recent additions to Java that enhance this security model: digital signatures, security providers, and the access controller. The book covers in depth the security model of Java 2, version 1.3, including the two new security APIs: JAAS and JSSE.</p></td><td width="40%" valign="top"><p class="secondary">More Safari Bookshelf results:</p><p><b><a href="http://safari.oreilly.com/059600270X?CMP=ILC-BM0090245209">Network Security with OpenSSL</a></b></p><p><b><a href="http://safari.oreilly.com/1565922697?CMP=ILC-BM0090245209">Web Security & Commerce</a></b></p><p><b><a href="http://safari.oreilly.com/1565924037?CMP=ILC-BM0090245209">Java Security</a></b></p></td></tr></table>
+
+
+
+
+
+</td>
+
+<td width="10" valign="top"><!--  space between center and sponsors  -->
+<img src="/images/trans.gif" alt=" " width="10" height="1" border="0" /></td>
+<td width="130" bgcolor="#efefef" valign="top" align="center" class="secondary" style="border-right: 1px #FFF solid;">
+<!--  sponsor ad column  --><img src="/images/trans.gif" height="6" width="1" border="0" alt="" />
+<!--  table structure is in index.csp; ads only here for ease in changing sponsorships  -->
+<p class="secondary">Sponsored by:</p><table border="0" cellspacing="0" width="120"><tr><td><!-- dy -->
+				<iframe src="http://ad.doubleclick.net/adi/oreillynet.ds/mozillahome;pos=_mozillahome;sz=120x600;ord=1618322366?" width="120" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+				<script type="text/javascript" language="JavaScript1.1" src="http://ad.doubleclick.net/adj/oreillynet.ds/mozillahome;abr=!ie;pos=_mozillahome;sz=120x600;ord=1618322366?"></script>
+				</iframe>
+				<noscript>
+				<a href="http://ad.doubleclick.net/jump/oreillynet.ds/mozillahome;abr=!ie;pos=_mozillahome;sz=120x600;ord=1618322366?"><img src="http://ad.doubleclick.net/ad/oreillynet.ds/mozillahome;abr=!ie;pos=_mozillahome;sz=120x600;ord=1618322366?" border="0" width="120" height="600" alt="Advertisement" /></a>
+				</noscript></td></tr></table>
+
+<p>&nbsp;</p>
+<!--  macromedia download box  -->
+<!--  <p><a href="http://www.arbango.com/att/index.html?dist=ory&source=itu"><img src="/images/sponsors/at_and_t/att_120x240a.gif" width="120" height="240" border="0" alt="Free cell phone!" /></a></p>  -->
+<!--  <a href="http://ad.doubleclick.net/clk;3598490;6477537;c?http://www.macromedia.com/software/jrun/download/" border="0"><img src="/images/sponsors/JRun_120x240.gif" width="120" height="240" border="0"></a>  -->
+<br />
+<img src="/images/trans.gif" alt=" " width="130" height="1">
+</td>
+</tr>
+</table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="9" bgcolor="#cccccc"><img src="trans.gif" alt=" " border="0" height="1" width="1"></td>
+</tr>
+<tr>
+<td>
+<!--  Creative for 728x90 format  -->
+<div style="text-align:center; width:100%; padding:6px 0; background:#fff;"> <script type="text/javascript"><!--
+google_ad_client = "oreilly_728x90";
+google_ad_width = "728";
+google_ad_height = "90";
+google_ad_format = "728x90_pas_abgnc";
+google_safe = "high";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000066";
+google_color_url = "000066";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" language="JavaScript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<noscript>
+<img height="1" width="1" border="0"
+src="http://pagead2.googlesyndication.com/pagead/imp.gif?client=ca-oreilly_728x90&amp;event=noscript" alt=""/>
+</noscript>
+ </div>
+<!--  End Creative  --> <br />
+<br />
+<p class="secondary" align="center">
+<a href="/pub/a/mediakit/contact.html">Contact Us</a> | 
+<a href="/pub/a/mediakit/adcontact.html">Advertise with Us</a> |
+<a href="/pub/a/mediakit/privacy.html">Privacy Policy</a> |
+<a href="http://press.oreilly.com/">Press Center</a> |
+<a href="http://jobs.oreilly.com/">Jobs</a>
+</p>
+<p class="tiny" align="center">Copyright &copy; 2000-2005 O’Reilly Media, Inc. All Rights Reserved.<br />
+All trademarks and registered trademarks appearing on the O'Reilly Network are the property of their respective owners.<br /><br />
+For problems or assistance with this site, email <script language="JavaScript" type="text/javascript">
+<!--
+var name = "help";
+var domain = "oreillynet.com";
+var display = "";
+var subject = "";
+var ending = "";
+var style = "";
+document.write('<a class="' + style + '" href="mailto:' + name + '&#64;' + domain + '?subject=' + subject + '">');
+if (display) {
+ document.write(display);
+} else {
+ document.write(name + '&#64;' + domain);
+}
+document.write('</a>' + ending);
+document.write('<!-- mailmunge bit -->');
+
+// -->
+</script>
+
+</p>
+<br />
+</td>
+</tr>
+</table></body>
+
+</html>
