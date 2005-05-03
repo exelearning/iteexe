@@ -109,7 +109,7 @@ class MultichoiceBlock(Block):
         """
         html  = "<div class=\"iDevice\">\n"
         html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
+        html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlockView()    

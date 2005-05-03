@@ -248,7 +248,7 @@ class ImageElement(Element):
         """
         
         if filename.strip() != "":
-            return """<img src="images/%s" class="%s" width="%s" height="%s"\
+            return """<img src="%s" class="%s" width="%s" height="%s"\
             border="%s" align="left" style="margin-right: 5px;" />\n"""\
             % (filename.replace("\\", "/") , 
                self.class_, 

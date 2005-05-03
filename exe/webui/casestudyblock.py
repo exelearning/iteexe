@@ -95,11 +95,11 @@ class CasestudyBlock(Block):
     
     def renderView(self, style):
         """
-        Returns an XHTML string for viewing this block
+        Returns an XHTML string for viewing this block (exporting)
         """
         html  = "<div class=\"iDevice\">\n"
         html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/casestudy.gif\" />\n"
+        html += "src=\"casestudy.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += "<div class=\"iDevice_inner\">\n"

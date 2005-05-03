@@ -77,11 +77,11 @@ class GenericBlock(Block):
         html  = "<div class=\"iDevice\">\n"
         if self.idevice.class_ in ("objectives", "activity", 
                                    "reading", "preknowledge"):
-            html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/"
+            html += "<img class=\"iDevice_icon\" src=\""
             html += self.idevice.class_+".gif\" />\n"
         else:
             html += "<img class=\"iDevice_icon\" "
-            html += "src=\"/style/"+style+"/generic.gif\" />\n"
+            html += "src=\"generic.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"
         html += self.idevice.title+"</span>\n"
         html += self.__renderContent()

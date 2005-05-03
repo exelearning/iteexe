@@ -87,7 +87,7 @@ class ReflectionBlock(Block):
         """
         html  = "<div class=\"iDevice\">\n"
         html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/reflection.gif\" />\n"
+        html += "src=\"reflection.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span>\n"
         html += self.renderBlock()
