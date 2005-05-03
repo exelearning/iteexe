@@ -14,10 +14,12 @@ __license__ = 'GPL'
 
 
 import getopt
-import grp
+import os
+if os.name == 'posix':
+    import grp
+    import pwd
 import md5
 import os
-import pwd
 import random
 import socket
 import string
@@ -170,8 +172,9 @@ class UIDGenerator:
         self.set('gid', os.getgid())
         self.set('euid', os.geteuid())
         self.set('egid', os.getegid())
-        self.set('pwd', pwd.getpwuid(os.getuid()))
-        self.set('grp', grp.getgrgid(os.getgid()))
+        if os.name == 'posix':
+            self.set('pwd', pwd.getpwuid(os.getuid()))
+            self.set('grp', grp.getgrgid(os.getgid()))
 
     def updateEnvironment(self):
         """The operating environment."""
