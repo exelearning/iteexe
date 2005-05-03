@@ -13,6 +13,18 @@ body {
     background: #CCCC99;
 }
 
+a { color: #336633;
+    text-decoration: none;
+}
+
+a:hover {
+	color: #FFFFCC;
+	text-decoration: underline;
+}
+
+
+/* styles for node title */
+
 div#nodeDecoration {
 	border-top: 1px solid #FFFFCC;
 	border-bottom: 1px solid #FFFFCC;
