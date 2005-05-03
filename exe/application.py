@@ -38,6 +38,7 @@ _   = gettext.gettext
  
 log = logging.getLogger(__name__)
 
+
 class Application:
     def __init__(self):
         """
@@ -46,6 +47,8 @@ class Application:
         self.config       = None
         self.packageStore = None
         self.ideviceStore = None
+        self.packagePath  = None
+
 
     def main(self):
         """
@@ -53,9 +56,9 @@ class Application:
         """
         self.processArgs()
         self.loadConfiguration()
-        self.preLaunch()
-        self.launchBrowser()
+        self.launch()
         self.serve()
+
 
     def processArgs(self):
         """
@@ -68,7 +71,14 @@ class Application:
         except GetoptError:
             self.usage()
             sys.exit(2)
-    
+
+        if len(packages) == 1:
+            self.packagePath = packages[0]
+
+        elif len(packages) > 1:
+            self.usage()
+            sys.exit(2)
+
         for option, arg in options:
             if option in ("-V", "--version"):
                 print "eXe", version.version
@@ -76,6 +86,7 @@ class Application:
             if option in ("-h", "--help"):
                 self.usage()
                 sys.exit()
+
     
     def loadConfiguration(self):
         """
@@ -99,31 +110,37 @@ class Application:
         self.config.setupLogging("exe.log")
         self.config.loadStyles()
 
-    def preLaunch(self):
+
+    def launch(self):
         """
-        Sets ourself up for running
+        Sets ourself up for running and launches the webbrowser
         """
         self.packageStore = PackageStore()
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
         self.server = WebServer(self)
 
-    def launchBrowser(self):
-        """
-        Launches the web browser
-        """
-        launchBrowser(self.config)
+        if self.packagePath:
+            package = self.packageStore.loadPackage(self.packagePath)
+            log.debug("loading package "+package.name)
+            self.server.root.bindNewPackage(package)
+            launchBrowser(self.config, package.name)
+
+        else:
+            launchBrowser(self.config, "")
     
+
     def serve(self):
         """
         Starts the web server,
         this func doesn't return until
         after the app has finished
         """
-        print "Welcome to eXe: the eLearning XML editor"
+        print "Welcome to eXe: the eLearning XHTML editor"
         log.info("eXe running...")
         self.server.run()
     
+
     def usage(self):
         """
         Print usage info
@@ -132,6 +149,5 @@ class Application:
         print "  -V, --version    print version information and exit"
         print "  -h, --help       display this help and exit"
         print "Settings are read from exe.conf"
-        print "in $HOME/.exe on Linux/Unix or"
-        print "in Documents and Settings\\<user>\\Application Data\\exe",
-        print "on Windows"
+        print "in $HOME/ on Linux/Unix or"
+        print "in My Documents/ on Windows"

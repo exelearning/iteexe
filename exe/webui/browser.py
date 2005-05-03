@@ -34,18 +34,18 @@ _   = gettext.gettext
  
 log = logging.getLogger(__name__)
 
-def launchBrowser(config):
+def launchBrowser(config, packageName):
     """
     Launch the webbrowser (Firefox) for this platform
     """
+    log.info("Broswer path: " + config.browserPath)
+    url     = 'http://localhost:%d/%s' % (config.port, packageName)
+    profile = config.exeDir+'/exeprofile'
+    log.info("Launch firefox with "+config.browserPath)
+    log.info("profile "+profile)
+    log.info("url "+url)
+
     if sys.platform[:3] == "win":
-        log.info("Broswer path: " + config.browserPath)
-        url     = 'http://localhost:%d' % config.port
-        profile = config.exeDir+'/exeprofile'
-        log.info("Launch firefox with "+config.browserPath)
-        log.info("profile "+profile)
-        log.info("url "+url)
-        log.info("eXeDir: " + config.exeDir)
         try:
             os.spawnl(os.P_DETACH, config.browserPath, 
                       '"'+config.browserPath+'"', 
@@ -54,6 +54,6 @@ def launchBrowser(config):
             print "Cannot launch Firefox, please manually run Firefox"
             print "and go to", url     
     else:
-        os.system(config.browserPath+" http://localhost:%d&" % config.port)
+        os.system(config.browserPath+" "+url+"&")
 
 

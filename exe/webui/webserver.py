@@ -54,6 +54,7 @@ class WebServer:
         """
         Start serving webpages from the local webserver
         """
+        log.debug("start webserver running")
         webDir = self.config.webDir
         self.root.putChild("images",  static.File(webDir+"/images"))
         self.root.putChild("css",     static.File(webDir+"/css"))   
@@ -69,20 +70,3 @@ class WebServer:
                       (self.config.port, str(e)))
         else:
             reactor.run()
-
-if __name__ == "__main__":
-    class MyConfig:
-        """Dummy config"""
-        def __init__(self):
-            self.port    = 8081
-            self.dataDir = "."
-            self.webDir  = "."
-            self.exeDir  = "."
-            self.styles  = ["default"]
-    class MyApplication:
-        """Dummy application"""
-        def __init__(self):
-            self.config = MyConfig()
-
-    server = WebServer(MyApplication())
-    server.run()
