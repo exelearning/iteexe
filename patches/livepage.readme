@@ -1,0 +1,11 @@
+Apply this patch to the livepage.py file in the nevow package:
+
+Windows:
+copy livepage.patch C:\python23\lib\site-packages\nevow
+cd C:\python23\lib\site-packages\nevow
+patch livepage.py livepage.patch
+
+Linux:
+cp livepage.patch /usr/lib/python2.3/site-packages/nevow
+cd /usr/lib/python2.3/site-packages/nevow
+patch livepage.py livepage.patch
