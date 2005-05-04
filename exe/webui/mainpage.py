@@ -265,11 +265,13 @@ class MainPage(RenderableLivePage):
                 scormExport = ScormExport(self.config, stylesDir, 
                                           exeDir / 'scripts', filename)
                 if exportType == 'scormMeta':
-                    print "exporting"
                     scormExport.export(self.package, True)
+
                 elif exportType == 'scormNoMeta':
                     scormExport.export(self.package, False)
                     client.alert('Exported to %s' % filename)
+
                 else:
                     log.error('Wrong exportType passed to handleExport: %s' % exportType)
+
                 client.alert('Exported to %s' % filename)

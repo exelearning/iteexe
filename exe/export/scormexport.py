@@ -75,10 +75,11 @@ class ScormPage(object):
         html += "</style>\n"
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"APIWrapper.js\"></script>\n" 
+        html += "<script type=\"text/javascript\" language=\"javascript\" "
+        html += "src=\"SCOFunctions.js\"></script>\n" 
         html += "</head>\n"
         html += "<body onLoad=\"loadPage();\" "
-        html += "onunLoad=\"doContinue('completed'); return unloadPage();\" "
-        html += "onbeforeunload=\"unloadPage();\">\n"
+        html += "onunLoad=\"return unloadPage();\"> "
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
@@ -93,6 +94,9 @@ class ScormPage(object):
 
         html += "</div>\n"
         html += "</div>\n"
+        html += "<script language=\"javascript\">\n"
+	html += "loadPage();\n"
+	html += "doContinue('completed');</script>\n"  
         html += "</body></html>\n"
         return html
 

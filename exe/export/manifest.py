@@ -21,7 +21,7 @@ Represents an imsmanifest xml file
 """
 
 import logging
-from exe.engine.uid  import UIDGenerator
+from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -29,7 +29,7 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, outdir, package, addMetadata=True):
+    def __init__(self, config, outdir, package, addMetadata=True):
         """
         Initialize
         'outdir' is the directory that we read the html from and also output the mainfest.xml
@@ -43,7 +43,7 @@ class Manifest(object):
         self.name        = package.name
         self.author      = package.author
         self.desc        = package.description
-        self.idGenerator = UIDGenerator(package.name)
+        self.idGenerator = UniqueIdGenerator(package.name, config.exePath)
         self.itemStr     = ""
         self.resStr      = ""
 
