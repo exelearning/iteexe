@@ -111,10 +111,10 @@ class ScormExport(object):
         'scriptsDir' is the directory from which we will copy our javascripts
         'filename' is the name of the scorm package to be output
         """
+        self.config     = config
         self.styleDir   = path(styleDir)
         self.scriptsDir = path(scriptsDir)
         self.filename   = path(filename)
-        self.config     = config
 
     def export(self, package, addMetadata=True):
         """ 

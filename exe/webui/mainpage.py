@@ -261,17 +261,17 @@ class MainPage(RenderableLivePage):
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 
                 filename += '.zip'
+            filename = path(filename)
+            # Remove any old existing files
+            if filename.exists(): filename.remove()
+            # Do the export
+            scormExport = ScormExport(self.config, stylesDir, 
+                                      exeDir / 'scripts', filename)
+            if exportType == 'scormMeta':
+                scormExport.export(self.package, True)
+            elif exportType == 'scormNoMeta':
+                scormExport.export(self.package, False)
             else:
-                scormExport = ScormExport(self.config, stylesDir, 
-                                          exeDir / 'scripts', filename)
-                if exportType == 'scormMeta':
-                    scormExport.export(self.package, True)
-
-                elif exportType == 'scormNoMeta':
-                    scormExport.export(self.package, False)
-                    client.alert('Exported to %s' % filename)
-
-                else:
-                    log.error('Wrong exportType passed to handleExport: %s' % exportType)
-
-                client.alert('Exported to %s' % filename)
+                log.error('Wrong exportType passed to handleExport: %s' % exportType)
+                return
+            client.alert('Exported to %s' % filename)
