@@ -137,9 +137,10 @@ class EditorPane(object):
             
     def render(self, request):
         """render the idevice being edited"""
-        message = _("This is an experimental future, it is still in developing.")
+        message = _("This is an experimental feature, "+
+                    "it is still in development.")
         html  = "<H2 align = \"center\">" + message + "</H2><br/>"
-        html += "<br/><font color=\"red\"<b>" + self.message + "</b></font><br/>"
+        html += "<br/><font color=\"red\"<b>"+self.message+"</b></font><br/>"
         html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td>\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
