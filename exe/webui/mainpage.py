@@ -272,6 +272,4 @@ class MainPage(RenderableLivePage):
                     client.alert('Exported to %s' % filename)
                 else:
                     log.error('Wrong exportType passed to handleExport: %s' % exportType)
-                import pdb
-                pdb.set_trace()
                 client.alert('Exported to %s' % filename)
