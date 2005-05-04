@@ -135,7 +135,7 @@ class ScormExport(object):
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
         for fn in outdir.files():
-            zipped.write(fn, fn.basename(), ZIP_DEFLATED)
+            zipped.write(fn, str(fn.basename()), ZIP_DEFLATED)
         zipped.close()
         # Clean up the temporary dir
         outdir.rmtree()
