@@ -232,6 +232,21 @@ class MainPage(RenderableLivePage):
             # We assume that the user knows what they are doing
             # and don't check if the directory is already full or not
             # and we just overwrite what's already there
+            filename = path(filename)
+            # Append the package name to the folder path if necessary
+            if filename.basename() != self.package.name:
+                filename /= self.package.name
+            if not filename.exists():
+                filename.makedirs()
+            elif not filename.isdir():
+                client.alert('Filename %s is a file, cannot replace it' % filename)
+                log.error("Couldn't export web page: Filename %s is a file, cannot replace it" % filename)
+                return
+            else:
+                # Wipe it out
+                filename.rmtree()
+                filename.mkdir()
+            # Now do the export
             websiteExport = WebsiteExport(stylesDir, filename)
             websiteExport.export(self.package)
             filename = os.path.join(filename, 'index.html')
@@ -239,10 +254,9 @@ class MainPage(RenderableLivePage):
             if hasattr(os, 'startfile'):
                 os.startfile(filename)
             else:
-                os.spawnv(os.P_NOWAIT, 
-                          self.config.browserPath, 
-                          (os.path.basename(self.config.browserPath), filename,))
-
+                os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
+                    (self.config.browserPath,
+                    '-remote', 'openURL("%s", "new-window")' % filename))
         else:
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 

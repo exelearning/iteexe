@@ -393,7 +393,8 @@ function exportPackage(exportType) {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     if (exportType == 'webSite') {
-        fp.init(window, "Select a folder to export to", nsIFilePicker.modeGetFolder);
+        fp.init(window, "Select the parent folder for export.",
+                         nsIFilePicker.modeGetFolder);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK) {
             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
