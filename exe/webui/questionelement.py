@@ -57,9 +57,9 @@ class QuestionElement(object):
         if self.feedbackId in request.args:
             self.question.feedback = request.args[self.feedbackId][0]
             
-        if "object" in request.args and request.args["object"][0] == self.id:
-            if request.args["action"][0] == "deleteQuestion":
-                self.idevice.questions.remove(self.question)
+        if "action" in request.args and request.args["action"][0] == self.id:
+            self.idevice.questions.remove(self.question)
+
 
 
     def renderEdit(self):
@@ -86,7 +86,7 @@ class QuestionElement(object):
                                       self.idevice.feedbackInstruc)
         html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>\n"
-        html += common.submitImage("deleteQuestion", self.id, 
+        html += common.submitImage(self.id, self.idevice.id, 
                                    "stock-cancel.png",
                                    _("Delete question"))
         html += "</td></tr>\n"

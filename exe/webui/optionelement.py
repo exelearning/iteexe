@@ -64,9 +64,8 @@ class OptionElement(object):
         if self.feedbackId in request.args:
             self.option.feedback = request.args[self.feedbackId][0]
             
-        if "object" in request.args and request.args["object"][0] == self.id:
-            if request.args["action"][0] == "deleteOption":
-                self.idevice.options.remove(self.option)
+        if "action" in request.args and request.args["action"][0] == self.id:
+            self.idevice.options.remove(self.option)
 
 
     def renderEdit(self):
@@ -92,7 +91,7 @@ class OptionElement(object):
         html += "</td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>\n"
-        html += common.submitImage("deleteOption", self.id, 
+        html += common.submitImage(self.id, self.idevice.id, 
                                    "stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"

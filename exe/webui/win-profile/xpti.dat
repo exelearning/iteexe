@@ -2,11 +2,11 @@
 
 [Header,2]
 0,Version,2,0
-1,AppDir,C:\Program Files\Mozilla Firefox
+1,AppDir,c:\exe\exe\Mozilla Firefox
 
 [Directories,2]
-0,C:\Program Files\Mozilla Firefox\components
-1,C:\Program Files\Mozilla Firefox\plugins
+0,c:\exe\exe\Mozilla Firefox\components
+1,c:\exe\exe\Mozilla Firefox\plugins
 
 [Files,5]
 0,browser.xpt,0,264820,1109312820000
