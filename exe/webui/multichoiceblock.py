@@ -65,6 +65,7 @@ class MultichoiceBlock(Block):
             
         if ("addOption"+str(self.id)) in request.args: 
             self.idevice.addOption()
+            self.idevice.edit = True
 
         for element in self.optionElements:
             element.process(request)

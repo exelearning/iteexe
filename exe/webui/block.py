@@ -172,8 +172,9 @@ class Block(object):
         """
         html = ""
         if self.mode == Block.Edit:
-            html += self.renderEdit(style)
             html += '<a name="currentBlock"></a>\n'
+            html += self.renderEdit(style)
+            
 
 
         elif self.mode == Block.View:

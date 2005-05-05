@@ -64,6 +64,7 @@ class CasestudyBlock(Block):
             
         if ("addQuestion"+str(self.id)) in request.args: 
             self.idevice.addQuestion()
+            self.idevice.edit = True
 
         for element in self.questionElements:
             element.process(request)
