@@ -142,10 +142,17 @@ class EditorPane(object):
         html  = "<H2 align = \"center\">" + message + "</H2><br/>"
         html += "<br/><font color=\"red\"<b>"+self.message+"</b></font><br/>"
         html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
-        html += "style=\"width: 100%\"><tr valign=\"top\"><td>\n"
+        html += "style=\"width: 100%\"><tr valign=\"top\"><td width=\"30%\">\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
         html += common.submitButton("addText", _("Add Text Field"))+"<br/>"
         html += common.submitButton("addTextArea", _("Add Text Area")) + "<br/>"
+        html += "<p>\n"
+        html += "Future buttons could include<br/>functionality for: <br/>\n"
+        html += "<ul><li>Limited interaction<br/>(eg hiding feedback)</li>\n"
+        html += "<li>Options for incorporating<br/>"
+        html += "different media objects</li>\n"
+        html += "<li>Linking images with specific<br/>iDevices</li></ul>\n"
+        html += "</p>\n"
         html += "</td><td>\n"
 
         html += self.renderIdevice(request)

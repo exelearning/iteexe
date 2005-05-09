@@ -87,7 +87,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         Allows one to set the title as a string
         """
-        self._title.setTitle(title)
+        if title != str(self._title):
+            self._title.setTitle(title)
+            self.package.isChanged = True
     title = property(getTitle, setTitle)
 
     # titleIDevice
@@ -106,11 +108,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 node = node.parent
                 yield node
 
-
     def isAncestorOf(self, node):
         """If we are an ancestor of 'node' returns 'true'"""
         return node in self.ancestors()
-
 
     def getStateFor(self, dummy):
         """
@@ -119,13 +119,12 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         return self.__getstate__()
 
-
     def createChild(self):
         """
         Create a child node
         """
+        self.package.isChanged = True
         return Node(self.package, self)
-
 
     def delete(self):
         """
@@ -138,6 +137,8 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         # Remove all children from package id-dict and our own children list
         while self.children:
             self.children[0].delete()
+        # Mark the package as changed
+        self.package.isChanged = True
 
 
     def addIdevice(self, idevice):
@@ -169,7 +170,8 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 else:
                     children.insert(children.index(nextSibling), self)
             else: newParent.children.append(self)
-
+        # Mark the package as changed
+        self.package.isChanged = True
 
     def promote(self):
         """Convenience function.
@@ -180,7 +182,6 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             self.move(self.parent.parent, None)
             return True
         return False
-
 
     def demote(self):
         """Convenience function.
@@ -208,9 +209,10 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             if i > 0:
                 children.remove(self)
                 children.insert(i-1, self)
+                # Mark the package as changed
+                self.package.isChanged = True
                 return True
         return False
-
 
     def down(self):
         """Moves the node down one vertically
@@ -222,9 +224,10 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             i = children.index(self)
             children.remove(self)
             children.insert(i+1, self)
+            # Mark the package as changed
+            self.package.isChanged = True
             return True
         return False
-
 
     def nextSibling(self):
         """Returns our next sibling or None"""
@@ -234,7 +237,6 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             return i < len(children) and children[i] or None
         else:
             return None
-
 
     def __str__(self):
         """

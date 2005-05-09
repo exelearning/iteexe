@@ -54,16 +54,45 @@ class PropertiesPage(RenderableResource):
         
         # Processing
         log.info("creating the properties page")
-        self.propertiesPane.process(request)
-        log.info("after propertityPane process:"+ repr(request.args))
                         
         # Rendering
-        html  = common.header() + common.banner(request)
+        html = '\n'.join(
+          ['''<?xml version="1.0" encoding="iso-8859-1"?>''',
+           '''<!DOCTYPE html PUBLIC ''',
+           '''"-//W3C//DTD XHTML 1.0 Strict//EN" ''',
+           '''"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">''',
+           '''<html xmlns="http://www.w3.org/1999/xhtml">''',
+           '''<head>''',
+           '''<style type="text/css">''',
+           '''@import url(/css/exe.css);''',
+           '''@import url(/style/default/content.css);</style>''',
+           '''<script language="JavaScript" src="/scripts/common.js"></script>''',
+           '''<script language="JavaScript" src="/scripts/fckeditor.js"></script>''',
+           '''<script language="JavaScript" src="/scripts/libot_drag.js"></script>''',
+           '''<title>eXe : elearning XHTML editor</title>''',
+           '''<meta http-equiv="content-type" content="text/html;  charset=UTF-8"></meta>''',
+           '''</head>'''])
         html += "<div id=\"main\"> \n"
         html += "<h3>Project Properties</h3>\n"
         html += self.propertiesPane.render()
         html += "</div> \n"
-        html += common.footer()
+        html += "</body></html>"
         return html
     
-    render_POST = render_GET
+    def render_POST(self, request):
+        """
+        Handles the submission of the properties form,
+        creating a page that redirects the brower's top document
+        back to the original package, thereby updating all the tree elements
+        """
+        # TODO: Make the script actually dynamically update the tree elements
+        # without reloading the top form and losing our location. In fact
+        # you don't even have to send this different new page,
+        # You could rename the tree elements in the on submit handler or something...
+        self.propertiesPane.process(request)
+        log.info("after propertityPane process:"+ repr(request.args))
+        return '\n'.join(
+            ['<html>'
+             ' <head/>',
+             ' <body onload="top.location = top.location"/>',
+             '</html>'])

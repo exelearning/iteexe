@@ -4,3 +4,6 @@ recursive-include exe/webui/style *
 recursive-include exe/webui/css *
 recursive-include exe/webui/images *
 recursive-include exe/webui/scripts *
+recursive-include exe/webui/templates *
+recursive-include exe/webui/linux-profile *
+recursive-include exe/webui/firefox *

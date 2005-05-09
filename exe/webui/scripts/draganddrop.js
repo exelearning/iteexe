@@ -26,6 +26,16 @@ function treeDragGesture(event) {
     var treeitem = currentOutlineItem(tree)
     // Only allow dragging of treeitems below main
     if (tree.view.getIndexOfItem(treeitem) <= 1) { return }
+    // Don't start drag because they are moving the scroll bar!
+    var row = { }
+    var col = { }
+    var child = { }
+    tree.treeBoxObject.getCellAt(event.pageX, event.pageY, row, col, child)
+    if (!col.value) { return }
+    // CRAPINESS ALERT!
+    // If they're moving, (without ctrl down) the target node becomes our sibling
+    // above us. If copying, the source node becomes the first child of the target node
+    var targetNode = getOutlineItem(tree, row.value)
     // Start packaging the drag data (Which we don't use but have to do anyway)
     var data = new Array(treeitem)
     var ds = Components.classes["@mozilla.org/widget/dragservice;1"].getService(Components.interfaces.nsIDragService);

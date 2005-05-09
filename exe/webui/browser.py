@@ -27,9 +27,11 @@ Browser module
 
 import os
 import os.path
+import shutil
 import sys
 import logging
 import gettext
+from urllib import quote
 _   = gettext.gettext
  
 log = logging.getLogger(__name__)
@@ -39,13 +41,13 @@ def launchBrowser(config, packageName):
     Launch the webbrowser (Firefox) for this platform
     """
     log.info("Broswer path: " + config.browserPath)
-    url     = 'http://localhost:%d/%s' % (config.port, packageName)
-    profile = config.exeDir+'/win-profile'
+    url     = 'http://localhost:%d/%s' % (config.port, quote(packageName))
     log.info("Launch firefox with "+config.browserPath)
-    log.info("profile "+profile)
     log.info("url "+url)
 
     if sys.platform[:3] == "win":
+        profile = config.exeDir+'/win-profile'
+        log.info("profile "+profile)
         try:
             os.spawnl(os.P_DETACH, config.browserPath, 
                       '"'+config.browserPath+'"', 
@@ -54,6 +56,24 @@ def launchBrowser(config, packageName):
             print "Cannot launch Firefox, please manually run Firefox"
             print "and go to", url     
     else:
-        os.system(config.browserPath+" "+url+"&")
+        profile = os.environ["HOME"]+'/.exe/linux-profile'
+        if not os.path.exists(profile):
+            createProfile(config)
 
+        log.info("profile "+profile)
+        os.system('"'+config.browserPath+'" -profile "'+profile+
+                  '" -chrome '+url+'&')
+
+
+def createProfile(config):
+    """
+    Create a profile for the user to use based on the one in /usr/share/exe
+    """
+    appDir  = os.environ["HOME"]+'/.exe'
+    log.info("Creating FireFox profile copied from"+
+             config.exeDir+"/linux-profile to "+appDir+"/linux-profile")
+    if not os.path.exists(appDir):
+        os.mkdir(appDir)
+    shutil.copytree(config.exeDir+"/linux-profile", appDir+"/linux-profile")
+        
 

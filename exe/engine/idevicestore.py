@@ -68,6 +68,8 @@ class IdeviceStore:
         Register another iDevice as available
         """
         log.debug("IdeviceStore.addIdevice")
+        # idevice prototypes need to be in edit mode
+        idevice.edit = True
         self.generic.append(idevice)
         for listener in self.listeners:
             listener.addIdevice(idevice)

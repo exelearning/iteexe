@@ -7,8 +7,7 @@ from distutils.command.install import install
 from distutils.core            import setup
 from exe.engine import version
 
-
-g_files = { '/usr/share/exe': ["exe/exe.conf", "README",]}
+g_files = { '/etc/exe': ["exe/exe.conf"], '/usr/share/exe': ["README",]}
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
@@ -30,11 +29,19 @@ def dataFiles(dirs):
 dataFiles(["exe/webui/style",
            "exe/webui/css",
            "exe/webui/images",
-           "exe/webui/scripts"])
+           "exe/webui/scripts",
+           "exe/webui/templates",
+           "exe/webui/linux-profile",
+           "exe/webui/firefox"])
 
 setup(name         = version.project,
       version      = version.release,
       description  = "eLearning XHTML editor",
+      long_description = """\
+The eXe project is an authoring environment to enable teachers to publish 
+web content without the need to become proficient in HTML or XML markup.
+Content generated using eXe can be used by any Learning Management System.  
+""",
       url          = "http://exe.cfdl.auckland.ac.nz",
       author       = "University of Auckland",
       author_email = "exe@auckland.ac.nz",

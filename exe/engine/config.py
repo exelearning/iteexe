@@ -40,11 +40,12 @@ class Config:
         Initialize 
         """
         self.exePath = os.path.abspath(sys.argv[0])
-        self.exeDir  = os.path.dirname(self.exePath)
+
+        # TODO: get rid of exeDir
+        self.exeDir  = self.webDir  = os.path.dirname(self.exePath)
         self.configPath = self.exeDir+"/"+configFile
 
         self.port       = 8081
-        self.webDir     = "."
         self.dataDir    = "."
         self.appDataDir = "."
         self.styles     = []

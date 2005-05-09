@@ -85,11 +85,14 @@ class PropertiesPane(Renderable):
     def render(self):
         """Returns an XHTML string for viewing this pane"""
         log.debug("render")
-        html  = common.header()
+        html  = ''
+        html += '<a name="currentBlock"/>'
         html += "<form method=\"post\" action=\"%s\" " % self.url
-        html += "name=\"contentForm\">" 
+        html += "name=\"contentForm\" " 
+        html += 'onSubmit="return handleSubmit()">\n' 
         html += common.hiddenField("action")
         html += common.hiddenField("isChanged", self.package.isChanged)
+        html += common.hiddenField("posting", self.package.isChanged)
         html += "<table border=\"0\" cellspacing=\"6\">\n"
         html += "<tr><td><b>Project title:</b></td><td>\n"
         html += common.textInput("title", self.package.root.title, 53) 
@@ -109,9 +112,8 @@ class PropertiesPane(Renderable):
         html += "<p>Level 3: "
         html += common.textInput("level3", self.package.levelNames[2], 20)
         html += "<p/></td></tr><tr><td align=\"right\">\n"       
-        html += common.submitButton("done", _("Done"))
+        html += common.submitButton('done', _('Done'))
         html += "</td><td>&nbsp;</td></tr></table></form>\n"
-                             
         return html
         
         

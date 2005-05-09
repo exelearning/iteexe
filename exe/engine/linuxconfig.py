@@ -49,7 +49,7 @@ class LinuxConfig(Config):
         # TODO: get appDataDir from
         # or $HOME\.exe on Linux
         self.appDataDir  = self.dataDir
-        self.browserPath = "firefox"
+        self.browserPath = "/usr/share/exe/firefox/firefox"
         self.styles      = []
 
 

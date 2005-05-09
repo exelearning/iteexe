@@ -9,7 +9,7 @@
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-Icon "C:\exe\dist\eXe_icon.ico"
+Icon "C:\eXe branches\0.4\dist\eXe_icon.ico"
 OutFile "exeinstall.exe"
 
 ; Modern interface settings
@@ -20,7 +20,7 @@ OutFile "exeinstall.exe"
 !define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "C:\exe\dist\exeLicense.txt"
+!insertmacro MUI_PAGE_LICENSE "C:\eXe branches\0.4\dist\exeLicense.txt"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -31,6 +31,15 @@ OutFile "exeinstall.exe"
 ; Set languages (first is default language)
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_RESERVEFILE_LANGDLL
+
+!define SHCNE_ASSOCCHANGED 0x08000000
+!define SHCNF_IDLIST 0
+
+Function RefreshShellIcons
+  ; By jerome tremblay - april 2003
+  System::Call 'shell32.dll::SHChangeNotify(i, i, i, i) v \
+  (${SHCNE_ASSOCCHANGED}, ${SHCNF_IDLIST}, 0, 0)'
+FunctionEnd
 
 Function UninstallMSI
   ; $R0 should contain the GUID of the application
@@ -77,13 +86,13 @@ Section "exe" Section2
 
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
-	File /r "C:\exe\dist\*.*"
+	File /r "C:\eXe branches\0.4\dist\*.*"
 	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
-	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\server.exe" "" "$INSTDIR\eXe_icon.ico"
+	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 	
-	; Associtate elp files with server.exe
+	; Associtate elp files with exe.exe
 	!define Index "Line${__LINE__}"
   ReadRegStr $1 HKCR ".elp" ""
   StrCmp $1 "" "${Index}-NoBackup"
@@ -92,13 +101,12 @@ Section "exe" Section2
 	"${Index}-NoBackup:"
     WriteRegStr HKCR ".elp" "" "exePackageFile"
     ReadRegStr $0 HKCR "exePackageFile" ""
-    StrCmp $0 "" 0 "${Index}-Skip"
 	  WriteRegStr HKCR "exePackageFile" "" "eXe Package File"
 	  WriteRegStr HKCR "exePackageFile\shell" "" "open"
 	  WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\eXe_icon.ico"
-  "${Index}-Skip:"
     WriteRegStr HKCR "exePackageFile\shell\open\command" "" \
-    '$INSTDIR\server.exe "%1"'
+    '$INSTDIR\exe.exe "%1"'
+		Call RefreshShellIcons
     ;;WriteRegStr HKCR "exePackageFile\shell\edit" "" "Edit Options File"
     ;;WriteRegStr HKCR "exePackageFile\shell\edit\command" "" \
     ;;'$INSTDIR\server.exe "%1"'

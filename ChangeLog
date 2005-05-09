@@ -1,3 +1,267 @@
+2005-05-04 05:41  matthew
+
+	* branches/0.4/exe/webui/propertiespage.py,
+	  branches/0.4/exe/webui/propertiespane.py: Issue 49: Made it so
+	  that when you submit the properties pane, it reloads the main
+	  window, and so updates the tree node names
+
+2005-05-04 04:23  jenny
+
+	* branches/0.4/exe/export/scormexport.py: Fixed it to work on sytems
+	  with unicode filenames (ie. windows) (MS)
+
+2005-05-04 04:16  djm
+
+	* branches/0.4/exe/engine/linuxconfig.py: set exeDir for linux
+
+2005-05-04 01:09  djm
+
+	* branches/0.4: Created branch for 0.4 release
+
+2005-05-04 00:39  djm
+
+	* exe/webui/editorpane.py: Small change in wording
+
+2005-05-04 00:27  matthew
+
+	* exe/export/scormexport.py, exe/webui/mainpage.py: Fixed scorm
+	  package export
+
+2005-05-04 00:19  brent
+
+	* exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/webui/mainpage.py: Fixed SCORM export
+
+2005-05-04 00:14  matthew
+
+	* exe/webui/mainpage.py: Removed breakpoint! oops
+
+2005-05-04 00:14  matthew
+
+	* exe/webui/mainpage.py, exe/webui/scripts/mainpage.js: Now opens
+	  newly exported web sites properly in linux
+
+2005-05-03 23:17  jenny
+
+	* exe/webui/editorpane.py: add a meesage "This is an experimental
+	  future, it is still in developing" on editorpage.
+
+2005-05-03 22:54  djm
+
+	* exe/webui/win-profile/Cache/01AEAB87d01,
+	  exe/webui/win-profile/Cache/10368CCEd01,
+	  exe/webui/win-profile/Cache/14E139D8d01,
+	  exe/webui/win-profile/Cache/14E239D8d01,
+	  exe/webui/win-profile/Cache/14E339D8d01,
+	  exe/webui/win-profile/Cache/14E439D8d01,
+	  exe/webui/win-profile/Cache/14E539D8d01,
+	  exe/webui/win-profile/Cache/14E639D8d01,
+	  exe/webui/win-profile/Cache/14E739D8d01,
+	  exe/webui/win-profile/Cache/14E839D8d01,
+	  exe/webui/win-profile/Cache/14E939D8d01,
+	  exe/webui/win-profile/Cache/1DA52086d01,
+	  exe/webui/win-profile/Cache/209BB251d01,
+	  exe/webui/win-profile/Cache/2E92F4E4d01,
+	  exe/webui/win-profile/Cache/34A56338d01,
+	  exe/webui/win-profile/Cache/35A56338d01,
+	  exe/webui/win-profile/Cache/38A56338d01,
+	  exe/webui/win-profile/Cache/39A56338d01,
+	  exe/webui/win-profile/Cache/3AA56338d01,
+	  exe/webui/win-profile/Cache/3BA56338d01,
+	  exe/webui/win-profile/Cache/3CA56338d01,
+	  exe/webui/win-profile/Cache/3EA56338d01,
+	  exe/webui/win-profile/Cache/3FA56338d01,
+	  exe/webui/win-profile/Cache/40BBF5A3d01,
+	  exe/webui/win-profile/Cache/49C7C1CFd01,
+	  exe/webui/win-profile/Cache/4C0A9897d01,
+	  exe/webui/win-profile/Cache/4C21D776d01,
+	  exe/webui/win-profile/Cache/4C21E776d01,
+	  exe/webui/win-profile/Cache/4E086376d01,
+	  exe/webui/win-profile/Cache/4E096376d01,
+	  exe/webui/win-profile/Cache/4E0B6376d01,
+	  exe/webui/win-profile/Cache/4E0C6376d01,
+	  exe/webui/win-profile/Cache/4E0D6376d01,
+	  exe/webui/win-profile/Cache/4E0E6376d01,
+	  exe/webui/win-profile/Cache/64F9EF47d01,
+	  exe/webui/win-profile/Cache/7C27C228d01,
+	  exe/webui/win-profile/Cache/7CDE3836d01,
+	  exe/webui/win-profile/Cache/7D5879CDd01,
+	  exe/webui/win-profile/Cache/800C796Cd01,
+	  exe/webui/win-profile/Cache/A48857A1d01,
+	  exe/webui/win-profile/Cache/C86248FDd01,
+	  exe/webui/win-profile/Cache/C96248FDd01,
+	  exe/webui/win-profile/Cache/CA6248FDd01,
+	  exe/webui/win-profile/Cache/CB6248FDd01,
+	  exe/webui/win-profile/Cache/CBC0FA0Bd01,
+	  exe/webui/win-profile/Cache/CF6248FDd01,
+	  exe/webui/win-profile/Cache/D54F5793d01,
+	  exe/webui/win-profile/Cache/D71A3EF8d01,
+	  exe/webui/win-profile/Cache/DE5C6F20d01,
+	  exe/webui/win-profile/Cache/DF26B9A9d01,
+	  exe/webui/win-profile/Cache/ECDD336Fd01,
+	  exe/webui/win-profile/Cache/F00F4ECDd01,
+	  exe/webui/win-profile/Cache/_CACHE_001_,
+	  exe/webui/win-profile/Cache/_CACHE_002_,
+	  exe/webui/win-profile/Cache/_CACHE_003_,
+	  exe/webui/win-profile/Cache/_CACHE_MAP_: removed cached files
+
+2005-05-03 22:53  jenny
+
+	* exe/webui/browser.py, exe/webui/win-profile,
+	  exe/webui/win-profile/Cache,
+	  exe/webui/win-profile/Cache/01AEAB87d01,
+	  exe/webui/win-profile/Cache/10368CCEd01,
+	  exe/webui/win-profile/Cache/14E139D8d01,
+	  exe/webui/win-profile/Cache/14E239D8d01,
+	  exe/webui/win-profile/Cache/14E339D8d01,
+	  exe/webui/win-profile/Cache/14E439D8d01,
+	  exe/webui/win-profile/Cache/14E539D8d01,
+	  exe/webui/win-profile/Cache/14E639D8d01,
+	  exe/webui/win-profile/Cache/14E739D8d01,
+	  exe/webui/win-profile/Cache/14E839D8d01,
+	  exe/webui/win-profile/Cache/14E939D8d01,
+	  exe/webui/win-profile/Cache/1DA52086d01,
+	  exe/webui/win-profile/Cache/209BB251d01,
+	  exe/webui/win-profile/Cache/2E92F4E4d01,
+	  exe/webui/win-profile/Cache/34A56338d01,
+	  exe/webui/win-profile/Cache/35A56338d01,
+	  exe/webui/win-profile/Cache/38A56338d01,
+	  exe/webui/win-profile/Cache/39A56338d01,
+	  exe/webui/win-profile/Cache/3AA56338d01,
+	  exe/webui/win-profile/Cache/3BA56338d01,
+	  exe/webui/win-profile/Cache/3CA56338d01,
+	  exe/webui/win-profile/Cache/3EA56338d01,
+	  exe/webui/win-profile/Cache/3FA56338d01,
+	  exe/webui/win-profile/Cache/40BBF5A3d01,
+	  exe/webui/win-profile/Cache/49C7C1CFd01,
+	  exe/webui/win-profile/Cache/4C0A9897d01,
+	  exe/webui/win-profile/Cache/4C21D776d01,
+	  exe/webui/win-profile/Cache/4C21E776d01,
+	  exe/webui/win-profile/Cache/4E086376d01,
+	  exe/webui/win-profile/Cache/4E096376d01,
+	  exe/webui/win-profile/Cache/4E0B6376d01,
+	  exe/webui/win-profile/Cache/4E0C6376d01,
+	  exe/webui/win-profile/Cache/4E0D6376d01,
+	  exe/webui/win-profile/Cache/4E0E6376d01,
+	  exe/webui/win-profile/Cache/64F9EF47d01,
+	  exe/webui/win-profile/Cache/7C27C228d01,
+	  exe/webui/win-profile/Cache/7CDE3836d01,
+	  exe/webui/win-profile/Cache/7D5879CDd01,
+	  exe/webui/win-profile/Cache/800C796Cd01,
+	  exe/webui/win-profile/Cache/A48857A1d01,
+	  exe/webui/win-profile/Cache/C86248FDd01,
+	  exe/webui/win-profile/Cache/C96248FDd01,
+	  exe/webui/win-profile/Cache/CA6248FDd01,
+	  exe/webui/win-profile/Cache/CB6248FDd01,
+	  exe/webui/win-profile/Cache/CBC0FA0Bd01,
+	  exe/webui/win-profile/Cache/CF6248FDd01,
+	  exe/webui/win-profile/Cache/D54F5793d01,
+	  exe/webui/win-profile/Cache/D71A3EF8d01,
+	  exe/webui/win-profile/Cache/DE5C6F20d01,
+	  exe/webui/win-profile/Cache/DF26B9A9d01,
+	  exe/webui/win-profile/Cache/ECDD336Fd01,
+	  exe/webui/win-profile/Cache/F00F4ECDd01,
+	  exe/webui/win-profile/Cache/_CACHE_001_,
+	  exe/webui/win-profile/Cache/_CACHE_002_,
+	  exe/webui/win-profile/Cache/_CACHE_003_,
+	  exe/webui/win-profile/Cache/_CACHE_MAP_,
+	  exe/webui/win-profile/XUL.mfl,
+	  exe/webui/win-profile/bookmarks.bak,
+	  exe/webui/win-profile/bookmarks.html,
+	  exe/webui/win-profile/cert8.db, exe/webui/win-profile/chrome,
+	  exe/webui/win-profile/chrome/userChrome-example.css,
+	  exe/webui/win-profile/chrome/userContent-example.css,
+	  exe/webui/win-profile/compatibility.ini,
+	  exe/webui/win-profile/components.ini,
+	  exe/webui/win-profile/compreg.dat,
+	  exe/webui/win-profile/cookies.txt,
+	  exe/webui/win-profile/defaults.ini,
+	  exe/webui/win-profile/extensions,
+	  exe/webui/win-profile/extensions/Extensions.rdf,
+	  exe/webui/win-profile/extensions/installed-extensions.txt,
+	  exe/webui/win-profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd},
+	  exe/webui/win-profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf,
+	  exe/webui/win-profile/formhistory.dat,
+	  exe/webui/win-profile/history.dat, exe/webui/win-profile/key3.db,
+	  exe/webui/win-profile/localstore.rdf,
+	  exe/webui/win-profile/mimeTypes.rdf,
+	  exe/webui/win-profile/prefs.js, exe/webui/win-profile/search.rdf,
+	  exe/webui/win-profile/secmod.db, exe/webui/win-profile/xpti.dat:
+	  added win-profile for launching firefox.
+
+2005-05-03 22:45  djm
+
+	* patches/jelly.patch, patches/jelly.readme: added the jelly patch
+
+2005-05-03 22:41  jenny
+
+	* patches, patches/livepage.patch, patches/livepage.readme: Added
+	  the nevow patch for use on the mac install. (MS)
+
+2005-05-03 09:38  brent
+
+	* exe/webui/style/standardwhite/content.css,
+	  exe/webui/style/standardwhite/nav.css: added nav.css to
+	  standardwhite
+
+2005-05-03 08:23  matthew
+
+	* exe/webui/mainpage.py: Now starts the web page that you just
+	  exported
+
+2005-05-03 05:33  djm
+
+	* exe/engine/macconfig.py, exe/exe, mac-setup.py: Specifics for
+	  MacOSX
+
+2005-05-03 05:16  jenny
+
+	* exe/webui/block.py, exe/webui/common.py: fix bug#56 - only have
+	  one iDevice open at a time
+
+2005-05-03 05:11  matthew
+
+	* exe/webui/casestudyblock.py, exe/webui/element.py,
+	  exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/reflectionblock.py: Fixed images links for blocks
+
+2005-05-03 03:17  brent
+
+	* exe/webui/style/mojave/content.css,
+	  exe/webui/style/mojave/nav.css: fixed nav.css for mojave style
+
+2005-05-03 02:23  djm
+
+	* exe/webui/element.py: Use only valid characters from the name to
+	  make up the element's id
+
+2005-05-03 02:04  matthew
+
+	* testing/testexport.py: Tests exporting
+
+2005-05-03 01:59  djm
+
+	* exe/application.py, exe/webui/browser.py, exe/webui/webserver.py:
+	  We can pass a package as a commandline argument to eXe again
+
+2005-05-03 01:15  matthew
+
+	* exe/engine/uid.py: Changed uid.py to work on windows also
+
+2005-05-03 00:51  matthew
+
+	* exe/export/manifest.py: Back to using new uid generator
+
+2005-05-03 00:13  matthew
+
+	* exe/engine/uid.py: New UID Generator
+
+2005-05-02 22:03  djm
+
+	* ChangeLog, exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/webui/mainpage.py: Change back to using UniqueIdGenerator
+	  until we hear from Matthew
+
 2005-05-02 04:44  matthew
 
 	* exe/engine/path.py, exe/export/manifest.py,

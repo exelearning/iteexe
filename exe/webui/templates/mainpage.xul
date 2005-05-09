@@ -16,7 +16,7 @@
         <!-- Outline Tree Short cut keys -->
         <key n:render="addChild" id="addChildKey" key="+"/>
         <key n:render="delNode" id="delNodeKey" key="-"/>
-        <key n:render="renNode" id="renNodeKey" key="r"/>
+        <key n:render="renNode" id="renNodeKey" modifiers="control" key="r"/>
         <key n:render="promote" id="promoteKey" key="+"/>
         <key n:render="demote" id="demoteKey" key="-"/>
         <key n:render="up" id="upKey" key="r"/>
@@ -57,6 +57,8 @@
               <menupopup id="styles-popup" n:render="stylePane">
               </menupopup>
             </menu>
+            <menuitem id="refresh-menu" label="Refresh" accesskey="r" oncommand="window.location = window.location">
+            </menuitem>
           </menubar>
         </toolbox>
         <!-- End Menus -->

@@ -26,6 +26,7 @@ import gettext
 import os
 from urllib                   import pathname2url
 from twisted.web.resource     import Resource
+from twisted.internet         import reactor
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, LivePage, js
 from exe.webui.renderable     import RenderableLivePage
@@ -183,22 +184,43 @@ class MainPage(RenderableLivePage):
         else:
             client.sendScript(ifClean)
 
-    def handlePackageFileName(self, client, onDone):
+    def handlePackageFileName(self, client, onDone, onDoneParam):
         """
         Calls the javascript func named by 'onDone' passing as the
         only parameter the filename of our package. If the package
         has never been saved or loaded, it passes an empty string
+        'onDoneParam' will be passed to onDone as a param after the
+        filename
         """
-        client.call(onDone, self.package.filename)
+        client.call(onDone, self.package.filename, onDoneParam)
 
-    def handleSavePackage(self, client, filename=None):
-        """Save the current package"""
+    def handleSavePackage(self, client, filename=None, onDone=None):
+        """Save the current package
+        'filename' is the filename to save the package to
+        'onDone' will be evaled after saving instead or redirecting
+        to the new location (in cases of package name changes).
+        (This is used where the user goes file|open when their 
+        package is changed and needs saving)
+        """
         oldName = self.package.name
-        self.package.save(filename)
-        # Redirect the client if the package name has changed
-        if self.package.name != oldName:
-            self.webserver.root.delEntity(oldName)
+        # If the script is not passing a filename to us,
+        # Then use the last filename that the package was loaded from/saved to
+        if filename:
+            if not filename.lower().endswith('.elp'): filename += '.elp'
+        else:
+            filename = self.package.filename
+            assert (filename, 
+                    ('Somehow save was called without a filename '
+                     'on a package that has no default filename.'))
+        self.package.save(filename) # This can change the package name
+        client.alert('Package saved to: %s' % filename)
+        if onDone:
+            client.sendScript(onDone)
+        elif self.package.name != oldName:
+            # Redirect the client if the package name has changed
             self.webserver.root.putChild(self.package.name, self)
+            log.info('Package saved, redirecting client to /%s' % self.package.name)
+            print 'Package saved, redirecting client to /%s' % self.package.name
             client.sendScript('top.location = "/%s"' % self.package.name)
 
     def handleLoadPackage(self, client, filename):
@@ -210,9 +232,10 @@ class MainPage(RenderableLivePage):
             self.root.bindNewPackage(package)
             client.sendScript('top.location = "/%s"' % package.name)
         except Exception, e:
-            #from exe.webui.mainpage import MainPage
-            client.sendScript('alert("Sorry, wrong file format")')
-            client.sendScript('alert("%s")' % str(e))
+            if log.getEffectiveLevel() == logging.DEBUG:
+                client.alert('Sorry, wrong file format:\n%s' % str(e))
+            else:
+                client.alert('Sorry, wrong file format')
             log.error('Error loading package "%s": %s' % (filename, str(e)))
             self.error = True
             raise
@@ -249,14 +272,14 @@ class MainPage(RenderableLivePage):
             # Now do the export
             websiteExport = WebsiteExport(stylesDir, filename)
             websiteExport.export(self.package)
-            filename = os.path.join(filename, 'index.html')
             # Show the newly exported web site in a new window
             if hasattr(os, 'startfile'):
                 os.startfile(filename)
             else:
+                filename = os.path.join(filename, 'index.html')
                 os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
                     (self.config.browserPath,
-                    '-remote', 'openURL("%s", "new-window")' % filename))
+                     '-remote', 'openURL("%s", "new-window")' % filename))
         else:
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 

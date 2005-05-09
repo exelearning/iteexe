@@ -272,12 +272,12 @@ function askSave(onProceed) {
     var promptClass = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
     var promptService = promptClass.getService(Components.interfaces.nsIPromptService)
     var flags = promptService.BUTTON_TITLE_SAVE * promptService.BUTTON_POS_0 +
-                promptService.BUTTON_TITLE_IS_STRING * promptService.BUTTON_POS_1 +
+                promptService.BUTTON_TITLE_DONT_SAVE * promptService.BUTTON_POS_1 +
                 promptService.BUTTON_TITLE_CANCEL * promptService.BUTTON_POS_2
     var res = promptService.confirmEx(window,"Save Package first?",
                                       "The current package has been modified and not yet saved." +
                                       "Would you like to save it before loading the new package?",
-                                      flags, null, 'Discard', null, '', {});
+                                      flags, null, null, null, '', {});
     if (res == 0) {
       // If we need to save the file
       // go through the whole save process
@@ -329,26 +329,25 @@ function fileOpen2() {
 function fileSave(onProceed) {
     if (!onProceed)
         var onProceed = '' 
-    nevow_clientToServerEvent('getPackageFileName', this, '', 'fileSave2', onProceed)
+    nevow_clientToServerEvent('getPackageFileName', this, onProceed, 'fileSave2')
 }
 
 // Takes the server's response after we asked it for the
 // filename of the package we are currently editing
-function fileSave2(filename, onDone) {
+function fileSave2(filename) {
     if (filename) {
         // If the package has been previously saved/loaded
         // Just save it over the old file
-        if (onDone) nevow_clientToServerEvent('savePackage', this, '', '', onDone)
-        else nevow_clientToServerEvent('savePackage', this, '')
+        nevow_clientToServerEvent('savePackage', this, 'alert("Package saved to '+filename+'")')
     } else {
         // If the package is new (never saved/loaded) show a
         // fileSaveAs dialog
-        fileSaveAs(onDone)
+        fileSaveAs()
     }
 }
 
 // Called by the user when they want to save their package
-function fileSaveAs(onDone) {
+function fileSaveAs() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
@@ -356,13 +355,8 @@ function fileSaveAs(onDone) {
     fp.appendFilter("eXe Package Files","*.elp");
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-        if (onDone) {
-            nevow_clientToServerEvent('savePackage', this, '', fp.file.path, onDone)
-        } else {
-            nevow_clientToServerEvent('savePackage', this, '', fp.file.path)
-        }
-    } else {
-        eval(onDone)
+        nevow_clientToServerEvent('savePackage', this,
+        'alert("Package saved to '+fp.file.path+'")', fp.file.path)
     }
 }
 
