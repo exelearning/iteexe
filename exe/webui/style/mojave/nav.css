@@ -6,7 +6,6 @@
 /* LEFT-HAND NAVIGATION */
 
 #navcontainer {
-	background-color: #CCCC99;
 	width: 169px;
 	float: left;
 	margin-top: 10px;
@@ -23,13 +22,13 @@
 #navcontainer a {
 	display: block;
 	padding: 3px 0 3px 6px;
-	background-color: #FFF;
-	border-bottom: 1px solid #CCC;
+	background-color: #CCCC99;
+	border-bottom: 1px solid #FFF;
 	width: 163px;
 	}
 
 #navcontainer a:link, #navlist a:visited {
-	color: #CCCC99;
+	color: #336633;
 	text-decoration: none;
 	}
 
@@ -56,11 +55,11 @@ div #active {
 	width: 163px;
 	background-color: #ACBFC2;
 	color: #FFFFCC;
-	border-bottom: 1px solid #CCC;
+	border-bottom: 1px solid #FFF;
 	}
 
 div #subnav {
-	border-bottom: 1px solid #CCC;
+	border-bottom: 1px solid #FFF;
 	}
 	
 #subnav a {

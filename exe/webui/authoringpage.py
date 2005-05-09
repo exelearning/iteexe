@@ -88,7 +88,7 @@ class AuthoringPage(RenderableResource):
         html = self.__renderHeader()
         html += common.banner(request)
         html += "<!-- start authoring page -->\n"
-        html += "<div id=\"authoring_page\">\n"
+        html += "<div id=\"main\">\n"
 
         for block in self.blocks:
             html += block.render(self.package.style)

@@ -11,7 +11,7 @@ body {
     padding: 10px 10px 10px 10px;
     font-family: arial, verdana, helvetica, sans-serif;
     font-size: 13px;
-    background: #C4D4C4;
+    background: #FFFFFF;
 }
 
 /* -- style the node title on each page -- */
@@ -63,5 +63,16 @@ p.reading_feedback {
     margin: 20px;
     padding: 8px;
     font-style: italic;
+}
 
+#main {
+	padding: 18px;
+	margin: 10px 10px 10px 180px;
+	background-color: #EDEFF0;
+	line-height: 140%;
+	}
+
+form > #main {
+	margin: 10px 10px 10px 10px;
+	} // makes style apply for authoring page by removing left indent
 

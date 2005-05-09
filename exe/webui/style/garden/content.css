@@ -7,7 +7,7 @@
 
 body {
     margin: 0px 0px 0px 0px;
-    padding: 10px 10px 10px 10px;
+    padding: 0px 10px 10px 10px;
     font-family: arial, verdana, helvetica, sans-serif;
     font-size: 13px;
     background: #F2FFBF;
@@ -23,8 +23,8 @@ a:hover { text-decoration: underline;
 
 
 p#nodeTitle { 
-    color: #ACBF60;
-    font-size: 18px;
+    color: #A1B386;
+    font-size: 20px;
     font-weight: bolder;
     letter-spacing: 2px;
     display: inline;
@@ -51,10 +51,10 @@ div#nodeDecoration {
 }
 
 .iDeviceTitle {
-    color: #ACBF60;
+    color: #A1B386;
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     position: relative;
     top: -18px;
 }    

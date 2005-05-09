@@ -29,7 +29,8 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, outdir, package, addMetadata=True):
+    def __init__(self, config, outdir, package, 
+                 addMetadata=True, addScormType=True):
         """
         Initialize
         'outdir' is the directory that we read the html from and also output the mainfest.xml
@@ -37,6 +38,7 @@ class Manifest(object):
         self.outdir      = outdir
         self.package     = package
         self.addMetadata = addMetadata
+        self.addScormType = addScormType
         self.title       = str(package.root.title)
         self.node        = package.root
         self.xmlStr      = ""
@@ -67,15 +69,17 @@ class Manifest(object):
         <manifest identifier="%s" 
         xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         """ % manifestId 
 
         if self.addMetadata:
-            xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" \n"
+            xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" "
             
-        xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\" "
+        if self.addScormType:
+            xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\""
+            xmlStr += "\n "
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
-        xmlStr += "imscp_v1p1 imscp_v1p1.xsd \n"        
+        xmlStr += "imscp_v1p1 imscp_v1p1.xsd "        
         xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
         xmlStr += "> \n"
         xmlStr += "<metadata> \n"
@@ -125,15 +129,21 @@ class Manifest(object):
                 <title>%s</title>
             """ %(itemId, resId, str(node.title))
         
-        self.resStr += """
-            <resource identifier="RES-%s" type="webcontent" adlcp:scormType="sco"
-             href="%s">
+        self.resStr += "<resource identifier=\"RES-"+resId+"\" "
+        self.resStr += "type=\"webcontent\" "
+
+        if self.addScormType:
+            self.resStr += "adlcp:scormType=\"sco\" "
+        self.resStr += "href=\""+filename+"\"> \n"
+        self.resStr += """\
                 <file href="%s"/>
                 <file href="content.css"/>
                 <file href="APIWrapper.js"/>
                 <file href="SCOFunctions.js"/>
-                """ %(resId, filename, filename)
+                """ %filename
+        self.resStr += "\n"
         fileStr = ""
+
         # TODO: Fix this hack with some real object-orientated code
         # TODO: Should parse html files to find references to images
         for pngFile in self.outdir.glob("*.png"):

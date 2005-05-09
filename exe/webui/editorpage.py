@@ -88,7 +88,22 @@ class EditorPage(RenderableResource):
         self.process(request)
         
         # Rendering
-        html  = common.header() 
+        html  = common.docType()
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head>\n"
+        html += "<style type=\"text/css\">\n"
+        html += "@import url(/css/exe.css);\n"
+        html += "@import url(/style/standardwhite/content.css);</style>\n"
+        html += '<script language="JavaScript" src="/scripts/fckeditor.js">'
+        html += '</script>\n'
+        html += '<script language="JavaScript" src="/scripts/libot_drag.js">'
+        html += '</script>\n'
+        html += '<script language="JavaScript" src="/scripts/common.js">'
+        html += '</script>\n'
+        html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
+        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += " charset=UTF-8\"></meta>\n";
+        html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"main\"> \n"     
         html += "<form method=\"post\" action=\""+self.url+"\" "

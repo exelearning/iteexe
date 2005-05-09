@@ -61,8 +61,7 @@ def launchBrowser(config, packageName):
             createProfile(config)
 
         log.info("profile "+profile)
-        os.system('"'+config.browserPath+'" -profile "'+profile+
-                  '" -chrome '+url+'&')
+        os.system('"'+config.browserPath+'" -profile "'+profile+'" '+url+'&')
 
 
 def createProfile(config):

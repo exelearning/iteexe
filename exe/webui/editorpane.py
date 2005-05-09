@@ -141,7 +141,7 @@ class EditorPane(object):
                     "it is still in development.")
         html  = "<H2 align = \"center\">" + message + "</H2><br/>"
         html += "<br/><font color=\"red\"<b>"+self.message+"</b></font><br/>"
-        html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
+        html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td width=\"30%\">\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
         html += common.submitButton("addText", _("Add Text Field"))+"<br/>"

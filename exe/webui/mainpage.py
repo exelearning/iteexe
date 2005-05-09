@@ -244,7 +244,8 @@ class MainPage(RenderableLivePage):
     def handleExport(self, client, exportType, filename):
         """
         Called by js. 
-        'exportType' can be one of 'scormMeta' 'scormNoMeta' 'webSite'
+        'exportType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
+        'webSite'
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
         """
@@ -293,7 +294,9 @@ class MainPage(RenderableLivePage):
             if exportType == 'scormMeta':
                 scormExport.export(self.package, True)
             elif exportType == 'scormNoMeta':
-                scormExport.export(self.package, False)
+                scormExport.export(self.package, False, False)
+            elif exportType == 'scormNoScormType':
+                scormExport.export(self.package, True, False)
             else:
                 log.error('Wrong exportType passed to handleExport: %s' % exportType)
                 return

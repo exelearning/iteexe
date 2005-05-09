@@ -78,8 +78,7 @@ class ScormPage(object):
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"SCOFunctions.js\"></script>\n" 
         html += "</head>\n"
-        html += "<body onLoad=\"loadPage();\" "
-        html += "onunLoad=\"return unloadPage();\"> "
+        html += "<body onunLoad=\"return unloadPage()\">\n"
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
@@ -95,8 +94,67 @@ class ScormPage(object):
         html += "</div>\n"
         html += "</div>\n"
         html += "<script language=\"javascript\">\n"
-	html += "loadPage();\n"
-	html += "doContinue('completed');</script>\n"  
+        html += "loadPage();\n"
+        html += "doContinue('completed');</script>\n"  
+        html += "</body></html>\n"
+        return html
+
+
+class WebCTScormPage(object):
+    """
+    This class transforms an eXe node into a SCO for WebCT
+    """
+    def __init__(self, node):
+        """
+        Initialize
+        """
+        self.node = node
+
+    def save(self, outdir):
+        """
+        This is the main function.  It will render the page and save it to a
+        file.  
+        'outdir' is the name of the directory where the node will be saved to,
+        the filename will be the 'self.node.id'.html or 'index.html' if self.node is
+        the root node. 'outdir' must be a 'path' instance
+        """
+        if self.node is self.node.package.root:
+            filename = "index.html"
+        else:
+            filename = self.node.id + ".html"
+        out = open(outdir / filename, "w")
+        out.write(self.render())
+        out.close()
+
+    def render(self):
+        """
+        Returns an XHTML string rendering this page.
+        """
+        html  = common.docType()
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head>\n"
+        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += " charset=UTF-8\" />\n";
+        html += "<title>"+_("eXe")+"</title>\n"
+        html += "<style type=\"text/css\">\n"
+        html += "@import url(content.css);\n"
+        html += "</style>\n"
+        html += "</head>\n"
+        html += "<body>\n"
+        html += "<div id=\"outer\">\n"
+        html += "<div id=\"main\">\n"
+        html += TitleBlock(self.node._title).renderView(self.node.package.style)
+
+        for idevice in self.node.idevices:
+            block = g_blockFactory.createBlock(idevice)
+            if not block:
+                log.critical("Unable to render iDevice.")
+                raise Error("Unable to render iDevice.")
+            html += block.renderView(self.node.package.style)
+
+        html += "</div>\n"
+        html += "</div>\n"
+        html += "<script language=\"javascript\">\n"
         html += "</body></html>\n"
         return html
 
@@ -116,7 +174,7 @@ class ScormExport(object):
         self.scriptsDir = path(scriptsDir)
         self.filename   = path(filename)
 
-    def export(self, package, addMetadata=True):
+    def export(self, package, addMetadata=True, addScormType=True):
         """ 
         Export SCORM package
         """
@@ -128,9 +186,10 @@ class ScormExport(object):
         # Copy the scripts
         self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), outdir)
         # Export the package content
-        self.exportNode(package.root, outdir)
+        self.exportNode(package.root, outdir, addMetadata)
         # Create the manifest file
-        manifest = Manifest(self.config, outdir, package, addMetadata)
+        manifest = Manifest(self.config, outdir, package, 
+                            addMetadata, addScormType)
         manifest.save()
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
@@ -140,15 +199,19 @@ class ScormExport(object):
         # Clean up the temporary dir
         outdir.rmtree()
                 
-    def exportNode(self, node, outdir):
+    def exportNode(self, node, outdir, addMetadata):
         """
         Recursive function for exporting a node.
         'outdir' is the temporary directory that we are exporting to
         before creating zip file
         """
-        page = ScormPage(node)
+        if addMetadata:
+            page = ScormPage(node)
+        else:
+            page = WebCTScormPage(node)
+
         page.save(outdir)
         for child in node.children:
-            self.exportNode(child, outdir)
+            self.exportNode(child, outdir, addMetadata)
     
 # ===========================================================================
