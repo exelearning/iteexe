@@ -26,13 +26,32 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 SUPPORT
 =======
-This is an early release of the eXe project.  It is intended
-to elicit feedback from the user community.  We expect file formats will
-change.  It would be a bad idea to invest a lot of time in creating a 
+This is an early alpha release of the eXe project.  It is intended
+to elicit feedback from the user community. 
+It would be a bad idea to invest a lot of time in creating a 
 large package with this release.
 
 If you have any problems or have any feedback please report them at
 http://exe.cfdl.auckland.ac.nz or email exe@auckland.ac.nz.
+
+
+KNOWN BUGS
+==========
+* We do not replace the Firefox main menu which means there are two
+  menu bars.  eXe's menu bar is the bottom one.
+* You cannot run a normal Firefox browser and eXe at the same time
+  You must close Firefox before starting eXe and close eXe before 
+  browsing the Web.
+* If we have a package open, then trying to open a second package 
+  (by dbl clicking on it) fails with the message "No such resource".
+* The emphasis setting in the iDevice editor is ignored
+* Can't delete or edit user-defined iDevices
+* eXe sometimes stop responding, try clicking on the Refresh button when 
+  this happens
+* Our SCORM export works ok for transferring content, but still has some
+  problems for tracking students.  Separate SCORM export options are
+  provided for WebCT and Blackboard due to problems encountered in
+  importing our standard SCORM packages into those system.
 
 
 WINDOWS
@@ -45,7 +64,7 @@ INSTALLATION
   be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under 
   "All Programs".
-- If you leave "Run eXe 0.3" selected the installer will launch eXe
+- If you leave "Run eXe 0.4" selected the installer will launch eXe
   once it is installed.
 
 
@@ -62,33 +81,57 @@ to access the Internet.  eXe does NOT require access to the Internet.
 With the XP firewall you can just select the option to block its access.
 With the McAfee firewall you will need to allow access.
 
-Packages are saved to your "My Documents" folder with the .elp extension 
-(eXe eLearning Package).
+MAC OSX
+=======
 
-BUILDING
---------
+Creating a Mac install is something we're still working towards.  
+For the technically inclined we're working towards using PyXPCOM
+to replace the Nevow library which should simplify a Mac version.
+
+
+LINUX
+=====
+
+The eXe Linux install consists of two RPMs which have been tested
+to work on Fedora Core 3.  (They may work on other RPM based distros
+but that hasn't been tested.)
+
+* exe-0.4-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-twisted-2.0-1.noarch.rpm - includes Twisted, ZopeInterface and Nevow used for the webserver by eXe
+
+From the command line type exe to start.
+Make sure Firefox is closed first.
+
+
+BUILDING FROM SOURCE
+====================
 
 To build exe you'll need the following packages:
 * python2.3 - http://www.python.org
 * Zope Interfaces - http://www.zope.org/Products/ZopeInterface
 * twisted2 - http://twistedmatrix.com (You need twisted core and twisted web)
+ * needs patches/jelly.patch applied, see patches/jelly.readme
 * nevow - http://nevow.com/
+ * needs patches/livepage.patch applied, see patches/livepage.readme
 * firefox - http://www.mozilla.org/products/firefox
 
-Check the source out of svn:
-svn co http://exe.cfdl.auckland.ac.nz/svn/exe/trunk exe
+unzip the source tarball:
+tar xzvf exe-source-0.4.tgz
 
 To run from source:
-cd exe/webui
-cp ../exe.conf
+cd exe
 
+Edit exe.conf
 # exe by default runs from /usr/share/exe
 # but because we're developing we'll edit the
 # config file to make it run from our projects directory
-vim exe.conf
-# Insert this line in the server section
+# Insert these lines in the server section
 exe-dir = /myprojectsdir/exe/exe/webui
+web-dir = /myprojectsdir/exe/exe/webui
+browser-path = /mybindir/firefox
 
 export PYTHONPATH=/myprojectsdir/exe  # The same place you checked it out to
-./server.py
+
+Run
+./exe
 

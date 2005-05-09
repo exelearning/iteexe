@@ -7,8 +7,8 @@ from distutils.core import setup
 import py2exe
 from exe.engine import version
 
-g_files = { '.': ["exe/exe.conf", "README", "eXe_icon.ico", "eXe-tutorial.elp",
-                  "exeLicense.txt"]}
+g_files = { '.': ["exe/exe.conf", "README", "eXe_icon.ico", 
+                  "doc/eXe-tutorial.elp", "exeLicense.txt"]}
 g_oldBase = "exe/webui"
 g_newBase = "."
 def dataFiles(dirs):
@@ -44,12 +44,3 @@ setup(console=["exe/exe"],
       data_files   = g_files.items()
                     
      )
-
-#('scripts', glob.glob('exe/webui/scripts/*.*')),
-                  #('css', glob.glob('exe/webui/css/*')),
-                  #('templates', glob.glob('exe/webui/templates/*')),
-                  #('images', glob.glob('exe/webui/images/*')),
-                  #('style/default', glob.glob('exe/webui/style/default/*')),
-                  #('style/garden', glob.glob('exe/webui/style/garden/*')),
-                  #('style/standardwhite', glob.glob('exe/webui/style/standardwhite/*')),
-                  #('style/mojave', glob.glob('exe/webui/style/mojave/*'))

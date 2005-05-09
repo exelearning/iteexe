@@ -22,37 +22,31 @@ TwistedWeb-0.5.0 and nevow-0.4.1
 cd ZopeInterface-3.0.1/
 python setup.py build
 cd ..
-#cd Twisted-2.0.0/
-#python setup.py build
-#cd ..
-#cd TwistedWeb-0.5.0/
-#python setup.py build
-#cd ..
-#cd nevow-0.4.1/
-#python setup.py build
-#cd ..
-
-%install
-rm -f INSTALLED_FILES
-cd ZopeInterface-3.0.1/
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
-cat INSTALLED_FILES >> ../INSTALLED_FILES
-cd ..
 cd Twisted-2.0.0/
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
-cat INSTALLED_FILES >> ../INSTALLED_FILES
+python setup.py build
 cd ..
 cd TwistedWeb-0.5.0/
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
-cat INSTALLED_FILES >> ../INSTALLED_FILES
+python setup.py build
 cd ..
 cd nevow-0.4.1/
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
-cat INSTALLED_FILES >> ../INSTALLED_FILES
+python setup.py build
+cd ..
+
+%install
+cd ZopeInterface-3.0.1/
+python setup.py install --root=$RPM_BUILD_ROOT
+cd ..
+cd Twisted-2.0.0/
+python setup.py install --root=$RPM_BUILD_ROOT
+cd ..
+cd TwistedWeb-0.5.0/
+python setup.py install --root=$RPM_BUILD_ROOT
+cd ..
+cd nevow-0.4.1/
+python setup.py install --root=$RPM_BUILD_ROOT 
 cd ..
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES
-%defattr(-,root,root)
+
