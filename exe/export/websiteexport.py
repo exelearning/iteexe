@@ -217,7 +217,6 @@ class WebsiteExport(object):
                 pageNames[page.name] = 1
             else:
                 pageNames[page.name] = 0
-            pageNames.setdefault
 
         # Then uniquify them
         for page in self.pages:
