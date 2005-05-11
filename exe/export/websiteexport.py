@@ -20,173 +20,44 @@
 Transforms an eXe node into a page on a self-contained website
 """
 
-
 import logging
 import gettext
-from   os.path  import exists, basename, join, isdir, sep
-import shutil
-import glob
+import re
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import path
-from exe.webui              import common
-from exe.webui.element      import getUploadedFileDir
 
-import os
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-identSpace = " "*4
-nodeList = []
 
 # ===========================================================================
 class WebsitePage(object):
     """
     This class transforms an eXe node into a page on a self-contained website
     """
-    def __init__(self, node):
+    def __init__(self, name, depth, node):
         """
         Initialize
         """
-        self.node = node
-        self.html = ""
+        self.name  = name
+        self.depth = depth
+        self.node  = node
     
-    def save(self, outputDir):
+
+    def save(self, outputDir, prevPage, nextPage, pages):
         """
-        This is the main function. It will render the page and save it to a file.
-        'outputDir' is the directory where the filenames will be saved
+        This is the main function. It will render the page and save it to a
+        file.  'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
-        if self.node is self.node.package.root:
-            filename = "index.html"
-        else:
-            filename = self.node.id + ".html"
-            
-        outfile = open(outputDir / filename, "w")
-        outfile.write(self.render())
+        outfile = open(outputDir / self.name+".html", "w")
+        outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()
         
-    def getNavigationLink(self):
-        """
-        return the next link url of this page
-        """
-        
-        nextHtmlPattern = """| <a href="%s.html">next &raquo;</a>"""
-        previousHtmlPattern = """<a href="%s.html">&laquo; previous</a>"""
-        totalNode = len(nodeList)
-        i = nodeList.index(self.node.id)
-       
-        if  i == 0:
-            ##is first node
-            previousHtml = ""
-            
-            if totalNode > 1:
-                nextHtml = nextHtmlPattern % nodeList[i + 1]
-            else:
-                nextHtml = ""
-        elif i == (totalNode - 1):
-            ##is last node
-            nextHtml = ""
-            
-            if i != 1:
-                previousHtml = previousHtmlPattern % nodeList[i - 1]
-            else:
-                ##if previous page is home page
-                previousHtml = previousHtmlPattern % "index"
-        else:
-            if i != 1:
-                previousHtml = previousHtmlPattern % nodeList[i - 1]
-            else:
-                ##if previous page is home page
-                previousHtml = previousHtmlPattern % "index"             
-            nextHtml = nextHtmlPattern %  nodeList[i + 1]
-            
-        return """<div class="noprt" align="right">%s %s </div>"""\
-                                %(previousHtml, nextHtml) 
-            
-        
-    def printChildren(self, node):
-        """print out children"""
-        html = ""
-        for child in node.children:
-            ##check if is direct parent node
-            
-            if self.node.id == child.id:
-                html += identSpace * (child.level + 1) + \
-                       """<div id="active">%s</div> \n"""  %(child.title)
-                if len(self.node.children) >0 :
-                    html += identSpace * (child.level + 1)  \
-                            + """<div ID="subnav">\n""" \
-                            + self.printChildren(child) +  "</div>\n"
-                 
-            elif child in self.node.ancestors():
-                html += identSpace * (child.level + 1) \
-                    + """<div><a href="%s.html">%s</a></div>\n""" % \
-                       (child.id, child.title)
-                html += identSpace * (child.level + 1)  \
-                        + """<div ID="subnav">\n"""   \
-                        + self.printChildren(child) \
-                        +  identSpace * (child.level + 1) + "</div>\n"
-            else:
-                html += identSpace * (child.level + 1) \
-                    + """<div><a href="%s.html">%s</a></div>\n""" % \
-                        (child.id, child.title)
-        return html
 
-        
-    def leftNavigationBar(self):
-        """
-        generate the left navigation string for this page
-        """
-    
-        html = """<ul id="navlist">\n"""
-        
-        ##add home node
-        if self.node.package.root.id == self.node.id:
-            html += """<div id="active">%s</div>\n""" % self.node.title
-        else:
-            html += """<div><a href="index.html">%s</a></div>\n""" % \
-                    (self.node.package.root.title)
-                    
-        nodeLength = (self.node.level + 1)
-        
-        for level1Node in self.node.package.root.children:
-            ##if is parent node, then print out its sibiling
-            ##if is current node, active and print its children
-            ##else, print title
-            
-            if level1Node.id == self.node.id:
-                ## print active tag
-                html += identSpace * (nodeLength - 1)  \
-                     + """<div id="active">%s</div> \n"""  % \
-                        (self.node.title)
-                        
-                ## print direct child title
-                if len(self.node.children) > 0:
-                    ##show direct child, using id="subnav"
-                    html += identSpace * nodeLength + """<div ID="subnav">\n"""
-                    
-                    for node in self.node.children:
-                        html += identSpace * (nodeLength)  \
-                                + """<a href="%s.html">%s</a> \n""" \
-                                % (node.id, node.title)
-                        
-                    html += identSpace * nodeLength + "</div>\n"
-                
-            else:
-                html += """<div><a href="%s.html">%s</a></div> \n""" % \
-                        (level1Node.id, level1Node.title)
-                if level1Node in self.node.ancestors():
-                    html += identSpace * (level1Node.level + 1) \
-                            + """<div ID="subnav">\n""" \
-                            + self.printChildren(level1Node) + """</div>\n"""
-                
-        html += "</ul>"
-        return html
-        
-
-    def render(self):
+    def render(self, prevPage, nextPage, pages):
         """
         Returns an XHTML string rendering this page.
         """
@@ -204,27 +75,76 @@ class WebsitePage(object):
         html += "</head>\n"
         html += "<body>\n"
         
+        # add left navigation html
         html += "<div id=\"navcontainer\">\n"
-        
-        ##add left navigation html
-        html += self.leftNavigationBar()       
-                
+        html += self.leftNavigationBar(pages)
         html += "</div>\n"
-        
         html += "<div id=\"main\">\n"
-        #html += "<div id=\"authoring_pane\">\n"
-        html += TitleBlock(self.node._title).renderView(self.node.package.style)
+
+        style = self.node.package.style
+        html += TitleBlock(self.node._title).renderView(style)
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView(self.node.package.style)
+            html += block.renderView(style)
         
-        html += self.getNavigationLink()
+        html += self.getNavigationLink(prevPage, nextPage)
         html += "</div>\n"
         html += "</body></html>\n"
+        return html
+
+        
+    def leftNavigationBar(self, pages):
+        """
+        Generate the left navigation string for this page
+        """
+        depth    = 1
+        nodePath = [None] + list(self.node.ancestors()) + [self.node]
+
+        html = "<ul id=\"navlist\">\n"
+
+        for page in pages:
+            if page.node.parent in nodePath:
+                while depth < page.depth:
+                    html += "<div id=\"subnav\">\n"
+                    depth += 1
+                while depth > page.depth:
+                    html += "</div>\n"
+                    depth -= 1
+
+                if page.node == self.node:
+                    html += "<div id=\"active\">"
+                    html += page.node.title
+                    html += "</div>\n"
+                else:
+                    html += "<div><a href=\""+page.name+".html\">"
+                    html += page.node.title
+                    html += "</a></div>\n"
+
+        html += "</ul>\n"
+        return html
+        
+        
+    def getNavigationLink(self, prevPage, nextPage):
+        """
+        return the next link url of this page
+        """
+        html = "<div class=\"noprt\" align=\"right\">"
+
+        if prevPage:
+            html += "<a href=\""+prevPage.name+".html\">"
+            html += "&laquo; previous</a>"
+
+        if nextPage:
+            if prevPage:
+                html += " | "
+            html += "<a href=\""+nextPage.name+".html\">"
+            html += "next &raquo;</a>"""
+            
+        html += "</div>\n"
         return html
 
         
@@ -238,78 +158,71 @@ class WebsiteExport(object):
         'outputDir' is the directory that will be [over]written
         with the website
         """
-        self.package = None
+        self.pages     = []
+        self.pageNames = {}
         self.stylesDir = path(stylesDir)
         self.outputDir = path(outputDir)
 
+        # Create the output dir if it doesn't already exist
+        if not self.outputDir.exists(): 
+            self.outputDir.mkdir()
+
+
     def export(self, package):
         """ 
-        Export web page
+        Export web site
+        Cleans up the previous packages pages and performs the export
         """
-        self.package = package
-        # Create the output dir if it doesn't already exist
-        if not self.outputDir.exists(): self.outputDir.mkdir()
         # Copy the style sheets to the output dir
         self.stylesDir.copyfiles(self.outputDir)
-        # TODO: All below is broken code for the multimedia idevice
-        # it will work in the 0.5 release
-        """    
-        # Copy the image directory
-        filesDir = getUploadedFileDir()
-        ##course uploaded files directory
-        uploadedFileDir = join(filesDir, package.name)
-        ##export files directory
-        exportFilesDir = join(dataDir, package.name, "images", package.name)
-        print "uploadedFileDir: %s , dst:%s\n" % (uploadedFileDir, exportFilesDir)
-        
-        try:
-            os.mkdir("images")    
-        except:
-            errmsg = "Error while creating images directory \n"
-            log.error(errmsg)
-            return errmsg
-            
-#        shutil.copyfile(filesDir + sep + "mp3player.swf", \
-#         join(dataDir, package.name, "images", "mp3player.swf"))    
-        #if isdir(uploadedFileDir):
-            #try:
-                #shutil.copytree(uploadedFileDir,\
-                        #join(dataDir, package.name, "images", package.name))
-            #except:
-                #errmsg =  "fail to copy %s to %s" %\
-                #(uploadedFileDir, join("images", package.name))
-                #log.error(errmsg)
-                #return errmsg
-         """       
-        self.doExport(package)
 
-    def doExport(self, package):
-        """Cleans up the previous packages nodeList
-        and performs the export"""
-        # Clean up the last nodeList generated
-        global nodeList
-        nodeList = []
-        # Fill the newly made nodeList
-        nodeList.append(package.root.id)
-        self.genNodeList(package.root)
-        self.exportNode(package.root)
+        # Clean up the last pages generated
+        self.pages     = [ WebsitePage("index", 1, package.root) ]
+        self.generatePages(package.root, 1)
+        self.uniquifyNames()
 
-    def genNodeList(self, node):
+        prevPage = None
+        thisPage = self.pages[0]
+
+        for nextPage in self.pages[1:]:
+            thisPage.save(self.outputDir, prevPage, nextPage, self.pages)
+            prevPage = thisPage
+            thisPage = nextPage
+
+        thisPage.save(self.outputDir, prevPage, None, self.pages)
+
+
+    def generatePages(self, node, depth):
         """
-        recusively generate nodes id list and store in nodeList global variable
-        for retrieving next previous link later
+        Recursively generate pages and store in pages member variable
+        for retrieving later
         """           
         for child in node.children:
-            nodeList.append(child.id)
-            self.genNodeList(child)
+            pageName = child.title.lower().replace(" ", "_")
+            pageName = re.sub(r"\W", "", pageName)
 
-    def exportNode(self, node):
-        """
-        Recursive function for exporting a node
-        """
-        page = WebsitePage(node)
-        page.save(self.outputDir)
+            self.pages.append(WebsitePage(pageName, depth, child))
+            self.generatePages(child, depth + 1)
 
-        for child in node.children:
-            self.exportNode(child)
-    
+
+    def uniquifyNames(self):
+        """
+        Make sure all the page names are unique
+        """
+        pageNames = {}
+
+        # First identify the duplicate names
+        for page in self.pages:
+            if page.name in pageNames:
+                pageNames[page.name] = 1
+            else:
+                pageNames[page.name] = 0
+            pageNames.setdefault
+
+        # Then uniquify them
+        for page in self.pages:
+            uniquifier = pageNames[page.name]
+            if uniquifier:
+                pageNames[page.name] = uniquifier + 1
+                page.name += str(uniquifier)
+
