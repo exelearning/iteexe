@@ -48,6 +48,10 @@ class MultichoiceBlock(Block):
         self.keyInstruc      = idevice.keyInstruc
         self.answerInstruc   = idevice.answerInstruc
         self.feedbackInstruc = idevice.feedbackInstruc
+        self.hint            = idevice.hint
+        self.hintId          = "hint" + idevice.id
+        self.hintInstruc     = idevice.hintInstruc
+        
         i = 0
         for option in idevice.options:
             self.optionElements.append(OptionElement(i, idevice, option))
@@ -62,6 +66,9 @@ class MultichoiceBlock(Block):
         questionId = "question"+str(self.id)
         if questionId in request.args:
             self.idevice.question = request.args[questionId][0]
+            
+        if self.hintId in request.args:
+            self.idevice.hint = request.args[self.hintId][0]
             
         if ("addOption"+str(self.id)) in request.args: 
             self.idevice.addOption()
@@ -78,10 +85,14 @@ class MultichoiceBlock(Block):
         self.question = self.question.replace("\r", "")
         self.question = self.question.replace("\n","\\n")
         self.question = self.question.replace("'","\\'")
+        
         html  = "<div class=\"iDevice\">\n"
         html += "<b>" + _("Question:") + " </b>"   
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)
+        html += "<b>" + _("Hint:") + " </b>"   
+        html += common.elementInstruc("hint"+self.id, self.hintInstruc)
+        html += common.richTextArea("hint"+self.id, self.hint)
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
@@ -152,10 +163,13 @@ class MultichoiceBlock(Block):
                 else
                     document.getElementById(id).style.display = "None";
             }
-        }\n"""            
+        }\n"""  
+      
         html += "//-->\n"
         html += "</script>\n"
-        html += self.question+"<br/>\n"
+        html += self.question+" &nbsp;&nbsp;\n"
+        html += common.elementInstruc(self.hintId, self.hint,
+                                      "panel-amusements.png", "Hint")
         html += "<table>"
         for element in self.optionElements:
             html += element.renderAnswerView()

@@ -69,8 +69,10 @@ When designing a MCQ test consider the following:
 </ul>
  """), "")
                          
-        self.question   = question
-        self.options    = []
+        self.question        = question
+        self.hint            = ""
+        self.hintInstruc     = _("Typy the question's hint here.")
+        self.options         = []
         self.questionInstruc = _("Type the question stem.")
         self.keyInstruc      = _("""To indicate the correct answer, click the 
 radio button next to the correct option.""")
