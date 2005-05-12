@@ -249,8 +249,10 @@ class MainPage(RenderableLivePage):
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
         """
-        exeDir = path(self.config.exeDir)
-        stylesDir = exeDir.joinpath('style', self.package.style)
+        exeDir     = path(self.config.exeDir)
+        stylesDir  = exeDir.joinpath('style', self.package.style)
+        imagesDir  = exeDir.joinpath('images')
+        scriptsDir = exeDir.joinpath('scripts')
         if exportType == 'webSite':
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
@@ -271,7 +273,7 @@ class MainPage(RenderableLivePage):
                 filename.rmtree()
                 filename.mkdir()
             # Now do the export
-            websiteExport = WebsiteExport(stylesDir, filename)
+            websiteExport = WebsiteExport(stylesDir, filename, imagesDir, scriptsDir)
             websiteExport.export(self.package)
             # Show the newly exported web site in a new window
             if hasattr(os, 'startfile'):

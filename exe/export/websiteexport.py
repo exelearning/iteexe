@@ -27,6 +27,7 @@ from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import path
+from exe.engine.config      import Config
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -44,6 +45,7 @@ class WebsitePage(object):
         self.name  = name
         self.depth = depth
         self.node  = node
+        
     
 
     def save(self, outputDir, prevPage, nextPage, pages):
@@ -152,16 +154,18 @@ class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
     """
-    def __init__(self, stylesDir, outputDir):
+    def __init__(self, stylesDir, outputDir, imagesDir, scriptsDir):
         """
         'stylesDir' is the directory where we can copy the stylesheets from
         'outputDir' is the directory that will be [over]written
         with the website
         """
-        self.pages     = []
-        self.pageNames = {}
-        self.stylesDir = path(stylesDir)
-        self.outputDir = path(outputDir)
+        self.pages      = []
+        self.pageNames  = {}
+        self.stylesDir  = path(stylesDir)
+        self.outputDir  = path(outputDir)
+        self.imagesDir  = path(imagesDir)
+        self.scriptsDir = path(scriptsDir)
 
         # Create the output dir if it doesn't already exist
         if not self.outputDir.exists(): 
@@ -175,7 +179,10 @@ class WebsiteExport(object):
         """
         # Copy the style sheets to the output dir
         self.stylesDir.copyfiles(self.outputDir)
-
+        self.imagesDir.copylist(('panel-amusements.png', 'stock-cancel.png'), 
+                          self.outputDir)
+        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
+        
         # Clean up the last pages generated
         self.pages     = [ WebsitePage("index", 1, package.root) ]
         self.generatePages(package.root, 1)

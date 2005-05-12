@@ -119,11 +119,28 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div class=\"iDevice\">\n"
+        html  = '<script language="JavaScript" src="common.js"></script>\n'
+        html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
+        html += "<div class=\"iDevice\">\n"
         html += "<img class=\"iDevice_icon\" "
         html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
+        html += self.idevice.title+"</span><br/>\n"
+        html += self.question+" &nbsp;&nbsp;\n"
+        
+        html += '<span style="background-image:url(\'panel-amusements.png\');">'
+        html += '\n<a onmousedown="Javascript:updateCoords(event);'
+        html += 'showMe(\'i%s\', 350, 100);" ' % self.hintId
+        html += 'border="0" align="middle" \n'
+        html += 'style="cursor:help;" title="Instructions for completion" \n'
+        html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
+        html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId                
+        html += "<div style=\"float:right;\" >"
+        html += '<img src="stock-cancel.png" title="'+_("Close")+'" ' 
+        html += " onmousedown=\"Javascript:hideMe();\"/></div>"
+        html += "<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.hint)                
+        html += "</div>\n"
+        
         html += self.renderBlockView()    
         html += "</div>\n"
 
@@ -139,7 +156,11 @@ class MultichoiceBlock(Block):
         html += "<img class=\"iDevice_icon\" "
         html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
+        html += self.idevice.title+"</span><br/>\n"
+        html += self.question+" &nbsp;&nbsp;\n"
+        html += common.elementInstruc(self.hintId, self.hint, 
+                                      "panel-amusements.png", "Hint")
+                                                                             
         html += self.renderBlockView()      
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -167,9 +188,9 @@ class MultichoiceBlock(Block):
       
         html += "//-->\n"
         html += "</script>\n"
-        html += self.question+" &nbsp;&nbsp;\n"
-        html += common.elementInstruc(self.hintId, self.hint,
-                                      "panel-amusements.png", "Hint")
+        #html += self.question+" &nbsp;&nbsp;\n"
+        #html += common.elementInstruc(self.hintId, self.hint,
+                                      #"panel-amusements.png", "Hint")
         html += "<table>"
         for element in self.optionElements:
             html += element.renderAnswerView()

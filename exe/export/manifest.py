@@ -150,7 +150,8 @@ class Manifest(object):
             fileStr += "                <file href=\""+pngFile.basename()+"\"/>\n"
         for gifFile in self.outdir.glob("*.gif"):
             fileStr += "                <file href=\""+gifFile.basename()+"\"/>\n"
-                    
+        fileStr += '<file href ="commom.js"/>'
+        fileStr += '<file href ="libot_drag.js"/>'            
         self.resStr += fileStr
         self.resStr += "            </resource>\n"
 
