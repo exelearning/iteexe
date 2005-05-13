@@ -26,6 +26,7 @@ from exe.engine.path          import path, TempDirPath
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from zipfile                  import ZipFile
+from sets                     import Set
 
 class TestWebsiteExport(unittest.TestCase):
 
@@ -35,7 +36,8 @@ class TestWebsiteExport(unittest.TestCase):
         # Load a package
         package = Package.load('testPackage.elp')
         # Do the export
-        exporter = WebsiteExport('../exe/webui/style/default', outdir)
+        exporter = WebsiteExport('../exe/webui/style/default', outdir,
+                                 '../exe/webui/images', '../exe/webui/scripts')
         exporter.export(package)
         # Check that it all exists now
         assert outdir.isdir()
@@ -44,24 +46,35 @@ class TestWebsiteExport(unittest.TestCase):
         for fn in path('../exe/webui/style/default').files():
             assert ((outdir / fn.basename()).exists(),
                     'Style file "%s" not copied' % (outdir / fn.basename()))
-        # Check that each node in the package has had
-        # a page made
-        self._testNode(package.root, outdir)
 
-    def _testNode(self, node, outdir):
-        """Tests for more or less correct creation
-        of webpages"""
-        if node is node.package.root:
-            fn = outdir / 'index.html'
-        else:
-            fn = outdir / node.id + '.html'
-        assert fn.exists(), 'HTML file "%s" not created' % fn
-        html = open(fn).read()
-        assert (node.title in html,
-                'Node title (%s) not found in "%s"' % (node.title, fn))
-        for child in node.children:
-            self._testNode(child, outdir)
+        # Check that each node in the package has had a page made
+        pagenodes  = Set([p.node for p in exporter.pages])
+        othernodes = Set(self._getNodes([], package.root))
+        assert pagenodes == othernodes
+
+        for page in exporter.pages:
+            self._testPage(page, outdir)
+
         
+    def _getNodes(self, nodes, node):
+        nodes.append(node)
+        for child in node.children:
+            self._getNodes(nodes, child)
+        return nodes 
+
+
+    def _testPage(self, page, outdir):
+        """
+        Tests for more or less correct creation of webpages
+        """
+        node = page.node
+        pageName = outdir/page.name+'.html'
+        assert pageName.exists(), 'HTML file "%s" not created' % pageName
+        html = open(pageName).read()
+        assert (node.title in html,
+                'Node title (%s) not found in "%s"' % (node.title, pageName))
+
+
 class BaseTestScormExport(unittest.TestCase):
     
     def doTest(self, withMeta):
@@ -70,7 +83,13 @@ class BaseTestScormExport(unittest.TestCase):
         package = Package.load('testPackage.elp')
         # Do the export
         outfn = path('scormtest.zip')
-        exporter = ScormExport('../exe/webui/style/default', '../exe/webui/scripts', outfn)
+        class MyConfig:
+            def __init__(self):
+                self.exePath = ""
+        exporter = ScormExport(MyConfig(),
+                               '../exe/webui/style/default', 
+                               '../exe/webui/scripts', 
+                               outfn)
         exporter.export(package, withMeta)
         # Check that it made a nice zip file
         assert outfn.exists()

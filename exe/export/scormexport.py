@@ -22,13 +22,16 @@ Exports an eXe package as a SCORM package
 
 import logging
 import gettext
+import re
 from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import path, TempDirPath
 from exe.export.manifest    import Manifest
+from exe.export.pages       import uniquifyNames
 from zipfile import ZipFile, ZIP_DEFLATED
+
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
@@ -38,27 +41,27 @@ class ScormPage(object):
     """
     This class transforms an eXe node into a SCO
     """
-    def __init__(self, node):
+    def __init__(self, name, depth, node):
         """
         Initialize
         """
-        self.node = node
+        self.name  = name
+        self.depth = depth
+        self.node  = node
+
 
     def save(self, outdir):
         """
         This is the main function.  It will render the page and save it to a
         file.  
         'outdir' is the name of the directory where the node will be saved to,
-        the filename will be the 'self.node.id'.html or 'index.html' if self.node is
-        the root node. 'outdir' must be a 'path' instance
+        the filename will be the 'self.node.id'.html or 'index.html' if
+        self.node is the root node. 'outdir' must be a 'path' instance
         """
-        if self.node is self.node.package.root:
-            filename = "index.html"
-        else:
-            filename = self.node.id + ".html"
-        out = open(outdir / filename, "w")
+        out = open(outdir/self.name+".html", "w")
         out.write(self.render())
         out.close()
+
 
     def render(self):
         """
@@ -100,32 +103,10 @@ class ScormPage(object):
         return html
 
 
-class WebCTScormPage(object):
+class WebCTScormPage(ScormPage):
     """
     This class transforms an eXe node into a SCO for WebCT
     """
-    def __init__(self, node):
-        """
-        Initialize
-        """
-        self.node = node
-
-    def save(self, outdir):
-        """
-        This is the main function.  It will render the page and save it to a
-        file.  
-        'outdir' is the name of the directory where the node will be saved to,
-        the filename will be the 'self.node.id'.html or 'index.html' if self.node is
-        the root node. 'outdir' must be a 'path' instance
-        """
-        if self.node is self.node.package.root:
-            filename = "index.html"
-        else:
-            filename = self.node.id + ".html"
-        out = open(outdir / filename, "w")
-        out.write(self.render())
-        out.close()
-
     def render(self):
         """
         Returns an XHTML string rendering this page.
@@ -165,14 +146,17 @@ class ScormExport(object):
     """
     def __init__(self, config, styleDir, scriptsDir, filename):
         """ Initialize
-        'styleDir' is the directory from which we will copy our style sheets (and some gifs)
-        'scriptsDir' is the directory from which we will copy our javascripts
-        'filename' is the name of the scorm package to be output
+        'styleDir' is the directory from which we will copy our style sheets
+        (and some gifs) 'scriptsDir' is the directory from which we will copy
+        our javascripts 'filename' is the name of the scorm package to be
+        output
         """
         self.config     = config
         self.styleDir   = path(styleDir)
         self.scriptsDir = path(scriptsDir)
         self.filename   = path(filename)
+        self.pages      = []
+
 
     def export(self, package, addMetadata=True, addScormType=True):
         """ 
@@ -180,38 +164,59 @@ class ScormExport(object):
         """
         # First do the export to a temporary directory
         outdir = TempDirPath()
+
         # Copy the style sheets and images
         self.styleDir.copyfiles(outdir)
-        (outdir / 'nav.css').remove() # But not nav.css
+        (outdir/'nav.css').remove() # But not nav.css
+
         # Copy the scripts
         self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), outdir)
+
         # Export the package content
-        self.exportNode(package.root, outdir, addMetadata)
+        if addMetadata:
+            self.pages = [ ScormPage("index", 1, package.root) ]
+        else:
+            self.pages = [ WebCTScormPage("index", 1, package.root) ]
+
+        self.generatePages(package.root, addMetadata, 2)
+        uniquifyNames(self.pages)
+
+        for page in self.pages:
+            page.save(outdir)
+
         # Create the manifest file
-        manifest = Manifest(self.config, outdir, package, 
+        manifest = Manifest(self.config, outdir, package, self.pages,
                             addMetadata, addScormType)
         manifest.save()
+
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
-        for fn in outdir.files():
-            zipped.write(fn, str(fn.basename()), ZIP_DEFLATED)
+        for scormFile in outdir.files():
+            zipped.write(scormFile, str(scormFile.basename()), ZIP_DEFLATED)
         zipped.close()
+
         # Clean up the temporary dir
         outdir.rmtree()
                 
-    def exportNode(self, node, outdir, addMetadata):
+
+    def generatePages(self, node, addMetadata, depth):
         """
         Recursive function for exporting a node.
         'outdir' is the temporary directory that we are exporting to
         before creating zip file
         """
-        if addMetadata:
-            page = ScormPage(node)
-        else:
-            page = WebCTScormPage(node)
-
-        page.save(outdir)
         for child in node.children:
-            self.exportNode(child, outdir, addMetadata)
+            pageName = child.title.lower().replace(" ", "_")
+            pageName = re.sub(r"\W", "", pageName)
+            if not pageName:
+                pageName = "__"
+
+            if addMetadata:
+                page = ScormPage(pageName, depth, child)
+            else:
+                page = WebCTScormPage(pageName, depth, child)
+
+            self.pages.append(page)
+            self.generatePages(child, addMetadata, depth + 1)
     
 # ===========================================================================

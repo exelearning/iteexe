@@ -48,6 +48,8 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
+    persistenceVersion = 1
+
     def __init__(self, question=""):
         """
         Initialize 
@@ -77,15 +79,15 @@ do not want to provide a hint, leave this field blank.""")
         self.questionInstruc = _("Type the question stem.")
         self.keyInstruc      = _("""To indicate the correct answer, click the 
 radio button next to the correct option.""")
-        self.answerInstruc   = _("""Type in each option from which students must 
+        self.answerInstruc   = _("""Type in each option from which students must
 choose into the appropriate options box. You can add options by clicking on the 
 "ADD ANOTHER OPTION" button. You can delete options by clicking on the "x" next 
 to each option.""")
         self.feedbackInstruc = _("""Type in the feedback that you want the 
 student to see when selecting the particular option. If you don't complete this 
-box, eXe will automatically provide default feedback as follows: "Correct answer"
- as indicated by the selection for the correct answer; or "Wrong answer" for the 
-other alternatives.""")
+box, eXe will automatically provide default feedback as follows: "Correct 
+answer" as indicated by the selection for the correct answer; or "Wrong answer"
+for the other alternatives.""")
         
 
     def addOption(self):
@@ -93,6 +95,15 @@ other alternatives.""")
         Add a new option to this iDevice. 
         """
         self.options.append(Option())
+
+
+    def upgradeToVersion1(self):
+        """
+        Called to upgrade from 0.4 release
+        """
+        self.hint            = ""
+        self.hintInstruc     = _("""Enter a hint here. If you
+do not want to provide a hint, leave this field blank.""")
 
     
 # ===========================================================================

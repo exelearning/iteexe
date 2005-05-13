@@ -56,6 +56,7 @@ class Application:
         """
         self.processArgs()
         self.loadConfiguration()
+        self.preLaunch()
         self.launch()
         self.serve()
 
@@ -111,9 +112,9 @@ class Application:
         self.config.loadStyles()
 
 
-    def launch(self):
+    def preLaunch(self):
         """
-        Sets ourself up for running and launches the webbrowser
+        Sets ourself up for running 
         """
         self.packageStore = PackageStore()
         self.ideviceStore = IdeviceStore(self.config)
@@ -124,8 +125,14 @@ class Application:
             package = self.packageStore.loadPackage(self.packagePath)
             log.debug("loading package "+package.name)
             self.server.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
 
+
+    def launch(self):
+        """
+        launches the webbrowser
+        """
+        if self.packagePath:
+            launchBrowser(self.config, package.name)
         else:
             launchBrowser(self.config, "")
     

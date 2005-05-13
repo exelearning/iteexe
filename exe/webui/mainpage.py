@@ -265,15 +265,18 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert('Filename %s is a file, cannot replace it' % filename)
-                log.error("Couldn't export web page: Filename %s is a file, cannot replace it" % filename)
+                client.alert('Filename %s is a file, cannot replace it' % 
+                             filename)
+                log.error("Couldn't export web page: "+
+                          "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
                 # Wipe it out
                 filename.rmtree()
                 filename.mkdir()
             # Now do the export
-            websiteExport = WebsiteExport(stylesDir, filename, imagesDir, scriptsDir)
+            websiteExport = WebsiteExport(stylesDir, filename, 
+                                          imagesDir, scriptsDir)
             websiteExport.export(self.package)
             # Show the newly exported web site in a new window
             if hasattr(os, 'startfile'):
@@ -289,7 +292,8 @@ class MainPage(RenderableLivePage):
                 filename += '.zip'
             filename = path(filename)
             # Remove any old existing files
-            if filename.exists(): filename.remove()
+            if filename.exists(): 
+                filename.remove()
             # Do the export
             scormExport = ScormExport(self.config, stylesDir, 
                                       exeDir / 'scripts', filename)

@@ -23,11 +23,12 @@ The base class for all iDevices
 import copy
 import logging
 from twisted.spread  import jelly
+from twisted.persisted.styles import Versioned
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class Idevice(jelly.Jellyable):
+class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
     The base class for all iDevices
     iDevices are mini templates which the user uses to create content in the 
@@ -71,6 +72,14 @@ class Idevice(jelly.Jellyable):
         if self.parentNode:
             self.parentNode.idevices.remove(self)
             self.parentNode = None
+
+
+    def getStateFor(self, jellier):
+        """
+        Call Versioned.__getstate__ to store
+        persistenceVersion etc...
+        """
+        return self.__getstate__()
 
 
     def isFirst(self):

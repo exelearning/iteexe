@@ -29,35 +29,33 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, outdir, package, 
+    def __init__(self, config, outdir, package, pages,
                  addMetadata=True, addScormType=True):
         """
         Initialize
-        'outdir' is the directory that we read the html from and also output the mainfest.xml
+        'outdir' is the directory that we read the html from and also output
+        the mainfest.xml 
         """
-        self.outdir      = outdir
-        self.package     = package
-        self.addMetadata = addMetadata
+        self.outdir       = outdir
+        self.package      = package
+        self.addMetadata  = addMetadata
         self.addScormType = addScormType
-        self.title       = str(package.root.title)
-        self.node        = package.root
-        self.xmlStr      = ""
-        self.name        = package.name
-        self.author      = package.author
-        self.desc        = package.description
-        self.idGenerator = UniqueIdGenerator(package.name, config.exePath)
-        self.itemStr     = ""
-        self.resStr      = ""
+        self.idGenerator  = UniqueIdGenerator(package.name, config.exePath)
+        self.pages        = pages
+        self.itemStr      = ""
+        self.resStr       = ""
+
 
     def save(self):
         """
         Save a imsmanifest file to self.outdir
         """
         filename = "imsmanifest.xml"
-        out = open(self.outdir / filename, "w")
+        out = open(self.outdir/filename, "w")
         out.write(self.createXML())
         out.close()
         
+
     def createXML(self):
         """
         returning XLM string for manifest file
@@ -86,78 +84,80 @@ class Manifest(object):
         xmlStr += " <schema>IMS Content</schema> \n"
         xmlStr += "<schemaversion>1.1.3</schemaversion> \n"
 
+        title  = str(self.package.root.title)
         if self.addMetadata:
-            xmlStr += "<dc:title>"+self.title+"</dc:title>\n"
-            xmlStr += "<dc:creator>"+self.author+"</dc:creator>\n"
-            xmlStr += "<dc:description>"+self.desc+"</dc:description>\n"
+            author = self.package.author
+            desc   = self.package.description
+            xmlStr += "<dc:title>"+title+"</dc:title>\n"
+            xmlStr += "<dc:creator>"+author+"</dc:creator>\n"
+            xmlStr += "<dc:description>"+desc+"</dc:description>\n"
             xmlStr += "<dc:language>en-US</dc:language>\n"
 
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
-        xmlStr += " <title>"+self.title+"</title> \n "
+        xmlStr += "<title>"+title+"</title>\n"
         
-        
-        self.genItemResStr(self.node)
-        
+        depth = 1
+        for page in self.pages:
+            while depth >= page.depth:
+                self.itemStr += "</item>\n"
+                depth -= 1
+            self.genItemResStr(page)
+            depth = page.depth
+
+        while depth >= 1:
+            self.itemStr += "</item>\n"
+            depth -= 1
+
         xmlStr += self.itemStr
-        xmlStr += """
-            </organization>
-        </organizations>
-    <resources>
-        """
+        xmlStr += "</organization>\n"
+        xmlStr += "</organizations>\n"
+        xmlStr += "<resources>\n"
         xmlStr += self.resStr
-        xmlStr += "</resources>\n</manifest>\n"
+        xmlStr += "</resources>\n"
+        xmlStr += "</manifest>\n"
         return xmlStr
         
             
-    def genItemResStr(self, node):
+    def genItemResStr(self, page):
         """
         Returning xlm string for items and resources
         """
-        itemId = str(self.idGenerator.generate())
-        resId  = str(self.idGenerator.generate())
-        if node is node.package.root:
-            filename = "index.html"
-        else:
-            filename = node.id + ".html"
+        itemId   = "ITEM-"+str(self.idGenerator.generate())
+        resId    = "RES-"+str(self.idGenerator.generate())
+        filename = page.name+".html"
             
         
-        self.itemStr += """
-            <item identifier="ITEM-%s" isvisible="true" identifierref="RES-%s">
-                <title>%s</title>
-            """ %(itemId, resId, str(node.title))
+        self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
+        self.itemStr += "identifierref=\""+resId+"\">\n"
+        self.itemStr += "    <title>\""+str(page.node.title)+"\"</title>\n"
         
-        self.resStr += "<resource identifier=\"RES-"+resId+"\" "
+        self.resStr += "<resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
 
         if self.addScormType:
             self.resStr += "adlcp:scormType=\"sco\" "
         self.resStr += "href=\""+filename+"\"> \n"
         self.resStr += """\
-                <file href="%s"/>
-                <file href="content.css"/>
-                <file href="APIWrapper.js"/>
-                <file href="SCOFunctions.js"/>
-                """ %filename
+    <file href="%s"/>
+    <file href="content.css"/>
+    <file href="APIWrapper.js"/>
+    <file href="SCOFunctions.js"/>""" %filename
         self.resStr += "\n"
         fileStr = ""
 
         # TODO: Fix this hack with some real object-orientated code
         # TODO: Should parse html files to find references to images
         for pngFile in self.outdir.glob("*.png"):
-            fileStr += "                <file href=\""+pngFile.basename()+"\"/>\n"
+            fileStr += "    <file href=\""+pngFile.basename()+"\"/>\n"
         for gifFile in self.outdir.glob("*.gif"):
-            fileStr += "                <file href=\""+gifFile.basename()+"\"/>\n"
-        fileStr += '<file href ="commom.js"/>'
-        fileStr += '<file href ="libot_drag.js"/>'            
+            fileStr += "    <file href=\""+gifFile.basename()+"\"/>\n"
+        fileStr += '    <file href ="common.js"/>\n'
+        fileStr += '    <file href ="libot_drag.js"/>\n'
         self.resStr += fileStr
-        self.resStr += "            </resource>\n"
+        self.resStr += "</resource>\n"
 
-        for child in node.children:
-            self.genItemResStr(child)
-        
-        self.itemStr += "            </item>\n"
             
 #===============================================================================

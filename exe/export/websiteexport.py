@@ -28,6 +28,7 @@ from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import path
 from exe.engine.config      import Config
+from exe.export.pages       import uniquifyNames
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -45,7 +46,6 @@ class WebsitePage(object):
         self.name  = name
         self.depth = depth
         self.node  = node
-        
     
 
     def save(self, outputDir, prevPage, nextPage, pages):
@@ -161,7 +161,6 @@ class WebsiteExport(object):
         with the website
         """
         self.pages      = []
-        self.pageNames  = {}
         self.stylesDir  = path(stylesDir)
         self.outputDir  = path(outputDir)
         self.imagesDir  = path(imagesDir)
@@ -184,9 +183,9 @@ class WebsiteExport(object):
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
         
         # Clean up the last pages generated
-        self.pages     = [ WebsitePage("index", 1, package.root) ]
+        self.pages = [ WebsitePage("index", 1, package.root) ]
         self.generatePages(package.root, 1)
-        self.uniquifyNames()
+        uniquifyNames(self.pages)
 
         prevPage = None
         thisPage = self.pages[0]
@@ -207,28 +206,9 @@ class WebsiteExport(object):
         for child in node.children:
             pageName = child.title.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
+            if not pageName:
+                pageName = "__"
 
             self.pages.append(WebsitePage(pageName, depth, child))
             self.generatePages(child, depth + 1)
-
-
-    def uniquifyNames(self):
-        """
-        Make sure all the page names are unique
-        """
-        pageNames = {}
-
-        # First identify the duplicate names
-        for page in self.pages:
-            if page.name in pageNames:
-                pageNames[page.name] = 1
-            else:
-                pageNames[page.name] = 0
-
-        # Then uniquify them
-        for page in self.pages:
-            uniquifier = pageNames[page.name]
-            if uniquifier:
-                pageNames[page.name] = uniquifier + 1
-                page.name += str(uniquifier)
 

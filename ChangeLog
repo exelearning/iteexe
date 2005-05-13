@@ -1,190 +1,127 @@
-2005-05-08 23:52  brent
+2005-05-12 04:00  jenny
 
-	* branches/0.4/exe/webui/style/mojave/content.css,
-	  branches/0.4/exe/webui/style/mojave/nav.css: the desert can be a
-	  dangerous place, not to be taken lightly.
-
-2005-05-08 23:25  brent
-
-	* branches/0.4/exe/webui/style/garden/content.css,
-	  branches/0.4/exe/webui/style/garden/nav.css: just an oops.
-
-2005-05-08 23:24  brent
-
-	* branches/0.4/exe/webui/style/garden/nav.css: more weeding.
-
-2005-05-08 23:16  brent
-
-	* branches/0.4/exe/webui/style/garden/content.css: weeding.
-
-2005-05-08 21:42  brent
-
-	* branches/0.4/exe/engine/package.py,
-	  branches/0.4/exe/export/manifest.py,
-	  branches/0.4/exe/export/scormexport.py,
-	  branches/0.4/exe/webui/authoringpage.py,
-	  branches/0.4/exe/webui/css/exe.css,
-	  branches/0.4/exe/webui/style/garden/activity.gif,
-	  branches/0.4/exe/webui/style/garden/casestudy.gif,
-	  branches/0.4/exe/webui/style/garden/generic.gif,
-	  branches/0.4/exe/webui/style/garden/multichoice.gif,
-	  branches/0.4/exe/webui/style/garden/objectives.gif,
-	  branches/0.4/exe/webui/style/garden/preknowledge.gif,
-	  branches/0.4/exe/webui/style/garden/reflection.gif: mostly new
-	  icons for garden style
-
-2005-05-08 21:25  djm
-
-	* branches/0.4/exe/webui/browser.py: Need FF chrome else rename
-	  doesn't work
-
-2005-05-06 04:43  matthew
-
-	* branches/0.4/exe/webui/linux-profile/prefs.js: Probably loosened
-	  security a bit
-
-2005-05-06 04:42  matthew
-
-	* branches/0.4/exe/engine/node.py: Made it dirty the package when
-	  you rename and move tree nodes
-
-2005-05-06 02:35  djm
-
-	* branches/0.4/MANIFEST.in, branches/0.4/setup.py,
-	  branches/0.4/tools/exe-twisted.spec: For the Linux RPMS
-
-2005-05-06 01:53  djm
-
-	* branches/0.4/exe/webui/editorpane.py: Added text suggest by Wayne
-
-2005-05-06 01:42  jenny
-
-	* branches/0.4/win-setup.py: auto copy sciprt folder.
-
-2005-05-06 01:37  matthew
-
-	* branches/0.4/exe/webui/mainpage.py: Made it so that when exporting
-	  a website in windows it will only open the directory that you
-	  exported to in a new window rather than replacing your current gui
-	  window with the exported website page
-
-2005-05-06 01:10  matthew
-
-	* branches/0.4/exe/webui/scripts/draganddrop.js: Fixed bug where
-	  draging the scrollbar would try to drag the selected tree item
-
-2005-05-06 00:30  djm
-
-	* branches/0.4/exe/engine/idevicestore.py,
-	  branches/0.4/exe/webui/browser.py: save idevices in the
-	  IdeviceStore in edit mode. Start eXe/Linux with no Firefox chrome
-
-2005-05-05 05:42  djm
-
-	* branches/0.4/exe/webui/browser.py: copy firefox profile to user's
-	  home for linux
-
-2005-05-05 04:18  djm
-
-	* branches/0.4/exe/engine/config.py: fix problem with webDir
-
-2005-05-05 03:56  matthew
-
-	* branches/0.4/exe/webui/browser.py: Fixed bug loading packages from
-	  the command line
-
-2005-05-05 03:47  jenny
-
-	* branches/0.4/win install/exe.nsi: fixed file association bugs.
-
-2005-05-05 03:21  matthew
-
-	* branches/0.4/exe/webui/scripts/mainpage.js: Made the confirm save
-	  dialog say discard instead of "don't save"
-
-2005-05-05 02:42  matthew
-
-	* branches/0.4/exe/webui/mainpage.py,
-	  branches/0.4/exe/webui/scripts/mainpage.js,
-	  branches/0.4/exe/webui/templates/mainpage.xul: More bug fixes for
-	  save/load and friends, and now has an emergency refresh button
-
-2005-05-05 02:07  matthew
-
-	* branches/0.4/exe/webui/templates/mainpage.xul: Fixed bug where 'r'
-	  was switching nodes then renaming. Now you must type ctrl+r
-
-2005-05-05 02:06  matthew
-
-	* branches/0.4/exe/webui/mainpage.py,
-	  branches/0.4/exe/webui/scripts/mainpage.js: Fixed file save saveas
-	  and load probies
-
-2005-05-05 02:02  jenny
-
-	* branches/0.4/exe/webui/optionelement.py,
-	  branches/0.4/exe/webui/questionelement.py: fixed deleting option's
+	* exe/export/manifest.py, exe/export/websiteexport.py,
+	  exe/webui/common.py, exe/webui/mainpage.py,
+	  exe/webui/multichoiceblock.py: fixed multicjoice idevice exporting
 	  bugs.
 
-2005-05-05 02:02  djm
+2005-05-11 11:17  djm
 
-	* branches/0.4/MANIFEST.in: Added Firefox distributables to the
-	  MANIFEST.in
+	* exe/export/websiteexport.py: tidy up
 
-2005-05-05 01:55  djm
+2005-05-11 11:16  djm
 
-	* branches/0.4/ChangeLog, branches/0.4/MANIFEST.in,
-	  branches/0.4/exe/engine/linuxconfig.py,
-	  branches/0.4/exe/engine/version.py,
-	  branches/0.4/exe/webui/browser.py,
-	  branches/0.4/exe/webui/linux-profile,
-	  branches/0.4/exe/webui/linux-profile/Cache,
-	  branches/0.4/exe/webui/linux-profile/Cache/4C21D776d01,
-	  branches/0.4/exe/webui/linux-profile/Cache/4C21E776d01,
-	  branches/0.4/exe/webui/linux-profile/Cache/A2B428F7d01,
-	  branches/0.4/exe/webui/linux-profile/Cache/_CACHE_001_,
-	  branches/0.4/exe/webui/linux-profile/Cache/_CACHE_002_,
-	  branches/0.4/exe/webui/linux-profile/Cache/_CACHE_003_,
-	  branches/0.4/exe/webui/linux-profile/Cache/_CACHE_MAP_,
-	  branches/0.4/exe/webui/linux-profile/XUL.mfasl,
-	  branches/0.4/exe/webui/linux-profile/bookmarks.bak,
-	  branches/0.4/exe/webui/linux-profile/bookmarks.html,
-	  branches/0.4/exe/webui/linux-profile/cert8.db,
-	  branches/0.4/exe/webui/linux-profile/chrome,
-	  branches/0.4/exe/webui/linux-profile/chrome/userChrome-example.css,
-	  branches/0.4/exe/webui/linux-profile/chrome/userContent-example.css,
-	  branches/0.4/exe/webui/linux-profile/compatibility.ini,
-	  branches/0.4/exe/webui/linux-profile/components.ini,
-	  branches/0.4/exe/webui/linux-profile/compreg.dat,
-	  branches/0.4/exe/webui/linux-profile/cookies.txt,
-	  branches/0.4/exe/webui/linux-profile/defaults.ini,
-	  branches/0.4/exe/webui/linux-profile/extensions,
-	  branches/0.4/exe/webui/linux-profile/extensions/Extensions.rdf,
-	  branches/0.4/exe/webui/linux-profile/formhistory.dat,
-	  branches/0.4/exe/webui/linux-profile/history.dat,
-	  branches/0.4/exe/webui/linux-profile/key3.db,
-	  branches/0.4/exe/webui/linux-profile/localstore.rdf,
-	  branches/0.4/exe/webui/linux-profile/prefs.js,
-	  branches/0.4/exe/webui/linux-profile/search.rdf,
-	  branches/0.4/exe/webui/linux-profile/secmod.db,
-	  branches/0.4/exe/webui/linux-profile/xpti.dat,
-	  branches/0.4/setup.py: Now bundle Firefox with Linux version of
-	  eXe
+	* exe/export/websiteexport.py: Issue#54 Export nodes using their
+	  title, not their ID as the file name
 
-2005-05-05 01:43  jenny
+2005-05-11 05:21  djm
 
-	* branches/0.4/exe/webui/casestudyblock.py,
-	  branches/0.4/exe/webui/multichoiceblock.py: fixed adding
-	  multichoice option's bugs.
+	* exe/engine/uid.py: removed unused uid class
 
-2005-05-04 23:37  djm
+2005-05-11 03:58  jenny
 
-	* branches/0.4/exe/engine/config.py: Initialize both exeDir and
-	  webDir to the path of argv[0]
+	* exe/engine/multichoiceidevice.py, exe/webui/common.py,
+	  exe/webui/multichoiceblock.py, exe/webui/win-profile/XUL.mfl,
+	  exe/webui/win-profile/compatibility.ini,
+	  exe/webui/win-profile/compreg.dat,
+	  exe/webui/win-profile/cookies.txt,
+	  exe/webui/win-profile/history.dat,
+	  exe/webui/win-profile/localstore.rdf,
+	  exe/webui/win-profile/prefs.js, exe/webui/win-profile/xpti.dat:
+	  added hint icon for multichice idevice.
 
-2005-05-04 23:35  matthew
+2005-05-10 03:22  djm
 
-	* branches/0.4/exe/webui/savepage.py: No longer used
+	* exe/webui/images/panel-amusements.png: added beany hat icon
+
+2005-05-09 23:50  djm
+
+	* ChangeLog, MANIFEST.in, NEWS, README, doc/eXe-tutorial.elp,
+	  setup.py, tools/exe-twisted.spec, win-setup.py: merged in (last?)
+	  changes from 0.4 branch -r 644:647
+
+2005-05-09 23:47  djm
+
+	* exe/export/manifest.py, exe/export/scormexport.py,
+	  exe/webui/authoringpage.py, exe/webui/browser.py,
+	  exe/webui/css/exe.css, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/mainpage.py,
+	  exe/webui/style/default/activity.gif,
+	  exe/webui/style/default/casestudy.gif,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/generic.gif,
+	  exe/webui/style/default/multichoice.gif,
+	  exe/webui/style/default/nav.css,
+	  exe/webui/style/default/objectives.gif,
+	  exe/webui/style/default/preknowledge.gif,
+	  exe/webui/style/default/reading.gif,
+	  exe/webui/style/default/reflection.gif,
+	  exe/webui/style/garden/activity.gif,
+	  exe/webui/style/garden/casestudy.gif,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/garden/generic.gif,
+	  exe/webui/style/garden/multichoice.gif,
+	  exe/webui/style/garden/nav.css,
+	  exe/webui/style/garden/objectives.gif,
+	  exe/webui/style/garden/preknowledge.gif,
+	  exe/webui/style/garden/reading.gif,
+	  exe/webui/style/garden/reflection.gif,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/mojave/nav.css, exe/webui/templates/mainpage.xul:
+	  merged in changes from 0.4 branch revisions 624:644
+
+2005-05-09 23:35  djm
+
+	* ChangeLog, MANIFEST.in, exe/engine/config.py,
+	  exe/engine/idevicestore.py, exe/engine/linuxconfig.py,
+	  exe/engine/node.py, exe/engine/version.py, exe/webui/browser.py,
+	  exe/webui/editorpane.py, exe/webui/linux-profile,
+	  exe/webui/linux-profile/Cache,
+	  exe/webui/linux-profile/Cache/4C21D776d01,
+	  exe/webui/linux-profile/Cache/4C21E776d01,
+	  exe/webui/linux-profile/Cache/A2B428F7d01,
+	  exe/webui/linux-profile/Cache/_CACHE_001_,
+	  exe/webui/linux-profile/Cache/_CACHE_002_,
+	  exe/webui/linux-profile/Cache/_CACHE_003_,
+	  exe/webui/linux-profile/Cache/_CACHE_MAP_,
+	  exe/webui/linux-profile/XUL.mfasl,
+	  exe/webui/linux-profile/bookmarks.bak,
+	  exe/webui/linux-profile/bookmarks.html,
+	  exe/webui/linux-profile/cert8.db, exe/webui/linux-profile/chrome,
+	  exe/webui/linux-profile/chrome/userChrome-example.css,
+	  exe/webui/linux-profile/chrome/userContent-example.css,
+	  exe/webui/linux-profile/compatibility.ini,
+	  exe/webui/linux-profile/components.ini,
+	  exe/webui/linux-profile/compreg.dat,
+	  exe/webui/linux-profile/cookies.txt,
+	  exe/webui/linux-profile/defaults.ini,
+	  exe/webui/linux-profile/extensions,
+	  exe/webui/linux-profile/extensions/Extensions.rdf,
+	  exe/webui/linux-profile/formhistory.dat,
+	  exe/webui/linux-profile/history.dat,
+	  exe/webui/linux-profile/key3.db,
+	  exe/webui/linux-profile/localstore.rdf,
+	  exe/webui/linux-profile/prefs.js,
+	  exe/webui/linux-profile/search.rdf,
+	  exe/webui/linux-profile/secmod.db,
+	  exe/webui/linux-profile/xpti.dat, exe/webui/mainpage.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/savepage.py, exe/webui/scripts/draganddrop.js,
+	  exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul,
+	  setup.py, tools/exe-twisted.spec, win install/exe.nsi,
+	  win-setup.py: merged in changes from 0.4 branch revisions 596:624
+
+2005-05-05 02:01  jenny
+
+	* exe/webui/optionelement.py, exe/webui/questionelement.py,
+	  exe/webui/win-profile/XUL.mfl, exe/webui/win-profile/xpti.dat:
+	  fixed deleting option's bug.
+
+2005-05-05 01:41  jenny
+
+	* exe/webui/block.py, exe/webui/casestudyblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/win-profile/prefs.js:
+	  fixed adding multichoice option's bug.
 
 2005-05-04 21:16  jenny
 
@@ -197,25 +134,10 @@
 	  exe/webui/win-profile/localstore.rdf,
 	  exe/webui/win-profile/xpti.dat: turn off firefox navigating bar.
 
-2005-05-04 05:41  matthew
+2005-05-04 04:22  jenny
 
-	* branches/0.4/exe/webui/propertiespage.py,
-	  branches/0.4/exe/webui/propertiespane.py: Issue 49: Made it so
-	  that when you submit the properties pane, it reloads the main
-	  window, and so updates the tree node names
-
-2005-05-04 04:23  jenny
-
-	* branches/0.4/exe/export/scormexport.py: Fixed it to work on sytems
-	  with unicode filenames (ie. windows) (MS)
-
-2005-05-04 04:16  djm
-
-	* branches/0.4/exe/engine/linuxconfig.py: set exeDir for linux
-
-2005-05-04 01:09  djm
-
-	* branches/0.4: Created branch for 0.4 release
+	* exe/export/scormexport.py: Fixed it to work on sytems with unicode
+	  filenames (ie. windows)
 
 2005-05-04 00:39  djm
 
