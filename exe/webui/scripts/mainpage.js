@@ -410,7 +410,7 @@ function exportPackage(exportType) {
         fp.appendFilter("Scorm Packages", "*.zip");
         fp.appendFilter("All Files", "*.*");
         var res = fp.show();
-        if (res == nsIFilePicker.returnOK) {
+        if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
         }
     }
