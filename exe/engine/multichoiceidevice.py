@@ -71,7 +71,8 @@ When designing a MCQ test consider the following:
                          
         self.question        = question
         self.hint            = ""
-        self.hintInstruc     = _("Typy the question's hint here.")
+        self.hintInstruc     = _("""Enter a hint here. If you
+do not want to provide a hint, leave this field blank.""")
         self.options         = []
         self.questionInstruc = _("Type the question stem.")
         self.keyInstruc      = _("""To indicate the correct answer, click the 
