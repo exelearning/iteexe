@@ -99,7 +99,7 @@ class Manifest(object):
         xmlStr += "\" structure=\"hierarchical\">  \n"
         xmlStr += "<title>"+title+"</title>\n"
         
-        depth = 1
+        depth = 0
         for page in self.pages:
             while depth >= page.depth:
                 self.itemStr += "</item>\n"

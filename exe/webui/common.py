@@ -194,7 +194,7 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += "<div id=\"i%s\" style=\"display:none; z-index:99;\">" % \
                 instrucId
         html += "<div style=\"float:right;\" >"
-        html += '<img src="/images/stock_cancel.png" title="'+_("Close")+'" ' 
+        html += '<img src="/images/stock-stop.png" title="'+_("Close")+'" ' 
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
         html += "<b>%s:</b><br/>%s<br/>" % (label, instruc)                
         html += "</div>\n"
