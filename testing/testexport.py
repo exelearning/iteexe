@@ -43,9 +43,9 @@ class TestWebsiteExport(unittest.TestCase):
         assert outdir.isdir()
         assert (outdir / 'index.html').isfile()
         # Check that the style sheets have been copied
-        for fn in path('../exe/webui/style/default').files():
-            assert ((outdir / fn.basename()).exists(),
-                    'Style file "%s" not copied' % (outdir / fn.basename()))
+        for filename in path('../exe/webui/style/default').files():
+            assert ((outdir / filename.basename()).exists(),
+                    'Style file "%s" not copied' % (outdir / filename.basename()))
 
         # Check that each node in the package has had a page made
         pagenodes  = Set([p.node for p in exporter.pages])
@@ -82,43 +82,53 @@ class BaseTestScormExport(unittest.TestCase):
         # Load our test package
         package = Package.load('testPackage.elp')
         # Do the export
-        outfn = path('scormtest.zip')
+        outFilename = path('scormtest.zip')
         class MyConfig:
             def __init__(self):
                 self.exePath = ""
         exporter = ScormExport(MyConfig(),
                                '../exe/webui/style/default', 
                                '../exe/webui/scripts', 
-                               outfn)
+                               outFilename)
         exporter.export(package, withMeta)
         # Check that it made a nice zip file
-        assert outfn.exists()
+        assert outFilename.exists()
         # See if the manifest file was created
-        zf = ZipFile(outfn)
-        fns = zf.namelist()
-        assert 'imsmanifest.xml' in fns, fns
-        self._testManifest(zf.read('imsmanifest.xml'))
+        zipped = ZipFile(outFilename)
+        filenames = zipped.namelist()
+        assert 'imsmanifest.xml' in filenames, filenames
+        self._testManifest(zipped.read('imsmanifest.xml'))
+
         # Test that all the node's html files have been generated
-        self._testNode(package.root, zf)
+        pagenodes  = Set([p.node for p in exporter.pages])
+        othernodes = Set(self._getNodes([], package.root))
+        assert pagenodes == othernodes
+
+        for page in exporter.pages:
+            self._testPage(page, zipped)
+
         # Clean up
-        zf.close()
+        zipped.close()
 
     def _testManifest(self, content):
         """Override this func to test different types of manifest files"""
+        
+    def _getNodes(self, nodes, node):
+        nodes.append(node)
+        for child in node.children:
+            self._getNodes(nodes, child)
+        return nodes 
 
-    def _testNode(self, node, zf):
+    def _testPage(self, page, zipped):
         """Tests for more or less correct creation
         of webpages"""
-        if node is node.package.root:
-            fn = 'index.html'
-        else:
-            fn = node.id + '.html'
-        assert fn in zf.namelist(), 'HTML file "%s" not created' % fn
-        html = zf.read(fn)
+        node     = page.node
+        filename = page.name + '.html'
+        assert (filename in zipped.namelist(), 
+                'HTML file "%s" not created' % filename)
+        html = zipped.read(filename)
         assert (node.title in html,
-                'Node title (%s) not found in "%s"' % (node.title, fn))
-        for child in node.children:
-            self._testNode(child, zf)
+                'Node title (%s) not found in "%s"' % (node.title, filename))
         
 
 class TestScormMetaExport(BaseTestScormExport):

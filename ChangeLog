@@ -1,3 +1,30 @@
+2005-05-13 06:27  djm
+
+	* ChangeLog, exe/application.py, exe/engine/idevice.py,
+	  exe/engine/multichoiceidevice.py, exe/export/manifest.py,
+	  exe/export/pages.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/mainpage.py,
+	  testing/runtests.py, testing/testexport.py: ScormExport and
+	  WebsiteExport now uses unique names not IDs fixed unittest for
+	  WebsiteExport, still need to fix test for ScormExport :-(
+
+2005-05-13 05:20  matthew
+
+	* exe/webui/scripts/mainpage.js: Was not overwriting scorm packages
+	  on export
+
+2005-05-13 04:14  matthew
+
+	* exe/engine/configparser.py, testing/runtests.py,
+	  testing/testconfigparser.py: New Config Parser class. This is
+	  almost the end all of all ConfigParsers. Needs a bit more
+	  freakiness though
+
+2005-05-13 02:11  brent
+
+	* exe/engine/multichoiceidevice.py: changed wording of multichoice
+	  hint instruction for completion.
+
 2005-05-12 04:00  jenny
 
 	* exe/export/manifest.py, exe/export/websiteexport.py,
