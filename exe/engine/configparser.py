@@ -33,10 +33,12 @@ class ConfigParser(object):
     """For parsing and writing config files"""
 
     optionMiddle = ' = '  # The default char to put between option names and vals
-    defaultValue = RaiseValueError
+    defaultValue = RaiseValueError # Set this to a default val for options that don't exist
+    autoWrite = False # Set this to write after each attribute change
 
     def __init__(self):
         self._sections = {}
+        self._originalFile = None
 
     def __getattr__(self, attr):
         """
@@ -109,6 +111,7 @@ class ConfigParser(object):
     def read(self, file_):
         """Reads in a config file. 'file_' can be a file object
         or a string"""
+        self._originalFile = file_
         if isinstance(file_, basestring):
             file_ = open(file_)
         lines = file_.readlines()
@@ -133,10 +136,16 @@ class ConfigParser(object):
                     opValue = match.group('value')
                     section[opName] = opValue
 
-    def write(self, file_):
+    def write(self, file_=None):
         """Writes the options to the file_"""
+        # Use default file if none specified
+        if not file_:
+            file_ = self._originalFile
+        else:
+            # Store the file for later writes
+            self._originalFile = file_
         # If 'file_' is a string, it's a file_ name
-        if type(file_) is str:
+        if isinstance(file_, basestring):
             if os.path.exists(file_):
                 file_ = open(file_, 'r+')
             else:
@@ -255,12 +264,22 @@ class ConfigParser(object):
     def set(self, sectionName, optionName, value):
         """Set's an option in a section to value,
         can be used for new options, new sections and pre-existing ones"""
-        if self._sections.has_key(sectionName):
-            sec = self._sections[sectionName]
-        else:
-            # Create the section on the fly
-            sec = Section(sectionName, self)
-        sec[optionName] = str(value)
+        sec = Section(sectionName, self) # This creates or gets a section
+        if sec.get(optionName, None) != value:
+            sec[optionName] = str(value)
+            if self.autoWrite and self._originalFile is not None:
+                # Move the original file to the beginning if we can
+                if hasattr(self._originalFile, 'seek') and \
+                    callable(self._originalFile.seek):
+                    self._originalFile.seek(0)
+                # Can't use autowrite with append, writeonly or readonly files
+                if hasattr(self._originalFile, 'mode'):
+                    # Must have r+ or rb+
+                    if 'r' not in self._originalFile.mode or \
+                       '+' not in self._originalFile.mode:
+                        return
+                # Write using self._originalFile
+                self.write()
 
     def delete(self, sectionName, optionName=None):
         """Remove a section or optionName. Set optionName to None
@@ -268,10 +287,14 @@ class ConfigParser(object):
         if self._sections.has_key(sectionName):
             if optionName is None:
                 del self._sections[sectionName]
+                if self.autoWrite:
+                    self.write()
             else:
                 sec = self._sections[sectionName]
                 if sec.has_key(optionName):
                     del sec[optionName]
+                    if self.autoWrite:
+                        self.write()
 
 
 class Section(dict):

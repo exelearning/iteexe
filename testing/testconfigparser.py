@@ -219,6 +219,25 @@ class TestConfigParser(unittest.TestCase):
         assert self.c.get('second', 'available', '') == 'short', \
             self.c.get('second', 'available', '')
 
+class TestAutoWrite(unittest.TestCase):
+    """
+    Tests the autowrite feature
+    Should remember where the file was last written or read
+    and be able to autowrite new changes there.
+    But should ignore autoWrite if compatible file is not available
+    """
+
+    def testStringIO(self):
+        file_ = StringIO(TEST_TEXT)
+        c = ConfigParser()
+        c.read(file_)
+        c.autoWrite = True
+        assert 'Matthew' not in file_.getvalue()
+        c.main.name = 'Matthew'
+        assert 'name = Matthew' in file_.getvalue(), file_.getvalue()
+        del c.main.name
+        assert 'Matthew' not in file_.getvalue()
+        
 
 class TestSections(unittest.TestCase):
     """
@@ -232,8 +251,8 @@ class TestSections(unittest.TestCase):
         reads in the test text
         """
         self.c = ConfigParser()
-        file = StringIO(TEST_TEXT)
-        self.c.read(file)
+        file_ = StringIO(TEST_TEXT)
+        self.c.read(file_)
 
     def testSectionCreation(self):
         """
