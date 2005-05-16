@@ -65,7 +65,6 @@ class Application:
         """
         Processes the command line arguments
         """
-        # Process args
         try:
             options, packages = getopt(sys.argv[1:], 
                                        "hV", ["help", "version"])
@@ -93,7 +92,6 @@ class Application:
         """
         Loads the config file and applies all the settings
         """
-        # Get configuration
         if sys.platform[:3] == "win":
             from exe.engine.winconfig import WinConfig
             self.config = WinConfig()
@@ -108,6 +106,7 @@ class Application:
     
         self.config.loadSettings()
         self.config.setupLogging("exe.log")
+        log.debug("logging set up")
         self.config.loadStyles()
 
 
@@ -115,15 +114,11 @@ class Application:
         """
         Sets ourself up for running 
         """
+        log.debug("preLaunch")
         self.packageStore = PackageStore()
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
         self.server = WebServer(self)
-
-        if self.packagePath:
-            package = self.packageStore.loadPackage(self.packagePath)
-            log.debug("loading package "+package.name)
-            self.server.root.bindNewPackage(package)
 
 
     def launch(self):
@@ -131,10 +126,13 @@ class Application:
         launches the webbrowser
         """
         if self.packagePath:
+            package = self.packageStore.loadPackage(self.packagePath)
+            log.debug("loading package "+package.name)
+            self.server.root.bindNewPackage(package)
             launchBrowser(self.config, package.name)
         else:
             launchBrowser(self.config, "")
-    
+        
 
     def serve(self):
         """
