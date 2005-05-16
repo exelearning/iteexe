@@ -20,7 +20,18 @@
 from exe.engine.config import Config
 import logging
 from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
-import unittest
+import unittest, sys
+
+# Choose which ConfigParser we'll use
+if sys.platform[:3] == "win":
+    from exe.engine.winconfig import WinConfig
+    Config = WinConfig
+elif sys.platform[:6] == "darwin":
+    from exe.engine.macconfig import MacConfig
+    Config = MacConfig
+else:
+    from exe.engine.linuxconfig import LinuxConfig
+    Config = LinuxConfig
 
 # ===========================================================================
 class TestConfig(unittest.TestCase):
@@ -28,7 +39,8 @@ class TestConfig(unittest.TestCase):
         pass
 
     def testSetupLogging(self):
-        myconfig = Config("test.conf")
+        Config._getConfigPathOptions = lambda s: ['test.conf']
+        myconfig = Config()
         open("test.log", "w").write("")
         myconfig.setupLogging("test.log")
         rootLog = logging.getLogger()

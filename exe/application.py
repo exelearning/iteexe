@@ -94,18 +94,17 @@ class Application:
         Loads the config file and applies all the settings
         """
         # Get configuration
-        configFile = "exe.conf"
         if sys.platform[:3] == "win":
             from exe.engine.winconfig import WinConfig
-            self.config = WinConfig(configFile)
+            self.config = WinConfig()
     
         elif sys.platform[:6] == "darwin":
             from exe.engine.macconfig import MacConfig
-            self.config = MacConfig(configFile)
+            self.config = MacConfig()
     
         else:
             from exe.engine.linuxconfig import LinuxConfig
-            self.config = LinuxConfig(configFile)
+            self.config = LinuxConfig()
     
         self.config.loadSettings()
         self.config.setupLogging("exe.log")

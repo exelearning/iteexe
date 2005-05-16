@@ -59,7 +59,7 @@ class MainPage(RenderableLivePage):
         """
         self.name = package.name
         RenderableLivePage.__init__(self, parent, package)
-        mainxul = path(self.config.exeDir).joinpath('templates', 'mainpage.xul')
+        mainxul = path(self.config.webDir).joinpath('templates', 'mainpage.xul')
         self.docFactory = loaders.xmlfile(mainxul)
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
@@ -249,10 +249,10 @@ class MainPage(RenderableLivePage):
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
         """
-        exeDir     = path(self.config.exeDir)
-        stylesDir  = exeDir.joinpath('style', self.package.style)
-        imagesDir  = exeDir.joinpath('images')
-        scriptsDir = exeDir.joinpath('scripts')
+        webDir     = path(self.config.webDir)
+        stylesDir  = webDir.joinpath('style', self.package.style)
+        imagesDir  = webDir.joinpath('images')
+        scriptsDir = webDir.joinpath('scripts')
         if exportType == 'webSite':
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
@@ -296,7 +296,7 @@ class MainPage(RenderableLivePage):
                 filename.remove()
             # Do the export
             scormExport = ScormExport(self.config, stylesDir, 
-                                      exeDir / 'scripts', filename)
+                                      webDir / 'scripts', filename)
             if exportType == 'scormMeta':
                 scormExport.export(self.package, True)
             elif exportType == 'scormNoMeta':

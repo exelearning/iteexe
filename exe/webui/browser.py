@@ -45,8 +45,11 @@ def launchBrowser(config, packageName):
     log.info("Launch firefox with "+config.browserPath)
     log.info("url "+url)
 
+    exeDir = config.exePath.dirname()
+
     if sys.platform[:3] == "win":
-        profile = config.exeDir+'/win-profile'
+        # TODO: Should we copy this to config.appDataDir?
+        profile = exeDir+'/win-profile'
         log.info("profile "+profile)
         try:
             os.spawnl(os.P_DETACH, config.browserPath, 
@@ -70,9 +73,9 @@ def createProfile(config):
     """
     appDir  = os.environ["HOME"]+'/.exe'
     log.info("Creating FireFox profile copied from"+
-             config.exeDir+"/linux-profile to "+appDir+"/linux-profile")
+             exeDir+"/linux-profile to "+appDir+"/linux-profile")
     if not os.path.exists(appDir):
         os.mkdir(appDir)
-    shutil.copytree(config.exeDir+"/linux-profile", appDir+"/linux-profile")
+    shutil.copytree(exeDir+"/linux-profile", appDir+"/linux-profile")
         
 

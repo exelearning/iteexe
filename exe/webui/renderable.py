@@ -56,7 +56,7 @@ class Renderable(object):
             self.webserver = None
         if self._templateFileName:
             if hasattr(self, 'config') and self.config:
-                path = os.path.join(self.config.exeDir, 'templates', self._templateFileName)
+                path = os.path.join(self.config.webDir, 'templates', self._templateFileName)
                 self.docFactory = loaders.xmlfile(path)
             else:
                 # Assume directory is included in the filename

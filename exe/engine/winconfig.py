@@ -28,36 +28,49 @@ import os
 import os.path
 from exe.engine.config import Config
 
+# Constants for directory name codes
+APPDATA = 0x001a
+COMMON_APPDATA = 0x0023
+MYDOCUMENTS = 0x000c # Code for c:\documents and settings\myuser\My Documents
+
 # ===========================================================================
 class WinConfig(Config):
     """
     The WinConfig overrides the Config class with Windows specific
     configuration
     """
-    def __init__(self, configFile):
-        """
-        Initialize 
-        """
-        Config.__init__(self, configFile)
 
-        # what's the windows equivalent of /etc????
-        # Documents and Settings.... Application Data
-        programFilesDir = self.__getDirectory(0x0026)
-        exeConf = programFilesDir + "/exe/" + configFile
-        if os.path.isfile(exeConf):
-            self.configPath = exeConf
-        
-        if ("Mozilla Firefox" in os.listdir(self.exeDir) and 
-            "firefox.exe" in os.listdir(self.exeDir + "\\Mozilla Firefox")):
-            self.browserPath = self.exeDir + "\\Mozilla Firefox\\firefox"
-        self.dataDir = self.__getDirectory(5)
-                
-        # TODO: get appDataDir from
-        # Documents and Settings\$USER\Application Data on Windows
+    def _overrideDefaultVals(self):
+        """Sets the default values
+        for windows"""
+        exeDir = self.exePath.dirname()
+        if ("Mozilla Firefox" in os.listdir(exeDir) and 
+            "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox")):
+            self.browserPath = exeDir + "\\Mozilla Firefox\\firefox"
+        self.dataDir = self.__getWinFolder(MYDOCUMENTS)
         self.appDataDir = self.dataDir
 
+    def _getConfigPathOptions(self):
+        """
+        Returns the best options for the
+        location of the config file under windows
+        """
+        # Find out where our nice config file is
+        folders = map(self.__getWinFolder, [APPDATA, COMMON_APPDATA])
+        # Add unique dir names
+        folders = [folder/'exe' for folder in folders] 
+        folders.append(self.__getInstallDir())
+        folders.append('.')
+        # Filter out non existant folders
+        return [folder/'exe.conf' for folder in folders if folder.isdir()]
 
-    def __getDirectory(self, code):
+    def __getWinFolder(self, code):
+        """
+        Gets one of the windows famous directorys
+        depending on 'code'
+        Possible values can be found at:
+        http://msdn.microsoft.com/library/default.asp?url=/library/en-us/shellcc/platform/shell/reference/enums/csidl.asp#CSIDL_WINDOWS
+        """
         from ctypes import WinDLL, create_string_buffer
         dll = WinDLL('shell32')
         # The '5' and the '0' from the below call come from
@@ -65,9 +78,25 @@ class WinConfig(Config):
         result = create_string_buffer(260)
         resource = dll.SHGetFolderPathA(None, code, None, 0, result)
         if resource != 0: 
-            return '/'
+            return path('')
         else: 
-            return result.value
-        
+            return path(result.value)
+                
+    def __getInstallDir(self):
+        """
+        Returns the path to where we were installed
+        """
+        from _winreg import OpenKey, QueryValue, HKEY_LOCAL_MACHINE
+        try:
+            try:
+                softwareKey = OpenKey(HKEY_LOCAL_MACHINE, 'SOFTWARE')
+                exeKey = OpenKey(softwareKey, 'exe')
+                return path(QueryValue(exeKey, ''))
+            finally:
+                exeKey.Close()
+                softwareKey.Close()
+        except WindowsError:
+            return path('')
+
 
 # ===========================================================================

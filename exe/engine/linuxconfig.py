@@ -23,8 +23,8 @@ configuration
 """
 
 import os
-import os.path
 from exe.engine.config import Config
+from exe.engine.path import path
 import logging
 
 # ===========================================================================
@@ -33,24 +33,25 @@ class LinuxConfig(Config):
     The LinuxConfig overrides the Config class with Linux specific
     configuration
     """
-    def __init__(self, configFile):
+    
+    def _overrideDefaultVals(self):
         """
-        Initialize 
+        Setup with our default settings
         """
-        Config.__init__(self, configFile)
-
-        confPath = "/etc/exe/" + configFile
-        if os.path.isfile(confPath):
-            self.configPath = confPath
-                
-        self.webDir  = "/usr/share/exe"
-        self.dataDir = os.environ["HOME"]
-                
-        # TODO: get appDataDir from
-        # or $HOME\.exe on Linux
+        # Override the default settings
+        self.webDir      = "/usr/share/exe"
+        self.dataDir     = os.environ['HOME']
         self.appDataDir  = self.dataDir
         self.browserPath = "/usr/share/exe/firefox/firefox"
         self.styles      = []
+
+    def _getConfigPathOptions(self):
+        """
+        Returns the best places for a linux config file
+        """
+        return [path(os.environ["HOME"])/'.exe/exe.conf',
+                '/etc/exe/exe.conf',
+                './exe/exe.conf']
 
 
 # ===========================================================================

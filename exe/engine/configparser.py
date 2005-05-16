@@ -32,9 +32,12 @@ class RaiseValueError(object):
 class ConfigParser(object):
     """For parsing and writing config files"""
 
-    optionMiddle = ' = '  # The default char to put between option names and vals
-    defaultValue = RaiseValueError # Set this to a default val for options that don't exist
-    autoWrite = False # Set this to write after each attribute change
+    # The default char to put between option names and vals
+    optionMiddle = ' = '  
+    # Set this to a default val for options that don't exist
+    defaultValue = RaiseValueError 
+    # Set this to write after each attribute change
+    autoWrite = False 
 
     def __init__(self):
         self._sections = {}
@@ -165,7 +168,7 @@ class ConfigParser(object):
             if match:
                 sectionName = match.group('sectionname')
                 optionOffsets = {}
-                sectionOffsets[sectionName] = (line, optionOffsets)
+                sectionOffsets[sectionName] = (line, optionOffsets, i)
             elif sectionName:
                 match = exOption.match(line)
                 if match:
@@ -208,7 +211,11 @@ class ConfigParser(object):
                            if name not in existingOptions]
                 # Append new options on the end of the section,
                 # in the order they were added to 'self'
-                lineToAppendAt = max(offsets.values())
+                if offsets:
+                    lineToAppendAt = max(offsets.values())
+                else:
+                    # Use the line of the start of the section
+                    lineToAppendAt = sectionOffsets[section][2]
                 linesToInsert = []
                 linesToAdd[lineToAppendAt] = linesToInsert
             # Now append/insert the options
@@ -281,6 +288,19 @@ class ConfigParser(object):
                 # Write using self._originalFile
                 self.write()
 
+    def setdefault(self, sectionName, optionName, value):
+        """
+        If 'sectionName' and 'optionName' exists, returns its value,
+        otherwise, sets it then returns the new value set.
+        it's like setdefault in 'dict' instanaces
+        """
+        if self.has_section(sectionName) and \
+           self.has_option(sectionName, optionName):
+            return self.get(sectionName, optionName)
+        else:
+            self.set(sectionName, optionName, value)
+            return value
+
     def delete(self, sectionName, optionName=None):
         """Remove a section or optionName. Set optionName to None
         to remove the whole section"""
@@ -327,6 +347,18 @@ class Section(dict):
     def get(self, optionName, default=UseDefault):
         """Returns the option name"""
         return self.__parent.get(self.__name, optionName, default)
+
+    def set(self, optionName, value):
+        """Sets an option"""
+        self.__parent.set(self.__name, optionName, value)
+
+    def setdefault(self, optionName, value):
+        """
+        If 'optionName' exists, returns its value,
+        otherwise, sets it then returns the new value set.
+        it's like setdefault in 'dict' instanaces
+        """
+        return self.__parent.setdefault(self.__name, optionName, value)
 
     def __getattr__(self, attr):
         try:

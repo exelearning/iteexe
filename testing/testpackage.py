@@ -40,7 +40,8 @@ class TestPackage(unittest.TestCase):
         # Check that it has been given a default name
         self.assertEquals(package.name, "newPackage")
         package.author = "UoA"
-        config  = Config("exe.conf")
+        Config._getConfigPathOptions = lambda s: ['exe.conf']
+        config  = Config()
         package.save(config.dataDir + '/package1.elp')
         
         filePath = join(config.dataDir, "package1.elp")
