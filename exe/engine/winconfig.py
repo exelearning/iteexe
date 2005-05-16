@@ -27,6 +27,7 @@ import sys
 import os
 import os.path
 from exe.engine.config import Config
+from exe.engine.path import path
 
 # Constants for directory name codes
 APPDATA = 0x001a
@@ -62,7 +63,10 @@ class WinConfig(Config):
         folders.append(self.__getInstallDir())
         folders.append('.')
         # Filter out non existant folders
-        return [folder/'exe.conf' for folder in folders if folder.isdir()]
+        from pprint import pprint
+        options = [folder/'exe.conf' for folder in map(path, folders)]
+        pprint(options)
+        return options
 
     def __getWinFolder(self, code):
         """
