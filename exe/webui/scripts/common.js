@@ -97,6 +97,15 @@ function saveChange(action){
     document.getElementById("contentFrame").contentDocument.contentForm.submit();
 }
 
+function getFeedback(optionId, optionsNum, ideviceId) {
+    for (i = 0; i< optionsNum; i++) {   
+        id = "s" + i + "b" +ideviceId
+        if(i == optionId)
+            document.getElementById(id).style.display = "block";
+        else
+            document.getElementById(id).style.display = "None";
+    }
+}
 
 
 

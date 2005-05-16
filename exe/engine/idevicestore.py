@@ -89,6 +89,7 @@ class IdeviceStore:
         from exe.engine.multichoiceidevice import MultichoiceIdevice
         from exe.engine.reflectionidevice  import ReflectionIdevice
         from exe.engine.casestudyidevice   import CasestudyIdevice
+        from exe.engine.truefalseidevice   import TrueFalseIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -99,6 +100,7 @@ class IdeviceStore:
         self.extended.append(ReflectionIdevice())
                 
         self.extended.append(CasestudyIdevice())
+        self.extended.append(TrueFalseIdevice())
   
 
     def loadGeneric(self):

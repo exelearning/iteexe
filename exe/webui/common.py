@@ -178,6 +178,18 @@ def option(name, checked, value):
     html += chkStr+' />\n'
     return html
 
+def checkbox(name, checked, value=""):
+    """Add a checkbox"""
+    chkStr = ""
+    if checked:
+        chkStr = "checked"
+        
+    html  = '<input type = "checkbox" name = "'+name+'"'
+    html += ' value="'+value+'" '
+    html += chkStr+' />\n'
+    return html
+
+
 
 def elementInstruc(instrucId, instruc, imageFile="help.gif", 
                    label="Instructions"):

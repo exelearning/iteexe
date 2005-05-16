@@ -96,7 +96,7 @@ class MultichoiceBlock(Block):
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
-        html += "</th><th align = \"left\">" + _("Correct")
+        html += "</th><th>%s"  % _("Correct")
         html += "<br/>" + _("Option")
         html += common.elementInstruc("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Feedback")
@@ -136,7 +136,7 @@ class MultichoiceBlock(Block):
         html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
         html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId                
         html += "<div style=\"float:right;\" >"
-        html += '<img src="stock-cancel.png" title="'+_("Close")+'" ' 
+        html += '<img src="stock-stop.png" title="'+_("Close")+'" ' 
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
         html += "<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.hint)                
         html += "</div>\n"
@@ -188,9 +188,6 @@ class MultichoiceBlock(Block):
       
         html += "//-->\n"
         html += "</script>\n"
-        #html += self.question+" &nbsp;&nbsp;\n"
-        #html += common.elementInstruc(self.hintId, self.hint,
-                                      #"panel-amusements.png", "Hint")
         html += "<table>"
         for element in self.optionElements:
             html += element.renderAnswerView()

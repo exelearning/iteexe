@@ -178,7 +178,7 @@ class WebsiteExport(object):
         """
         # Copy the style sheets to the output dir
         self.stylesDir.copyfiles(self.outputDir)
-        self.imagesDir.copylist(('panel-amusements.png', 'stock-cancel.png'), 
+        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
                           self.outputDir)
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
         
