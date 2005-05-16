@@ -44,7 +44,6 @@ class TrueFalseBlock(Block):
         self.questionElements  = []
         self.questionInstruc = idevice.questionInstruc
         self.keyInstruc      = idevice.keyInstruc
-        self.answerInstruc   = idevice.answerInstruc
         self.feedbackInstruc = idevice.feedbackInstruc
         self.hintInstruc     = idevice.hintInstruc        
         
@@ -77,7 +76,8 @@ class TrueFalseBlock(Block):
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Questions")
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
-        html += "</th><th>%s"  % _("Correct?")
+        html += "</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),_("F"))
+        html += "</th><th>"
         html += common.elementInstruc("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Feedback")
         html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)

@@ -60,10 +60,11 @@ class TrueFalseElement(object):
             self.question.hint = request.args[self.hintId][0]
                         
         if self.keyId in request.args:
-            self.question.isCorrect = True 
-            log.debug("question " + repr(self.question.isCorrect))
-        else:
-            self.question.isCorrect = False
+            if request.args[self.keyId][0]== "true":
+                self.question.isCorrect = True 
+                log.debug("question " + repr(self.question.isCorrect))
+            else:
+                self.question.isCorrect = False        
         
         if self.feedbackId in request.args:
             self.question.feedback = request.args[self.feedbackId][0]
@@ -97,9 +98,11 @@ class TrueFalseElement(object):
         
         html = "<tr><td>"
         html += common.richTextArea(self.questionId, question)
-        html += "</td><td align = \"center\">\n"
-        html += common.checkbox(self.keyId, self.question.isCorrect)        
         html += "</td><td>\n"
+        html += common.option(self.keyId, self.question.isCorrect, "true") 
+        #html += "</td><td>\n"
+        html += common.option(self.keyId, not self.question.isCorrect, "false")
+        html += "</td><td></td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>\n"
         html += common.richTextArea(self.hintId, hint)
