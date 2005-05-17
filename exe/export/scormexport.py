@@ -70,9 +70,9 @@ class ScormPage(object):
         html  = common.docType()
         html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += "<head>\n"
+        html += "<title>"+_("eXe")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
-        html += "<title>"+_("eXe")+"</title>\n"
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
         html += "</style>\n"

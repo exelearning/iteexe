@@ -132,7 +132,7 @@ class Manifest(object):
         
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
         self.itemStr += "identifierref=\""+resId+"\">\n"
-        self.itemStr += "    <title>\""+str(page.node.title)+"\"</title>\n"
+        self.itemStr += "    <title>"+str(page.node.title)+"</title>\n"
         
         self.resStr += "<resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
