@@ -64,108 +64,91 @@ class TestOutline(unittest.TestCase):
             assert ('call', ('XHAddChildTreeItem', id_, title), {}) in self.client.calls, self.client.calls
             assert str(self.package.currentNode.title) == title, title
             assert self.package.currentNode.id == id_, id_
-        self.outline.handleAddChild(self.client, '2') # Home/root node
-        checkAdd('3', 'Topic')    # 1.0
-        self.outline.handleAddChild(self.client, '3')
-        checkAdd('4', 'Section')  # 1.0.0
-        self.outline.handleAddChild(self.client, '4')
-        checkAdd('5', 'Unit')     # 1.0.0.0
-        self.outline.handleAddChild(self.client, '5')
-        checkAdd('6', '?????')    # 1.0.0.0.0
+        self.outline.handleAddChild(self.client, '0') # Home/root node
+        checkAdd('1', 'Topic')    # 1.0
+        self.outline.handleAddChild(self.client, '1')
+        checkAdd('2', 'Section')  # 1.0.0
         self.outline.handleAddChild(self.client, '2')
-        checkAdd('7', 'Topic')    # 1.1
+        checkAdd('3', 'Unit')     # 1.0.0.0
+        self.outline.handleAddChild(self.client, '3')
+        checkAdd('4', '?????')    # 1.0.0.0.0
+        self.outline.handleAddChild(self.client, '0')
+        checkAdd('5', 'Topic')    # 1.1
+        self.outline.handleAddChild(self.client, '0')
+        checkAdd('6', 'Topic')    # 1.2
+        self.outline.handleAddChild(self.client, '1')
+        checkAdd('7', 'Section')  # 1.0.1
+        self.outline.handleAddChild(self.client, '1')
+        checkAdd('8', 'Section') # 1.0.2
         self.outline.handleAddChild(self.client, '2')
-        checkAdd('8', 'Topic')    # 1.2
-        self.outline.handleAddChild(self.client, '3')
-        checkAdd('9', 'Section')  # 1.0.1
-        self.outline.handleAddChild(self.client, '3')
-        checkAdd('10', 'Section') # 1.0.2
-        self.outline.handleAddChild(self.client, '4')
-        checkAdd('11', 'Unit') # 1.0.0.1
-        self.outline.handleAddChild(self.client, '4')
-        checkAdd('12', 'Unit') # 1.0.0.2
+        checkAdd('9', 'Unit') # 1.0.0.1
+        self.outline.handleAddChild(self.client, '2')
+        checkAdd('10', 'Unit') # 1.0.0.2
         # Check that we are parent and children attributes are bieng created properly
-        n12 = self.package.findNode('12')
-        n4 = self.package.findNode('4')
+        n12 = self.package.findNode('10')
+        n4 = self.package.findNode('2')
         assert n12.parent is n4, n12.parent
         assert n12 in n4.children
-        assert n4.parent.id == '3'
-        assert n4.parent.parent.id == '2'
+        assert n4.parent.id == '1'
+        assert n4.parent.parent.id == '0'
         assert n4.parent.parent.parent is None
         # Tree now looks like this
-        # 00
         # 01
-        # 02
-        #  |_03
-        #  |  |_04
-        #  |  |  |_05
-        #  |  |  |  |_06
-        #  |  |  |_11
-        #  |  |  |_12
-        #  |  |_09
-        #  |  |_10
-        #  |_07
-        #  |_08
+        #  |_02
+        #  |  |_03
+        #  |  |  |_04
+        #  |  |  |  |_05
+        #  |  |  |_09
+        #  |  |  |_10
+        #  |  |_07
+        #  |  |_08
+        #  |_05
+        #  |_06
         # Now do some deletion
         self.client.calls = []
         # Do nothing because confirm is false
-        self.outline.handleDelNode(self.client, 'false', '4') # Del 
+        self.outline.handleDelNode(self.client, 'false', '2') # Del 
         assert not self.client.calls
-        assert self.package.findNode('4')
-        # Do nothing because its the draft node
+        assert self.package.findNode('2')
+        # Do nothing because its the home node
         self.outline.handleDelNode(self.client, 'true', '0')
         assert not self.client.calls
         assert self.package.findNode('0')
-        # Do nothing because its the editor node
-        self.outline.handleDelNode(self.client, 'true', '1')
-        assert not self.client.calls
-        assert self.package.findNode('1')
-        # Do nothing because its the home node
-        self.outline.handleDelNode(self.client, 'true', '2')
-        assert not self.client.calls
-        assert self.package.findNode('2')
         # Now delete the selected node, should select its parent
         oldNode = self.package.currentNode
-        self.package.currentNode = self.package.findNode('5')
-        self.outline.handleDelNode(self.client, 'true', '5')
-        assert ('call', ('XHDelNode', '5'), {}) in self.client.calls, self.client.calls
-        assert self.package.currentNode.id == '4', self.package.currentNode.id
-        assert self.package.findNode('5') is None
-        assert self.package.findNode('6') is None
-        # Now wipe out a whole tree!
-        assert self.package.findNode('3')
-        assert self.package.findNode('4')
-        assert self.package.findNode('11')
-        assert self.package.findNode('12')
-        assert self.package.findNode('9')
-        assert self.package.findNode('10')
-        oldNode = self.package.currentNode
+        self.package.currentNode = self.package.findNode('3')
         self.outline.handleDelNode(self.client, 'true', '3')
         assert ('call', ('XHDelNode', '3'), {}) in self.client.calls, self.client.calls
-        # Check that all its children are gone
+        assert self.package.currentNode.id == '2', self.package.currentNode.id
         assert self.package.findNode('3') is None
         assert self.package.findNode('4') is None
-        assert self.package.findNode('11') is None
-        assert self.package.findNode('12') is None
+        # Now wipe out a whole tree!
+        assert self.package.findNode('1')
+        assert self.package.findNode('2')
+        assert self.package.findNode('9')
+        assert self.package.findNode('10')
+        assert self.package.findNode('7')
+        assert self.package.findNode('8')
+        oldNode = self.package.currentNode
+        self.outline.handleDelNode(self.client, 'true', '1')
+        assert ('call', ('XHDelNode', '1'), {}) in self.client.calls, self.client.calls
+        # Check that all its children are gone
+        assert self.package.findNode('1') is None
+        assert self.package.findNode('2') is None
         assert self.package.findNode('9') is None
         assert self.package.findNode('10') is None
+        assert self.package.findNode('7') is None
+        assert self.package.findNode('8') is None
         assert self.package.currentNode == oldNode, "Current node shouldn't have changed"
 
     def testRenNode(self):
         """Should be able to rename nodes"""
-        self.outline.handleRenNode(self.client, '0', 'Scratch Pad')
-        assert str(self.package.findNode('0').title) == 'Scratch Pad'
-        assert ('sendScript', ('XHRenNode("Scratch Pad")',), {}) in self.client.calls, self.client.calls
-        self.outline.handleRenNode(self.client, '1', 'Genesis')
-        assert str(self.package.findNode('1').title) == 'Genesis'
+#        self.outline.handleRenNode(self.client, '0', 'Scratch Pad')
+#        assert str(self.package.findNode('0').title) == 'Scratch Pad'
+#        assert ('sendScript', ('XHRenNode("Scratch Pad")',), {}) in self.client.calls, self.client.calls
+        self.outline.handleRenNode(self.client, '0', 'Genesis')
+        assert str(self.package.findNode('0').title) == 'Genesis'
         assert ('sendScript', ('XHRenNode("Genesis")',), {}) in self.client.calls, self.client.calls
-
-    def testAddChildDraft(self):
-        # Shuoldn't do anything for Draft object
-        oldNode = self.package.currentNode
-        self.outline.handleAddChild(self.client, '0')
-        assert not self.client.calls
-        assert oldNode is self.package.currentNode
 
 
 if __name__ == "__main__":

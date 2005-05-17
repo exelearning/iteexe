@@ -54,10 +54,10 @@ function serverId2TreeId(serverId) {
 
 function initWindow() {
     if (haveLoaded) {return}
-    // Select the Draft tree item
+    // Select the root tree item
     var tree = document.getElementById('outlineTree')
     var sel = tree.view.selection
-    var index = serverId2TreeId('0')  // The draft section is always id '0'
+    var index = serverId2TreeId('0')  // The root section is always id '0'
     var oldSelect = tree.getAttribute('onselect')
     // For some reason, onload is called whenever the form
     // in the iframe is refreshed. So to stop recursion, we
@@ -111,10 +111,10 @@ function currentOutlineId(index)
 
 // Confirms the deletion of the currently selected node.
 // Returns true or false for server
-// Basically ignores request when requesting to delete home node or draft node
+// Basically ignores request when requesting to delete home node 
 function confirmDelete() {
     var id = currentOutlineId()
-    if (id != '0' && id != '1') {
+    if (id != '0') {
         return confirm('Delete "' + currentOutlineLabel() + '" node and all its children. Are you sure?')
     } else {
         return 'false' 

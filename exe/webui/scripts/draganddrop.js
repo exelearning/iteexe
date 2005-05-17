@@ -77,12 +77,6 @@ function treeDragOver(event) {
     tree.treeBoxObject.getCellAt(event.pageX, event.pageY, row, col, child)
     // If they land on a treeitem node, make that node the new parent
     var parentNode = getOutlineItem(tree, row.value)
-    // Can't drop onto the draft node!
-    if (tree.view.getIndexOfItem(parentNode) == 0) { 
-        ses.canDrop = false
-    } else {
-        ses.canDrop = true
-    }
     // Update the feed back thing
     tree.treeBoxObject.onDragOver(event)
 }
@@ -93,9 +87,6 @@ function treeDragExit(event) {
     var ds = Components.classes["@mozilla.org/widget/dragservice;1"].getService(Components.interfaces.nsIDragService);
     var ses = ds.getCurrentSession()
     var tree = document.getElementById('outlineTree')
-    //tree.treeBoxObject.onDragExit(event)
-    ses.canDrop = true
-    if (ses) { ses.canDrop = 'true' } else { alert('No session') }
 }
 
 function treeDragDrop(event) {
@@ -130,7 +121,6 @@ function treeDragDrop(event) {
     // Do some sanity checking
     if ((sourceNode == parentItem) || (sourceNode == targetNode)) return;
     var parentItemId = parentItem.firstChild.getAttribute('_exe_nodeid')
-    if (parentItemId == '0') return; // Can't choose draft as parent
     if (sibling && (tree.view.getIndexOfItem(sibling) <= 1)) { return } // Can't drag to top level
     try { if ((parentItem.getElementsByTagName('treechildren')[0].firstChild == sourceNode) && before) { return } // Can't drag into same position
     } catch(e) { } // Ignore when parentItem has no treechildren node

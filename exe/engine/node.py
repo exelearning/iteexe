@@ -38,8 +38,6 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
 
     def __init__(self, package, parent=None, title=""):
         if parent:
-            assert parent is not package.draft, "Draft can't have child nodes"
-            assert parent is not package.editor, "Editor can't have child nodes"
             parent.children.append(self)
         self._package = package
         self._id      = package._regNewNode(self)

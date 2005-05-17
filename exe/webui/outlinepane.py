@@ -54,18 +54,14 @@ class OutlinePane(Renderable):
                 else:
                     log.error("changeNode cannot locate "+nodeId)
 
-            # The Draft node has an id of '0' and cannot be added to or deleted
-            elif (nodeId != p.draft.id and 
-                  request.args["action"][0] == "addChildNode"):
+            elif request.args["action"][0] == "addChildNode":
                 node = p.findNode(nodeId)
                 if node is not None:
                     p.currentNode = node.createChild()
                 else:
                     log.error("addChildNode cannot locate "+nodeId)
-            # Don't let them delete the Draft or Home nodes (also checked on
-            # client)
 
-            elif (nodeId not in (p.draft.id, p.root.id) and 
+            elif (nodeId != p.root.id and 
                   request.args["action"][0] == "deleteNode"):
                 node = p.findNode(nodeId)
                 if node is not None:
@@ -80,13 +76,9 @@ class OutlinePane(Renderable):
         """Called from client via xmlhttp. When the addChild button is called.
         Hooked up by authoringPage.py
         """
-        # Can't add a child to the draft node!
-        p = self.package
-        if parentNodeId in (p.draft.id, p.editor.id): 
-            return 
-        node = p.findNode(parentNodeId)
+        node = self.package.findNode(parentNodeId)
         if node is not None:
-            p.currentNode = newNode = node.createChild()
+            self.package.currentNode = newNode = node.createChild()
             client.call('XHAddChildTreeItem', newNode.id, str(newNode.title))
 
 
@@ -95,9 +87,9 @@ class OutlinePane(Renderable):
         'confirm' is a string. It is 'false' if the user or the gui has
         cancelled the deletion 'nodeId' is the nodeId
         """
-        if confirm == 'true' and nodeId not in ('0', '1', '2'):
+        if confirm == 'true':
             node = self.package.findNode(nodeId)
-            if node is not None:
+            if node is not None and node is not self.package.root:
                 # Actually remove the elements in the dom
                 client.call('XHDelNode', nodeId)
                 # Update our server version of the package
@@ -236,7 +228,6 @@ class OutlinePane(Renderable):
                'label="Outline" flex="1"/>',
                '        </treecols>',
                '        <treechildren>',)
-        xul += self.__renderNode(self.package.draft, 12)
         xul += self.__renderNode(self.package.root, 12)
         xul += ('       </treechildren>',
                 '    </tree>',

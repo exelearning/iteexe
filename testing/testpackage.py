@@ -66,8 +66,7 @@ class TestPackage(unittest.TestCase):
 
     def testNodeIds(self):
         package = self.packageStore.createPackage()
-        assert package._nextNodeId == 3, package._nextNodeId # Should be two after draft, root and editor are created
-        assert package.findNode(package.draft.id) is package.draft
+        assert package._nextNodeId == 1, package._nextNodeId
         assert package.findNode(package.root.id) is package.root
         newNode = Node(package, package.root)
         assert package.findNode('123') is None

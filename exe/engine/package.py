@@ -55,20 +55,12 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self.levelNames    = [_("Topic"), _("Section"), _("Unit")]
         self.name          = name
         self.filename      = '' # Empty if never saved/loaded
-        self.draft         = Node(self, None, _("Draft"))
-        self.editor        = Node(self, None, _("iDevice Editor"))
-        self.currentNode   = self.draft
         self.root          = Node(self, None, _("Home"))
+        self.currentNode   = self.root
         self.style         = "default"
         self.author        = ""
         self.description   = ""
-        introduction       = "Welcome to eXe<br/>"
-        introduction      += "To edit this text click on the pencil icon"
-        self.draft.addIdevice(FreeTextIdevice(introduction))
         self.isChanged     = 0
-        idevice            = GenericIdevice("", "", "", "", "")
-        idevice.parentNode = self.editor
-        self.editor.addIdevice(idevice)
         self.idevices      = []
         
     def getStateFor(self, jellier):
@@ -161,6 +153,18 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             for child in node.children:
                 superReg(child)
         superReg(self.root)
+
+    def upgradeToVersion2(self):
+        """Called to upgrade from 0.4 release"""
+        self.draft.delete()
+        self.editor.delete()
+        del self.__dict__["draft"]
+        del self.__dict__["editor"]
+        def renumberNode(node):
+            node.id -= 2
+            for child in node.children:
+                renumberNode(child)
+        renumberNode(self.root)
 
     def _regNewNode(self, node):
         """

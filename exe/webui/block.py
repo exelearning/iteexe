@@ -221,7 +221,6 @@ class Block(object):
 
         options  = [(_("---Move To---"), "")]
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
-        options += self.__getNodeOptions(self.idevice.parentNode.package.draft)
         options += self.__getNodeOptions(self.idevice.parentNode.package.root)
         html += common.select("move", self.id, options)
 
