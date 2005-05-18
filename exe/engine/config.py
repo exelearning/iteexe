@@ -147,6 +147,7 @@ class Config:
             self.port        = int(system.port)
             self.browserPath = system.browserPath
             self.dataDir     = system.dataDir
+            self.appDataDir  = system.appDataDir
         # If the dataDir points to some other dir, fix it
         if not os.path.isdir(self.dataDir):
             self.dataDir = tempfile.gettempdir()
