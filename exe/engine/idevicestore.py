@@ -109,7 +109,7 @@ class IdeviceStore:
         """
         genericPath = self.config.appDataDir + "/idevices/generic.data"
         if os.path.exists(genericPath):
-            fileIn = open(genericPath)
+            fileIn = open(genericPath, "rb")
             self.generic = persist.decodeObject(fileIn.read())
         else:
             self.createGeneric()
