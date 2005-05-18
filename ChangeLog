@@ -1,3 +1,74 @@
+2005-05-18 02:32  jenny
+
+	* exe/engine/config.py: Made it load appDataDir from the config file
+	  (MS)
+
+2005-05-18 02:03  djm
+
+	* exe/engine/idevicestore.py: fixed loading idevices on Windoze
+
+2005-05-17 04:03  brent
+
+	* exe/export/manifest.py, exe/export/scormexport.py: moved meta tag
+	  for content-type below title tag to fix Reload bug(?) and removed
+	  quotes around imsmanifest.xml file item title tags...dig?
+
+2005-05-17 00:37  djm
+
+	* exe/engine/node.py, exe/engine/package.py, exe/webui/block.py,
+	  exe/webui/outlinepane.py, exe/webui/scripts/draganddrop.js,
+	  exe/webui/scripts/mainpage.js, testing/testnode.py,
+	  testing/testpackage.py, testing/testxmlhttp.py: Got rid of draft
+	  and editor nodes
+
+2005-05-16 23:31  jenny
+
+	* exe/webui/truefalseblock.py, exe/webui/truefalseelement.py:
+	  modified truefalse idevice
+
+2005-05-16 21:44  jenny
+
+	* exe/engine/idevicestore.py, exe/engine/truefalseidevice.py,
+	  exe/export/websiteexport.py, exe/webui/blockfactory.py,
+	  exe/webui/common.py, exe/webui/multichoiceblock.py,
+	  exe/webui/scripts/common.js, exe/webui/truefalseblock.py,
+	  exe/webui/truefalseelement.py: added truefalse idevice
+
+2005-05-16 21:36  djm
+
+	* exe/application.py: Create package in launch, not preLaunch
+
+2005-05-16 04:01  jenny
+
+	* exe/engine/winconfig.py: Made it work on windows (MS)
+
+2005-05-16 03:44  matthew
+
+	* exe/application.py, exe/engine/config.py,
+	  exe/engine/configparser.py, exe/engine/linuxconfig.py,
+	  exe/engine/macconfig.py, exe/engine/winconfig.py,
+	  exe/webui/browser.py, exe/webui/mainpage.py,
+	  exe/webui/renderable.py, testing/test.conf, testing/testconfig.py,
+	  testing/testpackage.py, tools/dot.pylintrc: Made exe.conf be
+	  loaded from the appropriate place depending on the operating
+	  system
+
+2005-05-15 22:59  djm
+
+	* exe/export/manifest.py, exe/webui/common.py: Fix a couple of bugs:
+	  1- unmatched </item> in imsmanifest.xml 2- close button not
+	  showing in hint and instructions
+
+2005-05-15 22:59  matthew
+
+	* exe/engine/configparser.py, testing/testconfigparser.py: Now
+	  config parser does autowrite
+
+2005-05-15 10:27  djm
+
+	* ChangeLog, testing/runtests.py, testing/testexport.py: Fixed test
+	  for ScormExport
+
 2005-05-13 06:27  djm
 
 	* ChangeLog, exe/application.py, exe/engine/idevice.py,
