@@ -1,0 +1,109 @@
+# ===========================================================================
+# eXe 
+# Copyright 2004-2005, University of Auckland
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+"""
+TestOptionElement is responsible for a block of option.  Used by MultichoiceBlock
+"""
+
+import logging
+from exe.webui import common
+import gettext
+
+log = logging.getLogger(__name__)
+_   = gettext.gettext
+# ===========================================================================
+class TestoptionElement(object):
+    """
+    testoptionElement is responsible for a block of option.  Used by MultichoiceBlock
+    """
+    def __init__(self, index, question, option):
+        """
+        Initialize
+        """
+        self.index      = index
+        self.id         = str(index) + "q" + question.id        
+        self.question   = question
+        self.option     = option
+        self.answerId   = "optionAnswer"+ str(index) + "q" + question.id
+        self.keyId      = "key" + question.id        
+  
+        
+
+    def process(self, request):
+        """
+        Process arguments from the webserver.  Return any which apply to this 
+        element.
+        """
+        log.debug("process " + repr(request.args))
+        
+        if self.answerId in request.args:
+            self.option.answer = request.args[self.answerId][0]
+                        
+        if self.keyId in request.args:
+            if request.args[self.keyId][0] == self.id:
+                self.option.isCorrect = True 
+                log.debug("option " + repr(self.option.isCorrect))
+            else:
+                self.option.isCorrect = False
+            
+        if "action" in request.args and request.args["action"][0] == self.id:
+            self.question.options.remove(self.option)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string for editing this option element
+        """
+        answer   = self.option.answer
+        
+        answer = answer.replace("\r", "")
+        answer = answer.replace("\n", "\\n")
+        answer = answer.replace("'", "\\'")
+        answer = answer.replace("\"", "\\\"")
+        html = "<tr><td>"
+        html += common.richTextArea(self.answerId, answer)
+        html += "</td><td align = \"center\">\n"
+        html += common.option(self.keyId, self.option.isCorrect, self.id)        
+        html += "</td><td>\n"
+        html += common.submitImage(self.id, self.idevice.id, 
+                                   "stock-cancel.png",
+                                   _("Delete option"))
+        html += "</td></tr>\n"
+        
+        html += "</p>\n"
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing and previewing this option element
+        """
+        log.debug("renderView called")
+        self.option.answer = self.option.answer.replace("\r", "")
+        self.option.answer = self.option.answer.replace("\n", "\\n")
+
+        html  = '<tr><td>'
+        html += common.option(self.keyId, self.option.isCorrect, self.index)
+        html += '</td><td>\n'
+        html += self.option.answer + "</td></tr>\n"
+       
+        return html
+    
+   
+    
+# ===========================================================================
