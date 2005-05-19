@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+
+<window title="Dublin Core"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script>
+<![CDATA[
+
+function setText(textID)
+{
+  document.getElementById(textID).collapsed=false;
+}
+
+]]>
+</script>
+
+
+<groupbox>
+  <caption label="Dublin Core Metadata" />
+
+<vbox flex="1" style="overflow: auto" >
+
+   <hbox align="center">
+      <label style="width:10em" value="Title:" tooltiptext="a name given to the resource." />
+      <textbox id="dc:title" size="40" />
+   </hbox>
+  
+   <hbox align="center">
+      <label style="width:10em" value="Creator:" tooltiptext="an entity primarily responsible for making the content of the resource."/>
+      <textbox id="dc:creator" size="40" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="Subject (keywords):" tooltiptext="A topic of the content of the resource."/>
+      <textbox id="dc:subject" size="40" />
+      <button image="http://localhost:8081/images/info.png"
+       oncommand="setText('dc-subject');" />
+   </hbox>
+
+  <hbox flex="1" id="dc-subject" collapsed="true"> 
+        <groupbox style="width:32em;">   
+ 		<description>
+                 Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.
+                </description>
+	</groupbox>
+   </hbox>   
+
+
+   <hbox align="center">
+      <label style="width:10em" value="description:"  />
+      <textbox id="dc:descripton" multiline="true" rows="4" cols="38" /> 
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="publisher:"/>
+      <textbox id="dc:publisher" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="contributors:"  />
+      <textbox id="dc:contributor" multiline="true" rows="4" cols="38" /> 
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+   
+   <hbox align="center">
+      <label style="width:10em" value="Type:"/>
+      <textbox id="dc:type" value="text" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="Format:"/>
+      <textbox id="dc:format" readonly="true" value="html" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="Identifier:"/>
+      <textbox id="dc:identifier" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+    
+   <hbox align="center">
+      <label style="width:10em" value="Source:"/>
+      <textbox id="dc:source" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="Language:" tooltiptext="hello" />
+      <menulist label="Select Language">
+       <menupopup>
+          <menuitem label="select a language" />          
+          <menuitem label="Abkhazian; abk" value="abk" />
+          <menuitem label="Achinese; ace" value="ace" />
+          <menuitem label="Acoli; ach" value="ach" />
+          <menuitem label="Adangme; ada" value="ada" />
+          <menuitem label="Adyghe; ady" value="ady" />
+          <menuitem label="Afar; aar" value="aar" />
+          <menuitem label="Afrihili; afh" value="afh" />
+          <menuitem label="Afrikaans; afr" value="afr" />
+          <menuitem label="Afro-Asiatic (Other); afa" value="afa" />
+       </menupopup>
+     </menulist>
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+   
+   <hbox align="center">
+      <label style="width:10em" value="Relation:"/>
+      <textbox id="dc:relation" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+   
+   <hbox align="center">
+      <label style="width:10em" value="Coverage:"/>
+      <textbox id="dc:coverage" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+   <hbox align="center">
+      <label style="width:10em" value="Rights:"/>
+      <textbox id="dc:rights" size="40" />
+      <image src="http://localhost:8081/images/info.png" tooltiptext="" />
+   </hbox>
+
+</vbox>
+
+</groupbox>
+
+</window>
