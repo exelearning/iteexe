@@ -374,8 +374,10 @@ function toolsEditor() {
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
 
-// launch brents crazy m.e.t.a.d.a.t.a.e.d.i.t.o.r.!.!.!
+// launch brents crazy robot metadata editor and tag warehouse 
 // loads the metadata editor
+// of course i don't really know what to do after here ... but you get the idea right ;-)
+// i just make em look purty!
 
 function metadataEditor() {
 	var features = "width=450,height=700,status=yes,resizeable=yes,"+

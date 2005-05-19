@@ -123,7 +123,7 @@ u
    </hbox>
 
    <hbox align="center">
-      <label style="width:10em" value="Language:" tooltiptext="A language of the intellectual content of the resource" />
+      <label style="width:10em" value="Language:" tooltiptext="Select a language" />
       <menulist label="Select Language">
        <menupopup>
           <menuitem label="select a language" />          
