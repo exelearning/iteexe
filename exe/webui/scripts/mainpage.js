@@ -374,6 +374,15 @@ function toolsEditor() {
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
 
+// launch brents crazy m.e.t.a.d.a.t.a.e.d.i.t.o.r.!.!.!
+// loads the metadata editor
+
+function metadataEditor() {
+	var features = "width=450,height=700,status=yes,resizeable=yes,"+
+			"scrollbars=yes";
+	var metadataWin = window.open ("http://localhost:8081/templates/dublincore.xul", "metadata editor", features);}
+
+
 
 // Appends an iDevice
 // XH means that the func is actually called by the server over xmlhttp
