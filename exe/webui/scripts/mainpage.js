@@ -380,9 +380,10 @@ function toolsEditor() {
 // i just make em look purty!
 
 function metadataEditor() {
-	var features = "width=450,height=700,status=yes,resizeable=yes,"+
+	var features = "width=500,height=640,status=yes,resizeable=yes,"+
 			"scrollbars=yes";
-	var metadataWin = window.open ("http://localhost:8081/templates/dublincore.xul", "metadata editor", features);}
+	var metadataWin = window.open ("/templates/metadata.xul", 
+                                       "metadata editor", features);}
 
 
 

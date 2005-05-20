@@ -17,30 +17,30 @@ function setText(textID)
 </script>
 
 
-<groupbox>
+<groupbox flex="1" >
   <caption label="Dublin Core Metadata" />
 
 <vbox flex="1" style="overflow: auto" >
 
    <hbox align="center">
-      <label style="width:10em" value="Title:" tooltiptext="a name given to the resource" />
+      <label style="width:8em" value="Title:" tooltiptext="a name given to the resource" />
       <textbox id="dc:title" size="40" />
    </hbox>
   
    <hbox align="center">
-      <label style="width:10em" value="Creator:" tooltiptext="an entity primarily responsible for making the content of the resource"/>
+      <label style="width:8em" value="Creator:" tooltiptext="an entity primarily responsible for making the content of the resource"/>
       <textbox id="dc:creator" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:10em" value="Subject:" tooltiptext="A topic of the content of the resource"/>
+      <label style="width:8em" value="Subject:" tooltiptext="A topic of the content of the resource"/>
       <textbox id="dc:subject" size="40" />
-      <button image="http://localhost:8081/images/info.png"
-       oncommand="setText('dc-subject');" />
+      <image src="http://localhost:8081/images/info.png"
+       onclick="setText('dc-subject');" />
    </hbox>
 
-  <hbox flex="1" id="dc-subject" collapsed="true" style="padding-left:11em;"> 
-        <groupbox style="width:28em;">   
+  <hbox flex="1" id="dc-subject" collapsed="true" style="padding-left:9em;"> 
+        <groupbox style="width:20em;">   
  		<description>
                  Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.
                 </description>
@@ -49,29 +49,29 @@ function setText(textID)
 
 
    <hbox align="center">
-      <label style="width:10em" value="Description:" tooltiptext="An account of the content of the resource" />
+      <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource" />
       <textbox id="dc:descripton" multiline="true" rows="4" cols="38" /> 
    </hbox>
 
    <hbox align="center">
-      <label style="width:10em" value="Publisher:" tooltiptext="An entity responsible for making the resource available"/>
+      <label style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available"/>
       <textbox id="dc:publisher" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:10em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource" />
+      <label style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource" />
       <textbox id="dc:contributor" multiline="true" rows="4" cols="38" /> 
    </hbox>
    
    <hbox align="center">
-      <label style="width:10em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource" />
+      <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource" />
       <textbox id="dc:date" size="40" />
-      <button image="http://localhost:8081/images/info.png"
-       oncommand="setText('dc-date');" />
+      <image src="http://localhost:8081/images/info.png"
+       onclick="setText('dc-date');" />
    </hbox>
   
-   <hbox flex="1" id="dc-date" collapsed="true" style="padding-left:11em;"> 
-        <groupbox style="width:28em;">   
+   <hbox flex="1" id="dc-date" collapsed="true" style="padding-left:9em;"> 
+        <groupbox style="width:20em;">   
  		<description>
                Typically, Date will be associated with the creation or availability of the resource. Recommended best practice for encoding the date value is defined in a profile called <html:em>ISO 8601</html:em> <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a> and includes (among others) dates of the form YYYY-MM-DD. 
                 </description>
@@ -81,30 +81,30 @@ function setText(textID)
 
  
    <hbox align="center">
-      <label style="width:10em" value="Type:" tooltiptext="The nature or genre of the content of the resource"/>
+      <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource"/>
       <textbox id="dc:type" value="text" size="40" />
-      <button image="http://localhost:8081/images/info.png"
-       oncommand="setText('dc-type');" />
+      <image src="http://localhost:8081/images/info.png"
+       onclick="setText('dc-type');" />
 
    </hbox>
 
-   <hbox flex="1" id="dc-type" collapsed="true" style="padding-left:11em;"> 
-        <groupbox style="width:28em;">   
+   <hbox flex="1" id="dc-type" collapsed="true" style="padding-left:9em;"> 
+        <groupbox style="width:20em;">   
  		<description>Type includes terms describing general categories, functions, or genres, for content. Recommended best practice is to select a value from a controlled vocabulary, for example, the ??????????<html:br/> To describe the physical or digital manifestation of the resource, use the FORMAT element.
                </description>
 	</groupbox>
    </hbox>  
  
    <hbox align="center">
-      <label style="width:10em" value="Format:" tooltiptext="The physical or digital manifestation of the resource"/>
+      <label style="width:8em" value="Format:" tooltiptext="The physical or digital manifestation of the resource"/>
       <textbox id="dc:format" readonly="true" value="html" size="40" />
-       <button image="http://localhost:8081/images/info.png"
-       oncommand="setText('dc-format');" />
+       <image src="http://localhost:8081/images/info.png"
+       onclick="setText('dc-format');" />
 
    </hbox>
 
-   <hbox flex="1" id="dc-format" collapsed="true" style="padding-left:11em;"> 
-        <groupbox style="width:28em;">   
+   <hbox flex="1" id="dc-format" collapsed="true" style="padding-left:9em;"> 
+        <groupbox style="width:20em;">   
  		<description>Typically, Format may include the media-type or dimensions of the resource. Format may be used to identify the software, hardware, or other equipment needed to display or operate the resource. Examples of dimensions include size and duration. Recommended best practice is to select a value from a controlled vocabulary (for example, the list of Internet Media Types [MIME] defining computer media formats).
                </description>
 	</groupbox>
@@ -112,18 +112,18 @@ function setText(textID)
  
 
    <hbox align="center">
-      <label style="width:10em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context"/>
+      <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context"/>
       <textbox id="dc:identifier" size="40" />
    </hbox>
     
    <hbox align="center">
 u
-      <label style="width:10em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived" />
+      <label style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived" />
       <textbox id="dc:source" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:10em" value="Language:" tooltiptext="Select a language" />
+      <label style="width:8em" value="Language:" tooltiptext="Select a language" />
       <menulist label="Select Language">
        <menupopup>
           <menuitem label="select a language" />          
@@ -141,17 +141,17 @@ u
    </hbox>
    
    <hbox align="center">
-      <label style="width:10em" value="Relation:" tooltiptext="A reference to a related resource" />
+      <label style="width:8em" value="Relation:" tooltiptext="A reference to a related resource" />
       <textbox id="dc:relation" size="40" />
    </hbox>
    
    <hbox align="center">
-      <label style="width:10em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource" />
+      <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource" />
       <textbox id="dc:coverage" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:10em" value="Rights:" tooltiptext="Information about rights held in and over the resource" />
+      <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource" />
       <textbox id="dc:rights" size="40" />
    </hbox>
 
