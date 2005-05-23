@@ -38,6 +38,7 @@ from exe.webui.propertiespage import PropertiesPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from exe.engine.path          import path
+from exe.engine.package       import PackageError
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -91,6 +92,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
+        setUpHandler(self.handleAddResource, 'addResource')
         setUpHandler(self.handleExport, 'exportPackage')
         self.idevicePane.client = client
 
@@ -240,6 +242,17 @@ class MainPage(RenderableLivePage):
             self.error = True
             raise
             return
+
+    def handleAddResource(self, client, filename):
+        """Add a resource (image/sound/video/etc.) to the current package"""
+        # TODO: Use Davids api for adding images to self.package
+        try:
+            filename = path(filename)
+            storageName = self.package.addResource(filename)
+            url = '%s/%s' % (self.package.name, storageName)
+            client.alert('Resource Uploaded Successfully.\nAccess URL: %s' % url)
+        except PackageError, e:
+            client.alert('Uploading Resource failed:\n%s' % str(e))
 
     def handleExport(self, client, exportType, filename):
         """

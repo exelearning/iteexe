@@ -39,8 +39,8 @@ class Config:
 
     # Class attributes
     optionNames = {
-        'system': ('exePath', 'webDir', 'port',
-                   'dataDir', 'appDataDir', 'browserPath')
+        'system': ('webDir', 'port', 'dataDir', 
+                   'appDataDir', 'browserPath')
     }
 
     def __init__(self):

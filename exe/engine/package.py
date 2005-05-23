@@ -35,6 +35,9 @@ from exe.engine import persist
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
+class PackageError(Exception):
+    """An exception class for package errors"""
+
 # ===========================================================================
 class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
@@ -129,6 +132,23 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         newPackage.filename = filename # Store the original filename so file|save will work
         return newPackage
     load = staticmethod(load)
+
+    def addResource(self, filename):
+        """
+        Add an image/audio/video resource to the package.
+        Returns the last part of the url to access this resource
+        'filename' is a 'path' instance pointing to a local file where we can
+        load the resource from
+        Raises a 'PackageError' if it can't be imported
+        """
+        if not filename.exists():
+            raise PackageError('File %s does not exist' % filename)
+        if not filename.isfile():
+            raise PackageError('File %s is not a file' % filename)
+        # TODO: Check if there are any other resources already stored using this name
+        storageName = filename.basename()
+        # TODO: Actually store the resource in the package
+        return storageName
 
     def upgradeToVersion1(self):
         """Called to upgrade from 0.3 release"""

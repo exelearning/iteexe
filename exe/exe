@@ -23,8 +23,10 @@ The eXe main script
 """
 
 from exe.application import Application
-    
 
-if __name__ == "__main__":
+def main():
     application = Application()
     application.main()
+
+if __name__ == "__main__":
+    main()
