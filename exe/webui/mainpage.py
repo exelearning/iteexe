@@ -207,9 +207,7 @@ class MainPage(RenderableLivePage):
         oldName = self.package.name
         # If the script is not passing a filename to us,
         # Then use the last filename that the package was loaded from/saved to
-        if filename:
-            if not filename.lower().endswith('.elp'): filename += '.elp'
-        else:
+        if not filename:
             filename = self.package.filename
             assert (filename, 
                     ('Somehow save was called without a filename '

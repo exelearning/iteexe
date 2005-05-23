@@ -113,9 +113,6 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             raise AssertionError('No name passed when saving a new package')
         # Store our new filename for next file|save
         self.filename = filename
-        # Add the extension if its not already there
-        if not filename.lower().endswith('.elp'):
-            filename += '.elp'
         log.debug("Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
         zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)

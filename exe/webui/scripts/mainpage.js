@@ -314,6 +314,7 @@ function fileOpen2() {
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, "Select a File", nsIFilePicker.modeOpen);
     fp.appendFilter("eXe Package Files","*.elp");
+    fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
         nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
