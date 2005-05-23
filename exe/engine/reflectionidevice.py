@@ -39,7 +39,7 @@ class ReflectionIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         _("Reflection Questions"),
+                         _("Reflection"),
                          _("University of Auckland"), 
                          _("""Reflection is a teaching method often used to 
 connect theory to practice. Reflection tasks often provide learners with an 
