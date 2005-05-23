@@ -32,7 +32,7 @@ from exe.engine.path import path
 # Constants for directory name codes
 APPDATA = 0x001a
 COMMON_APPDATA = 0x0023
-MYDOCUMENTS = 0x000c # Code for c:\documents and settings\myuser\My Documents
+MYDOCUMENTS = 0x0005 # Code for c:\documents and settings\myuser\My Documents
 
 # ===========================================================================
 class WinConfig(Config):
