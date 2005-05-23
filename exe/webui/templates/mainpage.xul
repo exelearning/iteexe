@@ -14,13 +14,13 @@
     <script language="JavaScript" src="/scripts/mainpage.js"/>
     <keyset>
         <!-- Outline Tree Short cut keys -->
-        <key n:render="addChild" id="addChildKey" key="+"/>
-        <key n:render="delNode" id="delNodeKey" key="-"/>
-        <key n:render="renNode" id="renNodeKey" modifiers="control" key="r"/>
-        <key n:render="promote" id="promoteKey" key="+"/>
-        <key n:render="demote" id="demoteKey" key="-"/>
-        <key n:render="up" id="upKey" key="r"/>
-        <key n:render="down" id="downKey" key="r"/>
+        <key n:render="addChild" id="addChildKey"                     keycode="VK_INSERT"/>
+        <key n:render="delNode"  id="delNodeKey"                      keycode="VK_DELETE"/>
+        <key n:render="renNode"  id="renNodeKey"  modifiers="control" key="r"/>
+        <key n:render="promote"  id="promoteKey"  modifiers="control" keycode="VK_LEFT"/>
+        <key n:render="demote"   id="demoteKey"   modifiers="control" keycode="VK_RIGHT"/>
+        <key n:render="up"       id="upKey"       modifiers="control" key="u"/>
+        <key n:render="down"     id="downKey"     modifiers="control" key="d"/>
         <!-- File menu short cut keys -->
         <key id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
         <key id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
