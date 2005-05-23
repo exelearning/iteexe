@@ -75,7 +75,7 @@
                   <toolbar>
                       <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
                       <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
-                      <toolbarbutton n:render="renNode" key="renNodeKey" label="Rename"/>
+                      <toolbarbutton id="btnRename" n:render="renNode" key="renNodeKey" label="Rename"/>
                   </toolbar>
               </toolbox>
               <!-- This label is actually rendered as a tree -->

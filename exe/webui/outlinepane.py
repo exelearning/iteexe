@@ -222,6 +222,7 @@ class OutlinePane(Renderable):
                '          ondragenter="treeDragEnter(event)"',
                '          ondragover="treeDragOver(event)"',
                '          ondragexit="treeDragExit(event)"',
+               '''        ondblclick="eval(document.getElementById('btnRename').getAttribute('oncommand'))"''',
                '          ondragdrop="treeDragDrop(event)">',
                '        <treecols>',
                '            <treecol id="sectionCol" primary="true" '+

@@ -116,7 +116,7 @@ class MainPage(RenderableLivePage):
         rename node button and short cut key"""
         return ctx.tag(oncommand=handler(self.outlinePane.handleRenNode,
                        js('currentOutlineId()'),
-                       js('askNodeName()')))
+                       js('askNodeName()'), bubble=True))
 
 
     def render_prePath(self, ctx, data):
