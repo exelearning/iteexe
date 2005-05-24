@@ -126,12 +126,10 @@ Edit exe.conf
 # but because we're developing we'll edit the
 # config file to make it run from our projects directory
 # Insert these lines in the server section
-exe-dir = /myprojectsdir/exe/exe/webui
-web-dir = /myprojectsdir/exe/exe/webui
-browser-path = /mybindir/firefox
+webDir = /myprojectsdir/exe/exe/webui
+browserPath = /mybindir/firefox
 
 export PYTHONPATH=/myprojectsdir/exe  # The same place you checked it out to
 
-Run
+# Run
 ./exe
-
