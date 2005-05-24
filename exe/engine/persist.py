@@ -24,12 +24,38 @@ import logging
 import gettext
 
 import cStringIO
-from twisted.persisted.styles import doUpgrade
+from twisted.persisted.styles import Versioned, doUpgrade
 from twisted.spread  import jelly
 from twisted.spread  import banana
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
+
+class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
+    """
+    Base class for persistent classes
+    """
+    # List of variables to avoid persisting
+    nonpersistant = []
+
+    def getStateFor(self, jellier):
+        """
+        Call Versioned.__getstate__ to store
+        persistenceVersion etc...
+        """
+        return self.__getstate__()
+
+
+    def __getstate__(self):
+        """
+        Return which variables we should persist
+        """
+        toPersist = dict([(key, value) for key, value in self.__dict__.items()
+                          if key not in self.nonpersistant])
+
+        return Versioned.__getstate__(self, toPersist)
+
+
 
 
 def encodeObject(toEncode):

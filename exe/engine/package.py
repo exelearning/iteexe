@@ -25,12 +25,11 @@ import logging
 import gettext
 import os.path
 import zipfile 
-from twisted.spread  import jelly
-from twisted.persisted.styles import Versioned
+from path import path, TempDirPath
 from exe.engine.node import Node
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.genericidevice  import GenericIdevice
-from exe.engine import persist
+from exe.engine.persist import Persistable, encodeObject, decodeObject
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -39,14 +38,13 @@ class PackageError(Exception):
     """An exception class for package errors"""
 
 # ===========================================================================
-class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
+class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
     persistenceVersion = 1
-
-    filename = None
+    nonpersistant      = ['resourceDir']
 
     def __init__(self, name):
         """
@@ -54,10 +52,15 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         log.debug("init " + repr(name))
         self._nextNodeId   = 0
-        self._nodeIdDict   = {} # For looking up nodes by ids
+        # For looking up nodes by ids
+        self._nodeIdDict   = {} 
+
         self.levelNames    = [_("Topic"), _("Section"), _("Unit")]
         self.name          = name
-        self.filename      = '' # Empty if never saved/loaded
+
+        # Empty if never saved/loaded
+        self.filename      = '' 
+
         self.root          = Node(self, None, _("Home"))
         self.currentNode   = self.root
         self.style         = "default"
@@ -65,14 +68,10 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self.description   = ""
         self.isChanged     = 0
         self.idevices      = []
-        
-    def getStateFor(self, jellier):
-        """
-        Call Versioned.__getstate__ to store
-        persistenceVersion etc...
-        """
-        return self.__getstate__()
 
+        # Temporary directory to hold resources in
+        self.resourceDir = TempDirPath()
+        
 
     def findNode(self, nodeId):
         """
@@ -83,23 +82,27 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         node = self._nodeIdDict.get(nodeId)
         if node and node.package is self:
             return node
-        else: return None
+        else: 
+            return None
+
 
     def levelName(self, level):
-        """return the level name"""
-        
+        """
+        Return the level name
+        """
         if level < len(self.levelNames):
             return self.levelNames[level]
         else:
             return _("?????")
         
+
     def save(self, filename=None):
         """
         Save package to disk
         pass an optional filename
         """
         if filename:
-            # If we are bieng given a new filename...
+            # If we are being given a new filename...
             # Change our name to match our new filename
             name = os.path.split(filename)[1]
             self.name = os.path.splitext(name)[0]
@@ -111,24 +114,42 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
             raise AssertionError('No name passed when saving a new package')
+
         # Store our new filename for next file|save
         self.filename = filename
+
+        # Add the extension if its not already there
+        if not filename.lower().endswith('.elp'):
+            filename += '.elp'
+
         log.debug("Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
         zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
+        
         try:
-            zippedFile.writestr("content.data", persist.encodeObject(self))
+            for resourceFile in self.resourceDir.files():
+                zippedFile.write(resourceFile.normpath(), resourceFile.name)
+
+            zippedFile.writestr("content.data", encodeObject(self))
+
         finally:
             zippedFile.close()
 
+
     def load(filename):
-        """Load package from disk, returns a package"""
+        """
+        Load package from disk, returns a package
+        """
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
         toDecode = zippedFile.read("content.data")
-        newPackage = persist.decodeObject(toDecode)
-        newPackage.filename = filename # Store the original filename so file|save will work
+        newPackage = decodeObject(toDecode)
+        # Store the original filename so file|save will work
+        newPackage.filename = filename 
+        # Need to add a TempDirPath because it is a nonpersistant member
+        newPackage.resourceDir = TempDirPath()
         return newPackage
     load = staticmethod(load)
+
 
     def addResource(self, filename):
         """
@@ -147,16 +168,21 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         # TODO: Actually store the resource in the package
         return storageName
 
+
     def upgradeToVersion1(self):
-        """Called to upgrade from 0.3 release"""
+        """
+        Called to upgrade from 0.3 release
+        """
         self._nextNodeId = 0
         self._nodeIdDict = {}
+
         # Also upgrade all the nodes.
         # This needs to be done here so that draft gets id 0
         # If it's done in the nodes, the ids are assigned in reverse order
         self.draft._id = self._regNewNode(self.draft)
         self.draft._package = self
         self.editor = Node(self, None, _("iDevice Editor"))
+
         # Add a default idevice to the editor
         idevice            = GenericIdevice("", "", "", "", "")
         idevice.parentNode = self.editor
@@ -171,17 +197,6 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 superReg(child)
         superReg(self.root)
 
-    def upgradeToVersion2(self):
-        """Called to upgrade from 0.4 release"""
-        self.draft.delete()
-        self.editor.delete()
-        del self.__dict__["draft"]
-        del self.__dict__["editor"]
-        def renumberNode(node):
-            node.id -= 2
-            for child in node.children:
-                renumberNode(child)
-        renumberNode(self.root)
 
     def _regNewNode(self, node):
         """
@@ -193,7 +208,26 @@ class Package(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         self._nextNodeId += 1
         self._nodeIdDict[id_] = node
         return id_
-    
 
-        
+
+    def upgradeToVersion2(self):
+        """
+        Called to upgrade from 0.4 release
+        """
+        self.filename = ''
+        self.draft.delete()
+        self.editor.delete()
+        del self.__dict__["draft"]
+        del self.__dict__["editor"]
+        def renumberNode(node):
+            node.id -= 2
+            for child in node.children:
+                renumberNode(child)
+        renumberNode(self.root)
+    
 # ===========================================================================
+
+if __name__ == "__main__":
+    p = Package('trash')
+    p.save('ijkl.elp')
+    #p.load('ijkl.elp')
