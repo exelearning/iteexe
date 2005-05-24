@@ -106,30 +106,25 @@ Make sure Firefox is closed first.
 BUILDING FROM SOURCE
 ====================
 
-To build exe you'll need the following packages:
+To build exe you'll need to install the following packages:
 * python2.3 - http://www.python.org
 * Zope Interfaces - http://www.zope.org/Products/ZopeInterface
 * twisted2 - http://twistedmatrix.com (You need twisted core and twisted web)
- * needs patches/jelly.patch applied, see patches/jelly.readme
+ * needs patches/jelly.patch applied, see patches/jelly.readme (from the source tree)
 * nevow - http://nevow.com/
- * needs patches/livepage.patch applied, see patches/livepage.readme
+ * needs patches/livepage.patch applied, see patches/livepage.readme (from the source tree)
 * firefox - http://www.mozilla.org/products/firefox
 
 unzip the source tarball:
 tar xzvf exe-source-0.4.tgz
 
-To run from source:
+To run from source (on linux):
 cd exe
+./exe
 
-Edit exe.conf
-# exe by default runs from /usr/share/exe
-# but because we're developing we'll edit the
-# config file to make it run from our projects directory
-# Insert these lines in the server section
-webDir = /myprojectsdir/exe/exe/webui
-browserPath = /mybindir/firefox
-
-export PYTHONPATH=/myprojectsdir/exe  # The same place you checked it out to
+To run from source (on windows):
+cd exe
+c:\python23\python exe
 
 # Run
 ./exe
