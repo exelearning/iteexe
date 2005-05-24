@@ -31,16 +31,17 @@ class TestoptionElement(object):
     """
     testoptionElement is responsible for a block of option.  Used by MultichoiceBlock
     """
-    def __init__(self, index, question, option):
+    def __init__(self, index, question, questionId, option):
         """
         Initialize
         """
         self.index      = index
-        self.id         = str(index) + "q" + question.id        
+        self.id         = str(index) + "q" + questionId       
         self.question   = question
+        self.questionId = questionId
         self.option     = option
-        self.answerId   = "optionAnswer"+ str(index) + "q" + question.id
-        self.keyId      = "key" + question.id        
+        self.answerId   = "optionAnswer"+ str(index) + "q" + questionId
+        self.keyId      = "key" + questionId        
   
         
 
@@ -57,6 +58,7 @@ class TestoptionElement(object):
         if self.keyId in request.args:
             if request.args[self.keyId][0] == self.id:
                 self.option.isCorrect = True 
+                self.question.correctAns = self.index
                 log.debug("option " + repr(self.option.isCorrect))
             else:
                 self.option.isCorrect = False
@@ -80,7 +82,7 @@ class TestoptionElement(object):
         html += "</td><td align = \"center\">\n"
         html += common.option(self.keyId, self.option.isCorrect, self.id)        
         html += "</td><td>\n"
-        html += common.submitImage(self.id, self.idevice.id, 
+        html += common.submitImage(self.id, self.questionId, 
                                    "stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"
@@ -98,7 +100,7 @@ class TestoptionElement(object):
         self.option.answer = self.option.answer.replace("\n", "\\n")
 
         html  = '<tr><td>'
-        html += common.option(self.keyId, self.option.isCorrect, self.index)
+        html += common.option(self.keyId, 0, str(self.index))
         html += '</td><td>\n'
         html += self.option.answer + "</td></tr>\n"
        

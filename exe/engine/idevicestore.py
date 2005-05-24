@@ -90,6 +90,7 @@ class IdeviceStore:
         from exe.engine.reflectionidevice  import ReflectionIdevice
         from exe.engine.casestudyidevice   import CasestudyIdevice
         from exe.engine.truefalseidevice   import TrueFalseIdevice
+        from exe.engine.quiztestidevice    import QuizTestIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -101,6 +102,7 @@ class IdeviceStore:
                 
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
+        self.extended.append(QuizTestIdevice())
   
 
     def loadGeneric(self):

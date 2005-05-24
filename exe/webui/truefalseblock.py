@@ -76,7 +76,8 @@ class TrueFalseBlock(Block):
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Questions")
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
-        html += "</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),_("F"))
+        html += "</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),
+                                                                        _("F"))
         html += "</th><th>"
         html += common.elementInstruc("key"+self.id, self.keyInstruc)
         html += "</th><th>%s " % _("Feedback")

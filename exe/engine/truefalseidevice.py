@@ -62,9 +62,7 @@ class TrueFalseIdevice(Idevice):
         self.hintInstruc     = _("Typy the question's hint here.")
         self.questions         = []
         self.questionInstruc = _("Type the question stem.")
-        self.keyInstruc      = _("""To indicate the correct answer, t
-                                 ick the checkbox.""")
-        self.answerInstruc   = ""
+        self.keyInstruc      = ""
         self.feedbackInstruc = _("""Type in the feedback that you want the 
 student to see when selecting the particular question. If you don't complete this 
 box, eXe will automatically provide default feedback as follows: "Correct answer"

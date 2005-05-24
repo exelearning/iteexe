@@ -31,6 +31,7 @@ from exe.engine.reflectionidevice  import ReflectionIdevice
 from exe.engine.casestudyidevice   import CasestudyIdevice
 from exe.engine.newidevice         import NewIdevice
 from exe.engine.truefalseidevice   import TrueFalseIdevice
+from exe.engine.quiztestidevice    import QuizTestIdevice
 
 from exe.webui.freetextblock       import FreeTextBlock
 from exe.webui.genericblock        import GenericBlock
@@ -38,6 +39,7 @@ from exe.webui.multichoiceblock    import MultichoiceBlock
 from exe.webui.reflectionblock     import ReflectionBlock
 from exe.webui.casestudyblock      import CasestudyBlock
 from exe.webui.truefalseblock      import TrueFalseBlock
+from exe.webui.quiztestblock       import QuizTestBlock
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -57,6 +59,7 @@ class BlockFactory(object):
                            (GenericBlock,     NewIdevice),
                            (FreeTextBlock,    FreeTextIdevice),
                            (TrueFalseBlock,   TrueFalseIdevice),
+                           (QuizTestBlock,    QuizTestIdevice),
                            (CasestudyBlock,   CasestudyIdevice)]
         # Log the the registration has happened
         for blockType, ideviceType in self.blockTypes:

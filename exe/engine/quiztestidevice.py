@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-A multichoice Idevice is one built up from question and options
+A QuizTest Idevice is one built up from questions
 """
 
 import logging
@@ -55,12 +55,14 @@ class TestQuestion(jelly.Jellyable):
         """
         self.question = question
         self.options  = []
+        self.correctAns = -1
+        self.addOption()
         
     def addOption(self):
         """
         Add a new option to this iDevice. 
         """
-        self.questions.append(Option())
+        self.options.append(AnswerOption())
 
 
 
