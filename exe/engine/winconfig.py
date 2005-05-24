@@ -33,6 +33,7 @@ from exe.engine.path import path
 APPDATA = 0x001a
 COMMON_APPDATA = 0x0023
 MYDOCUMENTS = 0x0005 # Code for c:\documents and settings\myuser\My Documents
+PROGRAMFILES = 0x0026
 
 # ===========================================================================
 class WinConfig(Config):
@@ -45,9 +46,10 @@ class WinConfig(Config):
         """Sets the default values
         for windows"""
         exeDir = self.exePath.dirname()
-        if ("Mozilla Firefox" in os.listdir(exeDir) and 
-            "firefox.exe" in os.listdir(exeDir + "\\Mozilla Firefox")):
-            self.browserPath = exeDir + "\\Mozilla Firefox\\firefox"
+        self.browserPath = exeDir / r"\Mozilla Firefox\firefox.exe"
+        if not self.browserPath.isfile():
+            programFiles = path(self.__getWinFolder(PROGRAMFILES))
+            self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
         self.dataDir = self.__getWinFolder(MYDOCUMENTS)
         self.appDataDir = self.dataDir
 

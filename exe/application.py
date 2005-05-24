@@ -23,7 +23,6 @@ The Main Application Object
 """
 
 import os
-import os.path
 import sys
 from getopt import getopt, GetoptError
 from exe.engine.config       import Config

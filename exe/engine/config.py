@@ -68,6 +68,12 @@ class Config:
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
+        # Try to make the defaults a little intelligent
+        # Under devel trees, webui is the default webdir
+        self.webDir = path(self.webDir)
+        if not (self.webDir/'scripts').isdir() \
+           and (self.webDir/'webui').isdir():
+            self.webDir /= 'webui'
         # Find where the config file will be saved
         self.__setConfigPath()
         # Fill in any undefined config options with our defaults
