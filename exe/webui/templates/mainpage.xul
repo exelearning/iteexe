@@ -62,9 +62,13 @@
               <menupopup id="styles-popup" n:render="stylePane">
               </menupopup>
             </menu>
-            <menuitem id="refresh-menu" label="Refresh" accesskey="r" oncommand="window.location = window.location">
-            </menuitem>
-          </menubar>
+            <menuitem id="refresh-menu" label="Refresh" accesskey="r" oncommand="window.location = window.location"></menuitem>
+           <menu id="help-menu" label="Help" accesskey="h">
+              <menupopup id="help-popup">
+                <menuitem label="About" oncommand="aboutPage()"/>
+              </menupopup>
+            </menu>
+         </menubar>
         </toolbox>
         <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>

@@ -62,6 +62,7 @@ class WebServer:
         self.root.putChild("style",   static.File(webDir+"/style"))
         self.root.putChild("editor",  self.editor)
         self.root.putChild("templates",static.File(webDir+"/templates"))
+        self.root.putChild("docs",static.File(webDir+"/docs"))
 
         try:
             reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),

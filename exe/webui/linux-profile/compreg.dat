@@ -4,27 +4,26 @@ Generated File. Do not edit.
 Version,0,5
 
 [COMPONENTS]
-rel:libxpinstall.so,1109097960000,libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom_compat.so libmozz.so
-rel:nsSetDefaultBrowser.js,1109097960000
-rel:libnkgnomevfs.so,1109097960000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgnomevfs-2.so libbonobo-activation.so libORBit-2.so libxml2.so libz.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so
-rel:nsDictionary.js,1109097960000
-rel:nsExtensionManager.js,1109097960000
-rel:libinspector.so,1109097960000,libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so
-rel:inspector-cmdline.js,1109097960000
-rel:nsXmlRpcClient.js,1109097960000
-rel:nsUpdateService.js,1109097960000
-rel:nsProxyAutoConfig.js,1109097960000
-rel:nsInterfaceInfoToIDL.js,1109097960000
-rel:libnegotiateauth.so,1109097960000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgssapi_krb5.so
-rel:libjsd.so,1109097960000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so
-rel:nsFilePicker.js,1109097960000
-rel:nsCloseAllWindows.js,1109097960000
-rel:jsconsole-clhandler.js,1109097960000
-rel:nsHelperAppDlg.js,1109097960000
-rel:libqfaservices.so,1109097960000
-rel:libmozgnome.so,1109097960000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgconf-2.so libORBit-2.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so libgnomevfs-2.so libbonobo-activation.so libORBit-2.so libxml2.so libz.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so libgnome-2.so libbonobo-2.so libgconf-2.so libgnomevfs-2.so libbonobo-activation.so libORBit-2.so libxml2.so libz.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so
-rel:libjar50.so,1109097960000
-rel:nsSidebar.js,1109097960000
+rel:libjar50.so,1109316600000
+rel:nsSetDefaultBrowser.js,1109316600000
+rel:libnkgnomevfs.so,1109316600000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgnomevfs-2.so libbonobo-activation.so libORBit-2.so libxml2.so libz.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so
+rel:nsDictionary.js,1109316600000
+rel:nsExtensionManager.js,1109316600000
+rel:libinspector.so,1109316600000,libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so
+rel:inspector-cmdline.js,1109316600000
+rel:nsXmlRpcClient.js,1109316600000
+rel:nsUpdateService.js,1109316600000
+rel:libxpinstall.so,1109316600000,libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom_compat.so libmozz.so
+rel:nsProxyAutoConfig.js,1109316600000
+rel:nsInterfaceInfoToIDL.js,1109316600000
+rel:libnegotiateauth.so,1109316600000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgssapi_krb5.so
+rel:libjsd.so,1109316600000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so
+rel:nsFilePicker.js,1109316600000
+rel:jsconsole-clhandler.js,1109316600000
+rel:nsCloseAllWindows.js,1109316600000
+rel:libmozgnome.so,1109316600000,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgconf-2.so libORBit-2.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so libgnomevfs-2.so libbonobo-activation.so libORBit-2.so libxml2.so libz.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so libgnome-2.so libbonobo-2.so libgconf-2.so libgnomevfs-2.so libbonobo-activation.so libORBit-2.so libxml2.so libz.so libm.so liblinc.so libgmodule-2.0.so libdl.so libgobject-2.0.so libgthread-2.0.so libpthread.so libglib-2.0.so
+rel:nsHelperAppDlg.js,1109316600000
+rel:nsSidebar.js,1109316600000
 ,0,libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom_compat.so libmozjpeg.so libmozpng.so libmozz.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libgtk-x11-2.0.so libgdk-x11-2.0.so libatk-1.0.so libgdk_pixbuf-2.0.so libm.so libpangoxft-1.0.so libpangox-1.0.so libpango-1.0.so libgobject-2.0.so libgmodule-2.0.so libdl.so libglib-2.0.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libgkgfx.so libxpcom_compat.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgtk-x11-2.0.so libgdk-x11-2.0.so libatk-1.0.so libgdk_pixbuf-2.0.so libm.so libpangoxft-1.0.so libpangox-1.0.so libpango-1.0.so libgobject-2.0.so libgmodule-2.0.so libdl.so libglib-2.0.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozz.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libX11.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libsmime3.so libssl3.so libnss3.so libsoftokn3.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libmozz.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libjsj.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgtk-x11-2.0.so libgdk-x11-2.0.so libatk-1.0.so libgdk_pixbuf-2.0.so libm.so libpangoxft-1.0.so libpangox-1.0.so libpango-1.0.so libgobject-2.0.so libgmodule-2.0.so libdl.so libglib-2.0.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgtk-x11-2.0.so libgdk-x11-2.0.so libatk-1.0.so libgdk_pixbuf-2.0.so libm.so libpangoxft-1.0.so libpangox-1.0.so libpango-1.0.so libgobject-2.0.so libgmodule-2.0.so libdl.so libglib-2.0.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgkgfx.so libgtkxtbin.so libX11.so libgtk-x11-2.0.so libgdk-x11-2.0.so libatk-1.0.so libgdk_pixbuf-2.0.so libm.so libpangoxft-1.0.so libpangox-1.0.so libpango-1.0.so libgobject-2.0.so libgmodule-2.0.so libdl.so libglib-2.0.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozz.so libmozjs.so libxpcom.so libmozjs.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libgkgfx.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozz.so libmozjs.so libxpcom.so libplds4.so libplc4.so libnspr4.so libpthread.so libdl.so libmozjs.so libgtkxtbin.so libXt.so libgtk-x11-2.0.so libgdk-x11-2.0.so libatk-1.0.so libgdk_pixbuf-2.0.so libm.so libpangoxft-1.0.so libpangox-1.0.so libpango-1.0.so libgobject-2.0.so libgmodule-2.0.so libdl.so libglib-2.0.so libX11.so
 
 [CLASSIDS]
@@ -333,7 +332,6 @@ rel:nsSidebar.js,1109097960000
 {fb5c1775-1bbd-4b9c-abb0-ae7acd29e87e},,,,rel:libinspector.so
 {87d21ec3-539d-11d4-9a59-00104bdf5339},,application/x-mozilla-static,,nsWebServicesModule
 {ba615198-1dfa-11d3-b3bf-00805f8a6670},,application/x-mozilla-static,,nsUConvModule
-{2e759801-6ac0-11d3-a02d-006008d20c70},,,,rel:libqfaservices.so
 {62b778a6-bce3-456b-8c31-2865fbb68c91},@mozilla.org/network/idn-service;1,application/x-mozilla-static,nsIDNService,necko_core_and_primary_protocols
 {9416bfb3-1f93-11d3-b3bf-00805f8a6670},,application/x-mozilla-static,,nsUConvModule
 {6030f7ef-32ed-46a7-9a63-6a5d3f90445f},,application/x-mozilla-static,,nsLayoutModule
@@ -1188,7 +1186,6 @@ rel:nsSidebar.js,1109097960000
 @mozilla.org/intl/unicode/decoder;1?charset=x-mac-gurmukhi,{6803cace-1e3b-11d5-a145-005004832142}
 @mozilla.org/intl/unicode/encoder;1?charset=windows-1250,{7b8556aa-ec79-11d2-8aac-00600811a836}
 @mozilla.org/intl/unicode/decoder;1?charset=ISO-8859-16,{a0f827e1-8ab6-11d5-a14b-005004832142}
-@netscape.com/fullsoft/qfa;1,{2e759801-6ac0-11d3-a02d-006008d20c70}
 @mozilla.org/layout/htmlfragmentsink;2,{13111d00-ce81-11d6-8082-ecf3665af67c}
 @mozilla.org/intl/unicode/decoder;1?charset=ISO-8859-2,{7c657d11-ec5e-11d2-8aac-00600811a836}
 @mozilla.org/image/decoder;2?type=image/bmp,{78c61626-4d1f-4843-9364-4652d98ff6e1}
@@ -1627,7 +1624,7 @@ JavaScript global constructor,SOAPPropertyBagMutator,@mozilla.org/xmlextras/soap
 JavaScript global constructor,InstallVersion,@mozilla.org/xpinstall/installversion;1
 JavaScript global constructor,Option,@mozilla.org/content/element/html;1?name=option
 uconv-charset-titles,chrome://global/locale/charsetTitles.properties,
-component-loader,text/javascript,@mozilla.org/moz/jsloader;1
+parser-service-category,Meta Charset Service,@mozilla.org/intl/metacharset;1
 JavaScript DOM class,XPathEvaluator,@mozilla.org/transformiix-domci-extender;1
 JavaScript DOM class,XPointerResult,@mozilla.org/xmlextras-domci-extender;1
 JavaScript DOM class,XPathResult,@mozilla.org/transformiix-domci-extender;1
@@ -1655,6 +1652,7 @@ charset-detectors,ja_parallel_state_machine,@mozilla.org/intl/charsetdetect;1?ty
 charset-detectors,ukprob,@mozilla.org/intl/charsetdetect;1?type=ukprob
 JavaScript global property,InstallTrigger,@mozilla.org/xpinstall/installtrigger;1
 JavaScript global property,sidebar,@mozilla.org/sidebar;1
+http-startup-category,Content UserAgent Setter,@mozilla.org/content/http-startup;1
 passwordmanager,Password Manager,@mozilla.org/passwordmanager;1
 uconv-charset-data,resource://gre/res/charsetData.properties,
 JavaScript DOM interface,nsIXMLHttpRequest,{7b3b3c62-9d53-4abc-bc89-c33ce78f439f}
@@ -1751,17 +1749,15 @@ Charset Decoders,x-u-escaped,
 Charset Decoders,windows-1254,
 Charset Decoders,IBM855,
 Charset Decoders,x-viet-vps,
-http-startup-category,Content UserAgent Setter,@mozilla.org/content/http-startup;1
-parser-service-category,Meta Charset Service,@mozilla.org/intl/metacharset;1
-app-startup,Script Security Manager,service,@mozilla.org/scriptsecuritymanager;1
-app-startup,SystemPref Module,@mozilla.org/system-preferences;1
-app-startup,Netscape Qfa Component,service,@netscape.com/fullsoft/qfa;1
-command-line-argument-handlers,jsconsole command line handler,@mozilla.org/commandlinehandler/general-startup;1?type=jsconsole
-command-line-argument-handlers,inspector command line handler,@mozilla.org/commandlinehandler/general-startup;1?type=inspector
-command-line-argument-handlers,Editor Startup Handler,@mozilla.org/commandlinehandler/general-startup;1?type=editor
-command-line-argument-handlers,Browser Startup Handler,@mozilla.org/commandlinehandler/general-startup;1?type=browser
 JavaScript global constructor prototype alias,Image,HTMLImageElement
 JavaScript global constructor prototype alias,Option,HTMLOptionElement
+content-sniffing-services,@mozilla.org/image/loader;1,@mozilla.org/image/loader;1
+command-line-argument-handlers,jsconsole command line handler,@mozilla.org/commandlinehandler/general-startup;1?type=jsconsole
+command-line-argument-handlers,Editor Startup Handler,@mozilla.org/commandlinehandler/general-startup;1?type=editor
+command-line-argument-handlers,Browser Startup Handler,@mozilla.org/commandlinehandler/general-startup;1?type=browser
+command-line-argument-handlers,inspector command line handler,@mozilla.org/commandlinehandler/general-startup;1?type=inspector
+app-startup,SystemPref Module,@mozilla.org/system-preferences;1
+app-startup,Script Security Manager,service,@mozilla.org/scriptsecuritymanager;1
 Gecko-Content-Viewers,text/plain,@mozilla.org/content/document-loader-factory;1
 Gecko-Content-Viewers,application/http-index-format,@mozilla.org/xpfe/http-index-format-factory-constructor
 Gecko-Content-Viewers,text/rdf,@mozilla.org/content/document-loader-factory;1
@@ -1786,7 +1782,7 @@ Gecko-Content-Viewers,application/vnd.mozilla.xul+xml,@mozilla.org/content/docum
 Gecko-Content-Viewers,text/xml,@mozilla.org/content/document-loader-factory;1
 Gecko-Content-Viewers,application/xml,@mozilla.org/content/document-loader-factory;1
 Gecko-Content-Viewers,image/xbm,@mozilla.org/content/document-loader-factory;1
-content-sniffing-services,@mozilla.org/image/loader;1,@mozilla.org/image/loader;1
+component-loader,text/javascript,@mozilla.org/moz/jsloader;1
 external-uricontentlisteners,application/x-x509-user-cert,@mozilla.org/uriloader/psm-external-content-listener;1
 external-uricontentlisteners,application/x-x509-email-cert,@mozilla.org/uriloader/psm-external-content-listener;1
 external-uricontentlisteners,application/x-x509-crl,@mozilla.org/uriloader/psm-external-content-listener;1

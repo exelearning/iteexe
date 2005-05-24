@@ -11,7 +11,7 @@
 
 user_pref("browser.search.selectedEngine", "Google");
 user_pref("browser.shell.checkDefaultBrowser", false);
-user_pref("browser.startup.homepage_override.mstone", "rv:1.7.7");
+user_pref("browser.startup.homepage_override.mstone", "rv:1.7.6");
 user_pref("capability.principal.codebase.p0.granted", "UniversalXPConnect");
 user_pref("capability.principal.codebase.p0.id", "http://localhost:8081");
 user_pref("capability.principal.codebase.p1.granted", "UniversalXPConnect");

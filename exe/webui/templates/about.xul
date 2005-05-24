@@ -14,13 +14,13 @@
   <deck id="modes" flex="1">
     <vbox flex="1" id="clientBox">
       <label id="version" value="eXe Version 0.4"/>
-      <label value="$Revision$" />
+      <label style="text-align: center;" value="$Revision$" />
       <description id="copyright">Copyright University of Auckland, 2005.<html:br/>
 	
 
       </description>
       <vbox id="detailsBox" align="center" flex="1">
-        <iframe id="content-body" src="/docs/credits.xhtml" width="280px" flex="1"/>
+        <iframe id="creditsIframe" src="/docs/credits.xhtml" width="280px" flex="1"/>
       </vbox>
     </vbox>
   </deck>

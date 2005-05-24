@@ -392,8 +392,8 @@ function toolsEditor() {
 
 // launch brents crazy robot metadata editor and tag warehouse 
 // loads the metadata editor
-// of course i don't really know what to do after here ... but you get the idea right ;-)
-// i just make em look purty!
+// of course i don't really know what to do after here ...
+// but you get the idea right ;-) i just make em look purty!
 
 function metadataEditor() {
 	var features = "width=500,height=640,status=yes,resizeable=yes,"+
@@ -401,7 +401,11 @@ function metadataEditor() {
 	var metadataWin = window.open ("/templates/metadata.xul", 
                                        "metadata editor", features);}
 
+// load the About page
 
+function aboutPage() {
+	var features = "width=300,height=400,status=no,resizable=no";
+	var aboutWin = window.open ("/templates/about.xul", "About", features);}
 
 // Appends an iDevice
 // XH means that the func is actually called by the server over xmlhttp
