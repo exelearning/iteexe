@@ -47,7 +47,8 @@ class TestquestionElement(object):
         self.keyId      = "key" + self.id
         i = 0
         for option in question.options:
-            self.options.append(TestoptionElement(i, question, self.id, option))
+            self.options.append(TestoptionElement(i, question, self.id, 
+                                                  option, idevice))
             i += 1
 
     def process(self, request):
@@ -62,7 +63,11 @@ class TestquestionElement(object):
         if ("addOption"+str(self.id)) in request.args: 
             self.question.addOption()
             self.idevice.edit = True
+            
+        if "action" in request.args and request.args["action"][0] == self.id:
+            self.idevice.questions.remove(self.question)
 
+        self.question.userAns = -1
         for element in self.options:
             element.process(request)
 
@@ -78,6 +83,9 @@ class TestquestionElement(object):
         
         html  = "<div class=\"iDevice\">\n"
         html += "<b>" + _("Question:") + " </b>"   
+        html += common.submitImage(self.id, self.idevice.id, 
+                                   "stock-cancel.png",
+                                   _("Delete Question"))
         html += common.richTextArea("question"+self.id, question)
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
@@ -101,20 +109,13 @@ class TestquestionElement(object):
         """
         Returns an XHTML string for viewing this block
         """
-        #html  = '<script language="JavaScript" src="common.js"></script>\n'
-        #html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
-        #html += "<div class=\"iDevice\">\n"
-        #html += "<img class=\"iDevice_icon\" "
-        #html += "src=\"multichoice.gif\" />\n"
-        #html += "<span class=\"iDeviceTitle\">"       
-        #html += self.idevice.title+"</span><br/>\n"
+  
         html  = "<b>" + self.question.question +"</b><br/>\n"
         html += "<table>"
         for element in self.options:
             html += element.renderView()      
         html += "</table>"   
         
-        #html += "</div>\n"
 
         return html
     
@@ -123,19 +124,13 @@ class TestquestionElement(object):
         """
         Returns an XHTML string for previewing this block
         """
-        #html  = "<div class=\"iDevice\" "
-        #html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        #html += "<img class=\"iDevice_icon\" "
-        #html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
-        #html += "<span class=\"iDeviceTitle\">"       
-        #html += self.idevice.title+"</span><br/>\n"
+       
         html  = "<b>" + self.question.question +"</b><br/>\n"
         html += "<table>"
         for element in self.options:
             html += element.renderView()      
         html += "</table>"                                                                    
-        #html += self.renderViewButtons()
-       # html += "</div>\n"
+
 
         return html
     
