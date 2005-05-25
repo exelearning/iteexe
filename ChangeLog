@@ -1,3 +1,159 @@
+2005-05-25 08:41  jenny
+
+	* exe/engine/quiztestidevice.py, exe/webui/quiztestblock.py,
+	  exe/webui/testoptionelement.py, exe/webui/testquestionelement.py:
+	  modified QuizTest idevice.
+
+2005-05-25 06:11  matthew
+
+	* exe/engine/winconfig.py: Fixed blowup when no install is found
+
+2005-05-24 22:47  jenny
+
+	* exe/webui/quizTestblock.py: rename quizTestblock.py to
+	  quiztestblock.py
+
+2005-05-24 05:23  djm
+
+	* exe/engine/package.py, exe/engine/persist.py: Change package to
+	  have a resourcesDir member which is not persisted (changes to
+	  persisted module too)
+
+2005-05-24 04:01  jenny
+
+	* exe/engine/idevicestore.py, exe/engine/quiztestidevice.py,
+	  exe/engine/truefalseidevice.py, exe/webui/blockfactory.py,
+	  exe/webui/quiztestblock.py, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py, exe/webui/truefalseblock.py:
+	  added QuizTest idevice.
+
+2005-05-24 03:25  matthew
+
+	* README: updated readme
+
+2005-05-24 02:56  matthew
+
+	* exe/application.py, exe/engine/config.py,
+	  exe/engine/linuxconfig.py, exe/engine/winconfig.py, exe/exe: Made
+	  it so new developers don't need to create a config file or set
+	  PYTHONPATH.
+
+2005-05-24 01:44  brent
+
+	* exe/webui/css/aboutDialog.css,
+	  exe/webui/docs/W3C-NOTE-datetime.html,
+	  exe/webui/docs/credits.xhtml, exe/webui/docs/statusimg.gif,
+	  exe/webui/docs/w3c_home.png, exe/webui/images/exe_logo.png,
+	  exe/webui/linux-profile/Cache/_CACHE_001_,
+	  exe/webui/linux-profile/Cache/_CACHE_002_,
+	  exe/webui/linux-profile/Cache/_CACHE_MAP_,
+	  exe/webui/linux-profile/XUL.mfasl,
+	  exe/webui/linux-profile/compatibility.ini,
+	  exe/webui/linux-profile/compreg.dat,
+	  exe/webui/linux-profile/history.dat,
+	  exe/webui/linux-profile/localstore.rdf,
+	  exe/webui/linux-profile/prefs.js,
+	  exe/webui/linux-profile/xpti.dat, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/about.xul, exe/webui/templates/mainpage.xul,
+	  exe/webui/webserver.py: about dialog files
+
+2005-05-24 01:40  brent
+
+	* exe/webui/docs/W3C-NOTE-datetime_files: Removed the
+	  W3C-NOTE-datetime_files directory
+
+2005-05-24 01:20  brent
+
+	* exe/webui/templates/about.xul: initial checkin of about dialog
+
+2005-05-24 00:04  matthew
+
+	* README: Updated
+
+2005-05-23 23:50  matthew
+
+	* exe/webui/mainpage.py, exe/webui/outlinepane.py,
+	  exe/webui/templates/mainpage.xul: Issue: 69 - Made it so you can
+	  double click to rename a node
+
+2005-05-23 23:24  matthew
+
+	* exe/engine/package.py, exe/webui/mainpage.py,
+	  exe/webui/scripts/mainpage.js: Made it not add the extension to
+	  files when they are saved in linux (and maybe on mac). This solves
+	  the prob of having files bieng overwritten without warning by eg.
+	  saving 'test.elp' then 'test', the latter used to overwrite the
+	  former. Also changed the open dialog to have an 'all files' option
+	  on it.
+
+2005-05-23 23:18  matthew
+
+	* exe/engine/config.py, exe/engine/package.py, exe/exe,
+	  exe/webui/mainpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul: Removed exePath from bieng
+	  stored in config file Added start of uploading image/audio/etc.
+	  files into package
+
+2005-05-23 05:50  matthew
+
+	* exe/webui/browser.py: Made it look for the profiles in the webdir
+	  for that's where they are indeed installed (at least on windows
+	  and when running from source)
+
+2005-05-23 05:26  matthew
+
+	* exe/engine/winconfig.py: Made it able to find my documents
+
+2005-05-23 01:36  jenny
+
+	* exe/engine/reflectionidevice.py: Change "reflection questions" to
+	  "reflection", fixed issue #075.
+
+2005-05-23 00:10  matthew
+
+	* exe/webui/templates/mainpage.xul: Changed shortcut keys
+
+2005-05-20 07:37  brent
+
+	* exe/webui/templates/metadata.xul: forgot to add this file.
+
+2005-05-20 04:13  brent
+
+	* exe/webui/scripts/mainpage.js, exe/webui/templates/dublincore.xul,
+	  exe/webui/webserver.py: take me to your metadata ...
+
+2005-05-19 10:30  brent
+
+	* exe/webui/scripts/mainpage.js, exe/webui/templates/dublincore.xul:
+	  added medadataEditor function to mainpage.js .. need help.
+
+2005-05-19 09:03  brent
+
+	* exe/webui/docs, exe/webui/docs/W3C-NOTE-datetime.html,
+	  exe/webui/docs/W3C-NOTE-datetime_files,
+	  exe/webui/docs/W3C-NOTE-datetime_files/statusimg.gif,
+	  exe/webui/docs/W3C-NOTE-datetime_files/w3c_home.png,
+	  exe/webui/scripts/mainpage.js, exe/webui/templates/dublincore.xul,
+	  exe/webui/templates/mainpage.xul: added docs directory for help
+	  files and other documents. tweaking dublincore.xul
+
+2005-05-19 05:38  brent
+
+	* exe/webui/templates/dublincore.xul,
+	  exe/webui/templates/mainpage.xul: started work on adding a
+	  Metadata editor in XUL.
+
+2005-05-19 04:38  jenny
+
+	* exe/engine/quiztestidevice.py, exe/webui/quizTestblock.py,
+	  exe/webui/testoptionelement.py, exe/webui/testquestionelement.py:
+	  added quiztestidevice.py, quizTestblock.py, testoptionelement.py,
+	  testquestionelement.py 4 files.
+
+2005-05-18 21:55  djm
+
+	* ChangeLog: just keeping ChangeLog up to date
+
 2005-05-18 02:32  jenny
 
 	* exe/engine/config.py: Made it load appDataDir from the config file

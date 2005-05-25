@@ -110,6 +110,7 @@ class IdeviceStore:
         Load the Generic iDevices from the appdata directory
         """
         genericPath = self.config.appDataDir + "/idevices/generic.data"
+        log.debug("load generic iDevices from "+genericPath)
         if os.path.exists(genericPath):
             fileIn = open(genericPath, "rb")
             self.generic = persist.decodeObject(fileIn.read())

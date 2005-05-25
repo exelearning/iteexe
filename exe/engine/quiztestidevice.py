@@ -22,17 +22,17 @@ A QuizTest Idevice is one built up from questions
 
 import logging
 import gettext
-from twisted.spread     import jelly
+from exe.engine.persist import Persistable
 from exe.engine.idevice import Idevice
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class AnswerOption(jelly.Jellyable):
+class AnswerOption(Persistable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can be
-    rendered as an XHTML element
+    A Multichoice iDevice is built up of question and options.  Each option can
+    be rendered as an XHTML element
     """
     def __init__(self, answer="", isCorrect=False):
         """
@@ -44,10 +44,10 @@ class AnswerOption(jelly.Jellyable):
 
 # ===========================================================================
 
-class TestQuestion(jelly.Jellyable):
+class TestQuestion(Persistable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can be
-    rendered as an XHTML element
+    A Multichoice iDevice is built up of question and options.  Each option can
+    be rendered as an XHTML element
     """
     def __init__(self, question=""):
         """
@@ -81,7 +81,7 @@ class QuizTestIdevice(Idevice):
         Idevice.__init__(self,
                          _("Quiz Test"),
                          _("University of Auckland"),
-                         "", "")
+                         "", "", "")
         self.score = -1                 
         self.questions         = []
         self.addQuestion()

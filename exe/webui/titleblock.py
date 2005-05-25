@@ -31,6 +31,7 @@ _   = gettext.gettext
 
 
 # ===========================================================================
+# TODO remove TitleBlock... it no longer makes sense
 class TitleBlock(Block):
     """
     TitleBlock is for rendering node titles

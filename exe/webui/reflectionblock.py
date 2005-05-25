@@ -81,37 +81,7 @@ class ReflectionBlock(Block):
         return html
 
 
-    def renderView(self, style):
-        """
-        Returns an XHTML string for viewing this block
-        """
-        html  = "<div class=\"iDevice\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"reflection.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
-        html += self.renderBlock()
-        html += "</div>\n"
-        return html
-
-
-    def renderPreview(self, style):
-        """
-        Returns an XHTML string for previewing this block
-        """
-        html  = "<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/reflection.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
-        html += self.renderBlock()
-        html += self.renderViewButtons()
-        html += "</div>\n"
-        return html
-
-
-    def renderBlock(self):
+    def renderViewContent(self):
         """
         Returns an XHTML string for this block
         """

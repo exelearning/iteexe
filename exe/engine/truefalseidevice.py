@@ -22,17 +22,17 @@ A true false idevice is one built up from question and options
 
 import logging
 import gettext
-from twisted.spread     import jelly
+from exe.engine.persist import Persistable
 from exe.engine.idevice import Idevice
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class TrueFalseQuestion(jelly.Jellyable):
+class TrueFalseQuestion(Persistable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can be
-    rendered as an XHTML element
+    A Multichoice iDevice is built up of question and options.  Each option can
+    be rendered as an XHTML element
     """
     def __init__(self, question="", isCorrect=False, feedback="", hint=""):
         """
@@ -57,17 +57,17 @@ class TrueFalseIdevice(Idevice):
         Idevice.__init__(self,
                          _("True-False Question"),
                          _("University of Auckland"),
-                         "", "")
+                         "", "", "multichoice")
                          
         self.hintInstruc     = _("Typy the question's hint here.")
         self.questions         = []
         self.questionInstruc = _("Type the question stem.")
         self.keyInstruc      = ""
         self.feedbackInstruc = _("""Type in the feedback that you want the 
-student to see when selecting the particular question. If you don't complete this 
-box, eXe will automatically provide default feedback as follows: "Correct answer"
- as indicated by the selection for the correct answer; or "Wrong answer" for the 
-other alternatives.""")
+student to see when selecting the particular question. If you don't complete
+this box, eXe will automatically provide default feedback as follows: 
+"Correct answer" as indicated by the selection for the correct answer; or 
+"Wrong answer" for the other alternatives.""")
         
         self.questions.append(TrueFalseQuestion())
         
@@ -78,5 +78,13 @@ other alternatives.""")
         """
         self.questions.append(TrueFalseQuestion())
 
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades the node from version 0 to 1.
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug("Upgrading iDevice")
+        self.icon       = "multichoice"
     
 # ===========================================================================

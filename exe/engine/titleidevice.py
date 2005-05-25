@@ -19,6 +19,7 @@
 """
 TitleIdevice: has the title for a Node
 """
+#TODO Get rid of this it no longer makes sense
 
 import logging
 from exe.engine.idevice import Idevice
@@ -37,7 +38,7 @@ class TitleIdevice(Idevice):
         log.debug("__init__ parentNode="+parentNode.id+
                   ", title="+title)
         Idevice.__init__(self, title, 
-                         _("University of Auckland"), "", "", parentNode)
+                         _("University of Auckland"), "", "", "", parentNode)
         self.edit         = False
         self.title        = title
 

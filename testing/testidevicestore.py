@@ -38,8 +38,6 @@ class TestIdeviceStore(unittest.TestCase):
     def testLoad(self):
         store = IdeviceStore(MyConfig())
         store.load()
-        self.assertEqual(len(store.extended), 4)
-        self.assertEqual(len(store.generic),  4)
         self.assert_(os.path.exists("idevices/generic.data"))
         os.remove("idevices/generic.data")
 

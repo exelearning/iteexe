@@ -175,8 +175,6 @@ class Block(object):
             html += '<a name="currentBlock"></a>\n'
             html += self.renderEdit(style)
             
-
-
         elif self.mode == Block.View:
             html = self.renderView(style)
         
@@ -262,20 +260,42 @@ class Block(object):
     def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block during editing
-        overriden by derieved classes
         """
-        log.error("renderPreview called directly")
-        return "ERROR Block.renderPreview called directly"
+        html  = "<div class=\"iDevice\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        if self.idevice.icon:
+            html += "<img class=\"iDevice_icon\" src=\"/style/"+style+"/"
+            html += self.idevice.icon+".gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"
+        html += self.idevice.title+"</span>\n"
+        html += self.renderViewContent()
+        html += self.renderViewButtons()
+        html += "</div>\n"
+        return html
 
     
     def renderView(self, style):
         """
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
+        """
+        html  = "<div class=\"iDevice\">\n"
+        if self.idevice.icon:
+            html += "<img class=\"iDevice_icon\" src=\""
+            html += self.idevice.icon+".gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"
+        html += self.idevice.title+"</span>\n"
+        html += self.renderViewContent()
+        html += "</div>\n"
+        return html
+
+
+    def renderViewContent(self, style):
+        """
         overriden by derieved classes
         """
-        log.error("renderView called directly")
-        return "ERROR Block.renderView called directly"
+        log.error("renderViewContent called directly")
+        return "ERROR: Block.renderViewContent called directly"
 
 
     def renderViewButtons(self):

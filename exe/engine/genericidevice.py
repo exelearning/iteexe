@@ -22,7 +22,7 @@ An iDevice built up from simple fields.
 """
 
 import logging
-from twisted.spread     import jelly
+from exe.engine.persist import Persistable
 from exe.engine.idevice import Idevice
 import gettext
 _ = gettext.gettext
@@ -30,7 +30,7 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class Field(jelly.Jellyable):
+class Field(Persistable):
     """
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
@@ -65,8 +65,10 @@ class GenericIdevice(Idevice):
         """
         Initialize 
         """
-        Idevice.__init__(self, title, author, purpose, tip)
+        Idevice.__init__(self, title, author, purpose, tip, "generic")
         self.class_    = class_
+        if class_ in ("objectives", "activity", "reading", "preknowledge"):
+            self.icon = class_
         self.fields    = []
 
 
@@ -91,5 +93,16 @@ class GenericIdevice(Idevice):
     def __iter__(self):
         return iter(self.fields)
 
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades the node from version 0 to 1.
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug("Upgrading iDevice")
+        if self.class_ in ("objectives", "activity", "reading", "preknowledge"):
+            self.icon = class_
+        else:
+            self.icon = "generic"
 
 # ===========================================================================

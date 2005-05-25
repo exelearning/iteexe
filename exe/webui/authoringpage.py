@@ -26,7 +26,6 @@ import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
 from exe.webui.blockfactory import g_blockFactory
-from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.webui.renderable import RenderableResource
 
@@ -39,7 +38,6 @@ class AuthoringPage(RenderableResource):
     AuthoringPage is responsible for creating the XHTML for the authoring
     area of the eXe web user interface.  
     """
-    
     name = 'authoring'
 
     def __init__(self, parent):
@@ -48,7 +46,7 @@ class AuthoringPage(RenderableResource):
         'parent' is our MainPage instance that created us
         """
         RenderableResource.__init__(self, parent)
-        self.blocks     = []
+        self.blocks  = []
 
 
     def getChild(self, name, request):
@@ -82,13 +80,16 @@ class AuthoringPage(RenderableResource):
         """
         log.debug("render")
         self._process(request)
-        topNode = self.package.currentNode
-        self.blocks     = []
+        topNode     = self.package.currentNode
+        self.blocks = []
         self.__addBlocks(topNode)
-        html = self.__renderHeader()
+        html  = self.__renderHeader()
         html += common.banner(request)
         html += "<!-- start authoring page -->\n"
         html += "<div id=\"main\">\n"
+        html += "<div id=\"nodeDecoration\">\n"
+        html += "<p id=\"nodeTitle\">"+topNode.getTitle()+"</p>\n" 
+        html += "</div>\n"
 
         for block in self.blocks:
             html += block.render(self.package.style)
@@ -99,6 +100,7 @@ class AuthoringPage(RenderableResource):
         return html
 
     render_POST = render_GET
+
 
     def __renderHeader(self):
         """Generates the header for AuthoringPage"""
@@ -121,12 +123,11 @@ class AuthoringPage(RenderableResource):
         html += "</head>\n"
         return html
 
+
     def __addBlocks(self, node):
         """
         Add All the blocks for the currently selected node
         """
-        self.blocks.append(TitleBlock(node.titleIdevice))
-
         for idevice in node.idevices:
             block = g_blockFactory.createBlock(idevice)
             if not block:

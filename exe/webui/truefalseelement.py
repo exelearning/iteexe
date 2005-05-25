@@ -135,6 +135,7 @@ class TrueFalseElement(object):
         return html
     
     def renderQuestionPreview(self):
+        #TODO merge renderQuestionView and renderQuestionPreview
         """
         Returns an XHTML string for previewing this question element
         """

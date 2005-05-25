@@ -41,12 +41,12 @@ class CasestudyBlock(Block):
         Initialize a new Block object
         """
         Block.__init__(self, idevice)
-        self.idevice         = idevice
+        self.idevice           = idevice
         self.questionElements  = []
-        self.story           = idevice.story
-        self.questionInstruc = idevice.questionInstruc
-        self.storyInstruc    = idevice.storyInstruc
-        self.feedbackInstruc = idevice.feedbackInstruc
+        self.story             = idevice.story
+        self.questionInstruc   = idevice.questionInstruc
+        self.storyInstruc      = idevice.storyInstruc
+        self.feedbackInstruc   = idevice.feedbackInstruc
         i = 0
         
         for question in idevice.questions:
@@ -94,41 +94,7 @@ class CasestudyBlock(Block):
         return html
 
     
-    def renderView(self, style):
-        """
-        Returns an XHTML string for viewing this block (exporting)
-        """
-        html  = "<div class=\"iDevice\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"casestudy.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
-        html += "<div class=\"iDevice_inner\">\n"
-        html += self.renderBlockView()    
-        html += "</div>\n" 
-        html += "</div>\n"
-        return html
-    
-
-    def renderPreview(self, style):
-        """
-        Returns an XHTML string for previewing this block
-        """
-        html  = "<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/casestudy.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span>\n"
-        html += "<div class=\"iDevice_inner\">\n"
-        html += self.renderBlockView()      
-        html += "</div>\n" 
-        html += self.renderViewButtons()
-        html += "</div>\n"
-        return html
-
-
-    def renderBlockView(self):
+    def renderViewContent(self):
         """
         Returns an XHTML string for this block
         """

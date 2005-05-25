@@ -22,23 +22,26 @@ The base class for all iDevices
 
 import copy
 import logging
-from twisted.spread  import jelly
-from twisted.persisted.styles import Versioned
+from exe.engine.persist import Persistable
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
+class Idevice(Persistable):
     """
     The base class for all iDevices
     iDevices are mini templates which the user uses to create content in the 
     package
     """
+
+    # Class attributes
+    persistenceVersion = 1
     nextId = 1
     NoEmphasis, SomeEmphasis, StrongEmphasis = range(3)
 
-    def __init__(self, title, author, purpose, tip, parentNode=None):
+    def __init__(self, title, author, purpose, tip, icon, parentNode=None):
         """Initialize a new iDevice, setting a unique id"""
+        log.debug("Creating iDevice")
         self.edit       = True
         self.emphasis   = Idevice.NoEmphasis
         self.version    = 0
@@ -49,10 +52,14 @@ class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
         self.author     = author
         self.purpose    = purpose
         self.tip        = tip
-        self.emphasis   = Idevice.NoEmphasis
+        self.icon       = icon
+        self.resources  = []
 
 
     def __cmp__(self, other):
+        """
+        Compare this iDevice with other
+        """
         return cmp(self.id, other.id)
 
 
@@ -60,7 +67,7 @@ class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         Clone an iDevice just like this one
         """
-        #I'm thinking I should override __deepcopy__, but I just don't get it
+        log.debug("Cloning iDevice")
         newIdevice    = copy.deepcopy(self)
         newIdevice.id = str(Idevice.nextId)
         Idevice.nextId += 1
@@ -68,18 +75,12 @@ class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
 
         
     def delete(self):
-        """delete an iDevice from it's parentNode"""
+        """
+        delete an iDevice from it's parentNode
+        """
         if self.parentNode:
             self.parentNode.idevices.remove(self)
             self.parentNode = None
-
-
-    def getStateFor(self, jellier):
-        """
-        Call Versioned.__getstate__ to store
-        persistenceVersion etc...
-        """
-        return self.__getstate__()
 
 
     def isFirst(self):
@@ -96,6 +97,23 @@ class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         index = self.parentNode.idevices.index(self)
         return index == len(self.parentNode.idevices) - 1
+
+
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        if self.icon:
+            return self.resources + [ self.icon+".gif" ]
+        else:
+            return self.resources
+
+
+    def addResource(self, resourceFile):
+        """
+        Add a resource file to this iDevice
+        """
+        self.resources.append(resourceFile)
 
 
     def movePrev(self):
@@ -128,5 +146,15 @@ class Idevice(jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         self.delete()
         parentNode.addIdevice(self)
+
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades the node from version 0 to 1.
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug("Upgrading iDevice")
+        self.icon       = ""
+        self.resources  = []
 
 # ===========================================================================

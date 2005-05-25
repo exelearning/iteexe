@@ -141,7 +141,7 @@ class MultichoiceBlock(Block):
         html += "<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.hint)                
         html += "</div>\n"
         
-        html += self.renderBlockView()    
+        html += self.renderViewContent()    
         html += "</div>\n"
 
         return html
@@ -161,14 +161,14 @@ class MultichoiceBlock(Block):
         html += common.elementInstruc(self.hintId, self.hint, 
                                       "panel-amusements.png", "Hint")
                                                                              
-        html += self.renderBlockView()      
+        html += self.renderViewContent()      
         html += self.renderViewButtons()
         html += "</div>\n"
 
         return html
 
 
-    def renderBlockView(self):
+    def renderViewContent(self):
         """
         Returns an XHTML string for this block
         """

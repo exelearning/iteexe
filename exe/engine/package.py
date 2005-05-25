@@ -25,11 +25,9 @@ import logging
 import gettext
 import os.path
 import zipfile 
-from path import path, TempDirPath
-from exe.engine.node import Node
-from exe.engine.freetextidevice import FreeTextIdevice
-from exe.engine.genericidevice  import GenericIdevice
-from exe.engine.persist import Persistable, encodeObject, decodeObject
+from exe.engine.path            import path, TempDirPath
+from exe.engine.node            import Node
+from exe.engine.persist         import Persistable, encodeObject, decodeObject
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -43,7 +41,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 1
+    persistenceVersion = 2
     nonpersistant      = ['resourceDir']
 
     def __init__(self, name):
@@ -140,13 +138,25 @@ class Package(Persistable):
         """
         Load package from disk, returns a package
         """
+        if not zipfile.is_zipfile(filename):
+            return None
+
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
-        toDecode = zippedFile.read("content.data")
+        toDecode   = zippedFile.read("content.data")
         newPackage = decodeObject(toDecode)
+
         # Store the original filename so file|save will work
         newPackage.filename = filename 
+
         # Need to add a TempDirPath because it is a nonpersistant member
         newPackage.resourceDir = TempDirPath()
+
+        # Extract resource files from package to temporary directory
+        for filename in zippedFile.namelist():
+            if filename != "content.data":
+                outFile = open(newPackage.resourceDir/filename, "wb")
+                outFile.write(zippedFile.read(filename))
+                
         return newPackage
     load = staticmethod(load)
 
@@ -163,7 +173,7 @@ class Package(Persistable):
             raise PackageError('File %s does not exist' % filename)
         if not filename.isfile():
             raise PackageError('File %s is not a file' % filename)
-        # TODO: Check if there are any other resources already stored using this name
+        
         storageName = filename.basename()
         # TODO: Actually store the resource in the package
         return storageName
@@ -184,6 +194,7 @@ class Package(Persistable):
         self.editor = Node(self, None, _("iDevice Editor"))
 
         # Add a default idevice to the editor
+        from exe.engine.genericidevice  import GenericIdevice
         idevice            = GenericIdevice("", "", "", "", "")
         idevice.parentNode = self.editor
         self.editor.addIdevice(idevice)
@@ -217,17 +228,14 @@ class Package(Persistable):
         self.filename = ''
         self.draft.delete()
         self.editor.delete()
-        del self.__dict__["draft"]
-        del self.__dict__["editor"]
+        del self.draft
+        del self.editor
+
         def renumberNode(node):
-            node.id -= 2
+            node._id = str(int(node.id) - 2)
             for child in node.children:
                 renumberNode(child)
         renumberNode(self.root)
+
     
 # ===========================================================================
-
-if __name__ == "__main__":
-    p = Package('trash')
-    p.save('ijkl.elp')
-    #p.load('ijkl.elp')

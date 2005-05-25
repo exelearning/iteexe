@@ -46,7 +46,7 @@ connect theory to practice. Reflection tasks often provide learners with an
 opportunity to observe and reflect on their observations before presenting 
 these as a piece of academic work. Journals, diaries, profiles and portfolios 
 are useful tools for collecting observation data. Rubrics and guides can be 
-effective feedback tools."""), "")
+effective feedback tools."""), "", "reflection")
         self.activity       = activity
         self.answer          = answer
         self.activityInstruc = _("""Enter details of the activity learners 
@@ -56,6 +56,13 @@ they have done in the exercise. (Rubrics are useful devices for providing
 reflective feedback.)""")
 
 
+    def upgradeToVersion1(self):
+        """
+        Upgrades the node from version 0 to 1.
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug("Upgrading iDevice")
+        self.icon       = "reflection"
 
 
 # ===========================================================================

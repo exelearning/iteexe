@@ -21,14 +21,13 @@ Nodes provide the structure to the package hierarchy
 """
 
 import logging
-from twisted.spread import jelly
-from twisted.persisted.styles import Versioned
+from exe.engine.persist import Persistable
 from exe.engine.titleidevice import TitleIdevice
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
+class Node(Persistable):
     """
     Nodes provide the structure to the package hierarchy
     """
@@ -57,6 +56,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         return self._id
     id = property(getId)
 
+
     # package
     def getPackage(self):
         """
@@ -66,6 +66,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         return self._package
     package = property(getPackage)
 
+
     # level
     def getLevel(self):
         """
@@ -74,12 +75,14 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         return len(list(self.ancestors()))
     level = property(getLevel)
 
+
     # title
     def getTitle(self):
         """
         Returns our title as a string
         """
         return str(self._title)
+
 
     def setTitle(self, title):
         """
@@ -90,11 +93,13 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             self.package.isChanged = True
     title = property(getTitle, setTitle)
 
+
     # titleIDevice
     def getTitleIDevice(self):
         """Returns our title idevice"""
         return self._title
     titleIdevice = property(getTitleIDevice)
+
 
     # Normal methods
 
@@ -106,16 +111,23 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 node = node.parent
                 yield node
 
+
     def isAncestorOf(self, node):
         """If we are an ancestor of 'node' returns 'true'"""
         return node in self.ancestors()
 
-    def getStateFor(self, dummy):
+
+    def getResources(self):
         """
-        Call Versioned.__getstate__ to store
-        persistenceVersion etc...
+        Return the resource files used by this node
         """
-        return self.__getstate__()
+        resources = {}
+        for idevice in self.idevices:
+            for resource in idevice.getResources():
+                resources[resource] = True
+
+        return resources.keys()
+
 
     def createChild(self):
         """
@@ -123,6 +135,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         self.package.isChanged = True
         return Node(self.package, self)
+
 
     def delete(self):
         """
@@ -132,10 +145,11 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         del self.package._nodeIdDict[self.id]
         if self.parent:
             self.parent.children.remove(self)
+
         # Remove all children from package id-dict and our own children list
         while self.children:
             self.children[0].delete()
-        # Mark the package as changed
+
         self.package.isChanged = True
 
 
@@ -168,8 +182,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 else:
                     children.insert(children.index(nextSibling), self)
             else: newParent.children.append(self)
-        # Mark the package as changed
+
         self.package.isChanged = True
+
 
     def promote(self):
         """Convenience function.
@@ -179,7 +194,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         if self.parent and self.parent.parent:
             self.move(self.parent.parent, None)
             return True
+
         return False
+
 
     def demote(self):
         """Convenience function.
@@ -193,6 +210,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 newParent = self.parent.children[idx - 1]
                 self.move(newParent)
                 return True
+
         return False
 
 
@@ -210,7 +228,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
                 # Mark the package as changed
                 self.package.isChanged = True
                 return True
+
         return False
+
 
     def down(self):
         """Moves the node down one vertically
@@ -225,7 +245,9 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
             # Mark the package as changed
             self.package.isChanged = True
             return True
+
         return False
+
 
     def nextSibling(self):
         """Returns our next sibling or None"""
@@ -236,6 +258,7 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         else:
             return None
 
+
     def __str__(self):
         """
         Return a node as a string
@@ -243,9 +266,12 @@ class Node(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         nodeStr = ""
         nodeStr += self.id + " "
         nodeStr += self.title + "\n"
+
         for child in self.children:
             nodeStr += child.__str__()
+
         return nodeStr
+
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""

@@ -69,7 +69,7 @@ When designing a MCQ test consider the following:
 <li>	Gender and cultural issues</li>
 <li>	Avoid grammar language and question structures that might provide clues</li>
 </ul>
- """), "")
+ """), "multichoice", "")
                          
         self.question        = question
         self.hint            = ""
@@ -104,6 +104,7 @@ for the other alternatives.""")
         self.hint            = ""
         self.hintInstruc     = _("""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
+        self.icon            = "multichoice"
 
     
 # ===========================================================================
