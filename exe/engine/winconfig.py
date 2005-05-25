@@ -94,13 +94,17 @@ class WinConfig(Config):
         """
         from _winreg import OpenKey, QueryValue, HKEY_LOCAL_MACHINE
         try:
+            exeKey = None
+            softwareKey = None
             try:
                 softwareKey = OpenKey(HKEY_LOCAL_MACHINE, 'SOFTWARE')
                 exeKey = OpenKey(softwareKey, 'exe')
                 return path(QueryValue(exeKey, ''))
             finally:
-                exeKey.Close()
-                softwareKey.Close()
+                if exeKey:
+                    exeKey.Close()
+                if softwareKey:
+                    softwareKey.Close()
         except WindowsError:
             return path('')
 
