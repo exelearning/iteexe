@@ -42,7 +42,6 @@ class QuizTestBlock(Block):
         Block.__init__(self, idevice)
         self.idevice           = idevice
         self.questionElements  = []
-        self.message = ""
         
         i = 0
         for question in idevice.questions:
@@ -54,6 +53,7 @@ class QuizTestBlock(Block):
         Process the request arguments from the web server
         """
         Block.process(self, request)
+        
             
         if ("addQuestion"+str(self.id)) in request.args: 
             self.idevice.addQuestion()
@@ -61,11 +61,8 @@ class QuizTestBlock(Block):
 
         for element in self.questionElements:
             element.process(request)
-            
-        if "submitScore" in request.args:
-            self.idevice.score = self.__calcScore()
-            
-            
+
+
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
@@ -90,6 +87,8 @@ class QuizTestBlock(Block):
         Returns an XHTML string for viewing this block
         """
         
+        #html  = '<script language="JavaScript" src="common.js"></script>\n'
+        #html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
         html  = self.__createJavascript()
         html += '<form name="contentForm">\n'
         html += "<div class=\"iDevice\">\n"
@@ -99,7 +98,7 @@ class QuizTestBlock(Block):
         html += self.idevice.title+"</span><br/>\n"
         
         for element in self.questionElements:
-            html += element.renderView() + "<br/>"  
+            html += element.renderPreview() + "<br/>"  
         html += "</div>\n"
         
         html += '<INPUT TYPE="BUTTON" VALUE=" SUBMIT ANSWERS " onClick="calcScore()">\n'
@@ -221,39 +220,16 @@ class QuizTestBlock(Block):
         html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
-        if self.idevice.score <> -1:
-            message = "Your score is " + str(self.idevice.score) + "%"
-            html += "<b>"+ message+ "</b><br/>"
-                                                                  
+        #html += self.question + "<br/>"
+       # html += "<table>"                                                                    
         for element in self.questionElements:
             html += element.renderPreview() + "<br/>"
-
+       # html += "</table>"
         html += self.renderViewButtons()
         html += "</div>\n"
-        html += '<input type="submit" name="submitScore" value="%s"/> ' % _("Submit Answer")
-        self.idevice.score = -1
+        html += '<INPUT TYPE="BUTTON" VALUE=" SUBMIT ANSWERS " onClick="calcScore()">'
         
         return html
-    
-    def __calcScore(self):
-        
-        rawScore = 0
-        numQuestion = len(self.questionElements)
-        score = 0
-
-        for question in self.idevice.questions:
-            if (question.userAns == question.correctAns):
-                log.info("userAns " +str(question.userAns) + ": " 
-                         + "correctans " +str(question.correctAns))
-                rawScore += 1
-        
-        if numQuestion > 0:
-            score = rawScore/numQuestion * 100
-            
-        return score 
-            
-        
-        
 
 
 

@@ -27,7 +27,7 @@ from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
-from exe.engine.path        import path, TempDirPath
+from exe.engine.path        import Path, TempDirPath
 from exe.export.manifest    import Manifest
 from exe.export.pages       import uniquifyNames
 from zipfile import ZipFile, ZIP_DEFLATED
@@ -56,7 +56,7 @@ class ScormPage(object):
         file.  
         'outdir' is the name of the directory where the node will be saved to,
         the filename will be the 'self.node.id'.html or 'index.html' if
-        self.node is the root node. 'outdir' must be a 'path' instance
+        self.node is the root node. 'outdir' must be a 'Path' instance
         """
         out = open(outdir/self.name+".html", "w")
         out.write(self.render())
@@ -152,9 +152,9 @@ class ScormExport(object):
         output
         """
         self.config     = config
-        self.styleDir   = path(styleDir)
-        self.scriptsDir = path(scriptsDir)
-        self.filename   = path(filename)
+        self.styleDir   = Path(styleDir)
+        self.scriptsDir = Path(scriptsDir)
+        self.filename   = Path(filename)
         self.pages      = []
 
 

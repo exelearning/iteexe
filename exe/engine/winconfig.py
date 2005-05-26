@@ -24,10 +24,8 @@ configuration
 
 import logging
 import sys
-import os
-import os.path
 from exe.engine.config import Config
-from exe.engine.path import path
+from exe.engine.path import Path
 
 # Constants for directory name codes
 APPDATA = 0x001a
@@ -48,9 +46,9 @@ class WinConfig(Config):
         exeDir = self.exePath.dirname()
         self.browserPath = exeDir / r"\Mozilla Firefox\firefox.exe"
         if not self.browserPath.isfile():
-            programFiles = path(self.__getWinFolder(PROGRAMFILES))
+            programFiles = Path(self.__getWinFolder(PROGRAMFILES))
             self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
-        self.dataDir = self.__getWinFolder(MYDOCUMENTS)
+        self.dataDir = Path(self.__getWinFolder(MYDOCUMENTS))
         self.appDataDir = self.dataDir
 
     def _getConfigPathOptions(self):
@@ -65,9 +63,7 @@ class WinConfig(Config):
         folders.append(self.__getInstallDir())
         folders.append('.')
         # Filter out non existant folders
-        from pprint import pprint
-        options = [folder/'exe.conf' for folder in map(path, folders)]
-        pprint(options)
+        options = [folder/'exe.conf' for folder in map(Path, folders)]
         return options
 
     def __getWinFolder(self, code):
@@ -84,9 +80,9 @@ class WinConfig(Config):
         result = create_string_buffer(260)
         resource = dll.SHGetFolderPathA(None, code, None, 0, result)
         if resource != 0: 
-            return path('')
+            return Path('')
         else: 
-            return path(result.value)
+            return Path(result.value)
                 
     def __getInstallDir(self):
         """
@@ -99,14 +95,14 @@ class WinConfig(Config):
             try:
                 softwareKey = OpenKey(HKEY_LOCAL_MACHINE, 'SOFTWARE')
                 exeKey = OpenKey(softwareKey, 'exe')
-                return path(QueryValue(exeKey, ''))
+                return Path(QueryValue(exeKey, ''))
             finally:
                 if exeKey:
                     exeKey.Close()
                 if softwareKey:
                     softwareKey.Close()
         except WindowsError:
-            return path('')
+            return Path('')
 
 
 # ===========================================================================

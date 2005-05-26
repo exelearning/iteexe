@@ -26,11 +26,10 @@ Browser module
 
 
 import os
-import os.path
-import shutil
 import sys
 import logging
 import gettext
+from exe.engine.path import Path
 from urllib import quote
 _   = gettext.gettext
  
@@ -57,23 +56,21 @@ def launchBrowser(config, packageName):
             print "Cannot launch Firefox, please manually run Firefox"
             print "and go to", url     
     else:
-        profile = os.environ["HOME"]+'/.exe/linux-profile'
-        if not os.path.exists(profile):
+        profile = Path(os.environ["HOME"])/'.exe/linux-profile'
+        if not profile.exists():
             createProfile(config)
 
         log.info("profile "+profile)
-        os.system('"'+config.browserPath+'" -profile "'+profile+'" '+url+'&')
-
+        os.system('"%s" -profile "%s" %s &' % \
+                  (config.browserPath, profile, url))
 
 def createProfile(config):
     """
     Create a profile for the user to use based on the one in /usr/share/exe
     """
-    appDir  = os.environ["HOME"]+'/.exe'
+    appDir  = Path(os.environ["HOME"])/'.exe'
     log.info("Creating FireFox profile copied from"+
              config.webDir+"/linux-profile to "+appDir+"/linux-profile")
-    if not os.path.exists(appDir):
-        os.mkdir(appDir)
-    shutil.copytree(config.webDir+"/linux-profile", appDir+"/linux-profile")
-        
-
+    if not appDir.exists():
+        appDir.mkdir()
+    (config.webDir/'linux-profile').copytree(appDir/'linux-profile')

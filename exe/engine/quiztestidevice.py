@@ -53,10 +53,9 @@ class TestQuestion(Persistable):
         """
         Initialize 
         """
-        self.question   = question
-        self.options    = []
-        self.correctAns = -2
-        self.userAns    = -1
+        self.question = question
+        self.options  = []
+        self.correctAns = -1
         self.addOption()
         
     def addOption(self):
@@ -82,7 +81,7 @@ class QuizTestIdevice(Idevice):
                          _("Quiz Test"),
                          _("University of Auckland"),
                          "", "", "")
-        self.score = -1                 
+                         
         self.questions         = []
         self.addQuestion()
         

@@ -23,6 +23,7 @@ configuration
 """
 
 from exe.engine.linuxconfig import LinuxConfig
+from exe.engine.path import Path
 
 # ===========================================================================
 class MacConfig(LinuxConfig):
@@ -36,7 +37,8 @@ class MacConfig(LinuxConfig):
         Sets default mac values
         """
         LinuxConfig._overrideDefaultVals(self)
-        self.browserPath = "/Applications/Firefox.app/Contents/MacOS/firefox"
+        self.browserPath = \
+        Path("/Applications/Firefox.app/Contents/MacOS/firefox")
 
 
 # ===========================================================================

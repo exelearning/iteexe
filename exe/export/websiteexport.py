@@ -26,7 +26,7 @@ import re
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
-from exe.engine.path        import path
+from exe.engine.path        import Path
 from exe.engine.config      import Config
 from exe.export.pages       import uniquifyNames
 
@@ -161,10 +161,10 @@ class WebsiteExport(object):
         with the website
         """
         self.pages      = []
-        self.stylesDir  = path(stylesDir)
-        self.outputDir  = path(outputDir)
-        self.imagesDir  = path(imagesDir)
-        self.scriptsDir = path(scriptsDir)
+        self.stylesDir  = Path(stylesDir)
+        self.outputDir  = Path(outputDir)
+        self.imagesDir  = Path(imagesDir)
+        self.scriptsDir = Path(scriptsDir)
 
         # Create the output dir if it doesn't already exist
         if not self.outputDir.exists(): 

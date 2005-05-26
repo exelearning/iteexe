@@ -2,10 +2,10 @@
 
 Example:
 
-from path import path
-d = path('/home/guido/bin')
-for f in d.files('*.py'):
-    f.chmod(0755)
+from path import Path
+d = Path('/home/guido/bin')
+for file_ in d.files('*.py'):
+    file_.chmod(0755)
 
 This module requires Python 2.2 or later.
 
@@ -36,21 +36,12 @@ import sys, os, fnmatch, glob, shutil, codecs, md5
 from tempfile import mkdtemp
 
 __version__ = '2.0.4'
-__all__ = ['path']
+__all__ = ['Path', 'TempDirPath']
 
-# Pre-2.3 support.  Are unicode filenames supported?
-_base = str
-try:
-    if os.path.supports_unicode_filenames:
-        _base = unicode
-except AttributeError:
-    pass
-
-# Pre-2.3 workaround for basestring.
-try:
-    basestring
-except NameError:
-    basestring = (str, unicode)
+if os.path.supports_unicode_filenames:
+    _base = unicode
+else:
+    _base = str
 
 # Universal newline support
 _textmode = 'r'
@@ -58,8 +49,8 @@ if hasattr(file, 'newlines'):
     _textmode = 'U'
 
 
-class path(_base):
-    """ Represents a filesystem path.
+class Path(_base):
+    """ Represents a filesystem Path.
 
     For documentation on individual methods, consult their
     counterparts in os.path.
@@ -68,43 +59,59 @@ class path(_base):
     # --- Special Python methods.
 
     def __repr__(self):
-        return 'path(%s)' % _base.__repr__(self)
+        return 'Path(%s)' % _base.__repr__(self)
 
-    # Adding a path and a string yields a path.
+    # Adding a Path and a string yields a Path.
     def __add__(self, more):
-        return path(_base(self) + _base(more))
+        return Path(_base(self) + _base(more))
 
     def __radd__(self, other):
-        return path(other + _base(self))
+        return Path(other + _base(self))
 
     # The / operator joins paths.
     def __div__(self, rel):
         """ fp.__div__(rel) == fp / rel == fp.joinpath(rel)
 
-        Join two path components, adding a separator character if
+        Join two Path components, adding a separator character if
         needed.
         """
-        return path(os.path.join(_base(self), _base(rel)))
+        return Path(os.path.join(_base(self), _base(rel)))
 
     # Make the / operator work even when true division is enabled.
     __truediv__ = __div__
 
     def getcwd():
         """ Return the current working directory as a path object. """
-        return path(os.getcwd())
+        return Path(os.getcwd())
     getcwd = staticmethod(getcwd)
 
 
     # --- Operations on path strings.
 
-    def abspath(self):       return path(os.path.abspath(self))
-    def normcase(self):      return path(os.path.normcase(self))
-    def normpath(self):      return path(os.path.normpath(self))
-    def realpath(self):      return path(os.path.realpath(self))
-    def expanduser(self):    return path(os.path.expanduser(self))
-    def expandvars(self):    return path(os.path.expandvars(self))
-    def dirname(self):       return path(os.path.dirname(self))
-    basename = os.path.basename
+    def abspath(self):
+        """Wraps os.path.abspath"""
+        return Path(os.path.abspath(self))
+    def normcase(self):
+        """Wraps os.path.normcase"""
+        return Path(os.path.normcase(self))
+    def normpath(self):
+        """Wraps os.path.normpath"""
+        return Path(os.path.normpath(self))
+    def realpath(self):
+        """Wraps os.path.realpath"""
+        return Path(os.path.realpath(self))
+    def expanduser(self):
+        """Wraps os.path.expanduser"""
+        return Path(os.path.expanduser(self))
+    def expandvars(self):
+        """Wraps os.path.expandvars"""
+        return Path(os.path.expandvars(self))
+    def dirname(self):
+        """Wraps os.path.dirname"""
+        return Path(os.path.dirname(self))
+    def basename(self):
+        """Wraps os.path.basename"""
+        return Path(os.path.basename(self))
 
     def expand(self):
         """ Clean up a filename by calling expandvars(),
@@ -116,37 +123,40 @@ class path(_base):
         return self.expandvars().expanduser().normpath()
 
     def _get_namebase(self):
-        base, ext = os.path.splitext(self.name)
-        return base
+        """Returns everything before the . in the extension"""
+        return Path(os.path.splitext(self.name)[0])
 
     def _get_ext(self):
-        f, ext = os.path.splitext(_base(self))
-        return ext
+        """Returns the extension only (including the dot)"""
+        return os.path.splitext(_base(self))[1]
 
     def _get_drive(self):
-        drive, r = os.path.splitdrive(self)
-        return path(drive)
+        """Returns the drive letter (in dos & win)"""
+        drive = os.path.splitdrive(self)[0]
+        return Path(drive)
 
     parent = property(
         dirname, None, None,
         """ This path's parent directory, as a new path object.
 
-        For example, path('/usr/local/lib/libpython.so').parent == path('/usr/local/lib')
+        For example,
+        Path('/usr/local/lib/libpython.so').parent == Path('/usr/local/lib')
         """)
 
     name = property(
         basename, None, None,
         """ The name of this file or directory without the full path.
 
-        For example, path('/usr/local/lib/libpython.so').name == 'libpython.so'
+        For example, Path('/usr/local/lib/libpython.so').name == 'libpython.so'
         """)
 
     namebase = property(
         _get_namebase, None, None,
         """ The same as path.name, but with one file extension stripped off.
 
-        For example, path('/home/guido/python.tar.gz').name     == 'python.tar.gz',
-        but          path('/home/guido/python.tar.gz').namebase == 'python.tar'
+        For example,
+            Path('/home/guido/python.tar.gz').name     == 'python.tar.gz',
+        but Path('/home/guido/python.tar.gz').namebase == 'python.tar'
         """)
 
     ext = property(
@@ -162,17 +172,17 @@ class path(_base):
     def splitpath(self):
         """ p.splitpath() -> Return (p.parent, p.name). """
         parent, child = os.path.split(self)
-        return path(parent), child
+        return Path(parent), Path(child)
 
     def splitdrive(self):
         """ p.splitdrive() -> Return (p.drive, <the rest of p>).
 
         Split the drive specifier from this path.  If there is
         no drive specifier, p.drive is empty, so the return value
-        is simply (path(''), p).  This is always the case on Unix.
+        is simply (Path(''), p).  This is always the case on Unix.
         """
         drive, rel = os.path.splitdrive(self)
-        return path(drive), rel
+        return Path(drive), rel
 
     def splitext(self):
         """ p.splitext() -> Return (p.stripext(), p.ext).
@@ -185,24 +195,31 @@ class path(_base):
         (a, b) == p.splitext(), then a + b == p.
         """
         filename, ext = os.path.splitext(self)
-        return path(filename), ext
+        return Path(filename), ext
 
     def stripext(self):
         """ p.stripext() -> Remove one file extension from the path.
 
-        For example, path('/home/guido/python.tar.gz').stripext()
-        returns path('/home/guido/python.tar').
+        For example, Path('/home/guido/python.tar.gz').stripext()
+        returns Path('/home/guido/python.tar').
         """
         return self.splitext()[0]
 
     if hasattr(os.path, 'splitunc'):
         def splitunc(self):
+            """NT Only: Split a pathname into UNC mount point and relative path
+            specifiers.
+            eg. Path(r'\\dbserver\homes\matthew\work\stuff.py').splitunc() == \
+            (Path(r'\\dbserver\homes'), Path(r'\\matthew\work\stuff.py'))"""
             unc, rest = os.path.splitunc(self)
-            return path(unc), rest
+            return Path(unc), Path(rest)
 
         def _get_uncshare(self):
-            unc, r = os.path.splitunc(self)
-            return path(unc)
+            """NT Only: Returns only the server and share name from a unc path
+            name.
+            eg. Path(r'\\dbserver\homes\matthew\work\stuff.py').uncshare() == \
+            Path(r'\\dbserver\homes')"""
+            return Path(os.path.splitunc(self)[0])
 
         uncshare = property(
             _get_uncshare, None, None,
@@ -214,7 +231,7 @@ class path(_base):
         character (os.sep) if needed.  Returns a new path
         object.
         """
-        return path(os.path.join(_base(self), *args))
+        return Path(os.path.join(_base(self), *args))
 
     def splitall(self):
         """ Return a list of the path components in this path.
@@ -242,7 +259,7 @@ class path(_base):
         """ Return this path as a relative path,
         based from the current working directory.
         """
-        cwd = path(os.getcwd())
+        cwd = Path(os.getcwd())
         return cwd.relpathto(self)
 
     def relpathto(self, dest):
@@ -253,7 +270,7 @@ class path(_base):
         dest.abspath().
         """
         origin = self.abspath()
-        dest = path(dest).abspath()
+        dest = Path(dest).abspath()
 
         orig_list = origin.normcase().splitall()
         # Don't normcase dest!  We want to preserve the case.
@@ -278,9 +295,9 @@ class path(_base):
         segments += dest_list[i:]
         if len(segments) == 0:
             # If they happen to be identical, use os.curdir.
-            return path(os.curdir)
+            return Path(os.curdir)
         else:
-            return path(os.path.join(*segments))
+            return Path(os.path.join(*segments))
 
 
     # --- Listing, searching, walking, and matching
@@ -312,7 +329,7 @@ class path(_base):
         directories whose names match the given pattern.  For
         example, d.dirs('build-*').
         """
-        return [p for p in self.listdir(pattern) if p.isdir()]
+        return [pth for pth in self.listdir(pattern) if pth.isdir()]
 
     def files(self, pattern=None):
         """ D.files() -> List of the files in this directory.
@@ -325,7 +342,7 @@ class path(_base):
         d.files('*.pyc').
         """
         
-        return [p for p in self.listdir(pattern) if p.isfile()]
+        return [pth for pth in self.listdir(pattern) if pth.isfile()]
 
     def walk(self, pattern=None):
         """ D.walk() -> iterator over files and subdirs, recursively.
@@ -371,8 +388,8 @@ class path(_base):
                 if pattern is None or child.fnmatch(pattern):
                     yield child
             elif child.isdir():
-                for f in child.walkfiles(pattern):
-                    yield f
+                for pth in child.walkfiles(pattern):
+                    yield pth
 
     def fnmatch(self, pattern):
         """ Return True if self.name matches the given pattern.
@@ -387,10 +404,10 @@ class path(_base):
 
         pattern - a path relative to this directory, with wildcards.
 
-        For example, path('/users').glob('*/bin/*') returns a list
+        For example, Path('/users').glob('*/bin/*') returns a list
         of all the files users have in their bin directories.
         """
-        return map(path, glob.glob(_base(self / pattern)))
+        return map(Path, glob.glob(_base(self / pattern)))
 
 
     # --- Reading or writing an entire file at once.
@@ -401,11 +418,11 @@ class path(_base):
 
     def bytes(self):
         """ Open this file, read all bytes, return them as a string. """
-        f = self.open('rb')
+        file_ = self.open('rb')
         try:
-            return f.read()
+            return file_.read()
         finally:
-            f.close()
+            file_.close()
 
     def write_bytes(self, bytes, append=False):
         """ Open this file and write the given bytes to it.
@@ -417,11 +434,11 @@ class path(_base):
             mode = 'ab'
         else:
             mode = 'wb'
-        f = self.open(mode)
+        file_ = self.open(mode)
         try:
-            f.write(bytes)
+            file_.write(bytes)
         finally:
-            f.close()
+            file_.close()
 
     def text(self, encoding=None, errors='strict'):
         """ Open this file, read it in, return the content as a string.
@@ -440,27 +457,29 @@ class path(_base):
         """
         if encoding is None:
             # 8-bit
-            f = self.open(_textmode)
+            file_ = self.open(_textmode)
             try:
-                return f.read()
+                return file_.read()
             finally:
-                f.close()
+                file_.close()
         else:
             # Unicode
-            f = codecs.open(self, 'r', encoding, errors)
+            file_ = codecs.open(self, 'r', encoding, errors)
             # (Note - Can't use 'U' mode here, since codecs.open
             # doesn't support 'U' mode, even in Python 2.3.)
             try:
-                t = f.read()
+                data = file_.read()
             finally:
-                f.close()
-            return (t.replace(u'\r\n', u'\n')
-                     .replace(u'\r\x85', u'\n')
-                     .replace(u'\r', u'\n')
-                     .replace(u'\x85', u'\n')
-                     .replace(u'\u2028', u'\n'))
+                file_.close()
+            return (data.replace(u'\r\n', u'\n')
+                        .replace(u'\r\x85', u'\n')
+                        .replace(u'\r', u'\n')
+                        .replace(u'\x85', u'\n')
+                        .replace(u'\u2028', u'\n'))
 
-    def write_text(self, text, encoding=None, errors='strict', linesep=os.linesep, append=False):
+    def write_text(self, text, encoding=None,
+                   errors='strict', linesep=os.linesep, 
+                   append=False):
         """ Write the given text to this file.
 
         The default behavior is to overwrite any existing file;
@@ -567,11 +586,11 @@ class path(_base):
         This uses 'U' mode in Python 2.3 and later.
         """
         if encoding is None and retain:
-            f = self.open(_textmode)
+            file_ = self.open(_textmode)
             try:
-                return f.readlines()
+                return file_.readlines()
             finally:
-                f.close()
+                file_.close()
         else:
             return self.text(encoding, errors).splitlines(retain)
 
@@ -613,7 +632,7 @@ class path(_base):
             mode = 'ab'
         else:
             mode = 'wb'
-        f = self.open(mode)
+        file_ = self.open(mode)
         try:
             for line in lines:
                 isUnicode = isinstance(line, unicode)
@@ -636,9 +655,9 @@ class path(_base):
                     if encoding is None:
                         encoding = sys.getdefaultencoding()
                     line = line.encode(encoding, errors)
-                f.write(line)
+                file_.write(line)
         finally:
-            f.close()
+            file_.close()
 
 
     # --- Methods for querying the filesystem.
@@ -697,8 +716,8 @@ class path(_base):
 
     if hasattr(os, 'pathconf'):
         def pathconf(self, name):
+            """Wraps os.pathconf"""
             return os.pathconf(self, name)
-
 
     # --- Modifying operations on files and directories
 
@@ -707,33 +726,46 @@ class path(_base):
         os.utime(self, times)
 
     def chmod(self, mode):
+        """Change the permissions of the file"""
         os.chmod(self, mode)
 
     if hasattr(os, 'chown'):
         def chown(self, uid, gid):
+            """Change the owner (uid) and owning group
+            (gid) of the file"""
             os.chown(self, uid, gid)
 
     def rename(self, new):
+        """Rename the file.
+        Returns a new path object with the new name"""
         os.rename(self, new)
+        return Path(new)
 
     def renames(self, new):
+        """Renames creating directories if necessary.
+        Returns a new path object with the new name"""
         os.renames(self, new)
-
+        return Path(new)
 
     # --- Create/delete operations on directories
 
     def mkdir(self, mode=0777):
+        """Make a new directory with
+        this pathname"""
         os.mkdir(self, mode)
 
     def makedirs(self, mode=0777):
+        """Make directories with this pathname
+        will create multiple dirs as necessary"""
         os.makedirs(self, mode)
 
     def rmdir(self):
+        """Remove the directory with this pathname"""
         os.rmdir(self)
 
     def removedirs(self):
+        """Remove all the empty dirs mentioned in this pathname"""
         os.removedirs(self)
-
 
     # --- Modifying operations on files
 
@@ -746,11 +778,12 @@ class path(_base):
         os.utime(self, None)
 
     def remove(self):
+        """Delete this file"""
         os.remove(self)
 
     def unlink(self):
+        """Unlink this symlink"""
         os.unlink(self)
-
 
     # --- Links
 
@@ -770,48 +803,66 @@ class path(_base):
 
             The result may be an absolute or a relative path.
             """
-            return path(os.readlink(self))
+            return Path(os.readlink(self))
 
         def readlinkabs(self):
             """ Return the path to which this symbolic link points.
 
             The result is always an absolute path.
             """
-            p = self.readlink()
-            if p.isabs():
-                return p
+            pth = self.readlink()
+            if pth.isabs():
+                return pth
             else:
-                return (self.parent / p).abspath()
+                return (self.parent / pth).abspath()
 
 
     # --- High-level functions from shutil
 
-    copyfile = lambda s, o: shutil.copyfile(_base(s), _base(o))
-    copymode = lambda s, o: shutil.copymode(_base(s), _base(o))
-    copystat = lambda s, o: shutil.copystat(_base(s), _base(o))
-    copy = lambda s, o: shutil.copy(_base(s), _base(o))
-    copy2 = lambda s, o: shutil.copy2(_base(s), _base(o))
-    copytree = lambda s, o: shutil.copytree(_base(s), _base(o))
+    def copyfile(self, dst):
+        """Wraps shutil.copyfile"""
+        return shutil.copyfile(_base(self), _base(dst))
+    def copymode(self, dst):
+        """Wraps shutil.copymode"""
+        return shutil.copymode(_base(self), _base(dst))
+    def copystat(self, dst):
+        """Wraps shutil.copystat"""
+        return shutil.copystat(_base(self), _base(dst))
+    def copy(self, dst):
+        """Wraps shutil.copy"""
+        return shutil.copy(_base(self), _base(dst))
+    def copy2(self, dst):
+        """Wraps shutil.copy2"""
+        return shutil.copy2(_base(self), _base(dst))
+    def copytree(self, dst):
+        """Wraps shutil.copytree"""
+        return shutil.copytree(_base(self), _base(dst))
     if hasattr(shutil, 'move'):
-        move = lambda s, o: shutil.move(_base(s), _base(o))
-    rmtree = lambda s: shutil.rmtree(_base(s))
+        def move(self, dst):
+            """Wraps shutil.move"""
+            return shutil.move(_base(self), _base(dst))
+    def rmtree(self):
+        """Wraps shutil.rmtree"""
+        return shutil.rmtree(_base(self))
 
     # --- Special stuff from os
 
     if hasattr(os, 'chroot'):
         def chroot(self):
+            """Change the root dir to this path name"""
             os.chroot(self)
 
     if hasattr(os, 'startfile'):
         def startfile(self):
+            """Run this file with the appropriate program"""
             os.startfile(self)
 
     # Extra icing
 
     def copyglob(self, globStr, destination):
         """
-        >>> x = path('~')
-        >>> path('~/tmp').mkdir()
+        >>> x = Path('~')
+        >>> Path('~/tmp').mkdir()
         >>> x.copyglob('.*', '~/tmp')
         # Copies all invisible files (and dirs) recursively to ~/tmp
         """
@@ -836,23 +887,23 @@ class path(_base):
     def getMd5(self):
         """Returns an md5 hash for an object with read() method."""
         try:
-            f = file(self, 'rb')
+            file_ = file(self, 'rb')
         except:
             raise Exception("Could not open %s" % self)
-        m = md5.new()
+        hasher = md5.new()
         while True:
-            d = f.read(8096)
-            if not d:
+            block = file_.read(8096)
+            if not block:
                 break
-            m.update(d)
-        f.close()
-        return m.hexdigest()
+            hasher.update(block)
+        file_.close()
+        return hasher.hexdigest()
     md5 = property(getMd5)
 
 
-class TempDirPath(path):
+class TempDirPath(Path):
     """
-    This object, when created gives you a path object
+    This object, when created gives you a Path object
     pointing to a newly created temporary directory.
     When this object goes out of scope, the directory
     is obliterated.
@@ -861,7 +912,7 @@ class TempDirPath(path):
     """
 
     def __new__(cls):
-        return path.__new__(cls, mkdtemp())
+        return Path.__new__(cls, mkdtemp())
 
     def __del__(self):
         """Destroy the temporary directory"""

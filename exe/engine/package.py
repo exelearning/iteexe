@@ -23,10 +23,11 @@ i.e. the "package".
 
 import logging
 import gettext
-import os.path
 import zipfile 
-from exe.engine.path            import path, TempDirPath
+from exe.engine.path            import Path, TempDirPath
 from exe.engine.node            import Node
+from exe.engine.freetextidevice import FreeTextIdevice
+from exe.engine.genericidevice  import GenericIdevice
 from exe.engine.persist         import Persistable, encodeObject, decodeObject
 
 log = logging.getLogger(__name__)
@@ -42,7 +43,7 @@ class Package(Persistable):
     i.e. the "package".
     """
     persistenceVersion = 2
-    nonpersistant      = ['resourceDir']
+    nonpersistant      = ['resourceDir', 'config', 'filename']
 
     def __init__(self, name):
         """
@@ -57,7 +58,7 @@ class Package(Persistable):
         self.name          = name
 
         # Empty if never saved/loaded
-        self.filename      = '' 
+        self.filename      = ''
 
         self.root          = Node(self, None, _("Home"))
         self.currentNode   = self.root
@@ -99,14 +100,15 @@ class Package(Persistable):
         Save package to disk
         pass an optional filename
         """
+        filename = Path(filename)
         if filename:
             # If we are being given a new filename...
             # Change our name to match our new filename
-            name = os.path.split(filename)[1]
-            self.name = os.path.splitext(name)[0]
+            name = filename.splitpath()[1]
+            self.name = str(name.basename().splitext()[0])
         elif self.filename:
             # Otherwise use our last saved/loaded from filename
-            filename = self.filename
+            filename = Path(self.filename)
         else:
             # If we don't have a last saved/loaded from filename,
             # raise an exception because, we need to have a new
@@ -145,8 +147,9 @@ class Package(Persistable):
         toDecode   = zippedFile.read("content.data")
         newPackage = decodeObject(toDecode)
 
-        # Store the original filename so file|save will work
-        newPackage.filename = filename 
+        # newPackage.filename is the name that the package was last loaded from
+        # or saved to
+        newPackage.filename = Path(filename)
 
         # Need to add a TempDirPath because it is a nonpersistant member
         newPackage.resourceDir = TempDirPath()
@@ -225,13 +228,14 @@ class Package(Persistable):
         """
         Called to upgrade from 0.4 release
         """
-        self.filename = ''
         self.draft.delete()
         self.editor.delete()
         del self.draft
         del self.editor
-
         def renumberNode(node):
+            """
+            Gives the old node a number
+            """
             node._id = str(int(node.id) - 2)
             for child in node.children:
                 renumberNode(child)

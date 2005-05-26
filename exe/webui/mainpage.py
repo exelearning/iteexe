@@ -24,11 +24,8 @@ This is the main XUL page.
 import logging
 import gettext
 import os
-from urllib                   import pathname2url
-from twisted.web.resource     import Resource
-from twisted.internet         import reactor
 from nevow                    import loaders, inevow, stan
-from nevow.livepage           import handler, LivePage, js
+from nevow.livepage           import handler, js
 from exe.webui.renderable     import RenderableLivePage
 from exe.webui.idevicepane    import IdevicePane
 from exe.webui.authoringpage  import AuthoringPage
@@ -37,7 +34,7 @@ from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
-from exe.engine.path          import path
+from exe.engine.path          import Path
 from exe.engine.package       import PackageError
 
 log = logging.getLogger(__name__)
@@ -52,7 +49,7 @@ class MainPage(RenderableLivePage):
     
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
-    
+
     def __init__(self, parent, package):
         """
         Initialize a new XUL page
@@ -60,7 +57,7 @@ class MainPage(RenderableLivePage):
         """
         self.name = package.name
         RenderableLivePage.__init__(self, parent, package)
-        mainxul = path(self.config.webDir).joinpath('templates', 'mainpage.xul')
+        mainxul = Path(self.config.webDir).joinpath('templates', 'mainpage.xul')
         self.docFactory = loaders.xmlfile(mainxul)
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
@@ -69,6 +66,7 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.authoringPage = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
+        self.error = False
 
     def getChild(self, name, request):
         """
@@ -85,6 +83,10 @@ class MainPage(RenderableLivePage):
                                        'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
+            """
+            Convience function link funcs to hander ids
+            and store them
+            """
             kwargs['identifier'] = name
             hndlr = handler(func, *args, **kwargs)
             hndlr(ctx, client) # Stores it
@@ -219,8 +221,8 @@ class MainPage(RenderableLivePage):
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webserver.root.putChild(self.package.name, self)
-            log.info('Package saved, redirecting client to /%s' % self.package.name)
-            print 'Package saved, redirecting client to /%s' % self.package.name
+            log.info('Package saved, redirecting client to /%s'
+                     % self.package.name)
             client.sendScript('top.location = "/%s"' % self.package.name)
 
     def handleLoadPackage(self, client, filename):
@@ -231,26 +233,24 @@ class MainPage(RenderableLivePage):
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
             client.sendScript('top.location = "/%s"' % package.name)
-        except Exception, e:
+        except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
-                client.alert('Sorry, wrong file format:\n%s' % str(e))
+                client.alert('Sorry, wrong file format:\n%s' % str(exc))
             else:
                 client.alert('Sorry, wrong file format')
-            log.error('Error loading package "%s": %s' % (filename, str(e)))
+            log.error('Error loading package "%s": %s' % (filename, str(exc)))
             self.error = True
-            raise
-            return
 
     def handleAddResource(self, client, filename):
         """Add a resource (image/sound/video/etc.) to the current package"""
         # TODO: Use Davids api for adding images to self.package
         try:
-            filename = path(filename)
+            filename = Path(filename)
             storageName = self.package.addResource(filename)
             url = '%s/%s' % (self.package.name, storageName)
             client.alert('Resource Uploaded Successfully.\nAccess URL: %s' % url)
-        except PackageError, e:
-            client.alert('Uploading Resource failed:\n%s' % str(e))
+        except PackageError, exc:
+            client.alert('Uploading Resource failed:\n%s' % str(exc))
 
     def handleExport(self, client, exportType, filename):
         """
@@ -260,7 +260,7 @@ class MainPage(RenderableLivePage):
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
         """
-        webDir     = path(self.config.webDir)
+        webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
         imagesDir  = webDir.joinpath('images')
         scriptsDir = webDir.joinpath('scripts')
@@ -269,7 +269,7 @@ class MainPage(RenderableLivePage):
             # We assume that the user knows what they are doing
             # and don't check if the directory is already full or not
             # and we just overwrite what's already there
-            filename = path(filename)
+            filename = Path(filename)
             # Append the package name to the folder path if necessary
             if filename.basename() != self.package.name:
                 filename /= self.package.name
@@ -293,7 +293,7 @@ class MainPage(RenderableLivePage):
             if hasattr(os, 'startfile'):
                 os.startfile(filename)
             else:
-                filename = os.path.join(filename, 'index.html')
+                filename /= 'index.html'
                 os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
                     (self.config.browserPath,
                      '-remote', 'openURL("%s", "new-window")' % filename))
@@ -301,7 +301,7 @@ class MainPage(RenderableLivePage):
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 
                 filename += '.zip'
-            filename = path(filename)
+            filename = Path(filename)
             # Remove any old existing files
             if filename.exists(): 
                 filename.remove()
@@ -315,6 +315,7 @@ class MainPage(RenderableLivePage):
             elif exportType == 'scormNoScormType':
                 scormExport.export(self.package, True, False)
             else:
-                log.error('Wrong exportType passed to handleExport: %s' % exportType)
+                log.error('Wrong exportType passed to handleExport: %s'
+                          % exportType)
                 return
             client.alert('Exported to %s' % filename)

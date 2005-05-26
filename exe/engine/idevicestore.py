@@ -22,8 +22,8 @@ The collection of iDevices available
 
 #from exe.engine.config  import g_config
 
-import os.path
 from exe.engine import persist
+from exe.engine.path import Path
 
 import logging
 import gettext
@@ -51,6 +51,8 @@ class IdeviceStore:
         this package
         Sorted by title
         """
+        # TODO: Pylint complains that package is not used. Ask David if it
+        # should be removed or used
         return self.extended + self.generic
 
 
@@ -109,15 +111,13 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
-        genericPath = self.config.appDataDir + "/idevices/generic.data"
+        genericPath = self.config.appDataDir/'idevices'/'generic.data'
         log.debug("load generic iDevices from "+genericPath)
-        if os.path.exists(genericPath):
-            fileIn = open(genericPath, "rb")
-            self.generic = persist.decodeObject(fileIn.read())
+        if genericPath.exists():
+            self.generic = persist.decodeObject(genericPath.bytes())
         else:
             self.createGeneric()
             self.save()
-
 
     def createGeneric(self):
         from exe.engine.genericidevice import GenericIdevice
@@ -196,10 +196,10 @@ _("""Describe the tasks the learners should complete."""))
         """
         Save the Generic iDevices to the appdata directory
         """
-        idevicesDir = self.config.appDataDir + "/idevices"
-        if not os.path.exists(idevicesDir):
-            os.mkdir(idevicesDir)
-        fileOut = open(idevicesDir + "/generic.data", "wb")
+        idevicesDir = self.config.appDataDir/'idevices'
+        if not idevicesDir.exists():
+            idevicesDir.mkdir()
+        fileOut = open(idevicesDir/'generic.data', 'wb')
         fileOut.write(persist.encodeObject(self.generic))
 
 

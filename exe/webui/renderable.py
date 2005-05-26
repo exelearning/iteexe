@@ -3,15 +3,13 @@ This unit provides a base class for something that is rendered, this can be
 a page, a pane, a block, even part of XUL like the outlinePane but not really
 going down to the element level. We'll call them rendering components.
 
-It provides a way to get at your parent rendering component, the top bieng the mainpage,
-who has no parent. It also it provides you with a config instance and a package instance.
-Finally it makes you a LivePage and a Resource descendant, but you don't have to use that
-functionality. It means you can use a rendering template to do your rendering, even
-if you're part of a bigger block.
+It provides a way to get at your parent rendering component, the top bieng the
+mainpage, who has no parent. It also it provides you with a config instance and
+a package instance.  Finally it makes you a LivePage and a Resource descendant,
+but you don't have to use that functionality. It means you can use a rendering
+template to do your rendering, even if you're part of a bigger block.
 """
 
-import os
-from sets import Set
 from nevow import loaders
 from nevow.livepage import LivePage
 from twisted.web.resource import Resource
@@ -38,6 +36,7 @@ class Renderable(object):
         get them from 'parent'
         """
         self.parent = parent # This is the same for both blocks and pages
+
         # Overwrite old instances with same name
         if parent:
             parent.renderChildren[self.name] = self
@@ -56,8 +55,8 @@ class Renderable(object):
             self.webserver = None
         if self._templateFileName:
             if hasattr(self, 'config') and self.config:
-                path = os.path.join(self.config.webDir, 'templates', self._templateFileName)
-                self.docFactory = loaders.xmlfile(path)
+                pth = self.config.webDir/'templates'/self._templateFileName
+                self.docFactory = loaders.xmlfile(pth)
             else:
                 # Assume directory is included in the filename
                 self.docFactory = loaders.xmlfile(self._templateFileName)
@@ -91,7 +90,7 @@ class Renderable(object):
             name = attr.split('_', 1)[-1]
             return self.renderChildren[name].render
         elif self.webserver:
-            # If not, see if what they're looking for is in the application object
+            # If not, see if what they're looking for is in the app object
             return getattr(self.webserver.application, attr)
 
     def process(self, request):

@@ -24,7 +24,7 @@ configuration
 
 import os
 from exe.engine.config import Config
-from exe.engine.path import path
+from exe.engine.path import Path
 import logging
 
 # ===========================================================================
@@ -39,9 +39,9 @@ class LinuxConfig(Config):
         Setup with our default settings
         """
         # Override the default settings
-        self.webDir      = "/usr/share/exe"
-        self.dataDir     = os.environ['HOME']
-        self.appDataDir  = self.dataDir
+        self.webDir      = Path("/usr/share/exe")
+        self.dataDir     = Path(os.environ['HOME'])
+        self.appDataDir  = Path(self.dataDir)
         browserPath = self.exePath/'firefox/firefox'
         if browserPath.isfile():
             self.browserPath = browserPath
@@ -51,9 +51,9 @@ class LinuxConfig(Config):
         """
         Returns the best places for a linux config file
         """
-        return [path(os.environ["HOME"])/'.exe/exe.conf',
-                '/etc/exe/exe.conf',
-                './exe/exe.conf']
+        return [Path(os.environ["HOME"])/'.exe/exe.conf',
+                Path('/etc/exe/exe.conf'),
+                Path('./exe/exe.conf')]
 
 
 # ===========================================================================

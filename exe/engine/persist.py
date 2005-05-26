@@ -31,6 +31,7 @@ from twisted.spread  import banana
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
+
 class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
     Base class for persistent classes

@@ -20,10 +20,8 @@
 Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
-from exe.webui                  import common
-from os                         import mkdir
-from os.path                    import exists, splitext, basename, join, sep
-from  shutil                    import copyfile
+from exe.webui       import common
+from exe.engine.path import Path
 import re
 
 log = logging.getLogger(__name__)
@@ -49,8 +47,8 @@ def createElement(elementType, name, class_, blockId, instruc):
 
 def getUploadedFileDir():
     """Returns the directory where files will be uploaded to"""
-    # TODO!!!
-    return "TODO"
+    # TODO!!! (Return a Path instance please)
+    return Path("TODO")
     
     
 # ===========================================================================
@@ -65,7 +63,7 @@ class Element(object):
         self.name     = name
         self.class_   = class_
         self.blockId  = blockId
-        self.id       = re.sub(r"\W","",name)+class_+blockId
+        self.id       = re.sub(r'\W', '', name) + class_ + blockId
         self.instruc  = instruc
 
     def process(self, request):
@@ -176,29 +174,30 @@ class ImageElement(Element):
                 request.args[ self.id + "_filename"][0].strip() != ""): 
                 
                 ##get the audio file extension
-                fileExtension = splitext(basename(request.args[ self.id + \
-                "_filename" ][0]))[1].lower()
+                src = request.args[self.id + "_filename"][0]
+                fileExtension = src.ext.lower()
                 
                 ##assign path + id + fileExtension (.xxx) to filename
-                filename =   packageName  + sep + self.id +  fileExtension 
+                filename = Path(packageName)/self.id + fileExtension
                 
                 ##use this image data directory to store file, a mock up way
                 imgDir = getUploadedFileDir()
                 
                 ##check if the image directory for this package exist or not
-                if not exists(join (imgDir, packageName)):
+                packagePath = imgDir/packageName
+                if not packagePath.exists():
                     try:
-                        mkdir(join(imgDir, packageName) )
+                        packagePath.mkdir()
                     except OSError:
                         errmsg = "Error while creating audio directory: %s" \
-                                          % (join (imgDir, packageName))
+                                 % (packagePath)
                         log.debug(errmsg)
                         return errmsg
                         
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile(request.args[ self.id + "_filename" ][0], \
-                                join(imgDir,  filename))
+                    src = Path(request.args[ self.id + "_filename" ][0])
+                    src.copyfile(imgDir/filename)
                 except OSError:
                     return "%s image file not copied" % filename
             
@@ -220,7 +219,7 @@ class ImageElement(Element):
         
         html = ""        
         ## if file exists=>update, else, add
-        if filename.strip() != "" and exists(join(imgDir, filename)):
+        if filename.strip() != "" and (imgDir/filename).exists():
             ##update, show previous file 
             html += """<strong>Previous %s</strong>:<br /><img src="images/%s" \
             class="%s" width="%s" height="%s" border="%s" /><br />\n""" \
@@ -294,29 +293,30 @@ class AudioElement(Element):
                 request.args[ self.id + "_filename"][0].strip() != "": 
                 
                 ##get the audio file extension
-                fileExtension = splitext(basename(request.args[ self.id + \
-                "_filename" ][0]))[1].lower()
+                src = Path(request.args[self.id +  "_filename"][0])
+                fileExtension = src.ext.lower()
                 
                 ##assign path + id + fileExtension (.xxx) to filename
-                filename =   packageName  + sep + self.id +  fileExtension 
+                filename = Path(packageName)/self.id+fileExtension 
                 
                 ##use this image data directory to store file, a mock up way
                 imgDir = getUploadedFileDir()
                 
                 ##check if the image directory for this package exist or not
-                if not exists(join (imgDir, packageName)):
+                packagePath = imgDir/packageName
+                if not packagePath.exists():
                     try:
-                        mkdir(join(imgDir, packageName) )
+                        packagePath.mkdir()
                     except OSError:
                         errmsg = "Error while creating audio directory: %s" \
-                                          % (join (imgDir, packageName))
+                                 % packagePath
                         log.debug(errmsg)
                         return errmsg
                         
                 ##copy file to ImageDataDir
                 try:    
-                    copyfile(request.args[ self.id + "_filename" ][0], \
-                                join(imgDir,  filename))
+                    src = request.args[ self.id + "_filename" ][0]
+                    src.copyfile(imgDir/filename)
                 except OSError:
                     return "%s image file not copied" % filename
                 ##resize image file
@@ -337,7 +337,7 @@ class AudioElement(Element):
         ## if file exists=>update, else, add
         imgDir = getUploadedFileDir()
         html = ""
-        if filename.strip()!="" and exists(join(imgDir, filename)):
+        if filename.strip()!= "" and (imgDir/filename).exists():
             ##update, show previous file 
             html += """<strong>Previous %s</strong>: %s<br />\n""" \
                     %(self.titleMessage, self.renderView(filename))
@@ -372,7 +372,7 @@ class AudioElement(Element):
         generate html code bits according to the uploaded file type
         """
         
-        fileExtension = splitext(filename)[ 1 ].lower()
+        fileExtension = Path(filename).ext.lower()
         
         mp3String = """
 <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
