@@ -17,12 +17,12 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-MultichoiceBlock can render and process MultichoiceIdevices as XHTML
+TestQuestionElement is responsible for a block of question.  
+Used by QuizTestBlock
 """
 
 import logging
 import gettext
-from exe.webui.block               import Block
 from exe.webui.testoptionelement   import TestoptionElement
 from exe.webui                     import common
 
@@ -33,7 +33,8 @@ _   = gettext.gettext
 # ===========================================================================
 class TestquestionElement(object):
     """
-    MultichoiceBlock can render and process MultichoiceIdevices as XHTML
+    TestQuestionElement is responsible for a block of question.  
+    Used by QuizTestBlock
     """
     def __init__(self, index, idevice, question):
         """
@@ -47,7 +48,8 @@ class TestquestionElement(object):
         self.keyId      = "key" + self.id
         i = 0
         for option in question.options:
-            self.options.append(TestoptionElement(i, question, self.id, option))
+            self.options.append(TestoptionElement(i, question, self.id, option,
+                                                  idevice))
             i += 1
 
     def process(self, request):
@@ -69,7 +71,7 @@ class TestquestionElement(object):
 
     def renderEdit(self):
         """
-        Returns an XHTML string with the form element for editing this block
+        Returns an XHTML string with the form element for editing this element
         """
         question = self.question.question
         question = question.replace("\r", "")
@@ -99,15 +101,9 @@ class TestquestionElement(object):
     
     def renderView(self):
         """
-        Returns an XHTML string for viewing this block
+        Returns an XHTML string for viewing this element
         """
-        #html  = '<script language="JavaScript" src="common.js"></script>\n'
-        #html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
-        #html += "<div class=\"iDevice\">\n"
-        #html += "<img class=\"iDevice_icon\" "
-        #html += "src=\"multichoice.gif\" />\n"
-        #html += "<span class=\"iDeviceTitle\">"       
-        #html += self.idevice.title+"</span><br/>\n"
+
         html  = "<b>" + self.question.question +"</b><br/>\n"
         html += "<table>"
         for element in self.options:
@@ -118,32 +114,19 @@ class TestquestionElement(object):
 
         return html
     
-
-    def renderPreview(self):
-        """
-        Returns an XHTML string for previewing this block
-        """
-        #html  = "<div class=\"iDevice\" "
-        #html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        #html += "<img class=\"iDevice_icon\" "
-        #html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
-        #html += "<span class=\"iDeviceTitle\">"       
-        #html += self.idevice.title+"</span><br/>\n"
-        html  = "<b>" + self.question.question +"</b><br/>\n"
-        html += "<table>"
-        for element in self.options:
-            html += element.renderView()      
-        html += "</table>"                                                                    
-        #html += self.renderViewButtons()
-       # html += "</div>\n"
-
-        return html
     
     def getCorrectAns(self):
-        return self.correctAns
+        """
+        return the correct answer for the question
+        """
+        return self.question.correctAns
+
     
     def getNumOption(self):
-        return len(self.options)
+        """
+        return the number of options
+        """
+        return len(self.question.options)
 
 
 # ===========================================================================

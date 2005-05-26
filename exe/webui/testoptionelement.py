@@ -17,7 +17,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-TestOptionElement is responsible for a block of option.  Used by MultichoiceBlock
+TestOptionElement is responsible for a block of option.  Used by 
+TestquestionElement.
 """
 
 import logging
@@ -29,9 +30,10 @@ _   = gettext.gettext
 # ===========================================================================
 class TestoptionElement(object):
     """
-    testoptionElement is responsible for a block of option.  Used by MultichoiceBlock
+    TestOptionElement is responsible for a block of option.  Used by
+    TestquestionElement.
     """
-    def __init__(self, index, question, questionId, option):
+    def __init__(self, index, question, questionId, option, idevice):
         """
         Initialize
         """
@@ -41,7 +43,8 @@ class TestoptionElement(object):
         self.questionId = questionId
         self.option     = option
         self.answerId   = "optionAnswer"+ str(index) + "q" + questionId
-        self.keyId      = "key" + questionId        
+        self.keyId      = "key" + questionId   
+        self.idevice    = idevice
   
         
 
@@ -55,13 +58,17 @@ class TestoptionElement(object):
         if self.answerId in request.args:
             self.option.answer = request.args[self.answerId][0]
                         
-        if self.keyId in request.args:
-            if request.args[self.keyId][0] == self.id:
+        if "c"+self.keyId in request.args:
+            if request.args["c"+self.keyId][0] == self.id:
                 self.option.isCorrect = True 
                 self.question.correctAns = self.index
                 log.debug("option " + repr(self.option.isCorrect))
             else:
                 self.option.isCorrect = False
+                
+        if self.keyId in request.args:
+            if request.args[self.keyId][0] == str(self.index):
+                self.question.userAns = self.index
             
         if "action" in request.args and request.args["action"][0] == self.id:
             self.question.options.remove(self.option)
@@ -80,9 +87,9 @@ class TestoptionElement(object):
         html = "<tr><td>"
         html += common.richTextArea(self.answerId, answer)
         html += "</td><td align = \"center\">\n"
-        html += common.option(self.keyId, self.option.isCorrect, self.id)        
+        html += common.option("c"+self.keyId, self.option.isCorrect, self.id)
         html += "</td><td>\n"
-        html += common.submitImage(self.id, self.questionId, 
+        html += common.submitImage(self.id, self.idevice.id, 
                                    "stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"
@@ -93,7 +100,7 @@ class TestoptionElement(object):
 
     def renderView(self):
         """
-        Returns an XHTML string for viewing and previewing this option element
+        Returns an XHTML string for viewing this option element
         """
         log.debug("renderView called")
         self.option.answer = self.option.answer.replace("\r", "")

@@ -42,10 +42,12 @@ class QuizTestBlock(Block):
         Block.__init__(self, idevice)
         self.idevice           = idevice
         self.questionElements  = []
-        
+        self.message = False
+
         i = 0
         for question in idevice.questions:
-            self.questionElements.append(TestquestionElement(i, idevice, question))
+            self.questionElements.append(TestquestionElement(i, idevice, 
+                                                             question))
             i += 1
 
     def process(self, request):
@@ -59,16 +61,32 @@ class QuizTestBlock(Block):
             self.idevice.addQuestion()
             self.idevice.edit = True
 
+
         for element in self.questionElements:
             element.process(request)
 
-
+            
+        if "action" in request.args and request.args["action"][0] == "done":
+            for question in self.idevice.questions:
+                if question.correctAns == -2:
+                    self.idevice.isAnswered = False
+                    self.idevice.edit = True
+                    break
+            
+        if "submitScore" in request.args:
+            self.idevice.score = self.__calcScore()
+            
+            
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
 
         html  = "<div class=\"iDevice\">\n"
+        if not self.idevice.isAnswered:
+            html += '<br/><font color="red"><b> '
+            html += _("Please select a correct answer for each question.") 
+            html += "</font></b><br/><br/>"
         html += "<b>" + _("Quiz Test:") + " </b><br/>"   
 
         for element in self.questionElements:
@@ -78,6 +96,7 @@ class QuizTestBlock(Block):
         html += common.submitButton("addQuestion"+str(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
+        self.idevice.isAnswered = True
 
         return html
 
@@ -87,8 +106,6 @@ class QuizTestBlock(Block):
         Returns an XHTML string for viewing this block
         """
         
-        #html  = '<script language="JavaScript" src="common.js"></script>\n'
-        #html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
         html  = self.__createJavascript()
         html += '<form name="contentForm">\n'
         html += "<div class=\"iDevice\">\n"
@@ -101,63 +118,67 @@ class QuizTestBlock(Block):
             html += element.renderPreview() + "<br/>"  
         html += "</div>\n"
         
-        html += '<INPUT TYPE="BUTTON" VALUE=" SUBMIT ANSWERS " onClick="calcScore()">\n'
+        html += '<input type="button" value=" SUBMIT ANSWERS "'
+        html += 'onClick="calcScore()">\n'
         html += '</form>\n'
 
         return html
     
     def __createJavascript(self):
-        scriptStr = "<SCRIPT LANGUAGE=\"javascript\">\n"
+        """
+        Return an XHTML string for generating the javascript
+        """
+        scriptStr = "<script language=\"javascript\">\n"
         scriptStr += "var numQuestions = " +str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
         answerStr  = """function getAnswer()
         {"""
-        varStrs  = ""
-        keyStrs  = ""
-        answer = ""
-        answers = ""
+        varStrs     = ""
+        keyStrs     = ""
+        answers     = ""
         rawScoreStr = """}
         function calcRawScore(){\n"""
 
         for element in self.questionElements:
             i = element.index
-            answer    = element.question.correctAns
             varStr    = "question" + str(i)
             keyStr    = "key" + str(i)
             quesId    = "key" + str(element.index) + "b" + self.id
-            NumOption = element.getNumOption()
-            answers  += "var key" + str(i)+ " = " + str(answer) + ";\n"
+            numOption = element.getNumOption()
+            answers  += "var key"  + str(i) + " = " 
+            answers  += str(element.question.correctAns) + ";\n"
             chk = "document.contentForm." + quesId+"[i].checked"
             value = "document.contentForm." + quesId+"[i].value"
-            varStrs += "var " +varStr + ";\n"
-            keyStrs += "var " +keyStr + " = " +str(answer) + ";\n"           
+            varStrs += "var " + varStr + ";\n"
+            keyStrs += "var key" + str(i)+ " = " 
+            keyStrs += str(element.question.correctAns) + ";\n"           
             answerStr += """
-                doLMSSetValue("cmi.interactions.%s.id","%s");
-                doLMSSetValue("cmi.interactions.%s.type","choice");
-                doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern","%s");
-                """ % (str(i), quesId, str(i), str(i), answer)
+            doLMSSetValue("cmi.interactions.%s.id","%s");
+            doLMSSetValue("cmi.interactions.%s.type","choice");
+            doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern","%s");
+            """ % (str(i), quesId, str(i), str(i), element.question.correctAns)
             answerStr += """
-                for (var i=0; i <= %s; i++)
-                {
-                   if (%s)
-                   {
-                      %s = %s;
-                      doLMSSetValue("cmi.interactions.%s.student_response",%s);
-                      break;
-                   }
-                }
-               """ % (NumOption, chk, varStr, value, str(i), varStr)            
+            for (var i=0; i <= %s; i++)
+            {
+               if (%s)
+               {
+                  %s = %s;
+                  doLMSSetValue("cmi.interactions.%s.student_response",%s);
+                  break;
+               }
+            }
+           """ % (numOption, chk, varStr, value, str(i), varStr)            
             rawScoreStr += """
-                if (%s == %s)
-                {
-                   doLMSSetValue("cmi.interactions.%s.result","correct");
-                   rawScore++;
-                }
-                else
-                {
-                   doLMSSetValue("cmi.interactions.%s.result","wrong");
-                }""" % (varStr, keyStr, str(i), str(i))
+            if (%s == %s)
+            {
+               doLMSSetValue("cmi.interactions.%s.result","correct");
+               rawScore++;
+            }
+            else
+            {
+               doLMSSetValue("cmi.interactions.%s.result","wrong");
+            }""" % (varStr, keyStr, str(i), str(i))
             
         scriptStr += varStrs       
         scriptStr += keyStrs
@@ -204,7 +225,7 @@ class QuizTestBlock(Block):
          doLMSFinish();
           
         }
-        </SCRIPT>\n"""
+        </script>\n"""
         
         return scriptStr
 
@@ -220,17 +241,43 @@ class QuizTestBlock(Block):
         html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
-        #html += self.question + "<br/>"
-       # html += "<table>"                                                                    
+
+        if not self.idevice.score == -1:
+            message = "Your score is " + str(self.idevice.score) + "%"
+            html += "<b>"+ message+ "</b><br/>"
+                                                                  
         for element in self.questionElements:
-            html += element.renderPreview() + "<br/>"
+            html += element.renderView() + "<br/>"
        # html += "</table>"
         html += self.renderViewButtons()
         html += "</div>\n"
-        html += '<INPUT TYPE="BUTTON" VALUE=" SUBMIT ANSWERS " onClick="calcScore()">'
+        html += '<input type="submit" name="submitScore"'
+        html += ' value="%s"/> ' % _("Submit Answer")
+        self.idevice.score = -1
+
         
         return html
+    
+    def __calcScore(self):
+        """
+        Return a score for preview mode.
+        """
+        rawScore = 0
+        numQuestion = len(self.questionElements)
+        score = 0
 
+        for question in self.idevice.questions:
+            if (question.userAns == question.correctAns):
+                log.info("userAns " +str(question.userAns) + ": " 
+                         + "correctans " +str(question.correctAns))
+                rawScore += 1
+        
+        if numQuestion > 0:
+            score = rawScore * 100/numQuestion
+            
+        return score 
+            
+        
 
 
 # ===========================================================================

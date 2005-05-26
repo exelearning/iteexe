@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-A QuizTest Idevice is one built up from questions
+A QuizTest Idevice is one built up from TestQuestions
 """
 
 import logging
@@ -31,8 +31,8 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class AnswerOption(Persistable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can
-    be rendered as an XHTML element
+    A TestQuestion is built up of question and AnswerOptions.  Each answerOption 
+    can be rendered as an XHTML element
     """
     def __init__(self, answer="", isCorrect=False):
         """
@@ -46,8 +46,7 @@ class AnswerOption(Persistable):
 
 class TestQuestion(Persistable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can
-    be rendered as an XHTML element
+    A TestQuestion is built up of question and AnswerOptions.
     """
     def __init__(self, question=""):
         """
@@ -55,12 +54,13 @@ class TestQuestion(Persistable):
         """
         self.question = question
         self.options  = []
-        self.correctAns = -1
+        self.correctAns = -2
+        self.userAns    = -1
         self.addOption()
         
     def addOption(self):
         """
-        Add a new option to this iDevice. 
+        Add a new option to this question. 
         """
         self.options.append(AnswerOption())
 
@@ -73,7 +73,7 @@ class QuizTestIdevice(Idevice):
     """
     persistenceVersion = 1
 
-    def __init__(self, question=""):
+    def __init__(self):
         """
         Initialize 
         """
@@ -81,6 +81,8 @@ class QuizTestIdevice(Idevice):
                          _("Quiz Test"),
                          _("University of Auckland"),
                          "", "", "")
+        self.score = -1 
+        self.isAnswered = True
                          
         self.questions         = []
         self.addQuestion()
@@ -88,7 +90,7 @@ class QuizTestIdevice(Idevice):
 
     def addQuestion(self):
         """
-        Add a new option to this iDevice. 
+        Add a new question to this iDevice. 
         """
         self.questions.append(TestQuestion())
 

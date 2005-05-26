@@ -134,7 +134,7 @@ class MultichoiceBlock(Block):
         html += 'border="0" align="middle" \n'
         html += 'style="cursor:help;" title="Instructions for completion" \n'
         html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
-        html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId                
+        html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId 
         html += "<div style=\"float:right;\" >"
         html += '<img src="stock-stop.png" title="'+_("Close")+'" ' 
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
