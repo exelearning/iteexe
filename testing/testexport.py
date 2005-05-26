@@ -22,7 +22,7 @@ Tests website and scorm exports.
 
 import unittest
 from exe.engine.package       import Package
-from exe.engine.path          import path, TempDirPath
+from exe.engine.path          import Path, TempDirPath
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from zipfile                  import ZipFile
@@ -43,7 +43,7 @@ class TestWebsiteExport(unittest.TestCase):
         assert outdir.isdir()
         assert (outdir / 'index.html').isfile()
         # Check that the style sheets have been copied
-        for filename in path('../exe/webui/style/default').files():
+        for filename in Path('../exe/webui/style/default').files():
             assert ((outdir / filename.basename()).exists(),
                     'Style file "%s" not copied' % (outdir / filename.basename()))
 
@@ -82,7 +82,7 @@ class BaseTestScormExport(unittest.TestCase):
         # Load our test package
         package = Package.load('testPackage.elp')
         # Do the export
-        outFilename = path('scormtest.zip')
+        outFilename = Path('scormtest.zip')
         class MyConfig:
             def __init__(self):
                 self.exePath = ""

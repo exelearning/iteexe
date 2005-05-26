@@ -49,7 +49,7 @@ class WinConfig(Config):
             programFiles = Path(self.__getWinFolder(PROGRAMFILES))
             self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
         self.dataDir = Path(self.__getWinFolder(MYDOCUMENTS))
-        self.appDataDir = self.dataDir
+        self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
 
     def _getConfigPathOptions(self):
         """

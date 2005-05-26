@@ -19,6 +19,7 @@
 
 from exe.engine.idevice      import Idevice
 from exe.engine.idevicestore import IdeviceStore
+from exe.engine.path         import Path
 import unittest
 import os
 
@@ -29,13 +30,16 @@ _   = gettext.gettext
 
 class MyConfig:
     def __init__(self):
-        self.appDataDir = "."
+        self.configDir = Path(".")
 
 class TestIdeviceStore(unittest.TestCase):
     def setUp(self):
         pass
 
     def testLoad(self):
+        """
+        Tests that idevices can be loaded
+        """
         store = IdeviceStore(MyConfig())
         store.load()
         self.assert_(os.path.exists("idevices/generic.data"))

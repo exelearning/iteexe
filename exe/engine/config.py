@@ -39,7 +39,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'port', 'dataDir', 
-                   'appDataDir', 'browserPath')
+                   'configDir', 'browserPath')
     }
 
     def __init__(self):
@@ -58,9 +58,9 @@ class Config:
         # dataDir is the default directory that is shown to the user
         # to save packages and exports in
         self.dataDir     = Path(".")
-        # appDataDir is the parent dir for storing user profiles
-        # and user made idevices
-        self.appDataDir  = Path(".")
+        # configDir is the dir for storing user profiles
+        # and user made idevices and the config file
+        self.configDir   = Path(".")
         # browserPath is the entire pathname to firefox
         self.browserPath = Path("firefox")
         # styles is the list of style names available for loading
@@ -154,17 +154,28 @@ class Config:
             self.port        = int(system.port)
             self.browserPath = Path(system.browserPath)
             self.dataDir     = Path(system.dataDir)
-            self.appDataDir  = Path(system.appDataDir)
+            if system.has_option('appDataDir'):
+                # Older config files had configDir stored as appDataDir
+                self.configDir = Path(system.appDataDir)
+                # We'll just upgrade their config file for them for now...
+                system.configDir = self.configDir
+                del system.appDataDir
+            else:
+                self.configDir = Path(system.configDir)
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
             self.dataDir = tempfile.gettempdir()
+        # If the configDir doesn't exist (as it may be a default setting with a
+        # new installation) create it
+        if not self.configDir.exists():
+            self.configDir.mkdir()
 
     def setupLogging(self, logFile):
         """
         setup logging file
         """
 
-        hdlr   = logging.FileHandler(self.appDataDir/logFile)
+        hdlr   = logging.FileHandler(self.configDir/logFile)
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log  = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))

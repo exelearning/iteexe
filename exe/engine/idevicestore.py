@@ -111,7 +111,7 @@ class IdeviceStore:
         """
         Load the Generic iDevices from the appdata directory
         """
-        genericPath = self.config.appDataDir/'idevices'/'generic.data'
+        genericPath = self.config.configDir/'idevices'/'generic.data'
         log.debug("load generic iDevices from "+genericPath)
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
@@ -196,7 +196,7 @@ _("""Describe the tasks the learners should complete."""))
         """
         Save the Generic iDevices to the appdata directory
         """
-        idevicesDir = self.config.appDataDir/'idevices'
+        idevicesDir = self.config.configDir/'idevices'
         if not idevicesDir.exists():
             idevicesDir.mkdir()
         fileOut = open(idevicesDir/'generic.data', 'wb')

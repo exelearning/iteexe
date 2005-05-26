@@ -23,6 +23,8 @@ from exe.engine.package            import Package
 from exe.webui.webserver           import WebServer
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.application               import Application
+from exe.engine.path               import Path
+
 
 class FakeClient(object):
     """Pretends to be a webnow client object"""
@@ -44,10 +46,10 @@ class TestOutline(unittest.TestCase):
         class MyConfig:
             def __init__(self):
                 self.port       = 8081
-                self.dataDir    = "."
-                self.webDir     = "."
-                self.exeDir     = "."
-                self.appDataDir = "."
+                self.dataDir    = Path(".")
+                self.webDir     = Path(".")
+                self.exeDir     = Path(".")
+                self.configDir  = Path(".")
                 self.styles     = ["default"]
         app = Application()
         app.config = MyConfig()

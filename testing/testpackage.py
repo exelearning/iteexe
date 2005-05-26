@@ -42,9 +42,9 @@ class TestPackage(unittest.TestCase):
         package.author = "UoA"
         Config._getConfigPathOptions = lambda s: ['exe.conf']
         config  = Config()
-        package.save(config.dataDir + '/package1.elp')
+        package.save(config.dataDir/'package1.elp')
         
-        filePath = join(config.dataDir, "package1.elp")
+        filePath = config.dataDir/'package1.elp'
         package1 = self.packageStore.loadPackage(filePath)
         self.assert_(package1)
         self.assertEquals(package1.author, "UoA")
@@ -99,7 +99,13 @@ class TestPackage(unittest.TestCase):
                         assert val2.has_key(nodeName)
                 elif isinstance(val, Node) or isinstance(val, TitleIdevice):
                     if isinstance(val, TitleIdevice): checkInst(val, val2)
+                elif key in Package.nonpersistant:
+                    # Non persistent should exist after load
+                    # but not be the same
+                    assert d2.has_key(key)
                 else:
+                    # Everything else must match
+                    self.assertEquals(val, val2)
                     assert val == val2, '%s.%s: %s/%s' % (inst1.__class__.__name__, key, val2, val)
         checkInst(package, package2)
 

@@ -41,7 +41,7 @@ class LinuxConfig(Config):
         # Override the default settings
         self.webDir      = Path("/usr/share/exe")
         self.dataDir     = Path(os.environ['HOME'])
-        self.appDataDir  = Path(self.dataDir)
+        self.configDir   = Path(self.dataDir)/'.exe'
         browserPath = self.exePath/'firefox/firefox'
         if browserPath.isfile():
             self.browserPath = browserPath
