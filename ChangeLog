@@ -1,3 +1,56 @@
+2005-05-26 03:30  matthew
+
+	* ., exe/engine/config.py, exe/engine/idevicestore.py,
+	  exe/engine/linuxconfig.py, exe/engine/winconfig.py,
+	  exe/webui/outlinepane.py, patches/jelly.readme, testing/test.conf,
+	  testing/testconfig.py, testing/testexport.py,
+	  testing/testidevicestore.py, testing/testpackage.py,
+	  testing/testxmlhttp.py, tools/svnmerge: Renamed exeDataDir to
+	  configDir and made it point to ~/.exe (or
+	  c:\doc..\myuser\application data\exe on windows) and autocreate it
+	  if it doesn't exist. Automatically upgrades old config files :)
+
+2005-05-26 03:01  jenny
+
+	* exe/engine/quiztestidevice.py, exe/webui/multichoiceblock.py,
+	  exe/webui/quiztestblock.py, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py: modified quiztest idevice. added
+	  a score for preview mode.
+
+2005-05-26 01:38  matthew
+
+	* exe/engine/config.py, exe/engine/idevicestore.py,
+	  exe/engine/linuxconfig.py, exe/engine/macconfig.py,
+	  exe/engine/package.py, exe/engine/path.py, exe/engine/persist.py,
+	  exe/engine/quiztestidevice.py, exe/engine/winconfig.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/browser.py, exe/webui/element.py, exe/webui/mainpage.py,
+	  exe/webui/packageredirectpage.py, exe/webui/quiztestblock.py,
+	  exe/webui/renderable.py, exe/webui/style/default/content.css,
+	  exe/webui/testoptionelement.py, exe/webui/testquestionelement.py:
+	  Merge in from matthew branch Tidied code Used Path everywhere
+
+2005-05-26 01:09  matthew
+
+	* .: Initialized merge tracking via svnmerge with revisions 1-697
+	  from http://exe.cfdl.auckland.ac.nz/svn/exe/branches/matthew
+
+2005-05-25 23:57  djm
+
+	* ChangeLog, exe/engine/casestudyidevice.py,
+	  exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/titleidevice.py,
+	  exe/engine/truefalseidevice.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/casestudyblock.py,
+	  exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/reflectionblock.py, exe/webui/titleblock.py,
+	  exe/webui/truefalseelement.py, testing/testidevice.py,
+	  testing/testidevicestore.py: Work on resources + a bit of
+	  refactoring Sorry about the conflicts.
+
 2005-05-25 08:41  jenny
 
 	* exe/engine/quiztestidevice.py, exe/webui/quiztestblock.py,

@@ -63,7 +63,7 @@ class Manifest(object):
         manifestId = str(self.idGenerator.generate())
         orgId      = str(self.idGenerator.generate())
         
-        xmlStr = """<?xml version="1.0" encoding="UTF-8"?>
+        xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
         <manifest identifier="%s" 
         xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 

@@ -29,8 +29,20 @@ _   = gettext.gettext
 
 
 # ===========================================================================
+class Page(object):
+    """
+    This is an abstraction for a page containing a node
+    e.g. in a SCORM package or Website
+    """
+    def __init__(self, name, depth, node):
+        """
+        Initialize
+        """
+        self.name  = name
+        self.depth = depth
+        self.node  = node
 
-# TODO include a base class for Web and Scorm Pages here
+
 
 def uniquifyNames(pages):
     """

@@ -199,9 +199,9 @@ class EditorPane(object):
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
             html += "<b>" + _("Author") + "</b><br/>\n"
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
-            html += "<b>" + _("Description") + "</b><br/>\n"
+            html += "<b>" + _("Purpose") + "</b><br/>\n"
             html += common.textArea("description", self.idevice.purpose) 
-            html += "<b>" + _("Pedagogical Help") + "</b><br/>\n"
+            html += "<b>" + _("Pedagogical Tip") + "</b><br/>\n"
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
             html += "<b>" + _("Emphasis") + "</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"

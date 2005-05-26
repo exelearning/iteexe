@@ -59,9 +59,13 @@ class PackageRedirectPage(RenderableResource):
             return RenderableResource.getChild(self, name, request)
 
     def bindNewPackage(self, package):
-        """Binds 'package' to the appropriate url
-        and creates a MainPage instance for it"""
+        """
+        Binds 'package' to the appropriate url
+        and creates a MainPage instance for it
+        and a directory for the resource files
+        """
         MainPage(self, package)
+
 
     def render_GET(self, request):
         """

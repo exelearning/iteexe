@@ -20,8 +20,6 @@
 The collection of iDevices available
 """
 
-#from exe.engine.config  import g_config
-
 from exe.engine import persist
 from exe.engine.path import Path
 
@@ -39,9 +37,9 @@ class IdeviceStore:
     def __init__(self, config):
         # TODO I originally planned Extended and Generic iDevices to
         # be handled polymorphically, need to reconsider this
-        self.config   = config
-        self.extended = []
-        self.generic  = []
+        self.config    = config
+        self.extended  = []
+        self.generic   = []
         self.listeners = []
 
 
@@ -49,10 +47,9 @@ class IdeviceStore:
         """
         Get the idevices which are applicable for the current node of
         this package
-        Sorted by title
         """
-        # TODO: Pylint complains that package is not used. Ask David if it
-        # should be removed or used
+        # TODO: in future the idevices which are returned will depend
+        # upon the pedagogical template we are using
         return self.extended + self.generic
 
 

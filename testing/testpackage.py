@@ -18,23 +18,30 @@
 # ===========================================================================
 
 import unittest
-from os.path                 import join
-from exe.engine.package      import Package
-from exe.engine.config       import Config
-from exe.engine.packagestore import PackageStore
-from exe.engine.node         import Node
-from exe.engine.titleidevice import TitleIdevice
+from os.path                   import join
+from exe.engine.package        import Package
+from exe.engine.config         import Config
+from exe.engine.packagestore   import PackageStore
+from exe.engine.node           import Node
+from exe.engine.genericidevice import GenericIdevice
+from exe.engine.path           import Path
+
+# TODO want to remove TitleIdevice
+from exe.engine.titleidevice   import TitleIdevice
+
 
 # ===========================================================================
 class TestPackage(unittest.TestCase):
     def setUp(self):
         self.packageStore = PackageStore()
 
+
     def testCreatePackage(self):
         package      = self.packageStore.createPackage()
         self.assert_(package)
         self.assert_(package.name)
         
+
     def testSaveAndLoad(self):
         package = self.packageStore.createPackage()
         # Check that it has been given a default name
@@ -52,17 +59,20 @@ class TestPackage(unittest.TestCase):
         self.assertEquals(package.name, "package1")
         self.assertEquals(package1.name, "package1")
         
+
     def testfindNode(self):
         package = self.packageStore.createPackage()
         node1 = package.root.createChild()
         self.assertEquals(package.findNode(node1.id), node1)
         
+
     def testLevelName(self):
         package = self.packageStore.createPackage()
         package.levelNames = ["Month", "Week", "Day"]
         self.assertEquals(package.levelName(0), "Month")
         self.assertEquals(package.levelName(1), "Week")
         self.assertEquals(package.levelName(2), "Day")
+
 
     def testNodeIds(self):
         package = self.packageStore.createPackage()
@@ -90,7 +100,9 @@ class TestPackage(unittest.TestCase):
                     assert len(val) == len(val2)
                     for i, i2 in zip(val, val2):
                         if type(i) is str:
-                            assert i == i2, '%s.%s: [%s/%s]' % (inst1.__class__.__name__, key, i2, i)
+                            assert (i == i2, 
+                                    '%s.%s: [%s/%s]' % 
+                                    (inst1.__class__.__name__, key, i2, i))
                         else:
                             checkInst(i, i2)
                 elif key == '_nodeIdDict' and isinstance(val, dict):
@@ -109,6 +121,16 @@ class TestPackage(unittest.TestCase):
                     assert val == val2, '%s.%s: %s/%s' % (inst1.__class__.__name__, key, val2, val)
         checkInst(package, package2)
 
+
+    def testResourceDir(self):
+        """
+        Test we have a resource directory and resource files can be stored in
+        """
+        package   = self.packageStore.createPackage()
+        myIdevice = GenericIdevice("MyIdevice", "test", "", "", "")
+        package.root.addIdevice(myIdevice)
+        resourceName = package.addResource(myIdevice, Path("oliver.jpg"))
+        self.assert_((package.resourceDir/resourceName).exists())
 
 
         

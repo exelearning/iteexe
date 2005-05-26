@@ -24,6 +24,7 @@ i.e. the "package".
 import logging
 import gettext
 import zipfile 
+import shutil
 from exe.engine.path            import Path, TempDirPath
 from exe.engine.node            import Node
 from exe.engine.freetextidevice import FreeTextIdevice
@@ -164,21 +165,37 @@ class Package(Persistable):
     load = staticmethod(load)
 
 
-    def addResource(self, filename):
+    def getResources(self):
+        """
+        Return the resource files used by this node
+        """
+        resources = {}
+        for node in self.nodes:
+            for idevice in node.idevices:
+                for resource in idevice.getResources():
+                    resources[resource] = True
+
+        return resources.keys()
+
+
+    def addResource(self, idevice, resourceFile):
         """
         Add an image/audio/video resource to the package.
         Returns the last part of the url to access this resource
-        'filename' is a 'path' instance pointing to a local file where we can
-        load the resource from
+        'resourceFile' is a 'path' instance pointing to a local file where we
+        can load the resource from
+        'idevice' is the idevice the resource is associated with
         Raises a 'PackageError' if it can't be imported
         """
-        if not filename.exists():
-            raise PackageError('File %s does not exist' % filename)
-        if not filename.isfile():
-            raise PackageError('File %s is not a file' % filename)
+        if not resourceFile.exists():
+            raise PackageError('File %s does not exist' % resourceFile)
+        if not resourceFile.isfile():
+            raise PackageError('File %s is not a file' % resourceFile)
         
-        storageName = filename.basename()
-        # TODO: Actually store the resource in the package
+        storageName = idevice.id + "-" + resourceFile.basename()
+        resourceFile.copyfile(self.resourceDir/storageName)
+        idevice.addResource(storageName)
+
         return storageName
 
 

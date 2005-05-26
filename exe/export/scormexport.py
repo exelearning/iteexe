@@ -29,7 +29,7 @@ from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import Path, TempDirPath
 from exe.export.manifest    import Manifest
-from exe.export.pages       import uniquifyNames
+from exe.export.pages       import Page, uniquifyNames
 from zipfile import ZipFile, ZIP_DEFLATED
 
 log = logging.getLogger(__name__)
@@ -37,19 +37,10 @@ _   = gettext.gettext
 
 
 # ===========================================================================
-class ScormPage(object):
+class ScormPage(Page):
     """
     This class transforms an eXe node into a SCO
     """
-    def __init__(self, name, depth, node):
-        """
-        Initialize
-        """
-        self.name  = name
-        self.depth = depth
-        self.node  = node
-
-
     def save(self, outdir):
         """
         This is the main function.  It will render the page and save it to a

@@ -24,6 +24,7 @@ This is the main XUL page.
 import logging
 import gettext
 import os
+from twisted.web              import static
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, js
 from exe.webui.renderable     import RenderableLivePage
@@ -57,16 +58,21 @@ class MainPage(RenderableLivePage):
         """
         self.name = package.name
         RenderableLivePage.__init__(self, parent, package)
+        self.putChild("resources", static.File(package.resourceDir))
+
         mainxul = Path(self.config.webDir).joinpath('templates', 'mainpage.xul')
         self.docFactory = loaders.xmlfile(mainxul)
+
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
         self.idevicePane = IdevicePane(self)
         self.stylePane   = StylePane(self)
+
         # And in the main section
         self.authoringPage = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
         self.error = False
+
 
     def getChild(self, name, request):
         """
