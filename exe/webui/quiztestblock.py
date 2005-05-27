@@ -115,10 +115,10 @@ class QuizTestBlock(Block):
         html += self.idevice.title+"</span><br/>\n"
         
         for element in self.questionElements:
-            html += element.renderPreview() + "<br/>"  
+            html += element.renderView() + "<br/>"  
         html += "</div>\n"
         
-        html += '<input type="button" value=" SUBMIT ANSWERS "'
+        html += '<input type="button" value="%s"' % _("SUBMIT ANSWERS")
         html += 'onClick="calcScore()">\n'
         html += '</form>\n'
 
@@ -248,7 +248,6 @@ class QuizTestBlock(Block):
                                                                   
         for element in self.questionElements:
             html += element.renderView() + "<br/>"
-       # html += "</table>"
         html += self.renderViewButtons()
         html += "</div>\n"
         html += '<input type="submit" name="submitScore"'

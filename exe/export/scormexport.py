@@ -72,7 +72,8 @@ class ScormPage(Page):
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"SCOFunctions.js\"></script>\n" 
         html += "</head>\n"
-        html += "<body onunLoad=\"return unloadPage()\">\n"
+       # html += "<body onunLoad=\"return unloadPage()\">\n"
+        html += '<body onLoad="loadPage()" onunload="return unloadPage()">'
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
@@ -87,9 +88,9 @@ class ScormPage(Page):
 
         html += "</div>\n"
         html += "</div>\n"
-        html += "<script language=\"javascript\">\n"
-        html += "loadPage();\n"
-        html += "doContinue('completed');</script>\n"  
+        #html += "<script language=\"javascript\">\n"
+        #html += "loadPage();\n"
+        #html += "doContinue('completed');</script>\n"  
         html += "</body></html>\n"
         return html
 
