@@ -35,7 +35,7 @@ def createElement(elementType, name, class_, blockId, instruc):
     # This dict will convert an element type name to an actual element class
     elementTypeMap = {'Text':     TextElement,
                       'TextArea': TextAreaElement,
-                      'Photo':    ImageElement,
+                      'Image':    ImageElement,
                       'Audio':    AudioElement}
     # Get the appropriate class
     cls = elementTypeMap.get(elementType)
@@ -139,8 +139,45 @@ class ImageElement(Element):
     """
     for image element processing
     """
+    def __init__(self, name, class_, blockId, instruc):
+        """
+        Initialize
+        """
+        Element.__init__(name, class_, blockId, instruc)
+
+
+    def renderView(self, content):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        html  = "<img class=\""+ self.class_
+        html += "\" src=\""
+        html += content
+        html += "\">\n"
+        return html
+
+
+    def renderEdit(self, content, width="100%", height=100):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit content="+content+", height="+str(height))
+
+        html  = "<b>"+self.name
+        html += common.elementInstruc(self.id, self.instruc)
+        html += ":</b><br/>\n"
+        html += common.textInput(self.id, content)
+        
+        return html
+
+
+# ===========================================================================
+class PhotoElement(Element):
+    """
+    for image element processing
+    """
     def __init__(self, name, class_, blockId, 
-                 instruc, titleMessage="Image",
+                 instruc, titleMessage="Photo",
                  width="200px", height="150px", border="0"):
         """ Initialize """
         Element.__init__(self, name, class_, blockId , instruc)
@@ -168,7 +205,6 @@ class ImageElement(Element):
             return errmsg
             
         if self.id in request.args:            
-            
             #if file is choosen#
             if ((self.id + "_filename") in request.args and 
                 request.args[ self.id + "_filename"][0].strip() != ""): 
@@ -194,7 +230,7 @@ class ImageElement(Element):
                         log.debug(errmsg)
                         return errmsg
                         
-                ##copy file to ImageDataDir
+                ##copy file to Photo
                 try:    
                     src = Path(request.args[ self.id + "_filename" ][0])
                     src.copyfile(imgDir/filename)
@@ -313,14 +349,14 @@ class AudioElement(Element):
                         log.debug(errmsg)
                         return errmsg
                         
-                ##copy file to ImageDataDir
+                ##copy file to Photo
                 try:    
                     src = request.args[ self.id + "_filename" ][0]
                     src.copyfile(imgDir/filename)
                 except OSError:
                     return "%s image file not copied" % filename
                 ##resize image file
-                #im = Image.open(filename)
+                #im = Photo.open(filename)
             
             ##if file not chosen, then see if there is old file
             elif "old_%s"%self.id in request.args and \
