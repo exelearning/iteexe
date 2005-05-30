@@ -182,6 +182,54 @@ class TextAreaField(EditorElement):
         html += "<br/>\n"
         return html
     
+# ===========================================================================
+
+class ImageField(EditorElement):
+    """ 
+    TextElement is a single line of text
+    """
+    def renderEdit(self, request):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        
+        self.instruc = self.instruc.replace("\r", "")
+        self.instruc = self.instruc.replace("\n","\\n")
+        self.instruc = self.instruc.replace("'","\\'")
+        html  = common.textInput(self.nameId, self.field.name, 25)
+        html += "<a href=\"#\" style=\"cursor:help;\" "
+        html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
+        html += "<img src=\"/images/help.gif\" border=\"0\" "
+        html += "align=\"middle\"/></a> \n"
+        html += common.submitImage("deleteField", self.id, 
+                                   "stock-cancel.png", 
+                                   _("Delete"),1)
+        html += "<br/>\n"
+        html += common.textInput(self.contentId, "", "Disabled")
+        if self.instruc == "":
+            self.instruc = "Type field instruction here."
+#        if self.field.showInstruc:
+        html += common.richTextArea(self.instrucId, self.instruc)
+#        else:
+#            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+        html += "<br/>"
+        return html
+    
+    def renderPreview(self, request):
+        """
+        Returns an XHTML string with the form element for previewing this field
+        """
+        html  = "<b>" + self.field.name + "</b> "
+        if self.instruc != "":
+            html += common.elementInstruc(self.instrucId, self.instruc)
+        html += "<br/>" + common.textInput(self.contentId, self.field.content)
+        html += "<br/>\n"
+        return html
+    
+    
+        
+    
+# ===========================================================================
     
         
     

@@ -23,9 +23,10 @@ The EditorPane is responsible for creating new idevice
 
 import logging
 import gettext
-from twisted.web.resource    import Resource
-from exe.webui               import common
-from exe.webui.editorelement import TextField, TextAreaField
+from twisted.web.resource      import Resource
+from exe.webui                 import common
+from exe.webui.editorelement   import TextField, TextAreaField, ImageField
+from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 
 
@@ -68,6 +69,9 @@ class EditorPane(object):
         if "addTextArea" in request.args:
             self.idevice.addField("Type label here", "TextArea", "", "")
                 
+        if "addImage" in request.args:
+            self.idevice.addField("Type label here", "Image", "", "")
+                
         if "title" in request.args:
             self.idevice.title = request.args["title"][0] 
 
@@ -108,15 +112,15 @@ class EditorPane(object):
         if "emphasis" in request.args:
             if request.args["emphasis"][0] == "no":
                 self.noStr = "selected"
-                self.idevice.emphasis = 0
+                self.idevice.emphasis = Idevice.NoEmphasis
 
             elif request.args["emphasis"][0] == "some":
                 self.someStr = "selected"
-                self.idevice.emphasis = 1
+                self.idevice.emphasis = Idevice.SomeEmphasis
        
             elif request.args["emphasis"][0] == "strong":
                 self.strongStr = "selected"
-                self.idevice.emphasis = 2
+                self.idevice.emphasis = Idevice.StrongEmphasis
         
         self.__buildElements()  
             
@@ -132,6 +136,8 @@ class EditorPane(object):
                 self.elements.append(TextField(i, self.idevice, field))
             elif field.fieldType == "TextArea":
                 self.elements.append(TextAreaField(i, self.idevice, field))
+            elif field.fieldType == "Image":
+                self.elements.append(ImageField(i, self.idevice, field))
             i += 1
         
             
@@ -146,7 +152,9 @@ class EditorPane(object):
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
         html += common.submitButton("addText", _("Add Text Field"))+"<br/>"
         html += common.submitButton("addTextArea", _("Add Text Area")) + "<br/>"
+        html += common.submitButton("addImage", _("Add Image")) + "<br/>"
         html += "<p>\n"
+        html += "*************************************************** <br/>\n"
         html += "Future buttons could include<br/>functionality for: <br/>\n"
         html += "<ul><li>Limited interaction<br/>(eg hiding feedback)</li>\n"
         html += "<li>Options for incorporating<br/>"
@@ -207,7 +215,8 @@ class EditorPane(object):
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
             html += "<option value=\"no\" "+self.noStr+">"+_("No emphasis")
             html += "</option>\n"
-            html += "<option value=\"some\" "+self.someStr+">"+_("Some emphasis")
+            html += "<option value=\"some\" "+self.someStr+">"
+            html += _("Some emphasis")
             html += "</option>\n"
             html += "<option value=\"strong\" "+self.strongStr+">"
             html += _("Strong emphasis")

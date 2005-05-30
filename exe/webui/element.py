@@ -91,8 +91,12 @@ class Element(object):
         """
         Returns an XHTML string for editing this element
         """
-        log.error("renderEdit called directly")
-        return "ERROR: Element.renderEdit called directly"
+        html  = "<b>"+self.name
+        html += ":</b><br/>\n"
+        html += common.elementInstruc(self.id, self.instruc)
+        html += common.textInput(self.id, content)
+        html += "<br/>\n"
+        return html
 
 
 # ===========================================================================
@@ -143,17 +147,16 @@ class ImageElement(Element):
         """
         Initialize
         """
-        Element.__init__(name, class_, blockId, instruc)
+        Element.__init__(self, name, class_, blockId, instruc)
 
 
     def renderView(self, content):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        html  = "<img class=\""+ self.class_
-        html += "\" src=\""
-        html += content
-        html += "\">\n"
+        html  = "<img "
+        html += "class=\""+ self.class_ + "\" "
+        html += "src=\"" + content + "\"/>\n"
         return html
 
 
