@@ -5,14 +5,20 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
+<script language="Javascript" src="/scripts/libot_drag.js"></script>
+
 <script>
 <![CDATA[
 
 function setText(textID)
-{
+ {
+  var help = document.getElementById(textID).collapsed;
+  if (help == false) {
+	document.getElementById(textID).collapsed=true; }
+  else {
   document.getElementById(textID).collapsed=false;
 }
-
+}
 ]]>
 </script>
 
@@ -36,11 +42,12 @@ function setText(textID)
       <label style="width:8em" value="Subject:" tooltiptext="A topic of the content of the resource"/>
       <textbox id="dc:subject" size="40" />
       <image src="http://localhost:8081/images/info.png"
-       onclick="setText('dc-subject');" />
+             onclick="setText('dc-subject');"
+             style="cursor:help;" />
    </hbox>
 
   <hbox flex="1" id="dc-subject" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:20em;">   
+        <groupbox style="width:21em;">   
  		<description>
                  Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.
                 </description>
@@ -67,11 +74,12 @@ function setText(textID)
       <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource" />
       <textbox id="dc:date" size="40" />
       <image src="http://localhost:8081/images/info.png"
-       onclick="setText('dc-date');" />
+             onclick="setText('dc-date');"
+             style="cursor:help;" />
    </hbox>
   
    <hbox flex="1" id="dc-date" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:20em;">   
+        <groupbox style="width:21em;">   
  		<description>
                Typically, Date will be associated with the creation or availability of the resource. Recommended best practice for encoding the date value is defined in a profile called <html:em>ISO 8601</html:em> <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a> and includes (among others) dates of the form YYYY-MM-DD. 
                 </description>
@@ -84,33 +92,29 @@ function setText(textID)
       <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource"/>
       <textbox id="dc:type" value="text" size="40" />
       <image src="http://localhost:8081/images/info.png"
-       onclick="setText('dc-type');" />
+             onclick="setText('dc-type');"
+             style="cursor:help;" />
 
    </hbox>
 
    <hbox flex="1" id="dc-type" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:20em;">   
+        <groupbox style="width:21em;">   
  		<description>Type includes terms describing general categories, functions, or genres, for content. Recommended best practice is to select a value from a controlled vocabulary, for example, the ??????????<html:br/> To describe the physical or digital manifestation of the resource, use the FORMAT element.
                </description>
 	</groupbox>
    </hbox>  
  
-   <hbox align="center">
-      <label style="width:8em" value="Format:" tooltiptext="The physical or digital manifestation of the resource"/>
-      <textbox id="dc:format" readonly="true" value="html" size="40" />
-       <image src="http://localhost:8081/images/info.png"
-       onclick="setText('dc-format');" />
-
+  <hbox align="center">
+      <label style="width:8em" value="Format:" tooltiptext="Select a Format" />
+      <menulist label="Select Format">
+       <menupopup>
+          <menuitem label="XHTML" value="" />          
+          <menuitem label="SCORM 1.2" value="" />
+          <menuitem label="IMS Content Package 1.1.3" value="" />
+       </menupopup>
+     </menulist>
    </hbox>
-
-   <hbox flex="1" id="dc-format" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:20em;">   
- 		<description>Typically, Format may include the media-type or dimensions of the resource. Format may be used to identify the software, hardware, or other equipment needed to display or operate the resource. Examples of dimensions include size and duration. Recommended best practice is to select a value from a controlled vocabulary (for example, the list of Internet Media Types [MIME] defining computer media formats).
-               </description>
-	</groupbox>
-   </hbox>  
- 
-
+   
    <hbox align="center">
       <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context"/>
       <textbox id="dc:identifier" size="40" />
