@@ -150,13 +150,24 @@ class ImageElement(Element):
         Element.__init__(self, name, class_, blockId, instruc)
 
 
+    def process(self, request):
+        """
+        Process arguments from the webserver.  Return any which apply to this 
+        element.
+        """
+        if self.id in request.args:
+            return request.args[self.id][0]
+        else:
+            return None
+
+
     def renderView(self, content):
         """
         Returns an XHTML string for viewing or previewing this element
         """
         html  = "<img "
         html += "class=\""+ self.class_ + "\" "
-        html += "src=\"" + content + "\"/>\n"
+        html += "src=\"resources/" + content + "\"/>\n"
         return html
 
 

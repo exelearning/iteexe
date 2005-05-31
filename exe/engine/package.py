@@ -34,9 +34,6 @@ from exe.engine.persist         import Persistable, encodeObject, decodeObject
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-class PackageError(Exception):
-    """An exception class for package errors"""
-
 # ===========================================================================
 class Package(Persistable):
     """
@@ -176,25 +173,16 @@ class Package(Persistable):
         return resources.keys()
 
 
-    def addResource(self, idevice, resourceFile):
+    def addResource(self, resourceFile, storageName=None):
         """
         Add an image/audio/video resource to the package.
         Returns the last part of the url to access this resource
         'resourceFile' is a 'path' instance pointing to a local file where we
         can load the resource from
-        'idevice' is the idevice the resource is associated with
-        Raises a 'PackageError' if it can't be imported
         """
-        if not resourceFile.exists():
-            raise PackageError(u'File %s does not exist' % resourceFile)
-        if not resourceFile.isfile():
-            raise PackageError(u'File %s is not a file' % resourceFile)
-        
-        storageName = idevice.id + u"-" + resourceFile.basename()
+        if not storageName:
+            storageName = resourceFile.basename()
         resourceFile.copyfile(self.resourceDir/storageName)
-        idevice.addResource(storageName)
-
-        return storageName
 
 
     def upgradeToVersion1(self):

@@ -1,3 +1,56 @@
+2005-05-31 04:40  brent
+
+	* exe/webui/scripts/mainpage.js: something insignificant that i'm
+	  not going to tell you what it was, i'm just going to check it in!
+
+2005-05-31 02:07  jenny
+
+	* exe/engine/idevicestore.py, exe/engine/teacherprofileidevice.py,
+	  exe/webui/blockfactory.py, exe/webui/teacherprofileblock.py: added
+	  teacher profile idevice.
+
+2005-05-31 01:12  matthew
+
+	* exe/engine/casestudyidevice.py, exe/engine/config.py,
+	  exe/engine/freetextidevice.py, exe/engine/idevicestore.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/engine/path.py, exe/engine/persist.py,
+	  exe/engine/quiztestidevice.py, exe/engine/reflectionidevice.py,
+	  exe/engine/titleidevice.py, exe/engine/truefalseidevice.py,
+	  exe/engine/uniqueidgenerator.py, exe/engine/version.py,
+	  exe/engine/winconfig.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/browser.py, exe/webui/casestudyblock.py,
+	  exe/webui/common.py, exe/webui/editorelement.py,
+	  exe/webui/editorpage.py, exe/webui/mainpage.py,
+	  exe/webui/packageredirectpage.py, exe/webui/propertiespage.py,
+	  testing/testconfig.py, testing/testpackage.py: Made all strings
+	  unicode
+
+2005-05-30 07:27  djm
+
+	* exe/webui/editorelement.py, exe/webui/editorpane.py,
+	  exe/webui/element.py: Image handling
+
+2005-05-27 05:22  djm
+
+	* exe/webui/element.py: created ImageElement
+
+2005-05-27 03:12  jenny
+
+	* exe/export/scormexport.py, exe/webui/quiztestblock.py: fixed
+	  quiztest idevice exporting bugs.
+
+2005-05-26 05:27  djm
+
+	* ChangeLog, exe/engine/idevicestore.py, exe/engine/package.py,
+	  exe/export/manifest.py, exe/export/pages.py,
+	  exe/export/scormexport.py, exe/webui/editorpane.py,
+	  exe/webui/mainpage.py, exe/webui/packageredirectpage.py,
+	  testing/oliver.jpg, testing/testpackage.py: Added test for
+	  package.addResource
+
 2005-05-26 03:30  matthew
 
 	* ., exe/engine/config.py, exe/engine/idevicestore.py,

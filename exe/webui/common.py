@@ -57,19 +57,6 @@ def header(style=u'default'):
              % (style, _('eXe : elearning XHTML editor')))
 
 
-def banner(request): 
-    """Generates the common page banner XHTML"""
-    html  = (u'<body>\n'
-             u'<form method="post" action="%s/#currentBlock"'
-             u' id="contentForm" name="contentForm"'
-             u' onload="clearHidden();">\n'
-             % request.path)
-    html += hiddenField(u'action')
-    html += hiddenField(u'object')
-    html += hiddenField(u'isChanged', '0')
-    return html
-
-
 def footer():
     """Generates the common page footer XHTML"""
     return u'</form></body></html>\n'
@@ -174,6 +161,7 @@ def option(name, checked, value):
              u' value="%s" %s/>\n' % 
               (name, value, chkStr))
     return html
+
 
 def checkbox(name, checked, value=""):
     """Add a checkbox"""

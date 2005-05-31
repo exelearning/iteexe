@@ -36,7 +36,6 @@ from exe.webui.propertiespage import PropertiesPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from exe.engine.path          import Path
-from exe.engine.package       import PackageError
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -250,14 +249,11 @@ class MainPage(RenderableLivePage):
     def handleAddResource(self, client, filename):
         """Add a resource (image/sound/video/etc.) to the current package"""
         # TODO: Use Davids api for adding images to self.package
-        try:
-            filename = Path(filename)
-            storageName = self.package.addResource(filename)
-            url = '%s/%s' % (self.package.name, storageName)
-            client.alert(_(u'Resource Uploaded Successfully.\n'
-                           u'Access URL: %s' % url))
-        except PackageError, exc:
-            client.alert(_(u'Uploading Resource failed:\n%s' % str(exc)))
+        filename = Path(filename)
+        storageName = self.package.addResource(filename)
+        url = '%s/%s' % (self.package.name, storageName)
+        client.alert(_(u'Resource Uploaded Successfully.\n'
+                       u'Access URL: %s' % url))
 
     def handleExport(self, client, exportType, filename):
         """
@@ -297,8 +293,6 @@ class MainPage(RenderableLivePage):
                                           imagesDir, scriptsDir)
             websiteExport.export(self.package)
             # Show the newly exported web site in a new window
-            import pdb
-            pdb.set_trace()
             if hasattr(os, 'startfile'):
                 os.startfile(filename)
             else:

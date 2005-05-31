@@ -23,6 +23,7 @@ An iDevice built up from simple fields.
 
 import logging
 from exe.engine.persist import Persistable
+from exe.engine.path    import Path
 from exe.engine.idevice import Idevice
 import gettext
 _ = gettext.gettext
@@ -30,6 +31,7 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
+# TODO merge these field classes with the ones used by the Idevice Editor
 class Field(Persistable):
     """
     A Generic iDevice is built up of these fields.  Each field can be
@@ -54,6 +56,39 @@ class Field(Persistable):
         return cmp(self.name, other.name)
 
 
+    def setContent(self, idevice, content):
+        """
+        Modify content, overridden for special behaviour
+        """
+        self.content = content
+
+# ===========================================================================
+class ImageField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+    def __init__(self, name, fieldType=None, class_="", 
+                 instruction="", content=""):
+        """
+        """
+        Field.__init__(self, name, fieldType, class_, instruction, content)
+
+
+    def setContent(self, idevice, content):
+        """
+        store the image pointed to by content in the package
+        """
+        # TODO This is gross misuse of the content property
+        # rethink how I'm doing this
+        resourceFile = Path(content)
+        if resourceFile.isfile():
+            self.content = idevice.addResource(resourceFile)
+        else:
+            log.error('File %s is not a file' % resourceFile)
+
+
+
 # ===========================================================================
 class GenericIdevice(Idevice):
     """
@@ -76,12 +111,18 @@ class GenericIdevice(Idevice):
         """
         Add a new field to this iDevice.  Fields are indexed by their name.
         """
-        self.fields.append(Field(name, fieldType, class_, instruction, content)) 
+        # TODO use a factory!!!
+        if fieldType == "Image":
+            self.fields.append(ImageField(name, fieldType, class_, 
+                                          instruction, content)) 
+        else:
+            self.fields.append(Field(name, fieldType, class_, 
+                                     instruction, content)) 
 
     def __setitem__(self, name, value):
         key   = Field(name)
         index = self.fields.index(key)
-        self.fields[index].content = value
+        self.fields[index].setContent(self, value)
 
 
     def __getitem__(self, name):

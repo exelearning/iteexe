@@ -84,7 +84,14 @@ class AuthoringPage(RenderableResource):
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
-        html += common.banner(request)
+        html += u"<body>\n"
+        html += u"<form method=\"post\" "
+        html += u"action=\""+request.path+"#currentBlock\""
+        html += u" id=\"contentForm\" name=\"contentForm\""
+        html += u" onload=\"clearHidden();\">\n"
+        html += common.hiddenField(u"action")
+        html += common.hiddenField(u"object")
+        html += common.hiddenField(u"isChanged", u"0")
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="main">\n'
         html += u'<div id="nodeDecoration">\n'

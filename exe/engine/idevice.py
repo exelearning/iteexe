@@ -113,7 +113,10 @@ class Idevice(Persistable):
         """
         Add a resource file to this iDevice
         """
-        self.resources.append(resourceFile)
+        storageName = self.id + "-" + resourceFile.basename()
+        self.resources.append(storageName)
+        self.parentNode.package.addResource(resourceFile, storageName)
+        return storageName
 
 
     def movePrev(self):
