@@ -41,6 +41,9 @@ class TestConfig(unittest.TestCase):
         pass
 
     def testSetupLogging(self):
+        """
+        Tests that the correct logging directory is made
+        """
         Config._getConfigPathOptions = lambda s: ['test.conf']
         myconfig = Config()
         open("test.log", "w").write("")
@@ -77,8 +80,9 @@ class TestConfig(unittest.TestCase):
         'appDataDir' are upgraded to 'configDir'
         """
         # Write the old style config file
-        configPath = Path('test.exe.conf')
-        configPath.remove()
+        configPath = Path(u'test.exe.conf')
+        if configPath.exists():
+            configPath.remove()
         oldParser = ConfigParser()
         system = oldParser.addSection('system')
         system.appDataDir = 'my old app data dir'

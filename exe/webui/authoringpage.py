@@ -38,7 +38,7 @@ class AuthoringPage(RenderableResource):
     AuthoringPage is responsible for creating the XHTML for the authoring
     area of the eXe web user interface.  
     """
-    name = 'authoring'
+    name = u'authoring'
 
     def __init__(self, parent):
         """
@@ -65,39 +65,39 @@ class AuthoringPage(RenderableResource):
         """  
         self.parent.process(request)
         if ("action" in request.args and 
-            request.args["action"][0] == "saveChange"):
-            log.debug("process savachange:::::")
+            request.args["action"][0] == u"saveChange"):
+            log.debug(u"process savachange:::::")
             self.package.save()
-            log.debug("package name: " + self.package.name)
+            log.debug(u"package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
-        log.debug("after authoringPage process" + repr(request.args))
+        log.debug(u"after authoringPage process" + repr(request.args))
 
 
     def render_GET(self, request):
         """
         Returns an XHTML string for viewing this page
         """
-        log.debug("render")
+        log.debug(u"render")
         self._process(request)
         topNode     = self.package.currentNode
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
         html += common.banner(request)
-        html += "<!-- start authoring page -->\n"
-        html += "<div id=\"main\">\n"
-        html += "<div id=\"nodeDecoration\">\n"
-        html += "<p id=\"nodeTitle\">"+topNode.getTitle()+"</p>\n" 
-        html += "</div>\n"
+        html += u'<!-- start authoring page -->\n'
+        html += u'<div id="main">\n'
+        html += u'<div id="nodeDecoration">\n'
+        html += u'<p id="nodeTitle">%s</p>\n' % topNode.getTitle()
+        html += u'</div>\n'
 
         for block in self.blocks:
             html += block.render(self.package.style)
 
-        html += "</div>\n"
+        html += u'</div>\n'
         html += common.footer()
 
-        return html
+        return html.encode('utf8')
 
     render_POST = render_GET
 
@@ -105,22 +105,22 @@ class AuthoringPage(RenderableResource):
     def __renderHeader(self):
         """Generates the header for AuthoringPage"""
         html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(/css/exe.css);\n"
-        html += "@import url(/style/"+self.package.style+"/content.css);\n"
-        html += "</style>\n"
-        html += "<script language=\"JavaScript\" src=\"/scripts/common.js\">"
-        html += "</script>\n"
-        html += "<script language=\"JavaScript\" src=\"/scripts/fckeditor.js\">"
-        html += "</script>\n"
-        html += '<script language="JavaScript" src="/scripts/libot_drag.js">'
-        html += "</script>\n"
-        html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\" />\n";
-        html += "</head>\n"
+        html += u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
+        html += u'<head>\n'
+        html += u'<style type="text/css">\n'
+        html += u'@import url(/css/exe.css);\n'
+        html += u'@import url(/style/%s/content.css);\n' % self.package.style
+        html += u'</style>\n'
+        html += u'<script language="JavaScript" src="/scripts/common.js">'
+        html += u'</script>\n'
+        html += u'<script language="JavaScript" src="/scripts/fckeditor.js">'
+        html += u'</script>\n'
+        html += u'<script language="JavaScript" src="/scripts/libot_drag.js">'
+        html += u'</script>\n'
+        html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
+        html += u'<meta http-equiv="content-type" content="text/html; '
+        html += u' charset=UTF-8" />\n'
+        html += u'</head>\n'
         return html
 
 
@@ -131,8 +131,8 @@ class AuthoringPage(RenderableResource):
         for idevice in node.idevices:
             block = g_blockFactory.createBlock(idevice)
             if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
+                log.critical(u"Unable to render iDevice.")
+                raise Error(u"Unable to render iDevice.")
             self.blocks.append(block)
 
 # ===========================================================================

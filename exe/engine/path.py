@@ -38,10 +38,7 @@ from tempfile import mkdtemp
 __version__ = '2.0.4'
 __all__ = ['Path', 'TempDirPath']
 
-if os.path.supports_unicode_filenames:
-    _base = unicode
-else:
-    _base = str
+unicode = unicode
 
 # Universal newline support
 _textmode = 'r'
@@ -49,7 +46,7 @@ if hasattr(file, 'newlines'):
     _textmode = 'U'
 
 
-class Path(_base):
+class Path(unicode):
     """ Represents a filesystem Path.
 
     For documentation on individual methods, consult their
@@ -59,14 +56,14 @@ class Path(_base):
     # --- Special Python methods.
 
     def __repr__(self):
-        return 'Path(%s)' % _base.__repr__(self)
+        return 'Path(%s)' % unicode.__repr__(self)
 
     # Adding a Path and a string yields a Path.
     def __add__(self, more):
-        return Path(_base(self) + _base(more))
+        return Path(unicode(self) + unicode(more))
 
     def __radd__(self, other):
-        return Path(other + _base(self))
+        return Path(other + unicode(self))
 
     # The / operator joins paths.
     def __div__(self, rel):
@@ -75,7 +72,7 @@ class Path(_base):
         Join two Path components, adding a separator character if
         needed.
         """
-        return Path(os.path.join(_base(self), _base(rel)))
+        return Path(os.path.join(unicode(self), unicode(rel)))
 
     # Make the / operator work even when true division is enabled.
     __truediv__ = __div__
@@ -128,7 +125,7 @@ class Path(_base):
 
     def _get_ext(self):
         """Returns the extension only (including the dot)"""
-        return os.path.splitext(_base(self))[1]
+        return os.path.splitext(unicode(self))[1]
 
     def _get_drive(self):
         """Returns the drive letter (in dos & win)"""
@@ -231,7 +228,7 @@ class Path(_base):
         character (os.sep) if needed.  Returns a new path
         object.
         """
-        return Path(os.path.join(_base(self), *args))
+        return Path(os.path.join(unicode(self), *args))
 
     def splitall(self):
         """ Return a list of the path components in this path.
@@ -407,7 +404,7 @@ class Path(_base):
         For example, Path('/users').glob('*/bin/*') returns a list
         of all the files users have in their bin directories.
         """
-        return map(Path, glob.glob(_base(self / pattern)))
+        return map(Path, glob.glob(unicode(self / pattern)))
 
 
     # --- Reading or writing an entire file at once.
@@ -821,29 +818,29 @@ class Path(_base):
 
     def copyfile(self, dst):
         """Wraps shutil.copyfile"""
-        return shutil.copyfile(_base(self), _base(dst))
+        return shutil.copyfile(unicode(self), unicode(dst))
     def copymode(self, dst):
         """Wraps shutil.copymode"""
-        return shutil.copymode(_base(self), _base(dst))
+        return shutil.copymode(unicode(self), unicode(dst))
     def copystat(self, dst):
         """Wraps shutil.copystat"""
-        return shutil.copystat(_base(self), _base(dst))
+        return shutil.copystat(unicode(self), unicode(dst))
     def copy(self, dst):
         """Wraps shutil.copy"""
-        return shutil.copy(_base(self), _base(dst))
+        return shutil.copy(unicode(self), unicode(dst))
     def copy2(self, dst):
         """Wraps shutil.copy2"""
-        return shutil.copy2(_base(self), _base(dst))
+        return shutil.copy2(unicode(self), unicode(dst))
     def copytree(self, dst):
         """Wraps shutil.copytree"""
-        return shutil.copytree(_base(self), _base(dst))
+        return shutil.copytree(unicode(self), unicode(dst))
     if hasattr(shutil, 'move'):
         def move(self, dst):
             """Wraps shutil.move"""
-            return shutil.move(_base(self), _base(dst))
+            return shutil.move(unicode(self), unicode(dst))
     def rmtree(self):
         """Wraps shutil.rmtree"""
-        return shutil.rmtree(_base(self))
+        return shutil.rmtree(unicode(self))
 
     # --- Special stuff from os
 

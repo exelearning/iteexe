@@ -119,72 +119,71 @@ class IdeviceStore:
     def createGeneric(self):
         from exe.engine.genericidevice import GenericIdevice
 
-        readingAct = GenericIdevice(_("Reading Activity"), 
-                                    "reading",
-                                    _("University of Auckland"), 
-_("""Provide learners with structure to their reading activity. This helps put
+        readingAct = GenericIdevice(_(u"Reading Activity"), 
+                                    u"reading",
+                                    _(u"University of Auckland"), 
+_(u"""Provide learners with structure to their reading activity. This helps put
 the activity in context for the learner. It is also important to correctly
 reference any reading materials you refer to as this models best practice to
 the learners. Not always essential if covered in the course content but
 providing feedback to the learner on some of the main points covered in the
-reading may also add value to the activity."""), 
-                                     "") 
-        readingAct.addField(_("What to read"), 
-                            "TextArea", "reading_what",
-_("""Provide details of the reading materials learners should  read."""))
-        readingAct.addField(_("Why it should be read"), 
-                            "TextArea", "reading_why",
-_("""Describe the rationale behind the selection of the reading and how it will
+reading may also add value to the activity."""), "") 
+        readingAct.addField(_(u"What to read"), 
+                            u"TextArea", u"reading_what",
+_(u"""Provide details of the reading materials learners should  read."""))
+        readingAct.addField(_(u"Why it should be read"), 
+                            u"TextArea", u"reading_why",
+_(u"""Describe the rationale behind the selection of the reading and how it will
 enrich the learning."""))
-        readingAct.addField(_("Reference"), 
-                            "TextArea", "reading_reference",
-_("""Provide full reference details to the reading materials selected. The
+        readingAct.addField(_(u"Reference"), 
+                            u"TextArea", u"reading_reference",
+_(u"""Provide full reference details to the reading materials selected. The
 reference style used will depend on the preference of your department or
 faculty."""))
-        readingAct.addField(_("Feedback"), 
-                            "TextArea", "reading_feedback",
-_("""The use of this element is flexible.  Use it to provide a summary of the
+        readingAct.addField(_(u"Feedback"), 
+                            u"TextArea", u"reading_feedback",
+_(u"""The use of this element is flexible.  Use it to provide a summary of the
 points covered in the reading, or as a starting point for further analysis of
 the reading by posing a question or providing a statement to begin a
 debate."""))
         self.generic.append(readingAct)
     
-        objectives = GenericIdevice(_("Objectives"), 
-                                    "objectives",
-                                    _("University of Auckland"), 
-_("""Objectives describe the expected outcomes of the learning and should
+        objectives = GenericIdevice(_(u"Objectives"), 
+                                    u"objectives",
+                                    _(u"University of Auckland"), 
+_(u"""Objectives describe the expected outcomes of the learning and should
 define what the learners will be able to do when they have completed the
 learning tasks."""), 
-                                    _(""))
+                                    _(u""))
 
-        objectives.addField(_("Objectives"), "TextArea", "objectives",
-_("""Type the learning objectives for this resource."""))
+        objectives.addField(_(u"Objectives"), u"TextArea", u"objectives",
+_(u"""Type the learning objectives for this resource."""))
         self.generic.append(objectives)
 
-        preknowledge = GenericIdevice(_("Preknowledge"), 
-                                      "preknowledge",
+        preknowledge = GenericIdevice(_(u"Preknowledge"), 
+                                      u"preknowledge",
                                       "", 
-_("""Prerequisite knowledge refers to the knowledge learners should already
+_(u"""Prerequisite knowledge refers to the knowledge learners should already
 have in order to be able to effectively complete the learning. Examples of
 pre-knowledge can be: <ul>
 <li>	Learners must have level 4 English </li>
 <li>	Learners must be able to assemble standard power tools </li></ul>
 """), "")
-        preknowledge.addField(_("Preknowledge"), 
-                              "TextArea", "preknowledge",
-_("""Describe the prerequisite knowledge learners should have to effectively
+        preknowledge.addField(_(u"Preknowledge"), 
+                              u"TextArea", u"preknowledge",
+_(u"""Describe the prerequisite knowledge learners should have to effectively
 complete this learning."""))
         self.generic.append(preknowledge)
         
-        activity = GenericIdevice(_("Activity"), 
-                                  "activity",
-                                  _("University of Auckland"), 
-_("""An activity can be defined as a task or set of tasks a learner must
+        activity = GenericIdevice(_(u"Activity"), 
+                                  u"activity",
+                                  _(u"University of Auckland"), 
+_(u"""An activity can be defined as a task or set of tasks a learner must
 complete. Provide a clear statement of the task and consider any conditions
 that may help or hinder the learner in the performance of the task."""),
 "")
-        activity.addField(_("Activity"), "TextArea", "activity",
-_("""Describe the tasks the learners should complete."""))
+        activity.addField(_(u"Activity"), u"TextArea", u"activity",
+_(u"""Describe the tasks the learners should complete."""))
         self.generic.append(activity)
                                   
 

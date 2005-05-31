@@ -55,9 +55,9 @@ class MultichoiceIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         _("Multi-Choice Question"),
-                         _("University of Auckland"),
-                         _("""Although more often used in formal testing 
+                         _(u"Multi-Choice Question"),
+                         _(u"University of Auckland"),
+                         _(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  
 discussion on topics students may feel a little reticent in responding to. 
 
@@ -69,21 +69,21 @@ When designing a MCQ test consider the following:
 <li>	Gender and cultural issues</li>
 <li>	Avoid grammar language and question structures that might provide clues</li>
 </ul>
- """), "multichoice", "")
+ """), u"multichoice", "")
                          
         self.question        = question
         self.hint            = ""
-        self.hintInstruc     = _("""Enter a hint here. If you
+        self.hintInstruc     = _(u"""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
         self.options         = []
-        self.questionInstruc = _("Type the question stem.")
-        self.keyInstruc      = _("""To indicate the correct answer, click the 
+        self.questionInstruc = _(u"Type the question stem.")
+        self.keyInstruc      = _(u"""To indicate the correct answer, click the 
 radio button next to the correct option.""")
-        self.answerInstruc   = _("""Type in each option from which students must
+        self.answerInstruc   = _(u"""Type in each option from which students must
 choose into the appropriate options box. You can add options by clicking on the 
 "ADD ANOTHER OPTION" button. You can delete options by clicking on the "x" next 
 to each option.""")
-        self.feedbackInstruc = _("""Type in the feedback that you want the 
+        self.feedbackInstruc = _(u"""Type in the feedback that you want the 
 student to see when selecting the particular option. If you don't complete this 
 box, eXe will automatically provide default feedback as follows: "Correct 
 answer" as indicated by the selection for the correct answer; or "Wrong answer"
@@ -102,7 +102,7 @@ for the other alternatives.""")
         Called to upgrade from 0.4 release
         """
         self.hint            = ""
-        self.hintInstruc     = _("""Enter a hint here. If you
+        self.hintInstruc     = _(u"""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
         self.icon            = "multichoice"
 

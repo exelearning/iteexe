@@ -39,30 +39,33 @@ def launchBrowser(config, packageName):
     """
     Launch the webbrowser (Firefox) for this platform
     """
-    log.info("Broswer path: " + config.browserPath)
-    url     = 'http://localhost:%d/%s' % (config.port, quote(packageName))
-    log.info("Launch firefox with "+config.browserPath)
-    log.info("url "+url)
+    log.info(u"Broswer path: " + config.browserPath)
+    url     = u'http://localhost:%d/%s' % (config.port, quote(packageName))
+    log.info(u"Launch firefox with "+config.browserPath)
+    log.info(u"url "+url)
 
-    if sys.platform[:3] == "win":
+    if sys.platform[:3] == u"win":
         # TODO: Should we copy this to config.appDataDir?
         profile = config.webDir+'/win-profile'
-        log.info("profile "+profile)
+        log.info(u"profile "+profile)
         try:
             os.spawnl(os.P_DETACH, config.browserPath, 
-                      '"'+config.browserPath+'"', 
-                      '-profile', '"'+profile+'"', url)
+                      u'"'+config.browserPath+'"', 
+                      u'-profile', u'"'+profile+u'"', url)
         except OSError:
-            print "Cannot launch Firefox, please manually run Firefox"
-            print "and go to", url     
+            print u"Cannot launch Firefox, please manually run Firefox"
+            print u"and go to", url     
     else:
+        # TODO: Should be using the profile dir from config, not overrideing it!
         profile = Path(os.environ["HOME"])/'.exe/linux-profile'
         if not profile.exists():
             createProfile(config)
 
-        log.info("profile "+profile)
-        os.system('"%s" -profile "%s" %s &' % \
-                  (config.browserPath, profile, url))
+        log.info(u"profile "+profile)
+        launchString = ('"%s" -profile "%s" %s &' % 
+                        (config.browserPath, profile, url))
+        log.info(u'Launching browser with: %s' % launchString)
+        os.system(launchString)
 
 def createProfile(config):
     """

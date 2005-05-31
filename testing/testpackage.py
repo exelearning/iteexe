@@ -99,7 +99,7 @@ class TestPackage(unittest.TestCase):
                 elif isinstance(val, list):
                     assert len(val) == len(val2)
                     for i, i2 in zip(val, val2):
-                        if type(i) is str:
+                        if isinstance(i, basestring):
                             assert (i == i2, 
                                     '%s.%s: [%s/%s]' % 
                                     (inst1.__class__.__name__, key, i2, i))

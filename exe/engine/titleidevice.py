@@ -35,10 +35,10 @@ class TitleIdevice(Idevice):
     """
     def __init__(self, parentNode, title=""):
         """Initialize"""
-        log.debug("__init__ parentNode="+parentNode.id+
+        log.debug(u"__init__ parentNode="+parentNode.id+
                   ", title="+title)
         Idevice.__init__(self, title, 
-                         _("University of Auckland"), "", "", "", parentNode)
+                         _(u"University of Auckland"), "", "", "", parentNode)
         self.edit         = False
         self.title        = title
 
@@ -54,7 +54,7 @@ class TitleIdevice(Idevice):
     def setTitle(self, title):
         """Set the title, if it's been changed from the default"""
         if title != str(self):
-            log.info("Changed "+self.id+" title to "+title)
+            log.info(u"Changed %s title to %s" % (self.id, title))
             self.title = title
 
 # ===========================================================================

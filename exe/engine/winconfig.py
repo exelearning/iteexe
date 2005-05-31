@@ -44,7 +44,7 @@ class WinConfig(Config):
         """Sets the default values
         for windows"""
         exeDir = self.exePath.dirname()
-        self.browserPath = exeDir / r"\Mozilla Firefox\firefox.exe"
+        self.browserPath = exeDir/'Mozilla Firefox'/'firefox.exe'
         if not self.browserPath.isfile():
             programFiles = Path(self.__getWinFolder(PROGRAMFILES))
             self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'

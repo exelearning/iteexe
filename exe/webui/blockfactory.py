@@ -63,16 +63,16 @@ class BlockFactory(object):
                            (CasestudyBlock,   CasestudyIdevice)]
         # Log the the registration has happened
         for blockType, ideviceType in self.blockTypes:
-            log.debug("registerBlockType "+ 
-                      blockType.__name__ + "<=>" +  ideviceType.__name__)
+            log.debug(u"registerBlockType "+ 
+                      blockType.__name__ + u"<=>" +  ideviceType.__name__)
 
 
     def registerBlockType(self, blockType, ideviceType):
         """
         Block classes call this function when they are imported
         """
-        log.debug("registerBlockType "+ 
-                  blockType.__name__ + "<=>" +  ideviceType.__name__)
+        log.debug(u"registerBlockType "+ 
+                  blockType.__name__ + u"<=>" +  ideviceType.__name__)
         self.blockTypes.append((blockType, ideviceType))
 
     def createBlock(self, idevice):
@@ -81,11 +81,11 @@ class BlockFactory(object):
         """
         for blockType, ideviceType in self.blockTypes:
             if isinstance(idevice, ideviceType):
-                log.info("createBlock "+blockType.__name__+" for "+
+                log.info(u"createBlock "+blockType.__name__+u" for "+
                           idevice.__class__.__name__)
                 return blockType(idevice)
         
-        log.error("No blocktype registered for "+ idevice.__class__.__name__)
+        log.error(u"No blocktype registered for "+ idevice.__class__.__name__)
         return None
         
 

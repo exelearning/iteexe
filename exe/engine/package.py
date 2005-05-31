@@ -50,20 +50,20 @@ class Package(Persistable):
         """
         Initialize 
         """
-        log.debug("init " + repr(name))
+        log.debug(u"init " + repr(name))
         self._nextNodeId   = 0
         # For looking up nodes by ids
         self._nodeIdDict   = {} 
 
-        self.levelNames    = [_("Topic"), _("Section"), _("Unit")]
+        self.levelNames    = [_(u"Topic"), _(u"Section"), _(u"Unit")]
         self.name          = name
 
         # Empty if never saved/loaded
-        self.filename      = ''
+        self.filename      = u''
 
-        self.root          = Node(self, None, _("Home"))
+        self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
-        self.style         = "default"
+        self.style         = u"default"
         self.author        = ""
         self.description   = ""
         self.isChanged     = 0
@@ -78,7 +78,7 @@ class Package(Persistable):
         Finds a node from its nodeId
         (nodeId can be a string or a list/tuple)
         """
-        log.debug("findNode" + repr(nodeId))
+        log.debug(u"findNode" + repr(nodeId))
         node = self._nodeIdDict.get(nodeId)
         if node and node.package is self:
             return node
@@ -93,7 +93,7 @@ class Package(Persistable):
         if level < len(self.levelNames):
             return self.levelNames[level]
         else:
-            return _("?????")
+            return _(u"?????")
         
 
     def save(self, filename=None):
@@ -114,25 +114,23 @@ class Package(Persistable):
             # If we don't have a last saved/loaded from filename,
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
-            raise AssertionError('No name passed when saving a new package')
+            raise AssertionError(u'No name passed when saving a new package')
 
         # Store our new filename for next file|save
         self.filename = filename
 
         # Add the extension if its not already there
-        if not filename.lower().endswith('.elp'):
-            filename += '.elp'
+        if not filename.lower().endswith(u'.elp'):
+            filename += u'.elp'
 
-        log.debug("Will save %s to: %s" % (self.name, filename))
+        log.debug(u"Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
         zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
         
         try:
             for resourceFile in self.resourceDir.files():
                 zippedFile.write(resourceFile.normpath(), resourceFile.name)
-
             zippedFile.writestr("content.data", encodeObject(self))
-
         finally:
             zippedFile.close()
 
@@ -145,7 +143,7 @@ class Package(Persistable):
             return None
 
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
-        toDecode   = zippedFile.read("content.data")
+        toDecode   = zippedFile.read(u"content.data")
         newPackage = decodeObject(toDecode)
 
         # newPackage.filename is the name that the package was last loaded from
@@ -157,7 +155,7 @@ class Package(Persistable):
 
         # Extract resource files from package to temporary directory
         for filename in zippedFile.namelist():
-            if filename != "content.data":
+            if filename != u"content.data":
                 outFile = open(newPackage.resourceDir/filename, "wb")
                 outFile.write(zippedFile.read(filename))
                 
@@ -188,11 +186,11 @@ class Package(Persistable):
         Raises a 'PackageError' if it can't be imported
         """
         if not resourceFile.exists():
-            raise PackageError('File %s does not exist' % resourceFile)
+            raise PackageError(u'File %s does not exist' % resourceFile)
         if not resourceFile.isfile():
-            raise PackageError('File %s is not a file' % resourceFile)
+            raise PackageError(u'File %s is not a file' % resourceFile)
         
-        storageName = idevice.id + "-" + resourceFile.basename()
+        storageName = idevice.id + u"-" + resourceFile.basename()
         resourceFile.copyfile(self.resourceDir/storageName)
         idevice.addResource(storageName)
 
@@ -211,7 +209,7 @@ class Package(Persistable):
         # If it's done in the nodes, the ids are assigned in reverse order
         self.draft._id = self._regNewNode(self.draft)
         self.draft._package = self
-        self.editor = Node(self, None, _("iDevice Editor"))
+        self.editor = Node(self, None, _(u"iDevice Editor"))
 
         # Add a default idevice to the editor
         from exe.engine.genericidevice  import GenericIdevice

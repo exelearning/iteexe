@@ -58,11 +58,11 @@ class CasestudyBlock(Block):
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        storyId = "story" + str(self.id)
+        storyId = u"story" + unicode(self.id)
         if storyId in request.args:
             self.idevice.story = request.args[storyId][0]
             
-        if ("addQuestion"+str(self.id)) in request.args: 
+        if (u"addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
 
@@ -74,23 +74,23 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        self.story = self.story.replace("\r", "")
-        self.story = self.story.replace("\n","\\n")
-        self.story = self.story.replace("'","\\'")
-        html  = "<div class=\"iDevice\">\n"
-        html += "<b>" + _("Story:") + " </b>" 
-        html += common.elementInstruc("story"+self.id, self.storyInstruc)
-        html += common.richTextArea("story"+self.id, self.story)
-        html += "<table width =\"100%%\">\n"
+        self.story = self.story.replace(u"\r", u"")
+        self.story = self.story.replace(u"\n",u"\\n")
+        self.story = self.story.replace(u"'",u"\\'")
+        html  = u'<div class="iDevice">\n'
+        html += u'<b>%s</b>' % _(u'Story:')
+        html += common.elementInstruc(u'story'+self.id, self.storyInstruc)
+        html += common.richTextArea(u'story'+self.id, self.story)
+        html += u'<table width ="100%">\n'
         
         for element in self.questionElements:
             html += element.renderEdit() 
          
-        html += "</table>\n"
-        value = _("Add another question")    
-        html += common.submitButton("addQuestion"+str(self.id), value)
-        html += "<br /><br />" + self.renderEditButtons()
-        html += "</div>\n"
+        html += u"</table>\n"
+        value = _(u"Add another question")    
+        html += common.submitButton(u"addQuestion"+unicode(self.id), value)
+        html += u"<br /><br />" + self.renderEditButtons()
+        html += u"</div>\n"
         return html
 
     
@@ -98,7 +98,7 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = self.story+"<br/><br/>\n"
+        html  = self.story+u"<br/><br/>\n"
             
         for element in self.questionElements:
             html += element.renderView()

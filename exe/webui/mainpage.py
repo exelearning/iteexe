@@ -221,7 +221,7 @@ class MainPage(RenderableLivePage):
                     ('Somehow save was called without a filename '
                      'on a package that has no default filename.'))
         self.package.save(filename) # This can change the package name
-        client.alert('Package saved to: %s' % filename)
+        client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
             client.sendScript(onDone)
         elif self.package.name != oldName:
@@ -241,9 +241,9 @@ class MainPage(RenderableLivePage):
             client.sendScript('top.location = "/%s"' % package.name)
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
-                client.alert('Sorry, wrong file format:\n%s' % str(exc))
+                client.alert(_(u'Sorry, wrong file format:\n%s') % str(exc))
             else:
-                client.alert('Sorry, wrong file format')
+                client.alert(_(u'Sorry, wrong file format'))
             log.error('Error loading package "%s": %s' % (filename, str(exc)))
             self.error = True
 
@@ -254,9 +254,10 @@ class MainPage(RenderableLivePage):
             filename = Path(filename)
             storageName = self.package.addResource(filename)
             url = '%s/%s' % (self.package.name, storageName)
-            client.alert('Resource Uploaded Successfully.\nAccess URL: %s' % url)
+            client.alert(_(u'Resource Uploaded Successfully.\n'
+                           u'Access URL: %s' % url))
         except PackageError, exc:
-            client.alert('Uploading Resource failed:\n%s' % str(exc))
+            client.alert(_(u'Uploading Resource failed:\n%s' % str(exc)))
 
     def handleExport(self, client, exportType, filename):
         """
@@ -282,8 +283,8 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert('Filename %s is a file, cannot replace it' % 
-                             filename)
+                client.alert(_(u'Filename %s is a file, cannot replace it' % 
+                             filename))
                 log.error("Couldn't export web page: "+
                           "Filename %s is a file, cannot replace it" % filename)
                 return
@@ -296,13 +297,16 @@ class MainPage(RenderableLivePage):
                                           imagesDir, scriptsDir)
             websiteExport.export(self.package)
             # Show the newly exported web site in a new window
+            import pdb
+            pdb.set_trace()
             if hasattr(os, 'startfile'):
                 os.startfile(filename)
             else:
                 filename /= 'index.html'
                 os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
                     (self.config.browserPath,
-                     '-remote', 'openURL("%s", "new-window")' % filename))
+                     '-remote', 'openURL(%s, new-window)' % \
+                     filename))
         else:
             # Append an extension if required
             if not filename.lower().endswith('.zip'): 
@@ -324,4 +328,4 @@ class MainPage(RenderableLivePage):
                 log.error('Wrong exportType passed to handleExport: %s'
                           % exportType)
                 return
-            client.alert('Exported to %s' % filename)
+            client.alert(_(u'Exported to %s' % filename))

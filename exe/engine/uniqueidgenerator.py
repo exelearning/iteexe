@@ -39,11 +39,11 @@ class UniqueIdGenerator(object):
 
     def __init__(self, packageName, exePath):
         """Initialize the generator"""
-        self.prefix  = "eXe" 
-        self.prefix += re.sub(r"\W", "", packageName)[-10:]
+        self.prefix  = u"eXe" 
+        self.prefix += re.sub(ur"\W", u"", packageName)[-10:]
 
         if exePath:
-            self.prefix += "%x" % int(getmtime(exePath))
+            self.prefix += u"%x" % int(getmtime(exePath))
 
 
     def generate(self):
@@ -54,8 +54,8 @@ class UniqueIdGenerator(object):
          timestamp of eXe program + current timestamp + a sequential number 
         """
         uniqueId  = self.prefix
-        uniqueId += "%x" % int(time.time()*100)
-        uniqueId += "%x" % UniqueIdGenerator.nextId
+        uniqueId += u"%x" % int(time.time()*100)
+        uniqueId += u"%x" % UniqueIdGenerator.nextId
         UniqueIdGenerator.nextId += 1
 
         return uniqueId

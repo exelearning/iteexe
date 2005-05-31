@@ -63,11 +63,11 @@ def encodeObject(toEncode):
     """
     Take a object and turn it into an string
     """
-    log.debug("encodeObject")
+    log.debug(u"encodeObject")
 
     encoder = banana.Banana()
     encoder.connectionMade()
-    encoder._selectDialect("none")
+    encoder._selectDialect(u"none")
     strBuffer = cStringIO.StringIO()
     encoder.transport = strBuffer
     encoder.sendEncoded(jelly.jelly(toEncode))
@@ -79,11 +79,11 @@ def decodeObject(toDecode):
     """
     Take a string and turn it into an object
     """
-    log.debug("decodeObject")
+    log.debug(u"decodeObject")
 
     decoder = banana.Banana()
     decoder.connectionMade()
-    decoder._selectDialect("none")
+    decoder._selectDialect(u"none")
     data = []
     decoder.expressionReceived = data.append
     decoder.dataReceived(toDecode)

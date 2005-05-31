@@ -44,12 +44,12 @@ class PackageStore:
         """
         Creates a package
         """
-        log.debug("createPackage: name=" + repr(name))
+        log.debug(u"createPackage: name=" + repr(name))
         # Make up an initial unique name
         i = 1
-        name = "newPackage"
+        name = u"newPackage"
         while name in self.loaded:
-            name = "newPackage" + str(i)
+            name = u"newPackage" + unicode(i)
             i += 1                    
         package = Package(name)
         self.loaded[package.name] = package

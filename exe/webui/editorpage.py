@@ -80,6 +80,7 @@ class EditorPage(RenderableResource):
         
         self.editorPane.process(request)
 
+
     def render_GET(self, request):
         """Called for all requests to this object"""
         
@@ -117,7 +118,7 @@ class EditorPage(RenderableResource):
         html += "<br/></form>"
         html += "</div> \n"
         html += common.footer()
-        return html
+        return html.encode('utf8')
     render_POST = render_GET
 
 
@@ -129,5 +130,4 @@ class EditorPage(RenderableResource):
             html += "'"+prototype.id+"','1')\" />" 
             html += prototype.title + "</a><br/> \n"
         html += "</p>\n"
-
         return html

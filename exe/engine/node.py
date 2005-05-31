@@ -264,8 +264,8 @@ class Node(Persistable):
         Return a node as a string
         """
         nodeStr = ""
-        nodeStr += self.id + " "
-        nodeStr += self.title + "\n"
+        nodeStr += self.id + u" "
+        nodeStr += self.title + u"\n"
 
         for child in self.children:
             nodeStr += child.__str__()
@@ -275,6 +275,6 @@ class Node(Persistable):
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
-        self._title = self.__dict__['title']
+        self._title = self.__dict__[u'title']
         
 # ===========================================================================

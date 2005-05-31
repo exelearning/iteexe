@@ -77,7 +77,7 @@ class PropertiesPage(RenderableResource):
         html += self.propertiesPane.render()
         html += "</div> \n"
         html += "</body></html>"
-        return html
+        return html.encode('utf8')
     
     def render_POST(self, request):
         """
@@ -95,4 +95,4 @@ class PropertiesPage(RenderableResource):
             ['<html>'
              ' <head/>',
              ' <body onload="top.location = top.location"/>',
-             '</html>'])
+             '</html>']).encode('utf8')

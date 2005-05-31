@@ -33,9 +33,9 @@ class FreeTextIdevice(Idevice):
     FreeTextIdevice: just has a block of text
     """
     def __init__(self, content=""):
-        Idevice.__init__(self, _("Free Text Area"), 
-                         _("University of Auckland"), 
-                         _("""The majority of a learning resource will be 
+        Idevice.__init__(self, _(u"Free Text Area"), 
+                         _(u"University of Auckland"), 
+                         _(u"""The majority of a learning resource will be 
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")

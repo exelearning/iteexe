@@ -55,15 +55,15 @@ class TrueFalseIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         _("True-False Question"),
-                         _("University of Auckland"),
-                         "", "", "multichoice")
+                         _(u"True-False Question"),
+                         _(u"University of Auckland"),
+                         u"", u"", u"multichoice")
                          
-        self.hintInstruc     = _("Typy the question's hint here.")
+        self.hintInstruc     = _(u"Typy the question's hint here.")
         self.questions         = []
-        self.questionInstruc = _("Type the question stem.")
+        self.questionInstruc = _(u"Type the question stem.")
         self.keyInstruc      = ""
-        self.feedbackInstruc = _("""Type in the feedback that you want the 
+        self.feedbackInstruc = _(u"""Type in the feedback that you want the 
 student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
@@ -84,7 +84,7 @@ this box, eXe will automatically provide default feedback as follows:
         Upgrades the node from version 0 to 1.
         Old packages will loose their icons, but they will load.
         """
-        log.debug("Upgrading iDevice")
-        self.icon       = "multichoice"
+        log.debug(u"Upgrading iDevice")
+        self.icon       = u"multichoice"
     
 # ===========================================================================

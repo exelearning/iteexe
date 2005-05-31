@@ -30,187 +30,181 @@ _   = gettext.gettext
 
 def docType():
     """Generates the documentation type string"""
-    html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
-    html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
-    html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-    return html
+    return (u'<?xml version="1.0" encoding="iso-8859-1"?>\n'
+            u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"'
+            u' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n')
 
 
-def header(style='default'):
+def header(style=u'default'):
     """Generates the common header XHTML"""
     # NB: Authoring Page has its own header
-    html  = docType()
-    html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-    html += "<head>\n"
-    html += "<style type=\"text/css\">\n"
-    html += "@import url(/css/exe.css);\n"
-    html += "@import url(/style/"+style+"/content.css);</style>\n"
-    html += '<script language="JavaScript" src="/scripts/common.js"></script>\n'
-    html += '<script language="JavaScript" src="/scripts/fckeditor.js">'
-    html += '</script>\n'
-    html += '<script language="JavaScript" src="/scripts/libot_drag.js">'
-    html += '</script>\n'
-    html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
-    html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-    html += " charset=UTF-8\"></meta>\n";
-    html += "</head>\n"
-    return html
+    html += (docType() + 
+             u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
+             u'<head>\n'
+             u'<style type="text/css">\n'
+             u'  @import url(/css/exe.css);\n'
+             u'  @import url(/style/%s/content.css);</style>\n'
+             u'<script language="JavaScript" src="/scripts/common.js">'
+             u'</script>\n'
+             u'<script language="JavaScript" src="/scripts/fckeditor.js">'
+             u'</script>\n'
+             u'<script language="JavaScript" src="/scripts/libot_drag.js">'
+             u'</script>\n'
+             u'<title>%s</title>\n'
+             u'<meta http-equiv="content-type" '
+             u' content="text/html; charset=UTF-8"></meta>\n'
+             u'</head>\n'
+             % (style, _('eXe : elearning XHTML editor')))
 
 
 def banner(request): 
     """Generates the common page banner XHTML"""
-    html  = "<body>\n"
-    html += "<form method=\"post\" action=\""+request.path+"/#currentBlock\""
-    html += " id=\"contentForm\" name=\"contentForm\""
-    html += " onload=\"clearHidden();\">\n"
-    html += hiddenField("action")
-    html += hiddenField("object")
-    html += hiddenField("isChanged", "0")
+    html  = (u'<body>\n'
+             u'<form method="post" action="%s/#currentBlock"'
+             u' id="contentForm" name="contentForm"'
+             u' onload="clearHidden();">\n'
+             % request.path)
+    html += hiddenField(u'action')
+    html += hiddenField(u'object')
+    html += hiddenField(u'isChanged', '0')
     return html
 
 
 def footer():
     """Generates the common page footer XHTML"""
-    html  = "</form></body></html>\n"
-    return html
+    return u'</form></body></html>\n'
 
     
-def hiddenField(name, value=""):
+def hiddenField(name, value=u""):
     """Adds a hidden field to a form"""
-    html  = "<input type=\"hidden\" name=\"%s\" " % name
-    html += "value=\"%s\" />\n" % value
+    html  = u'<input type="hidden" name="%s" ' % name
+    html += u'value="%s" />\n' % value
     return html
 
 
-def textInput(name, value="", size=40, disabled=""):
+def textInput(name, value=u"", size=40, disabled=u""):
     """Adds a text input to a form"""
-    html  = "<input type=\"text\" name=\"%s\" id=\"%s\" " % (name, name)
-    html += "value=\"%s\"" % value
-    html += " size=\"%s\" %s />\n" % (size, disabled)
+    html  = u'<input type="text" name="%s" id="%s"' % (name, name)
+    html += u' value="%s"' % value
+    html += u' size="%s" %s />\n' % (size, disabled)
     return html
 
 
 def textArea(name, value="", disabled=""):
     """Adds a text area to a form"""
-    log.debug("textArea "+value)
-    html  = "<textarea name=\"%s\" " % name
-    html += "cols=\"52\" rows=\"8\" %s>%s" % (disabled, value)
-    html += "</textarea><br/>"
+    log.debug(u"textArea "+value)
+    html  = u'<textarea name="%s" ' % name
+    html += u'cols="52" rows="8" %s>%s' % (disabled, value)
+    html += u'</textarea><br/>'
     return html
 
 
 def richTextArea(name, value="", width="100%", height=100):
     """Adds a FCKEditor to a form"""
-    log.debug("richTextArea "+value+", height="+str(height))
-    html  = "<script type=\"text/javascript\">\n"
-    html += "<!--\n"
-    html += "    var editor = new FCKeditor('"+name+"', '"
+    log.debug(u"richTextArea "+value+", height="+str(height))
+    html  = u'<script type="text/javascript">\n'
+    html += u'<!--\n'
+    html += u"    var editor = new FCKeditor('"+name+"', '"
     html += str(width)+"', '"+str(height)+"', 'Armadillo', '"+value+"');\n"
-    html += "    editor.BasePath = '/scripts/';\n"
-    html += "    editor.Config['CustomConfigurationsPath'] ="
-    html += " '/scripts/armadillo.js';\n"
-    html += "    editor.Create();\n"
-    html += "//-->\n"
-    html += "</script>\n"
+    html += u"    editor.BasePath = '/scripts/';\n"
+    html += u"    editor.Config['CustomConfigurationsPath'] ="
+    html += u" '/scripts/armadillo.js';\n"
+    html += u"    editor.Create();\n"
+    html += u"//-->\n"
+    html += u"</script>\n"
     return html
         
 
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""
-    html  = "<input type=\"submit\" name=\"%s\" " % name
-    html += "value=\"%s\" " % value
+    html  = u'<input type="submit" name="%s" ' % name
+    html += u'value="%s" ' % value
     if not enabled:
-        html += " disabled"
-    html += "/>\n"
+        html += u' disabled'
+    html += u'/>\n'
     return html
 
 
-def submitImage(action, object_, imageFile, title="", isChanged=1):
+def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
-    html  = "<a "
-    if title != "":
-        html += "title=\""+title+"\" "
-    html += " href=\"#\" onclick=\"submitLink('" + action
-    html += "', '" + object_ + "', %d);\" >" % isChanged
+    onclick = "submitLink('%s', %s, %d);" % (action, object_, isChanged)
+    titleText = u''
+    if title:
+        titleText = u'title="%s" ' % title
+    html  = u'<a %s' % titleText
+    html += ' href="#" onclick="%s">' % onclick
     html += image(imageFile)
-    html += "</a>\n" 
+    html += '</a>\n' 
     return html
 
 
 def image(imageFile):
-    """returns the XHTML for an image"""
-    html  = "<img src=\"/images/"+imageFile+"\" "
-    html += " align=\"middle\" border=\"0\" />"
+    """Returns the XHTML for an image"""
+    html  = u'<img src="/images/%s" ' % imageFile
+    html += u' align="middle" border="0" />'
     return html
 
 
 def select(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
-    html  = "<select onchange=\"submitLink('" + action
-    html += "', '" + object_ + "');\" "
-    html += "name=\""+action+object_+"\" >"
-
+    onclick = u"submitLink('%s', %s);" % (action, object_)
+    html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object)
     for option, value in options:
+        selected = u''
         if selection == option:
-            selected = "selected"
-        else:
-            selected = ""
+            selected = u'selected'
 
-        html += " <option value=\""+value+"\""+selected+">"
+        html += u' <option value="%s" %s>' % (value, selected)
         html += option
-        html += "</option>\n"
+        html += u'</option>\n'
 
-    html += "</select>\n"
+    html += u'</select>\n'
     return html
 
 
 def option(name, checked, value):
     """Add a option input"""
-    chkStr = ""
+    chkStr = u''
     if checked:
-        chkStr = "checked"
-        
-    html  = '<input type = "radio" name = "'+name+'"'
-    html += ' value="'+value+'" '
-    html += chkStr+' />\n'
+        chkStr = u'checked'
+    html  = (u'<input type="radio" name="%s"'
+             u' value="%s" %s/>\n' % 
+              (name, value, chkStr))
     return html
 
 def checkbox(name, checked, value=""):
     """Add a checkbox"""
-    chkStr = ""
+    chkStr = u''
     if checked:
-        chkStr = "checked"
+        chkStr = u'checked'
         
-    html  = '<input type = "checkbox" name = "'+name+'"'
-    html += ' value="'+value+'" '
-    html += chkStr+' />\n'
+    html  = (u'<input type="checkbox" name="%s"'
+             u' value="%s" %s/>\n' % 
+              (name, value, chkStr))
     return html
 
 
 
-def elementInstruc(instrucId, instruc, imageFile="help.gif", 
-                   label="Instructions"):
+def elementInstruc(instrucId, instruc, imageFile="help.gif", label="Instructions"):
     """add a help instruction for a element"""
-    if instruc == "":
-        html = ""
+    if instruc == u'':
+        html = u''
     else:
-        html  = "<a onmousedown=\"Javascript:updateCoords(event);\" "
-        html += " title=\"" + _("Instructions for completion") + "\" "
-        html += "onclick=\"Javascript:showMe('i%s', 350, 100);\" " % instrucId
-        html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
-        html += '<img src="/images/%s" border="0" align="middle"/>' % imageFile
-        html += "</a>\n"
-        html += "<div id=\"i%s\" style=\"display:none; z-index:99;\">" % \
-                instrucId
-        html += "<div style=\"float:right;\" >"
-        html += '<img src="/images/stock-stop.png" title="'+_("Close")+'" ' 
-        html += " onmousedown=\"Javascript:hideMe();\"/></div>"
-        html += "<b>%s:</b><br/>%s<br/>" % (label, instruc)                
-        html += "</div>\n"
-    
+        html  = u'<a onmousedown="Javascript:updateCoords(event);" '
+        html += u' title="%s"" ' % _('Instructions for completion')
+        html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % instrucId
+        html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
+        html += u'<img src="/images/%s" border="0" align="middle"/>' % imageFile
+        html += u'</a>\n'
+        html += u'<div id="i%s" style="display:none; z-index:99;">' % instrucId
+        html += u'<div style="float:right;" >'
+        html += u'<img src="/images/stock-stop.png" title="%s" ' % _("Close")
+        html += u' onmousedown="Javascript:hideMe();"/></div>'
+        html += u'<b>%s:</b><br/>%s<br/>' % (label, instruc)                
+        html += u'</div>\n'
     return html
     
     

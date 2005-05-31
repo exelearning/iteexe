@@ -78,8 +78,8 @@ class QuizTestIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         _("Quiz Test"),
-                         _("University of Auckland"),
+                         _(u"Quiz Test"),
+                         _(u"University of Auckland"),
                          "", "", "")
         self.score = -1 
         self.isAnswered = True

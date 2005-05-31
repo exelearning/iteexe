@@ -52,9 +52,9 @@ class CasestudyIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         _("Case Study"),
-                         _("University of Auckland"), 
-                         _("""A case study is a story that conveys an 
+                         _(u"Case Study"),
+                         _(u"University of Auckland"), 
+                         _(u"""A case study is a story that conveys an 
 educational message. A case study can be used to present a realistic situation
 that enables learners to apply their own knowledge and experience to.  When 
 designing a case study you might want to consider the following:<ul> 
@@ -66,16 +66,16 @@ case study</li>
 if run in a classroom situation can teams be setup to work on different aspects
 of the case and if so how are ideas feed back to the class</li></ul>"""), 
                          "",
-                         "casestudy")
+                         u"casestudy")
                          
         self.story        = story
         self.questions    = []
-        self.storyInstruc = _("""Create the case story.  A good case is one 
+        self.storyInstruc = _(u"""Create the case story.  A good case is one 
 that describes a controversy.""")
-        self.questionInstruc = _("""Enter the study question.  These questions 
+        self.questionInstruc = _(u"""Enter the study question.  These questions 
 should draw out the educational messages presented in the case.  Consider 
 aspects of the case like, characters, timeliness, relevance, dilemmas.""")
-        self.feedbackInstruc = _("""Provide feedback on the question.  This may 
+        self.feedbackInstruc = _(u"""Provide feedback on the question.  This may 
 be a summary of the main points or concepts.""")
         
         self.addQuestion()
@@ -93,7 +93,7 @@ be a summary of the main points or concepts.""")
         Upgrades the node from version 0 to 1.
         Old packages will loose their icons, but they will load.
         """
-        log.debug("Upgrading iDevice")
+        log.debug(u"Upgrading iDevice")
         self.icon = "casestudy"
     
 # ===========================================================================

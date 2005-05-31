@@ -77,6 +77,6 @@ class PackageRedirectPage(RenderableResource):
         self.bindNewPackage(package)
         log.info("Created a new package name="+ package.name)
         # Tell the web browser to show it
-        request.redirect(package.name)
+        request.redirect(package.name.encode('utf8'))
         return ''
 

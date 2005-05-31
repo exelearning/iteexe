@@ -174,7 +174,6 @@ class Config:
         """
         setup logging file
         """
-
         hdlr   = logging.FileHandler(self.configDir/logFile)
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log  = logging.getLogger()

@@ -36,21 +36,21 @@ class EditorElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = str(index) + "b" + idevice.id        
+        self.id         = u'%sb%s' % (unicode(index), idevice.id)
         self.idevice    = idevice
         self.field      = field
         self.instruc    = field.instruction 
-        self.instrucId  = "instruc" + str(index)
+        self.instrucId  = u"instruc" + unicode(index)
         self.name       = field.name
-        self.nameId     = "name" + self.id
-        self.contentId  = "content" + self.id
+        self.nameId     = u"name" + self.id
+        self.contentId  = u"content" + self.id
 
     def process(self, request):
         """
         Process arguments from the webserver.  Return any which apply to this 
         element.
         """
-        log.debug("process " + repr(request.args))
+        log.debug(u'process ' + repr(request.args))
         
         if self.nameId in request.args:
             self.field.name = request.args[self.nameId][0]
@@ -72,24 +72,24 @@ class EditorElement(object):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        html  = "<p class=\""+ self.field.class_ + "\">\n"
+        html  = u'<p class="%s">\n' % self.field.class_
         html += content
-        html += "</p>\n"
+        html += u'</p>\n'
         return html
 
     def renderPreview(self, dummy):
         """
         Returns an XHTML string for editing this element
         """
-        log.error("renderEdit called directly")
-        return "ERROR: Element.renderEdit called directly"
+        log.error(u'renderEdit called directly')
+        return u'ERROR: Element.renderEdit called directly'
     
     def renderEdit(self, content):
         """
         Returns an XHTML string for editing this element
         """
-        log.error("renderEdit called directly")
-        return "ERROR: Element.renderEdit called directly"
+        log.error(u'renderEdit called directly')
+        return u'ERROR: Element.renderEdit called directly'
     
 # ===========================================================================
 
