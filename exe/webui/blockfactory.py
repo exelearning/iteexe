@@ -24,22 +24,24 @@ a given Idevice.
 import logging
 import gettext
 
-from exe.engine.freetextidevice    import FreeTextIdevice
-from exe.engine.genericidevice     import GenericIdevice
-from exe.engine.multichoiceidevice import MultichoiceIdevice
-from exe.engine.reflectionidevice  import ReflectionIdevice
-from exe.engine.casestudyidevice   import CasestudyIdevice
-from exe.engine.newidevice         import NewIdevice
-from exe.engine.truefalseidevice   import TrueFalseIdevice
-from exe.engine.quiztestidevice    import QuizTestIdevice
+from exe.engine.freetextidevice       import FreeTextIdevice
+from exe.engine.genericidevice        import GenericIdevice
+from exe.engine.multichoiceidevice    import MultichoiceIdevice
+from exe.engine.reflectionidevice     import ReflectionIdevice
+from exe.engine.casestudyidevice      import CasestudyIdevice
+from exe.engine.newidevice            import NewIdevice
+from exe.engine.truefalseidevice      import TrueFalseIdevice
+from exe.engine.quiztestidevice       import QuizTestIdevice
+from exe.engine.teacherprofileidevice import TeacherProfileIdevice
 
-from exe.webui.freetextblock       import FreeTextBlock
-from exe.webui.genericblock        import GenericBlock
-from exe.webui.multichoiceblock    import MultichoiceBlock
-from exe.webui.reflectionblock     import ReflectionBlock
-from exe.webui.casestudyblock      import CasestudyBlock
-from exe.webui.truefalseblock      import TrueFalseBlock
-from exe.webui.quiztestblock       import QuizTestBlock
+from exe.webui.freetextblock          import FreeTextBlock
+from exe.webui.genericblock           import GenericBlock
+from exe.webui.multichoiceblock       import MultichoiceBlock
+from exe.webui.reflectionblock        import ReflectionBlock
+from exe.webui.casestudyblock         import CasestudyBlock
+from exe.webui.truefalseblock         import TrueFalseBlock
+from exe.webui.quiztestblock          import QuizTestBlock
+from exe.webui.teacherprofileblock    import TeacherProfileBlock
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -53,14 +55,15 @@ class BlockFactory(object):
     """
     def __init__(self):
         """Tie together all known block types with all known iDevice types"""
-        self.blockTypes = [(ReflectionBlock,  ReflectionIdevice),
-                           (MultichoiceBlock, MultichoiceIdevice),
-                           (GenericBlock,     GenericIdevice),
-                           (GenericBlock,     NewIdevice),
-                           (FreeTextBlock,    FreeTextIdevice),
-                           (TrueFalseBlock,   TrueFalseIdevice),
-                           (QuizTestBlock,    QuizTestIdevice),
-                           (CasestudyBlock,   CasestudyIdevice)]
+        self.blockTypes = [(ReflectionBlock,     ReflectionIdevice),
+                           (MultichoiceBlock,    MultichoiceIdevice),
+                           (GenericBlock,        GenericIdevice),
+                           (GenericBlock,        NewIdevice),
+                           (FreeTextBlock,       FreeTextIdevice),
+                           (TrueFalseBlock,      TrueFalseIdevice),
+                           (QuizTestBlock,       QuizTestIdevice),
+                           (TeacherProfileBlock, TeacherProfileIdevice),
+                           (CasestudyBlock,      CasestudyIdevice)]
         # Log the the registration has happened
         for blockType, ideviceType in self.blockTypes:
             log.debug(u"registerBlockType "+ 

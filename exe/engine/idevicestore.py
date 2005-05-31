@@ -84,12 +84,13 @@ class IdeviceStore:
 
 
     def loadExtended(self):
-        from exe.engine.freetextidevice    import FreeTextIdevice
-        from exe.engine.multichoiceidevice import MultichoiceIdevice
-        from exe.engine.reflectionidevice  import ReflectionIdevice
-        from exe.engine.casestudyidevice   import CasestudyIdevice
-        from exe.engine.truefalseidevice   import TrueFalseIdevice
-        from exe.engine.quiztestidevice    import QuizTestIdevice
+        from exe.engine.freetextidevice       import FreeTextIdevice
+        from exe.engine.multichoiceidevice    import MultichoiceIdevice
+        from exe.engine.reflectionidevice     import ReflectionIdevice
+        from exe.engine.casestudyidevice      import CasestudyIdevice
+        from exe.engine.truefalseidevice      import TrueFalseIdevice
+        from exe.engine.quiztestidevice       import QuizTestIdevice
+        from exe.engine.teacherprofileidevice import TeacherProfileIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -102,6 +103,7 @@ class IdeviceStore:
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
         self.extended.append(QuizTestIdevice())
+        self.extended.append(TeacherProfileIdevice())
   
 
     def loadGeneric(self):
