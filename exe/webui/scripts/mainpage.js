@@ -404,7 +404,8 @@ function metadataEditor() {
 // load the About page
 
 function aboutPage() {
-	var features = "width=300,height=400,status=no,resizable=no";
+	var features = "width=300,height=400,status=no,resizable=no,"+
+			"left=260,top=200";
 	var aboutWin = window.open ("/templates/about.xul", "About", features);}
 
 // Appends an iDevice
