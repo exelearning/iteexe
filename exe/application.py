@@ -25,7 +25,6 @@ The Main Application Object
 import os
 import sys
 from getopt import getopt, GetoptError
-from exe.engine.config       import Config
 from exe.webui.webserver     import WebServer
 from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
@@ -39,6 +38,10 @@ log = logging.getLogger(__name__)
 
 
 class Application:
+    """
+    Main application class, pulls together everything and runs it.
+    """
+
     def __init__(self):
         """
         Initialize
@@ -47,6 +50,7 @@ class Application:
         self.packageStore = None
         self.ideviceStore = None
         self.packagePath  = None
+        self.server       = None
 
 
     def main(self):
@@ -78,11 +82,11 @@ class Application:
             self.usage()
             sys.exit(2)
 
-        for option, arg in options:
-            if option in ("-V", "--version"):
+        for option in options:
+            if option[0] in ("-V", "--version"):
                 print "eXe", version.version
                 sys.exit()
-            if option in ("-h", "--help"):
+            if option[0] in ("-h", "--help"):
                 self.usage()
                 sys.exit()
 

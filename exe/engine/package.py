@@ -27,7 +27,6 @@ import zipfile
 import shutil
 from exe.engine.path            import Path, TempDirPath
 from exe.engine.node            import Node
-from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.genericidevice  import GenericIdevice
 from exe.engine.persist         import Persistable, encodeObject, decodeObject
 
@@ -35,6 +34,9 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
+class PackageError(Exception):
+    """Used for defining package specific errors"""
+
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
@@ -160,19 +162,6 @@ class Package(Persistable):
     load = staticmethod(load)
 
 
-    def getResources(self):
-        """
-        Return the resource files used by this node
-        """
-        resources = {}
-        for node in self.nodes:
-            for idevice in node.idevices:
-                for resource in idevice.getResources():
-                    resources[resource] = True
-
-        return resources.keys()
-
-
     def addResource(self, resourceFile, storageName=None):
         """
         Add an image/audio/video resource to the package.
@@ -182,7 +171,16 @@ class Package(Persistable):
         """
         if not storageName:
             storageName = resourceFile.basename()
-        resourceFile.copyfile(self.resourceDir/storageName)
+        if not resourceFile.exists():
+            raise PackageError(_(u'Resource file not found'))
+        if not resourceFile.isfile():
+            raise PackageError(_(u'Received a path to a non file'))
+        try:
+            resourceFile.copyfile(self.resourceDir/storageName)
+        except shutil.Error, exc:
+            raise PackageError(u"Coulnd't copy file: %s" % unicode(exc))
+        except IOError, exc:
+            raise PackageError(u"Coulnd't copy file: %s" % unicode(exc))
 
 
     def upgradeToVersion1(self):
@@ -195,15 +193,16 @@ class Package(Persistable):
         # Also upgrade all the nodes.
         # This needs to be done here so that draft gets id 0
         # If it's done in the nodes, the ids are assigned in reverse order
-        self.draft._id = self._regNewNode(self.draft)
-        self.draft._package = self
-        self.editor = Node(self, None, _(u"iDevice Editor"))
+        draft = getattr(self, 'draft')
+        draft._id = self._regNewNode(draft)
+        draft._package = self
+        setattr(self, 'editor', Node(self, None, _(u"iDevice Editor")))
 
         # Add a default idevice to the editor
-        from exe.engine.genericidevice  import GenericIdevice
-        idevice            = GenericIdevice("", "", "", "", "")
-        idevice.parentNode = self.editor
-        self.editor.addIdevice(idevice)
+        idevice = GenericIdevice("", "", "", "", "")
+        editor = getattr(self, 'editor')
+        idevice.parentNode = editor
+        editor.addIdevice(idevice)
         def superReg(node):
             """Registers all our nodes
             because in v0 they were not registered
@@ -231,10 +230,10 @@ class Package(Persistable):
         """
         Called to upgrade from 0.4 release
         """
-        self.draft.delete()
-        self.editor.delete()
-        del self.draft
-        del self.editor
+        getattr(self, 'draft').delete()
+        getattr(self, 'editor').delete()
+        delattr(self, 'draft')
+        delattr(self, 'editor')
         def renumberNode(node):
             """
             Gives the old node a number

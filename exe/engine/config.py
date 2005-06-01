@@ -145,8 +145,11 @@ class Config:
         """
         # Set up the parser so that if a certain value is not in the config
         # file, it will use the value from our default values
-        self.configParser.defaultValue = \
-            lambda section, option: getattr(self, option)
+        def defVal(dummy, option):
+            """If something is not in the config file, just use the default in
+            'self'"""
+            return getattr(self, option)
+        self.configParser.defaultValue = defVal
         # System Section
         if self.configParser.has_section('system'):
             system = self.configParser.system

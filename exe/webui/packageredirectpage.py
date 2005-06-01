@@ -24,8 +24,6 @@ anything it just redirects the user to a new package.
 
 import logging
 import gettext
-from twisted.web.error        import ForbiddenResource
-from exe.webui                import common
 from exe.webui.mainpage       import MainPage
 from exe.webui.renderable     import RenderableResource
 

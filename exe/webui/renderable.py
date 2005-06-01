@@ -14,6 +14,21 @@ from nevow import loaders
 from nevow.livepage import LivePage
 from twisted.web.resource import Resource
 
+class Unset(object):
+    """
+    This class is used as a special variable like None
+    but this means that an attribute is Unset
+    it tells __getattribute__ that it needs to really return this value.
+    We do all this complicated stuff to stop pylint complaining
+    about our magically gotten variables.
+    """
+
+class DontHave(object):
+    """
+    This is a constant that means, we don't have
+    an attribute of this name
+    """
+
 class Renderable(object):
     """
     A base class for all things rendered
@@ -36,6 +51,12 @@ class Renderable(object):
         get them from 'parent'
         """
         self.parent = parent # This is the same for both blocks and pages
+
+        # Make pylint happy. These attributes will be gotten from
+        # self.application
+        self.config = Unset
+        self.ideviceStore = Unset
+        self.packageStore = Unset
 
         # Overwrite old instances with same name
         if parent:
@@ -80,18 +101,25 @@ class Renderable(object):
         """
         del self.parent.renderChildren[self.name]
 
-    def __getattr__(self, attr):
+    def __getattribute__(self, attr):
         """
-        Creates auto render_achild methods
+        Sets unset attributes.
         """
-        # First see if it's nevow asking for a function to do
-        # some rendering from a template
-        if attr.startswith('render_'):
-            name = attr.split('_', 1)[-1]
-            return self.renderChildren[name].render
-        elif self.webserver:
-            # If not, see if what they're looking for is in the app object
-            return getattr(self.webserver.application, attr)
+        def baseget(name):
+            try:
+                return object.__getattribute__(self, name)
+            except AttributeError:
+                return DontHave
+        res = baseget(attr)
+        if res is Unset or res is DontHave:
+            if attr.startswith('render_'):
+                name = attr.split('_', 1)[-1]
+                res = baseget('renderChildren')[name].render
+            elif baseget('webserver'):
+                # If not, see if what they're looking for is in the app object
+                res = getattr(baseget('webserver').application, attr)
+        setattr(self, attr, res)
+        return res
 
     def process(self, request):
         """

@@ -38,23 +38,23 @@ def docType():
 def header(style=u'default'):
     """Generates the common header XHTML"""
     # NB: Authoring Page has its own header
-    html += (docType() + 
-             u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
-             u'<head>\n'
-             u'<style type="text/css">\n'
-             u'  @import url(/css/exe.css);\n'
-             u'  @import url(/style/%s/content.css);</style>\n'
-             u'<script language="JavaScript" src="/scripts/common.js">'
-             u'</script>\n'
-             u'<script language="JavaScript" src="/scripts/fckeditor.js">'
-             u'</script>\n'
-             u'<script language="JavaScript" src="/scripts/libot_drag.js">'
-             u'</script>\n'
-             u'<title>%s</title>\n'
-             u'<meta http-equiv="content-type" '
-             u' content="text/html; charset=UTF-8"></meta>\n'
-             u'</head>\n'
-             % (style, _('eXe : elearning XHTML editor')))
+    return (docType() + 
+            u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
+            u'<head>\n'
+            u'<style type="text/css">\n'
+            u'  @import url(/css/exe.css);\n'
+            u'  @import url(/style/%s/content.css);</style>\n'
+            u'<script language="JavaScript" src="/scripts/common.js">'
+            u'</script>\n'
+            u'<script language="JavaScript" src="/scripts/fckeditor.js">'
+            u'</script>\n'
+            u'<script language="JavaScript" src="/scripts/libot_drag.js">'
+            u'</script>\n'
+            u'<title>%s</title>\n'
+            u'<meta http-equiv="content-type" '
+            u' content="text/html; charset=UTF-8"></meta>\n'
+            u'</head>\n'
+            % (style, _('eXe : elearning XHTML editor')))
 
 
 def footer():
@@ -92,7 +92,7 @@ def richTextArea(name, value="", width="100%", height=100):
     html  = u'<script type="text/javascript">\n'
     html += u'<!--\n'
     html += u"    var editor = new FCKeditor('"+name+"', '"
-    html += unicode(width)+"', '"+unicode(height)+"', 'Armadillo', '"+value+"');\n"
+    html += u"%s', '%s', 'Armadillo', '%s');\n" % (width, height, value)
     html += u"    editor.BasePath = '/scripts/';\n"
     html += u"    editor.Config['CustomConfigurationsPath'] ="
     html += u" '/scripts/armadillo.js';\n"
@@ -139,13 +139,13 @@ def select(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
     onclick = u"submitLink('%s', %s);" % (action, object_)
     html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object)
-    for option, value in options:
+    for opt, value in options:
         selected = u''
-        if selection == option:
+        if selection == opt:
             selected = u'selected'
 
         html += u' <option value="%s" %s>' % (value, selected)
-        html += option
+        html += opt
         html += u'</option>\n'
 
     html += u'</select>\n'
@@ -176,7 +176,8 @@ def checkbox(name, checked, value=""):
 
 
 
-def elementInstruc(instrucId, instruc, imageFile="help.gif", label="Instructions"):
+def elementInstruc(instrucId, instruc, imageFile="help.gif",
+                   label="Instructions"):
     """add a help instruction for a element"""
     if instruc == u'':
         html = u''
@@ -194,17 +195,3 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif", label="Instructions
         html += u'<b>%s:</b><br/>%s<br/>' % (label, instruc)                
         html += u'</div>\n'
     return html
-    
-    
-# ===========================================================================
-
-if __name__ == "__main__":
-    class MyRequest:
-        def __init__(self):
-            self.path = ""
-    print header()
-    print banner(MyRequest())
-    print textInput("text")
-    print textArea("area")
-    print submitButton("ok", "OK")
-    print footer()

@@ -142,7 +142,7 @@ class GenericIdevice(Idevice):
         """
         log.debug("Upgrading iDevice")
         if self.class_ in ("objectives", "activity", "reading", "preknowledge"):
-            self.icon = class_
+            self.icon = self.class_
         else:
             self.icon = "generic"
 

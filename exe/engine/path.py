@@ -38,8 +38,6 @@ from tempfile import mkdtemp
 __version__ = '2.0.4'
 __all__ = ['Path', 'TempDirPath']
 
-unicode = unicode
-
 # Universal newline support
 _textmode = 'r'
 if hasattr(file, 'newlines'):

@@ -36,6 +36,7 @@ from exe.webui.propertiespage import PropertiesPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from exe.engine.path          import Path
+from exe.engine.package       import PackageError
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -71,7 +72,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
         self.error = False
-
 
     def getChild(self, name, request):
         """
@@ -248,7 +248,8 @@ class MainPage(RenderableLivePage):
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
-            log.error(u'Error loading package "%s": %s' % (filename, unicode(exc)))
+            log.error(u'Error loading package "%s": %s' % \
+                      (filename, unicode(exc)))
             self.error = True
 
     def handleAddResource(self, client, filename):
@@ -260,9 +261,9 @@ class MainPage(RenderableLivePage):
             client.alert(_(u'Resource Uploaded Successfully.\n'
                            u'Access URL: %s' % url))
         except PackageError, exc:
-            client.alert(_(u'Uploading Resource failed:\n%s' % \
-                           unicode(exc, 'utf8')))
-            log.error(u'Failed to save resource: %s' % unicode(exc, 'utf8'))
+            client.alert(_(u'Importing Resource failed:\n%s' % \
+                           exc.encode('utf8')))
+            log.error(u'Failed to save resource: %s' % exc)
 
     def handleExport(self, client, exportType, filename):
         """
@@ -274,61 +275,76 @@ class MainPage(RenderableLivePage):
         """
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
+        if exportType == 'webSite':
+            self.exportWebSite(client, filename, webDir, stylesDir)
+        else:
+            self.exportScorm(client, filename, exportType, webDir, stylesDir)
+
+    def exportWebSite(self, client, filename, webDir, stylesDir):
+        """
+        Export 'client' to a web site,
+        'webDir' is just read from config.webDir
+        'stylesDir' is where to copy the style sheet information from
+        """
         imagesDir  = webDir.joinpath('images')
         scriptsDir = webDir.joinpath('scripts')
-        if exportType == 'webSite':
-            # filename is a directory where we will export the website to
-            # We assume that the user knows what they are doing
-            # and don't check if the directory is already full or not
-            # and we just overwrite what's already there
-            filename = Path(filename)
-            # Append the package name to the folder path if necessary
-            if filename.basename() != self.package.name:
-                filename /= self.package.name
-            if not filename.exists():
-                filename.makedirs()
-            elif not filename.isdir():
-                client.alert(_(u'Filename %s is a file, cannot replace it' % 
-                             filename))
-                log.error("Couldn't export web page: "+
-                          "Filename %s is a file, cannot replace it" % filename)
-                return
-            else:
-                # Wipe it out
-                filename.rmtree()
-                filename.mkdir()
-            # Now do the export
-            websiteExport = WebsiteExport(stylesDir, filename, 
-                                          imagesDir, scriptsDir)
-            websiteExport.export(self.package)
-            # Show the newly exported web site in a new window
-            if hasattr(os, 'startfile'):
-                os.startfile(filename)
-            else:
-                filename /= 'index.html'
-                os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
-                    (self.config.browserPath,
-                     '-remote', 'openURL(%s, new-window)' % \
-                     filename))
+        # filename is a directory where we will export the website to
+        # We assume that the user knows what they are doing
+        # and don't check if the directory is already full or not
+        # and we just overwrite what's already there
+        filename = Path(filename)
+        # Append the package name to the folder path if necessary
+        if filename.basename() != self.package.name:
+            filename /= self.package.name
+        if not filename.exists():
+            filename.makedirs()
+        elif not filename.isdir():
+            client.alert(_(u'Filename %s is a file, cannot replace it' % 
+                         filename))
+            log.error("Couldn't export web page: "+
+                      "Filename %s is a file, cannot replace it" % filename)
+            return
         else:
-            # Append an extension if required
-            if not filename.lower().endswith('.zip'): 
-                filename += '.zip'
-            filename = Path(filename)
-            # Remove any old existing files
-            if filename.exists(): 
-                filename.remove()
-            # Do the export
-            scormExport = ScormExport(self.config, stylesDir, 
-                                      webDir / 'scripts', filename)
-            if exportType == 'scormMeta':
-                scormExport.export(self.package, True)
-            elif exportType == 'scormNoMeta':
-                scormExport.export(self.package, False, False)
-            elif exportType == 'scormNoScormType':
-                scormExport.export(self.package, True, False)
-            else:
-                log.error('Wrong exportType passed to handleExport: %s'
-                          % exportType)
-                return
-            client.alert(_(u'Exported to %s' % filename))
+            # Wipe it out
+            filename.rmtree()
+            filename.mkdir()
+        # Now do the export
+        websiteExport = WebsiteExport(stylesDir, filename, 
+                                      imagesDir, scriptsDir)
+        websiteExport.export(self.package)
+        # Show the newly exported web site in a new window
+        if hasattr(os, 'startfile'):
+            os.startfile(filename)
+        else:
+            filename /= 'index.html'
+            os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
+                (self.config.browserPath,
+                 '-remote', 'openURL(%s, new-window)' % \
+                 filename))
+
+    def exportScorm(self, client, scormType, filename, webDir, stylesDir):
+        """
+        Exports this package to a scorm package file
+        'scormType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
+        """
+        # Append an extension if required
+        if not filename.lower().endswith('.zip'): 
+            filename += '.zip'
+        filename = Path(filename)
+        # Remove any old existing files
+        if filename.exists(): 
+            filename.remove()
+        # Do the export
+        scormExport = ScormExport(self.config, stylesDir, 
+                                  webDir / 'scripts', filename)
+        if scormType == 'scormMeta':
+            scormExport.export(self.package, True)
+        elif scormType == 'scormNoMeta':
+            scormExport.export(self.package, False, False)
+        elif scormType == 'scormNoScormType':
+            scormExport.export(self.package, True, False)
+        else:
+            log.error('Wrong scormType passed to exportScorm: %s'
+                      % scormType)
+            return
+        client.alert(_(u'Exported to %s' % filename))

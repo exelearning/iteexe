@@ -23,8 +23,6 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 
 import logging
 import gettext
-from nevow.livepage import handler
-from exe.webui import common
 from exe.webui.renderable import Renderable
 from nevow import stan
 
@@ -95,7 +93,10 @@ class IdevicePane(Renderable):
         html += "style=\"background-color: #DFDFDF;\">\n"
 
         prototypes = self.prototypes.values()
-        prototypes.sort(lambda x, y: cmp(x.title, y.title))
+        def sortfunc(pt1, pt2):
+            """Used to sort prototypes by title"""
+            return cmp(pt1.title, pt2.title)
+        prototypes.sort(sortfunc)
         for prototype in prototypes:
             html += self.__renderPrototype(prototype)
 

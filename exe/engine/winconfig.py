@@ -22,8 +22,6 @@ The WinConfig overrides the Config class with Windows specific
 configuration
 """
 
-import logging
-import sys
 from exe.engine.config import Config
 from exe.engine.path import Path
 
