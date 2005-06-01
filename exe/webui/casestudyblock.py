@@ -23,7 +23,6 @@ CasestudyBlock can render and process CasestudyIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block               import Block
-from exe.engine.casestudyidevice   import CasestudyIdevice
 from exe.webui.questionelement     import QuestionElement
 from exe.webui                     import common
 
@@ -75,8 +74,8 @@ class CasestudyBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         self.story = self.story.replace(u"\r", u"")
-        self.story = self.story.replace(u"\n",u"\\n")
-        self.story = self.story.replace(u"'",u"\\'")
+        self.story = self.story.replace(u"\n", u"\\n")
+        self.story = self.story.replace(u"'",  u"\\'")
         html  = u'<div class="iDevice">\n'
         html += u'<b>%s</b>' % _(u'Story:')
         html += common.elementInstruc(u'story'+self.id, self.storyInstruc)

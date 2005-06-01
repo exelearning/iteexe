@@ -29,13 +29,8 @@ from twisted.internet import reactor
 from twisted.internet.error import CannotListenError
 from nevow import appserver
 from twisted.web import static
-import os
-import os.path
-import sys
-from exe.engine.config import Config
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage import EditorPage
-from exe.webui.errorpage import ErrorPage
 import logging
 import gettext
 _   = gettext.gettext
@@ -44,6 +39,11 @@ log = logging.getLogger(__name__)
 
 
 class WebServer:
+    """
+    Encapsulates some twisted components to serve
+    all webpages, scripts and nevow functionality
+    """
+
     def __init__(self, application):
         self.application = application
         self.config      = application.config
@@ -56,19 +56,19 @@ class WebServer:
         """
         log.debug("start webserver running")
         webDir = self.config.webDir
-        self.root.putChild("images",  static.File(webDir+"/images"))
-        self.root.putChild("css",     static.File(webDir+"/css"))   
-        self.root.putChild("scripts", static.File(webDir+"/scripts"))
-        self.root.putChild("style",   static.File(webDir+"/style"))
-        self.root.putChild("editor",  self.editor)
-        self.root.putChild("templates",static.File(webDir+"/templates"))
-        self.root.putChild("docs",static.File(webDir+"/docs"))
+        self.root.putChild("images",    static.File(webDir+"/images"))
+        self.root.putChild("css",       static.File(webDir+"/css"))   
+        self.root.putChild("scripts",   static.File(webDir+"/scripts"))
+        self.root.putChild("style",     static.File(webDir+"/style"))
+        self.root.putChild("editor",    self.editor)
+        self.root.putChild("templates", static.File(webDir+"/templates"))
+        self.root.putChild("docs",      static.File(webDir+"/docs"))
 
         try:
             reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),
                               interface="127.0.0.1")
-        except CannotListenError, e:
+        except CannotListenError, exc:
             log.error("Can't listen on interface 127.0.0.1, port %s: %s" % 
-                      (self.config.port, unicode(e)))
+                      (self.config.port, unicode(exc)))
         else:
             reactor.run()

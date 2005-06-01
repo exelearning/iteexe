@@ -23,8 +23,6 @@ The PropertiesPage is for user to enter or edit package's properties
 
 import logging
 import gettext
-from exe.webui import common
-from twisted.web.resource import Resource
 from exe.webui.propertiespane import PropertiesPane
 from exe.webui.renderable import RenderableResource
 
@@ -66,11 +64,15 @@ class PropertiesPage(RenderableResource):
            '''<style type="text/css">''',
            '''@import url(/css/exe.css);''',
            '''@import url(/style/default/content.css);</style>''',
-           '''<script language="JavaScript" src="/scripts/common.js"></script>''',
-           '''<script language="JavaScript" src="/scripts/fckeditor.js"></script>''',
-           '''<script language="JavaScript" src="/scripts/libot_drag.js"></script>''',
+           '''<script language="JavaScript" '''
+           '''src="/scripts/common.js"></script>''',
+           '''<script language="JavaScript" '''
+           '''src="/scripts/fckeditor.js"></script>''',
+           '''<script language="JavaScript" '''
+           '''src="/scripts/libot_drag.js"></script>''',
            '''<title>eXe : elearning XHTML editor</title>''',
-           '''<meta http-equiv="content-type" content="text/html;  charset=UTF-8"></meta>''',
+           '''<meta http-equiv="content-type" content="text/html;  '''
+           '''charset=UTF-8"></meta>''',
            '''</head>'''])
         html += "<div id=\"main\"> \n"
         html += "<h3>Project Properties</h3>\n"
@@ -88,7 +90,8 @@ class PropertiesPage(RenderableResource):
         # TODO: Make the script actually dynamically update the tree elements
         # without reloading the top form and losing our location. In fact
         # you don't even have to send this different new page,
-        # You could rename the tree elements in the on submit handler or something...
+        # You could rename the tree elements in the on submit handler or
+        # something...
         self.propertiesPane.process(request)
         log.info("after propertityPane process:"+ repr(request.args))
         return '\n'.join(
