@@ -88,11 +88,11 @@ def textArea(name, value="", disabled=""):
 
 def richTextArea(name, value="", width="100%", height=100):
     """Adds a FCKEditor to a form"""
-    log.debug(u"richTextArea "+value+", height="+str(height))
+    log.debug(u"richTextArea "+value+", height="+unicode(height))
     html  = u'<script type="text/javascript">\n'
     html += u'<!--\n'
     html += u"    var editor = new FCKeditor('"+name+"', '"
-    html += str(width)+"', '"+str(height)+"', 'Armadillo', '"+value+"');\n"
+    html += unicode(width)+"', '"+unicode(height)+"', 'Armadillo', '"+value+"');\n"
     html += u"    editor.BasePath = '/scripts/';\n"
     html += u"    editor.Config['CustomConfigurationsPath'] ="
     html += u" '/scripts/armadillo.js';\n"

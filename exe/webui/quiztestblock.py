@@ -57,7 +57,7 @@ class QuizTestBlock(Block):
         Block.process(self, request)
         
             
-        if ("addQuestion"+str(self.id)) in request.args: 
+        if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
 
@@ -93,7 +93,7 @@ class QuizTestBlock(Block):
             html += element.renderEdit() 
             
         value = _("Add another question")    
-        html += common.submitButton("addQuestion"+str(self.id), value)
+        html += common.submitButton("addQuestion"+unicode(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
         self.idevice.isAnswered = True
@@ -129,7 +129,7 @@ class QuizTestBlock(Block):
         Return an XHTML string for generating the javascript
         """
         scriptStr = "<script language=\"javascript\">\n"
-        scriptStr += "var numQuestions = " +str(len(self.questionElements))+";\n"
+        scriptStr += "var numQuestions = " +unicode(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
         answerStr  = """function getAnswer()
@@ -142,22 +142,22 @@ class QuizTestBlock(Block):
 
         for element in self.questionElements:
             i = element.index
-            varStr    = "question" + str(i)
-            keyStr    = "key" + str(i)
-            quesId    = "key" + str(element.index) + "b" + self.id
+            varStr    = "question" + unicode(i)
+            keyStr    = "key" + unicode(i)
+            quesId    = "key" + unicode(element.index) + "b" + self.id
             numOption = element.getNumOption()
-            answers  += "var key"  + str(i) + " = " 
-            answers  += str(element.question.correctAns) + ";\n"
+            answers  += "var key"  + unicode(i) + " = " 
+            answers  += unicode(element.question.correctAns) + ";\n"
             chk = "document.contentForm." + quesId+"[i].checked"
             value = "document.contentForm." + quesId+"[i].value"
             varStrs += "var " + varStr + ";\n"
-            keyStrs += "var key" + str(i)+ " = " 
-            keyStrs += str(element.question.correctAns) + ";\n"           
+            keyStrs += "var key" + unicode(i)+ " = " 
+            keyStrs += unicode(element.question.correctAns) + ";\n"           
             answerStr += """
             doLMSSetValue("cmi.interactions.%s.id","%s");
             doLMSSetValue("cmi.interactions.%s.type","choice");
             doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern","%s");
-            """ % (str(i), quesId, str(i), str(i), element.question.correctAns)
+            """ % (unicode(i), quesId, unicode(i), unicode(i), element.question.correctAns)
             answerStr += """
             for (var i=0; i <= %s; i++)
             {
@@ -168,7 +168,7 @@ class QuizTestBlock(Block):
                   break;
                }
             }
-           """ % (numOption, chk, varStr, value, str(i), varStr)            
+           """ % (numOption, chk, varStr, value, unicode(i), varStr)            
             rawScoreStr += """
             if (%s == %s)
             {
@@ -178,7 +178,7 @@ class QuizTestBlock(Block):
             else
             {
                doLMSSetValue("cmi.interactions.%s.result","wrong");
-            }""" % (varStr, keyStr, str(i), str(i))
+            }""" % (varStr, keyStr, unicode(i), unicode(i))
             
         scriptStr += varStrs       
         scriptStr += keyStrs
@@ -243,7 +243,7 @@ class QuizTestBlock(Block):
         html += self.idevice.title+"</span><br/>\n"
 
         if not self.idevice.score == -1:
-            message = "Your score is " + str(self.idevice.score) + "%"
+            message = "Your score is " + unicode(self.idevice.score) + "%"
             html += "<b>"+ message+ "</b><br/>"
                                                                   
         for element in self.questionElements:
@@ -267,8 +267,8 @@ class QuizTestBlock(Block):
 
         for question in self.idevice.questions:
             if (question.userAns == question.correctAns):
-                log.info("userAns " +str(question.userAns) + ": " 
-                         + "correctans " +str(question.correctAns))
+                log.info("userAns " +unicode(question.userAns) + ": " 
+                         + "correctans " +unicode(question.correctAns))
                 rawScore += 1
         
         if numQuestion > 0:

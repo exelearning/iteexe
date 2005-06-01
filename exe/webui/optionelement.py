@@ -36,12 +36,12 @@ class OptionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = str(index) + "b" + idevice.id        
+        self.id         = unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.option     = option
-        self.answerId   = "optionAnswer"+ str(index) + "b" + idevice.id
+        self.answerId   = "optionAnswer"+ unicode(index) + "b" + idevice.id
         self.keyId      = "optionKey" + idevice.id        
-        self.feedbackId = "optionFeedback" + str(index) + "b" + idevice.id    
+        self.feedbackId = "optionFeedback" + unicode(index) + "b" + idevice.id    
         
 
     def process(self, request):

@@ -79,6 +79,8 @@ class AuthoringPage(RenderableResource):
         Returns an XHTML string for viewing this page
         """
         log.debug(u"render")
+        for key, value in request.args.items():
+            request.args[key] = [unicode(value[0], 'utf8')]
         self._process(request)
         topNode     = self.package.currentNode
         self.blocks = []

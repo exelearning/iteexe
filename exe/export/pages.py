@@ -62,5 +62,5 @@ def uniquifyNames(pages):
         uniquifier = pageNames[page.name]
         if uniquifier:
             pageNames[page.name] = uniquifier + 1
-            page.name += str(uniquifier)
+            page.name += unicode(uniquifier)
 

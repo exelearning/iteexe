@@ -69,6 +69,6 @@ class WebServer:
                               interface="127.0.0.1")
         except CannotListenError, e:
             log.error("Can't listen on interface 127.0.0.1, port %s: %s" % 
-                      (self.config.port, str(e)))
+                      (self.config.port, unicode(e)))
         else:
             reactor.run()

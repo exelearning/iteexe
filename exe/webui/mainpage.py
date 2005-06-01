@@ -214,7 +214,9 @@ class MainPage(RenderableLivePage):
         oldName = self.package.name
         # If the script is not passing a filename to us,
         # Then use the last filename that the package was loaded from/saved to
-        if not filename:
+        if filename:
+            filename = unicode(filename, 'utf8')
+        else:
             filename = self.package.filename
             assert (filename, 
                     ('Somehow save was called without a filename '
@@ -228,32 +230,39 @@ class MainPage(RenderableLivePage):
             self.webserver.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s'
                      % self.package.name)
-            client.sendScript('top.location = "/%s"' % self.package.name)
+            client.sendScript('top.location = "/%s"' % \
+                              self.package.name.encode('utf8'))
 
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
+            filename = unicode(filename, 'utf8')
             log.debug("filename and path" + filename)
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.sendScript('top.location = "/%s"' % package.name)
+            client.sendScript((u'top.location = "/%s"' % \
+                              package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
-                client.alert(_(u'Sorry, wrong file format:\n%s') % str(exc))
+                client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
-            log.error('Error loading package "%s": %s' % (filename, str(exc)))
+            log.error(u'Error loading package "%s": %s' % (filename, unicode(exc)))
             self.error = True
 
     def handleAddResource(self, client, filename):
         """Add a resource (image/sound/video/etc.) to the current package"""
-        # TODO: Use Davids api for adding images to self.package
-        filename = Path(filename)
-        storageName = self.package.addResource(filename)
-        url = '%s/%s' % (self.package.name, storageName)
-        client.alert(_(u'Resource Uploaded Successfully.\n'
-                       u'Access URL: %s' % url))
+        try:
+            filename = Path(filename)
+            storageName = self.package.addResource(filename)
+            url = '%s/%s' % (self.package.name, storageName)
+            client.alert(_(u'Resource Uploaded Successfully.\n'
+                           u'Access URL: %s' % url))
+        except PackageError, exc:
+            client.alert(_(u'Uploading Resource failed:\n%s' % \
+                           unicode(exc, 'utf8')))
+            log.error(u'Failed to save resource: %s' % unicode(exc, 'utf8'))
 
     def handleExport(self, client, exportType, filename):
         """

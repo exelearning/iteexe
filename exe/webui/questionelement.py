@@ -37,11 +37,11 @@ class QuestionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = "q" + str(index) + "b" + idevice.id        
+        self.id         = "q" + unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.question   = question
-        self.quesId     = "quesquestion" + str(index) + "b" + idevice.id      
-        self.feedbackId = "quesFeedback" + str(index) + "b" + idevice.id    
+        self.quesId     = "quesquestion" + unicode(index) + "b" + idevice.id      
+        self.feedbackId = "quesFeedback" + unicode(index) + "b" + idevice.id    
         
 
     def process(self, request):

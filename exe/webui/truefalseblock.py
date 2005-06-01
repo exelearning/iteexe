@@ -59,7 +59,7 @@ class TrueFalseBlock(Block):
         Block.process(self, request)
     
             
-        if ("addQuestion"+str(self.id)) in request.args: 
+        if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
 
@@ -91,7 +91,7 @@ class TrueFalseBlock(Block):
             
         html += "</table>\n"
         value = _("Add another question")    
-        html += common.submitButton("addQuestion"+str(self.id), value)
+        html += common.submitButton("addQuestion"+unicode(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
 

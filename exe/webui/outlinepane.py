@@ -79,7 +79,7 @@ class OutlinePane(Renderable):
         node = self.package.findNode(parentNodeId)
         if node is not None:
             self.package.currentNode = newNode = node.createChild()
-            client.call('XHAddChildTreeItem', newNode.id, str(newNode.title))
+            client.call('XHAddChildTreeItem', newNode.id, unicode(newNode.title))
 
 
     def handleDelNode(self, client, confirm, nodeId):
@@ -106,7 +106,7 @@ class OutlinePane(Renderable):
         if newName in ('', 'null'): 
             return
         node = self.package.findNode(nodeId)
-        node.title = newName
+        node.title = unicode(newName, 'utf8')
         client.sendScript('XHRenNode("%s")' % newName)
 
 
@@ -116,7 +116,7 @@ class OutlinePane(Renderable):
         the client if the node's default name has not been overriden
         """
         if not node.titleIdevice.title:
-            client.call('XHRenNode', str(node.title), node.id)
+            client.call('XHRenNode', unicode(node.title), node.id)
         for child in node.children: 
             self._doJsRename(client, child)
 

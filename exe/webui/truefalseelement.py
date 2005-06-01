@@ -37,13 +37,13 @@ class TrueFalseElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = str(index) + "b" + idevice.id        
+        self.id         = unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.question   = question
-        self.questionId = "question"+ str(index) + "b" + idevice.id
-        self.keyId      = "Key" + str(index) + "b" + idevice.id       
-        self.feedbackId = "feedback" + str(index) + "b" + idevice.id 
-        self.hintId     = "hint" + str(index) + "b" + idevice.id 
+        self.questionId = "question"+ unicode(index) + "b" + idevice.id
+        self.keyId      = "Key" + unicode(index) + "b" + idevice.id       
+        self.feedbackId = "feedback" + unicode(index) + "b" + idevice.id 
+        self.hintId     = "hint" + unicode(index) + "b" + idevice.id 
         
 
     def process(self, request):
@@ -152,7 +152,7 @@ class TrueFalseElement(object):
         log.debug("renderPreview called")
         self.question.question = self.question.question.replace("\r", "")
         self.question.question = self.question.question.replace("\n", "\\n")
-        html  = "<br/><br/><b>" +str(self.index + 1) + ". " 
+        html  = "<br/><br/><b>" +unicode(self.index + 1) + ". " 
         html += self.question.question + "</b><br/><br/>"
         html += _("True") + " " 
         html += self.__option(0, 2, "true") + "\n"

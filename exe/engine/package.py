@@ -103,7 +103,7 @@ class Package(Persistable):
             # If we are being given a new filename...
             # Change our name to match our new filename
             name = filename.splitpath()[1]
-            self.name = str(name.basename().splitext()[0])
+            self.name = unicode(name.basename().splitext()[0])
         elif self.filename:
             # Otherwise use our last saved/loaded from filename
             filename = Path(self.filename)
@@ -221,7 +221,7 @@ class Package(Persistable):
         stores the node in our id lookup dict
         returns a new unique id
         """
-        id_ = str(self._nextNodeId)
+        id_ = unicode(self._nextNodeId)
         self._nextNodeId += 1
         self._nodeIdDict[id_] = node
         return id_
@@ -239,7 +239,7 @@ class Package(Persistable):
             """
             Gives the old node a number
             """
-            node._id = str(int(node.id) - 2)
+            node._id = unicode(int(node.id) - 2)
             for child in node.children:
                 renumberNode(child)
         renumberNode(self.root)

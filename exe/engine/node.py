@@ -81,14 +81,14 @@ class Node(Persistable):
         """
         Returns our title as a string
         """
-        return str(self._title)
+        return unicode(self._title)
 
 
     def setTitle(self, title):
         """
         Allows one to set the title as a string
         """
-        if title != str(self._title):
+        if title != unicode(self._title):
             self._title.setTitle(title)
             self.package.isChanged = True
     title = property(getTitle, setTitle)

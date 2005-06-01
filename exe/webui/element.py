@@ -125,7 +125,7 @@ class TextAreaElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        log.debug("renderEdit content="+content+", height="+str(height))
+        log.debug("renderEdit content="+content+", height="+unicode(height))
         content = content.replace("\r", "")
         content = content.replace("\n","\\n")
         content = content.replace("'","\\'")
@@ -175,7 +175,7 @@ class ImageElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        log.debug("renderEdit content="+content+", height="+str(height))
+        log.debug("renderEdit content="+content+", height="+unicode(height))
 
         html  = "<b>"+self.name
         html += common.elementInstruc(self.id, self.instruc)

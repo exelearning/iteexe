@@ -273,7 +273,7 @@ class ConfigParser(object):
         can be used for new options, new sections and pre-existing ones"""
         sec = Section(sectionName, self) # This creates or gets a section
         if sec.get(optionName, None) != value:
-            sec[optionName] = str(value)
+            sec[optionName] = unicode(value)
             if self.autoWrite and self._originalFile is not None:
                 # Move the original file to the beginning if we can
                 if hasattr(self._originalFile, 'seek') and \

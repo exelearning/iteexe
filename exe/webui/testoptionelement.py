@@ -38,11 +38,11 @@ class TestoptionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = str(index) + "q" + questionId       
+        self.id         = unicode(index) + "q" + questionId       
         self.question   = question
         self.questionId = questionId
         self.option     = option
-        self.answerId   = "optionAnswer"+ str(index) + "q" + questionId
+        self.answerId   = "optionAnswer"+ unicode(index) + "q" + questionId
         self.keyId      = "key" + questionId   
         self.idevice    = idevice
   
@@ -67,7 +67,7 @@ class TestoptionElement(object):
                 self.option.isCorrect = False
                 
         if self.keyId in request.args:
-            if request.args[self.keyId][0] == str(self.index):
+            if request.args[self.keyId][0] == unicode(self.index):
                 self.question.userAns = self.index
             
         if "action" in request.args and request.args["action"][0] == self.id:
@@ -107,7 +107,7 @@ class TestoptionElement(object):
         self.option.answer = self.option.answer.replace("\n", "\\n")
 
         html  = '<tr><td>'
-        html += common.option(self.keyId, 0, str(self.index))
+        html += common.option(self.keyId, 0, unicode(self.index))
         html += '</td><td>\n'
         html += self.option.answer + "</td></tr>\n"
        

@@ -45,7 +45,7 @@ class Idevice(Persistable):
         self.edit       = True
         self.emphasis   = Idevice.NoEmphasis
         self.version    = 0
-        self.id         = str(Idevice.nextId)
+        self.id         = unicode(Idevice.nextId)
         Idevice.nextId += 1
         self.parentNode = parentNode
         self.title      = title
@@ -69,7 +69,7 @@ class Idevice(Persistable):
         """
         log.debug("Cloning iDevice")
         newIdevice    = copy.deepcopy(self)
-        newIdevice.id = str(Idevice.nextId)
+        newIdevice.id = unicode(Idevice.nextId)
         Idevice.nextId += 1
         return newIdevice
 

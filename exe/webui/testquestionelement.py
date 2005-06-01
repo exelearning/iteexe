@@ -41,7 +41,7 @@ class TestquestionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = str(index) + "b" + idevice.id        
+        self.id         = unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.question   = question
         self.options    = []
@@ -61,7 +61,7 @@ class TestquestionElement(object):
         if questionId in request.args:
             self.question.question = request.args[questionId][0]
             
-        if ("addOption"+str(self.id)) in request.args: 
+        if ("addOption"+unicode(self.id)) in request.args: 
             self.question.addOption()
             self.idevice.edit = True
 
@@ -92,7 +92,7 @@ class TestquestionElement(object):
             
         html += "</table>\n"
         value = _("Add another option")    
-        html += common.submitButton("addOption"+str(self.id), value)
+        html += common.submitButton("addOption"+unicode(self.id), value)
         html += "<br />"
         html += "</div>\n"
 

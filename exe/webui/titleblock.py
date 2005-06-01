@@ -60,7 +60,7 @@ class TitleBlock(Block):
         Returns an XHTML string for viewing this title
         """
         html  = "<div id=\"nodeDecoration\">\n"
-        html += '<p id=\"nodeTitle\">%s</p>\n' % str(self.idevice)
+        html += '<p id=\"nodeTitle\">%s</p>\n' % unicode(self.idevice)
         html += "</div>\n"
         return html
     

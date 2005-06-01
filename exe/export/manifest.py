@@ -60,8 +60,8 @@ class Manifest(object):
         """
         returning XLM string for manifest file
         """
-        manifestId = str(self.idGenerator.generate())
-        orgId      = str(self.idGenerator.generate())
+        manifestId = unicode(self.idGenerator.generate())
+        orgId      = unicode(self.idGenerator.generate())
         
         xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
         <manifest identifier="%s" 
@@ -84,7 +84,7 @@ class Manifest(object):
         xmlStr += " <schema>IMS Content</schema> \n"
         xmlStr += "<schemaversion>1.1.3</schemaversion> \n"
 
-        title  = str(self.package.root.title)
+        title  = unicode(self.package.root.title)
         if self.addMetadata:
             author = self.package.author
             desc   = self.package.description
@@ -125,14 +125,14 @@ class Manifest(object):
         """
         Returning xlm string for items and resources
         """
-        itemId   = "ITEM-"+str(self.idGenerator.generate())
-        resId    = "RES-"+str(self.idGenerator.generate())
+        itemId   = "ITEM-"+unicode(self.idGenerator.generate())
+        resId    = "RES-"+unicode(self.idGenerator.generate())
         filename = page.name+".html"
             
         
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
         self.itemStr += "identifierref=\""+resId+"\">\n"
-        self.itemStr += "    <title>"+str(page.node.title)+"</title>\n"
+        self.itemStr += "    <title>"+unicode(page.node.title)+"</title>\n"
         
         self.resStr += "<resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "

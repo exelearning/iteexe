@@ -53,7 +53,7 @@ class TitleIdevice(Idevice):
 
     def setTitle(self, title):
         """Set the title, if it's been changed from the default"""
-        if title != str(self):
+        if title != unicode(self):
             log.info(u"Changed %s title to %s" % (self.id, title))
             self.title = title
 

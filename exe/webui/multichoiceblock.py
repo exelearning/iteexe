@@ -63,14 +63,14 @@ class MultichoiceBlock(Block):
         """
         Block.process(self, request)
         
-        questionId = "question"+str(self.id)
+        questionId = "question"+unicode(self.id)
         if questionId in request.args:
             self.idevice.question = request.args[questionId][0]
             
         if self.hintId in request.args:
             self.idevice.hint = request.args[self.hintId][0]
             
-        if ("addOption"+str(self.id)) in request.args: 
+        if ("addOption"+unicode(self.id)) in request.args: 
             self.idevice.addOption()
             self.idevice.edit = True
 
@@ -108,7 +108,7 @@ class MultichoiceBlock(Block):
             
         html += "</table>\n"
         value = _("Add another option")    
-        html += common.submitButton("addOption"+str(self.id), value)
+        html += common.submitButton("addOption"+unicode(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
 

@@ -51,12 +51,19 @@ class PackageRedirectPage(RenderableResource):
 
     def getChild(self, name, request):
         """
-        Get the child page for the name given
+        Get the child page for the name given.
+        This is called if our ancestors can't find our child.
+        This is probably because the url is in unicode
         """
         if name == '':
             return self
         else:
-            return RenderableResource.getChild(self, name, request)
+            result = self.children.get(unicode(name, 'utf8'))
+            if result is not None:
+                return result
+            else:
+                # This will just raise an error
+                return RenderableResource.getChild(self, name, request)
 
     def bindNewPackage(self, package):
         """
