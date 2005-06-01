@@ -81,8 +81,8 @@ class Manifest(object):
         xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
         xmlStr += "> \n"
         xmlStr += "<metadata> \n"
-        xmlStr += " <schema>IMS Content</schema> \n"
-        xmlStr += "<schemaversion>1.1.3</schemaversion> \n"
+        xmlStr += " <schema>ADL SCORM</schema> \n"
+        xmlStr += "<schemaversion>CAM 1.3</schemaversion> \n"
 
         title  = unicode(self.package.root.title)
         if self.addMetadata:
