@@ -150,7 +150,8 @@ class QuizTestBlock(Block):
             html += element.renderView() + "<br/>"  
         html += "</div>\n"
         
-        html += '<input type="button" value="%s"' % _("SUBMIT ANSWERS")
+        html += '<input type="button" name="submitB" '
+        html += 'value="%s"' % _("SUBMIT ANSWERS")
         html += 'onClick="calcScore()">\n'
         html += '</form>\n'
 
@@ -215,7 +216,8 @@ class QuizTestBlock(Block):
             getAnswer();
      
             calcRawScore();
-            actualScore =  rawScore / numQuestions * 100;
+            actualScore =  Math.round(rawScore / numQuestions * 100);
+            document.contentForm.submitB.disabled = "True"
             alert("Your score is " + actualScore + "%")
            
         }\n"""
@@ -229,7 +231,7 @@ class QuizTestBlock(Block):
         """
 
        # scriptStr = "<script language=\"javascript\">\n"
-        scriptStr += "var numQuestions = "
+        scriptStr  = "var numQuestions = "
         scriptStr += unicode(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
