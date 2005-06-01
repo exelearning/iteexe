@@ -14,20 +14,15 @@ from nevow import loaders
 from nevow.livepage import LivePage
 from twisted.web.resource import Resource
 
-class Unset(object):
-    """
-    This class is used as a special variable like None
-    but this means that an attribute is Unset
-    it tells __getattribute__ that it needs to really return this value.
-    We do all this complicated stuff to stop pylint complaining
-    about our magically gotten variables.
-    """
+# Constants
+# This class is used as a special variable like None but this means that an
+# attribute is Unset it tells __getattribute__ that it needs to really return
+# this value.  We do all this complicated stuff to stop pylint complaining about
+# our magically gotten variables.
+Unset = object()
+# This is a constant that means, we don't have an attribute of this name
+DontHave = object()
 
-class DontHave(object):
-    """
-    This is a constant that means, we don't have
-    an attribute of this name
-    """
 
 class Renderable(object):
     """
@@ -106,6 +101,11 @@ class Renderable(object):
         Sets unset attributes.
         """
         def baseget(name):
+            """
+            Gets values the old proper way
+            but instead of raising AttributeErro
+            returns the constant 'DontHave'
+            """
             try:
                 return object.__getattribute__(self, name)
             except AttributeError:
