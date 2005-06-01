@@ -23,6 +23,7 @@ Transforms an eXe node into a page on a self-contained website
 import logging
 import gettext
 import re
+import os
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
@@ -71,6 +72,12 @@ class WebsitePage(object):
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
         html += "@import url(nav.css);</style>\n"
+        for idevice in self.node.idevices:
+            if idevice.title == "Quiz Test":
+                html += "<script language=\"javascript\" "
+                html += "src=\"quizForWeb.js\"></script>\n"
+                break
+            
         html += "<title>"+ self.node.title +"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\" />\n";
@@ -180,7 +187,8 @@ class WebsiteExport(object):
         self.stylesDir.copyfiles(self.outputDir)
         self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
                           self.outputDir)
-        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
+      #  self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
+        
         
         # Clean up the last pages generated
         self.pages = [ WebsitePage("index", 1, package.root) ]
@@ -196,8 +204,13 @@ class WebsiteExport(object):
             thisPage = nextPage
 
         thisPage.save(self.outputDir, prevPage, None, self.pages)
-
-
+        # copy script files.
+        if os.path.isfile(self.scriptsDir+ "/quizForWeb.js"):
+            self.scriptsDir.copylist(('libot_drag.js', 'common.js','quizForWeb.js'), self.outputDir)
+        else:
+            self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
+            
+            
     def generatePages(self, node, depth):
         """
         Recursively generate pages and store in pages member variable

@@ -22,6 +22,8 @@ QuizTestBlock can render and process QuizTestIdevices as XHTML
 
 import logging
 import gettext
+import os
+from exe.engine.path               import Path
 from exe.webui.block               import Block
 from exe.webui.testquestionelement import TestquestionElement
 from exe.webui                     import common
@@ -60,6 +62,9 @@ class QuizTestBlock(Block):
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            
+        if "passrate" in request.args:
+            self.idevice.passRate = request.args["passrate"][0]
 
 
         for element in self.questionElements:
@@ -76,6 +81,8 @@ class QuizTestBlock(Block):
         if "submitScore" in request.args:
             self.idevice.score = self.__calcScore()
             
+        
+            
             
     def renderEdit(self, style):
         """
@@ -87,7 +94,19 @@ class QuizTestBlock(Block):
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
             html += "</font></b><br/><br/>"
-        html += "<b>" + _("Quiz Test:") + " </b><br/>"   
+        html += "<b>" + _("Quiz Test:") + " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        html += _("Select a pass rate")
+        html += "<select name=\"passrate\">\n"
+        isChecked = ""
+        for i in range(1,11):
+            if str(i)+ "0" == self.idevice.passRate:
+                isChecked = "selected"
+            else:
+                isChecked = ""
+            html += "<option value=%s0 %s> %s0%% </option>" %(str(i), isChecked,
+                                                              str(i))
+            
+        html += "</select><br/><br/>\n"
 
         for element in self.questionElements:
             html += element.renderEdit() 
@@ -105,9 +124,22 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
+        scriptDir = None
+        if os.path.isdir(Path(".").joinpath("webui")):
+            scriptDir = Path(".").joinpath("webui", "scripts")
+        else:
+            scriptDir = Path(".").joinpath("scripts")
+            
+        outfile = open(scriptDir+"/quizForScorm.js", "w")
+        outfile.write(self.__createJavascriptForScorm()) 
+        outfile.close()
         
-        html  = self.__createJavascript()
-        html += '<form name="contentForm">\n'
+        outfile2 = open(scriptDir+"/quizForWeb.js", "w")
+        outfile2.write(self.__createJavascriptForWeb()) 
+        outfile2.close()
+        
+      #  html  = self.__createJavascript()
+        html  = '<form name="contentForm">\n'
         html += "<div class=\"iDevice\">\n"
         html += "<img class=\"iDevice_icon\" "
         html += "src=\"multichoice.gif\" />\n"
@@ -124,12 +156,8 @@ class QuizTestBlock(Block):
 
         return html
     
-    def __createJavascript(self):
-        """
-        Return an XHTML string for generating the javascript
-        """
-        scriptStr = "<script language=\"javascript\">\n"
-        scriptStr += "var numQuestions = " +unicode(len(self.questionElements))+";\n"
+    def __createJavascriptForWeb(self):
+        scriptStr  = "var numQuestions = " +str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
         answerStr  = """function getAnswer()
@@ -139,7 +167,81 @@ class QuizTestBlock(Block):
         answers     = ""
         rawScoreStr = """}
         function calcRawScore(){\n"""
+        
+        for element in self.questionElements:
+            i = element.index
+            varStr    = "question" + str(i)
+            keyStr    = "key" + str(i)
+            quesId    = "key" + str(element.index) + "b" + self.id
+            numOption = element.getNumOption()
+            answers  += "var key"  + str(i) + " = " 
+            answers  += str(element.question.correctAns) + ";\n"
+            chk = "document.contentForm." + quesId+"[i].checked"
+            value = "document.contentForm." + quesId+"[i].value"
+            varStrs += "var " + varStr + ";\n"
+            keyStrs += "var key" + str(i)+ " = " 
+            keyStrs += str(element.question.correctAns) + ";\n"   
+            
+            answerStr += """
+            for (var i=0; i <= %s; i++)
+            {
+               if (%s)
+               {
+                  %s = %s;
+                  break;
+               }
+            }
+            """ % (numOption, chk, varStr, value) 
+            
+            rawScoreStr += """
+            if (%s == %s)
+            {
+               rawScore++;
+            }""" % (varStr, keyStr)
+            
+        scriptStr += varStrs       
+        scriptStr += keyStrs
+        
+        scriptStr += answerStr 
+                        
+        scriptStr += rawScoreStr 
+        
+        scriptStr += """
+        
+        }
+        
+        function calcScore()
+        {
+            getAnswer();
+     
+            calcRawScore();
+            actualScore =  rawScore / numQuestions * 100;
+            alert("Your score is " + actualScore + "%")
+           
+        }\n"""
+        
 
+        return scriptStr
+    
+    def __createJavascriptForScorm(self):
+        """
+        Return an XHTML string for generating the javascript
+        """
+
+       # scriptStr = "<script language=\"javascript\">\n"
+        scriptStr += "var numQuestions = "
+        scriptStr += unicode(len(self.questionElements))+";\n"
+        scriptStr += "var rawScore = 0;\n" 
+        scriptStr += "var actualScore = 0;\n"
+        answerStr  = """function getAnswer()
+        {"""
+        varStrs     = ""
+        keyStrs     = ""
+        answers     = ""
+        rawScoreStr = """}
+        function calcRawScore(){\n"""
+        
+        
         for element in self.questionElements:
             i = element.index
             varStr    = "question" + unicode(i)
@@ -205,7 +307,7 @@ class QuizTestBlock(Block):
            var mode = doLMSGetValue( "cmi.core.lesson_mode" );
      
                if ( mode != "review"  &&  mode != "browse" ){
-                 if ( actualScore <= 70 )
+                 if ( actualScore <= %s )
                  {
                    doLMSSetValue( "cmi.core.lesson_status", "failed" );
                  }
@@ -224,8 +326,8 @@ class QuizTestBlock(Block):
      
          doLMSFinish();
           
-        }
-        </script>\n"""
+        }\n""" % self.idevice.passRate
+    #    </script>\n"""
         
         return scriptStr
 

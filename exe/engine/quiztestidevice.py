@@ -83,6 +83,7 @@ class QuizTestIdevice(Idevice):
                          "", "", "")
         self.score = -1 
         self.isAnswered = True
+        self.passRate = "50"
                          
         self.questions         = []
         self.addQuestion()

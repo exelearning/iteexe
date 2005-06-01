@@ -23,6 +23,7 @@ Exports an eXe package as a SCORM package
 import logging
 import gettext
 import re
+import os
 from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.titleblock   import TitleBlock
@@ -58,6 +59,7 @@ class ScormPage(Page):
         """
         Returns an XHTML string rendering this page.
         """
+       
         html  = common.docType()
         html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += "<head>\n"
@@ -71,6 +73,12 @@ class ScormPage(Page):
         html += "src=\"APIWrapper.js\"></script>\n" 
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"SCOFunctions.js\"></script>\n" 
+        for idevice in self.node.idevices:
+            if idevice.title == "Quiz Test":
+                html += "<script language=\"javascript\" "
+                html += "src=\"quizForScorm.js\"></script>\n"
+                break
+            
         html += "</head>\n"
        # html += "<body onunLoad=\"return unloadPage()\">\n"
         html += '<body onLoad="loadPage()" onunload="return unloadPage()">'
@@ -112,6 +120,12 @@ class WebCTScormPage(ScormPage):
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
         html += "</style>\n"
+        for idevice in self.node.idevices:
+            if idevice.title == "Quiz Test":
+                html += "<script language=\"javascript\" "
+                html += "src=\"quizForWeb.js\"></script>\n"
+                break
+            
         html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
@@ -161,9 +175,6 @@ class ScormExport(object):
         self.styleDir.copyfiles(outdir)
         (outdir/'nav.css').remove() # But not nav.css
 
-        # Copy the scripts
-        self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), outdir)
-
         # Export the package content
         if addMetadata:
             self.pages = [ ScormPage("index", 1, package.root) ]
@@ -180,6 +191,13 @@ class ScormExport(object):
         manifest = Manifest(self.config, outdir, package, self.pages,
                             addMetadata, addScormType)
         manifest.save()
+        
+        # Copy the scripts
+        if os.path.isfile(self.scriptsDir+ "/quizForScorm.js"):
+            self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js',
+                                    'quizForWeb.js', 'quizForScorm.js'),outdir)
+        else:
+            self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), outdir)
 
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
