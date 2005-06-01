@@ -129,7 +129,7 @@ class TestPackage(unittest.TestCase):
         package   = self.packageStore.createPackage()
         myIdevice = GenericIdevice("MyIdevice", "test", "", "", "")
         package.root.addIdevice(myIdevice)
-        resourceName = package.addResource(Path("oliver.jpg"))
+        resourceName = myIdevice.addResource(Path("oliver.jpg"))
         self.assert_((package.resourceDir/resourceName).exists())
 
 
