@@ -18,16 +18,13 @@ exOption = re.compile("""\s*                # Ignore white space at the beginnin
                          (\s*)(?=$)         # White space at end ignored
                       """, re.VERBOSE)
 
-class UseDefault(object):
-    """A default parameter value that lets us use
-    a dynamic default for returning non-existing values"""
-
-
-class RaiseValueError(object):
-    """Set ConfigParser.defaultValue to this if you want no
-    default value but to raise value error when trying to
-    get non existant option values"""
-
+# Constants
+# A default parameter value that lets us use a dynamic default for returning
+# non-existing values
+UseDefault = object()
+# Set ConfigParser.defaultValue to this if you want no default value but to
+# raise value error when trying to get non existant option values
+RaiseValueError = object()
 
 class ConfigParser(object):
     """For parsing and writing config files"""
@@ -320,7 +317,7 @@ class ConfigParser(object):
 class Section(dict):
     """Represents a single section"""
 
-    def __new__(cls, name, parent, *args, **kwargs):
+    def __new__(cls, name, parent):
         """
         Utility func that will either make a new
         or return an existing Section instance
