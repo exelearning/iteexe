@@ -78,10 +78,11 @@ class TeacherProfileBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         html  = "<div class=\"teacherProfile\">\n"
-        html += "<div style=\"floating:left;\">\n"
-        html += "<img src=\"%s\"/></div>\n" % self.idevice.imageFile
-        html += self.idevice.content + "<br/>"
-        html += "</div>\n"
+        html += "<img src=\"/images/%s\" " % self.idevice.imageFile
+        html += "style=\"padding:6px; float:left;\"/>\n" 
+        html += self.idevice.content 
+        html += "<div style=\"clear:both; \">"
+        html += "</div></div>\n"
         return html
     
 
@@ -91,11 +92,12 @@ class TeacherProfileBlock(Block):
         """
         html  = "<div "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += "<div style=\"float:left; padding: 6px;\">\n"
-        html += "<img src=\"/images/%s\"/></div>\n" % self.idevice.imageFile
-        html += self.idevice.content + "<br/>"
+        html += "<img src=\"/images/%s\" " % self.idevice.imageFile
+        html += "style=\"padding:6px; float:left;\"/>\n" 
+        html += self.idevice.content 
+        html += "<div style=\"clear:both; \">"
         html += self.renderViewButtons()
-        html += "</div>\n"
+        html += "</div></div>\n"
         return html
 
 # ===========================================================================
