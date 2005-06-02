@@ -193,11 +193,15 @@ class ScormExport(object):
         manifest.save()
         
         # Copy the scripts
-        if os.path.isfile(self.scriptsDir+ "/quizForScorm.js"):
+        if (os.path.isfile(self.scriptsDir+ "/quizForScorm.js") and 
+            os.path.isfile(self.scriptsDir+ "/quizForWeb.js")):
             self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js',
-                                    'quizForWeb.js', 'quizForScorm.js'),outdir)
+                                    'quizForWeb.js', 'quizForScorm.js'), outdir)
+            os.remove(self.scriptsDir+ "/quizForWeb.js")
+            os.remove(self.scriptsDir+ "/quizForScorm.js")
         else:
-            self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), outdir)
+            self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), 
+                                     outdir)
 
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")

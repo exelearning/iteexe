@@ -118,7 +118,7 @@ class Renderable(object):
             elif baseget('webserver'):
                 # If not, see if what they're looking for is in the app object
                 res = getattr(baseget('webserver').application, attr)
-        setattr(self, attr, res)
+            setattr(self, attr, res)
         return res
 
     def process(self, request):

@@ -187,7 +187,6 @@ class WebsiteExport(object):
         self.stylesDir.copyfiles(self.outputDir)
         self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
                           self.outputDir)
-      #  self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
         
         
         # Clean up the last pages generated
@@ -205,10 +204,15 @@ class WebsiteExport(object):
 
         thisPage.save(self.outputDir, prevPage, None, self.pages)
         # copy script files.
-        if os.path.isfile(self.scriptsDir+ "/quizForWeb.js"):
-            self.scriptsDir.copylist(('libot_drag.js', 'common.js','quizForWeb.js'), self.outputDir)
+        if (os.path.isfile(self.scriptsDir+ "/quizForWeb.js") and 
+            os.path.isfile(self.scriptsDir+ "/quizForScorm.js")):
+            self.scriptsDir.copylist(('libot_drag.js', 'common.js',
+                                      'quizForWeb.js'), self.outputDir)
+            os.remove(self.scriptsDir+ "/quizForWeb.js")
+            os.remove(self.scriptsDir+ "/quizForScorm.js")
         else:
-            self.scriptsDir.copylist(('libot_drag.js', 'common.js'), self.outputDir)
+            self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
+                                     self.outputDir)
             
             
     def generatePages(self, node, depth):

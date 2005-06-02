@@ -322,11 +322,12 @@ class MainPage(RenderableLivePage):
                  '-remote', 'openURL(%s, new-window)' % \
                  filename))
 
-    def exportScorm(self, client, scormType, filename, webDir, stylesDir):
+    def exportScorm(self, client, filename, scormType, webDir, stylesDir):
         """
         Exports this package to a scorm package file
         'scormType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
         """
+        log.debug(u"exportScorm, scormType="+scormType)
         # Append an extension if required
         if not filename.lower().endswith('.zip'): 
             filename += '.zip'

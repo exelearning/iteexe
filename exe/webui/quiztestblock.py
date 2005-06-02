@@ -98,12 +98,12 @@ class QuizTestBlock(Block):
         html += _("Select a pass rate")
         html += "<select name=\"passrate\">\n"
         isChecked = ""
-        for i in range(1,11):
+        for i in range(1, 11):
             if str(i)+ "0" == self.idevice.passRate:
                 isChecked = "selected"
             else:
                 isChecked = ""
-            html += "<option value=%s0 %s> %s0%% </option>" %(str(i), isChecked,
+            html += "<option value=%s0 %s> %s0%% </option>" % (str(i), isChecked,
                                                               str(i))
             
         html += "</select><br/><br/>\n"
@@ -158,6 +158,9 @@ class QuizTestBlock(Block):
         return html
     
     def __createJavascriptForWeb(self):
+        """
+        Return an XHTML string for generating the javascript for web export
+        """
         scriptStr  = "var numQuestions = " +str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
@@ -227,10 +230,9 @@ class QuizTestBlock(Block):
     
     def __createJavascriptForScorm(self):
         """
-        Return an XHTML string for generating the javascript
+        Return an XHTML string for generating the javascript for scorm export
         """
 
-       # scriptStr = "<script language=\"javascript\">\n"
         scriptStr  = "var numQuestions = "
         scriptStr += unicode(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
@@ -340,7 +342,7 @@ class QuizTestBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = "<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html += "ondblclick=\"submitLink('edit'," + self.id+", 0);\">\n"
         html += "<img class=\"iDevice_icon\" "
         html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
@@ -357,6 +359,7 @@ class QuizTestBlock(Block):
         html += '<input type="submit" name="submitScore"'
         html += ' value="%s"/> ' % _("Submit Answer")
         self.idevice.score = -1
+        
 
         
         return html
@@ -376,7 +379,10 @@ class QuizTestBlock(Block):
                 rawScore += 1
         
         if numQuestion > 0:
-            score = rawScore * 100/numQuestion
+            score = rawScore * 100 / numQuestion
+            
+        for question in self.idevice.questions:
+            question.userAns = -1
             
         return score 
             
