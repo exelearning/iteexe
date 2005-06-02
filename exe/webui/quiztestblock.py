@@ -263,7 +263,8 @@ class QuizTestBlock(Block):
             doLMSSetValue("cmi.interactions.%s.id","%s");
             doLMSSetValue("cmi.interactions.%s.type","choice");
             doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern","%s");
-            """ % (unicode(i), quesId, unicode(i), unicode(i), element.question.correctAns)
+            """ % (unicode(i), quesId, unicode(i), unicode(i), 
+                   element.question.correctAns)
             answerStr += """
             for (var i=0; i <= %s; i++)
             {

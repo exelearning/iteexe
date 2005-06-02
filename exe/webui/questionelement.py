@@ -40,13 +40,13 @@ class QuestionElement(object):
         self.id         = "q" + unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.question   = question
-        self.quesId     = "quesquestion" + unicode(index) + "b" + idevice.id      
-        self.feedbackId = "quesFeedback" + unicode(index) + "b" + idevice.id    
+        self.quesId     = "quesquestion" + unicode(index) + "b" + idevice.id
+        self.feedbackId = "quesFeedback" + unicode(index) + "b" + idevice.id
         
 
     def process(self, request):
         """
-        Process arguments from the webserver.  Return any which apply to this 
+        Process arguments from the webserver.  Return any which apply to this
         element.
         """
         log.debug("process " + repr(request.args))

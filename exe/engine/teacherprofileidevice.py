@@ -35,10 +35,15 @@ class TeacherProfileIdevice(Idevice):
     def __init__(self, content="", imageFile = ""):
         Idevice.__init__(self, _("Teacher Profile"), 
                          _("University of Auckland"), 
-                         "", "", "")
+                         _("""This idevice enables you to provide a brief 
+description of the teacher or other staff involved in the delivery of the 
+learning.  The profile (with personal photo) can not only be used to 
+communicate the role and credentials of the teacher but, also acknowledges 
+the direct relationship between the learner and teacher, rather then the 
+content delivery medium (the computer)."""), "", "")
         self.content        = content
         self.imageFile      = imageFile
         self.contentInstruc = ""
-        self.imageInstruc   = ""
+        self.imageInstruc   = "We recommend you resize your image to 150 x 200px"
         
 # ===========================================================================
