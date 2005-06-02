@@ -15,7 +15,7 @@ from nevow.livepage import LivePage
 from twisted.web.resource import Resource
 
 # Constants
-# This class is used as a special variable like None but this means that an
+# This constant is used as a special variable like None but this means that an
 # attribute is Unset it tells __getattribute__ that it needs to really return
 # this value.  We do all this complicated stuff to stop pylint complaining about
 # our magically gotten variables.
