@@ -43,6 +43,17 @@ _textmode = 'r'
 if hasattr(file, 'newlines'):
     _textmode = 'U'
 
+def toUnicode(string):
+    """
+    Turns everything passed to it to unicode.
+    """
+    if isinstance(string, str):
+        return unicode(string, 'utf8')
+    elif isinstance(string, unicode):
+        return unicode(string)
+    else:
+        return unicode(str(string), 'utf8')
+
 
 class Path(unicode):
     """ Represents a filesystem Path.
@@ -58,10 +69,10 @@ class Path(unicode):
 
     # Adding a Path and a string yields a Path.
     def __add__(self, more):
-        return Path(unicode(self) + unicode(more))
+        return Path(toUnicode(self) + toUnicode(more))
 
     def __radd__(self, other):
-        return Path(other + unicode(self))
+        return Path(toUnicode(other) + toUnicode(self))
 
     # The / operator joins paths.
     def __div__(self, rel):
@@ -70,7 +81,7 @@ class Path(unicode):
         Join two Path components, adding a separator character if
         needed.
         """
-        return Path(os.path.join(unicode(self), unicode(rel)))
+        return Path(os.path.join(toUnicode(self), toUnicode(rel)))
 
     # Make the / operator work even when true division is enabled.
     __truediv__ = __div__
@@ -123,7 +134,7 @@ class Path(unicode):
 
     def _get_ext(self):
         """Returns the extension only (including the dot)"""
-        return os.path.splitext(unicode(self))[1]
+        return os.path.splitext(toUnicode(self))[1]
 
     def _get_drive(self):
         """Returns the drive letter (in dos & win)"""
@@ -226,7 +237,7 @@ class Path(unicode):
         character (os.sep) if needed.  Returns a new path
         object.
         """
-        return Path(os.path.join(unicode(self), *args))
+        return Path(os.path.join(toUnicode(self), *args))
 
     def splitall(self):
         """ Return a list of the path components in this path.
@@ -402,7 +413,7 @@ class Path(unicode):
         For example, Path('/users').glob('*/bin/*') returns a list
         of all the files users have in their bin directories.
         """
-        return map(Path, glob.glob(unicode(self / pattern)))
+        return map(Path, glob.glob(toUnicode(self / pattern)))
 
 
     # --- Reading or writing an entire file at once.
@@ -816,29 +827,29 @@ class Path(unicode):
 
     def copyfile(self, dst):
         """Wraps shutil.copyfile"""
-        return shutil.copyfile(unicode(self), unicode(dst))
+        return shutil.copyfile(toUnicode(self), toUnicode(dst))
     def copymode(self, dst):
         """Wraps shutil.copymode"""
-        return shutil.copymode(unicode(self), unicode(dst))
+        return shutil.copymode(toUnicode(self), toUnicode(dst))
     def copystat(self, dst):
         """Wraps shutil.copystat"""
-        return shutil.copystat(unicode(self), unicode(dst))
+        return shutil.copystat(toUnicode(self), toUnicode(dst))
     def copy(self, dst):
         """Wraps shutil.copy"""
-        return shutil.copy(unicode(self), unicode(dst))
+        return shutil.copy(toUnicode(self), toUnicode(dst))
     def copy2(self, dst):
         """Wraps shutil.copy2"""
-        return shutil.copy2(unicode(self), unicode(dst))
+        return shutil.copy2(toUnicode(self), toUnicode(dst))
     def copytree(self, dst):
         """Wraps shutil.copytree"""
-        return shutil.copytree(unicode(self), unicode(dst))
+        return shutil.copytree(toUnicode(self), toUnicode(dst))
     if hasattr(shutil, 'move'):
         def move(self, dst):
             """Wraps shutil.move"""
-            return shutil.move(unicode(self), unicode(dst))
+            return shutil.move(toUnicode(self), toUnicode(dst))
     def rmtree(self):
         """Wraps shutil.rmtree"""
-        return shutil.rmtree(unicode(self))
+        return shutil.rmtree(toUnicode(self))
 
     # --- Special stuff from os
 
