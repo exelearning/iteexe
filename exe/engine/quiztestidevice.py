@@ -52,11 +52,14 @@ class TestQuestion(Persistable):
         """
         Initialize 
         """
-        self.question = question
-        self.options  = []
-        self.correctAns = -2
-        self.userAns    = -1
+        self.question             = question
+        self.options              = []
+        self.correctAns           = -2
+        self.userAns              = -1
         self.addOption()
+        self.questionInstruc      = ""
+        self.optionInstruc        = ""
+        self.correctAnswerInstruc = ""
         
     def addOption(self):
         """

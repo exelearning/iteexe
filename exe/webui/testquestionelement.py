@@ -79,11 +79,17 @@ class TestquestionElement(object):
         question = question.replace("'","\\'")
         
         html  = "<div class=\"iDevice\">\n"
-        html += "<b>" + _("Question:") + " </b>"   
+        html += "<b>" + _("Question:") + " </b>" 
+        html += common.elementInstruc("question"+self.id, 
+                                      self.question.questionInstruc)
         html += common.richTextArea("question"+self.id, question)
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
-        html += "</th><th>%s"  % _("Correct")
+        html += common.elementInstruc("option"+self.id, 
+                                      self.question.optionInstruc)
+        html += "</th><th align=\"left\">%s "  % _("Correct")
+        html += common.elementInstruc("answer"+self.id, 
+                                      self.question.correctAnswerInstruc)
         html += "<br/>" + _("Option")
         html += "</th>"
 

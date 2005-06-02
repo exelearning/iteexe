@@ -66,7 +66,11 @@ class TeacherProfileBlock(Block):
         html += "<b>%s</b><br/><br/>\n" % _("Teacher Profile")
         html += "<input id=\"fileBrowser\" "
         html += "type=\"file\" name =\"%s\"/>" % self.imageId
-        html += " %s<br/><br/>\n " % _("Select a picture")
+        html += " %s " % _("Select a picture")
+        html += common.elementInstruc("image"+self.id, self.idevice.imageInstruc)
+        html += "<br/><br/><b>%s </b>\n" % _("Profile")
+        html += common.elementInstruc("content"+self.id, 
+                                      self.idevice.contentInstruc)
         html += common.richTextArea(self.contentId, content)+ "<br/>"
         html += self.renderEditButtons()
         html += "</div>\n"

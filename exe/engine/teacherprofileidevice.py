@@ -36,7 +36,9 @@ class TeacherProfileIdevice(Idevice):
         Idevice.__init__(self, _("Teacher Profile"), 
                          _("University of Auckland"), 
                          "", "", "")
-        self.content   = content
-        self.imageFile = imageFile
+        self.content        = content
+        self.imageFile      = imageFile
+        self.contentInstruc = ""
+        self.imageInstruc   = ""
         
 # ===========================================================================
