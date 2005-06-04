@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-Transforms an eXe node into a page on a self-contained website
+WebsiteExport will export a package as a website of HTML pages
 """
 
 import logging
@@ -157,6 +157,7 @@ class WebsitePage(object):
         return html
 
         
+# ===========================================================================
 class WebsiteExport(object):
     """
     WebsiteExport will export a package as a website of HTML pages
@@ -183,13 +184,8 @@ class WebsiteExport(object):
         Export web site
         Cleans up the previous packages pages and performs the export
         """
-        # Copy the style sheets to the output dir
-        self.stylesDir.copyfiles(self.outputDir)
-        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
-                          self.outputDir)
-        
-        
-        # Clean up the last pages generated
+        self.copyFiles(package)
+
         self.pages = [ WebsitePage("index", 1, package.root) ]
         self.generatePages(package.root, 1)
         uniquifyNames(self.pages)
@@ -203,7 +199,26 @@ class WebsiteExport(object):
             thisPage = nextPage
 
         thisPage.save(self.outputDir, prevPage, None, self.pages)
+
+
+    def copyFiles(self, package):
+        """
+        Copy all the files used by the website.
+        """
+        # TODO Need to tidy this up!!!
+
+        # Copy the style sheets to the output dir
+        self.stylesDir.copyfiles(self.outputDir)
+
+        # TODO these two should be part of the style
+        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
+                          self.outputDir)
+
+        # copy the package's resource files
+        package.resourceDir.copyfiles(self.outputDir)
+            
         # copy script files.
+        # TODO quiz scripts belong in the packages resourcesDir?
         if (os.path.isfile(self.scriptsDir+ "/quizForWeb.js") and 
             os.path.isfile(self.scriptsDir+ "/quizForScorm.js")):
             self.scriptsDir.copylist(('libot_drag.js', 'common.js',
@@ -214,7 +229,7 @@ class WebsiteExport(object):
             self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
             
-            
+
     def generatePages(self, node, depth):
         """
         Recursively generate pages and store in pages member variable

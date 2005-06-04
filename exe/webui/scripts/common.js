@@ -23,6 +23,25 @@
 // action and object fields so they can be used by submitLink
 var objBrowse = navigator.appName;
 
+
+// Called by the user to provide an image file name to add to the package
+function addImage(elementId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select an image", nsIFilePicker.modeOpen);
+    fp.appendFilter("Image Files", "*.jpg; *.jpeg; *.png; *.gif");
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        var path  = document.getElementById('path'+elementId);
+        var image = document.getElementById('img'+elementId);
+        path.value = fp.file.path;
+        image.src  = 'file://'+fp.file.path;
+    }
+}
+
+
 function showMe(ident, w, h)
 {
     var elmDiv = document.getElementById('popupmessage');
@@ -77,8 +96,12 @@ function clearHidden()
 function submitLink(action, object, changed) 
 {
     var form = top["authoringIFrame1"].document.getElementById('contentForm')
-    form.action.value = action;
-    form.object.value = object;
+    if (!form) {
+        // try and find the form for the authoring page
+        form = document.getElementById('contentForm')
+    }
+    form.action.value    = action;
+    form.object.value    = object;
     form.isChanged.value = changed;
     form.submit();
 }

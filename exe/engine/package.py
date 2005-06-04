@@ -128,8 +128,10 @@ class Package(Persistable):
         
         try:
             for resourceFile in self.resourceDir.files():
-                zippedFile.write(resourceFile.normpath(), resourceFile.name)
+                zippedFile.write(unicode(resourceFile.normpath()),
+                                 resourceFile.name.encode('utf8'))
             zippedFile.writestr("content.data", encodeObject(self))
+
         finally:
             zippedFile.close()
 
@@ -162,25 +164,38 @@ class Package(Persistable):
     load = staticmethod(load)
 
 
-    def addResource(self, resourceFile, storageName=None):
+    def addResource(self, resourceFile, storageName):
         """
         Add an image/audio/video resource to the package.
         Returns the last part of the url to access this resource
         'resourceFile' is a 'path' instance pointing to a local file where we
         can load the resource from
         """
-        if not storageName:
-            storageName = resourceFile.basename()
         if not resourceFile.exists():
             raise PackageError(_(u'Resource file not found'))
         if not resourceFile.isfile():
             raise PackageError(_(u'Received a path to a non file'))
         try:
             resourceFile.copyfile(self.resourceDir/storageName)
-        except shutil.Error, exc:
-            raise PackageError(u"Coulnd't copy file: %s" % unicode(exc))
-        except IOError, exc:
-            raise PackageError(u"Coulnd't copy file: %s" % unicode(exc))
+        except shutil.Error, error:
+            raise PackageError(u"Couldn't copy file: %s" % unicode(error))
+        except IOError, error:
+            raise PackageError(u"Couldn't copy file: %s" % unicode(error))
+
+
+    def deleteResource(self, storageName):
+        """
+        Remove a resource from a package
+        """
+        resourceFile = self.resourceDir/storageName
+        if not resourceFile.exists():
+            raise PackageError(_(u'Resource file not found'))
+        if not resourceFile.isfile():
+            raise PackageError(_(u'Received a path to a non file'))
+        try:
+            resourceFile.remove()
+        except IOError, error:
+            raise PackageError(u"Couldn't remove file: %s" % unicode(error))
 
 
     def upgradeToVersion1(self):

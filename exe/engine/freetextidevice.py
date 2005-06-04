@@ -23,6 +23,7 @@ FreeTextIdevice: just has a block of text
 
 import logging
 from exe.engine.idevice import Idevice
+from exe.engine.field   import TextAreaField
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
@@ -32,6 +33,7 @@ class FreeTextIdevice(Idevice):
     """
     FreeTextIdevice: just has a block of text
     """
+    persistenceVersion = 2
     def __init__(self, content=""):
         Idevice.__init__(self, _(u"Free Text Area"), 
                          _(u"University of Auckland"), 
@@ -39,9 +41,26 @@ class FreeTextIdevice(Idevice):
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
-        self.content = content
+        self.content = TextAreaField("content", 
+_(u"This is a free text field general learning content can be entered."),
+                                     content)
         if content:
             self.edit = False
 
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades the node from version 0 (eXe version 0.4) to 1.
+        Adds icon
+        """
+        self.icon = ""
+
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades the node from version 1 (not released) to 2
+        Use new Field classes
+        """
+        self.content = TextAreaField("content", self.content)
 
 # ===========================================================================

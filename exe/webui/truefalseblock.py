@@ -97,6 +97,29 @@ class TrueFalseBlock(Block):
 
         return html
 
+
+    def renderPreview(self, style):
+        """
+        Returns an XHTML string for previewing this block
+        """
+        html  = "<div class=\"iDevice\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html += "<img class=\"iDevice_icon\" "
+        html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
+        html += "<span class=\"iDeviceTitle\">"       
+        html += self.idevice.title+"</span><br/>\n"     
+        html += "<div class=\"iDevice_inner\">\n"
+        
+        for element in self.questionElements:
+            html += element.renderQuestionPreview()
+            html += element.renderFeedbackView()
+            
+        html += "</div>\n"    
+        html += self.renderViewButtons()
+        html += "</div>\n"
+
+        return html
+
     
     def renderView(self, style):
         """
@@ -109,44 +132,17 @@ class TrueFalseBlock(Block):
         html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
-        html += self.renderBlockView("view")    
+        html += "<div class=\"iDevice_inner\">\n"
+        
+        for element in self.questionElements:
+            html += element.renderQuestionView()
+            html += element.renderFeedbackView()
+            
+        html += "</div>\n"    
         html += "</div>\n"
 
         return html
     
 
-    def renderPreview(self, style):
-        """
-        Returns an XHTML string for previewing this block
-        """
-        html  = "<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span><br/>\n"     
-        html += self.renderBlockView("preview")      
-        html += self.renderViewButtons()
-        html += "</div>\n"
-
-        return html
-
-
-    def renderBlockView(self, view):
-        """
-        Returns an XHTML string for this block
-        """
-        html  = "<div class=\"iDevice_inner\">\n"
-        
-        for element in self.questionElements:
-            if (view == "view"):
-                html += element.renderQuestionView()
-            else:
-                html += element.renderQuestionPreview()
-            html += element.renderFeedbackView()
-            
-        html += "</div>\n"    
-
-        return html
 
 # ===========================================================================

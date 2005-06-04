@@ -87,7 +87,7 @@ class QuestionElement(object):
         html += common.richTextArea(self.feedbackId, feedback)
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
-                                   "stock-cancel.png",
+                                   "/images/stock-cancel.png",
                                    _("Delete question"))
         html += "</td></tr>\n"
         

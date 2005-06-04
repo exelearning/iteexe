@@ -127,10 +127,8 @@ class TestPackage(unittest.TestCase):
         Test we have a resource directory and resource files can be stored in
         """
         package   = self.packageStore.createPackage()
-        myIdevice = GenericIdevice("MyIdevice", "test", "", "", "")
-        package.root.addIdevice(myIdevice)
-        resourceName = myIdevice.addResource(Path("oliver.jpg"))
-        self.assert_((package.resourceDir/resourceName).exists())
+        package.addResource(Path("oliver.jpg"), "oliver.jpg")
+        self.assert_((package.resourceDir/"oliver.jpg").exists())
 
 
         

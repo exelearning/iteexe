@@ -108,7 +108,7 @@ class TrueFalseElement(object):
         html += common.richTextArea(self.hintId, hint)
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
-                                   "stock-cancel.png",
+                                   "/images/stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"
         html += "</p>\n"

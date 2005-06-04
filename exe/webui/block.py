@@ -197,24 +197,24 @@ class Block(object):
         Returns an XHTML string for the edit buttons
         """
         html  = common.submitImage(u"done", self.id, 
-                                   u"stock-apply.png", 
+                                   u"/images/stock-apply.png", 
                                    _(u"Done"),1)
         html += common.submitImage(u"delete", self.id, 
-                                   u"stock-cancel.png", 
+                                   u"/images/stock-cancel.png", 
                                    _(u"Delete"),1)
 
         if self.idevice.isFirst():
-            html += common.image(u"stock-go-up-off.png")
+            html += common.image(u"movePrev", u"/images/stock-go-up-off.png")
         else:
             html += common.submitImage(u"movePrev", self.id, 
-                                       u"stock-go-up.png", 
+                                       u"/images/stock-go-up.png", 
                                        _(u"Move Up"),1)
 
         if self.idevice.isLast():
-            html += common.image(u"stock-go-down-off.png")
+            html += common.image(u"moveNext", u"/images/stock-go-down-off.png")
         else:
             html += common.submitImage(u"moveNext", self.id, 
-                                       u"stock-go-down.png", 
+                                       u"/images/stock-go-down.png", 
                                        _(u"Move Down"),1)
 
         options  = [(_(u"---Move To---"), "")]
@@ -304,7 +304,7 @@ class Block(object):
         Returns an XHTML string for the view buttons
         """
         html  = common.submitImage(u"edit", self.id, 
-                                   u"stock-edit.png", 
+                                   u"/images/stock-edit.png", 
                                    _(u"Edit"), self.package.isChanged)
         return html
 

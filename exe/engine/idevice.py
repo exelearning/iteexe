@@ -53,7 +53,6 @@ class Idevice(Persistable):
         self.purpose    = purpose
         self.tip        = tip
         self.icon       = icon
-        self.resources  = []
 
 
     def __cmp__(self, other):
@@ -102,21 +101,9 @@ class Idevice(Persistable):
     def getResources(self):
         """
         Return the resource files used by this iDevice
+        Overridden by derieved classes
         """
-        if self.icon:
-            return self.resources + [ self.icon+".gif" ]
-        else:
-            return self.resources
-
-
-    def addResource(self, resourceFile):
-        """
-        Add a resource file to this iDevice
-        """
-        storageName = self.id + "-" + resourceFile.basename()
-        self.resources.append(storageName)
-        self.parentNode.package.addResource(resourceFile, storageName)
-        return storageName
+        return [ self.icon+".gif" ]
 
 
     def movePrev(self):
@@ -157,7 +144,6 @@ class Idevice(Persistable):
         Old packages will loose their icons, but they will load.
         """
         log.debug("Upgrading iDevice")
-        self.icon       = ""
-        self.resources  = []
+        self.icon = ""
 
 # ===========================================================================

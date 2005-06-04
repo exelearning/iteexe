@@ -24,7 +24,7 @@ import logging
 import gettext
 from exe.webui.block            import Block
 from exe.engine.genericidevice  import GenericIdevice
-from exe.webui.element          import createElement
+from exe.webui.elementfactory   import g_elementFactory
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -39,11 +39,7 @@ class GenericBlock(Block):
         Block.__init__(self, idevice)
         self.elements = []
         for field in self.idevice:
-            self.elements.append(createElement(field.fieldType, 
-                                               field.name, 
-                                               field.class_,
-                                               self.id,
-                                               field.instruction))
+            self.elements.append(g_elementFactory.createElement(field))
 
 
     def process(self, request):
@@ -52,32 +48,62 @@ class GenericBlock(Block):
         """
         Block.process(self, request)
         for element in self.elements:
-            content = element.process(request)
-            if content is not None:
-                self.idevice[element.name] = content
+            element.process(request)
 
 
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = "<div ondblclick=submitLink('edit',9, 0);>\n"
+        html  = "<div>\n"
         for element in self.elements:
-            html += element.renderEdit(self.idevice[element.name])
+            html += element.renderEdit()
 
         html += self.renderEditButtons()
         html += "</div>\n"
         return html
 
 
-    def renderViewContent(self):
+    def renderPreview(self, style):
         """
-        Common rendering function for both view and preview modes
+        Returns an XHTML string for previewing this block during editing
         """
-        html  = "<div class=\"iDevice_inner\">\n"
+        html  = u'<div class="iDevice" '
+        html += u'ondblclick="submitLink(\'edit\', %s, 0);">\n' % self.id
+        if self.idevice.icon:
+            html += u"<img class=\"iDevice_icon\" "
+            html += u"src=\"/style/"+style+"/"+self.idevice.icon+".gif\"/>\n"
+        html += u"<span class=\"iDeviceTitle\">"
+        html += self.idevice.title
+        html += u"</span>\n"
+        html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
-            html += element.renderView(self.idevice[element.name])
-        html += "</div>\n"
+            html += element.renderPreview()
+            html += u"<br/>\n"
+        html += self.renderViewButtons()
+        html += u"</div>\n"
+        html += u"</div>\n"
+        return html
+
+    
+    def renderView(self, style):
+        """
+        Returns an XHTML string for viewing this block, 
+        i.e. when exported as a webpage or SCORM package
+        """
+        html  = u'<div class="iDevice">\n'
+        if self.idevice.icon:
+            html += u"<img class=\"iDevice_icon\" "
+            html += u"src=\""+self.idevice.icon+".gif\"/>\n"
+        html += u"<span class=\"iDeviceTitle\">"
+        html += self.idevice.title
+        html += u"</span>\n"
+        html += u"<div class=\"iDevice_inner\">\n"
+        for element in self.elements:
+            html += element.renderView()
+            html += u"<br/>\n"
+        html += u"</div>\n"
+        html += u"</div>\n"
         return html
 
 # ===========================================================================

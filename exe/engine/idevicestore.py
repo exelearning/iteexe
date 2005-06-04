@@ -22,6 +22,8 @@ The collection of iDevices available
 
 from exe.engine import persist
 from exe.engine.path import Path
+from exe.engine.idevice import Idevice
+from exe.engine.field import TextField, TextAreaField, ImageField 
 
 import logging
 import gettext
@@ -35,6 +37,9 @@ class IdeviceStore:
     The collection of iDevices available
     """
     def __init__(self, config):
+        """
+        Initialize
+        """
         # TODO I originally planned Extended and Generic iDevices to
         # be handled polymorphically, need to reconsider this
         self.config    = config
@@ -43,7 +48,7 @@ class IdeviceStore:
         self.listeners = []
 
 
-    def getIdevices(self, package):
+    def getIdevices(self):
         """
         Get the idevices which are applicable for the current node of
         this package
@@ -79,11 +84,14 @@ class IdeviceStore:
         Load iDevices from the generic iDevices and the extended ones
         """
         log.debug("load iDevices")
-        self.loadExtended()
-        self.loadGeneric()
+        self.__loadExtended()
+        self.__loadGeneric()
 
 
-    def loadExtended(self):
+    def __loadExtended(self):
+        """
+        Load the Extended iDevices (iDevices coded in Python)
+        """
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice
         from exe.engine.reflectionidevice     import ReflectionIdevice
@@ -106,7 +114,7 @@ class IdeviceStore:
         self.extended.append(TeacherProfileIdevice())
   
 
-    def loadGeneric(self):
+    def __loadGeneric(self):
         """
         Load the Generic iDevices from the appdata directory
         """
@@ -114,11 +122,20 @@ class IdeviceStore:
         log.debug("load generic iDevices from "+genericPath)
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
+
+            # generate new ids for these iDevices to avoid any clashes
+            for idevice in self.generic:
+                idevice.id = unicode(Idevice.nextId)
+                Idevice.nextId += 1
         else:
-            self.createGeneric()
+            self.__createGeneric()
             self.save()
 
-    def createGeneric(self):
+    def __createGeneric(self):
+        """
+        Create the Generic iDevices which you get for free
+        (not created using the iDevice editor, but could have been)
+        """
         from exe.engine.genericidevice import GenericIdevice
 
         readingAct = GenericIdevice(_(u"Reading Activity"), 
@@ -130,24 +147,20 @@ reference any reading materials you refer to as this models best practice to
 the learners. Not always essential if covered in the course content but
 providing feedback to the learner on some of the main points covered in the
 reading may also add value to the activity."""), "") 
-        readingAct.addField(_(u"What to read"), 
-                            u"TextArea", u"reading_what",
-_(u"""Provide details of the reading materials learners should  read."""))
-        readingAct.addField(_(u"Why it should be read"), 
-                            u"TextArea", u"reading_why",
+        readingAct.addField(TextAreaField(_(u"What to read"), 
+_(u"""Provide details of the reading materials learners should  read.""")))
+        readingAct.addField(TextAreaField(_(u"Why it should be read"), 
 _(u"""Describe the rationale behind the selection of the reading and how it will
-enrich the learning."""))
-        readingAct.addField(_(u"Reference"), 
-                            u"TextArea", u"reading_reference",
+enrich the learning.""")))
+        readingAct.addField(TextAreaField(_(u"Reference"), 
 _(u"""Provide full reference details to the reading materials selected. The
 reference style used will depend on the preference of your department or
-faculty."""))
-        readingAct.addField(_(u"Feedback"), 
-                            u"TextArea", u"reading_feedback",
+faculty.""")))
+        readingAct.addField(TextAreaField(_(u"Feedback"), 
 _(u"""The use of this element is flexible.  Use it to provide a summary of the
 points covered in the reading, or as a starting point for further analysis of
 the reading by posing a question or providing a statement to begin a
-debate."""))
+debate.""")))
         self.generic.append(readingAct)
     
         objectives = GenericIdevice(_(u"Objectives"), 
@@ -158,8 +171,8 @@ define what the learners will be able to do when they have completed the
 learning tasks."""), 
                                     _(u""))
 
-        objectives.addField(_(u"Objectives"), u"TextArea", u"objectives",
-_(u"""Type the learning objectives for this resource."""))
+        objectives.addField(TextAreaField(_(u"Objectives"),
+_(u"""Type the learning objectives for this resource.""")))
         self.generic.append(objectives)
 
         preknowledge = GenericIdevice(_(u"Preknowledge"), 
@@ -171,10 +184,9 @@ pre-knowledge can be: <ul>
 <li>	Learners must have level 4 English </li>
 <li>	Learners must be able to assemble standard power tools </li></ul>
 """), "")
-        preknowledge.addField(_(u"Preknowledge"), 
-                              u"TextArea", u"preknowledge",
+        preknowledge.addField(TextAreaField(_(u"Preknowledge"), 
 _(u"""Describe the prerequisite knowledge learners should have to effectively
-complete this learning."""))
+complete this learning.""")))
         self.generic.append(preknowledge)
         
         activity = GenericIdevice(_(u"Activity"), 
@@ -184,10 +196,9 @@ _(u"""An activity can be defined as a task or set of tasks a learner must
 complete. Provide a clear statement of the task and consider any conditions
 that may help or hinder the learner in the performance of the task."""),
 "")
-        activity.addField(_(u"Activity"), u"TextArea", u"activity",
-_(u"""Describe the tasks the learners should complete."""))
+        activity.addField(TextAreaField(_(u"Activity"),
+_(u"""Describe the tasks the learners should complete.""")))
         self.generic.append(activity)
-                                  
 
 
     def save(self):
@@ -199,9 +210,5 @@ _(u"""Describe the tasks the learners should complete."""))
             idevicesDir.mkdir()
         fileOut = open(idevicesDir/'generic.data', 'wb')
         fileOut.write(persist.encodeObject(self.generic))
-
-
-
-     
 
 # ===========================================================================

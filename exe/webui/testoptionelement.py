@@ -90,7 +90,7 @@ class TestoptionElement(object):
         html += common.option("c"+self.keyId, self.option.isCorrect, self.id)
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
-                                   "stock-cancel.png",
+                                   "/images/stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"
         

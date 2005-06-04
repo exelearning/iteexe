@@ -45,7 +45,7 @@ class IdevicePane(Renderable):
         log.debug("Load appropriate iDevices")
         self.prototypes = {}
         self.ideviceStore.register(self)
-        for prototype in self.ideviceStore.getIdevices(self.package):
+        for prototype in self.ideviceStore.getIdevices():
             log.debug("add "+prototype.title)
             self.prototypes[prototype.id] = prototype
 

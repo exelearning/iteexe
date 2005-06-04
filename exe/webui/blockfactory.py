@@ -92,7 +92,6 @@ class BlockFactory(object):
         return None
         
 
-# TODO move this global into a WebUI class???
 g_blockFactory = BlockFactory()
 
 

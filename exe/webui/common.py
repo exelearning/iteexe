@@ -64,16 +64,21 @@ def footer():
     
 def hiddenField(name, value=u""):
     """Adds a hidden field to a form"""
-    html  = u'<input type="hidden" name="%s" ' % name
-    html += u'value="%s" />\n' % value
+    html  = u"<input type=\"hidden\" "
+    html += u"name=\""+name+u"\" "
+    html += u"id=\""+name+u"\" "
+    html += u"value=\""+value+u"\"/>\n"
     return html
 
 
 def textInput(name, value=u"", size=40, disabled=u""):
     """Adds a text input to a form"""
-    html  = u'<input type="text" name="%s" id="%s"' % (name, name)
-    html += u' value="%s"' % value
-    html += u' size="%s" %s />\n' % (size, disabled)
+    html  = u"<input type=\"text\" "
+    html += u"name=\""+name+u"\" "
+    html += u"id=\""+name+u"\" "
+    html += u"value=\""+value+u"\" "
+    html += u"size=\""+unicode(size)+u"\" "
+    html += disabled+u" />\n"
     return html
 
 
@@ -92,7 +97,8 @@ def richTextArea(name, value="", width="100%", height=100):
     html  = u'<script type="text/javascript">\n'
     html += u'<!--\n'
     html += u"    var editor = new FCKeditor('"+name+"', '"
-    html += u"%s', '%s', 'Armadillo', '%s');\n" % (width, height, value)
+    html += unicode(width)+"', '"+unicode(height)+"', "
+    html += "'Armadillo', '"+value+"');\n"
     html += u"    editor.BasePath = '/scripts/';\n"
     html += u"    editor.Config['CustomConfigurationsPath'] ="
     html += u" '/scripts/armadillo.js';\n"
@@ -100,7 +106,20 @@ def richTextArea(name, value="", width="100%", height=100):
     html += u"//-->\n"
     html += u"</script>\n"
     return html
-        
+
+
+def image(name, value, width="", height=""):
+    """Returns the XHTML for an image"""
+    log.debug(u"image "+value)
+    html  = u"<img id=\""+name+"\" "
+    if width:
+        html += u"width=\""+width+"\" "
+    if height:
+        html += u"height=\""+height+"\" "
+    html += u"src=\""+value+"\" "
+    html += u"/>\n"
+    return html
+
 
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""
@@ -117,28 +136,22 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
-    onclick = "submitLink('%s', %s, %d);" % (action, object_, isChanged)
+    onclick = "submitLink('%s', '%s', %d);" % (action, object_, isChanged)
     titleText = u''
     if title:
         titleText = u'title="%s" ' % title
     html  = u'<a %s' % titleText
     html += ' href="#" onclick="%s">' % onclick
-    html += image(imageFile)
-    html += '</a>\n' 
-    return html
-
-
-def image(imageFile):
-    """Returns the XHTML for an image"""
-    html  = u'<img src="/images/%s" ' % imageFile
+    html += u'<img src="'+imageFile+'" '
     html += u' align="middle" border="0" />'
+    html += '</a>\n' 
     return html
 
 
 def select(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
-    onclick = u"submitLink('%s', %s);" % (action, object_)
-    html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object)
+    onclick = u"submitLink('%s', '%s');" % (action, object_)
+    html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object_)
     for opt, value in options:
         selected = u''
         if selection == opt:

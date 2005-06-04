@@ -23,9 +23,11 @@ The EditorPane is responsible for creating new idevice
 
 import logging
 import gettext
-from twisted.web.resource      import Resource
 from exe.webui                 import common
-from exe.webui.editorelement   import TextField, TextAreaField, ImageField
+from exe.engine.field          import TextField, TextAreaField, ImageField
+from exe.webui.editorelement   import TextEditorElement
+from exe.webui.editorelement   import TextAreaEditorElement
+from exe.webui.editorelement   import ImageEditorElement
 from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 
@@ -43,6 +45,7 @@ class EditorPane(object):
         Initialize
         """
         self.ideviceStore = webserver.application.ideviceStore
+        self.webDir       = webserver.application.config.webDir
         self.elements     = []
         self.idevice      = GenericIdevice("", "", "", "", "")
         self.noStr        = ""
@@ -64,13 +67,19 @@ class EditorPane(object):
             element.process(request)
         
         if "addText" in request.args:
-            self.idevice.addField("Type label here", "Text", "", "")
+            self.idevice.addField(TextField(u"Type label here",
+                                            u"Type field instructions here"))
         
         if "addTextArea" in request.args:
-            self.idevice.addField("Type label here", "TextArea", "", "")
+            self.idevice.addField(TextAreaField(u"Type label here", 
+                                             u"Type field instructions here"))
                 
         if "addImage" in request.args:
-            self.idevice.addField("Type label here", "Image", "", "")
+            field = ImageField(u"Type label here",
+                                  u"Type field instructions here")
+            imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
+            field.defaultImage = unicode(imagePath.abspath())
+            self.idevice.addField(field)
                 
         if "title" in request.args:
             self.idevice.title = request.args["title"][0] 
@@ -131,18 +140,27 @@ class EditorPane(object):
         """
         self.elements = []
         i = 0    
+        elementTypeMap = {TextField:      TextEditorElement,
+                          TextAreaField:  TextAreaEditorElement,
+                          ImageField:     ImageEditorElement}
+        
         for field in self.idevice.fields:
-            if field.fieldType == "Text":
-                self.elements.append(TextField(i, self.idevice, field))
-            elif field.fieldType == "TextArea":
-                self.elements.append(TextAreaField(i, self.idevice, field))
-            elif field.fieldType == "Image":
-                self.elements.append(ImageField(i, self.idevice, field))
-            i += 1
+            elementType = elementTypeMap.get(field.__class__)
+
+            if elementType:
+                # Create an instance of the appropriate element class
+                log.debug(u"createElement "+elementType.__class__.__name__+
+                          u" for "+field.__class__.__name__)
+                self.elements.append(elementType(field))
+            else:
+                log.error(u"No element type registered for " +
+                          field.__class__.__name__)
         
             
     def render(self, request):
-        """render the idevice being edited"""
+        """
+        Render the idevice being edited
+        """
         message = _("This is an experimental feature, "+
                     "it is still in development.")
         html  = "<H2 align = \"center\">" + message + "</H2><br/>"
@@ -154,7 +172,6 @@ class EditorPane(object):
         html += common.submitButton("addTextArea", _("Add Text Area")) + "<br/>"
         html += common.submitButton("addImage", _("Add Image")) + "<br/>"
         html += "<p>\n"
-        html += "*************************************************** <br/>\n"
         html += "Future buttons could include<br/>functionality for: <br/>\n"
         html += "<ul><li>Limited interaction<br/>(eg hiding feedback)</li>\n"
         html += "<li>Options for incorporating<br/>"
@@ -174,6 +191,7 @@ class EditorPane(object):
         html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
         html += "&nbsp;&nbsp" + common.submitButton("reset", _("Reset"))
         html += "</td></tr></table>\n"
+
         return html
 
 
@@ -223,11 +241,11 @@ class EditorPane(object):
             html += "</option>\n"
             html += "</select><br/><br/>\n"
             for element in self.elements:
-                html += element.renderEdit(request)       
+                html += element.renderEdit()       
         else:
             html += "<b>" + self.idevice.title + "</b><br/><br/>"
             for element in self.elements:
-                html += element.renderPreview(request)               
+                html += element.renderPreview()               
             if self.idevice.purpose != "" or self.idevice.tip != "":
                 html += "<a title=\""+_("Pedagogical Help")+"\" "
                 html += "onmousedown=\"Javascript:updateCoords(event);\" "
@@ -247,6 +265,7 @@ class EditorPane(object):
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
                     
                 html += "</div>\n"    
+
         return html
         
 

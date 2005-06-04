@@ -23,12 +23,11 @@ The EditorPage is responsible for managing iDevices
 
 import logging
 import gettext
-from twisted.web.resource    import Resource
-from exe.webui               import common
-from exe.webui.editorelement import TextField, TextAreaField
+from twisted.web.resource      import Resource
+from exe.webui                 import common
 from exe.engine.genericidevice import GenericIdevice
-from exe.webui.editorpane    import EditorPane
-from exe.webui.renderable import RenderableResource
+from exe.webui.editorpane      import EditorPane
+from exe.webui.renderable      import RenderableResource
 
 
 

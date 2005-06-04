@@ -22,28 +22,26 @@ EditorElement is responsible for a block of field. Used by iDevice Editor
 
 import logging
 from exe.webui import common
+from exe.webui.element import Element
 import gettext
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 # ===========================================================================
-class EditorElement(object):
+class EditorElement(Element):
     """
     EditorElement is responsible for a block of field.  Used by iDevice Editor
     """
-    def __init__(self, index, idevice, field):
+    def __init__(self, field):
         """
         Initialize
         """
-        self.index      = index
-        self.id         = u'%sb%s' % (unicode(index), idevice.id)
-        self.idevice    = idevice
-        self.field      = field
-        self.instruc    = field.instruction 
-        self.instrucId  = u"instruc" + unicode(index)
-        self.name       = field.name
-        self.nameId     = u"name" + self.id
-        self.contentId  = u"content" + self.id
+        Element.__init__(self, field)
+#        self.index      = index
+#        self.id         = u'%sb%s' % (unicode(index), idevice.id)
+#        self.name       = field.name
+#        "name"+self.id     = u"name" + self.id
+#        self.id  = u"content" + self.id
 
     def process(self, request):
         """
@@ -52,185 +50,157 @@ class EditorElement(object):
         """
         log.debug(u'process ' + repr(request.args))
         
-        if self.nameId in request.args:
-            self.field.name = request.args[self.nameId][0]
-                 
-        if self.instrucId in request.args:
-            self.field.instruction = request.args[self.instrucId][0]
+        if "name"+self.id in request.args:
+            self.field.name = request.args["name"+self.id][0]
+
+        if "instruc"+self.id in request.args:
+            self.field.instruc = request.args["instruc"+self.id][0]
                         
         if "object" in request.args and request.args["object"][0] == self.id:
-#            if request.args["action"][0] == "showHide":
-#                if self.field.showInstruc:
-#                    self.field.showInstruc = False
-#                else:
-#                    self.field.showInstruc = True
             if request.args["action"][0] == "deleteField":
-                self.idevice.fields.remove(self.field)
+                self.field.idevice.fields.remove(self.field)
 
 
-    def renderView(self, content):
-        """
-        Returns an XHTML string for viewing or previewing this element
-        """
-        html  = u'<p class="%s">\n' % self.field.class_
-        html += content
-        html += u'</p>\n'
-        return html
-
-    def renderPreview(self, dummy):
-        """
-        Returns an XHTML string for editing this element
-        """
-        log.error(u'renderEdit called directly')
-        return u'ERROR: Element.renderEdit called directly'
-    
-    def renderEdit(self, content):
-        """
-        Returns an XHTML string for editing this element
-        """
-        log.error(u'renderEdit called directly')
-        return u'ERROR: Element.renderEdit called directly'
+#    def renderPreview(self, content):
+#        """
+#        Returns an XHTML string for viewing or previewing this element
+#        """
+#        html  = u'<p class="%s">\n' % self.field.class_
+#        html += content
+#        html += u'</p>\n'
+#        return html
+#
     
 # ===========================================================================
 
-class TextField(EditorElement):
+class TextEditorElement(EditorElement):
     """ 
     TextElement is a single line of text
     """
-    def renderEdit(self, request):
+    def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        self.field.instruc = self.field.instruc.replace("\r", "")
+        self.field.instruc = self.field.instruc.replace("\n","\\n")
+        self.field.instruc = self.field.instruc.replace("'","\\'")
         
-        self.instruc = self.instruc.replace("\r", "")
-        self.instruc = self.instruc.replace("\n","\\n")
-        self.instruc = self.instruc.replace("'","\\'")
-        
-        html  = common.textInput(self.nameId, self.field.name, 25)
+        html  = common.textInput("name"+self.id, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
+        html += "onclick=\"submitLink('showHide','%s',%d)\"" % (self.id, 1)
         html += "<img src=\"/images/help.gif\" border=\"0\" "
         html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
-                                   "stock-cancel.png", 
-                                   _("Delete"),1)
+                                   "/images/stock-cancel.png", 
+                                   _("Delete"), 1)
         html += "<br/>\n"
-        html += common.textInput(self.contentId, "", 40, "Disabled")
-                                 
+        html += common.textInput(self.id, "", 40, "Disabled")
         html += "<br/>\n"
-        if self.instruc == "":
-            self.instruc = "Type field instruction here."
-#        if self.field.showInstruc:
-        html += common.richTextArea(self.instrucId, self.instruc)
-#        else:
-#            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+        html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
-    def renderPreview(self, request):
+
+    def renderPreview(self):
         """
         Returns an XHTML string with the form element for previewing this field
         """
         html  = "<b>" + self.field.name + "</b> "
-        if self.instruc != "":
-            html += common.elementInstruc(self.instrucId, self.instruc)
-        html += "<br/>\n" + common.textInput(self.contentId, self.field.content)
-        html += "<br/><br/>\n"
+        if self.field.instruc != "":
+            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+        html += "<br/>\n"  
+        html += common.textInput(self.id, self.field.content)
+        html += "<br/>\n"
         return html
+    
     
 # ===========================================================================
 
-class TextAreaField(EditorElement):
+class TextAreaEditorElement(EditorElement):
     """ 
     TextElement is a single line of text
     """
-    def renderEdit(self, request):
+    def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        self.field.instruc = self.field.instruc.replace("\r", "")
+        self.field.instruc = self.field.instruc.replace("\n","\\n")
+        self.field.instruc = self.field.instruc.replace("'","\\'")
         
-        self.instruc = self.instruc.replace("\r", "")
-        self.instruc = self.instruc.replace("\n","\\n")
-        self.instruc = self.instruc.replace("'","\\'")
-        html  = common.textInput(self.nameId, self.field.name, 25)
+        html  = common.textInput("name"+self.id, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
+        html += "onclick=\"submitLink('showHide','%s',%d)\"" % (self.id, 1)
         html += "<img src=\"/images/help.gif\" border=\"0\" "
         html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
-                                   "stock-cancel.png", 
+                                   "/images/stock-cancel.png", 
                                    _("Delete"),1)
         html += "<br/>\n"
-        html += common.textArea(self.contentId, "", "Disabled")
-        if self.instruc == "":
-            self.instruc = "Type field instruction here."
-#        if self.field.showInstruc:
-        html += common.richTextArea(self.instrucId, self.instruc)
-#        else:
-#            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+        html += common.textArea(self.id, "", "Disabled")
+        html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
-    def renderPreview(self, request):
+
+    def renderPreview(self):
         """
         Returns an XHTML string with the form element for previewing this field
         """
         html  = "<b>" + self.field.name + "</b> "
-        if self.instruc != "":
-            html += common.elementInstruc(self.instrucId, self.instruc)
-        html += "<br/>" + common.textArea(self.contentId, self.field.content)
+        if self.field.instruc != "":
+            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+        html += "<br/>\n" 
+        html += common.textArea(self.id, self.field.content)
         html += "<br/>\n"
         return html
-    
+
 # ===========================================================================
 
-class ImageField(EditorElement):
+class ImageEditorElement(EditorElement):
     """ 
-    TextElement is a single line of text
+    ImageElement is an image
     """
-    def renderEdit(self, request):
+    DefaultImage = "sunflowers.jpg"
+
+    def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        
-        self.instruc = self.instruc.replace("\r", "")
-        self.instruc = self.instruc.replace("\n","\\n")
-        self.instruc = self.instruc.replace("'","\\'")
-        html  = common.textInput(self.nameId, self.field.name, 25)
+        self.field.instruc = self.field.instruc.replace("\r", "")
+        self.field.instruc = self.field.instruc.replace("\n","\\n")
+        self.field.instruc = self.field.instruc.replace("'","\\'")
+
+        html  = common.textInput("name"+self.id, self.field.name, 25)
         html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('%s','%s',%d)\"" % ("showHide", self.id, 1)
+        html += "onclick=\"submitLink('showHide','%s',%d)\"" % (self.id, 1)
         html += "<img src=\"/images/help.gif\" border=\"0\" "
         html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
-                                   "stock-cancel.png", 
+                                   "/images/stock-cancel.png", 
                                    _("Delete"),1)
         html += "<br/>\n"
-        html += common.textInput(self.contentId, "", "Disabled")
-        if self.instruc == "":
-            self.instruc = "Type field instruction here."
-#        if self.field.showInstruc:
-        html += common.richTextArea(self.instrucId, self.instruc)
-#        else:
-#            html += common.richTextArea(self.instrucId, self.instruc, "0%%", 0)
+        html += common.image("img"+self.id, 
+                             "/images/"+ImageEditorElement.DefaultImage,
+                             self.field.width,
+                             self.field.height)
         html += "<br/>"
         return html
     
-    def renderPreview(self, request):
+
+    def renderPreview(self):
         """
         Returns an XHTML string with the form element for previewing this field
         """
         html  = "<b>" + self.field.name + "</b> "
-        if self.instruc != "":
-            html += common.elementInstruc(self.instrucId, self.instruc)
-        html += "<br/>" + common.textInput(self.contentId, self.field.content)
+        if self.field.instruc != "":
+            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+        html += "<br/>" 
+        html += common.image("img"+self.id, 
+                             "/images/"+ImageEditorElement.DefaultImage,
+                             self.field.width,
+                             self.field.height)
         html += "<br/>\n"
         return html
-    
-    
-        
-    
-# ===========================================================================
-    
-        
     
 # ===========================================================================

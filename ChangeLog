@@ -1,3 +1,115 @@
+2005-06-02 23:34  jenny
+
+	* exe/engine/teacherprofileidevice.py, exe/webui/questionelement.py,
+	  exe/webui/quiztestblock.py: Henea added help tip for teacher
+	  profile idevice.
+
+2005-06-02 22:09  matthew
+
+	* exe/engine/path.py: Fixed up some unicode error messages
+
+2005-06-02 21:56  jenny
+
+	* exe/engine/quiztestidevice.py,
+	  exe/engine/teacherprofileidevice.py,
+	  exe/webui/teacherprofileblock.py,
+	  exe/webui/testquestionelement.py: added help tips for teacher
+	  profile and quiz test idevices.
+
+2005-06-02 03:17  jenny
+
+	* exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/mainpage.py, exe/webui/quiztestblock.py,
+	  exe/webui/renderable.py: fixed quiz test idevice exporting bugs.
+
+2005-06-02 03:08  matthew
+
+	* exe/webui/renderable.py: Silly bug fix
+
+2005-06-02 02:36  jenny
+
+	* exe/webui/teacherprofileblock.py: fixed picture overflow bugs.
+
+2005-06-02 01:21  djm
+
+	* patches/jelly.readme: resurrected jelly.readme from revision 706
+
+2005-06-01 21:50  jenny
+
+	* exe/webui/quiztestblock.py: fixed quiz test idevice web exporting
+	  bugs.
+
+2005-06-01 21:44  brent
+
+	* exe/export/manifest.py: minor change to schemaversion
+
+2005-06-01 09:32  jenny
+
+	* exe/engine/quiztestidevice.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/quiztestblock.py: adding
+	  javascript for quiz test idevice export.
+
+2005-06-01 09:28  djm
+
+	* doc/exe_class.dia: minor update
+
+2005-06-01 06:34  matthew
+
+	* exe/webui/casestudyblock.py, exe/webui/propertiespage.py,
+	  exe/webui/webserver.py: More code clean up
+
+2005-06-01 06:29  matthew
+
+	* exe/webui/renderable.py: More code tidying
+
+2005-06-01 06:26  matthew
+
+	* exe/engine/configparser.py, tools/dot.pylintrc: More code tidyup
+
+2005-06-01 06:17  matthew
+
+	* exe/application.py, exe/engine/config.py,
+	  exe/engine/genericidevice.py, exe/engine/package.py,
+	  exe/engine/path.py, exe/engine/winconfig.py, exe/webui/common.py,
+	  exe/webui/idevicepane.py, exe/webui/mainpage.py,
+	  exe/webui/packageredirectpage.py, exe/webui/renderable.py: Code
+	  Tidy up.
+
+2005-06-01 01:01  djm
+
+	* testing/testpackage.py: fixed testResourceDir
+
+2005-06-01 00:52  matthew
+
+	* exe/engine/configparser.py, exe/engine/idevice.py,
+	  exe/engine/node.py, exe/engine/package.py,
+	  exe/engine/titleidevice.py, exe/export/manifest.py,
+	  exe/export/pages.py, exe/webui/authoringpage.py,
+	  exe/webui/common.py, exe/webui/docs/credits.xhtml,
+	  exe/webui/editorpage.py, exe/webui/element.py,
+	  exe/webui/mainpage.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py, exe/webui/outlinepane.py,
+	  exe/webui/packageredirectpage.py, exe/webui/questionelement.py,
+	  exe/webui/quiztestblock.py, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py, exe/webui/titleblock.py,
+	  exe/webui/truefalseblock.py, exe/webui/truefalseelement.py,
+	  exe/webui/webserver.py, testing/testnode.py,
+	  testing/testpackage.py: Now we can load, save and vavigate to
+	  other language packages...
+
+2005-05-31 09:19  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/templates/dublincore.xul: changed javascript for tips on
+	  dublincore metadata editor
+
+2005-05-31 05:28  djm
+
+	* ChangeLog, exe/engine/genericidevice.py, exe/engine/idevice.py,
+	  exe/engine/package.py, exe/webui/authoringpage.py,
+	  exe/webui/common.py, exe/webui/element.py, exe/webui/mainpage.py:
+	  Ugly image handling
+
 2005-05-31 04:40  brent
 
 	* exe/webui/scripts/mainpage.js: something insignificant that i'm

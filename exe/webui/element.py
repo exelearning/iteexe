@@ -19,84 +19,58 @@
 """
 Classes to XHTML elements.  Used by GenericBlock
 """
+import gettext
 import logging
 from exe.webui       import common
 from exe.engine.path import Path
-import re
 
 log = logging.getLogger(__name__)
+_   = gettext.gettext
 
-# ===========================================================================
 
-def createElement(elementType, name, class_, blockId, instruc):
-    """
-    Factory method for creating Elements
-    """
-    # This dict will convert an element type name to an actual element class
-    elementTypeMap = {'Text':     TextElement,
-                      'TextArea': TextAreaElement,
-                      'Image':    ImageElement,
-                      'Audio':    AudioElement}
-    # Get the appropriate class
-    cls = elementTypeMap.get(elementType)
-    if cls:
-        # Create an instance of the appropriate element class
-        return cls(name, class_, blockId, instruc)
-    else:
-        return None
-
-def getUploadedFileDir():
-    """Returns the directory where files will be uploaded to"""
-    # TODO!!! (Return a Path instance please)
-    return Path("TODO")
-    
-    
 # ===========================================================================
 class Element(object):
     """
     Base class for a XHTML element.  Used by GenericBlock
     """
-    def __init__(self, name, class_, blockId, instruc):
+    def __init__(self, field):
         """
         Initialize
         """
-        self.name     = name
-        self.class_   = class_
-        self.blockId  = blockId
-        self.id       = re.sub(r'\W', '', name) + class_ + blockId
-        self.instruc  = instruc
+        self.field = field
+        self.id    = field.id 
 
+ 
     def process(self, request):
         """
-        Process arguments from the webserver.  Return any which apply to this 
-        element.
+        Process arguments from the webserver. 
         """
-        if self.id in request.args:
-            return request.args[self.id][0]
-        else:
-            return None
+        log.error(u"process called directly")
+        return u"ERROR Element.process called directly"
 
 
-    def renderView(self, content):
-        """
-        Returns an XHTML string for viewing or previewing this element
-        """
-        html  = "<p class=\""+ self.class_ + "\">\n"
-        html += content
-        html += "</p>\n"
-        return html
-
-
-    def renderEdit(self, content):
+    def renderEdit(self):
         """
         Returns an XHTML string for editing this element
         """
-        html  = "<b>"+self.name
-        html += ":</b><br/>\n"
-        html += common.elementInstruc(self.id, self.instruc)
-        html += common.textInput(self.id, content)
-        html += "<br/>\n"
-        return html
+        log.error(u"renderEdit called directly")
+        return u"ERROR Element.renderEdit called directly"
+
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this element
+        (Defaults to calling renderView.)
+        """
+        return self.renderView()
+    
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this element
+        """
+        log.error(u"renderView called directly")
+        return u"ERROR Element.renderView called directly"
 
 
 # ===========================================================================
@@ -104,454 +78,166 @@ class TextElement(Element):
     """ 
     TextElement is a single line of text
     """
-    def renderEdit(self, content):
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+ 
+    def process(self, request):
+        """
+        Process arguments from the webserver. 
+        """
+        if self.id in request.args:
+            self.field.content = request.args[self.id][0]
+
+
+    def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = "<b>"+self.name
-        html += common.elementInstruc(self.id, self.instruc)
-        html += ":</b><br/>\n"
-        html += common.textInput(self.id, content)
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        html += common.textInput(self.id, self.field.content)
         html += "<br/>\n"
+
         return html
     
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        return self.field.content
+
 
 # ===========================================================================
 class TextAreaElement(Element):
     """
     TextAreaElement is responsible for a block of text
     """
-    def renderEdit(self, content, width="100%", height=100):
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        self.width  = "100%"
+        self.height = 100
+
+ 
+    def process(self, request):
+        """
+        Process arguments from the webserver. 
+        """
+        if self.id in request.args:
+            self.field.content = request.args[self.id][0]
+
+
+    def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        log.debug("renderEdit content="+content+", height="+unicode(height))
+        content = self.field.content
+        log.debug("renderEdit content="+content+
+                  ", height="+unicode(self.height))
+
         content = content.replace("\r", "")
         content = content.replace("\n","\\n")
         content = content.replace("'","\\'")
 
-        html  = "<b>"+self.name
-        html += common.elementInstruc(self.id, self.instruc)
-        html += ":</b><br/>\n"
-        html += common.richTextArea(self.id, content, width, height)
-        
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        html += common.richTextArea(self.id, content, self.width, self.height)
+
         return html
 
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        return self.field.content
 
 # ===========================================================================
 class ImageElement(Element):
     """
     for image element processing
     """
-    def __init__(self, name, class_, blockId, instruc):
+    def __init__(self, field):
         """
         Initialize
         """
-        Element.__init__(self, name, class_, blockId, instruc)
+        Element.__init__(self, field)
 
 
     def process(self, request):
         """
-        Process arguments from the webserver.  Return any which apply to this 
-        element.
+        Process arguments from the webserver.
         """
-        if self.id in request.args:
-            return request.args[self.id][0]
-        else:
-            return None
+        if "path"+self.id in request.args:
+            self.field.setImage(request.args["path"+self.id][0])
+
+        if "width"+self.id in request.args:
+            self.field.width = request.args["width"+self.id][0]
+
+        if "height"+self.id in request.args:
+            self.field.height = request.args["height"+self.id][0]
 
 
-    def renderView(self, content):
-        """
-        Returns an XHTML string for viewing or previewing this element
-        """
-        html  = "<img "
-        html += "class=\""+ self.class_ + "\" "
-        html += "src=\"resources/" + content + "\"/>\n"
-        return html
-
-
-    def renderEdit(self, content, width="100%", height=100):
+    def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        log.debug("renderEdit content="+content+", height="+unicode(height))
+        log.debug("renderEdit")
 
-        html  = "<b>"+self.name
-        html += common.elementInstruc(self.id, self.instruc)
-        html += ":</b><br/>\n"
-        html += common.textInput(self.id, content)
+
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        html += self.renderPreview()
+        html += u"<br/>\n"
+        html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
+        html += _(u"Select an image")
+        html += u"</a><br/>\n"
+        html += u"<b>Resize to:</b>\n"
+        html += common.textInput("width"+self.id, self.field.width, size=5)
+        html += u"x\n"
+        html += common.textInput("height"+self.id, self.field.height, size=5)
+        html += u"<br/>\n"
+        html += common.hiddenField("path"+self.id)#, self.field.storageName)
+        html += u"<br/>\n"
         
         return html
 
 
-# ===========================================================================
-class PhotoElement(Element):
-    """
-    for image element processing
-    """
-    def __init__(self, name, class_, blockId, 
-                 instruc, titleMessage="Photo",
-                 width="200px", height="150px", border="0"):
-        """ Initialize """
-        Element.__init__(self, name, class_, blockId , instruc)
-        self.titleMessage = titleMessage
-        self.width = width
-        self.height = height
-        self.border = border
-        
-        
-    def process(self, request):
+    def renderPreview(self):
         """
-        process audio field information from http request
+        Returns an XHTML string for previewing this image
         """
-        
-        fileExtension = ""
-        filename = ""
+        if self.field.imageName == "":
+            self.field.setDefaultImage()
 
-        # get the package name,store uploaded file into that package
-        # subdirectory
-        # TODO: Wen or David must fix this or explain it to me (MS)
-        packageName = request.prepath[0]
-        if packageName == "":
-            errmsg = "package not specified while processing audio element"
-            log.debug(errmsg)
-            return errmsg
-            
-        if self.id in request.args:            
-            #if file is choosen#
-            if ((self.id + "_filename") in request.args and 
-                request.args[ self.id + "_filename"][0].strip() != ""): 
-                
-                ##get the audio file extension
-                src = request.args[self.id + "_filename"][0]
-                fileExtension = src.ext.lower()
-                
-                ##assign path + id + fileExtension (.xxx) to filename
-                filename = Path(packageName)/self.id + fileExtension
-                
-                ##use this image data directory to store file, a mock up way
-                imgDir = getUploadedFileDir()
-                
-                ##check if the image directory for this package exist or not
-                packagePath = imgDir/packageName
-                if not packagePath.exists():
-                    try:
-                        packagePath.mkdir()
-                    except OSError:
-                        errmsg = "Error while creating audio directory: %s" \
-                                 % (packagePath)
-                        log.debug(errmsg)
-                        return errmsg
-                        
-                ##copy file to Photo
-                try:    
-                    src = Path(request.args[ self.id + "_filename" ][0])
-                    src.copyfile(imgDir/filename)
-                except OSError:
-                    return "%s image file not copied" % filename
-            
-            ##if file not chosen, then see if there is old file
-            elif ("old_%s"%self.id in request.args and 
-                    request.args[ "old_%s" % self.id ][0] != ""):
-                filename = request.args[ "old_"+self.id][0]
-                
-            return filename
-        else:
-            return None                
-        
-        
-    def renderEdit(self, filename):
-        """
-        Returns an XHTML string with the form element for editing this field
-        """
-        imgDir = getUploadedFileDir()
-        
-        html = ""        
-        ## if file exists=>update, else, add
-        if filename.strip() != "" and (imgDir/filename).exists():
-            ##update, show previous file 
-            html += """<strong>Previous %s</strong>:<br /><img src="images/%s" \
-            class="%s" width="%s" height="%s" border="%s" /><br />\n""" \
-            %(self.titleMessage, filename, self.class_, self.width, \
-              self.height, self.border)
-              
-            html += """<strong>Change to</strong>:<input type="file" name="%s"\
-                 onchange="document.contentForm.%s_filename.value=this.value"/>\
-                    <br />\n"""  % (self.id, self.id)
-                    
-            html += """<input type="hidden" name="old_%s" value="%s" />""" \
-                        % (self.id, filename)
-        else:     
-            ##add
-            html += """<strong>%s</strong>:<input type="file" name="%s"  \
-            onchange="document.contentForm.%s_filename.value=this.value"/> \
-            <br />\n""" % (self.titleMessage, self.id, self.id)
-        
-        html += """<input type="hidden" name="%s_filename">""" % self.id
+        html  = common.image("img"+self.id, 
+                             "resources/"+self.field.imageName, 
+                             self.field.width,
+                             self.field.height)
         return html
-        
-    def renderView(self, filename):
-        """
-        return the xhtml component of this image element
-        """
-        
-        if filename.strip() != "":
-            return """<img src="%s" class="%s" width="%s" height="%s"\
-            border="%s" align="left" style="margin-right: 5px;" />\n"""\
-            % (filename.replace("\\", "/") , 
-               self.class_, 
-               self.width, 
-               self.height, 
-               self.border)
-        else:
-            return ""
-        
-# ===========================================================================
-class AudioElement(Element):
-    """
-    for audio element processing
-    """
-    
-    def __init__(self, name, class_, blockId, 
-                 instruc, titleMessage="Audio File"):
-        """initial function for audio element
-        """
-        Element.__init__(self, name, class_, blockId, instruc)
-        self.titleMessage = titleMessage
-        
-    def process(self, request):
-        """
-        process audio field information from http request
-        """
-        
-        fileExtension = ""
-        filename = ""
-        # get the package name,store uploaded file into that package
-        # subdirectory
-        # TODO: Wen or David must fix this or explain it to me (MS)
-        packageName = request.prepath[0]
-        if packageName == "":
-            errmsg = "package not specified while processing audio element"
-            log.debug(errmsg)
-            return errmsg
-            
-        if self.id in request.args:            
-            
-            #if file is choosen#
-            if (self.id + "_filename") in request.args and \
-                request.args[ self.id + "_filename"][0].strip() != "": 
-                
-                ##get the audio file extension
-                src = Path(request.args[self.id +  "_filename"][0])
-                fileExtension = src.ext.lower()
-                
-                ##assign path + id + fileExtension (.xxx) to filename
-                filename = Path(packageName)/self.id+fileExtension 
-                
-                ##use this image data directory to store file, a mock up way
-                imgDir = getUploadedFileDir()
-                
-                ##check if the image directory for this package exist or not
-                packagePath = imgDir/packageName
-                if not packagePath.exists():
-                    try:
-                        packagePath.mkdir()
-                    except OSError:
-                        errmsg = "Error while creating audio directory: %s" \
-                                 % packagePath
-                        log.debug(errmsg)
-                        return errmsg
-                        
-                ##copy file to Photo
-                try:    
-                    src = request.args[ self.id + "_filename" ][0]
-                    src.copyfile(imgDir/filename)
-                except OSError:
-                    return "%s image file not copied" % filename
-                ##resize image file
-                #im = Photo.open(filename)
-            
-            ##if file not chosen, then see if there is old file
-            elif "old_%s"%self.id in request.args and \
-                    request.args[ "old_%s" % self.id ][0] != "":
-                filename = request.args[ "old_"+self.id][0]
-                
-            return filename
-        else:
-            return None                
-            
-    def renderEdit(self, filename):
-        """Renders ourselves with edit controls"""
- 
-        ## if file exists=>update, else, add
-        imgDir = getUploadedFileDir()
-        html = ""
-        if filename.strip()!= "" and (imgDir/filename).exists():
-            ##update, show previous file 
-            html += """<strong>Previous %s</strong>: %s<br />\n""" \
-                    %(self.titleMessage, self.renderView(filename))
-            html += """<strong>Change to</strong>:<input type="file" name="%s"\
-                  onchange="document.contentForm.%s_filename.value=this.value"/> \
-                    <br />\n""" % (self.id, self.id)
-            html += """<input type=hidden name="old_%s" value="%s" />"""\
-                         %(self.id, filename)
-        else:     
-            ##add
-            html += """<strong>%s</strong>:<input type="file" name="%s" \
-             onchange="document.contentForm.%s_filename.value=this.value"/>\
-              <br />\n""" % (self.titleMessage, self.id, self.id)
-        html += """<input type="hidden" name="%s_filename">""" % self.id
-        
-        return html
-                
-    def renderView(self, filename):
-        if filename.strip() != "":
-            tmp_array = {}
-            tmp_array["id"] = self.id
-            tmp_array["hostUrl"] = "images"
-            tmp_array["audiofile"] = filename.replace("\\", "/")
-            filterStr = self.mmfilter(filename)
-            html = filterStr % (tmp_array)
-        else:
-            html = ""
-        return html
-        
-    def mmfilter(self, filename):
-        """
-        generate html code bits according to the uploaded file type
-        """
-        
-        fileExtension = Path(filename).ext.lower()
-        
-        mp3String = """
-<object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
- codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
- id="mp3player" height="15" width="90"> 
-<param name="movie" value="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s"> 
-<param name="quality" value="high"> 
-<param name="bgcolor" value="#333333"> 
-<param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;
-btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;
-trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
-<embed src="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s" quality="high"
- bgcolor="#333333" name="mp3player" type="application/x-shockwave-flash"
-  flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;
- iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;
- handleColour=ffffff&amp;loaderColour=ffffff&amp;"
-  pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="90">
-</object>&nbsp;&nbsp;
-                
-<object id="mp3player" 
-codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
- classid="D27CDB6E-AE6D-11cf-96B8-444553540000" height="15" width="90">
-<!--param value="741" name="_cx">
-<param value="381" name="_cy"-->
-<param value="741" name="FlashVars">
-<param value="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s" name="Movie">
-<param value="%(hostUrl)s/mp3player.swf?src=%(hostUrl)s/%(audiofile)s" name="Src">
-<param value="Window" name="WMode">
-<param value="0" name="Play">
-<param value="-1" name="Loop">
-<param value="High" name="Quality">
-<param name="SAlign">
-<param value="-1" name="Menu">
-<param name="Base">
-<param value="always" name="AllowScriptAccess">
-<param value="ShowAll" name="Scale">
-<param value="0" name="DeviceFont">
-<param value="0" name="EmbedMovie">
-<param value="333333" name="BGColor">
-<param name="SWRemote">
-</object>"""
 
-        wavString = """
-        <input type="button" value="Hear it" 
- OnClick="document.getElementById('dummy_%(id)s').innerHTML='<embed src=images/%(audiofile)s hidden=true loop=false>';"
-        <div id="dummy_%(id)s"></div>
+
+    def renderView(self):
         """
-        
-        wmvString = """
-         <p class="mediaplugin">
-           <object id="MediaPlayer1"
- classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
- standby="Loading Microsoft Windows Media Player components...">
-<param name="Filename" value="images/%(audiofile)s">
-<param name="AnimationAtStart" value="true">
-<param name="TransparentAtStart" value="false">
-<param name="ShowControls" value="true">
-<param name="PlayCount" value="true">
-<embed width="320" height="285" src="images/%(audiofile)s" controller=true autoplay=false  playeveryframe=false pluginspage="plugin.html">
-</object></p>
+        Returns an XHTML string for viewing this image
         """
-        
-        movString = """
-        <p class="mediaplugin"><object classid="CLSID:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
-                codebase="http://www.apple.com/qtactivex/qtplugin.cab" 
-                height="300" width="400"
-                id="quicktime" align="" type="application/x-oleobject">
-        <param name="src" value="images/%(audiofile)s" />
-        <param name="autoplay" value=false />
-        <param name="loop" value=true />
-        <param name="controller" value=true />
-        <param name="scale" value="aspect" />
-        <embed src="images/%(audiofile)s" name="quicktime" type="video/quicktime" 
-         height="300" width="400" scale="aspect" 
-         autoplay="false" controller="true" loop="true" 
-         pluginspage="http://quicktime.apple.com/">
-        </embed>
-        </object></p>
-        """
-        
-        mpgString = """
-        <p class="mediaplugin"><object width="240" height="180">
-        <param name="src" value="images/%(audiofile)s">
-        <param name="controller" value="true">
-        <param name="autoplay" value="false">
-        <embed src="images/%(audiofile)s" width="240" height="180"
-        controller="true" autoplay="false"> </embed>
-        </object></p>
-        """
-        
-        aviString = """
-        <p class="mediaplugin"><object width="240" height="180">
-        <param name="src" value="images/%(audiofile)s">
-        <param name="controller" value="true">
-        <param name="autoplay" value="false">
-        <embed src="images/%(audiofile)s" width="240" height="180" 
-        controller="true" autoplay="false"> </embed>
-        </object></p>
-        """
-        
-        swfString = """
-        <p class="mediaplugin">
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
- codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" 
-         width="20" height="15" id="mp3player" align="">
-         <param name=movie value="images/%(audiofile)s">
-         <param name=quality value=high>
-         <embed src="images/%(audiofile)s" 
-          quality=high width="20" height="15" name="flashfilter" 
-         type="application/x-shockwave-flash" 
-         pluginspage="http://www.macromedia.com/go/getflashplayer">
-        </embed>
-        </object></p>
-        """
-        if fileExtension == ".mp3":
-            return mp3String
-        elif fileExtension == ".wav":
-            return wavString
-        elif fileExtension == ".wmv" or fileExtension == ".wma":
-            return wmvString
-        elif fileExtension == ".mov":
-            return movString
-        elif fileExtension == ".mpg":
-            return mpgString
-        elif fileExtension == ".avi":
-            return aviString 
-        elif fileExtension == ".swf":
-            return swfString 
-        else:
-            return ""
+        if self.field.imageName == "":
+            self.field.setDefaultImage()
+
+        html  = common.image("img"+self.id, 
+                             self.field.imageName, 
+                             self.field.width,
+                             self.field.height)
+        return html
 
 # ===========================================================================
