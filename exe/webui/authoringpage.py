@@ -87,7 +87,6 @@ class AuthoringPage(RenderableResource):
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
         html += u"<body>\n"
-        html += "<pre>"+repr(request.args)+"</pre>\n"
         html += u"<form method=\"post\" "
         html += u"action=\""+request.path+"#currentBlock\""
         html += u" id=\"contentForm\" name=\"contentForm\""

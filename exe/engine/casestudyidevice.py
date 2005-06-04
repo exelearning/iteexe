@@ -75,12 +75,11 @@ that describes a controversy.""")
         self.questionInstruc = _(u"""Enter the study question.  These questions 
 should draw out the educational messages presented in the case.  Consider 
 aspects of the case like, characters, timeliness, relevance, dilemmas.""")
-        self.feedbackInstruc = _(u"""Provide feedback on the question.  This may 
+        self.feedbackInstruc = _(u"""Provide feedback on the question.  This may
 be a summary of the main points or concepts.""")
-        
         self.addQuestion()
         
-
+ 
     def addQuestion(self):
         """
         Add a new question to this iDevice. 

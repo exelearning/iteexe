@@ -42,14 +42,14 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, outdir, package, pages,
+    def __init__(self, config, outputDir, package, pages,
                  addMetadata=True, addScormType=True):
         """
         Initialize
-        'outdir' is the directory that we read the html from and also output
+        'outputDir' is the directory that we read the html from and also output
         the mainfest.xml 
         """
-        self.outdir       = outdir
+        self.outputDir    = outputDir
         self.package      = package
         self.addMetadata  = addMetadata
         self.addScormType = addScormType
@@ -61,10 +61,10 @@ class Manifest(object):
 
     def save(self):
         """
-        Save a imsmanifest file to self.outdir
+        Save a imsmanifest file to self.outputDir
         """
         filename = "imsmanifest.xml"
-        out = open(self.outdir/filename, "w")
+        out = open(self.outputDir/filename, "w")
         out.write(self.createXML())
         out.close()
         
@@ -161,13 +161,9 @@ class Manifest(object):
         self.resStr += "\n"
         fileStr = ""
 
-        # TODO: Fix this hack with some real object-orientated code
-        for pngFile in self.outdir.glob("*.png"):
-            fileStr += "    <file href=\""+pngFile.basename()+"\"/>\n"
-        for gifFile in self.outdir.glob("*.gif"):
-            fileStr += "    <file href=\""+gifFile.basename()+"\"/>\n"
-        fileStr += '    <file href ="common.js"/>\n'
-        fileStr += '    <file href ="libot_drag.js"/>\n'
+        for resource in page.node.getResources():
+            fileStr += "    <file href=\""+resource+"\"/>\n"
+
         self.resStr += fileStr
         self.resStr += "</resource>\n"
 
@@ -177,15 +173,15 @@ class ScormPage(Page):
     """
     This class transforms an eXe node into a SCO
     """
-    def save(self, outdir):
+    def save(self, outputDir):
         """
         This is the main function.  It will render the page and save it to a
         file.  
-        'outdir' is the name of the directory where the node will be saved to,
+        'outputDir' is the name of the directory where the node will be saved to,
         the filename will be the 'self.node.id'.html or 'index.html' if
-        self.node is the root node. 'outdir' must be a 'Path' instance
+        self.node is the root node. 'outputDir' must be a 'Path' instance
         """
-        out = open(outdir/self.name+".html", "w")
+        out = open(outputDir/self.name+".html", "w")
         out.write(self.render())
         out.close()
 
@@ -293,8 +289,9 @@ class ScormExport(object):
         output
         """
         self.config     = config
+        self.imagesDir  = config.webDir/"images"
+        self.scriptsDir = config.webDir/"scripts"
         self.styleDir   = Path(styleDir)
-        self.scriptsDir = Path(scriptsDir)
         self.filename   = Path(filename)
         self.pages      = []
 
@@ -304,12 +301,19 @@ class ScormExport(object):
         Export SCORM package
         """
         # First do the export to a temporary directory
-        outdir = TempDirPath()
+        outputDir = TempDirPath()
 
         # Copy the style sheets and images
-        self.styleDir.copyfiles(outdir)
-        (outdir/'nav.css').remove() # But not nav.css
+        self.styleDir.copyfiles(outputDir)
+        (outputDir/'nav.css').remove() # But not nav.css
 
+        # TODO these two should be part of the style
+        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
+                                outputDir)
+
+        # copy the package's resource files
+        package.resourceDir.copyfiles(outputDir)
+            
         # Export the package content
         if addMetadata:
             self.pages = [ ScormPage("index", 1, package.root) ]
@@ -320,38 +324,44 @@ class ScormExport(object):
         uniquifyNames(self.pages)
 
         for page in self.pages:
-            page.save(outdir)
+            page.save(outputDir)
 
         # Create the manifest file
-        manifest = Manifest(self.config, outdir, package, self.pages,
+        manifest = Manifest(self.config, outputDir, package, self.pages,
                             addMetadata, addScormType)
         manifest.save()
         
         # Copy the scripts
         if (os.path.isfile(self.scriptsDir+ "/quizForScorm.js") and 
             os.path.isfile(self.scriptsDir+ "/quizForWeb.js")):
-            self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js',
-                                    'quizForWeb.js', 'quizForScorm.js'), outdir)
+            self.scriptsDir.copylist(('APIWrapper.js', 
+                                      'SCOFunctions.js',
+                                      'libot_drag.js',
+                                      'common.js',
+                                      'quizForWeb.js', 
+                                      'quizForScorm.js'), outputDir)
             os.remove(self.scriptsDir+ "/quizForWeb.js")
             os.remove(self.scriptsDir+ "/quizForScorm.js")
         else:
-            self.scriptsDir.copylist(('APIWrapper.js', 'SCOFunctions.js'), 
-                                     outdir)
+            self.scriptsDir.copylist(('APIWrapper.js', 
+                                      'SCOFunctions.js', 
+                                      'libot_drag.js',
+                                      'common.js'), outputDir)
 
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
-        for scormFile in outdir.files():
+        for scormFile in outputDir.files():
             zipped.write(scormFile, str(scormFile.basename()), ZIP_DEFLATED)
         zipped.close()
 
         # Clean up the temporary dir
-        outdir.rmtree()
+        outputDir.rmtree()
                 
 
     def generatePages(self, node, addMetadata, depth):
         """
         Recursive function for exporting a node.
-        'outdir' is the temporary directory that we are exporting to
+        'outputDir' is the temporary directory that we are exporting to
         before creating zip file
         """
         for child in node.children:

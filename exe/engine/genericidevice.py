@@ -56,28 +56,25 @@ class GenericIdevice(Idevice):
         Add a new field to this iDevice.  Fields are indexed by their id.
         """
         if field.idevice:
-            log.error(u"Field already belonging to "+field.idevice.name+
-                      u" added to "+self.name)
+            log.error(u"Field already belonging to "+field.idevice.title+
+                      u" added to "+self.title)
         field.idevice = self
         self.fields.append(field)
-
-
-#DJM TODO get rid of this???
-#    def __setitem__(self, name, value):
-#        key   = Field(name)
-#        index = self.fields.index(key)
-#        self.fields[index].setContent(self, value)
-#
-#
-#    def __getitem__(self, name):
-#        key   = Field(name)
-#        index = self.fields.index(key)
-#        return self.fields[index].content
 
 
     def __iter__(self):
         return iter(self.fields)
 
+ 
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        resources = Idevice.getResources(self) + ["common.js", "lib_drag.js"]
+        for field in self.fields:
+            resources += field.getResources()
+        return resources
+       
 
     def upgradeToVersion1(self):
         """

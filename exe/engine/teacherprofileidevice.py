@@ -44,6 +44,15 @@ content delivery medium (the computer)."""), "", "")
         self.content        = content
         self.imageFile      = imageFile
         self.contentInstruc = ""
-        self.imageInstruc   = "We recommend you resize your image to 150 x 200px"
+        self.imageInstruc   = "We recommend you resize your image to "
+        self.imageInstruc   = "150 x 200px"
+ 
+
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        return Idevice.getResources(self) + [ self.imageFile ]
+       
         
 # ===========================================================================

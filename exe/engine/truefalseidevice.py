@@ -59,7 +59,7 @@ class TrueFalseIdevice(Idevice):
                          _(u"University of Auckland"),
                          u"", u"", u"multichoice")
                          
-        self.hintInstruc     = _(u"Typy the question's hint here.")
+        self.hintInstruc     = _(u"Type the question's hint here.")
         self.questions         = []
         self.questionInstruc = _(u"Type the question stem.")
         self.keyInstruc      = ""
@@ -71,6 +71,16 @@ this box, eXe will automatically provide default feedback as follows:
         
         self.questions.append(TrueFalseQuestion())
         
+
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        return Idevice.getResources(self) + ["common.js", 
+                                             "lib_drag.js",
+                                             "panel-amusements.png",
+                                             "stock-stop.png"]
+       
 
     def addQuestion(self):
         """
@@ -85,6 +95,6 @@ this box, eXe will automatically provide default feedback as follows:
         Old packages will loose their icons, but they will load.
         """
         log.debug(u"Upgrading iDevice")
-        self.icon       = u"multichoice"
+        self.icon = u"multichoice"
     
 # ===========================================================================

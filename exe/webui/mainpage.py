@@ -201,7 +201,7 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
-        client.call(onDone, self.package.filename, onDoneParam)
+        client.call(onDone, unicode(self.package.filename), onDoneParam)
 
     def handleSavePackage(self, client, filename=None, onDone=None):
         """Save the current package

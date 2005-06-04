@@ -103,7 +103,10 @@ class Idevice(Persistable):
         Return the resource files used by this iDevice
         Overridden by derieved classes
         """
-        return [ self.icon+".gif" ]
+        if self.icon:
+            return [self.icon+".gif"]
+        else:
+            return []
 
 
     def movePrev(self):

@@ -31,8 +31,8 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class Option(jelly.Jellyable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can be
-    rendered as an XHTML element
+    A Multichoice iDevice is built up of question and options.  Each option can
+    be rendered as an XHTML element
     """
     def __init__(self, answer="", isCorrect=False, feedback=""):
         """
@@ -63,11 +63,12 @@ discussion on topics students may feel a little reticent in responding to.
 
 When designing a MCQ test consider the following:
 <ul>
-<li>	What are the learning outcomes are the questions testing</li>
+<li> What are the learning outcomes are the questions testing</li>
 <li>    What intellectual skills are being tested</li>
-<li>	What are the language skills of the audience</li>
-<li>	Gender and cultural issues</li>
-<li>	Avoid grammar language and question structures that might provide clues</li>
+<li> What are the language skills of the audience</li>
+<li> Gender and cultural issues</li>
+<li> Avoid grammar language and question structures that might provide 
+     clues</li>
 </ul>
  """), u"multichoice", "")
                          
@@ -79,16 +80,26 @@ do not want to provide a hint, leave this field blank.""")
         self.questionInstruc = _(u"Type the question stem.")
         self.keyInstruc      = _(u"""To indicate the correct answer, click the 
 radio button next to the correct option.""")
-        self.answerInstruc   = _(u"""Type in each option from which students must
-choose into the appropriate options box. You can add options by clicking on the 
-"ADD ANOTHER OPTION" button. You can delete options by clicking on the "x" next 
-to each option.""")
+        self.answerInstruc   = _(u"""Type in each option from which students 
+must choose into the appropriate options box. You can add options by clicking 
+on the "ADD ANOTHER OPTION" button. You can delete options by clicking on the 
+"x" next to each option.""")
         self.feedbackInstruc = _(u"""Type in the feedback that you want the 
 student to see when selecting the particular option. If you don't complete this 
 box, eXe will automatically provide default feedback as follows: "Correct 
 answer" as indicated by the selection for the correct answer; or "Wrong answer"
 for the other alternatives.""")
         
+
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        return Idevice.getResources(self) + ["common.js", 
+                                             "lib_drag.js",
+                                             "panel-amusements.png",
+                                             "stock-stop.png"]
+
 
     def addOption(self):
         """

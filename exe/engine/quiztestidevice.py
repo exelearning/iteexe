@@ -31,8 +31,8 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class AnswerOption(Persistable):
     """
-    A TestQuestion is built up of question and AnswerOptions.  Each answerOption 
-    can be rendered as an XHTML element
+    A TestQuestion is built up of question and AnswerOptions.  Each
+    answerOption can be rendered as an XHTML element
     """
     def __init__(self, answer="", isCorrect=False):
         """
@@ -43,7 +43,6 @@ class AnswerOption(Persistable):
 
 
 # ===========================================================================
-
 class TestQuestion(Persistable):
     """
     A TestQuestion is built up of question and AnswerOptions.
@@ -84,11 +83,10 @@ class QuizTestIdevice(Idevice):
                          _(u"Quiz Test"),
                          _(u"University of Auckland"),
                          "", "", "")
-        self.score = -1 
+        self.score      = -1 
         self.isAnswered = True
-        self.passRate = "50"
-                         
-        self.questions         = []
+        self.passRate   = "50"
+        self.questions  = []
         self.addQuestion()
         
 
@@ -99,5 +97,13 @@ class QuizTestIdevice(Idevice):
         self.questions.append(TestQuestion())
 
 
-    
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        # TODO not sure if this is correct?
+        return (Idevice.getResources(self) + 
+                ["common.js", "lib_drag.js", "quizForScorm.js"])
+
+
 # ===========================================================================

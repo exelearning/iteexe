@@ -225,7 +225,7 @@ class Block(object):
         if self.purpose != "" or self.tip != "":
             html += u'<a title="%s" ' % _(u'Pedagogical Help')
             html += u'onmousedown="Javascript:updateCoords(event);" '
-            html += u'onclick="Javascript:showMe(\'p%s\', 420, 240);" ' % self.id
+            html += u"onclick=\"Javascript:showMe('p"+self.id+"', 420, 240);\" "
             html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
             html += u'<img src="/images/info.png" border="0" '
             html += u'align="middle" /></a>\n'
@@ -250,8 +250,8 @@ class Block(object):
         TODO We should probably get this list from elsewhere rather than
         building it up for every block
         """
-        options = [(u'&nbsp;&nbsp;&nbsp;'*(len(node.id)-1) + unicode(node.title), 
-                   node.id)]
+        options = [(u'&nbsp;&nbsp;&nbsp;'*(len(node.id)-1) + 
+                    unicode(node.title), node.id)]
         for child in node.children:
             options += self.__getNodeOptions(child)
         return options
@@ -261,16 +261,17 @@ class Block(object):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        html  = u'<div class="iDevice" '
-        html += u'ondblclick="submitLink(\'edit\', %s, 0);">\n' % self.id
+        html  = u"<div class=\"iDevice\" "
+        html += u" ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.icon:
-            imagepath = u'/style/%s/%s.gif' % (style, self.idevice.icon)
-            html += u'<img class="iDevice_icon" src="%s"' % imagepath
-        html += u'<span class="iDeviceTitle">'
-        html += u'%s</span>\n' % self.idevice.title
+            html += u"<img class=\"iDevice_icon\" "
+            html += u" src=\"/style/"+style+"/"+self.idevice.icon+".gif\"/>\n"
+        html += u"<span class=\"iDeviceTitle\">"
+        html + self.idevice.title
+        html += u"</span>\n"
         html += self.renderViewContent()
         html += self.renderViewButtons()
-        html += u'</div>\n'
+        html += u"</div>\n"
         return html
 
     
@@ -281,13 +282,13 @@ class Block(object):
         """
         html  = u'<div class="iDevice">\n'
         if self.idevice.icon:
-            html += (u'<img class="iDevice_icon"'
-                     u' src="%s"/>\n' % self.idevice.icon)
-        html += (u'<span class="iDeviceTitle">'
-                 u'%s'
-                 u'</span>\n' % self.idevice.title)
+            html += u"<img class=\"iDevice_icon\" "
+            html += u" src=\""+self.idevice.icon+".gif\"/>\n"
+        html += u"<span class=\"iDeviceTitle\">"
+        html + self.idevice.title
+        html += u"</span>\n"
         html += self.renderViewContent()
-        html += u'</div>\n'
+        html += u"</div>\n"
         return html
 
 

@@ -1,3 +1,23 @@
+2005-06-04 09:16  djm
+
+	* ChangeLog, exe/engine/freetextidevice.py,
+	  exe/engine/genericidevice.py, exe/engine/idevice.py,
+	  exe/engine/idevicestore.py, exe/engine/package.py,
+	  exe/engine/path.py, exe/exe, exe/export/pages.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/common.py,
+	  exe/webui/editorelement.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/images/smileyface.png,
+	  exe/webui/images/sunflowers.jpg, exe/webui/optionelement.py,
+	  exe/webui/questionelement.py, exe/webui/scripts/common.js,
+	  exe/webui/testoptionelement.py, exe/webui/truefalseblock.py,
+	  exe/webui/truefalseelement.py, testing/testpackage.py: Image
+	  handling stage I done (still need to handle Scorm exports and
+	  integrate the new TeacherProfileIdevice)
+
 2005-06-02 23:34  jenny
 
 	* exe/engine/teacherprofileidevice.py, exe/webui/questionelement.py,
