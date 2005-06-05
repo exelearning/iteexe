@@ -22,8 +22,9 @@ TeacherProfileBlock can render and process TeacherProfileIdevices as XHTML
 
 import logging
 import gettext
-from exe.webui.block            import Block
-from exe.webui                  import common
+from exe.webui.block   import Block
+from exe.webui         import common
+from exe.webui.element import TextAreaElement, ImageElement
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -36,72 +37,64 @@ class TeacherProfileBlock(Block):
     """
     def __init__(self, idevice):
         Block.__init__(self, idevice)
-        self.contentId = "content" + self.id
-        self.imageId   = "image" + self.id
+        self.photoElement   = ImageElement(idevice.photo)
+        self.profileElement = TextAreaElement(idevice.profile)
+
 
     def process(self, request):
         """
         Process the request arguments from the web server to see if any
         apply to this block
         """
+        log.debug("process " + repr(request.args))
         Block.process(self, request)
-        log.info("process " + repr(request.args))
-        if self.contentId in request.args:
-            self.idevice.content = request.args[self.contentId][0]
-        
-        if self.imageId in request.args and request.args[self.imageId][0] != "":
-            self.idevice.imageFile = request.args[self.imageId][0]
+        self.photoElement.process(request)
+        self.profileElement.process(request)
 
 
-    def renderEdit(self, dummy):
+    def renderEdit(self, style):
         """
-        Returns an XHTML string with the form element for editing this block
+        Returns an XHTML string with the form elements for editing this block
         """
-        content = self.idevice.content
-        content = content.replace("\r", "")
-        content = content.replace("\n","\\n")
-        content = content.replace("'","\\'")
-
-        html  = "<div class=\"iDevice\">\n"
-        html += "<b>%s</b><br/><br/>\n" % _("Teacher Profile")
-        html += "<input id=\"fileBrowser\" "
-        html += "type=\"file\" name =\"%s\"/>" % self.imageId
-        html += " %s " % _("Select a picture")
-        html += common.elementInstruc("image"+self.id, self.idevice.imageInstruc)
-        html += "<br/><br/><b>%s </b>\n" % _("Profile")
-        html += common.elementInstruc("content"+self.id, 
-                                      self.idevice.contentInstruc)
-        html += common.richTextArea(self.contentId, content)+ "<br/>"
+        html  = u"<div class=\"iDevice\">\n"
+        html += u"<b>"+_(u"Teacher Profile")+u"</b><br/>\n"
+        html += self.photoElement.renderEdit()
+        html += u"<br/>\n"
+        html += self.profileElement.renderEdit()
         html += self.renderEditButtons()
-        html += "</div>\n"
+        html += u"</div>\n"
         return html
 
 
-    def renderView(self, dummy):
-        """
-        Returns an XHTML string for viewing this block
-        """        
-        html  = "<div class=\"teacherProfile\">\n"
-        html += "<img src=\"/images/%s\" " % self.idevice.imageFile
-        html += "style=\"padding:6px; float:left;\"/>\n" 
-        html += self.idevice.content 
-        html += "<div style=\"clear:both; \">"
-        html += "</div></div>\n"
-        return html
-    
-
-    def renderPreview(self, dummy):
+    def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div "
+        html  = u"<div class=\"iDevice\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += "<img src=\"/images/%s\" " % self.idevice.imageFile
-        html += "style=\"padding:6px; float:left;\"/>\n" 
-        html += self.idevice.content 
-        html += "<div style=\"clear:both; \">"
-        html += self.renderViewButtons()
-        html += "</div></div>\n"
+        html += u"<div style=\"padding:6px; float:left;\"/>\n" 
+        html += self.photoElement.renderPreview()
+        html += u"</div>\n"
+        html += self.profileElement.renderPreview()
+        html += u"<div style=\"clear:both;\">"
+        html += u"</div>\n"
+        html += u"</div>\n"
         return html
+    
+
+    def renderView(self, style):
+        """
+        Returns an XHTML string for viewing this block
+        """        
+        html  = u"<div class=\"iDevice\">\n"
+        html += u"<div style=\"padding:6px; float:left;\"/>\n" 
+        html += self.photoElement.renderView()
+        html += u"</div>\n"
+        html += self.profileElement.renderView()
+        html += u"<div style=\"clear:both;\">"
+        html += u"</div>\n"
+        html += u"</div>\n"
+        return html
+    
 
 # ===========================================================================

@@ -23,6 +23,7 @@ A TeacherProfile Idevice is one built up from an image and free text.
 
 import logging
 from exe.engine.idevice import Idevice
+from exe.engine.field   import TextAreaField, ImageField
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
@@ -32,27 +33,32 @@ class TeacherProfileIdevice(Idevice):
     """
     A TeacherProfile Idevice is one built up from an image and free text.
     """
-    def __init__(self, content="", imageFile = ""):
-        Idevice.__init__(self, _("Teacher Profile"), 
-                         _("University of Auckland"), 
-                         _("""This idevice enables you to provide a brief 
+    def __init__(self, defaultImage = None):
+        Idevice.__init__(self, _(u"Teacher Profile"), 
+                         _(u"University of Auckland"), 
+                         _(u"""This idevice enables you to provide a brief 
 description of the teacher or other staff involved in the delivery of the 
 learning.  The profile (with personal photo) can not only be used to 
 communicate the role and credentials of the teacher but, also acknowledges 
 the direct relationship between the learner and teacher, rather then the 
 content delivery medium (the computer)."""), "", "")
-        self.content        = content
-        self.imageFile      = imageFile
-        self.contentInstruc = ""
-        self.imageInstruc   = "We recommend you resize your image to "
-        self.imageInstruc   = "150 x 200px"
+        self.photo = ImageField(_(u"Photo"), 
+                                _(u"We recommend you resize your photo to "
+                                  u"150px x 200px"))
+        self.photo.idevice      = self
+        self.photo.width        = "150px"
+        self.photo.height       = "200px"
+        self.photo.defaultImage = defaultImage
+
+        self.profile = TextAreaField(_(u"Profile"))
+        self.profile.idevice = self
  
 
     def getResources(self):
         """
         Return the resource files used by this iDevice
         """
-        return Idevice.getResources(self) + [ self.imageFile ]
+        return Idevice.getResources(self) + self.photo.getResources()
        
         
 # ===========================================================================

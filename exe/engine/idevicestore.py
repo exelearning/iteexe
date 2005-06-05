@@ -111,7 +111,9 @@ class IdeviceStore:
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
         self.extended.append(QuizTestIdevice())
-        self.extended.append(TeacherProfileIdevice())
+
+        defaultImage = self.config.webDir/"images"/"smileyface.png"
+        self.extended.append(TeacherProfileIdevice(defaultImage))
   
 
     def __loadGeneric(self):
@@ -123,7 +125,7 @@ class IdeviceStore:
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
 
-            # generate new ids for these iDevices to avoid any clashes
+            # generate new ids for these iDevices, to avoid any clashes
             for idevice in self.generic:
                 idevice.id = unicode(Idevice.nextId)
                 Idevice.nextId += 1

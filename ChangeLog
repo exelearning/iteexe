@@ -1,3 +1,16 @@
+2005-06-04 12:07  djm
+
+	* ChangeLog, exe/engine/casestudyidevice.py,
+	  exe/engine/genericidevice.py, exe/engine/idevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/newidevice.py,
+	  exe/engine/quiztestidevice.py, exe/engine/reflectionidevice.py,
+	  exe/engine/teacherprofileidevice.py,
+	  exe/engine/truefalseidevice.py, exe/export/manifest.py,
+	  exe/export/scormexport.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/mainpage.py: Image handling stage II - Scorm export
+	  works ok... could do with a tidy up thought.
+
 2005-06-04 09:16  djm
 
 	* ChangeLog, exe/engine/freetextidevice.py,

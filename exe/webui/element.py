@@ -202,12 +202,12 @@ class ImageElement(Element):
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")
         html += u"</a><br/>\n"
-        html += u"<b>Resize to:</b>\n"
+        html += u"<b>Display as:</b>\n"
         html += common.textInput("width"+self.id, self.field.width, size=5)
         html += u"x\n"
         html += common.textInput("height"+self.id, self.field.height, size=5)
-        html += u"<br/>\n"
-        html += common.hiddenField("path"+self.id)#, self.field.storageName)
+        html += u"(blank for original size) <br/>\n"
+        html += common.hiddenField("path"+self.id)
         html += u"<br/>\n"
         
         return html
