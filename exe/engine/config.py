@@ -78,6 +78,11 @@ class Config:
         self.__setConfigPath()
         # Fill in any undefined config options with our defaults
         self._writeDefaultConfigFile()
+        # Now we are ready to server the application
+        self.loadSettings()
+        self.setupLogging("exe.log")
+        log.debug("logging set up")
+        self.loadStyles()
 
     def _overrideDefaultVals(self):
         """
@@ -151,6 +156,8 @@ class Config:
             return getattr(self, option)
         self.configParser.defaultValue = defVal
         # System Section
+        import pdb
+        pdb.set_trace()
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir      = Path(system.webDir)
@@ -179,7 +186,7 @@ class Config:
         """
         hdlr   = logging.FileHandler(self.configDir/logFile)
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
-        log  = logging.getLogger()
+        log    = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
 

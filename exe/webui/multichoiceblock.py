@@ -36,11 +36,11 @@ class MultichoiceBlock(Block):
     """
     MultichoiceBlock can render and process MultichoiceIdevices as XHTML
     """
-    def __init__(self, idevice):
+    def __init__(self, parent, idevice):
         """
         Initialize a new Block object
         """
-        Block.__init__(self, idevice)
+        Block.__init__(self, parent, idevice)
         self.idevice         = idevice
         self.optionElements  = []
         self.question        = idevice.question

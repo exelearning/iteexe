@@ -216,10 +216,10 @@ class ScormPage(Page):
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
-        html += TitleBlock(self.node._title).renderView(self.node.package.style)
+        html += TitleBlock(None, self.node._title).renderView(self.node.package.style)
 
         for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(idevice)
+            block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
@@ -261,10 +261,10 @@ class WebCTScormPage(ScormPage):
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
         html += "<div id=\"main\">\n"
-        html += TitleBlock(self.node._title).renderView(self.node.package.style)
+        html += TitleBlock(None, self.node._title).renderView(self.node.package.style)
 
         for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(idevice)
+            block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")

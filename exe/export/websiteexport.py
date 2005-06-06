@@ -91,10 +91,10 @@ class WebsitePage(object):
         html += "<div id=\"main\">\n"
 
         style = self.node.package.style
-        html += TitleBlock(self.node._title).renderView(style)
+        html += TitleBlock(None, self.node._title).renderView(style)
 
         for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(idevice)
+            block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")

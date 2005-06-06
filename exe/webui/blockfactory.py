@@ -76,7 +76,7 @@ class BlockFactory(object):
                   blockType.__name__ + u"<=>" +  ideviceType.__name__)
         self.blockTypes.append((blockType, ideviceType))
 
-    def createBlock(self, idevice):
+    def createBlock(self, parent, idevice):
         """
         Returns a Block object which can render this Idevice
         """
@@ -84,7 +84,7 @@ class BlockFactory(object):
             if isinstance(idevice, ideviceType):
                 log.info(u"createBlock "+blockType.__name__+u" for "+
                           idevice.__class__.__name__)
-                return blockType(idevice)
+                return blockType(parent, idevice)
         
         log.error(u"No blocktype registered for "+ idevice.__class__.__name__)
         return None

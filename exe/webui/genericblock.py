@@ -35,8 +35,8 @@ class GenericBlock(Block):
     """
     GenericBlock can render and process GenericIdevices as XHTML
     """
-    def __init__(self, idevice):
-        Block.__init__(self, idevice)
+    def __init__(self, parent, idevice):
+        Block.__init__(self, parent, idevice)
         self.elements = []
         for field in self.idevice:
             self.elements.append(g_elementFactory.createElement(field))

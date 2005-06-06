@@ -35,8 +35,8 @@ class TeacherProfileBlock(Block):
     """
     TeacherProfileBlock can render and process TeacherProfileIdevices as XHTML
     """
-    def __init__(self, idevice):
-        Block.__init__(self, idevice)
+    def __init__(self, parent, idevice):
+        Block.__init__(self, parent, idevice)
         self.photoElement   = ImageElement(idevice.photo)
         self.profileElement = TextAreaElement(idevice.profile)
 

@@ -37,11 +37,11 @@ class QuizTestBlock(Block):
     """
     QuizTestBlock can render and process QuizTestIdevices as XHTML
     """
-    def __init__(self, idevice):
+    def __init__(self, parent, idevice):
         """
         Initialize a new Block object
         """
-        Block.__init__(self, idevice)
+        Block.__init__(self, parent, idevice)
         self.idevice           = idevice
         self.questionElements  = []
         self.message = False
@@ -81,9 +81,7 @@ class QuizTestBlock(Block):
         if "submitScore" in request.args:
             self.idevice.score = self.__calcScore()
             
-        
-            
-            
+
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
@@ -232,7 +230,6 @@ class QuizTestBlock(Block):
         """
         Return an XHTML string for generating the javascript for scorm export
         """
-
         scriptStr  = "var numQuestions = "
         scriptStr += unicode(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 

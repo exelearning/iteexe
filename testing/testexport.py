@@ -21,6 +21,7 @@ Tests website and scorm exports.
 # ===========================================================================
 
 import unittest
+import util
 from exe.engine.package       import Package
 from exe.engine.path          import Path, TempDirPath
 from exe.export.websiteexport import WebsiteExport

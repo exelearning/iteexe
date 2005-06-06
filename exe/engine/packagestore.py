@@ -88,12 +88,4 @@ class PackageStore:
         return package
 
 
-    def getIdevices(self, package):
-        """
-        Get all the iDevices which could be used in this package
-        (and in the current node?)
-        """
-        return []
-        
-
 # ===========================================================================

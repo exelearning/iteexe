@@ -61,7 +61,7 @@ class MainPage(RenderableLivePage):
         self.putChild("resources", static.File(package.resourceDir))
 
         mainxul = Path(self.config.webDir).joinpath('templates', 'mainpage.xul')
-        self.docFactory = loaders.xmlfile(mainxul)
+        self.docFactory  = loaders.xmlfile(mainxul)
 
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)

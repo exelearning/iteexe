@@ -21,7 +21,6 @@ The collection of iDevices available
 """
 
 from exe.engine import persist
-from exe.engine.path import Path
 from exe.engine.idevice import Idevice
 from exe.engine.field import TextField, TextAreaField, ImageField 
 
@@ -92,6 +91,9 @@ class IdeviceStore:
         """
         Load the Extended iDevices (iDevices coded in Python)
         """
+        """
+        Loads/Creates the python idevices
+        """
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice
         from exe.engine.reflectionidevice     import ReflectionIdevice
@@ -131,12 +133,15 @@ class IdeviceStore:
                 Idevice.nextId += 1
         else:
             self.__createGeneric()
-            self.save()
 
     def __createGeneric(self):
         """
         Create the Generic iDevices which you get for free
         (not created using the iDevice editor, but could have been)
+        """
+        """
+        Called when we can't find 'generic.data', generates an initial set of 
+        free/builtin idevices and writes the new 'generic.data' file
         """
         from exe.engine.genericidevice import GenericIdevice
 
@@ -201,6 +206,8 @@ that may help or hinder the learner in the performance of the task."""),
         activity.addField(TextAreaField(_(u"Activity"),
 _(u"""Describe the tasks the learners should complete.""")))
         self.generic.append(activity)
+
+        self.save()
 
 
     def save(self):

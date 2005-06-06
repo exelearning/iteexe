@@ -63,6 +63,10 @@ class AuthoringPage(RenderableResource):
         """
         Delegates processing of args to blocks
         """  
+        # Still need to call parent (mainpage.py) process
+        # because the idevice pane needs to know that new idevices have been
+        # added/edited..
+        # TODO: Once pyxpcom comes along, we'll fix these
         self.parent.process(request)
         if ("action" in request.args and 
             request.args["action"][0] == u"saveChange"):
@@ -138,7 +142,7 @@ class AuthoringPage(RenderableResource):
         Add All the blocks for the currently selected node
         """
         for idevice in node.idevices:
-            block = g_blockFactory.createBlock(idevice)
+            block = g_blockFactory.createBlock(self, idevice)
             if not block:
                 log.critical(u"Unable to render iDevice.")
                 raise Error(u"Unable to render iDevice.")

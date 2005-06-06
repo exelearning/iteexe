@@ -35,11 +35,11 @@ class TrueFalseBlock(Block):
     """
     TrueFalseBlock can render and process TrueFalseIdevices as XHTML
     """
-    def __init__(self, idevice):
+    def __init__(self, parent, idevice):
         """
         Initialize a new Block object
         """
-        Block.__init__(self, idevice)
+        Block.__init__(self, parent, idevice)
         self.idevice         = idevice
         self.questionElements  = []
         self.questionInstruc = idevice.questionInstruc

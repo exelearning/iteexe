@@ -44,7 +44,13 @@ class TestConfig(unittest.TestCase):
         """
         Tests that the correct logging directory is made
         """
-        Config._getConfigPathOptions = lambda s: ['test.conf']
+        # Write a sample config file
+        settings = ConfigParser()
+        settings.addSection('logging')
+        settings.logging.root = 'DEBUG'
+        settings.write('test.conf')
+        # See if we can read it
+        Config._getConfigPathOption  = lambda s: ['test.conf']
         myconfig = Config()
         open("test.log", "w").write("")
         myconfig.setupLogging("test.log")

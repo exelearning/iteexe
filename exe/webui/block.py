@@ -24,13 +24,14 @@ rendering and processing Idevices in XHTML
 import logging
 import gettext
 from exe.webui import common
+from exe.webui.renderable import Renderable
 
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
-class Block(object):
+class Block(Renderable):
     """
     Block is the base class for the classes which are responsible for 
     rendering and processing Idevices in XHTML
@@ -38,15 +39,15 @@ class Block(object):
     nextId = 0
     Edit, Preview, View, Hidden = range(4)
 
-    def __init__(self, idevice):
+    def __init__(self, parent, idevice):
         """
         Initialize a new Block object
         """
+        Renderable.__init__(self, parent)
         self.idevice = idevice
         self.id      = idevice.id
         self.purpose = idevice.purpose
         self.tip     = idevice.tip
-        self.package = idevice.parentNode.package
 
         if idevice.edit:
             self.mode = Block.Edit
@@ -128,8 +129,7 @@ class Block(object):
         """
         log.debug(u"processMove id="+self.id)
         nodeId = request.args[u"move"+self.id][0]
-        #TODO tidy this up
-        node   = self.idevice.parentNode.package.findNode(nodeId)
+        node   = self.package.findNode(nodeId)
         if node is not None:
             self.idevice.setParentNode(node)
         else:
@@ -219,7 +219,8 @@ class Block(object):
 
         options  = [(_(u"---Move To---"), "")]
         #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
-        options += self.__getNodeOptions(self.idevice.parentNode.package.root)
+        #options += self.__getNodeOptions(self.idevice.parentNode.package.root)
+        options += self.__getNodeOptions(self.package.root)
         html += common.select(u"move", self.id, options)
 
         if self.purpose != "" or self.tip != "":
@@ -251,7 +252,7 @@ class Block(object):
         building it up for every block
         """
         options = [(u'&nbsp;&nbsp;&nbsp;'*(len(node.id)-1) + 
-                    unicode(node.title), node.id)]
+                    node.title, node.id)]
         for child in node.children:
             options += self.__getNodeOptions(child)
         return options

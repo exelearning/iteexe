@@ -106,11 +106,6 @@ class Application:
         else:
             from exe.engine.linuxconfig import LinuxConfig
             self.config = LinuxConfig()
-    
-        self.config.loadSettings()
-        self.config.setupLogging("exe.log")
-        log.debug("logging set up")
-        self.config.loadStyles()
 
 
     def preLaunch(self):

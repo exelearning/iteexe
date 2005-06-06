@@ -60,7 +60,7 @@ class TrueFalseElement(object):
             self.question.hint = request.args[self.hintId][0]
                         
         if self.keyId in request.args:
-            if request.args[self.keyId][0]== "true":
+            if request.args[self.keyId][0] == "true":
                 self.question.isCorrect = True 
                 log.debug("question " + repr(self.question.isCorrect))
             else:

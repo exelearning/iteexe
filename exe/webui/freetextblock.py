@@ -36,8 +36,8 @@ class FreeTextBlock(Block):
     FreeTextBlock can render and process FreeTextIdevices as XHTML
     GenericBlock will replace it..... one day
     """
-    def __init__(self, idevice):
-        Block.__init__(self, idevice)
+    def __init__(self, parent, idevice):
+        Block.__init__(self, parent, idevice)
         self.contentElement = TextAreaElement(idevice.content)
         self.contentElement.height = 250
 

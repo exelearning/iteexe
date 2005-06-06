@@ -21,35 +21,33 @@ import unittest
 from exe.webui.block        import Block
 from exe.engine.idevice     import Idevice
 from exe.webui.blockfactory import g_blockFactory
+from exe.webui.renderable   import Renderable
+from exe.engine.node        import Node
+from exe.application        import Application
+from utils                  import SuperTestCase, HTMLTidy
 
 # ===========================================================================
-
-class MyRequest:
-    def __init__(self, args):
-        self.args = args
-        
-class MyBlock(Block):
-    def __init__(self, idevice):
-        self.id   = idevice.id
-        self.name = idevice.name
-
-class MyIdevice(Idevice):
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
-                                
-g_blockFactory.registerBlockType(MyBlock, MyIdevice)
-
-# ===========================================================================
-class TestBlock(unittest.TestCase):
-    def setUp(self):
-        pass
+class TestBlock(SuperTestCase):
+    """
+    Tests that blocks can render stuff
+    """
 
     def testBlock(self):
-        idevice = MyIdevice(22, "MyIdevice")
-        block   = g_blockFactory.createBlock(idevice)
-        self.assertEquals(block.id, 22)
-        self.assertEquals(block.name, "MyIdevice")
+        """Creates a block for a freetext idevice
+        and makes it render"""
+        # Pretend to add an idevice
+        request = self._request(action='AddIdevice', object='1')
+        self.mainpage.authoringPage.render(request)
+        idevice = self.package.currentNode.idevices[0]
+        ln = len(self.mainpage.authoringPage.blocks)
+        assert ln >= 1, 'Should be at least one block, only %s' % ln
+        block = self.mainpage.authoringPage.blocks[0]
+        assert block.idevice is idevice
+        print dir(self)
+        html = block.renderEditButtons()
+        tidier = HTMLTidy(html)
+        tidier.check()
+
         
 
 if __name__ == "__main__":

@@ -35,11 +35,11 @@ class ReflectionBlock(Block):
     """
     ReflectionBlock can render and process ReflectionIdevices as XHTML
     """
-    def __init__(self, idevice):
+    def __init__(self, parent, idevice):
         """
         Initialize a new Block object
         """
-        Block.__init__(self, idevice)
+        Block.__init__(self, parent, idevice)
         self.activity        = idevice.activity 
         self.answer          = idevice.answer
         self.activityInstruc = idevice.activityInstruc
