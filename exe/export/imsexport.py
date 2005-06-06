@@ -62,7 +62,7 @@ class Manifest(object):
         """
         filename = "imsmanifest.xml"
         out = open(self.outputDir/filename, "w")
-        out.write(self.createXML())
+        out.write(self.createXML().encode('utf8'))
         out.close()
         
 
@@ -70,8 +70,8 @@ class Manifest(object):
         """
         returning XLM string for manifest file
         """
-        manifestId = unicode(self.idGenerator.generate())
-        orgId      = unicode(self.idGenerator.generate())
+        manifestId = unicode(self.idGenerator.generate(), 'utf8')
+        orgId      = unicode(self.idGenerator.generate(), 'utf8')
         
         xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
         <manifest identifier="%s" 
@@ -175,7 +175,7 @@ class IMSPage(Page):
         self.node is the root node. 'outputDir' must be a 'Path' instance
         """
         out = open(outputDir/self.name+".html", "w")
-        out.write(self.render())
+        out.write(self.render().encode('utf8'))
         out.close()
 
     def render(self):
@@ -289,7 +289,9 @@ class IMSExport(object):
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")
         for scormFile in outputDir.files():
-            zipped.write(scormFile, str(scormFile.basename()), ZIP_DEFLATED)
+            zipped.write(scormFile,
+                         scormFile.basename().encode('utf8'),
+                         ZIP_DEFLATED)
         zipped.close()
 
         # Clean up the temporary dir
