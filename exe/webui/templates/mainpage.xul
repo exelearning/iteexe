@@ -40,13 +40,10 @@
                 <menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
                 <menuitem label="Save As" accesskey="a" oncommand="fileSaveAs()"/>
                     <menuseparator/>
-                <menuitem label="Add Resource" key="file-addimage-key" accesskey="r" oncommand="fileAddResource()"/>
-                    <menuseparator/>
                 <menu id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem label="Scorm Package" accesskey="s" oncommand="exportPackage('scormMeta')"/>
-                    <menuitem label="Scorm Package (WebCT)" accesskey="c" oncommand="exportPackage('scormNoMeta')"/>
-                    <menuitem label="Scorm Package (Blackboard)" accesskey="c" oncommand="exportPackage('scormNoScormType')"/>
+                    <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scormMeta')"/>
+                    <menuitem label="IMS Content 1.3" oncommand="exportPackage('ims')"/>
                     <menuitem label="Web Site" key="file-export-website-key" accesskey="w" oncommand="exportPackage('webSite')"/>
                   </menupopup>
                 </menu>

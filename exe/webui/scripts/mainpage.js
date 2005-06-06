@@ -440,7 +440,7 @@ function exportPackage(exportType) {
         }
     } else {
         fp.init(window, "Export scorm package as", nsIFilePicker.modeSave);
-        fp.appendFilter("Scorm Packages", "*.zip");
+        fp.appendFilter("SCORM/IMS Packages", "*.zip");
         fp.appendFilter("All Files", "*.*");
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {

@@ -35,6 +35,7 @@ from exe.webui.stylepane      import StylePane
 from exe.webui.propertiespage import PropertiesPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
+from exe.export.imsexport     import IMSExport
 from exe.engine.path          import Path
 from exe.engine.package       import PackageError
 
@@ -277,8 +278,10 @@ class MainPage(RenderableLivePage):
         stylesDir  = webDir.joinpath('style', self.package.style)
         if exportType == 'webSite':
             self.exportWebSite(client, filename, webDir, stylesDir)
-        else:
+        elif exportType == "scorm":
             self.exportScorm(client, filename, exportType, webDir, stylesDir)
+        else:
+            self.exportIMS(client, filename, webDir, stylesDir)
 
     def exportWebSite(self, client, filename, webDir, stylesDir):
         """
@@ -348,4 +351,22 @@ class MainPage(RenderableLivePage):
             log.error('Wrong scormType passed to exportScorm: %s'
                       % scormType)
             return
+        client.alert(_(u'Exported to %s' % filename))
+
+    def exportIMS(self, client, filename, webDir, stylesDir):
+        """
+        Exports this package to a ims package file
+        """
+        log.debug(u"exportIMS")
+        # Append an extension if required
+        if not filename.lower().endswith('.zip'): 
+            filename += '.zip'
+        filename = Path(filename)
+        # Remove any old existing files
+        if filename.exists(): 
+            filename.remove()
+        # Do the export
+        imsExport = IMSExport(self.config, stylesDir, 
+                              webDir / 'scripts', filename)
+        imsExport.export(self.package)
         client.alert(_(u'Exported to %s' % filename))
