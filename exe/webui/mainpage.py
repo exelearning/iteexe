@@ -279,7 +279,7 @@ class MainPage(RenderableLivePage):
         if exportType == 'webSite':
             self.exportWebSite(client, filename, webDir, stylesDir)
         elif exportType == "scorm":
-            self.exportScorm(client, filename, exportType, webDir, stylesDir)
+            self.exportScorm(client, filename, webDir, stylesDir)
         else:
             self.exportIMS(client, filename, webDir, stylesDir)
 
@@ -325,13 +325,13 @@ class MainPage(RenderableLivePage):
                  '-remote', 'openURL(%s, new-window)' % \
                  filename))
 
-    def exportScorm(self, client, filename, scormType, webDir, stylesDir):
+    def exportScorm(self, client, filename, webDir, stylesDir):
         """
         Exports this package to a scorm package file
-        'scormType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
         """
-        log.debug(u"exportScorm, scormType="+scormType)
+        log.debug(u"exportScorm, filaneme=%s" % filename)
         # Append an extension if required
+        filename = unicode(filename, 'utf8')
         if not filename.lower().endswith('.zip'): 
             filename += '.zip'
         filename = Path(filename)
@@ -339,18 +339,8 @@ class MainPage(RenderableLivePage):
         if filename.exists(): 
             filename.remove()
         # Do the export
-        scormExport = ScormExport(self.config, stylesDir, 
-                                  webDir / 'scripts', filename)
-        if scormType == 'scormMeta':
-            scormExport.export(self.package, True)
-        elif scormType == 'scormNoMeta':
-            scormExport.export(self.package, False, False)
-        elif scormType == 'scormNoScormType':
-            scormExport.export(self.package, True, False)
-        else:
-            log.error('Wrong scormType passed to exportScorm: %s'
-                      % scormType)
-            return
+        scormExport = ScormExport(self.config, stylesDir, filename)
+        scormExport.export(self.package)
         client.alert(_(u'Exported to %s' % filename))
 
     def exportIMS(self, client, filename, webDir, stylesDir):
@@ -366,7 +356,6 @@ class MainPage(RenderableLivePage):
         if filename.exists(): 
             filename.remove()
         # Do the export
-        imsExport = IMSExport(self.config, stylesDir, 
-                              webDir / 'scripts', filename)
+        imsExport = IMSExport(self.config, stylesDir, filename)
         imsExport.export(self.package)
         client.alert(_(u'Exported to %s' % filename))

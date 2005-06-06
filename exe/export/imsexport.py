@@ -70,8 +70,8 @@ class Manifest(object):
         """
         returning XLM string for manifest file
         """
-        manifestId = unicode(self.idGenerator.generate(), 'utf8')
-        orgId      = unicode(self.idGenerator.generate(), 'utf8')
+        manifestId = self.idGenerator.generate()
+        orgId      = self.idGenerator.generate()
         
         xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
         <manifest identifier="%s" 
@@ -223,12 +223,10 @@ class IMSExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self, config, styleDir, scriptsDir, filename):
+    def __init__(self, config, styleDir, filename):
         """ Initialize
         'styleDir' is the directory from which we will copy our style sheets
-        (and some gifs) 'scriptsDir' is the directory from which we will copy
-        our javascripts 'filename' is the name of the scorm package to be
-        output
+        (and some gifs)
         """
         self.config     = config
         self.imagesDir  = config.webDir/"images"

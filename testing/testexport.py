@@ -26,6 +26,7 @@ from exe.engine.package       import Package
 from exe.engine.path          import Path, TempDirPath
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
+from exe.export.imsexport     import IMSExport
 from zipfile                  import ZipFile
 from sets                     import Set
 
@@ -78,17 +79,16 @@ class TestWebsiteExport(unittest.TestCase):
 
 class BaseTestScormExport(utils.SuperTestCase):
     
-    def doTest(self, withMeta):
+    def doTest(self, ExporterClass):
         """Exports a package with meta data"""
         # Load our test package
         package = Package.load('testPackage.elp')
         # Do the export
         outFilename = Path('scormtest.zip')
-        exporter = ScormExport(self.app.config,
-                               '../exe/webui/style/default', 
-                               '../exe/webui/scripts', 
-                               outFilename)
-        exporter.export(package, withMeta)
+        exporter = ExporterClass(self.app.config,
+                                 '../exe/webui/style/default', 
+                                 outFilename)
+        exporter.export(package)
         # Check that it made a nice zip file
         assert outFilename.exists()
         # See if the manifest file was created
@@ -133,7 +133,7 @@ class TestScormMetaExport(BaseTestScormExport):
     
     def testMeta(self):
         """Tests exporting of scorm packages with meta data"""
-        self.doTest(True)
+        self.doTest(ScormExport)
 
     def _setupConfigFile(self, configParser):
         """Set up our config file nicely"""
@@ -153,7 +153,7 @@ class TestScormNoMetaExport(BaseTestScormExport):
     
     def testMeta(self):
         """Tests exporting of scorm packages without meta data"""
-        self.doTest(False)
+        self.doTest(IMSExport)
 
     def _testManifest(self, content):
         """Checks that there is meta data in 'content'"""

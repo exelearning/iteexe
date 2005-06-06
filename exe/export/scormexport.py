@@ -42,8 +42,7 @@ class Manifest(object):
     """
     Represents an imsmanifest xml file
     """
-    def __init__(self, config, outputDir, package, pages,
-                 addMetadata=True, addScormType=True):
+    def __init__(self, config, outputDir, package, pages):
         """
         Initialize
         'outputDir' is the directory that we read the html from and also output
@@ -51,8 +50,6 @@ class Manifest(object):
         """
         self.outputDir    = outputDir
         self.package      = package
-        self.addMetadata  = addMetadata
-        self.addScormType = addScormType
         self.idGenerator  = UniqueIdGenerator(package.name, config.exePath)
         self.pages        = pages
         self.itemStr      = ""
@@ -83,12 +80,12 @@ class Manifest(object):
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         """ % manifestId 
 
-        if self.addMetadata:
-            xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" "
+        xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" "
             
-        if self.addScormType:
-            xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\""
-            xmlStr += "\n "
+        # Add the scorm type
+        xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\""
+        xmlStr += "\n "
+
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
         xmlStr += "imscp_v1p1 imscp_v1p1.xsd "        
         xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
@@ -98,13 +95,14 @@ class Manifest(object):
         xmlStr += "<schemaversion>CAM 1.3</schemaversion> \n"
 
         title  = unicode(self.package.root.title)
-        if self.addMetadata:
-            author = self.package.author
-            desc   = self.package.description
-            xmlStr += "<dc:title>"+title+"</dc:title>\n"
-            xmlStr += "<dc:creator>"+author+"</dc:creator>\n"
-            xmlStr += "<dc:description>"+desc+"</dc:description>\n"
-            xmlStr += "<dc:language>en-US</dc:language>\n"
+
+        # Metadata
+        author = self.package.author
+        desc   = self.package.description
+        xmlStr += "<dc:title>"+title+"</dc:title>\n"
+        xmlStr += "<dc:creator>"+author+"</dc:creator>\n"
+        xmlStr += "<dc:description>"+desc+"</dc:description>\n"
+        xmlStr += "<dc:language>en-US</dc:language>\n"
 
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
@@ -150,8 +148,9 @@ class Manifest(object):
         self.resStr += "<resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
 
-        if self.addScormType:
-            self.resStr += "adlcp:scormType=\"sco\" "
+        # Add the scorm type
+        self.resStr += "adlcp:scormType=\"sco\" "
+
         self.resStr += "href=\""+filename+"\"> \n"
         self.resStr += """\
     <file href="%s"/>
@@ -281,12 +280,10 @@ class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
-    def __init__(self, config, styleDir, scriptsDir, filename):
+    def __init__(self, config, styleDir, filename):
         """ Initialize
         'styleDir' is the directory from which we will copy our style sheets
-        (and some gifs) 'scriptsDir' is the directory from which we will copy
-        our javascripts 'filename' is the name of the scorm package to be
-        output
+        (and some gifs)
         """
         self.config     = config
         self.imagesDir  = config.webDir/"images"
@@ -296,7 +293,7 @@ class ScormExport(object):
         self.pages      = []
 
 
-    def export(self, package, addMetadata=True, addScormType=True):
+    def export(self, package):
         """ 
         Export SCORM package
         """
@@ -315,20 +312,16 @@ class ScormExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # Export the package content
-        if addMetadata:
-            self.pages = [ ScormPage("index", 1, package.root) ]
-        else:
-            self.pages = [ WebCTScormPage("index", 1, package.root) ]
+        self.pages = [ ScormPage("index", 1, package.root) ]
 
-        self.generatePages(package.root, addMetadata, 2)
+        self.generatePages(package.root, 2)
         uniquifyNames(self.pages)
 
         for page in self.pages:
             page.save(outputDir)
 
         # Create the manifest file
-        manifest = Manifest(self.config, outputDir, package, self.pages,
-                            addMetadata, addScormType)
+        manifest = Manifest(self.config, outputDir, package, self.pages)
         manifest.save()
         
         # Copy the scripts
@@ -360,11 +353,11 @@ class ScormExport(object):
         outputDir.rmtree()
                 
 
-    def generatePages(self, node, addMetadata, depth):
+    def generatePages(self, node, depth):
         """
         Recursive function for exporting a node.
-        'outputDir' is the temporary directory that we are exporting to
-        before creating zip file
+        'node' is the node that we are making a page for
+        'depth' is the number of ancestors that the page has +1 (ie. root is 1)
         """
         for child in node.children:
             pageName = child.title.lower().replace(" ", "_")
@@ -372,12 +365,9 @@ class ScormExport(object):
             if not pageName:
                 pageName = "__"
 
-            if addMetadata:
-                page = ScormPage(pageName, depth, child)
-            else:
-                page = WebCTScormPage(pageName, depth, child)
+            page = ScormPage(pageName, depth, child)
 
             self.pages.append(page)
-            self.generatePages(child, addMetadata, depth + 1)
+            self.generatePages(child, depth + 1)
     
 # ===========================================================================
