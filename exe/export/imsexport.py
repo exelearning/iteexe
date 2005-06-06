@@ -201,7 +201,8 @@ class IMSPage(Page):
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
         html += "<div id=\"main\">\n"
-        html += TitleBlock(self.node._title).renderView(self.node.package.style)
+        title = TitleBlock(None, self.node._title)
+        html += title.renderView(self.node.package.style)
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(idevice)
