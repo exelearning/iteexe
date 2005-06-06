@@ -21,7 +21,7 @@ Tests website and scorm exports.
 # ===========================================================================
 
 import unittest
-import util
+import utils
 from exe.engine.package       import Package
 from exe.engine.path          import Path, TempDirPath
 from exe.export.websiteexport import WebsiteExport
@@ -76,7 +76,7 @@ class TestWebsiteExport(unittest.TestCase):
                 'Node title (%s) not found in "%s"' % (node.title, pageName))
 
 
-class BaseTestScormExport(unittest.TestCase):
+class BaseTestScormExport(utils.SuperTestCase):
     
     def doTest(self, withMeta):
         """Exports a package with meta data"""
@@ -84,10 +84,7 @@ class BaseTestScormExport(unittest.TestCase):
         package = Package.load('testPackage.elp')
         # Do the export
         outFilename = Path('scormtest.zip')
-        class MyConfig:
-            def __init__(self):
-                self.exePath = ""
-        exporter = ScormExport(MyConfig(),
+        exporter = ScormExport(self.app.config,
                                '../exe/webui/style/default', 
                                '../exe/webui/scripts', 
                                outFilename)
@@ -137,6 +134,10 @@ class TestScormMetaExport(BaseTestScormExport):
     def testMeta(self):
         """Tests exporting of scorm packages with meta data"""
         self.doTest(True)
+
+    def _setupConfigFile(self, configParser):
+        """Set up our config file nicely"""
+        BaseTestScormExport._setupConfigFile(self, configParser)
 
     def _testManifest(self, content):
         """Checks that there is meta data in 'content'"""

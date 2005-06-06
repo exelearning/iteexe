@@ -98,15 +98,13 @@ class Application:
         if sys.platform[:3] == "win":
             from exe.engine.winconfig import WinConfig
             self.config = WinConfig()
-    
         elif sys.platform[:6] == "darwin":
             from exe.engine.macconfig import MacConfig
             self.config = MacConfig()
-    
         else:
             from exe.engine.linuxconfig import LinuxConfig
             self.config = LinuxConfig()
-
+        log.debug("logging set up")
 
     def preLaunch(self):
         """

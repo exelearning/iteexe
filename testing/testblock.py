@@ -38,6 +38,8 @@ class TestBlock(SuperTestCase):
         # Pretend to add an idevice
         request = self._request(action='AddIdevice', object='1')
         self.mainpage.authoringPage.render(request)
+        ln = len(self.package.currentNode.idevices)
+        assert ln >= 1, 'Should be at least one idevice, only %s' % ln
         idevice = self.package.currentNode.idevices[0]
         ln = len(self.mainpage.authoringPage.blocks)
         assert ln >= 1, 'Should be at least one block, only %s' % ln

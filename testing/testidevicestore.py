@@ -22,25 +22,20 @@ from exe.engine.idevicestore import IdeviceStore
 from exe.engine.path         import Path
 import unittest
 import os
+import utils
 
 import gettext
 _   = gettext.gettext
 
 # ===========================================================================
 
-class MyConfig:
-    def __init__(self):
-        self.configDir = Path(".")
-
-class TestIdeviceStore(unittest.TestCase):
-    def setUp(self):
-        pass
+class TestIdeviceStore(utils.SuperTestCase):
 
     def testLoad(self):
         """
         Tests that idevices can be loaded
         """
-        store = IdeviceStore(MyConfig())
+        store = IdeviceStore(self.app.config)
         store.load()
         self.assert_(os.path.exists("idevices/generic.data"))
         os.remove("idevices/generic.data")

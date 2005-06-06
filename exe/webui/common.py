@@ -65,26 +65,26 @@ def footer():
 def hiddenField(name, value=u""):
     """Adds a hidden field to a form"""
     html  = u"<input type=\"hidden\" "
-    html += u"name=\""+name+u"\" "
-    html += u"id=\""+name+u"\" "
-    html += u"value=\""+value+u"\"/>\n"
+    html += u"name=\"%s\" " % name
+    html += u"id=\"%s\" " % name
+    html += u"value=\"%s\"/>\n" % value
     return html
 
 
 def textInput(name, value=u"", size=40, disabled=u""):
     """Adds a text input to a form"""
     html  = u"<input type=\"text\" "
-    html += u"name=\""+name+u"\" "
-    html += u"id=\""+name+u"\" "
-    html += u"value=\""+value+u"\" "
-    html += u"size=\""+unicode(size)+u"\" "
+    html += u"name=\"%s\" " % name
+    html += u"id=\"%s\" " % name
+    html += u"value=\"%s\" " % value
+    html += u"size=\"%s\" " % size
     html += disabled+u" />\n"
     return html
 
 
 def textArea(name, value="", disabled=""):
     """Adds a text area to a form"""
-    log.debug(u"textArea "+value)
+    log.debug(u"textArea %s" % value)
     html  = u'<textarea name="%s" ' % name
     html += u'cols="52" rows="8" %s>%s' % (disabled, value)
     html += u'</textarea><br/>'
@@ -93,12 +93,12 @@ def textArea(name, value="", disabled=""):
 
 def richTextArea(name, value="", width="100%", height=100):
     """Adds a FCKEditor to a form"""
-    log.debug(u"richTextArea "+value+", height="+unicode(height))
+    log.debug(u"richTextArea %s, height=%s" % (value, height))
     html  = u'<script type="text/javascript">\n'
     html += u'<!--\n'
-    html += u"    var editor = new FCKeditor('"+name+"', '"
-    html += unicode(width)+"', '"+unicode(height)+"', "
-    html += "'Armadillo', '"+value+"');\n"
+    html += u"    var editor = new FCKeditor('%s', '" % name
+    html += u"%s', '%s', " % (width, height)
+    html += u"'Armadillo', '%s');\n" % value
     html += u"    editor.BasePath = '/scripts/';\n"
     html += u"    editor.Config['CustomConfigurationsPath'] ="
     html += u" '/scripts/armadillo.js';\n"
@@ -110,13 +110,13 @@ def richTextArea(name, value="", width="100%", height=100):
 
 def image(name, value, width="", height=""):
     """Returns the XHTML for an image"""
-    log.debug(u"image "+value)
-    html  = u"<img id=\""+name+"\" "
+    log.debug(u"image %s" % value)
+    html  = u"<img id=\"%s\" " % name
     if width:
-        html += u"width=\""+width+"\" "
+        html += u"width=\"%s\" " % width
     if height:
-        html += u"height=\""+height+"\" "
-    html += u"src=\""+value+"\" "
+        html += u"height=\"%s\" " % height
+    html += u"src=\"%s\" " % value
     html += u"/>\n"
     return html
 

@@ -23,37 +23,26 @@ from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import unittest, sys
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
-
-# Choose which ConfigParser we'll use
-if sys.platform[:3] == "win":
-    from exe.engine.winconfig import WinConfig
-    Config = WinConfig
-elif sys.platform[:6] == "darwin":
-    from exe.engine.macconfig import MacConfig
-    Config = MacConfig
-else:
-    from exe.engine.linuxconfig import LinuxConfig
-    Config = LinuxConfig
+import utils
 
 # ===========================================================================
-class TestConfig(unittest.TestCase):
-    def setUp(self):
-        pass
+class TestConfig(utils.SuperTestCase):
+
+    def _setupConfigFile(self, configParser):
+        """
+        Setup our own config file
+        """
+        utils.SuperTestCase._setupConfigFile(self, configParser)
+        configParser.logging.root = 'ERROR'
+        configParser.logging.foo = 'DEBUG'
+        configParser.logging.foo = 'DEBUG'
 
     def testSetupLogging(self):
         """
         Tests that the correct logging directory is made
         """
-        # Write a sample config file
-        settings = ConfigParser()
-        settings.addSection('logging')
-        settings.logging.root = 'DEBUG'
-        settings.write('test.conf')
         # See if we can read it
         Config._getConfigPathOption  = lambda s: ['test.conf']
-        myconfig = Config()
-        open("test.log", "w").write("")
-        myconfig.setupLogging("test.log")
         rootLog = logging.getLogger()
         fooLog  = logging.getLogger("foo")
         barLog  = logging.getLogger("bar")

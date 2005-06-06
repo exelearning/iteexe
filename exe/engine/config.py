@@ -81,7 +81,6 @@ class Config:
         # Now we are ready to server the application
         self.loadSettings()
         self.setupLogging("exe.log")
-        log.debug("logging set up")
         self.loadStyles()
 
     def _overrideDefaultVals(self):
@@ -156,8 +155,6 @@ class Config:
             return getattr(self, option)
         self.configParser.defaultValue = defVal
         # System Section
-        import pdb
-        pdb.set_trace()
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir      = Path(system.webDir)
