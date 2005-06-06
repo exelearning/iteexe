@@ -38,3 +38,4 @@ user_pref("security.OCSP.signingCA", "Builtin Object Token:IPS CLASE1 root");
 user_pref("security.warn_submit_insecure", false);
 user_pref("signed.applets.codebase_principal_support", true);
 user_pref("update.severity", 2);
+user_pref("security.checkloaduri", false);

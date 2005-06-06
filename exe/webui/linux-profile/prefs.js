@@ -37,3 +37,4 @@ user_pref("security.warn_leaving_secure", false);
 user_pref("security.warn_submit_insecure", false);
 user_pref("security.warn_viewing_mixed", false);
 user_pref("signed.applets.codebase_principal_support", true);
+user_pref("security.checkloaduri", false);
