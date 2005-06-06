@@ -42,7 +42,7 @@
                     <menuseparator/>
                 <menu id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scormMeta')"/>
+                    <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm')"/>
                     <menuitem label="IMS Content 1.3" oncommand="exportPackage('ims')"/>
                     <menuitem label="Web Site" key="file-export-website-key" accesskey="w" oncommand="exportPackage('webSite')"/>
                   </menupopup>
