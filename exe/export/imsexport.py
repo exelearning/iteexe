@@ -205,7 +205,7 @@ class IMSPage(Page):
         html += title.renderView(self.node.package.style)
 
         for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(idevice)
+            block = g_blockFactory.createBlock(None, idevice)
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
