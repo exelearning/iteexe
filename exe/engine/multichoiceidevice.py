@@ -70,7 +70,18 @@ When designing a MCQ test consider the following:
 <li> Avoid grammar language and question structures that might provide 
      clues</li>
 </ul>
- """), u"multichoice", "")
+ """), _(u"""When building an MCQ consider the following:
+<ul>
+<li>	Language – use phrases that learners are familiar with and have 
+encountered in their study
+<li>	Keep responses concise 
+<li>	There should be some consistency between the stem and the responses
+<li>	Provide enough options to challenge learners to think about their response
+<li>	Try to make sure that correct responses are not more detailed then the 
+distractors
+<li>	Distractors should be incorrect but plausible
+</ul>
+"""), u"multichoice")
                          
         self.question        = question
         self.hint            = ""

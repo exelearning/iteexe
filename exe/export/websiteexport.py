@@ -64,31 +64,31 @@ class WebsitePage(object):
         """
         Returns an XHTML string rendering this page.
         """
-        html  = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
-        html += "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
-        html += " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(content.css);\n"
-        html += "@import url(nav.css);</style>\n"
+        html  = u"<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
+        html += u"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
+        html += u" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<head>\n"
+        html += u"<style type=\"text/css\">\n"
+        html += u"@import url(content.css);\n"
+        html += u"@import url(nav.css);</style>\n"
         for idevice in self.node.idevices:
             if idevice.title == "Quiz Test":
-                html += "<script language=\"javascript\" "
-                html += "src=\"quizForWeb.js\"></script>\n"
+                html += u"<script language=\"javascript\" "
+                html += u"src=\"quizForWeb.js\"></script>\n"
                 break
             
-        html += "<title>"+ self.node.title +"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\" />\n";
-        html += "</head>\n"
-        html += "<body>\n"
+        html += u"<title>%s</title>\n" % self.node.title
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=UTF-8\" />\n";
+        html += u"</head>\n"
+        html += u"<body>\n"
         
         # add left navigation html
-        html += "<div id=\"navcontainer\">\n"
+        html += u"<div id=\"navcontainer\">\n"
         html += self.leftNavigationBar(pages)
-        html += "</div>\n"
-        html += "<div id=\"main\">\n"
+        html += u"</div>\n"
+        html += u"<div id=\"main\">\n"
 
         style = self.node.package.style
         html += TitleBlock(None, self.node._title).renderView(style)
@@ -101,9 +101,9 @@ class WebsitePage(object):
             html += block.renderView(style)
         
         html += self.getNavigationLink(prevPage, nextPage)
-        html += "</div>\n"
-        html += "</body></html>\n"
-        return html
+        html += u"</div>\n"
+        html += u"</body></html>\n"
+        return html.encode('utf8')
 
         
     def leftNavigationBar(self, pages):

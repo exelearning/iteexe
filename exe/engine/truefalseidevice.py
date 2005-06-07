@@ -57,7 +57,10 @@ class TrueFalseIdevice(Idevice):
         Idevice.__init__(self,
                          _(u"True-False Question"),
                          _(u"University of Auckland"),
-                         u"", u"", u"multichoice")
+                         _(u"""True/false questions present a statement where 
+the learner must decide if the statement is true. This type of question works 
+well for factual information and information that lends itself to either/or 
+responses."""), u"", u"multichoice")
                          
         self.hintInstruc     = _(u"Type the question's hint here.")
         self.questions         = []
