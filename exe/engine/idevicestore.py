@@ -114,7 +114,7 @@ class IdeviceStore:
         self.extended.append(TrueFalseIdevice())
         self.extended.append(QuizTestIdevice())
 
-        defaultImage = self.config.webDir/"images"/"sunflowers.jpg"
+        defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
   
 
