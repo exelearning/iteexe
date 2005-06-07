@@ -80,30 +80,19 @@ class Manifest(object):
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         """ % manifestId 
 
-        xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" "
-            
-        xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\""
         xmlStr += "\n "
         xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
         xmlStr += "imscp_v1p1 imscp_v1p1.xsd "        
         xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
         xmlStr += "> \n"
         xmlStr += "<metadata> \n"
-        xmlStr += " <schema>ADL SCORM</schema> \n"
-        xmlStr += "<schemaversion>CAM 1.3</schemaversion> \n"
-
-        title  = unicode(self.package.root.title)
-        author = self.package.author
-        desc   = self.package.description
-        xmlStr += "<dc:title>"+title+"</dc:title>\n"
-        xmlStr += "<dc:creator>"+author+"</dc:creator>\n"
-        xmlStr += "<dc:description>"+desc+"</dc:description>\n"
-        xmlStr += "<dc:language>en-US</dc:language>\n"
-
+        xmlStr += " <schema>IMS Content</schema> \n"
+        xmlStr += "<schemaversion>1.1.3</schemaversion> \n"
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
+        title  = unicode(self.package.root.title)
         xmlStr += "<title>"+title+"</title>\n"
         
         depth = 0
@@ -130,7 +119,7 @@ class Manifest(object):
             
     def genItemResStr(self, page):
         """
-        Returning xlm string for items and resources
+        Returning xml string for items and resources
         """
         itemId   = "ITEM-"+unicode(self.idGenerator.generate())
         resId    = "RES-"+unicode(self.idGenerator.generate())
@@ -144,13 +133,10 @@ class Manifest(object):
         self.resStr += "<resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
 
-        self.resStr += "adlcp:scormType=\"sco\" "
         self.resStr += "href=\""+filename+"\"> \n"
         self.resStr += """\
     <file href="%s"/>
-    <file href="content.css"/>
-    <file href="APIWrapper.js"/>
-    <file href="SCOFunctions.js"/>""" %filename
+    <file href="content.css"/>""" %filename
         self.resStr += "\n"
         fileStr = ""
 
@@ -213,7 +199,6 @@ class IMSPage(Page):
 
         html += "</div>\n"
         html += "</div>\n"
-        html += "<script language=\"javascript\">\n"
         html += "</body></html>\n"
         return html
 
@@ -270,21 +255,23 @@ class IMSExport(object):
         # Copy the scripts
         if (os.path.isfile(self.scriptsDir+ "/quizForIMS.js") and 
             os.path.isfile(self.scriptsDir+ "/quizForWeb.js")):
-            self.scriptsDir.copylist(('APIWrapper.js', 
-                                      'SCOFunctions.js',
-                                      'libot_drag.js',
+            self.scriptsDir.copylist(('libot_drag.js',
                                       'common.js',
                                       'quizForWeb.js', 
-                                      'quizForIMS.js'), outputDir)
+                                      'quizForIMS.js',
+                                      'imscp_v1p1.xsd',
+                                      'ims_xml.xsd'), outputDir)
             os.remove(self.scriptsDir+ "/quizForWeb.js")
             os.remove(self.scriptsDir+ "/quizForIMS.js")
         else:
-            self.scriptsDir.copylist(('APIWrapper.js', 
-                                      'SCOFunctions.js', 
-                                      'libot_drag.js',
+            self.scriptsDir.copylist(('libot_drag.js',
+                                      'imscp_v1p1.xsd',
+                                      'ims_xml.xsd',
                                       'common.js'), outputDir)
 
-        # Zip up the scorm package
+
+
+        # Zip up the package
         zipped = ZipFile(self.filename, "w")
         for scormFile in outputDir.files():
             zipped.write(scormFile,
