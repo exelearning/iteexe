@@ -61,6 +61,8 @@ _(u"This is a free text field general learning content can be entered."),
         Upgrades the node from version 1 (not released) to 2
         Use new Field classes
         """
-        self.content = TextAreaField("content", self.content)
+        self.content = TextAreaField("content", 
+_(u"This is a free text field general learning content can be entered."),
+                                     self.content)
 
 # ===========================================================================
