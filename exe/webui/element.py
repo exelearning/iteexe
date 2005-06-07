@@ -193,19 +193,39 @@ class ImageElement(Element):
         """
         log.debug("renderEdit")
 
+        if self.field.imageName == "":
+            self.field.setDefaultImage()
 
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
-        html += self.renderPreview()
+        html += u"<img id=\"img"+self.id+"\" "
+        html += u"onclick=\"addImage('"+self.id+"');\" "
+        html += u"src=\"resources/"+self.field.imageName+"\" "
+        if self.field.width:
+            html += u"width=\""+self.field.width+"\" " 
+        if self.field.height:
+            html += u"height=\""+self.field.height+"\" " 
+        html += u"onload=\"imageChanged('"+self.id+"');\" "
+        html += u"/>\n"
         html += u"<br/>\n"
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")
         html += u"</a><br/>\n"
         html += u"<b>Display as:</b>\n"
-        html += common.textInput("width"+self.id, self.field.width, size=5)
+        html += u"<input type=\"text\" "
+        html += u"id=\"width"+self.id+"\" " 
+        html += u"name=\"width"+self.id+"\" " 
+        html += u"value=\"%s\" " % self.field.width
+        html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
+        html += u"size=\"5\" />\n"
         html += u"x\n"
-        html += common.textInput("height"+self.id, self.field.height, size=5)
+        html += u"<input type=\"text\" "
+        html += u"id=\"height"+self.id+"\" " 
+        html += u"name=\"height"+self.id+"\" " 
+        html += u"value=\"%s\" " % self.field.height
+        html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
+        html += u"size=\"5\" />\n"
         html += u"(blank for original size) <br/>\n"
         html += common.hiddenField("path"+self.id)
         html += u"<br/>\n"

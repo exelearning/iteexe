@@ -113,6 +113,7 @@ class TextAreaField(Field):
         self.content = content
 
 # ===========================================================================
+
 class ImageField(Field):
     """
     A Generic iDevice is built up of these fields.  Each field can be
@@ -122,8 +123,8 @@ class ImageField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width        = "120px"
-        self.height       = "120px"
+        self.width        = ""
+        self.height       = ""
         self.imageName    = ""
         self.defaultImage = ""
 
@@ -150,7 +151,7 @@ class ImageField(Field):
             if self.imageName:
                 package.deleteResource(self.imageName)
 
-            self.imageName = self.id + "_" + unicode(resourceFile.basename())
+            self.imageName = self.id + u"_" + unicode(resourceFile.basename())
             package.addResource(resourceFile, self.imageName)
 
         else:

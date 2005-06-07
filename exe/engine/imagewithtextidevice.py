@@ -66,8 +66,6 @@ the piston with a brief textual summary of the key aspects of each visual.
         self.image = ImageField(_(u"Image"), 
                                 _(u""))
         self.image.idevice      = self
-        self.image.width        = "150px"
-        self.image.height       = "150px"
         self.image.defaultImage = defaultImage
 
         self.text = TextAreaField(_(u"Text"))

@@ -34,13 +34,50 @@ function addImage(elementId) {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+elementId);
         var image = document.getElementById('img'+elementId);
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        var path  = document.getElementById('path'+elementId);
         path.value = fp.file.path;
         image.src  = 'file://'+fp.file.path;
     }
 }
 
+function imageChanged(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    width.value  = image.width;
+    height.value = image.height;
+}
+
+function changeImageWidth(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('height');
+    if (width.value) {
+        image.width  = width.value;
+    } else {
+        image.removeAttribute('width');
+        width.value  = image.width;
+    }
+    height.value = image.height;
+}
+
+function changeImageHeight(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('width');
+    if (height.value) {
+        image.height = height.value;
+    } else {
+        image.removeAttribute('height');
+        height.value = image.height;
+    }
+    width.value  = image.width;
+}
 
 function showMe(ident, w, h)
 {

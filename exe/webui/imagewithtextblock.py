@@ -80,6 +80,7 @@ class ImageWithTextBlock(Block):
         html += self.textElement.renderPreview()
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"
+        html += self.renderViewButtons()
         html += u"</div>\n"
         return html
     
