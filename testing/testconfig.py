@@ -33,6 +33,14 @@ class TestConfig(utils.SuperTestCase):
         Setup our own config file
         """
         utils.SuperTestCase._setupConfigFile(self, configParser)
+        # Create an empty dir to stick the config file
+        tmp = Path('tmp')
+        if not tmp.exists():
+            tmp.mkdir()
+        logfn = tmp/'exe.log'
+        if logfn.exists():
+            logfn.remove()
+        configParser.system.configDir = tmp
         configParser.logging.root = 'ERROR'
         configParser.logging.foo = 'DEBUG'
         configParser.logging.foo = 'DEBUG'
@@ -63,7 +71,7 @@ class TestConfig(utils.SuperTestCase):
         results = ["root ERROR software", "root CRITICAL you can", 
                    "foo DEBUG distribute", "foo INFO is free", 
                    "foo ERROR and/or modify", "bar ERROR Massachusetts"]
-        resultFile = open("test.log")
+        resultFile = open("tmp/exe.log")
         i = 0
         for line in resultFile.readlines():
             self.assertEqual(line[24:].strip(), results[i])
