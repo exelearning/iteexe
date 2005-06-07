@@ -260,12 +260,14 @@ class IMSExport(object):
                                       'quizForWeb.js', 
                                       'quizForIMS.js',
                                       'imscp_v1p1.xsd',
+                                      'imsmd_v1p2p2.xsd',
                                       'ims_xml.xsd'), outputDir)
             os.remove(self.scriptsDir+ "/quizForWeb.js")
             os.remove(self.scriptsDir+ "/quizForIMS.js")
         else:
             self.scriptsDir.copylist(('libot_drag.js',
                                       'imscp_v1p1.xsd',
+                                      'imsmd_v1p2p2.xsd',
                                       'ims_xml.xsd',
                                       'common.js'), outputDir)
 
