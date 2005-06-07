@@ -141,6 +141,7 @@ class ImageField(Field):
         Store the image pointed to by content in the package
         Needs to be in a package to work.
         """
+        log.debug(u"setImage "+unicode(imagePath))
         resourceFile = Path(imagePath)
 
         if resourceFile.isfile():
