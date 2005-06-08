@@ -249,11 +249,13 @@ class Package(Persistable):
         getattr(self, 'editor').delete()
         delattr(self, 'draft')
         delattr(self, 'editor')
+        # Need to renumber nodes because idevice node and draft nodes are gone
+        self._nextNodeId = 0
         def renumberNode(node):
             """
             Gives the old node a number
             """
-            node._id = unicode(int(node.id) - 2)
+            node._id = self._regNewNode(node)
             for child in node.children:
                 renumberNode(child)
         renumberNode(self.root)
