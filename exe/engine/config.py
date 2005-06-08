@@ -80,7 +80,7 @@ class Config:
         self._writeDefaultConfigFile()
         # Now we are ready to server the application
         self.loadSettings()
-        self.setupLogging("exe.log")
+        self.setupLogging()
         self.loadStyles()
 
     def _overrideDefaultVals(self):
@@ -177,11 +177,11 @@ class Config:
         if not self.configDir.exists():
             self.configDir.mkdir()
 
-    def setupLogging(self, logFile):
+    def setupLogging(self):
         """
         setup logging file
         """
-        hdlr   = logging.FileHandler(self.configDir/logFile)
+        hdlr   = logging.FileHandler(self.configDir/'exe.log')
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log    = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
