@@ -87,7 +87,7 @@ class Manifest(object):
         xmlStr += "> \n"
         xmlStr += "<metadata> \n"
         xmlStr += " <schema>IMS Content</schema> \n"
-        xmlStr += "<schemaversion>1.1.3</schemaversion> \n"
+        xmlStr += " <schemaversion>1.1.3</schemaversion> \n"
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
