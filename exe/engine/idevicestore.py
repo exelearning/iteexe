@@ -107,6 +107,7 @@ class IdeviceStore:
         from exe.engine.casestudyidevice      import CasestudyIdevice
         from exe.engine.truefalseidevice      import TrueFalseIdevice
         from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
+        from exe.engine.quiztestidevice       import QuizTestIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -121,6 +122,8 @@ class IdeviceStore:
 
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
+
+        self.extended.append(QuizTestIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:
