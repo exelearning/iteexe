@@ -8,3 +8,5 @@ recursive-include exe/webui/scripts *
 recursive-include exe/webui/templates *
 recursive-include exe/webui/linux-profile *
 recursive-include exe/webui/firefox *
+global-exclude */.svn/*
+global-exclude */.xvpics/*
