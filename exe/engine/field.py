@@ -145,6 +145,11 @@ class ImageField(Field):
         log.debug(u"setImage "+unicode(imagePath))
         resourceFile = Path(imagePath)
 
+        assert(self.idevice.parentNode,
+               'Image '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
         if resourceFile.isfile():
             package = self.idevice.parentNode.package
 

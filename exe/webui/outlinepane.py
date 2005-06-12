@@ -79,7 +79,7 @@ class OutlinePane(Renderable):
         node = self.package.findNode(parentNodeId)
         if node is not None:
             self.package.currentNode = newNode = node.createChild()
-            client.call('XHAddChildTreeItem', newNode.id, unicode(newNode.title))
+            client.call('XHAddChildTreeItem', newNode.id, newNode.title)
 
 
     def handleDelNode(self, client, confirm, nodeId):

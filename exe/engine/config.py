@@ -106,7 +106,7 @@ class Config:
             for optionName in optionNames:
                 defaultVal = getattr(self, optionName)
                 self.configParser.setdefault(sectionName, optionName, defaultVal)
-        self.configParser.setdefault('logging', 'root', 'DEBUG')
+        self.configParser.setdefault('logging', 'root', 'ERROR')
 
     def __setConfigPath(self):
         """

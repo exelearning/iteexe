@@ -29,6 +29,7 @@ import os
 import sys
 import logging
 import gettext
+import shutil
 from exe.engine.path import Path
 from urllib import quote
 _   = gettext.gettext
@@ -58,8 +59,7 @@ def launchBrowser(config, packageName):
     else:
         # TODO: Should be using the profile dir from config, not overrideing it!
         profile = Path(os.environ["HOME"])/'.exe/linux-profile'
-        if not profile.exists():
-            createProfile(config)
+        createProfile(config)
 
         log.info(u"profile "+profile)
         launchString = ('"%s" -profile "%s" %s &' % 
@@ -76,4 +76,5 @@ def createProfile(config):
              config.webDir+"/linux-profile to "+appDir+"/linux-profile")
     if not appDir.exists():
         appDir.mkdir()
+    shutil.rmtree(appDir/"linux-profile", True)
     (config.webDir/'linux-profile').copytree(appDir/'linux-profile')

@@ -42,7 +42,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
     nonpersistant      = ['resourceDir', 'config', 'filename']
 
     def __init__(self, name):
@@ -50,9 +50,10 @@ class Package(Persistable):
         Initialize 
         """
         log.debug(u"init " + repr(name))
-        self._nextNodeId   = 0
+        self._nextIdeviceId = 0
+        self._nextNodeId    = 0
         # For looking up nodes by ids
-        self._nodeIdDict   = {} 
+        self._nodeIdDict    = {} 
 
         self.levelNames    = [_(u"Topic"), _(u"Section"), _(u"Unit")]
         self.name          = name
@@ -117,10 +118,6 @@ class Package(Persistable):
 
         # Store our new filename for next file|save
         self.filename = filename
-
-        # Add the extension if its not already there
-        if not filename.lower().endswith(u'.elp'):
-            filename += u'.elp'
 
         log.debug(u"Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
@@ -241,6 +238,12 @@ class Package(Persistable):
         return id_
 
 
+    def getNewIdeviceId(self):
+        id_ = unicode(self._nextIdeviceId)
+        self._nextIdeviceId += 1
+        return id_
+
+
     def upgradeToVersion2(self):
         """
         Called to upgrade from 0.4 release
@@ -260,5 +263,8 @@ class Package(Persistable):
                 renumberNode(child)
         renumberNode(self.root)
 
+
+    def upgradeToVersion3(self):
+        self._nextIdeviceId = 0
     
 # ===========================================================================

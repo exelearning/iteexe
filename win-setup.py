@@ -7,7 +7,7 @@ from distutils.core import setup
 import py2exe
 from exe.engine import version
 
-g_files = { '.': ["exe/exe.conf", "README", "eXe_icon.ico", 
+g_files = { '.': ["README", "eXe_icon.ico", 
                   "doc/eXe-tutorial.elp", "exeLicense.txt"]}
 g_oldBase = "exe/webui"
 g_newBase = "."
@@ -30,6 +30,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/css",
            "exe/webui/templates",
            "exe/webui/images",
+           "exe/webui/docs",
            "exe/webui/scripts"])
 
 setup(console=["exe/exe"],

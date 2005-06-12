@@ -72,43 +72,34 @@ class Manifest(object):
         """
         manifestId = unicode(self.idGenerator.generate())
         orgId      = unicode(self.idGenerator.generate())
-        
-        xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
-        <manifest identifier="%s" 
-        xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
-        xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        """ % manifestId 
+       
+        # Add the namespaces 
+        xmlStr  = u'<?xml version="1.0" encoding="UTF-8"?>\n'
+        xmlStr += u'<manifest identifier="'+manifestId+'" '
+        xmlStr += u'xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" '
+        xmlStr += u'xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" '
+        xmlStr += u'xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" '
+        xmlStr += u'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+        xmlStr += u"xsi:schemaLocation=\"http://www.imsproject.org/xsd/"
+        xmlStr += u"imscp_rootv1p1p2 imscp_rootv1p1p2.xsd "        
+        xmlStr += u"http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 "
+        xmlStr += u"imsmd_rootv1p2p1.xsd "
+        xmlStr += u"http://www.adlnet.org/xsd/adlcp_rootv1p2 "
+        xmlStr += u"adlcp_rootv1p2.xsd\" "
+        xmlStr += u"> \n"
 
-        xmlStr += "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" "
-            
-        # Add the scorm type
-        xmlStr += "xmlns:adlcp=\"http://www.adlnet.org/xsd/adlcp_rootv1p2\""
-        xmlStr += "\n "
-
-        xmlStr += "xsi:schemaLocation=\"http://www.imsglobal.org/xsd/"
-        xmlStr += "imscp_v1p1 imscp_v1p1.xsd "        
-        xmlStr += "http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd\""
-        xmlStr += "> \n"
-        xmlStr += "<metadata> \n"
-        xmlStr += " <schema>ADL SCORM</schema> \n"
-        xmlStr += "<schemaversion>CAM 1.3</schemaversion> \n"
+        # Metadata
+        xmlStr += u"<metadata> \n"
+        xmlStr += u" <schema>ADL SCORM</schema> \n"
+        xmlStr += u" <schemaversion>CAM 1.2</schemaversion> \n"
 
         title  = unicode(self.package.root.title)
 
-        # Metadata
-        author = self.package.author
-        desc   = self.package.description
-        xmlStr += "<dc:title>"+title+"</dc:title>\n"
-        xmlStr += "<dc:creator>"+author+"</dc:creator>\n"
-        xmlStr += "<dc:description>"+desc+"</dc:description>\n"
-        xmlStr += "<dc:language>en-US</dc:language>\n"
-
-        xmlStr += "</metadata> \n"
-        xmlStr += "<organizations default=\""+orgId+"\">  \n"
-        xmlStr += "<organization identifier=\""+orgId
-        xmlStr += "\" structure=\"hierarchical\">  \n"
-        xmlStr += "<title>"+title+"</title>\n"
+        xmlStr += u"</metadata> \n"
+        xmlStr += u"<organizations default=\""+orgId+"\">  \n"
+        xmlStr += u"<organization identifier=\""+orgId
+        xmlStr += u"\" structure=\"hierarchical\">  \n"
+        xmlStr += u"<title>"+title+"</title>\n"
         
         depth = 0
         for page in self.pages:
@@ -149,7 +140,7 @@ class Manifest(object):
         self.resStr += "type=\"webcontent\" "
 
         # Add the scorm type
-        self.resStr += "adlcp:scormType=\"sco\" "
+        self.resStr += "adlcp:scormtype=\"sco\" "
 
         self.resStr += "href=\""+filename+"\"> \n"
         self.resStr += """\
@@ -327,7 +318,10 @@ class ScormExport(object):
         # Copy the scripts
         if (os.path.isfile(self.scriptsDir+ "/quizForScorm.js") and 
             os.path.isfile(self.scriptsDir+ "/quizForWeb.js")):
-            self.scriptsDir.copylist(('APIWrapper.js', 
+            self.scriptsDir.copylist(('imscp_rootv1p1p2.xsd',
+                                      'imsmd_rootv1p2p1.xsd',
+                                      'adlcp_rootv1p2.xsd',
+                                      'APIWrapper.js', 
                                       'SCOFunctions.js',
                                       'libot_drag.js',
                                       'common.js',
@@ -337,6 +331,9 @@ class ScormExport(object):
             os.remove(self.scriptsDir+ "/quizForScorm.js")
         else:
             self.scriptsDir.copylist(('APIWrapper.js', 
+                                      'imscp_rootv1p1p2.xsd',
+                                      'imsmd_rootv1p2p1.xsd',
+                                      'adlcp_rootv1p2.xsd',
                                       'SCOFunctions.js', 
                                       'libot_drag.js',
                                       'common.js'), outputDir)

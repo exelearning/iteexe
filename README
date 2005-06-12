@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 SUPPORT
 =======
-This is an early alpha release of the eXe project.  It is intended
+This is an early release of the eXe project.  It is intended
 to elicit feedback from the user community. 
 It would be a bad idea to invest a lot of time in creating a 
 large package with this release.
@@ -46,12 +46,6 @@ KNOWN BUGS
   (by dbl clicking on it) fails with the message "No such resource".
 * The emphasis setting in the iDevice editor is ignored
 * Can't delete or edit user-defined iDevices
-* eXe sometimes stop responding, try clicking on the Refresh button when 
-  this happens
-* Our SCORM export works ok for transferring content, but still has some
-  problems for tracking students.  Separate SCORM export options are
-  provided for WebCT and Blackboard due to problems encountered in
-  importing our standard SCORM packages into those system.
 
 
 WINDOWS
@@ -59,12 +53,12 @@ WINDOWS
 
 INSTALLATION
 ------------
-- Download exeinstall.exe and double click it then follow the instructions. 
+- Download exe_install_windows.exe and double click it then follow the instructions. 
 - You will be asked what directory to install eXe in.  The default will normally
   be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under 
   "All Programs".
-- If you leave "Run eXe 0.4" selected the installer will launch eXe
+- If you leave "Run eXe 0.5" selected the installer will launch eXe
   once it is installed.
 
 
@@ -96,7 +90,7 @@ The eXe Linux install consists of two RPMs which have been tested
 to work on Fedora Core 3.  (They may work on other RPM based distros
 but that hasn't been tested.)
 
-* exe-0.4-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-0.5-1.noarch.rpm - includes the eXe editor and bundled Firefox
 * exe-twisted-2.0-1.noarch.rpm - includes Twisted, ZopeInterface and Nevow used for the webserver by eXe
 
 From the command line type exe to start.
@@ -116,7 +110,7 @@ To build exe you'll need to install the following packages:
 * firefox - http://www.mozilla.org/products/firefox
 
 unzip the source tarball:
-tar xzvf exe-source-0.4.tgz
+tar xzvf exe-source-0.5.tgz
 
 To run from source (on linux):
 cd exe

@@ -23,6 +23,9 @@ TitleIdevice: has the title for a Node
 
 import logging
 from exe.engine.idevice import Idevice
+# TODO: This is a big mean hack to get 0.5 out on time... toUnicode should be in
+# some lower level library
+from path import toUnicode
 import gettext
 log = logging.getLogger(__name__)
 _ = gettext.gettext
@@ -33,7 +36,7 @@ class TitleIdevice(Idevice):
     TitleIdevice: has the title for a Node
     Not your normal iDevice
     """
-    def __init__(self, parentNode, title=""):
+    def __init__(self, parentNode, title=u""):
         """Initialize"""
         log.debug(u"__init__ parentNode="+parentNode.id+
                   ", title="+title)
@@ -42,14 +45,17 @@ class TitleIdevice(Idevice):
         self.edit         = False
         self.title        = title
 
-
     def __str__(self):
         """Return as a string"""
+        return self.__unicode__().encode('utf8')
+
+    def __unicode__(self):
+        """Return as a string"""
         if self.title:
-            return self.title
+            return toUnicode(self.title)
         else:
-            return self.parentNode.package.levelName(
-                                    self.parentNode.level - 1)
+            return toUnicode(self.parentNode.package.levelName(
+                             self.parentNode.level - 1))
 
     def setTitle(self, title):
         """Set the title, if it's been changed from the default"""

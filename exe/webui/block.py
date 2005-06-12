@@ -62,13 +62,6 @@ class Block(Renderable):
         """
         log.debug(u"process id="+self.id)
         
-        #if "action" in request.args:
-            #if request.args["action"][0] == u"PreviewAll":
-                #self.processDone(request)
-
-            #elif request.args["action"][0] == u"EditAll":
-                #self.processEdit(request)
-            
         if u"object" in request.args and request.args[u"object"][0] == self.id:
             self.package.isChanged = 1
             if request.args[u"action"][0] == u"done":               
@@ -268,7 +261,7 @@ class Block(Renderable):
             html += u"<img class=\"iDevice_icon\" "
             html += u" src=\"/style/"+style+"/"+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
-        html + self.idevice.title
+        html += self.idevice.title
         html += u"</span>\n"
         html += self.renderViewContent()
         html += self.renderViewButtons()
@@ -286,7 +279,7 @@ class Block(Renderable):
             html += u"<img class=\"iDevice_icon\" "
             html += u" src=\""+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
-        html + self.idevice.title
+        html += self.idevice.title
         html += u"</span>\n"
         html += self.renderViewContent()
         html += u"</div>\n"

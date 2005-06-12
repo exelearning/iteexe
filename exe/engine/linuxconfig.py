@@ -42,7 +42,7 @@ class LinuxConfig(Config):
         self.webDir      = Path("/usr/share/exe")
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
-        browserPath = self.exePath/'firefox/firefox'
+        browserPath = self.webDir/'firefox/firefox'
         if browserPath.isfile():
             self.browserPath = browserPath
         self.styles      = []

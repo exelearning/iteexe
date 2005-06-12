@@ -44,6 +44,7 @@ delivered."""), "", "")
         self.content = TextAreaField("content", 
 _(u"This is a free text field general learning content can be entered."),
                                      content)
+        self.content.idevice = self
         if content:
             self.edit = False
 

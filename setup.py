@@ -7,7 +7,7 @@ from distutils.command.install import install
 from distutils.core            import setup
 from exe.engine import version
 
-g_files = { '/etc/exe': ["exe/exe.conf"], '/usr/share/exe': ["README","doc/eXe-tutorial.elp"]}
+g_files = { '/usr/share/exe': ["README","doc/eXe-tutorial.elp"]}
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
@@ -28,6 +28,7 @@ def dataFiles(dirs):
 
 dataFiles(["exe/webui/style",
            "exe/webui/css",
+           "exe/webui/docs",
            "exe/webui/images",
            "exe/webui/scripts",
            "exe/webui/templates",

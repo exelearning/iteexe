@@ -21,6 +21,12 @@ a:hover { text-decoration: underline;
 	  color: #B34700;
 }
 
+.popupDiv {
+    background-color: #FFF;
+    border: 1px solid #000;
+    padding: 4px 4px 4px 10px;
+    margin-left: 15px;
+}
 
 p#nodeTitle { 
     color: #A1B386;

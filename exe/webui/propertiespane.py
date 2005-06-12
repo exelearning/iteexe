@@ -73,13 +73,16 @@ class PropertiesPane(Renderable):
             self.package.style = request.args["style"][0]
             
         if "level1" in request.args:    
-            self.package.levelNames[0] = request.args["level1"][0]
+            self.package.levelNames[0] = unicode(request.args["level1"][0],
+                                                 'utf8')
             
         if "level2" in request.args:    
-            self.package.levelNames[1] = request.args["level2"][0]
+            self.package.levelNames[1] = unicode(request.args["level2"][0],
+                                                 'utf8')
             
         if "level3" in request.args:    
-            self.package.levelNames[2] = request.args["level3"][0]
+            self.package.levelNames[2] = unicode(request.args["level3"][0],
+                                                 'utf8')
         
             
     def render(self):

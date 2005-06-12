@@ -10,6 +10,8 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	}
 
+
+
 a:link, a:visited {
 	text-decoration: none;
 	color: #00468C;
@@ -18,66 +20,16 @@ a:link, a:visited {
 a:hover {
 	color: #8B7B73;
 	}
-	   
-/* MAIN HEADER */
 
-.header {
-	background-color: #125E92;
+#main {
+	padding: 18px;
+	margin: 10px 10px 10px 180px;
+	background-color: #EDEFF0;
+	line-height: 140%;
 	}
-	
-.bar {
-	background-color: #8B7B73;
-	text-align: right;
-	border-top: 1px solid #fff;
-	}
-	
-.bar a:link, .bar a:visited {
-	font-size: small;
-	text-decoration: none;
-	color: #CCC !important;
-	padding-left: 5px;
-	padding-right: 5px;
-	}
-	
-.bar a:hover {
-	color: #F1F7FF !important;
-	}
-	
-.header_title {
-	color: #000;
-	}
-	
-.header_nav a {
-	border-left: 1px solid #fff;
-	}
-	
+	   
 #navtpr {
 	color: #000;
-	}
-
-/* ABOUT page NAV see: http://www2.auckland.ac.nz/cfdl/nursing704/index.html for example*/
-
-#about_nav {
-	display: block;
-	font-size: medium;
-	font-weight: bolder;
-	color: #737373;
-	border-bottom: 1px solid #CCC;
-	}
-
-#about_nav a {
-	font-size: medium;
-	}
-
-#about_nav_sub {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	}
-
-#about_nav_sub a {
-	display: block;
-	padding-top: 2px;
-	padding-bottom: 2px;
 	}
 
 /* LEFT-HAND NAVIGATION */

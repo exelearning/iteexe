@@ -47,8 +47,10 @@ class GenericBlock(Block):
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        for element in self.elements:
-            element.process(request)
+        if (u"action" not in request.args or
+            request.args[u"action"][0] != u"delete"):
+            for element in self.elements:
+                element.process(request)
 
 
     def renderEdit(self, style):

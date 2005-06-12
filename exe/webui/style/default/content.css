@@ -14,6 +14,18 @@ body {
     background: #FFFFFF;
 }
 
+
+
+form > #main {
+	margin: 10px 10px 10px 10px;
+        padding: 18px;
+	margin: 10px 10px 10px 10px;
+	background-color: #EDEFF0;
+	line-height: 140%;
+
+	} // makes style apply to authoring in eXe environment by removing left indent
+
+
 /* -- style the node title on each page -- */
 
 div#nodeDecoration {
@@ -66,13 +78,10 @@ p.reading_feedback {
     font-style: italic;
 }
 
-#main {
-	padding: 18px;
-	margin: 10px 10px 10px 180px;
-	background-color: #EDEFF0;
-	line-height: 140%;
-	}
+.popupDiv {
+    background-color: #C0C0C0;
+    border: 1px solid #000;
+    padding: 4px 4px 4px 10px;
+    margin-left: 15px;
+}
 
-form > #main {
-	margin: 10px 10px 10px 10px;
-	} // makes style apply for authoring page by removing left indent

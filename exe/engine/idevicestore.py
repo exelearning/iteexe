@@ -41,10 +41,17 @@ class IdeviceStore:
         """
         # TODO I originally planned Extended and Generic iDevices to
         # be handled polymorphically, need to reconsider this
-        self.config    = config
-        self.extended  = []
-        self.generic   = []
-        self.listeners = []
+        self._nextIdeviceId = 0
+        self.config         = config
+        self.extended       = []
+        self.generic        = []
+        self.listeners      = []
+
+
+    def getNewIdeviceId(self):
+        id_ = unicode(self._nextIdeviceId)
+        self._nextIdeviceId += 1
+        return id_
 
 
     def getIdevices(self):
@@ -99,7 +106,6 @@ class IdeviceStore:
         from exe.engine.reflectionidevice     import ReflectionIdevice
         from exe.engine.casestudyidevice      import CasestudyIdevice
         from exe.engine.truefalseidevice      import TrueFalseIdevice
-        from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
 
         self.extended.append(FreeTextIdevice())
@@ -112,10 +118,13 @@ class IdeviceStore:
                 
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
-        self.extended.append(QuizTestIdevice())
 
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
+
+        # generate new ids for these iDevices, to avoid any clashes
+        for idevice in self.extended:
+            idevice.id = self.getNewIdeviceId()
   
 
     def __loadGeneric(self):
@@ -126,13 +135,13 @@ class IdeviceStore:
         log.debug("load generic iDevices from "+genericPath)
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
-
-            # generate new ids for these iDevices, to avoid any clashes
-            for idevice in self.generic:
-                idevice.id = unicode(Idevice.nextId)
-                Idevice.nextId += 1
         else:
             self.__createGeneric()
+
+        # generate new ids for these iDevices, to avoid any clashes
+        for idevice in self.generic:
+            idevice.id = self.getNewIdeviceId()
+
 
     def __createGeneric(self):
         """

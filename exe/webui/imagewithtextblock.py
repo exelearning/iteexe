@@ -51,14 +51,18 @@ class ImageWithTextBlock(Block):
         """
         log.debug("process " + repr(request.args))
         Block.process(self, request)
-        self.imageElement.process(request)
-        self.textElement.process(request)
+
+        if (u"action" not in request.args or
+            request.args[u"action"][0] != u"delete"):
+            self.imageElement.process(request)
+            self.textElement.process(request)
 
 
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form elements for editing this block
         """
+        log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
         html += self.imageElement.renderEdit()
         html += u"<br/>\n"
@@ -72,6 +76,7 @@ class ImageWithTextBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
+        log.debug("renderPreview")
         html  = u"<div class=\"iDevice\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div style=\"padding:6px; float:left;\"/>\n" 
@@ -89,6 +94,7 @@ class ImageWithTextBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """        
+        log.debug("renderView")
         html  = u"<div class=\"iDevice\">\n"
         html += u"<div style=\"padding:6px; float:left;\"/>\n" 
         html += self.imageElement.renderView()

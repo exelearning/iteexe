@@ -37,11 +37,6 @@ class EditorElement(Element):
         Initialize
         """
         Element.__init__(self, field)
-#        self.index      = index
-#        self.id         = u'%sb%s' % (unicode(index), idevice.id)
-#        self.name       = field.name
-#        "name"+self.id     = u"name" + self.id
-#        self.id  = u"content" + self.id
 
     def process(self, request):
         """
@@ -61,16 +56,6 @@ class EditorElement(Element):
                 self.field.idevice.fields.remove(self.field)
 
 
-#    def renderPreview(self, content):
-#        """
-#        Returns an XHTML string for viewing or previewing this element
-#        """
-#        html  = u'<p class="%s">\n' % self.field.class_
-#        html += content
-#        html += u'</p>\n'
-#        return html
-#
-    
 # ===========================================================================
 
 class TextEditorElement(EditorElement):
@@ -86,10 +71,6 @@ class TextEditorElement(EditorElement):
         self.field.instruc = self.field.instruc.replace("'","\\'")
         
         html  = common.textInput("name"+self.id, self.field.name, 25)
-        html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('showHide','%s',%d)\"" % (self.id, 1)
-        html += "<img src=\"/images/help.gif\" border=\"0\" "
-        html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
@@ -129,15 +110,12 @@ class TextAreaEditorElement(EditorElement):
         self.field.instruc = self.field.instruc.replace("'","\\'")
         
         html  = common.textInput("name"+self.id, self.field.name, 25)
-        html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('showHide','%s',%d)\"" % (self.id, 1)
-        html += "<img src=\"/images/help.gif\" border=\"0\" "
-        html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
-                                   _("Delete"),1)
+                                   _("Delete"), 1)
         html += "<br/>\n"
         html += common.textArea(self.id, "", "Disabled")
+        html += "<br/>\n"
         html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
@@ -172,19 +150,16 @@ class ImageEditorElement(EditorElement):
         self.field.instruc = self.field.instruc.replace("'","\\'")
 
         html  = common.textInput("name"+self.id, self.field.name, 25)
-        html += "<a href=\"#\" style=\"cursor:help;\" "
-        html += "onclick=\"submitLink('showHide','%s',%d)\"" % (self.id, 1)
-        html += "<img src=\"/images/help.gif\" border=\"0\" "
-        html += "align=\"middle\"/></a> \n"
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
-                                   _("Delete"),1)
+                                   _("Delete"), 1)
         html += "<br/>\n"
         html += common.image("img"+self.id, 
                              "/images/"+ImageEditorElement.DefaultImage,
                              self.field.width,
                              self.field.height)
-        html += "<br/>"
+        html += "<br/>\n"
+        html += common.richTextArea("instruc"+self.id, self.field.instruc)
         return html
     
 

@@ -1,3 +1,324 @@
+2005-06-09 23:48  djm
+
+	* branches/0.5/README: Updated for 0.5
+
+2005-06-09 23:31  matthew
+
+	* branches/0.5/installs/gentoo/exe-0.4.ebuild: Added half
+	  working/prototype 0.4 gentoo install
+
+2005-06-09 23:30  matthew
+
+	* branches/0.5/installs/gentoo, branches/0.5/installs/rpm,
+	  branches/0.5/installs/rpm/exe-twisted.spec,
+	  branches/0.5/tools/exe-twisted.spec: Added gentoo and rpm install
+	  dirs
+
+2005-06-09 23:29  matthew
+
+	* branches/0.5/installs/win install, branches/0.5/installs/windows:
+	  Renamed win install to windows
+
+2005-06-09 23:28  matthew
+
+	* branches/0.5/installs, branches/0.5/installs/win install,
+	  branches/0.5/win install: Moved win install dir to installs
+
+2005-06-09 23:23  matthew
+
+	* branches/0.5/exe/engine/config.py: Made the default config file
+	  default to error log level
+
+2005-06-09 23:14  djm
+
+	* branches/0.5/MANIFEST.in: include docs in MANIFEST.in
+
+2005-06-09 23:11  djm
+
+	* branches/0.5/exe/webui/browser.py,
+	  branches/0.5/exe/webui/templates/about.xul: Ignore errors when
+	  deleting the linux-profile tree
+
+2005-06-09 21:45  jenny
+
+	* branches/0.5/win-setup.py: modified win-setup
+
+2005-06-09 05:01  matthew
+
+	* branches/0.5/exe/engine/titleidevice.py,
+	  branches/0.5/exe/webui/outlinepane.py,
+	  branches/0.5/exe/webui/propertiespane.py: Fixed probs with default
+	  unicode level names
+
+2005-06-09 03:52  brent
+
+	* branches/0.5/exe/export/scormexport.py: minor formatting change
+
+2005-06-09 03:32  djm
+
+	* branches/0.5/exe/webui/genericblock.py,
+	  branches/0.5/exe/webui/imagewithtextblock.py: Make sure action is
+	  in request.args before looking to see if it's delete
+
+2005-06-09 03:04  djm
+
+	* branches/0.5/exe/engine/freetextidevice.py: Fix bug with
+	  FreeTextBlocks overwriting each other
+
+2005-06-09 01:24  djm
+
+	* branches/0.5/exe/engine/idevicestore.py,
+	  branches/0.5/exe/engine/node.py,
+	  branches/0.5/exe/engine/package.py,
+	  branches/0.5/exe/export/scormexport.py: Fixed bug with iDevices
+	  having duplicate ids
+
+2005-06-09 01:23  jenny
+
+	* branches/0.5/doc/eXe-tutorial.elp: update eXe-tutorial.
+
+2005-06-08 23:29  brent
+
+	* branches/0.5/exe/webui/style/default/content.css,
+	  branches/0.5/exe/webui/style/default/nav.css: fix for scorm export
+	  problem with defualt style
+
+2005-06-08 23:25  djm
+
+	* branches/0.5/exe/webui/editorelement.py: added instructions field
+	  for images
+
+2005-06-08 23:14  matthew
+
+	* branches/0.5/exe/engine/package.py: Removed bug where it was
+	  renaming files in linux when saving
+
+2005-06-08 23:01  djm
+
+	* branches/0.5/exe/engine/field.py,
+	  branches/0.5/exe/engine/linuxconfig.py,
+	  branches/0.5/exe/engine/path.py,
+	  branches/0.5/exe/engine/version.py,
+	  branches/0.5/exe/webui/block.py,
+	  branches/0.5/exe/webui/browser.py,
+	  branches/0.5/exe/webui/genericblock.py,
+	  branches/0.5/exe/webui/imagewithtextblock.py: fixed problem with
+	  changing and deleting ImageWithText iDevice at the same time:
+
+2005-06-08 21:45  brent
+
+	* branches/0.5/exe/webui/style/default/content.css,
+	  branches/0.5/exe/webui/style/garden/content.css,
+	  branches/0.5/exe/webui/style/mojave/content.css,
+	  branches/0.5/exe/webui/style/standardwhite/content.css: styled the
+	  hints popups for each style.
+
+2005-06-08 04:16  djm
+
+	* branches/0.5/exe/webui/block.py: fix bug with title not showing
+
+2005-06-08 03:44  djm
+
+	* branches/0.5/exe/engine/idevicestore.py,
+	  branches/0.5/exe/sample_exe.conf,
+	  branches/0.5/exe/webui/templates/mainpage.xul: Hide the metadata
+	  editor and quiz idevice
+
+2005-06-08 03:43  jenny
+
+	* branches/0.5/win-setup.py: added docs folder into installation
+	  file.
+
+2005-06-08 02:59  brent
+
+	* branches/0.5/exe/export/imsexport.py,
+	  branches/0.5/exe/export/scormexport.py,
+	  branches/0.5/exe/webui/scripts/adlcp_rootv1p2.xsd,
+	  branches/0.5/exe/webui/scripts/imscp_rootv1p1p2.xsd,
+	  branches/0.5/exe/webui/scripts/imsmd_rootv1p2p1.xsd: added schema
+	  for SCORM and modified imsmanifest
+
+2005-06-08 02:42  djm
+
+	* branches/0.5/exe/engine/version.py,
+	  branches/0.5/exe/sample_exe.conf,
+	  branches/0.5/exe/webui/templates/about.xul, branches/0.5/setup.py:
+	  Update version number and setup stuff
+
+2005-06-08 02:29  matthew
+
+	* branches/0.5/exe/engine/config.py,
+	  branches/0.5/exe/engine/package.py: Removed redundant code in
+	  config.py Fixed bug in package where content was becoming
+	  dissordered with package upgrades
+
+2005-06-08 02:27  jenny
+
+	* branches/0.5/win install/exe.nsi: modified exe.nsi file.
+
+2005-06-08 01:12  djm
+
+	* branches/0.5/exe/webui/templates/about.xul: bump revision
+
+2005-06-07 23:33  djm
+
+	* branches/0.5: Initialized merge tracking via svnmerge with
+	  revisions 1-754 from http://exe.cfdl.auckland.ac.nz/svn/exe/trunk
+
+2005-06-07 23:28  djm
+
+	* branches/0.5: Created new branch for 0.5 release
+
+2005-06-07 23:27  matthew
+
+	* testing/testconfig.py: Now creates the test log file in 'tmp' dir
+
+2005-06-07 23:12  jenny
+
+	* exe/engine/multichoiceidevice.py, exe/engine/truefalseidevice.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py: helena add some help tips for
+	  multichoice and true/false idevices.
+
+2005-06-07 22:08  djm
+
+	* exe/engine/freetextidevice.py: Fix upgrade of FreeTextIdevices
+
+2005-06-07 06:25  djm
+
+	* exe/engine/field.py, exe/engine/imagewithtextidevice.py,
+	  exe/webui/element.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/scripts/common.js: Modified ImageField to always
+	  maintain aspect ratio, and other such usability improvents.
+
+2005-06-07 06:19  matthew
+
+	* testing/utils.py: Makes unit tests work
+
+2005-06-07 04:02  brent
+
+	* exe/export/imsexport.py, exe/webui/scripts/imsmd_v1p2p2.xsd: added
+	  schema for IMS metadata and modified imsexport to reflect
+
+2005-06-07 03:15  brent
+
+	* exe/export/imsexport.py, exe/webui/scripts/ims_xml.xsd,
+	  exe/webui/scripts/imscp_v1p1.xsd,
+	  exe/webui/templates/mainpage.xul: created IMS content package 1.3
+	  export and added schemas to export
+
+2005-06-07 02:21  jenny
+
+	* exe/engine/idevicestore.py: set defaultImage on ImageWithText
+	  iDevice as unicode string not a Path object
+
+2005-06-07 00:10  djm
+
+	* exe/engine/field.py, exe/engine/idevicestore.py,
+	  exe/engine/imagewithtextidevice.py, exe/webui/blockfactory.py,
+	  exe/webui/imagewithtextblock.py: Added ImageWithText iDevice to
+	  replace TeacherProfile iDevice.
+
+2005-06-06 23:56  matthew
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/webui/mainpage.py, testing/testexport.py: More export unicode
+	  fixes
+
+2005-06-06 23:27  matthew
+
+	* exe/export/imsexport.py, exe/export/scormexport.py: Fixed unicode
+	  export probies
+
+2005-06-06 23:16  djm
+
+	* exe/webui/templates/mainpage.xul: changed scormType to just
+	  'scorm'
+
+2005-06-06 23:07  djm
+
+	* exe/export/imsexport.py: Pass None to the BlockFactory
+
+2005-06-06 23:00  djm
+
+	* exe/export/imsexport.py: Pass None to TitleBlock
+
+2005-06-06 22:44  matthew
+
+	* exe/application.py, exe/engine/config.py, exe/webui/common.py,
+	  testing/style, testing/style/default,
+	  testing/style/default/activity.gif,
+	  testing/style/default/casestudy.gif,
+	  testing/style/default/content.css,
+	  testing/style/default/generic.gif,
+	  testing/style/default/multichoice.gif,
+	  testing/style/default/nav.css,
+	  testing/style/default/objectives.gif,
+	  testing/style/default/preknowledge.gif,
+	  testing/style/default/reading.gif,
+	  testing/style/default/reflection.gif, testing/style/garden,
+	  testing/style/mojave, testing/style/mojave/activity.gif,
+	  testing/style/mojave/cactus_icon.gif,
+	  testing/style/mojave/casestudy.gif,
+	  testing/style/mojave/content.css,
+	  testing/style/mojave/generic.gif,
+	  testing/style/mojave/multichoice.gif,
+	  testing/style/mojave/nav.css, testing/style/mojave/objectives.gif,
+	  testing/style/mojave/preknowledge.gif,
+	  testing/style/mojave/reading.gif,
+	  testing/style/mojave/reflection.gif, testing/style/standardwhite,
+	  testing/style/standardwhite/activity.gif,
+	  testing/style/standardwhite/casestudy.gif,
+	  testing/style/standardwhite/content.css,
+	  testing/style/standardwhite/generic.gif,
+	  testing/style/standardwhite/icon_assignment.gif,
+	  testing/style/standardwhite/multichoice.gif,
+	  testing/style/standardwhite/nav.css,
+	  testing/style/standardwhite/nodeTitle_bg.jpg,
+	  testing/style/standardwhite/objectives.gif,
+	  testing/style/standardwhite/preknowledge.gif,
+	  testing/style/standardwhite/reading.gif,
+	  testing/style/standardwhite/reflection.gif, testing/testblock.py,
+	  testing/testconfig.py, testing/testexport.py,
+	  testing/testidevicestore.py: Made all tests work except for
+	  testblock
+
+2005-06-06 22:23  djm
+
+	* exe/export/imsexport.py, exe/webui/mainpage.py,
+	  exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul:
+	  Added hacked up IMSExport for Brent to work on
+
+2005-06-06 22:08  matthew
+
+	* exe/application.py, exe/engine/config.py,
+	  exe/engine/idevicestore.py, exe/engine/packagestore.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/casestudyblock.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/mainpage.py, exe/webui/multichoiceblock.py,
+	  exe/webui/quiztestblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/teacherprofileblock.py, exe/webui/titleblock.py,
+	  exe/webui/truefalseblock.py, exe/webui/truefalseelement.py,
+	  testing/test.conf, testing/testblock.py,
+	  testing/testblockfactory.py, testing/testconfig.py,
+	  testing/testexport.py: CRAP LAND IS HERE!
+
+2005-06-06 11:38  djm
+
+	* exe/webui/linux-profile/prefs.js, exe/webui/win-profile/prefs.js:
+	  allow loading images from file:// urls
+
+2005-06-05 00:09  djm
+
+	* ChangeLog, exe/engine/field.py, exe/engine/idevicestore.py,
+	  exe/engine/teacherprofileidevice.py, exe/webui/element.py,
+	  exe/webui/elementfactory.py, exe/webui/images/smileyface.png,
+	  exe/webui/teacherprofileblock.py: Image handling stage III -
+	  TeacherProfileIdevice working. Also added field.py and
+	  elementfactory.py which I forgot about before.
+
 2005-06-04 12:07  djm
 
 	* ChangeLog, exe/engine/casestudyidevice.py,

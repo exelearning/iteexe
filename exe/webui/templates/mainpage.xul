@@ -52,7 +52,6 @@
             <menu id="tools-menu" label="Tools" accesskey="t">
               <menupopup id="tools-popup">
                 <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
-                <menuitem label="Metadata Editor" oncommand="metadataEditor()"/>
               </menupopup>
             </menu>
             <menu id="styles-menu" label="Styles" accesskey="s">

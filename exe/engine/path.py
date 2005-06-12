@@ -72,8 +72,6 @@ class Path(unicode):
         return Path(toUnicode(self) + toUnicode(more))
 
     def __radd__(self, other):
-        #import pdb
-        #pdb.set_trace()
         return Path(toUnicode(other) + toUnicode(self))
 
     # The / operator joins paths.

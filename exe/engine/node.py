@@ -157,6 +157,7 @@ class Node(Persistable):
         """
         Add the idevice to this node, sets idevice's parentNode 
         """
+        idevice.id = self.package.getNewIdeviceId()
         idevice.parentNode = self
         for oldIdevice in self.idevices:
             oldIdevice.edit = False
