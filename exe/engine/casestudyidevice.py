@@ -47,6 +47,8 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
+    persistenceVersion = 1
+
     def __init__(self, story=""):
         """
         Initialize 

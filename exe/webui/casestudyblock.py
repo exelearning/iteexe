@@ -97,11 +97,14 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = self.story+u"<br/><br/>\n"
+        html  = u"<div class=\"iDevice_inner\">\n"
+        html += self.story + u"<br/>\n"
             
         for element in self.questionElements:
             html += element.renderView()
-            
+
+        html += u"</div>\n"
+
         return html
 
 # ===========================================================================
