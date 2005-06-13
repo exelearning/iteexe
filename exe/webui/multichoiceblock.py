@@ -132,7 +132,7 @@ class MultichoiceBlock(Block):
         html += '\n<a onmousedown="Javascript:updateCoords(event);'
         html += 'showMe(\'i%s\', 350, 100);" ' % self.hintId
         html += 'border="0" align="middle" \n'
-        html += 'style="cursor:help;" title="Instructions for completion" \n'
+        html += 'style="cursor:help;" title="Hint" \n'
         html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
         html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId 
         html += "<div style=\"float:right;\" >"
