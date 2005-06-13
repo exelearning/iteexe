@@ -71,12 +71,12 @@ class WinConfig(Config):
         Possible values can be found at:
         http://msdn.microsoft.com/library/default.asp?url=/library/en-us/shellcc/platform/shell/reference/enums/csidl.asp#CSIDL_WINDOWS
         """
-        from ctypes import WinDLL, create_string_buffer
+        from ctypes import WinDLL, create_unicode_buffer
         dll = WinDLL('shell32')
         # The '5' and the '0' from the below call come from
         # google: "ShellSpecialConstants site:msdn.microsoft.com"
-        result = create_string_buffer(260)
-        resource = dll.SHGetFolderPathA(None, code, None, 0, result)
+        result = create_unicode_buffer(260)
+        resource = dll.SHGetFolderPathW(None, code, None, 0, result)
         if resource != 0: 
             return Path('')
         else: 
