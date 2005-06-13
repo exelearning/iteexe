@@ -1,0 +1,119 @@
+diff -ur ./allmakefiles.sh ../mozilla.pyxpcom.patched/allmakefiles.sh
+--- ./allmakefiles.sh	2004-09-10 20:11:24.000000000 +1200
++++ ../mozilla.pyxpcom.patched/allmakefiles.sh	2005-06-13 13:19:42.000000000 +1200
+@@ -1347,6 +1347,12 @@
+             extensions/xmlterm/tests/Makefile
+             extensions/xmlterm/ui/Makefile
+             " ;;
++        python/xpcom ) MAKEFILES_extensions="$MAKEFILES_extensions
++            extensions/python/xpcom/Makefile
++            extensions/python/xpcom/src/Makefile
++            extensions/python/xpcom/src/loader/Makefile
++            extensions/python/xpcom/test/test_component/Makefile
++            " ;;
+         sql ) MAKEFILES_extensions="$MAKEFILES_extensions
+             $MAKEFILES_sql"
+             ;;
+diff -ur ./config/autoconf.mk.in ../mozilla.pyxpcom.patched/config/autoconf.mk.in
+--- ./config/autoconf.mk.in	2004-10-31 17:29:54.000000000 +1300
++++ ../mozilla.pyxpcom.patched/config/autoconf.mk.in	2005-06-13 13:20:20.000000000 +1200
+@@ -449,6 +449,16 @@
+ MOZ_DEBUG_SYMBOLS = @MOZ_DEBUG_SYMBOLS@
+ MOZ_QUANTIFY	= @MOZ_QUANTIFY@
+ 
++#python options
++PYTHON = @MOZ_PYTHON@
++PYTHON_PREFIX = @MOZ_PYTHON_PREFIX@
++PYTHON_INCLUDES = @MOZ_PYTHON_INCLUDES@
++PYTHON_LIBS = @MOZ_PYTHON_LIBS@
++PYTHON_DEBUG_SUFFIX = @MOZ_PYTHON_DEBUG_SUFFIX@
++PYTHON_DLL_SUFFIX = @MOZ_PYTHON_DLL_SUFFIX@
++PYTHON_VER_DOTTED = @MOZ_PYTHON_VER_DOTTED@
++PYTHON_VER = @MOZ_PYTHON_VER@
++
+ # Codesighs tools option, enables win32 mapfiles.
+ MOZ_MAPINFO	= @MOZ_MAPINFO@
+ 
+diff -ur ./configure.in ../mozilla.pyxpcom.patched/configure.in
+--- ./configure.in	2004-10-31 20:17:58.000000000 +1300
++++ ../mozilla.pyxpcom.patched/configure.in	2005-06-13 13:18:21.000000000 +1200
+@@ -5301,6 +5301,79 @@
+ AC_SUBST(MOZ_XUL)
+ 
+ dnl ========================================================
++dnl Python XPCOM bindings - if enabled, we must locate Python.
++dnl ========================================================
++dnl
++dnl Allow PYTHON to point to the Python interpreter to use.
++dnl If not set, we use whatever Python we can find.  Setting
++dnl PYTHON will allow you to build from any Python version you nominate
++dnl
++dnl If future Python based extensions are added, some of this should
++dnl be split out appropriately.
++MOZ_PYTHON=
++MOZ_PYTHON_PREFIX=
++MOZ_PYTHON_INCLUDES=
++MOZ_PYTHON_LIBS=
++MOZ_PYTHON_VER=
++MOZ_PYTHON_VER_DOTTED=
++MOZ_PYTHON_DEBUG_SUFFIX=
++MOZ_PYTHON_DLL_SUFFIX=
++if test `echo "$MOZ_EXTENSIONS" | grep -c python/xpcom` -ne 0; then
++    dnl If PYTHON is in the environment, we use that
++    if test -z "$PYTHON"; then
++        AC_PATH_PROG(PYTHON, python, :)
++    fi
++    if test "$OS_ARCH" = "WINNT"; then
++        dnl Convert to cygwin style "mixed" (ie, "c:/path/file.exe")
++        PYTHON=`cygpath -m $PYTHON`
++    fi
++    if test ! -x "$PYTHON"; then
++        AC_MSG_ERROR([Could not find Python - please adjust your PATH, or set PYTHON.])
++    fi
++    MOZ_PYTHON=$PYTHON
++    dnl Ask Python what its version number is
++    MOZ_PYTHON_VER=`$PYTHON -c "import sys;print '%d%d' % sys.version_info[[0:2]]"`
++    MOZ_PYTHON_VER_DOTTED=`$PYTHON -c "import sys;print '%d.%d' % sys.version_info[[0:2]]"`
++    dnl Ask for the Python "prefix" (ie, home/source dir)
++    MOZ_PYTHON_PREFIX=`$PYTHON -c "import sys; print sys.prefix"`
++    dnl Setup the include and library directories.
++    if test "$OS_ARCH" = "WINNT"; then
++        MOZ_PYTHON_PREFIX=`cygpath -m $MOZ_PYTHON_PREFIX`
++        dnl Source trees have "include" and "PC" for .h, and "PCbuild" for .lib
++        dnl Binary trees have "include" for .h, and "libs" for .lib
++        dnl We add 'em both - along with quotes, to handle spaces.
++        MOZ_PYTHON_DLL_SUFFIX=.pyd
++        MOZ_PYTHON_INCLUDES="\"-I$MOZ_PYTHON_PREFIX/include\" \"-I$MOZ_PYTHON_PREFIX/PC\""
++        MOZ_PYTHON_LIBS="\"/libpath:$MOZ_PYTHON_PREFIX/PCBuild\" \"/libpath:$MOZ_PYTHON_PREFIX/libs\""
++    else
++        dnl Non-Windows include and libs
++        MOZ_PYTHON_DLL_SUFFIX=$DLL_SUFFIX
++        PYTHON_INCLUDE_SRC=$MOZ_PYTHON_PREFIX/include/python$MOZ_PYTHON_VER_DOTTED
++        PYTHON_LIB_SRC="$MOZ_PYTHON_PREFIX/lib/python$MOZ_PYTHON_VER_DOTTED/config"
++        if test ! -f $PYTHON_INCLUDE_SRC/Python.h; then
++            AC_MSG_ERROR([Include directory $PYTHON_INCLUDE_SRC not found or does not contain development headers])
++        fi
++        MOZ_PYTHON_INCLUDES="-I$PYTHON_INCLUDE_SRC"
++        MOZ_PYTHON_LIBS="-L$PYTHON_LIB_SRC -lpython$MOZ_PYTHON_VER_DOTTED"
++    fi
++    dnl Handle "_d" on Windows
++    if test "$OS_ARCH" = "WINNT" && test -n "$MOZ_DEBUG"; then
++        MOZ_PYTHON_DEBUG_SUFFIX="_d"
++    else
++        MOZ_PYTHON_DEBUG_SUFFIX=
++    fi
++    AC_MSG_RESULT(Building PyXPCOM using Python-$MOZ_PYTHON_VER_DOTTED from $MOZ_PYTHON_PREFIX)
++fi
++AC_SUBST(MOZ_PYTHON)
++AC_SUBST(MOZ_PYTHON_PREFIX)
++AC_SUBST(MOZ_PYTHON_INCLUDES)
++AC_SUBST(MOZ_PYTHON_LIBS)
++AC_SUBST(MOZ_PYTHON_VER)
++AC_SUBST(MOZ_PYTHON_VER_DOTTED)
++AC_SUBST(MOZ_PYTHON_DEBUG_SUFFIX)
++AC_SUBST(MOZ_PYTHON_DLL_SUFFIX)
++
++dnl ========================================================
+ dnl disable profile sharing
+ dnl ========================================================
+ MOZ_PROFILESHARING=1
