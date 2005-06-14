@@ -39,35 +39,38 @@ create = lambda name, intfc=None: components.classes[name].createInstance(intfc)
 wbc = components.classes['@mozilla.org/embedding/browser/nsWebBrowser;1']
 wbi = iface['nsIWebBrowser']
 sm = components.serviceManager
-# Tell mozilla we'll be embedding it
+
+def initEmbedding():
+    """Tell mozilla we'll be embedding it"""
+    from ctypes import cdll, c_int
+    embedlib = cdll.LoadLibrary('/home/matthew/work/downloads/mozilla/dist/firefox/libgtkembedmoz.so')
+    # TODO: Pass this the right parameters
+    # Path to mozilla binary directory
+    fn = '/home/matthew/work/downloads/mozilla/dist/firefox'
+    f = create('@mozilla.org/file/local;1', iface.nsILocalFile)
+    f.initWithPath(fn)
+    address = c_int(id(f._comobj_))
+    address = c_int(id(f._interfaces_.items()[-1]))
+    address = c_int(id(f))
+    print address
+    # Get the address of the com object to pass to the dll
+    print embedlib.NS_InitEmbedding(None, None)
 
 from ctypes import cdll, c_int
 embedlib = cdll.LoadLibrary('/home/matthew/work/downloads/mozilla/dist/firefox/libgtkembedmoz.so')
-# TODO: Pass this the right parameters
-# Path to mozilla binary directory
-fn = '/home/matthew/work/downloads/mozilla/dist/firefox'
-f = create('@mozilla.org/file/local;1', iface.nsILocalFile)
-f.initWithPath(fn)
-address = c_int(id(f._comobj_))
-address = c_int(id(f._interfaces_.items()[-1]))
-address = c_int(id(f))
-print address
-# Get the address of the com object to pass to the dll
-print embedlib.NS_InitEmbedding(None, None)
-sys.halt()
 
+def rubbish():
+    #smi = components.interfaces['nsIServiceManager']
+    #print '**********************'
+    #sm = sm.queryInterface(smi)
+    #print sm
+    #print sm._interface_infos_
+    print '**********************'
+    cls = create('@mozilla.org/appshell/commandLineService;1')
+    app = components.classes['@mozilla.org/appshell/appShellService;1'].getService(iface['nsIAppShellService'])
+    print app
+    native = app.hiddenWindow
+    print native
 
-#smi = components.interfaces['nsIServiceManager']
-#print '**********************'
-#sm = sm.queryInterface(smi)
-#print sm
-#print sm._interface_infos_
-print '**********************'
-cls = create('@mozilla.org/appshell/commandLineService;1')
-app = components.classes['@mozilla.org/appshell/appShellService;1'].getService(iface['nsIAppShellService'])
-print app
-native = app.hiddenWindow
-print native
-
-#print app.initialize(cls, None)
-print native.start()
+    #print app.initialize(cls, None)
+    print native.start()
