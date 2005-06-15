@@ -107,7 +107,7 @@ class IdevicePane(Renderable):
 
     def __renderPrototype(self, prototype):
         """
-        Add the listitem for an iDevice prototype in the iDevice pane
+        Add the list item for an iDevice prototype in the iDevice pane
         """
         log.debug("Render "+prototype.title)
         xul  = "  <listitem label=\"" + prototype.title + "\" "

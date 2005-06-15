@@ -92,8 +92,8 @@ class QuizTestBlock(Block):
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
             html += "</font></b><br/><br/>"
-        html += "<b>" + _("Quiz Test:") + " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-        html += _("Select a pass rate")
+        html += "<b>" + _("SCORM Multiple Choice Quiz:") + " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        html += _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
         isChecked = ""
         for i in range(1, 11):
@@ -109,7 +109,7 @@ class QuizTestBlock(Block):
         for element in self.questionElements:
             html += element.renderEdit() 
             
-        value = _("Add another question")    
+        value = _("Add Question")    
         html += common.submitButton("addQuestion"+unicode(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
@@ -346,16 +346,18 @@ class QuizTestBlock(Block):
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
 
-        if not self.idevice.score == -1:
-            message = "Your score is " + unicode(self.idevice.score) + "%"
-            html += "<b>"+ message+ "</b><br/>"
-                                                                  
         for element in self.questionElements:
             html += element.renderView() + "<br/>"
         html += self.renderViewButtons()
         html += "</div>\n"
+       
         html += '<input type="submit" name="submitScore"'
         html += ' value="%s"/> ' % _("Submit Answer")
+        
+        if not self.idevice.score == -1:
+            message = "Your score is " + unicode(self.idevice.score) + "%"
+            html += "<b>"+ message+ "</b><br/>"
+
         self.idevice.score = -1
         
 
