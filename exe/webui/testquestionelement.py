@@ -87,7 +87,7 @@ class TestquestionElement(object):
                                       self.question.questionInstruc)
         html += " " + common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
-                                   _("Delete option"))
+                                   _("Delete question"))
         html += common.richTextArea("question"+self.id, question)
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
