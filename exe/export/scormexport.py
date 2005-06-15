@@ -195,7 +195,7 @@ class ScormPage(Page):
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"SCOFunctions.js\"></script>\n" 
         for idevice in self.node.idevices:
-            if idevice.title == "Quiz Test":
+            if idevice.title == "SCORM Quiz":
                 html += "<script language=\"javascript\" "
                 html += "src=\"quizForScorm.js\"></script>\n"
                 break
@@ -243,7 +243,7 @@ class WebCTScormPage(ScormPage):
         html += "@import url(content.css);\n"
         html += "</style>\n"
         for idevice in self.node.idevices:
-            if idevice.title == "Quiz Test":
+            if idevice.title == "SCORM Quiz":
                 html += "<script language=\"javascript\" "
                 html += "src=\"quizForWeb.js\"></script>\n"
                 break
