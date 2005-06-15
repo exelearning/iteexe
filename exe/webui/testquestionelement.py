@@ -64,6 +64,9 @@ class TestquestionElement(object):
         if ("addOption"+unicode(self.id)) in request.args: 
             self.question.addOption()
             self.idevice.edit = True
+            
+        if "action" in request.args and request.args["action"][0] == self.id:
+            self.idevice.questions.remove(self.question)
 
         for element in self.options:
             element.process(request)
@@ -82,6 +85,9 @@ class TestquestionElement(object):
         html += "<b>" + _("Question:") + " </b>" 
         html += common.elementInstruc("question"+self.id, 
                                       self.question.questionInstruc)
+        html += " " + common.submitImage(self.id, self.idevice.id, 
+                                   "/images/stock-cancel.png",
+                                   _("Delete option"))
         html += common.richTextArea("question"+self.id, question)
         html += "<table width =\"100%%\">"
         html += "<th>%s " % _("Alternatives")
