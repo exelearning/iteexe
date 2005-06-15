@@ -202,7 +202,8 @@ class ScormPage(Page):
             
         html += "</head>\n"
        # html += "<body onunLoad=\"return unloadPage()\">\n"
-        html += '<body onLoad="loadPage()" onunload="return unloadPage()">'
+        html += '<body onload="loadPage()" onunload="unloadPage()" '
+        html += ' onbeforeunload="unloadPage()">'
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
