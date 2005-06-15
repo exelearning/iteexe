@@ -1,173 +1,110 @@
-2005-06-09 23:48  djm
+2005-06-14 22:53  djm
 
-	* branches/0.5/README: Updated for 0.5
+	* prototype/pyfox/initEmbedding.cpp: Python extension for calling
+	  NS_InitEmbedding
 
-2005-06-09 23:31  matthew
+2005-06-14 22:10  jenny
 
-	* branches/0.5/installs/gentoo/exe-0.4.ebuild: Added half
-	  working/prototype 0.4 gentoo install
+	* README.txt, conf, conf/svnserve.conf, dav, db, db/current,
+	  db/fs-type, db/revprops, db/revprops/0, db/revs, db/revs/0,
+	  db/transactions, db/uuid, db/write-lock, format, hooks,
+	  hooks/post-commit.tmpl, hooks/post-revprop-change.tmpl,
+	  hooks/pre-commit.tmpl, hooks/pre-revprop-change.tmpl,
+	  hooks/start-commit.tmpl, locks, locks/db-logs.lock, locks/db.lock:
 
-2005-06-09 23:30  matthew
+2005-06-14 06:34  matthew
 
-	* branches/0.5/installs/gentoo, branches/0.5/installs/rpm,
-	  branches/0.5/installs/rpm/exe-twisted.spec,
-	  branches/0.5/tools/exe-twisted.spec: Added gentoo and rpm install
-	  dirs
+	* prototype/pyfox/gtkmozembed, prototype/pyfox/gtkmozembed/Makefile,
+	  prototype/pyfox/gtkmozembed/gtkmozembed.c,
+	  prototype/pyfox/gtkmozembed/gtkmozembed.defs,
+	  prototype/pyfox/myxpcom.py, prototype/pyfox/xpcomponents.py: GTK
+	  Moz Embed Original Source
 
-2005-06-09 23:29  matthew
+2005-06-13 21:13  brent
 
-	* branches/0.5/installs/win install, branches/0.5/installs/windows:
-	  Renamed win install to windows
+	* exe/webui/multichoiceblock.py: corrected wording of the tooltip
+	  text of hint icon.
 
-2005-06-09 23:28  matthew
+2005-06-13 20:39  djm
 
-	* branches/0.5/installs, branches/0.5/installs/win install,
-	  branches/0.5/win install: Moved win install dir to installs
+	* prototype/stylesheet: Removed stylesheet prototype.
 
-2005-06-09 23:23  matthew
+2005-06-13 04:56  matthew
 
-	* branches/0.5/exe/engine/config.py: Made the default config file
-	  default to error log level
+	* prototype/pyfox/dot_mozconfig: .mozconfig file for building
+	  mozilla
 
-2005-06-09 23:14  djm
+2005-06-13 04:48  matthew
 
-	* branches/0.5/MANIFEST.in: include docs in MANIFEST.in
+	* prototype/pyfox/pyxpcom.patch: Patch to apply to mozilla1.0.4
+	  source
 
-2005-06-09 23:11  djm
+2005-06-13 03:27  matthew
 
-	* branches/0.5/exe/webui/browser.py,
-	  branches/0.5/exe/webui/templates/about.xul: Ignore errors when
-	  deleting the linux-profile tree
+	* prototype/pyfox, prototype/pyfox/myxpcom.py,
+	  prototype/pyfox/xpcomponents.py: Firefox gecko embeded in a pygtk
+	  window
 
-2005-06-09 21:45  jenny
+2005-06-13 02:34  djm
 
-	* branches/0.5/win-setup.py: modified win-setup
+	* exe/engine/winconfig.py: Use unicode version of functions for
+	  getting Windows folders.
 
-2005-06-09 05:01  matthew
+2005-06-13 00:03  djm
 
-	* branches/0.5/exe/engine/titleidevice.py,
-	  branches/0.5/exe/webui/outlinepane.py,
-	  branches/0.5/exe/webui/propertiespane.py: Fixed probs with default
-	  unicode level names
+	* exe/engine/casestudyidevice.py, exe/webui/casestudyblock.py: fix
+	  problem with upgrading casestudy iDevices
 
-2005-06-09 03:52  brent
+2005-06-12 23:24  djm
 
-	* branches/0.5/exe/export/scormexport.py: minor formatting change
+	* exe/engine/idevicestore.py, exe/engine/version.py,
+	  exe/webui/templates/mainpage.xul: Made Quiz Editor iDevice and
+	  Metadata editor available again.
 
-2005-06-09 03:32  djm
+2005-06-12 23:10  djm
 
-	* branches/0.5/exe/webui/genericblock.py,
-	  branches/0.5/exe/webui/imagewithtextblock.py: Make sure action is
-	  in request.args before looking to see if it's delete
+	* ChangeLog, MANIFEST.in, NEWS, README, doc/eXe-tutorial.elp,
+	  exe/engine/config.py, exe/engine/field.py,
+	  exe/engine/freetextidevice.py, exe/engine/idevicestore.py,
+	  exe/engine/linuxconfig.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/path.py,
+	  exe/engine/titleidevice.py, exe/engine/version.py,
+	  exe/export/scormexport.py, exe/sample_exe.conf,
+	  exe/webui/block.py, exe/webui/browser.py,
+	  exe/webui/editorelement.py, exe/webui/genericblock.py,
+	  exe/webui/imagewithtextblock.py, exe/webui/outlinepane.py,
+	  exe/webui/propertiespane.py, exe/webui/scripts/adlcp_rootv1p2.xsd,
+	  exe/webui/scripts/imscp_rootv1p1p2.xsd,
+	  exe/webui/scripts/imsmd_rootv1p2p1.xsd,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/templates/about.xul, exe/webui/templates/mainpage.xul,
+	  installs, installs/gentoo, installs/gentoo/exe-0.4.ebuild,
+	  installs/rpm, installs/rpm/exe-twisted.spec, installs/windows,
+	  installs/windows/eXe.sln, installs/windows/eXe.vdproj,
+	  installs/windows/exe.nsi, installs/windows/exeLicense.txt,
+	  setup.py, tools/exe-twisted.spec, win install, win-setup.py:
+	  Merged in changes from the 0.5 branch revisions 755-790
 
-2005-06-09 03:04  djm
+2005-06-12 00:55  djm
 
-	* branches/0.5/exe/engine/freetextidevice.py: Fix bug with
-	  FreeTextBlocks overwriting each other
+	* MANIFEST.in: Don't include files in .svn and .xvpics
 
-2005-06-09 01:24  djm
+2005-06-08 02:18  matthew
 
-	* branches/0.5/exe/engine/idevicestore.py,
-	  branches/0.5/exe/engine/node.py,
-	  branches/0.5/exe/engine/package.py,
-	  branches/0.5/exe/export/scormexport.py: Fixed bug with iDevices
-	  having duplicate ids
+	* exe/engine/config.py: Removed redundant code
 
-2005-06-09 01:23  jenny
+2005-06-08 02:17  matthew
 
-	* branches/0.5/doc/eXe-tutorial.elp: update eXe-tutorial.
+	* exe/engine/package.py: Fixed bug where upgrading packages made
+	  content become disordered
 
-2005-06-08 23:29  brent
+2005-06-08 01:31  brent
 
-	* branches/0.5/exe/webui/style/default/content.css,
-	  branches/0.5/exe/webui/style/default/nav.css: fix for scorm export
-	  problem with defualt style
-
-2005-06-08 23:25  djm
-
-	* branches/0.5/exe/webui/editorelement.py: added instructions field
-	  for images
-
-2005-06-08 23:14  matthew
-
-	* branches/0.5/exe/engine/package.py: Removed bug where it was
-	  renaming files in linux when saving
-
-2005-06-08 23:01  djm
-
-	* branches/0.5/exe/engine/field.py,
-	  branches/0.5/exe/engine/linuxconfig.py,
-	  branches/0.5/exe/engine/path.py,
-	  branches/0.5/exe/engine/version.py,
-	  branches/0.5/exe/webui/block.py,
-	  branches/0.5/exe/webui/browser.py,
-	  branches/0.5/exe/webui/genericblock.py,
-	  branches/0.5/exe/webui/imagewithtextblock.py: fixed problem with
-	  changing and deleting ImageWithText iDevice at the same time:
-
-2005-06-08 21:45  brent
-
-	* branches/0.5/exe/webui/style/default/content.css,
-	  branches/0.5/exe/webui/style/garden/content.css,
-	  branches/0.5/exe/webui/style/mojave/content.css,
-	  branches/0.5/exe/webui/style/standardwhite/content.css: styled the
-	  hints popups for each style.
-
-2005-06-08 04:16  djm
-
-	* branches/0.5/exe/webui/block.py: fix bug with title not showing
-
-2005-06-08 03:44  djm
-
-	* branches/0.5/exe/engine/idevicestore.py,
-	  branches/0.5/exe/sample_exe.conf,
-	  branches/0.5/exe/webui/templates/mainpage.xul: Hide the metadata
-	  editor and quiz idevice
-
-2005-06-08 03:43  jenny
-
-	* branches/0.5/win-setup.py: added docs folder into installation
-	  file.
-
-2005-06-08 02:59  brent
-
-	* branches/0.5/exe/export/imsexport.py,
-	  branches/0.5/exe/export/scormexport.py,
-	  branches/0.5/exe/webui/scripts/adlcp_rootv1p2.xsd,
-	  branches/0.5/exe/webui/scripts/imscp_rootv1p1p2.xsd,
-	  branches/0.5/exe/webui/scripts/imsmd_rootv1p2p1.xsd: added schema
-	  for SCORM and modified imsmanifest
-
-2005-06-08 02:42  djm
-
-	* branches/0.5/exe/engine/version.py,
-	  branches/0.5/exe/sample_exe.conf,
-	  branches/0.5/exe/webui/templates/about.xul, branches/0.5/setup.py:
-	  Update version number and setup stuff
-
-2005-06-08 02:29  matthew
-
-	* branches/0.5/exe/engine/config.py,
-	  branches/0.5/exe/engine/package.py: Removed redundant code in
-	  config.py Fixed bug in package where content was becoming
-	  dissordered with package upgrades
-
-2005-06-08 02:27  jenny
-
-	* branches/0.5/win install/exe.nsi: modified exe.nsi file.
-
-2005-06-08 01:12  djm
-
-	* branches/0.5/exe/webui/templates/about.xul: bump revision
-
-2005-06-07 23:33  djm
-
-	* branches/0.5: Initialized merge tracking via svnmerge with
-	  revisions 1-754 from http://exe.cfdl.auckland.ac.nz/svn/exe/trunk
-
-2005-06-07 23:28  djm
-
-	* branches/0.5: Created new branch for 0.5 release
+	* exe/export/imsexport.py: minor change to schemaversion #
 
 2005-06-07 23:27  matthew
 
