@@ -26,47 +26,46 @@ class MyDirServiceProvider : public nsIDirectoryServiceProvider
 /* Implementation file */
 NS_IMPL_ISUPPORTS1(MyDirServiceProvider, nsIDirectoryServiceProvider)
 
-MyDirServiceProvider::MyDirServiceProvider()
+inline MyDirServiceProvider::MyDirServiceProvider()
 {
 }
 
-MyDirServiceProvider::~MyDirServiceProvider()
+inline MyDirServiceProvider::~MyDirServiceProvider()
 {
 }
 
 /* nsIFile getFile (in string prop, out PRBool persistent); */
-NS_IMETHODIMP MyDirServiceProvider::GetFile(const char *prop, 
-                                            PRBool *persistent, 
-                                            nsIFile **_retval)
+inline NS_IMETHODIMP MyDirServiceProvider::GetFile(const char *prop, 
+                                                   PRBool *persistent, 
+                                                   nsIFile **_retval)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }
 
 /* End of implementation class template. */
 
-
+// initEmbedding takes the path to the firefox dist directory
+// e.g. /home/djm/uoa/firefox/mozilla/dist/firefox
 static PyObject * initEmbedding(PyObject *self, PyObject *args) 
 {
-    const char *filename;
+    const char *path;
 
-    if (!PyArg_ParseTuple(args, "s", &filename)) {
+    if (!PyArg_ParseTuple(args, "s", &path)) {
         return NULL;
     }
 
-    doInitEmbedding();
+    doInitEmbedding(path);
 
     // return the address to the LocalFile 
     return Py_None;
 }
 
-void doInitEmbedding()
+void doInitEmbedding(const char* path)
 {
-    const char* path = "/home/djm/uoa/firefox/mozilla/dist/firefox";
     nsCOMPtr<nsILocalFile> mreAppDir;
-    nsresult rv;
-    //    rv = NS_NewNativeLocalFile(nsDependentCString(T2A(path)), TRUE, getter_AddRefs(mreAppDir));
-    rv = NS_NewNativeLocalFile(nsDependentCString(path), PR_TRUE, 
-                               getter_AddRefs(mreAppDir));
+
+    nsresult rv = NS_NewNativeLocalFile(nsDependentCString(path), PR_TRUE, 
+                                        getter_AddRefs(mreAppDir));
     NS_ASSERTION(NS_SUCCEEDED(rv), "failed to create mreAppDir localfile");
 
     // Take a look at 
