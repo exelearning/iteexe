@@ -35,12 +35,20 @@ nsISHistoryListener    = components.interfaces.nsISHistoryListener
 nsIContextMenuListener = components.interfaces.nsIContextMenuListener
 nsIPromptService       = components.interfaces.nsIPromptService
 
+DEBUG = True
+
 class WebBrowserChromeBase(object):
     """Base class that implements the
     nsIWebBrowserChrome interface
     Allowing gecko to control its window
     """
     _com_interfaces_ = (nsIWebBrowserChrome,)
+
+    def __init__(self, webBrowser):
+        """
+        Pass it a reference to an nsIWebBrowser
+        """
+        self.webBrowser = webBrowser
 
     # nsIWebBrowserChrome methods
     def setStatus(self, statusType, status):
@@ -58,6 +66,8 @@ class WebBrowserChromeBase(object):
             nsIWebBrowserChrome.STATUS_SCRIPT_DEFAULT
             nsIWebBrowserChrome.STATUS_LINK
         """
+        if DEBUG:
+            print 'setStatus', statusType, status
 
     def destroyBrowserWindow(self):
         """
@@ -69,6 +79,8 @@ class WebBrowserChromeBase(object):
         nsresult :
             NS_OK if successful.
         """
+        if DEBUG:
+            print 'destroyBrowserWindow'
 
     def sizeBrowserTo(self, aCX, aCY):
         """
@@ -81,6 +93,8 @@ class WebBrowserChromeBase(object):
         nsresult:
             NS_OK if successful.
         """
+        if DEBUG:
+            print 'sizeBrowserTo', aCX, aCY
 
     def showAsModal(self):
         """
@@ -92,6 +106,8 @@ class WebBrowserChromeBase(object):
         nsresult:
             A result code specified in exitModalEventLoop below. Usually NS_OK if successful.
         """
+        if DEBUG:
+            print 'showAsModal'
 
     def isWindowModal(self):
         """
@@ -104,6 +120,9 @@ class WebBrowserChromeBase(object):
             TRUE if the window is modal.
             FALSE otherwise.
         """
+        if DEBUG:
+            print 'isWindowModal'
+        return False
 
     def exitModalEventLoop(self, aStatus):
         """
@@ -115,6 +134,8 @@ class WebBrowserChromeBase(object):
         Returns:
             NS_OK if successful.
         """
+        if DEBUG:
+            print 'exitModalEventLoop', aStatus
 
     # nsIWebBrowserChrome attributes
     # attribute nsIWebBrowser nsIWebBrowserChrome::webBrowser
@@ -835,19 +856,22 @@ class PromptServiceBase(object):
 
 
 
-class PythonTestComponent(WebBrowserChromeBase):
-    # Note we only list the "child" interface, not our intermediate interfaces
-    # (which we must, by definition, also support)
+class BrowserImpl(WebBrowserChromeBase, 
+                  EmbeddingSiteWindowBase,
+                  WebProgressListenerBase,
+                  HistoryListenerBase,
+                  ContextMenuListenerBase,
+                  PromptServiceBase):
+
     _com_interfaces_ = (nsIWebBrowserChrome,
                         nsIEmbeddingSiteWindow,
                         nsIWebProgressListener,
                         nsISHistoryListener,
                         nsIContextMenuListener,
                         nsIPromptService)
-    #_reg_clsid_ = "{7EE4BDC6-CB53-42c1-A9E4-616B8E012ABA}"
-    #_reg_contractid_ = "Python.TestComponent"
-    def __init__(self):
-        pass
+    _reg_clsid_ = "{0d1962b7-e433-409e-ad91-f5884c46330e}"
+    _reg_contractid_ = "EXE.BrowserImpl"
 
-
-    # nsIEmbeddingSiteWindow methods
+    def __init__(self, window, webBrowser):
+        EmbeddingSiteWindowBase.__init__(self, window)
+        WebBrowserChromeBase.__init__(self, webBrowser)
