@@ -406,7 +406,7 @@ function metadataEditor() {
 function aboutPage() {
 	var features = "width=300,height=400,status=no,resizable=no,"+
 			"left=260,top=200";
-	var aboutWin = window.open ("/templates/about.xul", "About", features);}
+	var aboutWin = window.open ("/about", "About", features);}
 
 // Appends an iDevice
 // XH means that the func is actually called by the server over xmlhttp
