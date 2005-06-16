@@ -3,46 +3,7 @@
 #include <nscore.h>
 #include <nsDependentString.h>
 #include <assert.h>
-void doInitEmbedding();
-
-/* Use the code below as a template for the implementation class for this interface. */
-
-/* Header file */
-class MyDirServiceProvider : public nsIDirectoryServiceProvider
-{
- public:
-    NS_DECL_ISUPPORTS
-        NS_DECL_NSIDIRECTORYSERVICEPROVIDER
-
-        MyDirServiceProvider();
-
- private:
-    virtual ~MyDirServiceProvider();
-
- protected:
-    /* additional members */
-};
-
-/* Implementation file */
-NS_IMPL_ISUPPORTS1(MyDirServiceProvider, nsIDirectoryServiceProvider)
-
-inline MyDirServiceProvider::MyDirServiceProvider()
-{
-}
-
-inline MyDirServiceProvider::~MyDirServiceProvider()
-{
-}
-
-/* nsIFile getFile (in string prop, out PRBool persistent); */
-inline NS_IMETHODIMP MyDirServiceProvider::GetFile(const char *prop, 
-                                                   PRBool *persistent, 
-                                                   nsIFile **_retval)
-{
-    return NS_ERROR_NOT_IMPLEMENTED;
-}
-
-/* End of implementation class template. */
+void doInitEmbedding(const char* path);
 
 // initEmbedding takes the path to the firefox dist directory
 // e.g. /home/djm/uoa/firefox/mozilla/dist/firefox
@@ -71,10 +32,8 @@ void doInitEmbedding(const char* path)
     // Take a look at 
     // http://www.mozilla.org/projects/xpcom/file_locations.html
     // for more info on File Locations
-    MyDirServiceProvider *provider = new MyDirServiceProvider;
-    assert(provider);
 
-    rv = NS_InitEmbedding(mreAppDir, provider);
+    rv = NS_InitEmbedding(mreAppDir, nsnull);
     assert(NS_SUCCEEDED(rv));
 }
 
