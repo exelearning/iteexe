@@ -34,9 +34,6 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
-class PackageError(Exception):
-    """Used for defining package specific errors"""
-
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
@@ -168,16 +165,7 @@ class Package(Persistable):
         'resourceFile' is a 'path' instance pointing to a local file where we
         can load the resource from
         """
-        if not resourceFile.exists():
-            raise PackageError(_(u'Resource file not found'))
-        if not resourceFile.isfile():
-            raise PackageError(_(u'Received a path to a non file'))
-        try:
-            resourceFile.copyfile(self.resourceDir/storageName)
-        except shutil.Error, error:
-            raise PackageError(u"Couldn't copy file: %s" % unicode(error))
-        except IOError, error:
-            raise PackageError(u"Couldn't copy file: %s" % unicode(error))
+        resourceFile.copyfile(self.resourceDir/storageName)
 
 
     def deleteResource(self, storageName):
@@ -185,14 +173,7 @@ class Package(Persistable):
         Remove a resource from a package
         """
         resourceFile = self.resourceDir/storageName
-        if not resourceFile.exists():
-            raise PackageError(_(u'Resource file not found'))
-        if not resourceFile.isfile():
-            raise PackageError(_(u'Received a path to a non file'))
-        try:
-            resourceFile.remove()
-        except IOError, error:
-            raise PackageError(u"Couldn't remove file: %s" % unicode(error))
+        resourceFile.remove()
 
 
     def upgradeToVersion1(self):

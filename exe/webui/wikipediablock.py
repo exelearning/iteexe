@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-TeacherProfileBlock can render and process TeacherProfileIdevices as XHTML
+WikipediaBlock can render and process WikipediaIdevices as XHTML
 """
 
 import logging
@@ -31,14 +31,17 @@ _   = gettext.gettext
 
 
 # ===========================================================================
-class TeacherProfileBlock(Block):
+class WikipediaBlock(Block):
     """
-    TeacherProfileBlock can render and process TeacherProfileIdevices as XHTML
+    WikipediaBlock can render and process WikipediaIdevices as XHTML
     """
     def __init__(self, parent, idevice):
+        """
+        Initialize
+        """
         Block.__init__(self, parent, idevice)
-        self.photoElement   = ImageElement(idevice.photo)
-        self.profileElement = TextAreaElement(idevice.profile)
+        self.articleElement = TextAreaElement(idevice.article)
+        self.articleElement.height = 300
 
 
     def process(self, request):
@@ -47,20 +50,28 @@ class TeacherProfileBlock(Block):
         apply to this block
         """
         log.debug("process " + repr(request.args))
-        Block.process(self, request)
-        self.photoElement.process(request)
-        self.profileElement.process(request)
+
+        if u"loadWikipedia"+self.id in request.args:
+            self.idevice.loadArticle(request.args[u"wikipedia"][0])
+        else:
+            Block.process(self, request)
+
+            if (u"action" not in request.args or
+                request.args[u"action"][0] != u"delete"):
+                self.articleElement.process(request)
 
 
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form elements for editing this block
         """
+        log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<b>"+_(u"Teacher Profile")+u"</b><br/>\n"
-        html += self.photoElement.renderEdit()
+        html += _(u"Wikipedia Article ")
+        html += common.textInput(u"wikipedia", self.idevice.articleName)
+        html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
         html += u"<br/>\n"
-        html += self.profileElement.renderEdit()
+        html += self.articleElement.renderEdit()
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -70,14 +81,11 @@ class TeacherProfileBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
+        log.debug("renderPreview")
         html  = u"<div class=\"iDevice\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<div style=\"padding:6px; float:left;\"/>\n" 
-        html += self.photoElement.renderPreview()
-        html += u"</div>\n"
-        html += self.profileElement.renderPreview()
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += self.articleElement.renderPreview()
+        html += self.renderViewButtons()
         html += u"</div>\n"
         return html
     
@@ -86,13 +94,11 @@ class TeacherProfileBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """        
+        log.debug("renderView")
+        content = self.articleElement.renderView()
+        content = content.replace(r'src="resources/', 'src=')
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<div style=\"padding:6px; float:left;\"/>\n" 
-        html += self.photoElement.renderView()
-        html += u"</div>\n"
-        html += self.profileElement.renderView()
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += content
         html += u"</div>\n"
         return html
     

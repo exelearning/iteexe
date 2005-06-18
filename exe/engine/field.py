@@ -72,6 +72,14 @@ class Field(Persistable):
         """
         return []
 
+
+    def delete(self):
+        """
+        Do any special processing when deleted
+        Overridden by derieved classes
+        """
+        pass
+
 # ===========================================================================
 class TextField(Field):
     """
@@ -85,12 +93,6 @@ class TextField(Field):
         Field.__init__(self, name, instruc)
         self.content = content
 
-
-    def setContent(self, idevice, content):
-        """
-        Modify content, overridden for special behaviour
-        """
-        self.content = content
 
 # ===========================================================================
 class TextAreaField(Field):
@@ -106,11 +108,6 @@ class TextAreaField(Field):
         self.content = content
 
 
-    def setContent(self, idevice, content):
-        """
-        Modify content, overridden for special behaviour
-        """
-        self.content = content
 
 # ===========================================================================
 
@@ -139,7 +136,7 @@ class ImageField(Field):
 
     def setImage(self, imagePath):
         """
-        Store the image pointed to by content in the package
+        Store the image in the package
         Needs to be in a package to work.
         """
         log.debug(u"setImage "+unicode(imagePath))
@@ -151,16 +148,29 @@ class ImageField(Field):
                'iDevice '+self.idevice.parentNode.id+' has no package')
 
         if resourceFile.isfile():
+            self.delete()
             package = self.idevice.parentNode.package
-
-            if self.imageName:
-                package.deleteResource(self.imageName)
 
             self.imageName = self.id + u"_" + unicode(resourceFile.basename())
             package.addResource(resourceFile, self.imageName)
 
         else:
             log.error('File %s is not a file' % resourceFile)
+
+
+    def delete(self):
+        """
+        Delete the image from the package
+        Needs to be in a package to work.
+        """
+        assert(self.idevice.parentNode,
+               'Image '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if self.imageName:
+            package = self.idevice.parentNode.package
+            package.deleteResource(self.imageName)
 
 
     def setDefaultImage(self):

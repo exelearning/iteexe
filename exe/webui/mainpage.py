@@ -37,7 +37,6 @@ from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
 from exe.export.imsexport     import IMSExport
 from exe.engine.path          import Path
-from exe.engine.package       import PackageError
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -100,7 +99,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
-        setUpHandler(self.handleAddResource, 'addResource')
         setUpHandler(self.handleExport, 'exportPackage')
         self.idevicePane.client = client
 
@@ -252,19 +250,6 @@ class MainPage(RenderableLivePage):
             log.error(u'Error loading package "%s": %s' % \
                       (filename, unicode(exc)))
             self.error = True
-
-    def handleAddResource(self, client, filename):
-        """Add a resource (image/sound/video/etc.) to the current package"""
-        try:
-            filename = Path(filename)
-            storageName = self.package.addResource(filename)
-            url = '%s/%s' % (self.package.name, storageName)
-            client.alert(_(u'Resource Uploaded Successfully.\n'
-                           u'Access URL: %s' % url))
-        except PackageError, exc:
-            client.alert(_(u'Importing Resource failed:\n%s' % \
-                           exc.encode('utf8')))
-            log.error(u'Failed to save resource: %s' % exc)
 
     def handleExport(self, client, exportType, filename):
         """

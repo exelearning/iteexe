@@ -108,6 +108,7 @@ class IdeviceStore:
         from exe.engine.truefalseidevice      import TrueFalseIdevice
         from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
         from exe.engine.quiztestidevice       import QuizTestIdevice
+        from exe.engine.wikipediaidevice      import WikipediaIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -124,6 +125,7 @@ class IdeviceStore:
         self.extended.append(ImageWithTextIdevice(defaultImage))
 
         self.extended.append(QuizTestIdevice())
+        self.extended.append(WikipediaIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

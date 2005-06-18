@@ -150,6 +150,9 @@ class Node(Persistable):
         while self.children:
             self.children[0].delete()
 
+        while self.idevices:
+            self.idevices[0].delete()
+  
         self.package.isChanged = True
 
 

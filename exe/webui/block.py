@@ -211,9 +211,7 @@ class Block(Renderable):
                                        _(u"Move Down"),1)
 
         options  = [(_(u"---Move To---"), "")]
-        #TODO breaking 4 levels of encapsulation is TOO MUCH!!!
-        #options += self.__getNodeOptions(self.idevice.parentNode.package.root)
-        options += self.__getNodeOptions(self.package.root)
+        options += self.__getNodeOptions(self.package.root, 0)
         html += common.select(u"move", self.id, options)
 
         if self.purpose != "" or self.tip != "":
@@ -239,15 +237,14 @@ class Block(Renderable):
         return html
 
 
-    def __getNodeOptions(self, node):
+    def __getNodeOptions(self, node, depth):
         """
         TODO We should probably get this list from elsewhere rather than
         building it up for every block
         """
-        options = [(u'&nbsp;&nbsp;&nbsp;'*(len(node.id)-1) + 
-                    node.title, node.id)]
+        options = [(u'&nbsp;&nbsp;&nbsp;'*depth + node.title, node.id)]
         for child in node.children:
-            options += self.__getNodeOptions(child)
+            options += self.__getNodeOptions(child, depth+1)
         return options
             
 

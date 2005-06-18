@@ -78,5 +78,12 @@ the piston with a brief textual summary of the key aspects of each visual.
         """
         return Idevice.getResources(self) + self.image.getResources()
        
+
+    def delete(self):
+        """
+        Delete the image when this iDevice is deleted
+        """
+        self.image.delete()
+        Idevice.delete(self)
         
 # ===========================================================================

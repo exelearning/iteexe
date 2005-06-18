@@ -25,7 +25,6 @@
         <key id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
         <key id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
         <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
-        <key id="file-addimage" modifiers="control" key="I" oncommand="fileAddImage()"/>
         <key id="file-export-website-key" modifiers="control" key="W" oncommand="exportPackage('webSite')"/>
     </keyset>
     <vbox flex="1">

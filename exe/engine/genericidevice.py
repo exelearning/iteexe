@@ -74,6 +74,15 @@ class GenericIdevice(Idevice):
         for field in self.fields:
             resources += field.getResources()
         return resources
+    
+
+    def delete(self):
+        """
+        Delete the fields when this iDevice is deleted
+        """
+        for field in self.fields:
+            field.delete()
+        Idevice.delete(self)
        
 
     def upgradeToVersion1(self):

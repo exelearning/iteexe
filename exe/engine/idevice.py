@@ -137,7 +137,8 @@ class Idevice(Persistable):
         """
         Change parentNode
         """
-        self.delete()
+        if self.parentNode:
+            self.parentNode.idevices.remove(self)
         parentNode.addIdevice(self)
 
 

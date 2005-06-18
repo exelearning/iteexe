@@ -143,11 +143,6 @@ class TestScormMetaExport(BaseTestScormExport):
         """Checks that there is meta data in 'content'"""
         assert '<metadata>' in content
         assert '</metadata>' in content
-        assert 'xmlns:dc' in content
-        assert 'dc:title' in content
-        assert 'dc:creator' in content
-        assert 'dc:description' in content
-        assert 'dc:language' in content
         
 class TestScormNoMetaExport(BaseTestScormExport):
     
@@ -159,11 +154,6 @@ class TestScormNoMetaExport(BaseTestScormExport):
         """Checks that there is meta data in 'content'"""
         assert '<metadata>' in content
         assert '</metadata>' in content
-        assert 'xmlns:dc' not in content
-        assert 'dc:title' not in content
-        assert 'dc:creator' not in content
-        assert 'dc:description' not in content
-        assert 'dc:language' not in content
         
 
 

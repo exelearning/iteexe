@@ -1,3 +1,78 @@
+2005-06-17 01:33  djm
+
+	* prototype/pyfox/pyfoxutil.cpp: For Matthew doesn't compile
+
+2005-06-17 01:13  matthew
+
+	* prototype/pyfox/pyfoxutiltest.py: Test for c++ library. Run with
+	  python -i pyfoxutiltest.py
+
+2005-06-16 22:15  matthew
+
+	* prototype/pyfox/test_xpcomponents.py,
+	  prototype/pyfox/xpcomponents.py: Building up xpcomponents.py
+
+2005-06-16 03:53  matthew
+
+	* prototype/pyfox/initEmbedding.cpp: Made it work on Ms Machine.
+	  Removed empty directory service implementation
+
+2005-06-16 03:46  jenny
+
+	* exe/webui/aboutpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/about.xul, exe/webui/webserver.py: use
+	  aboutPage instead of about.xul.
+
+2005-06-16 01:06  djm
+
+	* prototype/burningrats, prototype/burningrats/SimpleGladeApp.py,
+	  prototype/burningrats/burningrats.py,
+	  prototype/burningrats/project2.glade,
+	  prototype/burningrats/project2.py: Prototype which shows how
+	  GTkMozEmbed works
+
+2005-06-15 23:22  jenny
+
+	* exe/webui/testquestionelement.py: fixed SCORM quiz question's
+	  delete button bug.
+
+2005-06-15 22:49  jenny
+
+	* exe/webui/testquestionelement.py: added delete button for
+	  individual question for SCORM quiz idevice.
+
+2005-06-15 22:00  jenny
+
+	* exe/export/scormexport.py, exe/export/websiteexport.py: fixed
+	  scorm quiz export bugs.
+
+2005-06-15 11:21  brent
+
+	* exe/engine/quiztestidevice.py, exe/webui/idevicepane.py,
+	  exe/webui/quiztestblock.py: changed quiz test iDevice to be called
+	  SCORM Quiz and did a little interface housecleaning...
+
+2005-06-15 07:23  brent
+
+	* exe/export/scormexport.py: added onbeforeunload to body for SCORM
+	  functionality. has improved tracking for navigating forwards, but
+	  there is a problem going backwards :-p
+
+2005-06-15 03:23  djm
+
+	* prototype/pyfox/initEmbedding.cpp: Now accepts path as function
+	  argument
+
+2005-06-15 03:19  djm
+
+	* prototype/pyfox/setup.py: Added setup.py script to build
+	  _initEmbedding extension.
+
+2005-06-15 00:20  djm
+
+	* ChangeLog, README.txt, conf, dav, db, format, hooks, locks:
+	  Reverse out a bunch of files which were added by mistake
+
 2005-06-14 22:53  djm
 
 	* prototype/pyfox/initEmbedding.cpp: Python extension for calling
