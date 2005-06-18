@@ -24,10 +24,13 @@ A Wikipedia Idevice is one built from a Wikipedia article.
 import re
 from exe.engine.beautifulsoup import BeautifulSoup
 from exe.engine.idevice       import Idevice
-from exe.engine.field         import TextAreaField, ImageField
+from exe.engine.field         import TextAreaField
 
 import urllib
 class eXeURLopener(urllib.FancyURLopener):
+    """
+    Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
+    """
     version = "eXe/exe@auckland.ac.nz"
 urllib._urlopener = eXeURLopener()
 
@@ -39,18 +42,19 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class WikipediaIdevice(Idevice):
     """
-    A Wikipedia Idevice is one built up from an image and free article.
+    A Wikipedia Idevice is one built from a Wikipedia article.
     """
     Site = 'http://en.wikipedia.org/'
     def __init__(self):
         Idevice.__init__(self, _(u"Wikipedia Article"), 
                          _(u"University of Auckland"), 
-                         _(u"""<p>
-</p>"""), u"", u"")
+                         _(u"""The Wikipedia iDevice takes a copy of an
+article from en.wikipedia.org, including copying the associated images."""), 
+                         u"", u"")
         self.articleName = u""
         self.article = TextAreaField(_(u"Article"))
         self.article.idevice = self
-        self.images = []
+        self.images = {}
  
 
     def getResources(self):
@@ -59,7 +63,7 @@ class WikipediaIdevice(Idevice):
         """
         resources = Idevice.getResources(self)
         for image in self.images:
-            resources += image.getResources()
+            resources.append(image)
         return resources
 
 
@@ -84,22 +88,23 @@ class WikipediaIdevice(Idevice):
 
         # clear out any old images
         for image in self.images:
-            image.delete()
-        self.images = []
+            self.parentNode.package.deleteResource(image)
+        self.images = {}
 
         # download the images
         for imageTag in content.fetch('img'):
             imageSrc  = unicode(imageTag['src'])
-            imageName = imageSrc.split('/')[-1]
-            if not imageSrc.startswith("http://"):
-                imageSrc = WikipediaIdevice.Site + imageSrc
-            path, info = urllib.urlretrieve(imageSrc, imageName)
-            image = ImageField(imageName)
-            image.idevice = self
-            image.setImage(path)
-            imageTag['src'] = "resources/"+image.imageName
-            self.images.append(image)
-            
+            imageName = self.id + u"_" + imageSrc.split('/')[-1]
+            if imageName not in self.images:
+                if not imageSrc.startswith("http://"):
+                    imageSrc = WikipediaIdevice.Site + imageSrc
+                imageDest = self.parentNode.package.resourceDir/imageName
+                urllib.urlretrieve(imageSrc, imageDest)
+                self.images[imageName] = True
+
+            imageTag['src'] = (u"/" + self.parentNode.package.name + 
+                               u"/resources/" + imageName)
+                
         self.article.content = self.reformatArticle(unicode(content))
 
 
@@ -110,6 +115,7 @@ class WikipediaIdevice(Idevice):
         content = re.sub(r'href="/wiki/', 
                          r'href="'+WikipediaIdevice.Site+'wiki/', content)
         content = re.sub(r'<div class="editsection".*?</div>', '', content)
+        #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", "")
         content = re.sub(r'<script.*?</script>', '', content)
         return content
@@ -120,8 +126,8 @@ class WikipediaIdevice(Idevice):
         Delete the fields when this iDevice is deleted
         """
         for image in self.images:
-            image.delete()
-        self.images = []
+            self.parentNode.package.deleteResource(image)
+        self.images = {}
         Idevice.delete(self)
 
         

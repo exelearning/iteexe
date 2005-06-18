@@ -1,3 +1,16 @@
+2005-06-18 11:14  djm
+
+	* ChangeLog, exe/engine/field.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/engine/imagewithtextidevice.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/teacherprofileidevice.py,
+	  exe/engine/wikipediaidevice.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/mainpage.py,
+	  exe/webui/teacherprofileblock.py,
+	  exe/webui/templates/mainpage.xul, exe/webui/wikipediablock.py,
+	  testing/testexport.py: Delete images when the iDevice they're in
+	  is deleted. Initial work on a Wikipedia article iDevice.
+
 2005-06-17 01:33  djm
 
 	* prototype/pyfox/pyfoxutil.cpp: For Matthew doesn't compile

@@ -20,6 +20,7 @@
 WikipediaBlock can render and process WikipediaIdevices as XHTML
 """
 
+import re
 import logging
 import gettext
 from exe.webui.block   import Block
@@ -96,7 +97,7 @@ class WikipediaBlock(Block):
         """        
         log.debug("renderView")
         content = self.articleElement.renderView()
-        content = content.replace(r'src="resources/', 'src=')
+        content = re.sub(r'src="/.*?/resources/', 'src="', content)
         html  = u"<div class=\"iDevice\">\n"
         html += content
         html += u"</div>\n"
