@@ -2,9 +2,12 @@
 #include <nsEmbedAPI.h>
 #include <nscore.h>
 #include <nsDependentString.h>
+#include <nsIBaseWindow.h>
 #include <assert.h>
+#include <PyXPCOM_std.h>
 #include <iostream>
 #include <iomanip>
+#include <nsIWidget.h>
 using namespace std;
 
 void doInitEmbedding(const char* path);
@@ -61,16 +64,20 @@ static PyObject * initWindow(PyObject *self, PyObject *args)
     cout << hex << hNativeWindow << endl;
     cout << x << ", " << y << endl;
     
-    nsIBaseWindow* browserWindow = NULL;
-    Py_nsISupports convertor(*baseWindow);
+    //nsIBaseWindow* browserWindow = NULL;
+    nsISupports* browserWindowSupports = NULL;
+    //Py_nsISupports convertor(*baseWindow);
     Py_nsISupports::InterfaceFromPyObject(baseWindow,
                                           NS_GET_IID(nsIBaseWindow),
-                                          &browserWindow,
+                                          &browserWindowSupports,
                                           PR_FALSE);
+    nsresult rv = NS_OK;
+    nsCOMPtr<nsIBaseWindow> browserWindow(do_QueryInterface(browserWindowSupports, &rv));
+    //if(NS_FAILED(rv)) return rv;
 
     // NB: nativeWindow is just void*
-    browserWindow->InitWindows((nativeWindow)hNativeWindow, nsnull, 
-                               x, y, width, height);
+    //browserWindow->InitWindow((nativeWindow)hNativeWindow, nsnull, x, y, width, height);
+    browserWindow->InitWindow(nsNativeWidget(hNativeWindow), nsnull, x, y, width, height);
 
     // return the address to the LocalFile 
     return Py_None;

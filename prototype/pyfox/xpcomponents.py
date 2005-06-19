@@ -81,6 +81,7 @@ class WebBrowserChromeBase(object):
         """
         if DEBUG:
             print 'destroyBrowserWindow'
+        self.window.destroy()
 
     def sizeBrowserTo(self, aCX, aCY):
         """

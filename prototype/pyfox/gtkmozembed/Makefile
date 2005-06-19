@@ -312,8 +312,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/gtkmozembed.Plo
-include ./$(DEPDIR)/gtkmozembedmodule.Plo
+##MS include ./$(DEPDIR)/gtkmozembed.Plo
+##MS include ./$(DEPDIR)/gtkmozembedmodule.Plo
 
 .c.o:
 	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
