@@ -76,9 +76,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         name = urllib.quote(name.replace(" ", "_"))
         net  = urllib.urlopen(WikipediaIdevice.Site+'wiki/'+name)
         page = net.read()
-        #open("test.html","w").write(page)
         net.close()
-        #page = open("test.html").read()
 
         soup = BeautifulSoup(unicode(page, "iso-8859-1"))
         content = soup.first('div', {'id': "content"})
@@ -116,7 +114,7 @@ article from en.wikipedia.org, including copying the associated images."""),
                          r'href="'+WikipediaIdevice.Site+'wiki/', content)
         content = re.sub(r'<div class="editsection".*?</div>', '', content)
         #TODO Find a way to remove scripts without removing newlines
-        content = content.replace("\n", "")
+        content = content.replace("\n", " ")
         content = re.sub(r'<script.*?</script>', '', content)
         return content
 
@@ -129,16 +127,5 @@ article from en.wikipedia.org, including copying the associated images."""),
             self.parentNode.package.deleteResource(image)
         self.images = {}
         Idevice.delete(self)
-
-        
-
         
 # ===========================================================================
-
-if __name__ == "__main__":
-    idev = WikipediaIdevice()
-    idev.loadArticle("Mozilla Firefox")
-#    print "<html><body>"
-#    print idev.article.content
-#    print "</body></html>"
-

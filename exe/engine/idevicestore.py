@@ -40,7 +40,7 @@ class IdeviceStore:
         Initialize
         """
         # TODO I originally planned Extended and Generic iDevices to
-        # be handled polymorphically, need to reconsider this
+        # be handled together polymorphically, need to reconsider this
         self._nextIdeviceId = 0
         self.config         = config
         self.extended       = []
@@ -57,10 +57,10 @@ class IdeviceStore:
     def getIdevices(self):
         """
         Get the idevices which are applicable for the current node of
-        this package
+        this package.
+        In future the idevices which are returned will depend
+        upon the pedagogical template we are using
         """
-        # TODO: in future the idevices which are returned will depend
-        # upon the pedagogical template we are using
         return self.extended + self.generic
 
 
@@ -109,6 +109,7 @@ class IdeviceStore:
         from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
         from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.wikipediaidevice      import WikipediaIdevice
+        from exe.engine.attachmentidevice     import AttachmentIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -126,6 +127,7 @@ class IdeviceStore:
 
         self.extended.append(QuizTestIdevice())
         self.extended.append(WikipediaIdevice())
+        self.extended.append(AttachmentIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

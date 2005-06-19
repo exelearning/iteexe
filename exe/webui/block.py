@@ -283,7 +283,7 @@ class Block(Renderable):
         return html
 
 
-    def renderViewContent(self, style):
+    def renderViewContent(self):
         """
         overriden by derieved classes
         """

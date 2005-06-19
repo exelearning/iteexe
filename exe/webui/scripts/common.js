@@ -79,6 +79,19 @@ function changeImageHeight(elementId) {
     width.value  = image.width;
 }
 
+// Called by the user to provide a file name to add to the package
+function addFile(blockId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select an file", nsIFilePicker.modeOpen);
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        submitLink("addFile"+blockId, fp.file.path, 1);
+    }
+}
+
 function showMe(ident, w, h)
 {
     var elmDiv = document.getElementById('popupmessage');
