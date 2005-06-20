@@ -192,8 +192,9 @@ class Block(Renderable):
         html  = common.submitImage(u"done", self.id, 
                                    u"/images/stock-apply.png", 
                                    _(u"Done"),1)
+
         html += common.submitImage(u"delete", self.id, 
-                                   u"/images/stock-cancel.png", 
+                                   u"/images/stock-delete.png", 
                                    _(u"Delete"),1)
 
         if self.idevice.isFirst():

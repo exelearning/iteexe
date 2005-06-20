@@ -201,7 +201,6 @@ class ScormPage(Page):
                 break
             
         html += "</head>\n"
-       # html += "<body onunLoad=\"return unloadPage()\">\n"
         html += '<body onload="loadPage()" onunload="unloadPage()" '
         html += ' onbeforeunload="unloadPage()">'
         html += "<div id=\"outer\">\n"
@@ -218,9 +217,6 @@ class ScormPage(Page):
 
         html += "</div>\n"
         html += "</div>\n"
-        #html += "<script language=\"javascript\">\n"
-        #html += "loadPage();\n"
-        #html += "doContinue('completed');</script>\n"  
         html += "</body></html>\n"
         return html
 
