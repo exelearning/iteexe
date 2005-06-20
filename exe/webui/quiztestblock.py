@@ -185,7 +185,7 @@ class QuizTestBlock(Block):
             keyStrs += str(element.question.correctAns) + ";\n"   
             
             answerStr += """
-            for (var i=0; i <= %s; i++)
+            for (var i=0; i < %s; i++)
             {
                if (%s)
                {
@@ -263,7 +263,7 @@ class QuizTestBlock(Block):
             """ % (unicode(i), quesId, unicode(i), unicode(i), 
                    element.question.correctAns)
             answerStr += """
-            for (var i=0; i <= %s; i++)
+            for (var i=0; i < %s; i++)
             {
                if (%s)
                {
