@@ -156,6 +156,14 @@ function submitLink(action, object, changed)
     form.submit();
 }
 
+// Check the user really really wants to do this before submitting
+function confirmThenSubmitLink(message, action, object, changed) 
+{
+    if (confirm(message)) {
+        submitLink(action, object, changed);
+    }
+}
+
 
 function beforeUnload(){
     if (document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value=="1")

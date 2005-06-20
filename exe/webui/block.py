@@ -193,9 +193,12 @@ class Block(Renderable):
                                    u"/images/stock-apply.png", 
                                    _(u"Done"),1)
 
-        html += common.submitImage(u"delete", self.id, 
-                                   u"/images/stock-delete.png", 
-                                   _(u"Delete"),1)
+        html += common.confirmThenSubmitImage(u"This will delete this iDevice."
+                                              u"\\n"
+                                              u"Do you really want to do this?",
+                                              u"delete", self.id, 
+                                              u"/images/stock-delete.png", 
+                                              _(u"Delete"),1)
 
         if self.idevice.isFirst():
             html += common.image(u"movePrev", u"/images/stock-go-up-off.png")

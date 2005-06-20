@@ -147,6 +147,23 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     html += '</a>\n' 
     return html
 
+def confirmThenSubmitImage(message, action, object_, imageFile, 
+                           title=u"", isChanged=1):
+    """
+    Adds an image link which will trigger the javascript needed to
+    post a form with the action and object passed in the args
+    """
+    html  = u"<a "
+    if title:
+        html += u"title=\""+title+"\" "
+    html += " href=\"#\" "
+    html += "onclick=\"confirmThenSubmitLink('"+message+"', '"+action+"', "
+    html += "'"+object_+"', "+unicode(isChanged)+");\" >"
+    html += u'<img src="'+imageFile+'" '
+    html += u' border="0" />'
+    html += '</a>\n' 
+    return html
+
 
 def select(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
