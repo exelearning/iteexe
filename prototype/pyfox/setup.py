@@ -6,7 +6,7 @@ MozDist=Moz+"/dist"
 
 setup(name='pyfoxutil',
       version='1.0',
-      ext_modules=[Extension('pyfoxutil', ['pyfoxutil.cpp'],
+      ext_modules=[Extension('_pyfoxutil', ['pyfoxutil.cpp'],
                              include_dirs=[MozDist+"/include/embed_base",
                                            MozDist+"/include/string",
                                            MozDist+"/include/xpcom",
@@ -19,7 +19,7 @@ setup(name='pyfoxutil',
                                              MozDist+"/lib"],
                              libraries = ["nspr4", "plc4", "plds4", 
                                           "xpcomcomponents_s", 
-                                          "embed_base_s", "xpcom",
+                                          "embed_base_s", "_xpcom",
                                           ])
                    ],
       )

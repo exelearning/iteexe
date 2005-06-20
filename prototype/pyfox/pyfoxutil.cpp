@@ -8,6 +8,9 @@
 #include <iostream>
 #include <iomanip>
 #include <nsIWidget.h>
+#include <nsIWebBrowser.h>
+#include <nsIWebBrowserListener.h>
+#include <nscore.h>
 using namespace std;
 
 void doInitEmbedding(const char* path);
@@ -48,45 +51,81 @@ void doInitEmbedding(const char* path)
 // e.g. /home/djm/uoa/firefox/mozilla/dist/firefox
 static PyObject * initWindow(PyObject *self, PyObject *args) 
 {
-    PyObject* baseWindow;
+    PyObject* webBrowser;
     int hNativeWindow;
     int x;
     int y;
     int width;
     int height;
 
-    if (!PyArg_ParseTuple(args, "Oiiiii", &baseWindow, &hNativeWindow, 
+    cerr << "Starting...\n";
+
+    if (!PyArg_ParseTuple(args, "Oiiiii", &webBrowser, &hNativeWindow, 
                           &x, &y, &width, &height)) {
         return NULL;
     }
 
-    cout << hex << baseWindow << endl;
-    cout << hex << hNativeWindow << endl;
-    cout << x << ", " << y << endl;
-    
-    //nsIBaseWindow* browserWindow = NULL;
-    nsISupports* browserWindowSupports = NULL;
-    //Py_nsISupports convertor(*baseWindow);
-    Py_nsISupports::InterfaceFromPyObject(baseWindow,
+    nsISupports* webBrowserSupports = NULL;
+    Py_nsISupports::InterfaceFromPyObject(webBrowser,
                                           NS_GET_IID(nsIBaseWindow),
-                                          &browserWindowSupports,
+                                          &webBrowserSupports,
                                           PR_FALSE);
     nsresult rv = NS_OK;
-    nsCOMPtr<nsIBaseWindow> browserWindow(do_QueryInterface(browserWindowSupports, &rv));
-    //if(NS_FAILED(rv)) return rv;
+    nsCOMPtr<nsIBaseWindow> baseWindow = do_QueryInterface(webBrowserSupports, &rv);
+    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call QueryInterface for nsIBaseWindow");
 
     // NB: nativeWindow is just void*
-    //browserWindow->InitWindow((nativeWindow)hNativeWindow, nsnull, x, y, width, height);
-    browserWindow->InitWindow(nsNativeWidget(hNativeWindow), nsnull, x, y, width, height);
+    //baseWindow->InitWindow((nativeWindow)hNativeWindow, nsnull, x, y, width, height);
+    cerr << "Calling InitWindow\n";
+    rv = baseWindow->InitWindow(nsNativeWidget(hNativeWindow), nsnull, x, y, width, height);
+    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call InitWindow");
+    cerr << "Called Init Window OK\n";
+    //rv = baseWindow->Create();
+    //NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call Create");
+    //cerr << "Created Window OK\n";
 
-    // return the address to the LocalFile 
+    cerr << "Showing window\n";
+    baseWindow->SetVisibility(PR_TRUE);
+    cerr << "Window Showing\n";
+    cerr << "Can't you see it?\n";
+
     return Py_None;
 }
 
-void doInitWindow(PyObject* baseWindow, int hNativeWindow, 
-                  int x, int y, int width, int height)
+static PyObject * addListener(PyObject *self, PyObject *args) 
 {
+    PyObject* webBrowser;
+    PyObject* listener;
+
+    if (!PyArg_ParseTuple(args, "OO", &webBrowser, &listener)) {
+        return NULL;
+    }
+
+    // Get each of the com objects
+    nsISupports* webBrowserSupports = NULL;
+    Py_nsISupports::InterfaceFromPyObject(webBrowser,
+                                          NS_GET_IID(nsIBaseWindow),
+                                          &webBrowserSupports,
+                                          PR_FALSE);
+    nsresult rv = NS_OK;
+    nsCOMPtr<nsIWebBrowser> webBrowserI = do_QueryInterface(webBrowserSupports, &rv);
+    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call QueryInterface for nsIWebBrowser");
+
+    nsISupports* listenerSupports = NULL;
+    Py_nsISupports::InterfaceFromPyObject(listener,
+                                          NS_GET_IID(nsIBaseWindow),
+                                          &webBrowserSupports,
+                                          PR_FALSE);
+    nsresult rv = NS_OK;
+    nsCOMPtr<nsIWebBrowserListener> listenerI = do_QueryInterface(webBrowserSupports, &rv);
+    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call QueryInterface for nsIWebBrowserListener");
+
+    // Get a weak reference to the listener
+    nsWeakPtr weakling (dont_AddRef(NS_GetWeakReference(NS_STATIC_CAST, 
+                       (nsIWebBrowserListener*, webBrowserI))));
+    void webBrowserI->AddWebBrowserListener(weakling, NS_GET_IID(nsIWebProgressListener));
 }
+
 
 // Set up the method table. 
 static PyMethodDef _pyfoxutil_methods[] = {
@@ -96,7 +135,7 @@ static PyMethodDef _pyfoxutil_methods[] = {
 };
 
 // This function must be named "init" + <modulename> Because the module is
-// "_pyfoxuntil" the function is "init_pyfoxutil"
+// "_pyfoxutil" the function is "init_pyfoxutil"
 PyMODINIT_FUNC init_pyfoxutil(void) 
 {
     (void)Py_InitModule("_pyfoxutil", _pyfoxutil_methods);
