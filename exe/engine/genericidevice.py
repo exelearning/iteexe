@@ -21,11 +21,9 @@
 An iDevice built up from simple fields.
 """
 
-import logging
-from exe.engine.persist import Persistable
-from exe.engine.path    import Path
 from exe.engine.idevice import Idevice
 from exe.engine.field   import Field, TextField, TextAreaField
+import logging
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)

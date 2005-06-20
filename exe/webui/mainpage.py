@@ -31,7 +31,7 @@ from exe.webui.renderable     import RenderableLivePage
 from exe.webui.idevicepane    import IdevicePane
 from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.outlinepane    import OutlinePane
-from exe.webui.stylepane      import StylePane
+from exe.webui.stylemenu      import StyleMenu
 from exe.webui.propertiespage import PropertiesPage
 from exe.export.websiteexport import WebsiteExport
 from exe.export.scormexport   import ScormExport
@@ -66,7 +66,7 @@ class MainPage(RenderableLivePage):
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
         self.idevicePane = IdevicePane(self)
-        self.stylePane   = StylePane(self)
+        self.styleMenu   = StyleMenu(self)
 
         # And in the main section
         self.authoringPage = AuthoringPage(self)

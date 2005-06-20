@@ -44,7 +44,7 @@ class QuizTestBlock(Block):
         Block.__init__(self, parent, idevice)
         self.idevice           = idevice
         self.questionElements  = []
-        self.message = False
+        self.message           = False
 
         i = 0
         for question in idevice.questions:
@@ -52,12 +52,12 @@ class QuizTestBlock(Block):
                                                              question))
             i += 1
 
+
     def process(self, request):
         """
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        
             
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
@@ -69,7 +69,6 @@ class QuizTestBlock(Block):
 
         for element in self.questionElements:
             element.process(request)
-
             
         if "action" in request.args and request.args["action"][0] == "done":
             for question in self.idevice.questions:
@@ -92,7 +91,8 @@ class QuizTestBlock(Block):
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
             html += "</font></b><br/><br/>"
-        html += "<b>" + _("SCORM Multiple Choice Quiz:") + " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        html += "<b>" + _("SCORM Multiple Choice Quiz:") 
+        html += " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         html += _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
         isChecked = ""
@@ -101,8 +101,9 @@ class QuizTestBlock(Block):
                 isChecked = "selected"
             else:
                 isChecked = ""
-            html += "<option value=%s0 %s> %s0%% </option>" % (str(i), isChecked,
-                                                              str(i))
+            html += "<option value=%s0 %s> %s0%% </option>" % (str(i), 
+                                                               isChecked,
+                                                               str(i))
             
         html += "</select><br/><br/>\n"
 
@@ -155,11 +156,13 @@ class QuizTestBlock(Block):
 
         return html
     
+
     def __createJavascriptForWeb(self):
         """
         Return an XHTML string for generating the javascript for web export
         """
-        scriptStr  = "var numQuestions = " +str(len(self.questionElements))+";\n"
+        scriptStr  = "var numQuestions = " 
+        scriptStr += str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
         answerStr  = """function getAnswer()
@@ -222,10 +225,10 @@ class QuizTestBlock(Block):
             alert("Your score is " + actualScore + "%")
            
         }\n"""
-        
 
         return scriptStr
     
+
     def __createJavascriptForScorm(self):
         """
         Return an XHTML string for generating the javascript for scorm export
@@ -241,7 +244,6 @@ class QuizTestBlock(Block):
         answers     = ""
         rawScoreStr = """}
         function calcRawScore(){\n"""
-        
         
         for element in self.questionElements:
             i = element.index
@@ -259,7 +261,8 @@ class QuizTestBlock(Block):
             answerStr += """
             doLMSSetValue("cmi.interactions.%s.id","%s");
             doLMSSetValue("cmi.interactions.%s.type","choice");
-            doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern","%s");
+            doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern",
+                          "%s");
             """ % (unicode(i), quesId, unicode(i), unicode(i), 
                    element.question.correctAns)
             answerStr += """
@@ -345,7 +348,6 @@ class QuizTestBlock(Block):
         html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
-
         for element in self.questionElements:
             html += element.renderView() + "<br/>"
         html += self.renderViewButtons()
@@ -360,10 +362,9 @@ class QuizTestBlock(Block):
 
         self.idevice.score = -1
         
-
-        
         return html
     
+
     def __calcScore(self):
         """
         Return a score for preview mode.
@@ -386,7 +387,6 @@ class QuizTestBlock(Block):
             
         return score 
             
-        
 
 
 # ===========================================================================

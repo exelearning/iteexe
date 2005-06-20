@@ -220,6 +220,9 @@ class Package(Persistable):
 
 
     def getNewIdeviceId(self):
+        """
+        Returns an iDevice Id which is unique for this package.
+        """
         id_ = unicode(self._nextIdeviceId)
         self._nextIdeviceId += 1
         return id_
@@ -246,6 +249,9 @@ class Package(Persistable):
 
 
     def upgradeToVersion3(self):
+        """
+        Also called to upgrade from 0.4 release
+        """
         self._nextIdeviceId = 0
     
 # ===========================================================================

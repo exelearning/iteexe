@@ -23,7 +23,6 @@ has loaded, (and loading and saving them?)
 
 import logging
 import gettext
-import os
 import os.path
 from exe.engine.package      import Package
 log = logging.getLogger(__name__)

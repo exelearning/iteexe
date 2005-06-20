@@ -21,11 +21,9 @@
 Simple fields which can be used to build up a generic iDevice.
 """
 
-import re
 import logging
 from exe.engine.persist import Persistable
 from exe.engine.path    import Path
-from exe.engine.idevice import Idevice
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)

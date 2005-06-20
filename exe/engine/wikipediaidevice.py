@@ -27,12 +27,12 @@ from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 
 import urllib
-class eXeURLopener(urllib.FancyURLopener):
+class UrlOpener(urllib.FancyURLopener):
     """
     Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
     """
     version = "eXe/exe@auckland.ac.nz"
-urllib._urlopener = eXeURLopener()
+urllib._urlopener = UrlOpener()
 
 import logging
 import gettext

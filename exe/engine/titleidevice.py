@@ -25,7 +25,7 @@ import logging
 from exe.engine.idevice import Idevice
 # TODO: This is a big mean hack to get 0.5 out on time... toUnicode should be in
 # some lower level library
-from path import toUnicode
+from exe.engine.path import toUnicode
 import gettext
 log = logging.getLogger(__name__)
 _ = gettext.gettext
