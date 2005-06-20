@@ -3,6 +3,7 @@ pygtk.require('2.0')
 import gtk
 from xpcom import components
 from xpcom.server import WrapObject
+from xpcomponents import BrowserImpl
 from _pyfoxutil import *
 import sys
 
@@ -30,4 +31,7 @@ initEmbedding(home)
 print 'python:', hex(handle)
 initWindow(wb, handle, 100, 100, 320, 240)
 print 'Done'
+bi = WrapObject(BrowserImpl(window, wb), components.interfaces.nsIWebProgressListener)
+addListener(wb, bi)
+print 'Listener added'
 gtk.main()

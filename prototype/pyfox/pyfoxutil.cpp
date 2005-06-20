@@ -7,10 +7,9 @@
 #include <PyXPCOM_std.h>
 #include <iostream>
 #include <iomanip>
-#include <nsIWidget.h>
 #include <nsIWebBrowser.h>
-#include <nsIWebBrowserListener.h>
-#include <nscore.h>
+#include <nsIWebProgressListener.h>
+#include <nsIWidget.h>
 using namespace std;
 
 void doInitEmbedding(const char* path);
@@ -116,14 +115,12 @@ static PyObject * addListener(PyObject *self, PyObject *args)
                                           NS_GET_IID(nsIBaseWindow),
                                           &webBrowserSupports,
                                           PR_FALSE);
-    nsresult rv = NS_OK;
-    nsCOMPtr<nsIWebBrowserListener> listenerI = do_QueryInterface(webBrowserSupports, &rv);
-    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call QueryInterface for nsIWebBrowserListener");
+    nsCOMPtr<nsIWebProgressListener> listenerI = do_QueryInterface(webBrowserSupports, &rv);
+    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to call QueryInterface for nsIWebProgressListener");
 
     // Get a weak reference to the listener
-    nsWeakPtr weakling (dont_AddRef(NS_GetWeakReference(NS_STATIC_CAST, 
-                       (nsIWebBrowserListener*, webBrowserI))));
-    void webBrowserI->AddWebBrowserListener(weakling, NS_GET_IID(nsIWebProgressListener));
+    nsWeakPtr weakling (dont_AddRef(NS_GetWeakReference(NS_STATIC_CAST(nsIWebProgressListener*, listenerI))));
+    webBrowserI->AddWebBrowserListener(weakling, NS_GET_IID(nsIWebProgressListener));
 }
 
 
@@ -131,6 +128,7 @@ static PyObject * addListener(PyObject *self, PyObject *args)
 static PyMethodDef _pyfoxutil_methods[] = {
     {"initEmbedding", initEmbedding, METH_VARARGS, "Initialize embedding"},
     {"initWindow",    initWindow,    METH_VARARGS, "Initialize native window"},
+    {"addListener",   addListener,   METH_VARARGS, "(webBrowser, nsIWebProgressListener implementation)"},
     {NULL, NULL, 0, NULL},
 };
 
