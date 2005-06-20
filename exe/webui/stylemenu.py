@@ -44,7 +44,7 @@ class StyleMenu(Renderable):
         
         if ("action" in request.args and 
             request.args["action"][0] == "ChangeStyle"):
-            log.debug("changing style to "+args["object"][0])
+            log.debug("changing style to "+request.args["object"][0])
             self.package.style = request.args["object"][0]
             
             
