@@ -116,6 +116,13 @@ article from en.wikipedia.org, including copying the associated images."""),
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
         content = re.sub(r'<script.*?</script>', '', content)
+        content += u"<br/>\n"
+        content += u"All text is available under the terms of the "
+        content += u"<a href=\"http://en.wikipedia.org/wiki/Wikipedia:"
+        content += u"Text_of_the_GNU_Free_Documentation_License\">"
+        content += u"GNU Free Documentation License</a> "
+        content += u"(see <b><a href=\"http://en.wikipedia.org/wiki/Wikipedia:"
+        content += u"Copyrights\">Copyrights</a></b> for details).\n"
         return content
 
 
