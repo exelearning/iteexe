@@ -22,7 +22,9 @@ Nodes provide the structure to the package hierarchy
 
 import logging
 from exe.engine.persist import Persistable
-from exe.engine.titleidevice import TitleIdevice
+# TODO: This is a big mean hack to get 0.5 out on time... toUnicode should be
+# in some lower level library
+from exe.engine.path    import toUnicode
 
 log = logging.getLogger(__name__)
 
@@ -41,7 +43,7 @@ class Node(Persistable):
         self._package = package
         self._id      = package._regNewNode(self)
         self.parent   = parent
-        self._title   = TitleIdevice(self, title)
+        self._title   = title
         self.children = []
         self.idevices = []
 
@@ -81,7 +83,10 @@ class Node(Persistable):
         """
         Returns our title as a string
         """
-        return unicode(self._title)
+        if self._title:
+            return toUnicode(self._title)
+        else:
+            return toUnicode(self.package.levelName(self.level - 1))
 
 
     def setTitle(self, title):
@@ -89,16 +94,9 @@ class Node(Persistable):
         Allows one to set the title as a string
         """
         if title != unicode(self._title):
-            self._title.setTitle(title)
+            self._title = title
             self.package.isChanged = True
     title = property(getTitle, setTitle)
-
-
-    # titleIDevice
-    def getTitleIDevice(self):
-        """Returns our title idevice"""
-        return self._title
-    titleIdevice = property(getTitleIDevice)
 
 
     # Normal methods
@@ -150,6 +148,7 @@ class Node(Persistable):
         while self.children:
             self.children[0].delete()
 
+        # Let all the iDevices know they're being deleted too
         while self.idevices:
             self.idevices[0].delete()
   
@@ -191,7 +190,8 @@ class Node(Persistable):
 
 
     def promote(self):
-        """Convenience function.
+        """
+        Convenience function.
         Moves the node one step closer to the tree root.
         Returns True is successful
         """
@@ -203,7 +203,8 @@ class Node(Persistable):
 
 
     def demote(self):
-        """Convenience function.
+        """
+        Convenience function.
         Moves the node one step further away from its parent,
         tries to keep the same position in the tree.
         Returns True is successful
@@ -219,8 +220,9 @@ class Node(Persistable):
 
 
     def up(self):
-        """Moves the node up one node vertically
-        keeping its same level in the tree.
+        """
+        Moves the node up one node vertically, keeping to the same level in 
+        the tree.
         Returns True is successful.
         """
         if self.parent:
@@ -237,8 +239,8 @@ class Node(Persistable):
 
 
     def down(self):
-        """Moves the node down one vertically
-        keeping its level the same.
+        """
+        Moves the node down one vertically, keeping its level the same.
         Returns True is successful.
         """
         if self.parent:
@@ -255,12 +257,15 @@ class Node(Persistable):
 
     def nextSibling(self):
         """Returns our next sibling or None"""
+        sibling = None
+
         if self.parent:
             children = self.parent.children
             i = children.index(self) + 1
-            return i < len(children) and children[i] or None
-        else:
-            return None
+            if i < len(children):
+                sibling = children[i]
+
+        return sibling
 
 
     def __str__(self):

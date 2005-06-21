@@ -101,7 +101,9 @@ class AuthoringPage(RenderableResource):
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="main">\n'
         html += u'<div id="nodeDecoration">\n'
-        html += u'<p id="nodeTitle">%s</p>\n' % topNode.getTitle()
+        html += u'<p id="nodeTitle">\n'
+        html += topNode.title
+        html += u'</p>\n' 
         html += u'</div>\n'
 
         for block in self.blocks:

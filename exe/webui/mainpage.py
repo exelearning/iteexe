@@ -220,6 +220,9 @@ class MainPage(RenderableLivePage):
             assert (filename, 
                     ('Somehow save was called without a filename '
                      'on a package that has no default filename.'))
+        # Add the extension if its not already there
+        if not filename.lower().endswith('.elp'):
+            filename += '.elp'
         self.package.save(filename) # This can change the package name
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:

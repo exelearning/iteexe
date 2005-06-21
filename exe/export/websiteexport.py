@@ -25,7 +25,6 @@ import gettext
 import re
 import os
 from exe.webui.blockfactory import g_blockFactory
-from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import Path
 from exe.engine.config      import Config
@@ -91,7 +90,9 @@ class WebsitePage(object):
         html += u"<div id=\"main\">\n"
 
         style = self.node.package.style
-        html += TitleBlock(None, self.node._title).renderView(style)
+        html += '<p id=\"nodeTitle\">\n'
+        html += self.node.title
+        html += '</p>\n'
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)

@@ -27,7 +27,6 @@ import os
 from zipfile                import ZipFile, ZIP_DEFLATED
 from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
-from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import Path, TempDirPath
 from exe.export.pages       import Page, uniquifyNames
@@ -206,7 +205,9 @@ class ScormPage(Page):
         html += "<div id=\"outer\">\n"
         
         html += "<div id=\"main\">\n"
-        html += TitleBlock(None, self.node._title).renderView(self.node.package.style)
+        html += '<p id=\"nodeTitle\">\n'
+        html += self.node.title
+        html += '</p>\n'
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)
@@ -222,6 +223,7 @@ class ScormPage(Page):
 
 
 class WebCTScormPage(ScormPage):
+    # TODO Remove this, we no longer have a WebCT specific option
     """
     This class transforms an eXe node into a SCO for WebCT
     """
@@ -248,7 +250,9 @@ class WebCTScormPage(ScormPage):
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
         html += "<div id=\"main\">\n"
-        html += TitleBlock(None, self.node._title).renderView(self.node.package.style)
+        html += '<p id=\"nodeTitle\">\n'
+        html += self.node.title
+        html += '</p>\n'
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)

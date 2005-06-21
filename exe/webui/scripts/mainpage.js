@@ -367,22 +367,6 @@ function fileSaveAs(onDone) {
     }
 }
 
-// Called by the user to provide an image file name to add to the package
-function fileAddResource() {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a File", nsIFilePicker.modeOpen);
-    fp.appendFilters(nsIFilePicker.filterImages);
-    fp.appendFilter("Sound Files", ".wav; .au; .ogg; .mp3; .mp2");
-    fp.appendFilter("Video Files", ".avi; .mpeg; .mpv; .mov");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        nevow_clientToServerEvent('addResource', this, '', fp.file.path)
-    }
-}
-
 // Launch the iDevice Editor Window
 function toolsEditor() {
     var features  = "width=800,height=700,status=yes,resizeable=yes,"+

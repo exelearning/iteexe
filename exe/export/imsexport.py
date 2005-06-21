@@ -27,7 +27,6 @@ import os
 from zipfile                import ZipFile, ZIP_DEFLATED
 from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
-from exe.webui.titleblock   import TitleBlock
 from exe.engine.error       import Error
 from exe.engine.path        import Path, TempDirPath
 from exe.export.pages       import Page, uniquifyNames
@@ -187,8 +186,11 @@ class IMSPage(Page):
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
         html += "<div id=\"main\">\n"
-        title = TitleBlock(None, self.node._title)
-        html += title.renderView(self.node.package.style)
+        html += "<div id=\"nodeDecoration\">\n"
+        html += '<p id=\"nodeTitle\">\n'
+        html += self.node.title
+        html += '</p>\n'
+        html += "</div>\n"
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)
