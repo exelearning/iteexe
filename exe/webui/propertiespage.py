@@ -34,7 +34,6 @@ class PropertiesPage(RenderableResource):
     """
     The PropertiesPage is for user to enter or edit package's properties
     """
-    
     name = 'properties'
 
     def __init__(self, parent):
@@ -43,6 +42,7 @@ class PropertiesPage(RenderableResource):
         """
         RenderableResource.__init__(self, parent)
         self.propertiesPane = PropertiesPane(self)
+
 
     def render_GET(self, request):
         """
@@ -81,6 +81,7 @@ class PropertiesPage(RenderableResource):
         html += "</body></html>"
         return html.encode('utf8')
     
+
     def render_POST(self, request):
         """
         Handles the submission of the properties form,

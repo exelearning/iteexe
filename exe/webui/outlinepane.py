@@ -45,29 +45,29 @@ class OutlinePane(Renderable):
         
         if "action" in request.args:
             nodeId = request.args["object"][0]
-            p = self.package
+            package = self.package
 
             if request.args["action"][0] == "changeNode":
-                node = p.findNode(nodeId)
+                node = package.findNode(nodeId)
                 if node is not None:
-                    p.currentNode = node
+                    package.currentNode = node
                 else:
                     log.error("changeNode cannot locate "+nodeId)
 
             elif request.args["action"][0] == "addChildNode":
-                node = p.findNode(nodeId)
+                node = package.findNode(nodeId)
                 if node is not None:
-                    p.currentNode = node.createChild()
+                    package.currentNode = node.createChild()
                 else:
                     log.error("addChildNode cannot locate "+nodeId)
 
-            elif (nodeId != p.root.id and 
+            elif (nodeId != package.root.id and 
                   request.args["action"][0] == "deleteNode"):
-                node = p.findNode(nodeId)
+                node = package.findNode(nodeId)
                 if node is not None:
                     node.delete()
-                    if node.isAncestorOf(p.currentNode):
-                        p.currentNode = p.root
+                    if node.isAncestorOf(package.currentNode):
+                        package.currentNode = package.root
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
 
@@ -157,14 +157,14 @@ class OutlinePane(Renderable):
         the 'node' param should already have been moved 
         to the new position. This makes the client catch up
         to the server"""
-        pid = node.parent and node.parent.id or 'null'
-        s = node.nextSibling() 
-        if s:
-            sid = s.id
-        else:
-            sid = 'null'
+        parentId = node.parent.id 
+
+        siblingId = node.nextSibling() 
+        if not siblingId:
+            siblingId = 'null'
+
         if node.parent:
-            client.call('XHMoveNode', node.id, pid, sid)
+            client.call('XHMoveNode', node.id, parentId, siblingId)
 
 
     def handlePromote(self, client, sourceNodeId):

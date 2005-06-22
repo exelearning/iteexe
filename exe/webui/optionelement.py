@@ -29,7 +29,8 @@ _   = gettext.gettext
 # ===========================================================================
 class OptionElement(object):
     """
-    OptionElement is responsible for a block of option.  Used by MultichoiceBlock
+    OptionElement is responsible for a block of option.  Used by
+    MultichoiceBlock 
     """
     def __init__(self, index, idevice, option):
         """
@@ -41,7 +42,7 @@ class OptionElement(object):
         self.option     = option
         self.answerId   = "optionAnswer"+ unicode(index) + "b" + idevice.id
         self.keyId      = "optionKey" + idevice.id        
-        self.feedbackId = "optionFeedback" + unicode(index) + "b" + idevice.id    
+        self.feedbackId = "optionFeedback" + unicode(index) + "b" + idevice.id
         
 
     def process(self, request):
@@ -118,6 +119,7 @@ class OptionElement(object):
        
         return html
     
+
     def renderFeedbackView(self):
         """
         return xhtml string for display this option's feedback

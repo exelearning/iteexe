@@ -27,7 +27,6 @@ import os
 from exe.webui.blockfactory import g_blockFactory
 from exe.engine.error       import Error
 from exe.engine.path        import Path
-from exe.engine.config      import Config
 from exe.export.pages       import uniquifyNames
 
 log = logging.getLogger(__name__)

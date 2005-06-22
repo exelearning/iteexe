@@ -23,7 +23,6 @@ ReflectionBlock can render and process ReflectionIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block               import Block
-from exe.engine.reflectionidevice  import ReflectionIdevice
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)

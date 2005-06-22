@@ -22,7 +22,6 @@ Classes to XHTML elements.  Used by GenericBlock
 import gettext
 import logging
 from exe.webui       import common
-from exe.engine.path import Path
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext

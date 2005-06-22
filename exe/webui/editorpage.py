@@ -18,7 +18,7 @@
 # ===========================================================================
 
 """
-The EditorPage is responsible for managing iDevices
+The EditorPage is responsible for managing user created iDevices
 """
 
 import logging
@@ -29,15 +29,14 @@ from exe.engine.genericidevice import GenericIdevice
 from exe.webui.editorpane      import EditorPane
 from exe.webui.renderable      import RenderableResource
 
-
-
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
 class EditorPage(RenderableResource):
     """
-    The EditorPage is responsible for managing iDevices
+    The EditorPage is responsible for managing user created iDevices
+    create / edit / delete
     """
 
     name = 'editor'
@@ -50,11 +49,6 @@ class EditorPage(RenderableResource):
         self.editorPane   = EditorPane(self.webserver)
         self.url          = ""
         self.elements     = []
-        self.noStr        = ""
-        self.someStr      = ""
-        self.strongStr    = ""
-        self.purpose      = ""
-        self.tip          = ""
 
         
     def getChild(self, name, request):
@@ -111,7 +105,6 @@ class EditorPage(RenderableResource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", "1") 
-#        html += "<pre>%s</pre>\n" % unicode(request.args) # to be deleted later
 #        html += self.renderList()
         html += self.editorPane.render(request)
         html += "<br/></form>"
@@ -122,6 +115,9 @@ class EditorPage(RenderableResource):
 
 
     def renderList(self):
+        """
+        Render the list of generic iDevice
+        """
         html  = "<p>"
         for prototype in self.ideviceStore.generic:
             html += "<a href=\"#\" "

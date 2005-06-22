@@ -23,7 +23,6 @@ FreeTextBlock can render and process FreeTextIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block            import Block
-from exe.engine.freetextidevice import FreeTextIdevice
 from exe.webui.element          import TextAreaElement
 
 log = logging.getLogger(__name__)

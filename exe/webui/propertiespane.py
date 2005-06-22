@@ -38,7 +38,6 @@ class PropertiesPane(Renderable):
     PropertiesPane is responsible for creating the XHTML for the properties
     pane
     """
-    
     name = 'propertiesPane'
 
     def __init__(self, parent):
@@ -50,7 +49,6 @@ class PropertiesPane(Renderable):
         Process what the user has submitted
         """
         self.url     = request.path
-        packageName  = request.prepath[0]
         
         if ("action" in request.args and 
             request.args["action"][0] == "saveChange"):
@@ -88,35 +86,44 @@ class PropertiesPane(Renderable):
     def render(self):
         """Returns an XHTML string for viewing this pane"""
         log.debug("render")
-        html  = ''
-        html += '<a name="currentBlock"/>'
-        html += "<form method=\"post\" action=\"%s\" " % self.url
-        html += "name=\"contentForm\" " 
-        html += 'onSubmit="return handleSubmit()">\n' 
+        html  = u''
+        html += u'<a name="currentBlock"/>'
+        html += u"<form method=\"post\" action=\"%s\" " % self.url
+        html += u"name=\"contentForm\" " 
+        html += u'onSubmit="return handleSubmit()">\n' 
         html += common.hiddenField("action")
         html += common.hiddenField("isChanged", self.package.isChanged)
         html += common.hiddenField("posting", self.package.isChanged)
-        html += "<table border=\"0\" cellspacing=\"6\">\n"
-        html += "<tr><td><b>Project title:</b></td><td>\n"
+        html += u"<table border=\"0\" cellspacing=\"6\">\n"
+        html += u"<tr><td><b>Project title:</b></td><td>\n"
         html += common.textInput("title", self.package.root.title, 53) 
-        html += "</td>"
-        html += "</tr><tr><td><b>Author:</b></td><td>\n"
+        html += u"</td>"
+        html += u"</tr><tr><td><b>"
+        html += _(u"Author")
+        html += u":</b></td><td>\n"
         html += common.textInput("author", self.package.author, 53) 
-        html += "</td></tr>\n"
-        html += "<tr><td valign=\"top\"><b>Description:</b></td><td>\n"
+        html += u"</td></tr>\n"
+        html += u"<tr><td valign=\"top\"><b>"
+        html += _(u"Description")
+        html += u":</b></td><td>\n"
         html += common.textArea("description", self.package.description)
-        html += "</td></tr>\n"
-        html += "<tr><td valign=\"top\"><b>Taxonomy:</b></td>"
-        html += "<td valign=\"top\">Level 1: "
+        html += u"</td></tr>\n"
+        html += u"<tr><td valign=\"top\"><b>"
+        html += _(u"Taxonomy")
+        html += u":</b></td>\n"
+        html += u"<td valign=\"top\">"
+        html += _(u"Level 1: ")
         html += common.textInput("level1", self.package.levelNames[0], 20)
-        html += "<p>Level 2: "
+        html += u"<p>"
+        html += _(u"Level 2: ")
         html += common.textInput("level2", self.package.levelNames[1], 20)
-        html += "<p/>\n"
-        html += "<p>Level 3: "
+        html += u"<p/>\n"
+        html += u"<p>"
+        html += _(u"Level 3: ")
         html += common.textInput("level3", self.package.levelNames[2], 20)
-        html += "<p/></td></tr><tr><td align=\"right\">\n"       
-        html += common.submitButton('done', _('Done'))
-        html += "</td><td>&nbsp;</td></tr></table></form>\n"
+        html += u"<p/></td></tr><tr><td align=\"right\">\n"       
+        html += common.submitButton('done', _(u'Done'))
+        html += u"</td><td>&nbsp;</td></tr></table></form>\n"
         return html
         
         

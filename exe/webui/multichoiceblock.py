@@ -23,7 +23,6 @@ MultichoiceBlock can render and process MultichoiceIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block               import Block
-from exe.engine.multichoiceidevice import MultichoiceIdevice
 from exe.webui.optionelement       import OptionElement
 from exe.webui                     import common
 

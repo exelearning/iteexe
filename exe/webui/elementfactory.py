@@ -34,15 +34,19 @@ class ElementFactory(object):
     a given field.  Elements register themselves with the factory, specifying
     which fields they can render
     """
+    def __init__(self):
+        """
+        Initialize
+        """
+        self.elementTypeMap = {TextField:      TextElement,
+                               TextAreaField:  TextAreaElement,
+                               ImageField:     ImageElement}
+
     def createElement(self, field):
         """
         Returns a Element object which can render this field
         """
-        elementTypeMap = {TextField:      TextElement,
-                          TextAreaField:  TextAreaElement,
-                          ImageField:     ImageElement}
-        
-        elementType = elementTypeMap.get(field.__class__)
+        elementType = self.elementTypeMap.get(field.__class__)
 
         if elementType:
             # Create an instance of the appropriate element class
@@ -50,7 +54,6 @@ class ElementFactory(object):
                       u" for "+field.__class__.__name__)
             return elementType(field)
         else:
-            print u"No element type registered for ",field.__class__.__name__
             log.error(u"No element type registered for " +
                       field.__class__.__name__)
             return None

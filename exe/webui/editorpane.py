@@ -138,8 +138,7 @@ class EditorPane(object):
         """
         Building up element array
         """
-        self.elements = []
-        i = 0    
+        self.elements  = []
         elementTypeMap = {TextField:      TextEditorElement,
                           TextAreaField:  TextAreaEditorElement,
                           ImageField:     ImageEditorElement}

@@ -222,58 +222,14 @@ class ScormPage(Page):
         return html
 
 
-class WebCTScormPage(ScormPage):
-    # TODO Remove this, we no longer have a WebCT specific option
-    """
-    This class transforms an eXe node into a SCO for WebCT
-    """
-    def render(self):
-        """
-        Returns an XHTML string rendering this page.
-        """
-        html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\" />\n";
-        html += "<title>"+_("eXe")+"</title>\n"
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(content.css);\n"
-        html += "</style>\n"
-        for idevice in self.node.idevices:
-            if idevice.title == "SCORM Quiz":
-                html += "<script language=\"javascript\" "
-                html += "src=\"quizForWeb.js\"></script>\n"
-                break
-            
-        html += "</head>\n"
-        html += "<body>\n"
-        html += "<div id=\"outer\">\n"
-        html += "<div id=\"main\">\n"
-        html += '<p id=\"nodeTitle\">\n'
-        html += self.node.title
-        html += '</p>\n'
-
-        for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(None, idevice)
-            if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
-            html += block.renderView(self.node.package.style)
-
-        html += "</div>\n"
-        html += "</div>\n"
-        html += "<script language=\"javascript\">\n"
-        html += "</body></html>\n"
-        return html
-
-        
+# ===========================================================================
 class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
     """
     def __init__(self, config, styleDir, filename):
-        """ Initialize
+        """ 
+        Initialize
         'styleDir' is the directory from which we will copy our style sheets
         (and some gifs)
         """

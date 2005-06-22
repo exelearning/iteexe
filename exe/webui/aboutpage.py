@@ -18,25 +18,24 @@
 # ===========================================================================
 
 """
-The EditorPage is responsible for managing iDevices
+The AboutPage is responsible for showing about information
 """
 
 import logging
 import gettext
 from twisted.web.resource import Resource
 from exe.webui.renderable import RenderableResource
-from exe.engine.version   import project, release, revision
-
+from exe.engine           import version
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
+# ===========================================================================
 class AboutPage(RenderableResource):
     """
-    The AboutPage is responsible for showing about imformation
+    The AboutPage is responsible for showing about information
     """
-
     name = 'about'
 
     def __init__(self, parent):
@@ -55,41 +54,47 @@ class AboutPage(RenderableResource):
         else:
             return Resource.getChild(self, name, request)
 
+
     def render_GET(self, request):
         """Called for all requests to this object"""
-        
-        # Processing 
         log.debug("render_GET")
+
         # Rendering
         request.setHeader('content-type',
                           'application/vnd.mozilla.xul+xml')
-        xulStr= """<?xml version="1.0"?> 
+        xul  = u'<?xml version="1.0"?> \n'
+        xul += u'<?xml-stylesheet href="chrome://global/skin/" '
+        xul += u'type="text/css"?> \n'
+        xul += u'<?xml-stylesheet href="/css/aboutDialog.css"  '
+        xul += u'type="text/css"?>\n'
         
-        <?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
-        <?xml-stylesheet href="/css/aboutDialog.css" type="text/css"?>
-        
-        <window xmlns:html="http://www.w3.org/1999/xhtml"
-                xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-                id="aboutDialog"
-                title="About eXe"
-                style="width: 299px">
-            
-          <deck id="modes" flex="1">
-            <vbox flex="1" id="clientBox">
-              <label id="version" value="%s Version %s"/>
-              <label style="text-align: center;" value="$Revision: %s $" />
-              <description id="copyright">Copyright University of Auckland, 2005.<html:br/>
-        
-              </description>
-              <vbox id="detailsBox" align="center" flex="1">
-                <iframe id="creditsIframe" src="/docs/credits.xhtml" width="280px" flex="1"/>
-              </vbox>
-            </vbox>
-          </deck>
-          <separator class="groove" id="groove"/>
-        
-        </window>""" %(project, release, revision)
-        return xulStr.encode('utf8')
+        xul += u'<window xmlns:html="http://www.w3.org/1999/xhtml"\n'
+        xul += u'        xmlns="http://www.mozilla.org/keymaster/gatekeeper/'
+        xul += u'there.is.only.xul"\n'
+        xul += u'        id="aboutDialog"\n'
+        xul += u'        title="About eXe"\n'
+        xul += u'        style="width: 299px">\n'
+        xul += u'  <deck id="modes" flex="1">\n'
+        xul += u'    <vbox flex="1" id="clientBox">\n'
+        xul += u'      <label id="version" \n'
+        xul += u'             value="eXe Version '+version.release+'"/>\n'
+        xul += u'      <label style="text-align: center;" \n'
+        xul += u'             value="Revision: '+version.revision+'" />\n'
+        xul += u'      <description id="copyright">Copyright University of '
+        xul += u'Auckland, 2005.<html:br/>\n'
+        xul += u'      </description>\n'
+        xul += u'      <vbox id="detailsBox" align="center" flex="1">\n'
+        xul += u'        <iframe id="creditsIframe" \n'
+        xul += u'                src="/docs/credits.xhtml" \n'
+        xul += u'                width="280px" flex="1"/>\n'
+        xul += u'      </vbox>\n'
+        xul += u'    </vbox>\n'
+        xul += u'  </deck>\n'
+        xul += u'  <separator class="groove" id="groove"/>\n'
+        xul += u'</window>\n'
+
+        return xul.encode('utf8')
     
     render_POST = render_GET
 
+# ===========================================================================

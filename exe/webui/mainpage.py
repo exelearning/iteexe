@@ -73,6 +73,7 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.error = False
 
+
     def getChild(self, name, request):
         """
         Try and find the child for the name given
@@ -81,6 +82,7 @@ class MainPage(RenderableLivePage):
             return self
         else:
             return super(self, self.__class__).getChild(self, name, request)
+
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
@@ -101,6 +103,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleLoadPackage, 'loadPackage')
         setUpHandler(self.handleExport, 'exportPackage')
         self.idevicePane.client = client
+
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
@@ -192,6 +195,7 @@ class MainPage(RenderableLivePage):
         else:
             client.sendScript(ifClean)
 
+
     def handlePackageFileName(self, client, onDone, onDoneParam):
         """
         Calls the javascript func named by 'onDone' passing as the
@@ -201,6 +205,7 @@ class MainPage(RenderableLivePage):
         filename
         """
         client.call(onDone, unicode(self.package.filename), onDoneParam)
+
 
     def handleSavePackage(self, client, filename=None, onDone=None):
         """Save the current package
@@ -235,6 +240,7 @@ class MainPage(RenderableLivePage):
             client.sendScript('top.location = "/%s"' % \
                               self.package.name.encode('utf8'))
 
+
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
@@ -254,6 +260,7 @@ class MainPage(RenderableLivePage):
                       (filename, unicode(exc)))
             self.error = True
 
+
     def handleExport(self, client, exportType, filename):
         """
         Called by js. 
@@ -264,12 +271,16 @@ class MainPage(RenderableLivePage):
         """
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
+
         if exportType == 'webSite':
             self.exportWebSite(client, filename, webDir, stylesDir)
+
         elif exportType == "scorm":
-            self.exportScorm(client, filename, webDir, stylesDir)
+            self.exportScorm(client, filename, stylesDir)
+
         else:
-            self.exportIMS(client, filename, webDir, stylesDir)
+            self.exportIMS(client, filename, stylesDir)
+
 
     def exportWebSite(self, client, filename, webDir, stylesDir):
         """
@@ -313,7 +324,8 @@ class MainPage(RenderableLivePage):
                  '-remote', 'openURL(%s, new-window)' % \
                  filename))
 
-    def exportScorm(self, client, filename, webDir, stylesDir):
+
+    def exportScorm(self, client, filename, stylesDir):
         """
         Exports this package to a scorm package file
         """
@@ -331,7 +343,8 @@ class MainPage(RenderableLivePage):
         scormExport.export(self.package)
         client.alert(_(u'Exported to %s' % filename))
 
-    def exportIMS(self, client, filename, webDir, stylesDir):
+
+    def exportIMS(self, client, filename, stylesDir):
         """
         Exports this package to a ims package file
         """

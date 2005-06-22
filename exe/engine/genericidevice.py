@@ -22,6 +22,7 @@ An iDevice built up from simple fields.
 """
 
 from exe.engine.idevice import Idevice
+# For backward compatibility Jelly expects to find a Field class
 from exe.engine.field   import Field, TextField, TextAreaField
 import logging
 import gettext
@@ -103,12 +104,14 @@ class GenericIdevice(Idevice):
         oldFields   = self.fields
         self.fields = []
         for oldField in oldFields:
-            if oldField.fieldType in ("Text", "TextArea"):
-                fieldClass = eval(oldField.fieldType+"Field")
-                newField   = fieldClass(oldField.name,
+            if oldField.fieldType == "Text":
+                self.addField(TextField(oldField.name,
                                         oldField.instruction,
-                                        oldField.content)
-                self.addField(newField)
+                                        oldField.content))
+            elif oldField.fieldType == "TextArea":
+                self.addField(TextAreaField(oldField.name,
+                                            oldField.instruction,
+                                            oldField.content))
             else:
                 log.error(u"Unknown field type in upgrade "+oldField.fieldType)
 

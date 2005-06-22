@@ -23,7 +23,6 @@ GenericBlock can render and process GenericIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block            import Block
-from exe.engine.genericidevice  import GenericIdevice
 from exe.webui.elementfactory   import g_elementFactory
 
 log = logging.getLogger(__name__)
