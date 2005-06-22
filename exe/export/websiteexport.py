@@ -83,9 +83,10 @@ class WebsitePage(object):
         html += u"<div id=\"main\">\n"
 
         style = self.node.package.style
-        html += '<p id=\"nodeTitle\">\n'
+        html += '<div id=\"nodeDecoration\">'
+        html += '<p id=\"nodeTitle\">'
         html += self.node.title
-        html += '</p>\n'
+        html += '</p></div>\n'
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)
