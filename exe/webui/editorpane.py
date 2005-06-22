@@ -36,6 +36,7 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 
+# ===========================================================================
 class EditorPane(object):
     """
     The EditorPane is responsible for creating new idevice
@@ -48,9 +49,6 @@ class EditorPane(object):
         self.webDir       = webserver.application.config.webDir
         self.elements     = []
         self.idevice      = GenericIdevice("", "", "", "", "")
-        self.noStr        = ""
-        self.someStr      = ""
-        self.strongStr    = ""
         self.purpose      = ""
         self.tip          = ""
         self.message      = ""
@@ -76,7 +74,7 @@ class EditorPane(object):
                 
         if "addImage" in request.args:
             field = ImageField(u"Type label here",
-                                  u"Type field instructions here")
+                               u"Type field instructions here")
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
@@ -114,22 +112,8 @@ class EditorPane(object):
                 self.ideviceStore.addIdevice(self.idevice.clone())
                 self.ideviceStore.save()
             
-        self.noStr     = ""
-        self.someStr   = ""
-        self.strongStr = ""
-                
         if "emphasis" in request.args:
-            if request.args["emphasis"][0] == "no":
-                self.noStr = "selected"
-                self.idevice.emphasis = Idevice.NoEmphasis
-
-            elif request.args["emphasis"][0] == "some":
-                self.someStr = "selected"
-                self.idevice.emphasis = Idevice.SomeEmphasis
-       
-            elif request.args["emphasis"][0] == "strong":
-                self.strongStr = "selected"
-                self.idevice.emphasis = Idevice.StrongEmphasis
+            self.idevice.emphasis = int(request.args["emphasis"][0])
         
         self.__buildElements()  
             
@@ -162,7 +146,7 @@ class EditorPane(object):
         """
         message = _("This is an experimental feature, "+
                     "it is still in development.")
-        html  = "<H2 align = \"center\">" + message + "</H2><br/>"
+        html  = "<h2 align = \"center\">" + message + "</h2><br/>"
         html += "<br/><font color=\"red\"<b>"+self.message+"</b></font><br/>"
         html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td width=\"30%\">\n"
@@ -230,14 +214,16 @@ class EditorPane(object):
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
             html += "<b>" + _("Emphasis") + "</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
-            html += "<option value=\"no\" "+self.noStr+">"+_("No emphasis")
-            html += "</option>\n"
-            html += "<option value=\"some\" "+self.someStr+">"
-            html += _("Some emphasis")
-            html += "</option>\n"
-            html += "<option value=\"strong\" "+self.strongStr+">"
-            html += _("Strong emphasis")
-            html += "</option>\n"
+
+            emphasisValues = {Idevice.NoEmphasis:     _(u"No emphasis"),
+                              Idevice.SomeEmphasis:   _(u"Some emphasis"),
+                              Idevice.StrongEmphasis: _(u"Strong emphasis")}
+            for value, description in emphasisValues:
+                html += "<option value=\""+unicode(value)+"\" "
+                if self.idevice.emphasis == value:
+                    html += "selected "
+                html += ">" + description + "</option>\n"
+
             html += "</select><br/><br/>\n"
             for element in self.elements:
                 html += element.renderEdit()       
@@ -268,3 +254,4 @@ class EditorPane(object):
         return html
         
 
+# ===========================================================================

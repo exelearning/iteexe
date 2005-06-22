@@ -61,9 +61,9 @@ class TrueFalseIdevice(Idevice):
 the learner must decide if the statement is true. This type of question works 
 well for factual information and information that lends itself to either/or 
 responses."""), u"", u"multichoice")
-                         
+        self.emphasis        = Idevice.SomeEmphasis
         self.hintInstruc     = _(u"Type the question's hint here.")
-        self.questions         = []
+        self.questions       = []
         self.questionInstruc = _(u"Type the question stem.")
         self.keyInstruc      = ""
         self.feedbackInstruc = _(u"""Type in the feedback that you want the 
@@ -71,7 +71,6 @@ student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
 "Wrong answer" for the other alternatives.""")
-        
         self.questions.append(TrueFalseQuestion())
         
 

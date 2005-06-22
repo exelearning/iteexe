@@ -56,10 +56,10 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = "<div>\n"
+        html  = u"<div>\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
-        html += "</div>\n"
+        html += u"</div>\n"
         return html
 
 
@@ -67,8 +67,9 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = u"<div "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderView()
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -79,9 +80,10 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<div>\n"
+        html  = u"<div "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += self.contentElement.renderView()
-        html += "</div>\n"
+        html += u"</div>\n"
         return html
     
 # ===========================================================================

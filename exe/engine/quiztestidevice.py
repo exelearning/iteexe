@@ -83,6 +83,7 @@ class QuizTestIdevice(Idevice):
                          _(u"SCORM Quiz"),
                          _(u"University of Auckland"),
                          "", "", "")
+        self.emphasis   = Idevice.SomeEmphasis
         self.score      = -1 
         self.isAnswered = True
         self.passRate   = "50"

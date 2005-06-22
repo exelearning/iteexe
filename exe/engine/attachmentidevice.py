@@ -40,6 +40,7 @@ class AttachmentIdevice(Idevice):
                          _(u"University of Auckland"), 
                          _(u""), 
                          u"", u"")
+        self.emphasis    = Idevice.SomeEmphasis
         self.filename    = u""
  
 

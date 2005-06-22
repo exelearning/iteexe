@@ -63,6 +63,7 @@ the image. For example, if you were teaching the functions of a four-stroke
 combustion engine, you could have a visual for each of the four positions of
 the piston with a brief textual summary of the key aspects of each visual.
 </p>"""), u"", u"")
+        self.emphasis = Idevice.SomeEmphasis
         self.image = ImageField(_(u"Image"), 
                                 _(u""))
         self.image.idevice      = self

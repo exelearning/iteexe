@@ -75,6 +75,7 @@ class AttachmentBlock(Block):
         """
         log.debug("renderPreview")
         html  = u"<div class=\"iDevice\" "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<a href=\"resources/"+self.idevice.filename+"\" "
         html += u"target=\"ANewWindow\" >"
@@ -90,7 +91,8 @@ class AttachmentBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<div class=\"iDevice\">\n"
+        html  = u"<div class=\"iDevice\" "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += u"<a href=\""+self.idevice.filename+"\" "
         html += u"target=\"ANewWindow\" >"
         html += self.idevice.filename

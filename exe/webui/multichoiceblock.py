@@ -118,9 +118,10 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = '<script language="JavaScript" src="common.js"></script>\n'
-        html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
-        html += "<div class=\"iDevice\">\n"
+        html  = u'<script language="JavaScript" src="common.js"></script>\n'
+        html += u'<script language="JavaScript" src="libot_drag.js"></script>\n'
+        html += u'<div class="iDevice" '
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += "<img class=\"iDevice_icon\" "
         html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
@@ -150,11 +151,12 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
+        html  = u"<div class=\"iDevice\" "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html += u"<img class=\"iDevice_icon\" "
+        html += u"src=\"/style/"+style+"/multichoice.gif\" />\n"
+        html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += self.question+" &nbsp;&nbsp;\n"
         html += common.elementInstruc(self.hintId, self.hint, 

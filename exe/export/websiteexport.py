@@ -23,7 +23,6 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import gettext
 import re
-import os
 from exe.webui.blockfactory import g_blockFactory
 from exe.engine.error       import Error
 from exe.engine.path        import Path
@@ -95,7 +94,7 @@ class WebsitePage(object):
                 raise Error("Unable to render iDevice.")
             if idevice.title == "SCORM Quiz":
                 html += block.renderJavascriptForWeb()
-            if idevice.title <> "Forum Discussion":
+            if idevice.title != "Forum Discussion":
                 html += block.renderView(style)
         
         html += self.getNavigationLink(prevPage, nextPage)

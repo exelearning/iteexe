@@ -52,6 +52,7 @@ class CasestudyBlock(Block):
             self.questionElements.append(QuestionElement(i, idevice, question))
             i += 1
 
+
     def process(self, request):
         """
         Process the request arguments from the web server

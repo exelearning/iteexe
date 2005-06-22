@@ -23,7 +23,6 @@ Exports an eXe package as a SCORM package
 import logging
 import gettext
 import re
-import os
 from zipfile                import ZipFile, ZIP_DEFLATED
 from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
@@ -162,6 +161,7 @@ class IMSPage(Page):
         out = open(outputDir/self.name+".html", "w")
         out.write(self.render().encode('utf8'))
         out.close()
+        
 
     def render(self):
         """
@@ -193,7 +193,7 @@ class IMSPage(Page):
                 raise Error("Unable to render iDevice.")
             if idevice.title == "SCORM Quiz":
                 html += block.renderJavascriptForWeb()
-            if idevice.title <> "Forum Discussion":
+            if idevice.title != "Forum Discussion":
                 html += block.renderView(self.node.package.style)
 
         html += "</div>\n"
@@ -252,7 +252,6 @@ class IMSExport(object):
         manifest.save()
         
         # Copy the scripts
-    
         self.scriptsDir.copylist(('libot_drag.js',
                                   'imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',

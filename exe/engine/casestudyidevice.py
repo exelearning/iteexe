@@ -69,7 +69,7 @@ if run in a classroom situation can teams be setup to work on different aspects
 of the case and if so how are ideas feed back to the class</li></ul>"""), 
                          "",
                          u"casestudy")
-                         
+        self.emphasis     = Idevice.SomeEmphasis
         self.story        = story
         self.questions    = []
         self.storyInstruc = _(u"""Create the case story.  A good case is one 

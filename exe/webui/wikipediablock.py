@@ -84,7 +84,8 @@ class WikipediaBlock(Block):
         """
         log.debug("renderPreview")
         html  = u"<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.articleElement.renderPreview()
         html += self.renderViewButtons()
         html += u"</div>\n"
@@ -98,7 +99,8 @@ class WikipediaBlock(Block):
         log.debug("renderView")
         content = self.articleElement.renderView()
         content = re.sub(r'src="/.*?/resources/', 'src="', content)
-        html  = u"<div class=\"iDevice\">\n"
+        html  = u'<div class="iDevice" '
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += content
         html += u"</div>\n"
         return html

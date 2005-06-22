@@ -81,7 +81,7 @@ distractors
 <li> Distractors should be incorrect but plausible
 </ul>
 """), u"multichoice")
-                         
+        self.emphasis        = Idevice.SomeEmphasis
         self.question        = question
         self.hint            = ""
         self.hintInstruc     = _(u"""Enter a hint here. If you

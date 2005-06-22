@@ -147,6 +147,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     html += '</a>\n' 
     return html
 
+
 def confirmThenSubmitImage(message, action, object_, imageFile, 
                            title=u"", isChanged=1):
     """
@@ -225,6 +226,7 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += u'<b>%s:</b><br/>%s<br/>' % (label, instruc)                
         html += u'</div>\n'
     return html
+
 
 def selectOptions(name, options, selection=None):
     """Adds a dropdown selection to a form"""

@@ -77,6 +77,7 @@ class ImageWithTextBlock(Block):
         """
         log.debug("renderPreview")
         html  = u"<div class=\"iDevice\" "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div style=\"padding:6px; float:left;\"/>\n" 
         html += self.imageElement.renderPreview()
@@ -94,7 +95,8 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<div class=\"iDevice\">\n"
+        html  = u'<div class="iDevice" '
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += u"<div style=\"padding:6px; float:left;\"/>\n" 
         html += self.imageElement.renderView()
         html += u"</div>\n"

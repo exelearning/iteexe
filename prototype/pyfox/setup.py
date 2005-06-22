@@ -1,7 +1,8 @@
 import os
 from distutils.core import setup, Extension
 
-Moz="/home/matthew/work/downloads/mozilla"
+#Moz="/home/matthew/work/downloads/mozilla"
+Moz="/home/djm/work/firefox/mozilla"
 MozDist=Moz+"/dist"
 
 setup(name='pyfoxutil',

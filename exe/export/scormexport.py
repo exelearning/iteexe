@@ -23,7 +23,6 @@ Exports an eXe package as a SCORM package
 import logging
 import gettext
 import re
-import os
 from zipfile                import ZipFile, ZIP_DEFLATED
 from exe.webui              import common
 from exe.webui.blockfactory import g_blockFactory
@@ -54,6 +53,7 @@ class Manifest(object):
         self.itemStr      = ""
         self.resStr       = ""
 
+
     def save(self, filename):
         """
         Save a imsmanifest file to self.outputDir
@@ -70,8 +70,6 @@ class Manifest(object):
         """
         returning forum XLM string for manifest file
         """  
-        forumStr = ""
-        discussionStr =""
         xmlStr  = "<?xml version = \"1.0\"?>\n"
         xmlStr += "<forums>\n"
         
@@ -87,6 +85,7 @@ class Manifest(object):
         xmlStr += "</forums>\n"
         
         return xmlStr
+
     
     def createXML(self):
         """
@@ -245,7 +244,6 @@ class ScormPage(Page):
 
 
 # ===========================================================================
-
 class ScormExport(object):
     """
     Exports an eXe package as a SCORM package

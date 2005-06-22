@@ -22,8 +22,6 @@ QuizTestBlock can render and process QuizTestIdevices as XHTML
 
 import logging
 import gettext
-import os
-from exe.engine.path               import Path
 from exe.webui.block               import Block
 from exe.webui.testquestionelement import TestquestionElement
 from exe.webui                     import common
@@ -86,13 +84,13 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-
         html  = "<div class=\"iDevice\">\n"
         if not self.idevice.isAnswered:
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
             html += "</font></b><br/><br/>"
-        html += "<b>" + _("SCORM Multiple Choice Quiz:") + " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        html += "<b>" + _("SCORM Multiple Choice Quiz:") 
+        html += " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         html += _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
         isChecked = ""
@@ -101,9 +99,9 @@ class QuizTestBlock(Block):
                 isChecked = "selected"
             else:
                 isChecked = ""
-            html += "<option value=%s0 %s> %s0%% </option>" % (str(i), isChecked,
-                                                              str(i))
-            
+            html += "<option value=%s0 %s> %s0%% </option>" % (str(i), 
+                                                               isChecked,
+                                                               str(i))
         html += "</select><br/><br/>\n"
 
         for element in self.questionElements:
@@ -123,7 +121,8 @@ class QuizTestBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = '<form name="contentForm">\n'
-        html += "<div class=\"iDevice\">\n"
+        html += u'<div class="iDevice" '
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += "<img class=\"iDevice_icon\" "
         html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
@@ -140,12 +139,14 @@ class QuizTestBlock(Block):
 
         return html
     
+
     def renderJavascriptForWeb(self):
         """
         Return an XHTML string for generating the javascript for web export
         """
         scriptStr  = "<SCRIPT LANGUAGE=JAVASCRIPT>\n"
-        scriptStr += "var numQuestions = " +str(len(self.questionElements))+";\n"
+        scriptStr += "var numQuestions = " 
+        scriptStr += str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n" 
         scriptStr += "var actualScore = 0;\n"
         answerStr  = """function getAnswer()
@@ -209,9 +210,9 @@ class QuizTestBlock(Block):
            
         }
     </SCRIPT>\n"""
-        
 
         return scriptStr
+
     
     def renderJavascriptForScorm(self):
         """
@@ -230,7 +231,6 @@ class QuizTestBlock(Block):
         rawScoreStr = """}
         function calcRawScore(){\n"""
         
-        
         for element in self.questionElements:
             i = element.index
             varStr    = "question" + unicode(i)
@@ -247,7 +247,8 @@ class QuizTestBlock(Block):
             answerStr += """
             doLMSSetValue("cmi.interactions.%s.id","%s");
             doLMSSetValue("cmi.interactions.%s.type","choice");
-            doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern","%s");
+            doLMSSetValue("cmi.interactions.%s.correct_responses.0.pattern",
+                          "%s");
             """ % (unicode(i), quesId, unicode(i), unicode(i), 
                    element.question.correctAns)
             answerStr += """
@@ -274,13 +275,9 @@ class QuizTestBlock(Block):
             
         scriptStr += varStrs       
         scriptStr += keyStrs
-        
         scriptStr += answerStr 
-                        
         scriptStr += rawScoreStr 
-        
         scriptStr += """
-        
         }
         
         function calcScore()
@@ -324,26 +321,25 @@ class QuizTestBlock(Block):
         }
 </SCRIPT>\n""" % self.idevice.passRate
 
-        
         return scriptStr
-
 
 
     def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<div class=\"iDevice\" "
-        html += "ondblclick=\"submitLink('edit'," + self.id+", 0);\">\n"
-        html += "<img class=\"iDevice_icon\" "
-        html += "src=\"/style/"+style+"/multichoice.gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
+        html  = u"<div class=\"iDevice\" "
+        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html += u"ondblclick=\"submitLink('edit'," + self.id+", 0);\">\n"
+        html += u"<img class=\"iDevice_icon\" "
+        html += u"src=\"/style/"+style+"/multichoice.gif\" />\n"
+        html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
 
         for element in self.questionElements:
             html += element.renderView() + "<br/>"
         html += self.renderViewButtons()
-        html += "</div>\n"
+        html += u"</div>\n"
        
         html += '<input type="submit" name="submitScore"'
         html += ' value="%s"/> ' % _("Submit Answer")
@@ -354,10 +350,9 @@ class QuizTestBlock(Block):
 
         self.idevice.score = -1
         
-
-        
         return html
     
+
     def __calcScore(self):
         """
         Return a score for preview mode.
@@ -380,7 +375,4 @@ class QuizTestBlock(Block):
             
         return score 
             
-        
-
-
 # ===========================================================================

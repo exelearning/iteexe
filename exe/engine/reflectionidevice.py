@@ -47,6 +47,7 @@ opportunity to observe and reflect on their observations before presenting
 these as a piece of academic work. Journals, diaries, profiles and portfolios 
 are useful tools for collecting observation data. Rubrics and guides can be 
 effective feedback tools."""), u"", u"reflection")
+        self.emphasis        = Idevice.SomeEmphasis
         self.activity        = activity
         self.answer          = answer
         self.activityInstruc = _(u"""Enter details of the activity learners 

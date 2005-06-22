@@ -22,7 +22,7 @@ The collection of iDevices available
 
 from exe.engine import persist
 from exe.engine.idevice import Idevice
-from exe.engine.field import TextField, TextAreaField, ImageField 
+from exe.engine.field import TextAreaField
 
 import logging
 import gettext
@@ -61,9 +61,9 @@ class IdeviceStore:
         """
         Get the idevices which are applicable for the current node of
         this package
+        In future the idevices which are returned will depend
+        upon the pedagogical template we are using
         """
-        # TODO: in future the idevices which are returned will depend
-        # upon the pedagogical template we are using
         return self.extended + self.generic
 
 
@@ -108,7 +108,9 @@ class IdeviceStore:
         from exe.engine.truefalseidevice      import TrueFalseIdevice
         from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
         from exe.engine.quiztestidevice       import QuizTestIdevice
-        from exe.engine.forumidevice          import ForumIdevice
+        from exe.engine.wikipediaidevice      import WikipediaIdevice
+        from exe.engine.attachmentidevice     import AttachmentIdevice
+#        from exe.engine.forumidevice          import ForumIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -125,7 +127,9 @@ class IdeviceStore:
         self.extended.append(ImageWithTextIdevice(defaultImage))
 
         self.extended.append(QuizTestIdevice())
-        self.extended.append(ForumIdevice())
+        self.extended.append(WikipediaIdevice())
+        self.extended.append(AttachmentIdevice())
+#        self.extended.append(ForumIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:
@@ -168,6 +172,7 @@ reference any reading materials you refer to as this models best practice to
 the learners. Not always essential if covered in the course content but
 providing feedback to the learner on some of the main points covered in the
 reading may also add value to the activity."""), "") 
+        readingAct.emphasis = Idevice.SomeEmphasis
         readingAct.addField(TextAreaField(_(u"What to read"), 
 _(u"""Provide details of the reading materials learners should  read.""")))
         readingAct.addField(TextAreaField(_(u"Why it should be read"), 
@@ -191,6 +196,7 @@ _(u"""Objectives describe the expected outcomes of the learning and should
 define what the learners will be able to do when they have completed the
 learning tasks."""), 
                                     _(u""))
+        objectives.emphasis = Idevice.SomeEmphasis
 
         objectives.addField(TextAreaField(_(u"Objectives"),
 _(u"""Type the learning objectives for this resource.""")))
@@ -205,6 +211,7 @@ pre-knowledge can be: <ul>
 <li>	Learners must have level 4 English </li>
 <li>	Learners must be able to assemble standard power tools </li></ul>
 """), "")
+        preknowledge.emphasis = Idevice.SomeEmphasis
         preknowledge.addField(TextAreaField(_(u"Preknowledge"), 
 _(u"""Describe the prerequisite knowledge learners should have to effectively
 complete this learning.""")))
@@ -217,6 +224,7 @@ _(u"""An activity can be defined as a task or set of tasks a learner must
 complete. Provide a clear statement of the task and consider any conditions
 that may help or hinder the learner in the performance of the task."""),
 "")
+        activity.emphasis = Idevice.SomeEmphasis
         activity.addField(TextAreaField(_(u"Activity"),
 _(u"""Describe the tasks the learners should complete.""")))
         self.generic.append(activity)
