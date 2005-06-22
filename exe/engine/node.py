@@ -35,7 +35,7 @@ class Node(Persistable):
     """
 
     # Class attributes
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, package, parent=None, title=""):
         if parent:
@@ -285,5 +285,11 @@ class Node(Persistable):
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
         self._title = self.__dict__[u'title']
+
+
+    def upgradeToVersion2(self):
+        """Upgrades the node from eXe version 0.5."""
+        self._title = self._title.title
+        
         
 # ===========================================================================

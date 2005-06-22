@@ -49,6 +49,9 @@ class IdeviceStore:
 
 
     def getNewIdeviceId(self):
+        """
+        Returns an iDevice Id which is unique
+        """
         id_ = unicode(self._nextIdeviceId)
         self._nextIdeviceId += 1
         return id_
@@ -97,9 +100,6 @@ class IdeviceStore:
     def __loadExtended(self):
         """
         Load the Extended iDevices (iDevices coded in Python)
-        """
-        """
-        Loads/Creates the python idevices
         """
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice

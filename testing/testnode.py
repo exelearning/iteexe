@@ -83,13 +83,11 @@ class TestNode(unittest.TestCase):
         testMove
         """
         # Change its title
-        oldTitleIDevice = n4._title
         n4.title = 'n4'
         assert unicode(n4.title) == 'n4'
         n4.move(n1, None)
         assert unicode(n4.title) == 'n4'
         n4.move(n3, None)
-        assert n4._title is oldTitleIDevice
         # Go back to auto title mode
         n4.title = ''
         assert n4.title == '?????'

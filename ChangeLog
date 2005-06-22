@@ -1,3 +1,117 @@
+2005-06-21 23:15  djm
+
+	* exe/engine/node.py, exe/engine/titleidevice.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/authoringpage.py,
+	  exe/webui/mainpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/titleblock.py: Removed Title iDevice and fixed problem
+	  with missing elp extensions.
+
+2005-06-21 05:39  djm
+
+	* exe/idevices/simpleblock.py, exe/idevices/simpleidevice.py: These
+	  were just confusing
+
+2005-06-21 01:06  matthew
+
+	* prototype/pyromonkey, prototype/pyromonkey/Changelog,
+	  prototype/pyromonkey/Makefile, prototype/pyromonkey/README,
+	  prototype/pyromonkey/example.py, prototype/pyromonkey/gtkmoz.c,
+	  prototype/pyromonkey/gtkmoz.defs, prototype/pyromonkey/gtkmoz.h,
+	  prototype/pyromonkey/gtkmoz.override,
+	  prototype/pyromonkey/gtkmozmodule.c,
+	  prototype/pyromonkey/profile.py,
+	  prototype/pyromonkey/pyromonkey.cpp,
+	  prototype/pyromonkey/setup.py: PyroMonkey. ooh ooh ooh aah aah aah
+
+2005-06-20 20:46  djm
+
+	* exe/webui/stylemenu.py, exe/webui/stylepane.py: Renamed StylePane
+	  to StyleMenu (it's a menu now).
+
+2005-06-20 20:44  djm
+
+	* exe/engine/field.py, exe/engine/genericidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/engine/titleidevice.py,
+	  exe/engine/wikipediaidevice.py, exe/webui/mainpage.py,
+	  exe/webui/quiztestblock.py, exe/webui/stylepane.py,
+	  tools/dot.pylintrc: cleaned up code which was getting a bit messy
+
+2005-06-20 09:04  djm
+
+	* exe/engine/wikipediaidevice.py: Found a better notice.
+
+2005-06-20 08:53  djm
+
+	* exe/engine/wikipediaidevice.py: Add the GFDL to the bottom of
+	  every Wikipedia iDevice.
+
+2005-06-20 07:03  djm
+
+	* exe/engine/attachmentidevice.py, exe/engine/idevicestore.py,
+	  exe/webui/attachmentblock.py, exe/webui/blockfactory.py: Added
+	  Attachment iDevice
+
+2005-06-20 02:28  jenny
+
+	* exe/webui/quiztestblock.py: fixed SCORM quiz idevice scorm
+	  exporting javascript errors.
+
+2005-06-20 02:24  matthew
+
+	* prototype/pyfox/pyfoxutil.cpp, prototype/pyfox/pyfoxutiltest.py,
+	  prototype/pyfox/setup.py: Now adds a listener but doesn't appear
+	  quite yet
+
+2005-06-20 01:20  matthew
+
+	* prototype/pyfox/pyfoxutil.cpp, prototype/pyfox/pyfoxutiltest.py,
+	  prototype/pyfox/setup.py: David wants to see the latest changes
+
+2005-06-20 01:19  djm
+
+	* exe/webui/block.py, exe/webui/common.py,
+	  exe/webui/scripts/common.js: Use Javascript to confirm the user
+	  really wants to delete an iDevice before submitting.
+
+2005-06-20 00:51  brent
+
+	* exe/export/scormexport.py, exe/webui/block.py,
+	  exe/webui/common.py: changed red X to rubbish bin icon for
+	  deleting iDevice
+
+2005-06-19 23:16  matthew
+
+	* prototype/pyfox/gtkmozembed/Makefile,
+	  prototype/pyfox/pyfoxutil.cpp, prototype/pyfox/setup.py,
+	  prototype/pyfox/test_xpcomponents.py,
+	  prototype/pyfox/xpcomponents.py: InitWindow needs some linking
+	  thing
+
+2005-06-19 20:51  djm
+
+	* exe/engine/idevicestore.py, exe/webui/blockfactory.py: Sorry,
+	  forgot to add the Attachment iDevice at home, commented out until
+	  I do.
+
+2005-06-19 10:16  djm
+
+	* exe/engine/idevicestore.py, exe/engine/wikipediaidevice.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/scripts/common.js: Added Attachment iDevice.
+
+2005-06-18 23:55  djm
+
+	* exe/engine/beautifulsoup.py: Almost forgot BeautifulSoup which
+	  makes the Wikipedia iDevice possible.
+
+2005-06-18 22:29  djm
+
+	* ChangeLog, exe/engine/wikipediaidevice.py,
+	  exe/webui/wikipediablock.py: Wikipedia iDevice is now working
+	  sortof ok.
+
 2005-06-18 11:14  djm
 
 	* ChangeLog, exe/engine/field.py, exe/engine/genericidevice.py,

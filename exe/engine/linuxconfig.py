@@ -25,7 +25,6 @@ configuration
 import os
 from exe.engine.config import Config
 from exe.engine.path import Path
-import logging
 
 # ===========================================================================
 class LinuxConfig(Config):

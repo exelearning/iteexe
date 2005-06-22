@@ -26,9 +26,6 @@ from exe.engine.node           import Node
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.path           import Path
 
-# TODO want to remove TitleIdevice
-from exe.engine.titleidevice   import TitleIdevice
-
 
 # ===========================================================================
 class TestPackage(unittest.TestCase):
@@ -109,8 +106,8 @@ class TestPackage(unittest.TestCase):
                     assert len(val) == len(val2)
                     for nodeName in val:
                         assert val2.has_key(nodeName)
-                elif isinstance(val, Node) or isinstance(val, TitleIdevice):
-                    if isinstance(val, TitleIdevice): checkInst(val, val2)
+                elif isinstance(val, Node):
+                    pass
                 elif key in Package.nonpersistant:
                     # Non persistent should exist after load
                     # but not be the same

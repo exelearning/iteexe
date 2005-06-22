@@ -24,7 +24,6 @@ i.e. the "package".
 import logging
 import gettext
 import zipfile 
-import shutil
 from exe.engine.path            import Path, TempDirPath
 from exe.engine.node            import Node
 from exe.engine.genericidevice  import GenericIdevice
