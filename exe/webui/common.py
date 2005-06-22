@@ -225,3 +225,18 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += u'<b>%s:</b><br/>%s<br/>' % (label, instruc)                
         html += u'</div>\n'
     return html
+
+def selectOptions(name, options, selection=None):
+    """Adds a dropdown selection to a form"""
+    html = u'<select  name="%s" >' % name
+    for opt in options:
+        selected = u''
+        if selection == opt[0]:
+            selected = u'selected'
+
+        html += u' <option value="%s" %s>' % (opt[0], selected)
+        html += opt[1]
+        html += u'</option>\n'
+
+    html += u'</select>\n'
+    return html

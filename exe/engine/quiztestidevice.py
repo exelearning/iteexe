@@ -103,7 +103,7 @@ class QuizTestIdevice(Idevice):
         """
         # TODO not sure if this is correct?
         return (Idevice.getResources(self) + 
-                ["common.js", "lib_drag.js", "quizForScorm.js"])
+                ["common.js", "lib_drag.js"])
 
 
 # ===========================================================================

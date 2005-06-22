@@ -176,12 +176,6 @@ class IMSPage(Page):
         html += "<style type=\"text/css\">\n"
         html += "@import url(content.css);\n"
         html += "</style>\n"
-        for idevice in self.node.idevices:
-            if idevice.title == "Quiz Test":
-                html += "<script language=\"javascript\" "
-                html += "src=\"quizForWeb.js\"></script>\n"
-                break
-            
         html += "</head>\n"
         html += "<body>\n"
         html += "<div id=\"outer\">\n"
@@ -197,7 +191,10 @@ class IMSPage(Page):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView(self.node.package.style)
+            if idevice.title == "SCORM Quiz":
+                html += block.renderJavascriptForWeb()
+            if idevice.title <> "Forum Discussion":
+                html += block.renderView(self.node.package.style)
 
         html += "</div>\n"
         html += "</div>\n"
@@ -255,25 +252,12 @@ class IMSExport(object):
         manifest.save()
         
         # Copy the scripts
-        if (os.path.isfile(self.scriptsDir+ "/quizForIMS.js") and 
-            os.path.isfile(self.scriptsDir+ "/quizForWeb.js")):
-            self.scriptsDir.copylist(('libot_drag.js',
-                                      'common.js',
-                                      'quizForWeb.js', 
-                                      'quizForIMS.js',
-                                      'imscp_v1p1.xsd',
-                                      'imsmd_v1p2p2.xsd',
-                                      'ims_xml.xsd'), outputDir)
-            os.remove(self.scriptsDir+ "/quizForWeb.js")
-            os.remove(self.scriptsDir+ "/quizForIMS.js")
-        else:
-            self.scriptsDir.copylist(('libot_drag.js',
-                                      'imscp_v1p1.xsd',
-                                      'imsmd_v1p2p2.xsd',
-                                      'ims_xml.xsd',
-                                      'common.js'), outputDir)
-
-
+    
+        self.scriptsDir.copylist(('libot_drag.js',
+                                  'imscp_v1p1.xsd',
+                                  'imsmd_v1p2p2.xsd',
+                                  'ims_xml.xsd',
+                                  'common.js'), outputDir)
 
         # Zip up the package
         zipped = ZipFile(self.filename, "w")

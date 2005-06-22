@@ -54,17 +54,40 @@ class Manifest(object):
         self.itemStr      = ""
         self.resStr       = ""
 
-
-    def save(self):
+    def save(self, filename):
         """
         Save a imsmanifest file to self.outputDir
         """
-        filename = "imsmanifest.xml"
         out = open(self.outputDir/filename, "w")
-        out.write(self.createXML().encode('utf8'))
+        if filename == "imsmanifest.xml":
+            out.write(self.createXML().encode('utf8'))
+        if filename == "MDF.xml":
+            out.write(self.createForumXML().encode('utf8'))
         out.close()
         
-
+        
+    def createForumXML(self):
+        """
+        returning forum XLM string for manifest file
+        """  
+        forumStr = ""
+        discussionStr =""
+        xmlStr  = "<?xml version = \"1.0\"?>\n"
+        xmlStr += "<forums>\n"
+        
+        for page in self.pages:
+            for idevice in page.node.idevices:
+                if idevice.title == "Forum Discussion":
+                    block = g_blockFactory.createBlock(None, idevice)
+                    if not block:
+                        log.critical("Unable to render iDevice.")
+                        raise Error("Unable to render iDevice.")
+                    xmlStr += block.renderForumStr()
+                    
+        xmlStr += "</forums>\n"
+        
+        return xmlStr
+    
     def createXML(self):
         """
         returning XLM string for manifest file
@@ -179,7 +202,6 @@ class ScormPage(Page):
         """
         Returns an XHTML string rendering this page.
         """
-       
         html  = common.docType()
         html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += "<head>\n"
@@ -192,14 +214,9 @@ class ScormPage(Page):
         html += "<script type=\"text/javascript\" language=\"javascript\" "
         html += "src=\"APIWrapper.js\"></script>\n" 
         html += "<script type=\"text/javascript\" language=\"javascript\" "
-        html += "src=\"SCOFunctions.js\"></script>\n" 
-        for idevice in self.node.idevices:
-            if idevice.title == "SCORM Quiz":
-                html += "<script language=\"javascript\" "
-                html += "src=\"quizForScorm.js\"></script>\n"
-                break
-            
+        html += "src=\"SCOFunctions.js\"></script>\n"             
         html += "</head>\n"
+       # html += "<body onunLoad=\"return unloadPage()\">\n"
         html += '<body onload="loadPage()" onunload="unloadPage()" '
         html += ' onbeforeunload="unloadPage()">'
         html += "<div id=\"outer\">\n"
@@ -214,15 +231,21 @@ class ScormPage(Page):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
+            if idevice.title == "SCORM Quiz":
+                html += block.renderJavascriptForScorm()
             html += block.renderView(self.node.package.style)
 
         html += "</div>\n"
         html += "</div>\n"
+        #html += "<script language=\"javascript\">\n"
+        #html += "loadPage();\n"
+        #html += "doContinue('completed');</script>\n"  
         html += "</body></html>\n"
         return html
 
 
 # ===========================================================================
+
 class ScormExport(object):
     """
     Exports an eXe package as a SCORM package
@@ -239,6 +262,7 @@ class ScormExport(object):
         self.styleDir   = Path(styleDir)
         self.filename   = Path(filename)
         self.pages      = []
+        self.hasForum   = False
 
 
     def export(self, package):
@@ -267,33 +291,27 @@ class ScormExport(object):
 
         for page in self.pages:
             page.save(outputDir)
+            if not self.hasForum:
+                for idevice in page.node.idevices:
+                    if idevice.title == "Forum Discussion":
+                        self.hasForum = True
+                        break
 
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages)
-        manifest.save()
+        manifest.save("imsmanifest.xml")
+        if self.hasForum:
+            manifest.save("MDF.xml")
         
         # Copy the scripts
-        if (os.path.isfile(self.scriptsDir+ "/quizForScorm.js") and 
-            os.path.isfile(self.scriptsDir+ "/quizForWeb.js")):
-            self.scriptsDir.copylist(('imscp_rootv1p1p2.xsd',
-                                      'imsmd_rootv1p2p1.xsd',
-                                      'adlcp_rootv1p2.xsd',
-                                      'APIWrapper.js', 
-                                      'SCOFunctions.js',
-                                      'libot_drag.js',
-                                      'common.js',
-                                      'quizForWeb.js', 
-                                      'quizForScorm.js'), outputDir)
-            os.remove(self.scriptsDir+ "/quizForWeb.js")
-            os.remove(self.scriptsDir+ "/quizForScorm.js")
-        else:
-            self.scriptsDir.copylist(('APIWrapper.js', 
-                                      'imscp_rootv1p1p2.xsd',
-                                      'imsmd_rootv1p2p1.xsd',
-                                      'adlcp_rootv1p2.xsd',
-                                      'SCOFunctions.js', 
-                                      'libot_drag.js',
-                                      'common.js'), outputDir)
+        
+        self.scriptsDir.copylist(('APIWrapper.js', 
+                                  'imscp_rootv1p1p2.xsd',
+                                  'imsmd_rootv1p2p1.xsd',
+                                  'adlcp_rootv1p2.xsd',
+                                  'SCOFunctions.js', 
+                                  'libot_drag.js',
+                                  'common.js'), outputDir)
 
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")

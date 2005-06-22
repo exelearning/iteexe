@@ -62,6 +62,7 @@ class WebsitePage(object):
         """
         Returns an XHTML string rendering this page.
         """
+    
         html  = u"<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
         html += u"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
         html += u" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
@@ -70,12 +71,6 @@ class WebsitePage(object):
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(content.css);\n"
         html += u"@import url(nav.css);</style>\n"
-        for idevice in self.node.idevices:
-            if idevice.title == "SCORM Quiz":
-                html += u"<script language=\"javascript\" "
-                html += u"src=\"quizForWeb.js\"></script>\n"
-                break
-            
         html += u"<title>%s</title>\n" % self.node.title
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=UTF-8\" />\n";
@@ -98,7 +93,10 @@ class WebsitePage(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            html += block.renderView(style)
+            if idevice.title == "SCORM Quiz":
+                html += block.renderJavascriptForWeb()
+            if idevice.title <> "Forum Discussion":
+                html += block.renderView(style)
         
         html += self.getNavigationLink(prevPage, nextPage)
         html += u"</div>\n"
@@ -219,14 +217,8 @@ class WebsiteExport(object):
             
         # copy script files.
         # TODO quiz scripts belong in the packages resourcesDir?
-        if (os.path.isfile(self.scriptsDir+ "/quizForWeb.js") and 
-            os.path.isfile(self.scriptsDir+ "/quizForScorm.js")):
-            self.scriptsDir.copylist(('libot_drag.js', 'common.js',
-                                      'quizForWeb.js'), self.outputDir)
-            os.remove(self.scriptsDir+ "/quizForWeb.js")
-            os.remove(self.scriptsDir+ "/quizForScorm.js")
-        else:
-            self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
+        
+        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
             
 
