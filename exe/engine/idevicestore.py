@@ -110,7 +110,7 @@ class IdeviceStore:
         from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.wikipediaidevice      import WikipediaIdevice
         from exe.engine.attachmentidevice     import AttachmentIdevice
-#        from exe.engine.forumidevice          import ForumIdevice
+        from exe.engine.forumidevice          import ForumIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -129,7 +129,7 @@ class IdeviceStore:
         self.extended.append(QuizTestIdevice())
         self.extended.append(WikipediaIdevice())
         self.extended.append(AttachmentIdevice())
-#        self.extended.append(ForumIdevice())
+        self.extended.append(ForumIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:
