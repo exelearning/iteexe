@@ -32,7 +32,6 @@ from exe.engine.casestudyidevice      import CasestudyIdevice
 from exe.engine.truefalseidevice      import TrueFalseIdevice
 from exe.engine.quiztestidevice       import QuizTestIdevice
 from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
-from exe.engine.forumidevice          import ForumIdevice
 #from exe.engine.forumidevice          import ForumIdevice
 
 from exe.webui.freetextblock          import FreeTextBlock
@@ -44,7 +43,6 @@ from exe.webui.truefalseblock         import TrueFalseBlock
 from exe.webui.quiztestblock          import QuizTestBlock
 from exe.webui.teacherprofileblock    import TeacherProfileBlock
 from exe.webui.imagewithtextblock     import ImageWithTextBlock
-from exe.webui.forumblock             import ForumBlock
 #from exe.webui.forumblock             import ForumBlock
 
 log = logging.getLogger(__name__)
