@@ -88,66 +88,66 @@ class ForumBlock(Block):
         message      = message.replace("\n","\\n")
         message      = message.replace("'","\\'")
         
-        typeArr    = [['single', 'A single simple discussion'],
-                      ['eachuser', 'Each person posts one discussion'],
-                      ['general', 'Standard forum for general use']]
+        typeArr    = [['single', _(u'A single simple discussion')],
+                      ['eachuser', _(u'Each person posts one discussion')],
+                      ['general', _(u'Standard forum for general use')]]
         
-        postArr    = [['2', 'Discussions and replies are allowed'],
-                      ['1', 'No discussions, but replies are allowed'],
-                      ['0', 'No discussions, no replies']]
+        postArr    = [['2', _(u'Discussions and replies are allowed')],
+                      ['1', _(u'No discussions, but replies are allowed')],
+                      ['0', _(u'No discussions, no replies')]]
         
-        subscArr   = [['0','No'], ['1','Yes, forever'], ['2', 'Yes, initially']]
+        subscArr   = [['0',_(u'No')], ['1',_(u'Yes, forever')], ['2', _(u'Yes, initially')]]
         
-        groupArr   = [['0','No groups'], ['1','Separate groups'], 
-                      ['2','Visible groups']]
+        groupArr   = [['0',_(u'No groups')], ['1',_(u'Separate groups')], 
+                      ['2',_(u'Visible groups')]]
         
-        visibleArr = [['1','Show'], ['0','Hide']]
+        visibleArr = [['1',_(u'Show')], ['0',_(u'Hide')]]
 
         
         html  = "<div class=\"iDevice\" class=\"forum\">\n"
         
-        html += "<b>%s</b>" % _("Forum name:") 
+        html += "<b>%s</b>" % _(u"Forum name:") 
         html += common.elementInstruc("name"+self.id, 
                                       self.idevice.nameInstruc)+ "<br/>\n"
         
         html += common.textInput("name"+self.id, self.idevice.forumName)+ "\n"
-        html += "<br/><b>%s</b>" % _("Forum type:") 
+        html += "<br/><b>%s</b>" % _(u"Forum type:") 
         html += common.elementInstruc("type"+self.id, 
                                       self.idevice.typeInstruc)+ "<br/>"
         html += common.selectOptions("type"+self.id, typeArr, self.idevice.type) 
-        html += "<br/><b>%s</b>" % _("Forum introduction:") 
+        html += "<br/><b>%s</b>" % _(u"Forum introduction:") 
         html += common.elementInstruc("introduction"+self.id, 
                                       self.idevice.introInstruc)+ "<br/>"
         html += common.richTextArea("introduction"+self.id, 
                                     introduction)
-        html += "<b>%s</b>" % _("Can a student post to this forum?:")
+        html += "<b>%s</b>" % _(u"Can a student post to this forum?:")
         html += common.elementInstruc("studentpost"+self.id, 
                                       self.idevice.postInstruc)+ "<br/>"
         html += common.selectOptions("studentpost"+self.id, postArr, 
                                      self.idevice.studentpost) + "\n"
-        html += "<br/><b>%s</b>" % _("Force everyone to be subscribed?:")
+        html += "<br/><b>%s</b>" % _(u"Force everyone to be subscribed?:")
         
         html += common.elementInstruc("subscription"+self.id, 
                                       self.idevice.subscInstruc)+ "<br/>"
         html += common.selectOptions("subscription"+self.id, subscArr, 
                                      self.idevice.subscription) + "\n"
-        html += "<br/><b>%s</b>" % _("Group mode:")
+        html += "<br/><b>%s</b>" % _(u"Group mode:")
         html += common.elementInstruc("groupmode"+self.id, 
                                       self.idevice.groupInstruc)+ "<br/>"
         html += common.selectOptions("groupmode"+self.id, groupArr, 
                                      self.idevice.groupmode) + "\n"
-        html += "<br/><b>%s</b>" % _("Visible to students:")
+        html += "<br/><b>%s</b>" % _(u"Visible to students:")
         html += common.elementInstruc("visible"+self.id, 
                                       self.idevice.visibleInstruc)+ "<br/>"
         html += common.selectOptions("visible"+self.id, visibleArr, 
                                      self.idevice.visible) + "\n"
-        html += "<br/><br/><b>%s</b>" % _("Discussion topic:") + "<br/>"
-        html += "<b>%s</b>" % _("Subject:") 
+        html += "<br/><br/><b>%s</b>" % _(u"Discussion topic:") + "<br/>"
+        html += "<b>%s</b>" % _(u"Subject:") 
         html += common.elementInstruc("subject"+self.id, 
                                       self.idevice.subjectInstruc)+ "<br/>"
         html += common.textInput("subject"+self.id, 
                                  self.idevice.discussionSubject)+ "<br/>"
-        html += "<b>%s</b>" % _("Message:") 
+        html += "<b>%s</b>" % _(u"Message:") 
         html += common.elementInstruc("message"+self.id, 
                                       self.idevice.messageInstruc)+ "<br/>"
         html += common.richTextArea("message"+self.id, 
@@ -161,10 +161,10 @@ class ForumBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<b>Forum Discussion</b><br/>"
+        html  = "<b>%s</b><br/>" % _(u"Forum Discussion")
         html += "<b>%s</b><br/>" % self.idevice.forumName
-        html += "<b>Discussion Topic</b><br/>\n"
-        html += "<b>Subject</b><br/>\n"
+        html += "<b>%s</b><br/>\n" % _(u"Discussion Topic")
+        html += "<b>%s</b><br/>\n" % _(u"Subject")
         html += "<!--$Forum%slink-->\n" % self.id
         html += self.idevice.discussionSubject + "<br/>\n" 
         html += self.idevice.discussionMessage + "<br/>\n"
@@ -175,12 +175,12 @@ class ForumBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<b>Forum Discussion</b><br/>"
+        html  = "<b>%s</b><br/>" % _(u"Forum Discussion")
         html += "<b>%s</b><br/>" % self.idevice.forumName
-        html += "<b>Discussion Topic</b><br/>\n"
-        html += "<b>Subject</b><br/>\n"
-        html += "<a href=\"http://yahoo.com\">"
-        html += self.idevice.discussionSubject + "</a><br/>\n" 
+        html += "<b>%s</b><br/>\n" % _(u"Discussion Topic")
+        html += "<b>%s</b><br/>\n" % _(u"Subject")
+        html += "<<!--$Forum%slink-->\n>"
+        html += self.idevice.discussionSubject + "<br/>\n" 
         html += self.idevice.discussionMessage + "<br/>\n"
         return html
     
