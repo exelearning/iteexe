@@ -96,78 +96,79 @@ class ForumBlock(Block):
                       ['1', _(u'No discussions, but replies are allowed')],
                       ['0', _(u'No discussions, no replies')]]
         
-        subscArr   = [['0',_(u'No')], ['1',_(u'Yes, forever')], ['2', _(u'Yes, initially')]]
+        subscArr   = [['0', _(u'No')], ['1', _(u'Yes, forever')], 
+                      ['2', _(u'Yes, initially')]]
         
-        groupArr   = [['0',_(u'No groups')], ['1',_(u'Separate groups')], 
-                      ['2',_(u'Visible groups')]]
+        groupArr   = [['0', _(u'No groups')], ['1', _(u'Separate groups')], 
+                      ['2', _(u'Visible groups')]]
         
-        visibleArr = [['1',_(u'Show')], ['0',_(u'Hide')]]
+        visibleArr = [['1', _(u'Show')], ['0', _(u'Hide')]]
 
         
-        html  = "<div class=\"iDevice\" class=\"forum\">\n"
+        html  = u"<div class=\"iDevice\" class=\"forum\">\n"
         
-        html += "<b>%s</b>" % _(u"Forum name:") 
+        html += u"<b>%s</b>" % _(u"Forum name:") 
         html += common.elementInstruc("name"+self.id, 
-                                      self.idevice.nameInstruc)+ "<br/>\n"
+                                      self.idevice.nameInstruc)+ u"<br/>\n"
         
         html += common.textInput("name"+self.id, self.idevice.forumName)+ "\n"
-        html += "<br/><b>%s</b>" % _(u"Forum type:") 
+        html += u"<br/><b>%s</b>" % _(u"Forum type:") 
         html += common.elementInstruc("type"+self.id, 
-                                      self.idevice.typeInstruc)+ "<br/>"
+                                      self.idevice.typeInstruc)+ u"<br/>"
         html += common.selectOptions("type"+self.id, typeArr, self.idevice.type) 
-        html += "<br/><b>%s</b>" % _(u"Forum introduction:") 
+        html += u"<br/><b>%s</b>" % _(u"Forum introduction:") 
         html += common.elementInstruc("introduction"+self.id, 
-                                      self.idevice.introInstruc)+ "<br/>"
+                                      self.idevice.introInstruc)+ u"<br/>"
         html += common.richTextArea("introduction"+self.id, 
                                     introduction)
-        html += "<b>%s</b>" % _(u"Can a student post to this forum?:")
+        html += u"<b>%s</b>" % _(u"Can a student post to this forum?:")
         html += common.elementInstruc("studentpost"+self.id, 
                                       self.idevice.postInstruc)+ "<br/>"
         html += common.selectOptions("studentpost"+self.id, postArr, 
                                      self.idevice.studentpost) + "\n"
-        html += "<br/><b>%s</b>" % _(u"Force everyone to be subscribed?:")
+        html += u"<br/><b>%s</b>" % _(u"Force everyone to be subscribed?:")
         
         html += common.elementInstruc("subscription"+self.id, 
                                       self.idevice.subscInstruc)+ "<br/>"
         html += common.selectOptions("subscription"+self.id, subscArr, 
                                      self.idevice.subscription) + "\n"
-        html += "<br/><b>%s</b>" % _(u"Group mode:")
+        html += u"<br/><b>%s</b>" % _(u"Group mode:")
         html += common.elementInstruc("groupmode"+self.id, 
-                                      self.idevice.groupInstruc)+ "<br/>"
+                                      self.idevice.groupInstruc)+ u"<br/>"
         html += common.selectOptions("groupmode"+self.id, groupArr, 
                                      self.idevice.groupmode) + "\n"
         html += "<br/><b>%s</b>" % _(u"Visible to students:")
         html += common.elementInstruc("visible"+self.id, 
-                                      self.idevice.visibleInstruc)+ "<br/>"
+                                      self.idevice.visibleInstruc)+ u"<br/>"
         html += common.selectOptions("visible"+self.id, visibleArr, 
-                                     self.idevice.visible) + "\n"
-        html += "<br/><br/><b>%s</b>" % _(u"Discussion topic:") + "<br/>"
-        html += "<b>%s</b>" % _(u"Subject:") 
+                                     self.idevice.visible) + u"\n"
+        html += u"<br/><br/><b>%s</b>" % _(u"Discussion topic:") + u"<br/>"
+        html += u"<b>%s</b>" % _(u"Subject:") 
         html += common.elementInstruc("subject"+self.id, 
-                                      self.idevice.subjectInstruc)+ "<br/>"
+                                      self.idevice.subjectInstruc)+ u"<br/>"
         html += common.textInput("subject"+self.id, 
-                                 self.idevice.discussionSubject)+ "<br/>"
-        html += "<b>%s</b>" % _(u"Message:") 
+                                 self.idevice.discussionSubject)+ u"<br/>"
+        html += u"<b>%s</b>" % _(u"Message:") 
         html += common.elementInstruc("message"+self.id, 
-                                      self.idevice.messageInstruc)+ "<br/>"
+                                      self.idevice.messageInstruc)+ u"<br/>"
         html += common.richTextArea("message"+self.id, 
                                     message)
 
-        html += "<br/>" + self.renderEditButtons()
-        html += "</div>\n"
+        html += u"<br/>" + self.renderEditButtons()
+        html += u"</div>\n"
         return html
     
     def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = "<b>%s</b><br/>" % _(u"Forum Discussion")
-        html += "<b>%s</b><br/>" % self.idevice.forumName
-        html += "<b>%s</b><br/>\n" % _(u"Discussion Topic")
-        html += "<b>%s</b><br/>\n" % _(u"Subject")
-        html += "<!--$Forum%slink-->\n" % self.id
-        html += self.idevice.discussionSubject + "<br/>\n" 
-        html += self.idevice.discussionMessage + "<br/>\n"
+        html  = u"<br/><b>%s</b><br/>" % _(u"Forum Discussion")
+        html += u"<b>%s</b><br/>" % self.idevice.forumName
+        html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
+        html += u"<b>%s</b><br/>\n" % _(u"Subject")
+        html += u"<!--$Forum%slink-->\n" % self.id
+        html += self.idevice.discussionSubject + u"<br/>\n" 
+        html += self.idevice.discussionMessage + u"<br/>\n"
         html += self.renderViewButtons()
         return html
 
@@ -175,13 +176,13 @@ class ForumBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = "<b>%s</b><br/>" % _(u"Forum Discussion")
-        html += "<b>%s</b><br/>" % self.idevice.forumName
-        html += "<b>%s</b><br/>\n" % _(u"Discussion Topic")
-        html += "<b>%s</b><br/>\n" % _(u"Subject")
-        html += "<<!--$Forum%slink-->\n>"
-        html += self.idevice.discussionSubject + "<br/>\n" 
-        html += self.idevice.discussionMessage + "<br/>\n"
+        html  = u"<br/><b>%s</b><br/>" % _(u"Forum Discussion")
+        html += u"<b>%s</b><br/>" % self.idevice.forumName
+        html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
+        html += u"<b>%s</b><br/>\n" % _(u"Subject")
+        html += u"<!--$Forum%slink-->\n"
+        html += self.idevice.discussionSubject + u"<br/>\n" 
+        html += self.idevice.discussionMessage + u"<br/>\n"
         return html
     
     def renderForumStr(self):

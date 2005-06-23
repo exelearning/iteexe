@@ -95,7 +95,7 @@ class PropertiesPane(Renderable):
         html += common.hiddenField("isChanged", self.package.isChanged)
         html += common.hiddenField("posting", self.package.isChanged)
         html += u"<table border=\"0\" cellspacing=\"6\">\n"
-        html += u"<tr><td><b>Project title:</b></td><td>\n"
+        html += u"<tr><td><b>%s</b></td><td>\n" % _(u"Project title:")
         html += common.textInput("title", self.package.root.title, 53) 
         html += u"</td>"
         html += u"</tr><tr><td><b>"

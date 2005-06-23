@@ -208,13 +208,13 @@ def checkbox(name, checked, value=""):
 
 
 def elementInstruc(instrucId, instruc, imageFile="help.gif",
-                   label="Instructions"):
+                   label=_(u"Instructions")):
     """add a help instruction for a element"""
     if instruc == u'':
         html = u''
     else:
         html  = u'<a onmousedown="Javascript:updateCoords(event);" '
-        html += u' title="%s"" ' % _('Instructions for completion')
+        html += u' title="%s"" ' % _(u'Instructions for completion')
         html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % instrucId
         html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
         html += u'<img src="/images/%s" border="0" align="middle"/>' % imageFile

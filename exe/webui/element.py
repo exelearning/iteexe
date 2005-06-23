@@ -211,7 +211,7 @@ class ImageElement(Element):
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")
         html += u"</a><br/>\n"
-        html += u"<b>Display as:</b>\n"
+        html += u"<b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" " 
         html += u"name=\"width"+self.id+"\" " 
@@ -225,7 +225,7 @@ class ImageElement(Element):
         html += u"value=\"%s\" " % self.field.height
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
         html += u"size=\"5\" />\n"
-        html += u"(blank for original size) <br/>\n"
+        html += u"(%s) <br/>\n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
         html += u"<br/>\n"
         

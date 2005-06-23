@@ -41,7 +41,7 @@ class FreeTextIdevice(Idevice):
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
-        self.content = TextAreaField("content", 
+        self.content = TextAreaField(_(u"Content"), 
 _(u"This is a free text field general learning content can be entered."),
                                      content)
         self.content.idevice = self

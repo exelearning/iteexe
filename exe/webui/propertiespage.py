@@ -75,7 +75,7 @@ class PropertiesPage(RenderableResource):
            '''charset=UTF-8"></meta>''',
            '''</head>'''])
         html += "<div id=\"main\"> \n"
-        html += "<h3>Project Properties</h3>\n"
+        html += "<h3>%s</h3>\n" % _(u"Project Properties")
         html += self.propertiesPane.render()
         html += "</div> \n"
         html += "</body></html>"

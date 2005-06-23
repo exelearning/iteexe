@@ -231,10 +231,10 @@ class Block(Renderable):
             html += u' title="%s" border="0" align="middle" ' % _(u"Close")
             html += u'onmousedown="Javascript:hideMe();"/></div>'
             if self.purpose != "":
-                html += u'<b>Purpose:</b><br/>%s<br/>' % self.purpose
+                html += u'<b>%s</b><br/>%s<br/>' % (_(u"Purpose:"), self.purpose)
                 
             if self.tip != "":
-                html += u'<b>Tip:</b><br/>%s<br/>' % self.tip
+                html += u'<b>%s</b><br/>%s<br/>' % (_(u"Tip:"),self.tip)
                 
             html += u'</div>\n'        
         
