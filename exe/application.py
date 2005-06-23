@@ -29,7 +29,7 @@ from exe.webui.webserver     import WebServer
 from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
-from exe.engine import version
+from exe.engine              import version
 import logging
 import gettext
 _   = gettext.gettext
@@ -106,6 +106,7 @@ class Application:
             self.config = LinuxConfig()
         log.debug("logging set up")
 
+
     def preLaunch(self):
         """
         Sets ourself up for running 
@@ -133,8 +134,7 @@ class Application:
     def serve(self):
         """
         Starts the web server,
-        this func doesn't return until
-        after the app has finished
+        this func doesn't return until after the app has finished
         """
         print "Welcome to eXe: the eLearning XHTML editor"
         log.info("eXe running...")
@@ -145,9 +145,10 @@ class Application:
         """
         Print usage info
         """
-        print "Usage: "+os.path.basename(sys.argv[0])+" [OPTION] PACKAGE"
+        print "Usage: "+os.path.basename(sys.argv[0])+" [OPTION] [PACKAGE]"
         print "  -V, --version    print version information and exit"
         print "  -h, --help       display this help and exit"
-        print "Settings are read from exe.conf"
-        print "in $HOME/ on Linux/Unix or"
-        print "in My Documents/ on Windows"
+        print "Settings are read from exe.conf "
+        print "in $HOME/.exe on Linux/Unix or"
+        print "in Documents and Settings/<user name>/Application Data/exe "
+        print "on Windows"

@@ -23,13 +23,13 @@ configuration
 """
 
 from exe.engine.config import Config
-from exe.engine.path import Path
+from exe.engine.path   import Path
 
 # Constants for directory name codes
-APPDATA = 0x001a
+APPDATA        = 0x001a
 COMMON_APPDATA = 0x0023
-MYDOCUMENTS = 0x0005 # Code for c:\documents and settings\myuser\My Documents
-PROGRAMFILES = 0x0026
+MYDOCUMENTS    = 0x0005 # Code for c:\documents and settings\myuser\My Documents
+PROGRAMFILES   = 0x0026
 
 # ===========================================================================
 class WinConfig(Config):
@@ -46,7 +46,7 @@ class WinConfig(Config):
         if not self.browserPath.isfile():
             programFiles = Path(self.__getWinFolder(PROGRAMFILES))
             self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
-        self.dataDir = Path(self.__getWinFolder(MYDOCUMENTS))
+        self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
 
     def _getConfigPathOptions(self):
