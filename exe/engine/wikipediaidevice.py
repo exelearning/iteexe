@@ -58,6 +58,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.images      = {}
  
 
+
     def getResources(self):
         """
         Return the resource files used by this iDevice
@@ -101,6 +102,8 @@ article from en.wikipedia.org, including copying the associated images."""),
                 urllib.urlretrieve(imageSrc, imageDest)
                 self.images[imageName] = True
 
+            # We have to use absolute URLs if we want the images to
+            # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + 
                                u"/resources/" + imageName)
                 
@@ -126,6 +129,23 @@ article from en.wikipedia.org, including copying the associated images."""),
         content += u"Wikipedia article "
         content += u"\""+self.articleName+u"\"</a>.<br/>\n"
         return content
+
+
+    def __getstate__(self):
+        """
+        Re-write the img URLs just in case the class name has changed
+        """
+        log.debug("in __getstate__ " + repr(self.parentNode))
+
+        # need to check parentNode because __getstate__ is also called by 
+        # deepcopy as well as Jelly.
+        if self.parentNode:
+            self.article.content = re.sub(r'/[^/]*?/resources/', 
+                                          u"/" + self.parentNode.package.name + 
+                                          u"/resources/", 
+                                          self.article.content)
+
+        return Idevice.__getstate__(self)
 
 
     def delete(self):
