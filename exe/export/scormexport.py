@@ -61,8 +61,7 @@ class Manifest(object):
         out = open(self.outputDir/filename, "w")
         if filename == "imsmanifest.xml":
             out.write(self.createXML().encode('utf8'))
-        #if filename == "discussionforum.xml":
-        else:
+        if filename == "discussionforum.xml":
             out.write(self.createForumXML().encode('utf8'))
         out.close()
         
