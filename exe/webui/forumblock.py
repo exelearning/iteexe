@@ -196,9 +196,9 @@ class ForumBlock(Block):
         xml += "<introduction>%s</introduction>\n" % self.idevice.introduction
         xml += "<studentpost>%s</studentpost>\n" % self.idevice.studentpost
         xml += "<subscription>%s</subscription>\n" % self.idevice.subscription
-        xml += "<tracking>optional</tracking>\n"
+        xml += "<tracking>1</tracking>\n"
         xml += "<attachmentsize></attachmentsize>\n"
-        xml += "<ratings>off</ratings>\n"
+        xml += "<ratings>0</ratings>\n"
         xml += "<groupmode>%s</groupmode>\n" % self.idevice.groupmode
         xml += "<visible>%s</visible>\n" % self.idevice.visible
         xml += "</forum>"

@@ -61,7 +61,8 @@ class Manifest(object):
         out = open(self.outputDir/filename, "w")
         if filename == "imsmanifest.xml":
             out.write(self.createXML().encode('utf8'))
-        if filename == "MDF.xml":
+        #if filename == "discussionforum.xml":
+        else:
             out.write(self.createForumXML().encode('utf8'))
         out.close()
         
@@ -299,7 +300,7 @@ class ScormExport(object):
         manifest = Manifest(self.config, outputDir, package, self.pages)
         manifest.save("imsmanifest.xml")
         if self.hasForum:
-            manifest.save("MDF.xml")
+            manifest.save("discussionforum.xml")
         
         # Copy the scripts
         
