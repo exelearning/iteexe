@@ -14,7 +14,13 @@ body {
     background: #FFFFFF;
 }
 
+a { color: #003366;
+    text-decoration: none;
+}
 
+a:hover {color: #EDEFF0;
+         text-decoration: underline; 
+}
 
 form > #main {
 	margin: 10px 10px 10px 10px;

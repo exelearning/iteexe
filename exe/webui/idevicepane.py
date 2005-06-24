@@ -90,7 +90,7 @@ class IdevicePane(Renderable):
 
         html  = "<!-- IDevice Pane Start -->\n"
         html += "<listbox id=\"ideviceList\" flex=\"1\" "
-        html += "style=\"background-color: #DFDFDF;\">\n"
+        html += "style=\"background-color: #FFF;\">\n"
 
         prototypes = self.prototypes.values()
         def sortfunc(pt1, pt2):
