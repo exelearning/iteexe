@@ -60,7 +60,7 @@ class ForumIdevice(Idevice):
         """
         Return the resource files used by this iDevice
         """
-        return Idevice.getResources(self) + ["discussionforum.xml"]
+        return Idevice.getResources(self)
        
         
 # ===========================================================================
