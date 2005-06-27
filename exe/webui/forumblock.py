@@ -167,7 +167,7 @@ class ForumBlock(Block):
         html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
         html += u"<b>%s</b><br/>\n" % _(u"Subject")
         html += u"<!--Forum%slink-->\n" % self.id
-        html += self.idevice.discussionSubject + u"<br/>\n" 
+        html += u"<br/>\n" 
         html += self.idevice.discussionMessage + u"<br/>\n"
         html += self.renderViewButtons()
         return html
