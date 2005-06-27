@@ -22,6 +22,8 @@ a:hover {
 	text-decoration: underline;
 }
 
+li {list-style-position: inside;}
+
 .popupDiv {
     background-color: #C0C0C0;
     border: 1px solid #000;

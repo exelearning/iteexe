@@ -31,6 +31,8 @@ form > #main {
 
 	} // makes style apply to authoring in eXe environment by removing left indent
 
+li {list-style-position: inside;}
+
 
 /* -- style the node title on each page -- */
 
@@ -46,7 +48,6 @@ p#nodeTitle {
     letter-spacing: 3px;
     display: inline;
 }
-
 
 
 /* --- iDevice Styles --- */
