@@ -39,7 +39,10 @@ class TestConfig(utils.SuperTestCase):
             tmp.mkdir()
         logfn = tmp/'exe.log'
         if logfn.exists():
-            logfn.remove()
+            try:
+                logfn.remove()
+            except OSError:
+                pass
         configParser.system.configDir = tmp
         configParser.logging.root = 'ERROR'
         configParser.logging.foo = 'DEBUG'

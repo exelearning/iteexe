@@ -20,7 +20,7 @@
 import logging
 from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
 import sys, unittest
-from popen2                  import Popen3
+#TODO Popen3 not available on Windows!!!  from popen2                  import Popen3
 from exe.application         import Application
 from exe.engine.config       import Config
 from exe.engine.configparser import ConfigParser

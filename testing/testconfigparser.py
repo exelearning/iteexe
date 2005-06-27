@@ -18,7 +18,7 @@ TEST_TEXT = ('nosection=here\n'
              'level=5\n'
              'power : on\t\n'
              'testing= false\n'
-             'running =on\tfor sure   \n'
+             'running =on\t\xc4\x80\xc4\x900   \n'
              ' two words = \tare better than one\t   \n'
              'no_value = \n'
              '\n'
@@ -53,7 +53,7 @@ class TestConfigParser(unittest.TestCase):
                                          'available': 'yes',
                                          'funny-name_mate': 'crusty the clown'}, 
                                     'main': 
-                                        {'running': 'on\tfor sure',
+                                        {'running': 'on\t\xc4\x80\xc4\x900',
                                          'testing': 'false',
                                          'two words': 'are better than one',
                                          'no_value': '',
@@ -68,7 +68,7 @@ class TestConfigParser(unittest.TestCase):
                           'available': 'yes',
                           'funny-name_mate': 'crusty the clown'}, 
                     'main': 
-                        {'running': 'on\tfor sure',
+                        {'running': 'on\t\xc4\x80\xc4\x900',
                          'testing': 'false',
                          'two words': 'are better than one',
                          'no_value': '',
@@ -110,7 +110,7 @@ class TestConfigParser(unittest.TestCase):
                       '[main]\n',
                       'level=5\n',
                       'power : on\n',
-                      'running =on\tfor sure\n',
+                      'running =on\t\xc4\x80\xc4\x900\n',
                       'two words = \tare better than one\n',
                       'no_value = \n',
                       '\n', '\n',
