@@ -47,7 +47,12 @@ div#nodeDecoration {
 
 /* --- iDevice Styles -- */
 
-.iDevice {
+div.iDevice[emphasis="0"] {
+    padding-left: 10px;
+    margin: 10px;
+}
+
+div.iDevice[emphasis="1"] {
     background-color: #FAFFE6;
     padding-left: 10px;
     border: 1px solid #ACBF60;

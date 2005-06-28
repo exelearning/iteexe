@@ -79,11 +79,13 @@
                   </toolbar>
               </toolbox>
               <!-- This label is actually rendered as a tree -->
-              <label flex="2" value="outlinePane" n:render="outlinePane"/>
+              <label flex="1" value="outlinePane" n:render="outlinePane"/>
 
               <splitter collapse="none"><grippy/></splitter>
 
-            <vbox>
+            <vbox flex="1">
+
+               <!-- buttons for promoting/demoting and moving nodes -->
               <toolbox>
                 <toolbar>
                    <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
@@ -92,6 +94,7 @@
                    <toolbarbutton n:render="down" key="downKey" image="http://localhost:8081/images/stock-go-down.png" tooltiptext="Move node down"/>
                  </toolbar>
               </toolbox>
+
             <!-- start iDevices -->
               <label flex="1" value="idevicePane" n:render="idevicePane"/>
             </vbox>
