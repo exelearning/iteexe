@@ -88,7 +88,8 @@ function addFile(blockId) {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-        submitLink("addFile"+blockId, fp.file.path, 1);
+        var path  = document.getElementById('path'+blockId);
+        path.value = fp.file.path;
     }
 }
 

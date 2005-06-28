@@ -43,7 +43,7 @@ class AttachmentIdevice(Idevice):
         self.emphasis    = Idevice.SomeEmphasis
         self.filename    = u""
         self.label       = u""
-        self.discription = u""
+        self.description = u""
  
 
     def getResources(self):

@@ -48,16 +48,18 @@ class AttachmentBlock(Block):
         """
         log.debug("process " + repr(request.args))
         Block.process(self, request)
-
-        if (u"action" in request.args and
-            request.args[u"action"][0] == u"addFile"+self.id):
-            self.idevice.setAttachment(request.args[u"object"][0])
             
         if u"label" + self.id in request.args:
             self.idevice.label = request.args[u"label" + self.id][0]
             
-        if u"disc" + self.id in request.args:
-            self.idevice.discription = request.args[u"disc" + self.id][0]
+        if u"description" + self.id in request.args:
+            self.idevice.description = request.args[u"description" + self.id][0]
+
+        if "path" + self.id in request.args:
+            self.idevice.setAttachment(request.args["path"+self.id][0])
+            
+        if self.idevice.label == "":
+            self.idevice.label = self.idevice.filename
 
 
     def renderEdit(self, style):
@@ -66,15 +68,16 @@ class AttachmentBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<b>" + _(u"Label") + u"</b><br/>"
-        html += common.textInput(u"label"+self.id, self.idevice.label) + u"<br/>"
-        html += u"<b>" + _(u"Discription") + u"</b><br/>"
-        html += common.richTextArea(u"disc"+self.id, self.idevice.discription)
-        html += u"<u>"+self.idevice.filename+u"</u>\n"
-        html += u"<br/>\n"
         html += u"<a href=\"#\" onclick=\"addFile('"+self.id+"');\">"
         html += _(u"Select a file")
         html += u"</a> <br/> \n"
+        html += common.hiddenField("path"+self.id)
+        html += u"<b>" + _(u"Label") + u"</b><br/>"
+        html += common.textInput(u"label"+self.id, self.idevice.label) + u"<br/>"
+        html += u"<b>" + _(u"description") + u"</b><br/>"
+        html += common.richTextArea(u"description"+self.id, self.idevice.description)
+        html += u"<u>"+self.idevice.filename+u"</u>\n"
+        html += u"<br/>\n"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -89,10 +92,10 @@ class AttachmentBlock(Block):
         html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<a href=\"resources/"+self.idevice.filename+"\" "
-        html += u"target=\"ANewWindow\" >"
+        html += u"target=\"_blank\" >"
         html += self.idevice.label
         html += u"</a> <br/> \n"
-        html += self.idevice.discription + u"<br/>"
+        html += self.idevice.description + u"<br/>"
         html += self.renderViewButtons()
         html += u"</div>\n"
         return html
@@ -106,10 +109,10 @@ class AttachmentBlock(Block):
         html  = u"<div class=\"iDevice\" "
         html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
         html += u"<a href=\""+self.idevice.filename+"\" "
-        html += u"target=\"ANewWindow\" >"
+        html += u"target=\"_blank\" >"
         html += self.idevice.label
         html += u"</a> <br/> \n"
-        html += self.idevice.discription + u"<br/>"
+        html += self.idevice.description + u"<br/>"
         html += u"</div>\n"
         return html
     
