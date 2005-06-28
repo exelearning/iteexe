@@ -23,7 +23,6 @@ ForumBlock can render and process ForumIdevices as XHTML
 import logging
 import gettext
 from exe.webui.block import Block
-from cgi             import escape
 from exe.webui       import common
 
 log = logging.getLogger(__name__)
@@ -193,8 +192,7 @@ class ForumBlock(Block):
         xml += "<name>%s</name>\n" % self.idevice.forumName
         xml += "<id>Forum%s</id>\n" % self.id
         xml += "<type>%s</type>\n" % self.idevice.type
-        introduction = escape(self.idevice.introduction)
-        xml += "<introduction>%s</introduction>\n" % introduction
+        xml += "<introduction><![CDATA[%s]]></introduction>\n" % introduction
         xml += "<studentpost>%s</studentpost>\n" % self.idevice.studentpost
         xml += "<subscription>%s</subscription>\n" % self.idevice.subscription
         xml += "<tracking>1</tracking>\n"
@@ -206,8 +204,7 @@ class ForumBlock(Block):
         xml += "<discussion>\n"
         xml += "<discussionId>Forum%s</discussionId>\n" % self.id
         xml += "<subject>%s</subject>\n" % self.idevice.discussionSubject
-        message = escape(self.idevice.discussionMessage)
-        xml += "<message>%s</message>\n" % message
+        xml += "<message><![CDATA[%s]]></message>\n" % message
         xml += "<subscription>send me</subscription>\n" 
         xml += "</discussion>\n"
         
