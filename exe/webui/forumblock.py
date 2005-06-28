@@ -192,7 +192,9 @@ class ForumBlock(Block):
         xml += "<name>%s</name>\n" % self.idevice.forumName
         xml += "<id>Forum%s</id>\n" % self.id
         xml += "<type>%s</type>\n" % self.idevice.type
-        xml += "<introduction><![CDATA[%s]]></introduction>\n" % self.idevice.introduction
+        xml += "<introduction><![CDATA["
+        xml += self.idevice.introduction
+        xml += "]]></introduction>\n" 
         xml += "<studentpost>%s</studentpost>\n" % self.idevice.studentpost
         xml += "<subscription>%s</subscription>\n" % self.idevice.subscription
         xml += "<tracking>1</tracking>\n"
@@ -204,7 +206,9 @@ class ForumBlock(Block):
         xml += "<discussion>\n"
         xml += "<discussionId>Forum%s</discussionId>\n" % self.id
         xml += "<subject>%s</subject>\n" % self.idevice.discussionSubject
-        xml += "<message><![CDATA[%s]]></message>\n" % self.idevice.discussionMessage
+        xml += "<message><![CDATA["
+        xml += self.idevice.discussionMessage
+        xml += "]]></message>\n" 
         xml += "<subscription>send me</subscription>\n" 
         xml += "</discussion>\n"
         
