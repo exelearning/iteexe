@@ -74,8 +74,8 @@ class AttachmentBlock(Block):
         html += common.hiddenField("path"+self.id)
         html += u"<b>" + _(u"Label") + u"</b><br/>"
         html += common.textInput(u"label"+self.id, self.idevice.label) + u"<br/>"
-        html += u"<b>" + _(u"description") + u"</b><br/>"
-        html += common.richTextArea(u"description"+self.id, 
+        html += u"<b>" + _(u"Description") + u"</b><br/>"
+        html += common.richTextArea(u"Description"+self.id,
                                     self.idevice.description)
         html += u"<u>"+self.idevice.filename+u"</u>\n"
         html += u"<br/>\n"
