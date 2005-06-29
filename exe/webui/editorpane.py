@@ -146,13 +146,13 @@ class EditorPane(object):
         """
         message = _("This is an experimental feature, "+
                     "it is still in development.")
-        html  = "<h2 align = \"center\">" + message + "</h2><br/>"
-        html += "<br/><font color=\"red\"<b>"+self.message+"</b></font><br/>"
-        html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"0\" "
+        html  = "<p align = \"center\"><b>" + message + "</b></p><br/>"
+        html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
+        html += "<table cellpadding=\"2\" cellspacing=\"2\" border=\"1\" "
         html += "style=\"width: 100%\"><tr valign=\"top\"><td width=\"30%\">\n"
         html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
-        html += common.submitButton("addText", _("Add Text Field"))+"<br/>"
-        html += common.submitButton("addTextArea", _("Add Text Area")) + "<br/>"
+        html += common.submitButton("addText", _("Add Text Line"))+"<br/>"
+        html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/>"
         html += common.submitButton("addImage", _("Add Image")) + "<br/>"
         html += "<p>\n"
         html += "Future buttons could include<br/>functionality for: <br/>\n"
@@ -204,15 +204,15 @@ class EditorPane(object):
         self.tip = self.tip.replace("'","\\'")
         
         if self.idevice.edit:
-            html += "<b>" + _("Idevice Name") + "</b><br/>\n"
+            html += "<b>" + _("iDevice Name") + ":</b><br/>\n"
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
-            html += "<b>" + _("Author") + "</b><br/>\n"
+            html += "<b>" + _("Author") + ":</b><br/>\n"
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
-            html += "<b>" + _("Purpose") + "</b><br/>\n"
+            html += "<b>" + _("Purpose") + ":</b><br/>\n"
             html += common.textArea("description", self.idevice.purpose) 
-            html += "<b>" + _("Pedagogical Tip") + "</b><br/>\n"
+            html += "<b>" + _("Pedagogical Tip") + ":</b><br/>\n"
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
-            html += "<b>" + _("Emphasis") + "</b> "
+            html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
 
             emphasisValues = {Idevice.NoEmphasis:     _(u"No emphasis"),
@@ -249,7 +249,7 @@ class EditorPane(object):
                 if self.idevice.tip != "":
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
                     
-                html += "</div>\n"    
+                html += "</div><hr/>\n"    
 
         return html
         
