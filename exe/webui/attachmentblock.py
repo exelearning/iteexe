@@ -75,7 +75,8 @@ class AttachmentBlock(Block):
         html += u"<b>" + _(u"Label") + u"</b><br/>"
         html += common.textInput(u"label"+self.id, self.idevice.label) + u"<br/>"
         html += u"<b>" + _(u"description") + u"</b><br/>"
-        html += common.richTextArea(u"description"+self.id, self.idevice.description)
+        html += common.richTextArea(u"description"+self.id, 
+                                    self.idevice.description)
         html += u"<u>"+self.idevice.filename+u"</u>\n"
         html += u"<br/>\n"
         html += self.renderEditButtons()
