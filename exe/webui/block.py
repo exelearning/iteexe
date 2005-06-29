@@ -230,11 +230,18 @@ class Block(Renderable):
             html += u'<img src="/images/stock-stop.png" '
             html += u' title="%s" border="0" align="middle" ' % _(u"Close")
             html += u'onmousedown="Javascript:hideMe();"/></div>'
+
             if self.purpose != "":
-                html += u'<b>%s</b><br/>%s<br/>' % (_(u"Purpose:"), self.purpose)
+                html += u'<b>' + _(u"Purpose:") + u'</b>'
+                html += '<br/>\n'
+                html += self.purpose 
+                html += '<br/>\n'
                 
             if self.tip != "":
-                html += u'<b>%s</b><br/>%s<br/>' % (_(u"Tip:"),self.tip)
+                html += u'<b>' + _(u"Tip:") + u'</b>'
+                html += '<br/>\n'
+                html += self.tip 
+                html += '<br/>\n'
                 
             html += u'</div>\n'        
         
