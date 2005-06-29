@@ -82,6 +82,20 @@ Creating a Mac install is something we're still working towards.
 For the technically inclined we're working towards using PyXPCOM
 to replace the Nevow library which should simplify a Mac version.
 
+We have had earlier versions of eXe running on Mac, but we've run into
+multiple problems with later releases.  I'm not sure if you're
+interested in the details, but they were...
+ * Nevow the XMLHTTP library we use gives connection errors just on
+   Mac, even though it is supposed to support Mac.  We're looking
+   at replacing XMLHTTP/Nevow with PyXPCOM.
+ * Mac applications only have one menu bar, we need to replace the 
+   Firefox menubar, but when doing that (by turning off Firefox
+   chrome) we get another error with FCKEditor (the rich text
+   editor we're using) flickering.  We're investigating possibly
+   replacing    FCKEditor by using Mozilla's "native" Midas editing 
+   interface.
+ * We also have more work to do on how to create a install package for
+   eXe on the Mac.  We're aiming to use PyApp for this.
 
 LINUX
 =====
