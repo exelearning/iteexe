@@ -67,7 +67,7 @@ class Block(Renderable):
             if request.args[u"action"][0] == u"done":               
                 self.processDone(request)
                 
-            elif request.args[u"action"][0] == "edit":
+            elif request.args[u"action"][0] == u"edit":
                 self.processEdit(request)
               
             elif request.args[u"action"][0] == u"delete":

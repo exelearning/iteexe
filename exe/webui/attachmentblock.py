@@ -48,18 +48,21 @@ class AttachmentBlock(Block):
         """
         log.debug("process " + repr(request.args))
         Block.process(self, request)
-            
-        if u"label" + self.id in request.args:
-            self.idevice.label = request.args[u"label" + self.id][0]
-            
-        if u"description" + self.id in request.args:
-            self.idevice.description = request.args[u"description" + self.id][0]
+		    
+        if (u"action" not in request.args or
+            request.args[u"action"][0] != u"delete"):
+		if u"label" + self.id in request.args:
+		    self.idevice.label = request.args[u"label" + self.id][0]
+		    
+		if u"description" + self.id in request.args:
+		    self.idevice.description = (request.args[u"description" + 
+                                                self.id][0])
 
-        if "path" + self.id in request.args:
-            self.idevice.setAttachment(request.args["path"+self.id][0])
-            
-        if self.idevice.label == "":
-            self.idevice.label = self.idevice.filename
+		if "path" + self.id in request.args:
+		    self.idevice.setAttachment(request.args["path"+self.id][0])
+		    
+		if self.idevice.label == "":
+		    self.idevice.label = self.idevice.filename
 
 
     def renderEdit(self, style):
@@ -74,8 +77,8 @@ class AttachmentBlock(Block):
         html += common.hiddenField("path"+self.id)
         html += u"<b>" + _(u"Label") + u"</b><br/>"
         html += common.textInput(u"label"+self.id, self.idevice.label) + u"<br/>"
-        html += u"<b>" + _(u"Description") + u"</b><br/>"
-        html += common.richTextArea(u"Description"+self.id,
+        html += u"<b>" + _(u"Description:") + u"</b><br/>"
+        html += common.richTextArea(u"description"+self.id,
                                     self.idevice.description)
         html += u"<u>"+self.idevice.filename+u"</u>\n"
         html += u"<br/>\n"

@@ -18,7 +18,7 @@ a { color: #003366;
     text-decoration: none;
 }
 
-a:hover {color: #EDEFF0;
+a:hover {color: #3C5866;
          text-decoration: underline; 
 }
 
@@ -52,13 +52,19 @@ p#nodeTitle {
 
 /* --- iDevice Styles --- */
 
-.iDevice {
+div.iDevice[emphasis="0"] {
+    padding-left: 0px;
+    margin: 0px;
+}
+
+div.iDevice[emphasis="1"] {
     background-color: #B1C0C7;
     padding-left: 10px;
     border: 1px solid #3C5866;
     margin: 10px;
-
 }
+
+
 
 .iDevice p {
 	padding-left: 24px;

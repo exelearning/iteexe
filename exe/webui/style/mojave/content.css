@@ -52,13 +52,14 @@ p#nodeTitle {
     display: inline;
 }
 
-div#content {
-	line
-}
-
 /* --- iDevice Styles -- */
 
-.iDevice {
+div.iDevice[emphasis="0"] {
+    padding-left: 0px;
+    margin: 0px;
+}
+
+div.iDevice[emphasis="1"] {
     background-color: #ACBFC2;
     padding-left: 10px;
     border: 1px solid #FFFFCC;

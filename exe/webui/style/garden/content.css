@@ -48,8 +48,8 @@ div#nodeDecoration {
 /* --- iDevice Styles -- */
 
 div.iDevice[emphasis="0"] {
-    padding-left: 10px;
-    margin: 10px;
+    padding-left: 0px;
+    margin: 0px;
 }
 
 div.iDevice[emphasis="1"] {
