@@ -148,10 +148,10 @@ class EditorPane(object):
                     "is still in development.")
         html  = "<p align = \"center\"><b>" + message + "</b></p><br/>"
         html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
-        html += "<div ID=\"iDevice_editor\" style=\"float: left; position: fixed;\" "
+        html += "<div ID=\"iDevice_editor\" "
         html += "<p><b>" + _("Available iDevice elements:")+ "</b><p/>"
-        html += common.submitButton("addText", _("Add Text Line"))+"<br/><br/>"
-        html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/><br/>"
+        html += common.submitButton("addText", _("Add Text Line"))+"<br/>"
+        html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/>"
         html += common.submitButton("addImage", _("Add Image")) + "<br/>"
         html += "<p>\n"
         html += "Future buttons could include<br/>functionality for: <br/>\n"
@@ -162,7 +162,7 @@ class EditorPane(object):
         html += "</p>\n"
         html += "</div>\n"
 
-        html += "<div style=\"margin-left: 200px;\">\n"
+        html += "<div style=\"margin-left: 220px;\">\n"
         html += self.renderIdevice(request)
         if self.idevice.edit:
             html += common.submitButton("edit", _("Edit"), False)

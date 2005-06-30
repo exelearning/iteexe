@@ -19,6 +19,18 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
 
 /* styles for iDevice Editor */
 
+#iDevice_editor {
+	 float: left;
+         position: fixed;
+-moz-border-top-colors: ThreeDDarkShadow ThreeDShadow transparent;
+-moz-border-right-colors: ThreeDDarkShadow ThreeDShadow transparent;
+-moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow transparent;
+-moz-border-left-colors: ThreeDDarkShadow ThreeDShadow transparent;
+  
+
+}
+
+
 #iDevice_editor input.button
 
 {
@@ -26,6 +38,7 @@ border: 3px double #999999;
 border-top-color: #CCCCCC;
 border-left-color: #CCCCCC;
 padding: 0.25em;
+margin: 4px;
 background-color: #FFFFFF;
 background-image: url(http://localhost:8081/style/standardwhite/nodeTitle_bg.jpg);
 background-repeat: repeat-x;
