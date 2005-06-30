@@ -65,16 +65,16 @@ class EditorPane(object):
             element.process(request)
         
         if "addText" in request.args:
-            self.idevice.addField(TextField(u"Type label here",
-                                            u"Type field instructions here"))
+            self.idevice.addField(TextField(u"Enter the label here",
+                                            u"Enter instructions for completion here"))
         
         if "addTextArea" in request.args:
-            self.idevice.addField(TextAreaField(u"Type label here", 
-                                             u"Type field instructions here"))
+            self.idevice.addField(TextAreaField(u"Enter the label here", 
+                                             u"Enter the instructions for completion here"))
                 
         if "addImage" in request.args:
-            field = ImageField(u"Type label here",
-                               u"Type field instructions here")
+            field = ImageField(u"Enter the label here",
+                               u"Enter the instructions for completion here")
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
@@ -146,23 +146,16 @@ class EditorPane(object):
         """
         message = _("This is an experimental feature and "+
                     "is still in development.")
-        html  = "<p align = \"center\"><b>" + message + "</b></p><br/>"
+        html  = "<p align = \"center\"><b>" + message + "</b></p>"
         html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
         html += "<div ID=\"iDevice_editor\" "
-        html += "<p><b>" + _("Available iDevice elements:")+ "</b><p/>"
+        html += "<fieldset><legend><b>" + _("iDevice elements")+ "</b></legend>"
         html += common.submitButton("addText", _("Add Text Line"))+"<br/>"
         html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/>"
         html += common.submitButton("addImage", _("Add Image")) + "<br/>"
-        html += "<p>\n"
-        html += "Future buttons could include<br/>functionality for: <br/>\n"
-        html += "<ul><li>Limited interaction<br/>(eg hiding feedback)</li>\n"
-        html += "<li>Options for incorporating<br/>"
-        html += "different media objects</li>\n"
-        html += "<li>Linking images with specific<br/>iDevices</li></ul>\n"
-        html += "</p>\n"
-        html += "</div>\n"
+        html += "</fieldset></div>\n"
 
-        html += "<div style=\"margin-left: 220px;\">\n"
+        html += "<div style=\"margin-left: 150px;\">\n"
         html += self.renderIdevice(request)
         if self.idevice.edit:
             html += common.submitButton("edit", _("Edit"), False)
@@ -248,7 +241,7 @@ class EditorPane(object):
                 if self.idevice.tip != "":
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
                     
-                html += "</div><hr/>\n"    
+                html += "</div>\n"    
 
         return html
         

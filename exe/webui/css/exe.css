@@ -22,14 +22,7 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
 #iDevice_editor {
 	 float: left;
          position: fixed;
--moz-border-top-colors: ThreeDDarkShadow ThreeDShadow transparent;
--moz-border-right-colors: ThreeDDarkShadow ThreeDShadow transparent;
--moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow transparent;
--moz-border-left-colors: ThreeDDarkShadow ThreeDShadow transparent;
-  
-
 }
-
 
 #iDevice_editor input.button
 
@@ -37,6 +30,7 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
 border: 3px double #999999;
 border-top-color: #CCCCCC;
 border-left-color: #CCCCCC;
+width: 100px;
 padding: 0.25em;
 margin: 4px;
 background-color: #FFFFFF;
