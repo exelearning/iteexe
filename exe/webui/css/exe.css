@@ -7,6 +7,7 @@
    
 textarea { font-family: arial, verdana, helvetica, sans-serif;
 	   font-size: 13px;
+           background: #000;
 	}
 
 .popupDiv {
@@ -15,5 +16,25 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
     padding: 10px 10px 10px 10px;
     margin-left: 15px;
 }
+
+/* styles for iDevice Editor */
+
+input.submit
+{
+border: 3px double #999999;
+border-top-color: #CCCCCC;
+border-left-color: #CCCCCC;
+padding: 0.25em;
+background-color: #FFFFFF;
+color: #333333;
+font-size: 75%;
+font-weight: bold;
+font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+
+
+
+
 
 

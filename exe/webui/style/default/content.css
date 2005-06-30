@@ -52,18 +52,24 @@ p#nodeTitle {
 
 /* --- iDevice Styles --- */
 
-div.iDevice[emphasis="0"] {
+.emphasis0 {
     padding-left: 0px;
     margin: 0px;
 }
 
-div.iDevice[emphasis="1"] {
+.emphasis1 {
     background-color: #B1C0C7;
     padding-left: 10px;
     border: 1px solid #3C5866;
     margin: 10px;
 }
 
+.emphasis2 {
+    background-color: #B1C0C7;
+    padding-left: 18px;
+    border: 3px solid #3C5866;
+    margin: 10px;
+}
 
 
 .iDevice p {
