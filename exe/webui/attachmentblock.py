@@ -48,21 +48,21 @@ class AttachmentBlock(Block):
         """
         log.debug("process " + repr(request.args))
         Block.process(self, request)
-		    
+
         if (u"action" not in request.args or
             request.args[u"action"][0] != u"delete"):
-		if u"label" + self.id in request.args:
-		    self.idevice.label = request.args[u"label" + self.id][0]
-		    
-		if u"description" + self.id in request.args:
-		    self.idevice.description = (request.args[u"description" + 
+            if u"label" + self.id in request.args:
+                self.idevice.label = request.args[u"label" + self.id][0]
+                
+            if u"description" + self.id in request.args:
+                self.idevice.description = (request.args[u"description" + 
                                                 self.id][0])
 
-		if "path" + self.id in request.args:
-		    self.idevice.setAttachment(request.args["path"+self.id][0])
-		    
-		if self.idevice.label == "":
-		    self.idevice.label = self.idevice.filename
+            if "path" + self.id in request.args:
+                self.idevice.setAttachment(request.args["path"+self.id][0])
+                
+            if self.idevice.label == "":
+                self.idevice.label = self.idevice.filename
 
 
     def renderEdit(self, style):
@@ -92,8 +92,8 @@ class AttachmentBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"<div class=\"iDevice\" "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<a href=\"resources/"+self.idevice.filename+"\" "
         html += u"target=\"_blank\" >"
@@ -110,8 +110,8 @@ class AttachmentBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<div class=\"iDevice\" "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<a href=\""+self.idevice.filename+"\" "
         html += u"target=\"_blank\" >"
         html += self.idevice.label

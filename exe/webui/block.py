@@ -263,9 +263,9 @@ class Block(Renderable):
         """
         Returns an XHTML string for previewing this block during editing
         """
-        html  = u"<div class=\"iDevice\" "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
-        html += u" ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.icon:
             html += u"<img class=\"iDevice_icon\" "
             html += u" src=\"/style/"+style+"/"+self.idevice.icon+".gif\"/>\n"
@@ -283,8 +283,8 @@ class Block(Renderable):
         Returns an XHTML string for viewing this block, 
         i.e. when exported as a webpage or SCORM package
         """
-        html  = u"<div class=\"iDevice\" "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.icon:
             html += u"<img class=\"iDevice_icon\" "
             html += u" src=\""+self.idevice.icon+".gif\"/>\n"

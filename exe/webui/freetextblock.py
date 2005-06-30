@@ -67,8 +67,8 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderView()
         html += self.renderViewButtons()
@@ -80,8 +80,8 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
         html += u"</div>\n"
         return html

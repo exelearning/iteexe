@@ -83,8 +83,8 @@ class WikipediaBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"<div class=\"iDevice\" "
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'" '
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.articleElement.renderPreview()
         html += self.renderViewButtons()
@@ -99,8 +99,8 @@ class WikipediaBlock(Block):
         log.debug("renderView")
         content = self.articleElement.renderView()
         content = re.sub(r'src="/.*?/resources/', 'src="', content)
-        html  = u'<div class="iDevice" '
-        html += u'emphasis="'+unicode(self.idevice.emphasis)+'">\n'
+        html  = u"<div class=\"iDevice "
+        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += content
         html += u"</div>\n"
         return html
