@@ -7,7 +7,7 @@
    
 textarea { font-family: arial, verdana, helvetica, sans-serif;
 	   font-size: 13px;
-           background: #000;
+           background: transparent;
 	}
 
 .popupDiv {
@@ -19,18 +19,22 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
 
 /* styles for iDevice Editor */
 
-input.submit
+#iDevice_editor input.button
+
 {
 border: 3px double #999999;
 border-top-color: #CCCCCC;
 border-left-color: #CCCCCC;
 padding: 0.25em;
 background-color: #FFFFFF;
+background-image: url(http://localhost:8081/style/standardwhite/nodeTitle_bg.jpg);
+background-repeat: repeat-x;
 color: #333333;
 font-size: 75%;
 font-weight: bold;
 font-family: Verdana, Helvetica, Arial, sans-serif;
 }
+
 
 
 

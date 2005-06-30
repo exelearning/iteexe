@@ -144,16 +144,14 @@ class EditorPane(object):
         """
         Render the idevice being edited
         """
-        message = _("This is an experimental feature, "+
-                    "it is still in development.")
+        message = _("This is an experimental feature and "+
+                    "is still in development.")
         html  = "<p align = \"center\"><b>" + message + "</b></p><br/>"
         html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
-        html += "<table ID=\"iDevice_editor\" cellpadding=\"2\" "
-        html += " cellspacing=\"2\" border=\"0\" "
-        html += "style=\"width: 100%\"><tr valign=\"top\"><td width=\"30%\">\n"
-        html += "<b>" + _("Available iDevice elements:")+ "</b><br/><br/>"
-        html += common.submitButton("addText", _("Add Text Line"))+"<br/>"
-        html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/>"
+        html += "<div ID=\"iDevice_editor\" style=\"float: left; position: fixed;\" "
+        html += "<p><b>" + _("Available iDevice elements:")+ "</b><p/>"
+        html += common.submitButton("addText", _("Add Text Line"))+"<br/><br/>"
+        html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/><br/>"
         html += common.submitButton("addImage", _("Add Image")) + "<br/>"
         html += "<p>\n"
         html += "Future buttons could include<br/>functionality for: <br/>\n"
@@ -162,10 +160,10 @@ class EditorPane(object):
         html += "different media objects</li>\n"
         html += "<li>Linking images with specific<br/>iDevices</li></ul>\n"
         html += "</p>\n"
-        html += "</td><td>\n"
+        html += "</div>\n"
 
+        html += "<div style=\"margin-left: 200px;\">\n"
         html += self.renderIdevice(request)
-        html += "</td></tr><tr><td></td><td>\n"
         if self.idevice.edit:
             html += common.submitButton("edit", _("Edit"), False)
             html += "&nbsp;&nbsp;"+common.submitButton("preview", _("Preview"))
@@ -174,7 +172,7 @@ class EditorPane(object):
             html += common.submitButton("preview", _("Preview"), False)
         html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
         html += "&nbsp;&nbsp" + common.submitButton("reset", _("Reset"))
-        html += "</td></tr></table>\n"
+        html += "</div>\n"
 
         return html
 

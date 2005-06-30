@@ -123,7 +123,7 @@ def image(name, value, width="", height=""):
 
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""
-    html  = u'<input type="submit" name="%s" ' % name
+    html  = u'<input class="button" type="submit" name="%s" ' % name
     html += u'value="%s" ' % value
     if not enabled:
         html += u' disabled'
