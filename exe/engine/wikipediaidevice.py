@@ -80,7 +80,11 @@ article from en.wikipedia.org, including copying the associated images."""),
         page = net.read()
         net.close()
 
-        soup = BeautifulSoup(unicode(page, "iso-8859-1"))
+        # avoidParserProblems is set to False because BeautifulSoup's
+        # cleanup was causing a "concatenating Null+Str" error,
+        # and Wikipedia's HTML doesn't need cleaning up.
+        # BeautifulSoup is faster this way too.
+        soup = BeautifulSoup(unicode(page, "iso-8859-1"), False)
         content = soup.first('div', {'id': "content"})
 
         if not content:
