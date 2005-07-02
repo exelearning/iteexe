@@ -66,11 +66,11 @@ class EditorPane(object):
         
         if "addText" in request.args:
             self.idevice.addField(TextField(u"Enter the label here",
-                                            u"Enter instructions for completion here"))
+                 u"Enter instructions for completion here"))
         
         if "addTextArea" in request.args:
             self.idevice.addField(TextAreaField(u"Enter the label here", 
-                                             u"Enter the instructions for completion here"))
+                 u"Enter the instructions for completion here"))
                 
         if "addImage" in request.args:
             field = ImageField(u"Enter the label here",
