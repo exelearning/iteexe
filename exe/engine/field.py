@@ -122,6 +122,7 @@ class ImageField(Field):
         self.height       = ""
         self.imageName    = ""
         self.defaultImage = ""
+        self.float        = u"Left"
 
 
     def getResources(self):
