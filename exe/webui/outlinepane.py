@@ -115,7 +115,7 @@ class OutlinePane(Renderable):
         Recursively renames all children to their default names on
         the client if the node's default name has not been overriden
         """
-        if not node.title:
+        if not node._title:
             client.call('XHRenNode', unicode(node.title), node.id)
         for child in node.children: 
             self._doJsRename(client, child)
