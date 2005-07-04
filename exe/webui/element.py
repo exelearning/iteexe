@@ -184,9 +184,6 @@ class ImageElement(Element):
 
         if "height"+self.id in request.args:
             self.field.height = request.args["height"+self.id][0]
-            
-        if "float"+self.id in request.args:
-            self.field.float = request.args["float"+self.id][0]
 
 
     def renderEdit(self):
@@ -229,17 +226,8 @@ class ImageElement(Element):
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
         html += u"size=\"5\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
-        html += u"<b> %s </b>" % _("Float:")
-        html += "<select name=\"float%s\">\n" % self.id
-        if self.field.float == u"Left":
-            html += "<option value=\"Left\" selected>%s</option>" % _(u"Left")
-            html += "<option value=\"Right\">%s</option>" % _(u"Right")
-        else:
-            html += "<option value=\"Left\">%s</option>" % _(u"Left")
-            html += "<option value=\"Right\">%s selected</option>" % _(u"Right")
-        html += "</select><br/>\n"
         html += common.hiddenField("path"+self.id)
-        html += u"<br/>\n"
+       # html += u"<br/>\n"
         
         return html
 
@@ -251,7 +239,7 @@ class ImageElement(Element):
         if self.field.imageName == "":
             self.field.setDefaultImage()
 
-        html  = common.image("img"+self.id, 
+        html = common.image("img"+self.id, 
                              "resources/"+self.field.imageName, 
                              self.field.width,
                              self.field.height)
@@ -265,10 +253,11 @@ class ImageElement(Element):
         if self.field.imageName == "":
             self.field.setDefaultImage()
 
-        html  = common.image("img"+self.id, 
+        html = common.image("img"+self.id, 
                              self.field.imageName, 
                              self.field.width,
                              self.field.height)
+        
         return html
 
 # ===========================================================================

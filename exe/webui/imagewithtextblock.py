@@ -55,6 +55,9 @@ class ImageWithTextBlock(Block):
             request.args[u"action"][0] != u"delete"):
             self.imageElement.process(request)
             self.textElement.process(request)
+            
+        if "float"+self.id in request.args:
+            self.idevice.float = request.args["float"+self.id][0]
 
 
     def renderEdit(self, style):
@@ -64,6 +67,15 @@ class ImageWithTextBlock(Block):
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
         html += self.imageElement.renderEdit()
+        html += u"<b> %s </b>" % _("Float:")
+        html += "<select name=\"float%s\">\n" % self.id
+        if self.idevice.float == u"left":
+            html += "<option value=\"left\" selected>%s</option>" % _(u"Left")
+            html += "<option value=\"right\">%s</option>" % _(u"Right")
+        else:
+            html += "<option value=\"left\">%s</option>" % _(u"Left")
+            html += "<option value=\"right\" selected>%s</option>" % _(u"Right")
+        html += "</select><br/>\n"
         html += u"<br/>\n"
         html += self.textElement.renderEdit()
         html += self.renderEditButtons()
@@ -79,8 +91,8 @@ class ImageWithTextBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<div style=\"padding:6px; "
-        html += u"float:%s;\"/>\n" % self.idevice.image.float
+        html  = u"<div style=\"padding:6px; "
+        html += u"float:%s;\"/>\n" % self.idevice.float
         html += self.imageElement.renderPreview()
         html += u"</div>\n"
         html += self.textElement.renderPreview()        
@@ -98,10 +110,9 @@ class ImageWithTextBlock(Block):
         log.debug("renderView")
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<div style=\"padding:6px; "
-        html += u"float:%s;\"/>\n" % self.idevice.image.float
+        html  = u"<div style=\"padding:6px; "
+        html += u"float:%s;\"/>\n" % self.idevice.float
         html += self.imageElement.renderView()
-        html += u"</div>\n"
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"
