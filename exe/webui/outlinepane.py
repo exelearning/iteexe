@@ -238,6 +238,18 @@ class OutlinePane(Renderable):
                 '<!-- end outline pane -->')
         return stan.xml('\n'.join(xul))
 
+    def encode2nicexml(self, string):
+        """
+        Turns & into &amp; etc
+        """
+        map = [('&', '&amp;'),
+               ('"', '&quot;'),
+               ("'", '&apos;'),
+               ('<', '&lt;'),
+               ('>', '&gt;')]
+        for src, dest in map:
+            string = string.replace(src, dest)
+        return string
 
     def __renderNode(self, node, indent, extraIndent=2):
         """
@@ -252,9 +264,10 @@ class OutlinePane(Renderable):
             start = '<treeitem>'
 
         # Render the inner bits
+        title = self.encode2nicexml(node.title),
         xul = ('%s' % start,
                """    <treerow _exe_nodeid="%s"> """ % node.id,
-               '        <treecell label="%s"/>' % node.title,
+               '        <treecell label="%s"/>' % title,
                '    </treerow>')
 
         # Recursively render children if necessary
