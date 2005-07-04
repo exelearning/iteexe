@@ -58,8 +58,8 @@ class GenericBlock(Block):
         """
         html  = "<div>\n"
         for element in self.elements:
-            html += element.renderEdit()
-        html += "<br/><br/>"
+            html += element.renderEdit() + "<br/>"
+        html += "<br/>"
         html += self.renderEditButtons()
         html += "</div>\n"
         return html
