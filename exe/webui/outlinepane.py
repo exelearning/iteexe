@@ -159,8 +159,10 @@ class OutlinePane(Renderable):
         to the server"""
         parentId = node.parent.id 
 
-        siblingId = node.nextSibling() 
-        if not siblingId:
+        sibling = node.nextSibling() 
+        if sibling:
+            siblingId = sibling.id
+        else:
             siblingId = 'null'
 
         if node.parent:
