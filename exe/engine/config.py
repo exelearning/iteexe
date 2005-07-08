@@ -50,7 +50,10 @@ class Config:
         self.configParser = ConfigParser()
         # Set default values
         # exePath is the whole path and filename of the exe executable
-        self.exePath     = Path(sys.argv[0]).abspath() # Path to application
+        encoding = sys.getfilesystemencoding()
+        if encoding is None:
+            encoding = 'ascii'
+        self.exePath     = Path(sys.argv[0], encoding).abspath()
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
         # port is the port the exe webserver will listen on

@@ -23,12 +23,12 @@ Exports an eXe package as a SCORM package
 import logging
 import gettext
 import re
-from zipfile                import ZipFile, ZIP_DEFLATED
-from exe.webui              import common
-from exe.webui.blockfactory import g_blockFactory
-from exe.engine.error       import Error
-from exe.engine.path        import Path, TempDirPath
-from exe.export.pages       import Page, uniquifyNames
+from zipfile                       import ZipFile, ZIP_DEFLATED
+from exe.webui                     import common
+from exe.webui.blockfactory        import g_blockFactory
+from exe.engine.error              import Error
+from exe.engine.path               import Path, TempDirPath
+from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 
 log = logging.getLogger(__name__)
@@ -202,28 +202,27 @@ class ScormPage(Page):
         Returns an XHTML string rendering this page.
         """
         html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<title>"+_("eXe")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\" />\n";
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(content.css);\n"
-        html += "</style>\n"
-        html += "<script type=\"text/javascript\" language=\"javascript\" "
-        html += "src=\"APIWrapper.js\"></script>\n" 
-        html += "<script type=\"text/javascript\" language=\"javascript\" "
-        html += "src=\"SCOFunctions.js\"></script>\n"             
-        html += "</head>\n"
-       # html += "<body onunLoad=\"return unloadPage()\">\n"
-        html += '<body onload="loadPage()" onunload="unloadPage()" '
-        html += ' onbeforeunload="unloadPage()">'
-        html += "<div id=\"outer\">\n"
-        
-        html += "<div id=\"main\">\n"
-        html += '<p id=\"nodeTitle\">\n'
+        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<head>\n"
+        html += u"<title>"+_("eXe")+"</title>\n"
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=UTF-8\" />\n";
+        html += u"<style type=\"text/css\">\n"
+        html += u"@import url(content.css);\n"
+        html += u"</style>\n"
+        html += u"<script type=\"text/javascript\" language=\"javascript\" "
+        html += u"src=\"APIWrapper.js\"></script>\n" 
+        html += u"<script type=\"text/javascript\" language=\"javascript\" "
+        html += u"src=\"SCOFunctions.js\"></script>\n"             
+        html += u"</head>\n"
+        html += u'<body onload="loadPage()" onunload="unloadPage()" '
+        html += u' onbeforeunload="unloadPage()">'
+        html += u"<div id=\"outer\">\n"
+        html += u"<div id=\"main\">\n"
+        html += u"<div id=\"nodeDecoration\">\n"
+        html += u"<p id=\"nodeTitle\">\n"
         html += self.node.title
-        html += '</p>\n'
+        html += u'</p></div>\n'
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)
@@ -234,12 +233,9 @@ class ScormPage(Page):
                 html += block.renderJavascriptForScorm()
             html += block.renderView(self.node.package.style)
 
-        html += "</div>\n"
-        html += "</div>\n"
-        #html += "<script language=\"javascript\">\n"
-        #html += "loadPage();\n"
-        #html += "doContinue('completed');</script>\n"  
-        html += "</body></html>\n"
+        html += u"</div>\n"
+        html += u"</div>\n"
+        html += u"</body></html>\n"
         return html
 
 

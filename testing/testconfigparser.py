@@ -9,7 +9,7 @@ http://www.fsf.org/licensing/licenses/gpl.txt
 
 import unittest
 from exe.engine.configparser import ConfigParser, Section
-from StringIO import StringIO
+from tempfile import TemporaryFile
 from pprint import pprint
 import sys, os
 
@@ -31,6 +31,14 @@ TEST_TEXT = ('nosection=here\n'
              ' available\t=   yes\n'
              'funny-name_mate: crusty the clown')
 
+def testFile():
+    """Creates and returns a test file that you
+    can muck around with"""
+    file_ = TemporaryFile()
+    file_.write(TEST_TEXT)
+    file_.seek(0)
+    return file_
+
 
 class TestConfigParser(unittest.TestCase):
     """
@@ -45,7 +53,7 @@ class TestConfigParser(unittest.TestCase):
 
     def testRead(self):
         """Ensures that it can read from a file correctly"""
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         self.c.read(file_)
         assert self.c._sections == {'second':
                                        {'good': 'yes',
@@ -53,7 +61,7 @@ class TestConfigParser(unittest.TestCase):
                                          'available': 'yes',
                                          'funny-name_mate': 'crusty the clown'}, 
                                     'main': 
-                                        {'running': 'on\t\xc4\x80\xc4\x900',
+                                        {'running': u'on\t\u0100\u01100',
                                          'testing': 'false',
                                          'two words': 'are better than one',
                                          'no_value': '',
@@ -68,7 +76,7 @@ class TestConfigParser(unittest.TestCase):
                           'available': 'yes',
                           'funny-name_mate': 'crusty the clown'}, 
                     'main': 
-                        {'running': 'on\t\xc4\x80\xc4\x900',
+                        {'running': u'on\t\u0100\u01100',
                          'testing': 'false',
                          'two words': 'are better than one',
                          'no_value': '',
@@ -91,7 +99,7 @@ class TestConfigParser(unittest.TestCase):
 
     def testWrite(self):
         """Test that it writes the file nicely"""
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         self.c.read(file_)
         # Remove an option
         del self.c._sections['main']['testing']
@@ -106,11 +114,12 @@ class TestConfigParser(unittest.TestCase):
         self.c.write(file_)
         file_.seek(0)
         result = file_.readlines()
+        result = map(unicode, result, ['utf8']*len(result))
         goodResult = ['nosection=here\n',
                       '[main]\n',
                       'level=5\n',
                       'power : on\n',
-                      'running =on\t\xc4\x80\xc4\x900\n',
+                      u'running =on\t\u0100\u01100\n',
                       'two words = \tare better than one\n',
                       'no_value = \n',
                       '\n', '\n',
@@ -126,8 +135,10 @@ class TestConfigParser(unittest.TestCase):
                       '[middle]\n',
                       'is here = yes']
         if result != goodResult:
-            pprint(zip(goodResult, result))
-            pprint(result)
+            print
+            for good, got in zip(goodResult, result):
+                if good != got:
+                    print 'Different', repr(good), repr(got)
             self.fail('See above printout')
 
     def testWriteNewFile(self):
@@ -171,7 +182,7 @@ class TestConfigParser(unittest.TestCase):
 
     def testGet(self):
         """Tests the get method"""
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         self.c.read(file_)
         assert self.c.get('main', 'testing') == 'false'
         assert self.c.get('main', 'not exists', 'default') == 'default'
@@ -179,21 +190,21 @@ class TestConfigParser(unittest.TestCase):
 
     def testSet(self):
         """Test the set method"""
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         self.c.read(file_)
         # An existing option
         self.c.set('main', 'testing', 'perhaps')
         assert self.c._sections['main']['testing'] == 'perhaps'
         # A new and numeric option
         self.c.set('main', 'new option', 4.1)
-        assert self.c._sections['main']['new option'] == '4.1'
+        self.assertEquals(self.c._sections['main']['new option'], '4.1')
         # A new option in a new section
         self.c.set('new section', 'new option', 4.1)
         assert self.c._sections['new section']['new option'] == '4.1'
 
     def testDel(self):
         """Should be able to delete a section and/or a value in a section"""
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         self.c.read(file_)
         assert self.c._sections['main']['level'] == '5'
         self.c.delete('main', 'level')
@@ -219,6 +230,55 @@ class TestConfigParser(unittest.TestCase):
         assert self.c.get('second', 'available', '') == 'short', \
             self.c.get('second', 'available', '')
 
+    def testUnicodeSet(self):
+        """
+        Should be able to set unicode option values
+        with both python internal unicode strings
+        or raw string containing utf8 encoded data
+        """
+        file_ = open('temp.ini', 'w')
+        file_.write(TEST_TEXT)
+        file_.close()
+        self.c.read('temp.ini')
+        self.c.set('main', 'power', '\xc4\x80\xc4\x900')
+        self.c.set('main', 'name', unicode('\xc4\x80\xc4\x900', 'utf8'))
+        self.c.set('newSecy', 'unicode', unicode('\xc4\x80\xc4\x900', 'utf8'))
+        self.c.write('temp.ini')
+        c2 = ConfigParser()
+        c2.read('temp.ini')
+        val = unicode('\xc4\x80\xc4\x900', 'utf8')
+        self.assertEquals(c2.main.power, val)
+        self.assertEquals(c2.main.name, val)
+        self.assertEquals(c2.newSecy.unicode, val)
+
+    def testUnicodeFileName(self):
+        """
+        Should be able to write to unicode filenames
+        """
+        # Invent a unicode filename
+        dirName = unicode('\xc4\x80\xc4\x900', 'utf8')
+        fn = os.path.join(dirName, dirName)
+        fn += '.ini'
+        if not os.path.exists(dirName):
+            os.mkdir(dirName)
+        # Write some test data to our unicode file
+        file_ = open(fn, 'wb')
+        file_.write(TEST_TEXT)
+        file_.close()
+        # See if we can read and write it
+        self.c.read(fn)
+        self.assertEquals(self.c.main.power, 'on')
+        self.c.main.power = 'off'
+        self.c.write()
+        # Check that it was written ok
+        c2 = ConfigParser()
+        c2.read(fn)
+        self.assertEquals(c2.main.power, 'off')
+        # Clean up
+        os.remove(fn)
+        os.rmdir(dirName)
+
+
 class TestAutoWrite(unittest.TestCase):
     """
     Tests the autowrite feature
@@ -227,16 +287,27 @@ class TestAutoWrite(unittest.TestCase):
     But should ignore autoWrite if compatible file is not available
     """
 
+    def getVal(self, file_):
+        """
+        Retrieves the current contents of the file,
+        leaving the file in its original position
+        """
+        oldPos = file_.tell()
+        file_.seek(0)
+        val = file_.read()
+        file_.seek(oldPos)
+        return val
+
     def testStringIO(self):
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         c = ConfigParser()
         c.read(file_)
         c.autoWrite = True
-        assert 'Matthew' not in file_.getvalue()
+        assert 'Matthew' not in self.getVal(file_)
         c.main.name = 'Matthew'
-        assert 'name = Matthew' in file_.getvalue(), file_.getvalue()
+        assert 'name = Matthew' in self.getVal(file_), self.getVal(file_)
         del c.main.name
-        assert 'Matthew' not in file_.getvalue()
+        assert 'Matthew' not in self.getVal(file_)
         
 
 class TestSections(unittest.TestCase):
@@ -251,7 +322,7 @@ class TestSections(unittest.TestCase):
         reads in the test text
         """
         self.c = ConfigParser()
-        file_ = StringIO(TEST_TEXT)
+        file_ = testFile()
         self.c.read(file_)
 
     def testSectionCreation(self):
@@ -271,7 +342,7 @@ class TestSections(unittest.TestCase):
         testing = x.addSection('testing')
         assert x.testing is testing
         testing.myval = 4
-        assert x.get('testing', 'myval') == '4'
+        self.assertEquals(x.get('testing', 'myval'), '4')
 
     def testAttributeRead(self):
         """
@@ -287,7 +358,7 @@ class TestSections(unittest.TestCase):
         """
         self.c.main.level = 7
         # Should be automatically converted to string also :)
-        assert self.c.get('main', 'level') == '7'
+        self.assertEquals(self.c.get('main', 'level'), '7')
         self.c.main.new = 'hello'
         assert self.c.get('main', 'new') == 'hello'
 

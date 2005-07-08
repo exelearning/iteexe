@@ -16,7 +16,7 @@
         <!-- Outline Tree Short cut keys -->
         <key n:render="addChild" id="addChildKey"                     keycode="VK_INSERT"/>
         <key n:render="delNode"  id="delNodeKey"                      keycode="VK_DELETE"/>
-        <key n:render="renNode"  id="renNodeKey"  modifiers="control" key="r"/>
+        <key n:render="renNode"  id="renNodeKey"  modifiers="control" key="R"/>
         <key n:render="promote"  id="promoteKey"  modifiers="control" keycode="VK_LEFT"/>
         <key n:render="demote"   id="demoteKey"   modifiers="control" keycode="VK_RIGHT"/>
         <key n:render="up"       id="upKey"       modifiers="control" key="U"/>
@@ -25,7 +25,6 @@
         <key id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
         <key id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
         <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
-        <key id="file-export-website-key" modifiers="control" key="W" oncommand="exportPackage('webSite')"/>
     </keyset>
     <vbox flex="1">
         <!-- Start Menus -->
@@ -51,7 +50,6 @@
             <menu id="tools-menu" label="Tools" accesskey="t">
               <menupopup id="tools-popup">
                 <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
-                <menuitem label="Metadata Editor" oncommand="metadataEditor()"/>
               </menupopup>
             </menu>
             <menu id="styles-menu" label="Styles" accesskey="s">

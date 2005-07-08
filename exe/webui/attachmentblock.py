@@ -70,21 +70,34 @@ class AttachmentBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        html  = u"<div class=\"iDevice\">\n"
-        html += u"<a href=\"#\" onclick=\"addFile('"+self.id+"');\">"
-        html += _(u"Select a file")
-        html += u"</a> <br/> \n"
-        html += common.hiddenField("path"+self.id)
-        html += u"<b>" + _(u"Label") + u"</b><br/>"
-        html += common.textInput(u"label"+self.id, self.idevice.label) + u"<br/>"
-        html += u"<b>" + _(u"Description:") + u"</b><br/>"
-        html += common.richTextArea(u"description"+self.id,
-                                    self.idevice.description)
-        html += u"<u>"+self.idevice.filename+u"</u>\n"
-        html += u"<br/>\n"
-        html += self.renderEditButtons()
-        html += u"</div>\n"
-        return html
+        description = self.idevice.description.replace(u"\r", u"")
+        description = description.replace(u"\n", u"\\n")
+        description = description.replace(u"'",  u"\\'")
+        html  = (u'<div class="iDevice">',
+                 u'<a href="#" onclick="addFile(\'%s\');">' % self.id,
+                _(u'Select a file'),
+                u'</a>',
+                common.elementInstruc('filename'+self.id,
+                                      self.idevice.filenameInstruc),
+                u'<br/>',
+                common.hiddenField('path'+self.id),
+                u'<b>%s</b>' % _(u'Label'),
+                common.elementInstruc('label'+self.id,
+                                      self.idevice.labelInstruc),
+                u'<br/>',
+                common.textInput(u'label'+self.id, self.idevice.label),
+                u'<br/>',
+                u'<b>%s</b>' % _(u'Description:'),
+                common.elementInstruc('description'+self.id,
+                                      self.idevice.descriptionInstruc),
+                u'<br/>',
+                common.richTextArea(u'description'+self.id,
+                                    description),
+                u'<u>%s</u>' % self.idevice.filename,
+                u'<br/>',
+                self.renderEditButtons(),
+                u'</div>')
+        return '\n'.join(html)
 
 
     def renderPreview(self, style):

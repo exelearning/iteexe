@@ -1,3 +1,317 @@
+2005-07-08 05:03  matthew
+
+	* testing/xhtml-lat1.ent, testing/xhtml-special.ent,
+	  testing/xhtml-symbol.ent, testing/xhtml1-strict.dtd: Merged from
+	  the branch
+
+2005-07-08 02:05  matthew
+
+	* testing/testblock.py, testing/utils.py: Merging testblock and
+	  utils.py from 0.6 branch
+
+2005-07-04 03:35  matthew
+
+	* exe/webui/outlinepane.py: Issue 0000103: Now renames nodes when
+	  you promote/demote them again
+
+2005-07-04 02:58  djm
+
+	* .: Initialized merge tracking via svnmerge with revisions 1-886
+	  from http://exe.cfdl.auckland.ac.nz/svn/exe/trunk
+
+2005-07-04 02:51  jenny
+
+	* exe/webui/imagewithtextblock.py: fixed image with text idevice
+	  bugs.
+
+2005-07-04 02:49  matthew
+
+	* exe/webui/outlinepane.py, exe/webui/templates/mainpage.xul: Issue:
+	  0000096 Can now include ampersands (&) in node names without
+	  blowing up on save
+
+2005-07-04 02:16  jenny
+
+	* exe/webui/genericblock.py: fixed bugs of rendering image idevice.
+
+2005-07-04 02:03  jenny
+
+	* exe/engine/field.py, exe/engine/imagewithtextidevice.py,
+	  exe/webui/element.py, exe/webui/genericblock.py,
+	  exe/webui/imagewithtextblock.py: set image float on left or right
+	  to imageWithText idevice instead of imageField.
+
+2005-07-04 01:38  matthew
+
+	* exe/webui/outlinepane.py: Issue: 00097 Can move nodes up
+
+2005-07-02 22:12  djm
+
+	* exe/webui/editorpane.py: lines too long
+
+2005-07-02 07:20  jenny
+
+	* exe/engine/field.py, exe/webui/element.py,
+	  exe/webui/imagewithtextblock.py: added a select for Image with
+	  Text idevice. then a user can select a image floating at left or
+	  right.
+
+2005-07-01 05:19  djm
+
+	* exe/engine/wikipediaidevice.py: avoidParserProblems is set to
+	  False because BeautifulSoup's cleanup was causing a concatenating
+	  Null+Str error
+
+2005-06-30 21:52  brent
+
+	* exe/webui/css/exe.css, exe/webui/editorpane.py: bit more work on
+	  iDevice editor styles.
+
+2005-06-30 21:23  brent
+
+	* exe/webui/css/exe.css, exe/webui/editorpane.py: iDevice editor
+	  hackery.
+
+2005-06-30 04:52  brent
+
+	* exe/webui/common.py, exe/webui/css/exe.css,
+	  exe/webui/editorpane.py: styled the iDevice editor a bit... eh?
+
+2005-06-30 04:16  brent
+
+	* exe/webui/css/exe.css, exe/webui/editorpane.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/standardwhite/content.css: new and improved
+	  emphasis for your viewing pleasure :-p
+
+2005-06-30 03:56  djm
+
+	* exe/webui/attachmentblock.py, exe/webui/block.py,
+	  exe/webui/freetextblock.py, exe/webui/genericblock.py,
+	  exe/webui/imagewithtextblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/quiztestblock.py, exe/webui/truefalseblock.py,
+	  exe/webui/wikipediablock.py: Changed emphasis attribute to be part
+	  of the iDevice class
+
+2005-06-30 01:30  brent
+
+	* exe/webui/attachmentblock.py, exe/webui/block.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css: david fixed bug when deleting
+	  attachment & image w/ text idevices. style changes for emphasis
+
+2005-06-29 23:52  brent
+
+	* exe/webui/editorpane.py, exe/webui/templates/dublincore.xul: wee
+	  bit of work on iDevice editor interface ... :-)
+
+2005-06-29 23:36  brent
+
+	* exe/webui/attachmentblock.py: minor typo edit
+
+2005-06-29 04:46  djm
+
+	* exe/webui/exe_icon.png, exe/webui/mainwindow.py: added extra file
+	  for gtk interface
+
+2005-06-29 02:24  djm
+
+	* exe/webui/templates/loadpage.xul: We don't use loadpage.xul
+	  anymore
+
+2005-06-29 02:03  djm
+
+	* exe/webui/block.py: tidied up comma not followed by a space/line
+	  longer than 80 chars
+
+2005-06-29 01:57  djm
+
+	* exe/webui/attachmentblock.py: tidy up
+
+2005-06-29 01:55  djm
+
+	* README: added explaination of Mac woes
+
+2005-06-28 23:35  djm
+
+	* exe/webui/outlinepane.py: Removed reference to TitleIdevice
+
+2005-06-28 05:30  djm
+
+	* exe/webui/forumblock.py: tidied up
+
+2005-06-28 04:16  brent
+
+	* exe/engine/attachmentidevice.py,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/templates/mainpage.xul: fixed XUL flex betwen outline
+	  and iDevice pane; working on emphasis styles.
+
+2005-06-28 04:13  wen
+
+	* exe/webui/forumblock.py: update forum idevice block
+
+2005-06-28 04:09  wen
+
+	* exe/webui/forumblock.py: update forum idevice block
+
+2005-06-28 02:38  jenny
+
+	* exe/webui/forumblock.py: escape tag when creating
+	  discussionforum.xml file.
+
+2005-06-28 02:20  jenny
+
+	* exe/engine/attachmentidevice.py, exe/webui/attachmentblock.py,
+	  exe/webui/scripts/common.js: modified attachment idevice using a
+	  hidden field to store the file path.
+
+2005-06-28 01:53  jenny
+
+	* exe/engine/attachmentidevice.py, exe/webui/attachmentblock.py:
+	  added label and discription to attachment idevice.
+
+2005-06-27 21:33  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/standardwhite/content.css: fixed problem with list
+	  bullets overlaying images in Image w/ Text iDevice.
+
+2005-06-27 21:08  jenny
+
+	* exe/webui/forumblock.py: modified forum idevice view mode.
+
+2005-06-27 02:14  jenny
+
+	* testing/testconfig.py, testing/testconfigparser.py,
+	  testing/utils.py: added test for unicode
+
+2005-06-26 22:36  jenny
+
+	* exe/engine/forumidevice.py: do not include discussionforum.xml
+	  into imsmanifest.xml.
+
+2005-06-26 21:18  jenny
+
+	* exe/webui/forumblock.py: changed link string for forum idevice.
+
+2005-06-24 03:06  jenny
+
+	* exe/export/scormexport.py: fixed forum idevice export bug.
+
+2005-06-24 02:48  jenny
+
+	* exe/engine/forumidevice.py, exe/export/scormexport.py,
+	  exe/webui/forumblock.py: modified forum idevice export XML file.
+
+2005-06-24 01:37  brent
+
+	* exe/webui/idevicepane.py, exe/webui/style/default/content.css,
+	  exe/webui/templates/mainpage.xul: default style link colours.
+
+2005-06-23 23:55  djm
+
+	* exe/webui/editorpane.py: Fixed bug with emphasis selection.
+
+2005-06-23 23:28  djm
+
+	* exe/application.py, exe/engine/winconfig.py: Updated usage info
+
+2005-06-23 04:12  jenny
+
+	* exe/engine/freetextidevice.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/forumblock.py, exe/webui/propertiespage.py,
+	  exe/webui/propertiespane.py, exe/webui/reflectionblock.py: check
+	  gettext for all idevices
+
+2005-06-23 03:01  djm
+
+	* exe/engine/wikipediaidevice.py: Fixed bug
+	  http://exe/mantis/view.php?id=93, use __getstate__ to rewrite URLs
+	  upon saving.
+
+2005-06-22 22:48  jenny
+
+	* exe/webui/forumblock.py: fixed Forum iDevice export bug
+
+2005-06-22 21:12  jenny
+
+	* exe/engine/forumidevice.py, exe/engine/idevicestore.py,
+	  exe/webui/authoringpage.py, exe/webui/blockfactory.py,
+	  exe/webui/forumblock.py: Added Forum iDevice.
+
+2005-06-22 06:59  brent
+
+	* exe/export/websiteexport.py, exe/webui/style/default/nav.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/mojave/nav.css: fixed mojave export style
+
+2005-06-22 06:54  djm
+
+	* exe/webui/blockfactory.py: I am getting POed with my changes being
+	  merged out! I'm sure it is accidental though.
+
+2005-06-22 06:52  djm
+
+	* exe/webui/blockfactory.py: Hadn't commented out all forum iDevice
+	  lines befoer.
+
+2005-06-22 06:49  djm
+
+	* exe/engine/attachmentidevice.py, exe/engine/casestudyidevice.py,
+	  exe/engine/idevicestore.py, exe/engine/imagewithtextidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/titleidevice.py,
+	  exe/engine/truefalseidevice.py, exe/engine/wikipediaidevice.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/attachmentblock.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/casestudyblock.py, exe/webui/common.py,
+	  exe/webui/editorpane.py, exe/webui/freetextblock.py,
+	  exe/webui/genericblock.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/quiztestblock.py,
+	  exe/webui/truefalseblock.py, exe/webui/wikipediablock.py,
+	  prototype/pyfox/setup.py: Render emphasis attribute of iDevices.
+	  Resurrected Wikipedia and Attachment iDevice. Commented out
+	  missing Forum iDevice until it is checked in. Minor tidyups.
+
+2005-06-22 05:23  jenny
+
+	* exe/engine/idevicestore.py, exe/engine/quiztestidevice.py,
+	  exe/engine/version.py, exe/export/imsexport.py,
+	  exe/export/scormexport.py, exe/export/websiteexport.py,
+	  exe/webui/blockfactory.py, exe/webui/common.py,
+	  exe/webui/quiztestblock.py: Add Forum iDevice and modified SCORM
+	  Quiz iDevice.
+
+2005-06-22 03:22  djm
+
+	* exe/engine/genericidevice.py, exe/engine/titleidevice.py,
+	  exe/export/pages.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/aboutpage.py,
+	  exe/webui/attachmentblock.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/elementfactory.py, exe/webui/freetextblock.py,
+	  exe/webui/genericblock.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/mainpage.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py, exe/webui/outlinepane.py,
+	  exe/webui/propertiespage.py, exe/webui/propertiespane.py,
+	  exe/webui/reflectionblock.py, exe/webui/wikipediablock.py,
+	  tools/dot.pylintrc: Tidied up source code, keeping PyLint happy.
+
+2005-06-22 00:11  djm
+
+	* ChangeLog, exe/engine/idevicestore.py, exe/engine/linuxconfig.py,
+	  exe/engine/node.py, exe/engine/package.py,
+	  exe/engine/packagestore.py, exe/engine/titleidevice.py,
+	  testing/testnode.py, testing/testpackage.py: Nodes will now auto
+	  upgrade to not having TitleIdevice. Fixed tests.
+
 2005-06-21 23:15  djm
 
 	* exe/engine/node.py, exe/engine/titleidevice.py,

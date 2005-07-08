@@ -23,12 +23,12 @@ Exports an eXe package as a SCORM package
 import logging
 import gettext
 import re
-from zipfile                import ZipFile, ZIP_DEFLATED
-from exe.webui              import common
-from exe.webui.blockfactory import g_blockFactory
-from exe.engine.error       import Error
-from exe.engine.path        import Path, TempDirPath
-from exe.export.pages       import Page, uniquifyNames
+from zipfile                       import ZipFile, ZIP_DEFLATED
+from exe.webui                     import common
+from exe.webui.blockfactory        import g_blockFactory
+from exe.engine.error              import Error
+from exe.engine.path               import Path, TempDirPath
+from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 
 log = logging.getLogger(__name__)
@@ -168,23 +168,23 @@ class IMSPage(Page):
         Returns an XHTML string rendering this page.
         """
         html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\" />\n";
-        html += "<title>"+_("eXe")+"</title>\n"
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(content.css);\n"
-        html += "</style>\n"
-        html += "</head>\n"
-        html += "<body>\n"
-        html += "<div id=\"outer\">\n"
-        html += "<div id=\"main\">\n"
-        html += "<div id=\"nodeDecoration\">\n"
-        html += '<p id=\"nodeTitle\">\n'
+        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<head>\n"
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=UTF-8\" />\n";
+        html += u"<title>"+_("eXe")+"</title>\n"
+        html += u"<style type=\"text/css\">\n"
+        html += u"@import url(content.css);\n"
+        html += u"</style>\n"
+        html += u"</head>\n"
+        html += u"<body>\n"
+        html += u"<div id=\"outer\">\n"
+        html += u"<div id=\"main\">\n"
+        html += u"<div id=\"nodeDecoration\">\n"
+        html += u'<p id=\"nodeTitle\">\n'
         html += self.node.title
-        html += '</p>\n'
-        html += "</div>\n"
+        html += u'</p>\n'
+        html += u"</div>\n"
 
         for idevice in self.node.idevices:
             block = g_blockFactory.createBlock(None, idevice)
@@ -196,9 +196,9 @@ class IMSPage(Page):
             if idevice.title != "Forum Discussion":
                 html += block.renderView(self.node.package.style)
 
-        html += "</div>\n"
-        html += "</div>\n"
-        html += "</body></html>\n"
+        html += u"</div>\n"
+        html += u"</div>\n"
+        html += u"</body></html>\n"
         return html
 
         

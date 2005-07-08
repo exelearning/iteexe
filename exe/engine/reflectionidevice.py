@@ -34,6 +34,8 @@ class ReflectionIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
+    persistenceVersion = 2
+    
     def __init__(self, activity = "", answer = ""):
         """
         Initialize 
@@ -60,10 +62,17 @@ reflective feedback.)""")
     def upgradeToVersion1(self):
         """
         Upgrades the node from version 0 to 1.
-        Old packages will loose their icons, but they will load.
         """
         log.debug(u"Upgrading iDevice")
         self.icon       = u"reflection"
 
 
+    def upgradeToVersion2(self):
+        """
+        Upgrades the node from 1 (v0.5) to 2 (v0.6).
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug(u"Upgrading iDevice")
+        self.emphasis = Idevice.SomeEmphasis
+   
 # ===========================================================================

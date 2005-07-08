@@ -37,15 +37,7 @@ http://exe.cfdl.auckland.ac.nz or email exe@auckland.ac.nz.
 
 KNOWN BUGS
 ==========
-* We do not replace the Firefox main menu which means there are two
-  menu bars.  eXe's menu bar is the bottom one.
-* You cannot run a normal Firefox browser and eXe at the same time
-  You must close Firefox before starting eXe and close eXe before 
-  browsing the Web.
-* If we have a package open, then trying to open a second package 
-  (by dbl clicking on it) fails with the message "No such resource".
-* The emphasis setting in the iDevice editor is ignored
-* Can't delete or edit user-defined iDevices
+See http://exe.cfdl.auckland.ac.nz/mantis for the eXe issue list.
 
 
 WINDOWS
@@ -58,7 +50,7 @@ INSTALLATION
   be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under 
   "All Programs".
-- If you leave "Run eXe 0.5" selected the installer will launch eXe
+- If you leave "Run eXe 0.6" selected the installer will launch eXe
   once it is installed.
 
 
@@ -104,7 +96,7 @@ The eXe Linux install consists of two RPMs which have been tested
 to work on Fedora Core 3.  (They may work on other RPM based distros
 but that hasn't been tested.)
 
-* exe-0.5-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-0.6-1.noarch.rpm - includes the eXe editor and bundled Firefox
 * exe-twisted-2.0-1.noarch.rpm - includes Twisted, ZopeInterface and Nevow used for the webserver by eXe
 
 From the command line type exe to start.
@@ -121,10 +113,11 @@ To build exe you'll need to install the following packages:
  * needs patches/jelly.patch applied, see patches/jelly.readme (from the source tree)
 * nevow - http://nevow.com/
  * needs patches/livepage.patch applied, see patches/livepage.readme (from the source tree)
+* CTypes (on Windows) - http://starship.python.net/crew/theller/ctypes/
 * firefox - http://www.mozilla.org/products/firefox
 
 unzip the source tarball:
-tar xzvf exe-source-0.5.tgz
+tar xzvf exe-source-0.6.tgz
 
 To run from source (on linux):
 cd exe
@@ -134,5 +127,3 @@ To run from source (on windows):
 cd exe
 c:\python23\python exe
 
-# Run
-./exe

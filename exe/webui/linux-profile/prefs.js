@@ -26,7 +26,6 @@ user_pref("capability.principal.codebase.p5.granted", "UniversalXPConnect");
 user_pref("capability.principal.codebase.p5.id", "http://localhost:8081");
 user_pref("extensions.disabledObsolete", true);
 user_pref("extensions.lastAppVersion", "1.0");
-user_pref("general.open_location.last_url", "localhost:8081");
 user_pref("general.open_location.last_window_choice", 0);
 user_pref("intl.charsetmenu.browser.cache", "UTF-8");
 user_pref("network.cookie.prefsMigrated", true);

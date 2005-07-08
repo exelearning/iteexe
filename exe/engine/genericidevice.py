@@ -37,7 +37,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -115,5 +115,13 @@ class GenericIdevice(Idevice):
             else:
                 log.error(u"Unknown field type in upgrade "+oldField.fieldType)
 
+
+    def upgradeToVersion3(self):
+        """
+        Upgrades the node from 2 (v0.5) to 3 (v0.6).
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug(u"Upgrading iDevice")
+        self.emphasis = Idevice.SomeEmphasis
 
 # ===========================================================================

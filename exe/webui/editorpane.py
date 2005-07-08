@@ -45,14 +45,29 @@ class EditorPane(object):
         """
         Initialize
         """
-        self.ideviceStore = webserver.application.ideviceStore
-        self.webDir       = webserver.application.config.webDir
-        self.elements     = []
-        self.idevice      = GenericIdevice("", "", "", "", "")
-        self.purpose      = ""
-        self.tip          = ""
-        self.message      = ""
-
+        self.ideviceStore    = webserver.application.ideviceStore
+        self.webDir          = webserver.application.config.webDir
+        self.elements        = []
+        self.idevice         = GenericIdevice("", "", "", "", "")
+        self.purpose         = ""
+        self.tip             = ""
+        self.message         = ""
+        self.nameInstruc     = u"""Your new idevice will appear in the iDevice 
+pane with this title. This is a compulsory field and you will be prompted to 
+enter a label if you try to submit your idevice without one."""
+        self.authorInstruc   = u"This is an optional field."
+        self.purposeInstruc  = u"""The purpose dialogue allows you to describe 
+your intended purpose of the device to other potential users."""
+        self.emphasisInstruc = u"""Use Emphasis to distinguish the importance 
+of the information being presented in the idevice."""
+        self.tipInstruc      = """A pedagogical tip allows you to describe your 
+intended use and the pedagogy behind the devices development."""
+        self.lineInstruc     = """Add a single text line to an iDevice. 
+Useful if you want the ability to place a label within the device."""
+        self.textBoxInstruc  = """Add a text entry box to an iDevice. 
+Used for entering description textual content."""
+        self.imageInstruc    = """Add an image to your iDevice. Enables 
+the selection of an image from your stored picture files."""
         
     def process(self, request):
         """
@@ -150,12 +165,15 @@ class EditorPane(object):
         html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
         html += "<div ID=\"iDevice_editor\" "
         html += "<fieldset><legend><b>" + _("iDevice elements")+ "</b></legend>"
-        html += common.submitButton("addText", _("Add Text Line"))+"<br/>"
-        html += common.submitButton("addTextArea", _("Add Text Box")) + "<br/>"
-        html += common.submitButton("addImage", _("Add Image")) + "<br/>"
+        html += common.submitButton("addText", _("Add Text Line"))
+        html += common.elementInstruc("line", self.lineInstruc) + "<br/>"
+        html += common.submitButton("addTextArea", _("Add Text Box"))
+        html += common.elementInstruc("textBox", self.textBoxInstruc) + "<br/>"
+        html += common.submitButton("addImage", _("Add Image")) 
+        html += common.elementInstruc("image", self.imageInstruc) + "<br/>"
         html += "</fieldset></div>\n"
 
-        html += "<div style=\"margin-left: 150px;\">\n"
+        html += "<div style=\"margin-left: 170px;\">\n"
         html += self.renderIdevice(request)
         if self.idevice.edit:
             html += common.submitButton("edit", _("Edit"), False)
@@ -196,13 +214,17 @@ class EditorPane(object):
         self.tip = self.tip.replace("'","\\'")
         
         if self.idevice.edit:
-            html += "<b>" + _("iDevice Name") + ":</b><br/>\n"
+            html += "<b>" + _("iDevice Name") + ": </b>\n"
+            html += common.elementInstruc("name", self.nameInstruc) + "<br/>"
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
-            html += "<b>" + _("Author") + ":</b><br/>\n"
+            html += "<b>" + _("Author") + ": </b>\n"
+            html += common.elementInstruc("author", self.authorInstruc) + "<br/>"
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
-            html += "<b>" + _("Purpose") + ":</b><br/>\n"
-            html += common.textArea("description", self.idevice.purpose) 
-            html += "<b>" + _("Pedagogical Tip") + ":</b><br/>\n"
+            html += "<b>" + _("Purpose") + ": </b>\n"
+            html += common.elementInstruc("purpose", self.purposeInstruc)
+            html += "<br/>" +common.textArea("description", self.idevice.purpose) 
+            html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
+            html += common.elementInstruc("tip", self.tipInstruc) + "<br/>"
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
             html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
@@ -216,7 +238,9 @@ class EditorPane(object):
                     html += "selected "
                 html += ">" + description + "</option>\n"
 
-            html += "</select><br/><br/>\n"
+            html += "</select> \n"
+            html += common.elementInstruc("emphasis", self.emphasisInstruc)
+            html += "<br/><br/>\n"
             for element in self.elements:
                 html += element.renderEdit()       
         else:

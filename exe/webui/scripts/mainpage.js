@@ -410,7 +410,7 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
 // and scorm packages, with and without meta data
 // 'exportType' is passed straight to the server
 // Currently valid values are:
-// 'scormMeta' 'scormNoMeta' 'webSite'
+// 'scoem' 'ims' 'webSite'
 function exportPackage(exportType) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
@@ -423,7 +423,13 @@ function exportPackage(exportType) {
             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
         }
     } else {
-        fp.init(window, "Export scorm package as", nsIFilePicker.modeSave);
+        if (exportType == "scorm")
+            title = "Export SCORM package as"
+        else if (exportType == "ims")
+            title = "Export IMS package as"
+        else
+            title = "INVALID VALUE PASSED TO exportPackge"
+        fp.init(window, title, nsIFilePicker.modeSave);
         fp.appendFilter("SCORM/IMS Packages", "*.zip");
         fp.appendFilter("All Files", "*.*");
         var res = fp.show();

@@ -107,7 +107,7 @@ class OutlinePane(Renderable):
             return
         node = self.package.findNode(nodeId)
         node.title = unicode(newName, 'utf8')
-        client.sendScript('XHRenNode("%s")' % newName)
+        client.sendScript('XHRenNode("%s")' % newName.replace('"', '\\"'))
 
 
     def _doJsRename(self, client, node):
@@ -116,7 +116,7 @@ class OutlinePane(Renderable):
         the client if the node's default name has not been overriden
         """
         if not node._title:
-            client.call('XHRenNode', unicode(node.title), node.id)
+            client.call('XHRenNode', node.title.replace('"', '\\"'), node.id)
         for child in node.children: 
             self._doJsRename(client, child)
 

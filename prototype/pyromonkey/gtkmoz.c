@@ -29,6 +29,10 @@ int
 _wrap_gtk_moz_embed_new(PyGObject *self, PyObject *args, PyObject *kwargs)
 {
     GType obj_type = pyg_type_from_object((PyObject *) self);
+    static char* kwlist[] = { NULL };
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, ":gtkmoz.MozEmbed.__init__", kwlist))
+        return -1;
 
     self->obj = g_object_newv(obj_type, 0, NULL);
     if (!self->obj) {
@@ -247,7 +251,7 @@ _wrap_gtk_moz_embed_get_chrome_mask(PyGObject *self)
     ret = gtk_moz_embed_get_chrome_mask(GTK_MOZ_EMBED(self->obj));
     return PyLong_FromUnsignedLong(ret);
 }
-#if 0
+
 static PyMethodDef _PyGtkMozEmbed_methods[] = {
     { "load_url", (PyCFunction)_wrap_gtk_moz_embed_load_url, METH_VARARGS|METH_KEYWORDS },
     { "stop_load", (PyCFunction)_wrap_gtk_moz_embed_stop_load, METH_NOARGS },
@@ -288,8 +292,8 @@ PyTypeObject PyGtkMozEmbed_Type = {
     (hashfunc)0,		/* tp_hash */
     (ternaryfunc)0,		/* tp_call */
     (reprfunc)0,		/* tp_str */
-    (getattrofunc)0,			/* tp_getattro */
-    (setattrofunc)0,			/* tp_setattro */
+    (getattrofunc)0,	/* tp_getattro */
+    (setattrofunc)0,	/* tp_setattro */
     (PyBufferProcs*)0,	/* tp_as_buffer */
     Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,                      /* tp_flags */
     NULL, 				/* Documentation string */
@@ -313,7 +317,7 @@ PyTypeObject PyGtkMozEmbed_Type = {
     (freefunc)0,             /* tp_free */
     (inquiry)0              /* tp_is_gc */
 };
-#endif
+
 
 
 /* ----------- functions ----------- */
@@ -359,7 +363,7 @@ _wrap_gtk_moz_embed_set_profile_path(PyObject *self, PyObject *args, PyObject *k
     Py_INCREF(Py_None);
     return Py_None;
 }
-/*
+
 PyMethodDef gtkmoz_functions[] = {
     { "gtk_moz_embed_push_startup", (PyCFunction)_wrap_gtk_moz_embed_push_startup, METH_NOARGS },
     { "gtk_moz_embed_pop_startup", (PyCFunction)_wrap_gtk_moz_embed_pop_startup, METH_NOARGS },
@@ -367,7 +371,6 @@ PyMethodDef gtkmoz_functions[] = {
     { "gtk_moz_embed_set_profile_path", (PyCFunction)_wrap_gtk_moz_embed_set_profile_path, METH_VARARGS|METH_KEYWORDS },
     { NULL, NULL, 0 }
 };
-*/
 
 
 /* ----------- enums and flags ----------- */
@@ -454,6 +457,6 @@ gtkmoz_register_classes(PyObject *d)
     }
 
 
-#line 457 "gtkmoz.c"
+#line 461 "gtkmoz.c"
     pygobject_register_class(d, "GtkMozEmbed", GTK_TYPE_MOZ_EMBED, &PyGtkMozEmbed_Type, Py_BuildValue("(O)", &PyGtkBin_Type));
 }

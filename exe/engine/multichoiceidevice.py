@@ -48,7 +48,7 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, question=""):
         """
@@ -72,13 +72,14 @@ When designing a MCQ test consider the following:
 </ul>
  """), _(u"""When building an MCQ consider the following: <ul>
 <li> Language use phrases that learners are familiar with and have 
-encountered in their study
-<li> Keep responses concise 
-<li> There should be some consistency between the stem and the responses
+encountered in their study </li>
+<li> Keep responses concise  </li>
+<li> There should be some consistency between the stem and the responses </li>
 <li> Provide enough options to challenge learners to think about their response
+</li>
 <li> Try to make sure that correct responses are not more detailed then the 
-distractors
-<li> Distractors should be incorrect but plausible
+distractors </li>
+<li> Distractors should be incorrect but plausible </li>
 </ul>
 """), u"multichoice")
         self.emphasis        = Idevice.SomeEmphasis
@@ -127,5 +128,13 @@ for the other alternatives.""")
 do not want to provide a hint, leave this field blank.""")
         self.icon            = "multichoice"
 
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades the node from 1 (v0.5) to 2 (v0.6).
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug(u"Upgrading iDevice")
+        self.emphasis = Idevice.SomeEmphasis
     
 # ===========================================================================

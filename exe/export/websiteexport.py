@@ -23,10 +23,10 @@ WebsiteExport will export a package as a website of HTML pages
 import logging
 import gettext
 import re
-from exe.webui.blockfactory import g_blockFactory
-from exe.engine.error       import Error
-from exe.engine.path        import Path
-from exe.export.pages       import uniquifyNames
+from exe.webui.blockfactory   import g_blockFactory
+from exe.engine.error         import Error
+from exe.engine.path          import Path
+from exe.export.pages         import uniquifyNames
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -53,7 +53,7 @@ class WebsitePage(object):
         (a 'path' instance)
         """
         outfile = open(outputDir / self.name+".html", "w")
-        outfile.write(self.render(prevPage, nextPage, pages))
+        outfile.write(self.render(prevPage, nextPage, pages).encode('utf8'))
         outfile.close()
         
 
@@ -101,7 +101,7 @@ class WebsitePage(object):
         html += self.getNavigationLink(prevPage, nextPage)
         html += u"</div>\n"
         html += u"</body></html>\n"
-        return html.encode('utf8')
+        return html
 
         
     def leftNavigationBar(self, pages):

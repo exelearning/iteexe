@@ -3,6 +3,8 @@
 # This file is released into the public domain.
 # Originally Written by Andrew McCall - <andrew@textux.com>
 
+from xpcom import components, xpt, _xpcom
+import xpcom.client
 import os
 import sys
 import gtk
@@ -17,7 +19,7 @@ class PyGtkMozExample:
             self.parent = parent
         
         # Initialize the widgets...
-        self.widget = _pyromonkey.MozEmbed()
+        self.widget = _pyromonkey.PyroMonkey()
         self.vbox = gtk.VBox(False, 5)
         self.hbox = gtk.HBox(False, 5)
         self.entry = gtk.Entry(256)
@@ -54,20 +56,33 @@ class PyGtkMozExample:
             
     #def on_forward(self, data = None): self.widget.go_forward()
     def on_forward(self, data = None):
-        from xpcom import components, xpt
-        import xpcom.client
+        print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+        print 'Getting gtk browser'
         br = self.widget.get_xpcom_browser()
-        import pdb
-        pdb.set_trace()
-        #wb = client.Component(br, 'nsISupports')
+        print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+        print 'Creating web browser'
         wb = components.classes['@mozilla.org/embedding/browser/nsWebBrowser;1'].createInstance(components.interfaces.nsIWebNavigation)
-        wb = xpcom.client.Component(br, wb._interfaces_[components.interfaces.nsIWebNavigation])
-        #wb2 = components.classes['@mozilla.org/embedding/browser/nsWebBrowser;1'].getService()
+        print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+        print 'Wrapping created browser'
+        wb = xpcom.client.Component(wb._comobj_, components.interfaces.nsIWebNavigation)
+        print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+        print 'Wrapping gtk browser'
+        wb = xpcom.client.Component(br, components.interfaces.nsIWebNavigation)
+        #wb = xpcom.client.Component(br, xpt.Interface(components.interfaces.nsIWebNavigation))
+        #wb = xpcom.client.Component(br, _xpcom.IID_nsISupports)
+
+        #wb = xpcom.client.Component(br, 'nsIWebNavigation')
+        #self.wb = components.classes['@mozilla.org/embedding/browser/nsWebBrowser;1'].getService()
+        #self.wb.QueryInterface(components.interfaces.nsIWebNavigation)
         print br
+        #print self.wb
         print wb
     
     def on_back(self, data = None):
-        self.widget.go_back()
+        if hasattr(self, 'wb'):
+            self.wb.goBack()
+        else:
+            self.widget.go_back()
     
     def on_location_changed(self, data):
         self.entry.set_text(self.widget.get_location())

@@ -111,7 +111,6 @@ class TrueFalseElement(object):
                                    "/images/stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"
-        html += "</p>\n"
         return html
     
     def renderQuestionView(self):

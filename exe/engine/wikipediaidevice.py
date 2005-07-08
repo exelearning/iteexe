@@ -84,7 +84,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         # cleanup was causing a "concatenating Null+Str" error,
         # and Wikipedia's HTML doesn't need cleaning up.
         # BeautifulSoup is faster this way too.
-        soup = BeautifulSoup(unicode(page, "iso-8859-1"), False)
+        soup = BeautifulSoup(unicode(page, "utf8"), False)
         content = soup.first('div', {'id': "content"})
 
         if not content:

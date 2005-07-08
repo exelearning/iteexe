@@ -33,7 +33,8 @@ class FreeTextIdevice(Idevice):
     """
     FreeTextIdevice: just has a block of text
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
+
     def __init__(self, content=""):
         Idevice.__init__(self, _(u"Free Text Area"), 
                          _(u"University of Auckland"), 
@@ -41,7 +42,8 @@ class FreeTextIdevice(Idevice):
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
-        self.content = TextAreaField(_(u"Content"), 
+        self.emphasis = Idevice.NoEmphasis
+        self.content  = TextAreaField(_(u"Content"), 
 _(u"This is a free text field general learning content can be entered."),
                                      content)
         self.content.idevice = self
@@ -66,4 +68,13 @@ _(u"This is a free text field general learning content can be entered."),
 _(u"This is a free text field general learning content can be entered."),
                                      self.content)
 
+
+    def upgradeToVersion3(self):
+        """
+        Upgrades the node from 2 (v0.5) to 3 (v0.6).
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug(u"Upgrading iDevice")
+        self.emphasis = Idevice.NoEmphasis
+   
 # ===========================================================================

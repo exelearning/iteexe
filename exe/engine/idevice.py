@@ -35,7 +35,7 @@ class Idevice(Persistable):
     """
 
     # Class attributes
-    persistenceVersion = 1
+    # see derieved classes for persistenceVersion 
     nextId = 1
     NoEmphasis, SomeEmphasis, StrongEmphasis = range(3)
 
@@ -141,13 +141,5 @@ class Idevice(Persistable):
             self.parentNode.idevices.remove(self)
         parentNode.addIdevice(self)
 
-
-    def upgradeToVersion1(self):
-        """
-        Upgrades the node from version 0 to 1.
-        Old packages will loose their icons, but they will load.
-        """
-        log.debug("Upgrading iDevice")
-        self.icon = ""
 
 # ===========================================================================

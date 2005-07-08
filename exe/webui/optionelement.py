@@ -85,7 +85,7 @@ class OptionElement(object):
         feedback = feedback.replace("\n", "\\n")
         feedback = feedback.replace("'", "\\'")
         feedback = feedback.replace('"', '\\"')
-        html = "<tr><td>"
+        html = u"<tr><td>"
         html += common.richTextArea(self.answerId, answer)
         html += "</td><td align = \"center\">\n"
         html += common.option(self.keyId, self.option.isCorrect, self.id)        
@@ -96,7 +96,6 @@ class OptionElement(object):
                                    "/images/stock-cancel.png",
                                    _("Delete option"))
         html += "</td></tr>\n"
-        html += "</p>\n"
         return html
 
 

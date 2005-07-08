@@ -8,7 +8,7 @@ import py2exe
 from exe.engine import version
 
 g_files = { '.': ["README", "eXe_icon.ico", 
-                  "doc/eXe-tutorial.elp", "exeLicense.txt"]}
+                  "doc/eXe-tutorial.elp", "installs/windows/exeLicense.txt"]}
 g_oldBase = "exe/webui"
 g_newBase = "."
 def dataFiles(dirs):

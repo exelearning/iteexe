@@ -30,7 +30,7 @@ class ConfigParser(object):
     """For parsing and writing config files"""
 
     # The default char to put between option names and vals
-    optionMiddle = ' = '  
+    optionMiddle = ' = '
     # Set this to a default val for options that don't exist
     defaultValue = RaiseValueError 
     # Set this to write after each attribute change
@@ -114,7 +114,15 @@ class ConfigParser(object):
         self._originalFile = file_
         if isinstance(file_, basestring):
             file_ = open(file_)
+        # Apparently in files encoded with utf8, readlines works fine because \n
+        # is still the new line character in utf8.
+        # However, in some other less popular encodings, line ending chars are
+        # different
         lines = file_.readlines()
+        # Store each line as a unicode string internally
+        for i, line in enumerate(lines):
+            if not isinstance(line, unicode):
+                lines[i] = unicode(line, 'utf8')
         # Init state
         self._sections = {}
         # Parse each line
@@ -238,7 +246,8 @@ class ConfigParser(object):
         newLines += lastSectionLines
         # Write the file
         file_.seek(0)
-        file_.write('\n'.join(newLines))
+        data = '\n'.join(newLines)
+        file_.write(data.encode('utf8'))
         file_.truncate()
 
     def has_option(self, sectionName, optionName):
@@ -269,8 +278,13 @@ class ConfigParser(object):
         """Set's an option in a section to value,
         can be used for new options, new sections and pre-existing ones"""
         sec = Section(sectionName, self) # This creates or gets a section
+        if not isinstance(value, unicode):
+            # Convert ints and floats to str before encoding to unicode
+            if not isinstance(value, str):
+                value = str(value)
+            value = unicode(value, 'utf8')
         if sec.get(optionName, None) != value:
-            sec[optionName] = unicode(value)
+            sec[optionName] = value
             if self.autoWrite and self._originalFile is not None:
                 # Move the original file to the beginning if we can
                 if hasattr(self._originalFile, 'seek') and \
@@ -278,9 +292,8 @@ class ConfigParser(object):
                     self._originalFile.seek(0)
                 # Can't use autowrite with append, writeonly or readonly files
                 if hasattr(self._originalFile, 'mode'):
-                    # Must have r+ or rb+
-                    if 'r' not in self._originalFile.mode or \
-                       '+' not in self._originalFile.mode:
+                    # Must have r+ or rb+ or w+
+                    if '+' not in self._originalFile.mode:
                         return
                 # Write using self._originalFile
                 self.write()

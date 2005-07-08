@@ -40,10 +40,31 @@ class AttachmentIdevice(Idevice):
                          _(u"University of Auckland"), 
                          _(u""), 
                          u"", u"")
-        self.emphasis    = Idevice.NoEmphasis
-        self.filename    = u""
-        self.label       = u""
-        self.description = u""
+        self.emphasis           = Idevice.NoEmphasis
+        self.filename           = u""
+        self.filenameInstruc    = (u'Click <strong>Select a file</strong>, '
+                                    'browse to the file you want '
+                                   'to attach and select it.')
+        self.label              = u""
+        self.labelInstruc       = (u"<p>"
+                                    "Assign a label for the attachment. It "
+                                    "is useful to include the type of file. "
+                                    "Eg. pdf, ppt, etc."
+                                    "</p>"
+                                    "<p>"
+                                    "Including the size is also recommended so "
+                                    "that after your package is exported "
+                                    "to a web site, people will have an idea "
+                                    "how long it would take to download this "
+                                    "attachment."
+                                    "</p>"
+                                    "<p>"
+                                    "For example: "
+                                    "<code>Sales Forecast.doc (500kb)</code>"
+                                    "</p>")
+        self.description        = u""
+        self.descriptionInstruc = (u"Provide a brief description of the "
+                                    "file")
  
 
     def getResources(self):

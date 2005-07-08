@@ -107,9 +107,10 @@ class IdeviceStore:
         from exe.engine.casestudyidevice      import CasestudyIdevice
         from exe.engine.truefalseidevice      import TrueFalseIdevice
         from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
-        from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.wikipediaidevice      import WikipediaIdevice
         from exe.engine.attachmentidevice     import AttachmentIdevice
+        from exe.engine.titleidevice          import TitleIdevice
+        from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.forumidevice          import ForumIdevice
 
         self.extended.append(FreeTextIdevice())
@@ -126,9 +127,9 @@ class IdeviceStore:
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
 
-        self.extended.append(QuizTestIdevice())
         self.extended.append(WikipediaIdevice())
         self.extended.append(AttachmentIdevice())
+        self.extended.append(QuizTestIdevice())
         self.extended.append(ForumIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
@@ -208,8 +209,8 @@ _(u"""Type the learning objectives for this resource.""")))
 _(u"""Prerequisite knowledge refers to the knowledge learners should already
 have in order to be able to effectively complete the learning. Examples of
 pre-knowledge can be: <ul>
-<li>	Learners must have level 4 English </li>
-<li>	Learners must be able to assemble standard power tools </li></ul>
+<li>        Learners must have level 4 English </li>
+<li>        Learners must be able to assemble standard power tools </li></ul>
 """), "")
         preknowledge.emphasis = Idevice.SomeEmphasis
         preknowledge.addField(TextAreaField(_(u"Preknowledge"), 

@@ -21,9 +21,7 @@
 This is the main XUL page.
 """
 
-import logging
-import gettext
-import os
+import os, sys, logging, gettext
 from twisted.web              import static
 from nevow                    import loaders, inevow, stan
 from nevow.livepage           import handler, js
@@ -219,7 +217,10 @@ class MainPage(RenderableLivePage):
         # If the script is not passing a filename to us,
         # Then use the last filename that the package was loaded from/saved to
         if filename:
-            filename = unicode(filename, 'utf8')
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'ascii'
+            filename = unicode(filename, encoding)
         else:
             filename = self.package.filename
             assert (filename, 
@@ -244,7 +245,10 @@ class MainPage(RenderableLivePage):
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
-            filename = unicode(filename, 'utf8')
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'ascii'
+            filename = unicode(filename, encoding)
             log.debug("filename and path" + filename)
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)

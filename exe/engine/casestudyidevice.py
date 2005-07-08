@@ -47,7 +47,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, story=""):
         """
@@ -96,5 +96,14 @@ be a summary of the main points or concepts.""")
         """
         log.debug(u"Upgrading iDevice")
         self.icon = "casestudy"
+   
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades the node from 1 (v0.5) to 2 (v0.6).
+        Old packages will loose their icons, but they will load.
+        """
+        log.debug(u"Upgrading iDevice")
+        self.emphasis = Idevice.SomeEmphasis
     
 # ===========================================================================

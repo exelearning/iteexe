@@ -92,7 +92,7 @@ class ImageWithTextBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div style=\"padding:6px; "
-        html += u"float:%s;\"/>\n" % self.idevice.float
+        html += u"float:%s;\">\n" % self.idevice.float
         html += self.imageElement.renderPreview()
         html += u"</div>\n"
         html += self.textElement.renderPreview()        
@@ -110,9 +110,10 @@ class ImageWithTextBlock(Block):
         log.debug("renderView")
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html  = u"<div style=\"padding:6px; "
-        html += u"float:%s;\"/>\n" % self.idevice.float
+        html += u"<div style=\"padding:6px; "
+        html += u"float:%s;\">\n" % self.idevice.float
         html += self.imageElement.renderView()
+        html += u"</div>\n"
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"

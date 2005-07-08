@@ -226,7 +226,7 @@ class Block(Renderable):
             html += u'<img src="/images/info.png" border="0" '
             html += u'align="middle" /></a>\n'
             html += u'<div id="p%s" style="display:none;">' % self.id
-            html += u'<div style="float:right;" '
+            html += u'<div style="float:right;">'
             html += u'<img src="/images/stock-stop.png" '
             html += u' title="%s" border="0" align="middle" ' % _(u"Close")
             html += u'onmousedown="Javascript:hideMe();"/></div>'

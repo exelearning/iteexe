@@ -155,12 +155,16 @@ function doQuit()
 ** unloaded through use of some other mechanism... most likely the back
 ** button on the browser.  We'll handle this situation the same way we 
 ** would handle a "quit" - as in the user pressing the SCO's quit button.
+
+** eXe team: we've added this doLMSSetValue here to get tracking working with Moodle
+** cmi.core.lesson_status is now set to 'completed' whenever a sco is unloaded.
+** brent simpson. July 7, 2005. exe@auckland.ac.nz
 *******************************************************************************/
 function unloadPage()
 {
-
 	if (exitPageStatus != true)
 	{
+		doLMSSetValue( "cmi.core.lesson_status", "completed" );
 		doQuit();
 	}
 
