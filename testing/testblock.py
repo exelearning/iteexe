@@ -24,7 +24,8 @@ from exe.webui.blockfactory import g_blockFactory
 from exe.webui.renderable   import Renderable
 from exe.engine.node        import Node
 from exe.application        import Application
-from utils                  import SuperTestCase, HTMLTidy
+from utils                  import SuperTestCase, HTMLChecker
+from nevow.context          import RequestContext
 
 # ===========================================================================
 class TestBlock(SuperTestCase):
@@ -32,12 +33,42 @@ class TestBlock(SuperTestCase):
     Tests that blocks can render stuff
     """
 
-    def testBlock(self):
+    # TODO: In trunk, we shouldn't ignore any error messages
+    ignoreErrorMsgs = [
+        'No declaration for attribute border of element img',
+        'Element img does not carry attribute alt',
+        'Element body content does not follow the DTD, expecting (p | h1 | h2 '
+         '| h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | '
+         'address | fieldset | table | form | noscript | ins | del | script)*, '
+         'got (a a img img select a div )',
+        'No declaration for attribute align of element img',
+        'Element script does not carry attribute type',
+        'No declaration for attribute language of element script',
+        'Element form content does not follow the DTD, expecting (p | h1 | h2 '
+         '| h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | '
+         'address | fieldset | table | noscript | ins | del | script)*, got '
+         '(input input input div ).',
+        'No declaration for attribute name of element form',
+        'No declaration for attribute onload of element form',
+        'Element table content does not follow the DTD, expecting (caption? , '
+         '(col* | colgroup*) , thead? , tfoot? , (tbody+ | tr+)), got '
+         '(th th th tr )',
+        'Element form content does not follow the DTD, expecting (p | h1 | h2 '
+         '| h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | '
+         'address | fieldset | table | noscript | ins | del | script)*, got '
+         '(input input input div )',
+        ]
+
+    def testAuthoringPage(self):
         """Creates a block for a freetext idevice
         and makes it render"""
         # Pretend to add an idevice
         request = self._request(action='AddIdevice', object='1')
-        self.mainpage.authoringPage.render(request)
+        ctx = RequestContext(request)
+        html = self.mainpage.authoringPage.render(request)
+        tidier = HTMLChecker(html, True, self.ignoreErrorMsgs)
+        if not tidier.check():
+            self.fail('Authoring Page generated bad XHTML')
         ln = len(self.package.currentNode.idevices)
         assert ln >= 1, 'Should be at least one idevice, only %s' % ln
         idevice = self.package.currentNode.idevices[0]
@@ -45,10 +76,10 @@ class TestBlock(SuperTestCase):
         assert ln >= 1, 'Should be at least one block, only %s' % ln
         block = self.mainpage.authoringPage.blocks[0]
         assert block.idevice is idevice
-        print dir(self)
         html = block.renderEditButtons()
-        tidier = HTMLTidy(html)
-        tidier.check()
+        tidier = HTMLChecker(html, False, self.ignoreErrorMsgs)
+        if not tidier.check():
+            self.fail('Authoring Page generated bad XHTML')
 
         
 

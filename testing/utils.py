@@ -19,8 +19,7 @@
 
 import logging
 from logging import DEBUG, INFO, WARNING, ERROR, CRITICAL
-import sys, unittest
-#TODO Popen3 not available on Windows!!!  from popen2                  import Popen3
+import os, sys, unittest
 from exe.application         import Application
 from exe.engine.config       import Config
 from exe.engine.configparser import ConfigParser
@@ -131,46 +130,112 @@ class SuperTestCase(unittest.TestCase):
         return FakeRequest(**kwargs)
 
 
-class HTMLTidy(object):
+class HTMLChecker(object):
     """Use this to check html output with htmltidy.
     Only works on *nix
     """
 
-    def __init__(self, html):
+    def __init__(self, html, expectHead, resToIgnore=[]):
         """
         'html' is the html/xhtml that you want to check
+        if 'expectHead' is false, we'll wrap html in a nice header so as not to
+        kill pylint
+        'resToIgnore' a sequence of strings or regular expressions to filter out
+        some errors
+        filter them out of the list of warnings/errors
         """
-        self.html = html
+        # Wrap the html in proper document tags if necessary
+        if not expectHead:
+            self.html = '<html><head><title>No Title</title></head><body>%s</body></html>' % html
+        else:
+            self.html = html
+        self.resToIgnore = resToIgnore
         
     def check(self):
         """
         Actually runs htmltidy to check the html
         """
+        try:
+            from popen2 import Popen3
+        except ImportError:
+            # Windows doesn't have Popen3
+            print '-> Popen3 not available, skipping test <-'
+            return
         htmlFile = open('tmp.html', 'wb')
-        #htmlFile.write(self.html)
-            
-        htmlFile.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0'
-                       'Strict//EN"'
-                       '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n'
-                       '<html><head><title>testing</title></head><body>'
-                       '<notag>hello</body></html>')
+        htmlFile.write(self.html)
         htmlFile.close()
-        process = Popen3('tidy tmp.html', True)
+        process = Popen3('xmllint --dtdvalid xhtml1-strict.dtd tmp.html', True)
         ret = process.wait()
-        print dir(self)
-        if ret == 0:
-            print 'ok'
-        elif ret == 256:
-            print 'Warnings'
-        elif ret == 512:
-            print 'Errors'
+        if os.WIFEXITED(ret):
+            ret = os.WEXITSTATUS(ret)
         else:
-            print ret
-        print process.childerr.read()
+            raise ValueError("XMLLint not exited, when should of")
+        err = process.childerr.read()
+        out = process.fromchild.read()
+        if ret == 0:
+            # Perfect!
+            return True
+        elif ret in (1, 3,4):
+            # Here we have errors and must filter some out before returning
+            return self.filterErrors(err, ret)
+        else:
+            raise ValueError('Unknown return code returned by xmllint: %d' % ret) 
 
+    def filterErrors(self, stderr, returnCode):
+        """
+        Takes the stderr output of xmllint and filters it against our
+        regularExpressions, prints the result and raises
+        an assertion error if 
+        """
+        # Each error consists of one or more lines, the first line can be told
+        # because it starts with "tmp.html:\d+:"
+        stderr = stderr.split('\n')
+        if stderr[-1] == '':
+            # Ignore last two lines of rubbish :)
+            del stderr[-2:] 
+        errors = {}
+        for line in stderr:
+            if line.startswith('tmp.html:'):
+                key = line
+                errors[key] = [line]
+            else:
+                errors[key].append(line)
+        # Filter only the first line of each error against the regexps
+        for reg in self.resToIgnore:
+            if hasattr(reg, 'search'):
+                # Regular expression search filter
+                check = lambda k: reg.search(k)
+            else:
+                # String in filter
+                check = lambda k: reg in k
+            for key in errors.keys():
+                if check(key):
+                    del errors[key]
+        # Now if there are any left print them out and fail the test
+        if errors:
+            errorFile = open('tmp.html.errors', 'w')
+            def output(line=''):
+                print line
+                errorFile.write(line+'\n')
+            keys = errors.keys()
+            keys.sort()
+            if returnCode == 1:
+                output("Invalid XML:")
+            else:
+                output("Errors in HTML:")
+            for key in keys:
+                error = errors[key]
+                for line in error:
+                    output(line)
+            output()
+            output('Run this test on its own and then examing "tmp.html" ')
+            output('for more info. Error output save to "tmp.html.errors"')
+            errorFile.close()
+            return False
+        else:
+            return True
 
         
-
 class TestSuperTestCase(SuperTestCase):
     """
     Just provides a simple test to check that the initialisation code is running
