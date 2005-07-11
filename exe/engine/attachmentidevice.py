@@ -65,7 +65,6 @@ class AttachmentIdevice(Idevice):
         self.description        = u""
         self.descriptionInstruc = (u"Provide a brief description of the "
                                     "file")
- 
 
     def getResources(self):
         """

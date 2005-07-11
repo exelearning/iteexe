@@ -207,27 +207,27 @@ class ImageElement(Element):
             html += u"height=\""+self.field.height+"\" " 
         html += u"onload=\"imageChanged('"+self.id+"');\" "
         html += u"/>\n"
-        html += u"<br/>\n"
+        html += u"<p>\n"
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")
-        html += u"</a><br/>\n"
-        html += u"<b>%s</b>\n" % _(u"Display as:")
+        html += u"</a></p>\n"
+        html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" " 
         html += u"name=\"width"+self.id+"\" " 
         html += u"value=\"%s\" " % self.field.width
         html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
-        html += u"size=\"5\" />\n"
+        html += u"size=\"4\" />\n"
         html += u"x\n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" " 
         html += u"name=\"height"+self.id+"\" " 
         html += u"value=\"%s\" " % self.field.height
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
-        html += u"size=\"5\" />\n"
+        html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
-       # html += u"<br/>\n"
+        html += u"</p>\n"
         
         return html
 
