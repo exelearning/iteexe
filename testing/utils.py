@@ -160,23 +160,13 @@ class HTMLChecker(object):
                     '<head><title>No Title</title></head><body>%s</body></html>'
                     % html)
         # Use xmllint
-        try:
-            from popen2 import Popen3
-        except ImportError:
-            # Windows doesn't have Popen3
-            print '-> Popen3 not available, skipping test <-'
-            return
         htmlFile = open('tmp.html', 'wb')
         htmlFile.write(html)
         htmlFile.close()
-        process = Popen3('xmllint --encode utf8 --dtdvalid xhtml1-strict.dtd tmp.html', True)
-        ret = process.wait()
-        if os.WIFEXITED(ret):
-            ret = os.WEXITSTATUS(ret)
-        else:
-            raise ValueError("XMLLint not exited, when should of")
-        err = process.childerr.read()
-        out = process.fromchild.read()
+        stdin, stdout, stderr = os.popen3('xmllint --encode utf8 --dtdvalid xhtml1-strict.dtd tmp.html', True)
+        out = stdout.read()
+        err = stderr.read()
+        ret = os.wait()[1] # This waits for the process to finish
         if ret == 0:
             # Perfect!
             return True
