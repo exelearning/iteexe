@@ -93,18 +93,26 @@ class MultichoiceBlock(Block):
         html += common.elementInstruc("hint"+self.id, self.hintInstruc)
         html += common.richTextArea("hint"+self.id, self.hint)
         html += "<table width =\"100%%\">"
+        html += "<thead>"
+        html += "<tr>"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
-        html += "</th><th>%s"  % _("Correct")
+        html += "</th>"
+        html += "<th>%s"  % _("Correct")
         html += "<br/>" + _("Option")
         html += common.elementInstruc("key"+self.id, self.keyInstruc)
-        html += "</th><th>%s " % _("Feedback")
+        html += "</th>"
+        html += "<th>%s " % _("Feedback")
         html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
         html += "</th>"
+        html += "</tr>"
+        html += "</thead>"
+        html += "<tbody>"
 
         for element in self.optionElements:
             html += element.renderEdit() 
             
+        html += "</tbody>"
         html += "</table>\n"
         value = _("Add another option")    
         html += common.submitButton("addOption"+unicode(self.id), value)
@@ -118,11 +126,11 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<script language="JavaScript" src="common.js"></script>\n'
-        html += u'<script language="JavaScript" src="libot_drag.js"></script>\n'
+        html  = u'<script type="JavaScript" src="common.js"></script>\n'
+        html += u'<script type="JavaScript" src="libot_drag.js"></script>\n'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += "<img class=\"iDevice_icon\" "
+        html += '<img alt="" class="iDevice_icon" '
         html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
@@ -131,12 +139,13 @@ class MultichoiceBlock(Block):
         html += '<span style="background-image:url(\'panel-amusements.png\');">'
         html += '\n<a onmousedown="Javascript:updateCoords(event);'
         html += 'showMe(\'i%s\', 350, 100);" ' % self.hintId
-        html += 'border="0" align="middle" \n'
-        html += 'style="cursor:help;" title="Hint" \n'
+        html += 'style="cursor:help;align:center;vertical-align:middle;" title="Hint" \n'
         html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
-        html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId 
-        html += "<div style=\"float:right;\" >"
-        html += '<img src="stock-stop.png" title="'+_("Close")+'" ' 
+        html += '<div id="i%s" style="display:none; z-index:99;">' % self.hintId 
+        html += '<div style="float:right;" >'
+        html += '<img alt="%s" ' % _('Close')
+        html += 'src="stock-stop.png" title="%s"' % _('Close')
+       
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
         html += "<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.hint)                
         html += "</div>\n"
@@ -154,7 +163,7 @@ class MultichoiceBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<img class=\"iDevice_icon\" "
+        html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
@@ -190,9 +199,11 @@ class MultichoiceBlock(Block):
         html += "//-->\n"
         html += "</script>\n"
         html += "<table>"
+        html += "<tbody>"
         for element in self.optionElements:
             html += element.renderAnswerView()
             
+        html += "</tbody>"
         html += "</table>"
             
         for element in self.optionElements:

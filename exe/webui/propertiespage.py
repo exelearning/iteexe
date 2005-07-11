@@ -64,11 +64,11 @@ class PropertiesPage(RenderableResource):
            '''<style type="text/css">''',
            '''@import url(/css/exe.css);''',
            '''@import url(/style/default/content.css);</style>''',
-           '''<script language="JavaScript" '''
+           '''<script type="JavaScript" '''
            '''src="/scripts/common.js"></script>''',
-           '''<script language="JavaScript" '''
+           '''<script type="JavaScript" '''
            '''src="/scripts/fckeditor.js"></script>''',
-           '''<script language="JavaScript" '''
+           '''<script type="JavaScript" '''
            '''src="/scripts/libot_drag.js"></script>''',
            '''<title>eXe : elearning XHTML editor</title>''',
            '''<meta http-equiv="content-type" content="text/html;  '''

@@ -197,7 +197,7 @@ the selection of an image from your stored picture files."""
         html += """
             function submitLink(action, object, changed) 
             {
-                var form = document.contentForm
+                var form = document.getElementById("contentForm")
             
                 form.action.value = action;
                 form.object.value = object;
@@ -252,11 +252,11 @@ the selection of an image from your stored picture files."""
                 html += "onmousedown=\"Javascript:updateCoords(event);\" "
                 html += "onclick=\"Javascript:showMe('phelp', 420, 240);\" " 
                 html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
-                html += "<img src=\"/images/info.png\" border=\"0\" "
+                html += '<img alt="Info" src="/images/info.png" border="0" '
                 html += "align=\"middle\" /></a>\n"
                 html += "<div id=\"phelp\" style=\"display:none;\">"
                 html += "<div style=\"float:right;\" "
-                html += "<img src=\"/images/stock-stop.png\" "
+                html += '<img alt="Close" src="/images/stock-stop.png" '
                 html += " title='"+_("Close")+"' border='0' align='middle' "
                 html += "onmousedown=\"Javascript:hideMe();\"/></div>"
                 if self.idevice.purpose != "":

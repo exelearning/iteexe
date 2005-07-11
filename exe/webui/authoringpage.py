@@ -91,16 +91,15 @@ class AuthoringPage(RenderableResource):
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
        # html += "<pre>%s</pre>\n" % str(request.args)# to be deleted
-        html += u"<body>\n"
+        html += u'<body onload="clearHidden();">\n'
         html += u"<form method=\"post\" "
         html += u"action=\""+request.path+"#currentBlock\""
-        html += u" id=\"contentForm\" name=\"contentForm\""
-        html += u" onload=\"clearHidden();\">\n"
+        html += u" id=\"contentForm\">"
+        html += u'<div id="main">\n'
         html += common.hiddenField(u"action")
         html += common.hiddenField(u"object")
         html += common.hiddenField(u"isChanged", u"0")
         html += u'<!-- start authoring page -->\n'
-        html += u'<div id="main">\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<p id="nodeTitle">\n'
         html += topNode.title
@@ -127,11 +126,11 @@ class AuthoringPage(RenderableResource):
         html += u'@import url(/css/exe.css);\n'
         html += u'@import url(/style/%s/content.css);\n' % self.package.style
         html += u'</style>\n'
-        html += u'<script language="JavaScript" src="/scripts/common.js">'
+        html += u'<script type="JavaScript" src="/scripts/common.js">'
         html += u'</script>\n'
-        html += u'<script language="JavaScript" src="/scripts/fckeditor.js">'
+        html += u'<script type="JavaScript" src="/scripts/fckeditor.js">'
         html += u'</script>\n'
-        html += u'<script language="JavaScript" src="/scripts/libot_drag.js">'
+        html += u'<script type="JavaScript" src="/scripts/libot_drag.js">'
         html += u'</script>\n'
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
         html += u'<meta http-equiv="content-type" content="text/html; '

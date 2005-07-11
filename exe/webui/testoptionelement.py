@@ -85,7 +85,7 @@ class TestoptionElement(object):
         answer = answer.replace("\"", "\\\"")
         html = u"<tr><td>"
         html += common.richTextArea(self.answerId, answer)
-        html += "</td><td align = \"center\">\n"
+        html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.keyId, self.option.isCorrect, self.id)
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 

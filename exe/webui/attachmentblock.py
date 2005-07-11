@@ -93,7 +93,8 @@ class AttachmentBlock(Block):
                 u'<br/>',
                 common.richTextArea(u'description'+self.id,
                                     description),
-                u'<u>%s</u>' % self.idevice.filename,
+                u'<span style="text-decoration:underline">'
+                 u'%s</span>' % self.idevice.filename,
                 u'<br/>',
                 self.renderEditButtons(),
                 u'</div>')
@@ -109,7 +110,9 @@ class AttachmentBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<a href=\"resources/"+self.idevice.filename+"\" "
-        html += u"target=\"_blank\" >"
+        # TODO: Find out what can replace target that is xhtml compatible
+        #html += u"target=\"_blank\" >"
+        html += u">"
         html += self.idevice.label
         html += u"</a> <br/> \n"
         html += self.idevice.description + u"<br/>"
@@ -126,7 +129,9 @@ class AttachmentBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<a href=\""+self.idevice.filename+"\" "
-        html += u"target=\"_blank\" >"
+        # TODO: Find out what can replace target that is xhtml compatible
+        #html += u"target=\"_blank\" >"
+        html += u">"
         html += self.idevice.label
         html += u"</a> <br/> \n"
         html += self.idevice.description + u"<br/>"

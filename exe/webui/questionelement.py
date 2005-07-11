@@ -121,13 +121,13 @@ class QuestionElement(object):
         html += "<b>%s</b><br/>" % _("Question")      
         html += self.question.question  
         html += '<div id="view%s" style="display:block;">' % self.id
-        html += '<input type="button" name ="btnshow%s" ' % self.id
+        html += '<input type="button" name="btnshow%s" ' % self.id
         html += 'value ="Click here" ' 
-        html += 'onclick ="showAnswer(\'%s\',1)"/></div>\n ' % self.id
+        html += 'onclick="showAnswer(\'%s\',1)"/></div>\n ' % self.id
         html += '<div id="hide%s" style="display:none;">' % self.id
-        html += '<input type="button" name ="btnhide%s" '  % self.id 
-        html += 'value ="Hide"'
-        html += 'onclick ="showAnswer(\'%s\',0)"/></div>\n ' % self.id
+        html += '<input type="button" name="btnhide%s" ' % self.id 
+        html += 'value="Hide" '
+        html += 'onclick="showAnswer(\'%s\',0)"/></div>\n ' % self.id
         html += '<div id="s%s" class="feedback" style=" ' % self.id
         html += 'display: none;">'
         html += self.question.feedback

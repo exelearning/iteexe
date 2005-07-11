@@ -21,6 +21,10 @@ a { color: #003366;
 a:hover { background-color: #F4F4F4;
 	  text-decoration: none; }
 
+img {
+    border: 0px;
+}
+
 li {list-style-position: inside;}
 
 div#nodeDecoration {

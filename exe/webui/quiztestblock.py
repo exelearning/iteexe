@@ -120,10 +120,10 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<form name="contentForm">\n'
+        html  = u'<form id="contentForm">\n'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<img class=\"iDevice_icon\" "
+        html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"multichoice.gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
@@ -165,8 +165,8 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + str(i) + " = " 
             answers  += str(element.question.correctAns) + ";\n"
-            chk = "document.contentForm." + quesId+"[i].checked"
-            value = "document.contentForm." + quesId+"[i].value"
+            chk = "document.getElementById('\"contentForm\")." + quesId+"[i].checked"
+            value = "document.getElementById(\"contentForm\")." + quesId+"[i].value"
             varStrs += "var " + varStr + ";\n"
             keyStrs += "var key" + str(i)+ " = " 
             keyStrs += str(element.question.correctAns) + ";\n"   
@@ -205,7 +205,7 @@ class QuizTestBlock(Block):
      
             calcRawScore();
             actualScore =  Math.round(rawScore / numQuestions * 100);
-            document.contentForm.submitB.disabled = "True"
+            document.getElementById("contentForm").submitB.disabled = "True"
             alert("Your score is " + actualScore + "%")
            
         }
@@ -239,8 +239,8 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + unicode(i) + " = " 
             answers  += unicode(element.question.correctAns) + ";\n"
-            chk = "document.contentForm." + quesId+"[i].checked"
-            value = "document.contentForm." + quesId+"[i].value"
+            chk = "document.getElementById(\"contentForm\")." + quesId+"[i].checked"
+            value = "document.getElementById(\"contentForm\")." + quesId+"[i].value"
             varStrs += "var " + varStr + ";\n"
             keyStrs += "var key" + unicode(i)+ " = " 
             keyStrs += unicode(element.question.correctAns) + ";\n"           
@@ -331,7 +331,7 @@ class QuizTestBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<img class=\"iDevice_icon\" "
+        html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"

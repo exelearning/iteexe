@@ -41,6 +41,10 @@ form > #main {
 
 	} // makes style apply to authoring in eXe environment by removing left indent
 
+img {
+    border: 0px;
+}
+
 li {list-style-position: inside;}
 
 

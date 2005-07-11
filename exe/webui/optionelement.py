@@ -37,7 +37,9 @@ class OptionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = unicode(index) + "b" + idevice.id        
+        # Having id="0b0" kills xhtml because 0bxxx means binary number
+        # So we stick an "a" in front of it
+        self.id         = "a" + unicode(index) + "b" + idevice.id
         self.idevice    = idevice
         self.option     = option
         self.answerId   = "optionAnswer"+ unicode(index) + "b" + idevice.id
@@ -87,7 +89,7 @@ class OptionElement(object):
         feedback = feedback.replace('"', '\\"')
         html = u"<tr><td>"
         html += common.richTextArea(self.answerId, answer)
-        html += "</td><td align = \"center\">\n"
+        html += "</td><td align=\"center\">\n"
         html += common.option(self.keyId, self.option.isCorrect, self.id)        
         html += "</td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
@@ -109,9 +111,9 @@ class OptionElement(object):
   
         length = len(self.idevice.options)
         html  = '<tr><td>'
-        html += '<input type = "radio" name = "option%s" ' % self.idevice.id
-        html += 'id = "%s"' % self.id
-        html += 'onclick = "getFeedback(%d,%d,\'%s\')"/>' % (self.index, 
+        html += '<input type="radio" name="option%s" ' % self.idevice.id
+        html += 'id="%s" ' % self.id
+        html += 'onclick="getFeedback(%d,%d,\'%s\')"/>' % (self.index, 
                                                 length, self.idevice.id)
         html += '</td><td>\n'
         html += self.option.answer + "</td></tr>\n"

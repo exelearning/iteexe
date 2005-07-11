@@ -198,14 +198,16 @@ class ImageElement(Element):
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
-        html += u"<img id=\"img"+self.id+"\" "
+        html += u'<img alt="" '
+        html += u'id="img%s" ' % self.id
         html += u"onclick=\"addImage('"+self.id+"');\" "
         html += u"src=\"resources/"+self.field.imageName+"\" "
         if self.field.width:
             html += u"width=\""+self.field.width+"\" " 
         if self.field.height:
             html += u"height=\""+self.field.height+"\" " 
-        html += u"onload=\"imageChanged('"+self.id+"');\" "
+        # TODO: This was removed for xhtml comliance. Find out what it did!
+        #html += u"onload=\"imageChanged('"+self.id+"');\" "
         html += u"/>\n"
         html += u"<p>\n"
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"

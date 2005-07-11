@@ -23,7 +23,6 @@ from exe.engine.idevice     import Idevice
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.renderable   import Renderable
 from exe.engine.node        import Node
-from exe.application        import Application
 from utils                  import SuperTestCase, HTMLChecker
 from nevow.context          import RequestContext
 
@@ -35,53 +34,42 @@ class TestBlock(SuperTestCase):
 
     # TODO: In trunk, we shouldn't ignore any error messages
     ignoreErrorMsgs = [
-        'No declaration for attribute border of element img',
-        'Element img does not carry attribute alt',
-        'Element body content does not follow the DTD, expecting (p | h1 | h2 '
-         '| h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | '
-         'address | fieldset | table | form | noscript | ins | del | script)*, '
-         'got (a a img img select a div )',
-        'No declaration for attribute align of element img',
-        'Element script does not carry attribute type',
-        'No declaration for attribute language of element script',
-        'Element form content does not follow the DTD, expecting (p | h1 | h2 '
-         '| h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | '
-         'address | fieldset | table | noscript | ins | del | script)*, got '
-         '(input input input div ).',
-        'No declaration for attribute name of element form',
-        'No declaration for attribute onload of element form',
-        'Element table content does not follow the DTD, expecting (caption? , '
-         '(col* | colgroup*) , thead? , tfoot? , (tbody+ | tr+)), got '
-         '(th th th tr )',
-        'Element form content does not follow the DTD, expecting (p | h1 | h2 '
-         '| h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | '
-         'address | fieldset | table | noscript | ins | del | script)*, got '
-         '(input input input div )',
         ]
 
     def testAuthoringPage(self):
         """Creates a block for a freetext idevice
         and makes it render"""
-        # Pretend to add an idevice
-        request = self._request(action='AddIdevice', object='1')
-        ctx = RequestContext(request)
-        html = self.mainpage.authoringPage.render(request)
-        tidier = HTMLChecker(html, True, self.ignoreErrorMsgs)
-        if not tidier.check():
-            self.fail('Authoring Page generated bad XHTML')
+        # Add some idevices to the main page
+        def addIdevice(id_):
+            request = self._request(action='AddIdevice', object=str(id_))
+            ctx = RequestContext(request)
+            return self.mainpage.authoringPage.render(request)
+        for i in range(1,8):
+            allHtml = addIdevice(i)
+        # Check all the idevices and blocks like each other
         ln = len(self.package.currentNode.idevices)
         assert ln >= 1, 'Should be at least one idevice, only %s' % ln
         idevice = self.package.currentNode.idevices[0]
         ln = len(self.mainpage.authoringPage.blocks)
         assert ln >= 1, 'Should be at least one block, only %s' % ln
-        block = self.mainpage.authoringPage.blocks[0]
-        assert block.idevice is idevice
-        html = block.renderEditButtons()
-        tidier = HTMLChecker(html, False, self.ignoreErrorMsgs)
-        if not tidier.check():
+        chunks = zip(self.mainpage.authoringPage.blocks,
+                     self.package.currentNode.idevices)
+        for i, (block, idevice) in enumerate(chunks):
+            assert block.idevice is idevice
+            viewHTML = block.renderView('default')
+            previewHTML = block.renderPreview('default')
+            editHTML = block.renderEdit('default')
+            checker = HTMLChecker(self.ignoreErrorMsgs)
+            if not checker.check(viewHTML, True):
+                self.fail('Block "%s" generated bad view XHTML' % idevice.title)
+            if not checker.check(previewHTML, True):
+                self.fail('Block "%s" generated bad preview XHTML' %
+                          idevice.title)
+            if not checker.check(editHTML, True):
+                self.fail('Block "%s" generated bad edit XHTML' % idevice.title)
+        if not checker.check(allHtml, False):
             self.fail('Authoring Page generated bad XHTML')
 
-        
 
 if __name__ == "__main__":
     unittest.main()

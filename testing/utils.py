@@ -131,30 +131,35 @@ class SuperTestCase(unittest.TestCase):
 
 
 class HTMLChecker(object):
-    """Use this to check html output with htmltidy.
+    """Use this to check html output with xmllint.
     Only works on *nix
     """
 
-    def __init__(self, html, expectHead, resToIgnore=[]):
+    def __init__(self, resToIgnore=[]):
         """
-        'html' is the html/xhtml that you want to check
-        if 'expectHead' is false, we'll wrap html in a nice header so as not to
-        kill pylint
         'resToIgnore' a sequence of strings or regular expressions to filter out
         some errors
         filter them out of the list of warnings/errors
         """
-        # Wrap the html in proper document tags if necessary
-        if not expectHead:
-            self.html = '<html><head><title>No Title</title></head><body>%s</body></html>' % html
-        else:
-            self.html = html
         self.resToIgnore = resToIgnore
         
-    def check(self):
+    def check(self, html, wrap):
         """
-        Actually runs htmltidy to check the html
+        Actually runs xmllint to check the html
+        'html' is the html/xhtml that you want to check
+        if 'wrap' is true, we'll wrap the html in a nice header so as not to
+        kill pylint
         """
+        # Wrap the html in proper document tags if necessary
+        if wrap:
+            html = ('<?xml version="1.0" encoding="iso-8859-1"?>'
+                    '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
+                    'Transitional//EN" '
+                    '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+                    '<html xmlns="http://www.w3.org/1999/xhtml">'
+                    '<head><title>No Title</title></head><body>%s</body></html>'
+                    % html)
+        # Use xmllint
         try:
             from popen2 import Popen3
         except ImportError:
@@ -162,9 +167,9 @@ class HTMLChecker(object):
             print '-> Popen3 not available, skipping test <-'
             return
         htmlFile = open('tmp.html', 'wb')
-        htmlFile.write(self.html)
+        htmlFile.write(html)
         htmlFile.close()
-        process = Popen3('xmllint --dtdvalid xhtml1-strict.dtd tmp.html', True)
+        process = Popen3('xmllint --encode utf8 --dtdvalid xhtml1-strict.dtd tmp.html', True)
         ret = process.wait()
         if os.WIFEXITED(ret):
             ret = os.WEXITSTATUS(ret)

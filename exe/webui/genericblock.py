@@ -73,7 +73,7 @@ class GenericBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.icon:
-            html += u"<img class=\"iDevice_icon\" "
+            html += u'<img alt="" class="iDevice_icon" '
             html += u"src=\"/style/"+style+"/"+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
         html += self.idevice.title
@@ -96,7 +96,7 @@ class GenericBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.icon:
-            html += u"<img class=\"iDevice_icon\" "
+            html += u'<img alt="" class="iDevice_icon" '
             html += u"src=\""+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
         html += self.idevice.title

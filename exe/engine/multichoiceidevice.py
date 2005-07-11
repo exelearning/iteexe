@@ -73,7 +73,7 @@ When designing a MCQ test consider the following:
  """), _(u"""When building an MCQ consider the following: <ul>
 <li> Language use phrases that learners are familiar with and have 
 encountered in their study </li>
-<li> Keep responses concise  </li>
+<li> Keep responses concise </li>
 <li> There should be some consistency between the stem and the responses </li>
 <li> Provide enough options to challenge learners to think about their response
 </li>

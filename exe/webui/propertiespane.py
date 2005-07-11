@@ -89,7 +89,7 @@ class PropertiesPane(Renderable):
         html  = u''
         html += u'<a name="currentBlock"/>'
         html += u"<form method=\"post\" action=\"%s\" " % self.url
-        html += u"name=\"contentForm\" " 
+        html += u"id=\"contentForm\" " 
         html += u'onSubmit="return handleSubmit()">\n' 
         html += common.hiddenField("action")
         html += common.hiddenField("isChanged", self.package.isChanged)

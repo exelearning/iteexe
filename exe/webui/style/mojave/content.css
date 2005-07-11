@@ -22,6 +22,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+img {
+    border: 0px;
+}
+
 li {list-style-position: inside;}
 
 .popupDiv {

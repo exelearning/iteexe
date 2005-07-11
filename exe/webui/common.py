@@ -44,11 +44,11 @@ def header(style=u'default'):
             u'<style type="text/css">\n'
             u'  @import url(/css/exe.css);\n'
             u'  @import url(/style/%s/content.css);</style>\n'
-            u'<script language="JavaScript" src="/scripts/common.js">'
+            u'<script type="JavaScript" src="/scripts/common.js">'
             u'</script>\n'
-            u'<script language="JavaScript" src="/scripts/fckeditor.js">'
+            u'<script type="JavaScript" src="/scripts/fckeditor.js">'
             u'</script>\n'
-            u'<script language="JavaScript" src="/scripts/libot_drag.js">'
+            u'<script type="JavaScript" src="/scripts/libot_drag.js">'
             u'</script>\n'
             u'<title>%s</title>\n'
             u'<meta http-equiv="content-type" '
@@ -112,6 +112,7 @@ def image(name, value, width="", height=""):
     """Returns the XHTML for an image"""
     log.debug(u"image %s" % value)
     html  = u"<img id=\"%s\" " % name
+    html += u'alt="%s" ' % name
     if width:
         html += u"width=\"%s\" " % width
     if height:
@@ -141,10 +142,9 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     if title:
         titleText = u'title="%s" ' % title
     html  = u'<a %s' % titleText
-    html += ' href="#" onclick="%s">' % onclick
-    html += u'<img src="'+imageFile+'" '
-    html += u' border="0" />'
-    html += '</a>\n' 
+    html += u' href="#" onclick="%s">' % onclick
+    html += u'<img alt="Submit" src="%s+"/>' % imageFile
+    html += u'</a>\n' 
     return html
 
 
@@ -160,26 +160,8 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+message+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img src="'+imageFile+'" '
-    html += u' border="0" />'
-    html += '</a>\n' 
-    return html
-
-
-def select(action, object_, options, selection=None):
-    """Adds a dropdown selection to a form"""
-    onclick = u"submitLink('%s', '%s');" % (action, object_)
-    html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object_)
-    for opt, value in options:
-        selected = u''
-        if selection == opt:
-            selected = u'selected'
-
-        html += u' <option value="%s" %s>' % (value, selected)
-        html += opt
-        html += u'</option>\n'
-
-    html += u'</select>\n'
+    html += u'<img alt="Confirm and submit" src="%s+"/>' % imageFile
+    html += u'</a>\n' 
     return html
 
 
@@ -187,7 +169,7 @@ def option(name, checked, value):
     """Add a option input"""
     chkStr = u''
     if checked:
-        chkStr = u'checked'
+        chkStr = u'checked="checked"'
     html  = (u'<input type="radio" name="%s"'
              u' value="%s" %s/>\n' % 
               (name, value, chkStr))
@@ -217,24 +199,44 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += u' title="%s" ' % _(u'Instructions for completion')
         html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % instrucId
         html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
-        html += u'<img src="/images/%s" border="0" align="middle"/>' % imageFile
+        html += u'<img alt="%s" ' % _(u'Instructions for completion')
+        html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
         html += u'<div id="i%s" style="display:none; z-index:99;">' % instrucId
         html += u'<div style="float:right;" >'
-        html += u'<img src="/images/stock-stop.png" title="%s" ' % _("Close")
+        html += u'<img alt="%s" ' % _("Close")
+        html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
         html += u' onmousedown="Javascript:hideMe();"/></div>'
         html += u'<b>%s:</b><br/>%s<br/>' % (label, instruc)                
         html += u'</div>\n'
     return html
 
 
-def selectOptions(name, options, selection=None):
+def select_old(action, object_, options, selection=None):
     """Adds a dropdown selection to a form"""
+    onclick = u"submitLink('%s', '%s');" % (action, object_)
+    html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object_)
+    for opt, value in options:
+        selected = u''
+        if selection == opt:
+            selected = u'selected="selected"'
+
+        html += u' <option value="%s" %s>' % (value, selected)
+        html += opt
+        html += u'</option>\n'
+
+    html += u'</select>\n'
+    return html
+
+
+def selectOptions(name, options, selection=None):
+    """Adds a dropdown selection to a form
+       Used in ForumBlock"""
     html = u'<select  name="%s" >' % name
     for opt in options:
         selected = u''
         if selection == opt[0]:
-            selected = u'selected'
+            selected = u'selected="selected"'
 
         html += u' <option value="%s" %s>' % (opt[0], selected)
         html += opt[1]
@@ -242,3 +244,23 @@ def selectOptions(name, options, selection=None):
 
     html += u'</select>\n'
     return html
+
+def select(action, options, object_=None, selection=None):
+    """Adds a dropdown selection to a form"""
+    if action and object_:
+        onclick = u"submitLink('%s', '%s');" % (action, object_)
+        html = (u'<select onchange="%s" '
+                u' name="%s%s" >' % (onclick, action, object_))
+    else:
+        html = (u'<select name="%s%s" >' % (action, object_))
+    for opt, value in options:
+        selected = u''
+        if selection == opt:
+            selected = u'selected="selected"'
+        html += u' <option value="%s" %s>' % (value, selected)
+        html += opt
+        html += u'</option>\n'
+    html += u'</select>\n'
+    return html
+
+

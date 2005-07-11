@@ -114,7 +114,7 @@ class ForumBlock(Block):
         html += u"<br/><b>%s</b>" % _(u"Forum type:") 
         html += common.elementInstruc("type"+self.id, 
                                       self.idevice.typeInstruc)+ u"<br/>"
-        html += common.selectOptions("type"+self.id, typeArr, self.idevice.type) 
+        html += common.select("type"+self.id, typeArr, selection=self.idevice.type) 
         html += u"<br/><b>%s</b>" % _(u"Forum introduction:") 
         html += common.elementInstruc("introduction"+self.id, 
                                       self.idevice.introInstruc)+ u"<br/>"
@@ -123,24 +123,24 @@ class ForumBlock(Block):
         html += u"<b>%s</b>" % _(u"Can a student post to this forum?:")
         html += common.elementInstruc("studentpost"+self.id, 
                                       self.idevice.postInstruc)+ "<br/>"
-        html += common.selectOptions("studentpost"+self.id, postArr, 
-                                     self.idevice.studentpost) + "\n"
+        html += common.select("studentpost"+self.id, postArr, 
+                              selection=self.idevice.studentpost) + "\n"
         html += u"<br/><b>%s</b>" % _(u"Force everyone to be subscribed?:")
         
         html += common.elementInstruc("subscription"+self.id, 
                                       self.idevice.subscInstruc)+ "<br/>"
-        html += common.selectOptions("subscription"+self.id, subscArr, 
-                                     self.idevice.subscription) + "\n"
+        html += common.select("subscription"+self.id, subscArr, 
+                              selection=self.idevice.subscription) + "\n"
         html += u"<br/><b>%s</b>" % _(u"Group mode:")
         html += common.elementInstruc("groupmode"+self.id, 
                                       self.idevice.groupInstruc)+ u"<br/>"
-        html += common.selectOptions("groupmode"+self.id, groupArr, 
-                                     self.idevice.groupmode) + "\n"
+        html += common.select("groupmode"+self.id, groupArr, 
+                              selection=self.idevice.groupmode) + "\n"
         html += "<br/><b>%s</b>" % _(u"Visible to students:")
         html += common.elementInstruc("visible"+self.id, 
                                       self.idevice.visibleInstruc)+ u"<br/>"
-        html += common.selectOptions("visible"+self.id, visibleArr, 
-                                     self.idevice.visible) + u"\n"
+        html += common.select("visible"+self.id, visibleArr, 
+                              selection=self.idevice.visible) + u"\n"
         html += u"<br/><br/><b>%s</b>" % _(u"Discussion topic:") + u"<br/>"
         html += u"<b>%s</b>" % _(u"Subject:") 
         html += common.elementInstruc("subject"+self.id, 

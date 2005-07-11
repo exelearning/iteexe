@@ -121,12 +121,12 @@ class TrueFalseElement(object):
         html += '<span style="background-image:url(\'panel-amusements.png\');">'
         html += '\n<a onmousedown="Javascript:updateCoords(event);'
         html += 'showMe(\'i%s\', 350, 100);" ' % self.hintId
-        html += 'border="0" align="middle" \n'
         html += 'style="cursor:help;" title="Instructions for completion" \n'
         html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
         html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId
         html += "<div style=\"float:right;\" >"
-        html += '<img src="stock-stop.png" title="'+_("Close")+'" ' 
+        html += '<img alt="%s" ' % _("Close")
+        html += 'src="stock-stop.png" title="%s" ' % _("Close")
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
         html += "<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.question.hint)
         html += "</div>\n"
@@ -162,9 +162,9 @@ class TrueFalseElement(object):
     
     def __option(self, index, length, true):
         """Add a option input"""
-        html  = '<input type = "radio" name = "option%s" ' % self.id
-        html += 'id = "%s%s"' % (true, self.id)
-        html += 'onclick = "getFeedback(%d,%d,\'%s\')"/>' % (index, 
+        html  = '<input type="radio" name="option%s" ' % self.id
+        html += 'id="%s%s" ' % (true, self.id)
+        html += 'onclick="getFeedback(%d,%d,\'%s\')"/>' % (index, 
                                                 length, self.id)
         return html
     

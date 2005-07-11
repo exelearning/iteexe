@@ -70,11 +70,11 @@ class ImageWithTextBlock(Block):
         html += u"<p><b>%s</b> " % _("Float:")
         html += "<select name=\"float%s\">\n" % self.id
         if self.idevice.float == u"left":
-            html += "<option value=\"left\" selected>%s</option>" % _(u"Left")
-            html += "<option value=\"right\">%s</option>" % _(u"Right")
+            html += '<option value="left" selected="selected">%s</option>' % _(u"Left")
+            html += '<option value="right">%s</option>' % _(u"Right")
         else:
-            html += "<option value=\"left\">%s</option>" % _(u"Left")
-            html += "<option value=\"right\" selected>%s</option>" % _(u"Right")
+            html += '<option value="left">%s</option>' % _(u"Left")
+            html += '<option value="right" selected="selected">%s</option>' % _(u"Right")
         html += "</select>\n"
         html += u"</p>\n"
         html += self.textElement.renderEdit()

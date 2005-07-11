@@ -68,7 +68,7 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("\r", "")
         self.answer   = self.answer.replace("\n","\\n")
         self.answer   = self.answer.replace("'","\\'")
-        html  = "<div class=\"iDevice\" class=\"reflection\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html +=  _("Reflective question:") 
         html += common.elementInstruc("activity"+self.id, self.activityInstruc)
         html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)
@@ -104,13 +104,13 @@ class ReflectionBlock(Block):
 
         html += self.activity   
         html += '<div id="view%s" style="display:block;">' % self.id
-        html += '<input type="button" name ="btnshow%s" ' % self.id
+        html += '<input type="button" name="btnshow%s" ' % self.id
         html += 'value ="%s" ' % _(u"Click here")
-        html += 'onclick ="showAnswer(\'%s\',1)"/></div>\n ' % self.id
+        html += 'onclick="showAnswer(\'%s\',1)"/></div>\n ' % self.id
         html += '<div id="hide%s" style="display:none;">' % self.id
-        html += '<input type="button" name ="btnhide%s" '  % self.id 
-        html += 'value ="%s"' % _(u"Hide")
-        html += 'onclick ="showAnswer(\'%s\',0)"/></div>\n ' % self.id
+        html += '<input type="button" name="btnhide%s" '  % self.id 
+        html += 'value="%s" ' % _(u"Hide")
+        html += 'onclick="showAnswer(\'%s\',0)"/></div>\n ' % self.id
         html += '<div id="s%s" class="feedback" style=" ' % self.id
         html += 'display: none;">'
         html += self.answer

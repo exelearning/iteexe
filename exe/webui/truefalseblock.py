@@ -74,6 +74,8 @@ class TrueFalseBlock(Block):
         
         html  = "<div class=\"iDevice\">\n"
         html += "<table width =\"100%%\">"
+        html += "<thead>"
+        html += "<tr>"
         html += "<th>%s " % _("Questions")
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += "</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),
@@ -85,10 +87,14 @@ class TrueFalseBlock(Block):
         html += "</th><th>%s " % _("Hint")
         html += common.elementInstruc("hint"+self.id, self.hintInstruc)
         html += "</th>"
+        html += "</tr>"
+        html += "</thead>"
+        html += "<tbody>"
 
         for element in self.questionElements:
             html += element.renderEdit() 
             
+        html += "</tbody>"
         html += "</table>\n"
         value = _("Add another question")    
         html += common.submitButton("addQuestion"+unicode(self.id), value)
@@ -105,7 +111,7 @@ class TrueFalseBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<img class=\"iDevice_icon\" "
+        html += u'<img alt="" class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/multichoice.gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"     
@@ -126,11 +132,11 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = '<script language="JavaScript" src="common.js"></script>\n'
-        html += '<script language="JavaScript" src="libot_drag.js"></script>\n'
+        html  = '<script type="JavaScript" src="common.js"></script>\n'
+        html += '<script type="JavaScript" src="libot_drag.js"></script>\n'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += "<img class=\"iDevice_icon\" "
+        html += '<img alt="" class="iDevice_icon" '
         html += "src=\"multichoice.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
