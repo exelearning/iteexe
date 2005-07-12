@@ -206,13 +206,11 @@ class ImageElement(Element):
             html += u"width=\""+self.field.width+"\" " 
         if self.field.height:
             html += u"height=\""+self.field.height+"\" " 
-        # TODO: This was removed for xhtml comliance. Find out what it did!
-        #html += u"onload=\"imageChanged('"+self.id+"');\" "
         html += u"/>\n"
 
         html += u'<script type="text/javascript">\n'
-        ##html += u"""document.getElementById("img%s").setAttribute("onload", "imageChanged('%s');") """ % (self.id, self.id)
-        html += u"""document.getElementById("img%s").addEventListener("load", imageChanged, true); """ % self.id
+        html += u"document.getElementById('img"+self.id+"')."
+        html += "addEventListener('load', imageChanged, true);\n"
         html += u'</script>\n'
         html += u"<br/>\n"
 

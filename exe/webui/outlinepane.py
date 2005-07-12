@@ -242,12 +242,12 @@ class OutlinePane(Renderable):
         """
         Turns & into &amp; etc
         """
-        map = [('&', '&amp;'),
-               ('"', '&quot;'),
-               ("'", '&apos;'),
-               ('<', '&lt;'),
-               ('>', '&gt;')]
-        for src, dest in map:
+        xmlEntities = [('&', '&amp;'),
+                       ('"', '&quot;'),
+                       ("'", '&apos;'),
+                       ('<', '&lt;'),
+                       ('>', '&gt;')]
+        for src, dest in xmlEntities:
             string = string.replace(src, dest)
         return string
 

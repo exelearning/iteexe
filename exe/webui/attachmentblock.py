@@ -109,7 +109,8 @@ class AttachmentBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"""<a onclick="window.open('resources/%s', '_blank')" >""" % self.idevice.filename
+        html += u"<a onclick=\"window.open('resources/"+self.idevice.filename
+        html += u"', '_blank');\" >"
         html += self.idevice.label
         html += u"</a> <br/> \n"
         html += self.idevice.description + u"<br/>"
@@ -125,7 +126,8 @@ class AttachmentBlock(Block):
         log.debug("renderView")
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"""<a onclick="window.open('%s', '_blank')" >""" % self.idevice.filename
+        html += u"<a onclick=\"window.open('"+self.idevice.filename
+        html += u"', '_blank');\" >"
         html += self.idevice.label
         html += u"</a> <br/> \n"
         html += self.idevice.description + u"<br/>"

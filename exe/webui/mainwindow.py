@@ -28,7 +28,6 @@ import os
 import sys
 import shutil
 from exe.engine.path           import Path
-from exe.engine.package        import Package
 from exe.export.scormexport    import ScormExport
 from exe.export.imsexport      import IMSExport
 from exe.export.websiteexport  import WebsiteExport

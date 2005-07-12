@@ -114,7 +114,8 @@ class ForumBlock(Block):
         html += u"<br/><b>%s</b>" % _(u"Forum type:") 
         html += common.elementInstruc("type"+self.id, 
                                       self.idevice.typeInstruc)+ u"<br/>"
-        html += common.select("type"+self.id, typeArr, selection=self.idevice.type) 
+        html += common.select("type"+self.id, 
+                              typeArr, selection=self.idevice.type) 
         html += u"<br/><b>%s</b>" % _(u"Forum introduction:") 
         html += common.elementInstruc("introduction"+self.id, 
                                       self.idevice.introInstruc)+ u"<br/>"

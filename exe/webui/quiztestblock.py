@@ -165,8 +165,10 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + str(i) + " = " 
             answers  += str(element.question.correctAns) + ";\n"
-            chk = "document.getElementById('\"contentForm\")." + quesId+"[i].checked"
-            value = "document.getElementById(\"contentForm\")." + quesId+"[i].value"
+            chk = ("document.getElementById('\"contentForm\")." + 
+                   quesId+"[i].checked")
+            value = ("document.getElementById(\"contentForm\")." + 
+                     quesId+"[i].value")
             varStrs += "var " + varStr + ";\n"
             keyStrs += "var key" + str(i)+ " = " 
             keyStrs += str(element.question.correctAns) + ";\n"   
@@ -239,8 +241,10 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + unicode(i) + " = " 
             answers  += unicode(element.question.correctAns) + ";\n"
-            chk = "document.getElementById(\"contentForm\")." + quesId+"[i].checked"
-            value = "document.getElementById(\"contentForm\")." + quesId+"[i].value"
+            chk = ("document.getElementById(\"contentForm\")." + 
+                   quesId+"[i].checked")
+            value = ("document.getElementById(\"contentForm\")." + 
+                     quesId+"[i].value")
             varStrs += "var " + varStr + ";\n"
             keyStrs += "var key" + unicode(i)+ " = " 
             keyStrs += unicode(element.question.correctAns) + ";\n"           
