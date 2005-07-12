@@ -88,11 +88,11 @@ class EditorPage(RenderableResource):
         html += "<style type=\"text/css\">\n"
         html += "@import url(/css/exe.css);\n"
         html += "@import url(/style/standardwhite/content.css);</style>\n"
-        html += '<script type="JavaScript" src="/scripts/fckeditor.js">'
+        html += '<script type="text/javascript" src="/scripts/fckeditor.js">'
         html += '</script>\n'
-        html += '<script type="JavaScript" src="/scripts/libot_drag.js">'
+        html += '<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += '</script>\n'
-        html += '<script type="JavaScript" src="/scripts/common.js">'
+        html += '<script type="text/javascript" src="/scripts/common.js">'
         html += '</script>\n'
         html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "

@@ -109,10 +109,7 @@ class AttachmentBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<a href=\"resources/"+self.idevice.filename+"\" "
-        # TODO: Find out what can replace target that is xhtml compatible
-        #html += u"target=\"_blank\" >"
-        html += u">"
+        html += u"""<a onclick="window.open('resources/%s', '_blank')" >""" % self.idevice.filename
         html += self.idevice.label
         html += u"</a> <br/> \n"
         html += self.idevice.description + u"<br/>"
@@ -128,10 +125,7 @@ class AttachmentBlock(Block):
         log.debug("renderView")
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<a href=\""+self.idevice.filename+"\" "
-        # TODO: Find out what can replace target that is xhtml compatible
-        #html += u"target=\"_blank\" >"
-        html += u">"
+        html += u"""<a onclick="window.open('%s', '_blank')" >""" % self.idevice.filename
         html += self.idevice.label
         html += u"</a> <br/> \n"
         html += self.idevice.description + u"<br/>"
