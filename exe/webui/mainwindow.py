@@ -116,7 +116,7 @@ class MainWindow(gtk.Window):
         self.itemFactory.create_items(menuItems)
         self.add_accel_group(accelGrp)
         self.menu = self.itemFactory.get_widget("<main>")
-        self.vbox.pack_start(self.menu,    expand=gtk.FALSE)
+        self.vbox.pack_start(self.menu,    expand=False)
 
         # Browser
         self.browser = gtkmozembed.MozEmbed()
@@ -150,7 +150,7 @@ class MainWindow(gtk.Window):
         (config.webDir/'linux-profile').copytree(appDir/'linux-profile')
 
 
-    def newFile(self, *ignore):
+    def newFile(self, *dummy):
         """
         Create a new package
         TODO: check if the package was dirty
@@ -159,7 +159,7 @@ class MainWindow(gtk.Window):
         self.browser.load_url("http://localhost:8081")
 
         
-    def openFile(self, *ignore):
+    def openFile(self, *dummy):
         """
         load a new package
         """
@@ -179,7 +179,7 @@ class MainWindow(gtk.Window):
         chooser.destroy()
             
 
-    def saveFile(self, *ignore):
+    def saveFile(self, *dummy):
         """
         save the current package
         """
@@ -192,7 +192,7 @@ class MainWindow(gtk.Window):
         package.save(filename)
 
 
-    def saveFileAs(self, *ignore):
+    def saveFileAs(self, *dummy):
         """
         save the current package with a new name
         """
@@ -222,7 +222,7 @@ class MainWindow(gtk.Window):
         chooser.destroy()
 
 
-    def exportScorm(self, *ignore):
+    def exportScorm(self, *dummy):
         """
         Export a SCORM package
         """
@@ -258,7 +258,7 @@ class MainWindow(gtk.Window):
         chooser.destroy()
 
 
-    def exportIms(self, *ignore):
+    def exportIms(self, *dummy):
         """
         export as an IMS package
         """
@@ -294,7 +294,7 @@ class MainWindow(gtk.Window):
         chooser.destroy()
 
 
-    def exportWebsite(self, *ignore):
+    def exportWebsite(self, *dummy):
         """
         export as a self contained website
         """
@@ -348,7 +348,7 @@ class MainWindow(gtk.Window):
         chooser.destroy()
 
 
-    def editorTool(self, *ignore):
+    def editorTool(self, *dummy):
         """
         Show the editor HTML window
         """
@@ -360,7 +360,7 @@ class MainWindow(gtk.Window):
         editorWindow.show_all()
 
 
-    def about(self, *ignore):
+    def about(self, *dummy):
         """
         Show the about XUL window
         """
@@ -385,7 +385,7 @@ class MainWindow(gtk.Window):
         print repr(args)
 
 
-    def quit(self, *ignore):
+    def quit(self, *dummy):
         gtk.main_quit()
         return False
 
