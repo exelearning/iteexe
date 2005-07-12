@@ -143,7 +143,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
         titleText = u'title="%s" ' % title
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s">' % onclick
-    html += u'<img alt="Submit" src="%s+"/>' % imageFile
+    html += u'<img alt="Submit" src="%s"/>' % imageFile
     html += u'</a>\n' 
     return html
 
@@ -160,7 +160,7 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+message+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img alt="Confirm and submit" src="%s+"/>' % imageFile
+    html += u'<img alt="Confirm and submit" src="%s"/>' % imageFile
     html += u'</a>\n' 
     return html
 
