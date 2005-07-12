@@ -212,55 +212,26 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
     return html
 
 
-def select_old(action, object_, options, selection=None):
+def select(action, options, object_="", selection=None):
     """Adds a dropdown selection to a form"""
-    onclick = u"submitLink('%s', '%s');" % (action, object_)
-    html = u'<select onchange="%s" name="%s%s" >' % (onclick, action, object_)
-    for opt, value in options:
-        selected = u''
-        if selection == opt:
-            selected = u'selected="selected"'
+    html  = u'<select '
+    html += u'name="'+action+object_+'" '
 
-        html += u' <option value="%s" %s>' % (value, selected)
-        html += opt
-        html += u'</option>\n'
-
-    html += u'</select>\n'
-    return html
-
-
-def selectOptions(name, options, selection=None):
-    """Adds a dropdown selection to a form
-       Used in ForumBlock"""
-    html = u'<select  name="%s" >' % name
-    for opt in options:
-        selected = u''
-        if selection == opt[0]:
-            selected = u'selected="selected"'
-
-        html += u' <option value="%s" %s>' % (opt[0], selected)
-        html += opt[1]
-        html += u'</option>\n'
-
-    html += u'</select>\n'
-    return html
-
-def select(action, options, object_=None, selection=None):
-    """Adds a dropdown selection to a form"""
     if action and object_:
-        onclick = u"submitLink('%s', '%s');" % (action, object_)
-        html = (u'<select onchange="%s" '
-                u' name="%s%s" >' % (onclick, action, object_))
-    else:
-        html = (u'<select name="%s%s" >' % (action, object_))
-    for opt, value in options:
-        selected = u''
-        if selection == opt:
-            selected = u'selected="selected"'
-        html += u' <option value="%s" %s>' % (value, selected)
-        html += opt
+        # If the user gives an object_ create an onchange handler
+        html += u'onchange="submitLink(\''+action+'\', \''+object_+'\');"'
+
+    html += u'>\n'
+
+    for option, value in options:
+        html += u' <option value="'+value+'" '
+        if value == selection:
+            html += u'selected="selected" '
+        html += u'>'
+        html += option
         html += u'</option>\n'
     html += u'</select>\n'
+
     return html
 
 

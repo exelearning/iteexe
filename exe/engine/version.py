@@ -23,10 +23,11 @@ Version Information
 """
 
 project        = "exe"
-release        = "0.6"
+release        = "0.6.1"
 revision       = "$Revision$"[11:-2]
 version        = release + "." + revision
 
 if __name__ == '__main__':
     print project, version
+
 

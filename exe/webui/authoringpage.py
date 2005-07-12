@@ -90,7 +90,7 @@ class AuthoringPage(RenderableResource):
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
-       # html += "<pre>%s</pre>\n" % str(request.args)# to be deleted
+        #html += "<pre>%s</pre>\n" % str(request.args)# to be deleted
         html += u'<body onload="clearHidden();">\n'
         html += u"<form method=\"post\" "
         html += u"action=\""+request.path+"#currentBlock\""

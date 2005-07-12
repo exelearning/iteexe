@@ -87,21 +87,24 @@ class ForumBlock(Block):
         message      = message.replace("\n","\\n")
         message      = message.replace("'","\\'")
         
-        typeArr    = [['single', _(u'A single simple discussion')],
-                      ['eachuser', _(u'Each person posts one discussion')],
-                      ['general', _(u'Standard forum for general use')]]
+        typeArr    = [[_(u'A single simple discussion'),       'single'],
+                      [_(u'Each person posts one discussion'), 'eachuser'],
+                      [_(u'Standard forum for general use'),   'general']]
         
-        postArr    = [['2', _(u'Discussions and replies are allowed')],
-                      ['1', _(u'No discussions, but replies are allowed')],
-                      ['0', _(u'No discussions, no replies')]]
+        postArr    = [[_(u'Discussions and replies are allowed'),     '2'],
+                      [_(u'No discussions, but replies are allowed'), '1'],
+                      [_(u'No discussions, no replies'),              '0']]
         
-        subscArr   = [['0', _(u'No')], ['1', _(u'Yes, forever')], 
-                      ['2', _(u'Yes, initially')]]
+        subscArr   = [[_(u'No'),             '0'], 
+                      [_(u'Yes, forever'),   '1'], 
+                      [_(u'Yes, initially'), '2']]
         
-        groupArr   = [['0', _(u'No groups')], ['1', _(u'Separate groups')], 
-                      ['2', _(u'Visible groups')]]
+        groupArr   = [[_(u'No groups'),       '0'], 
+                      [_(u'Separate groups'), '1'], 
+                      [_(u'Visible groups'),  '2']]
         
-        visibleArr = [['1', _(u'Show')], ['0', _(u'Hide')]]
+        visibleArr = [[_(u'Show'), '1'], 
+                      [_(u'Hide'), '0']]
 
         
         html  = u"<div class=\"iDevice\" class=\"forum\">\n"

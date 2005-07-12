@@ -53,7 +53,8 @@ class WikipediaBlock(Block):
         log.debug("process " + repr(request.args))
 
         if u"loadWikipedia"+self.id in request.args:
-            self.idevice.loadArticle(request.args[u"wikipedia"][0])
+            self.idevice.site = request.args["site"][0]
+            self.idevice.loadArticle(request.args["article"][0])
         else:
             Block.process(self, request)
 
@@ -68,8 +69,12 @@ class WikipediaBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        html += _(u"Wikipedia Article ")
-        html += common.textInput(u"wikipedia", self.idevice.articleName)
+        sites = [(_(u"Wikipedia Article"), "http://en.wikipedia.org/"),
+                 (_(u"Wikibooks Article"), "http://en.wikibooks.org/")]
+        html += common.select("site", sites,
+                              selection=self.idevice.site)
+#        html += _(u"Wikipedia Article ")
+        html += common.textInput("article", self.idevice.articleName)
         html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
         html += u"<br/>\n"
         html += self.articleElement.renderEdit()

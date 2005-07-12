@@ -44,7 +44,8 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    Site = 'http://en.wikipedia.org/'
+    persistenceVersion = 1
+
     def __init__(self):
         Idevice.__init__(self, _(u"Wikipedia Article"), 
                          _(u"University of Auckland"), 
@@ -56,8 +57,8 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.article     = TextAreaField(_(u"Article"))
         self.article.idevice = self
         self.images      = {}
+        self.site        = 'http://en.wikipedia.org/'
  
-
 
     def getResources(self):
         """
@@ -76,7 +77,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.articleName = name
 
         name = urllib.quote(name.replace(" ", "_"))
-        net  = urllib.urlopen(WikipediaIdevice.Site+'wiki/'+name)
+        net  = urllib.urlopen(self.site+'wiki/'+name)
         page = net.read()
         net.close()
 
@@ -101,7 +102,7 @@ article from en.wikipedia.org, including copying the associated images."""),
             imageName = self.id + u"_" + imageSrc.split('/')[-1]
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
-                    imageSrc = WikipediaIdevice.Site + imageSrc
+                    imageSrc = self.site + imageSrc
                 imageDest = self.parentNode.package.resourceDir/imageName
                 urllib.urlretrieve(imageSrc, imageDest)
                 self.images[imageName] = True
@@ -119,7 +120,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         Changes links, etc
         """
         content = re.sub(r'href="/wiki/', 
-                         r'href="'+WikipediaIdevice.Site+'wiki/', content)
+                         r'href="'+self.site+'wiki/', content)
         content = re.sub(r'<div class="editsection".*?</div>', '', content)
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
@@ -160,5 +161,12 @@ article from en.wikipedia.org, including copying the associated images."""),
             self.parentNode.package.deleteResource(image)
         self.images = {}
         Idevice.delete(self)
+
+        
+    def upgradeToVersion1(self):
+        """
+        Called to upgrade from 0.6 release
+        """
+        self.site        = 'http://en.wikipedia.org/'
         
 # ===========================================================================
