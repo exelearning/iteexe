@@ -209,6 +209,12 @@ class ImageElement(Element):
         # TODO: This was removed for xhtml comliance. Find out what it did!
         #html += u"onload=\"imageChanged('"+self.id+"');\" "
         html += u"/>\n"
+
+        html += u'<script type="text/javascript">\n'
+        ##html += u"""document.getElementById("img%s").setAttribute("onload", "imageChanged('%s');") """ % (self.id, self.id)
+        html += u"""document.getElementById("img%s").addEventListener("load", imageChanged, true); """ % self.id
+        html += u'</script>\n'
+
         html += u"<p>\n"
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")

@@ -41,10 +41,6 @@ form > #main {
 
 	} // makes style apply to authoring in eXe environment by removing left indent
 
-img {
-    border: 0px;
-}
-
 li {list-style-position: inside;}
 
 
@@ -117,4 +113,13 @@ p.reading_feedback {
     padding: 4px 4px 4px 10px;
     margin-left: 15px;
 }
+
+img {
+    border: 0px;
+}
+
+a {
+    border: 0px;
+}
+
 

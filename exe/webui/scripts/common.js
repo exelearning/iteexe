@@ -43,7 +43,17 @@ function addImage(elementId) {
     }
 }
 
-function imageChanged(elementId) {
+function imageChanged(event) {
+    var id = event.currentTarget.getAttribute('id');
+    var elementId = id.substring(3, id.length);
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    width.value  = image.width;
+    height.value = image.height;
+}
+
+function imageChanged_old(elementId) {
     var image  = document.getElementById('img'+elementId);
     var width  = document.getElementById('width'+elementId);
     var height = document.getElementById('height'+elementId);
