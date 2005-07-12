@@ -15,15 +15,16 @@ body {
 
 a { color: #336633;
     text-decoration: none;
+    border: 0;
 }
 
 a:hover {
-	color: #FFFFCC;
-	text-decoration: underline;
+    color: #FFFFCC;
+    text-decoration: underline;
 }
 
 img {
-    border: 0px;
+    border: 0;
 }
 
 li {list-style-position: inside;}
@@ -36,15 +37,15 @@ li {list-style-position: inside;}
 }
 
 #main {
-	padding: 2px 10px 10px 10px;
-	margin: 10px 10px 10px 10px;
-	}
+    padding: 2px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    }
 
 /* styles for node title */
 
 div#nodeDecoration {
-	border-top: 1px solid #FFFFCC;
-	border-bottom: 1px solid #FFFFCC;
+    border-top: 1px solid #FFFFCC;
+    border-bottom: 1px solid #FFFFCC;
 }
 
 p#nodeTitle { 
@@ -80,7 +81,7 @@ p#nodeTitle {
 
 
 .iDevice p {
-	padding-left: 24px;
+    padding-left: 24px;
 }
 
 .iDeviceTitle {
@@ -94,7 +95,7 @@ p#nodeTitle {
 }    
 
 .iDevice_icon {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 p.reading_reference {

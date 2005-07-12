@@ -16,6 +16,11 @@ body {
 
 a { color: #003366;
     text-decoration: none;
+    border: 0;
+}
+
+img {
+    border: 0;
 }
 
 a:hover {color: #3C5866;
@@ -23,23 +28,23 @@ a:hover {color: #3C5866;
 }
 
 #main {
-	margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
         padding: 18px;
-	margin: 10px 10px 10px 10px;
-	background-color: #EDEFF0;
-	line-height: 140%;
+    margin: 10px 10px 10px 10px;
+    background-color: #EDEFF0;
+    line-height: 140%;
 
-	}
+    }
 
 
 form > #main {
-	margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
         padding: 18px;
-	margin: 10px 10px 10px 10px;
-	background-color: #EDEFF0;
-	line-height: 140%;
+    margin: 10px 10px 10px 10px;
+    background-color: #EDEFF0;
+    line-height: 140%;
 
-	} // makes style apply to authoring in eXe environment by removing left indent
+    } // makes style apply to authoring in eXe environment by removing left indent
 
 li {list-style-position: inside;}
 
@@ -47,8 +52,8 @@ li {list-style-position: inside;}
 /* -- style the node title on each page -- */
 
 div#nodeDecoration {
-	border-top: 1px solid #FFF;
-	border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
 }
 
 p#nodeTitle { 
@@ -83,8 +88,8 @@ p#nodeTitle {
 
 
 .iDevice p {
-	padding-left: 24px;
-	padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 20px;
 }
 
 .iDeviceTitle {
@@ -113,13 +118,4 @@ p.reading_feedback {
     padding: 4px 4px 4px 10px;
     margin-left: 15px;
 }
-
-img {
-    border: 0px;
-}
-
-a {
-    border: 0px;
-}
-
 

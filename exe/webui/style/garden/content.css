@@ -15,14 +15,15 @@ body {
 
 a { color: #FF6600;
     text-decoration: none;
-}
-
-a:hover { text-decoration: underline;
-	  color: #B34700;
+    border: 0;
 }
 
 img {
-    border: 0px;
+    border: 0;
+}
+
+a:hover { text-decoration: underline;
+      color: #B34700;
 }
 
 li {list-style-position: inside;}
@@ -72,7 +73,7 @@ div#nodeDecoration {
 
 
 .iDevice p {
-	padding-left: 24px;
+    padding-left: 24px;
 }
 
 .iDeviceTitle {
@@ -85,7 +86,7 @@ div#nodeDecoration {
 }    
 
 .iDevice_icon {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 
