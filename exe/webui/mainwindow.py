@@ -39,7 +39,7 @@ _   = gettext.gettext
 log = logging.getLogger(__name__)
 
 import pygtk
-pygtk.require ('2.0')
+#pygtk.require ('2.0')
 
 import gtk
 import gtkmozembed
@@ -51,6 +51,7 @@ class MainWindow(gtk.Window):
     """
     def __init__(self, application, packageName):
         """
+        Initialize
         """
         self.application = application
         self.config      = application.config
@@ -372,7 +373,7 @@ class MainWindow(gtk.Window):
         aboutWindow.show_all()
 
 
-    def newLocation(self, *args):
+    def newLocation(self, *dummy):
         """
         Note we've changed location
         """
@@ -382,10 +383,16 @@ class MainWindow(gtk.Window):
 
 
     def what(self, *args):
+        """
+        For debugging events
+        """
         print repr(args)
 
 
     def quit(self, *dummy):
+        """
+        Quit out of the application
+        """
         gtk.main_quit()
         return False
 
