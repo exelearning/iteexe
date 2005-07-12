@@ -33,6 +33,8 @@ class ImageWithTextIdevice(Idevice):
     """
     A ImageWithText Idevice is one built up from an image and free text.
     """
+    persistenceVersion = 1
+
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, _(u"Image with Text"), 
                          _(u"University of Auckland"), 
@@ -87,5 +89,12 @@ the piston with a brief textual summary of the key aspects of each visual.
         """
         self.image.delete()
         Idevice.delete(self)
+
+
+    def upgradeToVersion1(self):
+        """
+        Called to upgrade from 0.5 release
+        """
+        self.float = u"left"
         
 # ===========================================================================
