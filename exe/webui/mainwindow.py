@@ -38,7 +38,7 @@ import gettext
 _   = gettext.gettext
 log = logging.getLogger(__name__)
 
-import pygtk
+#import pygtk
 #pygtk.require ('2.0')
 
 import gtk
@@ -249,7 +249,7 @@ class MainWindow(gtk.Window):
             if filename.exists(): 
                 filename.remove()
             scormExport = ScormExport(self.config, stylesDir, filename)
-            scormExport.export(self.package)
+            scormExport.export(package)
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
@@ -285,7 +285,7 @@ class MainWindow(gtk.Window):
             if filename.exists(): 
                 filename.remove()
             imsExport = IMSExport(self.config, stylesDir, filename)
-            imsExport.export(self.package)
+            imsExport.export(package)
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
