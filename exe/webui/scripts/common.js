@@ -43,6 +43,7 @@ function addImage(elementId) {
     }
 }
 
+
 function imageChanged(event) {
     var id = event.currentTarget.getAttribute('id');
     var elementId = id.substring(3, id.length);
@@ -53,13 +54,6 @@ function imageChanged(event) {
     height.value = image.height;
 }
 
-function imageChanged_old(elementId) {
-    var image  = document.getElementById('img'+elementId);
-    var width  = document.getElementById('width'+elementId);
-    var height = document.getElementById('height'+elementId);
-    width.value  = image.width;
-    height.value = image.height;
-}
 
 function changeImageWidth(elementId) {
     var image  = document.getElementById('img'+elementId);
@@ -75,6 +69,7 @@ function changeImageWidth(elementId) {
     height.value = image.height;
 }
 
+
 function changeImageHeight(elementId) {
     var image  = document.getElementById('img'+elementId);
     var width  = document.getElementById('width'+elementId);
@@ -89,6 +84,7 @@ function changeImageHeight(elementId) {
     width.value  = image.width;
 }
 
+
 // Called by the user to provide a file name to add to the package
 function addFile(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -102,6 +98,7 @@ function addFile(blockId) {
         path.value = fp.file.path;
     }
 }
+
 
 function showMe(ident, w, h)
 {
@@ -124,6 +121,7 @@ function showMe(ident, w, h)
     }
 }
             
+
 function hideMe() {
     var elmDiv = document.getElementById('popupmessage');
     if (elmDiv) {
@@ -147,8 +145,13 @@ function updateCoords(e) {
 
 function clearHidden()
 {
-    document.contentForm.action.value = "";
-    document.contentForm.object.value = "";
+    var form = top["authoringIFrame1"].document.getElementById('contentForm')
+    if (!form) {
+        // try and find the form for the authoring page
+        form = document.getElementById('contentForm')
+    }
+    form.action.value = "";
+    form.object.value = "";
 }
 
 
@@ -166,6 +169,7 @@ function submitLink(action, object, changed)
     form.isChanged.value = changed;
     form.submit();
 }
+
 
 // Check the user really really wants to do this before submitting
 function confirmThenSubmitLink(message, action, object, changed) 
@@ -188,6 +192,7 @@ function saveChange(action){
     document.getElementById("contentFrame").contentDocument.contentForm.action.value = action;
     document.getElementById("contentFrame").contentDocument.contentForm.submit();
 }
+
 
 function getFeedback(optionId, optionsNum, ideviceId) {
     for (i = 0; i< optionsNum; i++) {   

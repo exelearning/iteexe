@@ -214,11 +214,11 @@ class ImageElement(Element):
         ##html += u"""document.getElementById("img%s").setAttribute("onload", "imageChanged('%s');") """ % (self.id, self.id)
         html += u"""document.getElementById("img%s").addEventListener("load", imageChanged, true); """ % self.id
         html += u'</script>\n'
+        html += u"<br/>\n"
 
-        html += u"<p>\n"
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")
-        html += u"</a></p>\n"
+        html += u"</a><br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" " 
@@ -235,7 +235,7 @@ class ImageElement(Element):
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
-        html += u"</p>\n"
+        #html += u"</p>\n"
         
         return html
 

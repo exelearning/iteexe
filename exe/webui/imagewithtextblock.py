@@ -66,15 +66,24 @@ class ImageWithTextBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
+        html += u"<p>"
         html += self.imageElement.renderEdit()
-        html += u"<p><b>%s</b> " % _("Float:")
+        html += u"<b>%s</b>\n " % _("Float:")
         html += "<select name=\"float%s\">\n" % self.id
         if self.idevice.float == u"left":
-            html += '<option value="left" selected="selected">%s</option>' % _(u"Left")
-            html += '<option value="right">%s</option>' % _(u"Right")
+            html += '<option value="left" selected="selected">'
+            html += _(u"Left")
+            html += '</option>\n' 
+            html += '<option value="right">'
+            html += _(u"Right")
+            html += '</option>\n' 
         else:
-            html += '<option value="left">%s</option>' % _(u"Left")
-            html += '<option value="right" selected="selected">%s</option>' % _(u"Right")
+            html += '<option value="left">'
+            html += _(u"Left")
+            html += '</option>' 
+            html += '<option value="right" selected="selected">'
+            html += _(u"Right")
+            html += '</option>\n' 
         html += "</select>\n"
         html += u"</p>\n"
         html += self.textElement.renderEdit()
