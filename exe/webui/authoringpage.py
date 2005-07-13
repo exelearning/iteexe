@@ -25,6 +25,7 @@ import logging
 import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
+from cgi import escape
 from exe.webui.blockfactory import g_blockFactory
 from exe.engine.error       import Error
 from exe.webui.renderable import RenderableResource
@@ -102,7 +103,7 @@ class AuthoringPage(RenderableResource):
         html += u'<!-- start authoring page -->\n'
         html += u'<div id="nodeDecoration">\n'
         html += u'<p id="nodeTitle">\n'
-        html += topNode.title
+        html += escape(topNode.title)
         html += u'</p>\n' 
         html += u'</div>\n'
 
