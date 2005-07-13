@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import unittest
+import unittest, sys
 from exe.webui.block        import Block
 from exe.engine.idevice     import Idevice
 from exe.webui.blockfactory import g_blockFactory
@@ -33,13 +33,19 @@ class TestBlock(SuperTestCase):
     Tests that blocks can render stuff
     """
 
-    # TODO: In trunk, we shouldn't ignore any error messages
-    ignoreErrorMsgs = [
-        ]
+    # Default Attribute Values
+    ignoreErrorMsgs = [] # A list of regular expressions that match xmllint
+                         # stderr output
+    quickCheck = '--quick' in sys.argv
 
     def testAuthoringPage(self):
-        """Creates a block for a freetext idevice
-        and makes it render"""
+        """
+        Generates a page of idevices and checks each ones xhtml individually
+        """
+        # TODO: Once we have pyxpcom, break this test out into
+        # TestFreeTextBlock, TestImageWithTextBlock etc.
+        # And actually do some interactive DOM testing...
+
         # Add some idevices to the main page
         def addIdevice(id_):
             request = self._request(action='AddIdevice', object=str(id_))
@@ -48,7 +54,8 @@ class TestBlock(SuperTestCase):
         for i in range(1,8):
             allHtml = addIdevice(i)
         checker = HTMLChecker(self.ignoreErrorMsgs)
-        if checker.check(allHtml, False):
+        mainOk = checker.check(allHtml, False)
+        if mainOk and self.quickCheck:
             return
         else:
             # Backup tmp.html
@@ -73,11 +80,14 @@ class TestBlock(SuperTestCase):
                               idevice.title)
                 if not checker.check(editHTML, True):
                     self.fail('Block "%s" generated bad edit XHTML' % idevice.title)
-            # Even if all the blocks pass, still the main html is bad
-            Path('tmpall.html').rename('tmp.html')
-            self.fail('Authoring Page generated bad XHTML, but all the blocks '
-                      'were good')
+            if not mainOk:
+                # Even if all the blocks pass, still the main html is bad
+                Path('tmpall.html').rename('tmp.html')
+                self.fail('Authoring Page generated bad XHTML, but all the blocks '
+                          'were good')
 
 
 if __name__ == "__main__":
+    if '--quick' in sys.argv:
+        sys.argv.remove('--quick')
     unittest.main()
