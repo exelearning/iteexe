@@ -268,7 +268,8 @@ class ScormExport(object):
 
         # Copy the style sheets and images
         self.styleDir.copyfiles(outputDir)
-        (outputDir/'nav.css').remove() # But not nav.css
+        # But not nav.css
+        (outputDir/'nav.css').remove() 
 
         # TODO these two should be part of the style
         self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
@@ -298,7 +299,6 @@ class ScormExport(object):
             manifest.save("discussionforum.xml")
         
         # Copy the scripts
-        
         self.scriptsDir.copylist(('APIWrapper.js', 
                                   'imscp_rootv1p1p2.xsd',
                                   'imsmd_rootv1p2p1.xsd',

@@ -43,6 +43,7 @@
                     <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm')"/>
                     <menuitem label="IMS Content Package" oncommand="exportPackage('ims')"/>
                     <menuitem label="Web Site" key="file-export-website-key" accesskey="w" oncommand="exportPackage('webSite')"/>
+                    <menuitem label="Single Page" oncommand="exportPackage('singlePage')"/>
                   </menupopup>
                 </menu>
               </menupopup>

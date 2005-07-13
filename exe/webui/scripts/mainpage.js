@@ -415,12 +415,16 @@ function exportPackage(exportType) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    if (exportType == 'webSite') {
+    if (exportType == 'webSite' || exportType == 'singlePage') {
         fp.init(window, "Select the parent folder for export.",
                          nsIFilePicker.modeGetFolder);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK) {
-            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+            nevow_clientToServerEvent('exportPackage', 
+                                      this, 
+                                      '', 
+                                      exportType, 
+                                      fp.file.path)
         }
     } else {
         if (exportType == "scorm")
@@ -428,7 +432,7 @@ function exportPackage(exportType) {
         else if (exportType == "ims")
             title = "Export IMS package as"
         else
-            title = "INVALID VALUE PASSED TO exportPackge"
+            title = "INVALID VALUE PASSED TO exportPackage"
         fp.init(window, title, nsIFilePicker.modeSave);
         fp.appendFilter("SCORM/IMS Packages", "*.zip");
         fp.appendFilter("All Files", "*.*");

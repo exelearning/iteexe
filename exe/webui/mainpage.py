@@ -22,19 +22,20 @@ This is the main XUL page.
 """
 
 import os, sys, logging, gettext
-from twisted.web              import static
-from nevow                    import loaders, inevow, stan
-from nevow.livepage           import handler, js
-from exe.webui.renderable     import RenderableLivePage
-from exe.webui.idevicepane    import IdevicePane
-from exe.webui.authoringpage  import AuthoringPage
-from exe.webui.outlinepane    import OutlinePane
-from exe.webui.stylemenu      import StyleMenu
-from exe.webui.propertiespage import PropertiesPage
-from exe.export.websiteexport import WebsiteExport
-from exe.export.scormexport   import ScormExport
-from exe.export.imsexport     import IMSExport
-from exe.engine.path          import Path
+from twisted.web                 import static
+from nevow                       import loaders, inevow, stan
+from nevow.livepage              import handler, js
+from exe.webui.renderable        import RenderableLivePage
+from exe.webui.idevicepane       import IdevicePane
+from exe.webui.authoringpage     import AuthoringPage
+from exe.webui.outlinepane       import OutlinePane
+from exe.webui.stylemenu         import StyleMenu
+from exe.webui.propertiespage    import PropertiesPage
+from exe.export.websiteexport    import WebsiteExport
+from exe.export.singlepageexport import SinglePageExport
+from exe.export.scormexport      import ScormExport
+from exe.export.imsexport        import IMSExport
+from exe.engine.path             import Path
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -276,7 +277,10 @@ class MainPage(RenderableLivePage):
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
 
-        if exportType == 'webSite':
+        if exportType == 'singlePage':
+            self.exportSinglePage(client, filename, webDir, stylesDir)
+
+        elif exportType == 'webSite':
             self.exportWebSite(client, filename, webDir, stylesDir)
 
         elif exportType == "scorm":
@@ -284,6 +288,49 @@ class MainPage(RenderableLivePage):
 
         else:
             self.exportIMS(client, filename, stylesDir)
+
+
+    def exportSinglePage(self, client, filename, webDir, stylesDir):
+        """
+        Export 'client' to a single web page,
+        'webDir' is just read from config.webDir
+        'stylesDir' is where to copy the style sheet information from
+        """
+        imagesDir  = webDir.joinpath('images')
+        scriptsDir = webDir.joinpath('scripts')
+        # filename is a directory where we will export the website to
+        # We assume that the user knows what they are doing
+        # and don't check if the directory is already full or not
+        # and we just overwrite what's already there
+        filename = Path(filename)
+        # Append the package name to the folder path if necessary
+        if filename.basename() != self.package.name:
+            filename /= self.package.name
+        if not filename.exists():
+            filename.makedirs()
+        elif not filename.isdir():
+            client.alert(_(u'Filename %s is a file, cannot replace it' % 
+                         filename))
+            log.error("Couldn't export web page: "+
+                      "Filename %s is a file, cannot replace it" % filename)
+            return
+        else:
+            # Wipe it out
+            filename.rmtree()
+            filename.mkdir()
+        # Now do the export
+        singlePageExport = SinglePageExport(stylesDir, filename, 
+                                            imagesDir, scriptsDir)
+        singlePageExport.export(self.package)
+        # Show the newly exported web site in a new window
+        if hasattr(os, 'startfile'):
+            os.startfile(filename)
+        else:
+            filename /= 'index.html'
+            os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
+                (self.config.browserPath,
+                 '-remote', 'openURL(%s, new-window)' % \
+                 filename))
 
 
     def exportWebSite(self, client, filename, webDir, stylesDir):
