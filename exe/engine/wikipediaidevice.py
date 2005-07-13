@@ -129,10 +129,9 @@ article from en.wikipedia.org, including copying the associated images."""),
         content += u"This article is licensed under the "
         content += u"<a href=\"http://www.gnu.org/copyleft/fdl.html\">"
         content += u"GNU Free Documentation License</a>. It uses material "
-        content += u"from the <a href=\"http://en.wikipedia.org/wiki/"
+        content += u"from the <a href=\""+self.site+u"wiki/"
         content += self.articleName+u"\">"
-        content += u"Wikipedia article "
-        content += u"\""+self.articleName+u"\"</a>.<br/>\n"
+        content += u"article " + u"\""+self.articleName+u"\"</a>.<br/>\n"
         return content
 
 
