@@ -95,6 +95,7 @@
               </toolbox>
 
             <!-- start iDevices -->
+              <label value="iDevices" style="margin-top:5px;"/>
               <label flex="1" value="idevicePane" n:render="idevicePane"/>
             </vbox>
             <!-- end iDevices -->
