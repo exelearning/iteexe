@@ -10,7 +10,7 @@
  */
 
 user_pref("accessibility.typeaheadfind.flashBar", 0);
-user_pref("app.update.lastUpdateDate", 1115254393);
+user_pref("app.update.lastUpdateDate", 1121207221);
 user_pref("app.update.updatesAvailable", true);
 user_pref("browser.preferences.lastpanel", 1);
 user_pref("browser.search.selectedEngine", "Google");
@@ -30,12 +30,12 @@ user_pref("capability.principal.codebase.p5.granted", "UniversalXPConnect");
 user_pref("capability.principal.codebase.p5.id", "http://localhost:8081");
 user_pref("extensions.disabledObsolete", true);
 user_pref("extensions.lastAppVersion", "1.0");
-user_pref("extensions.update.lastUpdateDate", 1115254393);
+user_pref("extensions.update.lastUpdateDate", 1121207221);
 user_pref("intl.charsetmenu.browser.cache", "ISO-8859-15, ISO-8859-1, UTF-8");
 user_pref("network.cookie.prefsMigrated", true);
 user_pref("security.OCSP.URL", "");
 user_pref("security.OCSP.signingCA", "Builtin Object Token:IPS CLASE1 root");
+user_pref("security.checkloaduri", false);
 user_pref("security.warn_submit_insecure", false);
 user_pref("signed.applets.codebase_principal_support", true);
 user_pref("update.severity", 2);
-user_pref("security.checkloaduri", false);

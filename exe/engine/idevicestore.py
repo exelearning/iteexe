@@ -65,6 +65,12 @@ class IdeviceStore:
         upon the pedagogical template we are using
         """
         return self.extended + self.generic
+    
+    def delGenericIdevice(self, idevice):
+        """
+        Delete a generic idevice from idevicestore.
+        """
+        self.generic.remove(idevice)
 
 
     def register(self, listener):

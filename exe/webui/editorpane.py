@@ -49,6 +49,8 @@ class EditorPane(object):
         self.webDir          = webserver.application.config.webDir
         self.elements        = []
         self.idevice         = GenericIdevice("", "", "", "", "")
+        self.idevice.id      = self.ideviceStore.getNewIdeviceId()
+        self.originalIdevice = self.idevice.clone()
         self.purpose         = ""
         self.tip             = ""
         self.message         = ""
@@ -69,15 +71,24 @@ Used for entering description textual content."""
         self.imageInstruc    = """Add an image to your iDevice. Enables 
 the selection of an image from your stored picture files."""
         
-    def process(self, request):
+    def setIdevice(self, idevice):
+        """
+        Sets the iDevice to edit
+        """
+        self.idevice         = idevice
+        self.originalIdevice = idevice.clone()
+        
+    def process(self, request, status):
         """
         Process
         """
+        
         log.debug("process " + repr(request.args))
         self.message = ""
-
+        
         for element in self.elements:
             element.process(request)
+        
         
         if "addText" in request.args:
             self.idevice.addField(TextField(u"Enter the label here",
@@ -93,18 +104,20 @@ the selection of an image from your stored picture files."""
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
-                
-        if "title" in request.args:
-            self.idevice.title = request.args["title"][0] 
-
-        if "author" in request.args:
-            self.idevice.author = request.args["author"][0] 
-
-        if "description" in request.args:
-            self.idevice.purpose = request.args["description"][0] 
-
-        if "tip" in request.args:
-            self.idevice.tip = request.args["tip"][0] 
+            
+            
+        if status == "old":        
+            if "title" in request.args:
+                self.idevice.title = request.args["title"][0] 
+    
+            if "author" in request.args:
+                self.idevice.author = request.args["author"][0] 
+    
+            if "description" in request.args:
+                self.idevice.purpose = request.args["description"][0] 
+    
+            if "tip" in request.args:
+                self.idevice.tip = request.args["tip"][0] 
 
         if "preview" in request.args:
             if self.idevice.title == "":
@@ -115,20 +128,15 @@ the selection of an image from your stored picture files."""
         if "edit" in request.args:
             self.idevice.edit = True
 
-        if "reset" in request.args:
-            idevice = GenericIdevice("", "", "", "", "")
-            idevice.parentNode = None
-            self.idevice = idevice
-
-        if "save" in request.args:
-            if self.idevice.title == "":
-                self.message = _("Please enter an idevice name.")
-            else:
-                self.ideviceStore.addIdevice(self.idevice.clone())
-                self.ideviceStore.save()
             
         if "emphasis" in request.args:
             self.idevice.emphasis = int(request.args["emphasis"][0])
+            
+        if "cancel" in request.args:
+            ideviceId       = self.idevice.id
+            self.idevice    = self.originalIdevice
+            self.idevice.id = ideviceId            
+            
         
         self.__buildElements()  
             
@@ -181,9 +189,9 @@ the selection of an image from your stored picture files."""
         else:
             html += common.submitButton("edit", _("Edit")) + "&nbsp;&nbsp;"
             html += common.submitButton("preview", _("Preview"), False)
-        html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
-        html += "&nbsp;&nbsp" + common.submitButton("reset", _("Reset"))
-        html += "</div>\n"
+       # html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
+        html += "&nbsp;&nbsp" + common.submitButton("cancel", _("Cancel"))
+       # html += "</div>\n"
 
         return html
 
@@ -204,6 +212,18 @@ the selection of an image from your stored picture files."""
                 form.isChanged.value = changed;
                 form.submit();
             }\n"""
+        html += """
+            function submitIdevice() 
+            {
+                var form = document.getElementById("contentForm")
+                if (form.ideviceSelect.value == "newIdevice")
+                    form.action.value = "newIdevice"
+                else
+                    form.action.value = "changeIdevice"
+                form.object.value = form.ideviceSelect.value;
+                form.isChanged.value = 1;
+                form.submit();
+            }\n"""
         html += "//-->\n"
         html += "</script>\n"
         
@@ -222,7 +242,7 @@ the selection of an image from your stored picture files."""
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
             html += "<b>" + _("Purpose") + ": </b>\n"
             html += common.elementInstruc("purpose", self.purposeInstruc)
-            html += "<br/>" +common.textArea("description", self.idevice.purpose) 
+            html += "<br/>" +common.textArea("description", self.idevice.purpose)
             html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
             html += common.elementInstruc("tip", self.tipInstruc) + "<br/>"
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
@@ -265,7 +285,8 @@ the selection of an image from your stored picture files."""
                 if self.idevice.tip != "":
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
                     
-                html += "</div>\n"    
+                html += "</div>\n"  
+        self.message = ""
 
         return html
         

@@ -49,6 +49,8 @@ class EditorPage(RenderableResource):
         self.editorPane   = EditorPane(self.webserver)
         self.url          = ""
         self.elements     = []
+        self.isNewIdevice = True
+        self.message      = ""
 
         
     def getChild(self, name, request):
@@ -66,14 +68,49 @@ class EditorPage(RenderableResource):
         Process current package 
         """
         log.debug("process " + repr(request.args))
+        
+        self.editorPane.process(request,"old")
 
         if "action" in request.args:
             if request.args["action"][0] == "changeIdevice":
-                self.editorPane.idevice = GenericIdevice("", "", "", "", "")
+                genericIdevices = self.ideviceStore.generic
+                for idevice in genericIdevices:
+                    if idevice.id == request.args["object"][0]:
+                        break
+                print "you choose ", idevice.title
+                self.isNewIdevice = False
+                self.editorPane.setIdevice(idevice)               
+                self.editorPane.process(request, "new")
+                
+        if (("action" in request.args and 
+             request.args["action"][0] == "newIdevice")
+            or "new" in request.args):
+            self.__createNewIdevice(request)
+
+        if "delete" in request.args:
+            self.ideviceStore.delGenericIdevice(self.editorPane.idevice)
+            self.ideviceStore.save()
+            self.__createNewIdevice(request) 
+            
+        if "add" in request.args:
+            if self.editorPane.idevice.title == "":
+                self.message = _("Please enter an idevice name.")
+            else:
+                self.ideviceStore.addIdevice(self.editorPane.idevice)
+                self.ideviceStore.save()
+                self.isNewIdevice = False
+                
+                
+    def __createNewIdevice(self, request):
+        """
+        Create a new idevice and add to idevicestore
+        """
+        idevice = GenericIdevice("", "", "", "", "")
+        idevice.id = self.ideviceStore.getNewIdeviceId()
+        self.editorPane.setIdevice(idevice)
+        self.editorPane.process(request, "new")      
+        self.isNewIdevice = True
         
-        self.editorPane.process(request)
-
-
     def render_GET(self, request):
         """Called for all requests to this object"""
         
@@ -99,14 +136,26 @@ class EditorPage(RenderableResource):
         html += " charset=UTF-8\"></meta>\n";
         html += "</head>\n"
         html += "<body>\n"
+        #html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
         html += "<div id=\"main\"> \n"     
         html += "<form method=\"post\" action=\""+self.url+"\" "
         html += "id=\"contentForm\" >"  
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", "1") 
-#        html += self.renderList()
+        html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
+        html += self.renderList()
         html += self.editorPane.render(request)
+        if self.isNewIdevice:
+            html += "&nbsp;&nbsp" + common.submitButton("delete", _("Delete"), 
+                                                        False)
+            html += "&nbsp;&nbsp" + common.submitButton("new", _("New"), False)
+            html += "&nbsp;&nbsp" + common.submitButton("add", _("Add"))
+        else:
+            html += "&nbsp;&nbsp" + common.submitButton("delete", _("Delete"))
+            html += "&nbsp;&nbsp" + common.submitButton("new", _("New"))
+            html += "&nbsp;&nbsp" + common.submitButton("add", _("Add"), False)
+        html += "</div>\n"
         html += "<br/></form>"
         html += "</div> \n"
         html += common.footer()
@@ -118,11 +167,34 @@ class EditorPage(RenderableResource):
         """
         Render the list of generic iDevice
         """
+        #html  = "<p>"
+        #html += "<a href=\"#\" "
+        #html += "onclick=\"submitLink('newIdevice', "
+        #html += "'0','1')\" />" 
+        #html += _("New iDevice")
+        #html += "</a><br/> \n"
+        #for prototype in self.ideviceStore.generic:
+            #html += "<a href=\"#\" "
+            #html += "onclick=\"submitLink('changeIdevice', "
+            #html += "'"+prototype.id+"','1')\" />" 
+            #html += prototype.title + "</a><br/> \n"
+        #html += "</p>\n"
+        print self.editorPane.idevice.id + " " + self.editorPane.idevice.title
+        if self.isNewIdevice:
+            print "New Idevice"
         html  = "<p>"
+        html += '<select onchange="submitIdevice();" name="ideviceSelect">\n'
+        html += "<option value = \"newIdevice\" "
+        if self.isNewIdevice:
+            html += "selected "
+        html += ">"+ _("New Idevice") + "</option>"
         for prototype in self.ideviceStore.generic:
-            html += "<a href=\"#\" "
-            html += "onclick=\"submitLink('changeIdevice', "
-            html += "'"+prototype.id+"','1')\" />" 
-            html += prototype.title + "</a><br/> \n"
+            print prototype.title + " " + prototype.id
+            html += "<option value=\""+prototype.id+"\" "
+            if self.editorPane.idevice.id == prototype.id:
+                html += "selected "
+            html += ">" + prototype.title + "</option>\n"
+        html += "</select> \n"
         html += "</p>\n"
+        self.message = ""
         return html
