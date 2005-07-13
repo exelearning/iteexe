@@ -196,7 +196,7 @@ class Node(Persistable):
         Returns True is successful
         """
         if self.parent and self.parent.parent:
-            self.move(self.parent.parent, None)
+            self.move(self.parent.parent, self.parent.nextSibling())
             return True
 
         return False
