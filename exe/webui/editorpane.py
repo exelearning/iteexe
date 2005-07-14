@@ -50,7 +50,7 @@ class EditorPane(object):
         self.elements        = []
         self.idevice         = GenericIdevice("", "", "", "", "")
         self.idevice.id      = self.ideviceStore.getNewIdeviceId()
-        self.originalIdevice = self.idevice.clone()
+        self.originalIdevice = GenericIdevice("", "", "", "", "")
         self.purpose         = ""
         self.tip             = ""
         self.message         = ""
@@ -75,8 +75,9 @@ the selection of an image from your stored picture files."""
         """
         Sets the iDevice to edit
         """
-        self.idevice         = idevice
-        self.originalIdevice = idevice.clone()
+        self.idevice         = idevice.clone()
+        self.idevice.id      = idevice.id
+        self.originalIdevice = idevice
         
     def process(self, request, status):
         """
@@ -86,8 +87,21 @@ the selection of an image from your stored picture files."""
         log.debug("process " + repr(request.args))
         self.message = ""
         
-        for element in self.elements:
-            element.process(request)
+        if status == "old":
+            for element in self.elements:
+                element.process(request)
+                           
+            if "title" in request.args:
+                self.idevice.title = request.args["title"][0] 
+    
+            if "author" in request.args:
+                self.idevice.author = request.args["author"][0] 
+    
+            if "description" in request.args:
+                self.idevice.purpose = request.args["description"][0] 
+    
+            if "tip" in request.args:
+                self.idevice.tip = request.args["tip"][0] 
         
         
         if "addText" in request.args:
@@ -106,18 +120,7 @@ the selection of an image from your stored picture files."""
             self.idevice.addField(field)
             
             
-        if status == "old":        
-            if "title" in request.args:
-                self.idevice.title = request.args["title"][0] 
-    
-            if "author" in request.args:
-                self.idevice.author = request.args["author"][0] 
-    
-            if "description" in request.args:
-                self.idevice.purpose = request.args["description"][0] 
-    
-            if "tip" in request.args:
-                self.idevice.tip = request.args["tip"][0] 
+        
 
         if "preview" in request.args:
             if self.idevice.title == "":
@@ -134,10 +137,9 @@ the selection of an image from your stored picture files."""
             
         if "cancel" in request.args:
             ideviceId       = self.idevice.id
-            self.idevice    = self.originalIdevice
-            self.idevice.id = ideviceId            
+            self.idevice    = self.originalIdevice.clone()
+            self.idevice.id = ideviceId         
             
-        
         self.__buildElements()  
             
         
