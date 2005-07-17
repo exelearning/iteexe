@@ -77,9 +77,15 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.articleName = name
 
         name = urllib.quote(name.replace(" ", "_"))
-        net  = urllib.urlopen(self.site+'wiki/'+name)
-        page = net.read()
-        net.close()
+        try:
+            net  = urllib.urlopen(self.site+'wiki/'+name)
+            page = net.read()
+            net.close()
+
+        except IOError, error:
+            log.warning(unicode(error))
+            self.article.content = _(u"Unable to connect to ") + self.site
+            return
 
         # avoidParserProblems is set to False because BeautifulSoup's
         # cleanup was causing a "concatenating Null+Str" error,

@@ -1,3 +1,182 @@
+2005-07-14 04:30  jenny
+
+	* exe/webui/editorpage.py, exe/webui/editorpane.py: Modified idevice
+	  editor so that user can modify existing idevice to a new idevice.
+
+2005-07-13 23:08  matthew
+
+	* exe/webui/multichoiceblock.py: Made Multichoice Idevice work
+
+2005-07-13 22:48  matthew
+
+	* exe/webui/authoringpage.py: Issue: 0000101 Can now have a node
+	  title be &amp; or <h1>I am cool</h1> and it wil be rendered as is
+	  :)
+
+2005-07-13 22:13  matthew
+
+	* testing/runtests.py, testing/testblock.py: Added a --quick option
+	  for running the tests
+
+2005-07-13 22:05  matthew
+
+	* exe/webui/templates/mainpage.xul: Issue: 0000123 Added header for
+	  idevice pane
+
+2005-07-13 21:51  matthew
+
+	* exe/engine/node.py: Issue: 0000098 Made Premoting (<-) nodes work
+	  nicely
+
+2005-07-13 05:10  jenny
+
+	* exe/engine/idevicestore.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/win-profile/XUL.mfl,
+	  exe/webui/win-profile/prefs.js, exe/webui/win-profile/xpti.dat:
+	  Modified idevice editor, then user can edit and delete any generic
+	  idevice.
+
+2005-07-13 04:21  djm
+
+	* exe/export/scormexport.py, exe/export/singlepageexport.py,
+	  exe/webui/mainpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul: Added Single Page Export for
+	  exporting a package as one document
+
+2005-07-13 01:14  djm
+
+	* exe/engine/wikipediaidevice.py: Changed attribution text to be
+	  site neutral.
+
+2005-07-13 00:24  djm
+
+	* README: XHTML
+
+2005-07-12 23:59  djm
+
+	* exe/engine/version.py, exe/engine/wikipediaidevice.py,
+	  exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/forumblock.py, exe/webui/wikipediablock.py: Fixed bugs
+	  with the select element in common. Added site selection to the
+	  Wikipedia iDevice
+
+2005-07-12 22:35  djm
+
+	* exe/engine/imagewithtextidevice.py: Merge in changes -r938:942
+	  from 0.6 branch
+
+2005-07-12 05:47  djm
+
+	* exe/webui/attachmentblock.py, exe/webui/element.py,
+	  exe/webui/forumblock.py, exe/webui/mainwindow.py,
+	  exe/webui/multichoiceblock.py, exe/webui/outlinepane.py,
+	  exe/webui/quiztestblock.py: Tidied up code a bit.
+
+2005-07-12 04:59  djm
+
+	* exe/webui/mainwindow.py: Still more tidyup`
+
+2005-07-12 04:51  djm
+
+	* exe/webui/mainwindow.py: Tidy up
+
+2005-07-12 04:47  djm
+
+	* exe/webui/mainwindow.py: Tidy up
+
+2005-07-12 03:56  djm
+
+	* exe/webui/element.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/scripts/common.js: Tidied up ImageWithText iDevice
+
+2005-07-12 01:42  matthew
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/standardwhite/content.css: Fixed up the borders
+	  for images in all styles and turned tabs into spaces
+
+2005-07-12 01:35  matthew
+
+	* exe/webui/element.py, exe/webui/scripts/common.js,
+	  exe/webui/style/default/content.css: Made image with text work and
+	  be xhtml compatible
+
+2005-07-12 01:26  matthew
+
+	* exe/webui/attachmentblock.py, exe/webui/authoringpage.py,
+	  exe/webui/common.py, exe/webui/editorpage.py,
+	  exe/webui/multichoiceblock.py, exe/webui/propertiespage.py,
+	  exe/webui/truefalseblock.py: Made the scripts work
+
+2005-07-12 00:15  matthew
+
+	* exe/webui/common.py: Fixed images a bit. Still needs border fixing
+
+2005-07-11 22:18  matthew
+
+	* testing/utils.py: Made utils.py run on windows
+
+2005-07-11 08:43  matthew
+
+	* testing/testblock.py: Made the xhtml test only run once for the
+	  whole lot, and if that fails, it runs it for each block
+
+2005-07-11 07:20  matthew
+
+	* exe/engine/multichoiceidevice.py, exe/webui/attachmentblock.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/common.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/forumblock.py, exe/webui/genericblock.py,
+	  exe/webui/imagewithtextblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py, exe/webui/propertiespage.py,
+	  exe/webui/propertiespane.py, exe/webui/questionelement.py,
+	  exe/webui/quiztestblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/testoptionelement.py, exe/webui/truefalseblock.py,
+	  exe/webui/truefalseelement.py, testing/testblock.py,
+	  testing/utils.py: Now exe makes nice XHTML
+
+2005-07-11 04:07  brent
+
+	* exe/engine/attachmentidevice.py, exe/webui/element.py,
+	  exe/webui/imagewithtextblock.py,
+	  exe/webui/style/garden/content.css: minor usability changes.
+
+2005-07-08 05:14  djm
+
+	* ChangeLog, NEWS, README, doc/eXe-tutorial.elp, eXe_icon.ico,
+	  exe/engine/attachmentidevice.py, exe/engine/casestudyidevice.py,
+	  exe/engine/config.py, exe/engine/configparser.py,
+	  exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/truefalseidevice.py,
+	  exe/engine/version.py, exe/engine/wikipediaidevice.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/attachmentblock.py,
+	  exe/webui/block.py, exe/webui/common.py, exe/webui/editorpane.py,
+	  exe/webui/imagewithtextblock.py, exe/webui/linux-profile/prefs.js,
+	  exe/webui/mainpage.py, exe/webui/optionelement.py,
+	  exe/webui/outlinepane.py, exe/webui/scripts/SCOFunctions.js,
+	  exe/webui/scripts/mainpage.js,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/templates/mainpage.xul, exe/webui/testoptionelement.py,
+	  exe/webui/truefalseelement.py, installs/windows/exe.nsi,
+	  prototype/pyfox/pyfoxutiltest.py, prototype/pyromonkey/example.py,
+	  prototype/pyromonkey/gtkmoz.c,
+	  prototype/pyromonkey/pyromonkey.cpp,
+	  prototype/pyromonkey/setup.py, testing/testconfigparser.py,
+	  win-setup.py: Merged in changes from revs 888:938 from 0.6 branch.
+
 2005-07-08 05:03  matthew
 
 	* testing/xhtml-lat1.ent, testing/xhtml-special.ent,
