@@ -169,10 +169,10 @@ the selection of an image from your stored picture files."""
         """
         Render the idevice being edited
         """
-        message = _("This is an experimental feature and "+
-                    "is still in development.")
-        html  = "<p align = \"center\"><b>" + message + "</b></p>"
-        html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
+        # message = _("This is an experimental feature and "+
+        #            "is still in development.")
+        # html  = "<p align = \"center\"><b>" + message + "</b></p>"
+        html = "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
         html += "<div ID=\"iDevice_editor\" "
         html += "<fieldset><legend><b>" + _("iDevice elements")+ "</b></legend>"
         html += common.submitButton("addText", _("Add Text Line"))
