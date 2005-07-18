@@ -54,14 +54,14 @@ class EditorPane(object):
         self.purpose         = ""
         self.tip             = ""
         self.message         = ""
-        self.nameInstruc     = u"""Your new idevice will appear in the iDevice 
+        self.nameInstruc     = u"""Your new iDevice will appear in the iDevice 
 pane with this title. This is a compulsory field and you will be prompted to 
 enter a label if you try to submit your idevice without one."""
         self.authorInstruc   = u"This is an optional field."
         self.purposeInstruc  = u"""The purpose dialogue allows you to describe 
 your intended purpose of the device to other potential users."""
         self.emphasisInstruc = u"""Use Emphasis to distinguish the importance 
-of the information being presented in the idevice."""
+of the information being presented in the iDevice."""
         self.tipInstruc      = """A pedagogical tip allows you to describe your 
 intended use and the pedagogy behind the devices development."""
         self.lineInstruc     = """Add a single text line to an iDevice. 
@@ -118,9 +118,6 @@ the selection of an image from your stored picture files."""
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
-            
-            
-        
 
         if "preview" in request.args:
             if self.idevice.title == "":
@@ -130,7 +127,6 @@ the selection of an image from your stored picture files."""
 
         if "edit" in request.args:
             self.idevice.edit = True
-
             
         if "emphasis" in request.args:
             self.idevice.emphasis = int(request.args["emphasis"][0])
@@ -165,35 +161,31 @@ the selection of an image from your stored picture files."""
                           field.__class__.__name__)
         
             
-    def render(self, request):
+    def renderButtons(self, request):
         """
         Render the idevice being edited
         """
-        # message = _("This is an experimental feature and "+
-        #            "is still in development.")
-        # html  = "<p align = \"center\"><b>" + message + "</b></p>"
         html = "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
-        html += "<div ID=\"iDevice_editor\" "
-        html += "<fieldset><legend><b>" + _("iDevice elements")+ "</b></legend>"
-        html += common.submitButton("addText", _("Add Text Line"))
+        
+        html += "<fieldset><legend><b>" + _("add elements")+ "</b></legend>"
+        html += common.submitButton("addText", _("Text Line"))
         html += common.elementInstruc("line", self.lineInstruc) + "<br/>"
-        html += common.submitButton("addTextArea", _("Add Text Box"))
+        html += common.submitButton("addTextArea", _("Text Box"))
         html += common.elementInstruc("textBox", self.textBoxInstruc) + "<br/>"
-        html += common.submitButton("addImage", _("Add Image")) 
+        html += common.submitButton("addImage", _("Image Upload")) 
         html += common.elementInstruc("image", self.imageInstruc) + "<br/>"
-        html += "</fieldset></div>\n"
+        html += "</fieldset>\n"
 
-        html += "<div style=\"margin-left: 170px;\">\n"
-        html += self.renderIdevice(request)
+        html += "<fieldset><legend><b>" + _("iDevice Functions") + "</b></legend>"
         if self.idevice.edit:
             html += common.submitButton("edit", _("Edit"), False)
-            html += "&nbsp;&nbsp;"+common.submitButton("preview", _("Preview"))
+            html += "<br/>"+common.submitButton("preview", _("Preview"))
         else:
-            html += common.submitButton("edit", _("Edit")) + "&nbsp;&nbsp;"
+            html += common.submitButton("edit", _("Edit")) + "<br/>"
             html += common.submitButton("preview", _("Preview"), False)
        # html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
-        html += "&nbsp;&nbsp" + common.submitButton("cancel", _("Cancel"))
-       # html += "</div>\n"
+        html += "<br/>" + common.submitButton("cancel", _("Cancel"))
+        html += "</fieldset>"
 
         return html
 
@@ -202,7 +194,8 @@ the selection of an image from your stored picture files."""
         """
         Returns an XHTML string for rendering the new idevice
         """
-        html  = "<script type=\"text/javascript\">\n"
+        html  = "<div id=\"editorWorkspace\">\n"
+        html += "<script type=\"text/javascript\">\n"
         html += "<!--\n"
         html += """
             function submitLink(action, object, changed) 
@@ -236,7 +229,7 @@ the selection of an image from your stored picture files."""
         self.tip = self.tip.replace("'","\\'")
         
         if self.idevice.edit:
-            html += "<b>" + _("iDevice Name") + ": </b>\n"
+            html += "<b>" + _("Name") + ": </b>\n"
             html += common.elementInstruc("name", self.nameInstruc) + "<br/>"
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
             html += "<b>" + _("Author") + ": </b>\n"
@@ -288,6 +281,7 @@ the selection of an image from your stored picture files."""
                     html += "<b>Tip:</b><br/>%s<br/>" % self.idevice.tip
                     
                 html += "</div>\n"  
+        html += "</div>\n"
         self.message = ""
 
         return html

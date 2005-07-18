@@ -171,20 +171,23 @@ class EditorPage(RenderableResource):
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", "1") 
         html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
+        html += "<div id=\"editorButtons\"> \n"     
         html += self.renderList()
-        html += self.editorPane.render(request)
+        html += self.editorPane.renderButtons(request)
         if self.isNewIdevice:
-            html += "&nbsp;&nbsp" + common.submitButton("delete", _("Delete"), 
+            html += "<br/>" + common.submitButton("delete", _("Delete"), 
                                                         False)
-            html += "&nbsp;&nbsp" + common.submitButton("save", _("Save"), False)
+            html += "<br/>" + common.submitButton("save", _("Save"), False)
         else:
-            html += "&nbsp;&nbsp" + common.submitButton("delete", _("Delete"))
-            html += "&nbsp;&nbsp" + common.submitButton("save", _("Save"))
-        html += "&nbsp;&nbsp" + common.submitButton("add", _("Add"))
+            html += "<br/>" + common.submitButton("delete", _("Delete"))
+            html += "<br/>" + common.submitButton("save", _("Save"))
+        html += "<br/>" + common.submitButton("add", _("Add"))
         html += "</div>\n"
-        html += "<br/></form>"
-        html += "</div> \n"
-        html += common.footer()
+        html += self.editorPane.renderIdevice(request)
+        html += "</div>\n"
+        html += "<br/></form>\n"
+        html += "</body>\n"
+        html += "</html>\n"
         return html.encode('utf8')
     render_POST = render_GET
 
@@ -206,18 +209,18 @@ class EditorPage(RenderableResource):
             #html += prototype.title + "</a><br/> \n"
         #html += "</p>\n"
 
-        html  = "<p>"
+        html  = "<fieldset><legend><b>" + _("Edit")+ "</b></legend>"
         html += '<select onchange="submitIdevice();" name="ideviceSelect">\n'
         html += "<option value = \"newIdevice\" "
         if self.isNewIdevice:
             html += "selected "
-        html += ">"+ _("New Idevice") + "</option>"
+        html += ">"+ _("New iDevice") + "</option>"
         for prototype in self.ideviceStore.generic:
             html += "<option value=\""+prototype.id+"\" "
             if self.editorPane.idevice.id == prototype.id:
                 html += "selected "
             html += ">" + prototype.title + "</option>\n"
         html += "</select> \n"
-        html += "</p>\n"
+        html += "</fieldset>\n"
         self.message = ""
         return html

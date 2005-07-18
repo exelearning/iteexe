@@ -19,13 +19,16 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
 
 /* styles for iDevice Editor */
 
-#iDevice_editor {
+#editorWorkspace {
+	margin-left: 170px;
+}
+
+#editorButtons {
 	 float: left;
          position: fixed;
 }
 
-#iDevice_editor input.button
-
+#editorButtons input.button
 {
 border: 3px double #999999;
 border-top-color: #CCCCCC;
