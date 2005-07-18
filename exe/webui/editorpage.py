@@ -132,11 +132,13 @@ class EditorPage(RenderableResource):
         """
         Save changes to generic idevice list.
         """
-        idevice.title   = copyIdevice.title
-        idevice.author  = copyIdevice.author
-        idevice.purpose = copyIdevice.purpose
-        idevice.tip     = copyIdevice.tip
-        idevice.fields  = copyIdevice.fields
+        idevice.title    = copyIdevice.title
+        idevice.author   = copyIdevice.author
+        idevice.purpose  = copyIdevice.purpose
+        idevice.tip      = copyIdevice.tip
+        idevice.fields   = copyIdevice.fields
+        idevice.emphasis = copyIdevice.emphasis
+        idevice.icon     = copyIdevice.icon
         
     def render_GET(self, request):
         """Called for all requests to this object"""
@@ -163,7 +165,7 @@ class EditorPage(RenderableResource):
         html += " charset=UTF-8\"></meta>\n";
         html += "</head>\n"
         html += "<body>\n"
-        #html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
+        html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
         html += "<div id=\"main\"> \n"     
         html += "<form method=\"post\" action=\""+self.url+"\" "
         html += "id=\"contentForm\" >"  
