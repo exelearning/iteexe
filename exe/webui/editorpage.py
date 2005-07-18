@@ -184,6 +184,7 @@ class EditorPage(RenderableResource):
             html += "<br/>" + common.submitButton("delete", _("Delete"))
             html += "<br/>" + common.submitButton("save", _("Save"))
         html += "<br/>" + common.submitButton("add", _("Add"))
+        html += "</fieldset>"
         html += "</div>\n"
         html += self.editorPane.renderIdevice(request)
         html += "</div>\n"

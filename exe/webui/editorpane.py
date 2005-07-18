@@ -177,15 +177,15 @@ the selection of an image from your stored picture files."""
         html += "</fieldset>\n"
 
         html += "<fieldset><legend><b>" + _("iDevice Functions") + "</b></legend>"
+
         if self.idevice.edit:
-            html += common.submitButton("edit", _("Edit"), False)
-            html += "<br/>"+common.submitButton("preview", _("Preview"))
+            html += common.submitButton("preview", _("Preview"))
         else:
-            html += common.submitButton("edit", _("Edit")) + "<br/>"
-            html += common.submitButton("preview", _("Preview"), False)
-       # html += "&nbsp;&nbsp;"+ common.submitButton("save", _("Save"))
-        html += "<br/>" + common.submitButton("cancel", _("Cancel"))
-        html += "</fieldset>"
+            html += common.submitButton("edit", _("Edit"))
+
+        html += "<br/>"
+        html += common.submitButton("cancel", _("Cancel"))
+        #html += "</fieldset>"
 
         return html
 
