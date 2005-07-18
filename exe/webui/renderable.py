@@ -32,21 +32,29 @@ class Renderable(object):
     # Set this to a template filename if you are use a template page to do 
     # your rendering
     _templateFileName = ''
-    name = None # Must provide a name in dervied classes
+    name = None # Must provide a name in dervied classes, or pass one to
+    #__init__
 
     # Default attribute values
     docFactory = None
 
-    def __init__(self, parent, package=None, webserver=None):
+    def __init__(self, parent, package=None, webserver=None, name=None):
         """
         Pass me a 'parent' rendering component,
         a 'package' that I'm rendering for
         and a 'webserver' instance reference (from webserver.py)
         If you don't pass 'webserver' and 'package' I'll
         get them from 'parent'
+        'name' is a identifier to distuniguish us from the other children of our
+        parent
         """
         self.parent = parent # This is the same for both blocks and pages
-
+        if name:
+            self.name = name
+        elif not self.name:
+            raise AssertionError('Element of class "%s" created with no name.' %
+                                 self.__class__.__name__)
+            
         # Make pylint happy. These attributes will be gotten from
         # self.application
         self.config = Unset

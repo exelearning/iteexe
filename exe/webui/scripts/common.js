@@ -23,9 +23,8 @@
 // action and object fields so they can be used by submitLink
 var objBrowse = navigator.appName;
 
-
-// Called by the user to provide an image file name to add to the package
-function addImage(elementId) {
+// Asks the user for an image, returns the path or an empty string
+function askUserForImage() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
@@ -34,6 +33,16 @@ function addImage(elementId) {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
+        return fp.file.path
+    } else {
+        return ""
+    }
+}
+
+// Called by the user to provide an image file name to add to the package
+function addImage(elementId) {
+    var imagePath = askUserForImage()
+    if (imagePath != "") {
         var image = document.getElementById('img'+elementId);
         image.removeAttribute('width');
         image.removeAttribute('height');
@@ -42,6 +51,18 @@ function addImage(elementId) {
         image.src  = 'file://'+fp.file.path;
     }
 }
+
+// Called by the user to provide an image file name to add to the package
+function addGalleryImage(galleryId) {
+    var imagePath = askUserForImage()
+    if (imagePath != "") {
+        var path  = document.getElementById('newImagePath'+galleryId);
+        path.value = imagePath;
+        // Save the change
+        submitLink("edit", galleryId, true);
+    }
+}
+
 
 
 function imageChanged(event) {

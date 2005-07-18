@@ -34,6 +34,9 @@ class ImageWithTextBlock(Block):
     """
     ImageWithTextBlock can render and process ImageWithTextIdevices as XHTML
     """
+
+    name = 'imageWithText'
+
     def __init__(self, parent, idevice):
         """
         Initialize

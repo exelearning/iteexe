@@ -22,12 +22,13 @@ QuestionElement is responsible for a block of option.  Used by MultichoiceBlock
 
 import logging
 from exe.webui import common
+from element import Element
 import gettext
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 # ===========================================================================
-class QuestionElement(object):
+class QuestionElement(Element):
     """
     QuestionElment is responsible for a block of question. 
     Used by CasestudyBlock.
@@ -35,12 +36,16 @@ class QuestionElement(object):
     def __init__(self, index, idevice, question):
         """
         Initialize
+        'index' is our number in the list of questions
+        'idevice' is a case study idevice
+        'question' is a exe.engine.casestudyidevice.Question instance
         """
+        name = "q" + unicode(index) + "b" + idevice.id
+        Element.__init__(self, parent, name, question)
         self.index      = index
-        self.id         = "q" + unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
         self.question   = question
-        self.quesId     = "quesquestion" + unicode(index) + "b" + idevice.id
+        self.quesId     = "quesQuestion" + unicode(index) + "b" + idevice.id
         self.feedbackId = "quesFeedback" + unicode(index) + "b" + idevice.id
         
 
@@ -57,7 +62,7 @@ class QuestionElement(object):
         if self.feedbackId in request.args:
             self.question.feedback = request.args[self.feedbackId][0]
             
-        if "action" in request.args and request.args["action"][0] == self.id:
+        if "action" in request.args and request.args["action"][0] == self.name:
             self.idevice.questions.remove(self.question)
 
 

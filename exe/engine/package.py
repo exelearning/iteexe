@@ -162,7 +162,7 @@ class Package(Persistable):
         Add an image/audio/video resource to the package.
         Returns the last part of the url to access this resource
         'resourceFile' is a 'path' instance pointing to a local file where we
-        can load the resource from
+        can load the resource from. 
         """
         resourceFile.copyfile(self.resourceDir/storageName)
 

@@ -43,7 +43,7 @@ class Block(Renderable):
         """
         Initialize a new Block object
         """
-        Renderable.__init__(self, parent)
+        Renderable.__init__(self, parent, name=idevice.id)
         self.idevice = idevice
         self.id      = idevice.id
         self.purpose = idevice.purpose
