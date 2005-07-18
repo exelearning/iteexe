@@ -30,6 +30,7 @@ from exe.webui.editorelement   import TextAreaEditorElement
 from exe.webui.editorelement   import ImageEditorElement
 from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
+from exe.engine.path           import Path
 
 
 log = logging.getLogger(__name__)
@@ -70,6 +71,8 @@ Useful if you want the ability to place a label within the device."""
 Used for entering description textual content."""
         self.imageInstruc    = """Add an image to your iDevice. Enables 
 the selection of an image from your stored picture files."""
+        self.iconpath        = Path(self.webDir).joinpath("style/default")
+        self.iconfiles       = self.iconpath.files("*.gif")
         
     def setIdevice(self, idevice):
         """
@@ -102,6 +105,9 @@ the selection of an image from your stored picture files."""
     
             if "tip" in request.args:
                 self.idevice.tip = request.args["tip"][0] 
+                
+            if "emphasis" in request.args:
+                self.idevice.emphasis = int(request.args["emphasis"][0])
         
         
         if "addText" in request.args:
@@ -118,6 +124,10 @@ the selection of an image from your stored picture files."""
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
+            
+        if ("action" in request.args and 
+            request.args["action"][0] == "selectIcon"):
+            self.idevice.icon = request.args["object"][0]
 
         if "preview" in request.args:
             if self.idevice.title == "":
@@ -128,8 +138,7 @@ the selection of an image from your stored picture files."""
         if "edit" in request.args:
             self.idevice.edit = True
             
-        if "emphasis" in request.args:
-            self.idevice.emphasis = int(request.args["emphasis"][0])
+        
             
         if "cancel" in request.args:
             ideviceId       = self.idevice.id
@@ -256,6 +265,24 @@ the selection of an image from your stored picture files."""
             html += "</select> \n"
             html += common.elementInstruc("emphasis", self.emphasisInstruc)
             html += "<br/><br/>\n"
+            print "emphasis: ", self.idevice.emphasis
+            #if True:
+            if self.idevice.emphasis > 0:
+                html += u'<a href="#" '
+                html += u'onmousedown="Javascript:updateCoords(event);"\n'
+                html += u'onclick="Javascript:showMe(\'iconpanel\', 350, 100);">'
+                html += u'Select a icon</a> \n'
+                icon = self.idevice.icon
+                if icon <> "":
+                    html += '<img src="/style/default/%s.gif"/><br/>' % icon
+                html += u'<div id="iconpanel" style="display:none; z-index:99;">'
+                html += u'<div style="float:right;" >\n'
+                html += u'<img alt="%s" ' % _("Close")
+                html += u'src="/images/stock-stop.png" title="%s"\n' % _("Close")
+                html += u'onmousedown="Javascript:hideMe();"/></div><br/>'
+                html += u'<div align="center"><b>%s:</b></div><br/>' % _("Icons")
+                html += self.__renderIcons()
+                html += u'</div><br/>\n'
             for element in self.elements:
                 html += element.renderEdit()       
         else:
@@ -264,16 +291,16 @@ the selection of an image from your stored picture files."""
                 html += element.renderPreview()               
             if self.idevice.purpose != "" or self.idevice.tip != "":
                 html += "<a title=\""+_("Pedagogical Help")+"\" "
-                html += "onmousedown=\"Javascript:updateCoords(event);\" "
-                html += "onclick=\"Javascript:showMe('phelp', 420, 240);\" " 
-                html += "href=\"Javascript:void(0)\" style=\"cursor:help;\"> " 
-                html += '<img alt="Info" src="/images/info.png" border="0" '
+                html += "onmousedown=\"Javascript:updateCoords(event);\" \n"
+                html += "onclick=\"Javascript:showMe('phelp', 380, 240);\" \n" 
+                html += "href=\"Javascript:void(0)\" style=\"cursor:help;\">\n " 
+                html += '<img alt="Info" src="/images/info.png" border="0" \n'
                 html += "align=\"middle\" /></a>\n"
-                html += "<div id=\"phelp\" style=\"display:none;\">"
+                html += "<div id=\"phelp\" style=\"display:none;\">\n"
                 html += "<div style=\"float:right;\" "
-                html += '<img alt="Close" src="/images/stock-stop.png" '
-                html += " title='"+_("Close")+"' border='0' align='middle' "
-                html += "onmousedown=\"Javascript:hideMe();\"/></div>"
+                html += '<img alt="Close" src="/images/stock-stop.png" \n'
+                html += " title='"+_("Close")+"' border='0' align='middle' \n"
+                html += "onmousedown=\"Javascript:hideMe();\"/></div>\n"
                 if self.idevice.purpose != "":
                     html += "<b>Purpose:</b><br/>%s<br/>" % self.purpose
                     
@@ -285,6 +312,19 @@ the selection of an image from your stored picture files."""
         self.message = ""
 
         return html
-        
-
+    
+    def __renderIcons(self):
+        """
+        Return xhtml string for dispay all icons
+        """
+        html = ""
+        for icon in self.iconfiles:
+            iconname = icon.namebase
+            filename = "/style/default/%s.gif" % iconname
+            html += u'<div style="float:left; text-align:center; width:80px;\n'
+            html += u'margin-right:10px; margin-bottom:10px" > '            
+            html += u'<img src="%s" \n' % filename
+            html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % iconname
+            html += u'<br/>%s.gif</div>\n' % iconname
+        return html
 # ===========================================================================
