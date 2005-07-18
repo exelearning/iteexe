@@ -165,9 +165,9 @@ the selection of an image from your stored picture files."""
         """
         Render the idevice being edited
         """
-        html = "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
+        html = "<font color=\"red\"<b>"+self.message+"</b></font>"
         
-        html += "<fieldset><legend><b>" + _("add elements")+ "</b></legend>"
+        html += "<fieldset><legend><b>" + _("Add")+ "</b></legend>"
         html += common.submitButton("addText", _("Text Line"))
         html += common.elementInstruc("line", self.lineInstruc) + "<br/>"
         html += common.submitButton("addTextArea", _("Text Box"))
@@ -176,7 +176,7 @@ the selection of an image from your stored picture files."""
         html += common.elementInstruc("image", self.imageInstruc) + "<br/>"
         html += "</fieldset>\n"
 
-        html += "<fieldset><legend><b>" + _("iDevice Functions") + "</b></legend>"
+        html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"
 
         if self.idevice.edit:
             html += common.submitButton("preview", _("Preview"))

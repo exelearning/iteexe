@@ -165,14 +165,14 @@ class EditorPage(RenderableResource):
         html += " charset=UTF-8\"></meta>\n";
         html += "</head>\n"
         html += "<body>\n"
-        html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
+        # html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
         html += "<div id=\"main\"> \n"     
         html += "<form method=\"post\" action=\""+self.url+"\" "
         html += "id=\"contentForm\" >"  
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", "1") 
-        html += "<font color=\"red\"<b>"+self.message+"</b></font><br/>"
+        html += "<font color=\"red\"<b>"+self.message+"</b></font>"
         html += "<div id=\"editorButtons\"> \n"     
         html += self.renderList()
         html += self.editorPane.renderButtons(request)
@@ -199,19 +199,6 @@ class EditorPage(RenderableResource):
         """
         Render the list of generic iDevice
         """
-        #html  = "<p>"
-        #html += "<a href=\"#\" "
-        #html += "onclick=\"submitLink('newIdevice', "
-        #html += "'0','1')\" />" 
-        #html += _("New iDevice")
-        #html += "</a><br/> \n"
-        #for prototype in self.ideviceStore.generic:
-            #html += "<a href=\"#\" "
-            #html += "onclick=\"submitLink('changeIdevice', "
-            #html += "'"+prototype.id+"','1')\" />" 
-            #html += prototype.title + "</a><br/> \n"
-        #html += "</p>\n"
-
         html  = "<fieldset><legend><b>" + _("Edit")+ "</b></legend>"
         html += '<select onchange="submitIdevice();" name="ideviceSelect">\n'
         html += "<option value = \"newIdevice\" "
