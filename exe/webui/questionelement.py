@@ -41,7 +41,7 @@ class QuestionElement(Element):
         'question' is a exe.engine.casestudyidevice.Question instance
         """
         name = "q" + unicode(index) + "b" + idevice.id
-        Element.__init__(self, parent, name, question)
+        Element.__init__(self, name, question)
         self.index      = index
         self.idevice    = idevice
         self.question   = question
