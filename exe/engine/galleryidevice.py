@@ -75,6 +75,16 @@ class GalleryImage(Persistable):
         thumbnail.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
         thumbnail.save(self.thumbnailFilename, "JPEG")
 
+    # Public Methods
+
+    def delete(self):
+        """
+        Removes our files from resources and removes us from our parent's list
+        """
+        self.imageFilename.remove()
+        self.thumbnailFilename.remove()
+        self.parent = None
+
     # Property Handlers
 
     def set_parent(self, parent):
