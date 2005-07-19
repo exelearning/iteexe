@@ -68,8 +68,8 @@ function addImage(elementId) {
         image.removeAttribute('width');
         image.removeAttribute('height');
         var path  = document.getElementById('path'+elementId);
-        path.value = fp.file.path;
-        image.src  = 'file://'+fp.file.path;
+        path.value = imagePath;
+        image.src  = 'file://'+imagePath;
     }
 }
 
