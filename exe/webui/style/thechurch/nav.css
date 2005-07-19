@@ -1,0 +1,124 @@
+/*  Copyright University of Auckland 2004
+Created by Brent Simpson, brent.simpson@auckland.ac.nz
+Centre for Flexible and Distance Learning
+*/
+body,
+html
+{
+background-image:url(page_bg.gif);
+background-position:top left;
+background-repeat:no-repeat;
+margin: 0px;
+font-size:11px;
+}
+* body
+{
+background-image:url(page_bg.gif);
+background-position:top left;
+background-repeat:no-repeat;
+}
+#navcontainer {
+z-index:1000;
+width: 250px;
+float: left;
+margin-top: 0px;
+padding-top: 120px;
+text-align:left;
+position:absolute;
+background-color:transparent;
+}
+#navlist
+{
+margin-left: 30px;
+position:absolute;
+}
+#navcontainer ul {
+margin-left: 30px;
+padding-left: 0;
+margin-top: 0;
+list-style-type: none;
+font-family: Arial, Helvetica, sans-serif;
+}
+#navcontainer a {
+display: block;
+padding: 4px 0 4px 6px;
+background-color: #FFF;
+border-bottom: 1px solid #ffffff;
+width: 163px;
+border-top: 1px solid #ffffff;
+}
+#navcontainer a:link,
+#navlist a:visited {
+color: #4d4d4d;
+background-color: #E0DFD8;
+text-decoration: none;
+}
+#navcontainer a:hover {
+color: #4d4d4d;
+background-color:#c7c5b9;
+}
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #navcontainer {
+margin-right: 10px;
+}
+* html p {
+height: 1%;
+margin-left: 0;
+}
+/* End hide from IE5/mac */
+div #active {
+padding: 3px 0 3px 6px;
+width: 149px;
+background-color: #706F61;
+color: #ffffff;
+border-bottom: 1px solid #fff;
+height: 20px;
+border-top: 6px solid #706f61;
+background-image:url(active_bg.gif);
+background-position:left middle;
+background-repeat:no-repeat;
+padding-left: 20px;
+}
+div #subnav {
+}
+#subnav a {
+display: block;
+border: 0 !important;
+width: 153px;
+margin-left: 10px;
+padding: 4px 0 4px 6px;
+font-size: 12px;
+font-size:11px;
+}
+#subnav a:hover {
+color: #4d4d4d;
+background-color: #C7C5B9;
+font-size:11px;
+}	
+#subnav #active {
+margin-left: 10px;
+background-color: #706F61;
+width: 139px;
+color: #ffffff;
+font-size:11px;
+background-image:url(active_bg.gif);
+background-position:left middle;
+background-repeat:no-repeat;
+height: 15px;
+border-top: 2px solid #706f61;
+}	
+/* MAIN CONTENT STYLES */
+#container {
+border-top: 0px solid #CCC;
+position:absolute;
+}
+#main {
+padding: 18px;
+margin: 0px 10px 10px 180px;
+line-height: 140%;
+margin-left: 260px;
+margin-top: 30px;
+position:absolute;
+text-align:left;
+width: 60%;
+}
