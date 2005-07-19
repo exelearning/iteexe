@@ -23,6 +23,7 @@ a single image
 
 import logging
 import gettext
+import urllib
 from exe.engine.galleryidevice  import GALLERY_MODE, SINGLE_IMAGE_MODE
 from exe.webui.block            import Block
 from exe.webui                  import common
@@ -50,7 +51,6 @@ class GalleryBlock(Block):
         'parent' is our parent 'Renderable' instance
         """
         Block.__init__(self, parent, idevice)
-        self.currentImageIndex = 0 # The image that we are currently showing
         
     # Protected Methods
 
@@ -85,43 +85,43 @@ class GalleryBlock(Block):
         Handles a post from the webui and changes our state accordingly
         """
         log.debug("process " + repr(request.args))
-        if self.mode == self.Edit:
-            # New image added
-            imagePath = request.args.get('newImagePath'+self.id, [None])[0]
-            if imagePath:
-                print 'New Image Path:', imagePath
-                self.idevice.addImage(imagePath)
-            # Check for each image
-            toDelete = None
+        # If the commit is not to do with us forget it
+        object = request.args.get('object', [''])[0]
+        if object != self.id:
+            Block.process(self, request)
+            return 
+        # Separate out the action we want to do and the params
+        action = request.args.get('action', [''])[0]
+        if action.startswith('gallery.'):
+            action, params = action.split('.', 2)[1:]
+            # There are certain events that we only care about when in edit mode
+            if self.mode == Block.Edit:
+                # See if we will delete an image
+                # Add an image
+                if action == 'addImage':
+                    # Decode multiple filenames
+                    filenames = map(urllib.unquote, params.split('&'))
+                    for filename in filenames: self.idevice.addImage(filename)
+                # Delete an image?
+                if action == 'delete':
+                    self.idevice.delImage(params)
+            elif self.idevice.mode == GALLERY_MODE:
+                # Zoom in on this image
+                if action == 'zoom':
+                    self.idevice.setCurrentImageById(params)
+            else:
+                # Switch to gallery mode
+                if ('galleryMode%s' % self.id) in request.args:
+                    self.idevice.mode = GALLERY_MODE
+                # Next
+                # Previous
+        elif self.mode == Block.Edit:
+            # Check all the image captions for changes
             for image in self.idevice.images:
                 # See if the caption has changed
                 newCaption = request.args.get('caption'+image.id, [None])[0]
                 if newCaption is not None:
                     image.caption = newCaption
-                # See if it is to be deleted
-                delete = request.args.get('delete'+image.id, [None])[0]
-                if delete is not None:
-                    toDelete = image
-            # Delete the image that was deleted
-            if toDelete:
-                toDelete.delete()
-        elif self.idevice.mode == GALLERY_MODE:
-            # Check for each image
-            for image in self.idevice.images:
-                # See if this image has been renamed
-                newCaption = request.args.get('caption'+image.id, [None])[0]
-                if newCaption is not None:
-                    image.caption = newCaption
-                # Zoom in on this image
-                if request.args.get('zoomIn'+image.id, [''])[0]:
-                    self.idevice.currentImageIndex = request.args['zoomImage%s'][0]
-                    self.idevice.mode = SINGLE_IMAGE_MODE
-        else:
-            # Switch to gallery mode
-            if ('galleryMode%s' % self.id) in request.args:
-                self.idevice.mode = GALLERY_MODE
-            # Next
-            # Previous
         # Let our ancestor deal with the rest
         Block.process(self, request)
         
@@ -156,7 +156,7 @@ class GalleryBlock(Block):
                          u'               value="%s" ' % image.caption,
                          u'               style="align:center;width:98%;"/>',
                          u'        <a href="javascript:submitLink(',
-                         u'''         'gallery.delete%s', %s, true)">''' % (image.id, self.id),
+                         u'''         'gallery.delete.%s', %s, true)">''' % (image.id, self.id),
                          u'          <img src="/images/stock-delete.png"/>',
                          u'        </a>',
                          u'         '+common.hiddenField('path'+image.id),
@@ -165,6 +165,15 @@ class GalleryBlock(Block):
         html += [self.renderEditButtons(),
                  u'</div>']
         return u'\n    '.join(html).encode('utf8')
+
+    def processDelete(self, request):
+        """
+        Override's deleting the Idevice to remove all the package resource files
+        too.
+        """
+        for image in self.idevice.images[::-1]:
+            image.delete()
+        Block.processDelete(self, request)
         
     def renderEditSingleImage(self, style):
         """

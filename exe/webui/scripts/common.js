@@ -24,16 +24,37 @@
 var objBrowse = navigator.appName;
 
 // Asks the user for an image, returns the path or an empty string
-function askUserForImage() {
+function askUserForImage(multiple) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select an image", nsIFilePicker.modeOpen);
+    if (multiple) {
+        var mode = nsIFilePicker.modeOpenMultiple;
+    } else {
+        var mode = nsIFilePicker.modeOpen;
+    }
+    fp.init(window, "Select an image", mode);
     fp.appendFilter("Image Files", "*.jpg; *.jpeg; *.png; *.gif");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-        return fp.file.path
+        if (multiple) {
+            var result = new String("");
+            while (fp.files.hasMoreElements()) {
+                var file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
+                if (file) {
+                    result += escape(file.path);
+                    if (fp.files.hasMoreElements()) {
+                        result += "&";
+                    }
+                } else {
+                    alert("No file");
+                }
+            }
+            return result
+        } else {
+            return fp.file.path;
+        }
     } else {
         return ""
     }
@@ -52,14 +73,12 @@ function addImage(elementId) {
     }
 }
 
-// Called by the user to provide an image file name to add to the package
+// Called by the user to provide one or more image files name to add to the package
 function addGalleryImage(galleryId) {
-    var imagePath = askUserForImage()
+    var imagePath = askUserForImage(true)
     if (imagePath != "") {
-        var path  = document.getElementById('newImagePath'+galleryId);
-        path.value = imagePath;
         // Save the change
-        submitLink("edit", galleryId, true);
+        submitLink("gallery.addImage."+imagePath, galleryId, true);
     }
 }
 

@@ -73,7 +73,11 @@ class GalleryImage(Persistable):
         self._thumbnailFilename = filenameTemplate % "Thumbnail"
         thumbnail = Image.open(originalImagePath)
         thumbnail.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
-        thumbnail.save(self.thumbnailFilename, "JPEG")
+        if thumbnail.mode == 'P':
+            # JPEG doesn't support pallette mapping
+            thumbnail.convert('RGB').save(self.thumbnailFilename, 'JPEG')
+        else:
+            thumbnail.save(self.thumbnailFilename, 'JPEG')
 
     # Public Methods
 
@@ -168,3 +172,29 @@ class GalleryIdevice(Idevice):
         the resources directory.
         """
         return GalleryImage(self, '', imagePath)
+
+    def delImage(self, imageId):
+        """
+        Allows you to delete an image from its id (NOT it's index into
+        'self.images')
+        """
+        for image in self.images:
+            if image.id == imageId:
+                image.delete()
+                break
+        else:
+            log.error('Was asked to delete image with id "%s" but it doesn\'t'
+                      'exist: %s' % (imageId, [img.id for img in self.images]))
+
+    def setCurrentImageById(self, imageid):
+        """Sets the current image that we're viewing, also automatically changes
+        self.mode to 'SINGLE_IMAGE_MODE'
+        """
+        for image in self.images:
+            if image.id == imageId:
+                self.currentImage = image
+                self.idevice.mode = SINGLE_IMAGE_MODE
+                break
+        else:
+            log.error('Was asked to zoom the image with id "%s" but it doesn\'t'
+                      'exist: %s' % (imageId, [img.id for img in self.images]))
