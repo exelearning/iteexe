@@ -4,35 +4,41 @@ eXe
 Copyright 2004-2005, University of Auckland
 ===========================================================================
 */
-body,
-html
-{
-margin: 0px;
-padding: 0px 10px 10px 10px;
-font-family: arial, verdana, helvetica, sans-serif;
-color:#4d4d4d;
-font-size: 12px;
-background: #E0DFD8;
-/* background-image:url(page_bg.gif);
-background-position:top left;
-background-repeat:repeat-y; */
+
+body, html {
+   margin: 0px;
+   padding: 0px 10px 10px 10px;
+   font-family: arial, verdana, helvetica, sans-serif;
+   color:#4d4d4d;
+   font-size: 12px;
+   background: #E0DFD8;
 }
-div
-{
+
+div {
 background-image:none;
 background-color:transparent;
 }
+
 html * div
 {
 background-image:none;
 background-color:transparent;
 }
+
 a { color: #FF6600;
-text-decoration: none;
+    text-decoration: none;
+    border: 0;
 }
+
 a:hover { text-decoration: underline;
 color: #B34700;
 }
+
+img {
+    border: 0;
+}
+
+
 .popupDiv {
 background-color: #E0DFD8;
 border: 1px solid #4d4d4d;
@@ -40,6 +46,7 @@ padding: 4px 4px 4px 10px;
 margin-left: 15px;
 text-align:left;
 }
+
 p#nodeTitle { 
 color: #4d4d4d;
 font-size: 32px;
@@ -49,13 +56,21 @@ display: inline;
 text-align:left;
 padding-right: 30px;
 }
+
 div#nodeDecoration {
 padding: 2px;
 border-bottom:0px;
 text-align:right;
 }
+
 /* --- iDevice Styles -- */
-.iDevice {
+
+.emphasis0 {
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.emphasis1 {
 background-color: #FFFFFF;
 border-bottom: 1px solid #9d9d9d;
 background-image:url(body_top_bg.gif);
@@ -64,23 +79,46 @@ background-repeat:no-repeat;
 margin-bottom: 10px;
 text-align:left;
 }
+
+.emphasis2 {
+    background-color: #FAFFE6;
+    padding-left: 18px;
+    border: 3px solid #ACBF60;
+    margin: 10px;
+}
+
+
+/* .iDevice {
+background-color: #FFFFFF;
+border-bottom: 1px solid #9d9d9d;
+background-image:url(body_top_bg.gif);
+background-position:top left;
+background-repeat:no-repeat;
+margin-bottom: 10px;
+text-align:left;
+}
+
 * html .iDevice
 {
 background-image:url(body_top_bg.gif);
 background-position:top left;
 background-repeat:no-repeat;
 }
+*/
+
 * html .iDevice_inner
 {
 background-image:none;
 background-position:top left;
 background-repeat:no-repeat;
 }
+
 .iDevice p {
 padding-left: 0px;
 line-height: 16px;
 text-align:left;
 }
+
 .iDeviceTitle {
 color: #568D14;
 font-size: 24px;
@@ -95,20 +133,24 @@ padding-bottom: 0px;
 margin-bottom: 0px;
 background-image:none;
 }    
+
 .iDevice_icon {
 padding-top: 0px;
 padding-left: 15px;
 border: 0px;
 }
+
 p.reading_reference {
 font-style: italic;        
 }
+
 p.reading_feedback {
 border: 1px dashed #ADADAD;
 margin: 20px;
 padding: 8px;
 background-color: #FFF;
 }
+
 .iDevice_inner
 {
 color:#4d4d4d;
@@ -119,13 +161,14 @@ margin-top:-20px;
 padding-top: 10px;
 background-image:none;
 }
-img
+
+/* img
 {
 margin-right: 20px;
 margin-bottom: 6px;
-border: 1px solid #4d4d4d;
 padding: 0px;
 }
+*/
 .noprt
 {
 margin-top: 20px;
@@ -134,6 +177,7 @@ font-family:Arial, Helvetica, sans-serif;
 font-size:11px;
 color:#999999;
 }
+
 .noprt a
 {
 color:#706F61;
@@ -141,6 +185,7 @@ text-decoration:none;
 padding-bottom: 1px;
 border-bottom: 1px solid #E0DFD8;
 }
+
 .noprt a:hover
 {
 color:#568D14;
@@ -148,9 +193,11 @@ padding-bottom: 1px;
 text-decoration:none;
 border-bottom: 1px solid #706F61;
 }
+
 .iDevice_inner_free
 {
 padding: 20px;
 padding-top: 60px;
 }
+
 .feedback{background-image:none;}
