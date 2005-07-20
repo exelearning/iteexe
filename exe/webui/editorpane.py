@@ -48,6 +48,7 @@ class EditorPane(object):
         """
         self.ideviceStore    = webserver.application.ideviceStore
         self.webDir          = webserver.application.config.webDir
+        self.styles          = webserver.application.config.styles
         self.elements        = []
         self.idevice         = GenericIdevice("", "", "", "", "")
         self.idevice.id      = self.ideviceStore.getNewIdeviceId()
@@ -71,9 +72,8 @@ Useful if you want the ability to place a label within the device."""
 Used for entering description textual content."""
         self.imageInstruc    = """Add an image to your iDevice. Enables 
 the selection of an image from your stored picture files."""
-        self.iconpath        = Path(self.webDir).joinpath("style/default")
-        self.iconfiles       = self.iconpath.files("*.gif")
-        
+        self.style           = "default"
+  
     def setIdevice(self, idevice):
         """
         Sets the iDevice to edit
@@ -143,7 +143,12 @@ the selection of an image from your stored picture files."""
         if "cancel" in request.args:
             ideviceId       = self.idevice.id
             self.idevice    = self.originalIdevice.clone()
-            self.idevice.id = ideviceId         
+            self.idevice.id = ideviceId 
+            
+        if ("action" in request.args and 
+            request.args["action"][0] == "changeStyle"):
+            self.style = request.args["object"][0]
+            print "style: ", self.style
             
         self.__buildElements()  
             
@@ -228,6 +233,15 @@ the selection of an image from your stored picture files."""
                 form.isChanged.value = 1;
                 form.submit();
             }\n"""
+        html += """
+            function submitStyle()
+            {
+                var form = document.getElementById("contentForm")
+                form.action.value = "changeStyle";
+                form.object.value = form.styleSelect.value;
+                form.isChanged.value = 0;
+                form.submit();
+            }\n"""
         html += "//-->\n"
         html += "</script>\n"
         
@@ -265,22 +279,25 @@ the selection of an image from your stored picture files."""
             html += "</select> \n"
             html += common.elementInstruc("emphasis", self.emphasisInstruc)
             html += "<br/><br/>\n"
-            print "emphasis: ", self.idevice.emphasis
-            #if True:
+            
+       
             if self.idevice.emphasis > 0:
+                html += self.__renderStyles() + " "
                 html += u'<a href="#" '
                 html += u'onmousedown="Javascript:updateCoords(event);"\n'
                 html += u'onclick="Javascript:showMe(\'iconpanel\', 350, 100);">'
                 html += u'Select an icon:</a> \n'
                 icon = self.idevice.icon
                 if icon <> "":
-                    html += '<img src="/style/default/%s.gif"/><br/>' % icon
+                    html += '<img src="/style/%s/%s' % (self.style, icon)
+                    html += '.gif"/><br/>'
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'
                 html += u'<div style="float:right;" >\n'
                 html += u'<img alt="%s" ' % _("Close")
                 html += u'src="/images/stock-stop.png" title="%s"\n' % _("Close")
-                html += u'onmousedown="Javascript:hideMe();"/></div><br/>'
+                html += u'onmousedown="Javascript:hideMe();"/></div><br/> \n'
                 html += u'<div align="center"><b>%s:</b></div><br/>' % _("Icons")
+               # html += self.__renderStyles() + "<br/>\n"
                 html += self.__renderIcons()
                 html += u'</div><br/>\n'
             for element in self.elements:
@@ -313,18 +330,35 @@ the selection of an image from your stored picture files."""
 
         return html
     
+    def __renderStyles(self):
+        """
+        Return xhtml string for rendering styles select
+        """
+        html  = '<select onchange="submitStyle();" name="styleSelect">\n'
+        for style in self.styles:
+            html += "<option value=\""+style+"\" "
+            if self.style == style:
+                html += "selected "
+            html += ">" + style + "</option>\n"
+        html += "</select> \n"
+        
+        return html
+    
     def __renderIcons(self):
         """
         Return xhtml string for dispay all icons
         """
+        iconpath  = Path(self.webDir).joinpath("style", self.style)
+        iconfiles = iconpath.files("icon_*")
         html = ""
-        for icon in self.iconfiles:
-            iconname = icon.namebase
-            filename = "/style/default/%s.gif" % iconname
+        for file in iconfiles:
+            iconname = file.namebase
+            icon     = iconname.split("_",1)[1]
+            filename = "/style/%s/%s.gif" % (self.style, iconname)
             html += u'<div style="float:left; text-align:center; width:80px;\n'
             html += u'margin-right:10px; margin-bottom:10px" > '            
             html += u'<img src="%s" \n' % filename
-            html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % iconname
-            html += u'<br/>%s.gif</div>\n' % iconname
+            html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % icon
+            html += u'<br/>%s.gif</div>\n' % icon
         return html
 # ===========================================================================

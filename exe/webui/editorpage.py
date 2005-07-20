@@ -165,7 +165,7 @@ class EditorPage(RenderableResource):
         html += " charset=UTF-8\"></meta>\n";
         html += "</head>\n"
         html += "<body>\n"
-        # html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
+       # html += "<pre>%s</pre>\n" % str(request.args) # to be deleted
         html += "<div id=\"main\"> \n"     
         html += "<form method=\"post\" action=\""+self.url+"\" "
         html += "id=\"contentForm\" >"  
