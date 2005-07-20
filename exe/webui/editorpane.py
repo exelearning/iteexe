@@ -72,8 +72,10 @@ Useful if you want the ability to place a label within the device."""
 Used for entering description textual content."""
         self.imageInstruc    = """Add an image to your iDevice. Enables 
 the selection of an image from your stored picture files."""
+
         self.style           = "default"
   
+
     def setIdevice(self, idevice):
         """
         Sets the iDevice to edit
@@ -279,8 +281,7 @@ the selection of an image from your stored picture files."""
             html += "</select> \n"
             html += common.elementInstruc("emphasis", self.emphasisInstruc)
             html += "<br/><br/>\n"
-            
-       
+
             if self.idevice.emphasis > 0:
                 html += self.__renderStyles() + " "
                 html += u'<a href="#" '
@@ -351,9 +352,9 @@ the selection of an image from your stored picture files."""
         iconpath  = Path(self.webDir).joinpath("style", self.style)
         iconfiles = iconpath.files("icon_*")
         html = ""
-        for file in iconfiles:
-            iconname = file.namebase
-            icon     = iconname.split("_",1)[1]
+        for iconfile in iconfiles:
+            iconname = iconfile.namebase
+            icon     = iconname.split("_", 1)[1]
             filename = "/style/%s/%s.gif" % (self.style, iconname)
             html += u'<div style="float:left; text-align:center; width:80px;\n'
             html += u'margin-right:10px; margin-bottom:10px" > '            
