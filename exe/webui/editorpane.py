@@ -102,8 +102,8 @@ the selection of an image from your stored picture files."""
             if "author" in request.args:
                 self.idevice.author = request.args["author"][0] 
     
-            if "description" in request.args:
-                self.idevice.purpose = request.args["description"][0] 
+            if "purpose" in request.args:
+                self.idevice.purpose = request.args["purpose"][0] 
     
             if "tip" in request.args:
                 self.idevice.tip = request.args["tip"][0] 
@@ -188,7 +188,7 @@ the selection of an image from your stored picture files."""
         html += common.elementInstruc("line", self.lineInstruc) + "<br/>"
         html += common.submitButton("addTextArea", _("Text Box"))
         html += common.elementInstruc("textBox", self.textBoxInstruc) + "<br/>"
-        html += common.submitButton("addImage", _("Image Upload")) 
+        html += common.submitButton("addImage", _("Image")) 
         html += common.elementInstruc("image", self.imageInstruc) + "<br/>"
         html += "</fieldset>\n"
 
@@ -247,11 +247,14 @@ the selection of an image from your stored picture files."""
         html += "//-->\n"
         html += "</script>\n"
         
-        self.purpose = self.idevice.purpose.replace("\r", "<br/>")
+      #  self.purpose = self.idevice.purpose.replace("\r", "<br/>")
+        self.purpose = self.idevice.purpose.replace("\r", "")
+        self.purpose = self.purpose.replace("\n","\\n")
+        self.purpose = self.purpose.replace("'","\\'")
         
-        self.tip = self.idevice.tip.replace("\r", "")
-        self.tip = self.tip.replace("\n","\\n")
-        self.tip = self.tip.replace("'","\\'")
+        self.tip     = self.idevice.tip.replace("\r", "")
+        self.tip     = self.tip.replace("\n","\\n")
+        self.tip     = self.tip.replace("'","\\'")
         
         if self.idevice.edit:
             html += "<b>" + _("Name") + ": </b>\n"
@@ -262,7 +265,8 @@ the selection of an image from your stored picture files."""
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
             html += "<b>" + _("Purpose") + ": </b>\n"
             html += common.elementInstruc("purpose", self.purposeInstruc)
-            html += "<br/>" +common.textArea("description", self.idevice.purpose)
+            html += "<br/>" +common.richTextArea("purpose", 
+                                                 self.purpose)
             html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
             html += common.elementInstruc("tip", self.tipInstruc) + "<br/>"
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
