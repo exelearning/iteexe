@@ -224,7 +224,7 @@ class Block(Renderable):
             html += u"onclick=\"Javascript:showMe('p"+self.id+"', 420, 240);\" "
             html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
             html += u'<img alt="info" src="/images/info.png" '
-            html += u'style="vertical-align:middle;" /></a>\n'
+            html += u'style="align:middle;" /></a>\n'
             html += u'<div id="p%s" style="display:none;">' % self.id
             html += u'<div style="float:right;">'
             html += u'<img alt="close" src="/images/stock-stop.png" '
@@ -286,7 +286,7 @@ class Block(Renderable):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.icon:
-            html += u'<img alt="idevice icon" class="iDevice_icon" '
+            html += u'<img alt="iDevice icon" class="iDevice_icon" '
             html += u" src=\""+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
         html += self.idevice.title
@@ -298,7 +298,7 @@ class Block(Renderable):
 
     def renderViewContent(self):
         """
-        overriden by derieved classes
+        overriden by derived classes
         """
         log.error(u"renderViewContent called directly")
         return u"ERROR: Block.renderViewContent called directly"

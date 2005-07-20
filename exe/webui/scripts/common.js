@@ -245,4 +245,12 @@ function getFeedback(optionId, optionsNum, ideviceId) {
 }
 
 
+// brent will remove later.
+//function display_edit() {
+//	document.edit_icon.style.display = "block";
+//	}
 
+//function hide_edit() {
+//	document.edit_icon.style.display = "none";
+//	}
+	

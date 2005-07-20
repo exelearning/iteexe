@@ -88,24 +88,6 @@ text-align:left;
 }
 
 
-/* .iDevice {
-background-color: #FFFFFF;
-border-bottom: 1px solid #9d9d9d;
-background-image:url(body_top_bg.gif);
-background-position:top left;
-background-repeat:no-repeat;
-margin-bottom: 10px;
-text-align:left;
-}
-
-* html .iDevice
-{
-background-image:url(body_top_bg.gif);
-background-position:top left;
-background-repeat:no-repeat;
-}
-*/
-
 * html .iDevice_inner
 {
 background-image:none;
