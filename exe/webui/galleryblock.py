@@ -33,6 +33,25 @@ log = logging.getLogger(__name__)
 _   = gettext.gettext
 
 # ===========================================================================
+class EasyBlock(Block):
+    """
+    Wraps a few simple things in the block
+    """
+
+    def __init__(self, parent, idevice, name):
+        Block.__init__(self, parent, idevice)
+        self.name = name
+
+    def process(self, request):
+        """
+        Handles a few nice commands and relays them to onXYZ handlers
+        """
+        object = request.args.get('object', [''])[0]
+        if object != self.id:
+            Block.process(self, request)
+            return 
+        
+
 class GalleryBlock(Block):
     """
     Gallery block can render a group of images, each with desciptions and zoom
@@ -208,11 +227,16 @@ class GalleryBlock(Block):
                 """
                 Generates a single table cell
                 """
-                return [u'        <a name="top">',
-                        u'          <img',
+                w, h = image.size
+                return [u'        <img onclick="javascript:window.open(',
+                        u"'%s', 'galleryImage', " % image.src +
+                        u"'menubar=no,alwaysRaised=yes,dependent=yes," +
+                        u"width=%s,height=%s,scrollbars=yes," % (w+5,h+25) +
+                        u"screenX='+((screen.width/2)-(%s/2))+" % (w) +
+                        u"',screenY='+((screen.height/2)-(%s/2))" % (h) +
+                        u');"',
                         u'           alt="%s"' % image.caption,
                         u'           src="%s"/>' % image.thumbnailSrc,
-                        u'        </a>',
                         u'        <div style="align:center;width:98%;">',
                         u'          %s' % image.caption,
                         u'        </div>']

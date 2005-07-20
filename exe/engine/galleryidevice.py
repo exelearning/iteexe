@@ -46,6 +46,7 @@ class GalleryImage(Persistable):
     _caption = None
     _id = None
     thumbnailSize = (128, 128)
+    size = thumbnailSize
 
     def __init__(self, parent, caption, originalImagePath):
         """
@@ -71,13 +72,14 @@ class GalleryImage(Persistable):
         package.addResource(originalImagePath, self.imageFilename)
         # Create the thumbnail
         self._thumbnailFilename = filenameTemplate % "Thumbnail"
-        thumbnail = Image.open(originalImagePath)
-        thumbnail.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
-        if thumbnail.mode == 'P':
+        image = Image.open(originalImagePath)
+        self.size = image.size
+        image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
+        if image.mode == 'P':
             # JPEG doesn't support pallette mapping
-            thumbnail.convert('RGB').save(self.thumbnailFilename, 'JPEG')
+            image.convert('RGB').save(self.thumbnailFilename, 'JPEG')
         else:
-            thumbnail.save(self.thumbnailFilename, 'JPEG')
+            image.save(self.thumbnailFilename, 'JPEG')
 
     # Public Methods
 
