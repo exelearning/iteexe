@@ -82,6 +82,14 @@ function addGalleryImage(galleryId) {
     }
 }
 
+// Called by the user to change an existing gallery image
+function changeGalleryImage(galleryId, imageId) {
+    var imagePath = askUserForImage(false)
+    if (imagePath != "") {
+        // Save the change
+        submitLink("gallery.changeImage."+imageId+"."+imagePath, galleryId, true);
+    }
+}
 
 
 function imageChanged(event) {

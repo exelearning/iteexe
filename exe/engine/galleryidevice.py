@@ -31,15 +31,15 @@ import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
-# Constants
-GALLERY_MODE, SINGLE_IMAGE_MODE = 0, 1
-
 # ===========================================================================
 class GalleryImage(Persistable):
     """
     Holds a gallery image and its caption. Can produce a thumbnail
     and line itself up with its siblings.
     """
+
+    # Class attributes
+    resourcesUrl = 'resources/'
 
     # Default attribute values
     _parent = None
@@ -58,13 +58,14 @@ class GalleryImage(Persistable):
         self._caption = TextField(caption)
         self._imageFilename = None
         self._thumbnailFilename = None
-        self._saveFiles(Path(originalImagePath))
+        self._saveFiles(originalImagePath)
 
     def _saveFiles(self, originalImagePath):
         """
         Copies the image file and saves the thumbnail file
         'originalImagePath' is a Path instance
         """
+        originalImagePath = Path(originalImagePath)
         # Copy the original image
         filenameTemplate = ('gallery%%s%s' % self.id) + originalImagePath.splitext()[1]
         self._imageFilename = filenameTemplate % 'Image'
@@ -119,6 +120,15 @@ class GalleryImage(Persistable):
         """
         return self.parent.parentNode.package.resourceDir/self._imageFilename
 
+    def set_imageFilename(self, filename):
+        """
+        Totally changes the image to point to a new filename
+        """
+        if self._imageFilename:
+            self.imageFilename.remove()
+            self.thumbnailFilename.remove()
+        self._saveFiles(filename)
+
     def get_thumbnailFilename(self):
         """
         Returns the full path to the thumbnail
@@ -127,15 +137,70 @@ class GalleryImage(Persistable):
 
     # Properties
 
-    imageFilename = property(get_imageFilename)
+    imageFilename = property(get_imageFilename, set_imageFilename)
     thumbnailFilename = property(get_thumbnailFilename)
     parent  = property(lambda self: self._parent, set_parent)
     caption = property(lambda self: unicode(self._caption.content), set_caption)
-    src = property(lambda self: 'resources/%s' % self._imageFilename)
-    thumbnailSrc = property(lambda self: 'resources/%s' %
-                            self._thumbnailFilename)
+    src = property(lambda self: '%s%s' % 
+                   (self.resourcesUrl , self._imageFilename))
+    thumbnailSrc = property(lambda self: '%s%s' %
+                            (self.resourcesUrl, self._thumbnailFilename))
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
+
+
+class GalleryImages(Persistable, list):
+    """
+    Allows easy access to gallery images
+    """
+
+    def __init__(self, idevice):
+        list.__init__(self)
+        self.idevice = idevice
+
+    def __getstate__(self):
+        """
+        Enables jellying of our list items
+        """
+        result = Persistable.__getstate__(self)
+        result['.listitems'] = list(self)
+        return result
+
+    def __setstate__(self, state):
+        """
+        Enables jellying of our list items
+        """
+        for item in state['.listitems']:
+            self.append(item)
+        del state['.listitems']
+        Persistable.__setstate__(self, state)
+
+    # Sequence handler functions
+
+    def __getitem__(self, index):
+        """
+        Allows one to retrieve an image by index or id
+        """
+        if isinstance(index, int):
+            return list.__getitem__(self, index)
+        else:
+            for image in self:
+                if image.id == index:
+                    return image
+            else:
+                raise KeyError(index)
+
+    def __setitem__(self, index, value):
+        """
+        Not allowed
+        """
+        raise AssertionError('Cannot just set images. Try idevice[x].filename = "newfilename"')
+
+    def __delitem__(self, index):
+        """
+        Cleanly removes the image and its filens
+        """
+        self[index].delete()
 
 
 class GalleryIdevice(Idevice):
@@ -156,9 +221,8 @@ class GalleryIdevice(Idevice):
                             "",
                             parentNode)
         self.emphasis = Idevice.SomeEmphasis
-        self.images = []
         self.nextImageId = 0
-        self.mode = GALLERY_MODE
+        self.images = GalleryImages(self)
         self.currentImageIndex = 0
 
     def genImageId(self):
@@ -175,28 +239,3 @@ class GalleryIdevice(Idevice):
         """
         return GalleryImage(self, '', imagePath)
 
-    def delImage(self, imageId):
-        """
-        Allows you to delete an image from its id (NOT it's index into
-        'self.images')
-        """
-        for image in self.images:
-            if image.id == imageId:
-                image.delete()
-                break
-        else:
-            log.error('Was asked to delete image with id "%s" but it doesn\'t'
-                      'exist: %s' % (imageId, [img.id for img in self.images]))
-
-    def setCurrentImageById(self, imageid):
-        """Sets the current image that we're viewing, also automatically changes
-        self.mode to 'SINGLE_IMAGE_MODE'
-        """
-        for image in self.images:
-            if image.id == imageId:
-                self.currentImage = image
-                self.idevice.mode = SINGLE_IMAGE_MODE
-                break
-        else:
-            log.error('Was asked to zoom the image with id "%s" but it doesn\'t'
-                      'exist: %s' % (imageId, [img.id for img in self.images]))

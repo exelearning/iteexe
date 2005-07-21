@@ -24,7 +24,6 @@ a single image
 import logging
 import gettext
 import urllib
-from exe.engine.galleryidevice  import GALLERY_MODE, SINGLE_IMAGE_MODE
 from exe.webui.block            import Block
 from exe.webui                  import common
 from exe.webui.element          import TextElement
@@ -58,7 +57,7 @@ class GalleryBlock(Block):
     in on a single image.
 
     Each of the GalleryImages owned by our GalleryIdevice is identified by its
-    index in the 'self.idevice.images' list.
+    index in the 'self.idevice' list.
     """
 
     # Default Attribute Values
@@ -121,19 +120,15 @@ class GalleryBlock(Block):
                     # Decode multiple filenames
                     filenames = map(urllib.unquote, params.split('&'))
                     for filename in filenames: self.idevice.addImage(filename)
+                # Edit/change an image
+                if action == 'changeImage':
+                    data = params.split('.', 2)
+                    imageId = '.'.join(data[:2])
+                    filename = data[2]
+                    self.idevice.images[imageId].imageFilename = filename
                 # Delete an image?
                 if action == 'delete':
-                    self.idevice.delImage(params)
-            elif self.idevice.mode == GALLERY_MODE:
-                # Zoom in on this image
-                if action == 'zoom':
-                    self.idevice.setCurrentImageById(params)
-            else:
-                # Switch to gallery mode
-                if ('galleryMode%s' % self.id) in request.args:
-                    self.idevice.mode = GALLERY_MODE
-                # Next
-                # Previous
+                    del self.idevice.images[params]
         elif self.mode == Block.Edit:
             # Check all the image captions for changes
             for image in self.idevice.images:
@@ -162,24 +157,29 @@ class GalleryBlock(Block):
         else:
             def genCell(image):
                 """Generates a single cell of our table"""
-                return [u'        <a '
-                         u' href="javascript:zoomGalleryImage('
-                         u"""'%s')">""" % image.id,
-                         u'          <img',
-                         u'           alt="%s"' % image.caption,
-                         u'           src="%s"/>' % image.thumbnailSrc,
-                         u'        </a>',
-                         u'        <span>',
-                         u'        <input id="caption%s" ' % image.id,
-                         u'               name="caption%s" ' % image.id,
-                         u'               value="%s" ' % image.caption,
-                         u'               style="align:center;width:98%;"/>',
-                         u'        <a href="javascript:submitLink(',
-                         u'''         'gallery.delete.%s', %s, true)">''' % (image.id, self.id),
-                         u'          <img src="/images/stock-delete.png"/>',
-                         u'        </a>',
-                         u'         '+common.hiddenField('path'+image.id),
-                         u'         '+common.hiddenField('zoomIn'+image.id)]
+                changeGalleryImage = [
+                        u'           onclick="changeGalleryImage(' +
+                        u"'%s', '%s')" % (self.id, image.id),
+                        u'"']
+                return [u'          <img',] + \
+                        changeGalleryImage + \
+                       [u'           alt="%s"' % image.caption,
+                        u'           src="%s"/>' % image.thumbnailSrc,
+                        u'        <span>',
+                        u'        <input id="caption%s" ' % image.id,
+                        u'               name="caption%s" ' % image.id,
+                        u'               value="%s" ' % image.caption,
+                        u'               style="align:center;width:98%;"/>',
+                        u'          <img '] + \
+                        changeGalleryImage + \
+                       [u'               src="/images/stock-edit.png"/>',
+                        u'        </a>',
+                        u'        <a href="javascript:submitLink(',
+                        u'''         'gallery.delete.%s', %s, true)">''' % (image.id, self.id),
+                        u'          <img src="/images/stock-delete.png"/>',
+                        u'        </a>',
+                        u'         '+common.hiddenField('path'+image.id),
+                        u'         '+common.hiddenField('zoomIn'+image.id)]
             html += self._generateTable(genCell)
         html += [self.renderEditButtons(),
                  u'</div>']
@@ -206,17 +206,14 @@ class GalleryBlock(Block):
         html  = [u'<div class="iDevice emphasis%s" ' %
                  unicode(self.idevice.emphasis),
                  u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id]
-        if self.idevice.mode == GALLERY_MODE:
-            html += self.renderPreviewGallery(style)
-        else:
-            html += self.renderPreviewSingleImage(style)
+        html += self.renderSharedView(style)
         html += [self.renderViewButtons(),
                  u'</div>']
         return u'\n    '.join(html).encode('utf8')
 
-    def renderPreviewGallery(self, style):
+    def renderSharedView(self, style):
         """
-        Shows the image in a nice gallery
+        HTML shared by view and preview
         """
         if len(self.idevice.images) == 0:
             html = [u'<div style="align:center center">',
@@ -231,7 +228,7 @@ class GalleryBlock(Block):
                 return [u'        <img onclick="javascript:window.open(',
                         u"'%s', 'galleryImage', " % image.src +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
-                        u"width=%s,height=%s,scrollbars=yes," % (w+5,h+25) +
+                        u"width=%s,height=%s,scrollbars=yes," % (w+10,h+50) +
                         u"screenX='+((screen.width/2)-(%s/2))+" % (w) +
                         u"',screenY='+((screen.height/2)-(%s/2))" % (h) +
                         u');"',
@@ -243,5 +240,23 @@ class GalleryBlock(Block):
             html = self._generateTable(genCell)
         return html
         
-    def renderPreviewSingleImage(self, style): pass
-    def renderView(self, style): pass
+    def renderView(self, style):
+        """
+        Renders the html for export
+        """
+        # Temporarily change the resources Url for exporting the images nicely
+        if len(self.idevice.images) > 0:
+            cls = self.idevice.images[0].__class__
+            oldUrl, cls.resourcesUrl = cls.resourcesUrl, ''
+        try:
+            html  = [u'    <div class="iDevice emphasis%s" ' %
+                     unicode(self.idevice.emphasis),
+                     u'>']
+            html += self.renderSharedView(style)
+            html += [u'</div>']
+            return u'\n    '.join(html).encode('utf8')
+        finally:
+            # Put the resource url back
+            if len(self.idevice.images) > 0:
+                cls.resourcesUrl = oldUrl
+                
