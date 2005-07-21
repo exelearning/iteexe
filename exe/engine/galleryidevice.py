@@ -31,8 +31,6 @@ import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
-import pygame
-
 # ===========================================================================
 class GalleryImage(Persistable):
     """
