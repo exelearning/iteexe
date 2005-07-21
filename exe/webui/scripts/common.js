@@ -40,18 +40,20 @@ function askUserForImage(multiple) {
     if (res == nsIFilePicker.returnOK) {
         if (multiple) {
             var result = new String("");
+            var lastFile = null;
+            var file     = null;
             while (fp.files.hasMoreElements()) {
-                var file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
-                if (file) {
-                    result += escape(file.path);
-                    if (fp.files.hasMoreElements()) {
-                        result += "&";
-                    }
-                } else {
-                    alert("No file");
+                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
+                if (file == lastFile) {
+                    break;
                 }
+                lastFile = file;
+                if (result != "") {
+                    result += "&";
+                }
+                result += escape(file.path);
             }
-            return result
+            return result;
         } else {
             return fp.file.path;
         }
