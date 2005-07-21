@@ -147,6 +147,7 @@ class GalleryImage(Persistable):
                             (self.resourcesUrl, self._thumbnailFilename))
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
+    index = property(lambda self: self.parent.images.index(self))
 
 
 class GalleryImages(Persistable, list):
@@ -189,12 +190,6 @@ class GalleryImages(Persistable, list):
                     return image
             else:
                 raise KeyError(index)
-
-    def __setitem__(self, index, value):
-        """
-        Not allowed
-        """
-        raise AssertionError('Cannot just set images. Try idevice[x].filename = "newfilename"')
 
     def __delitem__(self, index):
         """

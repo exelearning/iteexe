@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-Gallery block can render a group of images, each with desciptions and zoom in on
+Gallery block can render a group of images, each with desciptions and popup on
 a single image
 """
 
@@ -53,8 +53,8 @@ class EasyBlock(Block):
 
 class GalleryBlock(Block):
     """
-    Gallery block can render a group of images, each with desciptions and zoom
-    in on a single image.
+    Gallery block can render a group of images, each with desciptions and popup
+    on a single image.
 
     Each of the GalleryImages owned by our GalleryIdevice is identified by its
     index in the 'self.idevice' list.
@@ -126,6 +126,20 @@ class GalleryBlock(Block):
                     imageId = '.'.join(data[:2])
                     filename = data[2]
                     self.idevice.images[imageId].imageFilename = filename
+                # Move image one left
+                if action == 'moveLeft':
+                    imgs = self.idevice.images
+                    img = imgs[params]
+                    index = imgs.index(img)
+                    if index > 0:
+                        imgs[index-1], imgs[index] = imgs[index], imgs[index-1]
+                # Move image one right
+                if action == 'moveRight':
+                    imgs = self.idevice.images
+                    img = imgs[params]
+                    index = imgs.index(img)
+                    if index < len(imgs):
+                        imgs[index+1], imgs[index] = imgs[index], imgs[index+1]
                 # Delete an image?
                 if action == 'delete':
                     del self.idevice.images[params]
@@ -159,27 +173,47 @@ class GalleryBlock(Block):
                 """Generates a single cell of our table"""
                 changeGalleryImage = [
                         u'           onclick="changeGalleryImage(' +
-                        u"'%s', '%s')" % (self.id, image.id),
+                        u"'%s', '%s')" % (self.id, image.id) +
                         u'"']
-                return [u'          <img',] + \
-                        changeGalleryImage + \
-                       [u'           alt="%s"' % image.caption,
-                        u'           src="%s"/>' % image.thumbnailSrc,
-                        u'        <span>',
-                        u'        <input id="caption%s" ' % image.id,
-                        u'               name="caption%s" ' % image.id,
-                        u'               value="%s" ' % image.caption,
-                        u'               style="align:center;width:98%;"/>',
-                        u'          <img '] + \
-                        changeGalleryImage + \
-                       [u'               src="/images/stock-edit.png"/>',
-                        u'        </a>',
-                        u'        <a href="javascript:submitLink(',
-                        u'''         'gallery.delete.%s', %s, true)">''' % (image.id, self.id),
-                        u'          <img src="/images/stock-delete.png"/>',
-                        u'        </a>',
-                        u'         '+common.hiddenField('path'+image.id),
-                        u'         '+common.hiddenField('zoomIn'+image.id)]
+                result = [u'          <img',] + \
+                          changeGalleryImage + \
+                         [u'           alt="%s"' % image.caption,
+                          u'           src="%s"/>' % image.thumbnailSrc,
+                          u'        <span>',
+                          u'        <input id="caption%s" ' % image.id,
+                          u'               name="caption%s" ' % image.id,
+                          u'               value="%s" ' % image.caption,
+                          u'               style="align:center;width:98%;"/>',
+                          # Edit button
+                          u'          <img '] + \
+                          changeGalleryImage + \
+                         [u'               src="/images/stock-edit.png"/>']
+                # Move left button
+                if image.index > 0:
+                    result += [
+                          u'        <img onclick="javascript:submitLink(' +
+                          u'''           'gallery.moveLeft.%s', %s, true)"''' %\
+                                         (image.id, self.id),
+                          u'             src="/images/stock-go-back.png"/>'
+                          ]
+                else:
+                    result += [
+                          u'        <img src="/images/stock-go-back-off.png"/>']
+                # Move right button
+                if image.index < len(image.parent.images)-1:
+                    result += [
+                          u'        <img onclick="javascript:submitLink(' +
+                          u'''           'gallery.moveRight.%s', %s, true)"''' % (image.id, self.id),
+                          u'             src="/images/stock-go-forward.png"/>']
+                else:
+                    result += [
+                          u'        <img src="/images/stock-go-forward-off.png"/>']
+                result += [
+                          # Delete button
+                          u'        <img onclick="javascript:submitLink(' +
+                          u'''           'gallery.delete.%s', %s, true)"''' % (image.id, self.id),
+                          u'             src="/images/stock-delete.png"/>']
+                return result
             html += self._generateTable(genCell)
         html += [self.renderEditButtons(),
                  u'</div>']
@@ -206,12 +240,12 @@ class GalleryBlock(Block):
         html  = [u'<div class="iDevice emphasis%s" ' %
                  unicode(self.idevice.emphasis),
                  u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id]
-        html += self.renderSharedView(style)
+        html += self.renderViewContent(style)
         html += [self.renderViewButtons(),
                  u'</div>']
         return u'\n    '.join(html).encode('utf8')
 
-    def renderSharedView(self, style):
+    def renderViewContent(self, style):
         """
         HTML shared by view and preview
         """
@@ -252,7 +286,7 @@ class GalleryBlock(Block):
             html  = [u'    <div class="iDevice emphasis%s" ' %
                      unicode(self.idevice.emphasis),
                      u'>']
-            html += self.renderSharedView(style)
+            html += self.renderViewContent(style)
             html += [u'</div>']
             return u'\n    '.join(html).encode('utf8')
         finally:
