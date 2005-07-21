@@ -61,8 +61,8 @@ class GalleryBlock(Block):
     """
 
     # Default Attribute Values
-    thumbnailsPerRow = 5
-    thumbnailSize = (96, 76)
+    thumbnailsPerRow = 4
+    thumbnailSize = (96, 96)
 
     def __init__(self, parent, idevice):
         """
@@ -79,20 +79,26 @@ class GalleryBlock(Block):
         argument, which is an 'exe.engine.galleryIdevice.GalleryImage' instance
         and return a list of strings that will be later joined with '\n' chars.
         """
+        width, height = self.idevice.images[0].thumbnailSize
         html = [u'<table width="100%" border="1" cellpadding="3" '
-                 'cellspacing="3">',
-                u'  <tbody>',
-                u'    <tr>']
-        thumbnailsThisRow = 0
+                 'cellspacing="0" style="margin:4px;border-style:groove;">',
+                u'  <tbody>']
+        i = 0
         for image in self.idevice.images:
-            if thumbnailsThisRow % self.thumbnailsPerRow == 0:
-                html += ['    </tr>']
-            html += [u'      <td>']
+            i += 1
+            if i == 1:
+                html += ['    <tr>']
+            html += [u'      <td width="%spx">' % (width+6)]
             html += perCell(image)
             html += [u'      </td>']
-            thumbnailsThisRow += 1
-        html += [u'    </tr>',
-                 u'  </tbody>',
+            if i == self.thumbnailsPerRow:
+                html += ['    </tr>']
+                i = 0
+        if i < self.thumbnailsPerRow:
+            for j in range(self.thumbnailsPerRow - i):
+                html.append('<td></td>')
+            html.append('</tr>')
+        html += [u'  </tbody>',
                  u'</table>']
         return html
 
@@ -178,6 +184,7 @@ class GalleryBlock(Block):
                 result = [u'          <img',] + \
                           changeGalleryImage + \
                          [u'           alt="%s"' % image.caption,
+                          u'           style="align:center top;"',
                           u'           src="%s"/>' % image.thumbnailSrc,
                           u'        <span>',
                           u'        <input id="caption%s" ' % image.id,
@@ -262,14 +269,15 @@ class GalleryBlock(Block):
                 return [u'        <img onclick="javascript:window.open(',
                         u"'%s', 'galleryImage', " % image.src +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
-                        u"width=%s,height=%s,scrollbars=yes," % (w+10,h+50) +
+                        u"width=%s,height=%s,scrollbars=yes," % (w+20,h+30) +
                         u"screenX='+((screen.width/2)-(%s/2))+" % (w) +
                         u"',screenY='+((screen.height/2)-(%s/2))" % (h) +
                         u');"',
+                        u'           style="align:center top;"',
                         u'           alt="%s"' % image.caption,
                         u'           src="%s"/>' % image.thumbnailSrc,
-                        u'        <div style="align:center;width:98%;">',
-                        u'          %s' % image.caption,
+                        u'        <div style="align:center;width=100%">',
+                        u'          %s' % (image.caption or '&nbsp;'),
                         u'        </div>']
             html = self._generateTable(genCell)
         return html

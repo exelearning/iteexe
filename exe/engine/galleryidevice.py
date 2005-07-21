@@ -31,6 +31,8 @@ import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
 
+import pygame
+
 # ===========================================================================
 class GalleryImage(Persistable):
     """
@@ -47,6 +49,7 @@ class GalleryImage(Persistable):
     _id = None
     thumbnailSize = (128, 128)
     size = thumbnailSize
+    bgColour = 0x808080
 
     def __init__(self, parent, caption, originalImagePath):
         """
@@ -76,11 +79,14 @@ class GalleryImage(Persistable):
         image = Image.open(originalImagePath)
         self.size = image.size
         image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
-        if image.mode == 'P':
-            # JPEG doesn't support pallette mapping
-            image.convert('RGB').save(self.thumbnailFilename, 'JPEG')
-        else:
-            image.save(self.thumbnailFilename, 'JPEG')
+        image2 = Image.new('RGBA', self.thumbnailSize, (0xFF,0,0,0))
+        mask = Image.new('1', self.thumbnailSize, 1)
+        width1, height1 = image.size
+        width2, height2 = image2.size
+        left = (width2 - width1) / 2.
+        top = (height2 - height1) / 2.
+        image2.paste(image, (left, top))
+        image2.save(self.thumbnailFilename, 'PNG')
 
     # Public Methods
 
@@ -182,7 +188,7 @@ class GalleryImages(Persistable, list):
         """
         Allows one to retrieve an image by index or id
         """
-        if isinstance(index, int):
+        if isinstance(index, int) or isinstance(index, slice):
             return list.__getitem__(self, index)
         else:
             for image in self:
