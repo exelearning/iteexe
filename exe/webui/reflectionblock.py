@@ -57,6 +57,9 @@ class ReflectionBlock(Block):
         if "answer"+self.id in request.args:
             self.idevice.answer = request.args["answer"+self.id][0]
         
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
+        
 
     def renderEdit(self, style):
         """
@@ -68,7 +71,9 @@ class ReflectionBlock(Block):
         self.answer   = self.answer.replace("\r", "")
         self.answer   = self.answer.replace("\n","\\n")
         self.answer   = self.answer.replace("'","\\'")
-        html  = "<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\"><br/>\n"
+        html += common.textInput("title"+self.id, self.idevice.title)
+        html += u"<br/><br/>\n"
         html +=  _("Reflective question:") 
         html += common.elementInstruc("activity"+self.id, self.activityInstruc)
         html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)

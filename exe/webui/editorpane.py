@@ -150,7 +150,6 @@ the selection of an image from your stored picture files."""
         if ("action" in request.args and 
             request.args["action"][0] == "changeStyle"):
             self.style = request.args["object"][0]
-            print "style: ", self.style
             
         self.__buildElements()  
             

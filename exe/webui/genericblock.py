@@ -24,6 +24,7 @@ import logging
 import gettext
 from exe.webui.block            import Block
 from exe.webui.elementfactory   import g_elementFactory
+from exe.webui                  import common
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -50,13 +51,18 @@ class GenericBlock(Block):
             request.args[u"action"][0] != u"delete"):
             for element in self.elements:
                 element.process(request)
+                
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
 
 
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = "<div>\n"
+        html  = "<div><br/>\n"
+        html += common.textInput("title"+self.id, self.idevice.title) 
+        html += u"<br/><br/>\n"
         for element in self.elements:
             html += element.renderEdit() + "<br/>"
         html += "<br/>"

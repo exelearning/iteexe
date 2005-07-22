@@ -62,6 +62,9 @@ class TrueFalseBlock(Block):
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+        
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
 
         for element in self.questionElements:
             element.process(request)
@@ -72,7 +75,9 @@ class TrueFalseBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         
-        html  = "<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\"><br/>\n"
+        html += common.textInput("title"+self.id, self.idevice.title)
+        html += u"<br/><br/>\n"
         html += "<table width =\"100%%\">"
         html += "<thead>"
         html += "<tr>"

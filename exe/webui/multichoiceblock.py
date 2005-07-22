@@ -72,6 +72,9 @@ class MultichoiceBlock(Block):
         if ("addOption"+unicode(self.id)) in request.args: 
             self.idevice.addOption()
             self.idevice.edit = True
+        
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
 
         for element in self.optionElements:
             element.process(request)
@@ -85,7 +88,9 @@ class MultichoiceBlock(Block):
         self.question = self.question.replace("\n","\\n")
         self.question = self.question.replace("'","\\'")
         
-        html  = "<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\"><br/>\n"
+        html += common.textInput("title"+self.id, self.idevice.title)
+        html += u"<br/><br/>\n"
         html += "<b>" + _("Question:") + " </b>"   
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)

@@ -79,6 +79,9 @@ class QuizTestBlock(Block):
         if "submitScore" in request.args:
             self.idevice.score = self.__calcScore()
             
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
+            
 
     def renderEdit(self, style):
         """

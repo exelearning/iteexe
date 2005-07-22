@@ -65,6 +65,9 @@ class CasestudyBlock(Block):
         if (u"addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
+            
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
 
         for element in self.questionElements:
             element.process(request)
@@ -77,7 +80,9 @@ class CasestudyBlock(Block):
         self.story = self.story.replace(u"\r", u"")
         self.story = self.story.replace(u"\n", u"\\n")
         self.story = self.story.replace(u"'",  u"\\'")
-        html  = u'<div class="iDevice">\n'
+        html  = u'<div class="iDevice"><br/>\n'
+        html += common.textInput("title"+self.id, self.idevice.title)
+        html += u"<br/><br/>\n"
         html += u'<b>%s</b>' % _(u'Story:')
         html += common.elementInstruc(u'story'+self.id, self.storyInstruc)
         html += common.richTextArea(u'story'+self.id, self.story)
