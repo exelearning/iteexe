@@ -51,7 +51,7 @@ class TestBlock(SuperTestCase):
             request = self._request(action='AddIdevice', object=str(id_))
             ctx = RequestContext(request)
             return self.mainpage.authoringPage.render(request)
-        for i in range(1,8):
+        for i in range(8,9):
             allHtml = addIdevice(i)
         checker = HTMLChecker(self.ignoreErrorMsgs)
         mainOk = checker.check(allHtml, False)

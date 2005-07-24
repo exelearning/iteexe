@@ -166,7 +166,7 @@ class HTMLChecker(object):
         stdin, stdout, stderr = os.popen3('xmllint --encode utf8 --dtdvalid xhtml1-strict.dtd tmp.html', True)
         out = stdout.read()
         err = stderr.read()
-        ret = os.wait()[1] # This waits for the process to finish
+        ret = os.wait()[1] >> 8
         if ret == 0:
             # Perfect!
             return True

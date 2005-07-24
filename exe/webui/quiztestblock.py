@@ -123,21 +123,22 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<form id="contentForm">\n'
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html = u''
+        html += u'<form id="contentForm">\n'
+        html += u'<div class="iDevice '
+        html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
-        html += u"src=\"icon_multichoice.gif\" />\n"
-        html += u"<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span><br/>\n"
+        html += u'src="icon_multichoice.gif" />\n'
+        html += u'<span class="iDeviceTitle">'
+        html += self.idevice.title+'</span><br/>\n'
         
         for element in self.questionElements:
             html += element.renderView() + "<br/>"  
-        html += "</div>\n"
         
+        html += "</div>\n"
         html += '<input type="button" name="submitB" '
-        html += 'value="%s"' % _("SUBMIT ANSWERS")
-        html += 'onClick="calcScore()">\n'
+        html += 'value="%s" ' % _("SUBMIT ANSWERS")
+        html += 'onClick="calcScore()"/>\n'
         html += '</form>\n'
 
         return html

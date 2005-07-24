@@ -212,7 +212,7 @@ class ImageElement(Element):
         html += u"document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', imageChanged, true);\n"
         html += u'</script>\n'
-        html += u"<br/>\n"
+        html += u"</p>\n"
 
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += _(u"Select an image")
