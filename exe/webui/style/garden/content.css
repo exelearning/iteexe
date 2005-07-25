@@ -69,7 +69,6 @@ div#nodeDecoration {
     margin: 10px;
 }
 
-
 .iDevice p {
     padding-left: 24px;
 }
@@ -87,6 +86,14 @@ div#nodeDecoration {
     padding-top: 10px;
 }
 
+/* styles for image with text iDevice */
+
+.image_text { 
+	border: 1px solid #CCC;
+	background: #F9F9F9;
+	padding: 4px;
+	margin: 4px;
+}
 
 
 p.reading_reference {

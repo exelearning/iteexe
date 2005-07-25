@@ -102,6 +102,18 @@ p#nodeTitle {
     top: -18px;   /* aligns title up with middle of icon */
 }    
 
+/* styles for image with text iDevice */
+
+.image_text { 
+	border: 1px solid #3C5866;
+	background: #FFF;
+	padding: 4px;
+	margin: 4px;
+}
+
+
+
+
 p.reading_reference {
     font-style: italic;        
 }

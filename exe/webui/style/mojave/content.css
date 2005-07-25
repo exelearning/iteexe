@@ -98,6 +98,17 @@ p#nodeTitle {
     padding-top: 10px;
 }
 
+/* styles for image with text iDevice */
+
+.image_text { 
+	border: 1px solid #8A999C;
+	background: #C2C2C2;
+	padding: 4px;
+	margin: 4px;
+}
+
+
+
 p.reading_reference {
     font-style: italic;        
 }

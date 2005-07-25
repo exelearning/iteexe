@@ -15,7 +15,6 @@ body {
    background: #E0DFD8;
 }
 
-/* do we need this?
 div {
    background-image:none;
    background-color:transparent;
@@ -26,7 +25,6 @@ html * div {
    background-image:none;
    background-color:transparent;
 }
-*/
 
 a { color: #FF6600;
     text-decoration: none;
@@ -66,7 +64,6 @@ div#nodeDecoration {
 }
 
 
-
 /* --- iDevice Styles -- */
 
 
@@ -100,28 +97,18 @@ div#nodeDecoration {
 
 }
 
-
-
 * html .iDevice_inner {
-
    background-image:none;
-
    background-position:top left;
-
    background-repeat:no-repeat;
 }
 
 
 * html .iDevice_inner
-
 {
-
 background-image:none;
-
 background-position:top left;
-
 background-repeat:no-repeat;
-
 }
 
 
@@ -140,7 +127,7 @@ background-repeat:no-repeat;
    letter-spacing:-1px;
    position: relative;
    top: -50px;
-   left:76px;
+   left:72px;
    display:block;
    padding-bottom: 0px;
    margin-bottom: 0px;
@@ -197,20 +184,13 @@ img {
 
 
 .iDevice_inner_free {
-
    padding: 20px;
-
    padding-top: 60px;
-
 }
 
 .iDevice_inner_free
-
 {
-
 padding: 20px;
-
 padding-top: 60px;
-
 }
 
