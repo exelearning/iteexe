@@ -68,7 +68,7 @@ class MainPage(RenderableLivePage):
         self.styleMenu   = StyleMenu(self)
 
         # And in the main section
-        self.authoringPage = AuthoringPage(self)
+        self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
         self.error = False
 
