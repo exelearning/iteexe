@@ -97,14 +97,12 @@ class QuizTestBlock(Block):
         html += _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
         isChecked = ""
+        template = '  <option value="%s0"%s>%s0%%</option>\n'
         for i in range(1, 11):
             if str(i)+ "0" == self.idevice.passRate:
-                isChecked = "selected"
+                html += template % (str(i), ' selected="selected"', str(i))
             else:
-                isChecked = ""
-            html += "<option value=%s0 %s> %s0%% </option>" % (str(i), 
-                                                               isChecked,
-                                                               str(i))
+                html += template % (str(i), '', str(i))
         html += "</select><br/><br/>\n"
 
         for element in self.questionElements:
@@ -124,7 +122,7 @@ class QuizTestBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html = u''
-        html += u'<form id="contentForm">\n'
+        html += u'<form id="contentForm" action="javascript:calcScore();">\n'
         html += u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
@@ -135,10 +133,9 @@ class QuizTestBlock(Block):
         for element in self.questionElements:
             html += element.renderView() + "<br/>"  
         
-        html += "</div>\n"
         html += '<input type="button" name="submitB" '
-        html += 'value="%s" ' % _("SUBMIT ANSWERS")
-        html += 'onClick="calcScore()"/>\n'
+        html += 'value="%s"/>\n' % _("SUBMIT ANSWERS")
+        html += "</div>\n"
         html += '</form>\n'
 
         return html
@@ -336,7 +333,8 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
+        html  = u'<form action="javascript:calcScore();">\n'
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u'<img alt="" class="iDevice_icon" '
@@ -347,7 +345,6 @@ class QuizTestBlock(Block):
         for element in self.questionElements:
             html += element.renderView() + "<br/>"
         html += self.renderViewButtons()
-        html += u"</div>\n"
        
         html += '<input type="submit" name="submitScore"'
         html += ' value="%s"/> ' % _("Submit Answer")
@@ -358,6 +355,8 @@ class QuizTestBlock(Block):
 
         self.idevice.score = -1
         
+        html += u"</div>\n"
+        html += '</form>\n'
         return html
     
 

@@ -107,7 +107,8 @@ class ForumBlock(Block):
                       [_(u'Hide'), '0']]
 
         
-        html  = u"<div class=\"iDevice\" class=\"forum\">\n"
+        html  = u'<div class="iDevice emphasis%d forum">\n' % \
+                  self.idevice.emphasis
         
         html += u"<b>%s</b>" % _(u"Forum name:") 
         html += common.elementInstruc("name"+self.id, 
@@ -165,7 +166,9 @@ class ForumBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<br/><b>%s</b><br/>" % _(u"Forum Discussion")
+        html  = u'<div class="iDevice emphasis%d forum">\n' % \
+                  self.idevice.emphasis
+        html += u"<p><b>%s</b></p>" % _(u"Forum Discussion")
         html += u"<b>%s</b><br/>" % self.idevice.forumName
         html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
         html += u"<b>%s</b><br/>\n" % _(u"Subject")
@@ -173,19 +176,23 @@ class ForumBlock(Block):
         html += u"<br/>\n" 
         html += self.idevice.discussionMessage + u"<br/>\n"
         html += self.renderViewButtons()
+        html += u"</div>"
         return html
 
     def renderView(self, style):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<br/><b>%s</b><br/>" % _(u"Forum Discussion")
+        html  = u'<div class="iDevice emphasis%d forum">\n' % \
+                  self.idevice.emphasis
+        html += u"<p><b>%s</b></p>" % _(u"Forum Discussion")
         html += u"<b>%s</b><br/>" % self.idevice.forumName
         html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
         html += u"<b>%s</b><br/>\n" % _(u"Subject")
         html += u"<!--Forum%slink-->\n" % self.id
         html += self.idevice.discussionSubject + u"<br/>\n" 
         html += self.idevice.discussionMessage + u"<br/>\n"
+        html += u"</div>"
         return html
     
     def renderForumStr(self):

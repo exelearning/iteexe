@@ -90,6 +90,8 @@ class TestquestionElement(object):
                                    _("Delete question"))
         html += common.richTextArea("question"+self.id, question)
         html += "<table width =\"100%%\">"
+        html += "<thead>"
+        html += "<tr>"
         html += "<th>%s " % _("Alternatives")
         html += common.elementInstruc("option"+self.id, 
                                       self.question.optionInstruc)
@@ -98,10 +100,14 @@ class TestquestionElement(object):
                                       self.question.correctAnswerInstruc)
         html += "<br/>" + _("Option")
         html += "</th>"
+        html += "</tr>"
+        html += "</thead>"
+        html += "<tbody>"
 
         for element in self.options:
             html += element.renderEdit() 
             
+        html += "</tbody>"
         html += "</table>\n"
         value = _("Add another option")    
         html += common.submitButton("addOption"+unicode(self.id), value)
