@@ -25,6 +25,7 @@ import gettext
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
+from exe.engine.beautifulsoup import BeautifulSoup
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -68,6 +69,8 @@ class SinglePageExport(object):
         self.renderNode(package.root)
         self.html += u"</div>\n"
         self.html += u"</body></html>\n"
+        soup = BeautifulSoup(self.html, True)
+        self.html = soup.prettify()
 
         self.save(self.outputDir/"index.html")
 
