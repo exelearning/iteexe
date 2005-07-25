@@ -26,9 +26,10 @@ import gettext
 from twisted.web.resource import Resource
 from exe.webui import common
 from cgi import escape
-from exe.webui.blockfactory import g_blockFactory
-from exe.engine.error       import Error
-from exe.webui.renderable import RenderableResource
+from exe.webui.blockfactory    import g_blockFactory
+from exe.engine.error          import Error
+from exe.engine.beautifulsoup  import BeautifulSoup
+from exe.webui.renderable      import RenderableResource
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -112,6 +113,8 @@ class AuthoringPage(RenderableResource):
 
         html += u'</div>\n'
         html += common.footer()
+        soup = BeautifulSoup(html, True)
+        html = soup.prettify()
 
         return html.encode('utf8')
 
