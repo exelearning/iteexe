@@ -127,7 +127,7 @@ class MainWindow(gtk.Window):
         #self.browser.connect("visibility", self.what, "visibility")
         #self.browser.connect("open-uri", self.what, "open-uri")
 
-        self.browser.load_url("http://127.0.0.1:8081/"+self.packageName)
+        self.browser.load_url("http://localhost:8081/"+self.packageName)
         self.vbox.pack_start(self.browser)
 
         # Status Bar
@@ -156,7 +156,7 @@ class MainWindow(gtk.Window):
         TODO: check if the package was dirty
         """
         self.packageName = ""
-        self.browser.load_url("http://127.0.0.1:8081")
+        self.browser.load_url("http://localhost:8081")
 
         
     def openFile(self, *dummy):
@@ -174,7 +174,7 @@ class MainWindow(gtk.Window):
             filename = chooser.get_filename()
             package  = self.application.packageStore.loadPackage(filename)
             self.application.server.root.bindNewPackage(package)
-            self.browser.load_url("http://127.0.0.1:8081/"+package.name)
+            self.browser.load_url("http://localhost:8081/"+package.name)
 
         chooser.destroy()
             
@@ -212,12 +212,12 @@ class MainWindow(gtk.Window):
             if not filename.lower().endswith('.elp'):
                 filename += '.elp'
             package.save(filename)
-            self.browser.load_url("http://127.0.0.1:8081/"+package.name)
+            self.browser.load_url("http://localhost:8081/"+package.name)
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.server.root.bindNewPackage(package)
-                self.browser.load_url("http://127.0.0.1:8081/"+package.name)
+                self.browser.load_url("http://localhost:8081/"+package.name)
 
         chooser.destroy()
 
@@ -253,7 +253,7 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.server.root.bindNewPackage(package)
-                self.browser.load_url("http://127.0.0.1:8081/"+package.name)
+                self.browser.load_url("http://localhost:8081/"+package.name)
 
         chooser.destroy()
 
@@ -289,7 +289,7 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.server.root.bindNewPackage(package)
-                self.browser.load_url("http://127.0.0.1:8081/"+package.name)
+                self.browser.load_url("http://localhost:8081/"+package.name)
 
         chooser.destroy()
 
@@ -355,7 +355,7 @@ class MainWindow(gtk.Window):
         editorWindow = gtk.Window()
         editorWindow.set_size_request(700, 700)
         browser = gtkmozembed.MozEmbed()
-        browser.load_url("http://127.0.0.1:8081/editor")
+        browser.load_url("http://localhost:8081/editor")
         editorWindow.add(browser)
         editorWindow.show_all()
 
@@ -367,7 +367,7 @@ class MainWindow(gtk.Window):
         aboutWindow = gtk.Window()
         aboutWindow.set_size_request(320, 600)
         browser = gtkmozembed.MozEmbed()
-        browser.load_url("http://127.0.0.1:8081/about")
+        browser.load_url("http://localhost:8081/about")
         aboutWindow.add(browser)
         aboutWindow.show_all()
 

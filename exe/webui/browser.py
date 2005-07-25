@@ -41,7 +41,7 @@ def launchBrowser(config, packageName):
     Launch the webbrowser (Firefox) for this platform
     """
     log.info(u"Broswer path: " + config.browserPath)
-    url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
+    url     = u'http://localhost:%d/%s' % (config.port, quote(packageName))
     log.info(u"Launch firefox with "+config.browserPath)
     log.info(u"url "+url)
 

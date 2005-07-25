@@ -13,23 +13,23 @@ from tempfile import TemporaryFile
 from pprint import pprint
 import sys, os
 
-TEST_TEXT = (u'nosection=here\n'
-             u'[main]\n'
-             u'level=5\n'
-             u'power : on\t\n'
-             u'testing= false\n'
-             u'running =on\t\xc4\x80\xc4\x900   \n'
-             u' two words = \tare better than one\t   \n'
-             u'no_value = \n'
-             u'\n'
-             u'\n'
-             u'[second]\n'
-             u'good :yes\n'
-             u' bad:\tno\n'
-             u'# comment=1\n'
-             u'~comment2=2\n'
-             u' available\t=   yes\n'
-             u'funny-name_mate: crusty the clown')
+TEST_TEXT = ('nosection=here\n'
+             '[main]\n'
+             'level=5\n'
+             'power : on\t\n'
+             'testing= false\n'
+             'running =on\t\xc4\x80\xc4\x900   \n'
+             ' two words = \tare better than one\t   \n'
+             'no_value = \n'
+             '\n'
+             '\n'
+             '[second]\n'
+             'good :yes\n'
+             ' bad:\tno\n'
+             '# comment=1\n'
+             '~comment2=2\n'
+             ' available\t=   yes\n'
+             'funny-name_mate: crusty the clown')
 
 def testFile():
     """Creates and returns a test file that you

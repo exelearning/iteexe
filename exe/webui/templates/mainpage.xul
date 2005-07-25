@@ -27,7 +27,7 @@
         <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
     </keyset>
     <vbox flex="1">
-        <!-- Start Menus 
+        <!-- Start Menus -->
         <toolbox>
           <menubar>
             <menu id="file-menu" label="File" accesskey="f">
@@ -65,13 +65,13 @@
             </menu>
          </menubar>
         </toolbox>
-         End Menus -->
+        <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
             <!-- start vbox for outline -->
            <vbox>
-              <toolbox grippyhidden="true">
-                  <toolbar grippyhidden="true">
+              <toolbox>
+                  <toolbar>
                       <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
                       <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
                       <toolbarbutton id="btnRename" n:render="renNode" key="renNodeKey" label="Rename"/>
@@ -80,13 +80,13 @@
               <!-- This label is actually rendered as a tree -->
               <label flex="1" value="outlinePane" n:render="outlinePane"/>
 
-              <splitter collapse="none"></splitter>
+              <splitter collapse="none"><grippy/></splitter>
 
             <vbox flex="1">
 
                <!-- buttons for promoting/demoting and moving nodes -->
               <toolbox>
-                <toolbar grippyhidden="true">
+                <toolbar>
                    <toolbarbutton n:render="promote" key="promoteKey" image="http://localhost:8081/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
                    <toolbarbutton n:render="demote" key="demoteKey" image="http://localhost:8081/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
                    <toolbarbutton n:render="up" key="upKey" image="http://localhost:8081/images/stock-go-up.png" tooltiptext="Move node up"/>
@@ -104,7 +104,7 @@
 
             <!-- end outline vbox-->
 
-            <splitter collapse="none"></splitter>
+            <splitter collapse="none"><grippy/></splitter>
             <tabbox flex="1" selectedTab="Authoring">
                 <tabs align="end" pack="end">
                     <tab label="Authoring"/>
