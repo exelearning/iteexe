@@ -292,7 +292,7 @@ the selection of an image from your stored picture files."""
                 html += u'onclick="Javascript:showMe(\'iconpanel\', 350, 100);">'
                 html += u'Select an icon:</a> \n'
                 icon = self.idevice.icon
-                if icon <> "":
+                if icon != "":
                     html += '<img src="/style/%s/%s' % (self.style, icon)
                     html += '.gif"/><br/>'
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'

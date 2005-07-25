@@ -209,7 +209,10 @@ class EditorPage(RenderableResource):
             html += "<option value=\""+prototype.id+"\" "
             if self.editorPane.idevice.id == prototype.id:
                 html += "selected "
-            html += ">" + prototype.title + "</option>\n"
+            title = prototype.title
+            if len(title) > 16:
+                title = title[:16] + "..."
+            html += ">" + title + "</option>\n"
         html += "</select> \n"
         html += "</fieldset>\n"
         self.message = ""

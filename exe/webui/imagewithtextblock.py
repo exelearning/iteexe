@@ -24,6 +24,7 @@ import logging
 import gettext
 from exe.webui.block   import Block
 from exe.webui.element import TextAreaElement, ImageElement
+from exe.webui         import common
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -61,6 +62,9 @@ class ImageWithTextBlock(Block):
             
         if "float"+self.id in request.args:
             self.idevice.float = request.args["float"+self.id][0]
+            
+        if "caption"+self.id in request.args:
+            self.idevice.caption = request.args["caption"+self.id][0]
 
 
     def renderEdit(self, style):
@@ -70,26 +74,17 @@ class ImageWithTextBlock(Block):
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
         html += u"<p>"
-        html += self.imageElement.renderEdit()
+        html += self.imageElement.renderEdit()       
         html += u"<b>%s</b>\n " % _("Float:")
-        html += "<select name=\"float%s\">\n" % self.id
-        if self.idevice.float == u"left":
-            html += '<option value="left" selected="selected">'
-            html += _(u"Left")
-            html += '</option>\n' 
-            html += '<option value="right">'
-            html += _(u"Right")
-            html += '</option>\n' 
-        else:
-            html += '<option value="left">'
-            html += _(u"Left")
-            html += '</option>' 
-            html += '<option value="right" selected="selected">'
-            html += _(u"Right")
-            html += '</option>\n' 
-        html += "</select>\n"
+        floatArr    = [[_(u'Left'), 'left'],
+                      [_(u'Right'), 'right'],
+                      [_(u'None'),  'none']]
+        html += common.select("float"+self.id, 
+                              floatArr, selection=self.idevice.float)
         html += u"</p>\n"
-        html += self.textElement.renderEdit()
+        html += u"<b>%s </b>" % _(u"Caption:")
+        html += common.textInput("caption" + self.id, self.idevice.caption)
+        html += "<br/>" + self.textElement.renderEdit()
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -105,7 +100,9 @@ class ImageWithTextBlock(Block):
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div style=\"padding:6px; "
         html += u"float:%s;\">\n" % self.idevice.float
+        html += u"<div class=\"image\">\n"
         html += self.imageElement.renderPreview()
+        html += u"<br/>" + self.idevice.caption + "</div>"
         html += u"</div>\n"
         html += self.textElement.renderPreview()        
         html += u"<div style=\"clear:both;\">"
@@ -124,7 +121,9 @@ class ImageWithTextBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<div style=\"padding:6px; "
         html += u"float:%s;\">\n" % self.idevice.float
+        html += u"<div class=\"image\">\n"
         html += self.imageElement.renderView()
+        html += u"<br/>" + self.idevice.caption + "</div>"
         html += u"</div>\n"
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
