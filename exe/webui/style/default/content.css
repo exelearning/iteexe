@@ -6,7 +6,7 @@ style sheet for default theme
 ===========================================================================
 */
 
-body {
+body, html {
    margin: 0px;
    padding: 0px 10px 10px 10px;
    font-family: arial, verdana, helvetica, sans-serif;
@@ -18,7 +18,6 @@ body {
 div {
    background-image:none;
    background-color:transparent;
-
 }
 
 html * div {
@@ -28,7 +27,6 @@ html * div {
 
 a { color: #FF6600;
     text-decoration: none;
-    border: 0;
 }
 
 a:hover { text-decoration: underline;
@@ -73,7 +71,7 @@ div#nodeDecoration {
 }
 
 .emphasis1 {
-   background-color: #FFFFFF;
+   background-color: #E0DFD8;
    border-bottom: 1px solid #9d9d9d;
    background-image:url(body_top_bg.gif);
    background-position:top left;
@@ -83,10 +81,13 @@ div#nodeDecoration {
 }
 
 .emphasis2 {
-    background-color: #FAFFE6;
-    padding-left: 18px;
-    border: 3px solid #ACBF60;
-    margin: 10px;
+   background-color: #E0DFD8;
+   border-bottom: 3px solid #9d9d9d;
+   background-image:url(body_top_bg.gif);
+   background-position:top left;
+   background-repeat:no-repeat;
+   margin-bottom: 10px;
+   text-align:left;
 }
 
 
@@ -103,21 +104,11 @@ div#nodeDecoration {
    background-repeat:no-repeat;
 }
 
-
-* html .iDevice_inner
-{
-background-image:none;
-background-position:top left;
-background-repeat:no-repeat;
-}
-
-
 .iDevice p {
    padding-left: 0px;
    line-height: 16px;
    text-align:left;
 }
-
 
 .iDeviceTitle {
    color: #568D14;
@@ -137,15 +128,11 @@ background-repeat:no-repeat;
 .iDevice_icon {
    padding-top: 27px;
    padding-left: 15px;
-   border: 0px;
 }
-
-
 
 p.reading_reference {
    font-style: italic;        
 }
-
 
 p.reading_feedback {
    border: 1px dashed #ADADAD;
@@ -153,7 +140,6 @@ p.reading_feedback {
    padding: 8px;
    background-color: #FFF;
 }
-
 
 .iDevice_inner {
    color:#4d4d4d;
@@ -163,23 +149,6 @@ p.reading_feedback {
    margin-top:-20px;
    padding-top: 10px;
    background-image:none;
-}
-
-.iDevice_inner {
-color:#4d4d4d;
-background-color:#f2f2ef;
-padding: 10px;
-margin: 10px;
-margin-top:-20px;
-padding-top: 10px;
-background-image:none;
-}
-
-img {
-   margin-right: 20px;
-   margin-bottom: 6px;
-   border: 1px solid #4d4d4d;
-   padding: 0px;
 }
 
 

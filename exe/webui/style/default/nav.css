@@ -2,36 +2,35 @@
 Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
 */
-body,
-html
-{
-background-image:url(page_bg.gif);
-background-position:top left;
-background-repeat:no-repeat;
-margin: 0px;
-font-size:11px;
+
+body, html {
+   background-image:url(page_bg.gif);
+   background-position:top left;
+   background-repeat:no-repeat;
 }
-* body
-{
-background-image:url(page_bg.gif);
-background-position:top left;
-background-repeat:no-repeat;
+
+* body {
+   background-image:url(page_bg.gif);
+   background-position:top left;
+   background-repeat:no-repeat;
 }
+
 #navcontainer {
-z-index:1000;
-width: 250px;
-float: left;
-margin-top: 0px;
-padding-top: 120px;
-text-align:left;
-position:absolute;
-background-color:transparent;
+   z-index:1000;
+   width: 250px;
+   float: left;
+   margin-top: 0px;
+   padding-top: 120px;
+   text-align:left;
+   position:absolute;
+   background-color:transparent;
 }
-#navlist
-{
-margin-left: 30px;
-position:absolute;
+
+#navlist {
+   margin-left: 30px;
+   position:absolute;
 }
+
 #navcontainer ul {
 margin-left: 30px;
 padding-left: 0;

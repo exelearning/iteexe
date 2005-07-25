@@ -118,7 +118,8 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<div class=\"iDevice "
+        html  = u"<!-- image with text iDevice -->\n"
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<div class=\"image_text\" style=\""
         html += u"width:" + str(self.idevice.image.width) + "px; "

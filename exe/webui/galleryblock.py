@@ -80,8 +80,8 @@ class GalleryBlock(Block):
         and return a list of strings that will be later joined with '\n' chars.
         """
         width, height = self.idevice.images[0].thumbnailSize
-        html = [u'<table width="100%" border="1" cellpadding="3" '
-                 'cellspacing="0" style="margin:4px;border-style:groove;">',
+        html = [u'<table width="100%" border="0" cellpadding="3" '
+                 'cellspacing="0" style="margin:4px; border-style:groove;">',
                 u'  <tbody>']
         i = 0
         for image in self.idevice.images:
@@ -166,8 +166,8 @@ class GalleryBlock(Block):
         html = [u'<div class="iDevice">',
                 u'<p>',
                 u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
-                u'    Click here to add images',
-                u'  </a>',
+                u'  <img src="/images/stock-add.png" align="middle" /> add images',
+                u'   </a>',
                 common.hiddenField('newImagePath'+self.id),
                 u'</p>']
         if len(self.idevice.images) == 0:

@@ -124,9 +124,10 @@ class AttachmentBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<div class=\"iDevice "
+	html = u"<!-- attachment iDevice -->\n"
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<a onclick=\"window.open('"+self.idevice.filename
+        html += u"<a href=\"#\" onclick=\"window.open('"+self.idevice.filename
         html += u"', '_blank');\" >"
         html += self.idevice.label
         html += u"</a> <br/> \n"
