@@ -18,15 +18,13 @@ a { color: #FF6600;
     border: 0;
 }
 
-img {
-    border: 0;
-}
-
 a:hover { text-decoration: underline;
       color: #B34700;
 }
 
-li {list-style-position: inside;}
+img {
+    border: 0;
+}
 
 .popupDiv {
     background-color: #FFF;

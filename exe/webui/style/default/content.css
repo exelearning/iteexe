@@ -2,28 +2,31 @@
 ===========================================================================
 eXe
 Copyright 2004-2005, University of Auckland
+style sheet for default theme
 ===========================================================================
 */
 
-body, html {
+body {
    margin: 0px;
    padding: 0px 10px 10px 10px;
    font-family: arial, verdana, helvetica, sans-serif;
    color:#4d4d4d;
-   font-size: 12px;
+   font-size: 13px;
    background: #E0DFD8;
 }
 
+/* do we need this?
 div {
-background-image:none;
-background-color:transparent;
+   background-image:none;
+   background-color:transparent;
+
 }
 
-html * div
-{
-background-image:none;
-background-color:transparent;
+html * div {
+   background-image:none;
+   background-color:transparent;
 }
+*/
 
 a { color: #FF6600;
     text-decoration: none;
@@ -38,32 +41,34 @@ img {
     border: 0;
 }
 
-
 .popupDiv {
-background-color: #E0DFD8;
-border: 1px solid #4d4d4d;
-padding: 4px 4px 4px 10px;
-margin-left: 15px;
-text-align:left;
+   background-color: #E0DFD8;
+   border: 1px solid #4d4d4d;
+   padding: 4px 4px 4px 10px;
+   margin-left: 15px;
+   text-align:left;
 }
 
 p#nodeTitle { 
-color: #4d4d4d;
-font-size: 32px;
-font-weight: bold;
-letter-spacing: -1px;
-display: inline;
-text-align:left;
-padding-right: 30px;
+   color: #4d4d4d;
+   font-size: 32px;
+   font-weight: bold;
+   letter-spacing: -1px;
+   display: inline;
+   text-align:left;
+   padding-right: 30px;
 }
 
 div#nodeDecoration {
-padding: 2px;
-border-bottom:0px;
-text-align:right;
+   padding: 2px;
+   border-bottom:0px;
+   text-align:right;
 }
 
+
+
 /* --- iDevice Styles -- */
+
 
 .emphasis0 {
     padding-left: 0px;
@@ -71,13 +76,13 @@ text-align:right;
 }
 
 .emphasis1 {
-background-color: #FFFFFF;
-border-bottom: 1px solid #9d9d9d;
-background-image:url(body_top_bg.gif);
-background-position:top left;
-background-repeat:no-repeat;
-margin-bottom: 10px;
-text-align:left;
+   background-color: #FFFFFF;
+   border-bottom: 1px solid #9d9d9d;
+   background-image:url(body_top_bg.gif);
+   background-position:top left;
+   background-repeat:no-repeat;
+   margin-bottom: 10px;
+   text-align:left;
 }
 
 .emphasis2 {
@@ -88,53 +93,92 @@ text-align:left;
 }
 
 
-* html .iDevice_inner
-{
-background-image:none;
-background-position:top left;
-background-repeat:no-repeat;
+* html .iDevice {
+   background-image:url(body_top_bg.gif);
+   background-position:top left;
+   background-repeat:no-repeat;
+
 }
+
+
+
+* html .iDevice_inner {
+
+   background-image:none;
+
+   background-position:top left;
+
+   background-repeat:no-repeat;
+}
+
+
+* html .iDevice_inner
+
+{
+
+background-image:none;
+
+background-position:top left;
+
+background-repeat:no-repeat;
+
+}
+
 
 .iDevice p {
-padding-left: 0px;
-line-height: 16px;
-text-align:left;
+   padding-left: 0px;
+   line-height: 16px;
+   text-align:left;
 }
+
 
 .iDeviceTitle {
-color: #568D14;
-font-size: 24px;
-font-family: Arial, Helvetica, sans-serif;
-font-weight:bold;
-letter-spacing:-1px;
-position: relative;
-top: -42px;
-left:80px;
-display:block;
-padding-bottom: 0px;
-margin-bottom: 0px;
-background-image:none;
-}    
+   color: #568D14;
+   font-size: 24px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight:bold;
+   letter-spacing:-1px;
+   position: relative;
+   top: -50px;
+   left:76px;
+   display:block;
+   padding-bottom: 0px;
+   margin-bottom: 0px;
+   background-image:none;
+} 
 
 .iDevice_icon {
-padding-top: 0px;
-padding-left: 15px;
-border: 0px;
+   padding-top: 27px;
+   padding-left: 15px;
+   border: 0px;
 }
+
+
 
 p.reading_reference {
-font-style: italic;        
+   font-style: italic;        
 }
+
 
 p.reading_feedback {
-border: 1px dashed #ADADAD;
-margin: 20px;
-padding: 8px;
-background-color: #FFF;
+   border: 1px dashed #ADADAD;
+   margin: 20px;
+   padding: 8px;
+   background-color: #FFF;
 }
 
-.iDevice_inner
-{
+
+.iDevice_inner {
+   color:#4d4d4d;
+   background-color:#f2f2ef;
+   padding: 10px;
+   margin: 10px;
+   margin-top:-20px;
+   padding-top: 10px;
+   background-image:none;
+}
+
+.iDevice_inner {
 color:#4d4d4d;
 background-color:#f2f2ef;
 padding: 10px;
@@ -144,42 +188,29 @@ padding-top: 10px;
 background-image:none;
 }
 
-/* img
-{
-margin-right: 20px;
-margin-bottom: 6px;
-padding: 0px;
-}
-*/
-.noprt
-{
-margin-top: 20px;
-padding-right: 30px;
-font-family:Arial, Helvetica, sans-serif;
-font-size:11px;
-color:#999999;
+img {
+   margin-right: 20px;
+   margin-bottom: 6px;
+   border: 1px solid #4d4d4d;
+   padding: 0px;
 }
 
-.noprt a
-{
-color:#706F61;
-text-decoration:none;
-padding-bottom: 1px;
-border-bottom: 1px solid #E0DFD8;
-}
 
-.noprt a:hover
-{
-color:#568D14;
-padding-bottom: 1px;
-text-decoration:none;
-border-bottom: 1px solid #706F61;
+.iDevice_inner_free {
+
+   padding: 20px;
+
+   padding-top: 60px;
+
 }
 
 .iDevice_inner_free
+
 {
+
 padding: 20px;
+
 padding-top: 60px;
+
 }
 
-.feedback{background-image:none;}
