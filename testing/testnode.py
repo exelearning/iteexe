@@ -85,9 +85,17 @@ class TestNode(unittest.TestCase):
         # Change its title
         n4.title = 'n4'
         assert unicode(n4.title) == 'n4'
+        assert unicode(n4.description) == 'n4'
         n4.move(n1, None)
         assert unicode(n4.title) == 'n4'
+        assert unicode(n4.description) == 'n4'
         n4.move(n3, None)
+
+        # Change its description
+        n4.description = 'my description'
+        assert unicode(n4.title) == 'n4'
+        assert unicode(n4.description) == 'my description'
+
         # Go back to auto title mode
         n4.title = ''
         assert n4.title == '?????'

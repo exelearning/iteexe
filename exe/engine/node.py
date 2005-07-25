@@ -35,17 +35,18 @@ class Node(Persistable):
     """
 
     # Class attributes
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self, package, parent=None, title=""):
         if parent:
             parent.children.append(self)
-        self._package = package
-        self._id      = package._regNewNode(self)
-        self.parent   = parent
-        self._title   = title
-        self.children = []
-        self.idevices = []
+        self._package     = package
+        self._id          = package._regNewNode(self)
+        self.parent       = parent
+        self._title       = title
+        self._description = u""
+        self.children     = []
+        self.idevices     = []
 
     # Properties
 
@@ -97,6 +98,25 @@ class Node(Persistable):
             self._title = title
             self.package.isChanged = True
     title = property(getTitle, setTitle)
+
+
+    def getDescription(self):
+        """
+        Returns our description, uses title if description is not set
+        """
+        if self._description:
+            return self._description
+        else:
+            return self.getTitle()
+
+
+    def setDescription(self, description):
+        """
+        Allows one to set the description
+        """
+        self._description = description
+        self.package.isChanged = True
+    description = property(getDescription, setDescription)
 
 
     # Normal methods
@@ -290,6 +310,10 @@ class Node(Persistable):
     def upgradeToVersion2(self):
         """Upgrades the node from eXe version 0.5."""
         self._title = self._title.title
+       
+    def upgradeToVersion3(self):
+        """Upgrades the node from eXe version 0.6."""
+        self._description = u""
         
         
 # ===========================================================================
