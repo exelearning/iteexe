@@ -211,13 +211,12 @@ class ScormPage(Page):
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"
-        html += u"<script type=\"text/javascript\" language=\"javascript\" "
+        html += u"<script type=\"text/javascript\" "
         html += u"src=\"APIWrapper.js\"></script>\n" 
-        html += u"<script type=\"text/javascript\" language=\"javascript\" "
+        html += u"<script type=\"text/javascript\" "
         html += u"src=\"SCOFunctions.js\"></script>\n"             
         html += u"</head>\n"
-        html += u'<body onload="loadPage()" onunload="unloadPage()" '
-        html += u' onbeforeunload="unloadPage()">'
+        html += u'<body onload="loadPage()" onunload="unloadPage()">'
         html += u"<div id=\"outer\">\n"
         html += u"<div id=\"main\">\n"
         html += u"<div id=\"nodeDecoration\">\n"
@@ -237,8 +236,8 @@ class ScormPage(Page):
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"</body></html>\n"
-        soup = BeautifulSoup(html, True)
-        html = soup.prettify()
+        #soup = BeautifulSoup(html, True)
+        #html = soup.prettify()
         return html
 
 

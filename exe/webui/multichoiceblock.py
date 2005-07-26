@@ -202,13 +202,14 @@ class MultichoiceBlock(Block):
       
         html += "//-->\n"
         html += "</script>\n"
-        html += "<table>"
-        html += "<tbody>"
+        html += "<table>\n"
+        html += "<tbody>\n"
+
         for element in self.optionElements:
             html += element.renderAnswerView()
             
-        html += "</tbody>"
-        html += "</table>"
+        html += "</tbody>\n"
+        html += "</table>\n"
             
         for element in self.optionElements:
             html += element.renderFeedbackView()
