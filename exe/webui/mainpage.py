@@ -269,8 +269,25 @@ class MainPage(RenderableLivePage):
 
     def handleLoadTutorialPackage(self, client):
         """Load the tutorial"""
-        pass
-        # load self.config.webDir/"eXe-tutorial.elp"
+        try:
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'ascii'
+            filename = self.config.webDir/"eXe-tutorial.elp"
+            filename = unicode(filename, encoding)
+            packageStore = self.webserver.application.packageStore
+            package = packageStore.loadPackage(filename)
+            self.root.bindNewPackage(package)
+            client.sendScript((u'top.location = "/%s"' % \
+                              package.name).encode('utf8'))
+        except Exception, exc:
+            if log.getEffectiveLevel() == logging.DEBUG:
+                client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
+            else:
+                client.alert(_(u'Sorry, wrong file format'))
+            log.error(u'Error loading package "%s": %s' % \
+                      (filename, unicode(exc)))
+            self.error = True
 
 
     def handleExport(self, client, exportType, filename):

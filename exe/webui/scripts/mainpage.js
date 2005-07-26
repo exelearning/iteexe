@@ -322,7 +322,7 @@ function fileOpen2() {
     }
 }
 
-// Shows the the load dialog and actually loads the new package
+// Shows the the load dialog and actually loads the new packa
 function loadTutorial() {
     nevow_clientToServerEvent('loadTutorialPackage', this, '');
 }
