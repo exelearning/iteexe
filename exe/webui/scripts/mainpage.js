@@ -243,7 +243,8 @@ function delTreeItem() { submitLink('deleteNode', currentOutlineId(), 1) }
 // This is called when a different tree node is selected
 function outlineClick() {
     if (clickon) {
-        submitLink('changeNode', currentOutlineId(), 0)
+        submitLink('changeNode', currentOutlineId(), 0);
+        document.title = "exeleaning, authoring - " + currentOutlineLabel();
     }
 }
 
