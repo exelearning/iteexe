@@ -244,7 +244,7 @@ function delTreeItem() { submitLink('deleteNode', currentOutlineId(), 1) }
 function outlineClick() {
     if (clickon) {
         submitLink('changeNode', currentOutlineId(), 0);
-        document.title = "exeleaning, authoring - " + currentOutlineLabel();
+        document.title = "exelearning, authoring - " + currentOutlineLabel();
     }
 }
 
