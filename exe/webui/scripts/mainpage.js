@@ -234,7 +234,7 @@ function XHMoveNode(id, parentId, nextSiblingId) {
 function askNodeName() {
     var treeitem = currentOutlineItem()
     var oldLabel = treeitem.getElementsByTagName('treecell')[0].getAttribute('label')
-    var name = prompt("Rename '"+oldLabel+"'\nEnter the new name", '');
+    var name = prompt("Rename '"+oldLabel+"'\nEnter the new name", oldLabel);
     return name
 }
 
