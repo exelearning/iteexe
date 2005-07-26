@@ -54,7 +54,7 @@ class TestBlock(SuperTestCase):
             allHtml = addIdevice(i)
         return allHtml
 
-    def _testAuthoringPage(self):
+    def testAuthoringPage(self):
         """
         Generates a page of idevices and checks each ones xhtml individually
         """
@@ -95,7 +95,7 @@ class TestBlock(SuperTestCase):
                 self.fail('Authoring Page generated bad XHTML, but all the blocks '
                           'were good')
 
-    def testSCORMExport(self):
+    def _testSCORMExport(self):
         """
         Creates a nice package, then does a scorm export and tests the
         output
