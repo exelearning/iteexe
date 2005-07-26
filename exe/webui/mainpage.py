@@ -270,11 +270,7 @@ class MainPage(RenderableLivePage):
     def handleLoadTutorialPackage(self, client):
         """Load the tutorial"""
         try:
-            encoding = sys.getfilesystemencoding()
-            if encoding is None:
-                encoding = 'ascii'
             filename = self.config.webDir/"eXe-tutorial.elp"
-            filename = unicode(filename, encoding)
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
