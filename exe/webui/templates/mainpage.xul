@@ -61,6 +61,7 @@
            <menu id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
                 <menuitem label="About" oncommand="aboutPage()"/>
+                <menuitem label="Tutorial" oncommand="loadTutorial()"/>
               </menupopup>
             </menu>
          </menubar>

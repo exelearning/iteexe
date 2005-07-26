@@ -100,6 +100,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage, 'savePackage')
         setUpHandler(self.handleLoadPackage, 'loadPackage')
+        setUpHandler(self.handleLoadTutorialPackage, 'loadTutorialPackage')
         setUpHandler(self.handleExport, 'exportPackage')
         self.idevicePane.client = client
 
@@ -264,6 +265,12 @@ class MainPage(RenderableLivePage):
             log.error(u'Error loading package "%s": %s' % \
                       (filename, unicode(exc)))
             self.error = True
+
+
+    def handleLoadTutorialPackage(self, client):
+        """Load the tutorial"""
+        pass
+        # load self.config.webDir/"eXe-tutorial.elp"
 
 
     def handleExport(self, client, exportType, filename):

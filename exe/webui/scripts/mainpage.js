@@ -321,6 +321,11 @@ function fileOpen2() {
     }
 }
 
+// Shows the the load dialog and actually loads the new package
+function loadTutorial() {
+    nevow_clientToServerEvent('loadTutorialPackage', this, '');
+}
+
 // Called by the user when they want to save their package
 // Also called by some java script to cause a whole
 // proper save process.
