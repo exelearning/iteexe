@@ -68,7 +68,7 @@ class GalleryImage(Persistable):
         """
         originalImagePath = Path(originalImagePath)
         # Copy the original image
-        filenameTemplate = ('gallery%%s%s' % self.id) + originalImagePath.splitext()[1]
+        filenameTemplate = ('gallery%%s%s.png' % self.id)
         self._imageFilename = filenameTemplate % 'Image'
         package = self.parent.parentNode.package
         package.addResource(originalImagePath, self.imageFilename)
@@ -78,13 +78,12 @@ class GalleryImage(Persistable):
         self.size = image.size
         image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF,0,0,0))
-        mask = Image.new('1', self.thumbnailSize, 1)
         width1, height1 = image.size
         width2, height2 = image2.size
         left = (width2 - width1) / 2.
         top = (height2 - height1) / 2.
         image2.paste(image, (left, top))
-        image2.save(self.thumbnailFilename, 'PNG')
+        image2.save(self.thumbnailFilename)
 
     # Public Methods
 
