@@ -17,13 +17,14 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-import unittest, sys
+import unittest, sys, zipfile
 from exe.webui.block        import Block
 from exe.engine.idevice     import Idevice
 from exe.webui.blockfactory import g_blockFactory
 from exe.webui.renderable   import Renderable
 from exe.engine.node        import Node
-from exe.engine.path        import Path
+from exe.engine.path        import Path, TempDirPath
+from exe.export.scormexport import ScormExport
 from utils                  import SuperTestCase, HTMLChecker
 from nevow.context          import RequestContext
 
@@ -38,14 +39,11 @@ class TestBlock(SuperTestCase):
                          # stderr output
     quickCheck = '--quick' in sys.argv
 
-    def testAuthoringPage(self):
+    def createPackage(self):
         """
-        Generates a page of idevices and checks each ones xhtml individually
+        Creates a package using HTTP requests. Returns the html returned by the
+        server
         """
-        # TODO: Once we have pyxpcom, break this test out into
-        # TestFreeTextBlock, TestImageWithTextBlock etc.
-        # And actually do some interactive DOM testing...
-
         # Add some idevices to the main page
         def addIdevice(id_):
             request = self._request(action='AddIdevice', object=str(id_))
@@ -54,6 +52,16 @@ class TestBlock(SuperTestCase):
         ideviceCount = len(self.app.ideviceStore.getIdevices())
         for i in range(ideviceCount):
             allHtml = addIdevice(i)
+        return allHtml
+
+    def _testAuthoringPage(self):
+        """
+        Generates a page of idevices and checks each ones xhtml individually
+        """
+        # TODO: Once we have pyxpcom, break this test out into
+        # TestFreeTextBlock, TestImageWithTextBlock etc.
+        # And actually do some interactive DOM testing...
+        allHtml = self.createPackage()
         checker = HTMLChecker(self.ignoreErrorMsgs)
         mainOk = checker.check(allHtml, False)
         if mainOk and self.quickCheck:
@@ -87,6 +95,31 @@ class TestBlock(SuperTestCase):
                 self.fail('Authoring Page generated bad XHTML, but all the blocks '
                           'were good')
 
+    def testSCORMExport(self):
+        """
+        Creates a nice package, then does a scorm export and tests the
+        output
+        """
+        self.createPackage()
+        stylesDir  = self.app.config.webDir/'style'/'default'
+        filename = 'scormExport.zip'
+        scormExport = ScormExport(self.app.config, stylesDir, filename)
+        scormExport.export(self.package)
+        # Extract the files we're interested in
+        zf = zipfile.ZipFile('scormExport.zip')
+        names = zf.namelist()
+        if 'index.html' in names:
+            html = zf.read('index.html')
+        else:
+            self.fail('No "index.html" found in %s' % filename)
+        if 'imsmanifest.xml' in names:
+            xml = zf.read('imsmanifest.xml')
+        else:
+            self.fail('No "imsmanifest.xml" found in %s' % filename)
+        # Run XMLLint over the html file
+        checker = HTMLChecker(self.ignoreErrorMsgs)
+        if not checker.check(html, False):
+            self.fail('Scorm export generated bad XHTML')
 
 if __name__ == "__main__":
     if '--quick' in sys.argv:

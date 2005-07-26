@@ -31,26 +31,6 @@ from exe.webui.element          import TextElement
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-# ===========================================================================
-class EasyBlock(Block):
-    """
-    Wraps a few simple things in the block
-    """
-
-    def __init__(self, parent, idevice, name):
-        Block.__init__(self, parent, idevice)
-        self.name = name
-
-    def process(self, request):
-        """
-        Handles a few nice commands and relays them to onXYZ handlers
-        """
-        object = request.args.get('object', [''])[0]
-        if object != self.id:
-            Block.process(self, request)
-            return 
-        
-
 class GalleryBlock(Block):
     """
     Gallery block can render a group of images, each with desciptions and popup
@@ -161,7 +141,8 @@ class GalleryBlock(Block):
         
     def renderEdit(self, style):
         """
-        Renders an editable array or 
+        Renders a table of thumbnails allowing the user to
+        move/add/delete/change each gallery image
         """
         html = [u'<div class="iDevice">',
                 u'<p>',
@@ -235,11 +216,6 @@ class GalleryBlock(Block):
             image.delete()
         Block.processDelete(self, request)
         
-    def renderEditSingleImage(self, style):
-        """
-        Renders a single image, and allows the user to change its text
-        """
-
     def renderPreview(self, style):
         """
         Renders the HTML for preview inside exe

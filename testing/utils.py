@@ -148,7 +148,7 @@ class HTMLChecker(object):
         Actually runs xmllint to check the html
         'html' is the html/xhtml that you want to check
         if 'wrap' is true, we'll wrap the html in a nice header so as not to
-        kill pylint
+        kill xmllint
         """
         # Wrap the html in proper document tags if necessary
         if wrap:

@@ -210,6 +210,9 @@ class GalleryIdevice(Idevice):
     """
 
     def __init__(self, parentNode=None):
+        """
+        Sets up the idevice title and instructions etc
+        """
         Idevice.__init__(self, _(u"Image Gallery"), 
                          _(u"University of Auckland"), 
                          _(u"This Idevice exists to show a group of images in "
