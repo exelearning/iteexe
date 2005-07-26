@@ -71,9 +71,9 @@ div#nodeDecoration {
 }
 
 .emphasis1 {
-   background-color: #E0DFD8;
+   background-color: #FFF;
    border-bottom: 1px solid #9d9d9d;
-   background-image:url(body_top_bg.gif);
+   background-image:url(top_left_corner.gif);
    background-position:top left;
    background-repeat:no-repeat;
    margin-bottom: 10px;
@@ -117,16 +117,21 @@ div#nodeDecoration {
    font-weight:bold;
    letter-spacing:-1px;
    position: relative;
-   top: -50px;
-   left:72px;
-   display:block;
+   top: 0px;
+   left: 0px;
+   background: #FFF; 
    padding-bottom: 0px;
+   padding-right: 10px;
+   padding-left: 8px;
    margin-bottom: 0px;
-   background-image:none;
+   margin-left: -4px;
+   background-image:url(top_right_corner.gif);
+   background-position:top right;
+   background-repeat:no-repeat;
 } 
 
 .iDevice_icon {
-   padding-top: 27px;
+   margin-top: -40px;
    padding-left: 15px;
 }
 
@@ -146,7 +151,7 @@ p.reading_feedback {
    background-color:#f2f2ef;
    padding: 10px;
    margin: 10px;
-   margin-top:-20px;
+   margin-top: 12px;
    padding-top: 10px;
    background-image:none;
 }
