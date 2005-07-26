@@ -86,7 +86,10 @@ def textArea(name, value="", disabled=""):
     """Adds a text area to a form"""
     log.debug(u"textArea %s" % value)
     html  = u'<textarea name="%s" ' % name
-    html += u'cols="52" rows="8" %s>%s' % (disabled, value)
+    if disabled:
+        html += u'disabled="disabled" '
+    html += u'cols="52" rows="8">'
+    html += value
     html += u'</textarea><br/>'
     return html
 
