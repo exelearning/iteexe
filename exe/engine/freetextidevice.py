@@ -36,7 +36,7 @@ class FreeTextIdevice(Idevice):
     persistenceVersion = 3
 
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"Free Text Idevice"), 
+        Idevice.__init__(self, _(u"Free Text"), 
                          _(u"University of Auckland"), 
                          _(u"""The majority of a learning resource will be 
 establishing context, delivering instructions and providing general information.

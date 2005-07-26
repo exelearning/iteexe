@@ -153,6 +153,7 @@ class GalleryImage(Persistable):
     index = property(lambda self: self.parent.images.index(self))
 
 
+# ===========================================================================
 class GalleryImages(Persistable, list):
     """
     Allows easy access to gallery images
@@ -201,6 +202,7 @@ class GalleryImages(Persistable, list):
         self[index].delete()
 
 
+# ===========================================================================
 class GalleryIdevice(Idevice):
     """
     Gallery Idevice. Enables you to easily manage a bunch of images and
@@ -208,7 +210,7 @@ class GalleryIdevice(Idevice):
     """
 
     def __init__(self, parentNode=None):
-        Idevice.__init__(self, _(u"Gallery Idevice"), 
+        Idevice.__init__(self, _(u"Image Gallery"), 
                          _(u"University of Auckland"), 
                          _(u"This Idevice exists to show a group of images in "
                             "an easily understandable way. For example to show "
