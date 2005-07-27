@@ -162,10 +162,9 @@ p.reading_feedback {
    padding-top: 60px;
 }
 
-.iDevice_inner_free
-{
-padding: 20px;
-padding-top: 60px;
+.iDevice_inner_free {
+   padding: 20px;
+   padding-top: 60px;
 }
 
 /* styles for image with text iDevice */
