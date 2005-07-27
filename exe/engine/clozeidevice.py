@@ -23,7 +23,6 @@ Cloze Idevice. Shows a paragraph where the student must fill in the blanks
 
 import logging
 from exe.engine.idevice import Idevice
-from exe.engine.field   import TextAreaField
 from exe.engine.path    import Path
 from exe.engine.persist import Persistable
 import Image
@@ -54,15 +53,5 @@ class ClozeIdevice(Idevice):
                            u"When checking the student's entry, case is ignored"),
                             "",
                             parentNode)
-        self._content = TextAreaField(_(u"Passage"))
-        self._content.idevice = self
-
-    # Properties
-    def set_content(self, value):
-        """
-        Puts the 'content' string into our fields' content
-        """
-        self._content.content = value
-
-    content = property(lambda self: self._content.content, set_content)
+        self.content = ''
 
