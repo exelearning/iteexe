@@ -25,12 +25,13 @@ html * div {
    background-color:transparent;
 }
 
-a { color: #FF6600;
+a { color: #263264;
     text-decoration: none;
 }
 
-a:hover { text-decoration: underline;
-color: #B34700;
+a:hover { 
+    color: #263264;
+    background-color: #fff;
 }
 
 img {
