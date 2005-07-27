@@ -24,6 +24,7 @@ area of the eXe web user interface.
 import logging
 import gettext
 from twisted.web.resource import Resource
+from twisted.web.microdom import parseString
 from exe.webui import common
 from cgi import escape
 from exe.webui.blockfactory    import g_blockFactory
@@ -112,6 +113,7 @@ class AuthoringPage(RenderableResource):
 
         html += u'</div>\n'
         html += common.footer()
+        html = parseString(html).toprettyxml()
 
         return html.encode('utf8')
 
