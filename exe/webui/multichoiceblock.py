@@ -84,19 +84,23 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        self.question = self.question.replace("\r", "")
-        self.question = self.question.replace("\n","\\n")
-        self.question = self.question.replace("'","\\'")
+        question = self.question.replace("\r", "")
+        question = question.replace("\n","\\n")
+        question = question.replace("'","\\'")
+        
+        hint      = self.hint.replace("\r", "")
+        hint      = hint.replace("\n","\\n")
+        hint      = hint.replace("'","\\'")
         
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html += "<b>" + _("Question:") + " </b>"   
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
-        html += common.richTextArea("question"+self.id, self.question)
+        html += common.richTextArea("question"+self.id, question)
         html += "<b>" + _("Hint:") + " </b>"   
         html += common.elementInstruc("hint"+self.id, self.hintInstruc)
-        html += common.richTextArea("hint"+self.id, self.hint)
+        html += common.richTextArea("hint"+self.id, hint)
         html += "<table width =\"100%%\">"
         html += "<thead>"
         html += "<tr>"
