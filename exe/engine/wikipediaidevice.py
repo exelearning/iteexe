@@ -52,7 +52,7 @@ class WikipediaIdevice(Idevice):
                          _(u"""The Wikipedia iDevice takes a copy of an
 article from en.wikipedia.org, including copying the associated images."""), 
                          u"", u"")
-        self.emphasis    = Idevice.SomeEmphasis
+        self.emphasis    = Idevice.NoEmphasis
         self.articleName = u""
         self.article     = TextAreaField(_(u"Article"))
         self.article.idevice = self

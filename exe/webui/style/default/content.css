@@ -90,13 +90,14 @@ div#nodeDecoration {
    text-align:left;
 }
 
-
+/*
 * html .iDevice {
    background-image:url(body_top_bg.gif);
    background-position:top left;
    background-repeat:no-repeat;
 
 }
+*/
 
 * html .iDevice_inner {
    background-image:none;
@@ -116,11 +117,8 @@ div#nodeDecoration {
    font-family: Arial, Helvetica, sans-serif;
    font-weight:bold;
    letter-spacing:-1px;
-   position: relative;
-   top: 0px;
-   left: 0px;
    background: #FFF; 
-   padding-bottom: 0px;
+   padding-bottom: 4444px;
    padding-right: 10px;
    padding-left: 8px;
    margin-bottom: 0px;
