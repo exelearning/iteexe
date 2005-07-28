@@ -60,12 +60,11 @@ class GenericBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div><br/>\n"
+        html  = u"<div><p>\n"
         html += common.textInput("title"+self.id, self.idevice.title) 
-        html += u"<br/><br/>\n"
+        html += u"</p>\n"
         for element in self.elements:
             html += element.renderEdit() + "<br/>"
-        html += u"<br/>"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html

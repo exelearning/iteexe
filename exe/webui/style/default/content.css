@@ -67,6 +67,7 @@ div#nodeDecoration {
 
 .emphasis0 {
     padding-left: 0px;
+    padding-bottom: 20px;
     margin: 0px;
 }
 
@@ -117,10 +118,10 @@ div#nodeDecoration {
    font-family: Arial, Helvetica, sans-serif;
    font-weight:bold;
    letter-spacing:-1px;
+   vertical-align: top;
    background: #FFF; 
    padding-bottom: 4px;
    padding-right: 10px;
-   padding-left: 8px;
    margin-bottom: 0px;
    margin-left: -4px;
    background-image:url(top_right_corner.gif);
@@ -129,8 +130,9 @@ div#nodeDecoration {
 } 
 
 .iDevice_icon {
-   margin-top: -40px;
+   margin-top: -10px;
    padding-left: 15px;
+   padding-right: 10px;
 }
 
 p.reading_reference {
