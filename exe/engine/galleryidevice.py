@@ -26,7 +26,7 @@ from exe.engine.idevice import Idevice
 from exe.engine.field   import TextField
 from exe.engine.path    import Path
 from exe.engine.persist import Persistable
-import Image
+import Image, ImageFont, ImageDraw
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
@@ -82,7 +82,30 @@ class GalleryImage(Persistable):
         width2, height2 = image2.size
         left = (width2 - width1) / 2.
         top = (height2 - height1) / 2.
-        image2.paste(image, (left, top))
+        try:
+            image2.paste(image, (left, top))
+        except IOError:
+            # If we cannot handle this type of image, print a nice message in
+            # the thumbnail
+            draw = ImageDraw.Draw(image2)
+            draw.rectangle([(0,0),self.thumbnailSize], fill="black")
+            msg=_(u"No Thumbnail Available. Could not shrink image.")
+            words = msg.split(' ')
+            size = draw.textsize(msg)
+            top = 1
+            # Word wrap
+            while words:
+                if top > self.thumbnailSize[1]:
+                    # Ran over bottom
+                    break
+                # Find the longest string of words that can fit on this line
+                for ln in range(len(words),-1,-1):
+                    size = draw.textsize(' '.join(words[:ln]))
+                    if size[0] <= self.thumbnailSize[0]: 
+                        break
+                draw.text((1, top), ' '.join(words[:ln]))
+                words = words[ln:]
+                top += size[1]
         image2.save(self.thumbnailFilename)
 
     # Public Methods
