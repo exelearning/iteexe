@@ -74,7 +74,7 @@ class GalleryBlock(Block):
             if i == self.thumbnailsPerRow:
                 html += ['    </tr>']
                 i = 0
-        if i < self.thumbnailsPerRow:
+        if 0 < i < self.thumbnailsPerRow :
             for j in range(self.thumbnailsPerRow - i):
                 html.append('<td></td>')
             html.append('</tr>')
@@ -147,7 +147,8 @@ class GalleryBlock(Block):
         html = [u'<div class="iDevice">',
                 u'<p>',
                 u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
-                u'  <img src="/images/stock-add.png" align="middle" /> add images',
+                u'  <img alt="" src="/images/stock-add.png" ' +
+                u'style="align:center center" /> add images',
                 u'   </a>',
                 common.hiddenField('newImagePath'+self.id),
                 u'</p>']
@@ -200,7 +201,8 @@ class GalleryBlock(Block):
                           # Delete button
                           u'        <img onclick="javascript:submitLink(' +
                           u'''           'gallery.delete.%s', %s, true)"''' % (image.id, self.id),
-                          u'             src="/images/stock-delete.png"/>']
+                          u'             src="/images/stock-delete.png"/>',
+                          u'      </span>']
                 return result
             html += self._generateTable(genCell)
         html += [self.renderEditButtons(),

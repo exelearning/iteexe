@@ -49,7 +49,7 @@ class ClozeIdevice(Idevice):
                          _(u"Take a passage of text and put some gaps in it by "
                            u"putting underscores (_) on either side of the "
                            u"word. For example: <i>The third _word_ in this text "
-                           u"not be shown to students</i>.<br>"
+                           u"not be shown to students</i>.<br/>"
                            u"When checking the student's entry, case is ignored"),
                             "",
                             parentNode)
