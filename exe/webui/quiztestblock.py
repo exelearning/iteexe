@@ -133,7 +133,7 @@ class QuizTestBlock(Block):
         for element in self.questionElements:
             html += element.renderView() + "<br/>"  
         
-        html += '<input type="button" name="submitB" '
+        html += '<input type="submit" name="submitB" '
         html += 'value="%s"/>\n' % _("SUBMIT ANSWERS")
         html += "</div>\n"
         html += '</form>\n'
