@@ -27,7 +27,7 @@ from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.pages         import uniquifyNames
-from exe.engine.beautifulsoup import BeautifulSoup
+from twisted.web.microdom     import parseString
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -102,8 +102,7 @@ class WebsitePage(object):
         html += self.getNavigationLink(prevPage, nextPage)
         html += u"</div>\n"
         html += u"</body></html>\n"
-        soup = BeautifulSoup(html, True)
-        html = soup.prettify()
+        html = parseString(html).toprettyxml()
         return html
 
         

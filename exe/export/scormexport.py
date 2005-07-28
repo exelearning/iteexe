@@ -28,7 +28,7 @@ from exe.webui                     import common
 from exe.webui.blockfactory        import g_blockFactory
 from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
-from exe.engine.beautifulsoup      import BeautifulSoup
+from twisted.web.microdom          import parseString
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 
@@ -236,8 +236,7 @@ class ScormPage(Page):
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"</body></html>\n"
-        #soup = BeautifulSoup(html, True)
-        #html = soup.prettify()
+        html = parseString(html).toprettyxml()
         return html
 
 
