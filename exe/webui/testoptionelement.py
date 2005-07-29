@@ -100,8 +100,6 @@ class TestoptionElement(object):
         Returns an XHTML string for viewing this option element
         """
         log.debug("renderView called")
-        self.option.answer = self.option.answer.replace("\r", "")
-        self.option.answer = self.option.answer.replace("\n", "\\n")
 
         html  = '<tr><td>'
         html += common.option(self.keyId, 0, unicode(self.index))

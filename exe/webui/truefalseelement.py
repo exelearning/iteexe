@@ -149,8 +149,7 @@ class TrueFalseElement(object):
         Returns an XHTML string for viewing and previewing this question element
         """
         log.debug("renderPreview called")
-        self.question.question = self.question.question.replace("\r", "")
-        self.question.question = self.question.question.replace("\n", "\\n")
+    
         html  = "<br/><br/><b>" +unicode(self.index + 1) + ". " 
         html += self.question.question + "</b><br/><br/>"
         html += _("True") + " " 
@@ -172,8 +171,6 @@ class TrueFalseElement(object):
         """
         return xhtml string for display this option's feedback
         """
-        self.question.feedback = self.question.feedback.replace("\r", "")
-        self.question.feedback = self.question.feedback.replace("\n", "\\n")
 
         if self.question.isCorrect:
             feedbackStr1 = _("Correct!") + " " + self.question.feedback

@@ -77,15 +77,15 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        self.story = self.story.replace(u"\r", u"")
-        self.story = self.story.replace(u"\n", u"\\n")
-        self.story = self.story.replace(u"'",  u"\\'")
+        story = self.story.replace(u"\r", u"")
+        story = story.replace(u"\n", u"\\n")
+        story = story.replace(u"'",  u"\\'")
         html  = u'<div class="iDevice"><br/>\n'
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html += u'<b>%s</b>' % _(u'Story:')
         html += common.elementInstruc(u'story'+self.id, self.storyInstruc)
-        html += common.richTextArea(u'story'+self.id, self.story)
+        html += common.richTextArea(u'story'+self.id, story)
         html += u'<table width ="100%">\n'
         
         for element in self.questionElements:

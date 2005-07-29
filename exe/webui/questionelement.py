@@ -102,8 +102,6 @@ class QuestionElement(object):
         Returns an XHTML string for viewing and previewing this question element
         """
         log.debug("renderView called")
-        self.question.question = self.question.question.replace("\r", "")
-        self.question.feedback = self.question.feedback.replace("\n", "\\n")
 
         html  = "<script type=\"text/javascript\">\n"
         html += "<!--\n"

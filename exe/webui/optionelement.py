@@ -106,8 +106,6 @@ class OptionElement(object):
         Returns an XHTML string for viewing and previewing this option element
         """
         log.debug("renderView called")
-        self.option.answer = self.option.answer.replace("\r", "")
-        self.option.answer = self.option.answer.replace("\n", "\\n")
   
         length = len(self.idevice.options)
         html  = '<tr><td>'
@@ -125,8 +123,6 @@ class OptionElement(object):
         """
         return xhtml string for display this option's feedback
         """
-        self.option.feedback = self.option.feedback.replace("\r", "")
-        self.option.feedback = self.option.feedback.replace("\n", "\\n")
         feedbackStr = ""
         if self.option.feedback != "":
             feedbackStr = self.option.feedback
