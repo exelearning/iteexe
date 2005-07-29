@@ -90,6 +90,9 @@ class GalleryBlock(Block):
         """
         log.debug("process " + repr(request.args))
         # If the commit is not to do with us forget it
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
+            
         object = request.args.get('object', [''])[0]
         if object != self.id:
             Block.process(self, request)
@@ -145,6 +148,7 @@ class GalleryBlock(Block):
         move/add/delete/change each gallery image
         """
         html = [u'<div class="iDevice">',
+                common.textInput("title"+self.id, self.idevice.title),
                 u'<p>',
                 u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
                 u'  <img alt="" src="/images/stock-add.png" ' +
@@ -152,6 +156,7 @@ class GalleryBlock(Block):
                 u'   </a>',
                 common.hiddenField('newImagePath'+self.id),
                 u'</p>']
+
         if len(self.idevice.images) == 0:
             html += [u'<div style="align:center center">',
                      u'  No Images Loaded',
@@ -224,7 +229,13 @@ class GalleryBlock(Block):
         """
         html  = [u'<div class="iDevice emphasis%s" ' %
                  unicode(self.idevice.emphasis),
-                 u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id]
+                 u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id,
+                 u'<img alt="" class="iDevice_icon" ',
+                 u'src="/style/'+style+'/icon_gallery.gif" />'
+                 u'<span class="iDeviceTitle">',      
+                 self.idevice.title,
+                 '</span><br/>']
+
         html += self.renderViewContent(style)
         html += [self.renderViewButtons(),
                  u'</div>']
@@ -235,7 +246,7 @@ class GalleryBlock(Block):
         HTML shared by view and preview
         """
         if len(self.idevice.images) == 0:
-            html = [u'<div style="align:center center">',
+            html = [u'   <div style="align:center center">',
                     u'  No Images Loaded',
                     u'</div>']
         else:
@@ -269,9 +280,14 @@ class GalleryBlock(Block):
             cls = self.idevice.images[0].__class__
             oldUrl, cls.resourcesUrl = cls.resourcesUrl, ''
         try:
-            html  = [u'    <div class="iDevice emphasis%s" ' %
+            html  = [u'<div class="iDevice emphasis%s" ' %
                      unicode(self.idevice.emphasis),
-                     u'>']
+                     u'>',
+                     u'<img alt="" class="iDevice_icon" ',
+                     u'src="/style/'+style+'/icon_gallery.gif" />'
+                     u'<span class="iDeviceTitle">',      
+                     self.idevice.title,
+                     '</span><br/>']
             html += self.renderViewContent(style)
             html += [u'</div>']
             return u'\n    '.join(html).encode('utf8')
