@@ -107,16 +107,16 @@ background-repeat:no-repeat;
 height: 15px;
 border-top: 2px solid #706f61;
 }	
+
 /* MAIN CONTENT STYLES */
 #container {
 border-top: 0px solid #CCC;
 position:absolute;
 }
+
 #main {
-padding: 18px;
-margin: 0px 10px 10px 180px;
-margin-left: 210px;
-margin-top: 30px;
+margin-left: 230px;
+margin-top: 40px;
 position:absolute;
 text-align:left;
 width: 60%;

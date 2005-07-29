@@ -123,7 +123,6 @@ div#nodeDecoration {
    padding-bottom: 4px;
    padding-right: 10px;
    margin-bottom: 0px;
-   margin-left: -4px;
    background-image:url(top_right_corner.gif);
    background-position:top right;
    background-repeat:no-repeat;
@@ -131,7 +130,7 @@ div#nodeDecoration {
 
 .iDevice_icon {
    margin-top: -10px;
-   padding-left: 15px;
+   margin-left: 10px;
    padding-right: 10px;
 }
 
