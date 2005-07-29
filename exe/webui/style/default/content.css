@@ -71,6 +71,7 @@ div#nodeDecoration {
     margin: 0px;
 }
 
+
 .emphasis1 {
    background-color: #FFF;
    border-bottom: 1px solid #9d9d9d;
@@ -128,6 +129,22 @@ div#nodeDecoration {
    background-repeat:no-repeat;
 } 
 
+.emphasis0 .iDeviceTitle {
+   color: #568D14;
+   font-size: 24px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight:bold;
+   letter-spacing:-1px;
+   vertical-align: top;
+   background: transparent; 
+   padding-bottom: 4px;
+   padding-right: 10px;
+   margin-bottom: 0px;
+   background-image:none;
+   background-position:top right;
+   background-repeat:no-repeat;
+ }
+
 .iDevice_icon {
    margin-top: -10px;
    margin-left: 10px;
@@ -155,7 +172,17 @@ p.reading_feedback {
    background-image:none;
 }
 
+.emphasis0 .iDevice_inner {
+   color:#4d4d4d;
+   background-color:transparent;
+   padding: 10px;
+   margin: 10px;
+   margin-top: 12px;
+   padding-top: 10px;
+}
 
+
+/*
 .iDevice_inner_free {
    padding: 20px;
    padding-top: 60px;
@@ -165,6 +192,8 @@ p.reading_feedback {
    padding: 20px;
    padding-top: 60px;
 }
+*/
+
 
 /* styles for image with text iDevice */
 
