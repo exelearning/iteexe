@@ -123,6 +123,7 @@ class EditorPage(RenderableResource):
         Create a new idevice and add to idevicestore
         """
         idevice = GenericIdevice("", "", "", "", "")
+        idevice.icon = ""
         idevice.id = self.ideviceStore.getNewIdeviceId()
         self.editorPane.setIdevice(idevice)
         self.editorPane.process(request, "new")      

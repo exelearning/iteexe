@@ -110,6 +110,8 @@ the selection of an image from your stored picture files."""
                 
             if "emphasis" in request.args:
                 self.idevice.emphasis = int(request.args["emphasis"][0])
+                if self.idevice.emphasis == 0:
+                    self.idevice.icon = ""
         
         
         if "addText" in request.args:
