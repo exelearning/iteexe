@@ -103,6 +103,7 @@ the piston with a brief textual summary of the key aspects of each visual.
         """
         Called to upgrade from 0.6 release
         """
-        self.caption = u""
+        self.caption  = u""
+        self.emphasis = Idevice.NoEmphasis
         
 # ===========================================================================
