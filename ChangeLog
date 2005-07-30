@@ -1,3 +1,661 @@
+2005-07-29 04:40  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/default/icon_gallery.gif,
+	  exe/webui/style/default/icon_read.gif,
+	  exe/webui/style/default/icon_reading.gif,
+	  exe/webui/style/silver/icon_objectives.gif,
+	  exe/webui/style/silver/icon_read.gif,
+	  exe/webui/style/silver/icon_reading.gif,
+	  exe/webui/style/silver/icon_reflection.gif: default style, etc...
+
+2005-07-29 04:04  jenny
+
+	* exe/webui/galleryblock.py: Added label and icon to the Image
+	  Gallery idevice.
+
+2005-07-29 03:49  brent
+
+	* exe/webui/style/garden/icon_multichoice.gif,
+	  exe/webui/style/garden/icon_question.gif,
+	  exe/webui/style/mojave/icon_multichoice.gif,
+	  exe/webui/style/mojave/icon_question.gif,
+	  exe/webui/style/seamist/icon_multichoice.gif,
+	  exe/webui/style/seamist/icon_question.gif,
+	  exe/webui/style/silver/icon_multichoice.gif,
+	  exe/webui/style/silver/icon_objectives.gif,
+	  exe/webui/style/silver/icon_question.gif: icon madness!!!!
+
+2005-07-29 03:29  brent
+
+	* exe/webui/multichoiceblock.py, exe/webui/truefalseblock.py:
+	  changed icon for multichoice and truefalse question.
+
+2005-07-29 03:17  brent
+
+	* exe/webui/style/default/icon_gallery.gif: added icon for gallery
+	  iDevice
+
+2005-07-29 03:07  jenny
+
+	* exe/webui/editorpage.py, exe/webui/editorpane.py: modified idevice
+	  editor so that the idevice with no emphasis will not have a icon.
+
+2005-07-29 02:46  brent
+
+	* exe/webui/style/default/content.css: modified emphasis0 for
+	  defualt.css
+
+2005-07-29 02:23  jenny
+
+	* exe/webui/casestudyblock.py, exe/webui/optionelement.py,
+	  exe/webui/questionelement.py, exe/webui/reflectionblock.py,
+	  exe/webui/testoptionelement.py, exe/webui/truefalseelement.py:
+	  fixed bugs of display textarea in preview and view mode.
+
+2005-07-29 02:20  djm
+
+	* exe/engine/imagewithtextidevice.py: upgrade to no emphasis
+
+2005-07-29 01:45  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css: default style now working in IE
+	  and Firefox!!! amazing.
+
+2005-07-28 23:53  brent
+
+	* exe/webui/genericblock.py, exe/webui/style/default/content.css,
+	  exe/webui/style/default/icon_multichoice.gif,
+	  exe/webui/style/default/icon_question.gif: more on default style.
+	  should work better in preview mode.
+
+2005-07-28 22:32  jenny
+
+	* exe/webui/multichoiceblock.py: fixed multichoise idevice hint bugs
+
+2005-07-28 22:14  matthew
+
+	* exe/export/scormexport.py: Re-added onbeforeunload to make lazy IE
+	  happy
+
+2005-07-28 21:42  brent
+
+	* exe/webui/style/default/content.css: oops... should fix insanely
+	  long title span. sorry.
+
+2005-07-28 21:36  brent
+
+	* exe/engine/wikipediaidevice.py,
+	  exe/webui/style/default/activity.gif,
+	  exe/webui/style/default/body_top_bg.gif,
+	  exe/webui/style/default/calc.gif,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/define.gif,
+	  exe/webui/style/default/discussion.gif,
+	  exe/webui/style/default/e_gloss.gif,
+	  exe/webui/style/default/e_journal.gif,
+	  exe/webui/style/default/icon_casestudy.gif,
+	  exe/webui/style/default/inter.gif,
+	  exe/webui/style/default/key_points.gif,
+	  exe/webui/style/default/multimedia.gif,
+	  exe/webui/style/default/note_1.gif,
+	  exe/webui/style/default/note_2.gif,
+	  exe/webui/style/default/objectives.gif,
+	  exe/webui/style/default/present.gif,
+	  exe/webui/style/default/read.gif,
+	  exe/webui/style/default/reflection.gif,
+	  exe/webui/style/default/review.gif,
+	  exe/webui/style/default/summary.gif,
+	  exe/webui/style/default/synthesis.gif,
+	  exe/webui/style/default/time.gif,
+	  exe/webui/style/default/web_resource.gif: clean up icons in
+	  default style and more work on CSS for tabs, now work in IE???
+
+2005-07-28 04:51  matthew
+
+	* exe/engine/clozeidevice.py, exe/webui/galleryblock.py: XHTML
+	  Fixups
+
+2005-07-28 04:48  matthew
+
+	* exe/engine/galleryidevice.py: Issue 139: Made gallery handle
+	  interlaced pngs better
+
+2005-07-28 04:10  brent
+
+	* exe/webui/authoringpage.py: Made it not tidy if it can't parse the
+	  html (MS)
+
+2005-07-28 01:30  matthew
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py: Changed all exports to use
+	  twisted.web.minidom for tidying
+
+2005-07-28 00:44  matthew
+
+	* exe/webui/quiztestblock.py: Try to fix scorm quiz element
+
+2005-07-27 22:43  matthew
+
+	* exe/webui/authoringpage.py: Put in a twisted.web.minidom tidyier
+	  to replace Beautiful soup that was breaking things However minidom
+	  is extremely strict and any bad xml is not tolerated. I think this
+	  is a good thing
+
+2005-07-27 09:26  djm
+
+	* exe/webui/style/silver/.content.css.swp,
+	  exe/webui/style/silver/.nav.css.swp: somebody checked in their swp
+	  files
+
+2005-07-27 07:36  brent
+
+	* exe/webui/style/silver/content.css: minor change to silver theme
+
+2005-07-27 07:24  brent
+
+	* exe/webui/style/silver, exe/webui/style/silver/.content.css.swp,
+	  exe/webui/style/silver/.nav.css.swp,
+	  exe/webui/style/silver/active_bg.gif,
+	  exe/webui/style/silver/activity.gif,
+	  exe/webui/style/silver/assess.gif,
+	  exe/webui/style/silver/body_top_bg.gif,
+	  exe/webui/style/silver/calc.gif,
+	  exe/webui/style/silver/content.css,
+	  exe/webui/style/silver/define.gif,
+	  exe/webui/style/silver/discussion.gif,
+	  exe/webui/style/silver/e_gloss.gif,
+	  exe/webui/style/silver/e_journal.gif,
+	  exe/webui/style/silver/icon_activity.gif,
+	  exe/webui/style/silver/icon_assignment.gif,
+	  exe/webui/style/silver/icon_calc.gif,
+	  exe/webui/style/silver/icon_define.gif,
+	  exe/webui/style/silver/icon_discussion.gif,
+	  exe/webui/style/silver/icon_e_gloss.gif,
+	  exe/webui/style/silver/icon_e_journal.gif,
+	  exe/webui/style/silver/icon_inter.gif,
+	  exe/webui/style/silver/icon_key_points.gif,
+	  exe/webui/style/silver/icon_multichoice.gif,
+	  exe/webui/style/silver/icon_multimedia.gif,
+	  exe/webui/style/silver/icon_objectives.gif,
+	  exe/webui/style/silver/icon_present.gif,
+	  exe/webui/style/silver/icon_read.gif,
+	  exe/webui/style/silver/icon_reflection.gif,
+	  exe/webui/style/silver/icon_review.gif,
+	  exe/webui/style/silver/icon_summary.gif,
+	  exe/webui/style/silver/icon_synthesis.gif,
+	  exe/webui/style/silver/icon_time.gif,
+	  exe/webui/style/silver/icon_web_resource.gif,
+	  exe/webui/style/silver/idevice_bg.gif,
+	  exe/webui/style/silver/inter.gif,
+	  exe/webui/style/silver/key_points.gif,
+	  exe/webui/style/silver/multimedia.gif,
+	  exe/webui/style/silver/nav.css, exe/webui/style/silver/note_1.gif,
+	  exe/webui/style/silver/note_2.gif,
+	  exe/webui/style/silver/objectives.gif,
+	  exe/webui/style/silver/page_bg.gif,
+	  exe/webui/style/silver/page_bg_ie.gif,
+	  exe/webui/style/silver/present.gif,
+	  exe/webui/style/silver/question.gif,
+	  exe/webui/style/silver/read.gif,
+	  exe/webui/style/silver/reflection.gif,
+	  exe/webui/style/silver/review.gif,
+	  exe/webui/style/silver/summary.gif,
+	  exe/webui/style/silver/synthesis.gif,
+	  exe/webui/style/silver/time.gif,
+	  exe/webui/style/silver/top_left_corner.gif,
+	  exe/webui/style/silver/top_left_corner.gif.orig,
+	  exe/webui/style/silver/top_nav.jpg,
+	  exe/webui/style/silver/top_right_corner.gif,
+	  exe/webui/style/silver/transparent.gif,
+	  exe/webui/style/silver/web_resource.gif: added new theme: silver
+
+2005-07-27 04:09  matthew
+
+	* exe/engine/clozeidevice.py, exe/webui/clozeblock.py: Went back to
+	  not using textarea as coulnd't make it work will make our own
+	  field and element classes for cloze later, once its working better
+	  ;)
+
+2005-07-27 02:09  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/default/top_left_corner.gif,
+	  exe/webui/style/default/top_right_corner.gif: forgot to commit
+	  these graphics for defualt style... perhaps it does work on
+	  IE!*???
+
+2005-07-26 23:13  djm
+
+	* exe/webui/Icon1.ico, exe/webui/eXe_icon.ico,
+	  exe/webui/exe_icon.png: remove obsolete icons
+
+2005-07-26 23:00  djm
+
+	* README: added CREDITS
+
+2005-07-26 22:11  matthew
+
+	* testing/testblock.py: Scorm export test not quite ready yet
+
+2005-07-26 22:10  matthew
+
+	* exe/engine/clozeidevice.py, exe/engine/galleryidevice.py,
+	  exe/engine/idevicestore.py, exe/webui/blockfactory.py,
+	  exe/webui/clozeblock.py, exe/webui/galleryblock.py,
+	  testing/testblock.py, testing/utils.py: Clean up gallery idevice a
+	  bit and add cloze idevice start
+
+2005-07-26 20:05  djm
+
+	* exe/engine/freetextidevice.py, exe/engine/galleryidevice.py: Make
+	  names consistant
+
+2005-07-26 09:52  brent
+
+	* exe/engine/imagewithtextidevice.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/icon_assess.gif,
+	  exe/webui/style/default/icon_assignment.gif,
+	  exe/webui/style/default/icon_multichoice.gif,
+	  exe/webui/style/default/nav.css,
+	  exe/webui/style/standardwhite/icon_icon_assignment.gif: more on
+	  default style
+
+2005-07-26 03:53  jenny
+
+	* exe/webui/mainpage.py: fixed launching help file bugs.
+
+2005-07-26 03:45  matthew
+
+	* exe/webui/authoringpage.py: Removed beautiful soup as it was
+	  killing XHTML conformance, and adding a tab to my textArea fields
+
+2005-07-26 03:44  djm
+
+	* exe/webui/common.py: fix textArea
+
+2005-07-26 03:31  jenny
+
+	* exe/webui/docs/credits.xhtml, exe/webui/mainpage.py,
+	  exe/webui/scripts/mainpage.js: add a link to help file and email
+	  to the about dialog.
+
+2005-07-26 03:21  matthew
+
+	* exe/webui/scripts/mainpage.js: Fixed Speeling Error
+
+2005-07-26 02:32  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css: default style now has
+	  flexi-tabs!!! but if it works in IE i'll eat my microsoft
+	  keyboard!
+
+2005-07-26 02:06  matthew
+
+	* exe/webui/scripts/mainpage.js, exe/webui/templates/mainpage.xul:
+	  Issue 61: Slightly better in showing node name in window caption
+	  bar. Needs gtkmozembed, pyxpcom, or --chrome to do it properly
+	  though :)
+
+2005-07-26 01:14  djm
+
+	* exe/webui/mainpage.py, exe/webui/scripts/mainpage.js,
+	  exe/webui/templates/mainpage.xul: added handleLoadTutorialPackage
+
+2005-07-26 00:57  matthew
+
+	* exe/webui/scripts/mainpage.js: Issue 122: When renaming a node,
+	  now shows the old name in the dialog first
+
+2005-07-26 00:36  matthew
+
+	* exe/engine/galleryidevice.py: Made it always generate png
+	  thumbnails
+
+2005-07-26 00:32  matthew
+
+	* exe/export/scormexport.py, exe/webui/multichoiceblock.py,
+	  exe/webui/quiztestblock.py: Upgraded XHTML conformance
+
+2005-07-26 00:09  djm
+
+	* exe/engine/node.py, testing/testnode.py: back out adding
+	  description to node.... that change can wait for GTK or PyXPCOM
+
+2005-07-25 23:41  djm
+
+	* exe/engine/node.py, testing/testnode.py: Added description to node
+
+2005-07-25 23:11  djm
+
+	* exe/webui/images/exe_logo.png: changed to new logo
+
+2005-07-25 23:01  djm
+
+	* exe/application.py, exe/webui/browser.py, exe/webui/mainpage.py,
+	  exe/webui/mainwindow.py, exe/webui/outlinepane.py,
+	  exe/webui/templates/mainpage.xul, exe/webui/webserver.py,
+	  testing/testconfigparser.py: back out files which I didn't mean to
+	  check in
+
+2005-07-25 22:58  djm
+
+	* eXe_icon.ico, exe/application.py, exe/webui/browser.py,
+	  exe/webui/mainpage.py, exe/webui/mainwindow.py,
+	  exe/webui/outlinepane.py, exe/webui/templates/mainpage.xul,
+	  exe/webui/webserver.py, testing/testconfigparser.py: use new eXe
+	  icon
+
+2005-07-25 22:28  brent
+
+	* exe/webui/attachmentblock.py, exe/webui/galleryblock.py,
+	  exe/webui/imagewithtextblock.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css: mostly defualt style stuff... but
+	  then there's a bit more which i don't quite remember, shouldn't
+	  break anything though :-)
+
+2005-07-25 22:07  djm
+
+	* exe/engine/imagewithtextidevice.py: Upgrade imagewithtext... add
+	  caption.
+
+2005-07-25 03:31  brent
+
+	* exe/webui/imagewithtextblock.py: forgot this on previous change to
+	  image w. text iDevice.
+
+2005-07-25 02:56  matthew
+
+	* exe/webui/forumblock.py, exe/webui/quiztestblock.py,
+	  exe/webui/testquestionelement.py, testing/testblock.py: XHTML
+	  Conformance upgrade :)
+
+2005-07-25 02:29  brent
+
+	* exe/webui/imagewithtextblock.py,
+	  exe/webui/style/default/active_bg.gif,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/mojave/content.css,
+	  exe/webui/style/seamist/content.css,
+	  exe/webui/style/standardwhite/content.css: modified styles to add
+	  border around image w/ text iDevice.
+
+2005-07-25 01:17  jenny
+
+	* exe/engine/imagewithtextidevice.py: added caption to imagewithtext
+	  idevice.
+
+2005-07-25 01:14  jenny
+
+	* exe/webui/editorpage.py, exe/webui/editorpane.py,
+	  exe/webui/genericblock.py, exe/webui/imagewithtextblock.py: Adding
+	  a Frame with caption and not float to image with text idevice.
+	  (issue 121) Modeified idevice editor to fix bugs.
+
+2005-07-25 00:15  djm
+
+	* exe/webui/authoringpage.py: Prettify here too.
+
+2005-07-25 00:10  djm
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py:
+	  Prettify HTML with BeautifulSoup
+
+2005-07-25 00:05  brent
+
+	* exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css: default style
+
+2005-07-24 22:51  matthew
+
+	* exe/webui/element.py, exe/webui/quiztestblock.py,
+	  testing/testblock.py, testing/utils.py: Tidied up some XHTML
+
+2005-07-22 03:32  jenny
+
+	* exe/webui/casestudyblock.py, exe/webui/editorpane.py,
+	  exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/quiztestblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/truefalseblock.py: modified all blocks, then user can
+	  edit an idevice title.
+
+2005-07-21 22:27  matthew
+
+	* exe/engine/galleryidevice.py: Removed pygame import
+
+2005-07-21 05:25  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py: Still
+	  looks ugly
+
+2005-07-21 04:54  djm
+
+	* exe/webui/scripts/common.js: A version of askUserForImage which
+	  should work on broken version s of Firefox.
+
+2005-07-21 01:54  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py,
+	  exe/webui/images/stock-go-back-off.png,
+	  exe/webui/images/stock-go-forward-off.png: Can now move images
+	  left and right
+
+2005-07-21 01:17  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py,
+	  exe/webui/scripts/common.js: Can now export and change a single
+	  image
+
+2005-07-20 22:39  jenny
+
+	* exe/webui/editorpage.py, exe/webui/editorpane.py: modified idevice
+	  editor interface. change "Image Upload" to "Image", "Add" to "Save
+	  as".
+
+2005-07-20 21:57  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py: Now
+	  brings up gallery images in a centered window in preview mode
+
+2005-07-20 21:33  jenny
+
+	* exe/webui/editorpane.py: modified idevice editorpane.
+
+2005-07-20 07:06  jenny
+
+	* exe/webui/block.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/quiztestblock.py:
+	  modified all blocks to use "icon_*.gif" instead of ".gif" and
+	  added styles for adding icons in idevice editor pane.
+
+2005-07-20 03:12  brent
+
+	* exe/webui/block.py, exe/webui/scripts/common.js,
+	  exe/webui/style/default/content.css: more on the default style.
+
+2005-07-19 23:04  brent
+
+	* exe/webui/style/default/content.css: styling for new default.
+
+2005-07-19 05:27  matthew
+
+	* exe/webui/scripts/common.js: Fixed bug in ImageIdevice
+
+2005-07-19 05:09  djm
+
+	* exe/webui/style/default/icon_activity.gif,
+	  exe/webui/style/default/icon_assess.gif,
+	  exe/webui/style/default/icon_calc.gif,
+	  exe/webui/style/default/icon_define.gif,
+	  exe/webui/style/default/icon_discussion.gif,
+	  exe/webui/style/default/icon_e_gloss.gif,
+	  exe/webui/style/default/icon_e_journal.gif,
+	  exe/webui/style/default/icon_inter.gif,
+	  exe/webui/style/default/icon_key_points.gif,
+	  exe/webui/style/default/icon_multimedia.gif,
+	  exe/webui/style/default/icon_objectives.gif,
+	  exe/webui/style/default/icon_present.gif,
+	  exe/webui/style/default/icon_read.gif,
+	  exe/webui/style/default/icon_reflection.gif,
+	  exe/webui/style/default/icon_review.gif,
+	  exe/webui/style/default/icon_summary.gif,
+	  exe/webui/style/default/icon_synthesis.gif,
+	  exe/webui/style/default/icon_time.gif,
+	  exe/webui/style/default/icon_web_resource.gif,
+	  exe/webui/style/garden/icon_activity.gif,
+	  exe/webui/style/garden/icon_casestudy.gif,
+	  exe/webui/style/garden/icon_generic.gif,
+	  exe/webui/style/garden/icon_multichoice.gif,
+	  exe/webui/style/garden/icon_objectives.gif,
+	  exe/webui/style/garden/icon_preknowledge.gif,
+	  exe/webui/style/garden/icon_reading.gif,
+	  exe/webui/style/garden/icon_reflection.gif,
+	  exe/webui/style/mojave/icon_activity.gif,
+	  exe/webui/style/mojave/icon_cactus_icon.gif,
+	  exe/webui/style/mojave/icon_casestudy.gif,
+	  exe/webui/style/mojave/icon_generic.gif,
+	  exe/webui/style/mojave/icon_multichoice.gif,
+	  exe/webui/style/mojave/icon_objectives.gif,
+	  exe/webui/style/mojave/icon_preknowledge.gif,
+	  exe/webui/style/mojave/icon_reading.gif,
+	  exe/webui/style/mojave/icon_reflection.gif,
+	  exe/webui/style/seamist/icon_activity.gif,
+	  exe/webui/style/seamist/icon_casestudy.gif,
+	  exe/webui/style/seamist/icon_generic.gif,
+	  exe/webui/style/seamist/icon_multichoice.gif,
+	  exe/webui/style/seamist/icon_objectives.gif,
+	  exe/webui/style/seamist/icon_preknowledge.gif,
+	  exe/webui/style/seamist/icon_reading.gif,
+	  exe/webui/style/seamist/icon_reflection.gif,
+	  exe/webui/style/standardwhite/icon_activity.gif,
+	  exe/webui/style/standardwhite/icon_casestudy.gif,
+	  exe/webui/style/standardwhite/icon_generic.gif,
+	  exe/webui/style/standardwhite/icon_icon_assignment.gif,
+	  exe/webui/style/standardwhite/icon_multichoice.gif,
+	  exe/webui/style/standardwhite/icon_objectives.gif,
+	  exe/webui/style/standardwhite/icon_preknowledge.gif,
+	  exe/webui/style/standardwhite/icon_reading.gif,
+	  exe/webui/style/standardwhite/icon_reflection.gif: Rename icons to
+	  have the icon_ prefix
+
+2005-07-19 04:44  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py,
+	  exe/webui/scripts/common.js: Made Gallery support: + Palletted
+	  GIFs and PNGs + Delete an image + Multiple image import + Deletes
+	  all resource when idevice deleted
+
+2005-07-19 04:36  matthew
+
+	* exe/webui/questionelement.py: Roll back stupid bug properly :P
+
+2005-07-19 04:28  matthew
+
+	* exe/webui/questionelement.py: Fixed stupid bug :)
+
+2005-07-19 01:11  brent
+
+	* exe/webui/editorpane.py, exe/webui/style/default/content.css:
+	  modifying new defualt style.
+
+2005-07-19 00:19  brent
+
+	* exe/webui/style/default, exe/webui/style/thechurch: step two of
+	  moving thechurch to default
+
+2005-07-19 00:17  brent
+
+	* exe/webui/style/default, exe/webui/style/seamist,
+	  exe/webui/style/thechurch, exe/webui/style/thechurch/activity.gif,
+	  exe/webui/style/thechurch/assess.gif,
+	  exe/webui/style/thechurch/body_top_bg.gif,
+	  exe/webui/style/thechurch/calc.gif,
+	  exe/webui/style/thechurch/content.css,
+	  exe/webui/style/thechurch/define.gif,
+	  exe/webui/style/thechurch/discussion.gif,
+	  exe/webui/style/thechurch/e_gloss.gif,
+	  exe/webui/style/thechurch/e_journal.gif,
+	  exe/webui/style/thechurch/inter.gif,
+	  exe/webui/style/thechurch/key_points.gif,
+	  exe/webui/style/thechurch/multimedia.gif,
+	  exe/webui/style/thechurch/nav.css,
+	  exe/webui/style/thechurch/note_1.gif,
+	  exe/webui/style/thechurch/note_2.gif,
+	  exe/webui/style/thechurch/objectives.gif,
+	  exe/webui/style/thechurch/page_bg.gif,
+	  exe/webui/style/thechurch/page_bg_ie.gif,
+	  exe/webui/style/thechurch/present.gif,
+	  exe/webui/style/thechurch/question.gif,
+	  exe/webui/style/thechurch/read.gif,
+	  exe/webui/style/thechurch/reflection.gif,
+	  exe/webui/style/thechurch/review.gif,
+	  exe/webui/style/thechurch/summary.gif,
+	  exe/webui/style/thechurch/synthesis.gif,
+	  exe/webui/style/thechurch/time.gif,
+	  exe/webui/style/thechurch/top_nav.jpg,
+	  exe/webui/style/thechurch/transparent.gif,
+	  exe/webui/style/thechurch/web_resource.gif: step 1 of changing
+	  default to thechurch
+
+2005-07-19 00:11  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py: More
+	  gallery idevice progress
+
+2005-07-18 23:52  matthew
+
+	* exe/engine/galleryidevice.py: Start of gallery idevice
+
+2005-07-18 23:38  matthew
+
+	* exe/engine/freetextidevice.py, exe/engine/idevicestore.py,
+	  exe/engine/package.py, exe/webui/block.py,
+	  exe/webui/blockfactory.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/questionelement.py, exe/webui/renderable.py,
+	  exe/webui/scripts/common.js: Start of gallery idevice
+
+2005-07-18 22:58  jenny
+
+	* exe/webui/editorpane.py: added a link in iDevice editor for user
+	  selecting a icon.
+
+2005-07-18 04:08  brent
+
+	* exe/webui/editorpage.py, exe/webui/editorpane.py: more on the
+	  iDevice editor ...
+
+2005-07-18 03:31  brent
+
+	* exe/webui/css/exe.css, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/scripts/mainpage.js: more
+	  interface stuff for iDevice editor...
+
+2005-07-18 02:36  jenny
+
+	* exe/webui/editorpage.py: fixed idevice emphasis bugs.
+
+2005-07-18 02:22  brent
+
+	* exe/webui/css/exe.css, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py: iDevice editor interface changes.
+
+2005-07-17 22:33  brent
+
+	* exe/webui/editorpane.py: commented out experimental feature line.
+
+2005-07-17 03:42  djm
+
+	* ChangeLog, exe/engine/wikipediaidevice.py: Fixed bug# 0000125:
+	  Wikipedia iDevice throws exceptions.IOError if offline
+
 2005-07-14 04:30  jenny
 
 	* exe/webui/editorpage.py, exe/webui/editorpane.py: Modified idevice
