@@ -267,3 +267,58 @@ class ImageElement(Element):
         return html
 
 # ===========================================================================
+class ClozeElement(Element):
+    """
+    Allows the user to enter a passage of text and declare that some words
+    should be added later by the student
+    """
+
+    def process(self, request):
+        """
+        Sets the rawContent of our field
+        """
+        if self.id in request.args:
+            self.field.rawContent = request.args[self.id][0]
+
+    def renderEdit(self):
+        """
+        Enables the user to set up their passage of text
+        """
+        html = [
+            u'<p>',
+            u'  <b>%s</b>' % self.field.name,
+            common.elementInstruc(self.id, self.field.instruc),
+            u'</p>',
+            u'<p>',
+            common.textArea(self.id, self.field.rawContent),
+            u'</p>']
+        return '\n    '.join(html)
+
+    def renderView(self):
+        """
+        Shows the text with inputs for the missing parts
+        """
+        html = []
+        # Write the script
+        html += [
+            '<script>',
+            '<!--',
+            'function onClozeChange(ele, word) {',
+            '  if (ele.value.toLowerCase() == word.toLowerCase()) ',
+            '    ele.style.backgroundColor = "yellow";',
+            '  else',
+            '    ele.style.backgroundColor = "red";',
+            '};',
+            '-->',
+            '</script>',
+            ]
+        # Mix the parts together
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if text:
+                html.append(text)
+            if missingWord:
+                html += [
+                    ' <input type="text" value="" ',
+                    '        id="clz%s%s"' % (self.id, i),
+                    '  onchange="onClozeChange(this, \'%s\')"/>' % missingWord]
+        return '\n'.join(html)

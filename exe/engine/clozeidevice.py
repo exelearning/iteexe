@@ -24,6 +24,7 @@ Cloze Idevice. Shows a paragraph where the student must fill in the blanks
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.path    import Path
+from exe.engine.field   import ClozeField
 from exe.engine.persist import Persistable
 import Image
 import gettext
@@ -53,5 +54,15 @@ class ClozeIdevice(Idevice):
                            u"When checking the student's entry, case is ignored"),
                             "",
                             parentNode)
-        self.content = ''
+        self._content = ClozeField(_(u'Cloze'), 
+            _(u'<p>Enter a passage of text, to make a gap that the user must '
+               'fill put underscores (_) on either side of the word. For '
+               'example:</p>'
+               'The fith and last _words_ of this text need to be filled in '
+               'by the _student_'))
 
+
+    # Properties
+    content = property(lambda self: self._content, 
+                       doc="Read only, use 'self.content.rawContent = x' "
+                           "instead")

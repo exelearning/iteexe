@@ -24,8 +24,10 @@ must fill in.
 import logging
 import gettext
 import urllib
-from exe.webui.block            import Block
-from exe.webui                  import common
+from exe.webui.block   import Block
+from exe.webui         import common
+from exe.webui.element import ClozeElement
+
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -41,7 +43,7 @@ class ClozeBlock(Block):
         Pre-create our field ids
         """
         Block.__init__(self, parent, idevice)
-        self.clozeContentId = 'clozeContent%s' % self.id
+        self.clozeElement = ClozeElement(idevice.content)
 
     def process(self, request):
         """
@@ -50,7 +52,7 @@ class ClozeBlock(Block):
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]
         if object == self.id and action == 'done':
-            self.idevice.content = request.args.get(self.clozeContentId,[''])[0]
+            self.clozeElement.process(request)
         Block.process(self, request)
 
     def renderEdit(self, style):
@@ -61,7 +63,7 @@ class ClozeBlock(Block):
         html = [
             u'<div class="iDevice emphasis%s">' %
             unicode(self.idevice.emphasis),
-            common.textArea(self.clozeContentId, self.idevice.content),
+            self.clozeElement.renderEdit(),
             self.renderEditButtons(),
             u'</div>'
             ]
@@ -75,7 +77,7 @@ class ClozeBlock(Block):
                  unicode(self.idevice.emphasis),
                  u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id,
                  u'  <p id="clozeContent%s">' % self.id,
-                 '<br/>'.join(self.idevice.content.split('\n')),
+                 self.clozeElement.renderView(),
                  u'  </p>',
                  self.renderViewButtons(),
                  u'</div>']
@@ -88,7 +90,7 @@ class ClozeBlock(Block):
         html  = [u'<div class="iDevice emphasis%s">' %
                  unicode(self.idevice.emphasis),
                  u'  <p id="clozeContent%s">' % self.id,
-                 '<br/>'.join(self.idevice.content.split('\n')),
+                 self.clozeElement.renderView(),
                  u'  </p>',
                  u'</div>']
         return u'\n    '.join(html).encode('utf8')

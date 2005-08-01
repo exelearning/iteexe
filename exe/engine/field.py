@@ -186,3 +186,35 @@ class ImageField(Field):
 
 
 # ===========================================================================
+class ClozeField(Field):
+    """
+    This field handles a passage with words that the student must fill in
+    """
+    def __init__(self, name, instruc):
+        """
+        Initialise
+        """
+        Field.__init__(self, name, instruc)
+        self.rawContent = ''
+
+    # Property handlers
+    def get_parts(self):
+        """
+        Generates (text, missing_word) pairs.
+        If it doesn't end in a missing word, the last yield is (text, '')
+        """
+        text = []
+        for word in self.rawContent.split(' '):
+            if len(word) > 2 and word[0] == '_' and word[-1] == '_':
+                # Start of a missing word
+                yield (' '.join(text), word[1:-1]) # (Remove _'s)
+                text = []
+            else:
+                # More text
+                text.append(word)
+        # At the end, if there is some text, yield it
+        if text:
+            yield (' '.join(text), '')
+    
+    # Properties
+    parts = property(get_parts)
