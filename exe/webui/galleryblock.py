@@ -26,7 +26,6 @@ import gettext
 import urllib
 from exe.webui.block            import Block
 from exe.webui                  import common
-from exe.webui.element          import TextElement
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -59,7 +58,7 @@ class GalleryBlock(Block):
         argument, which is an 'exe.engine.galleryIdevice.GalleryImage' instance
         and return a list of strings that will be later joined with '\n' chars.
         """
-        width, height = self.idevice.images[0].thumbnailSize
+        width = self.idevice.images[0].thumbnailSize[0]
         html = [u'<table width="100%" border="0" cellpadding="3" '
                  'cellspacing="0" style="margin:4px; border-style:groove;">',
                 u'  <tbody>']
@@ -75,8 +74,7 @@ class GalleryBlock(Block):
                 html += ['    </tr>']
                 i = 0
         if 0 < i < self.thumbnailsPerRow :
-            for j in range(self.thumbnailsPerRow - i):
-                html.append('<td></td>')
+            html += ['<td></td>'] * (self.thumbnailsPerRow - i)
             html.append('</tr>')
         html += [u'  </tbody>',
                  u'</table>']
@@ -93,54 +91,67 @@ class GalleryBlock(Block):
         if "title"+self.id in request.args:
             self.idevice.title = request.args["title"+self.id][0]
             
-        object = request.args.get('object', [''])[0]
-        if object != self.id:
+        obj = request.args.get('object', [''])[0]
+        if obj != self.id:
             Block.process(self, request)
             return 
         # Separate out the action we want to do and the params
         action = request.args.get('action', [''])[0]
         if action.startswith('gallery.'):
-            action, params = action.split('.', 2)[1:]
-            # There are certain events that we only care about when in edit mode
-            if self.mode == Block.Edit:
-                # See if we will delete an image
-                # Add an image
-                if action == 'addImage':
-                    # Decode multiple filenames
-                    filenames = map(urllib.unquote, params.split('&'))
-                    for filename in filenames: self.idevice.addImage(filename)
-                # Edit/change an image
-                if action == 'changeImage':
-                    data = params.split('.', 2)
-                    imageId = '.'.join(data[:2])
-                    filename = data[2]
-                    self.idevice.images[imageId].imageFilename = filename
-                # Move image one left
-                if action == 'moveLeft':
-                    imgs = self.idevice.images
-                    img = imgs[params]
-                    index = imgs.index(img)
-                    if index > 0:
-                        imgs[index-1], imgs[index] = imgs[index], imgs[index-1]
-                # Move image one right
-                if action == 'moveRight':
-                    imgs = self.idevice.images
-                    img = imgs[params]
-                    index = imgs.index(img)
-                    if index < len(imgs):
-                        imgs[index+1], imgs[index] = imgs[index], imgs[index+1]
-                # Delete an image?
-                if action == 'delete':
-                    del self.idevice.images[params]
-        elif self.mode == Block.Edit:
-            # Check all the image captions for changes
-            for image in self.idevice.images:
-                # See if the caption has changed
-                newCaption = request.args.get('caption'+image.id, [None])[0]
-                if newCaption is not None:
-                    image.caption = newCaption
+            self.processGallery(action)
+        if self.mode == Block.Edit:
+            self.processCaptions(request)
         # Let our ancestor deal with the rest
         Block.process(self, request)
+
+    def processGallery(self, action):
+        """
+        Processes gallery specific actions
+        """
+        action, params = action.split('.', 2)[1:]
+        # There are certain events that we only care about when in edit mode
+        if self.mode == Block.Edit:
+            # See if we will delete an image
+            # Add an image
+            if action == 'addImage':
+                # Decode multiple filenames
+                filenames = map(urllib.unquote, params.split('&'))
+                for filename in filenames:
+                    self.idevice.addImage(filename)
+            # Edit/change an image
+            if action == 'changeImage':
+                data = params.split('.', 2)
+                imageId = '.'.join(data[:2])
+                filename = data[2]
+                self.idevice.images[imageId].imageFilename = filename
+            # Move image one left
+            if action == 'moveLeft':
+                imgs = self.idevice.images
+                img = imgs[params]
+                index = imgs.index(img)
+                if index > 0:
+                    imgs[index-1], imgs[index] = imgs[index], imgs[index-1]
+            # Move image one right
+            if action == 'moveRight':
+                imgs = self.idevice.images
+                img = imgs[params]
+                index = imgs.index(img)
+                if index < len(imgs):
+                    imgs[index+1], imgs[index] = imgs[index], imgs[index+1]
+            # Delete an image?
+            if action == 'delete':
+                del self.idevice.images[params]
+
+    def processCaptions(self, request): 
+        """
+        Processes changes to all the image captions
+        """
+        # Check all the image captions for changes
+        for image in self.idevice.images:
+            # See if the caption has changed
+            newCaption = request.args.get('caption'+image.id, [None])[0]
+            if newCaption is not None:
+                image.caption = newCaption
         
     def renderEdit(self, style):
         """
@@ -164,11 +175,16 @@ class GalleryBlock(Block):
         else:
             def genCell(image):
                 """Generates a single cell of our table"""
+                def submitLink(method):
+                    """Makes submitLink javascript code"""
+                    method = 'gallery.%s.%s' % (method, image.id)
+                    params = "'%s', %s, true" % (method, self.id)
+                    return "javascript:submitLink(%s)" % params
                 changeGalleryImage = [
                         u'           onclick="changeGalleryImage(' +
                         u"'%s', '%s')" % (self.id, image.id) +
                         u'"']
-                result = [u'          <img',] + \
+                result = [u'          <img'] + \
                           changeGalleryImage + \
                          [u'           alt="%s"' % image.caption,
                           u'           style="align:center top;"',
@@ -185,9 +201,7 @@ class GalleryBlock(Block):
                 # Move left button
                 if image.index > 0:
                     result += [
-                          u'        <img onclick="javascript:submitLink(' +
-                          u'''           'gallery.moveLeft.%s', %s, true)"''' %\
-                                         (image.id, self.id),
+                          u'        <img onclick="%s"' % submitLink('moveLeft'),
                           u'             src="/images/stock-go-back.png"/>'
                           ]
                 else:
@@ -196,16 +210,15 @@ class GalleryBlock(Block):
                 # Move right button
                 if image.index < len(image.parent.images)-1:
                     result += [
-                          u'        <img onclick="javascript:submitLink(' +
-                          u'''           'gallery.moveRight.%s', %s, true)"''' % (image.id, self.id),
-                          u'             src="/images/stock-go-forward.png"/>']
+                          u'       <img onclick="%s"' % submitLink('moveRight'),
+                          u'            src="/images/stock-go-forward.png"/>']
                 else:
                     result += [
-                          u'        <img src="/images/stock-go-forward-off.png"/>']
+                          u'        ' + 
+                          u'<img src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
-                          u'        <img onclick="javascript:submitLink(' +
-                          u'''           'gallery.delete.%s', %s, true)"''' % (image.id, self.id),
+                          u'        <img onclick="%s"' % submitLink('delete'),
                           u'             src="/images/stock-delete.png"/>',
                           u'      </span>']
                 return result
@@ -236,12 +249,12 @@ class GalleryBlock(Block):
                  self.idevice.title,
                  '</span><br/>']
 
-        html += self.renderViewContent(style)
+        html += self.renderViewContent()
         html += [self.renderViewButtons(),
                  u'</div>']
         return u'\n    '.join(html).encode('utf8')
 
-    def renderViewContent(self, style):
+    def renderViewContent(self):
         """
         HTML shared by view and preview
         """
@@ -254,13 +267,14 @@ class GalleryBlock(Block):
                 """
                 Generates a single table cell
                 """
-                w, h = image.size
+                width, height = image.size
                 return [u'        <img onclick="javascript:window.open(',
                         u"'%s', 'galleryImage', " % image.src +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
-                        u"width=%s,height=%s,scrollbars=yes," % (w+20,h+30) +
-                        u"screenX='+((screen.width/2)-(%s/2))+" % (w) +
-                        u"',screenY='+((screen.height/2)-(%s/2))" % (h) +
+                        u"width=%s," % (width+20) +
+                        u"height=%s,scrollbars=yes," % (height+30) +
+                        u"screenX='+((screen.width/2)-(%s/2))+" % (width) +
+                        u"',screenY='+((screen.height/2)-(%s/2))" % (height) +
                         u');"',
                         u'           style="align:center top;"',
                         u'           alt="%s"' % image.caption,
