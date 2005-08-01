@@ -113,9 +113,11 @@ class AuthoringPage(RenderableResource):
 
         html += u'</div>\n'
         html += common.footer()
-	try:
-	    html = parseString(html).toprettyxml()
+        try:
+            html = parseString(html).toprettyxml()
         except MismatchedTags:
+            pass
+        except UnicodeEncodeError:
             pass
 
         return html.encode('utf8')

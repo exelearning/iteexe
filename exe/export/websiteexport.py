@@ -102,7 +102,12 @@ class WebsitePage(object):
         html += self.getNavigationLink(prevPage, nextPage)
         html += u"</div>\n"
         html += u"</body></html>\n"
-        html = parseString(html).toprettyxml()
+        try:
+            html = parseString(html).toprettyxml()
+        except MismatchedTags:
+            pass
+        except UnicodeEncodeError:
+            pass
         return html
 
         
