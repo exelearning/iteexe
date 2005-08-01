@@ -73,7 +73,7 @@
            <vbox>
               <toolbox>
                   <toolbar>
-                      <toolbarbutton n:render="addChild" key="addChildKey" label="Add Child"/>
+                      <toolbarbutton n:render="addChild" key="addChildKey" label="Add Page"/>
                       <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
                       <toolbarbutton id="btnRename" n:render="renNode" key="renNodeKey" label="Rename"/>
                   </toolbar>
