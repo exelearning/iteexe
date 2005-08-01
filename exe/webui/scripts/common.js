@@ -264,3 +264,13 @@ function getFeedback(optionId, optionsNum, ideviceId) {
 //	document.edit_icon.style.display = "none";
 //	}
 	
+// Functions for cloze IDevice /////////////////////////////////////////////////
+
+function onClozeChange(ele, word) {
+    if (ele.value.toLowerCase() == word.toLowerCase()) 
+        ele.style.backgroundColor = "yellow";
+    else if (!ele.value)
+        ele.style.backgroundColor = null;
+    else
+        ele.style.backgroundColor = "red";
+};

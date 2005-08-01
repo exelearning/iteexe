@@ -299,19 +299,6 @@ class ClozeElement(Element):
         Shows the text with inputs for the missing parts
         """
         html = []
-        # Write the script
-        html += [
-            '<script>',
-            '<!--',
-            'function onClozeChange(ele, word) {',
-            '  if (ele.value.toLowerCase() == word.toLowerCase()) ',
-            '    ele.style.backgroundColor = "yellow";',
-            '  else',
-            '    ele.style.backgroundColor = "red";',
-            '};',
-            '-->',
-            '</script>',
-            ]
         # Mix the parts together
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:
@@ -320,5 +307,5 @@ class ClozeElement(Element):
                 html += [
                     ' <input type="text" value="" ',
                     '        id="clz%s%s"' % (self.id, i),
-                    '  onchange="onClozeChange(this, \'%s\')"/>' % missingWord]
+                    '  oninput="onClozeChange(this, \'%s\')"/>' % missingWord]
         return '\n'.join(html)

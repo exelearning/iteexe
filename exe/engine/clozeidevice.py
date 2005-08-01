@@ -61,6 +61,11 @@ class ClozeIdevice(Idevice):
                'The fith and last _words_ of this text need to be filled in '
                'by the _student_'))
 
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        return Idevice.getResources(self) + ["common.js"]
 
     # Properties
     content = property(lambda self: self._content, 
