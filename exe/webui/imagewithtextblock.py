@@ -95,6 +95,7 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
+        html  = u"\n<!-- image with text iDevice -->\n"
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
@@ -105,7 +106,8 @@ class ImageWithTextBlock(Block):
         html += self.imageElement.renderPreview()
         html += u"" + self.idevice.caption + "</div>"
         html += u"</div>\n"
-        html += self.textElement.renderPreview()        
+        html += self.textElement.renderPreview()
+        html += u"<br/>\n"        
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"
         html += self.renderViewButtons()
@@ -118,7 +120,7 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<!-- image with text iDevice -->\n"
+        html  = u"\n<!-- image with text iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<div class=\"image_text\" style=\""
