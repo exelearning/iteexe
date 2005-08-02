@@ -250,7 +250,7 @@ class GalleryIdevice(Idevice):
                             "images"),
                          _(u"Use this Idevice if you have a lot of images to "
                             "show."),
-                            "",
+                            "gallery",
                             parentNode)
         self.emphasis = Idevice.SomeEmphasis
         self.nextImageId = 0

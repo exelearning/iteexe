@@ -172,7 +172,7 @@ class MultichoiceBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u'<img alt="" class="iDevice_icon" '
-        html += u"src=\"/style/"+style+"/icon_question.gif\" />\n"
+        html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += self.question+" &nbsp;&nbsp;\n"

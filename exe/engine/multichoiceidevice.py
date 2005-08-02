@@ -48,7 +48,7 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self, question=""):
         """
@@ -81,7 +81,7 @@ encountered in their study </li>
 distractors </li>
 <li> Distractors should be incorrect but plausible </li>
 </ul>
-"""), u"multichoice")
+"""), u"question")
         self.emphasis        = Idevice.SomeEmphasis
         self.question        = question
         self.hint            = ""
@@ -137,4 +137,11 @@ do not want to provide a hint, leave this field blank.""")
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
     
+    def upgradeToVersion3(self):
+        """
+        Upgrades the node from 1 (v0.6) to 2 (v0.7).
+        Change icon from 'multichoice' to 'question'
+        """
+        log.debug(u"Upgrading iDevice icon")
+        self.icon = "question"
 # ===========================================================================

@@ -104,7 +104,7 @@ class Idevice(Persistable):
         Overridden by derieved classes
         """
         if self.icon:
-            return [self.icon+".gif"]
+            return ["icon_"+self.icon+".gif"]
         else:
             return []
 

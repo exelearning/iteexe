@@ -73,7 +73,7 @@ class QuizTestIdevice(Idevice):
     """
     A QuizTestIdevice Idevice is one built up from question and options
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self):
         """
@@ -82,7 +82,7 @@ class QuizTestIdevice(Idevice):
         Idevice.__init__(self,
                          _(u"SCORM Quiz"),
                          _(u"University of Auckland"),
-                         "", "", "")
+                         "", "", "question")
         self.emphasis   = Idevice.SomeEmphasis
         self.score      = -1 
         self.isAnswered = True
@@ -114,5 +114,13 @@ class QuizTestIdevice(Idevice):
         """
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
+        
+    def upgradeToVersion3(self):
+        """
+        Upgrades the node from 1 (v0.6) to 2 (v0.7).
+        Change icon from 'multichoice' to 'question'
+        """
+        log.debug(u"Upgrading iDevice icon")
+        self.icon = "question"
    
 # ===========================================================================

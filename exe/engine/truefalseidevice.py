@@ -50,7 +50,7 @@ class TrueFalseIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self):
         """
@@ -62,7 +62,7 @@ class TrueFalseIdevice(Idevice):
                          _(u"""True/false questions present a statement where 
 the learner must decide if the statement is true. This type of question works 
 well for factual information and information that lends itself to either/or 
-responses."""), u"", u"multichoice")
+responses."""), u"", u"question")
         self.emphasis        = Idevice.SomeEmphasis
         self.hintInstruc     = _(u"Type the question's hint here.")
         self.questions       = []
@@ -109,6 +109,14 @@ this box, eXe will automatically provide default feedback as follows:
         """
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
+        
+    def upgradeToVersion3(self):
+        """
+        Upgrades the node from 1 (v0.6) to 2 (v0.7).
+        Change icon from 'multichoice' to 'question'
+        """
+        log.debug(u"Upgrading iDevice icon")
+        self.icon = "question"
 
     
 # ===========================================================================

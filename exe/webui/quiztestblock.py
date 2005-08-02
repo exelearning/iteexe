@@ -69,7 +69,9 @@ class QuizTestBlock(Block):
             element.process(request)
 
             
-        if "action" in request.args and request.args["action"][0] == "done":
+        if ("action" in request.args and request.args["action"][0] == "done"
+            or not self.idevice.edit):
+            self.idevice.isAnswered = True
             for question in self.idevice.questions:
                 if question.correctAns == -2:
                     self.idevice.isAnswered = False
@@ -126,7 +128,7 @@ class QuizTestBlock(Block):
         html += u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
-        html += u'src="icon_multichoice.gif" />\n'
+        html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
         html += u'<span class="iDeviceTitle">'
         html += self.idevice.title+'</span><br/>\n'
         
@@ -342,7 +344,8 @@ class QuizTestBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u'<img alt="" class="iDevice_icon" '
-        html += u"src=\"/style/"+style+"/icon_multichoice.gif\" />\n"
+        html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon
+        html += ".gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
 

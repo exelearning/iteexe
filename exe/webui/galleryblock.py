@@ -236,23 +236,6 @@ class GalleryBlock(Block):
             image.delete()
         Block.processDelete(self, request)
         
-    def renderPreview(self, style):
-        """
-        Renders the HTML for preview inside exe
-        """
-        html  = [u'<div class="iDevice emphasis%s" ' %
-                 unicode(self.idevice.emphasis),
-                 u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id,
-                 u'<img alt="" class="iDevice_icon" ',
-                 u'src="/style/'+style+'/icon_gallery.gif" />'
-                 u'<span class="iDeviceTitle">',      
-                 self.idevice.title,
-                 '</span><br/>']
-
-        html += self.renderViewContent()
-        html += [self.renderViewButtons(),
-                 u'</div>']
-        return u'\n    '.join(html).encode('utf8')
 
     def renderViewContent(self):
         """
@@ -283,7 +266,7 @@ class GalleryBlock(Block):
                         u'          %s' % (image.caption or '&nbsp;'),
                         u'        </div>']
             html = self._generateTable(genCell)
-        return html
+        return u'\n    '.join(html).encode('utf8')
         
     def renderView(self, style):
         """
@@ -298,11 +281,11 @@ class GalleryBlock(Block):
                      unicode(self.idevice.emphasis),
                      u'>',
                      u'<img alt="" class="iDevice_icon" ',
-                     u'src="/style/'+style+'/icon_gallery.gif" />'
+                     u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />'
                      u'<span class="iDeviceTitle">',      
                      self.idevice.title,
                      '</span><br/>']
-            html += self.renderViewContent(style)
+            html += [self.renderViewContent()]
             html += [u'</div>']
             return u'\n    '.join(html).encode('utf8')
         finally:
