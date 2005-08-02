@@ -27,7 +27,7 @@ from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.pages         import uniquifyNames
-from twisted.web.microdom     import parseString
+from twisted.web.microdom     import parseString, MismatchedTags
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -138,6 +138,9 @@ class WebsitePage(object):
                     html += page.node.title
                     html += "</a></div>\n"
 
+        while depth >= 1:
+            html += "</div>\n"
+            depth -= 1
         html += "</ul>\n"
         return html
         

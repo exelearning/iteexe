@@ -30,7 +30,7 @@ from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
-from twisted.web.microdom          import parseString
+from twisted.web.microdom          import parseString, MismatchedTags
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
