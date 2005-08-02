@@ -160,7 +160,7 @@ class IMSPage(Page):
         self.node is the root node. 'outputDir' must be a 'Path' instance
         """
         out = open(outputDir/self.name+".html", "w")
-        out.write(self.render().encode('utf8'))
+        out.write(self.render())
         out.close()
         
 
@@ -200,11 +200,10 @@ class IMSPage(Page):
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"</body></html>\n"
+        html = html.encode('utf8')
         try:
             html = parseString(html).toprettyxml()
         except MismatchedTags:
-            pass
-        except UnicodeEncodeError:
             pass
         return html
 

@@ -54,7 +54,7 @@ class WebsitePage(object):
         (a 'path' instance)
         """
         outfile = open(outputDir / self.name+".html", "w")
-        outfile.write(self.render(prevPage, nextPage, pages).encode('utf8'))
+        outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()
         
 
@@ -102,11 +102,10 @@ class WebsitePage(object):
         html += self.getNavigationLink(prevPage, nextPage)
         html += u"</div>\n"
         html += u"</body></html>\n"
+        html = html.encode('utf8')
         try:
             html = parseString(html).toprettyxml()
         except MismatchedTags:
-            pass
-        except UnicodeEncodeError:
             pass
         return html
 
