@@ -54,7 +54,12 @@ class MainWindow(gtk.Window):
         """
         self.application = application
         self.config      = application.config
+        self.url         = "http://localhost:%d" % self.config.port
         self.packageName = packageName
+
+        #TODO Fix this!!!
+        gtkmozembed.gtk_moz_embed_set_comp_path(self.config.webDir)
+#	gtkmozembed.gtk_moz_embed_set_comp_path("c:\\djm\\mozilla\\dist\\bin")
 
         if sys.platform[:3] == u"win":
             profileDir = self.config.webDir
@@ -71,7 +76,8 @@ class MainWindow(gtk.Window):
         gtk.Window.__init__(self)
         self.connect("delete-event", self.quit)
         self.set_title("eXe version 0.6")
-        iconFile = self.config.webDir / "exe_icon.png"
+#        iconFile = self.config.webDir / "exe_icon.ico"
+        iconFile = self.config.webDir / "mr_x.gif"
         self.set_icon(gtk.gdk.pixbuf_new_from_file(iconFile))
         self.set_size_request(800, 700)
 
@@ -127,7 +133,7 @@ class MainWindow(gtk.Window):
         #self.browser.connect("visibility", self.what, "visibility")
         #self.browser.connect("open-uri", self.what, "open-uri")
 
-        self.browser.load_url("http://localhost:8081/"+self.packageName)
+        self.browser.load_url(self.url+"/"+self.packageName)
         self.vbox.pack_start(self.browser)
 
         # Status Bar
@@ -174,7 +180,7 @@ class MainWindow(gtk.Window):
             filename = chooser.get_filename()
             package  = self.application.packageStore.loadPackage(filename)
             self.application.server.root.bindNewPackage(package)
-            self.browser.load_url("http://localhost:8081/"+package.name)
+            self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
             
@@ -212,12 +218,12 @@ class MainWindow(gtk.Window):
             if not filename.lower().endswith('.elp'):
                 filename += '.elp'
             package.save(filename)
-            self.browser.load_url("http://localhost:8081/"+package.name)
+            self.browser.load_url(self.url+"/"+package.name)
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.server.root.bindNewPackage(package)
-                self.browser.load_url("http://localhost:8081/"+package.name)
+                self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
 
@@ -253,7 +259,7 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.server.root.bindNewPackage(package)
-                self.browser.load_url("http://localhost:8081/"+package.name)
+                self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
 
@@ -289,7 +295,7 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.server.root.bindNewPackage(package)
-                self.browser.load_url("http://localhost:8081/"+package.name)
+                self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
 
@@ -376,7 +382,9 @@ class MainWindow(gtk.Window):
         """
         Note we've changed location
         """
-        self.packageName = self.browser.get_location().split('/')[-1]
+        print self.browser.get_location()
+        self.packageName = self.browser.get_location().split('/')[-2]
+        print self.packageName
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
 
