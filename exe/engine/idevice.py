@@ -42,17 +42,18 @@ class Idevice(Persistable):
     def __init__(self, title, author, purpose, tip, icon, parentNode=None):
         """Initialize a new iDevice, setting a unique id"""
         log.debug("Creating iDevice")
-        self.edit       = True
-        self.emphasis   = Idevice.NoEmphasis
-        self.version    = 0
-        self.id         = unicode(Idevice.nextId)
-        Idevice.nextId += 1
-        self.parentNode = parentNode
-        self.title      = title
-        self.author     = author
-        self.purpose    = purpose
-        self.tip        = tip
-        self.icon       = icon
+        self.edit        = True
+        self.lastIdevice = True
+        self.emphasis    = Idevice.NoEmphasis
+        self.version     = 0
+        self.id          = unicode(Idevice.nextId)
+        Idevice.nextId  += 1
+        self.parentNode  = parentNode
+        self.title       = title
+        self.author      = author
+        self.purpose     = purpose
+        self.tip         = tip
+        self.icon        = icon
 
 
     def __cmp__(self, other):

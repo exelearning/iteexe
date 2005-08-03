@@ -89,6 +89,7 @@ class Block(Renderable):
                 self.processDemote(request)
         
         else:
+            self.idevice.lastIdevice = False
             self.processDone(request)
 
 
@@ -105,6 +106,7 @@ class Block(Renderable):
         User has started editing this block
         """
         log.debug(u"processEdit id="+self.id)
+        self.idevice.lastIdevice = True
         self.idevice.edit = True
 
 
@@ -172,7 +174,10 @@ class Block(Renderable):
             html = self.renderView(style)
         
         elif self.mode == Block.Preview:
-            html = self.renderPreview(style)
+            html = ""
+            if self.idevice.lastIdevice:
+                html += u'<a name="currentBlock"></a>\n'
+            html += self.renderPreview(style)
 
         return html
 
