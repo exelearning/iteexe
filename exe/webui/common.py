@@ -205,12 +205,12 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += u'<img alt="%s" ' % _(u'Instructions for completion')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
-        html += u'<div id="i%s" style="display:none; z-index:99;">' % instrucId
+        html += u'<div id="i%s" style="display:none;">' % instrucId
         html += u'<div style="float:right;" >'
         html += u'<img alt="%s" ' % _("Close")
         html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
         html += u' onmousedown="Javascript:hideMe();"/></div>'
-        html += u'<b>%s:</b><br/>%s<br/>' % (label, instruc)                
+        html += u'<div class="popupDivLabel">%s</div>%s' % (label, instruc)                
         html += u'</div>\n'
     return html
 

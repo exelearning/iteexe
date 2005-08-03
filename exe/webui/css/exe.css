@@ -10,12 +10,30 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
            background: transparent;
 	}
 
+/* styles for modal popup messages */
+
 .popupDiv {
-    background-color: #C0C0C0;
-    border: 1px solid #000;
-    padding: 10px 10px 10px 10px;
-    margin-left: 15px;
+   background-color: #EDEFF0;
+   border: 2px solid #607489;
+   padding: 0px 4px 4px 4px;
+   margin-left: 15px;
+   text-align:left;
+   z-index:99;
+   -moz-border-radius: 3px;
 }
+
+.popupDivLabel {
+ text-align: center;
+ font: message-box; 
+ font-weight: bold;
+ color: #fff;
+ cursor:move;
+ margin: 0px -4px 0px -4px;
+ background-image:url(../images/popup_bg.gif);
+}
+
+
+
 
 /* styles for iDevice Editor */
 
@@ -37,7 +55,7 @@ width: 100px;
 padding: 0.25em;
 margin: 4px;
 background-color: #FFFFFF;
-background-image: url(http://localhost:8081/style/standardwhite/nodeTitle_bg.jpg);
+background-image: url(../style/standardwhite/nodeTitle_bg.jpg);
 background-repeat: repeat-x;
 color: #333333;
 font-size: 75%;

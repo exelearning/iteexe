@@ -4,19 +4,17 @@ Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
 ============================================= */
 
-body, html {
+body {
    background-image:url(page_bg.gif);
    background-position:top left;
-   background-repeat:no-repeat;
-}
-
-* body {
-   background-image:url(page_bg.gif);
-   background-position:top left;
-   background-repeat:no-repeat;
+   background-repeat:repeat-y;
+   margin: 0px;
 }
 
 #navcontainer {
+   background-image:url(top_nav.jpg);
+   background-position:top left;
+   background-repeat:no-repeat;
    z-index:1000;
    width: 250px;
    float: left;
@@ -39,6 +37,7 @@ margin-top: 0;
 list-style-type: none;
 font-family: Arial, Helvetica, sans-serif;
 }
+
 #navcontainer a {
 display: block;
 padding: 4px 0 4px 6px;
@@ -47,25 +46,30 @@ border-bottom: 1px solid #ffffff;
 width: 163px;
 border-top: 1px solid #ffffff;
 }
+
 #navcontainer a:link,
 #navlist a:visited {
 color: #4d4d4d;
 background-color: #E0DFD8;
 text-decoration: none;
 }
+
 #navcontainer a:hover {
 color: #4d4d4d;
 background-color:#c7c5b9;
 }
+
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
 * html #navcontainer {
 margin-right: 10px;
 }
+
 * html p {
 height: 1%;
 margin-left: 0;
 }
 /* End hide from IE5/mac */
+
 div #active {
 padding: 3px 0 3px 6px;
 width: 149px;
@@ -79,8 +83,10 @@ background-position:left middle;
 background-repeat:no-repeat;
 padding-left: 20px;
 }
+
 div #subnav {
 }
+
 #subnav a {
 display: block;
 border: 0 !important;
@@ -90,11 +96,13 @@ padding: 4px 0 4px 6px;
 font-size: 12px;
 font-size:11px;
 }
+
 #subnav a:hover {
 color: #4d4d4d;
 background-color: #C7C5B9;
 font-size:11px;
 }	
+
 #subnav #active {
 margin-left: 10px;
 background-color: #706F61;
@@ -109,13 +117,14 @@ border-top: 2px solid #706f61;
 }	
 
 /* MAIN CONTENT STYLES */
+
 #container {
 border-top: 0px solid #CCC;
 position:absolute;
 }
 
 #main {
-margin-left: 230px;
+margin-left: 260px;
 margin-top: 40px;
 position:absolute;
 text-align:left;

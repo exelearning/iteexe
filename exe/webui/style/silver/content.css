@@ -38,13 +38,6 @@ img {
     border: 0;
 }
 
-.popupDiv {
-   background-color: #E0DFD8;
-   border: 1px solid #4d4d4d;
-   padding: 4px 4px 4px 10px;
-   margin-left: 15px;
-   text-align:left;
-}
 
 p#nodeTitle { 
    color: #4d4d4d;
