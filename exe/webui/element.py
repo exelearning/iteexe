@@ -123,7 +123,11 @@ class TextAreaElement(Element):
         """
         Element.__init__(self, field)
         self.width  = "100%"
-        self.height = 100
+        print field.idevice.class_
+        if field.idevice.class_ in ("activity", "objectives", "preknowledge"):
+            self.height = 250
+        else:
+            self.height = 100
 
  
     def process(self, request):
