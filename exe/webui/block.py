@@ -234,14 +234,13 @@ class Block(Renderable):
             html += u'<div id="p%s" style="display:none;">' % self.id
             html += u'<div style="float:right;">'
             html += u'<img alt="close" src="/images/stock-stop.png" '
-            html += u' title="%s" style="vertical-align:middle;" ' % _(u"Close")
+            html += u' title="%s" ' % _(u"Close")
             html += u'onmousedown="Javascript:hideMe();"/></div>'
 
             if self.purpose != "":
-                html += u'<b>' + _(u"Purpose:") + u'</b>'
-                html += '<br/>\n'
+                html += u'<div class="popupDivLabel">'
+                html += ' ' + _(u"Purpose") + u'</div>'
                 html += self.purpose 
-                html += '<br/>\n'
                 
             if self.tip != "":
                 html += u'<b>' + _(u"Tip:") + u'</b>'
