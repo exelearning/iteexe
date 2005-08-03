@@ -32,6 +32,7 @@ class ForumIdevice(Idevice):
     """
     A Forum Idevice is one built up from forum imformation ans discussion.
     """
+
     def __init__(self):
         Idevice.__init__(self, _(u"Forum Discussion"), 
                          _(u"University of Auckland"), 
@@ -61,6 +62,6 @@ class ForumIdevice(Idevice):
         Return the resource files used by this iDevice
         """
         return Idevice.getResources(self)
-       
-        
+    
+   
 # ===========================================================================

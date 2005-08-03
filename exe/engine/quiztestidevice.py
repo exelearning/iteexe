@@ -73,7 +73,7 @@ class QuizTestIdevice(Idevice):
     """
     A QuizTestIdevice Idevice is one built up from question and options
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self):
         """
@@ -122,5 +122,11 @@ class QuizTestIdevice(Idevice):
         """
         log.debug(u"Upgrading iDevice icon")
         self.icon = "question"
+        
+    def upgradeToVersion4(self):
+        """
+        Upgrades v0.6 to v0.7.
+        """
+        self.lastIdevice = False
    
 # ===========================================================================

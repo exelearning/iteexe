@@ -36,7 +36,7 @@ class ClozeIdevice(Idevice):
     """
     Holds a paragraph with words missing that the student must fill in
     """
-
+    
     def __init__(self, parentNode=None):
         """
         Sets up the idevice title and instructions etc
@@ -71,3 +71,5 @@ class ClozeIdevice(Idevice):
     content = property(lambda self: self._content, 
                        doc="Read only, use 'self.content.rawContent = x' "
                            "instead")
+
+    

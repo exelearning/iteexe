@@ -167,6 +167,7 @@ class Block(Renderable):
         """
         html = u''
         if self.mode == Block.Edit:
+            self.idevice.lastIdevice = True
             html += u'<a name="currentBlock"></a>\n'
             html += self.renderEdit(style)
             
@@ -174,7 +175,7 @@ class Block(Renderable):
             html = self.renderView(style)
         
         elif self.mode == Block.Preview:
-            html = ""
+            html = u""
             if self.idevice.lastIdevice:
                 html += u'<a name="currentBlock"></a>\n'
             html += self.renderPreview(style)
