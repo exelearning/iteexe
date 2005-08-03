@@ -123,8 +123,9 @@ class TextAreaElement(Element):
         """
         Element.__init__(self, field)
         self.width  = "100%"
-        print field.idevice.class_
-        if field.idevice.class_ in ("activity", "objectives", "preknowledge"):
+
+        if (hasattr(field.idevice, 'class_') and 
+            field.idevice.class_ in ("activity", "objectives", "preknowledge")):
             self.height = 250
         else:
             self.height = 100
