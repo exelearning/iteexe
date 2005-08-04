@@ -124,6 +124,14 @@ def image(name, value, width="", height=""):
     html += u"/>\n"
     return html
 
+def flash(name, value, width, height):
+    """Returns the XHTML for an image"""
+    log.debug(u"flash %s" % value)
+    html  = u'<embed id="%s" ' % name 
+    html += u'width="%s" height="%s" fullscreen="no" ' %(width, height)
+    html += u'src="%s"/>\n' % value
+  
+    return html
 
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""

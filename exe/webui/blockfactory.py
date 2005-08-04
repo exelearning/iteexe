@@ -37,6 +37,7 @@ from exe.engine.attachmentidevice     import AttachmentIdevice
 from exe.engine.forumidevice          import ForumIdevice
 from exe.engine.galleryidevice        import GalleryIdevice
 from exe.engine.clozeidevice          import ClozeIdevice
+from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
 
 from exe.webui.freetextblock          import FreeTextBlock
 from exe.webui.genericblock           import GenericBlock
@@ -51,6 +52,7 @@ from exe.webui.attachmentblock        import AttachmentBlock
 from exe.webui.forumblock             import ForumBlock
 from exe.webui.galleryblock           import GalleryBlock
 from exe.webui.clozeblock             import ClozeBlock
+from exe.webui.flashwithtextblock     import FlashWithTextBlock
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -77,6 +79,7 @@ class BlockFactory(object):
                            (CasestudyBlock,      CasestudyIdevice),
                            (GalleryBlock,        GalleryIdevice),
                            (ClozeBlock,          ClozeIdevice),
+                         #  (FlashWithTextBlock,  FlashWithTextIdevice),
                           ]
         # Log the the registration has happened
         for blockType, ideviceType in self.blockTypes:

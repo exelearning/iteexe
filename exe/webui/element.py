@@ -314,3 +314,96 @@ class ClozeElement(Element):
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"/>' % missingWord]
         return '\n'.join(html)
+    
+# ===========================================================================
+class FlashElement(Element):
+    """
+    for flash element processing
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+
+    def process(self, request):
+        """
+        Process arguments from the webserver.
+        """
+        if "path"+self.id in request.args:
+            self.field.setFlash(request.args["path"+self.id][0])
+
+        if "width"+self.id in request.args:
+            self.field.width = request.args["width"+self.id][0]
+
+        if "height"+self.id in request.args:
+            self.field.height = request.args["height"+self.id][0]
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit")
+
+        #if self.field.imageName == "":
+            #self.field.setDefaultImage()
+
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        #html += u'<script type="text/javascript">\n'
+        #html += u"document.getElementById('flash"+self.id+"')."
+        #html += "addEventListener('load', flashChanged, true);\n"
+        #html += u'</script>\n'
+        #html += u"</p>\n"
+
+        html += u"<a href=\"#\" onclick=\"addFlash('"+self.id+"');\">"
+        html += _(u"Select an flash file")
+        html += u"</a><br/>\n"
+        html += u"<p><b>%s</b>\n" % _(u"Display as:")
+        html += u"<input type=\"text\" "
+        html += u"id=\"width"+self.id+"\" " 
+        html += u"name=\"width"+self.id+"\" " 
+        html += u"value=\"%s\" " % self.field.width
+        html += u"size=\"4\" />\n"
+        html += u"x\n"
+        html += u"<input type=\"text\" "
+        html += u"id=\"height"+self.id+"\" " 
+        html += u"name=\"height"+self.id+"\" " 
+        html += u"value=\"%s\" " % self.field.height
+        html += u"size=\"4\" />\n"
+        html += u"(%s) \n" % _(u"blank for original size")
+        html += common.hiddenField("path"+self.id)
+        #html += u"</p>\n"
+        
+        return html
+
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this image
+        """
+        #if self.field.imageName == "":
+            #self.field.setDefaultImage()
+
+        html = common.flash("flash"+self.id, 
+                             "", 
+                             self.field.width,
+                             self.field.height)
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this flash
+        """
+
+        html = common.flash("flash"+self.id, 
+                             self.field.flashName, 
+                             self.field.width,
+                             self.field.height)
+        
+        return html
+

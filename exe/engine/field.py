@@ -218,3 +218,82 @@ class ClozeField(Field):
     
     # Properties
     parts = property(get_parts)
+# ===========================================================================
+
+class FlashField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+    def __init__(self, name, instruc=""):
+        """
+        """
+        Field.__init__(self, name, instruc)
+        self.width        = "300"
+        self.height       = "250"
+        self.flashName    = ""
+ #       self.defaultImage = ""
+
+
+    def getResources(self):
+        """
+        Return the resource files (if any) used by this Field
+        Overridden by derieved classes
+        """
+        return [self.flashName]
+
+
+    def setFlash(self, flashPath):
+        """
+        Store the image in the package
+        Needs to be in a package to work.
+        """
+        log.debug(u"setFlash "+unicode(flashPath))
+        resourceFile = Path(flashPath)
+
+        assert(self.idevice.parentNode,
+               'Flash '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if resourceFile.isfile():
+            self.delete()
+            package = self.idevice.parentNode.package
+
+            self.flashName = self.id + u"_" + unicode(resourceFile.basename())
+            package.addResource(resourceFile, self.flashName)
+
+        else:
+            log.error('File %s is not a file' % resourceFile)
+
+
+    def delete(self):
+        """
+        Delete the flash from the package
+        Needs to be in a package to work.
+        """
+        assert(self.idevice.parentNode,
+               'Flash '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if self.flashName:
+            package = self.idevice.parentNode.package
+            package.deleteResource(self.flashName)
+
+
+    #def setDefaultImage(self):
+        #"""
+        #Set a default image to display until the user picks one
+        #"""
+        ## This is kind of hacky, it's here because we can't just set
+        ## the an image when we create an ImageField in the idevice 
+        ## editor (because the idevice doesn't have a package at that
+        ## stage, and even if it did the image resource wouldn't be
+        ## copied with the idevice when it was cloned and added to
+        ## another package).  We should probably revisit this.
+        #if self.defaultImage:
+            #self.setImage(self.defaultImage)
+
+
+# ===========================================================================
