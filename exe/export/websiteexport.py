@@ -137,7 +137,7 @@ class WebsitePage(object):
                     html += page.node.title
                     html += "</a></div>\n"
 
-        while depth >= 1:
+        while depth > 1:
             html += "</div>\n"
             depth -= 1
         html += "</ul>\n"
