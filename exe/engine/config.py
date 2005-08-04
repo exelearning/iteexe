@@ -163,6 +163,7 @@ class Config:
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir      = Path(system.webDir)
+            self.greDir      = Path(system.greDir)
             self.port        = int(system.port)
             self.browserPath = Path(system.browserPath)
             self.dataDir     = Path(system.dataDir)
