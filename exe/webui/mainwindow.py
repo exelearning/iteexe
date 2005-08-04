@@ -31,18 +31,14 @@ from exe.engine.path           import Path
 from exe.export.scormexport    import ScormExport
 from exe.export.imsexport      import IMSExport
 from exe.export.websiteexport  import WebsiteExport
+from exe.engine                import version
+import gtk
+import gtkmozembed
 
 import logging
 import gettext
 _   = gettext.gettext
 log = logging.getLogger(__name__)
-
-#import pygtk
-#pygtk.require ('2.0')
-
-import gtk
-import gtkmozembed
-
 
 class MainWindow(gtk.Window):
     """
@@ -57,9 +53,7 @@ class MainWindow(gtk.Window):
         self.url         = "http://localhost:%d" % self.config.port
         self.packageName = packageName
 
-        #TODO Fix this!!!
         gtkmozembed.gtk_moz_embed_set_comp_path(self.config.webDir)
-#	gtkmozembed.gtk_moz_embed_set_comp_path("c:\\djm\\mozilla\\dist\\bin")
 
         if sys.platform[:3] == u"win":
             profileDir = self.config.webDir
@@ -75,7 +69,7 @@ class MainWindow(gtk.Window):
 
         gtk.Window.__init__(self)
         self.connect("delete-event", self.quit)
-        self.set_title("eXe version 0.6")
+        self.set_title("eXe version "+version.release)
 #        iconFile = self.config.webDir / "exe_icon.ico"
         iconFile = self.config.webDir / "mr_x.gif"
         self.set_icon(gtk.gdk.pixbuf_new_from_file(iconFile))
@@ -87,7 +81,7 @@ class MainWindow(gtk.Window):
 
         # Menu 
         # TODO think about changing to gtk.UIManager
-        menuItems = (
+        menuItems = [
             # path                  key   callback      actn type
             ( "/_File",             None,         None, 0, "<Branch>" ),
             ( "/File/_New",         "<control>N", self.newFile, 0, None ),
@@ -110,29 +104,32 @@ class MainWindow(gtk.Window):
             ( "/Tools/iDevice Editor",     None, self.editorTool, 0, None),
 
             ( "/_Styles",           None, None,         0, "<Branch>" ),
-
+            ] 
+        for i, style in enumerate(self.config.styles):
+            menuItems += [("/Styles/"+style, 
+                           None, 
+                           self.changeStyle, 
+                           i,
+                           None), ]
+        menuItems += [
             ( "/_View",             None, None,         0, "<Branch>" ),
-            ( "/View/Refresh",      None, self.what,    0, None),
+            ( "/View/Refresh",      None, self.refreshView, 0, None),
 
             ( "/_Help",             None, None,         0, "<LastBranch>" ),
             ( "/_Help/About",       None, self.about,    0, None),
-            )
+            ]
         accelGrp = gtk.AccelGroup()
         self.itemFactory = gtk.ItemFactory(gtk.MenuBar, "<main>", accelGrp)
-        self.itemFactory.create_items(menuItems)
+        from pprint import pprint
+        pprint (menuItems)
+        self.itemFactory.create_items(tuple(menuItems))
         self.add_accel_group(accelGrp)
         self.menu = self.itemFactory.get_widget("<main>")
         self.vbox.pack_start(self.menu,    expand=False)
 
         # Browser
         self.browser = gtkmozembed.MozEmbed()
-        #self.browser.connect("new-window", self.what, "new-window")
-        #self.browser.connect("link-message", self.what, "link-message")
         self.browser.connect("location", self.newLocation, "location")
-        #self.browser.connect("title", self.what, "title")
-        #self.browser.connect("visibility", self.what, "visibility")
-        #self.browser.connect("open-uri", self.what, "open-uri")
-
         self.browser.load_url(self.url+"/"+self.packageName)
         self.vbox.pack_start(self.browser)
 
@@ -162,7 +159,7 @@ class MainWindow(gtk.Window):
         TODO: check if the package was dirty
         """
         self.packageName = ""
-        self.browser.load_url("http://localhost:8081")
+        self.browser.load_url(self.url)
 
         
     def openFile(self, *dummy):
@@ -361,9 +358,27 @@ class MainWindow(gtk.Window):
         editorWindow = gtk.Window()
         editorWindow.set_size_request(700, 700)
         browser = gtkmozembed.MozEmbed()
-        browser.load_url("http://localhost:8081/editor")
+        browser.load_url(self.url+"/editor")
         editorWindow.add(browser)
         editorWindow.show_all()
+
+
+    def changeStyle(self, action, dummy):
+        """
+        Change the style to that chosen
+        """
+        assert self.packageName
+        package = self.application.packageStore.getPackage(self.packageName)
+        package.style = self.config.styles[action]
+        self.browser.load_url(self.url+"/"+self.packageName)
+
+
+    def refreshView(self, *dummy):
+        """
+        reload the current page
+        """
+        assert self.packageName
+        self.browser.load_url(self.url+"/"+self.packageName)
 
 
     def about(self, *dummy):
@@ -373,7 +388,7 @@ class MainWindow(gtk.Window):
         aboutWindow = gtk.Window()
         aboutWindow.set_size_request(320, 600)
         browser = gtkmozembed.MozEmbed()
-        browser.load_url("http://localhost:8081/about")
+        browser.load_url(self.url+"/about")
         aboutWindow.add(browser)
         aboutWindow.show_all()
 
@@ -382,9 +397,7 @@ class MainWindow(gtk.Window):
         """
         Note we've changed location
         """
-        print self.browser.get_location()
-        self.packageName = self.browser.get_location().split('/')[-2]
-        print self.packageName
+        self.packageName = self.browser.get_location().split('/')[3]
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
 

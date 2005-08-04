@@ -157,16 +157,13 @@ class OutlinePane(Renderable):
         the 'node' param should already have been moved 
         to the new position. This makes the client catch up
         to the server"""
-        parentId = node.parent.id 
-
         sibling = node.nextSibling() 
         if sibling:
             siblingId = sibling.id
         else:
             siblingId = 'null'
-
         if node.parent:
-            client.call('XHMoveNode', node.id, parentId, siblingId)
+            client.call('XHMoveNode', node.id, node.parent.id, siblingId)
 
 
     def handlePromote(self, client, sourceNodeId):

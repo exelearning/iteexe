@@ -26,7 +26,8 @@ import os
 import sys
 from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
-from exe.webui.browser       import launchBrowser
+#from exe.webui.browser       import launchBrowser
+from exe.webui.mainwindow    import MainWindow
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
 from exe.engine              import version
@@ -126,9 +127,13 @@ class Application:
             package = self.packageStore.loadPackage(self.packagePath)
             log.debug("loading package "+package.name)
             self.server.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
+            #launchBrowser(self.config, package.name)
+            window = MainWindow(self, package.name)
+            window.show_all()
         else:
-            launchBrowser(self.config, "")
+            #launchBrowser(self.config, "")
+            window = MainWindow(self, "")
+            window.show_all()
         
 
     def serve(self):
