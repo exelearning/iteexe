@@ -17,6 +17,7 @@ body {
    background-repeat:no-repeat;
    z-index:1000;
    width: 250px;
+   height: 100%; /* the holly hack for IE! */
    float: left;
    margin-top: 0px;
    padding-top: 120px;

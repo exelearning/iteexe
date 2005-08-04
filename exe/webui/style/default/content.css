@@ -15,6 +15,7 @@ body {
    background: #E0DFD8;
 }
 
+/*
 div {
    background-image:none;
    background-color:transparent;
@@ -24,6 +25,8 @@ html * div {
    background-image:none;
    background-color:transparent;
 }
+
+*/
 
 a { color: #FF6600;
     text-decoration: none;

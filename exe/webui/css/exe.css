@@ -10,7 +10,7 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
            background: transparent;
 	}
 
-/* styles for modal popup messages */
+/* styles for 'tips for completion' and 'pedagogical help' */
 
 .popupDiv {
    background-color: #EDEFF0;
@@ -24,7 +24,7 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
 
 .popupDivLabel {
  text-align: center;
- font: message-box; 
+ font: message-box;
  font-weight: bold;
  color: #fff;
  cursor:move;
