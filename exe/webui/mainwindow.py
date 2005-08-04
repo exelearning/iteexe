@@ -120,8 +120,6 @@ class MainWindow(gtk.Window):
             ]
         accelGrp = gtk.AccelGroup()
         self.itemFactory = gtk.ItemFactory(gtk.MenuBar, "<main>", accelGrp)
-        from pprint import pprint
-        pprint (menuItems)
         self.itemFactory.create_items(tuple(menuItems))
         self.add_accel_group(accelGrp)
         self.menu = self.itemFactory.get_widget("<main>")
@@ -317,7 +315,6 @@ class MainWindow(gtk.Window):
 
         if response == gtk.RESPONSE_OK:
             filename = chooser.get_filename()
-            print filename
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
             # and don't check if the directory is already full or not
