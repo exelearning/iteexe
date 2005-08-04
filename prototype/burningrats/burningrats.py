@@ -18,8 +18,8 @@
 # ===========================================================================
 
 
-import pygtk
-pygtk.require ('2.0')
+#import pygtk
+#pygtk.require ('2.0')
 
 import gtk
 import gtkmozembed
@@ -83,6 +83,8 @@ class ExeApp:
 
 
         # Browser
+        gtkmozembed.gtk_moz_embed_set_comp_path("c:\\djm\\mozilla\\dist\\bin")
+
         self.browser = gtkmozembed.MozEmbed()
 #        self.browser.connect("location", self.on_browser_location)
         self.browser.connect("realize", self.render)
