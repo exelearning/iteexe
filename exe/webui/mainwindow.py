@@ -53,7 +53,7 @@ class MainWindow(gtk.Window):
         self.url         = "http://localhost:%d" % self.config.port
         self.packageName = packageName
 
-        gtkmozembed.gtk_moz_embed_set_comp_path(self.config.webDir)
+        gtkmozembed.gtk_moz_embed_set_comp_path(self.config.greDir)
 
         if sys.platform[:3] == u"win":
             profileDir = self.config.webDir

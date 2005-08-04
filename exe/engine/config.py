@@ -39,7 +39,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'port', 'dataDir', 
-                   'configDir', 'browserPath')
+                   'configDir', 'browserPath', 'greDir')
     }
 
     def __init__(self):
@@ -56,6 +56,8 @@ class Config:
         self.exePath     = Path(sys.argv[0], encoding).abspath()
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
+        # greDir is the directory for the Gecko Runtime Environment
+        self.greDir      = self.exePath.dirname()
         # port is the port the exe webserver will listen on
         self.port        = 8081
         # dataDir is the default directory that is shown to the user
