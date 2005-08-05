@@ -220,6 +220,9 @@ class ImageElement(Element):
         html += u"</p>\n"
 
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
+        html += u"<img alt=\"add images\" "
+        html += u"style=\"vertical-align: text-bottom;\" "
+        html += u"src=\"/images/stock-insert-image.png\" /> " 
         html += _(u"Select an image")
         html += u"</a><br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
