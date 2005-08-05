@@ -79,7 +79,7 @@ class BlockFactory(object):
                            (CasestudyBlock,      CasestudyIdevice),
                            (GalleryBlock,        GalleryIdevice),
                            (ClozeBlock,          ClozeIdevice),
-                         #  (FlashWithTextBlock,  FlashWithTextIdevice),
+                           (FlashWithTextBlock,  FlashWithTextIdevice),
                           ]
         # Log the the registration has happened
         for blockType, ideviceType in self.blockTypes:

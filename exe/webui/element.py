@@ -333,6 +333,7 @@ class FlashElement(Element):
         """
         if "path"+self.id in request.args:
             self.field.setFlash(request.args["path"+self.id][0])
+            print "flash path: ", request.args["path"+self.id][0]
 
         if "width"+self.id in request.args:
             self.field.width = request.args["width"+self.id][0]
@@ -347,20 +348,11 @@ class FlashElement(Element):
         """
         log.debug("renderEdit")
 
-        #if self.field.imageName == "":
-            #self.field.setDefaultImage()
-
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
-        #html += u'<script type="text/javascript">\n'
-        #html += u"document.getElementById('flash"+self.id+"')."
-        #html += "addEventListener('load', flashChanged, true);\n"
-        #html += u'</script>\n'
-        #html += u"</p>\n"
-
-        html += u"<a href=\"#\" onclick=\"addFlash('"+self.id+"');\">"
-        html += _(u"Select an flash file")
+        html += u"<a href=\"#\" onclick=\"addFile('"+self.id+"');\">"
+        html += _(u"Select a flash file")
         html += u"</a><br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
@@ -376,7 +368,7 @@ class FlashElement(Element):
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
-        #html += u"</p>\n"
+
         
         return html
 
@@ -385,8 +377,6 @@ class FlashElement(Element):
         """
         Returns an XHTML string for previewing this image
         """
-        #if self.field.imageName == "":
-            #self.field.setDefaultImage()
 
         html = common.flash("flash"+self.id, 
                              "", 

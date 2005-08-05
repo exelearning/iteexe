@@ -142,7 +142,7 @@ class IdeviceStore:
         self.extended.append(ForumIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
-      #  self.extended.append(FlashWithTextIdevice())
+        self.extended.append(FlashWithTextIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

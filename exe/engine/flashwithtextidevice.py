@@ -42,7 +42,6 @@ class FlashWithTextIdevice(Idevice):
         self.flash = FlashField(_(u"Flash"), 
                                 _(u""))
         self.flash.idevice      = self
- #       self.flash.defaultImage = defaultImage
 
         self.text = TextAreaField(_(u"Text"))
         self.text.idevice = self

@@ -62,55 +62,6 @@ function askUserForImage(multiple) {
     }
 }
 
-// Asks the user for a flash returns the path or an empty string
-function askUserForFlash() {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    
-    var mode = nsIFilePicker.modeOpen;
-    
-    fp.init(window, "Select a flash file", mode);
-    fp.appendFilter("Falsh Files", "*.*");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        if (multiple) {
-            var result = new String("");
-            var lastFile = null;
-            var file     = null;
-            while (fp.files.hasMoreElements()) {
-                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
-                if (file == lastFile) {
-                    break;
-                }
-                lastFile = file;
-                if (result != "") {
-                    result += "&";
-                }
-                result += escape(file.path);
-            }
-            return result;
-        } else {
-            return fp.file.path;
-        }
-    } else {
-        return ""
-    }
-}
-
-// Called by the user to provide an image file name to add to the package
-function addFlash(elementId) {
-    var flashPath = askUserForFalsh()
-    if (flashPath != "") {
-        var flash = document.getElementById('flash'+elementId);
-        iflash.removeAttribute('width');
-        flash.removeAttribute('height');
-        var path  = document.getElementById('path'+elementId);
-        path.value = flashPath;
-        flash.src  = 'file://'+flashPath;
-    }
-}
 
 // Called by the user to provide a flash file name to add to the package
 function addImage(elementId) {
