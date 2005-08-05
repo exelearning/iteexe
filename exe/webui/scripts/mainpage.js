@@ -394,7 +394,7 @@ function metadataEditor() {
 // load the About page
 
 function aboutPage() {
-	var features = "width=300,height=400,status=no,resizable=no,"+
+	var features = "width=300,height=200,status=1,resizable=1,"+
 			"left=260,top=200";
 	var aboutWin = window.open ("/about", "About", features);}
 

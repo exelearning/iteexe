@@ -160,10 +160,11 @@ class GalleryBlock(Block):
         """
         html = [u'<div class="iDevice">',
                 common.textInput("title"+self.id, self.idevice.title),
-                u'<p>',
+                u'<p style="text-align: left;">',
                 u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
-                u'  <img alt="" src="/images/stock-add.png" ' +
-                u'style="align:center center" /> add images',
+                u'  <img alt="add images" style="vertical-align: text-bottom;" '
+                u' src="/images/stock-insert-image.png" ' +
+                u' /> add images',
                 u'   </a>',
                 common.hiddenField('newImagePath'+self.id),
                 u'</p>']
@@ -259,7 +260,7 @@ class GalleryBlock(Block):
                         u"screenX='+((screen.width/2)-(%s/2))+" % (width) +
                         u"',screenY='+((screen.height/2)-(%s/2))" % (height) +
                         u');"',
-                        u'           style="align:center top;"',
+                        u'           style="cursor: pointer; align:center top;"',
                         u'           alt="%s"' % image.caption,
                         u'           src="%s"/>' % image.thumbnailSrc,
                         u'        <div style="align:center;width=100%">',
@@ -281,7 +282,7 @@ class GalleryBlock(Block):
                      unicode(self.idevice.emphasis),
                      u'>',
                      u'<img alt="" class="iDevice_icon" ',
-                     u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />'
+                     u'src="icon_'+self.idevice.icon+'.gif" />'
                      u'<span class="iDeviceTitle">',      
                      self.idevice.title,
                      '</span><br/>']

@@ -82,6 +82,7 @@ class AboutPage(RenderableResource):
         xul += u'             value="Revision: '+version.revision+'" />\n'
         xul += u'      <description id="copyright">Copyright University of '
         xul += u'Auckland, 2005.<html:br/>\n'
+        xul += u'email: exe@auckland.ac.nz\n'
         xul += u'      </description>\n'
         xul += u'      <vbox id="detailsBox" align="center" flex="1">\n'
         xul += u'        <iframe id="creditsIframe" \n'
