@@ -26,6 +26,8 @@ import os
 import sys
 from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
+# must import reactor AFTER WebServer. It's yukky, but that's life
+from twisted.internet import reactor
 #from exe.webui.browser       import launchBrowser
 from exe.webui.mainwindow    import MainWindow
 from exe.engine.idevicestore import IdeviceStore
@@ -61,7 +63,7 @@ class Application:
         self.processArgs()
         self.loadConfiguration()
         self.preLaunch()
-        self.launch()
+        reactor.callWhenRunning(self.launch)
         self.serve()
 
 
@@ -119,6 +121,16 @@ class Application:
         self.server = WebServer(self)
 
 
+    def serve(self):
+        """
+        Starts the web server,
+        this func doesn't return until after the app has finished
+        """
+        print "Welcome to eXe: the eLearning XHTML editor"
+        log.info("eXe running...")
+        self.server.run()
+    
+
     def launch(self):
         """
         launches the webbrowser
@@ -135,16 +147,6 @@ class Application:
             window = MainWindow(self, "")
             window.show_all()
         
-
-    def serve(self):
-        """
-        Starts the web server,
-        this func doesn't return until after the app has finished
-        """
-        print "Welcome to eXe: the eLearning XHTML editor"
-        log.info("eXe running...")
-        self.server.run()
-    
 
     def usage(self):
         """
