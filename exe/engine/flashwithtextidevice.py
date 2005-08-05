@@ -18,7 +18,7 @@
 # ===========================================================================
 
 """
-A ImageWithText Idevice is one built up from an image and free text.
+A FlashWithText Idevice is one built up from a flash file and free text.
 """
 
 import logging
@@ -31,11 +31,11 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class FlashWithTextIdevice(Idevice):
     """
-    A FalshWithText Idevice is one built up from an flash and free text.
+    A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
     def __init__(self, defaultImage = None):
-        Idevice.__init__(self, _(u"Falsh with Text"), 
+        Idevice.__init__(self, _(u"Flash with Text"), 
                          _(u"University of Auckland"), 
                          _(u""), u"", u"")
         self.emphasis = Idevice.NoEmphasis
