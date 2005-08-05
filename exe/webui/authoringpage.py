@@ -80,14 +80,16 @@ class AuthoringPage(RenderableResource):
         log.debug(u"after authoringPage process" + repr(request.args))
 
 
-    def render_GET(self, request):
+    def render_GET(self, request=None):
         """
         Returns an XHTML string for viewing this page
+        if 'request' is not passed, will generate psedo/debug html
         """
         log.debug(u"render")
-        for key, value in request.args.items():
-            request.args[key] = [unicode(value[0], 'utf8')]
-        self._process(request)
+        if request is not None:
+            for key, value in request.args.items():
+                request.args[key] = [unicode(value[0], 'utf8')]
+            self._process(request)
         topNode     = self.package.currentNode
         self.blocks = []
         self.__addBlocks(topNode)
@@ -95,7 +97,10 @@ class AuthoringPage(RenderableResource):
         #html += "<pre>%s</pre>\n" % str(request.args)# to be deleted
         html += u'<body onload="clearHidden();">\n'
         html += u"<form method=\"post\" "
-        html += u"action=\""+request.path+"#currentBlock\""
+        if request is None:
+            html += u'action="NO_ACTION"'
+        else:
+            html += u"action=\""+request.path+"#currentBlock\""
         html += u" id=\"contentForm\">"
         html += u'<div id="main">\n'
         html += common.hiddenField(u"action")

@@ -113,8 +113,13 @@ class MainWindow(gtk.Window):
                            None), ]
         menuItems += [
             ( "/_View",             None, None,         0, "<Branch>" ),
-            ( "/View/Refresh",      None, self.refreshView, 0, None),
+            ( "/View/Refresh",      None, self.refreshView, 0, None)]
+        if log.getEffectiveLevel() == logging.DEBUG:
+            menuItems += [
+            ( "/_Debug",            None, None,         0, "<Branch>" ),
+            ( "/Debug/View _HTML",  None, self.viewHtml,0, None)]
 
+        menuItems += [
             ( "/_Help",             None, None,         0, "<LastBranch>" ),
             ( "/_Help/About",       None, self.about,    0, None),
             ]
@@ -376,6 +381,17 @@ class MainWindow(gtk.Window):
         """
         assert self.packageName
         self.browser.load_url(self.url+"/"+self.packageName)
+ 
+
+    def viewHtml(self, *dummy):
+        """
+        Shows the HTML in gvim
+        """
+        package = self.application.packageStore.getPackage(self.packageName)
+        redirectPage = self.application.server.root
+        authoringPage = redirectPage.renderChildren[package.name].authoringPage
+        open('tmp.html', 'w').write(authoringPage.render_GET())
+        os.system('gvim tmp.html')
 
 
     def about(self, *dummy):
@@ -397,13 +413,6 @@ class MainWindow(gtk.Window):
         self.packageName = self.browser.get_location().split('/')[3]
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
-
-
-    def what(self, *args):
-        """
-        For debugging events
-        """
-        print repr(args)
 
 
     def quit(self, *dummy):
