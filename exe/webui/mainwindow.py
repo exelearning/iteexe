@@ -27,11 +27,13 @@ Browser module
 import os
 import sys
 import shutil
-from exe.engine.path           import Path
-from exe.export.scormexport    import ScormExport
-from exe.export.imsexport      import IMSExport
-from exe.export.websiteexport  import WebsiteExport
-from exe.engine                import version
+import webbrowser
+from exe.engine.path              import Path
+from exe.export.scormexport       import ScormExport
+from exe.export.imsexport         import IMSExport
+from exe.export.websiteexport     import WebsiteExport
+from exe.export.singlepageexport  import SinglePageExport
+from exe.engine                   import version
 import gtk
 import gtkmozembed
 
@@ -97,6 +99,8 @@ class MainWindow(gtk.Window):
                                                         0, None ),
             ( "/File/Export/Web Site", "<control>W", self.exportWebsite, 
                                                         0, None ),
+            ( "/File/Export/Single Page", None, self.exportSinglePage, 
+                                                        0, None ),
             ( "/File/sep3",         None,         None, 0, "<Separator>" ),
             ( "/File/Quit",         "<control>Q", gtk.main_quit, 0, None ),
 
@@ -121,6 +125,7 @@ class MainWindow(gtk.Window):
 
         menuItems += [
             ( "/_Help",             None, None,         0, "<LastBranch>" ),
+            ( "/_Help/Tutorial",    None, self.loadTutorial, 0, None),
             ( "/_Help/About",       None, self.about,    0, None),
             ]
         accelGrp = gtk.AccelGroup()
@@ -341,14 +346,53 @@ class MainWindow(gtk.Window):
                                           imagesDir, scriptsDir)
             websiteExport.export(package)
             # Show the newly exported web site in a new window
-            if hasattr(os, 'startfile'):
-                os.startfile(filename)
+            webbrowser.open(filename)
+
+        chooser.destroy()
+
+
+    def exportSinglePage(self, *dummy):
+        """
+        export as a self contained website
+        """
+        assert self.packageName
+        package    = self.application.packageStore.getPackage(self.packageName)
+        webDir     = Path(self.config.webDir)
+        stylesDir  = webDir/'style'/package.style
+        imagesDir  = webDir/'images'
+        scriptsDir = webDir/'scripts'
+
+        chooser = gtk.FileChooserDialog("Export the package as", 
+                                        self,
+                                        gtk.FILE_CHOOSER_ACTION_CREATE_FOLDER,
+                                        (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+                                         gtk.STOCK_OK,     gtk.RESPONSE_OK))
+        response = chooser.run()
+
+        if response == gtk.RESPONSE_OK:
+            filename = chooser.get_filename()
+            # filename is a directory where we will export the website to
+            # We assume that the user knows what they are doing
+            # and don't check if the directory is already full or not
+            # and we just overwrite what's already there
+            filename = Path(filename)
+            # Append the package name to the folder path if necessary
+            if not filename.exists():
+                filename.makedirs()
+            elif not filename.isdir():
+                log.error("Couldn't export web page: "+
+                          "Filename %s is a file, cannot replace it" % filename)
+                return
             else:
-                filename /= 'index.html'
-                os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
-                    (self.config.browserPath,
-                     '-remote', 'openURL(%s, new-window)' % \
-                     filename))
+                # Wipe it out
+                filename.rmtree()
+                filename.mkdir()
+            # Now do the export
+            singlePageExport = SinglePageExport(stylesDir, filename, 
+                                                imagesDir, scriptsDir)
+            singlePageExport.export(package)
+            # Show the newly exported web site in a new window
+            webbrowser.open(filename)
 
         chooser.destroy()
 
@@ -404,7 +448,18 @@ class MainWindow(gtk.Window):
         browser.load_url(self.url+"/about")
         aboutWindow.add(browser)
         aboutWindow.show_all()
+   
 
+    def loadTutorial(self, *dummy):
+        """Load the tutorial"""
+        try:
+            filename = self.config.webDir/"eXe-tutorial.elp"
+            package  = self.application.packageStore.loadPackage(filename)
+            self.application.server.root.bindNewPackage(package)
+            self.browser.load_url(self.url+"/"+package.name)
+        except Exception, exc:
+            log.error(u'Error loading package "%s": %s' % \
+                      (filename, unicode(exc)))
 
     def newLocation(self, *dummy):
         """
