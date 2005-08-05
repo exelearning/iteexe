@@ -325,6 +325,7 @@ class MainWindow(gtk.Window):
 
         if response == gtk.RESPONSE_OK:
             filename = chooser.get_filename()
+            # TODO!!! filename should be called exportDir???
             # filename is a directory where we will export the website to
             # We assume that the user knows what they are doing
             # and don't check if the directory is already full or not
@@ -346,7 +347,7 @@ class MainWindow(gtk.Window):
                                           imagesDir, scriptsDir)
             websiteExport.export(package)
             # Show the newly exported web site in a new window
-            webbrowser.open(filename)
+            webbrowser.open(filename/"index.html")
 
         chooser.destroy()
 
@@ -392,7 +393,7 @@ class MainWindow(gtk.Window):
                                                 imagesDir, scriptsDir)
             singlePageExport.export(package)
             # Show the newly exported web site in a new window
-            webbrowser.open(filename)
+            webbrowser.open(filename/"index.html")
 
         chooser.destroy()
 
