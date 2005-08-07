@@ -133,7 +133,7 @@ class FlashWithTextBlock(Block):
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"
-        html += u"</div>\n"
+        html += u"</div><br/>\n"
         return html
     
 

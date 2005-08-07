@@ -336,7 +336,6 @@ class FlashElement(Element):
         """
         if "path"+self.id in request.args:
             self.field.setFlash(request.args["path"+self.id][0])
-            print "flash path: ", request.args["path"+self.id][0]
 
         if "width"+self.id in request.args:
             self.field.width = request.args["width"+self.id][0]
