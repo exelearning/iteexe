@@ -86,10 +86,6 @@ class SinglePageExport(object):
         # But not nav.css
         (self.outputDir/'nav.css').remove() 
 
-        # TODO these two should be part of the style
-        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
-                          self.outputDir)
-
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
             

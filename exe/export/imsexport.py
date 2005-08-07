@@ -237,10 +237,6 @@ class IMSExport(object):
         self.styleDir.copyfiles(outputDir)
         (outputDir/'nav.css').remove() # But not nav.css
 
-        # TODO these two should be part of the style
-        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
-                                outputDir)
-
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             

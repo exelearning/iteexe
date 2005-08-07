@@ -276,10 +276,6 @@ class ScormExport(object):
         # But not nav.css
         (outputDir/'nav.css').remove() 
 
-        # TODO these two should be part of the style
-        self.imagesDir.copylist(('panel-amusements.png', 'stock-stop.png'), 
-                                outputDir)
-
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             

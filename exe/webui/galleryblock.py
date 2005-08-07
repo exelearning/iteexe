@@ -282,7 +282,7 @@ class GalleryBlock(Block):
                      unicode(self.idevice.emphasis),
                      u'>',
                      u'<img alt="" class="iDevice_icon" ',
-                     u'src="icon_'+self.idevice.icon+'.gif" />'
+                     u'src="/images/icon_'+self.idevice.icon+'.gif" />'
                      u'<span class="iDeviceTitle">',      
                      self.idevice.title,
                      '</span><br/>']
