@@ -26,7 +26,6 @@ from exe.webui       import common
 log = logging.getLogger(__name__)
 _   = gettext.gettext
 
-
 # ===========================================================================
 class Element(object):
     """
@@ -123,7 +122,6 @@ class TextAreaElement(Element):
         """
         Element.__init__(self, field)
         self.width  = "100%"
-
         if (hasattr(field.idevice, 'class_') and 
             field.idevice.class_ in ("activity", "objectives", "preknowledge")):
             self.height = 250
@@ -274,32 +272,118 @@ class ImageElement(Element):
         
         return html
 
-# ===========================================================================
+# ==============================================================================
+clozeEditScript = u"""
+<script>
+<!--
+  // Turns the editor on
+  function startEdit(editorString, hiddenField) {
+    var editor = eval(editorString)
+    editor.designMode = "on";
+    editor.lastChild.style.backgroundColor = "white";
+    beforeSubmitHandlers.push([clozeBeforeSubmit,
+        [editor.lastChild.lastChild, hiddenField]]);
+  };
+
+  // Makes the selected word become a gap
+  function makeGap(editor) {
+    editor.execCommand("underline", false, null);
+  };
+
+  // Uploads the editor content to the server
+  function clozeBeforeSubmit(node, hiddenField) {
+    hiddenField.value=node.innerHTML;
+  };
+-->
+</script>
+"""
+
 class ClozeElement(Element):
     """
     Allows the user to enter a passage of text and declare that some words
     should be added later by the student
     """
 
+    # Class attributes
+    haveRenderedEditScripts = False # A wussy check to see that at least one
+                                    # element once has rendered scripts before
+                                    # rendering edit mode content
+
+    # Properties
+    
+    def get_editorId(self):
+        """
+        Returns the id string for our midas editor
+        """
+        return 'editorArea%s' % self.id
+    editorId = property(get_editorId)
+
+    def get_editorJs(self):
+        """
+        Returns the js that gets the editor document
+        """
+        return "document.getElementById('%s').contentWindow.document" % self.editorId;
+    editorJs = property(get_editorJs)
+
+    def get_hiddenFieldJs(self):
+        """
+        Returns the js that gets the hiddenField document
+        """
+        return "document.getElementById('cloze%s')" % self.id;
+    hiddenFieldJs = property(get_hiddenFieldJs)
+
+    # Public Methods
+    
     def process(self, request):
         """
         Sets the rawContent of our field
         """
-        if self.id in request.args:
-            self.field.rawContent = request.args[self.id][0]
+        clozeid = 'cloze%s' % self.id
+        if clozeid in request.args:
+            self.field.rawContent = request.args[clozeid][0]
+
+    def renderEditScripts():
+        """
+        Any block that includes one or more of these elements must include one
+        'renderEditScripts' result before any of the elements are rendered
+        """
+        ClozeElement.haveRenderedEditScripts = True
+        return clozeEditScript
+    renderEditScripts = staticmethod(renderEditScripts)
 
     def renderEdit(self):
         """
         Enables the user to set up their passage of text
         """
+        # Check that haveRenderedEditScripts has been called exactly once
+        assert ClozeElement.haveRenderedEditScripts, \
+            ("You must call ClozeElement.renderEditScripts() once for each "
+             "idevice before calling self.renderEdit()")
         html = [
+            # The field name and instruction button
             u'<p>',
             u'  <b>%s</b>' % self.field.name,
             common.elementInstruc(self.id, self.field.instruc),
             u'</p>',
+            # Render the input box
             u'<p>',
-            common.textArea(self.id, self.field.rawContent),
-            u'</p>']
+            u' <iframe id="%s" style="width:100%%;height:250px">' % \
+                self.editorId,
+            u' </iframe>',
+            common.hiddenField('cloze'+self.id, self.field.rawContent),
+            u' <script>',
+            u' <!--',
+            ur'onLoadHandlers.push([startEdit, ["%s", %s]])' % \
+                (self.editorJs, self.hiddenFieldJs),
+            u' -->',
+            u' </script>',
+            u'</p>',
+            # Render our toolbar
+            u'<p>',
+            u'  <input type="button" value="Gap" ' +
+            ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
+            u'</p>',
+            ]
         return '\n    '.join(html)
 
     def renderView(self):
@@ -315,7 +399,8 @@ class ClozeElement(Element):
                 html += [
                     ' <input type="text" value="" ',
                     '        id="clz%s%s"' % (self.id, i),
-                    '  oninput="onClozeChange(this, \'%s\')"/>' % missingWord]
+                    '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
+                    '    style="width:%sem"/>' % (len(missingWord))]
         return '\n'.join(html)
     
 # ===========================================================================
@@ -398,4 +483,3 @@ class FlashElement(Element):
                              self.field.height)
         
         return html
-

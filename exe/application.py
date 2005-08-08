@@ -26,9 +26,8 @@ import os
 import sys
 from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
-# must import reactor AFTER WebServer. It's yukky, but that's life
+# must import reactor AFTER WebServer. It's yucky, but that's life
 from twisted.internet import reactor
-#from exe.webui.browser       import launchBrowser
 from exe.webui.mainwindow    import MainWindow
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
@@ -113,6 +112,7 @@ class Application:
     def preLaunch(self):
         """
         Sets ourself up for running 
+        Needed for unit tests
         """
         log.debug("preLaunch")
         self.packageStore = PackageStore()
@@ -130,7 +130,6 @@ class Application:
         log.info("eXe running...")
         self.server.run()
     
-
     def launch(self):
         """
         launches the webbrowser
@@ -139,14 +138,11 @@ class Application:
             package = self.packageStore.loadPackage(self.packagePath)
             log.debug("loading package "+package.name)
             self.server.root.bindNewPackage(package)
-            #launchBrowser(self.config, package.name)
             window = MainWindow(self, package.name)
             window.show_all()
         else:
-            #launchBrowser(self.config, "")
             window = MainWindow(self, "")
             window.show_all()
-        
 
     def usage(self):
         """

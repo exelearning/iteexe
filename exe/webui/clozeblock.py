@@ -51,7 +51,7 @@ class ClozeBlock(Block):
         """
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]
-        if object == self.id and action == 'done':
+        if object == self.id:
             self.clozeElement.process(request)
         Block.process(self, request)
 
@@ -61,8 +61,9 @@ class ClozeBlock(Block):
         which words are hidden.
         """
         html = [
-            u'<div class="iDevice emphasis%s">' %
-            unicode(self.idevice.emphasis),
+            ClozeElement.renderEditScripts(),
+            u'<div class="iDevice emphasis%s">' % \
+              unicode(self.idevice.emphasis),
             self.clozeElement.renderEdit(),
             self.renderEditButtons(),
             u'</div>'
@@ -94,3 +95,4 @@ class ClozeBlock(Block):
                  u'  </p>',
                  u'</div>']
         return u'\n    '.join(html).encode('utf8')
+

@@ -409,7 +409,6 @@ class MainWindow(gtk.Window):
         editorWindow.add(browser)
         editorWindow.show_all()
 
-
     def changeStyle(self, action, dummy):
         """
         Change the style to that chosen
@@ -449,7 +448,7 @@ class MainWindow(gtk.Window):
         browser.load_url(self.url+"/about")
         aboutWindow.add(browser)
         aboutWindow.show_all()
-   
+
 
     def loadTutorial(self, *dummy):
         """Load the tutorial"""

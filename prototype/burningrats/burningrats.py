@@ -18,21 +18,17 @@
 # ===========================================================================
 
 
-#import pygtk
-#pygtk.require ('2.0')
 
 import gtk
 import gtkmozembed
 
 class AppWin(gtk.Window):
-#    def destroy(self, widget):
-#        gtk.mainquit()
+
 
     def __init__(self, title, iconFile):
         gtk.Window.__init__(self)
         self.connect('destroy', lambda win: gtk.main_quit())
         self.set_title(title)
-#        self.set_icon(gtk.gdk.pixbuf_new_from_file(iconFile))
         self.set_size_request(500, 300)
 
         # VBox
@@ -86,11 +82,8 @@ class ExeApp:
         gtkmozembed.gtk_moz_embed_set_comp_path("c:\\djm\\mozilla\\dist\\bin")
 
         self.browser = gtkmozembed.MozEmbed()
-#        self.browser.connect("location", self.on_browser_location)
         self.browser.connect("realize", self.render)
-#        self.browser.connect("link_message", self.linkHover)
         self.browser.connect("open_uri", self.linkClicked)
-#        self.browser.load_url("http://software.net.nz")
         hbox.pack_start(self.browser, expand=True)
 
         self.window.show_all()

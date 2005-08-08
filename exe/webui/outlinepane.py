@@ -162,6 +162,7 @@ class OutlinePane(Renderable):
             siblingId = sibling.id
         else:
             siblingId = 'null'
+
         if node.parent:
             client.call('XHMoveNode', node.id, node.parent.id, siblingId)
 

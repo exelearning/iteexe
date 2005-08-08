@@ -23,6 +23,31 @@
 // action and object fields so they can be used by submitLink
 var objBrowse = navigator.appName;
 
+// An array of js strings to evaluate on document load
+var onLoadHandlers = [clearHidden];
+var beforeSubmitHandlers = [];
+
+// Called on document load
+function onLoadHandler() {
+    runFuncArray(onLoadHandlers)
+}
+
+// Calls function in an array where each 'row' of the array is in the format:
+// func
+// or
+// [func, arg]
+function runFuncArray(handlers) {
+    for (var i=0; i < handlers.length; i++) {
+        var row = handlers[i] 
+        if (typeof row=="function")
+            row()
+        else {
+            // row[0] is a function, row[1] are its args
+            row[0].apply(this, row[1]);
+        }
+    }
+}
+
 // Asks the user for an image, returns the path or an empty string
 function askUserForImage(multiple) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
@@ -62,8 +87,7 @@ function askUserForImage(multiple) {
     }
 }
 
-
-// Called by the user to provide a flash file name to add to the package
+// Called by the user to provide an image or flash file name to add to the package
 function addImage(elementId) {
     var imagePath = askUserForImage()
     if (imagePath != "") {
@@ -78,7 +102,7 @@ function addImage(elementId) {
 
 // Called by the user to provide one or more image files name to add to the package
 function addGalleryImage(galleryId) {
-    var imagePath = askUserForImage(true) 
+    var imagePath = askUserForImage(true);
     if (imagePath != "") {
         // Save the change
         submitLink("gallery.addImage."+imagePath, galleryId, true);
@@ -218,6 +242,7 @@ function submitLink(action, object, changed)
     form.action.value    = action;
     form.object.value    = object;
     form.isChanged.value = changed;
+    runFuncArray(beforeSubmitHandlers)
     form.submit();
 }
 

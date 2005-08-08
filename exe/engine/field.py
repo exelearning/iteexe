@@ -24,6 +24,7 @@ Simple fields which can be used to build up a generic iDevice.
 import logging
 from exe.engine.persist import Persistable
 from exe.engine.path    import Path
+from HTMLParser         import HTMLParser
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
@@ -186,6 +187,58 @@ class ImageField(Field):
 
 
 # ===========================================================================
+class ClozeHTMLParser(HTMLParser):
+    """
+    Separates out gaps from our raw cloze data
+    """
+
+    # Default attribute values
+    result = None
+    inGap = False
+    lastGap = ''
+    lastText = ''
+
+    def reset(self):
+        """
+        Make our data ready
+        """
+        HTMLParser.reset(self)
+        self.result = []
+        self.inGap = False
+        self.lastGap = ''
+        self.lastText = ''
+
+    def handle_starttag(self, tag, attrs):
+        """
+        Turn on inGap if necessary
+        """
+        if tag.lower() == 'span':
+            attrs = dict(attrs)
+            style = attrs.get('style', '')
+            if 'underline' in style:
+                self.inGap = True
+
+    def handle_endtag(self, tag):
+        """
+        Turns of inGap
+        """
+        if tag.lower() == 'span' and self.inGap:
+            self.inGap = False
+            self.result.append((self.lastText, self.lastGap))
+            self.lastGap = ''
+            self.lastText = ''
+
+    def handle_data(self, data):
+        """
+        Adds the data to either lastGap or lastText
+        """
+        if self.inGap:
+            self.lastGap += data
+        else:
+            self.lastText += data
+
+
+
 class ClozeField(Field):
     """
     This field handles a passage with words that the student must fill in
@@ -200,24 +253,18 @@ class ClozeField(Field):
     # Property handlers
     def get_parts(self):
         """
-        Generates (text, missing_word) pairs.
+        Returns a list of (text, missing_word) pairs.
         If it doesn't end in a missing word, the last yield is (text, '')
         """
-        text = []
-        for word in self.rawContent.split(' '):
-            if len(word) > 2 and word[0] == '_' and word[-1] == '_':
-                # Start of a missing word
-                yield (' '.join(text), word[1:-1]) # (Remove _'s)
-                text = []
-            else:
-                # More text
-                text.append(word)
-        # At the end, if there is some text, yield it
-        if text:
-            yield (' '.join(text), '')
+        parser = ClozeHTMLParser()
+        parser.feed(self.rawContent)
+        parser.close()
+        print parser.result
+        return parser.result
     
     # Properties
     parts = property(get_parts)
+
 # ===========================================================================
 
 class FlashField(Field):
@@ -297,3 +344,4 @@ class FlashField(Field):
 
 
 # ===========================================================================
+
