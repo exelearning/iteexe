@@ -69,7 +69,7 @@ class ClozeIdevice(Idevice):
 
     # Properties
     content = property(lambda self: self._content, 
-                       doc="Read only, use 'self.content.rawContent = x' "
+                       doc="Read only, use 'self.content.encodedContent = x' "
                            "instead")
 
     

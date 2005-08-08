@@ -25,6 +25,7 @@ import logging
 from exe.engine.persist import Persistable
 from exe.engine.path    import Path
 from HTMLParser         import HTMLParser
+import urllib
 import gettext
 _ = gettext.gettext
 log = logging.getLogger(__name__)
@@ -185,8 +186,8 @@ class ImageField(Field):
         if self.defaultImage:
             self.setImage(self.defaultImage)
 
-
 # ===========================================================================
+
 class ClozeHTMLParser(HTMLParser):
     """
     Separates out gaps from our raw cloze data
@@ -237,7 +238,16 @@ class ClozeHTMLParser(HTMLParser):
         else:
             self.lastText += data
 
+    def close(self):
+        """
+        Fills in the last bit of result
+        """
+        if self.lastText:
+            self.result.append((self.lastText, self.lastGap))
+        HTMLParser.close(self)
 
+
+# ===========================================================================
 
 class ClozeField(Field):
     """
@@ -248,22 +258,29 @@ class ClozeField(Field):
         Initialise
         """
         Field.__init__(self, name, instruc)
-        self.rawContent = ''
+        self.parts = []
+        self._encodedContent = ''
 
     # Property handlers
-    def get_parts(self):
+    def set_encodedContent(self, value):
         """
-        Returns a list of (text, missing_word) pairs.
-        If it doesn't end in a missing word, the last yield is (text, '')
+        Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
+        value = urllib.unquote(value)
         parser = ClozeHTMLParser()
-        parser.feed(self.rawContent)
+        parser.feed(value)
         parser.close()
-        print parser.result
-        return parser.result
+        self.parts = parser.result
+        encodedContent = ''
+        for shown, hidden in parser.result:
+            encodedContent += shown.replace('\r\n', '<br/>')
+            if hidden:
+                encodedContent += ' <span style="text-decoration:underline">%s' \
+                              '</span> ' % hidden.replace('\r\n', '<br/>')
+        self._encodedContent = urllib.quote(encodedContent)
     
     # Properties
-    parts = property(get_parts)
+    encodedContent = property(lambda self: self._encodedContent, set_encodedContent)
 
 # ===========================================================================
 

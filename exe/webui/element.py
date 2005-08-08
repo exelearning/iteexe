@@ -274,13 +274,14 @@ class ImageElement(Element):
 
 # ==============================================================================
 clozeEditScript = u"""
-<script>
+<script type="text/javascript">
 <!--
   // Turns the editor on
   function startEdit(editorString, hiddenField) {
-    var editor = eval(editorString)
+    var editor = eval(editorString);
     editor.designMode = "on";
     editor.lastChild.style.backgroundColor = "white";
+    editor.lastChild.lastChild.innerHTML = unescape(hiddenField.value);
     beforeSubmitHandlers.push([clozeBeforeSubmit,
         [editor.lastChild.lastChild, hiddenField]]);
   };
@@ -292,7 +293,7 @@ clozeEditScript = u"""
 
   // Uploads the editor content to the server
   function clozeBeforeSubmit(node, hiddenField) {
-    hiddenField.value=node.innerHTML;
+    hiddenField.value=escape(node.innerHTML);
   };
 -->
 </script>
@@ -336,11 +337,11 @@ class ClozeElement(Element):
     
     def process(self, request):
         """
-        Sets the rawContent of our field
+        Sets the encodedContent of our field
         """
         clozeid = 'cloze%s' % self.id
         if clozeid in request.args:
-            self.field.rawContent = request.args[clozeid][0]
+            self.field.encodedContent = request.args[clozeid][0]
 
     def renderEditScripts():
         """
@@ -365,12 +366,12 @@ class ClozeElement(Element):
             u'  <b>%s</b>' % self.field.name,
             common.elementInstruc(self.id, self.field.instruc),
             u'</p>',
-            # Render the input box
+            # Render the iframe box
             u'<p>',
             u' <iframe id="%s" style="width:100%%;height:250px">' % \
                 self.editorId,
             u' </iframe>',
-            common.hiddenField('cloze'+self.id, self.field.rawContent),
+            common.hiddenField('cloze'+self.id, self.field.encodedContent),
             u' <script>',
             u' <!--',
             ur'onLoadHandlers.push([startEdit, ["%s", %s]])' % \
