@@ -30,10 +30,14 @@ from exe.engine.multichoiceidevice    import MultichoiceIdevice
 from exe.engine.reflectionidevice     import ReflectionIdevice
 from exe.engine.casestudyidevice      import CasestudyIdevice
 from exe.engine.truefalseidevice      import TrueFalseIdevice
+from exe.engine.quiztestidevice       import QuizTestIdevice
 from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
 from exe.engine.wikipediaidevice      import WikipediaIdevice
 from exe.engine.attachmentidevice     import AttachmentIdevice
+from exe.engine.forumidevice          import ForumIdevice
 from exe.engine.galleryidevice        import GalleryIdevice
+from exe.engine.clozeidevice          import ClozeIdevice
+from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
 
 from exe.webui.freetextblock          import FreeTextBlock
 from exe.webui.genericblock           import GenericBlock
@@ -41,10 +45,14 @@ from exe.webui.multichoiceblock       import MultichoiceBlock
 from exe.webui.reflectionblock        import ReflectionBlock
 from exe.webui.casestudyblock         import CasestudyBlock
 from exe.webui.truefalseblock         import TrueFalseBlock
+from exe.webui.quiztestblock          import QuizTestBlock
 from exe.webui.imagewithtextblock     import ImageWithTextBlock
 from exe.webui.wikipediablock         import WikipediaBlock
 from exe.webui.attachmentblock        import AttachmentBlock
+from exe.webui.forumblock             import ForumBlock
 from exe.webui.galleryblock           import GalleryBlock
+from exe.webui.clozeblock             import ClozeBlock
+from exe.webui.flashwithtextblock     import FlashWithTextBlock
 
 log = logging.getLogger(__name__)
 _   = gettext.gettext
@@ -63,11 +71,15 @@ class BlockFactory(object):
                            (GenericBlock,        GenericIdevice),
                            (FreeTextBlock,       FreeTextIdevice),
                            (TrueFalseBlock,      TrueFalseIdevice),
+                           (QuizTestBlock,       QuizTestIdevice),
                            (ImageWithTextBlock,  ImageWithTextIdevice),
                            (WikipediaBlock,      WikipediaIdevice),
                            (AttachmentBlock,     AttachmentIdevice), 
+                           (ForumBlock,          ForumIdevice),
                            (CasestudyBlock,      CasestudyIdevice),
                            (GalleryBlock,        GalleryIdevice),
+                           (ClozeBlock,          ClozeIdevice),
+                           (FlashWithTextBlock,  FlashWithTextIdevice),
                           ]
         # Log the the registration has happened
         for blockType, ideviceType in self.blockTypes:
