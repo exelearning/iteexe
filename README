@@ -26,8 +26,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 SUPPORT
 =======
-This is an early release of the eXe project.  It is intended
-to elicit feedback from the user community. 
+This is an experimental release of eXe using a new library
+GTKMozEmbed to replace using Firefox.  
 It would be a bad idea to invest a lot of time in creating a 
 large package with this release.
 
@@ -50,7 +50,7 @@ INSTALLATION
   be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under 
   "All Programs".
-- If you leave "Run eXe 0.6" selected the installer will launch eXe
+- If you leave "Run eXe 0.7" selected the installer will launch eXe
   once it is installed.
 
 
@@ -115,10 +115,9 @@ To build exe you'll need to install the following packages:
  * needs patches/livepage.patch applied, see patches/livepage.readme (from the source tree)
 * CTypes (on Windows) - http://starship.python.net/crew/theller/ctypes/
 * PIL - http://www.pythonware.com/products/pil/
-* firefox - http://www.mozilla.org/products/firefox
 
 unzip the source tarball:
-tar xzvf exe-source-0.6.tgz
+tar xzvf exe-source-0.7.tgz
 
 To run from source (on linux):
 cd exe

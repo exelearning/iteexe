@@ -2,25 +2,25 @@
 
 ; Define your application name
 !define APPNAME "exe"
-!define EXE_VERSION "0.6"
+!define EXE_VERSION "0.7"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-Icon "C:\eXe branches\0.6\dist\eXe_icon.ico"
+Icon "C:\eXe branches\0.7\eXe0.7\bin\eXe_icon.ico"
 OutFile "eXe_install_windows.exe"
 
 ; Modern interface settings
 !include "MUI.nsh"
 
 !define MUI_ABORTWARNING
-!define MUI_FINISHPAGE_RUN "$INSTDIR\exe.exe"
-!define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
+!define MUI_FINISHPAGE_RUN "$INSTDIR\bin\exe.exe"
+!define MUI_FINISHPAGE_RUN_PARAMETERS bin\eXe-tutorial.elp
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "C:\eXe branches\0.6\dist\exeLicense.txt"
+!insertmacro MUI_PAGE_LICENSE "C:\eXe branches\0.7\eXe0.7\bin\exeLicense.txt"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -86,10 +86,11 @@ Section "exe" Section2
 
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
-	File /r "C:\eXe branches\0.6\dist\*.*"
-	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
+	File /r "C:\eXe branches\0.7\eXe0.7\*.*"
+	
+	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\bin\exe.exe" "" "$INSTDIR\bin\eXe_icon.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
-	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
+	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\bin\exe.exe" "" "$INSTDIR\bin\eXe_icon.ico"
 	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 	
 	; Associtate elp files with exe.exe
@@ -103,15 +104,34 @@ Section "exe" Section2
     ReadRegStr $0 HKCR "exePackageFile" ""
 	  WriteRegStr HKCR "exePackageFile" "" "eXe Package File"
 	  WriteRegStr HKCR "exePackageFile\shell" "" "open"
-	  WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\eXe_icon.ico"
+	  WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\bin\eXe_icon.ico"
     WriteRegStr HKCR "exePackageFile\shell\open\command" "" \
-    '$INSTDIR\exe.exe "%1"'
+    '$INSTDIR\bin\exe.exe "%1"'
 		Call RefreshShellIcons
     ;;WriteRegStr HKCR "exePackageFile\shell\edit" "" "Edit Options File"
     ;;WriteRegStr HKCR "exePackageFile\shell\edit\command" "" \
     ;;'$INSTDIR\server.exe "%1"'
   !undef Index
+	
+	; Update ini file if needed
+	IfFileExists "$APPDATA\exe\exe.conf" 0 NoIniUpdate
+		WriteINIStr "$APPDATA\exe\exe.conf" system webDir "$INSTDIR\bin"
+		WriteINIStr "$APPDATA\exe\exe.conf" system greDir "$INSTDIR\bin"
+		DeleteINIStr "$APPDATA\exe\exe.conf" system browserPath
+		
+	NoIniUpdate:
 
+SectionEnd
+
+Section "GTK"
+	; Install GTK
+	ReadRegStr $1 HKLM "Software\GTK\2.0" "Path" 
+	StrCmp $1 "" InstallGTK SkipGTK
+  InstallGTK:
+	  ExecWait "$INSTDIR\tmp\gtk-win32-2.6.8-rc1.exe"
+	SkipGTK:
+	; Remove the GTK installer file
+	RMDir /r "$INSTDIR\tmp"
 SectionEnd
 
 Section -FinishSection

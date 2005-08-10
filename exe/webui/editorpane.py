@@ -295,7 +295,7 @@ the selection of an image from your stored picture files."""
                 html += u'Select an icon:</a> \n'
                 icon = self.idevice.icon
                 if icon != "":
-                    html += '<img src="/style/%s/%s' % (self.style, icon)
+                    html += '<img src="/style/%s/icon_%s' % (self.style, icon)
                     html += '.gif"/><br/>'
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'
                 html += u'<div style="float:right;" >\n'

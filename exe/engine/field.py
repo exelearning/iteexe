@@ -296,7 +296,6 @@ class FlashField(Field):
         self.width        = "300"
         self.height       = "250"
         self.flashName    = ""
- #       self.defaultImage = ""
 
 
     def getResources(self):
@@ -344,20 +343,6 @@ class FlashField(Field):
         if self.flashName:
             package = self.idevice.parentNode.package
             package.deleteResource(self.flashName)
-
-
-    #def setDefaultImage(self):
-        #"""
-        #Set a default image to display until the user picks one
-        #"""
-        ## This is kind of hacky, it's here because we can't just set
-        ## the an image when we create an ImageField in the idevice 
-        ## editor (because the idevice doesn't have a package at that
-        ## stage, and even if it did the image resource wouldn't be
-        ## copied with the idevice when it was cloned and added to
-        ## another package).  We should probably revisit this.
-        #if self.defaultImage:
-            #self.setImage(self.defaultImage)
 
 
 # ===========================================================================

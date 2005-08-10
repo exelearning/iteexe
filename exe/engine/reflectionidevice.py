@@ -75,7 +75,7 @@ reflective feedback.)""")
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
         
-    def upgradeToVersion4(self):
+    def upgradeToVersion3(self):
         """
         Upgrades v0.6 to v0.7.
         """

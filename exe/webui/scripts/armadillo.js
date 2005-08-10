@@ -3,8 +3,7 @@
 //##
 FCKConfig.ToolbarSets["Armadillo"] = [
 	['Bold','Italic','-',
-     'Subscript','Superscript','-',
-     'Link','Unlink'],
+     'Subscript','Superscript'],
      ['UnorderedList','OrderedList','Outdent','Indent','Table'],
      ['Undo','Redo','-',
      'Find','Replace','SelectAll','-',

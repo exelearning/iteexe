@@ -111,7 +111,7 @@ class OptionElement(object):
         html  = '<tr><td>'
         html += '<input type="radio" name="option%s" ' % self.idevice.id
         html += 'id="%s" ' % self.id
-        html += 'onclick="getFeedback(%d,%d,\'%s\')"/>' % (self.index, 
+        html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, 
                                                 length, self.idevice.id)
         html += '</td><td>\n'
         html += self.option.answer + "</td></tr>\n"

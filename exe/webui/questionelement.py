@@ -103,23 +103,23 @@ class QuestionElement(object):
         """
         log.debug("renderView called")
 
-        html  = "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += """
-            function showAnswer(id,isShow){
-                if (isShow==1){
-                    document.getElementById("s"+id).style.display = "block";
-                    document.getElementById("hide"+id).style.display = "block";
-                    document.getElementById("view"+id).style.display = "none";
-                }else{
-                    document.getElementById("s"+id).style.display = "none";
-                    document.getElementById("hide"+id).style.display = "none";
-                    document.getElementById("view"+id).style.display = "block";
-                }
-            }\n"""           
-        html += "//-->\n"
-        html += "</script>\n"
-        html += "<b>%s</b><br/>" % _("Question")      
+        #html  = "<script type=\"text/javascript\">\n"
+        #html += "<!--\n"
+        #html += """
+            #function showAnswer(id,isShow){
+                #if (isShow==1){
+                    #document.getElementById("s"+id).style.display = "block";
+                    #document.getElementById("hide"+id).style.display = "block";
+                    #document.getElementById("view"+id).style.display = "none";
+                #}else{
+                    #document.getElementById("s"+id).style.display = "none";
+                    #document.getElementById("hide"+id).style.display = "none";
+                    #document.getElementById("view"+id).style.display = "block";
+                #}
+            #}\n"""           
+        #html += "//-->\n"
+        #html += "</script>\n"
+        html  = "<b>%s</b><br/>" % _("Question")      
         html += self.question.question  
         html += '<div id="view%s" style="display:block;">' % self.id
         html += '<input type="button" name="btnshow%s" ' % self.id

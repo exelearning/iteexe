@@ -3,11 +3,11 @@ Name: exe-twisted
 Version: 2.0
 Release: 1
 Source0: exe-twisted-2.0.tgz
-Copyright: GPL
+License: GPL
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/exe-twisted-buildroot
 Prefix: %{_prefix}
-BuildArchitectures: noarch
+BuildArch: noarch
 Vendor: University of Auckland <exe@cfdl.auckland.ac.nz>
 Url: http://exe.cfdl.auckland.ac.nz
 

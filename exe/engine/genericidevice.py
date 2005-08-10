@@ -50,6 +50,16 @@ class GenericIdevice(Idevice):
         self.fields    = []
 
 
+    def clone(self):
+        """
+        Clone a Generic iDevice just like this one
+        """
+        miniMe = Idevice.clone(self)
+        for field in miniMe.fields:
+            field.idevice = miniMe
+        return miniMe
+
+
     def addField(self, field):
         """
         Add a new field to this iDevice.  Fields are indexed by their id.
@@ -123,6 +133,7 @@ class GenericIdevice(Idevice):
         """
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
+
 
     def upgradeToVersion4(self):
         """

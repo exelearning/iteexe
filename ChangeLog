@@ -1,3 +1,408 @@
+2005-08-10 01:14  djm
+
+	* branches/0.7/README: Added warning about GtkMozEmbed
+
+2005-08-10 01:10  djm
+
+	* branches/0.7/README: change 0.6 to 0.7 in README
+
+2005-08-09 23:22  matthew
+
+	* branches/0.7/installs/gentoo/exe-0.7.ebuild: Updated ebuild to
+	  depend on mozilla
+
+2005-08-09 23:14  djm
+
+	* branches/0.7/exe/webui/scripts/armadillo.js: Removed link buttons
+	  as they don't work with GtkMozEmbed
+
+2005-08-09 22:26  jenny
+
+	* branches/0.7/doc/eXe-tutorial.elp: updated exe-tutorial.elp
+
+2005-08-09 06:23  matthew
+
+	* branches/0.7/installs/gentoo/makeEbuild.py: Automated way of
+	  making ebuilds
+
+2005-08-09 06:03  djm
+
+	* branches/0.7/MANIFEST.in, branches/0.7/exe/engine/linuxconfig.py,
+	  branches/0.7/exe/run-exe.sh,
+	  branches/0.7/installs/rpm/exe-twisted.spec, branches/0.7/setup.py,
+	  branches/0.7/win-setup.py: Updated eXe RPM
+
+2005-08-09 05:17  matthew
+
+	* branches/0.7/exe/engine/galleryidevice.py: Made gallery support
+	  upgrades
+
+2005-08-09 05:03  matthew
+
+	* branches/0.7/installs/gentoo/exe-0.7.ebuild: 0.7 ebuild
+
+2005-08-09 02:42  jenny
+
+	* branches/0.7/installs/windows/exe.nsi, branches/0.7/win-setup.py:
+	  modified setup and installation files.
+
+2005-08-09 02:04  matthew
+
+	* branches/0.7/MANIFEST.in: Removed firefox directory reference that
+	  is no longer used
+
+2005-08-09 02:03  matthew
+
+	* branches/0.7/setup.py: Added mr_x.gif resource
+
+2005-08-08 23:52  matthew
+
+	* branches/0.7/exe/engine/package.py: decorations ;)
+
+2005-08-08 23:45  matthew
+
+	* branches/0.7/exe/engine/reflectionidevice.py: Fixed upgrade proby
+
+2005-08-08 23:36  jenny
+
+	* branches/0.7/exe/webui/galleryblock.py: fixed image gallery
+	  idevice icon display bugs for exporting.
+
+2005-08-08 23:26  matthew
+
+	* branches/0.7/exe/engine/path.py: code tidy
+
+2005-08-08 22:49  brent
+
+	* branches/0.7/exe/webui/mr_x.gif: resized MrX to 16x16.
+
+2005-08-08 22:29  brent
+
+	* branches/0.7/exe/webui/style/standardwhite/icon_gallery.gif:
+	  resised MrX to 16x16px.
+
+2005-08-08 19:44  djm
+
+	* branches/0.7/exe/engine/genericidevice.py: set idevice in fields
+	  when cloning
+
+2005-08-08 04:10  jenny
+
+	* branches/0.7/exe/webui/multichoiceblock.py,
+	  branches/0.7/exe/webui/optionelement.py,
+	  branches/0.7/exe/webui/questionelement.py,
+	  branches/0.7/exe/webui/reflectionblock.py,
+	  branches/0.7/exe/webui/scripts/common.js,
+	  branches/0.7/exe/webui/truefalseelement.py: fixed truefalse and
+	  multichoice idevices' feedback bugs.
+
+2005-08-08 01:46  jenny
+
+	* branches/0.7/exe/webui/editorpane.py: fixed issue 152 (iDevice
+	  editor no longer displaying icons ).
+
+2005-08-08 00:23  djm
+
+	* branches/0.7/exe/engine/package.py,
+	  branches/0.7/exe/webui/mainwindow.py: fixed saving
+
+2005-08-07 22:16  djm
+
+	* branches/0.7/exe/engine/idevicestore.py,
+	  branches/0.7/exe/webui/blockfactory.py: show only idevices to be
+	  released
+
+2005-08-07 21:19  djm
+
+	* branches/0.7: Created branch for 0.7 release
+
+2005-08-07 21:19  jenny
+
+	* exe/webui/element.py, exe/webui/flashwithtextblock.py: fixed flash
+	  with text view mode bugs.
+
+2005-08-07 21:14  djm
+
+	* exe/webui/style/default/stock-insert-image.png,
+	  exe/webui/style/garden/stock-insert-image.png,
+	  exe/webui/style/seamist/stock-insert-image.png,
+	  exe/webui/style/silver/stock-insert-image.png,
+	  exe/webui/style/standardwhite/stock-insert-image.png:
+	  stock-insert-image.png isn't needed for exports
+
+2005-08-07 21:11  djm
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/webui/galleryblock.py,
+	  exe/webui/style/default/panel-amusements.png,
+	  exe/webui/style/default/stock-insert-image.png,
+	  exe/webui/style/default/stock-stop.png,
+	  exe/webui/style/garden/panel-amusements.png,
+	  exe/webui/style/garden/stock-insert-image.png,
+	  exe/webui/style/garden/stock-stop.png,
+	  exe/webui/style/seamist/panel-amusements.png,
+	  exe/webui/style/seamist/stock-insert-image.png,
+	  exe/webui/style/seamist/stock-stop.png,
+	  exe/webui/style/silver/panel-amusements.png,
+	  exe/webui/style/silver/stock-insert-image.png,
+	  exe/webui/style/silver/stock-stop.png,
+	  exe/webui/style/standardwhite/panel-amusements.png,
+	  exe/webui/style/standardwhite/stock-insert-image.png,
+	  exe/webui/style/standardwhite/stock-stop.png: fix icon problem
+	  with Gallery, add images used in exports to styles
+
+2005-08-05 22:38  brent
+
+	* exe/webui/element.py: added 'add image' icon to image w. text
+	  iDevice.
+
+2005-08-05 04:09  brent
+
+	* exe/webui/style/default/icon_reading.gif,
+	  exe/webui/style/silver/icon_reading.gif: what are you looking at?
+
+2005-08-05 03:54  djm
+
+	* exe/webui/mainwindow.py: point to index.html
+
+2005-08-05 03:43  djm
+
+	* exe/webui/mainwindow.py: added Tutorial and Single Page Export
+	  menu items
+
+2005-08-05 03:19  matthew
+
+	* exe/webui/authoringpage.py, exe/webui/mainwindow.py: Added debug,
+	  view HTML menu in gtkmoz embed
+
+2005-08-05 03:16  djm
+
+	* exe/application.py: use callWhenRunning to make sure twisted web
+	  server is running before the client is started
+
+2005-08-05 02:56  brent
+
+	* exe/engine/flashwithtextidevice.py,
+	  exe/webui/style/default/icon_casestudy.gif,
+	  exe/webui/style/default/icon_diagnosis.gif,
+	  exe/webui/style/default/icon_experiment.gif,
+	  exe/webui/style/default/icon_generic.gif,
+	  exe/webui/style/default/icon_preknowledge.gif,
+	  exe/webui/style/default/icon_technology.gif,
+	  exe/webui/style/silver/icon_casestudy.gif,
+	  exe/webui/style/silver/icon_diagnosis.gif,
+	  exe/webui/style/silver/icon_experiment.gif,
+	  exe/webui/style/silver/icon_generic.gif,
+	  exe/webui/style/silver/icon_preknowledge.gif,
+	  exe/webui/style/silver/icon_technology.gif: adding new icons for
+	  default and silver styles.
+
+2005-08-05 01:31  jenny
+
+	* exe/engine/flashwithtextidevice.py, exe/engine/idevicestore.py,
+	  exe/webui/blockfactory.py, exe/webui/element.py,
+	  exe/webui/flashwithtextblock.py, exe/webui/scripts/common.js:
+	  modified flash with text idevice. it is working now.
+
+2005-08-05 01:03  brent
+
+	* exe/webui/aboutpage.py, exe/webui/docs/credits.xhtml,
+	  exe/webui/galleryblock.py, exe/webui/scripts/mainpage.js: minor
+	  changes to gallery iDevice, and new About.
+
+2005-08-04 22:53  djm
+
+	* exe/engine/config.py: fixed prob setting greDir
+
+2005-08-04 21:35  djm
+
+	* exe/engine/config.py, exe/engine/linuxconfig.py,
+	  exe/webui/mainwindow.py: Added greDir option for the Gecko Runtime
+	  Environment
+
+2005-08-04 06:55  jenny
+
+	* exe/engine/field.py, exe/engine/flashwithtextidevice.py,
+	  exe/engine/idevicestore.py, exe/webui/blockfactory.py,
+	  exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/flashwithtextblock.py, exe/webui/scripts/common.js:
+	  adding flash with text idevice.
+
+2005-08-04 04:09  djm
+
+	* exe/webui/mainwindow.py: removed print statements
+
+2005-08-04 04:07  djm
+
+	* exe/application.py, exe/engine/version.py, exe/webui/browser.py,
+	  exe/webui/mainpage.py, exe/webui/mainwindow.py,
+	  exe/webui/outlinepane.py, exe/webui/templates/mainpage.xul,
+	  exe/webui/webserver.py: New gtkmozembed interface.
+
+2005-08-04 02:59  brent
+
+	* exe/webui/css/exe.css: modified editing pane style to pad out
+	  default style a bit.
+
+2005-08-04 02:39  djm
+
+	* gtkmozembed, gtkmozembed/win32, gtkmozembed/win32/Release,
+	  gtkmozembed/win32/gtkmozembed.c,
+	  gtkmozembed/win32/gtkmozembed.defs,
+	  gtkmozembed/win32/gtkmozembed.sln,
+	  gtkmozembed/win32/gtkmozembed.vcproj,
+	  gtkmozembed/win32/gtkmozembedmodule.c: Added project for building
+	  gtkmozembed on win32
+
+2005-08-04 02:35  brent
+
+	* exe/webui/css/exe.css, exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css: added the 'holly hack' to fix
+	  problem with default style in IE.
+
+2005-08-04 02:35  djm
+
+	* win-setup.py: new options for gtkmozembed
+
+2005-08-04 02:31  djm
+
+	* exe/webui/mr_x.gif: Mr X is our mascot
+
+2005-08-04 01:46  djm
+
+	* exe/export/websiteexport.py: Fixed problem with too many closing
+	  divs
+
+2005-08-04 00:49  djm
+
+	* prototype/burningrats/burningrats.py,
+	  prototype/burningrats/setup.py, prototype/packtest/setup.py:
+	  experiments with Py2Exe PyGTK GTKMozEmbed
+
+2005-08-03 09:12  brent
+
+	* exe/webui/block.py: styling for pedagogical tip.
+
+2005-08-03 03:25  jenny
+
+	* exe/webui/element.py: fixed textarea render bugs.
+
+2005-08-03 03:03  brent
+
+	* exe/webui/common.py, exe/webui/css/exe.css,
+	  exe/webui/images/popup_bg.gif,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/nav.css,
+	  exe/webui/style/default/page_bg.gif,
+	  exe/webui/style/default/top_nav.jpg,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/seamist/content.css,
+	  exe/webui/style/silver/content.css,
+	  exe/webui/style/standardwhite/content.css: default style export
+	  and new styling on instructions for completion popup
+
+2005-08-03 02:55  jenny
+
+	* exe/webui/element.py: Increased the textareas' height to 250 for
+	  "Activity", "Objectives" and "Preknowledge" idevices.
+
+2005-08-03 02:06  jenny
+
+	* exe/engine/attachmentidevice.py, exe/engine/casestudyidevice.py,
+	  exe/engine/clozeidevice.py, exe/engine/forumidevice.py,
+	  exe/engine/freetextidevice.py, exe/engine/imagewithtextidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/truefalseidevice.py,
+	  exe/engine/wikipediaidevice.py, exe/webui/block.py: fixed position
+	  on page lost bugs.(issue 112)
+
+2005-08-03 01:15  djm
+
+	* exe/engine/genericidevice.py, exe/engine/idevice.py,
+	  exe/webui/block.py: Started the change to remembering the
+	  lastIdevice to be edited
+
+2005-08-02 06:39  djm
+
+	* exe/webui/mainwindow.py: fixes for gtkmozembed
+
+2005-08-02 03:48  matthew
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/authoringpage.py: Fixed
+	  unicode idevice title bug
+
+2005-08-02 02:48  djm
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py: Import Mismatched tag and fixed bug
+	  with unclosed divs in exportpage bug#148
+
+2005-08-02 02:22  djm
+
+	* exe/webui/block.py: line too long
+
+2005-08-02 02:04  jenny
+
+	* exe/engine/galleryidevice.py, exe/engine/idevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/truefalseidevice.py, exe/webui/galleryblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/quiztestblock.py,
+	  exe/webui/style/standardwhite/icon_multichoice.gif,
+	  exe/webui/style/standardwhite/icon_question.gif,
+	  exe/webui/truefalseblock.py: fixed idevice icon bugs.
+
+2005-08-02 02:02  brent
+
+	* exe/webui/style/mojave: remove mojave style ... goodbye cruel
+	  world...........................!!!
+
+2005-08-01 21:53  matthew
+
+	* exe/engine/clozeidevice.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: Moved Cloze javascript into common.
+	  Made the edit box be white/default color when empty
+
+2005-08-01 21:41  matthew
+
+	* exe/engine/clozeidevice.py, exe/engine/field.py,
+	  exe/webui/clozeblock.py, exe/webui/element.py: Work on Cloze
+	  Idevice
+
+2005-08-01 04:51  matthew
+
+	* exe/webui/galleryblock.py: PyLinted
+
+2005-08-01 04:41  matthew
+
+	* exe/webui/templates/mainpage.xul: Issue 146: Changed "Add Child"
+	  Button to say "Add Page"
+
+2005-08-01 04:37  matthew
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/websiteexport.py, exe/webui/authoringpage.py: Issue
+	  147: Made it ignore unicode errors, so any content page with
+	  non-ascii characters will not be pretyfied :(
+
+2005-08-01 04:17  matthew
+
+	* exe/engine/galleryidevice.py: PyLinted
+
+2005-08-01 03:16  jenny
+
+	* exe/webui/editorelement.py: fixed idevice editor bugs.
+
+2005-08-01 01:54  brent
+
+	* exe/webui/imagewithtextblock.py: fixed problem with image w/ text
+	  and other iDevices float problem thingy mabob ;-)
+
+2005-07-30 10:52  djm
+
+	* ChangeLog: refreshed ChangeLog
+
 2005-07-29 04:40  brent
 
 	* exe/webui/style/default/content.css,

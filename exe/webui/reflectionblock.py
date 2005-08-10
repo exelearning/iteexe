@@ -90,23 +90,7 @@ class ReflectionBlock(Block):
         Returns an XHTML string for this block
         """
         html  = "<div class=\"iDevice_inner\">\n"
-        html += "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += """
-            function showAnswer(id,isShow){
-                if (isShow==1){
-                    document.getElementById("s"+id).style.display = "block";
-                    document.getElementById("hide"+id).style.display = "block";
-                    document.getElementById("view"+id).style.display = "none";
-                }else{
-                    document.getElementById("s"+id).style.display = "none";
-                    document.getElementById("hide"+id).style.display = "none";
-                    document.getElementById("view"+id).style.display = "block";
-                }
-            }\n"""           
-        html += "//-->\n"
-        html += "</script>\n"
-
+    
         html += self.activity   
         html += '<div id="view%s" style="display:block;">' % self.id
         html += '<input type="button" name="btnshow%s" ' % self.id

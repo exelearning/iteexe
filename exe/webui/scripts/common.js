@@ -270,9 +270,12 @@ function saveChange(action){
 }
 
 
-function getFeedback(optionId, optionsNum, ideviceId) {
-    for (i = 0; i< optionsNum; i++) {   
-        id = "s" + i + "b" +ideviceId
+function getFeedback(optionId, optionsNum, ideviceId, mode) {
+    for (i = 0; i< optionsNum; i++) { 
+        if (mode == "multi")
+            id = "sa" + i + "b" +ideviceId
+        else
+            id = "s" + i + "b" +ideviceId
         if(i == optionId)
             document.getElementById(id).style.display = "block";
         else
@@ -300,3 +303,16 @@ function onClozeChange(ele, word) {
     else
         ele.style.backgroundColor = "red";
 };
+
+function showAnswer(id,isShow){
+    if (isShow==1){
+        document.getElementById("s"+id).style.display = "block";
+        document.getElementById("hide"+id).style.display = "block";
+        document.getElementById("view"+id).style.display = "none";
+    }else{
+        document.getElementById("s"+id).style.display = "none";
+        document.getElementById("hide"+id).style.display = "none";
+        document.getElementById("view"+id).style.display = "block";
+    }
+}
+

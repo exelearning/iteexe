@@ -97,11 +97,10 @@ class Package(Persistable):
         Save package to disk
         pass an optional filename
         """
-        filename = Path(filename)
         if filename:
             # If we are being given a new filename...
             # Change our name to match our new filename
-            name = filename.splitpath()[1]
+            name = Path(filename).splitpath()[1]
             self.name = unicode(name.basename().splitext()[0])
         elif self.filename:
             # Otherwise use our last saved/loaded from filename
@@ -129,6 +128,7 @@ class Package(Persistable):
             zippedFile.close()
 
 
+    @staticmethod
     def load(filename):
         """
         Load package from disk, returns a package
@@ -154,7 +154,6 @@ class Package(Persistable):
                 outFile.write(zippedFile.read(filename))
                 
         return newPackage
-    load = staticmethod(load)
 
 
     def addResource(self, resourceFile, storageName):

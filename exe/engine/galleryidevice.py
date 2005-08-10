@@ -238,6 +238,8 @@ class GalleryIdevice(Idevice):
     thumbnails.
     """
 
+    persistenceVersion = 1
+
     def __init__(self, parentNode=None):
         """
         Sets up the idevice title and instructions etc
@@ -271,3 +273,8 @@ class GalleryIdevice(Idevice):
         """
         return GalleryImage(self, '', imagePath)
 
+    def upgradeToVersion1(self):
+        """
+        Upgrades the node to exe version 0.7
+        """
+        self.lastIdevice = False

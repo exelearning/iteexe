@@ -191,21 +191,7 @@ class MultichoiceBlock(Block):
         Returns an XHTML string for this block
         """
         html  = "<div class=\"iDevice_inner\">\n"
-        html += "<script type=\"text/javascript\">\n"
-        html += "<!--\n"
-        html += """
-        function getFeedback(optionId, optionsNum, ideviceId) {
-            for (i = 0; i< optionsNum; i++) {   
-                id = "sa" + i + "b" +ideviceId
-                if(i == optionId)
-                    document.getElementById(id).style.display = "block";
-                else
-                    document.getElementById(id).style.display = "None";
-            }
-        }\n"""  
-      
-        html += "//-->\n"
-        html += "</script>\n"
+       
         html += "<table>\n"
         html += "<tbody>\n"
 

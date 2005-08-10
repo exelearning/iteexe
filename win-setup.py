@@ -9,9 +9,9 @@ from exe.engine import version
 
 g_files = { '.': ["README", 
                   "eXe_icon.ico", 
-		  "exe/webui/mr_x.gif",
+                  "exe/webui/mr_x.gif",
                   "doc/eXe-tutorial.elp", 
-		  "installs/windows/exeLicense.txt"]}
+                  "installs/windows/exeLicense.txt"]}
 g_oldBase = "exe/webui"
 g_newBase = "."
 def dataFiles(dirs):
@@ -34,6 +34,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/templates",
            "exe/webui/images",
            "exe/webui/docs",
+           "exe/webui/win-profile",
            "exe/webui/scripts"])
 
 opts = {
@@ -41,14 +42,14 @@ opts = {
    "packages": ["encodings", "nevow"],
    "includes": ["pango", "atk", "gobject",
                 "PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
-		"IcoImagePlugin", "BmpImagePlugin"],
+                "IcoImagePlugin", "BmpImagePlugin"],
    "dll_excludes": ["iconv.dll", "intl.dll", 
                     "libatk-1.0-0.dll", "libgdk-win32-2.0-0.dll", 
-		    "libgdk_pixbuf-2.0-0.dll", "libglib-2.0-0.dll", 
-		    "libgmodule-2.0-0.dll", "libgobject-2.0-0.dll", 
+                    "libgdk_pixbuf-2.0-0.dll", "libglib-2.0-0.dll", 
+                    "libgmodule-2.0-0.dll", "libgobject-2.0-0.dll", 
                     "libgthread-2.0-0.dll", "libgtk-win32-2.0-0.dll", 
-		    "libpango-1.0-0.dll", "libpangowin32-1.0-0.dll", 
-		    "nspr4.dll", "plc4.dll", "plds4.dll", "xpcom.dll" ]
+                    "libpango-1.0-0.dll", "libpangowin32-1.0-0.dll", 
+                    "nspr4.dll", "plc4.dll", "plds4.dll", "xpcom.dll" ]
  }
 }
 setup(windows=["exe/exe"],

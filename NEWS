@@ -1,3 +1,10 @@
+Version 0.7 - Burning Rats
+* Experimental GtkMozEmbed interface
+* Gallery iDevice
+* Improved iDevice editor
+* New default style
+* Bug fixes
+
 Version 0.6 - Lumpy Llama
 * New Attachment and Wikipedia iDevices
 * ImageWithText iDevice can now have image left or right aligned

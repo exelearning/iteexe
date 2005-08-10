@@ -7,7 +7,8 @@ from distutils.command.install import install
 from distutils.core            import setup
 from exe.engine import version
 
-g_files = { '/usr/share/exe': ["README","doc/eXe-tutorial.elp"]}
+g_files = { '/usr/share/exe': ["README","doc/eXe-tutorial.elp",
+                               "exe/webui/mr_x.gif"]}
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
@@ -33,8 +34,13 @@ dataFiles(["exe/webui/style",
            "exe/webui/scripts",
            "exe/webui/templates",
            "exe/webui/linux-profile",
-           "exe/webui/firefox"])
-
+           "exe/webui/firefox",
+           "exe/webui/mr_x.gif"])
+opts = {
+ "bdist_rpm": {
+   "requires": ["gnome-python2-gtkmozembed", "python-imaging"]
+ }
+}
 setup(name         = version.project,
       version      = version.release,
       description  = "eLearning XHTML editor",
@@ -47,7 +53,8 @@ Content generated using eXe can be used by any Learning Management System.
       author       = "University of Auckland",
       author_email = "exe@auckland.ac.nz",
       license      = "GPL",
-      scripts      = ["exe/exe",],
+      scripts      = ["exe/exe", "exe/run-exe.sh"],
       packages     = ["exe", "exe.webui", "exe.engine", "exe.export"],
-      data_files   = g_files.items()
+      data_files   = g_files.items(),
+      options      = opts
      )

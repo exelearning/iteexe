@@ -51,6 +51,8 @@ def toUnicode(string):
         return unicode(string, 'utf8')
     elif isinstance(string, unicode):
         return unicode(string)
+    elif string is None:
+        return u''
     else:
         return unicode(str(string), 'utf8')
 
@@ -86,11 +88,10 @@ class Path(unicode):
     # Make the / operator work even when true division is enabled.
     __truediv__ = __div__
 
+    @staticmethod
     def getcwd():
         """ Return the current working directory as a path object. """
         return Path(os.getcwd())
-    getcwd = staticmethod(getcwd)
-
 
     # --- Operations on path strings.
 

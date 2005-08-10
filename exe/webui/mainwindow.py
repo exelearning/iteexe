@@ -196,11 +196,11 @@ class MainWindow(gtk.Window):
         """
         assert self.packageName
         package = self.application.packageStore.getPackage(self.packageName)
-        filename = package.name
-        # Add the extension if its not already there
-        if not filename.lower().endswith('.elp'):
-            filename += '.elp'
-        package.save(filename)
+
+        if package.filename:
+            package.save()
+        else:
+            self.saveFileAs()
 
 
     def saveFileAs(self, *dummy):

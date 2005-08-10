@@ -163,7 +163,7 @@ class TrueFalseElement(object):
         """Add a option input"""
         html  = '<input type="radio" name="option%s" ' % self.id
         html += 'id="%s%s" ' % (true, self.id)
-        html += 'onclick="getFeedback(%d,%d,\'%s\')"/>' % (index, 
+        html += 'onclick="getFeedback(%d,%d,\'%s\',\'truefalse\')"/>' % (index, 
                                                 length, self.id)
         return html
     
