@@ -65,6 +65,7 @@ class IdeviceStore:
         upon the pedagogical template we are using
         """
         return self.extended + self.generic
+
     
     def delGenericIdevice(self, idevice):
         """

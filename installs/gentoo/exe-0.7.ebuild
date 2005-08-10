@@ -14,7 +14,7 @@ IUSE=""
 S="${WORKDIR}"
 DEPEND=">=dev-python/pygtk-2.6.1
 		>=dev-python/gnome-python-extras-2.10
-		>=www-client/www-client/mozilla-1.7.8
+		>=www-client/mozilla-1.7.8
 		>=dev-python/nevow-0.4.1
 		>=dev-python/twisted-2.0.1
 		>=dev-python/twisted-web-0.5.0
