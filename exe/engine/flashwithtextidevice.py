@@ -37,10 +37,10 @@ class FlashWithTextIdevice(Idevice):
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, _(u"Flash with Text"), 
                          _(u"University of Auckland"), 
-                         _(u""), u"", u"")
+                         u"", u"", u"")
         self.emphasis = Idevice.NoEmphasis
         self.flash = FlashField(_(u"Flash"), 
-                                _(u""))
+                                u"")
         self.flash.idevice      = self
 
         self.text = TextAreaField(_(u"Text"))

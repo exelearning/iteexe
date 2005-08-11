@@ -67,7 +67,7 @@ the piston with a brief textual summary of the key aspects of each visual.
 </p>"""), u"", u"")
         self.emphasis = Idevice.NoEmphasis
         self.image = ImageField(_(u"Image"), 
-                                _(u""))
+                                u"")
         self.image.idevice      = self
         self.image.defaultImage = defaultImage
 

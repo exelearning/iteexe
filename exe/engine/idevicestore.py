@@ -209,7 +209,7 @@ debate.""")))
 _(u"""Objectives describe the expected outcomes of the learning and should
 define what the learners will be able to do when they have completed the
 learning tasks."""), 
-                                    _(u""))
+                                    u"")
         objectives.emphasis = Idevice.SomeEmphasis
 
         objectives.addField(TextAreaField(_(u"Objectives"),
