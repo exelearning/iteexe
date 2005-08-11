@@ -316,3 +316,21 @@ function showAnswer(id,isShow){
     }
 }
 
+//Clear all student answers for cloze idevice
+function clearAll(length, ident){
+    for (i=0; i<length; i++){
+        document.getElementById("clz"+ident+i).value="";
+        document.getElementById("clz"+ident+i).style.backgroundColor="white"
+    }
+
+}
+
+//Calculate the score for cloze idevice
+function calScore(length, ident){
+    score = 0
+    for (i=0; i<length; i++){
+        if (document.getElementById("clz"+ident+i).style.backgroundColor=="yellow")
+            score++
+    }
+    alert("Your score is " + score +"/" + length + ".")
+}

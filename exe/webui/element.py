@@ -393,6 +393,7 @@ class ClozeElement(Element):
         """
         html = []
         # Mix the parts together
+        length = len(self.field.parts)-1
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:
                 html.append(text)
@@ -401,8 +402,11 @@ class ClozeElement(Element):
                     ' <input type="text" value="" ',
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
-                    '    style="width:%sem"/>' % (len(missingWord))]
-        html += ['<br/><br/><input type="submit" value = "Clear"/>']
+                    '    style="width:%sem"/>' % len(missingWord)]        
+        html += ['<br/><br/><input type="button" value = "Get score"',
+                 'onclick="calScore(\'%s\',\'%s\')"/>' % (length, self.id)]
+        html += ['&nbsp;&nbsp;<input type="button" value = "Clear" ',
+                 'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id)]
         return '\n'.join(html)
     
 # ===========================================================================
