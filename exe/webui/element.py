@@ -402,6 +402,7 @@ class ClozeElement(Element):
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
                     '    style="width:%sem"/>' % (len(missingWord))]
+        html += ['<br/><br/><input type="submit" value = "Clear"/>']
         return '\n'.join(html)
     
 # ===========================================================================
