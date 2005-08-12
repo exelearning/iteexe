@@ -60,6 +60,7 @@ class ClozeIdevice(Idevice):
                'example:</p>'
                'The fith and last _words_ of this text need to be filled in '
                'by the _student_'))
+        self._content.idevice = self
 
     def getResources(self):
         """
