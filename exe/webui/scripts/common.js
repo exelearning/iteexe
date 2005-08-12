@@ -303,7 +303,7 @@ function onClozeChange(ele, word) {
     else
         ele.style.backgroundColor = "red";
 };
-
+// show or hide the feedback for reflection idevice
 function showAnswer(id,isShow){
     if (isShow==1){
         document.getElementById("s"+id).style.display = "block";
@@ -333,4 +333,13 @@ function calScore(length, ident){
             score++
     }
     alert("Your score is " + score +"/" + length + ".")
+}
+
+function answerAll(length, ident){
+    
+    for (i=0; i<length; i++){
+        document.getElementById("clz"+ident+i).value = wordArray[i];
+        document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
+    }
+
 }

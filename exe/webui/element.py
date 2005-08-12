@@ -36,7 +36,7 @@ class Element(object):
         Initialize
         """
         self.field = field
-        self.id    = field.id 
+        self.id    = field.id
 
  
     def process(self, request):
@@ -393,20 +393,30 @@ class ClozeElement(Element):
         """
         html = []
         # Mix the parts together
-        length = len(self.field.parts)-1
+        length = 0
+        words  = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:
                 html.append(text)
             if missingWord:
+                length = length + 1
+                words += "'" + missingWord + "',"
                 html += [
                     ' <input type="text" value="" ',
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
-                    '    style="width:%sem"/>' % len(missingWord)]        
+                    '    style="width:%sem"/>\n' % len(missingWord)]        
         html += ['<br/><br/><input type="button" value = "Get score"',
-                 'onclick="calScore(\'%s\',\'%s\')"/>' % (length, self.id)]
-        html += ['&nbsp;&nbsp;<input type="button" value = "Clear" ',
-                 'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id)]
+                 'onclick="calScore(\'%s\',\'%s\')"/>\n' % (length, self.id)]
+        
+        words = words[:-1]
+        tmpString = "wordArray= new Array(%s); " % words
+                                                          
+        html += ['&nbsp;&nbsp;<input type="button" value = "Show answers"',
+                 'onclick="%s;answerAll(%s,\'%s\')"/>\n' %(tmpString, 
+                                                           length, self.id)]
+        html += ['&nbsp;&nbsp;<input type="button" value = "Clear" \n',
+                 'onclick="clearAll(\'%s\',\'%s\')"/>\n' % (length, self.id)]
         return '\n'.join(html)
     
 # ===========================================================================
