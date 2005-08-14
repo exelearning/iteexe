@@ -195,5 +195,59 @@ def autoTranslate(poFile, language='Spanish'):
                     doTranslate(line[7:-2])
     outFile.close()
 
+
+def po2dict(poFile):
+    """
+    Converts a po/pot file to a dict of
+    {msgid: (comment, msgstr)}
+    """
+    msgid = msgstr = comment = ''
+    inId = inStr = False
+    result = {}
+    for line in poFile:
+        if line[0] == '#':
+            comment += line[2:]
+        elif line[:7] == 'msgid "':
+            if line[7] == '"':
+                inId = True
+                inStr = False
+                msgid = ''
+            else:
+                # Got an id
+                msgid = line[7:-2]
+        elif line[:8] == 'msgstr "':
+            if line[8] == '"':
+                inStr = True
+                inId = False
+                msgstr = ''
+            else:
+                # Got a pair
+                result[msgid] = comment, line[8:-2]
+                inId = inStr = False
+                msgid = msgstr = comment = ''
+            continue
+        elif inId:
+            if line[0] == '"':
+                msgid += line[1:-2]
+            else:
+                inId = False
+        elif inStr:
+            if line[0] == '"':
+                msgstr += line[1:-2]
+            else:
+                # Got pair
+                result[msgid] = comment, msgstr
+                inId = inStr = False
+                msgid = msgstr = comment = ''
+    # Check if we've just finished the last msgstr
+    if inStr:
+        result[msgid] = comment, msgstr
+    return result
+
 if __name__ == '__main__':
-    autoTranslate(open('exe_es.po'))
+    #autoTranslate(open('exe_es.po'))
+    dct = po2dict(open('exe_es.po'))
+    from pprint import pprint
+    #pprint(dct)
+    print dct[''][0]
+    print dct[''][1]
