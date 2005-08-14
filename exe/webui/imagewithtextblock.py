@@ -100,7 +100,7 @@ class ImageWithTextBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div class=\"image_text\" style=\""
-	html += u"width:" + str(self.idevice.image.width) + "px; "
+        html += u"width:" + str(self.idevice.image.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
         html += u"<div class=\"image\">\n"
         html += self.imageElement.renderPreview()

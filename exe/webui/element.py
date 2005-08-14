@@ -44,7 +44,7 @@ class Element(object):
         Process arguments from the webserver. 
         """
         log.error(u"process called directly")
-        return u"ERROR Element.process called directly"
+        return _(u"ERROR Element.process called directly")
 
 
     def renderEdit(self):
@@ -52,7 +52,7 @@ class Element(object):
         Returns an XHTML string for editing this element
         """
         log.error(u"renderEdit called directly")
-        return u"ERROR Element.renderEdit called directly"
+        return _(u"ERROR Element.renderEdit called directly")
 
 
     def renderPreview(self):
@@ -68,7 +68,7 @@ class Element(object):
         Returns an XHTML string for viewing this element
         """
         log.error(u"renderView called directly")
-        return u"ERROR Element.renderView called directly"
+        return _(u"ERROR Element.renderView called directly")
 
 
 # ===========================================================================

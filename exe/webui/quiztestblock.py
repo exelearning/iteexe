@@ -98,7 +98,6 @@ class QuizTestBlock(Block):
         html += " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         html += _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
-        isChecked = ""
         template = '  <option value="%s0"%s>%s0%%</option>\n'
         for i in range(1, 11):
             if str(i)+ "0" == self.idevice.passRate:
@@ -123,8 +122,7 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html = u''
-        html += u'<form id="contentForm" action="javascript:calcScore();">\n'
+        html  = u'<form id="contentForm" action="javascript:calcScore();">\n'
         html += u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
@@ -136,7 +134,7 @@ class QuizTestBlock(Block):
             html += element.renderView() + "<br/>"  
         
         html += '<input type="submit" name="submitB" '
-        html += 'value="%s"/>\n' % _("SUBMIT ANSWERS")
+        html += 'value="%s"/>\n' % _(u"SUBMIT ANSWERS")
         html += "</div>\n"
         html += '</form>\n'
 

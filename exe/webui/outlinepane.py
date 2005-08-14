@@ -214,22 +214,22 @@ class OutlinePane(Renderable):
         dropHandler(ctx, data) 
         # Now do the rendering
         log.debug("render")
-        xul = ('<!-- start outline pane -->',
-               '    <tree id="outlineTree" hidecolumnpicker="true" '+
-               'onselect="outlineClick()" ',
-               '          context="outlineMenu" flex="1"',
-               '          ondraggesture="treeDragGesture(event)"'
-               '          ondragenter="treeDragEnter(event)"',
-               '          ondragover="treeDragOver(event)"',
-               '          ondragexit="treeDragExit(event)"',
-               '          ondragdrop="treeDragDrop(event)"',
-               '          ondblclick="eval(document.getElementById('
-               """'btnRename').getAttribute('oncommand'))">""",
-               '        <treecols>',
-               '            <treecol id="sectionCol" primary="true" '+
-               'label="Outline" flex="1"/>',
-               '        </treecols>',
-               '        <treechildren>',)
+        xul = (u'<!-- start outline pane -->',
+                '    <tree id="outlineTree" hidecolumnpicker="true" '+
+                'onselect="outlineClick()" ',
+                '          context="outlineMenu" flex="1"',
+                '          ondraggesture="treeDragGesture(event)"'
+                '          ondragenter="treeDragEnter(event)"',
+                '          ondragover="treeDragOver(event)"',
+                '          ondragexit="treeDragExit(event)"',
+                '          ondragdrop="treeDragDrop(event)"',
+                '          ondblclick="eval(document.getElementById('
+                """'btnRename').getAttribute('oncommand'))">""",
+                '        <treecols>',
+                '            <treecol id="sectionCol" primary="true" '+
+                'label="Outline" flex="1"/>',
+                '        </treecols>',
+                '        <treechildren>',)
         xul += self.__renderNode(self.package.root, 12)
         xul += ('       </treechildren>',
                 '    </tree>',

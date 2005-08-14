@@ -96,21 +96,21 @@ class TrueFalseElement(object):
         hint = hint.replace("'", "\\'")
         hint = hint.replace('"', '\\"')
         
-        html = "<tr><td>"
+        html = u"<tr><td>"
         html += common.richTextArea(self.questionId, question)
-        html += "</td><td>\n"
+        html += u"</td><td>\n"
         html += common.option(self.keyId, self.question.isCorrect, "true") 
-        #html += "</td><td>\n"
+        #html += u"</td><td>\n"
         html += common.option(self.keyId, not self.question.isCorrect, "false")
-        html += "</td><td></td><td>\n"
+        html += u"</td><td></td><td>\n"
         html += common.richTextArea(self.feedbackId, feedback)
-        html += "</td><td>\n"
+        html += u"</td><td>\n"
         html += common.richTextArea(self.hintId, hint)
-        html += "</td><td>\n"
+        html += u"</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete option"))
-        html += "</td></tr>\n"
+        html += u"</td></tr>\n"
         return html
     
     def renderQuestionView(self):
@@ -118,18 +118,21 @@ class TrueFalseElement(object):
         Returns an XHTML string for viewing this question element
         """
         html  = self.renderQuestion()
-        html += '<span style="background-image:url(\'panel-amusements.png\');">'
-        html += '\n<a onmousedown="Javascript:updateCoords(event);'
-        html += 'showMe(\'i%s\', 350, 100);" ' % self.hintId
-        html += 'style="cursor:help;" title="Instructions for completion" \n'
-        html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
-        html += "<div id='i%s' style='display:none; z-index:99;'>" % self.hintId
-        html += "<div style=\"float:right;\" >"
-        html += '<img alt="%s" ' % _("Close")
-        html += 'src="stock-stop.png" title="%s" ' % _("Close")
-        html += " onmousedown=\"Javascript:hideMe();\"/></div>"
-        html += "<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.question.hint)
-        html += "</div>\n"
+        html += u'<span style="background-image:url(\'panel-amusements.png\');"'
+        html += u'>'
+        html += u'\n<a onmousedown="Javascript:updateCoords(event);'
+        html += u'showMe(\'i%s\', 350, 100);" ' % self.hintId
+        html += u'style="cursor:help;" title="Instructions for completion" \n'
+        html += u'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
+        html += u'</span>'
+        html += u'<div id="i%s" style="display:none; z-index:99;">' % \
+                self.hintId
+        html += u"<div style=\"float:right;\" >"
+        html += u'<img alt="%s" ' % _("Close")
+        html += u'src="stock-stop.png" title="%s" ' % _("Close")
+        html += u" onmousedown=\"Javascript:hideMe();\"/></div>"
+        html += u"<b>%s:</b><br/>%s<br/>" % (_("Hint"), self.question.hint)
+        html += u"</div>\n"
         
         return html
     
@@ -150,7 +153,7 @@ class TrueFalseElement(object):
         """
         log.debug("renderPreview called")
     
-        html  = "<br/><br/><b>" +unicode(self.index + 1) + ". " 
+        html  = u"<br/><br/><b>" +unicode(self.index + 1) + ". " 
         html += self.question.question + "</b><br/><br/>"
         html += _("True") + " " 
         html += self.__option(0, 2, "true") + "\n"
@@ -161,31 +164,28 @@ class TrueFalseElement(object):
     
     def __option(self, index, length, true):
         """Add a option input"""
-        html  = '<input type="radio" name="option%s" ' % self.id
-        html += 'id="%s%s" ' % (true, self.id)
-        html += 'onclick="getFeedback(%d,%d,\'%s\',\'truefalse\')"/>' % (index, 
-                                                length, self.id)
+        html  = u'<input type="radio" name="option%s" ' % self.id
+        html += u'id="%s%s" ' % (true, self.id)
+        html += u'onclick="getFeedback(%d,%d,\'%s\',\'truefalse\')"/>' % (
+                index, length, self.id)
         return html
     
     def renderFeedbackView(self):
         """
         return xhtml string for display this option's feedback
         """
-
-        if self.question.isCorrect:
-            feedbackStr1 = _("Correct!") + " " + self.question.feedback
-            feedbackStr2 = _("Incorrect!") + " " + self.question.feedback
-        else:
-            feedbackStr1 = _("Incorrect! ") + " " + self.question.feedback
-            feedbackStr2 = _("Correct! ") + " " + self.question.feedback
+        feedbackStr1 = _(u"Correct!") + " " + self.question.feedback
+        feedbackStr2 = _(u"Incorrect!") + " " + self.question.feedback
+        if not self.question.isCorrect:
+            feedbackStr1, feedbackStr2 = feedbackStr2, feedbackStr1 
             
         feedbackId1 = "0" + "b" + self.id
         feedbackId2 = "1" + "b" + self.id
-        html  = '<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId1
-        html += 'display: none;">' 
+        html  = u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId1
+        html += u'display: none;">' 
         html += feedbackStr1 + '</div>\n'
-        html += '<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId2
-        html += 'display: none;">' 
+        html += u'<div id="s%s" style="color: rgb(0, 51, 204);' % feedbackId2
+        html += u'display: none;">' 
         html += feedbackStr2 + '</div>\n'
         
         return html

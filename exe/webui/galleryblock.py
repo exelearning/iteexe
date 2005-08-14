@@ -171,7 +171,7 @@ class GalleryBlock(Block):
 
         if len(self.idevice.images) == 0:
             html += [u'<div style="align:center center">',
-                     u'  No Images Loaded',
+                     _(u'No Images Loaded'),
                      u'</div>']
         else:
             def genCell(image):
@@ -244,7 +244,7 @@ class GalleryBlock(Block):
         """
         if len(self.idevice.images) == 0:
             html = [u'   <div style="align:center center">',
-                    u'  No Images Loaded',
+                    _(u'No Images Loaded'),
                     u'</div>']
         else:
             def genCell(image):

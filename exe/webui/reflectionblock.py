@@ -74,7 +74,7 @@ class ReflectionBlock(Block):
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
-        html +=  _("Reflective question:") 
+        html +=  _(u"Reflective question:") 
         html += common.elementInstruc("activity"+self.id, self.activityInstruc)
         html += "<br/>" + common.richTextArea("activity"+self.id, activity)
         html += _("Response:")
@@ -89,7 +89,7 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = "<div class=\"iDevice_inner\">\n"
+        html  = u'<div class="iDevice_inner">\n'
     
         html += self.activity   
         html += '<div id="view%s" style="display:block;">' % self.id

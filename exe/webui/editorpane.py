@@ -56,22 +56,30 @@ class EditorPane(object):
         self.purpose         = ""
         self.tip             = ""
         self.message         = ""
-        self.nameInstruc     = u"""Your new iDevice will appear in the iDevice 
-pane with this title. This is a compulsory field and you will be prompted to 
-enter a label if you try to submit your idevice without one."""
-        self.authorInstruc   = u"This is an optional field."
-        self.purposeInstruc  = u"""The purpose dialogue allows you to describe 
-your intended purpose of the device to other potential users."""
-        self.emphasisInstruc = u"""Use Emphasis to distinguish the importance 
-of the information being presented in the iDevice."""
-        self.tipInstruc      = """A pedagogical tip allows you to describe your 
-intended use and the pedagogy behind the devices development."""
-        self.lineInstruc     = """Add a single text line to an iDevice. 
-Useful if you want the ability to place a label within the device."""
-        self.textBoxInstruc  = """Add a text entry box to an iDevice. 
-Used for entering description textual content."""
-        self.imageInstruc    = """Add an image to your iDevice. Enables 
-the selection of an image from your stored picture files."""
+        self.nameInstruc     = \
+            _(u"Your new iDevice will appear in the iDevice "
+              u"pane with this title. This is a compulsory field "
+              u"and you will be prompted to enter a label if you try "
+              u"to submit your idevice without one.")
+        self.authorInstruc   = _(u"This is an optional field.")
+        self.purposeInstruc  = _(u"The purpose dialogue allows you to describe "
+                                 u"your intended purpose of the device to other"
+                                 u" potential users.")
+        self.emphasisInstruc = _(u"Use Emphasis to distinguish the importance "
+                                 u" of the information being presented in the "
+                                 u"iDevice.")
+        self.tipInstruc      = _(u"A pedagogical tip allows you to describe "
+                                 u"your intended use and the pedagogy behind "
+                                 u"the devices development.")
+        self.lineInstruc     = _(u"Add a single text line to an iDevice. "
+                                 u"Useful if you want the ability to place a "
+                                 u"label within the device.")
+        self.textBoxInstruc  = _(u"Add a text entry box to an iDevice. "
+                                 u"Used for entering description textual "
+                                 u"content.")
+        self.imageInstruc    = _(u"Add an image to your iDevice. Enables "
+                                 u"the selection of an image from your stored "
+                                 u"picture files.")
 
         self.style           = "default"
   
@@ -115,16 +123,16 @@ the selection of an image from your stored picture files."""
         
         
         if "addText" in request.args:
-            self.idevice.addField(TextField(u"Enter the label here",
-                 u"Enter instructions for completion here"))
+            self.idevice.addField(TextField(_(u"Enter the label here"),
+                 _(u"Enter instructions for completion here")))
         
         if "addTextArea" in request.args:
-            self.idevice.addField(TextAreaField(u"Enter the label here", 
-                 u"Enter the instructions for completion here"))
+            self.idevice.addField(TextAreaField(_(u"Enter the label here"), 
+                 _(u"Enter the instructions for completion here")))
                 
         if "addImage" in request.args:
-            field = ImageField(u"Enter the label here",
-                               u"Enter the instructions for completion here")
+            field = ImageField(_(u"Enter the label here"),
+                               _(u"Enter the instructions for completion here"))
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)

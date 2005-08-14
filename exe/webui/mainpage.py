@@ -282,7 +282,7 @@ class MainPage(RenderableLivePage):
             else:
                 client.alert(_(u'Sorry, wrong file format'))
             log.error(_(u'Error loading package "%s": %s' % \
-                      (filename, unicode(exc)))
+                      (filename, unicode(exc))))
             self.error = True
 
 
@@ -329,8 +329,8 @@ class MainPage(RenderableLivePage):
         if not filename.exists():
             filename.makedirs()
         elif not filename.isdir():
-            client.alert(_(u'Filename %s is a file, cannot replace it' % 
-                         filename))
+            client.alert(_(u'Filename %s is a file, cannot replace it') % 
+                         filename)
             log.error("Couldn't export web page: "+
                       "Filename %s is a file, cannot replace it" % filename)
             return
@@ -372,8 +372,8 @@ class MainPage(RenderableLivePage):
         if not filename.exists():
             filename.makedirs()
         elif not filename.isdir():
-            client.alert(_(u'Filename %s is a file, cannot replace it' % 
-                         filename))
+            client.alert(_(u'Filename %s is a file, cannot replace it') % 
+                         filename)
             log.error("Couldn't export web page: "+
                       "Filename %s is a file, cannot replace it" % filename)
             return
@@ -412,7 +412,7 @@ class MainPage(RenderableLivePage):
         # Do the export
         scormExport = ScormExport(self.config, stylesDir, filename)
         scormExport.export(self.package)
-        client.alert(_(u'Exported to %s' % filename))
+        client.alert(_(u'Exported to %s') % filename)
 
 
     def exportIMS(self, client, filename, stylesDir):

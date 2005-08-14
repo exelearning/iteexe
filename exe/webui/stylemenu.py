@@ -54,17 +54,17 @@ class StyleMenu(Renderable):
         """
         log.debug("render")
         # Render the start tags
-        xul  = "<!-- Styles Pane Start -->\n"
-        xul += "<menupopup>\n"
+        xul  = u"<!-- Styles Pane Start -->\n"
+        xul += u"<menupopup>\n"
 
         # Render each style individually
         for style in self.config.styles:
-            xul += "  <menuitem label=\""+style+"\" "
-            xul += "onclick=\"submitLink('ChangeStyle', '"+style+"', 1);\"/>\n"
+            xul += u"  <menuitem label=\""+style+"\" "
+            xul += u"onclick=\"submitLink('ChangeStyle', '"+style+"', 1);\"/>\n"
 
         # Render the end tags
-        xul += "</menupopup>\n"
-        xul += "<!-- Styles Pane End -->\n"
+        xul += u"</menupopup>\n"
+        xul += u"<!-- Styles Pane End -->\n"
         return stan.xml(xul)
         
     

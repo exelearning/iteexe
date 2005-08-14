@@ -81,38 +81,38 @@ class TestquestionElement(object):
         question = question.replace("\n","\\n")
         question = question.replace("'","\\'")
         
-        html  = "<div class=\"iDevice\">\n"
-        html += "<b>" + _("Question:") + " </b>" 
+        html  = u"<div class=\"iDevice\">\n"
+        html += u"<b>" + _("Question:") + " </b>" 
         html += common.elementInstruc("question"+self.id, 
                                       self.question.questionInstruc)
-        html += " " + common.submitImage(self.id, self.idevice.id, 
+        html += u" " + common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
         html += common.richTextArea("question"+self.id, question)
-        html += "<table width =\"100%%\">"
-        html += "<thead>"
-        html += "<tr>"
-        html += "<th>%s " % _("Alternatives")
+        html += u"<table width =\"100%%\">"
+        html += u"<thead>"
+        html += u"<tr>"
+        html += u"<th>%s " % _("Alternatives")
         html += common.elementInstruc("option"+self.id, 
                                       self.question.optionInstruc)
-        html += "</th><th align=\"left\">%s "  % _("Correct")
+        html += u"</th><th align=\"left\">%s "  % _("Correct")
         html += common.elementInstruc("answer"+self.id, 
                                       self.question.correctAnswerInstruc)
-        html += "<br/>" + _("Option")
-        html += "</th>"
-        html += "</tr>"
-        html += "</thead>"
-        html += "<tbody>"
+        html += u"<br/>" + _("Option")
+        html += u"</th>"
+        html += u"</tr>"
+        html += u"</thead>"
+        html += u"<tbody>"
 
         for element in self.options:
             html += element.renderEdit() 
             
-        html += "</tbody>"
-        html += "</table>\n"
-        value = _("Add another option")    
+        html += u"</tbody>"
+        html += u"</table>\n"
+        value = _(u"Add another option")    
         html += common.submitButton("addOption"+unicode(self.id), value)
-        html += "<br />"
-        html += "</div>\n"
+        html += u"<br />"
+        html += u"</div>\n"
 
         return html
 

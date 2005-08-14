@@ -75,36 +75,36 @@ class TrueFalseBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         
-        html  = "<div class=\"iDevice\"><br/>\n"
+        html  = u"<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
-        html += "<table width =\"100%%\">"
-        html += "<thead>"
-        html += "<tr>"
-        html += "<th>%s " % _("Questions")
+        html += u"<table width =\"100%%\">"
+        html += u"<thead>"
+        html += u"<tr>"
+        html += u"<th>%s " % _("Questions")
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
-        html += "</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),
+        html += u"</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),
                                                                         _("F"))
-        html += "</th><th>"
+        html += u"</th><th>"
         html += common.elementInstruc("key"+self.id, self.keyInstruc)
-        html += "</th><th>%s " % _("Feedback")
+        html += u"</th><th>%s " % _("Feedback")
         html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
-        html += "</th><th>%s " % _("Hint")
+        html += u"</th><th>%s " % _("Hint")
         html += common.elementInstruc("hint"+self.id, self.hintInstruc)
-        html += "</th>"
-        html += "</tr>"
-        html += "</thead>"
-        html += "<tbody>"
+        html += u"</th>"
+        html += u"</tr>"
+        html += u"</thead>"
+        html += u"<tbody>"
 
         for element in self.questionElements:
             html += element.renderEdit() 
             
-        html += "</tbody>"
-        html += "</table>\n"
-        value = _("Add another question")    
+        html += u"</tbody>"
+        html += u"</table>\n"
+        value = _(u"Add another question")    
         html += common.submitButton("addQuestion"+unicode(self.id), value)
-        html += "<br /><br />" + self.renderEditButtons()
-        html += "</div>\n"
+        html += u"<br /><br />" + self.renderEditButtons()
+        html += u"</div>\n"
 
         return html
 
@@ -137,22 +137,22 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = '<script type="text/javascript" src="common.js"></script>\n'
-        html += '<script type="text/javascript" src="libot_drag.js"></script>\n'
-        html += u"<div class=\"iDevice "
+        html  = u'<script type="text/javascript" src="common.js"></script>\n'
+        html += u'<script type="text/javascript" src="libot_drag.js"></script>'
+        html += u"\n<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += '<img alt="" class="iDevice_icon" '
-        html += "src=\"icon_"+self.idevice.icon+".gif\" />\n"
-        html += "<span class=\"iDeviceTitle\">"       
+        html += u'<img alt="" class="iDevice_icon" '
+        html += u"src=\"icon_"+self.idevice.icon+".gif\" />\n"
+        html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
-        html += "<div class=\"iDevice_inner\">\n"
+        html += u"<div class=\"iDevice_inner\">\n"
         
         for element in self.questionElements:
             html += element.renderQuestionView()
             html += element.renderFeedbackView()
             
-        html += "</div>\n"    
-        html += "</div>\n"
+        html += u"</div>\n"    
+        html += u"</div>\n"
 
         return html
     
