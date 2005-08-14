@@ -39,7 +39,8 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'port', 'dataDir', 
-                   'configDir', 'browserPath', 'greDir')
+                   'configDir', 'browserPath', 'greDir'),
+        'user': ('locale')
     }
 
     def __init__(self):
@@ -70,6 +71,8 @@ class Config:
         self.browserPath = Path("firefox")
         # styles is the list of style names available for loading
         self.styles      = []
+        # locale the user wants
+        self.locale      = "en"
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -87,6 +90,7 @@ class Config:
         self.loadSettings()
         self.setupLogging()
         self.loadStyles()
+        self.loadLocales()
 
     def _overrideDefaultVals(self):
         """
@@ -182,6 +186,8 @@ class Config:
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
+        if self.configParser.has_section('user'):
+            self.locale  = user.locale
 
     def setupLogging(self):
         """
@@ -219,6 +225,17 @@ class Config:
             styleSheet = styleDir/subDir/'content.css'
             if styleSheet.exists():
                 self.styles.append(subDir.basename())
+
+
+    def loadLocales(self):
+        """
+        Scans the eXe i18n directory and builds a list of locales
+        """
+        self.locales = []
+        localeDir    = self.webDir/"locale"
+
+        for subDir in styleDir.listdir():
+            locale = gettext.translation('exe', localeDir, languages=[subDir])
 
 
 
