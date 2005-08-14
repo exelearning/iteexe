@@ -255,14 +255,14 @@ class MainPage(RenderableLivePage):
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.sendScript((u'top.location = "/%s"' % \
+            client.sendScript((_(u'top.location = "/%s"') % \
                               package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
-            log.error(u'Error loading package "%s": %s' % \
+            log.error(_(u'Error loading package "%s": %s') % \
                       (filename, unicode(exc)))
             self.error = True
 
@@ -274,14 +274,14 @@ class MainPage(RenderableLivePage):
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.sendScript((u'top.location = "/%s"' % \
+            client.sendScript((_(u'top.location = "/%s"') % \
                               package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
-            log.error(u'Error loading package "%s": %s' % \
+            log.error(_(u'Error loading package "%s": %s' % \
                       (filename, unicode(exc)))
             self.error = True
 
