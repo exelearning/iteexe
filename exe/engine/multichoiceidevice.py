@@ -77,7 +77,7 @@ encountered in their study </li>
 <li> There should be some consistency between the stem and the responses </li>
 <li> Provide enough options to challenge learners to think about their response
 </li>
-<li> Try to make sure that correct responses are not more detailed then the 
+<li> Try to make sure that correct responses are not more detailed than the 
 distractors </li>
 <li> Distractors should be incorrect but plausible </li>
 </ul>
