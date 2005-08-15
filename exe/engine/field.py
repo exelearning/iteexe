@@ -26,8 +26,6 @@ from exe.engine.persist import Persistable
 from exe.engine.path    import Path
 from HTMLParser         import HTMLParser
 import urllib
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 

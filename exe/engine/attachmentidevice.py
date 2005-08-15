@@ -25,8 +25,6 @@ from exe.engine.idevice  import Idevice
 from exe.engine.path     import Path
 
 import logging
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

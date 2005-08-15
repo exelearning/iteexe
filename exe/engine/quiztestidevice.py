@@ -21,10 +21,8 @@ A QuizTest Idevice is one built up from TestQuestions
 """
 
 import logging
-import gettext
 from exe.engine.persist import Persistable
 from exe.engine.idevice import Idevice
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 

@@ -25,8 +25,6 @@ from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
 from exe.engine.field   import Field, TextField, TextAreaField
 import logging
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 

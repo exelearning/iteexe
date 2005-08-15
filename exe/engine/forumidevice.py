@@ -23,8 +23,6 @@ A Forum Idevice is one built up from forum imformation ans discussion.
 
 import logging
 from exe.engine.idevice import Idevice
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

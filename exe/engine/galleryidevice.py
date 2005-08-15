@@ -27,8 +27,6 @@ from exe.engine.field   import TextField
 from exe.engine.path    import Path
 from exe.engine.persist import Persistable
 import Image, ImageDraw
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

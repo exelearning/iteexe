@@ -21,10 +21,8 @@ A multichoice Idevice is one built up from question and options
 """
 
 import logging
-import gettext
 from twisted.spread     import jelly
 from exe.engine.idevice import Idevice
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 

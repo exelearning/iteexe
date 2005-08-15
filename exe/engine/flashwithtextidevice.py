@@ -24,8 +24,6 @@ A FlashWithText Idevice is one built up from a flash file and free text.
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.field   import TextAreaField, FlashField
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

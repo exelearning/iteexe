@@ -35,8 +35,6 @@ class UrlOpener(urllib.FancyURLopener):
 urllib._urlopener = UrlOpener()
 
 import logging
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

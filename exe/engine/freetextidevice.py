@@ -24,8 +24,6 @@ FreeTextIdevice: just has a block of text
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.field   import TextAreaField
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

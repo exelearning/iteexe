@@ -880,7 +880,7 @@ msgstr ""
 #: exe/engine/freetextidevice.py:47
 #: exe/engine/freetextidevice.py:68
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Esto es un campo general. Contenido de apprender puede ser inplicado"
 
 #: exe/webui/editorpane.py:64
 msgid "This is an optional field."

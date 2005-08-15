@@ -24,8 +24,6 @@ before they look at the answer/s
 
 import logging
 from exe.engine.idevice import Idevice
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

@@ -22,13 +22,11 @@ rendering and processing Idevices in XHTML
 """
 
 import logging
-import gettext
 from exe.webui import common
 from exe.webui.renderable import Renderable
 
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class Block(Renderable):
@@ -202,10 +200,10 @@ class Block(Renderable):
         html += common.confirmThenSubmitImage(
             _(u"This will delete this iDevice."
               u"\\n"
-              u"Do you really want to do this?",
-              u"delete"), self.id, 
-              u"/images/stock-delete.png", 
-              _(u"Delete"),1)
+              u"Do you really want to do this?"),
+            u"delete",
+            self.id, u"/images/stock-delete.png", 
+            _(u"Delete"), 1)
 
         if self.idevice.isFirst():
             html += common.image(u"movePrev", u"/images/stock-go-up-off.png")

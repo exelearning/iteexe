@@ -24,8 +24,6 @@ A ImageWithText Idevice is one built up from an image and free text.
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.field   import TextAreaField, ImageField
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

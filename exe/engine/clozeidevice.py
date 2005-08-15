@@ -27,8 +27,6 @@ from exe.engine.path    import Path
 from exe.engine.field   import ClozeField
 from exe.engine.persist import Persistable
 import Image
-import gettext
-_ = gettext.gettext
 log = logging.getLogger(__name__)
 
 # ===========================================================================

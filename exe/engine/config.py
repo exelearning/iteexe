@@ -26,8 +26,7 @@ O/S specific config classes are derieved from here
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
 import logging
-import sys
-import os
+import sys, os, gettext
 import tempfile
 
 # ===========================================================================
@@ -39,8 +38,9 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'port', 'dataDir', 
-                   'configDir', 'browserPath', 'greDir'),
-        'user': ('locale')
+                   'configDir', 'browserPath', 'greDir',
+                   'localeDir'),
+        'user': ('locale',)
     }
 
     def __init__(self):
@@ -59,6 +59,8 @@ class Config:
         self.webDir      = self.exePath.dirname()
         # greDir is the directory for the Gecko Runtime Environment
         self.greDir      = self.exePath.dirname()
+        # localeDir is the base directory where all the locales are stored
+        self.localeDir   = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on
         self.port        = 8081
         # dataDir is the default directory that is shown to the user
@@ -86,7 +88,7 @@ class Config:
         self.__setConfigPath()
         # Fill in any undefined config options with our defaults
         self._writeDefaultConfigFile()
-        # Now we are ready to server the application
+        # Now we are ready to serve the application
         self.loadSettings()
         self.setupLogging()
         self.loadStyles()
@@ -168,6 +170,7 @@ class Config:
             system = self.configParser.system
             self.webDir      = Path(system.webDir)
             self.greDir      = Path(system.greDir)
+            self.localeDir   = Path(system.localeDir)
             self.port        = int(system.port)
             self.browserPath = Path(system.browserPath)
             self.dataDir     = Path(system.dataDir)
@@ -187,7 +190,7 @@ class Config:
         if not self.configDir.exists():
             self.configDir.mkdir()
         if self.configParser.has_section('user'):
-            self.locale  = user.locale
+            self.locale  = self.configParser.user.locale
 
     def setupLogging(self):
         """
@@ -231,11 +234,12 @@ class Config:
         """
         Scans the eXe i18n directory and builds a list of locales
         """
-        self.locales = []
-        localeDir    = self.webDir/"locale"
-
-        for subDir in styleDir.listdir():
-            locale = gettext.translation('exe', localeDir, languages=[subDir])
+        gettext.install('exe', self.localeDir, True)
+        self.locales = {}
+        for locale in self.localeDir.dirs():
+            self.locales[locale] = gettext.translation('exe', languages=[locale])
+            if locale.basename() == self.locale:
+                self.locales[locale].install()
 
 
 
