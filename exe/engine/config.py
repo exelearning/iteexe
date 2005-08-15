@@ -237,9 +237,10 @@ class Config:
         gettext.install('exe', self.localeDir, True)
         self.locales = {}
         for locale in self.localeDir.dirs():
-            self.locales[locale] = gettext.translation('exe', languages=[locale])
-            if locale.basename() == self.locale:
-                self.locales[locale].install()
+            if (locale/'LC_MESSAGES').exists():
+                self.locales[locale.basename()] = gettext.translation('exe', languages=[locale])
+                if locale.basename() == self.locale:
+                    self.locales[locale.basename()].install()
 
 
 
