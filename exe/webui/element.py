@@ -273,7 +273,60 @@ class ImageElement(Element):
         return html
 
 # ==============================================================================
-clozeEditScript = u"""
+# A wussy check to see that at least one element once has rendered scripts
+# before rendering edit mode content
+haveRenderedEditScripts = False 
+                                
+
+class ClozeElement(Element):
+    """
+    Allows the user to enter a passage of text and declare that some words
+    should be added later by the student
+    """
+
+    # Properties
+    
+    @property
+    def editorId(self):
+        """
+        Returns the id string for our midas editor
+        """
+        return 'editorArea%s' % self.id
+
+    @property
+    def editorJs(self):
+        """
+        Returns the js that gets the editor document
+        """
+        return "document.getElementById('%s').contentWindow.document" % \
+            self.editorId
+
+    @property
+    def hiddenFieldJs(self):
+        """
+        Returns the js that gets the hiddenField document
+        """
+        return "document.getElementById('cloze%s')" % self.id
+
+    # Public Methods
+    
+    def process(self, request):
+        """
+        Sets the encodedContent of our field
+        """
+        clozeid = 'cloze%s' % self.id
+        if clozeid in request.args:
+            self.field.encodedContent = request.args[clozeid][0]
+
+    @staticmethod
+    def renderEditScripts():
+        """
+        Any block that includes one or more of these elements must include one
+        'renderEditScripts' result before any of the elements are rendered
+        """
+        global haveRenderedEditScripts
+        haveRenderedEditScripts = True
+        return u"""
 <script type="text/javascript">
 <!--
   // Turns the editor on
@@ -299,65 +352,12 @@ clozeEditScript = u"""
 </script>
 """
 
-class ClozeElement(Element):
-    """
-    Allows the user to enter a passage of text and declare that some words
-    should be added later by the student
-    """
-
-    # Class attributes
-    haveRenderedEditScripts = False # A wussy check to see that at least one
-                                    # element once has rendered scripts before
-                                    # rendering edit mode content
-
-    # Properties
-    
-    def get_editorId(self):
-        """
-        Returns the id string for our midas editor
-        """
-        return 'editorArea%s' % self.id
-    editorId = property(get_editorId)
-
-    def get_editorJs(self):
-        """
-        Returns the js that gets the editor document
-        """
-        return "document.getElementById('%s').contentWindow.document" % self.editorId;
-    editorJs = property(get_editorJs)
-
-    def get_hiddenFieldJs(self):
-        """
-        Returns the js that gets the hiddenField document
-        """
-        return "document.getElementById('cloze%s')" % self.id;
-    hiddenFieldJs = property(get_hiddenFieldJs)
-
-    # Public Methods
-    
-    def process(self, request):
-        """
-        Sets the encodedContent of our field
-        """
-        clozeid = 'cloze%s' % self.id
-        if clozeid in request.args:
-            self.field.encodedContent = request.args[clozeid][0]
-
-    def renderEditScripts():
-        """
-        Any block that includes one or more of these elements must include one
-        'renderEditScripts' result before any of the elements are rendered
-        """
-        ClozeElement.haveRenderedEditScripts = True
-        return clozeEditScript
-    renderEditScripts = staticmethod(renderEditScripts)
-
     def renderEdit(self):
         """
         Enables the user to set up their passage of text
         """
         # Check that haveRenderedEditScripts has been called exactly once
-        assert ClozeElement.haveRenderedEditScripts, \
+        assert haveRenderedEditScripts, \
             ("You must call ClozeElement.renderEditScripts() once for each "
              "idevice before calling self.renderEdit()")
         html = [
