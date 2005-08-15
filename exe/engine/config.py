@@ -26,7 +26,9 @@ O/S specific config classes are derieved from here
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
 import logging
-import sys, os, gettext
+import sys
+import os
+import gettext
 import tempfile
 
 # ===========================================================================
@@ -238,7 +240,8 @@ class Config:
         self.locales = {}
         for locale in self.localeDir.dirs():
             if (locale/'LC_MESSAGES').exists():
-                self.locales[locale.basename()] = gettext.translation('exe', languages=[locale])
+                self.locales[locale.basename()] = \
+                    gettext.translation('exe', self.localeDir, languages=[str(locale.basename())])
                 if locale.basename() == self.locale:
                     self.locales[locale.basename()].install()
 
