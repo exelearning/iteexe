@@ -24,6 +24,7 @@ from exe.engine import persist
 from exe.engine.idevice import Idevice
 from exe.engine.field import TextAreaField
 
+import imp
 import logging
 import gettext
 _   = gettext.gettext
@@ -39,8 +40,6 @@ class IdeviceStore:
         """
         Initialize
         """
-        # TODO I originally planned Extended and Generic iDevices to
-        # be handled polymorphically, need to reconsider this
         self._nextIdeviceId = 0
         self.config         = config
         self.extended       = []
@@ -108,6 +107,8 @@ class IdeviceStore:
         """
         Load the Extended iDevices (iDevices coded in Python)
         """
+        self.__loadUserExtended()
+
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice
         from exe.engine.reflectionidevice     import ReflectionIdevice
@@ -149,6 +150,20 @@ class IdeviceStore:
         for idevice in self.extended:
             idevice.id = self.getNewIdeviceId()
   
+
+    def __loadUserExtended(self):
+        """
+        Load the user-created extended iDevices which are in the idevices
+        directory
+        """
+        idevicePath = self.config.configDir/'idevices'
+        log.debug("load extended iDevices from "+idevicePath)
+        for module in (idevicePath.listdir("*device.py") +
+                       idevicePath.listdir("*block.py")):
+            moduleName = module.basename().splitext()[0]
+            print moduleName
+            imp.load_source(moduleName, module)
+            
 
     def __loadGeneric(self):
         """
