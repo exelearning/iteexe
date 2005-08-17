@@ -317,6 +317,10 @@ class ClozeElement(Element):
         clozeid = 'cloze%s' % self.id
         if clozeid in request.args:
             self.field.encodedContent = request.args[clozeid][0]
+            
+        feedbackid = 'feedback%s' % self.id
+        if feedbackid in request.args:
+            self.field.feedback = request.args[feedbackid][0]
 
     @staticmethod
     def renderEditScripts():
@@ -360,6 +364,12 @@ class ClozeElement(Element):
         assert haveRenderedEditScripts, \
             ("You must call ClozeElement.renderEditScripts() once for each "
              "idevice before calling self.renderEdit()")
+        
+        feedback = self.field.feedback.replace("\r", "")
+        feedback = feedback.replace("\n", "\\n")
+        feedback = feedback.replace("'", "\\'")
+        feedback = feedback.replace('"', '\\"')
+        
         html = [
             # The field name and instruction button
             u'<p>',
@@ -384,6 +394,8 @@ class ClozeElement(Element):
             u'  <input type="button" value="Gap" ' +
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
             u'</p>',
+            u'<br/><b>%s</b><br/>' % _(u"Feedback: "),
+            common.richTextArea("feedback"+self.id, feedback)
             ]
         return '\n    '.join(html)
 
@@ -406,17 +418,22 @@ class ClozeElement(Element):
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
                     '    style="width:%sem"/>\n' % len(missingWord)]        
-        html += ['<br/><br/><input type="button" value = "Get score"',
+        html += ['<br/><br/><input type="button" value = "%s"' % _(u"Get score"),
                  'onclick="calScore(\'%s\',\'%s\')"/>\n' % (length, self.id)]
         
         words = words[:-1]
-        tmpString = "wordArray= new Array(%s); " % words
+        varString = "wordArray= new Array(%s); " % words
                                                           
-        html += ['&nbsp;&nbsp;<input type="button" value = "Show answers"',
-                 'onclick="%s;answerAll(%s,\'%s\')"/>\n' %(tmpString, 
+        html += ['&nbsp;&nbsp;<input type="button" ',
+                 'value = "%s"' % _(u"Show answers"),
+                 'onclick="%s;answerAll(%s,\'%s\')"/>' %(varString, 
                                                            length, self.id)]
-        html += ['&nbsp;&nbsp;<input type="button" value = "Clear" \n',
-                 'onclick="clearAll(\'%s\',\'%s\')"/>\n' % (length, self.id)]
+        html += ['&nbsp;&nbsp;<input type="button" value = "%s"'% _(u"Clear"),
+                 'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id),
+                 '<br/><div id="s%s" class="feedback" style=" ' % self.id,
+                 'display: none;">',
+                 self.field.feedback,
+                 '</div><br/>']
         return '\n'.join(html)
     
 # ===========================================================================

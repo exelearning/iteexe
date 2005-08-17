@@ -258,6 +258,7 @@ class ClozeField(Field):
         Field.__init__(self, name, instruc)
         self.parts = []
         self._encodedContent = ''
+        self.feedback = ""
 
     # Property handlers
     def set_encodedContent(self, value):

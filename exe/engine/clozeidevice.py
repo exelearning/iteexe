@@ -47,10 +47,10 @@ class ClozeIdevice(Idevice):
                            u"language"),
                          _(u"Take a passage of text and put some gaps in it by "
                            u"putting underscores (_) on either side of the "
-                           u"word. For example: <i>The third _word_ in this text "
-                           u"not be shown to students</i>.<br/>"
-                           u"When checking the student's entry, case is ignored"),
-                            "",
+                           u"word. For example: <i>The third _word_ in this "
+                           u"text not be shown to students</i>.<br/>When "
+                           u"checking the student's entry, case is ignored"),
+                           u"question",
                             parentNode)
         self._content = ClozeField(_(u'Cloze'), 
             _(u'<p>Enter a passage of text, to make a gap that the user must '
@@ -59,6 +59,7 @@ class ClozeIdevice(Idevice):
                'The fith and last _words_ of this text need to be filled in '
                'by the _student_'))
         self._content.idevice = self
+        self.emphasis = Idevice.SomeEmphasis
 
     def getResources(self):
         """

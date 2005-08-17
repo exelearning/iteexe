@@ -322,7 +322,7 @@ function clearAll(length, ident){
         document.getElementById("clz"+ident+i).value="";
         document.getElementById("clz"+ident+i).style.backgroundColor="white"
     }
-
+    showFeedback(ident, 0)
 }
 
 //Calculate the score for cloze idevice
@@ -341,5 +341,14 @@ function answerAll(length, ident){
         document.getElementById("clz"+ident+i).value = wordArray[i];
         document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
     }
+    showFeedback(ident, 1)
+}
 
+// show or hide the feedback for cloze idevice
+function showFeedback(id,isShow){
+    if (isShow==1){
+        document.getElementById("s"+id).style.display = "block";
+    }else{
+        document.getElementById("s"+id).style.display = "none";
+    }
 }

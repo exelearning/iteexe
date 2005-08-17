@@ -64,35 +64,24 @@ class ClozeBlock(Block):
             ClozeElement.renderEditScripts(),
             u'<div class="iDevice emphasis%s">' % \
               unicode(self.idevice.emphasis),
+            common.textInput("title"+self.id, self.idevice.title),
             self.clozeElement.renderEdit(),
             self.renderEditButtons(),
             u'</div>'
             ]
         return u'\n    '.join(html).encode('utf8')
-
-    def renderPreview(self, style):
+    
+    def renderViewContent(self):
         """
-        Renders the HTML for preview inside exe
+        Returns an XHTML string for this block
         """
-        html  = [u'<div class="iDevice emphasis%s" ' %
-                 unicode(self.idevice.emphasis),
-                 u' ondblclick="submitLink(\'edit\',%s, 0);">' % self.id,
-                 u'  <p id="clozeContent%s">' % self.id,
-                 self.clozeElement.renderView(),
-                 u'  </p>',
-                 self.renderViewButtons(),
-                 u'</div>']
-        return u'\n    '.join(html).encode('utf8')
+        html  = u'<script type="text/javascript" src="common.js"></script>\n'
+        html += u'<div class="iDevice_inner">\n'
+        html += u' <p id="clozeContent%s">' % self.id
+        html += self.clozeElement.renderView()
+        html += u'  </p>'
         
-    def renderView(self, style):
-        """
-        Renders the html for export
-        """
-        html  = [u'<div class="iDevice emphasis%s">' %
-                 unicode(self.idevice.emphasis),
-                 u'  <p id="clozeContent%s">' % self.id,
-                 self.clozeElement.renderView(),
-                 u'  </p>',
-                 u'</div>']
-        return u'\n    '.join(html).encode('utf8')
+        return html
+        
+    
 
