@@ -85,48 +85,48 @@ class MainWindow(gtk.Window):
         # TODO think about changing to gtk.UIManager
         menuItems = [
             # path                  key   callback      actn type
-            ( "/_File",             None,         None, 0, "<Branch>" ),
-            ( "/File/_New",         "<control>N", self.newFile, 0, None ),
-            ( "/File/_Open",        "<control>O", self.openFile, 0, None ),
-            ( "/File/sep1",         None,         None, 0, "<Separator>" ),
-            ( "/File/_Save",        "<control>S", self.saveFile, 0, None ),
-            ( "/File/Save _As",     None,         self.saveFileAs, 0, None ),
-            ( "/File/sep2",         None,         None, 0, "<Separator>" ),
-            ( "/File/_Export",      None, None,         0, "<Branch>" ),
-            ( "/File/Export/_SCORM 1.2", None, self.exportScorm, 
+            (_("/_File"),             None,         None, 0, "<Branch>" ),
+            (_("/File/_New"),         "<control>N", self.newFile, 0, None ),
+            (_("/File/_Open"),        "<control>O", self.openFile, 0, None ),
+            (_("/File/sep1"),         None,         None, 0, "<Separator>" ),
+            (_("/File/_Save"),        "<control>S", self.saveFile, 0, None ),
+            (_("/File/Save _As"),     None,         self.saveFileAs, 0, None ),
+            (_("/File/sep2"),         None,         None, 0, "<Separator>" ),
+            (_("/File/_Export"),      None, None,         0, "<Branch>" ),
+            (_("/File/Export/_SCORM 1.2"), None, self.exportScorm, 
                                                         0, None ),
-            ( "/File/Export/IMS Content Package", None, self.exportIms, 
+            (_("/File/Export/IMS Content Package"), None, self.exportIms, 
                                                         0, None ),
-            ( "/File/Export/Web Site", "<control>W", self.exportWebsite, 
+            (_("/File/Export/Web Site"), "<control>W", self.exportWebsite, 
                                                         0, None ),
-            ( "/File/Export/Single Page", None, self.exportSinglePage, 
+            (_("/File/Export/Single Page"), None, self.exportSinglePage, 
                                                         0, None ),
-            ( "/File/sep3",         None,         None, 0, "<Separator>" ),
-            ( "/File/Quit",         "<control>Q", gtk.main_quit, 0, None ),
+            (_("/File/sep3"),         None,         None, 0, "<Separator>" ),
+            (_("/File/Quit"),         "<control>Q", gtk.main_quit, 0, None ),
 
-            ( "/_Tools",            None, None,         0, "<Branch>" ),
-            ( "/Tools/iDevice Editor",     None, self.editorTool, 0, None),
+            (_("/_Tools"),            None, None,         0, "<Branch>" ),
+            (_("/Tools/iDevice Editor"),     None, self.editorTool, 0, None),
 
-            ( "/_Styles",           None, None,         0, "<Branch>" ),
+            (_("/_Styles"),           None, None,         0, "<Branch>" ),
             ] 
         for i, style in enumerate(self.config.styles):
-            menuItems += [("/Styles/"+style, 
+            menuItems += [(_("/Styles/")+style, 
                            None, 
                            self.changeStyle, 
                            i,
                            None), ]
         menuItems += [
-            ( "/_View",             None, None,         0, "<Branch>" ),
-            ( "/View/Refresh",      None, self.refreshView, 0, None)]
+            (_("/_View"),             None, None,         0, "<Branch>" ),
+            (_("/View/Refresh"),      None, self.refreshView, 0, None)]
         if log.getEffectiveLevel() == logging.DEBUG:
             menuItems += [
-            ( "/_Debug",            None, None,         0, "<Branch>" ),
-            ( "/Debug/View _HTML",  None, self.viewHtml,0, None)]
+            (_("/_Debug"),            None, None,         0, "<Branch>" ),
+            (_("/Debug/View _HTML"),  None, self.viewHtml,0, None)]
 
         menuItems += [
-            ( "/_Help",             None, None,         0, "<LastBranch>" ),
-            ( "/_Help/Tutorial",    None, self.loadTutorial, 0, None),
-            ( "/_Help/About",       None, self.about,    0, None),
+            (_("/_Help"),             None, None,         0, "<LastBranch>" ),
+            (_("/_Help/Tutorial"),    None, self.loadTutorial, 0, None),
+            (_("/_Help/About"),       None, self.about,    0, None),
             ]
         accelGrp = gtk.AccelGroup()
         self.itemFactory = gtk.ItemFactory(gtk.MenuBar, "<main>", accelGrp)
