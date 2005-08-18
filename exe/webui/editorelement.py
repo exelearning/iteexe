@@ -23,10 +23,8 @@ EditorElement is responsible for a block of field. Used by iDevice Editor
 import logging
 from exe.webui import common
 from exe.webui.element import Element
-import gettext
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 # ===========================================================================
 class EditorElement(Element):
     """

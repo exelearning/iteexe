@@ -21,13 +21,11 @@ GenericBlock can render and process GenericIdevices as XHTML
 """
 
 import logging
-import gettext
 from exe.webui.block            import Block
 from exe.webui.elementfactory   import g_elementFactory
 from exe.webui                  import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

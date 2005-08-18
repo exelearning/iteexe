@@ -22,12 +22,10 @@ OutlinePane is responsible for creating the XHTML for the package outline
 """
 
 import logging
-import gettext
 from nevow import stan
 from nevow.livepage import handler
 from exe.webui.renderable import Renderable
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

@@ -22,7 +22,6 @@ a given Idevice.
 """
 
 import logging
-import gettext
 
 from exe.engine.freetextidevice       import FreeTextIdevice
 from exe.engine.genericidevice        import GenericIdevice
@@ -55,7 +54,6 @@ from exe.webui.clozeblock             import ClozeBlock
 from exe.webui.flashwithtextblock     import FlashWithTextBlock
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class BlockFactory(object):

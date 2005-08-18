@@ -22,13 +22,11 @@ The AboutPage is responsible for showing about information
 """
 
 import logging
-import gettext
 from twisted.web.resource import Resource
 from exe.webui.renderable import RenderableResource
 from exe.engine           import version
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

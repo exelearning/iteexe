@@ -22,10 +22,8 @@ has loaded, (and loading and saving them?)
 """
 
 import logging
-import gettext
 from exe.engine.package      import Package
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

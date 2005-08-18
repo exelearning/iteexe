@@ -24,12 +24,10 @@ pane
 """
 
 import logging
-import gettext
 from exe.webui import common
 from exe.webui.renderable import Renderable
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ==========================================================================

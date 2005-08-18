@@ -22,10 +22,8 @@ OptionElement is responsible for a block of option.  Used by MultichoiceBlock
 
 import logging
 from exe.webui import common
-import gettext
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 # ===========================================================================
 class OptionElement(object):
     """

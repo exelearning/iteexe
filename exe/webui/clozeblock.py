@@ -22,7 +22,6 @@ must fill in.
 """
 
 import logging
-import gettext
 import urllib
 from exe.webui.block   import Block
 from exe.webui         import common
@@ -30,7 +29,6 @@ from exe.webui.element import ClozeElement
 
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class ClozeBlock(Block):

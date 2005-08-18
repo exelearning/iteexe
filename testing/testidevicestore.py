@@ -24,8 +24,6 @@ import unittest
 import os
 import utils
 
-import gettext
-_   = gettext.gettext
 
 # ===========================================================================
 

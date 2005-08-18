@@ -28,11 +28,9 @@ Browser module
 import os
 import sys
 import logging
-import gettext
 import shutil
 from exe.engine.path import Path
 from urllib import quote
-_   = gettext.gettext
  
 log = logging.getLogger(__name__)
 

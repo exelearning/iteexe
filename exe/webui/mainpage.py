@@ -21,7 +21,9 @@
 This is the main XUL page.
 """
 
-import os, sys, logging, gettext
+import os
+import sys
+import logging
 from twisted.web                 import static
 from nevow                       import loaders, inevow, stan
 from nevow.livepage              import handler, js
@@ -38,7 +40,6 @@ from exe.export.imsexport        import IMSExport
 from exe.engine.path             import Path
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 class MainPage(RenderableLivePage):
@@ -255,7 +256,7 @@ class MainPage(RenderableLivePage):
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.sendScript((_(u'top.location = "/%s"') % \
+            client.sendScript((u'top.location = "/%s"' % \
                               package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
@@ -274,7 +275,7 @@ class MainPage(RenderableLivePage):
             packageStore = self.webserver.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.sendScript((_(u'top.location = "/%s"') % \
+            client.sendScript((u'top.location = "/%s"' % \
                               package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:

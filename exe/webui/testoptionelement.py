@@ -23,10 +23,8 @@ TestquestionElement.
 
 import logging
 from exe.webui import common
-import gettext
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 # ===========================================================================
 class TestoptionElement(object):
     """

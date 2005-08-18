@@ -22,12 +22,10 @@ The PropertiesPage is for user to enter or edit package's properties
 """
 
 import logging
-import gettext
 from exe.webui.propertiespane import PropertiesPane
 from exe.webui.renderable import RenderableResource
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 class PropertiesPage(RenderableResource):

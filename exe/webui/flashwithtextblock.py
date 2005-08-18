@@ -21,13 +21,11 @@ FlashWithTextBlock can render and process FlashWithTextIdevices as XHTML
 """
 
 import logging
-import gettext
 from exe.webui.block   import Block
 from exe.webui.element import TextAreaElement, FlashElement
 from exe.webui         import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

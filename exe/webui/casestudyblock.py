@@ -21,13 +21,11 @@ CasestudyBlock can render and process CasestudyIdevices as XHTML
 """
 
 import logging
-import gettext
 from exe.webui.block               import Block
 from exe.webui.questionelement     import QuestionElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

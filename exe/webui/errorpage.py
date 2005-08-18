@@ -22,12 +22,10 @@ Displays a page with an error message
 """
 
 import logging
-import gettext
 from exe.webui import common
 from twisted.web.resource import Resource
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 class ErrorPage(Resource):

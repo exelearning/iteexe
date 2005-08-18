@@ -33,8 +33,6 @@ from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
 from exe.engine              import version
 import logging
-import gettext
-_   = gettext.gettext
  
 log = logging.getLogger(__name__)
 

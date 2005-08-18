@@ -22,11 +22,9 @@ StyleMenu is responsible for creating the XHTML for the styles menu
 """
 
 import logging
-import gettext
 from exe.webui.renderable import Renderable
 from nevow import stan
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

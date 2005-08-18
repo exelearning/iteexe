@@ -22,12 +22,10 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 """
 
 import logging
-import gettext
 from exe.webui.renderable import Renderable
 from nevow import stan
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class IdevicePane(Renderable):

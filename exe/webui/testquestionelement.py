@@ -22,12 +22,10 @@ Used by QuizTestBlock
 """
 
 import logging
-import gettext
 from exe.webui.testoptionelement   import TestoptionElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

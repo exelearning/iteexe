@@ -21,10 +21,8 @@ Export Pages functions
 """
 
 import logging
-import gettext
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

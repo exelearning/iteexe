@@ -22,10 +22,8 @@ TrueFalseElement is responsible for a block of question. Used by TrueFalseBlock.
 
 import logging
 from exe.webui import common
-import gettext
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 # ===========================================================================
 class TrueFalseElement(object):
     """

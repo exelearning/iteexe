@@ -22,13 +22,11 @@ a single image
 """
 
 import logging
-import gettext
 import urllib
 from exe.webui.block            import Block
 from exe.webui                  import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 class GalleryBlock(Block):
     """

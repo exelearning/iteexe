@@ -21,14 +21,12 @@ SinglePageExport will export a package as a website of HTML pages
 """
 
 import logging
-import gettext
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.engine.beautifulsoup import BeautifulSoup
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

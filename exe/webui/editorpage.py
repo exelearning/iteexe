@@ -22,7 +22,6 @@ The EditorPage is responsible for managing user created iDevices
 """
 
 import logging
-import gettext
 from twisted.web.resource      import Resource
 from exe.webui                 import common
 from exe.engine.genericidevice import GenericIdevice
@@ -30,7 +29,6 @@ from exe.webui.editorpane      import EditorPane
 from exe.webui.renderable      import RenderableResource
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 class EditorPage(RenderableResource):

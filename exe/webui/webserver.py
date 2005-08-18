@@ -36,8 +36,6 @@ from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage import EditorPage
 from exe.webui.aboutpage import AboutPage
 import logging
-import gettext
-_   = gettext.gettext
  
 log = logging.getLogger(__name__)
 

@@ -22,7 +22,6 @@ i.e. the "package".
 """
 
 import logging
-import gettext
 import zipfile 
 from exe.engine.path            import Path, TempDirPath
 from exe.engine.node            import Node
@@ -30,7 +29,6 @@ from exe.engine.genericidevice  import GenericIdevice
 from exe.engine.persist         import Persistable, encodeObject, decodeObject
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class Package(Persistable):

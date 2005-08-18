@@ -19,12 +19,10 @@
 """
 Classes to XHTML elements.  Used by GenericBlock
 """
-import gettext
 import logging
 from exe.webui       import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class Element(object):

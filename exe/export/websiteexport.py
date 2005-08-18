@@ -21,7 +21,6 @@ WebsiteExport will export a package as a website of HTML pages
 """
 
 import logging
-import gettext
 import re
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
@@ -30,7 +29,6 @@ from exe.export.pages         import uniquifyNames
 from twisted.web.microdom     import parseString, MismatchedTags
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

@@ -1,8 +1,6 @@
 from twisted.web.resource import Resource
-import gettext
 import os
 
-_ = gettext.gettext
 
 def genMyPost():
     html = """\

@@ -22,7 +22,6 @@ The EditorPane is responsible for creating new idevice
 """
 
 import logging
-import gettext
 from exe.webui                 import common
 from exe.engine.field          import TextField, TextAreaField, ImageField
 from exe.webui.editorelement   import TextEditorElement
@@ -34,7 +33,6 @@ from exe.engine.path           import Path
 
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

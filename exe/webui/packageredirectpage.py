@@ -23,12 +23,10 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-import gettext
 from exe.webui.mainpage       import MainPage
 from exe.webui.renderable     import RenderableResource
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 class PackageRedirectPage(RenderableResource):

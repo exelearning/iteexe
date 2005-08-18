@@ -21,7 +21,6 @@ Exports an eXe package as a SCORM package
 """
 
 import logging
-import gettext
 import re
 from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
@@ -33,7 +32,6 @@ from exe.engine.uniqueidgenerator  import UniqueIdGenerator
 from twisted.web.microdom          import parseString, MismatchedTags
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

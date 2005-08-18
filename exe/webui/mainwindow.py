@@ -38,8 +38,6 @@ import gtk
 import gtkmozembed
 
 import logging
-import gettext
-_   = gettext.gettext
 log = logging.getLogger(__name__)
 
 class MainWindow(gtk.Window):

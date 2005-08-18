@@ -26,8 +26,6 @@ from exe.engine.field import TextAreaField
 
 import imp
 import logging
-import gettext
-_   = gettext.gettext
 
 log = logging.getLogger(__name__)
 

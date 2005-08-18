@@ -21,13 +21,11 @@ QuizTestBlock can render and process QuizTestIdevices as XHTML
 """
 
 import logging
-import gettext
 from exe.webui.block               import Block
 from exe.webui.testquestionelement import TestquestionElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

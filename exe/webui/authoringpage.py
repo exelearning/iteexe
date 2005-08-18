@@ -22,7 +22,6 @@ area of the eXe web user interface.
 """
 
 import logging
-import gettext
 from twisted.web.resource    import Resource
 from twisted.web.microdom    import parseString, MismatchedTags
 from exe.webui               import common
@@ -32,7 +31,6 @@ from exe.engine.error        import Error
 from exe.webui.renderable    import RenderableResource
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 # ===========================================================================
 class AuthoringPage(RenderableResource):

@@ -22,13 +22,11 @@ WikipediaBlock can render and process WikipediaIdevices as XHTML
 
 import re
 import logging
-import gettext
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 # ===========================================================================

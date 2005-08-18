@@ -22,10 +22,8 @@ This module is for the common HTML used in all webpages.
 """
 
 import logging
-import gettext
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 def docType():
@@ -201,8 +199,10 @@ def checkbox(name, checked, value=""):
 
 
 def elementInstruc(instrucId, instruc, imageFile="help.gif",
-                   label=_(u"Instructions")):
+                   label=None):
     """add a help instruction for a element"""
+    if label is None:
+        label = _(u"Instructions")
     if instruc == u'':
         html = u''
     else:

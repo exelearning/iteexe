@@ -21,7 +21,6 @@ Functions for handling persistance in eXe
 """
 
 import logging
-import gettext
 
 import cStringIO
 from twisted.persisted.styles import Versioned, doUpgrade
@@ -29,7 +28,6 @@ from twisted.spread  import jelly
 from twisted.spread  import banana
 
 log = logging.getLogger(__name__)
-_   = gettext.gettext
 
 
 class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
