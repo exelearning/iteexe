@@ -274,12 +274,14 @@ class ClozeField(Field):
         for shown, hidden in parser.result:
             encodedContent += shown.replace('\r\n', '<br/>')
             if hidden:
-                encodedContent += ' <span style="text-decoration:underline">%s' \
-                              '</span> ' % hidden.replace('\r\n', '<br/>')
+                encodedContent += ' <span style="text-decoration:underline">' 
+                encodedContent += hidden.replace('\r\n', '<br/>')
+                encodedContent += '</span> ' 
         self._encodedContent = urllib.quote(encodedContent)
     
     # Properties
-    encodedContent = property(lambda self: self._encodedContent, set_encodedContent)
+    encodedContent = property(lambda self: self._encodedContent, 
+                              set_encodedContent)
 
 # ===========================================================================
 
