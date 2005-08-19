@@ -28,7 +28,7 @@ from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
 # must import reactor AFTER WebServer. It's yucky, but that's life
 from twisted.internet import reactor
-from exe.webui.mainwindow    import MainWindow
+from exe.gtkui.mainwindow    import MainWindow
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
 from exe.engine              import version
@@ -127,6 +127,7 @@ class Application:
         print "Welcome to eXe: the eLearning XHTML editor"
         log.info("eXe running...")
         self.server.run()
+
     
     def launch(self):
         """
@@ -142,6 +143,7 @@ class Application:
             window = MainWindow(self, "")
             window.show_all()
 
+
     def usage(self):
         """
         Print usage info
@@ -153,3 +155,5 @@ class Application:
         print "in $HOME/.exe on Linux/Unix or"
         print "in Documents and Settings/<user name>/Application Data/exe "
         print "on Windows"
+
+# ===========================================================================

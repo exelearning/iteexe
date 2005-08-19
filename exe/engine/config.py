@@ -96,6 +96,7 @@ class Config:
         self.loadStyles()
         self.loadLocales()
 
+
     def _overrideDefaultVals(self):
         """
         Override this to override the
@@ -110,6 +111,7 @@ class Config:
         """
         return ['exe.conf']
 
+
     def _writeDefaultConfigFile(self):
         """
         [Over]writes 'self.configPath' with a default config file 
@@ -118,8 +120,11 @@ class Config:
         for sectionName, optionNames in self.optionNames.items():
             for optionName in optionNames:
                 defaultVal = getattr(self, optionName)
-                self.configParser.setdefault(sectionName, optionName, defaultVal)
+                self.configParser.setdefault(sectionName, 
+                                             optionName, 
+                                             defaultVal)
         self.configParser.setdefault('logging', 'root', 'ERROR')
+
 
     def __setConfigPath(self):
         """
@@ -154,6 +159,7 @@ class Config:
         # Now make our configParser
         self.configParser.read(self.configPath)
         self.configParser.autoWrite = True
+
 
     def loadSettings(self):
         """
@@ -193,6 +199,7 @@ class Config:
             self.configDir.mkdir()
         if self.configParser.has_section('user'):
             self.locale  = self.configParser.user.locale
+
 
     def setupLogging(self):
         """
@@ -234,14 +241,16 @@ class Config:
 
     def loadLocales(self):
         """
-        Scans the eXe i18n directory and builds a list of locales
+        Scans the eXe locale directory and builds a list of locales
         """
         gettext.install('exe', self.localeDir, True)
         self.locales = {}
         for locale in self.localeDir.dirs():
             if (locale/'LC_MESSAGES').exists():
                 self.locales[locale.basename()] = \
-                    gettext.translation('exe', self.localeDir, languages=[str(locale.basename())])
+                    gettext.translation('exe', 
+                                        self.localeDir, 
+                                        languages=[str(locale.basename())])
                 if locale.basename() == self.locale:
                     self.locales[locale.basename()].install()
 
