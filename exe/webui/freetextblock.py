@@ -84,4 +84,8 @@ class FreeTextBlock(Block):
         html += u"</div>\n"
         return html
     
+from exe.engine.freetextidevice import FreeTextIdevice
+from exe.webui.blockfactory     import g_blockFactory
+g_blockFactory.registerBlockType(FreeTextBlock, FreeTextIdevice)    
+
 # ===========================================================================

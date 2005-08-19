@@ -107,4 +107,8 @@ class ReflectionBlock(Block):
         return html
     
 
+from exe.engine.reflectionidevice  import ReflectionIdevice
+from exe.webui.blockfactory        import g_blockFactory
+g_blockFactory.registerBlockType(ReflectionBlock, ReflectionIdevice)    
+
 # ===========================================================================

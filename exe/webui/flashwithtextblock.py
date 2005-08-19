@@ -135,4 +135,8 @@ class FlashWithTextBlock(Block):
         return html
     
 
+from exe.engine.flashwithtextidevice import FlashWithTextIdevice
+from exe.webui.blockfactory          import g_blockFactory
+g_blockFactory.registerBlockType(FlashWithTextBlock, FlashWithTextIdevice)    
+
 # ===========================================================================

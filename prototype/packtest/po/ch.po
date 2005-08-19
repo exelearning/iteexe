@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-29 14:20+1300\n"
+"POT-Creation-Date: 2005-08-11 14:34+1200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,18 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: page.py:34
+#: page.py:45
 msgid "Done"
 msgstr "完成"
 
-#: page.py:36
+#: page.py:47
 msgid "Delete"
 msgstr "删除"
 
-#: page.py:45
+#: page.py:56
 msgid "Edit"
 msgstr "编辑"
 
-#: page.py:70
+#: page.py:141
 msgid "Add"
 msgstr "增加"

@@ -135,4 +135,8 @@ class ImageWithTextBlock(Block):
         return html
     
 
+from exe.engine.imagewithtextidevice import ImageWithTextIdevice
+from exe.webui.blockfactory          import g_blockFactory
+g_blockFactory.registerBlockType(ImageWithTextBlock, ImageWithTextIdevice)    
+
 # ===========================================================================

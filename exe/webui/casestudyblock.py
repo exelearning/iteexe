@@ -111,4 +111,8 @@ class CasestudyBlock(Block):
 
         return html
 
+from exe.engine.casestudyidevice import CasestudyIdevice
+from exe.webui.blockfactory      import g_blockFactory
+g_blockFactory.registerBlockType(CasestudyBlock, CasestudyIdevice)    
+
 # ===========================================================================

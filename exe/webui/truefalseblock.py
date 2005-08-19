@@ -156,4 +156,8 @@ class TrueFalseBlock(Block):
     
 
 
+from exe.engine.truefalseidevice   import TrueFalseIdevice
+from exe.webui.blockfactory        import g_blockFactory
+g_blockFactory.registerBlockType(TrueFalseBlock, TrueFalseIdevice)    
+
 # ===========================================================================

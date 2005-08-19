@@ -28,6 +28,7 @@ from exe.webui                  import common
 
 log = logging.getLogger(__name__)
 
+# ===========================================================================
 class GalleryBlock(Block):
     """
     Gallery block can render a group of images, each with desciptions and popup
@@ -292,3 +293,8 @@ class GalleryBlock(Block):
             if len(self.idevice.images) > 0:
                 cls.resourcesUrl = oldUrl
                 
+from exe.engine.galleryidevice  import GalleryIdevice
+from exe.webui.blockfactory     import g_blockFactory
+g_blockFactory.registerBlockType(GalleryBlock, GalleryIdevice)    
+
+# ===========================================================================

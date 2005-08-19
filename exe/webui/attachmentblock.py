@@ -20,10 +20,10 @@
 AttachmentBlock can render and process AttachmentIdevices as XHTML
 """
 
-import logging
 from exe.webui.block   import Block
 from exe.webui         import common
 
+import logging
 log = logging.getLogger(__name__)
 
 
@@ -133,5 +133,10 @@ class AttachmentBlock(Block):
         html += u"</div>\n"
         return html
     
+
+from exe.engine.attachmentidevice import AttachmentIdevice
+from exe.webui.blockfactory     import g_blockFactory
+g_blockFactory.registerBlockType(AttachmentBlock, AttachmentIdevice)    
+
 
 # ===========================================================================

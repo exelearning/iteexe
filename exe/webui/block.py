@@ -21,11 +21,10 @@ Block is the base class for the classes which are responsible for
 rendering and processing Idevices in XHTML
 """
 
-import logging
 from exe.webui import common
 from exe.webui.renderable import Renderable
 
-
+import logging
 log = logging.getLogger(__name__)
 
 # ===========================================================================

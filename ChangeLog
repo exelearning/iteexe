@@ -1,120 +1,182 @@
-2005-08-10 01:14  djm
+2005-08-19 00:57  djm
 
-	* branches/0.7/README: Added warning about GtkMozEmbed
+	* exe/engine/field.py: lil tidyup
 
-2005-08-10 01:10  djm
+2005-08-18 05:40  matthew
 
-	* branches/0.7/README: change 0.6 to 0.7 in README
+	* exe/application.py, exe/engine/idevicestore.py,
+	  exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/engine/persist.py, exe/export/imsexport.py,
+	  exe/export/pages.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/webui/aboutpage.py, exe/webui/attachmentblock.py,
+	  exe/webui/authoringpage.py, exe/webui/blockfactory.py,
+	  exe/webui/browser.py, exe/webui/casestudyblock.py,
+	  exe/webui/clozeblock.py, exe/webui/common.py,
+	  exe/webui/editorelement.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/errorpage.py, exe/webui/flashwithtextblock.py,
+	  exe/webui/forumblock.py, exe/webui/freetextblock.py,
+	  exe/webui/galleryblock.py, exe/webui/genericblock.py,
+	  exe/webui/idevicepane.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/locale/es/LC_MESSAGES/exe.mo,
+	  exe/webui/locale/exe_es.po, exe/webui/mainpage.py,
+	  exe/webui/mainwindow.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py, exe/webui/outlinepane.py,
+	  exe/webui/packageredirectpage.py, exe/webui/propertiespage.py,
+	  exe/webui/propertiespane.py, exe/webui/questionelement.py,
+	  exe/webui/quiztestblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/stylemenu.py, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py, exe/webui/truefalseblock.py,
+	  exe/webui/truefalseelement.py, exe/webui/webserver.py,
+	  exe/webui/wikipediablock.py, prototype/packtest/page.py,
+	  testing/testidevicestore.py: Get text work
 
-2005-08-09 23:22  matthew
+2005-08-18 04:51  djm
 
-	* branches/0.7/installs/gentoo/exe-0.7.ebuild: Updated ebuild to
-	  depend on mozilla
+	* exe/webui/mainwindow.py: put menu items thru gettext
 
-2005-08-09 23:14  djm
+2005-08-17 21:58  jenny
 
-	* branches/0.7/exe/webui/scripts/armadillo.js: Removed link buttons
-	  as they don't work with GtkMozEmbed
+	* exe/engine/clozeidevice.py, exe/engine/field.py,
+	  exe/webui/clozeblock.py, exe/webui/element.py,
+	  exe/webui/reflectionblock.py, exe/webui/scripts/common.js: added
+	  label and feedback for cloze idevice.
 
-2005-08-09 22:26  jenny
+2005-08-15 08:28  matthew
 
-	* branches/0.7/doc/eXe-tutorial.elp: updated exe-tutorial.elp
+	* exe/webui/element.py: Fixed up element.py for pylint to be happy
 
-2005-08-09 06:23  matthew
+2005-08-15 05:12  djm
 
-	* branches/0.7/installs/gentoo/makeEbuild.py: Automated way of
-	  making ebuilds
+	* exe/engine/idevicestore.py: Working towards plug-in iDevices
 
-2005-08-09 06:03  djm
+2005-08-15 04:42  jenny
 
-	* branches/0.7/MANIFEST.in, branches/0.7/exe/engine/linuxconfig.py,
-	  branches/0.7/exe/run-exe.sh,
-	  branches/0.7/installs/rpm/exe-twisted.spec, branches/0.7/setup.py,
-	  branches/0.7/win-setup.py: Updated eXe RPM
+	* exe/engine/config.py: Made gettext work on windows (MS)
 
-2005-08-09 05:17  matthew
+2005-08-15 00:34  matthew
 
-	* branches/0.7/exe/engine/galleryidevice.py: Made gallery support
-	  upgrades
+	* exe/engine/config.py: Fixed prob where translation was dying on
+	  .svn dir
 
-2005-08-09 05:03  matthew
+2005-08-15 00:20  matthew
 
-	* branches/0.7/installs/gentoo/exe-0.7.ebuild: 0.7 ebuild
+	* exe/engine/attachmentidevice.py, exe/engine/casestudyidevice.py,
+	  exe/engine/clozeidevice.py, exe/engine/config.py,
+	  exe/engine/field.py, exe/engine/flashwithtextidevice.py,
+	  exe/engine/forumidevice.py, exe/engine/freetextidevice.py,
+	  exe/engine/galleryidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/imagewithtextidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/truefalseidevice.py,
+	  exe/engine/wikipediaidevice.py, exe/webui/block.py,
+	  exe/webui/locale, exe/webui/locale/es,
+	  exe/webui/locale/es/LC_MESSAGES,
+	  exe/webui/locale/es/LC_MESSAGES/exe.mo,
+	  exe/webui/locale/exe_es.po, exe_es.po, exe_es2.po: gettext work.
+	  Can now change [user] locale=es and get a half baked spanish
+	  translation
 
-2005-08-09 02:42  jenny
+2005-08-14 23:34  matthew
 
-	* branches/0.7/installs/windows/exe.nsi, branches/0.7/win-setup.py:
-	  modified setup and installation files.
+	* exe/engine/multichoiceidevice.py: Fixed typo
 
-2005-08-09 02:04  matthew
+2005-08-14 22:32  djm
 
-	* branches/0.7/MANIFEST.in: Removed firefox directory reference that
-	  is no longer used
+	* exe/engine/config.py: Added locale setting
 
-2005-08-09 02:03  matthew
+2005-08-14 21:15  matthew
 
-	* branches/0.7/setup.py: Added mr_x.gif resource
+	* tools/babelizer.py: po2dict work
 
-2005-08-08 23:52  matthew
+2005-08-14 14:03  matthew
 
-	* branches/0.7/exe/engine/package.py: decorations ;)
+	* app.fil, exe_es.po, exe_es2.po, tools/babelizer.py,
+	  tools/mki18n.py: gettext work
 
-2005-08-08 23:45  matthew
+2005-08-14 11:26  matthew
 
-	* branches/0.7/exe/engine/reflectionidevice.py: Fixed upgrade proby
+	* exe/webui/block.py, exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/galleryblock.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/mainpage.py, exe/webui/optionelement.py,
+	  exe/webui/outlinepane.py, exe/webui/quiztestblock.py,
+	  exe/webui/reflectionblock.py, exe/webui/stylemenu.py,
+	  exe/webui/testoptionelement.py, exe/webui/testquestionelement.py,
+	  exe/webui/truefalseblock.py, exe/webui/truefalseelement.py:
+	  gettext and unicode work
 
-2005-08-08 23:36  jenny
+2005-08-14 10:42  matthew
 
-	* branches/0.7/exe/webui/galleryblock.py: fixed image gallery
-	  idevice icon display bugs for exporting.
+	* exe/webui/mainpage.py: Work towards gettext
 
-2005-08-08 23:26  matthew
+2005-08-12 03:37  jenny
 
-	* branches/0.7/exe/engine/path.py: code tidy
+	* exe/webui/element.py, exe/webui/scripts/common.js: add Show answer
+	  button for cloze idevice
 
-2005-08-08 22:49  brent
+2005-08-12 03:04  matthew
 
-	* branches/0.7/exe/webui/mr_x.gif: resized MrX to 16x16.
+	* exe/engine/clozeidevice.py: Made cloze field have an owner idevice
 
-2005-08-08 22:29  brent
+2005-08-11 23:23  jenny
 
-	* branches/0.7/exe/webui/style/standardwhite/icon_gallery.gif:
-	  resised MrX to 16x16px.
+	* exe/webui/element.py, exe/webui/scripts/common.js: add calScore
+	  button for cloze idevice.
 
-2005-08-08 19:44  djm
+2005-08-11 06:34  jenny
 
-	* branches/0.7/exe/engine/genericidevice.py: set idevice in fields
-	  when cloning
+	* exe/webui/element.py: add clear button for cloze idevice.
 
-2005-08-08 04:10  jenny
+2005-08-11 02:27  djm
 
-	* branches/0.7/exe/webui/multichoiceblock.py,
-	  branches/0.7/exe/webui/optionelement.py,
-	  branches/0.7/exe/webui/questionelement.py,
-	  branches/0.7/exe/webui/reflectionblock.py,
-	  branches/0.7/exe/webui/scripts/common.js,
-	  branches/0.7/exe/webui/truefalseelement.py: fixed truefalse and
-	  multichoice idevices' feedback bugs.
+	* exe/engine/attachmentidevice.py,
+	  exe/engine/flashwithtextidevice.py, exe/engine/idevicestore.py,
+	  exe/engine/imagewithtextidevice.py: empty string has special
+	  meaning for gettext, don't ask for it to be translated.
 
-2005-08-08 01:46  jenny
+2005-08-10 03:29  djm
 
-	* branches/0.7/exe/webui/editorpane.py: fixed issue 152 (iDevice
-	  editor no longer displaying icons ).
+	* exe/engine/idevicestore.py, installs/gentoo/exe-0.7.ebuild: Merge
+	  in revs 1139:1141 from the 0.7 branch - updated ebuild
 
-2005-08-08 00:23  djm
+2005-08-10 03:28  matthew
 
-	* branches/0.7/exe/engine/package.py,
-	  branches/0.7/exe/webui/mainwindow.py: fixed saving
+	* exe/engine/idevicestore.py, exe/webui/blockfactory.py: Put
+	  idevices back in
 
-2005-08-07 22:16  djm
+2005-08-10 03:16  djm
 
-	* branches/0.7/exe/engine/idevicestore.py,
-	  branches/0.7/exe/webui/blockfactory.py: show only idevices to be
-	  released
+	* ChangeLog, MANIFEST.in, NEWS, README, doc/eXe-tutorial.elp,
+	  exe/engine/field.py, exe/engine/galleryidevice.py,
+	  exe/engine/genericidevice.py, exe/engine/idevicestore.py,
+	  exe/engine/linuxconfig.py, exe/engine/package.py,
+	  exe/engine/path.py, exe/engine/reflectionidevice.py,
+	  exe/run-exe.sh, exe/webui/blockfactory.py,
+	  exe/webui/editorpane.py, exe/webui/galleryblock.py,
+	  exe/webui/mainwindow.py, exe/webui/mr_x.gif,
+	  exe/webui/multichoiceblock.py, exe/webui/optionelement.py,
+	  exe/webui/questionelement.py, exe/webui/reflectionblock.py,
+	  exe/webui/scripts/armadillo.js, exe/webui/scripts/common.js,
+	  exe/webui/style/standardwhite/icon_gallery.gif,
+	  exe/webui/truefalseelement.py, installs/gentoo/exe-0.7.ebuild,
+	  installs/gentoo/makeEbuild.py, installs/rpm/exe-twisted.spec,
+	  installs/windows/exe.nsi, setup.py, win-setup.py: Merged in
+	  changes from revisions 1110:1139 from 0.7 branch.
 
-2005-08-07 21:19  djm
+2005-08-08 22:19  matthew
 
-	* branches/0.7: Created branch for 0.7 release
+	* exe/engine/clozeidevice.py, exe/engine/field.py,
+	  exe/webui/element.py: Cloze works better now
+
+2005-08-08 00:24  matthew
+
+	* exe/application.py, exe/engine/field.py,
+	  exe/webui/authoringpage.py, exe/webui/clozeblock.py,
+	  exe/webui/element.py, exe/webui/mainwindow.py,
+	  exe/webui/outlinepane.py, exe/webui/scripts/common.js,
+	  prototype/burningrats/burningrats.py: Merged in matthew branch
+	  with cloze idevice, some tidy ups some decorators added
 
 2005-08-07 21:19  jenny
 

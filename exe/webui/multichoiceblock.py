@@ -205,4 +205,8 @@ class MultichoiceBlock(Block):
 
         return html
 
+from exe.engine.multichoiceidevice import MultichoiceIdevice
+from exe.webui.blockfactory        import g_blockFactory
+g_blockFactory.registerBlockType(MultichoiceBlock, MultichoiceIdevice)    
+
 # ===========================================================================

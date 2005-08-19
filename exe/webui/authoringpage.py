@@ -26,6 +26,7 @@ from twisted.web.resource    import Resource
 from twisted.web.microdom    import parseString, MismatchedTags
 from exe.webui               import common
 from cgi                     import escape
+import exe.webui.builtinblocks
 from exe.webui.blockfactory  import g_blockFactory
 from exe.engine.error        import Error
 from exe.webui.renderable    import RenderableResource

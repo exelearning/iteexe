@@ -225,4 +225,8 @@ class ForumBlock(Block):
     
   
 
+from exe.engine.forumidevice import ForumIdevice
+from exe.webui.blockfactory  import g_blockFactory
+g_blockFactory.registerBlockType(ForumBlock, ForumIdevice)    
+
 # ===========================================================================

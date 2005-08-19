@@ -25,6 +25,7 @@ from exe.engine.idevice import Idevice
 from exe.engine.field import TextAreaField
 
 import imp
+import sys
 import logging
 
 log = logging.getLogger(__name__)
@@ -156,12 +157,21 @@ class IdeviceStore:
         """
         idevicePath = self.config.configDir/'idevices'
         log.debug("load extended iDevices from "+idevicePath)
-        for module in (idevicePath.listdir("*device.py") +
-                       idevicePath.listdir("*block.py")):
-            moduleName = module.basename().splitext()[0]
-            print moduleName
-            imp.load_source(moduleName, module)
             
+        sys.path = [idevicePath] + sys.path
+        
+        # add to the list of extended idevices
+        for path in idevicePath.listdir("*idevice.py"):
+            moduleName = path.basename().splitext()[0]
+            module = __import__(moduleName, globals(), locals(), [])
+            module.register(self)
+
+        # register the blocks for rendering the idevices
+        for path in idevicePath.listdir("*block.py"):
+            moduleName = path.basename().splitext()[0]
+            module = __import__(moduleName, globals(), locals(), [])
+            module.register()
+
 
     def __loadGeneric(self):
         """

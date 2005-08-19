@@ -385,4 +385,8 @@ class QuizTestBlock(Block):
             
         return score 
             
+from exe.engine.quiztestidevice    import QuizTestIdevice
+from exe.webui.blockfactory        import g_blockFactory
+g_blockFactory.registerBlockType(QuizTestBlock, QuizTestIdevice)    
+
 # ===========================================================================

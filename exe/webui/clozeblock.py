@@ -33,8 +33,8 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class ClozeBlock(Block):
     """
-    Renders a paragraph where the content creator can choose which words the student
-    must fill in.
+    Renders a paragraph where the content creator can choose which words the
+    student must fill in.
     """
     def __init__(self, parent, idevice):
         """
@@ -82,4 +82,9 @@ class ClozeBlock(Block):
         return html
         
     
+from exe.engine.clozeidevice import ClozeIdevice
+from exe.webui.blockfactory  import g_blockFactory
+g_blockFactory.registerBlockType(ClozeBlock, ClozeIdevice)    
 
+
+# ===========================================================================

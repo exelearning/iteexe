@@ -112,4 +112,8 @@ class GenericBlock(Block):
         html += u"</div>\n"
         return html
 
+from exe.engine.genericidevice import GenericIdevice
+from exe.webui.blockfactory    import g_blockFactory
+g_blockFactory.registerBlockType(GenericBlock, GenericIdevice)    
+
 # ===========================================================================
