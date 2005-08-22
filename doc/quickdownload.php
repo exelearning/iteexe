@@ -23,8 +23,10 @@
         {
             print "Creating a Mac install is something we're still working ";
             print "towards.<br/>\n";
-            print "(There's more information in the README if you're ";
-            print "interested in helping.)<br/>\n";
+            print "(There's more information in the ";
+            print "<a href=\"http://exelearning.org/svn/exe/trunk/README\">";
+            print "README</a> ";
+            print "if you're interested in helping.)<br/>\n";
         } 
         else
         {
