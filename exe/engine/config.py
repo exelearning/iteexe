@@ -224,35 +224,54 @@ class Config:
                     logging.getLogger().setLevel(loggingLevels[level])
                 else:
                     logging.getLogger(logger).setLevel(loggingLevels[level])
+
+        log.info("************** eXe logging started **************")
+        log.info("configPath = %s" % self.configPath)
+        log.info("exePath    = %s" % self.exePath)
+        log.info("webDir     = %s" % self.webDir)
+        log.info("greDir     = %s" % self.greDir)
+        log.info("localeDir  = %s" % self.localeDir)
+        log.info("port       = %d" % self.port)
+        log.info("dataDir    = %s" % self.dataDir)
+        log.info("configDir  = %s" % self.configDir)
+        log.info("locale     = %s" % self.locale)
                     
 
     def loadStyles(self):
         """
         Scans the eXe style directory and builds a list of styles
         """
+        log = logging.getLogger()
+        log.debug("loadStyles")
         self.styles = []
         styleDir    = self.webDir/"style"
 
         for subDir in styleDir.listdir():
             styleSheet = styleDir/subDir/'content.css'
             if styleSheet.exists():
-                self.styles.append(subDir.basename())
+                style = subDir.basename()
+                log.debug(" loading style %s" % style)
+                self.styles.append(style)
 
 
     def loadLocales(self):
         """
         Scans the eXe locale directory and builds a list of locales
         """
+        log = logging.getLogger()
+        log.debug("loadLocales")
         gettext.install('exe', self.localeDir, True)
         self.locales = {}
-        for locale in self.localeDir.dirs():
-            if (locale/'LC_MESSAGES').exists():
-                self.locales[locale.basename()] = \
+        for subDir in self.localeDir.dirs():
+            if (subDir/'LC_MESSAGES').exists():
+                self.locales[subDir.basename()] = \
                     gettext.translation('exe', 
                                         self.localeDir, 
-                                        languages=[str(locale.basename())])
-                if locale.basename() == self.locale:
-                    self.locales[locale.basename()].install()
+                                        languages=[str(subDir.basename())])
+                if subDir.basename() == self.locale:
+                    locale = subDir.basename()
+                    log.debug(" loading locale %s" % locale)
+                    self.locales[locale].install()
 
 
 
