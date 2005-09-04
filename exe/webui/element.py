@@ -389,7 +389,7 @@ class ClozeElement(Element):
             u'</p>',
             # Render our toolbar
             u'<p>',
-            u'  <input type="button" value="Gap" ' +
+            u'  <input type="button" value="%s" ' % _("Gap")+
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
             u'</p>',
             u'<br/><b>%s</b><br/>' % _(u"Feedback: "),

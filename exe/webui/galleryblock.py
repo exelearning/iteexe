@@ -163,7 +163,7 @@ class GalleryBlock(Block):
                 u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
                 u'  <img alt="add images" style="vertical-align: text-bottom;" '
                 u' src="/images/stock-insert-image.png" ' +
-                u' /> add images',
+                u' /> %s' % _(u"Add images"),
                 u'   </a>',
                 common.hiddenField('newImagePath'+self.id),
                 u'</p>']

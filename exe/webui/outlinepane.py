@@ -225,7 +225,7 @@ class OutlinePane(Renderable):
                 """'btnRename').getAttribute('oncommand'))">""",
                 '        <treecols>',
                 '            <treecol id="sectionCol" primary="true" '+
-                'label="Outline" flex="1"/>',
+                'label="%s" flex="1"/>' % _(u"Outline"),
                 '        </treecols>',
                 '        <treechildren>',)
         xul += self.__renderNode(self.package.root, 12)
