@@ -203,7 +203,7 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
     """add a help instruction for a element"""
     if label is None:
         label = _(u"Instructions")
-    if instruc == u'':
+    if instruc == u'' or instruc == u' ':
         html = u''
     else:
         html  = u'<a onmousedown="Javascript:updateCoords(event);" '

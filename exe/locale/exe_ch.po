@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-09-01 14:42+1200\n"
-"PO-Revision-Date: 2005-09-01 15:17+1200\n"
+"PO-Revision-Date: 2005-09-05 10:37+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -148,26 +148,26 @@ msgid ""
 "<li>\tHow the learners will interact with the materials and each other e.g.\n"
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
-msgstr ""
+msgstr " "
 
 #: casestudyidevice.py:73
 msgid ""
 "Create the case story.  A good case is one \n"
 "that describes a controversy."
-msgstr ""
+msgstr " "
 
 #: casestudyidevice.py:75
 msgid ""
 "Enter the study question.  These questions \n"
 "should draw out the educational messages presented in the case.  Consider \n"
 "aspects of the case like, characters, timeliness, relevance, dilemmas."
-msgstr ""
+msgstr " "
 
 #: casestudyidevice.py:78
 msgid ""
 "Provide feedback on the question.  This may\n"
 "be a summary of the main points or concepts."
-msgstr "提供问题回馈, 如主要论点或概念."
+msgstr " "
 
 #: clozeidevice.py:42
 msgid "Cloze Idevice"
@@ -175,7 +175,7 @@ msgstr "填空题"
 
 #: clozeidevice.py:44
 msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
-msgstr ""
+msgstr " "
 
 #: clozeidevice.py:48
 msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
@@ -519,7 +519,7 @@ msgstr "信息:"
 #: forumblock.py:186
 #: forumidevice.py:35
 msgid "Forum Discussion"
-msgstr " "
+msgstr "论坛"
 
 #: forumblock.py:171
 #: forumblock.py:188
