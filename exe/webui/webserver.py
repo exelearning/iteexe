@@ -24,10 +24,6 @@
 Webserver module
 """
 
-# needed so we can display our GTK window
-from twisted.internet import gtk2reactor
-gtk2reactor.install()
-
 from twisted.internet import reactor
 from twisted.internet.error import CannotListenError
 from nevow import appserver

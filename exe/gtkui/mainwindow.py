@@ -70,14 +70,13 @@ class MainWindow(gtk.Window):
         gtk.Window.__init__(self)
         self.connect("delete-event", self.quit)
         self.set_title("eXe version "+version.release)
-#        iconFile = self.config.webDir / "exe_icon.ico"
         iconFile = self.config.webDir / "mr_x.gif"
         self.set_icon(gtk.gdk.pixbuf_new_from_file(iconFile))
         self.set_size_request(800, 700)
 
         # VBox
-        self.vbox = gtk.VBox()
-        self.add(self.vbox)
+        self.vBox = gtk.VBox()
+        self.add(self.vBox)
 
         # Menu 
         # TODO think about changing to gtk.UIManager
@@ -131,18 +130,28 @@ class MainWindow(gtk.Window):
         self.itemFactory.create_items(tuple(menuItems))
         self.add_accel_group(accelGrp)
         self.menu = self.itemFactory.get_widget("<main>")
-        self.vbox.pack_start(self.menu,    expand=False)
+        self.vBox.pack_start(self.menu,    expand=False)
 
+        # HBox
+        hPane = gtk.HPaned()
+        self.vBox.pack_start(hPane)
+        leftPane = gtk.VPaned()
+        hPane.add1(leftPane)
+        leftPane.add1(gtk.Label("Outline Pane"))
+        from exe.gtkui.idevicepane import IdevicePane
+        idevicePane = IdevicePane(self.application.ideviceStore)
+        leftPane.add2(idevicePane.treeview)
+        
         # Browser
         self.browser = gtkmozembed.MozEmbed()
         self.browser.connect("location", self.newLocation, "location")
         self.browser.load_url(self.url+"/"+self.packageName)
-        self.vbox.pack_start(self.browser)
+        hPane.add2(self.browser)
 
         # Status Bar
         self.statusbar = gtk.Statusbar()
         self.statusbar.set_has_resize_grip(True)
-        self.vbox.pack_end(self.statusbar, expand=False)
+        self.vBox.pack_end(self.statusbar, expand=False)
         self.statusContext = self.statusbar.get_context_id("MainWindow")
 
 
@@ -407,6 +416,7 @@ class MainWindow(gtk.Window):
         editorWindow.add(browser)
         editorWindow.show_all()
 
+
     def changeStyle(self, action, dummy):
         """
         Change the style to that chosen
@@ -458,6 +468,7 @@ class MainWindow(gtk.Window):
         except Exception, exc:
             log.error(u'Error loading package "%s": %s' % \
                       (filename, unicode(exc)))
+
 
     def newLocation(self, *dummy):
         """

@@ -24,6 +24,7 @@ area of the eXe web user interface.
 import logging
 from twisted.web.resource    import Resource
 from twisted.web.microdom    import parseString, MismatchedTags
+from twisted.web             import static
 from exe.webui               import common
 from cgi                     import escape
 import exe.webui.builtinblocks
@@ -41,13 +42,16 @@ class AuthoringPage(RenderableResource):
     """
     name = u'authoring'
 
-    def __init__(self, parent):
+    def __init__(self, parent, package):
         """
         Initialize
         'parent' is our MainPage instance that created us
         """
-        RenderableResource.__init__(self, parent)
+        self.name = package.name
+        RenderableResource.__init__(self, parent, package)
+        self.putChild("resources", static.File(package.resourceDir))
         self.blocks  = []
+        
 
 
     def getChild(self, name, request):

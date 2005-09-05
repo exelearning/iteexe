@@ -1,3 +1,85 @@
+2005-09-04 22:30  jenny
+
+	* exe/locale/ch, exe/locale/ch/LC_MESSAGES,
+	  exe/locale/ch/LC_MESSAGES/exe.mo, exe/locale/exe_ch.po,
+	  exe/webui/block.py, exe/webui/common.py: added Chinese mo file.
+
+2005-09-04 21:50  djm
+
+	* tools/backup.sh: changes since hack and upgrade
+
+2005-09-04 21:10  jenny
+
+	* exe/webui/templates/mainpage-cn.xul: added mainpage-cn.xul
+
+2005-09-04 21:08  jenny
+
+	* exe/webui/element.py, exe/webui/galleryblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/outlinepane.py: fixed
+	  some gettext missing string.
+
+2005-09-01 03:11  jenny
+
+	* exe/locale/exe_ch.po: updated exe_ch.po
+
+2005-08-24 07:52  jenny
+
+	* exe/locale/exe_ch.po: added chinese po file
+
+2005-08-23 03:35  djm
+
+	* exe/engine/config.py: Added earlier logging to help debug config
+	  problems.
+
+2005-08-22 01:46  matthew
+
+	* doc/eXe-tutorial-es.elp, doc/eXe_TecReport_Jan2005.doc,
+	  doc/eXe_TecReport_Jan2005_WGM.doc,
+	  doc/eXe_reportfinaldraft-Wayne.doc, doc/eXe_reportfinaldraft.doc,
+	  doc/exeLearning_Tairawhiti Polytechnic.ppt,
+	  doc/exeLearning_Tairawhiti Polytechnic.sxi: Mat, work in peru
+
+2005-08-22 01:09  djm
+
+	* doc/quickdownload.php: added URL to README
+
+2005-08-22 00:55  djm
+
+	* doc/quickdownload.php: quickdownload script for the website
+
+2005-08-19 04:17  djm
+
+	* exe/application.py: not ready for gtkui just yet
+
+2005-08-19 04:16  djm
+
+	* exe/application.py, exe/engine/config.py: lil tidy up
+
+2005-08-19 03:59  djm
+
+	* doc/exe_class.xmi: new class diagram in Umbrello much easier than
+	  Dia
+
+2005-08-19 03:37  djm
+
+	* ChangeLog, exe/engine/idevicestore.py,
+	  exe/idevices/exampleblock.py, exe/idevices/exampleidevice.py,
+	  exe/webui/attachmentblock.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/builtinblocks.py, exe/webui/casestudyblock.py,
+	  exe/webui/clozeblock.py, exe/webui/flashwithtextblock.py,
+	  exe/webui/forumblock.py, exe/webui/freetextblock.py,
+	  exe/webui/galleryblock.py, exe/webui/genericblock.py,
+	  exe/webui/imagewithtextblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/quiztestblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/truefalseblock.py, exe/webui/wikipediablock.py,
+	  prototype/packtest/po/ch.po, prototype/packtest/po/ge.po: Enabled
+	  usercreated idevice plugins
+
+2005-08-19 01:03  djm
+
+	* exe/locale, exe/webui/locale: Moved locale dir out of webui
+
 2005-08-19 00:57  djm
 
 	* exe/engine/field.py: lil tidyup

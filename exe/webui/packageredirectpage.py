@@ -23,7 +23,8 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-from exe.webui.mainpage       import MainPage
+#from exe.webui.mainpage       import MainPage
+from exe.webui.authoringpage  import AuthoringPage
 from exe.webui.renderable     import RenderableResource
 
 log = logging.getLogger(__name__)
@@ -67,7 +68,8 @@ class PackageRedirectPage(RenderableResource):
         and creates a MainPage instance for it
         and a directory for the resource files
         """
-        MainPage(self, package)
+        #MainPage(self, package)
+        AuthoringPage(self, package)
 
 
     def render_GET(self, request):
