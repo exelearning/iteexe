@@ -25,10 +25,14 @@ The Main Application Object
 import os
 import sys
 from getopt import getopt, GetoptError
-from exe.webui.webserver     import WebServer
-# must import reactor AFTER WebServer. It's yucky, but that's life
+# needed so we can display our GTK window
+# must import reactor BEFORE reactor and webserver.
+from twisted.internet import gtk2reactor
+gtk2reactor.install()
+
 from twisted.internet import reactor
-from exe.webui.mainwindow    import MainWindow
+from exe.webui.webserver     import WebServer
+from exe.gtkui.mainwindow    import MainWindow
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
 from exe.engine              import version
