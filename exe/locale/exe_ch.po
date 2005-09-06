@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-09-01 14:42+1200\n"
-"PO-Revision-Date: 2005-09-05 10:37+1200\n"
+"PO-Revision-Date: 2005-09-05 16:52+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -231,7 +231,7 @@ msgstr "这是一个非必要栏域."
 
 #: editorpane.py:63
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
-msgstr ""
+msgstr "描述这个iDevice的目的."
 
 #: editorpane.py:66
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
@@ -239,7 +239,7 @@ msgstr "用强调程度来区别该 iDevice所呈现信息的重要性."
 
 #: editorpane.py:69
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
-msgstr ""
+msgstr "描述这个iDevice的用途."
 
 #: editorpane.py:72
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
@@ -554,7 +554,7 @@ msgstr "这是一个自由文字栏域, 可输入一般的课程内容."
 
 #: galleryblock.py:166
 msgid "Add images"
-msgstr ""
+msgstr "添购图片"
 
 #: galleryblock.py:173
 #: galleryblock.py:246
