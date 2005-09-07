@@ -1,3 +1,23 @@
+# ===========================================================================
+# eXe 
+# Copyright 2004-2005, University of Auckland
+# $Id: idevicepane.py 1162 2005-08-18 05:40:48Z matthew $
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+
 """
 This unit provides a base class for something that is rendered, this can be
 a page, a pane, a block, even part of XUL like the outlinePane but not really
@@ -10,8 +30,6 @@ but you don't have to use that functionality. It means you can use a rendering
 template to do your rendering, even if you're part of a bigger block.
 """
 
-from nevow import loaders
-from nevow.livepage import LivePage
 from twisted.web.resource import Resource
 
 # Constants
@@ -77,13 +95,7 @@ class Renderable(object):
             self.webserver = parent.webserver
         else:
             self.webserver = None
-        if self._templateFileName:
-            if hasattr(self, 'config') and self.config:
-                pth = self.config.webDir/'templates'/self._templateFileName
-                self.docFactory = loaders.xmlfile(pth)
-            else:
-                # Assume directory is included in the filename
-                self.docFactory = loaders.xmlfile(self._templateFileName)
+
 
     # Properties
     def getRoot(self):
@@ -171,15 +183,3 @@ class RenderableResource(_RenderablePage, Resource):
         Resource.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
 
-
-class RenderableLivePage(_RenderablePage, LivePage):
-    """
-    This class is both a renderable and a LivePage/Resource
-    """
-
-    def __init__(self, parent, package=None, config=None):
-        """
-        Same as Renderable.__init__ but
-        """
-        LivePage.__init__(self)
-        _RenderablePage.__init__(self, parent, package, config)
