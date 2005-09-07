@@ -34,6 +34,8 @@ from exe.export.imsexport         import IMSExport
 from exe.export.websiteexport     import WebsiteExport
 from exe.export.singlepageexport  import SinglePageExport
 from exe.engine                   import version
+from exe.gtkui.idevicepane        import IdevicePane
+from exe.gtkui.outlinepane        import OutlinePane
 import gtk
 import gtkmozembed
 
@@ -52,6 +54,7 @@ class MainWindow(gtk.Window):
         self.config      = application.config
         self.url         = "http://localhost:%d" % self.config.port
         self.packageName = packageName
+
 
         gtkmozembed.gtk_moz_embed_set_comp_path(self.config.greDir)
 
@@ -135,12 +138,16 @@ class MainWindow(gtk.Window):
         # HBox
         hPane = gtk.HPaned()
         self.vBox.pack_start(hPane)
-        leftPane = gtk.VPaned()
-        hPane.add1(leftPane)
-        leftPane.add1(gtk.Label("Outline Pane"))
-        from exe.gtkui.idevicepane import IdevicePane
+        self.leftPane = gtk.VPaned()
+        hPane.add1(self.leftPane)
+        #DJM TODO!!!
+        package  = self.application.packageStore.loadPackage(
+                                     "/home/djm/krash/0.6test.elp")
+        outlinePane = OutlinePane(package)
+        self.leftPane.add1(outlinePane.treeview)
+        #self.leftPane.add1(gtk.Label("Outline")
         idevicePane = IdevicePane(self.application.ideviceStore)
-        leftPane.add2(idevicePane.treeview)
+        self.leftPane.add2(idevicePane.treeview)
         
         # Browser
         self.browser = gtkmozembed.MozEmbed()
