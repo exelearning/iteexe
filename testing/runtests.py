@@ -25,11 +25,13 @@ from testnode          import TestNode
 from testuniqueid      import TestUniqueId
 #from testxmlhttp       import TestOutline
 from testpackage       import TestPackage
-from testblock         import TestBlock
+#from testblock         import TestBlock
 from testidevice       import TestIdevice
 from testidevicestore  import TestIdeviceStore
 from testpersist       import TestPersist
-from testexport        import TestWebsiteExport, TestScormMetaExport, TestScormNoMetaExport
+from testexport        import TestWebsiteExport 
+from testexport        import TestScormMetaExport
+from testexport        import TestScormNoMetaExport
 
 
 # ===========================================================================
@@ -43,7 +45,7 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestUniqueId))
 #    suite.addTest(unittest.makeSuite(TestOutline))
     suite.addTest(unittest.makeSuite(TestPackage))
-    suite.addTest(unittest.makeSuite(TestBlock))
+#    suite.addTest(unittest.makeSuite(TestBlock))
     suite.addTest(unittest.makeSuite(TestIdevice))
     suite.addTest(unittest.makeSuite(TestIdeviceStore))
     suite.addTest(unittest.makeSuite(TestPersist))

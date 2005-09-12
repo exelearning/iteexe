@@ -35,8 +35,8 @@ class TestIdeviceStore(utils.SuperTestCase):
         """
         store = IdeviceStore(self.app.config)
         store.load()
-        self.assert_(os.path.exists("idevices/generic.data"))
-        os.remove("idevices/generic.data")
+        self.assert_(os.path.exists("tmp/idevices/generic.data"))
+        os.remove("tmp/idevices/generic.data")
 
 
 if __name__ == "__main__":
