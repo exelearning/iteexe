@@ -218,7 +218,7 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += u'<img alt="%s" ' % _("Close")
         html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
         html += u' onmousedown="Javascript:hideMe();"/></div>'
-        html += u'<div class="popupDivLabel">%s</div>%s' % (label, instruc)                
+        html += u'<div class="popupDivLabel">%s</div>%s' % (label, instruc)
         html += u'</div>\n'
     return html
 

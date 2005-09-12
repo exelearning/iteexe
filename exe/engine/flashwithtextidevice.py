@@ -32,7 +32,7 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
-    def __init__(self, defaultImage = None):
+    def __init__(self):
         Idevice.__init__(self, _(u"Flash with Text"), 
                          _(u"University of Auckland"), 
                          u"", u"", u"")

@@ -19,7 +19,7 @@
 # ===========================================================================
 
 """
-The Main Application Object
+Main application class, pulls together everything and runs it.
 """
 
 import os

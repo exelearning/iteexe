@@ -98,7 +98,7 @@ class FlashWithTextBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div class=\"flash_text\" style=\""
-	html += u"width:" + str(self.idevice.flash.width) + "px; "
+        html += u"width:" + str(self.idevice.flash.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
         html += u"<div class=\"flash\">\n"
         html += self.flashElement.renderPreview()
