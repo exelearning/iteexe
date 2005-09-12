@@ -1,0 +1,1228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eXe trunk (pre-0.8)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-09-08 09:27+1200\n"
+"PO-Revision-Date: 2005-09-09 10:21+1200\n"
+"Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
+"Language-Team: eXe <info@exelearning.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: en\n"
+"X-Poedit-Country: PERU\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: attachmentblock.py:76
+msgid "Select a file"
+msgstr "选择文档"
+
+#: attachmentblock.py:82
+msgid "Label"
+msgstr "标签"
+
+#: attachmentblock.py:88
+msgid "Description:"
+msgstr "描述:"
+
+#: attachmentidevice.py:39
+msgid "Attachment"
+msgstr "付件"
+
+#: attachmentidevice.py:40
+#: casestudyidevice.py:56
+#: clozeidevice.py:43
+#: exampleidevice.py:40
+#: flashwithtextidevice.py:37
+#: forumidevice.py:36
+#: freetextidevice.py:38
+#: galleryidevice.py:246
+#: idevicestore.py:202
+#: idevicestore.py:228
+#: idevicestore.py:256
+#: imagewithtextidevice.py:38
+#: multichoiceidevice.py:57
+#: quiztestidevice.py:82
+#: reflectionidevice.py:43
+#: truefalseidevice.py:59
+#: wikipediaidevice.py:49
+msgid "University of Auckland"
+msgstr "奥克兰大学"
+
+#: attachmentidevice.py:45
+msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
+msgstr " 点击<strong>选择文档</strong>, 选择您要上载的文件."
+
+#: attachmentidevice.py:49
+msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
+msgstr "<p> 给附件一个标签, 最好加上文件类别和大小.</p><p>例如: <code>Sales Forecast.doc (500kb)</code></p>"
+
+#: attachmentidevice.py:66
+msgid "Provide a brief description of the file"
+msgstr " 提供文件的简单描述."
+
+#: block.py:197
+#: propertiespane.py:123
+msgid "Done"
+msgstr "完成"
+
+#: block.py:200
+msgid ""
+"This will delete this iDevice.\\n"
+"Do you really want to do this?"
+msgstr "将要删除这个iDevice. 你真的要删除它吗?"
+
+#: block.py:205
+#: editorelement.py:74
+#: editorelement.py:113
+#: editorelement.py:153
+#: editorpage.py:179
+#: editorpage.py:183
+msgid "Delete"
+msgstr "删除"
+
+#: block.py:212
+msgid "Move Up"
+msgstr "上移"
+
+#: block.py:219
+msgid "Move Down"
+msgstr "下移"
+
+#: block.py:221
+msgid "---Move To---"
+msgstr "---移至---"
+
+#: block.py:227
+#: editorpane.py:319
+msgid "Pedagogical Help"
+msgstr "帮助"
+
+#: block.py:236
+#: common.py:218
+#: common.py:219
+#: editorpane.py:306
+#: editorpane.py:307
+#: editorpane.py:328
+#: multichoiceblock.py:156
+#: multichoiceblock.py:157
+#: truefalseelement.py:129
+#: truefalseelement.py:130
+msgid "Close"
+msgstr "关闭"
+
+#: block.py:241
+#: editorpane.py:271
+msgid "Purpose"
+msgstr "用途"
+
+#: block.py:245
+msgid "Tip:"
+msgstr "提示:"
+
+#: block.py:309
+msgid "ERROR: Block.renderViewContent called directly"
+msgstr ""
+
+#: block.py:318
+#: editorpage.py:201
+#: editorpane.py:205
+msgid "Edit"
+msgstr "编辑"
+
+#: casestudyblock.py:84
+msgid "Story:"
+msgstr "事件:"
+
+#: casestudyblock.py:93
+#: truefalseblock.py:102
+msgid "Add another question"
+msgstr "添加问题"
+
+#: casestudyidevice.py:55
+msgid "Case Study"
+msgstr "案例分析"
+
+#: casestudyidevice.py:57
+msgid ""
+"A case study is a story that conveys an \n"
+"educational message. A case study can be used to present a realistic situation\n"
+"that enables learners to apply their own knowledge and experience to.  When \n"
+"designing a case study you might want to consider the following:<ul> \n"
+"<li>\tWhat educational points are conveyed in the story</li>\n"
+"<li>\tWhat preparation will the learners need to do prior to working on the \n"
+"case study</li>\n"
+"<li>\tWhere the case study fits into the rest of the course</li>\n"
+"<li>\tHow the learners will interact with the materials and each other e.g.\n"
+"if run in a classroom situation can teams be setup to work on different aspects\n"
+"of the case and if so how are ideas feed back to the class</li></ul>"
+msgstr " "
+
+#: casestudyidevice.py:73
+msgid ""
+"Create the case story.  A good case is one \n"
+"that describes a controversy."
+msgstr " "
+
+#: casestudyidevice.py:75
+msgid ""
+"Enter the study question.  These questions \n"
+"should draw out the educational messages presented in the case.  Consider \n"
+"aspects of the case like, characters, timeliness, relevance, dilemmas."
+msgstr " "
+
+#: casestudyidevice.py:78
+msgid ""
+"Provide feedback on the question.  This may\n"
+"be a summary of the main points or concepts."
+msgstr " "
+
+#: clozeidevice.py:42
+msgid "Cloze Idevice"
+msgstr "填空题"
+
+#: clozeidevice.py:44
+msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
+msgstr " "
+
+#: clozeidevice.py:48
+msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
+msgstr " "
+
+#: clozeidevice.py:55
+msgid "Cloze"
+msgstr "填空题"
+
+#: clozeidevice.py:56
+msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
+msgstr " "
+
+#: common.py:55
+#: editorpage.py:162
+msgid "eXe : elearning XHTML editor"
+msgstr "eXe:  elearning XHTML 编辑器"
+
+#: common.py:205
+msgid "Instructions"
+msgstr "说明"
+
+#: common.py:210
+#: common.py:213
+msgid "Instructions for completion"
+msgstr "完成说明"
+
+#: editorpage.py:101
+#: editorpane.py:144
+msgid "Please enter an idevice name."
+msgstr "请填入iDevice名称."
+
+#: editorpage.py:181
+#: editorpage.py:184
+msgid "Save"
+msgstr "保存"
+
+#: editorpage.py:185
+msgid "Save as"
+msgstr "另存为"
+
+#: editorpage.py:206
+msgid "New iDevice"
+msgstr "新的 iDevice"
+
+#: editorpane.py:58
+msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
+msgstr "你新的iDevice将以此名称列在iDevice栏中. 这是一个必须填写的栏目."
+
+#: editorpane.py:62
+msgid "This is an optional field."
+msgstr "这是一个非必要栏域."
+
+#: editorpane.py:63
+msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
+msgstr "描述这个iDevice的目的."
+
+#: editorpane.py:66
+msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
+msgstr "用强调程度来区别该 iDevice所呈现信息的重要性."
+
+#: editorpane.py:69
+msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
+msgstr "描述这个iDevice的用途."
+
+#: editorpane.py:72
+msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
+msgstr "添加单行文字, 用于这 iDevice内的标题."
+
+#: editorpane.py:75
+msgid "Add a text entry box to an iDevice. Used for entering description textual content."
+msgstr "添加多行文字栏域, 用于文字描述."
+
+#: editorpane.py:78
+msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
+msgstr "添加图片, 可从您的图像库中选出."
+
+#: editorpane.py:124
+#: editorpane.py:128
+#: editorpane.py:132
+msgid "Enter the label here"
+msgstr "在此输入标题"
+
+#: editorpane.py:125
+msgid "Enter instructions for completion here"
+msgstr "在此输入完成说明"
+
+#: editorpane.py:129
+#: editorpane.py:133
+msgid "Enter the instructions for completion here"
+msgstr "在此输入完成说明"
+
+#: editorpane.py:191
+msgid "Add"
+msgstr "添加"
+
+#: editorpane.py:192
+msgid "Text Line"
+msgstr "单行文字"
+
+#: editorpane.py:194
+msgid "Text Box"
+msgstr "多行文字"
+
+#: editorpane.py:196
+#: imagewithtextidevice.py:67
+msgid "Image"
+msgstr "图像"
+
+#: editorpane.py:200
+msgid "Actions"
+msgstr "动作"
+
+#: editorpane.py:203
+msgid "Preview"
+msgstr "预览"
+
+#: editorpane.py:208
+msgid "Cancel"
+msgstr "取消"
+
+#: editorpane.py:265
+msgid "Name"
+msgstr "名称"
+
+#: editorpane.py:268
+#: propertiespane.py:100
+msgid "Author"
+msgstr "作者"
+
+#: editorpane.py:275
+msgid "Pedagogical Tip"
+msgstr "提示"
+
+#: editorpane.py:278
+msgid "Emphasis"
+msgstr "强调"
+
+#: editorpane.py:281
+msgid "No emphasis"
+msgstr "不强调"
+
+#: editorpane.py:282
+msgid "Some emphasis"
+msgstr "一般强调"
+
+#: editorpane.py:283
+msgid "Strong emphasis"
+msgstr "特别强调"
+
+#: editorpane.py:309
+msgid "Icons"
+msgstr "图标"
+
+#: element.py:45
+msgid "ERROR Element.process called directly"
+msgstr ""
+
+#: element.py:53
+msgid "ERROR Element.renderEdit called directly"
+msgstr ""
+
+#: element.py:69
+msgid "ERROR Element.renderView called directly"
+msgstr ""
+
+#: element.py:222
+msgid "Select an image"
+msgstr "选择图片"
+
+#: element.py:224
+#: element.py:475
+msgid "Display as:"
+msgstr "显示为:"
+
+#: element.py:238
+#: element.py:487
+msgid "blank for original size"
+msgstr "空白为原来的大小尺寸"
+
+#: element.py:392
+msgid "Gap"
+msgstr "变成空格"
+
+#: element.py:395
+msgid "Feedback: "
+msgstr "评语:"
+
+#: element.py:419
+msgid "Get score"
+msgstr "得分"
+
+#: element.py:426
+msgid "Show answers"
+msgstr "显示答案"
+
+#: element.py:429
+msgid "Clear"
+msgstr "清除"
+
+#: element.py:473
+msgid "Select a flash file"
+msgstr "选择flash文档"
+
+#: exampleidevice.py:39
+msgid "Example Example"
+msgstr ""
+
+#: exampleidevice.py:41
+msgid ""
+"This is an example of a user created\n"
+"iDevice plugin."
+msgstr ""
+
+#: exampleidevice.py:44
+msgid "Example"
+msgstr ""
+
+#: exampleidevice.py:45
+msgid "This is a free text field."
+msgstr "这是一个自由文字域."
+
+#: flashwithtextblock.py:76
+#: imagewithtextblock.py:76
+msgid "Float:"
+msgstr "飘浮:"
+
+#: flashwithtextblock.py:77
+#: imagewithtextblock.py:77
+msgid "Left"
+msgstr "左"
+
+#: flashwithtextblock.py:78
+#: imagewithtextblock.py:78
+msgid "Right"
+msgstr "右"
+
+#: flashwithtextblock.py:79
+#: imagewithtextblock.py:79
+msgid "None"
+msgstr "无"
+
+#: flashwithtextblock.py:83
+#: imagewithtextblock.py:83
+msgid "Caption:"
+msgstr "标题"
+
+#: flashwithtextidevice.py:36
+msgid "Flash with Text"
+msgstr "文字及Flash"
+
+#: flashwithtextidevice.py:40
+msgid "Flash"
+msgstr "Flash"
+
+#: flashwithtextidevice.py:44
+#: imagewithtextidevice.py:72
+msgid "Text"
+msgstr "文字"
+
+#: forumblock.py:88
+msgid "A single simple discussion"
+msgstr ""
+
+#: forumblock.py:89
+msgid "Each person posts one discussion"
+msgstr ""
+
+#: forumblock.py:90
+msgid "Standard forum for general use"
+msgstr ""
+
+#: forumblock.py:92
+msgid "Discussions and replies are allowed"
+msgstr ""
+
+#: forumblock.py:93
+msgid "No discussions, but replies are allowed"
+msgstr ""
+
+#: forumblock.py:94
+msgid "No discussions, no replies"
+msgstr ""
+
+#: forumblock.py:96
+msgid "No"
+msgstr "不"
+
+#: forumblock.py:97
+msgid "Yes, forever"
+msgstr "是, 永远"
+
+#: forumblock.py:98
+msgid "Yes, initially"
+msgstr "是, 最初"
+
+#: forumblock.py:100
+msgid "No groups"
+msgstr ""
+
+#: forumblock.py:101
+msgid "Separate groups"
+msgstr ""
+
+#: forumblock.py:102
+msgid "Visible groups"
+msgstr ""
+
+#: forumblock.py:104
+msgid "Show"
+msgstr "显示"
+
+#: forumblock.py:105
+#: reflectionblock.py:100
+msgid "Hide"
+msgstr "隐藏"
+
+#: forumblock.py:111
+msgid "Forum name:"
+msgstr ""
+
+#: forumblock.py:116
+msgid "Forum type:"
+msgstr ""
+
+#: forumblock.py:121
+msgid "Forum introduction:"
+msgstr ""
+
+#: forumblock.py:126
+msgid "Can a student post to this forum?:"
+msgstr ""
+
+#: forumblock.py:131
+msgid "Force everyone to be subscribed?:"
+msgstr ""
+
+#: forumblock.py:137
+msgid "Group mode:"
+msgstr ""
+
+#: forumblock.py:142
+msgid "Visible to students:"
+msgstr " "
+
+#: forumblock.py:147
+msgid "Discussion topic:"
+msgstr " "
+
+#: forumblock.py:148
+msgid "Subject:"
+msgstr "科目:"
+
+#: forumblock.py:153
+msgid "Message:"
+msgstr "信息:"
+
+#: forumblock.py:169
+#: forumblock.py:186
+#: forumidevice.py:35
+msgid "Forum Discussion"
+msgstr "论坛"
+
+#: forumblock.py:171
+#: forumblock.py:188
+msgid "Discussion Topic"
+msgstr " "
+
+#: forumblock.py:172
+#: forumblock.py:189
+msgid "Subject"
+msgstr "科目"
+
+#: freetextidevice.py:37
+msgid "Free Text"
+msgstr "自由文本"
+
+#: freetextidevice.py:39
+msgid ""
+"The majority of a learning resource will be \n"
+"establishing context, delivering instructions and providing general information.\n"
+"This provides the framework within which the learning activities are built and \n"
+"delivered."
+msgstr " "
+
+#: freetextidevice.py:44
+msgid "Content"
+msgstr "内容"
+
+#: freetextidevice.py:45
+#: freetextidevice.py:66
+msgid "This is a free text field general learning content can be entered."
+msgstr "这是一个自由文字栏域, 可输入一般的课程内容."
+
+#: galleryblock.py:166
+msgid "Add images"
+msgstr "添加图片"
+
+#: galleryblock.py:173
+#: galleryblock.py:246
+msgid "No Images Loaded"
+msgstr "无图像显示"
+
+#: galleryidevice.py:97
+msgid "No Thumbnail Available. Could not shrink image."
+msgstr " "
+
+#: galleryidevice.py:245
+msgid "Image Gallery"
+msgstr "图象画廊"
+
+#: galleryidevice.py:247
+msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
+msgstr " "
+
+#: galleryidevice.py:251
+msgid "Use this Idevice if you have a lot of images to show."
+msgstr "用此可展示许多图片."
+
+#: idevicestore.py:200
+msgid "Reading Activity"
+msgstr "阅读活动"
+
+#: idevicestore.py:203
+msgid ""
+"Provide learners with structure to their reading activity. This helps put\n"
+"the activity in context for the learner. It is also important to correctly\n"
+"reference any reading materials you refer to as this models best practice to\n"
+"the learners. Not always essential if covered in the course content but\n"
+"providing feedback to the learner on some of the main points covered in the\n"
+"reading may also add value to the activity."
+msgstr " "
+
+#: idevicestore.py:210
+msgid "What to read"
+msgstr "阅读资料"
+
+#: idevicestore.py:211
+msgid "Provide details of the reading materials learners should  read."
+msgstr "提供读者所需的详细阅读资料"
+
+#: idevicestore.py:212
+msgid "Why it should be read"
+msgstr "为何须阅读"
+
+#: idevicestore.py:213
+msgid ""
+"Describe the rationale behind the selection of the reading and how it will\n"
+"enrich the learning."
+msgstr " "
+
+#: idevicestore.py:215
+msgid "Reference"
+msgstr "参考资料"
+
+#: idevicestore.py:216
+msgid ""
+"Provide full reference details to the reading materials selected. The\n"
+"reference style used will depend on the preference of your department or\n"
+"faculty."
+msgstr " "
+
+#: idevicestore.py:219
+#: multichoiceblock.py:113
+#: questionelement.py:85
+#: truefalseblock.py:88
+msgid "Feedback"
+msgstr "评语"
+
+#: idevicestore.py:220
+msgid ""
+"The use of this element is flexible.  Use it to provide a summary of the\n"
+"points covered in the reading, or as a starting point for further analysis of\n"
+"the reading by posing a question or providing a statement to begin a\n"
+"debate."
+msgstr " "
+
+#: idevicestore.py:226
+#: idevicestore.py:235
+msgid "Objectives"
+msgstr "目的"
+
+#: idevicestore.py:229
+msgid ""
+"Objectives describe the expected outcomes of the learning and should\n"
+"define what the learners will be able to do when they have completed the\n"
+"learning tasks."
+msgstr "用于描述学习此课的目的及将要达到的结果."
+
+#: idevicestore.py:236
+msgid "Type the learning objectives for this resource."
+msgstr "学习此课的目的"
+
+#: idevicestore.py:239
+#: idevicestore.py:249
+msgid "Preknowledge"
+msgstr "预备知识"
+
+#: idevicestore.py:242
+msgid ""
+"Prerequisite knowledge refers to the knowledge learners should already\n"
+"have in order to be able to effectively complete the learning. Examples of\n"
+"pre-knowledge can be: <ul>\n"
+"<li>        Learners must have level 4 English </li>\n"
+"<li>        Learners must be able to assemble standard power tools </li></ul>\n"
+msgstr "课前知识是指学生为完成此课所应具备的知识.\n"
+
+#: idevicestore.py:250
+msgid ""
+"Describe the prerequisite knowledge learners should have to effectively\n"
+"complete this learning."
+msgstr "用于描述学生为完成此课所应具备的知识."
+
+#: idevicestore.py:254
+#: idevicestore.py:262
+msgid "Activity"
+msgstr "学习活动"
+
+#: idevicestore.py:257
+msgid ""
+"An activity can be defined as a task or set of tasks a learner must\n"
+"complete. Provide a clear statement of the task and consider any conditions\n"
+"that may help or hinder the learner in the performance of the task."
+msgstr " "
+
+#: idevicestore.py:263
+msgid "Describe the tasks the learners should complete."
+msgstr "描述学生需要完成的学习任务."
+
+#: imagewithtextidevice.py:37
+msgid "Image with Text"
+msgstr "文字及插图"
+
+#: imagewithtextidevice.py:39
+msgid ""
+"<p>\n"
+"The image with text iDevice can be used in a number of ways to support both\n"
+"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
+"content. We provide an example of each dimension:\n"
+"</p><p>\n"
+"<b>Teacher profile (emotional dimension)</b>\n"
+"</p><p>\n"
+"Research suggests that online learners appreciate a personalised approach.\n"
+"One way this can be achieved is to provide a brief description of the\n"
+"teachers and  other staff involved in the delivery of the learning. The\n"
+"profile (with personal photo) can not only be used to communicate the role\n"
+"and credentials of the teacher but, also acknowledges the direct\n"
+"relationship between the learner and teacher, rather then the content\n"
+"delivery medium (the computer). Profiles should  be written in a\n"
+"\"non-academic\" tone making use of personal pronouns.\n"
+"</p><p>\n"
+"<b>Integrating visuals with verbal summaries</b>\n"
+"</p><p>\n"
+"Cognitive psychologists indicate that presenting learners with a\n"
+"representative image and corresponding verbal summary (that is presented\n"
+"simultaneously) can reduce cognitive load and enhance learning retention.\n"
+"This iDevice can be used to present an image (photograph, diagram or\n"
+"graphic) with a brief verbal summary covering the main points relating to\n"
+"the image. For example, if you were teaching the functions of a four-stroke\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
+"the piston with a brief textual summary of the key aspects of each visual.\n"
+"</p>"
+msgstr " "
+
+#: imsexport.py:174
+#: scormexport.py:206
+msgid "eXe"
+msgstr "eXe"
+
+#: mainpage.py:236
+#, python-format
+msgid "Package saved to: %s"
+msgstr "课件存至: %s"
+
+#: mainpage.py:263
+#: mainpage.py:282
+#, python-format
+msgid ""
+"Sorry, wrong file format:\n"
+"%s"
+msgstr ""
+"对不起, 文件格式错误:\n"
+"%s"
+
+#: mainpage.py:265
+#: mainpage.py:284
+msgid "Sorry, wrong file format"
+msgstr "对不起, 文件格式错误"
+
+#: mainpage.py:266
+#: mainpage.py:285
+#, python-format
+msgid "Error loading package \"%s\": %s"
+msgstr "载入课件错误观点  \"%s\": %s"
+
+#: mainpage.py:333
+#: mainpage.py:376
+#, python-format
+msgid "Filename %s is a file, cannot replace it"
+msgstr ""
+
+#: mainpage.py:416
+#: mainpage.py:434
+#, python-format
+msgid "Exported to %s"
+msgstr "输出至 %s"
+
+#: mainwindow.py:86
+msgid "/_File"
+msgstr "/文件(_F)"
+
+#: mainwindow.py:87
+msgid "/File/_New"
+msgstr "/文件(_F)/新建文件(_N)"
+
+#: mainwindow.py:88
+msgid "/File/_Open"
+msgstr "/文件(_F)/打开文件(_O)"
+
+#: mainwindow.py:89
+msgid "/File/sep1"
+msgstr "/文件(_F)/sep1"
+
+#: mainwindow.py:90
+msgid "/File/_Save"
+msgstr "/文件(_F)/保存(_S)"
+
+#: mainwindow.py:91
+msgid "/File/Save _As"
+msgstr "/文件(_F)/另存为"
+
+#: mainwindow.py:92
+msgid "/File/sep2"
+msgstr "/文件(_F)/sep2"
+
+#: mainwindow.py:93
+msgid "/File/_Export"
+msgstr "/文件(_F)/输出(_E)"
+
+#: mainwindow.py:94
+msgid "/File/Export/_SCORM 1.2"
+msgstr "/文件(_F)/输出(_E)/_SCORM 1.2"
+
+#: mainwindow.py:96
+msgid "/File/Export/IMS Content Package"
+msgstr "/文件(_F)/输出(_E)/IMS Content Package"
+
+#: mainwindow.py:98
+msgid "/File/Export/Web Site"
+msgstr "/文件(_F)/输出(_E)/网站"
+
+#: mainwindow.py:100
+msgid "/File/Export/Single Page"
+msgstr "/文件(_F)/输出(_E)/单一网页"
+
+#: mainwindow.py:102
+msgid "/File/sep3"
+msgstr "/文件(_F)/sep3"
+
+#: mainwindow.py:103
+msgid "/File/Quit"
+msgstr "/文件(_F)/退出"
+
+#: mainwindow.py:105
+msgid "/_Tools"
+msgstr "/工具(_T)"
+
+#: mainwindow.py:106
+msgid "/Tools/iDevice Editor"
+msgstr "/工具(_T)/iDevice 编辑器"
+
+#: mainwindow.py:108
+msgid "/_Styles"
+msgstr "/页面风格(_S)"
+
+#: mainwindow.py:111
+msgid "/Styles/"
+msgstr "/页面风格(_S)/"
+
+#: mainwindow.py:117
+msgid "/_View"
+msgstr "/查看(_V)"
+
+#: mainwindow.py:118
+msgid "/View/Refresh"
+msgstr "/查看(_V)/重新载入"
+
+#: mainwindow.py:121
+msgid "/_Debug"
+msgstr "/_Debug"
+
+#: mainwindow.py:122
+msgid "/Debug/View _HTML"
+msgstr "/_Debug/查看 _HTML"
+
+#: mainwindow.py:125
+msgid "/_Help"
+msgstr "/帮助(_H)"
+
+#: mainwindow.py:126
+msgid "/_Help/Tutorial"
+msgstr "/帮助(_H)/使用指南"
+
+#: mainwindow.py:127
+msgid "/_Help/About"
+msgstr "/帮助(_H)/关于"
+
+#: multichoiceblock.py:97
+#: testquestionelement.py:83
+msgid "Question:"
+msgstr "问题:"
+
+#: multichoiceblock.py:100
+msgid "Hint:"
+msgstr "提示:"
+
+#: multichoiceblock.py:106
+#: testquestionelement.py:93
+msgid "Alternatives"
+msgstr "选择"
+
+#: multichoiceblock.py:109
+#: optionelement.py:129
+#: testquestionelement.py:96
+msgid "Correct"
+msgstr "正确"
+
+#: multichoiceblock.py:110
+#: testquestionelement.py:99
+msgid "Option"
+msgstr "选择"
+
+#: multichoiceblock.py:125
+#: testquestionelement.py:110
+msgid "Add another option"
+msgstr "添加选择"
+
+#: multichoiceidevice.py:56
+msgid "Multi-Choice Question"
+msgstr "多项选择题"
+
+#: multichoiceidevice.py:58
+msgid ""
+"Although more often used in formal testing \n"
+"situations MCQs can be used as a testing tool to stimulate thought and  \n"
+"discussion on topics students may feel a little reticent in responding to. \n"
+"\n"
+"When designing a MCQ test consider the following:\n"
+"<ul>\n"
+"<li> What are the learning outcomes are the questions testing</li>\n"
+"<li>    What intellectual skills are being tested</li>\n"
+"<li> What are the language skills of the audience</li>\n"
+"<li> Gender and cultural issues</li>\n"
+"<li> Avoid grammar language and question structures that might provide \n"
+"     clues</li>\n"
+"</ul>\n"
+" "
+msgstr " "
+
+#: multichoiceidevice.py:71
+msgid ""
+"When building an MCQ consider the following: <ul>\n"
+"<li> Language use phrases that learners are familiar with and have \n"
+"encountered in their study </li>\n"
+"<li> Keep responses concise </li>\n"
+"<li> There should be some consistency between the stem and the responses </li>\n"
+"<li> Provide enough options to challenge learners to think about their response\n"
+"</li>\n"
+"<li> Try to make sure that correct responses are not more detailed than the \n"
+"distractors </li>\n"
+"<li> Distractors should be incorrect but plausible </li>\n"
+"</ul>\n"
+msgstr ""
+
+#: multichoiceidevice.py:86
+#: multichoiceidevice.py:125
+msgid ""
+"Enter a hint here. If you\n"
+"do not want to provide a hint, leave this field blank."
+msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
+
+#: multichoiceidevice.py:89
+#: truefalseidevice.py:67
+msgid "Type the question stem."
+msgstr "填入问题"
+
+#: multichoiceidevice.py:90
+msgid ""
+"To indicate the correct answer, click the \n"
+"radio button next to the correct option."
+msgstr " "
+
+#: multichoiceidevice.py:92
+msgid ""
+"Type in each option from which students \n"
+"must choose into the appropriate options box. You can add options by clicking \n"
+"on the \"ADD ANOTHER OPTION\" button. You can delete options by clicking on the \n"
+"\"x\" next to each option."
+msgstr " "
+
+#: multichoiceidevice.py:96
+msgid ""
+"Type in the feedback that you want the \n"
+"student to see when selecting the particular option. If you don't complete this \n"
+"box, eXe will automatically provide default feedback as follows: \"Correct \n"
+"answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
+"for the other alternatives."
+msgstr " "
+
+#: optionelement.py:97
+#: testoptionelement.py:91
+#: truefalseelement.py:110
+msgid "Delete option"
+msgstr "删除选择"
+
+#: optionelement.py:131
+msgid "Incorrect"
+msgstr "不正确"
+
+#: outlinepane.py:228
+msgid "Outline"
+msgstr "目录"
+
+#: package.py:52
+msgid "Topic"
+msgstr "课题"
+
+#: package.py:52
+msgid "Section"
+msgstr "节"
+
+#: package.py:52
+msgid "Unit"
+msgstr "单元"
+
+#: package.py:58
+msgid "Home"
+msgstr "首页"
+
+#: package.py:90
+msgid "?????"
+msgstr ""
+
+#: package.py:188
+msgid "iDevice Editor"
+msgstr "iDevice 编辑器"
+
+#: propertiespage.py:76
+msgid "Project Properties"
+msgstr "课件属性"
+
+#: propertiespane.py:96
+msgid "Project title:"
+msgstr "课件标题"
+
+#: propertiespane.py:105
+msgid "Description"
+msgstr "描述"
+
+#: propertiespane.py:110
+msgid "Taxonomy"
+msgstr "分类名称"
+
+#: propertiespane.py:113
+msgid "Level 1: "
+msgstr "一级"
+
+#: propertiespane.py:116
+msgid "Level 2: "
+msgstr "二级"
+
+#: propertiespane.py:120
+msgid "Level 3: "
+msgstr "三级"
+
+#: questionelement.py:82
+#: questionelement.py:120
+msgid "Question"
+msgstr "问题"
+
+#: questionelement.py:92
+#: testquestionelement.py:88
+msgid "Delete question"
+msgstr "删除问题"
+
+#: quiztestblock.py:93
+msgid "Please select a correct answer for each question."
+msgstr "请为每个问题选择一个正确的答案."
+
+#: quiztestblock.py:95
+msgid "SCORM Multiple Choice Quiz:"
+msgstr "SCORM 多项选择题"
+
+#: quiztestblock.py:97
+msgid "Select pass rate: "
+msgstr "选择及格线"
+
+#: quiztestblock.py:110
+msgid "Add Question"
+msgstr "添加问题"
+
+#: quiztestblock.py:135
+msgid "SUBMIT ANSWERS"
+msgstr "提交答案"
+
+#: quiztestblock.py:353
+msgid "Submit Answer"
+msgstr "提交答案"
+
+#: quiztestidevice.py:81
+msgid "SCORM Quiz"
+msgstr "SCORM 练习题"
+
+#: reflectionblock.py:75
+msgid "Reflective question:"
+msgstr "问题:"
+
+#: reflectionblock.py:78
+msgid "Response:"
+msgstr "回答:"
+
+#: reflectionblock.py:96
+msgid "Click here"
+msgstr "点击这里"
+
+#: reflectionidevice.py:42
+msgid "Reflection"
+msgstr "问题与回答"
+
+#: reflectionidevice.py:44
+msgid ""
+"Reflection is a teaching method often used to \n"
+"connect theory to practice. Reflection tasks often provide learners with an \n"
+"opportunity to observe and reflect on their observations before presenting \n"
+"these as a piece of academic work. Journals, diaries, profiles and portfolios \n"
+"are useful tools for collecting observation data. Rubrics and guides can be \n"
+"effective feedback tools."
+msgstr " "
+
+#: reflectionidevice.py:53
+msgid ""
+"Enter details of the activity learners \n"
+"must reflect upon."
+msgstr " "
+
+#: reflectionidevice.py:55
+msgid ""
+"Describe how learners will assess how \n"
+"they have done in the exercise. (Rubrics are useful devices for providing \n"
+"reflective feedback.)"
+msgstr " "
+
+#: truefalseblock.py:82
+msgid "Questions"
+msgstr "问题"
+
+#: truefalseblock.py:84
+msgid "T"
+msgstr "对"
+
+#: truefalseblock.py:85
+msgid "F"
+msgstr "错"
+
+#: truefalseblock.py:90
+#: truefalseelement.py:132
+msgid "Hint"
+msgstr "提示"
+
+#: truefalseelement.py:156
+msgid "True"
+msgstr "对"
+
+#: truefalseelement.py:158
+msgid "False"
+msgstr "错"
+
+#: truefalseelement.py:175
+msgid "Correct!"
+msgstr "正确!"
+
+#: truefalseelement.py:176
+msgid "Incorrect!"
+msgstr "不正确!"
+
+#: truefalseidevice.py:58
+msgid "True-False Question"
+msgstr "判断题"
+
+#: truefalseidevice.py:60
+msgid ""
+"True/false questions present a statement where \n"
+"the learner must decide if the statement is true. This type of question works \n"
+"well for factual information and information that lends itself to either/or \n"
+"responses."
+msgstr " "
+
+#: truefalseidevice.py:65
+msgid "Type the question's hint here."
+msgstr "填入问题的提示"
+
+#: truefalseidevice.py:69
+msgid ""
+"Type in the feedback that you want the \n"
+"student to see when selecting the particular question. If you don't complete\n"
+"this box, eXe will automatically provide default feedback as follows: \n"
+"\"Correct answer\" as indicated by the selection for the correct answer; or \n"
+"\"Wrong answer\" for the other alternatives."
+msgstr " "
+
+#: wikipediablock.py:70
+#: wikipediaidevice.py:48
+msgid "Wikipedia Article"
+msgstr "Wikipedia 文章"
+
+#: wikipediablock.py:71
+msgid "Wikibooks Article"
+msgstr "Wikibooks 文章"
+
+#: wikipediablock.py:76
+msgid "Load"
+msgstr "载入"
+
+#: wikipediaidevice.py:50
+msgid ""
+"The Wikipedia iDevice takes a copy of an\n"
+"article from en.wikipedia.org, including copying the associated images."
+msgstr "Wikipedia iDevice用于从en.wikipedia.org搜索文章, 包括图象."
+
+#: wikipediaidevice.py:55
+msgid "Article"
+msgstr "文章"
+
+#: wikipediaidevice.py:85
+msgid "Unable to connect to "
+msgstr "无法连接至"
+
