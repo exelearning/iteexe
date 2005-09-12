@@ -8,8 +8,12 @@ import py2exe
 from exe.engine import version
 
 g_files = { '.': ["README", 
+                  "COPYING", 
+                  "NEWS", 
+                  "ChangeLog",
                   "eXe_icon.ico", 
                   "exe/webui/mr_x.gif",
+                  "exe/msvcr71.dll",
                   "doc/eXe-tutorial.elp", 
                   "installs/windows/exeLicense.txt"]}
 g_oldBase = "exe/webui"
@@ -37,28 +41,26 @@ dataFiles(["exe/webui/style",
            "exe/webui/win-profile",
            "exe/webui/scripts"])
 
+g_oldBase = "exe"
+g_newBase = "."
+dataFiles(["exe/locale"])
+
+
 opts = {
  "py2exe": {
-   "packages": ["encodings", "nevow"],
-   "includes": ["pango", "atk", "gobject",
-                "PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
+   "packages": ["encodings", "nevow", "nevow.flat"],
+   "includes": ["PngImagePlugin", "JpegImagePlugin", "GifImagePlugin",
                 "IcoImagePlugin", "BmpImagePlugin"],
-   "dll_excludes": ["iconv.dll", "intl.dll", 
-                    "libatk-1.0-0.dll", "libgdk-win32-2.0-0.dll", 
-                    "libgdk_pixbuf-2.0-0.dll", "libglib-2.0-0.dll", 
-                    "libgmodule-2.0-0.dll", "libgobject-2.0-0.dll", 
-                    "libgthread-2.0-0.dll", "libgtk-win32-2.0-0.dll", 
-                    "libpango-1.0-0.dll", "libpangowin32-1.0-0.dll", 
-                    "nspr4.dll", "plc4.dll", "plds4.dll", "xpcom.dll" ]
+
  }
 }
-setup(windows=["exe/exe"],
+setup(console=["exe/exe"],
       version=version.release,
       packages=["exe", "exe.engine", "exe.webui", "exe.export"],
       description  = "eLearning XHTML editor",
       url          = "http://exelearning.org",
       author       = "University of Auckland",
-      author_email = "exe@auckland.ac.nz",
+      author_email = "exe@exelearning.org",
       license      = "GPL",
       scripts      = ["exe/exe",],
       options      = opts,

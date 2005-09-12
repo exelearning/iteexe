@@ -219,8 +219,6 @@ class WebsiteExport(object):
         package.resourceDir.copyfiles(self.outputDir)
             
         # copy script files.
-        # TODO quiz scripts belong in the packages resourcesDir?
-        
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
             

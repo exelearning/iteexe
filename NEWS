@@ -1,8 +1,15 @@
+Version 0.8 - Tuckered Takahe
+* Return to web interface
+* iDevice plug-in interface
+* Flash iDevice
+* Bug fixes
+
 Version 0.7 - Burning Rats
 * Experimental GtkMozEmbed interface
 * Gallery iDevice
 * Improved iDevice editor
 * New default style
+* Single page export
 * Bug fixes
 
 Version 0.6 - Lumpy Llama

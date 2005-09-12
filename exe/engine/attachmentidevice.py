@@ -42,11 +42,11 @@ class AttachmentIdevice(Idevice):
                          u"", u"")
         self.emphasis           = Idevice.NoEmphasis
         self.filename           = u""
-        self.filenameInstruc    = (u'Click <strong>Select a file</strong>, '
+        self.filenameInstruc    = _(u'Click <strong>Select a file</strong>, '
                                     'browse to the file you want '
                                    'to attach and select it.')
         self.label              = u""
-        self.labelInstruc       = (u"<p>"
+        self.labelInstruc       = _(u"<p>"
                                     "Assign a label for the attachment. It "
                                     "is useful to include the type of file. "
                                     "Eg. pdf, ppt, etc."
@@ -63,7 +63,7 @@ class AttachmentIdevice(Idevice):
                                     "<code>Sales Forecast.doc (500kb)</code>"
                                     "</p>")
         self.description        = u""
-        self.descriptionInstruc = (u"Provide a brief description of the "
+        self.descriptionInstruc = _(u"Provide a brief description of the "
                                     "file")
 
     def getResources(self):

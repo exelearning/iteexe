@@ -15,30 +15,6 @@ textarea { font-family: arial, verdana, helvetica, sans-serif;
            background: transparent;
 	}
 
-/* styles for 'tips for completion' and 'pedagogical help' */
-
-.popupDiv {
-   background-color: #EDEFF0;
-   border: 2px solid #607489;
-   padding: 0px 4px 4px 4px;
-   margin-left: 15px;
-   text-align:left;
-   z-index:99;
-   -moz-border-radius: 3px;
-}
-
-.popupDivLabel {
- text-align: center;
- font: message-box;
- font-weight: bold;
- color: #fff;
- cursor:move;
- margin: 0px -4px 0px -4px;
- background-image:url(../images/popup_bg.gif);
-}
-
-
-
 
 /* styles for iDevice Editor */
 
@@ -69,7 +45,12 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
 
-
+.flash {
+ border: 1px dashed #6699cc;
+ background-image: url(../images/flash_placeholder.gif); 
+ background-position: 50% 50%;
+ background-repeat: no-repeat;
+}
 
 
 

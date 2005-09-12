@@ -26,18 +26,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 SUPPORT
 =======
-This is an experimental release of eXe using a new library
-GTKMozEmbed to replace using Firefox.  
-It would be a bad idea to invest a lot of time in creating a 
-large package with this release.
-
 If you have any problems or have any feedback please report them at
-http://exe.cfdl.auckland.ac.nz or email exe@auckland.ac.nz.
+http://exelearning.org or email exe@exelearning.org
 
 
 KNOWN BUGS
 ==========
-See http://exe.cfdl.auckland.ac.nz/mantis for the eXe issue list.
+See http://exelearning.org/mantis for the eXe issue list.
 
 
 WINDOWS
@@ -45,17 +40,19 @@ WINDOWS
 
 INSTALLATION
 ------------
-- Download exe_install_windows.exe and double click it then follow the instructions. 
-- You will be asked what directory to install eXe in.  The default will normally
-  be fine.
-- The installer will create an eXe icon on the desktop and a menu-item under 
+- Download exe_install_windows.exe and double click it then follow the
+  instructions. 
+- You will be asked what directory to install eXe in.  The default will
+  normally be fine.
+- The installer will create an eXe icon on the desktop and a menu-item under
   "All Programs".
-- If you leave "Run eXe 0.7" selected the installer will launch eXe
+- If you leave "Run eXe 0.8" selected the installer will launch eXe
   once it is installed.
 
 
 RUNNING
 -------
+Make sure Firefox is closed first.
 Double click on the shortcut on the desktop to launch eXe.
 
 A window with "Welcome to eXe: the eLearning XML editor" and a Firefox browser
@@ -92,22 +89,21 @@ interested in the details, but they were...
 LINUX
 =====
 
-The eXe Linux install consists of two RPMs which have been tested
-to work on Fedora Core 3.  (They may work on other RPM based distros
+The eXe Linux install consists of an RPM which has been tested
+to work on Fedora Core 4.  (They may work on other RPM based distros
 but that hasn't been tested.)
 
-* exe-0.6-1.noarch.rpm - includes the eXe editor and bundled Firefox
-* exe-twisted-2.0-1.noarch.rpm - includes Twisted, ZopeInterface and Nevow used for the webserver by eXe
+* exe-0.8-1.noarch.rpm - includes the eXe editor and bundled Firefox
 
-From the command line type exe to start.
 Make sure Firefox is closed first.
+From the command line type exe to start.
 
 
 BUILDING FROM SOURCE
 ====================
 
 To build exe you'll need to install the following packages:
-* python2.3 - http://www.python.org
+* python 2.4 - http://www.python.org
 * Zope Interfaces - http://www.zope.org/Products/ZopeInterface
 * twisted2 - http://twistedmatrix.com (You need twisted core and twisted web)
  * needs patches/jelly.patch applied, see patches/jelly.readme (from the source tree)
@@ -117,7 +113,7 @@ To build exe you'll need to install the following packages:
 * PIL - http://www.pythonware.com/products/pil/
 
 unzip the source tarball:
-tar xzvf exe-source-0.7.tgz
+tar xzvf exe-source-0.8.tgz
 
 To run from source (on linux):
 cd exe
@@ -125,7 +121,7 @@ cd exe
 
 To run from source (on windows):
 cd exe
-c:\python23\python exe
+c:\python24\python exe
 
 
 CREDITS

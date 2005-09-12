@@ -86,6 +86,11 @@ class SinglePageExport(object):
 
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
+
+        # copy script files.
+        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
+                                     self.outputDir)
+
             
 
     def renderHeader(self, name):

@@ -1,4 +1,7 @@
 include README
+include COPYING
+include NEWS
+include ChangeLog
 include doc/eXe-tutorial.elp
 include exe/run-exe.sh
 include exe/exe.conf
@@ -10,5 +13,6 @@ recursive-include exe/webui/images *
 recursive-include exe/webui/scripts *
 recursive-include exe/webui/templates *
 recursive-include exe/webui/linux-profile *
+recursive-include exe/webui/firefox *
 global-exclude */.svn/*
 global-exclude */.xvpics/*

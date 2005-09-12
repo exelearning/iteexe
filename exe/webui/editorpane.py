@@ -103,16 +103,16 @@ class EditorPane(object):
                 element.process(request)
                            
             if "title" in request.args:
-                self.idevice.title = request.args["title"][0] 
+                self.idevice.title = unicode(request.args["title"][0], 'utf8')
     
             if "author" in request.args:
-                self.idevice.author = request.args["author"][0] 
+                self.idevice.author = unicode(request.args["author"][0], 'utf8')
     
             if "purpose" in request.args:
-                self.idevice.purpose = request.args["purpose"][0] 
+                self.idevice.purpose = unicode(request.args["purpose"][0], 'utf8')
     
             if "tip" in request.args:
-                self.idevice.tip = request.args["tip"][0] 
+                self.idevice.tip = unicode(request.args["tip"][0], 'utf8')
                 
             if "emphasis" in request.args:
                 self.idevice.emphasis = int(request.args["emphasis"][0])
@@ -147,8 +147,6 @@ class EditorPane(object):
 
         if "edit" in request.args:
             self.idevice.edit = True
-            
-        
             
         if "cancel" in request.args:
             ideviceId       = self.idevice.id
@@ -292,7 +290,7 @@ class EditorPane(object):
             html += "</select> \n"
             html += common.elementInstruc("emphasis", self.emphasisInstruc)
             html += "<br/><br/>\n"
-
+            
             if self.idevice.emphasis > 0:
                 html += self.__renderStyles() + " "
                 html += u'<a href="#" '
@@ -301,7 +299,7 @@ class EditorPane(object):
                 html += u'Select an icon:</a> \n'
                 icon = self.idevice.icon
                 if icon != "":
-                    html += '<img src="/style/%s/icon_%s' % (self.style, icon)
+                    html += '<img align="middle" src="/style/%s/icon_%s' % (self.style, icon)
                     html += '.gif"/><br/>'
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'
                 html += u'<div style="float:right;" >\n'
@@ -309,7 +307,6 @@ class EditorPane(object):
                 html += u'src="/images/stock-stop.png" title="%s"\n' % _("Close")
                 html += u'onmousedown="Javascript:hideMe();"/></div><br/> \n'
                 html += u'<div align="center"><b>%s:</b></div><br/>' % _("Icons")
-               # html += self.__renderStyles() + "<br/>\n"
                 html += self.__renderIcons()
                 html += u'</div><br/>\n'
             for element in self.elements:

@@ -271,7 +271,7 @@ class Config:
                 if subDir.basename() == self.locale:
                     locale = subDir.basename()
                     log.debug(" loading locale %s" % locale)
-                    self.locales[locale].install()
+                    self.locales[locale].install(unicode=True)
 
 
 

@@ -146,3 +146,28 @@ p.reading_feedback {
 }
 
 
+/* styles for 'tips for completion' and 'pedagogical help' */
+
+.popupDiv {
+   background-color: #EDEFF0;
+   border: 2px solid #607489;
+   padding: 0px 4px 4px 4px;
+   margin-left: 15px;
+   text-align:left;
+   z-index:99;
+   -moz-border-radius: 3px;
+}
+
+.popupDivLabel {
+ text-align: center;
+ font: message-box;
+ font-weight: bold;
+ color: #fff;
+ cursor:move;
+ margin: 0px -4px 0px -4px;
+ background-image:url(popup_bg.gif);
+}
+
+
+
+

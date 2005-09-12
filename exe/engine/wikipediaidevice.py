@@ -172,7 +172,8 @@ article from en.wikipedia.org, including copying the associated images."""),
         """
         self.site        = 'http://en.wikipedia.org/'
         
-    def upgradeToVersion4(self):
+
+    def upgradeToVersion2(self):
         """
         Upgrades v0.6 to v0.7.
         """

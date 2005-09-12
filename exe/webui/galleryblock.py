@@ -225,7 +225,7 @@ class GalleryBlock(Block):
             html += self._generateTable(genCell)
         html += [self.renderEditButtons(),
                  u'</div>']
-        return u'\n    '.join(html).encode('utf8')
+        return u'\n    '.join(html)
 
     def processDelete(self, request):
         """
@@ -266,7 +266,7 @@ class GalleryBlock(Block):
                         u'          %s' % (image.caption or '&nbsp;'),
                         u'        </div>']
             html = self._generateTable(genCell)
-        return u'\n    '.join(html).encode('utf8')
+        return u'\n    '.join(html)
         
     def renderView(self, style):
         """
@@ -287,7 +287,7 @@ class GalleryBlock(Block):
                      '</span><br/>']
             html += [self.renderViewContent()]
             html += [u'</div>']
-            return u'\n    '.join(html).encode('utf8')
+            return u'\n    '.join(html)
         finally:
             # Put the resource url back
             if len(self.idevice.images) > 0:

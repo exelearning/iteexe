@@ -146,7 +146,7 @@ class MultichoiceBlock(Block):
         
         html += '<span style="background-image:url(\'panel-amusements.png\');">'
         html += '\n<a onmousedown="Javascript:updateCoords(event);'
-        html += 'showMe(\'i%s\', 350, 100);" ' % self.hintId
+        html += 'showMe(\'%s\', 350, 100);" ' % self.hintId
         html += 'style="cursor:help;align:center;vertical-align:middle;" '
         html += 'title="Hint" \n'
         html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
@@ -156,6 +156,10 @@ class MultichoiceBlock(Block):
         html += '<img alt="%s" ' % _('Close')
         html += 'src="stock-stop.png" title="%s"' % _('Close')
         html += " onmousedown=\"Javascript:hideMe();\"/></div>"
+        html += '<div class="popupDivLabel">'
+        html += _("Hint")
+        html += '</div>\n'
+        html += self.hint
         html += "</div>\n"
         html += self.renderViewContent()    
         html += "</div>\n"

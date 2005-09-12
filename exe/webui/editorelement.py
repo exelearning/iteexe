@@ -44,10 +44,10 @@ class EditorElement(Element):
         log.debug(u'process ' + repr(request.args))
         
         if "name"+self.id in request.args:
-            self.field.name = request.args["name"+self.id][0]
+            self.field.name = unicode(request.args["name"+self.id][0], 'utf8')
 
         if "instruc"+self.id in request.args:
-            self.field.instruc = request.args["instruc"+self.id][0]
+            self.field.instruc = unicode(request.args["instruc"+self.id][0], 'utf8')
                         
         if "object" in request.args and request.args["object"][0] == self.id:
             if request.args["action"][0] == "deleteField":
