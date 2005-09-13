@@ -1,0 +1,1356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-09-08 09:27+1200\n"
+"PO-Revision-Date: 2005-09-13 13:44+0100\n"
+"Last-Translator: Ralf Hilgenstock <info@dialoge.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: attachmentblock.py:76
+msgid "Select a file"
+msgstr "Datei auswählen"
+
+#: attachmentblock.py:82
+msgid "Label"
+msgstr "Bezeichnung"
+
+#: attachmentblock.py:88
+msgid "Description:"
+msgstr "Berschreibung:"
+
+#: attachmentidevice.py:39
+msgid "Attachment"
+msgstr "Anhang"
+
+#: attachmentidevice.py:40
+#: casestudyidevice.py:56
+#: clozeidevice.py:43
+#: exampleidevice.py:40
+#: flashwithtextidevice.py:37
+#: forumidevice.py:36
+#: freetextidevice.py:38
+#: galleryidevice.py:246
+#: idevicestore.py:202
+#: idevicestore.py:228
+#: idevicestore.py:256
+#: imagewithtextidevice.py:38
+#: multichoiceidevice.py:57
+#: quiztestidevice.py:82
+#: reflectionidevice.py:43
+#: truefalseidevice.py:59
+#: wikipediaidevice.py:49
+msgid "University of Auckland"
+msgstr "Universität Auckland"
+
+#: attachmentidevice.py:45
+msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
+msgstr "Klicken Sie auf <strong>Datei auswählen</strong> und wählen Sie die Datei aus, die Sie hinzufügen wollen."
+
+#: attachmentidevice.py:49
+msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
+msgstr "<p>Erstellen Sie eine Bezeichnung für den Anhang. Geben Sie möglichst den Dateityp mit an. Z.B. doc, pdf, ppt, etc.</p><p>Wenn Sie auch die Dateigröße mit angeben, wissen die Nutzer wie lange der Aufruf der Datei u.U. benötigt.</p><p>Zum Beispiel: <code>Hamlet.doc (500 KB)</code></p>"
+
+#: attachmentidevice.py:66
+msgid "Provide a brief description of the file"
+msgstr "Geben Sie eine kurze Beschreibung der Datei ein."
+
+#: block.py:197
+#: propertiespane.py:123
+msgid "Done"
+msgstr "Fertig"
+
+#: block.py:200
+msgid ""
+"This will delete this iDevice.\\n"
+"Do you really want to do this?"
+msgstr ""
+"Löschen des iDevice.\\n"
+"Wollen Sie wirklich löschen?"
+
+#: block.py:205
+#: editorelement.py:74
+#: editorelement.py:113
+#: editorelement.py:153
+#: editorpage.py:179
+#: editorpage.py:183
+msgid "Delete"
+msgstr "Löschen"
+
+#: block.py:212
+msgid "Move Up"
+msgstr "Aufwärts"
+
+#: block.py:219
+msgid "Move Down"
+msgstr "Abwärts"
+
+#: block.py:221
+msgid "---Move To---"
+msgstr "---Verschieben nach---"
+
+#: block.py:227
+#: editorpane.py:319
+msgid "Pedagogical Help"
+msgstr "Pädagogische Hilfe"
+
+#: block.py:236
+#: common.py:218
+#: common.py:219
+#: editorpane.py:306
+#: editorpane.py:307
+#: editorpane.py:328
+#: multichoiceblock.py:156
+#: multichoiceblock.py:157
+#: truefalseelement.py:129
+#: truefalseelement.py:130
+msgid "Close"
+msgstr "Schließen"
+
+#: block.py:241
+#: editorpane.py:271
+msgid "Purpose"
+msgstr "Zweck"
+
+#: block.py:245
+msgid "Tip:"
+msgstr "Tipp:"
+
+#: block.py:309
+msgid "ERROR: Block.renderViewContent called directly"
+msgstr "FEHLER: Block.renderViewContent direkt aufgerufen"
+
+#: block.py:318
+#: editorpage.py:201
+#: editorpane.py:205
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: casestudyblock.py:84
+msgid "Story:"
+msgstr "Story:"
+
+#: casestudyblock.py:93
+#: truefalseblock.py:102
+msgid "Add another question"
+msgstr "Eine weitere Frage hinzufügen"
+
+#: casestudyidevice.py:55
+msgid "Case Study"
+msgstr "Fallstudie"
+
+#: casestudyidevice.py:57
+msgid ""
+"A case study is a story that conveys an \n"
+"educational message. A case study can be used to present a realistic situation\n"
+"that enables learners to apply their own knowledge and experience to.  When \n"
+"designing a case study you might want to consider the following:<ul> \n"
+"<li>\tWhat educational points are conveyed in the story</li>\n"
+"<li>\tWhat preparation will the learners need to do prior to working on the \n"
+"case study</li>\n"
+"<li>\tWhere the case study fits into the rest of the course</li>\n"
+"<li>\tHow the learners will interact with the materials and each other e.g.\n"
+"if run in a classroom situation can teams be setup to work on different aspects\n"
+"of the case and if so how are ideas feed back to the class</li></ul>"
+msgstr ""
+"Eine Fallstudie enthält einen Text als Grundlage für einen\n"
+"Lernprozess. Das kann eine realistische Situationsbeschreibung sein.\n"
+"in der die Teilnehmer/innen ihr eigenes Wissen und ihre Erfahrung einbringen\n"
+"sollen.  Bei der Entwicklung einer Fallstudie sollten Sie folgendes \n"
+"beachten:<ul> \n"
+"<li>\tWelche Lerninhalte werden in der Fallstudie vermittelt?</li>\n"
+"<li>\tWelche Vorkenntnisse benötigen die Teilnehmer/innen,  \n"
+"um die Fallstudie zu bearbeiten</li>\n"
+"<li>\tWie ist die Fallstudie mit dem restlichen Kurs verbunden?</li>\n"
+"<li>\tWie sollen die Teilnehmer/innen mit dem Material arbeiten?\n"
+"Was sollen sie z.B. in einer Präsenzphase miteinander mit dem\n"
+"Material tun? (z.B. Gruppenarbeit zu verschiedenen Aspekten)</li></ul>"
+
+#: casestudyidevice.py:73
+msgid ""
+"Create the case story.  A good case is one \n"
+"that describes a controversy."
+msgstr ""
+"Erstellen Sie die Fallstudie. Eine gute Situation \n"
+"Beschreibt eine Kontroverse."
+
+#: casestudyidevice.py:75
+msgid ""
+"Enter the study question.  These questions \n"
+"should draw out the educational messages presented in the case.  Consider \n"
+"aspects of the case like, characters, timeliness, relevance, dilemmas."
+msgstr ""
+"Tragen Sie  die zu bearbeitende Fragestellungen ein.\n"
+"Die Fragen sollten sich auf den Inhalt der Fallstudie beziehen. Bedenken\n"
+"Sie Aspeket wie Charaktere, zeitlicher Ablauf, Bedeutungen, Konflikte."
+
+#: casestudyidevice.py:78
+msgid ""
+"Provide feedback on the question.  This may\n"
+"be a summary of the main points or concepts."
+msgstr ""
+"Geben Sie ein Feedback zur Fragestellung ein. Dies kann \n"
+"z.B. eine Zusammenfassung der wichtigsten Punkte sein."
+
+#: clozeidevice.py:42
+msgid "Cloze Idevice"
+msgstr "Lückentext Idevice"
+
+#: clozeidevice.py:44
+msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
+msgstr "Dieser Idevice hilft Teilnehmer/innen Textpassagen und den Gebrauch bestimmter Begriffe oder einer Sprache zu verstehen."
+
+#: clozeidevice.py:48
+msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
+msgstr "Nehmen Sie einen Text und fügen Sie Lücken mit Hilfe von je einem Unterstrich (____) rechts und links von dem Wort ein . Zum Beispiel: <i>Das dritte_Wort_ in disem Text wird Teilnehmer/innen nicht angeziegt.</i>.<br/>Beim Prüfen der Einträge der Teilnehmer/innen in der Lücke wird die Groß-/Kleinschreibung ignoriert."
+
+#: clozeidevice.py:55
+msgid "Cloze"
+msgstr "Lückentest"
+
+#: clozeidevice.py:56
+msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
+msgstr "<p>Geben Sie einen Text ein. Um eine Lücke zu erzeugen schreiben Sie einen Unterstrich (_) auf jeder Seite des Wortes ein. Zum Beispiel:</p>Das fünfte und das _letzte_ Wort in diesem Text soll von den Teilnehmer/innen eingetragen _werden_."
+
+#: common.py:55
+#: editorpage.py:162
+msgid "eXe : elearning XHTML editor"
+msgstr "eXe: elearning XHTML Editor"
+
+#: common.py:205
+msgid "Instructions"
+msgstr "Anleitungen"
+
+#: common.py:210
+#: common.py:213
+msgid "Instructions for completion"
+msgstr "Anleitung zur Vervollständigung"
+
+#: editorpage.py:101
+#: editorpane.py:144
+msgid "Please enter an idevice name."
+msgstr "Tragen Sie eine Bezeichnung für den Idevice ein."
+
+#: editorpage.py:181
+#: editorpage.py:184
+msgid "Save"
+msgstr "Speichern"
+
+#: editorpage.py:185
+msgid "Save as"
+msgstr "Speichern unter"
+
+#: editorpage.py:206
+msgid "New iDevice"
+msgstr "Neues iDevice"
+
+#: editorpane.py:58
+msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
+msgstr "Ihr neues Idevice wird mit diesem Titel im Idevice Fenster angezeigt. Dies ist ein Pflichtfeld."
+
+#: editorpane.py:62
+msgid "This is an optional field."
+msgstr "Dies ist ein optionales Feld."
+
+#: editorpane.py:63
+msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
+msgstr "Tragen Sie hier den Zweck des Lernschritts ein. Er ist ein Hinweis für andere Nutzer/innen."
+
+#: editorpane.py:66
+msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
+msgstr "Betonen Sie mit Nachdruck die Bedeutung der Informationen des Idevice"
+
+#: editorpane.py:69
+msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
+msgstr "Ein pädagogischer Tipp beschreibt den vorgesehenene Nutzen und die pädagogischen Ideen,die bei der Entwicklung des Idevice wichtig waren."
+
+#: editorpane.py:72
+msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
+msgstr "Eine einzelne Textzeile einfügen. Hilfreich, um eine Beschreibung einzufügen."
+
+#: editorpane.py:75
+msgid "Add a text entry box to an iDevice. Used for entering description textual content."
+msgstr "Textbox einfügen. Hilfreich um einen beschreibenden Text einzufügen."
+
+#: editorpane.py:78
+msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
+msgstr "Bild/Grafik einfügen. Aktiviert die Auswahl von Bildern, die Sie gespeichert haben."
+
+#: editorpane.py:124
+#: editorpane.py:128
+#: editorpane.py:132
+msgid "Enter the label here"
+msgstr "Bezeichnung hier einfügen."
+
+#: editorpane.py:125
+msgid "Enter instructions for completion here"
+msgstr "Anweisung für die Vervollständigung hier einfügen."
+
+#: editorpane.py:129
+#: editorpane.py:133
+msgid "Enter the instructions for completion here"
+msgstr "Anweisung für die Vervollständigung hier einfügen."
+
+#: editorpane.py:191
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: editorpane.py:192
+msgid "Text Line"
+msgstr "Textzeile"
+
+#: editorpane.py:194
+msgid "Text Box"
+msgstr "Textbox"
+
+#: editorpane.py:196
+#: imagewithtextidevice.py:67
+msgid "Image"
+msgstr "Bild/Grafik"
+
+#: editorpane.py:200
+msgid "Actions"
+msgstr "Handlungen"
+
+#: editorpane.py:203
+msgid "Preview"
+msgstr "Vorschau"
+
+#: editorpane.py:208
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: editorpane.py:265
+msgid "Name"
+msgstr "Name"
+
+#: editorpane.py:268
+#: propertiespane.py:100
+msgid "Author"
+msgstr "Autor/in"
+
+#: editorpane.py:275
+msgid "Pedagogical Tip"
+msgstr "Pädagogischer Hinweis/Tipp:"
+
+#: editorpane.py:278
+msgid "Emphasis"
+msgstr "Gewichtung"
+
+#: editorpane.py:281
+msgid "No emphasis"
+msgstr "Keine Gewichtung"
+
+#: editorpane.py:282
+msgid "Some emphasis"
+msgstr "Einige Bedeutung"
+
+#: editorpane.py:283
+msgid "Strong emphasis"
+msgstr "Hohe Bedeutung"
+
+#: editorpane.py:309
+msgid "Icons"
+msgstr "Icons"
+
+#: element.py:45
+msgid "ERROR Element.process called directly"
+msgstr "FEHLER Element.process called directly"
+
+#: element.py:53
+msgid "ERROR Element.renderEdit called directly"
+msgstr "FEHLER Element.renderEdit called directly"
+
+#: element.py:69
+msgid "ERROR Element.renderView called directly"
+msgstr "FEHLER Element.renderView called directly"
+
+#: element.py:222
+msgid "Select an image"
+msgstr "Bild/Grafik auswählen"
+
+#: element.py:224
+#: element.py:475
+msgid "Display as:"
+msgstr "Anzeigen als"
+
+#: element.py:238
+#: element.py:487
+msgid "blank for original size"
+msgstr "Platzhalter für Orginalgröße"
+
+#: element.py:392
+msgid "Gap"
+msgstr "Lücke"
+
+#: element.py:395
+msgid "Feedback: "
+msgstr "Feedback:"
+
+#: element.py:419
+msgid "Get score"
+msgstr "Punkte eintragen"
+
+#: element.py:426
+msgid "Show answers"
+msgstr "Antworten zeigen"
+
+#: element.py:429
+msgid "Clear"
+msgstr "Löschen"
+
+#: element.py:473
+msgid "Select a flash file"
+msgstr "Flash-Datei auswählen"
+
+#: exampleidevice.py:39
+msgid "Example Example"
+msgstr "Beispiel"
+
+#: exampleidevice.py:41
+msgid ""
+"This is an example of a user created\n"
+"iDevice plugin."
+msgstr ""
+"Dies ist ein Beispiel für ein von Nutzer/innen\n"
+"erstelltes iDevice Plugin."
+
+#: exampleidevice.py:44
+msgid "Example"
+msgstr "Beispiel"
+
+#: exampleidevice.py:45
+msgid "This is a free text field."
+msgstr "Dies ist ein freies Textfeld"
+
+#: flashwithtextblock.py:76
+#: imagewithtextblock.py:76
+msgid "Float:"
+msgstr "Puffer:"
+
+#: flashwithtextblock.py:77
+#: imagewithtextblock.py:77
+msgid "Left"
+msgstr "Links"
+
+#: flashwithtextblock.py:78
+#: imagewithtextblock.py:78
+msgid "Right"
+msgstr "Rechts"
+
+#: flashwithtextblock.py:79
+#: imagewithtextblock.py:79
+msgid "None"
+msgstr "Keine"
+
+#: flashwithtextblock.py:83
+#: imagewithtextblock.py:83
+msgid "Caption:"
+msgstr "Titel"
+
+#: flashwithtextidevice.py:36
+msgid "Flash with Text"
+msgstr "Flash mit Text"
+
+#: flashwithtextidevice.py:40
+msgid "Flash"
+msgstr "Flash"
+
+#: flashwithtextidevice.py:44
+#: imagewithtextidevice.py:72
+msgid "Text"
+msgstr "Text"
+
+#: forumblock.py:88
+msgid "A single simple discussion"
+msgstr "Eine einfache Diskussion"
+
+#: forumblock.py:89
+msgid "Each person posts one discussion"
+msgstr "Jede/r startet eine Diskussion"
+
+#: forumblock.py:90
+msgid "Standard forum for general use"
+msgstr "Standardforum zur allgemeinen Nutzung"
+
+#: forumblock.py:92
+msgid "Discussions and replies are allowed"
+msgstr "Neue Diskussionsbeiträge und Antworten erlaubt"
+
+#: forumblock.py:93
+msgid "No discussions, but replies are allowed"
+msgstr "Keine neuen Beiträge, aber Antworten sind erlaubt"
+
+#: forumblock.py:94
+msgid "No discussions, no replies"
+msgstr "Weder neue Beiträge, noch Antworten erlaubt."
+
+#: forumblock.py:96
+msgid "No"
+msgstr "Nein"
+
+#: forumblock.py:97
+msgid "Yes, forever"
+msgstr "Ja, immer"
+
+#: forumblock.py:98
+msgid "Yes, initially"
+msgstr "Ja, anfangs"
+
+#: forumblock.py:100
+msgid "No groups"
+msgstr "Keine Gruppen"
+
+#: forumblock.py:101
+msgid "Separate groups"
+msgstr "Getrennte Gruppen"
+
+#: forumblock.py:102
+msgid "Visible groups"
+msgstr "Sichtbare Gruppen"
+
+#: forumblock.py:104
+msgid "Show"
+msgstr "Anzeigen"
+
+#: forumblock.py:105
+#: reflectionblock.py:100
+msgid "Hide"
+msgstr "Verbergen"
+
+#: forumblock.py:111
+msgid "Forum name:"
+msgstr "Forenname:"
+
+#: forumblock.py:116
+msgid "Forum type:"
+msgstr "Forenart:"
+
+#: forumblock.py:121
+msgid "Forum introduction:"
+msgstr "Foreneinführung:"
+
+#: forumblock.py:126
+msgid "Can a student post to this forum?:"
+msgstr "Können Teilnehmer/innen in diesem Forum Beiträge posten?"
+
+#: forumblock.py:131
+msgid "Force everyone to be subscribed?:"
+msgstr "Soll Jede/r hier eingetragen werden?"
+
+#: forumblock.py:137
+msgid "Group mode:"
+msgstr "Gruppenmodus:"
+
+#: forumblock.py:142
+msgid "Visible to students:"
+msgstr "Sichtbarkeit für Teilnehmer/innen:"
+
+#: forumblock.py:147
+msgid "Discussion topic:"
+msgstr "Diskussionsthemen:"
+
+#: forumblock.py:148
+msgid "Subject:"
+msgstr "Thema:"
+
+#: forumblock.py:153
+msgid "Message:"
+msgstr "Beitrag:"
+
+#: forumblock.py:169
+#: forumblock.py:186
+#: forumidevice.py:35
+msgid "Forum Discussion"
+msgstr "Forendiskussion"
+
+#: forumblock.py:171
+#: forumblock.py:188
+msgid "Discussion Topic"
+msgstr "Diskussionsthema"
+
+#: forumblock.py:172
+#: forumblock.py:189
+msgid "Subject"
+msgstr "Thema"
+
+#: freetextidevice.py:37
+msgid "Free Text"
+msgstr "Freier Text"
+
+#: freetextidevice.py:39
+msgid ""
+"The majority of a learning resource will be \n"
+"establishing context, delivering instructions and providing general information.\n"
+"This provides the framework within which the learning activities are built and \n"
+"delivered."
+msgstr ""
+"Die meisten Lernangeboten stellen Zusammenhänge dar, \n"
+"liefern Anleitungen und stellen grundlegende Informationen zur\n"
+"Verfügung. In diesem Rahmen werden Lernaktivitäten \n"
+"entwicklet und genutzt."
+
+#: freetextidevice.py:44
+msgid "Content"
+msgstr "Inhalt"
+
+#: freetextidevice.py:45
+#: freetextidevice.py:66
+msgid "This is a free text field general learning content can be entered."
+msgstr "Dies ist ein freies Textfeld, in dem Lerninhalte eingegeben werden können."
+
+#: galleryblock.py:166
+msgid "Add images"
+msgstr "Bilder hinzufügen"
+
+#: galleryblock.py:173
+#: galleryblock.py:246
+msgid "No Images Loaded"
+msgstr "Keine Bilder hochgeladen"
+
+#: galleryidevice.py:97
+msgid "No Thumbnail Available. Could not shrink image."
+msgstr "Keine Vorschau vorhanden. Bild konntenichtverkleinert werden."
+
+#: galleryidevice.py:245
+msgid "Image Gallery"
+msgstr "Bildgallerie"
+
+#: galleryidevice.py:247
+msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
+msgstr "Dieses Idevice zeigt in einfacher Art und Weise eine Reihe von Bildern an. Sie können z.B. mit Bildern verschiedene Beispiellösungen zeigen."
+
+#: galleryidevice.py:251
+msgid "Use this Idevice if you have a lot of images to show."
+msgstr "Mit diesem Idevice können Sie verschiedene Bilder zeigen."
+
+#: idevicestore.py:200
+msgid "Reading Activity"
+msgstr "Lesetext"
+
+#: idevicestore.py:203
+msgid ""
+"Provide learners with structure to their reading activity. This helps put\n"
+"the activity in context for the learner. It is also important to correctly\n"
+"reference any reading materials you refer to as this models best practice to\n"
+"the learners. Not always essential if covered in the course content but\n"
+"providing feedback to the learner on some of the main points covered in the\n"
+"reading may also add value to the activity."
+msgstr ""
+"Unterstützen Sie die Teilnehmer/innen mit Hinweisen zu den Lesetexten.\n"
+"Damit wird der Text im Lernzusammenhang eingeordnet. Es ist sehr wichtig\n"
+"dies füralle Texte zu tun, die Sie zurVerfügung stellen.\n"
+"Überlegen Sie, ob evtl. ein Feedback (z.B. eine Zusammenfassung der zentralen\n"
+"Aspekte eines Textes] zugefügt werden soll."
+
+#: idevicestore.py:210
+msgid "What to read"
+msgstr "Lesetexte"
+
+#: idevicestore.py:211
+msgid "Provide details of the reading materials learners should  read."
+msgstr "Bieten Sie Detailhinweise zu den Lesetexten an."
+
+#: idevicestore.py:212
+msgid "Why it should be read"
+msgstr "Warum der Text gelesen werden soll"
+
+#: idevicestore.py:213
+msgid ""
+"Describe the rationale behind the selection of the reading and how it will\n"
+"enrich the learning."
+msgstr ""
+"Beschreiben Sie warum dieser Text ausgewählt wurde und wie er\n"
+" den Lernprozess fördert."
+
+#: idevicestore.py:215
+msgid "Reference"
+msgstr "Empfehlungen/Hinweise"
+
+#: idevicestore.py:216
+msgid ""
+"Provide full reference details to the reading materials selected. The\n"
+"reference style used will depend on the preference of your department or\n"
+"faculty."
+msgstr ""
+"Geben Sie detaillierte Hinweise zu den ausgewählten Lesetexten.\n"
+"Die Art der Hinweise hängt vom Kontext Ihres Lernangebotes ab."
+
+#: idevicestore.py:219
+#: multichoiceblock.py:113
+#: questionelement.py:85
+#: truefalseblock.py:88
+msgid "Feedback"
+msgstr "Fedback"
+
+#: idevicestore.py:220
+msgid ""
+"The use of this element is flexible.  Use it to provide a summary of the\n"
+"points covered in the reading, or as a starting point for further analysis of\n"
+"the reading by posing a question or providing a statement to begin a\n"
+"debate."
+msgstr ""
+"Feedback kann sehr flexibel genutzt werden. Erstellen Sie eine\n"
+"Zusammenfassung der wichtigsten Punkte desTextes oder nutzen\n"
+"Sie das Feedback als Ausgangspunkt für weitere Aktivitäten mit dem\n"
+"Text oder einer Frage oder Aussage als Ausgangspunkt für eine Diskussion."
+
+#: idevicestore.py:226
+#: idevicestore.py:235
+msgid "Objectives"
+msgstr "Ziele"
+
+#: idevicestore.py:229
+msgid ""
+"Objectives describe the expected outcomes of the learning and should\n"
+"define what the learners will be able to do when they have completed the\n"
+"learning tasks."
+msgstr ""
+"Ziele beschreiben die erwartete Wirkung des Lernschrittes und sollte\n"
+"beschreiben, was die Teilnehmer/innen können, wenn sie die Aufgaben \n"
+"bearbeitet haben."
+
+#: idevicestore.py:236
+msgid "Type the learning objectives for this resource."
+msgstr "Geben Sie die Lernziele für diesen Schritt an."
+
+#: idevicestore.py:239
+#: idevicestore.py:249
+msgid "Preknowledge"
+msgstr "Vorwissen"
+
+#: idevicestore.py:242
+msgid ""
+"Prerequisite knowledge refers to the knowledge learners should already\n"
+"have in order to be able to effectively complete the learning. Examples of\n"
+"pre-knowledge can be: <ul>\n"
+"<li>        Learners must have level 4 English </li>\n"
+"<li>        Learners must be able to assemble standard power tools </li></ul>\n"
+msgstr ""
+"Vorwissen bezieht sich auf Kenntnisse, die die Teilnehmer/innen haben sollten, \n"
+"um diesen Lernschritt erfolgreich durcharbeiten zu können. Z.B.:<ul>\n"
+"<li>kennen unregelmässige Verben</li>\n"
+"<li>können mit MS Word einen Brief erstellen</li></ul>\n"
+
+#: idevicestore.py:250
+msgid ""
+"Describe the prerequisite knowledge learners should have to effectively\n"
+"complete this learning."
+msgstr "Beschreiben Sie die Kenntnisse, die zur erfolgreichen Bearbeitung notwendig sind."
+
+#: idevicestore.py:254
+#: idevicestore.py:262
+msgid "Activity"
+msgstr "Aktivität"
+
+#: idevicestore.py:257
+msgid ""
+"An activity can be defined as a task or set of tasks a learner must\n"
+"complete. Provide a clear statement of the task and consider any conditions\n"
+"that may help or hinder the learner in the performance of the task."
+msgstr ""
+"Eine Aktivität kann eine einzelne Aufgabe oder die Verbindung mehrerer Aufgaben sein,\n"
+"die ein/e Teilnehmer/in bearbeiten soll. Erstellen Sie eine genaue Aufgabenbeschreibung\n"
+"und überlegen Sie alle Anforderungen und Hilfen, die für die Bearbeitung der Aufgabe wichtig\n"
+"sein können."
+
+#: idevicestore.py:263
+msgid "Describe the tasks the learners should complete."
+msgstr "Beschreiben Sie die Aufgabenstellung"
+
+#: imagewithtextidevice.py:37
+msgid "Image with Text"
+msgstr "Bild mit Text"
+
+#: imagewithtextidevice.py:39
+msgid ""
+"<p>\n"
+"The image with text iDevice can be used in a number of ways to support both\n"
+"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
+"content. We provide an example of each dimension:\n"
+"</p><p>\n"
+"<b>Teacher profile (emotional dimension)</b>\n"
+"</p><p>\n"
+"Research suggests that online learners appreciate a personalised approach.\n"
+"One way this can be achieved is to provide a brief description of the\n"
+"teachers and  other staff involved in the delivery of the learning. The\n"
+"profile (with personal photo) can not only be used to communicate the role\n"
+"and credentials of the teacher but, also acknowledges the direct\n"
+"relationship between the learner and teacher, rather then the content\n"
+"delivery medium (the computer). Profiles should  be written in a\n"
+"\"non-academic\" tone making use of personal pronouns.\n"
+"</p><p>\n"
+"<b>Integrating visuals with verbal summaries</b>\n"
+"</p><p>\n"
+"Cognitive psychologists indicate that presenting learners with a\n"
+"representative image and corresponding verbal summary (that is presented\n"
+"simultaneously) can reduce cognitive load and enhance learning retention.\n"
+"This iDevice can be used to present an image (photograph, diagram or\n"
+"graphic) with a brief verbal summary covering the main points relating to\n"
+"the image. For example, if you were teaching the functions of a four-stroke\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
+"the piston with a brief textual summary of the key aspects of each visual.\n"
+"</p>"
+msgstr ""
+"<p>\n"
+"Das Bild mit Text iDevice kann emotionale (affektive) Aspekte und  kognitive Aufgaben\n"
+"unterstützen. Ein Beispiel für beide Optionen macht das deutlicher:\n"
+"</p><p>\n"
+"<b>Trainerprofil (emotionale Dimension)</b>\n"
+"</p><p>\n"
+"Vorschungsergebnisse betonenen, dass viele Lerner einen persönlichen Zugang\n"
+"bevorzugen. Eine Möglichkeit hierzu ist die kurze Darstellung des Trainers und\n"
+"anderer am Lernprozess Beteiligter. Das Profil (am besten mit Foto)\n"
+"kann nicht nur zur Darstellung der Rolle und Kompetenze\n"
+"genutzt werden. Anmerkungen zum gemeinsamen Lernprozess, dem Umgang\n"
+"miteinander (Spielregeln) und mit dem Medium Computer und den Inhalten\n"
+"können hier ebenfalls dargestellt werden. Achten Sie beim Verfassen des Textes\n"
+"auf eine \"gut verständliche\" Sprache.\n"
+"</p><p>\n"
+"<b>Bilder mit Texterklärungen</b>\n"
+"</p><p>\n"
+"Kognitive Psychologen weisen darauf hin, dass die Darstellung von \n"
+"Bildern mit dazu passenden textlichen Zusammenfassungen\n"
+"die Aufmerksamkeit fördern und das Behalten erleichtern.\n"
+"Dieses iDevice kann zur Darstellung von Bildern (Fotos, Diagramme oder\n"
+"Grafiken) mit einerkurzen Beschreibung der wichtigsten Punkte\n"
+"der Abbildung genutzt werden.Wenn Sie z.B. die Funktion eines 4-Takt-Motors\n"
+"erläutern wollen, kann jedes Bild eine Phase darstellen und derText diese\n"
+"kurz erläutern.\n"
+"</p>"
+
+#: imsexport.py:174
+#: scormexport.py:206
+msgid "eXe"
+msgstr "eXe"
+
+#: mainpage.py:236
+#, python-format
+msgid "Package saved to: %s"
+msgstr "Paket gespeichert zu %s"
+
+#: mainpage.py:263
+#: mainpage.py:282
+#, python-format
+msgid ""
+"Sorry, wrong file format:\n"
+"%s"
+msgstr ""
+"Sorry, falsches Dateiformat \n"
+"%s"
+
+#: mainpage.py:265
+#: mainpage.py:284
+msgid "Sorry, wrong file format"
+msgstr "Sorry, falsches Dateiformat"
+
+#: mainpage.py:266
+#: mainpage.py:285
+#, python-format
+msgid "Error loading package \"%s\": %s"
+msgstr "Fehler beim Laden des Paketes \"%s\".%s"
+
+#: mainpage.py:333
+#: mainpage.py:376
+#, python-format
+msgid "Filename %s is a file, cannot replace it"
+msgstr "Dateiname %s ist eine Datei, sie kann nicht ersetzt werden."
+
+#: mainpage.py:416
+#: mainpage.py:434
+#, python-format
+msgid "Exported to %s"
+msgstr "Exportiertzu %s"
+
+#: mainwindow.py:86
+msgid "/_File"
+msgstr "/_Datei"
+
+#: mainwindow.py:87
+msgid "/File/_New"
+msgstr "/Datei/_Neu"
+
+#: mainwindow.py:88
+msgid "/File/_Open"
+msgstr "/Datei/_Öffnen"
+
+#: mainwindow.py:89
+msgid "/File/sep1"
+msgstr "/Datei/sep1"
+
+#: mainwindow.py:90
+msgid "/File/_Save"
+msgstr "/Datei/_Speichern"
+
+#: mainwindow.py:91
+msgid "/File/Save _As"
+msgstr "/Datei/_Speichern unter"
+
+#: mainwindow.py:92
+msgid "/File/sep2"
+msgstr "/Datei/sep2"
+
+#: mainwindow.py:93
+msgid "/File/_Export"
+msgstr "/Datei/_Export"
+
+#: mainwindow.py:94
+msgid "/File/Export/_SCORM 1.2"
+msgstr "/Datei/Export/_SCORM 1.2"
+
+#: mainwindow.py:96
+msgid "/File/Export/IMS Content Package"
+msgstr "/Datei/Export/IMS Content Package"
+
+#: mainwindow.py:98
+msgid "/File/Export/Web Site"
+msgstr "/Datei/Export/Web Site"
+
+#: mainwindow.py:100
+msgid "/File/Export/Single Page"
+msgstr "/Datei/Export/Single Page"
+
+#: mainwindow.py:102
+msgid "/File/sep3"
+msgstr "/Datei/sep3"
+
+#: mainwindow.py:103
+msgid "/File/Quit"
+msgstr "/Datei/Beenden"
+
+#: mainwindow.py:105
+msgid "/_Tools"
+msgstr "/_Tools"
+
+#: mainwindow.py:106
+msgid "/Tools/iDevice Editor"
+msgstr "/Tools/iDevice Editor"
+
+#: mainwindow.py:108
+msgid "/_Styles"
+msgstr "/_Styles"
+
+#: mainwindow.py:111
+msgid "/Styles/"
+msgstr "/Styles/"
+
+#: mainwindow.py:117
+msgid "/_View"
+msgstr "/_Ansicht"
+
+#: mainwindow.py:118
+msgid "/View/Refresh"
+msgstr "/Ansicht/Aktualisieren"
+
+#: mainwindow.py:121
+msgid "/_Debug"
+msgstr "/_Debug"
+
+#: mainwindow.py:122
+msgid "/Debug/View _HTML"
+msgstr "/Debug/View _HTML"
+
+#: mainwindow.py:125
+msgid "/_Help"
+msgstr "/_Hilfe"
+
+#: mainwindow.py:126
+msgid "/_Help/Tutorial"
+msgstr "/_Hilfe/Tutorial"
+
+#: mainwindow.py:127
+msgid "/_Help/About"
+msgstr "/_Hilfe/Über"
+
+#: multichoiceblock.py:97
+#: testquestionelement.py:83
+msgid "Question:"
+msgstr "Frage:"
+
+#: multichoiceblock.py:100
+msgid "Hint:"
+msgstr "Hinweis:"
+
+#: multichoiceblock.py:106
+#: testquestionelement.py:93
+msgid "Alternatives"
+msgstr "Alternativen"
+
+#: multichoiceblock.py:109
+#: optionelement.py:129
+#: testquestionelement.py:96
+msgid "Correct"
+msgstr "Richtig"
+
+#: multichoiceblock.py:110
+#: testquestionelement.py:99
+msgid "Option"
+msgstr "Option"
+
+#: multichoiceblock.py:125
+#: testquestionelement.py:110
+msgid "Add another option"
+msgstr "Weitere Option hinzufügen"
+
+#: multichoiceidevice.py:56
+msgid "Multi-Choice Question"
+msgstr "Multiple-Choice Frage"
+
+#: multichoiceidevice.py:58
+msgid ""
+"Although more often used in formal testing \n"
+"situations MCQs can be used as a testing tool to stimulate thought and  \n"
+"discussion on topics students may feel a little reticent in responding to. \n"
+"\n"
+"When designing a MCQ test consider the following:\n"
+"<ul>\n"
+"<li> What are the learning outcomes are the questions testing</li>\n"
+"<li>    What intellectual skills are being tested</li>\n"
+"<li> What are the language skills of the audience</li>\n"
+"<li> Gender and cultural issues</li>\n"
+"<li> Avoid grammar language and question structures that might provide \n"
+"     clues</li>\n"
+"</ul>\n"
+" "
+msgstr ""
+"Multiple-Choice-Fragen werden meist in formalen Tests verwandt.\n"
+"Sie können jedoch auch genutzt werden, um neue Überlegungen\n"
+"anzustossen oder Diskussionen zu Themen zu fördern, bei denen\n"
+"die Teilnehmer/innen eher etwas zurückhaltend sind.\n"
+"\n"
+"Beachten Sie bei der Erstellung von Multiple-Choice- Fragen folgendes:<ul>\n"
+"<li>Welches Lernergebnis wollen Sie mit den Fragen erzielen?</li>\n"
+"<li>Welche intellektuellen Fähigkeiten wollen Sie testen?</li>\n"
+"<li>Welche sprachlichen Fähigkeiten haben Ihre Teilnehmer/innen?</li>\n"
+"<li>Gibt es geschlechtsspezifische Aspekte oder kulturelle Unterschiede zu beachten?</li>\n"
+"<li>Beachten Sie Satzbau und Grammatik, damit die Fragen gut verständlich sind?</li>\n"
+"</ul>\n"
+" "
+
+#: multichoiceidevice.py:71
+msgid ""
+"When building an MCQ consider the following: <ul>\n"
+"<li> Language use phrases that learners are familiar with and have \n"
+"encountered in their study </li>\n"
+"<li> Keep responses concise </li>\n"
+"<li> There should be some consistency between the stem and the responses </li>\n"
+"<li> Provide enough options to challenge learners to think about their response\n"
+"</li>\n"
+"<li> Try to make sure that correct responses are not more detailed than the \n"
+"distractors </li>\n"
+"<li> Distractors should be incorrect but plausible </li>\n"
+"</ul>\n"
+msgstr ""
+"Beachten Sie bei der Erstellung der Multiple-Choice Fragen folgendes:<ul>\n"
+"<li>Verwenden Sie Begriffe, die den Teilnehmer/innen vetraut sind\n"
+"oder in der Lerneinheit verwandt wurden.</li>\n"
+"<li>Formulieren Sie knappe Antwortvorgaben.</li>\n"
+
+#: multichoiceidevice.py:86
+#: multichoiceidevice.py:125
+msgid ""
+"Enter a hint here. If you\n"
+"do not want to provide a hint, leave this field blank."
+msgstr ""
+"Geben Sie hier Ihren Hinweis ein. \n"
+"wenn Sie keinen Hinweis eingeben wollen,\n"
+"lassen Sie das Feld leer."
+
+#: multichoiceidevice.py:89
+#: truefalseidevice.py:67
+msgid "Type the question stem."
+msgstr "Gebn Sie den Fragenstamm ein."
+
+#: multichoiceidevice.py:90
+msgid ""
+"To indicate the correct answer, click the \n"
+"radio button next to the correct option."
+msgstr ""
+"Klicken Sie auf den Button neben der richtigen Option\n"
+"um die korrekte Antwort zu kennzeichnen."
+
+#: multichoiceidevice.py:92
+msgid ""
+"Type in each option from which students \n"
+"must choose into the appropriate options box. You can add options by clicking \n"
+"on the \"ADD ANOTHER OPTION\" button. You can delete options by clicking on the \n"
+"\"x\" next to each option."
+msgstr ""
+"Tragen Sie jede Option die zur Auswahl steht\n"
+"in das entsprechende Feld ein. Weitere Optionen\n"
+"können Sie ergänzen durch Klick auf den \n"
+"\"Eine weitere Option hinzufügen\"Button.\n"
+"Sie können Optionen durch einen Klick auf das \"x\" \n"
+"neben der Option löschen."
+
+#: multichoiceidevice.py:96
+msgid ""
+"Type in the feedback that you want the \n"
+"student to see when selecting the particular option. If you don't complete this \n"
+"box, eXe will automatically provide default feedback as follows: \"Correct \n"
+"answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
+"for the other alternatives."
+msgstr ""
+"Geben Sie ein Feedback ein, das Teilenhemr/innen sehen sollen\n"
+"wenn sie die Option wählen. Felder, die Sie leer lassen füllt \n"
+"eXe automatisch mit Hinweisen auf richtige oder falsche Antwortennaus."
+
+#: optionelement.py:97
+#: testoptionelement.py:91
+#: truefalseelement.py:110
+msgid "Delete option"
+msgstr "Löschoption"
+
+#: optionelement.py:131
+msgid "Incorrect"
+msgstr "Falsch"
+
+#: outlinepane.py:228
+msgid "Outline"
+msgstr "Übersicht"
+
+#: package.py:52
+msgid "Topic"
+msgstr "Thema"
+
+#: package.py:52
+msgid "Section"
+msgstr "Abschnitt"
+
+#: package.py:52
+msgid "Unit"
+msgstr "Einheit"
+
+#: package.py:58
+msgid "Home"
+msgstr "Home"
+
+#: package.py:90
+msgid "?????"
+msgstr "?????"
+
+#: package.py:188
+msgid "iDevice Editor"
+msgstr "iDevice Editor"
+
+#: propertiespage.py:76
+msgid "Project Properties"
+msgstr "Projekteigenschaften"
+
+#: propertiespane.py:96
+msgid "Project title:"
+msgstr "Projekttiel:"
+
+#: propertiespane.py:105
+msgid "Description"
+msgstr "Beschreibung"
+
+#: propertiespane.py:110
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#: propertiespane.py:113
+msgid "Level 1: "
+msgstr "Level 1:"
+
+#: propertiespane.py:116
+msgid "Level 2: "
+msgstr "Level 2:"
+
+#: propertiespane.py:120
+msgid "Level 3: "
+msgstr "Level 3:"
+
+#: questionelement.py:82
+#: questionelement.py:120
+msgid "Question"
+msgstr "Frage"
+
+#: questionelement.py:92
+#: testquestionelement.py:88
+msgid "Delete question"
+msgstr "Frage löschen"
+
+#: quiztestblock.py:93
+msgid "Please select a correct answer for each question."
+msgstr "Wählen Sie eine richtige Antwort für jede Frage aus."
+
+#: quiztestblock.py:95
+msgid "SCORM Multiple Choice Quiz:"
+msgstr "SCORM Multiple-Choice Test:"
+
+#: quiztestblock.py:97
+msgid "Select pass rate: "
+msgstr "Wert für \"Bestanden\":"
+
+#: quiztestblock.py:110
+msgid "Add Question"
+msgstr "Frage hinzufügen"
+
+#: quiztestblock.py:135
+msgid "SUBMIT ANSWERS"
+msgstr "ANTWORT ABGEBEN"
+
+#: quiztestblock.py:353
+msgid "Submit Answer"
+msgstr "Antwort abgeben"
+
+#: quiztestidevice.py:81
+msgid "SCORM Quiz"
+msgstr "SCORM Test"
+
+#: reflectionblock.py:75
+msgid "Reflective question:"
+msgstr "Reflexionsfrage"
+
+#: reflectionblock.py:78
+msgid "Response:"
+msgstr "Antwort:"
+
+#: reflectionblock.py:96
+msgid "Click here"
+msgstr "Klicken Sie hier"
+
+#: reflectionidevice.py:42
+msgid "Reflection"
+msgstr "Reflexion"
+
+#: reflectionidevice.py:44
+msgid ""
+"Reflection is a teaching method often used to \n"
+"connect theory to practice. Reflection tasks often provide learners with an \n"
+"opportunity to observe and reflect on their observations before presenting \n"
+"these as a piece of academic work. Journals, diaries, profiles and portfolios \n"
+"are useful tools for collecting observation data. Rubrics and guides can be \n"
+"effective feedback tools."
+msgstr ""
+"Reflexionen werden häufig benutzt, umeine Verbindung\n"
+"zwischen Theorie und Praxis herzustellen. Reflexionsaufgaben\n"
+"ermöglichen vor der Präsentation eines Ergebnisses noch einmal\n"
+"darüber nachzudenken. Journale, tagebücher, Profile und Prtfolios\n"
+"sind nützliche Instrumente um den Reflektionsprozess darzu-\n"
+"stellen. Rubriken und Leitlinien sind effektive Feedbackmöglichkeiten."
+
+#: reflectionidevice.py:53
+msgid ""
+"Enter details of the activity learners \n"
+"must reflect upon."
+msgstr ""
+"Geben Sie Details ein, über die der/die Teilnehmer/in \n"
+"reflektieren soll."
+
+#: reflectionidevice.py:55
+msgid ""
+"Describe how learners will assess how \n"
+"they have done in the exercise. (Rubrics are useful devices for providing \n"
+"reflective feedback.)"
+msgstr ""
+"Beschreiben Sie wie die Teilnehmer/innen von der Bearbeitung\n"
+"der Aufgaben profitieren. (Rubriken unterstützen reflektierendes\n"
+"Feedback.)"
+
+#: truefalseblock.py:82
+msgid "Questions"
+msgstr "Fragen"
+
+#: truefalseblock.py:84
+msgid "T"
+msgstr "R"
+
+#: truefalseblock.py:85
+msgid "F"
+msgstr "F"
+
+#: truefalseblock.py:90
+#: truefalseelement.py:132
+msgid "Hint"
+msgstr "Hinweis"
+
+#: truefalseelement.py:156
+msgid "True"
+msgstr "Richtig"
+
+#: truefalseelement.py:158
+msgid "False"
+msgstr "Falsch"
+
+#: truefalseelement.py:175
+msgid "Correct!"
+msgstr "Richtig!"
+
+#: truefalseelement.py:176
+msgid "Incorrect!"
+msgstr "Falsch"
+
+#: truefalseidevice.py:58
+msgid "True-False Question"
+msgstr "Richtig/Falsch Fragen"
+
+#: truefalseidevice.py:60
+msgid ""
+"True/false questions present a statement where \n"
+"the learner must decide if the statement is true. This type of question works \n"
+"well for factual information and information that lends itself to either/or \n"
+"responses."
+msgstr ""
+"Richtig/Falsch-Fragen erfordern eine Aussage bei der\n"
+"der/die Teilnehmer/in entscheiden soll, ob die Aussage richtig ist.\n"
+"Dieser Fragetyp eignet sich gut für Fakteninformationen. Es ist nicht\n"
+"für Meinungsfragen geeignet."
+
+#: truefalseidevice.py:65
+msgid "Type the question's hint here."
+msgstr "Tragen Sie den Hinweis zu der Frage hier ein"
+
+#: truefalseidevice.py:69
+msgid ""
+"Type in the feedback that you want the \n"
+"student to see when selecting the particular question. If you don't complete\n"
+"this box, eXe will automatically provide default feedback as follows: \n"
+"\"Correct answer\" as indicated by the selection for the correct answer; or \n"
+"\"Wrong answer\" for the other alternatives."
+msgstr ""
+"Geben Sie das Feedback für Teilnehmer/innen hier ein. \n"
+"Es wird bei der jeweiligen Frage angezeigt. Wenn Sie das Feld leer\n"
+"zeigt eXe automatisch die folgenden Rückmeldungen: \n"
+"\"Richtige Antwort\" wenn die korrekte Antwort gewählt wurde; oder \n"
+"\"Falsche Antwort\" für die anderen Alternativen."
+
+#: wikipediablock.py:70
+#: wikipediaidevice.py:48
+msgid "Wikipedia Article"
+msgstr "Wikipedia Artikel"
+
+#: wikipediablock.py:71
+msgid "Wikibooks Article"
+msgstr "Wikibooks Artikel"
+
+#: wikipediablock.py:76
+msgid "Load"
+msgstr "Laden"
+
+#: wikipediaidevice.py:50
+msgid ""
+"The Wikipedia iDevice takes a copy of an\n"
+"article from en.wikipedia.org, including copying the associated images."
+msgstr ""
+"Das Wikipedia iDevice erstellt eine Kopie eines Beitrages\n"
+"von en.wikipedia.org mit allen Bildern."
+
+#: wikipediaidevice.py:55
+msgid "Article"
+msgstr "Artikel"
+
+#: wikipediaidevice.py:85
+msgid "Unable to connect to "
+msgstr "Verbindung konnte nicht hergestellt werden mit "
+
+
