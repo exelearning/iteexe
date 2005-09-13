@@ -26,7 +26,7 @@ import os
 import sys
 from getopt import getopt, GetoptError
 # needed so we can display our GTK window
-# must import reactor BEFORE reactor and webserver.
+# must import reactor BEFORE reactor and webServer.
 from twisted.internet import gtk2reactor
 gtk2reactor.install()
 
@@ -54,7 +54,7 @@ class Application:
         self.packageStore = None
         self.ideviceStore = None
         self.packagePath  = None
-        self.server       = None
+        self.webServer       = None
 
 
     def main(self):
@@ -120,17 +120,17 @@ class Application:
         self.packageStore = PackageStore()
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
-        self.server = WebServer(self)
+        self.webServer = WebServer(self)
 
 
     def serve(self):
         """
-        Starts the web server,
+        Starts the WebServer,
         this func doesn't return until after the app has finished
         """
         print "Welcome to eXe: the eLearning XHTML editor"
         log.info("eXe running...")
-        self.server.run()
+        self.webServer.run()
 
     
     def launch(self):
@@ -138,14 +138,14 @@ class Application:
         launches the webbrowser
         """
         if self.packagePath:
-            package = self.packageStore.loadPackage(self.packagePath)
             log.debug("loading package "+package.name)
-            self.server.root.bindNewPackage(package)
-            window = MainWindow(self, package.name)
-            window.show_all()
+            package = self.packageStore.loadPackage(self.packagePath)
         else:
-            window = MainWindow(self, "")
-            window.show_all()
+            log.debug("creating a new package")
+            package = self.packageStore.createPackage()
+
+        window = MainWindow(self, package)
+        window.show_all()
 
 
     def usage(self):

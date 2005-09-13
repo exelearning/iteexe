@@ -56,12 +56,12 @@ class Renderable(object):
     # Default attribute values
     docFactory = None
 
-    def __init__(self, parent, package=None, webserver=None, name=None):
+    def __init__(self, parent, package=None, webServer=None, name=None):
         """
         Pass me a 'parent' rendering component,
         a 'package' that I'm rendering for
-        and a 'webserver' instance reference (from webserver.py)
-        If you don't pass 'webserver' and 'package' I'll
+        and a 'webServer' instance reference (from webServer.py)
+        If you don't pass 'webServer' and 'package' I'll
         get them from 'parent'
         'name' is a identifier to distuniguish us from the other children of our
         parent
@@ -89,12 +89,12 @@ class Renderable(object):
             self.package = parent.package
         else:
             self.package = None
-        if webserver:
-            self.webserver = webserver
+        if webServer:
+            self.webServer = webServer
         elif parent:
-            self.webserver = parent.webserver
+            self.webServer = parent.webServer
         else:
-            self.webserver = None
+            self.webServer = None
 
 
     # Properties
@@ -135,9 +135,9 @@ class Renderable(object):
             if attr.startswith('render_'):
                 name = attr.split('_', 1)[-1]
                 res = baseget('renderChildren')[name].render
-            elif baseget('webserver'):
+            elif baseget('webServer'):
                 # If not, see if what they're looking for is in the app object
-                res = getattr(baseget('webserver').application, attr)
+                res = getattr(baseget('webServer').application, attr)
             setattr(self, attr, res)
         return res
 

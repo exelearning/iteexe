@@ -39,12 +39,12 @@ class PackageRedirectPage(RenderableResource):
     
     name = '/'
 
-    def __init__(self, server):
+    def __init__(self, webServer):
         """
         Initialize
         """
-        RenderableResource.__init__(self, None, None, server)
-        self.server = server
+        RenderableResource.__init__(self, None, None, webServer)
+        self.webServer = webServer
 
     def getChild(self, name, request):
         """

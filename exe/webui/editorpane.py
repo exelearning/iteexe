@@ -40,13 +40,13 @@ class EditorPane(object):
     """
     The EditorPane is responsible for creating new idevice
     """
-    def __init__(self, webserver):
+    def __init__(self, webServer):
         """
         Initialize
         """
-        self.ideviceStore    = webserver.application.ideviceStore
-        self.webDir          = webserver.application.config.webDir
-        self.styles          = webserver.application.config.styles
+        self.ideviceStore    = webServer.application.ideviceStore
+        self.webDir          = webServer.application.config.webDir
+        self.styles          = webServer.application.config.styles
         self.elements        = []
         self.idevice         = GenericIdevice("", "", "", "", "")
         self.idevice.id      = self.ideviceStore.getNewIdeviceId()

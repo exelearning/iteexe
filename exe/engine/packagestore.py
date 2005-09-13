@@ -36,11 +36,11 @@ class PackageStore:
         self.loaded       = {}
 
 
-    def createPackage(self, name=None):
+    def createPackage(self):
         """
         Creates a package
         """
-        log.debug(u"createPackage: name=" + repr(name))
+        log.debug(u"createPackage")
         # Make up an initial unique name
         i = 1
         name = u"newPackage"

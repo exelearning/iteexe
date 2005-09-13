@@ -48,7 +48,7 @@ class TestoptionElement(object):
 
     def process(self, request):
         """
-        Process arguments from the webserver.  Return any which apply to this 
+        Process arguments from the web server.  Return any which apply to this 
         element.
         """
         log.debug("process " + repr(request.args))

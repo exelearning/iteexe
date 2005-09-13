@@ -46,7 +46,10 @@ class TestquestionElement(object):
         self.keyId      = "key" + self.id
         i = 0
         for option in question.options:
-            self.options.append(TestoptionElement(i, question, self.id, option,
+            self.options.append(TestoptionElement(i, 
+                                                  question, 
+                                                  self.id, 
+                                                  option,
                                                   idevice))
             i += 1
 

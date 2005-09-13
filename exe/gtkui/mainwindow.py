@@ -46,15 +46,16 @@ class MainWindow(gtk.Window):
     """
     Main window class
     """
-    def __init__(self, application, packageName):
+    def __init__(self, application, package):
         """
         Initialize
         """
         self.application = application
         self.config      = application.config
-        self.url         = "http://localhost:%d" % self.config.port
-        self.packageName = packageName
+        self.url         = "http://127.0.0.1:%d" % self.config.port
+        self.package     = package
 
+        self.application.webServer.root.bindNewPackage(package)
 
         gtkmozembed.gtk_moz_embed_set_comp_path(self.config.greDir)
 
@@ -141,9 +142,7 @@ class MainWindow(gtk.Window):
         self.leftPane = gtk.VPaned()
         hPane.add1(self.leftPane)
         #DJM TODO!!!
-        package  = self.application.packageStore.loadPackage(
-                                     "/home/djm/krash/0.6test.elp")
-        outlinePane = OutlinePane(package)
+        outlinePane = OutlinePane(self.package)
         self.leftPane.add1(outlinePane.treeview)
         #self.leftPane.add1(gtk.Label("Outline")
         idevicePane = IdevicePane(self.application.ideviceStore)
@@ -152,7 +151,7 @@ class MainWindow(gtk.Window):
         # Browser
         self.browser = gtkmozembed.MozEmbed()
         self.browser.connect("location", self.newLocation, "location")
-        self.browser.load_url(self.url+"/"+self.packageName)
+        self.browser.load_url(self.url+"/"+self.package.name)
         hPane.add2(self.browser)
 
         # Status Bar
@@ -180,8 +179,8 @@ class MainWindow(gtk.Window):
         Create a new package
         TODO: check if the package was dirty
         """
-        self.packageName = ""
-        self.browser.load_url(self.url)
+        self.package = self.packageStore.createPackage()
+        self.browser.load_url(self.package.name)
 
         
     def openFile(self, *dummy):

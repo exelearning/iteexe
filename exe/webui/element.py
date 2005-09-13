@@ -39,7 +39,7 @@ class Element(object):
  
     def process(self, request):
         """
-        Process arguments from the webserver. 
+        Process arguments from the web server. 
         """
         log.error(u"process called directly")
         return _(u"ERROR Element.process called directly")
@@ -83,7 +83,7 @@ class TextElement(Element):
  
     def process(self, request):
         """
-        Process arguments from the webserver. 
+        Process arguments from the web server. 
         """
         if self.id in request.args:
             self.field.content = request.args[self.id][0]
@@ -129,7 +129,7 @@ class TextAreaElement(Element):
  
     def process(self, request):
         """
-        Process arguments from the webserver. 
+        Process arguments from the web server. 
         """
         if self.id in request.args:
             self.field.content = request.args[self.id][0]
@@ -175,7 +175,7 @@ class ImageElement(Element):
 
     def process(self, request):
         """
-        Process arguments from the webserver.
+        Process arguments from the web server.
         """
         if "path"+self.id in request.args:
             self.field.setImage(request.args["path"+self.id][0])
@@ -448,7 +448,7 @@ class FlashElement(Element):
 
     def process(self, request):
         """
-        Process arguments from the webserver.
+        Process arguments from the web server.
         """
         if "path"+self.id in request.args:
             self.field.setFlash(request.args["path"+self.id][0])

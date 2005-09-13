@@ -21,7 +21,7 @@
 # ===========================================================================
 
 """
-Webserver module
+WebServer module
 """
 
 from twisted.internet              import reactor
@@ -53,9 +53,9 @@ class WebServer:
 
     def run(self):
         """
-        Start serving webpages from the local webserver
+        Start serving webpages from the local web server
         """
-        log.debug("start webserver running")
+        log.debug("start web server running")
         webDir = self.config.webDir
         self.root.putChild("images",    static.File(webDir+"/images"))
         self.root.putChild("css",       static.File(webDir+"/css"))   

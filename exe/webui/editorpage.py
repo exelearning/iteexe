@@ -44,7 +44,7 @@ class EditorPage(RenderableResource):
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.editorPane   = EditorPane(self.webserver)
+        self.editorPane   = EditorPane(self.webServer)
         self.url          = ""
         self.elements     = []
         self.isNewIdevice = True
