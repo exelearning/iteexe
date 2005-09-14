@@ -138,7 +138,7 @@ class Application:
         launches the webbrowser
         """
         if self.packagePath:
-            log.debug("loading package "+package.name)
+            log.debug("loading package "+self.packagePath)
             package = self.packageStore.loadPackage(self.packagePath)
         else:
             log.debug("creating a new package")

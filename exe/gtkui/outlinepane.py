@@ -31,24 +31,35 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class OutlinePane(object):
+class OutlinePane(gtk.Frame):
     """
     OutlinePane is responsible for creating the package outline tree
     """
     def __init__(self, package):
+        gtk.Frame.__init__(self)
+        self.set_size_request(250, 250)
         self.package = package
+
         # create tree model
         self.model = gtk.TreeStore(gobject.TYPE_STRING,)
         self.__addNode(None, self.package.root)
 
-        # create tree view
-        self.treeview = gtk.TreeView(self.model)
-        self.treeview.set_rules_hint(True)
-        self.treeview.set_search_column(0)
+        # ScrolledWindow
+        scrollWin = gtk.ScrolledWindow()
+        self.add(scrollWin)
+        scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+
+        # Tree
+        self.treeView = gtk.TreeView(self.model)
+        scrollWin.add_with_viewport(self.treeView)
+        self.treeView.connect('row-activated', self.rowActivated)
+        self.treeView.set_rules_hint(True)
+        self.treeView.set_search_column(0)
+        self.treeView.expand_row((0,), open_all=True)
 
         # add columns to the tree view
         column = gtk.TreeViewColumn('Outline', gtk.CellRendererText(), text=0)
-        self.treeview.append_column(column)
+        self.treeView.append_column(column)
         
 
 
@@ -63,6 +74,10 @@ class OutlinePane(object):
         for child in node.children:
             self.__addNode(treeIter, child)
     
+
+    def rowActivated(self, treeView, nodePath, column):
+        print treeView, nodePath, column
+
 
     def process(self, request):
         """ 

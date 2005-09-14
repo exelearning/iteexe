@@ -28,7 +28,7 @@ import logging
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class IdevicePane(object):
+class IdevicePane(gtk.Frame):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
@@ -36,6 +36,9 @@ class IdevicePane(object):
         """ 
         Initialize
         """ 
+        gtk.Frame.__init__(self)
+        self.set_size_request(250, 250)
+
         self.ideviceStore = ideviceStore
         self.prototypes   = {}
         self.ideviceStore.register(self)
@@ -51,15 +54,27 @@ class IdevicePane(object):
         for prototype in self.prototypes.values():
             model.append((prototype.title,))
 
+        # ScrolledWindow
+        scrollWin = gtk.ScrolledWindow()
+        self.add(scrollWin)
+        scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+
         # create tree view
-        self.treeview = gtk.TreeView(model)
-        self.treeview.set_rules_hint(True)
-        self.treeview.set_search_column(0)
+        self.treeView = gtk.TreeView(model)
+        scrollWin.add_with_viewport(self.treeView)
+        self.treeView.set_rules_hint(True)
+        self.treeView.set_search_column(0)
+        self.treeView.connect('row-activated', self.rowActivated)
 
         # add columns to the tree view
         column = gtk.TreeViewColumn('iDevices', gtk.CellRendererText(), text=0)
         column.set_sort_column_id(0)
-        self.treeview.append_column(column)
+        self.treeView.append_column(column)
+
+
+    def rowActivated(self, treeView, nodePath, column):
+        print treeView, nodePath, column
+
 
         
 # ===========================================================================

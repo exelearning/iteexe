@@ -3,8 +3,6 @@
 # eXe
 # Copyright 2004-2005, University of Auckland
 #
-# This module is for the TwiSteD web server.
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -21,7 +19,7 @@
 # ===========================================================================
 
 """
-Browser module
+Main Window module
 """
 
 import os
@@ -143,10 +141,11 @@ class MainWindow(gtk.Window):
         hPane.add1(self.leftPane)
         #DJM TODO!!!
         outlinePane = OutlinePane(self.package)
-        self.leftPane.add1(outlinePane.treeview)
+        self.leftPane.add1(outlinePane)
+        #self.leftPane.add1(outlinePane.treeView)
         #self.leftPane.add1(gtk.Label("Outline")
         idevicePane = IdevicePane(self.application.ideviceStore)
-        self.leftPane.add2(idevicePane.treeview)
+        self.leftPane.add2(idevicePane)
         
         # Browser
         self.browser = gtkmozembed.MozEmbed()
@@ -197,7 +196,7 @@ class MainWindow(gtk.Window):
         if response == gtk.RESPONSE_OK:
             filename = chooser.get_filename()
             package  = self.application.packageStore.loadPackage(filename)
-            self.application.server.root.bindNewPackage(package)
+            self.application.webServer.root.bindNewPackage(package)
             self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
@@ -240,7 +239,7 @@ class MainWindow(gtk.Window):
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
-                self.application.server.root.bindNewPackage(package)
+                self.application.webServer.root.bindNewPackage(package)
                 self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
@@ -276,7 +275,7 @@ class MainWindow(gtk.Window):
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
-                self.application.server.root.bindNewPackage(package)
+                self.application.webServer.root.bindNewPackage(package)
                 self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
@@ -312,7 +311,7 @@ class MainWindow(gtk.Window):
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
-                self.application.server.root.bindNewPackage(package)
+                self.application.webServer.root.bindNewPackage(package)
                 self.browser.load_url(self.url+"/"+package.name)
 
         chooser.destroy()
@@ -446,7 +445,7 @@ class MainWindow(gtk.Window):
         Shows the HTML in gvim
         """
         package = self.application.packageStore.getPackage(self.packageName)
-        redirectPage = self.application.server.root
+        redirectPage = self.application.webServer.root
         authoringPage = redirectPage.renderChildren[package.name].authoringPage
         open('tmp.html', 'w').write(authoringPage.render_GET())
         os.system('gvim tmp.html')
@@ -469,7 +468,7 @@ class MainWindow(gtk.Window):
         try:
             filename = self.config.webDir/"eXe-tutorial.elp"
             package  = self.application.packageStore.loadPackage(filename)
-            self.application.server.root.bindNewPackage(package)
+            self.application.webServer.root.bindNewPackage(package)
             self.browser.load_url(self.url+"/"+package.name)
         except Exception, exc:
             log.error(u'Error loading package "%s": %s' % \
