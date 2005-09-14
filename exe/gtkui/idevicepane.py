@@ -32,14 +32,15 @@ class IdevicePane(gtk.Frame):
     """
     IdevicePane is responsible for creating the XHTML for iDevice links
     """
-    def __init__(self, ideviceStore):
+    def __init__(self, mainWindow):
         """ 
         Initialize
         """ 
         gtk.Frame.__init__(self)
         self.set_size_request(250, 250)
 
-        self.ideviceStore = ideviceStore
+        self.mainWindow   = mainWindow
+        self.ideviceStore = mainWindow.application.ideviceStore
         self.prototypes   = {}
         self.ideviceStore.register(self)
         log.debug("Load appropriate iDevices")
@@ -49,10 +50,10 @@ class IdevicePane(gtk.Frame):
             self.prototypes[prototype.id] = prototype
 
         # create tree model
-        model = gtk.ListStore(gobject.TYPE_STRING,)
-        model.set_sort_column_id(0, gtk.SORT_ASCENDING)
+        self.model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
+        self.model.set_sort_column_id(0, gtk.SORT_ASCENDING)
         for prototype in self.prototypes.values():
-            model.append((prototype.title,))
+            self.model.append((prototype.title, prototype.id))
 
         # ScrolledWindow
         scrollWin = gtk.ScrolledWindow()
@@ -60,11 +61,13 @@ class IdevicePane(gtk.Frame):
         scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 
         # create tree view
-        self.treeView = gtk.TreeView(model)
+        self.treeView = gtk.TreeView(self.model)
         scrollWin.add_with_viewport(self.treeView)
         self.treeView.set_rules_hint(True)
         self.treeView.set_search_column(0)
         self.treeView.connect('row-activated', self.rowActivated)
+        selection = self.treeView.get_selection()
+        selection.connect('changed', self.rowSelected)
 
         # add columns to the tree view
         column = gtk.TreeViewColumn('iDevices', gtk.CellRendererText(), text=0)
@@ -72,9 +75,29 @@ class IdevicePane(gtk.Frame):
         self.treeView.append_column(column)
 
 
-    def rowActivated(self, treeView, nodePath, column):
-        print treeView, nodePath, column
+    def rowSelected(self, selection): 
+        """
+        Handle single click events on idevice pane
+        """
+        model, treePaths = selection.get_selected_rows()
+        if treePaths:
+            self.ideviceSelected(treePaths[0])
 
+
+    def rowActivated(self, treeView, treePath, column):
+        """
+        Handle double click events on idevice pane
+        """
+        self.ideviceSelected(treePath)
 
         
+    def ideviceSelected(self, treePath): 
+        """
+        Add the iDevice for the selected treePath
+        """
+        treeIter  = self.model.get_iter(treePath)
+        ideviceId = self.model.get_value(treeIter, 1)
+        prototype = self.prototypes[ideviceId]
+        self.mainWindow.addIdevice(prototype.clone())
+
 # ===========================================================================

@@ -142,9 +142,7 @@ class MainWindow(gtk.Window):
         #DJM TODO!!!
         outlinePane = OutlinePane(self.package)
         self.leftPane.add1(outlinePane)
-        #self.leftPane.add1(outlinePane.treeView)
-        #self.leftPane.add1(gtk.Label("Outline")
-        idevicePane = IdevicePane(self.application.ideviceStore)
+        idevicePane = IdevicePane(self)
         self.leftPane.add2(idevicePane)
         
         # Browser
@@ -173,13 +171,21 @@ class MainWindow(gtk.Window):
         (config.webDir/'linux-profile').copytree(appDir/'linux-profile')
 
 
+    def addIdevice(self, idevice):
+        """
+        add a new idevice
+        """
+        self.package.currentNode.addIdevice(idevice)
+        self.browser.load_url(self.url+"/"+self.package.name)
+
+
     def newFile(self, *dummy):
         """
         Create a new package
         TODO: check if the package was dirty
         """
         self.package = self.packageStore.createPackage()
-        self.browser.load_url(self.package.name)
+        self.browser.load_url(self.url+"/"+self.package.name)
 
         
     def openFile(self, *dummy):
