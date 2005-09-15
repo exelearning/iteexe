@@ -141,6 +141,7 @@ class Renderable(object):
             setattr(self, attr, res)
         return res
 
+
     def process(self, request):
         """
         Called when a request comes in.

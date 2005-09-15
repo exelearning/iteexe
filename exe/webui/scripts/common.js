@@ -19,8 +19,6 @@
 
 // This module is for the common Javascript used in all webpages.
 
-// Called upon loading the page this function clears the hidden
-// action and object fields so they can be used by submitLink
 var objBrowse = navigator.appName;
 
 // An array of js strings to evaluate on document load
@@ -218,13 +216,12 @@ function updateCoords(e) {
 }
 
 
+// Called upon loading the page this function clears the hidden
+// action and object fields so they can be used by submitLink
 function clearHidden()
 {
-    var form = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!form) {
-        // try and find the form for the authoring page
-        form = document.getElementById('contentForm')
-    }
+    // try and find the form for the authoring page
+    form = document.getElementById('contentForm')
     form.action.value = "";
     form.object.value = "";
 }
@@ -234,11 +231,8 @@ function clearHidden()
 // contentForm to the server
 function submitLink(action, object, changed) 
 {
-    var form = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!form) {
-        // try and find the form for the authoring page
-        form = document.getElementById('contentForm')
-    }
+    // try and find the form for the authoring page
+    form = document.getElementById('contentForm')
     form.action.value    = action;
     form.object.value    = object;
     form.isChanged.value = changed;

@@ -148,7 +148,7 @@ class MainWindow(gtk.Window):
         # Browser
         self.browser = gtkmozembed.MozEmbed()
         self.browser.connect("location", self.newLocation, "location")
-        self.browser.load_url(self.url+"/"+self.package.name)
+        self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
         hPane.add2(self.browser)
 
         # Status Bar
@@ -176,8 +176,19 @@ class MainWindow(gtk.Window):
         add a new idevice
         """
         self.package.currentNode.addIdevice(idevice)
-        self.browser.load_url(self.url+"/"+self.package.name)
+        self.loadUrl()
 
+    def loadUrl(self):
+        """
+        Load the package url in the browser
+        Stupid, but it seems we need to load twice after doing a post
+        REASON: gtkmozembed doesn't handle #currentBlock anchor?????
+        """
+        self.browser.load_url(self.url+"/"+self.package.name+
+                              "/authoringPage")
+#        self.browser.load_url(self.url+"/"+self.package.name+
+#                              "/authoringPage")
+#        self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
 
     def newFile(self, *dummy):
         """
@@ -185,7 +196,8 @@ class MainWindow(gtk.Window):
         TODO: check if the package was dirty
         """
         self.package = self.packageStore.createPackage()
-        self.browser.load_url(self.url+"/"+self.package.name)
+        #self.browser.load_url(self.url+"/"+self.package.name)
+        self.loadUrl()
 
         
     def openFile(self, *dummy):
@@ -203,7 +215,8 @@ class MainWindow(gtk.Window):
             filename = chooser.get_filename()
             package  = self.application.packageStore.loadPackage(filename)
             self.application.webServer.root.bindNewPackage(package)
-            self.browser.load_url(self.url+"/"+package.name)
+            #self.browser.load_url(self.url+"/"+package.name)
+            self.loadUrl()
 
         chooser.destroy()
             
@@ -241,12 +254,14 @@ class MainWindow(gtk.Window):
             if not filename.lower().endswith('.elp'):
                 filename += '.elp'
             package.save(filename)
-            self.browser.load_url(self.url+"/"+package.name)
+            #self.browser.load_url(self.url+"/"+package.name)
+            self.loadUrl()
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.webServer.root.bindNewPackage(package)
-                self.browser.load_url(self.url+"/"+package.name)
+                #self.browser.load_url(self.url+"/"+package.name)
+                self.loadUrl()
 
         chooser.destroy()
 
@@ -282,7 +297,8 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.webServer.root.bindNewPackage(package)
-                self.browser.load_url(self.url+"/"+package.name)
+                #self.browser.load_url(self.url+"/"+package.name)
+                self.loadUrl()
 
         chooser.destroy()
 
@@ -318,7 +334,8 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.webServer.root.bindNewPackage(package)
-                self.browser.load_url(self.url+"/"+package.name)
+                #self.browser.load_url(self.url+"/"+package.name)
+                self.loadUrl()
 
         chooser.destroy()
 
@@ -435,7 +452,9 @@ class MainWindow(gtk.Window):
         assert self.packageName
         package = self.application.packageStore.getPackage(self.packageName)
         package.style = self.config.styles[action]
-        self.browser.load_url(self.url+"/"+self.packageName)
+        #self.browser.load_url(self.url+"/"+self.packageName)
+        print "changed style to %s ... reloading" % package.style
+        self.loadUrl()
 
 
     def refreshView(self, *dummy):
@@ -443,7 +462,10 @@ class MainWindow(gtk.Window):
         reload the current page
         """
         assert self.packageName
-        self.browser.load_url(self.url+"/"+self.packageName)
+        #self.browser.load_url(self.url+"/"+self.packageName)
+        #self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
+        self.loadUrl()
+        #self.browser.reload(gtkmozembed.FLAG_RELOADBYPASSCACHE)
  
 
     def viewHtml(self, *dummy):
@@ -451,8 +473,8 @@ class MainWindow(gtk.Window):
         Shows the HTML in gvim
         """
         package = self.application.packageStore.getPackage(self.packageName)
-        redirectPage = self.application.webServer.root
-        authoringPage = redirectPage.renderChildren[package.name].authoringPage
+        rootPage = self.application.webServer.root
+        authoringPage = rootPage.renderChildren[package.name]
         open('tmp.html', 'w').write(authoringPage.render_GET())
         os.system('gvim tmp.html')
 
@@ -475,7 +497,9 @@ class MainWindow(gtk.Window):
             filename = self.config.webDir/"eXe-tutorial.elp"
             package  = self.application.packageStore.loadPackage(filename)
             self.application.webServer.root.bindNewPackage(package)
-            self.browser.load_url(self.url+"/"+package.name)
+            #self.browser.load_url(self.url+"/"+package.name)
+            self.browser.load_url(self.url+"/"+self.package.name+
+                                  "/authoringPage")
         except Exception, exc:
             log.error(u'Error loading package "%s": %s' % \
                       (filename, unicode(exc)))
@@ -485,7 +509,9 @@ class MainWindow(gtk.Window):
         """
         Note we've changed location
         """
-        self.packageName = self.browser.get_location().split('/')[3]
+        url = self.browser.get_location()
+        print url
+        self.packageName = url.split('/', 4)[3].split('#', 1)[0]
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
 

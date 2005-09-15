@@ -250,9 +250,9 @@ class ImageElement(Element):
             self.field.setDefaultImage()
 
         html = common.image("img"+self.id, 
-                             "resources/"+self.field.imageName, 
-                             self.field.width,
-                             self.field.height)
+                            "resources/"+self.field.imageName,
+                            self.field.width,
+                            self.field.height)
         return html
 
 

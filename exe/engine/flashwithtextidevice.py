@@ -46,7 +46,7 @@ class FlashWithTextIdevice(Idevice):
         self.float        = u"left"
         self.caption      = u""
  
-
+ 
     def getResources(self):
         """
         Return the resource files used by this iDevice

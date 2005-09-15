@@ -53,7 +53,6 @@ class AuthoringPage(RenderableResource):
         self.blocks  = []
         
 
-
     def getChild(self, name, request):
         """
         Try and find the child for the name given
@@ -72,12 +71,12 @@ class AuthoringPage(RenderableResource):
         # because the idevice pane needs to know that new idevices have been
         # added/edited..
         # TODO: Once pyxpcom comes along, we'll fix these
-        self.parent.process(request)
-        if ("action" in request.args and 
-            request.args["action"][0] == u"saveChange"):
-            log.debug(u"process savachange:::::")
-            self.package.save()
-            log.debug(u"package name: " + self.package.name)
+        #self.parent.process(request)
+        #if ("action" in request.args and 
+        #    request.args["action"][0] == u"saveChange"):
+        #    log.debug(u"process savachange:::::")
+        #    self.package.save()
+        log.debug(u"_process ")
         for block in self.blocks:
             block.process(request)
         log.debug(u"after authoringPage process" + repr(request.args))
@@ -88,11 +87,19 @@ class AuthoringPage(RenderableResource):
         Returns an XHTML string for viewing this page
         if 'request' is not passed, will generate psedo/debug html
         """
-        log.debug(u"render")
+        log.debug(u"render_GET "+repr(request))
+
         if request is not None:
+# TODO!!!! Is this really needed??!?!?!?!?!?!!!            
+#            # Mark page as uncacheable
+#            request.setHeader("Cache-Control", "no-cache")
+#            request.setHeader("Pragma", "no-cache") 
+
+            # Process args
             for key, value in request.args.items():
                 request.args[key] = [unicode(value[0], 'utf8')]
             self._process(request)
+
         topNode     = self.package.currentNode
         self.blocks = []
         self.__addBlocks(topNode)
@@ -100,10 +107,13 @@ class AuthoringPage(RenderableResource):
         #html += "<pre>%s</pre>\n" % str(request.args)# to be deleted
         html += u'<body onload="onLoadHandler();">\n'
         html += u"<form method=\"post\" "
+
         if request is None:
             html += u'action="NO_ACTION"'
         else:
-            html += u"action=\""+request.path+"#currentBlock\""
+            #html += u"action=\""+request.path+"#currentBlock\""
+            html += u"action=\""+request.path+"\""
+
         html += u" id=\"contentForm\">"
         html += u'<div id="main">\n'
         html += common.hiddenField(u"action")

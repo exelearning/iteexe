@@ -57,7 +57,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.images      = {}
         self.site        = 'http://en.wikipedia.org/'
  
-
+ 
     def getResources(self):
         """
         Return the resource files used by this iDevice

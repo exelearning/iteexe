@@ -69,7 +69,9 @@ class PackageRedirectPage(RenderableResource):
         and a directory for the resource files
         """
         #MainPage(self, package)
-        AuthoringPage(self, package)
+        #TODO!!! fix this up!!!
+        page = AuthoringPage(self, package)
+        page.putChild("authoringPage", page)
 
 
     def render_GET(self, request):

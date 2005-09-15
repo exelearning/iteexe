@@ -48,7 +48,7 @@ _(u"This is a free text field general learning content can be entered."),
         if content:
             self.edit = False
 
-
+            
     def upgradeToVersion1(self):
         """
         Upgrades the node from version 0 (eXe version 0.4) to 1.
