@@ -132,7 +132,7 @@ class MainWindow(gtk.Window):
         self.itemFactory.create_items(tuple(menuItems))
         self.add_accel_group(accelGrp)
         self.menu = self.itemFactory.get_widget("<main>")
-        self.vBox.pack_start(self.menu,    expand=False)
+        self.vBox.pack_start(self.menu, expand=False)
 
         # HBox
         hPane = gtk.HPaned()
@@ -140,7 +140,7 @@ class MainWindow(gtk.Window):
         self.leftPane = gtk.VPaned()
         hPane.add1(self.leftPane)
         #DJM TODO!!!
-        outlinePane = OutlinePane(self.package)
+        outlinePane = OutlinePane(self)
         self.leftPane.add1(outlinePane)
         idevicePane = IdevicePane(self)
         self.leftPane.add2(idevicePane)
@@ -177,6 +177,7 @@ class MainWindow(gtk.Window):
         """
         self.package.currentNode.addIdevice(idevice)
         self.loadUrl()
+
 
     def loadUrl(self):
         """

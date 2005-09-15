@@ -35,24 +35,53 @@ class OutlinePane(gtk.Frame):
     """
     OutlinePane is responsible for creating the package outline tree
     """
-    def __init__(self, package):
+    def __init__(self, mainWindow):
         gtk.Frame.__init__(self)
         self.set_size_request(250, 250)
-        self.package = package
+        self.mainWindow = mainWindow
+        self.package = mainWindow.package
 
         # create tree model
-        self.model = gtk.TreeStore(gobject.TYPE_STRING,)
+        self.model = gtk.TreeStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
         self.__addNode(None, self.package.root)
 
+        # Popup menu
+        # TODO think about changing to gtk.UIManager
+        menuItems = [
+            # path                  key   callback      actn type
+            (_("/_Add Node"),        None, self.what, 0, None ),
+            (_("/_Delete Node"),     None, self.what, 0, None ),
+            (_("/_Secret Metadata"), None, self.what, 0, None ),
+        ]
+        accelGrp = gtk.AccelGroup()
+        self.itemFactory = gtk.ItemFactory(gtk.Menu, "<main>")
+        self.itemFactory.create_items(tuple(menuItems))
+#        self.add_accel_group(accelGrp)
+        self.popup = self.itemFactory.get_widget("<main>")
+#        self.popup = gtk.Menu()
+#        self.popup.append(gtk.MenuItem("Add Node"))
+#        self.popup.append(gtk.MenuItem("Delete Node"))
+#        self.popup.append(gtk.MenuItem("Secret Metadata"))
+        self.popup.show_all()
+
+        # VBox and toolbar
+        vBox = gtk.VBox()
+        self.add(vBox)
+        toolbar = gtk.Toolbar()
+        vBox.pack_start(toolbar, expand=False)
+        self.addNodeBtn = toolbar.append_item(_("Add Node"), None, None, None,
+                                              self.addNode)
+        
         # ScrolledWindow
         scrollWin = gtk.ScrolledWindow()
-        self.add(scrollWin)
+        vBox.pack_start(scrollWin)
         scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 
         # Tree
         self.treeView = gtk.TreeView(self.model)
         scrollWin.add_with_viewport(self.treeView)
         self.treeView.connect('row-activated', self.rowActivated)
+        self.treeView.connect('button_press_event', self.treeClicked)
         self.treeView.set_rules_hint(True)
         self.treeView.set_search_column(0)
         self.treeView.expand_row((0,), open_all=True)
@@ -60,24 +89,74 @@ class OutlinePane(gtk.Frame):
         # add columns to the tree view
         column = gtk.TreeViewColumn('Outline', gtk.CellRendererText(), text=0)
         self.treeView.append_column(column)
-        
+        selection = self.treeView.get_selection()
+        selection.select_path((0,))
+        selection.connect('changed', self.rowSelected)
 
 
     def __addNode(self, parentIter, node):
         """
         Renders all children recursively.
         """
-        print node.title
-        treeIter = self.model.append(parentIter, (node.title,))
+        print node.title, node.id
+        treeIter = self.model.append(parentIter, (node.title, node.id))
 
         # Recursively render children
         for child in node.children:
             self.__addNode(treeIter, child)
     
+    
+    def rowSelected(self, selection): 
+        """
+        Handle single click events on idevice pane
+        """
+        model, treePaths = selection.get_selected_rows()
+        print treePaths
+        if treePaths:
+            treeIter = self.model.get_iter(treePaths[0])
+            nodeId   = self.model.get_value(treeIter, 1)
+            node     = self.package.findNode(nodeId)
+            self.package.currentNode = node
+            self.mainWindow.loadUrl()
+
 
     def rowActivated(self, treeView, nodePath, column):
         print treeView, nodePath, column
 
+
+    def addNode(self, *args):
+        selection = self.treeView.get_selection()
+        model, treePaths = selection.get_selected_rows()
+        print treePaths
+        if treePaths:
+            treeIter = self.model.get_iter(treePaths[0])
+            nodeId   = self.model.get_value(treeIter, 1)
+            parent   = self.package.findNode(nodeId)
+            child    = parent.createChild()
+            self.package.currentNode = child
+            childIter = self.model.append(treeIter, (child.title, child.id))
+            childPath = self.model.get_path(childIter)
+            self.treeView.expand_to_path(childPath)
+            selection.select_iter(childIter)
+            self.mainWindow.loadUrl()
+        
+
+    def what(self, *args):
+        from pprint import pprint; pprint(args)
+
+
+    def treeClicked(self, treeView, event):
+        if event.button == 3:
+            x = int(event.x)
+            y = int(event.y)
+            time = event.time
+            pthinfo = treeView.get_path_at_pos(x, y)
+            if pthinfo != None:
+                path, col, cellx, celly = pthinfo
+                treeView.grab_focus()
+                treeView.set_cursor(path, col, 0)
+                self.popup.popup(None, None, None, event.button, time)
+            return 1
 
     def process(self, request):
         """ 
