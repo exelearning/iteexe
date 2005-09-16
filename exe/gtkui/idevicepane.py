@@ -80,7 +80,6 @@ class IdevicePane(gtk.Frame):
         Handle single click events on idevice pane
         """
         model, treePaths = selection.get_selected_rows()
-        print treePaths
 #        if treePaths:
 #            self.ideviceSelected(treePaths[0])
 

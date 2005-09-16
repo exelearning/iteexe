@@ -34,6 +34,7 @@ from exe.export.singlepageexport  import SinglePageExport
 from exe.engine                   import version
 from exe.gtkui.idevicepane        import IdevicePane
 from exe.gtkui.outlinepane        import OutlinePane
+from exe.gtkui.preferences        import Preferences
 import gtk
 import gtkmozembed
 
@@ -66,7 +67,6 @@ class MainWindow(gtk.Window):
             self.createProfile(self.config)
 
         log.info(u"profileDir "+profileDir+u" profile "+profile)
-        print u"profileDir "+profileDir+u" profile "+profile
         gtkmozembed.gtk_moz_embed_set_profile_path(profileDir, profile)
 
         gtk.Window.__init__(self)
@@ -101,6 +101,8 @@ class MainWindow(gtk.Window):
             (_("/File/Export/Single Page"), None, self.exportSinglePage, 
                                                         0, None ),
             (_("/File/sep3"),         None,         None, 0, "<Separator>" ),
+            (_("/File/Preferences"),  None,         self.preferences, 0, None ),
+            (_("/File/sep4"),         None,         None, 0, "<Separator>" ),
             (_("/File/Quit"),         "<control>Q", gtk.main_quit, 0, None ),
 
             (_("/_Tools"),            None, None,         0, "<Branch>" ),
@@ -434,6 +436,19 @@ class MainWindow(gtk.Window):
         chooser.destroy()
 
 
+    def preferences(self, *dummy):
+        """
+        Display preferences dialog
+        """
+        preferences = Preferences(self, self.config)
+        response = preferences.run()
+        preferences.destroy()
+        if response == gtk.RESPONSE_OK:
+            log.debug(" loading locale %s" % self.config.locale)
+            self.config.locales[self.config.locale].install(unicode=True)
+            self.loadUrl()
+
+
     def editorTool(self, *dummy):
         """
         Show the editor HTML window
@@ -454,7 +469,6 @@ class MainWindow(gtk.Window):
         package = self.application.packageStore.getPackage(self.packageName)
         package.style = self.config.styles[action]
         #self.browser.load_url(self.url+"/"+self.packageName)
-        print "changed style to %s ... reloading" % package.style
         self.loadUrl()
 
 
@@ -498,7 +512,6 @@ class MainWindow(gtk.Window):
             filename = self.config.webDir/"eXe-tutorial.elp"
             package  = self.application.packageStore.loadPackage(filename)
             self.application.webServer.root.bindNewPackage(package)
-            #self.browser.load_url(self.url+"/"+package.name)
             self.browser.load_url(self.url+"/"+self.package.name+
                                   "/authoringPage")
         except Exception, exc:
@@ -511,7 +524,6 @@ class MainWindow(gtk.Window):
         Note we've changed location
         """
         url = self.browser.get_location()
-        print url
         self.packageName = url.split('/', 4)[3].split('#', 1)[0]
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)

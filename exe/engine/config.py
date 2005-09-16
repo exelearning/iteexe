@@ -264,14 +264,14 @@ class Config:
         self.locales = {}
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES').exists():
-                self.locales[subDir.basename()] = \
+                locale = unicode(subDir.basename())
+                log.debug(" loading locale "+locale)
+                self.locales[locale] = \
                     gettext.translation('exe', 
                                         self.localeDir, 
-                                        languages=[str(subDir.basename())])
-                if subDir.basename() == self.locale:
-                    locale = subDir.basename()
-                    log.debug(" loading locale %s" % locale)
-                    self.locales[locale].install(unicode=True)
+                                        languages=[locale])
+
+        self.locales[self.locale].install(unicode=True)
 
 
 

@@ -98,7 +98,6 @@ class OutlinePane(gtk.Frame):
         """
         Renders all children recursively.
         """
-        print node.title, node.id
         treeIter = self.model.append(parentIter, (node.title, node.id))
 
         # Recursively render children
@@ -111,7 +110,6 @@ class OutlinePane(gtk.Frame):
         Handle single click events on idevice pane
         """
         model, treePaths = selection.get_selected_rows()
-        print treePaths
         if treePaths:
             treeIter = self.model.get_iter(treePaths[0])
             nodeId   = self.model.get_value(treeIter, 1)
@@ -127,7 +125,6 @@ class OutlinePane(gtk.Frame):
     def addNode(self, *args):
         selection = self.treeView.get_selection()
         model, treePaths = selection.get_selected_rows()
-        print treePaths
         if treePaths:
             treeIter = self.model.get_iter(treePaths[0])
             nodeId   = self.model.get_value(treeIter, 1)
