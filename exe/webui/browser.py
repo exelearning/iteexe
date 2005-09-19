@@ -65,6 +65,7 @@ def launchBrowser(config, packageName):
         log.info(u'Launching browser with: %s' % launchString)
         os.system(launchString)
 
+
 def createProfile(config):
     """
     Create a profile for the user to use based on the one in /usr/share/exe

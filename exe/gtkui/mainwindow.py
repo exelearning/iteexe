@@ -56,18 +56,7 @@ class MainWindow(gtk.Window):
 
         self.application.webServer.root.bindNewPackage(package)
 
-        gtkmozembed.gtk_moz_embed_set_comp_path(self.config.greDir)
-
-        if sys.platform[:3] == u"win":
-            profileDir = self.config.webDir
-            profile    = "win-profile"
-        else:
-            profileDir = Path(os.environ["HOME"])/'.exe'
-            profile    = "linux-profile"
-            self.createProfile(self.config)
-
-        log.info(u"profileDir "+profileDir+u" profile "+profile)
-        gtkmozembed.gtk_moz_embed_set_profile_path(profileDir, profile)
+        self.setupMoz(self.config)
 
         gtk.Window.__init__(self)
         self.connect("delete-event", self.quit)
@@ -160,17 +149,27 @@ class MainWindow(gtk.Window):
         self.statusContext = self.statusbar.get_context_id("MainWindow")
 
 
-    def createProfile(self, config):
+    def setupMoz(self, config):
         """
-        Create a profile for the user to use based on the one in /usr/share/exe
+        Setup the component and profile paths for the Mozilla
+        Gecko Runtime Engine
         """
-        appDir  = Path(os.environ["HOME"])/'.exe'
-        log.info("Creating FireFox profile copied from"+
-                 config.webDir+"/linux-profile to "+appDir+"/linux-profile")
-        if not appDir.exists():
-            appDir.mkdir()
-        shutil.rmtree(appDir/"linux-profile", True)
-        (config.webDir/'linux-profile').copytree(appDir/'linux-profile')
+        log.info(u"setupMoz greDir "+self.config.greDir)
+        gtkmozembed.gtk_moz_embed_set_comp_path(self.config.greDir)
+
+        if sys.platform[:3] == u"win":
+            profile    = "win-profile"
+        else:
+            profile    = "linux-profile"
+
+        log.info("Creating FireFox profile copied from" +
+                 config.webDir/profile + " to " + config.configDir/profile)
+
+        shutil.rmtree(config.configDir/profile, True)
+        (config.webDir/profile).copytree(config.configDir/profile)
+
+        log.info("setupMoz configDir "+config.configDir+" profile "+profile)
+        gtkmozembed.gtk_moz_embed_set_profile_path(config.configDir, profile)
 
 
     def addIdevice(self, idevice):
