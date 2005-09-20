@@ -165,8 +165,11 @@ class MainWindow(gtk.Window):
         log.info("Creating FireFox profile copied from" +
                  config.webDir/profile + " to " + config.configDir/profile)
 
-        shutil.rmtree(config.configDir/profile, True)
-        (config.webDir/profile).copytree(config.configDir/profile)
+        try:
+            shutil.rmtree(config.configDir/profile)
+            (config.webDir/profile).copytree(config.configDir/profile)
+        except OSError, error:
+            log.info(u"Error creating profile:" + unicode(error))
 
         log.info("setupMoz configDir "+config.configDir+" profile "+profile)
         gtkmozembed.gtk_moz_embed_set_profile_path(config.configDir, profile)
