@@ -111,7 +111,8 @@ class MainWindow(gtk.Window):
         if log.getEffectiveLevel() == logging.DEBUG:
             menuItems += [
             (_("/_Debug"),            None, None,         0, "<Branch>" ),
-            (_("/Debug/View _HTML"),  None, self.viewHtml,0, None)]
+            (_("/Debug/View _HTML"),  None, self.viewHtml,0, None),
+            (_("/Debug/Python break"),None, self.pythonBreak,0, None)]
 
         menuItems += [
             (_("/_Help"),             None, None,         0, "<LastBranch>" ),
@@ -139,8 +140,8 @@ class MainWindow(gtk.Window):
         # Browser
         self.browser = gtkmozembed.MozEmbed()
         self.browser.connect("location", self.newLocation, "location")
-        self.browser.connect("open-uri", self.what, "open-uri")
-        self.browser.connect("visibility", self.what, "visibility")
+#        self.browser.connect("open-uri", self.what, "open-uri")
+#        self.browser.connect("visibility", self.what, "visibility")
         self.browser.connect("net-start", self.what, "net-start")
         self.browser.connect("net-stop", self.what, "net-stop")
         self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
@@ -498,6 +499,14 @@ class MainWindow(gtk.Window):
         authoringPage = rootPage.renderChildren[package.name]
         open('tmp.html', 'w').write(authoringPage.render_GET())
         os.system('gvim tmp.html')
+
+
+    def pythonBreak(self, *dummy):
+        """
+        Break into the python code
+        """
+	import pdb
+	pdb.set_trace()
 
 
     def about(self, *dummy):
