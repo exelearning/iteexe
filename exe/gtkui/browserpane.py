@@ -41,6 +41,8 @@ class BrowserPane(gtkmozembed.MozEmbed):
         """
         Initialize
         """
+        log.debug("create MozEmbed browser")
+
         gtkmozembed.MozEmbed.__init__(self)
         self.mainWindow = mainWindow
         self.package    = mainWindow.package
@@ -93,11 +95,12 @@ class BrowserPane(gtkmozembed.MozEmbed):
         Stupid, but it seems we need to load twice after doing a post
         REASON: gtkmozembed doesn't handle #currentBlock anchor?????
         """
-        print "netStarted"
         if self.status == READY:
+            url = self.url+"/"+self.package.name+"/authoringPage"
+            log.debug("loadUrl "+url)
             self.load_url(self.url+"/"+self.package.name+"/authoringPage")
         else:
-            print "-> LOADPENDING"
+            log.debug("loadUrl status -> LOADPENDING")
             self.status = LOADPENDING
 
 
@@ -105,7 +108,7 @@ class BrowserPane(gtkmozembed.MozEmbed):
         """
         Change status while we're waiting for the network
         """
-        print "-> BUSY"
+        log.debug("netStarted status -> BUSY")
         self.status = BUSY
 
 
@@ -114,18 +117,21 @@ class BrowserPane(gtkmozembed.MozEmbed):
         Change status now network is finished, process pending loads
         """
         if self.status == LOADPENDING:
-            print "LOADPENDING",
+            log.debug("netStopped status LOADPENDING -> READY")
+            self.status = READY
             self.loadUrl()
-        print "-> READY"
-        self.status = READY
+        else:
+            log.debug("netStopped status -> READY")
+            self.status = READY
+
 
     def newLocation(self, *dummy):
         """
         Note we've changed location
         """
         url = self.get_location()
+        log.debug("newLocation "+url)
         self.mainWindow.newLocation(url)
-
 
 
     def what(self, *args):
@@ -134,13 +140,5 @@ class BrowserPane(gtkmozembed.MozEmbed):
         """
         from pprint import pprint
         pprint(args)
-
-
-    def quit(self, *dummy):
-        """
-        Quit out of the application
-        """
-        gtk.main_quit()
-        return False
 
 
