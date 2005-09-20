@@ -43,14 +43,15 @@ class BrowserPane(gtkmozembed.MozEmbed):
         """
         log.debug("create MozEmbed browser")
 
-        gtkmozembed.MozEmbed.__init__(self)
         self.mainWindow = mainWindow
         self.package    = mainWindow.package
         self.config     = mainWindow.config
         self.status     = READY
         self.url        = "http://127.0.0.1:%d" % self.config.port
 
+        # setupMoz must be called before MozEmbed.__init__
         self.setupMoz()
+        gtkmozembed.MozEmbed.__init__(self)
 
         self.connect("location", self.newLocation, "location")
 #        self.connect("open-uri", self.what, "open-uri")
