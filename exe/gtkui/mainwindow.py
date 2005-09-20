@@ -139,6 +139,10 @@ class MainWindow(gtk.Window):
         # Browser
         self.browser = gtkmozembed.MozEmbed()
         self.browser.connect("location", self.newLocation, "location")
+        self.browser.connect("open-uri", self.what, "open-uri")
+        self.browser.connect("visibility", self.what, "visibility")
+        self.browser.connect("net-start", self.what, "net-start")
+        self.browser.connect("net-stop", self.what, "net-stop")
         self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
         hPane.add2(self.browser)
 
@@ -177,7 +181,7 @@ class MainWindow(gtk.Window):
 
     def addIdevice(self, idevice):
         """
-        add a new idevice
+        Add a new idevice
         """
         self.package.currentNode.addIdevice(idevice)
         self.loadUrl()
@@ -530,6 +534,13 @@ class MainWindow(gtk.Window):
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
 
+
+    def what(self, *args):
+        """
+        Note we've changed location
+        """
+        from pprint import pprint
+        pprint(args)
 
     def quit(self, *dummy):
         """
