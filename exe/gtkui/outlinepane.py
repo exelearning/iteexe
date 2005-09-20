@@ -190,16 +190,6 @@ class OutlinePane(gtk.Frame):
                     log.error("deleteNode cannot locate "+nodeId)
 
             
-    def handleAddChild(self, client, parentNodeId):
-        """Called from client via xmlhttp. When the addChild button is called.
-        Hooked up by authoringPage.py
-        """
-        node = self.package.findNode(parentNodeId)
-        if node is not None:
-            self.package.currentNode = newNode = node.createChild()
-            client.call('XHAddChildTreeItem', newNode.id, newNode.title)
-
-
     def handleDelNode(self, client, confirm, nodeId):
         """Called from xmlhttp. 
         'confirm' is a string. It is 'false' if the user or the gui has

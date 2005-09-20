@@ -34,6 +34,7 @@ from exe.export.singlepageexport  import SinglePageExport
 from exe.engine                   import version
 from exe.gtkui.idevicepane        import IdevicePane
 from exe.gtkui.outlinepane        import OutlinePane
+from exe.gtkui.browserpane        import BrowserPane
 from exe.gtkui.preferences        import Preferences
 import gtk
 import gtkmozembed
@@ -138,13 +139,7 @@ class MainWindow(gtk.Window):
         self.leftPane.add2(idevicePane)
         
         # Browser
-        self.browser = gtkmozembed.MozEmbed()
-        self.browser.connect("location", self.newLocation, "location")
-#        self.browser.connect("open-uri", self.what, "open-uri")
-#        self.browser.connect("visibility", self.what, "visibility")
-        self.browser.connect("net-start", self.what, "net-start")
-        self.browser.connect("net-stop", self.what, "net-stop")
-        self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
+        self.browser = BrowserPane(self)
         hPane.add2(self.browser)
 
         # Status Bar
@@ -191,14 +186,9 @@ class MainWindow(gtk.Window):
     def loadUrl(self):
         """
         Load the package url in the browser
-        Stupid, but it seems we need to load twice after doing a post
-        REASON: gtkmozembed doesn't handle #currentBlock anchor?????
         """
-        self.browser.load_url(self.url+"/"+self.package.name+
-                              "/authoringPage")
-#        self.browser.load_url(self.url+"/"+self.package.name+
-#                              "/authoringPage")
-#        self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
+        self.browser.loadUrl()
+
 
     def newFile(self, *dummy):
         """
@@ -206,7 +196,6 @@ class MainWindow(gtk.Window):
         TODO: check if the package was dirty
         """
         self.package = self.packageStore.createPackage()
-        #self.browser.load_url(self.url+"/"+self.package.name)
         self.loadUrl()
 
         
@@ -225,7 +214,6 @@ class MainWindow(gtk.Window):
             filename = chooser.get_filename()
             package  = self.application.packageStore.loadPackage(filename)
             self.application.webServer.root.bindNewPackage(package)
-            #self.browser.load_url(self.url+"/"+package.name)
             self.loadUrl()
 
         chooser.destroy()
@@ -264,13 +252,11 @@ class MainWindow(gtk.Window):
             if not filename.lower().endswith('.elp'):
                 filename += '.elp'
             package.save(filename)
-            #self.browser.load_url(self.url+"/"+package.name)
             self.loadUrl()
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.webServer.root.bindNewPackage(package)
-                #self.browser.load_url(self.url+"/"+package.name)
                 self.loadUrl()
 
         chooser.destroy()
@@ -307,7 +293,6 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.webServer.root.bindNewPackage(package)
-                #self.browser.load_url(self.url+"/"+package.name)
                 self.loadUrl()
 
         chooser.destroy()
@@ -344,7 +329,6 @@ class MainWindow(gtk.Window):
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
                 self.application.webServer.root.bindNewPackage(package)
-                #self.browser.load_url(self.url+"/"+package.name)
                 self.loadUrl()
 
         chooser.destroy()
@@ -475,7 +459,6 @@ class MainWindow(gtk.Window):
         assert self.packageName
         package = self.application.packageStore.getPackage(self.packageName)
         package.style = self.config.styles[action]
-        #self.browser.load_url(self.url+"/"+self.packageName)
         self.loadUrl()
 
 
@@ -483,11 +466,7 @@ class MainWindow(gtk.Window):
         """
         reload the current page
         """
-        assert self.packageName
-        #self.browser.load_url(self.url+"/"+self.packageName)
-        #self.browser.load_url(self.url+"/"+self.package.name+"/authoringPage")
         self.loadUrl()
-        #self.browser.reload(gtkmozembed.FLAG_RELOADBYPASSCACHE)
  
 
     def viewHtml(self, *dummy):
@@ -505,8 +484,8 @@ class MainWindow(gtk.Window):
         """
         Break into the python code
         """
-	import pdb
-	pdb.set_trace()
+        import pdb
+        pdb.set_trace()
 
 
     def about(self, *dummy):
@@ -534,11 +513,10 @@ class MainWindow(gtk.Window):
                       (filename, unicode(exc)))
 
 
-    def newLocation(self, *dummy):
+    def newLocation(self, url):
         """
         Note we've changed location
         """
-        url = self.browser.get_location()
         self.packageName = url.split('/', 4)[3].split('#', 1)[0]
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)

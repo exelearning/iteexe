@@ -1,10 +1,10 @@
-Project should be a better behaved model
+Package should be a better behaved model
 i.e. the panes should register with it and it should tell them when a
 change is made
 
-Project events:
+Package events:
     nodeChanged
     ideviceAdded
 
-The panes also need a projectChanged event to let them know when
-a new project is loaded/created
+The panes also need a packageChanged event to let them know when
+a new package is loaded/created
