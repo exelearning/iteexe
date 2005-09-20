@@ -73,15 +73,11 @@ class BrowserPane(gtkmozembed.MozEmbed):
         else:
             profile    = "linux-profile"
 
-        log.info("Creating FireFox profile copied from"+
-                 self.config.webDir/profile+" to "+
-                 self.config.configDir/profile)
-
-        try:
-            shutil.rmtree(self.config.configDir/profile)
+        if not (self.config.configDir/profile).exists():
+            log.info("Creating FireFox profile copied from"+
+                     self.config.webDir/profile+" to "+
+                     self.config.configDir/profile)
             (self.config.webDir/profile).copytree(self.config.configDir/profile)
-        except OSError, error:
-            log.info(u"Error creating profile:" + unicode(error))
 
         log.info("setupMoz configDir "+self.config.configDir+
                  " profile "+profile)
@@ -98,7 +94,7 @@ class BrowserPane(gtkmozembed.MozEmbed):
         if self.status == READY:
             url = self.url+"/"+self.package.name+"/authoringPage"
             log.debug("loadUrl "+url)
-            self.load_url(self.url+"/"+self.package.name+"/authoringPage")
+            self.load_url(url)
         else:
             log.debug("loadUrl status -> LOADPENDING")
             self.status = LOADPENDING

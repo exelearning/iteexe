@@ -57,8 +57,6 @@ class MainWindow(gtk.Window):
 
         self.application.webServer.root.bindNewPackage(package)
 
-        self.setupMoz(self.config)
-
         gtk.Window.__init__(self)
         self.connect("delete-event", self.quit)
         self.set_title("eXe version "+version.release)
@@ -147,32 +145,6 @@ class MainWindow(gtk.Window):
         self.statusbar.set_has_resize_grip(True)
         self.vBox.pack_end(self.statusbar, expand=False)
         self.statusContext = self.statusbar.get_context_id("MainWindow")
-
-
-    def setupMoz(self, config):
-        """
-        Setup the component and profile paths for the Mozilla
-        Gecko Runtime Engine
-        """
-        log.info(u"setupMoz greDir "+self.config.greDir)
-        gtkmozembed.gtk_moz_embed_set_comp_path(self.config.greDir)
-
-        if sys.platform[:3] == u"win":
-            profile    = "win-profile"
-        else:
-            profile    = "linux-profile"
-
-        log.info("Creating FireFox profile copied from" +
-                 config.webDir/profile + " to " + config.configDir/profile)
-
-        try:
-            shutil.rmtree(config.configDir/profile)
-            (config.webDir/profile).copytree(config.configDir/profile)
-        except OSError, error:
-            log.info(u"Error creating profile:" + unicode(error))
-
-        log.info("setupMoz configDir "+config.configDir+" profile "+profile)
-        gtkmozembed.gtk_moz_embed_set_profile_path(config.configDir, profile)
 
 
     def addIdevice(self, idevice):
