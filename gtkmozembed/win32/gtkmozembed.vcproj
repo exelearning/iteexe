@@ -68,7 +68,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\djm\mozilla\dist\include\dom;&quot;C:\djm\gtk\top\lib\glib-2.0\include&quot;;&quot;C:\djm\gtk\top\lib\gtk-2.0\include&quot;;&quot;C:\djm\gtk\top\include\pango-1.0&quot;;&quot;C:\djm\gtk\top\include\atk-1.0&quot;;&quot;C:\djm\gtk\top\include\gtk-2.0&quot;;C:\djm\mozilla\dist\include\nspr;C:\djm\mozilla\dist\include\string;C:\djm\mozilla\dist\include\xpcom;C:\djm\mozilla\dist\include;C:\djm\mozilla\dist\include\gtkembedmoz;&quot;C:\djm\gtk\top\include\glib-2.0&quot;;C:\Python24\include;&quot;C:\Python24\include\pygtk-2.0&quot;"
+				AdditionalIncludeDirectories="C:\djm\mozilla\dist\include\dom;&quot;C:\djm\gtk\lib\glib-2.0\include&quot;;&quot;C:\djm\gtk\lib\gtk-2.0\include&quot;;&quot;C:\djm\gtk\include\pango-1.0&quot;;&quot;C:\djm\gtk\include\atk-1.0&quot;;&quot;C:\djm\gtk\include\gtk-2.0&quot;;C:\djm\mozilla\dist\include\nspr;C:\djm\mozilla\dist\include\string;C:\djm\mozilla\dist\include\xpcom;C:\djm\mozilla\dist\include;C:\djm\mozilla\dist\include\gtkembedmoz;&quot;C:\djm\gtk\include\glib-2.0&quot;;C:\Python24\include;&quot;C:\Python24\include\pygtk-2.0&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;GTKMOZEMBED_EXPORTS;MOZ_WIDGET_GTK2"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="TRUE"
@@ -83,7 +83,7 @@
 				AdditionalDependencies="gtkembedmoz.lib gtk-win32-2.0.lib gdk-win32-2.0.lib atk-1.0.lib gdk_pixbuf-2.0.lib pangowin32-1.0.lib pango-1.0.lib gobject-2.0.lib gmodule-2.0.lib glib-2.0.lib intl.lib iconv.lib js3250.lib xpcom.lib nspr4.lib plc4.lib plds4.lib python24.lib"
 				OutputFile="$(OutDir)/gtkmozembed.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="C:\djm\gtk\top\lib;C:\djm\mozilla\dist\lib;C:\Python24\libs"
+				AdditionalLibraryDirectories="C:\djm\gtk\lib;C:\djm\mozilla\dist\lib;C:\Python24\libs"
 				GenerateDebugInformation="TRUE"
 				SubSystem="2"
 				OptimizeReferences="2"
