@@ -26,12 +26,14 @@ mkdir -p $TOP/$YYMMDD
 #        gzip $REPO.$YYMMDD
 #    fi
 #done
-service httpd stop
+/etc/init.d/httpd stop
 cd $TOP/$YYMMDD
 svnadmin dump /svn/exe > exe.$YYMMDD
 gzip exe.$YYMMDD
 
-# Backup the databases (mantis and exe)
+# Backup the databases (drupal, mantis and exe)
+mysqldump --add-drop-table -e -u$DBUSER drupal > drupal$YYMMDD.sql
+gzip drupal$YYMMDD.sql
 mysqldump --add-drop-table -e -u$DBUSER mantis > mantis$YYMMDD.sql
 gzip mantis$YYMMDD.sql
 mysqldump --add-drop-table -e -u$DBUSER exe > exe$YYMMDD.sql
@@ -40,7 +42,7 @@ gzip exe$YYMMDD.sql
 # Backup the wiki (Reptile House)
 cd $MOIN
 tar cjvf $TOP/$YYMMDD/moin$YYMMDD.tar.bz2 data
-service httpd start
+/etc/init.d/httpd start
 
 # Copy to another machine
 scp -r $TOP/$YYMMDD getback@d.moore.cfdl.auckland.ac.nz:/local/backup
