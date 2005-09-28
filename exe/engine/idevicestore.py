@@ -122,6 +122,7 @@ class IdeviceStore:
         from exe.engine.titleidevice          import TitleIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
+        from exe.engine.externalurlidevice    import ExternalUrlIdevice
 
         self.extended.append(FreeTextIdevice())
         
@@ -141,6 +142,7 @@ class IdeviceStore:
         self.extended.append(AttachmentIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(FlashWithTextIdevice())
+        self.extended.append(ExternalUrlIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

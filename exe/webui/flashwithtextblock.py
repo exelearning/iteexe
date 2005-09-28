@@ -118,7 +118,7 @@ class FlashWithTextBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"\n<!-- image with text iDevice -->\n"
+        html  = u"\n<!-- Flash with text iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         html += u"<div class=\"flash_text\" style=\""

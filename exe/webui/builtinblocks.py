@@ -35,5 +35,5 @@ from exe.webui.forumblock             import ForumBlock
 from exe.webui.galleryblock           import GalleryBlock
 from exe.webui.clozeblock             import ClozeBlock
 from exe.webui.flashwithtextblock     import FlashWithTextBlock
-
+from exe.webui.externalurlblock       import ExternalUrlBlock
 # ===========================================================================
