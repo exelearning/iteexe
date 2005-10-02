@@ -35,13 +35,6 @@ log = logging.getLogger(__name__)
 READY, BUSY, LOADPENDING, BLOCKED = range(4)
 
 class BrowserPane(gtk.Frame):
-#        frame = gtk.Frame()
-#        scrollWin = gtk.ScrolledWindow()
-#        frame.add(scrollWin)
-#        hPane.add2(frame)
-#        scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-#        scrollWin.add_with_viewport(self.browser
-#class BrowserPane(gtkmozembed.MozEmbed):
     """
     Main window class
     """
@@ -116,19 +109,19 @@ class BrowserPane(gtk.Frame):
         self.add(self.scrollWin)
         self.scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.browser = gtkmozembed.MozEmbed()
-        self.status     = READY
+        self.status  = READY
         self.scrollWin.add_with_viewport(self.browser)
         self.scrollWin.show_all()
 
         self.browser.connect("location", self.newLocation, "location")
 #        self.browser.connect("visibility", self.what, "visibility")
-        self.browser.connect("net-start", self.netStarted)
-        self.browser.connect("net-stop",  self.netStopped)
+#        self.browser.connect("net-start", self.netStarted)
+#        self.browser.connect("net-stop",  self.netStopped)
 #        self.browser.connect("open-uri",  self.openUri)
 #        self.browser.connect("js-status", self.javaScriptStatus)
 #        self.browser.connect("net-state",  self.what, "net-state")
 #        self.browser.connect("progress",  self.what, "progress")
-        self.browser.connect("link-message",  self.what, "link-message")
+#        self.browser.connect("link-message",  self.what, "link-message")
 #        self.loadUrl()
         url = self.url+"/"+self.mainWindow.package.name+"/authoringPage"
         self.browser.load_url(url)
@@ -144,7 +137,6 @@ class BrowserPane(gtk.Frame):
             url = self.url+"/"+self.mainWindow.package.name+"/authoringPage"
             log.debug("loadUrl "+url)
             self.browser.load_url(url)
-            #self.refresh()
         else:
             log.debug("loadUrl status -> LOADPENDING")
             self.status = LOADPENDING
@@ -156,7 +148,6 @@ class BrowserPane(gtk.Frame):
         """
         log.debug("netStarted status -> BUSY")
         print("netStarted status BUSY")
-#        self.browser.hide()
         if self.status == READY:
             self.status = BUSY
         else:
@@ -183,13 +174,10 @@ class BrowserPane(gtk.Frame):
         """
         The user wants to load a new page, check status before allowing 
         """
-        d = ["READY","BUSY","LOADPENDING","BLOCKED"]
-#        print "openUri", self.browser.get_location(), d[self.status]
-        print "openUri", 
+        print "openUri", self.browser.get_location(), 
         print self.currentLink
         from pprint import pprint; pprint(dummy)
         if self.currentLink.startswith("exe://"):
-            print "ooh"
             return True
         else:
             return False

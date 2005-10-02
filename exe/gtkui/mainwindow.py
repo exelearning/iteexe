@@ -130,7 +130,6 @@ class MainWindow(gtk.Window):
         self.vBox.pack_start(hPane)
         self.leftPane = gtk.VPaned()
         hPane.add1(self.leftPane)
-        #DJM TODO!!!
         self.outlinePane = OutlinePane(self)
         self.leftPane.add1(self.outlinePane)
         self.idevicePane = IdevicePane(self)
@@ -138,12 +137,6 @@ class MainWindow(gtk.Window):
         
         # Browser
         self.browser = BrowserPane(self)
-#        frame = gtk.Frame()
-#        scrollWin = gtk.ScrolledWindow()
-#        frame.add(scrollWin)
-#        hPane.add2(frame)
-#        scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-#        scrollWin.add_with_viewport(self.browser)
         hPane.add2(self.browser)
 
         # Status Bar
@@ -500,17 +493,9 @@ class MainWindow(gtk.Window):
         Note we've changed location
         """
         self.packageName = url.split('/', 4)[3].split('#', 1)[0]
-        print self.packageName
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
 
-
-    def what(self, *args):
-        """
-        Note we've changed location
-        """
-        from pprint import pprint
-        pprint(args)
 
     def quit(self, *dummy):
         """
