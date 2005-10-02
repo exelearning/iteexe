@@ -416,7 +416,8 @@ class ClozeElement(Element):
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
                     '    style="width:%sem"/>\n' % len(missingWord)]        
-        html += ['<br/><br/><input type="button" value = "%s"' % _(u"Get score"),
+        html += ['<br/><br/><input type="button" ',
+                 'value = "%s"' % _(u"Get score"),
                  'onclick="calScore(\'%s\',\'%s\')"/>\n' % (length, self.id)]
         
         words = words[:-1]
@@ -428,7 +429,7 @@ class ClozeElement(Element):
                                                            length, self.id)]
         html += ['&nbsp;&nbsp;<input type="button" value = "%s"'% _(u"Clear"),
                  'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id),
-                 '<br/><div id="s%s" class="feedback" style=" ' % self.id,
+                 '<br/><div id="s%s" class="feedback" style="' % self.id,
                  'display: none;">',
                  self.field.feedback,
                  '</div><br/>']
