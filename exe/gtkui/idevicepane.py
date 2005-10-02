@@ -65,9 +65,10 @@ class IdevicePane(gtk.Frame):
         scrollWin.add_with_viewport(self.treeView)
         self.treeView.set_rules_hint(True)
         self.treeView.set_search_column(0)
-        self.treeView.connect('row-activated', self.rowActivated)
+#        self.treeView.connect('row-activated', self.rowActivated)
         selection = self.treeView.get_selection()
-        selection.connect('changed', self.rowSelected)
+#        selection.connect('changed', self.rowSelected)
+        self.treeView.connect('button_press_event', self.treeClicked)
 
         # add columns to the tree view
         column = gtk.TreeViewColumn('iDevices', gtk.CellRendererText(), text=0)
@@ -80,8 +81,8 @@ class IdevicePane(gtk.Frame):
         Handle single click events on idevice pane
         """
         model, treePaths = selection.get_selected_rows()
-#        if treePaths:
-#            self.ideviceSelected(treePaths[0])
+        if treePaths:
+            self.ideviceSelected(treePaths[0])
 
 
     def rowActivated(self, treeView, treePath, column):
@@ -89,6 +90,21 @@ class IdevicePane(gtk.Frame):
         Handle double click events on idevice pane
         """
         self.ideviceSelected(treePath)
+
+
+
+    def treeClicked(self, treeView, event):
+        if event.button == 1:
+            x = int(event.x)
+            y = int(event.y)
+            time = event.time
+            pthinfo = treeView.get_path_at_pos(x, y)
+            if pthinfo != None:
+                path, col, cellx, celly = pthinfo
+                treeView.grab_focus()
+                treeView.set_cursor(path, col, 0)
+                self.ideviceSelected(path)
+            return         
 
         
     def ideviceSelected(self, treePath): 

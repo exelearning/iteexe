@@ -71,7 +71,7 @@ class MainWindow(gtk.Window):
         # Menu 
         # TODO think about changing to gtk.UIManager
         menuItems = [
-            # path                  key   callback      actn type
+            # path                    key           callback   actn type
             (_("/_File"),             None,         None, 0, "<Branch>" ),
             (_("/File/_New"),         "<control>N", self.newFile, 0, None ),
             (_("/File/_Open"),        "<control>O", self.openFile, 0, None ),
@@ -131,13 +131,19 @@ class MainWindow(gtk.Window):
         self.leftPane = gtk.VPaned()
         hPane.add1(self.leftPane)
         #DJM TODO!!!
-        outlinePane = OutlinePane(self)
-        self.leftPane.add1(outlinePane)
-        idevicePane = IdevicePane(self)
-        self.leftPane.add2(idevicePane)
+        self.outlinePane = OutlinePane(self)
+        self.leftPane.add1(self.outlinePane)
+        self.idevicePane = IdevicePane(self)
+        self.leftPane.add2(self.idevicePane)
         
         # Browser
         self.browser = BrowserPane(self)
+#        frame = gtk.Frame()
+#        scrollWin = gtk.ScrolledWindow()
+#        frame.add(scrollWin)
+#        hPane.add2(frame)
+#        scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+#        scrollWin.add_with_viewport(self.browser)
         hPane.add2(self.browser)
 
         # Status Bar
@@ -184,9 +190,13 @@ class MainWindow(gtk.Window):
 
         if response == gtk.RESPONSE_OK:
             filename = chooser.get_filename()
-            package  = self.application.packageStore.loadPackage(filename)
-            self.application.webServer.root.bindNewPackage(package)
+            self.package  = self.application.packageStore.loadPackage(filename)
+            #TODO get rid of self.packageName
+            self.packageName = self.package.name
+            print "***",self.packageName,"***"
+            self.application.webServer.root.bindNewPackage(self.package)
             self.loadUrl()
+            self.outlinePane.setPackage(self.package)
 
         chooser.destroy()
             
@@ -436,9 +446,9 @@ class MainWindow(gtk.Window):
 
     def refreshView(self, *dummy):
         """
-        reload the current page
+        replace the browser with a new instance
         """
-        self.loadUrl()
+        self.browser.refresh()
  
 
     def viewHtml(self, *dummy):
@@ -490,6 +500,7 @@ class MainWindow(gtk.Window):
         Note we've changed location
         """
         self.packageName = url.split('/', 4)[3].split('#', 1)[0]
+        print self.packageName
         self.statusbar.pop(self.statusContext)
         self.statusbar.push(self.statusContext, self.packageName)
 

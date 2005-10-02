@@ -49,8 +49,8 @@ class OutlinePane(gtk.Frame):
         # TODO think about changing to gtk.UIManager
         menuItems = [
             # path                  key   callback      actn type
-            (_("/_Add Node"),        None, self.what, 0, None ),
-            (_("/_Delete Node"),     None, self.what, 0, None ),
+            (_("/_Add Node"),        None, self.addNode, 0, None ),
+            (_("/_Delete Node"),     None, self.deleteNode, 0, None ),
             (_("/_Secret Metadata"), None, self.what, 0, None ),
         ]
         accelGrp = gtk.AccelGroup()
@@ -71,6 +71,8 @@ class OutlinePane(gtk.Frame):
         vBox.pack_start(toolbar, expand=False)
         self.addNodeBtn = toolbar.append_item(_("Add Node"), None, None, None,
                                               self.addNode)
+        self.deleteNodeBtn = toolbar.append_item(_("Delete Node"), None, None, 
+                                                 None, self.deleteNode)
         
         # ScrolledWindow
         scrollWin = gtk.ScrolledWindow()
@@ -80,7 +82,7 @@ class OutlinePane(gtk.Frame):
         # Tree
         self.treeView = gtk.TreeView(self.model)
         scrollWin.add_with_viewport(self.treeView)
-        self.treeView.connect('row-activated', self.rowActivated)
+#        self.treeView.connect('row-activated', self.rowActivated)
         self.treeView.connect('button_press_event', self.treeClicked)
         self.treeView.set_rules_hint(True)
         self.treeView.set_search_column(0)
@@ -104,6 +106,17 @@ class OutlinePane(gtk.Frame):
         for child in node.children:
             self.__addNode(treeIter, child)
     
+
+    def setPackage(self, package):
+        self.package = package
+        # create tree model
+        self.model = gtk.TreeStore(gobject.TYPE_STRING, gobject.TYPE_STRING)
+        self.__addNode(None, self.package.root)
+        self.treeView.set_model(self.model)
+        self.treeView.expand_row((0,), open_all=True)
+        selection = self.treeView.get_selection()
+        selection.select_path((0,))
+
     
     def rowSelected(self, selection): 
         """
@@ -137,6 +150,24 @@ class OutlinePane(gtk.Frame):
             selection.select_iter(childIter)
             self.mainWindow.loadUrl()
         
+
+    def deleteNode(self, *args):
+        selection = self.treeView.get_selection()
+        model, treePaths = selection.get_selected_rows()
+        if treePaths:
+            treeIter = self.model.get_iter(treePaths[0])
+            nodeId   = self.model.get_value(treeIter, 1)
+            node     = self.package.findNode(nodeId)
+            if node is not None and node is not self.package.root:
+                self.package.currentNode = node.parent
+                parentIter = self.model.iter_parent(treeIter)
+                node.delete()
+                self.model.remove(treeIter)
+                parentPath = self.model.get_path(parentIter)
+                self.treeView.expand_to_path(parentPath)
+                selection.select_iter(parentIter)
+                self.mainWindow.loadUrl()
+            
 
     def what(self, *args):
         from pprint import pprint; pprint(args)

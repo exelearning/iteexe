@@ -27,13 +27,21 @@ import shutil
 import gtk
 import gobject
 import gtkmozembed
+import time
 
 import logging
 log = logging.getLogger(__name__)
 
-READY, BUSY, LOADPENDING = range(3)
+READY, BUSY, LOADPENDING, BLOCKED = range(4)
 
-class BrowserPane(gtkmozembed.MozEmbed):
+class BrowserPane(gtk.Frame):
+#        frame = gtk.Frame()
+#        scrollWin = gtk.ScrolledWindow()
+#        frame.add(scrollWin)
+#        hPane.add2(frame)
+#        scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+#        scrollWin.add_with_viewport(self.browser
+#class BrowserPane(gtkmozembed.MozEmbed):
     """
     Main window class
     """
@@ -42,22 +50,33 @@ class BrowserPane(gtkmozembed.MozEmbed):
         Initialize
         """
         log.debug("create MozEmbed browser")
+        gtk.Frame.__init__(self)
 
         self.mainWindow = mainWindow
-        self.package    = mainWindow.package
         self.config     = mainWindow.config
-        self.status     = READY
+        self.isBlocked  = False
         self.url        = "http://127.0.0.1:%d" % self.config.port
 
+        self.scrollWin = gtk.ScrolledWindow()
+        self.add(self.scrollWin)
+        self.scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         # setupMoz must be called before MozEmbed.__init__
         self.setupMoz()
-        gtkmozembed.MozEmbed.__init__(self)
 
-        self.connect("location", self.newLocation, "location")
-#        self.connect("open-uri", self.what, "open-uri")
-#        self.connect("visibility", self.what, "visibility")
-        self.connect("net-start", self.netStarted)
-        self.connect("net-stop",  self.netStopped)
+        self.browser = gtkmozembed.MozEmbed()
+        self.status     = READY
+        self.scrollWin.add_with_viewport(self.browser)
+
+        self.browser.connect("location", self.newLocation, "location")
+#        self.browser.connect("visibility", self.what, "visibility")
+#        self.browser.connect("net-start", self.netStarted)
+#        self.browser.connect("net-stop",  self.netStopped)
+#        self.browser.connect("open-uri",  self.openUri)
+#        self.browser.connect("js-status", self.javaScriptStatus)
+#        self.browser.connect("net-state",  self.what, "net-state")
+#        self.browser.connect("progress",  self.what, "progress")
+        self.currentLink = ""
+#        self.browser.connect("link-message",  self.linkMessage, "link-message")
         self.loadUrl()
 
 
@@ -86,6 +105,35 @@ class BrowserPane(gtkmozembed.MozEmbed):
                                                    profile)
 
 
+    def refresh(self):
+        """
+        replace the browser with a new instance
+        """
+        self.setupMoz()
+        self.remove(self.get_child())
+        del self.browser
+        self.scrollWin = gtk.ScrolledWindow()
+        self.add(self.scrollWin)
+        self.scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.browser = gtkmozembed.MozEmbed()
+        self.status     = READY
+        self.scrollWin.add_with_viewport(self.browser)
+        self.scrollWin.show_all()
+
+        self.browser.connect("location", self.newLocation, "location")
+#        self.browser.connect("visibility", self.what, "visibility")
+        self.browser.connect("net-start", self.netStarted)
+        self.browser.connect("net-stop",  self.netStopped)
+#        self.browser.connect("open-uri",  self.openUri)
+#        self.browser.connect("js-status", self.javaScriptStatus)
+#        self.browser.connect("net-state",  self.what, "net-state")
+#        self.browser.connect("progress",  self.what, "progress")
+        self.browser.connect("link-message",  self.what, "link-message")
+#        self.loadUrl()
+        url = self.url+"/"+self.mainWindow.package.name+"/authoringPage"
+        self.browser.load_url(url)
+
+
     def loadUrl(self):
         """
         Load the package url in the browser
@@ -93,9 +141,10 @@ class BrowserPane(gtkmozembed.MozEmbed):
         REASON: gtkmozembed doesn't handle #currentBlock anchor?????
         """
         if self.status == READY:
-            url = self.url+"/"+self.package.name+"/authoringPage"
+            url = self.url+"/"+self.mainWindow.package.name+"/authoringPage"
             log.debug("loadUrl "+url)
-            self.load_url(url)
+            self.browser.load_url(url)
+            #self.refresh()
         else:
             log.debug("loadUrl status -> LOADPENDING")
             self.status = LOADPENDING
@@ -106,7 +155,12 @@ class BrowserPane(gtkmozembed.MozEmbed):
         Change status while we're waiting for the network
         """
         log.debug("netStarted status -> BUSY")
-        self.status = BUSY
+        print("netStarted status BUSY")
+#        self.browser.hide()
+        if self.status == READY:
+            self.status = BUSY
+        else:
+            self.status = BLOCKED
 
 
     def netStopped(self, *dummy):
@@ -115,27 +169,62 @@ class BrowserPane(gtkmozembed.MozEmbed):
         """
         if self.status == LOADPENDING:
             log.debug("netStopped status LOADPENDING -> READY")
+            print("netStopped status LOADPENDING -> READY")
             self.status = READY
             self.loadUrl()
         else:
             log.debug("netStopped status -> READY")
+            print("netStopped status -> READY")
+#            self.browser.show()
             self.status = READY
+
+
+    def openUri(self, *dummy):
+        """
+        The user wants to load a new page, check status before allowing 
+        """
+        d = ["READY","BUSY","LOADPENDING","BLOCKED"]
+#        print "openUri", self.browser.get_location(), d[self.status]
+        print "openUri", 
+        print self.currentLink
+        from pprint import pprint; pprint(dummy)
+        if self.currentLink.startswith("exe://"):
+            print "ooh"
+            return True
+        else:
+            return False
+
+
+    def javaScriptStatus(self, *dummy):
+        """
+        Note JavaScript gave a status
+        """
+        from pprint import pprint; pprint(dummy)
+        status = self.browser.get_js_status()
+        log.debug("javaScriptStatus "+status)
+        print("javaScriptStatus "+status)
 
 
     def newLocation(self, *dummy):
         """
         Note we've changed location
         """
-        url = self.get_location()
+        url = self.browser.get_location()
         log.debug("newLocation "+url)
         self.mainWindow.newLocation(url)
+
+
+    def linkMessage(self, *args):
+        """
+        Note a link hover
+        """
+        self.currentLink = self.browser.get_link_message()
 
 
     def what(self, *args):
         """
         Note we've changed location
         """
-        from pprint import pprint
-        pprint(args)
+        from pprint import pprint; pprint(args)
 
 
