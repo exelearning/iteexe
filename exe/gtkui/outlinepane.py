@@ -83,13 +83,23 @@ class OutlinePane(gtk.Frame):
         self.treeView.set_rules_hint(True)
         self.treeView.set_search_column(0)
         self.treeView.expand_row((0,), open_all=True)
+        self.treeView.set_reorderable(True)
+        dragTarget = [("exe.engine.node", gtk.TARGET_SAME_WIDGET, 0)]
+        self.treeView.enable_model_drag_source(gtk.gdk.BUTTON1_MASK,
+                                               dragTarget,
+                                               gtk.gdk.ACTION_MOVE)
+        self.treeView.connect("drag-data-get", self.dragDataGet)
+        self.treeView.enable_model_drag_dest(dragTarget,
+                                             gtk.gdk.ACTION_MOVE)
+        self.treeView.connect("drag-data-received", self.dragDataReceived)
 
         # Add columns to the tree view
         column = gtk.TreeViewColumn('Outline', gtk.CellRendererText(), text=0)
         self.treeView.append_column(column)
         selection = self.treeView.get_selection()
         selection.select_path((0,))
-
+        selection.connect('changed', self.rowSelected)
+        
 
     def __addNode(self, parentIter, node):
         """
@@ -132,7 +142,20 @@ class OutlinePane(gtk.Frame):
                 self.popup.popup(None, None, None, event.button, time)
             return 1
 
-    
+
+    def rowSelected(self, selection): 
+        """
+        Handle single click events on idevice pane
+        """
+        model, treePaths = selection.get_selected_rows()
+        if treePaths:
+            treeIter = self.model.get_iter(treePaths[0])
+            nodeId   = self.model.get_value(treeIter, 1)
+            node     = self.package.findNode(nodeId)
+            self.package.currentNode = node
+            self.mainWindow.loadUrl()
+
+
     def addNode(self, *args):
         """
         Add a new node to the package
@@ -189,8 +212,10 @@ class OutlinePane(gtk.Frame):
                                gtk.DIALOG_MODAL,
                                (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
                                 gtk.STOCK_OK,     gtk.RESPONSE_OK))
+            popup.set_default_response(gtk.RESPONSE_OK)
             nameEntry = gtk.Entry()
             nameEntry.set_text(node.title)
+            nameEntry.set_activates_default(True)
             popup.vbox.pack_start(nameEntry)
             popup.show_all()
             response = popup.run()
@@ -201,5 +226,69 @@ class OutlinePane(gtk.Frame):
                 self.mainWindow.loadUrl()
 
             popup.destroy()
+
+
+    def dragDropped(self, treeView, dragContext, x, y, timestamp):
+        """
+        Handle drag n drop
+        """
+        pathInfo = treeView.get_path_at_pos(x, y)
+        if pathInfo != None:
+            path, col, cellx, celly = pathInfo
+            treeView.drag_get_data(dragContext, )
+            return True
+        else:
+            return False
+
+
+    def dragDataGet(self, treeView, context, selection, info, timestamp):
+        treeSelection = treeView.get_selection()
+        model, treeIter = treeSelection.get_selected()
+        value = model.get_value(treeIter, 1)
+        selection.set("text/plain", 8, value)
+
+
+    def dragDataReceived(self, treeView, context, x, y, 
+                         selection, info, timestamp):
+        """
+        Handle drag n drop
+        """
+        droppedId = selection.data
+        dropped   = self.package.findNode(droppedId)
+        dropInfo  = treeView.get_dest_row_at_pos(x, y)
+        model     = treeView.get_model()
+
+        if dropInfo:
+            treeIter      = self.model.get_iter(dropInfo[0])
+            destinationId = self.model.get_value(treeIter, 1)
+            destination   = self.package.findNode(destinationId)
+
+            if (dropInfo[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE or
+                dropInfo[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or
+                destination is self.package.root):
+                dropped.move(destination)
+                newIter = model.append(treeIter, (dropped.title, dropped.id))
+                newPath = model.get_path(newIter)
+                treeView.expand_to_path(newPath)
+
+            elif dropInfo[1] == gtk.TREE_VIEW_DROP_BEFORE:
+                dropped.move(destination.parent, destination.previousSibling())
+                model.insert_before(None, treeIter, (dropped.title, dropped.id))
+
+            else:
+                dropped.move(destination.parent, destination)
+                model.insert_after(None, treeIter, (dropped.title, dropped.id))
+
+        else:
+            if self.package.root.children:
+                firstChild = self.package.root.children[0]
+            else:
+                firstChild = None
+            dropped.move(self.package.root, firstChild)
+            model.prepend(model.get_iter((0,)), (dropped.title, dropped.id))
+
+        if context.action == gtk.gdk.ACTION_MOVE:
+            context.finish(True, True, timestamp)
+
 
 # ===========================================================================

@@ -184,7 +184,8 @@ class Node(Persistable):
                     children.insert(nextSibling, self)
                 else:
                     children.insert(children.index(nextSibling), self)
-            else: newParent.children.append(self)
+            else:
+                newParent.children.append(self)
 
         self.package.isChanged = True
 
@@ -263,6 +264,19 @@ class Node(Persistable):
             children = self.parent.children
             i = children.index(self) + 1
             if i < len(children):
+                sibling = children[i]
+
+        return sibling
+
+
+    def previousSibling(self):
+        """Returns our previous sibling or None"""
+        sibling = None
+
+        if self.parent:
+            children = self.parent.children
+            i = children.index(self) - 1
+            if i > 0:
                 sibling = children[i]
 
         return sibling
