@@ -20,12 +20,13 @@
 SinglePageExport will export a package as a website of HTML pages
 """
 
-import logging
+from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
-from exe.engine.beautifulsoup import BeautifulSoup
+from exe.webui                import common
 
+import logging
 log = logging.getLogger(__name__)
 
 
@@ -67,9 +68,6 @@ class SinglePageExport(object):
         self.renderNode(package.root)
         self.html += u"</div>\n"
         self.html += u"</body></html>\n"
-        soup = BeautifulSoup(self.html, True)
-        self.html = soup.prettify()
-
         self.save(self.outputDir/"index.html")
 
 
@@ -90,7 +88,6 @@ class SinglePageExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
-
             
 
     def renderHeader(self, name):
@@ -120,7 +117,7 @@ class SinglePageExport(object):
         """
         self.html += '<div id=\"nodeDecoration\">'
         self.html += '<p id=\"nodeTitle\">'
-        self.html += node.title
+        self.html += escape(node.title)
         self.html += '</p></div>\n'
 
         for idevice in node.idevices:

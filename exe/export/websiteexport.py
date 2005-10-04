@@ -22,11 +22,11 @@ WebsiteExport will export a package as a website of HTML pages
 
 import logging
 import re
+from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.pages         import uniquifyNames
-from twisted.web.microdom     import parseString, MismatchedTags
 
 log = logging.getLogger(__name__)
 
@@ -69,7 +69,9 @@ class WebsitePage(object):
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(content.css);\n"
         html += u"@import url(nav.css);</style>\n"
-        html += u"<title>%s</title>\n" % self.node.title
+        html += u"<title>" 
+        html += escape(self.node.title)
+        html += u"</title>\n" 
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=UTF-8\" />\n";
         html += u"</head>\n"
@@ -84,7 +86,7 @@ class WebsitePage(object):
         style = self.node.package.style
         html += '<div id=\"nodeDecoration\">'
         html += '<p id=\"nodeTitle\">'
-        html += self.node.title
+        html += escape(self.node.title)
         html += '</p></div>\n'
 
         for idevice in self.node.idevices:
@@ -101,10 +103,6 @@ class WebsitePage(object):
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')
-        try:
-            html = parseString(html).toprettyxml()
-        except MismatchedTags:
-            pass
         return html
 
         
@@ -128,11 +126,11 @@ class WebsitePage(object):
 
                 if page.node == self.node:
                     html += "<div id=\"active\">"
-                    html += page.node.title
+                    html += escape(page.node.title)
                     html += "</div>\n"
                 else:
                     html += "<div><a href=\""+page.name+".html\">"
-                    html += page.node.title
+                    html += escape(page.node.title)
                     html += "</a></div>\n"
 
         while depth > 1:

@@ -122,6 +122,7 @@ def image(name, value, width="", height=""):
     html += u"/>\n"
     return html
 
+
 def flash(name, value, width, height):
     """Returns the XHTML for an image"""
     log.debug(u"flash %s" % value)
@@ -130,6 +131,7 @@ def flash(name, value, width, height):
     html += u'src="%s"/>\n' % value
   
     return html
+
 
 def submitButton(name, value, enabled=True):
     """Adds a submit button to a form"""
@@ -197,7 +199,6 @@ def checkbox(name, checked, value=""):
     return html
 
 
-
 def elementInstruc(instrucId, instruc, imageFile="help.gif",
                    label=None):
     """add a help instruction for a element"""
@@ -244,5 +245,4 @@ def select(action, options, object_="", selection=None):
     html += u'</select>\n'
 
     return html
-
 

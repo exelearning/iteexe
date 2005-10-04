@@ -22,6 +22,7 @@ Exports an eXe package as a SCORM package
 
 import logging
 import re
+from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
 from exe.webui.blockfactory        import g_blockFactory
@@ -29,7 +30,6 @@ from exe.engine.error              import Error
 from exe.engine.path               import Path, TempDirPath
 from exe.export.pages              import Page, uniquifyNames
 from exe.engine.uniqueidgenerator  import UniqueIdGenerator
-from twisted.web.microdom          import parseString, MismatchedTags
 
 log = logging.getLogger(__name__)
 
@@ -89,7 +89,7 @@ class Manifest(object):
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
-        title  = unicode(self.package.root.title)
+        title  = escape(self.package.root.title)
         xmlStr += "<title>"+title+"</title>\n"
         
         depth = 0
@@ -125,7 +125,9 @@ class Manifest(object):
         
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
         self.itemStr += "identifierref=\""+resId+"\">\n"
-        self.itemStr += "    <title>"+unicode(page.node.title)+"</title>\n"
+        self.itemStr += "    <title>"
+        self.itemStr += escape(page.node.title)
+        self.itemStr += "</title>\n"
         
         self.resStr += "<resource identifier=\""+resId+"\" "
         self.resStr += "type=\"webcontent\" "
@@ -181,7 +183,7 @@ class IMSPage(Page):
         html += u"<div id=\"main\">\n"
         html += u"<div id=\"nodeDecoration\">\n"
         html += u'<p id=\"nodeTitle\">\n'
-        html += self.node.title
+        html += escape(self.node.title)
         html += u'</p>\n'
         html += u"</div>\n"
 
@@ -199,11 +201,9 @@ class IMSPage(Page):
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')
-        try:
-            html = parseString(html).toprettyxml()
-        except MismatchedTags:
-            pass
         return html
+
+    
 
         
 # ===========================================================================

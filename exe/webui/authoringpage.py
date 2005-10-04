@@ -23,7 +23,6 @@ area of the eXe web user interface.
 
 import logging
 from twisted.web.resource    import Resource
-from twisted.web.microdom    import parseString, MismatchedTags
 from twisted.web             import static
 from exe.webui               import common
 from cgi                     import escape
@@ -133,13 +132,6 @@ class AuthoringPage(RenderableResource):
         html += common.footer()
 
         html = html.encode('utf8')
-        try:
-            html = parseString(html).toprettyxml()
-        except MismatchedTags:
-            pass
-        except UnicodeEncodeError:
-            pass
-
         return html
 
     render_POST = render_GET
