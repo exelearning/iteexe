@@ -67,7 +67,7 @@ class ClozeBlock(Block):
             self.renderEditButtons(),
             u'</div>'
             ]
-        return u'\n    '.join(html).encode('utf8')
+        return u'\n    '.join(html)
     
     def renderViewContent(self):
         """
@@ -77,6 +77,7 @@ class ClozeBlock(Block):
         html += u'<div class="iDevice_inner">\n'
         html += u' <p id="clozeContent%s">' % self.id
         html += self.clozeElement.renderView()
+        html += u'</div>\n'
         html += u'  </p>'
         
         return html

@@ -223,8 +223,7 @@ class Block(Renderable):
         options += self.__getNodeOptions(self.package.root, 0)
         html += common.select(u"move", options, self.id)
 
-        if (not (self.purpose == "" or self.purpose == " ") or
-           not (self.tip == "" or self.tip == " ")):
+        if self.purpose.strip() or self.tip.strip():
             html += u'<a title="%s" ' % _(u'Pedagogical Help')
             html += u'onmousedown="Javascript:updateCoords(event);" '
             html += u"onclick=\"Javascript:showMe('p"+self.id+"', 420, 240);\" "
@@ -239,7 +238,7 @@ class Block(Renderable):
 
             if self.purpose != "":
                 html += u'<div class="popupDivLabel">'
-                html += ' ' + _(u"Purpose") + u'</div>'
+                html += u' ' + _(u"Purpose") + u'</div>'
                 html += self.purpose 
                 
             if self.tip != "":

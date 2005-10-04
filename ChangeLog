@@ -1,3 +1,308 @@
+2005-10-04 02:37  djm
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/common.py: Handle & etc
+
+2005-10-03 23:18  djm
+
+	* doc/exe_class.xmi, exe/engine/node.py, exe/gtkui/outlinepane.py:
+	  Enabled drag n drop
+
+2005-10-03 03:40  brent
+
+	* exe/webui/style/default/nav.css, exe/webui/style/silver/nav.css:
+	  fixed problem with default and silver style where large node names
+	  fell outside nav box.
+
+2005-10-02 21:29  djm
+
+	* exe/gtkui/browserpane.py, exe/gtkui/idevicepane.py,
+	  exe/gtkui/mainwindow.py, exe/gtkui/outlinepane.py: Added rename,
+	  bit tidier
+
+2005-10-02 20:31  djm
+
+	* exe/webui/element.py: lil tidyup
+
+2005-10-02 20:27  djm
+
+	* exe/gtkui/browserpane.py, exe/gtkui/idevicepane.py,
+	  exe/gtkui/mainwindow.py, exe/gtkui/outlinepane.py: GTKMozEmbed
+	  work on Windows.
+
+2005-09-28 02:40  brent
+
+	* exe/engine/externalurlidevice.py, exe/webui/externalurlblock.py:
+	  oops! here it is.
+
+2005-09-28 02:39  brent
+
+	* exe/engine/idevicestore.py, exe/webui/builtinblocks.py,
+	  exe/webui/flashwithtextblock.py: added External Web Site iDevice,
+	  now in four fab sizes!
+
+2005-09-21 01:08  djm
+
+	* tools/backup.sh: must backup drupal database tooooo
+
+2005-09-21 00:52  djm
+
+	* gtkmozembed/win32/gtkmozembed.vcproj: path changed
+
+2005-09-20 23:40  djm
+
+	* exe/webui/win-profile/Cache/CC89DDBBd01,
+	  exe/webui/win-profile/Cache/CC89EDBBd01,
+	  exe/webui/win-profile/Cache/_CACHE_001_,
+	  exe/webui/win-profile/Cache/_CACHE_002_,
+	  exe/webui/win-profile/Cache/_CACHE_003_,
+	  exe/webui/win-profile/Cache/_CACHE_MAP_: clean up win-profile III
+
+2005-09-20 23:38  djm
+
+	* exe/gtkui/browserpane.py: call setupMoz before MozEmbed.__init__
+
+2005-09-20 23:30  djm
+
+	* exe/webui/win-profile/Cache,
+	  exe/webui/win-profile/Cache/_CACHE_001_,
+	  exe/webui/win-profile/Cache/_CACHE_002_,
+	  exe/webui/win-profile/Cache/_CACHE_003_,
+	  exe/webui/win-profile/Cache/_CACHE_MAP_,
+	  exe/webui/win-profile/XUL.mfl, exe/webui/win-profile/history.dat,
+	  exe/webui/win-profile/prefs.js, exe/webui/win-profile/search.rdf,
+	  exe/webui/win-profile/secmod.db, exe/webui/win-profile/xpti.dat:
+	  clean up win-profile II
+
+2005-09-20 23:29  djm
+
+	* exe/webui/win-profile/Cache, exe/webui/win-profile/XUL.mfl,
+	  exe/webui/win-profile/bookmarks.bak,
+	  exe/webui/win-profile/bookmarks.html,
+	  exe/webui/win-profile/cert8.db, exe/webui/win-profile/chrome,
+	  exe/webui/win-profile/compatibility.ini,
+	  exe/webui/win-profile/components.ini,
+	  exe/webui/win-profile/compreg.dat,
+	  exe/webui/win-profile/cookies.txt,
+	  exe/webui/win-profile/defaults.ini,
+	  exe/webui/win-profile/extensions,
+	  exe/webui/win-profile/formhistory.dat,
+	  exe/webui/win-profile/history.dat, exe/webui/win-profile/key3.db,
+	  exe/webui/win-profile/localstore.rdf,
+	  exe/webui/win-profile/mimeTypes.rdf,
+	  exe/webui/win-profile/prefs.js, exe/webui/win-profile/search.rdf,
+	  exe/webui/win-profile/secmod.db, exe/webui/win-profile/xpti.dat:
+	  clean up win-profile
+
+2005-09-20 22:59  djm
+
+	* exe/gtkui/browserpane.py, exe/gtkui/mainwindow.py: setup profile
+	  dir only when needed (hopefully will work better on Windows)
+
+2005-09-20 22:42  djm
+
+	* exe/gtkui/browserpane.py: set status to READY upon netStopped,
+	  *before* calling loadUrl
+
+2005-09-20 21:57  djm
+
+	* exe/gtkui/browserpane.py, exe/gtkui/mainwindow.py,
+	  exe/gtkui/outlinepane.py, exe/gtkui/todo.txt: delay load if still
+	  waiting for net-stopped event
+
+2005-09-20 20:31  djm
+
+	* exe/gtkui/mainwindow.py: Added Debug|Python Break
+
+2005-09-20 03:13  djm
+
+	* exe/gtkui/mainwindow.py: debugging
+
+2005-09-20 00:03  djm
+
+	* exe/gtkui/mainwindow.py: Keep going even if there's a problem
+	  copying the Moz profile directory
+
+2005-09-19 23:22  djm
+
+	* exe/gtkui/mainwindow.py, exe/webui/browser.py: copy Moz profile on
+	  Windows as for Linux
+
+2005-09-19 22:56  djm
+
+	* exe/webui/win-profile/Cache/CC89DDBBd01,
+	  exe/webui/win-profile/Cache/CC89EDBBd01,
+	  exe/webui/win-profile/Cache/_CACHE_001_,
+	  exe/webui/win-profile/Cache/_CACHE_002_,
+	  exe/webui/win-profile/Cache/_CACHE_003_,
+	  exe/webui/win-profile/Cache/_CACHE_MAP_: Added FCKEditor Cache
+
+2005-09-16 02:28  djm
+
+	* exe/engine/config.py, exe/gtkui/idevicepane.py,
+	  exe/gtkui/layout.py, exe/gtkui/mainwindow.py,
+	  exe/gtkui/outlinepane.py, exe/gtkui/preferences.py, exe/locale/en,
+	  exe/locale/en/LC_MESSAGES, exe/locale/en/LC_MESSAGES/exe.mo: Added
+	  preferences dialog for choosing language
+
+2005-09-15 03:41  djm
+
+	* exe/gtkui/mainwindow.py, exe/gtkui/outlinepane.py,
+	  exe/gtkui/todo.txt: can add nodes and navigate the tree
+
+2005-09-15 01:35  djm
+
+	* exe/engine/flashwithtextidevice.py, exe/engine/freetextidevice.py,
+	  exe/engine/imagewithtextidevice.py,
+	  exe/engine/wikipediaidevice.py, exe/gtkui/idevicepane.py,
+	  exe/gtkui/mainwindow.py, exe/webui/authoringpage.py,
+	  exe/webui/element.py, exe/webui/packageredirectpage.py,
+	  exe/webui/renderable.py, exe/webui/scripts/armadillo.js,
+	  exe/webui/scripts/common.js: iDevices adding ok, but #currentBlock
+	  anchor not working
+
+2005-09-14 21:35  djm
+
+	* exe/gtkui/idevicemodel.py, exe/gtkui/idevicepane.py,
+	  exe/gtkui/mainwindow.py: able to add iDevices (sortof)
+
+2005-09-14 02:55  djm
+
+	* exe/application.py, exe/gtkui/idevicepane.py,
+	  exe/gtkui/mainwindow.py, exe/gtkui/outlinepane.py: Improvments to
+	  UI
+
+2005-09-14 02:52  djm
+
+	* exe/webui/scripts/armadillo.js: add link/unlink
+
+2005-09-13 21:26  djm
+
+	* exe/locale/de, exe/locale/de/LC_MESSAGES,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/exe_de.po: added
+	  German localization
+
+2005-09-13 04:14  djm
+
+	* exe/engine/version.py: bump version number to prevent confusion
+
+2005-09-13 04:13  djm
+
+	* doc/exe_class.xmi, exe/application.py, exe/engine/packagestore.py,
+	  exe/gtkui/mainwindow.py, exe/webui/editorpage.py,
+	  exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/packageredirectpage.py, exe/webui/questionelement.py,
+	  exe/webui/quiztestblock.py, exe/webui/renderable.py,
+	  exe/webui/testoptionelement.py, exe/webui/testquestionelement.py,
+	  exe/webui/truefalseelement.py, exe/webui/webserver.py: improving
+	  the user interface
+
+2005-09-12 03:59  djm
+
+	* exe/application.py, exe/engine/flashwithtextidevice.py,
+	  exe/export/scormexport.py, exe/webui/common.py,
+	  exe/webui/flashwithtextblock.py: lil tidy ups
+
+2005-09-12 03:48  djm
+
+	* exe/webui/genericblock.py: lil tidyup
+
+2005-09-12 03:39  djm
+
+	* testing/runtests.py, testing/testidevicestore.py: commented out
+	  broken tests... to fix later
+
+2005-09-12 03:35  djm
+
+	* testing/locale, testing/locale/ch, testing/locale/ch/LC_MESSAGES,
+	  testing/locale/ch/LC_MESSAGES/exe.mo, testing/locale/es,
+	  testing/locale/es/LC_MESSAGES,
+	  testing/locale/es/LC_MESSAGES/exe.mo, testing/locale/exe.po,
+	  testing/locale/exe_ch.po, testing/locale/exe_es.po,
+	  testing/runtests.py: needed for testing
+
+2005-09-12 02:36  djm
+
+	* MANIFEST.in, NEWS, README, exe/engine/attachmentidevice.py,
+	  exe/engine/config.py, exe/engine/idevicestore.py,
+	  exe/engine/version.py, exe/engine/wikipediaidevice.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/locale/ch/LC_MESSAGES/exe.mo, exe/locale/exe.po,
+	  exe/locale/exe_ch.po, exe/webui/attachmentblock.py,
+	  exe/webui/css/exe.css, exe/webui/editorelement.py,
+	  exe/webui/editorpane.py, exe/webui/galleryblock.py,
+	  exe/webui/images/flash_placeholder.gif,
+	  exe/webui/linux-profile/prefs.js, exe/webui/multichoiceblock.py,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/icon_calc.gif,
+	  exe/webui/style/default/icon_define.gif,
+	  exe/webui/style/default/icon_key_points.gif,
+	  exe/webui/style/default/icon_present.gif,
+	  exe/webui/style/default/icon_synthesis.gif,
+	  exe/webui/style/default/icon_time.gif,
+	  exe/webui/style/default/popup_bg.gif,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/garden/popup_bg.gif,
+	  exe/webui/style/seamist/content.css,
+	  exe/webui/style/seamist/popup_bg.gif,
+	  exe/webui/style/silver/content.css,
+	  exe/webui/style/silver/popup_bg.gif,
+	  exe/webui/style/standardwhite/content.css,
+	  exe/webui/style/standardwhite/popup_bg.gif,
+	  exe/webui/truefalseelement.py, exe/webui/win-profile/prefs.js,
+	  installs/rpm/exe-twisted.spec, installs/windows/exe.nsi, setup.py,
+	  win-setup.py: Merged in changes from 0.8 branch -r 1184:1218
+
+2005-09-07 05:39  djm
+
+	* exe/gtkui/idevicepane.py, exe/gtkui/mainwindow.py,
+	  exe/gtkui/outlinepane.py: Place holders for the IdevicePane and
+	  OutlinePane
+
+2005-09-07 04:04  djm
+
+	* exe/gtkui/__init__.py, exe/run-exe.sh, exe/webui/renderable.py,
+	  exe/webui/stylemenu.py, exe/webui/webserver.py,
+	  exe/xului/renderablelivepage.py, exe/xului/stylemenu.py: split
+	  nevow/xul code and gtk code out from webui
+
+2005-09-07 02:17  djm
+
+	* doc/eXe_TecReport_Jan2005.doc, doc/eXe_TecReport_Jan2005_WGM.doc,
+	  doc/eXe_reportfinaldraft-Wayne.doc, doc/eXe_reportfinaldraft.doc,
+	  doc/exeLearning_Tairawhiti Polytechnic.ppt,
+	  doc/exeLearning_Tairawhiti Polytechnic.sxi: these don't belong
+	  here
+
+2005-09-06 03:05  jenny
+
+	* exe/locale/exe_ch.po: updated exe_ch.po.
+
+2005-09-05 22:00  djm
+
+	* exe/engine/version.py: bumped version number
+
+2005-09-05 03:10  djm
+
+	* exe/application.py, exe/run-exe.sh: ugraded gre
+
+2005-09-05 03:07  djm
+
+	* ChangeLog, exe/gtkui, exe/gtkui/mainwindow.py,
+	  exe/webui/authoringpage.py, exe/webui/idevicepane.py,
+	  exe/webui/mainpage.py, exe/webui/mainwindow.py,
+	  exe/webui/outlinepane.py, exe/webui/packageredirectpage.py,
+	  exe/webui/scripts/draganddrop.js, exe/webui/scripts/mainpage.js,
+	  exe/webui/scripts/nevow_glue.js, exe/webui/templates,
+	  exe/webui/webserver.py, exe/xului, exe/xului/idevicepane.py,
+	  exe/xului/mainpage.py, exe/xului/outlinepane.py,
+	  exe/xului/scripts, exe/xului/scripts/draganddrop.js,
+	  exe/xului/scripts/mainpage.js, exe/xului/scripts/nevow_glue.js,
+	  exe/xului/templates: separate xul/nevow code , web code , and gtk
+	  code
+
 2005-09-04 22:30  jenny
 
 	* exe/locale/ch, exe/locale/ch/LC_MESSAGES,

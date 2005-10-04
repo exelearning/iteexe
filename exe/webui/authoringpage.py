@@ -89,11 +89,6 @@ class AuthoringPage(RenderableResource):
         log.debug(u"render_GET "+repr(request))
 
         if request is not None:
-# TODO!!!! Is this really needed??!?!?!?!?!?!!!            
-#            # Mark page as uncacheable
-#            request.setHeader("Cache-Control", "no-cache")
-#            request.setHeader("Pragma", "no-cache") 
-
             # Process args
             for key, value in request.args.items():
                 request.args[key] = [unicode(value[0], 'utf8')]
