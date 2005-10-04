@@ -39,7 +39,7 @@ class ClozeIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, _(u"Cloze Idevice"),
+        Idevice.__init__(self, _(u"Cloze Activity"),
                          _(u"University of Auckland"), 
                          _(u"This Idevice is used to help students learn "
                            u"passages of text and to develop an understanding "

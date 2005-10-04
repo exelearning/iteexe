@@ -20,9 +20,10 @@
 The collection of iDevices available
 """
 
-from exe.engine import persist
+from exe.engine         import persist
 from exe.engine.idevice import Idevice
-from exe.engine.field import TextAreaField
+from exe.engine.field   import TextAreaField
+from nevow.flat         import flatten
 
 import imp
 import sys
@@ -121,6 +122,7 @@ class IdeviceStore:
         from exe.engine.attachmentidevice     import AttachmentIdevice
         from exe.engine.titleidevice          import TitleIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
+        from exe.engine.clozeidevice          import ClozeIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
 
@@ -141,6 +143,7 @@ class IdeviceStore:
         self.extended.append(WikipediaIdevice())
         self.extended.append(AttachmentIdevice())
         self.extended.append(GalleryIdevice())
+        self.extended.append(ClozeIdevice())
         self.extended.append(FlashWithTextIdevice())
         self.extended.append(ExternalUrlIdevice())
 
@@ -157,6 +160,8 @@ class IdeviceStore:
         idevicePath = self.config.configDir/'idevices'
         log.debug("load extended iDevices from "+idevicePath)
             
+        if not idevicePath.exists():
+            idevicePath.makedirs()
         sys.path = [idevicePath] + sys.path
         
         # add to the list of extended idevices
@@ -207,7 +212,7 @@ the activity in context for the learner. It is also important to correctly
 reference any reading materials you refer to as this models best practice to
 the learners. Not always essential if covered in the course content but
 providing feedback to the learner on some of the main points covered in the
-reading may also add value to the activity."""), "") 
+reading may also add value to the activity."""), u"") 
         readingAct.emphasis = Idevice.SomeEmphasis
         readingAct.addField(TextAreaField(_(u"What to read"), 
 _(u"""Provide details of the reading materials learners should  read.""")))
@@ -246,7 +251,7 @@ have in order to be able to effectively complete the learning. Examples of
 pre-knowledge can be: <ul>
 <li>        Learners must have level 4 English </li>
 <li>        Learners must be able to assemble standard power tools </li></ul>
-"""), "")
+"""), u"")
         preknowledge.emphasis = Idevice.SomeEmphasis
         preknowledge.addField(TextAreaField(_(u"Preknowledge"), 
 _(u"""Describe the prerequisite knowledge learners should have to effectively
@@ -259,7 +264,7 @@ complete this learning.""")))
 _(u"""An activity can be defined as a task or set of tasks a learner must
 complete. Provide a clear statement of the task and consider any conditions
 that may help or hinder the learner in the performance of the task."""),
-"")
+u"")
         activity.emphasis = Idevice.SomeEmphasis
         activity.addField(TextAreaField(_(u"Activity"),
 _(u"""Describe the tasks the learners should complete.""")))
