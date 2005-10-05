@@ -166,7 +166,8 @@ class MainWindow(gtk.Window):
         Create a new package
         TODO: check if the package was dirty
         """
-        self.package = self.packageStore.createPackage()
+        self.package = self.application.packageStore.createPackage()
+        self.application.webServer.root.bindNewPackage(self.package)
         self.loadUrl()
 
         
