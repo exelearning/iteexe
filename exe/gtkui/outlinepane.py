@@ -228,19 +228,6 @@ class OutlinePane(gtk.Frame):
             popup.destroy()
 
 
-    def dragDropped(self, treeView, dragContext, x, y, timestamp):
-        """
-        Handle drag n drop
-        """
-        pathInfo = treeView.get_path_at_pos(x, y)
-        if pathInfo != None:
-            path, col, cellx, celly = pathInfo
-            treeView.drag_get_data(dragContext, )
-            return True
-        else:
-            return False
-
-
     def dragDataGet(self, treeView, context, selection, info, timestamp):
         treeSelection = treeView.get_selection()
         model, treeIter = treeSelection.get_selected()
@@ -257,6 +244,10 @@ class OutlinePane(gtk.Frame):
         dropped   = self.package.findNode(droppedId)
         dropInfo  = treeView.get_dest_row_at_pos(x, y)
         model     = treeView.get_model()
+
+        if dropped is self.package.root:
+            context.finish(False, True, timestamp)
+            return
 
         if dropInfo:
             treeIter      = self.model.get_iter(dropInfo[0])
