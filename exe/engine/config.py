@@ -249,7 +249,7 @@ class Config:
         for subDir in styleDir.listdir():
             styleSheet = styleDir/subDir/'content.css'
             if styleSheet.exists():
-                style = subDir.basename()
+                style = unicode(subDir.basename())
                 log.debug(" loading style %s" % style)
                 self.styles.append(style)
 

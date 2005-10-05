@@ -436,7 +436,7 @@ class MainWindow(gtk.Window):
         """
         assert self.packageName
         package = self.application.packageStore.getPackage(self.packageName)
-        package.style = self.config.styles[action]
+        package.style = unicode(self.config.styles[action])
         self.loadUrl()
 
 
