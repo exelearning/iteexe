@@ -215,6 +215,7 @@ class ScormPage(Page):
         html += u"src=\"APIWrapper.js\"></script>\n" 
         html += u"<script type=\"text/javascript\" "
         html += u"src=\"SCOFunctions.js\"></script>\n"             
+        html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u'<body onload="loadPage()" onbeforeunload="unloadPage()" '
         html += u'onunload="unloadPage()">'

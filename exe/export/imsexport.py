@@ -177,6 +177,7 @@ class IMSPage(Page):
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"
+        html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u"<body>\n"
         html += u"<div id=\"outer\">\n"
