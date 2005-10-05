@@ -102,29 +102,7 @@ class BrowserPane(gtk.Frame):
         """
         replace the browser with a new instance
         """
-        self.setupMoz()
-        self.remove(self.get_child())
-        del self.browser
-        self.scrollWin = gtk.ScrolledWindow()
-        self.add(self.scrollWin)
-        self.scrollWin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-        self.browser = gtkmozembed.MozEmbed()
-        self.status  = READY
-        self.scrollWin.add_with_viewport(self.browser)
-        self.scrollWin.show_all()
-
-        self.browser.connect("location", self.newLocation, "location")
-#        self.browser.connect("visibility", self.what, "visibility")
-#        self.browser.connect("net-start", self.netStarted)
-#        self.browser.connect("net-stop",  self.netStopped)
-#        self.browser.connect("open-uri",  self.openUri)
-#        self.browser.connect("js-status", self.javaScriptStatus)
-#        self.browser.connect("net-state",  self.what, "net-state")
-#        self.browser.connect("progress",  self.what, "progress")
-#        self.browser.connect("link-message",  self.what, "link-message")
-#        self.loadUrl()
-        url = self.url+"/"+self.mainWindow.package.name+"/authoringPage"
-        self.browser.load_url(url)
+        self.browser.reload(gtkmozembed.FLAG_RELOADNORMAL)
 
 
     def loadUrl(self):

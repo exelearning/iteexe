@@ -227,12 +227,14 @@ class MainWindow(gtk.Window):
             if not filename.lower().endswith('.elp'):
                 filename += '.elp'
             package.save(filename)
-            self.loadUrl()
 
             if package.name != self.packageName:
                 # Redirect the client if the package name has changed
+                packageStore = self.application.packageStore
+                self.package = packageStore.loadPackage(filename)
                 self.application.webServer.root.bindNewPackage(package)
-                self.loadUrl()
+
+            self.loadUrl()
 
         chooser.destroy()
 
