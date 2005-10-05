@@ -100,4 +100,14 @@ class IdevicePane(gtk.Frame):
         prototype = self.prototypes[ideviceId]
         self.mainWindow.addIdevice(prototype.clone())
 
+
+    def addIdevice(self, idevice):
+        """
+        Adds an iDevice to the pane
+        """
+        log.debug("addIdevice id="+idevice.id+", title="+idevice.title)
+        self.prototypes[idevice.id] = idevice
+        self.model.append((idevice.title, idevice.id))
+
+
 # ===========================================================================
