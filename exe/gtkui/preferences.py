@@ -54,5 +54,6 @@ class Preferences(gtk.Dialog):
     def onResponse(self, widget, responseId):
         if responseId == gtk.RESPONSE_OK:
             self.config.locale = self.localeCombo.entry.get_text()
+            self.config.configParser.set('user', 'locale', self.config.locale)
 
 

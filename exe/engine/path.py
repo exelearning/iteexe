@@ -736,6 +736,11 @@ class Path(unicode):
         """Change the permissions of the file"""
         os.chmod(self, mode)
 
+    def chdir(self):
+        """Change the current working directory
+	   to self"""
+        os.chdir(toUnicode(self))
+
     if hasattr(os, 'chown'):
         def chown(self, uid, gid):
             """Change the owner (uid) and owning group

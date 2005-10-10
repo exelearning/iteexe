@@ -250,36 +250,63 @@ class OutlinePane(gtk.Frame):
             return
 
         if dropInfo:
-            treeIter      = self.model.get_iter(dropInfo[0])
-            destinationId = self.model.get_value(treeIter, 1)
+            destinationIter      = self.model.get_iter(dropInfo[0])
+            destinationId = self.model.get_value(destinationIter, 1)
             destination   = self.package.findNode(destinationId)
+
+            if dropped is destination or dropped.isAncestorOf(destination):
+                context.finish(False, True, timestamp)
+                return
 
             if (dropInfo[1] == gtk.TREE_VIEW_DROP_INTO_OR_BEFORE or
                 dropInfo[1] == gtk.TREE_VIEW_DROP_INTO_OR_AFTER or
                 destination is self.package.root):
                 dropped.move(destination)
-                newIter = model.append(treeIter, (dropped.title, dropped.id))
+                newIter = model.append(destinationIter, 
+                                       (dropped.title, dropped.id))
+                self.copyChildren(newIter, dropped)
                 newPath = model.get_path(newIter)
                 treeView.expand_to_path(newPath)
 
             elif dropInfo[1] == gtk.TREE_VIEW_DROP_BEFORE:
                 dropped.move(destination.parent, destination.previousSibling())
-                model.insert_before(None, treeIter, (dropped.title, dropped.id))
+                newIter = model.insert_before(None, destinationIter, 
+                                              (dropped.title, dropped.id))
+                self.copyChildren(newIter, dropped)
 
             else:
                 dropped.move(destination.parent, destination)
-                model.insert_after(None, treeIter, (dropped.title, dropped.id))
+                newIter = model.insert_after(None, destinationIter, 
+                                             (dropped.title, dropped.id))
+                self.copyChildren(newIter, dropped)
 
         else:
             if self.package.root.children:
                 firstChild = self.package.root.children[0]
             else:
                 firstChild = None
+
+            if dropped is firstChild or dropped.isAncestorOf(firstChild):
+                context.finish(False, True, timestamp)
+                return
+
             dropped.move(self.package.root, firstChild)
-            model.prepend(model.get_iter((0,)), (dropped.title, dropped.id))
+            newIter = model.prepend(model.get_iter((0,)), 
+                                    (dropped.title, dropped.id))
+            self.copyChildren(newIter, dropped)
 
         if context.action == gtk.gdk.ACTION_MOVE:
             context.finish(True, True, timestamp)
+
+
+    def copyChildren(self, destinationIter, dropped):
+        """
+        Copy the children of a dropped node
+        """
+        for child in dropped.children:
+            newIter = self.model.append(destinationIter, 
+                                        (child.title, child.id))
+            self.copyChildren(newIter, child)
 
 
 # ===========================================================================

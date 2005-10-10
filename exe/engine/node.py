@@ -112,7 +112,7 @@ class Node(Persistable):
 
     def isAncestorOf(self, node):
         """If we are an ancestor of 'node' returns 'true'"""
-        return node in self.ancestors()
+        return self in node.ancestors()
 
 
     def getResources(self):
