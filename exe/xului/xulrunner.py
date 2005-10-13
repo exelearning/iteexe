@@ -43,20 +43,7 @@ def launchXulrunner(config, packageName):
     log.info(u"Launch xulrunner with " + config.xulrunnerPath)
     log.info(u"url "+url)
 
-    launchString = ('"%s" -profile "%s" %s &' % 
-                    (config.xulrunnerPath, profile, url))
+    launchString = ('"%s" "%s" &' % 
+                    (config.xulrunnerPath, config.xulDir/'xulApp'/'application.ini'))
     log.info(u'Launching xulrunner with: %s' % launchString)
     os.system(launchString)
-
-
-def createProfile(config):
-    """
-    Create a profile for the user to use based on the one in /usr/share/exe
-    """
-    appDir  = Path(os.environ["HOME"])/'.exe'
-    log.info("Creating FireFox profile copied from"+
-             config.webDir+"/linux-profile to "+appDir+"/linux-profile")
-    if not appDir.exists():
-        appDir.mkdir()
-    shutil.rmtree(appDir/"linux-profile", True)
-    (config.webDir/'linux-profile').copytree(appDir/'linux-profile')

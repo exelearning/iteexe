@@ -39,10 +39,11 @@ class LinuxConfig(Config):
         """
         # Override the default settings
         self.webDir      = Path("/usr/share/exe")
+        self.xulDir      = Path("/usr/share/exe")
         self.localeDir   = Path("/usr/share/exe/locale")
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
-        xulrunnerPath    = self.webDir/'xulrunner/xulrunner'
+        xulrunnerPath    = self.xulDir/'xulrunner/xulrunner'
         if xulrunnerPath.isfile():
             self.xulrunnerPath = xulrunnerPath
         self.styles      = []
