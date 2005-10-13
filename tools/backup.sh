@@ -17,15 +17,6 @@ MOIN=/local/web/moin/reptilehouse
 mkdir -p $TOP/$YYMMDD
 
 # Backup the Subversion repositories
-#for REPO in $SVNPARENT/*; do
-#    if [ -d $REPO ] && [ "$REPO" != "lost+found" ]; then
-#        echo $REPO
-#        $SVNTOOLS/backup/hot-backup.py $REPO $TOP/$YYMMDD
-#        svnadmin dump $REPO
-#        svnadmin dump /svn/$REPO > $REPO.$YYMMDD
-#        gzip $REPO.$YYMMDD
-#    fi
-#done
 /etc/init.d/httpd stop
 cd $TOP/$YYMMDD
 svnadmin dump /svn/exe > exe.$YYMMDD

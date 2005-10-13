@@ -82,9 +82,9 @@ class AttachmentIdevice(Idevice):
         resourceFile = Path(attachmentPath)
 
         assert(self.parentNode,
-               'Attachment '+self.id+' has no parentNode')
+               _('Attachment %s has no parentNode') % self.id)
         assert(self.parentNode.package,
-               'iDevice '+self.parentNode.id+' has no package')
+               _('iDevice %s has no package') % self.parentNode.id)
 
         if resourceFile.isfile():
             package = self.parentNode.package
@@ -105,9 +105,9 @@ class AttachmentIdevice(Idevice):
         Needs to be in a package to work.
         """
         assert(self.parentNode,
-               'Attachment '+self.id+' has no parentNode')
+               _('Attachment %s has no parentNode') % self.id)
         assert(self.parentNode.package,
-               'iDevice '+self.parentNode.id+' has no package')
+               _('iDevice %s has no package') % self.parentNode.id)
 
         if self.filename:
             self.parentNode.package.deleteResource(self.filename)

@@ -25,14 +25,10 @@ Main application class, pulls together everything and runs it.
 import os
 import sys
 from getopt import getopt, GetoptError
-# needed so we can display our GTK window
-# must import reactor BEFORE reactor and webServer.
-from twisted.internet import gtk2reactor
-gtk2reactor.install()
-
-from twisted.internet import reactor
 from exe.webui.webserver     import WebServer
-from exe.gtkui.mainwindow    import MainWindow
+# must import reactor AFTER WebServer. It's yucky, but that's life
+from twisted.internet import reactor
+from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
 from exe.engine              import version
@@ -54,7 +50,8 @@ class Application:
         self.packageStore = None
         self.ideviceStore = None
         self.packagePath  = None
-        self.webServer       = None
+        self.webServer    = None
+        self.standalone   = False # Used for the ready to run exe
 
 
     def main(self):
@@ -64,8 +61,10 @@ class Application:
         self.processArgs()
         self.loadConfiguration()
         self.preLaunch()
-        reactor.callWhenRunning(self.launch)
+        self.launch()
+        log.info('serving')
         self.serve()
+        log.info('done serving')
 
 
     def processArgs(self):
@@ -74,7 +73,7 @@ class Application:
         """
         try:
             options, packages = getopt(sys.argv[1:], 
-                                       "hV", ["help", "version"])
+                                       "hV", ["help", "version", "standalone"])
         except GetoptError:
             self.usage()
             sys.exit(2)
@@ -90,16 +89,21 @@ class Application:
             if option[0] in ("-V", "--version"):
                 print "eXe", version.version
                 sys.exit()
-            if option[0] in ("-h", "--help"):
+            elif option[0] in ("-h", "--help"):
                 self.usage()
                 sys.exit()
+            elif option[0].lower() == '--standalone':
+                self.standalone = True
 
     
     def loadConfiguration(self):
         """
         Loads the config file and applies all the settings
         """
-        if sys.platform[:3] == "win":
+        if self.standalone:
+            from exe.engine.standaloneconfig import StandaloneConfig
+            self.config = StandaloneConfig()
+        elif sys.platform[:3] == "win":
             from exe.engine.winconfig import WinConfig
             self.config = WinConfig()
         elif sys.platform[:6] == "darwin":
@@ -125,7 +129,7 @@ class Application:
 
     def serve(self):
         """
-        Starts the WebServer,
+        Starts the web server,
         this func doesn't return until after the app has finished
         """
         print "Welcome to eXe: the eLearning XHTML editor"
@@ -138,14 +142,12 @@ class Application:
         launches the webbrowser
         """
         if self.packagePath:
-            log.debug("loading package "+self.packagePath)
             package = self.packageStore.loadPackage(self.packagePath)
+            log.debug("loading package "+package.name)
+            self.server.root.bindNewPackage(package)
+            launchBrowser(self.config, package.name)
         else:
-            log.debug("creating a new package")
-            package = self.packageStore.createPackage()
-
-        window = MainWindow(self, package)
-        window.show_all()
+            launchBrowser(self.config, "")
 
 
     def usage(self):
@@ -155,6 +157,7 @@ class Application:
         print "Usage: "+os.path.basename(sys.argv[0])+" [OPTION] [PACKAGE]"
         print "  -V, --version    print version information and exit"
         print "  -h, --help       display this help and exit"
+        print "  --standalone     Run totally from current directory"
         print "Settings are read from exe.conf "
         print "in $HOME/.exe on Linux/Unix or"
         print "in Documents and Settings/<user name>/Application Data/exe "

@@ -23,8 +23,7 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-#from exe.webui.mainpage       import MainPage
-from exe.webui.authoringpage  import AuthoringPage
+from exe.webui.mainpage       import MainPage
 from exe.webui.renderable     import RenderableResource
 
 log = logging.getLogger(__name__)
@@ -67,11 +66,12 @@ class PackageRedirectPage(RenderableResource):
         Binds 'package' to the appropriate url
         and creates a MainPage instance for it
         and a directory for the resource files
+
+	In the GTK version, this should actually
+        redirect people to authoringPage. Copy from
+	svn revision 1311 to re-enable gtk.
         """
-        #MainPage(self, package)
-        #TODO!!! fix this up!!!
-        page = AuthoringPage(self, package)
-        page.putChild("authoringPage", page)
+        MainPage(self, package)
 
 
     def render_GET(self, request):

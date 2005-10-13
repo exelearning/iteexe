@@ -78,7 +78,7 @@ class GenericBlock(Block):
         if self.idevice.icon:
             html += u'<img alt="" class="iDevice_icon" '
             html += u"src=\"/style/"+style
-            html += "/icon_"+self.idevice.icon+".gif\"/>\n"
+            html += u"/icon_"+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
         html += self.idevice.title
         html += u"</span>\n"

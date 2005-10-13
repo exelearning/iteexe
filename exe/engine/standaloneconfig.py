@@ -18,18 +18,18 @@
 # ===========================================================================
 
 """
-The LinuxConfig overrides the Config class with Linux specific
+The StandAlone config overrides the Config class with Standalone specific
 configuration
 """
 
-import os
+import sys, os
 from exe.engine.config import Config
 from exe.engine.path import Path
 
 # ===========================================================================
-class LinuxConfig(Config):
+class StandaloneConfig(Config):
     """
-    The LinuxConfig overrides the Config class with Linux specific
+    The StandaloneConfig overrides the Config class with ready-to-run specific
     configuration
     """
     
@@ -37,23 +37,25 @@ class LinuxConfig(Config):
         """
         Setup with our default settings
         """
+        self.exePath = Path(sys.argv[0])
+        if self.exePath.isfile():
+            self.exePath = self.exePath.dirname()
+        exePath = self.exePath
         # Override the default settings
-        self.webDir      = Path("/usr/share/exe")
-        self.localeDir   = Path("/usr/share/exe/locale")
-        self.dataDir     = Path(os.environ['HOME'])
-        self.configDir   = Path(self.dataDir)/'.exe'
-        browserPath = self.webDir/'firefox/firefox'
-        if browserPath.isfile():
-            self.browserPath = browserPath
+        self.webDir      = exePath
+        self.dataDir     = exePath/'packages'
+        if not self.dataDir.exists():
+            self.dataDir.makedirs()
+        self.configDir   = exePath/'config'
+        self.localeDir   = exePath/'locale'
+        self.browserPath = exePath/'firefox/firefox'
         self.styles      = []
 
     def _getConfigPathOptions(self):
         """
         Returns the best places for a linux config file
         """
-        return [Path(os.environ["HOME"])/'.exe/exe.conf',
-                Path('/etc/exe/exe.conf'),
-                Path('./exe/exe.conf')]
+        return [self.configDir/'exe.conf']
 
 
 # ===========================================================================

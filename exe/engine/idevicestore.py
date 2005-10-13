@@ -121,6 +121,8 @@ class IdeviceStore:
         from exe.engine.wikipediaidevice      import WikipediaIdevice
         from exe.engine.attachmentidevice     import AttachmentIdevice
         from exe.engine.titleidevice          import TitleIdevice
+        from exe.engine.quiztestidevice       import QuizTestIdevice
+        from exe.engine.forumidevice          import ForumIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
@@ -142,6 +144,8 @@ class IdeviceStore:
 
         self.extended.append(WikipediaIdevice())
         self.extended.append(AttachmentIdevice())
+        self.extended.append(QuizTestIdevice())
+        self.extended.append(ForumIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
         self.extended.append(FlashWithTextIdevice())

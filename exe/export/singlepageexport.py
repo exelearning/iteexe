@@ -24,7 +24,6 @@ from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
-from exe.webui                import common
 
 import logging
 log = logging.getLogger(__name__)

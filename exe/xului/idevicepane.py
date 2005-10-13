@@ -86,9 +86,9 @@ class IdevicePane(Renderable):
         # Now do the rendering
         log.debug("Render")
 
-        html  = "<!-- IDevice Pane Start -->\n"
-        html += "<listbox id=\"ideviceList\" flex=\"1\" "
-        html += "style=\"background-color: #FFF;\">\n"
+        html  = u"<!-- IDevice Pane Start -->\n"
+        html += u"<listbox id=\"ideviceList\" flex=\"1\" "
+        html += u"style=\"background-color: #FFF;\">\n"
 
         prototypes = self.prototypes.values()
         def sortfunc(pt1, pt2):
@@ -98,9 +98,9 @@ class IdevicePane(Renderable):
         for prototype in prototypes:
             html += self.__renderPrototype(prototype)
 
-        html += "</listbox>\n"
-        html += "<!-- IDevice Pane End -->\n"
-        return stan.xml(html)
+        html += u"</listbox>\n"
+        html += u"<!-- IDevice Pane End -->\n"
+        return stan.xml(html.encode('utf8'))
 
 
     def __renderPrototype(self, prototype):
@@ -108,9 +108,10 @@ class IdevicePane(Renderable):
         Add the list item for an iDevice prototype in the iDevice pane
         """
         log.debug("Render "+prototype.title)
-        xul  = "  <listitem label=\"" + prototype.title + "\" "
-        xul += "onclick=\"submitLink('AddIdevice', "
-        xul += "'" + prototype.id + "', 1)\"/>"""
+        log.debug("of type "+repr(type(prototype.title)))
+        xul  = u"  <listitem label=\"" + prototype.title + "\" "
+        xul += u"onclick=\"submitLink('AddIdevice', "
+        xul += u"'" + prototype.id + "', 1)\"/>"""
         return xul
         
     

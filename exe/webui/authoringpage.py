@@ -23,7 +23,6 @@ area of the eXe web user interface.
 
 import logging
 from twisted.web.resource    import Resource
-from twisted.web             import static
 from exe.webui               import common
 from cgi                     import escape
 import exe.webui.builtinblocks
@@ -41,16 +40,14 @@ class AuthoringPage(RenderableResource):
     """
     name = u'authoring'
 
-    def __init__(self, parent, package):
+    def __init__(self, parent):
         """
         Initialize
         'parent' is our MainPage instance that created us
         """
-        self.name = package.name
-        RenderableResource.__init__(self, parent, package)
-        self.putChild("resources", static.File(package.resourceDir))
+        RenderableResource.__init__(self, parent)
         self.blocks  = []
-        
+
 
     def getChild(self, name, request):
         """
@@ -70,12 +67,12 @@ class AuthoringPage(RenderableResource):
         # because the idevice pane needs to know that new idevices have been
         # added/edited..
         # TODO: Once pyxpcom comes along, we'll fix these
-        #self.parent.process(request)
-        #if ("action" in request.args and 
-        #    request.args["action"][0] == u"saveChange"):
-        #    log.debug(u"process savachange:::::")
-        #    self.package.save()
-        log.debug(u"_process ")
+        self.parent.process(request)
+        if ("action" in request.args and 
+            request.args["action"][0] == u"saveChange"):
+            log.debug(u"process savachange:::::")
+            self.package.save()
+            log.debug(u"package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
         log.debug(u"after authoringPage process" + repr(request.args))
@@ -105,9 +102,7 @@ class AuthoringPage(RenderableResource):
         if request is None:
             html += u'action="NO_ACTION"'
         else:
-            #html += u"action=\""+request.path+"#currentBlock\""
-            html += u"action=\""+request.path+"\""
-
+            html += u"action=\""+request.path+"#currentBlock\""
         html += u" id=\"contentForm\">"
         html += u'<div id="main">\n'
         html += common.hiddenField(u"action")
@@ -143,8 +138,37 @@ class AuthoringPage(RenderableResource):
         html += u'</style>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
-        html += u'<script type="text/javascript" src="/scripts/fckeditor.js">'
+        html += u'<script type="text/javascript" src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
         html += u'</script>\n'
+        html += u'<script type="text/javascript">\n'
+        html += u'<!--\n'
+        html += u"tinyMCE.init({   " 
+        html += u"    mode : \"textareas\",\n"
+        html += u"    theme : \"advanced\",\n"
+        html += u"    plugins : \"table,save,advhr,advimage,advlink,emotions,"
+        html += u" contextmenu,paste,directionality, noneditable\","
+
+        html += u"    theme_advanced_buttons1 : \"newdocument,separator,bold,"
+        html += u"italic,underline,separator,"
+        html += u"justifyleft,justifycenter,justifyright,justifyfulli,"
+        html += u"separator,bullist,numlist,separator,indent,outdent,separator,forecolor,backcolor,tablecontrols\",\n" 
+
+        html += u" theme_advanced_buttons2 : \"cut,copy,paste,"
+        html += u" pastetext,pasteword,separator,emotions,advhr,separator,ltr,rtl\",\n"
+   
+        html += u"    theme_advanced_disable : \"visualaid, hr, styleselect,formatselect\",\n"
+	html += u"    theme_advanced_toolbar_location : \"top\",\n"
+	html += u"    theme_advanced_toolbar_align : \"left\",\n"
+	html += u"    theme_advanced_path_location : \"bottom\",\n"
+	html += u"    content_css : \"/example_data/example_full.css\",\n"
+        html += u"    external_link_list_url : \"example_data/example_link_list.js\",\n"
+	html += u"    external_image_list_url : \"example_data/example_image_list.js\",\n"
+	html += u"    file_browser_callback : \"mcFileManager.filebrowserCallBack\",\n"
+	html += u"    theme_advanced_resize_horizontal : false,\n"
+	html += u"    theme_advanced_resizing : true\n"
+        html += u" });\n"
+        html += u"//-->\n"
+        html += u"</script>\n"
         html += u'<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += u'</script>\n'
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'

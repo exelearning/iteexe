@@ -40,7 +40,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'port', 'dataDir', 
-                   'configDir', 'browserPath', 'greDir',
+                   'configDir', 'browserPath',
                    'localeDir'),
         'user': ('locale',)
     }
@@ -59,8 +59,6 @@ class Config:
         self.exePath     = Path(sys.argv[0], encoding).abspath()
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
-        # greDir is the directory for the Gecko Runtime Environment
-        self.greDir      = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on
@@ -75,7 +73,7 @@ class Config:
         self.browserPath = Path("firefox")
         # styles is the list of style names available for loading
         self.styles      = []
-        # locale the user wants
+        # locale the user wants (#TODO: Read from system)
         self.locale      = "en"
         # Let our children override our defaults depending
         # on the OS that we're running on
@@ -177,7 +175,6 @@ class Config:
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir      = Path(system.webDir)
-            self.greDir      = Path(system.greDir)
             self.localeDir   = Path(system.localeDir)
             self.port        = int(system.port)
             self.browserPath = Path(system.browserPath)
@@ -229,7 +226,6 @@ class Config:
         log.info("configPath = %s" % self.configPath)
         log.info("exePath    = %s" % self.exePath)
         log.info("webDir     = %s" % self.webDir)
-        log.info("greDir     = %s" % self.greDir)
         log.info("localeDir  = %s" % self.localeDir)
         log.info("port       = %d" % self.port)
         log.info("dataDir    = %s" % self.dataDir)
@@ -249,7 +245,7 @@ class Config:
         for subDir in styleDir.listdir():
             styleSheet = styleDir/subDir/'content.css'
             if styleSheet.exists():
-                style = unicode(subDir.basename())
+                style = subDir.basename()
                 log.debug(" loading style %s" % style)
                 self.styles.append(style)
 
@@ -263,15 +259,15 @@ class Config:
         gettext.install('exe', self.localeDir, True)
         self.locales = {}
         for subDir in self.localeDir.dirs():
-            if (subDir/'LC_MESSAGES').exists():
-                locale = unicode(subDir.basename())
-                log.debug(" loading locale "+locale)
-                self.locales[locale] = \
+            if (subDir/'LC_MESSAGES'/'exe.mo').exists():
+                self.locales[subDir.basename()] = \
                     gettext.translation('exe', 
                                         self.localeDir, 
-                                        languages=[locale])
-
-        self.locales[self.locale].install(unicode=True)
+                                        languages=[str(subDir.basename())])
+                if subDir.basename() == self.locale:
+                    locale = subDir.basename()
+                    log.debug(" loading locale %s" % locale)
+                    self.locales[locale].install(unicode=True)
 
 
 

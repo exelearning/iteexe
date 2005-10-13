@@ -80,6 +80,24 @@ You can get the gettext tools from the following sites:
 # 
 import os
 import sys
+import re
+
+# Try to work even with no python path
+try:
+    from exe.application import Application
+except ImportError, error:
+    if str(error) == "No module named exe.application":
+        exePath = os.path.abspath(sys.argv[0])
+        exeDir  = os.path.dirname(exePath)
+        pythonPath = os.path.split(exeDir)[0]
+        sys.path.insert(0, pythonPath)
+        from exe.application import Application
+    else:
+        raise error
+
+from exe.engine.path import Path
+from nevow import loaders
+
 # -----------------------------------------------------------------------------
 # Global variables
 # ----------------
@@ -269,7 +287,7 @@ iso639_languageDict = { 'aa'    : 'Afar. ',
 # m a k e P O ( )         -- Build the Portable Object file for the application --
 # ^^^^^^^^^^^^^^^
 # 
-def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=0) :
+def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     """Build the Portable Object Template file for the application.
 
     makePO builds the .pot file for the application stored inside 
@@ -323,6 +341,161 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=0) :
                 if verbose: print cmd
                 os.system(cmd)
     os.chdir(currentDir)
+    makeXulPO(applicationDirectoryPath, applicationDomain, verbose)
+
+def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
+    """Searches through xul files and appends to messages.pot"""
+    path = Path(applicationDirectoryPath)
+    messages = pot2dict('messages.pot')
+    messageCommentTemplate = '\n#: %s:%s\nmsgid "'
+    seq = len(messages)
+    for fn in path.walkfiles():
+        if fn.ext.lower() == '.xul':
+            docTree = loaders.xmlfile(fn).load()
+            ctxs = [ctx for ctx in docTree
+                    if not isinstance(ctx, basestring)]
+            for ctx in ctxs:
+                # IF YOU CHANGE THE BELOW RULES, CHANGE THEIR COPY IN:
+                #   exe/webui/renderable.py
+                # Here we have some rules:
+                # 1. if a tag has a 'label' and an 'accesskey' attribute the 
+                # whole string is taken for translation like this:
+                #    'label="english" accesskey="e"'
+                # 2. If a tag has only a label attribute only that is taken
+                # for translation: 'english'
+                # 3. If a tag is a label tag, only its value is taken for
+                # translation: <label value="hello"> becomes 'hello'
+                # 4. If a tag is a key tag, translate just the key part.
+                # We can do this because the whole tag is stuck in the comment
+                # part so the translator can use that.
+                # 5. For 'window' tags, the 'title' attribute is translated
+                toTranslate = None
+                if 'label' in ctx.tag.attributes:
+                    if 'accesskey' in ctx.tag.attributes:
+                        toTranslate = 'label="%s" accesskey="%s"' % (
+                            ctx.tag.attributes.get('label'),
+                            ctx.tag.attributes.get('accesskey'))
+                    else:
+                        toTranslate = ctx.tag.attributes.get('label')
+                elif ctx.tag.tagName == 'label':
+                    toTranslate = ctx.tag.attributes.get('value')
+                elif ctx.tag.tagName == 'key':
+                    if 'key' in ctx.tag.attributes:
+                        toTranslate = ctx.tag.attributes['key']
+                    else:
+                        toTranslate = ctx.tag.attributes['keycode']
+                elif ctx.tag.tagName == 'window':
+                    toTranslate = ctx.tag.attributes.get('title')
+                if not toTranslate:
+                    continue
+                # Write it in the file
+                attributes = ' '.join(['%s="%s"' % (name, val) for name, val
+                                       in ctx.tag.attributes.items()])
+                tagStr = '<%s %s>' % (ctx.tag.tagName, attributes)
+                if toTranslate in messages:
+                    order, comments, msgStr = messages[toTranslate]
+                    comments += ('#: %s:%s' % (fn.relpath(), tagStr),)
+                    messages[toTranslate] = order, comments, msgStr
+                else:
+                    messages[toTranslate] = seq, \
+                        ('#: %s:%s' % (fn.relpath(), tagStr),), ''
+                    seq += 1
+    dict2pot(messages, 'messages.pot')
+
+def pot2dict(filename):
+    """
+    Loads a pot file into a dictionary in the format
+    {msgid: (seq#, comment, msgstr)}
+    """
+    lines = open(filename)
+    result = {}
+    # States
+    START, IN_MSGID, IN_MSGSTR = 0,1,2
+    state = START
+    # Data
+    comments = []
+    msgid = ''
+    msgstr = ''
+    seq = 0
+    for line in lines:
+        if state == START:
+            if line.startswith('#'):
+                comments.append(line[:-1])
+            elif line.startswith('msgid "'):
+                state = IN_MSGID
+                msgid = eval(line[6:-1])
+        elif state == IN_MSGID:
+            if line.startswith('"'):
+                msgid += eval(line)
+            elif line.startswith('msgstr "'):
+                state = IN_MSGSTR
+                msgstr = eval(line[7:-1])
+        elif state == IN_MSGSTR:
+            if line.startswith('"'):
+                msgstr += eval(line)
+            elif not line.strip():
+                state = START
+                result[msgid] = (seq, comments, msgstr)
+                comments = []
+                msgid = ''
+                msgstr = ''
+                seq += 1
+    if msgid not in result:
+        result[msgid] = (seq, comments, msgstr)
+    return result
+
+def dict2pot(dct, filename):
+    """
+    Writes out a dct in the format {msgid: (seq#, comments, msgstr)}
+    to a file named filename
+    'dct' is the dict in the format {msgid: (seq#, comments, msgstr)}
+    'filename' is the name of the output file, which will be overwritten if
+    exists or created
+    """
+    output = open(filename, 'w')
+    data = [(seq, comments, msgid, msgstr) for
+            msgid, (seq, comments, msgstr) in
+            dct.items()]
+    for seq, comments, msgid, msgstr in sorted(data):
+        if isinstance(msgid, unicode):
+            # Cut off the u in front of the string
+            start = 2
+        else:
+            start = 1
+        # comments
+        output.write('\n')
+        for line in comments:
+            output.write('%s\n' % line)
+        # Msgid
+        if '\n' in msgid:
+            output.write('msgid ""\n')
+            output.write(multiLineOutput(msgid))
+        else:
+            output.write('msgid "%s"\n' % `msgid`[start:-1].replace('"', '\\"'))
+        # Msgstr
+        if '\n' in msgstr:
+            output.write('msgstr ""\n')
+            output.write(multiLineOutput(msgstr))
+        else:
+            output.write('msgstr "%s"\n' % `msgstr`[start:-1].replace('"', '\\"'))
+
+
+def multiLineOutput(string):
+    """
+    Reformats a string for multiline output to a pot file
+    """
+    result = ''
+    lines = string.split('\n')
+    for line in lines[:-1]:
+        result += '"%s\\n"\n' % `line`[1:-1].replace('"', '\\"')
+    if lines[-1]:
+        result += '"%s"\n' % `lines[-1]`[1:-1].replace('"', '\\"') 
+    return result
+                
+
+    
+    
+    
 
 # -----------------------------------------------------------------------------
 # c a t P O ( )         -- Concatenate one or several PO files with the application domain files. --
@@ -343,18 +516,18 @@ def catPO(applicationDirectoryPath, listOf_extraPo, applicationDomain=None, targ
         if langCode == 'en':
             pass
         else:
-            langPOfileName = "%s_%s.po" % (applicationName , langCode)
+            langPOfileName = "exe/locale/%s_%s.po" % (applicationName , langCode)
             if os.path.exists(langPOfileName):                  
                 fileList = ''
                 for fileName in listOf_extraPo:
-                    fileList += ("%s_%s.po " % (fileName,langCode))
+                    fileList += ("exe/locale/%s_%s.po " % (fileName,langCode))
                 cmd = "msgcat -s --no-wrap %s %s > %s.cat" % (langPOfileName, fileList, langPOfileName)
                 if verbose: print cmd
                 os.system(cmd)
                 if targetDir is None:
                     pass
                 else:
-                    mo_targetDir = "%s/%s/LC_MESSAGES" % (targetDir,langCode)                      
+                    mo_targetDir = "exe/locale/%s/%s/LC_MESSAGES" % (targetDir,langCode)                      
                     cmd = "msgfmt --output-file=%s/%s.mo %s_%s.po.cat" % (mo_targetDir,applicationName,applicationName,langCode)
                     if verbose: print cmd
                     os.system(cmd)

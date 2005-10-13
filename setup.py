@@ -18,6 +18,9 @@ g_newBase = "/usr/share/exe"
 
 def dataFiles(dirs):
     """Recursively get all the files in these directories"""
+    import os.path
+    import glob
+    global dataFiles, g_oldBase, g_newBase, g_files
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
             if os.path.isfile(file):

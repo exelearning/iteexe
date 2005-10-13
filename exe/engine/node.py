@@ -93,7 +93,7 @@ class Node(Persistable):
         """
         Allows one to set the title as a string
         """
-        if title != unicode(self._title):
+        if toUnicode(title) != toUnicode(self._title):
             self._title = title
             self.package.isChanged = True
     title = property(getTitle, setTitle)

@@ -116,23 +116,25 @@ class TrueFalseElement(object):
         Returns an XHTML string for viewing this question element
         """
         html  = self.renderQuestion()
-        html += '<span style="background-image:url(\'panel-amusements.png\');">'
-        html += '\n<a onmousedown="Javascript:updateCoords(event);'
-        html += 'showMe(\'%s\', 350, 100);" ' % self.hintId
-        html += 'style="cursor:help;align:center;vertical-align:middle;" '
-        html += 'title="Hint" \n'
-        html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
-        html += '<div id="'+self.hintId+'" '
-        html += 'style="display:none; z-index:99;">'
-        html += '<div style="float:right;" >'
-        html += '<img alt="%s" ' % _('Close')
-        html += 'src="stock-stop.png" title="%s"' % _('Close')
-        html += " onmousedown=\"Javascript:hideMe();\"/></div>"
-        html += '<div class="popupDivLabel">'
-        html += _("Hint")
-        html += '</div>\n'
+        html += u'<span '
+        html += u'style="background-image:url(\'panel-amusements.png\');">'
+        html += u'\n<a onmousedown="Javascript:updateCoords(event);'
+        html += u'showMe(\'%s\', 350, 100);" ' % self.hintId
+        html += u'style="cursor:help;align:center;vertical-align:middle;" '
+        html += u'title="%s" \n' % _(u"Hint")
+        html += u'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
+        html += u'</span>'
+        html += u'<div id="'+self.hintId+'" '
+        html += u'style="display:none; z-index:99;">'
+        html += u'<div style="float:right;" >'
+        html += u'<img alt="%s" ' % _('Close')
+        html += u'src="stock-stop.png" title="%s"' % _('Close')
+        html += u" onmousedown=\"Javascript:hideMe();\"/></div>"
+        html += u'<div class="popupDivLabel">'
+        html += _(u"Hint")
+        html += u'</div>\n'
         html += self.question.hint
-        html += "</div>\n"
+        html += u"</div>\n"
         
         return html
     

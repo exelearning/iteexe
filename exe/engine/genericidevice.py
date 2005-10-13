@@ -42,7 +42,8 @@ class GenericIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, title, author, purpose, tip, "generic")
-        self.class_    = class_
+        self.class_  = class_
+        self.icon    = None
         if class_ in ("objectives", "activity", "reading", "preknowledge"):
             self.icon = class_
         self.fields    = []

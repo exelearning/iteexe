@@ -62,10 +62,10 @@ class OutlinePane(Renderable):
             elif (nodeId != package.root.id and 
                   request.args["action"][0] == "deleteNode"):
                 node = package.findNode(nodeId)
-                if node is not None:
+                if node is not None and node is not self.package.root:
                     node.delete()
                     if node.isAncestorOf(package.currentNode):
-                        package.currentNode = package.root
+                        package.currentNode = node.parent
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
 

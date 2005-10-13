@@ -36,7 +36,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
     nonpersistant      = ['resourceDir', 'config', 'filename']
 
     def __init__(self, name):
@@ -50,7 +50,7 @@ class Package(Persistable):
         self._nodeIdDict    = {} 
 
         self.levelNames    = [_(u"Topic"), _(u"Section"), _(u"Unit")]
-        self.name          = name
+        self._name         = name
 
         # Empty if never saved/loaded
         self.filename      = u''
@@ -58,14 +58,26 @@ class Package(Persistable):
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
         self.style         = u"default"
-        self.author        = ""
-        self.description   = ""
+        self._author       = u""
+        self._description  = u""
         self.isChanged     = 0
         self.idevices      = []
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
-        
+
+    # Property Handlers
+    def set_name(self, value):
+        self._name = toUnicode(value)
+    def set_author(self, value):
+        self._author = toUnicode(value)
+    def set_description(self, value):
+        self._description = toUnicode(value)
+
+    # Properties
+    name = property(lambda self:self._name, set_name)
+    author = property(lambda self:self._author, set_author)
+    description = property(lambda self:self._description, set_description)
 
     def findNode(self, nodeId):
         """
@@ -249,5 +261,15 @@ class Package(Persistable):
         Also called to upgrade from 0.4 release
         """
         self._nextIdeviceId = 0
+
+
+    def upgradeToVersion4(self):
+        """
+        Puts properties in their place
+        Also called to upgrade from 0.8 release
+        """
+        self._name = toUnicode(self.__dict__['name'])
+        self._author = toUnicode(self.__dict__['author'])
+        self._description = toUnicode(self.__dict__['description'])
     
 # ===========================================================================

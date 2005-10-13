@@ -44,10 +44,21 @@ def header(style=u'default'):
             u'  @import url(/style/%s/content.css);</style>\n'
             u'<script type="text/javascript" src="/scripts/common.js">'
             u'</script>\n'
-            u'<script type="text/javascript" src="/scripts/fckeditor.js">'
+            u'<script type="text/javascript" src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
             u'</script>\n'
             u'<script type="text/javascript" src="/scripts/libot_drag.js">'
             u'</script>\n'
+            u'<script type="text/javascript">\n'
+            u'<!--\n'
+            u"tinyMCE.init({   " 
+            u"    mode : \"textareas\",\n"
+            u"    theme : \"advanced\",\n"
+            u"    debug : true,"
+            u"    theme_advanced_toolbar_location : \"top\","
+	    u"    theme_advanced_toolbar_align : \"left\""
+            u" });\n"
+            u"//-->\n"
+            u"</script>\n"
             u'<title>%s</title>\n'
             u'<meta http-equiv="content-type" '
             u' content="text/html; charset=UTF-8"></meta>\n'
@@ -93,19 +104,13 @@ def textArea(name, value="", disabled=""):
 
 
 def richTextArea(name, value="", width="100%", height=100):
-    """Adds a FCKEditor to a form"""
+    """Adds a editor to a form"""
     log.debug(u"richTextArea %s, height=%s" % (value, height))
-    html  = u'<script type="text/javascript">\n'
-    html += u'<!--\n'
-    html += u"    var editor = new FCKeditor('%s', '" % name
-    html += u"%s', '%s', " % (width, height)
-    html += u"'Armadillo', '%s');\n" % value
-    html += u"    editor.BasePath = '/scripts/';\n"
-    html += u"    editor.Config['CustomConfigurationsPath'] ="
-    html += u" '/scripts/armadillo.js';\n"
-    html += u"    editor.Create();\n"
-    html += u"//-->\n"
-    html += u"</script>\n"
+    html  = u'<textarea name="%s" ' % name
+    html += u'style=\"width:' + width + '; height:' + str(height) + 'px; \" >'
+    html += value
+    html += u'</textarea><br/>'
+
     return html
 
 
@@ -204,7 +209,7 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
     """add a help instruction for a element"""
     if label is None:
         label = _(u"Instructions")
-    if instruc == u'' or instruc == u' ':
+    if not instruc.strip():
         html = u''
     else:
         html  = u'<a onmousedown="Javascript:updateCoords(event);" '

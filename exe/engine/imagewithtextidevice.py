@@ -73,8 +73,8 @@ the piston with a brief textual summary of the key aspects of each visual.
         self.text.idevice = self
         self.float        = u"left"
         self.caption      = u""
- 
-            
+
+
     def getResources(self):
         """
         Return the resource files used by this iDevice
