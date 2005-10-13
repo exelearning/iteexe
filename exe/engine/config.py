@@ -40,7 +40,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'port', 'dataDir', 
-                   'configDir', 'browserPath',
+                   'configDir', 'xulrunnerPath',
                    'localeDir'),
         'user': ('locale',)
     }
@@ -69,8 +69,8 @@ class Config:
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
         self.configDir   = Path(".")
-        # browserPath is the entire pathname to firefox
-        self.browserPath = Path("firefox")
+        # xulrunnerPath is the entire pathname to firefox
+        self.xulrunnerPath = Path("xulrunner")
         # styles is the list of style names available for loading
         self.styles      = []
         # locale the user wants (#TODO: Read from system)
@@ -159,6 +159,28 @@ class Config:
         self.configParser.autoWrite = True
 
 
+    def upgradeFile(self):
+        """
+        Called before loading the config file,
+        removes or upgrades any old settings.
+        """
+        if self.configParser.has_section('system'):
+            system = self.configParser.system
+            if system.has_option('browserPath'):
+                # Older config files used browserPath instead of xulrunnerPath
+                # We'll just delete this unnecesary entry
+                del system.browserPath
+            if system.has_option('appDataDir'):
+                # Older config files had configDir stored as appDataDir
+                self.configDir = Path(system.appDataDir)
+                # We'll just upgrade their config file for them for now...
+                system.configDir = self.configDir
+                del system.appDataDir
+            if system.has_option('greDir'):
+                # No longer used, system should automatically support
+                del system.greDir
+
+
     def loadSettings(self):
         """
         Loads the settings from the exe.conf file.
@@ -171,22 +193,16 @@ class Config:
             'self'"""
             return getattr(self, option)
         self.configParser.defaultValue = defVal
+        self.upgradeFile()
         # System Section
         if self.configParser.has_section('system'):
             system = self.configParser.system
             self.webDir      = Path(system.webDir)
             self.localeDir   = Path(system.localeDir)
             self.port        = int(system.port)
-            self.browserPath = Path(system.browserPath)
+            self.xulrunnerPath = Path(system.xulrunnerPath)
             self.dataDir     = Path(system.dataDir)
-            if system.has_option('appDataDir'):
-                # Older config files had configDir stored as appDataDir
-                self.configDir = Path(system.appDataDir)
-                # We'll just upgrade their config file for them for now...
-                system.configDir = self.configDir
-                del system.appDataDir
-            else:
-                self.configDir = Path(system.configDir)
+            self.configDir = Path(system.configDir)
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
             self.dataDir = tempfile.gettempdir()
@@ -194,6 +210,7 @@ class Config:
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
+        # Load the "user" section
         if self.configParser.has_section('user'):
             self.locale  = self.configParser.user.locale
 

@@ -42,10 +42,10 @@ class WinConfig(Config):
         """Sets the default values
         for windows"""
         exeDir = self.exePath.dirname()
-        self.browserPath = exeDir/'Mozilla Firefox'/'firefox.exe'
-        if not self.browserPath.isfile():
+        self.xulrunnerPath = exeDir/'xulrunner'/'xulrunner.exe'
+        if not self.xulrunnerPath.isfile():
             programFiles = Path(self.__getWinFolder(PROGRAMFILES))
-            self.browserPath = programFiles/'Mozilla Firefox'/'firefox.exe'
+            self.xulrunnerPath = programFiles/'xulrunner'/'xulrunner.exe'
         self.dataDir   = Path(self.__getWinFolder(MYDOCUMENTS))
         self.configDir = Path(self.__getWinFolder(APPDATA))/'exe'
 

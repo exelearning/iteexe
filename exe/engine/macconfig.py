@@ -37,8 +37,8 @@ class MacConfig(LinuxConfig):
         Sets default mac values
         """
         LinuxConfig._overrideDefaultVals(self)
-        self.browserPath = \
-        Path("/Applications/Firefox.app/Contents/MacOS/firefox")
+        self.xulrunnerPath = \
+            Path("/Applications/Xulrunner.app/Contents/MacOS/xulrunner")
 
 
 # ===========================================================================

@@ -28,7 +28,7 @@ from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
 # must import reactor AFTER WebServer. It's yucky, but that's life
 from twisted.internet import reactor
-from exe.webui.browser       import launchBrowser
+from exe.xului.xulrunner     import launchXulrunner
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
 from exe.engine              import version
@@ -139,15 +139,15 @@ class Application:
     
     def launch(self):
         """
-        launches the webbrowser
+        launches xulrunner
         """
         if self.packagePath:
             package = self.packageStore.loadPackage(self.packagePath)
             log.debug("loading package "+package.name)
             self.server.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
+            launchXulrunner(self.config, package.name)
         else:
-            launchBrowser(self.config, "")
+            launchXulrunner(self.config, "")
 
 
     def usage(self):

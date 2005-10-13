@@ -21,7 +21,7 @@
 # ===========================================================================
 
 """
-Browser module
+Xulrunner module
 """
 
 
@@ -34,36 +34,19 @@ from urllib import quote
  
 log = logging.getLogger(__name__)
 
-def launchBrowser(config, packageName):
+def launchXulrunner(config, packageName):
     """
-    Launch the webbrowser (Firefox) for this platform
+    Launch the webXulrunner (Firefox) for this platform
     """
-    log.info(u"Broswer path: " + config.browserPath)
+    log.info(u"Broswer path: " + config.xulrunnerPath)
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
-    log.info(u"Launch firefox with "+config.browserPath)
+    log.info(u"Launch xulrunner with " + config.xulrunnerPath)
     log.info(u"url "+url)
 
-    if sys.platform[:3] == u"win":
-        # TODO: Should we copy this to config.appDataDir?
-        profile = config.webDir+'/win-profile'
-        log.info(u"profile "+profile)
-        try:
-            os.spawnl(os.P_DETACH, config.browserPath, 
-                      u'"'+config.browserPath+'"', 
-                      u'-profile', u'"'+profile+u'"', url)
-        except OSError:
-            print u"Cannot launch Firefox, please manually run Firefox"
-            print u"and go to", url     
-    else:
-        # TODO: Should be using the profile dir from config, not overrideing it!
-        profile = Path(os.environ["HOME"])/'.exe/linux-profile'
-        createProfile(config)
-
-        log.info(u"profile "+profile)
-        launchString = ('"%s" -profile "%s" %s &' % 
-                        (config.browserPath, profile, url))
-        log.info(u'Launching browser with: %s' % launchString)
-        os.system(launchString)
+    launchString = ('"%s" -profile "%s" %s &' % 
+                    (config.xulrunnerPath, profile, url))
+    log.info(u'Launching xulrunner with: %s' % launchString)
+    os.system(launchString)
 
 
 def createProfile(config):
