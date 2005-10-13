@@ -23,7 +23,7 @@ i.e. the "package".
 
 import logging
 import zipfile 
-from exe.engine.path            import Path, TempDirPath
+from exe.engine.path            import Path, TempDirPath, toUnicode
 from exe.engine.node            import Node
 from exe.engine.genericidevice  import GenericIdevice
 from exe.engine.persist         import Persistable, encodeObject, decodeObject

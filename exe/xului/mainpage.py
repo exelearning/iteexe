@@ -27,12 +27,12 @@ import logging
 from twisted.web                 import static
 from nevow                       import loaders, inevow, stan
 from nevow.livepage              import handler, js
+from exe.xului.idevicepane       import IdevicePane
+from exe.xului.outlinepane       import OutlinePane
+from exe.xului.stylemenu         import StyleMenu
 from exe.webui.renderable        import RenderableLivePage
-from exe.webui.idevicepane       import IdevicePane
-from exe.webui.authoringpage     import AuthoringPage
-from exe.webui.outlinepane       import OutlinePane
-from exe.webui.stylemenu         import StyleMenu
 from exe.webui.propertiespage    import PropertiesPage
+from exe.webui.authoringpage     import AuthoringPage
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.scormexport      import ScormExport

@@ -23,8 +23,8 @@ anything it just redirects the user to a new package.
 """
 
 import logging
-from exe.webui.mainpage       import MainPage
 from exe.webui.renderable     import RenderableResource
+from exe.xului.mainpage       import MainPage
 
 log = logging.getLogger(__name__)
 
@@ -67,9 +67,9 @@ class PackageRedirectPage(RenderableResource):
         and creates a MainPage instance for it
         and a directory for the resource files
 
-	In the GTK version, this should actually
-        redirect people to authoringPage. Copy from
-	svn revision 1311 to re-enable gtk.
+	    In the GTK version, this should actually
+        redirect people to MainPage. Copy from
+	    svn revision 1311 to re-enable gtk.
         """
         MainPage(self, package)
 
