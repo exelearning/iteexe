@@ -44,6 +44,6 @@ def launchXulrunner(config, packageName):
     log.info(u"url "+url)
 
     launchString = ('"%s" "%s" &' % 
-                    (config.xulrunnerPath, config.xulDir/'xulApp'/'application.ini'))
+                    (config.xulrunnerPath, config.xulDir/'xulapp'/'application.ini'))
     log.info(u'Launching xulrunner with: %s' % launchString)
     os.system(launchString)
