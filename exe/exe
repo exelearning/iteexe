@@ -26,7 +26,6 @@ import os
 import sys
 
 # Try to work even with no python path
-from exe.application import Application
 try:
     from exe.application import Application
 except ImportError, error:
