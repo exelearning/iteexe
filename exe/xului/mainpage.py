@@ -60,7 +60,7 @@ class MainPage(RenderableLivePage):
         RenderableLivePage.__init__(self, parent, package)
         self.putChild("resources", static.File(package.resourceDir))
 
-        mainxul = Path(self.config.webDir).joinpath('templates', 'mainpage.xul')
+        mainxul = Path(self.config.xulDir).joinpath('templates', 'mainpage.xul')
         self.docFactory  = loaders.xmlfile(mainxul)
 
         # Create all the children on the left
