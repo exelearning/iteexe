@@ -27,7 +27,7 @@
         <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
     </keyset>
     <vbox flex="1">
-        <!-- Start Menus 
+        <!-- Start Menus -->
         <toolbox>
           <menubar>
             <menu id="file-menu" label="File" accesskey="f">
@@ -66,7 +66,7 @@
             </menu>
          </menubar>
         </toolbox>
-         End Menus -->
+        <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>
         <hbox flex="1" id="main">
             <!-- start vbox for outline -->
