@@ -33,7 +33,6 @@ from exe.webui.editorpage          import EditorPage
 from exe.webui.aboutpage           import AboutPage
 
 import logging
- 
 log = logging.getLogger(__name__)
 
 class WebServer:
@@ -57,15 +56,24 @@ class WebServer:
         Start serving webpages from the local web server
         """
         log.debug("start web server running")
+
+        # web resources
         webDir = self.config.webDir
-        self.root.putChild("images",    static.File(webDir+"/images"))
-        self.root.putChild("css",       static.File(webDir+"/css"))   
-        self.root.putChild("scripts",   static.File(webDir+"/scripts"))
-        self.root.putChild("style",     static.File(webDir+"/style"))
-        self.root.putChild("editor",    self.editor)
-        self.root.putChild("about",     self.about)
-        self.root.putChild("templates", static.File(webDir+"/templates"))
-        self.root.putChild("docs",      static.File(webDir+"/docs"))
+        self.root.putChild("images",      static.File(webDir+"/images"))
+        self.root.putChild("css",         static.File(webDir+"/css"))   
+        self.root.putChild("scripts",     static.File(webDir+"/scripts"))
+        self.root.putChild("style",       static.File(webDir+"/style"))
+        self.root.putChild("docs",        static.File(webDir+"/docs"))
+
+        # xul resources
+        xulDir = self.config.xulDir
+        print xulDir
+        self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
+        self.root.putChild("templates",   static.File(xulDir+"/templates"))
+
+        # sub applications
+        self.root.putChild("editor",      self.editor)
+        self.root.putChild("about",       self.about)
 
         try:
             reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),

@@ -9,9 +9,9 @@
     <n:invisible n:render="liveglue"/>
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
-    <script language="JavaScript" src="/scripts/draganddrop.js"/>
     <script language="JavaScript" src="/scripts/common.js"/>
-    <script language="JavaScript" src="/scripts/mainpage.js"/>
+    <script language="JavaScript" src="/xulscripts/draganddrop.js"/>
+    <script language="JavaScript" src="/xulscripts/mainpage.js"/>
     <keyset>
         <!-- Outline Tree Short cut keys -->
         <key n:render="addChild" id="addChildKey"                     keycode="VK_INSERT"/>
