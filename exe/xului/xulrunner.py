@@ -3,8 +3,6 @@
 # eXe
 # Copyright 2004-2005, University of Auckland
 #
-# This module is for the TwiSteD web server.
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -36,14 +34,14 @@ log = logging.getLogger(__name__)
 
 def launchXulrunner(config, packageName):
     """
-    Launch the webXulrunner (Firefox) for this platform
+    Launch Xulrunner with the eXe application
     """
     log.info(u"Broswer path: " + config.xulrunnerPath)
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"Launch xulrunner with " + config.xulrunnerPath)
     log.info(u"url "+url)
 
-    launchString = ('"%s" "%s" &' % 
-                    (config.xulrunnerPath, config.xulDir/'xulapp'/'application.ini'))
-    log.info(u'Launching xulrunner with: %s' % launchString)
+    launchString  = config.xulrunnerPath
+    launchString += " " + config.xulDir/'exe'/'application.ini & '
+    log.info(u'Launching xulrunner with: ' + launchString)
     os.system(launchString)

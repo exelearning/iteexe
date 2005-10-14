@@ -1,1 +1,0 @@
-../../../../xulrunner/examples/simple/components/src/SimpleTest.js

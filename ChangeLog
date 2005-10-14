@@ -1,3 +1,91 @@
+2005-10-13 22:29  djm
+
+	* exe/exe: lil fix
+
+2005-10-13 22:03  matthew
+
+	* exe/xului/xulapp, exe/xului/xulapp/application.ini,
+	  exe/xului/xulapp/defaults/preferences/simple-prefs.js: Move Xulapp
+	  from prototype to xuli
+
+2005-10-13 03:14  matthew
+
+	* exe/engine/package.py, exe/exe, exe/webui/packageredirectpage.py,
+	  exe/xului/mainpage.py: cleanup changes to make the newly merged
+	  branches work :)
+
+2005-10-13 00:03  matthew
+
+	* exe/application.py, exe/engine/attachmentidevice.py,
+	  exe/engine/config.py, exe/engine/flashwithtextidevice.py,
+	  exe/engine/freetextidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevicestore.py, exe/engine/imagewithtextidevice.py,
+	  exe/engine/linuxconfig.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/standaloneconfig.py,
+	  exe/engine/wikipediaidevice.py, exe/export/imsexport.py,
+	  exe/export/singlepageexport.py, exe/gtkui,
+	  exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/editorpage.py, exe/webui/genericblock.py,
+	  exe/webui/packageredirectpage.py, exe/webui/renderable.py,
+	  exe/webui/scripts/armadillo.js, exe/webui/scripts/common.js,
+	  exe/webui/scripts/editor, exe/webui/scripts/fckconfig.js,
+	  exe/webui/scripts/fckeditor.js, exe/webui/style/default/nav.css,
+	  exe/webui/style/silver/nav.css, exe/webui/testquestionelement.py,
+	  exe/webui/truefalseelement.py, exe/webui/webserver.py,
+	  exe/xului/idevicepane.py, exe/xului/outlinepane.py, setup.py,
+	  testing/runtests.py, tools/backup.sh, tools/mki18n.py: Merge in
+	  work from 0.8.5: - Replaced FCK editor with TinyMCE -
+	  Autotranslation of XUL templates - --standalone command line flag
+	  - removal of gtk :(
+
+2005-10-10 22:20  djm
+
+	* exe/engine/linuxconfig.py, exe/engine/node.py, exe/engine/path.py,
+	  exe/engine/version.py, exe/gtkui/outlinepane.py,
+	  exe/gtkui/preferences.py, exe/locale/es/LC_MESSAGES/exe.mo,
+	  exe/locale/exe_ch.po, exe/locale/exe_de.po, exe/locale/exe_es.po:
+	  merged in changes -r1270-1309 from 0.9 branch:
+
+2005-10-05 22:39  djm
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py: fix
+	  problem w idevices which need common.js but don't include it
+
+2005-10-05 22:20  djm
+
+	* exe/engine/config.py, exe/gtkui/mainwindow.py: fix bug with trying
+	  to save after a style change
+
+2005-10-05 21:51  djm
+
+	* exe/gtkui/outlinepane.py: fixed bug with home trying to be a child
+	  of itself
+
+2005-10-05 02:51  djm
+
+	* exe/gtkui/mainwindow.py: new package working
+
+2005-10-05 02:22  djm
+
+	* exe/gtkui/idevicepane.py: added addIdevice method for
+	  iDeviceEditor
+
+2005-10-05 02:14  djm
+
+	* exe/gtkui/browserpane.py, exe/gtkui/mainwindow.py: fixed problem
+	  with save-as and refresh
+
+2005-10-04 19:44  djm
+
+	* ChangeLog, NEWS, exe/webui/authoringpage.py, exe/webui/block.py,
+	  exe/webui/clozeblock.py: merged in some changes
+
+2005-10-04 03:22  djm
+
+	* exe/engine/clozeidevice.py, exe/engine/idevicestore.py: Fixed bugs
+	  in Cloze Activity
+
 2005-10-04 02:37  djm
 
 	* exe/export/imsexport.py, exe/export/scormexport.py,
