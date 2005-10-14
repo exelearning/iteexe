@@ -238,7 +238,7 @@ class MainPage(RenderableLivePage):
             client.sendScript(onDone)
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
-            self.webserver.root.putChild(self.package.name, self)
+            self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s'
                      % self.package.name)
             client.sendScript('top.location = "/%s"' % \
@@ -253,7 +253,7 @@ class MainPage(RenderableLivePage):
                 encoding = 'ascii'
             filename = unicode(filename, encoding)
             log.debug("filename and path" + filename)
-            packageStore = self.webserver.application.packageStore
+            packageStore = self.webServer.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
             client.sendScript((u'top.location = "/%s"' % \
@@ -272,7 +272,7 @@ class MainPage(RenderableLivePage):
         """Load the tutorial"""
         try:
             filename = self.config.webDir/"eXe-tutorial.elp"
-            packageStore = self.webserver.application.packageStore
+            packageStore = self.webServer.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
             client.sendScript((u'top.location = "/%s"' % \

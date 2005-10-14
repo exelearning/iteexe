@@ -30,38 +30,38 @@
         <!-- Start Menus -->
         <toolbox>
           <menubar>
-            <menu id="file-menu" label="File" accesskey="f">
+            <menu n:render="translate" id="file-menu" label="File" accesskey="f">
               <menupopup id="file-popup">
-                <menuitem label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
-                <menuitem label="Open" key="file-open-key" accesskey="o" oncommand="fileOpen()"/>
+                <menuitem n:render="translate" label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
+                <menuitem n:render="translate" label="Open" key="file-open-key" accesskey="o" oncommand="fileOpen()"/>
                     <menuseparator/>
-                <menuitem label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
-                <menuitem label="Save As" accesskey="a" oncommand="fileSaveAs()"/>
+                <menuitem n:render="translate" label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
+                <menuitem n:render="translate" label="Save As..." accesskey="a" oncommand="fileSaveAs()"/>
                     <menuseparator/>
-                <menu id="export-menu" label="Export" accesskey="e">
+                <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm')"/>
-                    <menuitem label="IMS Content Package" oncommand="exportPackage('ims')"/>
-                    <menuitem label="Web Site" key="file-export-website-key" accesskey="w" oncommand="exportPackage('webSite')"/>
-                    <menuitem label="Single Page" oncommand="exportPackage('singlePage')"/>
+                    <menuitem n:render="translate" label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm')"/>
+                    <menuitem n:render="translate" label="IMS Content Package" accesskey="i" oncommand="exportPackage('ims')"/>
+                    <menuitem n:render="translate" label="Web Site" key="file-export-website-key" accesskey="w" oncommand="exportPackage('webSite')"/>
+                    <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage')"/>
                   </menupopup>
                 </menu>
               </menupopup>
             </menu>
-            <menu id="tools-menu" label="Tools" accesskey="t">
+            <menu n:render="translate" id="tools-menu" label="Tools" accesskey="t">
               <menupopup id="tools-popup">
-                <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
+                <menuitem n:render="translate" label="iDevice Editor" accesskey="e" oncommand="toolsEditor()"/>
               </menupopup>
             </menu>
-            <menu id="styles-menu" label="Styles" accesskey="s">
+            <menu n:render="translate" id="styles-menu" label="Styles" accesskey="s">
               <menupopup id="styles-popup" n:render="stylePane">
               </menupopup>
             </menu>
-            <menuitem id="refresh-menu" label="Refresh" accesskey="r" oncommand="window.location = window.location"></menuitem>
-           <menu id="help-menu" label="Help" accesskey="h">
+            <menuitem n:render="translate" id="refresh-menu" label="Refresh" accesskey="r" oncommand="window.location = window.location"></menuitem>
+           <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
-                <menuitem label="About" oncommand="aboutPage()"/>
-                <menuitem label="Tutorial" oncommand="loadTutorial()"/>
+                <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
+                <menuitem n:render="translate" label="Tutorial" accesskey="t" oncommand="loadTutorial()"/>
               </menupopup>
             </menu>
          </menubar>
@@ -97,7 +97,7 @@
 
             <!-- start iDevices -->
               <label value="iDevices" style="margin-top:5px;"/>
-              <label flex="1" value="idevicePane" n:render="idevicePane"/>
+              <label flex="1" value="iDevicePane" n:render="idevicePane"/>
             </vbox>
             <!-- end iDevices -->
            </vbox>
@@ -106,10 +106,10 @@
             <!-- end outline vbox-->
 
             <splitter collapse="none"></splitter>
-            <tabbox flex="1" selectedTab="Authoring">
+            <tabbox n:render="translate" flex="1" selectedTab="Authoring">
                 <tabs align="end" pack="end">
-                    <tab label="Authoring"/>
-                    <tab label="Properties"/>
+                    <tab n:render="translate" label="Authoring"/>
+                    <tab n:render="translate" label="Properties"/>
                 </tabs>
                 <tabpanels flex="1">
                     <tabpanel id="authoringPane">
