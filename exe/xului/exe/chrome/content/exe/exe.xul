@@ -4,8 +4,8 @@
 
 <window
   id     = "simple"
-  width  = "800"
-  height = "700"
+  width  = "640"
+  height = "480"
   title  = "eXe: eLearning XHTML editor"
   xmlns  = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   onload = "window.location.href = 'http://127.0.0.1:8081'"/>
