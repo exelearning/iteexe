@@ -67,7 +67,6 @@ class WebServer:
 
         # xul resources
         xulDir = self.config.xulDir
-        print xulDir
         self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
         self.root.putChild("templates",   static.File(xulDir+"/templates"))
 

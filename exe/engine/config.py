@@ -40,7 +40,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
-                   'configDir', 'xulrunnerPath',
+                   'configDir', 'xulrunnerPath', 'xulrunnerFlags',
                    'localeDir'),
         'user': ('locale',)
     }
@@ -71,8 +71,10 @@ class Config:
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
         self.configDir   = Path(".")
-        # xulrunnerPath is the entire pathname to firefox
+        # xulrunnerPath is the entire pathname to xulrunner
         self.xulrunnerPath = Path("xulrunner")
+        # xulrunnerFlags is optional flags for xulrunner
+        self.xulrunnerFlags = ""
         # styles is the list of style names available for loading
         self.styles      = []
         # locale the user wants (#TODO: Read from system)
@@ -204,13 +206,14 @@ class Config:
         # System Section
         if self.configParser.has_section('system'):
             system = self.configParser.system
-            self.webDir      = Path(system.webDir)
-            self.xulDir      = Path(system.xulDir)
-            self.localeDir   = Path(system.localeDir)
-            self.port        = int(system.port)
-            self.xulrunnerPath = Path(system.xulrunnerPath)
-            self.dataDir     = Path(system.dataDir)
-            self.configDir = Path(system.configDir)
+            self.webDir         = Path(system.webDir)
+            self.xulDir         = Path(system.xulDir)
+            self.localeDir      = Path(system.localeDir)
+            self.port           = int(system.port)
+            self.xulrunnerPath  = Path(system.xulrunnerPath)
+            self.xulrunnerFlags = system.xulrunnerFlags
+            self.dataDir        = Path(system.dataDir)
+            self.configDir      = Path(system.configDir)
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
             self.dataDir = tempfile.gettempdir()
