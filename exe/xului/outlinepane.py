@@ -44,6 +44,7 @@ class OutlinePane(Renderable):
         if "action" in request.args:
             nodeId = request.args["object"][0]
             package = self.package
+            log.debug("got action=" + request.args["action"][0])
 
             if request.args["action"][0] == "changeNode":
                 node = package.findNode(nodeId)
@@ -75,8 +76,10 @@ class OutlinePane(Renderable):
         Hooked up by authoringPage.py
         """
         node = self.package.findNode(parentNodeId)
+        log.debug("handleAddChild parent=" + parentNodeId)
         if node is not None:
             self.package.currentNode = newNode = node.createChild()
+            log.debug("XHAddChildTreeItem %s %s" % (newNode.id, newNode.title))
             client.call('XHAddChildTreeItem', newNode.id, newNode.title)
 
 
@@ -85,6 +88,7 @@ class OutlinePane(Renderable):
         'confirm' is a string. It is 'false' if the user or the gui has
         cancelled the deletion 'nodeId' is the nodeId
         """
+        log.debug("handleDelNode nodeId=" + nodeId)
         if confirm == 'true':
             node = self.package.findNode(nodeId)
             if node is not None and node is not self.package.root:
@@ -101,10 +105,12 @@ class OutlinePane(Renderable):
 
     def handleRenNode(self, client, nodeId, newName):
         """Called from xmlhttp"""
+        log.debug("handleRenNode nodeId=%s newName=%s" % (nodeId, newName))
         if newName in ('', 'null'): 
             return
         node = self.package.findNode(nodeId)
         node.title = unicode(newName, 'utf8')
+        log.debug("XHRenNode(%s)" % newName.replace('"', '\\"'))
         client.sendScript('XHRenNode("%s")' % newName.replace('"', '\\"'))
 
 
@@ -113,7 +119,10 @@ class OutlinePane(Renderable):
         Recursively renames all children to their default names on
         the client if the node's default name has not been overriden
         """
+        log.debug("_doJsRename")
         if not node._title:
+            log.debug("XHRenNode(%s, %s)" % (node.title.replace('"', '\\"'), 
+                                             node.id))
             client.call('XHRenNode', node.title.replace('"', '\\"'), node.id)
         for child in node.children: 
             self._doJsRename(client, child)
