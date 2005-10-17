@@ -143,27 +143,23 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
         html += u"tinyMCE.init({   " 
-        html += u"    mode : \"textareas\",\n"
-        html += u"    theme : \"advanced\",\n"
-        html += u"    plugins : \"table,save,advhr,advimage,advlink,emotions,"
+        html += u" mode : \"textareas\",\n"
+        html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,"
         html += u" contextmenu,paste,directionality, noneditable\","
-
-        html += u"    theme_advanced_buttons1 : \"newdocument,separator,bold,"
-        html += u"italic,underline,separator,"
-        html += u"justifyleft,justifycenter,justifyright,justifyfulli,"
-        html += u"separator,bullist,numlist,separator,indent,outdent,separator,forecolor,backcolor,tablecontrols\",\n" 
-
-        html += u" theme_advanced_buttons2 : \"cut,copy,paste,"
-        html += u" pastetext,pasteword,separator,emotions,advhr,separator,ltr,rtl\",\n"
-   
-        html += u"    theme_advanced_disable : \"visualaid, hr, styleselect,formatselect\",\n"
-	html += u"    theme_advanced_toolbar_location : \"top\",\n"
-	html += u"    theme_advanced_toolbar_align : \"left\",\n"
-	html += u"    theme_advanced_path_location : \"bottom\",\n"
-	html += u"    content_css : \"/example_data/example_full.css\",\n"
-        html += u"    external_link_list_url : \"example_data/example_link_list.js\",\n"
-	html += u"    external_image_list_url : \"example_data/example_image_list.js\",\n"
-	html += u"    file_browser_callback : \"mcFileManager.filebrowserCallBack\",\n"
+        html += u" theme : \"advanced\",\n"
+        html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
+       
+        html += u" theme_advanced_buttons1 : \"newdocument,separator,bold,"
+        html += u"italic,underline,separator,justifyleft,justifycenter,"
+        html += u"justifyright,justifyfull,separator,\",\n"
+        html += u"theme_advanced_buttons2 : \"\",\n"
+      
+        html += u"theme_advanced_toolbar_location : \"top\",\n" 
+  #      html += u"    content_css : \"/example_data/example_full.css\",\n"
+  #      html += u"    external_link_list_url : \"example_data/example_link_list.js\",\n"
+#	html += u"    external_image_list_url : \"example_data/example_image_list.js\",\n"
+#	html += u"    file_browser_callback : \"mcFileManager.filebrowserCallBack\",\n"
+        html += u"theme_advanced_statusbar_location : \"bottom\",\n"
 	html += u"    theme_advanced_resize_horizontal : false,\n"
 	html += u"    theme_advanced_resizing : true\n"
         html += u" });\n"
