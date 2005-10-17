@@ -36,7 +36,7 @@ def launchXulrunner(config, packageName):
     """
     Launch Xulrunner with the eXe application
     """
-    log.info(u"Broswer path: " + config.xulrunnerPath)
+    log.info(u"Browser path: " + config.xulrunnerPath)
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"Launch xulrunner with " + config.xulrunnerPath)
     log.info(u"url "+url)

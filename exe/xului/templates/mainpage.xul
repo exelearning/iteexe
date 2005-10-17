@@ -50,7 +50,7 @@
             </menu>
             <menu n:render="translate" id="tools-menu" label="Tools" accesskey="t">
               <menupopup id="tools-popup">
-                <menuitem n:render="translate" label="iDevice Editor" accesskey="e" oncommand="toolsEditor()"/>
+                <menuitem n:render="launchEditor" label="iDevice Editor" accesskey="e" />
               </menupopup>
             </menu>
             <menu n:render="translate" id="styles-menu" label="Styles" accesskey="s">
