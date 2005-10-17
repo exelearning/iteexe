@@ -102,7 +102,7 @@ class QuizTestIdevice(Idevice):
         """
         # TODO not sure if this is correct?
         return (Idevice.getResources(self) + 
-                ["common.js", "lib_drag.js"])
+                ["common.js", "libot_drag.js"])
 
 
     def upgradeToVersion2(self):
@@ -113,6 +113,7 @@ class QuizTestIdevice(Idevice):
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
         
+
     def upgradeToVersion3(self):
         """
         Upgrades the node from 1 (v0.6) to 2 (v0.7).
@@ -120,6 +121,7 @@ class QuizTestIdevice(Idevice):
         """
         log.debug(u"Upgrading iDevice icon")
         self.icon = "question"
+
         
     def upgradeToVersion4(self):
         """

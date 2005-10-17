@@ -42,7 +42,6 @@ class TrueFalseQuestion(Persistable):
         self.hint      = hint
         
 
-
 # ===========================================================================
 class TrueFalseIdevice(Idevice):
     """
@@ -79,7 +78,7 @@ this box, eXe will automatically provide default feedback as follows:
         Return the resource files used by this iDevice
         """
         return Idevice.getResources(self) + ["common.js", 
-                                             "lib_drag.js",
+                                             "libot_drag.js",
                                              "panel-amusements.png",
                                              "stock-stop.png"]
        
@@ -108,6 +107,7 @@ this box, eXe will automatically provide default feedback as follows:
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
         
+
     def upgradeToVersion3(self):
         """
         Upgrades the node from 1 (v0.6) to 2 (v0.7).
@@ -115,6 +115,7 @@ this box, eXe will automatically provide default feedback as follows:
         """
         log.debug(u"Upgrading iDevice icon")
         self.icon = "question"
+
 
     def upgradeToVersion4(self):
         """

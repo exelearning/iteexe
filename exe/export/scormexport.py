@@ -111,7 +111,7 @@ class Manifest(object):
         # Metadata
         xmlStr += u"<metadata> \n"
         xmlStr += u" <schema>ADL SCORM</schema> \n"
-        xmlStr += u" <schemaversion>CAM 1.2</schemaversion> \n"
+        xmlStr += u" <schemaversion>1.2</schemaversion> \n"
 
         title  = escape(self.package.root.title)
 
@@ -301,6 +301,7 @@ class ScormExport(object):
         self.scriptsDir.copylist(('APIWrapper.js', 
                                   'imscp_rootv1p1p2.xsd',
                                   'imsmd_rootv1p2p1.xsd',
+                                  'ims_xml.xsd',
                                   'adlcp_rootv1p2.xsd',
                                   'SCOFunctions.js', 
                                   'libot_drag.js',

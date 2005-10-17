@@ -78,7 +78,7 @@ class GenericIdevice(Idevice):
         """
         Return the resource files used by this iDevice
         """
-        resources = Idevice.getResources(self) + ["common.js", "lib_drag.js"]
+        resources = Idevice.getResources(self) + ["common.js", "libot_drag.js"]
         for field in self.fields:
             resources += field.getResources()
         return resources

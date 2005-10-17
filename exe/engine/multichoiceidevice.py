@@ -105,7 +105,7 @@ for the other alternatives.""")
         Return the resource files used by this iDevice
         """
         return Idevice.getResources(self) + ["common.js", 
-                                             "lib_drag.js",
+                                             "libot_drag.js",
                                              "panel-amusements.png",
                                              "stock-stop.png"]
 
