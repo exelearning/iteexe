@@ -37,13 +37,14 @@ def launchXulrunner(config, packageName):
     Launch Xulrunner with the eXe application
     """
     log.info(u"Browser path: " + config.xulrunnerPath)
-    url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"Launch xulrunner with " + config.xulrunnerPath)
-    log.info(u"url "+url)
 
     launchString  = config.xulrunnerPath
     launchString += " " + config.xulDir/'exe'/'application.ini '
     launchString += config.xulrunnerFlags
     launchString += "&"
     log.info(u'Launching xulrunner with: ' + launchString)
-    os.system(launchString)
+    os.spawnl(os.P_NOWAIT, config.xulrunnerPath,
+              config.xulrunnerPath.basename(),
+              config.xulDir/'exe'/'application.ini')
+    ##os.system(launchString)
