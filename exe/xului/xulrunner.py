@@ -38,13 +38,6 @@ def launchXulrunner(config, packageName):
     """
     log.info(u"Browser path: " + config.xulrunnerPath)
     log.info(u"Launch xulrunner with " + config.xulrunnerPath)
-
-    launchString  = config.xulrunnerPath
-    launchString += " " + config.xulDir/'exe'/'application.ini '
-    launchString += config.xulrunnerFlags
-    launchString += "&"
-    log.info(u'Launching xulrunner with: ' + launchString)
     os.spawnl(os.P_NOWAIT, config.xulrunnerPath,
               config.xulrunnerPath.basename(),
               config.xulDir/'exe'/'application.ini')
-    ##os.system(launchString)

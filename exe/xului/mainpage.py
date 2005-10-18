@@ -195,13 +195,11 @@ class MainPage(RenderableLivePage):
         Launch a new copy of xulrunner for the iDevice Editor
         """
         log.info(u"Browser path: " + self.config.xulrunnerPath)
-
-        launchString  = self.config.xulrunnerPath
-        launchString += " " + self.config.xulDir/'editor'/'application.ini '
-        launchString += self.config.xulrunnerFlags
-        launchString += "&"
-        log.info(u'Launching xulrunner with: ' + launchString)
-        os.system(launchString)
+        log.info(u"Launch xulrunner with " + self.config.xulrunnerPath)
+        os.spawnl(os.P_NOWAIT, self.config.xulrunnerPath,
+              self.config.xulrunnerPath.basename(),
+              self.config.xulDir/'editor'/'application.ini',
+              self.config.xulrunnerFlags)
         client.sendScript("window.location = window.location;")
 
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
