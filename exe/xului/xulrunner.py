@@ -36,8 +36,21 @@ def launchXulrunner(config, packageName):
     """
     Launch Xulrunner with the eXe application
     """
-    log.info(u"Browser path: " + config.xulrunnerPath)
-    log.info(u"Launch xulrunner with " + config.xulrunnerPath)
-    os.spawnl(os.P_NOWAIT, config.xulrunnerPath,
-              config.xulrunnerPath.basename(),
-              config.xulDir/'exe'/'application.ini')
+    applicationPath = config.xulDir/'exe'/'application.ini'
+    log.info(u"xulrunnerPath  = " + config.xulrunnerPath)
+    log.info(u"applicatonPath = " + applicationPath)
+    log.info(u"xulrunnerFlags = " + config.xulrunnerFlags)
+    
+    if sys.platform[:3] == u"win":
+        os.spawnl(os.P_NOWAIT, config.xulrunnerPath,
+                  config.xulrunnerPath.basename(),
+                  config.xulrunnerFlags,
+                  applicationPath)
+
+    else:
+        launchString  = config.xulrunnerPath
+        launchString += " " + applicationPath + " "
+        launchString += config.xulrunnerFlags
+        launchString += "&"
+        log.info(u'Launching xulrunner with: ' + launchString)
+        os.system(launchString)
