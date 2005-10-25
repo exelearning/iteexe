@@ -26,6 +26,7 @@ O/S specific config classes are derieved from here
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
 import logging
+from logging.handlers import RotatingFileHandler
 import sys
 import os
 import gettext
@@ -230,7 +231,8 @@ class Config:
         """
         setup logging file
         """
-        hdlr   = logging.FileHandler(self.configDir/'exe.log')
+        hdlr = RotatingFileHandler(self.configDir/'exe.log', 'a', 500000, 10)
+        hdlr.doRollover()
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
         log    = logging.getLogger()
         hdlr.setFormatter(logging.Formatter(format))
