@@ -25,6 +25,7 @@ import logging
 from exe.engine.persist import Persistable
 from exe.engine.path    import Path
 from HTMLParser         import HTMLParser
+import re
 import urllib
 log = logging.getLogger(__name__)
 
@@ -251,6 +252,10 @@ class ClozeField(Field):
     """
     This field handles a passage with words that the student must fill in
     """
+
+    # Class Attributes
+    regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
+
     def __init__(self, name, instruc):
         """
         Initialise
@@ -265,7 +270,8 @@ class ClozeField(Field):
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
-        value = urllib.unquote(value)
+        value = value.replace('&quot;', '"')
+        value = value.replace('&amp;', '&')
         parser = ClozeHTMLParser()
         parser.feed(value)
         parser.close()
@@ -274,16 +280,19 @@ class ClozeField(Field):
         for shown, hidden in parser.result:
             encodedContent += shown.replace('\r\n', '<br/>')
             if hidden:
-                encodedContent += ' <span style="text-decoration:underline">' 
+                encodedContent += ' <span'
+                encodedContent += \
+                    '  style=&quot;text-decoration:underline&quot;>'
                 encodedContent += hidden.replace('\r\n', '<br/>')
                 encodedContent += '</span> ' 
-        self._encodedContent = urllib.quote(encodedContent)
+        self._encodedContent = encodedContent
     
     # Properties
     encodedContent = property(lambda self: self._encodedContent, 
                               set_encodedContent)
 
 # ===========================================================================
+
 
 class FlashField(Field):
     """

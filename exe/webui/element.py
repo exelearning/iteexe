@@ -334,9 +334,12 @@ class ClozeElement(Element):
   // Turns the editor on
   function startEdit(editorString, hiddenField) {
     var editor = eval(editorString);
+    var content = hiddenField.value.replace('&quot;', '"');
+    content = content.replace('&amp;', '&');
     editor.designMode = "on";
     editor.lastChild.style.backgroundColor = "white";
-    editor.lastChild.lastChild.innerHTML = unescape(hiddenField.value);
+    // editor.lastChild.lastChild.innerHTML = unescape(hiddenField.value);
+    editor.lastChild.lastChild.innerHTML = content;
     beforeSubmitHandlers.push([clozeBeforeSubmit,
         [editor.lastChild.lastChild, hiddenField]]);
   };
@@ -348,7 +351,10 @@ class ClozeElement(Element):
 
   // Uploads the editor content to the server
   function clozeBeforeSubmit(node, hiddenField) {
-    hiddenField.value=escape(node.innerHTML);
+    var content = node.innerHTML.replace(/&/g, "&amp;")
+    content = content.replace(/"/g, "&quot;")
+    hiddenField.value = content
+    //hiddenField.value=escape(node.innerHTML);
   };
 -->
 </script>

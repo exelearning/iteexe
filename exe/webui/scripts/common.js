@@ -286,15 +286,6 @@ function getFeedback(optionId, optionsNum, ideviceId, mode) {
 }
 
 
-// brent will remove later.
-//function display_edit() {
-//	document.edit_icon.style.display = "block";
-//	}
-
-//function hide_edit() {
-//	document.edit_icon.style.display = "none";
-//	}
-	
 // Functions for cloze IDevice /////////////////////////////////////////////////
 
 function onClozeChange(ele, word) {
@@ -305,9 +296,10 @@ function onClozeChange(ele, word) {
     else
         ele.style.backgroundColor = "red";
 };
+
 // show or hide the feedback for reflection idevice
-function showAnswer(id,isShow){
-    if (isShow==1){
+function showAnswer(id,isShow) {
+    if (isShow==1) {
         document.getElementById("s"+id).style.display = "block";
         document.getElementById("hide"+id).style.display = "block";
         document.getElementById("view"+id).style.display = "none";
@@ -319,8 +311,8 @@ function showAnswer(id,isShow){
 }
 
 //Clear all student answers for cloze idevice
-function clearAll(length, ident){
-    for (i=0; i<length; i++){
+function clearAll(length, ident) {
+    for (i=0; i<length; i++) {
         document.getElementById("clz"+ident+i).value="";
         document.getElementById("clz"+ident+i).style.backgroundColor="white"
     }
@@ -328,9 +320,9 @@ function clearAll(length, ident){
 }
 
 //Calculate the score for cloze idevice
-function calScore(length, ident){
+function calScore(length, ident) {
     score = 0
-    for (i=0; i<length; i++){
+    for (i=0; i<length; i++) {
         if (document.getElementById("clz"+ident+i).style.backgroundColor=="yellow")
             score++
     }
@@ -338,7 +330,6 @@ function calScore(length, ident){
 }
 
 function answerAll(length, ident){
-    
     for (i=0; i<length; i++){
         document.getElementById("clz"+ident+i).value = wordArray[i];
         document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
@@ -347,10 +338,10 @@ function answerAll(length, ident){
 }
 
 // show or hide the feedback for cloze idevice
-function showFeedback(id,isShow){
-    if (isShow==1){
+function showFeedback(id,isShow) {
+    if (isShow==1) {
         document.getElementById("s"+id).style.display = "block";
-    }else{
+    } else {
         document.getElementById("s"+id).style.display = "none";
     }
 }
