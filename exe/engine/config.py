@@ -41,8 +41,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
-                   'configDir', 'xulrunnerPath', 'xulrunnerFlags',
-                   'localeDir'),
+                   'configDir', 'localeDir'),
         'user': ('locale',)
     }
 
@@ -72,13 +71,11 @@ class Config:
         # configDir is the dir for storing user profiles
         # and user made idevices and the config file
         self.configDir   = Path(".")
-        # xulrunnerPath is the entire pathname to xulrunner
-        self.xulrunnerPath = Path("xulrunner")
-        # xulrunnerFlags is optional flags for xulrunner
-        self.xulrunnerFlags = ""
+        # browserPath is the entire pathname to firefox
+        self.browserPath = Path("firefox")
         # styles is the list of style names available for loading
         self.styles      = []
-        # locale the user wants (#TODO: Read from system)
+        # locale the user wants
         self.locale      = "en"
         # Let our children override our defaults depending
         # on the OS that we're running on
@@ -176,10 +173,6 @@ class Config:
         """
         if self.configParser.has_section('system'):
             system = self.configParser.system
-            if system.has_option('browserPath'):
-                # Older config files used browserPath instead of xulrunnerPath
-                # We'll just delete this unnecesary entry
-                del system.browserPath
             if system.has_option('appDataDir'):
                 # Older config files had configDir stored as appDataDir
                 self.configDir = Path(system.appDataDir)
@@ -211,8 +204,7 @@ class Config:
             self.xulDir         = Path(system.xulDir)
             self.localeDir      = Path(system.localeDir)
             self.port           = int(system.port)
-            self.xulrunnerPath  = Path(system.xulrunnerPath)
-            self.xulrunnerFlags = system.xulrunnerFlags
+            self.browserPath    = Path(system.browserPath)
             self.dataDir        = Path(system.dataDir)
             self.configDir      = Path(system.configDir)
         # If the dataDir points to some other dir, fix it
@@ -253,15 +245,16 @@ class Config:
                     logging.getLogger(logger).setLevel(loggingLevels[level])
 
         log.info("************** eXe logging started **************")
-        log.info("configPath = %s" % self.configPath)
-        log.info("exePath    = %s" % self.exePath)
-        log.info("webDir     = %s" % self.webDir)
-        log.info("xulDir     = %s" % self.xulDir)
-        log.info("localeDir  = %s" % self.localeDir)
-        log.info("port       = %d" % self.port)
-        log.info("dataDir    = %s" % self.dataDir)
-        log.info("configDir  = %s" % self.configDir)
-        log.info("locale     = %s" % self.locale)
+        log.info("configPath  = %s" % self.configPath)
+        log.info("exePath     = %s" % self.exePath)
+        log.info("browserPath = %s" % self.browserPath)
+        log.info("webDir      = %s" % self.webDir)
+        log.info("xulDir      = %s" % self.xulDir)
+        log.info("localeDir   = %s" % self.localeDir)
+        log.info("port        = %d" % self.port)
+        log.info("dataDir     = %s" % self.dataDir)
+        log.info("configDir   = %s" % self.configDir)
+        log.info("locale      = %s" % self.locale)
                     
 
     def loadStyles(self):
