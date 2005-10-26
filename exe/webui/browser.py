@@ -62,7 +62,7 @@ def launchBrowser(config, packageName):
             os.environ["MOZ_NO_REMOTE"] = "1"
             os.spawnl(os.P_DETACH, 
                       config.browserPath,
-                      '"' + config.browserPath + '"',
+                      config.browserPath.basename(),
                       '-profile', 
                       '"' + config.configDir/profile + '"', 
                       '-chrome',
