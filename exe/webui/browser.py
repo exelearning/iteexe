@@ -37,9 +37,8 @@ def launchBrowser(config, packageName):
     """
     Launch the webbrowser (Firefox) for this platform
     """
-    log.info(u"Broswer path: " + config.browserPath)
+    log.info(u"Browser path: " + config.browserPath)
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
-    log.info(u"Launch firefox with "+config.browserPath)
     log.info(u"url "+url)
 
     if sys.platform[:3] == u"win":
@@ -60,10 +59,10 @@ def launchBrowser(config, packageName):
     if sys.platform[:3] == u"win":
         try:
             # Set MOZ_NO_REMOTE so exe doesn't conflict with Firefox
-            os.environ["MOZ_NO_REMOTE"] = 1
+            os.environ["MOZ_NO_REMOTE"] = "1"
             os.spawnl(os.P_DETACH, 
-                      config.browserPath, 
-                      '"' + config.browserPath + '"', 
+                      config.browserPath,
+                      '"' + config.browserPath + '"',
                       '-profile', 
                       '"' + config.configDir/profile + '"', 
                       '-chrome',
