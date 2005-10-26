@@ -283,11 +283,22 @@ iso639_languageDict = { 'aa'    : 'Afar. ',
                         'zu'    : 'Zulu.'
                      }
 
+def generateAppFil():
+    """
+    Generates app.fil
+    """
+    toSearch = [
+        ('exe',                 '*.py'),
+        ('exe/engine',          '*.py'),
+        ('exe/export',          '*.py'),
+        ('exe/webui',           '*.py'),
+        ('exe/xului',           '*.py'),
+    ]
+    output = open('app.fil', 'w')
+    for pth, glb in toSearch:
+        for fn in Path(pth).glob(glb):
+            output.write(fn + '\n')
 
-# -----------------------------------------------------------------------------
-# m a k e P O ( )         -- Build the Portable Object file for the application --
-# ^^^^^^^^^^^^^^^
-# 
 def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     """Build the Portable Object Template file for the application.
 
@@ -311,7 +322,6 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     By default the function does not display what it is doing.  Set the 
     verbose argument to 1 to force it to print its commands.
     """
-
     if applicationDomain is None:
         applicationName = fileBaseOf(applicationDirectoryPath,withPath=0)
     else:
@@ -358,53 +368,62 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
             docTree = loaders.xmlfile(fn).load()
             ctxs = [ctx for ctx in docTree
                     if not isinstance(ctx, basestring)]
-            for ctx in ctxs:
-                # IF YOU CHANGE THE BELOW RULES, CHANGE THEIR COPY IN:
-                #   exe/webui/renderable.py
-                # Here we have some rules:
-                # 1. if a tag has a 'label' and an 'accesskey' attribute the 
-                # whole string is taken for translation like this:
-                #    'label="english" accesskey="e"'
-                # 2. If a tag has only a label attribute only that is taken
-                # for translation: 'english'
-                # 3. If a tag is a label tag, only its value is taken for
-                # translation: <label value="hello"> becomes 'hello'
-                # 4. If a tag is a key tag, translate just the key part.
-                # We can do this because the whole tag is stuck in the comment
-                # part so the translator can use that.
-                # 5. For 'window' tags, the 'title' attribute is translated
-                toTranslate = None
-                if 'label' in ctx.tag.attributes:
-                    if 'accesskey' in ctx.tag.attributes:
-                        toTranslate = 'label="%s" accesskey="%s"' % (
-                            ctx.tag.attributes.get('label'),
-                            ctx.tag.attributes.get('accesskey'))
-                    else:
-                        toTranslate = ctx.tag.attributes.get('label')
-                elif ctx.tag.tagName == 'label':
-                    toTranslate = ctx.tag.attributes.get('value')
-                elif ctx.tag.tagName == 'key':
-                    if 'key' in ctx.tag.attributes:
-                        toTranslate = ctx.tag.attributes['key']
-                    else:
-                        toTranslate = ctx.tag.attributes['keycode']
-                elif ctx.tag.tagName == 'window':
-                    toTranslate = ctx.tag.attributes.get('title')
-                if not toTranslate:
-                    continue
-                # Write it in the file
-                attributes = ' '.join(['%s="%s"' % (name, val) for name, val
-                                       in ctx.tag.attributes.items()])
-                tagStr = '<%s %s>' % (ctx.tag.tagName, attributes)
-                if toTranslate in messages:
-                    order, comments, msgStr = messages[toTranslate]
-                    comments += ('#: %s:%s' % (fn.relpath(), tagStr),)
-                    messages[toTranslate] = order, comments, msgStr
-                else:
-                    messages[toTranslate] = seq, \
-                        ('#: %s:%s' % (fn.relpath(), tagStr),), ''
-                    seq += 1
+            xul2dict(ctxs, messages, seq, fn.relpath())
     dict2pot(messages, 'messages.pot')
+
+def xul2dict(ctxs, messages, seq, filename):
+    """Recursively translates some "stan" contexts and
+    fills out the messages dict, which should be passed to dict2pot later
+    """
+    for ctx in ctxs:
+        # IF YOU CHANGE THE BELOW RULES, CHANGE THEIR COPY IN:
+        #   exe/webui/renderable.py
+        # Here we have some rules:
+        # 1. if a tag has a 'label' and an 'accesskey' attribute the 
+        # whole string is taken for translation like this:
+        #    'label="english" accesskey="e"'
+        # 2. If a tag has only a label attribute only that is taken
+        # for translation: 'english'
+        # 3. If a tag is a label tag, only its value is taken for
+        # translation: <label value="hello"> becomes 'hello'
+        # 4. If a tag is a key tag, translate just the key part.
+        # We can do this because the whole tag is stuck in the comment
+        # part so the translator can use that.
+        # 5. For 'window' tags, the 'title' attribute is translated
+        toTranslate = None
+        if 'label' in ctx.tag.attributes:
+            if 'accesskey' in ctx.tag.attributes:
+                toTranslate = 'label="%s" accesskey="%s"' % (
+                    ctx.tag.attributes.get('label'),
+                    ctx.tag.attributes.get('accesskey'))
+            else:
+                toTranslate = ctx.tag.attributes.get('label')
+        elif ctx.tag.tagName == 'label':
+            toTranslate = ctx.tag.attributes.get('value')
+        elif ctx.tag.tagName == 'key':
+            if 'key' in ctx.tag.attributes:
+                toTranslate = ctx.tag.attributes['key']
+            else:
+                toTranslate = ctx.tag.attributes['keycode']
+        elif ctx.tag.tagName == 'window':
+            toTranslate = ctx.tag.attributes.get('title')
+        if toTranslate:
+            # Write it in the file
+            attributes = ' '.join(['%s="%s"' % (name, val) for name, val
+                                   in ctx.tag.attributes.items()])
+            tagStr = '<%s %s>' % (ctx.tag.tagName, attributes)
+            if toTranslate in messages:
+                order, comments, msgStr = messages[toTranslate]
+                comments += ('#: %s:%s' % (filename, tagStr),)
+                messages[toTranslate] = order, comments, msgStr
+            else:
+                messages[toTranslate] = seq, \
+                    ('#: %s:%s' % (filename, tagStr),), ''
+                seq += 1
+        # Recurse
+        xul2dict([child for child 
+                  in ctx.tag.children 
+                  if not isinstance(child, basestring)], messages, seq, filename)
 
 def pot2dict(filename):
     """
@@ -448,7 +467,7 @@ def pot2dict(filename):
         result[msgid] = (seq, comments, msgstr)
     return result
 
-def dict2pot(dct, filename):
+def dict2pot(dct, filename, verbose=False):
     """
     Writes out a dct in the format {msgid: (seq#, comments, msgstr)}
     to a file named filename
@@ -457,6 +476,12 @@ def dict2pot(dct, filename):
     exists or created
     """
     output = open(filename, 'w')
+    if verbose:
+        def write(data):
+            print data,
+            output.write(data)
+    else:
+        write = output.write
     data = [(seq, comments, msgid, msgstr) for
             msgid, (seq, comments, msgstr) in
             dct.items()]
@@ -467,21 +492,21 @@ def dict2pot(dct, filename):
         else:
             start = 1
         # comments
-        output.write('\n')
+        write('\n')
         for line in comments:
-            output.write('%s\n' % line)
+            write('%s\n' % line)
         # Msgid
         if '\n' in msgid:
-            output.write('msgid ""\n')
-            output.write(multiLineOutput(msgid))
+            write('msgid ""\n')
+            write(multiLineOutput(msgid))
         else:
-            output.write('msgid "%s"\n' % `msgid`[start:-1].replace('"', '\\"'))
+            write('msgid "%s"\n' % `msgid`[start:-1].replace('"', '\\"'))
         # Msgstr
         if '\n' in msgstr:
-            output.write('msgstr ""\n')
-            output.write(multiLineOutput(msgstr))
+            write('msgstr ""\n')
+            write(multiLineOutput(msgstr))
         else:
-            output.write('msgstr "%s"\n' % `msgstr`[start:-1].replace('"', '\\"'))
+            write('msgstr "%s"\n' % `msgstr`[start:-1].replace('"', '\\"'))
 
 
 def multiLineOutput(string):
@@ -744,6 +769,9 @@ if __name__ == "__main__":
     option['domain'] = 'exe'
     if option['verbose']:
         print "Application domain used is: '%s'" % option['domain']        
+        print 'Generating file list: app.fil'
+    # Generate the list of files to use
+    generateAppFil()
     # Make the .po files
     try:
         makePO('.',option['domain'],option['verbose'])

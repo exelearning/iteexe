@@ -25,9 +25,9 @@
         <key n:render="up"       id="upKey"       modifiers="control" key="U"/>
         <key n:render="down"     id="downKey"     modifiers="control" key="D"/>
         <!-- File menu short cut keys -->
-        <key id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
-        <key id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
-        <key id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
+        <key n:render="translate" id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
+        <key n:render="translate" id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
+        <key n:render="translate" id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
     </keyset>
     <vbox flex="1">
         <!-- Start Menus -->
