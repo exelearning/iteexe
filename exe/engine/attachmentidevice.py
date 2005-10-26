@@ -63,7 +63,7 @@ class AttachmentIdevice(Idevice):
                                     "For example: "
                                     "<code>Sales Forecast.doc (500kb)</code>"
                                     "</p>")
-        self._description        = u""
+        self.description         = u""
         self._descriptionInstruc = x_(u"Provide a brief description of the "
                                     "file")
 
