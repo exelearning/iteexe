@@ -44,21 +44,8 @@ def header(style=u'default'):
             u'  @import url(/style/%s/content.css);</style>\n'
             u'<script type="text/javascript" src="/scripts/common.js">'
             u'</script>\n'
-#            u'<script type="text/javascript" src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
-#            u'</script>\n'
             u'<script type="text/javascript" src="/scripts/libot_drag.js">'
             u'</script>\n'
-#            u'<script type="text/javascript">\n'
-#            u'<!--\n'
-#            u"tinyMCE.init({   " 
-#            u"    mode : \"textareas\",\n"
-#            u"    theme : \"advanced\",\n"
-#            u"    debug : true,"
-#            u"    theme_advanced_toolbar_location : \"top\","
-#	    u"    theme_advanced_toolbar_align : \"left\""
-#            u" });\n"
-#            u"//-->\n"
-#            u"</script>\n"
             u'<title>%s</title>\n'
             u'<meta http-equiv="content-type" '
             u' content="text/html; charset=UTF-8"></meta>\n'

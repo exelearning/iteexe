@@ -109,7 +109,8 @@ class EditorPane(object):
                 self.idevice.author = unicode(request.args["author"][0], 'utf8')
     
             if "purpose" in request.args:
-                self.idevice.purpose = unicode(request.args["purpose"][0], 'utf8')
+                self.idevice.purpose = unicode(request.args["purpose"][0], 
+                                               'utf8')
     
             if "tip" in request.args:
                 self.idevice.tip = unicode(request.args["tip"][0], 'utf8')
@@ -299,7 +300,8 @@ class EditorPane(object):
                 html += u'Select an icon:</a> \n'
                 icon = self.idevice.icon
                 if icon != "":
-                    html += '<img align="middle" src="/style/%s/icon_%s' % (self.style, icon)
+                    html += '<img align="middle" '
+                    html += 'src="/style/%s/icon_%s' % (self.style, icon)
                     html += '.gif"/><br/>'
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'
                 html += u'<div style="float:right;" >\n'
