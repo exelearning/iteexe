@@ -337,7 +337,7 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
 
     # Merge new pot with .po files
     localeDirs = Path('exe/locale')
-    for filename in localeDirs.glob('*.po'):
+    for filename in localeDirs.glob('*_*.po'):
         cmd = "msgmerge -U --no-wrap %s messages.pot" % filename
         if verbose: print cmd
         os.system(cmd)
@@ -541,7 +541,7 @@ def catPO(applicationDirectoryPath, listOf_extraPo, applicationDomain=None, targ
 # m a k e M O ( )         -- Compile the Portable Object files into the Machine Object stored in the right location. --
 # ^^^^^^^^^^^^^^^
 # 
-def makeMO(applicationDirectoryPath,targetDir='./locale',applicationDomain=None, verbose=0, forceEnglish=0) :
+def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbose=0, forceEnglish=0) :
     """Compile the Portable Object files into the Machine Object stored in the right location.
 
     makeMO converts all translated language-specific PO files located inside 
@@ -559,9 +559,10 @@ def makeMO(applicationDirectoryPath,targetDir='./locale',applicationDomain=None,
     code.
     """                       
     if targetDir is None:
-        targetDir = './locale'
+        targetDir = 'exe/locale'
     if verbose:
         print "Target directory for .mo files is: %s" % targetDir
+    targetDir = Path(targetDir)
             
     if applicationDomain is None:
         applicationName = fileBaseOf(applicationDirectoryPath,withPath=0)
@@ -570,18 +571,17 @@ def makeMO(applicationDirectoryPath,targetDir='./locale',applicationDomain=None,
     currentDir = os.getcwd()
     os.chdir(applicationDirectoryPath)                    
     
-    for langCode in iso639_languageDict.keys():
-        if (langCode == 'en') and (forceEnglish==0):
-            pass
-        else:
-            langPOfileName = "%s_%s.po" % (applicationName , langCode)
-            if os.path.exists(langPOfileName):
-                mo_targetDir = "%s/%s/LC_MESSAGES" % (targetDir,langCode)                      
-                if not os.path.exists(mo_targetDir):
-                    mkdir(mo_targetDir)
-                cmd = "msgfmt --output-file=%s/%s.mo %s_%s.po" % (mo_targetDir,applicationName,applicationName,langCode)
-                if verbose: print cmd
-                os.system(cmd)
+    for filename in targetDir.glob('*_*.po'):
+        langCode = filename.split('_', 1)[1].split('.', 1)[0]
+        mo_targetDir = Path("%s/%s/LC_MESSAGES" % (targetDir,langCode))
+        if not mo_targetDir.exists():
+            mo_targetDir.makedirs()
+        cmd = "msgfmt --output-file=%s.mo %s" % (
+               mo_targetDir/applicationName,filename)
+        if verbose:
+            print cmd
+        os.system(cmd)
+
     os.chdir(currentDir)
    
 # -----------------------------------------------------------------------------
@@ -734,13 +734,6 @@ def unixpath(thePath) :
 # 
 if __name__ == "__main__":
     import getopt     # command line parsing
-    argc = len(sys.argv)
-    if argc == 1:
-        printUsage('Missing argument: specify at least one of -m or -p (or both).')
-        sys.exit(1)
-    # If there is some arguments, parse the command line
-    validOptions     = "ehmpv"
-    validLongOptions = ['domain=', 'moTarget=']             
     option = {}
     option['forceEnglish'] = 0
     option['mo'] = 0
@@ -748,42 +741,16 @@ if __name__ == "__main__":
     option['verbose'] = 1
     option['domain'] = None
     option['moTarget'] = None
-    try:
-        optionList,pargs = getopt.getopt(sys.argv[1:],validOptions,validLongOptions)
-    except getopt.GetoptError, e:
-        printUsage(e[0])   
-        sys.exit(1)       
-    for (opt,val) in optionList:
-        if  (opt == '-h'):    
-            printUsage()
-            sys.exit(0) 
-        elif (opt == '-e'):         option['forceEnglish'] = 1
-        elif (opt == '-m'):         option['mo'] = 1
-        elif (opt == '-p'):         option['po'] = 1
-        elif (opt == '-v'):         option['verbose'] = 1
-        elif (opt == '--domain'):   option['domain'] = val
-        elif (opt == '--moTarget'): option['moTarget'] = val
-    if len(pargs) == 0:         
-        appDirPath = os.getcwd()                     
-        if option['verbose']:
-            print "No project directory given. Using current one:  %s" % appDirPath
-    elif len(pargs) == 1:
-        appDirPath = pargs[0]
-    else:
-        printUsage('Too many arguments (%u).  Use double quotes if you have space in directory name' % len(pargs))
-        sys.exit(1)
-    if option['domain'] is None:
-        # If no domain specified, use the name of the target directory
-        option['domain'] = fileBaseOf(appDirPath)
+    option['domain'] = 'exe'
     if option['verbose']:
         print "Application domain used is: '%s'" % option['domain']        
-    if option['po']:
-        try:
-            makePO(appDirPath,option['domain'],option['verbose'])
-        except IOError, e:
-            printUsage(e[1] + '\n   You must write a file app.fil that contains the list of all files to parse.')
-    if option['mo']:
-        makeMO(appDirPath,option['moTarget'],option['domain'],option['verbose'],option['forceEnglish'])
+    # Make the .po files
+    try:
+        makePO('.',option['domain'],option['verbose'])
+    except IOError, e:
+        printUsage(e[1] + '\n   You must write a file app.fil that contains the list of all files to parse.')
+    # Compile the result
+    makeMO('.',option['moTarget'],option['domain'],option['verbose'],option['forceEnglish'])
     sys.exit(1)            
             
 
