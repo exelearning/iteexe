@@ -21,8 +21,9 @@ A multichoice Idevice is one built up from question and options
 """
 
 import logging
-from exe.engine.persist import Persistable
-from exe.engine.idevice import Idevice
+from exe.engine.persist   import Persistable
+from exe.engine.idevice   import Idevice
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 
@@ -45,16 +46,16 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self, story=""):
         """
         Initialize 
         """
         Idevice.__init__(self,
-                         _(u"Case Study"),
-                         _(u"University of Auckland"), 
-                         _(u"""A case study is a story that conveys an 
+                         x_(u"Case Study"),
+                         x_(u"University of Auckland"), 
+                         x_(u"""A case study is a story that conveys an 
 educational message. A case study can be used to present a realistic situation
 that enables learners to apply their own knowledge and experience to.  When 
 designing a case study you might want to consider the following:<ul> 
@@ -70,15 +71,19 @@ of the case and if so how are ideas feed back to the class</li></ul>"""),
         self.emphasis     = Idevice.SomeEmphasis
         self.story        = story
         self.questions    = []
-        self.storyInstruc = _(u"""Create the case story.  A good case is one 
+        self._storyInstruc = _(u"""Create the case story.  A good case is one 
 that describes a controversy.""")
-        self.questionInstruc = _(u"""Enter the study question.  These questions 
+        self._questionInstruc = _(u"""Enter the study question.  These questions 
 should draw out the educational messages presented in the case.  Consider 
 aspects of the case like, characters, timeliness, relevance, dilemmas.""")
-        self.feedbackInstruc = _(u"""Provide feedback on the question.  This may
+        self._feedbackInstruc = _(u"""Provide feedback on the question.  This may
 be a summary of the main points or concepts.""")
         self.addQuestion()
         
+    # Properties
+    storyInstruc    = lateTranslate('storyInstruc')
+    questionInstruc = lateTranslate('questionInstruc')
+    feedbackInstruc = lateTranslate('feedbackInstruc')
  
     def addQuestion(self):
         """
@@ -110,4 +115,13 @@ be a summary of the main points or concepts.""")
         """
         self.lastIdevice = False
     
+    def upgradeToVersion4(self):
+        """
+        Upgrades to exe v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+        self._storyInstruc    = self.__dict__['storyInstruc']
+        self._questionInstruc = self.__dict__['questionInstruc']
+        self._feedbackInstruc = self.__dict__['feedbackInstruc']
+
 # ===========================================================================

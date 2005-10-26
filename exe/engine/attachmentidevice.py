@@ -21,8 +21,9 @@
 An Attachment Idevice allows a file to be attached to a package.
 """
 
-from exe.engine.idevice  import Idevice
-from exe.engine.path     import Path
+from exe.engine.idevice   import Idevice
+from exe.engine.path      import Path
+from exe.engine.translate import lateTranslate
 
 import logging
 log = logging.getLogger(__name__)
@@ -32,21 +33,21 @@ class AttachmentIdevice(Idevice):
     """
     An Attachment Idevice allows a file to be attached to a package.
     """
-    persistenceVersion = 1
+    persistenceVersion = 2
     
     def __init__(self):
         Idevice.__init__(self, 
-                         _(u"Attachment"), 
-                         _(u"University of Auckland"), 
+                         x_(u"Attachment"), 
+                         x_(u"University of Auckland"), 
                          u"", 
                          u"", u"")
         self.emphasis           = Idevice.NoEmphasis
         self.filename           = u""
-        self.filenameInstruc    = _(u'Click <strong>Select a file</strong>, '
+        self._filenameInstruc    = x_(u'Click <strong>Select a file</strong>, '
                                     'browse to the file you want '
-                                   'to attach and select it.')
+                                    'to attach and select it.')
         self.label              = u""
-        self.labelInstruc       = _(u"<p>"
+        self._labelInstruc       = x_(u"<p>"
                                     "Assign a label for the attachment. It "
                                     "is useful to include the type of file. "
                                     "Eg. pdf, ppt, etc."
@@ -62,9 +63,16 @@ class AttachmentIdevice(Idevice):
                                     "For example: "
                                     "<code>Sales Forecast.doc (500kb)</code>"
                                     "</p>")
-        self.description        = u""
-        self.descriptionInstruc = _(u"Provide a brief description of the "
+        self._description        = u""
+        self._descriptionInstruc = x_(u"Provide a brief description of the "
                                     "file")
+
+
+    # Properties
+    filenameInstruc = lateTranslate('filenameInstruc')
+    labelInstruc = lateTranslate('labelInstruc')
+    descriptionInstruc = lateTranslate('descriptionInstruc')
+
 
     def getResources(self):
         """
@@ -120,5 +128,15 @@ class AttachmentIdevice(Idevice):
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+        self._filenameInstruc = self.__dict__['filenameInstruc']
+        self._labelInstruc = self.__dict__['labelInstruc']
+        self._descriptionInstruc = self.__dict__['descriptionInstruc']
+
 
 # ===========================================================================

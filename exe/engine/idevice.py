@@ -23,6 +23,7 @@ The base class for all iDevices
 import copy
 import logging
 from exe.engine.persist import Persistable
+from exe.engine.translate import lateTranslate
 
 log = logging.getLogger(__name__)
 
@@ -49,12 +50,17 @@ class Idevice(Persistable):
         self.id          = unicode(Idevice.nextId)
         Idevice.nextId  += 1
         self.parentNode  = parentNode
-        self.title       = title
-        self.author      = author
-        self.purpose     = purpose
-        self.tip         = tip
+        self._title       = title
+        self._author      = author
+        self._purpose     = purpose
+        self._tip         = tip
         self.icon        = icon
 
+    # Properties
+    title   = lateTranslate('title')
+    author  = lateTranslate('author')
+    purpose = lateTranslate('purpose')
+    tip     = lateTranslate('tip')
 
     def __cmp__(self, other):
         """
@@ -141,6 +147,17 @@ class Idevice(Persistable):
         if self.parentNode:
             self.parentNode.idevices.remove(self)
         parentNode.addIdevice(self)
+        
+    # Protected Methods
 
+    def _upgradeIdeviceToVersion1(self):
+        """
+        Upgrades the Idevice class members fro version 0 to version 1.
+        Should be called in derived classes.
+        """
+        self._title   = self.__dict__['title']
+        self._author  = self.__dict__['author']
+        self._purpose = self.__dict__['purpose']
+        self._tip     = self.__dict__['tip']
 
 # ===========================================================================

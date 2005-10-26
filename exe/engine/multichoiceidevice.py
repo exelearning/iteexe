@@ -21,8 +21,9 @@ A multichoice Idevice is one built up from question and options
 """
 
 import logging
-from twisted.spread     import jelly
-from exe.engine.idevice import Idevice
+from twisted.spread       import jelly
+from exe.engine.idevice   import Idevice
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 
@@ -46,16 +47,16 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, question=""):
         """
         Initialize 
         """
         Idevice.__init__(self,
-                         _(u"Multi-Choice Question"),
-                         _(u"University of Auckland"),
-                         _(u"""Although more often used in formal testing 
+                         x_(u"Multi-Choice Question"),
+                         x_(u"University of Auckland"),
+                         x_(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  
 discussion on topics students may feel a little reticent in responding to. 
 
@@ -68,7 +69,7 @@ When designing a MCQ test consider the following:
 <li> Avoid grammar language and question structures that might provide 
      clues</li>
 </ul>
- """), _(u"""When building an MCQ consider the following: <ul>
+ """), x_(u"""When building an MCQ consider the following: <ul>
 <li> Language use phrases that learners are familiar with and have 
 encountered in their study </li>
 <li> Keep responses concise </li>
@@ -80,25 +81,31 @@ distractors </li>
 <li> Distractors should be incorrect but plausible </li>
 </ul>
 """), u"question")
-        self.emphasis        = Idevice.SomeEmphasis
-        self.question        = question
-        self.hint            = ""
-        self.hintInstruc     = _(u"""Enter a hint here. If you
+        self.emphasis         = Idevice.SomeEmphasis
+        self.question         = question
+        self.hint             = ""
+        self._hintInstruc     = x_(u"""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
-        self.options         = []
-        self.questionInstruc = _(u"Type the question stem.")
-        self.keyInstruc      = _(u"""To indicate the correct answer, click the 
+        self.options          = []
+        self._questionInstruc = x_(u"Type the question stem.")
+        self._keyInstruc      = x_(u"""To indicate the correct answer, click the 
 radio button next to the correct option.""")
-        self.answerInstruc   = _(u"""Type in each option from which students 
+        self._answerInstruc   = x_(u"""Type in each option from which students 
 must choose into the appropriate options box. You can add options by clicking 
 on the "ADD ANOTHER OPTION" button. You can delete options by clicking on the 
 "x" next to each option.""")
-        self.feedbackInstruc = _(u"""Type in the feedback that you want the 
+        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
 student to see when selecting the particular option. If you don't complete this 
 box, eXe will automatically provide default feedback as follows: "Correct 
 answer" as indicated by the selection for the correct answer; or "Wrong answer"
 for the other alternatives.""")
         
+    # Properties
+    hintInstruc     = lateTranslate('hintInstruc')
+    questionInstruc = lateTranslate('questionInstruc')
+    keyInstruc      = lateTranslate('keyInstruc')
+    answerInstruc   = lateTranslate('answerInstruc')
+    feedbackInstruc = lateTranslate('feedbackInstruc')
 
     def getResources(self):
         """
@@ -122,7 +129,7 @@ for the other alternatives.""")
         Called to upgrade from 0.4 release
         """
         self.hint            = ""
-        self.hintInstruc     = _(u"""Enter a hint here. If you
+        self.hintInstruc     = x_(u"""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
         self.icon            = "multichoice"
 
@@ -148,4 +155,16 @@ do not want to provide a hint, leave this field blank.""")
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades to exe v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+        self._hintInstruc     = self.__dict__['hintInstruc']
+        self._questionInstruc = self.__dict__['questionInstruc']
+        self._keyInstruc      = self.__dict__['keyInstruc']
+        self._answerInstruc   = self.__dict__['answerInstruc']
+        self._feedbackInstruc = self.__dict__['feedbackInstruc']
+
 # ===========================================================================

@@ -23,7 +23,8 @@ before they look at the answer/s
 """
 
 import logging
-from exe.engine.idevice import Idevice
+from exe.engine.idevice   import Idevice
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -32,30 +33,35 @@ class ReflectionIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
     
     def __init__(self, activity = "", answer = ""):
         """
         Initialize 
         """
         Idevice.__init__(self, 
-                         _(u"Reflection"),
-                         _(u"University of Auckland"), 
-                         _(u"""Reflection is a teaching method often used to 
+                         x_(u"Reflection"),
+                         x_(u"University of Auckland"), 
+                         x_(u"""Reflection is a teaching method often used to 
 connect theory to practice. Reflection tasks often provide learners with an 
 opportunity to observe and reflect on their observations before presenting 
 these as a piece of academic work. Journals, diaries, profiles and portfolios 
 are useful tools for collecting observation data. Rubrics and guides can be 
 effective feedback tools."""), u"", u"reflection")
-        self.emphasis        = Idevice.SomeEmphasis
-        self.activity        = activity
-        self.answer          = answer
-        self.activityInstruc = _(u"""Enter details of the activity learners 
+        self.emphasis         = Idevice.SomeEmphasis
+        self.activity         = activity
+        self.answer           = answer
+        self._activityInstruc = x_(u"""Enter details of the activity learners 
 must reflect upon.""")
-        self.answerInstruc    = _(u"""Describe how learners will assess how 
+        self._answerInstruc   = x_(u"""Describe how learners will assess how 
 they have done in the exercise. (Rubrics are useful devices for providing 
 reflective feedback.)""")
  
+
+    # Properties
+    activityInstruc = lateTranslate('activityInstruc')
+    answerInstruc   = lateTranslate('answerInstruc')
+
 
     def upgradeToVersion1(self):
         """
@@ -78,5 +84,13 @@ reflective feedback.)""")
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
+    def upgradeToVersion4(self):
+        """
+        Upgrades to exe v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+        self._activityInstruc = self.__dict__['activityInstruc']
+        self._answerInstruc   = self.__dict__['answerInstruc']
    
 # ===========================================================================

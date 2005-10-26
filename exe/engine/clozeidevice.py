@@ -35,29 +35,31 @@ class ClozeIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
+    persistenceVersion = 1
+
     def __init__(self, parentNode=None):
         """
         Sets up the idevice title and instructions etc
         """
         Idevice.__init__(self, _(u"Cloze Activity"),
-                         _(u"University of Auckland"), 
-                         _(u"This Idevice is used to help students learn "
-                           u"passages of text and to develop an understanding "
-                           u"of the way words are used in a certain subject or "
-                           u"language"),
-                         _(u"Take a passage of text and put some gaps in it by "
-                           u"putting underscores (_) on either side of the "
-                           u"word. For example: <i>The third _word_ in this "
-                           u"text not be shown to students</i>.<br/>When "
-                           u"checking the student's entry, case is ignored"),
-                           u"question",
-                            parentNode)
-        self._content = ClozeField(_(u'Cloze'), 
-            _(u'<p>Enter a passage of text, to make a gap that the user must '
-               'fill put underscores (_) on either side of the word. For '
-               'example:</p>'
-               'The fith and last _words_ of this text need to be filled in '
-               'by the _student_'))
+                         x_(u"University of Auckland"), 
+                         x_(u"This Idevice is used to help students learn "
+                            u"passages of text and to develop an understanding "
+                            u"of the way words are used in a certain subject or "
+                            u"language"),
+                         x_(u"Take a passage of text and put some gaps in it by "
+                            u"putting underscores (_) on either side of the "
+                            u"word. For example: <i>The third _word_ in this "
+                            u"text not be shown to students</i>.<br/>When "
+                            u"checking the student's entry, case is ignored"),
+                            u"question",
+                             parentNode)
+        self._content = ClozeField(x_(u'Cloze'), 
+            x_(u'<p>Enter a passage of text, to make a gap that the user must '
+                'fill put underscores (_) on either side of the word. For '
+                'example:</p>'
+                'The fith and last _words_ of this text need to be filled in '
+                'by the _student_'))
         self._content.idevice = self
         self.emphasis = Idevice.SomeEmphasis
 
@@ -72,4 +74,9 @@ class ClozeIdevice(Idevice):
                        doc="Read only, use 'self.content.encodedContent = x' "
                            "instead")
 
+    def upgradeToVersion1(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
     

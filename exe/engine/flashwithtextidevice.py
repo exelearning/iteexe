@@ -32,16 +32,18 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
+    persistenceVersion = 1
+
     def __init__(self):
-        Idevice.__init__(self, _(u"Flash with Text"), 
-                         _(u"University of Auckland"), 
+        Idevice.__init__(self, x_(u"Flash with Text"), 
+                         x_(u"University of Auckland"), 
                          u"", u"", u"")
         self.emphasis = Idevice.NoEmphasis
-        self.flash = FlashField(_(u"Flash"), 
+        self.flash = FlashField(x_(u"Flash"), 
                                 u"")
         self.flash.idevice      = self
 
-        self.text = TextAreaField(_(u"Text"))
+        self.text = TextAreaField(x_(u"Text"))
         self.text.idevice = self
         self.float        = u"left"
         self.caption      = u""
@@ -62,6 +64,12 @@ class FlashWithTextIdevice(Idevice):
         Idevice.delete(self)
 
 
+    def upgradeToVersion1(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+    
     
         
 # ===========================================================================

@@ -25,6 +25,7 @@ import re
 from exe.engine.beautifulsoup import BeautifulSoup
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
+from exe.engine.translate     import lateTranslate
 
 import urllib
 class UrlOpener(urllib.FancyURLopener):
@@ -42,21 +43,23 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self):
-        Idevice.__init__(self, _(u"Wikipedia Article"), 
-                         _(u"University of Auckland"), 
-                         _(u"""The Wikipedia iDevice takes a copy of an
+        Idevice.__init__(self, x_(u"Wikipedia Article"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"""The Wikipedia iDevice takes a copy of an
 article from en.wikipedia.org, including copying the associated images."""), 
                          u"", u"")
         self.emphasis    = Idevice.NoEmphasis
         self.articleName = u""
-        self.article     = TextAreaField(_(u"Article"))
+        self.article     = TextAreaField(x_(u"Article"))
         self.article.idevice = self
         self.images      = {}
-        self.site        = _('http://en.wikipedia.org/')
- 
+        self._site       = x_('http://en.wikipedia.org/')
+
+    # Properties
+    site = lateTranslate('site')
 
     def getResources(self):
         """
@@ -171,13 +174,19 @@ article from en.wikipedia.org, including copying the associated images."""),
         Called to upgrade from 0.6 release
         """
         self.site        = _('http://en.wikipedia.org/')
-        
 
     def upgradeToVersion2(self):
         """
         Upgrades v0.6 to v0.7.
         """
-        Idevice.upgradeToVersion4(self)
         self.lastIdevice = False
         
+    def upgradeToVersion3(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+        self._site = self.__dict__['site']
+
+
 # ===========================================================================

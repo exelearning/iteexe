@@ -38,6 +38,7 @@ class GalleryImage(Persistable):
 
     # Class attributes
     resourcesUrl = 'resources/'
+    persistenceVersion = 1
 
     # Default attribute values
     _parent = None
@@ -179,6 +180,13 @@ class GalleryImage(Persistable):
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
 
+    # Upgrade Methods
+    def upgradeToVersion1(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+    
 
 # ===========================================================================
 class GalleryImages(Persistable, list):
@@ -242,16 +250,16 @@ class GalleryIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, _(u"Image Gallery"), 
-                         _(u"University of Auckland"), 
-                         _(u"This Idevice exists to show a group of images in "
-                            "an easily understandable way. For example to show "
-                            "many different sample solutions in the form of "
-                            "images"),
-                         _(u"Use this Idevice if you have a lot of images to "
-                            "show."),
-                            "gallery",
-                            parentNode)
+        Idevice.__init__(self, x_(u"Image Gallery"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"This Idevice exists to show a group of images in "
+                             "an easily understandable way. For example to show "
+                             "many different sample solutions in the form of "
+                             "images"),
+                         x_(u"Use this Idevice if you have a lot of images to "
+                             "show."),
+                             "gallery",
+                             parentNode)
         self.emphasis = Idevice.SomeEmphasis
         self.nextImageId = 0
         self.images = GalleryImages(self)

@@ -299,6 +299,8 @@ class Config:
                     locale = subDir.basename()
                     log.debug(" loading locale %s" % locale)
                     self.locales[locale].install(unicode=True)
+        # Also install x_ as the fake translate
+        __builtins__['x_'] = lambda x:x
 
 
 

@@ -34,9 +34,9 @@ class ImageWithTextIdevice(Idevice):
     persistenceVersion = 3
 
     def __init__(self, defaultImage = None):
-        Idevice.__init__(self, _(u"Image with Text"), 
-                         _(u"University of Auckland"), 
-                         _(u"""<p>
+        Idevice.__init__(self, x_(u"Image with Text"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"""<p>
 The image with text iDevice can be used in a number of ways to support both
 the emotional (affective) and learning task (cognitive) dimensions of eXe
 content. We provide an example of each dimension:
@@ -64,12 +64,12 @@ combustion engine, you could have a visual for each of the four positions of
 the piston with a brief textual summary of the key aspects of each visual.
 </p>"""), u"", u"")
         self.emphasis = Idevice.NoEmphasis
-        self.image = ImageField(_(u"Image"), 
+        self.image = ImageField(x_(u"Image"), 
                                 u"")
         self.image.idevice      = self
         self.image.defaultImage = defaultImage
 
-        self.text = TextAreaField(_(u"Text"))
+        self.text = TextAreaField(x_(u"Text"))
         self.text.idevice = self
         self.float        = u"left"
         self.caption      = u""

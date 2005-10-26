@@ -35,7 +35,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -64,8 +64,8 @@ class GenericIdevice(Idevice):
         Add a new field to this iDevice.  Fields are indexed by their id.
         """
         if field.idevice:
-            log.error(u"Field already belonging to "+field.idevice.title+
-                      u" added to "+self.title)
+            log.error(u"Field already belonging to %s added to %s" %
+                      (field.idevice.title, self.title))
         field.idevice = self
         self.fields.append(field)
 
@@ -139,5 +139,11 @@ class GenericIdevice(Idevice):
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
 
 # ===========================================================================

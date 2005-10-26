@@ -21,8 +21,9 @@ A true false idevice is one built up from question and options
 """
 
 import logging
-from exe.engine.persist import Persistable
-from exe.engine.idevice import Idevice
+from exe.engine.persist   import Persistable
+from exe.engine.idevice   import Idevice
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 
@@ -47,31 +48,37 @@ class TrueFalseIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self):
         """
         Initialize 
         """
         Idevice.__init__(self,
-                         _(u"True-False Question"),
-                         _(u"University of Auckland"),
-                         _(u"""True/false questions present a statement where 
+                         x_(u"True-False Question"),
+                         x_(u"University of Auckland"),
+                         x_(u"""True/false questions present a statement where 
 the learner must decide if the statement is true. This type of question works 
 well for factual information and information that lends itself to either/or 
 responses."""), u"", u"question")
-        self.emphasis        = Idevice.SomeEmphasis
-        self.hintInstruc     = _(u"Type the question's hint here.")
-        self.questions       = []
-        self.questionInstruc = _(u"Type the question stem.")
-        self.keyInstruc      = ""
-        self.feedbackInstruc = _(u"""Type in the feedback that you want the 
+        self.emphasis         = Idevice.SomeEmphasis
+        self._hintInstruc     = x_(u"Type the question's hint here.")
+        self.questions        = []
+        self._questionInstruc = x_(u"Type the question stem.")
+        self._keyInstruc      = ""
+        self.feedbackInstruc  = x_(u"""Type in the feedback that you want the 
 student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
 "Wrong answer" for the other alternatives.""")
         self.questions.append(TrueFalseQuestion())
         
+
+    # Properties
+    hintInstruc = lateTranslate('hintInstruc')
+    questionInstruc = lateTranslate('questionInstruc')
+    keyInstruc = lateTranslate('keyInstruc')
+
 
     def getResources(self):
         """
@@ -122,5 +129,14 @@ this box, eXe will automatically provide default feedback as follows:
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+        self._hintInstruc = self.__dict__['hintInstruc']
+        self._questionInstruc = self.__dict__['questionInstruc']
+        self._keyInstruc = self.__dict__['keyInstruc']
     
 # ===========================================================================

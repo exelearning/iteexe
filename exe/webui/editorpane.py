@@ -367,7 +367,7 @@ class EditorPane(object):
             icon     = iconname.split("_", 1)[1]
             filename = "/style/%s/%s.gif" % (self.style, iconname)
             html += u'<div style="float:left; text-align:center; width:80px;\n'
-            html += u'margin-right:10px; margin-bottom:10px" > '            
+            html += u'margin-right:10px; margin-bottom:10px" > '
             html += u'<img src="%s" \n' % filename
             html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % icon
             html += u'<br/>%s.gif</div>\n' % icon

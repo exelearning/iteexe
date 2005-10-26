@@ -22,9 +22,10 @@ Simple fields which can be used to build up a generic iDevice.
 """
 
 import logging
-from exe.engine.persist import Persistable
-from exe.engine.path    import Path
-from HTMLParser         import HTMLParser
+from exe.engine.persist   import Persistable
+from exe.engine.path      import Path
+from exe.engine.translate import lateTranslate
+from HTMLParser           import HTMLParser
 import re
 import urllib
 log = logging.getLogger(__name__)
@@ -39,16 +40,21 @@ class Field(Persistable):
     # Class attributes
     nextId = 1
 
+    persistenceVersion = 1
+
     def __init__(self, name, instruc=""):
         """
         Initialize 
         """
-        self.name     = name
-        self.instruc  = instruc
-        self._id      = Field.nextId
-        Field.nextId += 1
-        self.idevice  = None
+        self._name     = name
+        self._instruc  = instruc
+        self._id       = Field.nextId
+        Field.nextId  += 1
+        self.idevice   = None
 
+    # Properties
+    name    = lateTranslate('name')
+    instruc = lateTranslate('instruc')
 
     def getId(self):
         """
@@ -78,6 +84,15 @@ class Field(Persistable):
         Overridden by derieved classes
         """
         pass
+
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to exe v0.10
+        """
+        self._name    = self.__dict__['name']
+        self._instruc = self.__dict__['instruc']
+
 
 # ===========================================================================
 class TextField(Field):

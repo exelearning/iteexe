@@ -31,10 +31,12 @@ class ExternalUrlIdevice(Idevice):
     ExternalUrlIdevice: just has a field for the url
     """
 
+    persistenceVersion = 1
+
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"External Web Site"), 
-                         _(u"University of Auckland"), 
-                         _(u"""For use if you need to include an external
+        Idevice.__init__(self, x_(u"External Web Site"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"""For use if you need to include an external
 web page into your content. Rather than popup an external window, which can have some
 problematic usability consequences, this iDevice loads the appropriate content 
 into an inline frame."""), "", "")
@@ -42,4 +44,10 @@ into an inline frame."""), "", "")
         self.url      = ""
         self.height   = "300"
 
+    def upgradeToVersion1(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+    
 # ===========================================================================

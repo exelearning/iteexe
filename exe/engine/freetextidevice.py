@@ -34,15 +34,15 @@ class FreeTextIdevice(Idevice):
     persistenceVersion = 4
 
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"Free Text"), 
-                         _(u"University of Auckland"), 
-                         _(u"""The majority of a learning resource will be 
+        Idevice.__init__(self, x_(u"Free Text"), 
+                         x_(u"University of Auckland"), 
+                         x_(u"""The majority of a learning resource will be 
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = TextAreaField(_(u"Content"), 
-_(u"This is a free text field general learning content can be entered."),
+        self.content  = TextAreaField(x_(u"Content"), 
+x_(u"This is a free text field general learning content can be entered."),
                                      content)
         self.content.idevice = self
         if content:
@@ -63,7 +63,7 @@ _(u"This is a free text field general learning content can be entered."),
         Use new Field classes
         """
         self.content = TextAreaField("content", 
-_(u"This is a free text field general learning content can be entered."),
+x_(u"This is a free text field general learning content can be entered."),
                                      self.content)
 
 
