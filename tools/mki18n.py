@@ -81,6 +81,7 @@ You can get the gettext tools from the following sites:
 import os
 import sys
 import re
+from exe.engine.path import Path
 
 # Try to work even with no python path
 try:
@@ -331,27 +332,29 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
           '--output=messages.pot --from-code=utf8'
     if verbose: print cmd
     os.system(cmd)                                                
-
-    for langCode in iso639_languageDict.keys():
-        if langCode == 'en':
-            pass
-        else:
-            langPOfileName = "%s_%s.po" % (applicationName , langCode)
-            if os.path.exists(langPOfileName):
-                cmd = "msgmerge -s --no-wrap %s messages.pot > %s.new" % (langPOfileName, langPOfileName)
-                if verbose: print cmd
-                os.system(cmd)
     os.chdir(currentDir)
     makeXulPO(applicationDirectoryPath, applicationDomain, verbose)
 
+    # Merge new pot with .po files
+    localeDirs = Path('exe/locale')
+    for filename in localeDirs.glob('*.po'):
+        cmd = "msgmerge -U --no-wrap %s messages.pot" % filename
+        if verbose: print cmd
+        os.system(cmd)
+
+
 def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
     """Searches through xul files and appends to messages.pot"""
+    if verbose:
+        print "Importing xul templates..."
     path = Path(applicationDirectoryPath)
     messages = pot2dict('messages.pot')
     messageCommentTemplate = '\n#: %s:%s\nmsgid "'
     seq = len(messages)
     for fn in path.walkfiles():
         if fn.ext.lower() == '.xul':
+            if verbose:
+                print "template: ", fn
             docTree = loaders.xmlfile(fn).load()
             ctxs = [ctx for ctx in docTree
                     if not isinstance(ctx, basestring)]
@@ -742,7 +745,7 @@ if __name__ == "__main__":
     option['forceEnglish'] = 0
     option['mo'] = 0
     option['po'] = 0        
-    option['verbose'] = 0
+    option['verbose'] = 1
     option['domain'] = None
     option['moTarget'] = None
     try:

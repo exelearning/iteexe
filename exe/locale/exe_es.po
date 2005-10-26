@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 16:39+1300\n"
+"POT-Creation-Date: 2005-10-26 18:09+1300\n"
 "PO-Revision-Date: 2005-10-10 11:16+1200\n"
 "Last-Translator: Matthew Sherborne <matthew@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -49,68 +49,42 @@ msgid ""
 "This iDevice can be used to present an image (photograph, diagram or\n"
 "graphic) with a brief verbal summary covering the main points relating to\n"
 "the image. For example, if you were teaching the functions of a four-stroke\n"
-"combustion engine, you could have a visual for each of the four positions "
-"of\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
 "<p>\n"
-"La imagen con el texto en el \"Dispositivo Educacional\" puede ser usado de "
-"muchas maneras a soportar las dos dimensiones del contenido del EXE;\n"
+"La imagen con el texto en el \"Dispositivo Educacional\" puede ser usado de muchas maneras a soportar las dos dimensiones del contenido del EXE;\n"
 "lo emocional (afectivo) y aprendiendo las tareas (cognoscitiva).\n"
 "Nosotros te proporcionamos un ejemplo por cada dimension:\n"
 "</p><p>\n"
 "<b>Perfil del profesor (dimension emocional)</b>\n"
 "</p><p>\n"
-"La investigacion sugiere que los estudiantes en linea aprecien un "
-"acercamiento personalizado.\n"
+"La investigacion sugiere que los estudiantes en linea aprecien un acercamiento personalizado.\n"
 "Una manera de lograr esto es proporcionarle una descripcion breve \n"
 "del profesor y de otro personal relacionado a este modo de aprendizaje. El \n"
 "perfil (con la foto personal) no solo es usado a describir el rol \n"
 "y credenciales del profesor sino tambien hace una relacion directa \n"
-"entre el estudiante y el profesor mas el contenido intermediario (la "
-"computadora). Los perfiles deberan ser escritos de una \n"
+"entre el estudiante y el profesor mas el contenido intermediario (la computadora). Los perfiles deberan ser escritos de una \n"
 "forma \"no academica\" haciendo uso de pronombres personales.\n"
 "</p><p>\n"
 "<b>Integrando lo visual con lo resumenes verbales</b>\n"
 "</p><p>\n"
-"Los psicólogos cognoscitivos indican que la presentación de los estudiantes "
-"con una imagen representativa y un resumen verbal correspondiente (que es "
-"presentado simultáneamente) \n"
+"Los psicólogos cognoscitivos indican que la presentación de los estudiantes con una imagen representativa y un resumen verbal correspondiente (que es presentado simultáneamente) \n"
 "reduce la carga cognoscitiva y aumenta la retencion del estudiante.\n"
-"El \"Dispositivo Educacional\" se puede utilizar para presentar una imagen "
-"(fotografía, diagrama o gráfico)\n"
-"con un breve resumen verbal que cubre los principales puntos relacionado a "
-"la imagen.\n"
-"Por ejemplo, si tu estuvieras enseñando las funciones de un motor de "
-"combustión de cuatro tiempos, \n"
-"tu podría tener una representación visual de cada uno de las cuatro "
-"posiciones del pistón con un \n"
+"El \"Dispositivo Educacional\" se puede utilizar para presentar una imagen (fotografía, diagrama o gráfico)\n"
+"con un breve resumen verbal que cubre los principales puntos relacionado a la imagen.\n"
+"Por ejemplo, si tu estuvieras enseñando las funciones de un motor de combustión de cuatro tiempos, \n"
+"tu podría tener una representación visual de cada uno de las cuatro posiciones del pistón con un \n"
 "con un breve resumen textual de los aspectos claves de cada uno.</p>"
 
 #: exe/engine/attachmentidevice.py:50
-msgid ""
-"<p>Assign a label for the attachment. It is useful to include the type of "
-"file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so "
-"that after your package is exported to a web site, people will have an idea "
-"how long it would take to download this attachment.</p><p>For example: "
-"<code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
-"<p>Asigne una etiqueta para el accesorio.  Es útil incluir el tipo de "
-"archivo. Eg. pdf, ppt, etc.</p><p>Incluyendo el tamaño también se recomienda "
-"de modo que después de que su paquete se exporte a un Web site, la gente "
-"tenga una idea cuánto tiempo llevaría la transferencia directa este "
-"accesorio. Por ejemplo: Ventas Forecast.doc (500kb)</p><p>Por ejemplo:</"
-"p><code>Ventas Forecast.doc (500kb)</code>"
+msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
+msgstr "<p>Asigne una etiqueta para el accesorio.  Es útil incluir el tipo de archivo. Eg. pdf, ppt, etc.</p><p>Incluyendo el tamaño también se recomienda de modo que después de que su paquete se exporte a un Web site, la gente tenga una idea cuánto tiempo llevaría la transferencia directa este accesorio. Por ejemplo: Ventas Forecast.doc (500kb)</p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
 
-#: exe/engine/clozeidevice.py:56
-msgid ""
-"<p>Enter a passage of text, to make a gap that the user must fill put "
-"underscores (_) on either side of the word. For example:</p>The fith and "
-"last _words_ of this text need to be filled in by the _student_"
-msgstr ""
-"<p>Ingrese una parte del texto. Para hacer un espacio en blanco el usuario "
-"debe completar con un (_) entre los lados de la palabra, Por ejemplo _words_"
+#: exe/engine/clozeidevice.py:58
+msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
+msgstr "<p>Ingrese una parte del texto. Para hacer un espacio en blanco el usuario debe completar con un (_) entre los lados de la palabra, Por ejemplo _words_"
 
 #: exe/engine/package.py:102
 msgid "?????"
@@ -119,48 +93,33 @@ msgstr "?????"
 #: exe/engine/casestudyidevice.py:58
 msgid ""
 "A case study is a story that conveys an \n"
-"educational message. A case study can be used to present a realistic "
-"situation\n"
-"that enables learners to apply their own knowledge and experience to.  "
-"When \n"
+"educational message. A case study can be used to present a realistic situation\n"
+"that enables learners to apply their own knowledge and experience to.  When \n"
 "designing a case study you might want to consider the following:<ul> \n"
 "<li>\tWhat educational points are conveyed in the story</li>\n"
-"<li>\tWhat preparation will the learners need to do prior to working on "
-"the \n"
+"<li>\tWhat preparation will the learners need to do prior to working on the \n"
 "case study</li>\n"
 "<li>\tWhere the case study fits into the rest of the course</li>\n"
 "<li>\tHow the learners will interact with the materials and each other e.g.\n"
-"if run in a classroom situation can teams be setup to work on different "
-"aspects\n"
+"if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"Un caso de estudio es una historia que lleva un mensaje educacional. Un caso "
-"de estudio puede ser usado a presentar una situación realística que "
-"posibilita a los estudiantes a aplicar su propio conocimiento y experiencia. "
-"Cuando diseña un caso de estudio tu podría considerar lo siguiente:<ul> \n"
+"Un caso de estudio es una historia que lleva un mensaje educacional. Un caso de estudio puede ser usado a presentar una situación realística que posibilita a los estudiantes a aplicar su propio conocimiento y experiencia. Cuando diseña un caso de estudio tu podría considerar lo siguiente:<ul> \n"
 "<li>\tQue los puntos aducacionales son llevados a la historia</li>\n"
-"<li>\tQue los estudiantes necesitarán hacer una preparación antes de "
-"trabajar en el caso estudio </li>\n"
+"<li>\tQue los estudiantes necesitarán hacer una preparación antes de trabajar en el caso estudio </li>\n"
 "<li>\tDonde el caso de estudio se encaja dentro del resto del curso</li>\n"
-"<li>\tComo los estudiantes actuarán recíprocamente con los materiales y uno "
-"a los otros\n"
-" ejemplo: si la situación en un salón de clase puede ser que los equipos "
-"esten organizados a trabajar en diferentes aspectos del caso. Si es asi, "
-"habrá más ideas que retornan a la clase</li></ul>"
+"<li>\tComo los estudiantes actuarán recíprocamente con los materiales y uno a los otros\n"
+" ejemplo: si la situación en un salón de clase puede ser que los equipos esten organizados a trabajar en diferentes aspectos del caso. Si es asi, habrá más ideas que retornan a la clase</li></ul>"
 
 #: exe/webui/editorpane.py:69
-msgid ""
-"A pedagogical tip allows you to describe your intended use and the pedagogy "
-"behind the devices development."
-msgstr ""
-"Un consejo pedagógico permite que usted describa su uso previsto y la "
-"pedagogía detrás del desarrollo de los dispositivos."
+msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
+msgstr "Un consejo pedagógico permite que usted describa su uso previsto y la pedagogía detrás del desarrollo de los dispositivos."
 
 #: exe/webui/forumblock.py:88
 msgid "A single simple discussion"
 msgstr "Una simple discusión individual "
 
-#: exe/webui/editorpane.py:200
+#: exe/webui/editorpane.py:201
 msgid "Actions"
 msgstr "Acciones"
 
@@ -168,7 +127,7 @@ msgstr "Acciones"
 msgid "Activity"
 msgstr "Actividad"
 
-#: exe/webui/editorpane.py:191
+#: exe/webui/editorpane.py:192
 msgid "Add"
 msgstr "Adicionar"
 
@@ -177,29 +136,16 @@ msgid "Add Question"
 msgstr "Adicionar pregunta"
 
 #: exe/webui/editorpane.py:72
-msgid ""
-"Add a single text line to an iDevice. Useful if you want the ability to "
-"place a label within the device."
-msgstr ""
-"Adiciona una simple linea de texto a un Dispositivo de Educación. Eso es "
-"útil si tú desea que sea conveniente poner una etiqueta dentro del "
-"dispositivo."
+msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
+msgstr "Adiciona una simple linea de texto a un Dispositivo de Educación. Eso es útil si tú desea que sea conveniente poner una etiqueta dentro del dispositivo."
 
 #: exe/webui/editorpane.py:75
-msgid ""
-"Add a text entry box to an iDevice. Used for entering description textual "
-"content."
-msgstr ""
-"Adiciona un recuadro texto a un Dispositivo de Educación. Usado para "
-"ingresar el contenido de una descripción textual."
+msgid "Add a text entry box to an iDevice. Used for entering description textual content."
+msgstr "Adiciona un recuadro texto a un Dispositivo de Educación. Usado para ingresar el contenido de una descripción textual."
 
 #: exe/webui/editorpane.py:78
-msgid ""
-"Add an image to your iDevice. Enables the selection of an image from your "
-"stored picture files."
-msgstr ""
-"Adiciona una imagen a tu Dispositivo de Educación. Habilita la selección de "
-"una imagen desde  tu almacén de archivos de fotos. "
+msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
+msgstr "Adiciona una imagen a tu Dispositivo de Educación. Habilita la selección de una imagen desde  tu almacén de archivos de fotos. "
 
 #: exe/webui/testquestionelement.py:113 exe/webui/multichoiceblock.py:125
 msgid "Add another option"
@@ -234,19 +180,14 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"Aunque es usado mas a menudo en situaciones de pruebas formales MCQs puede "
-"ser usado como una herramienta de prueba que estimula el pensamiento y la "
-"discusión sobre topicos donde estudiantes pueden sentirse un poco reservado "
-"a responder. \n"
+"Aunque es usado mas a menudo en situaciones de pruebas formales MCQs puede ser usado como una herramienta de prueba que estimula el pensamiento y la discusión sobre topicos donde estudiantes pueden sentirse un poco reservado a responder. \n"
 "<ul>\n"
 " Cuando es diseñado una evaluación MCQ considera lo siguiente: \n"
-"<li>Que los resultados del aprendizaje sean sobre las preguntas de la "
-"evaluación </li>\n"
+"<li>Que los resultados del aprendizaje sean sobre las preguntas de la evaluación </li>\n"
 "<li>Que la habilidad intelectual esten siendo evaluadas </li>\n"
 "<li>Cuales son la hablidades de la audiencia </li>\n"
 "<li>Género y cuestiones culturales </li>\n"
-"<li>Evitar la gramatica del lenguaje y la estructura de la pregunta que "
-"podría contener pistas </li>\n"
+"<li>Evitar la gramatica del lenguaje y la estructura de la pregunta que podría contener pistas </li>\n"
 "</ul>"
 
 #: exe/engine/idevicestore.py:268
@@ -254,11 +195,7 @@ msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
-msgstr ""
-"Una actividad puede ser definida como una tarea o conjunto de tareas que un "
-"estudiante debe completar. Provee una declaración clara de la tarea y "
-"considera cualquier condicion que pueda ayudar o impedir al estudiante en el "
-"funcionamiento de la tarea."
+msgstr "Una actividad puede ser definida como una tarea o conjunto de tareas que un estudiante debe completar. Provee una declaración clara de la tarea y considera cualquier condicion que pueda ayudar o impedir al estudiante en el funcionamiento de la tarea."
 
 #: exe/engine/wikipediaidevice.py:56
 msgid "Article"
@@ -273,7 +210,7 @@ msgstr "Adjuntar"
 msgid "Attachment %s has no parentNode"
 msgstr ""
 
-#: exe/webui/editorpane.py:268 exe/webui/propertiespane.py:100
+#: exe/webui/editorpane.py:269 exe/webui/propertiespane.py:100
 msgid "Author"
 msgstr "Autor"
 
@@ -281,7 +218,7 @@ msgstr "Autor"
 msgid "Can a student post to this forum?:"
 msgstr "Puede un estudiante estar al corriente a este foro?:"
 
-#: exe/webui/editorpane.py:208
+#: exe/webui/editorpane.py:209
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -298,30 +235,26 @@ msgid "Clear"
 msgstr "Vaciar"
 
 #: exe/engine/attachmentidevice.py:46
-msgid ""
-"Click <strong>Select a file</strong>, browse to the file you want to attach "
-"and select it."
-msgstr ""
-"Has click <strong>Selecto un Archivo</strong>, hojee al archivo que usted "
-"desea unir y selecciónelo."
+msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
+msgstr "Has click <strong>Selecto un Archivo</strong>, hojee al archivo que usted desea unir y selecciónelo."
 
 #: exe/webui/reflectionblock.py:96
 msgid "Click here"
 msgstr "Click aquí"
 
-#: exe/webui/editorpane.py:306 exe/webui/editorpane.py:307
-#: exe/webui/editorpane.py:328 exe/webui/truefalseelement.py:130
+#: exe/webui/editorpane.py:308 exe/webui/editorpane.py:309
+#: exe/webui/editorpane.py:330 exe/webui/truefalseelement.py:130
 #: exe/webui/truefalseelement.py:131 exe/webui/block.py:236
-#: exe/webui/common.py:224 exe/webui/common.py:225
+#: exe/webui/common.py:211 exe/webui/common.py:212
 #: exe/webui/multichoiceblock.py:156 exe/webui/multichoiceblock.py:157
 msgid "Close"
 msgstr "Cerrar"
 
-#: exe/engine/clozeidevice.py:55
+#: exe/engine/clozeidevice.py:57
 msgid "Cloze"
 msgstr "Cloze"
 
-#: exe/engine/clozeidevice.py:42
+#: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
 msgstr "Actividad de Espacios en Blanco"
 
@@ -342,11 +275,10 @@ msgstr "Correcto!"
 msgid ""
 "Create the case story.  A good case is one \n"
 "that describes a controversy."
-msgstr ""
-"Crear la historia del caso. Un buen caso es el que describe una polémica."
+msgstr "Crear la historia del caso. Un buen caso es el que describe una polémica."
 
-#: exe/webui/editorelement.py:74 exe/webui/editorelement.py:113
-#: exe/webui/editorelement.py:153 exe/webui/block.py:206
+#: exe/webui/editorelement.py:75 exe/webui/editorelement.py:114
+#: exe/webui/editorelement.py:154 exe/webui/block.py:206
 #: exe/webui/editorpage.py:178 exe/webui/editorpage.py:182
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
@@ -367,25 +299,19 @@ msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr ""
-"Describir como los estudiantes evaluarán como ellos han hecho el ejercicio."
-"(Rúbricas son dispositivos útiles a proveer información reflexiva.)"
+msgstr "Describir como los estudiantes evaluarán como ellos han hecho el ejercicio.(Rúbricas son dispositivos útiles a proveer información reflexiva.)"
 
 #: exe/engine/idevicestore.py:261
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
-msgstr ""
-"Describir a los estudiantes el conocimiento de los pre-requisitos que "
-"debería tener un completo aprendizaje efectivo."
+msgstr "Describir a los estudiantes el conocimiento de los pre-requisitos que debería tener un completo aprendizaje efectivo."
 
 #: exe/engine/idevicestore.py:224
 msgid ""
 "Describe the rationale behind the selection of the reading and how it will\n"
 "enrich the learning."
-msgstr ""
-"Describir la explicación detrás de la lectura selecionada y como eso "
-"enriquecerá el aprendizaje."
+msgstr "Describir la explicación detrás de la lectura selecionada y como eso enriquecerá el aprendizaje."
 
 #: exe/engine/idevicestore.py:274
 msgid "Describe the tasks the learners should complete."
@@ -439,12 +365,12 @@ msgstr "ERROR: Block.renderViewContent llamado directamente"
 msgid "Each person posts one discussion"
 msgstr "Cada persona anuncia una discución"
 
-#: exe/webui/editorpane.py:205 exe/webui/block.py:320
+#: exe/webui/editorpane.py:206 exe/webui/block.py:320
 #: exe/webui/editorpage.py:200
 msgid "Edit"
 msgstr "Edita"
 
-#: exe/webui/editorpane.py:278
+#: exe/webui/editorpane.py:279
 msgid "Emphasis"
 msgstr "Enfasis"
 
@@ -458,20 +384,18 @@ msgstr "Ingrese una sugerencia aquí, deja este campo en blanco."
 msgid ""
 "Enter details of the activity learners \n"
 "must reflect upon."
-msgstr ""
-"Ingrese detalles de las actividades del estudiante que debe reflejarse "
-"encima."
+msgstr "Ingrese detalles de las actividades del estudiante que debe reflejarse encima."
 
-#: exe/webui/editorpane.py:125
+#: exe/webui/editorpane.py:126
 msgid "Enter instructions for completion here"
 msgstr "Ingrese aquí las instrucciones para la terminación."
 
-#: exe/webui/editorpane.py:129 exe/webui/editorpane.py:133
+#: exe/webui/editorpane.py:130 exe/webui/editorpane.py:134
 msgid "Enter the instructions for completion here"
 msgstr "Ingrese aquí las instrucciones para la terminación."
 
-#: exe/webui/editorpane.py:124 exe/webui/editorpane.py:128
-#: exe/webui/editorpane.py:132
+#: exe/webui/editorpane.py:125 exe/webui/editorpane.py:129
+#: exe/webui/editorpane.py:133
 msgid "Enter the label here"
 msgstr "Ingresa la etiqueta aquí"
 
@@ -480,11 +404,7 @@ msgid ""
 "Enter the study question.  These questions \n"
 "should draw out the educational messages presented in the case.  Consider \n"
 "aspects of the case like, characters, timeliness, relevance, dilemmas."
-msgstr ""
-"Ingresa la pregunta de estudio. Estas preguntas debería dibujar hacia fuera "
-"los mensajes educativos presentados en el caso. Considere los aspectos de "
-"las mayusculas y minusculas, caracteres, puntualidad, importancia, "
-"dilemas.   "
+msgstr "Ingresa la pregunta de estudio. Estas preguntas debería dibujar hacia fuera los mensajes educativos presentados en el caso. Considere los aspectos de las mayusculas y minusculas, caracteres, puntualidad, importancia, dilemas.   "
 
 #: exe/xului/mainpage.py:297 exe/xului/mainpage.py:316
 #, python-format
@@ -518,11 +438,11 @@ msgstr "Regeneración:"
 msgid "Filename %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/engine/flashwithtextidevice.py:40
+#: exe/engine/flashwithtextidevice.py:42
 msgid "Flash"
 msgstr "Flash"
 
-#: exe/engine/flashwithtextidevice.py:36
+#: exe/engine/flashwithtextidevice.py:38
 msgid "Flash with Text"
 msgstr "Texto Flash"
 
@@ -534,7 +454,7 @@ msgstr "Float:"
 msgid "Force everyone to be subscribed?:"
 msgstr "Fuerza a todos a ser subscrito:"
 
-#: exe/engine/forumidevice.py:35 exe/webui/forumblock.py:169
+#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:169
 #: exe/webui/forumblock.py:186
 msgid "Forum Discussion"
 msgstr "Discución del Foro"
@@ -584,15 +504,15 @@ msgstr "Sugerencia:"
 msgid "Home"
 msgstr "Inicio"
 
-#: exe/webui/editorpane.py:309
+#: exe/webui/editorpane.py:311
 msgid "Icons"
 msgstr "Iconos"
 
-#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:196
+#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:197
 msgid "Image"
 msgstr "Imagen"
 
-#: exe/engine/galleryidevice.py:245
+#: exe/engine/galleryidevice.py:253
 msgid "Image Gallery"
 msgstr "Galeria de imagenes"
 
@@ -608,11 +528,11 @@ msgstr "Incorrecto"
 msgid "Incorrect!"
 msgstr "Incorrecto!"
 
-#: exe/webui/common.py:211
+#: exe/webui/common.py:198
 msgid "Instructions"
 msgstr "Instrucciones"
 
-#: exe/webui/common.py:216 exe/webui/common.py:219
+#: exe/webui/common.py:203 exe/webui/common.py:206
 msgid "Instructions for completion"
 msgstr "Instrucciones para la terminación"
 
@@ -656,7 +576,7 @@ msgstr "Mover hacia arriba"
 msgid "Multi-Choice Question"
 msgstr "Pregunta Multiple-Elección"
 
-#: exe/webui/editorpane.py:265
+#: exe/webui/editorpane.py:266
 msgid "Name"
 msgstr "Nombre"
 
@@ -672,7 +592,7 @@ msgstr "No"
 msgid "No Images Loaded"
 msgstr "No imagenes cargadas"
 
-#: exe/engine/galleryidevice.py:97
+#: exe/engine/galleryidevice.py:98
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "No Thumbnail Disponible. No podría reducir la imagen."
 
@@ -684,7 +604,7 @@ msgstr "No discuciones, pero las contestaciones son permitidas"
 msgid "No discussions, no replies"
 msgstr "No discusiones, no contestaciones"
 
-#: exe/webui/editorpane.py:281
+#: exe/webui/editorpane.py:282
 msgid "No emphasis"
 msgstr "No énfasis"
 
@@ -705,10 +625,7 @@ msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
-msgstr ""
-"Los objetivos describen los resultados previstos de la enseñanza y debería "
-"definir cuál estudiantes serán capaces hacerlo cuando han terminado las "
-"tareas del aprendizaje."
+msgstr "Los objetivos describen los resultados previstos de la enseñanza y debería definir cuál estudiantes serán capaces hacerlo cuando han terminado las tareas del aprendizaje."
 
 #: exe/webui/testquestionelement.py:102 exe/webui/multichoiceblock.py:110
 msgid "Option"
@@ -724,15 +641,15 @@ msgstr "Opción"
 msgid "Package saved to: %s"
 msgstr ""
 
-#: exe/webui/editorpane.py:319 exe/webui/block.py:227
+#: exe/webui/editorpane.py:321 exe/webui/block.py:227
 msgid "Pedagogical Help"
 msgstr "Ayuda pedadogica"
 
-#: exe/webui/editorpane.py:275
+#: exe/webui/editorpane.py:276
 msgid "Pedagogical Tip"
 msgstr "Consejos pedadogicos"
 
-#: exe/webui/editorpane.py:144 exe/webui/editorpage.py:101
+#: exe/webui/editorpane.py:145 exe/webui/editorpage.py:101
 msgid "Please enter an idevice name."
 msgstr "Por favor ingrese un nombre Dispositivo de Educación"
 
@@ -750,17 +667,13 @@ msgid ""
 "have in order to be able to effectively complete the learning. Examples of\n"
 "pre-knowledge can be: <ul>\n"
 "<li>        Learners must have level 4 English </li>\n"
-"<li>        Learners must be able to assemble standard power tools </li></"
-"ul>\n"
+"<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
-"El conocimiento de los pre-requisitos refiere al conocimiento de los "
-"estudiantes que debería ya tener in orden a ser capaz a un completo "
-"aprendizaje efectivo. Ejemplos de un pre-conocmiento puede ser: <ul>\n"
+"El conocimiento de los pre-requisitos refiere al conocimiento de los estudiantes que debería ya tener in orden a ser capaz a un completo aprendizaje efectivo. Ejemplos de un pre-conocmiento puede ser: <ul>\n"
 "<li>        Estudiantes deben tener un nivel 4 de inglés </li>\n"
-" <li>        Estudiantes deben ser capaz de armar las potentes herramientas "
-"estándares </li></ul>\n"
+" <li>        Estudiantes deben ser capaz de armar las potentes herramientas estándares </li></ul>\n"
 
-#: exe/webui/editorpane.py:203
+#: exe/webui/editorpane.py:204
 msgid "Preview"
 msgstr "Previo"
 
@@ -778,48 +691,32 @@ msgstr "Provea un descripcion breve del archivo"
 
 #: exe/engine/idevicestore.py:222
 msgid "Provide details of the reading materials learners should  read."
-msgstr ""
-"Proveer los detalles de los materiales de la lectura que los estudiantes "
-"deberían leer."
+msgstr "Proveer los detalles de los materiales de la lectura que los estudiantes deberían leer."
 
 #: exe/engine/casestudyidevice.py:79
 msgid ""
 "Provide feedback on the question.  This may\n"
 "be a summary of the main points or concepts."
-msgstr ""
-"Proveer información en la pregunta. Esto puede ser un resumen de los "
-"principales puntos y conceptos."
+msgstr "Proveer información en la pregunta. Esto puede ser un resumen de los principales puntos y conceptos."
 
 #: exe/engine/idevicestore.py:227
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
 "faculty."
-msgstr ""
-"Proveer los detalles completos de los materiales de la lectura seleccionada. "
-"El estilo de la referencia usada dependerá de la preferencia de tú facultad "
-"o del departamento."
+msgstr "Proveer los detalles completos de los materiales de la lectura seleccionada. El estilo de la referencia usada dependerá de la preferencia de tú facultad o del departamento."
 
 #: exe/engine/idevicestore.py:214
 msgid ""
 "Provide learners with structure to their reading activity. This helps put\n"
 "the activity in context for the learner. It is also important to correctly\n"
-"reference any reading materials you refer to as this models best practice "
-"to\n"
+"reference any reading materials you refer to as this models best practice to\n"
 "the learners. Not always essential if covered in the course content but\n"
 "providing feedback to the learner on some of the main points covered in the\n"
 "reading may also add value to the activity."
-msgstr ""
-"Proveer estudiantes con estructura a su actividad de la lectura. Esta ayuda "
-"pone la actividad en el contexto para el estudiante. Eso también es "
-"importante para la correcta referencia de cualquier material de la lectura "
-"que tú te estas refiriendo como este modelo que es la mejor práctica a los "
-"estudiantes. No siempre es esencial si esta cubierto en el contenido del "
-"curso pero proporcionando la información a los estudiantes en algunos de los "
-"principales puntos cubiertos en la lectura que puede también adicionar "
-"valores a la actividad."
+msgstr "Proveer estudiantes con estructura a su actividad de la lectura. Esta ayuda pone la actividad en el contexto para el estudiante. Eso también es importante para la correcta referencia de cualquier material de la lectura que tú te estas refiriendo como este modelo que es la mejor práctica a los estudiantes. No siempre es esencial si esta cubierto en el contenido del curso pero proporcionando la información a los estudiantes en algunos de los principales puntos cubiertos en la lectura que puede también adicionar valores a la actividad."
 
-#: exe/webui/editorpane.py:271 exe/webui/block.py:241
+#: exe/webui/editorpane.py:272 exe/webui/block.py:241
 msgid "Purpose"
 msgstr "Proposito"
 
@@ -850,21 +747,12 @@ msgstr "Reflexión"
 #: exe/engine/reflectionidevice.py:45
 msgid ""
 "Reflection is a teaching method often used to \n"
-"connect theory to practice. Reflection tasks often provide learners with "
-"an \n"
+"connect theory to practice. Reflection tasks often provide learners with an \n"
 "opportunity to observe and reflect on their observations before presenting \n"
-"these as a piece of academic work. Journals, diaries, profiles and "
-"portfolios \n"
-"are useful tools for collecting observation data. Rubrics and guides can "
-"be \n"
+"these as a piece of academic work. Journals, diaries, profiles and portfolios \n"
+"are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
-msgstr ""
-"La reflexión es un método de enseñanza usado a menudo a conectar la teoría "
-"con la práctica.Las tareas de la reflexión proveen a menudo estudiantes con "
-"una oportunidad a observar y reflejar sus observaciones antes de presentar "
-"una parte de un trabajo académico. Diarios, perfiles y portafolios son "
-"herramientas útiles para recoger datos de la observación. Las rúbricas y las "
-"guías pueden ser herramientas eficaces de la información."
+msgstr "La reflexión es un método de enseñanza usado a menudo a conectar la teoría con la práctica.Las tareas de la reflexión proveen a menudo estudiantes con una oportunidad a observar y reflejar sus observaciones antes de presentar una parte de un trabajo académico. Diarios, perfiles y portafolios son herramientas útiles para recoger datos de la observación. Las rúbricas y las guías pueden ser herramientas eficaces de la información."
 
 #: exe/webui/reflectionblock.py:75
 msgid "Reflective question:"
@@ -930,7 +818,7 @@ msgstr "Mostrar"
 msgid "Show answers"
 msgstr "demuestre las respuestas"
 
-#: exe/webui/editorpane.py:282
+#: exe/webui/editorpane.py:283
 msgid "Some emphasis"
 msgstr "Poco énfasis"
 
@@ -953,7 +841,7 @@ msgstr "Foro estándar para el uso general"
 msgid "Story:"
 msgstr "Historia:"
 
-#: exe/webui/editorpane.py:283
+#: exe/webui/editorpane.py:284
 msgid "Strong emphasis"
 msgstr "Recalcado énfasis "
 
@@ -973,32 +861,25 @@ msgstr "Respuesta propuesta"
 msgid "T"
 msgstr "T"
 
-#: exe/engine/clozeidevice.py:48
-msgid ""
-"Take a passage of text and put some gaps in it by putting underscores (_) on "
-"either side of the word. For example: <i>The third _word_ in this text not "
-"be shown to students</i>.<br/>When checking the student's entry, case is "
-"ignored"
+#: exe/engine/clozeidevice.py:50
+msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
 msgstr ""
-"Toma un pasaje del texto y pon algunos espacios en blanco en el pasaje y "
-"subraya al lado de la palabra. \n"
-"Por ejemplo: <i>La tercera _palabra_ en este texto no es mostrado a "
-"estudiantes</i>.<br/>Las mayusculas y minusculas son ignorado cuando se "
-"chequea lo digitado por el estudiante. "
+"Toma un pasaje del texto y pon algunos espacios en blanco en el pasaje y subraya al lado de la palabra. \n"
+"Por ejemplo: <i>La tercera _palabra_ en este texto no es mostrado a estudiantes</i>.<br/>Las mayusculas y minusculas son ignorado cuando se chequea lo digitado por el estudiante. "
 
 #: exe/webui/propertiespane.py:110
 msgid "Taxonomy"
 msgstr "Taxonomía"
 
-#: exe/engine/imagewithtextidevice.py:72 exe/engine/flashwithtextidevice.py:44
+#: exe/engine/imagewithtextidevice.py:72 exe/engine/flashwithtextidevice.py:46
 msgid "Text"
 msgstr "Texto"
 
-#: exe/webui/editorpane.py:194
+#: exe/webui/editorpane.py:195
 msgid "Text Box"
 msgstr "Recuadro Texto"
 
-#: exe/webui/editorpane.py:192
+#: exe/webui/editorpane.py:193
 msgid "Text Line"
 msgstr "Linea Texto"
 
@@ -1006,70 +887,47 @@ msgstr "Linea Texto"
 msgid ""
 "The Wikipedia iDevice takes a copy of an\n"
 "article from en.wikipedia.org, including copying the associated images."
-msgstr ""
-"El Wikipedia del Dispositivo de Educación toma una copia de un artículo de "
-"en.wikipedia.org, ncluyendo el copiado de las imágenes asociadas."
+msgstr "El Wikipedia del Dispositivo de Educación toma una copia de un artículo de en.wikipedia.org, ncluyendo el copiado de las imágenes asociadas."
 
 #: exe/engine/freetextidevice.py:39
 msgid ""
 "The majority of a learning resource will be \n"
-"establishing context, delivering instructions and providing general "
-"information.\n"
-"This provides the framework within which the learning activities are built "
-"and \n"
+"establishing context, delivering instructions and providing general information.\n"
+"This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
-"La mayor parte de un recurso de enseñanza será establecido en el contexto, "
-"dando instrucciones y proporcionando información general. \n"
-"Este proporciona el esquema dentro del cual las actividades del aprendizaje "
-"son construidas y proporcionadas."
+"La mayor parte de un recurso de enseñanza será establecido en el contexto, dando instrucciones y proporcionando información general. \n"
+"Este proporciona el esquema dentro del cual las actividades del aprendizaje son construidas y proporcionadas."
 
 #: exe/webui/editorpane.py:63
-msgid ""
-"The purpose dialogue allows you to describe your intended purpose of the "
-"device to other potential users."
-msgstr ""
-"El propósito del diálogo te permite describir un propósito previsto del "
-"dispositivo a otros usuarios potenciales."
+msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
+msgstr "El propósito del diálogo te permite describir un propósito previsto del dispositivo a otros usuarios potenciales."
 
 #: exe/engine/idevicestore.py:231
 msgid ""
 "The use of this element is flexible.  Use it to provide a summary of the\n"
-"points covered in the reading, or as a starting point for further analysis "
-"of\n"
+"points covered in the reading, or as a starting point for further analysis of\n"
 "the reading by posing a question or providing a statement to begin a\n"
 "debate."
 msgstr ""
-"El uso de este elemento es flexible. Usa esto a proporcionar un resumen de "
-"los puntos cubiertos en la lectura, \n"
-"o como punto de partida para el análisis adicional de la lectura, planteando "
-"una pregunta o proporcionando una declaración a empezar el debate."
+"El uso de este elemento es flexible. Usa esto a proporcionar un resumen de los puntos cubiertos en la lectura, \n"
+"o como punto de partida para el análisis adicional de la lectura, planteando una pregunta o proporcionando una declaración a empezar el debate."
 
-#: exe/engine/galleryidevice.py:247
-msgid ""
-"This Idevice exists to show a group of images in an easily understandable "
-"way. For example to show many different sample solutions in the form of "
-"images"
+#: exe/engine/galleryidevice.py:255
+msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
 msgstr ""
-"Este Dispositivo de Educación es para exhibir un grupo de imagenes de una "
-"manera muy fácil de entender. \n"
+"Este Dispositivo de Educación es para exhibir un grupo de imagenes de una manera muy fácil de entender. \n"
 "Por ejemplo muestra diferentes soluciones en forma de imagenes."
 
-#: exe/engine/clozeidevice.py:44
-msgid ""
-"This Idevice is used to help students learn passages of text and to develop "
-"an understanding of the way words are used in a certain subject or language"
+#: exe/engine/clozeidevice.py:46
+msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
 msgstr ""
-"Este Dispositivo de Educación es usado a ayudar a los estudiantes a aprender "
-"pasajes de texto y \n"
-"a desarrollar un entendimiento de las palabras de la manera que se utilizan "
-"en ciertos temas o lenguaje."
+"Este Dispositivo de Educación es usado a ayudar a los estudiantes a aprender pasajes de texto y \n"
+"a desarrollar un entendimiento de las palabras de la manera que se utilizan en ciertos temas o lenguaje."
 
 #: exe/engine/freetextidevice.py:45 exe/engine/freetextidevice.py:66
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
-"Este es un campo de texto libre que el contenido de aprendizaje puede ser "
-"ingresado."
+msgstr "Este es un campo de texto libre que el contenido de aprendizaje puede ser ingresado."
 
 #: exe/webui/editorpane.py:62
 msgid "This is an optional field."
@@ -1077,8 +935,7 @@ msgstr "Este es un opcional campo."
 
 #: exe/webui/block.py:201
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
-msgstr ""
-"Esto eliminará el Dispositivo de Educación \\nRealmente quieres hacer esto?"
+msgstr "Esto eliminará el Dispositivo de Educación \\nRealmente quieres hacer esto?"
 
 #: exe/webui/block.py:245
 msgid "Tip:"
@@ -1088,9 +945,7 @@ msgstr "Consejo:"
 msgid ""
 "To indicate the correct answer, click the \n"
 "radio button next to the correct option."
-msgstr ""
-"Indica la respuesta correcta, click al radio botón al lado de la opción "
-"correcta."
+msgstr "Indica la respuesta correcta, click al radio botón al lado de la opción correcta."
 
 #: exe/engine/package.py:52
 msgid "Topic"
@@ -1107,65 +962,48 @@ msgstr "Pregunta Verdadero-Falso"
 #: exe/engine/truefalseidevice.py:60
 msgid ""
 "True/false questions present a statement where \n"
-"the learner must decide if the statement is true. This type of question "
-"works \n"
-"well for factual information and information that lends itself to either/"
-"or \n"
+"the learner must decide if the statement is true. This type of question works \n"
+"well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
-"Las preguntas Verdadero/Falso presentan una declaración donde el estudiante "
-"debe decidir si la declaración es verdad. \n"
-"Este tipo de pregunta trabaja bién para una verdadera información e "
-"información que se presta para otras respuestas."
+"Las preguntas Verdadero/Falso presentan una declaración donde el estudiante debe decidir si la declaración es verdad. \n"
+"Este tipo de pregunta trabaja bién para una verdadera información e información que se presta para otras respuestas."
 
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
 "Type in each option from which students \n"
-"must choose into the appropriate options box. You can add options by "
-"clicking \n"
-"on the \"ADD ANOTHER OPTION\" button. You can delete options by clicking on "
-"the \n"
+"must choose into the appropriate options box. You can add options by clicking \n"
+"on the \"ADD ANOTHER OPTION\" button. You can delete options by clicking on the \n"
 "\"x\" next to each option."
 msgstr ""
-"Tipear en cada opción lo que el estudiante deberá elegir dentro del "
-"apropiado recuadro de opciones. \n"
-"Tú puedes adicionar opciones dando un click en el botón \"Adicionar otra "
-"opción\". \n"
-"Tú puedes eliminar opciones dando un click en el botón \"X\" que se "
-"encuentra al lado de cada opción."
+"Tipear en cada opción lo que el estudiante deberá elegir dentro del apropiado recuadro de opciones. \n"
+"Tú puedes adicionar opciones dando un click en el botón \"Adicionar otra opción\". \n"
+"Tú puedes eliminar opciones dando un click en el botón \"X\" que se encuentra al lado de cada opción."
 
 #: exe/engine/multichoiceidevice.py:97
 msgid ""
 "Type in the feedback that you want the \n"
-"student to see when selecting the particular option. If you don't complete "
-"this \n"
+"student to see when selecting the particular option. If you don't complete this \n"
 "box, eXe will automatically provide default feedback as follows: \"Correct \n"
-"answer\" as indicated by the selection for the correct answer; or \"Wrong "
-"answer\"\n"
+"answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other alternatives."
 msgstr ""
-"Tipear en la información que tú quieres que el estudiante vea cuando "
-"seleccione una particular opción. Si tú no completas este recuadro, \n"
+"Tipear en la información que tú quieres que el estudiante vea cuando seleccione una particular opción. Si tú no completas este recuadro, \n"
 "eXe automaticamente completará la información por defecto como sigue: \n"
-"\"Respuestas correctas\" según la selección indicada para la respuesta "
-"correcta; o \n"
+"\"Respuestas correctas\" según la selección indicada para la respuesta correcta; o \n"
 "\"Respuesta equivocada\" para las otras alternativas."
 
 #: exe/engine/truefalseidevice.py:69
 msgid ""
 "Type in the feedback that you want the \n"
-"student to see when selecting the particular question. If you don't "
-"complete\n"
+"student to see when selecting the particular question. If you don't complete\n"
 "this box, eXe will automatically provide default feedback as follows: \n"
-"\"Correct answer\" as indicated by the selection for the correct answer; "
-"or \n"
+"\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
-"Tipear en la información que tú quieres que el estudiante vea cuando "
-"seleccione una particular pregunta. Si tú no completas este recuadro, \n"
+"Tipear en la información que tú quieres que el estudiante vea cuando seleccione una particular pregunta. Si tú no completas este recuadro, \n"
 "eXe automaticamente completará la información por defecto como sigue: \n"
-"\"Respuestas correctas\" según la selección indicada para la respuesta "
-"correcta; o \n"
+"\"Respuestas correctas\" según la selección indicada para la respuesta correcta; o \n"
 "\"Respuesta equivocada\" para las otras alternativas."
 
 #: exe/engine/idevicestore.py:247
@@ -1180,7 +1018,7 @@ msgstr "Tipear la pregunta raiz aquí."
 msgid "Type the question's hint here."
 msgstr "Tipear la sugerida pregunta aquí."
 
-#: exe/engine/wikipediaidevice.py:89
+#: exe/engine/wikipediaidevice.py:88
 msgid "Unable to connect to "
 msgstr "Inabilitado a conectarse"
 
@@ -1188,29 +1026,24 @@ msgstr "Inabilitado a conectarse"
 msgid "Unit"
 msgstr "Unidad"
 
-#: exe/engine/multichoiceidevice.py:58 exe/engine/galleryidevice.py:246
-#: exe/engine/casestudyidevice.py:57 exe/engine/clozeidevice.py:43
-#: exe/engine/imagewithtextidevice.py:38 exe/engine/forumidevice.py:36
+#: exe/engine/multichoiceidevice.py:58 exe/engine/galleryidevice.py:254
+#: exe/engine/casestudyidevice.py:57 exe/engine/clozeidevice.py:45
+#: exe/engine/imagewithtextidevice.py:38 exe/engine/forumidevice.py:38
 #: exe/engine/quiztestidevice.py:82 exe/engine/truefalseidevice.py:59
 #: exe/engine/reflectionidevice.py:44 exe/engine/idevicestore.py:213
 #: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:267
 #: exe/engine/wikipediaidevice.py:50 exe/engine/freetextidevice.py:38
-#: exe/engine/attachmentidevice.py:41 exe/engine/flashwithtextidevice.py:37
+#: exe/engine/attachmentidevice.py:41 exe/engine/flashwithtextidevice.py:39
 msgid "University of Auckland"
 msgstr "Universidad de Auckland"
 
 #: exe/webui/editorpane.py:66
-msgid ""
-"Use Emphasis to distinguish the importance  of the information being "
-"presented in the iDevice."
-msgstr ""
-"Pon énfasis a distinguir la información importante que va a ser presentada "
-"en el Dispositivo de Educación."
+msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
+msgstr "Pon énfasis a distinguir la información importante que va a ser presentada en el Dispositivo de Educación."
 
-#: exe/engine/galleryidevice.py:251
+#: exe/engine/galleryidevice.py:259
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
-"Usa este Dispositivo de Educación si tu tienes bastantes imagenes a exhibir."
+msgstr "Usa este Dispositivo de Educación si tu tienes bastantes imagenes a exhibir."
 
 #: exe/webui/forumblock.py:102
 msgid "Visible groups"
@@ -1231,13 +1064,10 @@ msgid ""
 "<li> Language use phrases that learners are familiar with and have \n"
 "encountered in their study </li>\n"
 "<li> Keep responses concise </li>\n"
-"<li> There should be some consistency between the stem and the responses </"
-"li>\n"
-"<li> Provide enough options to challenge learners to think about their "
-"response\n"
+"<li> There should be some consistency between the stem and the responses </li>\n"
+"<li> Provide enough options to challenge learners to think about their response\n"
 "</li>\n"
-"<li> Try to make sure that correct responses are not more detailed than "
-"the \n"
+"<li> Try to make sure that correct responses are not more detailed than the \n"
 "distractors </li>\n"
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
@@ -1246,15 +1076,11 @@ msgstr ""
 "<li> El lenguaje usa frases que los estudiantes estan familiarizados \n"
 "por tanto lo encuentran facilmente en sus estudios </li>\n"
 "<li> Mantiene respuestas concisas </li>\n"
-"<li> Debe haber una cierta relacion entre la pregunta y las respuestas </"
-"li>\n"
-"<li> Proveer suficiientes opciones lo cual obliga a los estudiantes a pensar "
-"en sus respuestas\n"
+"<li> Debe haber una cierta relacion entre la pregunta y las respuestas </li>\n"
+"<li> Proveer suficiientes opciones lo cual obliga a los estudiantes a pensar en sus respuestas\n"
 "</li>\n"
-"<li> Asegurarse que las respuestas correctas no sean mas detalladas que las "
-"que parecen correctas </li>\n"
-"<li> Las respuestas que parecen las correctas deberan ser lo mas creible "
-"posible </li>\n"
+"<li> Asegurarse que las respuestas correctas no sean mas detalladas que las que parecen correctas </li>\n"
+"<li> Las respuestas que parecen las correctas deberan ser lo mas creible posible </li>\n"
 "</ul>\n"
 
 #: exe/engine/idevicestore.py:223
@@ -1278,14 +1104,8 @@ msgid "Yes, initially"
 msgstr "Sí, inicialmente"
 
 #: exe/webui/editorpane.py:58
-msgid ""
-"Your new iDevice will appear in the iDevice pane with this title. This is a "
-"compulsory field and you will be prompted to enter a label if you try to "
-"submit your idevice without one."
-msgstr ""
-"Tú nuevo Dispositivo de Educación aparecerá en el panel del Dispositivo de "
-"Educación con este título. Esto es un campo obligatorio y te pedirá que "
-"ingreses una etiqueta si tú intentas no ingresar nada."
+msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
+msgstr "Tú nuevo Dispositivo de Educación aparecerá en el panel del Dispositivo de Educación con este título. Esto es un campo obligatorio y te pedirá que ingreses una etiqueta si tú intentas no ingresar nada."
 
 #: exe/webui/element.py:238 exe/webui/element.py:494
 msgid "blank for original size"
@@ -1295,11 +1115,11 @@ msgstr "blanco para el tamaño original"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:66 exe/webui/editorpage.py:162
+#: exe/webui/common.py:53 exe/webui/editorpage.py:162
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor elearning de XHTML"
 
-#: exe/engine/wikipediaidevice.py:59 exe/engine/wikipediaidevice.py:177
+#: exe/engine/wikipediaidevice.py:59 exe/engine/wikipediaidevice.py:176
 msgid "http://en.wikipedia.org/"
 msgstr ""
 
@@ -1405,8 +1225,9 @@ msgid "Rename"
 msgstr "Renombrar"
 
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
+#, fuzzy
 msgid "outlinePane"
-msgstr ""
+msgstr "Opción"
 
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
 #, fuzzy
@@ -1526,17 +1347,14 @@ msgstr "Nuevo D.E."
 
 #~ msgid ""
 #~ "For use if you need to include an external\n"
-#~ "web page into your content. Rather than popup an external window, which "
-#~ "can have some\n"
-#~ "problematic usability consequences, this iDevice loads the appropriate "
-#~ "content \n"
+#~ "web page into your content. Rather than popup an external window, which can have some\n"
+#~ "problematic usability consequences, this iDevice loads the appropriate content \n"
 #~ "into an inline frame."
 #~ msgstr ""
 #~ "Usa esto si necesitas incluir un pagina de web external\n"
 #~ "en su contendion, en cambio de abrir el pagina en una ventana extra;\n"
 #~ "lo cual puede causar unas consequencas de utilidad.\n"
-#~ "Esto iDevice carga el contenido apropriado en un marco adentro de su "
-#~ "propio contendido."
+#~ "Esto iDevice carga el contenido apropriado en un marco adentro de su propio contendido."
 
 #~ msgid "Language"
 #~ msgstr "Lenguage"
