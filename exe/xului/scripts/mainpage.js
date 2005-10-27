@@ -380,6 +380,13 @@ function toolsEditor() {
     var editorWin = window.open("/editor", "iDevice Editor", features);
 }
 
+// Launch the Preferences Window
+function toolsPreferences() {
+    var features  = "width=800,height=700,status=no,resizeable=yes,"+
+                    "scrollbars=yes";
+    var editorWin = window.open("/preferences", "Preferences", features);
+}
+
 // launch brents crazy robot metadata editor and tag warehouse 
 // loads the metadata editor
 // of course i don't really know what to do after here ...
