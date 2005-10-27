@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Greek\n"
+"X-Poedit-Language: Ελληνικά\n"
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
 
