@@ -31,7 +31,7 @@ class FreeTextIdevice(Idevice):
     """
     FreeTextIdevice: just has a block of text
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"Free Text"), 
@@ -80,5 +80,11 @@ x_(u"This is a free text field general learning content can be entered."),
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+   
+    def upgradeToVersion5(self):
+        """
+        Upgrades v0.6 to v0.7.
+        """
+        self._upgradeIdeviceToVersion1()
    
 # ===========================================================================
