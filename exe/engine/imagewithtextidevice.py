@@ -31,7 +31,7 @@ class ImageWithTextIdevice(Idevice):
     """
     A ImageWithText Idevice is one built up from an image and free text.
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, x_(u"Image with Text"), 
@@ -109,5 +109,11 @@ the piston with a brief textual summary of the key aspects of each visual.
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+        
+    def upgradeToVersion4(self):
+        """
+        Upgrades to exe v0.10
+        """
+        self._upgrageIdeviceToVersion1()
         
 # ===========================================================================

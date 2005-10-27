@@ -33,7 +33,7 @@ class ReflectionIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -93,4 +93,10 @@ reflective feedback.)""")
         self._activityInstruc = self.__dict__['activityInstruc']
         self._answerInstruc   = self.__dict__['answerInstruc']
    
+    def upgradeToVersion5(self):
+        """
+        Upgrades to exe v0.10
+        """
+        self._upgrageIdeviceToVersion1()
+        
 # ===========================================================================
