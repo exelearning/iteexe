@@ -65,7 +65,6 @@ def launchBrowser(config, packageName):
                       config.browserPath.basename(),
                       '-profile', 
                       '"' + config.configDir/profile + '"', 
-                      '-chrome',
                       url)
         except OSError:
             print u"Cannot launch Firefox, please manually run Firefox"
@@ -76,7 +75,7 @@ def launchBrowser(config, packageName):
         launchString  = 'LOGNAME=eXe7913 '
         launchString += config.browserPath
         launchString += ' -profile "' + config.configDir/profile + '" '
-        launchString += ' -chrome ' + url
+        launchString += url
         launchString += "&"
         log.info(u'Launching xulrunner with: ' + launchString)
         os.system(launchString)
