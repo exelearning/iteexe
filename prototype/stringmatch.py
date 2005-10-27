@@ -38,9 +38,18 @@ char *guess, *answer;
 """
 
 # Python Version
-def match(maxMisses, guess, answer, verbose=False):
+def match(guess, answer, verbose=False):
+    maxMisses = len(answer)/4+1
+    print maxMisses,
     if len(guess) <= maxMisses:
-        return answer
+        misses = abs(len(guess) - len(answer))
+        for ch in guess:
+            if ch not in answer:
+                misses += 1
+        if misses <= maxMisses:
+            return (0, misses)
+        else:
+            return False
     iterations = 0
     for string1, string2 in [(answer, guess), (guess, answer)]:
         while string1:
@@ -56,7 +65,7 @@ def match(maxMisses, guess, answer, verbose=False):
             if misses <= maxMisses:
                 return iterations, misses
             string1 = string1[1:]
-    return None
+    return False
 
 strings = [
     ('dog', 'dog'),
@@ -93,8 +102,17 @@ strings = [
     ('gi1logicof', 'geological'),
     ('xxxxxxxxx', 'geological'),
     ('geologlog', 'geological'),
+    ('yes', 'no'),
+    ('true', 'false'),
+    ('y', 'yes'),
+    ('s', 'yes'),
+    ('es', 'yes'),
+    ('ye', 'yes'),
+    ('ss', 'yes'),
+    ('dino', 'dinos'),
+    ('di', 'dinos'),
     ]
 
 for guess, answer in strings:
-    print guess, answer, len(answer)/4,
-    print match(len(answer)/4, guess, answer) or 'FAIL'
+    print guess, answer,
+    print match(guess, answer) or 'FAIL'
