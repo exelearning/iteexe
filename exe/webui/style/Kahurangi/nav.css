@@ -1,0 +1,110 @@
+/* ==========================================
+Copyright University of Auckland 2004
+Created by Brent Simpson, brent.simpson@auckland.ac.nz
+Centre for Flexible and Distance Learning
+============================================= */
+
+
+#navcontainer {
+   z-index:1000;
+   width: 250px;
+   float: left;
+   margin-top: 0px;
+   padding-top: 60px;
+   text-align:left;
+   position:absolute;
+   background-color:transparent; 
+	
+	font: bold .9em;
+}
+#navlist {
+	margin-left: 30px;
+	position:absolute;
+	
+}
+#navcontainer ul {
+   margin-left: 10px;
+   padding-left: 0;
+   margin-top: 0;
+   list-style-type: none;
+   font-family: Arial, Helvetica, sans-serif;
+}
+#navcontainer a {
+   display: block;
+   padding: 4px 0 4px 6px;
+   background-color: #FFF;
+   border-bottom: 1px solid #ffffff;
+   width: 180px;
+   border-top: 1px solid #ffffff;
+}
+
+#navcontainer a:link, #navlist a:visited {
+   color: #000000;
+   background-color: transparent;
+   text-decoration: none;
+   width: 180px;
+}
+
+#navcontainer a:hover {
+   color: #4d4d4d;
+   background-color:#EEEEEE;
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #navcontainer {
+margin-right: 10px;
+}
+* html p {
+height: 1%;
+margin-left: 0;
+}
+/* End hide from IE5/mac */
+div #active {
+padding: 3px 0 3px 5px;
+width: 180px;
+background-color: #006699;
+color: #ffffff;
+height: 40px;
+//*border-bottom: 1px solid #ffffff;
+border-top: 1px solid #ffffff;
+background-image:url(active_bg.gif);
+background-position:left middle;
+background-repeat:no-repeat;*//
+}
+div #subnav {
+
+}
+#subnav a {
+display: block;
+border: 0 !important;
+padding: 4px 0 4px 15px;
+}
+#subnav a:hover {
+color: #4d4d4d;
+background-color: #EEEEEE;
+padding: 4px 0 4px 15px;padding: 4px 0 4px 15px;
+}	
+#subnav #active {
+background-color: #006699;
+color: #ffffff;
+height: 15px;
+padding: 4px 0 4px 15px;
+
+}	
+/* MAIN CONTENT STYLES */
+#container {
+border-top: 0px solid #CCC;
+position:absolute;
+
+}
+#main {
+	padding: 18px;
+	margin: 0px 10px 10px 180px;
+	margin-left: 210px;
+	margin-top: 30px;
+	position:absolute;
+	text-align:left;
+	width: 60%;
+	
+	
+}
