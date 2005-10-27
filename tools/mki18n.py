@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 # 
 #   PYTHON MODULE:     MKI18N.PY
