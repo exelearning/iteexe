@@ -156,7 +156,8 @@ class AuthoringPage(RenderableResource):
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste\",\n"
-        html += u" theme_advanced_buttons2 : \",link,unlink\",\n"
+        html += u" theme_advanced_buttons2 : \",link,unlink,"
+        html += u" removeformat, code\",\n"
         html += u" theme_advanced_buttons3 : \"\",\n"
       
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"

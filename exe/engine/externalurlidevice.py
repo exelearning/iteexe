@@ -39,7 +39,7 @@ class ExternalUrlIdevice(Idevice):
                          x_(u"""For use if you need to include an external
 web page into your content. Rather than popup an external window, which can have some
 problematic usability consequences, this iDevice loads the appropriate content 
-into an inline frame."""), "", "")
+into an inline frame. Use only if your content will be online."""), "", "")
         self.emphasis = Idevice.NoEmphasis
         self.url      = ""
         self.height   = "300"
