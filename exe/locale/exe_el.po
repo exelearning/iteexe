@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-27 10:33+1300\n"
+"POT-Creation-Date: 2005-10-28 10:01+1300\n"
 "PO-Revision-Date: 2005-10-27 11:58+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -134,8 +134,7 @@ msgstr "Μια απλή συζήτηση"
 msgid "Actions"
 msgstr "Ενέργειες"
 
-#: exe/engine/idevicestore.py:265
-#: exe/engine/idevicestore.py:273
+#: exe/engine/idevicestore.py:265 exe/engine/idevicestore.py:273
 msgid "Activity"
 msgstr "Δραστηριότητα"
 
@@ -159,13 +158,11 @@ msgstr "Εισάγετε ένα πλαίσιο κειμένου σε ένα εκ
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Προσθήκη εικόνας στο εκπαιδευτικό εργαλείο σας. Σας δίνει τη δυνατότητα να επιλέξετε μια εικόνα από τις αποθηκευμένες."
 
-#: exe/webui/multichoiceblock.py:125
-#: exe/webui/testquestionelement.py:113
+#: exe/webui/multichoiceblock.py:125 exe/webui/testquestionelement.py:113
 msgid "Add another option"
 msgstr "Προσθέστε άλλη επιλογή"
 
-#: exe/webui/truefalseblock.py:102
-#: exe/webui/casestudyblock.py:93
+#: exe/webui/truefalseblock.py:102 exe/webui/casestudyblock.py:93
 msgid "Add another question"
 msgstr "Προσθήκη ερώτησης"
 
@@ -173,8 +170,7 @@ msgstr "Προσθήκη ερώτησης"
 msgid "Add images"
 msgstr "Προσθήκη εικόνων"
 
-#: exe/webui/multichoiceblock.py:106
-#: exe/webui/testquestionelement.py:96
+#: exe/webui/multichoiceblock.py:106 exe/webui/testquestionelement.py:96
 msgid "Alternatives"
 msgstr "Εναλλακτικές"
 
@@ -228,14 +224,12 @@ msgstr "Άρθρο"
 msgid "Attachment"
 msgstr "Επισύναψη"
 
-#: exe/engine/attachmentidevice.py:93
-#: exe/engine/attachmentidevice.py:116
+#: exe/engine/attachmentidevice.py:93 exe/engine/attachmentidevice.py:116
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Το επισυναπτόμενο αρχείο %s δεν έχει πατρικό κόμβο"
 
-#: exe/webui/editorpane.py:269
-#: exe/webui/propertiespane.py:100
+#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:269
 msgid "Author"
 msgstr "Συγγραφέας"
 
@@ -247,8 +241,7 @@ msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' α�
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: exe/webui/imagewithtextblock.py:83
-#: exe/webui/flashwithtextblock.py:83
+#: exe/webui/imagewithtextblock.py:83 exe/webui/flashwithtextblock.py:83
 msgid "Caption:"
 msgstr "Λεζάντα:"
 
@@ -268,16 +261,11 @@ msgstr "Κάντε κλικ στο <strong>Επιλέξτε αρχείο</strong
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/webui/common.py:211
-#: exe/webui/common.py:212
-#: exe/webui/multichoiceblock.py:156
-#: exe/webui/multichoiceblock.py:157
-#: exe/webui/truefalseelement.py:130
-#: exe/webui/truefalseelement.py:131
-#: exe/webui/block.py:236
-#: exe/webui/editorpane.py:308
-#: exe/webui/editorpane.py:309
-#: exe/webui/editorpane.py:330
+#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:156
+#: exe/webui/multichoiceblock.py:157 exe/webui/common.py:211
+#: exe/webui/common.py:212 exe/webui/truefalseelement.py:130
+#: exe/webui/truefalseelement.py:131 exe/webui/editorpane.py:308
+#: exe/webui/editorpane.py:309 exe/webui/editorpane.py:330
 msgid "Close"
 msgstr "Κλείσιμο"
 
@@ -293,9 +281,8 @@ msgstr "Κλείσιμο Δραστηριότητας"
 msgid "Content"
 msgstr "Περιεχόμενο"
 
-#: exe/webui/multichoiceblock.py:109
+#: exe/webui/multichoiceblock.py:109 exe/webui/testquestionelement.py:99
 #: exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:99
 msgid "Correct"
 msgstr "Σωστό"
 
@@ -311,26 +298,20 @@ msgstr ""
 "Δημιουργία σεναρίου. Μια καλή περίπτωση είναι αυτή \n"
 " που περιγράφει μια διένεξη."
 
-#: exe/webui/block.py:206
-#: exe/webui/editorpage.py:178
-#: exe/webui/editorpage.py:182
-#: exe/webui/editorelement.py:75
-#: exe/webui/editorelement.py:114
-#: exe/webui/editorelement.py:154
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: key="delNodeKey"
+#: exe/webui/editorelement.py:75 exe/webui/editorelement.py:114
+#: exe/webui/editorelement.py:154 exe/webui/block.py:206
+#: exe/webui/editorpage.py:178 exe/webui/editorpage.py:182
+#: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: exe/webui/testoptionelement.py:91
-#: exe/webui/truefalseelement.py:110
+#: exe/webui/testoptionelement.py:91 exe/webui/truefalseelement.py:110
 #: exe/webui/optionelement.py:97
 msgid "Delete option"
 msgstr "Επιλογή διαγραφής"
 
-#: exe/webui/questionelement.py:92
-#: exe/webui/testquestionelement.py:91
+#: exe/webui/testquestionelement.py:91 exe/webui/questionelement.py:92
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -371,8 +352,7 @@ msgstr "Περιγραφή"
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: exe/webui/forumblock.py:171
-#: exe/webui/forumblock.py:188
+#: exe/webui/forumblock.py:171 exe/webui/forumblock.py:188
 msgid "Discussion Topic"
 msgstr "Θέμα συζήτησης"
 
@@ -384,13 +364,11 @@ msgstr "Θέμα συζήτησης:"
 msgid "Discussions and replies are allowed"
 msgstr "Επιτρέπονται οι συζητήσεις και οι απαντήσεις"
 
-#: exe/webui/element.py:224
-#: exe/webui/element.py:482
+#: exe/webui/element.py:224 exe/webui/element.py:482
 msgid "Display as:"
 msgstr "Απεικόνιση ως:"
 
-#: exe/webui/block.py:198
-#: exe/webui/propertiespane.py:123
+#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
@@ -414,8 +392,7 @@ msgstr "ΛΑΘΟΣ:  Άμεση κλήση του Block.renderViewContent"
 msgid "Each person posts one discussion"
 msgstr "Κάθε άτομο δημοσιεύει μια συζήτηση"
 
-#: exe/webui/block.py:320
-#: exe/webui/editorpage.py:200
+#: exe/webui/block.py:320 exe/webui/editorpage.py:200
 #: exe/webui/editorpane.py:206
 msgid "Edit"
 msgstr "Επεξεργασία"
@@ -424,8 +401,7 @@ msgstr "Επεξεργασία"
 msgid "Emphasis"
 msgstr "Έμφαση"
 
-#: exe/engine/multichoiceidevice.py:87
-#: exe/engine/multichoiceidevice.py:132
+#: exe/engine/multichoiceidevice.py:87 exe/engine/multichoiceidevice.py:132
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -445,13 +421,11 @@ msgstr ""
 msgid "Enter instructions for completion here"
 msgstr "Εισάγετε οδηγίες συμπλήρωσης εδώ"
 
-#: exe/webui/editorpane.py:130
-#: exe/webui/editorpane.py:134
+#: exe/webui/editorpane.py:130 exe/webui/editorpane.py:134
 msgid "Enter the instructions for completion here"
 msgstr "Εισάγετε τις οδηγίες συμπλήρωσης εδώ"
 
-#: exe/webui/editorpane.py:125
-#: exe/webui/editorpane.py:129
+#: exe/webui/editorpane.py:125 exe/webui/editorpane.py:129
 #: exe/webui/editorpane.py:133
 msgid "Enter the label here"
 msgstr "Εισάγετε την ετικέτα εδώ"
@@ -466,14 +440,12 @@ msgstr ""
 " σκιαγραφούν τα μαθησιακά μηνύματα που εμφανίζονται στο σενάριο. \n"
 " Θεωρείστε περιπτώσεις του σεναρίου όπως χαρακτήρες, επικαιρότητα, σχετικότητα, διλήμματα."
 
-#: exe/xului/mainpage.py:266
-#: exe/xului/mainpage.py:285
+#: exe/xului/mainpage.py:266 exe/xului/mainpage.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Λάθος κατά τη φόρτωση του πακέτου \"%s\": %s"
 
-#: exe/xului/mainpage.py:416
-#: exe/xului/mainpage.py:434
+#: exe/xului/mainpage.py:416 exe/xului/mainpage.py:434
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωσή στο %s"
@@ -490,10 +462,8 @@ msgstr "Λ"
 msgid "False"
 msgstr "Λάθος"
 
-#: exe/engine/idevicestore.py:230
-#: exe/webui/questionelement.py:85
-#: exe/webui/multichoiceblock.py:113
-#: exe/webui/truefalseblock.py:88
+#: exe/engine/idevicestore.py:230 exe/webui/multichoiceblock.py:113
+#: exe/webui/questionelement.py:85 exe/webui/truefalseblock.py:88
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
@@ -501,8 +471,7 @@ msgstr "Ανατροφοδότηση"
 msgid "Feedback: "
 msgstr "Ανατροφοδότηση:"
 
-#: exe/xului/mainpage.py:333
-#: exe/xului/mainpage.py:376
+#: exe/xului/mainpage.py:333 exe/xului/mainpage.py:376
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να αντικατασταθεί"
@@ -515,8 +484,7 @@ msgstr "Flash"
 msgid "Flash with Text"
 msgstr "Flash με κείμενο"
 
-#: exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashwithtextblock.py:76
+#: exe/webui/imagewithtextblock.py:76 exe/webui/flashwithtextblock.py:76
 msgid "Float:"
 msgstr "Αριθμός κινητής υποδιαστολής:"
 
@@ -536,8 +504,7 @@ msgstr ""
 msgid "Force everyone to be subscribed?:"
 msgstr "Να εγγραφούν όλοι υποχρεωτικά;"
 
-#: exe/engine/forumidevice.py:37
-#: exe/webui/forumblock.py:169
+#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:169
 #: exe/webui/forumblock.py:186
 msgid "Forum Discussion"
 msgstr "Δημόσια συζήτηση"
@@ -570,15 +537,12 @@ msgstr "Λήψη βαθμολογίας"
 msgid "Group mode:"
 msgstr "Κατάσταση ομάδας:"
 
-#: exe/webui/reflectionblock.py:100
-#: exe/webui/forumblock.py:105
+#: exe/webui/forumblock.py:105 exe/webui/reflectionblock.py:100
 msgid "Hide"
 msgstr "Απόκρυψη"
 
-#: exe/webui/multichoiceblock.py:160
-#: exe/webui/truefalseelement.py:124
-#: exe/webui/truefalseelement.py:134
-#: exe/webui/truefalseblock.py:90
+#: exe/webui/multichoiceblock.py:160 exe/webui/truefalseelement.py:124
+#: exe/webui/truefalseelement.py:134 exe/webui/truefalseblock.py:90
 msgid "Hint"
 msgstr "Συμβουλή"
 
@@ -594,8 +558,7 @@ msgstr "Αρχή"
 msgid "Icons"
 msgstr "Εικονίδια"
 
-#: exe/engine/imagewithtextidevice.py:67
-#: exe/webui/editorpane.py:197
+#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:197
 msgid "Image"
 msgstr "Εικόνα"
 
@@ -619,8 +582,7 @@ msgstr "Λανθασμένο!"
 msgid "Instructions"
 msgstr "Οδηγίες"
 
-#: exe/webui/common.py:203
-#: exe/webui/common.py:206
+#: exe/webui/common.py:203 exe/webui/common.py:206
 msgid "Instructions for completion"
 msgstr "Οδηγίες για συμπλήρωση"
 
@@ -628,8 +590,7 @@ msgstr "Οδηγίες για συμπλήρωση"
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: exe/webui/imagewithtextblock.py:77
-#: exe/webui/flashwithtextblock.py:77
+#: exe/webui/imagewithtextblock.py:77 exe/webui/flashwithtextblock.py:77
 msgid "Left"
 msgstr "Αριστερά"
 
@@ -677,8 +638,7 @@ msgstr "Νέο εκπαιδευτικό εργαλείο"
 msgid "No"
 msgstr "Όχι"
 
-#: exe/webui/galleryblock.py:173
-#: exe/webui/galleryblock.py:246
+#: exe/webui/galleryblock.py:173 exe/webui/galleryblock.py:246
 msgid "No Images Loaded"
 msgstr "Δεν φορτώθηκαν εικόνες"
 
@@ -702,13 +662,11 @@ msgstr "Χωρίς έμφαση"
 msgid "No groups"
 msgstr "Δεν υπάρχουν ομάδες"
 
-#: exe/webui/imagewithtextblock.py:79
-#: exe/webui/flashwithtextblock.py:79
+#: exe/webui/imagewithtextblock.py:79 exe/webui/flashwithtextblock.py:79
 msgid "None"
 msgstr "Κανένα"
 
-#: exe/engine/idevicestore.py:237
-#: exe/engine/idevicestore.py:246
+#: exe/engine/idevicestore.py:237 exe/engine/idevicestore.py:246
 msgid "Objectives"
 msgstr "Αντικειμενικοί σκοποί"
 
@@ -722,8 +680,7 @@ msgstr ""
 " θα πρέπει να καθορίζουν τι θα μπορούν να κάνουν\n"
 " όταν τελειώσουν το μάθημα."
 
-#: exe/webui/multichoiceblock.py:110
-#: exe/webui/testquestionelement.py:102
+#: exe/webui/multichoiceblock.py:110 exe/webui/testquestionelement.py:102
 msgid "Option"
 msgstr "Επιλογή"
 
@@ -736,8 +693,7 @@ msgstr "Περίγραμμα"
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
 
-#: exe/webui/block.py:227
-#: exe/webui/editorpane.py:321
+#: exe/webui/block.py:227 exe/webui/editorpane.py:321
 msgid "Pedagogical Help"
 msgstr "Παιδαγωγική βοήθεια"
 
@@ -745,8 +701,7 @@ msgstr "Παιδαγωγική βοήθεια"
 msgid "Pedagogical Tip"
 msgstr "Παιδαγωγική συμβουλή"
 
-#: exe/webui/editorpage.py:101
-#: exe/webui/editorpane.py:145
+#: exe/webui/editorpage.py:101 exe/webui/editorpane.py:145
 msgid "Please enter an idevice name."
 msgstr "Παρακαλώ εισάγετε ένα όνομα για το εκπαιδευτικό εργαλείο"
 
@@ -754,8 +709,7 @@ msgstr "Παρακαλώ εισάγετε ένα όνομα για το εκπα
 msgid "Please select a correct answer for each question."
 msgstr "Παρακαλώ επιλέξτε μια σωστή απάντηση για κάθε ερώτηση."
 
-#: exe/engine/idevicestore.py:250
-#: exe/engine/idevicestore.py:260
+#: exe/engine/idevicestore.py:250 exe/engine/idevicestore.py:260
 msgid "Preknowledge"
 msgstr "Προαπαιτούμενα"
 
@@ -826,18 +780,15 @@ msgstr ""
 " ανατροφοδότησης από το διδάσκοντα προς το μαθητή είναι ένα από τα κύρια σημεία\n"
 " που βοηθούν στη μαθησιακή δραστηριότητα."
 
-#: exe/webui/block.py:241
-#: exe/webui/editorpane.py:272
+#: exe/webui/block.py:241 exe/webui/editorpane.py:272
 msgid "Purpose"
 msgstr "Σκοπός"
 
-#: exe/webui/questionelement.py:82
-#: exe/webui/questionelement.py:120
+#: exe/webui/questionelement.py:82 exe/webui/questionelement.py:120
 msgid "Question"
 msgstr "Ερώτηση"
 
-#: exe/webui/multichoiceblock.py:97
-#: exe/webui/testquestionelement.py:86
+#: exe/webui/multichoiceblock.py:97 exe/webui/testquestionelement.py:86
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -881,8 +832,7 @@ msgstr "Ερώτηση με απεικόνιση:"
 msgid "Response:"
 msgstr "Απάντηση:"
 
-#: exe/webui/imagewithtextblock.py:78
-#: exe/webui/flashwithtextblock.py:78
+#: exe/webui/imagewithtextblock.py:78 exe/webui/flashwithtextblock.py:78
 msgid "Right"
 msgstr "Δεξιά"
 
@@ -898,8 +848,8 @@ msgstr "Κουίζ τύπου SCORM"
 msgid "SUBMIT ANSWERS"
 msgstr "ΚΑΤΑΧΩΡΗΣΗ ΑΠΑΝΤΗΣΕΩΝ"
 
-#: exe/webui/editorpage.py:180
-#: exe/webui/editorpage.py:183
+#: exe/webui/editorpage.py:180 exe/webui/editorpage.py:183
+#: exe/webui/preferencespage.py:102
 msgid "Save"
 msgstr "Αποθήκευση"
 
@@ -943,13 +893,11 @@ msgstr "Εμφάνιση απαντήσεων"
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
 
-#: exe/xului/mainpage.py:265
-#: exe/xului/mainpage.py:284
+#: exe/xului/mainpage.py:265 exe/xului/mainpage.py:284
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
 
-#: exe/xului/mainpage.py:263
-#: exe/xului/mainpage.py:282
+#: exe/xului/mainpage.py:263 exe/xului/mainpage.py:282
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -970,8 +918,7 @@ msgstr "Σενάριο:"
 msgid "Strong emphasis"
 msgstr "Έντονη έμφαση"
 
-#: exe/webui/forumblock.py:172
-#: exe/webui/forumblock.py:189
+#: exe/webui/forumblock.py:172 exe/webui/forumblock.py:189
 msgid "Subject"
 msgstr "Θέμα"
 
@@ -995,8 +942,7 @@ msgstr "Επιλέξτε ένα τμήμα του κειμένου και εισ
 msgid "Taxonomy"
 msgstr "Ταξινόμηση"
 
-#: exe/engine/flashwithtextidevice.py:46
-#: exe/engine/imagewithtextidevice.py:72
+#: exe/engine/flashwithtextidevice.py:46 exe/engine/imagewithtextidevice.py:72
 msgid "Text"
 msgstr "Κείμενο"
 
@@ -1051,8 +997,7 @@ msgstr "Το εκπαιδευτικό εργαλείο υπάρχει για ν�
 msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
 msgstr "Αυτό το εκπαιδευτικό εργαλείο χρησιμοποιείται για να βοηθήσει τους μαθητές να μάθουν τμήματα κειμένου και να αναπτύξουν τη δυνατότητα κατανόησης του τρόπου με τον οποίο οι λέξεις χρησιμοποιούνται σε ένα συγκεκριμένο θέμα ή γλώσσα"
 
-#: exe/engine/freetextidevice.py:45
-#: exe/engine/freetextidevice.py:66
+#: exe/engine/freetextidevice.py:45 exe/engine/freetextidevice.py:66
 msgid "This is a free text field general learning content can be entered."
 msgstr "Πεδίο ελεύθερου κειμένου όπου μπορεί να εισαχθεί μαθησιακό περιεχόμενο γενικής φύσης."
 
@@ -1061,9 +1006,7 @@ msgid "This is an optional field."
 msgstr "Το πεδίο είναι προαιρετικό"
 
 #: exe/webui/block.py:201
-msgid ""
-"This will delete this iDevice.\\n"
-"Do you really want to do this?"
+msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr ""
 "Το εκπαιδευτικό εργαλείο θα διαγραφεί.\n"
 " Είστε σίγουροι ότι θέλετε να προχωρήσετε;"
@@ -1145,8 +1088,7 @@ msgstr ""
 msgid "Type the learning objectives for this resource."
 msgstr "Δώστε τους μαθησιακούς αντικειμενικούς σκοπούς για τον πόρο."
 
-#: exe/engine/truefalseidevice.py:67
-#: exe/engine/multichoiceidevice.py:90
+#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
 msgid "Type the question stem."
 msgstr "Δώστε την καταγωγή της ερώτησης."
 
@@ -1162,23 +1104,15 @@ msgstr "Η σύνδεση είναι αδύνατη"
 msgid "Unit"
 msgstr "Παράγραφος"
 
-#: exe/engine/externalurlidevice.py:38
-#: exe/engine/reflectionidevice.py:44
-#: exe/engine/forumidevice.py:38
+#: exe/engine/wikipediaidevice.py:50 exe/engine/casestudyidevice.py:57
+#: exe/engine/multichoiceidevice.py:58 exe/engine/freetextidevice.py:38
+#: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
+#: exe/engine/flashwithtextidevice.py:39 exe/engine/imagewithtextidevice.py:38
+#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:59
+#: exe/engine/externalurlidevice.py:38 exe/engine/idevicestore.py:213
+#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:267
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
 #: exe/engine/galleryidevice.py:254
-#: exe/engine/wikipediaidevice.py:50
-#: exe/engine/truefalseidevice.py:59
-#: exe/engine/quiztestidevice.py:82
-#: exe/engine/flashwithtextidevice.py:39
-#: exe/engine/imagewithtextidevice.py:38
-#: exe/engine/attachmentidevice.py:41
-#: exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:213
-#: exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:267
 msgid "University of Auckland"
 msgstr "Πανεπιστήμιο του Auckland"
 
@@ -1235,8 +1169,7 @@ msgstr "Γιατί πρέπει να διαβαστεί"
 msgid "Wikibooks Article"
 msgstr "Άρθρο βιβλίων Βίκι"
 
-#: exe/engine/wikipediaidevice.py:49
-#: exe/webui/wikipediablock.py:70
+#: exe/engine/wikipediaidevice.py:49 exe/webui/wikipediablock.py:70
 msgid "Wikipedia Article"
 msgstr "Άρθρο της Βίκι εγκυκλοπαίδειας"
 
@@ -1252,28 +1185,24 @@ msgstr "Ναι, αρχικά"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Το νέο εκπαιδευτικό εργαλείο θα εμφανιστεί στην περιοχή εκπαιδευτικών εργαλείων με αυτόν τον τίτλο. Αυτό το πεδίο είναι υποχρεωτικό και θα σας ζητηθεί να δώσετε ένα όνομα αν προσπαθήσετε να καταχωρήσετε το εκπαιδευτικό εργαλείο σας χωρίς όνομα."
 
-#: exe/webui/element.py:238
-#: exe/webui/element.py:494
+#: exe/webui/element.py:238 exe/webui/element.py:494
 msgid "blank for original size"
 msgstr "κενό για αρχικό μέγεθος"
 
-#: exe/export/scormexport.py:208
-#: exe/export/imsexport.py:176
+#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:53
-#: exe/webui/editorpage.py:162
+#: exe/webui/editorpage.py:162 exe/webui/common.py:53
+#: exe/webui/preferencespage.py:89
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως μάθηση"
 
-#: exe/engine/wikipediaidevice.py:59
-#: exe/engine/wikipediaidevice.py:176
+#: exe/engine/wikipediaidevice.py:59 exe/engine/wikipediaidevice.py:176
 msgid "http://en.wikipedia.org/"
 msgstr "http://el.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:95
-#: exe/engine/attachmentidevice.py:118
+#: exe/engine/attachmentidevice.py:95 exe/engine/attachmentidevice.py:118
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
@@ -1298,196 +1227,162 @@ msgstr "Ετικέτα"
 msgid "title"
 msgstr "Τίτλος"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: id="addChildKey" keycode="VK_INSERT">
+#: exe/xului/templates/mainpage.xul:<key id="addChildKey" keycode="VK_INSERT">
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: id="delNodeKey" keycode="VK_DELETE">
+#: exe/xului/templates/mainpage.xul:<key id="delNodeKey" keycode="VK_DELETE">
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="renNodeKey"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="renNodeKey"
 #: key="R">
 msgid "R"
 msgstr "R"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="promoteKey"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="promoteKey"
 #: keycode="VK_LEFT">
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="demoteKey"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="demoteKey"
 #: keycode="VK_RIGHT">
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="upKey"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="upKey"
 #: key="U">
 msgid "U"
 msgstr "U"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="downKey"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="downKey"
 #: key="D">
 msgid "D"
 msgstr "D"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="file-new-key"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="file-new-key"
 #: key="N" oncommand="fileNew()">
 msgid "N"
 msgstr "Ο"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control"
 #: id="file-save-key" key="S" oncommand="fileSave()">
 msgid "S"
 msgstr "S"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control"
+#: exe/xului/templates/mainpage.xul:<key modifiers="control"
 #: id="file-open-key" key="O" oncommand="fileOpen()">
 msgid "O"
 msgstr "O"
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="f" id="file-menu"
+#: exe/xului/templates/mainpage.xul:<menu accesskey="f" id="file-menu"
 #: label="File">
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Αρχείο\" accesskey=\"α\""
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="t" id="tools-menu"
+#: exe/xului/templates/mainpage.xul:<menu accesskey="t" id="tools-menu"
 #: label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Εργαλεία\" accesskey=\"ε\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="n"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="n"
 #: oncommand="fileNew()" key="file-new-key" label="New">
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Δημιουργία\" accesskey=\"N\""
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="s" id="styles-menu"
+#: exe/xului/templates/mainpage.xul:<menu accesskey="s" id="styles-menu"
 #: label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"Στυλ\" accesskey=\"σ\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="o"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="o"
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Άνοιγμα\" accesskey=\"ο\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="r"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr "label=\"Ανανέωση\" accesskey=\"ν\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="s"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
 #: oncommand="fileSave()" key="file-save-key" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Αποθήκευση\" accesskey=\"σ\""
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="h" id="help-menu"
+#: exe/xului/templates/mainpage.xul:<menu accesskey="h" id="help-menu"
 #: label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Βοήθεια\" accesskey=\"h\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="a"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
 #: oncommand="fileSaveAs()" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Αποθήκευση ως...\" accesskey=\"α\""
 
-#: exe/xului/templates/mainpage.xul:<label
-#: value="debugInfo">
+#: exe/xului/templates/mainpage.xul:<label value="debugInfo">
 msgid "debugInfo"
 msgstr "Πληροφορίες εκσφαλμάτωσης"
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="e" id="export-menu"
+#: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="export-menu"
 #: label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Εξαγωγή\" accesskey=\"ε\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="a"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
 #: oncommand="aboutPage()" label="About">
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"Περί\" accesskey=\"ρ\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="s"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
 #: oncommand="exportPackage('scorm')" label="SCORM 1.2">
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"c\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="t"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="t"
 #: oncommand="loadTutorial()" label="Tutorial">
 msgid "label=\"Tutorial\" accesskey=\"t\""
 msgstr "label=\"Σενάριο\" accesskey=\"ν\""
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: key="addChildKey"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
 #: label="Add Page">
 msgid "Add Page"
 msgstr "Προσθήκη σελίδας"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="i"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
 #: oncommand="exportPackage('ims')" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"Πακέτο Περιεχομένου IMS\" accesskey=\"i\""
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: id="btnRename"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
 #: key="renNodeKey" label="Rename">
 msgid "Rename"
 msgstr "Μετονομασία"
 
-#: exe/xului/templates/mainpage.xul:<label
-#: flex="1" value="outlinePane">
+#: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
 msgid "outlinePane"
 msgstr "Πλαίσιο Περιγράμματος"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="w"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
 #: oncommand="exportPackage('webSite')" key="file-export-website-key"
 #: label="Web Site">
 msgid "label=\"Web Site\" accesskey=\"w\""
 msgstr "label=\"Ιστοχώρος\" accesskey=\"ω\""
 
-#: exe/xului/templates/mainpage.xul:<label
-#: flex="1" value="iDevicePane">
+#: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
 msgid "iDevicePane"
 msgstr "Πλαίσιο εκπαιδευτικών εργαλείων"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="p"
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="p"
 #: oncommand="exportPackage('singlePage')" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Απλή σελίδα\" accesskey=\"λ\""
 
-#: exe/xului/templates/mainpage.xul:<tab
-#: label="Authoring">
+#: exe/xului/templates/mainpage.xul:<tab label="Authoring">
 msgid "Authoring"
 msgstr "Συγγραφή"
 
-#: exe/xului/templates/mainpage.xul:<tab
-#: label="Properties">
+#: exe/xului/templates/mainpage.xul:<tab label="Properties">
 msgid "Properties"
 msgstr "Ιδιότητες"
-

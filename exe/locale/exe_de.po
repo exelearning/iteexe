@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-27 10:33+1300\n"
+"POT-Creation-Date: 2005-10-28 10:01+1300\n"
 "PO-Revision-Date: 2005-09-13 13:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <info@dialoge.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,7 +231,7 @@ msgstr "Anhang"
 msgid "Attachment %s has no parentNode"
 msgstr ""
 
-#: exe/webui/editorpane.py:269 exe/webui/propertiespane.py:100
+#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:269
 msgid "Author"
 msgstr "Autor/in"
 
@@ -263,10 +263,10 @@ msgstr "Klicken Sie auf <strong>Datei auswählen</strong> und wählen Sie die Da
 msgid "Click here"
 msgstr "Klicken Sie hier"
 
-#: exe/webui/common.py:211 exe/webui/common.py:212
-#: exe/webui/multichoiceblock.py:156 exe/webui/multichoiceblock.py:157
-#: exe/webui/truefalseelement.py:130 exe/webui/truefalseelement.py:131
-#: exe/webui/block.py:236 exe/webui/editorpane.py:308
+#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:156
+#: exe/webui/multichoiceblock.py:157 exe/webui/common.py:211
+#: exe/webui/common.py:212 exe/webui/truefalseelement.py:130
+#: exe/webui/truefalseelement.py:131 exe/webui/editorpane.py:308
 #: exe/webui/editorpane.py:309 exe/webui/editorpane.py:330
 msgid "Close"
 msgstr "Schließen"
@@ -284,8 +284,8 @@ msgstr "Aktivität"
 msgid "Content"
 msgstr "Inhalt"
 
-#: exe/webui/multichoiceblock.py:109 exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:99
+#: exe/webui/multichoiceblock.py:109 exe/webui/testquestionelement.py:99
+#: exe/webui/optionelement.py:129
 msgid "Correct"
 msgstr "Richtig"
 
@@ -301,9 +301,9 @@ msgstr ""
 "Erstellen Sie die Fallstudie. Eine gute Situation \n"
 "Beschreibt eine Kontroverse."
 
-#: exe/webui/block.py:206 exe/webui/editorpage.py:178
-#: exe/webui/editorpage.py:182 exe/webui/editorelement.py:75
-#: exe/webui/editorelement.py:114 exe/webui/editorelement.py:154
+#: exe/webui/editorelement.py:75 exe/webui/editorelement.py:114
+#: exe/webui/editorelement.py:154 exe/webui/block.py:206
+#: exe/webui/editorpage.py:178 exe/webui/editorpage.py:182
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
 msgid "Delete"
@@ -314,7 +314,7 @@ msgstr "Löschen"
 msgid "Delete option"
 msgstr "Löschoption"
 
-#: exe/webui/questionelement.py:92 exe/webui/testquestionelement.py:91
+#: exe/webui/testquestionelement.py:91 exe/webui/questionelement.py:92
 msgid "Delete question"
 msgstr "Frage löschen"
 
@@ -370,7 +370,7 @@ msgstr "Neue Diskussionsbeiträge und Antworten erlaubt"
 msgid "Display as:"
 msgstr "Anzeigen als"
 
-#: exe/webui/block.py:198 exe/webui/propertiespane.py:123
+#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
 msgid "Done"
 msgstr "Fertig"
 
@@ -465,8 +465,8 @@ msgstr "F"
 msgid "False"
 msgstr "Falsch"
 
-#: exe/engine/idevicestore.py:230 exe/webui/questionelement.py:85
-#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseblock.py:88
+#: exe/engine/idevicestore.py:230 exe/webui/multichoiceblock.py:113
+#: exe/webui/questionelement.py:85 exe/webui/truefalseblock.py:88
 msgid "Feedback"
 msgstr "Fedback"
 
@@ -536,7 +536,7 @@ msgstr "Punkte eintragen"
 msgid "Group mode:"
 msgstr "Gruppenmodus:"
 
-#: exe/webui/reflectionblock.py:100 exe/webui/forumblock.py:105
+#: exe/webui/forumblock.py:105 exe/webui/reflectionblock.py:100
 msgid "Hide"
 msgstr "Verbergen"
 
@@ -846,6 +846,7 @@ msgid "SUBMIT ANSWERS"
 msgstr "ANTWORT ABGEBEN"
 
 #: exe/webui/editorpage.py:180 exe/webui/editorpage.py:183
+#: exe/webui/preferencespage.py:102
 msgid "Save"
 msgstr "Speichern"
 
@@ -1086,7 +1087,7 @@ msgstr ""
 msgid "Type the learning objectives for this resource."
 msgstr "Geben Sie die Lernziele für diesen Schritt an."
 
-#: exe/engine/truefalseidevice.py:67 exe/engine/multichoiceidevice.py:90
+#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
 msgid "Type the question stem."
 msgstr "Gebn Sie den Fragenstamm ein."
 
@@ -1102,15 +1103,15 @@ msgstr "Verbindung konnte nicht hergestellt werden mit "
 msgid "Unit"
 msgstr "Einheit"
 
-#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/forumidevice.py:38 exe/engine/galleryidevice.py:254
-#: exe/engine/wikipediaidevice.py:50 exe/engine/truefalseidevice.py:59
-#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:39
-#: exe/engine/imagewithtextidevice.py:38 exe/engine/attachmentidevice.py:41
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:213 exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:267
+#: exe/engine/wikipediaidevice.py:50 exe/engine/casestudyidevice.py:57
+#: exe/engine/multichoiceidevice.py:58 exe/engine/freetextidevice.py:38
+#: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
+#: exe/engine/flashwithtextidevice.py:39 exe/engine/imagewithtextidevice.py:38
+#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:59
+#: exe/engine/externalurlidevice.py:38 exe/engine/idevicestore.py:213
+#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:267
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
+#: exe/engine/galleryidevice.py:254
 msgid "University of Auckland"
 msgstr "Universität Auckland"
 
@@ -1181,11 +1182,12 @@ msgstr "Ihr neues Idevice wird mit diesem Titel im Idevice Fenster angezeigt. Di
 msgid "blank for original size"
 msgstr "Platzhalter für Orginalgröße"
 
-#: exe/export/scormexport.py:208 exe/export/imsexport.py:176
+#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:53 exe/webui/editorpage.py:162
+#: exe/webui/editorpage.py:162 exe/webui/common.py:53
+#: exe/webui/preferencespage.py:89
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: elearning XHTML Editor"
 

@@ -40,8 +40,6 @@ class PreferencesPage(RenderableResource):
         Initialize
         """
         RenderableResource.__init__(self, parent)
-        self.url          = ""
-        self.message      = ""
         self.localeNames  = []
         
         for locale, translation in self.config.locales.items():
@@ -60,52 +58,61 @@ class PreferencesPage(RenderableResource):
             return Resource.getChild(self, name, request)
 
 
-    def process(self, request):
-        """
-        Process current package 
-        """
-        log.debug("process " + repr(request.args))
-        
-        if "action" in request.args:
-            if request.args["action"][0] == "changeIdevice":
-                pass
-            
     def render_GET(self, request):
-        """Called for all requests to this object"""
+        """Render the preferences"""
         
         # Processing 
         log.debug("render_GET")
-        self.process(request)
         
         # Rendering
         html  = common.docType()
-        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += "<head>\n"
-        html += "<style type=\"text/css\">\n"
-        html += "@import url(/css/exe.css);\n"
-        html += "@import url(/style/standardwhite/content.css);</style>\n"
-        html += '<script type="text/javascript" src="/scripts/fckeditor.js">'
-        html += '</script>\n'
-        html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
-        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += " charset=UTF-8\"></meta>\n";
-        html += "</head>\n"
-        html += "<body>\n"
-        html += "<div id=\"main\"> \n"     
-        html += "<form method=\"post\" action=\""+self.url+"\" "
-        html += "id=\"contentForm\" >"  
+        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<head>\n"
+        html += u"<style type=\"text/css\">\n"
+        html += u"@import url(/css/exe.css);\n"
+        html += u"@import url(/style/standardwhite/content.css);</style>\n"
+        html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
+        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += u" charset=UTF-8\"></meta>\n";
+        html += u"</head>\n"
+        html += u"<body>\n"
+        html += u"<div id=\"main\"> \n"     
+        html += u"<form method=\"post\" action=\"\" "
+        html += u"id=\"contentForm\" >"  
         html += common.hiddenField("action")
         html += common.hiddenField("object")
-        html += common.select("locale", self.localeNames)
-        html += "<font color=\"red\"<b>"+self.message+"</b></font>"
-        html += "<div id=\"editorButtons\"> \n"     
-        html += "<br/>" + common.submitButton("save", _("Save"))
-        html += "</div>\n"
-        html += "</div>\n"
-        html += "<br/></form>\n"
-        html += "</body>\n"
-        html += "</html>\n"
+        html += u"<b>"
+        html += _(u"Select Language")
+        html += u"</b>\n"
+        html += common.select("locale", self.localeNames, "", 
+                              self.config.locale)
+        html += u"<br/>(restart eXe to apply to all)"
+        html += u"<div id=\"editorButtons\"> \n"     
+        html += u"<br/>" 
+        html += common.submitButton("ok", _("OK"))
+        html += common.submitButton("cancel", _("Cancel"))
+        html += u"</div>\n"
+        html += u"</div>\n"
+        html += u"<br/></form>\n"
+        html += u"</body>\n"
+        html += u"</html>\n"
         return html.encode('utf8')
-    render_POST = render_GET
 
 
+    def render_POST(self, request):
+        """
+        Process the preferences selection
+        """
+        log.debug("render_POST " + repr(request.args))
+        
+        if "ok" in request.args:
+            self.config.locale = request.args["locale"][0]
+            print self.config.locale
+            self.config.configParser.set('user', 'locale', self.config.locale)
+
+        html  = common.docType()
+        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<head></head>\n"
+        html += u"<body onload=\"self.close();\"></body>\n"
+        html += u"</html>\n"
+        return html.encode('utf8')

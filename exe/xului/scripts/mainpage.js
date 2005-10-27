@@ -382,7 +382,7 @@ function toolsEditor() {
 
 // Launch the Preferences Window
 function toolsPreferences() {
-    var features  = "width=800,height=700,status=no,resizeable=yes,"+
+    var features  = "width=500,height=200,status=no,resizeable=yes,"+
                     "scrollbars=yes";
     var editorWin = window.open("/preferences", "Preferences", features);
 }
@@ -399,11 +399,11 @@ function metadataEditor() {
                                        "metadata editor", features);}
 
 // load the About page
-
 function aboutPage() {
 	var features = "width=300,height=200,status=1,resizable=1,"+
 			"left=260,top=200";
 	var aboutWin = window.open ("/about", "About", features);}
+
 
 // Appends an iDevice
 // XH means that the func is actually called by the server over xmlhttp

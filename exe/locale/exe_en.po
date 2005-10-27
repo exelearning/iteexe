@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-26 18:09+1300\n"
+"POT-Creation-Date: 2005-10-28 10:01+1300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,14 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:58
 msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
+msgstr ""
+
+#: exe/webui/externalurlblock.py:66
+msgid "<strong>Frame Height:</strong> "
+msgstr ""
+
+#: exe/webui/externalurlblock.py:60
+msgid "<strong>url:</strong> "
 msgstr ""
 
 #: exe/engine/package.py:102
@@ -115,7 +123,7 @@ msgstr ""
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr ""
 
-#: exe/webui/testquestionelement.py:113 exe/webui/multichoiceblock.py:125
+#: exe/webui/multichoiceblock.py:125 exe/webui/testquestionelement.py:113
 msgid "Add another option"
 msgstr ""
 
@@ -127,7 +135,7 @@ msgstr ""
 msgid "Add images"
 msgstr ""
 
-#: exe/webui/testquestionelement.py:96 exe/webui/multichoiceblock.py:106
+#: exe/webui/multichoiceblock.py:106 exe/webui/testquestionelement.py:96
 msgid "Alternatives"
 msgstr ""
 
@@ -169,7 +177,7 @@ msgstr ""
 msgid "Attachment %s has no parentNode"
 msgstr ""
 
-#: exe/webui/editorpane.py:269 exe/webui/propertiespane.py:100
+#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:269
 msgid "Author"
 msgstr ""
 
@@ -201,11 +209,11 @@ msgstr ""
 msgid "Click here"
 msgstr ""
 
-#: exe/webui/editorpane.py:308 exe/webui/editorpane.py:309
-#: exe/webui/editorpane.py:330 exe/webui/truefalseelement.py:130
-#: exe/webui/truefalseelement.py:131 exe/webui/block.py:236
-#: exe/webui/common.py:211 exe/webui/common.py:212
-#: exe/webui/multichoiceblock.py:156 exe/webui/multichoiceblock.py:157
+#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:156
+#: exe/webui/multichoiceblock.py:157 exe/webui/common.py:211
+#: exe/webui/common.py:212 exe/webui/truefalseelement.py:130
+#: exe/webui/truefalseelement.py:131 exe/webui/editorpane.py:308
+#: exe/webui/editorpane.py:309 exe/webui/editorpane.py:330
 msgid "Close"
 msgstr ""
 
@@ -221,7 +229,7 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: exe/webui/testquestionelement.py:99 exe/webui/multichoiceblock.py:109
+#: exe/webui/multichoiceblock.py:109 exe/webui/testquestionelement.py:99
 #: exe/webui/optionelement.py:129
 msgid "Correct"
 msgstr ""
@@ -244,7 +252,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: exe/webui/truefalseelement.py:110 exe/webui/testoptionelement.py:91
+#: exe/webui/testoptionelement.py:91 exe/webui/truefalseelement.py:110
 #: exe/webui/optionelement.py:97
 msgid "Delete option"
 msgstr ""
@@ -324,8 +332,8 @@ msgstr ""
 msgid "Each person posts one discussion"
 msgstr ""
 
-#: exe/webui/editorpane.py:206 exe/webui/block.py:320
-#: exe/webui/editorpage.py:200
+#: exe/webui/block.py:320 exe/webui/editorpage.py:200
+#: exe/webui/editorpane.py:206
 msgid "Edit"
 msgstr ""
 
@@ -365,14 +373,18 @@ msgid ""
 "aspects of the case like, characters, timeliness, relevance, dilemmas."
 msgstr ""
 
-#: exe/xului/mainpage.py:297 exe/xului/mainpage.py:316
+#: exe/xului/mainpage.py:266 exe/xului/mainpage.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr ""
 
-#: exe/xului/mainpage.py:447 exe/xului/mainpage.py:465
+#: exe/xului/mainpage.py:416 exe/xului/mainpage.py:434
 #, python-format
 msgid "Exported to %s"
+msgstr ""
+
+#: exe/engine/externalurlidevice.py:37
+msgid "External Web Site"
 msgstr ""
 
 #: exe/webui/truefalseblock.py:85
@@ -383,8 +395,8 @@ msgstr ""
 msgid "False"
 msgstr ""
 
-#: exe/engine/idevicestore.py:230 exe/webui/truefalseblock.py:88
-#: exe/webui/multichoiceblock.py:113 exe/webui/questionelement.py:85
+#: exe/engine/idevicestore.py:230 exe/webui/multichoiceblock.py:113
+#: exe/webui/questionelement.py:85 exe/webui/truefalseblock.py:88
 msgid "Feedback"
 msgstr ""
 
@@ -392,7 +404,7 @@ msgstr ""
 msgid "Feedback: "
 msgstr ""
 
-#: exe/xului/mainpage.py:364 exe/xului/mainpage.py:407
+#: exe/xului/mainpage.py:333 exe/xului/mainpage.py:376
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr ""
@@ -407,6 +419,14 @@ msgstr ""
 
 #: exe/webui/imagewithtextblock.py:76 exe/webui/flashwithtextblock.py:76
 msgid "Float:"
+msgstr ""
+
+#: exe/engine/externalurlidevice.py:39
+msgid ""
+"For use if you need to include an external\n"
+"web page into your content. Rather than popup an external window, which can have some\n"
+"problematic usability consequences, this iDevice loads the appropriate content \n"
+"into an inline frame."
 msgstr ""
 
 #: exe/webui/forumblock.py:131
@@ -450,8 +470,8 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: exe/webui/truefalseelement.py:124 exe/webui/truefalseelement.py:134
-#: exe/webui/truefalseblock.py:90 exe/webui/multichoiceblock.py:160
+#: exe/webui/multichoiceblock.py:160 exe/webui/truefalseelement.py:124
+#: exe/webui/truefalseelement.py:134 exe/webui/truefalseblock.py:90
 msgid "Hint"
 msgstr ""
 
@@ -586,7 +606,7 @@ msgid ""
 "learning tasks."
 msgstr ""
 
-#: exe/webui/testquestionelement.py:102 exe/webui/multichoiceblock.py:110
+#: exe/webui/multichoiceblock.py:110 exe/webui/testquestionelement.py:102
 msgid "Option"
 msgstr ""
 
@@ -594,12 +614,12 @@ msgstr ""
 msgid "Outline"
 msgstr ""
 
-#: exe/xului/mainpage.py:267
+#: exe/xului/mainpage.py:236
 #, python-format
 msgid "Package saved to: %s"
 msgstr ""
 
-#: exe/webui/editorpane.py:321 exe/webui/block.py:227
+#: exe/webui/block.py:227 exe/webui/editorpane.py:321
 msgid "Pedagogical Help"
 msgstr ""
 
@@ -607,7 +627,7 @@ msgstr ""
 msgid "Pedagogical Tip"
 msgstr ""
 
-#: exe/webui/editorpane.py:145 exe/webui/editorpage.py:101
+#: exe/webui/editorpage.py:101 exe/webui/editorpane.py:145
 msgid "Please enter an idevice name."
 msgstr ""
 
@@ -671,7 +691,7 @@ msgid ""
 "reading may also add value to the activity."
 msgstr ""
 
-#: exe/webui/editorpane.py:272 exe/webui/block.py:241
+#: exe/webui/block.py:241 exe/webui/editorpane.py:272
 msgid "Purpose"
 msgstr ""
 
@@ -679,7 +699,7 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: exe/webui/testquestionelement.py:86 exe/webui/multichoiceblock.py:97
+#: exe/webui/multichoiceblock.py:97 exe/webui/testquestionelement.py:86
 msgid "Question:"
 msgstr ""
 
@@ -734,6 +754,7 @@ msgid "SUBMIT ANSWERS"
 msgstr ""
 
 #: exe/webui/editorpage.py:180 exe/webui/editorpage.py:183
+#: exe/webui/preferencespage.py:102
 msgid "Save"
 msgstr ""
 
@@ -777,11 +798,11 @@ msgstr ""
 msgid "Some emphasis"
 msgstr ""
 
-#: exe/xului/mainpage.py:296 exe/xului/mainpage.py:315
+#: exe/xului/mainpage.py:265 exe/xului/mainpage.py:284
 msgid "Sorry, wrong file format"
 msgstr ""
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:313
+#: exe/xului/mainpage.py:263 exe/xului/mainpage.py:282
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -824,7 +845,7 @@ msgstr ""
 msgid "Taxonomy"
 msgstr ""
 
-#: exe/engine/imagewithtextidevice.py:72 exe/engine/flashwithtextidevice.py:46
+#: exe/engine/flashwithtextidevice.py:46 exe/engine/imagewithtextidevice.py:72
 msgid "Text"
 msgstr ""
 
@@ -958,14 +979,15 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: exe/engine/multichoiceidevice.py:58 exe/engine/galleryidevice.py:254
-#: exe/engine/casestudyidevice.py:57 exe/engine/clozeidevice.py:45
-#: exe/engine/imagewithtextidevice.py:38 exe/engine/forumidevice.py:38
-#: exe/engine/quiztestidevice.py:82 exe/engine/truefalseidevice.py:59
-#: exe/engine/reflectionidevice.py:44 exe/engine/idevicestore.py:213
+#: exe/engine/wikipediaidevice.py:50 exe/engine/casestudyidevice.py:57
+#: exe/engine/multichoiceidevice.py:58 exe/engine/freetextidevice.py:38
+#: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
+#: exe/engine/flashwithtextidevice.py:39 exe/engine/imagewithtextidevice.py:38
+#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:59
+#: exe/engine/externalurlidevice.py:38 exe/engine/idevicestore.py:213
 #: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:267
-#: exe/engine/wikipediaidevice.py:50 exe/engine/freetextidevice.py:38
-#: exe/engine/attachmentidevice.py:41 exe/engine/flashwithtextidevice.py:39
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
+#: exe/engine/galleryidevice.py:254
 msgid "University of Auckland"
 msgstr ""
 
@@ -1036,7 +1058,8 @@ msgstr ""
 msgid "eXe"
 msgstr ""
 
-#: exe/webui/common.py:53 exe/webui/editorpage.py:162
+#: exe/webui/editorpage.py:162 exe/webui/common.py:53
+#: exe/webui/preferencespage.py:89
 msgid "eXe : elearning XHTML editor"
 msgstr ""
 
@@ -1102,6 +1125,21 @@ msgstr ""
 msgid "D"
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="file-new-key"
+#: key="N" oncommand="fileNew()">
+msgid "N"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key modifiers="control"
+#: id="file-save-key" key="S" oncommand="fileSave()">
+msgid "S"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key modifiers="control"
+#: id="file-open-key" key="O" oncommand="fileOpen()">
+msgid "O"
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<menu accesskey="f" id="file-menu"
 #: label="File">
 msgid "label=\"File\" accesskey=\"f\""
@@ -1112,9 +1150,19 @@ msgstr ""
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="n"
+#: oncommand="fileNew()" key="file-new-key" label="New">
+msgid "label=\"New\" accesskey=\"n\""
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<menu accesskey="s" id="styles-menu"
 #: label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="o"
+#: oncommand="fileOpen()" key="file-open-key" label="Open">
+msgid "label=\"Open\" accesskey=\"o\""
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
@@ -1123,18 +1171,53 @@ msgstr ""
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
+#: oncommand="fileSave()" key="file-save-key" label="Save">
+msgid "label=\"Save\" accesskey=\"s\""
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<menu accesskey="h" id="help-menu"
 #: label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
+#: oncommand="fileSaveAs()" label="Save As...">
+msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<label value="debugInfo">
 msgid "debugInfo"
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="export-menu"
+#: label="Export">
+msgid "label=\"Export\" accesskey=\"e\""
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
+#: oncommand="aboutPage()" label="About">
+msgid "label=\"About\" accesskey=\"a\""
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
+#: oncommand="exportPackage('scorm')" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="t"
+#: oncommand="loadTutorial()" label="Tutorial">
+msgid "label=\"Tutorial\" accesskey=\"t\""
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
 #: label="Add Page">
 msgid "Add Page"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
+#: oncommand="exportPackage('ims')" label="IMS Content Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
@@ -1146,6 +1229,25 @@ msgstr ""
 msgid "outlinePane"
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
+#: oncommand="exportPackage('webSite')" key="file-export-website-key"
+#: label="Web Site">
+msgid "label=\"Web Site\" accesskey=\"w\""
+msgstr ""
+
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
 msgid "iDevicePane"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="p"
+#: oncommand="exportPackage('singlePage')" label="Single Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<tab label="Authoring">
+msgid "Authoring"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<tab label="Properties">
+msgid "Properties"
 msgstr ""
