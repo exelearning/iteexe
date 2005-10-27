@@ -81,7 +81,6 @@ You can get the gettext tools from the following sites:
 import os
 import sys
 import re
-from exe.engine.path import Path
 
 # Try to work even with no python path
 try:
@@ -758,7 +757,9 @@ def unixpath(thePath) :
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 # 
 if __name__ == "__main__":
-    import getopt     # command line parsing
+    # Move to the right dir
+    (Path(sys.argv[0]).dirname()/'..').chdir()
+    # Fill out the options
     option = {}
     option['forceEnglish'] = 0
     option['mo'] = 0
