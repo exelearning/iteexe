@@ -153,8 +153,6 @@ class EditorPage(RenderableResource):
         html += "<style type=\"text/css\">\n"
         html += "@import url(/css/exe.css);\n"
         html += "@import url(/style/standardwhite/content.css);</style>\n"
-        html += '<script type="text/javascript" src="/scripts/fckeditor.js">'
-        html += '</script>\n'
         html += '<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += '</script>\n'
         html += '<script type="text/javascript" src="/scripts/common.js">'
