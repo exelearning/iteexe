@@ -279,6 +279,8 @@ class ClozeField(Field):
         self.parts = []
         self._encodedContent = ''
         self.feedback = ""
+        self.instructionsForLearners = \
+        _(u"""Read the paragraph below and fill in the missing words""")
 
     # Property handlers
     def set_encodedContent(self, value):

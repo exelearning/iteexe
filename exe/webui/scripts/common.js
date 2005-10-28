@@ -334,7 +334,7 @@ function answerAll(length, ident){
         document.getElementById("clz"+ident+i).value = wordArray[i];
         document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
     }
-    showFeedback(ident, 1)
+ //   showFeedback(ident, 0)
 }
 
 // show or hide the feedback for cloze idevice

@@ -319,6 +319,10 @@ class ClozeElement(Element):
         feedbackid = 'feedback%s' % self.id
         if feedbackid in request.args:
             self.field.feedback = request.args[feedbackid][0]
+            
+        intructionsid = 'instruction%s' % self.id
+        if intructionsid in request.args:
+            self.field.instructionForLearners = request.args[intructionsid][0]
 
     @staticmethod
     def renderEditScripts():
@@ -374,11 +378,19 @@ class ClozeElement(Element):
         feedback = feedback.replace("'", "\\'")
         feedback = feedback.replace('"', '\\"')
         
+        instruction = self.field.instructionsForLearners.replace("\r", "")
+        instruction = instruction.replace("\n", "\\n")
+        instruction = instruction.replace("'", "\\'")
+        instruction = instruction.replace('"', '\\"')
+        
         html = [
             # The field name and instruction button
             u'<p>',
             u'  <b>%s</b>' % self.field.name,
             common.elementInstruc(self.id, self.field.instruc),
+            u'</p>',
+            u'<p>',
+            common.textArea('instructions'+self.id, instruction),
             u'</p>',
             # Render the iframe box
             u'<p>',
@@ -395,7 +407,7 @@ class ClozeElement(Element):
             u'</p>',
             # Render our toolbar
             u'<p>',
-            u'  <input type="button" value="%s" ' % _("Gap")+
+            u'  <input type="button" value="%s" ' % _("Hide Word")+
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
             u'</p>',
             u'<br/><b>%s</b><br/>' % _(u"Feedback: "),
@@ -408,6 +420,7 @@ class ClozeElement(Element):
         Shows the text with inputs for the missing parts
         """
         html = []
+        html += ['<p><b>%s</b></p>\n' % self.field.instructionsForLearners]
         # Mix the parts together
         length = 0
         words  = ""
@@ -422,9 +435,15 @@ class ClozeElement(Element):
                     '        id="clz%s%s"' % (self.id, i),
                     '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
                     '    style="width:%sem"/>\n' % len(missingWord)]        
+        
         html += ['<br/><br/><input type="button" ',
                  'value = "%s"' % _(u"Get score"),
                  'onclick="calScore(\'%s\',\'%s\')"/>\n' % (length, self.id)]
+        
+        if self.field.feedback <> "":
+            html += ['<input type="button" ',
+                     'value = "%s"' % _(u"Feedback"),
+                     'onclick="showFeedback(\'%s\',1)"/>\n' % self.id]
         
         words = words[:-1]
         varString = "wordArray= new Array(%s); " % words
