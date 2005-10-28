@@ -94,21 +94,29 @@ class TrueFalseElement(object):
         hint = hint.replace("'", "\\'")
         hint = hint.replace('"', '\\"')
         
-        html = u"<tr><td>"
+        html  = _("Question")
+        html += common.elementInstruc("question"+self.id, self.idevice.questionInstruc)
+
         html += common.richTextArea(self.questionId, question)
-        html += u"</td><td>\n"
+        html += _("True") + " " 
         html += common.option(self.keyId, self.question.isCorrect, "true") 
-        #html += u"</td><td>\n"
+        html += _("False") + " " 
         html += common.option(self.keyId, not self.question.isCorrect, "false")
-        html += u"</td><td></td><td>\n"
+        html += "<br/><br/>\n"
+
+        html += common.elementInstruc("key"+self.id, self.idevice.keyInstruc)
+        html += _("Feedback")
+        html += common.elementInstruc("feed"+self.id, self.idevice.feedbackInstruc)
         html += common.richTextArea(self.feedbackId, feedback)
-        html += u"</td><td>\n"
+
+        html += _("Hint")
+        html += common.elementInstruc("hint"+self.id, self.idevice.hintInstruc)
+
         html += common.richTextArea(self.hintId, hint)
-        html += u"</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
-                                   _("Delete option"))
-        html += u"</td></tr>\n"
+                                   _("Delete question"))
+        html += "<br/><br/>\n"
         return html
     
     def renderQuestionView(self):
@@ -158,7 +166,7 @@ class TrueFalseElement(object):
         html  = u"<br/><br/><b>" +unicode(self.index + 1) + ". " 
         html += self.question.question + "</b><br/><br/>"
         html += _("True") + " " 
-        html += self.__option(0, 2, "true") + "\n"
+        html += self.__option(0, 2, "true") + " \n"
         html += _("False") + " " 
         html += self.__option(1, 2, "false") + "\n"
        

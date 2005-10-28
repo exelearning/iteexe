@@ -76,29 +76,10 @@ class TrueFalseBlock(Block):
         html  = u"<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
-        html += u"<table width =\"100%%\">"
-        html += u"<thead>"
-        html += u"<tr>"
-        html += u"<th>%s " % _("Questions")
-        html += common.elementInstruc("question"+self.id, self.questionInstruc)
-        html += u"</th><th>&nbsp;%s&nbsp;&nbsp;/&nbsp;&nbsp;%s&nbsp;" % (_("T"),
-                                                                        _("F"))
-        html += u"</th><th>"
-        html += common.elementInstruc("key"+self.id, self.keyInstruc)
-        html += u"</th><th>%s " % _("Feedback")
-        html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
-        html += u"</th><th>%s " % _("Hint")
-        html += common.elementInstruc("hint"+self.id, self.hintInstruc)
-        html += u"</th>"
-        html += u"</tr>"
-        html += u"</thead>"
-        html += u"<tbody>"
 
         for element in self.questionElements:
             html += element.renderEdit() 
             
-        html += u"</tbody>"
-        html += u"</table>\n"
         value = _(u"Add another question")    
         html += common.submitButton("addQuestion"+unicode(self.id), value)
         html += u"<br /><br />" + self.renderEditButtons()
