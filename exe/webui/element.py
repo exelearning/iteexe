@@ -389,9 +389,9 @@ class ClozeElement(Element):
             u'  <b>%s</b>' % self.field.name,
             common.elementInstruc(self.id, self.field.instruc),
             u'</p>',
-            u'<p>',
-            common.textArea('instructions'+self.id, instruction),
-            u'</p>',
+#            u'<p>',
+#            common.textArea('instructions'+self.id, instruction),
+#            u'</p>',
             # Render the iframe box
             u'<p>',
             u' <iframe id="%s" style="width:100%%;height:250px">' % \

@@ -71,7 +71,7 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
-        self.error = False
+        self.error          = False
 
 
     def getChild(self, name, request):

@@ -60,8 +60,6 @@ class PreferencesPage(RenderableResource):
 
     def render_GET(self, request):
         """Render the preferences"""
-        
-        # Processing 
         log.debug("render_GET")
         
         # Rendering
@@ -79,8 +77,6 @@ class PreferencesPage(RenderableResource):
         html += u"<div id=\"main\"> \n"     
         html += u"<form method=\"post\" action=\"\" "
         html += u"id=\"contentForm\" >"  
-        html += common.hiddenField("action")
-        html += common.hiddenField("object")
         html += u"<b>"
         html += _(u"Select Language")
         html += u"</b>\n"
@@ -107,12 +103,13 @@ class PreferencesPage(RenderableResource):
         
         if "ok" in request.args:
             self.config.locale = request.args["locale"][0]
-            print self.config.locale
+            self.config.locales[self.config.locale].install(unicode=True)
             self.config.configParser.set('user', 'locale', self.config.locale)
 
         html  = common.docType()
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head></head>\n"
-        html += u"<body onload=\"self.close();\"></body>\n"
+        html += u"<body onload=\"opener.location.reload(); "
+        html += u"self.close();\"></body>\n"
         html += u"</html>\n"
         return html.encode('utf8')

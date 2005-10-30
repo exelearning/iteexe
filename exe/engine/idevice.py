@@ -50,10 +50,10 @@ class Idevice(Persistable):
         self.id          = unicode(Idevice.nextId)
         Idevice.nextId  += 1
         self.parentNode  = parentNode
-        self._title       = title
-        self._author      = author
-        self._purpose     = purpose
-        self._tip         = tip
+        self._title      = title
+        self._author     = author
+        self._purpose    = purpose
+        self._tip        = tip
         self.icon        = icon
 
     # Properties
