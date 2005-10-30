@@ -82,7 +82,6 @@ class PreferencesPage(RenderableResource):
         html += u"</b>\n"
         html += common.select("locale", self.localeNames, "", 
                               self.config.locale)
-        html += u"<br/>(restart eXe to apply to all)"
         html += u"<div id=\"editorButtons\"> \n"     
         html += u"<br/>" 
         html += common.submitButton("ok", _("OK"))
