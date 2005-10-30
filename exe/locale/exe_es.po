@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-28 10:01+1300\n"
+"POT-Creation-Date: 2005-10-31 10:59+1300\n"
 "PO-Revision-Date: 2005-10-10 11:16+1200\n"
 "Last-Translator: Matthew Sherborne <matthew@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Asigne una etiqueta para el accesorio.  Es útil incluir el tipo de archivo. Eg. pdf, ppt, etc.</p><p>Incluyendo el tamaño también se recomienda de modo que después de que su paquete se exporte a un Web site, la gente tenga una idea cuánto tiempo llevaría la transferencia directa este accesorio. Por ejemplo: Ventas Forecast.doc (500kb)</p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
 
-#: exe/engine/clozeidevice.py:58
+#: exe/engine/clozeidevice.py:64
 msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
 msgstr "<p>Ingrese una parte del texto. Para hacer un espacio en blanco el usuario debe completar con un (_) entre los lados de la palabra, Por ejemplo _words_"
 
@@ -158,7 +158,7 @@ msgstr "Adiciona una imagen a tu Dispositivo de Educación. Habilita la selecci�
 msgid "Add another option"
 msgstr "Adicionar otra opción"
 
-#: exe/webui/truefalseblock.py:102 exe/webui/casestudyblock.py:93
+#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:93
 msgid "Add another question"
 msgstr "Adicionar otra pregunta"
 
@@ -217,7 +217,7 @@ msgstr "Adjuntar"
 msgid "Attachment %s has no parentNode"
 msgstr ""
 
-#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:269
+#: exe/webui/editorpane.py:269 exe/webui/propertiespane.py:100
 msgid "Author"
 msgstr "Autor"
 
@@ -225,7 +225,7 @@ msgstr "Autor"
 msgid "Can a student post to this forum?:"
 msgstr "Puede un estudiante estar al corriente a este foro?:"
 
-#: exe/webui/editorpane.py:209
+#: exe/webui/preferencespage.py:93 exe/webui/editorpane.py:209
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -237,7 +237,7 @@ msgstr "Precaución:"
 msgid "Case Study"
 msgstr "Caso de estudio"
 
-#: exe/webui/element.py:436
+#: exe/webui/element.py:440
 msgid "Clear"
 msgstr "Vaciar"
 
@@ -249,15 +249,15 @@ msgstr "Has click <strong>Selecto un Archivo</strong>, hojee al archivo que uste
 msgid "Click here"
 msgstr "Click aquí"
 
-#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:156
-#: exe/webui/multichoiceblock.py:157 exe/webui/common.py:211
-#: exe/webui/common.py:212 exe/webui/truefalseelement.py:130
-#: exe/webui/truefalseelement.py:131 exe/webui/editorpane.py:308
+#: exe/webui/common.py:211 exe/webui/common.py:212
+#: exe/webui/multichoiceblock.py:156 exe/webui/multichoiceblock.py:157
+#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:139
+#: exe/webui/block.py:236 exe/webui/editorpane.py:308
 #: exe/webui/editorpane.py:309 exe/webui/editorpane.py:330
 msgid "Close"
 msgstr "Cerrar"
 
-#: exe/engine/clozeidevice.py:57
+#: exe/engine/clozeidevice.py:63
 msgid "Cloze"
 msgstr "Cloze"
 
@@ -269,12 +269,12 @@ msgstr "Actividad de Espacios en Blanco"
 msgid "Content"
 msgstr "Contenido"
 
-#: exe/webui/multichoiceblock.py:109 exe/webui/testquestionelement.py:99
-#: exe/webui/optionelement.py:129
+#: exe/webui/multichoiceblock.py:109 exe/webui/optionelement.py:129
+#: exe/webui/testquestionelement.py:99
 msgid "Correct"
 msgstr "Correcto"
 
-#: exe/webui/truefalseelement.py:179
+#: exe/webui/truefalseelement.py:187
 msgid "Correct!"
 msgstr "Correcto!"
 
@@ -284,20 +284,20 @@ msgid ""
 "that describes a controversy."
 msgstr "Crear la historia del caso. Un buen caso es el que describe una polémica."
 
-#: exe/webui/editorelement.py:75 exe/webui/editorelement.py:114
-#: exe/webui/editorelement.py:154 exe/webui/block.py:206
-#: exe/webui/editorpage.py:178 exe/webui/editorpage.py:182
+#: exe/webui/block.py:206 exe/webui/editorpage.py:176
+#: exe/webui/editorpage.py:180 exe/webui/editorelement.py:75
+#: exe/webui/editorelement.py:114 exe/webui/editorelement.py:154
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
 msgid "Delete"
 msgstr "Eliminar"
 
-#: exe/webui/testoptionelement.py:91 exe/webui/truefalseelement.py:110
-#: exe/webui/optionelement.py:97
+#: exe/webui/testoptionelement.py:91 exe/webui/optionelement.py:97
 msgid "Delete option"
 msgstr "Eliminar opción"
 
-#: exe/webui/testquestionelement.py:91 exe/webui/questionelement.py:92
+#: exe/webui/questionelement.py:92 exe/webui/truefalseelement.py:118
+#: exe/webui/testquestionelement.py:91
 msgid "Delete question"
 msgstr "Eliminar pregunta"
 
@@ -344,11 +344,11 @@ msgstr "Topico de discusión:"
 msgid "Discussions and replies are allowed"
 msgstr "Las discuciones y las contestaciones son permitidas"
 
-#: exe/webui/element.py:224 exe/webui/element.py:482
+#: exe/webui/element.py:224 exe/webui/element.py:486
 msgid "Display as:"
 msgstr "Mostrar como:"
 
-#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
+#: exe/webui/block.py:198 exe/webui/propertiespane.py:123
 msgid "Done"
 msgstr "Hecho"
 
@@ -372,7 +372,7 @@ msgstr "ERROR: Block.renderViewContent llamado directamente"
 msgid "Each person posts one discussion"
 msgstr "Cada persona anuncia una discución"
 
-#: exe/webui/block.py:320 exe/webui/editorpage.py:200
+#: exe/webui/block.py:320 exe/webui/editorpage.py:198
 #: exe/webui/editorpane.py:206
 msgid "Edit"
 msgstr "Edita"
@@ -427,20 +427,17 @@ msgstr ""
 msgid "External Web Site"
 msgstr "Sitio Externo Del Web"
 
-#: exe/webui/truefalseblock.py:85
-msgid "F"
-msgstr "F"
-
-#: exe/webui/truefalseelement.py:162
+#: exe/webui/truefalseelement.py:103 exe/webui/truefalseelement.py:170
 msgid "False"
 msgstr "Falso"
 
-#: exe/engine/idevicestore.py:230 exe/webui/multichoiceblock.py:113
-#: exe/webui/questionelement.py:85 exe/webui/truefalseblock.py:88
+#: exe/engine/idevicestore.py:230 exe/webui/questionelement.py:85
+#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseelement.py:108
+#: exe/webui/element.py:430
 msgid "Feedback"
 msgstr "Información"
 
-#: exe/webui/element.py:401
+#: exe/webui/element.py:399
 msgid "Feedback: "
 msgstr "Regeneración:"
 
@@ -462,11 +459,12 @@ msgid "Float:"
 msgstr "Float:"
 
 #: exe/engine/externalurlidevice.py:39
+#, fuzzy
 msgid ""
 "For use if you need to include an external\n"
 "web page into your content. Rather than popup an external window, which can have some\n"
 "problematic usability consequences, this iDevice loads the appropriate content \n"
-"into an inline frame."
+"into an inline frame. Use only if your content will be online."
 msgstr ""
 "Usa esto si necesitas incluir un pagina de web external\n"
 "en su contendion, en cambio de abrir el pagina en una ventana extra;\n"
@@ -498,11 +496,7 @@ msgstr "Tipo del Foro:"
 msgid "Free Text"
 msgstr "Texto Libre"
 
-#: exe/webui/element.py:398
-msgid "Gap"
-msgstr "Espacio en blanco"
-
-#: exe/webui/element.py:426
+#: exe/webui/element.py:425
 msgid "Get score"
 msgstr "Consiga la cuenta"
 
@@ -510,12 +504,17 @@ msgstr "Consiga la cuenta"
 msgid "Group mode:"
 msgstr "Modo de Grupo:"
 
-#: exe/webui/forumblock.py:105 exe/webui/reflectionblock.py:100
+#: exe/webui/reflectionblock.py:100 exe/webui/forumblock.py:105
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/multichoiceblock.py:160 exe/webui/truefalseelement.py:124
-#: exe/webui/truefalseelement.py:134 exe/webui/truefalseblock.py:90
+#: exe/webui/element.py:396
+#, fuzzy
+msgid "Hide Word"
+msgstr "Ocultar"
+
+#: exe/webui/multichoiceblock.py:160 exe/webui/truefalseelement.py:112
+#: exe/webui/truefalseelement.py:132 exe/webui/truefalseelement.py:142
 msgid "Hint"
 msgstr "Sugerencia"
 
@@ -547,13 +546,18 @@ msgstr "Imagen con texto"
 msgid "Incorrect"
 msgstr "Incorrecto"
 
-#: exe/webui/truefalseelement.py:180
+#: exe/webui/truefalseelement.py:188
 msgid "Incorrect!"
 msgstr "Incorrecto!"
 
 #: exe/webui/common.py:198
 msgid "Instructions"
 msgstr "Instrucciones"
+
+#: exe/engine/clozeidevice.py:58 exe/engine/clozeidevice.py:89
+#, fuzzy
+msgid "Instructions For Learners"
+msgstr "Instrucciones para la terminación"
 
 #: exe/webui/common.py:203 exe/webui/common.py:206
 msgid "Instructions for completion"
@@ -603,7 +607,7 @@ msgstr "Pregunta Multiple-Elección"
 msgid "Name"
 msgstr "Nombre"
 
-#: exe/webui/editorpage.py:205
+#: exe/webui/editorpage.py:203
 msgid "New iDevice"
 msgstr "Nuevo D.E."
 
@@ -638,6 +642,10 @@ msgstr "No Grupos"
 #: exe/webui/imagewithtextblock.py:79 exe/webui/flashwithtextblock.py:79
 msgid "None"
 msgstr "Ninguno"
+
+#: exe/webui/preferencespage.py:92
+msgid "OK"
+msgstr ""
 
 #: exe/engine/idevicestore.py:237 exe/engine/idevicestore.py:246
 msgid "Objectives"
@@ -743,7 +751,13 @@ msgstr "Proveer estudiantes con estructura a su actividad de la lectura. Esta ay
 msgid "Purpose"
 msgstr "Proposito"
 
+#: exe/engine/clozeidevice.py:59 exe/engine/clozeidevice.py:90
+#, fuzzy
+msgid "Put instructions for learners here"
+msgstr "Ingrese aquí las instrucciones para la terminación."
+
 #: exe/webui/questionelement.py:82 exe/webui/questionelement.py:120
+#: exe/webui/truefalseelement.py:97
 msgid "Question"
 msgstr "Pregunta"
 
@@ -751,9 +765,9 @@ msgstr "Pregunta"
 msgid "Question:"
 msgstr "Pregunta:"
 
-#: exe/webui/truefalseblock.py:82
-msgid "Questions"
-msgstr "Preguntas"
+#: exe/engine/clozeidevice.py:60 exe/engine/clozeidevice.py:91
+msgid "Read the paragraph below and fill in the missing words"
+msgstr ""
 
 #: exe/engine/idevicestore.py:211
 msgid "Reading Activity"
@@ -801,12 +815,11 @@ msgstr "Exámen SCORM"
 msgid "SUBMIT ANSWERS"
 msgstr "Respuestas propuestas"
 
-#: exe/webui/editorpage.py:180 exe/webui/editorpage.py:183
-#: exe/webui/preferencespage.py:102
+#: exe/webui/editorpage.py:178 exe/webui/editorpage.py:181
 msgid "Save"
 msgstr "Salvar"
 
-#: exe/webui/editorpage.py:184
+#: exe/webui/editorpage.py:182
 msgid "Save as"
 msgstr "Salvar como"
 
@@ -814,11 +827,16 @@ msgstr "Salvar como"
 msgid "Section"
 msgstr "Sección"
 
+#: exe/webui/preferencespage.py:85
+#, fuzzy
+msgid "Select Language"
+msgstr "Seleccionar una imagen"
+
 #: exe/webui/attachmentblock.py:76
 msgid "Select a file"
 msgstr "Seleccionar un archivo"
 
-#: exe/webui/element.py:480
+#: exe/webui/element.py:484
 msgid "Select a flash file"
 msgstr "Seleccionar un archivo de flash"
 
@@ -838,7 +856,7 @@ msgstr "Grupos separados"
 msgid "Show"
 msgstr "Mostrar"
 
-#: exe/webui/element.py:433
+#: exe/webui/element.py:437
 msgid "Show answers"
 msgstr "demuestre las respuestas"
 
@@ -880,10 +898,6 @@ msgstr "Materia:"
 #: exe/webui/quiztestblock.py:353
 msgid "Submit Answer"
 msgstr "Respuesta propuesta"
-
-#: exe/webui/truefalseblock.py:84
-msgid "T"
-msgstr "T"
 
 #: exe/engine/clozeidevice.py:50
 msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
@@ -975,7 +989,7 @@ msgstr "Indica la respuesta correcta, click al radio botón al lado de la opció
 msgid "Topic"
 msgstr "Tópico"
 
-#: exe/webui/truefalseelement.py:160
+#: exe/webui/truefalseelement.py:101 exe/webui/truefalseelement.py:168
 msgid "True"
 msgstr "Verdadero"
 
@@ -1034,7 +1048,7 @@ msgstr ""
 msgid "Type the learning objectives for this resource."
 msgstr "Tipear los objetivos de la enseñanza para este recurso."
 
-#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
+#: exe/engine/truefalseidevice.py:67 exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
 msgstr "Tipear la pregunta raiz aquí."
 
@@ -1050,15 +1064,15 @@ msgstr "Inabilitado a conectarse"
 msgid "Unit"
 msgstr "Unidad"
 
-#: exe/engine/wikipediaidevice.py:50 exe/engine/casestudyidevice.py:57
-#: exe/engine/multichoiceidevice.py:58 exe/engine/freetextidevice.py:38
-#: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
-#: exe/engine/flashwithtextidevice.py:39 exe/engine/imagewithtextidevice.py:38
-#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:59
-#: exe/engine/externalurlidevice.py:38 exe/engine/idevicestore.py:213
-#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:267
-#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
-#: exe/engine/galleryidevice.py:254
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/forumidevice.py:38 exe/engine/galleryidevice.py:254
+#: exe/engine/wikipediaidevice.py:50 exe/engine/truefalseidevice.py:59
+#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:39
+#: exe/engine/imagewithtextidevice.py:38 exe/engine/attachmentidevice.py:41
+#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
+#: exe/engine/idevicestore.py:213 exe/engine/idevicestore.py:239
+#: exe/engine/idevicestore.py:267
 msgid "University of Auckland"
 msgstr "Universidad de Auckland"
 
@@ -1132,16 +1146,16 @@ msgstr "Sí, inicialmente"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Tú nuevo Dispositivo de Educación aparecerá en el panel del Dispositivo de Educación con este título. Esto es un campo obligatorio y te pedirá que ingreses una etiqueta si tú intentas no ingresar nada."
 
-#: exe/webui/element.py:238 exe/webui/element.py:494
+#: exe/webui/element.py:238 exe/webui/element.py:498
 msgid "blank for original size"
 msgstr "blanco para el tamaño original"
 
-#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
+#: exe/export/scormexport.py:208 exe/export/imsexport.py:176
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/editorpage.py:162 exe/webui/common.py:53
-#: exe/webui/preferencespage.py:89
+#: exe/webui/common.py:53 exe/webui/preferencespage.py:74
+#: exe/webui/editorpage.py:160
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor elearning de XHTML"
 
@@ -1341,6 +1355,18 @@ msgstr "Autor"
 #, fuzzy
 msgid "Properties"
 msgstr "Propiedades del proyecto"
+
+#~ msgid "F"
+#~ msgstr "F"
+
+#~ msgid "Gap"
+#~ msgstr "Espacio en blanco"
+
+#~ msgid "Questions"
+#~ msgstr "Preguntas"
+
+#~ msgid "T"
+#~ msgstr "T"
 
 #~ msgid "/Debug/Python break"
 #~ msgstr "/Debug/Python break"

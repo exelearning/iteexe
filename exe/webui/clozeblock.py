@@ -25,7 +25,7 @@ import logging
 import urllib
 from exe.webui.block   import Block
 from exe.webui         import common
-from exe.webui.element import ClozeElement
+from exe.webui.element import ClozeElement, TextAreaElement
 
 
 log = logging.getLogger(__name__)
@@ -41,7 +41,11 @@ class ClozeBlock(Block):
         Pre-create our field ids
         """
         Block.__init__(self, parent, idevice)
+        self.instructionElement = \
+            TextAreaElement(idevice.instructionsForLearners)
         self.clozeElement = ClozeElement(idevice.content)
+        self.feedbackElement = \
+            TextAreaElement(idevice.feedback)
 
     def process(self, request):
         """
@@ -49,8 +53,10 @@ class ClozeBlock(Block):
         """
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]
+        self.instructionElement.process(request)
         if object == self.id:
             self.clozeElement.process(request)
+        self.feedbackElement.process(request)
         Block.process(self, request)
 
     def renderEdit(self, style):
@@ -63,7 +69,13 @@ class ClozeBlock(Block):
             u'<div class="iDevice emphasis%s">' % \
               unicode(self.idevice.emphasis),
             common.textInput("title"+self.id, self.idevice.title),
+            u'<p>',
+            self.instructionElement.renderEdit(),
+            u'</p>',
             self.clozeElement.renderEdit(),
+            u'<p>',
+            self.feedbackElement.renderEdit(),
+            u'</p>',
             self.renderEditButtons(),
             u'</div>'
             ]
@@ -73,14 +85,28 @@ class ClozeBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = u'<script type="text/javascript" src="common.js"></script>\n'
-        html += u'<div class="iDevice_inner">\n'
-        html += u' <p id="clozeContent%s">' % self.id
-        html += self.clozeElement.renderView()
-        html += u'</div>\n'
-        html += u'  </p>'
-        
-        return html
+        # Only show feedback button if feedback is present
+        if self.feedbackElement.field.content:
+            # Cloze Idevice needs id of div for feedback content
+            clozeContent = self.clozeElement.renderView(self.feedbackElement.id)
+        else:
+            clozeContent = self.clozeElement.renderView()
+        html = [
+            u'<script type="text/javascript" src="common.js"></script>\n',
+            u'<div class="iDevice_inner">\n',
+            u' <p>',
+            self.instructionElement.renderView(),
+            u' </p>',
+            u' <p id="clozeContent%s">' % self.id,
+            clozeContent,
+            u' </p>',
+            u' <p>',
+            self.feedbackElement.renderView(False),
+            u' </p>',
+            u'</div>\n',
+            ]
+        return u'\n    '.join(html)
+
         
     
 from exe.engine.clozeidevice import ClozeIdevice

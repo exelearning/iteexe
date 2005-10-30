@@ -155,11 +155,15 @@ class TextAreaElement(Element):
         return html
 
 
-    def renderView(self):
+    def renderView(self, visible=True):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        return self.field.content
+        if visible:
+            visible = ' style="display:block"'
+        else:
+            visible = ' style="display:none"'
+        return '<div id="%s"%s>%s</div>' % (self.id, visible, self.field.content)
 
 # ===========================================================================
 class ImageElement(Element):
@@ -316,14 +320,6 @@ class ClozeElement(Element):
         if clozeid in request.args:
             self.field.encodedContent = request.args[clozeid][0]
             
-        feedbackid = 'feedback%s' % self.id
-        if feedbackid in request.args:
-            self.field.feedback = request.args[feedbackid][0]
-            
-        intructionsid = 'instruction%s' % self.id
-        if intructionsid in request.args:
-            self.field.instructionForLearners = request.args[intructionsid][0]
-
     @staticmethod
     def renderEditScripts():
         """
@@ -372,26 +368,12 @@ class ClozeElement(Element):
         assert haveRenderedEditScripts, \
             ("You must call ClozeElement.renderEditScripts() once for each "
              "idevice before calling self.renderEdit()")
-        
-        feedback = self.field.feedback.replace("\r", "")
-        feedback = feedback.replace("\n", "\\n")
-        feedback = feedback.replace("'", "\\'")
-        feedback = feedback.replace('"', '\\"')
-        
-        instruction = self.field.instructionsForLearners.replace("\r", "")
-        instruction = instruction.replace("\n", "\\n")
-        instruction = instruction.replace("'", "\\'")
-        instruction = instruction.replace('"', '\\"')
-        
         html = [
             # The field name and instruction button
             u'<p>',
             u'  <b>%s</b>' % self.field.name,
             common.elementInstruc(self.id, self.field.instruc),
             u'</p>',
-#            u'<p>',
-#            common.textArea('instructions'+self.id, instruction),
-#            u'</p>',
             # Render the iframe box
             u'<p>',
             u' <iframe id="%s" style="width:100%%;height:250px">' % \
@@ -410,17 +392,14 @@ class ClozeElement(Element):
             u'  <input type="button" value="%s" ' % _("Hide Word")+
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
             u'</p>',
-            u'<br/><b>%s</b><br/>' % _(u"Feedback: "),
-            common.richTextArea("feedback"+self.id, feedback)
             ]
         return '\n    '.join(html)
 
-    def renderView(self):
+    def renderView(self, feedbackId=None):
         """
         Shows the text with inputs for the missing parts
         """
         html = []
-        html += ['<p><b>%s</b></p>\n' % self.field.instructionsForLearners]
         # Mix the parts together
         length = 0
         words  = ""
@@ -440,10 +419,10 @@ class ClozeElement(Element):
                  'value = "%s"' % _(u"Get score"),
                  'onclick="calScore(\'%s\',\'%s\')"/>\n' % (length, self.id)]
         
-        if self.field.feedback <> "":
+        if feedbackId is not None:
             html += ['<input type="button" ',
                      'value = "%s"' % _(u"Feedback"),
-                     'onclick="showFeedback(\'%s\',1)"/>\n' % self.id]
+                     'onclick="toggleFeedback(\'%s\')"/>\n' % feedbackId]
         
         words = words[:-1]
         varString = "wordArray= new Array(%s); " % words
@@ -453,11 +432,7 @@ class ClozeElement(Element):
                  'onclick="%s;answerAll(%s,\'%s\')"/>' %(varString, 
                                                            length, self.id)]
         html += ['&nbsp;&nbsp;<input type="button" value = "%s"'% _(u"Clear"),
-                 'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id),
-                 '<br/><div id="s%s" class="feedback" style="' % self.id,
-                 'display: none;">',
-                 self.field.feedback,
-                 '</div><br/>']
+                 'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id)]
         return '\n'.join(html)
     
 # ===========================================================================

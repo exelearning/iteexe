@@ -297,7 +297,7 @@ function onClozeChange(ele, word) {
         ele.style.backgroundColor = "red";
 };
 
-// show or hide the feedback for reflection idevice
+// Show or hide the feedback for reflection idevice
 function showAnswer(id,isShow) {
     if (isShow==1) {
         document.getElementById("s"+id).style.display = "block";
@@ -310,23 +310,23 @@ function showAnswer(id,isShow) {
     }
 }
 
-//Clear all student answers for cloze idevice
+// Clear all student answers for cloze idevice
 function clearAll(length, ident) {
     for (i=0; i<length; i++) {
         document.getElementById("clz"+ident+i).value="";
         document.getElementById("clz"+ident+i).style.backgroundColor="white"
     }
-    showFeedback(ident, 0)
 }
 
 //Calculate the score for cloze idevice
 function calScore(length, ident) {
     score = 0
     for (i=0; i<length; i++) {
-        if (document.getElementById("clz"+ident+i).style.backgroundColor=="yellow")
+        var ele = document.getElementById("clz"+ident+i);
+        if (ele.style.backgroundColor=="yellow")
             score++
     }
-    alert("Your score is " + score +"/" + length + ".")
+    alert("Your score is " + score +"/" + length + ".");
 }
 
 function answerAll(length, ident){
@@ -334,14 +334,14 @@ function answerAll(length, ident){
         document.getElementById("clz"+ident+i).value = wordArray[i];
         document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
     }
- //   showFeedback(ident, 0)
 }
 
 // show or hide the feedback for cloze idevice
-function showFeedback(id,isShow) {
-    if (isShow==1) {
-        document.getElementById("s"+id).style.display = "block";
+function toggleFeedback(id) {
+    var ele = document.getElementById(id);
+    if (ele.style.display == "block") {
+        ele.style.display = "none";
     } else {
-        document.getElementById("s"+id).style.display = "none";
+        ele.style.display = "block";
     }
 }

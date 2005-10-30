@@ -24,7 +24,7 @@ Cloze Idevice. Shows a paragraph where the student must fill in the blanks
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.path    import Path
-from exe.engine.field   import ClozeField
+from exe.engine.field   import ClozeField, TextAreaField
 from exe.engine.persist import Persistable
 import Image
 log = logging.getLogger(__name__)
@@ -54,6 +54,12 @@ class ClozeIdevice(Idevice):
                             u"checking the student's entry, case is ignored"),
                             u"question",
                              parentNode)
+        self.instructionsForLearners = TextAreaField(
+            x_(u'Instructions For Learners'),
+            x_(u'Put instructions for learners here'),
+            x_(u'Read the paragraph below and '
+                'fill in the missing words'))
+        self.instructionsForLearners.idevice = self
         self._content = ClozeField(x_(u'Cloze'), 
             x_(u'<p>Enter a passage of text, to make a gap that the user must '
                 'fill put underscores (_) on either side of the word. For '
@@ -61,6 +67,8 @@ class ClozeIdevice(Idevice):
                 'The fith and last _words_ of this text need to be filled in '
                 'by the _student_'))
         self._content.idevice = self
+        self.feedback = TextAreaField(x_(u'Feedback'))
+        self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
 
     def getResources(self):
@@ -79,4 +87,11 @@ class ClozeIdevice(Idevice):
         Upgrades exe to v0.10
         """
         self._upgradeIdeviceToVersion1()
-    
+        self.instructionsForLearners = TextAreaField(
+            x_(u'Instructions For Learners'),
+            x_(u'Put instructions for learners here'),
+            x_(u'Read the paragraph below and '
+                'fill in the missing words'))
+        self.instructionsForLearners.idevice = self
+        self.feedback = TextAreaField(x_(u'Feedback'))
+        self.feedback.idevice = self
