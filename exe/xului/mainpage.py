@@ -216,6 +216,13 @@ class MainPage(RenderableLivePage):
         (This is used where the user goes file|open when their 
         package is changed and needs saving)
         """
+        exportDir  = Path(filename).dirname()
+        if not exportDir.exists():
+            client.alert(_(u'Cannot access directory named ') +
+                         unicode(exportDir) +
+                         _(u'. Please use ASCII names.'))
+            return
+        
         oldName = self.package.name
         # If the script is not passing a filename to us,
         # Then use the last filename that the package was loaded from/saved to
@@ -297,6 +304,13 @@ class MainPage(RenderableLivePage):
         """
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
+
+        exportDir  = Path(filename).dirname()
+        if not exportDir.exists():
+            client.alert(_(u'Cannot access directory named ') +
+                         unicode(exportDir) +
+                         _(u'. Please use ASCII names.'))
+            return
 
         if exportType == 'singlePage':
             self.exportSinglePage(client, filename, webDir, stylesDir)

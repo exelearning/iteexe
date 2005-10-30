@@ -433,6 +433,7 @@ function exportPackage(exportType) {
                          nsIFilePicker.modeGetFolder);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK) {
+
             nevow_clientToServerEvent('exportPackage', 
                                       this, 
                                       '', 
