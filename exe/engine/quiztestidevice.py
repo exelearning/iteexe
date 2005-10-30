@@ -133,6 +133,6 @@ class QuizTestIdevice(Idevice):
         """
         Upgrades to exe v0.10
         """
-        self._upgrageIdeviceToVersion1()
+        self._upgradeIdeviceToVersion1()
         
 # ===========================================================================

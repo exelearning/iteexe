@@ -115,4 +115,6 @@ strings = [
 
 for guess, answer in strings:
     print guess, answer,
+    
+    if guess = 
     print match(guess, answer) or 'FAIL'

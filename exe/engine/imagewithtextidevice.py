@@ -114,6 +114,6 @@ the piston with a brief textual summary of the key aspects of each visual.
         """
         Upgrades to exe v0.10
         """
-        self._upgrageIdeviceToVersion1()
+        self._upgradeIdeviceToVersion1()
         
 # ===========================================================================
