@@ -54,7 +54,11 @@ def match(guess, answer, verbose=False):
     for string1, string2 in [(answer, guess), (guess, answer)]:
         while string1:
             iterations += 1
-            misses = abs(len(string1) - len(string2))
+            print len(string1), len(string2) 
+            print string1, string2,
+            misses = (abs(len(string1) - len(string2)) +
+                     (abs(len(guess) - len(answer)))) / 2
+            print misses
             if verbose:
                 print 'checking:', string1
             for a, b in zip(string2, string1):
@@ -68,53 +72,54 @@ def match(guess, answer, verbose=False):
     return False
 
 strings = [
-    ('dog', 'dog'),
-    ('dog', 'log'),
-    ('dog', 'god'),
-    ('gogi', 'dog'),
-    ('dog', 'gogi'),
-    ('mispeld', 'misspelled'),
-    ('misspeld', 'misspelled'),
-    ('jerman', 'german'),
-    ('geramy', 'jeremy'),
-    ('jaramy', 'jeremy'),
-    ('jeeremy', 'jeremy'),
-    ('mi huse iz big', 'my house is big'),
-    ('my house is small', 'my house is big'),
-    ('mi house is small', 'my house is big'),
-    ('phisiotherapist', 'physiotherapist'),
-    ('fisiotherapist', 'physiotherapist'),
-    ('fisioterapist', 'physiotherapist'),
-    ('phisioterapist', 'physiotherapist'),
-    ('fisioterapis', 'physiotherapist'),
-    ('therapist', 'physiotherapist'),
-    ('fizzytherapist', 'physiotherapist'),
-    ('psycotherapist', 'physiotherapist'),
-    ('sextherapist', 'physiotherapist'),
-    ('geological', 'geological'),
-    ('giological', 'geological'),
-    ('giologikal', 'geological'),
-    ('giolofikal', 'geological'),
-    ('giologikal', 'geological'),
-    ('giological', 'geological'),
-    ('giologicaf', 'geological'),
-    ('giologicof', 'geological'),
-    ('gi1logicof', 'geological'),
-    ('xxxxxxxxx', 'geological'),
-    ('geologlog', 'geological'),
-    ('yes', 'no'),
-    ('true', 'false'),
-    ('y', 'yes'),
-    ('s', 'yes'),
-    ('es', 'yes'),
-    ('ye', 'yes'),
-    ('ss', 'yes'),
-    ('dino', 'dinos'),
-    ('di', 'dinos'),
+    #('dog', 'dog'),
+    #('dog', 'log'),
+    #('dog', 'god'),
+    #('gogi', 'dog'),
+    #('dog', 'gogi'),
+    #('mispeld', 'misspelled'),
+    #('misspeld', 'misspelled'),
+    #('jerman', 'german'),
+    #('geramy', 'jeremy'),
+    #('jaramy', 'jeremy'),
+    #('jeeremy', 'jeremy'),
+    #('mi huse iz big', 'my house is big'),
+    #('my house is small', 'my house is big'),
+    #('mi house is small', 'my house is big'),
+    #('phisiotherapist', 'physiotherapist'),
+    #('fisiotherapist', 'physiotherapist'),
+    #('fisioterapist', 'physiotherapist'),
+    #('phisioterapist', 'physiotherapist'),
+    #('fisioterapis', 'physiotherapist'),
+    #('therapist', 'physiotherapist'),
+    #('fizzytherapist', 'physiotherapist'),
+    #('psycotherapist', 'physiotherapist'),
+    #('sextherapist', 'physiotherapist'),
+    #('giol', 'geological'),
+    #('giolo', 'geological'),
+    ('fisio', 'phisiotherapist'),
+    #('geological', 'geological'),
+    #('giological', 'geological'),
+    #('giologikal', 'geological'),
+    #('giolofikal', 'geological'),
+    #('giologikal', 'geological'),
+    #('giological', 'geological'),
+    #('giologicaf', 'geological'),
+    #('giologicof', 'geological'),
+    #('gi1logicof', 'geological'),
+    #('xxxxxxxxx', 'geological'),
+    #('geologlog', 'geological'),
+    #('yes', 'no'),
+    #('true', 'false'),
+    #('y', 'yes'),
+    #('s', 'yes'),
+    #('es', 'yes'),
+    #('ye', 'yes'),
+    #('ss', 'yes'),
+    #('dino', 'dinos'),
+    #('di', 'dinos'),
     ]
 
 for guess, answer in strings:
     print guess, answer,
-    
-    if guess = 
     print match(guess, answer) or 'FAIL'
