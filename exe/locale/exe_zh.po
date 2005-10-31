@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-10-28 10:01+1300\n"
-"PO-Revision-Date: 2005-10-31 10:25+1200\n"
+"PO-Revision-Date: 2005-11-01 09:50+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr " "
 
 #: exe/webui/externalurlblock.py:66
 msgid "<strong>Frame Height:</strong> "
-msgstr ""
+msgstr "<strong>页框高度:</strong> "
 
 #: exe/webui/externalurlblock.py:60
 msgid "<strong>url:</strong> "
@@ -93,7 +93,7 @@ msgstr "描述这个iDevice的用途."
 
 #: exe/webui/forumblock.py:88
 msgid "A single simple discussion"
-msgstr ""
+msgstr "限每人发表一篇文章的讨论区"
 
 #: exe/webui/editorpane.py:201
 msgid "Actions"
@@ -189,7 +189,7 @@ msgstr "作者"
 
 #: exe/webui/forumblock.py:126
 msgid "Can a student post to this forum?:"
-msgstr ""
+msgstr "学生能否在此讨论区发表文章"
 
 #: exe/webui/editorpane.py:209
 msgid "Cancel"
@@ -314,15 +314,15 @@ msgstr "描述:"
 #: exe/webui/forumblock.py:171
 #: exe/webui/forumblock.py:188
 msgid "Discussion Topic"
-msgstr " "
+msgstr " 讨论主题"
 
 #: exe/webui/forumblock.py:147
 msgid "Discussion topic:"
-msgstr " "
+msgstr "  讨论主题:"
 
 #: exe/webui/forumblock.py:92
 msgid "Discussions and replies are allowed"
-msgstr ""
+msgstr "允许发表及回复文章"
 
 #: exe/webui/element.py:224
 #: exe/webui/element.py:482
@@ -692,7 +692,7 @@ msgid ""
 "pre-knowledge can be: <ul>\n"
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
-msgstr "课前知识是指学生为完成此课所应具备的知识.\n"
+msgstr "预备知识是指学生为完成此课所应具备的知识.\n"
 
 #: exe/webui/editorpane.py:204
 msgid "Preview"
@@ -708,7 +708,7 @@ msgstr "课件标题"
 
 #: exe/engine/attachmentidevice.py:67
 msgid "Provide a brief description of the file"
-msgstr " 提供文件的简单描述."
+msgstr "提供文件的简单描述."
 
 #: exe/engine/idevicestore.py:222
 msgid "Provide details of the reading materials learners should  read."
@@ -718,14 +718,14 @@ msgstr "提供读者所需的详细阅读资料"
 msgid ""
 "Provide feedback on the question.  This may\n"
 "be a summary of the main points or concepts."
-msgstr " "
+msgstr "提供这个问题的评语. 可以是重点或概念的概述."
 
 #: exe/engine/idevicestore.py:227
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
 "faculty."
-msgstr " "
+msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校的模式."
 
 #: exe/engine/idevicestore.py:214
 msgid ""
@@ -776,7 +776,7 @@ msgid ""
 "these as a piece of academic work. Journals, diaries, profiles and portfolios \n"
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
-msgstr " "
+msgstr "立时回应是一种常用于联系理论和实践的教学方式. 立时回应任务常给学生在提交一份学术工作前提供一个观察及对所观察的事物回应的机会."
 
 #: exe/webui/reflectionblock.py:75
 msgid "Reflective question:"
@@ -942,7 +942,7 @@ msgstr " "
 
 #: exe/engine/galleryidevice.py:255
 msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
-msgstr " "
+msgstr "此iDevice以简单明了的形式表现一组影像. 例如可用来显示许多样本答案图片."
 
 #: exe/engine/clozeidevice.py:46
 msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
@@ -971,7 +971,7 @@ msgstr "提示:"
 msgid ""
 "To indicate the correct answer, click the \n"
 "radio button next to the correct option."
-msgstr " "
+msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 
 #: exe/engine/package.py:52
 msgid "Topic"
@@ -991,7 +991,7 @@ msgid ""
 "the learner must decide if the statement is true. This type of question works \n"
 "well for factual information and information that lends itself to either/or \n"
 "responses."
-msgstr " "
+msgstr "是非题提供一个陈述句, 让学生判断其陈述是否正确."
 
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
@@ -999,7 +999,7 @@ msgid ""
 "must choose into the appropriate options box. You can add options by clicking \n"
 "on the \"ADD ANOTHER OPTION\" button. You can delete options by clicking on the \n"
 "\"x\" next to each option."
-msgstr " "
+msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
 
 #: exe/engine/multichoiceidevice.py:97
 msgid ""
@@ -1008,7 +1008,7 @@ msgid ""
 "box, eXe will automatically provide default feedback as follows: \"Correct \n"
 "answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other alternatives."
-msgstr " "
+msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项."
 
 #: exe/engine/truefalseidevice.py:69
 msgid ""
@@ -1017,7 +1017,7 @@ msgid ""
 "this box, eXe will automatically provide default feedback as follows: \n"
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
-msgstr " "
+msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项."
 
 #: exe/engine/idevicestore.py:247
 msgid "Type the learning objectives for this resource."
@@ -1074,7 +1074,7 @@ msgstr ""
 
 #: exe/webui/forumblock.py:142
 msgid "Visible to students:"
-msgstr " "
+msgstr "可让学生看到"
 
 #: exe/engine/idevicestore.py:221
 msgid "What to read"
@@ -1229,56 +1229,56 @@ msgstr ""
 #: accesskey="f" id="file-menu"
 #: label="File">
 msgid "label=\"File\" accesskey=\"f\""
-msgstr ""
+msgstr "label=\"文件\" accesskey=\"f\""
 
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="t" id="tools-menu"
 #: label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr ""
+msgstr "label=\"工具\" accesskey=\"t\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="n"
 #: oncommand="fileNew()" key="file-new-key" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr ""
+msgstr "label=\"新建文件\" accesskey=\"n\""
 
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="s" id="styles-menu"
 #: label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"页面风格\" accesskey=\"s\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="o"
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr ""
+msgstr "label=\"打开\" accesskey=\"o\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr ""
+msgstr "label=\"重载\" accesskey=\"r\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="s"
 #: oncommand="fileSave()" key="file-save-key" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"保存\" accesskey=\"s\""
 
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="h" id="help-menu"
 #: label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr ""
+msgstr "label=\"帮助\" accesskey=\"h\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="a"
 #: oncommand="fileSaveAs()" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"另存为...\" accesskey=\"a\""
 
 #: exe/xului/templates/mainpage.xul:<label
 #: value="debugInfo">
@@ -1289,25 +1289,25 @@ msgstr ""
 #: accesskey="e" id="export-menu"
 #: label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"导出\" accesskey=\"e\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="a"
 #: oncommand="aboutPage()" label="About">
 msgid "label=\"About\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"关于\" accesskey=\"a\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="s"
 #: oncommand="exportPackage('scorm')" label="SCORM 1.2">
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="t"
 #: oncommand="loadTutorial()" label="Tutorial">
 msgid "label=\"Tutorial\" accesskey=\"t\""
-msgstr ""
+msgstr "label=\"使用指南\" accesskey=\"t\""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton
 #: key="addChildKey"
@@ -1319,7 +1319,7 @@ msgstr "添加页面"
 #: accesskey="i"
 #: oncommand="exportPackage('ims')" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton
 #: id="btnRename"
@@ -1337,18 +1337,18 @@ msgstr "目录栏"
 #: oncommand="exportPackage('webSite')" key="file-export-website-key"
 #: label="Web Site">
 msgid "label=\"Web Site\" accesskey=\"w\""
-msgstr ""
+msgstr "label=\"网站\" accesskey=\"w\""
 
 #: exe/xului/templates/mainpage.xul:<label
 #: flex="1" value="iDevicePane">
 msgid "iDevicePane"
-msgstr " iDevice栏"
+msgstr "iDevice栏"
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="p"
 #: oncommand="exportPackage('singlePage')" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr ""
+msgstr "label=\"单页网页\" accesskey=\"p\""
 
 #: exe/xului/templates/mainpage.xul:<tab
 #: label="Authoring">
