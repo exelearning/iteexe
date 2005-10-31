@@ -288,14 +288,28 @@ function getFeedback(optionId, optionsNum, ideviceId, mode) {
 
 // Functions for cloze IDevice /////////////////////////////////////////////////
 
+// Called when a learner types something into a cloze word space
 function onClozeChange(ele, word) {
-    if (ele.value.toLowerCase() == word.toLowerCase()) 
+    var result = checkClozeWord(ele.value, word);
+    if (result != '') {
         ele.style.backgroundColor = "yellow";
-    else if (!ele.value)
+        ele.value = result;
+    } else if (!ele.value) {
         ele.style.backgroundColor = null;
-    else
+    } else {
         ele.style.backgroundColor = "red";
-};
+    }
+}
+
+// Returns the corrected word or an empty string
+function checkClozeWord(aWord, aOriginal) {
+    var word = aWord.toLowerCase();
+    var original = aOriginal.toLowerCase();
+    if (word == original)
+        return aOriginal
+    else
+        return ''
+}
 
 // Show or hide the feedback for reflection idevice
 function showAnswer(id,isShow) {
@@ -307,6 +321,14 @@ function showAnswer(id,isShow) {
         document.getElementById("s"+id).style.display = "none";
         document.getElementById("hide"+id).style.display = "none";
         document.getElementById("view"+id).style.display = "block";
+    }
+}
+
+// Show/Hide all answers in the cloze idevice
+function answerAll(length, ident){
+    for (i=0; i<length; i++){
+        document.getElementById("clz"+ident+i).value = wordArray[i];
+        document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
     }
 }
 
@@ -327,13 +349,6 @@ function calScore(length, ident) {
             score++
     }
     alert("Your score is " + score +"/" + length + ".");
-}
-
-function answerAll(length, ident){
-    for (i=0; i<length; i++){
-        document.getElementById("clz"+ident+i).value = wordArray[i];
-        document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
-    }
 }
 
 // show or hide the feedback for cloze idevice

@@ -388,7 +388,7 @@ class ClozeElement(Element):
             u'</p>',
             # Render our toolbar
             u'<p>',
-            u'  <input type="button" value="%s" ' % _("Hide Word")+
+            u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
             u'</p>',
             ]

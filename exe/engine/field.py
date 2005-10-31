@@ -212,6 +212,8 @@ class ClozeHTMLParser(HTMLParser):
     inGap = False
     lastGap = ''
     lastText = ''
+    whiteSpaceRe = re.compile(r'\s+')
+    paragraphRe = re.compile(r'(\r\n\r\n)([^\r]*)(\1)')
 
     def reset(self):
         """
@@ -232,6 +234,11 @@ class ClozeHTMLParser(HTMLParser):
             style = attrs.get('style', '')
             if 'underline' in style:
                 self.inGap = True
+        elif tag.lower() == 'br':
+            if self.inGap:
+                self.lastGap += '<br/>' 
+            else:
+                self.lastText += '<br/>' 
 
     def handle_endtag(self, tag):
         """
@@ -239,9 +246,25 @@ class ClozeHTMLParser(HTMLParser):
         """
         if tag.lower() == 'span' and self.inGap:
             self.inGap = False
-            self.result.append((self.lastText, self.lastGap))
-            self.lastGap = ''
-            self.lastText = ''
+            self._endGap()
+
+    def _endGap(self):
+        """
+        Handles finding the end of gap
+        """
+        # Tidy up and possibly split the gap
+        gapString = self.lastGap.strip()
+        gapWords = self.whiteSpaceRe.split(gapString)
+        gapSpacers = self.whiteSpaceRe.findall(gapString)
+        if len(gapWords) > len(gapSpacers):
+            gapSpacers.append('')
+        gaps = zip(gapWords, gapSpacers)
+        lastText = self.lastText
+        for gap, text in gaps:
+            self.result.append((lastText, gap))
+            lastText = text
+        self.lastGap = ''
+        self.lastText = ''
 
     def handle_data(self, data):
         """
@@ -257,7 +280,8 @@ class ClozeHTMLParser(HTMLParser):
         Fills in the last bit of result
         """
         if self.lastText:
-            self.result.append((self.lastText, self.lastGap))
+            self._endGap()
+            #self.result.append((self.lastText, self.lastGap))
         HTMLParser.close(self)
 
 
@@ -284,6 +308,8 @@ class ClozeField(Field):
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
+        print '=================='
+        print value
         value = value.replace('&quot;', '"')
         value = value.replace('&amp;', '&')
         parser = ClozeHTMLParser()
@@ -292,12 +318,12 @@ class ClozeField(Field):
         self.parts = parser.result
         encodedContent = ''
         for shown, hidden in parser.result:
-            encodedContent += shown.replace('\r\n', '<br/>')
+            encodedContent += shown
             if hidden:
                 encodedContent += ' <span'
                 encodedContent += \
                     '  style=&quot;text-decoration:underline&quot;>'
-                encodedContent += hidden.replace('\r\n', '<br/>')
+                encodedContent += hidden
                 encodedContent += '</span> ' 
         self._encodedContent = encodedContent
     
