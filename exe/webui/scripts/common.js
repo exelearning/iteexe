@@ -302,13 +302,55 @@ function onClozeChange(ele, word) {
 }
 
 // Returns the corrected word or an empty string
-function checkClozeWord(aWord, aOriginal) {
-    var word = aWord.toLowerCase();
-    var original = aOriginal.toLowerCase();
-    if (word == original)
+function checkClozeWord(guess, aOriginal) {
+    var guess = guess.toLowerCase();
+    var answer = aOriginal.toLowerCase();
+    if (guess == answer)
         return aOriginal
-    else
-        return ''
+    else {
+        // Now use the similarity check algorythm
+        var i = 0;
+        var j = 0;
+        var orders = [[answer, guess], [guess, answer]];
+        var maxMisses = Math.floor(answer.length / 4) + 1;
+        var misses = 0;
+        if (guess.length <= maxMisses) {
+            misses = Math.abs(guess.length - answer.length);
+            for (i = 0; i < guess.length; i++ ) {
+                if (answer.search(guess[i]) == -1) {
+                    misses += 1;
+                }
+            }
+            if (misses <= maxMisses) {
+                return answer;
+            } else {
+                return "";
+            }
+        }
+        // Iterate through the different orders of checking
+        for (i = 0; i < 2; i++) {
+            var string1 = orders[i][0];
+            var string2 = orders[i][1];
+            while (string1) {
+                misses = Math.floor(
+                            (Math.abs(string1.length - string2.length) +
+                             Math.abs(guess.length - answer.length)) / 2)
+                var max = Math.min(string1.length, string2.length)
+                for (j = 0; j < max; j++) {
+                    var a = string2[j];
+                    var b = string1[j];
+                    if (a != b)
+                        misses += 1
+                    if (misses > maxMisses)
+                        break
+                }
+                if (misses <= maxMisses)
+                    return answer
+                string1 = string1.substr(1)
+            }
+        }
+        return "";
+    }
 }
 
 // Show or hide the feedback for reflection idevice
