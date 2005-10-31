@@ -217,7 +217,7 @@ class MainPage(RenderableLivePage):
         package is changed and needs saving)
         """
         exportDir  = Path(filename).dirname()
-        if not exportDir.exists():
+        if exportDir and not exportDir.exists():
             client.alert(_(u'Cannot access directory named ') +
                          unicode(exportDir) +
                          _(u'. Please use ASCII names.'))
@@ -306,7 +306,7 @@ class MainPage(RenderableLivePage):
         stylesDir  = webDir.joinpath('style', self.package.style)
 
         exportDir  = Path(filename).dirname()
-        if not exportDir.exists():
+        if exportDir and not exportDir.exists():
             client.alert(_(u'Cannot access directory named ') +
                          unicode(exportDir) +
                          _(u'. Please use ASCII names.'))
