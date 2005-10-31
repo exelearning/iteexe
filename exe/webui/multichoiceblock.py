@@ -184,8 +184,8 @@ class MultichoiceBlock(Block):
                                       "panel-amusements.png", "Hint")
                                                                              
         html += self.renderViewContent()      
-        html += "</div>\n"    
         html += self.renderViewButtons()
+        html += "</div>\n"    
         html += "</div>\n"
 
         return html
