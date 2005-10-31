@@ -206,8 +206,8 @@ class ScormPage(Page):
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<title>"+_("eXe")+"</title>\n"
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=UTF-8\" />\n";
+        html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
+        html += u" charset=utf-8\" />\n";
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"

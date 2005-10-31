@@ -104,8 +104,8 @@ class SinglePageExport(object):
         html += u"<title>"
         html += name
         html += "</title>\n"
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=UTF-8\" />\n";
+        html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
+        html += u" charset=utf-8\" />\n";
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         return html
