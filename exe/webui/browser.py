@@ -26,6 +26,7 @@ Browser module
 
 import os
 import sys
+import time
 import logging
 from exe.engine.path import Path
 from urllib import quote
@@ -60,6 +61,14 @@ def launchBrowser(config, packageName):
         try:
             # Set MOZ_NO_REMOTE so exe doesn't conflict with Firefox
             os.environ["MOZ_NO_REMOTE"] = "1"
+            os.spawnl(os.P_DETACH, 
+                      config.browserPath,
+                      config.browserPath.basename(),
+                      '-profile', 
+                      '"' + config.configDir/profile + '"', 
+                      url)
+            # ugly hack to try and fix the firefox not starting first time bug
+            time.sleep(0.5)
             os.spawnl(os.P_DETACH, 
                       config.browserPath,
                       config.browserPath.basename(),
