@@ -80,10 +80,8 @@ class ForumBlock(Block):
        
         introduction = self.idevice.introduction.replace("\r", "")
         introduction = introduction.replace("\n","\\n")
-        introduction = introduction.replace("'","\\'")
         message      = self.idevice.discussionMessage.replace("\r", "")
         message      = message.replace("\n","\\n")
-        message      = message.replace("'","\\'")
         
         typeArr    = [[_(u'A single simple discussion'),       'single'],
                       [_(u'Each person posts one discussion'), 'eachuser'],

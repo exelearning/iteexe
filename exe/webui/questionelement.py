@@ -72,13 +72,9 @@ class QuestionElement(object):
         
         question = question.replace("\r", "")
         question = question.replace("\n", "\\n")
-        question = question.replace("'", "\\'")
-        question = question.replace("\"", "\\\"")
         
         feedback = feedback.replace("\r", "")
         feedback = feedback.replace("\n", "\\n")
-        feedback = feedback.replace("'", "\\'")
-        feedback = feedback.replace('"', '\\"')
         html  = "<tr><td><b>%s</b>\n" % _("Question")
         html += common.elementInstruc(self.quesId, self.idevice.questionInstruc)
         html += common.richTextArea(self.quesId, question)

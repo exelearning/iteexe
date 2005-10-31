@@ -80,7 +80,6 @@ class TestquestionElement(object):
         question = self.question.question
         question = question.replace("\r", "")
         question = question.replace("\n","\\n")
-        question = question.replace("'","\\'")
         
         html  = u"<div class=\"iDevice\">\n"
         html += u"<b>" + _("Question:") + " </b>" 

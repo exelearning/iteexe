@@ -144,8 +144,7 @@ class TextAreaElement(Element):
                   ", height="+unicode(self.height))
 
         content = content.replace("\r", "")
-        content = content.replace("\n","\\n")
-        content = content.replace("'","\\'")
+        content = content.replace("\n", "\\n")
 
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)

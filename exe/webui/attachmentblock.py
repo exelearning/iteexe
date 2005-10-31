@@ -70,7 +70,6 @@ class AttachmentBlock(Block):
         log.debug("renderEdit")
         description = self.idevice.description.replace(u"\r", u"")
         description = description.replace(u"\n", u"\\n")
-        description = description.replace(u"'",  u"\\'")
         html  = (u'<div class="iDevice">',
                  u'<a href="#" onclick="addFile(\'%s\');">' % self.id,
                 _(u'Select a file'),

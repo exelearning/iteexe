@@ -85,11 +85,9 @@ class MultichoiceBlock(Block):
         """
         question = self.question.replace("\r", "")
         question = question.replace("\n","\\n")
-        question = question.replace("'","\\'")
         
         hint      = self.hint.replace("\r", "")
         hint      = hint.replace("\n","\\n")
-        hint      = hint.replace("'","\\'")
         
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)

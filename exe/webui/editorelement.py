@@ -67,7 +67,6 @@ class TextEditorElement(EditorElement):
         """
         self.field.instruc = self.field.instruc.replace("\r", "")
         self.field.instruc = self.field.instruc.replace("\n","\\n")
-        self.field.instruc = self.field.instruc.replace("'","\\'")
         
         html  = common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 

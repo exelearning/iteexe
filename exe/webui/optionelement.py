@@ -78,13 +78,9 @@ class OptionElement(object):
         
         answer = answer.replace("\r", "")
         answer = answer.replace("\n", "\\n")
-        answer = answer.replace("'", "\\'")
-        answer = answer.replace("\"", "\\\"")
         
         feedback = feedback.replace("\r", "")
         feedback = feedback.replace("\n", "\\n")
-        feedback = feedback.replace("'", "\\'")
-        feedback = feedback.replace('"', '\\"')
         html = u"<tr><td>"
         html += common.richTextArea(self.answerId, answer)
         html += "</td><td align=\"center\">\n"

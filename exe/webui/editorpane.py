@@ -253,14 +253,11 @@ class EditorPane(object):
         html += "//-->\n"
         html += "</script>\n"
         
-      #  self.purpose = self.idevice.purpose.replace("\r", "<br/>")
         self.purpose = self.idevice.purpose.replace("\r", "")
         self.purpose = self.purpose.replace("\n","\\n")
-        self.purpose = self.purpose.replace("'","\\'")
         
         self.tip     = self.idevice.tip.replace("\r", "")
         self.tip     = self.tip.replace("\n","\\n")
-        self.tip     = self.tip.replace("'","\\'")
         
         if self.idevice.edit:
             html += "<b>" + _("Name") + ": </b>\n"

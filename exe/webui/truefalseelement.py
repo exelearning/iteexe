@@ -81,18 +81,12 @@ class TrueFalseElement(object):
         
         question = question.replace("\r", "")
         question = question.replace("\n", "\\n")
-        question = question.replace("'", "\\'")
-        question = question.replace("\"", "\\\"")
         
         feedback = feedback.replace("\r", "")
         feedback = feedback.replace("\n", "\\n")
-        feedback = feedback.replace("'", "\\'")
-        feedback = feedback.replace('"', '\\"')
         
         hint = hint.replace("\r", "")
         hint = hint.replace("\n", "\\n")
-        hint = hint.replace("'", "\\'")
-        hint = hint.replace('"', '\\"')
         
         html  = _("Question")
         html += common.elementInstruc("question"+self.id, self.idevice.questionInstruc)

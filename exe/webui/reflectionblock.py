@@ -65,10 +65,8 @@ class ReflectionBlock(Block):
         """
         activity = self.activity.replace("\r", "")
         activity = activity.replace("\n","\\n")
-        activity = activity.replace("'","\\'")
         answer   = self.answer.replace("\r", "")
         answer   = answer.replace("\n","\\n")
-        answer   = answer.replace("'","\\'")
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"

@@ -77,7 +77,6 @@ class CasestudyBlock(Block):
         """
         story = self.story.replace(u"\r", u"")
         story = story.replace(u"\n", u"\\n")
-        story = story.replace(u"'",  u"\\'")
         html  = u'<div class="iDevice"><br/>\n'
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"

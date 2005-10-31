@@ -79,8 +79,6 @@ class TestoptionElement(object):
         answer = self.option.answer
         answer = answer.replace("\r", "")
         answer = answer.replace("\n", "\\n")
-        answer = answer.replace("'", "\\'")
-        answer = answer.replace("\"", "\\\"")
         html = u"<tr><td>"
         html += common.richTextArea(self.answerId, answer)
         html += "</td><td align=\"center\">\n"
