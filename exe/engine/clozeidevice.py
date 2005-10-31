@@ -67,7 +67,8 @@ class ClozeIdevice(Idevice):
                 'The fith and last _words_ of this text need to be filled in '
                 'by the _student_'))
         self._content.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'))
+        self.feedback = TextAreaField(x_(u'Feedback'), 
+                                      x_(u'Place feedback here'))
         self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
 
