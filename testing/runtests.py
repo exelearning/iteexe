@@ -23,9 +23,9 @@ from testconfig        import TestConfig
 from testconfigparser  import TestConfigParser, TestSections
 from testnode          import TestNode
 from testuniqueid      import TestUniqueId
-from testxmlhttp       import TestOutline
+#from testxmlhttp       import TestOutline
 from testpackage       import TestPackage
-from testblock         import TestBlock
+#from testblock         import TestBlock
 from testidevice       import TestIdevice
 from testidevicestore  import TestIdeviceStore
 from testpersist       import TestPersist

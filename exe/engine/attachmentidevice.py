@@ -43,11 +43,11 @@ class AttachmentIdevice(Idevice):
                          u"", u"")
         self.emphasis           = Idevice.NoEmphasis
         self.filename           = u""
-        self._filenameInstruc    = x_(u'Click <strong>Select a file</strong>, '
+        self._filenameInstruc   = x_(u'Click <strong>Select a file</strong>, '
                                     'browse to the file you want '
                                     'to attach and select it.')
         self.label              = u""
-        self._labelInstruc       = x_(u"<p>"
+        self._labelInstruc      = x_(u"<p>"
                                     "Assign a label for the attachment. It "
                                     "is useful to include the type of file. "
                                     "Eg. pdf, ppt, etc."
@@ -134,9 +134,9 @@ class AttachmentIdevice(Idevice):
         Upgrades to v0.10
         """
         self._upgradeIdeviceToVersion1()
-        self._filenameInstruc = self.__dict__['filenameInstruc']
-        self._labelInstruc = self.__dict__['labelInstruc']
-        self._descriptionInstruc = self.__dict__['descriptionInstruc']
+        self._filenameInstruc    = self.__dict__.get('filenameInstruc', '')
+        self._labelInstruc       = self.__dict__.get('labelInstruc', '')
+        self._descriptionInstruc = self.__dict__.get('descriptionInstruc', '')
 
 
 # ===========================================================================

@@ -362,10 +362,7 @@ class MainPage(RenderableLivePage):
             os.startfile(filename)
         else:
             filename /= 'index.html'
-            os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
-                (self.config.browserPath,
-                 '-remote', 'openURL(%s, new-window)' % \
-                 filename))
+            os.system("firefox "+filename+"&")
 
 
     def exportWebSite(self, client, filename, webDir, stylesDir):
@@ -405,10 +402,7 @@ class MainPage(RenderableLivePage):
             os.startfile(filename)
         else:
             filename /= 'index.html'
-            os.spawnvp(os.P_NOWAIT, self.config.browserPath, 
-                (self.config.browserPath,
-                 '-remote', 'openURL(%s, new-window)' % \
-                 filename))
+            os.system("firefox "+filename+"&")
 
 
     def exportScorm(self, client, filename, stylesDir):
