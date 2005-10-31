@@ -312,7 +312,7 @@ function checkClozeWord(guess, aOriginal) {
         var i = 0;
         var j = 0;
         var orders = [[answer, guess], [guess, answer]];
-        var maxMisses = Math.floor(answer.length / 4) + 1;
+        var maxMisses = Math.floor(answer.length / 6) + 1;
         var misses = 0;
         if (guess.length <= maxMisses) {
             misses = Math.abs(guess.length - answer.length);
