@@ -325,18 +325,29 @@ function showAnswer(id,isShow) {
 }
 
 // Show/Hide all answers in the cloze idevice
-function answerAll(length, ident){
+function toggleClozeAnswers(length, ident){
+    // See if any have not been answered yet
+    var allAnswered = true;
+    var ele;
     for (i=0; i<length; i++){
-        document.getElementById("clz"+ident+i).value = wordArray[i];
-        document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
+        ele = document.getElementById("clz"+ident+i)
+        if (ele.style.backgroundColor != "yellow") {
+            allAnswered = false
+            break;
+        }
     }
-}
-
-// Clear all student answers for cloze idevice
-function clearAll(length, ident) {
-    for (i=0; i<length; i++) {
-        document.getElementById("clz"+ident+i).value="";
-        document.getElementById("clz"+ident+i).style.backgroundColor="white"
+    if (allAnswered) {
+        // Clear all answers
+        for (i=0; i<length; i++) {
+            document.getElementById("clz"+ident+i).value="";
+            document.getElementById("clz"+ident+i).style.backgroundColor="white"
+        }
+    } else {
+        // Write all answers
+        for (i=0; i<length; i++){
+            document.getElementById("clz"+ident+i).value = wordArray[i];
+            document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
+        }
     }
 }
 

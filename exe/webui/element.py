@@ -420,18 +420,16 @@ class ClozeElement(Element):
         
         if feedbackId is not None:
             html += ['<input type="button" ',
-                     'value = "%s"' % _(u"Feedback"),
+                     'value = "%s"' % _(u"Show/Hide Feedback"),
                      'onclick="toggleFeedback(\'%s\')"/>\n' % feedbackId]
         
         words = words[:-1]
         varString = "wordArray= new Array(%s); " % words
                                                           
         html += ['&nbsp;&nbsp;<input type="button" ',
-                 'value = "%s"' % _(u"Show answers"),
-                 'onclick="%s;answerAll(%s,\'%s\')"/>' %(varString, 
+                 'value = "%s"' % _(u"Show/Clear Answers"),
+                 'onclick="%s;toggleClozeAnswers(%s,\'%s\')"/>' %(varString, 
                                                            length, self.id)]
-        html += ['&nbsp;&nbsp;<input type="button" value = "%s"'% _(u"Clear"),
-                 'onclick="clearAll(\'%s\',\'%s\')"/>' % (length, self.id)]
         return '\n'.join(html)
     
 # ===========================================================================

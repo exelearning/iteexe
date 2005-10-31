@@ -308,8 +308,6 @@ class ClozeField(Field):
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
-        print '=================='
-        print value
         value = value.replace('&quot;', '"')
         value = value.replace('&amp;', '&')
         parser = ClozeHTMLParser()
