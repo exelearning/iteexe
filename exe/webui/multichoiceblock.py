@@ -142,6 +142,7 @@ class MultichoiceBlock(Block):
         html += "src=\"icon_question.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
+        html += "<div class=\"iDevice_inner\">\n"
         html += self.question+" &nbsp;&nbsp;\n"
         
         html += '<span style="background-image:url(\'panel-amusements.png\');">'
@@ -163,6 +164,7 @@ class MultichoiceBlock(Block):
         html += "</div>\n"
         html += self.renderViewContent()    
         html += "</div>\n"
+        html += "</div>\n"
 
         return html
     
@@ -178,11 +180,13 @@ class MultichoiceBlock(Block):
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
+        html += "<div class=\"iDevice_inner\">\n"
         html += self.question+" &nbsp;&nbsp;\n"
         html += common.elementInstruc(self.hintId, self.hint, 
                                       "panel-amusements.png", "Hint")
                                                                              
         html += self.renderViewContent()      
+        html += "</div>\n"    
         html += self.renderViewButtons()
         html += "</div>\n"
 
@@ -193,9 +197,7 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = "<div class=\"iDevice_inner\">\n"
-       
-        html += "<table>\n"
+        html  = "<table>\n"
         html += "<tbody>\n"
 
         for element in self.optionElements:
@@ -206,7 +208,6 @@ class MultichoiceBlock(Block):
             
         for element in self.optionElements:
             html += element.renderFeedbackView()
-        html += "</div>\n"    
 
         return html
 
