@@ -53,8 +53,8 @@
             </menu>
             <menu n:render="translate" id="tools-menu" label="Tools" accesskey="t">
               <menupopup id="tools-popup">
-                <menuitem label="iDevice Editor" oncommand="toolsEditor()"/>
-                <menuitem label="Preferences" oncommand="toolsPreferences()"/>
+                <menuitem n:render="translate" label="iDevice Editor" oncommand="toolsEditor()"/>
+                <menuitem n:render="translate" label="Preferences" oncommand="toolsPreferences()"/>
               </menupopup>
             </menu>
             <menu n:render="translate" id="styles-menu" label="Styles" accesskey="s">
