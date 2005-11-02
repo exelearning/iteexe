@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-02 15:20+1300\n"
+"POT-Creation-Date: 2005-11-03 10:25+1300\n"
 "PO-Revision-Date: 2005-09-13 13:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <info@dialoge.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1228,7 +1228,8 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:204
+#: exe/engine/package.py:204 exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
@@ -1323,6 +1324,12 @@ msgstr ""
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
+#: label="Preferences">
+#, fuzzy
+msgid "Preferences"
+msgstr "Empfehlungen/Hinweise"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
@@ -1535,10 +1542,6 @@ msgstr "Projekteigenschaften"
 #~ msgstr ""
 #~ "Dies ist ein Beispiel für ein von Nutzer/innen\n"
 #~ "erstelltes iDevice Plugin."
-
-#, fuzzy
-#~ msgid "eXe Preferences"
-#~ msgstr "Empfehlungen/Hinweise"
 
 #~ msgid "Cloze Idevice"
 #~ msgstr "Lückentext Idevice"

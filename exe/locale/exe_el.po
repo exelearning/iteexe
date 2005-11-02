@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-02 15:20+1300\n"
+"POT-Creation-Date: 2005-11-03 10:25+1300\n"
 "PO-Revision-Date: 2005-10-27 11:58+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -1237,7 +1237,8 @@ msgstr "http://el.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
 
-#: exe/engine/package.py:204
+#: exe/engine/package.py:204 exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
 
@@ -1329,6 +1330,12 @@ msgstr "label=\"Στυλ\" accesskey=\"σ\""
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Άνοιγμα\" accesskey=\"ο\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
+#: label="Preferences">
+#, fuzzy
+msgid "Preferences"
+msgstr "Αναφορά"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"

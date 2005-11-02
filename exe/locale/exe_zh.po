@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-02 15:20+1300\n"
+"POT-Creation-Date: 2005-11-03 10:25+1300\n"
 "PO-Revision-Date: 2005-11-01 15:55+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -1104,7 +1104,8 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:204
+#: exe/engine/package.py:204 exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"
 
@@ -1196,6 +1197,12 @@ msgstr "label=\"页面风格\" accesskey=\"s\""
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"打开\" accesskey=\"o\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
+#: label="Preferences">
+#, fuzzy
+msgid "Preferences"
+msgstr "参考资料"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
@@ -1392,10 +1399,6 @@ msgstr "属性"
 
 #~ msgid "This is a free text field."
 #~ msgstr "这是一个自由文字域."
-
-#, fuzzy
-#~ msgid "eXe Preferences"
-#~ msgstr "参考资料"
 
 #~ msgid "Cloze Idevice"
 #~ msgstr "填空题"
