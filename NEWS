@@ -1,3 +1,11 @@
+Version 0.10 - Snappy Snapper
+* Browser interface with much better usability
+* Using TinyMCE rich text editor
+* Preferences dialog for changing language
+* German, Greek, Spanish and Chinese languages
+* New Style: Kahurangi
+* Bug fixes
+
 Version 0.9 - Darkness
 * More work on GtkMozEmbed interface
 * Drag and drop tree

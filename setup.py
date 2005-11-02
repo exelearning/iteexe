@@ -39,15 +39,17 @@ dataFiles(["exe/webui/style",
            "exe/webui/docs",
            "exe/webui/images",
            "exe/webui/scripts",
-           "exe/webui/templates",
            "exe/webui/linux-profile",
-           "exe/webui/firefox",
-           "exe/webui/mr_x.gif"])
+           "exe/webui/firefox"])
 
-g_oldBase = "exe"
-g_newBase = "."
+g_oldBase = "exe/webui"
+g_newBase = "/usr/share/exe"
 dataFiles(["exe/locale"])
 
+g_oldBase = "exe/xului"
+g_newBase = "/usr/share/exe"
+dataFiles(["exe/xului/scripts",
+           "exe/xului/templates"])
 opts = {
  "bdist_rpm": {
    "requires": ["python-imaging",]
@@ -66,7 +68,8 @@ Content generated using eXe can be used by any Learning Management System.
       author_email = "exe@exelearning.org",
       license      = "GPL",
       scripts      = ["exe/exe", "exe/run-exe.sh"],
-      packages     = ["exe", "exe.webui", "exe.engine", "exe.export"],
+      packages     = ["exe", "exe.webui", "exe.xului", 
+                      "exe.engine", "exe.export"],
       data_files   = g_files.items(),
       options      = opts
      )

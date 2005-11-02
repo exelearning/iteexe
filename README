@@ -46,7 +46,7 @@ INSTALLATION
   normally be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under
   "All Programs".
-- If you leave "Run eXe 0.8" selected the installer will launch eXe
+- If you leave "Run eXe 0.10" selected the installer will launch eXe
   once it is installed.
 
 
@@ -80,9 +80,8 @@ interested in the details, but they were...
  * Mac applications only have one menu bar, we need to replace the 
    Firefox menubar, but when doing that (by turning off Firefox
    chrome) we get another error with FCKEditor (the rich text
-   editor we're using) flickering.  We're investigating possibly
-   replacing    FCKEditor by using Mozilla's "native" Midas editing 
-   interface.
+   editor we're using) flickering.  We've replace FCK with
+   TinyMCE.
  * We also have more work to do on how to create a install package for
    eXe on the Mac.  We're aiming to use PyApp for this.
 
@@ -93,7 +92,7 @@ The eXe Linux install consists of an RPM which has been tested
 to work on Fedora Core 4.  (They may work on other RPM based distros
 but that hasn't been tested.)
 
-* exe-0.8-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-0.10-1.noarch.rpm - includes the eXe editor and bundled Firefox
 
 Make sure Firefox is closed first.
 From the command line type exe to start.

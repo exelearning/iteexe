@@ -8,6 +8,7 @@ DESCRIPTION="off-line authoring environment to assist teachers and academics in 
 HOMEPAGE="http://exe.cfdl.auckland.ac.nz"
 SRC_URI="ftp://ftp.eduforge.org/pub/${PN}/${PN}-${PV}-source.tgz"
 LICENSE="GPL-2"
+RESTRICT="nomirror" # This is only because it's not in the gentoo tree yet
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
 IUSE=""
@@ -27,15 +28,4 @@ src_unpack() {
 
 src_install() {
 	distutils_src_install
-	mkdir ${D}/etc
-	mkdir ${D}/etc/exe
-	echo [system] > ${D}/etc/exe/exe.conf
-	echo webDir = /usr/lib/python2.4/site-packages/exe/webui >> ${D}/etc/exe/exe.conf
-	echo port = 8081 >> ${D}/etc/exe/exe.conf
-	echo dataDir = ~ >> ${D}/etc/exe/exe.conf
-	echo configDir = /etc/exe >> ${D}/etc/exe/exe.conf
-	echo greDir = /usr/lib/mozilla >> ${D}/etc/exe/exe.conf
-	echo  >> ${D}/etc/exe/exe.conf
-	echo [logging] >> ${D}/etc/exe/exe.conf
-	echo root = ERROR >> ${D}/etc/exe/exe.conf
 }

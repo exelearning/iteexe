@@ -1,3 +1,1550 @@
+2005-11-02 02:28  djm
+
+	* exe/engine/clozeidevice.py, exe/engine/config.py,
+	  exe/engine/field.py, exe/engine/galleryidevice.py,
+	  exe/engine/genericidevice.py, exe/engine/idevicestore.py,
+	  exe/engine/linuxconfig.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/quiztestidevice.py,
+	  exe/engine/version.py, exe/engine/winconfig.py,
+	  exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/msvcr71.dll, exe/webui/attachmentblock.py,
+	  exe/webui/builtinblocks.py, exe/webui/casestudyblock.py,
+	  exe/webui/clozeblock.py, exe/webui/editorelement.py,
+	  exe/webui/element.py, exe/webui/externalurlblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/optionelement.py,
+	  exe/webui/questionelement.py, exe/webui/reflectionblock.py,
+	  exe/webui/renderable.py, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py, exe/webui/truefalseelement.py,
+	  exe/xului/templates/mainpage.xul: Merged in changes from 0.10
+	  revisions 1397:1439
+
+2005-10-31 23:52  matthew
+
+	* exe/application.py: Fix bug where won't launch command line
+	  packages
+
+2005-10-31 22:11  matthew
+
+	* exe/engine/linuxconfig.py, exe/engine/winconfig.py,
+	  exe/locale/exe_es.po: Updated spanish translation and made config
+	  files find firefox instead of xulrunner
+
+2005-10-31 22:03  djm
+
+	* exe/webui/browser.py: ugly hack to try and fix firefox not
+	  starting first time bug
+
+2005-10-31 21:12  matthew
+
+	* exe/engine/clozeidevice.py: Added Instructions to Feedback field
+
+2005-10-31 20:48  jenny
+
+	* exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo: updated
+	  chinese po file
+
+2005-10-31 20:44  brent
+
+	* exe/webui/scripts/common.js: eradicated political correctness in
+	  cloze idevice.
+
+2005-10-31 04:45  matthew
+
+	* exe/webui/scripts/common.js: Made cloze idevice more tollerent of
+	  bad spellers
+
+2005-10-31 04:44  matthew
+
+	* prototype/stringmatch.py: Made string match a little meaner
+
+2005-10-31 03:59  matthew
+
+	* exe/engine/field.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: Made Cloze be all toggle buttons
+
+2005-10-31 03:50  matthew
+
+	* exe/engine/field.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: Cloze IDevice Fixupjs
+
+2005-10-31 03:29  djm
+
+	* exe/webui/multichoiceblock.py: buttons inside idevice inner
+
+2005-10-31 03:26  brent
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/webui/style/Kahurangi/content.css: minor changes to meta tag
+	  in header of exports.
+
+2005-10-31 03:24  djm
+
+	* exe/webui/attachmentblock.py, exe/webui/casestudyblock.py,
+	  exe/webui/editorelement.py, exe/webui/editorpane.py,
+	  exe/webui/element.py, exe/webui/forumblock.py,
+	  exe/webui/multichoiceblock.py, exe/webui/optionelement.py,
+	  exe/webui/questionelement.py, exe/webui/reflectionblock.py,
+	  exe/webui/testoptionelement.py, exe/webui/testquestionelement.py,
+	  exe/webui/truefalseelement.py: fixed problems with quoting quotes
+
+2005-10-31 03:18  djm
+
+	* exe/webui/multichoiceblock.py: Fixed ideviceinner div bug thing
+
+2005-10-31 02:55  djm
+
+	* exe/engine/attachmentidevice.py, exe/xului/mainpage.py,
+	  testing/runtests.py: fixed bugs wiht website export
+
+2005-10-31 00:33  djm
+
+	* exe/xului/mainpage.py: fix for mateo
+
+2005-10-30 23:26  matthew
+
+	* app.fil, exe/engine/clozeidevice.py, exe/engine/field.py,
+	  exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/webui/clozeblock.py,
+	  exe/webui/element.py, exe/webui/scripts/common.js: Update
+	  translations Re-architecture cloze idevice to add field helps
+
+2005-10-30 23:04  djm
+
+	* exe/webui/preferencespage.py: lil comment change
+
+2005-10-30 22:52  djm
+
+	* exe/engine/idevice.py, exe/engine/package.py,
+	  exe/webui/element.py, exe/webui/preferencespage.py,
+	  exe/xului/mainpage.py: dynamically change prefrences
+
+2005-10-30 21:36  brent
+
+	* exe/webui/images/mrX.png: added Mr.X .. maw ha ha ha !!!!
+
+2005-10-30 21:26  jenny
+
+	* exe/xului/mainpage.py, exe/xului/scripts/mainpage.js: added error
+	  message when user try to save or export a package to a non-ascii
+	  directory.
+
+2005-10-30 21:23  jenny
+
+	* exe/locale/exe_zh.po: updated
+
+2005-10-30 21:19  matthew
+
+	* exe/engine/imagewithtextidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, prototype/stringmatch.py: Fixed
+	  some spelling mistakes for _upgrage -> _upgrade. More string match
+	  stuff
+
+2005-10-28 01:31  brent
+
+	* exe/webui/authoringpage.py, exe/webui/truefalseblock.py,
+	  exe/webui/truefalseelement.py: remodelled true/false question.
+
+2005-10-28 01:01  jenny
+
+	* exe/engine/field.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: added instruction for learners field
+	  to clozeField. modified Show answers button not showing feedback,
+	  but answers. added Feedback button for showing feedback for cloze
+	  idevice.
+
+2005-10-27 23:59  brent
+
+	* exe/webui/style/Kahurangi,
+	  exe/webui/style/Kahurangi/active_bg.gif,
+	  exe/webui/style/Kahurangi/body_top_bg.gif,
+	  exe/webui/style/Kahurangi/content.css,
+	  exe/webui/style/Kahurangi/icon_activity.gif,
+	  exe/webui/style/Kahurangi/icon_assess.gif,
+	  exe/webui/style/Kahurangi/icon_assignment.gif,
+	  exe/webui/style/Kahurangi/icon_calc.gif,
+	  exe/webui/style/Kahurangi/icon_casestudy.gif,
+	  exe/webui/style/Kahurangi/icon_define.gif,
+	  exe/webui/style/Kahurangi/icon_diagnosis.gif,
+	  exe/webui/style/Kahurangi/icon_discussion.gif,
+	  exe/webui/style/Kahurangi/icon_e_gloss.gif,
+	  exe/webui/style/Kahurangi/icon_e_journal.gif,
+	  exe/webui/style/Kahurangi/icon_experiment.gif,
+	  exe/webui/style/Kahurangi/icon_gallery.gif,
+	  exe/webui/style/Kahurangi/icon_generic.gif,
+	  exe/webui/style/Kahurangi/icon_hint.gif,
+	  exe/webui/style/Kahurangi/icon_inter.gif,
+	  exe/webui/style/Kahurangi/icon_key_points.gif,
+	  exe/webui/style/Kahurangi/icon_multimedia.gif,
+	  exe/webui/style/Kahurangi/icon_note.gif,
+	  exe/webui/style/Kahurangi/icon_objectives.gif,
+	  exe/webui/style/Kahurangi/icon_preknowledge.gif,
+	  exe/webui/style/Kahurangi/icon_present.gif,
+	  exe/webui/style/Kahurangi/icon_question.gif,
+	  exe/webui/style/Kahurangi/icon_quote.gif,
+	  exe/webui/style/Kahurangi/icon_reading.gif,
+	  exe/webui/style/Kahurangi/icon_reflection.gif,
+	  exe/webui/style/Kahurangi/icon_review.gif,
+	  exe/webui/style/Kahurangi/icon_search.gif,
+	  exe/webui/style/Kahurangi/icon_summary.gif,
+	  exe/webui/style/Kahurangi/icon_synthesis.gif,
+	  exe/webui/style/Kahurangi/icon_technology.gif,
+	  exe/webui/style/Kahurangi/icon_time.gif,
+	  exe/webui/style/Kahurangi/icon_web_resource.gif,
+	  exe/webui/style/Kahurangi/icon_wiki.gif,
+	  exe/webui/style/Kahurangi/idevice_bg.gif,
+	  exe/webui/style/Kahurangi/main_bg.gif,
+	  exe/webui/style/Kahurangi/nav.css,
+	  exe/webui/style/Kahurangi/note_1.gif,
+	  exe/webui/style/Kahurangi/note_2.gif,
+	  exe/webui/style/Kahurangi/page_bg.gif,
+	  exe/webui/style/Kahurangi/page_bg_ie.gif,
+	  exe/webui/style/Kahurangi/panel-amusements.png,
+	  exe/webui/style/Kahurangi/popup_bg.gif,
+	  exe/webui/style/Kahurangi/stock-stop.png,
+	  exe/webui/style/Kahurangi/top_left_corner.gif,
+	  exe/webui/style/Kahurangi/top_left_corner.gif.orig,
+	  exe/webui/style/Kahurangi/top_nav.jpg,
+	  exe/webui/style/Kahurangi/top_right_corner.gif,
+	  exe/webui/style/Kahurangi/transparent.gif: added Kahurangi
+	  styleee...
+
+2005-10-27 23:49  brent
+
+	* exe/webui/authoringpage.py: added more functionality to TinyMCE.
+
+2005-10-27 22:32  djm
+
+	* exe/engine/version.py, exe/webui/editorpage.py: Remove fckeditor
+
+2005-10-27 22:20  djm
+
+	* app.fil, exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/webui/preferencespage.py, exe/xului/scripts/mainpage.js: added
+	  preferences dialog
+
+2005-10-27 21:55  brent
+
+	* exe/engine/externalurlidevice.py, exe/webui/authoringpage.py:
+	  added remove formatting and HTML source buttons to TinyMCE.
+
+2005-10-27 20:59  djm
+
+	* tools/mki18n.py: changed to unix file format
+
+2005-10-27 20:55  matthew
+
+	* tools/mki18n.py: Now runs from any dir and doesn't need pythonpath
+
+2005-10-27 20:48  djm
+
+	* exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo: local names for Greek and
+	  Chinese languages
+
+2005-10-27 20:46  djm
+
+	* exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo: english and spanish local names
+	  for those languages
+
+2005-10-27 20:44  djm
+
+	* exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/exe.po,
+	  exe/locale/exe_de.po, exe/locale/exe_el.po, exe/locale/exe_en.po,
+	  exe/locale/exe_es.po, exe/locale/exe_zh.po: update native name for
+	  language
+
+2005-10-27 20:35  djm
+
+	* exe/locale/exe_el.po: merged in changes
+
+2005-10-27 20:10  djm
+
+	* exe/locale/ch, exe/locale/el, exe/locale/el/LC_MESSAGES,
+	  exe/locale/exe_ch.po, exe/locale/exe_el.po, exe/locale/exe_gr.po,
+	  exe/locale/exe_zh.po, exe/locale/gr, exe/locale/zh,
+	  exe/locale/zh/LC_MESSAGES: using standard ISO codes
+
+2005-10-27 19:45  matthew
+
+	* exe/engine/imagewithtextidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/locale/exe_gr.po,
+	  exe/locale/gr/LC_MESSAGES/exe.mo: Fix up some idevices that
+	  weren't upgrading Update greek translation from &#915;&#953;&#940;&#957;&#957;&#951;&#962; &#922;&#969;&#963;&#964;&#940;&#961;&#945;&#962;
+	  <jkost@ebox.gr>
+
+2005-10-27 05:11  djm
+
+	* exe/webui/preferencespage.py, exe/webui/webserver.py,
+	  exe/xului/scripts/mainpage.js, exe/xului/templates/mainpage.xul:
+	  added preference dialog
+
+2005-10-27 04:59  matthew
+
+	* prototype/stringmatch.py: Cool!
+
+2005-10-27 04:11  matthew
+
+	* exe/locale/gr, exe/locale/gr/LC_MESSAGES,
+	  exe/locale/gr/LC_MESSAGES/exe.mo: Greek mo file
+
+2005-10-27 04:01  matthew
+
+	* prototype/stringmatch.py: Demo algorythm that will be used with
+	  cloze idevice
+
+2005-10-27 03:14  djm
+
+	* exe/engine/config.py: handle the case where another instance of
+	  eXe has locked the log
+
+2005-10-27 01:52  matthew
+
+	* exe/engine/freetextidevice.py: Added upgrade code
+
+2005-10-27 01:17  brent
+
+	* exe/webui/authoringpage.py: more editor stuff??? not sure.
+
+2005-10-27 01:10  brent
+
+	* exe/webui/browser.py: remove chrome option ... too many probs
+
+2005-10-26 23:17  matthew
+
+	* app.fil, exe/locale/ch/LC_MESSAGES/exe.mo,
+	  exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_ch.po,
+	  exe/locale/exe_de.po, exe/locale/exe_es.po, exe/locale/exe_gr.po,
+	  exe/xului/templates/mainpage.xul, tools/mki18n.py: Updated
+	  translation script and translations
+
+2005-10-26 20:25  djm
+
+	* exe/webui/browser.py: use basename for this.
+
+2005-10-26 06:09  djm
+
+	* exe/engine/attachmentidevice.py: lil bug fix
+
+2005-10-26 06:05  djm
+
+	* exe/webui/browser.py, exe/xului/templates/mainpage.xul: browser
+	  interface working ok on Windoze
+
+2005-10-26 05:29  matthew
+
+	* exe/xului/templates/mainpage-cn.xul: Removed chinese xul page
+
+2005-10-26 05:28  matthew
+
+	* exe/locale/ch/LC_MESSAGES/exe.mo,
+	  exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, tools/mki18n.py: Created mo
+	  files and changed mk18n.py to work without params
+
+2005-10-26 05:27  matthew
+
+	* exe/engine/translate.py: Module to help in late translation of
+	  property values
+
+2005-10-26 05:16  djm
+
+	* exe/application.py, exe/engine/config.py, exe/webui/browser.py,
+	  exe/xului/editor, exe/xului/exe, exe/xului/mainpage.py,
+	  exe/xului/templates/mainpage.xul: New browser based UI - doesn't
+	  conflict with firefox, uses -chrome
+
+2005-10-26 05:11  matthew
+
+	* exe/locale/exe.po, exe/locale/exe_ch.po, exe/locale/exe_de.po,
+	  exe/locale/exe_es.po, exe/locale/exe_gr.po, tools/mki18n.py:
+	  Updated translations
+
+2005-10-26 04:58  matthew
+
+	* app.fil, exe/engine/attachmentidevice.py,
+	  exe/engine/casestudyidevice.py, exe/engine/clozeidevice.py,
+	  exe/engine/config.py, exe/engine/externalurlidevice.py,
+	  exe/engine/field.py, exe/engine/flashwithtextidevice.py,
+	  exe/engine/forumidevice.py, exe/engine/freetextidevice.py,
+	  exe/engine/galleryidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/imagewithtextidevice.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/truefalseidevice.py,
+	  exe/engine/wikipediaidevice.py, exe/locale/exe_es.po,
+	  exe/webui/editorpane.py, tools/mki18n.py: Made idevice and field
+	  properties be translated on the fly
+
+2005-10-26 03:45  matthew
+
+	* exe/locale/exe_gr.po: Updated and did msgmerge
+
+2005-10-26 03:39  matthew
+
+	* exe/locale/exe_gr.po: Original greek po file from: &#915;&#953;&#940;&#957;&#957;&#951;&#962;
+	  &#922;&#969;&#963;&#964;&#940;&#961;&#945;&#962; <jkost@ebox.gr> (John Kostaras)
+
+2005-10-26 02:22  djm
+
+	* exe/webui/authoringpage.py, exe/webui/common.py,
+	  exe/webui/editorelement.py, exe/webui/editorpane.py: little tidyup
+
+2005-10-25 22:38  djm
+
+	* exe/engine/config.py: Added rotating logs
+
+2005-10-25 21:42  matthew
+
+	* exe/engine/field.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js:
+	  http://eduforge.org/forum/message.php?msg_id=1629 Made cloze
+	  idevice support unicode characters
+
+2005-10-24 22:03  djm
+
+	* exe/xului/mainpage.py, exe/xului/xulrunner.py: Launch xulrunner on
+	  both Linux and Windows
+
+2005-10-18 02:01  jenny
+
+	* exe/xului/mainpage.py, exe/xului/xulrunner.py: fixed launch
+	  Xulrunner for windows bugs.
+
+2005-10-18 01:44  djm
+
+	* exe/xului/editor, exe/xului/editor/application.ini,
+	  exe/xului/editor/chrome, exe/xului/editor/chrome/chrome.manifest,
+	  exe/xului/editor/chrome/content,
+	  exe/xului/editor/chrome/content/editor,
+	  exe/xului/editor/chrome/content/editor/editor.xul,
+	  exe/xului/editor/chrome/editor.jar, exe/xului/editor/defaults,
+	  exe/xului/editor/defaults/preferences,
+	  exe/xului/editor/defaults/preferences/editor-prefs.js: add editor
+	  xulapp
+
+2005-10-18 01:08  jenny
+
+	* exe/xului/xulrunner.py: Made it run on windows (MS)
+
+2005-10-17 03:28  brent
+
+	* exe/webui/authoringpage.py: ... and hugo said you go, and i said
+	  no you go ...
+
+2005-10-17 03:02  djm
+
+	* exe/xului/mainpage.py, exe/xului/templates/mainpage.xul,
+	  exe/xului/xulrunner.py: add iDevice Editor launch
+
+2005-10-17 01:39  brent
+
+	* exe/webui/authoringpage.py, exe/webui/common.py: stripped down
+	  toolbar for tinyMCE.
+
+2005-10-17 00:40  djm
+
+	* exe/engine/genericidevice.py, exe/engine/multichoiceidevice.py,
+	  exe/engine/quiztestidevice.py, exe/engine/truefalseidevice.py,
+	  exe/export/scormexport.py: fixed issue 0000170 scorm export
+
+2005-10-16 23:29  djm
+
+	* exe/xului/outlinepane.py: extra debugging
+
+2005-10-16 21:26  djm
+
+	* exe/engine/config.py, exe/webui/webserver.py,
+	  exe/xului/xulrunner.py: added xulrunnerFlags option
+
+2005-10-14 01:55  matthew
+
+	* exe/engine/wikipediaidevice.py, exe/xului/mainpage.py,
+	  exe/xului/templates/mainpage.xul: Translating xul stuff
+
+2005-10-14 01:47  djm
+
+	* tools/editor: Delete this copy of fckeditor too
+
+2005-10-14 01:45  matthew
+
+	* exe/webui/scripts/tinymce, exe/webui/scripts/tinymce/changelog,
+	  exe/webui/scripts/tinymce/docs,
+	  exe/webui/scripts/tinymce/docs/about.html,
+	  exe/webui/scripts/tinymce/docs/compatiblity_chart.html,
+	  exe/webui/scripts/tinymce/docs/credits.html,
+	  exe/webui/scripts/tinymce/docs/css,
+	  exe/webui/scripts/tinymce/docs/css/screen.css,
+	  exe/webui/scripts/tinymce/docs/customization_language_packs.html,
+	  exe/webui/scripts/tinymce/docs/customization_plugins.html,
+	  exe/webui/scripts/tinymce/docs/customization_themes.html,
+	  exe/webui/scripts/tinymce/docs/faq.html,
+	  exe/webui/scripts/tinymce/docs/images,
+	  exe/webui/scripts/tinymce/docs/images/moxiecode.gif,
+	  exe/webui/scripts/tinymce/docs/index.html,
+	  exe/webui/scripts/tinymce/docs/installation_example_00.html,
+	  exe/webui/scripts/tinymce/docs/installation_example_01.html,
+	  exe/webui/scripts/tinymce/docs/installation_example_02.html,
+	  exe/webui/scripts/tinymce/docs/installation_example_03.html,
+	  exe/webui/scripts/tinymce/docs/installing.html,
+	  exe/webui/scripts/tinymce/docs/license.html,
+	  exe/webui/scripts/tinymce/docs/option_accessibility_warnings.html,
+	  exe/webui/scripts/tinymce/docs/option_add_form_submit_trigger.html,
+	  exe/webui/scripts/tinymce/docs/option_add_unload_trigger.html,
+	  exe/webui/scripts/tinymce/docs/option_ask.html,
+	  exe/webui/scripts/tinymce/docs/option_auto_focus.html,
+	  exe/webui/scripts/tinymce/docs/option_auto_reset_designmode.html,
+	  exe/webui/scripts/tinymce/docs/option_auto_resize.html,
+	  exe/webui/scripts/tinymce/docs/option_browsers.html,
+	  exe/webui/scripts/tinymce/docs/option_button_tile_map.html,
+	  exe/webui/scripts/tinymce/docs/option_cleanup.html,
+	  exe/webui/scripts/tinymce/docs/option_cleanup_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_cleanup_on_startup.html,
+	  exe/webui/scripts/tinymce/docs/option_content_css.html,
+	  exe/webui/scripts/tinymce/docs/option_convert_fonts_to_styles.html,
+	  exe/webui/scripts/tinymce/docs/option_convert_newlines_to_brs.html,
+	  exe/webui/scripts/tinymce/docs/option_custom_undo_redo.html,
+	  exe/webui/scripts/tinymce/docs/option_custom_undo_redo_keyboard_shortcuts.html,
+	  exe/webui/scripts/tinymce/docs/option_custom_undo_redo_levels.html,
+	  exe/webui/scripts/tinymce/docs/option_debug.html,
+	  exe/webui/scripts/tinymce/docs/option_dialog_type.html,
+	  exe/webui/scripts/tinymce/docs/option_directionality.html,
+	  exe/webui/scripts/tinymce/docs/option_docs_language.html,
+	  exe/webui/scripts/tinymce/docs/option_document_base_url.html,
+	  exe/webui/scripts/tinymce/docs/option_editor_css.html,
+	  exe/webui/scripts/tinymce/docs/option_editor_deselector.html,
+	  exe/webui/scripts/tinymce/docs/option_editor_selector.html,
+	  exe/webui/scripts/tinymce/docs/option_elements.html,
+	  exe/webui/scripts/tinymce/docs/option_encoding.html,
+	  exe/webui/scripts/tinymce/docs/option_entities.html,
+	  exe/webui/scripts/tinymce/docs/option_entity_encoding.html,
+	  exe/webui/scripts/tinymce/docs/option_extended_valid_elements.html,
+	  exe/webui/scripts/tinymce/docs/option_external_image_list_url.html,
+	  exe/webui/scripts/tinymce/docs/option_external_link_list_url.html,
+	  exe/webui/scripts/tinymce/docs/option_file_browser_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_fix_content_duplication.html,
+	  exe/webui/scripts/tinymce/docs/option_focus_alert.html,
+	  exe/webui/scripts/tinymce/docs/option_force_br_newlines.html,
+	  exe/webui/scripts/tinymce/docs/option_force_p_newlines.html,
+	  exe/webui/scripts/tinymce/docs/option_force_p_newliness.html,
+	  exe/webui/scripts/tinymce/docs/option_height.html,
+	  exe/webui/scripts/tinymce/docs/option_init_instance_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_inline_styles.html,
+	  exe/webui/scripts/tinymce/docs/option_insertimage_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_insertlink_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_invalid_elements.html,
+	  exe/webui/scripts/tinymce/docs/option_language.html,
+	  exe/webui/scripts/tinymce/docs/option_mode.html,
+	  exe/webui/scripts/tinymce/docs/option_nowrap.html,
+	  exe/webui/scripts/tinymce/docs/option_onchange_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_oninit.html,
+	  exe/webui/scripts/tinymce/docs/option_plugins.html,
+	  exe/webui/scripts/tinymce/docs/option_popups_css.html,
+	  exe/webui/scripts/tinymce/docs/option_preformatted.html,
+	  exe/webui/scripts/tinymce/docs/option_relative_urls.html,
+	  exe/webui/scripts/tinymce/docs/option_remove_linebreaks.html,
+	  exe/webui/scripts/tinymce/docs/option_remove_script_host.html,
+	  exe/webui/scripts/tinymce/docs/option_save_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_setupcontent_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_submit_patch.html,
+	  exe/webui/scripts/tinymce/docs/option_textarea_trigger.html,
+	  exe/webui/scripts/tinymce/docs/option_theme.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_blockformats.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_buttons_n.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_buttons_n_add.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_buttons_n_add_before.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_container.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_container_align.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_container_class.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_containers.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_containers_default_align.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_containers_default_class.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_custom_layout.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_disable.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_fonts.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_layout_manager.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_link_targets.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_path.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_path_location.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_resize_horizontal.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_resizing.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_source_editor_height.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_source_editor_width.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_statusbar_location.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_styles.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_toolbar_align.html,
+	  exe/webui/scripts/tinymce/docs/option_theme_advanced_toolbar_location.html,
+	  exe/webui/scripts/tinymce/docs/option_urlconverter_callback.html,
+	  exe/webui/scripts/tinymce/docs/option_valid_elements.html,
+	  exe/webui/scripts/tinymce/docs/option_verify_css_classes.html,
+	  exe/webui/scripts/tinymce/docs/option_verify_html.html,
+	  exe/webui/scripts/tinymce/docs/option_visual.html,
+	  exe/webui/scripts/tinymce/docs/option_visual_table_class.html,
+	  exe/webui/scripts/tinymce/docs/option_width.html,
+	  exe/webui/scripts/tinymce/docs/plugin_advhr.html,
+	  exe/webui/scripts/tinymce/docs/plugin_advimage.html,
+	  exe/webui/scripts/tinymce/docs/plugin_advlink.html,
+	  exe/webui/scripts/tinymce/docs/plugin_autosave.html,
+	  exe/webui/scripts/tinymce/docs/plugin_contextmenu.html,
+	  exe/webui/scripts/tinymce/docs/plugin_directionality.html,
+	  exe/webui/scripts/tinymce/docs/plugin_emotions.html,
+	  exe/webui/scripts/tinymce/docs/plugin_flash.html,
+	  exe/webui/scripts/tinymce/docs/plugin_fullscreen.html,
+	  exe/webui/scripts/tinymce/docs/plugin_iespell.html,
+	  exe/webui/scripts/tinymce/docs/plugin_inlinepopups.html,
+	  exe/webui/scripts/tinymce/docs/plugin_insertdatetime.html,
+	  exe/webui/scripts/tinymce/docs/plugin_noneditable.html,
+	  exe/webui/scripts/tinymce/docs/plugin_paste.html,
+	  exe/webui/scripts/tinymce/docs/plugin_preview.html,
+	  exe/webui/scripts/tinymce/docs/plugin_print.html,
+	  exe/webui/scripts/tinymce/docs/plugin_save.html,
+	  exe/webui/scripts/tinymce/docs/plugin_searchreplace.html,
+	  exe/webui/scripts/tinymce/docs/plugin_table.html,
+	  exe/webui/scripts/tinymce/docs/plugin_zoom.html,
+	  exe/webui/scripts/tinymce/docs/reference_configuration.html,
+	  exe/webui/scripts/tinymce/docs/reference_javascript_functions.html,
+	  exe/webui/scripts/tinymce/docs/reference_plugins.html,
+	  exe/webui/scripts/tinymce/examples,
+	  exe/webui/scripts/tinymce/examples/example_advanced.css,
+	  exe/webui/scripts/tinymce/examples/example_advanced.htm,
+	  exe/webui/scripts/tinymce/examples/example_flash_list.js,
+	  exe/webui/scripts/tinymce/examples/example_full.css,
+	  exe/webui/scripts/tinymce/examples/example_full.htm,
+	  exe/webui/scripts/tinymce/examples/example_image_list.js,
+	  exe/webui/scripts/tinymce/examples/example_link_list.js,
+	  exe/webui/scripts/tinymce/examples/example_simple.htm,
+	  exe/webui/scripts/tinymce/examples/example_word.css,
+	  exe/webui/scripts/tinymce/examples/example_word.htm,
+	  exe/webui/scripts/tinymce/examples/logo.jpg,
+	  exe/webui/scripts/tinymce/examples/logo_over.jpg,
+	  exe/webui/scripts/tinymce/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/blank.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/ar.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/es.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/fi.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/ja.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/pt.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/ru.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/th.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/license.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/images/template.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/popup.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/_template/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/images/advhr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/jscripts/rule.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/image.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/images/sample.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/jscripts/functions.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fa_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advimage/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/css/advlink.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/jscripts/functions.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/advlink/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/autosave/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/css/contextmenu.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/images/spacer.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/images/ltr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/images/rtl.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/directionality/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/emotions.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cool.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cry.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-embarassed.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-frown.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-innocent.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-kiss.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-laughing.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-sealed.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-smile.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-surprised.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-undecided.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-wink.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-yell.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/jscripts/functions.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/emotions/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/css/content.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/css/flash.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/flash.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/images/flash.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/jscripts/flash.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/flash/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/images/fullscreen.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/fullscreen/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/images/iespell.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/iespell/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css/inlinepopup.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/spacer.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_close.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_maximize.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_minimize.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images/window_resize.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/jscripts/mcwindows.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/inlinepopups/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/insertdate.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/images/inserttime.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/insertdatetime/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/noneditable,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/noneditable/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/noneditable/css/noneditable.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/noneditable/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/blank.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/css/blank.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/css/pasteword.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/images/pastetext.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/images/pasteword.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/images/selectall.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/pastetext.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/jscripts/pasteword.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/pastetext.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/paste/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/example.html,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/images/preview.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/pt.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/preview/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/images/print.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/print/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/images/save.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/save/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/replace.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/images/search.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts/replace.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/jscripts/search.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/replace.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/searchreplace/search.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/cell.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/css/row.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/css/table.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/buttons.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_cell_props.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete_col.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_delete_row.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_col_after.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_col_before.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_row_after.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_insert_row_before.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_merge_cells.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_row_props.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/images/table_split_cells.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/jscripts/cell.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/jscripts/merge_cells.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/jscripts/row.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/jscripts/table.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/ar.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/es.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/fi.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/ja.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/pt.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/tw.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/merge_cells.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/row.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/table/table.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/zoom,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/zoom/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/anchor.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/charmap.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/color_picker.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_content.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_popup.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_ui.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/images/insert_image_window.png,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/images/insert_link_window.png,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/images/insert_table_window.png,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/cs/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/de/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/es/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fi/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/fr_ca/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/hu/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table_delete_col.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table_delete_row.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table_insert_col_after.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table_insert_col_before.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table_insert_row_after.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/images/table_insert_row_before.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/it/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images/html_source_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images/insert_specchar_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/insert_specchar_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/nl/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/no/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/pl/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/sv/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/about.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/common_buttons.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/images/insert_anchor_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/images/insert_image_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/images/insert_link_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/images/insert_table_window.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/index.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/insert_anchor_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/insert_image_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/insert_link_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/insert_table_button.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/docs/zh_cn/style.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/image.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/anchor.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/anchor_symbol.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/backcolor.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/bold.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_de_se.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_fr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/bold_ru.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/browse.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/bullist.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/buttons.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/cancel_button_bg.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/center.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/charmap.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/cleanup.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/close.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/code.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/color.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/copy.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/custom_1.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/cut.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/forecolor.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/full.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/help.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/hr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/image.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/indent.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/insert_button_bg.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/italic.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_de_se.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/italic_ru.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/left.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/link.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/newdocument.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/numlist.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/outdent.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/paste.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/redo.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/removeformat.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/right.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/spacer.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/statusbar_resize.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/strikethrough.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/sub.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/sup.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table_delete_col.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table_delete_row.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_col_after.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_col_before.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_row_after.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/table_insert_row_before.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/underline.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_fr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/underline_ru.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/undo.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/unlink.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/visualaid.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/xp,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_bg.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_end.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/images/xp/tabs_bg.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/about.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/anchor.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/charmap.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/color_picker.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/image.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/link.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/jscripts/source_editor.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/ar.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/cs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/da.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/de.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/el.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/es.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/fa.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/fi.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/fr.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/fr_ca.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/he.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/hu.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/it.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/ja.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/ko.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/nl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/no.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/pl.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/pt.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/pt_br.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/readme.txt,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/sv.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/tw.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/zh_cn.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/link.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/source_editor.htm,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/css/editor_content.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/css/editor_popup.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/css/editor_ui.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/editor_template.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/editor_template_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/bold.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/bold_de_se.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/bold_fr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/bold_ru.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/bullist.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/cleanup.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/italic.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/italic_de_se.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/italic_ru.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/numlist.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/redo.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/spacer.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/strikethrough.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/underline.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/underline_fr.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/underline_ru.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/simple/images/undo.gif,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/tiny_mce_popup.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/tiny_mce_src.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/utils,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/utils/form_utils.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/utils/mctabs.js,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/utils/validate.js,
+	  exe/webui/scripts/tinymce/readme, exe/webui/scripts/tinymce/todo:
+	  TinyMce Scripts
+
+2005-10-14 01:39  djm
+
+	* exe/xului/exe/chrome/content/exe/exe.xul,
+	  exe/xului/exe/chrome/exe.jar: changed size of window
+
+2005-10-14 01:36  djm
+
+	* ChangeLog, exe/xului/exe, exe/xului/exe/application.ini,
+	  exe/xului/exe/chrome, exe/xului/exe/chrome/chrome.manifest,
+	  exe/xului/exe/chrome/content, exe/xului/exe/chrome/content/exe,
+	  exe/xului/exe/chrome/content/exe/exe.xul,
+	  exe/xului/exe/chrome/exe.jar, exe/xului/exe/chrome/icons,
+	  exe/xului/exe/chrome/icons/default,
+	  exe/xului/exe/chrome/icons/default/exe.xpm,
+	  exe/xului/exe/chrome/icons/default/exe16.ico,
+	  exe/xului/exe/chrome/icons/default/exe16.xpm,
+	  exe/xului/exe/defaults, exe/xului/exe/defaults/preferences,
+	  exe/xului/exe/defaults/preferences/exe-prefs.js, exe/xului/xulapp,
+	  exe/xului/xulrunner.py: replaced simple xul app with exe xul app
+
+2005-10-14 01:31  djm
+
+	* exe/xului/templates/mainpage.xul: uncomment file menu
+
+2005-10-14 00:31  djm
+
+	* exe/webui/webserver.py, exe/xului/templates/mainpage.xul,
+	  exe/xului/xulapp/application.ini: serve xul scripts from the xului
+	  directory
+
+2005-10-13 23:38  djm
+
+	* exe/xului/mainpage.py: use xuldir for mainpage.xul
+
+2005-10-13 23:36  djm
+
+	* exe/xului/xulrunner.py: big A to little a
+
+2005-10-13 23:21  matthew
+
+	* exe/engine/config.py, exe/engine/linuxconfig.py,
+	  exe/xului/xulrunner.py: More work with xulrunner launching
+
+2005-10-13 23:12  matthew
+
+	* exe/application.py, exe/engine/config.py,
+	  exe/engine/linuxconfig.py, exe/engine/macconfig.py,
+	  exe/engine/standaloneconfig.py, exe/engine/winconfig.py,
+	  exe/webui/browser.py, exe/xului/xulrunner.py: Now uses xulrunner
+	  (almost) instead of browser
+
+2005-10-13 22:33  djm
+
+	* exe/xului/__init__.py: turning xului into a python module
+
 2005-10-13 22:29  djm
 
 	* exe/exe: lil fix

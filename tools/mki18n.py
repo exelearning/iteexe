@@ -286,12 +286,13 @@ def generateAppFil():
     """
     Generates app.fil
     """
+    exe = Path('exe')
     toSearch = [
-        ('exe',                 '*.py'),
-        ('exe/engine',          '*.py'),
-        ('exe/export',          '*.py'),
-        ('exe/webui',           '*.py'),
-        ('exe/xului',           '*.py'),
+        (exe,          '*.py'),
+        (exe/'engine', '*.py'),
+        (exe/'export', '*.py'),
+        (exe/'webui',  '*.py'),
+        (exe/'xului',  '*.py'),
     ]
     output = open('app.fil', 'w')
     for pth, glb in toSearch:

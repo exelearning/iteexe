@@ -21,10 +21,15 @@ def main():
         tarball = Path('../exe-%s-source.tgz' % version)
         os.system('tar czf %s *' % tarball)
         # Upload it
-        open('sftpbatch.tmp', 'w').write(
-            'cd /home/pub/exe\n'
-            'put %s\n' % tarball)
-        os.system('sftp -b sftpbatch.tmp matiu@shell.eduforge.org')
+        if '--local' not in sys.argv:
+            open('sftpbatch.tmp', 'w').write(
+                'cd /home/pub/exe\n'
+                'put %s\n' % tarball)
+            os.system('sftp -b sftpbatch.tmp matiu@shell.eduforge.org')
+        # If we're root, copy the tarball to the portage cache dir to save
+        # downloading it when emerging (for me anyway)
+        if os.getuid() == 0:
+            tarball.copyfile('/usr/portage/distfiles/'+tarball.basename())
         # Copy the ebuild file
         os.chdir(tmp/'exe/installs/gentoo')
         newEbuildFilename = Path('exe-%s.ebuild' % version).abspath()
