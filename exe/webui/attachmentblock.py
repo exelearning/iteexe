@@ -68,8 +68,6 @@ class AttachmentBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        description = self.idevice.description.replace(u"\r", u"")
-        description = description.replace(u"\n", u"\\n")
         html  = (u'<div class="iDevice">',
                  u'<a href="#" onclick="addFile(\'%s\');">' % self.id,
                 _(u'Select a file'),
@@ -89,7 +87,7 @@ class AttachmentBlock(Block):
                                       self.idevice.descriptionInstruc),
                 u'<br/>',
                 common.richTextArea(u'description'+self.id,
-                                    description),
+                                    self.idevice.description),
                 u'<span style="text-decoration:underline">'
                  u'%s</span>' % self.idevice.filename,
                 u'<br/>',

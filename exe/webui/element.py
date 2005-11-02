@@ -139,17 +139,14 @@ class TextAreaElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        content = self.field.content
-        log.debug("renderEdit content="+content+
+        log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
-
-        content = content.replace("\r", "")
-        content = content.replace("\n", "\\n")
 
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
-        html += common.richTextArea(self.id, content, self.width, self.height)
+        html += common.richTextArea(self.id, self.field.content, 
+                                    self.width, self.height)
 
         return html
 

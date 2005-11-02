@@ -31,7 +31,6 @@ log = logging.getLogger(__name__)
 class ExternalUrlBlock(Block):
     """
     ExternalUrlBlock can render and process ExternalUrlIdevices as XHTML
-    GenericBlock will replace it..... one day
     """
     def __init__(self, parent, idevice):
         Block.__init__(self, parent, idevice)

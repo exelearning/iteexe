@@ -49,7 +49,7 @@ class Package(Persistable):
         # For looking up nodes by ids
         self._nodeIdDict    = {} 
 
-        self.levelNames    = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
+        self.levelNames    = [_(u"Topic"), _(u"Section"), _(u"Unit")]
         self._name         = name
 
         # Empty if never saved/loaded
@@ -97,7 +97,7 @@ class Package(Persistable):
         Return the level name
         """
         if level < len(self.levelNames):
-            return _(self.levelNames[level])
+            return self.levelNames[level]
         else:
             return _(u"?????")
         
@@ -148,7 +148,11 @@ class Package(Persistable):
 
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
         toDecode   = zippedFile.read(u"content.data")
-        newPackage = decodeObject(toDecode)
+        try:
+            newPackage = decodeObject(toDecode)
+        except:
+            import traceback
+            traceback.print_exc()
 
         # newPackage.filename is the name that the package was last loaded from
         # or saved to

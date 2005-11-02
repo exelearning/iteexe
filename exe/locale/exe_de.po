@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-31 10:59+1300\n"
+"POT-Creation-Date: 2005-11-02 15:20+1300\n"
 "PO-Revision-Date: 2005-09-13 13:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <info@dialoge.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 #: exe/webui/block.py:222
 msgid "---Move To---"
 msgstr "---Verschieben nach---"
+
+#: exe/xului/mainpage.py:223 exe/xului/mainpage.py:312
+msgid ". Please use ASCII names."
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid ""
@@ -81,15 +85,11 @@ msgstr ""
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Erstellen Sie eine Bezeichnung für den Anhang. Geben Sie möglichst den Dateityp mit an. Z.B. doc, pdf, ppt, etc.</p><p>Wenn Sie auch die Dateigröße mit angeben, wissen die Nutzer wie lange der Aufruf der Datei u.U. benötigt.</p><p>Zum Beispiel: <code>Hamlet.doc (500 KB)</code></p>"
 
-#: exe/engine/clozeidevice.py:64
-msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
-msgstr "<p>Geben Sie einen Text ein. Um eine Lücke zu erzeugen schreiben Sie einen Unterstrich (_) auf jeder Seite des Wortes ein. Zum Beispiel:</p>Das fünfte und das _letzte_ Wort in diesem Text soll von den Teilnehmer/innen eingetragen _werden_."
-
-#: exe/webui/externalurlblock.py:66
+#: exe/webui/externalurlblock.py:65
 msgid "<strong>Frame Height:</strong> "
 msgstr ""
 
-#: exe/webui/externalurlblock.py:60
+#: exe/webui/externalurlblock.py:59
 msgid "<strong>url:</strong> "
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Ein pädagogischer Tipp beschreibt den vorgesehenene Nutzen und die pädagogischen Ideen,die bei der Entwicklung des Idevice wichtig waren."
 
-#: exe/webui/forumblock.py:88
+#: exe/webui/forumblock.py:86
 msgid "A single simple discussion"
 msgstr "Eine einfache Diskussion"
 
@@ -136,7 +136,7 @@ msgstr "Eine einfache Diskussion"
 msgid "Actions"
 msgstr "Handlungen"
 
-#: exe/engine/idevicestore.py:265 exe/engine/idevicestore.py:273
+#: exe/engine/idevicestore.py:263 exe/engine/idevicestore.py:271
 msgid "Activity"
 msgstr "Aktivität"
 
@@ -160,11 +160,11 @@ msgstr "Textbox einfügen. Hilfreich um einen beschreibenden Text einzufügen."
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Bild/Grafik einfügen. Aktiviert die Auswahl von Bildern, die Sie gespeichert haben."
 
-#: exe/webui/multichoiceblock.py:125 exe/webui/testquestionelement.py:113
+#: exe/webui/multichoiceblock.py:117 exe/webui/testquestionelement.py:109
 msgid "Add another option"
 msgstr "Weitere Option hinzufügen"
 
-#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:93
+#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:90
 msgid "Add another question"
 msgstr "Eine weitere Frage hinzufügen"
 
@@ -172,7 +172,7 @@ msgstr "Eine weitere Frage hinzufügen"
 msgid "Add images"
 msgstr "Bilder hinzufügen"
 
-#: exe/webui/multichoiceblock.py:106 exe/webui/testquestionelement.py:96
+#: exe/webui/multichoiceblock.py:98 exe/webui/testquestionelement.py:92
 msgid "Alternatives"
 msgstr "Alternativen"
 
@@ -207,7 +207,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:268
+#: exe/engine/idevicestore.py:266
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -231,17 +231,21 @@ msgstr "Anhang"
 msgid "Attachment %s has no parentNode"
 msgstr ""
 
-#: exe/webui/editorpane.py:269 exe/webui/propertiespane.py:100
+#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:266
 msgid "Author"
 msgstr "Autor/in"
 
-#: exe/webui/forumblock.py:126
+#: exe/webui/forumblock.py:124
 msgid "Can a student post to this forum?:"
 msgstr "Können Teilnehmer/innen in diesem Forum Beiträge posten?"
 
-#: exe/webui/preferencespage.py:93 exe/webui/editorpane.py:209
+#: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:209
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#: exe/xului/mainpage.py:221 exe/xului/mainpage.py:310
+msgid "Cannot access directory named "
+msgstr ""
 
 #: exe/webui/imagewithtextblock.py:83 exe/webui/flashwithtextblock.py:83
 msgid "Caption:"
@@ -251,27 +255,23 @@ msgstr "Titel"
 msgid "Case Study"
 msgstr "Fallstudie"
 
-#: exe/webui/element.py:440
-msgid "Clear"
-msgstr "Löschen"
-
 #: exe/engine/attachmentidevice.py:46
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klicken Sie auf <strong>Datei auswählen</strong> und wählen Sie die Datei aus, die Sie hinzufügen wollen."
 
-#: exe/webui/reflectionblock.py:96
+#: exe/webui/reflectionblock.py:90
 msgid "Click here"
 msgstr "Klicken Sie hier"
 
-#: exe/webui/common.py:211 exe/webui/common.py:212
-#: exe/webui/multichoiceblock.py:156 exe/webui/multichoiceblock.py:157
-#: exe/webui/truefalseelement.py:138 exe/webui/truefalseelement.py:139
-#: exe/webui/block.py:236 exe/webui/editorpane.py:308
-#: exe/webui/editorpane.py:309 exe/webui/editorpane.py:330
+#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:152
+#: exe/webui/multichoiceblock.py:153 exe/webui/common.py:211
+#: exe/webui/common.py:212 exe/webui/truefalseelement.py:127
+#: exe/webui/truefalseelement.py:128 exe/webui/editorpane.py:305
+#: exe/webui/editorpane.py:306 exe/webui/editorpane.py:327
 msgid "Close"
 msgstr "Schließen"
 
-#: exe/engine/clozeidevice.py:63
+#: exe/engine/clozeidevice.py:64
 msgid "Cloze"
 msgstr "Lückentest"
 
@@ -284,12 +284,12 @@ msgstr "Aktivität"
 msgid "Content"
 msgstr "Inhalt"
 
-#: exe/webui/multichoiceblock.py:109 exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:99
+#: exe/webui/multichoiceblock.py:101 exe/webui/testquestionelement.py:95
+#: exe/webui/optionelement.py:117
 msgid "Correct"
 msgstr "Richtig"
 
-#: exe/webui/truefalseelement.py:187
+#: exe/webui/truefalseelement.py:176
 msgid "Correct!"
 msgstr "Richtig!"
 
@@ -301,20 +301,20 @@ msgstr ""
 "Erstellen Sie die Fallstudie. Eine gute Situation \n"
 "Beschreibt eine Kontroverse."
 
-#: exe/webui/block.py:206 exe/webui/editorpage.py:176
-#: exe/webui/editorpage.py:180 exe/webui/editorelement.py:75
-#: exe/webui/editorelement.py:114 exe/webui/editorelement.py:154
+#: exe/webui/editorelement.py:71 exe/webui/editorelement.py:106
+#: exe/webui/editorelement.py:142 exe/webui/block.py:206
+#: exe/webui/editorpage.py:176 exe/webui/editorpage.py:180
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
 msgid "Delete"
 msgstr "Löschen"
 
-#: exe/webui/testoptionelement.py:91 exe/webui/optionelement.py:97
+#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:85
 msgid "Delete option"
 msgstr "Löschoption"
 
-#: exe/webui/questionelement.py:92 exe/webui/truefalseelement.py:118
-#: exe/webui/testquestionelement.py:91
+#: exe/webui/testquestionelement.py:86 exe/webui/questionelement.py:80
+#: exe/webui/truefalseelement.py:106
 msgid "Delete question"
 msgstr "Frage löschen"
 
@@ -328,13 +328,13 @@ msgstr ""
 "der Aufgaben profitieren. (Rubriken unterstützen reflektierendes\n"
 "Feedback.)"
 
-#: exe/engine/idevicestore.py:261
+#: exe/engine/idevicestore.py:259
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "Beschreiben Sie die Kenntnisse, die zur erfolgreichen Bearbeitung notwendig sind."
 
-#: exe/engine/idevicestore.py:224
+#: exe/engine/idevicestore.py:222
 msgid ""
 "Describe the rationale behind the selection of the reading and how it will\n"
 "enrich the learning."
@@ -342,7 +342,7 @@ msgstr ""
 "Beschreiben Sie warum dieser Text ausgewählt wurde und wie er\n"
 " den Lernprozess fördert."
 
-#: exe/engine/idevicestore.py:274
+#: exe/engine/idevicestore.py:272
 msgid "Describe the tasks the learners should complete."
 msgstr "Beschreiben Sie die Aufgabenstellung"
 
@@ -350,27 +350,27 @@ msgstr "Beschreiben Sie die Aufgabenstellung"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: exe/webui/attachmentblock.py:88
+#: exe/webui/attachmentblock.py:85
 msgid "Description:"
 msgstr "Berschreibung:"
 
-#: exe/webui/forumblock.py:171 exe/webui/forumblock.py:188
+#: exe/webui/forumblock.py:169 exe/webui/forumblock.py:186
 msgid "Discussion Topic"
 msgstr "Diskussionsthema"
 
-#: exe/webui/forumblock.py:147
+#: exe/webui/forumblock.py:145
 msgid "Discussion topic:"
 msgstr "Diskussionsthemen:"
 
-#: exe/webui/forumblock.py:92
+#: exe/webui/forumblock.py:90
 msgid "Discussions and replies are allowed"
 msgstr "Neue Diskussionsbeiträge und Antworten erlaubt"
 
-#: exe/webui/element.py:224 exe/webui/element.py:486
+#: exe/webui/element.py:224 exe/webui/element.py:470
 msgid "Display as:"
 msgstr "Anzeigen als"
 
-#: exe/webui/block.py:198 exe/webui/propertiespane.py:123
+#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
 msgid "Done"
 msgstr "Fertig"
 
@@ -390,7 +390,7 @@ msgstr "FEHLER Element.renderView called directly"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "FEHLER: Block.renderViewContent direkt aufgerufen"
 
-#: exe/webui/forumblock.py:89
+#: exe/webui/forumblock.py:87
 msgid "Each person posts one discussion"
 msgstr "Jede/r startet eine Diskussion"
 
@@ -399,7 +399,7 @@ msgstr "Jede/r startet eine Diskussion"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: exe/webui/editorpane.py:279
+#: exe/webui/editorpane.py:276
 msgid "Emphasis"
 msgstr "Gewichtung"
 
@@ -411,6 +411,10 @@ msgstr ""
 "Geben Sie hier Ihren Hinweis ein. \n"
 "wenn Sie keinen Hinweis eingeben wollen,\n"
 "lassen Sie das Feld leer."
+
+#: exe/engine/clozeidevice.py:71
+msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
+msgstr ""
 
 #: exe/engine/reflectionidevice.py:54
 msgid ""
@@ -443,12 +447,16 @@ msgstr ""
 "Die Fragen sollten sich auf den Inhalt der Fallstudie beziehen. Bedenken\n"
 "Sie Aspeket wie Charaktere, zeitlicher Ablauf, Bedeutungen, Konflikte."
 
-#: exe/xului/mainpage.py:266 exe/xului/mainpage.py:285
+#: exe/engine/clozeidevice.py:65
+msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
+msgstr ""
+
+#: exe/xului/mainpage.py:273 exe/xului/mainpage.py:292
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Fehler beim Laden des Paketes \"%s\".%s"
 
-#: exe/xului/mainpage.py:416 exe/xului/mainpage.py:434
+#: exe/xului/mainpage.py:424 exe/xului/mainpage.py:442
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportiertzu %s"
@@ -457,21 +465,17 @@ msgstr "Exportiertzu %s"
 msgid "External Web Site"
 msgstr ""
 
-#: exe/webui/truefalseelement.py:103 exe/webui/truefalseelement.py:170
+#: exe/webui/truefalseelement.py:86 exe/webui/truefalseelement.py:159
 msgid "False"
 msgstr "Falsch"
 
-#: exe/engine/idevicestore.py:230 exe/webui/questionelement.py:85
-#: exe/webui/multichoiceblock.py:113 exe/webui/truefalseelement.py:108
-#: exe/webui/element.py:430
+#: exe/engine/idevicestore.py:228 exe/engine/clozeidevice.py:70
+#: exe/engine/clozeidevice.py:98 exe/webui/multichoiceblock.py:105
+#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:92
 msgid "Feedback"
 msgstr "Fedback"
 
-#: exe/webui/element.py:399
-msgid "Feedback: "
-msgstr "Feedback:"
-
-#: exe/xului/mainpage.py:333 exe/xului/mainpage.py:376
+#: exe/xului/mainpage.py:347 exe/xului/mainpage.py:387
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Dateiname %s ist eine Datei, sie kann nicht ersetzt werden."
@@ -496,24 +500,24 @@ msgid ""
 "into an inline frame. Use only if your content will be online."
 msgstr ""
 
-#: exe/webui/forumblock.py:131
+#: exe/webui/forumblock.py:129
 msgid "Force everyone to be subscribed?:"
 msgstr "Soll Jede/r hier eingetragen werden?"
 
-#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:169
-#: exe/webui/forumblock.py:186
+#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:167
+#: exe/webui/forumblock.py:184
 msgid "Forum Discussion"
 msgstr "Forendiskussion"
 
-#: exe/webui/forumblock.py:121
+#: exe/webui/forumblock.py:119
 msgid "Forum introduction:"
 msgstr "Foreneinführung:"
 
-#: exe/webui/forumblock.py:111
+#: exe/webui/forumblock.py:109
 msgid "Forum name:"
 msgstr "Forenname:"
 
-#: exe/webui/forumblock.py:116
+#: exe/webui/forumblock.py:114
 msgid "Forum type:"
 msgstr "Forenart:"
 
@@ -521,29 +525,29 @@ msgstr "Forenart:"
 msgid "Free Text"
 msgstr "Freier Text"
 
-#: exe/webui/element.py:425
+#: exe/webui/element.py:415
 msgid "Get score"
 msgstr "Punkte eintragen"
 
-#: exe/webui/forumblock.py:137
+#: exe/webui/forumblock.py:135
 msgid "Group mode:"
 msgstr "Gruppenmodus:"
 
-#: exe/webui/reflectionblock.py:100 exe/webui/forumblock.py:105
+#: exe/webui/forumblock.py:103 exe/webui/reflectionblock.py:94
 msgid "Hide"
 msgstr "Verbergen"
 
-#: exe/webui/element.py:396
+#: exe/webui/element.py:388
 #, fuzzy
-msgid "Hide Word"
+msgid "Hide/Show Word"
 msgstr "Verbergen"
 
-#: exe/webui/multichoiceblock.py:160 exe/webui/truefalseelement.py:112
-#: exe/webui/truefalseelement.py:132 exe/webui/truefalseelement.py:142
+#: exe/webui/multichoiceblock.py:156 exe/webui/truefalseelement.py:98
+#: exe/webui/truefalseelement.py:121 exe/webui/truefalseelement.py:131
 msgid "Hint"
 msgstr "Hinweis"
 
-#: exe/webui/multichoiceblock.py:100
+#: exe/webui/multichoiceblock.py:92
 msgid "Hint:"
 msgstr "Hinweis:"
 
@@ -551,7 +555,7 @@ msgstr "Hinweis:"
 msgid "Home"
 msgstr "Home"
 
-#: exe/webui/editorpane.py:311
+#: exe/webui/editorpane.py:308
 msgid "Icons"
 msgstr "Icons"
 
@@ -559,7 +563,7 @@ msgstr "Icons"
 msgid "Image"
 msgstr "Bild/Grafik"
 
-#: exe/engine/galleryidevice.py:253
+#: exe/engine/galleryidevice.py:244
 msgid "Image Gallery"
 msgstr "Bildgallerie"
 
@@ -567,11 +571,11 @@ msgstr "Bildgallerie"
 msgid "Image with Text"
 msgstr "Bild mit Text"
 
-#: exe/webui/optionelement.py:131
+#: exe/webui/optionelement.py:119
 msgid "Incorrect"
 msgstr "Falsch"
 
-#: exe/webui/truefalseelement.py:188
+#: exe/webui/truefalseelement.py:177
 msgid "Incorrect!"
 msgstr "Falsch"
 
@@ -579,7 +583,7 @@ msgstr "Falsch"
 msgid "Instructions"
 msgstr "Anleitungen"
 
-#: exe/engine/clozeidevice.py:58 exe/engine/clozeidevice.py:89
+#: exe/engine/clozeidevice.py:58 exe/engine/clozeidevice.py:93
 #, fuzzy
 msgid "Instructions For Learners"
 msgstr "Anleitung zur Vervollständigung"
@@ -588,7 +592,7 @@ msgstr "Anleitung zur Vervollständigung"
 msgid "Instructions for completion"
 msgstr "Anleitung zur Vervollständigung"
 
-#: exe/webui/attachmentblock.py:82
+#: exe/webui/attachmentblock.py:79
 msgid "Label"
 msgstr "Bezeichnung"
 
@@ -612,7 +616,7 @@ msgstr "Level 3:"
 msgid "Load"
 msgstr "Laden"
 
-#: exe/webui/forumblock.py:153
+#: exe/webui/forumblock.py:151
 msgid "Message:"
 msgstr "Beitrag:"
 
@@ -628,7 +632,7 @@ msgstr "Aufwärts"
 msgid "Multi-Choice Question"
 msgstr "Multiple-Choice Frage"
 
-#: exe/webui/editorpane.py:266
+#: exe/webui/editorpane.py:263
 msgid "Name"
 msgstr "Name"
 
@@ -636,7 +640,7 @@ msgstr "Name"
 msgid "New iDevice"
 msgstr "Neues iDevice"
 
-#: exe/webui/forumblock.py:96
+#: exe/webui/forumblock.py:94
 msgid "No"
 msgstr "Nein"
 
@@ -644,23 +648,23 @@ msgstr "Nein"
 msgid "No Images Loaded"
 msgstr "Keine Bilder hochgeladen"
 
-#: exe/engine/galleryidevice.py:98
+#: exe/engine/galleryidevice.py:97
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Keine Vorschau vorhanden. Bild konntenichtverkleinert werden."
 
-#: exe/webui/forumblock.py:93
+#: exe/webui/forumblock.py:91
 msgid "No discussions, but replies are allowed"
 msgstr "Keine neuen Beiträge, aber Antworten sind erlaubt"
 
-#: exe/webui/forumblock.py:94
+#: exe/webui/forumblock.py:92
 msgid "No discussions, no replies"
 msgstr "Weder neue Beiträge, noch Antworten erlaubt."
 
-#: exe/webui/editorpane.py:282
+#: exe/webui/editorpane.py:279
 msgid "No emphasis"
 msgstr "Keine Gewichtung"
 
-#: exe/webui/forumblock.py:100
+#: exe/webui/forumblock.py:98
 msgid "No groups"
 msgstr "Keine Gruppen"
 
@@ -668,15 +672,15 @@ msgstr "Keine Gruppen"
 msgid "None"
 msgstr "Keine"
 
-#: exe/webui/preferencespage.py:92
+#: exe/webui/preferencespage.py:87
 msgid "OK"
 msgstr ""
 
-#: exe/engine/idevicestore.py:237 exe/engine/idevicestore.py:246
+#: exe/engine/idevicestore.py:235 exe/engine/idevicestore.py:244
 msgid "Objectives"
 msgstr "Ziele"
 
-#: exe/engine/idevicestore.py:240
+#: exe/engine/idevicestore.py:238
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -686,7 +690,7 @@ msgstr ""
 "beschreiben, was die Teilnehmer/innen können, wenn sie die Aufgaben \n"
 "bearbeitet haben."
 
-#: exe/webui/multichoiceblock.py:110 exe/webui/testquestionelement.py:102
+#: exe/webui/multichoiceblock.py:102 exe/webui/testquestionelement.py:98
 msgid "Option"
 msgstr "Option"
 
@@ -694,16 +698,16 @@ msgstr "Option"
 msgid "Outline"
 msgstr "Übersicht"
 
-#: exe/xului/mainpage.py:236
+#: exe/xului/mainpage.py:243
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paket gespeichert zu %s"
 
-#: exe/webui/block.py:227 exe/webui/editorpane.py:321
+#: exe/webui/block.py:227 exe/webui/editorpane.py:318
 msgid "Pedagogical Help"
 msgstr "Pädagogische Hilfe"
 
-#: exe/webui/editorpane.py:276
+#: exe/webui/editorpane.py:273
 msgid "Pedagogical Tip"
 msgstr "Pädagogischer Hinweis/Tipp:"
 
@@ -715,11 +719,11 @@ msgstr "Tragen Sie eine Bezeichnung für den Idevice ein."
 msgid "Please select a correct answer for each question."
 msgstr "Wählen Sie eine richtige Antwort für jede Frage aus."
 
-#: exe/engine/idevicestore.py:250 exe/engine/idevicestore.py:260
+#: exe/engine/idevicestore.py:248 exe/engine/idevicestore.py:258
 msgid "Preknowledge"
 msgstr "Vorwissen"
 
-#: exe/engine/idevicestore.py:253
+#: exe/engine/idevicestore.py:251
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -748,7 +752,7 @@ msgstr "Projekttiel:"
 msgid "Provide a brief description of the file"
 msgstr "Geben Sie eine kurze Beschreibung der Datei ein."
 
-#: exe/engine/idevicestore.py:222
+#: exe/engine/idevicestore.py:220
 msgid "Provide details of the reading materials learners should  read."
 msgstr "Bieten Sie Detailhinweise zu den Lesetexten an."
 
@@ -760,7 +764,7 @@ msgstr ""
 "Geben Sie ein Feedback zur Fragestellung ein. Dies kann \n"
 "z.B. eine Zusammenfassung der wichtigsten Punkte sein."
 
-#: exe/engine/idevicestore.py:227
+#: exe/engine/idevicestore.py:225
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
@@ -769,7 +773,11 @@ msgstr ""
 "Geben Sie detaillierte Hinweise zu den ausgewählten Lesetexten.\n"
 "Die Art der Hinweise hängt vom Kontext Ihres Lernangebotes ab."
 
-#: exe/engine/idevicestore.py:214
+#: exe/engine/clozeidevice.py:59
+msgid "Provide instructions to learners on what they must do to complete the cloze exercise."
+msgstr ""
+
+#: exe/engine/idevicestore.py:212
 msgid ""
 "Provide learners with structure to their reading activity. This helps put\n"
 "the activity in context for the learner. It is also important to correctly\n"
@@ -784,33 +792,33 @@ msgstr ""
 "Überlegen Sie, ob evtl. ein Feedback (z.B. eine Zusammenfassung der zentralen\n"
 "Aspekte eines Textes] zugefügt werden soll."
 
-#: exe/webui/block.py:241 exe/webui/editorpane.py:272
+#: exe/webui/block.py:241 exe/webui/editorpane.py:269
 msgid "Purpose"
 msgstr "Zweck"
 
-#: exe/engine/clozeidevice.py:59 exe/engine/clozeidevice.py:90
+#: exe/engine/clozeidevice.py:94
 #, fuzzy
 msgid "Put instructions for learners here"
 msgstr "Anweisung für die Vervollständigung hier einfügen."
 
-#: exe/webui/questionelement.py:82 exe/webui/questionelement.py:120
-#: exe/webui/truefalseelement.py:97
+#: exe/webui/questionelement.py:70 exe/webui/questionelement.py:108
+#: exe/webui/truefalseelement.py:78
 msgid "Question"
 msgstr "Frage"
 
-#: exe/webui/multichoiceblock.py:97 exe/webui/testquestionelement.py:86
+#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Frage:"
 
-#: exe/engine/clozeidevice.py:60 exe/engine/clozeidevice.py:91
+#: exe/engine/clozeidevice.py:61 exe/engine/clozeidevice.py:95
 msgid "Read the paragraph below and fill in the missing words"
 msgstr ""
 
-#: exe/engine/idevicestore.py:211
+#: exe/engine/idevicestore.py:209
 msgid "Reading Activity"
 msgstr "Lesetext"
 
-#: exe/engine/idevicestore.py:226
+#: exe/engine/idevicestore.py:224
 msgid "Reference"
 msgstr "Empfehlungen/Hinweise"
 
@@ -834,11 +842,11 @@ msgstr ""
 "sind nützliche Instrumente um den Reflektionsprozess darzu-\n"
 "stellen. Rubriken und Leitlinien sind effektive Feedbackmöglichkeiten."
 
-#: exe/webui/reflectionblock.py:75
+#: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
 msgstr "Reflexionsfrage"
 
-#: exe/webui/reflectionblock.py:78
+#: exe/webui/reflectionblock.py:72
 msgid "Response:"
 msgstr "Antwort:"
 
@@ -851,7 +859,8 @@ msgid "SCORM Multiple Choice Quiz:"
 msgstr "SCORM Multiple-Choice Test:"
 
 #: exe/engine/quiztestidevice.py:81
-msgid "SCORM Quiz"
+#, fuzzy
+msgid "SCORM Quiz Experimental"
 msgstr "SCORM Test"
 
 #: exe/webui/quiztestblock.py:135
@@ -870,16 +879,16 @@ msgstr "Speichern unter"
 msgid "Section"
 msgstr "Abschnitt"
 
-#: exe/webui/preferencespage.py:85
+#: exe/webui/preferencespage.py:81
 #, fuzzy
 msgid "Select Language"
 msgstr "Bild/Grafik auswählen"
 
-#: exe/webui/attachmentblock.py:76
+#: exe/webui/attachmentblock.py:73
 msgid "Select a file"
 msgstr "Datei auswählen"
 
-#: exe/webui/element.py:484
+#: exe/webui/element.py:468
 msgid "Select a flash file"
 msgstr "Flash-Datei auswählen"
 
@@ -891,27 +900,33 @@ msgstr "Bild/Grafik auswählen"
 msgid "Select pass rate: "
 msgstr "Wert für \"Bestanden\":"
 
-#: exe/webui/forumblock.py:101
+#: exe/webui/forumblock.py:99
 msgid "Separate groups"
 msgstr "Getrennte Gruppen"
 
-#: exe/webui/forumblock.py:104
+#: exe/webui/forumblock.py:102
 msgid "Show"
 msgstr "Anzeigen"
 
-#: exe/webui/element.py:437
-msgid "Show answers"
+#: exe/webui/element.py:427
+#, fuzzy
+msgid "Show/Clear Answers"
 msgstr "Antworten zeigen"
 
-#: exe/webui/editorpane.py:283
+#: exe/webui/element.py:420
+#, fuzzy
+msgid "Show/Hide Feedback"
+msgstr "Fedback"
+
+#: exe/webui/editorpane.py:280
 msgid "Some emphasis"
 msgstr "Einige Bedeutung"
 
-#: exe/xului/mainpage.py:265 exe/xului/mainpage.py:284
+#: exe/xului/mainpage.py:272 exe/xului/mainpage.py:291
 msgid "Sorry, wrong file format"
 msgstr "Sorry, falsches Dateiformat"
 
-#: exe/xului/mainpage.py:263 exe/xului/mainpage.py:282
+#: exe/xului/mainpage.py:270 exe/xului/mainpage.py:289
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -920,23 +935,23 @@ msgstr ""
 "Sorry, falsches Dateiformat \n"
 "%s"
 
-#: exe/webui/forumblock.py:90
+#: exe/webui/forumblock.py:88
 msgid "Standard forum for general use"
 msgstr "Standardforum zur allgemeinen Nutzung"
 
-#: exe/webui/casestudyblock.py:84
+#: exe/webui/casestudyblock.py:81
 msgid "Story:"
 msgstr "Story:"
 
-#: exe/webui/editorpane.py:284
+#: exe/webui/editorpane.py:281
 msgid "Strong emphasis"
 msgstr "Hohe Bedeutung"
 
-#: exe/webui/forumblock.py:172 exe/webui/forumblock.py:189
+#: exe/webui/forumblock.py:170 exe/webui/forumblock.py:187
 msgid "Subject"
 msgstr "Thema"
 
-#: exe/webui/forumblock.py:148
+#: exe/webui/forumblock.py:146
 msgid "Subject:"
 msgstr "Thema:"
 
@@ -988,7 +1003,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "Tragen Sie hier den Zweck des Lernschritts ein. Er ist ein Hinweis für andere Nutzer/innen."
 
-#: exe/engine/idevicestore.py:231
+#: exe/engine/idevicestore.py:229
 msgid ""
 "The use of this element is flexible.  Use it to provide a summary of the\n"
 "points covered in the reading, or as a starting point for further analysis of\n"
@@ -1000,7 +1015,7 @@ msgstr ""
 "Sie das Feedback als Ausgangspunkt für weitere Aktivitäten mit dem\n"
 "Text oder einer Frage oder Aussage als Ausgangspunkt für eine Diskussion."
 
-#: exe/engine/galleryidevice.py:255
+#: exe/engine/galleryidevice.py:246
 msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
 msgstr "Dieses Idevice zeigt in einfacher Art und Weise eine Reihe von Bildern an. Sie können z.B. mit Bildern verschiedene Beispiellösungen zeigen."
 
@@ -1036,7 +1051,7 @@ msgstr ""
 msgid "Topic"
 msgstr "Thema"
 
-#: exe/webui/truefalseelement.py:101 exe/webui/truefalseelement.py:168
+#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:157
 msgid "True"
 msgstr "Richtig"
 
@@ -1096,11 +1111,11 @@ msgstr ""
 "\"Richtige Antwort\" wenn die korrekte Antwort gewählt wurde; oder \n"
 "\"Falsche Antwort\" für die anderen Alternativen."
 
-#: exe/engine/idevicestore.py:247
+#: exe/engine/idevicestore.py:245
 msgid "Type the learning objectives for this resource."
 msgstr "Geben Sie die Lernziele für diesen Schritt an."
 
-#: exe/engine/truefalseidevice.py:67 exe/engine/multichoiceidevice.py:90
+#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
 msgid "Type the question stem."
 msgstr "Gebn Sie den Fragenstamm ein."
 
@@ -1116,15 +1131,15 @@ msgstr "Verbindung konnte nicht hergestellt werden mit "
 msgid "Unit"
 msgstr "Einheit"
 
-#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/forumidevice.py:38 exe/engine/galleryidevice.py:254
-#: exe/engine/wikipediaidevice.py:50 exe/engine/truefalseidevice.py:59
-#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:39
-#: exe/engine/imagewithtextidevice.py:38 exe/engine/attachmentidevice.py:41
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:213 exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:267
+#: exe/engine/wikipediaidevice.py:50 exe/engine/casestudyidevice.py:57
+#: exe/engine/multichoiceidevice.py:58 exe/engine/freetextidevice.py:38
+#: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
+#: exe/engine/flashwithtextidevice.py:39 exe/engine/imagewithtextidevice.py:38
+#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:59
+#: exe/engine/externalurlidevice.py:38 exe/engine/idevicestore.py:211
+#: exe/engine/idevicestore.py:237 exe/engine/idevicestore.py:265
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
+#: exe/engine/galleryidevice.py:245
 msgid "University of Auckland"
 msgstr "Universität Auckland"
 
@@ -1132,19 +1147,19 @@ msgstr "Universität Auckland"
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Betonen Sie mit Nachdruck die Bedeutung der Informationen des Idevice"
 
-#: exe/engine/galleryidevice.py:259
+#: exe/engine/galleryidevice.py:250
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Mit diesem Idevice können Sie verschiedene Bilder zeigen."
 
-#: exe/webui/forumblock.py:102
+#: exe/webui/forumblock.py:100
 msgid "Visible groups"
 msgstr "Sichtbare Gruppen"
 
-#: exe/webui/forumblock.py:142
+#: exe/webui/forumblock.py:140
 msgid "Visible to students:"
 msgstr "Sichtbarkeit für Teilnehmer/innen:"
 
-#: exe/engine/idevicestore.py:221
+#: exe/engine/idevicestore.py:219
 msgid "What to read"
 msgstr "Lesetexte"
 
@@ -1167,7 +1182,7 @@ msgstr ""
 "oder in der Lerneinheit verwandt wurden.</li>\n"
 "<li>Formulieren Sie knappe Antwortvorgaben.</li>\n"
 
-#: exe/engine/idevicestore.py:223
+#: exe/engine/idevicestore.py:221
 msgid "Why it should be read"
 msgstr "Warum der Text gelesen werden soll"
 
@@ -1179,11 +1194,11 @@ msgstr "Wikibooks Artikel"
 msgid "Wikipedia Article"
 msgstr "Wikipedia Artikel"
 
-#: exe/webui/forumblock.py:97
+#: exe/webui/forumblock.py:95
 msgid "Yes, forever"
 msgstr "Ja, immer"
 
-#: exe/webui/forumblock.py:98
+#: exe/webui/forumblock.py:96
 msgid "Yes, initially"
 msgstr "Ja, anfangs"
 
@@ -1191,16 +1206,16 @@ msgstr "Ja, anfangs"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Ihr neues Idevice wird mit diesem Titel im Idevice Fenster angezeigt. Dies ist ein Pflichtfeld."
 
-#: exe/webui/element.py:238 exe/webui/element.py:498
+#: exe/webui/element.py:238 exe/webui/element.py:482
 msgid "blank for original size"
 msgstr "Platzhalter für Orginalgröße"
 
-#: exe/export/scormexport.py:208 exe/export/imsexport.py:176
+#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:53 exe/webui/preferencespage.py:74
-#: exe/webui/editorpage.py:160
+#: exe/webui/editorpage.py:160 exe/webui/common.py:53
+#: exe/webui/preferencespage.py:72
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: elearning XHTML Editor"
 
@@ -1213,24 +1228,24 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:200
+#: exe/engine/package.py:204
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
-#: exe/webui/renderable.py:250
+#: exe/webui/renderable.py:249
 msgid "key"
 msgstr ""
 
-#: exe/webui/renderable.py:252
+#: exe/webui/renderable.py:251
 msgid "keycode"
 msgstr ""
 
-#: exe/webui/renderable.py:243
+#: exe/webui/renderable.py:242
 #, fuzzy
 msgid "label"
 msgstr "Bezeichnung"
 
-#: exe/webui/renderable.py:255
+#: exe/webui/renderable.py:254
 #, fuzzy
 msgid "title"
 msgstr "Artikel"
@@ -1349,11 +1364,6 @@ msgstr ""
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="t"
-#: oncommand="loadTutorial()" label="Tutorial">
-msgid "label=\"Tutorial\" accesskey=\"t\""
-msgstr ""
-
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
 #: label="Add Page">
 #, fuzzy
@@ -1401,6 +1411,15 @@ msgstr "Autor/in"
 #, fuzzy
 msgid "Properties"
 msgstr "Projekteigenschaften"
+
+#~ msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
+#~ msgstr "<p>Geben Sie einen Text ein. Um eine Lücke zu erzeugen schreiben Sie einen Unterstrich (_) auf jeder Seite des Wortes ein. Zum Beispiel:</p>Das fünfte und das _letzte_ Wort in diesem Text soll von den Teilnehmer/innen eingetragen _werden_."
+
+#~ msgid "Clear"
+#~ msgstr "Löschen"
+
+#~ msgid "Feedback: "
+#~ msgstr "Feedback:"
 
 #~ msgid "F"
 #~ msgstr "F"

@@ -51,6 +51,8 @@ class ClozeBlock(Block):
         """
         Handles changes in the paragraph text from editing
         """
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]
         self.instructionElement.process(request)

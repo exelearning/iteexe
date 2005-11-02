@@ -83,21 +83,15 @@ class MultichoiceBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        question = self.question.replace("\r", "")
-        question = question.replace("\n","\\n")
-        
-        hint      = self.hint.replace("\r", "")
-        hint      = hint.replace("\n","\\n")
-        
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html += "<b>" + _("Question:") + " </b>"   
         html += common.elementInstruc("question"+self.id, self.questionInstruc)
-        html += common.richTextArea("question"+self.id, question)
+        html += common.richTextArea("question"+self.id, self.question)
         html += "<b>" + _("Hint:") + " </b>"   
         html += common.elementInstruc("hint"+self.id, self.hintInstruc)
-        html += common.richTextArea("hint"+self.id, hint)
+        html += common.richTextArea("hint"+self.id, self.hint)
         html += "<table width =\"100%%\">"
         html += "<thead>"
         html += "<tr>"
@@ -143,23 +137,26 @@ class MultichoiceBlock(Block):
         html += "<div class=\"iDevice_inner\">\n"
         html += self.question+" &nbsp;&nbsp;\n"
         
-        html += '<span style="background-image:url(\'panel-amusements.png\');">'
-        html += '\n<a onmousedown="Javascript:updateCoords(event);'
-        html += 'showMe(\'%s\', 350, 100);" ' % self.hintId
-        html += 'style="cursor:help;align:center;vertical-align:middle;" '
-        html += 'title="Hint" \n'
-        html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a></span>'
-        html += '<div id="'+self.hintId+'" '
-        html += 'style="display:none; z-index:99;">'
-        html += '<div style="float:right;" >'
-        html += '<img alt="%s" ' % _('Close')
-        html += 'src="stock-stop.png" title="%s"' % _('Close')
-        html += " onmousedown=\"Javascript:hideMe();\"/></div>"
-        html += '<div class="popupDivLabel">'
-        html += _("Hint")
-        html += '</div>\n'
-        html += self.hint
-        html += "</div>\n"
+        if self.hint:
+            html += '<span '
+            html += ' style="background-image:url(\'panel-amusements.png\');">'
+            html += '\n<a onmousedown="Javascript:updateCoords(event);'
+            html += 'showMe(\'%s\', 350, 100);" ' % self.hintId
+            html += 'style="cursor:help;align:center;vertical-align:middle;" '
+            html += 'title="Hint" \n'
+            html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
+            html += '</span>'
+            html += '<div id="'+self.hintId+'" '
+            html += 'style="display:none; z-index:99;">'
+            html += '<div style="float:right;" >'
+            html += '<img alt="%s" ' % _('Close')
+            html += 'src="stock-stop.png" title="%s"' % _('Close')
+            html += " onmousedown=\"Javascript:hideMe();\"/></div>"
+            html += '<div class="popupDivLabel">'
+            html += _("Hint")
+            html += '</div>\n'
+            html += self.hint
+            html += "</div>\n"
         html += self.renderViewContent()    
         html += "</div>\n"
         html += "</div>\n"

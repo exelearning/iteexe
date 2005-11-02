@@ -41,7 +41,7 @@ class ClozeIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, _(u"Cloze Activity"),
+        Idevice.__init__(self, x_(u"Cloze Activity"),
                          x_(u"University of Auckland"), 
                          x_(u"This Idevice is used to help students learn "
                             u"passages of text and to develop an understanding "
@@ -56,19 +56,20 @@ class ClozeIdevice(Idevice):
                              parentNode)
         self.instructionsForLearners = TextAreaField(
             x_(u'Instructions For Learners'),
-            x_(u'Put instructions for learners here'),
+            x_(u'Provide instructions to learners on what '
+                'they must do to complete the cloze exercise.'),
             x_(u'Read the paragraph below and '
                 'fill in the missing words'))
         self.instructionsForLearners.idevice = self
         self._content = ClozeField(x_(u'Cloze'), 
-            x_(u'<p>Enter a passage of text, to make a gap that the user must '
-                'fill put underscores (_) on either side of the word. For '
-                'example:</p>'
-                'The fith and last _words_ of this text need to be filled in '
-                'by the _student_'))
+            x_(u'Enter the text for your cloze exercise by pasting or '
+                'typing into the cloze field. To select the words you wish '
+                'to hide double click on the word and click the '
+                '<i>Hide/Show Word</i> button.'))
         self._content.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'), 
-                                      x_(u'Place feedback here'))
+        self.feedback = TextAreaField(x_(u'Feedback'),
+            x_(u'Enter any feedback you wish to provide the learner '
+                'with-in the feedback field. This field can be left blank.'))
         self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
 

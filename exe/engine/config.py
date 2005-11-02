@@ -41,7 +41,7 @@ class Config:
     # Class attributes
     optionNames = {
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
-                   'configDir', 'localeDir'),
+                   'configDir', 'localeDir', 'browserPath'),
         'user': ('locale',)
     }
 
@@ -128,7 +128,7 @@ class Config:
                 self.configParser.setdefault(sectionName, 
                                              optionName, 
                                              defaultVal)
-        self.configParser.setdefault('logging', 'root', 'ERROR')
+        self.configParser.setdefault('logging', 'root', 'INFO')
 
 
     def __setConfigPath(self):

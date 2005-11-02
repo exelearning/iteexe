@@ -77,10 +77,6 @@ class TestquestionElement(object):
         """
         Returns an XHTML string with the form element for editing this element
         """
-        question = self.question.question
-        question = question.replace("\r", "")
-        question = question.replace("\n","\\n")
-        
         html  = u"<div class=\"iDevice\">\n"
         html += u"<b>" + _("Question:") + " </b>" 
         html += common.elementInstruc("question"+self.id, 
@@ -88,7 +84,8 @@ class TestquestionElement(object):
         html += u" " + common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
-        html += common.richTextArea("question"+self.id, question)
+        html += common.richTextArea("question"+self.id, 
+                                    self.question.question)
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
         html += u"<tr>"

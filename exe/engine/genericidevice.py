@@ -114,11 +114,11 @@ class GenericIdevice(Idevice):
         self.fields = []
         for oldField in oldFields:
             if oldField.fieldType == "Text":
-                self.addField(TextField(oldField.name,
+                self.addField(TextField(oldField.__dict__['name'],
                                         oldField.instruction,
                                         oldField.content))
             elif oldField.fieldType == "TextArea":
-                self.addField(TextAreaField(oldField.name,
+                self.addField(TextAreaField(oldField.__dict__['name'],
                                             oldField.instruction,
                                             oldField.content))
             else:

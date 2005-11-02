@@ -63,19 +63,15 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        activity = self.activity.replace("\r", "")
-        activity = activity.replace("\n","\\n")
-        answer   = self.answer.replace("\r", "")
-        answer   = answer.replace("\n","\\n")
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html +=  _(u"Reflective question:") 
         html += common.elementInstruc("activity"+self.id, self.activityInstruc)
-        html += "<br/>" + common.richTextArea("activity"+self.id, activity)
+        html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)
         html += _("Response:")
         html += common.elementInstruc("answer"+self.id, self.answerInstruc)
-        html += "<br/>" + common.richTextArea("answer"+self.id, answer)
+        html += "<br/>" + common.richTextArea("answer"+self.id, self.answer)
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html

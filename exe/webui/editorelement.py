@@ -65,9 +65,6 @@ class TextEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        self.field.instruc = self.field.instruc.replace("\r", "")
-        self.field.instruc = self.field.instruc.replace("\n","\\n")
-        
         html  = common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
@@ -103,10 +100,6 @@ class TextAreaEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        instruction = self.field.instruc.replace("\r", "")
-        instruction = instruction.replace("\n","\\n")
-        instruction = instruction.replace("'","\\'")
-        
         html  = common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
@@ -114,7 +107,7 @@ class TextAreaEditorElement(EditorElement):
         html += "<br/>\n"
         html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
-        html += common.richTextArea("instruc"+self.id, instruction)
+        html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
@@ -143,10 +136,6 @@ class ImageEditorElement(EditorElement):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        instruction = self.field.instruc.replace("\r", "")
-        instruction = instruction.replace("\n","\\n")
-        instruction = instruction.replace("'","\\'")
-
         html  = common.textInput("name"+self.id, self.field.name, 25)
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
@@ -157,7 +146,7 @@ class ImageEditorElement(EditorElement):
                              self.field.width,
                              self.field.height)
         html += "<br/>\n"
-        html += common.richTextArea("instruc"+self.id, instruction)
+        html += common.richTextArea("instruc"+self.id, self.field.instruc)
         return html
     
 

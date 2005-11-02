@@ -76,11 +76,8 @@ class TestoptionElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        answer = self.option.answer
-        answer = answer.replace("\r", "")
-        answer = answer.replace("\n", "\\n")
         html = u"<tr><td>"
-        html += common.richTextArea(self.answerId, answer)
+        html += common.richTextArea(self.answerId, self.option.answer)
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.keyId, self.option.isCorrect, self.id)
         html += "</td><td>\n"

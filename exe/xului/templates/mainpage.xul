@@ -65,7 +65,6 @@
            <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
                 <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
-                <menuitem n:render="translate" label="Tutorial" accesskey="t" oncommand="loadTutorial()"/>
               </menupopup>
             </menu>
          </menubar>

@@ -86,7 +86,7 @@ class Node(Persistable):
         if self._title:
             return toUnicode(self._title)
         else:
-            return toUnicode(self.package.levelName(self.level - 1))
+            return _(toUnicode(self.package.levelName(self.level - 1)))
 
 
     def setTitle(self, title):

@@ -75,38 +75,32 @@ class TrueFalseElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        question = self.question.question
-        feedback = self.question.feedback
-        hint     = self.question.hint
-        
-        question = question.replace("\r", "")
-        question = question.replace("\n", "\\n")
-        
-        feedback = feedback.replace("\r", "")
-        feedback = feedback.replace("\n", "\\n")
-        
-        hint = hint.replace("\r", "")
-        hint = hint.replace("\n", "\\n")
-        
         html  = _("Question")
-        html += common.elementInstruc("question"+self.id, self.idevice.questionInstruc)
+        html += common.elementInstruc("question"+self.id, 
+                                      self.idevice.questionInstruc)
 
-        html += common.richTextArea(self.questionId, question)
+        html += common.richTextArea(self.questionId, 
+                                    self.question.question)
         html += _("True") + " " 
         html += common.option(self.keyId, self.question.isCorrect, "true") 
         html += _("False") + " " 
         html += common.option(self.keyId, not self.question.isCorrect, "false")
         html += "<br/><br/>\n"
 
-        html += common.elementInstruc("key"+self.id, self.idevice.keyInstruc)
+        html += common.elementInstruc("key"+self.id, 
+                                      self.idevice.keyInstruc)
         html += _("Feedback")
-        html += common.elementInstruc("feed"+self.id, self.idevice.feedbackInstruc)
-        html += common.richTextArea(self.feedbackId, feedback)
+        html += common.elementInstruc("feed"+self.id, 
+                                      self.idevice.feedbackInstruc)
+        html += common.richTextArea(self.feedbackId, 
+                                    self.question.feedback)
 
         html += _("Hint")
-        html += common.elementInstruc("hint"+self.id, self.idevice.hintInstruc)
+        html += common.elementInstruc("hint"+self.id, 
+                                      self.idevice.hintInstruc)
 
-        html += common.richTextArea(self.hintId, hint)
+        html += common.richTextArea(self.hintId, 
+                                    self.question.hint)
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
@@ -118,25 +112,26 @@ class TrueFalseElement(object):
         Returns an XHTML string for viewing this question element
         """
         html  = self.renderQuestion()
-        html += u'<span '
-        html += u'style="background-image:url(\'panel-amusements.png\');">'
-        html += u'\n<a onmousedown="Javascript:updateCoords(event);'
-        html += u'showMe(\'%s\', 350, 100);" ' % self.hintId
-        html += u'style="cursor:help;align:center;vertical-align:middle;" '
-        html += u'title="%s" \n' % _(u"Hint")
-        html += u'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
-        html += u'</span>'
-        html += u'<div id="'+self.hintId+'" '
-        html += u'style="display:none; z-index:99;">'
-        html += u'<div style="float:right;" >'
-        html += u'<img alt="%s" ' % _('Close')
-        html += u'src="stock-stop.png" title="%s"' % _('Close')
-        html += u" onmousedown=\"Javascript:hideMe();\"/></div>"
-        html += u'<div class="popupDivLabel">'
-        html += _(u"Hint")
-        html += u'</div>\n'
-        html += self.question.hint
-        html += u"</div>\n"
+        if self.question.hint:
+            html += u'<span '
+            html += u'style="background-image:url(\'panel-amusements.png\');">'
+            html += u'\n<a onmousedown="Javascript:updateCoords(event);'
+            html += u'showMe(\'%s\', 350, 100);" ' % self.hintId
+            html += u'style="cursor:help;align:center;vertical-align:middle;" '
+            html += u'title="%s" \n' % _(u"Hint")
+            html += u'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
+            html += u'</span>'
+            html += u'<div id="'+self.hintId+'" '
+            html += u'style="display:none; z-index:99;">'
+            html += u'<div style="float:right;" >'
+            html += u'<img alt="%s" ' % _('Close')
+            html += u'src="stock-stop.png" title="%s"' % _('Close')
+            html += u" onmousedown=\"Javascript:hideMe();\"/></div>"
+            html += u'<div class="popupDivLabel">'
+            html += _(u"Hint")
+            html += u'</div>\n'
+            html += self.question.hint
+            html += u"</div>\n"
         
         return html
     

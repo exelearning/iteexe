@@ -38,7 +38,6 @@ class GalleryImage(Persistable):
 
     # Class attributes
     resourcesUrl = 'resources/'
-    persistenceVersion = 1
 
     # Default attribute values
     _parent = None
@@ -180,14 +179,6 @@ class GalleryImage(Persistable):
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
 
-    # Upgrade Methods
-    def upgradeToVersion1(self):
-        """
-        Upgrades exe to v0.10
-        """
-        self._upgradeIdeviceToVersion1()
-    
-
 # ===========================================================================
 class GalleryImages(Persistable, list):
     """
@@ -244,7 +235,7 @@ class GalleryIdevice(Idevice):
     thumbnails.
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, parentNode=None):
         """
@@ -279,8 +270,18 @@ class GalleryIdevice(Idevice):
         """
         return GalleryImage(self, '', imagePath)
 
+    # Upgrade Methods
+
     def upgradeToVersion1(self):
         """
         Upgrades the node to exe version 0.7
         """
         self.lastIdevice = False
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades exe to v0.10
+        """
+        self._upgradeIdeviceToVersion1()
+    
+

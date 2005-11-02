@@ -67,21 +67,13 @@ class QuestionElement(object):
         """
         Returns an XHTML string for editing this question element
         """
-        question = self.question.question
-        feedback = self.question.feedback
-        
-        question = question.replace("\r", "")
-        question = question.replace("\n", "\\n")
-        
-        feedback = feedback.replace("\r", "")
-        feedback = feedback.replace("\n", "\\n")
         html  = "<tr><td><b>%s</b>\n" % _("Question")
         html += common.elementInstruc(self.quesId, self.idevice.questionInstruc)
-        html += common.richTextArea(self.quesId, question)
+        html += common.richTextArea(self.quesId, self.question.question)
         html += "<b>%s</b>\n" % _("Feedback")
         html += common.elementInstruc(self.feedbackId, 
                                       self.idevice.feedbackInstruc)
-        html += common.richTextArea(self.feedbackId, feedback)
+        html += common.richTextArea(self.feedbackId, self.question.feedback)
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",

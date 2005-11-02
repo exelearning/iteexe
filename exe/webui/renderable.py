@@ -220,7 +220,6 @@ class _RenderablePageMetaClass(type):
         # 5. For 'window' tags, the 'title' attribute is translated
         """
         attributes = ctx.tag.attributes
-        params = {}
         if 'label' in attributes:
             if 'accesskey' in attributes:
                 toTranslate = 'label="%s" accesskey="%s"' % (
@@ -237,23 +236,23 @@ class _RenderablePageMetaClass(type):
                     accesskey = accesskeyMatch.group(2)
                 else:
                     accesskey = ''
-                params['label'] = label
-                params['accesskey'] = accesskey
+                ctx.tag.attributes['label'] = label
+                ctx.tag.attributes['accesskey'] = accesskey
             else:
-                params['label'] = _(attributes['label'])
+                ctx.tag.attributes['label'] = _(attributes['label'])
         elif ctx.tag.tagName == 'label':
             value = attributes.get('value')
             if value is not None:
-                params['value'] = _(value)
+                ctx.tag.attributes['value'] = _(value)
         elif ctx.tag.tagName == 'key':
             if 'key' in attributes:
-                params['key'] = _(attributes['key'])
+                ctx.tag.attributes['key'] = _(attributes['key'])
             elif 'keycode' in attributes:
-                params['keycode'] = _(attributes['keycode'])
+                ctx.tag.attributes['keycode'] = _(attributes['keycode'])
         elif ctx.tag.tagName == 'window':
             if 'title' in attributes:
-                params['title'] = _(attributes['title'])
-        return ctx.tag(**params)
+                ctx.tag.attributes['title'] = _(attributes['title'])
+        return ctx.tag
 
 
 class _RenderablePage(Renderable):

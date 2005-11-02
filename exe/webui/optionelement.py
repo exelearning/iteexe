@@ -73,20 +73,12 @@ class OptionElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        answer   = self.option.answer
-        feedback = self.option.feedback
-        
-        answer = answer.replace("\r", "")
-        answer = answer.replace("\n", "\\n")
-        
-        feedback = feedback.replace("\r", "")
-        feedback = feedback.replace("\n", "\\n")
         html = u"<tr><td>"
-        html += common.richTextArea(self.answerId, answer)
+        html += common.richTextArea(self.answerId, self.option.answer)
         html += "</td><td align=\"center\">\n"
         html += common.option(self.keyId, self.option.isCorrect, self.id)        
         html += "</td><td>\n"
-        html += common.richTextArea(self.feedbackId, feedback)
+        html += common.richTextArea(self.feedbackId, self.option.feedback)
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",

@@ -78,7 +78,7 @@ class QuizTestIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"SCORM Quiz"),
+                         x_(u"SCORM Quiz Experimental"),
                          x_(u"University of Auckland"),
                          "", "", "question")
         self.emphasis   = Idevice.SomeEmphasis

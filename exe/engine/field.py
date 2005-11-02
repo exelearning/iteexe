@@ -91,7 +91,11 @@ class Field(Persistable):
         Upgrades to exe v0.10
         """
         self._name    = self.__dict__['name']
-        self._instruc = self.__dict__['instruc']
+        # Pre 0.5 packages need special care
+        if self.__dict__.has_key('instruc'):
+            self._instruc = self.__dict__['instruc']
+        else:
+            self._instruc = self.__dict__['instruction']
 
 
 # ===========================================================================
@@ -257,11 +261,14 @@ class ClozeHTMLParser(HTMLParser):
         gapWords = self.whiteSpaceRe.split(gapString)
         gapSpacers = self.whiteSpaceRe.findall(gapString)
         if len(gapWords) > len(gapSpacers):
-            gapSpacers.append('')
+            gapSpacers.append(None)
         gaps = zip(gapWords, gapSpacers)
         lastText = self.lastText
         for gap, text in gaps:
-            self.result.append((lastText, gap))
+            if gap == '<br/>':
+                self.result.append((lastText, None))
+            else:
+                self.result.append((lastText, gap))
             lastText = text
         self.lastGap = ''
         self.lastText = ''
