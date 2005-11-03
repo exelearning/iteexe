@@ -27,24 +27,27 @@ Centre for Flexible and Distance Learning
 
 #navcontainer a {
    display: block;
-   padding: 4px 0px 4px 12px;
+   padding: 4px 0px 4px 18px;
    border-bottom: 1px solid #F2F2EF;
-   width: 208px;
+}
+
+
+#navcontainer .withChild {
+ background-image: url(expand.gif);
+ background-repeat: no-repeat;
+ background-position: 2px 8px;
 }
 
 #navcontainer a:link, #navlist a:visited {
    color: #000000;
    background-color: transparent;
    text-decoration: none;
-   width: 208px;
+   width: 202px;
 }
 
 #navcontainer a:hover {
    color: #4d4d4d;
    background-color:#EEEEEE;
-   background-image: url(list.gif);
-   background-position: 1px 50%;
-   background-repeat: no-repeat;
 }
 
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
@@ -57,12 +60,14 @@ margin-left: 0;
 }
 /* End hide from IE5/mac */
 
-div #active {
-padding: 3px 0px 3px 12px;
-width: 208px;
+#active.withChild {
+padding: 3px 0px 3px 18px;
+width: 202px;
 background-color: #CDD4DC;
+background-image: url(collapse.gif); !important
 color: #ffffff;
 }
+
 
 /* subnav is for displaying sections and units */
 
@@ -70,13 +75,13 @@ color: #ffffff;
 display: block;
 width: 196px;
 border: 0 !important;
-padding: 4px 0px 4px 24px;
+padding: 4px 0px 4px 30px;
 }
 
 #subnav a:hover {
 color: #4d4d4d;
 background-color: #EEEEEE;
-padding: 4px 0 4px 24px;
+padding: 4px 0 4px 30px;
 width: 196px;
 }	
 
@@ -85,7 +90,7 @@ background-color: #CDD4DC;
 color: #ffffff;
 height: 15px;
 width: 196px;
-padding: 4px 0 4px 24px;
+padding: 4px 0 4px 30px;
 
 }	
 /* MAIN CONTENT STYLES */
