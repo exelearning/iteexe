@@ -7,47 +7,44 @@ Centre for Flexible and Distance Learning
 
 #navcontainer {
    z-index:1000;
-   width: 250px;
+   width: 220px;
    float: left;
-   margin-top: 0px;
-   padding-top: 60px;
+   margin-top: 50px;
+   padding-top: 0px;
    text-align:left;
-   position:absolute;
-   background-color:transparent; 
-	
-	font: bold .9em;
+   background-image: url(main_bg.gif);
+   font: .9em;
+   border: 1px solid #FFF;
 }
-#navlist {
-	margin-left: 30px;
-	position:absolute;
-	
-}
+
 #navcontainer ul {
-   margin-left: 10px;
+   margin-left: 0px;
    padding-left: 0;
    margin-top: 0;
    list-style-type: none;
    font-family: Arial, Helvetica, sans-serif;
 }
+
 #navcontainer a {
    display: block;
-   padding: 4px 0 4px 6px;
-   background-color: #FFF;
-   border-bottom: 1px solid #ffffff;
-   width: 180px;
-   border-top: 1px solid #ffffff;
+   padding: 4px 0px 4px 12px;
+   border-bottom: 1px solid #F2F2EF;
+   width: 208px;
 }
 
 #navcontainer a:link, #navlist a:visited {
    color: #000000;
    background-color: transparent;
    text-decoration: none;
-   width: 180px;
+   width: 208px;
 }
 
 #navcontainer a:hover {
    color: #4d4d4d;
    background-color:#EEEEEE;
+   background-image: url(list.gif);
+   background-position: 1px 50%;
+   background-repeat: no-repeat;
 }
 
 /* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
@@ -59,36 +56,36 @@ height: 1%;
 margin-left: 0;
 }
 /* End hide from IE5/mac */
-div #active {
-padding: 3px 0 3px 5px;
-width: 180px;
-background-color: #006699;
-color: #ffffff;
-height: 40px;
-//*border-bottom: 1px solid #ffffff;
-border-top: 1px solid #ffffff;
-background-image:url(active_bg.gif);
-background-position:left middle;
-background-repeat:no-repeat;*//
-}
-div #subnav {
 
+div #active {
+padding: 3px 0px 3px 12px;
+width: 208px;
+background-color: #CDD4DC;
+color: #ffffff;
 }
+
+/* subnav is for displaying sections and units */
+
 #subnav a {
 display: block;
+width: 196px;
 border: 0 !important;
-padding: 4px 0 4px 15px;
+padding: 4px 0px 4px 24px;
 }
+
 #subnav a:hover {
 color: #4d4d4d;
 background-color: #EEEEEE;
-padding: 4px 0 4px 15px;padding: 4px 0 4px 15px;
+padding: 4px 0 4px 24px;
+width: 196px;
 }	
+
 #subnav #active {
-background-color: #006699;
+background-color: #CDD4DC;
 color: #ffffff;
 height: 15px;
-padding: 4px 0 4px 15px;
+width: 196px;
+padding: 4px 0 4px 24px;
 
 }	
 /* MAIN CONTENT STYLES */
@@ -100,7 +97,7 @@ position:absolute;
 #main {
 	padding: 18px;
 	margin: 0px 10px 10px 180px;
-	margin-left: 210px;
+	margin-left: 220px;
 	margin-top: 30px;
 	position:absolute;
 	text-align:left;
