@@ -10,7 +10,6 @@ Centre for Flexible and Distance Learning
    width: 220px;
    float: left;
    margin-top: 50px;
-   padding-top: 0px;
    text-align:left;
    background-image: url(main_bg.gif);
    font: .9em;
@@ -19,8 +18,8 @@ Centre for Flexible and Distance Learning
 
 #navcontainer ul {
    margin-left: 0px;
-   padding-left: 0;
-   margin-top: 0;
+   padding-left: 0px;
+   margin-top: 0px;
    list-style-type: none;
    font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,13 +28,6 @@ Centre for Flexible and Distance Learning
    display: block;
    padding: 4px 0px 4px 18px;
    border-bottom: 1px solid #F2F2EF;
-}
-
-
-#navcontainer .withChild {
- background-image: url(expand.gif);
- background-repeat: no-repeat;
- background-position: 2px 8px;
 }
 
 #navcontainer a:link, #navlist a:visited {
@@ -60,20 +52,32 @@ margin-left: 0;
 }
 /* End hide from IE5/mac */
 
+
+/* nodes with children get expandable icon */
+.withChild {
+ background-image: url(expand.gif);
+ background-repeat: no-repeat;
+ background-position: 2px 9px;
+}
+
 #active.withChild {
-padding: 3px 0px 3px 18px;
-width: 202px;
+padding: 4px 0px 4px 18px;
 background-color: #CDD4DC;
-background-image: url(collapse.gif); !important
+background-image: url(collapse.gif) !important;
+background-repeat: no-repeat;
 color: #ffffff;
 }
 
+#active.withoutChild {
+padding: 4px 0px 4px 18px;
+background-color: #CDD4DC;
+color: #ffffff;
+}
 
 /* subnav is for displaying sections and units */
 
 #subnav a {
-display: block;
-width: 196px;
+width: 190px;
 border: 0 !important;
 padding: 4px 0px 4px 30px;
 }
@@ -82,23 +86,51 @@ padding: 4px 0px 4px 30px;
 color: #4d4d4d;
 background-color: #EEEEEE;
 padding: 4px 0 4px 30px;
-width: 196px;
+width: 190px;
 }	
 
 #subnav #active {
 background-color: #CDD4DC;
 color: #ffffff;
-height: 15px;
-width: 196px;
+width: 190px;
 padding: 4px 0 4px 30px;
-
 }	
+
+div > #subnav .withChild {
+background-image: url(expand.gif) !important;
+background-repeat: no-repeat !important;
+background-position: 14px 9px !important;
+}
+
+#subnav  div.withChild {
+background-image: url(collapse.gif) !important;
+background-repeat: no-repeat !important;
+background-position: 14px 9px !important;
+}
+
+#subnav .withoutChild  div {
+padding-left: 12px;
+width:190px;
+}
+
+#subnav .withoutChild #active {
+width:180px;
+margin-left: 0px;
+padding-left: 40px;
+}
+
+#subnav .withoutChild div a:hover {
+width:178px;
+margin-left: -12px;
+padding-left: 42px;
+}
+	
 /* MAIN CONTENT STYLES */
 #container {
 border-top: 0px solid #CCC;
 position:absolute;
-
 }
+
 #main {
 	padding: 18px;
 	margin: 0px 10px 10px 180px;
@@ -106,7 +138,7 @@ position:absolute;
 	margin-top: 30px;
 	position:absolute;
 	text-align:left;
-	width: 60%;
+	width: 72%;
 	
 	
 }
