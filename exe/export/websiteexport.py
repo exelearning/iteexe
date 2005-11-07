@@ -22,160 +22,16 @@ WebsiteExport will export a package as a website of HTML pages
 
 import logging
 import re
+import imp
 from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.export.pages         import uniquifyNames
+from exe.export.websitepage   import WebsitePage
 
 log = logging.getLogger(__name__)
 
-
-# ===========================================================================
-class WebsitePage(object):
-    """
-    This class transforms an eXe node into a page on a self-contained website
-    """
-    def __init__(self, name, depth, node):
-        """
-        Initialize
-        """
-        self.name  = name
-        self.depth = depth
-        self.node  = node
-    
-
-    def save(self, outputDir, prevPage, nextPage, pages):
-        """
-        This is the main function. It will render the page and save it to a
-        file.  'outputDir' is the directory where the filenames will be saved
-        (a 'path' instance)
-        """
-        outfile = open(outputDir / self.name+".html", "w")
-        outfile.write(self.render(prevPage, nextPage, pages))
-        outfile.close()
-        
-
-    def render(self, prevPage, nextPage, pages):
-        """
-        Returns an XHTML string rendering this page.
-        """
-    
-        html  = u"<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
-        html += u"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
-        html += u" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(content.css);\n"
-        html += u"@import url(nav.css);</style>\n"
-        html += u"<title>" 
-        html += escape(self.node.title)
-        html += u"</title>\n" 
-        html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
-        html += u" charset=utf-8\" />\n";
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
-        html += u"</head>\n"
-        html += u"<body>\n"
-        
-        # add left navigation html
-        html += u"<div id=\"navcontainer\">\n"
-        html += self.leftNavigationBar(pages)
-        html += u"</div>\n"
-        html += u"<div id=\"main\">\n"
-
-        style = self.node.package.style
-        html += '<div id=\"nodeDecoration\">'
-        html += '<p id=\"nodeTitle\">'
-        html += escape(self.node.title)
-        html += '</p></div>\n'
-
-        for idevice in self.node.idevices:
-            block = g_blockFactory.createBlock(None, idevice)
-            if not block:
-                log.critical("Unable to render iDevice.")
-                raise Error("Unable to render iDevice.")
-            if idevice.title == "SCORM Quiz":
-                html += block.renderJavascriptForWeb()
-            if idevice.title != "Forum Discussion":
-                html += block.renderView(style)
-        
-        html += self.getNavigationLink(prevPage, nextPage)
-        html += u"</div>\n"
-        html += u"</body></html>\n"
-        html = html.encode('utf8')
-        return html
-
-        
-    def leftNavigationBar(self, pages):
-        """
-        Generate the left navigation string for this page
-        """
-        depth    = 1
-        nodePath = [None] + list(self.node.ancestors()) + [self.node]
-
-        html = "<ul id=\"navlist\">\n"
-
-        for page in pages:
-            if page.node.parent in nodePath:
-                while depth < page.depth:
-                    html += "<div id=\"subnav\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">\n"
-                    depth += 1
-                while depth > page.depth:
-                    html += "</div>\n"
-                    depth -= 1
-
-                if page.node == self.node:
-                    html += "<div id=\"active\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">"
-                    html += escape(page.node.title)
-                    html += "</div>\n"
-                else:
-                    html += "<div><a href=\""+page.name+".html\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">"
-                    html += escape(page.node.title)
-                    html += "</a></div>\n"
-
-        while depth > 1:
-            html += "</div>\n"
-            depth -= 1
-        html += "</ul>\n"
-        return html
-        
-        
-    def getNavigationLink(self, prevPage, nextPage):
-        """
-        return the next link url of this page
-        """
-        html = "<div class=\"noprt\" align=\"right\">"
-
-        if prevPage:
-            html += "<a href=\""+prevPage.name+".html\">"
-            html += "&laquo; previous</a>"
-
-        if nextPage:
-            if prevPage:
-                html += " | "
-            html += "<a href=\""+nextPage.name+".html\">"
-            html += "next &raquo;</a>"""
-            
-        html += "</div>\n"
-        return html
-
-        
 # ===========================================================================
 class WebsiteExport(object):
     """
@@ -205,6 +61,14 @@ class WebsiteExport(object):
         """
         self.copyFiles(package)
 
+        # Import the Website Page class.  If the style has it's own page class
+        # use that, else use the default one.
+        if (self.stylesDir/"websitepage.py").exists():
+            global WebsitePage
+            module = imp.load_source("websitepage", 
+                                     self.stylesDir/"websitepage.py")
+            WebsitePage = module.WebsitePage
+
         self.pages = [ WebsitePage("index", 1, package.root) ]
         self.generatePages(package.root, 1)
         uniquifyNames(self.pages)
@@ -224,10 +88,14 @@ class WebsiteExport(object):
         """
         Copy all the files used by the website.
         """
-        # TODO Need to tidy this up!!!
-
-        # Copy the style sheets to the output dir
-        self.stylesDir.copyfiles(self.outputDir)
+        # Copy the style sheet files to the output dir
+        styleFiles  = self.stylesDir.files("*.css")
+        styleFiles += self.stylesDir.files("*.jpg")
+        styleFiles += self.stylesDir.files("*.gif")
+        styleFiles += self.stylesDir.files("*.png")
+        styleFiles += self.stylesDir.files("*.js")
+        styleFiles += self.stylesDir.files("*.html")
+        self.stylesDir.copylist(styleFiles, self.outputDir)
 
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)

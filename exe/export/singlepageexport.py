@@ -74,12 +74,17 @@ class SinglePageExport(object):
         """
         Copy all the files used by the website.
         """
-        # TODO Need to tidy this up!!!
-
-        # Copy the style sheets to the output dir
-        self.stylesDir.copyfiles(self.outputDir)
+        # Copy the style sheet files to the output dir
         # But not nav.css
-        (self.outputDir/'nav.css').remove() 
+        styleFiles  = self.stylesDir.files("*.css")
+        if "nav.css" in styleFiles:
+            styleFiles.remove("nav.css")
+        styleFiles += self.stylesDir.files("*.jpg")
+        styleFiles += self.stylesDir.files("*.gif")
+        styleFiles += self.stylesDir.files("*.png")
+        styleFiles += self.stylesDir.files("*.js")
+        styleFiles += self.stylesDir.files("*.html")
+        self.stylesDir.copylist(styleFiles, self.outputDir)
 
         # copy the package's resource files
         package.resourceDir.copyfiles(self.outputDir)
