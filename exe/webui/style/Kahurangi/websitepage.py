@@ -46,40 +46,35 @@ class WebsitePage(websitepage.WebsitePage):
         html = "<ul id=\"navlist\">\n"
 
         for page in pages:
-            if page.node.parent in nodePath:
-                while depth < page.depth:
-                    html += "<div id=\"subnav\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">\n"
-                    depth += 1
-                while depth > page.depth:
-                    html += "</div>\n"
-                    depth -= 1
+            while depth < page.depth:
+                html += "<ul id=\"navlist\">\n"
+                depth += 1
+            while depth > page.depth:
+                html += "</ul>\n"
+                depth -= 1
 
-                if page.node == self.node:
-                    html += "<div id=\"active\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">"
-                    html += escape(page.node.title)
-                    html += "</div>\n"
+            if page.node == self.node:
+                html += "<li class=\"active\" "
+                if page.node.children:
+                    html += "withChild\""
                 else:
-                    html += "<div><a href=\""+page.name+".html\" "
-                    if page.node.children:
-                        html += "class=\"withChild\""
-                    else:
-                        html += "class=\"withoutChild\""
-                    html += ">"
-                    html += escape(page.node.title)
-                    html += "</a></div>\n"
+                    html += "withoutChild\""
+                html += ">"
+                html += escape(page.node.title)
+                html += "</li>\n"
+            else:
+                html += "<li class=\""
+                if page.node.children:
+                    html += "withChild\""
+                else:
+                    html += "withoutChild\""
+                html += ">"
+                html += "<a href=\""+page.name+".html\">"
+                html += escape(page.node.title)
+                html += "</a></li>\n"
 
         while depth > 1:
-            html += "</div>\n"
+            html += "</ul>\n"
             depth -= 1
         html += "</ul>\n"
         return html
