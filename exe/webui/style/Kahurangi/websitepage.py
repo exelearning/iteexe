@@ -54,21 +54,21 @@ class WebsitePage(websitepage.WebsitePage):
                 depth -= 1
 
             if page.node == self.node:
-                html += "<li class=\"active\" "
+                html += "<li class=\"active "
+                html += "depth%d " % page.depth 
                 if page.node.children:
-                    html += "withChild\""
+                    html += "withChild\">"
                 else:
-                    html += "withoutChild\""
-                html += ">"
+                    html += "withoutChild\">"
                 html += escape(page.node.title)
                 html += "</li>\n"
             else:
                 html += "<li class=\""
+                html += "depth%d " % page.depth 
                 if page.node.children:
-                    html += "withChild\""
+                    html += "withChild\">"
                 else:
-                    html += "withoutChild\""
-                html += ">"
+                    html += "withoutChild\">"
                 html += "<a href=\""+page.name+".html\">"
                 html += escape(page.node.title)
                 html += "</a></li>\n"
