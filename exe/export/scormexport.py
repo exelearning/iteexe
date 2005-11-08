@@ -271,15 +271,15 @@ class ScormExport(object):
 
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles  = self.stylesDir.files("*.css")
+        styleFiles  = self.styleDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
-        styleFiles += self.stylesDir.files("*.jpg")
-        styleFiles += self.stylesDir.files("*.gif")
-        styleFiles += self.stylesDir.files("*.png")
-        styleFiles += self.stylesDir.files("*.js")
-        styleFiles += self.stylesDir.files("*.html")
-        self.stylesDir.copylist(styleFiles, self.outputDir)
+        styleFiles += self.styleDir.files("*.jpg")
+        styleFiles += self.styleDir.files("*.gif")
+        styleFiles += self.styleDir.files("*.png")
+        styleFiles += self.styleDir.files("*.js")
+        styleFiles += self.styleDir.files("*.html")
+        self.styleDir.copylist(styleFiles, outputDir)
 
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
