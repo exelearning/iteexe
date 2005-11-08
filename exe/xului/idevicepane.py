@@ -24,6 +24,8 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 import logging
 from exe.webui.renderable import Renderable
 from nevow import stan
+from cgi import escape
+from urllib import quote
 
 log = logging.getLogger(__name__)
 
@@ -68,7 +70,7 @@ class IdevicePane(Renderable):
         """
         log.debug("addIdevice id="+idevice.id+", title="+idevice.title)
         self.prototypes[idevice.id] = idevice
-        self.client.call('XHAddIdeviceListItem', idevice.id, idevice.title)
+        self.client.call('XHAddIdeviceListItem', idevice.id, quote(idevice.title))
 
         
     def render(self, ctx, data):
@@ -109,7 +111,7 @@ class IdevicePane(Renderable):
         """
         log.debug("Render "+prototype.title)
         log.debug("of type "+repr(type(prototype.title)))
-        xul  = u"  <listitem label=\"" + prototype.title + "\" "
+        xul  = u"  <listitem label=\"" + escape(prototype.title) + "\" "
         xul += u"onclick=\"submitLink('AddIdevice', "
         xul += u"'" + prototype.id + "', 1)\"/>"""
         return xul

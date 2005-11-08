@@ -413,7 +413,7 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
     var newListItem = document.createElement('listitem')
     newListItem.setAttribute("onclick", 
                              "submitLink('AddIdevice', "+ideviceId+", 1);")
-    newListItem.setAttribute("label", ideviceTitle)
+    newListItem.setAttribute("label", unescape(ideviceTitle))
     list.appendChild(newListItem)
 }
 
