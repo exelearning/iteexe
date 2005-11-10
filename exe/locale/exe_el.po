@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-03 10:25+1300\n"
+"POT-Creation-Date: 2005-11-10 13:55+1300\n"
 "PO-Revision-Date: 2005-10-27 11:58+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -158,7 +158,7 @@ msgstr "Εισάγετε ένα πλαίσιο κειμένου σε ένα εκ
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Προσθήκη εικόνας στο εκπαιδευτικό εργαλείο σας. Σας δίνει τη δυνατότητα να επιλέξετε μια εικόνα από τις αποθηκευμένες."
 
-#: exe/webui/multichoiceblock.py:117 exe/webui/testquestionelement.py:109
+#: exe/webui/testquestionelement.py:109 exe/webui/multichoiceblock.py:117
 msgid "Add another option"
 msgstr "Προσθέστε άλλη επιλογή"
 
@@ -170,7 +170,7 @@ msgstr "Προσθήκη ερώτησης"
 msgid "Add images"
 msgstr "Προσθήκη εικόνων"
 
-#: exe/webui/multichoiceblock.py:98 exe/webui/testquestionelement.py:92
+#: exe/webui/testquestionelement.py:92 exe/webui/multichoiceblock.py:98
 msgid "Alternatives"
 msgstr "Εναλλακτικές"
 
@@ -229,7 +229,7 @@ msgstr "Επισύναψη"
 msgid "Attachment %s has no parentNode"
 msgstr "Το επισυναπτόμενο αρχείο %s δεν έχει πατρικό κόμβο"
 
-#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:266
+#: exe/webui/editorpane.py:266 exe/webui/propertiespane.py:100
 msgid "Author"
 msgstr "Συγγραφέας"
 
@@ -237,7 +237,7 @@ msgstr "Συγγραφέας"
 msgid "Can a student post to this forum?:"
 msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' αυτή τη δημόσια συζήτηση;"
 
-#: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:209
+#: exe/webui/editorpane.py:209 exe/webui/preferencespage.py:88
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -261,11 +261,11 @@ msgstr "Κάντε κλικ στο <strong>Επιλέξτε αρχείο</strong
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:152
-#: exe/webui/multichoiceblock.py:153 exe/webui/common.py:211
-#: exe/webui/common.py:212 exe/webui/truefalseelement.py:127
-#: exe/webui/truefalseelement.py:128 exe/webui/editorpane.py:305
-#: exe/webui/editorpane.py:306 exe/webui/editorpane.py:327
+#: exe/webui/editorpane.py:305 exe/webui/editorpane.py:306
+#: exe/webui/editorpane.py:327 exe/webui/truefalseelement.py:127
+#: exe/webui/truefalseelement.py:128 exe/webui/block.py:236
+#: exe/webui/common.py:211 exe/webui/common.py:212
+#: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
 msgid "Close"
 msgstr "Κλείσιμο"
 
@@ -281,7 +281,7 @@ msgstr "Κλείσιμο Δραστηριότητας"
 msgid "Content"
 msgstr "Περιεχόμενο"
 
-#: exe/webui/multichoiceblock.py:101 exe/webui/testquestionelement.py:95
+#: exe/webui/testquestionelement.py:95 exe/webui/multichoiceblock.py:101
 #: exe/webui/optionelement.py:117
 msgid "Correct"
 msgstr "Σωστό"
@@ -303,6 +303,7 @@ msgstr ""
 #: exe/webui/editorpage.py:176 exe/webui/editorpage.py:180
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
 msgstr "Διαγραφή"
 
@@ -310,8 +311,8 @@ msgstr "Διαγραφή"
 msgid "Delete option"
 msgstr "Επιλογή διαγραφής"
 
-#: exe/webui/testquestionelement.py:86 exe/webui/questionelement.py:80
-#: exe/webui/truefalseelement.py:106
+#: exe/webui/truefalseelement.py:106 exe/webui/testquestionelement.py:86
+#: exe/webui/questionelement.py:80
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -392,8 +393,8 @@ msgstr "ΛΑΘΟΣ:  Άμεση κλήση του Block.renderViewContent"
 msgid "Each person posts one discussion"
 msgstr "Κάθε άτομο δημοσιεύει μια συζήτηση"
 
-#: exe/webui/block.py:320 exe/webui/editorpage.py:198
-#: exe/webui/editorpane.py:206
+#: exe/webui/editorpane.py:206 exe/webui/block.py:320
+#: exe/webui/editorpage.py:198
 msgid "Edit"
 msgstr "Επεξεργασία"
 
@@ -466,9 +467,9 @@ msgstr "Εξωτερικός ιστοχώρος"
 msgid "False"
 msgstr "Λάθος"
 
-#: exe/engine/idevicestore.py:228 exe/engine/clozeidevice.py:70
-#: exe/engine/clozeidevice.py:98 exe/webui/multichoiceblock.py:105
-#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:92
+#: exe/engine/clozeidevice.py:70 exe/engine/clozeidevice.py:98
+#: exe/engine/idevicestore.py:228 exe/webui/truefalseelement.py:92
+#: exe/webui/multichoiceblock.py:105 exe/webui/questionelement.py:73
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
@@ -544,8 +545,8 @@ msgstr "Απόκρυψη"
 msgid "Hide/Show Word"
 msgstr "Απόκρυψη"
 
-#: exe/webui/multichoiceblock.py:156 exe/webui/truefalseelement.py:98
-#: exe/webui/truefalseelement.py:121 exe/webui/truefalseelement.py:131
+#: exe/webui/truefalseelement.py:98 exe/webui/truefalseelement.py:121
+#: exe/webui/truefalseelement.py:131 exe/webui/multichoiceblock.py:156
 msgid "Hint"
 msgstr "Συμβουλή"
 
@@ -693,7 +694,7 @@ msgstr ""
 " θα πρέπει να καθορίζουν τι θα μπορούν να κάνουν\n"
 " όταν τελειώσουν το μάθημα."
 
-#: exe/webui/multichoiceblock.py:102 exe/webui/testquestionelement.py:98
+#: exe/webui/testquestionelement.py:98 exe/webui/multichoiceblock.py:102
 msgid "Option"
 msgstr "Επιλογή"
 
@@ -706,7 +707,7 @@ msgstr "Περίγραμμα"
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
 
-#: exe/webui/block.py:227 exe/webui/editorpane.py:318
+#: exe/webui/editorpane.py:318 exe/webui/block.py:227
 msgid "Pedagogical Help"
 msgstr "Παιδαγωγική βοήθεια"
 
@@ -714,7 +715,7 @@ msgstr "Παιδαγωγική βοήθεια"
 msgid "Pedagogical Tip"
 msgstr "Παιδαγωγική συμβουλή"
 
-#: exe/webui/editorpage.py:101 exe/webui/editorpane.py:145
+#: exe/webui/editorpane.py:145 exe/webui/editorpage.py:101
 msgid "Please enter an idevice name."
 msgstr "Παρακαλώ εισάγετε ένα όνομα για το εκπαιδευτικό εργαλείο"
 
@@ -797,7 +798,7 @@ msgstr ""
 " ανατροφοδότησης από το διδάσκοντα προς το μαθητή είναι ένα από τα κύρια σημεία\n"
 " που βοηθούν στη μαθησιακή δραστηριότητα."
 
-#: exe/webui/block.py:241 exe/webui/editorpane.py:269
+#: exe/webui/editorpane.py:269 exe/webui/block.py:241
 msgid "Purpose"
 msgstr "Σκοπός"
 
@@ -806,12 +807,12 @@ msgstr "Σκοπός"
 msgid "Put instructions for learners here"
 msgstr "Εισάγετε οδηγίες συμπλήρωσης εδώ"
 
-#: exe/webui/questionelement.py:70 exe/webui/questionelement.py:108
-#: exe/webui/truefalseelement.py:78
+#: exe/webui/truefalseelement.py:78 exe/webui/questionelement.py:70
+#: exe/webui/questionelement.py:108
 msgid "Question"
 msgstr "Ερώτηση"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
+#: exe/webui/testquestionelement.py:81 exe/webui/multichoiceblock.py:89
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -972,7 +973,7 @@ msgstr "Επιλέξτε ένα τμήμα του κειμένου και εισ
 msgid "Taxonomy"
 msgstr "Ταξινόμηση"
 
-#: exe/engine/flashwithtextidevice.py:46 exe/engine/imagewithtextidevice.py:72
+#: exe/engine/imagewithtextidevice.py:72 exe/engine/flashwithtextidevice.py:46
 msgid "Text"
 msgstr "Κείμενο"
 
@@ -1134,15 +1135,15 @@ msgstr "Η σύνδεση είναι αδύνατη"
 msgid "Unit"
 msgstr "Παράγραφος"
 
-#: exe/engine/wikipediaidevice.py:50 exe/engine/casestudyidevice.py:57
-#: exe/engine/multichoiceidevice.py:58 exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58 exe/engine/galleryidevice.py:245
+#: exe/engine/casestudyidevice.py:57 exe/engine/externalurlidevice.py:38
+#: exe/engine/clozeidevice.py:45 exe/engine/imagewithtextidevice.py:38
 #: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
-#: exe/engine/flashwithtextidevice.py:39 exe/engine/imagewithtextidevice.py:38
-#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:59
-#: exe/engine/externalurlidevice.py:38 exe/engine/idevicestore.py:211
-#: exe/engine/idevicestore.py:237 exe/engine/idevicestore.py:265
-#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
-#: exe/engine/galleryidevice.py:245
+#: exe/engine/truefalseidevice.py:59 exe/engine/reflectionidevice.py:44
+#: exe/engine/idevicestore.py:211 exe/engine/idevicestore.py:237
+#: exe/engine/idevicestore.py:265 exe/engine/flashwithtextidevice.py:39
+#: exe/engine/wikipediaidevice.py:50 exe/engine/freetextidevice.py:38
+#: exe/engine/attachmentidevice.py:41
 msgid "University of Auckland"
 msgstr "Πανεπιστήμιο του Auckland"
 
@@ -1223,8 +1224,8 @@ msgstr "κενό για αρχικό μέγεθος"
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/editorpage.py:160 exe/webui/common.py:53
-#: exe/webui/preferencespage.py:72
+#: exe/webui/common.py:53 exe/webui/preferencespage.py:72
+#: exe/webui/editorpage.py:160
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως μάθηση"
 
@@ -1239,6 +1240,7 @@ msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακ
 
 #: exe/engine/package.py:204 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
 
@@ -1259,80 +1261,96 @@ msgid "title"
 msgstr "Τίτλος"
 
 #: exe/xului/templates/mainpage.xul:<key id="addChildKey" keycode="VK_INSERT">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
 #: exe/xului/templates/mainpage.xul:<key id="delNodeKey" keycode="VK_DELETE">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="renNodeKey"
 #: key="R">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "R"
 msgstr "R"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="promoteKey"
 #: keycode="VK_LEFT">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="demoteKey"
 #: keycode="VK_RIGHT">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="upKey"
 #: key="U">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "U"
 msgstr "U"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="downKey"
 #: key="D">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "D"
 msgstr "D"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="file-new-key"
 #: key="N" oncommand="fileNew()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "N"
 msgstr "Ο"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control"
 #: id="file-save-key" key="S" oncommand="fileSave()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "S"
 msgstr "S"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control"
 #: id="file-open-key" key="O" oncommand="fileOpen()">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "O"
 msgstr "O"
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="f" id="file-menu"
 #: label="File">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Αρχείο\" accesskey=\"α\""
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="t" id="tools-menu"
 #: label="Tools">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Εργαλεία\" accesskey=\"ε\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="n"
 #: oncommand="fileNew()" key="file-new-key" label="New">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Δημιουργία\" accesskey=\"N\""
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="s" id="styles-menu"
 #: label="Styles">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"Στυλ\" accesskey=\"σ\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="o"
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Άνοιγμα\" accesskey=\"ο\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
 #: label="Preferences">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "Preferences"
 msgstr "Αναφορά"
@@ -1340,82 +1358,99 @@ msgstr "Αναφορά"
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: label="Refresh">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr "label=\"Ανανέωση\" accesskey=\"ν\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
 #: oncommand="fileSave()" key="file-save-key" label="Save">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Αποθήκευση\" accesskey=\"σ\""
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="h" id="help-menu"
 #: label="Help">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Βοήθεια\" accesskey=\"h\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
 #: oncommand="fileSaveAs()" label="Save As...">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Αποθήκευση ως...\" accesskey=\"α\""
 
 #: exe/xului/templates/mainpage.xul:<label value="debugInfo">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 msgid "debugInfo"
 msgstr "Πληροφορίες εκσφαλμάτωσης"
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="export-menu"
 #: label="Export">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Εξαγωγή\" accesskey=\"ε\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
 #: oncommand="aboutPage()" label="About">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"Περί\" accesskey=\"ρ\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
 #: oncommand="exportPackage('scorm')" label="SCORM 1.2">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"c\""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
 #: label="Add Page">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Add Page"
 msgstr "Προσθήκη σελίδας"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
 #: oncommand="exportPackage('ims')" label="IMS Content Package">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"Πακέτο Περιεχομένου IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
 #: key="renNodeKey" label="Rename">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Rename"
 msgstr "Μετονομασία"
 
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 msgid "outlinePane"
 msgstr "Πλαίσιο Περιγράμματος"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
 #: oncommand="exportPackage('webSite')" key="file-export-website-key"
 #: label="Web Site">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Web Site\" accesskey=\"w\""
 msgstr "label=\"Ιστοχώρος\" accesskey=\"ω\""
 
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 msgid "iDevicePane"
 msgstr "Πλαίσιο εκπαιδευτικών εργαλείων"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="p"
 #: oncommand="exportPackage('singlePage')" label="Single Page">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Απλή σελίδα\" accesskey=\"λ\""
 
 #: exe/xului/templates/mainpage.xul:<tab label="Authoring">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 msgid "Authoring"
 msgstr "Συγγραφή"
 
 #: exe/xului/templates/mainpage.xul:<tab label="Properties">
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 msgid "Properties"
 msgstr "Ιδιότητες"
 

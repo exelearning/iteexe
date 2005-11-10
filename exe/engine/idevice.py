@@ -57,7 +57,22 @@ class Idevice(Persistable):
         self.icon        = icon
 
     # Properties
-    title   = lateTranslate('title')
+    def get_title(self):
+        """
+        Gives a nicely encoded and translated title that can be put inside
+        xul labels (eg. <label value="my &quot;idevice&quot;">)
+        """
+        title = _(self._title)
+        title = title.replace('&', '&amp;') 
+        title = title.replace('"', '&quot;')
+        return title
+    def set_title(self, value):
+        """
+        Sets self._title
+        """
+        self._title = value
+    title   = property(get_title, set_title)
+    #title   = lateTranslate('title')
     author  = lateTranslate('author')
     purpose = lateTranslate('purpose')
     tip     = lateTranslate('tip')
