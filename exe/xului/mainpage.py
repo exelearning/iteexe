@@ -205,7 +205,7 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
-        client.call(onDone, unicode(self.package.filename), onDoneParam)
+        client.call(onDone, Path(self.package.filename), onDoneParam)
 
 
     def handleSavePackage(self, client, filename=None, onDone=None):
@@ -216,7 +216,8 @@ class MainPage(RenderableLivePage):
         (This is used where the user goes file|open when their 
         package is changed and needs saving)
         """
-        exportDir  = Path(filename).dirname()
+        filename   = Path(filename)
+        exportDir  = filename.dirname()
         if exportDir and not exportDir.exists():
             client.alert(_(u'Cannot access directory named ') +
                          unicode(exportDir) +
@@ -226,12 +227,7 @@ class MainPage(RenderableLivePage):
         oldName = self.package.name
         # If the script is not passing a filename to us,
         # Then use the last filename that the package was loaded from/saved to
-        if filename:
-            encoding = sys.getfilesystemencoding()
-            if encoding is None:
-                encoding = 'ascii'
-            filename = unicode(filename, encoding)
-        else:
+        if not filename:
             filename = self.package.filename
             assert (filename, 
                     ('Somehow save was called without a filename '
@@ -255,10 +251,7 @@ class MainPage(RenderableLivePage):
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
-            encoding = sys.getfilesystemencoding()
-            if encoding is None:
-                encoding = 'ascii'
-            filename = unicode(filename, encoding)
+            filename = unicode(filename, 'utf8')
             log.debug("filename and path" + filename)
             packageStore = self.webServer.application.packageStore
             package = packageStore.loadPackage(filename)
@@ -409,12 +402,12 @@ class MainPage(RenderableLivePage):
         """
         Exports this package to a scorm package file
         """
+        filename = Path(filename)
         log.debug(u"exportScorm, filaneme=%s" % filename)
         # Append an extension if required
-        filename = unicode(filename, 'utf8')
-        if not filename.lower().endswith('.zip'): 
+        #if not filename.lower().endswith('.zip'): 
+        if not filename.ext.lower() == '.zip': 
             filename += '.zip'
-        filename = Path(filename)
         # Remove any old existing files
         if filename.exists(): 
             filename.remove()

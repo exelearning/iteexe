@@ -95,6 +95,7 @@ function addImage(elementId) {
         image.removeAttribute('width');
         image.removeAttribute('height');
         var path  = document.getElementById('path'+elementId);
+        path.type = 'text';
         path.value = imagePath;
         image.src  = 'file://'+imagePath;
     }
@@ -170,6 +171,7 @@ function addFile(blockId) {
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
         var path  = document.getElementById('path'+blockId);
+        path.type  = 'text';
         path.value = fp.file.path;
     }
 }

@@ -53,6 +53,10 @@ class EditorElement(Element):
         if "object" in request.args and request.args["object"][0] == self.id:
             if request.args["action"][0] == "deleteField":
                 self.field.idevice.fields.remove(self.field)
+                
+        if "btnCaption"+self.id in request.args:
+            self.field.caption = unicode(request.args["btnCaption"+self.id][0],
+                                         'utf8')
 
 
 # ===========================================================================
@@ -124,6 +128,43 @@ class TextAreaEditorElement(EditorElement):
         html += "<br/>\n"
         return html
 
+# ===========================================================================
+
+class FeedbackEditorElement(EditorElement):
+    """ 
+    FeedbackElement is a feedback text which can be show or hide
+    """
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        html = "<b>%s </b>" % _("Button Caption")
+        html += common.textInput("btnCaption"+self.id, 
+                                 self.field.buttonCaption, 25)
+        html += "<br/><br/>"
+        html += common.textInput("name"+self.id, self.field.name, 25)
+        html += common.submitImage("deleteField", self.id, 
+                                   "/images/stock-cancel.png", 
+                                   _("Delete"), 1)
+        html += "<br/>\n"
+        html += common.textArea(self.id, "", "Disabled")
+        html += "<br/>\n"
+        html += common.richTextArea("instruc"+self.id, self.field.instruc)
+        html += "<br/>"
+        return html
+    
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string with the form element for previewing this field
+        """
+        html  = "<b>" + self.field.name + "</b> "
+        if self.field.instruc != "":
+            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+        html += "<br/>\n" 
+        html += common.textArea(self.id, self.field.feedback)
+        html += "<br/>\n"
+        return html
 # ===========================================================================
 
 class ImageEditorElement(EditorElement):

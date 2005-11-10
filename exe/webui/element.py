@@ -110,6 +110,57 @@ class TextElement(Element):
 
 
 # ===========================================================================
+
+class FeedbackElement(Element):
+    """ 
+    TextElement is a single line of text
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+ 
+    def process(self, request):
+        """
+        Process arguments from the web server. 
+        """
+        if self.id in request.args:
+            self.field.feedback = request.args[self.id][0]
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        html += common.richTextArea(self.id, self.field.feedback)
+        html += "<br/>\n"
+
+        return html
+    
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        
+        html = ""
+        html += '<input type="button" name="btn%s" ' % self.id
+        html += 'value ="%s" ' % self.field.buttonCaption
+        html += 'onclick="toggleFeedback(\'%s\')"/><br/>\n ' % self.id
+        html += '<div id="%s" style="display: none;"> ' % self.id
+        html += self.field.feedback
+        html += "</div>\n"
+        
+        return html
+    
+# ===========================================================================
+
 class TextAreaElement(Element):
     """
     TextAreaElement is responsible for a block of text

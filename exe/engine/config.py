@@ -53,10 +53,7 @@ class Config:
         self.configParser = ConfigParser()
         # Set default values
         # exePath is the whole path and filename of the exe executable
-        encoding = sys.getfilesystemencoding()
-        if encoding is None:
-            encoding = 'ascii'
-        self.exePath     = Path(sys.argv[0], encoding).abspath()
+        self.exePath     = Path(sys.argv[0]).abspath()
         # webDir is the parent directory for styles,scripts and templates
         self.webDir      = self.exePath.dirname()
         # xulDir is the parent directory for styles,scripts and templates

@@ -37,7 +37,7 @@ class Package(Persistable):
     i.e. the "package".
     """
     persistenceVersion = 4
-    nonpersistant      = ['resourceDir', 'config', 'filename']
+    nonpersistant      = ['resourceDir', 'filename']
 
     def __init__(self, name):
         """
@@ -126,7 +126,15 @@ class Package(Persistable):
 
         log.debug(u"Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
-        zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
+        try:
+            zippedFile = zipfile.ZipFile(Path(filename), 
+                                         "w", 
+                                         zipfile.ZIP_DEFLATED)
+        except IOError:
+            filename = Path(filename).encode(Path.fileSystemEncoding),
+            zippedFile = zipfile.ZipFile(filename,
+                                         "w", 
+                                         zipfile.ZIP_DEFLATED)
         
         try:
             for resourceFile in self.resourceDir.files():

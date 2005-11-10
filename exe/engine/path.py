@@ -43,18 +43,16 @@ _textmode = 'r'
 if hasattr(file, 'newlines'):
     _textmode = 'U'
 
-def toUnicode(string):
+def getFileSystemEncoding():
     """
-    Turns everything passed to it to unicode.
+    Returns file system default encoding name,
+    eg. Ascii, mbcs, utf-8, etc...
     """
-    if isinstance(string, str):
-        return unicode(string, 'utf8')
-    elif isinstance(string, unicode):
-        return unicode(string)
-    elif string is None:
-        return u''
+    encoding = sys.getfilesystemencoding()
+    if encoding is None:
+        return 'ascii'
     else:
-        return unicode(str(string), 'utf8')
+        return encoding
 
 
 class Path(unicode):
@@ -65,6 +63,16 @@ class Path(unicode):
     """
 
     # --- Special Python methods.
+
+    fileSystemEncoding = getFileSystemEncoding()
+
+    def __new__(cls, filename=u'', encoding='utf8'):
+        """
+        Gently converts the filename to unicode
+        """
+        if encoding is None:
+            encoding = Path.fileSystemEncoding
+        return unicode.__new__(cls, toUnicode(filename, encoding))
 
     def __repr__(self):
         return 'Path(%s)' % unicode.__repr__(self)
@@ -930,3 +938,19 @@ class TempDirPath(Path):
         """Destroy the temporary directory"""
         if self.exists():
             self.rmtree()
+
+
+def toUnicode(string, encoding='utf8'):
+    """
+    Turns everything passed to it to unicode.
+    """
+    if isinstance(string, str):
+        return unicode(string, encoding)
+    elif isinstance(string, unicode):
+        return unicode(string)
+    elif string is None:
+        return u''
+    else:
+        return unicode(str(string), encoding)
+
+

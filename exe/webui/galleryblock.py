@@ -23,6 +23,7 @@ a single image
 
 import logging
 import urllib
+import re
 from exe.webui.block            import Block
 from exe.webui                  import common
 
@@ -41,6 +42,7 @@ class GalleryBlock(Block):
     # Default Attribute Values
     thumbnailsPerRow = 4
     thumbnailSize = (96, 96)
+    unicodeRe = re.compile(r'(%u(\d|[A-F,a-f])+)')
 
     def __init__(self, parent, idevice):
         """
@@ -116,6 +118,14 @@ class GalleryBlock(Block):
                 # Decode multiple filenames
                 filenames = map(urllib.unquote, params.split('&'))
                 for filename in filenames:
+                    # Unquote unicode chars
+                    while 1:
+                        match = self.unicodeRe.search(filename)
+                        if not match: 
+                            break
+                        start, end = match.span()
+                        code = unichr(int(filename[start+2:end], 16))
+                        filename = filename[:start] + code + filename[end:]
                     self.idevice.addImage(filename)
             # Edit/change an image
             if action == 'changeImage':

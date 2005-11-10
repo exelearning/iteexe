@@ -22,8 +22,9 @@ a given field.
 """
 
 import logging
-from exe.engine.field  import TextField, TextAreaField, ImageField
+from exe.engine.field  import TextField, TextAreaField, ImageField, FeedbackField
 from exe.webui.element import TextElement, TextAreaElement, ImageElement
+from exe.webui.element import FeedbackElement
 
 log = logging.getLogger(__name__)
 
@@ -40,7 +41,8 @@ class ElementFactory(object):
         """
         self.elementTypeMap = {TextField:      TextElement,
                                TextAreaField:  TextAreaElement,
-                               ImageField:     ImageElement}
+                               ImageField:     ImageElement,
+                               FeedbackField:  FeedbackElement}
 
     def createElement(self, field):
         """

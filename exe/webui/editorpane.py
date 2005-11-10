@@ -24,9 +24,11 @@ The EditorPane is responsible for creating new idevice
 import logging
 from exe.webui                 import common
 from exe.engine.field          import TextField, TextAreaField, ImageField
+from exe.engine.field          import FeedbackField
 from exe.webui.editorelement   import TextEditorElement
 from exe.webui.editorelement   import TextAreaEditorElement
 from exe.webui.editorelement   import ImageEditorElement
+from exe.webui.editorelement   import FeedbackEditorElement
 from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.path           import Path
@@ -78,6 +80,7 @@ class EditorPane(object):
         self.imageInstruc    = _(u"Add an image to your iDevice. Enables "
                                  u"the selection of an image from your stored "
                                  u"picture files.")
+        self.feedbackInstruc    = _(u"Add an interactive feedback to your iDevice. ")
 
         self.style           = "default"
   
@@ -136,6 +139,10 @@ class EditorPane(object):
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
             
+        if "addFeedback" in request.args:
+            self.idevice.addField(FeedbackField(_(u"Enter the label here"), 
+                 _(u"Enter the instructions for completion here")))
+            
         if ("action" in request.args and 
             request.args["action"][0] == "selectIcon"):
             self.idevice.icon = request.args["object"][0]
@@ -168,7 +175,8 @@ class EditorPane(object):
         self.elements  = []
         elementTypeMap = {TextField:      TextEditorElement,
                           TextAreaField:  TextAreaEditorElement,
-                          ImageField:     ImageEditorElement}
+                          ImageField:     ImageEditorElement,
+                          FeedbackField:  FeedbackEditorElement}
         
         for field in self.idevice.fields:
             elementType = elementTypeMap.get(field.__class__)
@@ -194,8 +202,10 @@ class EditorPane(object):
         html += common.elementInstruc("line", self.lineInstruc) + "<br/>"
         html += common.submitButton("addTextArea", _("Text Box"))
         html += common.elementInstruc("textBox", self.textBoxInstruc) + "<br/>"
-        html += common.submitButton("addImage", _("Image")) 
+        html += common.submitButton("addImage", _("Image"))  
         html += common.elementInstruc("image", self.imageInstruc) + "<br/>"
+        html += common.submitButton("addFeedback", _("Feedback"))
+        html += common.elementInstruc("feedback", self.feedbackInstruc) + "<br/>"
         html += "</fieldset>\n"
 
         html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"

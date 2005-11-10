@@ -128,6 +128,22 @@ class TextAreaField(Field):
 
 
 # ===========================================================================
+class FeedbackField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+    def __init__(self, name, instruc=""):
+        """
+        Initialize 
+        """
+        Field.__init__(self, name, instruc)
+        self.buttonCaption = _(u"Click Here")
+        self.feedback      = ""
+
+
+
+# ===========================================================================
 
 class ImageField(Field):
     """
