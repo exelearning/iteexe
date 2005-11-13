@@ -8,7 +8,6 @@
 	width="640"
 	height="480"
 	>
-    <n:invisible n:render="liveid"/>
     <n:invisible n:render="liveglue"/>
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>

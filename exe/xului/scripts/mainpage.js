@@ -251,7 +251,7 @@ function outlineClick() {
 // Call this to ask the server if the package is dirty
 // 'ifDirty' will be evaled if the package is dirty
 function checkDirty(ifClean, ifDirty) {
-    nevow_clientToServerEvent('isPackageDirty', this, '', ifClean, ifDirty)
+    server.handle('isPackageDirty', ifClean, ifDirty)
 }
 
 // Call this to ask the server if the package is dirty
@@ -318,13 +318,8 @@ function fileOpen2() {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-        nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
+        server.handle('loadPackage', fp.file.path);
     }
-}
-
-// Shows the the load dialog and actually loads the new packa
-function loadTutorial() {
-    nevow_clientToServerEvent('loadTutorialPackage', this, '');
 }
 
 // Called by the user when they want to save their package
@@ -335,8 +330,8 @@ function loadTutorial() {
 // has been cancelled by the user.
 function fileSave(onProceed) {
     if (!onProceed)
-        var onProceed = '' 
-    nevow_clientToServerEvent('getPackageFileName', this, '', 'fileSave2', onProceed)
+        var onProceed = '' ;
+    server.handle('getPackageFileName', 'fileSave2', onProceed);
 }
 
 // Takes the server's response after we asked it for the
@@ -345,8 +340,8 @@ function fileSave2(filename, onDone) {
     if (filename) {
         // If the package has been previously saved/loaded
         // Just save it over the old file
-        if (onDone) nevow_clientToServerEvent('savePackage', this, '', '', onDone)
-        else nevow_clientToServerEvent('savePackage', this, '')
+        if (onDone) server.handle('savePackage', onDone)
+        else server.handle('savePackage')
     } else {
         // If the package is new (never saved/loaded) show a
         // fileSaveAs dialog
@@ -364,9 +359,9 @@ function fileSaveAs(onDone) {
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
         if (onDone) {
-            nevow_clientToServerEvent('savePackage', this, '', fp.file.path, onDone)
+            server.handle('savePackage', fp.file.path, onDone)
         } else {
-            nevow_clientToServerEvent('savePackage', this, '', fp.file.path)
+            server.handle('savePackage', fp.file.path)
         }
     } else {
         eval(onDone)
@@ -434,11 +429,9 @@ function exportPackage(exportType) {
         var res = fp.show();
         if (res == nsIFilePicker.returnOK) {
 
-            nevow_clientToServerEvent('exportPackage', 
-                                      this, 
-                                      '', 
-                                      exportType, 
-                                      fp.file.path)
+            server.handle('exportPackage', 
+                          exportType, 
+                          fp.file.path)
         }
     } else {
         if (exportType == "scorm")
@@ -452,7 +445,7 @@ function exportPackage(exportType) {
         fp.appendFilter("All Files", "*.*");
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+            server.handle('exportPackage', exportType, fp.file.path)
         }
     }
 }

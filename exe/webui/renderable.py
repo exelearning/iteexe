@@ -293,6 +293,7 @@ class RenderableResource(_RenderablePage, Resource):
         Resource.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
 
+
 class RenderableLivePage(_RenderablePage, LivePage):
     """
     This class is both a renderable and a LivePage/Resource
@@ -304,3 +305,16 @@ class RenderableLivePage(_RenderablePage, LivePage):
         """
         LivePage.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+
+    def locateHandler(self, ctx, path, name):
+        """
+        Walks along a '.' delimited object path to return a function
+        eg.
+        'outlinePane.addPage' will return the func
+        mainPage.outlinePane.handle_addPage
+        """
+        path = name.split('.')
+        obj = self
+        for element in path[:-1]:
+            obj = getattr(obj, element)
+        return getattr(obj, 'handle_%s' % path[-1])

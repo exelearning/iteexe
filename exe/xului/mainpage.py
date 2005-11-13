@@ -26,7 +26,7 @@ import sys
 import logging
 from twisted.web                 import static
 from nevow                       import loaders, inevow, stan
-from nevow.livepage              import handler, js
+from nevow.livepage              import js
 from exe.xului.idevicepane       import IdevicePane
 from exe.xului.outlinepane       import OutlinePane
 from exe.xului.stylemenu         import StyleMenu
@@ -73,6 +73,8 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.error          = False
 
+        # Give access to nevow glue
+
 
     def getChild(self, name, request):
         """
@@ -83,89 +85,70 @@ class MainPage(RenderableLivePage):
         else:
             return super(self, self.__class__).getChild(self, name, request)
 
-
-    def goingLive(self, ctx, client):
+    def renderHTTP(self, ctx):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type',
                                        'application/vnd.mozilla.xul+xml')
-        # Set up named server side funcs that js can call
-        def setUpHandler(func, name, *args, **kwargs):
-            """
-            Convience function link funcs to hander ids
-            and store them
-            """
-            kwargs['identifier'] = name
-            hndlr = handler(func, *args, **kwargs)
-            hndlr(ctx, client) # Stores it
-        setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
-        setUpHandler(self.handlePackageFileName, 'getPackageFileName')
-        setUpHandler(self.handleSavePackage, 'savePackage')
-        setUpHandler(self.handleLoadPackage, 'loadPackage')
-        setUpHandler(self.handleLoadTutorialPackage, 'loadTutorialPackage')
-        setUpHandler(self.handleExport, 'exportPackage')
+        RenderableLivePage.renderHTTP(self, ctx)
+
+    def goingLive(self, ctx, client):
+        """
+        New browser windows opened
+        """
         self.idevicePane.client = client
 
+    # Render Methods
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
         add child button and short cut key"""
-        return ctx.tag(oncommand=handler(self.outlinePane.handleAddChild,
-                       js('currentOutlineId()')))
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.addChild',
+                                                    js.currentOutlineId()))
 
     def render_delNode(self, ctx, data):
         """Fills in the oncommand handler for the 
         delete child button and short cut key"""
-        return ctx.tag(oncommand=handler(self.outlinePane.handleDelNode,
-                       js("confirmDelete()"),
-                       js('currentOutlineId()')))
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.delNode',
+                                                    js.confirmDelete(),
+                                                    js.currentOutlineId()))
 
     def render_renNode(self, ctx, data):
         """Fills in the oncommand handler for the 
         rename node button and short cut key"""
-        return ctx.tag(oncommand=handler(self.outlinePane.handleRenNode,
-                       js('currentOutlineId()'),
-                       js('askNodeName()'), bubble=True))
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.renNode',
+                                                    js.currentOutlineId(),
+                                                    js.askNodeName()))
 
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
         request = inevow.IRequest(ctx)
-        return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'])
-
+        return ctx.tag(src = self.package.name + '/' + ctx.tag.attributes['src'])
 
     # The node moving buttons
-    def _passHandle(self, ctx, name):
-        """Ties up a handler for the promote, demote,
-        up and down buttons. (Called by below funcs)"""
-        attr = getattr(self.outlinePane, 'handle%s' % name)
-        return ctx.tag(oncommand=handler(attr, js('currentOutlineId()')))
-
 
     def render_promote(self, ctx, data):
         """Fills in the oncommand handler for the 
         Promote button and shortcut key"""
-        return self._passHandle(ctx, 'Promote')
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.promote',
+                                                    js.currentOutlineId()))
 
     def render_demote(self, ctx, data):
         """Fills in the oncommand handler for the 
         Demote button and shortcut key"""
-        return self._passHandle(ctx, 'Demote')
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.demote',
+                                                    js.currentOutlineId()))
 
     def render_up(self, ctx, data):
         """Fills in the oncommand handler for the 
         Up button and shortcut key"""
-        return self._passHandle(ctx, 'Up')
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.up',
+                                                    js.currentOutlineId()))
 
     def render_down(self, ctx, data):
         """Fills in the oncommand handler for the 
         Down button and shortcut key"""
-        return self._passHandle(ctx, 'Down')
-
+        return ctx.tag(oncommand = js.server.handle('outlinePane.down',
+                                                    js.currentOutlineId()))
 
     def render_debugInfo(self, ctx, data):
         """Renders debug info to the top
@@ -182,8 +165,7 @@ class MainPage(RenderableLivePage):
         else:
             return ''
 
-
-    def handleIsPackageDirty(self, client, ifClean, ifDirty):
+    def handle_isPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
         ifClean is JavaScript to be evaled on the client if the package has
@@ -197,7 +179,7 @@ class MainPage(RenderableLivePage):
             client.sendScript(ifClean)
 
 
-    def handlePackageFileName(self, client, onDone, onDoneParam):
+    def handle_packageFileName(self, client, onDone, onDoneParam):
         """
         Calls the javascript func named by 'onDone' passing as the
         only parameter the filename of our package. If the package
@@ -208,7 +190,7 @@ class MainPage(RenderableLivePage):
         client.call(onDone, Path(self.package.filename), onDoneParam)
 
 
-    def handleSavePackage(self, client, filename=None, onDone=None):
+    def handle_savePackage(self, client, filename=None, onDone=None):
         """Save the current package
         'filename' is the filename to save the package to
         'onDone' will be evaled after saving instead or redirecting
@@ -248,7 +230,7 @@ class MainPage(RenderableLivePage):
                               self.package.name.encode('utf8'))
 
 
-    def handleLoadPackage(self, client, filename):
+    def handle_loadPackage(self, client, filename):
         """Load the package named 'filename'"""
         try:
             filename = unicode(filename, 'utf8')
@@ -268,26 +250,7 @@ class MainPage(RenderableLivePage):
             self.error = True
 
 
-    def handleLoadTutorialPackage(self, client):
-        """Load the tutorial"""
-        try:
-            filename = self.config.webDir/"eXe-tutorial.elp"
-            packageStore = self.webServer.application.packageStore
-            package = packageStore.loadPackage(filename)
-            self.root.bindNewPackage(package)
-            client.sendScript((u'top.location = "/%s"' % \
-                              package.name).encode('utf8'))
-        except Exception, exc:
-            if log.getEffectiveLevel() == logging.DEBUG:
-                client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
-            else:
-                client.alert(_(u'Sorry, wrong file format'))
-            log.error(_(u'Error loading package "%s": %s' % \
-                      (filename, unicode(exc))))
-            self.error = True
-
-
-    def handleExport(self, client, exportType, filename):
+    def handle_export(self, client, exportType, filename):
         """
         Called by js. 
         'exportType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'

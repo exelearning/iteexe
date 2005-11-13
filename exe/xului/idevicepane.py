@@ -69,9 +69,11 @@ class IdevicePane(Renderable):
         """
         log.debug("addIdevice id="+idevice.id+", title="+idevice.title)
         self.prototypes[idevice.id] = idevice
+        # Want the non-quoted version of the idevice title
+        # Translating an empty string is bad...
         self.client.call('XHAddIdeviceListItem',
                          idevice.id, 
-                         cgi.escape(idevice.title))
+                         idevice.rawTitle)
 
         
     def render(self, ctx, data):

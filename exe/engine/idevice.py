@@ -62,20 +62,25 @@ class Idevice(Persistable):
         Gives a nicely encoded and translated title that can be put inside
         xul labels (eg. <label value="my &quot;idevice&quot;">)
         """
-        title = _(self._title)
-        title = title.replace('&', '&amp;') 
-        title = title.replace('"', '&quot;')
-        return title
+        if self._title:
+            title = _(self._title)
+            title = title.replace('&', '&amp;') 
+            title = title.replace('"', '&quot;')
+            return title
+        else:
+            return u''
+
     def set_title(self, value):
         """
         Sets self._title
         """
         self._title = value
-    title   = property(get_title, set_title)
-    #title   = lateTranslate('title')
-    author  = lateTranslate('author')
-    purpose = lateTranslate('purpose')
-    tip     = lateTranslate('tip')
+
+    title    = property(get_title, set_title)
+    rawTitle = lateTranslate('title')
+    author   = lateTranslate('author')
+    purpose  = lateTranslate('purpose')
+    tip      = lateTranslate('tip')
 
     def __cmp__(self, other):
         """

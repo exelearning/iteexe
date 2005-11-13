@@ -71,7 +71,7 @@ class OutlinePane(Renderable):
                     log.error("deleteNode cannot locate "+nodeId)
 
             
-    def handleAddChild(self, client, parentNodeId):
+    def handle_addChild(self, client, parentNodeId):
         """Called from client via xmlhttp. When the addChild button is called.
         Hooked up by authoringPage.py
         """
@@ -83,7 +83,7 @@ class OutlinePane(Renderable):
             client.call('XHAddChildTreeItem', newNode.id, newNode.title)
 
 
-    def handleDelNode(self, client, confirm, nodeId):
+    def handle_delNode(self, client, confirm, nodeId):
         """Called from xmlhttp. 
         'confirm' is a string. It is 'false' if the user or the gui has
         cancelled the deletion 'nodeId' is the nodeId
@@ -103,7 +103,7 @@ class OutlinePane(Renderable):
                 log.error("deleteNode cannot locate " + nodeId)
 
 
-    def handleRenNode(self, client, nodeId, newName):
+    def handle_renNode(self, client, nodeId, newName):
         """Called from xmlhttp"""
         log.debug("handleRenNode nodeId=%s newName=%s" % (nodeId, newName))
         if newName in ('', 'null'): 
@@ -128,7 +128,7 @@ class OutlinePane(Renderable):
             self._doJsRename(client, child)
 
 
-    def handleDrop(self, client, sourceNodeId, parentNodeId, nextSiblingNodeId):
+    def handle_drop(self, client, sourceNodeId, parentNodeId, nextSiblingNodeId):
         """Handles the end of a drag drop operation..."""
         source = self.package.findNode(sourceNodeId)
         parent = self.package.findNode(parentNodeId)
@@ -174,7 +174,7 @@ class OutlinePane(Renderable):
             client.call('XHMoveNode', node.id, node.parent.id, siblingId)
 
 
-    def handlePromote(self, client, sourceNodeId):
+    def handle_promote(self, client, sourceNodeId):
         """Promotes a node"""
         node = self.package.findNode(sourceNodeId)
         if node.promote():
@@ -182,7 +182,7 @@ class OutlinePane(Renderable):
             self._doJsRename(client, node)
 
 
-    def handleDemote(self, client, sourceNodeId):
+    def handle_demote(self, client, sourceNodeId):
         """Demotes a node"""
         node = self.package.findNode(sourceNodeId)
         if node.demote():
@@ -190,7 +190,7 @@ class OutlinePane(Renderable):
             self._doJsRename(client, node)
 
 
-    def handleUp(self, client, sourceNodeId):
+    def handle_up(self, client, sourceNodeId):
         """Moves a node up its list of siblings"""
         node = self.package.findNode(sourceNodeId)
         if node.up():
@@ -198,7 +198,7 @@ class OutlinePane(Renderable):
             self._doJsRename(client, node)
 
 
-    def handleDown(self, client, sourceNodeId):
+    def handle_down(self, client, sourceNodeId):
         """Moves a node down its list of siblings"""
         node = self.package.findNode(sourceNodeId)
         if node.down():
@@ -212,13 +212,6 @@ class OutlinePane(Renderable):
         The xul is stored in a tuple inside the methods of this class
         then new lines are added when we actually return it
         """
-        # Create a special server side func that the 
-        # Drag and drop js can call
-        dropHandler = handler(self.handleDrop,
-                              identifier='outlinePane.handleDrop')
-        # The below call stores the handler so we can call it
-        # as a server 
-        dropHandler(ctx, data) 
         # Now do the rendering
         log.debug("render")
         xul = (u'<!-- start outline pane -->',

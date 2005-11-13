@@ -86,7 +86,7 @@ def launchBrowser(config, packageName):
         launchString += ' -profile "' + config.configDir/profile + '" '
         launchString += url
         launchString += "&"
-        log.info(u'Launching xulrunner with: ' + launchString)
+        log.info(u'Launching firefox with: ' + launchString)
         os.system(launchString)
 
 
