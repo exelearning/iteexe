@@ -113,7 +113,7 @@ class TextElement(Element):
 
 class FeedbackElement(Element):
     """ 
-    TextElement is a single line of text
+    FeedbackElement is a text which can be show and hide
     """
     def __init__(self, field):
         """

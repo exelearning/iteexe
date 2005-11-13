@@ -69,9 +69,9 @@ class WebsitePage(object):
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(content.css);\n"
         html += u"@import url(nav.css);</style>\n"
-        html += u"<title>" 
+        html += u"<title> " 
         html += escape(self.node.title)
-        html += u"</title>\n" 
+        html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
         html += u'<script type="text/javascript" src="common.js"></script>\n'
