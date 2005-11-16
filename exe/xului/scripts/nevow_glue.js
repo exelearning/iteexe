@@ -1,52 +1,70 @@
-var liveevil_unload = false; var auto_open = true;
 
-var base_url = this.location.toString()
-var queryParamIndex = base_url.indexOf('?')
+var nevow_clientHandleId;       /* This variable must be defined in your HTML.
+                                 */
+
+var liveevil_unload = false;
+var auto_open = true;
+
+var last_request = null;
+var last_server_message_time = null;
+
+var disconnectListeners = [];
+
+var inputListeners = [];
+var listenerId = 0;
+
+var base_url = this.location.toString();
+var queryParamIndex = base_url.indexOf('?');
+var userAgent = navigator.userAgent.toLowerCase();
+
 if (queryParamIndex != -1) {
-    base_url = base_url.substring(0, queryParamIndex)
-}
-if (base_url.charAt(base_url.length-1) != '/')
-  base_url += '/'
+  base_url = base_url.substring(0, queryParamIndex);
+ }
+
+if (base_url.charAt(base_url.length-1) != '/') {
+  base_url += '/';
+ }
+
+base_url += 'livepage_client/'
 
 
 function createRequest() {
     if (window.XMLHttpRequest) {
-        return new XMLHttpRequest()
+      req = new XMLHttpRequest();
     } else {
-        return new ActiveXObject("Microsoft.XMLHTTP")
+        req = new ActiveXObject("Microsoft.XMLHTTP")
     }
+    reqObj = new Object()
+    reqObj.request = req
+    return reqObj
 }
-
-var last_request = null
-var last_server_message_time = null
 
 function connect(outputNum) {
-    var xmlhttp = createRequest()
-    last_request = xmlhttp
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4) {
-            if (xmlhttp.responseText) {
-        		last_server_message_time = new Date()
-                try {
-                    eval(xmlhttp.responseText)
-                } catch (e) {
-                    alert("Exception: " + e.toString()+'\nCaused by script:'+xmlhttp.responseText)
-                    throw e
-                }
-                if (!liveevil_unload && auto_open) {
-                    connect(outputNum + 1)
-                }
-            } else {
-                last_request = null
-            }
+  var xmlhttp = createRequest();
+  last_request = xmlhttp.request;
+  xmlhttp.request.onreadystatechange = function() {
+    if (xmlhttp.request.readyState == 4) {
+      if (xmlhttp.request.responseText) {
+        last_server_message_time = new Date()
+        eval(xmlhttp.request.responseText)
+        if (!liveevil_unload && auto_open) {
+          connect(outputNum + 1)
         }
+      } else {
+        for (var i=0; i<disconnectListeners.length; i++) {
+          disconnectListeners[i]()
+          disconnectListeners = []
+        }
+        last_request = null
+      }
     }
-    xmlhttp.open("GET", base_url + "nevow_liveOutput?outputNum=" + outputNum + "&client-handle-id=" + nevow_clientHandleId, true)
-    xmlhttp.send(null)
+  }
+  var U = base_url + nevow_clientHandleId + "/output?outputNum=" + outputNum;
+  xmlhttp.request.open("GET", U, true);
+  xmlhttp.request.send(null);
 }
 
 
-var userAgent = navigator.userAgent.toLowerCase()
 if (userAgent.indexOf("msie") != -1) {
     /* IE specific stuff */
     /* Abort last request so we don't 'leak' connections */
@@ -59,12 +77,67 @@ if (userAgent.indexOf("msie") != -1) {
 }
 
 
-if (auto_open) {
-    connect(0)
+function listener(callWhenAllDone) {
+    this.listenerId = listenerId
+    listenerId += 1
+    this.events = []
+    this.callWhenAllDone = callWhenAllDone
+    this.fired = false
+    this.inputDone = function(what) {
+        var found = false
+        for (var i=0; i<this.events.length; i++) {
+            if (this.events[i] == what) {
+                this.events.splice(i, 1)
+                found = true
+                break
+            }
+        }
+        if (this.events.length == 0) {
+            if (this.fired) {
+                alert("Tried to fire twice :(")
+            } else {
+                this.callWhenAllDone()
+                this.fired = true
+            }
+        }
+    }
 }
 
 
-function nevow_clientToServerEvent(theTarget, node, evalAfterDone) {
+function listenForInputEvents(callWhenAllDone) {
+    var newListener = new listener(callWhenAllDone)
+    inputListeners.push(newListener)
+    return newListener
+}
+
+
+function stopListening(theListener) {
+    for (var i=0; i<inputListeners.length; i++) {
+        if (inputListeners[i] == theListener) {
+            inputListeners.splice(i, 1)
+            break
+        }
+    }
+    if (theListener.events.length == 0) {
+        theListener.callWhenAllDone()
+    }
+}
+
+function addDisconnectListener(callback) {
+    disconnectListeners.push(callback)
+    return callback
+}
+
+function delDisconnectListener(theListener) {
+    for (var i=0; i<disconnectListeners.length; i++) {
+	if (disconnectListeners[i] == theListener){
+	    disconnectListeners.splice(i, 1)
+	    break
+	}
+    }
+}
+
+function nevow_clientToServerEvent(theTarget, evalAfterDone) {
     if (theTarget != 'close' && liveevil_unload) {
         // Server had previously closed the output; let's open it again.
         if (auto_open) {
@@ -72,26 +145,37 @@ function nevow_clientToServerEvent(theTarget, node, evalAfterDone) {
         connect(0)
     }
     var additionalArguments = ''
-    for (i = 3; i<arguments.length; i++) {
+    for (i = 2; i<arguments.length; i++) {
         additionalArguments += '&arguments='
         additionalArguments += encodeURIComponent(arguments[i])
     }
-
-    input = createRequest()
-    input.onreadystatechange = function() {
-        if (input.readyState == 4 && evalAfterDone) {
-	    eval(evalAfterDone)
+    var input = createRequest()
+    input.request.onreadystatechange = function() {
+        if (input.request.readyState == 4) {
+            eval(input.request.responseText)
+            if (evalAfterDone) {
+               eval(evalAfterDone)
+            }
+            for (var i=0; i<input.events.length; i++) {
+                input.events[i].inputDone(input.request)
+            }
         }
     }
-    input.open(
+    input.events = []
+    for (var i=0; i<inputListeners.length; i++) {
+        inputListeners[i].events.push(input.request)
+        input.events.push(inputListeners[i])
+    }
+    input.request.open(
       "GET",
-      base_url + "nevow_liveInput?target=" +
-      encodeURIComponent(theTarget) +
-      '&client-handle-id=' +
+      base_url +
       nevow_clientHandleId +
+      "/input?" +
+      "handler-path=&handler-name=" +
+      encodeURIComponent(theTarget) +
       additionalArguments)
 
-    input.send(null)
+    input.request.send(null)
 }
 
 function nevow_setNode(node, to) {
@@ -105,6 +189,18 @@ function nevow_appendNode(node, what) {
     for (i=0; i<newspan.childNodes.length; i++) {
         oldnode.appendChild(newspan.childNodes[i]);
     }
+}
+
+function nevow_prependNode(node, what) {
+  var oldnode = document.getElementById(node);
+  var newspan = document.createElement('span');
+  newspan.innerHTML = what;
+  for (i=newspan.childNodes.length-1; i>=0; i--){
+    if (oldnode.childNodes.length == 0)
+      oldnode.appendChild(newspan.childNodes[i]);
+    else
+      oldnode.insertBefore(newspan.childNodes[i], oldnode.childNodes[0]);
+  }
 }
 
 function nevow_insertNode(node, before) {
@@ -129,4 +225,49 @@ function nevow_closeLive(evalAfterDone) {
     nevow_clientToServerEvent('close', '', evalAfterDone)
     auto_open = old_auto_open
 }
+
+
+var server = {
+    handle: function(handlerName) {
+        var args = [handlerName, '']
+        for (var i = 1; i < arguments.length; i++) {
+            args.push(arguments[i])
+        }
+        nevow_clientToServerEvent.apply(this, args)
+    }
+};
+
+function nevow_startLivePage() {
+  if (nevow_clientHandleId == null) {
+    alert('UNSUPPORTED!  USE AT YOUR OWN RISK!');
+    var x = createRequest();
+    x.request.onreadstatechange = function () {
+      if (x.request.readyState == 4) {
+        nevow_clientHandleId = x.request.responseText;
+        nevow_startLivePage();
+      }
+    };
+    x.request.open("GET", base_url + "new");
+    x.request.send(null);
+  } else {
+    connect(0);
+  }
+}
+
+
+var nevow_origOnLoad = window.onload;
+function nevow_onLoad() {
+    if (nevow_origOnLoad) {
+      if(typeof(nevow_origOnLoad) == "string") {
+        eval(nevow_origOnLoad);
+      }
+      else {
+        nevow_origOnLoad();
+      }
+    }      
+    if (auto_open) {
+        nevow_startLivePage();
+    }
+}
+window.onload = nevow_onLoad;
 
