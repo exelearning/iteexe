@@ -401,7 +401,6 @@ class ClozeElement(Element):
     var content = node.innerHTML.replace(/&/g, "&amp;")
     content = content.replace(/"/g, "&quot;")
     hiddenField.value = content
-    //hiddenField.value=escape(node.innerHTML);
   };
 -->
 </script>

@@ -251,7 +251,7 @@ function outlineClick() {
 // Call this to ask the server if the package is dirty
 // 'ifDirty' will be evaled if the package is dirty
 function checkDirty(ifClean, ifDirty) {
-    server.handle('isPackageDirty', ifClean, ifDirty)
+    server.handle('isPackageDirty', ifClean, ifDirty);
 }
 
 // Call this to ask the server if the package is dirty

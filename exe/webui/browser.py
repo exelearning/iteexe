@@ -87,6 +87,6 @@ def launchBrowser(config, packageName):
         launchString += url
         launchString += "&"
         log.info(u'Launching firefox with: ' + launchString)
-        os.system(launchString)
+        ##os.system(launchString)
 
 

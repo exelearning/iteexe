@@ -39,6 +39,10 @@ class Package(Persistable):
     persistenceVersion = 4
     nonpersistant      = ['resourceDir', 'filename']
 
+    # Default attribute values
+    # This is set when the package is saved as a temp copy file
+    tempFile      = False
+
     def __init__(self, name):
         """
         Initialize 
@@ -102,16 +106,19 @@ class Package(Persistable):
             return _(u"?????")
         
 
-    def save(self, filename=None):
+    def save(self, filename=None, tempFile=False):
         """
         Save package to disk
-        pass an optional filename
+        pass a 'filename' for 'save as...'
+        set 'tempFile' to True to not remember that we saved it here
         """
+        self.tempFile = tempFile
         if filename:
             # If we are being given a new filename...
             # Change our name to match our new filename
             name = Path(filename).splitpath()[1]
-            self.name = unicode(name.basename().splitext()[0])
+            if not tempFile:
+                self.name = unicode(name.basename().splitext()[0])
         elif self.filename:
             # Otherwise use our last saved/loaded from filename
             filename = Path(self.filename)
@@ -122,19 +129,20 @@ class Package(Persistable):
             raise AssertionError(u'No name passed when saving a new package')
 
         # Store our new filename for next file|save
-        self.filename = filename
+        if not tempFile:
+            self.filename = filename
 
         log.debug(u"Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
         try:
+            # On some systems you need 'unicode' filenames
             zippedFile = zipfile.ZipFile(Path(filename), 
-                                         "w", 
-                                         zipfile.ZIP_DEFLATED)
+                                         "w", zipfile.ZIP_DEFLATED)
         except IOError:
+            # On some you need 'encoded' filenames!
             filename = Path(filename).encode(Path.fileSystemEncoding),
             zippedFile = zipfile.ZipFile(filename,
-                                         "w", 
-                                         zipfile.ZIP_DEFLATED)
+                                         "w", zipfile.ZIP_DEFLATED)
         
         try:
             for resourceFile in self.resourceDir.files():
@@ -161,10 +169,14 @@ class Package(Persistable):
         except:
             import traceback
             traceback.print_exc()
-
-        # newPackage.filename is the name that the package was last loaded from
-        # or saved to
-        newPackage.filename = Path(filename)
+        
+        if newPackage.tempFile:
+            # newPackage.filename was stored as it's original filename
+            newPackage.tempFile = False
+        else:
+            # newPackage.filename is the name that the package was last loaded from
+            # or saved to
+            newPackage.filename = Path(filename)
 
         # Need to add a TempDirPath because it is a nonpersistant member
         newPackage.resourceDir = TempDirPath()

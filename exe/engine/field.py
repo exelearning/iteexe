@@ -27,6 +27,7 @@ from exe.engine.path      import Path
 from exe.engine.translate import lateTranslate
 from HTMLParser           import HTMLParser
 import re
+import re
 import urllib
 log = logging.getLogger(__name__)
 

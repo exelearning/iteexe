@@ -25,8 +25,9 @@ import os
 import sys
 import logging
 from twisted.web                 import static
-from nevow                       import loaders, inevow, stan
-from nevow.livepage              import js
+from nevow                       import loaders, inevow, stan, tags, url, util
+from nevow.livepage              import js, IClientHandle, \
+                                        DefaultClientHandleFactory
 from exe.xului.idevicepane       import IdevicePane
 from exe.xului.outlinepane       import OutlinePane
 from exe.xului.stylemenu         import StyleMenu
@@ -41,6 +42,44 @@ from exe.engine.path             import Path
 
 log = logging.getLogger(__name__)
 
+class EasyDict(dict):
+
+    def __init__(self, parent):
+        self.parent = parent
+    def __setitem__(self, key, val):
+        self.parent.handle = val
+    def __getitem__(self, key):
+        return self.parent.handle
+
+class SingeClientHandleFactory(DefaultClientHandleFactory):
+    """
+    Has only one client context so can only be used with one client. But works
+    more often
+    """
+
+    def __init__(self):
+        self.handle = None
+        self.clientHandles = EasyDict(self)
+
+    def newClientHandle(self, livePage, refreshInterval = 0,
+                        targetTimeoutCount = 0):
+        print 'newClientHandle'
+        if not self.handle:
+            handleid = 'The One'
+            self.handle = self.clientHandleClass(
+                livePage, handleid, refreshInterval, targetTimeoutCount)
+            self.handle.notifyOnClose().addBoth(lambda ign: self.deleteHandle(handleid))
+        return self.handle
+
+    def deleteHandle(self, handleid):
+        print 'deleteHandle'
+        del self.handle
+
+    def getHandleForId(self, handleId):
+        """Override this to restore old handles on demand.
+        """
+        print 'getHandleForId'
+        return self.handle
 
 class MainPage(RenderableLivePage):
     """
@@ -50,6 +89,7 @@ class MainPage(RenderableLivePage):
     
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
+    clientFactory = SingeClientHandleFactory()
 
     def __init__(self, parent, package):
         """
@@ -73,8 +113,12 @@ class MainPage(RenderableLivePage):
         self.propertiesPage = PropertiesPage(self)
         self.error          = False
 
-        # Give access to nevow glue
+        ### Give access to nevow_glue
+        ##fn = self.config.xulDir/'scripts'/'liveglue.js'
+        ##setattr(self, 'child_liveglue.js', util.resource_filename(fn))
 
+    def child_livepage_client(self, ctx):
+        return self.clientFactory
 
     def getChild(self, name, request):
         """
@@ -90,12 +134,6 @@ class MainPage(RenderableLivePage):
         inevow.IRequest(ctx).setHeader('content-type',
                                        'application/vnd.mozilla.xul+xml')
         RenderableLivePage.renderHTTP(self, ctx)
-
-    def goingLive(self, ctx, client):
-        """
-        New browser windows opened
-        """
-        self.idevicePane.client = client
 
     # Render Methods
 
@@ -165,7 +203,24 @@ class MainPage(RenderableLivePage):
         else:
             return ''
 
-    def handle_isPackageDirty(self, client, ifClean, ifDirty):
+    def render_liveglue(self, ctx, data):
+        """
+        Here we override and replace what livepage.py does.
+        We tell the browser where to find nevow_glue.js properly
+        """
+        client = self.clientFactory.newClientHandle(self, 0, 0)
+        handleId = "'", client.handleId, "'"
+        ctx.remember(client)
+        self.idevicePane.client = client
+        return [
+            tags.script(type="text/javascript")[
+                "var nevow_clientHandleId = ", handleId ,";"],
+            tags.script(type="text/javascript",
+                        #src='xulscripts/liveglue.js')
+                        src=url.here.child('nevow_glue.js'))
+            ]
+
+    def handle_isPackageDirty(self, ctx, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
         ifClean is JavaScript to be evaled on the client if the package has
@@ -173,13 +228,14 @@ class MainPage(RenderableLivePage):
         ifDirty is JavaScript to be evaled on the client if the package has not
         been changed
         """
+        client = IClientHandle(ctx)
         if self.package.isChanged:
-            client.sendScript(ifDirty)
+            client.send(js(ifDirty))
         else:
-            client.sendScript(ifClean)
+            client.send(js(ifClean))
 
 
-    def handle_packageFileName(self, client, onDone, onDoneParam):
+    def handle_packageFileName(self, ctx, onDone, onDoneParam):
         """
         Calls the javascript func named by 'onDone' passing as the
         only parameter the filename of our package. If the package
@@ -187,10 +243,13 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
+        import pdb
+        pdb.set_trace()
+        client = IClientHandle(ctx)
         client.call(onDone, Path(self.package.filename), onDoneParam)
 
 
-    def handle_savePackage(self, client, filename=None, onDone=None):
+    def handle_savePackage(self, ctx, filename=None, onDone=None):
         """Save the current package
         'filename' is the filename to save the package to
         'onDone' will be evaled after saving instead or redirecting
@@ -198,6 +257,7 @@ class MainPage(RenderableLivePage):
         (This is used where the user goes file|open when their 
         package is changed and needs saving)
         """
+        client     = IClientHandle(ctx)
         filename   = Path(filename)
         exportDir  = filename.dirname()
         if exportDir and not exportDir.exists():
@@ -220,26 +280,27 @@ class MainPage(RenderableLivePage):
         self.package.save(filename) # This can change the package name
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
-            client.sendScript(onDone)
+            client.send(js(onDone))
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s'
                      % self.package.name)
-            client.sendScript('top.location = "/%s"' % \
-                              self.package.name.encode('utf8'))
+            client.send(js('top.location = "/%s"' % \
+                              self.package.name.encode('utf8')))
 
 
-    def handle_loadPackage(self, client, filename):
+    def handle_loadPackage(self, ctx, filename):
         """Load the package named 'filename'"""
+        client = IClientHandle(ctx)
         try:
             filename = unicode(filename, 'utf8')
             log.debug("filename and path" + filename)
             packageStore = self.webServer.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.sendScript((u'top.location = "/%s"' % \
-                              package.name).encode('utf8'))
+            client.send(js(u'top.location = "/%s"' % \
+                           package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
@@ -249,15 +310,21 @@ class MainPage(RenderableLivePage):
                       (filename, unicode(exc)))
             self.error = True
 
+    def handle_pageUnloaded(self, ctx):
+        """
+        Called after a refresh or window close. Save the page
+        """
+        print 'Page Unloaded'
 
-    def handle_export(self, client, exportType, filename):
+    def handle_export(self, ctx, exportType, filename):
         """
         Called by js. 
         'exportType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
         'webSite'
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
-        """
+        """ 
+        client     = IClientHandle(ctx)
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
 
@@ -281,12 +348,13 @@ class MainPage(RenderableLivePage):
             self.exportIMS(client, filename, stylesDir)
 
 
-    def exportSinglePage(self, client, filename, webDir, stylesDir):
+    def exportSinglePage(self, ctx, filename, webDir, stylesDir):
         """
         Export 'client' to a single web page,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
+        client     = IClientHandle(ctx)
         imagesDir  = webDir.joinpath('images')
         scriptsDir = webDir.joinpath('scripts')
         # filename is a directory where we will export the website to
@@ -321,12 +389,13 @@ class MainPage(RenderableLivePage):
             os.system("firefox "+filename+"&")
 
 
-    def exportWebSite(self, client, filename, webDir, stylesDir):
+    def exportWebSite(self, ctx, filename, webDir, stylesDir):
         """
         Export 'client' to a web site,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
+        client     = IClientHandle(ctx)
         imagesDir  = webDir.joinpath('images')
         scriptsDir = webDir.joinpath('scripts')
         # filename is a directory where we will export the website to
