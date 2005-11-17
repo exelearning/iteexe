@@ -53,7 +53,7 @@ class Package(Persistable):
         # For looking up nodes by ids
         self._nodeIdDict    = {} 
 
-        self.levelNames    = [_(u"Topic"), _(u"Section"), _(u"Unit")]
+        self._levelNames    = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
         self._name         = name
 
         # Empty if never saved/loaded
@@ -100,8 +100,8 @@ class Package(Persistable):
         """
         Return the level name
         """
-        if level < len(self.levelNames):
-            return self.levelNames[level]
+        if level < len(self._levelNames):
+            return _(self._levelNames[level])
         else:
             return _(u"?????")
         
