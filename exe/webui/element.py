@@ -363,9 +363,18 @@ class ClozeElement(Element):
         """
         Sets the encodedContent of our field
         """
+        chkid = 'chk' + self.id
         clozeid = 'cloze%s' % self.id
+        
+        if chkid in request.args:
+            self.field.autoCompletion = True
+        elif clozeid in request.args:
+            self.field.autoCompletion = False
+                   
         if clozeid in request.args:
             self.field.encodedContent = request.args[clozeid][0]
+            
+        
             
     @staticmethod
     def renderEditScripts():
@@ -437,6 +446,10 @@ class ClozeElement(Element):
             u'<p>',
             u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
+            common.checkbox('chk'+ self.id, self.field.autoCompletion),                            
+            _(u'Auto Completion'),
+            common.elementInstruc('chk'+self.id, 
+                                  self.field.autoCompletionInstruc),
             u'</p>',
             ]
         return '\n    '.join(html)
@@ -454,11 +467,16 @@ class ClozeElement(Element):
                 html.append(text)
             if missingWord:
                 length = length + 1
+                if self.field.autoCompletion:
+                    auto = 1
+                else:
+                    auto = 0
                 words += "'" + missingWord + "',"
                 html += [
                     ' <input type="text" value="" ',
                     '        id="clz%s%s"' % (self.id, i),
-                    '  oninput="onClozeChange(this, \'%s\')"' % missingWord,
+                    '  oninput="onClozeChange(this, \'%s\',%d)"' % (missingWord,
+                                                                          auto),
                     '    style="width:%sem"/>\n' % len(missingWord)]        
         
         html += ['<br/><br/><input type="button" ',

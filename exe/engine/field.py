@@ -326,6 +326,9 @@ class ClozeField(Field):
         Field.__init__(self, name, instruc)
         self.parts = []
         self._encodedContent = ''
+        self.autoCompletion = True
+        self.autoCompletionInstruc = _(u"""Allow auto completion when 
+                                       user filling the gaps.""")
 
     # Property handlers
     def set_encodedContent(self, value):
@@ -353,6 +356,13 @@ class ClozeField(Field):
     encodedContent = property(lambda self: self._encodedContent, 
                               set_encodedContent)
 
+    def upgradeToVersion1(self):
+        """
+        Upgrades to exe v0.11
+        """
+        self.autoCompletion = True
+        self.autoCompletionInstruc = _(u"""Allow auto completion when 
+                                       user filling the gaps.""")
 # ===========================================================================
 
 

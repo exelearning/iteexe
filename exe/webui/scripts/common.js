@@ -291,8 +291,8 @@ function getFeedback(optionId, optionsNum, ideviceId, mode) {
 // Functions for cloze IDevice /////////////////////////////////////////////////
 
 // Called when a learner types something into a cloze word space
-function onClozeChange(ele, word) {
-    var result = checkClozeWord(ele.value, word);
+function onClozeChange(ele, word, auto) {
+    var result = checkClozeWord(ele.value, word, auto);
     if (result != '') {
         ele.style.backgroundColor = "yellow";
         ele.value = result;
@@ -304,12 +304,14 @@ function onClozeChange(ele, word) {
 }
 
 // Returns the corrected word or an empty string
-function checkClozeWord(guess, aOriginal) {
+function checkClozeWord(guess, aOriginal, auto) {
     var guess = guess.toLowerCase();
     var answer = aOriginal.toLowerCase();
     if (guess == answer)
         return aOriginal
-    else {
+    else if (auto == 0 || aOriginal.length <= 4)
+        return "";
+    else{
         // Now use the similarity check algorythm
         var i = 0;
         var j = 0;
