@@ -53,6 +53,8 @@ function serverId2TreeId(serverId) {
 }
 
 function initWindow() {
+    var window = window
+    addEventListener('onclose', onCloseHandler, false);
     if (haveLoaded) {return}
     // Select the root tree item
     var tree = document.getElementById('outlineTree')
@@ -448,4 +450,15 @@ function exportPackage(exportType) {
             server.handle('exportPackage', exportType, fp.file.path)
         }
     }
+}
+
+function tryToClose() {
+    alert("trying to close");
+}
+
+// Handles someone trying to close the browser
+function onCloseHandler(event) {
+    alert("Closing Matey");
+    event.preventDefault();
+    return false;
 }

@@ -164,11 +164,7 @@ class Package(Persistable):
 
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
         toDecode   = zippedFile.read(u"content.data")
-        try:
-            newPackage = decodeObject(toDecode)
-        except:
-            import traceback
-            traceback.print_exc()
+        newPackage = decodeObject(toDecode)
         
         if newPackage.tempFile:
             # newPackage.filename was stored as it's original filename
