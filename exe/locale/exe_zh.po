@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-18 12:07+1300\n"
+"POT-Creation-Date: 2005-11-18 13:24+1300\n"
 "PO-Revision-Date: 2005-11-07 10:00+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:220 exe/xului/mainpage.py:290
+#: exe/xului/mainpage.py:219 exe/xului/mainpage.py:289
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
 
@@ -68,7 +68,7 @@ msgstr "<strong>页框高:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:115
+#: exe/engine/package.py:106
 msgid "?????"
 msgstr "?????"
 
@@ -217,7 +217,7 @@ msgstr "学生能否在此论坛发表文章"
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:218 exe/xului/mainpage.py:288
+#: exe/xului/mainpage.py:217 exe/xului/mainpage.py:287
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
@@ -416,7 +416,7 @@ msgstr "输入提问. 问题最好能将此案例的教学讯息传达出来. �
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>隐藏/显示 文字</i> 按钮使之变为空格."
 
-#: exe/xului/mainpage.py:404 exe/xului/mainpage.py:422
+#: exe/xului/mainpage.py:403 exe/xului/mainpage.py:421
 #, python-format
 msgid "Exported to %s"
 msgstr "导出至 %s"
@@ -436,7 +436,7 @@ msgstr "错"
 msgid "Feedback"
 msgstr "评语"
 
-#: exe/xului/mainpage.py:326 exe/xului/mainpage.py:367
+#: exe/xului/mainpage.py:325 exe/xului/mainpage.py:366
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "文件名%s是个文档, 无法覆盖它"
@@ -511,7 +511,7 @@ msgstr "提示"
 msgid "Hint:"
 msgstr "提示:"
 
-#: exe/engine/package.py:66
+#: exe/engine/package.py:62
 msgid "Home"
 msgstr "首页"
 
@@ -654,7 +654,7 @@ msgstr "选项"
 msgid "Outline"
 msgstr "目录"
 
-#: exe/xului/mainpage.py:235
+#: exe/xului/mainpage.py:234
 #, python-format
 msgid "Package saved to: %s"
 msgstr "课件存至: %s"
@@ -810,7 +810,7 @@ msgstr "保存"
 msgid "Save as"
 msgstr "另存为"
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Section"
 msgstr "节"
 
@@ -854,11 +854,11 @@ msgstr "显示/隐藏 评语"
 msgid "Some emphasis"
 msgstr "一般强调"
 
-#: exe/xului/mainpage.py:262
+#: exe/xului/mainpage.py:261
 msgid "Sorry, wrong file format"
 msgstr "对不起, 文件格式错误"
 
-#: exe/xului/mainpage.py:260
+#: exe/xului/mainpage.py:259
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -967,7 +967,7 @@ msgid ""
 "radio button next to the correct option."
 msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Topic"
 msgstr "课题"
 
@@ -1029,7 +1029,7 @@ msgstr "输入问题的提示"
 msgid "Unable to connect to "
 msgstr "无法连接至"
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Unit"
 msgstr "单元"
 
@@ -1126,7 +1126,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s has no package"
 
-#: exe/engine/package.py:229 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:220 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"

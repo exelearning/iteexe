@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-18 12:07+1300\n"
+"POT-Creation-Date: 2005-11-18 13:24+1300\n"
 "PO-Revision-Date: 2005-10-27 11:58+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Μετακίνηση σε---"
 
-#: exe/xului/mainpage.py:220 exe/xului/mainpage.py:290
+#: exe/xului/mainpage.py:219 exe/xului/mainpage.py:289
 msgid ". Please use ASCII names."
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr "<strong>Ύψος πλαισίου:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:115
+#: exe/engine/package.py:106
 msgid "?????"
 msgstr "?????"
 
@@ -261,7 +261,7 @@ msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' α�
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: exe/xului/mainpage.py:218 exe/xului/mainpage.py:288
+#: exe/xului/mainpage.py:217 exe/xului/mainpage.py:287
 msgid "Cannot access directory named "
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr ""
 
-#: exe/xului/mainpage.py:404 exe/xului/mainpage.py:422
+#: exe/xului/mainpage.py:403 exe/xului/mainpage.py:421
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωσή στο %s"
@@ -495,7 +495,7 @@ msgstr "Λάθος"
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
-#: exe/xului/mainpage.py:326 exe/xului/mainpage.py:367
+#: exe/xului/mainpage.py:325 exe/xului/mainpage.py:366
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να αντικατασταθεί"
@@ -576,7 +576,7 @@ msgstr "Συμβουλή"
 msgid "Hint:"
 msgstr "Συμβουλή:"
 
-#: exe/engine/package.py:66
+#: exe/engine/package.py:62
 msgid "Home"
 msgstr "Αρχή"
 
@@ -724,7 +724,7 @@ msgstr "Επιλογή"
 msgid "Outline"
 msgstr "Περίγραμμα"
 
-#: exe/xului/mainpage.py:235
+#: exe/xului/mainpage.py:234
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
@@ -903,7 +903,7 @@ msgstr "Αποθήκευση"
 msgid "Save as"
 msgstr "Αποθήκευση ως"
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Section"
 msgstr "Ενότητα"
 
@@ -950,11 +950,11 @@ msgstr "Ανατροφοδότηση"
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
 
-#: exe/xului/mainpage.py:262
+#: exe/xului/mainpage.py:261
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
 
-#: exe/xului/mainpage.py:260
+#: exe/xului/mainpage.py:259
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1076,7 +1076,7 @@ msgstr ""
 "Για να δηλώσετε τη σωστή απάντηση, κλικ στο\n"
 " κουμπί επιλογής δεξιά από τη σωστή επιλογή."
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Topic"
 msgstr "Κεφάλαιο"
 
@@ -1153,7 +1153,7 @@ msgstr "Δώστε τη συμβουλή της ερώτησης."
 msgid "Unable to connect to "
 msgstr "Η σύνδεση είναι αδύνατη"
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Unit"
 msgstr "Παράγραφος"
 
@@ -1260,7 +1260,7 @@ msgstr "http://el.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
 
-#: exe/engine/package.py:229 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:220 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"

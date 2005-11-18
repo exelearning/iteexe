@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-18 12:07+1300\n"
+"POT-Creation-Date: 2005-11-18 13:24+1300\n"
 "PO-Revision-Date: 2005-09-13 13:44+0100\n"
 "Last-Translator: Ralf Hilgenstock <info@dialoge.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Verschieben nach---"
 
-#: exe/xului/mainpage.py:220 exe/xului/mainpage.py:290
+#: exe/xului/mainpage.py:219 exe/xului/mainpage.py:289
 msgid ". Please use ASCII names."
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 msgid "<strong>url:</strong> "
 msgstr ""
 
-#: exe/engine/package.py:115
+#: exe/engine/package.py:106
 msgid "?????"
 msgstr "?????"
 
@@ -263,7 +263,7 @@ msgstr "Können Teilnehmer/innen in diesem Forum Beiträge posten?"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: exe/xului/mainpage.py:218 exe/xului/mainpage.py:288
+#: exe/xului/mainpage.py:217 exe/xului/mainpage.py:287
 msgid "Cannot access directory named "
 msgstr ""
 
@@ -478,7 +478,7 @@ msgstr ""
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr ""
 
-#: exe/xului/mainpage.py:404 exe/xului/mainpage.py:422
+#: exe/xului/mainpage.py:403 exe/xului/mainpage.py:421
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportiertzu %s"
@@ -498,7 +498,7 @@ msgstr "Falsch"
 msgid "Feedback"
 msgstr "Fedback"
 
-#: exe/xului/mainpage.py:326 exe/xului/mainpage.py:367
+#: exe/xului/mainpage.py:325 exe/xului/mainpage.py:366
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Dateiname %s ist eine Datei, sie kann nicht ersetzt werden."
@@ -574,7 +574,7 @@ msgstr "Hinweis"
 msgid "Hint:"
 msgstr "Hinweis:"
 
-#: exe/engine/package.py:66
+#: exe/engine/package.py:62
 msgid "Home"
 msgstr "Home"
 
@@ -721,7 +721,7 @@ msgstr "Option"
 msgid "Outline"
 msgstr "Übersicht"
 
-#: exe/xului/mainpage.py:235
+#: exe/xului/mainpage.py:234
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paket gespeichert zu %s"
@@ -898,7 +898,7 @@ msgstr "Speichern"
 msgid "Save as"
 msgstr "Speichern unter"
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Section"
 msgstr "Abschnitt"
 
@@ -945,11 +945,11 @@ msgstr "Fedback"
 msgid "Some emphasis"
 msgstr "Einige Bedeutung"
 
-#: exe/xului/mainpage.py:262
+#: exe/xului/mainpage.py:261
 msgid "Sorry, wrong file format"
 msgstr "Sorry, falsches Dateiformat"
 
-#: exe/xului/mainpage.py:260
+#: exe/xului/mainpage.py:259
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1070,7 +1070,7 @@ msgstr ""
 "Klicken Sie auf den Button neben der richtigen Option\n"
 "um die korrekte Antwort zu kennzeichnen."
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Topic"
 msgstr "Thema"
 
@@ -1150,7 +1150,7 @@ msgstr "Tragen Sie den Hinweis zu der Frage hier ein"
 msgid "Unable to connect to "
 msgstr "Verbindung konnte nicht hergestellt werden mit "
 
-#: exe/engine/package.py:57 exe/engine/package.py:59
+#: exe/engine/package.py:56
 msgid "Unit"
 msgstr "Einheit"
 
@@ -1251,7 +1251,7 @@ msgstr ""
 msgid "iDevice %s has no package"
 msgstr ""
 
-#: exe/engine/package.py:229 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:220 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
