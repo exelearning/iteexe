@@ -36,7 +36,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
     nonpersistant      = ['resourceDir', 'filename']
 
     # Default attribute values
@@ -291,5 +291,12 @@ class Package(Persistable):
         self._name = toUnicode(self.__dict__['name'])
         self._author = toUnicode(self.__dict__['author'])
         self._description = toUnicode(self.__dict__['description'])
+
+    def upgradeToVersion5(self):
+        """
+        For version 0.11
+        """
+        self._levelNames = self.levelNames
+        del self.levelNames
     
 # ===========================================================================
