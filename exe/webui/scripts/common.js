@@ -25,7 +25,7 @@ var objBrowse = navigator.appName;
 
 // An array of js strings to evaluate on document load
 var onLoadHandlers = [clearHidden];
-var beforeSubmitHandlers = [];
+var beforeSubmitHandlers = new Array();
 
 // Called on document load
 function onLoadHandler() {
@@ -224,13 +224,13 @@ function updateCoords(e) {
 // action and object fields so they can be used by submitLink
 function clearHidden()
 {
-    var form = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!form) {
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+    if (!theForm) {
         // try and find the form for the authoring page
-        form = document.getElementById('contentForm')
+        theForm = document.getElementById('contentForm')
     }
-    form.action.value = "";
-    form.object.value = "";
+    theForm.action.value = "";
+    theForm.object.value = "";
 }
 
 
@@ -238,16 +238,16 @@ function clearHidden()
 // contentForm to the server
 function submitLink(action, object, changed) 
 {
-    var form = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!form) {
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+    if (!theForm) {
         // try and find the form for the authoring page
-        form = document.getElementById('contentForm')
+        theForm = document.getElementById('contentForm')
     }
-    form.action.value    = action;
-    form.object.value    = object;
-    form.isChanged.value = changed;
+    theForm.action.value    = action;
+    theForm.object.value    = object;
+    theForm.isChanged.value = changed;
     runFuncArray(beforeSubmitHandlers)
-    form.submit();
+    theForm.submit();
 }
 
 

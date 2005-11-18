@@ -8,9 +8,9 @@ var auto_open = true;
 var last_request = null;
 var last_server_message_time = null;
 
-var disconnectListeners = [];
+var disconnectListeners = new Array();
 
-var inputListeners = [];
+var inputListeners = new Array();
 var listenerId = 0;
 
 var base_url = this.location.toString();
@@ -53,7 +53,7 @@ function connect(outputNum) {
       } else {
         for (var i=0; i<disconnectListeners.length; i++) {
           disconnectListeners[i]()
-          disconnectListeners = []
+          disconnectListeners = new Array()
         }
         last_request = null
       }
@@ -80,7 +80,7 @@ if (userAgent.indexOf("msie") != -1) {
 function listener(callWhenAllDone) {
     this.listenerId = listenerId
     listenerId += 1
-    this.events = []
+    this.events = new Array()
     this.callWhenAllDone = callWhenAllDone
     this.fired = false
     this.inputDone = function(what) {
@@ -139,7 +139,7 @@ function delDisconnectListener(theListener) {
 
 function nevow_clientToServerEvent(theTarget, evalAfterDone) {
     if (theTarget != 'close' && liveevil_unload) {
-        // Server had previously closed the output; let's open it again.
+        // Server had previously closed the output; lets open it again.
         if (auto_open) {
             liveevil_unload = false }
         connect(0)
@@ -161,7 +161,7 @@ function nevow_clientToServerEvent(theTarget, evalAfterDone) {
             }
         }
     }
-    input.events = []
+    input.events = new Array()
     for (var i=0; i<inputListeners.length; i++) {
         inputListeners[i].events.push(input.request)
         input.events.push(inputListeners[i])

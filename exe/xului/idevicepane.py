@@ -40,7 +40,6 @@ class IdevicePane(Renderable):
         Initialize
         """ 
         Renderable.__init__(self, parent)
-        self.client = None
         log.debug("Load appropriate iDevices")
         self.prototypes = {}
         self.ideviceStore.register(self)
@@ -71,9 +70,9 @@ class IdevicePane(Renderable):
         self.prototypes[idevice.id] = idevice
         # Want the non-quoted version of the idevice title
         # Translating an empty string is bad...
-        self.client.call('XHAddIdeviceListItem',
-                         idevice.id, 
-                         idevice.rawTitle)
+        self.parent.client.call('XHAddIdeviceListItem',
+                                idevice.id, 
+                                idevice.rawTitle)
 
         
     def render(self, ctx, data):

@@ -69,15 +69,15 @@ class PropertiesPane(Renderable):
             self.package.style = request.args["style"][0]
             
         if "level1" in request.args:    
-            self.package.levelNames[0] = unicode(request.args["level1"][0],
+            self.package._levelNames[0] = unicode(request.args["level1"][0],
                                                  'utf8')
             
         if "level2" in request.args:    
-            self.package.levelNames[1] = unicode(request.args["level2"][0],
+            self.package._levelNames[1] = unicode(request.args["level2"][0],
                                                  'utf8')
             
         if "level3" in request.args:    
-            self.package.levelNames[2] = unicode(request.args["level3"][0],
+            self.package._levelNames[2] = unicode(request.args["level3"][0],
                                                  'utf8')
         
             
@@ -111,14 +111,18 @@ class PropertiesPane(Renderable):
         html += u":</b></td>\n"
         html += u"<td valign=\"top\">"
         html += _(u"Level 1: ")
-        html += common.textInput("level1", self.package.levelNames[0], 20)
+        print '================================================================================'
+        print self.package.levelName(0)
+        html += common.textInput("level1", self.package.levelName(0), 20)
         html += u"<p>"
         html += _(u"Level 2: ")
-        html += common.textInput("level2", self.package.levelNames[1], 20)
+        print self.package.levelName(1)
+        html += common.textInput("level2", self.package.levelName(1), 20)
         html += u"<p/>\n"
         html += u"<p>"
         html += _(u"Level 3: ")
-        html += common.textInput("level3", self.package.levelNames[2], 20)
+        print self.package.levelName(2)
+        html += common.textInput("level3", self.package.levelName(2), 20)
         html += u"<p/></td></tr><tr><td align=\"right\">\n"       
         html += common.submitButton('done', _(u'Done'))
         html += u"</td><td>&nbsp;</td></tr></table></form>\n"

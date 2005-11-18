@@ -26,6 +26,8 @@ import sys
 import logging
 import traceback
 from twisted.web                 import static
+from twisted.internet            import reactor
+from twisted.internet.defer      import Deferred
 from nevow                       import loaders, inevow, stan, tags, url, util
 from nevow.livepage              import js, IClientHandle
 from exe.xului.idevicepane       import IdevicePane
@@ -72,6 +74,36 @@ class MainPage(RenderableLivePage):
         # And in the main section
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
+
+    def _closeComplete(self, failure=None):
+        """
+        We override this from nevow.livepage's implementation
+        to fix a bug in livepage
+        """
+        import pdb
+        pdb.set_trace()
+        if self.closed:
+            return
+        self.closed = True
+        # TODO: As soon as livepage adds this line in their code, we won't need
+        # to override this method anymore
+        if self.timeoutLoop.running:
+            self.timeoutLoop.stop()
+        self.timeoutLoop = None
+        for notify in self.closeNotifications[:]:
+            if failure is not None:
+                notify.errback(failure)
+            else:
+                notify.callback(None)
+        self.closeNotifications = []
+
+    def onClose(self, reason, data=None):
+        """
+        Called when the user has closed the window
+        """
+        print 'Closing', reason
+        if self.package.isChanged:
+            self.package.save(self.config.configDir/'unsavedWork.elp', True)
 
     def getChild(self, name, request):
         """
@@ -161,11 +193,16 @@ class MainPage(RenderableLivePage):
         Here we override and replace what livepage.py does.
         We tell the browser where to find nevow_glue.js properly
         """
+        # Get the clientHandle
         client = self.clientFactory.newClientHandle(self, 0, 0)
-        handleId = "'", client.handleId, "'"
         ctx.remember(client)
         self.client = client
-        ##self.idevicePane.client = client
+        # Sign up to know the connection is closed
+        d = Deferred()
+        d.addCallbacks(self.onClose, self.onClose)
+        client.closeNotifications.append(d)
+        # Render the js
+        handleId = "'", client.handleId, "'"
         return [
             tags.script(language="JavaScript")[
                 "var nevow_clientHandleId = ", handleId ,";"],
@@ -173,7 +210,7 @@ class MainPage(RenderableLivePage):
                         src='/xulscripts/nevow_glue.js')
             ]
 
-    def handle_isPackageDirty(self, ctx, ifClean, ifDirty):
+    def handle_isPackageDirty(self, ctx, ifClean='', ifDirty=''):
         """
         Called by js to know if the package is dirty or not.
         ifClean is JavaScript to be evaled on the client if the package has
@@ -196,8 +233,6 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
-        import pdb
-        pdb.set_trace()
         client = IClientHandle(ctx)
         client.call(onDone, Path(self.package.filename), onDoneParam)
 
@@ -231,6 +266,10 @@ class MainPage(RenderableLivePage):
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
         self.package.save(filename) # This can change the package name
+        # Delete the "unsavedWork.elp' file so it's not loaded next time we
+        # start exe
+        (self.config.configDir/'unsavedWork.elp').remove()
+        # Tell the user and continue
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
             client.send(js(onDone))
@@ -245,6 +284,7 @@ class MainPage(RenderableLivePage):
 
     def handle_loadPackage(self, ctx, filename):
         """Load the package named 'filename'"""
+        print 'LOAD PACKAGE'
         client = IClientHandle(ctx)
         try:
             filename = unicode(filename, 'utf8')
@@ -268,7 +308,9 @@ class MainPage(RenderableLivePage):
         """
         Called after a refresh or window close. Save the page
         """
-        print 'Page Unloaded'
+        # Save the package in the config dir
+        self.client.send(js.alert('Page Unloaded Matey'))
+        self.package.save(self.config.configDir/'unsavedWork.elp', True)
 
     def handle_export(self, ctx, exportType, filename):
         """

@@ -40,7 +40,7 @@ function serverId2treeitem(serverId) {
 }
 
 // Takes a server tree node id eg. '1' and returns a xul tree index
-// Don't store this because this index changes when branches above the element
+// Don t store this because this index changes when branches above the element
 // are collapsed and expanded
 function serverId2TreeId(serverId) {
     var tree = document.getElementById('outlineTree')
@@ -132,7 +132,7 @@ function XHAddChildTreeItem(nodeid, name) {
     var row = treeitem.getElementsByTagName('treerow')[0]
     // Create the new node
     var newTreeRow = row.cloneNode(1) // Clone the existing row
-    newTreeRow.firstChild.setAttribute('label', name) // Set the treecell's label
+    newTreeRow.firstChild.setAttribute('label', name) // Set the treecell s label
     newTreeRow.setAttribute('_exe_nodeid', nodeid)
     var newTreeItem = document.createElement('treeitem')
     newTreeItem.appendChild(newTreeRow)
@@ -140,7 +140,7 @@ function XHAddChildTreeItem(nodeid, name) {
 }
 
 function insertChildTreeItem(parentItem, newTreeItem, nextSibling) {
-    // If we're not at the top level of the tree, become a container
+    // If we re not at the top level of the tree, become a container
     var container = parentItem.getAttribute('container')
     if ((!container) || (container == 'false')) {
         parentItem.setAttribute('container', 'true')
@@ -148,7 +148,7 @@ function insertChildTreeItem(parentItem, newTreeItem, nextSibling) {
         container = parentItem.appendChild(document.createElement('treechildren'))
     } else {
         container = parentItem.getElementsByTagName('treechildren')[0]
-        // If still haven't got a 'treechildren' node, then make one
+        // If still havent got a 'treechildren' node, then make one
         if (!container) {
             container = parentItem.appendChild(document.createElement('treechildren'))
         }
@@ -161,7 +161,7 @@ function insertChildTreeItem(parentItem, newTreeItem, nextSibling) {
     }
 }
 
-// Delete's the currently selected node
+// Delete is the currently selected node
 // XH means that the func is actually called by the server over xmlhttp
 // item can be a dom node or a server node id
 function XHDelNode(item) {
@@ -177,7 +177,7 @@ function XHDelNode(item) {
     // Remove our node
     var parent = treeitem.parentNode
     parent.removeChild(treeitem)
-    // If we don't have any siblings, make our parent be not a container
+    // If we dont have any siblings, make our parent be not a container
     if (parent.childNodes.length == 0) {
         parentItem.setAttribute('container', 'false')
         parentItem.removeChild(parent) // Remove the treechildren node
@@ -319,8 +319,11 @@ function fileOpen2() {
     fp.appendFilter("eXe Package Files","*.elp");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
+    alert('opendone')
     if (res == nsIFilePicker.returnOK) {
+        alert('ok')
         server.handle('loadPackage', fp.file.path);
+        alert('handled')
     }
 }
 
