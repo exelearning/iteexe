@@ -167,11 +167,10 @@ class MainPage(RenderableLivePage):
         self.client = client
         ##self.idevicePane.client = client
         return [
-            tags.script(type="text/javascript")[
+            tags.script(language="JavaScript")[
                 "var nevow_clientHandleId = ", handleId ,";"],
-            tags.script(type="text/javascript",
-                        src='xulscripts/nevow_glue.js')
-                        #src=url.here.child('nevow_glue.js')
+            tags.script(language="JavaScript",
+                        src='/xulscripts/nevow_glue.js')
             ]
 
     def handle_isPackageDirty(self, ctx, ifClean, ifDirty):
