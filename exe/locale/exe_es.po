@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-10 13:55+1300\n"
+"POT-Creation-Date: 2005-11-18 12:07+1300\n"
 "PO-Revision-Date: 2005-11-02 10:54+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Mover A---"
 
-#: exe/xului/mainpage.py:223 exe/xului/mainpage.py:312
+#: exe/xului/mainpage.py:220 exe/xului/mainpage.py:290
 msgid ". Please use ASCII names."
 msgstr ". Por favor usa nombres en ASCII."
 
@@ -93,7 +93,7 @@ msgstr "<strong>Altura Del Marco:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:102
+#: exe/engine/package.py:115
 msgid "?????"
 msgstr "?????"
 
@@ -118,7 +118,7 @@ msgstr ""
 "<li>\tComo los estudiantes actuarán recíprocamente con los materiales y uno a los otros\n"
 " ejemplo: si la situación en un salón de clase puede ser que los equipos esten organizados a trabajar en diferentes aspectos del caso. Si es asi, habrá más ideas que retornan a la clase</li></ul>"
 
-#: exe/webui/editorpane.py:69
+#: exe/webui/editorpane.py:71
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Un consejo pedagógico permite que usted describa su uso previsto y la pedagogía detrás del desarrollo de los dispositivos."
 
@@ -126,7 +126,7 @@ msgstr "Un consejo pedagógico permite que usted describa su uso previsto y la p
 msgid "A single simple discussion"
 msgstr "Una simple discusión individual "
 
-#: exe/webui/editorpane.py:201
+#: exe/webui/editorpane.py:211
 msgid "Actions"
 msgstr "Acciones"
 
@@ -134,7 +134,7 @@ msgstr "Acciones"
 msgid "Activity"
 msgstr "Actividad"
 
-#: exe/webui/editorpane.py:192
+#: exe/webui/editorpane.py:200
 msgid "Add"
 msgstr "Adicionar"
 
@@ -142,19 +142,23 @@ msgstr "Adicionar"
 msgid "Add Question"
 msgstr "Adicionar pregunta"
 
-#: exe/webui/editorpane.py:72
+#: exe/webui/editorpane.py:74
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
 msgstr "Adiciona una simple linea de texto a un Dispositivo de Educación. Eso es útil si tú desea que sea conveniente poner una etiqueta dentro del dispositivo."
 
-#: exe/webui/editorpane.py:75
+#: exe/webui/editorpane.py:77
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
 msgstr "Adiciona un recuadro texto a un Dispositivo de Educación. Usado para ingresar el contenido de una descripción textual."
 
-#: exe/webui/editorpane.py:78
+#: exe/webui/editorpane.py:80
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Adiciona una imagen a tu Dispositivo de Educación. Habilita la selección de una imagen desde  tu almacén de archivos de fotos. "
 
-#: exe/webui/testquestionelement.py:109 exe/webui/multichoiceblock.py:117
+#: exe/webui/editorpane.py:83
+msgid "Add an interactive feedback to your iDevice. "
+msgstr ""
+
+#: exe/webui/multichoiceblock.py:117 exe/webui/testquestionelement.py:109
 msgid "Add another option"
 msgstr "Adicionar otra opción"
 
@@ -162,11 +166,17 @@ msgstr "Adicionar otra opción"
 msgid "Add another question"
 msgstr "Adicionar otra pregunta"
 
-#: exe/webui/galleryblock.py:166
+#: exe/webui/galleryblock.py:176
 msgid "Add images"
 msgstr "Agregue Imagenes"
 
-#: exe/webui/testquestionelement.py:92 exe/webui/multichoiceblock.py:98
+#: exe/engine/field.py:330 exe/engine/field.py:364
+msgid ""
+"Allow auto completion when \n"
+"                                       user filling the gaps."
+msgstr ""
+
+#: exe/webui/multichoiceblock.py:98 exe/webui/testquestionelement.py:92
 msgid "Alternatives"
 msgstr "Alternativas"
 
@@ -217,19 +227,29 @@ msgstr "Adjuntar"
 msgid "Attachment %s has no parentNode"
 msgstr "Accesorio %s no tiene pariente"
 
-#: exe/webui/editorpane.py:266 exe/webui/propertiespane.py:100
+#: exe/webui/editorpane.py:276 exe/webui/propertiespane.py:100
 msgid "Author"
 msgstr "Autor"
+
+#: exe/webui/element.py:450
+#, fuzzy
+msgid "Auto Completion"
+msgstr "Instrucciones para la terminación"
+
+#: exe/webui/editorelement.py:141
+#, fuzzy
+msgid "Button Caption"
+msgstr "Precaución:"
 
 #: exe/webui/forumblock.py:124
 msgid "Can a student post to this forum?:"
 msgstr "Puede un estudiante estar al corriente a este foro?:"
 
-#: exe/webui/editorpane.py:209 exe/webui/preferencespage.py:88
+#: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:219
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: exe/xului/mainpage.py:221 exe/xului/mainpage.py:310
+#: exe/xului/mainpage.py:218 exe/xului/mainpage.py:288
 msgid "Cannot access directory named "
 msgstr "No se puede accesar directorio que se llama"
 
@@ -245,15 +265,20 @@ msgstr "Caso de estudio"
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Has click <strong>Selecto un Archivo</strong>, hojee al archivo que usted desea unir y selecciónelo."
 
+#: exe/engine/field.py:142
+#, fuzzy
+msgid "Click Here"
+msgstr "Click aquí"
+
 #: exe/webui/reflectionblock.py:90
 msgid "Click here"
 msgstr "Click aquí"
 
-#: exe/webui/editorpane.py:305 exe/webui/editorpane.py:306
-#: exe/webui/editorpane.py:327 exe/webui/truefalseelement.py:127
-#: exe/webui/truefalseelement.py:128 exe/webui/block.py:236
 #: exe/webui/common.py:211 exe/webui/common.py:212
 #: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
+#: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
+#: exe/webui/block.py:236 exe/webui/editorpane.py:315
+#: exe/webui/editorpane.py:316 exe/webui/editorpane.py:337
 msgid "Close"
 msgstr "Cerrar"
 
@@ -269,8 +294,8 @@ msgstr "Actividad de Espacios en Blanco"
 msgid "Content"
 msgstr "Contenido"
 
-#: exe/webui/testquestionelement.py:95 exe/webui/multichoiceblock.py:101
-#: exe/webui/optionelement.py:117
+#: exe/webui/multichoiceblock.py:101 exe/webui/optionelement.py:117
+#: exe/webui/testquestionelement.py:95
 msgid "Correct"
 msgstr "Correcto"
 
@@ -284,12 +309,12 @@ msgid ""
 "that describes a controversy."
 msgstr "Crear la historia del caso. Un buen caso es el que describe una polémica."
 
-#: exe/webui/editorelement.py:71 exe/webui/editorelement.py:106
-#: exe/webui/editorelement.py:142 exe/webui/block.py:206
-#: exe/webui/editorpage.py:176 exe/webui/editorpage.py:180
+#: exe/webui/block.py:206 exe/webui/editorpage.py:176
+#: exe/webui/editorpage.py:180 exe/webui/editorelement.py:75
+#: exe/webui/editorelement.py:110 exe/webui/editorelement.py:148
+#: exe/webui/editorelement.py:183
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -297,8 +322,8 @@ msgstr "Eliminar"
 msgid "Delete option"
 msgstr "Eliminar opción"
 
-#: exe/webui/truefalseelement.py:106 exe/webui/testquestionelement.py:86
-#: exe/webui/questionelement.py:80
+#: exe/webui/questionelement.py:80 exe/webui/truefalseelement.py:106
+#: exe/webui/testquestionelement.py:86
 msgid "Delete question"
 msgstr "Eliminar pregunta"
 
@@ -345,11 +370,11 @@ msgstr "Topico de discusión:"
 msgid "Discussions and replies are allowed"
 msgstr "Las discuciones y las contestaciones son permitidas"
 
-#: exe/webui/element.py:224 exe/webui/element.py:470
+#: exe/webui/element.py:275 exe/webui/element.py:538
 msgid "Display as:"
 msgstr "Mostrar como:"
 
-#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
+#: exe/webui/block.py:198 exe/webui/propertiespane.py:127
 msgid "Done"
 msgstr "Hecho"
 
@@ -373,12 +398,12 @@ msgstr "ERROR: Block.renderViewContent llamado directamente"
 msgid "Each person posts one discussion"
 msgstr "Cada persona anuncia una discución"
 
-#: exe/webui/editorpane.py:206 exe/webui/block.py:320
-#: exe/webui/editorpage.py:198
+#: exe/webui/block.py:320 exe/webui/editorpage.py:198
+#: exe/webui/editorpane.py:216
 msgid "Edit"
 msgstr "Edita"
 
-#: exe/webui/editorpane.py:276
+#: exe/webui/editorpane.py:286
 msgid "Emphasis"
 msgstr "Enfasis"
 
@@ -398,16 +423,17 @@ msgid ""
 "must reflect upon."
 msgstr "Ingrese detalles de las actividades del estudiante que debe reflejarse encima."
 
-#: exe/webui/editorpane.py:126
+#: exe/webui/editorpane.py:129
 msgid "Enter instructions for completion here"
 msgstr "Ingrese aquí las instrucciones para la terminación."
 
-#: exe/webui/editorpane.py:130 exe/webui/editorpane.py:134
+#: exe/webui/editorpane.py:133 exe/webui/editorpane.py:137
+#: exe/webui/editorpane.py:144
 msgid "Enter the instructions for completion here"
 msgstr "Ingrese aquí las instrucciones para la terminación."
 
-#: exe/webui/editorpane.py:125 exe/webui/editorpane.py:129
-#: exe/webui/editorpane.py:133
+#: exe/webui/editorpane.py:128 exe/webui/editorpane.py:132
+#: exe/webui/editorpane.py:136 exe/webui/editorpane.py:143
 msgid "Enter the label here"
 msgstr "Ingresa la etiqueta aquí"
 
@@ -422,12 +448,7 @@ msgstr "Ingresa la pregunta de estudio. Estas preguntas debería dibujar hacia f
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr "Entra el pasaje dejando unos espacios en blanco por tipiar o pegar en este archivo. Para hacer un espacio en blanco doble click en la palabra que quieres ocultar para seleccionarlo, y click el buton que se llama <i>Ocultar/Demuestrar Palabra</i>."
 
-#: exe/xului/mainpage.py:273 exe/xului/mainpage.py:292
-#, python-format
-msgid "Error loading package \"%s\": %s"
-msgstr "Error abriendo paquete \"%s\": %s"
-
-#: exe/xului/mainpage.py:424 exe/xului/mainpage.py:442
+#: exe/xului/mainpage.py:404 exe/xului/mainpage.py:422
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportado a %s"
@@ -441,12 +462,13 @@ msgid "False"
 msgstr "Falso"
 
 #: exe/engine/clozeidevice.py:70 exe/engine/clozeidevice.py:98
-#: exe/engine/idevicestore.py:228 exe/webui/truefalseelement.py:92
-#: exe/webui/multichoiceblock.py:105 exe/webui/questionelement.py:73
+#: exe/engine/idevicestore.py:228 exe/webui/questionelement.py:73
+#: exe/webui/multichoiceblock.py:105 exe/webui/truefalseelement.py:92
+#: exe/webui/editorpane.py:207
 msgid "Feedback"
 msgstr "Información"
 
-#: exe/xului/mainpage.py:347 exe/xului/mainpage.py:387
+#: exe/xului/mainpage.py:326 exe/xului/mainpage.py:367
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Archivo %s ya existe, no puedo replacerlo"
@@ -501,7 +523,7 @@ msgstr "Tipo del Foro:"
 msgid "Free Text"
 msgstr "Texto Libre"
 
-#: exe/webui/element.py:415
+#: exe/webui/element.py:483
 msgid "Get score"
 msgstr "Consiga la cuenta"
 
@@ -509,16 +531,16 @@ msgstr "Consiga la cuenta"
 msgid "Group mode:"
 msgstr "Modo de Grupo:"
 
-#: exe/webui/forumblock.py:103 exe/webui/reflectionblock.py:94
+#: exe/webui/reflectionblock.py:94 exe/webui/forumblock.py:103
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/element.py:388
+#: exe/webui/element.py:447
 msgid "Hide/Show Word"
 msgstr "Ocultar/Demuestrar Palabra"
 
-#: exe/webui/truefalseelement.py:98 exe/webui/truefalseelement.py:121
-#: exe/webui/truefalseelement.py:131 exe/webui/multichoiceblock.py:156
+#: exe/webui/multichoiceblock.py:156 exe/webui/truefalseelement.py:98
+#: exe/webui/truefalseelement.py:121 exe/webui/truefalseelement.py:131
 msgid "Hint"
 msgstr "Sugerencia"
 
@@ -526,15 +548,15 @@ msgstr "Sugerencia"
 msgid "Hint:"
 msgstr "Sugerencia:"
 
-#: exe/engine/package.py:58
+#: exe/engine/package.py:66
 msgid "Home"
 msgstr "Inicio"
 
-#: exe/webui/editorpane.py:308
+#: exe/webui/editorpane.py:318
 msgid "Icons"
 msgstr "Iconos"
 
-#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:197
+#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:205
 msgid "Image"
 msgstr "Imagen"
 
@@ -578,11 +600,11 @@ msgstr "Izquierda"
 msgid "Level 1: "
 msgstr "Nivel 1:"
 
-#: exe/webui/propertiespane.py:116
+#: exe/webui/propertiespane.py:118
 msgid "Level 2: "
 msgstr "Nivel 2:"
 
-#: exe/webui/propertiespane.py:120
+#: exe/webui/propertiespane.py:123
 msgid "Level 3: "
 msgstr "Nivel 3:"
 
@@ -606,7 +628,7 @@ msgstr "Mover hacia arriba"
 msgid "Multi-Choice Question"
 msgstr "Pregunta Multiple-Elección"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:273
 msgid "Name"
 msgstr "Nombre"
 
@@ -618,7 +640,7 @@ msgstr "Nuevo D.E."
 msgid "No"
 msgstr "No"
 
-#: exe/webui/galleryblock.py:173 exe/webui/galleryblock.py:246
+#: exe/webui/galleryblock.py:183 exe/webui/galleryblock.py:256
 msgid "No Images Loaded"
 msgstr "No imagenes cargadas"
 
@@ -634,7 +656,7 @@ msgstr "No discuciones, pero las contestaciones son permitidas"
 msgid "No discussions, no replies"
 msgstr "No discusiones, no contestaciones"
 
-#: exe/webui/editorpane.py:279
+#: exe/webui/editorpane.py:289
 msgid "No emphasis"
 msgstr "No énfasis"
 
@@ -661,28 +683,28 @@ msgid ""
 "learning tasks."
 msgstr "Los objetivos describen los resultados previstos de la enseñanza y debería definir cuál estudiantes serán capaces hacerlo cuando han terminado las tareas del aprendizaje."
 
-#: exe/webui/testquestionelement.py:98 exe/webui/multichoiceblock.py:102
+#: exe/webui/multichoiceblock.py:102 exe/webui/testquestionelement.py:98
 msgid "Option"
 msgstr "Opción"
 
-#: exe/xului/outlinepane.py:237
+#: exe/xului/outlinepane.py:242
 msgid "Outline"
 msgstr "Contorno"
 
-#: exe/xului/mainpage.py:243
+#: exe/xului/mainpage.py:235
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paquete guardado a: %s"
 
-#: exe/webui/editorpane.py:318 exe/webui/block.py:227
+#: exe/webui/block.py:227 exe/webui/editorpane.py:328
 msgid "Pedagogical Help"
 msgstr "Ayuda pedadogica"
 
-#: exe/webui/editorpane.py:273
+#: exe/webui/editorpane.py:283
 msgid "Pedagogical Tip"
 msgstr "Consejos pedadogicos"
 
-#: exe/webui/editorpane.py:145 exe/webui/editorpage.py:101
+#: exe/webui/editorpage.py:101 exe/webui/editorpane.py:152
 msgid "Please enter an idevice name."
 msgstr "Por favor ingrese un nombre Dispositivo de Educación"
 
@@ -706,7 +728,7 @@ msgstr ""
 "<li>        Estudiantes deben tener un nivel 4 de inglés </li>\n"
 " <li>        Estudiantes deben ser capaz de armar las potentes herramientas estándares </li></ul>\n"
 
-#: exe/webui/editorpane.py:204
+#: exe/webui/editorpane.py:214
 msgid "Preview"
 msgstr "Previo"
 
@@ -753,7 +775,7 @@ msgid ""
 "reading may also add value to the activity."
 msgstr "Proveer estudiantes con estructura a su actividad de la lectura. Esta ayuda pone la actividad en el contexto para el estudiante. Eso también es importante para la correcta referencia de cualquier material de la lectura que tú te estas refiriendo como este modelo que es la mejor práctica a los estudiantes. No siempre es esencial si esta cubierto en el contenido del curso pero proporcionando la información a los estudiantes en algunos de los principales puntos cubiertos en la lectura que puede también adicionar valores a la actividad."
 
-#: exe/webui/editorpane.py:269 exe/webui/block.py:241
+#: exe/webui/block.py:241 exe/webui/editorpane.py:279
 msgid "Purpose"
 msgstr "Proposito"
 
@@ -761,12 +783,12 @@ msgstr "Proposito"
 msgid "Put instructions for learners here"
 msgstr "Ingrese aquí las instrucciones para los estudiantes."
 
-#: exe/webui/truefalseelement.py:78 exe/webui/questionelement.py:70
-#: exe/webui/questionelement.py:108
+#: exe/webui/questionelement.py:70 exe/webui/questionelement.py:108
+#: exe/webui/truefalseelement.py:78
 msgid "Question"
 msgstr "Pregunta"
 
-#: exe/webui/testquestionelement.py:81 exe/webui/multichoiceblock.py:89
+#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Pregunta:"
 
@@ -828,7 +850,7 @@ msgstr "Salvar"
 msgid "Save as"
 msgstr "Salvar como"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:57 exe/engine/package.py:59
 msgid "Section"
 msgstr "Sección"
 
@@ -840,11 +862,11 @@ msgstr "Seleccionar Lenguaje"
 msgid "Select a file"
 msgstr "Seleccionar un archivo"
 
-#: exe/webui/element.py:468
+#: exe/webui/element.py:536
 msgid "Select a flash file"
 msgstr "Seleccionar un archivo de flash"
 
-#: exe/webui/element.py:222
+#: exe/webui/element.py:273
 msgid "Select an image"
 msgstr "Seleccionar una imagen"
 
@@ -860,23 +882,23 @@ msgstr "Grupos separados"
 msgid "Show"
 msgstr "Mostrar"
 
-#: exe/webui/element.py:427
+#: exe/webui/element.py:495
 msgid "Show/Clear Answers"
 msgstr "Demuestrar/Ocultar las respuestas"
 
-#: exe/webui/element.py:420
+#: exe/webui/element.py:488
 msgid "Show/Hide Feedback"
 msgstr "Demuestrar/Ocultar Información"
 
-#: exe/webui/editorpane.py:280
+#: exe/webui/editorpane.py:290
 msgid "Some emphasis"
 msgstr "Poco énfasis"
 
-#: exe/xului/mainpage.py:272 exe/xului/mainpage.py:291
+#: exe/xului/mainpage.py:262
 msgid "Sorry, wrong file format"
 msgstr "Mal formato de archivo"
 
-#: exe/xului/mainpage.py:270 exe/xului/mainpage.py:289
+#: exe/xului/mainpage.py:260
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -893,7 +915,7 @@ msgstr "Foro estándar para el uso general"
 msgid "Story:"
 msgstr "Historia:"
 
-#: exe/webui/editorpane.py:281
+#: exe/webui/editorpane.py:291
 msgid "Strong emphasis"
 msgstr "Recalcado énfasis "
 
@@ -919,15 +941,15 @@ msgstr ""
 msgid "Taxonomy"
 msgstr "Taxonomía"
 
-#: exe/engine/imagewithtextidevice.py:72 exe/engine/flashwithtextidevice.py:46
+#: exe/engine/flashwithtextidevice.py:46 exe/engine/imagewithtextidevice.py:72
 msgid "Text"
 msgstr "Texto"
 
-#: exe/webui/editorpane.py:195
+#: exe/webui/editorpane.py:203
 msgid "Text Box"
 msgstr "Recuadro Texto"
 
-#: exe/webui/editorpane.py:193
+#: exe/webui/editorpane.py:201
 msgid "Text Line"
 msgstr "Linea Texto"
 
@@ -947,7 +969,7 @@ msgstr ""
 "La mayor parte de un recurso de enseñanza será establecido en el contexto, dando instrucciones y proporcionando información general. \n"
 "Este proporciona el esquema dentro del cual las actividades del aprendizaje son construidas y proporcionadas."
 
-#: exe/webui/editorpane.py:63
+#: exe/webui/editorpane.py:65
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "El propósito del diálogo te permite describir un propósito previsto del dispositivo a otros usuarios potenciales."
 
@@ -977,7 +999,7 @@ msgstr ""
 msgid "This is a free text field general learning content can be entered."
 msgstr "Este es un campo de texto libre que el contenido de aprendizaje puede ser ingresado."
 
-#: exe/webui/editorpane.py:62
+#: exe/webui/editorpane.py:64
 msgid "This is an optional field."
 msgstr "Este es un opcional campo."
 
@@ -995,7 +1017,7 @@ msgid ""
 "radio button next to the correct option."
 msgstr "Indica la respuesta correcta, click al radio botón al lado de la opción correcta."
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:57 exe/engine/package.py:59
 msgid "Topic"
 msgstr "Tópico"
 
@@ -1058,7 +1080,7 @@ msgstr ""
 msgid "Type the learning objectives for this resource."
 msgstr "Tipear los objetivos de la enseñanza para este recurso."
 
-#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
+#: exe/engine/truefalseidevice.py:67 exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
 msgstr "Tipear la pregunta raiz aquí."
 
@@ -1070,23 +1092,23 @@ msgstr "Tipear la sugerida pregunta aquí."
 msgid "Unable to connect to "
 msgstr "Inabilitado a conectarse"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:57 exe/engine/package.py:59
 msgid "Unit"
 msgstr "Unidad"
 
-#: exe/engine/multichoiceidevice.py:58 exe/engine/galleryidevice.py:245
-#: exe/engine/casestudyidevice.py:57 exe/engine/externalurlidevice.py:38
-#: exe/engine/clozeidevice.py:45 exe/engine/imagewithtextidevice.py:38
-#: exe/engine/quiztestidevice.py:82 exe/engine/forumidevice.py:38
-#: exe/engine/truefalseidevice.py:59 exe/engine/reflectionidevice.py:44
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/forumidevice.py:38 exe/engine/galleryidevice.py:245
+#: exe/engine/wikipediaidevice.py:50 exe/engine/truefalseidevice.py:59
+#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:39
+#: exe/engine/imagewithtextidevice.py:38 exe/engine/attachmentidevice.py:41
+#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
 #: exe/engine/idevicestore.py:211 exe/engine/idevicestore.py:237
-#: exe/engine/idevicestore.py:265 exe/engine/flashwithtextidevice.py:39
-#: exe/engine/wikipediaidevice.py:50 exe/engine/freetextidevice.py:38
-#: exe/engine/attachmentidevice.py:41
+#: exe/engine/idevicestore.py:265
 msgid "University of Auckland"
 msgstr "Universidad de Auckland"
 
-#: exe/webui/editorpane.py:66
+#: exe/webui/editorpane.py:68
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Pon énfasis a distinguir la información importante que va a ser presentada en el Dispositivo de Educación."
 
@@ -1151,15 +1173,15 @@ msgstr "Sí, por siempre"
 msgid "Yes, initially"
 msgstr "Sí, inicialmente"
 
-#: exe/webui/editorpane.py:58
+#: exe/webui/editorpane.py:60
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Tú nuevo Dispositivo de Educación aparecerá en el panel del Dispositivo de Educación con este título. Esto es un campo obligatorio y te pedirá que ingreses una etiqueta si tú intentas no ingresar nada."
 
-#: exe/webui/element.py:238 exe/webui/element.py:482
+#: exe/webui/element.py:289 exe/webui/element.py:550
 msgid "blank for original size"
 msgstr "blanco para el tamaño original"
 
-#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
+#: exe/export/scormexport.py:208 exe/export/imsexport.py:176
 msgid "eXe"
 msgstr "eXe"
 
@@ -1177,9 +1199,8 @@ msgstr "http://es.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s no tiene paquete"
 
-#: exe/engine/package.py:204 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:229 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "iDevice Editor"
 msgstr "redactor del iDevice"
 
@@ -1200,96 +1221,80 @@ msgid "title"
 msgstr "Título"
 
 #: exe/xului/templates/mainpage.xul:<key id="addChildKey" keycode="VK_INSERT">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
 #: exe/xului/templates/mainpage.xul:<key id="delNodeKey" keycode="VK_DELETE">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="renNodeKey"
 #: key="R">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "R"
 msgstr "R"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="promoteKey"
 #: keycode="VK_LEFT">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="demoteKey"
 #: keycode="VK_RIGHT">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="upKey"
 #: key="U">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "U"
 msgstr "R"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="downKey"
 #: key="D">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "D"
 msgstr "B"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control" id="file-new-key"
 #: key="N" oncommand="fileNew()">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "N"
 msgstr "N"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control"
 #: id="file-save-key" key="S" oncommand="fileSave()">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "S"
 msgstr "G"
 
 #: exe/xului/templates/mainpage.xul:<key modifiers="control"
 #: id="file-open-key" key="O" oncommand="fileOpen()">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 msgid "O"
 msgstr "A"
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="f" id="file-menu"
 #: label="File">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Archivo\" accesskey=\"a\""
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="t" id="tools-menu"
 #: label="Tools">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Harremientas\" accesskey=\"h\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="n"
 #: oncommand="fileNew()" key="file-new-key" label="New">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Nuevo\" accesskey=\"n\""
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="s" id="styles-menu"
 #: label="Styles">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"Estylos\" accesskey=\"e\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="o"
 #: oncommand="fileOpen()" key="file-open-key" label="Open">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Abrir\" accesskey=\"a\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
 #: label="Preferences">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "Preferences"
 msgstr "Preferencias de eXe"
@@ -1297,101 +1302,87 @@ msgstr "Preferencias de eXe"
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: label="Refresh">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr "label=\"restaure\" accesskey=\"r\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
 #: oncommand="fileSave()" key="file-save-key" label="Save">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Guardar\" accesskey=\"g\""
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="h" id="help-menu"
 #: label="Help">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Ayuda\" accesskey=\"a\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
 #: oncommand="fileSaveAs()" label="Save As...">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Guardar como...\" accesskey=\"c\""
 
 #: exe/xului/templates/mainpage.xul:<label value="debugInfo">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 msgid "debugInfo"
 msgstr "debugInfo"
 
 #: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="export-menu"
 #: label="Export">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Exportar\" accesskey=\"e\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
 #: oncommand="aboutPage()" label="About">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"Sobre\" accesskey=\"s\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
 #: oncommand="exportPackage('scorm')" label="SCORM 1.2">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
 #: label="Add Page">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Add Page"
 msgstr "Agregue Pagina"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
 #: oncommand="exportPackage('ims')" label="IMS Content Package">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"Paquete del contenido IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
 #: key="renNodeKey" label="Rename">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Rename"
 msgstr "Renombrar"
 
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 msgid "outlinePane"
 msgstr "Crystal de Contorno"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
 #: oncommand="exportPackage('webSite')" key="file-export-website-key"
 #: label="Web Site">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Web Site\" accesskey=\"w\""
 msgstr "label=\"Web Site\" accesskey=\"w\""
 
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 msgid "iDevicePane"
 msgstr "Crystal de IDevice"
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="p"
 #: oncommand="exportPackage('singlePage')" label="Single Page">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Pagina Sola\" accesskey=\"p\""
 
 #: exe/xului/templates/mainpage.xul:<tab label="Authoring">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 msgid "Authoring"
 msgstr "Autorar"
 
 #: exe/xului/templates/mainpage.xul:<tab label="Properties">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 msgid "Properties"
 msgstr "Propiedades"
+
+#~ msgid "Error loading package \"%s\": %s"
+#~ msgstr "Error abriendo paquete \"%s\": %s"
 
 #~ msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
 #~ msgstr "<p>Ingrese una parte del texto. Para hacer un espacio en blanco el usuario debe completar con un (_) entre los lados de la palabra, Por ejemplo _words_"
