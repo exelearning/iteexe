@@ -4,11 +4,10 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns:n="http://nevow.com/ns/nevow/0.1"
         id="mainWindow" title="exelearning"
-	onload="initWindow()"
-	width="640"
-	height="480"
-    onunload="server.handle('pageUnloaded')"
-	>
+    onload="initWindow()"
+    width="640"
+    height="480"
+    >
     <n:invisible n:render="liveglue"/>
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
