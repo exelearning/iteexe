@@ -319,11 +319,8 @@ function fileOpen2() {
     fp.appendFilter("eXe Package Files","*.elp");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
-    alert('opendone')
     if (res == nsIFilePicker.returnOK) {
-        alert('ok')
         server.handle('loadPackage', fp.file.path);
-        alert('handled')
     }
 }
 
