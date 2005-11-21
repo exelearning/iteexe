@@ -27,7 +27,7 @@ import logging
 import traceback
 from twisted.web                 import static
 from twisted.internet            import reactor
-from twisted.internet.defer      import Deferred
+from twisted.internet.defer      import Deferred, maybeDeferred
 from nevow                       import loaders, inevow, stan, tags, url, util
 from nevow.livepage              import js, IClientHandle
 from exe.xului.idevicepane       import IdevicePane
@@ -260,7 +260,9 @@ class MainPage(RenderableLivePage):
         self.package.save(filename) # This can change the package name
         # Delete the "unsavedWork.elp' file so it's not loaded next time we
         # start exe
-        (self.config.configDir/'unsavedWork.elp').remove()
+        unsavedWork = self.config.configDir/'unsavedWork.elp'
+        if unsavedWork.exists():
+            unsavedWork.remove()
         # Tell the user and continue
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
