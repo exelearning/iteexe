@@ -36,9 +36,8 @@ class MacConfig(LinuxConfig):
         """
         Sets default mac values
         """
+        # At the moment is the same as the linux vals :)
         LinuxConfig._overrideDefaultVals(self)
-        self.xulrunnerPath = \
-            Path("/Applications/Xulrunner.app/Contents/MacOS/xulrunner")
 
 
 # ===========================================================================
