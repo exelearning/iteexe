@@ -77,6 +77,7 @@ class MainPage(RenderableLivePage):
 
         # Status variables
         self._changingPages = False
+        self.stopping = False # This is a twisted timer
 
     def onClose(self, reason, data=None):
         """
@@ -91,7 +92,7 @@ class MainPage(RenderableLivePage):
             self.package.save(self.config.configDir/'unsavedWork.elp', True)
         if not self._changingPages:
             # Browser has been closed (we are not navigating to a new package)
-            reactor.stop()
+            self.stopping = reactor.callLater(2, reactor.stop)
 
     def getChild(self, name, request):
         """
@@ -183,6 +184,9 @@ class MainPage(RenderableLivePage):
         """
         # Get the clientHandle (poll every 60 seconds, call onClose if poll fails
         # 9999 times in a row. (When dialogs are open on client polling fails)
+        if self.stopping:
+            self.stopping.cancel()
+            self.stopping = None
         client = self.clientFactory.newClientHandle(self, 60, 9999)
         ctx.remember(client)
         # Sign up to know the connection is closed
@@ -191,6 +195,7 @@ class MainPage(RenderableLivePage):
         d.addErrback(self.onClose,[client.closeNotifications])
         # Render the js
         handleId = "'", client.handleId, "'"
+        self._changingPages = False # Reset the status
         return [
             tags.script(language="JavaScript")[
                 "var nevow_clientHandleId = ", handleId ,";"],
@@ -211,7 +216,6 @@ class MainPage(RenderableLivePage):
             client.send(js(ifDirty))
         else:
             client.send(js(ifClean))
-
 
     def handle_getPackageFileName(self, ctx, onDone, onDoneParam):
         """
