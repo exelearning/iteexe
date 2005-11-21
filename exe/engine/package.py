@@ -129,9 +129,21 @@ class Package(Persistable):
             raise AssertionError(u'No name passed when saving a new package')
 
         # Store our new filename for next file|save
-        if not tempFile:
+        if tempFile:
+            self.nonpersistant.remove('filename')
+            try:
+                self.doSave(filename)
+            finally:
+                self.nonpersistant.append('filename')
+        else:
+            # Update our new filename for future saves
             self.filename = filename
+            self.doSave(filename)
 
+    def doSave(self, filename):
+        """
+        Actually does the saving once all the other stuff has been sorted out
+        """
         log.debug(u"Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
         try:
@@ -149,7 +161,6 @@ class Package(Persistable):
                 zippedFile.write(unicode(resourceFile.normpath()),
                                  resourceFile.name.encode('utf8'))
             zippedFile.writestr("content.data", encodeObject(self))
-
         finally:
             zippedFile.close()
 
