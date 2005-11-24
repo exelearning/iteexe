@@ -45,10 +45,10 @@ dataFiles('exe/xului', '../Resources/exe', ['scripts', 'templates'])
 import sys
 print sys.path
 
-params = {
-  '-i': 'PngImagePlugin,JpegImagePlugin,GifImagePlugin,IcoImagePlugin,BmpImagePlugin',
-  '-p': 'encodings,nevow',
-  '-a': ''}
+py2appParams = {
+  'includes': 'PngImagePlugin,JpegImagePlugin,GifImagePlugin,IcoImagePlugin,BmpImagePlugin',
+  'packages': 'encodings,nevow',
+  'argv_emulation': True}
 
 setup(name         = version.project,
       version      = version.release,
@@ -65,5 +65,6 @@ Content generated using eXe can be used by any Learning Management System.
       packages     = ["exe", "exe.webui", "exe.xului", 
                       "exe.engine", "exe.export"],
       data_files   = files.items(),
-      app          = ["exe/main.py"]
+      app          = ["exe/main.py"],
+      options      = {'py2app': py2appParams}
      )

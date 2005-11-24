@@ -31,7 +31,7 @@
     <vbox flex="1">
         <!-- Start Menus -->
         <toolbox>
-          <menubar>
+          <toolbar>
             <menu n:render="translate" id="file-menu" label="File" accesskey="f">
               <menupopup id="file-popup">
                 <menuitem n:render="translate" label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
@@ -66,7 +66,7 @@
                 <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
               </menupopup>
             </menu>
-         </menubar>
+         </toolbar>
         </toolbox>
         <!-- End Menus -->
         <label value="debugInfo" n:render="debugInfo"/>

@@ -36,6 +36,8 @@ except ImportError, error:
         sys.path.insert(0, pythonPath)
         from exe.application import Application
     else:
+        import traceback
+        traceback.print_last()
         raise error
 
 def main():

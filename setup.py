@@ -5,56 +5,51 @@ import glob
 import os.path
 from distutils.command.install import install
 from distutils.core            import setup
-from exe.engine import version
+from exe.engine                import version
+from exe.engine.path           import Path
 
-g_files = { '/usr/share/exe': ["README", 
-                               "COPYING", 
-                               "NEWS", 
-                               "ChangeLog",
-                               "doc/eXe-tutorial.elp",
-                               "exe/webui/mr_x.gif"]}
-g_oldBase = "exe/webui"
-g_newBase = "/usr/share/exe"
+files = { '/usr/share/exe': ["README", 
+                             "COPYING", 
+                             "NEWS", 
+                             "ChangeLog",
+                             "doc/eXe-tutorial.elp",
+                             "exe/webui/mr_x.gif"]}
 
-def dataFiles(dirs):
+
+def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
     """Recursively get all the files in these directories"""
-    import os.path
-    import glob
-    global dataFiles, g_oldBase, g_newBase, g_files
-    for file in dirs:
-        if not os.path.basename(file[0]).startswith("."):
-            if os.path.isfile(file):
-                path = file[len(g_oldBase)+1:]
-                dir  = g_newBase + "/" + os.path.dirname(path)
-                if dir in g_files:
-                    g_files[dir].append(file)
-                else:
-                    g_files[dir] = [file]
+    baseSourceDir = Path(baseSourceDir)
+    baseDestDir = Path(baseDestDir)
+    sourceDirs = map(Path, sourceDirs)
+    for sourceDir in sourceDirs:
+        sourceDir = baseSourceDir/sourceDir
+        for subDir in list(sourceDir.walkdirs()) + [sourceDir]:
+            if '.svn' in subDir.splitall():
+                continue
+            newExtDir = baseSourceDir.relpathto(subDir)
+            fileList = files.setdefault(baseDestDir/newExtDir, [])
+            fileList += subDir.files()
+              
+    
+# Add all the webui dirs
+dataFiles('exe/webui', '/usr/share/exe', 
+          ['style', 'css', 'docs', 'images', 'scripts',
+           'linux-profile', 'firefox'])
 
-            elif os.path.isdir(file):
-                dataFiles(glob.glob(file+"/*"))
+# Add in the 
+dataFiles('exe', '/usr/share/exe', ['locale'])
 
-dataFiles(["exe/webui/style",
-           "exe/webui/css",
-           "exe/webui/docs",
-           "exe/webui/images",
-           "exe/webui/scripts",
-           "exe/webui/linux-profile",
-           "exe/webui/firefox"])
+dataFiles('exe/xului', '/usr/share/exe', ['scripts', 'templates'])
 
-g_oldBase = "exe/webui"
-g_newBase = "/usr/share/exe"
-dataFiles(["exe/locale"])
-
-g_oldBase = "exe/xului"
-g_newBase = "/usr/share/exe"
-dataFiles(["exe/xului/scripts",
-           "exe/xului/templates"])
 opts = {
  "bdist_rpm": {
    "requires": ["python-imaging",]
  }
 }
+
+from pprint import pprint
+pprint(files)
+
 setup(name         = version.project,
       version      = version.release,
       description  = "eLearning XHTML editor",
@@ -70,6 +65,6 @@ Content generated using eXe can be used by any Learning Management System.
       scripts      = ["exe/exe", "exe/run-exe.sh"],
       packages     = ["exe", "exe.webui", "exe.xului", 
                       "exe.engine", "exe.export"],
-      data_files   = g_files.items(),
+      data_files   = files.items(),
       options      = opts
      )

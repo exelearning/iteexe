@@ -43,7 +43,6 @@
 }
 
 .contextMenuItemDisabled img {
-	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
 	-moz-opacity:0.3;
 	opacity: 0.3;
 }

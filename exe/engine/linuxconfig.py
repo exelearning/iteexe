@@ -46,7 +46,6 @@ class LinuxConfig(Config):
         browserPath      = self.webDir/'firefox'/'firefox'
         if browserPath.isfile():
             self.browserPath = browserPath
-        self.styles      = []
 
     def _getConfigPathOptions(self):
         """
@@ -54,7 +53,7 @@ class LinuxConfig(Config):
         """
         return [Path(os.environ["HOME"])/'.exe/exe.conf',
                 Path('/etc/exe/exe.conf'),
-                Path('./exe/exe.conf')]
+                self.webDir/'exe.conf']
 
 
 # ===========================================================================
