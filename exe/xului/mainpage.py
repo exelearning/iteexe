@@ -114,7 +114,7 @@ class MainPage(RenderableLivePage):
         """
         On mac menubars are not shown :(
         """
-        if os.name == 'mac':
+        if sys.platform[:6] == "darwin":
             ctx.tag.tagName = 'toolbar'
         return ctx.tag
 

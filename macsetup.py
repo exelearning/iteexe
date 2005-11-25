@@ -9,6 +9,17 @@ from exe.engine                import version
 from exe.engine.path           import Path
 import py2app
 
+# Make main.py if it doesn't exist
+if not Path('exe/main.py').exists():
+    lines = open('exe/exe').readlines()
+    for i, line in enumerate(lines):
+        if line.startswith('import'):
+            lines.insert(i, 'import decimal\n')
+            break
+    output = open('exe/main.py', 'w')
+    output.writelines(lines)
+    output.close()
+
 files = { '../Resources/exe': ["README", 
                              "COPYING", 
                              "NEWS", 
