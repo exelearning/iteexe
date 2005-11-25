@@ -77,7 +77,6 @@ class MainPage(RenderableLivePage):
 
         # Status variables
         self._changingPages = False
-        self.stopping = False # This is a twisted timer
 
     def onClose(self, reason, data=None):
         """
@@ -92,7 +91,7 @@ class MainPage(RenderableLivePage):
             self.package.save(self.config.configDir/'unsavedWork.elp', True)
         if not self._changingPages:
             # Browser has been closed (we are not navigating to a new package)
-            self.stopping = reactor.callLater(2, reactor.stop)
+            self.parent.stopping = reactor.callLater(2, reactor.stop)
 
     def getChild(self, name, request):
         """
@@ -110,6 +109,14 @@ class MainPage(RenderableLivePage):
         RenderableLivePage.renderHTTP(self, ctx)
 
     # Render Methods
+
+    def render_mainMenu(self, ctx, data):
+        """
+        On mac menubars are not shown :(
+        """
+        if os.name == 'mac':
+            ctx.tag.tagName = 'toolbar'
+        return ctx.tag
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
@@ -184,9 +191,9 @@ class MainPage(RenderableLivePage):
         """
         # Get the clientHandle (poll every 60 seconds, call onClose if poll fails
         # 9999 times in a row. (When dialogs are open on client polling fails)
-        if self.stopping:
-            self.stopping.cancel()
-            self.stopping = None
+        if self.parent.stopping:
+            self.parent.stopping.cancel()
+            self.parent.stopping = None
         client = self.clientFactory.newClientHandle(self, 60, 9999)
         ctx.remember(client)
         # Sign up to know the connection is closed

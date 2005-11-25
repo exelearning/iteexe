@@ -44,6 +44,9 @@ class PackageRedirectPage(RenderableResource):
         """
         RenderableResource.__init__(self, None, None, webServer)
         self.webServer = webServer
+        # See if all out main pages are not showing
+        # This is a twisted timer
+        self.stopping = None
 
     def getChild(self, name, request):
         """
