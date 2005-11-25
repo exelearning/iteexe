@@ -124,7 +124,9 @@ class IdeviceStore:
         from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
+        from exe.engine.forumidevice          import ForumIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
+        from exe.engine.flashmovieidevice     import FlashMovieIdevice
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
 
         self.extended.append(FreeTextIdevice())
@@ -146,7 +148,9 @@ class IdeviceStore:
         self.extended.append(QuizTestIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
+        self.extended.append(ForumIdevice())
         self.extended.append(FlashWithTextIdevice())
+        self.extended.append(FlashMovieIdevice())
         self.extended.append(ExternalUrlIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes

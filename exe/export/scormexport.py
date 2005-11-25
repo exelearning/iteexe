@@ -253,13 +253,14 @@ class ScormExport(object):
         'styleDir' is the directory from which we will copy our style sheets
         (and some gifs)
         """
-        self.config     = config
-        self.imagesDir  = config.webDir/"images"
-        self.scriptsDir = config.webDir/"scripts"
-        self.styleDir   = Path(styleDir)
-        self.filename   = Path(filename)
-        self.pages      = []
-        self.hasForum   = False
+        self.config       = config
+        self.imagesDir    = config.webDir/"images"
+        self.scriptsDir   = config.webDir/"scripts"
+        self.templatesDir = config.webDir/"templates"
+        self.styleDir     = Path(styleDir)
+        self.filename     = Path(filename)
+        self.pages        = []
+        self.hasForum     = False
 
 
     def export(self, package):
@@ -313,6 +314,9 @@ class ScormExport(object):
                                   'SCOFunctions.js', 
                                   'libot_drag.js',
                                   'common.js'), outputDir)
+        # copy video container file for flash movies.
+        videofile = (self.templatesDir/'videoContainer.swf')
+        videofile.copyfile(self.outputDir/'videoContainer.swf')
 
         # Zip up the scorm package
         zipped = ZipFile(self.filename, "w")

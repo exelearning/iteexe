@@ -298,7 +298,7 @@ class MainPage(RenderableLivePage):
             log.error((u'Traceback:\n%s' % traceback.format_exc()))
             raise
 
-    def handle_export(self, ctx, exportType, filename):
+    def handle_exportPackage(self, ctx, exportType, filename):
         """
         Called by js. 
         'exportType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
@@ -336,9 +336,10 @@ class MainPage(RenderableLivePage):
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
-        client     = IClientHandle(ctx)
-        imagesDir  = webDir.joinpath('images')
-        scriptsDir = webDir.joinpath('scripts')
+        client       = IClientHandle(ctx)
+        imagesDir    = webDir.joinpath('images')
+        scriptsDir   = webDir.joinpath('scripts')
+        templatesDir = webDir.joinpath('templates')
         # filename is a directory where we will export the website to
         # We assume that the user knows what they are doing
         # and don't check if the directory is already full or not
@@ -361,7 +362,7 @@ class MainPage(RenderableLivePage):
             filename.mkdir()
         # Now do the export
         singlePageExport = SinglePageExport(stylesDir, filename, 
-                                            imagesDir, scriptsDir)
+                                            imagesDir, scriptsDir, templatesDir)
         singlePageExport.export(self.package)
         # Show the newly exported web site in a new window
         if hasattr(os, 'startfile'):
@@ -377,9 +378,10 @@ class MainPage(RenderableLivePage):
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
-        client     = IClientHandle(ctx)
-        imagesDir  = webDir.joinpath('images')
-        scriptsDir = webDir.joinpath('scripts')
+        client       = IClientHandle(ctx)
+        imagesDir    = webDir.joinpath('images')
+        scriptsDir   = webDir.joinpath('scripts')
+        templatesDir = webDir.joinpath('templates')
         # filename is a directory where we will export the website to
         # We assume that the user knows what they are doing
         # and don't check if the directory is already full or not
@@ -402,7 +404,7 @@ class MainPage(RenderableLivePage):
             filename.mkdir()
         # Now do the export
         websiteExport = WebsiteExport(stylesDir, filename, 
-                                      imagesDir, scriptsDir)
+                                      imagesDir, scriptsDir, templatesDir)
         websiteExport.export(self.package)
         # Show the newly exported web site in a new window
         if hasattr(os, 'startfile'):

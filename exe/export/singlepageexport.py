@@ -34,19 +34,20 @@ class SinglePageExport(object):
     """
     SinglePageExport will export a package as a website of HTML pages
     """
-    def __init__(self, stylesDir, outputDir, imagesDir, scriptsDir):
+    def __init__(self, stylesDir, outputDir, imagesDir, scriptsDir, templatesDir):
         """
         'stylesDir' is the directory where we can copy the stylesheets from
         'outputDir' is the directory that will be [over]written
         with the website
         """
-        self.html       = ""
-        self.style      = None
-        self.name       = None
-        self.stylesDir  = Path(stylesDir)
-        self.outputDir  = Path(outputDir)
-        self.imagesDir  = Path(imagesDir)
-        self.scriptsDir = Path(scriptsDir)
+        self.html         = ""
+        self.style        = None
+        self.name         = None
+        self.stylesDir    = Path(stylesDir)
+        self.outputDir    = Path(outputDir)
+        self.imagesDir    = Path(imagesDir)
+        self.scriptsDir   = Path(scriptsDir)
+        self.templatesDir = Path(templatesDir)
 
         # Create the output dir if it doesn't already exist
         if not self.outputDir.exists(): 
@@ -92,6 +93,9 @@ class SinglePageExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
+        # copy video container file for flash movies.
+        videofile = (self.templatesDir/'videoContainer.swf')
+        videofile.copyfile(self.outputDir/'videoContainer.swf')
             
 
     def renderHeader(self, name):

@@ -26,6 +26,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.path      import Path
 from exe.engine.translate import lateTranslate
 from HTMLParser           import HTMLParser
+from exe.engine.flvreader import FLVReader
 import re
 import re
 import urllib
@@ -375,8 +376,8 @@ class FlashField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width        = "300"
-        self.height       = "250"
+        self.width        = 300
+        self.height       = 250
         self.flashName    = ""
 
 
@@ -429,3 +430,80 @@ class FlashField(Field):
 
 # ===========================================================================
 
+class FlashMovieField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+    def __init__(self, name, instruc=""):
+        """
+        """
+        Field.__init__(self, name, instruc)
+        self.width        = 300
+        self.height       = 250
+        self.flashName    = ""
+
+
+    def getResources(self):
+        """
+        Return the resource files (if any) used by this Field
+        Overridden by derieved classes
+        """
+        return [self.flashName]
+
+
+    def setFlash(self, flashPath):
+        """
+        Store the image in the package
+        Needs to be in a package to work.
+        """
+        log.debug(u"setFlash "+unicode(flashPath))
+        resourceFile = Path(flashPath)
+
+        assert(self.idevice.parentNode,
+               'Flash '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if resourceFile.isfile():
+            self.delete()
+            package = self.idevice.parentNode.package
+
+            self.flashName = self.id + u"_" + unicode(resourceFile.basename())
+            package.addResource(resourceFile, self.flashName)
+            flvDic = FLVReader(resourceFile)
+            self.height = flvDic["height"] +30        
+            self.width = flvDic["width"]
+
+        else:
+            log.error('File %s is not a file' % resourceFile)
+
+
+    def delete(self):
+        """
+        Delete the flash from the package
+        Needs to be in a package to work.
+        """
+        assert(self.idevice.parentNode,
+               'Flash '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if self.flashName:
+            package = self.idevice.parentNode.package
+            package.deleteResource(self.flashName)
+
+
+# ===========================================================================
+
+
+class DiscussionField(Field):
+    def __init__(self, name, instruc="", content=""):
+        """
+        Initialize 
+        """
+        Field.__init__(self, name, instruc)
+        self.content = content
+
+    
+# ===========================================================================

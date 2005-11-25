@@ -55,8 +55,9 @@ class EditorElement(Element):
                 self.field.idevice.fields.remove(self.field)
                 
         if "btnCaption"+self.id in request.args:
-            self.field.caption = unicode(request.args["btnCaption"+self.id][0],
+            self.field.buttonCaption = unicode(request.args["btnCaption"+self.id][0],
                                          'utf8')
+            
 
 
 # ===========================================================================

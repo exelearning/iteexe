@@ -216,12 +216,13 @@ class IMSExport(object):
         'styleDir' is the directory from which we will copy our style sheets
         (and some gifs)
         """
-        self.config     = config
-        self.imagesDir  = config.webDir/"images"
-        self.scriptsDir = config.webDir/"scripts"
-        self.styleDir   = Path(styleDir)
-        self.filename   = Path(filename)
-        self.pages      = []
+        self.config       = config
+        self.imagesDir    = config.webDir/"images"
+        self.scriptsDir   = config.webDir/"scripts"
+        self.templatesDir = config.webDir/"templates"
+        self.styleDir     = Path(styleDir)
+        self.filename     = Path(filename)
+        self.pages        = []
 
 
     def export(self, package):
@@ -265,6 +266,9 @@ class IMSExport(object):
                                   'imsmd_v1p2p2.xsd',
                                   'ims_xml.xsd',
                                   'common.js'), outputDir)
+        # copy video container file for flash movies.
+        videofile = (self.templatesDir/'videoContainer.swf')
+        videofile.copyfile(self.outputDir/'videoContainer.swf')
 
         # Zip up the package
         zipped = ZipFile(self.filename, "w")

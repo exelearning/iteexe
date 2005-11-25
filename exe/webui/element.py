@@ -577,3 +577,63 @@ class FlashElement(Element):
                              self.field.height)
         
         return html
+    
+# ===========================================================================
+class FlashMovieElement(Element):
+    """
+    for flash element processing
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if "path"+self.id in request.args:
+            self.field.setFlash(request.args["path"+self.id][0])
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit")
+
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        html += u"<a href=\"#\" onclick=\"addFile('"+self.id+"');\">"
+        html += _(u"Select a flash movie")
+        html += u"</a><br/>\n"
+       
+        html += common.hiddenField("path"+self.id)
+
+        
+        return html
+
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this image
+        """
+
+        html = common.flash("flash"+self.id, 
+                             "", 
+                             self.field.width,
+                             self.field.height)
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this flash
+        """
+        html = common.flashMovie(self.field.flashName, 
+                             self.field.width, self.field.height)
+        
+        return html

@@ -116,12 +116,25 @@ def image(name, value, width="", height=""):
 
 
 def flash(name, value, width, height):
-    """Returns the XHTML for an image"""
+    """Returns the XHTML for flash"""
     log.debug(u"flash %s" % value)
     html  = u'<embed id="%s" ' % name 
     html += u'width="%s" height="%s" fullscreen="no" ' %(width, height)
     html += u'src="%s"/>\n' % value
   
+    return html
+
+def flashMovie(value, width, height):
+    """Returns the XHTML for a flash movie"""
+    log.debug(u"flash %s" % value)
+    html  = u'<object type="application/x-shockwave-flash"'
+    html += u'data="videoContainer.swf?'
+    html += u'videoSource=%s&autoPlay=false" ' % value
+    html += u'width="%d" height="%d">\n' %(width, height)
+    html += u'<param name="movie"\n'
+    html += u'value="videoContainer.swf?'
+    html += u'videoSource=%s&autoPlay=false"/>\n' % value
+    html += u'<param name="menu" value="flase" /></object>\n'
     return html
 
 
