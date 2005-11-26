@@ -26,7 +26,6 @@ import zipfile
 from exe.engine.path            import Path, TempDirPath, toUnicode
 from exe.engine.node            import Node
 from exe.engine.genericidevice  import GenericIdevice
-from exe.engine.forumidevice    import ForumIdevice
 from exe.engine.persist         import Persistable, encodeObject, decodeObject
 
 log = logging.getLogger(__name__)
@@ -67,7 +66,6 @@ class Package(Persistable):
         self._description  = u""
         self.isChanged     = 0
         self.idevices      = []
-        self.forums        = []
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
