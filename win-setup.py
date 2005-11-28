@@ -54,6 +54,7 @@ opts = {
 
  }
 }
+
 setup(console=["exe/exe"],
       version=version.release,
       packages=["exe", "exe.engine", "exe.webui", "exe.export"],

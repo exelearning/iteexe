@@ -36,9 +36,10 @@ dataFiles('exe/webui', '/usr/share/exe',
           ['style', 'css', 'docs', 'images', 'scripts',
            'linux-profile', 'firefox'])
 
-# Add in the 
+# Add in the locale directory
 dataFiles('exe', '/usr/share/exe', ['locale'])
 
+# Add in the xului directory
 dataFiles('exe/xului', '/usr/share/exe', ['scripts', 'templates'])
 
 opts = {
@@ -46,9 +47,6 @@ opts = {
    "requires": ["python-imaging",]
  }
 }
-
-from pprint import pprint
-pprint(files)
 
 setup(name         = version.project,
       version      = version.release,
