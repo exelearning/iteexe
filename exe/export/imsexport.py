@@ -268,7 +268,7 @@ class IMSExport(object):
                                   'common.js'), outputDir)
         # copy video container file for flash movies.
         videofile = (self.templatesDir/'videoContainer.swf')
-        videofile.copyfile(self.outputDir/'videoContainer.swf')
+        videofile.copyfile(outputDir/'videoContainer.swf')
 
         # Zip up the package
         zipped = ZipFile(self.filename, "w")
