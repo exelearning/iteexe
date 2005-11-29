@@ -102,7 +102,7 @@ class SinglePageExport(object):
         """
         Returns an XHTML string for the header of this page.
         """
-        html  = u"<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n"
+        html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         html += u"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
         html += u" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
