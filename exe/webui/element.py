@@ -581,7 +581,7 @@ class FlashElement(Element):
 # ===========================================================================
 class FlashMovieElement(Element):
     """
-    for flash element processing
+    for flash movie element processing
     """
     def __init__(self, field):
         """

@@ -91,7 +91,10 @@ class MainPage(RenderableLivePage):
             self.package.save(self.config.configDir/'unsavedWork.elp', True)
         if not self._changingPages:
             # Browser has been closed (we are not navigating to a new package)
+            #DJM!!!   self.stopping = reactor.callLater(2, reactor.stop)
+           # pass
             self.parent.stopping = reactor.callLater(2, reactor.stop)
+
 
     def getChild(self, name, request):
         """
@@ -372,12 +375,7 @@ class MainPage(RenderableLivePage):
                                             imagesDir, scriptsDir, templatesDir)
         singlePageExport.export(self.package)
         # Show the newly exported web site in a new window
-        if hasattr(os, 'startfile'):
-            os.startfile(filename)
-        else:
-            filename /= 'index.html'
-            os.system("firefox "+filename+"&")
-
+        self._startFile(filename)
 
     def exportWebSite(self, ctx, filename, webDir, stylesDir):
         """
@@ -414,13 +412,8 @@ class MainPage(RenderableLivePage):
                                       imagesDir, scriptsDir, templatesDir)
         websiteExport.export(self.package)
         # Show the newly exported web site in a new window
-        if hasattr(os, 'startfile'):
-            os.startfile(filename)
-        else:
-            filename /= 'index.html'
-            os.system("firefox "+filename+"&")
-
-
+        self._startFile(filename)
+            
     def exportScorm(self, client, filename, stylesDir):
         """
         Exports this package to a scorm package file
@@ -456,3 +449,19 @@ class MainPage(RenderableLivePage):
         imsExport = IMSExport(self.config, stylesDir, filename)
         imsExport.export(self.package)
         client.alert(_(u'Exported to %s' % filename))
+
+    # Utiltity methods
+
+    def _startFile(self, filename):
+        """
+        Launches an exported web site or page
+        """
+        if hasattr(os, 'startfile'):
+            try:
+                os.startfile(filename)
+            except UnicodeEncodeError:
+                os.startfile(filename.encode(Path.fileSystemEncoding))
+        else:
+            filename /= 'index.html'
+            os.system("firefox "+filename+"&")
+

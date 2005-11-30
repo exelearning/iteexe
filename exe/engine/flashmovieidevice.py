@@ -29,7 +29,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class FlashMovieIdevice(Idevice):
     """
-    A FlashWithText Idevice is one built up from a flash file and free text.
+    A FlashMovie Idevice is one built up from a flash file and free text.
     """
 
     persistenceVersion = 1

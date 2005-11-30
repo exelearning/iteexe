@@ -498,12 +498,14 @@ class FlashMovieField(Field):
 
 
 class DiscussionField(Field):
-    def __init__(self, name, instruc="", content=""):
+    def __init__(self, name, instruc="", content="" ):
+                 
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
         self.content = content
+        self.instruc = "Type a discussion topic here."
 
     
 # ===========================================================================
