@@ -1,3 +1,354 @@
+2005-11-30 22:28  djm
+
+	* exe/locale/exe_nl.po: Added new Dutch translation
+
+2005-11-30 21:39  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_it.po, exe/locale/exe_mi.po, exe/locale/exe_nl.po,
+	  exe/locale/exe_sv.po, exe/locale/exe_zh.po,
+	  exe/locale/it/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo: Ran mk19nl.py for Jenny
+
+2005-11-30 02:41  djm
+
+	* exe/engine/multichoiceidevice.py: Fix little bug in upgrading from
+	  version 0.4
+
+2005-11-30 01:54  jenny
+
+	* exe/engine/field.py, exe/engine/flashmovieidevice.py,
+	  exe/webui/element.py, exe/xului/mainpage.py: fixed Chinese path
+	  website and single page exporting bugs.
+
+2005-11-29 22:41  djm
+
+	* exe/export/singlepageexport.py, exe/export/websitepage.py: use
+	  UTF-8, bug 213
+
+2005-11-28 04:04  djm
+
+	* installs/windows/exe.nsi, installs/windows/exe.standalone.nsi,
+	  installs/windows/logo.jpeg, setup.py, win-setup.py: Start of
+	  standalone install
+
+2005-11-28 02:19  jenny
+
+	* exe/export/imsexport.py, exe/export/scormexport.py: fixed flash
+	  movie export bugs.
+
+2005-11-26 23:42  djm
+
+	* mac-setup.py, macsetup.py: add new mac-setup.py (consistant
+	  naming)
+
+2005-11-26 23:41  djm
+
+	* mac-setup.py: remove old mac-setup.py
+
+2005-11-26 23:40  djm
+
+	* exe/engine/package.py: package shouldn't know about Forum iDevice
+
+2005-11-25 06:18  matthew
+
+	* exe/xului/mainpage.py, macsetup.py: Fixes for mac release
+
+2005-11-25 04:34  matthew
+
+	* exe/webui/packageredirectpage.py, exe/xului/mainpage.py,
+	  exe/xului/templates/mainpage.xul: Better stopping control, handles
+	  multiple main pages. Made menubar/toolbar thing detect os so macs
+	  get toolbars and everyone else gets menubars
+
+2005-11-25 01:35  jenny
+
+	* exe/webui/flashmovieblock.py: added flashmovieblock to exe.
+
+2005-11-25 01:09  jenny
+
+	* exe/engine/flvreader.py: added flvreader to engine.
+
+2005-11-25 01:00  jenny
+
+	* exe/engine/field.py, exe/engine/flashmovieidevice.py,
+	  exe/engine/idevicestore.py, exe/engine/package.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/webui/builtinblocks.py, exe/webui/common.py,
+	  exe/webui/editorelement.py, exe/webui/element.py,
+	  exe/webui/templates, exe/webui/templates/videoContainer.swf,
+	  exe/xului/mainpage.py: added flashmovie idevice.
+
+2005-11-24 02:32  matthew
+
+	* exe/engine/linuxconfig.py, exe/engine/macconfig.py, exe/exe,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/plugins/contextmenu/css/contextmenu.css,
+	  exe/webui/scripts/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_ui.css,
+	  exe/xului/templates/mainpage.xul, macsetup.py, setup.py: Final Mac
+	  stuff.
+
+2005-11-23 21:39  matthew
+
+	* macsetup.py: Preliminary macsetup script
+
+2005-11-21 20:14  matthew
+
+	* exe/engine/macconfig.py: Removed redundant code
+
+2005-11-21 20:14  matthew
+
+	* exe/xului/mainpage.py: Fixed bug where exe was trying to delete a
+	  non existant file
+
+2005-11-21 01:22  matthew
+
+	* exe/webui/propertiespane.py, exe/xului/mainpage.py: Now doesn't
+	  stop the server when you hit refresh but after closing has a 2
+	  second timeout before actually stopping the server. Removed from
+	  print statements about node level names
+
+2005-11-21 00:29  matthew
+
+	* exe/xului/templates/mainpage.xul: Removed onunload handler, which
+	  was causing errors
+
+2005-11-21 00:28  matthew
+
+	* exe/xului/scripts/mainpage.js: Removed some debug code
+
+2005-11-21 00:27  matthew
+
+	* exe/xului/mainpage.py: Make mainpage play nicely with new nevow.
+	  Closes server when browser closes :)
+
+2005-11-21 00:26  matthew
+
+	* exe/engine/package.py: Changes to package to make it load from
+	  'unsavedwork.elp' on startup
+
+2005-11-21 00:26  matthew
+
+	* app.fil: Ran the language update scripts, which found new files
+	  for app.fil
+
+2005-11-18 04:41  matthew
+
+	* exe/engine/package.py: Allowed old packages without _levelnames to
+	  upgrade
+
+2005-11-18 04:28  matthew
+
+	* exe/application.py, exe/webui/browser.py,
+	  exe/webui/propertiespane.py, exe/webui/scripts/common.js,
+	  exe/xului/idevicepane.py, exe/xului/mainpage.py,
+	  exe/xului/scripts/mainpage.js, exe/xului/scripts/nevow_glue.js:
+	  About to upgrade to athena to stop livepage's random disconnects!
+
+2005-11-18 01:06  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_it.po, exe/locale/exe_mi.po, exe/locale/exe_nl.po,
+	  exe/locale/exe_sv.po, exe/locale/exe_zh.po, exe/locale/it,
+	  exe/locale/it/LC_MESSAGES, exe/locale/it/LC_MESSAGES/exe.mo,
+	  exe/locale/mi, exe/locale/mi/LC_MESSAGES,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/nl,
+	  exe/locale/nl/LC_MESSAGES, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/sv, exe/locale/sv/LC_MESSAGES,
+	  exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo: Added locale dirs for maori, sv
+	  (?), nl (dutch), and italian. Ran update mki18l.py
+
+2005-11-18 00:24  matthew
+
+	* exe/locale/exe_it.po: Added Italian po file
+
+2005-11-18 00:01  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_mi.po, exe/locale/exe_nl.po, exe/locale/exe_sv.po,
+	  exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo: Added
+	  Maori po file. Updated all strings.
+
+2005-11-18 00:00  matthew
+
+	* exe/xului/mainpage.py: Made it look in the right place for
+	  nevow_glue.js
+
+2005-11-17 23:59  matthew
+
+	* exe/engine/package.py: Made it do late translation of level names
+	  again. Searched hard for any bugs that this may cause and fond
+	  none.
+
+2005-11-17 21:11  jenny
+
+	* exe/engine/field.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: made cloze idevice auto completion
+	  optional and only doing auto completion when the length of word is
+	  greater than 4.
+
+2005-11-17 06:10  matthew
+
+	* exe/engine/package.py, exe/xului/mainpage.py,
+	  exe/xului/scripts/mainpage.js: Seems to be running quite well on
+	  ubuntu
+
+2005-11-16 22:46  matthew
+
+	* exe/xului/scripts/nevow_glue.js: Update for nevow 0.6
+
+2005-11-16 19:21  matthew
+
+	* exe/engine/field.py, exe/engine/package.py, exe/webui/browser.py,
+	  exe/webui/element.py, exe/xului/mainpage.py,
+	  exe/xului/outlinepane.py, exe/xului/scripts/mainpage.js,
+	  exe/xului/templates/mainpage.xul: Trying to make nevow 0.6 work on
+	  gentoo
+
+2005-11-13 23:58  matthew
+
+	* exe/engine/idevice.py, exe/webui/browser.py,
+	  exe/webui/renderable.py, exe/xului/idevicepane.py,
+	  exe/xului/mainpage.py, exe/xului/outlinepane.py,
+	  exe/xului/scripts/mainpage.js, exe/xului/templates/mainpage.xul:
+	  Upgrade to nevow 0.6.0 and fix Issue: 163 - & symbol in new
+	  idevices (from idevice editor) Fix bad log string in browser.py
+
+2005-11-13 21:47  jenny
+
+	* exe/export/websitepage.py, exe/webui/element.py: add spaces around
+	  title element in website export to fix the bug, which is non-ascii
+	  title do not display properly in IE.
+
+2005-11-10 20:28  matthew
+
+	* app.fil, exe/engine/idevice.py, exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_nl.po, exe/locale/exe_sv.po,
+	  exe/xului/idevicepane.py: Empty Dutch po file. Work towards
+	  handling & and chinese chars in idevice titles
+
+2005-11-10 00:30  jenny
+
+	* exe/engine/config.py, exe/engine/field.py, exe/engine/package.py,
+	  exe/engine/path.py, exe/webui/editorelement.py,
+	  exe/webui/editorpane.py, exe/webui/element.py,
+	  exe/webui/elementfactory.py, exe/webui/galleryblock.py,
+	  exe/webui/scripts/common.js, exe/xului/mainpage.py: Feedback
+	  Idevice editor field (Jenny) Chinese compatibility stuff (MS)
+
+2005-11-08 02:55  brent
+
+	* exe/webui/style/default/nav.css: fixed small bug with active menu
+	  item on Defualt nav.
+
+2005-11-08 02:41  brent
+
+	* exe/export/imsexport.py, exe/export/scormexport.py: fixed bug
+	  introduced with change to websiteexport. this wouldnt happen if
+	  export code was properly refactored!!!!!!!!!!!!!!!!!!!!!
+
+2005-11-08 02:27  brent
+
+	* exe/webui/style/default/content.css: added some padding for
+	  Default style so that it looks better in SCORM export.
+
+2005-11-08 00:27  matthew
+
+	* exe/xului/idevicepane.py, exe/xului/scripts/mainpage.js: Issue
+	  163: Get rid of problems with & in idevice file name
+
+2005-11-07 20:23  jenny
+
+	* exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo: updated
+	  chinese po and mo files.
+
+2005-11-07 04:22  djm
+
+	* exe/webui/style/Kahurangi/websitepage.py: Added depth attribute to
+	  class
+
+2005-11-07 04:13  djm
+
+	* exe/webui/style/Kahurangi/websitepage.py: changed Kahurangi nav to
+	  have all the nodes and be made up of <li> elements
+
+2005-11-07 03:21  djm
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/export/websitepage.py,
+	  exe/webui/style/Kahurangi/websitepage.py: changes for websitepage
+	  plugin code for styles
+
+2005-11-04 01:34  brent
+
+	* exe/webui/style/Kahurangi/nav.css: experimental nav for Kahurangi
+	  style ... guaranteed to not work on IE!!!!
+
+2005-11-03 22:26  djm
+
+	* exe/locale/exe_sv.po: Added Swedish PO file
+
+2005-11-03 20:44  brent
+
+	* exe/webui/style/Kahurangi/collapse.gif,
+	  exe/webui/style/Kahurangi/expand.gif,
+	  exe/webui/style/Kahurangi/nav.css: expand/collapse icons for nav
+	  of Kahurangi style.
+
+2005-11-03 04:34  djm
+
+	* doc/exe_class.xmi, exe/export/websiteexport.py: update doc, added
+	  withChild flag for Brent
+
+2005-11-03 03:08  brent
+
+	* exe/webui/style/Kahurangi/list.gif,
+	  exe/webui/style/Kahurangi/nav.css: modified nav.css for web export
+	  of Kahurangi style
+
+2005-11-02 21:24  djm
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo: updated
+	  po/mo files
+
+2005-11-02 21:23  djm
+
+	* exe/xului/templates/mainpage.xul: translater Preferences and
+	  iDevice menu items
+
+2005-11-02 02:29  djm
+
+	* ChangeLog, MANIFEST.in, NEWS, README, app.fil,
+	  installs/gentoo/exe-0.7.ebuild, installs/gentoo/makeEbuild.py,
+	  setup.py, tools/mki18n.py: Merged in changes from 0.10 branch
+	  revisions 1397-:1439
+
 2005-11-02 02:28  djm
 
 	* exe/engine/clozeidevice.py, exe/engine/config.py,
