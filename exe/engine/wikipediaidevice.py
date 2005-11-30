@@ -43,9 +43,9 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
 
-    def __init__(self):
+    def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
                          x_(u"University of Auckland"), 
                          x_(u"""The Wikipedia iDevice takes a copy of an
@@ -56,10 +56,8 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.article     = TextAreaField(x_(u"Article"))
         self.article.idevice = self
         self.images      = {}
-        self._site       = x_('http://en.wikipedia.org/')
+        self.site        = defaultSite
 
-    # Properties
-    site = lateTranslate('site')
 
     def getResources(self):
         """
@@ -187,6 +185,12 @@ article from en.wikipedia.org, including copying the associated images."""),
         """
         self._upgradeIdeviceToVersion1()
         self._site = self.__dict__['site']
+
+    def upgradeToVersion4(self):
+        """
+        Upgrades exe to v0.11... what was I thinking?
+        """
+        self.site = self.__dict__['_site']
 
 
 # ===========================================================================

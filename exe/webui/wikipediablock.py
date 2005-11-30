@@ -67,11 +67,21 @@ class WikipediaBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        sites = [(_(u"Wikipedia Article"), "http://en.wikipedia.org/"),
-                 (_(u"Wikibooks Article"), "http://en.wikibooks.org/")]
+        sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/"),
+                 (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/"),
+                 (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/"),
+                 (_(u"French Wikipedia Article"),  "http://fr.wikipedia.org/"),
+                 (_(u"Japanese Wikipedia Article"),"http://ja.wikipedia.org/"),
+                 (_(u"Italian Wikipedia Article"), "http://il.wikipedia.org/"),
+                 (_(u"Polish Wikipedia Article"),  "http://pl.wikipedia.org/"),
+                 (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/"),
+                 (_(u"Portugese Wikipedia Article"),
+                                                   "http://pt.wikipedia.org/"),
+                 (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/"),
+                 (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/"),
+                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/")]
         html += common.select("site", sites,
                               selection=self.idevice.site)
-#        html += _(u"Wikipedia Article ")
         html += common.textInput("article", self.idevice.articleName)
         html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
         html += u"<br/>\n"

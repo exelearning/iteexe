@@ -143,7 +143,8 @@ class IdeviceStore:
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
 
-        self.extended.append(WikipediaIdevice())
+        defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
+        self.extended.append(WikipediaIdevice(defaultSite))
         self.extended.append(AttachmentIdevice())
         self.extended.append(QuizTestIdevice())
         self.extended.append(GalleryIdevice())
