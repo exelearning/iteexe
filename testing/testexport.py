@@ -39,7 +39,9 @@ class TestWebsiteExport(unittest.TestCase):
         package = Package.load('testPackage.elp')
         # Do the export
         exporter = WebsiteExport('../exe/webui/style/default', outdir,
-                                 '../exe/webui/images', '../exe/webui/scripts')
+                                 '../exe/webui/images', 
+                                 '../exe/webui/scripts',
+                                 '../exe/webui/templates')
         exporter.export(package)
         # Check that it all exists now
         assert outdir.isdir()

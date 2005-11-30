@@ -96,8 +96,8 @@ class SuperTestCase(unittest.TestCase):
         self.app.preLaunch()
         self.client = FakeClient()
         self.package = Package('temp')
-        self.app.server.root.bindNewPackage(self.package)
-        self.mainpage = self.app.server.root.children['temp']
+        self.app.webServer.root.bindNewPackage(self.package)
+        self.mainpage = self.app.webServer.root.children['temp']
 
     def _setupConfigFile(self, configParser):
         """

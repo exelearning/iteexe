@@ -42,7 +42,7 @@ class TestBlock(SuperTestCase):
     def createPackage(self):
         """
         Creates a package using HTTP requests. Returns the html returned by the
-        server
+        web server
         """
         # Add some idevices to the main page
         def addIdevice(id_):

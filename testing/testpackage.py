@@ -65,7 +65,7 @@ class TestPackage(unittest.TestCase):
 
     def testLevelName(self):
         package = self.packageStore.createPackage()
-        package.levelNames = ["Month", "Week", "Day"]
+        package._levelNames = ["Month", "Week", "Day"]
         self.assertEquals(package.levelName(0), "Month")
         self.assertEquals(package.levelName(1), "Week")
         self.assertEquals(package.levelName(2), "Day")
