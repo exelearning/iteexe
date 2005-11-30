@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-10 13:55+1300\n"
+"POT-Creation-Date: 2005-12-01 11:33+1300\n"
 "PO-Revision-Date: 2005-11-30 21:31+0100\n"
 "Last-Translator: L. Vandijck <l.vandijck@collegemaaseik.be>\n"
 "Language-Team: Dutch <matthew@exelearning.org>\n"
@@ -22,8 +22,7 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Verplaats naar---"
 
-#: exe/xului/mainpage.py:223
-#: exe/xului/mainpage.py:312
+#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:324
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
@@ -96,7 +95,7 @@ msgstr "<strong>Framehoogte:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:102
+#: exe/engine/package.py:106
 msgid "?????"
 msgstr "?????"
 
@@ -126,7 +125,7 @@ msgstr ""
 "kunnen in een klassituatie groepen worden gevormd rond bepaalde aspecten\n"
 "van de zaak en hoe wordt hun inbreng dan gecommuniceerd naar de anderen</li></ul>"
 
-#: exe/webui/editorpane.py:69
+#: exe/webui/editorpane.py:71
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "In een pedagogische tip beschrijft u het opzet van het iDevice en de pedagogische idee erachter."
 
@@ -134,16 +133,15 @@ msgstr "In een pedagogische tip beschrijft u het opzet van het iDevice en de ped
 msgid "A single simple discussion"
 msgstr "Een enkele discussie"
 
-#: exe/webui/editorpane.py:201
+#: exe/webui/editorpane.py:211
 msgid "Actions"
 msgstr "Acties"
 
-#: exe/engine/idevicestore.py:263
-#: exe/engine/idevicestore.py:271
+#: exe/engine/idevicestore.py:267 exe/engine/idevicestore.py:275
 msgid "Activity"
 msgstr "Activiteit"
 
-#: exe/webui/editorpane.py:192
+#: exe/webui/editorpane.py:200
 msgid "Add"
 msgstr "Toevoegen"
 
@@ -151,34 +149,45 @@ msgstr "Toevoegen"
 msgid "Add Question"
 msgstr "Vraag toevoegen"
 
-#: exe/webui/editorpane.py:72
+#: exe/webui/editorpane.py:74
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
 msgstr "Een tekstregel toevoegen aan een iDevice. Dit laat toe een label op te nemen in het iDevice."
 
-#: exe/webui/editorpane.py:75
+#: exe/webui/editorpane.py:77
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
 msgstr "Invoerveld voor tekst toevoegen. Gebruikt voor invoer van beschrijving."
 
-#: exe/webui/editorpane.py:78
+#: exe/webui/editorpane.py:80
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Afbeelding toevoegen aan iDevice. Laat toe een afbeelding te kiezen uit de opgeslagen bestanden."
 
-#: exe/webui/testquestionelement.py:109
-#: exe/webui/multichoiceblock.py:117
+#: exe/webui/editorpane.py:83
+msgid "Add an interactive feedback to your iDevice. "
+msgstr ""
+
+#: exe/webui/multichoiceblock.py:117 exe/webui/testquestionelement.py:109
 msgid "Add another option"
 msgstr "Nieuw alternatief toevoegen"
 
-#: exe/webui/truefalseblock.py:83
-#: exe/webui/casestudyblock.py:90
+#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:90
 msgid "Add another question"
 msgstr "Nieuwe vraag toevoegen"
 
-#: exe/webui/galleryblock.py:166
+#: exe/webui/galleryblock.py:176
 msgid "Add images"
 msgstr "Afbeeldingen toevoegen"
 
-#: exe/webui/testquestionelement.py:92
-#: exe/webui/multichoiceblock.py:98
+#: exe/webui/flashmovieblock.py:76
+msgid "Align:"
+msgstr ""
+
+#: exe/engine/field.py:331 exe/engine/field.py:365
+msgid ""
+"Allow auto completion when \n"
+"                                       user filling the gaps."
+msgstr ""
+
+#: exe/webui/multichoiceblock.py:98 exe/webui/testquestionelement.py:92
 msgid "Alternatives"
 msgstr "Alternatieven"
 
@@ -214,7 +223,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:266
+#: exe/engine/idevicestore.py:270
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -232,32 +241,38 @@ msgstr "Artikel"
 msgid "Attachment"
 msgstr "Bijlage"
 
-#: exe/engine/attachmentidevice.py:93
-#: exe/engine/attachmentidevice.py:116
+#: exe/engine/attachmentidevice.py:93 exe/engine/attachmentidevice.py:116
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Bijlage %s zonder parentNode"
 
-#: exe/webui/editorpane.py:266
-#: exe/webui/propertiespane.py:100
+#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:276
 msgid "Author"
 msgstr "Auteur"
+
+#: exe/webui/element.py:450
+#, fuzzy
+msgid "Auto Completion"
+msgstr "Aanwijzingen voor invullen"
+
+#: exe/webui/editorelement.py:142
+#, fuzzy
+msgid "Button Caption"
+msgstr "Bijschrift:"
 
 #: exe/webui/forumblock.py:124
 msgid "Can a student post to this forum?:"
 msgstr "Kan student bijdrage posten op dit forum?"
 
-#: exe/webui/editorpane.py:209
-#: exe/webui/preferencespage.py:88
+#: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:219
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: exe/xului/mainpage.py:221
-#: exe/xului/mainpage.py:310
+#: exe/xului/mainpage.py:251 exe/xului/mainpage.py:322
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/webui/imagewithtextblock.py:83
+#: exe/webui/imagewithtextblock.py:83 exe/webui/flashmovieblock.py:83
 #: exe/webui/flashwithtextblock.py:83
 msgid "Caption:"
 msgstr "Bijschrift:"
@@ -270,20 +285,20 @@ msgstr "Gevalstudie"
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klik op <strong>Kies een bestand</strong> en blader naar een bestand om het te selecteren."
 
+#: exe/engine/field.py:143
+#, fuzzy
+msgid "Click Here"
+msgstr "Klik hier"
+
 #: exe/webui/reflectionblock.py:90
 msgid "Click here"
 msgstr "Klik hier"
 
-#: exe/webui/editorpane.py:305
-#: exe/webui/editorpane.py:306
-#: exe/webui/editorpane.py:327
-#: exe/webui/truefalseelement.py:127
-#: exe/webui/truefalseelement.py:128
-#: exe/webui/block.py:236
-#: exe/webui/common.py:211
-#: exe/webui/common.py:212
-#: exe/webui/multichoiceblock.py:152
-#: exe/webui/multichoiceblock.py:153
+#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:152
+#: exe/webui/multichoiceblock.py:153 exe/webui/common.py:224
+#: exe/webui/common.py:225 exe/webui/truefalseelement.py:127
+#: exe/webui/truefalseelement.py:128 exe/webui/editorpane.py:315
+#: exe/webui/editorpane.py:316 exe/webui/editorpane.py:337
 msgid "Close"
 msgstr "Sluiten"
 
@@ -299,8 +314,7 @@ msgstr "Cloze-activiteit"
 msgid "Content"
 msgstr "Inhoud"
 
-#: exe/webui/testquestionelement.py:95
-#: exe/webui/multichoiceblock.py:101
+#: exe/webui/multichoiceblock.py:101 exe/webui/testquestionelement.py:95
 #: exe/webui/optionelement.py:117
 msgid "Correct"
 msgstr "Juist"
@@ -317,26 +331,20 @@ msgstr ""
 "Stel de gevalstudie samen. In een duidelijk\n"
 "geval wordt een tegenstelling beschreven."
 
-#: exe/webui/editorelement.py:71
-#: exe/webui/editorelement.py:106
-#: exe/webui/editorelement.py:142
-#: exe/webui/block.py:206
-#: exe/webui/editorpage.py:176
-#: exe/webui/editorpage.py:180
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:149 exe/webui/editorelement.py:184
+#: exe/webui/block.py:206 exe/webui/editorpage.py:176
+#: exe/webui/editorpage.py:180 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: key="delNodeKey" label="Delete">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: exe/webui/testoptionelement.py:86
-#: exe/webui/optionelement.py:85
+#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:85
 msgid "Delete option"
 msgstr "Alternatief verwijderen"
 
+#: exe/webui/testquestionelement.py:86 exe/webui/questionelement.py:80
 #: exe/webui/truefalseelement.py:106
-#: exe/webui/testquestionelement.py:86
-#: exe/webui/questionelement.py:80
 msgid "Delete question"
 msgstr "Vraag verwijderen"
 
@@ -350,7 +358,7 @@ msgstr ""
 "kan beoordelen. (Rubrics zijn meestal goede instrumenten voor\n"
 "reflectieve feedback.)"
 
-#: exe/engine/idevicestore.py:259
+#: exe/engine/idevicestore.py:263
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -358,7 +366,7 @@ msgstr ""
 "Beschrijf de voorkennis die nodig is om de leeropdacht tot een goed\n"
 "einde te kunnen brengen."
 
-#: exe/engine/idevicestore.py:222
+#: exe/engine/idevicestore.py:226
 msgid ""
 "Describe the rationale behind the selection of the reading and how it will\n"
 "enrich the learning."
@@ -366,7 +374,7 @@ msgstr ""
 "Geef aan waarom de geselecteerd gelezen moet worden en hoe dit\n"
 "het leerproces kan stimuleren."
 
-#: exe/engine/idevicestore.py:272
+#: exe/engine/idevicestore.py:276
 msgid "Describe the tasks the learners should complete."
 msgstr "Beschrijf de opdracht die moet worden uitgevoerd."
 
@@ -378,8 +386,7 @@ msgstr "Beschrijving"
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: exe/webui/forumblock.py:169
-#: exe/webui/forumblock.py:186
+#: exe/webui/forumblock.py:169 exe/webui/forumblock.py:186
 msgid "Discussion Topic"
 msgstr "Discussie-onderwerp"
 
@@ -391,13 +398,11 @@ msgstr "Discussie-onderwerp:"
 msgid "Discussions and replies are allowed"
 msgstr "Nieuwe discussies en antwoorden toegelaten"
 
-#: exe/webui/element.py:224
-#: exe/webui/element.py:470
+#: exe/webui/element.py:275 exe/webui/element.py:538
 msgid "Display as:"
 msgstr "Toon als:"
 
-#: exe/webui/propertiespane.py:123
-#: exe/webui/block.py:198
+#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
 msgid "Done"
 msgstr "Klaar"
 
@@ -421,21 +426,26 @@ msgstr "FOUT Block.renderViewContent rechtstreeks aangeroepen"
 msgid "Each person posts one discussion"
 msgstr "Ieder lid ken slechts een discussie starten"
 
-#: exe/webui/editorpane.py:206
-#: exe/webui/block.py:320
-#: exe/webui/editorpage.py:198
+#: exe/webui/block.py:320 exe/webui/editorpage.py:198
+#: exe/webui/editorpane.py:216
 msgid "Edit"
 msgstr "Bewerken"
 
-#: exe/webui/editorpane.py:276
+#: exe/webui/editorpane.py:286
 msgid "Emphasis"
 msgstr "Nadruk"
 
 #: exe/engine/multichoiceidevice.py:87
-#: exe/engine/multichoiceidevice.py:132
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
+msgstr ""
+"Geef een hint op. Laat\n"
+"het veld leeg om geen hint te geven."
+
+#: exe/engine/multichoiceidevice.py:134
+#, fuzzy
+msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr ""
 "Geef een hint op. Laat\n"
 "het veld leeg om geen hint te geven."
@@ -452,18 +462,17 @@ msgstr ""
 "Geef uitleg over de activiteit waarover\n"
 "gereflecteerd moet worden."
 
-#: exe/webui/editorpane.py:126
+#: exe/webui/editorpane.py:129
 msgid "Enter instructions for completion here"
 msgstr "Geef aanwijzingen voor uitvoeren"
 
-#: exe/webui/editorpane.py:130
-#: exe/webui/editorpane.py:134
+#: exe/webui/editorpane.py:133 exe/webui/editorpane.py:137
+#: exe/webui/editorpane.py:144
 msgid "Enter the instructions for completion here"
 msgstr "Geef aanwijzingen voor uitvoeren"
 
-#: exe/webui/editorpane.py:125
-#: exe/webui/editorpane.py:129
-#: exe/webui/editorpane.py:133
+#: exe/webui/editorpane.py:128 exe/webui/editorpane.py:132
+#: exe/webui/editorpane.py:136 exe/webui/editorpane.py:143
 msgid "Enter the label here"
 msgstr "Voer hier de tekst van het label in"
 
@@ -481,14 +490,7 @@ msgstr ""
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr "Typ of kopieer de tekst van de cloze-oefening in het tekstveld. Selecteer een woord om te verbergen door erop te dubbelklikken en de knop <i>Hide/Show Word</i> aan te klikken."
 
-#: exe/xului/mainpage.py:273
-#: exe/xului/mainpage.py:292
-#, python-format
-msgid "Error loading package \"%s\": %s"
-msgstr "Fout bij laden pakket \"%s\": %s"
-
-#: exe/xului/mainpage.py:424
-#: exe/xului/mainpage.py:442
+#: exe/xului/mainpage.py:440 exe/xului/mainpage.py:458
 #, python-format
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
@@ -497,36 +499,36 @@ msgstr "Geëxporteerd naar %s"
 msgid "External Web Site"
 msgstr "Externe website"
 
-#: exe/webui/truefalseelement.py:86
-#: exe/webui/truefalseelement.py:159
+#: exe/webui/truefalseelement.py:86 exe/webui/truefalseelement.py:159
 msgid "False"
 msgstr "Fout"
 
-#: exe/engine/clozeidevice.py:70
-#: exe/engine/clozeidevice.py:98
-#: exe/engine/idevicestore.py:228
-#: exe/webui/truefalseelement.py:92
-#: exe/webui/multichoiceblock.py:105
-#: exe/webui/questionelement.py:73
+#: exe/engine/idevicestore.py:232 exe/engine/clozeidevice.py:70
+#: exe/engine/clozeidevice.py:98 exe/webui/multichoiceblock.py:105
+#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:92
+#: exe/webui/editorpane.py:207
 msgid "Feedback"
 msgstr "Feedback"
 
-#: exe/xului/mainpage.py:347
-#: exe/xului/mainpage.py:387
+#: exe/xului/mainpage.py:361 exe/xului/mainpage.py:403
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
-#: exe/engine/flashwithtextidevice.py:42
+#: exe/engine/flashmovieidevice.py:42 exe/engine/flashwithtextidevice.py:42
 msgid "Flash"
+msgstr "Flash"
+
+#: exe/engine/flashmovieidevice.py:38
+#, fuzzy
+msgid "Flash Movie"
 msgstr "Flash"
 
 #: exe/engine/flashwithtextidevice.py:38
 msgid "Flash with Text"
 msgstr "Flash met tekst"
 
-#: exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashwithtextblock.py:76
+#: exe/webui/imagewithtextblock.py:76 exe/webui/flashwithtextblock.py:76
 msgid "Float:"
 msgstr "Drijven:"
 
@@ -545,8 +547,7 @@ msgstr ""
 msgid "Force everyone to be subscribed?:"
 msgstr "Moet iedereen lid zijn?"
 
-#: exe/engine/forumidevice.py:37
-#: exe/webui/forumblock.py:167
+#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:167
 #: exe/webui/forumblock.py:184
 msgid "Forum Discussion"
 msgstr "Forumdiscussie"
@@ -567,7 +568,7 @@ msgstr "Forumtype:"
 msgid "Free Text"
 msgstr "Vrije tekst"
 
-#: exe/webui/element.py:415
+#: exe/webui/element.py:483
 msgid "Get score"
 msgstr "Bepaal de score"
 
@@ -575,19 +576,16 @@ msgstr "Bepaal de score"
 msgid "Group mode:"
 msgstr "Groepsmodus:"
 
-#: exe/webui/forumblock.py:103
-#: exe/webui/reflectionblock.py:94
+#: exe/webui/forumblock.py:103 exe/webui/reflectionblock.py:94
 msgid "Hide"
 msgstr "Verbegen"
 
-#: exe/webui/element.py:388
+#: exe/webui/element.py:447
 msgid "Hide/Show Word"
 msgstr "Toon/verberg woord"
 
-#: exe/webui/truefalseelement.py:98
-#: exe/webui/truefalseelement.py:121
-#: exe/webui/truefalseelement.py:131
-#: exe/webui/multichoiceblock.py:156
+#: exe/webui/multichoiceblock.py:156 exe/webui/truefalseelement.py:98
+#: exe/webui/truefalseelement.py:121 exe/webui/truefalseelement.py:131
 msgid "Hint"
 msgstr "Hint"
 
@@ -595,16 +593,15 @@ msgstr "Hint"
 msgid "Hint:"
 msgstr "Hint:"
 
-#: exe/engine/package.py:58
+#: exe/engine/package.py:62
 msgid "Home"
 msgstr "Start"
 
-#: exe/webui/editorpane.py:308
+#: exe/webui/editorpane.py:318
 msgid "Icons"
 msgstr "Pictogrammen"
 
-#: exe/engine/imagewithtextidevice.py:67
-#: exe/webui/editorpane.py:197
+#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:205
 msgid "Image"
 msgstr "Afbeelding"
 
@@ -624,17 +621,15 @@ msgstr "Verkeerd"
 msgid "Incorrect!"
 msgstr "Verkeerd!"
 
-#: exe/webui/common.py:198
+#: exe/webui/common.py:211
 msgid "Instructions"
 msgstr "Aanwijzingen"
 
-#: exe/engine/clozeidevice.py:58
-#: exe/engine/clozeidevice.py:93
+#: exe/engine/clozeidevice.py:58 exe/engine/clozeidevice.py:93
 msgid "Instructions For Learners"
 msgstr "Aanwijzigen voor studenten"
 
-#: exe/webui/common.py:203
-#: exe/webui/common.py:206
+#: exe/webui/common.py:216 exe/webui/common.py:219
 msgid "Instructions for completion"
 msgstr "Aanwijzingen voor invullen"
 
@@ -642,7 +637,7 @@ msgstr "Aanwijzingen voor invullen"
 msgid "Label"
 msgstr "Label"
 
-#: exe/webui/imagewithtextblock.py:77
+#: exe/webui/imagewithtextblock.py:77 exe/webui/flashmovieblock.py:77
 #: exe/webui/flashwithtextblock.py:77
 msgid "Left"
 msgstr "Links"
@@ -679,7 +674,7 @@ msgstr "Omhoog"
 msgid "Multi-Choice Question"
 msgstr "Meerkeuzevraag"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:273
 msgid "Name"
 msgstr "Naam"
 
@@ -691,8 +686,7 @@ msgstr "Nieuw iDevice"
 msgid "No"
 msgstr "Nee"
 
-#: exe/webui/galleryblock.py:173
-#: exe/webui/galleryblock.py:246
+#: exe/webui/galleryblock.py:183 exe/webui/galleryblock.py:256
 msgid "No Images Loaded"
 msgstr "Geen afbeeldingen geladen"
 
@@ -708,7 +702,7 @@ msgstr "Geen discussies, wel antwoorden toegestaan"
 msgid "No discussions, no replies"
 msgstr "Geen discussies en geen antwoorden toegestaan"
 
-#: exe/webui/editorpane.py:279
+#: exe/webui/editorpane.py:289
 msgid "No emphasis"
 msgstr "Geen andruk"
 
@@ -716,7 +710,7 @@ msgstr "Geen andruk"
 msgid "No groups"
 msgstr "Geen groepen"
 
-#: exe/webui/imagewithtextblock.py:79
+#: exe/webui/imagewithtextblock.py:79 exe/webui/flashmovieblock.py:79
 #: exe/webui/flashwithtextblock.py:79
 msgid "None"
 msgstr "Geen"
@@ -725,12 +719,11 @@ msgstr "Geen"
 msgid "OK"
 msgstr "Okee"
 
-#: exe/engine/idevicestore.py:235
-#: exe/engine/idevicestore.py:244
+#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:248
 msgid "Objectives"
 msgstr "Doelstellingen"
 
-#: exe/engine/idevicestore.py:238
+#: exe/engine/idevicestore.py:242
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -740,31 +733,28 @@ msgstr ""
 "Deze geven aan wat de student heeft bijgeleerd na het voltooien van de\n"
 "leeropdrachten."
 
-#: exe/webui/testquestionelement.py:98
-#: exe/webui/multichoiceblock.py:102
+#: exe/webui/multichoiceblock.py:102 exe/webui/testquestionelement.py:98
 msgid "Option"
 msgstr "Alternatief"
 
-#: exe/xului/outlinepane.py:237
+#: exe/xului/outlinepane.py:242
 msgid "Outline"
 msgstr "Schema"
 
-#: exe/xului/mainpage.py:243
+#: exe/xului/mainpage.py:274
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakket opgeslagen naar: %s"
 
-#: exe/webui/editorpane.py:318
-#: exe/webui/block.py:227
+#: exe/webui/block.py:227 exe/webui/editorpane.py:328
 msgid "Pedagogical Help"
 msgstr "Pedagogische hulp"
 
-#: exe/webui/editorpane.py:273
+#: exe/webui/editorpane.py:283
 msgid "Pedagogical Tip"
 msgstr "Pedagogische tip"
 
-#: exe/webui/editorpane.py:145
-#: exe/webui/editorpage.py:101
+#: exe/webui/editorpage.py:101 exe/webui/editorpane.py:152
 msgid "Please enter an idevice name."
 msgstr "Geef naam iDevice op"
 
@@ -772,12 +762,11 @@ msgstr "Geef naam iDevice op"
 msgid "Please select a correct answer for each question."
 msgstr "Selecteer een juist antwoord voor iedere vraag"
 
-#: exe/engine/idevicestore.py:248
-#: exe/engine/idevicestore.py:258
+#: exe/engine/idevicestore.py:252 exe/engine/idevicestore.py:262
 msgid "Preknowledge"
 msgstr "Voorkennis"
 
-#: exe/engine/idevicestore.py:251
+#: exe/engine/idevicestore.py:255
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -791,7 +780,7 @@ msgstr ""
 "<li>        De student moet vlot Engels kunnen lezen, schrijven en spreken </li>\n"
 "<li>        De student moet een elektrisch schema kunnen tekenen en lezen </li></ul>\n"
 
-#: exe/webui/editorpane.py:204
+#: exe/webui/editorpane.py:214
 msgid "Preview"
 msgstr "Voorbeeld"
 
@@ -807,7 +796,7 @@ msgstr "Titel project:"
 msgid "Provide a brief description of the file"
 msgstr "Geef een korte omschrijving van het bestand"
 
-#: exe/engine/idevicestore.py:220
+#: exe/engine/idevicestore.py:224
 msgid "Provide details of the reading materials learners should  read."
 msgstr "Geef uitleg over de tekst(en) die gelezen moet(en) worden."
 
@@ -819,7 +808,7 @@ msgstr ""
 "Geef feedback bij de vraag. Dit kan bijv.\n"
 "een samenvatting zijn of de belangrijkste onderdelen."
 
-#: exe/engine/idevicestore.py:225
+#: exe/engine/idevicestore.py:229
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
@@ -833,7 +822,7 @@ msgstr ""
 msgid "Provide instructions to learners on what they must do to complete the cloze exercise."
 msgstr "Leg uit hoe deze cloze-oefening moet worden gemaakt."
 
-#: exe/engine/idevicestore.py:212
+#: exe/engine/idevicestore.py:216
 msgid ""
 "Provide learners with structure to their reading activity. This helps put\n"
 "the activity in context for the learner. It is also important to correctly\n"
@@ -848,8 +837,7 @@ msgstr ""
 "informatie te geven over de belangrijkste punten uit de tekst krijgt de activiteit\n"
 "vaak extra waarde."
 
-#: exe/webui/editorpane.py:269
-#: exe/webui/block.py:241
+#: exe/webui/block.py:241 exe/webui/editorpane.py:279
 msgid "Purpose"
 msgstr "Doelstelling"
 
@@ -857,27 +845,24 @@ msgstr "Doelstelling"
 msgid "Put instructions for learners here"
 msgstr "Geef aanwijzingen voor de studenten"
 
+#: exe/webui/questionelement.py:70 exe/webui/questionelement.py:108
 #: exe/webui/truefalseelement.py:78
-#: exe/webui/questionelement.py:70
-#: exe/webui/questionelement.py:108
 msgid "Question"
 msgstr "Vraag"
 
-#: exe/webui/testquestionelement.py:81
-#: exe/webui/multichoiceblock.py:89
+#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Vraag:"
 
-#: exe/engine/clozeidevice.py:61
-#: exe/engine/clozeidevice.py:95
+#: exe/engine/clozeidevice.py:61 exe/engine/clozeidevice.py:95
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Lees de alinea hieronder en vul de ontbrekende woorden in"
 
-#: exe/engine/idevicestore.py:209
+#: exe/engine/idevicestore.py:213
 msgid "Reading Activity"
 msgstr "Leesactiviteit"
 
-#: exe/engine/idevicestore.py:224
+#: exe/engine/idevicestore.py:228
 msgid "Reference"
 msgstr "Referentie"
 
@@ -909,7 +894,7 @@ msgstr "Reflectieve vraag:"
 msgid "Response:"
 msgstr "Antwoord:"
 
-#: exe/webui/imagewithtextblock.py:78
+#: exe/webui/imagewithtextblock.py:78 exe/webui/flashmovieblock.py:78
 #: exe/webui/flashwithtextblock.py:78
 msgid "Right"
 msgstr "Rechts"
@@ -926,8 +911,7 @@ msgstr "Experimentele toets SCORM"
 msgid "SUBMIT ANSWERS"
 msgstr "VERZEND ANTWOORDEN"
 
-#: exe/webui/editorpage.py:178
-#: exe/webui/editorpage.py:181
+#: exe/webui/editorpage.py:178 exe/webui/editorpage.py:181
 msgid "Save"
 msgstr "Opslaan"
 
@@ -935,7 +919,7 @@ msgstr "Opslaan"
 msgid "Save as"
 msgstr "Opslaan als"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:56
 msgid "Section"
 msgstr "Sectie"
 
@@ -947,11 +931,16 @@ msgstr "Kies de taal"
 msgid "Select a file"
 msgstr "Kies een bestand"
 
-#: exe/webui/element.py:468
+#: exe/webui/element.py:536
 msgid "Select a flash file"
 msgstr "Kies een Flash-bestand"
 
-#: exe/webui/element.py:222
+#: exe/webui/element.py:611
+#, fuzzy
+msgid "Select a flash movie"
+msgstr "Kies een Flash-bestand"
+
+#: exe/webui/element.py:273
 msgid "Select an image"
 msgstr "Kies een afbeelding"
 
@@ -967,25 +956,23 @@ msgstr "Gescheiden groepen"
 msgid "Show"
 msgstr "Tonen"
 
-#: exe/webui/element.py:427
+#: exe/webui/element.py:495
 msgid "Show/Clear Answers"
 msgstr "Toon/wis antwoorden"
 
-#: exe/webui/element.py:420
+#: exe/webui/element.py:488
 msgid "Show/Hide Feedback"
 msgstr "Toon/verberg feedback"
 
-#: exe/webui/editorpane.py:280
+#: exe/webui/editorpane.py:290
 msgid "Some emphasis"
 msgstr "Lichte nadruk"
 
-#: exe/xului/mainpage.py:272
-#: exe/xului/mainpage.py:291
+#: exe/xului/mainpage.py:302
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
-#: exe/xului/mainpage.py:270
-#: exe/xului/mainpage.py:289
+#: exe/xului/mainpage.py:300
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1002,12 +989,11 @@ msgstr "Standaardforum voor algemeen gebruik"
 msgid "Story:"
 msgstr "Verhaal:"
 
-#: exe/webui/editorpane.py:281
+#: exe/webui/editorpane.py:291
 msgid "Strong emphasis"
 msgstr "Sterke nadruk"
 
-#: exe/webui/forumblock.py:170
-#: exe/webui/forumblock.py:187
+#: exe/webui/forumblock.py:170 exe/webui/forumblock.py:187
 msgid "Subject"
 msgstr "Onderwerp"
 
@@ -1027,16 +1013,16 @@ msgstr "Neem een tekstfragment en maak gaten door een woord tussen underscores (
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
+#: exe/engine/flashmovieidevice.py:46 exe/engine/flashwithtextidevice.py:46
 #: exe/engine/imagewithtextidevice.py:72
-#: exe/engine/flashwithtextidevice.py:46
 msgid "Text"
 msgstr "Tekst"
 
-#: exe/webui/editorpane.py:195
+#: exe/webui/editorpane.py:203
 msgid "Text Box"
 msgstr "Tekstveld"
 
-#: exe/webui/editorpane.py:193
+#: exe/webui/editorpane.py:201
 msgid "Text Line"
 msgstr "Tekstregel"
 
@@ -1060,11 +1046,11 @@ msgstr ""
 "Dit samen schept het kader waarin de leeractiviteiten worden gemaakt\n"
 "en aangeboden."
 
-#: exe/webui/editorpane.py:63
+#: exe/webui/editorpane.py:65
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "In het dialoogveld doelstelling beschrijft u voor andere gebruikers wat de bedoeling van de iDevice is."
 
-#: exe/engine/idevicestore.py:229
+#: exe/engine/idevicestore.py:233
 msgid ""
 "The use of this element is flexible.  Use it to provide a summary of the\n"
 "points covered in the reading, or as a starting point for further analysis of\n"
@@ -1084,22 +1070,17 @@ msgstr "Met dit iDevice toont u een collectie samenhorende afbeeldingen. Denk bi
 msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
 msgstr "Dit iDevice dient om studenten tekstpassages te laten leren en om hen inzicht te geven in de manier waarop woorden gebruikt worden in een bepaalde taalkring of voor een bepaald onderwerp"
 
-#: exe/engine/freetextidevice.py:45
-#: exe/engine/freetextidevice.py:66
+#: exe/engine/freetextidevice.py:45 exe/engine/freetextidevice.py:66
 msgid "This is a free text field general learning content can be entered."
 msgstr "Vrij tekstveld om algemene leerinhoud in te voeren"
 
-#: exe/webui/editorpane.py:62
+#: exe/webui/editorpane.py:64
 msgid "This is an optional field."
 msgstr "Dit veld is facultatief."
 
 #: exe/webui/block.py:201
-msgid ""
-"This will delete this iDevice.\\n"
-"Do you really want to do this?"
-msgstr ""
-"iDevice wordt verwijderd.\\n"
-"Ben je zeker?"
+msgid "This will delete this iDevice.\\nDo you really want to do this?"
+msgstr "iDevice wordt verwijderd.\\nBen je zeker?"
 
 #: exe/webui/block.py:245
 msgid "Tip:"
@@ -1113,12 +1094,11 @@ msgstr ""
 "Om het juiste antwoord aan te duiden:\n"
 "klik het keuzerondje naast het alternatief aan."
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:56
 msgid "Topic"
 msgstr ""
 
-#: exe/webui/truefalseelement.py:84
-#: exe/webui/truefalseelement.py:157
+#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:157
 msgid "True"
 msgstr "Waar"
 
@@ -1177,12 +1157,11 @@ msgstr ""
 "\"Juist antwoord\" bij het antwoord dat als zodanig is aangeduid; of \n"
 "\"Fout antwoord\" bij de andere alternatieven."
 
-#: exe/engine/idevicestore.py:245
+#: exe/engine/idevicestore.py:249
 msgid "Type the learning objectives for this resource."
 msgstr "Geef de leerdoelstellingen voor deze bron."
 
-#: exe/engine/multichoiceidevice.py:90
-#: exe/engine/truefalseidevice.py:67
+#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
 msgid "Type the question stem."
 msgstr "Typ de vraag in."
 
@@ -1194,31 +1173,23 @@ msgstr "Geef de hint voor deze vraag."
 msgid "Unable to connect to "
 msgstr "Kan niet verbinden met"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:56
 msgid "Unit"
 msgstr ""
 
-#: exe/engine/multichoiceidevice.py:58
-#: exe/engine/galleryidevice.py:245
-#: exe/engine/casestudyidevice.py:57
-#: exe/engine/externalurlidevice.py:38
-#: exe/engine/clozeidevice.py:45
-#: exe/engine/imagewithtextidevice.py:38
-#: exe/engine/quiztestidevice.py:82
-#: exe/engine/forumidevice.py:38
-#: exe/engine/truefalseidevice.py:59
-#: exe/engine/reflectionidevice.py:44
-#: exe/engine/idevicestore.py:211
-#: exe/engine/idevicestore.py:237
-#: exe/engine/idevicestore.py:265
-#: exe/engine/flashwithtextidevice.py:39
-#: exe/engine/wikipediaidevice.py:50
-#: exe/engine/freetextidevice.py:38
-#: exe/engine/attachmentidevice.py:41
+#: exe/engine/wikipediaidevice.py:50 exe/engine/flashmovieidevice.py:39
+#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
+#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:82
+#: exe/engine/forumidevice.py:38 exe/engine/flashwithtextidevice.py:39
+#: exe/engine/imagewithtextidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/truefalseidevice.py:59 exe/engine/externalurlidevice.py:38
+#: exe/engine/idevicestore.py:215 exe/engine/idevicestore.py:241
+#: exe/engine/idevicestore.py:269 exe/engine/clozeidevice.py:45
+#: exe/engine/attachmentidevice.py:41 exe/engine/galleryidevice.py:245
 msgid "University of Auckland"
 msgstr "Universiteit van Auckland"
 
-#: exe/webui/editorpane.py:66
+#: exe/webui/editorpane.py:68
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Gebruik Nadruk om het belang te beklemtonen van de informatie die het iDevice bevat."
 
@@ -1234,7 +1205,7 @@ msgstr "Zichtbare groepen"
 msgid "Visible to students:"
 msgstr "Zichtbaar voor studenten:"
 
-#: exe/engine/idevicestore.py:219
+#: exe/engine/idevicestore.py:223
 msgid "What to read"
 msgstr "Wat gelezen moet worden"
 
@@ -1264,7 +1235,7 @@ msgstr ""
 "<li> Afleiders moeten fout zijn maar wel aannemelijk </li>\n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:221
+#: exe/engine/idevicestore.py:225
 msgid "Why it should be read"
 msgstr "Waarom het gelezen moet worden"
 
@@ -1272,8 +1243,7 @@ msgstr "Waarom het gelezen moet worden"
 msgid "Wikibooks Article"
 msgstr "Wikibooks-artikel"
 
-#: exe/engine/wikipediaidevice.py:49
-#: exe/webui/wikipediablock.py:70
+#: exe/engine/wikipediaidevice.py:49 exe/webui/wikipediablock.py:70
 msgid "Wikipedia Article"
 msgstr "Wikipedia-artikel"
 
@@ -1285,41 +1255,34 @@ msgstr "Ja, voor altijd"
 msgid "Yes, initially"
 msgstr "Ja, in het begin"
 
-#: exe/webui/editorpane.py:58
+#: exe/webui/editorpane.py:60
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Uw iDevice verschijnt in het iDevice-paneel met deze benaming. Dit veld is verplicht. Als u het niet invult, wordt gevraagd om een label op te geven."
 
-#: exe/webui/element.py:238
-#: exe/webui/element.py:482
+#: exe/webui/element.py:289 exe/webui/element.py:550
 msgid "blank for original size"
 msgstr "leeg voor originele afmetingen"
 
-#: exe/export/imsexport.py:176
-#: exe/export/scormexport.py:208
+#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:53
+#: exe/webui/editorpage.py:160 exe/webui/common.py:53
 #: exe/webui/preferencespage.py:72
-#: exe/webui/editorpage.py:160
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML-editor"
 
-#: exe/engine/wikipediaidevice.py:59
-#: exe/engine/wikipediaidevice.py:176
+#: exe/engine/wikipediaidevice.py:59 exe/engine/wikipediaidevice.py:176
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:95
-#: exe/engine/attachmentidevice.py:118
+#: exe/engine/attachmentidevice.py:95 exe/engine/attachmentidevice.py:118
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s heeft geen inhoud"
 
-#: exe/engine/package.py:204
-#: exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:231 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 msgid "iDevice Editor"
 msgstr "iDevice-editor"
 
@@ -1339,202 +1302,165 @@ msgstr "label"
 msgid "title"
 msgstr "titel"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: id="addChildKey" keycode="VK_INSERT">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key id="addChildKey" keycode="VK_INSERT">
 msgid "VK_INSERT"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: id="delNodeKey" keycode="VK_DELETE">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key id="delNodeKey" keycode="VK_DELETE">
 msgid "VK_DELETE"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="renNodeKey" key="R">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="renNodeKey"
+#: key="R">
 msgid "R"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="promoteKey" keycode="VK_LEFT">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="promoteKey"
+#: keycode="VK_LEFT">
 msgid "VK_LEFT"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="demoteKey" keycode="VK_RIGHT">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="demoteKey"
+#: keycode="VK_RIGHT">
 msgid "VK_RIGHT"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="upKey" key="U">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="upKey"
+#: key="U">
 msgid "U"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="downKey" key="D">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="downKey"
+#: key="D">
 msgid "D"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="file-new-key" key="N" oncommand="fileNew()">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="file-new-key"
+#: key="N" oncommand="fileNew()">
 msgid "N"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="file-save-key" key="S" oncommand="fileSave()">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control"
+#: id="file-save-key" key="S" oncommand="fileSave()">
 msgid "S"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<key
-#: modifiers="control" id="file-open-key" key="O" oncommand="fileOpen()">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
+#: exe/xului/templates/mainpage.xul:<key modifiers="control"
+#: id="file-open-key" key="O" oncommand="fileOpen()">
 msgid "O"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="f" id="file-menu" label="File">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"Bestand\" accesskey=\"b\""
-
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="t" id="tools-menu" label="Tools">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Extra\" accesskey=\"e\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="n" oncommand="fileNew()" key="file-new-key" label="New">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"Nieuw\" accesskey=\"n\""
-
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="s" id="styles-menu" label="Styles">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Stijlen\" accesskey=\"s\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="o" oncommand="fileOpen()" key="file-open-key" label="Open">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"Openen\" accesskey=\"o\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="toolsPreferences()" label="Preferences">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "Preferences"
-msgstr "Voorkeuren"
-
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="r" oncommand="window.location = window.location" id="refresh-menu" label="Refresh">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr "label=\"Vernieuwen\" accesskey=\"v\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="s" oncommand="fileSave()" key="file-save-key" label="Save">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"Opslaan\" accesskey=\"s\""
-
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="h" id="help-menu" label="Help">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Help\" accesskey=\"h\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="a" oncommand="fileSaveAs()" label="Save As...">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"Opslaan als...\" accesskey=\"l\""
-
-#: exe/xului/templates/mainpage.xul:<label
-#: value="debugInfo">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<label value="debugInfo">
 msgid "debugInfo"
 msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menu
-#: accesskey="e" id="export-menu" label="Export">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-msgid "label=\"Export\" accesskey=\"e\""
-msgstr "label=\"Exporteren\" accesskey=\"e\""
+#: exe/xului/templates/mainpage.xul:<menu accesskey="f" id="file-menu"
+#: label="File">
+msgid "label=\"File\" accesskey=\"f\""
+msgstr "label=\"Bestand\" accesskey=\"b\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="a" oncommand="aboutPage()" label="About">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"About\" accesskey=\"a\""
-msgstr "label=\"Info\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menu accesskey="t" id="tools-menu"
+#: label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Extra\" accesskey=\"e\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="s" oncommand="exportPackage('scorm')" label="SCORM 1.2">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="n"
+#: oncommand="fileNew()" key="file-new-key" label="New">
+msgid "label=\"New\" accesskey=\"n\""
+msgstr "label=\"Nieuw\" accesskey=\"n\""
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: key="addChildKey" label="Add Page">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
+#: label="Add Page">
 msgid "Add Page"
 msgstr "Nieuwe pagina"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="i" oncommand="exportPackage('ims')" label="IMS Content Package">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menu accesskey="s" id="styles-menu"
+#: label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Stijlen\" accesskey=\"s\""
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: id="btnRename" key="renNodeKey" label="Rename">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="o"
+#: oncommand="fileOpen()" key="file-open-key" label="Open">
+msgid "label=\"Open\" accesskey=\"o\""
+msgstr "label=\"Openen\" accesskey=\"o\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
+#: label="Preferences">
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
+#: key="renNodeKey" label="Rename">
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: exe/xului/templates/mainpage.xul:<label
-#: flex="1" value="outlinePane">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
 msgid "outlinePane"
 msgstr "overzichtspaneel"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="w" oncommand="exportPackage('webSite')" key="file-export-website-key" label="Web Site">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"Web Site\" accesskey=\"w\""
-msgstr "label=\"Website\" accesskey=\"w\""
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: label="Refresh">
+msgid "label=\"Refresh\" accesskey=\"r\""
+msgstr "label=\"Vernieuwen\" accesskey=\"v\""
 
-#: exe/xului/templates/mainpage.xul:<label
-#: flex="1" value="iDevicePane">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
+#: oncommand="fileSave()" key="file-save-key" label="Save">
+msgid "label=\"Save\" accesskey=\"s\""
+msgstr "label=\"Opslaan\" accesskey=\"s\""
+
+#: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
 msgid "iDevicePane"
 msgstr "iDevice-paneel"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: accesskey="p" oncommand="exportPackage('singlePage')" label="Single Page">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Webpagina\" accesskey=\"p\""
+#: exe/xului/templates/mainpage.xul:<menu accesskey="h" id="help-menu"
+#: label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Help\" accesskey=\"h\""
 
-#: exe/xului/templates/mainpage.xul:<tab
-#: label="Authoring">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
+#: oncommand="fileSaveAs()" label="Save As...">
+msgid "label=\"Save As...\" accesskey=\"a\""
+msgstr "label=\"Opslaan als...\" accesskey=\"l\""
+
+#: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="export-menu"
+#: label="Export">
+msgid "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"Exporteren\" accesskey=\"e\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
+#: oncommand="aboutPage()" label="About">
+msgid "label=\"About\" accesskey=\"a\""
+msgstr "label=\"Info\" accesskey=\"i\""
+
+#: exe/xului/templates/mainpage.xul:<tab label="Authoring">
 msgid "Authoring"
 msgstr "Opstellen"
 
-#: exe/xului/templates/mainpage.xul:<tab
-#: label="Properties">
-#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
+#: oncommand="exportPackage('scorm')" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+
+#: exe/xului/templates/mainpage.xul:<tab label="Properties">
 msgid "Properties"
 msgstr "Eigenschappen"
 
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
+#: oncommand="exportPackage('ims')" label="IMS Content Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
+#: oncommand="exportPackage('webSite')" key="file-export-website-key"
+#: label="Web Site">
+msgid "label=\"Web Site\" accesskey=\"w\""
+msgstr "label=\"Website\" accesskey=\"w\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="p"
+#: oncommand="exportPackage('singlePage')" label="Single Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Webpagina\" accesskey=\"p\""
+
+#~ msgid "Error loading package \"%s\": %s"
+#~ msgstr "Fout bij laden pakket \"%s\": %s"
