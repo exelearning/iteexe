@@ -128,11 +128,11 @@ for the other alternatives.""")
         """
         Called to upgrade from 0.4 release
         """
-        self.hint            = ""
-        self.hintInstruc     = x_(u"""Enter a hint here. If you
-do not want to provide a hint, leave this field blank.""")
-        self.icon            = "multichoice"
-
+        self.hint  = ""
+        self.icon  = "multichoice"
+        self.__dict__['hintInstruc'] = \
+                     x_(u"Enter a hint here. If you do not want to provide a "
+                        u"hint, leave this field blank.")
 
     def upgradeToVersion2(self):
         """
