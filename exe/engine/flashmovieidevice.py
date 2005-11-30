@@ -54,7 +54,7 @@ class FlashMovieIdevice(Idevice):
         Return the resource files used by this iDevice
         """
         return Idevice.getResources(self) + self.flash.getResources() \
-               + [videoContainer.swf]
+               + ['videoContainer.swf']
        
 
     def delete(self):
