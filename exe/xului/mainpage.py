@@ -193,7 +193,7 @@ class MainPage(RenderableLivePage):
         if self.parent.stopping:
             self.parent.stopping.cancel()
             self.parent.stopping = None
-        self.client = self.clientFactory.newClientHandle(self, 60, 9999)
+        self.client = self.clientFactory.newClientHandle(self, 0.1, 9999)
         ctx.remember(self.client)
         # Sign up to know the connection is closed
         d = self.client.notifyOnClose()
