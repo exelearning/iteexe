@@ -40,7 +40,7 @@ class Node(Persistable):
     def __init__(self, package, parent=None, title=""):
         if parent:
             parent.children.append(self)
-        self._package = package
+        self._package  = package
         self._id      = package._regNewNode(self)
         self.parent   = parent
         self._title   = title

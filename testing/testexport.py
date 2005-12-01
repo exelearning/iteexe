@@ -38,7 +38,8 @@ class TestWebsiteExport(unittest.TestCase):
         # Load a package
         package = Package.load('testPackage.elp')
         # Do the export
-        exporter = WebsiteExport('../exe/webui/style/default', outdir,
+        exporter = WebsiteExport('../exe/webui/style/default', 
+                                 outdir,
                                  '../exe/webui/images', 
                                  '../exe/webui/scripts',
                                  '../exe/webui/templates')
