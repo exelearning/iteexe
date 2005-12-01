@@ -32,6 +32,7 @@ from exe.webui.editorelement   import FeedbackEditorElement
 from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.path           import Path
+from exe.engine.translate      import lateTranslate
 
 
 log = logging.getLogger(__name__)
@@ -46,45 +47,56 @@ class EditorPane(object):
         """
         Initialize
         """
-        self.ideviceStore    = webServer.application.ideviceStore
-        self.webDir          = webServer.application.config.webDir
-        self.styles          = webServer.application.config.styles
-        self.elements        = []
-        self.idevice         = GenericIdevice("", "", "", "", "")
-        self.idevice.id      = self.ideviceStore.getNewIdeviceId()
-        self.originalIdevice = GenericIdevice("", "", "", "", "")
-        self.purpose         = ""
-        self.tip             = ""
-        self.message         = ""
-        self.nameInstruc     = \
-            _(u"Your new iDevice will appear in the iDevice "
+        self.ideviceStore     = webServer.application.ideviceStore
+        self.webDir           = webServer.application.config.webDir
+        self.styles           = webServer.application.config.styles
+        self.elements         = []
+        self.idevice          = GenericIdevice("", "", "", "", "")
+        self.idevice.id       = self.ideviceStore.getNewIdeviceId()
+        self.originalIdevice  = GenericIdevice("", "", "", "", "")
+        self.purpose          = ""
+        self.tip              = ""
+        self.message          = ""
+        self._nameInstruc     = \
+           x_(u"Your new iDevice will appear in the iDevice "
               u"pane with this title. This is a compulsory field "
               u"and you will be prompted to enter a label if you try "
               u"to submit your idevice without one.")
-        self.authorInstruc   = _(u"This is an optional field.")
-        self.purposeInstruc  = _(u"The purpose dialogue allows you to describe "
-                                 u"your intended purpose of the device to other"
+        self._authorInstruc   = x_(u"This is an optional field.")
+        self._purposeInstruc  = x_(u"The purpose dialogue allows you to describe"
+                                 u" your intended purpose of the device to other"
                                  u" potential users.")
-        self.emphasisInstruc = _(u"Use Emphasis to distinguish the importance "
+        self._emphasisInstruc = x_(u"Use Emphasis to distinguish the importance "
                                  u" of the information being presented in the "
                                  u"iDevice.")
-        self.tipInstruc      = _(u"A pedagogical tip allows you to describe "
+        self._tipInstruc      = x_(u"A pedagogical tip allows you to describe "
                                  u"your intended use and the pedagogy behind "
                                  u"the devices development.")
-        self.lineInstruc     = _(u"Add a single text line to an iDevice. "
+        self._lineInstruc     = x_(u"Add a single text line to an iDevice. "
                                  u"Useful if you want the ability to place a "
                                  u"label within the device.")
-        self.textBoxInstruc  = _(u"Add a text entry box to an iDevice. "
+        self._textBoxInstruc  = x_(u"Add a text entry box to an iDevice. "
                                  u"Used for entering description textual "
                                  u"content.")
-        self.imageInstruc    = _(u"Add an image to your iDevice. Enables "
+        self._imageInstruc    = x_(u"Add an image to your iDevice. Enables "
                                  u"the selection of an image from your stored "
                                  u"picture files.")
-        self.feedbackInstruc    = _(u"Add an interactive feedback to your iDevice. ")
+        self._feedbackInstruc = x_(u"Add interactive feedback to your iDevice.")
 
-        self.style           = "default"
-  
-
+        self.style            = "default"
+   
+    # Properties
+    
+    nameInstruc     = lateTranslate('nameInstruc')    
+    authorInstruc   = lateTranslate('authorInstruc')
+    purposeInstruc  = lateTranslate('purposeInstruc')
+    emphasisInstruc = lateTranslate('emphasisInstruc')
+    tipInstruc      = lateTranslate('tipInstruc')
+    lineInstruc     = lateTranslate('lineInstruc')
+    textBoxInstruc  = lateTranslate('textBoxInstruc')
+    imageInstruc    = lateTranslate('imageInstruc')
+    feedbackInstruc = lateTranslate('feedbackInstruc')
+    
     def setIdevice(self, idevice):
         """
         Sets the iDevice to edit
