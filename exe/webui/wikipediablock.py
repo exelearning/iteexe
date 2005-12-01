@@ -25,6 +25,7 @@ import logging
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement
+from exe.engine.idevice   import Idevice
 
 log = logging.getLogger(__name__)
 
@@ -49,6 +50,9 @@ class WikipediaBlock(Block):
         apply to this block
         """
         log.debug("process " + repr(request.args))
+
+        if u"emphasis"+self.id in request.args:
+            self.idevice.emphasis = int(request.args["emphasis"+self.id][0])
 
         if u"loadWikipedia"+self.id in request.args:
             self.idevice.site = request.args["site"][0]
@@ -86,6 +90,13 @@ class WikipediaBlock(Block):
         html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
         html += u"<br/>\n"
         html += self.articleElement.renderEdit()
+        emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
+                          (_(u"Some emphasis"),   Idevice.SomeEmphasis),
+                          (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
+        html += common.select("emphasis", emphasisValues,
+                              self.id,
+                              self.idevice.emphasis)
+        html += u"<br/>\n"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -99,6 +110,14 @@ class WikipediaBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        if self.idevice.emphasis != Idevice.NoEmphasis:
+            if self.idevice.icon:
+                html += u'<img alt="idevice icon" class="iDevice_icon" '
+                html += u" src=\"/style/"+style
+                html += "/icon_"+self.idevice.icon+".gif\"/>\n"
+            html += u"<span class=\"iDeviceTitle\">"
+            html += self.idevice.title
+            html += u"</span>\n"
         html += self.articleElement.renderPreview()
         html += self.renderViewButtons()
         html += u"</div>\n"
@@ -114,6 +133,13 @@ class WikipediaBlock(Block):
         content = re.sub(r'src="/.*?/resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        if self.idevice.emphasis != Idevice.NoEmphasis:
+            if self.idevice.icon:
+                html += u'<img alt="iDevice icon" class="iDevice_icon" '
+                html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
+            html += u"<span class=\"iDeviceTitle\">"
+            html += self.idevice.title
+            html += u"</span>\n"
         html += content
         html += u"</div>\n"
         return html

@@ -241,7 +241,7 @@ def select(action, options, object_="", selection=None):
     html += u'>\n'
 
     for option, value in options:
-        html += u' <option value="'+value+'" '
+        html += u' <option value="'+unicode(value)+'" '
         if value == selection:
             html += u'selected="selected" '
         html += u'>'

@@ -57,6 +57,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.article.idevice = self
         self.images      = {}
         self.site        = defaultSite
+        self.icon        = u"inter"
 
 
     def getResources(self):
