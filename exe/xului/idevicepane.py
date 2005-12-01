@@ -70,24 +70,15 @@ class IdevicePane(Renderable):
         self.prototypes[idevice.id] = idevice
         # Want the non-quoted version of the idevice title
         # Translating an empty string is bad...
-        self.parent.client.call('XHAddIdeviceListItem',
-                                idevice.id, 
-                                idevice.rawTitle)
+        if self.parent.client:
+            self.parent.client.call('XHAddIdeviceListItem',
+                                    idevice.id, idevice.rawTitle)
 
         
     def render(self, ctx, data):
         """
         Returns an html string for viewing this pane
         """
-        # Create a scecial server side func that the 
-        # Idevice editor js can call
-        #addHandler = handler(self.handleAddIdevice,
-        #                     identifier='outlinePane.handleAddIdevice')
-        # The below call stores the handler so we can call it
-        # as a server 
-        #addHandler(ctx, data) 
-
-        # Now do the rendering
         log.debug("Render")
 
         html  = u"<!-- IDevice Pane Start -->\n"

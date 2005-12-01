@@ -53,6 +53,7 @@ class MainPage(RenderableLivePage):
     
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
+    client = None
 
     def __init__(self, parent, package):
         """
@@ -85,16 +86,11 @@ class MainPage(RenderableLivePage):
         navigating away from the page.
         We use to save changes to the package to a temp file
         """
-        # TODO: Can probably send jscript to client to popup save changes dialog
-        # and tell it to navigate back to the package
         if self.package.isChanged:
             self.package.save(self.config.configDir/'unsavedWork.elp', True)
         if not self._changingPages:
-            # Browser has been closed (we are not navigating to a new package)
-            #DJM!!!   self.stopping = reactor.callLater(2, reactor.stop)
-           # pass
-            self.parent.stopping = reactor.callLater(2, reactor.stop)
-
+            self.parent.stopping = reactor.callLater(20, reactor.stop)
+        self.client = None
 
     def getChild(self, name, request):
         """
@@ -197,14 +193,14 @@ class MainPage(RenderableLivePage):
         if self.parent.stopping:
             self.parent.stopping.cancel()
             self.parent.stopping = None
-        client = self.clientFactory.newClientHandle(self, 60, 9999)
-        ctx.remember(client)
+        self.client = self.clientFactory.newClientHandle(self, 60, 9999)
+        ctx.remember(self.client)
         # Sign up to know the connection is closed
-        d = client.notifyOnClose()
-        d.addCallback(self.onClose,[client.closeNotifications])
-        d.addErrback(self.onClose,[client.closeNotifications])
+        d = self.client.notifyOnClose()
+        d.addCallback(self.onClose,[self.client.closeNotifications])
+        d.addErrback(self.onClose,[self.client.closeNotifications])
         # Render the js
-        handleId = "'", client.handleId, "'"
+        handleId = "'", self.client.handleId, "'"
         self._changingPages = False # Reset the status
         return [
             tags.script(language="JavaScript")[

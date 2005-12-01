@@ -37,8 +37,8 @@ except ImportError, error:
         from exe.application import Application
     else:
         import traceback
-        traceback.print_last()
-        raise error
+        traceback.print_exc()
+        sys.exit(1)
 
 def main():
     application = Application()
