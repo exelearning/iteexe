@@ -435,6 +435,10 @@ class MainPage(RenderableLivePage):
                 os.startfile(filename)
             except UnicodeEncodeError:
                 os.startfile(filename.encode(Path.fileSystemEncoding))
+        elif sys.platform[:6] == "darwin":
+            import webbrowser
+            filename /= 'index.html'
+            webbrowser.open('file://'+filename)
         else:
             filename /= 'index.html'
             log.debug(u"firefox file://"+filename+"&")

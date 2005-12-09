@@ -46,7 +46,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
 # Add all the webui dirs
 dataFiles('exe/webui', '../Resources/exe', 
           ['style', 'css', 'docs', 'images', 'scripts',
-           'linux-profile', 'firefox'])
+           'linux-profile', 'firefox', 'templates'])
 
 # Add in the 
 dataFiles('exe', '../Resources/exe', ['locale'])

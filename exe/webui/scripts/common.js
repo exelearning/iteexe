@@ -179,7 +179,7 @@ function addFlashMovie(blockId) {
 
 
 // Called by the user to provide a file name to add to the package
-function addFile(blockId, filter) {
+function addFile(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
