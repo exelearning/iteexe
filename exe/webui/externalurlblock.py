@@ -44,7 +44,8 @@ class ExternalUrlBlock(Block):
         Block.process(self, request)
         if "url"+self.id in request.args:
             self.idevice.url = request.args["url"+self.id][0]
-            if (not self.idevice.url.startswith("http://") and 
+            if (self.idevice.url and 
+                not self.idevice.url.startswith("http://") and 
                 not self.idevice.url.startswith("https://")):
                 self.idevice.url = "http://" + self.idevice.url
 
@@ -58,10 +59,10 @@ class ExternalUrlBlock(Block):
         html  = u"<div>\n"
         html += _(u"<strong>url:</strong> ")
         html += common.textInput("url"+self.id, self.idevice.url) 
-        heightArr = [['small', '200'],
-                    ['medium', '300'],
-                    ['large', '500'],
-                    ['super-size', '800']]
+        heightArr = [['small',      '200'],
+                     ['medium',     '300'],
+                     ['large',      '500'],
+                     ['super-size', '800']]
         html += _(u"<strong>Frame Height:</strong> ")
         html += common.select("height"+self.id, heightArr, "", 
                               self.idevice.height)
@@ -75,9 +76,11 @@ class ExternalUrlBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html = u"<iframe src=\""+self.idevice.url+"\"\n"
-        html += u"width=\"100%\""
-        html += u" height=\""+self.idevice.height+"px\"></iframe>\n" 
+        html = ""
+        if self.idevice.url:
+            html += u"<iframe src=\""+self.idevice.url+"\"\n"
+            html += u"width=\"100%\""
+            html += u" height=\""+self.idevice.height+"px\"></iframe>\n" 
         return html
 
 

@@ -48,7 +48,7 @@ class TrueFalseIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self):
         """
@@ -66,7 +66,7 @@ responses."""), u"", u"question")
         self.questions        = []
         self._questionInstruc = x_(u"Type the question stem.")
         self._keyInstruc      = ""
-        self.feedbackInstruc  = x_(u"""Type in the feedback that you want the 
+        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
 student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
@@ -75,9 +75,10 @@ this box, eXe will automatically provide default feedback as follows:
         
 
     # Properties
-    hintInstruc = lateTranslate('hintInstruc')
+    hintInstruc     = lateTranslate('hintInstruc')
     questionInstruc = lateTranslate('questionInstruc')
-    keyInstruc = lateTranslate('keyInstruc')
+    keyInstruc      = lateTranslate('keyInstruc')
+    feedbackInstruc = lateTranslate('feedbackInstruc')
 
 
     def getResources(self):
@@ -138,5 +139,15 @@ this box, eXe will automatically provide default feedback as follows:
         self._hintInstruc = self.__dict__['hintInstruc']
         self._questionInstruc = self.__dict__['questionInstruc']
         self._keyInstruc = self.__dict__['keyInstruc']
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades exe to v0.11
+        """
+        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
+student to see when selecting the particular question. If you don't complete
+this box, eXe will automatically provide default feedback as follows: 
+"Correct answer" as indicated by the selection for the correct answer; or 
+"Wrong answer" for the other alternatives.""")
     
 # ===========================================================================

@@ -1,3 +1,594 @@
+2005-12-08 02:02  jenny
+
+	* branches/0.11/exe/locale/exe_zh.po,
+	  branches/0.11/exe/locale/zh/LC_MESSAGES/exe.mo: updated Chinese po
+	  and mo files.
+
+2005-12-08 01:13  djm
+
+	* branches/0.11/exe/engine/wikipediaidevice.py: added fdl.html to
+	  the Wikipedia idevice resources
+
+2005-12-08 00:18  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: gen2 testing thing
+
+2005-12-08 00:16  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: gen2 fix
+
+2005-12-08 00:12  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: gen2 fixer
+
+2005-12-07 22:52  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: gen2 adding homebake
+	  firefox
+
+2005-12-07 22:23  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: Revert gen2 make
+	  ebuild file
+
+2005-12-07 22:05  djm
+
+	* branches/0.11/exe/webui/browser.py: fixed our bug which we didn't
+	  test
+
+2005-12-07 21:58  matthew
+
+	* branches/0.11/installs/gentoo/exe-0.11.ebuild,
+	  branches/0.11/installs/gentoo/makeEbuild.py: gen2
+
+2005-12-07 21:57  jenny
+
+	* branches/0.11/win-setup.py: updated win-setup.py
+
+2005-12-07 21:50  djm
+
+	* branches/0.11/exe/webui/browser.py: use calllater to avoid holding
+	  up the server
+
+2005-12-07 21:42  matthew
+
+	* branches/0.11/installs/gentoo/exe-0.11.ebuild: Gen 2
+
+2005-12-07 21:36  djm
+
+	* branches/0.11/exe/webui/browser.py: up the delay before trying
+	  firefox the 2nd time
+
+2005-12-07 21:35  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: Gen 2
+
+2005-12-07 21:34  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: More gentoo fixes
+
+2005-12-07 21:27  jenny
+
+	* branches/0.11/Planets-HighQuality.flv: add Planets-HighQuality.flv
+	  file to install package.
+
+2005-12-07 21:27  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: Gentoo improvements
+
+2005-12-07 21:14  jenny
+
+	* branches/0.11/exe/export/imsexport.py,
+	  branches/0.11/exe/export/scormexport.py,
+	  branches/0.11/exe/export/singlepageexport.py,
+	  branches/0.11/exe/export/websitepage.py,
+	  branches/0.11/exe/webui/quiztestblock.py: fixed scorm quits
+	  experimental idevice export bugs.
+
+2005-12-07 21:09  matthew
+
+	* branches/0.11/installs/gentoo/makeEbuild.py: Gentoo updates
+
+2005-12-07 21:00  djm
+
+	* branches/0.11/exe/webui/externalurlblock.py: don't embed an iframe
+	  if we don't have an url
+
+2005-12-07 18:53  matthew
+
+	* branches/0.11/installs/gentoo/exe-0.11.ebuild: New ebuild for 0.11
+
+2005-12-07 07:45  matthew
+
+	* branches/0.11/installs/gentoo/all-config.patch: Update for linux
+	  install.
+
+2005-12-07 06:34  matthew
+
+	* branches/0.11/installs/gentoo/all-config.patch: gento ebuild file
+
+2005-12-07 06:13  matthew
+
+	* branches/0.11/installs/gentoo/exe-0.10.ebuild: Needed to build
+	  0.11
+
+2005-12-07 01:49  djm
+
+	* branches/0.11/MANIFEST.in, branches/0.11/rpm-setup.py: make sure
+	  webui/templates is included
+
+2005-12-07 01:47  djm
+
+	* branches/0.11/ChangeLog,
+	  branches/0.11/exe/engine/wikipediaidevice.py,
+	  branches/0.11/exe/export/imsexport.py,
+	  branches/0.11/exe/export/scormexport.py,
+	  branches/0.11/exe/export/singlepageexport.py,
+	  branches/0.11/exe/export/websiteexport.py,
+	  branches/0.11/exe/webui/templates/fdl.html,
+	  branches/0.11/exe/webui/wikipediablock.py: fixed bug 175 Wikipedia
+	  iDevice should export GFDL as a resource
+
+2005-12-06 23:11  djm
+
+	* branches/0.11/exe/locale/el/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/exe_el.po,
+	  branches/0.11/exe/locale/exe_is.po,
+	  branches/0.11/exe/locale/exe_it.po,
+	  branches/0.11/exe/locale/exe_mi.po,
+	  branches/0.11/exe/locale/exe_nl.po,
+	  branches/0.11/exe/locale/is/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/nl/LC_MESSAGES/exe.mo: updated the local
+	  names for the language translations - stored in X-Poedit-Language
+
+2005-12-06 23:03  matthew
+
+	* branches/0.11/exe/locale/exe_el.po: Greek translation update
+
+2005-12-06 22:54  djm
+
+	* branches/0.11/NEWS: another feature
+
+2005-12-06 22:53  djm
+
+	* branches/0.11/NEWS, branches/0.11/app.fil,
+	  branches/0.11/exe/locale/de/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/el/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/en/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/es/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/exe_de.po,
+	  branches/0.11/exe/locale/exe_el.po,
+	  branches/0.11/exe/locale/exe_en.po,
+	  branches/0.11/exe/locale/exe_es.po,
+	  branches/0.11/exe/locale/exe_is.po,
+	  branches/0.11/exe/locale/exe_it.po,
+	  branches/0.11/exe/locale/exe_mi.po,
+	  branches/0.11/exe/locale/exe_nl.po,
+	  branches/0.11/exe/locale/exe_sv.po,
+	  branches/0.11/exe/locale/exe_zh.po,
+	  branches/0.11/exe/locale/is/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/nl/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/sv,
+	  branches/0.11/exe/locale/sv/LC_MESSAGES,
+	  branches/0.11/exe/locale/sv/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/zh/LC_MESSAGES/exe.mo: updated Swedish
+	  and Dutch translations
+
+2005-12-06 22:01  djm
+
+	* branches/0.11/exe/engine/flashmovieidevice.py,
+	  branches/0.11/exe/webui/element.py: moved instructions to flash
+	  movie field
+
+2005-12-06 19:06  djm
+
+	* branches/0.11/exe/engine/flashmovieidevice.py,
+	  branches/0.11/exe/webui/element.py: Added tip for flash movie
+
+2005-12-06 18:58  djm
+
+	* branches/0.11/MANIFEST.in, branches/0.11/rpm-setup.py: changes
+	  needed to get RPM build working again
+
+2005-12-06 04:02  matthew
+
+	* branches/0.11/app.fil,
+	  branches/0.11/exe/locale/de/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/el/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/en/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/es/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/exe_de.po,
+	  branches/0.11/exe/locale/exe_el.po,
+	  branches/0.11/exe/locale/exe_en.po,
+	  branches/0.11/exe/locale/exe_es.po,
+	  branches/0.11/exe/locale/exe_is.po,
+	  branches/0.11/exe/locale/exe_it.po,
+	  branches/0.11/exe/locale/exe_mi.po,
+	  branches/0.11/exe/locale/exe_nl.po,
+	  branches/0.11/exe/locale/exe_sv.po,
+	  branches/0.11/exe/locale/exe_zh.po,
+	  branches/0.11/exe/locale/is/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/nl/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/zh/LC_MESSAGES/exe.mo: Ran mk18n.py
+
+2005-12-06 03:49  matthew
+
+	* branches/0.11/exe/locale/exe_sv.po: Swedish translation update
+
+2005-12-06 03:11  jenny
+
+	* branches/0.11/exe/engine/casestudyidevice.py,
+	  branches/0.11/installs/windows/exe.nsi,
+	  branches/0.11/win-setup.py: updated windows install files.
+
+2005-12-06 01:53  matthew
+
+	* branches/0.11/installs/debian,
+	  branches/0.11/installs/debian/ubuntu,
+	  branches/0.11/installs/debian/ubuntu/buildUbuntuPackage.py,
+	  branches/0.11/installs/debian/ubuntu/debian,
+	  branches/0.11/installs/debian/ubuntu/debian/PKG-INFO,
+	  branches/0.11/installs/debian/ubuntu/debian/README.Debian,
+	  branches/0.11/installs/debian/ubuntu/debian/changelog,
+	  branches/0.11/installs/debian/ubuntu/debian/compat,
+	  branches/0.11/installs/debian/ubuntu/debian/control,
+	  branches/0.11/installs/debian/ubuntu/debian/copyright,
+	  branches/0.11/installs/debian/ubuntu/debian/exe.1,
+	  branches/0.11/installs/debian/ubuntu/debian/links,
+	  branches/0.11/installs/debian/ubuntu/debian/python-exe.1,
+	  branches/0.11/installs/debian/ubuntu/debian/python2.3-exe.docs,
+	  branches/0.11/installs/debian/ubuntu/debian/python2.3-exe.manpages,
+	  branches/0.11/installs/debian/ubuntu/debian/python2.4-exe.docs,
+	  branches/0.11/installs/debian/ubuntu/debian/python2.4-exe.manpages,
+	  branches/0.11/installs/debian/ubuntu/debian/rules,
+	  branches/0.11/installs/debian/ubuntu/debian/run-exe.sh.1: Copied
+	  0.10 ubuntu install files
+
+2005-12-06 01:42  djm
+
+	* branches/0.11/exe/engine/wikipediaidevice.py: forgot to increment
+	  the persistence version :(
+
+2005-12-06 01:35  djm
+
+	* branches/0.11/exe/engine/wikipediaidevice.py: upgrade icon on old
+	  Wikipedia idevices
+
+2005-12-05 22:52  djm
+
+	* branches/0.11/exe/engine/field.py,
+	  branches/0.11/exe/webui/element.py,
+	  branches/0.11/exe/webui/scripts/common.js: flash movie idevice to
+	  filter only flv files, and don't crash if a non-flv file is given
+
+2005-12-05 21:48  matthew
+
+	* branches/0.11/exe/engine/galleryidevice.py,
+	  branches/0.11/exe/engine/package.py,
+	  branches/0.11/exe/xului/mainpage.py,
+	  branches/0.11/exe/xului/scripts/mainpage.js: Merged in some stuff
+	  from the mac branch. (Good stuff though, don't worry).
+
+2005-12-05 21:02  jenny
+
+	* branches/0.11/exe/locale/exe_zh.po,
+	  branches/0.11/exe/locale/zh/LC_MESSAGES/exe.mo: updated Chinese po
+	  and mo files.
+
+2005-12-05 20:44  djm
+
+	* branches/0.11/ChangeLog: updated ChangeLog
+
+2005-12-05 20:43  djm
+
+	* branches/0.11/exe/engine/clozeidevice.py: Fixed bug with Cloze
+	  iDevice not upgrading to version 0.11
+
+2005-12-05 20:38  djm
+
+	* branches/0.11/exe/engine/galleryidevice.py: fixed bug with
+	  GalleryImage not upgrading from 0.10
+
+2005-12-05 20:17  djm
+
+	* branches/0.11/exe/export/__init__.py, branches/0.11/exe/import,
+	  branches/0.11/exe/import/__init__.py: added import module ready
+	  for David Jorjoliani (from ISN)
+
+2005-12-05 20:04  djm
+
+	* branches/0.11/gtkmozembed: removed obsolete gtkmozembed code
+
+2005-12-05 03:38  matthew
+
+	* branches/0.11/app.fil: Part of mki8n's changes from last commit by
+	  me
+
+2005-12-05 03:32  matthew
+
+	* branches/0.11/exe/locale/de/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/el/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/en/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/es/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/exe_de.po,
+	  branches/0.11/exe/locale/exe_el.po,
+	  branches/0.11/exe/locale/exe_en.po,
+	  branches/0.11/exe/locale/exe_es.po,
+	  branches/0.11/exe/locale/exe_is.po,
+	  branches/0.11/exe/locale/exe_it.po,
+	  branches/0.11/exe/locale/exe_mi.po,
+	  branches/0.11/exe/locale/exe_nl.po,
+	  branches/0.11/exe/locale/exe_sv.po,
+	  branches/0.11/exe/locale/exe_zh.po, branches/0.11/exe/locale/is,
+	  branches/0.11/exe/locale/is/LC_MESSAGES,
+	  branches/0.11/exe/locale/is/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/nl/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/zh/LC_MESSAGES/exe.mo: Add Icelandic
+	  translation and ran mki18n.py
+
+2005-12-05 03:17  matthew
+
+	* branches/0.11/exe/engine/package.py,
+	  branches/0.11/exe/engine/path.py,
+	  branches/0.11/exe/xului/mainpage.py: Made it save in Chinese
+	  Folders again.
+
+2005-12-05 03:09  djm
+
+	* branches/0.11/exe/xului/mainpage.py,
+	  branches/0.11/exe/xului/scripts/mainpage.js,
+	  branches/0.11/exe/xului/templates/mainpage.xul: Added
+	  registerOnline function
+
+2005-12-05 02:25  djm
+
+	* branches/0.11/exe/locale/de/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/el/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/en/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/es/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/exe_de.po,
+	  branches/0.11/exe/locale/exe_el.po,
+	  branches/0.11/exe/locale/exe_en.po,
+	  branches/0.11/exe/locale/exe_es.po,
+	  branches/0.11/exe/locale/exe_it.po,
+	  branches/0.11/exe/locale/exe_mi.po,
+	  branches/0.11/exe/locale/exe_nl.po,
+	  branches/0.11/exe/locale/exe_sv.po,
+	  branches/0.11/exe/locale/exe_zh.po,
+	  branches/0.11/exe/locale/nl/LC_MESSAGES/exe.mo,
+	  branches/0.11/exe/locale/zh/LC_MESSAGES/exe.mo: Updated
+	  localizations
+
+2005-12-05 02:25  djm
+
+	* branches/0.11/ChangeLog, branches/0.11/NEWS, branches/0.11/README:
+	  updated docs
+
+2005-12-05 02:21  djm
+
+	* branches/0.11/exe/engine/idevicestore.py,
+	  branches/0.11/exe/webui/element.py,
+	  branches/0.11/exe/webui/style/Kahurangi/websitepage.py: Added 0.11
+	  Reading Activity and removed unfinished Kahurangi websitepage.py
+
+2005-12-05 01:37  matthew
+
+	* branches/0.11/installs/windows/exe.standalone.nsi: changed
+	  standalone back to 4 second splash
+
+2005-12-05 01:31  djm
+
+	* branches/0.11/exe/run-exe.sh: run-exe.sh is obsolete, but we keep
+	  it in case people are used to it
+
+2005-12-05 01:30  djm
+
+	* branches/0.11/exe/engine/idevicestore.py,
+	  branches/0.11/exe/engine/version.py,
+	  branches/0.11/exe/locale/exe_de.po,
+	  branches/0.11/exe/webui/builtinblocks.py: remove forum idevice
+
+2005-12-05 01:27  matthew
+
+	* branches/0.11/installs/windows/exe.standalone.nsi: Removed
+	  standalone debug message-boxes and changed splash to 5 seconds
+	  (MS)
+
+2005-12-05 01:27  djm
+
+	* branches/0.11/exe/locale/it, branches/0.11/exe/locale/mi,
+	  branches/0.11/exe/locale/sv: removed locales with no translations
+	  done
+
+2005-12-05 01:13  matthew
+
+	* branches/0.11/exe/engine/standaloneconfig.py,
+	  branches/0.11/installs/windows/logo.jpeg: Added standalone fixes
+
+2005-12-05 01:03  matthew
+
+	* branches/0.11/installs/windows/splash1.jpg: splash screen for
+	  standalone install
+
+2005-12-05 00:57  matthew
+
+	* branches/0.11/installs/windows/exe.standalone.nsi: Added progress
+	  bar
+
+2005-12-04 22:13  matthew
+
+	* branches/0.11/exe/engine/galleryidevice.py,
+	  branches/0.11/exe/webui/galleryblock.py: Hopefully will make
+	  gallery idevice work with evil IE
+
+2005-12-02 04:28  djm
+
+	* branches/0.11/exe/xului/mainpage.py: fix bug in website export
+
+2005-12-02 04:14  djm
+
+	* branches/0.11/exe/engine/idevicestore.py,
+	  branches/0.11/exe/engine/truefalseidevice.py: fix a
+	  feedbackInstruc
+
+2005-12-02 03:51  djm
+
+	* branches/0.11/exe/engine/version.py,
+	  branches/0.11/exe/xului/idevicepane.py,
+	  branches/0.11/exe/xului/mainpage.py,
+	  branches/0.11/exe/xului/outlinepane.py,
+	  branches/0.11/exe/xului/scripts/mainpage.js,
+	  branches/0.11/exe/xului/scripts/nevow_glue.js,
+	  branches/0.11/exe/xului/templates/mainpage.xul: Fixed. Works with
+	  Nevow 0.4 et al
+
+2005-12-02 03:15  matthew
+
+	* branches/0.11/exe/engine/attachmentidevice.py: updated pedagogical
+	  tip for attachment idevice
+
+2005-12-02 03:10  matthew
+
+	* branches/0.11/exe/engine/idevicestore.py: Updated activity
+	  pedagogical tip stuff
+
+2005-12-02 02:47  matthew
+
+	* branches/0.11/exe/engine/clozeidevice.py: Changes to cloze purpose
+	  and tip
+
+2005-12-02 01:29  matthew
+
+	* branches/0.11/exe/webui/renderable.py,
+	  branches/0.11/exe/xului/mainpage.py,
+	  branches/0.11/exe/xului/outlinepane.py,
+	  branches/0.11/exe/xului/scripts/mainpage.js,
+	  branches/0.11/exe/xului/templates/mainpage.xul: Work towards
+	  taking it back to r 1483
+
+2005-12-01 23:32  matthew
+
+	* branches/0.11: 0.11 release
+
+2005-12-01 23:28  djm
+
+	* exe/engine/node.py, exe/webui/style/standardwhite/activity.gif,
+	  exe/webui/style/standardwhite/casestudy.gif,
+	  exe/webui/style/standardwhite/generic.gif,
+	  exe/webui/style/standardwhite/icon_inter.gif,
+	  exe/webui/style/standardwhite/multichoice.gif,
+	  exe/webui/style/standardwhite/objectives.gif,
+	  exe/webui/style/standardwhite/preknowledge.gif,
+	  exe/webui/style/standardwhite/reading.gif,
+	  exe/webui/style/standardwhite/reflection.gif,
+	  testing/testexport.py: Added a international icon for Wikipedia
+	  iDevice
+
+2005-12-01 23:19  djm
+
+	* exe/xului/mainpage.py: make exe work longer before freezing
+
+2005-12-01 22:27  djm
+
+	* exe/webui/style/garden/icon_diagnosis.gif,
+	  exe/webui/style/garden/icon_experiment.gif,
+	  exe/webui/style/garden/icon_inter.gif,
+	  exe/webui/style/garden/icon_summary.gif,
+	  exe/webui/style/garden/icon_technology.gif,
+	  exe/webui/style/garden/icon_time.gif: Add Jamie's new icons
+
+2005-12-01 22:27  djm
+
+	* exe/engine/wikipediaidevice.py, exe/webui/common.py,
+	  exe/webui/style/garden/activity.gif,
+	  exe/webui/style/garden/casestudy.gif,
+	  exe/webui/style/garden/generic.gif,
+	  exe/webui/style/garden/multichoice.gif,
+	  exe/webui/style/garden/objectives.gif,
+	  exe/webui/style/garden/preknowledge.gif,
+	  exe/webui/style/garden/reading.gif,
+	  exe/webui/style/garden/reflection.gif,
+	  exe/webui/wikipediablock.py: Allow user to change Wikipedia
+	  emphasis - experimental requested by Wayne
+
+2005-12-01 02:42  djm
+
+	* exe/webui/style/seamist/icon_diagnosis.gif,
+	  exe/webui/style/seamist/icon_experiment.gif,
+	  exe/webui/style/seamist/icon_inter.gif,
+	  exe/webui/style/seamist/icon_summary.gif,
+	  exe/webui/style/seamist/icon_technology.gif,
+	  exe/webui/style/seamist/icon_time.gif: better flattening
+
+2005-12-01 02:25  djm
+
+	* exe/webui/style/seamist/activity.gif,
+	  exe/webui/style/seamist/casestudy.gif,
+	  exe/webui/style/seamist/generic.gif,
+	  exe/webui/style/seamist/icon_diagnosis.gif,
+	  exe/webui/style/seamist/icon_experiment.gif,
+	  exe/webui/style/seamist/icon_inter.gif,
+	  exe/webui/style/seamist/icon_summary.gif,
+	  exe/webui/style/seamist/icon_technology.gif,
+	  exe/webui/style/seamist/icon_time.gif,
+	  exe/webui/style/seamist/multichoice.gif,
+	  exe/webui/style/seamist/objectives.gif,
+	  exe/webui/style/seamist/preknowledge.gif,
+	  exe/webui/style/seamist/reading.gif,
+	  exe/webui/style/seamist/reflection.gif: Added Jamies new icons
+
+2005-12-01 01:29  matthew
+
+	* exe/exe, exe/xului/idevicepane.py, exe/xului/mainpage.py: Fixed a
+	  buggy where couldn't show newly created idevice
+
+2005-12-01 01:10  jenny
+
+	* exe/webui/editorpane.py: fixed idevice editor help tips
+	  translation bugs.
+
+2005-11-30 23:44  djm
+
+	* exe/engine/idevicestore.py, exe/engine/wikipediaidevice.py,
+	  exe/webui/wikipediablock.py: Added different language wikipedia
+	  sites as requested
+
+2005-11-30 23:02  jenny
+
+	* exe/engine/flashmovieidevice.py: fiexd flashmovie idevice SCORM
+	  export bugs.
+
+2005-11-30 23:01  jenny
+
+	* exe/locale/exe_zh.po, exe/locale/zh/LC_MESSAGES/exe.mo: updated
+	  Chinese po and mo files.
+
+2005-11-30 22:50  djm
+
+	* app.fil, exe/export/websiteexport.py, testing/testblock.py,
+	  testing/testexport.py, testing/testpackage.py,
+	  testing/testxmlhttp.py, testing/utils.py: Fixed tests
+
+2005-11-30 22:49  djm
+
+	* ChangeLog: Updated changelog
+
+2005-11-30 22:47  djm
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_it.po, exe/locale/exe_mi.po, exe/locale/exe_nl.po,
+	  exe/locale/exe_sv.po, exe/locale/exe_zh.po,
+	  exe/locale/it/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo: Updated localizations for the
+	  Greek translator
+
 2005-11-30 22:28  djm
 
 	* exe/locale/exe_nl.po: Added new Dutch translation

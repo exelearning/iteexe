@@ -53,8 +53,6 @@ function serverId2TreeId(serverId) {
 }
 
 function initWindow() {
-    var window = window
-    addEventListener('onclose', onCloseHandler, false);
     if (haveLoaded) {return}
     // Select the root tree item
     var tree = document.getElementById('outlineTree')
@@ -253,7 +251,7 @@ function outlineClick() {
 // Call this to ask the server if the package is dirty
 // 'ifDirty' will be evaled if the package is dirty
 function checkDirty(ifClean, ifDirty) {
-    server.handle('isPackageDirty', ifClean, ifDirty);
+    nevow_clientToServerEvent('isPackageDirty', this, '', ifClean, ifDirty)
 }
 
 // Call this to ask the server if the package is dirty
@@ -320,7 +318,7 @@ function fileOpen2() {
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
-        server.handle('loadPackage', fp.file.path);
+        nevow_clientToServerEvent('loadPackage', this, '', fp.file.path)
     }
 }
 
@@ -332,8 +330,8 @@ function fileOpen2() {
 // has been cancelled by the user.
 function fileSave(onProceed) {
     if (!onProceed)
-        var onProceed = '' ;
-    server.handle('getPackageFileName', 'fileSave2', onProceed);
+        var onProceed = '';
+    nevow_clientToServerEvent('getPackageFileName', this, '', 'fileSave2', onProceed);
 }
 
 // Takes the server's response after we asked it for the
@@ -342,8 +340,8 @@ function fileSave2(filename, onDone) {
     if (filename) {
         // If the package has been previously saved/loaded
         // Just save it over the old file
-        if (onDone) server.handle('savePackage', onDone)
-        else server.handle('savePackage')
+        if (onDone) nevow_clientToServerEvent('savePackage', this, '', '', onDone)
+        else nevow_clientToServerEvent('savePackage', this, '')
     } else {
         // If the package is new (never saved/loaded) show a
         // fileSaveAs dialog
@@ -361,9 +359,9 @@ function fileSaveAs(onDone) {
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
         if (onDone) {
-            server.handle('savePackage', fp.file.path, onDone)
+            nevow_clientToServerEvent('savePackage', this, '', fp.file.path, onDone)
         } else {
-            server.handle('savePackage', fp.file.path)
+            nevow_clientToServerEvent('savePackage', this, '', fp.file.path)
         }
     } else {
         eval(onDone)
@@ -399,7 +397,13 @@ function metadataEditor() {
 function aboutPage() {
 	var features = "width=300,height=200,status=1,resizable=1,"+
 			"left=260,top=200";
-	var aboutWin = window.open ("/about", "About", features);}
+	var aboutWin = window.open ("/about", "About", features);
+}
+
+// Go to the exelearning.org/register.php site
+function registerOnline() {
+    nevow_clientToServerEvent('register', this, '');
+}
 
 
 // Appends an iDevice
@@ -431,9 +435,11 @@ function exportPackage(exportType) {
         var res = fp.show();
         if (res == nsIFilePicker.returnOK) {
 
-            server.handle('exportPackage', 
-                          exportType, 
-                          fp.file.path)
+            nevow_clientToServerEvent('exportPackage', 
+                                      this, 
+                                      '', 
+                                      exportType, 
+                                      fp.file.path)
         }
     } else {
         if (exportType == "scorm")
@@ -447,18 +453,8 @@ function exportPackage(exportType) {
         fp.appendFilter("All Files", "*.*");
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-            server.handle('exportPackage', exportType, fp.file.path)
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
         }
     }
 }
 
-function tryToClose() {
-    alert("trying to close");
-}
-
-// Handles someone trying to close the browser
-function onCloseHandler(event) {
-    alert("Closing Matey");
-    event.preventDefault();
-    return false;
-}

@@ -39,10 +39,6 @@ class Package(Persistable):
     persistenceVersion = 5
     nonpersistant      = ['resourceDir', 'filename']
 
-    # Default attribute values
-    # This is set when the package is saved as a temp copy file
-    tempFile      = False
-
     def __init__(self, name):
         """
         Initialize 
@@ -106,19 +102,17 @@ class Package(Persistable):
             return _(u"?????")
         
 
-    def save(self, filename=None, tempFile=False):
+    def save(self, filename=None):
         """
         Save package to disk
-        pass a 'filename' for 'save as...'
-        set 'tempFile' to True to not remember that we saved it here
+        pass an optional filename
         """
-        self.tempFile = tempFile
         if filename:
+            filename = Path(filename)
             # If we are being given a new filename...
             # Change our name to match our new filename
-            name = Path(filename).splitpath()[1]
-            if not tempFile:
-                self.name = unicode(name.basename().splitext()[0])
+            name = filename.splitpath()[1]
+            self.name = name.basename().splitext()[0]
         elif self.filename:
             # Otherwise use our last saved/loaded from filename
             filename = Path(self.filename)
@@ -129,38 +123,18 @@ class Package(Persistable):
             raise AssertionError(u'No name passed when saving a new package')
 
         # Store our new filename for next file|save
-        if tempFile:
-            self.nonpersistant.remove('filename')
-            try:
-                self.doSave(filename)
-            finally:
-                self.nonpersistant.append('filename')
-        else:
-            # Update our new filename for future saves
-            self.filename = filename
-            self.doSave(filename)
+        self.filename = filename
 
-    def doSave(self, filename):
-        """
-        Actually does the saving once all the other stuff has been sorted out
-        """
         log.debug(u"Will save %s to: %s" % (self.name, filename))
         self.isChanged = 0
-        try:
-            # On some systems you need 'unicode' filenames
-            zippedFile = zipfile.ZipFile(Path(filename), 
-                                         "w", zipfile.ZIP_DEFLATED)
-        except IOError:
-            # On some you need 'encoded' filenames!
-            filename = Path(filename).encode(Path.fileSystemEncoding),
-            zippedFile = zipfile.ZipFile(filename,
-                                         "w", zipfile.ZIP_DEFLATED)
+        zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
         
         try:
             for resourceFile in self.resourceDir.files():
                 zippedFile.write(unicode(resourceFile.normpath()),
                                  resourceFile.name.encode('utf8'))
             zippedFile.writestr("content.data", encodeObject(self))
+
         finally:
             zippedFile.close()
 
@@ -175,15 +149,16 @@ class Package(Persistable):
 
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
         toDecode   = zippedFile.read(u"content.data")
-        newPackage = decodeObject(toDecode)
-        
-        if newPackage.tempFile:
-            # newPackage.filename was stored as it's original filename
-            newPackage.tempFile = False
-        else:
-            # newPackage.filename is the name that the package was last loaded from
-            # or saved to
-            newPackage.filename = Path(filename)
+        try:
+            newPackage = decodeObject(toDecode)
+        except:
+            import traceback
+            traceback.print_exc()
+            raise
+
+        # newPackage.filename is the name that the package was last loaded from
+        # or saved to
+        newPackage.filename = Path(filename)
 
         # Need to add a TempDirPath because it is a nonpersistant member
         newPackage.resourceDir = TempDirPath()
@@ -311,3 +286,4 @@ class Package(Persistable):
         del self.levelNames
     
 # ===========================================================================
+

@@ -105,9 +105,13 @@ class WebsiteExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
+
         # copy video container file for flash movies.
         videofile = (self.templatesDir/'videoContainer.swf')
         videofile.copyfile(self.outputDir/'videoContainer.swf')
+
+        # copy a copy of the GNU Free Documentation Licence
+        (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
 
 
     def generatePages(self, node, depth):

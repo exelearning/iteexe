@@ -193,7 +193,7 @@ class IMSPage(Page):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            if idevice.title == "SCORM Quiz":
+            if idevice.title == "SCORM Quiz Experimental":
                 html += block.renderJavascriptForWeb()
             if idevice.title != "Forum Discussion":
                 html += block.renderView(self.node.package.style)
@@ -266,9 +266,13 @@ class IMSExport(object):
                                   'imsmd_v1p2p2.xsd',
                                   'ims_xml.xsd',
                                   'common.js'), outputDir)
+
         # copy video container file for flash movies.
         videofile = (self.templatesDir/'videoContainer.swf')
         videofile.copyfile(outputDir/'videoContainer.swf')
+
+        # copy a copy of the GNU Free Documentation Licence
+        (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
 
         # Zip up the package
         zipped = ZipFile(self.filename, "w")

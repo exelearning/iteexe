@@ -33,7 +33,6 @@ from exe.webui.wikipediablock         import WikipediaBlock
 from exe.webui.attachmentblock        import AttachmentBlock
 from exe.webui.galleryblock           import GalleryBlock
 from exe.webui.clozeblock             import ClozeBlock
-from exe.webui.forumblock             import ForumBlock
 from exe.webui.flashwithtextblock     import FlashWithTextBlock
 from exe.webui.flashmovieblock        import FlashMovieBlock
 from exe.webui.externalurlblock       import ExternalUrlBlock

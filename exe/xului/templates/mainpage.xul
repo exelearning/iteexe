@@ -4,10 +4,11 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns:n="http://nevow.com/ns/nevow/0.1"
         id="mainWindow" title="exelearning"
-    onload="initWindow()"
-    width="640"
-    height="480"
-    >
+	onload="initWindow()"
+	width="640"
+	height="480"
+	>
+    <n:invisible n:render="liveid"/>
     <n:invisible n:render="liveglue"/>
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
@@ -31,7 +32,7 @@
     <vbox flex="1">
         <!-- Start Menus -->
         <toolbox>
-          <menubar n:render="mainMenu">
+          <menubar>
             <menu n:render="translate" id="file-menu" label="File" accesskey="f">
               <menupopup id="file-popup">
                 <menuitem n:render="translate" label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
@@ -64,6 +65,7 @@
            <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
                 <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
+                <menuitem n:render="translate" label="Register Online" accesskey="R" oncommand="registerOnline()"/>
               </menupopup>
             </menu>
          </menubar>

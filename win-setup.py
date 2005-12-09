@@ -11,7 +11,8 @@ g_files = { '.': ["README",
                   "COPYING", 
                   "NEWS", 
                   "ChangeLog",
-                  "eXe_icon.ico", 
+                  "eXe_icon.ico",
+                  "Planets-HighQuality.flv",
                   "exe/webui/mr_x.gif",
                   "exe/msvcr71.dll",
                   "doc/eXe-tutorial.elp", 
@@ -35,16 +36,20 @@ def dataFiles(dirs):
                 
 dataFiles(["exe/webui/style",
            "exe/webui/css",
-           "exe/webui/templates",
            "exe/webui/images",
            "exe/webui/docs",
            "exe/webui/win-profile",
-           "exe/webui/scripts"])
+           "exe/webui/scripts",
+           "exe/webui/templates"])
 
 g_oldBase = "exe"
 g_newBase = "."
 dataFiles(["exe/locale"])
 
+g_oldBase = "exe/xului"
+g_newBase = "."
+dataFiles(["exe/xului/templates",
+           "exe/xului/scripts"])
 
 opts = {
  "py2exe": {
@@ -57,7 +62,7 @@ opts = {
 
 setup(console=["exe/exe"],
       version=version.release,
-      packages=["exe", "exe.engine", "exe.webui", "exe.export"],
+      packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.xului"],
       description  = "eLearning XHTML editor",
       url          = "http://exelearning.org",
       author       = "University of Auckland",

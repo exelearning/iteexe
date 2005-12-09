@@ -43,7 +43,7 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
@@ -64,7 +64,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         """
         Return the resource files used by this iDevice
         """
-        resources = Idevice.getResources(self)
+        resources = Idevice.getResources(self) + ["fdl.html"]
         for image in self.images:
             resources.append(image)
         return resources
@@ -131,13 +131,6 @@ article from en.wikipedia.org, including copying the associated images."""),
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
         content = re.sub(r'<script.*?</script>', '', content)
-        content += u"<br/>\n"
-        content += u"This article is licensed under the "
-        content += u"<a href=\"http://www.gnu.org/copyleft/fdl.html\">"
-        content += u"GNU Free Documentation License</a>. It uses material "
-        content += u"from the <a href=\""+self.site+u"wiki/"
-        content += self.articleName+u"\">"
-        content += u"article " + u"\""+self.articleName+u"\"</a>.<br/>\n"
         return content
 
 
@@ -192,6 +185,12 @@ article from en.wikipedia.org, including copying the associated images."""),
         Upgrades exe to v0.11... what was I thinking?
         """
         self.site = self.__dict__['_site']
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades exe to v0.11... forgot to change the icon
+        """
+        self.icon = u"inter"
 
 
 # ===========================================================================

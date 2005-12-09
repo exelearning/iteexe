@@ -134,7 +134,6 @@ class FeedbackElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
@@ -148,7 +147,6 @@ class FeedbackElement(Element):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        
         html = ""
         html += '<input type="button" name="btn%s" ' % self.id
         html += 'value ="%s" ' % self.field.buttonCaption
@@ -606,9 +604,8 @@ class FlashMovieElement(Element):
 
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/>\n"
-        html += u"<a href=\"#\" onclick=\"addFile('"+self.id+"');\">"
-        html += _(u"Select a flash movie")
+        html += u"<a href=\"#\" onclick=\"addFlashMovie('"+self.id+"');\">"
+        html += _(u"Select a flash video")
         html += u"</a><br/>\n"
        
         html += common.hiddenField("path"+self.id)

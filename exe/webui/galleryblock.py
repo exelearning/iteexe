@@ -119,13 +119,12 @@ class GalleryBlock(Block):
                 filenames = map(urllib.unquote, params.split('&'))
                 for filename in filenames:
                     # Unquote unicode chars
-                    while 1:
-                        match = self.unicodeRe.search(filename)
-                        if not match: 
-                            break
+                    match = self.unicodeRe.search(filename)
+                    while match:
                         start, end = match.span()
                         code = unichr(int(filename[start+2:end], 16))
                         filename = filename[:start] + code + filename[end:]
+                        match = self.unicodeRe.search(filename)
                     self.idevice.addImage(filename)
             # Edit/change an image
             if action == 'changeImage':
@@ -161,7 +160,7 @@ class GalleryBlock(Block):
             newCaption = request.args.get('caption'+image.id, [None])[0]
             if newCaption is not None:
                 image.caption = newCaption
-        
+
     def renderEdit(self, style):
         """
         Renders a table of thumbnails allowing the user to
@@ -246,7 +245,6 @@ class GalleryBlock(Block):
             image.delete()
         Block.processDelete(self, request)
         
-
     def renderViewContent(self):
         """
         HTML shared by view and preview
@@ -262,12 +260,12 @@ class GalleryBlock(Block):
                 """
                 width, height = image.size
                 return [u'        <img onclick="javascript:window.open(',
-                        u"'%s', 'galleryImage', " % image.src +
+                        u"'%s', 'galleryImage', " % image.htmlSrc +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
-                        u"width=%s," % (width+20) +
-                        u"height=%s,scrollbars=yes," % (height+30) +
-                        u"screenX='+((screen.width/2)-(%s/2))+" % (width) +
-                        u"',screenY='+((screen.height/2)-(%s/2))" % (height) +
+                        u"width=640," +
+                        u"height=480,scrollbars=yes," +
+                        u"screenX='+((screen.width/2)-(640/2))+" +
+                        u"',screenY='+((screen.height/2)-(480/2))" +
                         u');"',
                         u'           style="cursor: pointer; align:center top;"',
                         u'           alt="%s"' % image.caption,
@@ -302,7 +300,7 @@ class GalleryBlock(Block):
             # Put the resource url back
             if len(self.idevice.images) > 0:
                 cls.resourcesUrl = oldUrl
-                
+
 from exe.engine.galleryidevice  import GalleryIdevice
 from exe.webui.blockfactory     import g_blockFactory
 g_blockFactory.registerBlockType(GalleryBlock, GalleryIdevice)    

@@ -1,8 +1,6 @@
 # ===========================================================================
 # __init__.py
-# Copyright 2004, University of Auckland
-#
-# This is a placeholder
+# Copyright 2004-2005, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,5 +19,4 @@
 
 """
 The export module manages the different export formats eXe supports
-Importing may also be added here in the future
 """

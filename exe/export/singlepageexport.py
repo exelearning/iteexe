@@ -93,9 +93,13 @@ class SinglePageExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
+
         # copy video container file for flash movies.
         videofile = (self.templatesDir/'videoContainer.swf')
         videofile.copyfile(self.outputDir/'videoContainer.swf')
+
+        # copy a copy of the GNU Free Documentation Licence
+        (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
             
 
     def renderHeader(self, name):
@@ -134,6 +138,8 @@ class SinglePageExport(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
+            if idevice.title == "SCORM Quiz Experimental":
+                self.html += block.renderJavascriptForWeb()
             self.html += block.renderView(self.style)
 
         for child in node.children:

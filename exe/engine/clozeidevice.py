@@ -35,7 +35,7 @@ class ClozeIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, parentNode=None):
         """
@@ -43,15 +43,71 @@ class ClozeIdevice(Idevice):
         """
         Idevice.__init__(self, x_(u"Cloze Activity"),
                          x_(u"University of Auckland"), 
-                         x_(u"This Idevice is used to help students learn "
-                            u"passages of text and to develop an understanding "
-                            u"of the way words are used in a certain subject or "
-                            u"language"),
-                         x_(u"Take a passage of text and put some gaps in it by "
-                            u"putting underscores (_) on either side of the "
-                            u"word. For example: <i>The third _word_ in this "
-                            u"text not be shown to students</i>.<br/>When "
-                            u"checking the student's entry, case is ignored"),
+                         x_(u"<p>Cloze tests or exercises are texts or "
+                             "sentences where some words or phrases have "
+                             "been deleted. Students must fill in the "
+                             "missing words. They are often used for the "
+                             "following purposes:</p>"
+                             "<ol>"
+                             "<li>To check knowledge of core course "
+                             "concepts (this could be a pre-check, "
+                             "formative exercise, or summative check).</li>"
+                             "<li>To check reading comprehension.</li>"
+                             "<li>To check vocabulary knowledge (usually "
+                             "for non-native English speakers).</li>"
+                             "<li>To check word formation and/or grammatical "
+                             "competence. </li>"),
+                         x_(u"<dl>"
+                             "  <dt>If your goal is to test understanding "
+                             "of core concepts or reading comprehension"
+                             "  </dt>"
+                             "  <dd>"
+                             "    <p>"
+                             "  Write a summary of the concept or reading. "
+                             "  This should be long enough to adequately test "
+                             "your target knowledge, but short enough not to"
+                             "induce fatigue. Less than one typed page is"
+                             "probably adequate, but you may want to write"
+                             "considerably less for young students or"
+                             "beginners."
+                             "    </p>"
+                             "    <p>"
+                             "Select the words in the text that"
+                             "are key to understanding the concepts. These"
+                             "will probably be verbs, nouns, and key adverbs."
+                             "Choose alternatives with one clear answer."
+                             "    </p>"
+                             "  </dd>"
+                             "  <dt>"
+                             "If your goal is to test vocabulary knowledge"
+                             "  </dt>"
+                             "  <dd>"
+                             "Write a text using the target vocabulary. This"
+                             "text should be coherent and cohesive, and be of"
+                             "an appropriate length. Highlight the target"
+                             "words in the text. Choose alternatives with one"
+                             "clear answer."
+                             "  </dd>"
+                             "  <dt>"
+                             "If your goal is to test word"
+                             "formation/grammar:"
+                             "  </dt>"
+                             "  <dd>"
+                             "  <p>"
+                             "Write a text using the "
+                             "target forms. This text should be coherent and"
+                             "cohesive, and be of an appropriate length."
+                             "Remember that the goal is not vocabulary"
+                             "knowledge, so the core meanings of the stem"
+                             "words should be well known to the students."
+                             "  </p>"
+                             "  <p>"
+                             "Highlight the target words in the text. Provide"
+                             "alternatives with the same word stem, but"
+                             "different affixes. It is a good idea to get a"
+                             "colleague to test the test/exercise to make"
+                             "sure there are no surprises!"
+                             "  </p>"),
                             u"question",
                              parentNode)
         self.instructionsForLearners = TextAreaField(
@@ -97,3 +153,13 @@ class ClozeIdevice(Idevice):
         self.instructionsForLearners.idevice = self
         self.feedback = TextAreaField(x_(u'Feedback'))
         self.feedback.idevice = self
+
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades exe to v0.11
+        """
+        self.content.autoCompletion = True
+        self.content.autoCompletionInstruc =  _(u"Allow auto completion when "
+                                                u"user filling the gaps.")
+

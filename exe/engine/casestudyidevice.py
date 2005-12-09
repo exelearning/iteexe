@@ -71,16 +71,19 @@ of the case and if so how are ideas feed back to the class</li></ul>"""),
         self.emphasis     = Idevice.SomeEmphasis
         self.story        = story
         self.questions    = []
-        self._storyInstruc = _(u"""Create the case story.  A good case is one 
+        self._storyInstruc = x_(u"""Create the case story.  A good case is one 
 that describes a controversy.""")
-        self._questionInstruc = _(u"""Enter the study question.  These questions 
+        self._questionInstruc = x_(u"""Enter the study question.  These questions 
 should draw out the educational messages presented in the case.  Consider 
 aspects of the case like, characters, timeliness, relevance, dilemmas.""")
-        self._feedbackInstruc = _(u"""Provide feedback on the question.  This may
+        self._feedbackInstruc = x_(u"""Provide feedback on the question.  This may
 be a summary of the main points or concepts.""")
         self.addQuestion()
         
     # Properties
+    storyInstruc    = lateTranslate('storyInstruc')
+    questionInstruc = lateTranslate('questionInstruc')
+    feedbackInstruc = lateTranslate('feedbackInstruc')
     storyInstruc    = lateTranslate('storyInstruc')
     questionInstruc = lateTranslate('questionInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')

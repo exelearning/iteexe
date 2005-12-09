@@ -22,7 +22,7 @@ The collection of iDevices available
 
 from exe.engine         import persist
 from exe.engine.idevice import Idevice
-from exe.engine.field   import TextAreaField
+from exe.engine.field   import TextAreaField, FeedbackField
 from nevow.flat         import flatten
 
 import imp
@@ -124,7 +124,6 @@ class IdeviceStore:
         from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
-        from exe.engine.forumidevice          import ForumIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
         from exe.engine.flashmovieidevice     import FlashMovieIdevice
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
@@ -149,7 +148,6 @@ class IdeviceStore:
         self.extended.append(QuizTestIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
-        self.extended.append(ForumIdevice())
         self.extended.append(FlashWithTextIdevice())
         self.extended.append(FlashMovieIdevice())
         self.extended.append(ExternalUrlIdevice())
@@ -195,6 +193,11 @@ class IdeviceStore:
         else:
             self.__createGeneric()
 
+        reading011Path = self.config.configDir/'idevices'/'reading-0.11'
+        if not reading011Path.exists():
+            self.__createReading011()
+            open(reading011Path, "w").write("Created Reading Activity 0.11\n")
+
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.generic:
             idevice.id = self.getNewIdeviceId()
@@ -204,8 +207,6 @@ class IdeviceStore:
         """
         Create the Generic iDevices which you get for free
         (not created using the iDevice editor, but could have been)
-        """
-        """
         Called when we can't find 'generic.data', generates an initial set of 
         free/builtin idevices and writes the new 'generic.data' file
         """
@@ -214,12 +215,84 @@ class IdeviceStore:
         readingAct = GenericIdevice(_(u"Reading Activity"), 
                                     u"reading",
                                     _(u"University of Auckland"), 
-_(u"""Provide learners with structure to their reading activity. This helps put
-the activity in context for the learner. It is also important to correctly
-reference any reading materials you refer to as this models best practice to
-the learners. Not always essential if covered in the course content but
-providing feedback to the learner on some of the main points covered in the
-reading may also add value to the activity."""), u"") 
+                                    x_(u"<p>"
+                                        "An activity can be described as a"
+                                        "task or set of tasks a learner must "
+                                        "complete. Provide a clear "
+                                        "statement of the task and consider "
+                                        "any conditions that may help or "
+                                        "hinder the learner in the "
+                                        "performance of the task." 
+                                        "</p>"
+                                        "<p>"
+                                        "The general task is the most "
+                                        "flexible iDevice because authors "
+                                        "can specify the sub-type or "
+                                        "classification. It is used to "
+                                        'signal a learning "event". In other '
+                                        "words when learners are expected to "
+                                        "do something. For example:"
+                                        "<ol>"
+                                        "<li> A "
+                                        "written activity when learners must "
+                                        "write something down (notes or a "
+                                        "list)"
+                                        "</li>"
+                                        "<li>"
+                                        "An application activity, "
+                                        "where learners are expected to "
+                                        "apply their knowledge to a "
+                                        "particular situation"
+                                        "</li>"
+                                        "<li>"
+                                        "Conceptual "
+                                        "activity, where learners are asked "
+                                        "to think about something. Although "
+                                        'the "look and feel" associated with '
+                                        "the presentation of this iDevice on "
+                                        "a web page will be the same for "
+                                        "each instance or type, learners "
+                                        "will be able to distinguish among "
+                                        "different types by the heading the "
+                                        "author provides for the particular "
+                                        "instance of this iDevice. "
+                                        "</li>"
+                                        "</ol>"
+                                        "</p>"),
+                                    x_(u"Teachers should keep the following "
+                                        "in mind when using this iDevice: "
+                                        "<ol>"
+                                        "<li>"
+                                        "Think about the number of "
+                                        "different types of activity "
+                                        "planned for your resource that "
+                                        "will be visually signalled in the "
+                                        "content. Avoid using too many "
+                                        "different types or classification "
+                                        "of activities otherwise learner "
+                                        "may become confused. Usually three "
+                                        "or four different types are more "
+                                        "than adequate for a teaching "
+                                        "resource."
+                                        "</li>"
+                                        "<li>"
+                                        "From a visual design "
+                                        "perspective, avoid having two "
+                                        "iDevices immediately following "
+                                        "each other without any text in "
+                                        "between. If this is required, "
+                                        "rather collapse two questions or "
+                                        "events into one iDevice. "
+                                        "</li>"
+                                        "<li>"
+                                        "3.Think "
+                                        "about activities where the "
+                                        "perceived benefit of doing the "
+                                        "activity outweighs the time and "
+                                        "effort it will take to complete "
+                                        "the activity. "
+                                        "</li>"
+                                        "</ol>")) 
         readingAct.emphasis = Idevice.SomeEmphasis
         readingAct.addField(TextAreaField(_(u"What to read"), 
 _(u"""Provide details of the reading materials learners should  read.""")))
@@ -276,6 +349,114 @@ u"")
         activity.addField(TextAreaField(_(u"Activity"),
 _(u"""Describe the tasks the learners should complete.""")))
         self.generic.append(activity)
+
+        self.save()
+
+
+    def __createReading011(self):
+        """
+        Create the Reading Activity 0.11
+        We do this only once when the user first runs eXe 0.11
+        """
+        from exe.engine.genericidevice import GenericIdevice
+
+        readingAct = GenericIdevice(_(u"Reading Activity 0.11"), 
+                                    u"reading",
+                                    _(u"University of Auckland"), 
+                                    x_(u"<p>"
+                                        "An activity can be described as a"
+                                        "task or set of tasks a learner must "
+                                        "complete. Provide a clear "
+                                        "statement of the task and consider "
+                                        "any conditions that may help or "
+                                        "hinder the learner in the "
+                                        "performance of the task." 
+                                        "</p>"
+                                        "<p>"
+                                        "The general task is the most "
+                                        "flexible iDevice because authors "
+                                        "can specify the sub-type or "
+                                        "classification. It is used to "
+                                        'signal a learning "event". In other '
+                                        "words when learners are expected to "
+                                        "do something. For example:"
+                                        "<ol>"
+                                        "<li> A "
+                                        "written activity when learners must "
+                                        "write something down (notes or a "
+                                        "list)"
+                                        "</li>"
+                                        "<li>"
+                                        "An application activity, "
+                                        "where learners are expected to "
+                                        "apply their knowledge to a "
+                                        "particular situation"
+                                        "</li>"
+                                        "<li>"
+                                        "Conceptual "
+                                        "activity, where learners are asked "
+                                        "to think about something. Although "
+                                        'the "look and feel" associated with '
+                                        "the presentation of this iDevice on "
+                                        "a web page will be the same for "
+                                        "each instance or type, learners "
+                                        "will be able to distinguish among "
+                                        "different types by the heading the "
+                                        "author provides for the particular "
+                                        "instance of this iDevice. "
+                                        "</li>"
+                                        "</ol>"
+                                        "</p>"),
+                                    x_(u"Teachers should keep the following "
+                                        "in mind when using this iDevice: "
+                                        "<ol>"
+                                        "<li>"
+                                        "Think about the number of "
+                                        "different types of activity "
+                                        "planned for your resource that "
+                                        "will be visually signalled in the "
+                                        "content. Avoid using too many "
+                                        "different types or classification "
+                                        "of activities otherwise learner "
+                                        "may become confused. Usually three "
+                                        "or four different types are more "
+                                        "than adequate for a teaching "
+                                        "resource."
+                                        "</li>"
+                                        "<li>"
+                                        "From a visual design "
+                                        "perspective, avoid having two "
+                                        "iDevices immediately following "
+                                        "each other without any text in "
+                                        "between. If this is required, "
+                                        "rather collapse two questions or "
+                                        "events into one iDevice. "
+                                        "</li>"
+                                        "<li>"
+                                        "3.Think "
+                                        "about activities where the "
+                                        "perceived benefit of doing the "
+                                        "activity outweighs the time and "
+                                        "effort it will take to complete "
+                                        "the activity. "
+                                        "</li>"
+                                        "</ol>")) 
+        readingAct.emphasis = Idevice.SomeEmphasis
+        readingAct.addField(TextAreaField(_(u"What to read"), 
+_(u"""Provide details of the reading materials learners should  read.""")))
+        readingAct.addField(TextAreaField(_(u"Why it should be read"), 
+_(u"""Describe the rationale behind the selection of the reading and how it will
+enrich the learning.""")))
+        readingAct.addField(TextAreaField(_(u"Reference"), 
+_(u"""Provide full reference details to the reading materials selected. The
+reference style used will depend on the preference of your department or
+faculty.""")))
+        readingAct.addField(FeedbackField(_(u"Feedback"), 
+_(u"""The use of this element is flexible.  Use it to provide a summary of the
+points covered in the reading, or as a starting point for further analysis of
+the reading by posing a question or providing a statement to begin a
+debate.""")))
+        self.generic.append(readingAct)
 
         self.save()
 

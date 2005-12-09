@@ -77,6 +77,9 @@ class Path(unicode):
     def __repr__(self):
         return 'Path(%s)' % unicode.__repr__(self)
 
+    def __str__(self):
+        return self.encode(Path.fileSystemEncoding)
+
     # Adding a Path and a string yields a Path.
     def __add__(self, more):
         return Path(toUnicode(self) + toUnicode(more))

@@ -119,6 +119,11 @@ class WikipediaBlock(Block):
             html += self.idevice.title
             html += u"</span>\n"
         html += self.articleElement.renderPreview()
+        html += u"<br/>\n"
+        html += u"This article is licensed under the "
+        html += u"<u>GNU Free Documentation License</u>. It uses material "
+        html += u"from the <u>article " 
+        html += u"\""+self.idevice.articleName+u"\"</u>.<br/>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
         return html
@@ -141,6 +146,14 @@ class WikipediaBlock(Block):
             html += self.idevice.title
             html += u"</span>\n"
         html += content
+        html += u"<br/>\n"
+        html += u"This article is licensed under the "
+        html += u"<a target=\"_blank\" "
+        html += u"href=\"fdl.html\">"
+        html += u"GNU Free Documentation License</a>. It uses material "
+        html += u"from the <a href=\""+self.idevice.site+u"wiki/"
+        html += self.idevice.articleName+u"\">"
+        html += u"article " + u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
         html += u"</div>\n"
         return html
     

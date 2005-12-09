@@ -470,10 +470,14 @@ class FlashMovieField(Field):
             package = self.idevice.parentNode.package
 
             self.flashName = self.id + u"_" + unicode(resourceFile.basename())
-            package.addResource(resourceFile, self.flashName)
-            flvDic = FLVReader(resourceFile)
-            self.height = flvDic["height"] +30        
-            self.width = flvDic["width"]
+            try:
+                flvDic = FLVReader(resourceFile)
+                package.addResource(resourceFile, self.flashName)
+                self.height = flvDic["height"] +30        
+                self.width = flvDic["width"]
+            except AssertionError: 
+                log.error('File %s is not a flash movie' % resourceFile)
+                self.flashName = ""
 
         else:
             log.error('File %s is not a file' % resourceFile)

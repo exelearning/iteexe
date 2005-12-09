@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-01 11:33+1300\n"
-"PO-Revision-Date: 2005-12-01 11:57+0800\n"
-"Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
+"POT-Creation-Date: 2005-12-07 11:46+1300\n"
+"PO-Revision-Date: 2005-12-08 14:54+1200\n"
+"Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,10 +21,14 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:253
-#: exe/xului/mainpage.py:324
+#: exe/xului/mainpage.py:223
+#: exe/xului/mainpage.py:295
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
+
+#: exe/engine/clozeidevice.py:60
+msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading.   This should be long enough to adequately test your target knowledge, but short enough not toinduce fatigue. Less than one typed page isprobably adequate, but you may want to writeconsiderably less for young students orbeginners.    </p>    <p>Select the words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd>Write a text using the target vocabulary. Thistext should be coherent and cohesive, and be ofan appropriate length. Highlight the targetwords in the text. Choose alternatives with oneclear answer.  </dd>  <dt>If your goal is to test wordformation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent andcohesive, and be of an appropriate length.Remember that the goal is not vocabularyknowledge, so the core meanings of the stemwords should be well known to the students.  </p>  <p>Highlight the target words in the text. Providealternatives with the same word stem, butdifferent affixes. It is a good idea to get acolleague to test the test/exercise to makesure there are no surprises!  </p>"
+msgstr " "
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid ""
@@ -57,9 +61,18 @@ msgid ""
 "</p>"
 msgstr "图象及文字解释能为学习提供感性和知性的帮助."
 
-#: exe/engine/attachmentidevice.py:50
+#: exe/engine/idevicestore.py:218
+#: exe/engine/idevicestore.py:366
+msgid "<p>An activity can be described as atask or set of tasks a learner must complete. Provide a clear statement of the task and consider any conditions that may help or hinder the learner in the performance of the task.</p><p>The general task is the most flexible iDevice because authors can specify the sub-type or classification. It is used to signal a learning \"event\". In other words when learners are expected to do something. For example:<ol><li> A written activity when learners must write something down (notes or a list)</li><li>An application activity, where learners are expected to apply their knowledge to a particular situation</li><li>Conceptual activity, where learners are asked to think about something. Although the \"look and feel\" associated with the presentation of this iDevice on a web page will be the same for each instance or type, learners will be able to distinguish among different types by the heading the author provides for the particular instance of this iDevice. </li></ol></p>"
+msgstr "学习活动可被定义为学生必须完成的一个或一组任务. 提供清晰的任务陈述以及考虑任何条件会帮助或阻碍学生完成任务."
+
+#: exe/engine/attachmentidevice.py:58
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p> 给附件一个标签, 最好加上文件类别和大小.</p><p>例如: <code>Sales Forecast.doc (500kb)</code></p>"
+
+#: exe/engine/clozeidevice.py:46
+msgid "<p>Cloze tests or exercises are texts or sentences where some words or phrases have been deleted. Students must fill in the missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge (usually for non-native English speakers).</li><li>To check word formation and/or grammatical competence. </li>"
+msgstr "填空练习是一段文章中, 有些字或词被删除. 学生需填上这些空格."
 
 #: exe/webui/externalurlblock.py:65
 msgid "<strong>Frame Height:</strong> "
@@ -69,7 +82,7 @@ msgstr "<strong>页框高:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:106
+#: exe/engine/package.py:102
 msgid "?????"
 msgstr "?????"
 
@@ -96,7 +109,7 @@ msgstr ""
 "<li>\t学生对此案例的各种可能反应. </li>\n"
 "</ul>"
 
-#: exe/webui/editorpane.py:71
+#: exe/webui/editorpane.py:72
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "描述这个iDevice的教学用途."
 
@@ -104,16 +117,16 @@ msgstr "描述这个iDevice的教学用途."
 msgid "A single simple discussion"
 msgstr "限每人发表一篇文章的讨论区"
 
-#: exe/webui/editorpane.py:211
+#: exe/webui/editorpane.py:223
 msgid "Actions"
 msgstr "动作"
 
-#: exe/engine/idevicestore.py:267
-#: exe/engine/idevicestore.py:275
+#: exe/engine/idevicestore.py:341
+#: exe/engine/idevicestore.py:349
 msgid "Activity"
 msgstr "学习活动"
 
-#: exe/webui/editorpane.py:200
+#: exe/webui/editorpane.py:212
 msgid "Add"
 msgstr "添加"
 
@@ -121,21 +134,17 @@ msgstr "添加"
 msgid "Add Question"
 msgstr "添加问题"
 
-#: exe/webui/editorpane.py:74
+#: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
 msgstr "添加单行文字, 用于这 iDevice内的标题."
 
-#: exe/webui/editorpane.py:77
+#: exe/webui/editorpane.py:78
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
 msgstr "添加多行文字栏域, 用于文字描述."
 
-#: exe/webui/editorpane.py:80
+#: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "添加图片, 可从您的图像库中选出."
-
-#: exe/webui/editorpane.py:83
-msgid "Add an interactive feedback to your iDevice. "
-msgstr "添加互动式评语."
 
 #: exe/webui/multichoiceblock.py:117
 #: exe/webui/testquestionelement.py:109
@@ -147,9 +156,13 @@ msgstr "添加选项"
 msgid "Add another question"
 msgstr "添加问题"
 
-#: exe/webui/galleryblock.py:176
+#: exe/webui/galleryblock.py:175
 msgid "Add images"
 msgstr "添加图片"
+
+#: exe/webui/editorpane.py:84
+msgid "Add interactive feedback to your iDevice."
+msgstr "添加互动式评语."
 
 #: exe/webui/flashmovieblock.py:76
 msgid "Align:"
@@ -160,6 +173,10 @@ msgstr "对齐:"
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
+msgstr "当学生填空时, 允许自动完成."
+
+#: exe/engine/clozeidevice.py:163
+msgid "Allow auto completion when user filling the gaps."
 msgstr "当学生填空时, 允许自动完成."
 
 #: exe/webui/multichoiceblock.py:98
@@ -185,7 +202,7 @@ msgid ""
 " "
 msgstr " "
 
-#: exe/engine/idevicestore.py:270
+#: exe/engine/idevicestore.py:344
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -200,18 +217,18 @@ msgstr "文章"
 msgid "Attachment"
 msgstr "附件"
 
-#: exe/engine/attachmentidevice.py:93
-#: exe/engine/attachmentidevice.py:116
+#: exe/engine/attachmentidevice.py:101
+#: exe/engine/attachmentidevice.py:124
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Attachment %s has no parentNode"
 
 #: exe/webui/propertiespane.py:100
-#: exe/webui/editorpane.py:276
+#: exe/webui/editorpane.py:288
 msgid "Author"
 msgstr "作者"
 
-#: exe/webui/element.py:450
+#: exe/webui/element.py:448
 msgid "Auto Completion"
 msgstr "自动完成"
 
@@ -224,12 +241,12 @@ msgid "Can a student post to this forum?:"
 msgstr "学生能否在此论坛发表文章"
 
 #: exe/webui/preferencespage.py:88
-#: exe/webui/editorpane.py:219
+#: exe/webui/editorpane.py:231
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:251
-#: exe/xului/mainpage.py:322
+#: exe/xului/mainpage.py:221
+#: exe/xului/mainpage.py:293
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
@@ -243,7 +260,11 @@ msgstr "标题:"
 msgid "Case Study"
 msgstr "案例分析"
 
-#: exe/engine/attachmentidevice.py:46
+#: exe/webui/wikipediablock.py:75
+msgid "Chinese Wikipedia Article"
+msgstr "中文Wikipedia 文章"
+
+#: exe/engine/attachmentidevice.py:54
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意:路径及文件名不可含有中文字, 否则该软件不识别."
 
@@ -262,13 +283,13 @@ msgstr "点击这里"
 #: exe/webui/common.py:225
 #: exe/webui/truefalseelement.py:127
 #: exe/webui/truefalseelement.py:128
-#: exe/webui/editorpane.py:315
-#: exe/webui/editorpane.py:316
-#: exe/webui/editorpane.py:337
+#: exe/webui/editorpane.py:327
+#: exe/webui/editorpane.py:328
+#: exe/webui/editorpane.py:349
 msgid "Close"
 msgstr "关闭"
 
-#: exe/engine/clozeidevice.py:64
+#: exe/engine/clozeidevice.py:120
 msgid "Cloze"
 msgstr "填空题"
 
@@ -326,19 +347,20 @@ msgid ""
 "reflective feedback.)"
 msgstr " "
 
-#: exe/engine/idevicestore.py:263
+#: exe/engine/idevicestore.py:337
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "用于描述学生为完成此课所应具备的知识."
 
-#: exe/engine/idevicestore.py:226
+#: exe/engine/idevicestore.py:300
+#: exe/engine/idevicestore.py:448
 msgid ""
 "Describe the rationale behind the selection of the reading and how it will\n"
 "enrich the learning."
 msgstr "叙述所选择阅读资料的背后含义以及如何丰富此项学习课程."
 
-#: exe/engine/idevicestore.py:276
+#: exe/engine/idevicestore.py:350
 msgid "Describe the tasks the learners should complete."
 msgstr "描述学生需要完成的学习任务."
 
@@ -363,8 +385,8 @@ msgstr "讨论主题:"
 msgid "Discussions and replies are allowed"
 msgstr "允许发表及回复文章"
 
-#: exe/webui/element.py:275
-#: exe/webui/element.py:538
+#: exe/webui/element.py:273
+#: exe/webui/element.py:536
 msgid "Display as:"
 msgstr "显示为:"
 
@@ -372,6 +394,10 @@ msgstr "显示为:"
 #: exe/webui/block.py:198
 msgid "Done"
 msgstr "完成"
+
+#: exe/webui/wikipediablock.py:81
+msgid "Dutch Wikipedia Article"
+msgstr "荷兰文Wikipedia 文章"
 
 #: exe/webui/element.py:45
 msgid "ERROR Element.process called directly"
@@ -395,13 +421,17 @@ msgstr "限每人发表一次"
 
 #: exe/webui/block.py:320
 #: exe/webui/editorpage.py:198
-#: exe/webui/editorpane.py:216
+#: exe/webui/editorpane.py:228
 msgid "Edit"
 msgstr "编辑"
 
-#: exe/webui/editorpane.py:286
+#: exe/webui/editorpane.py:298
 msgid "Emphasis"
 msgstr "强调"
+
+#: exe/webui/wikipediablock.py:74
+msgid "English Wikipedia Article"
+msgstr "英文Wikipedia 文章"
 
 #: exe/engine/multichoiceidevice.py:87
 msgid ""
@@ -413,7 +443,7 @@ msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 
-#: exe/engine/clozeidevice.py:71
+#: exe/engine/clozeidevice.py:127
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "用评语栏输入评语提供给学生. 此栏可空白."
 
@@ -423,20 +453,20 @@ msgid ""
 "must reflect upon."
 msgstr " "
 
-#: exe/webui/editorpane.py:129
+#: exe/webui/editorpane.py:141
 msgid "Enter instructions for completion here"
 msgstr "在此输入完成说明"
 
-#: exe/webui/editorpane.py:133
-#: exe/webui/editorpane.py:137
-#: exe/webui/editorpane.py:144
+#: exe/webui/editorpane.py:145
+#: exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:156
 msgid "Enter the instructions for completion here"
 msgstr "在此输入完成说明"
 
-#: exe/webui/editorpane.py:128
-#: exe/webui/editorpane.py:132
-#: exe/webui/editorpane.py:136
-#: exe/webui/editorpane.py:143
+#: exe/webui/editorpane.py:140
+#: exe/webui/editorpane.py:144
+#: exe/webui/editorpane.py:148
+#: exe/webui/editorpane.py:155
 msgid "Enter the label here"
 msgstr "在此输入标题"
 
@@ -447,12 +477,17 @@ msgid ""
 "aspects of the case like, characters, timeliness, relevance, dilemmas."
 msgstr "输入提问. 问题最好能将此案例的教学讯息传达出来. 考虑人物特色, 时间顺序, 相关性及处境."
 
-#: exe/engine/clozeidevice.py:65
+#: exe/engine/clozeidevice.py:121
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>隐藏/显示 文字</i> 按钮使之变为空格."
 
-#: exe/xului/mainpage.py:440
-#: exe/xului/mainpage.py:458
+#: exe/xului/mainpage.py:274
+#, python-format
+msgid "Error loading package \"%s\": %s"
+msgstr "载入课件错误  \"%s\": %s"
+
+#: exe/xului/mainpage.py:407
+#: exe/xului/mainpage.py:425
 #, python-format
 msgid "Exported to %s"
 msgstr "导出至 %s"
@@ -466,29 +501,33 @@ msgstr "外部网页"
 msgid "False"
 msgstr "错"
 
-#: exe/engine/idevicestore.py:232
-#: exe/engine/clozeidevice.py:70
-#: exe/engine/clozeidevice.py:98
+#: exe/engine/idevicestore.py:306
+#: exe/engine/idevicestore.py:454
+#: exe/engine/clozeidevice.py:126
+#: exe/engine/clozeidevice.py:154
 #: exe/webui/multichoiceblock.py:105
 #: exe/webui/questionelement.py:73
 #: exe/webui/truefalseelement.py:92
-#: exe/webui/editorpane.py:207
+#: exe/webui/editorpane.py:219
 msgid "Feedback"
 msgstr "评语"
 
-#: exe/xului/mainpage.py:361
-#: exe/xului/mainpage.py:403
+#: exe/xului/mainpage.py:339
+#: exe/xului/mainpage.py:375
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "文件名%s是个文档, 无法覆盖它"
 
-#: exe/engine/flashmovieidevice.py:42
 #: exe/engine/flashwithtextidevice.py:42
 msgid "Flash"
 msgstr "Flash"
 
-#: exe/engine/flashmovieidevice.py:38
+#: exe/engine/flashmovieidevice.py:37
 msgid "Flash Movie"
+msgstr "Flash 电影"
+
+#: exe/engine/flashmovieidevice.py:43
+msgid "Flash Video File"
 msgstr "Flash 电影"
 
 #: exe/engine/flashwithtextidevice.py:38
@@ -534,7 +573,15 @@ msgstr "论坛类别:"
 msgid "Free Text"
 msgstr "自由文本"
 
-#: exe/webui/element.py:483
+#: exe/webui/wikipediablock.py:77
+msgid "French Wikipedia Article"
+msgstr "法文Wikipedia 文章"
+
+#: exe/webui/wikipediablock.py:76
+msgid "German Wikipedia Article"
+msgstr "德文Wikipedia 文章"
+
+#: exe/webui/element.py:481
 msgid "Get score"
 msgstr "得分"
 
@@ -547,7 +594,7 @@ msgstr "分组类别:"
 msgid "Hide"
 msgstr "隐藏"
 
-#: exe/webui/element.py:447
+#: exe/webui/element.py:445
 msgid "Hide/Show Word"
 msgstr "隐藏/显示 文字"
 
@@ -562,20 +609,20 @@ msgstr "提示"
 msgid "Hint:"
 msgstr "提示:"
 
-#: exe/engine/package.py:62
+#: exe/engine/package.py:58
 msgid "Home"
 msgstr "首页"
 
-#: exe/webui/editorpane.py:318
+#: exe/webui/editorpane.py:330
 msgid "Icons"
 msgstr "图标"
 
 #: exe/engine/imagewithtextidevice.py:67
-#: exe/webui/editorpane.py:205
+#: exe/webui/editorpane.py:217
 msgid "Image"
 msgstr "图像"
 
-#: exe/engine/galleryidevice.py:244
+#: exe/engine/galleryidevice.py:320
 msgid "Image Gallery"
 msgstr "图象画廊"
 
@@ -595,8 +642,8 @@ msgstr "不正确!"
 msgid "Instructions"
 msgstr "说明"
 
-#: exe/engine/clozeidevice.py:58
-#: exe/engine/clozeidevice.py:93
+#: exe/engine/clozeidevice.py:114
+#: exe/engine/clozeidevice.py:149
 msgid "Instructions For Learners"
 msgstr "练习说明"
 
@@ -604,6 +651,14 @@ msgstr "练习说明"
 #: exe/webui/common.py:219
 msgid "Instructions for completion"
 msgstr "完成说明"
+
+#: exe/webui/wikipediablock.py:79
+msgid "Italian Wikipedia Article"
+msgstr "意大利文Wikipedia 文章"
+
+#: exe/webui/wikipediablock.py:78
+msgid "Japanese Wikipedia Article"
+msgstr "日文Wikipedia 文章"
 
 #: exe/webui/attachmentblock.py:79
 msgid "Label"
@@ -627,7 +682,7 @@ msgstr "二级"
 msgid "Level 3: "
 msgstr "三级"
 
-#: exe/webui/wikipediablock.py:76
+#: exe/webui/wikipediablock.py:90
 msgid "Load"
 msgstr "载入"
 
@@ -647,7 +702,7 @@ msgstr "上移"
 msgid "Multi-Choice Question"
 msgstr "选择题"
 
-#: exe/webui/editorpane.py:273
+#: exe/webui/editorpane.py:285
 msgid "Name"
 msgstr "名称"
 
@@ -659,12 +714,12 @@ msgstr "新的 iDevice"
 msgid "No"
 msgstr "不"
 
-#: exe/webui/galleryblock.py:183
-#: exe/webui/galleryblock.py:256
+#: exe/webui/galleryblock.py:182
+#: exe/webui/galleryblock.py:254
 msgid "No Images Loaded"
 msgstr "无图像显示"
 
-#: exe/engine/galleryidevice.py:97
+#: exe/engine/galleryidevice.py:112
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "No Thumbnail Available. Could not shrink image."
 
@@ -676,7 +731,8 @@ msgstr "不能发表文章, 但可回复"
 msgid "No discussions, no replies"
 msgstr "不能发表文章, 不能回复"
 
-#: exe/webui/editorpane.py:289
+#: exe/webui/wikipediablock.py:93
+#: exe/webui/editorpane.py:301
 msgid "No emphasis"
 msgstr "不强调"
 
@@ -694,12 +750,12 @@ msgstr "无"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:248
+#: exe/engine/idevicestore.py:313
+#: exe/engine/idevicestore.py:322
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:242
+#: exe/engine/idevicestore.py:316
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -711,26 +767,26 @@ msgstr "用于描述学习此课的目的及将要达到的结果."
 msgid "Option"
 msgstr "选项"
 
-#: exe/xului/outlinepane.py:242
+#: exe/xului/outlinepane.py:230
 msgid "Outline"
 msgstr "目录"
 
-#: exe/xului/mainpage.py:274
+#: exe/xului/mainpage.py:244
 #, python-format
 msgid "Package saved to: %s"
 msgstr "课件存至: %s"
 
 #: exe/webui/block.py:227
-#: exe/webui/editorpane.py:328
+#: exe/webui/editorpane.py:340
 msgid "Pedagogical Help"
 msgstr "教学帮助"
 
-#: exe/webui/editorpane.py:283
+#: exe/webui/editorpane.py:295
 msgid "Pedagogical Tip"
 msgstr "教学提示"
 
 #: exe/webui/editorpage.py:101
-#: exe/webui/editorpane.py:152
+#: exe/webui/editorpane.py:164
 msgid "Please enter an idevice name."
 msgstr "请填入iDevice名称."
 
@@ -738,12 +794,20 @@ msgstr "请填入iDevice名称."
 msgid "Please select a correct answer for each question."
 msgstr "请为每个问题选择一个正确的答案."
 
-#: exe/engine/idevicestore.py:252
-#: exe/engine/idevicestore.py:262
+#: exe/webui/wikipediablock.py:80
+msgid "Polish Wikipedia Article"
+msgstr "波兰文Wikipedia 文章"
+
+#: exe/webui/wikipediablock.py:82
+msgid "Portugese Wikipedia Article"
+msgstr "葡萄牙文Wikipedia 文章"
+
+#: exe/engine/idevicestore.py:326
+#: exe/engine/idevicestore.py:336
 msgid "Preknowledge"
 msgstr "预备知识"
 
-#: exe/engine/idevicestore.py:255
+#: exe/engine/idevicestore.py:329
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -752,7 +816,7 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr "预备知识是指学生为完成此课所应具备的知识.\n"
 
-#: exe/webui/editorpane.py:214
+#: exe/webui/editorpane.py:226
 msgid "Preview"
 msgstr "预览"
 
@@ -764,11 +828,12 @@ msgstr "课件属性"
 msgid "Project title:"
 msgstr "课件标题:"
 
-#: exe/engine/attachmentidevice.py:67
+#: exe/engine/attachmentidevice.py:75
 msgid "Provide a brief description of the file"
 msgstr "提供文件的简单描述."
 
-#: exe/engine/idevicestore.py:224
+#: exe/engine/idevicestore.py:298
+#: exe/engine/idevicestore.py:446
 msgid "Provide details of the reading materials learners should  read."
 msgstr "提供读者所需的详细阅读资料"
 
@@ -778,33 +843,24 @@ msgid ""
 "be a summary of the main points or concepts."
 msgstr "提供这个问题的评语. 可以是重点或概念的概述."
 
-#: exe/engine/idevicestore.py:229
+#: exe/engine/idevicestore.py:303
+#: exe/engine/idevicestore.py:451
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
 "faculty."
 msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校所采用的模式."
 
-#: exe/engine/clozeidevice.py:59
+#: exe/engine/clozeidevice.py:115
 msgid "Provide instructions to learners on what they must do to complete the cloze exercise."
 msgstr "提供说明给学生, 告诉他们该做什么来完成填空练习."
 
-#: exe/engine/idevicestore.py:216
-msgid ""
-"Provide learners with structure to their reading activity. This helps put\n"
-"the activity in context for the learner. It is also important to correctly\n"
-"reference any reading materials you refer to as this models best practice to\n"
-"the learners. Not always essential if covered in the course content but\n"
-"providing feedback to the learner on some of the main points covered in the\n"
-"reading may also add value to the activity."
-msgstr "介绍此阅读活动的架构. 如此将此活动与学习內容联系在一起. 这对使学生正确引用参考资料也很有帮助. 此栏並非总是必要. 但在阅读活动的某些要点上提供回馈给学生可使此活动更有意义."
-
 #: exe/webui/block.py:241
-#: exe/webui/editorpane.py:279
+#: exe/webui/editorpane.py:291
 msgid "Purpose"
 msgstr "用途"
 
-#: exe/engine/clozeidevice.py:94
+#: exe/engine/clozeidevice.py:150
 msgid "Put instructions for learners here"
 msgstr "在此输入完成说明"
 
@@ -819,16 +875,21 @@ msgstr "问题"
 msgid "Question:"
 msgstr "问题:"
 
-#: exe/engine/clozeidevice.py:61
-#: exe/engine/clozeidevice.py:95
+#: exe/engine/clozeidevice.py:117
+#: exe/engine/clozeidevice.py:151
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "阅读以下段落并填空"
 
-#: exe/engine/idevicestore.py:213
+#: exe/engine/idevicestore.py:215
 msgid "Reading Activity"
 msgstr "阅读活动"
 
-#: exe/engine/idevicestore.py:228
+#: exe/engine/idevicestore.py:363
+msgid "Reading Activity 0.11"
+msgstr "阅读活动 0.11"
+
+#: exe/engine/idevicestore.py:302
+#: exe/engine/idevicestore.py:450
 msgid "Reference"
 msgstr "参考资料"
 
@@ -881,7 +942,7 @@ msgstr "保存"
 msgid "Save as"
 msgstr "另存为"
 
-#: exe/engine/package.py:56
+#: exe/engine/package.py:52
 msgid "Section"
 msgstr "节"
 
@@ -893,15 +954,15 @@ msgstr "选择语言"
 msgid "Select a file"
 msgstr "选择文档"
 
-#: exe/webui/element.py:536
+#: exe/webui/element.py:534
 msgid "Select a flash file"
 msgstr "选择flash文档"
 
-#: exe/webui/element.py:611
-msgid "Select a flash movie"
+#: exe/webui/element.py:608
+msgid "Select a flash video"
 msgstr "选择flash电影文档"
 
-#: exe/webui/element.py:273
+#: exe/webui/element.py:271
 msgid "Select an image"
 msgstr "选择图片"
 
@@ -917,23 +978,24 @@ msgstr "分组"
 msgid "Show"
 msgstr "显示"
 
-#: exe/webui/element.py:495
+#: exe/webui/element.py:493
 msgid "Show/Clear Answers"
 msgstr "显示/清除 答案"
 
-#: exe/webui/element.py:488
+#: exe/webui/element.py:486
 msgid "Show/Hide Feedback"
 msgstr "显示/隐藏 评语"
 
-#: exe/webui/editorpane.py:290
+#: exe/webui/wikipediablock.py:94
+#: exe/webui/editorpane.py:302
 msgid "Some emphasis"
 msgstr "一般强调"
 
-#: exe/xului/mainpage.py:302
+#: exe/xului/mainpage.py:273
 msgid "Sorry, wrong file format"
 msgstr "对不起, 文件格式错误"
 
-#: exe/xului/mainpage.py:300
+#: exe/xului/mainpage.py:271
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -941,6 +1003,10 @@ msgid ""
 msgstr ""
 "对不起, 文件格式错误:\n"
 "%s"
+
+#: exe/webui/wikipediablock.py:84
+msgid "Spanish Wikipedia Article"
+msgstr "西班牙文Wikipedia 文章"
 
 #: exe/webui/forumblock.py:88
 msgid "Standard forum for general use"
@@ -950,7 +1016,8 @@ msgstr "标准论坛"
 msgid "Story:"
 msgstr "事件:"
 
-#: exe/webui/editorpane.py:291
+#: exe/webui/wikipediablock.py:95
+#: exe/webui/editorpane.py:303
 msgid "Strong emphasis"
 msgstr "特别强调"
 
@@ -967,25 +1034,30 @@ msgstr "科目:"
 msgid "Submit Answer"
 msgstr "提交答案"
 
-#: exe/engine/clozeidevice.py:50
-msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
-msgstr " "
+#: exe/webui/wikipediablock.py:85
+msgid "Swedish Wikipedia Article"
+msgstr "瑞典文Wikipedia 文章"
 
 #: exe/webui/propertiespane.py:110
 msgid "Taxonomy"
 msgstr "分类名称"
 
-#: exe/engine/flashmovieidevice.py:46
+#: exe/engine/idevicestore.py:262
+#: exe/engine/idevicestore.py:410
+msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>3.Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
+msgstr " "
+
+#: exe/engine/flashmovieidevice.py:51
 #: exe/engine/flashwithtextidevice.py:46
 #: exe/engine/imagewithtextidevice.py:72
 msgid "Text"
 msgstr "文字"
 
-#: exe/webui/editorpane.py:203
+#: exe/webui/editorpane.py:215
 msgid "Text Box"
 msgstr "多行文字"
 
-#: exe/webui/editorpane.py:201
+#: exe/webui/editorpane.py:213
 msgid "Text Line"
 msgstr "单行文字"
 
@@ -995,6 +1067,10 @@ msgid ""
 "article from en.wikipedia.org, including copying the associated images."
 msgstr "Wikipedia iDevice用于从en.wikipedia.org搜索文章, 包括图象."
 
+#: exe/engine/attachmentidevice.py:43
+msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
+msgstr " "
+
 #: exe/engine/freetextidevice.py:39
 msgid ""
 "The majority of a learning resource will be \n"
@@ -1003,11 +1079,12 @@ msgid ""
 "delivered."
 msgstr "大多数课件都是要编写课文，传授知识和提供基本信息。这个iDevice提供了一个框架让学习活动得以建立和传授。"
 
-#: exe/webui/editorpane.py:65
+#: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "描述这个iDevice的目的."
 
-#: exe/engine/idevicestore.py:233
+#: exe/engine/idevicestore.py:307
+#: exe/engine/idevicestore.py:455
 msgid ""
 "The use of this element is flexible.  Use it to provide a summary of the\n"
 "points covered in the reading, or as a starting point for further analysis of\n"
@@ -1015,12 +1092,17 @@ msgid ""
 "debate."
 msgstr "这个栏目是可灵活使用的. 可用它来提供所涉及阅读资料的重点概括, 也可以提出问题或辩论话题作为下一步阅读分析的起点."
 
-#: exe/engine/galleryidevice.py:246
+#: exe/engine/galleryidevice.py:322
 msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
 msgstr "此iDevice以简单明了的形式表现一组影像. 例如可用来显示许多样本的答案图片."
 
-#: exe/engine/clozeidevice.py:46
-msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
+#: exe/engine/flashmovieidevice.py:43
+msgid ""
+"This iDevice only supports the Flash Video File (.FLV) format, and will not\n"
+"accept other video formats. You can however convert other movie formats\n"
+"(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\n"
+"are not supplied with eXe. Users will also need to download the Flash 8\n"
+"player from http://www.macromedia.com/ to play the video."
 msgstr " "
 
 #: exe/engine/freetextidevice.py:45
@@ -1028,7 +1110,7 @@ msgstr " "
 msgid "This is a free text field general learning content can be entered."
 msgstr "这是一个自由文字栏域, 可输入一般的课程内容."
 
-#: exe/webui/editorpane.py:64
+#: exe/webui/editorpane.py:65
 msgid "This is an optional field."
 msgstr "这是一个非必要栏域."
 
@@ -1048,7 +1130,7 @@ msgid ""
 "radio button next to the correct option."
 msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 
-#: exe/engine/package.py:56
+#: exe/engine/package.py:52
 msgid "Topic"
 msgstr "课题"
 
@@ -1087,6 +1169,7 @@ msgid ""
 msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项."
 
 #: exe/engine/truefalseidevice.py:69
+#: exe/engine/truefalseidevice.py:147
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -1095,7 +1178,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项. "
 
-#: exe/engine/idevicestore.py:249
+#: exe/engine/idevicestore.py:323
 msgid "Type the learning objectives for this resource."
 msgstr "学习此课的目的"
 
@@ -1108,16 +1191,16 @@ msgstr "输入问题"
 msgid "Type the question's hint here."
 msgstr "输入问题的提示"
 
-#: exe/engine/wikipediaidevice.py:88
+#: exe/engine/wikipediaidevice.py:87
 msgid "Unable to connect to "
 msgstr "无法连接至"
 
-#: exe/engine/package.py:56
+#: exe/engine/package.py:52
 msgid "Unit"
 msgstr "单元"
 
 #: exe/engine/wikipediaidevice.py:50
-#: exe/engine/flashmovieidevice.py:39
+#: exe/engine/flashmovieidevice.py:38
 #: exe/engine/casestudyidevice.py:57
 #: exe/engine/multichoiceidevice.py:58
 #: exe/engine/freetextidevice.py:38
@@ -1128,20 +1211,21 @@ msgstr "单元"
 #: exe/engine/reflectionidevice.py:44
 #: exe/engine/truefalseidevice.py:59
 #: exe/engine/externalurlidevice.py:38
-#: exe/engine/idevicestore.py:215
-#: exe/engine/idevicestore.py:241
-#: exe/engine/idevicestore.py:269
+#: exe/engine/idevicestore.py:217
+#: exe/engine/idevicestore.py:315
+#: exe/engine/idevicestore.py:343
+#: exe/engine/idevicestore.py:365
 #: exe/engine/clozeidevice.py:45
 #: exe/engine/attachmentidevice.py:41
-#: exe/engine/galleryidevice.py:245
+#: exe/engine/galleryidevice.py:321
 msgid "University of Auckland"
 msgstr "奥克兰大学"
 
-#: exe/webui/editorpane.py:68
+#: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "用强调程度来区别该 iDevice所呈现信息的重要性."
 
-#: exe/engine/galleryidevice.py:250
+#: exe/engine/galleryidevice.py:326
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "用此可展示许多图片."
 
@@ -1153,7 +1237,8 @@ msgstr "组别可视性"
 msgid "Visible to students:"
 msgstr "学生可看:"
 
-#: exe/engine/idevicestore.py:223
+#: exe/engine/idevicestore.py:297
+#: exe/engine/idevicestore.py:445
 msgid "What to read"
 msgstr "阅读资料"
 
@@ -1180,16 +1265,16 @@ msgstr ""
 "<li> 错误选项应是不正确的,但似乎合理的. </li>\n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:225
+#: exe/engine/idevicestore.py:299
+#: exe/engine/idevicestore.py:447
 msgid "Why it should be read"
 msgstr "为何须阅读"
 
-#: exe/webui/wikipediablock.py:71
+#: exe/webui/wikipediablock.py:86
 msgid "Wikibooks Article"
 msgstr "Wikibooks 文章"
 
 #: exe/engine/wikipediaidevice.py:49
-#: exe/webui/wikipediablock.py:70
 msgid "Wikipedia Article"
 msgstr "Wikipedia 文章"
 
@@ -1201,12 +1286,12 @@ msgstr "是, 永远"
 msgid "Yes, initially"
 msgstr "是, 最初"
 
-#: exe/webui/editorpane.py:60
+#: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "你新的iDevice将以此名称列在iDevice栏中. 这是一个必须填写的栏目."
 
-#: exe/webui/element.py:289
-#: exe/webui/element.py:550
+#: exe/webui/element.py:287
+#: exe/webui/element.py:548
 msgid "blank for original size"
 msgstr "空白为原来的大小尺寸"
 
@@ -1221,18 +1306,17 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 编辑器"
 
-#: exe/engine/wikipediaidevice.py:59
-#: exe/engine/wikipediaidevice.py:176
+#: exe/engine/wikipediaidevice.py:175
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:95
-#: exe/engine/attachmentidevice.py:118
+#: exe/engine/attachmentidevice.py:103
+#: exe/engine/attachmentidevice.py:126
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s has no package"
 
-#: exe/engine/package.py:231
+#: exe/engine/package.py:206
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
@@ -1312,11 +1396,6 @@ msgstr "S"
 msgid "O"
 msgstr "O"
 
-#: exe/xului/templates/mainpage.xul:<label
-#: value="debugInfo">
-msgid "debugInfo"
-msgstr "debugInfo"
-
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="f" id="file-menu"
 #: label="File">
@@ -1334,12 +1413,6 @@ msgstr "label=\"工具\" accesskey=\"t\""
 #: oncommand="fileNew()" key="file-new-key" label="New">
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"新建文件\" accesskey=\"n\""
-
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: key="addChildKey"
-#: label="Add Page">
-msgid "Add Page"
-msgstr "添加页面"
 
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="s" id="styles-menu"
@@ -1359,17 +1432,6 @@ msgstr "label=\"打开\" accesskey=\"o\""
 msgid "Preferences"
 msgstr "使用偏好"
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: id="btnRename"
-#: key="renNodeKey" label="Rename">
-msgid "Rename"
-msgstr "重命名"
-
-#: exe/xului/templates/mainpage.xul:<label
-#: flex="1" value="outlinePane">
-msgid "outlinePane"
-msgstr "目录栏"
-
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="r"
 #: oncommand="window.location = window.location" id="refresh-menu"
@@ -1383,11 +1445,6 @@ msgstr "label=\"重新载入\" accesskey=\"r\""
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"保存\" accesskey=\"s\""
 
-#: exe/xului/templates/mainpage.xul:<label
-#: flex="1" value="iDevicePane">
-msgid "iDevicePane"
-msgstr "iDevice栏"
-
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="h" id="help-menu"
 #: label="Help">
@@ -1399,6 +1456,11 @@ msgstr "label=\"帮助\" accesskey=\"h\""
 #: oncommand="fileSaveAs()" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"另存为...\" accesskey=\"a\""
+
+#: exe/xului/templates/mainpage.xul:<label
+#: value="debugInfo">
+msgid "debugInfo"
+msgstr "debugInfo"
 
 #: exe/xului/templates/mainpage.xul:<menu
 #: accesskey="e" id="export-menu"
@@ -1412,10 +1474,11 @@ msgstr "label=\"导出\" accesskey=\"e\""
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"关于\" accesskey=\"a\""
 
-#: exe/xului/templates/mainpage.xul:<tab
-#: label="Authoring">
-msgid "Authoring"
-msgstr "制作"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: accesskey="R"
+#: oncommand="registerOnline()" label="Register Online">
+msgid "label=\"Register Online\" accesskey=\"R\""
+msgstr "label=\"在先注册\" accesskey=\"R\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="s"
@@ -1423,16 +1486,28 @@ msgstr "制作"
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/mainpage.xul:<tab
-#: label="Properties">
-msgid "Properties"
-msgstr "属性"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
+#: key="addChildKey"
+#: label="Add Page">
+msgid "Add Page"
+msgstr "添加页面"
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="i"
 #: oncommand="exportPackage('ims')" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
+#: id="btnRename"
+#: key="renNodeKey" label="Rename">
+msgid "Rename"
+msgstr "重命名"
+
+#: exe/xului/templates/mainpage.xul:<label
+#: flex="1" value="outlinePane">
+msgid "outlinePane"
+msgstr "目录栏"
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="w"
@@ -1441,17 +1516,43 @@ msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 msgid "label=\"Web Site\" accesskey=\"w\""
 msgstr "label=\"网站\" accesskey=\"w\""
 
+#: exe/xului/templates/mainpage.xul:<label
+#: flex="1" value="iDevicePane">
+msgid "iDevicePane"
+msgstr "iDevice栏"
+
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: accesskey="p"
 #: oncommand="exportPackage('singlePage')" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"单一网页\" accesskey=\"p\""
 
+#: exe/xului/templates/mainpage.xul:<tab
+#: label="Authoring">
+msgid "Authoring"
+msgstr "制作"
+
+#: exe/xului/templates/mainpage.xul:<tab
+#: label="Properties">
+msgid "Properties"
+msgstr "属性"
+
+#~ msgid ""
+#~ "Provide learners with structure to their reading activity. This helps put\n"
+#~ "the activity in context for the learner. It is also important to correctly\n"
+#~ "reference any reading materials you refer to as this models best practice to\n"
+#~ "the learners. Not always essential if covered in the course content but\n"
+#~ "providing feedback to the learner on some of the main points covered in the\n"
+#~ "reading may also add value to the activity."
+#~ msgstr "介绍此阅读活动的架构. 如此将此活动与学习內容联系在一起. 这对使学生正确引用参考资料也很有帮助. 此栏並非总是必要. 但在阅读活动的某些要点上提供回馈给学生可使此活动更有意义."
+#~ msgid "Take a passage of text and put some gaps in it by putting underscores (_) on either side of the word. For example: <i>The third _word_ in this text not be shown to students</i>.<br/>When checking the student's entry, case is ignored"
+#~ msgstr " "
+#~ msgid "This Idevice is used to help students learn passages of text and to develop an understanding of the way words are used in a certain subject or language"
+#~ msgstr " "
+
 #, fuzzy
 #~ msgid "Image Map"
 #~ msgstr "图像"
-#~ msgid "Error loading package \"%s\": %s"
-#~ msgstr "载入课件错误  \"%s\": %s"
 #~ msgid "<p>Enter a passage of text, to make a gap that the user must fill put underscores (_) on either side of the word. For example:</p>The fith and last _words_ of this text need to be filled in by the _student_"
 #~ msgstr " "
 #~ msgid "label=\"Tutorial\" accesskey=\"t\""

@@ -165,7 +165,7 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + str(i) + " = " 
             answers  += str(element.question.correctAns) + ";\n"
-            chk = ("document.getElementById('\"contentForm\")." + 
+            chk = ("document.getElementById(\"contentForm\")." + 
                    quesId+"[i].checked")
             value = ("document.getElementById(\"contentForm\")." + 
                      quesId+"[i].value")

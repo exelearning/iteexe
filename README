@@ -46,7 +46,7 @@ INSTALLATION
   normally be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under
   "All Programs".
-- If you leave "Run eXe 0.10" selected the installer will launch eXe
+- If you leave "Run eXe 0.11" selected the installer will launch eXe
   once it is installed.
 
 
@@ -67,23 +67,11 @@ With the McAfee firewall you will need to allow access.
 MAC OSX
 =======
 
-Creating a Mac install is something we're still working towards.  
-For the technically inclined we're working towards using PyXPCOM
-to replace the Nevow library which should simplify a Mac version.
+The Mac OSX version of eXe is still experimental and should be considered
+unstable.
+Double clicking on the .app file will install eXe.
 
-We have had earlier versions of eXe running on Mac, but we've run into
-multiple problems with later releases.  I'm not sure if you're
-interested in the details, but they were...
- * Nevow the XMLHTTP library we use gives connection errors just on
-   Mac, even though it is supposed to support Mac.  We're looking
-   at replacing XMLHTTP/Nevow with PyXPCOM.
- * Mac applications only have one menu bar, we need to replace the 
-   Firefox menubar, but when doing that (by turning off Firefox
-   chrome) we get another error with FCKEditor (the rich text
-   editor we're using) flickering.  We've replace FCK with
-   TinyMCE.
- * We also have more work to do on how to create a install package for
-   eXe on the Mac.  We're aiming to use PyApp for this.
+
 
 LINUX
 =====
@@ -92,9 +80,8 @@ The eXe Linux install consists of an RPM which has been tested
 to work on Fedora Core 4.  (They may work on other RPM based distros
 but that hasn't been tested.)
 
-* exe-0.10-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-0.11-1.noarch.rpm - includes the eXe editor and bundled Firefox
 
-Make sure Firefox is closed first.
 From the command line type exe to start.
 
 

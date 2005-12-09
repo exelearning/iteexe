@@ -26,10 +26,8 @@ import sys
 import logging
 import traceback
 from twisted.web                 import static
-from twisted.internet            import reactor
-from twisted.internet.defer      import Deferred, maybeDeferred
-from nevow                       import loaders, inevow, stan, tags, url, util
-from nevow.livepage              import js, IClientHandle
+from nevow                       import loaders, inevow, stan
+from nevow.livepage              import handler, js
 from exe.xului.idevicepane       import IdevicePane
 from exe.xului.outlinepane       import OutlinePane
 from exe.xului.stylemenu         import StyleMenu
@@ -53,7 +51,6 @@ class MainPage(RenderableLivePage):
     
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
-    client = None
 
     def __init__(self, parent, package):
         """
@@ -76,21 +73,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
-        # Status variables
-        self._changingPages = False
-
-    def onClose(self, reason, data=None):
-        """
-        Called when http connection is closed.
-        Can be from closing window or loading a different package or just
-        navigating away from the page.
-        We use to save changes to the package to a temp file
-        """
-        if self.package.isChanged:
-            self.package.save(self.config.configDir/'unsavedWork.elp', True)
-        if not self._changingPages:
-            self.parent.stopping = reactor.callLater(20, reactor.stop)
-        self.client = None
 
     def getChild(self, name, request):
         """
@@ -101,72 +83,88 @@ class MainPage(RenderableLivePage):
         else:
             return super(self, self.__class__).getChild(self, name, request)
 
-    def renderHTTP(self, ctx):
+    def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type',
                                        'application/vnd.mozilla.xul+xml')
-        RenderableLivePage.renderHTTP(self, ctx)
+        # Set up named server side funcs that js can call
+        def setUpHandler(func, name, *args, **kwargs):
+            """
+            Convience function link funcs to hander ids
+            and store them
+            """
+            kwargs['identifier'] = name
+            hndlr = handler(func, *args, **kwargs)
+            hndlr(ctx, client) # Stores it
+        setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
+        setUpHandler(self.handlePackageFileName, 'getPackageFileName')
+        setUpHandler(self.handleSavePackage, 'savePackage')
+        setUpHandler(self.handleLoadPackage, 'loadPackage')
+        setUpHandler(self.handleExport,      'exportPackage')
+        setUpHandler(self.handleRegister,    'register')
+        self.idevicePane.client = client
 
-    # Render Methods
-
-    def render_mainMenu(self, ctx, data):
-        """
-        On mac menubars are not shown :(
-        """
-        if sys.platform[:6] == "darwin":
-            ctx.tag.tagName = 'toolbar'
-        return ctx.tag
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
         add child button and short cut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.addChild',
-                                                    js.currentOutlineId()))
+        return ctx.tag(oncommand=handler(self.outlinePane.handleAddChild,
+                       js('currentOutlineId()')))
+
 
     def render_delNode(self, ctx, data):
         """Fills in the oncommand handler for the 
         delete child button and short cut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.delNode',
-                                                    js.confirmDelete(),
-                                                    js.currentOutlineId()))
+        return ctx.tag(oncommand=handler(self.outlinePane.handleDelNode,
+                       js("confirmDelete()"),
+                       js('currentOutlineId()')))
+
 
     def render_renNode(self, ctx, data):
         """Fills in the oncommand handler for the 
         rename node button and short cut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.renNode',
-                                                    js.currentOutlineId(),
-                                                    js.askNodeName()))
+        return ctx.tag(oncommand=handler(self.outlinePane.handleRenNode,
+                       js('currentOutlineId()'),
+                       js('askNodeName()'), bubble=True))
+
 
     def render_prePath(self, ctx, data):
         """Fills in the package name to certain urls in the xul"""
         request = inevow.IRequest(ctx)
-        return ctx.tag(src = self.package.name + '/' + ctx.tag.attributes['src'])
+        return ctx.tag(src=self.package.name + '/' + ctx.tag.attributes['src'])
+
 
     # The node moving buttons
+    def _passHandle(self, ctx, name):
+        """Ties up a handler for the promote, demote,
+        up and down buttons. (Called by below funcs)"""
+        attr = getattr(self.outlinePane, 'handle%s' % name)
+        return ctx.tag(oncommand=handler(attr, js('currentOutlineId()')))
+
 
     def render_promote(self, ctx, data):
         """Fills in the oncommand handler for the 
         Promote button and shortcut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.promote',
-                                                    js.currentOutlineId()))
+        return self._passHandle(ctx, 'Promote')
+
 
     def render_demote(self, ctx, data):
         """Fills in the oncommand handler for the 
         Demote button and shortcut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.demote',
-                                                    js.currentOutlineId()))
+        return self._passHandle(ctx, 'Demote')
+
 
     def render_up(self, ctx, data):
         """Fills in the oncommand handler for the 
         Up button and shortcut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.up',
-                                                    js.currentOutlineId()))
+        return self._passHandle(ctx, 'Up')
+
 
     def render_down(self, ctx, data):
         """Fills in the oncommand handler for the 
         Down button and shortcut key"""
-        return ctx.tag(oncommand = js.server.handle('outlinePane.down',
-                                                    js.currentOutlineId()))
+        return self._passHandle(ctx, 'Down')
+
 
     def render_debugInfo(self, ctx, data):
         """Renders debug info to the top
@@ -183,33 +181,9 @@ class MainPage(RenderableLivePage):
         else:
             return ''
 
-    def render_liveglue(self, ctx, data):
-        """
-        Here we override and replace what livepage.py does.
-        We tell the browser where to find nevow_glue.js properly
-        """
-        # Get the clientHandle (poll every 60 seconds, call onClose if poll fails
-        # 9999 times in a row. (When dialogs are open on client polling fails)
-        if self.parent.stopping:
-            self.parent.stopping.cancel()
-            self.parent.stopping = None
-        self.client = self.clientFactory.newClientHandle(self, 0.1, 9999)
-        ctx.remember(self.client)
-        # Sign up to know the connection is closed
-        d = self.client.notifyOnClose()
-        d.addCallback(self.onClose,[self.client.closeNotifications])
-        d.addErrback(self.onClose,[self.client.closeNotifications])
-        # Render the js
-        handleId = "'", self.client.handleId, "'"
-        self._changingPages = False # Reset the status
-        return [
-            tags.script(language="JavaScript")[
-                "var nevow_clientHandleId = ", handleId ,";"],
-            tags.script(language="JavaScript",
-                        src='/xulscripts/nevow_glue.js')
-            ]
+    # Handle Methods
 
-    def handle_isPackageDirty(self, ctx, ifClean='', ifDirty=''):
+    def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
         Called by js to know if the package is dirty or not.
         ifClean is JavaScript to be evaled on the client if the package has
@@ -217,13 +191,12 @@ class MainPage(RenderableLivePage):
         ifDirty is JavaScript to be evaled on the client if the package has not
         been changed
         """
-        client = IClientHandle(ctx)
         if self.package.isChanged:
-            client.send(js(ifDirty))
+            client.sendScript(ifDirty)
         else:
-            client.send(js(ifClean))
+            client.sendScript(ifClean)
 
-    def handle_getPackageFileName(self, ctx, onDone, onDoneParam):
+    def handlePackageFileName(self, client, onDone, onDoneParam):
         """
         Calls the javascript func named by 'onDone' passing as the
         only parameter the filename of our package. If the package
@@ -231,11 +204,10 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
-        client = IClientHandle(ctx)
-        client.call(onDone, Path(self.package.filename), onDoneParam)
+        client.call(onDone, unicode(self.package.filename), onDoneParam)
 
 
-    def handle_savePackage(self, ctx, filename=None, onDone=None):
+    def handleSavePackage(self, client, filename=None, onDone=None):
         """Save the current package
         'filename' is the filename to save the package to
         'onDone' will be evaled after saving instead or redirecting
@@ -243,8 +215,7 @@ class MainPage(RenderableLivePage):
         (This is used where the user goes file|open when their 
         package is changed and needs saving)
         """
-        client     = IClientHandle(ctx)
-        filename   = Path(filename)
+        filename = Path(filename)
         exportDir  = filename.dirname()
         if exportDir and not exportDir.exists():
             client.alert(_(u'Cannot access directory named ') +
@@ -272,39 +243,41 @@ class MainPage(RenderableLivePage):
         # Tell the user and continue
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
-            client.send(js(onDone))
+            client.sendScript(onDone)
         elif self.package.name != oldName:
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s'
                      % self.package.name)
-            client.send(js(u'top.location = "/%s"' %
-                           self.package.name.encode('utf8')))
+            client.sendScript('top.location = "/%s"' % \
+                              self.package.name.encode('utf8'))
 
 
-    def handle_loadPackage(self, ctx, filename):
+    def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
-        client = IClientHandle(ctx)
         try:
-            filename = unicode(filename, 'utf8')
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'ascii'
+            filename = unicode(filename, encoding)
             log.debug("filename and path" + filename)
             packageStore = self.webServer.application.packageStore
             package = packageStore.loadPackage(filename)
             self.root.bindNewPackage(package)
-            client.send(js((u'top.location = "/%s"' % 
-                            package.name).encode('utf8')))
-            self._changingPages = True
+            client.sendScript((u'top.location = "/%s"' % \
+                              package.name).encode('utf8'))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
-            log.error((u'Error loading package "%s": %s') % \
+            log.error(_(u'Error loading package "%s": %s') % \
                       (filename, unicode(exc)))
             log.error((u'Traceback:\n%s' % traceback.format_exc()))
             raise
 
-    def handle_exportPackage(self, ctx, exportType, filename):
+
+    def handleExport(self, client, exportType, filename):
         """
         Called by js. 
         'exportType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
@@ -312,7 +285,6 @@ class MainPage(RenderableLivePage):
         Exports the current package to one of the above formats
         'filename' is a file for scorm pages, and a directory for websites
         """ 
-        client     = IClientHandle(ctx)
         webDir     = Path(self.config.webDir)
         stylesDir  = webDir.joinpath('style', self.package.style)
 
@@ -335,14 +307,21 @@ class MainPage(RenderableLivePage):
         else:
             self.exportIMS(client, filename, stylesDir)
 
+    def handleRegister(self, client):
+        """Go to the exelearning.org/register.php site"""
+        if hasattr(os, 'startfile'):
+            os.startfile("http://exelearning.org/register.php")
+        else:
+            os.system("firefox http://exelearning.org/register.php&")
 
-    def exportSinglePage(self, ctx, filename, webDir, stylesDir):
+    # Public Methods
+
+    def exportSinglePage(self, client, filename, webDir, stylesDir):
         """
         Export 'client' to a single web page,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
-        client       = IClientHandle(ctx)
         imagesDir    = webDir.joinpath('images')
         scriptsDir   = webDir.joinpath('scripts')
         templatesDir = webDir.joinpath('templates')
@@ -373,13 +352,12 @@ class MainPage(RenderableLivePage):
         # Show the newly exported web site in a new window
         self._startFile(filename)
 
-    def exportWebSite(self, ctx, filename, webDir, stylesDir):
+    def exportWebSite(self, client, filename, webDir, stylesDir):
         """
         Export 'client' to a web site,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
-        client       = IClientHandle(ctx)
         imagesDir    = webDir.joinpath('images')
         scriptsDir   = webDir.joinpath('scripts')
         templatesDir = webDir.joinpath('templates')
@@ -415,7 +393,7 @@ class MainPage(RenderableLivePage):
         Exports this package to a scorm package file
         """
         filename = Path(filename)
-        log.debug(u"exportScorm, filaneme=%s" % filename)
+        log.debug(u"exportScorm, filename=%s" % filename)
         # Append an extension if required
         #if not filename.lower().endswith('.zip'): 
         if not filename.ext.lower() == '.zip': 
@@ -446,8 +424,8 @@ class MainPage(RenderableLivePage):
         imsExport.export(self.package)
         client.alert(_(u'Exported to %s' % filename))
 
-    # Utiltity methods
 
+    # Utiltity methods
     def _startFile(self, filename):
         """
         Launches an exported web site or page
@@ -459,5 +437,6 @@ class MainPage(RenderableLivePage):
                 os.startfile(filename.encode(Path.fileSystemEncoding))
         else:
             filename /= 'index.html'
-            os.system("firefox "+filename+"&")
+            log.debug(u"firefox file://"+filename+"&")
+            os.system("firefox file://"+filename+"&")
 

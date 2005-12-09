@@ -26,6 +26,8 @@ from exe.engine.idevice import Idevice
 from exe.engine.field   import TextField
 from exe.engine.path    import Path
 from exe.engine.persist import Persistable
+from nevow              import tags as T
+from nevow.flat         import flatten
 import Image, ImageDraw
 log = logging.getLogger(__name__)
 
@@ -35,17 +37,19 @@ class GalleryImage(Persistable):
     Holds a gallery image and its caption. Can produce a thumbnail
     and line itself up with its siblings.
     """
+    persistenceVersion = 1
 
     # Class attributes
-    resourcesUrl = 'resources/'
+    resourcesUrl  = 'resources/'
 
     # Default attribute values
-    _parent = None
-    _caption = None
-    _id = None
+    _parent       = None
+    _caption      = None
+    _id           = None
     thumbnailSize = (128, 128)
-    size = thumbnailSize
-    bgColour = 0x808080
+    size          = thumbnailSize
+    bgColour      = 0x808080
+
 
     def __init__(self, parent, caption, originalImagePath):
         """
@@ -53,11 +57,13 @@ class GalleryImage(Persistable):
         'caption' is some text that will be displayed with the image
         'originalImagePath' is the local path to the image
         """
-        self.parent = parent
-        self._caption = TextField(caption)
-        self._imageFilename = None
+        self.parent             = parent
+        self._caption           = TextField(caption)
+        self._imageFilename     = None
         self._thumbnailFilename = None
+        self._htmlFilename      = None
         self._saveFiles(originalImagePath)
+
 
     def _saveFiles(self, originalImagePath):
         """
@@ -65,13 +71,15 @@ class GalleryImage(Persistable):
         'originalImagePath' is a Path instance
         """
         originalImagePath = Path(originalImagePath)
+
         # Copy the original image
-        filenameTemplate = ('gallery%%s%s.png' % self.id)
-        self._imageFilename = filenameTemplate % 'Image'
+        filenameTemplate = ('gallery%%s%s.%%s' % self.id)
+        self._imageFilename = filenameTemplate % ('Image', 'png')
         package = self.parent.parentNode.package
         package.addResource(originalImagePath, self.imageFilename)
+
         # Create the thumbnail
-        self._thumbnailFilename = filenameTemplate % "Thumbnail"
+        self._thumbnailFilename = filenameTemplate % ('Thumbnail', 'png')
         image = Image.open(originalImagePath)
         self.size = image.size
         image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
@@ -80,13 +88,20 @@ class GalleryImage(Persistable):
         width2, height2 = image2.size
         left = (width2 - width1) / 2.
         top = (height2 - height1) / 2.
+
         try:
             image2.paste(image, (left, top))
         except IOError:
             # If we cannot handle this type of image, print a nice message in
             # the thumbnail
             self._defaultThumbnail(image2)
+
         image2.save(self.thumbnailFilename)
+
+        # Create the HTML popup window
+        self._htmlFilename = filenameTemplate % ('', 'html')
+        self._createHTMLPopupFile()
+
 
     def _defaultThumbnail(self, image):
         """
@@ -98,6 +113,7 @@ class GalleryImage(Persistable):
         words = msg.split(' ')
         size = draw.textsize(msg)
         top = 1
+
         # Word wrap
         while words:
             if top > self.thumbnailSize[1]:
@@ -112,6 +128,28 @@ class GalleryImage(Persistable):
             words = words[ln:]
             top += size[1]
 
+
+    def _createHTMLPopupFile(self):
+        """
+        Renders an HTML page that show's the image
+        (Only realy needed for stupid IE)
+        """
+        data = flatten(
+           T.html[
+             T.head[
+               T.title[self.caption],
+             ],
+             T.body[
+               T.h1[self.caption],
+               T.p(align='center') [
+                 T.img(src=unicode(self.imageFilename.basename())),
+               ],
+             ]
+           ])
+        htmlFile = open(self.htmlFilename, 'wb')
+        htmlFile.write(data)
+        htmlFile.close()
+
     # Public Methods
 
     def delete(self):
@@ -120,7 +158,18 @@ class GalleryImage(Persistable):
         """
         self.imageFilename.remove()
         self.thumbnailFilename.remove()
+        self.htmlFilename.remove()
         self.parent = None
+
+
+    def getResources(self):
+        """
+        Return the resource files used by this iDevice
+        """
+        return Idevice.getResources(self) + \
+            [img.imageFilename.basename() for img in self.images] + \
+            [img.thumbnailFilename.basename() for img in self.images] + \
+            [img.htmlFilename.basename() for img in self.images]
 
     # Property Handlers
 
@@ -138,17 +187,20 @@ class GalleryImage(Persistable):
                 self._id = parent.genImageId()
             self._parent = parent
 
+
     def set_caption(self, value):
         """
         Lets you set our caption as a string
         """
         self._caption.content = value
 
+
     def get_imageFilename(self):
         """
         Returns the full path to the image
         """
         return self.parent.parentNode.package.resourceDir/self._imageFilename
+
 
     def set_imageFilename(self, filename):
         """
@@ -157,27 +209,51 @@ class GalleryImage(Persistable):
         if self._imageFilename:
             self.imageFilename.remove()
             self.thumbnailFilename.remove()
+            self.htmlFilename.remove()
         self._saveFiles(filename)
+
 
     def get_thumbnailFilename(self):
         """
         Returns the full path to the thumbnail
         """
-        return self.parent.parentNode.package.resourceDir/self._thumbnailFilename
+        return (self.parent.parentNode.package.resourceDir/
+                self._thumbnailFilename)
+
+
+    def get_htmlFilename(self):
+        """
+        Returns the full path to the thumbnail
+        """
+        return self.parent.parentNode.package.resourceDir/self._htmlFilename
+
 
     # Properties
 
     imageFilename = property(get_imageFilename, set_imageFilename)
     thumbnailFilename = property(get_thumbnailFilename)
+    htmlFilename = property(get_htmlFilename)
     parent  = property(lambda self: self._parent, set_parent)
     caption = property(lambda self: unicode(self._caption.content), set_caption)
-    src = property(lambda self: '%s%s' % 
+    imageSrc = property(lambda self: '%s%s' % 
                    (self.resourcesUrl , self._imageFilename))
     thumbnailSrc = property(lambda self: '%s%s' %
                             (self.resourcesUrl, self._thumbnailFilename))
+    htmlSrc = property(lambda self: '%s%s' %
+                            (self.resourcesUrl, self._htmlFilename))
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
+
+    
+    def upgradeToVersion1(self):
+        """
+        Called to upgrade from 0.10 to 0.11
+        """
+        # Create the HTML popup window
+        self._htmlFilename = self._imageFilename
+
+
 
 # ===========================================================================
 class GalleryImages(Persistable, list):

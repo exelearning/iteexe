@@ -40,6 +40,14 @@ class AttachmentIdevice(Idevice):
                          x_(u"Attachment"), 
                          x_(u"University of Auckland"), 
                          u"", 
+                         x_(u"The attachment iDevice is used to attach "
+                             "existing files to your .elp content. For example, "
+                             "you might have a PDF file or a PPT presentation "
+                             "file that you wish the learners to have access "
+                             "to, these can be attached and labeled to indicate "
+                             "what the attachment is and how large the file is. "
+                             "Learners can click on the attachment link and can "
+                             "download the attachment."),
                          u"", u"")
         self.emphasis           = Idevice.NoEmphasis
         self.filename           = u""
