@@ -22,8 +22,6 @@ Nodes provide the structure to the package hierarchy
 
 import logging
 from exe.engine.persist import Persistable
-# TODO: This is a big mean hack to get 0.5 out on time... toUnicode should be
-# in some lower level library
 from exe.engine.path    import toUnicode
 
 log = logging.getLogger(__name__)
@@ -40,7 +38,7 @@ class Node(Persistable):
     def __init__(self, package, parent=None, title=""):
         if parent:
             parent.children.append(self)
-        self._package  = package
+        self._package = package
         self._id      = package._regNewNode(self)
         self.parent   = parent
         self._title   = title
@@ -188,6 +186,16 @@ class Node(Persistable):
                 newParent.children.append(self)
 
         self.package.isChanged = True
+
+
+    def setPackage(self, package):
+        """
+        Changes the package of this node and all it's children
+        """
+        self._package = package
+        self._id      = package._regNewNode(self)
+        for child in self.children:
+            child.setPackage(package)
 
 
     def promote(self):

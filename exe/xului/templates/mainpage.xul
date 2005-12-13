@@ -49,6 +49,12 @@
                     <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage')"/>
                   </menupopup>
                 </menu>
+                <menu n:render="translate" id="merging-menu" label="Merging" accesskey="e">
+                  <menupopup id="merging-popup">
+                    <menuitem n:render="translate" label="Insert Package" accesskey="i" oncommand="insertPackage()"/>
+                    <menuitem n:render="translate" label="Extract Package" accesskey="E" oncommand="extractPackage()"/>
+                  </menupopup>
+                </menu>
               </menupopup>
             </menu>
             <menu n:render="translate" id="tools-menu" label="Tools" accesskey="t">

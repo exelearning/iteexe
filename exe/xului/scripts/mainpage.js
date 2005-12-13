@@ -426,7 +426,7 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
 // Currently valid values are:
 // 'scoem' 'ims' 'webSite'
 function exportPackage(exportType) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     if (exportType == 'webSite' || exportType == 'singlePage') {
@@ -443,11 +443,11 @@ function exportPackage(exportType) {
         }
     } else {
         if (exportType == "scorm")
-            title = "Export SCORM package as"
+            title = "Export SCORM package as";
         else if (exportType == "ims")
-            title = "Export IMS package as"
+            title = "Export IMS package as";
         else
-            title = "INVALID VALUE PASSED TO exportPackage"
+            title = "INVALID VALUE PASSED TO exportPackage";
         fp.init(window, title, nsIFilePicker.modeSave);
         fp.appendFilter("SCORM/IMS Packages", "*.zip");
         fp.appendFilter("All Files", "*.*");
@@ -455,6 +455,30 @@ function exportPackage(exportType) {
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
         }
+    }
+}
+
+// This function takes care of mergeing packages
+function insertPackage() {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select package to insert", nsIFilePicker.modeOpen);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        nevow_clientToServerEvent('insertPackage', this, '', fp.file.path)
+    }
+}
+
+// This function takes care of mergeing packages
+function extractPackage() {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Save extracted package as", nsIFilePicker.modeSave);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        nevow_clientToServerEvent('extractPackage', this, '', fp.file.path)
     }
 }
 

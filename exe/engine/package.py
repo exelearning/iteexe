@@ -75,9 +75,10 @@ class Package(Persistable):
         self._description = toUnicode(value)
 
     # Properties
-    name = property(lambda self:self._name, set_name)
-    author = property(lambda self:self._author, set_author)
+    name        = property(lambda self:self._name, set_name)
+    author      = property(lambda self:self._author, set_author)
     description = property(lambda self:self._description, set_description)
+    
 
     def findNode(self, nodeId):
         """
@@ -277,6 +278,7 @@ class Package(Persistable):
         self._name = toUnicode(self.__dict__['name'])
         self._author = toUnicode(self.__dict__['author'])
         self._description = toUnicode(self.__dict__['description'])
+
 
     def upgradeToVersion5(self):
         """

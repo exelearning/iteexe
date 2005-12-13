@@ -39,6 +39,7 @@ from exe.export.singlepageexport import SinglePageExport
 from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
 from exe.engine.path             import Path
+from exe.engine.package          import Package
 
 log = logging.getLogger(__name__)
 
@@ -83,6 +84,7 @@ class MainPage(RenderableLivePage):
         else:
             return super(self, self.__class__).getChild(self, name, request)
 
+
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type',
@@ -96,12 +98,14 @@ class MainPage(RenderableLivePage):
             kwargs['identifier'] = name
             hndlr = handler(func, *args, **kwargs)
             hndlr(ctx, client) # Stores it
-        setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
+        setUpHandler(self.handleIsPackageDirty,  'isPackageDirty')
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
-        setUpHandler(self.handleSavePackage, 'savePackage')
-        setUpHandler(self.handleLoadPackage, 'loadPackage')
-        setUpHandler(self.handleExport,      'exportPackage')
-        setUpHandler(self.handleRegister,    'register')
+        setUpHandler(self.handleSavePackage,     'savePackage')
+        setUpHandler(self.handleLoadPackage,     'loadPackage')
+        setUpHandler(self.handleExport,          'exportPackage')
+        setUpHandler(self.handleRegister,        'register')
+        setUpHandler(self.handleInsertPackage,   'insertPackage')
+        setUpHandler(self.handleExtractPackage,  'extractPackage')
         self.idevicePane.client = client
 
 
@@ -196,6 +200,7 @@ class MainPage(RenderableLivePage):
         else:
             client.sendScript(ifClean)
 
+
     def handlePackageFileName(self, client, onDone, onDoneParam):
         """
         Calls the javascript func named by 'onDone' passing as the
@@ -208,7 +213,8 @@ class MainPage(RenderableLivePage):
 
 
     def handleSavePackage(self, client, filename=None, onDone=None):
-        """Save the current package
+        """
+        Save the current package
         'filename' is the filename to save the package to
         'onDone' will be evaled after saving instead or redirecting
         to the new location (in cases of package name changes).
@@ -255,26 +261,12 @@ class MainPage(RenderableLivePage):
 
     def handleLoadPackage(self, client, filename):
         """Load the package named 'filename'"""
-        try:
-            encoding = sys.getfilesystemencoding()
-            if encoding is None:
-                encoding = 'ascii'
-            filename = unicode(filename, encoding)
-            log.debug("filename and path" + filename)
-            packageStore = self.webServer.application.packageStore
-            package = packageStore.loadPackage(filename)
-            self.root.bindNewPackage(package)
-            client.sendScript((u'top.location = "/%s"' % \
-                              package.name).encode('utf8'))
-        except Exception, exc:
-            if log.getEffectiveLevel() == logging.DEBUG:
-                client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
-            else:
-                client.alert(_(u'Sorry, wrong file format'))
-            log.error(_(u'Error loading package "%s": %s') % \
-                      (filename, unicode(exc)))
-            log.error((u'Traceback:\n%s' % traceback.format_exc()))
-            raise
+        package = self._loadPackage(client, filename)
+        packageStore = self.webServer.application.packageStore
+        packageStore.addPackage(package)
+        self.root.bindNewPackage(package)
+        client.sendScript((u'top.location = "/%s"' % \
+                          package.name).encode('utf8'))
 
 
     def handleExport(self, client, exportType, filename):
@@ -307,12 +299,30 @@ class MainPage(RenderableLivePage):
         else:
             self.exportIMS(client, filename, stylesDir)
 
+
     def handleRegister(self, client):
         """Go to the exelearning.org/register.php site"""
         if hasattr(os, 'startfile'):
             os.startfile("http://exelearning.org/register.php")
         else:
             os.system("firefox http://exelearning.org/register.php&")
+
+
+    def handleInsertPackage(self, client, filename):
+        """load the package and insert in current node"""
+        package = self._loadPackage(client, filename)
+        package.resourceDir.copyfiles(self.package.resourceDir)
+        insertNode = package.root
+        insertNode.setPackage(self.package)
+        insertNode.move(self.package.currentNode)
+        client.sendScript((u'top.location = "/%s"' % \
+                          package.name).encode('utf8'))
+
+
+    def handleExtractPackage(self, client, filename):
+        """create a new package consisting of the current node and export"""
+        print "extract", client, filename
+
 
     # Public Methods
 
@@ -352,6 +362,7 @@ class MainPage(RenderableLivePage):
         # Show the newly exported web site in a new window
         self._startFile(filename)
 
+
     def exportWebSite(self, client, filename, webDir, stylesDir):
         """
         Export 'client' to a web site,
@@ -388,6 +399,7 @@ class MainPage(RenderableLivePage):
         # Show the newly exported web site in a new window
         self._startFile(filename)
             
+
     def exportScorm(self, client, filename, stylesDir):
         """
         Exports this package to a scorm package file
@@ -443,4 +455,26 @@ class MainPage(RenderableLivePage):
             filename /= 'index.html'
             log.debug(u"firefox file://"+filename+"&")
             os.system("firefox file://"+filename+"&")
+
+
+    def _loadPackage(self, client, filename):
+        """Load the package named 'filename'"""
+        try:
+            encoding = sys.getfilesystemencoding()
+            if encoding is None:
+                encoding = 'ascii'
+            filename = unicode(filename, encoding)
+            log.debug("filename and path" + filename)
+            package = Package.load(filename)
+        except Exception, exc:
+            if log.getEffectiveLevel() == logging.DEBUG:
+                client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
+            else:
+                client.alert(_(u'Sorry, wrong file format'))
+            log.error(_(u'Error loading package "%s": %s') % \
+                      (filename, unicode(exc)))
+            log.error((u'Traceback:\n%s' % traceback.format_exc()))
+            raise
+
+        return package
 
