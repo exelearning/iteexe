@@ -188,24 +188,12 @@ class Node(Persistable):
         self.package.isChanged = True
 
 
-    def mergeIntoPackage(self, package):
+    def setPackage(self, package):
         """
         Changes the package of this node and all it's children
         """
         self._package = package
         self._id      = package._regNewNode(self)
-
-        for idevice in self.idevices
-#          oldResources = idevice.userResources
-#          idevice.resources = []
-            for resource in idevice.userResources:
-
-
-                newResource = package.addResource(oldResource)
-                if newResource != oldResources:
-                  toNotify.add(newResource, oldResource)
-          idevice.resources.notifyChanges(toNotify)
-
         for child in self.children:
             child.setPackage(package)
 

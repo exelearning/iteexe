@@ -311,7 +311,7 @@ class GalleryIdevice(Idevice):
     thumbnails.
     """
 
-    persistenceVersion = 3
+    persistenceVersion = 2
 
     def __init__(self, parentNode=None):
         """
@@ -360,9 +360,4 @@ class GalleryIdevice(Idevice):
         """
         self._upgradeIdeviceToVersion1()
     
-    def upgradeToVersion3(self):
-        """
-        Upgrades to v0.12
-        """
-        self._upgradeIdeviceToVersion2()
 

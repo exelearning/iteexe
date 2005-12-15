@@ -46,7 +46,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 5
+    persistenceVersion = 4
 
     def __init__(self, story=""):
         """
@@ -126,12 +126,5 @@ be a summary of the main points or concepts.""")
         self._storyInstruc    = self.__dict__['storyInstruc']
         self._questionInstruc = self.__dict__['questionInstruc']
         self._feedbackInstruc = self.__dict__['feedbackInstruc']
-
-    def upgradeToVersion5(self):
-        """
-        Upgrades to v0.12
-        """
-        self._upgradeIdeviceToVersion2()
-
 
 # ===========================================================================

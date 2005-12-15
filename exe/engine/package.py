@@ -173,54 +173,22 @@ class Package(Persistable):
         return newPackage
 
 
-    # TODO DELETE: The next two functions are candidates to be refactored out
-    # into a "Resource" class
-#import os.path
-#    def addResource(self, resourceFile):
-#        """
-#        Add an image/audio/video resource to the package.
-#        Returns the last part of the url to access this resource
-#        'resourceFile' is a 'path' instance pointing to a local file where we
-#        can load the resource from. 
-#        """
-#        storageName = resourceFile.basename()
-#        uniqueId = 1
-#        while (self.resourceDir/storageName).exists():
-#            nameBase, ext = os.path.splitext(storageName)
-#            storageName   = "%s%d.%s" % (nameBase, uniqueId, ext)
-#            uniqueId += 1
-#        resourceFile.copyfile(self.resourceDir/storageName)
-#
-#        return storageName
-#
-#
-#    def deleteResource(self, storageName):
-#        """
-#        Remove a resource from a package
-#        """
-#        resourceFile = self.resourceDir/storageName
-#        resourceFile.remove()
-#
+    def addResource(self, resourceFile, storageName):
+        """
+        Add an image/audio/video resource to the package.
+        Returns the last part of the url to access this resource
+        'resourceFile' is a 'path' instance pointing to a local file where we
+        can load the resource from. 
+        """
+        resourceFile.copyfile(self.resourceDir/storageName)
 
-    # TODO DELETE: This is being handled in the Node class
-#    def mergeNode(self, node):
-#        """
-#        Changes the package of this node and all it's children
-#        """
-#        node._package = self
-#        node._id      = self._regNewNode(node)
-#
-#        for idevice in node.idevices
-#          oldResources = idevice.resources
-#          idevice.resources = []
-#          for oldResource in oldResources
-#              newResource = self.addResource(oldResource)
-#              if newResource != oldResources:
-#                  toNotify.add(newResource, oldResource)
-#          idevice.resources.notifyChanges(toNotify)
-#
-#        for child in node.children:
-#            child.setPackage(self)
+
+    def deleteResource(self, storageName):
+        """
+        Remove a resource from a package
+        """
+        resourceFile = self.resourceDir/storageName
+        resourceFile.remove()
 
 
     def upgradeToVersion1(self):

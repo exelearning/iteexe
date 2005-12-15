@@ -31,7 +31,7 @@ class ForumIdevice(Idevice):
     A Forum Idevice is one built up from forum imformation ans discussion.
     """
     
-    persistenceVersion = 2
+    persistenceVersion = 1
 
     def __init__(self):
         Idevice.__init__(self, x_(u"Forum Discussion"), 
@@ -70,11 +70,5 @@ class ForumIdevice(Idevice):
         """
         self._upgradeIdeviceToVersion1()
     
-
-    def upgradeToVersion2(self):
-        """
-        Upgrades to v0.12
-        """
-        self._upgradeIdeviceToVersion2()
 
 # ===========================================================================

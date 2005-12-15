@@ -33,7 +33,7 @@ class AttachmentIdevice(Idevice):
     """
     An Attachment Idevice allows a file to be attached to a package.
     """
-    persistenceVersion = 3
+    persistenceVersion = 2
     
     def __init__(self):
         Idevice.__init__(self, 
@@ -146,10 +146,5 @@ class AttachmentIdevice(Idevice):
         self._labelInstruc       = self.__dict__.get('labelInstruc', '')
         self._descriptionInstruc = self.__dict__.get('descriptionInstruc', '')
 
-    def upgradeToVersion3(self):
-        """
-        Upgrades to v0.12
-        """
-        self._upgradeIdeviceToVersion2()
 
 # ===========================================================================

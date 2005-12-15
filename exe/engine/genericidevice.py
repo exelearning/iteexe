@@ -35,7 +35,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 6
+    persistenceVersion = 5
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -145,12 +145,5 @@ class GenericIdevice(Idevice):
         Upgrades exe to v0.10
         """
         self._upgradeIdeviceToVersion1()
-
-
-    def upgradeToVersion6(self):
-        """
-        Upgrades to v0.12
-        """
-        self._upgradeIdeviceToVersion2()
 
 # ===========================================================================

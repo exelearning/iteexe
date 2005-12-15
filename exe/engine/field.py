@@ -24,11 +24,12 @@ Simple fields which can be used to build up a generic iDevice.
 import logging
 from exe.engine.persist   import Persistable
 from exe.engine.path      import Path
-from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 import re
+import re
+import urllib
 log = logging.getLogger(__name__)
 
 
@@ -39,8 +40,9 @@ class Field(Persistable):
     rendered as an XHTML element
     """
     # Class attributes
-    # see derieved classes for persistenceVersion 
     nextId = 1
+
+    persistenceVersion = 1
 
     def __init__(self, name, instruc=""):
         """
@@ -104,8 +106,6 @@ class TextField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    persistenceVersion = 1
-
     def __init__(self, name, instruc="", content=""):
         """
         Initialize 
@@ -120,8 +120,6 @@ class TextAreaField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    persistenceVersion = 1
-
     def __init__(self, name, instruc="", content=""):
         """
         Initialize 
@@ -137,8 +135,6 @@ class FeedbackField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    persistenceVersion = 1
-
     def __init__(self, name, instruc=""):
         """
         Initialize 
@@ -156,16 +152,13 @@ class ImageField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    persistenceVersion = 1
-
     def __init__(self, name, instruc=""):
         """
         """
         Field.__init__(self, name, instruc)
         self.width        = ""
         self.height       = ""
-#TODO        self.imageName    = ""
-        self.imageResource = None
+        self.imageName    = ""
         self.defaultImage = ""
 
 
@@ -174,10 +167,7 @@ class ImageField(Field):
         Return the resource files (if any) used by this Field
         Overridden by derieved classes
         """
-        if self.imageResource:
-            return [self.imageResource]
-        else:
-            return []
+        return [self.imageName]
 
 
     def setImage(self, imagePath):
@@ -195,10 +185,10 @@ class ImageField(Field):
 
         if resourceFile.isfile():
             self.delete()
+            package = self.idevice.parentNode.package
 
-#TODO            self.imageName = package.addResource(resourceFile)
-            self.imageResource = Resource(self.idevice.parentNode.package,
-                                          resourceFile)
+            self.imageName = self.id + u"_" + unicode(resourceFile.basename())
+            package.addResource(resourceFile, self.imageName)
 
         else:
             log.error('File %s is not a file' % resourceFile)
@@ -214,11 +204,9 @@ class ImageField(Field):
         assert(self.idevice.parentNode.package,
                'iDevice '+self.idevice.parentNode.id+' has no package')
 
-#        if self.imageName:
-#            package = self.idevice.parentNode.package
-#            package.deleteResource(self.imageName)
-        if self.imageResource:
-            self.imageResource.delete()
+        if self.imageName:
+            package = self.idevice.parentNode.package
+            package.deleteResource(self.imageName)
 
 
     def setDefaultImage(self):
@@ -233,19 +221,6 @@ class ImageField(Field):
         # another package).  We should probably revisit this.
         if self.defaultImage:
             self.setImage(self.defaultImage)
-
-
-    def upgradeToVersion2(self):
-        """
-        Upgrades to exe v0.12
-        """
-        if self.imageName and self.idevice.parentNode:
-            package = self.idevice.parentNode.package
-            self.imageResource = Resource(self.idevice.parentNode.package,
-                                          package.resourceDir/self.imageName)
-        else:
-            self.imageResource = None
-        del self.imageName
 
 # ===========================================================================
 
@@ -343,8 +318,6 @@ class ClozeField(Field):
     """
 
     # Class Attributes
-    persistenceVersion = 1
-
     regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
 
     def __init__(self, name, instruc):
@@ -399,8 +372,6 @@ class FlashField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    persistenceVersion = 1
-
     def __init__(self, name, instruc=""):
         """
         """
@@ -435,7 +406,8 @@ class FlashField(Field):
             self.delete()
             package = self.idevice.parentNode.package
 
-            self.flashName = package.addResource(resourceFile)
+            self.flashName = self.id + u"_" + unicode(resourceFile.basename())
+            package.addResource(resourceFile, self.flashName)
 
         else:
             log.error('File %s is not a file' % resourceFile)
@@ -463,8 +435,6 @@ class FlashMovieField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-    persistenceVersion = 1
-
     def __init__(self, name, instruc=""):
         """
         """
@@ -532,9 +502,8 @@ class FlashMovieField(Field):
 
 
 class DiscussionField(Field):
-    persistenceVersion = 1
-
     def __init__(self, name, instruc="", content="" ):
+                 
         """
         Initialize 
         """

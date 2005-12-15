@@ -31,7 +31,7 @@ class FlashMovieIdevice(Idevice):
     """
     A FlashMovie Idevice is one built up from a flash file and free text.
     """
-    persistenceVersion = 2
+    persistenceVersion = 1
 
     def __init__(self):
         Idevice.__init__(self, x_(u"Flash Movie"), 
@@ -69,14 +69,6 @@ player from http://www.macromedia.com/ to play the video."""))
         self.flash.delete()
         Idevice.delete(self)
     
-
-    def upgradeToVersion2(self):
-        """
-        Upgrades to v0.12
-        """
-        self._upgradeIdeviceToVersion2()
-
-
     
         
 # ===========================================================================
