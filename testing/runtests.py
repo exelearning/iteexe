@@ -29,9 +29,10 @@ from testpackage       import TestPackage
 from testidevice       import TestIdevice
 from testidevicestore  import TestIdeviceStore
 from testpersist       import TestPersist
-from testexport        import TestWebsiteExport 
-from testexport        import TestScormMetaExport
-from testexport        import TestScormNoMetaExport
+#from testexport        import TestWebsiteExport 
+#from testexport        import TestScormMetaExport
+#from testexport        import TestScormNoMetaExport
+from testresource      import TestResource
 
 
 # ===========================================================================
@@ -49,7 +50,8 @@ if __name__ == "__main__":
     suite.addTest(unittest.makeSuite(TestIdevice))
     suite.addTest(unittest.makeSuite(TestIdeviceStore))
     suite.addTest(unittest.makeSuite(TestPersist))
-    suite.addTest(unittest.makeSuite(TestWebsiteExport))
-    suite.addTest(unittest.makeSuite(TestScormMetaExport))
-    suite.addTest(unittest.makeSuite(TestScormNoMetaExport))
+#    suite.addTest(unittest.makeSuite(TestWebsiteExport))
+#    suite.addTest(unittest.makeSuite(TestScormMetaExport))
+#    suite.addTest(unittest.makeSuite(TestScormNoMetaExport))
+    suite.addTest(unittest.makeSuite(TestResource))
     unittest.TextTestRunner(verbosity=2).run(suite)

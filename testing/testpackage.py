@@ -119,15 +119,6 @@ class TestPackage(unittest.TestCase):
         checkInst(package, package2)
 
 
-    def testResourceDir(self):
-        """
-        Test we have a resource directory and resource files can be stored in
-        """
-        package   = self.packageStore.createPackage()
-        package.addResource(Path("oliver.jpg"), "oliver.jpg")
-        self.assert_((package.resourceDir/"oliver.jpg").exists())
-
-
         
 if __name__ == "__main__":
     unittest.main()
