@@ -47,7 +47,7 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self, question=""):
         """
@@ -166,5 +166,11 @@ for the other alternatives.""")
         self._keyInstruc      = self.__dict__['keyInstruc']
         self._answerInstruc   = self.__dict__['answerInstruc']
         self._feedbackInstruc = self.__dict__['feedbackInstruc']
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
 
 # ===========================================================================

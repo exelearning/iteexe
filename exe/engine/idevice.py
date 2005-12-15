@@ -55,6 +55,13 @@ class Idevice(Persistable):
         self._purpose    = purpose
         self._tip        = tip
         self.icon        = icon
+        self.userResources = []
+        if self.icon:
+            self.systemResources = ["icon_"+self.icon+".gif"]
+        else:
+            self.systemResources = []
+        self.onResourceNamesChange = None
+
 
     # Properties
     def get_title(self):
@@ -125,15 +132,12 @@ class Idevice(Persistable):
         return index == len(self.parentNode.idevices) - 1
 
 
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        Overridden by derieved classes
-        """
-        if self.icon:
-            return ["icon_"+self.icon+".gif"]
-        else:
-            return []
+# TODO DELETE:
+#    def getResources(self):
+#        """
+#        Return the resource files used by this iDevice
+#        """
+#        return self.systemResources + self.userResources
 
 
     def movePrev(self):
@@ -179,5 +183,15 @@ class Idevice(Persistable):
         self._author  = self.__dict__['author']
         self._purpose = self.__dict__['purpose']
         self._tip     = self.__dict__['tip']
+
+
+    def _upgradeIdeviceToVersion2(self):
+        """
+        Upgrades the Idevice class members fro version 1 to version 2.
+        Should be called in derived classes.
+        """
+        self.userResources   = []
+        self.systemResources = []
+        self.onResourceNamesChange = None
 
 # ===========================================================================

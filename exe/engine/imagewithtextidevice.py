@@ -31,7 +31,7 @@ class ImageWithTextIdevice(Idevice):
     """
     A ImageWithText Idevice is one built up from an image and free text.
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, x_(u"Image with Text"), 
@@ -68,18 +68,19 @@ the piston with a brief textual summary of the key aspects of each visual.
                                 u"")
         self.image.idevice      = self
         self.image.defaultImage = defaultImage
+        self.text               = TextAreaField(x_(u"Text"))
+        self.text.idevice       = self
+        self.float              = u"left"
+        self.caption            = u""
+        self.userResources     += self.image.getResources()
 
-        self.text = TextAreaField(x_(u"Text"))
-        self.text.idevice = self
-        self.float        = u"left"
-        self.caption      = u""
 
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + self.image.getResources()
+# TODO DELETE:
+#    def getResources(self):
+#        """
+#        Return the resource files used by this iDevice
+#        """
+#        return Idevice.getResources(self) + self.image.getResources()
        
 
     def delete(self):
@@ -104,16 +105,25 @@ the piston with a brief textual summary of the key aspects of each visual.
         self.caption  = u""
         self.emphasis = Idevice.NoEmphasis
         
+
     def upgradeToVersion3(self):
         """
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
         
     def upgradeToVersion4(self):
         """
         Upgrades to exe v0.10
         """
         self._upgradeIdeviceToVersion1()
-        
+
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()        
+
 # ===========================================================================

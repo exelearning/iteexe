@@ -31,7 +31,7 @@ class ExternalUrlIdevice(Idevice):
     ExternalUrlIdevice: just has a field for the url
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"External Web Site"), 
@@ -49,5 +49,11 @@ into an inline frame. Use only if your content will be online."""), "", "")
         Upgrades exe to v0.10
         """
         self._upgradeIdeviceToVersion1()
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()        
     
 # ===========================================================================

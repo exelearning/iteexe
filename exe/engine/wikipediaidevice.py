@@ -43,7 +43,7 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
@@ -192,5 +192,9 @@ article from en.wikipedia.org, including copying the associated images."""),
         """
         self.icon = u"inter"
 
-
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
 # ===========================================================================

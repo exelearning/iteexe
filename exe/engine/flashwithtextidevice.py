@@ -32,7 +32,7 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self):
         Idevice.__init__(self, x_(u"Flash with Text"), 
@@ -70,6 +70,14 @@ class FlashWithTextIdevice(Idevice):
         """
         self._upgradeIdeviceToVersion1()
     
+    
+    def upgradeToVersion2(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+
+
     
         
 # ===========================================================================

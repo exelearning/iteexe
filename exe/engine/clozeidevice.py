@@ -35,7 +35,7 @@ class ClozeIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self, parentNode=None):
         """
@@ -163,3 +163,10 @@ class ClozeIdevice(Idevice):
         self.content.autoCompletionInstruc =  _(u"Allow auto completion when "
                                                 u"user filling the gaps.")
 
+    def upgradeToVersion3(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+
+# ===========================================================================
