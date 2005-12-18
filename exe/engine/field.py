@@ -24,12 +24,11 @@ Simple fields which can be used to build up a generic iDevice.
 import logging
 from exe.engine.persist   import Persistable
 from exe.engine.path      import Path
+from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 import re
-import re
-import urllib
 log = logging.getLogger(__name__)
 
 
@@ -40,9 +39,8 @@ class Field(Persistable):
     rendered as an XHTML element
     """
     # Class attributes
-    nextId = 1
-
     persistenceVersion = 1
+    nextId = 1
 
     def __init__(self, name, instruc=""):
         """
@@ -72,22 +70,6 @@ class Field(Persistable):
     id = property(getId)
 
 
-    def getResources(self):
-        """
-        Return the resource files (if any) used by this Field
-        Overridden by derieved classes
-        """
-        return []
-
-
-    def delete(self):
-        """
-        Do any special processing when deleted
-        Overridden by derieved classes
-        """
-        pass
-
-
     def upgradeToVersion1(self):
         """
         Upgrades to exe v0.10
@@ -99,6 +81,12 @@ class Field(Persistable):
         else:
             self._instruc = self.__dict__['instruction']
 
+
+    def _upgradeFieldToVersion2(self):
+        """
+        Called from Idevices to upgrade fields to exe v0.12
+        """
+        pass
 
 # ===========================================================================
 class TextField(Field):
@@ -156,18 +144,10 @@ class ImageField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width        = ""
-        self.height       = ""
-        self.imageName    = ""
-        self.defaultImage = ""
-
-
-    def getResources(self):
-        """
-        Return the resource files (if any) used by this Field
-        Overridden by derieved classes
-        """
-        return [self.imageName]
+        self.width         = ""
+        self.height        = ""
+        self.imageResource = None
+        self.defaultImage  = ""
 
 
     def setImage(self, imagePath):
@@ -184,29 +164,15 @@ class ImageField(Field):
                'iDevice '+self.idevice.parentNode.id+' has no package')
 
         if resourceFile.isfile():
-            self.delete()
-            package = self.idevice.parentNode.package
-
-            self.imageName = self.id + u"_" + unicode(resourceFile.basename())
-            package.addResource(resourceFile, self.imageName)
+            if self.imageResource:
+                self.imageResource.delete()
+                self.idevice.userResources.remove(self.imageResource)
+            self.imageResource = Resource(self.idevice.parentNode.package,
+                                          resourceFile)
+            self.idevice.userResources.append(self.imageResource)
 
         else:
             log.error('File %s is not a file' % resourceFile)
-
-
-    def delete(self):
-        """
-        Delete the image from the package
-        Needs to be in a package to work.
-        """
-        assert(self.idevice.parentNode,
-               'Image '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
-
-        if self.imageName:
-            package = self.idevice.parentNode.package
-            package.deleteResource(self.imageName)
 
 
     def setDefaultImage(self):
@@ -221,6 +187,20 @@ class ImageField(Field):
         # another package).  We should probably revisit this.
         if self.defaultImage:
             self.setImage(self.defaultImage)
+
+
+    def _upgradeFieldToVersion2(self):
+        """
+        Upgrades to exe v0.12
+        """
+        log.debug("ImageField upgrade field to version 2")
+        if self.imageName and self.idevice.parentNode:
+            self.imageResource = Resource(self.idevice.parentNode.package,
+                                          Path(self.imageName))
+            self.idevice.userResources.append(self.imageResource)
+        else:
+            self.imageResource = None
+        del self.imageName
 
 # ===========================================================================
 
@@ -317,7 +297,6 @@ class ClozeField(Field):
     This field handles a passage with words that the student must fill in
     """
 
-    # Class Attributes
     regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
 
     def __init__(self, name, instruc):
@@ -364,29 +343,22 @@ class ClozeField(Field):
         self.autoCompletion = True
         self.autoCompletionInstruc = _(u"""Allow auto completion when 
                                        user filling the gaps.""")
-# ===========================================================================
 
+# ===========================================================================
 
 class FlashField(Field):
     """
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+
     def __init__(self, name, instruc=""):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width        = 300
-        self.height       = 250
-        self.flashName    = ""
-
-
-    def getResources(self):
-        """
-        Return the resource files (if any) used by this Field
-        Overridden by derieved classes
-        """
-        return [self.flashName]
+        self.width         = 300
+        self.height        = 250
+        self.flashResource = ""
 
 
     def setFlash(self, flashPath):
@@ -403,30 +375,28 @@ class FlashField(Field):
                'iDevice '+self.idevice.parentNode.id+' has no package')
 
         if resourceFile.isfile():
-            self.delete()
-            package = self.idevice.parentNode.package
-
-            self.flashName = self.id + u"_" + unicode(resourceFile.basename())
-            package.addResource(resourceFile, self.flashName)
+            if self.flashResource:
+                self.flashResource.delete()
+                self.idevice.userResources.remove(self.flashResource)
+            self.flashResource = Resource(self.idevice.parentNode.package,
+                                          resourceFile)
+            self.idevice.userResources.append(self.flashResource)
 
         else:
             log.error('File %s is not a file' % resourceFile)
 
 
-    def delete(self):
+    def _upgradeFieldToVersion2(self):
         """
-        Delete the flash from the package
-        Needs to be in a package to work.
+        Upgrades to exe v0.12
         """
-        assert(self.idevice.parentNode,
-               'Flash '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
-
-        if self.flashName:
-            package = self.idevice.parentNode.package
-            package.deleteResource(self.flashName)
-
+        if self.flashName and self.idevice.parentNode:
+            self.flashResource = Resource(self.idevice.parentNode.package,
+                                          Path(self.flashName))
+            self.idevice.userResources.append(self.flashResource)
+        else:
+            self.flashResource = None
+        del self.flashName
 
 # ===========================================================================
 
@@ -439,17 +409,18 @@ class FlashMovieField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width        = 300
-        self.height       = 250
-        self.flashName    = ""
+        self.width         = 300
+        self.height        = 250
+        self.flashResource = ""
 
 
-    def getResources(self):
-        """
-        Return the resource files (if any) used by this Field
-        Overridden by derieved classes
-        """
-        return [self.flashName]
+# TODO DELETE
+#    def getResources(self):
+#        """
+#        Return the resource files (if any) used by this Field
+#        Overridden by derieved classes
+#        """
+#        return [self.flashName]
 
 
     def setFlash(self, flashPath):
@@ -466,36 +437,36 @@ class FlashMovieField(Field):
                'iDevice '+self.idevice.parentNode.id+' has no package')
 
         if resourceFile.isfile():
-            self.delete()
-            package = self.idevice.parentNode.package
+            if self.flashResource:
+                self.flashResource.delete()
+                self.idevice.userResources.remove(self.flashResource)
 
-            self.flashName = self.id + u"_" + unicode(resourceFile.basename())
             try:
                 flvDic = FLVReader(resourceFile)
-                package.addResource(resourceFile, self.flashName)
                 self.height = flvDic["height"] +30        
-                self.width = flvDic["width"]
+                self.width  = flvDic["width"]
+
+                self.flashResource = Resource(self.idevice.parentNode.package,
+                                              resourceFile)
+                self.idevice.userResources.append(self.flashResource)
             except AssertionError: 
                 log.error('File %s is not a flash movie' % resourceFile)
-                self.flashName = ""
 
         else:
             log.error('File %s is not a file' % resourceFile)
 
 
-    def delete(self):
+    def _upgradeFieldToVersion2(self):
         """
-        Delete the flash from the package
-        Needs to be in a package to work.
+        Upgrades to exe v0.12
         """
-        assert(self.idevice.parentNode,
-               'Flash '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
-
-        if self.flashName:
-            package = self.idevice.parentNode.package
-            package.deleteResource(self.flashName)
+        if self.flashName and self.idevice.parentNode:
+            self.flashResource = Resource(self.idevice.parentNode.package,
+                                          Path(self.flashName))
+            self.idevice.userResources.append(self.flashResource)
+        else:
+            self.flashResource = None
+        del self.flashName
 
 
 # ===========================================================================
@@ -503,7 +474,6 @@ class FlashMovieField(Field):
 
 class DiscussionField(Field):
     def __init__(self, name, instruc="", content="" ):
-                 
         """
         Initialize 
         """

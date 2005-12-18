@@ -311,7 +311,7 @@ class GalleryIdevice(Idevice):
     thumbnails.
     """
 
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self, parentNode=None):
         """
@@ -338,6 +338,7 @@ class GalleryIdevice(Idevice):
         self.nextImageId += 1
         return '%s.%s' % (self.id, self.nextImageId - 1)
 
+
     def addImage(self, imagePath):
         """
         Adds a new image to the last taking an image path.
@@ -345,6 +346,7 @@ class GalleryIdevice(Idevice):
         the resources directory.
         """
         return GalleryImage(self, '', imagePath)
+
 
     # Upgrade Methods
 
@@ -354,10 +356,17 @@ class GalleryIdevice(Idevice):
         """
         self.lastIdevice = False
 
+
     def upgradeToVersion2(self):
         """
         Upgrades exe to v0.10
         """
         self._upgradeIdeviceToVersion1()
     
+
+    def upgradeToVersion3(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
 

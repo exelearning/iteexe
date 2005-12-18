@@ -71,7 +71,7 @@ class QuizTestIdevice(Idevice):
     """
     A QuizTestIdevice Idevice is one built up from question and options
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self):
         """
@@ -87,6 +87,7 @@ class QuizTestIdevice(Idevice):
         self.passRate   = "50"
         self.questions  = []
         self.addQuestion()
+        self.systemResources += ["common.js", "libot_drag.js"]
         
 
     def addQuestion(self):
@@ -94,15 +95,6 @@ class QuizTestIdevice(Idevice):
         Add a new question to this iDevice. 
         """
         self.questions.append(TestQuestion())
-
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        # TODO not sure if this is correct?
-        return (Idevice.getResources(self) + 
-                ["common.js", "libot_drag.js"])
 
 
     def upgradeToVersion2(self):
@@ -128,11 +120,20 @@ class QuizTestIdevice(Idevice):
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
    
     def upgradeToVersion5(self):
         """
         Upgrades to exe v0.10
         """
         self._upgradeIdeviceToVersion1()
-        
+  
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()      
+        self.systemResources += ["common.js", "libot_drag.js"]
+
 # ===========================================================================

@@ -26,6 +26,8 @@ from exe.engine.beautifulsoup import BeautifulSoup
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
+from exe.engine.path          import Path, TempDirPath
+from exe.engine.resource      import Resource
 
 import urllib
 class UrlOpener(urllib.FancyURLopener):
@@ -43,7 +45,7 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
@@ -51,23 +53,14 @@ class WikipediaIdevice(Idevice):
                          x_(u"""The Wikipedia iDevice takes a copy of an
 article from en.wikipedia.org, including copying the associated images."""), 
                          u"", u"")
-        self.emphasis    = Idevice.NoEmphasis
-        self.articleName = u""
-        self.article     = TextAreaField(x_(u"Article"))
-        self.article.idevice = self
-        self.images      = {}
-        self.site        = defaultSite
-        self.icon        = u"inter"
-
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        resources = Idevice.getResources(self) + ["fdl.html"]
-        for image in self.images:
-            resources.append(image)
-        return resources
+        self.emphasis         = Idevice.NoEmphasis
+        self.articleName      = u""
+        self.article          = TextAreaField(x_(u"Article"))
+        self.article.idevice  = self
+        self.images           = {}
+        self.site             = defaultSite
+        self.icon             = u"inter"
+        self.systemResources += ["fdl.html"]
 
 
     def loadArticle(self, name):
@@ -95,29 +88,28 @@ article from en.wikipedia.org, including copying the associated images."""),
         content = soup.first('div', {'id': "content"})
 
         if not content:
-            print "no content"
+            log.error("no content")
 
         # clear out any old images
-        for image in self.images:
-            self.parentNode.package.deleteResource(image)
-        self.images = {}
-
+        for resource in self.userResources:
+            resource.delete()
+        self.userResources = []
+            
         # download the images
+        tmpDir = TempDirPath()
         for imageTag in content.fetch('img'):
             imageSrc  = unicode(imageTag['src'])
-            imageName = self.id + u"_" + imageSrc.split('/')[-1]
+            imageName = imageSrc.split('/')[-1]
+
+            # Search if we've already got this image
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
                     imageSrc = self.site + imageSrc
-                imageDest = self.parentNode.package.resourceDir/imageName
-                urllib.urlretrieve(imageSrc, imageDest)
+                urllib.urlretrieve(imageSrc, tmpDir/imageName)
                 self.images[imageName] = True
+                self.userResources.append(Resource(self.parentNode.package,
+                                                   tmpDir/imageName))
 
-            # We have to use absolute URLs if we want the images to
-            # show up in edit mode inside FCKEditor
-            imageTag['src'] = (u"/" + self.parentNode.package.name + 
-                               u"/resources/" + imageName)
-                
         self.article.content = self.reformatArticle(unicode(content))
 
 
@@ -153,10 +145,8 @@ article from en.wikipedia.org, including copying the associated images."""),
 
     def delete(self):
         """
-        Delete the fields when this iDevice is deleted
+        Clear out any old images when this iDevice is deleted
         """
-        for image in self.images:
-            self.parentNode.package.deleteResource(image)
         self.images = {}
         Idevice.delete(self)
 
@@ -167,12 +157,14 @@ article from en.wikipedia.org, including copying the associated images."""),
         """
         self.site        = _('http://en.wikipedia.org/')
 
+
     def upgradeToVersion2(self):
         """
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
         
+
     def upgradeToVersion3(self):
         """
         Upgrades exe to v0.10
@@ -180,11 +172,13 @@ article from en.wikipedia.org, including copying the associated images."""),
         self._upgradeIdeviceToVersion1()
         self._site = self.__dict__['site']
 
+
     def upgradeToVersion4(self):
         """
         Upgrades exe to v0.11... what was I thinking?
         """
         self.site = self.__dict__['_site']
+
 
     def upgradeToVersion5(self):
         """
@@ -192,5 +186,17 @@ article from en.wikipedia.org, including copying the associated images."""),
         """
         self.icon = u"inter"
 
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+        self.systemResources += ["fdl.html"]
+
+        if self.images and self.parentNode:
+            for image in self.images:
+                imageResource = Resource(self.parentNode.package, Path(image))
+                self.userResources.append(imageResource) 
 
 # ===========================================================================

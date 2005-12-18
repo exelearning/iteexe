@@ -35,18 +35,21 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
     
     def __init__(self, title, class_, author, purpose, tip):
         """
         Initialize 
         """
-        Idevice.__init__(self, title, author, purpose, tip, "generic")
-        self.class_  = class_
-        self.icon    = None
         if class_ in ("objectives", "activity", "reading", "preknowledge"):
-            self.icon = class_
-        self.fields    = []
+            icon = class_
+        else:
+            icon = None
+        Idevice.__init__(self, title, author, purpose, tip, icon)
+        self.class_  = class_
+        self.icon    = icon
+        self.fields  = []
+        self.systemResources += ["common.js", "libot_drag.js"]
 
 
     def clone(self):
@@ -74,25 +77,6 @@ class GenericIdevice(Idevice):
         return iter(self.fields)
 
  
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        resources = Idevice.getResources(self) + ["common.js", "libot_drag.js"]
-        for field in self.fields:
-            resources += field.getResources()
-        return resources
-    
-
-    def delete(self):
-        """
-        Delete the fields when this iDevice is deleted
-        """
-        for field in self.fields:
-            field.delete()
-        Idevice.delete(self)
-       
-
     def upgradeToVersion1(self):
         """
         Upgrades the node from version 0 (eXe version 0.4) to 1.
@@ -140,10 +124,23 @@ class GenericIdevice(Idevice):
         """
         self.lastIdevice = False
 
+
     def upgradeToVersion5(self):
         """
         Upgrades exe to v0.10
         """
         self._upgradeIdeviceToVersion1()
+
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+
+        for field in self.fields:
+            field._upgradeFieldToVersion2()
+
+        self.systemResources += ["common.js", "libot_drag.js"]
 
 # ===========================================================================

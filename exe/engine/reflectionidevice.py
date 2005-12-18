@@ -33,7 +33,7 @@ class ReflectionIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -56,7 +56,7 @@ must reflect upon.""")
         self._answerInstruc   = x_(u"""Describe how learners will assess how 
 they have done in the exercise. (Rubrics are useful devices for providing 
 reflective feedback.)""")
- 
+        self.systemResources += ["common.js"]
 
     # Properties
     activityInstruc = lateTranslate('activityInstruc')
@@ -78,12 +78,14 @@ reflective feedback.)""")
         """
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
+
         
     def upgradeToVersion3(self):
         """
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
 
     def upgradeToVersion4(self):
         """
@@ -93,10 +95,19 @@ reflective feedback.)""")
         self._activityInstruc = self.__dict__['activityInstruc']
         self._answerInstruc   = self.__dict__['answerInstruc']
    
+
     def upgradeToVersion5(self):
         """
         Upgrades to exe v0.10
         """
         self._upgradeIdeviceToVersion1()
-        
+
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+        self.systemResources += ["common.js"]
+
 # ===========================================================================

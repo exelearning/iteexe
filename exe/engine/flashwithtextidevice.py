@@ -24,6 +24,7 @@ A FlashWithText Idevice is one built up from a flash file and free text.
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.field   import TextAreaField, FlashField
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -32,36 +33,19 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self):
         Idevice.__init__(self, x_(u"Flash with Text"), 
                          x_(u"University of Auckland"), 
                          u"", u"", u"")
-        self.emphasis = Idevice.NoEmphasis
-        self.flash = FlashField(x_(u"Flash"), 
-                                u"")
-        self.flash.idevice      = self
-
-        self.text = TextAreaField(x_(u"Text"))
-        self.text.idevice = self
-        self.float        = u"left"
-        self.caption      = u""
-
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + self.flash.getResources()
-       
-
-    def delete(self):
-        """
-        Delete the flash when this iDevice is deleted
-        """
-        self.flash.delete()
-        Idevice.delete(self)
+        self.emphasis      = Idevice.NoEmphasis
+        self.flash         = FlashField(x_(u"Flash"), u"")
+        self.flash.idevice = self
+        self.text          = TextAreaField(x_(u"Text"))
+        self.text.idevice  = self
+        self.float         = u"left"
+        self.caption       = u""
 
 
     def upgradeToVersion1(self):
@@ -71,5 +55,12 @@ class FlashWithTextIdevice(Idevice):
         self._upgradeIdeviceToVersion1()
     
     
+    def upgradeToVersion2(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+        self.flash._upgradeFieldToVersion2()
+
         
 # ===========================================================================

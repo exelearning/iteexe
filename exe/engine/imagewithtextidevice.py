@@ -31,10 +31,11 @@ class ImageWithTextIdevice(Idevice):
     """
     A ImageWithText Idevice is one built up from an image and free text.
     """
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, defaultImage = None):
-        Idevice.__init__(self, x_(u"Image with Text"), 
+        Idevice.__init__(self, 
+                         x_(u"Image with Text"), 
                          x_(u"University of Auckland"), 
                          x_(u"""<p>
 The image with text iDevice can be used in a number of ways to support both
@@ -63,31 +64,14 @@ the image. For example, if you were teaching the functions of a four-stroke
 combustion engine, you could have a visual for each of the four positions of
 the piston with a brief textual summary of the key aspects of each visual.
 </p>"""), u"", u"")
-        self.emphasis = Idevice.NoEmphasis
-        self.image = ImageField(x_(u"Image"), 
-                                u"")
+        self.emphasis           = Idevice.NoEmphasis
+        self.image              = ImageField(x_(u"Image"), u"")
         self.image.idevice      = self
         self.image.defaultImage = defaultImage
-
-        self.text = TextAreaField(x_(u"Text"))
-        self.text.idevice = self
-        self.float        = u"left"
-        self.caption      = u""
-
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + self.image.getResources()
-       
-
-    def delete(self):
-        """
-        Delete the image when this iDevice is deleted
-        """
-        self.image.delete()
-        Idevice.delete(self)
+        self.text               = TextAreaField(x_(u"Text"))
+        self.text.idevice       = self
+        self.float              = u"left"
+        self.caption            = u""
 
 
     def upgradeToVersion1(self):
@@ -104,16 +88,27 @@ the piston with a brief textual summary of the key aspects of each visual.
         self.caption  = u""
         self.emphasis = Idevice.NoEmphasis
         
+
     def upgradeToVersion3(self):
         """
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
         
     def upgradeToVersion4(self):
         """
         Upgrades to exe v0.10
         """
         self._upgradeIdeviceToVersion1()
-        
+
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades to v0.12
+        """
+        log.debug("upgrade to version 5")
+        self._upgradeIdeviceToVersion2()        
+        self.image._upgradeFieldToVersion2()
+
 # ===========================================================================

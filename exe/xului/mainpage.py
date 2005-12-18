@@ -222,10 +222,10 @@ class MainPage(RenderableLivePage):
         package is changed and needs saving)
         """
         filename = Path(filename)
-        exportDir  = filename.dirname()
-        if exportDir and not exportDir.exists():
+        saveDir  = filename.dirname()
+        if saveDir and not saveDir.exists():
             client.alert(_(u'Cannot access directory named ') +
-                         unicode(exportDir) +
+                         unicode(saveDir) +
                          _(u'. Please use ASCII names.'))
             return
         
@@ -309,19 +309,46 @@ class MainPage(RenderableLivePage):
 
 
     def handleInsertPackage(self, client, filename):
-        """load the package and insert in current node"""
+        """
+        Load the package and insert in current node
+        """
         package = self._loadPackage(client, filename)
-        package.resourceDir.copyfiles(self.package.resourceDir)
         insertNode = package.root
-        insertNode.setPackage(self.package)
+        insertNode.mergeIntoPackage(self.package)
         insertNode.move(self.package.currentNode)
         client.sendScript((u'top.location = "/%s"' % \
-                          package.name).encode('utf8'))
+                          self.package.name).encode('utf8'))
 
 
     def handleExtractPackage(self, client, filename):
-        """create a new package consisting of the current node and export"""
-        print "extract", client, filename
+        """
+        Create a new package consisting of the current node and export
+        """
+        filename  = Path(filename)
+        saveDir = filename.dirname()
+        if saveDir and not saveDir.exists():
+            client.alert(_(u'Cannot access directory named ') +
+                         unicode(saveDir) +
+                         _(u'. Please use ASCII names.'))
+            return
+
+        # Add the extension if its not already there
+        if not filename.lower().endswith('.elp'):
+            filename += '.elp'
+
+        # Create a new package for the extracted nodes
+        package = Package(filename.namebase)
+        package.style  = self.package.style
+        package.author = self.package.author
+
+        # Copy the nodes from the original package
+        # and merge into the root of the new package
+        extractNode  = self.package.currentNode.clone()
+        extractNode.mergeIntoPackage(package)
+        package.root = package.currentNode = extractNode
+
+        # Save the new package
+        package.save(filename)
 
 
     # Public Methods

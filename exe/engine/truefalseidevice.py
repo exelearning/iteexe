@@ -48,7 +48,7 @@ class TrueFalseIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
 
     def __init__(self):
         """
@@ -72,6 +72,8 @@ this box, eXe will automatically provide default feedback as follows:
 "Correct answer" as indicated by the selection for the correct answer; or 
 "Wrong answer" for the other alternatives.""")
         self.questions.append(TrueFalseQuestion())
+        self.systemResources += ["common.js", "libot_drag.js",
+                                 "panel-amusements.png", "stock-stop.png"]
         
 
     # Properties
@@ -80,16 +82,6 @@ this box, eXe will automatically provide default feedback as follows:
     keyInstruc      = lateTranslate('keyInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')
 
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + ["common.js", 
-                                             "libot_drag.js",
-                                             "panel-amusements.png",
-                                             "stock-stop.png"]
-       
 
     def addQuestion(self):
         """
@@ -149,5 +141,13 @@ student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
 "Wrong answer" for the other alternatives.""")
+
+    def upgradeToVersion7(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()        
+        self.systemResources += ["common.js", "libot_drag.js",
+                                 "panel-amusements.png", "stock-stop.png"]
     
 # ===========================================================================

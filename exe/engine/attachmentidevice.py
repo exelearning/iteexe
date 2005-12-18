@@ -24,6 +24,7 @@ An Attachment Idevice allows a file to be attached to a package.
 from exe.engine.idevice   import Idevice
 from exe.engine.path      import Path
 from exe.engine.translate import lateTranslate
+from exe.engine.resource  import Resource
 
 import logging
 log = logging.getLogger(__name__)
@@ -33,7 +34,7 @@ class AttachmentIdevice(Idevice):
     """
     An Attachment Idevice allows a file to be attached to a package.
     """
-    persistenceVersion = 2
+    persistenceVersion = 3
     
     def __init__(self):
         Idevice.__init__(self, 
@@ -47,10 +48,8 @@ class AttachmentIdevice(Idevice):
                              "to, these can be attached and labeled to indicate "
                              "what the attachment is and how large the file is. "
                              "Learners can click on the attachment link and can "
-                             "download the attachment."),
-                         u"", u"")
+                             "download the attachment."), u"", u"")
         self.emphasis           = Idevice.NoEmphasis
-        self.filename           = u""
         self._filenameInstruc   = x_(u'Click <strong>Select a file</strong>, '
                                     'browse to the file you want '
                                     'to attach and select it.')
@@ -82,13 +81,6 @@ class AttachmentIdevice(Idevice):
     descriptionInstruc = lateTranslate('descriptionInstruc')
 
 
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + [ self.filename ]
-
-
     def setAttachment(self, attachmentPath):
         """
         Store the attachment in the package
@@ -103,34 +95,19 @@ class AttachmentIdevice(Idevice):
                _('iDevice %s has no package') % self.parentNode.id)
 
         if resourceFile.isfile():
-            package = self.parentNode.package
+            if self.userResources:
+                # clear out old attachment/s
+                for resource in self.userResources:
+                    resource.delete()
+                self.userResources = []
 
-            if self.filename:
-                package.deleteResource(self.filename)
-
-            self.filename = self.id + u"_" + unicode(resourceFile.basename())
-            package.addResource(resourceFile, self.filename)
+            self.userResources = [ Resource(self.parentNode.package, 
+                                            resourceFile) ]
 
         else:
             log.error('File %s is not a file' % resourceFile)
 
-
-    def delete(self):
-        """
-        Delete the attachment from the package
-        Needs to be in a package to work.
-        """
-        assert(self.parentNode,
-               _('Attachment %s has no parentNode') % self.id)
-        assert(self.parentNode.package,
-               _('iDevice %s has no package') % self.parentNode.id)
-
-        if self.filename:
-            self.parentNode.package.deleteResource(self.filename)
-            self.filename = u""
-
-        Idevice.delete(self)
-        
+       
     def upgradeToVersion1(self):
         """
         Upgrades v0.6 to v0.7.
@@ -146,5 +123,15 @@ class AttachmentIdevice(Idevice):
         self._labelInstruc       = self.__dict__.get('labelInstruc', '')
         self._descriptionInstruc = self.__dict__.get('descriptionInstruc', '')
 
+
+    def upgradeToVersion3(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+        if self.filename and self.parentNode:
+            self.userResources = [ Resource(self.parentNode.package,
+                                            Path(self.filename)) ]
+        del self.filename
 
 # ===========================================================================

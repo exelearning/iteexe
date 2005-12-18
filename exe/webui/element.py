@@ -242,7 +242,7 @@ class ImageElement(Element):
         """
         log.debug("renderEdit")
 
-        if self.field.imageName == "":
+        if not self.field.imageResource:
             self.field.setDefaultImage()
 
         html  = u"<b>"+self.field.name+":</b>\n"
@@ -251,7 +251,7 @@ class ImageElement(Element):
         html += u'<img alt="" '
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addImage('"+self.id+"');\" "
-        html += u"src=\"resources/"+self.field.imageName+"\" "
+        html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
         if self.field.width:
             html += u"width=\""+self.field.width+"\" " 
         if self.field.height:
@@ -295,11 +295,11 @@ class ImageElement(Element):
         """
         Returns an XHTML string for previewing this image
         """
-        if self.field.imageName == "":
+        if not self.field.imageResource:
             self.field.setDefaultImage()
 
         html = common.image("img"+self.id, 
-                            "resources/"+self.field.imageName,
+                            "resources/"+self.field.imageResource.storageName,
                             self.field.width,
                             self.field.height)
         return html
@@ -309,11 +309,11 @@ class ImageElement(Element):
         """
         Returns an XHTML string for viewing this image
         """
-        if self.field.imageName == "":
+        if not self.field.imageResource:
             self.field.setDefaultImage()
 
         html = common.image("img"+self.id, 
-                             self.field.imageName, 
+                             self.field.imageResource.storageName, 
                              self.field.width,
                              self.field.height)
         
@@ -570,7 +570,7 @@ class FlashElement(Element):
         """
 
         html = common.flash("flash"+self.id, 
-                             self.field.flashName, 
+                             self.field.flashResource.storageName, 
                              self.field.width,
                              self.field.height)
         
@@ -630,7 +630,7 @@ class FlashMovieElement(Element):
         """
         Returns an XHTML string for viewing this flash
         """
-        html = common.flashMovie(self.field.flashName, 
+        html = common.flashMovie(self.field.flashResource.storageName, 
                              self.field.width, self.field.height)
         
         return html

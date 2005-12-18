@@ -47,7 +47,7 @@ class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self, question=""):
         """
@@ -99,6 +99,8 @@ student to see when selecting the particular option. If you don't complete this
 box, eXe will automatically provide default feedback as follows: "Correct 
 answer" as indicated by the selection for the correct answer; or "Wrong answer"
 for the other alternatives.""")
+        self.systemResources += ["common.js", "libot_drag.js",
+                                 "panel-amusements.png", "stock-stop.png"]
         
     # Properties
     hintInstruc     = lateTranslate('hintInstruc')
@@ -106,15 +108,6 @@ for the other alternatives.""")
     keyInstruc      = lateTranslate('keyInstruc')
     answerInstruc   = lateTranslate('answerInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + ["common.js", 
-                                             "libot_drag.js",
-                                             "panel-amusements.png",
-                                             "stock-stop.png"]
 
 
     def addOption(self):
@@ -134,6 +127,7 @@ for the other alternatives.""")
                      x_(u"Enter a hint here. If you do not want to provide a "
                         u"hint, leave this field blank.")
 
+
     def upgradeToVersion2(self):
         """
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
@@ -141,6 +135,7 @@ for the other alternatives.""")
         """
         log.debug(u"Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
+
     
     def upgradeToVersion3(self):
         """
@@ -149,12 +144,14 @@ for the other alternatives.""")
         """
         log.debug(u"Upgrading iDevice icon")
         self.icon = "question"
+
         
     def upgradeToVersion4(self):
         """
         Upgrades v0.6 to v0.7.
         """
         self.lastIdevice = False
+
 
     def upgradeToVersion5(self):
         """
@@ -166,5 +163,14 @@ for the other alternatives.""")
         self._keyInstruc      = self.__dict__['keyInstruc']
         self._answerInstruc   = self.__dict__['answerInstruc']
         self._feedbackInstruc = self.__dict__['feedbackInstruc']
+
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to v0.12
+        """
+        self._upgradeIdeviceToVersion2()
+        self.systemResources += ["common.js", "libot_drag.js",
+                                 "panel-amusements.png", "stock-stop.png"]
 
 # ===========================================================================

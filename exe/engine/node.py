@@ -21,6 +21,7 @@ Nodes provide the structure to the package hierarchy
 """
 
 import logging
+import copy
 from exe.engine.persist import Persistable
 from exe.engine.path    import toUnicode
 
@@ -36,6 +37,11 @@ class Node(Persistable):
     persistenceVersion = 2
 
     def __init__(self, package, parent=None, title=""):
+        """
+        Initialize a new node
+        """
+        log.debug(u"init " + title)
+
         if parent:
             parent.children.append(self)
         self._package = package
@@ -99,6 +105,14 @@ class Node(Persistable):
 
     # Normal methods
 
+    def clone(self):
+        """
+        Clone a node just like this one, still belonging to this package
+        """
+        log.debug(u"clone ")
+        return copy.deepcopy(self, {id(self._package): self._package})
+
+
     def ancestors(self):
         """Iterates over our ancestors"""
         if self.parent: # All top level nodes have no ancestors
@@ -117,9 +131,10 @@ class Node(Persistable):
         """
         Return the resource files used by this node
         """
+        log.debug(u"getResources ")
         resources = {}
         for idevice in self.idevices:
-            for resource in idevice.getResources():
+            for resource in idevice.systemResources + idevice.userResources:
                 resources[resource] = True
 
         return resources.keys()
@@ -129,6 +144,7 @@ class Node(Persistable):
         """
         Create a child node
         """
+        log.debug(u"createChild ")
         self.package.isChanged = True
         return Node(self.package, self)
 
@@ -137,6 +153,7 @@ class Node(Persistable):
         """
         Delete a node with all its children
         """
+        log.debug(u"delete ")
         # Remove ourself from the id dict and our parents child thing
         del self.package._nodeIdDict[self.id]
         if self.parent:
@@ -157,6 +174,7 @@ class Node(Persistable):
         """
         Add the idevice to this node, sets idevice's parentNode 
         """
+        log.debug(u"addIdevice ")
         idevice.id = self.package.getNewIdeviceId()
         idevice.parentNode = self
         for oldIdevice in self.idevices:
@@ -169,6 +187,7 @@ class Node(Persistable):
         Moves the node around in the tree.
         nextSibling can be a node object or an integer index
         """
+        log.debug(u"move ")
         if newParent:
             assert newParent.package is self.package, \
                    "Can't change a node into a different package"
@@ -188,14 +207,27 @@ class Node(Persistable):
         self.package.isChanged = True
 
 
-    def setPackage(self, package):
+    def mergeIntoPackage(self, package):
         """
         Changes the package of this node and all it's children
         """
+        log.debug(u"mergeIntoPackage " + package.name)
+
         self._package = package
         self._id      = package._regNewNode(self)
+
+        for idevice in self.idevices:
+            resourceNamesChanged = []
+            for resource in idevice.userResources:
+                nameChanged = resource.changePackage(package)
+                if nameChanged:
+                    resourceNamesChanged.append(nameChanged)
+
+            if idevice.onResourceNamesChanged:
+                idevice.onResourceNamesChanged(resourceNamesChanged)
+
         for child in self.children:
-            child.setPackage(package)
+            child.mergeIntoPackage(package)
 
 
     def promote(self):
@@ -204,6 +236,7 @@ class Node(Persistable):
         Moves the node one step closer to the tree root.
         Returns True is successful
         """
+        log.debug(u"promote ")
         if self.parent and self.parent.parent:
             self.move(self.parent.parent, self.parent.nextSibling())
             return True
@@ -218,6 +251,7 @@ class Node(Persistable):
         tries to keep the same position in the tree.
         Returns True is successful
         """
+        log.debug(u"demote ")
         if self.parent:
             idx = self.parent.children.index(self)
             if idx > 0:
@@ -234,6 +268,7 @@ class Node(Persistable):
         the tree.
         Returns True is successful.
         """
+        log.debug(u"up ")
         if self.parent:
             children = self.parent.children
             i = children.index(self)
@@ -252,6 +287,7 @@ class Node(Persistable):
         Moves the node down one vertically, keeping its level the same.
         Returns True is successful.
         """
+        log.debug(u"down ")
         if self.parent:
             children = self.parent.children
             i = children.index(self)
@@ -266,6 +302,7 @@ class Node(Persistable):
 
     def nextSibling(self):
         """Returns our next sibling or None"""
+        log.debug(u"nextSibling ")
         sibling = None
 
         if self.parent:
@@ -279,6 +316,7 @@ class Node(Persistable):
 
     def previousSibling(self):
         """Returns our previous sibling or None"""
+        log.debug(u"previousSibling ")
         sibling = None
 
         if self.parent:
@@ -306,11 +344,13 @@ class Node(Persistable):
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
+        log.debug(u"upgradeToVersion1 ")
         self._title = self.__dict__[u'title']
 
 
     def upgradeToVersion2(self):
         """Upgrades the node from eXe version 0.5."""
+        log.debug(u"upgradeToVersion2 ")
         self._title = self._title.title
         
         

@@ -173,24 +173,6 @@ class Package(Persistable):
         return newPackage
 
 
-    def addResource(self, resourceFile, storageName):
-        """
-        Add an image/audio/video resource to the package.
-        Returns the last part of the url to access this resource
-        'resourceFile' is a 'path' instance pointing to a local file where we
-        can load the resource from. 
-        """
-        resourceFile.copyfile(self.resourceDir/storageName)
-
-
-    def deleteResource(self, storageName):
-        """
-        Remove a resource from a package
-        """
-        resourceFile = self.resourceDir/storageName
-        resourceFile.remove()
-
-
     def upgradeToVersion1(self):
         """
         Called to upgrade from 0.3 release

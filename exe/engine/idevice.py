@@ -55,6 +55,13 @@ class Idevice(Persistable):
         self._purpose    = purpose
         self._tip        = tip
         self.icon        = icon
+        self.userResources = []
+        if self.icon:
+            self.systemResources = ["icon_"+self.icon+".gif"]
+        else:
+            self.systemResources = []
+        self.onResourceNamesChanged = None
+
 
     # Properties
     def get_title(self):
@@ -70,6 +77,7 @@ class Idevice(Persistable):
         else:
             return u''
 
+
     def set_title(self, value):
         """
         Sets self._title
@@ -81,6 +89,7 @@ class Idevice(Persistable):
     author   = lateTranslate('author')
     purpose  = lateTranslate('purpose')
     tip      = lateTranslate('tip')
+
 
     def __cmp__(self, other):
         """
@@ -104,6 +113,11 @@ class Idevice(Persistable):
         """
         delete an iDevice from it's parentNode
         """
+        # clear out old user resources
+        for resource in self.userResources:
+            resource.delete()
+        self.userResources = []
+
         if self.parentNode:
             self.parentNode.idevices.remove(self)
             self.parentNode = None
@@ -123,17 +137,6 @@ class Idevice(Persistable):
         """
         index = self.parentNode.idevices.index(self)
         return index == len(self.parentNode.idevices) - 1
-
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        Overridden by derieved classes
-        """
-        if self.icon:
-            return ["icon_"+self.icon+".gif"]
-        else:
-            return []
 
 
     def movePrev(self):
@@ -172,12 +175,27 @@ class Idevice(Persistable):
 
     def _upgradeIdeviceToVersion1(self):
         """
-        Upgrades the Idevice class members fro version 0 to version 1.
+        Upgrades the Idevice class members from version 0 to version 1.
         Should be called in derived classes.
         """
+        log.debug("upgrading to version 1")
         self._title   = self.__dict__['title']
         self._author  = self.__dict__['author']
         self._purpose = self.__dict__['purpose']
         self._tip     = self.__dict__['tip']
+
+
+    def _upgradeIdeviceToVersion2(self):
+        """
+        Upgrades the Idevice class members from version 1 to version 2.
+        Should be called in derived classes.
+        """
+        log.debug("upgrading to version 2, for 0.12")
+        self.userResources = []
+        if self.icon:
+            self.systemResources = ["icon_"+self.icon+".gif"]
+        else:
+            self.systemResources = []
+        self.onResourceNamesChanged = None
 
 # ===========================================================================
