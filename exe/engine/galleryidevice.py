@@ -22,12 +22,13 @@ Gallery Idevice. Enables you to easily manage a bunch of images and thumbnails
 """
 
 import logging
-from exe.engine.idevice import Idevice
-from exe.engine.field   import TextField
-from exe.engine.path    import Path
-from exe.engine.persist import Persistable
-from nevow              import tags as T
-from nevow.flat         import flatten
+from exe.engine.idevice  import Idevice
+from exe.engine.field    import TextField
+from exe.engine.path     import Path, TempDirPath
+from exe.engine.persist  import Persistable
+from nevow               import tags as T
+from nevow.flat          import flatten
+from exe.engine.resource import Resource
 import Image, ImageDraw
 log = logging.getLogger(__name__)
 
@@ -59,9 +60,9 @@ class GalleryImage(Persistable):
         """
         self.parent             = parent
         self._caption           = TextField(caption)
-        self._imageFilename     = None
-        self._thumbnailFilename = None
-        self._htmlFilename      = None
+        self._imageResource     = None
+        self._thumbnailResource = None
+        self._htmlResource      = None
         self._saveFiles(originalImagePath)
 
 
@@ -73,13 +74,15 @@ class GalleryImage(Persistable):
         originalImagePath = Path(originalImagePath)
 
         # Copy the original image
-        filenameTemplate = ('gallery%%s%s.%%s' % self.id)
-        self._imageFilename = filenameTemplate % ('Image', 'png')
         package = self.parent.parentNode.package
-        package.addResource(originalImagePath, self.imageFilename)
+
+        self._imageResource = Resource(package, originalImagePath)
+        self.parent.userResources.append(self._imageResource)
 
         # Create the thumbnail
-        self._thumbnailFilename = filenameTemplate % ('Thumbnail', 'png')
+        tmpDir = TempDirPath()
+        htmlPath = (package.resourceDir/ 
+                    self._imageResource.path.namebase + ".html")
         image = Image.open(originalImagePath)
         self.size = image.size
         image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
@@ -96,11 +99,18 @@ class GalleryImage(Persistable):
             # the thumbnail
             self._defaultThumbnail(image2)
 
-        image2.save(self.thumbnailFilename)
+        thumbnailPath = (package.resourceDir/ 
+                         self._imageResource.path.namebase + ".png")
+        image2.save(thumbnailPath)
+        self._thumbnailResource = Resource(package, thumbnailPath)
+        self.parent.userResources.append(self._thumbnailResource)
 
         # Create the HTML popup window
-        self._htmlFilename = filenameTemplate % ('', 'html')
-        self._createHTMLPopupFile()
+        htmlPath = (package.resourceDir/ 
+                    self._imageResource.path.namebase + ".html")
+        self._createHTMLPopupFile(htmlPath)
+        self._htmlResource = Resource(package, htmlPath)
+        self.parent.userResources.append(self._htmlResource)
 
 
     def _defaultThumbnail(self, image):
@@ -129,7 +139,7 @@ class GalleryImage(Persistable):
             top += size[1]
 
 
-    def _createHTMLPopupFile(self):
+    def _createHTMLPopupFile(self, htmlPath):
         """
         Renders an HTML page that show's the image
         (Only realy needed for stupid IE)
@@ -142,11 +152,11 @@ class GalleryImage(Persistable):
              T.body[
                T.h1[self.caption],
                T.p(align='center') [
-                 T.img(src=unicode(self.imageFilename.basename())),
+                 T.img(src=unicode(self._imageResource.storageName)),
                ],
              ]
            ])
-        htmlFile = open(self.htmlFilename, 'wb')
+        htmlFile = open(htmlPath, 'wb')
         htmlFile.write(data)
         htmlFile.close()
 
@@ -156,20 +166,13 @@ class GalleryImage(Persistable):
         """
         Removes our files from resources and removes us from our parent's list
         """
-        self.imageFilename.remove()
-        self.thumbnailFilename.remove()
-        self.htmlFilename.remove()
-        self.parent = None
+        pass
+# TODO DELETE
+#        self.imageFilename.remove()
+#        self.thumbnailFilename.remove()
+#        self.htmlFilename.remove()
+#        self.parent = None
 
-
-    def getResources(self):
-        """
-        Return the resource files used by this iDevice
-        """
-        return Idevice.getResources(self) + \
-            [img.imageFilename.basename() for img in self.images] + \
-            [img.thumbnailFilename.basename() for img in self.images] + \
-            [img.htmlFilename.basename() for img in self.images]
 
     # Property Handlers
 
@@ -199,17 +202,17 @@ class GalleryImage(Persistable):
         """
         Returns the full path to the image
         """
-        return self.parent.parentNode.package.resourceDir/self._imageFilename
+        return self._imageResource.path
 
 
     def set_imageFilename(self, filename):
         """
         Totally changes the image to point to a new filename
         """
-        if self._imageFilename:
-            self.imageFilename.remove()
-            self.thumbnailFilename.remove()
-            self.htmlFilename.remove()
+        if self._imageResource:
+            self._imageResource.delete()
+            self._thumbnailResource.delete()
+            self._htmlFilename.delete()
         self._saveFiles(filename)
 
 
@@ -217,15 +220,14 @@ class GalleryImage(Persistable):
         """
         Returns the full path to the thumbnail
         """
-        return (self.parent.parentNode.package.resourceDir/
-                self._thumbnailFilename)
+        return self._thumbnailResource.path
 
 
     def get_htmlFilename(self):
         """
         Returns the full path to the thumbnail
         """
-        return self.parent.parentNode.package.resourceDir/self._htmlFilename
+        return self._htmlResource.path
 
 
     # Properties
@@ -238,9 +240,11 @@ class GalleryImage(Persistable):
     imageSrc = property(lambda self: '%s%s' % 
                    (self.resourcesUrl , self._imageFilename))
     thumbnailSrc = property(lambda self: '%s%s' %
-                            (self.resourcesUrl, self._thumbnailFilename))
+                            (self.resourcesUrl, 
+                             self._thumbnailResource.storageName))
     htmlSrc = property(lambda self: '%s%s' %
-                            (self.resourcesUrl, self._htmlFilename))
+                            (self.resourcesUrl, 
+                             self._htmlResource.storageName))
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
@@ -253,6 +257,26 @@ class GalleryImage(Persistable):
         # Create the HTML popup window
         self._htmlFilename = self._imageFilename
 
+
+    def _upgradeImageToVersion2(self):
+        """
+        Upgrades to exe v0.12
+        """
+        self._imageResource     = Resource(self.parent.parentNode.package,
+                                           self._imageFilename)
+        self.parent.userResources.append(self._imageResource)
+
+        self._thumbnailResource = Resource(self.parent.parentNode.package,
+                                           self._thumbnailFilename)
+        self.parent.userResources.append(self._thumbnailResource)
+
+        self._htmlResource      = Resource(self.parent.parentNode.package,
+                                           self._htmlFilename)
+        self.parent.userResources.append(self._htmlResource)
+
+        del self._imageFilename
+        del self._thumbnailFilename
+        del self._htmlFilename
 
 
 # ===========================================================================
@@ -348,6 +372,14 @@ class GalleryIdevice(Idevice):
         return GalleryImage(self, '', imagePath)
 
 
+    def handleResourceNamesChanged(self, resourceNamesChanged):
+        """
+        Called when the iDevice's resources need their names changed
+        """
+        # TODO
+        print "not yet implemented!!!"
+
+
     # Upgrade Methods
 
     def upgradeToVersion1(self):
@@ -369,4 +401,6 @@ class GalleryIdevice(Idevice):
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()
+        for image in self.images:
+            image._upgradeImageToVersion2()
 
