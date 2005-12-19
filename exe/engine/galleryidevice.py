@@ -194,6 +194,8 @@ class GalleryImage(Persistable):
         Lets you set our caption as a string
         """
         self._caption.content = value
+        if self._htmlResource:
+            self._createHTMLPopupFile(self._htmlResource.path)
 
 
     def get_imageFilename(self):
@@ -210,7 +212,7 @@ class GalleryImage(Persistable):
         if self._imageResource:
             self._imageResource.delete()
             self._thumbnailResource.delete()
-            self._htmlFilename.delete()
+            self._htmlResource.delete()
         self._saveFiles(filename)
 
 
@@ -353,7 +355,7 @@ class GalleryIdevice(Idevice):
         self.nextImageId       = 0
         self.images            = GalleryImages(self)
         self.currentImageIndex = 0
-        self.onResourceNamesChanged = self.handleResourceNamesChanged
+        self.systemResources  += ["stock-insert-image.png"]
 
 
     def genImageId(self):
@@ -372,7 +374,7 @@ class GalleryIdevice(Idevice):
         return GalleryImage(self, '', imagePath)
 
 
-    def handleResourceNamesChanged(self, resourceNamesChanged):
+    def onResourceNamesChanged(self, resourceNamesChanged):
         """
         Called when the iDevice's resources need their names changed
         """
@@ -419,5 +421,4 @@ class GalleryIdevice(Idevice):
         self._upgradeIdeviceToVersion2()
         for image in self.images:
             image._upgradeImageToVersion2()
-        self.onResourceNamesChanged = self.handleResourceNamesChanged
 

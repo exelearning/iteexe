@@ -171,6 +171,15 @@ class Idevice(Persistable):
             self.parentNode.idevices.remove(self)
         parentNode.addIdevice(self)
         
+
+    def onResourceNamesChanged(self, resourceNamesChanged):
+        """
+        Called when the iDevice's resources need their names changed
+        Overridden by derieved classes
+        """
+        pass
+
+        
     # Protected Methods
 
     def _upgradeIdeviceToVersion1(self):

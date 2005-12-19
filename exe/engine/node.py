@@ -134,7 +134,8 @@ class Node(Persistable):
         log.debug(u"getResources ")
         resources = {}
         for idevice in self.idevices:
-            for resource in idevice.systemResources + idevice.userResources:
+            for resource in (idevice.systemResources + 
+                             map(toUnicode, idevice.userResources)):
                 resources[resource] = True
 
         return resources.keys()
@@ -223,8 +224,7 @@ class Node(Persistable):
                 if nameChanged:
                     resourceNamesChanged.append(nameChanged)
 
-            if idevice.onResourceNamesChanged:
-                idevice.onResourceNamesChanged(resourceNamesChanged)
+            idevice.onResourceNamesChanged(resourceNamesChanged)
 
         for child in self.children:
             child.mergeIntoPackage(package)
