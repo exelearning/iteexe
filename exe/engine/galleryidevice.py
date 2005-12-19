@@ -166,12 +166,10 @@ class GalleryImage(Persistable):
         """
         Removes our files from resources and removes us from our parent's list
         """
-        pass
-# TODO DELETE
-#        self.imageFilename.remove()
-#        self.thumbnailFilename.remove()
-#        self.htmlFilename.remove()
-#        self.parent = None
+        self.parent.userResources.remove(self._imageResource)
+        self.parent.userResources.remove(self._thumbnailResource)
+        self.parent.userResources.remove(self._htmlResource)
+        self.parent = None
 
 
     # Property Handlers
@@ -351,10 +349,12 @@ class GalleryIdevice(Idevice):
                              "show."),
                              "gallery",
                              parentNode)
-        self.emphasis = Idevice.SomeEmphasis
-        self.nextImageId = 0
-        self.images = GalleryImages(self)
+        self.emphasis          = Idevice.SomeEmphasis
+        self.nextImageId       = 0
+        self.images            = GalleryImages(self)
         self.currentImageIndex = 0
+        self.onResourceNamesChanged = self.handleResourceNamesChanged
+
 
     def genImageId(self):
         """Generate a unique id for an image.
@@ -376,8 +376,24 @@ class GalleryIdevice(Idevice):
         """
         Called when the iDevice's resources need their names changed
         """
-        # TODO
-        print "not yet implemented!!!"
+        #TODO Someone will fix this later
+        for oldName, newName in resourceNamesChanged:
+            htmlPath = self.parentNode.package.resourceDir/newName
+            data = flatten(
+               T.html[
+                 T.head[
+                   T.title[self.caption],
+                 ],
+                 T.body[
+                   T.h1[self.caption],
+                   T.p(align='center') [
+                     T.img(src=unicode(newName)),
+                   ],
+                 ]
+               ])
+            htmlFile = open(htmlPath, 'wb')
+            htmlFile.write(data)
+            htmlFile.close()
 
 
     # Upgrade Methods
@@ -403,4 +419,5 @@ class GalleryIdevice(Idevice):
         self._upgradeIdeviceToVersion2()
         for image in self.images:
             image._upgradeImageToVersion2()
+        self.onResourceNamesChanged = self.handleResourceNamesChanged
 
