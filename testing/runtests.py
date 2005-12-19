@@ -33,6 +33,7 @@ from testpersist       import TestPersist
 #from testexport        import TestScormMetaExport
 #from testexport        import TestScormNoMetaExport
 from testresource      import TestResource
+from testforumscache   import TestForumsCache
 
 
 # ===========================================================================
@@ -54,4 +55,5 @@ if __name__ == "__main__":
 #    suite.addTest(unittest.makeSuite(TestScormMetaExport))
 #    suite.addTest(unittest.makeSuite(TestScormNoMetaExport))
     suite.addTest(unittest.makeSuite(TestResource))
+    suite.addTest(unittest.makeSuite(TestForumsCache))
     unittest.TextTestRunner(verbosity=2).run(suite)

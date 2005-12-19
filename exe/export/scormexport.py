@@ -74,17 +74,50 @@ class Manifest(object):
         
         for page in self.pages:
             for idevice in page.node.idevices:
-                if idevice.title == "Forum Discussion":
-                    block = g_blockFactory.createBlock(None, idevice)
-                    if not block:
-                        log.critical("Unable to render iDevice.")
-                        raise Error("Unable to render iDevice.")
-                    xmlStr += block.renderForumStr()
+                if idevice.title == "Discussion Activity":
+                    forums = idevice.forumCache.getForums()
+                    xmlStr += moodleForum(forums)
+                    break
                     
         xmlStr += "</forums>\n"
         
         return xmlStr
-
+    
+    def moodleForums(forums):
+        """
+        returning moodle forum XLM string for manifest file
+        """ 
+        forumStr      = ""
+        discussionStr = ""
+        for forum in forums:
+            if forum.lms == "moodle":
+                forumStr += "<forum><name>%s</name>" % forum.forumName
+                forumStr += "<id>%s</id>" % forum.forumName
+                forumStr += "<introduction>%s</introduction>" % \
+                             forum.introduction
+                forumStr += "<type>%s</type>" % forum.lms.type
+                forumStr += "<studentpost>%s</studentpost>\n" % \
+                             forum.lms.studentpost
+                forumStr += "<subscription>%s</subscription>\n" % \
+                             forum.lms.subscription
+                forumStr += "<tracking>1</tracking>\n"
+                forumStr += "<attachmentsize></attachmentsize>\n"
+                forumStr += "<ratings>0</ratings>\n"
+                forumStr += "<groupmode>%s</groupmode>\n" % forum.lms.groupmode
+                forumStr += "<visible>%s</visible>\n" % forum.lms.visible
+                forumStr += "</forum>"
+                
+                for discussion in forum.discussions:
+                    discussionStr += "<discussion>"
+                    discussionStr += "<discussionId>%s</discussionId>" % \
+                                     forum.forumName
+                    discussionStr += "<subject>%s</subject>" % discussion.topic
+                    discussionStr += "<message>%s</message>" % discussion.intro
+                    discussionStr += "<subscription>send me</subscription>\n"
+                    discussionStr += "</discussion>"
+                    
+        xml = forumStr + discussionStr
+        return xml
     
     def createXML(self):
         """
@@ -295,8 +328,10 @@ class ScormExport(object):
             page.save(outputDir)
             if not self.hasForum:
                 for idevice in page.node.idevices:
-                    if idevice.title == "Forum Discussion":
-                        self.hasForum = True
+                    if idevice.title == "Discussion Activity":
+                        if idevice.forum.lms == "moodle":
+                            self.hasForum = True
+                            print "Has moodle"
                         break
 
         # Create the manifest file

@@ -21,8 +21,10 @@ ForumBlock can render and process ForumIdevices as XHTML
 """
 
 import logging
-from exe.webui.block import Block
-from exe.webui       import common
+from exe.webui.block         import Block
+from exe.webui               import common
+from exe.webui.forumelement  import DiscussionElement, ForumElement
+from exe.engine.forumidevice import Forum, Discussion
 
 log = logging.getLogger(__name__)
 
@@ -37,140 +39,136 @@ class ForumBlock(Block):
         Initialize a new Block object
         """
         Block.__init__(self, parent, idevice)
-        self.idevice = idevice
-
+        self.forumElement = ForumElement(idevice)
+        self.discussionElement = DiscussionElement(idevice)
+   
 
     def process(self, request):
         """
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        
-        if "name"+self.id in request.args:
-            self.idevice.forumName = request.args["name"+self.id][0]
             
-        if "type"+self.id in request.args:
-            self.idevice.type = request.args["type"+self.id][0]
+        self.idevice.message = ""
+        self.forumElement.process(request)
+            
+            
 
-        if "introduction"+self.id in request.args:
-            self.idevice.introduction = request.args["introduction"+self.id][0]
+        if (("action" in request.args and 
+             request.args["action"][0] == "changeForum") and ("forumSelect" + \
+             self.id in request.args)):
+            self.idevice.edit = True
+            self.idevice.noForum = False
             
-        if "studentpost"+self.id in request.args:
-            self.idevice.studentpost = request.args["studentpost"+self.id][0]
-            
-        if "groupmode"+self.id in request.args:
-            self.idevice.groupmode = request.args["groupmode"+self.id][0]
+            value = request.args["object"][0]
+
+            if value == "":
+                self.idevice.noForum = True
+            elif value == "newForum":
+                forum = Forum()
+                self.idevice.forum = forum
+            else:
+                for forum in self.idevice.forumsCache.getForums():
+                    if forum.forumName == value:
+                        self.idevice.forum = forum
+                        break
+                
+        if ("action" in request.args and 
+            request.args["action"][0] == "changeTopic" and "topicSelect" +
+            self.id in request.args and not self.idevice.noForum):
+            self.idevice.edit = True
+            self.idevice.isNewTopic = False
+            value = request.args["object"][0]
+            if value == "none":
+                pass
+            elif value == "newTopic":
+                newTopic = Discussion()
+                self.idevice.discussion = newTopic
+                self.idevice.discussion.isNone = False
+                self.idevice.isNewTopic = True
+                
+            else:
+                for topic in self.idevice.forum.discussions:
+                    if topic.topic == value:
+                        break
+                self.idevice.discussion = topic
        
-        if "visible"+self.id in request.args:
-            self.idevice.visible = request.args["visible"+self.id][0]
+        if ("action" in request.args and 
+            request.args["action"][0] == "changeLms" 
+            and not self.idevice.noForum and "lmsSelect" + \
+            self.id in request.args):
+            self.idevice.edit = True
+            self.idevice.forum.lms.lms = request.args["object"][0]    
+             
+        if (("action" in request.args and request.args["action"][0] == "done" \
+            or not self.idevice.edit) and "forumSelect" + \
+            self.id in request.args):
+
+            if self.idevice.noForum: 
+                self.idevice.message += _("Please select a forum.\n")
+                self.idevice.edit = True
+            else:
+                if self.idevice.forum.forumName == "":
+                    self.idevice.message += \
+                        _("Please enter a name for the forum\n")
+                    self.idevice.edit = True
+                elif self.idevice.isNewForum:
+                    for forum in self.idevice.forumsCache.getForums():
+                        if forum.forumName == self.idevice.forumName:
+                            self.idevice.message += _("duplicate forum name.\n")
+                            self.idevice.edit = True
+                            break
+                    if self.idevice.lms.lms == "":
+                        self.idevice.message += _("Please select LMS.\n")
+                        self.idevice.edit = True
+                if self.idevice.isNewTopic:                    
+                    if self.idevice.discussion.topic == "":
+                        self.idevice.message += \
+                            _("Please enter a discussion topic name.\n")
+                        self.idevice.edit = True
+                    for topic in self.idevice.forum.discussions:
+                        if topic.topic == self.idevice.discussion.topic:
+                            self.idevice.message += _("duplicate topic name.")
+                            self.idevice.edit = True
+                            break
+                        
+                if (not self.idevice.edit and not self.idevice.discussion.isNone
+                    and not self.idevice.discussion.isAdded):
+                    discussion = self.idevice.discussion
+                    self.idevice.forum.discussions.append(discussion)
+                    discussion.isAdded = True
+                    self.idevice.isNewTopic = False
+                    
+                if not self.idevice.edit and not self.idevice.isAdded:
+                    self.idevice.forumsCache.addForum(self.idevice.forum)
+                    self.idevice.isNewForum = False
+                    self.idevice.isAdded = True
+                        
         
-        if "subject"+self.id in request.args:
-            self.idevice.discussionSubject = request.args["subject"+self.id][0]
-            
-        if "message"+self.id in request.args:
-            self.idevice.discussionMessage = request.args["message"+self.id][0]
-            
-        if "subscription"+self.id in request.args:
-            self.idevice.subscription = request.args["subscription"+self.id][0]
+                
             
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
-       
-        introduction = self.idevice.introduction.replace("\r", "")
-        introduction = introduction.replace("\n","\\n")
-        message      = self.idevice.discussionMessage.replace("\r", "")
-        message      = message.replace("\n","\\n")
-        
-        typeArr    = [[_(u'A single simple discussion'),       'single'],
-                      [_(u'Each person posts one discussion'), 'eachuser'],
-                      [_(u'Standard forum for general use'),   'general']]
-        
-        postArr    = [[_(u'Discussions and replies are allowed'),     '2'],
-                      [_(u'No discussions, but replies are allowed'), '1'],
-                      [_(u'No discussions, no replies'),              '0']]
-        
-        subscArr   = [[_(u'No'),             '0'], 
-                      [_(u'Yes, forever'),   '1'], 
-                      [_(u'Yes, initially'), '2']]
-        
-        groupArr   = [[_(u'No groups'),       '0'], 
-                      [_(u'Separate groups'), '1'], 
-                      [_(u'Visible groups'),  '2']]
-        
-        visibleArr = [[_(u'Show'), '1'], 
-                      [_(u'Hide'), '0']]
+                                   
+        html  = self.forumElement.renderEdit()
+        html += u"<br/>" + self.renderEditButtons() + "<br/>"
 
-        
-        html  = u'<div class="iDevice emphasis%d forum">\n' % \
-                  self.idevice.emphasis
-        
-        html += u"<b>%s</b>" % _(u"Forum name:") 
-        html += common.elementInstruc("name"+self.id, 
-                                      self.idevice.nameInstruc)+ u"<br/>\n"
-        
-        html += common.textInput("name"+self.id, self.idevice.forumName)+ "\n"
-        html += u"<br/><b>%s</b>" % _(u"Forum type:") 
-        html += common.elementInstruc("type"+self.id, 
-                                      self.idevice.typeInstruc)+ u"<br/>"
-        html += common.select("type"+self.id, 
-                              typeArr, selection=self.idevice.type) 
-        html += u"<br/><b>%s</b>" % _(u"Forum introduction:") 
-        html += common.elementInstruc("introduction"+self.id, 
-                                      self.idevice.introInstruc)+ u"<br/>"
-        html += common.richTextArea("introduction"+self.id, 
-                                    introduction)
-        html += u"<b>%s</b>" % _(u"Can a student post to this forum?:")
-        html += common.elementInstruc("studentpost"+self.id, 
-                                      self.idevice.postInstruc)+ "<br/>"
-        html += common.select("studentpost"+self.id, postArr, 
-                              selection=self.idevice.studentpost) + "\n"
-        html += u"<br/><b>%s</b>" % _(u"Force everyone to be subscribed?:")
-        
-        html += common.elementInstruc("subscription"+self.id, 
-                                      self.idevice.subscInstruc)+ "<br/>"
-        html += common.select("subscription"+self.id, subscArr, 
-                              selection=self.idevice.subscription) + "\n"
-        html += u"<br/><b>%s</b>" % _(u"Group mode:")
-        html += common.elementInstruc("groupmode"+self.id, 
-                                      self.idevice.groupInstruc)+ u"<br/>"
-        html += common.select("groupmode"+self.id, groupArr, 
-                              selection=self.idevice.groupmode) + "\n"
-        html += "<br/><b>%s</b>" % _(u"Visible to students:")
-        html += common.elementInstruc("visible"+self.id, 
-                                      self.idevice.visibleInstruc)+ u"<br/>"
-        html += common.select("visible"+self.id, visibleArr, 
-                              selection=self.idevice.visible) + u"\n"
-        html += u"<br/><br/><b>%s</b>" % _(u"Discussion topic:") + u"<br/>"
-        html += u"<b>%s</b>" % _(u"Subject:") 
-        html += common.elementInstruc("subject"+self.id, 
-                                      self.idevice.subjectInstruc)+ u"<br/>"
-        html += common.textInput("subject"+self.id, 
-                                 self.idevice.discussionSubject)+ u"<br/>"
-        html += u"<b>%s</b>" % _(u"Message:") 
-        html += common.elementInstruc("message"+self.id, 
-                                      self.idevice.messageInstruc)+ u"<br/>"
-        html += common.richTextArea("message"+self.id, 
-                                    message)
-
-        html += u"<br/>" + self.renderEditButtons()
-        html += u"</div>\n"
         return html
     
+ 
     def renderPreview(self, style):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u'<div class="iDevice emphasis%d forum">\n' % \
-                  self.idevice.emphasis
-        html += u"<p><b>%s</b></p>" % _(u"Forum Discussion")
-        html += u"<b>%s</b><br/>" % self.idevice.forumName
-        html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
-        html += u"<b>%s</b><br/>\n" % _(u"Subject")
-        html += u"<!--Forum%slink-->\n" % self.id
-        html += u"<br/>\n" 
-        html += self.idevice.discussionMessage + u"<br/>\n"
+        html  = u'<div class="iDevice '
+        html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
+        html += u'<img alt="" class="iDevice_icon" '
+        html += u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />\n'
+        html += u'<span class="iDeviceTitle">'
+        html += self.idevice.title+'</span><br/>\n'
+        html += self.forumElement.renderView()
         html += self.renderViewButtons()
         html += u"</div>"
         return html
@@ -179,15 +177,13 @@ class ForumBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<div class="iDevice emphasis%d forum">\n' % \
-                  self.idevice.emphasis
-        html += u"<p><b>%s</b></p>" % _(u"Forum Discussion")
-        html += u"<b>%s</b><br/>" % self.idevice.forumName
-        html += u"<b>%s</b><br/>\n" % _(u"Discussion Topic")
-        html += u"<b>%s</b><br/>\n" % _(u"Subject")
-        html += u"<!--Forum%slink-->\n" % self.id
-        html += self.idevice.discussionSubject + u"<br/>\n" 
-        html += self.idevice.discussionMessage + u"<br/>\n"
+        html  = u'<div class="iDevice '
+        html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
+        html += u'<img alt="" class="iDevice_icon" '
+        html += u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />\n'
+        html += u'<span class="iDeviceTitle">'
+        html += self.idevice.title+'</span><br/>\n'
+        html += self.forumElement.renderView()
         html += u"</div>"
         return html
     
@@ -212,9 +208,9 @@ class ForumBlock(Block):
         xml += "</forum>"
         xml += "<discussion>\n"
         xml += "<discussionId>Forum%s</discussionId>\n" % self.id
-        xml += "<subject>%s</subject>\n" % self.idevice.discussionSubject
+        #xml += "<subject>%s</subject>\n" % self.idevice.discussionSubject
         xml += "<message><![CDATA["
-        xml += self.idevice.discussionMessage
+        #xml += self.idevice.discussionMessage
         xml += "]]></message>\n" 
         xml += "<subscription>send me</subscription>\n" 
         xml += "</discussion>\n"

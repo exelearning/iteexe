@@ -127,6 +127,8 @@ class IdeviceStore:
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
         from exe.engine.flashmovieidevice     import FlashMovieIdevice
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
+        from exe.engine.forumidevice          import ForumIdevice
+        from exe.engine.forumscache           import ForumsCache     
 
         self.extended.append(FreeTextIdevice())
         
@@ -138,6 +140,11 @@ class IdeviceStore:
                 
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
+        
+        forumsCache = ForumsCache()
+        forum       = ForumIdevice()
+        forum.forumsCache = forumsCache
+        self.extended.append(forum)
 
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
