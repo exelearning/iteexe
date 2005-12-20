@@ -246,7 +246,7 @@ class ForumElement(object):
         html += '<option value = "moodle" '
         if self.forum.lms.lms == "moodle":
             html += 'selected '
-        html += '>'+ _(u"Moddle") + '</option>'
+        html += '>'+ _(u"Moodle") + '</option>'
         html += '<option value = "other" '
         if self.forum.lms.lms == "other":
             html += 'selected '
