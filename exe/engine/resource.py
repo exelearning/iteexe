@@ -42,8 +42,7 @@ class Resource(Persistable):
         Initialize a resource object, and copy the file into the package's
         resouceDir unless it is already there
         """
-        log.debug(u"init package=%s, resourceFile=%s" % (package.name, 
-                                                         unicode(resourceFile)))
+        log.debug(u"init resourceFile=%s" % resourceFile)
         self._package     = package
         self._storageName = toUnicode(resourceFile.basename())
 

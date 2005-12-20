@@ -60,7 +60,6 @@ class Idevice(Persistable):
             self.systemResources = ["icon_"+self.icon+".gif"]
         else:
             self.systemResources = []
-        self.onResourceNamesChanged = None
 
 
     # Properties
@@ -205,6 +204,5 @@ class Idevice(Persistable):
             self.systemResources = ["icon_"+self.icon+".gif"]
         else:
             self.systemResources = []
-        self.onResourceNamesChanged = None
 
 # ===========================================================================
