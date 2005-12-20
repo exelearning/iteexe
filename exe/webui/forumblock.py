@@ -67,6 +67,7 @@ class ForumBlock(Block):
             elif value == "newForum":
                 forum = Forum()
                 self.idevice.forum = forum
+                self.idevice.isNewForum = True
             else:
                 for forum in self.idevice.forumsCache.getForums():
                     if forum.forumName == value:
@@ -114,11 +115,11 @@ class ForumBlock(Block):
                     self.idevice.edit = True
                 elif self.idevice.isNewForum:
                     for forum in self.idevice.forumsCache.getForums():
-                        if forum.forumName == self.idevice.forumName:
+                        if forum.forumName == self.idevice.forum.forumName:
                             self.idevice.message += _("duplicate forum name.\n")
                             self.idevice.edit = True
                             break
-                    if self.idevice.lms.lms == "":
+                    if self.idevice.forum.lms.lms == "":
                         self.idevice.message += _("Please select LMS.\n")
                         self.idevice.edit = True
                 if self.idevice.isNewTopic:                    
