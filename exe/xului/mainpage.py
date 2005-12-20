@@ -349,6 +349,7 @@ class MainPage(RenderableLivePage):
 
         # Save the new package
         package.save(filename)
+        client.alert(_(u'Package saved to: %s' % filename))
 
 
     # Public Methods
