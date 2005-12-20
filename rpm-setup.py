@@ -68,7 +68,7 @@ Content generated using eXe can be used by any Learning Management System.
       author       = "University of Auckland",
       author_email = "exe@exelearning.org",
       license      = "GPL",
-      scripts      = ["exe/exe", "exe/run-exe.sh"],
+      scripts      = ["exe/exe"],
       packages     = ["exe", "exe.webui", "exe.xului", 
                       "exe.engine", "exe.export"],
       data_files   = g_files.items(),

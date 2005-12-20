@@ -3,7 +3,6 @@ include COPYING
 include NEWS
 include ChangeLog
 include doc/eXe-tutorial.elp
-include exe/run-exe.sh
 include exe/exe.conf
 include exe/webui/mr_x.gif
 recursive-include exe/webui/style *

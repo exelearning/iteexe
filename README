@@ -46,9 +46,6 @@ INSTALLATION
   normally be fine.
 - The installer will create an eXe icon on the desktop and a menu-item under
   "All Programs".
-- If you leave "Run eXe 0.11" selected the installer will launch eXe
-  once it is installed.
-
 
 RUNNING
 -------
@@ -64,6 +61,7 @@ to access the Internet.  eXe does NOT require access to the Internet.
 With the XP firewall you can just select the option to block its access.
 With the McAfee firewall you will need to allow access.
 
+
 MAC OSX
 =======
 
@@ -72,15 +70,25 @@ unstable.
 Double clicking on the .app file will install eXe.
 
 
+FEDORA LINUX 
+=============
 
-LINUX
-=====
-
-The eXe Linux install consists of an RPM which has been tested
+The eXe Fedora Linux install consists of two RPMs which have been tested
 to work on Fedora Core 4.  (They may work on other RPM based distros
 but that hasn't been tested.)
 
-* exe-0.11-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-0.12-1.noarch.rpm - includes the eXe editor and bundled Firefox
+* exe-twisted-2.0-1.noarch.rpm - includes Twisted, ZopeInterface and Nevow used for the webserver by eXe
+
+From the command line type exe to start.
+
+
+UBUNTU LINUX 
+============
+
+The eXe Ubuntu Linux install consists of 
+* python2.4-exe_0.11.1-0.1ubuntu1_all.deb
+* python2.4-twisted_2.0.1-999_all.deb
 
 From the command line type exe to start.
 
@@ -91,15 +99,15 @@ BUILDING FROM SOURCE
 To build exe you'll need to install the following packages:
 * python 2.4 - http://www.python.org
 * Zope Interfaces - http://www.zope.org/Products/ZopeInterface
-* twisted2 - http://twistedmatrix.com (You need twisted core and twisted web)
+* twisted 2.0.1 - http://twistedmatrix.com (You need twisted core and twisted web)
  * needs patches/jelly.patch applied, see patches/jelly.readme (from the source tree)
-* nevow - http://nevow.com/
+* nevow 0.4.1 - http://nevow.com/
  * needs patches/livepage.patch applied, see patches/livepage.readme (from the source tree)
 * CTypes (on Windows) - http://starship.python.net/crew/theller/ctypes/
 * PIL - http://www.pythonware.com/products/pil/
 
 unzip the source tarball:
-tar xzvf exe-source-0.8.tgz
+tar xzvf exe-source-0.12.tgz
 
 To run from source (on linux):
 cd exe
