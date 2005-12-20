@@ -15,6 +15,12 @@
     <script language="JavaScript" src="/scripts/common.js"/>
     <script language="JavaScript" src="/xulscripts/draganddrop.js"/>
     <script language="JavaScript" src="/xulscripts/mainpage.js"/>
+    <popupset> 
+     <popup id="outlineMenu">
+      <menuitem n:render="translate" label="Insert Package" oncommand="insertPackage()"/>
+      <menuitem n:render="translate" label="Extract Package" oncommand="extractPackage()"/>
+     </popup>
+    </popupset>
     <keyset>
         <!-- Outline Tree Short cut keys -->
         <key n:render="addChild" id="addChildKey"                     keycode="VK_INSERT"/>
