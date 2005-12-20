@@ -18,6 +18,8 @@ files = { '/usr/share/exe': ["README",
 
 def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
     """Recursively get all the files in these directories"""
+    global files
+    from exe.engine.path           import Path
     baseSourceDir = Path(baseSourceDir)
     baseDestDir = Path(baseDestDir)
     sourceDirs = map(Path, sourceDirs)
@@ -34,7 +36,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
 # Add all the webui dirs
 dataFiles('exe/webui', '/usr/share/exe', 
           ['style', 'css', 'docs', 'images', 'scripts',
-           'linux-profile', 'firefox'])
+           'linux-profile', 'firefox', 'templates'])
 
 # Add in the locale directory
 dataFiles('exe', '/usr/share/exe', ['locale'])
