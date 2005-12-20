@@ -137,16 +137,14 @@ class LmsElement(object):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        if self.lms.lms == "":
-            return ""
+
         html = ""
-        if self.lms.lms == "moodle":
-            html += u"<!--Forum%slink-->\n" % self.id
-            html += '<br/><a href="%s">%s</a>' % ("http://moodle.org", "Go to Moodle") 
+    
         if self.lms.lms == "other":
-           url = "http://%s" % self.lms.otherUrl
-           html += "<br/><b>%s </b>" % self.lms.otherLabel
-           html += '<a href="%s">%s</a>' % (url, url)  
+            html += "_______________________________<br/>"
+            url = "http://%s" % self.lms.otherUrl
+            html += "<br/><b>%s </b>" % self.lms.otherLabel
+            html += '<a href="%s">%s</a>' % (url, url)  
         return html
 
 # ===========================================================================
@@ -261,13 +259,15 @@ class ForumElement(object):
         return html
         
     def renderView(self):
-        html  = u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
+        html  = ""
+        if self.forum.lms.lms == "moodle":
+            html += "<!--%slink-->\n" % self.forum.forumName
+        html += u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
         html += u"<br/>%s<br/>" % self.forum.introduction
         html += self.discussionElement.renderView()
         html += self.lmsElement.renderView()
-                                                  
-        html += u"<!--Forum%slink-->\n" % self.id
-        html += u"<br/>\n"
+                                                
+        html += u"<br/><br/>\n"
         
         return html
  
@@ -281,7 +281,7 @@ class DiscussionElement(object):
         Initialize
         """
         self.id = idevice.id
-        self.idvevice = idevice
+        self.idevice = idevice
         self.discussion = idevice.discussion
 
  
@@ -316,7 +316,10 @@ class DiscussionElement(object):
         """
         if self.discussion.isNone:
             return ""
-        html  = u"<br/><b>%s%s</b><br/>" % (_(u"Thread: "), self.discussion.topic)
+        html = ""
+        if self.idevice.forum.lms.lms == "moodle":
+            html += u"<!--%slink-->\n" % self.idevice.forum.forumName
+        html += u"<br/><b>%s%s</b><br/>" % (_(u"Thread: "), self.discussion.topic)
         html += self.discussion.intro + "<br/>"
         return html    
    

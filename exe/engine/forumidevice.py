@@ -63,6 +63,7 @@ class ForumIdevice(Idevice):
         """
         delete an iDevice from it's parentNode and forums cache
         """
+        self.forum.deleteDiscussion(self.discussion)
         self.forumsCache.deleteForum(self.forum)
         Idevice.delete(self)
         
@@ -104,6 +105,25 @@ class Forum(Persistable):
         
         self.refCount            = 1
         
+    def addDiscussion(self, discussion):
+        """
+        adds a new topic.  If the topic already exists increments
+        a reference count
+        """
+        if discussion in self.discussions: 
+            discussion.refCount += 1
+        else:    
+            self.discussions.append(discussion)
+        
+    def deleteDiscussion(self, discussion):
+        """
+        decrements the reference count on a discussion.  If the count
+        is 0 delete the discussion
+        """
+        discussion.refCount -= 1
+        if discussion.refCount == 0 and discussion in self.discussions:
+            self.discussions.remove(discussion)
+        
 #============================================================================
 class Discussion(Persistable):
     def __init__(self):
@@ -127,7 +147,7 @@ class Lms(Persistable):
         self.name = _("Learning Management System")
         self.lms = ""        
         self.otherUrl = ""
-        self.otherLabel = "Link to forum"
+        self.otherLabel = "Link to the forum"
         self.type                = "general"
         self.studentpost         = "2"
         self.subscription        = "0"

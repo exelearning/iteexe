@@ -75,22 +75,22 @@ class Manifest(object):
         for page in self.pages:
             for idevice in page.node.idevices:
                 if idevice.title == "Discussion Activity":
-                    forums = idevice.forumCache.getForums()
-                    xmlStr += moodleForum(forums)
+                    forums = idevice.forumsCache.getForums()
+                    xmlStr += self.moodleForums(forums)
                     break
                     
         xmlStr += "</forums>\n"
         
         return xmlStr
     
-    def moodleForums(forums):
+    def moodleForums(self, forums):
         """
         returning moodle forum XLM string for manifest file
         """ 
         forumStr      = ""
         discussionStr = ""
         for forum in forums:
-            if forum.lms == "moodle":
+            if forum.lms.lms == "moodle":
                 forumStr += "<forum><name>%s</name>" % forum.forumName
                 forumStr += "<id>%s</id>" % forum.forumName
                 forumStr += "<introduction>%s</introduction>" % \
@@ -329,10 +329,9 @@ class ScormExport(object):
             if not self.hasForum:
                 for idevice in page.node.idevices:
                     if idevice.title == "Discussion Activity":
-                        if idevice.forum.lms == "moodle":
+                        if idevice.forum.lms.lms == "moodle":
                             self.hasForum = True
-                            print "Has moodle"
-                        break
+                            break
 
         # Create the manifest file
         manifest = Manifest(self.config, outputDir, package, self.pages)

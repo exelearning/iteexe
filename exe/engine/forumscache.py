@@ -44,13 +44,9 @@ class ForumsCache(Persistable):
         adds a new forum.  If the forum already exists increments
         a reference count
         """
-        isExist = False
-        for forum in self.forums:            
-            if forum.forumName == newForum.forumName:
-                forum.refCount += 1
-                isExist = True
-                break
-        if not isExist:
+        if newForum in self.forums:
+            newForum.refCount += 1
+        else:
             self.forums.append(newForum)
             
     def deleteForum(self, forum):
@@ -60,7 +56,7 @@ class ForumsCache(Persistable):
         """
 
         forum.refCount -= 1
-        if forum.refCount == 0:
+        if forum.refCount == 0 and forum in self.forums:
             self.forums.remove(forum)
             
     def getForums(self):

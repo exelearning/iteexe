@@ -153,7 +153,7 @@ class ForumBlock(Block):
         """
                                    
         html  = self.forumElement.renderEdit()
-        html += u"<br/>" + self.renderEditButtons() + "<br/>"
+        html += u"<br/>" + self.renderEditButtons() + "<br/><br/>"
 
         return html
     
@@ -187,35 +187,7 @@ class ForumBlock(Block):
         html += u"</div>"
         return html
     
-    def renderForumStr(self):
-        """
-        returning XLM string for this forum
-        """
-        xml  = "<forum>\n" 
-        xml += "<name>%s</name>\n" % self.idevice.forumName
-        xml += "<id>Forum%s</id>\n" % self.id
-        xml += "<type>%s</type>\n" % self.idevice.type
-        xml += "<introduction><![CDATA["
-        xml += self.idevice.introduction
-        xml += "]]></introduction>\n" 
-        xml += "<studentpost>%s</studentpost>\n" % self.idevice.studentpost
-        xml += "<subscription>%s</subscription>\n" % self.idevice.subscription
-        xml += "<tracking>1</tracking>\n"
-        xml += "<attachmentsize></attachmentsize>\n"
-        xml += "<ratings>0</ratings>\n"
-        xml += "<groupmode>%s</groupmode>\n" % self.idevice.groupmode
-        xml += "<visible>%s</visible>\n" % self.idevice.visible
-        xml += "</forum>"
-        xml += "<discussion>\n"
-        xml += "<discussionId>Forum%s</discussionId>\n" % self.id
-        #xml += "<subject>%s</subject>\n" % self.idevice.discussionSubject
-        xml += "<message><![CDATA["
-        #xml += self.idevice.discussionMessage
-        xml += "]]></message>\n" 
-        xml += "<subscription>send me</subscription>\n" 
-        xml += "</discussion>\n"
-        
-        return xml
+
     
   
 
