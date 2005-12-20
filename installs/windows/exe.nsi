@@ -3,14 +3,14 @@
 ; Define your application name
 !define APPNAME "exe"
 
-!define EXE_VERSION "0.11"
+!define EXE_VERSION "0.12"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
-Icon "C:\eXe branches\0.11\dist\eXe_icon.ico"
+Icon "C:\exe\dist\eXe_icon.ico"
 OutFile "eXe_install_windows.exe"
 
 ; Modern interface settings
@@ -21,7 +21,7 @@ OutFile "eXe_install_windows.exe"
 ;!define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "C:\eXe branches\0.11\dist\exeLicense.txt"
+!insertmacro MUI_PAGE_LICENSE "C:\exe\dist\exeLicense.txt"
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -87,7 +87,7 @@ Section "exe" Section2
 
 	; Set Section Files and Shortcuts
 	SetOutPath "$INSTDIR\"
-	File /r "C:\eXe branches\0.11\dist\*.*"
+	File /r "C:\exe\dist\*.*"
 	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
 	CreateDirectory "$SMPROGRAMS\exe"
 	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
