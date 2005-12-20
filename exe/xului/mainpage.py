@@ -241,11 +241,7 @@ class MainPage(RenderableLivePage):
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
         self.package.save(filename) # This can change the package name
-        # Delete the "unsavedWork.elp' file so it's not loaded next time we
         # start exe
-        unsavedWork = self.config.configDir/'unsavedWork.elp'
-        if unsavedWork.exists():
-            unsavedWork.remove()
         # Tell the user and continue
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
