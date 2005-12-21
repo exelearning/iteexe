@@ -21,7 +21,10 @@
 Gallery Idevice. Enables you to easily manage a bunch of images and thumbnails
 """
 
+import Image, ImageDraw
+from twisted.persisted.styles import requireUpgrade
 import logging
+
 from exe.engine.idevice  import Idevice
 from exe.engine.field    import TextField
 from exe.engine.path     import Path, TempDirPath
@@ -29,7 +32,7 @@ from exe.engine.persist  import Persistable
 from nevow               import tags as T
 from nevow.flat          import flatten
 from exe.engine.resource import Resource
-import Image, ImageDraw
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -144,21 +147,25 @@ class GalleryImage(Persistable):
         Renders an HTML page that show's the image
         (Only realy needed for stupid IE)
         """
-        data = flatten(
-           T.html[
-             T.head[
-               T.title[self.caption],
-             ],
-             T.body[
-               T.h1[self.caption],
-               T.p(align='center') [
-                 T.img(src=unicode(self._imageResource.storageName)),
-               ],
-             ]
-           ])
-        htmlFile = open(htmlPath, 'wb')
-        htmlFile.write(data)
-        htmlFile.close()
+        log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
+
+        if htmlPath.ext == ".html":
+            data = flatten(
+               T.html[
+                 T.head[
+                   T.title[self.caption],
+                 ],
+                 T.body[
+                   T.h1[self.caption],
+                   T.p(align='center') [
+                     T.img(src=unicode(self._imageResource.storageName)),
+                   ],
+                 ]
+               ])
+            htmlFile = open(htmlPath, 'wb')
+            htmlFile.write(data)
+            htmlFile.close()
+
 
     # Public Methods
 
@@ -238,7 +245,7 @@ class GalleryImage(Persistable):
     parent  = property(lambda self: self._parent, set_parent)
     caption = property(lambda self: unicode(self._caption.content), set_caption)
     imageSrc = property(lambda self: '%s%s' % 
-                   (self.resourcesUrl , self._imageFilename))
+                   (self.resourcesUrl , self._imageResource.storageName))
     thumbnailSrc = property(lambda self: '%s%s' %
                             (self.resourcesUrl, 
                              self._thumbnailResource.storageName))
@@ -262,16 +269,19 @@ class GalleryImage(Persistable):
         """
         Upgrades to exe v0.12
         """
+        # in case upgradeToVersion1 above has not been called yet
+        requireUpgrade(self)
+
         self._imageResource     = Resource(self.parent.parentNode.package,
-                                           self._imageFilename)
+                                           Path(self._imageFilename))
         self.parent.userResources.append(self._imageResource)
 
         self._thumbnailResource = Resource(self.parent.parentNode.package,
-                                           self._thumbnailFilename)
+                                           Path(self._thumbnailFilename))
         self.parent.userResources.append(self._thumbnailResource)
 
         self._htmlResource      = Resource(self.parent.parentNode.package,
-                                           self._htmlFilename)
+                                           Path(self._htmlFilename))
         self.parent.userResources.append(self._htmlResource)
 
         del self._imageFilename
@@ -378,24 +388,12 @@ class GalleryIdevice(Idevice):
         """
         Called when the iDevice's resources need their names changed
         """
-        #TODO Someone will fix this later
+        #TODO Someone will tidy this up
         for oldName, newName in resourceNamesChanged:
-            htmlPath = self.parentNode.package.resourceDir/newName
-            data = flatten(
-               T.html[
-                 T.head[
-                   T.title[self.caption],
-                 ],
-                 T.body[
-                   T.h1[self.caption],
-                   T.p(align='center') [
-                     T.img(src=unicode(newName)),
-                   ],
-                 ]
-               ])
-            htmlFile = open(htmlPath, 'wb')
-            htmlFile.write(data)
-            htmlFile.close()
+            for image in self.images:
+                if image._imageResource.storageName == newName:
+                    htmlPath = self.parentNode.package.resourceDir/newName
+                    image._createHTMLPopupFile(htmlPath)
 
 
     # Upgrade Methods
