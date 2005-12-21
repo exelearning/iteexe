@@ -22,15 +22,16 @@ A Forum Idevice is one built up from forum imformation ans discussion.
 """
 import copy
 import logging
-from exe.engine.idevice import Idevice
-from exe.engine.persist import Persistable
+from exe.engine.idevice   import Idevice
+from exe.engine.persist   import Persistable
+from exe.engine.translate import lateTranslate
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
 class ForumIdevice(Idevice):
     """
-    A Forum Idevice is one built up from forum imformation ans discussion.
+    A Forum Idevice is one built up from forum imformation and discussions.
     """
     
     persistenceVersion = 2
@@ -92,18 +93,22 @@ class Forum(Persistable):
         Initialize 
         """
             
-        self.forumName           = ""
-        self.lms                 = ""
-        self.introduction        = ""
-        self.nameInstruc         = _(u"Type a forum name here")
-        self.lms                 = Lms()
-        self.lms.idevice         = self
-        self.subjectInstruc      = ""
-        self.messageInstruc      = ""
-        self.discussions         = []
-        self.lmsInstruc          = "Choose a LMS"
+        self.forumName            = ""
+        self.lms                  = ""
+        self.introduction         = ""
+        self._nameInstruc         = x_(u"Type a forum name here")
+        self.lms                  = Lms()
+        self.lms.idevice          = self
+        self.subjectInstruc       = ""
+        self.messageInstruc       = ""
+        self.discussions          = []
+        self._lmsInstruc           = x_("Choose a LMS")
         
         self.refCount            = 1
+        
+    # Properties
+    nameInstruc = lateTranslate('nameInstruc')
+    lmsInstruc  = lateTranslate('lmsInstruc')
         
     def addDiscussion(self, discussion):
         """
@@ -131,23 +136,27 @@ class Discussion(Persistable):
         """
         Initialize 
         """
-        self.name = _(u"Discussion topic/Thread")
+        self._name = x_(u"Discussion topic/Thread")
         self.isNone = True
         self.topic = ""
         self.intro = ""
-        self.instruc = _(u"Type a discussion topic here.")
+        self._instruc = x_(u"Type a discussion topic here.")
         self.isAdded = False
         self.refCount = 1
+        
+    #properties
+    name    = lateTranslate('name')
+    instruc = lateTranslate('instruc')
 #============================================================================     
 class Lms(Persistable):
     def __init__(self):
         """
         Initialize 
         """
-        self.name = _("Learning Management System")
+        self._name = x_("Learning Management System")
         self.lms = ""        
         self.otherUrl = ""
-        self.otherLabel = "Link to the forum"
+        self._otherLabel = x_("Link to the forum")
         self.type                = "general"
         self.studentpost         = "2"
         self.subscription        = "0"
@@ -159,3 +168,7 @@ class Lms(Persistable):
         self.subscInstruc        = ""
         self.groupInstruc        = ""
         self.visibleInstruc      = ""
+        
+    #properties
+    name       = lateTranslate('name')
+    otherLabel = lateTranslate('otherLabel')

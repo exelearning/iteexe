@@ -25,6 +25,7 @@ from exe.webui.block         import Block
 from exe.webui               import common
 from exe.webui.forumelement  import DiscussionElement, ForumElement
 from exe.engine.forumidevice import Forum, Discussion
+from exe.engine.translate    import lateTranslate
 
 log = logging.getLogger(__name__)
 
@@ -41,6 +42,7 @@ class ForumBlock(Block):
         Block.__init__(self, parent, idevice)
         self.forumElement = ForumElement(idevice)
         self.discussionElement = DiscussionElement(idevice)
+        self.message = self.idevice.message
    
 
     def process(self, request):
@@ -49,7 +51,7 @@ class ForumBlock(Block):
         """
         Block.process(self, request)
             
-        self.idevice.message = ""
+        self._message = x_("")
         self.forumElement.process(request)
             
             
@@ -106,30 +108,30 @@ class ForumBlock(Block):
             self.id in request.args):
 
             if self.idevice.noForum: 
-                self.idevice.message += _("Please select a forum.\n")
+                self._message += x_("Please select a forum.\n")
                 self.idevice.edit = True
             else:
                 if self.idevice.forum.forumName == "":
-                    self.idevice.message += \
-                        _("Please enter a name for the forum\n")
+                    self._message += \
+                        x_("Please enter a name for the forum\n")
                     self.idevice.edit = True
                 elif self.idevice.isNewForum:
                     for forum in self.idevice.forumsCache.getForums():
                         if forum.forumName == self.idevice.forum.forumName:
-                            self.idevice.message += _("duplicate forum name.\n")
+                            self._message = x_("duplicate forum name.\n")
                             self.idevice.edit = True
                             break
                     if self.idevice.forum.lms.lms == "":
-                        self.idevice.message += _("Please select LMS.\n")
+                        self._message = x_("Please select LMS.\n")
                         self.idevice.edit = True
                 if self.idevice.isNewTopic:                    
                     if self.idevice.discussion.topic == "":
-                        self.idevice.message += \
-                            _("Please enter a discussion topic name.\n")
+                        self._message = \
+                            x_("Please enter a discussion topic name.\n")
                         self.idevice.edit = True
                     for topic in self.idevice.forum.discussions:
                         if topic.topic == self.idevice.discussion.topic:
-                            self.idevice.message += _("duplicate topic name.")
+                            self._message = x_("duplicate topic name.")
                             self.idevice.edit = True
                             break
                         
@@ -144,8 +146,11 @@ class ForumBlock(Block):
                     self.idevice.forumsCache.addForum(self.idevice.forum)
                     self.idevice.isNewForum = False
                     self.idevice.isAdded = True
+                    
+                self.idevice.message = self.message
                         
-        
+    # Properties
+    message = lateTranslate('message')    
                 
             
     def renderEdit(self, style):
@@ -187,6 +192,7 @@ class ForumBlock(Block):
         html += self.forumElement.renderView()
         html += u"</div>"
         return html
+    
     
 
     

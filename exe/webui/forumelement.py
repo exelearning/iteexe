@@ -29,8 +29,8 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class LmsElement(object):
     """
-    TestOptionElement is responsible for a block of option.  Used by
-    TestquestionElement.
+    LmsElement is responsible for a block of lms.  Used by
+    ForumElement.
     """
     def __init__(self, idevice):
         """
@@ -150,8 +150,8 @@ class LmsElement(object):
 # ===========================================================================
 class ForumElement(object):
     """
-    TestOptionElement is responsible for a block of option.  Used by
-    TestquestionElement.
+    ForumElement is responsible for a block of forum.  Used by
+    Forumblock.
     """
     def __init__(self, idevice):
         """
@@ -274,7 +274,7 @@ class ForumElement(object):
 #===========================================================================  
 class DiscussionElement(object):
     """ 
-    TextElement is a single line of text
+    DiscussionElement is a discussion topic
     """
     def __init__(self, idevice):
         """
