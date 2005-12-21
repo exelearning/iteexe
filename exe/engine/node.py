@@ -135,7 +135,7 @@ class Node(Persistable):
         resources = {}
         for idevice in self.idevices:
             for resource in (idevice.systemResources + 
-                             map(toUnicode, idevice.userResources)):
+                             map(unicode, idevice.userResources)):
                 resources[resource] = True
 
         return resources.keys()
