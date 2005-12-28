@@ -358,7 +358,7 @@ class FlashField(Field):
         Field.__init__(self, name, instruc)
         self.width         = 300
         self.height        = 250
-        self.flashResource = ""
+        self.flashResource = None
 
 
     def setFlash(self, flashPath):
@@ -411,16 +411,7 @@ class FlashMovieField(Field):
         Field.__init__(self, name, instruc)
         self.width         = 300
         self.height        = 250
-        self.flashResource = ""
-
-
-# TODO DELETE
-#    def getResources(self):
-#        """
-#        Return the resource files (if any) used by this Field
-#        Overridden by derieved classes
-#        """
-#        return [self.flashName]
+        self.flashResource = None
 
 
     def setFlash(self, flashPath):

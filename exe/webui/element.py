@@ -568,9 +568,13 @@ class FlashElement(Element):
         """
         Returns an XHTML string for viewing this flash
         """
+        if self.field.flashResource:
+            flashFile = self.field.flashResource.storageName
+        else:
+            flashFile = ""
 
         html = common.flash("flash"+self.id, 
-                             self.field.flashResource.storageName, 
+                             flashFile,
                              self.field.width,
                              self.field.height)
         
@@ -630,7 +634,13 @@ class FlashMovieElement(Element):
         """
         Returns an XHTML string for viewing this flash
         """
-        html = common.flashMovie(self.field.flashResource.storageName, 
-                             self.field.width, self.field.height)
+        if self.field.flashResource:
+            flashFile = self.field.flashResource.storageName
+        else:
+            flashFile = ""
+
+        html = common.flashMovie(flashFile,
+                                 self.field.width,
+                                 self.field.height)
         
         return html
