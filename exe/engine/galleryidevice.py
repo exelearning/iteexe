@@ -176,6 +176,9 @@ class GalleryImage(Persistable):
         self.parent.userResources.remove(self._imageResource)
         self.parent.userResources.remove(self._thumbnailResource)
         self.parent.userResources.remove(self._htmlResource)
+        self._imageResource.delete()
+        self._thumbnailResource.delete()
+        self._htmlResource.delete()
         self.parent = None
 
 
