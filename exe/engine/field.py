@@ -29,6 +29,7 @@ from exe.engine.translate import lateTranslate
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 import re
+import urllib
 log = logging.getLogger(__name__)
 
 
@@ -298,6 +299,7 @@ class ClozeField(Field):
     """
 
     regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
+    persistenceVersion = 2
 
     def __init__(self, name, instruc):
         """
@@ -306,9 +308,47 @@ class ClozeField(Field):
         Field.__init__(self, name, instruc)
         self.parts = []
         self._encodedContent = ''
-        self.autoCompletion = True
-        self.autoCompletionInstruc = _(u"""Allow auto completion when 
-                                       user filling the gaps.""")
+        self.rawContent = ''
+        self._setVersion2Attributes()
+
+    def _setVersion2Attributes(self):
+        """
+        Sets the attributes that were added in persistenceVersion 2
+        """
+        self.strictMarking = False
+        self._strictMarkingInstruc = \
+            x_(u"<p>If this option is left unchecked a fuzzy algorythm will "
+                "be used to mark learner's answers. It will accept a small "
+                "amount of spelling and capitalization errors on words "
+                "longer than 4 letters. This will happen even if "
+                "\"Check capitalization\" is on."
+                "</p>"
+                "<p><strong>For example:</strong> If the correct answer is "
+                "<code>Elephant</code> and both <code>elephant</code> and "
+                "<code>Eliphant</code> will be judged "
+                "<em>\"close enough\"</em> by the algorythm as it only has "
+                "one letter wrong, even if \"Check Capitilization\" is on."
+                "<\p>"
+                "<p>If capitalzation checking is off in the above example, "
+                "the lowercase <code>e</code> will not be considered a "
+                "mistake and <code>eliphant</code> will also be accepted."
+                "<\p>"
+                "<p>If both \"Strict Marking\" and \"Check Capitilization\" "
+                "are set, the only correct answer is \"Elephant\". If only "
+                "\"Strict Marking\" is checked and \"Check Capitilization\" "
+                "is not, \"elephant\" will also be accepted."
+                "<\p>")
+        self.checkCaps = False
+        self._checkCapsInstruc = \
+            x_(u"<p>If this option is checked, submitted answers with "
+                "different capitalization will be marked as wrong."
+                "</p>")
+        self.instantMarking = False
+        self._instantMarkingInstruc = \
+            x_(u"<p>If this option is set, each word will be marked as the "
+                "learner types it in, instead of all the words bieng marked "
+                "at the end."
+                "</p>")
 
     # Property handlers
     def set_encodedContent(self, value):
@@ -333,8 +373,11 @@ class ClozeField(Field):
         self._encodedContent = encodedContent
     
     # Properties
-    encodedContent = property(lambda self: self._encodedContent, 
-                              set_encodedContent)
+    encodedContent        = property(lambda self: self._encodedContent, 
+                                     set_encodedContent)
+    strictMarkingInstruc  = lateTranslate('strictMarkingInstruc')
+    checkCapsInstruc      = lateTranslate('checkCapsInstruc')
+    instantMarkingInstruc = lateTranslate('instantMarkingInstruc')
 
     def upgradeToVersion1(self):
         """
@@ -343,6 +386,16 @@ class ClozeField(Field):
         self.autoCompletion = True
         self.autoCompletionInstruc = _(u"""Allow auto completion when 
                                        user filling the gaps.""")
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades to exe v0.12
+        """
+        strictMarking = not self.autoCompletion
+        del self.autoCompletion
+        del self.autoCompletionInstruc
+        self._setVersion2Attributes()
+        self.strictMarking = strictMarking
 
 # ===========================================================================
 

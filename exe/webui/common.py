@@ -192,15 +192,19 @@ def option(name, checked, value):
     return html
 
 
-def checkbox(name, checked, value=""):
+def checkbox(name, checked, value="", title="", instruction=""):
     """Add a checkbox"""
     chkStr = u''
     if checked:
         chkStr = u'checked'
-        
-    html  = (u'<input type="checkbox" name="%s"'
+    html = ''
+    if title:
+        html += u'<b>%s</b>' % title
+    html += (u'<input type="checkbox" name="%s"'
              u' value="%s" %s/>\n' % 
               (name, value, chkStr))
+    if instruction:
+        html += elementInstruc(name+'.help', instruction)
     return html
 
 

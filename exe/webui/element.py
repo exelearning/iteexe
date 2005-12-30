@@ -1,5 +1,5 @@
 # ===========================================================================
-# eXe 
+# eXe
 # Copyright 2004-2005, University of Auckland
 #
 # This program is free software; you can redistribute it and/or modify
@@ -36,21 +36,23 @@ class Element(object):
         self.field = field
         self.id    = field.id
 
- 
+
     def process(self, request):
         """
-        Process arguments from the web server. 
+        Process arguments from the web server.
         """
-        log.error(u"process called directly")
-        return _(u"ERROR Element.process called directly")
+        msg = x_(u"ERROR Element.process called directly with %s class")
+        log.error(msg % self.__class__.__name__)
+        return _(msg) % self.__class__.__name__
 
 
     def renderEdit(self):
         """
         Returns an XHTML string for editing this element
         """
-        log.error(u"renderEdit called directly")
-        return _(u"ERROR Element.renderEdit called directly")
+        msg = x_(u"ERROR Element.renderEdit called directly with %s class")
+        log.error(msg % self.__class__.__name__)
+        return _(msg) % self.__class__.__name__
 
 
     def renderPreview(self):
@@ -59,19 +61,20 @@ class Element(object):
         (Defaults to calling renderView.)
         """
         return self.renderView()
-    
+
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this element
         """
-        log.error(u"renderView called directly")
-        return _(u"ERROR Element.renderView called directly")
+        msg = x_(u"ERROR Element.renderView called directly with %s class")
+        log.error(msg % self.__class__.__name__)
+        return _(msg) % self.__class__.__name__
 
 
 # ===========================================================================
 class TextElement(Element):
-    """ 
+    """
     TextElement is a single line of text
     """
     def __init__(self, field):
@@ -80,10 +83,10 @@ class TextElement(Element):
         """
         Element.__init__(self, field)
 
- 
+
     def process(self, request):
         """
-        Process arguments from the web server. 
+        Process arguments from the web server.
         """
         if self.id in request.args:
             self.field.content = request.args[self.id][0]
@@ -100,7 +103,7 @@ class TextElement(Element):
         html += "<br/>\n"
 
         return html
-    
+
 
     def renderView(self):
         """
@@ -112,7 +115,7 @@ class TextElement(Element):
 # ===========================================================================
 
 class FeedbackElement(Element):
-    """ 
+    """
     FeedbackElement is a text which can be show and hide
     """
     def __init__(self, field):
@@ -121,10 +124,10 @@ class FeedbackElement(Element):
         """
         Element.__init__(self, field)
 
- 
+
     def process(self, request):
         """
-        Process arguments from the web server. 
+        Process arguments from the web server.
         """
         if self.id in request.args:
             self.field.feedback = request.args[self.id][0]
@@ -141,7 +144,7 @@ class FeedbackElement(Element):
         html += "<br/>\n"
 
         return html
-    
+
 
     def renderView(self):
         """
@@ -154,9 +157,9 @@ class FeedbackElement(Element):
         html += '<div id="%s" style="display: none;"> ' % self.id
         html += self.field.feedback
         html += "</div>\n"
-        
+
         return html
-    
+
 # ===========================================================================
 
 class TextAreaElement(Element):
@@ -169,16 +172,16 @@ class TextAreaElement(Element):
         """
         Element.__init__(self, field)
         self.width  = "100%"
-        if (hasattr(field.idevice, 'class_') and 
+        if (hasattr(field.idevice, 'class_') and
             field.idevice.class_ in ("activity", "objectives", "preknowledge")):
             self.height = 250
         else:
             self.height = 100
 
- 
+
     def process(self, request):
         """
-        Process arguments from the web server. 
+        Process arguments from the web server.
         """
         if self.id in request.args:
             self.field.content = request.args[self.id][0]
@@ -194,7 +197,7 @@ class TextAreaElement(Element):
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
-        html += common.richTextArea(self.id, self.field.content, 
+        html += common.richTextArea(self.id, self.field.content,
                                     self.width, self.height)
 
         return html
@@ -253,9 +256,9 @@ class ImageElement(Element):
         html += u"onclick=\"addImage('"+self.id+"');\" "
         html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
         if self.field.width:
-            html += u"width=\""+self.field.width+"\" " 
+            html += u"width=\""+self.field.width+"\" "
         if self.field.height:
-            html += u"height=\""+self.field.height+"\" " 
+            html += u"height=\""+self.field.height+"\" "
         html += u"/>\n"
 
         html += u'<script type="text/javascript">\n'
@@ -267,27 +270,27 @@ class ImageElement(Element):
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += u"<img alt=\"add images\" "
         html += u"style=\"vertical-align: text-bottom;\" "
-        html += u"src=\"/images/stock-insert-image.png\" /> " 
+        html += u"src=\"/images/stock-insert-image.png\" /> "
         html += _(u"Select an image")
         html += u"</a><br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
-        html += u"id=\"width"+self.id+"\" " 
-        html += u"name=\"width"+self.id+"\" " 
+        html += u"id=\"width"+self.id+"\" "
+        html += u"name=\"width"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.width
         html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
         html += u"size=\"4\" />\n"
         html += u"x\n"
         html += u"<input type=\"text\" "
-        html += u"id=\"height"+self.id+"\" " 
-        html += u"name=\"height"+self.id+"\" " 
+        html += u"id=\"height"+self.id+"\" "
+        html += u"name=\"height"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.height
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
         #html += u"</p>\n"
-        
+
         return html
 
 
@@ -298,7 +301,7 @@ class ImageElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html = common.image("img"+self.id, 
+        html = common.image("img"+self.id,
                             "resources/"+self.field.imageResource.storageName,
                             self.field.width,
                             self.field.height)
@@ -316,14 +319,14 @@ class ImageElement(Element):
                              self.field.imageResource.storageName, 
                              self.field.width,
                              self.field.height)
-        
+
         return html
 
 # ==============================================================================
 # A wussy check to see that at least one element once has rendered scripts
 # before rendering edit mode content
-haveRenderedEditScripts = False 
-                                
+haveRenderedEditScripts = False
+
 
 class ClozeElement(Element):
     """
@@ -332,7 +335,7 @@ class ClozeElement(Element):
     """
 
     # Properties
-    
+
     @property
     def editorId(self):
         """
@@ -356,24 +359,21 @@ class ClozeElement(Element):
         return "document.getElementById('cloze%s')" % self.id
 
     # Public Methods
-    
+
     def process(self, request):
         """
         Sets the encodedContent of our field
         """
-        chkid = 'chk' + self.id
         clozeid = 'cloze%s' % self.id
-        
-        if chkid in request.args:
-            self.field.autoCompletion = True
-        elif clozeid in request.args:
-            self.field.autoCompletion = False
-                   
         if clozeid in request.args:
             self.field.encodedContent = request.args[clozeid][0]
-            
-        
-            
+            self.field.strictMarking = \
+                'strictMarking%s' % self.id in request.args
+            self.field.checkCaps = \
+                'checkCaps%s' % self.id in request.args
+            self.field.instantMarking = \
+                'instantMarking%s' % self.id in request.args
+
     @staticmethod
     def renderEditScripts():
         """
@@ -442,12 +442,31 @@ class ClozeElement(Element):
             u'</p>',
             # Render our toolbar
             u'<p>',
+            u'<table style="width: 100%;">',
+            u'<tbody>',
+            u'<tr>',
+            u'<td>',
             u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
             ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
-            common.checkbox('chk'+ self.id, self.field.autoCompletion),                            
-            _(u'Auto Completion'),
-            common.elementInstruc('chk'+self.id, 
-                                  self.field.autoCompletionInstruc),
+            u'</td><td>',
+            common.checkbox('strictMarking%s' % self.id,
+                            self.field.strictMarking,
+                            title=_(u'Strict Marking?'),
+                            instruction=self.field.strictMarkingInstruc),
+            u'</td><td>',
+            common.checkbox('checkCaps%s' % self.id,
+                            self.field.checkCaps,
+                            title=_(u'Check Caps?'),
+                            instruction=self.field.checkCapsInstruc),
+            u'</td><td>',
+            common.checkbox('instantMarking%s' % self.id,
+                            self.field.instantMarking,
+                            title=_(u'Instant Marking?'),
+                            instruction=self.field.instantMarkingInstruc),
+            u'</td><td>',
+            u'</tr>',
+            u'</tbody>',
+            u'</table>',
             u'</p>',
             ]
         return '\n    '.join(html)
@@ -456,45 +475,88 @@ class ClozeElement(Element):
         """
         Shows the text with inputs for the missing parts
         """
-        html = []
+        html = ['<div id="cloze%s">' % self.id]
+        # Store our args in some hidden fields
+        def storeValue(name):
+            value = str(bool(getattr(self.field, name))).lower()
+            return common.hiddenField('clozeFlag%s.%s' % (self.id, name), value)
+        html.append(storeValue('strictMarking'))
+        html.append(storeValue('checkCaps'))
+        html.append(storeValue('instantMarking'))
+        if feedbackId:
+            html.append(common.hiddenField('clozeVar%s.feedbackId' % self.id,
+                                           feedbackId))
         # Mix the parts together
-        length = 0
-        words  = ""
+        words = ""
+        def encrypt(word):
+            """
+            Simple XOR encryptions
+            """
+            result = ''
+            key = 'X'
+            for letter in word:
+                result += unichr(ord(key) ^ ord(letter))
+                key = letter
+            return result.encode('base64')
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:
                 html.append(text)
             if missingWord:
-                length = length + 1
-                if self.field.autoCompletion:
-                    auto = 1
-                else:
-                    auto = 0
                 words += "'" + missingWord + "',"
-                html += [
+                # The edit box for the user to type into
+                inputHtml = [
                     ' <input type="text" value="" ',
-                    '        id="clz%s%s"' % (self.id, i),
-                    '  oninput="onClozeChange(this, \'%s\',%d)"' % (missingWord,
-                                                                          auto),
-                    '    style="width:%sem"/>\n' % len(missingWord)]        
-        
-        html += ['<br/><br/><input type="button" ',
-                 'value = "%s"' % _(u"Get score"),
-                 'onclick="calScore(\'%s\',\'%s\')"/>\n' % (length, self.id)]
-        
-        if feedbackId is not None:
-            html += ['<input type="button" ',
-                     'value = "%s"' % _(u"Show/Hide Feedback"),
-                     'onclick="toggleFeedback(\'%s\')"/>\n' % feedbackId]
-        
-        words = words[:-1]
-        varString = "wordArray= new Array(%s); " % words
-                                                          
-        html += ['&nbsp;&nbsp;<input type="button" ',
-                 'value = "%s"' % _(u"Show/Clear Answers"),
-                 'onclick="%s;toggleClozeAnswers(%s,\'%s\')"/>' %(varString, 
-                                                           length, self.id)]
-        return '\n'.join(html)
-    
+                    '        id="clozeBlank%s.%s"' % (self.id, i),
+                    '    autocomplete="off"',
+                    '    style="width:%sem"/>\n' % len(missingWord)]
+                if self.field.instantMarking:
+                    inputHtml.insert(2, '  oninput="onClozeChange(this)"')
+                html += inputHtml
+                # Hidden span with correct answer
+                html += [
+                    '<span style="display: none;" ',
+                    'id="clozeAnswer%s.%s">%s</span>' % (
+                        self.id, i, encrypt(missingWord))]
+
+        # Score string
+        html += ['<p id="clozeScore%s"></p>' % self.id]
+        if self.field.instantMarking:
+            html += ['<br/><br/><input type="button" ',
+                     'value="%s"' % _(u"Get score"),
+                     'id="getScore%s"' % self.id,
+                     'onclick="showClozeScore(\'%s\')"/>\n' % (self.id)]
+
+            if feedbackId is not None:
+                html += ['<input type="button" ',
+                         'value = "%s"' % _(u"Show/Hide Feedback"),
+                         'onclick="toggleClozeFeedback(\'%s\')"/>\n' % self.id]
+            # Set the show/hide answers button attributes
+            style = 'display: inline;'
+            value = _(u"Show/Clear Answers")
+            onclick = "toggleClozeAnswers('%s')" % self.id
+        else:
+            html += ['<br/><br/><input type="button" ',
+                     'value = "%s"' % _(u"Submit"),
+                     'id="%ssubmit"' % self.id,
+                     'onclick="clozeSubmit(\'%s\')"/>\n' % self.id]
+            html += ['<br/><br/><input type="button" ',
+                     'style="display: none;"',
+                     'value="%s"' % _(u"Restart"),
+                     'id="%srestart"' % self.id,
+                     'onclick="clozeRestart(\'%s\')"/>\n' % self.id]
+            # Set the show/hide answers button attributes
+            style = 'display: none;'
+            value = _(u"Show Answers")
+            onclick = "fillClozeInputs('%s')" % self.id
+        # Show/hide answers button
+        html += ['&nbsp;&nbsp;'
+                 '<input type="button"',
+                 'id="%sshowAnswersButton"' % self.id,
+                 'style="%s"' % style,
+                 'value="%s"' % value,
+                 'onclick="%s"/>' % onclick]
+        return '\n'.join(html) + '</div>'
+
 # ===========================================================================
 class FlashElement(Element):
     """
@@ -535,20 +597,20 @@ class FlashElement(Element):
         html += u"</a><br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
-        html += u"id=\"width"+self.id+"\" " 
-        html += u"name=\"width"+self.id+"\" " 
+        html += u"id=\"width"+self.id+"\" "
+        html += u"name=\"width"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.width
         html += u"size=\"4\" />\n"
         html += u"x\n"
         html += u"<input type=\"text\" "
-        html += u"id=\"height"+self.id+"\" " 
-        html += u"name=\"height"+self.id+"\" " 
+        html += u"id=\"height"+self.id+"\" "
+        html += u"name=\"height"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.height
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
 
-        
+
         return html
 
 
@@ -557,8 +619,8 @@ class FlashElement(Element):
         Returns an XHTML string for previewing this image
         """
 
-        html = common.flash("flash"+self.id, 
-                             "", 
+        html = common.flash("flash"+self.id,
+                             "",
                              self.field.width,
                              self.field.height)
         return html
@@ -577,9 +639,9 @@ class FlashElement(Element):
                              flashFile,
                              self.field.width,
                              self.field.height)
-        
+
         return html
-    
+
 # ===========================================================================
 class FlashMovieElement(Element):
     """
@@ -611,10 +673,10 @@ class FlashMovieElement(Element):
         html += u"<a href=\"#\" onclick=\"addFlashMovie('"+self.id+"');\">"
         html += _(u"Select a flash video")
         html += u"</a><br/>\n"
-       
+
         html += common.hiddenField("path"+self.id)
 
-        
+
         return html
 
 
@@ -623,8 +685,8 @@ class FlashMovieElement(Element):
         Returns an XHTML string for previewing this image
         """
 
-        html = common.flash("flash"+self.id, 
-                             "", 
+        html = common.flash("flash"+self.id,
+                             "",
                              self.field.width,
                              self.field.height)
         return html
@@ -642,5 +704,5 @@ class FlashMovieElement(Element):
         html = common.flashMovie(flashFile,
                                  self.field.width,
                                  self.field.height)
-        
+
         return html

@@ -74,7 +74,9 @@ class ClozeBlock(Block):
             u'<p>',
             self.instructionElement.renderEdit(),
             u'</p>',
+            u'<p>',
             self.clozeElement.renderEdit(),
+            u'</p>',
             u'<p>',
             self.feedbackElement.renderEdit(),
             u'</p>',
@@ -102,11 +104,15 @@ class ClozeBlock(Block):
             u' <p id="clozeContent%s">' % self.id,
             clozeContent,
             u' </p>',
-            u' <p>',
-            self.feedbackElement.renderView(False),
+            u' <p>']
+        if self.feedbackElement.field.content:
+            html.append(self.feedbackElement.renderView(False))
+        html += [
             u' </p>',
             u'</div>\n',
             ]
+        from pprint import pprint
+        pprint(html)
         return u'\n    '.join(html)
 
         

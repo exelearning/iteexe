@@ -303,30 +303,246 @@ function getFeedback(optionId, optionsNum, ideviceId, mode) {
 }
 
 
-// Functions for cloze IDevice /////////////////////////////////////////////////
+// Cloze Field Stuff /////////////////////////////////////////////////
+
+// Constants 
+const NOT_ATTEMPTED = 0
+const WRONG = 1
+const CORRECT = 2
+
+// Functions 
 
 // Called when a learner types something into a cloze word space
-function onClozeChange(ele, word, auto) {
-    var result = checkClozeWord(ele.value, word, auto);
-    if (result != '') {
-        ele.style.backgroundColor = "yellow";
-        ele.value = result;
-    } else if (!ele.value) {
-        ele.style.backgroundColor = null;
-    } else {
-        ele.style.backgroundColor = "red";
+function onClozeChange(ele) {
+    var ident = getClozeIds(ele)[0]
+    var instant = eval(document.getElementById(
+        'clozeFlag'+ident+'.instantMarking').value);
+    if (instant) {
+        checkAndMarkClozeWord(ele);
+        // Hide the score paragraph if visible
+        var scorePara = document.getElementById('clozeScore' + ident);
+        scorePara.innerHTML = "";
     }
 }
 
+// Recieves and marks answers from student
+function clozeSubmit(ident) {
+    // Mark all of the words
+    showClozeScore(ident, 1);
+    // Hide Submit
+    toggleElementVisible(ident+'submit');
+    // Show Restart
+    toggleElementVisible(ident+'restart');
+    // Show Show Answers Button
+    toggleElementVisible(ident+'showAnswersButton');
+    // Show feedback
+    toggleClozeFeedback(ident);
+}
+
+// Makes cloze idevice like new :)
+function clozeRestart(ident) {
+    // Hide Feedback
+    toggleClozeFeedback(ident);
+    // Clear the answers (Also hides score)
+    toggleClozeAnswers(ident, true);
+    // Hide Restart
+    toggleElementVisible(ident+'restart');
+    // Hide Show Answers Button
+    toggleElementVisible(ident+'showAnswersButton');
+    // Show Submit
+    toggleElementVisible(ident+'submit');
+}
+
+// Show/Hide all answers in the cloze idevice
+// 'clear' is an optional argument, that forces all the answers to be cleared
+// whether they are all finished and correct or not
+function toggleClozeAnswers(ident, clear){
+    // See if any have not been answered yet
+    var allCorrect = true;
+    var inputs = getCloseInputs(ident)
+    if (!clear) {
+        for (var i in inputs) {
+            var input = inputs[i];
+            if (getClozeMark(input) != 2) {
+                allCorrect = false;
+                break;
+            }
+        }
+    }
+    if (allCorrect) {
+        // Clear all answers
+        clearClozeInputs(ident, inputs);
+    } else {
+        // Write all answers
+        fillClozeInputs(ident, inputs);
+    }
+    // Hide the score paragraph, irrelevant now
+    var scorePara = document.getElementById('clozeScore' + ident);
+    scorePara.innerHTML = "";
+    // If the get score button is visible and we just filled in all the right
+    // answers, disable it until they clear the scores again.
+    var getScoreButton = document.getElementById('getScore' + ident);
+    if (getScoreButton) {
+        getScoreButton.disabled = !allCorrect;
+    }
+}
+
+// Shows all answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function fillClozeInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputs(ident)
+    }
+    for (i in inputs) {
+        input = inputs[i];
+        input.value = getClozeAnswer(input);
+        markClozeWord(input, CORRECT);
+        // Toggle the readonlyness of the answers also
+        input.setAttribute('readonly', 'readonly');
+    }
+}
+
+// Blanks all the answers for a cloze field
+// 'inputs' is an option argument containing a list of the 'input' elements for
+// the field
+function clearClozeInputs(ident, inputs) {
+    if (!inputs) {
+        var inputs = getCloseInputs(ident)
+    }
+    for (i in inputs) {
+        input = inputs[i];
+        input.value="";
+        markClozeWord(input, NOT_ATTEMPTED);
+        // Toggle the readonlyness of the answers also
+        input.removeAttribute('readonly');
+    }
+}
+
+// Marks a cloze word in view mode.
+// Returns NOT_ATTEMPTED, CORRECT, or WRONG
+function checkAndMarkClozeWord(ele) {
+    var result = checkClozeWord(ele);
+    if (result != '') {
+        markClozeWord(ele, CORRECT);
+        ele.value = result;
+        return CORRECT;
+    } else if (!ele.value) {
+        markClozeWord(ele, NOT_ATTEMPTED);
+        return NOT_ATTEMPTED;
+    } else {
+        markClozeWord(ele, WRONG);
+        return WRONG;
+    }
+}
+
+// Marks a cloze question (at the moment just changes the color)
+// 'mark' should be 0=Not Answered, 1=Wrong, 2=Right
+function markClozeWord(ele, mark) {
+    switch (mark) {
+        case 0:
+            // Not attempted
+            ele.style.backgroundColor = null;
+            break;
+        case 1:
+            // Wrong
+            ele.style.backgroundColor = "red";
+            break;
+        case 2: 
+            // Correct
+            ele.style.backgroundColor = "lime";
+            break;
+    }
+    return mark
+}
+
+// Return the last mark applied to a word
+function getClozeMark(ele) {
+    // Return last mark applied
+    switch (ele.style.backgroundColor) {
+        case null:    return 0; // Not attempted
+        case 'red':   return 1; // Wrong
+        case 'lime':  return 2; // Correct
+        default:      return 0; // Not attempted
+    }
+}
+
+// Decrypts and returns the answer for a certain cloze field word
+function getClozeAnswer(ele) {
+    var idents = getClozeIds(ele)
+    var ident = idents[0]
+    var inputId = idents[1]
+    var answerSpan = document.getElementById('clozeAnswer'+ident+'.'+inputId);
+    var code = answerSpan.innerHTML;
+    code = decode64(code)
+    // XOR "Decrypt"
+    result = '';
+    var key = 'X'.charCodeAt(0);
+    for (var i in code) {
+        var letter = code.charCodeAt(i);
+        key ^= letter
+        result += String.fromCharCode(key);
+    }
+    return result
+}
+
+// Base64 Decode
+// Base64 code from Tyler Akins -- http://rumkin.com
+function decode64(input) {
+   var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+   var output = "";
+   var chr1, chr2, chr3;
+   var enc1, enc2, enc3, enc4;
+   var i = 0;
+   // Remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+   input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+   do {
+      enc1 = keyStr.indexOf(input.charAt(i++));
+      enc2 = keyStr.indexOf(input.charAt(i++));
+      enc3 = keyStr.indexOf(input.charAt(i++));
+      enc4 = keyStr.indexOf(input.charAt(i++));
+
+      chr1 = (enc1 << 2) | (enc2 >> 4);
+      chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+      chr3 = ((enc3 & 3) << 6) | enc4;
+
+      output = output + String.fromCharCode(chr1);
+
+      if (enc3 != 64) {
+         output = output + String.fromCharCode(chr2);
+      }
+      if (enc4 != 64) {
+         output = output + String.fromCharCode(chr3);
+      }
+   } while (i < input.length);
+   return output;
+}
+
+
 // Returns the corrected word or an empty string
-function checkClozeWord(guess, aOriginal, auto) {
-    var guess = guess.toLowerCase();
-    var answer = aOriginal.toLowerCase();
+function checkClozeWord(ele) {
+    var guess = ele.value;
+    // Extract the idevice id and the input number out of the element's id
+    var original = getClozeAnswer(ele);
+    var answer = original;
+    var guess = ele.value
+    var ident = getClozeIds(ele)[0]
+    // Read the flags for checking answers
+    var strictMarking = eval(document.getElementById(
+        'clozeFlag'+ident+'.strictMarking').value);
+    var checkCaps = eval(document.getElementById(
+        'clozeFlag'+ident+'.checkCaps').value);
+    if (!checkCaps) {
+        guess = guess.toLowerCase();
+        answer = original.toLowerCase();
+    }
     if (guess == answer)
-        return aOriginal
-    else if (auto == 0 || aOriginal.length <= 4)
+        // You are right!
+        return original
+    else if (strictMarking || answer.length <= 4)
+        // You are wrong!
         return "";
-    else{
+    else {
         // Now use the similarity check algorythm
         var i = 0;
         var j = 0;
@@ -359,18 +575,94 @@ function checkClozeWord(guess, aOriginal, auto) {
                     var a = string2[j];
                     var b = string1[j];
                     if (a != b)
-                        misses += 1
+                        misses += 1;
                     if (misses > maxMisses)
-                        break
+                        break;
                 }
                 if (misses <= maxMisses)
-                    return answer
-                string1 = string1.substr(1)
+                    // You are right
+                    return answer;
+                string1 = string1.substr(1);
             }
         }
+        // You are wrong!
         return "";
     }
 }
+
+// Extracts the idevice id and input id from a javascript element
+function getClozeIds(ele) {
+    // Extract the idevice id and the input number out of the element's id
+    // id is "clozeBlank%s.%s" % (idevice.id, input number)
+    var id = ele.id.slice(10); 
+    var dotindex = id.indexOf('.')
+    var ident = id.slice(0, dotindex)
+    var inputId = id.slice(id.indexOf('.')+1)
+    return [ident, inputId]
+}
+
+// Calculate the score for cloze idevice
+function showClozeScore(ident, mark) {
+    var score = 0
+    var div = document.getElementById('cloze' + ident)
+    var inputs = getCloseInputs(ident)
+    for (var i in inputs) {
+        var input = inputs[i];
+        if (mark) {
+            var result = checkAndMarkClozeWord(input);
+        } else {
+            var result = getClozeMark(input);
+        }
+        if (result == 2) {
+            score++;
+        }
+    }
+    // Show it in a nice paragraph
+    var scorePara = document.getElementById('clozeScore' + ident);
+    scorePara.innerHTML = "Your score is " + score + "/" + inputs.length + ".";
+}
+
+// Returns an array of input elements that are associated with a certain idevice
+function getCloseInputs(ident) {
+    var result = new Array;
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+    for (var i in theForm.elements) {
+        var ele = theForm.elements[i];
+        if (ele.id) {
+            if (ele.id.search('clozeBlank'+ident) == 0) {
+                result.push(ele);
+            }
+        }
+    }
+    return result
+}
+
+// Pass the cloze element's id, and the visible property of the feedback element
+// associated with it will be toggled. If there is no feedback field, does
+// nothing
+function toggleClozeFeedback(ident) {
+    var feedbackIdEle = document.getElementById(
+        'clozeVar'+ident+'.feedbackId');
+    if (feedbackIdEle) {
+        var feedbackId = feedbackIdEle.value;
+        toggleElementVisible(feedbackId);
+    }
+}
+
+// Toggle the visiblity of an element from it's id
+function toggleElementVisible(ident) {
+    // Toggle the visibility of an element
+    var element = document.getElementById(ident);
+    if (element) {
+        if (element.style.display != "none") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "";
+        }
+    }
+}
+
+// Reflection Idevice code ////////////////////////////////////////////////
 
 // Show or hide the feedback for reflection idevice
 function showAnswer(id,isShow) {
@@ -384,61 +676,3 @@ function showAnswer(id,isShow) {
         document.getElementById("view"+id).style.display = "block";
     }
 }
-
-// Show/Hide all answers in the cloze idevice
-function toggleClozeAnswers(length, ident){
-    // See if any have not been answered yet
-    var allAnswered = true;
-    var ele;
-    for (i=0; i<length; i++){
-        ele = document.getElementById("clz"+ident+i)
-        if (ele.style.backgroundColor != "yellow") {
-            allAnswered = false
-            break;
-        }
-    }
-    if (allAnswered) {
-        // Clear all answers
-        for (i=0; i<length; i++) {
-            document.getElementById("clz"+ident+i).value="";
-            document.getElementById("clz"+ident+i).style.backgroundColor="white"
-        }
-    } else {
-        // Write all answers
-        for (i=0; i<length; i++){
-            document.getElementById("clz"+ident+i).value = wordArray[i];
-            document.getElementById("clz"+ident+i).style.backgroundColor="yellow";
-        }
-    }
-}
-
-//Calculate the score for cloze idevice
-function calScore(length, ident) {
-    score = 0
-    for (i=0; i<length; i++) {
-        var ele = document.getElementById("clz"+ident+i);
-        if (ele.style.backgroundColor=="yellow")
-            score++
-    }
-    alert("Your score is " + score +"/" + length + ".");
-}
-
-// show or hide the feedback for cloze idevice
-function toggleFeedback(id) {
-    var ele = document.getElementById(id);
-    if (ele.style.display == "block") {
-        ele.style.display = "none";
-    } else {
-        ele.style.display = "block";
-    }
-}
-//change forum or discussion topic or lms for discussion idevice.
-function submitChange(action, selectId) 
-    {
-        var form = document.getElementById("contentForm")      
-        form.action.value = action
-        var select = document.getElementById(selectId) 
-        form.object.value = select.value;
-        form.isChanged.value = 1;
-        form.submit();
-    }
