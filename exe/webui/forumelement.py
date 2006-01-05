@@ -182,7 +182,10 @@ class ForumElement(object):
         self.lmsElement.process(request)
         
                     
-    def renderEdit(self):                
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
         html  = ""
         if self.idevice.message <> "":
             html += '<br/><font color="red">'
@@ -258,12 +261,29 @@ class ForumElement(object):
         
         return html
         
-    def renderView(self):
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this element
+        """
         html  = ""
-        if self.forum.lms.lms == "moodle":
-            html += "<!--%slink-->\n" % self.forum.forumName
         html += u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
         html += u"<br/>%s<br/>" % self.forum.introduction
+        html += self.discussionElement.renderPreview()
+        html += self.lmsElement.renderView()
+                                                
+        html += u"<br/><br/>\n"
+        
+        return html
+    
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this element
+        """
+        html  = ""
+        html += u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
+        html += u"<br/>%s<br/>" % self.forum.introduction
+        if self.forum.lms.lms == "moodle":
+            html += "<!--%slink-->\n" % self.forum.forumName
         html += self.discussionElement.renderView()
         html += self.lmsElement.renderView()
                                                 
@@ -309,6 +329,17 @@ class DiscussionElement(object):
 
         return html
     
+    def renderPreview(self):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        if self.discussion.isNone:
+            return ""
+        html = ""
+        html += u"<br/><b>%s" % _(u"Thread: ")
+        html += u"%s</b><br/>\n" % self.discussion.topic
+        html += self.discussion.intro + "<br/>"
+        return html   
 
     def renderView(self):
         """
@@ -317,9 +348,12 @@ class DiscussionElement(object):
         if self.discussion.isNone:
             return ""
         html = ""
+        html += u"<br/><b>%s" % _(u"Thread: ")
         if self.idevice.forum.lms.lms == "moodle":
-            html += u"<!--%slink-->\n" % self.idevice.forum.forumName
-        html += u"<br/><b>%s%s</b><br/>" % (_(u"Thread: "), self.discussion.topic)
+            topic = self.discussion.topic.replace(" ", "_")
+            html += u"<!--%slink_%s--></b><br/>\n" % (self.idevice.forum.forumName, topic)
+        else:
+            html += u"%s</b><br/>\n" % self.discussion.topic
         html += self.discussion.intro + "<br/>"
         return html    
    

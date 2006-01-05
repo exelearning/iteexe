@@ -64,8 +64,10 @@ class ForumIdevice(Idevice):
         """
         delete an iDevice from it's parentNode and forums cache
         """
-        self.forum.deleteDiscussion(self.discussion)
-        self.forumsCache.deleteForum(self.forum)
+        
+        if self.isAdded:
+            self.forum.deleteDiscussion(self.discussion)
+            self.forumsCache.deleteForum(self.forum)
         Idevice.delete(self)
         
     

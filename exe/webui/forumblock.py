@@ -95,6 +95,7 @@ class ForumBlock(Block):
                     if topic.topic == value:
                         break
                 self.idevice.discussion = topic
+                self.idevice.discussion.isAdded = False
        
         if ("action" in request.args and 
             request.args["action"][0] == "changeLms" 
@@ -108,11 +109,11 @@ class ForumBlock(Block):
             self.id in request.args):
 
             if self.idevice.noForum: 
-                self._message += x_("Please select a forum.\n")
+                self._message = x_("Please select a forum.\n")
                 self.idevice.edit = True
             else:
                 if self.idevice.forum.forumName == "":
-                    self._message += \
+                    self._message = \
                         x_("Please enter a name for the forum\n")
                     self.idevice.edit = True
                 elif self.idevice.isNewForum:
@@ -138,7 +139,7 @@ class ForumBlock(Block):
                 if (not self.idevice.edit and not self.idevice.discussion.isNone
                     and not self.idevice.discussion.isAdded):
                     discussion = self.idevice.discussion
-                    self.idevice.forum.discussions.append(discussion)
+                    self.idevice.forum.addDiscussion(discussion)
                     discussion.isAdded = True
                     self.idevice.isNewTopic = False
                     
@@ -174,7 +175,7 @@ class ForumBlock(Block):
         html += u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />\n'
         html += u'<span class="iDeviceTitle">'
         html += self.idevice.title+'</span><br/>\n'
-        html += self.forumElement.renderView()
+        html += self.forumElement.renderPreview()
         html += self.renderViewButtons()
         html += u"</div>"
         return html

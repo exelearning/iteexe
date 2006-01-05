@@ -205,6 +205,65 @@ class ImageField(Field):
 
 # ===========================================================================
 
+class MagnifierField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+    def __init__(self, name, instruc=""):
+        """
+        """
+        Field.__init__(self, name, instruc)
+        self.width         = ""
+        self.height        = ""
+        self.imageResource = None
+        self.defaultImage  = ""
+        self.glassSize     = "2"
+        self.initialZSize  = "100"
+        self.maxZSize      = "200"
+        self.align         = "middle"
+
+
+    def setImage(self, imagePath):
+        """
+        Store the image in the package
+        Needs to be in a package to work.
+        """
+        log.debug(u"setImage "+unicode(imagePath))
+        resourceFile = Path(imagePath)
+
+        assert(self.idevice.parentNode,
+               'Image '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if resourceFile.isfile():
+            if self.imageResource:
+                self.imageResource.delete()
+                self.idevice.userResources.remove(self.imageResource)
+            self.imageResource = Resource(self.idevice.parentNode.package,
+                                          resourceFile)
+            self.idevice.userResources.append(self.imageResource)
+
+        else:
+            log.error('File %s is not a file' % resourceFile)
+
+
+    def setDefaultImage(self):
+        """
+        Set a default image to display until the user picks one
+        """
+        # This is kind of hacky, it's here because we can't just set
+        # the an image when we create an ImageField in the idevice 
+        # editor (because the idevice doesn't have a package at that
+        # stage, and even if it did the image resource wouldn't be
+        # copied with the idevice when it was cloned and added to
+        # another package).  We should probably revisit this.
+        if self.defaultImage:
+            self.setImage(self.defaultImage)
+            
+#===============================================================================
+
 class ClozeHTMLParser(HTMLParser):
     """
     Separates out gaps from our raw cloze data

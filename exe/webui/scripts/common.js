@@ -676,3 +676,14 @@ function showAnswer(id,isShow) {
         document.getElementById("view"+id).style.display = "block";
     }
 }
+
+//change forum or discussion topic or lms for discussion idevice.
+function submitChange(action, selectId) 
+    {
+        var form = document.getElementById("contentForm")      
+        form.action.value = action
+        var select = document.getElementById(selectId) 
+        form.object.value = select.value;
+        form.isChanged.value = 1;
+        form.submit();
+    }

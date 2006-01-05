@@ -212,7 +212,7 @@ class TextAreaElement(Element):
         else:
             visible = ' style="display:none"'
         return '<div id="%s"%s>%s</div>' % (self.id, visible, self.field.content)
-
+    
 # ===========================================================================
 class ImageElement(Element):
     """
@@ -289,6 +289,7 @@ class ImageElement(Element):
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
+        
         #html += u"</p>\n"
 
         return html
@@ -321,6 +322,204 @@ class ImageElement(Element):
                              self.field.height)
 
         return html
+
+
+
+# ===========================================================================
+class MagnifierElement(Element):
+    """
+    for magnifier element processing
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if "path"+self.id in request.args:
+            self.field.setImage(request.args["path"+self.id][0])
+
+        if "width"+self.id in request.args:
+            self.field.width = request.args["width"+self.id][0]
+
+        if "height"+self.id in request.args:
+            self.field.height = request.args["height"+self.id][0]
+            
+            
+        if "glass"+self.id in request.args:
+            self.field.glassSize = request.args["glass"+self.id][0]
+            
+        if "initial"+self.id in request.args:
+            if request.args["initial"+self.id][0] == "yes":
+                self.field.initialZSize == "120"
+            else:
+                self.field.initialZSize == "100"
+                
+        if "maxZoom"+self.id in request.args:
+            self.field.maxZSize == request.args["glass"+self.id][0] + "0"
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit")
+        
+        glassSizeArr    = [[_(u'Extra small'), '0'],
+                          [_(u'Small'), '1'],
+                          [_(u'Medium'),'2'],
+                          [_(u'Large'),'3'],
+                          [_(u'Extra large'),'4'],]
+
+
+        if not self.field.imageResource:
+            self.field.setDefaultImage()
+
+        html  = u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.id, self.field.instruc)
+        html += u"<br/>\n"
+        html += u'<img alt="" '
+        html += u'id="img%s" ' % self.id
+        html += u"onclick=\"addImage('"+self.id+"');\" "
+        html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
+        if self.field.width:
+            html += u"width=\""+self.field.width+"\" "
+        if self.field.height:
+            html += u"height=\""+self.field.height+"\" "
+        html += u"/>\n"
+
+        html += u'<script type="text/javascript">\n'
+        html += u"document.getElementById('img"+self.id+"')."
+        html += "addEventListener('load', imageChanged, true);\n"
+        html += u'</script>\n'
+        html += u"</p>\n"
+
+        html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
+        html += u"<img alt=\"add images\" "
+        html += u"style=\"vertical-align: text-bottom;\" "
+        html += u"src=\"/images/stock-insert-image.png\" /> "
+        html += _(u"Select an image")
+        html += u"</a><br/>\n"
+        html += u"<p><b>%s</b>\n" % _(u"Display as:")
+        html += u"<input type=\"text\" "
+        html += u"id=\"width"+self.id+"\" "
+        html += u"name=\"width"+self.id+"\" "
+        html += u"value=\"%s\" " % self.field.width
+        html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
+        html += u"size=\"4\" />\n"
+        html += u"x\n"
+        html += u"<input type=\"text\" "
+        html += u"id=\"height"+self.id+"\" "
+        html += u"name=\"height"+self.id+"\" "
+        html += u"value=\"%s\" " % self.field.height
+        html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
+        html += u"size=\"4\" />\n"
+        html += u"(%s) \n" % _(u"blank for original size")
+        html += common.hiddenField("path"+self.id)
+        html += _(u"Size of magnifying glass: ")
+        html += common.select("glass"+self.id, 
+                glassSizeArr, selection=self.field.glassSize)+ "<br/>"
+        
+        html += _(u"Magnify initial zoom? ") + " "
+        html += _(u"Yes")
+        if self.field.initialZSize == "100":
+            html += common.option("initial"+self.id, 0, "yes")
+            html += _(u"No")
+            html += common.option("initial"+self.id, 1, "no")
+        else:
+            html += common.option("initial"+self.id, 1, "yes")
+            html += _(u"No")
+            html += common.option("initial"+self.id, 0, "no")
+        html += " " + _(u"Maxium zoom")
+        html += "<select name=\"maxZoom%s\">\n" % self.id
+        template = '  <option value="%s0"%s>%s0%%</option>\n'
+        for i in range(10, 21):
+            if str(i)+ "0" == self.field.maxZSize:
+                html += template % (str(i), ' selected="selected"', str(i))
+            else:
+                html += template % (str(i), '', str(i))
+        html += "</select><br/><br/>\n"
+        #html += u"</p>\n"
+
+        return html
+
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this image
+        """
+        if not self.field.imageResource:
+            self.field.setDefaultImage()
+
+        html = self.renderManifier(
+                            "resources/"+self.field.imageResource.storageName,
+                            "templates/magnifier.swf")
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this image
+        """
+        if not self.field.imageResource:
+            self.field.setDefaultImage()
+
+        html = self.renderManifier(self.field.imageResource.storageName,                            
+                                   "magnifier.swf")
+
+
+        return html
+    
+    def renderManifier(self, imageFile, magnifierFile):
+        
+        field = self.field
+        html  = u'<object classid="%s"' % self.id
+        html += u'codebase="http://fpdownload.macromedia.com/pub/shockwave'
+        html += u'/cabs/flash/swflash.cab#version=6,0,65,0"\n'
+        html += u'width="%s" height="%s"' % (field.width, field.height)
+        html += u'id="magnifier%s" align="%s">\n' %(self.id, field.align)
+        html += u'<param name="allowScriptAccess" value="sameDomain" />\n'
+        html += u'<param name="movie" value="%s" />\n' % magnifierFile
+        html += u'<param name="FlashVars" ' 
+        html += u'value="file=%s' % imageFile
+        html += u'&borderWidth=15&glassSize=%s' % self.field.glassSize
+        html += u'&initialZoomSize=%s%%' % field.initialZSize
+        html += u'&maxZoomSize=%s%% />\n' % field.maxZSize
+        html += u'<param name="quality" value="high" />\n'
+        html += u'<param name="scale" value="noscale" />\n'
+        html += u'<param name="salign" value="lt" />\n'
+        html += u'<param name="bgcolor" value="#888888" />\n'
+        html += u'<embed src="%s" ' % magnifierFile
+        html += u'quality="high" scale="noscale" salign="lt" bgcolor="#888888" '
+        html += u'width="%s" height="%s" name="magnify%s" ' %(field.width,
+                                                    field.height, self.id)
+        html += u'FlashVars="file=%s&borderWidth=15&' % imageFile
+        html += u'glassSize=%s&initialZoomSize=%s%%&maxZoomSize=%s%%" ' \
+                %(field.glassSize, field.initialZSize, field.maxZSize)
+        html += u'align="%s" allowScriptAccess="sameDomain" ' % field.align
+        html += u'type="application/x-shockwave-flash" '
+        html += u'pluginspage="http://www.macromedia.com/go/getflashplayer"/>\n'
+        html += u'</object>'
+        
+        return html
+        
+        
+#codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,65,0"
+        #<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,65,0" width="600" height="413" id="magnify5" align="middle">
+#<param name="allowScriptAccess" value="sameDomain" />
+#<param name="movie" value="magnifier.swf" />
+#<param name="FlashVars" value="file=pegasusFSmall.jpg&borderWidth=15&glassSize=3&initialZoomSize=100%&maxZoomSize=200%" />
+#<param name="quality" value="high" />
+#<param name="scale" value="noscale" />
+#<param name="salign" value="lt" />
+#<param name="bgcolor" value="#888888" />
+#<embed src="magnifier.swf" quality="high" scale="noscale" salign="lt" bgcolor="#888888" width="600" height="413" name="magnify5" FlashVars="file=test.jpg&borderWidth=15&glassSize=3&initialZoomSize=100%&maxZoomSize=200%" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+#</object>
 
 # ==============================================================================
 # A wussy check to see that at least one element once has rendered scripts
