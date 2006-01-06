@@ -351,18 +351,6 @@ class MagnifierElement(Element):
             self.field.height = request.args["height"+self.id][0]
             
             
-        if "glass"+self.id in request.args:
-            self.field.glassSize = request.args["glass"+self.id][0]
-            
-        if "initial"+self.id in request.args:
-            if request.args["initial"+self.id][0] == "yes":
-                self.field.initialZSize == "120"
-            else:
-                self.field.initialZSize == "100"
-                
-        if "maxZoom"+self.id in request.args:
-            self.field.maxZSize == request.args["glass"+self.id][0] + "0"
-
 
     def renderEdit(self):
         """
@@ -370,11 +358,7 @@ class MagnifierElement(Element):
         """
         log.debug("renderEdit")
         
-        glassSizeArr    = [[_(u'Extra small'), '0'],
-                          [_(u'Small'), '1'],
-                          [_(u'Medium'),'2'],
-                          [_(u'Large'),'3'],
-                          [_(u'Extra large'),'4'],]
+        
 
 
         if not self.field.imageResource:
@@ -388,14 +372,19 @@ class MagnifierElement(Element):
         html += u"onclick=\"addImage('"+self.id+"');\" "
         html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
         if self.field.width:
-            html += u"width=\""+self.field.width+"\" "
+            width = int(self.field.width)-84  
+            if self.field.height:
+                if int(self.field.height) < 294:
+                    width = int(self.field.width)-144          
+            html += u"width=\""+str(width)+"\" "
         if self.field.height:
-            html += u"height=\""+self.field.height+"\" "
+            height = int(self.field.height) -24
+            html += u"height=\""+str(height)+"\" "
         html += u"/>\n"
 
         html += u'<script type="text/javascript">\n'
         html += u"document.getElementById('img"+self.id+"')."
-        html += "addEventListener('load', imageChanged, true);\n"
+        html += "addEventListener('load', magnifierImageChanged, true);\n"
         html += u'</script>\n'
         html += u"</p>\n"
 
@@ -410,40 +399,18 @@ class MagnifierElement(Element):
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.width
-        html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
+        html += u"onchange=\"changeMagnifierImageWidth('"+self.id+"');\" "
         html += u"size=\"4\" />\n"
         html += u"x\n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" "
         html += u"name=\"height"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.height
-        html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
+        html += u"onchange=\"changeMagnifierImageHeight('"+self.id+"');\" "
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
-        html += _(u"Size of magnifying glass: ")
-        html += common.select("glass"+self.id, 
-                glassSizeArr, selection=self.field.glassSize)+ "<br/>"
         
-        html += _(u"Magnify initial zoom? ") + " "
-        html += _(u"Yes")
-        if self.field.initialZSize == "100":
-            html += common.option("initial"+self.id, 0, "yes")
-            html += _(u"No")
-            html += common.option("initial"+self.id, 1, "no")
-        else:
-            html += common.option("initial"+self.id, 1, "yes")
-            html += _(u"No")
-            html += common.option("initial"+self.id, 0, "no")
-        html += " " + _(u"Maxium zoom")
-        html += "<select name=\"maxZoom%s\">\n" % self.id
-        template = '  <option value="%s0"%s>%s0%%</option>\n'
-        for i in range(10, 21):
-            if str(i)+ "0" == self.field.maxZSize:
-                html += template % (str(i), ' selected="selected"', str(i))
-            else:
-                html += template % (str(i), '', str(i))
-        html += "</select><br/><br/>\n"
         #html += u"</p>\n"
 
         return html
@@ -508,19 +475,6 @@ class MagnifierElement(Element):
         
         return html
         
-        
-#codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,65,0"
-        #<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,65,0" width="600" height="413" id="magnify5" align="middle">
-#<param name="allowScriptAccess" value="sameDomain" />
-#<param name="movie" value="magnifier.swf" />
-#<param name="FlashVars" value="file=pegasusFSmall.jpg&borderWidth=15&glassSize=3&initialZoomSize=100%&maxZoomSize=200%" />
-#<param name="quality" value="high" />
-#<param name="scale" value="noscale" />
-#<param name="salign" value="lt" />
-#<param name="bgcolor" value="#888888" />
-#<embed src="magnifier.swf" quality="high" scale="noscale" salign="lt" bgcolor="#888888" width="600" height="413" name="magnify5" FlashVars="file=test.jpg&borderWidth=15&glassSize=3&initialZoomSize=100%&maxZoomSize=200%" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-#</object>
-
 # ==============================================================================
 # A wussy check to see that at least one element once has rendered scripts
 # before rendering edit mode content

@@ -63,6 +63,20 @@ class ImageMagnifierBlock(Block):
             
         if "caption"+self.id in request.args:
             self.idevice.caption = request.args["caption"+self.id][0]
+            
+        if "glass"+self.id in request.args:
+            self.idevice.imageMagnifier.glassSize = \
+                request.args["glass"+self.id][0]
+            
+        if "initial"+self.id in request.args:
+            if request.args["initial"+self.id][0] == "yes":
+                self.idevice.imageMagnifier.initialZSize = "120"
+            else:
+                self.idevice.imageMagnifier.initialZSize ="100"
+                
+        if "maxZoom"+self.id in request.args:
+            self.idevice.imageMagnifier.maxZSize = \
+                request.args["maxZoom"+self.id][0] 
 
 
     def renderEdit(self, style):
@@ -70,19 +84,47 @@ class ImageMagnifierBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
+        floatArr        = [[_(u'Left'), 'left'],
+                          [_(u'Right'), 'right'],
+                          [_(u'None'),  'none']]
+        glassSizeArr    = [[_(u'Small'), '1'],
+                          [_(u'Medium'),'2'],
+                          [_(u'Large'),'3'],
+                          [_(u'Extra large'),'4'],]
         html  = u"<div class=\"iDevice\">\n"
         html += u"<p>"
         html += self.imageMagnifierElement.renderEdit()       
         html += u"<b>%s</b>\n " % _("Float:")
-        floatArr    = [[_(u'Left'), 'left'],
-                      [_(u'Right'), 'right'],
-                      [_(u'None'),  'none']]
+        
         html += common.select("float"+self.id, 
                               floatArr, selection=self.idevice.float)
         html += u"</p>\n"
         html += u"<b>%s </b>" % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += "<br/>" + self.textElement.renderEdit()
+        html += "<b>" + _(u"Size of magnifying glass: ") + "</b>"
+        html += common.select("glass"+self.id, glassSizeArr, 
+                selection=self.idevice.imageMagnifier.glassSize)+ "<br/>"
+        html += "<b>" +_(u"Magnify initial zoom? ")  + "</b>"
+        html += _(u"Yes")
+        if self.idevice.imageMagnifier.initialZSize == "100":
+            html += common.option("initial"+self.id, 0, "yes")
+            html += _(u"No")
+            html += common.option("initial"+self.id, 1, "no")
+        else:
+            html += common.option("initial"+self.id, 1, "yes")
+            html += _(u"No")
+            html += common.option("initial"+self.id, 0, "no")
+            
+        html += "<br/><b> " + _(u"Maxium zoom ")  + "</b>"
+        html += "<select name=\"maxZoom%s\">\n" % self.id
+        template = '  <option value="%s0"%s>%s0%%</option>\n'
+        for i in range(10, 21):
+            if str(i)+ "0" == self.idevice.imageMagnifier.maxZSize:
+                html += template % (str(i), ' selected="selected"', str(i))
+            else:
+                html += template % (str(i), '', str(i))
+        html += "</select><br/><br/>\n"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html

@@ -129,6 +129,25 @@ function imageChanged(event) {
     height.value = image.height;
 }
 
+function magnifierImageChanged(event) {
+    var id = event.currentTarget.getAttribute('id');
+    var elementId = id.substring(3, id.length);
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+   // alert("width:" + image.width)
+    image.removeAttribute('height');
+    if (image.width > 600){
+        image.width = 600        
+        }
+        
+    if (image.height > 270){
+        width.value = image.width + 84
+    }else{
+        width.value = image.width + 144
+    }
+    height.value = image.height + 24
+}
 
 function changeImageWidth(elementId) {
     var image  = document.getElementById('img'+elementId);
@@ -144,6 +163,50 @@ function changeImageWidth(elementId) {
     height.value = image.height;
 }
 
+function changeMagnifierImageWidth(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('height');
+    if (width.value) {
+        image.width  = width.value - 84;
+    } else {
+        image.removeAttribute('width');
+    }
+    if (image.width > 600){
+        image.removeAttribute('height')
+        image.width = 600;
+    }
+    if (image.height > 270){
+        width.value = image.width + 84
+    }else{
+        width.value = image.width + 144
+    }
+    height.value = image.height + 24
+}
+
+
+function changeMagnifierImageHeight(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('width');
+    if (height.value) {
+        image.height = height.value - 24;
+    } else {
+        image.removeAttribute('height');
+    }
+    if (image.width > 600){
+        image.removeAttribute('height');
+        image.width = 600
+    }
+    if (image.height > 270){
+        width.value = image.width + 84
+    }else{
+        width.value = image.width + 144
+    }
+    height.value = image.height + 24
+}
 
 function changeImageHeight(elementId) {
     var image  = document.getElementById('img'+elementId);
@@ -158,6 +221,7 @@ function changeImageHeight(elementId) {
     }
     width.value  = image.width;
 }
+
 
 
 // Called by the user to provide a file name to add to the package

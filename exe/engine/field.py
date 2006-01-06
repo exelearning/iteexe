@@ -220,7 +220,7 @@ class MagnifierField(Field):
         self.defaultImage  = ""
         self.glassSize     = "2"
         self.initialZSize  = "100"
-        self.maxZSize      = "200"
+        self.maxZSize      = "150"
         self.align         = "middle"
 
 
