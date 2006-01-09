@@ -23,7 +23,7 @@ TestquestionElement.
 
 import logging
 from exe.webui import common
-from exe.engine.forumidevice import Forum, Lms, Discussion
+from forumidevice import Forum, Lms, Discussion
 
 log = logging.getLogger(__name__)
 # ===========================================================================

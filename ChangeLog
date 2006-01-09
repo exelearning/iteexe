@@ -1,3 +1,94 @@
+2006-01-08 21:48  djm
+
+	* branches/0.12/ChangeLog, branches/0.12/exe/webui/browser.py: Try
+	  multiple times to get firefox to start on windows
+
+2006-01-08 21:40  djm
+
+	* branches/0.12/exe/webui/scripts/common.js: fix bug with Feedback
+	  button
+
+2006-01-08 03:20  djm
+
+	* branches/0.12/exe/engine/idevicestore.py,
+	  branches/0.12/exe/engine/version.py,
+	  branches/0.12/exe/export/imsexport.py,
+	  branches/0.12/exe/export/scormexport.py,
+	  branches/0.12/exe/export/singlepageexport.py,
+	  branches/0.12/exe/export/websiteexport.py,
+	  branches/0.12/exe/webui/builtinblocks.py: don't include half
+	  finished magnifier idevice
+
+2006-01-08 03:06  djm
+
+	* branches/0.12: Created initial branch for 0.12 version
+
+2006-01-06 04:24  jenny
+
+	* exe/engine/field.py, exe/engine/idevicestore.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py,
+	  exe/webui/builtinblocks.py, exe/webui/element.py,
+	  exe/webui/imagemagnifierblock.py, exe/webui/scripts/common.js:
+	  work on image magnifier idevice.
+
+2006-01-05 03:08  jenny
+
+	* exe/engine/field.py, exe/engine/forumidevice.py,
+	  exe/engine/imagemagnifieridevice.py, exe/webui/element.py,
+	  exe/webui/forumblock.py, exe/webui/forumelement.py,
+	  exe/webui/imagemagnifierblock.py, exe/webui/scripts/common.js,
+	  exe/webui/templates/magnifier.swf: adding imageMagnifier idevice.
+
+2005-12-30 11:11  matthew
+
+	* exe/engine/field.py, exe/webui/clozeblock.py, exe/webui/common.py,
+	  exe/webui/element.py, exe/webui/scripts/common.js: Major changes
+	  to cloze idevice
+
+2005-12-30 11:11  matthew
+
+	* exe/engine/config.py, exe/engine/translate.py: Made late translate
+	  work in more places
+
+2005-12-28 22:11  djm
+
+	* exe/engine/galleryidevice.py: fixed bug with images being left
+	  behind in gallery idevice
+
+2005-12-28 21:21  djm
+
+	* exe/engine/field.py, exe/webui/element.py: fixed problem with
+	  trying to export flash idevice when no flash file had been set
+
+2005-12-21 23:06  jenny
+
+	* exe/webui/forumblock.py: fixed forum idevice export bugs.
+
+2005-12-21 21:17  jenny
+
+	* exe/engine/forumidevice.py, exe/webui/forumblock.py,
+	  exe/webui/forumelement.py: add lateTranslate to forum idevice.
+
+2005-12-21 21:14  djm
+
+	* exe/engine/node.py: fixed bug caused by using the problematic
+	  toUnicode function
+
+2005-12-21 01:45  djm
+
+	* exe/engine/galleryidevice.py: fixed bug with upgraded galleries
+
+2005-12-20 23:43  djm
+
+	* exe/webui/aboutpage.py: changed email address to
+	  exe@exelearning.org
+
+2005-12-20 21:41  djm
+
+	* ChangeLog, MANIFEST.in, NEWS, README, exe/engine/version.py,
+	  rpm-setup.py: Changes towards the 0.12 version of eXe
+
 2005-12-20 03:55  djm
 
 	* exe/xului/templates/mainpage.xul: added right click items for

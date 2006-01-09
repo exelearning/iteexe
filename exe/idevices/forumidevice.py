@@ -174,3 +174,16 @@ class Lms(Persistable):
     #properties
     name       = lateTranslate('name')
     otherLabel = lateTranslate('otherLabel')
+
+
+# ===========================================================================
+def register(ideviceStore):
+    """Register with the ideviceStore"""
+    from forumscache import ForumsCache
+    forumsCache  = ForumsCache()
+    forumIdevice = ForumIdevice()
+    forumIdevice.forumsCache = forumsCache
+    ideviceStore.extended.append(forumIdevice)
+
+#============================================================================     
+

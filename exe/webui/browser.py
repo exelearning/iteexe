@@ -26,9 +26,7 @@ Browser module
 
 import os
 import sys
-import time
 import logging
-from exe.engine.path import Path
 from urllib import quote
 from twisted.internet import reactor
  
@@ -69,7 +67,7 @@ def launchBrowser(config, packageName):
                       '"' + config.configDir/profile + '"', 
                       url)
             # ugly hack to try and fix the firefox not starting first time bug
-            reactor.callLater(2, secondTry, config, profile, url)
+            reactor.callLater(10, tryAgain, config, profile, url)
         except OSError:
             print u"Cannot launch Firefox, please manually run Firefox"
             print u"and go to", url     
@@ -84,7 +82,8 @@ def launchBrowser(config, packageName):
         log.info(u'Launching firefox with: ' + launchString)
         os.system(launchString)
 
-def secondTry(config, profile, url):
+
+def tryAgain(config, profile, url):
     """
     Second try of launching the browser,
     called by reactor on a timer thingy
@@ -95,3 +94,4 @@ def secondTry(config, profile, url):
               '-profile', 
               '"' + config.configDir/profile + '"', 
               url)
+

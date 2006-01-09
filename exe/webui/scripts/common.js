@@ -135,7 +135,6 @@ function magnifierImageChanged(event) {
     var image  = document.getElementById('img'+elementId);
     var width  = document.getElementById('width'+elementId);
     var height = document.getElementById('height'+elementId);
-   // alert("width:" + image.width)
     image.removeAttribute('height');
     if (image.width > 600){
         image.width = 600        
@@ -370,15 +369,15 @@ function getFeedback(optionId, optionsNum, ideviceId, mode) {
 // Cloze Field Stuff /////////////////////////////////////////////////
 
 // Constants 
-const NOT_ATTEMPTED = 0
-const WRONG = 1
-const CORRECT = 2
+NOT_ATTEMPTED = 0
+WRONG = 1
+CORRECT = 2
 
 // Functions 
 
 // Called when a learner types something into a cloze word space
 function onClozeChange(ele) {
-    var ident = getClozeIds(ele)[0]
+    var ident = getClozeIds(ele)[0];
     var instant = eval(document.getElementById(
         'clozeFlag'+ident+'.instantMarking').value);
     if (instant) {
@@ -425,7 +424,7 @@ function toggleClozeAnswers(ident, clear){
     var allCorrect = true;
     var inputs = getCloseInputs(ident)
     if (!clear) {
-        for (var i in inputs) {
+        for (var i=0; i<inputs.length; i++) {
             var input = inputs[i];
             if (getClozeMark(input) != 2) {
                 allCorrect = false;
@@ -458,7 +457,7 @@ function fillClozeInputs(ident, inputs) {
     if (!inputs) {
         var inputs = getCloseInputs(ident)
     }
-    for (i in inputs) {
+    for (var i=0; i<inputs.length; i++) {
         input = inputs[i];
         input.value = getClozeAnswer(input);
         markClozeWord(input, CORRECT);
@@ -474,7 +473,7 @@ function clearClozeInputs(ident, inputs) {
     if (!inputs) {
         var inputs = getCloseInputs(ident)
     }
-    for (i in inputs) {
+    for (var i=0; i<inputs.length; i++) {
         input = inputs[i];
         input.value="";
         markClozeWord(input, NOT_ATTEMPTED);
@@ -506,7 +505,7 @@ function markClozeWord(ele, mark) {
     switch (mark) {
         case 0:
             // Not attempted
-            ele.style.backgroundColor = null;
+            ele.style.backgroundColor = "";
             break;
         case 1:
             // Wrong
@@ -524,7 +523,6 @@ function markClozeWord(ele, mark) {
 function getClozeMark(ele) {
     // Return last mark applied
     switch (ele.style.backgroundColor) {
-        case null:    return 0; // Not attempted
         case 'red':   return 1; // Wrong
         case 'lime':  return 2; // Correct
         default:      return 0; // Not attempted
@@ -542,7 +540,7 @@ function getClozeAnswer(ele) {
     // XOR "Decrypt"
     result = '';
     var key = 'X'.charCodeAt(0);
-    for (var i in code) {
+    for (var i=0; i<code.length; i++) {
         var letter = code.charCodeAt(i);
         key ^= letter
         result += String.fromCharCode(key);
@@ -670,7 +668,7 @@ function showClozeScore(ident, mark) {
     var score = 0
     var div = document.getElementById('cloze' + ident)
     var inputs = getCloseInputs(ident)
-    for (var i in inputs) {
+    for (var i=0; i<inputs.length; i++) {
         var input = inputs[i];
         if (mark) {
             var result = checkAndMarkClozeWord(input);
@@ -689,9 +687,9 @@ function showClozeScore(ident, mark) {
 // Returns an array of input elements that are associated with a certain idevice
 function getCloseInputs(ident) {
     var result = new Array;
-    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-    for (var i in theForm.elements) {
-        var ele = theForm.elements[i];
+    var clozeDiv = document.getElementById('cloze'+ident)
+    for (var i=0; i<clozeDiv.childNodes.length; i++) {
+        var ele = clozeDiv.childNodes[i];
         if (ele.id) {
             if (ele.id.search('clozeBlank'+ident) == 0) {
                 result.push(ele);
@@ -734,7 +732,7 @@ function showAnswer(id,isShow) {
         document.getElementById("s"+id).style.display = "block";
         document.getElementById("hide"+id).style.display = "block";
         document.getElementById("view"+id).style.display = "none";
-    }else{
+    } else {
         document.getElementById("s"+id).style.display = "none";
         document.getElementById("hide"+id).style.display = "none";
         document.getElementById("view"+id).style.display = "block";
@@ -743,11 +741,22 @@ function showAnswer(id,isShow) {
 
 //change forum or discussion topic or lms for discussion idevice.
 function submitChange(action, selectId) 
-    {
-        var form = document.getElementById("contentForm")      
-        form.action.value = action
-        var select = document.getElementById(selectId) 
-        form.object.value = select.value;
-        form.isChanged.value = 1;
-        form.submit();
+{
+    var form = document.getElementById("contentForm")      
+    form.action.value = action
+    var select = document.getElementById(selectId) 
+    form.object.value = select.value;
+    form.isChanged.value = 1;
+    form.submit();
+}
+
+
+// show or hide the feedback for cloze idevice
+function toggleFeedback(id) {
+    var ele = document.getElementById(id);
+    if (ele.style.display == "block") {
+        ele.style.display = "none";
+    } else {
+        ele.style.display = "block";
     }
+}

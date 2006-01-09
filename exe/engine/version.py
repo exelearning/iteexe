@@ -20,7 +20,7 @@
 
 """
 Version Information
-2005-12-21
+2006-01-09
 """
 
 project        = "exe"
@@ -30,6 +30,3 @@ version        = release + "." + revision
 
 if __name__ == '__main__':
     print project, version
-
-
-

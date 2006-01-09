@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: exe/webui/forumblock.py:54
 msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-07 11:46+1300\n"
+"POT-Creation-Date: 2006-01-09 11:52+1300\n"
 "PO-Revision-Date: 2005-12-05 16:26+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team:  <sfj@fb.is>\n"
@@ -22,7 +23,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Færa---"
 
-#: exe/xului/mainpage.py:223 exe/xului/mainpage.py:295
+#: exe/xului/mainpage.py:229 exe/xului/mainpage.py:283
+#: exe/xului/mainpage.py:328
 msgid ". Please use ASCII names."
 msgstr ". Vinsamlegast notaðu nöfn á ASCII sniði."
 
@@ -30,7 +32,7 @@ msgstr ". Vinsamlegast notaðu nöfn á ASCII sniði."
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading.   This should be long enough to adequately test your target knowledge, but short enough not toinduce fatigue. Less than one typed page isprobably adequate, but you may want to writeconsiderably less for young students orbeginners.    </p>    <p>Select the words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd>Write a text using the target vocabulary. Thistext should be coherent and cohesive, and be ofan appropriate length. Highlight the targetwords in the text. Choose alternatives with oneclear answer.  </dd>  <dt>If your goal is to test wordformation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent andcohesive, and be of an appropriate length.Remember that the goal is not vocabularyknowledge, so the core meanings of the stemwords should be well known to the students.  </p>  <p>Highlight the target words in the text. Providealternatives with the same word stem, butdifferent affixes. It is a good idea to get acolleague to test the test/exercise to makesure there are no surprises!  </p>"
 msgstr ""
 
-#: exe/engine/imagewithtextidevice.py:39
+#: exe/engine/imagewithtextidevice.py:40
 msgid ""
 "<p>\n"
 "The image with text iDevice can be used in a number of ways to support both\n"
@@ -88,11 +90,11 @@ msgstr ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 
-#: exe/engine/idevicestore.py:218 exe/engine/idevicestore.py:366
+#: exe/engine/idevicestore.py:219 exe/engine/idevicestore.py:367
 msgid "<p>An activity can be described as atask or set of tasks a learner must complete. Provide a clear statement of the task and consider any conditions that may help or hinder the learner in the performance of the task.</p><p>The general task is the most flexible iDevice because authors can specify the sub-type or classification. It is used to signal a learning \"event\". In other words when learners are expected to do something. For example:<ol><li> A written activity when learners must write something down (notes or a list)</li><li>An application activity, where learners are expected to apply their knowledge to a particular situation</li><li>Conceptual activity, where learners are asked to think about something. Although the \"look and feel\" associated with the presentation of this iDevice on a web page will be the same for each instance or type, learners will be able to distinguish among different types by the heading the author provides for the particular instance of this iDevice. </li></ol></p>"
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:58
+#: exe/engine/attachmentidevice.py:57
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Skráðu lýsingu á viðhenginu. Hér getur verið gagnlegt að láta skráarendinguna fylgja með, s.s. pdf, ppt, o.s.frv.</p><p>Einnig er mælt með því tilgreind sé stærð skráarinnar þannig að notendur hafi einhverja hugmynd um hversu lengi það muni taka að sækja viðkomandi skrá.</p><p>Til dæmis:<code>Söluspá.doc (500kb) </code></p>"
 
@@ -100,15 +102,27 @@ msgstr "<p>Skráðu lýsingu á viðhenginu. Hér getur verið gagnlegt að lát
 msgid "<p>Cloze tests or exercises are texts or sentences where some words or phrases have been deleted. Students must fill in the missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge (usually for non-native English speakers).</li><li>To check word formation and/or grammatical competence. </li>"
 msgstr ""
 
-#: exe/webui/externalurlblock.py:65
+#: exe/engine/field.py:402
+msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as wrong.</p>"
+msgstr ""
+
+#: exe/engine/field.py:379
+msgid "<p>If this option is left unchecked a fuzzy algorythm will be used to mark learners answers. It will accept a small amount of spelling and capitalization errors on words longer than 4 letters. This will happen even if \"Check capitalization\" is on.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> and both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorythm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
+msgstr ""
+
+#: exe/engine/field.py:407
+msgid "<p>If this option is set, each word will be marked as the learner types it in, instead of all the words bieng marked at the end.</p>"
+msgstr ""
+
+#: exe/webui/externalurlblock.py:66
 msgid "<strong>Frame Height:</strong> "
 msgstr "<strong>Hæð rammat:</strong> "
 
-#: exe/webui/externalurlblock.py:59
+#: exe/webui/externalurlblock.py:60
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:102
+#: exe/engine/package.py:103
 msgid "?????"
 msgstr "?????"
 
@@ -138,7 +152,7 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Kennslufræðileg vísbending gefur þér kost á því að lýsa virkni og notkun kennslutækisins."
 
-#: exe/webui/forumblock.py:86
+#: exe/webui/forumelement.py:78
 msgid "A single simple discussion"
 msgstr "Einföld, stök umræða"
 
@@ -146,7 +160,7 @@ msgstr "Einföld, stök umræða"
 msgid "Actions"
 msgstr "Aðgerðir"
 
-#: exe/engine/idevicestore.py:341 exe/engine/idevicestore.py:349
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:350
 msgid "Activity"
 msgstr "Viðfang"
 
@@ -190,13 +204,13 @@ msgstr ""
 msgid "Align:"
 msgstr ""
 
-#: exe/engine/field.py:331 exe/engine/field.py:365
+#: exe/engine/field.py:446
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
 
-#: exe/engine/clozeidevice.py:163
+#: exe/engine/clozeidevice.py:159
 msgid "Allow auto completion when user filling the gaps."
 msgstr ""
 
@@ -236,7 +250,7 @@ msgstr ""
 " um rétt svör</li> \n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:344
+#: exe/engine/idevicestore.py:345
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -246,34 +260,29 @@ msgstr ""
 "nemendur vinni. Mikilvægt er veita nemendum greinargóða lýsingu á viðfangsefninu \n"
 "og hafa í huga allt það sem getur komið þeim að gagni eða staðið í vegi fyrir árangri."
 
-#: exe/engine/wikipediaidevice.py:56
+#: exe/engine/wikipediaidevice.py:58
 msgid "Article"
 msgstr "Grein"
 
-#: exe/engine/attachmentidevice.py:40
+#: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
 msgstr "Viðhengi"
 
-#: exe/engine/attachmentidevice.py:101 exe/engine/attachmentidevice.py:124
+#: exe/engine/attachmentidevice.py:93
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Viðhengið %s hefur enga \"parentNode\""
 
-#: exe/webui/propertiespane.py:100 exe/webui/editorpane.py:288
+#: exe/webui/editorpane.py:288 exe/webui/propertiespane.py:100
 msgid "Author"
 msgstr "Höfundur"
-
-#: exe/webui/element.py:448
-#, fuzzy
-msgid "Auto Completion"
-msgstr "Leiðbeiningar"
 
 #: exe/webui/editorelement.py:142
 #, fuzzy
 msgid "Button Caption"
 msgstr "Skýringartexti"
 
-#: exe/webui/forumblock.py:124
+#: exe/webui/forumelement.py:105
 msgid "Can a student post to this forum?:"
 msgstr "Getur nemenda sent innlegg í þessa umræðu?:"
 
@@ -281,12 +290,13 @@ msgstr "Getur nemenda sent innlegg í þessa umræðu?:"
 msgid "Cancel"
 msgstr "Hætta"
 
-#: exe/xului/mainpage.py:221 exe/xului/mainpage.py:293
+#: exe/xului/mainpage.py:227 exe/xului/mainpage.py:281
+#: exe/xului/mainpage.py:326
 msgid "Cannot access directory named "
 msgstr "Hef ekki aðgang að skráarsafninu"
 
-#: exe/webui/imagewithtextblock.py:83 exe/webui/flashmovieblock.py:83
-#: exe/webui/flashwithtextblock.py:83
+#: exe/webui/imagemagnifierblock.py:102 exe/webui/imagewithtextblock.py:83
+#: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 msgid "Caption:"
 msgstr "Skýringartexti"
 
@@ -295,16 +305,24 @@ msgstr "Skýringartexti"
 msgid "Case Study"
 msgstr "Tilvikssaga"
 
+#: exe/webui/element.py:612
+msgid "Check Caps?"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:75
 #, fuzzy
 msgid "Chinese Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
-#: exe/engine/attachmentidevice.py:54
+#: exe/engine/forumidevice.py:107
+msgid "Choose a LMS"
+msgstr ""
+
+#: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Smelltu á <strong>Select a file</strong>, finndu skránna sem þú vilt hengja við og veldu hana."
 
-#: exe/engine/field.py:143
+#: exe/engine/field.py:132
 #, fuzzy
 msgid "Click Here"
 msgstr "Smelltu hér"
@@ -313,10 +331,10 @@ msgstr "Smelltu hér"
 msgid "Click here"
 msgstr "Smelltu hér"
 
-#: exe/webui/block.py:236 exe/webui/multichoiceblock.py:152
-#: exe/webui/multichoiceblock.py:153 exe/webui/common.py:224
-#: exe/webui/common.py:225 exe/webui/truefalseelement.py:127
-#: exe/webui/truefalseelement.py:128 exe/webui/editorpane.py:327
+#: exe/webui/common.py:228 exe/webui/common.py:229
+#: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
+#: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
+#: exe/webui/block.py:236 exe/webui/editorpane.py:327
 #: exe/webui/editorpane.py:328 exe/webui/editorpane.py:349
 msgid "Close"
 msgstr "Loka"
@@ -333,8 +351,8 @@ msgstr "Eyðufyllingarverkefni"
 msgid "Content"
 msgstr "Innihald"
 
-#: exe/webui/multichoiceblock.py:101 exe/webui/testquestionelement.py:95
-#: exe/webui/optionelement.py:117
+#: exe/webui/multichoiceblock.py:101 exe/webui/optionelement.py:117
+#: exe/webui/testquestionelement.py:95
 msgid "Correct"
 msgstr "Rétt"
 
@@ -350,11 +368,12 @@ msgstr ""
 "Skráðu tilvikssöguna. Góð tilvikssaga felur \n"
 "í sér tvö sjónarhorn og stundum einhverskonar mótsögn."
 
-#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
-#: exe/webui/editorelement.py:149 exe/webui/editorelement.py:184
 #: exe/webui/block.py:206 exe/webui/editorpage.py:176
-#: exe/webui/editorpage.py:180 exe/xului/templates/mainpage.xul:<toolbarbutton
-#: key="delNodeKey" label="Delete">
+#: exe/webui/editorpage.py:180 exe/webui/editorelement.py:76
+#: exe/webui/editorelement.py:111 exe/webui/editorelement.py:149
+#: exe/webui/editorelement.py:184
+#: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
+#: label="Delete">
 msgid "Delete"
 msgstr "Eyða"
 
@@ -362,8 +381,8 @@ msgstr "Eyða"
 msgid "Delete option"
 msgstr "Eyða valkosti"
 
-#: exe/webui/testquestionelement.py:86 exe/webui/questionelement.py:80
-#: exe/webui/truefalseelement.py:106
+#: exe/webui/questionelement.py:80 exe/webui/truefalseelement.py:106
+#: exe/webui/testquestionelement.py:86
 msgid "Delete question"
 msgstr "Eyða spurningu"
 
@@ -377,7 +396,7 @@ msgstr ""
 "í æfingunni. (Marklistar/viðmiðunarkvarðar eru hentug leið til þess að veita \n"
 "nemendum tækifæri til að ígrunda eigin frammistöðu.)"
 
-#: exe/engine/idevicestore.py:337
+#: exe/engine/idevicestore.py:338
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -385,7 +404,7 @@ msgstr ""
 "Lýstu þeirri þekkingu sem mikilvægt er að nemendur búi yfir \n"
 "til þess að takast á við þetta viðfangsefni."
 
-#: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:448
+#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:449
 msgid ""
 "Describe the rationale behind the selection of the reading and how it will\n"
 "enrich the learning."
@@ -393,7 +412,7 @@ msgstr ""
 "Lýstu ástæðunni fyrir valinu á lesefninu og hvernig lesefnið mun \n"
 "auðga námið."
 
-#: exe/engine/idevicestore.py:350
+#: exe/engine/idevicestore.py:351
 msgid "Describe the tasks the learners should complete."
 msgstr "Lýstu viðfangsefninu fyrir nemendum."
 
@@ -401,27 +420,34 @@ msgstr "Lýstu viðfangsefninu fyrir nemendum."
 msgid "Description"
 msgstr "Lýsing"
 
-#: exe/webui/attachmentblock.py:85
+#: exe/webui/attachmentblock.py:89
 msgid "Description:"
 msgstr "Lýsing:"
 
-#: exe/webui/forumblock.py:169 exe/webui/forumblock.py:186
-msgid "Discussion Topic"
-msgstr "Umræðuefni"
-
-#: exe/webui/forumblock.py:145
-msgid "Discussion topic:"
+#: exe/engine/forumidevice.py:40
+#, fuzzy
+msgid "Discussion Activity"
 msgstr "Umræðuefni:"
 
-#: exe/webui/forumblock.py:90
+#: exe/webui/forumelement.py:224
+#, fuzzy
+msgid "Discussion Topic/Thread:"
+msgstr "Umræðuefni"
+
+#: exe/engine/forumidevice.py:141
+#, fuzzy
+msgid "Discussion topic/Thread"
+msgstr "Umræðuefni:"
+
+#: exe/webui/forumelement.py:82
 msgid "Discussions and replies are allowed"
 msgstr "Umræður og svör eru leyfð"
 
-#: exe/webui/element.py:273 exe/webui/element.py:536
+#: exe/webui/element.py:276 exe/webui/element.py:397 exe/webui/element.py:751
 msgid "Display as:"
 msgstr "Birta sem:"
 
-#: exe/webui/propertiespane.py:123 exe/webui/block.py:198
+#: exe/webui/block.py:198 exe/webui/propertiespane.py:123
 msgid "Done"
 msgstr "Lokið"
 
@@ -430,23 +456,26 @@ msgstr "Lokið"
 msgid "Dutch Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
-#: exe/webui/element.py:45
-msgid "ERROR Element.process called directly"
+#: exe/webui/element.py:44
+#, fuzzy, python-format
+msgid "ERROR Element.process called directly with %s class"
 msgstr "VILLA Element.process called directly"
 
 #: exe/webui/element.py:53
-msgid "ERROR Element.renderEdit called directly"
+#, fuzzy, python-format
+msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "VILLA Element.renderEdit called directly"
 
-#: exe/webui/element.py:69
-msgid "ERROR Element.renderView called directly"
+#: exe/webui/element.py:70
+#, fuzzy, python-format
+msgid "ERROR Element.renderView called directly with %s class"
 msgstr "VILLA Element.renderView called directly"
 
 #: exe/webui/block.py:311
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "VILLA: Block.renderViewContent called directly"
 
-#: exe/webui/forumblock.py:87
+#: exe/webui/forumelement.py:79
 msgid "Each person posts one discussion"
 msgstr "Hver þátttakandi stofnar eina umræðu"
 
@@ -472,7 +501,7 @@ msgstr ""
 "Sláðu inn vísbendingu. Ef þú \n"
 " vilt ekki gefa vísbendingu hafðu þá þennan reit auðann."
 
-#: exe/engine/multichoiceidevice.py:134
+#: exe/engine/multichoiceidevice.py:127
 #, fuzzy
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr ""
@@ -519,12 +548,12 @@ msgstr ""
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
 msgstr "Skráðu texta eyðufyllingar með því að slá hann inn eða afrita. Veldu orðin sem þú vilt fela með því að tvísmella á orð og smella á <i>Fela/Sýna orð</i> hnappinn."
 
-#: exe/xului/mainpage.py:274
+#: exe/xului/mainpage.py:498
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Villa kom upp við innlestur á pakka \"%s\": %s"
 
-#: exe/xului/mainpage.py:407 exe/xului/mainpage.py:425
+#: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
 #, python-format
 msgid "Exported to %s"
 msgstr "Flutt út %s"
@@ -533,41 +562,46 @@ msgstr "Flutt út %s"
 msgid "External Web Site"
 msgstr "Útvær vefur"
 
+#: exe/webui/imagemagnifierblock.py:93
+msgid "Extra large"
+msgstr ""
+
 #: exe/webui/truefalseelement.py:86 exe/webui/truefalseelement.py:159
 msgid "False"
 msgstr "Rangt"
 
-#: exe/engine/idevicestore.py:306 exe/engine/idevicestore.py:454
-#: exe/engine/clozeidevice.py:126 exe/engine/clozeidevice.py:154
-#: exe/webui/multichoiceblock.py:105 exe/webui/questionelement.py:73
+#: exe/engine/clozeidevice.py:126 exe/engine/clozeidevice.py:150
+#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:455
+#: exe/webui/questionelement.py:73 exe/webui/multichoiceblock.py:105
 #: exe/webui/truefalseelement.py:92 exe/webui/editorpane.py:219
 msgid "Feedback"
 msgstr "Endurgjöf"
 
-#: exe/xului/mainpage.py:339 exe/xului/mainpage.py:375
+#: exe/xului/mainpage.py:373 exe/xului/mainpage.py:410
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Skráarheitið %s er skrá, get ekki skipt um"
 
-#: exe/engine/flashwithtextidevice.py:42
+#: exe/engine/flashwithtextidevice.py:43
 msgid "Flash"
 msgstr "Flash"
 
-#: exe/engine/flashmovieidevice.py:37
+#: exe/engine/flashmovieidevice.py:38
 #, fuzzy
 msgid "Flash Movie"
 msgstr "Flash"
 
-#: exe/engine/flashmovieidevice.py:43
+#: exe/engine/flashmovieidevice.py:44
 #, fuzzy
 msgid "Flash Video File"
 msgstr "Flash"
 
-#: exe/engine/flashwithtextidevice.py:38
+#: exe/engine/flashwithtextidevice.py:39
 msgid "Flash with Text"
 msgstr "Flash með texta"
 
-#: exe/webui/imagewithtextblock.py:76 exe/webui/flashwithtextblock.py:76
+#: exe/webui/imagemagnifierblock.py:97 exe/webui/imagewithtextblock.py:76
+#: exe/webui/flashwithtextblock.py:76
 msgid "Float:"
 msgstr "Fljótandi:"
 
@@ -582,24 +616,21 @@ msgstr ""
 "með eigin efni. Námstækið hleður viðkomandi vefsíðu í innværan ramma (iframe) \n"
 "þannig að ekki þarf að opna sprettiglugga. Notast einungis ef eigið efni er á Netinu."
 
-#: exe/webui/forumblock.py:129
+#: exe/webui/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
 msgstr "Skilyrða alla sem áskrifendur."
 
-#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:167
-#: exe/webui/forumblock.py:184
-msgid "Forum Discussion"
-msgstr "Umræður"
-
-#: exe/webui/forumblock.py:119
-msgid "Forum introduction:"
-msgstr "Inngangur að umræðu:"
-
-#: exe/webui/forumblock.py:109
-msgid "Forum name:"
+#: exe/webui/forumelement.py:195
+#, fuzzy
+msgid "Forum Name:"
 msgstr "Nafn umræðuvettvangs:"
 
-#: exe/webui/forumblock.py:114
+#: exe/webui/forumelement.py:269 exe/webui/forumelement.py:283
+#, fuzzy
+msgid "Forum Name: "
+msgstr "Nafn umræðuvettvangs:"
+
+#: exe/webui/forumelement.py:99
 msgid "Forum type:"
 msgstr "Tegund umræðuvettvangs:"
 
@@ -617,19 +648,19 @@ msgstr "Grein á Wikipedia"
 msgid "German Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
-#: exe/webui/element.py:481
+#: exe/webui/element.py:678
 msgid "Get score"
 msgstr "Stig sótt:"
 
-#: exe/webui/forumblock.py:135
+#: exe/webui/forumelement.py:116
 msgid "Group mode:"
 msgstr "Hópa hamur:"
 
-#: exe/webui/forumblock.py:103 exe/webui/reflectionblock.py:94
+#: exe/webui/reflectionblock.py:94 exe/webui/forumelement.py:95
 msgid "Hide"
 msgstr "Fela"
 
-#: exe/webui/element.py:445
+#: exe/webui/element.py:602
 msgid "Hide/Show Word"
 msgstr "Fela/sýna orð"
 
@@ -650,17 +681,26 @@ msgstr "Heim"
 msgid "Icons"
 msgstr "Teikn"
 
-#: exe/engine/imagewithtextidevice.py:67 exe/webui/editorpane.py:217
+#: exe/engine/imagewithtextidevice.py:68 exe/webui/editorpane.py:217
 msgid "Image"
 msgstr "Mynd"
 
-#: exe/engine/galleryidevice.py:320
+#: exe/engine/galleryidevice.py:357
 msgid "Image Gallery"
 msgstr "Myndasafn"
 
-#: exe/engine/imagewithtextidevice.py:37
+#: exe/engine/imagemagnifieridevice.py:37
+#, fuzzy
+msgid "Image Magnifier"
+msgstr "Myndasafn"
+
+#: exe/engine/imagewithtextidevice.py:38
 msgid "Image with Text"
 msgstr "Mynd ásamt texta"
+
+#: exe/engine/imagemagnifieridevice.py:42
+msgid "ImageMagnifier"
+msgstr ""
 
 #: exe/webui/optionelement.py:119
 msgid "Incorrect"
@@ -670,16 +710,25 @@ msgstr "Rangt"
 msgid "Incorrect!"
 msgstr "Rangt!"
 
-#: exe/webui/common.py:211
+#: exe/webui/element.py:617
+msgid "Instant Marking?"
+msgstr ""
+
+#: exe/webui/common.py:215
 msgid "Instructions"
 msgstr "Leiðbeiningar"
 
-#: exe/engine/clozeidevice.py:114 exe/engine/clozeidevice.py:149
+#: exe/engine/clozeidevice.py:114 exe/engine/clozeidevice.py:145
 msgid "Instructions For Learners"
 msgstr "Leiðbeiningar fyrir nemendur"
 
-#: exe/webui/common.py:216 exe/webui/common.py:219
+#: exe/webui/common.py:220 exe/webui/common.py:223
 msgid "Instructions for completion"
+msgstr "Leiðbeiningar"
+
+#: exe/webui/forumelement.py:219
+#, fuzzy
+msgid "Introduction"
 msgstr "Leiðbeiningar"
 
 #: exe/webui/wikipediablock.py:79
@@ -693,12 +742,26 @@ msgid "Japanese Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
 # Merking
-#: exe/webui/attachmentblock.py:79
+#: exe/webui/attachmentblock.py:83
 msgid "Label"
 msgstr "Snepill"
 
-#: exe/webui/imagewithtextblock.py:77 exe/webui/flashmovieblock.py:77
-#: exe/webui/flashwithtextblock.py:77
+# Merking
+#: exe/webui/imagemagnifierblock.py:92
+#, fuzzy
+msgid "Large"
+msgstr "Snepill"
+
+#: exe/engine/forumidevice.py:158
+msgid "Learning Management System"
+msgstr ""
+
+#: exe/webui/forumelement.py:243
+msgid "Learning Management System:"
+msgstr ""
+
+#: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
+#: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:77
 msgid "Left"
 msgstr "Vinstri"
 
@@ -714,13 +777,29 @@ msgstr "Stig 2:"
 msgid "Level 3: "
 msgstr "Stig 3:"
 
+#: exe/engine/forumidevice.py:161
+msgid "Link to the forum"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:90
 msgid "Load"
 msgstr "Sækja"
 
-#: exe/webui/forumblock.py:151
-msgid "Message:"
-msgstr "Skilaboð"
+#: exe/webui/imagemagnifierblock.py:108
+msgid "Magnify initial zoom? "
+msgstr ""
+
+#: exe/webui/imagemagnifierblock.py:119
+msgid "Maxium zoom "
+msgstr ""
+
+#: exe/webui/imagemagnifierblock.py:91
+msgid "Medium"
+msgstr ""
+
+#: exe/webui/forumelement.py:252
+msgid "Moodle"
+msgstr ""
 
 #: exe/webui/block.py:220
 msgid "Move Down"
@@ -738,11 +817,21 @@ msgstr "Valspurningar"
 msgid "Name"
 msgstr "Nafn"
 
+#: exe/webui/forumelement.py:206
+msgid "New Forum"
+msgstr ""
+
+#: exe/webui/forumelement.py:234
+#, fuzzy
+msgid "New Topic"
+msgstr "Viðfangsefni"
+
 #: exe/webui/editorpage.py:203
 msgid "New iDevice"
 msgstr "Nýtt námstæki"
 
-#: exe/webui/forumblock.py:94
+#: exe/webui/imagemagnifierblock.py:112 exe/webui/imagemagnifierblock.py:116
+#: exe/webui/forumelement.py:86
 msgid "No"
 msgstr "Nei"
 
@@ -750,15 +839,15 @@ msgstr "Nei"
 msgid "No Images Loaded"
 msgstr "Engar myndir til staðar"
 
-#: exe/engine/galleryidevice.py:112
+#: exe/engine/galleryidevice.py:125
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Smámynd finnst ekki. Gat ekki smækkað mynd."
 
-#: exe/webui/forumblock.py:91
+#: exe/webui/forumelement.py:83
 msgid "No discussions, but replies are allowed"
 msgstr "Engar umræður, en svör eru leyfð"
 
-#: exe/webui/forumblock.py:92
+#: exe/webui/forumelement.py:84
 msgid "No discussions, no replies"
 msgstr "Engar umræður, engin svör"
 
@@ -766,11 +855,12 @@ msgstr "Engar umræður, engin svör"
 msgid "No emphasis"
 msgstr "Engar áherslur"
 
-#: exe/webui/forumblock.py:98
+#: exe/webui/forumelement.py:90
 msgid "No groups"
 msgstr "Engir hópar"
 
-#: exe/webui/imagewithtextblock.py:79 exe/webui/flashmovieblock.py:79
+#: exe/webui/imagemagnifierblock.py:89 exe/webui/imagewithtextblock.py:79
+#: exe/webui/forumelement.py:230 exe/webui/flashmovieblock.py:79
 #: exe/webui/flashwithtextblock.py:79
 msgid "None"
 msgstr "Ekkert"
@@ -779,11 +869,11 @@ msgstr "Ekkert"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:322
+#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:323
 msgid "Objectives"
 msgstr "Markmið"
 
-#: exe/engine/idevicestore.py:316
+#: exe/engine/idevicestore.py:317
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -796,11 +886,15 @@ msgstr ""
 msgid "Option"
 msgstr "Valkostir"
 
+#: exe/webui/forumelement.py:256
+msgid "Other"
+msgstr ""
+
 #: exe/xului/outlinepane.py:230
 msgid "Outline"
 msgstr "Útlína"
 
-#: exe/xului/mainpage.py:244
+#: exe/xului/mainpage.py:246 exe/xului/mainpage.py:348
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakki vistaður hér: %s"
@@ -813,13 +907,35 @@ msgstr "Kennslufræðileg hjálp"
 msgid "Pedagogical Tip"
 msgstr "Kennslufræðileg vísbending"
 
+#: exe/webui/forumblock.py:131
+#, fuzzy
+msgid "Please enter a discussion topic name.\n"
+msgstr "Vinsamlegast veldu nafn á námstæki"
+
+#: exe/webui/forumblock.py:117
+#, fuzzy
+msgid "Please enter a name for the forum\n"
+msgstr "Vinsamlegast veldu nafn á námstæki"
+
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:164
 msgid "Please enter an idevice name."
 msgstr "Vinsamlegast veldu nafn á námstæki"
 
+#: exe/webui/forumblock.py:126
+msgid "Please select LMS.\n"
+msgstr ""
+
+#: exe/webui/forumelement.py:248
+msgid "Please select a LMS"
+msgstr ""
+
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Vinsamlegast veldu rétt svar fyrir hverja spurningu."
+
+#: exe/webui/forumblock.py:112
+msgid "Please select a forum.\n"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:80
 #, fuzzy
@@ -831,11 +947,11 @@ msgstr "Grein á Wikipedia"
 msgid "Portugese Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
-#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:336
+#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:337
 msgid "Preknowledge"
 msgstr "Forþekking"
 
-#: exe/engine/idevicestore.py:329
+#: exe/engine/idevicestore.py:330
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -861,11 +977,11 @@ msgstr "Eiginleikar verkefnis"
 msgid "Project title:"
 msgstr "Titill verkefnis:"
 
-#: exe/engine/attachmentidevice.py:75
+#: exe/engine/attachmentidevice.py:74
 msgid "Provide a brief description of the file"
 msgstr "Skráðu stutta lýsingu á skránni"
 
-#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:446
+#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:447
 msgid "Provide details of the reading materials learners should  read."
 msgstr "Skráðu upplýsingar um lesefni nemenda."
 
@@ -877,7 +993,7 @@ msgstr ""
 "Skráðu endurgjöf fyrir spurninguna. Endugjöf \n"
 "getur verið yfirlit yfir meginþætti viðfangsefnisins."
 
-#: exe/engine/idevicestore.py:303 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:304 exe/engine/idevicestore.py:452
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
@@ -892,7 +1008,7 @@ msgstr "Skráðu leiðbeiningar með eyðufyllingarverkefninu."
 msgid "Purpose"
 msgstr "Tilgangur"
 
-#: exe/engine/clozeidevice.py:150
+#: exe/engine/clozeidevice.py:146
 msgid "Put instructions for learners here"
 msgstr "Skráðu leiðbeiningar til nemenda hér"
 
@@ -905,20 +1021,20 @@ msgstr "Spurning"
 msgid "Question:"
 msgstr "Spurning:"
 
-#: exe/engine/clozeidevice.py:117 exe/engine/clozeidevice.py:151
+#: exe/engine/clozeidevice.py:117 exe/engine/clozeidevice.py:147
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Lestu efnisgreinina hér fyrir neðan og fylltu í eyðurnar"
 
-#: exe/engine/idevicestore.py:215
+#: exe/engine/idevicestore.py:216
 msgid "Reading Activity"
 msgstr "Lesefni"
 
-#: exe/engine/idevicestore.py:363
+#: exe/engine/idevicestore.py:364
 #, fuzzy
 msgid "Reading Activity 0.11"
 msgstr "Lesefni"
 
-#: exe/engine/idevicestore.py:302 exe/engine/idevicestore.py:450
+#: exe/engine/idevicestore.py:303 exe/engine/idevicestore.py:451
 msgid "Reference"
 msgstr "Heimild"
 
@@ -950,8 +1066,12 @@ msgstr "Spurning til íhugunar:"
 msgid "Response:"
 msgstr "Viðbrögð:"
 
-#: exe/webui/imagewithtextblock.py:78 exe/webui/flashmovieblock.py:78
-#: exe/webui/flashwithtextblock.py:78
+#: exe/webui/element.py:697
+msgid "Restart"
+msgstr ""
+
+#: exe/webui/imagemagnifierblock.py:88 exe/webui/imagewithtextblock.py:78
+#: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:78
 msgid "Right"
 msgstr "Hægri"
 
@@ -983,20 +1103,25 @@ msgstr "Hluti"
 msgid "Select Language"
 msgstr "Veldu tungumál"
 
-#: exe/webui/attachmentblock.py:73
+#: exe/webui/forumelement.py:202
+#, fuzzy
+msgid "Select a Forum"
+msgstr "Veldu mynd"
+
+#: exe/webui/attachmentblock.py:77
 msgid "Select a file"
 msgstr "Veldu skrá"
 
-#: exe/webui/element.py:534
+#: exe/webui/element.py:749
 msgid "Select a flash file"
 msgstr "Veldu flash skrá"
 
-#: exe/webui/element.py:608
+#: exe/webui/element.py:827
 #, fuzzy
 msgid "Select a flash video"
 msgstr "Veldu flash skrá"
 
-#: exe/webui/element.py:271
+#: exe/webui/element.py:274 exe/webui/element.py:395
 msgid "Select an image"
 msgstr "Veldu mynd"
 
@@ -1004,31 +1129,44 @@ msgstr "Veldu mynd"
 msgid "Select pass rate: "
 msgstr "Hlutfall réttra svara til að standa próf:"
 
-#: exe/webui/forumblock.py:99
+#: exe/webui/forumelement.py:91
 msgid "Separate groups"
 msgstr "Aðskyldir hópar"
 
-#: exe/webui/forumblock.py:102
+#: exe/webui/forumelement.py:94
 msgid "Show"
 msgstr "Birta"
 
-#: exe/webui/element.py:493
+#: exe/webui/element.py:702
+#, fuzzy
+msgid "Show Answers"
+msgstr "Birta/hreinsa svör"
+
+#: exe/webui/element.py:688
 msgid "Show/Clear Answers"
 msgstr "Birta/hreinsa svör"
 
-#: exe/webui/element.py:486
+#: exe/webui/element.py:684
 msgid "Show/Hide Feedback"
 msgstr "Sýna/fela endurgjöf"
+
+#: exe/webui/imagemagnifierblock.py:105
+msgid "Size of magnifying glass: "
+msgstr ""
+
+#: exe/webui/imagemagnifierblock.py:90
+msgid "Small"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:94 exe/webui/editorpane.py:302
 msgid "Some emphasis"
 msgstr "Sýna áherslur"
 
-#: exe/xului/mainpage.py:273
+#: exe/xului/mainpage.py:497
 msgid "Sorry, wrong file format"
 msgstr "Því miður, rangt skráarsnið"
 
-#: exe/xului/mainpage.py:271
+#: exe/xului/mainpage.py:495
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1042,7 +1180,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
-#: exe/webui/forumblock.py:88
+#: exe/webui/forumelement.py:80
 msgid "Standard forum for general use"
 msgstr "Almennur umræðuvettvangur"
 
@@ -1050,17 +1188,18 @@ msgstr "Almennur umræðuvettvangur"
 msgid "Story:"
 msgstr "Frásögn"
 
+#: exe/webui/element.py:607
+msgid "Strict Marking?"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:95 exe/webui/editorpane.py:303
 msgid "Strong emphasis"
 msgstr "Sterkar áherslur"
 
-#: exe/webui/forumblock.py:170 exe/webui/forumblock.py:187
-msgid "Subject"
-msgstr "Viðfangsefni"
-
-#: exe/webui/forumblock.py:146
-msgid "Subject:"
-msgstr "Viðfangsefni:"
+#: exe/webui/element.py:692
+#, fuzzy
+msgid "Submit"
+msgstr "Senda svar"
 
 #: exe/webui/quiztestblock.py:353
 msgid "Submit Answer"
@@ -1075,12 +1214,12 @@ msgstr "Grein á Wikipedia"
 msgid "Taxonomy"
 msgstr "Flokkunarfræði"
 
-#: exe/engine/idevicestore.py:262 exe/engine/idevicestore.py:410
+#: exe/engine/idevicestore.py:263 exe/engine/idevicestore.py:411
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>3.Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
 
-#: exe/engine/flashmovieidevice.py:51 exe/engine/flashwithtextidevice.py:46
-#: exe/engine/imagewithtextidevice.py:72
+#: exe/engine/flashwithtextidevice.py:45 exe/engine/imagewithtextidevice.py:71
+#: exe/engine/imagemagnifieridevice.py:45 exe/engine/flashmovieidevice.py:52
 msgid "Text"
 msgstr "Texti"
 
@@ -1092,7 +1231,7 @@ msgstr "Textahólf"
 msgid "Text Line"
 msgstr "Textalína"
 
-#: exe/engine/wikipediaidevice.py:51
+#: exe/engine/wikipediaidevice.py:53
 msgid ""
 "The Wikipedia iDevice takes a copy of an\n"
 "article from en.wikipedia.org, including copying the associated images."
@@ -1100,7 +1239,7 @@ msgstr ""
 "Wikipedia námstækið afritar grein úr Wikipedia \n"
 "alfræðiritinu, en.wikipedia.org, ásamt meðfylgjandi myndum."
 
-#: exe/engine/attachmentidevice.py:43
+#: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
 msgstr ""
 
@@ -1119,7 +1258,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "Hér er skráð lýsing á námstæki fyrir aðra notendur."
 
-#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:455
+#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:456
 msgid ""
 "The use of this element is flexible.  Use it to provide a summary of the\n"
 "points covered in the reading, or as a starting point for further analysis of\n"
@@ -1130,11 +1269,11 @@ msgstr ""
 "áhersluþætti í lesefninu, eða sem upphaf frekari greiningar með því að birta spurningu \n"
 "eða fullyrðingu. "
 
-#: exe/engine/galleryidevice.py:322
+#: exe/engine/galleryidevice.py:359
 msgid "This Idevice exists to show a group of images in an easily understandable way. For example to show many different sample solutions in the form of images"
 msgstr "Með þessu námstæki má birta nemendum safn mynda á einfaldan hátt. Til dæmis í því skyni að setja fram á myndrænan hátt lausn á ákveðnu viðfangsefni."
 
-#: exe/engine/flashmovieidevice.py:43
+#: exe/engine/flashmovieidevice.py:45
 msgid ""
 "This iDevice only supports the Flash Video File (.FLV) format, and will not\n"
 "accept other video formats. You can however convert other movie formats\n"
@@ -1154,6 +1293,10 @@ msgstr "Þessi reitur er valkvæmur"
 #: exe/webui/block.py:201
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr "Þú hefur valið að eyða þessu námstæki. \\nEr það örugglega það sem þú vilt gera?"
+
+#: exe/webui/forumelement.py:339 exe/webui/forumelement.py:351
+msgid "Thread: "
+msgstr ""
 
 #: exe/webui/block.py:245
 msgid "Tip:"
@@ -1185,6 +1328,15 @@ msgid ""
 "responses."
 msgstr "Rétt/rangt spurningar fela í sér fullyrðingu sem nemandinn verður að ákveða hvort sé rétt eða röng. Þessi tegund spurninga hentar vel þegar um er að ræða staðreyndir, eð aupplýsingar sem gefa kost á \"annað hvort eða\" viðbrögðum."
 
+#: exe/engine/forumidevice.py:145
+#, fuzzy
+msgid "Type a discussion topic here."
+msgstr "Umræðuefni:"
+
+#: exe/engine/forumidevice.py:101
+msgid "Type a forum name here"
+msgstr ""
+
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
 "Type in each option from which students \n"
@@ -1211,7 +1363,7 @@ msgstr ""
 "svör\" í samræmi við val nemenda, eða \"Röng svör\"\n"
 "fyrir hinn valkostinn."
 
-#: exe/engine/truefalseidevice.py:69 exe/engine/truefalseidevice.py:147
+#: exe/engine/truefalseidevice.py:69 exe/engine/truefalseidevice.py:139
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -1225,11 +1377,11 @@ msgstr ""
 "svör\" í samræmi við val nemenda, eða \"Röng svör\"\n"
 "fyrir hinn valkostinn."
 
-#: exe/engine/idevicestore.py:323
+#: exe/engine/idevicestore.py:324
 msgid "Type the learning objectives for this resource."
 msgstr "Skráðu námsmarkmiðin með þessu viðfangi."
 
-#: exe/engine/multichoiceidevice.py:90 exe/engine/truefalseidevice.py:67
+#: exe/engine/truefalseidevice.py:67 exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
 msgstr "Skráðu spurningu."
 
@@ -1237,7 +1389,7 @@ msgstr "Skráðu spurningu."
 msgid "Type the question's hint here."
 msgstr "Skráðu vísbendingu með spurningunni hér."
 
-#: exe/engine/wikipediaidevice.py:87
+#: exe/engine/wikipediaidevice.py:80
 msgid "Unable to connect to "
 msgstr "Get ekki tengst"
 
@@ -1245,16 +1397,16 @@ msgstr "Get ekki tengst"
 msgid "Unit"
 msgstr "Eining"
 
-#: exe/engine/wikipediaidevice.py:50 exe/engine/flashmovieidevice.py:38
-#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
-#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:82
-#: exe/engine/forumidevice.py:38 exe/engine/flashwithtextidevice.py:39
-#: exe/engine/imagewithtextidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/truefalseidevice.py:59 exe/engine/externalurlidevice.py:38
-#: exe/engine/idevicestore.py:217 exe/engine/idevicestore.py:315
-#: exe/engine/idevicestore.py:343 exe/engine/idevicestore.py:365
-#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:41
-#: exe/engine/galleryidevice.py:321
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/forumidevice.py:41 exe/engine/galleryidevice.py:358
+#: exe/engine/wikipediaidevice.py:52 exe/engine/truefalseidevice.py:59
+#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:40
+#: exe/engine/imagewithtextidevice.py:39 exe/engine/attachmentidevice.py:42
+#: exe/engine/imagemagnifieridevice.py:38 exe/engine/flashmovieidevice.py:39
+#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
+#: exe/engine/idevicestore.py:218 exe/engine/idevicestore.py:316
+#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:366
 msgid "University of Auckland"
 msgstr "Háskólinn í Auckland"
 
@@ -1262,19 +1414,19 @@ msgstr "Háskólinn í Auckland"
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Notaðu áherslur til þess að gefa til kynna mikilvægi þeirra upplýsinga sem birtar eru með þessu námstæki."
 
-#: exe/engine/galleryidevice.py:326
+#: exe/engine/galleryidevice.py:363
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Notaðu þetta námstæki ef þú þarft að birta fjölda af myndum."
 
-#: exe/webui/forumblock.py:100
+#: exe/webui/forumelement.py:92
 msgid "Visible groups"
 msgstr "Sýnilegir hópar"
 
-#: exe/webui/forumblock.py:140
+#: exe/webui/forumelement.py:121
 msgid "Visible to students:"
 msgstr "Sýnilegt nemendum"
 
-#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:445
+#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:446
 msgid "What to read"
 msgstr "Hvert er lesefnið"
 
@@ -1303,7 +1455,7 @@ msgstr ""
 "<li> Röng svör eiga að vera ógild en samt trúanleg </li>\n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:447
+#: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:448
 msgid "Why it should be read"
 msgstr "Hvers vegna á að lesa það"
 
@@ -1311,15 +1463,19 @@ msgstr "Hvers vegna á að lesa það"
 msgid "Wikibooks Article"
 msgstr "Grein á Wikibooks"
 
-#: exe/engine/wikipediaidevice.py:49
+#: exe/engine/wikipediaidevice.py:51
 msgid "Wikipedia Article"
 msgstr "Grein á Wikipedia"
 
-#: exe/webui/forumblock.py:95
+#: exe/webui/imagemagnifierblock.py:109
+msgid "Yes"
+msgstr ""
+
+#: exe/webui/forumelement.py:87
 msgid "Yes, forever"
 msgstr "Já, alltaf"
 
-#: exe/webui/forumblock.py:96
+#: exe/webui/forumelement.py:88
 msgid "Yes, initially"
 msgstr "Já, að upphaflega"
 
@@ -1327,29 +1483,37 @@ msgstr "Já, að upphaflega"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Nýja námstækið mun birtast með þessum titil í listanum yfir öll námstæki. Það er nauðsynlegt að fylla út í þennan reit og ekki hægt að skilgreina nýtt námstæki ef hann er ekki útfylltur."
 
-#: exe/webui/element.py:287 exe/webui/element.py:548
+#: exe/webui/element.py:290 exe/webui/element.py:411 exe/webui/element.py:763
 msgid "blank for original size"
 msgstr "Skyldu autt fyrir upphaflega stærð"
 
-#: exe/export/imsexport.py:176 exe/export/scormexport.py:208
+#: exe/webui/forumblock.py:122
+msgid "duplicate forum name.\n"
+msgstr ""
+
+#: exe/webui/forumblock.py:135
+msgid "duplicate topic name."
+msgstr ""
+
+#: exe/export/scormexport.py:241 exe/export/imsexport.py:176
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/editorpage.py:160 exe/webui/common.py:53
-#: exe/webui/preferencespage.py:72
+#: exe/webui/common.py:53 exe/webui/preferencespage.py:72
+#: exe/webui/editorpage.py:160
 msgid "eXe : elearning XHTML editor"
 msgstr "eXE: XHTML námsritill"
 
-#: exe/engine/wikipediaidevice.py:175
+#: exe/engine/wikipediaidevice.py:158
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:103 exe/engine/attachmentidevice.py:126
+#: exe/engine/attachmentidevice.py:95
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "%s námstækið inniheldur engan pakka"
 
-#: exe/engine/package.py:206 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:189 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Ritill fyrir námstæki"
@@ -1369,6 +1533,16 @@ msgstr "Snepill"
 #: exe/webui/renderable.py:254
 msgid "title"
 msgstr "titill"
+
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="insertPackage()"
+#: label="Insert Package">
+msgid "Insert Package"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="extractPackage()"
+#: label="Extract Package">
+msgid "Extract Package"
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key id="addChildKey" keycode="VK_INSERT">
 msgid "VK_INSERT"
@@ -1483,6 +1657,12 @@ msgstr "label=\"Flytja út\" accesskey=\"e\""
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"Um... \" accesskey=\"u\""
 
+#: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="merging-menu"
+#: label="Merging">
+#, fuzzy
+msgid "label=\"Merging\" accesskey=\"e\""
+msgstr "label=\"Opna\" accesskey=\"o\""
+
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="R"
 #: oncommand="registerOnline()" label="Register Online">
 #, fuzzy
@@ -1504,6 +1684,12 @@ msgstr "Ný síða"
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS efnispakki\" accesskey=\"i\""
 
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
+#: oncommand="insertPackage()" label="Insert Package">
+#, fuzzy
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"IMS efnispakki\" accesskey=\"i\""
+
 #: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
 #: key="renNodeKey" label="Rename">
 msgid "Rename"
@@ -1512,6 +1698,12 @@ msgstr "Endurnefna"
 #: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
 msgid "outlinePane"
 msgstr "Útlína"
+
+#: exe/xului/templates/mainpage.xul:<menuitem accesskey="E"
+#: oncommand="extractPackage()" label="Extract Package">
+#, fuzzy
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"IMS efnispakki\" accesskey=\"i\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
 #: oncommand="exportPackage('webSite')" key="file-export-website-key"
@@ -1535,6 +1727,25 @@ msgstr "Hönnun"
 #: exe/xului/templates/mainpage.xul:<tab label="Properties">
 msgid "Properties"
 msgstr "Eiginleikar"
+
+#, fuzzy
+#~ msgid "Auto Completion"
+#~ msgstr "Leiðbeiningar"
+
+#~ msgid "Forum Discussion"
+#~ msgstr "Umræður"
+
+#~ msgid "Forum introduction:"
+#~ msgstr "Inngangur að umræðu:"
+
+#~ msgid "Message:"
+#~ msgstr "Skilaboð"
+
+#~ msgid "Subject"
+#~ msgstr "Viðfangsefni"
+
+#~ msgid "Subject:"
+#~ msgstr "Viðfangsefni:"
 
 #~ msgid ""
 #~ "Provide learners with structure to their reading activity. This helps put\n"

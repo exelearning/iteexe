@@ -377,7 +377,7 @@ class ClozeField(Field):
         self.strictMarking = False
         self._strictMarkingInstruc = \
             x_(u"<p>If this option is left unchecked a fuzzy algorythm will "
-                "be used to mark learner's answers. It will accept a small "
+                "be used to mark learners answers. It will accept a small "
                 "amount of spelling and capitalization errors on words "
                 "longer than 4 letters. This will happen even if "
                 "\"Check capitalization\" is on."
@@ -387,16 +387,16 @@ class ClozeField(Field):
                 "<code>Eliphant</code> will be judged "
                 "<em>\"close enough\"</em> by the algorythm as it only has "
                 "one letter wrong, even if \"Check Capitilization\" is on."
-                "<\p>"
+                "</p>"
                 "<p>If capitalzation checking is off in the above example, "
                 "the lowercase <code>e</code> will not be considered a "
                 "mistake and <code>eliphant</code> will also be accepted."
-                "<\p>"
+                "</p>"
                 "<p>If both \"Strict Marking\" and \"Check Capitilization\" "
                 "are set, the only correct answer is \"Elephant\". If only "
                 "\"Strict Marking\" is checked and \"Check Capitilization\" "
                 "is not, \"elephant\" will also be accepted."
-                "<\p>")
+                "</p>")
         self.checkCaps = False
         self._checkCapsInstruc = \
             x_(u"<p>If this option is checked, submitted answers with "

@@ -663,7 +663,7 @@ class ClozeElement(Element):
                     '    autocomplete="off"',
                     '    style="width:%sem"/>\n' % len(missingWord)]
                 if self.field.instantMarking:
-                    inputHtml.insert(2, '  oninput="onClozeChange(this)"')
+                    inputHtml.insert(2, '  onKeyUp="onClozeChange(this)"')
                 html += inputHtml
                 # Hidden span with correct answer
                 html += [

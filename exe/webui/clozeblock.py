@@ -111,8 +111,6 @@ class ClozeBlock(Block):
             u' </p>',
             u'</div>\n',
             ]
-        from pprint import pprint
-        pprint(html)
         return u'\n    '.join(html)
 
         

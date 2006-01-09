@@ -23,8 +23,8 @@ ForumBlock can render and process ForumIdevices as XHTML
 import logging
 from exe.webui.block         import Block
 from exe.webui               import common
-from exe.webui.forumelement  import DiscussionElement, ForumElement
-from exe.engine.forumidevice import Forum, Discussion
+from forumelement            import DiscussionElement, ForumElement
+from forumidevice            import Forum, Discussion
 from exe.engine.translate    import lateTranslate
 
 log = logging.getLogger(__name__)
@@ -195,12 +195,11 @@ class ForumBlock(Block):
         return html
     
     
-
-    
-  
-
-from exe.engine.forumidevice import ForumIdevice
-from exe.webui.blockfactory  import g_blockFactory
-g_blockFactory.registerBlockType(ForumBlock, ForumIdevice)    
+# ===========================================================================
+def register():
+    """Register this block with the BlockFactory"""
+    from forumidevice               import ForumIdevice
+    from exe.webui.blockfactory     import g_blockFactory
+    g_blockFactory.registerBlockType(ForumBlock, ForumIdevice)    
 
 # ===========================================================================

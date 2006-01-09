@@ -125,11 +125,8 @@ class IdeviceStore:
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
-        from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
-        from exe.engine.flashmovieidevice     import FlashMovieIdevice
+        from exe.engine.flashmovieidevice     import FlashMovieIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
-        from exe.engine.forumidevice          import ForumIdevice
-        from exe.engine.forumscache           import ForumsCache     
 
         self.extended.append(FreeTextIdevice())
         
@@ -142,15 +139,8 @@ class IdeviceStore:
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
         
-        forumsCache = ForumsCache()
-        forum       = ForumIdevice()
-        forum.forumsCache = forumsCache
-        self.extended.append(forum)
-
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
-
-        self.extended.append(ImageMagnifierIdevice(defaultImage))
 
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         self.extended.append(WikipediaIdevice(defaultSite))
@@ -181,12 +171,14 @@ class IdeviceStore:
         
         # add to the list of extended idevices
         for path in idevicePath.listdir("*idevice.py"):
+            log.debug("loading "+path)
             moduleName = path.basename().splitext()[0]
             module = __import__(moduleName, globals(), locals(), [])
             module.register(self)
 
         # register the blocks for rendering the idevices
         for path in idevicePath.listdir("*block.py"):
+            log.debug("loading "+path)
             moduleName = path.basename().splitext()[0]
             module = __import__(moduleName, globals(), locals(), [])
             module.register()
