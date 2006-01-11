@@ -151,8 +151,8 @@ class AuthoringPage(RenderableResource):
         html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
         html += u"theme_advanced_toolbar_location : \"top\",\n"  
 
-        html += u" theme_advanced_buttons1 : \"newdocument,separator,bold,"
-        html += u"italic,underline,separator,sub,sup,separator,"
+        html += u" theme_advanced_buttons1 : \"newdocument,separator,"
+        html += u"bold,italic,underline,fontsizeselect,separator,sub,sup,separator,"
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"

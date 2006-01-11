@@ -51,8 +51,8 @@ effective feedback tools."""), u"", u"reflection")
         self.emphasis         = Idevice.SomeEmphasis
         self.activity         = activity
         self.answer           = answer
-        self._activityInstruc = x_(u"""Enter details of the activity learners 
-must reflect upon.""")
+        self._activityInstruc = x_(u"""Enter a question for learners 
+to reflect upon.""")
         self._answerInstruc   = x_(u"""Describe how learners will assess how 
 they have done in the exercise. (Rubrics are useful devices for providing 
 reflective feedback.)""")
