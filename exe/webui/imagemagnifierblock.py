@@ -31,7 +31,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class ImageMagnifierBlock(Block):
     """
-    ImageWithTextBlock can render and process ImageWithTextIdevices as XHTML
+    ImageMagnifierBlock can render and process ImageMagnifierIdevices as XHTML
     """
 
     name = 'imageManifier'
@@ -94,7 +94,7 @@ class ImageMagnifierBlock(Block):
         html  = u"<div class=\"iDevice\">\n"
         html += u"<p>"
         html += self.imageMagnifierElement.renderEdit()       
-        html += u"<b>%s</b>\n " % _("Float:")
+        html += u"<b>%s</b>\n " % _("Align:")
         
         html += common.select("float"+self.id, 
                               floatArr, selection=self.idevice.float)
@@ -116,7 +116,7 @@ class ImageMagnifierBlock(Block):
             html += _(u"No")
             html += common.option("initial"+self.id, 0, "no")
             
-        html += "<br/><b> " + _(u"Maxium zoom ")  + "</b>"
+        html += "<br/><b> " + _(u"Maximum zoom ")  + "</b>"
         html += "<select name=\"maxZoom%s\">\n" % self.id
         template = '  <option value="%s0"%s>%s0%%</option>\n'
         for i in range(10, 21):
@@ -134,6 +134,7 @@ class ImageMagnifierBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
+        
         log.debug("renderPreview")
         html  = u"\n<!-- image with text iDevice -->\n"
         html  = u"<div class=\"iDevice "

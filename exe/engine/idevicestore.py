@@ -125,8 +125,14 @@ class IdeviceStore:
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
+
         from exe.engine.flashmovieidevice     import FlashMovieIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
+
+        from exe.engine.forumidevice          import ForumIdevice
+        from exe.engine.forumscache           import ForumsCache   
+        from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice 
+
 
         self.extended.append(FreeTextIdevice())
         
@@ -141,7 +147,9 @@ class IdeviceStore:
         
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
-
+        self.extended.append(ImageMagnifierIdevice(defaultImage))
+        
+        defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         self.extended.append(WikipediaIdevice(defaultSite))
         self.extended.append(AttachmentIdevice())

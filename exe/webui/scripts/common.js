@@ -100,6 +100,57 @@ function addImage(elementId) {
     }
 }
 
+// Called by the user to provide an image or flash file name to add to the package
+function addJpgImage(elementId) {
+    var imagePath = askUserForJpgImage()
+    if (imagePath != "") {
+        var image = document.getElementById('img'+elementId);
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        var path  = document.getElementById('path'+elementId);
+        path.value = imagePath;
+        image.src  = 'file://'+imagePath;
+    }
+}
+
+// Asks the user for a jpg image, returns the path or an empty string
+function askUserForJpgImage(multiple) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    if (multiple) {
+        var mode = nsIFilePicker.modeOpenMultiple;
+    } else {
+        var mode = nsIFilePicker.modeOpen;
+    }
+    fp.init(window, "Select an image ", mode);
+    fp.appendFilter("JPEG Files", "*.jpg; *.jpeg");
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        if (multiple) {
+            var result = new String("");
+            var lastFile = null;
+            var file     = null;
+            while (fp.files.hasMoreElements()) {
+                file = fp.files.getNext().QueryInterface(Components.interfaces.nsIFile)
+                if (file == lastFile) {
+                    break;
+                }
+                lastFile = file;
+                if (result != "") {
+                    result += "&";
+                }
+                result += escape(file.path);
+            }
+            return result;
+        } else {
+            return fp.file.path;
+        }
+    } else {
+        return ""
+    }
+}
 // Called by the user to provide one or more image files name to add to the package
 function addGalleryImage(galleryId) {
     var imagePath = askUserForImage(true);
@@ -146,6 +197,10 @@ function magnifierImageChanged(event) {
         width.value = image.width + 144
     }
     height.value = image.height + 24
+    if (width.value < 180)
+        width.value = 180
+    if (height.value < 160)
+        height.value = 160
 }
 
 function changeImageWidth(elementId) {
@@ -182,6 +237,10 @@ function changeMagnifierImageWidth(elementId) {
         width.value = image.width + 144
     }
     height.value = image.height + 24
+    if (width.value < 180)
+        width.value = 180
+    if (height.value < 160)
+        height.value = 160
 }
 
 
@@ -205,6 +264,10 @@ function changeMagnifierImageHeight(elementId) {
         width.value = image.width + 144
     }
     height.value = image.height + 24
+    if (width.value < 180)
+        width.value = 180
+    if (height.value < 160)
+        height.value = 160
 }
 
 function changeImageHeight(elementId) {
@@ -220,7 +283,6 @@ function changeImageHeight(elementId) {
     }
     width.value  = image.width;
 }
-
 
 
 // Called by the user to provide a file name to add to the package

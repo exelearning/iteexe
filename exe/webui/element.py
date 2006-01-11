@@ -358,9 +358,6 @@ class MagnifierElement(Element):
         """
         log.debug("renderEdit")
         
-        
-
-
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
@@ -369,7 +366,7 @@ class MagnifierElement(Element):
         html += u"<br/>\n"
         html += u'<img alt="" '
         html += u'id="img%s" ' % self.id
-        html += u"onclick=\"addImage('"+self.id+"');\" "
+        html += u"onclick=\"addJpgImage('"+self.id+"');\" "
         html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
         if self.field.width:
             width = int(self.field.width)-84  
@@ -388,11 +385,11 @@ class MagnifierElement(Element):
         html += u'</script>\n'
         html += u"</p>\n"
 
-        html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
+        html += u"<a href=\"#\" onclick=\"addJpgImage('"+self.id+"');\">"
         html += u"<img alt=\"add images\" "
         html += u"style=\"vertical-align: text-bottom;\" "
         html += u"src=\"/images/stock-insert-image.png\" /> "
-        html += _(u"Select an image")
+        html += _(u"Select an image (JPG file)")
         html += u"</a><br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
@@ -449,10 +446,10 @@ class MagnifierElement(Element):
         html += u'codebase="http://fpdownload.macromedia.com/pub/shockwave'
         html += u'/cabs/flash/swflash.cab#version=6,0,65,0"\n'
         html += u'width="%s" height="%s"' % (field.width, field.height)
-        html += u'id="magnifier%s" align="%s">\n' %(self.id, field.align)
+        html += u'id="magnifier%s" align="middle">\n' % self.id
         html += u'<param name="allowScriptAccess" value="sameDomain" />\n'
         html += u'<param name="movie" value="%s" />\n' % magnifierFile
-        html += u'<param name="FlashVars" ' 
+        html += u'<param name="FlashVars" \n' 
         html += u'value="file=%s' % imageFile
         html += u'&borderWidth=15&glassSize=%s' % self.field.glassSize
         html += u'&initialZoomSize=%s%%' % field.initialZSize
@@ -461,17 +458,17 @@ class MagnifierElement(Element):
         html += u'<param name="scale" value="noscale" />\n'
         html += u'<param name="salign" value="lt" />\n'
         html += u'<param name="bgcolor" value="#888888" />\n'
-        html += u'<embed src="%s" ' % magnifierFile
-        html += u'quality="high" scale="noscale" salign="lt" bgcolor="#888888" '
-        html += u'width="%s" height="%s" name="magnify%s" ' %(field.width,
+        html += u'<embed src="%s" \n' % magnifierFile
+        html += u'quality="high" scale="noscale" salign="lt" bgcolor="#888888"\n'
+        html += u'width="%s" height="%s" name="magnify%s" \n' %(field.width,
                                                     field.height, self.id)
-        html += u'FlashVars="file=%s&borderWidth=15&' % imageFile
-        html += u'glassSize=%s&initialZoomSize=%s%%&maxZoomSize=%s%%" ' \
+        html += u'FlashVars="file=%s&borderWidth=15&\n' % imageFile
+        html += u'glassSize=%s&initialZoomSize=%s%%&maxZoomSize=%s%%" \n' \
                 %(field.glassSize, field.initialZSize, field.maxZSize)
-        html += u'align="%s" allowScriptAccess="sameDomain" ' % field.align
+        html += u'align="middle" allowScriptAccess="sameDomain" \n' 
         html += u'type="application/x-shockwave-flash" '
         html += u'pluginspage="http://www.macromedia.com/go/getflashplayer"/>\n'
-        html += u'</object>'
+        html += u'</object>\n'
         
         return html
         

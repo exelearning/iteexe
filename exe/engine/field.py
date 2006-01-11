@@ -221,8 +221,6 @@ class MagnifierField(Field):
         self.glassSize     = "2"
         self.initialZSize  = "100"
         self.maxZSize      = "150"
-        self.align         = "middle"
-
 
     def setImage(self, imagePath):
         """
