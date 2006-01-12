@@ -66,6 +66,7 @@ class ExternalUrlBlock(Block):
         html += _(u"<strong>Frame Height:</strong> ")
         html += common.select("height"+self.id, heightArr, "", 
                               self.idevice.height)
+        html += common.elementInstruc("url"+self.id, self.idevice.urlInstruc)
         html += u"<p>"       
         html += self.renderEditButtons()
         html += u"</p></div>\n"

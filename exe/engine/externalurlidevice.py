@@ -23,6 +23,7 @@ ExternalUrlIdevice: just has a block of text
 
 import logging
 from exe.engine.idevice import Idevice
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -43,6 +44,12 @@ into an inline frame. Use only if your content will be online."""), "", "")
         self.emphasis = Idevice.NoEmphasis
         self.url      = ""
         self.height   = "300"
+       
+        self._urlInstruc = x_(u"""Enter the URL you wish to display
+and select the size of the area to display it in.""")
+
+        #Properties
+    urlInstruc = lateTranslate('urlInstruc')
 
     def upgradeToVersion1(self):
         """
