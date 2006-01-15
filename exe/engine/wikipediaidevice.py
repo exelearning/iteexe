@@ -110,6 +110,11 @@ article from en.wikipedia.org, including copying the associated images."""),
                 self.userResources.append(Resource(self.parentNode.package,
                                                    tmpDir/imageName))
 
+            # We have to use absolute URLs if we want the images to
+            # show up in edit mode inside FCKEditor
+            imageTag['src'] = (u"/" + self.parentNode.package.name + 
+                               u"/resources/" + imageName)
+
         self.article.content = self.reformatArticle(unicode(content))
 
 
