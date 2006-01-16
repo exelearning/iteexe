@@ -3,7 +3,6 @@ exe/application.py
 exe/engine/macconfig.py
 exe/engine/externalurlidevice.py
 exe/engine/reflectionidevice.py
-exe/engine/forumidevice.py
 exe/engine/error.py
 exe/engine/galleryidevice.py
 exe/engine/config.py
@@ -28,7 +27,6 @@ exe/engine/linuxconfig.py
 exe/engine/translate.py
 exe/engine/idevice.py
 exe/engine/node.py
-exe/engine/forumscache.py
 exe/engine/path.py
 exe/engine/freetextidevice.py
 exe/engine/multichoiceidevice.py
@@ -66,7 +64,6 @@ exe/webui/errorpage.py
 exe/webui/quiztestblock.py
 exe/webui/freetextblock.py
 exe/webui/galleryblock.py
-exe/webui/forumelement.py
 exe/webui/webserver.py
 exe/webui/attachmentblock.py
 exe/webui/preferencespage.py
@@ -79,7 +76,6 @@ exe/webui/optionelement.py
 exe/webui/editorpage.py
 exe/webui/editorpane.py
 exe/webui/renderable.py
-exe/webui/forumblock.py
 exe/webui/propertiespage.py
 exe/webui/propertiespane.py
 exe/webui/truefalseblock.py
@@ -92,9 +88,11 @@ exe/webui/casestudyblock.py
 exe/webui/testquestionelement.py
 exe/webui/editorelement.py
 exe/xului/xulrunner.py
+exe/xului/mainpage.1484.py
 exe/xului/idevicepane.py
 exe/xului/mainpage.py
 exe/xului/stylemenu.py
 exe/xului/renderablelivepage.py
 exe/xului/__init__.py
+exe/xului/mainpage.old.py
 exe/xului/outlinepane.py

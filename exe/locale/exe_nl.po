@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: exe/webui/forumblock.py:54
 msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-09 11:52+1300\n"
-"PO-Revision-Date: 2005-12-06 22:15+0100\n"
+"POT-Creation-Date: 2006-01-17 10:35+1300\n"
+"PO-Revision-Date: 2005-12-30 17:02+0100\n"
 "Last-Translator: L. Vandijck <l.vandijck@collegemaaseik.be>\n"
 "Language-Team: Dutch <matthew@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,8 +22,10 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Verplaats naar---"
 
+#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:283
-#: exe/xului/mainpage.py:328
+#: exe/xului/mainpage.py:328 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
@@ -89,7 +90,7 @@ msgstr ""
 "begeleid door een korte tekst die uitlegt wat er gebeurt.\n"
 "</p>"
 
-#: exe/engine/idevicestore.py:219 exe/engine/idevicestore.py:367
+#: exe/engine/idevicestore.py:220 exe/engine/idevicestore.py:368
 msgid "<p>An activity can be described as atask or set of tasks a learner must complete. Provide a clear statement of the task and consider any conditions that may help or hinder the learner in the performance of the task.</p><p>The general task is the most flexible iDevice because authors can specify the sub-type or classification. It is used to signal a learning \"event\". In other words when learners are expected to do something. For example:<ol><li> A written activity when learners must write something down (notes or a list)</li><li>An application activity, where learners are expected to apply their knowledge to a particular situation</li><li>Conceptual activity, where learners are asked to think about something. Although the \"look and feel\" associated with the presentation of this iDevice on a web page will be the same for each instance or type, learners will be able to distinguish among different types by the heading the author provides for the particular instance of this iDevice. </li></ol></p>"
 msgstr "<p>Een activiteit bestaat uit een of meer opdrachten die de student moet afwerken. Geef een duidelijke omschrijving van de opdracht en hou rekening met elementen die de uitvoering ervan kunnen helpen of hinderen.</p><p>De algemene opdracht is het meest flexibele iDevice omdat de opsteller ervan het subtype of de indeling ervan zelf kan aangeven. Gebruik het om een  \"leerevent\" aan te geven, wat betekent dat de student iets moet doen. Bijvoorbeeld:<ol><li>een schrijfactiviteit, als de student iets moeten opschrijven (notities of een lijst)</li><li>een toepassingsactiviteit, als de student zijn kennis moet toepassen op een gegeven situatie</li><li>een conceptuele activiteit, als de student wordt gevraagd over een onderwerp te reflecteren.  Wanneer dit iDevice wordt gepresenteerd in de vorm van een webpagina is de opmaak ervan altijd gelijk, maar door de titel die de opsteller eraan geeft, weet de student om welk (sub)type het handelt.</li></ol></p>"
 
@@ -155,15 +156,11 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "In een pedagogische tip beschrijft u het opzet van het iDevice en de pedagogische idee erachter."
 
-#: exe/webui/forumelement.py:78
-msgid "A single simple discussion"
-msgstr "Een enkele discussie"
-
 #: exe/webui/editorpane.py:223
 msgid "Actions"
 msgstr "Acties"
 
-#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:350
+#: exe/engine/idevicestore.py:343 exe/engine/idevicestore.py:351
 msgid "Activity"
 msgstr "Activiteit"
 
@@ -258,7 +255,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:345
+#: exe/engine/idevicestore.py:346
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -289,16 +286,14 @@ msgstr "Auteur"
 msgid "Button Caption"
 msgstr "Opschrift knop"
 
-#: exe/webui/forumelement.py:105
-msgid "Can a student post to this forum?:"
-msgstr "Kan student bijdrage posten op dit forum?"
-
 #: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:231
 msgid "Cancel"
 msgstr "Annuleren"
 
+#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:227 exe/xului/mainpage.py:281
-#: exe/xului/mainpage.py:326
+#: exe/xului/mainpage.py:326 exe/xului/mainpage.old.py:222
+#: exe/xului/mainpage.old.py:303
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
@@ -318,10 +313,6 @@ msgstr ""
 #: exe/webui/wikipediablock.py:75
 msgid "Chinese Wikipedia Article"
 msgstr "Chinees Wikipedia-artikel"
-
-#: exe/engine/forumidevice.py:107
-msgid "Choose a LMS"
-msgstr ""
 
 #: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
@@ -402,7 +393,7 @@ msgstr ""
 "kan beoordelen. (Rubrics zijn meestal goede instrumenten voor\n"
 "reflectieve feedback.)"
 
-#: exe/engine/idevicestore.py:338
+#: exe/engine/idevicestore.py:339
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -410,15 +401,15 @@ msgstr ""
 "Beschrijf de voorkennis die nodig is om de leeropdacht tot een goed\n"
 "einde te kunnen brengen."
 
-#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:449
+#: exe/engine/idevicestore.py:302 exe/engine/idevicestore.py:450
 msgid ""
 "Describe the rationale behind the selection of the reading and how it will\n"
 "enrich the learning."
 msgstr ""
-"Geef aan waarom de geselecteerd gelezen moet worden en hoe dit\n"
+"Geef aan waarom de geselecteerde tekst gelezen moet worden en hoe dit\n"
 "het leerproces kan stimuleren."
 
-#: exe/engine/idevicestore.py:351
+#: exe/engine/idevicestore.py:352
 msgid "Describe the tasks the learners should complete."
 msgstr "Beschrijf de opdracht die moet worden uitgevoerd."
 
@@ -429,25 +420,6 @@ msgstr "Beschrijving"
 #: exe/webui/attachmentblock.py:89
 msgid "Description:"
 msgstr "Beschrijving:"
-
-#: exe/engine/forumidevice.py:40
-#, fuzzy
-msgid "Discussion Activity"
-msgstr "Discussie-onderwerp:"
-
-#: exe/webui/forumelement.py:224
-#, fuzzy
-msgid "Discussion Topic/Thread:"
-msgstr "Discussie-onderwerp"
-
-#: exe/engine/forumidevice.py:141
-#, fuzzy
-msgid "Discussion topic/Thread"
-msgstr "Discussie-onderwerp:"
-
-#: exe/webui/forumelement.py:82
-msgid "Discussions and replies are allowed"
-msgstr "Nieuwe discussies en antwoorden toegelaten"
 
 #: exe/webui/element.py:276 exe/webui/element.py:397 exe/webui/element.py:751
 msgid "Display as:"
@@ -480,10 +452,6 @@ msgstr "FOUT Element.renderView rechtstreeks aangeroepen"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "FOUT Block.renderViewContent rechtstreeks aangeroepen"
 
-#: exe/webui/forumelement.py:79
-msgid "Each person posts one discussion"
-msgstr "Ieder lid ken slechts een discussie starten"
-
 #: exe/webui/block.py:320 exe/webui/editorpage.py:198
 #: exe/webui/editorpane.py:228
 msgid "Edit"
@@ -502,24 +470,25 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
-"Geef een hint op. Laat\n"
+"Vul een hint in. Laat\n"
 "het veld leeg om geen hint te geven."
 
 #: exe/engine/multichoiceidevice.py:127
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Geef een hint op. Laat het veld leeg om geen hint te geven."
 
-#: exe/engine/clozeidevice.py:127
-msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
-msgstr "Vul de gewenste feedback in in het feedbackveld. Het veld mag ook leeg blijven."
-
 #: exe/engine/reflectionidevice.py:54
+#, fuzzy
 msgid ""
-"Enter details of the activity learners \n"
-"must reflect upon."
+"Enter a question for learners \n"
+"to reflect upon."
 msgstr ""
 "Geef uitleg over de activiteit waarover\n"
 "gereflecteerd moet worden."
+
+#: exe/engine/clozeidevice.py:127
+msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
+msgstr "Vul de gewenste feedback in in het feedbackveld. Het veld mag ook leeg blijven."
 
 #: exe/webui/editorpane.py:141
 msgid "Enter instructions for completion here"
@@ -547,14 +516,17 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:121
 msgid "Enter the text for your cloze exercise by pasting or typing into the cloze field. To select the words you wish to hide double click on the word and click the <i>Hide/Show Word</i> button."
-msgstr "Typ of kopieer de tekst van de cloze-oefening in het tekstveld. Selecteer een woord om te verbergen door erop te dubbelklikken en de knop <i>Hide/Show Word</i> aan te klikken."
+msgstr "Typ of kopieer de tekst van de cloze-oefening in het tekstveld. Selecteer een woord om te verbergen door erop te dubbelklikken en de knop <i>Toon/verberg woord</i> aan te klikken."
 
-#: exe/xului/mainpage.py:498
+#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:498
+#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Fout bij laden pakket \"%s\": %s"
 
+#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
+#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
@@ -572,13 +544,20 @@ msgid "False"
 msgstr "Fout"
 
 #: exe/engine/clozeidevice.py:126 exe/engine/clozeidevice.py:150
-#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:455
+#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:456
 #: exe/webui/questionelement.py:73 exe/webui/multichoiceblock.py:105
 #: exe/webui/truefalseelement.py:92 exe/webui/editorpane.py:219
 msgid "Feedback"
 msgstr "Feedback"
 
+#: exe/webui/reflectionblock.py:72
+#, fuzzy
+msgid "Feedback:"
+msgstr "Feedback"
+
+#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:373 exe/xului/mainpage.py:410
+#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
@@ -603,7 +582,7 @@ msgstr "Flash met tekst"
 #: exe/webui/imagemagnifierblock.py:97 exe/webui/imagewithtextblock.py:76
 #: exe/webui/flashwithtextblock.py:76
 msgid "Float:"
-msgstr "Drijven:"
+msgstr "Positie:"
 
 #: exe/engine/externalurlidevice.py:39
 msgid ""
@@ -615,24 +594,6 @@ msgstr ""
 "Om een extrene webpagina toe te voegen.\n"
 "Het iDevice gebruikt geen extra pop-up-venster maar toont de pagina in een frame.\n"
 "Alleen te gebruiken als de opgegeven inhoud ook effectief on line is."
-
-#: exe/webui/forumelement.py:110
-msgid "Force everyone to be subscribed?:"
-msgstr "Moet iedereen lid zijn?"
-
-#: exe/webui/forumelement.py:195
-#, fuzzy
-msgid "Forum Name:"
-msgstr "Forumnaam:"
-
-#: exe/webui/forumelement.py:269 exe/webui/forumelement.py:283
-#, fuzzy
-msgid "Forum Name: "
-msgstr "Forumnaam:"
-
-#: exe/webui/forumelement.py:99
-msgid "Forum type:"
-msgstr "Forumtype:"
 
 #: exe/engine/freetextidevice.py:37
 msgid "Free Text"
@@ -650,11 +611,7 @@ msgstr "Duits Wikipedia-artikel"
 msgid "Get score"
 msgstr "Bepaal de score"
 
-#: exe/webui/forumelement.py:116
-msgid "Group mode:"
-msgstr "Groepsmodus:"
-
-#: exe/webui/reflectionblock.py:94 exe/webui/forumelement.py:95
+#: exe/webui/reflectionblock.py:94
 msgid "Hide"
 msgstr "Verbegen"
 
@@ -724,11 +681,6 @@ msgstr "Aanwijzigen voor studenten"
 msgid "Instructions for completion"
 msgstr "Aanwijzingen voor invullen"
 
-#: exe/webui/forumelement.py:219
-#, fuzzy
-msgid "Introduction"
-msgstr "Aanwijzingen"
-
 #: exe/webui/wikipediablock.py:79
 msgid "Italian Wikipedia Article"
 msgstr "Italiaans Wikipedia-artikel"
@@ -745,14 +697,6 @@ msgstr "Label"
 #, fuzzy
 msgid "Large"
 msgstr "Label"
-
-#: exe/engine/forumidevice.py:158
-msgid "Learning Management System"
-msgstr ""
-
-#: exe/webui/forumelement.py:243
-msgid "Learning Management System:"
-msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
 #: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:77
@@ -771,10 +715,6 @@ msgstr "Niveau 2:"
 msgid "Level 3: "
 msgstr "Niveau 3:"
 
-#: exe/engine/forumidevice.py:161
-msgid "Link to the forum"
-msgstr ""
-
 #: exe/webui/wikipediablock.py:90
 msgid "Load"
 msgstr "Laden"
@@ -789,10 +729,6 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:91
 msgid "Medium"
-msgstr ""
-
-#: exe/webui/forumelement.py:252
-msgid "Moodle"
 msgstr ""
 
 #: exe/webui/block.py:220
@@ -811,21 +747,11 @@ msgstr "Meerkeuzevraag"
 msgid "Name"
 msgstr "Naam"
 
-#: exe/webui/forumelement.py:206
-msgid "New Forum"
-msgstr ""
-
-#: exe/webui/forumelement.py:234
-#, fuzzy
-msgid "New Topic"
-msgstr "Topic"
-
 #: exe/webui/editorpage.py:203
 msgid "New iDevice"
 msgstr "Nieuw iDevice"
 
 #: exe/webui/imagemagnifierblock.py:112 exe/webui/imagemagnifierblock.py:116
-#: exe/webui/forumelement.py:86
 msgid "No"
 msgstr "Nee"
 
@@ -837,25 +763,12 @@ msgstr "Geen afbeeldingen geladen"
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Geen miniatuur: kon afbeelding niet verkleinen"
 
-#: exe/webui/forumelement.py:83
-msgid "No discussions, but replies are allowed"
-msgstr "Geen discussies, wel antwoorden toegestaan"
-
-#: exe/webui/forumelement.py:84
-msgid "No discussions, no replies"
-msgstr "Geen discussies en geen antwoorden toegestaan"
-
 #: exe/webui/wikipediablock.py:93 exe/webui/editorpane.py:301
 msgid "No emphasis"
-msgstr "Geen andruk"
-
-#: exe/webui/forumelement.py:90
-msgid "No groups"
-msgstr "Geen groepen"
+msgstr "Geen nadruk"
 
 #: exe/webui/imagemagnifierblock.py:89 exe/webui/imagewithtextblock.py:79
-#: exe/webui/forumelement.py:230 exe/webui/flashmovieblock.py:79
-#: exe/webui/flashwithtextblock.py:79
+#: exe/webui/flashmovieblock.py:79 exe/webui/flashwithtextblock.py:79
 msgid "None"
 msgstr "Geen"
 
@@ -863,11 +776,11 @@ msgstr "Geen"
 msgid "OK"
 msgstr "Okee"
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:323
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:324
 msgid "Objectives"
 msgstr "Doelstellingen"
 
-#: exe/engine/idevicestore.py:317
+#: exe/engine/idevicestore.py:318
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -881,15 +794,12 @@ msgstr ""
 msgid "Option"
 msgstr "Alternatief"
 
-#: exe/webui/forumelement.py:256
-msgid "Other"
-msgstr ""
-
 #: exe/xului/outlinepane.py:230
 msgid "Outline"
 msgstr "Schema"
 
-#: exe/xului/mainpage.py:246 exe/xului/mainpage.py:348
+#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:246
+#: exe/xului/mainpage.py:348 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakket opgeslagen naar: %s"
@@ -902,35 +812,13 @@ msgstr "Pedagogische hulp"
 msgid "Pedagogical Tip"
 msgstr "Pedagogische tip"
 
-#: exe/webui/forumblock.py:131
-#, fuzzy
-msgid "Please enter a discussion topic name.\n"
-msgstr "Geef naam iDevice op"
-
-#: exe/webui/forumblock.py:117
-#, fuzzy
-msgid "Please enter a name for the forum\n"
-msgstr "Geef naam iDevice op"
-
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:164
 msgid "Please enter an idevice name."
 msgstr "Geef naam iDevice op"
 
-#: exe/webui/forumblock.py:126
-msgid "Please select LMS.\n"
-msgstr ""
-
-#: exe/webui/forumelement.py:248
-msgid "Please select a LMS"
-msgstr ""
-
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Selecteer een juist antwoord voor iedere vraag"
-
-#: exe/webui/forumblock.py:112
-msgid "Please select a forum.\n"
-msgstr ""
 
 #: exe/webui/wikipediablock.py:80
 msgid "Polish Wikipedia Article"
@@ -940,11 +828,11 @@ msgstr "Pools Wikipedia-artikel"
 msgid "Portugese Wikipedia Article"
 msgstr "Portugees Wikipedia-artikel"
 
-#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:337
+#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:338
 msgid "Preknowledge"
 msgstr "Voorkennis"
 
-#: exe/engine/idevicestore.py:330
+#: exe/engine/idevicestore.py:331
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -974,7 +862,7 @@ msgstr "Titel project:"
 msgid "Provide a brief description of the file"
 msgstr "Geef een korte omschrijving van het bestand"
 
-#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:447
+#: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:448
 msgid "Provide details of the reading materials learners should  read."
 msgstr "Geef uitleg over de tekst(en) die gelezen moet(en) worden."
 
@@ -986,7 +874,7 @@ msgstr ""
 "Geef feedback bij de vraag. Dit kan bijv.\n"
 "een samenvatting zijn of de belangrijkste onderdelen."
 
-#: exe/engine/idevicestore.py:304 exe/engine/idevicestore.py:452
+#: exe/engine/idevicestore.py:305 exe/engine/idevicestore.py:453
 msgid ""
 "Provide full reference details to the reading materials selected. The\n"
 "reference style used will depend on the preference of your department or\n"
@@ -1021,15 +909,15 @@ msgstr "Vraag:"
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Lees de alinea hieronder en vul de ontbrekende woorden in"
 
-#: exe/engine/idevicestore.py:216
+#: exe/engine/idevicestore.py:217
 msgid "Reading Activity"
 msgstr "Leesactiviteit"
 
-#: exe/engine/idevicestore.py:364
+#: exe/engine/idevicestore.py:365
 msgid "Reading Activity 0.11"
 msgstr "Leesactiviteit 0.11"
 
-#: exe/engine/idevicestore.py:303 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:304 exe/engine/idevicestore.py:452
 msgid "Reference"
 msgstr "Referentie"
 
@@ -1056,10 +944,6 @@ msgstr ""
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
 msgstr "Reflectieve vraag:"
-
-#: exe/webui/reflectionblock.py:72
-msgid "Response:"
-msgstr "Antwoord:"
 
 #: exe/webui/element.py:697
 msgid "Restart"
@@ -1098,11 +982,6 @@ msgstr "Sectie"
 msgid "Select Language"
 msgstr "Kies de taal"
 
-#: exe/webui/forumelement.py:202
-#, fuzzy
-msgid "Select a Forum"
-msgstr "Kies een afbeelding"
-
 #: exe/webui/attachmentblock.py:77
 msgid "Select a file"
 msgstr "Kies een bestand"
@@ -1123,14 +1002,6 @@ msgstr "Kies een afbeelding"
 #: exe/webui/quiztestblock.py:97
 msgid "Select pass rate: "
 msgstr "Kies slaagpercentage:"
-
-#: exe/webui/forumelement.py:91
-msgid "Separate groups"
-msgstr "Gescheiden groepen"
-
-#: exe/webui/forumelement.py:94
-msgid "Show"
-msgstr "Tonen"
 
 #: exe/webui/element.py:702
 #, fuzzy
@@ -1157,11 +1028,13 @@ msgstr ""
 msgid "Some emphasis"
 msgstr "Lichte nadruk"
 
-#: exe/xului/mainpage.py:497
+#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:497
+#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
-#: exe/xului/mainpage.py:495
+#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:495
+#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1173,10 +1046,6 @@ msgstr ""
 #: exe/webui/wikipediablock.py:84
 msgid "Spanish Wikipedia Article"
 msgstr "Spaans Wikipedia-artikel"
-
-#: exe/webui/forumelement.py:80
-msgid "Standard forum for general use"
-msgstr "Standaardforum voor algemeen gebruik"
 
 #: exe/webui/casestudyblock.py:81
 msgid "Story:"
@@ -1207,8 +1076,9 @@ msgstr "Zweeds Wikipedia-artikel"
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: exe/engine/idevicestore.py:263 exe/engine/idevicestore.py:411
-msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>3.Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
+#: exe/engine/idevicestore.py:264 exe/engine/idevicestore.py:412
+#, fuzzy
+msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Als u dit iDevice gebruikt, hou dan rekening met volgende overwegingen: <ol><li>1. Beperk het aantal verschillende soorten van activiteiten dat in het materiaal op een visuele manier wordt aangegeven. Meestal volstaan drie of vier verschillende types.</li><li>2. Uit visueel oogpunt bekeken is het beter niet twee iDevices onmiddellijk na elkaar te zetten die niet gescheiden zijn door tekst. Als dat het geval is, plaats dan twee vragen of activiteiten in eenzelfde iDevice</li><li>3.Ontwerp activiteiten waarvan het nut opweegt tegen de tijd en moeite die het kost om ze tot een goed einde te brengen. </li></ol>"
 
 #: exe/engine/flashwithtextidevice.py:45 exe/engine/imagewithtextidevice.py:71
@@ -1252,7 +1122,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "In het dialoogveld doelstelling beschrijft u voor andere gebruikers wat de bedoeling van dit iDevice is."
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:456
+#: exe/engine/idevicestore.py:309 exe/engine/idevicestore.py:457
 msgid ""
 "The use of this element is flexible.  Use it to provide a summary of the\n"
 "points covered in the reading, or as a starting point for further analysis of\n"
@@ -1289,10 +1159,6 @@ msgstr "Dit veld is facultatief."
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr "iDevice wordt verwijderd.\\nWeet u dit zeker?"
 
-#: exe/webui/forumelement.py:339 exe/webui/forumelement.py:351
-msgid "Thread: "
-msgstr ""
-
 #: exe/webui/block.py:245
 msgid "Tip:"
 msgstr "Tip:"
@@ -1327,15 +1193,6 @@ msgstr ""
 "Een ja/neen-vraag bevat een bewering en de student\n"
 "moet beslissen of deze bewering juist of fout is. Dit soort vraag is o.m. geschikt\n"
 "voor feitelijke informatie en voor ofwel/ofwel-antwoorden."
-
-#: exe/engine/forumidevice.py:145
-#, fuzzy
-msgid "Type a discussion topic here."
-msgstr "Discussie-onderwerp:"
-
-#: exe/engine/forumidevice.py:101
-msgid "Type a forum name here"
-msgstr ""
 
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
@@ -1377,7 +1234,7 @@ msgstr ""
 "\"Juist antwoord\" bij het antwoord dat als zodanig is aangeduid; of \n"
 "\"Fout antwoord\" bij de andere alternatieven."
 
-#: exe/engine/idevicestore.py:324
+#: exe/engine/idevicestore.py:325
 msgid "Type the learning objectives for this resource."
 msgstr "Geef de leerdoelstellingen voor deze bron."
 
@@ -1398,15 +1255,15 @@ msgid "Unit"
 msgstr "Unit"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/forumidevice.py:41 exe/engine/galleryidevice.py:358
-#: exe/engine/wikipediaidevice.py:52 exe/engine/truefalseidevice.py:59
-#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:40
-#: exe/engine/imagewithtextidevice.py:39 exe/engine/attachmentidevice.py:42
-#: exe/engine/imagemagnifieridevice.py:38 exe/engine/flashmovieidevice.py:39
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:218 exe/engine/idevicestore.py:316
-#: exe/engine/idevicestore.py:344 exe/engine/idevicestore.py:366
+#: exe/engine/galleryidevice.py:358 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:82
+#: exe/engine/flashwithtextidevice.py:40 exe/engine/imagewithtextidevice.py:39
+#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:38
+#: exe/engine/flashmovieidevice.py:39 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:219
+#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:345
+#: exe/engine/idevicestore.py:367
 msgid "University of Auckland"
 msgstr "Universiteit van Auckland"
 
@@ -1418,15 +1275,7 @@ msgstr "Gebruik Nadruk om het belang te beklemtonen van de informatie die het iD
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Gebruik dit iDevice om een groot aantal afbeeldingen te tonen."
 
-#: exe/webui/forumelement.py:92
-msgid "Visible groups"
-msgstr "Zichtbare groepen"
-
-#: exe/webui/forumelement.py:121
-msgid "Visible to students:"
-msgstr "Zichtbaar voor studenten:"
-
-#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:446
+#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:447
 msgid "What to read"
 msgstr "Wat gelezen moet worden"
 
@@ -1456,7 +1305,7 @@ msgstr ""
 "<li> Afleiders moeten fout zijn maar wel aannemelijk </li>\n"
 "</ul>\n"
 
-#: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:448
+#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:449
 msgid "Why it should be read"
 msgstr "Waarom het gelezen moet worden"
 
@@ -1472,14 +1321,6 @@ msgstr "Wikipedia-artikel"
 msgid "Yes"
 msgstr ""
 
-#: exe/webui/forumelement.py:87
-msgid "Yes, forever"
-msgstr "Ja, voor altijd"
-
-#: exe/webui/forumelement.py:88
-msgid "Yes, initially"
-msgstr "Ja, in het begin"
-
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Uw iDevice verschijnt in het iDevice-paneel met deze benaming. Dit veld is verplicht. Als u het niet invult, wordt u gevraagd om een label op te geven."
@@ -1487,14 +1328,6 @@ msgstr "Uw iDevice verschijnt in het iDevice-paneel met deze benaming. Dit veld 
 #: exe/webui/element.py:290 exe/webui/element.py:411 exe/webui/element.py:763
 msgid "blank for original size"
 msgstr "leeg voor originele afmetingen"
-
-#: exe/webui/forumblock.py:122
-msgid "duplicate forum name.\n"
-msgstr ""
-
-#: exe/webui/forumblock.py:135
-msgid "duplicate topic name."
-msgstr ""
 
 #: exe/export/scormexport.py:241 exe/export/imsexport.py:176
 msgid "eXe"
@@ -1804,8 +1637,32 @@ msgstr "Opstellen"
 msgid "Properties"
 msgstr "Eigenschappen"
 
+#~ msgid "Response:"
+#~ msgstr "Antwoord:"
+
+#~ msgid "A single simple discussion"
+#~ msgstr "Een enkele discussie"
+
 #~ msgid "Auto Completion"
 #~ msgstr "Automatisch aanvullen"
+
+#~ msgid "Can a student post to this forum?:"
+#~ msgstr "Kan student bijdrage posten op dit forum?"
+
+#~ msgid "Discussion Topic"
+#~ msgstr "Discussie-onderwerp"
+
+#~ msgid "Discussion topic:"
+#~ msgstr "Discussie-onderwerp:"
+
+#~ msgid "Discussions and replies are allowed"
+#~ msgstr "Nieuwe discussies en antwoorden toegelaten"
+
+#~ msgid "Each person posts one discussion"
+#~ msgstr "Ieder lid ken slechts een discussie starten"
+
+#~ msgid "Force everyone to be subscribed?:"
+#~ msgstr "Moet iedereen lid zijn?"
 
 #~ msgid "Forum Discussion"
 #~ msgstr "Forumdiscussie"
@@ -1813,11 +1670,50 @@ msgstr "Eigenschappen"
 #~ msgid "Forum introduction:"
 #~ msgstr "Foruminleiding:"
 
+#~ msgid "Forum name:"
+#~ msgstr "Forumnaam:"
+
+#~ msgid "Forum type:"
+#~ msgstr "Forumtype:"
+
+#~ msgid "Group mode:"
+#~ msgstr "Groepsmodus:"
+
 #~ msgid "Message:"
 #~ msgstr "Bericht:"
+
+#~ msgid "No discussions, but replies are allowed"
+#~ msgstr "Geen discussies, wel antwoorden toegestaan"
+
+#~ msgid "No discussions, no replies"
+#~ msgstr "Geen discussies en geen antwoorden toegestaan"
+
+#~ msgid "No groups"
+#~ msgstr "Geen groepen"
+
+#~ msgid "Separate groups"
+#~ msgstr "Gescheiden groepen"
+
+#~ msgid "Show"
+#~ msgstr "Tonen"
+
+#~ msgid "Standard forum for general use"
+#~ msgstr "Standaardforum voor algemeen gebruik"
 
 #~ msgid "Subject"
 #~ msgstr "Onderwerp"
 
 #~ msgid "Subject:"
 #~ msgstr "Onderwerp:"
+
+#~ msgid "Visible groups"
+#~ msgstr "Zichtbare groepen"
+
+#~ msgid "Visible to students:"
+#~ msgstr "Zichtbaar voor studenten:"
+
+#~ msgid "Yes, forever"
+#~ msgstr "Ja, voor altijd"
+
+#~ msgid "Yes, initially"
+#~ msgstr "Ja, in het begin"
