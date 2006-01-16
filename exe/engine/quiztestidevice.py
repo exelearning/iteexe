@@ -54,9 +54,10 @@ class TestQuestion(Persistable):
         self.correctAns           = -2
         self.userAns              = -1
         self.addOption()
-        self.questionInstruc      = ""
+        self.questionInstruc      = _(u"Type the question stem.")
         self.optionInstruc        = ""
-        self.correctAnswerInstruc = ""
+        self.correctAnswerInstruc = _(u"""To indicate the correct answer, 
+click the radio button next to the correct option.""")
         
     def addOption(self):
         """
@@ -80,7 +81,31 @@ class QuizTestIdevice(Idevice):
         Idevice.__init__(self,
                          x_(u"SCORM Quiz Experimental"),
                          x_(u"University of Auckland"),
-                         "", "", "question")
+                         x_(u"""Although more often used in formal testing 
+situations MCQs can be used as a testing tool to stimulate thought and  
+discussion on topics students may feel a little reticent in responding to. 
+
+When designing a MCQ test consider the following:
+<ul>
+<li> What are the learning outcomes are the questions testing</li>
+<li>    What intellectual skills are being tested</li>
+<li> What are the language skills of the audience</li>
+<li> Gender and cultural issues</li>
+<li> Avoid grammar language and question structures that might provide 
+     clues</li>
+</ul>
+ """), x_(u"""When building an MCQ consider the following: <ul>
+<li> Language use phrases that learners are familiar with and have 
+encountered in their study </li>
+<li> Keep responses concise </li>
+<li> There should be some consistency between the stem and the responses </li>
+<li> Provide enough options to challenge learners to think about their response
+</li>
+<li> Try to make sure that correct responses are not more detailed than the 
+distractors </li>
+<li> Distractors should be incorrect but plausible </li>
+</ul>
+"""), "", "question")
         self.emphasis   = Idevice.SomeEmphasis
         self.score      = -1 
         self.isAnswered = True

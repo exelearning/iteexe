@@ -222,6 +222,7 @@ class MagnifierField(Field):
         self.initialZSize  = "100"
         self.maxZSize      = "150"
 
+
     def setImage(self, imagePath):
         """
         Store the image in the package

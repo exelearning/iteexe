@@ -92,9 +92,16 @@ class QuizTestBlock(Block):
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
             html += "</font></b><br/><br/>"
-        html += "<b>" + _("SCORM Multiple Choice Quiz:") 
-        html += " </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-        html += _("Select pass rate: ")
+        html += "<b>" + _("SCORM Multiple Choice Quiz:") + "<br/><br/></b>"
+        
+
+        for element in self.questionElements:
+            html += element.renderEdit() 
+            
+        value = _("Add another Question")    
+        html += "<br/>" 
+        html += common.submitButton("addQuestion"+unicode(self.id), value)
+        html += "<br/><br/>" +  _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
         template = '  <option value="%s0"%s>%s0%%</option>\n'
         for i in range(1, 11):
@@ -102,13 +109,7 @@ class QuizTestBlock(Block):
                 html += template % (str(i), ' selected="selected"', str(i))
             else:
                 html += template % (str(i), '', str(i))
-        html += "</select><br/><br/>\n"
-
-        for element in self.questionElements:
-            html += element.renderEdit() 
-            
-        value = _("Add Question")    
-        html += common.submitButton("addQuestion"+unicode(self.id), value)
+        html += "</select>\n"
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
         self.idevice.isAnswered = True

@@ -89,7 +89,7 @@ class TestquestionElement(object):
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
         html += u"<tr>"
-        html += u"<th>%s " % _("Alternatives")
+        html += u"<th>%s " % _("Options")
         html += common.elementInstruc("option"+self.id, 
                                       self.question.optionInstruc)
         html += u"</th><th align=\"left\">%s "  % _("Correct")
@@ -106,7 +106,7 @@ class TestquestionElement(object):
             
         html += u"</tbody>"
         html += u"</table>\n"
-        value = _(u"Add another option")    
+        value = _(u"Add another Option")    
         html += common.submitButton("addOption"+unicode(self.id), value)
         html += u"<br />"
         html += u"</div>\n"

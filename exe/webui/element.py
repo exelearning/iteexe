@@ -279,14 +279,14 @@ class ImageElement(Element):
         html += u"name=\"width"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.width
         html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
-        html += u"size=\"4\" />\n"
-        html += u"x\n"
+        html += u"size=\"4\"/>px "
+        html += u"<b>by</b> \n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" "
         html += u"name=\"height"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.height
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
-        html += u"size=\"4\" />\n"
+        html += u"size=\"4\"/>px \n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
         

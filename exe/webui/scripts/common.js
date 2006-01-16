@@ -187,9 +187,11 @@ function magnifierImageChanged(event) {
     var width  = document.getElementById('width'+elementId);
     var height = document.getElementById('height'+elementId);
     image.removeAttribute('height');
-    if (image.width > 600){
+    if (image.width > 700){
         image.width = 600        
         }
+    if (image.width <= 700 && image.width > 300)
+        image.width = image.width * 0.7
         
     if (image.height > 270){
         width.value = image.width + 84
