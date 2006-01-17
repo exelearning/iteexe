@@ -94,6 +94,7 @@ article from en.wikipedia.org, including copying the associated images."""),
         for resource in self.userResources:
             resource.delete()
         self.userResources = []
+        self.images        = {}
             
         # download the images
         tmpDir = TempDirPath()
