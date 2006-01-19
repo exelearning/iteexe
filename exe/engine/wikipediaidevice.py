@@ -51,7 +51,7 @@ class WikipediaIdevice(Idevice):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
                          x_(u"University of Auckland"), 
                          x_(u"""The Wikipedia iDevice takes a copy of an
-article from en.wikipedia.org, including copying the associated images."""), 
+article from wikipedia.org, including copying the associated images."""), 
                          u"", u"")
         self.emphasis         = Idevice.NoEmphasis
         self.articleName      = u""
@@ -61,8 +61,10 @@ article from en.wikipedia.org, including copying the associated images."""),
         self.site             = defaultSite
         self.icon             = u"inter"
         self.systemResources += ["fdl.html"]
+        self.loadInstruc      = x_(u"""Select the appropriate language version 
+of Wikipedia to search and enter search term.""")
 
-
+   
     def loadArticle(self, name):
         """
         Load the article from Wikipedia

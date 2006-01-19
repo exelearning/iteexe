@@ -153,7 +153,8 @@ class EditorPane(object):
             
         if "addFeedback" in request.args:
             self.idevice.addField(FeedbackField(_(u"Enter the label here"), 
-                 _(u"Enter the instructions for completion here")))
+                 _(u"""Feedback button will not appear if no 
+data is entered into this field.""")))
             
         if ("action" in request.args and 
             request.args["action"][0] == "selectIcon"):

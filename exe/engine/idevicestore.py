@@ -220,50 +220,11 @@ class IdeviceStore:
         readingAct = GenericIdevice(_(u"Reading Activity"), 
                                     u"reading",
                                     _(u"University of Auckland"), 
-                                    x_(u"<p>"
-                                        "An activity can be described as a"
-                                        "task or set of tasks a learner must "
-                                        "complete. Provide a clear "
-                                        "statement of the task and consider "
-                                        "any conditions that may help or "
-                                        "hinder the learner in the "
-                                        "performance of the task." 
-                                        "</p>"
-                                        "<p>"
-                                        "The general task is the most "
-                                        "flexible iDevice because authors "
-                                        "can specify the sub-type or "
-                                        "classification. It is used to "
-                                        'signal a learning "event". In other '
-                                        "words when learners are expected to "
-                                        "do something. For example:"
-                                        "<ol>"
-                                        "<li> A "
-                                        "written activity when learners must "
-                                        "write something down (notes or a "
-                                        "list)"
-                                        "</li>"
-                                        "<li>"
-                                        "An application activity, "
-                                        "where learners are expected to "
-                                        "apply their knowledge to a "
-                                        "particular situation"
-                                        "</li>"
-                                        "<li>"
-                                        "Conceptual "
-                                        "activity, where learners are asked "
-                                        "to think about something. Although "
-                                        'the "look and feel" associated with '
-                                        "the presentation of this iDevice on "
-                                        "a web page will be the same for "
-                                        "each instance or type, learners "
-                                        "will be able to distinguish among "
-                                        "different types by the heading the "
-                                        "author provides for the particular "
-                                        "instance of this iDevice. "
-                                        "</li>"
-                                        "</ol>"
-                                        "</p>"),
+                                    x_(u"""The Reading Activity will primarily 
+be used to check a learner's comprehension of a given text. This can be done 
+by asking the learner to reflect on the reading and respond to questions about 
+the reading, or by having them complete some other possibly more physical task 
+based on the reading."""),
                                     x_(u"Teachers should keep the following "
                                         "in mind when using this iDevice: "
                                         "<ol>"
@@ -299,20 +260,17 @@ class IdeviceStore:
                                         "</li>"
                                         "</ol>")) 
         readingAct.emphasis = Idevice.SomeEmphasis
-        readingAct.addField(TextAreaField(_(u"What to read"), 
-_(u"""Provide details of the reading materials learners should  read.""")))
-        readingAct.addField(TextAreaField(_(u"Why it should be read"), 
-_(u"""Describe the rationale behind the selection of the reading and how it will
-enrich the learning.""")))
+        readingAct.addField(TextAreaField(_(u"Reading resource"), 
+_(u"""Describe the resource the learner must read in order to be able to 
+complete the activity.""")))
         readingAct.addField(TextAreaField(_(u"Reference"), 
-_(u"""Provide full reference details to the reading materials selected. The
-reference style used will depend on the preference of your department or
-faculty.""")))
-        readingAct.addField(TextAreaField(_(u"Feedback"), 
-_(u"""The use of this element is flexible.  Use it to provide a summary of the
-points covered in the reading, or as a starting point for further analysis of
-the reading by posing a question or providing a statement to begin a
-debate.""")))
+_(u"""Correctly reference the source the reading material was taken from. 
+This will demonstrate the correct referencing style relevant for your faculty 
+or department.""")))
+        readingAct.addField(TextAreaField(_(u"Activity"), 
+_(u"""Create the activity to analyse the learners comprehension of the material 
+they have just read e.g. a list of questions about the reading etc.""")))
+
         self.generic.append(readingAct)
     
         objectives = GenericIdevice(_(u"Objectives"), 

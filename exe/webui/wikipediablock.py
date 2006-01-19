@@ -88,6 +88,8 @@ class WikipediaBlock(Block):
                               selection=self.idevice.site)
         html += common.textInput("article", self.idevice.articleName)
         html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
+        html += common.elementInstruc("loadWikipedia"+self.id, 
+                                      self.idevice.loadInstruc)
         html += u"<br/>\n"
         html += self.articleElement.renderEdit()
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
@@ -96,7 +98,7 @@ class WikipediaBlock(Block):
         html += common.select("emphasis", emphasisValues,
                               self.id,
                               self.idevice.emphasis)
-        html += u"<br/>\n"
+        html += u"<br/><br/>\n"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html

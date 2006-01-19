@@ -151,12 +151,13 @@ class FeedbackElement(Element):
         Returns an XHTML string for viewing or previewing this element
         """
         html = ""
-        html += '<input type="button" name="btn%s" ' % self.id
-        html += 'value ="%s" ' % self.field.buttonCaption
-        html += 'onclick="toggleFeedback(\'%s\')"/><br/>\n ' % self.id
-        html += '<div id="%s" style="display: none;"> ' % self.id
-        html += self.field.feedback
-        html += "</div>\n"
+        if self.field.feedback != "":
+            html += '<input type="button" name="btn%s" ' % self.id
+            html += 'value ="%s" ' % self.field.buttonCaption
+            html += 'onclick="toggleFeedback(\'%s\')"/><br/>\n ' % self.id
+            html += '<div id="%s" style="display: none;"> ' % self.id
+            html += self.field.feedback
+            html += "</div>\n"
 
         return html
 
