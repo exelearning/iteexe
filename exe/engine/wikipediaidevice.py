@@ -107,6 +107,7 @@ article from en.wikipedia.org, including copying the associated images."""),
                 if not imageSrc.startswith("http://"):
                     imageSrc = self.site + imageSrc
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
+                print "loaded ", imageSrc
                 self.images[imageName] = True
                 self.userResources.append(Resource(self.parentNode.package,
                                                    tmpDir/imageName))
@@ -115,6 +116,7 @@ article from en.wikipedia.org, including copying the associated images."""),
             # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + 
                                u"/resources/" + imageName)
+            print "urled ", imageTag['src']
 
         self.article.content = self.reformatArticle(unicode(content))
 
