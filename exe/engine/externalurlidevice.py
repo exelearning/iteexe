@@ -31,8 +31,7 @@ class ExternalUrlIdevice(Idevice):
     """
     ExternalUrlIdevice: just has a field for the url
     """
-
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"External Web Site"), 
@@ -62,5 +61,12 @@ and select the size of the area to display it in.""")
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()        
+
+    def upgradeToVersion3(self):
+        """
+        add _urlInstruc
+        """
+        self._urlInstruc = x_(u"""Enter the URL you wish to display
+and select the size of the area to display it in.""")
     
 # ===========================================================================
