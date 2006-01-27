@@ -82,6 +82,8 @@ class FlashMovieBlock(Block):
         html += u"</p>\n"
         html += u"<b>%s </b>" % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
+        html += common.elementInstruc("cap" + self.id, 
+                                      self.idevice.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
         html += self.renderEditButtons()
         html += u"</div>\n"

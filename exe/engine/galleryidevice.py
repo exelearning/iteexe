@@ -356,10 +356,9 @@ class GalleryIdevice(Idevice):
         """
         Idevice.__init__(self, x_(u"Image Gallery"), 
                          x_(u"University of Auckland"), 
-                         x_(u"This Idevice exists to show a group of images in "
-                             "an easily understandable way. For example to show "
-                             "many different sample solutions in the form of "
-                             "images"),
+                         x_(u"""Where you have a number of images that relate 
+to each other or to a particular learning exercise you may wish to display 
+these in a gallery context rather then individually."""),
                          x_(u"Use this Idevice if you have a lot of images to "
                              "show."),
                              "gallery",

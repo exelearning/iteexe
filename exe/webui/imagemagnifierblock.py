@@ -98,9 +98,13 @@ class ImageMagnifierBlock(Block):
         
         html += common.select("float"+self.id, 
                               floatArr, selection=self.idevice.float)
+        html += common.elementInstruc("dimen" + 
+                                      self.id, self.idevice.dimensionInstruc)
         html += u"</p>\n"
         html += u"<b>%s </b>" % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
+        html += common.elementInstruc("caption" + 
+                                      self.id, self.idevice.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
         html += "<b>" + _(u"Size of magnifying glass: ") + "</b>"
         html += common.select("glass"+self.id, glassSizeArr, 

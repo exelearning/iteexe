@@ -50,8 +50,13 @@ class WikipediaIdevice(Idevice):
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
                          x_(u"University of Auckland"), 
-                         x_(u"""The Wikipedia iDevice takes a copy of an
-article from wikipedia.org, including copying the associated images."""), 
+                         x_(u"""<p>The Wikipedia iDevice allows you to locate 
+existing content from within Wikipedia and download this content into your eXe 
+resource. The Wikipedia Article iDevice takes a snapshot copy of the article 
+content. Changes in Wikipedia will not automatically update individual snapshot 
+copies in eXe, a fresh copy of the article will need to be taken. Likewise, 
+changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content 
+is covered by the GNU free documentation license.</p>"""), 
                          u"", u"")
         self.emphasis         = Idevice.NoEmphasis
         self.articleName      = u""
@@ -61,8 +66,10 @@ article from wikipedia.org, including copying the associated images."""),
         self.site             = defaultSite
         self.icon             = u"inter"
         self.systemResources += ["fdl.html"]
-        self.loadInstruc      = x_(u"""Select the appropriate language version 
+        self.langInstruc      = x_(u"""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
+        self.searchInstruc    = x_("""Enter a phrase or term you wish to search 
+within Wikipedia.""")
 
    
     def loadArticle(self, name):

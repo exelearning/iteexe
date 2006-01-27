@@ -62,15 +62,16 @@ the learner must decide if the statement is true. This type of question works
 well for factual information and information that lends itself to either/or 
 responses."""), u"", u"question")
         self.emphasis         = Idevice.SomeEmphasis
-        self._hintInstruc     = x_(u"Type the question's hint here.")
+        self._hintInstruc     = x_(u"""A hint may be provided to assist the 
+learner in answering the question.""")
         self.questions        = []
-        self._questionInstruc = x_(u"Type the question stem.")
+        self._questionInstruc = x_(u"""Type the question stem. The question 
+should be clear and unambiguous. Avoid negative premises as these can tend to 
+be ambiguous.""")
         self._keyInstruc      = ""
-        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
-student to see when selecting the particular question. If you don't complete
-this box, eXe will automatically provide default feedback as follows: 
-"Correct answer" as indicated by the selection for the correct answer; or 
-"Wrong answer" for the other alternatives.""")
+        self._feedbackInstruc = x_(u"""Enter any feedback you wish to provide 
+to the learner. This field may be left blank. if this field is left blank 
+default feedback will be provided.""")
         self.questions.append(TrueFalseQuestion())
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]

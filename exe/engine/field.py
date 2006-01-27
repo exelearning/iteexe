@@ -375,11 +375,9 @@ class ClozeField(Field):
         """
         self.strictMarking = False
         self._strictMarkingInstruc = \
-            x_(u"<p>If this option is left unchecked a fuzzy algorythm will "
-                "be used to mark learners answers. It will accept a small "
-                "amount of spelling and capitalization errors on words "
-                "longer than 4 letters. This will happen even if "
-                "\"Check capitalization\" is on."
+            x_(u"<p>If left unchecked a small number of spelling and "
+                "capitalization errors will be accepted. If checked only "
+                "an exact match in spelling and capitalization will be accepted."
                 "</p>"
                 "<p><strong>For example:</strong> If the correct answer is "
                 "<code>Elephant</code> and both <code>elephant</code> and "
@@ -399,14 +397,13 @@ class ClozeField(Field):
         self.checkCaps = False
         self._checkCapsInstruc = \
             x_(u"<p>If this option is checked, submitted answers with "
-                "different capitalization will be marked as wrong."
+                "different capitalization will be marked as incorrect."
                 "</p>")
         self.instantMarking = False
         self._instantMarkingInstruc = \
-            x_(u"<p>If this option is set, each word will be marked as the "
-                "learner types it in, instead of all the words bieng marked "
-                "at the end."
-                "</p>")
+            x_(u"""<p>If this option is set, each word will be marked as the 
+learner types it rather then all the words being marked the end of the 
+exercise.</p>""")
 
     # Property handlers
     def set_encodedContent(self, value):

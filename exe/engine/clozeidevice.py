@@ -80,11 +80,11 @@ class ClozeIdevice(Idevice):
                              "If your goal is to test vocabulary knowledge"
                              "  </dt>"
                              "  <dd>"
-                             "Write a text using the target vocabulary. This "
+                             "<p>Write a text using the target vocabulary. This "
                              "text should be coherent and cohesive, and be of "
                              "an appropriate length. Highlight the target "
                              "words in the text. Choose alternatives with one "
-                             "clear answer."
+                             "clear answer.</p>"
                              "  </dd>"
                              "  <dt>"
                              "If your goal is to test word "
@@ -109,17 +109,18 @@ class ClozeIdevice(Idevice):
                             u"question",
                              parentNode)
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions For Learners'),
-            x_(u'Provide instructions to learners on what '
-                'they must do to complete the cloze exercise.'),
+            x_(u'Instructions'),
+            x_(u"""Provide instruction on how the cloze activity should be 
+completed. Default text will be entered if there are no changes to this field.
+"""),
             x_(u'Read the paragraph below and '
-                'fill in the missing words'))
+                'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
         self._content = ClozeField(x_(u'Cloze'), 
-            x_(u'Enter the text for your cloze exercise by pasting or '
-                'typing into the cloze field. To select the words you wish '
-                'to hide double click on the word and click the '
-                '<i>Hide/Show Word</i> button.'))
+            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+by either pasting text from another source or by typing text directly into the 
+field.</P><p> To select words to hide, double click on the word to select it and 
+click on the <Hide/Show Word¡± button below.</p>"""))
         self._content.idevice = self
         self.feedback = TextAreaField(x_(u'Feedback'),
             x_(u'Enter any feedback you wish to provide the learner '

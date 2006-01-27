@@ -751,14 +751,15 @@ class FlashElement(Element):
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.width
-        html += u"size=\"4\" />\n"
-        html += u"x\n"
+        html += u"size=\"4\" />px\n"
+        html += u"<b>by</b> \n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" "
         html += u"name=\"height"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.height
-        html += u"size=\"4\" />\n"
+        html += u"size=\"4\" />px\n"
         html += u"(%s) \n" % _(u"blank for original size")
+        
         html += common.hiddenField("path"+self.id)
 
 
@@ -819,12 +820,13 @@ class FlashMovieElement(Element):
         """
         log.debug("renderEdit")
 
-        html  = u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
+        html  = u"<b>"+self.field.name+":</b><br/><br/>\n"
         html += u"<a href=\"#\" onclick=\"addFlashMovie('"+self.id+"');\">"
         html += _(u"Select a flash video")
-        html += u"</a><br/>\n"
-
+        html += u"</a><br/><br/>\n"
+        #html += u'<input type="button" onclick="addFlashMovie("'+ self.id+'");"'
+        #html += u'value="%s" />' % x_(u"Select a flash video")
+        #html += u"<br/><br/>\n"
         html += common.hiddenField("path"+self.id)
 
 

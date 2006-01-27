@@ -55,10 +55,12 @@ class CasestudyIdevice(Idevice):
         Idevice.__init__(self,
                          x_(u"Case Study"),
                          x_(u"University of Auckland"), 
-                         x_(u"""A case study is a story that conveys an 
-educational message. A case study can be used to present a realistic situation
-that enables learners to apply their own knowledge and experience to.  When 
-designing a case study you might want to consider the following:<ul> 
+                         x_(u"""A case study is a device that provides learners 
+with a simulation that has an educational basis. It takes a situation, generally 
+based in reality, and asks learners to demonstrate or describe what action they 
+would take to complete a task or resolve a situation. The case study allows 
+learners apply their own knowledge and experience to completing the tasks 
+assigned. when designing a case study consider the following:<ul> 
 <li>	What educational points are conveyed in the story</li>
 <li>	What preparation will the learners need to do prior to working on the 
 case study</li>
@@ -71,13 +73,16 @@ of the case and if so how are ideas feed back to the class</li></ul>"""),
         self.emphasis     = Idevice.SomeEmphasis
         self.story        = story
         self.questions    = []
-        self._storyInstruc = x_(u"""Create the case story.  A good case is one 
-that describes a controversy.""")
-        self._questionInstruc = x_(u"""Enter the study question.  These questions 
-should draw out the educational messages presented in the case.  Consider 
-aspects of the case like, characters, timeliness, relevance, dilemmas.""")
-        self._feedbackInstruc = x_(u"""Provide feedback on the question.  This may
-be a summary of the main points or concepts.""")
+        self._storyInstruc = x_(u"""Create the case story. A good case is one 
+that describes a controversy or sets the scene by describing the characters 
+involved and the situation. It should also allow for some action to be taken 
+in order to gain resolution of the situation.""")
+        self._questionInstruc = x_(u"""Describe the activity tasks relevant 
+to the case story provided. These could be in the form of questions or 
+instructions for activity which may lead the learner to resolving a dilemma 
+presented. """)
+        self._feedbackInstruc = x_(u"""Provide relevant feedback on the 
+situation.""")
         self.addQuestion()
         
     # Properties

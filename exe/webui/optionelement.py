@@ -73,17 +73,31 @@ class OptionElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        html = u"<tr><td>"
+        html  = u"<tr><td align=\"center\"><b>%s</b>" % _("Option")
+        html += common.elementInstruc("answer"+self.id, 
+                                      self.idevice.answerInstruc)
+        header = ""
+        
+        if self.index == 0:
+            header = _("Correct") + "<br/>" + _("Option")
+            
+        html += u"</td><td align=\"center\"><b>%s</b>\n" % header
+        html += common.elementInstruc("key"+self.id, self.idevice.keyInstruc)
+        html += "</td><td></td></tr><tr><td>\n" 
         html += common.richTextArea(self.answerId, self.option.answer)
         html += "</td><td align=\"center\">\n"
         html += common.option(self.keyId, self.option.isCorrect, self.id)        
         html += "</td><td>\n"
-        html += common.richTextArea(self.feedbackId, self.option.feedback)
-        html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _(u"Delete option"))
-        html += "</td></tr>\n"
+        html += "</td></tr><tr><td align=\"center\"><b>%s</b>" % _("Feedback")
+        html += common.elementInstruc("feed"+self.id, 
+                                      self.idevice.feedbackInstruc)
+        html += "</td><td></td><td></td></tr><tr><td>\n" 
+        html += common.richTextArea(self.feedbackId, self.option.feedback)
+        html += "</td><td></td><td></td></tr>\n"
+        
         return html
 
 

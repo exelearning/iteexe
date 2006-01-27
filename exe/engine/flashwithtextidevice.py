@@ -22,8 +22,9 @@ A FlashWithText Idevice is one built up from a flash file and free text.
 """
 
 import logging
-from exe.engine.idevice import Idevice
-from exe.engine.field   import TextAreaField, FlashField
+from exe.engine.idevice   import Idevice
+from exe.engine.field     import TextAreaField, FlashField
+from exe.engine.translate import lateTranslate
 
 log = logging.getLogger(__name__)
 
@@ -38,16 +39,29 @@ class FlashWithTextIdevice(Idevice):
     def __init__(self):
         Idevice.__init__(self, x_(u"Flash with Text"), 
                          x_(u"University of Auckland"), 
-                         u"", u"", u"")
-        self.emphasis      = Idevice.NoEmphasis
-        self.flash         = FlashField(x_(u"Flash"), u"")
-        self.flash.idevice = self
-        self.text          = TextAreaField(x_(u"Text"))
-        self.text.idevice  = self
-        self.float         = u"left"
-        self.caption       = u""
+                         x_(u"""The flash with text idevice allows you to 
+associate additional textual information to a flash file. This may be useful 
+where you wish to provide educational instruction regarding the flash file 
+the learners will view."""), u"", u"")
+        self.emphasis         = Idevice.NoEmphasis
+        self.flash            = FlashField(x_(u"Flash with Text"), u"")
+        self.flash.idevice    = self
+        self.text             = TextAreaField(x_(u"Description"),
+                                x_("""Enter the text you wish to 
+                                associate with the image."""))
+        self.text.idevice     = self
+        self.float            = u"left"
+        self.caption          = u""
+        self.captionInstruc   = _(u"""Provide a caption for the flash you 
+                                  have just inserted.""")
+        self.dimensionInstruc =x_(u"""Enter the flash display 
+dimensions (in pixels) and determine the alignment of the image on screen. 
+The width and height dimensions will alter proportionally.""")
 
-
+    # Properties
+    captionInstruc   = lateTranslate('captionInstruc')
+    dimensionInstruc = lateTranslate('dimensionInstruc')
+    
     def upgradeToVersion1(self):
         """
         Upgrades exe to v0.10

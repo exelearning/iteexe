@@ -70,7 +70,10 @@ class WikipediaBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        html  = u"<div class=\"iDevice\">\n"
+
+        html  = u"<div class=\"iDevice\"><br/>\n"
+        html += common.textInput("title"+self.id, self.idevice.title)
+        html += u"<br/><br/>\n"
         sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/"),
                  (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/"),
                  (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/"),
@@ -86,10 +89,13 @@ class WikipediaBlock(Block):
                  (_(u"Wikibooks Article"),         "http://en.wikibooks.org/")]
         html += common.select("site", sites,
                               selection=self.idevice.site)
+        html += common.elementInstruc("langWikipedia"+self.id, 
+                                      self.idevice.langInstruc)
         html += common.textInput("article", self.idevice.articleName)
-        html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
-        html += common.elementInstruc("loadWikipedia"+self.id, 
-                                      self.idevice.loadInstruc)
+        html += common.elementInstruc("searchWikipedia"+self.id, 
+                                      self.idevice.searchInstruc)
+        html += common.submitButton(u"Wikipedia"+self.id, _(u"Load"))
+        
         html += u"<br/>\n"
         html += self.articleElement.renderEdit()
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),

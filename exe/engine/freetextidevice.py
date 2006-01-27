@@ -41,9 +41,11 @@ establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = TextAreaField(x_(u"Content"), 
-x_(u"This is a free text field general learning content can be entered."),
-                                     content)
+        self.content  = TextAreaField(x_(u"Free Text"), 
+                                      x_(u"""Use this field to enter text. This 
+iDevice has no emphasis applied although limited formatting can be applied to 
+text through the text editing buttons associated with the field."""),
+                                      content)
         self.content.idevice = self
         if content:
             self.edit = False

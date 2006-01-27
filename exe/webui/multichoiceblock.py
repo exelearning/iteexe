@@ -93,20 +93,20 @@ class MultichoiceBlock(Block):
         html += common.elementInstruc("hint"+self.id, self.hintInstruc)
         html += common.richTextArea("hint"+self.id, self.hint)
         html += "<table width =\"100%%\">"
-        html += "<thead>"
-        html += "<tr>"
-        html += "<th>%s " % _("Alternatives")
-        html += common.elementInstruc("answer"+self.id, self.answerInstruc)
-        html += "</th>"
-        html += "<th>%s"  % _("Correct")
-        html += "<br/>" + _("Option")
-        html += common.elementInstruc("key"+self.id, self.keyInstruc)
-        html += "</th>"
-        html += "<th>%s " % _("Feedback")
-        html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
-        html += "</th>"
-        html += "</tr>"
-        html += "</thead>"
+        #html += "<thead>"
+        #html += "<tr>"
+        #html += "<th>%s " % _("Options")
+        #html += common.elementInstruc("answer"+self.id, self.answerInstruc)
+        #html += "</th>"
+        #html += "<th>%s"  % _("Correct")
+        #html += "<br/>" + _("Option")
+        #html += common.elementInstruc("key"+self.id, self.keyInstruc)
+        #html += "</th>"
+        #html += "<th>%s " % _("Feedback")
+        #html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
+        #html += "</th>"
+        #html += "</tr>"
+        #html += "</thead>"
         html += "<tbody>"
 
         for element in self.optionElements:
