@@ -194,7 +194,7 @@ function magnifierImageChanged(event) {
         image.width = image.width * 0.7
         
     if (image.height > 270){
-        width.value = image.width + 84addFlashMovie
+        width.value = image.width + 84
     }else{
         width.value = image.width + 144
     }
