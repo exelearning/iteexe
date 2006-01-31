@@ -45,7 +45,6 @@ def chooseDefaultLocale(localeDir):
         if points:
             possibleDirs.append((points, sub.basename()))
     possibleDirs.sort()
-    print possibleDirs
     if possibleDirs:
         return possibleDirs[-1][-1]
     else:
