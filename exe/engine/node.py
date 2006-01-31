@@ -101,7 +101,8 @@ class Node(Persistable):
             self._title = title
             self.package.isChanged = True
     title = property(getTitle, setTitle)
-
+    titleShort = property(lambda self: self.title.split('--', 1)[0].strip())
+    titleLong = property(lambda self: self.title.split('--', 1)[-1].strip())
 
     # Normal methods
 

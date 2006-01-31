@@ -257,7 +257,7 @@ class Block(Renderable):
         TODO We should probably get this list from elsewhere rather than
         building it up for every block
         """
-        options = [(u'&nbsp;&nbsp;&nbsp;'*depth + node.title, node.id)]
+        options = [(u'&nbsp;&nbsp;&nbsp;'*depth + node.titleLong, node.id)]
         for child in node.children:
             options += self.__getNodeOptions(child, depth+1)
         return options

@@ -131,6 +131,7 @@ function XHAddChildTreeItem(nodeid, name) {
     // Create the new node
     var newTreeRow = row.cloneNode(1) // Clone the existing row
     newTreeRow.firstChild.setAttribute('label', name) // Set the treecell s label
+    newTreeRow.firstChild.setAttribute('name', name) // Set the treecell s label
     newTreeRow.setAttribute('_exe_nodeid', nodeid)
     var newTreeItem = document.createElement('treeitem')
     newTreeItem.appendChild(newTreeRow)
@@ -182,22 +183,29 @@ function XHDelNode(item) {
     }
 }
 
-// Renames the node associated with 'treeitem' to 'newName' // If 'treeitem' is not passed, uses currently selected node
-function XHRenNode(newName, id) { 
-    if (!id) { var treeitem = currentOutlineItem() }
-    else { var treeitem = serverId2treeitem(id) }
-    treeitem.getElementsByTagName('treecell')[0].setAttribute('label', newName)
+// Renames the node associated with 'treeitem'
+// titleShort is the short version of the title for the outlineTreeNode
+// titleLong is the long version of the title for authoringPage
+// titleFull is stored in the treecell's ID
+// If 'treeitem' is not passed, uses currently selected node
+function XHRenNode(titleShort, titleLong, titleFull, id) { 
+    if (!id) {
+        var treeitem = currentOutlineItem()
+    } else {
+        var treeitem = serverId2treeitem(id)
+    }
+    treeitem.getElementsByTagName('treecell')[0].setAttribute('label', titleShort);
+    treeitem.getElementsByTagName('treecell')[0].setAttribute('name', titleFull);
     // Update the authoring page iframe
-    var titleElement = top.frames[0].document.getElementById('nodeTitle')
+    var titleElement = top.frames[0].document.getElementById('nodeTitle');
     // Sometimes when promoting/demoting nodes
     // the title element isn't there/renedered for some reason
     // Looping doesn't fix that, so we just tell firefox
     // to reload the page
-    if (!titleElement) { top.frames[0].src = top.frames[0].src }
-    else if (titleElement.tagName == "INPUT") {
-        titleElement.setAttribute('value', newName)
+    if (titleElement) {
+        titleElement.firstChild.nodeValue = titleLong;
     } else {
-        titleElement.firstChild.nodeValue = newName
+        top.frames[0].src = top.frames[0].src;
     }
 }
 
@@ -233,7 +241,7 @@ function XHMoveNode(id, parentId, nextSiblingId) {
 // Asks the user for a new name for the currently selected node
 function askNodeName() {
     var treeitem = currentOutlineItem()
-    var oldLabel = treeitem.getElementsByTagName('treecell')[0].getAttribute('label')
+    var oldLabel = treeitem.getElementsByTagName('treecell')[0].getAttribute('name')
     var name = prompt("Rename '"+oldLabel+"'\nEnter the new name", oldLabel);
     return name
 }

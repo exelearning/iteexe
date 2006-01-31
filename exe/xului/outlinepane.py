@@ -110,8 +110,11 @@ class OutlinePane(Renderable):
             return
         node = self.package.findNode(nodeId)
         node.title = unicode(newName, 'utf8')
-        log.debug("XHRenNode(%s)" % newName.replace('"', '\\"'))
-        client.sendScript('XHRenNode("%s")' % newName.replace('"', '\\"'))
+        params = [s.replace('"', '\\"') for s in 
+                  [node.titleShort, node.titleLong, node.title]]
+        command = 'XHRenNode("%s", "%s", "%s")' % tuple(params)
+        log.debug(command)
+        client.sendScript(command)
 
 
     def _doJsRename(self, client, node):
@@ -121,9 +124,12 @@ class OutlinePane(Renderable):
         """
         log.debug("_doJsRename")
         if not node._title:
-            log.debug("XHRenNode(%s, %s)" % (node.title.replace('"', '\\"'), 
-                                             node.id))
-            client.call('XHRenNode', node.title.replace('"', '\\"'), node.id)
+            params = [s.replace('"', '\\"') for s in 
+                      [node.titleShort, node.titleLong, node.title]]
+            params.append(node.id)
+            command = 'XHRenNode("%s", "%s", "%s", "%s")' % tuple(params)
+            log.debug(command)
+            client.sendScript(command)
         for child in node.children: 
             self._doJsRename(client, child)
 
@@ -262,10 +268,12 @@ class OutlinePane(Renderable):
             start = '<treeitem>'
 
         # Render the inner bits
-        title = self.encode2nicexml(node.title),
+        titleShort = self.encode2nicexml(node.titleShort)
+        titleFull = self.encode2nicexml(node.title)
         xul = ('%s' % start,
                """    <treerow _exe_nodeid="%s"> """ % node.id,
-               '        <treecell label="%s"/>' % title,
+               '        <treecell label="%s" name="%s"/>' % (
+                            titleShort, titleFull),
                '    </treerow>')
 
         # Recursively render children if necessary
