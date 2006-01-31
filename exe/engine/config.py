@@ -25,6 +25,7 @@ O/S specific config classes are derieved from here
 
 from exe.engine.configparser import ConfigParser
 from exe.engine.path import Path
+from exe.engine.locales import chooseDefaultLocale
 import logging
 from logging.handlers import RotatingFileHandler
 import sys
@@ -73,7 +74,7 @@ class Config:
         # styles is the list of style names available for loading
         self.styles      = []
         # locale the user wants
-        self.locale      = "en"
+        self.locale      = chooseDefaultLocale(self.localeDir)
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
