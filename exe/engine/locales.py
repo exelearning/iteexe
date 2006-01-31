@@ -29,7 +29,12 @@ def chooseDefaultLocale(localeDir):
     Given a directory with a bunch of sub dirs (en, es, en.US, etc.)
     Returns the name of the most appropriate sub dir for this system
     """
-    localeName = '.'.join(locale.getdefaultlocale())
+    lang, encoding = locale.getdefaultlocale()
+    if lang is None:
+        lang = 'en'
+    if encoding is None:
+        encoding = 'utf-8'
+    localeName = '%s.%s' % (lang, encoding)
     # Now find the best match from the dirs
     myLang, myCountry, myEncoding = splitLocaleName(localeName)
     possibleDirs = []
