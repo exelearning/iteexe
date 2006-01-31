@@ -70,7 +70,7 @@ class WebsitePage(object):
         html += u"@import url(content.css);\n"
         html += u"@import url(nav.css);</style>\n"
         html += u"<title> " 
-        html += escape(self.node.title)
+        html += escape(self.node.titleLong)
         html += u" </title>\n" 
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
@@ -87,7 +87,7 @@ class WebsitePage(object):
         style = self.node.package.style
         html += '<div id=\"nodeDecoration\">'
         html += '<p id=\"nodeTitle\">'
-        html += escape(self.node.title)
+        html += escape(self.node.titleShort)
         html += '</p></div>\n'
 
         for idevice in self.node.idevices:
@@ -129,12 +129,12 @@ class WebsitePage(object):
                 if page.node == self.node:
                     html += "<div id=\"active\" "
                     html += ">"
-                    html += escape(page.node.title)
+                    html += escape(page.node.titleShort)
                     html += "</div>\n"
                 else:
                     html += "<div><a href=\""+page.name+".html\" "
                     html += ">"
-                    html += escape(page.node.title)
+                    html += escape(page.node.titleShort)
                     html += "</a></div>\n"
 
         while depth > 1:

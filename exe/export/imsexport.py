@@ -89,7 +89,7 @@ class Manifest(object):
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
-        title  = escape(self.package.root.title)
+        title  = escape(self.package.root.titleShort)
         xmlStr += "<title>"+title+"</title>\n"
         
         depth = 0
@@ -126,7 +126,7 @@ class Manifest(object):
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
         self.itemStr += "identifierref=\""+resId+"\">\n"
         self.itemStr += "    <title>"
-        self.itemStr += escape(page.node.title)
+        self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
         
         self.resStr += "<resource identifier=\""+resId+"\" "
@@ -184,7 +184,7 @@ class IMSPage(Page):
         html += u"<div id=\"main\">\n"
         html += u"<div id=\"nodeDecoration\">\n"
         html += u'<p id=\"nodeTitle\">\n'
-        html += escape(self.node.title)
+        html += escape(self.node.titleLong)
         html += u'</p>\n'
         html += u"</div>\n"
 
@@ -295,7 +295,7 @@ class IMSExport(object):
         before creating zip file
         """
         for child in node.children:
-            pageName = child.title.lower().replace(" ", "_")
+            pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
             if not pageName:
                 pageName = "__"

@@ -121,7 +121,7 @@ class WebsiteExport(object):
         for retrieving later
         """           
         for child in node.children:
-            pageName = child.title.lower().replace(" ", "_")
+            pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
             if not pageName:
                 pageName = "__"

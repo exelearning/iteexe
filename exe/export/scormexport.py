@@ -146,7 +146,7 @@ class Manifest(object):
         xmlStr += u" <schema>ADL SCORM</schema> \n"
         xmlStr += u" <schemaversion>1.2</schemaversion> \n"
 
-        title  = escape(self.package.root.title)
+        title  = escape(self.package.root.titleShort)
 
         xmlStr += u"</metadata> \n"
         xmlStr += u"<organizations default=\""+orgId+"\">  \n"
@@ -188,7 +188,7 @@ class Manifest(object):
         self.itemStr += "<item identifier=\""+itemId+"\" isvisible=\"true\" "
         self.itemStr += "identifierref=\""+resId+"\">\n"
         self.itemStr += "    <title>"
-        self.itemStr += escape(page.node.title)
+        self.itemStr += escape(page.node.titleShort)
         self.itemStr += "</title>\n"
         
         self.resStr += "<resource identifier=\""+resId+"\" "
@@ -256,7 +256,7 @@ class ScormPage(Page):
         html += u"<div id=\"main\">\n"
         html += u"<div id=\"nodeDecoration\">\n"
         html += u"<p id=\"nodeTitle\">\n"
-        html += escape(self.node.title)
+        html += escape(self.node.titleLong)
         html += u'</p></div>\n'
 
         for idevice in self.node.idevices:
@@ -377,7 +377,7 @@ class ScormExport(object):
         'depth' is the number of ancestors that the page has +1 (ie. root is 1)
         """
         for child in node.children:
-            pageName = child.title.lower().replace(" ", "_")
+            pageName = child.titleShort.lower().replace(" ", "_")
             pageName = re.sub(r"\W", "", pageName)
             if not pageName:
                 pageName = "__"

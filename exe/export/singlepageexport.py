@@ -132,7 +132,7 @@ class SinglePageExport(object):
         """
         self.html += '<div id=\"nodeDecoration\">'
         self.html += '<p id=\"nodeTitle\">'
-        self.html += escape(node.title)
+        self.html += escape(node.titleLong)
         self.html += '</p></div>\n'
 
         for idevice in node.idevices:
