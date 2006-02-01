@@ -72,8 +72,9 @@ margin-left: 0;
 /* End hide from IE5/mac */
 
 div #active {
-padding: 3px 0 3px 6px;
-width: 149px;
+padding: 3px 0 3px 20px;
+width: 149px !important; /* the Housley Hack for Firefox... */
+width: 163px; /* for IE */
 background-color: #706F61;
 color: #ffffff;
 border-bottom: 1px solid #fff;
@@ -81,7 +82,6 @@ border-top: 6px solid #706f61;
 background-image:url(active_bg.gif);
 background-position:left middle;
 background-repeat:no-repeat;
-padding-left: 20px;
 }
 
 div #subnav {
