@@ -39,7 +39,7 @@ log = logging.getLogger(__name__)
 class GalleryImage(Persistable):
     """
     Holds a gallery image and its caption. Can produce a thumbnail
-    and line itself up with its siblings.
+    and a preview, popup window.
     """
     persistenceVersion = 1
 
@@ -79,6 +79,8 @@ class GalleryImage(Persistable):
         # Copy the original image
         package = self.parent.parentNode.package
 
+        import pdb
+        pdb.set_trace()
         self._imageResource = Resource(package, originalImagePath)
         self.parent.userResources.append(self._imageResource)
 
@@ -103,7 +105,7 @@ class GalleryImage(Persistable):
             self._defaultThumbnail(image2)
 
         thumbnailPath = (package.resourceDir/ 
-                         self._imageResource.path.namebase + ".png")
+                         self._imageResource.path.namebase + "Thumbnail.png")
         image2.save(thumbnailPath)
         self._thumbnailResource = Resource(package, thumbnailPath)
         self.parent.userResources.append(self._thumbnailResource)
@@ -148,15 +150,24 @@ class GalleryImage(Persistable):
         (Only realy needed for stupid IE)
         """
         log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
+        # Choose our style dir
+        if self.parent.parentNode:
+            styleDir = self.parent.parentNode.package.style 
+        else:
+            # Should really never get here, but just in case...
+            styleDir = 'default'
 
+        # Render!
         if htmlPath.ext == ".html":
             data = flatten(
                T.html[
                  T.head[
                    T.title[self.caption],
+                   T.style(type="text/css")[
+                    '@import url(/style/%s/content.css);' % styleDir]
                  ],
                  T.body[
-                   T.h1[self.caption],
+                   T.h1(id='nodeTitle')[self.caption],
                    T.p(align='center') [
                      T.img(src=unicode(self._imageResource.storageName)),
                    ],
@@ -299,6 +310,9 @@ class GalleryImages(Persistable, list):
     """
 
     def __init__(self, idevice):
+        """
+        Just takes the idevice who it is working for
+        """
         list.__init__(self)
         self.idevice = idevice
 
@@ -354,7 +368,8 @@ class GalleryIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, x_(u"Image Gallery"), 
+        Idevice.__init__(self, 
+                         x_(u"Image Gallery"), 
                          x_(u"University of Auckland"), 
                          x_(u"""Where you have a number of images that relate 
 to each other or to a particular learning exercise you may wish to display 
