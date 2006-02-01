@@ -106,7 +106,8 @@ font-size:11px;
 #subnav #active {
 margin-left: 10px;
 background-color: #706F61;
-width: 139px;
+width: 139px !important; /* the Housley Hack for Firefox... */
+width: 153px; /* for IE */
 color: #ffffff;
 font-size:11px;
 background-image:url(active_bg.gif);
