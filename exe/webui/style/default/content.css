@@ -15,19 +15,6 @@ body {
    background: #E0DFD8;
 }
 
-/*
-div {
-   background-image:none;
-   background-color:transparent;
-}
-
-html * div {
-   background-image:none;
-   background-color:transparent;
-}
-
-*/
-
 a { color: #FF6600;
     text-decoration: none;
 }
@@ -73,7 +60,7 @@ div#nodeDecoration {
    background-image:url(top_left_corner.gif);
    background-position:top left;
    background-repeat:no-repeat;
-   margin-bottom: 10px;
+   margin-bottom: 30px;
    text-align:left;
 }
 
@@ -86,15 +73,6 @@ div#nodeDecoration {
    margin-bottom: 10px;
    text-align:left;
 }
-
-/*
-* html .iDevice {
-   background-image:url(body_top_bg.gif);
-   background-position:top left;
-   background-repeat:no-repeat;
-
-}
-*/
 
 * html .iDevice_inner {
    background-image:none;
@@ -146,6 +124,12 @@ div#nodeDecoration {
    padding-right: 10px;
 }
 
+input.button {
+margin-top: 10px;
+margin-bottom: 10px;
+background: #DBE992;
+}
+
 p.reading_reference {
    font-style: italic;        
 }
@@ -175,19 +159,6 @@ p.reading_feedback {
    margin-top: 12px;
    padding-top: 10px;
 }
-
-
-/*
-.iDevice_inner_free {
-   padding: 20px;
-   padding-top: 60px;
-}
-
-.iDevice_inner_free {
-   padding: 20px;
-   padding-top: 60px;
-}
-*/
 
 
 /* styles for image with text iDevice */
