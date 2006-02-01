@@ -41,7 +41,7 @@ class OptionElement(object):
         self.idevice    = idevice
         self.option     = option
         self.answerId   = "optionAnswer"+ unicode(index) + "b" + idevice.id
-        self.keyId      = "optionKey" + idevice.id        
+        self.keyId      = "optionKey" + idevice.id
         self.feedbackId = "optionFeedback" + unicode(index) + "b" + idevice.id
         
 
@@ -86,9 +86,9 @@ class OptionElement(object):
         html += "</td><td></td></tr><tr><td>\n" 
         html += common.richTextArea(self.answerId, self.option.answer)
         html += "</td><td align=\"center\">\n"
-        html += common.option(self.keyId, self.option.isCorrect, self.id)        
+        html += common.option(self.keyId, self.option.isCorrect, self.id)   
         html += "</td><td>\n"
-        html += common.submitImage(self.id, self.idevice.id, 
+        html += common.submitImage(self.id, self.idevice.id,
                                    "/images/stock-cancel.png",
                                    _(u"Delete option"))
         html += "</td></tr><tr><td align=\"center\"><b>%s</b>" % _("Feedback")
@@ -130,7 +130,7 @@ class OptionElement(object):
             if self.option.isCorrect:
                 feedbackStr = _("Correct")
             else:
-                feedbackStr = _("Incorrect")
+                feedbackStr = _("Wrong")
         html  = '<div id="s%s" style="color: rgb(0, 51, 204);' % self.id
         html += 'display: none;">' 
         html += feedbackStr + '</div>\n'

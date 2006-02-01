@@ -88,37 +88,21 @@ class QuestionElement(object):
         Returns an XHTML string for viewing and previewing this question element
         """
         log.debug("renderView called")
-
-        #html  = "<script type=\"text/javascript\">\n"
-        #html += "<!--\n"
-        #html += """
-            #function showAnswer(id,isShow){
-                #if (isShow==1){
-                    #document.getElementById("s"+id).style.display = "block";
-                    #document.getElementById("hide"+id).style.display = "block";
-                    #document.getElementById("view"+id).style.display = "none";
-                #}else{
-                    #document.getElementById("s"+id).style.display = "none";
-                    #document.getElementById("hide"+id).style.display = "none";
-                    #document.getElementById("view"+id).style.display = "block";
-                #}
-            #}\n"""           
-        #html += "//-->\n"
-        #html += "</script>\n"
-        html  = "<b>%s</b><br/>" % _("Question")      
-        html += self.question.question  
-        html += '<div id="view%s" style="display:block;">' % self.id
-        html += '<input type="button" name="btnshow%s" ' % self.id
-        html += 'value ="Click here" ' 
-        html += 'onclick="showAnswer(\'%s\',1)"/></div>\n ' % self.id
-        html += '<div id="hide%s" style="display:none;">' % self.id
-        html += '<input type="button" name="btnhide%s" ' % self.id 
-        html += 'value="Hide" '
-        html += 'onclick="showAnswer(\'%s\',0)"/></div>\n ' % self.id
-        html += '<div id="s%s" class="feedback" style=" ' % self.id
-        html += 'display: none;">'
-        html += self.question.feedback
-        html += "</div><br/>\n"
+              
+        html  = self.question.question 
+        if self.question.feedback <> "":
+            html += '<div id="view%s" style="display:block;">' % self.id
+            html += '<input type="button" name="btnshow%s" ' % self.id
+            html += 'value ="Click here" ' 
+            html += 'onclick="showAnswer(\'%s\',1)"/></div>\n ' % self.id
+            html += '<div id="hide%s" style="display:none;">' % self.id
+            html += '<input type="button" name="btnhide%s" ' % self.id 
+            html += 'value="Hide" '
+            html += 'onclick="showAnswer(\'%s\',0)"/></div>\n ' % self.id
+            html += '<div id="s%s" class="feedback" style=" ' % self.id
+            html += 'display: none;">'
+            html += self.question.feedback
+            html += "</div><br/>\n"
         
         return html
     
