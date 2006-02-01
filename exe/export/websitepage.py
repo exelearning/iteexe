@@ -87,7 +87,7 @@ class WebsitePage(object):
         style = self.node.package.style
         html += '<div id=\"nodeDecoration\">'
         html += '<p id=\"nodeTitle\">'
-        html += escape(self.node.titleShort)
+        html += escape(self.node.titleLong)
         html += '</p></div>\n'
 
         for idevice in self.node.idevices:
