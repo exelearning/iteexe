@@ -170,7 +170,8 @@ class GalleryBlock(Block):
                 common.textInput("title"+self.id, self.idevice.title),
                 u'<p style="text-align: left;">',
                 u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
-                u'  <img alt="add images" style="vertical-align: text-bottom;" '
+                u'  <img alt="add images" title="select images to add to '
+                u' gallery" style="vertical-align: text-bottom;" '
                 u' src="/images/stock-insert-image.png" ' +
                 u' /> %s' % _(u"Add images"),
                 u'   </a>',
