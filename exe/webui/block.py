@@ -193,6 +193,8 @@ class Block(Renderable):
         """
         Returns an XHTML string for the edit buttons
         """
+        
+       
         html  = common.submitImage(u"done", self.id, 
                                    u"/images/stock-apply.png", 
                                    _(u"Done"),1)
@@ -247,7 +249,7 @@ class Block(Renderable):
                 html += self.tip 
                 html += u'<br/>\n'
                 
-            html += u'</div>\n'        
+            html += u'</div><br/><br/>\n'    
         
         return html
 

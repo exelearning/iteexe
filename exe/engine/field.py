@@ -467,6 +467,8 @@ class FlashField(Field):
         self.width         = 300
         self.height        = 250
         self.flashResource = None
+        self.fileInstruc   = x_("""Only select .swf (Flash Objects) for 
+this iDevice.""")
 
 
     def setFlash(self, flashPath):
@@ -520,6 +522,8 @@ class FlashMovieField(Field):
         self.width         = 300
         self.height        = 250
         self.flashResource = None
+        self.fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
+this iDevice.""")
 
 
     def setFlash(self, flashPath):

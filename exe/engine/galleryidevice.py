@@ -409,9 +409,9 @@ class GalleryIdevice(Idevice):
         Idevice.__init__(self, 
                          x_(u"Image Gallery"), 
                          x_(u"University of Auckland"), 
-                         x_(u"""Where you have a number of images that relate 
+                         x_(u"""<p>Where you have a number of images that relate 
 to each other or to a particular learning exercise you may wish to display 
-these in a gallery context rather then individually."""),
+these in a gallery context rather then individually.</p>"""),
                          x_(u"Use this Idevice if you have a lot of images to "
                              "show."),
                              "gallery",

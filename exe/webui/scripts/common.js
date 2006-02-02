@@ -287,13 +287,29 @@ function changeImageHeight(elementId) {
 }
 
 
-// Called by the user to provide a file name to add to the package
+// Called by the user to provide a flash movie file name to add to the package
 function addFlashMovie(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select an file", nsIFilePicker.modeOpen);
+    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
     fp.appendFilter("Flash Movie", "*.flv");
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        var path  = document.getElementById('path'+blockId);
+        path.type  = 'text';
+        path.value = fp.file.path;
+    }
+}
+
+// Called by the user to provide a flash file name to add to the package
+function addFlash(blockId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
+    fp.appendFilter("Flash Object", "*.swf");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -309,7 +325,7 @@ function addFile(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select an file", nsIFilePicker.modeOpen);
+    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {

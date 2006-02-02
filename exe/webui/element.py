@@ -443,7 +443,7 @@ class MagnifierElement(Element):
     def renderManifier(self, imageFile, magnifierFile):
         
         field = self.field
-        html  = u'<object classid="%s"' % self.id
+        html  = u'<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"'
         html += u'codebase="http://fpdownload.macromedia.com/pub/shockwave'
         html += u'/cabs/flash/swflash.cab#version=6,0,65,0"\n'
         html += u'width="%s" height="%s"' % (field.width, field.height)
@@ -452,18 +452,20 @@ class MagnifierElement(Element):
         html += u'<param name="movie" value="%s" />\n' % magnifierFile
         html += u'<param name="FlashVars" \n' 
         html += u'value="file=%s' % imageFile
-        html += u'&borderWidth=15&glassSize=%s' % self.field.glassSize
+        html += u'&borderWidth=12&glassSize=%s' % self.field.glassSize
         html += u'&initialZoomSize=%s%%' % field.initialZSize
-        html += u'&maxZoomSize=%s%% />\n' % field.maxZSize
+        html += u'&maxZoomSize=%s%%" />\n' % field.maxZSize
         html += u'<param name="quality" value="high" />\n'
         html += u'<param name="scale" value="noscale" />\n'
         html += u'<param name="salign" value="lt" />\n'
         html += u'<param name="bgcolor" value="#888888" />\n'
         html += u'<embed src="%s" \n' % magnifierFile
         html += u'quality="high" scale="noscale" salign="lt" bgcolor="#888888"\n'
+        width = int(field.width)+54
+        
         html += u'width="%s" height="%s" name="magnify%s" \n' %(field.width,
                                                     field.height, self.id)
-        html += u'FlashVars="file=%s&borderWidth=15&\n' % imageFile
+        html += u'FlashVars="file=%s&borderWidth=12&\n' % imageFile
         html += u'glassSize=%s&initialZoomSize=%s%%&maxZoomSize=%s%%" \n' \
                 %(field.glassSize, field.initialZSize, field.maxZSize)
         html += u'align="middle" allowScriptAccess="sameDomain" \n' 
@@ -743,8 +745,10 @@ class FlashElement(Element):
         html  = u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/><br/>\n"
-        html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
-        html += u'value="%s" />' % x_(u"Select a flash video")
+        html += common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" onclick="addFlash(\'%s\')"' % self.id
+        html += u'value="%s" />' % x_(u"Select Flash Object")
+        html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
         html += u"<br/>\n"
         html += u"<p><b>%s</b>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
@@ -759,8 +763,6 @@ class FlashElement(Element):
         html += u"value=\"%s\" " % self.field.height
         html += u"size=\"4\" />px\n"
         html += u"(%s) \n" % _(u"blank for original size")
-        
-        html += common.hiddenField("path"+self.id)
 
 
         return html
@@ -821,10 +823,12 @@ class FlashMovieElement(Element):
         log.debug("renderEdit")
 
         html  = u"<b>"+self.field.name+":</b><br/><br/>\n"
+        html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
-        html += u'value="%s" />' % x_(u"Select a flash video")
-        html += u"<br/><br/>\n"
-        html += common.hiddenField("path"+self.id)
+        html += u'value="%s" />\n' % x_(u"Select a flash video")
+        html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
+       # html += u"<br/>\n"
+       # html += common.hiddenField("path"+self.id)
 
 
         return html
