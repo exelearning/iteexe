@@ -30,6 +30,7 @@ from exe.engine.field    import TextField
 from exe.engine.path     import Path, TempDirPath
 from exe.engine.persist  import Persistable
 from nevow               import tags as T
+from nevow.stan          import raw
 from nevow.flat          import flatten
 from exe.engine.resource import Resource
 
@@ -79,8 +80,6 @@ class GalleryImage(Persistable):
         # Copy the original image
         package = self.parent.parentNode.package
 
-        import pdb
-        pdb.set_trace()
         self._imageResource = Resource(package, originalImagePath)
         self.parent.userResources.append(self._imageResource)
 
@@ -164,13 +163,52 @@ class GalleryImage(Persistable):
                  T.head[
                    T.title[self.caption],
                    T.style(type="text/css")[
-                    '@import url(/style/%s/content.css);' % styleDir]
+                    '@import url(/style/%s/content.css);' % styleDir],
+                   T.script[
+                     raw(
+                         '\n'.join([
+                             '  imgObj = new Image();',
+                             '  imgObj.src = "%s";' % \
+                                unicode(self._imageResource.storageName), 
+                             '',
+                             'function popupImage() {',
+                             '  var imgEle = document.getElementById("the_image");',
+                             '  var popupWin = window.open(imgObj.src, ',
+                             '               "%s",' % \
+                                self.caption.replace('"', r'\"'),
+                             '               width=imgObj.width,',
+                             '               height=imgObj.height,',
+                             '               status=0,',
+                             '               toolbar=0,',
+                             '               location=0,',
+                             '               menubar=0,',
+                             '               scrollbars=1);',
+                             '  popupWin.document.write(\'<html><head><title>' +
+                             ('%s<\/title><\/head>' % self.caption) +
+                             #'<body background="\'+imgObj.src+\'">'
+                             '<body>' +
+                             '<img src="\'+imgObj.src+\'"' +
+                             '     width="\'+imgObj.width+\'"' +
+                             '     height="\'+imgObj.height+\'"/>' +
+                             '<\/body><\/html>\');',
+                             '  popupWin.resizeBy(imgObj.width - ',
+                                   'popupWin.document.body.clientWidth, ',
+                                   'imgObj.height - ',
+                                   'popupWin.document.body.clientHeight);',
+                             '  popupWin.focus();',
+                             '}'])),
+                     ]
                  ],
                  T.body[
                    T.h1(id='nodeTitle')[self.caption],
                    T.p(align='center') [
-                     T.img(src=unicode(self._imageResource.storageName)),
-                   ],
+                     T.a(href="javascript:popupImage()")[
+                         T.img(id='the_image',
+                               src=unicode(self._imageResource.storageName),
+                               height="240",
+                               width="320")
+                     ]
+                   ]
                  ]
                ])
             htmlFile = open(htmlPath, 'wb')
