@@ -148,6 +148,21 @@ def submitButton(name, value, enabled=True):
     return html
 
 
+def button(name, value, enabled=True, cls=None, **kwparams):
+    """Adds a NON-submit button to a form"""
+    html  = u'<input type="button" name="%s" ' % name
+    html += u'value="%s" ' % value
+    if not enabled:
+        html += u' disabled'
+    if cls is not None:
+        html += u' class="%s"' % cls
+    for key, val in kwparams.items():
+	html += u'%s="%s"' % (key, val.replace('"', '\\"'))
+    html += u'/>\n'
+    return html
+
+
+
 def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     """
     Adds an image link which will trigger the javascript needed to
