@@ -1,8 +1,9 @@
+#: exe/idevices/forumblock.py:54
 msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-02 11:35+1300\n"
+"POT-Creation-Date: 2006-02-03 12:02+1300\n"
 "PO-Revision-Date: 2006-01-03 13:23+0200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: \n"
@@ -13,7 +14,7 @@ msgstr ""
 "X-Poedit-Country: ESTONIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: exe/webui/block.py:222
+#: exe/webui/block.py:224
 msgid "---Move To---"
 msgstr "---Liiguta---"
 
@@ -142,6 +143,13 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
+#: exe/engine/galleryidevice.py:432
+msgid ""
+"<p>Where you have a number of images that relate \n"
+"to each other or to a particular learning exercise you may wish to display \n"
+"these in a gallery context rather then individually.</p>"
+msgstr ""
+
 #: exe/webui/externalurlblock.py:66
 msgid "<strong>Frame Height:</strong> "
 msgstr "<strong>Freimi kõrgus:</strong>"
@@ -190,6 +198,10 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Pedagoogiline vihje võimaldab kirjeldada iDevice arendamisega kaasnevat pedagoogiat ja kasutust."
 
+#: exe/idevices/forumelement.py:78
+msgid "A single simple discussion"
+msgstr "Üks lihtne vestlus"
+
 #: exe/webui/editorpane.py:224
 msgid "Actions"
 msgstr "Tegevused"
@@ -230,11 +242,11 @@ msgstr "Lisa veel küsimusi"
 msgid "Add another option"
 msgstr "Lisa veel valikuid"
 
-#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:90
+#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:91
 msgid "Add another question"
 msgstr "Lisa veel küsimusi"
 
-#: exe/webui/galleryblock.py:175
+#: exe/webui/galleryblock.py:176
 msgid "Add images"
 msgstr "Lisa pilte"
 
@@ -322,6 +334,10 @@ msgstr "Autor"
 msgid "Button Caption"
 msgstr "Nupu tekst"
 
+#: exe/idevices/forumelement.py:105
+msgid "Can a student post to this forum?:"
+msgstr "Kas õpilane võib sellesse foorumisse postitada ?:"
+
 #: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:232
 msgid "Cancel"
 msgstr "Tühista"
@@ -342,13 +358,17 @@ msgstr "Pealkiri:"
 msgid "Case Study"
 msgstr "Juhtumi kirjeldus"
 
-#: exe/webui/element.py:610
+#: exe/webui/element.py:612
 msgid "Check Caps?"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:78
 msgid "Chinese Wikipedia Article"
 msgstr "Hiina Wikipedia artikkel"
+
+#: exe/idevices/forumidevice.py:107
+msgid "Choose a LMS"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
@@ -362,10 +382,10 @@ msgstr "Kliki siia"
 msgid "Click here"
 msgstr "Kliki siia"
 
-#: exe/webui/common.py:228 exe/webui/common.py:229
+#: exe/webui/common.py:243 exe/webui/common.py:244
 #: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
 #: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
-#: exe/webui/block.py:236 exe/webui/editorpane.py:328
+#: exe/webui/block.py:238 exe/webui/editorpane.py:328
 #: exe/webui/editorpane.py:329 exe/webui/editorpane.py:350
 msgid "Close"
 msgstr "Sulge"
@@ -408,7 +428,7 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 
-#: exe/webui/block.py:206 exe/webui/editorpage.py:176
+#: exe/webui/block.py:208 exe/webui/editorpage.py:176
 #: exe/webui/editorpage.py:180 exe/webui/editorelement.py:76
 #: exe/webui/editorelement.py:111 exe/webui/editorelement.py:149
 #: exe/webui/editorelement.py:184
@@ -477,11 +497,30 @@ msgstr "Kirjeldus"
 msgid "Description:"
 msgstr "Kirjeldus:"
 
-#: exe/webui/element.py:277 exe/webui/element.py:395 exe/webui/element.py:749
+#: exe/idevices/forumidevice.py:40
+#, fuzzy
+msgid "Discussion Activity"
+msgstr "Vestluse teema:"
+
+#: exe/idevices/forumelement.py:224
+#, fuzzy
+msgid "Discussion Topic/Thread:"
+msgstr "Vestluse teema"
+
+#: exe/idevices/forumidevice.py:141
+#, fuzzy
+msgid "Discussion topic/Thread"
+msgstr "Vestluse teema:"
+
+#: exe/idevices/forumelement.py:82
+msgid "Discussions and replies are allowed"
+msgstr "Vestlused ja vastused on lubatud"
+
+#: exe/webui/element.py:277 exe/webui/element.py:395 exe/webui/element.py:753
 msgid "Display as:"
 msgstr "Näita kui:"
 
-#: exe/webui/block.py:198 exe/webui/propertiespane.py:123
+#: exe/webui/block.py:200 exe/webui/propertiespane.py:123
 msgid "Done"
 msgstr "Tehtud"
 
@@ -504,11 +543,15 @@ msgstr "ERROR Element.renderEdit called directly"
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR Element.renderView called directly"
 
-#: exe/webui/block.py:311
+#: exe/webui/block.py:313
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/webui/block.py:320 exe/webui/editorpage.py:198
+#: exe/idevices/forumelement.py:79
+msgid "Each person posts one discussion"
+msgstr "Iga isik postitab ühe vestluse"
+
+#: exe/webui/block.py:322 exe/webui/editorpage.py:198
 #: exe/webui/editorpane.py:229
 msgid "Edit"
 msgstr "Redigeeri"
@@ -657,6 +700,14 @@ msgstr ""
 msgid "Error loading package \"%s\": %s"
 msgstr "Viga paketi  \"%s\" laadimisel: %s"
 
+#: exe/idevices/exampleidevice.py:44
+msgid "Example"
+msgstr ""
+
+#: exe/idevices/exampleidevice.py:39
+msgid "Example Example"
+msgstr ""
+
 #: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
 #: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
@@ -720,6 +771,24 @@ msgstr ""
 "Vastandlikult tavalisele pop-up aknale, millel võivad olla teatud kasutusproblemaatilised tagajärjedl\n"
 ", laeb see iDevice kohase info sisemisse freimi. Kasutada ainult online-sisu puhul."
 
+#: exe/idevices/forumelement.py:110
+msgid "Force everyone to be subscribed?:"
+msgstr "Sundida kõiki registreeruma?:"
+
+#: exe/idevices/forumelement.py:195
+#, fuzzy
+msgid "Forum Name:"
+msgstr "Foorumi nimi:"
+
+#: exe/idevices/forumelement.py:269 exe/idevices/forumelement.py:283
+#, fuzzy
+msgid "Forum Name: "
+msgstr "Foorumi nimi:"
+
+#: exe/idevices/forumelement.py:99
+msgid "Forum type:"
+msgstr "Foorumi tüüp:"
+
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
 msgstr "Vaba tekst"
@@ -732,15 +801,19 @@ msgstr "Prantsuse Wikipedia artikkel"
 msgid "German Wikipedia Article"
 msgstr "Saksa Wikipeedia artikkel"
 
-#: exe/webui/element.py:676
+#: exe/webui/element.py:678
 msgid "Get score"
 msgstr "Punktid"
 
-#: exe/webui/reflectionblock.py:94
+#: exe/idevices/forumelement.py:116
+msgid "Group mode:"
+msgstr "Grupi rezhiim:"
+
+#: exe/webui/reflectionblock.py:98 exe/idevices/forumelement.py:95
 msgid "Hide"
 msgstr "Peida"
 
-#: exe/webui/element.py:600
+#: exe/webui/element.py:602
 msgid "Hide/Show Word"
 msgstr "Peida / näita sõna"
 
@@ -765,7 +838,7 @@ msgstr "Ikoonid"
 msgid "Image"
 msgstr "Pilt"
 
-#: exe/engine/galleryidevice.py:358
+#: exe/engine/galleryidevice.py:430
 msgid "Image Gallery"
 msgstr "Pildigalerii"
 
@@ -782,19 +855,15 @@ msgstr "Pilt tekstiga"
 msgid "ImageMagnifier"
 msgstr ""
 
-#: exe/webui/optionelement.py:133
-msgid "Incorrect"
-msgstr "Väär"
-
 #: exe/webui/truefalseelement.py:177
 msgid "Incorrect!"
 msgstr "Väär !"
 
-#: exe/webui/element.py:615
+#: exe/webui/element.py:617
 msgid "Instant Marking?"
 msgstr ""
 
-#: exe/engine/clozeidevice.py:112 exe/webui/common.py:215
+#: exe/engine/clozeidevice.py:112 exe/webui/common.py:230
 msgid "Instructions"
 msgstr "Juhised"
 
@@ -802,9 +871,14 @@ msgstr "Juhised"
 msgid "Instructions For Learners"
 msgstr "Juhised õpilastele"
 
-#: exe/webui/common.py:220 exe/webui/common.py:223
+#: exe/webui/common.py:235 exe/webui/common.py:238
 msgid "Instructions for completion"
 msgstr "Juhendid läbimiseks"
+
+#: exe/idevices/forumelement.py:219
+#, fuzzy
+msgid "Introduction"
+msgstr "Juhised"
 
 #: exe/webui/wikipediablock.py:82
 msgid "Italian Wikipedia Article"
@@ -823,6 +897,14 @@ msgstr "Märge"
 msgid "Large"
 msgstr "Märge"
 
+#: exe/idevices/forumidevice.py:158
+msgid "Learning Management System"
+msgstr ""
+
+#: exe/idevices/forumelement.py:243
+msgid "Learning Management System:"
+msgstr ""
+
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
 #: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:78
 msgid "Left"
@@ -840,6 +922,10 @@ msgstr "Tase 2:"
 msgid "Level 3: "
 msgstr "Tase 3:"
 
+#: exe/idevices/forumidevice.py:161
+msgid "Link to the forum"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:97
 msgid "Load"
 msgstr "Lae"
@@ -856,11 +942,15 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
-#: exe/webui/block.py:220
+#: exe/idevices/forumelement.py:252
+msgid "Moodle"
+msgstr ""
+
+#: exe/webui/block.py:222
 msgid "Move Down"
 msgstr "Liigu alla"
 
-#: exe/webui/block.py:213
+#: exe/webui/block.py:215
 msgid "Move Up"
 msgstr "Liigu üles"
 
@@ -872,28 +962,51 @@ msgstr "Valikvastustega küsimus"
 msgid "Name"
 msgstr "Nimi"
 
+#: exe/idevices/forumelement.py:206
+msgid "New Forum"
+msgstr ""
+
+#: exe/idevices/forumelement.py:234
+#, fuzzy
+msgid "New Topic"
+msgstr "Teema"
+
 #: exe/webui/editorpage.py:203
 msgid "New iDevice"
 msgstr "Uus iDevice"
 
 #: exe/webui/imagemagnifierblock.py:116 exe/webui/imagemagnifierblock.py:120
+#: exe/idevices/forumelement.py:86
 msgid "No"
 msgstr "Ei"
 
-#: exe/webui/galleryblock.py:182 exe/webui/galleryblock.py:254
+#: exe/webui/galleryblock.py:183 exe/webui/galleryblock.py:255
 msgid "No Images Loaded"
 msgstr "Ei laetud ühtegi pilti"
 
-#: exe/engine/galleryidevice.py:125
+#: exe/engine/galleryidevice.py:126
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Pisipilt puudub kuna pildi vähendamine ebaõnnestus."
+
+#: exe/idevices/forumelement.py:83
+msgid "No discussions, but replies are allowed"
+msgstr "Vestlused pole lubatud, kuid vastused on lubatud"
+
+#: exe/idevices/forumelement.py:84
+msgid "No discussions, no replies"
+msgstr "Vestlused ega vastused pole lubatud"
 
 #: exe/webui/wikipediablock.py:101 exe/webui/editorpane.py:302
 msgid "No emphasis"
 msgstr "Puudub rõhuasetus"
 
+#: exe/idevices/forumelement.py:90
+msgid "No groups"
+msgstr "Gruppe pole"
+
 #: exe/webui/imagemagnifierblock.py:89 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashmovieblock.py:79 exe/webui/flashwithtextblock.py:80
+#: exe/idevices/forumelement.py:230
 msgid "None"
 msgstr "Puudub"
 
@@ -914,6 +1027,18 @@ msgstr ""
 "Eesmärgid kirjeldavad õppimise oodatud tulemus ja peaksid defineerima\n"
 "selle, mida õpilased on võimelised tegema peale õppetükkide läbimist."
 
+#: exe/engine/field.py:525
+msgid ""
+"Only select .flv (Flash Video Files) for \n"
+"this iDevice."
+msgstr ""
+
+#: exe/engine/field.py:470
+msgid ""
+"Only select .swf (Flash Objects) for \n"
+"this iDevice."
+msgstr ""
+
 #: exe/webui/optionelement.py:76 exe/webui/optionelement.py:82
 #: exe/webui/testquestionelement.py:98
 msgid "Option"
@@ -923,6 +1048,10 @@ msgstr "Valik"
 #, fuzzy
 msgid "Options"
 msgstr "Valik"
+
+#: exe/idevices/forumelement.py:256
+msgid "Other"
+msgstr ""
 
 #: exe/xului/outlinepane.py:236
 msgid "Outline"
@@ -934,7 +1063,7 @@ msgstr "Ülevaade"
 msgid "Package saved to: %s"
 msgstr "Pakett salvestatud siia: %s"
 
-#: exe/webui/block.py:227 exe/webui/editorpane.py:341
+#: exe/webui/block.py:229 exe/webui/editorpane.py:341
 msgid "Pedagogical Help"
 msgstr "Pedagoogiline abi"
 
@@ -942,13 +1071,35 @@ msgstr "Pedagoogiline abi"
 msgid "Pedagogical Tip"
 msgstr "Pedagoogiline vihje"
 
+#: exe/idevices/forumblock.py:131
+#, fuzzy
+msgid "Please enter a discussion topic name.\n"
+msgstr "Palun sisesta iDevice nimi."
+
+#: exe/idevices/forumblock.py:117
+#, fuzzy
+msgid "Please enter a name for the forum\n"
+msgstr "Palun sisesta iDevice nimi."
+
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
 msgstr "Palun sisesta iDevice nimi."
 
+#: exe/idevices/forumblock.py:126
+msgid "Please select LMS.\n"
+msgstr ""
+
+#: exe/idevices/forumelement.py:248
+msgid "Please select a LMS"
+msgstr ""
+
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Palun vali iga küsimuse jaoks õige vastus."
+
+#: exe/idevices/forumblock.py:112
+msgid "Please select a forum.\n"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:83
 msgid "Polish Wikipedia Article"
@@ -1030,7 +1181,7 @@ msgid ""
 "situation."
 msgstr ""
 
-#: exe/webui/block.py:241 exe/webui/editorpane.py:292
+#: exe/webui/block.py:243 exe/webui/editorpane.py:292
 msgid "Purpose"
 msgstr "Eesmärk"
 
@@ -1038,8 +1189,13 @@ msgstr "Eesmärk"
 msgid "Put instructions for learners here"
 msgstr "Sisesta siia instruktsioonid õpilastele"
 
-#: exe/webui/questionelement.py:108 exe/webui/truefalseelement.py:78
+#: exe/webui/truefalseelement.py:78
 msgid "Question"
+msgstr "Küsimus"
+
+#: exe/webui/casestudyblock.py:84
+#, fuzzy
+msgid "Question(s)"
 msgstr "Küsimus"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
@@ -1095,7 +1251,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Mõtisklev küsimus:"
 
-#: exe/webui/element.py:695
+#: exe/webui/element.py:697
 msgid "Restart"
 msgstr ""
 
@@ -1128,15 +1284,25 @@ msgstr "Salvesta kui"
 msgid "Section"
 msgstr "Peatükk"
 
+#: exe/webui/element.py:750
+#, fuzzy
+msgid "Select Flash Object"
+msgstr "Vali Flash-fail"
+
 #: exe/webui/preferencespage.py:81
 msgid "Select Language"
 msgstr "Vali keel"
+
+#: exe/idevices/forumelement.py:202
+#, fuzzy
+msgid "Select a Forum"
+msgstr "Vali pilt"
 
 #: exe/webui/attachmentblock.py:77
 msgid "Select a file"
 msgstr "Vali fail"
 
-#: exe/webui/element.py:747 exe/webui/element.py:825
+#: exe/webui/element.py:828
 msgid "Select a flash video"
 msgstr "Vali Flash-video"
 
@@ -1165,16 +1331,24 @@ msgid ""
 "on the radio button."
 msgstr ""
 
-#: exe/webui/element.py:700
+#: exe/idevices/forumelement.py:91
+msgid "Separate groups"
+msgstr "Erista grupid"
+
+#: exe/idevices/forumelement.py:94
+msgid "Show"
+msgstr "Näita"
+
+#: exe/webui/element.py:702
 #, fuzzy
 msgid "Show Answers"
 msgstr "Näita / puhasta vastused"
 
-#: exe/webui/element.py:686
+#: exe/webui/element.py:688
 msgid "Show/Clear Answers"
 msgstr "Näita / puhasta vastused"
 
-#: exe/webui/element.py:682
+#: exe/webui/element.py:684
 msgid "Show/Hide Feedback"
 msgstr "Näita / peida tagasiside"
 
@@ -1209,11 +1383,15 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Hispaania Wikipedia artikkel"
 
+#: exe/idevices/forumelement.py:80
+msgid "Standard forum for general use"
+msgstr "Foorum üldiseks kasutamiseks"
+
 #: exe/webui/casestudyblock.py:81
 msgid "Story:"
 msgstr "Lugu:"
 
-#: exe/webui/element.py:605
+#: exe/webui/element.py:607
 msgid "Strict Marking?"
 msgstr ""
 
@@ -1221,7 +1399,7 @@ msgstr ""
 msgid "Strong emphasis"
 msgstr "Tugev rõhusasetus"
 
-#: exe/webui/element.py:690
+#: exe/webui/element.py:692
 #, fuzzy
 msgid "Submit"
 msgstr "Saada vastus"
@@ -1307,15 +1485,30 @@ msgstr ""
 msgid "This is a free text field general learning content can be entered."
 msgstr "See on vaba tekstiväli õppematerjali sisule."
 
+#: exe/idevices/exampleidevice.py:45
+#, fuzzy
+msgid "This is a free text field."
+msgstr "See väli ei ole kohustuslik."
+
+#: exe/idevices/exampleidevice.py:41
+msgid ""
+"This is an example of a user created\n"
+"iDevice plugin."
+msgstr ""
+
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
 msgstr "See väli ei ole kohustuslik."
 
-#: exe/webui/block.py:201
+#: exe/webui/block.py:203
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr "See kustutab iDevice.\\nKas soovid tõesti seda teha?"
 
-#: exe/webui/block.py:245
+#: exe/idevices/forumelement.py:339 exe/idevices/forumelement.py:351
+msgid "Thread: "
+msgstr ""
+
+#: exe/webui/block.py:247
 msgid "Tip:"
 msgstr "Vihje:"
 
@@ -1350,6 +1543,15 @@ msgstr ""
 "Tõene/Väär küsimused esitavad seisukoha, kus \n"
 "õpilane peab otsustama selle tõesuse üle. Seda tüüpi küsimused töötavad \n"
 " hästi nii faktuaalse kui ka sellise informatsiooni puhul, mida võib mõlemat pidi mõista."
+
+#: exe/idevices/forumidevice.py:145
+#, fuzzy
+msgid "Type a discussion topic here."
+msgstr "Vestluse teema:"
+
+#: exe/idevices/forumidevice.py:101
+msgid "Type a forum name here"
+msgstr ""
 
 #: exe/engine/multichoiceidevice.py:96
 #, fuzzy
@@ -1404,7 +1606,7 @@ msgid "Unit"
 msgstr "Osa"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:359 exe/engine/wikipediaidevice.py:52
+#: exe/engine/galleryidevice.py:431 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:87
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:39
 #: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
@@ -1412,7 +1614,8 @@ msgstr "Osa"
 #: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
 #: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:222
 #: exe/engine/idevicestore.py:278 exe/engine/idevicestore.py:306
-#: exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:328 exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Aucklandi Ülikool"
 
@@ -1440,7 +1643,7 @@ msgstr ""
 "lugemismaterjalides kaetud punktidest, või alguspunktina materjalide edasisele \n"
 "analüüsile, esitades debatti algatava küsimuse või seiuskoha. "
 
-#: exe/engine/galleryidevice.py:363
+#: exe/engine/galleryidevice.py:435
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Kasuta seda iDevice'i kui on vaja näidata palju pilte."
 
@@ -1450,6 +1653,14 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+
+#: exe/idevices/forumelement.py:92
+msgid "Visible groups"
+msgstr "Nähtavad grupid"
+
+#: exe/idevices/forumelement.py:121
+msgid "Visible to students:"
+msgstr "Nähtav õpilastele:"
 
 #: exe/engine/idevicestore.py:369
 msgid "What to read"
@@ -1479,13 +1690,6 @@ msgstr ""
 "<li> Segavad vastused peaksid olema väärad kuid mõeldavad</li>\n"
 "</ul>\n"
 
-#: exe/engine/galleryidevice.py:360
-msgid ""
-"Where you have a number of images that relate \n"
-"to each other or to a particular learning exercise you may wish to display \n"
-"these in a gallery context rather then individually."
-msgstr ""
-
 #: exe/webui/wikipediablock.py:89
 msgid "Wikibooks Article"
 msgstr "Wikibooks artikkel"
@@ -1494,17 +1698,37 @@ msgstr "Wikibooks artikkel"
 msgid "Wikipedia Article"
 msgstr "Wikipedia artikkel"
 
+#: exe/webui/optionelement.py:133
+msgid "Wrong"
+msgstr ""
+
 #: exe/webui/imagemagnifierblock.py:113
 msgid "Yes"
 msgstr ""
+
+#: exe/idevices/forumelement.py:87
+msgid "Yes, forever"
+msgstr "Jah, alati"
+
+#: exe/idevices/forumelement.py:88
+msgid "Yes, initially"
+msgstr "Jah, algselt"
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Sinu uus iDevice tekib iDevice-ribale selle pealkirjaga. See on kohustuslik väli ja kui üritatakse lisada iDevice ilma nimeta, tehakse sellekohane meeldetuletus."
 
-#: exe/webui/element.py:291 exe/webui/element.py:409 exe/webui/element.py:761
+#: exe/webui/element.py:291 exe/webui/element.py:409 exe/webui/element.py:765
 msgid "blank for original size"
 msgstr "originaalsuurusele tühi"
+
+#: exe/idevices/forumblock.py:122
+msgid "duplicate forum name.\n"
+msgstr ""
+
+#: exe/idevices/forumblock.py:135
+msgid "duplicate topic name."
+msgstr ""
 
 #: exe/export/scormexport.py:241 exe/export/imsexport.py:176
 msgid "eXe"
@@ -1738,6 +1962,9 @@ msgstr "Autorlus"
 msgid "Properties"
 msgstr "Omadused"
 
+#~ msgid "Incorrect"
+#~ msgstr "Väär"
+
 #~ msgid "<p>An activity can be described as atask or set of tasks a learner must complete. Provide a clear statement of the task and consider any conditions that may help or hinder the learner in the performance of the task.</p><p>The general task is the most flexible iDevice because authors can specify the sub-type or classification. It is used to signal a learning \"event\". In other words when learners are expected to do something. For example:<ol><li> A written activity when learners must write something down (notes or a list)</li><li>An application activity, where learners are expected to apply their knowledge to a particular situation</li><li>Conceptual activity, where learners are asked to think about something. Although the \"look and feel\" associated with the presentation of this iDevice on a web page will be the same for each instance or type, learners will be able to distinguish among different types by the heading the author provides for the particular instance of this iDevice. </li></ol></p>"
 #~ msgstr "<p>Tegevust võib kirjeldada kui ülesannet või ülesannete hulka, mille õpilane peab läbima. Anna ülesande selge püstitud ja pööra tähelepanu kõikidele aspektidele, mis võivad õpilast abistada või takistada ülesande jõudsal lahendamisel.</p><p>Üldine ülesanne on kõige paindlikum iDevice kuna autorid saavad spetsifitseerida alamtüübi või klassifikatsiooni. Seda kasutakse õppe \"sündmuse\" esitamiseks. Ehk siis, kui õpilastel oodatakse mingit tegevust. Näiteks:<ol><li>Kirjalik tegevus, kus õpilased peavad midagi (märkmed, nimekiri, jne) üles kirjutama.</li><li>Rakenduslik tegevus, kus õpilased peavad oma teadmisi rakendama teatud situatsioonis.</li><li>Kontseptuaalne tegevus, kus õpilastel palutakse millegi üle mõelda. Kuigi selle iDevice-i esitamisega seotud välimus on sama kõikide tüüpide korral, on õpilastel võimalik neid tüüpe eristada autori poolt lisatud pealkirjaga iga üksiku iDevice-i jaoks.</li></ol></p>"
 
@@ -1795,9 +2022,6 @@ msgstr "Omadused"
 #~ msgid "Provide instructions to learners on what they must do to complete the cloze exercise."
 #~ msgstr "Esita õpilastele juhendid cloze-ülesande läbimiseks."
 
-#~ msgid "Select a flash file"
-#~ msgstr "Vali Flash-fail"
-
 #~ msgid ""
 #~ "The Wikipedia iDevice takes a copy of an\n"
 #~ "article from en.wikipedia.org, including copying the associated images."
@@ -1817,29 +2041,8 @@ msgstr "Omadused"
 #~ msgid "Response:"
 #~ msgstr "Vastus:"
 
-#~ msgid "A single simple discussion"
-#~ msgstr "Üks lihtne vestlus"
-
 #~ msgid "Auto Completion"
 #~ msgstr "Automaatne täitmine"
-
-#~ msgid "Can a student post to this forum?:"
-#~ msgstr "Kas õpilane võib sellesse foorumisse postitada ?:"
-
-#~ msgid "Discussion Topic"
-#~ msgstr "Vestluse teema"
-
-#~ msgid "Discussion topic:"
-#~ msgstr "Vestluse teema:"
-
-#~ msgid "Discussions and replies are allowed"
-#~ msgstr "Vestlused ja vastused on lubatud"
-
-#~ msgid "Each person posts one discussion"
-#~ msgstr "Iga isik postitab ühe vestluse"
-
-#~ msgid "Force everyone to be subscribed?:"
-#~ msgstr "Sundida kõiki registreeruma?:"
 
 #~ msgid "Forum Discussion"
 #~ msgstr "Foorumi vestlus"
@@ -1847,50 +2050,11 @@ msgstr "Omadused"
 #~ msgid "Forum introduction:"
 #~ msgstr "Foorumi sissejuhatus:"
 
-#~ msgid "Forum name:"
-#~ msgstr "Foorumi nimi:"
-
-#~ msgid "Forum type:"
-#~ msgstr "Foorumi tüüp:"
-
-#~ msgid "Group mode:"
-#~ msgstr "Grupi rezhiim:"
-
 #~ msgid "Message:"
 #~ msgstr "Teade:"
-
-#~ msgid "No discussions, but replies are allowed"
-#~ msgstr "Vestlused pole lubatud, kuid vastused on lubatud"
-
-#~ msgid "No discussions, no replies"
-#~ msgstr "Vestlused ega vastused pole lubatud"
-
-#~ msgid "No groups"
-#~ msgstr "Gruppe pole"
-
-#~ msgid "Separate groups"
-#~ msgstr "Erista grupid"
-
-#~ msgid "Show"
-#~ msgstr "Näita"
-
-#~ msgid "Standard forum for general use"
-#~ msgstr "Foorum üldiseks kasutamiseks"
 
 #~ msgid "Subject"
 #~ msgstr "Teema:"
 
 #~ msgid "Subject:"
 #~ msgstr "Teema:"
-
-#~ msgid "Visible groups"
-#~ msgstr "Nähtavad grupid"
-
-#~ msgid "Visible to students:"
-#~ msgstr "Nähtav õpilastele:"
-
-#~ msgid "Yes, forever"
-#~ msgstr "Jah, alati"
-
-#~ msgid "Yes, initially"
-#~ msgstr "Jah, algselt"

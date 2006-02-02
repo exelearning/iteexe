@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: exe/idevices/forumblock.py:54
 msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-02 11:35+1300\n"
+"POT-Creation-Date: 2006-02-03 12:02+1300\n"
 "PO-Revision-Date: 2005-12-30 17:02+0100\n"
 "Last-Translator: L. Vandijck <l.vandijck@collegemaaseik.be>\n"
 "Language-Team: Dutch <matthew@exelearning.org>\n"
@@ -18,7 +19,7 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: exe/webui/block.py:222
+#: exe/webui/block.py:224
 msgid "---Move To---"
 msgstr "---Verplaats naar---"
 
@@ -148,6 +149,13 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
+#: exe/engine/galleryidevice.py:432
+msgid ""
+"<p>Where you have a number of images that relate \n"
+"to each other or to a particular learning exercise you may wish to display \n"
+"these in a gallery context rather then individually.</p>"
+msgstr ""
+
 #: exe/webui/externalurlblock.py:66
 msgid "<strong>Frame Height:</strong> "
 msgstr "<strong>Framehoogte:</strong> "
@@ -199,6 +207,10 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "In een pedagogische tip beschrijft u het opzet van het iDevice en de pedagogische idee erachter."
 
+#: exe/idevices/forumelement.py:78
+msgid "A single simple discussion"
+msgstr "Een enkele discussie"
+
 #: exe/webui/editorpane.py:224
 msgid "Actions"
 msgstr "Acties"
@@ -239,11 +251,11 @@ msgstr "Nieuwe vraag toevoegen"
 msgid "Add another option"
 msgstr "Nieuw alternatief toevoegen"
 
-#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:90
+#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:91
 msgid "Add another question"
 msgstr "Nieuwe vraag toevoegen"
 
-#: exe/webui/galleryblock.py:175
+#: exe/webui/galleryblock.py:176
 msgid "Add images"
 msgstr "Afbeeldingen toevoegen"
 
@@ -335,6 +347,10 @@ msgstr "Auteur"
 msgid "Button Caption"
 msgstr "Opschrift knop"
 
+#: exe/idevices/forumelement.py:105
+msgid "Can a student post to this forum?:"
+msgstr "Kan student bijdrage posten op dit forum?"
+
 #: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:232
 msgid "Cancel"
 msgstr "Annuleren"
@@ -355,13 +371,17 @@ msgstr "Bijschrift:"
 msgid "Case Study"
 msgstr "Gevalstudie"
 
-#: exe/webui/element.py:610
+#: exe/webui/element.py:612
 msgid "Check Caps?"
 msgstr ""
 
 #: exe/webui/wikipediablock.py:78
 msgid "Chinese Wikipedia Article"
 msgstr "Chinees Wikipedia-artikel"
+
+#: exe/idevices/forumidevice.py:107
+msgid "Choose a LMS"
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
@@ -375,10 +395,10 @@ msgstr "Klik hier"
 msgid "Click here"
 msgstr "Klik hier"
 
-#: exe/webui/common.py:228 exe/webui/common.py:229
+#: exe/webui/common.py:243 exe/webui/common.py:244
 #: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
 #: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
-#: exe/webui/block.py:236 exe/webui/editorpane.py:328
+#: exe/webui/block.py:238 exe/webui/editorpane.py:328
 #: exe/webui/editorpane.py:329 exe/webui/editorpane.py:350
 msgid "Close"
 msgstr "Sluiten"
@@ -423,7 +443,7 @@ msgstr ""
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/block.py:206 exe/webui/editorpage.py:176
+#: exe/webui/block.py:208 exe/webui/editorpage.py:176
 #: exe/webui/editorpage.py:180 exe/webui/editorelement.py:76
 #: exe/webui/editorelement.py:111 exe/webui/editorelement.py:149
 #: exe/webui/editorelement.py:184
@@ -492,11 +512,30 @@ msgstr "Beschrijving"
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: exe/webui/element.py:277 exe/webui/element.py:395 exe/webui/element.py:749
+#: exe/idevices/forumidevice.py:40
+#, fuzzy
+msgid "Discussion Activity"
+msgstr "Discussie-onderwerp:"
+
+#: exe/idevices/forumelement.py:224
+#, fuzzy
+msgid "Discussion Topic/Thread:"
+msgstr "Discussie-onderwerp"
+
+#: exe/idevices/forumidevice.py:141
+#, fuzzy
+msgid "Discussion topic/Thread"
+msgstr "Discussie-onderwerp:"
+
+#: exe/idevices/forumelement.py:82
+msgid "Discussions and replies are allowed"
+msgstr "Nieuwe discussies en antwoorden toegelaten"
+
+#: exe/webui/element.py:277 exe/webui/element.py:395 exe/webui/element.py:753
 msgid "Display as:"
 msgstr "Toon als:"
 
-#: exe/webui/block.py:198 exe/webui/propertiespane.py:123
+#: exe/webui/block.py:200 exe/webui/propertiespane.py:123
 msgid "Done"
 msgstr "Klaar"
 
@@ -519,11 +558,15 @@ msgstr "FOUT Element.renderEdit rechtstreeks aangeroepen"
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "FOUT Element.renderView rechtstreeks aangeroepen"
 
-#: exe/webui/block.py:311
+#: exe/webui/block.py:313
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "FOUT Block.renderViewContent rechtstreeks aangeroepen"
 
-#: exe/webui/block.py:320 exe/webui/editorpage.py:198
+#: exe/idevices/forumelement.py:79
+msgid "Each person posts one discussion"
+msgstr "Ieder lid ken slechts een discussie starten"
+
+#: exe/webui/block.py:322 exe/webui/editorpage.py:198
 #: exe/webui/editorpane.py:229
 msgid "Edit"
 msgstr "Bewerken"
@@ -674,6 +717,14 @@ msgstr ""
 msgid "Error loading package \"%s\": %s"
 msgstr "Fout bij laden pakket \"%s\": %s"
 
+#: exe/idevices/exampleidevice.py:44
+msgid "Example"
+msgstr ""
+
+#: exe/idevices/exampleidevice.py:39
+msgid "Example Example"
+msgstr ""
+
 #: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
 #: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
@@ -737,6 +788,24 @@ msgstr ""
 "Het iDevice gebruikt geen extra pop-up-venster maar toont de pagina in een frame.\n"
 "Alleen te gebruiken als de opgegeven inhoud ook effectief on line is."
 
+#: exe/idevices/forumelement.py:110
+msgid "Force everyone to be subscribed?:"
+msgstr "Moet iedereen lid zijn?"
+
+#: exe/idevices/forumelement.py:195
+#, fuzzy
+msgid "Forum Name:"
+msgstr "Forumnaam:"
+
+#: exe/idevices/forumelement.py:269 exe/idevices/forumelement.py:283
+#, fuzzy
+msgid "Forum Name: "
+msgstr "Forumnaam:"
+
+#: exe/idevices/forumelement.py:99
+msgid "Forum type:"
+msgstr "Forumtype:"
+
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
 msgstr "Vrije tekst"
@@ -749,15 +818,19 @@ msgstr "Frans Wikipedia-artikel"
 msgid "German Wikipedia Article"
 msgstr "Duits Wikipedia-artikel"
 
-#: exe/webui/element.py:676
+#: exe/webui/element.py:678
 msgid "Get score"
 msgstr "Bepaal de score"
 
-#: exe/webui/reflectionblock.py:94
+#: exe/idevices/forumelement.py:116
+msgid "Group mode:"
+msgstr "Groepsmodus:"
+
+#: exe/webui/reflectionblock.py:98 exe/idevices/forumelement.py:95
 msgid "Hide"
 msgstr "Verbegen"
 
-#: exe/webui/element.py:600
+#: exe/webui/element.py:602
 msgid "Hide/Show Word"
 msgstr "Toon/verberg woord"
 
@@ -782,7 +855,7 @@ msgstr "Pictogrammen"
 msgid "Image"
 msgstr "Afbeelding"
 
-#: exe/engine/galleryidevice.py:358
+#: exe/engine/galleryidevice.py:430
 msgid "Image Gallery"
 msgstr "Afbeeldingengalerij"
 
@@ -799,19 +872,15 @@ msgstr "Afbeelding met tekst"
 msgid "ImageMagnifier"
 msgstr ""
 
-#: exe/webui/optionelement.py:133
-msgid "Incorrect"
-msgstr "Verkeerd"
-
 #: exe/webui/truefalseelement.py:177
 msgid "Incorrect!"
 msgstr "Verkeerd!"
 
-#: exe/webui/element.py:615
+#: exe/webui/element.py:617
 msgid "Instant Marking?"
 msgstr ""
 
-#: exe/engine/clozeidevice.py:112 exe/webui/common.py:215
+#: exe/engine/clozeidevice.py:112 exe/webui/common.py:230
 msgid "Instructions"
 msgstr "Aanwijzingen"
 
@@ -819,9 +888,14 @@ msgstr "Aanwijzingen"
 msgid "Instructions For Learners"
 msgstr "Aanwijzigen voor studenten"
 
-#: exe/webui/common.py:220 exe/webui/common.py:223
+#: exe/webui/common.py:235 exe/webui/common.py:238
 msgid "Instructions for completion"
 msgstr "Aanwijzingen voor invullen"
+
+#: exe/idevices/forumelement.py:219
+#, fuzzy
+msgid "Introduction"
+msgstr "Aanwijzingen"
 
 #: exe/webui/wikipediablock.py:82
 msgid "Italian Wikipedia Article"
@@ -840,6 +914,14 @@ msgstr "Label"
 msgid "Large"
 msgstr "Label"
 
+#: exe/idevices/forumidevice.py:158
+msgid "Learning Management System"
+msgstr ""
+
+#: exe/idevices/forumelement.py:243
+msgid "Learning Management System:"
+msgstr ""
+
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
 #: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:78
 msgid "Left"
@@ -857,6 +939,10 @@ msgstr "Niveau 2:"
 msgid "Level 3: "
 msgstr "Niveau 3:"
 
+#: exe/idevices/forumidevice.py:161
+msgid "Link to the forum"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:97
 msgid "Load"
 msgstr "Laden"
@@ -873,11 +959,15 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
-#: exe/webui/block.py:220
+#: exe/idevices/forumelement.py:252
+msgid "Moodle"
+msgstr ""
+
+#: exe/webui/block.py:222
 msgid "Move Down"
 msgstr "Omlaag"
 
-#: exe/webui/block.py:213
+#: exe/webui/block.py:215
 msgid "Move Up"
 msgstr "Omhoog"
 
@@ -889,28 +979,51 @@ msgstr "Meerkeuzevraag"
 msgid "Name"
 msgstr "Naam"
 
+#: exe/idevices/forumelement.py:206
+msgid "New Forum"
+msgstr ""
+
+#: exe/idevices/forumelement.py:234
+#, fuzzy
+msgid "New Topic"
+msgstr "Topic"
+
 #: exe/webui/editorpage.py:203
 msgid "New iDevice"
 msgstr "Nieuw iDevice"
 
 #: exe/webui/imagemagnifierblock.py:116 exe/webui/imagemagnifierblock.py:120
+#: exe/idevices/forumelement.py:86
 msgid "No"
 msgstr "Nee"
 
-#: exe/webui/galleryblock.py:182 exe/webui/galleryblock.py:254
+#: exe/webui/galleryblock.py:183 exe/webui/galleryblock.py:255
 msgid "No Images Loaded"
 msgstr "Geen afbeeldingen geladen"
 
-#: exe/engine/galleryidevice.py:125
+#: exe/engine/galleryidevice.py:126
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Geen miniatuur: kon afbeelding niet verkleinen"
+
+#: exe/idevices/forumelement.py:83
+msgid "No discussions, but replies are allowed"
+msgstr "Geen discussies, wel antwoorden toegestaan"
+
+#: exe/idevices/forumelement.py:84
+msgid "No discussions, no replies"
+msgstr "Geen discussies en geen antwoorden toegestaan"
 
 #: exe/webui/wikipediablock.py:101 exe/webui/editorpane.py:302
 msgid "No emphasis"
 msgstr "Geen nadruk"
 
+#: exe/idevices/forumelement.py:90
+msgid "No groups"
+msgstr "Geen groepen"
+
 #: exe/webui/imagemagnifierblock.py:89 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashmovieblock.py:79 exe/webui/flashwithtextblock.py:80
+#: exe/idevices/forumelement.py:230
 msgid "None"
 msgstr "Geen"
 
@@ -932,6 +1045,18 @@ msgstr ""
 "Deze geven aan wat de student heeft bijgeleerd na het voltooien van de\n"
 "leeropdrachten."
 
+#: exe/engine/field.py:525
+msgid ""
+"Only select .flv (Flash Video Files) for \n"
+"this iDevice."
+msgstr ""
+
+#: exe/engine/field.py:470
+msgid ""
+"Only select .swf (Flash Objects) for \n"
+"this iDevice."
+msgstr ""
+
 #: exe/webui/optionelement.py:76 exe/webui/optionelement.py:82
 #: exe/webui/testquestionelement.py:98
 msgid "Option"
@@ -941,6 +1066,10 @@ msgstr "Alternatief"
 #, fuzzy
 msgid "Options"
 msgstr "Alternatief"
+
+#: exe/idevices/forumelement.py:256
+msgid "Other"
+msgstr ""
 
 #: exe/xului/outlinepane.py:236
 msgid "Outline"
@@ -952,7 +1081,7 @@ msgstr "Schema"
 msgid "Package saved to: %s"
 msgstr "Pakket opgeslagen naar: %s"
 
-#: exe/webui/block.py:227 exe/webui/editorpane.py:341
+#: exe/webui/block.py:229 exe/webui/editorpane.py:341
 msgid "Pedagogical Help"
 msgstr "Pedagogische hulp"
 
@@ -960,13 +1089,35 @@ msgstr "Pedagogische hulp"
 msgid "Pedagogical Tip"
 msgstr "Pedagogische tip"
 
+#: exe/idevices/forumblock.py:131
+#, fuzzy
+msgid "Please enter a discussion topic name.\n"
+msgstr "Geef naam iDevice op"
+
+#: exe/idevices/forumblock.py:117
+#, fuzzy
+msgid "Please enter a name for the forum\n"
+msgstr "Geef naam iDevice op"
+
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
 msgstr "Geef naam iDevice op"
 
+#: exe/idevices/forumblock.py:126
+msgid "Please select LMS.\n"
+msgstr ""
+
+#: exe/idevices/forumelement.py:248
+msgid "Please select a LMS"
+msgstr ""
+
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Selecteer een juist antwoord voor iedere vraag"
+
+#: exe/idevices/forumblock.py:112
+msgid "Please select a forum.\n"
+msgstr ""
 
 #: exe/webui/wikipediablock.py:83
 msgid "Polish Wikipedia Article"
@@ -1049,7 +1200,7 @@ msgid ""
 "situation."
 msgstr ""
 
-#: exe/webui/block.py:241 exe/webui/editorpane.py:292
+#: exe/webui/block.py:243 exe/webui/editorpane.py:292
 msgid "Purpose"
 msgstr "Doelstelling"
 
@@ -1057,8 +1208,13 @@ msgstr "Doelstelling"
 msgid "Put instructions for learners here"
 msgstr "Geef aanwijzingen voor de studenten"
 
-#: exe/webui/questionelement.py:108 exe/webui/truefalseelement.py:78
+#: exe/webui/truefalseelement.py:78
 msgid "Question"
+msgstr "Vraag"
+
+#: exe/webui/casestudyblock.py:84
+#, fuzzy
+msgid "Question(s)"
 msgstr "Vraag"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
@@ -1114,7 +1270,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Reflectieve vraag:"
 
-#: exe/webui/element.py:695
+#: exe/webui/element.py:697
 msgid "Restart"
 msgstr ""
 
@@ -1147,15 +1303,25 @@ msgstr "Opslaan als"
 msgid "Section"
 msgstr "Sectie"
 
+#: exe/webui/element.py:750
+#, fuzzy
+msgid "Select Flash Object"
+msgstr "Kies een Flash-bestand"
+
 #: exe/webui/preferencespage.py:81
 msgid "Select Language"
 msgstr "Kies de taal"
+
+#: exe/idevices/forumelement.py:202
+#, fuzzy
+msgid "Select a Forum"
+msgstr "Kies een afbeelding"
 
 #: exe/webui/attachmentblock.py:77
 msgid "Select a file"
 msgstr "Kies een bestand"
 
-#: exe/webui/element.py:747 exe/webui/element.py:825
+#: exe/webui/element.py:828
 #, fuzzy
 msgid "Select a flash video"
 msgstr "Kies een Flash-film"
@@ -1185,16 +1351,24 @@ msgid ""
 "on the radio button."
 msgstr ""
 
-#: exe/webui/element.py:700
+#: exe/idevices/forumelement.py:91
+msgid "Separate groups"
+msgstr "Gescheiden groepen"
+
+#: exe/idevices/forumelement.py:94
+msgid "Show"
+msgstr "Tonen"
+
+#: exe/webui/element.py:702
 #, fuzzy
 msgid "Show Answers"
 msgstr "Toon/wis antwoorden"
 
-#: exe/webui/element.py:686
+#: exe/webui/element.py:688
 msgid "Show/Clear Answers"
 msgstr "Toon/wis antwoorden"
 
-#: exe/webui/element.py:682
+#: exe/webui/element.py:684
 msgid "Show/Hide Feedback"
 msgstr "Toon/verberg feedback"
 
@@ -1229,11 +1403,15 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Spaans Wikipedia-artikel"
 
+#: exe/idevices/forumelement.py:80
+msgid "Standard forum for general use"
+msgstr "Standaardforum voor algemeen gebruik"
+
 #: exe/webui/casestudyblock.py:81
 msgid "Story:"
 msgstr "Verhaal:"
 
-#: exe/webui/element.py:605
+#: exe/webui/element.py:607
 msgid "Strict Marking?"
 msgstr ""
 
@@ -1241,7 +1419,7 @@ msgstr ""
 msgid "Strong emphasis"
 msgstr "Sterke nadruk"
 
-#: exe/webui/element.py:690
+#: exe/webui/element.py:692
 #, fuzzy
 msgid "Submit"
 msgstr "Verzend antwoord"
@@ -1324,15 +1502,30 @@ msgstr ""
 msgid "This is a free text field general learning content can be entered."
 msgstr "Vrij tekstveld om algemene leerinhoud in te voeren"
 
+#: exe/idevices/exampleidevice.py:45
+#, fuzzy
+msgid "This is a free text field."
+msgstr "Dit veld is facultatief."
+
+#: exe/idevices/exampleidevice.py:41
+msgid ""
+"This is an example of a user created\n"
+"iDevice plugin."
+msgstr ""
+
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
 msgstr "Dit veld is facultatief."
 
-#: exe/webui/block.py:201
+#: exe/webui/block.py:203
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr "iDevice wordt verwijderd.\\nWeet u dit zeker?"
 
-#: exe/webui/block.py:245
+#: exe/idevices/forumelement.py:339 exe/idevices/forumelement.py:351
+msgid "Thread: "
+msgstr ""
+
+#: exe/webui/block.py:247
 msgid "Tip:"
 msgstr "Tip:"
 
@@ -1367,6 +1560,15 @@ msgstr ""
 "Een ja/neen-vraag bevat een bewering en de student\n"
 "moet beslissen of deze bewering juist of fout is. Dit soort vraag is o.m. geschikt\n"
 "voor feitelijke informatie en voor ofwel/ofwel-antwoorden."
+
+#: exe/idevices/forumidevice.py:145
+#, fuzzy
+msgid "Type a discussion topic here."
+msgstr "Discussie-onderwerp:"
+
+#: exe/idevices/forumidevice.py:101
+msgid "Type a forum name here"
+msgstr ""
 
 #: exe/engine/multichoiceidevice.py:96
 #, fuzzy
@@ -1421,7 +1623,7 @@ msgid "Unit"
 msgstr "Unit"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:359 exe/engine/wikipediaidevice.py:52
+#: exe/engine/galleryidevice.py:431 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:87
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:39
 #: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
@@ -1429,7 +1631,8 @@ msgstr "Unit"
 #: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
 #: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:222
 #: exe/engine/idevicestore.py:278 exe/engine/idevicestore.py:306
-#: exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:328 exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Universiteit van Auckland"
 
@@ -1458,7 +1661,7 @@ msgstr ""
 "te stellen of een stelling te poneren en zo verdere analyse of discussie\n"
 "op gang te helpen."
 
-#: exe/engine/galleryidevice.py:363
+#: exe/engine/galleryidevice.py:435
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Gebruik dit iDevice om een groot aantal afbeeldingen te tonen."
 
@@ -1468,6 +1671,14 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+
+#: exe/idevices/forumelement.py:92
+msgid "Visible groups"
+msgstr "Zichtbare groepen"
+
+#: exe/idevices/forumelement.py:121
+msgid "Visible to students:"
+msgstr "Zichtbaar voor studenten:"
 
 #: exe/engine/idevicestore.py:369
 msgid "What to read"
@@ -1500,13 +1711,6 @@ msgstr ""
 "<li> Afleiders moeten fout zijn maar wel aannemelijk </li>\n"
 "</ul>\n"
 
-#: exe/engine/galleryidevice.py:360
-msgid ""
-"Where you have a number of images that relate \n"
-"to each other or to a particular learning exercise you may wish to display \n"
-"these in a gallery context rather then individually."
-msgstr ""
-
 #: exe/webui/wikipediablock.py:89
 msgid "Wikibooks Article"
 msgstr "Wikibooks-artikel"
@@ -1515,17 +1719,37 @@ msgstr "Wikibooks-artikel"
 msgid "Wikipedia Article"
 msgstr "Wikipedia-artikel"
 
+#: exe/webui/optionelement.py:133
+msgid "Wrong"
+msgstr ""
+
 #: exe/webui/imagemagnifierblock.py:113
 msgid "Yes"
 msgstr ""
+
+#: exe/idevices/forumelement.py:87
+msgid "Yes, forever"
+msgstr "Ja, voor altijd"
+
+#: exe/idevices/forumelement.py:88
+msgid "Yes, initially"
+msgstr "Ja, in het begin"
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Uw iDevice verschijnt in het iDevice-paneel met deze benaming. Dit veld is verplicht. Als u het niet invult, wordt u gevraagd om een label op te geven."
 
-#: exe/webui/element.py:291 exe/webui/element.py:409 exe/webui/element.py:761
+#: exe/webui/element.py:291 exe/webui/element.py:409 exe/webui/element.py:765
 msgid "blank for original size"
 msgstr "leeg voor originele afmetingen"
+
+#: exe/idevices/forumblock.py:122
+msgid "duplicate forum name.\n"
+msgstr ""
+
+#: exe/idevices/forumblock.py:135
+msgid "duplicate topic name."
+msgstr ""
 
 #: exe/export/scormexport.py:241 exe/export/imsexport.py:176
 msgid "eXe"
@@ -1835,6 +2059,9 @@ msgstr "Opstellen"
 msgid "Properties"
 msgstr "Eigenschappen"
 
+#~ msgid "Incorrect"
+#~ msgstr "Verkeerd"
+
 #~ msgid "<p>An activity can be described as atask or set of tasks a learner must complete. Provide a clear statement of the task and consider any conditions that may help or hinder the learner in the performance of the task.</p><p>The general task is the most flexible iDevice because authors can specify the sub-type or classification. It is used to signal a learning \"event\". In other words when learners are expected to do something. For example:<ol><li> A written activity when learners must write something down (notes or a list)</li><li>An application activity, where learners are expected to apply their knowledge to a particular situation</li><li>Conceptual activity, where learners are asked to think about something. Although the \"look and feel\" associated with the presentation of this iDevice on a web page will be the same for each instance or type, learners will be able to distinguish among different types by the heading the author provides for the particular instance of this iDevice. </li></ol></p>"
 #~ msgstr "<p>Een activiteit bestaat uit een of meer opdrachten die de student moet afwerken. Geef een duidelijke omschrijving van de opdracht en hou rekening met elementen die de uitvoering ervan kunnen helpen of hinderen.</p><p>De algemene opdracht is het meest flexibele iDevice omdat de opsteller ervan het subtype of de indeling ervan zelf kan aangeven. Gebruik het om een  \"leerevent\" aan te geven, wat betekent dat de student iets moet doen. Bijvoorbeeld:<ol><li>een schrijfactiviteit, als de student iets moeten opschrijven (notities of een lijst)</li><li>een toepassingsactiviteit, als de student zijn kennis moet toepassen op een gegeven situatie</li><li>een conceptuele activiteit, als de student wordt gevraagd over een onderwerp te reflecteren.  Wanneer dit iDevice wordt gepresenteerd in de vorm van een webpagina is de opmaak ervan altijd gelijk, maar door de titel die de opsteller eraan geeft, weet de student om welk (sub)type het handelt.</li></ol></p>"
 
@@ -1893,9 +2120,6 @@ msgstr "Eigenschappen"
 #~ msgid "Provide instructions to learners on what they must do to complete the cloze exercise."
 #~ msgstr "Leg uit hoe deze cloze-oefening moet worden gemaakt."
 
-#~ msgid "Select a flash file"
-#~ msgstr "Kies een Flash-bestand"
-
 #~ msgid ""
 #~ "The Wikipedia iDevice takes a copy of an\n"
 #~ "article from en.wikipedia.org, including copying the associated images."
@@ -1915,29 +2139,8 @@ msgstr "Eigenschappen"
 #~ msgid "Response:"
 #~ msgstr "Antwoord:"
 
-#~ msgid "A single simple discussion"
-#~ msgstr "Een enkele discussie"
-
 #~ msgid "Auto Completion"
 #~ msgstr "Automatisch aanvullen"
-
-#~ msgid "Can a student post to this forum?:"
-#~ msgstr "Kan student bijdrage posten op dit forum?"
-
-#~ msgid "Discussion Topic"
-#~ msgstr "Discussie-onderwerp"
-
-#~ msgid "Discussion topic:"
-#~ msgstr "Discussie-onderwerp:"
-
-#~ msgid "Discussions and replies are allowed"
-#~ msgstr "Nieuwe discussies en antwoorden toegelaten"
-
-#~ msgid "Each person posts one discussion"
-#~ msgstr "Ieder lid ken slechts een discussie starten"
-
-#~ msgid "Force everyone to be subscribed?:"
-#~ msgstr "Moet iedereen lid zijn?"
 
 #~ msgid "Forum Discussion"
 #~ msgstr "Forumdiscussie"
@@ -1945,50 +2148,11 @@ msgstr "Eigenschappen"
 #~ msgid "Forum introduction:"
 #~ msgstr "Foruminleiding:"
 
-#~ msgid "Forum name:"
-#~ msgstr "Forumnaam:"
-
-#~ msgid "Forum type:"
-#~ msgstr "Forumtype:"
-
-#~ msgid "Group mode:"
-#~ msgstr "Groepsmodus:"
-
 #~ msgid "Message:"
 #~ msgstr "Bericht:"
-
-#~ msgid "No discussions, but replies are allowed"
-#~ msgstr "Geen discussies, wel antwoorden toegestaan"
-
-#~ msgid "No discussions, no replies"
-#~ msgstr "Geen discussies en geen antwoorden toegestaan"
-
-#~ msgid "No groups"
-#~ msgstr "Geen groepen"
-
-#~ msgid "Separate groups"
-#~ msgstr "Gescheiden groepen"
-
-#~ msgid "Show"
-#~ msgstr "Tonen"
-
-#~ msgid "Standard forum for general use"
-#~ msgstr "Standaardforum voor algemeen gebruik"
 
 #~ msgid "Subject"
 #~ msgstr "Onderwerp"
 
 #~ msgid "Subject:"
 #~ msgstr "Onderwerp:"
-
-#~ msgid "Visible groups"
-#~ msgstr "Zichtbare groepen"
-
-#~ msgid "Visible to students:"
-#~ msgstr "Zichtbaar voor studenten:"
-
-#~ msgid "Yes, forever"
-#~ msgstr "Ja, voor altijd"
-
-#~ msgid "Yes, initially"
-#~ msgstr "Ja, in het begin"

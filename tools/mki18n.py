@@ -292,6 +292,7 @@ def generateAppFil():
         (exe/'engine', '*.py'),
         (exe/'export', '*.py'),
         (exe/'webui',  '*.py'),
+        (exe/'idevices', '*.py'),
         (exe/'xului',  '*.py'),
     ]
     output = open('app.fil', 'w')
