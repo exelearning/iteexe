@@ -16,10 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-"""
-TestOptionElement is responsible for a block of option.  Used by 
-TestquestionElement.
-"""
+
 
 import logging
 from exe.webui import common
@@ -349,6 +346,7 @@ class DiscussionElement(object):
             return ""
         html = ""
         html += u"<br/><b>%s" % _(u"Thread: ")
+        html += u"%s</b>\n" % self.discussion.topic
         if self.idevice.forum.lms.lms == "moodle":
             topic = self.discussion.topic.replace(" ", "_")
             html += u"<!--%slink_%s--></b><br/>\n" % (self.idevice.forum.forumName, topic)

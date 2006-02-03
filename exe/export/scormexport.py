@@ -91,30 +91,32 @@ class Manifest(object):
         discussionStr = ""
         for forum in forums:
             if forum.lms.lms == "moodle":
-                forumStr += "<forum><name>%s</name>" % forum.forumName
-                forumStr += "<id>%s</id>" % forum.forumName
-                forumStr += "<introduction>%s</introduction>" % \
-                             forum.introduction
-                forumStr += "<type>%s</type>" % forum.lms.type
-                forumStr += "<studentpost>%s</studentpost>\n" % \
+                forumStr += u"<forum><name>%s</name>" % forum.forumName
+                forumStr += u"<id>%s</id>" % escape(forum.forumName)
+                forumStr += u"<introduction>%s</introduction>" % \
+                             escape(forum.introduction)
+                forumStr += u"<type>%s</type>" % forum.lms.type.encode()
+                forumStr += u"<studentpost>%s</studentpost>\n" % \
                              forum.lms.studentpost
-                forumStr += "<subscription>%s</subscription>\n" % \
+                forumStr += u"<subscription>%s</subscription>\n" % \
                              forum.lms.subscription
-                forumStr += "<tracking>1</tracking>\n"
-                forumStr += "<attachmentsize></attachmentsize>\n"
-                forumStr += "<ratings>0</ratings>\n"
-                forumStr += "<groupmode>%s</groupmode>\n" % forum.lms.groupmode
-                forumStr += "<visible>%s</visible>\n" % forum.lms.visible
-                forumStr += "</forum>"
+                forumStr += u"<tracking>1</tracking>\n"
+                forumStr += u"<attachmentsize></attachmentsize>\n"
+                forumStr += u"<ratings>0</ratings>\n"
+                forumStr += u"<groupmode>%s</groupmode>\n" % forum.lms.groupmode
+                forumStr += u"<visible>%s</visible>\n" % forum.lms.visible
+                forumStr += u"</forum>"
                 
                 for discussion in forum.discussions:
-                    discussionStr += "<discussion>"
-                    discussionStr += "<discussionId>%s</discussionId>" % \
-                                     forum.forumName
-                    discussionStr += "<subject>%s</subject>" % discussion.topic
-                    discussionStr += "<message>%s</message>" % discussion.intro
-                    discussionStr += "<subscription>send me</subscription>\n"
-                    discussionStr += "</discussion>"
+                    discussionStr += u"<discussion>"
+                    discussionStr += u"<discussionId>%s</discussionId>" % \
+                                     escape(forum.forumName)
+                    discussionStr += u"<subject>%s</subject>" \
+                                  % escape(discussion.topic)
+                    discussionStr += u"<message>%s</message>" \
+                                  % escape(discussion.intro)
+                    discussionStr += u"<subscription>send me</subscription>\n"
+                    discussionStr += u"</discussion>"
                     
         xml = forumStr + discussionStr
         return xml
