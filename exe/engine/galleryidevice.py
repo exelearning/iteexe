@@ -27,7 +27,7 @@ import logging
 
 from exe.engine.idevice  import Idevice
 from exe.engine.field    import TextField
-from exe.engine.path     import Path, TempDirPath
+from exe.engine.path     import Path, TempDirPath, toUnicode
 from exe.engine.persist  import Persistable
 from nevow               import tags as T
 from nevow.stan          import raw
@@ -70,31 +70,40 @@ class GalleryImage(Persistable):
         self._saveFiles(originalImagePath)
 
 
-    def _saveFiles(self, originalImagePath):
+    def _saveFiles(self, originalImagePath=None):
         """
         Copies the image file and saves the thumbnail file
         'originalImagePath' is a Path instance
+        setting 'originalImagePath' to None, will just recreate the html and
+        thumbnail resources from the existing image resource.
         """
-        originalImagePath = Path(originalImagePath)
-
-        # Copy the original image
         package = self.parent.parentNode.package
-
-        self._imageResource = Resource(package, originalImagePath)
-        self.parent.userResources.append(self._imageResource)
+        if originalImagePath is not None:
+            originalImagePath = Path(originalImagePath)
+            # Copy the original image
+            self._imageResource = Resource(package, originalImagePath)
+            self.parent.userResources.append(self._imageResource)
 
         # Create the thumbnail
         tmpDir = TempDirPath()
         htmlPath = (package.resourceDir/ 
                     self._imageResource.path.namebase + ".html")
-        image = Image.open(originalImagePath)
+        try:
+            image = Image.open(toUnicode(self._imageResource.path))
+        except Exception, e:
+            # If we can't load the image, apologize to the user...
+            log.error("Couldn't load image: %s\nBecause: %s" % \
+                      (self._imageResource.path, str(e)))
+            image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
+            self._msgImage(image,
+                _(u"No Thumbnail Available. Could not load original image."))
         self.size = image.size
         image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
         width1, height1 = image.size
         width2, height2 = image2.size
-        left = (width2 - width1) / 2.
-        top = (height2 - height1) / 2.
+        left = int(round((width2 - width1) / 2.))
+        top = int(round((height2 - height1) / 2.))
 
         try:
             image2.paste(image, (left, top))
@@ -116,14 +125,19 @@ class GalleryImage(Persistable):
         self._htmlResource = Resource(package, htmlPath)
         self.parent.userResources.append(self._htmlResource)
 
-
     def _defaultThumbnail(self, image):
         """
-        Draws a nice default thumbnail on 'imaage'
+        Draws a nice default thumbnail on 'image'
+        """
+        self._msgImage(image,
+            _(u"No Thumbnail Available. Could not shrink image."))
+
+    def _msgImage(self, image, msg):
+        """
+        Puts a message in an image
         """
         draw = ImageDraw.Draw(image)
         draw.rectangle([(0, 0), self.thumbnailSize], fill="black")
-        msg = _(u"No Thumbnail Available. Could not shrink image.")
         words = msg.split(' ')
         size = draw.textsize(msg)
         top = 1
@@ -158,6 +172,17 @@ class GalleryImage(Persistable):
 
         # Render!
         if htmlPath.ext == ".html":
+            index = self.parent.images.index(self)
+            if index == 0:
+                backStan = raw('&nbsp;')
+            else:
+                prevUrl = self.parent.images[index - 1]._htmlResource.storageName
+                backStan = T.a(href=prevUrl)[_('Previous')]
+            if index == len(self.parent.images) - 1:
+                nextStan = raw('&nbsp;')
+            else:
+                nextUrl = self.parent.images[index + 1]._htmlResource.storageName
+                nextStan = T.a(href=nextUrl)[_('Next')]
             data = flatten(
                T.html[
                  T.head[
@@ -170,43 +195,86 @@ class GalleryImage(Persistable):
                              '  imgObj = new Image();',
                              '  imgObj.src = "%s";' % \
                                 unicode(self._imageResource.storageName), 
+                             '  multiplier = 1;',
+                             '  imageExpanded = false;',
+                             '  imageCanExpand = false;',
+                             '  maxWidth = 320.0;',
+                             '  maxHeight = 240.0;',
                              '',
-                             'function popupImage() {',
+                             '// Returns the multiplier to shink the Image',
+                             'function getShrinkMod() {',
+                             '  if (imgObj.width > imgObj.height) {',
+                             '    if (imgObj.width > maxWidth) {',
+                             '      imageCanExpand = true;'
+                             '      return maxWidth / imgObj.width;',
+                             '    } else {', 
+                             '       return 1;',
+                             '    }', 
+                             '  } else {', 
+                             '    if (imgObj.height > maxHeight) {',
+                             '      imageCanExpand = true;'
+                             '      return maxHeight / imgObj.height;',
+                             '    } else {', 
+                             '       return 1;',
+                             '    }', 
+                             '  }', 
+                             '}', 
+                             '',
+                             '// Resize the image',
+                             'function onLoad() {',
                              '  var imgEle = document.getElementById("the_image");',
-                             '  var popupWin = window.open(imgObj.src, ',
-                             '               "%s",' % \
-                                self.caption.replace('"', r'\"'),
-                             '               width=imgObj.width,',
-                             '               height=imgObj.height,',
-                             '               status=0,',
-                             '               toolbar=0,',
-                             '               location=0,',
-                             '               menubar=0,',
-                             '               scrollbars=1);',
-                             '  popupWin.document.write(\'<html><head><title>' +
-                             ('%s<\/title><\/head>' % self.caption) +
-                             #'<body background="\'+imgObj.src+\'">'
-                             '<body>' +
-                             '<img src="\'+imgObj.src+\'"' +
-                             '     width="\'+imgObj.width+\'"' +
-                             '     height="\'+imgObj.height+\'"/>' +
-                             '<\/body><\/html>\');',
-                             '  popupWin.resizeBy(imgObj.width - ',
-                                   'popupWin.document.body.clientWidth, ',
-                                   'imgObj.height - ',
-                                   'popupWin.document.body.clientHeight);',
-                             '  popupWin.focus();',
+                             '  multiplier = getShrinkMod();',
+                             '  if (imageCanExpand) {',
+                             '      // Shrink the Image',
+                             '      imgEle.width = imgObj.width * multiplier;',
+                             '      imgEle.height = imgObj.height * multiplier;',
+                             '  }', 
+                             '}', 
+                             '',
+                             'function growImage() {',
+                             '  var imgEle = document.getElementById("the_image");',
+                             '  if (imageCanExpand) {',
+                             '    if (imageExpanded) {',
+                             '        // Shrink Image',
+                             '        imgEle.width = imgObj.width * multiplier;',
+                             '        imgEle.height = imgObj.height * multiplier;',
+                             '    } else {',
+                             '        // Grow Image',
+                             '        imgEle.width = imgObj.width;',
+                             '        imgEle.height = imgObj.height;',
+                             '    }',
+                             '    imageExpanded = !imageExpanded;',
+                             '  }',
                              '}'])),
                      ]
                  ],
-                 T.body[
+                 T.body(onLoad="onLoad()")[
                    T.h1(id='nodeTitle')[self.caption],
                    T.p(align='center') [
-                     T.a(href="javascript:popupImage()")[
-                         T.img(id='the_image',
-                               src=unicode(self._imageResource.storageName),
-                               height="240",
-                               width="320")
+                     T.table(width="100%")[
+                       T.tr[
+                         T.td(width="100%", align="center", colspan=3)[
+                             T.a(href="javascript:growImage()")[
+                                 T.img(id='the_image',
+                                       src=unicode(self._imageResource.storageName),
+                                       width=0,
+                                       height=0)
+                             ]
+                         ]
+                       ],
+                       T.tr[
+                         T.td(align="right", width="33%")[
+                           backStan
+                         ],
+                         T.td(align="center", width="33%")[
+                           T.a(href='javascript:window.close()')[
+                             _('Close')
+                           ],
+                         ],
+                         T.td(align="left", width="33%")[
+                            nextStan
+                         ]
+                       ]
                      ]
                    ]
                  ]
@@ -281,19 +349,10 @@ class GalleryImage(Persistable):
         """
         return self._thumbnailResource.path
 
-
-    def get_htmlFilename(self):
-        """
-        Returns the full path to the thumbnail
-        """
-        return self._htmlResource.path
-
-
     # Properties
 
     imageFilename = property(get_imageFilename, set_imageFilename)
     thumbnailFilename = property(get_thumbnailFilename)
-    htmlFilename = property(get_htmlFilename)
     parent  = property(lambda self: self._parent, set_parent)
     caption = property(lambda self: unicode(self._caption.content), set_caption)
     imageSrc = property(lambda self: '%s%s' % 
@@ -314,7 +373,7 @@ class GalleryImage(Persistable):
         Called to upgrade from 0.10 to 0.11
         """
         # Create the HTML popup window
-        self._htmlFilename = self._imageFilename
+        self._htmlFilename = Path(self._imageFilename).namebase + '.html'
 
 
     def _upgradeImageToVersion2(self):
@@ -400,7 +459,7 @@ class GalleryIdevice(Idevice):
     thumbnails.
     """
 
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self, parentNode=None):
         """
@@ -443,13 +502,19 @@ these in a gallery context rather then individually.</p>"""),
         """
         Called when the iDevice's resources need their names changed
         """
-        #TODO Someone will tidy this up
         for oldName, newName in resourceNamesChanged:
             for image in self.images:
                 if image._imageResource.storageName == newName:
                     htmlPath = self.parentNode.package.resourceDir/newName
                     image._createHTMLPopupFile(htmlPath)
 
+    def recreateResources(self):
+        """
+        Recreates all the thumbnails and html pages from the original image
+        resources.
+        """
+        for image in self.images:
+            image._saveFiles()
 
     # Upgrade Methods
 
@@ -475,3 +540,11 @@ these in a gallery context rather then individually.</p>"""),
         for image in self.images:
             image._upgradeImageToVersion2()
 
+
+    def upgradeToVersion4(self):
+        """
+        Upgrades to v0.13
+        """
+        # Recreate all the html and thumbnail resources
+        package = self.parentNode.package
+        package.afterUpgradeHandlers.append(self.recreateResources)

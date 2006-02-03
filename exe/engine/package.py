@@ -23,10 +23,12 @@ i.e. the "package".
 
 import logging
 import zipfile 
-from exe.engine.path            import Path, TempDirPath, toUnicode
-from exe.engine.node            import Node
-from exe.engine.genericidevice  import GenericIdevice
-from exe.engine.persist         import Persistable, encodeObject, decodeObject
+from exe.engine.path           import Path, TempDirPath, toUnicode
+from exe.engine.node           import Node
+from exe.engine.genericidevice import GenericIdevice
+from exe.engine.persist        import Persistable, encodeObject, \
+                                      decodeObjectRaw
+from twisted.persisted.styles  import doUpgrade
 
 log = logging.getLogger(__name__)
 
@@ -151,7 +153,9 @@ class Package(Persistable):
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
         toDecode   = zippedFile.read(u"content.data")
         try:
-            newPackage = decodeObject(toDecode)
+            newPackage = decodeObjectRaw(toDecode)
+            newPackage.afterUpgradeHandlers = []
+            doUpgrade()
         except:
             import traceback
             traceback.print_exc()
@@ -170,6 +174,11 @@ class Package(Persistable):
                 outFile = open(newPackage.resourceDir/filename, "wb")
                 outFile.write(zippedFile.read(filename))
                 
+        # Let idevices and nodes handle any resource upgrading they may need to
+        for handler in newPackage.afterUpgradeHandlers:
+            handler()
+        del newPackage.afterUpgradeHandlers
+
         return newPackage
 
 

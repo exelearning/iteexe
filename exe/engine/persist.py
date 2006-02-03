@@ -72,10 +72,9 @@ def encodeObject(toEncode):
 
     return strBuffer.getvalue()
 
-
-def decodeObject(toDecode):
+def decodeObjectRaw(toDecode):
     """
-    Take a string and turn it into an object
+    Decodes the object the same as decodeObject but doesn't upgrade it.
     """
     log.debug(u"decodeObject")
 
@@ -86,7 +85,13 @@ def decodeObject(toDecode):
     decoder.expressionReceived = data.append
     decoder.dataReceived(toDecode)
     decoded = jelly.unjelly(data[0])
-    doUpgrade()
+    return decoded
 
+def decodeObject(toDecode):
+    """
+    Take a string and turn it into an object
+    """
+    decoded = decodeObjectRaw(toDecode)
+    doUpgrade()
     return decoded
 
