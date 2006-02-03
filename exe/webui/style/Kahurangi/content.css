@@ -68,7 +68,7 @@ div#nodeDecoration {
 .emphasis1 {
 	background-image:url(idevice_bg.gif);
 	background-repeat: repeat-x;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
 	text-align:left;
 	border-right-width: 1px;
 	border-left-width: 1px;
@@ -114,6 +114,12 @@ div#nodeDecoration {
 	padding-left: 0px;
 	margin-right: 5px;
 	margin-left: 10px;
+}
+
+input.feedbackbutton {
+margin-top: 10px;
+margin-bottom: 10px;
+background: #B8DFFF;
 }
 
 p.reading_reference {
