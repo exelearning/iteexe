@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-03 12:02+1300\n"
+"POT-Creation-Date: 2006-02-03 14:19+1300\n"
 "PO-Revision-Date: 2006-01-10 13:23+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -152,7 +152,7 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:432
+#: exe/engine/galleryidevice.py:471
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -167,7 +167,7 @@ msgstr "<strong>Ύψος πλαισίου:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:103
+#: exe/engine/package.py:105
 msgid "?????"
 msgstr "?????"
 
@@ -394,11 +394,12 @@ msgstr "Κάντε κλικ εδώ "
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/webui/common.py:243 exe/webui/common.py:244
-#: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
-#: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
-#: exe/webui/block.py:238 exe/webui/editorpane.py:328
-#: exe/webui/editorpane.py:329 exe/webui/editorpane.py:350
+#: exe/engine/galleryidevice.py:271 exe/webui/common.py:243
+#: exe/webui/common.py:244 exe/webui/multichoiceblock.py:152
+#: exe/webui/multichoiceblock.py:153 exe/webui/truefalseelement.py:127
+#: exe/webui/truefalseelement.py:128 exe/webui/block.py:238
+#: exe/webui/editorpane.py:328 exe/webui/editorpane.py:329
+#: exe/webui/editorpane.py:350
 msgid "Close"
 msgstr "Κλείσιμο"
 
@@ -834,7 +835,7 @@ msgstr "Συμβουλή"
 msgid "Hint:"
 msgstr "Συμβουλή:"
 
-#: exe/engine/package.py:58
+#: exe/engine/package.py:60
 msgid "Home"
 msgstr "Αρχή"
 
@@ -846,7 +847,7 @@ msgstr "Εικονίδια"
 msgid "Image"
 msgstr "Εικόνα"
 
-#: exe/engine/galleryidevice.py:430
+#: exe/engine/galleryidevice.py:469
 msgid "Image Gallery"
 msgstr "Γκαλερί εικόνων"
 
@@ -980,6 +981,11 @@ msgstr "Νέο Κεφάλαιο"
 msgid "New iDevice"
 msgstr "Νέο εκπαιδευτικό εργαλείο"
 
+#: exe/engine/galleryidevice.py:185
+#, fuzzy
+msgid "Next"
+msgstr "Κείμενο"
+
 #: exe/webui/imagemagnifierblock.py:116 exe/webui/imagemagnifierblock.py:120
 #: exe/idevices/forumelement.py:86
 msgid "No"
@@ -989,7 +995,12 @@ msgstr "Όχι"
 msgid "No Images Loaded"
 msgstr "Δεν φορτώθηκαν εικόνες"
 
-#: exe/engine/galleryidevice.py:126
+#: exe/engine/galleryidevice.py:99
+#, fuzzy
+msgid "No Thumbnail Available. Could not load original image."
+msgstr "Δεν υπάρχουν διαθέσιμα εικονίδια. Αποτυχία σμίκρυνσης εικόνας."
+
+#: exe/engine/galleryidevice.py:133
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Δεν υπάρχουν διαθέσιμα εικονίδια. Αποτυχία σμίκρυνσης εικόνας."
 
@@ -1133,6 +1144,11 @@ msgstr ""
 
 #: exe/webui/editorpane.py:227
 msgid "Preview"
+msgstr "Προεπισκόπιση"
+
+#: exe/engine/galleryidevice.py:180
+#, fuzzy
+msgid "Previous"
 msgstr "Προεπισκόπιση"
 
 #: exe/webui/propertiespage.py:76
@@ -1285,7 +1301,7 @@ msgstr "Αποθήκευση"
 msgid "Save as"
 msgstr "Αποθήκευση ως"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Section"
 msgstr "Ενότητα"
 
@@ -1527,7 +1543,7 @@ msgstr ""
 "Για να δηλώσετε τη σωστή απάντηση, κλικ στο\n"
 " κουμπί επιλογής δεξιά από τη σωστή επιλογή."
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Topic"
 msgstr "Κεφάλαιο"
 
@@ -1604,12 +1620,12 @@ msgstr ""
 msgid "Unable to connect to "
 msgstr "Η σύνδεση είναι αδύνατη"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Unit"
 msgstr "Παράγραφος"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:431 exe/engine/wikipediaidevice.py:52
+#: exe/engine/galleryidevice.py:470 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:87
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:39
 #: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
@@ -1647,7 +1663,7 @@ msgstr ""
 " της μελέτης παρέχοντας μια ερώτηση ή μια σύσταση να ξεκινήσει\n"
 " μια συζήτηση."
 
-#: exe/engine/galleryidevice.py:435
+#: exe/engine/galleryidevice.py:474
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Χρησιμοποιήστε το εκπαιδευτικό εργαλείο αυτό αν έχετε να δείξετε πολλές εικόνες."
 
@@ -1754,7 +1770,7 @@ msgstr "http://el.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
 
-#: exe/engine/package.py:189 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:198 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"

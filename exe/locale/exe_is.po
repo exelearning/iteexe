@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-03 12:02+1300\n"
+"POT-Creation-Date: 2006-02-03 14:19+1300\n"
 "PO-Revision-Date: 2006-01-02 21:20-0000\n"
 "Last-Translator: S.Fjalar <sfjalar@gmail.com>\n"
 "Language-Team:  <sfj@fb.is>\n"
@@ -149,7 +149,7 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:432
+#: exe/engine/galleryidevice.py:471
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -164,7 +164,7 @@ msgstr "<strong>Hæð rammat:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:103
+#: exe/engine/package.py:105
 msgid "?????"
 msgstr "?????"
 
@@ -393,11 +393,12 @@ msgstr "Smelltu hér"
 msgid "Click here"
 msgstr "Smelltu hér"
 
-#: exe/webui/common.py:243 exe/webui/common.py:244
-#: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
-#: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
-#: exe/webui/block.py:238 exe/webui/editorpane.py:328
-#: exe/webui/editorpane.py:329 exe/webui/editorpane.py:350
+#: exe/engine/galleryidevice.py:271 exe/webui/common.py:243
+#: exe/webui/common.py:244 exe/webui/multichoiceblock.py:152
+#: exe/webui/multichoiceblock.py:153 exe/webui/truefalseelement.py:127
+#: exe/webui/truefalseelement.py:128 exe/webui/block.py:238
+#: exe/webui/editorpane.py:328 exe/webui/editorpane.py:329
+#: exe/webui/editorpane.py:350
 msgid "Close"
 msgstr "Loka"
 
@@ -839,7 +840,7 @@ msgstr "Vísbending"
 msgid "Hint:"
 msgstr "Vísbending:"
 
-#: exe/engine/package.py:58
+#: exe/engine/package.py:60
 msgid "Home"
 msgstr "Heim"
 
@@ -851,7 +852,7 @@ msgstr "Teikn"
 msgid "Image"
 msgstr "Mynd"
 
-#: exe/engine/galleryidevice.py:430
+#: exe/engine/galleryidevice.py:469
 msgid "Image Gallery"
 msgstr "Myndasafn"
 
@@ -990,6 +991,11 @@ msgstr "Viðfangsefni"
 msgid "New iDevice"
 msgstr "Nýtt námstæki"
 
+#: exe/engine/galleryidevice.py:185
+#, fuzzy
+msgid "Next"
+msgstr "Texti"
+
 #: exe/webui/imagemagnifierblock.py:116 exe/webui/imagemagnifierblock.py:120
 #: exe/idevices/forumelement.py:86
 msgid "No"
@@ -999,7 +1005,12 @@ msgstr "Nei"
 msgid "No Images Loaded"
 msgstr "Engar myndir til staðar"
 
-#: exe/engine/galleryidevice.py:126
+#: exe/engine/galleryidevice.py:99
+#, fuzzy
+msgid "No Thumbnail Available. Could not load original image."
+msgstr "Smámynd finnst ekki. Gat ekki smækkað mynd."
+
+#: exe/engine/galleryidevice.py:133
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Smámynd finnst ekki. Gat ekki smækkað mynd."
 
@@ -1144,6 +1155,11 @@ msgstr ""
 
 #: exe/webui/editorpane.py:227
 msgid "Preview"
+msgstr "Forskoða"
+
+#: exe/engine/galleryidevice.py:180
+#, fuzzy
+msgid "Previous"
 msgstr "Forskoða"
 
 #: exe/webui/propertiespage.py:76
@@ -1296,7 +1312,7 @@ msgstr "Vista"
 msgid "Save as"
 msgstr "Vista sem"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Section"
 msgstr "Hluti"
 
@@ -1531,7 +1547,7 @@ msgid ""
 "click the radio button next to the correct option."
 msgstr "Veldu rétt svar með því að haka við það."
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Topic"
 msgstr "Viðfangsefni"
 
@@ -1608,12 +1624,12 @@ msgstr ""
 msgid "Unable to connect to "
 msgstr "Get ekki tengst"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Unit"
 msgstr "Eining"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:431 exe/engine/wikipediaidevice.py:52
+#: exe/engine/galleryidevice.py:470 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:87
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:39
 #: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
@@ -1650,7 +1666,7 @@ msgstr ""
 "áhersluþætti í lesefninu, eða sem upphaf frekari greiningar með því að birta spurningu \n"
 "eða fullyrðingu. "
 
-#: exe/engine/galleryidevice.py:435
+#: exe/engine/galleryidevice.py:474
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Notaðu þetta námstæki ef þú þarft að birta fjölda af myndum."
 
@@ -1758,7 +1774,7 @@ msgid "iDevice %s has no package"
 msgstr "%s námstækið inniheldur engan pakka"
 
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:189 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:198 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Ritill fyrir námstæki"

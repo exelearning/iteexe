@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-03 12:02+1300\n"
+"POT-Creation-Date: 2006-02-03 14:19+1300\n"
 "PO-Revision-Date: 2006-01-11 11:55+1200\n"
 "Last-Translator: Tania Oxenham <steveandtania@yahoo.com>\n"
 "Language-Team: EXE Team <translations@exelearning.org>\n"
@@ -144,7 +144,7 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:432
+#: exe/engine/galleryidevice.py:471
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -159,7 +159,7 @@ msgstr "<strong>Anga Teitei:</strong> "
 msgid "<strong>url:</strong> "
 msgstr "<strong>url:</strong> "
 
-#: exe/engine/package.py:103
+#: exe/engine/package.py:105
 msgid "?????"
 msgstr "?????"
 
@@ -389,11 +389,12 @@ msgstr "Pāwhiri Kōnei"
 msgid "Click here"
 msgstr "Pāwhiri Kōnei"
 
-#: exe/webui/common.py:243 exe/webui/common.py:244
-#: exe/webui/multichoiceblock.py:152 exe/webui/multichoiceblock.py:153
-#: exe/webui/truefalseelement.py:127 exe/webui/truefalseelement.py:128
-#: exe/webui/block.py:238 exe/webui/editorpane.py:328
-#: exe/webui/editorpane.py:329 exe/webui/editorpane.py:350
+#: exe/engine/galleryidevice.py:271 exe/webui/common.py:243
+#: exe/webui/common.py:244 exe/webui/multichoiceblock.py:152
+#: exe/webui/multichoiceblock.py:153 exe/webui/truefalseelement.py:127
+#: exe/webui/truefalseelement.py:128 exe/webui/block.py:238
+#: exe/webui/editorpane.py:328 exe/webui/editorpane.py:329
+#: exe/webui/editorpane.py:350
 msgid "Close"
 msgstr "Kati"
 
@@ -836,7 +837,7 @@ msgstr "Tohu Aki"
 msgid "Hint:"
 msgstr "Tohu Aki:"
 
-#: exe/engine/package.py:58
+#: exe/engine/package.py:60
 msgid "Home"
 msgstr "Kāinga"
 
@@ -848,7 +849,7 @@ msgstr "Ata"
 msgid "Image"
 msgstr "Pikitia"
 
-#: exe/engine/galleryidevice.py:430
+#: exe/engine/galleryidevice.py:469
 msgid "Image Gallery"
 msgstr "Taiwhanga Pikitia"
 
@@ -985,6 +986,11 @@ msgstr "Kaupapa"
 msgid "New iDevice"
 msgstr "iDevice Hou"
 
+#: exe/engine/galleryidevice.py:185
+#, fuzzy
+msgid "Next"
+msgstr "Kupu"
+
 #: exe/webui/imagemagnifierblock.py:116 exe/webui/imagemagnifierblock.py:120
 #: exe/idevices/forumelement.py:86
 msgid "No"
@@ -994,7 +1000,12 @@ msgstr "Kao"
 msgid "No Images Loaded"
 msgstr "Korekau ngā pikitia e Utauta"
 
-#: exe/engine/galleryidevice.py:126
+#: exe/engine/galleryidevice.py:99
+#, fuzzy
+msgid "No Thumbnail Available. Could not load original image."
+msgstr "Korekau ngā karakōnui kei reira. Kāore e taea te tīngongotia."
+
+#: exe/engine/galleryidevice.py:133
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Korekau ngā karakōnui kei reira. Kāore e taea te tīngongotia."
 
@@ -1140,6 +1151,11 @@ msgstr ""
 
 #: exe/webui/editorpane.py:227
 msgid "Preview"
+msgstr "Tirohia"
+
+#: exe/engine/galleryidevice.py:180
+#, fuzzy
+msgid "Previous"
 msgstr "Tirohia"
 
 #: exe/webui/propertiespage.py:76
@@ -1291,7 +1307,7 @@ msgstr "Tiaki"
 msgid "Save as"
 msgstr "Tiaki hei"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Section"
 msgstr "Wāhanga"
 
@@ -1530,7 +1546,7 @@ msgstr ""
 "Mō te whakautu tika, pato i te \n"
 "pātene irirangi."
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Topic"
 msgstr "Kaupapa"
 
@@ -1609,12 +1625,12 @@ msgstr ""
 msgid "Unable to connect to "
 msgstr "Kāore e āhei ana te hono ki"
 
-#: exe/engine/package.py:52
+#: exe/engine/package.py:54
 msgid "Unit"
 msgstr "Wae"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:431 exe/engine/wikipediaidevice.py:52
+#: exe/engine/galleryidevice.py:470 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:87
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:39
 #: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
@@ -1651,7 +1667,7 @@ msgstr ""
 " ki roto i te pānuitanga, he wāhi hoki hei tīmata ai te whakawā\n"
 " he tautohetohe."
 
-#: exe/engine/galleryidevice.py:435
+#: exe/engine/galleryidevice.py:474
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Whakamahia tēnei Idevice mena e maha ngā pikitia au ki te whakaatu."
 
@@ -1756,7 +1772,7 @@ msgstr "http://en.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Kāore te iDevice %s he mōkī"
 
-#: exe/engine/package.py:189 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:198 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "Ētita iDevice"
