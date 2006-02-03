@@ -120,6 +120,10 @@ class WebsitePage(object):
             if page.node.parent in nodePath:
                 while depth < page.depth:
                     html += "<div id=\"subnav\" "
+                    if page.node.children:
+                        html += "class=\"withChild\""
+                    else:
+                        html += "class=\"withoutChild\""
                     html += ">\n"
                     depth += 1
                 while depth > page.depth:
@@ -128,11 +132,19 @@ class WebsitePage(object):
 
                 if page.node == self.node:
                     html += "<div id=\"active\" "
+                    if page.node.children:
+                        html += "class=\"withChild\""
+                    else:
+                        html += "class=\"withoutChild\""
                     html += ">"
                     html += escape(page.node.titleShort)
                     html += "</div>\n"
                 else:
                     html += "<div><a href=\""+page.name+".html\" "
+                    if page.node.children:
+                        html += "class=\"withChild\""
+                    else:
+                        html += "class=\"withoutChild\""
                     html += ">"
                     html += escape(page.node.titleShort)
                     html += "</a></div>\n"
