@@ -66,9 +66,9 @@ click the radio button next to the correct option.""")
     
     
     # Properties
-    questionInstruc      = lateTranslate('_questionInstruc')
-    optionInstruc        = lateTranslate('_optionInstruc')
-    correctAnswerInstruc = lateTranslate('_correctAnswerInstruc')
+    questionInstruc      = lateTranslate('questionInstruc')
+    optionInstruc        = lateTranslate('optionInstruc')
+    correctAnswerInstruc = lateTranslate('correctAnswerInstruc')
     
     def addOption(self):
         """
