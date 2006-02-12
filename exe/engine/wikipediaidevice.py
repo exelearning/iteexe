@@ -73,8 +73,8 @@ within Wikipedia.""")
 
         
     # Properties
-    langInstruc      = lateTranslate('_langInstruc')
-    searchInstruc    = lateTranslate('_searchInstruc')
+    langInstruc      = lateTranslate('langInstruc')
+    searchInstruc    = lateTranslate('searchInstruc')
    
     def loadArticle(self, name):
         """
