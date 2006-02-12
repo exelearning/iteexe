@@ -157,8 +157,8 @@ class AuthoringPage(RenderableResource):
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
         html += u" theme_advanced_buttons2 : \"tablecontrols,separator,"
-        html += u"link,unlink,separator,undo,redo,"
-        html += u" removeformat,cleanup,code,help\",\n"
+        html += u"link,unlink,separator,undo,redo,separator,"
+        html += u" charmap,removeformat,cleanup,code,help\",\n"
         html += u" theme_advanced_buttons3 : \"\",\n"
       
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"

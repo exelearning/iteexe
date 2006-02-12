@@ -94,7 +94,8 @@ def richTextArea(name, value="", width="100%", height=100):
     """Adds a editor to a form"""
     log.debug(u"richTextArea %s, height=%s" % (value, height))
     html  = u'<textarea name="%s" ' % name
-    html += u'style=\"width:' + width + '; height:' + str(height) + 'px; \" >'
+    html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
+    html += u'cols="52" rows="8">'
     html += value
     html += u'</textarea><br/>'
 
@@ -114,6 +115,14 @@ def image(name, value, width="", height=""):
     html += u"/>\n"
     return html
 
+def flashText(name, width, height, float='none'):
+    html  = u"<div class=\"flash_text\" style=\""
+    html += u"width:%spx; " % width
+    html += u"float:%s;\">\n" % float
+    html += u"<div class=\"flash\">\n"
+    html += flash(name, '', width, height)
+    html += u"<br/>" + self.idevice.caption + "</div>"
+    html += u"</div>\n"
 
 def flash(name, value, width, height):
     """Returns the XHTML for flash"""
@@ -121,7 +130,6 @@ def flash(name, value, width, height):
     html  = u'<embed id="%s" ' % name 
     html += u'width="%s" height="%s" fullscreen="no" ' %(width, height)
     html += u'src="%s"/>\n' % value
-  
     return html
 
 def flashMovie(value, width, height):
@@ -134,7 +142,7 @@ def flashMovie(value, width, height):
     html += u'<param name="movie"\n'
     html += u'value="videoContainer.swf?'
     html += u'videoSource=%s&autoPlay=false"/>\n' % value
-    html += u'<param name="menu" value="flase" /></object>\n'
+    html += u'<param name="menu" value="false" /></object>\n'
     return html
 
 
@@ -150,17 +158,22 @@ def submitButton(name, value, enabled=True):
 
 def button(name, value, enabled=True, cls=None, **kwparams):
     """Adds a NON-submit button to a form"""
-    html  = u'<input type="button" name="%s" ' % name
-    html += u'value="%s" ' % value
+    html  = u'<input type="button" name="%s"' % name
+    html += u' value="%s"' % value
     if not enabled:
         html += u' disabled'
     if cls is not None:
         html += u' class="%s"' % cls
     for key, val in kwparams.items():
-	html += u'%s="%s"' % (key, val.replace('"', '\\"'))
+	html += u' %s="%s"' % (key, val.replace('"', '\\"'))
     html += u'/>\n'
     return html
 
+def feedbackButton(name, value=None, enabled=True, cls='feedbackbutton', **kwparams):
+    """Adds a feedback button"""
+    if value is None:
+        value = _(u'Feedback')
+    return button(name, value, enabled, cls, **kwparams)
 
 
 def submitImage(action, object_, imageFile, title=u"", isChanged=1):

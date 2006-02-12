@@ -152,10 +152,12 @@ class FeedbackElement(Element):
         """
         html = ""
         if self.field.feedback != "":
-            html += '<input type="button" name="btn%s" ' % self.id
-            html += 'value ="%s" ' % self.field.buttonCaption
-            html += 'onclick="toggleFeedback(\'%s\')"/><br/>\n ' % self.id
-            html += '<div id="%s" style="display: none;"> ' % self.id
+            html += common.feedbackButton('btn' + self.id,
+                self.field.buttonCaption,
+                cls='feedbackbutton',
+                onclick="toggleFeedback('%s')" % self.id)
+            html += '<br/>\n '
+            html += '<div id="fb%s" class="feedback" style="display: none;"> ' % self.id
             html += self.field.feedback
             html += "</div>\n"
 
@@ -209,10 +211,10 @@ class TextAreaElement(Element):
         Returns an XHTML string for viewing or previewing this element
         """
         if visible:
-            visible = ' style="display:block"'
+            visible = 'style="display:block"'
         else:
-            visible = ' style="display:none"'
-        return '<div id="%s"%s>%s</div>' % (self.id, visible, self.field.content)
+            visible = 'style="display:none"'
+        return '<div id="ta%s" %s>%s</div>' % (self.id, visible, self.field.content)
     
 # ===========================================================================
 class ImageElement(Element):
@@ -249,7 +251,7 @@ class ImageElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html  = u"<b>"+self.field.name+":</b>\n"
+        html  = u"<p><b>"+self.field.name+":</b></p>\n"
         html += common.elementInstruc(self.id, self.field.instruc)
         html += u"<br/>\n"
         html += u'<img alt="" '
@@ -266,7 +268,6 @@ class ImageElement(Element):
         html += u"document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', imageChanged, true);\n"
         html += u'</script>\n'
-        html += u"</p>\n"
 
         html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
         html += u"<img alt=\"add images\" "
@@ -274,7 +275,7 @@ class ImageElement(Element):
         html += u"src=\"/images/stock-insert-image.png\" /> "
         html += _(u"Select an image")
         html += u"</a><br/>\n"
-        html += u"<p><b>%s</b>\n" % _(u"Display as:")
+        html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "
@@ -290,9 +291,6 @@ class ImageElement(Element):
         html += u"size=\"4\"/>px \n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
-        
-        #html += u"</p>\n"
-
         return html
 
 
@@ -375,7 +373,6 @@ class MagnifierElement(Element):
         html += u"document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', magnifierImageChanged, true);\n"
         html += u'</script>\n'
-        html += u"</p>\n"
 
         html += u"<a href=\"#\" onclick=\"addJpgImage('"+self.id+"');\">"
         html += u"<img alt=\"add images\" "
@@ -383,7 +380,7 @@ class MagnifierElement(Element):
         html += u"src=\"/images/stock-insert-image.png\" /> "
         html += _(u"Select an image (JPG file)")
         html += u"</a><br/>\n"
-        html += u"<p><b>%s</b>\n" % _(u"Display as:")
+        html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "
@@ -399,9 +396,6 @@ class MagnifierElement(Element):
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
         html += common.hiddenField("path"+self.id)
-        
-        #html += u"</p>\n"
-
         return html
 
 
@@ -412,9 +406,13 @@ class MagnifierElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
+        html = common.flash("flash"+self.id,
+                             "",
+                             self.field.width,
+                             self.field.height)
         html = self.renderManifier(
                             "resources/"+self.field.imageResource.storageName,
-                            "templates/magnifier.swf")
+                            "/templates/magnifier.swf")
         return html
 
 
@@ -434,37 +432,22 @@ class MagnifierElement(Element):
     def renderManifier(self, imageFile, magnifierFile):
         
         field = self.field
-        html  = u'<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"'
-        html += u'codebase="http://fpdownload.macromedia.com/pub/shockwave'
-        html += u'/cabs/flash/swflash.cab#version=6,0,65,0"\n'
-        html += u'width="%s" height="%s"' % (field.width, field.height)
-        html += u'id="magnifier%s" align="middle">\n' % self.id
+        html  = u'<object type="application/x-shockwave-flash" \n'
+        html += u' data="%s"\n' % magnifierFile
+        html += u'width="%s" height="%s" ' % (field.width, field.height)
+        html += u'id="magnifier%s">\n' % self.id
         html += u'<param name="movie" value="%s" />\n' % magnifierFile
         html += u'<param name="quality" value="high" />\n'
         html += u'<param name="scale" value="noscale" />\n'
         html += u'<param name="salign" value="lt" />\n'
         html += u'<param name="bgcolor" value="#888888" />\n'
-        html += u'<param name="FlashVars" \n' 
+        html += u'<param name="FlashVars" ' 
         html += u'value="file=%s' % imageFile
-        html += u'&width=%s&height=%s' % (field.width, field.height)
-        html += u'&borderWidth=12&glassSize=%s' % self.field.glassSize
-        html += u'&initialZoomSize=%s' % field.initialZSize
-        html += u'&maxZoomSize=%s />\n' % field.maxZSize
-        html += u'&targetColor=#FF0000" />'
-        html += u'<embed src="%s" \n' % magnifierFile
-        html += u'quality="high" scale="noscale" salign="lt" bgcolor="#888888"\n'
-        
-        html += u'width="%s" height="%s" name="magnify%s" \n' %(field.width,
-                                                    field.height, self.id)
-        html += u'FlashVars="file=%s' % imageFile
-        html += u'&width=%s&height=%s' % (field.width, field.height)
-        html += u'&borderWidth=12&\n'
-        html += u'glassSize=%s&initialZoomSize=%s&maxZoomSize=%s" \n' \
-                %(field.glassSize, field.initialZSize, field.maxZSize)
-        html += u'targetColor=#FF00000" '
-        html += u'align="middle" type="application/x-shockwave-flash" \n' 
-        html += u'type="application/x-shockwave-flash" '
-        html += u'pluginspage="http://www.macromedia.com/go/getflashplayer"/>\n'
+        html += u'&amp;width=%s&amp;height=%s' % (field.width, field.height)
+        html += u'&amp;borderWidth=12&amp;glassSize=%s' % self.field.glassSize
+        html += u'&amp;initialZoomSize=%s' % field.initialZSize
+        html += u'&amp;maxZoomSize=%s' % field.maxZSize
+        html += u'&amp;targetColor=#FF0000" />\n'
         html += u'</object>\n'
         
         return html
@@ -571,9 +554,9 @@ class ClozeElement(Element):
         html = [
             # The field name and instruction button
             u'<p>',
-            u'  <b>%s</b>' % self.field.name,
-            common.elementInstruc(self.id, self.field.instruc),
+            u'<b>%s</b>' % self.field.name,
             u'</p>',
+            common.elementInstruc(self.id, self.field.instruc),
             # Render the iframe box
             u'<p>',
             u' <iframe id="%s" style="width:100%%;height:250px">' % \
@@ -674,9 +657,10 @@ class ClozeElement(Element):
                      'onclick="showClozeScore(\'%s\')"/>\n' % (self.id)]
 
             if feedbackId is not None:
-                html += ['<input type="button" ',
-                         'value = "%s"' % _(u"Show/Hide Feedback"),
-                         'onclick="toggleClozeFeedback(\'%s\')"/>\n' % self.id]
+                html += [common.feedbackButton('feedback'+self.id, 
+                             _(u"Show/Hide Feedback"),
+                             style="margin: 0;",
+                             onclick="toggleClozeFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
             value = _(u"Show/Clear Answers")
@@ -744,7 +728,7 @@ class FlashElement(Element):
         html += u'value="%s" />' % x_(u"Select Flash Object")
         html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
         html += u"<br/>\n"
-        html += u"<p><b>%s</b>\n" % _(u"Display as:")
+        html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "

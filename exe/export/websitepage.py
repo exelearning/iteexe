@@ -95,7 +95,7 @@ class WebsitePage(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            if idevice.title == "SCORM Quiz Experimental":
+            if idevice.title == "SCORM Quiz":
                 html += block.renderJavascriptForWeb()
             if idevice.title != "Forum Discussion":
                 html += block.renderView(style)

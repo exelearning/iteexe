@@ -166,6 +166,7 @@ class FeedbackEditorElement(EditorElement):
         html += common.textArea(self.id, self.field.feedback)
         html += "<br/>\n"
         return html
+
 # ===========================================================================
 
 class ImageEditorElement(EditorElement):

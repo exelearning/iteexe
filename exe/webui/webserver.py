@@ -70,7 +70,7 @@ class WebServer:
         # xul resources
         xulDir = self.config.xulDir
         self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
-        self.root.putChild("templates",   static.File(xulDir+"/templates"))
+        self.root.putChild("templates",   static.File(webDir+"/templates"))
 
         # sub applications
         self.root.putChild("editor",      self.editor)

@@ -362,14 +362,22 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
     messages = pot2dict('messages.pot')
     messageCommentTemplate = '\n#: %s:%s\nmsgid "'
     seq = len(messages)
+    skipPaths = (
+          applicationDirectoryPath/'exe/webui/firefox',
+        )
     for fn in path.walkfiles():
         if fn.ext.lower() == '.xul':
-            if verbose:
-                print "template: ", fn
-            docTree = loaders.xmlfile(fn).load()
-            ctxs = [ctx for ctx in docTree
-                    if not isinstance(ctx, basestring)]
-            xul2dict(ctxs, messages, seq, fn.relpath())
+            for skipPath in skipPaths:
+                if fn.startswith(skipPath):
+                    print 'IGNORING', fn
+                    break
+            else:
+                if verbose:
+                    print "template: ", fn
+                docTree = loaders.xmlfile(fn).load()
+                ctxs = [ctx for ctx in docTree
+                        if not isinstance(ctx, basestring)]
+                xul2dict(ctxs, messages, seq, fn.relpath())
     dict2pot(messages, 'messages.pot')
 
 def xul2dict(ctxs, messages, seq, filename):
@@ -777,7 +785,7 @@ if __name__ == "__main__":
     generateAppFil()
     # Make the .po files
     try:
-        makePO('.',option['domain'],option['verbose'])
+        makePO(Path('.'),option['domain'],option['verbose'])
     except IOError, e:
         printUsage(e[1] + '\n   You must write a file app.fil that contains the list of all files to parse.')
     # Compile the result

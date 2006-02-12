@@ -21,8 +21,9 @@ A QuizTest Idevice is one built up from TestQuestions
 """
 
 import logging
-from exe.engine.persist import Persistable
-from exe.engine.idevice import Idevice
+from exe.engine.persist   import Persistable
+from exe.engine.idevice   import Idevice
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 
@@ -54,15 +55,21 @@ class TestQuestion(Persistable):
         self.correctAns           = -2
         self.userAns              = -1
         self.addOption()
-        self.questionInstruc      = _(u"""Enter the question stem. 
+        self._questionInstruc      = x_(u"""Enter the question stem. 
 The quest should be clear and unambiguous. Avoid negative premises 
 as these can tend to be ambiguous.""")
-        self.optionInstruc        = """Enter an answer option. Provide 
+        self._optionInstruc        = x_(u"""Enter an answer option. Provide 
 a range of plausible distractors (usually 3-4) as well as the correct answer. 
-Click on the <Add another option> button to add another answer."""
-        self.correctAnswerInstruc = _(u"""To indicate the correct answer, 
+Click on the &lt;Add another option&gt; button to add another answer.""")
+        self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
 click the radio button next to the correct option.""")
-        
+    
+    
+    # Properties
+    questionInstruc      = lateTranslate('_questionInstruc')
+    optionInstruc        = lateTranslate('_optionInstruc')
+    correctAnswerInstruc = lateTranslate('_correctAnswerInstruc')
+    
     def addOption(self):
         """
         Add a new option to this question. 
@@ -83,7 +90,7 @@ class QuizTestIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"SCORM Quiz Experimental"),
+                         x_(u"SCORM Quiz"),
                          x_(u"University of Auckland"),
                          x_(u"""Unlike the MCQ the SCORM quiz is used to test 
 the learners knowledge on a topic without providing the learner with feedback 

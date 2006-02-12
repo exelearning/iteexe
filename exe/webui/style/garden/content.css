@@ -80,6 +80,15 @@ div#nodeDecoration {
     padding-top: 10px;
 }
 
+input.feedbackbutton {
+margin-top: 10px;
+margin-bottom: 10px;
+background: #AACCB5;
+color: #F2FFBF;
+}
+
+
+
 /* styles for image with text iDevice */
 
 .image_text { 

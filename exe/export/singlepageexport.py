@@ -140,7 +140,7 @@ class SinglePageExport(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            if idevice.title == "SCORM Quiz Experimental":
+            if idevice.title == "SCORM Quiz":
                 self.html += block.renderJavascriptForWeb()
             self.html += block.renderView(self.style)
 

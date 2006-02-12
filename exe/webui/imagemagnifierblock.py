@@ -92,7 +92,6 @@ class ImageMagnifierBlock(Block):
                           [_(u'Large'),'3'],
                           [_(u'Extra large'),'4'],]
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<p>"
         html += self.imageMagnifierElement.renderEdit()       
         html += u"<b>%s</b>\n " % _("Align:")
         
@@ -100,7 +99,6 @@ class ImageMagnifierBlock(Block):
                               floatArr, selection=self.idevice.float)
         html += common.elementInstruc("dimen" + 
                                       self.id, self.idevice.dimensionInstruc)
-        html += u"</p>\n"
         html += u"<b>%s </b>" % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc("caption" + 
@@ -109,6 +107,16 @@ class ImageMagnifierBlock(Block):
         html += "<b>" + _(u"Size of magnifying glass: ") + "</b>"
         html += common.select("glass"+self.id, glassSizeArr, 
                 selection=self.idevice.imageMagnifier.glassSize)+ "<br/>"
+            
+        html += "<b> " + _(u"Maximum zoom ")  + "</b>"
+        html += "<select name=\"maxZoom%s\">\n" % self.id
+        template = '  <option value="%s0"%s>%s0%%</option>\n'
+        for i in range(10, 21):
+            if str(i)+ "0" == self.idevice.imageMagnifier.maxZSize:
+                html += template % (str(i), ' selected="selected"', str(i))
+            else:
+                html += template % (str(i), '', str(i))
+        html += "</select><br/>\n"
         html += "<b>" +_(u"Magnify initial zoom? ")  + "</b>"
         html += _(u"Yes")
         if self.idevice.imageMagnifier.initialZSize == "100":
@@ -119,16 +127,7 @@ class ImageMagnifierBlock(Block):
             html += common.option("initial"+self.id, 1, "yes")
             html += _(u"No")
             html += common.option("initial"+self.id, 0, "no")
-            
-        html += "<br/><b> " + _(u"Maximum zoom ")  + "</b>"
-        html += "<select name=\"maxZoom%s\">\n" % self.id
-        template = '  <option value="%s0"%s>%s0%%</option>\n'
-        for i in range(10, 21):
-            if str(i)+ "0" == self.idevice.imageMagnifier.maxZSize:
-                html += template % (str(i), ' selected="selected"', str(i))
-            else:
-                html += template % (str(i), '', str(i))
-        html += "</select><br/><br/>\n"
+        html += "<br/><br/>"
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -144,19 +143,22 @@ class ImageMagnifierBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<div class=\"image_text\" style=\""
+        html += u"  <div class=\"image_text\" style=\""
         html += u"width:" + str(self.idevice.imageMagnifier.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
-        html += u"<div class=\"image\">\n"
+        html += u"    <div class=\"image\">\n"
         html += self.imageMagnifierElement.renderPreview()
-        html += u"" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
-        html += self.textElement.renderPreview()
-        html += u"<br/>\n"        
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += u"" + self.idevice.caption
+        html += u"    </div> <!-- class=\"image\" -->\n" 
+        html += u"  </div> <!-- class=\"image_text\" -->\n" 
+        text = self.textElement.renderPreview()
+        if text:
+            html += text
+        else:
+            html += '&nbsp;'
+        html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
         html += self.renderViewButtons()
-        html += u"</div>\n"
+        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
     
 
@@ -168,17 +170,22 @@ class ImageMagnifierBlock(Block):
         html  = u"\n<!-- image with text iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<div class=\"image_text\" style=\""
+        html += u"  <div class=\"image_text\" style=\""
         html += u"width:" + str(self.idevice.imageMagnifier.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
-        html += u"<div class=\"image\">\n"
+        html += u"    <div class=\"image\">\n"
         html += self.imageMagnifierElement.renderView()
-        html += u"<br/>" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
-        html += self.textElement.renderView()
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += u"    <br/>" + self.idevice.caption
+        html += u"    </div> <!-- class=\"image\" -->\n" 
+        html += u"  </div> <!-- class=\"image_text\" -->\n" 
+        text = self.textElement.renderView()
+        if text:
+            html += text
+        else:
+            html += '&nbsp;'
+        html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
+        html += u'\n<div style="clear:both;"></div>\n'
+        html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
     
 

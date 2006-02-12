@@ -2,7 +2,7 @@
 ===========================================================================
 eXe
 Copyright 2004-2005, University of Auckland
-style sheet for default theme
+style sheet for silver theme
 ===========================================================================
 */
 
@@ -135,6 +135,14 @@ p.reading_feedback {
    padding: 20px;
    padding-top: 60px;
 }
+
+input.feedbackbutton {
+margin-top: 10px;
+margin-bottom: 10px;
+background: #4D4D4D;
+color: #FFF;
+}
+
 
 /* styles for image with text iDevice */
 

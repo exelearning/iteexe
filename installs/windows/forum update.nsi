@@ -3,7 +3,7 @@
 ; Define your application name
 !define APPNAME "eXe Forum iDevice update"
 
-!define EXE_VERSION "0.12"
+!define EXE_VERSION "0.13"
 !define APPNAMEANDVERSION "${APPNAME} ${EXE_VERSION}"
 
 ; Main Install settings

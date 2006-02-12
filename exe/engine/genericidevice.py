@@ -23,7 +23,7 @@ An iDevice built up from simple fields.
 
 from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
-from exe.engine.field   import Field, TextField, TextAreaField
+from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField
 import logging
 log = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -142,5 +142,30 @@ class GenericIdevice(Idevice):
             field._upgradeFieldToVersion2()
 
         self.systemResources += ["common.js", "libot_drag.js"]
+
+    def upgradeToVersion7(self):
+        """
+        Upgrades to v0.13
+        """
+        # Upgrade old style reading activity's feedback field
+        if self.class_ == 'reading':
+            # Upgrade the feedback field
+            for i, field in enumerate(self.fields):
+                if isinstance(field, TextAreaField) and \
+                   field.name in (_(u'Feedback'), u'Feedback'):
+                    newField = FeedbackField(field.name, field.instruc)
+                    Field.nextId -= 1
+                    newField._id = field._id
+                    newField.feedback = field.content
+                    newField.idevice = self
+                    self.fields[i] = newField
+            # Upgrade the title
+            if self.title == _(u'Reading Activity 0.11'):
+                # If created in non-english, upgrade in non-english
+                self.title = _(u'Reading Activity')
+            if self.title == u'Reading Activity 0.11':
+                # If created in english, upgrade in english
+                self.title = u'Reading Activity'
+
 
 # ===========================================================================

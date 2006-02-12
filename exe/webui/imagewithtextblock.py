@@ -71,7 +71,6 @@ class ImageWithTextBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<p>"
         html += self.imageElement.renderEdit()       
         html += u"<b>%s</b>\n " % _("Align:")
         floatArr    = [[_(u'Left'), 'left'],
@@ -79,8 +78,7 @@ class ImageWithTextBlock(Block):
                       [_(u'None'),  'none']]
         html += common.select("float"+self.id, 
                               floatArr, selection=self.idevice.float)
-        html += u"</p>\n"
-        html += u"<b>%s </b>" % _(u"Caption:")
+        html += u"<p><b>%s</b></p>" % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc("caption" + self.id, 
                                       self.idevice.captionInstruc)

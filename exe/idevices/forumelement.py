@@ -191,10 +191,9 @@ class ForumElement(object):
         html += '<br/>' + common.textInput("name"+ self.id, self.idevice.title)
         html += '<br/><br/><b>%s</b><br/>' % _(u"Forum Name:")
         html += '<select onchange='
-        html += '"submitChange(\'%s\',\'forumSelect%s\');"' % ("changeForum",
+        html += '"submitChange(\'%s\',\'forumSelect%s\');" ' % ("changeForum",
                                                                self.id)
                                                        
-        html += '"forumSelect%s");"' % self.id
         html += 'name="forumSelect%s" id="forumSelect%s">\n' % (self.id, self.id)
         html += '<option value = "">%s </option>' % _("Select a Forum")
         html += '<option value = "newForum" '
@@ -220,7 +219,7 @@ class ForumElement(object):
         
         html += '<br/><b>%s</b><br/>' % _(u"Discussion Topic/Thread:")
         html += '<select onchange='
-        html += '"submitChange(\'%s\',\'topicSelect%s\');"' % ("changeTopic",
+        html += '"submitChange(\'%s\',\'topicSelect%s\');" ' % ("changeTopic",
                                                                self.id)
         html += 'name="topicSelect%s" id="topicSelect%s">\n' % (self.id, self.id)
         html += '<option value = "none"'
@@ -239,7 +238,7 @@ class ForumElement(object):
         
         html += '<br/><br/><b>%s</b><br/>' % _(u"Learning Management System:")
         html += '<select onchange='
-        html += '"submitChange(\'%s\',\'lmsSelect%s\');"' % ("changeLms",
+        html += '"submitChange(\'%s\',\'lmsSelect%s\');" ' % ("changeLms",
                                                                self.id)
         html += 'name="lmsSelect%s" id="lmsSelect%s">\n' % (self.id, self.id)
         html += '<option value="">%s</option>' % _(u"Please select a LMS")
@@ -276,11 +275,14 @@ class ForumElement(object):
         """
         Returns an XHTML string for viewing this element
         """
-        html  = ""
-        html += u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
-        html += u"<br/>%s<br/>" % self.forum.introduction
+        link = ""
         if self.forum.lms.lms == "moodle":
-            html += "<!--%slink-->\n" % self.forum.forumName
+            link = "<!--%slink-->\n" % self.forum.forumName
+        html  = ""
+        html += u'<b>%s%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName,link)
+        
+        html += u"<br/>%s<br/>" % self.forum.introduction
+        
         html += self.discussionElement.renderView()
         html += self.lmsElement.renderView()
                                                 
@@ -344,16 +346,17 @@ class DiscussionElement(object):
         """
         if self.discussion.isNone:
             return ""
-        html = ""
-        html += u"<br/><b>%s" % _(u"Thread: ")
-        html += u"%s</b>\n" % self.discussion.topic
+        link = ""
         if self.idevice.forum.lms.lms == "moodle":
             topic = self.discussion.topic.replace(" ", "_")
-            html += u"<!--%slink_%s--></b><br/>\n" % (self.idevice.forum.forumName, topic)
-        else:
-            html += u"%s</b><br/>\n" % self.discussion.topic
+            link  = u"<!--%slink_%s--><br/>\n" % (self.idevice.forum.forumName, 
+                                                  topic)
+        html = ""
+        html += u"<br/><b>%s" % _(u"Thread: ")
+        html += u"%s%s</b>\n" % (self.discussion.topic, link)
+    
         html += self.discussion.intro + "<br/>"
-        return html    
+        return html
    
     
 # ===========================================================================

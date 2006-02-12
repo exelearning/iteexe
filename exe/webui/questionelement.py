@@ -92,13 +92,15 @@ class QuestionElement(object):
         html  = self.question.question 
         if self.question.feedback <> "":
             html += '<div id="view%s" style="display:block;">' % self.id
-            html += '<input type="button" name="btnshow%s" ' % self.id
-            html += 'value ="Click here" ' 
-            html += 'onclick="showAnswer(\'%s\',1)"/></div>\n ' % self.id
+            html += common.feedbackButton('btnshow' + self.id,
+                        _(u"Click Here"),
+                        onclick = "showAnswer('%s',1)" % self.id)
+            html += '</div>'
             html += '<div id="hide%s" style="display:none;">' % self.id
-            html += '<input type="button" name="btnhide%s" ' % self.id 
-            html += 'value="Hide" '
-            html += 'onclick="showAnswer(\'%s\',0)"/></div>\n ' % self.id
+            html += common.feedbackButton('btnhide' + self.id,
+                        _(u"Hide"),
+                        onclick = "showAnswer('%s',0)" % self.id)
+            html += '</div>'
             html += '<div id="s%s" class="feedback" style=" ' % self.id
             html += 'display: none;">'
             html += self.question.feedback

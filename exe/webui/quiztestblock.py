@@ -91,7 +91,7 @@ class QuizTestBlock(Block):
         if not self.idevice.isAnswered:
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
-            html += "</font></b><br/><br/>"
+            html += "</b></font><br/><br/>"
         html += "<b>" + _("SCORM Multiple Choice Quiz:") + "<br/><br/></b>"
         
 
@@ -121,20 +121,21 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<form id="contentForm" action="javascript:calcScore();">\n'
+        html  = u'<form id="quizForm%s" ' % self.idevice.id
+        html += u'action="javascript:calcScore();">\n'
         html += u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
         html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
         html += u'<span class="iDeviceTitle">'
-        html += self.idevice.title+'</span><br/>\n'
-        
+        html += self.idevice.title+'</span>\n'
+        html += u'<div class="iDevice_inner">\n'
         for element in self.questionElements:
             html += element.renderView() + "<br/>"  
         
         html += '<input type="submit" name="submitB" '
         html += 'value="%s"/>\n' % _(u"SUBMIT ANSWERS")
-        html += "</div>\n"
+        html += "</div></div>\n"
         html += '</form>\n'
 
         return html
@@ -166,10 +167,10 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + str(i) + " = " 
             answers  += str(element.question.correctAns) + ";\n"
-            chk = ("document.getElementById(\"contentForm\")." + 
-                   quesId+"[i].checked")
-            value = ("document.getElementById(\"contentForm\")." + 
-                     quesId+"[i].value")
+            getEle    = 'document.getElementById("quizForm%s")' % \
+                        self.idevice.id
+            chk       = '%s.%s[i].checked'% (getEle, quesId)
+            value     = '%s.%s[i].value' % (getEle, quesId)
             varStrs += "var " + varStr + ";\n"
             keyStrs += "var key" + str(i)+ " = " 
             keyStrs += str(element.question.correctAns) + ";\n"   
@@ -208,12 +209,12 @@ class QuizTestBlock(Block):
      
             calcRawScore();
             actualScore =  Math.round(rawScore / numQuestions * 100);
-            document.getElementById("contentForm").submitB.disabled = "True"
-            alert("Your score is " + actualScore + "%")
+            document.getElementById("quizForm%s").submitB.disabled = "True"
+            alert("Your score is " + actualScore + "%%")
            
         }
     -->
-    </script>\n"""
+    </script>\n""" % self.idevice.id
 
         return scriptStr
 
@@ -244,10 +245,10 @@ class QuizTestBlock(Block):
             numOption = element.getNumOption()
             answers  += "var key"  + unicode(i) + " = " 
             answers  += unicode(element.question.correctAns) + ";\n"
-            chk = ("document.getElementById(\"contentForm\")." + 
-                   quesId+"[i].checked")
-            value = ("document.getElementById(\"contentForm\")." + 
-                     quesId+"[i].value")
+            getEle    = 'document.getElementById("quizForm%s")' % \
+                        self.idevice.id
+            chk       = '%s.%s[i].checked'% (getEle, quesId)
+            value     = '%s.%s[i].value' % (getEle, quesId)
             varStrs += "var " + varStr + ";\n"
             keyStrs += "var key" + unicode(i)+ " = " 
             keyStrs += unicode(element.question.correctAns) + ";\n"           
@@ -344,7 +345,8 @@ class QuizTestBlock(Block):
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon
         html += ".gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
-        html += self.idevice.title+"</span><br/>\n"
+        html += self.idevice.title+"</span>\n"
+        html += u'<div class="iDevice_inner">\n'
 
         for element in self.questionElements:
             html += element.renderView() + "<br/>"
@@ -359,7 +361,7 @@ class QuizTestBlock(Block):
 
         self.idevice.score = -1
         
-        html += u"</div>\n"
+        html += u"</div></div>\n"
         html += '</form>\n'
         return html
     

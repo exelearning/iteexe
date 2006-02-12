@@ -73,11 +73,11 @@ class Config:
         self.browserPath = Path("firefox")
         # styles is the list of style names available for loading
         self.styles      = []
-        # locale the user wants
-        self.locale      = chooseDefaultLocale(self.localeDir)
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
+        # locale the user wants
+        self.locale      = chooseDefaultLocale(self.localeDir)
         # Try to make the defaults a little intelligent
         # Under devel trees, webui is the default webdir
         self.webDir = Path(self.webDir)

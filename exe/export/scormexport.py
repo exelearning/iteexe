@@ -93,8 +93,9 @@ class Manifest(object):
             if forum.lms.lms == "moodle":
                 forumStr += u"<forum><name>%s</name>" % forum.forumName
                 forumStr += u"<id>%s</id>" % escape(forum.forumName)
+                introduction = forum.introduction
                 forumStr += u"<introduction>%s</introduction>" % \
-                             escape(forum.introduction)
+                escape(introduction).replace( '<','&lt;' ).replace( '>', '&gt;' )
                 forumStr += u"<type>%s</type>" % forum.lms.type.encode()
                 forumStr += u"<studentpost>%s</studentpost>\n" % \
                              forum.lms.studentpost
@@ -114,7 +115,8 @@ class Manifest(object):
                     discussionStr += u"<subject>%s</subject>" \
                                   % escape(discussion.topic)
                     discussionStr += u"<message>%s</message>" \
-                                  % escape(discussion.intro)
+                    % escape(discussion.intro).replace('<',
+                                                    '&lt;').replace('>','&gt;')
                     discussionStr += u"<subscription>send me</subscription>\n"
                     discussionStr += u"</discussion>"
                     
@@ -267,7 +269,7 @@ class ScormPage(Page):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            if idevice.title == "SCORM Quiz Experimental":
+            if idevice.title == "SCORM Quiz":
                 html += block.renderJavascriptForScorm()
             html += block.renderView(self.node.package.style)
 

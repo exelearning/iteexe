@@ -174,10 +174,11 @@ class ForumBlock(Block):
         html += u'<img alt="" class="iDevice_icon" '
         html += u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />\n'
         html += u'<span class="iDeviceTitle">'
-        html += self.idevice.title+'</span><br/>\n'
+        html += self.idevice.title+'</span>\n'
+        html += u'<div class="iDevice_inner">\n'
         html += self.forumElement.renderPreview()
         html += self.renderViewButtons()
-        html += u"</div>"
+        html += u"</div></div>"
         return html
 
     def renderView(self, style):
@@ -189,9 +190,10 @@ class ForumBlock(Block):
         html += u'<img alt="" class="iDevice_icon" '
         html += u'src="icon_'+self.idevice.icon+'.gif" />\n'
         html += u'<span class="iDeviceTitle">'
-        html += self.idevice.title+'</span><br/>\n'
+        html += self.idevice.title+'</span>\n'
+        html += u'<div class="iDevice_inner">\n'
         html += self.forumElement.renderView()
-        html += u"</div>"
+        html += u"</div></div>"
         return html
     
     

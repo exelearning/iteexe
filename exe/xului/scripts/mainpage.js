@@ -403,9 +403,9 @@ function metadataEditor() {
 
 // load the About page
 function aboutPage() {
-	var features = "width=300,height=200,status=1,resizable=1,"+
+	var features = "width=235,height=440,status=1,resizable=1,"+
 			"left=260,top=200";
-	var aboutWin = window.open ("/about", "About", features);
+	aboutWin = window.open ("/about", "About", features);
 }
 
 // Go to the exelearning.org/register.php site

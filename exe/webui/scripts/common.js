@@ -833,7 +833,7 @@ function submitChange(action, selectId)
 
 // show or hide the feedback for cloze idevice
 function toggleFeedback(id) {
-    var ele = document.getElementById(id);
+    var ele = document.getElementById('fb'+id);
     if (ele.style.display == "block") {
         ele.style.display = "none";
     } else {

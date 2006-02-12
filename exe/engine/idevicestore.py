@@ -195,18 +195,35 @@ class IdeviceStore:
         log.debug("load generic iDevices from "+genericPath)
         if genericPath.exists():
             self.generic = persist.decodeObject(genericPath.bytes())
+            self.__upgradeGeneric()
         else:
             self.__createGeneric()
 
-        reading011Path = self.config.configDir/'idevices'/'reading-0.11'
-        if not reading011Path.exists():
-            self.__createReading011()
-            open(reading011Path, "w").write("Created Reading Activity 0.11\n")
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.generic:
             idevice.id = self.getNewIdeviceId()
 
+    def __upgradeGeneric(self):
+        """
+        Upgrades/removes obsolete generic idevices from before
+        """
+        # We may have two reading activites,
+        # one problably has the wrong title, 
+        # the other is redundant
+        readingActivitiesFound = 0
+        for idevice in self.generic:
+            if idevice.class_ == 'reading':
+                if readingActivitiesFound == 0:
+                    # Rename the first one we find
+                    idevice.title = _(u"Reading Activity")
+                else:
+                    # Destroy the second
+                    self.generic.remove(idevice)
+                readingActivitiesFound += 1
+                if readingActivitiesFound == 2:
+                    break
+        self.save()
 
     def __createGeneric(self):
         """
@@ -260,16 +277,18 @@ based on the reading.</p>"""),
                                         "</li>"
                                         "</ol>")) 
         readingAct.emphasis = Idevice.SomeEmphasis
-        readingAct.addField(TextAreaField(_(u"Reading resource"), 
-_(u"""Describe the resource the learner must read in order to be able to 
-complete the activity.""")))
-        readingAct.addField(TextAreaField(_(u"Reference"), 
-_(u"""Correctly reference the source the reading material was taken from. 
-This will demonstrate the correct referencing style relevant for your faculty 
-or department.""")))
+        readingAct.addField(TextAreaField(_(u"What to read"), 
+_(u"""Enter the details of the reading including reference details. The 
+referencing style used will depend on the preference of your faculty or 
+department.""")))
         readingAct.addField(TextAreaField(_(u"Activity"), 
-_(u"""Create the activity to analyse the learners comprehension of the material 
-they have just read e.g. a list of questions about the reading etc.""")))
+_(u"""Describe the tasks related to the reading learners should undertake. 
+This helps demonstrate relevance for learners.""")))
+
+        readingAct.addField(FeedbackField(_(u"Feedback"), 
+_(u"""Use feedback to provide a summary of the points covered in the reading, 
+or as a starting point for further analysis of the reading by posing a question 
+or providing a statement to begin a debate.""")))
 
         self.generic.append(readingAct)
     
@@ -379,6 +398,46 @@ _(u"""Use feedback to provide a summary of the points covered in the reading,
 or as a starting point for further analysis of the reading by posing a question 
 or providing a statement to begin a debate.""")))
         self.generic.append(readingAct)
+    
+        objectives = GenericIdevice(_(u"Objectives"), 
+                                    u"objectives",
+                                    _(u"University of Auckland"), 
+_(u"""Objectives describe the expected outcomes of the learning and should
+define what the learners will be able to do when they have completed the
+learning tasks."""), 
+                                    u"")
+        objectives.emphasis = Idevice.SomeEmphasis
+
+        objectives.addField(TextAreaField(_(u"Objectives"),
+_(u"""Type the learning objectives for this resource.""")))
+        self.generic.append(objectives)
+
+        preknowledge = GenericIdevice(_(u"Preknowledge"), 
+                                      u"preknowledge",
+                                      "", 
+_(u"""Prerequisite knowledge refers to the knowledge learners should already
+have in order to be able to effectively complete the learning. Examples of
+pre-knowledge can be: <ul>
+<li>        Learners must have level 4 English </li>
+<li>        Learners must be able to assemble standard power tools </li></ul>
+"""), u"")
+        preknowledge.emphasis = Idevice.SomeEmphasis
+        preknowledge.addField(TextAreaField(_(u"Preknowledge"), 
+_(u"""Describe the prerequisite knowledge learners should have to effectively
+complete this learning.""")))
+        self.generic.append(preknowledge)
+        
+        activity = GenericIdevice(_(u"Activity"), 
+                                  u"activity",
+                                  _(u"University of Auckland"), 
+_(u"""An activity can be defined as a task or set of tasks a learner must
+complete. Provide a clear statement of the task and consider any conditions
+that may help or hinder the learner in the performance of the task."""),
+u"")
+        activity.emphasis = Idevice.SomeEmphasis
+        activity.addField(TextAreaField(_(u"Activity"),
+_(u"""Describe the tasks the learners should complete.""")))
+        self.generic.append(activity)
 
         self.save()
 

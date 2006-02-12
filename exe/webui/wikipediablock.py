@@ -94,7 +94,7 @@ class WikipediaBlock(Block):
         html += common.textInput("article", self.idevice.articleName)
         html += common.elementInstruc("searchWikipedia"+self.id, 
                                       self.idevice.searchInstruc)
-        html += common.submitButton(u"Wikipedia"+self.id, _(u"Load"))
+        html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
         
         html += u"<br/>\n"
         html += self.articleElement.renderEdit()
@@ -126,14 +126,18 @@ class WikipediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
+            html += u"<div class=\"iDevice_inner\">\n"
         html += self.articleElement.renderPreview()
         html += u"<br/>\n"
         html += u"This article is licensed under the "
-        html += u"<u>GNU Free Documentation License</u>. It uses material "
-        html += u"from the <u>article " 
-        html += u"\""+self.idevice.articleName+u"\"</u>.<br/>\n"
+        html += u'<span style="text-decoration: underline;">GNU Free Documentation License</span>. It uses material '
+        html += u'from the <span style="text-decoration: underline;">article '
+        html += u'"%s"</span>.<br/>\n' % self.idevice.articleName
         html += self.renderViewButtons()
-        html += u"</div>\n"
+        if self.idevice.emphasis != Idevice.NoEmphasis:
+            html += u"</div></div>\n"
+        else:
+            html += u"</div>\n"
         return html
     
 
@@ -153,16 +157,20 @@ class WikipediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
+            html += u"<div class=\"iDevice_inner\">\n"
         html += content
         html += u"<br/>\n"
         html += u"This article is licensed under the "
-        html += u"<a target=\"_blank\" "
-        html += u"href=\"fdl.html\">"
+        html += u"<a "
+        html += u"href=\"javascript:window.open('fdl.html')\">"
         html += u"GNU Free Documentation License</a>. It uses material "
         html += u"from the <a href=\""+self.idevice.site+u"wiki/"
         html += self.idevice.articleName+u"\">"
         html += u"article " + u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
-        html += u"</div>\n"
+        if self.idevice.emphasis != Idevice.NoEmphasis:
+            html += u"</div></div>\n"
+        else:
+            html += u"</div>\n"
         return html
     
 

@@ -112,9 +112,9 @@ class OutlinePane(Renderable):
         node.title = unicode(newName, 'utf8')
         params = [s.replace('"', '\\"') for s in 
                   [node.titleShort, node.titleLong, node.title]]
-        command = 'XHRenNode("%s", "%s", "%s")' % tuple(params)
+        command = u'XHRenNode("%s", "%s", "%s")' % tuple(params)
         log.debug(command)
-        client.sendScript(command)
+        client.sendScript(command.encode('utf-8'))
 
 
     def _doJsRename(self, client, node):

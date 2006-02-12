@@ -52,6 +52,7 @@ class GalleryImage(Persistable):
     _caption      = None
     _id           = None
     thumbnailSize = (128, 128)
+    previewSize   = (320.0, 240.0)
     size          = thumbnailSize
     bgColour      = 0x808080
 
@@ -187,8 +188,12 @@ class GalleryImage(Persistable):
                T.html[
                  T.head[
                    T.title[self.caption],
+                   # One style import for preview mode
                    T.style(type="text/css")[
                     '@import url(/style/%s/content.css);' % styleDir],
+                   # One style import for export mode
+                   T.style(type="text/css")[
+                    '@import url(content.css);'],
                    T.script[
                      raw(
                          '\n'.join([
@@ -198,8 +203,8 @@ class GalleryImage(Persistable):
                              '  multiplier = 1;',
                              '  imageExpanded = false;',
                              '  imageCanExpand = false;',
-                             '  maxWidth = 320.0;',
-                             '  maxHeight = 240.0;',
+                             '  maxWidth = %s;' % self.previewSize[0],
+                             '  maxHeight = %s;' % self.previewSize[1],
                              '',
                              '// Returns the multiplier to shink the Image',
                              'function getShrinkMod() {',
@@ -257,8 +262,10 @@ class GalleryImage(Persistable):
                              T.a(href="javascript:growImage()")[
                                  T.img(id='the_image',
                                        src=unicode(self._imageResource.storageName),
-                                       width=0,
-                                       height=0)
+                                       width=min(self.size[0],
+                                                 self.previewSize[0]),
+                                       height=min(self.size[1],
+                                                  self.previewSize[1]))
                              ]
                          ]
                        ],

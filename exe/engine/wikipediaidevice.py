@@ -66,11 +66,15 @@ is covered by the GNU free documentation license.</p>"""),
         self.site             = defaultSite
         self.icon             = u"inter"
         self.systemResources += ["fdl.html"]
-        self.langInstruc      = x_(u"""Select the appropriate language version 
+        self._langInstruc      = x_(u"""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
-        self.searchInstruc    = x_("""Enter a phrase or term you wish to search 
+        self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
 
+        
+    # Properties
+    langInstruc      = lateTranslate('_langInstruc')
+    searchInstruc    = lateTranslate('_searchInstruc')
    
     def loadArticle(self, name):
         """

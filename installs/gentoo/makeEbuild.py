@@ -19,9 +19,7 @@ def main():
         # Do the export
         os.system('svn export %s exe' % branch)
         # Copy firefox accross
-        (origDir/'../../exe/webui/firefox').copytree(tmp/'exe/webui/firefox')
-        import pdb
-        pdb.set_trace()
+        (origDir/'../../exe/webui/firefox').copytree(tmp/'exe/exe/webui/firefox')
         # Now make the tarball
         os.chdir(tmp/'exe')
         tarball = Path('../exe-%s-source.tgz' % version).abspath()

@@ -18,6 +18,7 @@ exe/engine/configparser.py
 exe/engine/imagewithtextidevice.py
 exe/engine/attachmentidevice.py
 exe/engine/beautifulsoup.py
+exe/engine/locales.py
 exe/engine/packagestore.py
 exe/engine/imagemagnifieridevice.py
 exe/engine/persist.py
@@ -87,12 +88,16 @@ exe/webui/__init__.py
 exe/webui/casestudyblock.py
 exe/webui/testquestionelement.py
 exe/webui/editorelement.py
-exe/xului/xulrunner.py
-exe/xului/mainpage.1484.py
+exe/idevices/forumidevice.py
+exe/idevices/exampleidevice.py
+exe/idevices/exampleblock.py
+exe/idevices/forumelement.py
+exe/idevices/forumscache.py
+exe/idevices/forumblock.py
+exe/idevices/__init__.py
 exe/xului/idevicepane.py
 exe/xului/mainpage.py
 exe/xului/stylemenu.py
 exe/xului/renderablelivepage.py
 exe/xului/__init__.py
-exe/xului/mainpage.old.py
 exe/xului/outlinepane.py
