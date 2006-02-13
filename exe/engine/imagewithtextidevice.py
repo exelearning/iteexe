@@ -22,8 +22,9 @@ A ImageWithText Idevice is one built up from an image and free text.
 """
 
 import logging
-from exe.engine.idevice import Idevice
-from exe.engine.field   import TextAreaField, ImageField
+from exe.engine.idevice   import Idevice
+from exe.engine.field     import TextAreaField, ImageField
+from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -63,10 +64,12 @@ the piston with a brief textual summary of the key aspects of each visual.
         self.text.idevice       = self
         self.float              = u"left"
         self.caption            = u""
-        self.captionInstruc     = _(u"""Provide a caption for the image 
+        self._captionInstruc    = x_(u"""Provide a caption for the image 
 you have just inserted.""")
 
-
+    # Properties
+    captionInstruc = lateTranslate('captionInstruc')
+    
     def upgradeToVersion1(self):
         """
         Called to upgrade from 0.5 release

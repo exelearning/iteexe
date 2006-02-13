@@ -73,7 +73,7 @@ class GalleryImage(Persistable):
 
     def _saveFiles(self, originalImagePath=None):
         """
-        Copies the image file and saves the thumbnail file
+        Copies the image file and saves the thumbna il file
         'originalImagePath' is a Path instance
         setting 'originalImagePath' to None, will just recreate the html and
         thumbnail resources from the existing image resource.

@@ -54,7 +54,7 @@ the text you wish to associate with the file."""))
         self.text.idevice     = self
         self.float            = u"left"
         self.caption          = ""
-        self.captionInstruc   = x_(u"""Provide a caption for the flash movie 
+        self._captionInstruc  = x_(u"""Provide a caption for the flash movie 
 you have just inserted.""")
         self.systemResources += ['videoContainer.swf']
     

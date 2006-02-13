@@ -52,9 +52,9 @@ associate with the file."""))
         self.text.idevice                = self
         self.float                       = u"left"
         self.caption                     = u""
-        self.captionInstruc              = x_(u"""Provide a caption for the 
+        self._captionInstruc             = x_(u"""Provide a caption for the 
 image you have just inserted.""")
-        self.dimensionInstruc            = x_(u"""Enter the image display 
+        self._dimensionInstruc           = x_(u"""Enter the image display 
 dimensions (in pixels) and determine the alignment of the image on screen. 
 The width and height dimensions will alter proportionally.""")
         self.systemResources            += ['magnifier.swf']

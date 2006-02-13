@@ -129,9 +129,11 @@ class FeedbackField(Field):
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.buttonCaption = _(u"Click Here")
+        self._buttonCaption = x_(u"Click Here")
         self.feedback      = ""
-
+    
+    # Properties
+    buttonCaption = lateTranslate('buttonCaption')
 
 
 # ===========================================================================
@@ -467,10 +469,12 @@ class FlashField(Field):
         self.width         = 300
         self.height        = 250
         self.flashResource = None
-        self.fileInstruc   = x_("""Only select .swf (Flash Objects) for 
+        self._fileInstruc   = x_("""Only select .swf (Flash Objects) for 
 this iDevice.""")
 
-
+    #properties
+    fileInstruc = lateTranslate('fileInstruc')
+    
     def setFlash(self, flashPath):
         """
         Store the image in the package
@@ -522,10 +526,12 @@ class FlashMovieField(Field):
         self.width         = 300
         self.height        = 250
         self.flashResource = None
-        self.fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
+        self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
 this iDevice.""")
 
-
+    #properties
+    fileInstruc = lateTranslate('fileInstruc')
+    
     def setFlash(self, flashPath):
         """
         Store the image in the package
@@ -582,7 +588,9 @@ class DiscussionField(Field):
         """
         Field.__init__(self, name, instruc)
         self.content = content
-        self.instruc = "Type a discussion topic here."
+        self._instruc = x_("Type a discussion topic here.")
 
+    #properties
+    instruc = lateTranslate('instruc')
     
 # ===========================================================================

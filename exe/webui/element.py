@@ -50,7 +50,7 @@ class Element(object):
         """
         Returns an XHTML string for editing this element
         """
-        msg = x_(u"ERROR Element.renderEdit called directly with %s class")
+        msg = _(u"ERROR Element.renderEdit called directly with %s class")
         log.error(msg % self.__class__.__name__)
         return _(msg) % self.__class__.__name__
 

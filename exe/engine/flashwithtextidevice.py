@@ -43,18 +43,18 @@ class FlashWithTextIdevice(Idevice):
 associate additional textual information to a flash file. This may be useful 
 where you wish to provide educational instruction regarding the flash file 
 the learners will view."""), u"", u"")
-        self.emphasis         = Idevice.NoEmphasis
-        self.flash            = FlashField(x_(u"Flash with Text"), u"")
-        self.flash.idevice    = self
-        self.text             = TextAreaField(x_(u"Description"),
-                                x_("""Enter the text you wish to 
-                                associate with the image."""))
-        self.text.idevice     = self
-        self.float            = u"left"
-        self.caption          = u""
-        self.captionInstruc   = _(u"""Provide a caption for the flash you 
+        self.emphasis          = Idevice.NoEmphasis
+        self.flash             = FlashField(x_(u"Flash with Text"), u"")
+        self.flash.idevice     = self
+        self.text              = TextAreaField(x_(u"Description"),
+                                 x_("""Enter the text you wish to 
+                                 associate with the image."""))
+        self.text.idevice      = self
+        self.float             = u"left"
+        self.caption           = u""
+        self._captionInstruc   = x_(u"""Provide a caption for the flash you 
                                   have just inserted.""")
-        self.dimensionInstruc =x_(u"""Enter the flash display 
+        self._dimensionInstruc = x_(u"""Enter the flash display 
 dimensions (in pixels) and determine the alignment of the image on screen. 
 The width and height dimensions will alter proportionally.""")
 
