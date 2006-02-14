@@ -38,22 +38,22 @@ def chooseDefaultLocale(localeDir):
     # Now find the best match from the dirs
     myLang, myCountry, myEncoding = splitLocaleName(localeName)
     possibleDirs = []
-    for sub in localeDir.dirs():
-        lang, country, encoding = splitLocaleName(sub.basename())
-        points = 0
-        if lang == myLang:
-            points += 1
-        if country == myCountry:
-            points += 1
-        if encoding == myEncoding:
-            points += 1
-        if points:
-            possibleDirs.append((points, sub.basename()))
-    possibleDirs.sort()
-    if possibleDirs:
-        return possibleDirs[-1][-1]
-    else:
-        return 'en'
+    if localeDir.isdir():
+        for sub in localeDir.dirs():
+            lang, country, encoding = splitLocaleName(sub.basename())
+            points = 0
+            if lang == myLang:
+                points += 1
+            if country == myCountry:
+                points += 1
+            if encoding == myEncoding:
+                points += 1
+            if points:
+                possibleDirs.append((points, sub.basename()))
+        possibleDirs.sort()
+        if possibleDirs:
+            return possibleDirs[-1][-1]
+    return 'en'
 
 def splitLocaleName(localeName):
     """
