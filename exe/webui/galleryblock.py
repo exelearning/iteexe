@@ -168,15 +168,10 @@ class GalleryBlock(Block):
         """
         html = [u'<div class="iDevice">',
                 common.textInput("title"+self.id, self.idevice.title),
-                u'<p style="text-align: left;">',
-                u'  <a href="javascript:addGalleryImage(\'%s\')">' % self.id,
-                u'  <img alt="add images" title="select images to add to '
-                u' gallery" style="vertical-align: text-bottom;" '
-                u' src="/images/stock-insert-image.png" ' +
-                u' /> %s' % _(u"Add images"),
-                u'   </a>',
-                common.hiddenField('newImagePath'+self.id),
-                u'</p>']
+                u'<br/><br/>',
+                u'<input type="button" ',
+                u'onclick="addGalleryImage(\'%s\')"' % self.id,
+                u'value="%s" /><br/><br/>\n' % _(u"Add images")]
 
         if len(self.idevice.images) == 0:
             html += [u'<div style="align:center center">',

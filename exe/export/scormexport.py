@@ -269,7 +269,8 @@ class ScormPage(Page):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            if idevice.title == "SCORM Quiz":
+          #  if idevice.title == "SCORM Quiz":
+            if hasattr(idevice, "isQuiz"):
                 html += block.renderJavascriptForScorm()
             html += block.renderView(self.node.package.style)
 

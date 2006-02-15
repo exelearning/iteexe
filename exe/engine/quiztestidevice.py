@@ -96,7 +96,8 @@ class QuizTestIdevice(Idevice):
 the learners knowledge on a topic without providing the learner with feedback 
 to the correct answer. The quiz will often be given once the learner has had 
 time to learn and practice using the information or skill.
- """), u"", "", "question")
+ """), u"", "question")
+        self.isQuiz     = True
         self.emphasis   = Idevice.SomeEmphasis
         self.score      = -1 
         self.isAnswered = True
@@ -152,4 +153,11 @@ time to learn and practice using the information or skill.
         self._upgradeIdeviceToVersion2()      
         self.systemResources += ["common.js", "libot_drag.js"]
 
+
+    def upgradeToVersion7(self):
+        """
+        Upgrades to v0.14
+        """
+        self._upgradeIdeviceToVersion3()      
+        self.isQuiz = True
 # ===========================================================================

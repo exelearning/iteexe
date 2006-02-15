@@ -160,13 +160,14 @@ class WikipediaBlock(Block):
             html += u"<div class=\"iDevice_inner\">\n"
         html += content
         html += u"<br/>\n"
-        html += u"This article is licensed under the "
+        html += _(u"This article is licensed under the ")
         html += u"<a "
         html += u"href=\"javascript:window.open('fdl.html')\">"
-        html += u"GNU Free Documentation License</a>. It uses material "
-        html += u"from the <a href=\""+self.idevice.site+u"wiki/"
+        html += u"%s</a>. " % _(u"GNU Free Documentation License")
+        html += _(u"It uses material from the ")
+        html += u"<a href=\""+self.idevice.site+u"wiki/"
         html += self.idevice.articleName+u"\">"
-        html += u"article " + u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
+        html += _(u"article ") + u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             html += u"</div></div>\n"
         else:

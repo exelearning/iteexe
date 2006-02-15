@@ -73,13 +73,12 @@ class AttachmentBlock(Block):
         """
         log.debug("renderEdit")
         html  = u'<div class="iDevice">\n'
-        html += u'<a href="#" onclick="addFile(\'%s\');">' % self.id
-        html += _(u'Select a file')
-        html += u'</a>\n'
+        html += common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += u'value="%s" />\n' % _(u"Select a file")
         html += common.elementInstruc('filename'+self.id,
                                       self.idevice.filenameInstruc)
         html += u'<br/>\n'
-        html += common.hiddenField('path'+self.id)
         html += u'\n<b>%s</b>\n' % _(u'Label')
         html += common.elementInstruc('label'+self.id,
                                       self.idevice.labelInstruc)

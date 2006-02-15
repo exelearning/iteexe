@@ -269,12 +269,9 @@ class ImageElement(Element):
         html += "addEventListener('load', imageChanged, true);\n"
         html += u'</script>\n'
 
-        html += u"<a href=\"#\" onclick=\"addImage('"+self.id+"');\">"
-        html += u"<img alt=\"add images\" "
-        html += u"style=\"vertical-align: text-bottom;\" "
-        html += u"src=\"/images/stock-insert-image.png\" /> "
-        html += _(u"Select an image")
-        html += u"</a><br/>\n"
+        html += "<br/><br/>" + common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" onclick="addImage(\'%s\')"' % self.id
+        html += u'value="%s" />' % _(u"Select an image")
         html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
@@ -290,7 +287,7 @@ class ImageElement(Element):
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
         html += u"size=\"4\"/>px \n"
         html += u"(%s) \n" % _(u"blank for original size")
-        html += common.hiddenField("path"+self.id)
+
         return html
 
 
@@ -374,12 +371,10 @@ class MagnifierElement(Element):
         html += "addEventListener('load', magnifierImageChanged, true);\n"
         html += u'</script>\n'
 
-        html += u"<a href=\"#\" onclick=\"addJpgImage('"+self.id+"');\">"
-        html += u"<img alt=\"add images\" "
-        html += u"style=\"vertical-align: text-bottom;\" "
-        html += u"src=\"/images/stock-insert-image.png\" /> "
-        html += _(u"Select an image (JPG file)")
-        html += u"</a><br/>\n"
+        html += "<br/><br/>" + common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" onclick="addJpgImage(\'%s\')"' % self.id
+        html += u'value="%s" /><br/>' % _(u"Select an image (JPG file)")
+        
         html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
@@ -395,7 +390,7 @@ class MagnifierElement(Element):
         html += u"onchange=\"changeMagnifierImageHeight('"+self.id+"');\" "
         html += u"size=\"4\" />\n"
         html += u"(%s) \n" % _(u"blank for original size")
-        html += common.hiddenField("path"+self.id)
+
         return html
 
 
@@ -805,8 +800,6 @@ class FlashMovieElement(Element):
         html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
         html += u'value="%s" />\n' % _(u"Select a flash video")
         html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
-       # html += u"<br/>\n"
-       # html += common.hiddenField("path"+self.id)
 
 
         return html

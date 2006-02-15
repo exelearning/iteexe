@@ -92,7 +92,8 @@ class QuizTestBlock(Block):
             html += '<br/><font color="red"><b> '
             html += _("Please select a correct answer for each question.") 
             html += "</b></font><br/><br/>"
-        html += "<b>" + _("SCORM Multiple Choice Quiz:") + "<br/><br/></b>"
+        html += common.textInput("title"+self.id, self.idevice.title)
+        html += u"<br/><br/>\n"
         
 
         for element in self.questionElements:
