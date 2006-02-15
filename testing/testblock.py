@@ -63,37 +63,43 @@ class TestBlock(SuperTestCase):
         # And actually do some interactive DOM testing...
         allHtml = self.createPackage()
         checker = HTMLChecker(self.ignoreErrorMsgs)
-        mainOk = checker.check(allHtml, False)
-        if mainOk and self.quickCheck:
-            return
-        else:
-            # Backup tmp.html
-            Path('tmp.html').rename('tmpall.html')
-            # Check all the idevices and blocks like each other
-            ln = len(self.package.currentNode.idevices)
-            assert ln >= 1, 'Should be at least one idevice, only %s' % ln
-            idevice = self.package.currentNode.idevices[0]
-            ln = len(self.mainpage.authoringPage.blocks)
-            assert ln >= 1, 'Should be at least one block, only %s' % ln
-            chunks = zip(self.mainpage.authoringPage.blocks,
-                         self.package.currentNode.idevices)
-            for i, (block, idevice) in enumerate(chunks):
-                assert block.idevice is idevice
-                viewHTML = block.renderView('default')
-                previewHTML = block.renderPreview('default')
-                editHTML = block.renderEdit('default')
-                if not checker.check(viewHTML, True):
-                    self.fail('Block "%s" generated bad view XHTML' % idevice.title)
-                if not checker.check(previewHTML, True):
-                    self.fail('Block "%s" generated bad preview XHTML' %
-                              idevice.title)
-                if not checker.check(editHTML, True):
-                    self.fail('Block "%s" generated bad edit XHTML' % idevice.title)
-            if not mainOk:
-                # Even if all the blocks pass, still the main html is bad
-                Path('tmpall.html').rename('tmp.html')
-                self.fail('Authoring Page generated bad XHTML, but all the blocks '
-                          'were good')
+        mainOk = checker.check(allHtml, False, False)
+        if self.quickCheck:
+            if mainOk:
+                return True
+            else:
+                self.fail('Main XHTML failed, check tmp.html and tmp.html.errors')
+                return False
+        # Backup tmp.html
+        Path('tmp.html').rename('tmpall.html')
+        # Check all the idevices and blocks like each other
+        ln = len(self.package.currentNode.idevices)
+        assert ln >= 1, 'Should be at least one idevice, only %s' % ln
+        idevice = self.package.currentNode.idevices[0]
+        ln = len(self.mainpage.authoringPage.blocks)
+        assert ln >= 1, 'Should be at least one block, only %s' % ln
+        chunks = zip(self.mainpage.authoringPage.blocks,
+                     self.package.currentNode.idevices)
+        for i, (block, idevice) in enumerate(chunks):
+            assert block.idevice is idevice
+            viewHTML = block.renderView('default')
+            previewHTML = block.renderPreview('default')
+            editHTML = block.renderEdit('default')
+            if not checker.check(viewHTML, True, False):
+                self.fail('Block "%s" generated bad view XHTML' % idevice.title)
+                return False
+            if not checker.check(previewHTML, True, True):
+                self.fail('Block "%s" generated bad preview XHTML' %
+                          idevice.title)
+                return False
+            if not checker.check(editHTML, True, True):
+                self.fail('Block "%s" generated bad edit XHTML' % idevice.title)
+                return False
+        if not mainOk:
+            # Even if all the blocks pass, still the main html is bad
+            Path('tmpall.html').rename('tmp.html')
+            self.fail('Authoring Page generated bad XHTML, but all the blocks '
+                      'were good')
 
     def _testSCORMExport(self):
         """
@@ -118,7 +124,7 @@ class TestBlock(SuperTestCase):
             self.fail('No "imsmanifest.xml" found in %s' % filename)
         # Run XMLLint over the html file
         checker = HTMLChecker(self.ignoreErrorMsgs)
-        if not checker.check(html, False):
+        if not checker.check(html, False, False):
             self.fail('Scorm export generated bad XHTML')
 
 if __name__ == "__main__":

@@ -71,20 +71,22 @@ class FlashMovieBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<p>"
         html += self.flashMovieElement.renderEdit()       
+	html += u'<p>'
         html += u"<b>%s</b>\n " % _("Align:")
         floatArr    = [[_(u'Left'), 'left'],
                       [_(u'Right'), 'right'],
                       [_(u'None'),  'none']]
         html += common.select("float"+self.id, 
                               floatArr, selection=self.idevice.float)
-        html += u"</p>\n"
+	html += u'</p>\n'
+	html += u'<p>'
         html += u"<b>%s </b>" % _(u"Caption:")
+	html += u'</p>\n'
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc("cap" + self.id, 
                                       self.idevice.captionInstruc)
-        html += "<br/>" + self.textElement.renderEdit()
+        html += self.textElement.renderEdit()
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html

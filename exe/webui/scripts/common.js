@@ -473,11 +473,11 @@ function clozeSubmit(ident) {
     // Mark all of the words
     showClozeScore(ident, 1);
     // Hide Submit
-    toggleElementVisible(ident+'submit');
+    toggleElementVisible('submit'+ident);
     // Show Restart
-    toggleElementVisible(ident+'restart');
+    toggleElementVisible('restart'+ident);
     // Show Show Answers Button
-    toggleElementVisible(ident+'showAnswersButton');
+    toggleElementVisible('showAnswersButton'+ident);
     // Show feedback
     toggleClozeFeedback(ident);
 }
@@ -489,11 +489,11 @@ function clozeRestart(ident) {
     // Clear the answers (Also hides score)
     toggleClozeAnswers(ident, true);
     // Hide Restart
-    toggleElementVisible(ident+'restart');
+    toggleElementVisible('restart'+ident);
     // Hide Show Answers Button
-    toggleElementVisible(ident+'showAnswersButton');
+    toggleElementVisible('showAnswersButton'+ident);
     // Show Submit
-    toggleElementVisible(ident+'submit');
+    toggleElementVisible('submit'+ident);
 }
 
 // Show/Hide all answers in the cloze idevice

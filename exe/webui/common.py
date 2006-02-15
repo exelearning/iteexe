@@ -22,6 +22,8 @@ This module is for the common HTML used in all webpages.
 """
 
 import logging
+from nevow      import tags as T
+from nevow.flat import flatten
 
 log = logging.getLogger(__name__)
 
@@ -115,65 +117,62 @@ def image(name, value, width="", height=""):
     html += u"/>\n"
     return html
 
-def flashText(name, width, height, float='none'):
-    html  = u"<div class=\"flash_text\" style=\""
-    html += u"width:%spx; " % width
-    html += u"float:%s;\">\n" % float
-    html += u"<div class=\"flash\">\n"
-    html += flash(name, '', width, height)
-    html += u"<br/>" + self.idevice.caption + "</div>"
-    html += u"</div>\n"
+def flash(src, width, height, id_=None, params={}, **kwparams):
+    """Returns the XHTML for flash.
+    'params' is a dictionary of name, value pairs that will be turned into a
+    bunch of <param> tags"""
+    log.debug(u"flash %s" % src)
+    stan = \
+        T._object(type='application/x-shockwave-flash',
+                 width=width,
+                 height=height,
+                 **kwparams)
+    if id_:
+        stan = stan(id=id_)
+    if src:
+        stan = stan(data=src)
+    for name, value in params.items():
+        stan = stan[T.param(name=name, value=value)]
+    return flatten(stan)
 
-def flash(name, value, width, height):
-    """Returns the XHTML for flash"""
-    log.debug(u"flash %s" % value)
-    html  = u'<embed id="%s" ' % name 
-    html += u'width="%s" height="%s" fullscreen="no" ' %(width, height)
-    html += u'src="%s"/>\n' % value
-    return html
-
-def flashMovie(value, width, height):
+def flashMovie(src, width, height):
     """Returns the XHTML for a flash movie"""
-    log.debug(u"flash %s" % value)
-    html  = u'<object type="application/x-shockwave-flash"'
-    html += u'data="videoContainer.swf?'
-    html += u'videoSource=%s&autoPlay=false" ' % value
-    html += u'width="%d" height="%d">\n' %(width, height)
-    html += u'<param name="movie"\n'
-    html += u'value="videoContainer.swf?'
-    html += u'videoSource=%s&autoPlay=false"/>\n' % value
-    html += u'<param name="menu" value="false" /></object>\n'
-    return html
+    log.debug(u"flash %s" % src)
+    src = 'videoContainer.swf?videoSource=%s&amp;autoPlay=false' % src
+    return flash(src, width, height,
+        params={'movie': src,
+                'menu' : 'false'})
 
 
-def submitButton(name, value, enabled=True):
+def submitButton(name, value, enabled=True, **kwargs):
     """Adds a submit button to a form"""
     html  = u'<input class="button" type="submit" name="%s" ' % name
     html += u'value="%s" ' % value
     if not enabled:
         html += u' disabled'
+    for key, val in kwargs.items():
+        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
     html += u'/>\n'
     return html
 
 
-def button(name, value, enabled=True, cls=None, **kwparams):
+def button(name, value, enabled=True, **kwargs):
     """Adds a NON-submit button to a form"""
     html  = u'<input type="button" name="%s"' % name
     html += u' value="%s"' % value
     if not enabled:
         html += u' disabled'
-    if cls is not None:
-        html += u' class="%s"' % cls
-    for key, val in kwparams.items():
-	html += u' %s="%s"' % (key, val.replace('"', '\\"'))
+    for key, val in kwargs.items():
+        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
     html += u'/>\n'
     return html
 
-def feedbackButton(name, value=None, enabled=True, cls='feedbackbutton', **kwparams):
+def feedbackButton(name, value=None, enabled=True, **kwparams):
     """Adds a feedback button"""
     if value is None:
         value = _(u'Feedback')
-    return button(name, value, enabled, cls, **kwparams)
+    kwparams.setdefault('class', 'feedbackbutton')
+    return button(name, value, enabled, **kwparams)
 
 
 def submitImage(action, object_, imageFile, title=u"", isChanged=1):
@@ -283,3 +282,8 @@ def select(action, options, object_="", selection=None):
 
     return html
 
+def editModeHeading(text):
+    """
+    Provides a styled editSectionHeading
+    """
+    return u'<p style="editModeHeading">%s</p>' % text

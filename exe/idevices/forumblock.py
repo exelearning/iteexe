@@ -158,9 +158,8 @@ class ForumBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-                                   
         html  = self.forumElement.renderEdit()
-        html += u"<br/>" + self.renderEditButtons() + "<br/><br/>"
+        html += u"<p>" + self.renderEditButtons() + "</p>"
 
         return html
     

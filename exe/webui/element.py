@@ -154,7 +154,7 @@ class FeedbackElement(Element):
         if self.field.feedback != "":
             html += common.feedbackButton('btn' + self.id,
                 self.field.buttonCaption,
-                cls='feedbackbutton',
+                class_='feedbackbutton',
                 onclick="toggleFeedback('%s')" % self.id)
             html += '<br/>\n '
             html += '<div id="fb%s" class="feedback" style="display: none;"> ' % self.id
@@ -271,7 +271,7 @@ class ImageElement(Element):
 
         html += "<br/><br/>" + common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addImage(\'%s\')"' % self.id
-        html += u'value="%s" />' % _(u"Select an image")
+        html += u' value="%s" />' % _(u"Select an image")
         html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
@@ -373,7 +373,7 @@ class MagnifierElement(Element):
 
         html += "<br/><br/>" + common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addJpgImage(\'%s\')"' % self.id
-        html += u'value="%s" /><br/>' % _(u"Select an image (JPG file)")
+        html += u' value="%s" /><br/>' % _(u"Select an image (JPG file)")
         
         html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
         html += u"<input type=\"text\" "
@@ -401,10 +401,6 @@ class MagnifierElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html = common.flash("flash"+self.id,
-                             "",
-                             self.field.width,
-                             self.field.height)
         html = self.renderManifier(
                             "resources/"+self.field.imageResource.storageName,
                             "/templates/magnifier.swf")
@@ -425,27 +421,26 @@ class MagnifierElement(Element):
         return html
     
     def renderManifier(self, imageFile, magnifierFile):
-        
+        """
+        Renders the magnifier flash thingie
+        """
         field = self.field
-        html  = u'<object type="application/x-shockwave-flash" \n'
-        html += u' data="%s"\n' % magnifierFile
-        html += u'width="%s" height="%s" ' % (field.width, field.height)
-        html += u'id="magnifier%s">\n' % self.id
-        html += u'<param name="movie" value="%s" />\n' % magnifierFile
-        html += u'<param name="quality" value="high" />\n'
-        html += u'<param name="scale" value="noscale" />\n'
-        html += u'<param name="salign" value="lt" />\n'
-        html += u'<param name="bgcolor" value="#888888" />\n'
-        html += u'<param name="FlashVars" ' 
-        html += u'value="file=%s' % imageFile
-        html += u'&amp;width=%s&amp;height=%s' % (field.width, field.height)
-        html += u'&amp;borderWidth=12&amp;glassSize=%s' % self.field.glassSize
-        html += u'&amp;initialZoomSize=%s' % field.initialZSize
-        html += u'&amp;maxZoomSize=%s' % field.maxZSize
-        html += u'&amp;targetColor=#FF0000" />\n'
-        html += u'</object>\n'
-        
-        return html
+        flashVars = (
+            u'value="file=%s' % imageFile,
+            u'&amp;width=%s&amp;height=%s' % (field.width, field.height),
+            u'&amp;borderWidth=12&amp;glassSize=%s' % self.field.glassSize,
+            u'&amp;initialZoomSize=%s' % field.initialZSize,
+            u'&amp;maxZoomSize=%s' % field.maxZSize,
+            u'&amp;targetColor=#FF0000" />\n')
+        return common.flash(magnifierFile, field.width, field.height,
+            id='magnifier%s' % self.id,
+            params = {
+                'movie': magnifierFile,
+                'quality': 'high',
+                'scale': 'noscale',
+                'salign': 'lt',
+                'bgcolor': '#888888',
+                'FlashVars': flashVars})
         
 # ==============================================================================
 # A wussy check to see that at least one element once has rendered scripts
@@ -547,26 +542,19 @@ class ClozeElement(Element):
             ("You must call ClozeElement.renderEditScripts() once for each "
              "idevice before calling self.renderEdit()")
         html = [
-            # The field name and instruction button
-            u'<p>',
-            u'<b>%s</b>' % self.field.name,
-            u'</p>',
             common.elementInstruc(self.id, self.field.instruc),
             # Render the iframe box
-            u'<p>',
             u' <iframe id="%s" style="width:100%%;height:250px">' % \
                 self.editorId,
             u' </iframe>',
             common.hiddenField('cloze'+self.id, self.field.encodedContent),
-            u' <script>',
+            u' <script type="text/javascript">',
             u' <!--',
             ur'onLoadHandlers.push([startEdit, ["%s", %s]])' % \
                 (self.editorJs, self.hiddenFieldJs),
             u' -->',
             u' </script>',
-            u'</p>',
             # Render our toolbar
-            u'<p>',
             u'<table style="width: 100%;">',
             u'<tbody>',
             u'<tr>',
@@ -588,11 +576,10 @@ class ClozeElement(Element):
                             self.field.instantMarking,
                             title=_(u'Instant Marking?'),
                             instruction=self.field.instantMarkingInstruc),
-            u'</td><td>',
+            u'</td>',
             u'</tr>',
             u'</tbody>',
             u'</table>',
-            u'</p>',
             ]
         return '\n    '.join(html)
 
@@ -661,26 +648,31 @@ class ClozeElement(Element):
             value = _(u"Show/Clear Answers")
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
-            html += ['<br/><br/><input type="button" ',
-                     'value = "%s"' % _(u"Submit"),
-                     'id="%ssubmit"' % self.id,
-                     'onclick="clozeSubmit(\'%s\')"/>\n' % self.id]
-            html += ['<br/><br/><input type="button" ',
-                     'style="display: none;"',
-                     'value="%s"' % _(u"Restart"),
-                     'id="%srestart"' % self.id,
-                     'onclick="clozeRestart(\'%s\')"/>\n' % self.id]
+            html += ['<p>\n',
+                     common.submitButton('%ssubmit' % self.id,
+                        _(u"Submit"),
+                        id='submit%s' % self.id,
+                        onclick="clozeSubmit('%s')" % self.id),
+                     '</p>\n<p>\n',
+                     common.button(
+                        '%srestart' % self.id,
+                        _(u"Restart"),
+                        id='restart%s' % self.id,
+                        onclick="clozeRestart('%s')" % self.id),
+                     '</p>\n',
+                     ]
             # Set the show/hide answers button attributes
             style = 'display: none;'
             value = _(u"Show Answers")
             onclick = "fillClozeInputs('%s')" % self.id
         # Show/hide answers button
-        html += ['&nbsp;&nbsp;'
-                 '<input type="button"',
-                 'id="%sshowAnswersButton"' % self.id,
-                 'style="%s"' % style,
-                 'value="%s"' % value,
-                 'onclick="%s"/>' % onclick]
+        html += ['&nbsp;&nbsp;',
+                 common.button(
+                    '%sshowAnswersButton' % self.id,
+                    value,
+                    id='showAnswersButton%s' % self.id,
+                    style=style,
+                    onclick=onclick)]
         return '\n'.join(html) + '</div>'
 
 # ===========================================================================
@@ -720,7 +712,7 @@ class FlashElement(Element):
         html += u"<br/><br/>\n"
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlash(\'%s\')"' % self.id
-        html += u'value="%s" />' % _(u"Select Flash Object")
+        html += u' value="%s" />' % _(u"Select Flash Object")
         html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
         html += u"<br/>\n"
         html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
@@ -745,11 +737,11 @@ class FlashElement(Element):
         """
         Returns an XHTML string for previewing this image
         """
-
-        html = common.flash("flash"+self.id,
-                             "",
-                             self.field.width,
-                             self.field.height)
+        if self.field.flashResource:
+            flashFile = 'resources/' + self.field.flashResource.storageName
+        else:
+            flashFile = ""
+        html = common.flash(flashFile, self.field.width, self.field.height)
         return html
 
 
@@ -761,12 +753,7 @@ class FlashElement(Element):
             flashFile = self.field.flashResource.storageName
         else:
             flashFile = ""
-
-        html = common.flash("flash"+self.id, 
-                             flashFile,
-                             self.field.width,
-                             self.field.height)
-
+        html = common.flash(flashFile, self.field.width, self.field.height)
         return html
 
 # ===========================================================================
@@ -798,7 +785,7 @@ class FlashMovieElement(Element):
         html  = u"<b>"+self.field.name+":</b><br/><br/>\n"
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
-        html += u'value="%s" />\n' % _(u"Select a flash video")
+        html += u' value="%s" />\n' % _(u"Select a flash video")
         html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
 
 
@@ -809,11 +796,11 @@ class FlashMovieElement(Element):
         """
         Returns an XHTML string for previewing this image
         """
-
-        html = common.flash("flash"+self.id,
-                             "",
-                             self.field.width,
-                             self.field.height)
+        if self.field.flashResource:
+            flashFile = 'resources/' + self.field.flashResource.storageName
+        else:
+            flashFile = ""
+        return common.flashMovie(flashFile, self.field.width, self.field.height)
         return html
 
 
@@ -829,5 +816,6 @@ class FlashMovieElement(Element):
         html = common.flashMovie(flashFile,
                                  self.field.width,
                                  self.field.height)
+                                 
 
         return html

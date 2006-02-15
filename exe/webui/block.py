@@ -244,10 +244,9 @@ class Block(Renderable):
                 html += self.purpose 
                 
             if self.tip != "":
-                html += u'<b>' + _(u"Tip:") + u'</b>'
-                html += u'<br/>\n'
+                html += u'<p><b>' + _(u"Tip:") + u'</b></p>'
                 html += self.tip 
-                html += u'<br/>\n'
+                html += u'\n'
                 
             html += u'</div><br/><br/>\n'    
         

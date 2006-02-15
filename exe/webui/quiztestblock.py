@@ -89,9 +89,8 @@ class QuizTestBlock(Block):
         """
         html  = "<div class=\"iDevice\">\n"
         if not self.idevice.isAnswered:
-            html += '<br/><font color="red"><b> '
-            html += _("Please select a correct answer for each question.") 
-            html += "</b></font><br/><br/>"
+            html += common.editModeHeading(
+                _("Please select a correct answer for each question."))
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         
@@ -338,8 +337,7 @@ class QuizTestBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u'<form action="javascript:calcScore();">\n'
-        html += u"<div class=\"iDevice "
+        html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u'<img alt="" class="iDevice_icon" '
@@ -353,8 +351,8 @@ class QuizTestBlock(Block):
             html += element.renderView() + "<br/>"
         html += self.renderViewButtons()
        
-        html += '<input type="submit" name="submitScore"'
-        html += ' value="%s"/> ' % _("Submit Answer")
+        html += '<input type="button" name="submitScore"'
+        html += ' onclick="calcScore()" value="%s"/> ' % _("Submit Answer")
         
         if not self.idevice.score == -1:
             message = "Your score is " + unicode(self.idevice.score) + "%"
@@ -363,7 +361,6 @@ class QuizTestBlock(Block):
         self.idevice.score = -1
         
         html += u"</div></div>\n"
-        html += '</form>\n'
         return html
     
 

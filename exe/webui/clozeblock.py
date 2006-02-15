@@ -74,12 +74,8 @@ class ClozeBlock(Block):
             common.textInput("title"+self.id, self.idevice.title),
             u'</p>',
             self.instructionElement.renderEdit(),
-            u'<p>',
             self.clozeElement.renderEdit(),
-            u'</p>',
-            u'<p>',
             self.feedbackElement.renderEdit(),
-            u'</p>',
             self.renderEditButtons(),
             u'</div>'
             ]
@@ -98,17 +94,11 @@ class ClozeBlock(Block):
         html = [
             u'<script type="text/javascript" src="common.js"></script>\n',
             u'<div class="iDevice_inner">\n',
-            u' <p>',
             self.instructionElement.renderView(),
-            u' </p>',
-            u' <p id="clozeContent%s">' % self.id,
-            clozeContent,
-            u' </p>',
-            u' <p>']
+            clozeContent]
         if self.feedbackElement.field.content:
             html.append(self.feedbackElement.renderView(False))
         html += [
-            u' </p>',
             u'</div>\n',
             ]
         return u'\n    '.join(html)

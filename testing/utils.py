@@ -143,27 +143,34 @@ class HTMLChecker(object):
         """
         self.resToIgnore = resToIgnore
         
-    def check(self, html, wrap):
+    def check(self, html, wrap, addForm):
         """
         Actually runs xmllint to check the html
         'html' is the html/xhtml that you want to check
         if 'wrap' is true, we'll wrap the html in a nice header so as not to
         kill xmllint
+        if 'addForm' is true, we'll include a form in the wrapping
         """
         # Wrap the html in proper document tags if necessary
         if wrap:
-            html = ('<?xml version="1.0" encoding="iso-8859-1"?>'
-                    '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-                    'Transitional//EN" '
-                    '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
-                    '<html xmlns="http://www.w3.org/1999/xhtml">'
-                    '<head><title>No Title</title></head><body>%s</body></html>'
-                    % html)
+            template = ('<?xml version="1.0" encoding="iso-8859-1"?>'
+                        '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
+                        'Transitional//EN" '
+                        '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+                        '<html xmlns="http://www.w3.org/1999/xhtml">'
+                        '<head><title>No Title</title></head><body>'
+                        '%s</body></html>')
+            if addForm:
+                template = template % \
+                    ('<form method="post" action="NO_ACTION"'
+                     ' id="contentForm">%s</form>')
+            html = template % html
         # Use xmllint
         htmlFile = open('tmp.html', 'wb')
-        htmlFile.write(html)
+        htmlFile.write(html.encode('utf-8'))
         htmlFile.close()
-        stdin, stdout, stderr = os.popen3('xmllint --encode utf8 --dtdvalid xhtml1-strict.dtd tmp.html', True)
+        #stdin, stdout, stderr = os.popen3('xmllint --encode utf8 --dtdvalid xhtml1-strict.dtd tmp.html', True)
+        stdin, stdout, stderr = os.popen3('xmllint --encode utf8 --dtdvalid xhtml1-transitional.dtd tmp.html', True)
         out = stdout.read()
         err = stderr.read()
         ret = os.wait()[1] >> 8

@@ -71,7 +71,6 @@ class FlashWithTextBlock(Block):
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<p>"
         html += self.flashElement.renderEdit()  
           
         html += u"<b>%s</b>\n " % _("Align:")
@@ -82,7 +81,7 @@ class FlashWithTextBlock(Block):
                               floatArr, selection=self.idevice.float) 
         html += common.elementInstruc("dimen" + 
                                       self.id, self.idevice.dimensionInstruc)
-        html += u"</p>\n"
+        html += u"\n"
         html += u"<b>%s </b>" % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc("caption" + self.id, 

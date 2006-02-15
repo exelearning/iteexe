@@ -54,5 +54,7 @@ font-family: Verdana, Helvetica, Arial, sans-serif;
 
 
 
-
+p.editModeHeading {
+ font-weight: bold;
+}
 

@@ -93,18 +93,26 @@ class LmsElement(object):
     
             
 
-            html  = u"<br/><b>%s</b>" % _(u"Forum type:") 
+            html  = u"<p><b>%s</b></p>" % _(u"Forum type:") 
+            html += u'<p>'
             html += common.elementInstruc("type"+self.id, 
-                                          self.lms.typeInstruc)+ u"<br/>"
+                                          self.lms.typeInstruc)
+            html += u'</p>'
+            html += u'<p>'
             html += common.select("type"+self.id, 
                                   typeArr, selection=self.lms.type) 
             
-            html += u"<br/><b>%s</b>" % _(u"Can a student post to this forum?:")
+            html += u'</p>'
+            html += u"<p><b>%s</b></p>" % _(u"Can a student post to this forum?:")
+            html += u'<p>'
             html += common.elementInstruc("studentpost"+self.id, 
-                                          self.lms.postInstruc)+ "<br/>"
+                                          self.lms.postInstruc)
+            html += u'</p>'
+            html += u'<p>'
             html += common.select("studentpost"+self.id, postArr, 
                                   selection=self.lms.studentpost) + "\n"
-            html += u"<br/><b>%s</b>" % _(u"Force everyone to be subscribed?:")
+            html += u'</p>'
+            html += u"<p><b>%s</b></p>" % _(u"Force everyone to be subscribed?:")
             
             html += common.elementInstruc("subscription"+self.id, 
                                           self.lms.subscInstruc)+ "<br/>"
@@ -185,11 +193,14 @@ class ForumElement(object):
         """
         html  = ""
         if self.idevice.message <> "":
-            html += '<br/><font color="red">'
-            html += '<b>%s</font></b><br/>' % self.idevice.message
+            html += '<p style="color: red; font-weight: bold;">'
+            html += '%s</p>' % self.idevice.message
 
-        html += '<br/>' + common.textInput("name"+ self.id, self.idevice.title)
-        html += '<br/><br/><b>%s</b><br/>' % _(u"Forum Name:")
+        html += u'<p>'
+        html += common.textInput("name"+ self.id, self.idevice.title)
+        html += u'</p>'
+        html += '<p><b>%s</b></p>' % _(u"Forum Name:")
+        html += '<fieldset>'
         html += '<select onchange='
         html += '"submitChange(\'%s\',\'forumSelect%s\');" ' % ("changeForum",
                                                                self.id)
@@ -212,15 +223,13 @@ class ForumElement(object):
             html += common.textInput("fName"+ self.id, self.forum.forumName)
             html += common.elementInstruc("fName"+ self.id, 
                                           self.forum.nameInstruc)
-            html += "<br/><br/><b>%s</b><br/>" % _("Introduction")
+            html += "<p><b>%s</b></p>" % _("Introduction")
             html += common.richTextArea("fIntro"+self.id, 
                                         introduction)
-        html += "<br/>\n"
-        
-        html += '<br/><b>%s</b><br/>' % _(u"Discussion Topic/Thread:")
+        html += '<p><b>%s</b></p>' % _(u"Discussion Topic/Thread:")
         html += '<select onchange='
         html += '"submitChange(\'%s\',\'topicSelect%s\');" ' % ("changeTopic",
-                                                               self.id)
+                                                                self.id)
         html += 'name="topicSelect%s" id="topicSelect%s">\n' % (self.id, self.id)
         html += '<option value = "none"'
         html += '>%s </option>' % _("None")
@@ -236,7 +245,7 @@ class ForumElement(object):
         html += '</select> \n'
         html += self.discussionElement.renderEdit()
         
-        html += '<br/><br/><b>%s</b><br/>' % _(u"Learning Management System:")
+        html += common.editModeHeading(_(u"Learning Management System:"))
         html += '<select onchange='
         html += '"submitChange(\'%s\',\'lmsSelect%s\');" ' % ("changeLms",
                                                                self.id)
@@ -252,8 +261,8 @@ class ForumElement(object):
         html += '>'+ _(u"Other") + '</option>'
         html += '</select>\n'
         html += common.elementInstruc("lms"+ self.id, self.forum.lmsInstruc)
-        html += "<br/><br/>"
         html += self.lmsElement.renderEdit()
+        html += '</fieldset>\n'
         
         return html
         
@@ -263,11 +272,11 @@ class ForumElement(object):
         """
         html  = ""
         html += u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
-        html += u"<br/>%s<br/>" % self.forum.introduction
+        html += u"<p>%s</p>" % self.forum.introduction
+        html += u"<p>"
         html += self.discussionElement.renderPreview()
         html += self.lmsElement.renderView()
-                                                
-        html += u"<br/><br/>\n"
+        html += u"</p>\n"
         
         return html
     
@@ -280,13 +289,11 @@ class ForumElement(object):
             link = "<!--%slink-->\n" % self.forum.forumName
         html  = ""
         html += u'<b>%s%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName,link)
-        
-        html += u"<br/>%s<br/>" % self.forum.introduction
-        
+        html += u"<p>%s</p>" % self.forum.introduction
+        html += u"<p>"
         html += self.discussionElement.renderView()
         html += self.lmsElement.renderView()
-                                                
-        html += u"<br/><br/>\n"
+        html += u"</p>\n"
         
         return html
  
@@ -321,9 +328,10 @@ class DiscussionElement(object):
         if self.discussion.isNone:
             return ""
         
-        html  = common.textInput("topic" + self.id, self.discussion.topic)
+        html  = u"<p>"
+        html += common.textInput("topic" + self.id, self.discussion.topic)
         html += common.elementInstruc(self.id, self.discussion.instruc)
-        html += u"<br/>\n"
+        html += u"</p>\n"
         html += common.richTextArea("dIntro" + self.id, self.discussion.intro)
 
         return html
@@ -335,9 +343,11 @@ class DiscussionElement(object):
         if self.discussion.isNone:
             return ""
         html = ""
-        html += u"<br/><b>%s" % _(u"Thread: ")
-        html += u"%s</b><br/>\n" % self.discussion.topic
-        html += self.discussion.intro + "<br/>"
+        html += u"<p><b>%s" % _(u"Thread: ")
+        html += u"%s</b></p>\n" % self.discussion.topic
+        html += u"<p>"
+        html += self.discussion.intro
+        html += u"</p>\n"
         return html   
 
     def renderView(self):
@@ -349,13 +359,14 @@ class DiscussionElement(object):
         link = ""
         if self.idevice.forum.lms.lms == "moodle":
             topic = self.discussion.topic.replace(" ", "_")
-            link  = u"<!--%slink_%s--><br/>\n" % (self.idevice.forum.forumName, 
-                                                  topic)
+            link  = u"<!--%slink_%s--><br/>\n" % \
+            (self.idevice.forum.forumName,link)
         html = ""
-        html += u"<br/><b>%s" % _(u"Thread: ")
-        html += u"%s%s</b>\n" % (self.discussion.topic, link)
-    
-        html += self.discussion.intro + "<br/>"
+        html += u"<p><b>%s" % _(u"Thread: ")
+        html += u"%s%s</b></p>\n" % (self.discussion.topic, link)
+        html += u"<p>"
+        html += self.discussion.intro
+        html += u"</p>\n"
         return html
    
     
