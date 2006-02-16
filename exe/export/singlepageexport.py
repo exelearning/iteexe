@@ -78,6 +78,7 @@ class SinglePageExport(object):
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles  = [self.stylesDir/'..'/'base.css']
+	styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
         styleFiles += self.stylesDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")

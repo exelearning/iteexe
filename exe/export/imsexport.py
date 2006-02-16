@@ -237,6 +237,7 @@ class IMSExport(object):
         # Copy the style sheet files to the output dir
         # But not nav.css
 	styleFiles  = [self.styleDir/'..'/'base.css']
+	styleFiles += [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += self.styleDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")

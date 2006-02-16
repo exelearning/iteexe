@@ -92,6 +92,7 @@ class WebsiteExport(object):
         """
         # Copy the style sheet files to the output dir
         styleFiles  = [self.stylesDir/'..'/'base.css']
+	styleFiles += [self.stylesDir/'..'/'popup_bg.gif']
         styleFiles += self.stylesDir.files("*.css")
         styleFiles += self.stylesDir.files("*.jpg")
         styleFiles += self.stylesDir.files("*.gif")
