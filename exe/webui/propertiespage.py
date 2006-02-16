@@ -61,6 +61,7 @@ class PropertiesPage(RenderableResource):
            '''<head>''',
            '''<style type="text/css">''',
            '''@import url(/css/exe.css);''',
+           '''@import url(/style/base.css);''',
            '''@import url(/style/default/content.css);</style>''',
            '''<script type="text/javascript" '''
            '''src="/scripts/common.js"></script>''',

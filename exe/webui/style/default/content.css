@@ -9,30 +9,22 @@ style sheet for default theme
 body {
    margin: 10px 20px 10px 20px;
    padding: 0px 0px 0px 0px;
-   font-family: arial, verdana, helvetica, sans-serif;
    color:#4d4d4d;
-   font-size: 13px;
    background: #E0DFD8;
 }
 
-a { color: #FF6600;
-    text-decoration: none;
+a {
+ color: #FF6600;
 }
 
-a:hover { text-decoration: underline;
-color: #B34700;
-}
-
-img {
-    border: 0;
+a:hover {
+ color: #B34700;
 }
 
 p#nodeTitle { 
    color: #4d4d4d;
    font-size: 32px;
-   font-weight: bold;
    letter-spacing: -1px;
-   display: inline;
    text-align:left;
    padding-right: 30px;
 }
@@ -48,9 +40,7 @@ div#nodeDecoration {
 
 
 .emphasis0 {
-    padding-left: 0px;
     padding-bottom: 20px;
-    margin: 0px;
 }
 
 
@@ -74,22 +64,21 @@ div#nodeDecoration {
    text-align:left;
 }
 
-* html .iDevice_inner {
-   background-image:none;
-   background-position:top left;
-   background-repeat:no-repeat;
-}
-
 .iDevice p {
    padding-left: 0px;
    line-height: 16px;
    text-align:left;
 }
 
+.iDevice div.block {
+   padding-left: 0px;
+   line-height: 16px;
+   text-align:left;
+} /* In some Idevices we use <div class="block"> instead of <p> */
+
 .iDeviceTitle {
    color: #568D14;
    font-size: 24px;
-   font-family: Arial, Helvetica, sans-serif;
    font-weight:bold;
    letter-spacing:-1px;
    vertical-align: top;
@@ -100,12 +89,13 @@ div#nodeDecoration {
    background-image:url(top_right_corner.gif);
    background-position:top right;
    background-repeat:no-repeat;
+   position: inline;
+   top: 0;
 } 
 
 .emphasis0 .iDeviceTitle {
    color: #568D14;
    font-size: 24px;
-   font-family: Arial, Helvetica, sans-serif;
    font-weight:bold;
    letter-spacing:-1px;
    vertical-align: top;
@@ -122,22 +112,15 @@ div#nodeDecoration {
    margin-top: -10px;
    margin-left: 10px;
    padding-right: 10px;
+   top: 0;
 }
 
 input.feedbackbutton {
-margin-top: 10px;
-margin-bottom: 10px;
-background: #DBE992;
-}
-
-p.reading_reference {
-   font-style: italic;        
+	background: #DBE992;
 }
 
 p.reading_feedback {
    border: 1px dashed #ADADAD;
-   margin: 20px;
-   padding: 8px;
    background-color: #FFF;
 }
 
@@ -164,181 +147,7 @@ p.reading_feedback {
 /* styles for image with text iDevice */
 
 .image_text { 
-	border: 1px solid #9D9D9D;
+	border-color: #9D9D9D;
 	background: transparent;
-	padding: 4px;
-	margin: 4px;
 }
-
-/* styles for 'tips for completion' and 'pedagogical help' */
-
-.popupDiv {
-   background-color: #EDEFF0;
-   border: 2px solid #607489;
-   padding: 0px 4px 4px 4px;
-   margin-left: 15px;
-   text-align:left;
-   z-index:99;
-   -moz-border-radius: 3px;
-}
-
-.popupDivLabel {
- text-align: center;
- font: message-box;
- font-weight: bold;
- color: #fff;
- cursor:move;
- margin: 0px -4px 0px -4px;
- background-image:url(popup_bg.gif);
-}
-
-
-/* styles below here are for for Wikipedia content 
-   imported into eXe. Taken from en.wikipedia.org. */
- 
-#catlinks {
-	border: 1px solid #aaa;
-	background-color: #f9f9f9;
-	padding: 5px;
-	margin-top: 1em;
-	clear: both;
-}
-
-div.floatleft, table.floatleft {
-	float: left;
-	position: relative;
-	margin: 0 .5em .5em 0;
-	border: 0;
-}
-
-div.floatleft p { font-style: italic; }
-
-/* thumbnails */
-div.thumb {
-	margin-bottom: .5em;
-}
-div.thumb div {
-	border: 1px solid #ccc;
-	padding: 3px !important;
-	background-color: #f9f9f9;
-	font-size: 94%;
-	text-align: center;
-	overflow: hidden;
-}
-div.thumb div a img {
-	border: 1px solid #ccc;
-}
-div.thumb div div.thumbcaption {
-	border: none;
-	text-align: left;
-	line-height: 1.4em;
-	padding: .3em 0 .1em 0;
-}
-div.magnify {
-	float: right;
-	border: none !important;
-	background: none !important;
-}
-div.magnify a, div.magnify img {
-	display: block;
-	border: none !important;
-	background: none !important;
-}
-
-
-div.tright {
-	clear: right;
-	float: right;
-	border-width: .5em 0 .8em 1.4em;
-}
-div.tleft {
-	float: left;
-	margin-right: .5em;
-	border-width: .5em 1.4em .8em 0;
-}
-
-/* Infobox template style */
-
-.infobox {
-   border: 1px solid #aaaaaa;
-   background-color: #f9f9f9;
-   color: black;
-   margin-bottom: 0.5em;
-   margin-left: 1em;
-   padding: 0.2em;
-   float: right;
-   clear: right;
-}
-.infobox td,
-.infobox th {
-   vertical-align: top;
-}
-.infobox caption {
-   font-size: larger;
-   margin-left: inherit;
-}
-.infobox.bordered {
-   border-collapse: collapse;
-}
-.infobox.bordered td,
-.infobox.bordered th {
-   border: 1px solid #aaaaaa;
-}
-.infobox.bordered .borderless td,
-.infobox.bordered .borderless th {
-   border: 0;
-}
-
-.infobox.sisterproject {
-   width: 20em;
-   font-size: 90%;
-}
-
-/* wikipedia tables of contents styles */
-
-#toc,
-.toc {
-	border: 1px solid #aaa;
-	background-color: #f9f9f9;
-	padding: 5px;
-	font-size: 95%;
-}
-
-#toc h2,
-.toc h2 {
-	display: inline;
-	border: none;
-	padding: 0;
-	font-size: 100%;
-	font-weight: bold;
-}
-
-#toc #toctitle,
-.toc #toctitle,
-#toc .toctitle,
-.toc .toctitle {
-	text-align: center;
-}
-
-#toc ul,
-.toc ul {
-	list-style-type: none;
-	list-style-image: none;
-	margin-left: 0;
-	padding-left: 0;
-	text-align: left;
-}
-
-#toc ul ul,
-.toc ul ul {
-	margin: 0 0 0 2em;
-}
-
-#toc .toctoggle,
-.toc .toctoggle {
-	font-size: 94%;
-}
-
-
-
 

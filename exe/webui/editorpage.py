@@ -152,6 +152,7 @@ class EditorPage(RenderableResource):
         html += "<head>\n"
         html += "<style type=\"text/css\">\n"
         html += "@import url(/css/exe.css);\n"
+        html += '@import url(/style/base.css);\n'
         html += "@import url(/style/standardwhite/content.css);</style>\n"
         html += '<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += '</script>\n'

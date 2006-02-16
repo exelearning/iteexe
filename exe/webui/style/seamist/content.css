@@ -1,35 +1,29 @@
 /*  =================================================
-     eXe
-     Copyright 2004-2005, University of Auckland
+    eXe
+    Copyright 2004-2005, University of Auckland
 
-     style for seamist.
-   ================================================== */
+    style for seamist.
+    ================================================== */
 
 
 body {
-    margin: 0px 0px 0px 0px;
     padding: 10px 10px 10px 10px;
-    font-family: arial, verdana, helvetica, sans-serif;
-    font-size: 13px;
     background: #FFFFFF;
 }
 
-a { color: #003366;
+a { 
+    color: #003366;
     text-decoration: none;
     border: 0;
 }
 
-img {
-    border: 0;
-}
-
 a:hover {color: #3C5866;
-         text-decoration: underline; 
+    text-decoration: underline; 
 }
 
 #main {
     margin: 10px 10px 10px 10px;
-        padding: 18px;
+    padding: 18px;
     margin: 10px 10px 10px 10px;
     background-color: #EDEFF0;
     line-height: 140%;
@@ -39,7 +33,7 @@ a:hover {color: #3C5866;
 
 form > #main {
     margin: 10px 10px 10px 10px;
-        padding: 18px;
+    padding: 18px;
     margin: 10px 10px 10px 10px;
     background-color: #EDEFF0;
     line-height: 140%;
@@ -51,26 +45,18 @@ li {list-style-position: inside;}
 
 /* -- style the node title on each page -- */
 
+p#nodeTitle { 
+    color: #3C5866;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
 div#nodeDecoration {
     border-top: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
 }
 
-p#nodeTitle { 
-    color: #3C5866;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    display: inline;
-}
-
-
 /* --- iDevice Styles --- */
-
-.emphasis0 {
-    padding-left: 0px;
-    margin: 0px;
-}
 
 .emphasis1 {
     background-color: #B1C0C7;
@@ -92,69 +78,31 @@ p#nodeTitle {
     padding-right: 20px;
 }
 
+.iDevice div.block {
+    padding-left: 24px;
+    padding-right: 20px;
+} /* We use div's like paragraphs in some places inside iDevice blocks */
+
 .iDeviceTitle {
     color: #3C5866;
     font-size: 17px;
     letter-spacing: 1px;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
-    position: relative;
-    top: -18px;   /* aligns title up with middle of icon */
 }    
 
 input.feedbackbutton {
-margin-top: 10px;
-margin-bottom: 10px;
-background: #C6E2FA;
-color: #3C5866;
+    background: #C6E2FA;
+    color: #3C5866;
 }
 
 
 /* styles for image with text iDevice */
 
 .image_text { 
-	border: 1px solid #3C5866;
-	background: #FFF;
-	padding: 4px;
-	margin: 4px;
-}
-
-
-
-
-p.reading_reference {
-    font-style: italic;        
+    border-color: #3C5866;
+    background: #FFF;
 }
 
 p.reading_feedback {
-    margin: 20px;
-    padding: 8px;
     font-style: italic;
 }
-
-
-/* styles for 'tips for completion' and 'pedagogical help' */
-
-.popupDiv {
-   background-color: #EDEFF0;
-   border: 2px solid #607489;
-   padding: 0px 4px 4px 4px;
-   margin-left: 15px;
-   text-align:left;
-   z-index:99;
-   -moz-border-radius: 3px;
-}
-
-.popupDivLabel {
- text-align: center;
- font: message-box;
- font-weight: bold;
- color: #fff;
- cursor:move;
- margin: 0px -4px 0px -4px;
- background-image:url(popup_bg.gif);
-}
-
-
-
-

@@ -190,8 +190,12 @@ class GalleryImage(Persistable):
                    T.title[self.caption],
                    # One style import for preview mode
                    T.style(type="text/css")[
+                    '@import url(/style/base.css);'],
+                   T.style(type="text/css")[
                     '@import url(/style/%s/content.css);' % styleDir],
                    # One style import for export mode
+                   T.style(type="text/css")[
+                    '@import url(base.css);'],
                    T.style(type="text/css")[
                     '@import url(content.css);'],
                    T.script[

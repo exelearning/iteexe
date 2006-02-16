@@ -134,6 +134,7 @@ class AuthoringPage(RenderableResource):
         html += u'<head>\n'
         html += u'<style type="text/css">\n'
         html += u'@import url(/css/exe.css);\n'
+        html += u'@import url(/style/base.css);\n'
         html += u'@import url(/style/%s/content.css);\n' % self.package.style
         html += u'</style>\n'
         html += u'<script type="text/javascript" src="/scripts/common.js">'

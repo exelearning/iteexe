@@ -77,7 +77,8 @@ class SinglePageExport(object):
         """
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles  = self.stylesDir.files("*.css")
+        styleFiles  = [self.stylesDir/'..'/'base.css']
+        styleFiles += self.stylesDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
         styleFiles += self.stylesDir.files("*.jpg")
@@ -114,6 +115,7 @@ class SinglePageExport(object):
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
+        html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"
         html += u"</style>"
         html += u"<title>"

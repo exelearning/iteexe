@@ -67,6 +67,7 @@ class WebsitePage(object):
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
+        html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"
         html += u"@import url(nav.css);</style>\n"
         html += u"<title> " 

@@ -91,7 +91,8 @@ class WebsiteExport(object):
         Copy all the files used by the website.
         """
         # Copy the style sheet files to the output dir
-        styleFiles  = self.stylesDir.files("*.css")
+        styleFiles  = [self.stylesDir/'..'/'base.css']
+        styleFiles += self.stylesDir.files("*.css")
         styleFiles += self.stylesDir.files("*.jpg")
         styleFiles += self.stylesDir.files("*.gif")
         styleFiles += self.stylesDir.files("*.png")

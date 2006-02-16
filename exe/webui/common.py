@@ -43,6 +43,7 @@ def header(style=u'default'):
             u'<head>\n'
             u'<style type="text/css">\n'
             u'  @import url(/css/exe.css);\n'
+            u'  @import url(/style/base.css);\n'
             u'  @import url(/style/%s/content.css);</style>\n'
             u'<script type="text/javascript" src="/scripts/common.js">'
             u'</script>\n'

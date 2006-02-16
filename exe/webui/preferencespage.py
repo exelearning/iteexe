@@ -68,6 +68,7 @@ class PreferencesPage(RenderableResource):
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(/css/exe.css);\n"
+        html += u'@import url(/style/base.css);\n'
         html += u"@import url(/style/standardwhite/content.css);</style>\n"
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "

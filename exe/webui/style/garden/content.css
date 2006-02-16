@@ -1,15 +1,11 @@
 /*  ===========================================================================
-     eXe
-     Copyright 2004-2005, University of Auckland
+    eXe
+    Copyright 2004-2005, University of Auckland
 
-     garden theme display styles.
-   =========================================================================== */
+    garden theme display styles.
+    =========================================================================== */
 
 body {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 10px 10px 10px;
-    font-family: arial, verdana, helvetica, sans-serif;
-    font-size: 13px;
     background: #F2FFBF;
 }
 
@@ -18,36 +14,24 @@ a { color: #FF6600;
     border: 0;
 }
 
-a:hover { text-decoration: underline;
-      color: #B34700;
+a:hover {
+    color: #B34700;
 }
-
-img {
-    border: 0;
-}
-
 
 p#nodeTitle { 
     color: #A1B386;
     font-size: 20px;
     font-weight: bolder;
     letter-spacing: 2px;
-    display: inline;
 }
 
 div#nodeDecoration {
     padding: 2px;
     border-bottom: 2px solid #ACBF60;
-
 }
 
 
 /* --- iDevice Styles -- */
-
-.emphasis0 {
-    padding-left: 0px;
-    margin: 0px;
-}
 
 .emphasis1 {
     background-color: #FAFFE6;
@@ -71,9 +55,6 @@ div#nodeDecoration {
     color: #A1B386;
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    position: relative;
-    top: -18px;
 }    
 
 .iDevice_icon {
@@ -81,57 +62,19 @@ div#nodeDecoration {
 }
 
 input.feedbackbutton {
-margin-top: 10px;
-margin-bottom: 10px;
-background: #AACCB5;
-color: #F2FFBF;
+    background: #AACCB5;
+    color: #F2FFBF;
 }
 
 
 
 /* styles for image with text iDevice */
 
-.image_text { 
-	border: 1px solid #CCC;
-	background: #F9F9F9;
-	padding: 4px;
-	margin: 4px;
-}
-
-
-p.reading_reference {
-    font-style: italic;        
-}
-
 p.reading_feedback {
     border: 1px dashed #ADADAD;
-    margin: 20px;
-    padding: 8px;
     background-color: #FFF;
 }
 
-/* styles for 'tips for completion' and 'pedagogical help' */
-
-.popupDiv {
-   background-color: #EDEFF0;
-   border: 2px solid #607489;
-   padding: 0px 4px 4px 4px;
-   margin-left: 15px;
-   text-align:left;
-   z-index:99;
-   -moz-border-radius: 3px;
+.image_text { 
+    background: #F9F9F9;
 }
-
-.popupDivLabel {
- text-align: center;
- font: message-box;
- font-weight: bold;
- color: #fff;
- cursor:move;
- margin: 0px -4px 0px -4px;
- background-image:url(popup_bg.gif);
-}
-
-
-
-

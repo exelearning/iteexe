@@ -205,6 +205,7 @@ class Manifest(object):
         self.resStr += "href=\""+filename+"\"> \n"
         self.resStr += """\
     <file href="%s"/>
+    <file href="base.css"/>
     <file href="content.css"/>
     <file href="APIWrapper.js"/>
     <file href="SCOFunctions.js"/>""" %filename
@@ -247,6 +248,7 @@ class ScormPage(Page):
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
         html += u"<style type=\"text/css\">\n"
+        html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"
         html += u"<script type=\"text/javascript\" "
@@ -311,7 +313,8 @@ class ScormExport(object):
 
         # Copy the style sheet files to the output dir
         # But not nav.css
-        styleFiles  = self.styleDir.files("*.css")
+        styleFiles  = [self.styleDir/'..'/'base.css']
+        styleFiles += self.styleDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
         styleFiles += self.styleDir.files("*.jpg")
