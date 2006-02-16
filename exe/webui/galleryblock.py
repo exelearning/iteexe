@@ -185,29 +185,33 @@ class GalleryBlock(Block):
                     method = 'gallery.%s.%s' % (method, image.id)
                     params = "'%s', %s, true" % (method, self.id)
                     return "javascript:submitLink(%s)" % params
-                changeGalleryImage = [
-                        u'           onclick="changeGalleryImage(' +
+                changeGalleryImage = '\n'.join([
+                        u'           <a title="%s"' % _(u'Change Image'),
+                        u'              href="javascript:changeGalleryImage(' +
                         u"'%s', '%s')" % (self.id, image.id) +
-                        u'"']
-                result = [u'          <img'] + \
-                          changeGalleryImage + \
-                         [u'           alt="%s"' % image.caption,
+                        u'">'])
+                result = [changeGalleryImage,
+			  u'          <img',
+                          u'           alt="%s"' % image.caption,
                           u'           style="align:center top;"',
                           u'           src="%s"/>' % image.thumbnailSrc,
+			  u'        </a>',
                           u'        <span>',
                           u'        <input id="caption%s" ' % image.id,
                           u'               name="caption%s" ' % image.id,
                           u'               value="%s" ' % image.caption,
                           u'               style="align:center;width:98%;"/>',
                           # Edit button
-                          u'          <img '] + \
-                          changeGalleryImage + \
-                         [u'               src="/images/stock-edit.png"/>']
+                          changeGalleryImage,
+                          u'          <img src="/images/stock-edit.png"/>'
+			  u'        </a>']
                 # Move left button
                 if image.index > 0:
                     result += [
-                          u'        <img onclick="%s"' % submitLink('moveLeft'),
-                          u'             src="/images/stock-go-back.png"/>'
+                          u'        <a title="%s"' % _(u'Move Image Left'),
+			  u'           href="javascript:%s"' % submitLink('moveLeft'),
+                          u'        <img src="/images/stock-go-back.png"/>',
+                          u'        </a>',
                           ]
                 else:
                     result += [
@@ -215,16 +219,21 @@ class GalleryBlock(Block):
                 # Move right button
                 if image.index < len(image.parent.images)-1:
                     result += [
-                          u'       <img onclick="%s"' % submitLink('moveRight'),
-                          u'            src="/images/stock-go-forward.png"/>']
+                          u'        <a title="%s"' % _(u'Move Image Right'),
+			  u'           href="javascript:%s"' % submitLink('moveRight'),
+                          u'        <img src="/images/stock-go-forward.png"/>',
+                          u'        </a>',
+			  ]
                 else:
                     result += [
                           u'        ' + 
                           u'<img src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
-                          u'        <img onclick="%s"' % submitLink('delete'),
-                          u'             src="/images/stock-delete.png"/>',
+                          u'        <a title="%s"' % _(u'Delete Image'),
+			  u'           href="javascript:%s"' % submitLink('delete'),
+                          u'        <img src="/images/stock-delete.png"/>',
+                          u'        </a>',
                           u'      </span>']
                 return result
             html += self._generateTable(genCell)
