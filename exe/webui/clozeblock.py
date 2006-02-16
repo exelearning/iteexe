@@ -97,7 +97,7 @@ class ClozeBlock(Block):
             self.instructionElement.renderView(),
             clozeContent]
         if self.feedbackElement.field.content:
-            html.append(self.feedbackElement.renderView(False))
+            html.append(self.feedbackElement.renderView(False, class_="feedback"))
         html += [
             u'</div>\n',
             ]

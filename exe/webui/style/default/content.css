@@ -64,17 +64,11 @@ div#nodeDecoration {
    text-align:left;
 }
 
-.iDevice p {
+.iDevice p, .iDevice div.block {
    padding-left: 0px;
    line-height: 16px;
    text-align:left;
 }
-
-.iDevice div.block {
-   padding-left: 0px;
-   line-height: 16px;
-   text-align:left;
-} /* In some Idevices we use <div class="block"> instead of <p> */
 
 .iDeviceTitle {
    color: #568D14;

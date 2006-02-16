@@ -163,7 +163,7 @@ body {
     padding: 0px 10px 10px 10px;
     font-family: arial, verdana, helvetica, sans-serif;
     color:#4d4d4d;
-    font-size: 13px;
+    font-size: 12pt;
 }
 
 a {
@@ -184,9 +184,22 @@ p#nodeTitle {
 }
 
 div#nodeDecoration {
-    padding: 2px;
-    border-bottom:0px;
+    padding: 0.1em;
+    border-bottom: 0em;
     text-align:right;
+}
+
+div.block, div.feedback {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+div.feedback {
+   font-family: times, serif;
+   font-style: oblique;
+   font-size: 120%
 }
 
 /* --- iDevice Styles -- */

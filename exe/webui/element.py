@@ -206,7 +206,7 @@ class TextAreaElement(Element):
         return html
 
 
-    def renderView(self, visible=True):
+    def renderView(self, visible=True, class_="block"):
         """
         Returns an XHTML string for viewing or previewing this element
         """
@@ -214,7 +214,8 @@ class TextAreaElement(Element):
             visible = 'style="display:block"'
         else:
             visible = 'style="display:none"'
-        return '<div id="ta%s" %s>%s</div>' % (self.id, visible, self.field.content)
+        return '<div id="ta%s" class="%s" %s>%s</div>' % (
+		self.id, class_, visible, self.field.content)
     
 # ===========================================================================
 class ImageElement(Element):
@@ -597,7 +598,7 @@ class ClozeElement(Element):
         html.append(storeValue('instantMarking'))
         if feedbackId:
             html.append(common.hiddenField('clozeVar%s.feedbackId' % self.id,
-                                           feedbackId))
+                                           'ta'+feedbackId))
         # Mix the parts together
         words = ""
         def encrypt(word):
@@ -632,8 +633,9 @@ class ClozeElement(Element):
 
         # Score string
         html += ['<p id="clozeScore%s"></p>' % self.id]
+	html += ['<p>\n']
         if self.field.instantMarking:
-            html += ['<br/><br/><input type="button" ',
+            html += ['<input type="button" ',
                      'value="%s"' % _(u"Get score"),
                      'id="getScore%s"' % self.id,
                      'onclick="showClozeScore(\'%s\')"/>\n' % (self.id)]
@@ -648,18 +650,16 @@ class ClozeElement(Element):
             value = _(u"Show/Clear Answers")
             onclick = "toggleClozeAnswers('%s')" % self.id
         else:
-            html += ['<p>\n',
-                     common.submitButton('%ssubmit' % self.id,
+            html += [common.button('submit%s' % self.id,
                         _(u"Submit"),
                         id='submit%s' % self.id,
                         onclick="clozeSubmit('%s')" % self.id),
-                     '</p>\n<p>\n',
                      common.button(
-                        '%srestart' % self.id,
+                        'restart%s' % self.id,
                         _(u"Restart"),
                         id='restart%s' % self.id,
+			style="display: none;",
                         onclick="clozeRestart('%s')" % self.id),
-                     '</p>\n',
                      ]
             # Set the show/hide answers button attributes
             style = 'display: none;'
@@ -672,7 +672,9 @@ class ClozeElement(Element):
                     value,
                     id='showAnswersButton%s' % self.id,
                     style=style,
-                    onclick=onclick)]
+                    onclick=onclick),
+		]
+	html += ['</p>\n']
         return '\n'.join(html) + '</div>'
 
 # ===========================================================================

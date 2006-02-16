@@ -73,15 +73,10 @@ div#nodeDecoration {
 }
 
 
-.iDevice p {
+.iDevice p, .iDevice div.block {
     padding-left: 24px;
     padding-right: 20px;
 }
-
-.iDevice div.block {
-    padding-left: 24px;
-    padding-right: 20px;
-} /* We use div's like paragraphs in some places inside iDevice blocks */
 
 .iDeviceTitle {
     color: #3C5866;
