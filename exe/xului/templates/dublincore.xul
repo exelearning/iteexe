@@ -185,7 +185,7 @@ u
    </hbox>
 
    <hbox align="left">
-       <button value="Done" onclick="submitForm()"/>
+       <button label="Done" oncommand="submitForm()"/>
    </hbox>
   
 </vbox>

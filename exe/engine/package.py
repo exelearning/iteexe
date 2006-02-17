@@ -29,11 +29,12 @@ from exe.engine.genericidevice import GenericIdevice
 from exe.engine.persist        import Persistable, encodeObject, \
                                       decodeObject, decodeObjectRaw
 from twisted.persisted.styles  import Versioned, doUpgrade
+from twisted.spread.jelly      import Jellyable, Unjellyable
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
-class DublinCore(Persistable):
+class DublinCore(Jellyable, Unjellyable):
     """
     Holds dublin core info
     """
@@ -56,16 +57,6 @@ class DublinCore(Persistable):
 
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
-
-    def __getstate__(self):
-        """
-        Return which variables we should persist
-        """
-        import pdb
-        pdb.set_trace()
-        toPersist = dict([(key, value) for key, value in self.__dict__.items()
-                          if key not in self.nonpersistant])
-        return Versioned.__getstate__(self, toPersist)
 
 
 class Package(Persistable):
@@ -166,12 +157,6 @@ class Package(Persistable):
                 zippedFile.write(unicode(resourceFile.normpath()),
                                  resourceFile.name.encode('utf8'))
             zippedFile.writestr("content.data", encodeObject(self))
-            x = encodeObject(self)
-            y = decodeObject(x)
-            x1 = encodeObject(self.dublinCore)
-            y1 = encodeObject(self.dublinCore)
-            import pdb
-            pdb.set_trace()
         finally:
             zippedFile.close()
 
