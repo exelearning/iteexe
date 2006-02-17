@@ -177,6 +177,7 @@ class IdeviceStore:
             log.debug("loading "+path)
             moduleName = path.basename().splitext()[0]
             module = __import__(moduleName, globals(), locals(), [])
+            print dir(module)
             module.register(self)
 
         # register the blocks for rendering the idevices

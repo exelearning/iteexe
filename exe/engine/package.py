@@ -27,19 +27,55 @@ from exe.engine.path           import Path, TempDirPath, toUnicode
 from exe.engine.node           import Node
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.persist        import Persistable, encodeObject, \
-                                      decodeObjectRaw
-from twisted.persisted.styles  import doUpgrade
+                                      decodeObject, decodeObjectRaw
+from twisted.persisted.styles  import Versioned, doUpgrade
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
+class DublinCore(Persistable):
+    """
+    Holds dublin core info
+    """
+
+    title = ''
+    creator = ''
+    subject = ''
+    description = ''
+    publisher = ''
+    contributors = ''
+    date = ''
+    type = ''
+    format = ''
+    identifier = ''
+    source = ''
+    language = ''
+    relation = ''
+    coverage = ''
+    rights = ''
+
+    def __setattr__(self, name, value):
+        self.__dict__[name] = toUnicode(value)
+
+    def __getstate__(self):
+        """
+        Return which variables we should persist
+        """
+        import pdb
+        pdb.set_trace()
+        toPersist = dict([(key, value) for key, value in self.__dict__.items()
+                          if key not in self.nonpersistant])
+        return Versioned.__getstate__(self, toPersist)
+
+
 class Package(Persistable):
     """
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
     nonpersistant      = ['resourceDir', 'filename']
+    _name              = ''
 
     def __init__(self, name):
         """
@@ -48,11 +84,11 @@ class Package(Persistable):
         log.debug(u"init " + repr(name))
         self._nextIdeviceId = 0
         self._nextNodeId    = 0
+        self.name           = name
         # For looking up nodes by ids
         self._nodeIdDict    = {} 
 
         self._levelNames    = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
-        self._name         = name
 
         # Empty if never saved/loaded
         self.filename      = u''
@@ -60,27 +96,20 @@ class Package(Persistable):
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
         self.style         = u"default"
-        self._author       = u""
-        self._description  = u""
         self.isChanged     = 0
         self.idevices      = []
+        self.dublinCore    = DublinCore()
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
 
-    # Property Handlers
-    def set_name(self, value):
-        self._name = toUnicode(value)
-    def set_author(self, value):
-        self._author = toUnicode(value)
-    def set_description(self, value):
-        self._description = toUnicode(value)
 
     # Properties
-    name        = property(lambda self:self._name, set_name)
-    author      = property(lambda self:self._author, set_author)
-    description = property(lambda self:self._description, set_description)
-    
+    def get_name(self):
+        return self._name
+    def set_name(self, value):
+        self._name = toUnicode(value)
+    name = property(get_name, set_name)
 
     def findNode(self, nodeId):
         """
@@ -137,7 +166,12 @@ class Package(Persistable):
                 zippedFile.write(unicode(resourceFile.normpath()),
                                  resourceFile.name.encode('utf8'))
             zippedFile.writestr("content.data", encodeObject(self))
-
+            x = encodeObject(self)
+            y = decodeObject(x)
+            x1 = encodeObject(self.dublinCore)
+            y1 = encodeObject(self.dublinCore)
+            import pdb
+            pdb.set_trace()
         finally:
             zippedFile.close()
 
@@ -278,5 +312,17 @@ class Package(Persistable):
         self._levelNames = self.levelNames
         del self.levelNames
     
+    def upgradeToVersion6(self):
+        """
+        For version 0.14
+        """
+        self.dublinCore = DublinCore()
+        self.dublinCore.title = self._name
+        self.dublinCore.creator = self._author
+        self.dublinCore.description = self._description
+        del self._name
+        del self._author
+        del self._description
+
 # ===========================================================================
 

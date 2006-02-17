@@ -32,7 +32,7 @@ from exe.xului.idevicepane       import IdevicePane
 from exe.xului.outlinepane       import OutlinePane
 from exe.xului.stylemenu         import StyleMenu
 from exe.webui.renderable        import RenderableLivePage
-from exe.webui.propertiespage    import PropertiesPage
+from exe.xului.propertiespage    import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
 from exe.export.websiteexport    import WebsiteExport
 from exe.export.singlepageexport import SinglePageExport
