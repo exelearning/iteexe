@@ -11,7 +11,6 @@
 
 <script>
 <![CDATA[
-
 function setText(textID)
  {
   var help = document.getElementById(textID).collapsed;
@@ -21,31 +20,31 @@ function setText(textID)
   document.getElementById(textID).collapsed=false;
 }
 }
+
+function submitForm() {
+    var title = document.getElementById('dc:title').value;
+    var creator = document.getElementById('dc:creator').value;
+    var subject = document.getElementById('dc:subject').value;
+    var description = document.getElementById('dc:description').value;
+    var publisher = document.getElementById('dc:publisher').value;
+    var contributor = document.getElementById('dc:contributor').value;
+    var date = document.getElementById('dc:date').value;
+    var type = document.getElementById('dc:type').value;
+    var format = document.getElementById('dc:format').value;
+    var identifier = document.getElementById('dc:identifier').value;
+    var source = document.getElementById('dc:source').value;
+    var language = document.getElementById('dc:language').value;
+    var relation = document.getElementById('dc:relation').value;
+    var coverage = document.getElementById('dc:coverage').value;
+    var rights = document.getElementById('dc:rights').value;
+
+    nevow_clientToServerEvent('submit', this, '', title, creator, 
+        subject, description, publisher, contributor, 
+        date, type, format, identifier, source, language,
+        relation, coverage, rights);
+}
 ]]>
 </script>
-
-   <script>
-     function submitForm() {
-        var title = document.getElementById('dc:title').value;
-        var creator = document.getElementById('dc:creator').value;
-        var subject = document.getElementById('dc:subject').value;
-        var description = document.getElementById('dc:description').value;
-        var publisher = document.getElementById('dc:publisher').value;
-        var contributor = document.getElementById('dc:contributor').value;
-        var date = document.getElementById('dc:date').value;
-        var type = document.getElementById('dc:type').value;
-        var identifier = document.getElementById('dc:identifier').value;
-        var source = document.getElementById('dc:source').value;
-        var relation = document.getElementById('dc:relation').value;
-        var coverage = document.getElementById('dc:coverage').value;
-        var rights = document.getElementById('dc:rights').value;
-        
-        nevow_clientToServerEvent('submit', this, '', title, creator, 
-            subject, description, publisher, contributor, 
-            date, type, identifier, source, relation, 
-            coverage, rights);
-     }
-   </script>
 
 <groupbox flex="1" >
   <caption label="Dublin Core Metadata" />
@@ -53,17 +52,17 @@ function setText(textID)
 <vbox flex="1" style="overflow: auto" >
 
    <hbox align="center">
-      <label style="width:8em" value="Title:" tooltiptext="a name given to the resource" />
+      <label style="width:8em" value="Title:" tooltiptext="The name given to the resource." />
       <textbox n:render="title" id="dc:title" size="40" />
    </hbox>
   
    <hbox align="center">
-      <label style="width:8em" value="Creator:" tooltiptext="an entity primarily responsible for making the content of the resource"/>
+      <label style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
       <textbox n:render="creator" id="dc:creator" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:8em" value="Subject:" tooltiptext="A topic of the content of the resource"/>
+      <label style="width:8em" value="Subject:" tooltiptext="A topic of the content of the resource."/>
       <textbox n:render="subject" id="dc:subject" size="40" />
       <image src="http://localhost:8081/images/info.png"
              onclick="setText('dc-subject');"
@@ -80,22 +79,22 @@ function setText(textID)
 
 
    <hbox align="center">
-      <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource" />
+      <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
       <textbox n:render="description" id="dc:description" multiline="true" rows="4" cols="38" /> 
    </hbox>
 
    <hbox align="center">
-      <label style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available"/>
+      <label style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
       <textbox n:render="publisher" id="dc:publisher" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource" />
+      <label style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource." />
       <textbox n:render="contributors" id="dc:contributor" multiline="true" rows="4" cols="38" /> 
    </hbox>
    
    <hbox align="center">
-      <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource" />
+      <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource." />
       <textbox n:render="date" id="dc:date" size="40" />
       <image src="http://localhost:8081/images/info.png"
              onclick="setText('dc-date');"
@@ -113,7 +112,7 @@ function setText(textID)
 
  
    <hbox align="center">
-      <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource"/>
+      <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
       <textbox n:render="type" id="dc:type" value="text" size="40" />
       <image src="http://localhost:8081/images/info.png"
              onclick="setText('dc-type');"
@@ -127,33 +126,33 @@ function setText(textID)
                </description>
 	</groupbox>
    </hbox>  
- 
+  
   <hbox align="center">
-      <label style="width:8em" value="Format:" tooltiptext="Select a Format" />
-      <menulist label="Select Format">
+      <label style="width:8em" value="Format:" tooltiptext="Select a Format." />
+      <menulist n:render="format" id="dc:format" label="Select Format">
        <menupopup>
-          <menuitem label="XHTML" value="" />          
-          <menuitem label="SCORM 1.2" value="" />
-          <menuitem label="IMS Content Package 1.1.3" value="" />
-          <menuitem label="Web Site" value="" />
+          <menuitem label="XHTML" value="XHTML" />          
+          <menuitem label="SCORM 1.2" value="SCORM 1.2" />
+          <menuitem label="IMS Content Package 1.1.3" value="IMS-CP" />
+          <menuitem label="Web Site" value="Web Site" />
        </menupopup>
      </menulist>
    </hbox>
    
    <hbox align="center">
-      <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context"/>
+      <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
       <textbox n:render="identifier" id="dc:identifier" size="40" />
    </hbox>
     
    <hbox align="center">
-u
-      <label style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived" />
+
+      <label style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived." />
       <textbox n:render="source" id="dc:source" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:8em" value="Language:" tooltiptext="Select a language" />
-      <menulist label="Select Language">
+      <label style="width:8em" value="Language:" tooltiptext="Select a language." />
+      <menulist n:render="language" id="dc:language" label="Select Language">
        <menupopup>
           <menuitem label="select a language" />          
           <menuitem label="Abkhazian; abk" value="abk" />
@@ -170,17 +169,17 @@ u
    </hbox>
    
    <hbox align="center">
-      <label style="width:8em" value="Relation:" tooltiptext="A reference to a related resource" />
+      <label style="width:8em" value="Relation:" tooltiptext="A reference to a related resource." />
       <textbox n:render="relation" id="dc:relation" size="40" />
    </hbox>
    
    <hbox align="center">
-      <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource" />
+      <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource." />
       <textbox n:render="coverage" id="dc:coverage" size="40" />
    </hbox>
 
    <hbox align="center">
-      <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource" />
+      <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource." />
       <textbox n:render="rights" id="dc:rights" size="40" />
    </hbox>
 

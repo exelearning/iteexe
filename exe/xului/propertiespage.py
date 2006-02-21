@@ -57,8 +57,8 @@ class PropertiesPage(RenderableLivePage):
         hndlr(ctx, client) # Stores it
 
     def handleSubmit(self, client, title, creator, subject, description, 
-                     publisher, contributor, date, type, identifier, source,
-                     relation, coverage, rights):
+                     publisher, contributor, date, type, format, identifier,
+                     source, language, relation, coverage, rights):
         self.package.dublinCore.title = title
         self.package.dublinCore.creator = creator
         self.package.dublinCore.subject = subject
@@ -67,8 +67,10 @@ class PropertiesPage(RenderableLivePage):
         self.package.dublinCore.contributor = contributor
         self.package.dublinCore.date = date
         self.package.dublinCore.type = type
+        self.package.dublinCore.format = format 
         self.package.dublinCore.identifier = identifier
         self.package.dublinCore.source = source
+        self.package.dublinCore.language = language
         self.package.dublinCore.relation = relation
         self.package.dublinCore.coverage = coverage
         self.package.dublinCore.rights = rights
