@@ -145,7 +145,7 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
         html += u"tinyMCE.init({   " 
-        html += u" mode : \"textareas\",\n"
+        html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,"
         html += u" contextmenu,paste,directionality\","
         html += u" theme : \"advanced\",\n"

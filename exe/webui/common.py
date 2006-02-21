@@ -98,10 +98,10 @@ def richTextArea(name, value="", width="100%", height=100):
     log.debug(u"richTextArea %s, height=%s" % (value, height))
     html  = u'<textarea name="%s" ' % name
     html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
+    html += u'class="mceEditor" '
     html += u'cols="52" rows="8">'
     html += value
     html += u'</textarea><br/>'
-
     return html
 
 
