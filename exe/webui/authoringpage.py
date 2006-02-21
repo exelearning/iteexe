@@ -145,13 +145,13 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
         html += u"tinyMCE.init({   " 
+	html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,"
         html += u" contextmenu,paste,directionality\","
         html += u" theme : \"advanced\",\n"
         html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
         html += u"theme_advanced_toolbar_location : \"top\",\n"  
-
         html += u" theme_advanced_buttons1 : \"newdocument,separator,"
         html += u"bold,italic,underline,fontsizeselect,separator,sub,sup,separator,"
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
