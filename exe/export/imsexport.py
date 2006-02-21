@@ -45,6 +45,7 @@ class Manifest(object):
         'outputDir' is the directory that we read the html from and also output
         the mainfest.xml 
         """
+        self.config       = config
         self.outputDir    = outputDir
         self.package      = package
         self.idGenerator  = UniqueIdGenerator(package.name, config.exePath)
@@ -55,13 +56,19 @@ class Manifest(object):
 
     def save(self):
         """
-        Save a imsmanifest file to self.outputDir
+        Save a imsmanifest file and metadata to self.outputDir
         """
         filename = "imsmanifest.xml"
-        out = open(self.outputDir/filename, "w")
+        out = open(self.outputDir/filename, "wb")
         out.write(self.createXML().encode('utf8'))
         out.close()
-        
+        # Metadata
+        templateFilename = self.config.xulDir/'templates'/'dublincore.xml'
+        template = open(templateFilename, 'rb').read()
+        xml = template % self.package.dublinCore.__dict__
+        out = open(self.outputDir/'dublincore.xml', 'wb')
+        out.write(xml)
+        out.close()
 
     def createXML(self):
         """
