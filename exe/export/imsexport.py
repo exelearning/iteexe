@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-Exports an eXe package as a SCORM package
+Exports an eXe package as an IMS Content Package
 """
 
 import logging
@@ -79,7 +79,8 @@ class Manifest(object):
         
         xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
         <manifest identifier="%s" 
-        xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" 
+        xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+        xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" '
         xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         """ % manifestId 
@@ -92,6 +93,8 @@ class Manifest(object):
         xmlStr += "<metadata> \n"
         xmlStr += " <schema>IMS Content</schema> \n"
         xmlStr += " <schemaversion>1.1.3</schemaversion> \n"
+        xmlStr += " <adlcp:location>dublincore.xml"
+        xmlStr += "</adlcp:location> \n" 
         xmlStr += "</metadata> \n"
         xmlStr += "<organizations default=\""+orgId+"\">  \n"
         xmlStr += "<organization identifier=\""+orgId

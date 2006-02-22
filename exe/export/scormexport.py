@@ -45,6 +45,7 @@ class Manifest(object):
         'outputDir' is the directory that we read the html from and also output
         the mainfest.xml 
         """
+        self.config       = config
         self.outputDir    = outputDir
         self.package      = package
         self.idGenerator  = UniqueIdGenerator(package.name, config.exePath)
@@ -63,7 +64,13 @@ class Manifest(object):
         if filename == "discussionforum.xml":
             out.write(self.createForumXML().encode('utf8'))
         out.close()
-        
+        # Metadata
+        templateFilename = self.config.xulDir/'templates'/'dublincore.xml'
+        template = open(templateFilename, 'rb').read()
+        xml = template % self.package.dublinCore.__dict__
+        out = open(self.outputDir/'dublincore.xml', 'wb')
+        out.write(xml)
+        out.close()
         
     def createForumXML(self):
         """
@@ -150,13 +157,15 @@ class Manifest(object):
         xmlStr += u"<metadata> \n"
         xmlStr += u" <schema>ADL SCORM</schema> \n"
         xmlStr += u" <schemaversion>1.2</schemaversion> \n"
-
-        title  = escape(self.package.root.titleShort)
-
+        xmlStr += u" <adlcp:location>dublincore.xml"
+        xmlStr += u"</adlcp:location> \n"
         xmlStr += u"</metadata> \n"
         xmlStr += u"<organizations default=\""+orgId+"\">  \n"
         xmlStr += u"<organization identifier=\""+orgId
         xmlStr += u"\" structure=\"hierarchical\">  \n"
+
+        title  = escape(self.package.root.titleShort)
+        
         xmlStr += u"<title>"+title+"</title>\n"
         
         depth = 0

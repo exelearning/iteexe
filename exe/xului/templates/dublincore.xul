@@ -62,7 +62,7 @@ function submitForm() {
    </hbox>
 
    <hbox align="center">
-      <label style="width:8em" value="Subject:" tooltiptext="A topic of the content of the resource."/>
+      <label style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
       <textbox n:render="subject" id="dc:subject" size="40" />
       <image src="http://localhost:8081/images/info.png"
              onclick="setText('dc-subject');"
@@ -71,10 +71,8 @@ function submitForm() {
 
   <hbox flex="1" id="dc-subject" collapsed="true" style="padding-left:9em;"> 
         <groupbox style="width:21em;">   
- 		<description>
-                 Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.
-                </description>
-	</groupbox>
+ 		<description>Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.</description>
+	    </groupbox>
    </hbox>   
 
 
@@ -177,11 +175,20 @@ function submitForm() {
       <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource." />
       <textbox n:render="coverage" id="dc:coverage" size="40" />
    </hbox>
-
+  
    <hbox align="center">
       <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource." />
       <textbox n:render="rights" id="dc:rights" size="40" />
+      <image src="http://localhost:8081/images/info.png"
+             onclick="setText('dc-rights');"
+             style="cursor:help;" />
    </hbox>
+   
+   <hbox flex="1" id="dc-rights" collapsed="true" style="padding-left:9em;"> 
+        <groupbox style="width:21em;">   
+ 		<description>Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
+	</groupbox>
+   </hbox>  
 
    <hbox align="left">
        <button label="Done" oncommand="submitForm()"/>
