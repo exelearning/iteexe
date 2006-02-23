@@ -95,7 +95,6 @@ class AuthoringPage(RenderableResource):
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
-        #html += "<pre>%s</pre>\n" % str(request.args)# to be deleted
         html += u'<body onload="onLoadHandler();">\n'
         html += u"<form method=\"post\" "
 

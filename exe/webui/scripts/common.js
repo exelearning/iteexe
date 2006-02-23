@@ -334,6 +334,24 @@ function addFile(blockId) {
     }
 }
 
+function uploadFile(blockId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        var path  = document.getElementById('path'+blockId);
+        path.value = fp.file.path;
+    }
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+    if (!theForm) {
+        // try and find the form for the authoring page
+        theForm = document.getElementById('contentForm')
+    }
+    theForm.submit();
+}
 
 function showMe(ident, w, h)
 {

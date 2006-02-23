@@ -73,6 +73,7 @@ class AttachmentBlock(Block):
         """
         log.debug("renderEdit")
         html  = u'<div class="iDevice">\n'
+       # html += "<pre>%s</pre>\n" % str(request.args)
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
