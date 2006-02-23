@@ -124,16 +124,29 @@ class FeedbackField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+
+    persistenceVersion = 1
+
     def __init__(self, name, instruc=""):
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
+        import pdb
+        pdb.set_trace()
         self._buttonCaption = x_(u"Click Here")
         self.feedback      = ""
     
     # Properties
     buttonCaption = lateTranslate('buttonCaption')
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to version 0.14
+        """
+        self.buttonCaption = self.__dict__['buttonCaption']
+
+
 
 
 # ===========================================================================
