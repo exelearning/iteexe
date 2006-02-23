@@ -595,15 +595,12 @@ this iDevice.""")
 
 
 class DiscussionField(Field):
-    def __init__(self, name, instruc="", content="" ):
+    def __init__(self, name, instruc=x_("Type a discussion topic here."), content="" ):
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
         self.content = content
-        self._instruc = x_("Type a discussion topic here.")
 
-    #properties
-    instruc = lateTranslate('instruc')
     
 # ===========================================================================
