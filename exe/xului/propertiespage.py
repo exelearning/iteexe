@@ -35,7 +35,7 @@ class PropertiesPage(RenderableLivePage):
     """
     The PropertiesPage is for user to enter or edit package's properties
     """
-    _templateFileName = 'dublincore.xul'
+    _templateFileName = 'properties.xul'
     name = 'properties'
 
     def __init__(self, parent):
@@ -43,7 +43,7 @@ class PropertiesPage(RenderableLivePage):
         Initialize
         """
         RenderableLivePage.__init__(self, parent)
-        mainxul = Path(self.config.xulDir).joinpath('templates', 'dublincore.xul')
+        mainxul = Path(self.config.xulDir).joinpath('templates', 'properties.xul')
         self.docFactory  = loaders.xmlfile(mainxul)
         self.client = None
 

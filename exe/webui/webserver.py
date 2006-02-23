@@ -58,7 +58,7 @@ class WebServer:
         Start serving webpages from the local web server
         """
         log.debug("start web server running")
-
+        
         # web resources
         webDir = self.config.webDir
         self.root.putChild("images",      static.File(webDir+"/images"))
@@ -70,6 +70,7 @@ class WebServer:
         # xul resources
         xulDir = self.config.xulDir
         self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
+        self.root.putChild("xultemplates",  static.File(xulDir+"/templates"))
         self.root.putChild("templates",   static.File(webDir+"/templates"))
 
         # sub applications
