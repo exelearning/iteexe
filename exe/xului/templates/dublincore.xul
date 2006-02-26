@@ -46,10 +46,10 @@ function submitForm() {
 ]]>
 </script>
 
-<groupbox flex="1" >
-  <caption label="Dublin Core Metadata" />
+<groupbox flex="0" >
 
-<vbox flex="1" style="overflow: auto" >
+<caption label="Dublin Core Metadata" />
+  <vbox flex="0" style="overflow: auto" >
 
    <hbox align="center">
       <label style="width:8em" value="Title:" tooltiptext="The name given to the resource." />
@@ -69,9 +69,9 @@ function submitForm() {
              style="cursor:help;" />
    </hbox>
 
-  <hbox flex="1" id="dc-subject" collapsed="true" style="padding-left:9em;"> 
+  <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;"> 
         <groupbox style="width:21em;">   
- 		<description>Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.</description>
+ 		     <description>Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.</description>
 	    </groupbox>
    </hbox>   
 
@@ -99,16 +99,13 @@ function submitForm() {
              style="cursor:help;" />
    </hbox>
   
-   <hbox flex="1" id="dc-date" collapsed="true" style="padding-left:9em;"> 
+   <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;"> 
         <groupbox style="width:21em;">   
- 		<description>
-               Typically, Date will be associated with the creation or availability of the resource. Recommended best practice for encoding the date value is defined in a profile called <html:em>ISO 8601</html:em> <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a> and includes (among others) dates of the form YYYY-MM-DD. 
+ 		     <description>Typically, Date will be associated with the creation or availability of the resource. Recommended best practice for encoding the date value is defined in a profile called <html:em>ISO 8601</html:em> <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a> and includes (among others) dates of the form YYYY-MM-DD. 
                 </description>
-	</groupbox>
+	     </groupbox>
    </hbox>   
 
-
- 
    <hbox align="center">
       <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
       <textbox n:render="type" id="dc:type" value="text" size="40" />
@@ -118,11 +115,11 @@ function submitForm() {
 
    </hbox>
 
-   <hbox flex="1" id="dc-type" collapsed="true" style="padding-left:9em;"> 
+   <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;"> 
         <groupbox style="width:21em;">   
- 		<description>Type includes terms describing general categories, functions, or genres, for content. Recommended best practice is to select a value from a controlled vocabulary, for example, the ??????????<html:br/> To describe the physical or digital manifestation of the resource, use the FORMAT element.
+ 	    	<description>Type includes terms describing general categories, functions, or genres, for content. Recommended best practice is to select a value from a controlled vocabulary, for example, the ??????????<html:br/> To describe the physical or digital manifestation of the resource, use the FORMAT element.
                </description>
-	</groupbox>
+     	</groupbox>
    </hbox>  
   
   <hbox align="center">
@@ -184,18 +181,19 @@ function submitForm() {
              style="cursor:help;" />
    </hbox>
    
-   <hbox flex="1" id="dc-rights" collapsed="true" style="padding-left:9em;"> 
+   <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;"> 
         <groupbox style="width:21em;">   
  		<description>Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
-	</groupbox>
+	    </groupbox>
    </hbox>  
 
-   <hbox align="left">
-       <button label="Done" oncommand="submitForm()"/>
-   </hbox>
-  
-</vbox>
+  </vbox>
 
 </groupbox>
+
+ <hbox align="left">
+      <button label="Done" oncommand="submitForm()"/>
+ </hbox>
+
 
 </window>

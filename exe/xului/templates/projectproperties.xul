@@ -46,10 +46,10 @@ function submitForm() {
 ]]>
 </script>
 
-<groupbox flex="1" >
+<groupbox flex="0" >
   <caption label="Project Properties" />
 
-<vbox flex="1" style="overflow: auto" >
+<vbox flex="0" style="overflow: auto" >
 
    <hbox align="center">
       <label style="width:8em" value="Project Title:" tooltiptext="The projects name." />
@@ -70,7 +70,7 @@ function submitForm() {
 
 </groupbox>
 
-<groupbox flex="1">
+<groupbox flex="0">
  <caption label="Taxonomy" />
 
 <hbox align="center">
@@ -94,6 +94,6 @@ function submitForm() {
 
  <hbox align="left">
        <button label="Done" oncommand="submitForm()"/>
-   </hbox>
+ </hbox>
   
 </window>

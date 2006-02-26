@@ -23,22 +23,22 @@ function submitForm() {
 ]]>
 </script>
 
-<groupbox flex="1" >
+<groupbox flex="0" >
   <caption label="SCORM 1.2 Options" />
 
-<vbox flex="1" style="overflow: auto" >
+<vbox flex="0" style="overflow: auto" >
 
    <hbox align="center">
-     <checkbox id="scolinks" checked="false" label="Add Previous/Next links within SCOs?" tooltiptext="Adds previous and next links to SCOs within package."/> 
+     <checkbox id="scolinks" checked="false" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality."/> 
    </hbox>
-   
-
-   <hbox align="left">
-       <button label="Done" oncommand="submitForm()"/>
-   </hbox>
-  
+    
 </vbox>
 
 </groupbox>
+
+ <hbox align="left">
+       <button label="Done" oncommand="submitForm()"/>
+   </hbox>
+
 
 </window>
