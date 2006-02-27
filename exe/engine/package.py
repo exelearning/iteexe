@@ -305,9 +305,6 @@ class Package(Persistable):
         self.dublinCore.title = self._name
         self.dublinCore.creator = self._author
         self.dublinCore.description = self._description
-        del self._name
-        del self._author
-        del self._description
 
 # ===========================================================================
 

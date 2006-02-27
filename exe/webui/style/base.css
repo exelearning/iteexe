@@ -48,8 +48,7 @@ div.block, div.feedback {
 
 div.feedback {
    font-family: times, serif;
-   font-style: oblique;
-   font-size: 120%
+   font-size: 120%;
 }
 
 /* --- iDevice Styles -- */
@@ -253,5 +252,15 @@ div.tleft {
     font-size: 94%;
 }
 
+@media print {
 
+.feedback { display: block; }
+
+.feedbackbutton { display: none; }
+
+#navcontainer { display: none; }
+
+#main {margin-left: 10px; }
+
+}
 

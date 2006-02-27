@@ -132,8 +132,6 @@ class FeedbackField(Field):
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        import pdb
-        pdb.set_trace()
         self._buttonCaption = x_(u"Click Here")
         self.feedback      = ""
     
