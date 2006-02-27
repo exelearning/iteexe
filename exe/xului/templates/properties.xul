@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+
+<window title="Package Properties"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+ <tabbox flex="1" selectedTab="Package">
+                <tabs align="end" pack="end">
+                    <tab label="Package"/>
+                    <tab label="Metadata"/>
+                    <tab label="Export"/>
+                </tabs>
+                <tabpanels flex="1">
+
+                    <tabpanel id="packageproperties">
+                        <iframe flex="1" name="package" id="package" src="/xultemplates/projectproperties.xul"/>
+                    </tabpanel>
+                    <tabpanel id="metadata">
+                        <iframe flex="1" name="metadata" id="metadata" src="/xultemplates/dublincore.xul"/>
+                    </tabpanel>
+                    <tabpanel id="export">
+                        <iframe flex="1" name="export" id="exportproperties" src="/xultemplates/exportproperties.xul"/>
+                    </tabpanel>
+                </tabpanels>
+            </tabbox>
+
+</window>
