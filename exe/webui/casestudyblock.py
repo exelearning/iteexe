@@ -79,9 +79,11 @@ class CasestudyBlock(Block):
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html += u'<b>%s</b>' % _(u'Story:')
-        html += common.elementInstruc(u'story'+self.id, self.storyInstruc)
+        html += common.elementInstruc(self.storyInstruc)
         html += common.richTextArea(u'story'+self.id, self.story)
-        html += u"<b>%s</b><br/>" % _("Question(s)")
+        html += u'<div class="block">'
+        html += u"<strong>%s</strong>" % _("Question(s)")
+        html += u'</div>'
         html += u'<table width ="100%">\n'
         
         for element in self.questionElements:

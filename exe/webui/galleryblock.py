@@ -203,14 +203,16 @@ class GalleryBlock(Block):
                           u'               style="align:center;width:98%;"/>',
                           # Edit button
                           changeGalleryImage,
-                          u'          <img src="/images/stock-edit.png"/>'
+                          u'          <img alt="%s"' % _(u'Change Image'),
+			  u'           src="/images/stock-edit.png"/>'
 			  u'        </a>']
                 # Move left button
                 if image.index > 0:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Left'),
 			  u'           href="javascript:%s"' % submitLink('moveLeft'),
-                          u'        <img src="/images/stock-go-back.png"/>',
+                          u'        <img alt="%s"' % _(u'Go Back'),
+			  u'         src="/images/stock-go-back.png"/>'
                           u'        </a>',
                           ]
                 else:
@@ -221,18 +223,21 @@ class GalleryBlock(Block):
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Right'),
 			  u'           href="javascript:%s"' % submitLink('moveRight'),
-                          u'        <img src="/images/stock-go-forward.png"/>',
+                          u'        <img alt="%s"' % _(u'Go Forward'),
+			  u'         src="/images/stock-go-forward.png"/>',
                           u'        </a>',
 			  ]
                 else:
                     result += [
                           u'        ' + 
-                          u'<img src="/images/stock-go-forward-off.png"/>']
+                          u'<img alt="%s" ' % _(u'Go Forward (Not Available)'),
+			  u' src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
 			  u'           href="javascript:%s"' % submitLink('delete'),
-                          u'        <img src="/images/stock-delete.png"/>',
+                          u'        <img alt="%s" ' % _(u'Delete'),
+                          u'             src="/images/stock-delete.png"/>',
                           u'        </a>',
                           u'      </span>']
                 return result
@@ -264,7 +269,9 @@ class GalleryBlock(Block):
                 Generates a single table cell
                 """
                 width, height = image.size
-                return [u'        <img onclick="javascript:window.open(',
+		title = _(u'Show %s Image') % image.caption
+                return [u'        <a title="%s" ' % title,
+			            u'         href="javascript:window.open(',
                         u"'%s', 'galleryImage', " % image.htmlSrc +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
                         u"width=640," +
@@ -273,8 +280,9 @@ class GalleryBlock(Block):
                         u"',screenY='+((screen.height/2)-(480/2))" +
                         u');"',
                         u'           style="cursor: pointer; align:center top;"',
-                        u'           alt="%s"' % image.caption,
-                        u'           src="%s"/>' % image.thumbnailSrc,
+                        u'          <img alt="%s"' % title,
+                        u'               src="%s"/>' % image.thumbnailSrc,
+                        u'        </a>',
                         u'        <div style="align:center;width=100%">',
                         u'          %s' % (image.caption or '&nbsp;'),
                         u'        </div>']
@@ -293,7 +301,8 @@ class GalleryBlock(Block):
             html  = [u'<div class="iDevice emphasis%s" ' %
                      unicode(self.idevice.emphasis),
                      u'>',
-                     u'<img alt="" class="iDevice_icon" ',
+                     u'<img alt="%s" ' % _(u'IDevice Icon'),
+		     u'     class="iDevice_icon" ',
                      u'src="icon_'+self.idevice.icon+'.gif" />'
                      u'<span class="iDeviceTitle">',      
                      self.idevice.title,

@@ -212,13 +212,13 @@ data is entered into this field.""")))
         
         html += "<fieldset><legend><b>" + _("Add")+ "</b></legend>"
         html += common.submitButton("addText", _("Text Line"))
-        html += common.elementInstruc("line", self.lineInstruc) + "<br/>"
+        html += common.elementInstruc(self.lineInstruc) + "<br/>"
         html += common.submitButton("addTextArea", _("Text Box"))
-        html += common.elementInstruc("textBox", self.textBoxInstruc) + "<br/>"
+        html += common.elementInstruc(self.textBoxInstruc) + "<br/>"
         html += common.submitButton("addImage", _("Image"))  
-        html += common.elementInstruc("image", self.imageInstruc) + "<br/>"
+        html += common.elementInstruc(self.imageInstruc) + "<br/>"
         html += common.submitButton("addFeedback", _("Feedback"))
-        html += common.elementInstruc("feedback", self.feedbackInstruc) + "<br/>"
+        html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
         html += "</fieldset>\n"
 
         html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"
@@ -284,17 +284,17 @@ data is entered into this field.""")))
         
         if self.idevice.edit:
             html += "<b>" + _("Name") + ": </b>\n"
-            html += common.elementInstruc("name", self.nameInstruc) + "<br/>"
+            html += common.elementInstruc(self.nameInstruc) + "<br/>"
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
             html += "<b>" + _("Author") + ": </b>\n"
-            html += common.elementInstruc("author", self.authorInstruc) + "<br/>"
+            html += common.elementInstruc(self.authorInstruc) + "<br/>"
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
             html += "<b>" + _("Purpose") + ": </b>\n"
-            html += common.elementInstruc("purpose", self.purposeInstruc)
+            html += common.elementInstruc(self.purposeInstruc)
             html += "<br/>" +common.richTextArea("purpose", 
                                                  self.purpose)
             html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
-            html += common.elementInstruc("tip", self.tipInstruc) + "<br/>"
+            html += common.elementInstruc(self.tipInstruc) + "<br/>"
             html += common.richTextArea("tip", self.tip) + "<br/>\n"  
             html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
@@ -309,7 +309,7 @@ data is entered into this field.""")))
                 html += ">" + description + "</option>\n"
 
             html += "</select> \n"
-            html += common.elementInstruc("emphasis", self.emphasisInstruc)
+            html += common.elementInstruc(self.emphasisInstruc)
             html += "<br/><br/>\n"
             
             if self.idevice.emphasis > 0:
@@ -342,11 +342,11 @@ data is entered into this field.""")))
                 html += "onmousedown=\"Javascript:updateCoords(event);\" \n"
                 html += "onclick=\"Javascript:showMe('phelp', 380, 240);\" \n" 
                 html += "href=\"Javascript:void(0)\" style=\"cursor:help;\">\n " 
-                html += '<img alt="Info" src="/images/info.png" border="0" \n'
+                html += '<img alt="%s" src="/images/info.png" border="0" \n' % _('Info')
                 html += "align=\"middle\" /></a>\n"
                 html += "<div id=\"phelp\" style=\"display:none;\">\n"
                 html += "<div style=\"float:right;\" "
-                html += '<img alt="Close" src="/images/stock-stop.png" \n'
+                html += '<img alt="%s" src="/images/stock-stop.png" \n' % _('Close')
                 html += " title='"+_("Close")+"' border='0' align='middle' \n"
                 html += "onmousedown=\"Javascript:hideMe();\"/></div>\n"
                 if self.idevice.purpose != "":
@@ -389,6 +389,7 @@ data is entered into this field.""")))
             html += u'<div style="float:left; text-align:center; width:80px;\n'
             html += u'margin-right:10px; margin-bottom:10px" > '
             html += u'<img src="%s" \n' % filename
+            html += u' alt="%s" ' % _("Submit")
             html += u"onclick=\"submitLink('selectIcon','%s',1)\">\n" % icon
             html += u'<br/>%s.gif</div>\n' % icon
         return html

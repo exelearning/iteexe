@@ -112,14 +112,14 @@ class PropertiesPane(Renderable):
         html += u"<td valign=\"top\">"
         html += _(u"Level 1: ")
         html += common.textInput("level1", self.package.levelName(0), 20)
-        html += u"<p>"
+        html += u'<div class="block">'
         html += _(u"Level 2: ")
         html += common.textInput("level2", self.package.levelName(1), 20)
-        html += u"<p/>\n"
-        html += u"<p>"
+        html += u"</div>\n"
+        html += u'<div class="block">'
         html += _(u"Level 3: ")
         html += common.textInput("level3", self.package.levelName(2), 20)
-        html += u"<p/></td></tr><tr><td align=\"right\">\n"       
+        html += u"</div></td></tr><tr><td align=\"right\">\n"       
         html += common.submitButton('done', _(u'Done'))
         html += u"</td><td>&nbsp;</td></tr></table></form>\n"
         return html

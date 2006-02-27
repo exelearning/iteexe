@@ -70,9 +70,9 @@ class ClozeBlock(Block):
             ClozeElement.renderEditScripts(),
             u'<div class="iDevice emphasis%s">' % \
               unicode(self.idevice.emphasis),
-            u'<p>',
+            u'<div class="block">',
             common.textInput("title"+self.id, self.idevice.title),
-            u'</p>',
+            u'</div>',
             self.instructionElement.renderEdit(),
             self.clozeElement.renderEdit(),
             self.feedbackElement.renderEdit(),

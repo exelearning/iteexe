@@ -87,23 +87,23 @@ class MultichoiceBlock(Block):
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html += "<b>" + _("Question:") + " </b>"   
-        html += common.elementInstruc("question"+self.id, self.questionInstruc)
+        html += common.elementInstruc(self.questionInstruc)
         html += common.richTextArea("question"+self.id, self.question)
         html += "<b>" + _("Hint:") + " </b>"   
-        html += common.elementInstruc("hint"+self.id, self.hintInstruc)
+        html += common.elementInstruc(self.hintInstruc)
         html += common.richTextArea("hint"+self.id, self.hint)
         html += "<table width =\"100%%\">"
         #html += "<thead>"
         #html += "<tr>"
         #html += "<th>%s " % _("Options")
-        #html += common.elementInstruc("answer"+self.id, self.answerInstruc)
+        #html += common.elementInstruc(self.answerInstruc)
         #html += "</th>"
         #html += "<th>%s"  % _("Correct")
         #html += "<br/>" + _("Option")
-        #html += common.elementInstruc("key"+self.id, self.keyInstruc)
+        #html += common.elementInstruc(self.keyInstruc)
         #html += "</th>"
         #html += "<th>%s " % _("Feedback")
-        #html += common.elementInstruc("feed"+self.id, self.feedbackInstruc)
+        #html += common.elementInstruc(self.feedbackInstruc)
         #html += "</th>"
         #html += "</tr>"
         #html += "</thead>"
@@ -130,7 +130,8 @@ class MultichoiceBlock(Block):
         html += u'<script type="text/javascript" src="libot_drag.js"></script>\n'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += '<img alt="" class="iDevice_icon" '
+        html += u'<img alt="%s" ' % _(u'IDevice Question Icon')
+        html += u'     class="iDevice_icon" '
         html += "src=\"icon_question.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
@@ -171,14 +172,14 @@ class MultichoiceBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u'<img alt="" class="iDevice_icon" '
+        html += u'<img alt="%s" ' % _(u'IDevice Icon')
+        html += u'     class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += "<div class=\"iDevice_inner\">\n"
         html += self.question+" &nbsp;&nbsp;\n"
-        html += common.elementInstruc(self.hintId, self.hint, 
-                                      "panel-amusements.png", "Hint")
+        html += common.elementInstruc(self.hint, "panel-amusements.png", _("Hint"))
                                                                              
         html += self.renderViewContent()      
         html += self.renderViewButtons()

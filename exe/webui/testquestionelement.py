@@ -79,8 +79,7 @@ class TestquestionElement(object):
         """
         html  = u"<div class=\"iDevice\">\n"
         html += u"<b>" + _("Question:") + " </b>" 
-        html += common.elementInstruc("question"+self.id, 
-                                      self.question.questionInstruc)
+        html += common.elementInstruc(self.question.questionInstruc)
         html += u" " + common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
@@ -90,11 +89,9 @@ class TestquestionElement(object):
         html += u"<thead>"
         html += u"<tr>"
         html += u"<th>%s " % _("Options")
-        html += common.elementInstruc("option"+self.id, 
-                                      self.question.optionInstruc)
+        html += common.elementInstruc(self.question.optionInstruc)
         html += u"</th><th align=\"left\">%s "  % _("Correct")
-        html += common.elementInstruc("answer"+self.id, 
-                                      self.question.correctAnswerInstruc)
+        html += common.elementInstruc(self.question.correctAnswerInstruc)
         html += u"<br/>" + _("Option")
         html += u"</th>"
         html += u"</tr>"

@@ -56,19 +56,24 @@ class ExternalUrlBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
-        html += _(u"<strong>url:</strong> ")
+        html  = u'<div class="block">\n'
+        html += u"<strong>%s</strong> " % _('URL:')
+        html += common.elementInstruc(self.idevice.urlInstruc)
+        html += u"</div>\n"
+        html += u'<div class="block">\n'
         html += common.textInput("url"+self.id, self.idevice.url) 
         heightArr = [['small',      '200'],
                      ['medium',     '300'],
                      ['large',      '500'],
                      ['super-size', '800']]
-        html += _(u"<strong>Frame Height:</strong> ")
-        html += common.select("height"+self.id, heightArr, "", 
-                              self.idevice.height)
-        html += common.elementInstruc("url"+self.id, self.idevice.urlInstruc)
-        html += self.renderEditButtons()
         html += u"</div>\n"
+        html += u'<div class="block">\n'
+        html += common.formField('select', _('Frame Height:'), 
+                                 "height"+self.id,
+                                 options = heightArr,
+                                 selection = self.idevice.height)
+        html += u"</div>\n"
+        html += self.renderEditButtons()
         return html
 
 

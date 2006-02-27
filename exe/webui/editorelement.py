@@ -88,7 +88,7 @@ class TextEditorElement(EditorElement):
         """
         html  = "<b>" + self.field.name + "</b> "
         if self.field.instruc != "":
-            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+            html += common.elementInstruc(self.field.instruc)
         html += "<br/>\n"  
         html += common.textInput(self.id, self.field.content)
         html += "<br/>\n"
@@ -123,7 +123,7 @@ class TextAreaEditorElement(EditorElement):
         """
         html  = "<b>" + self.field.name + "</b> "
         if self.field.instruc != "":
-            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+            html += common.elementInstruc(self.field.instruc)
         html += "<br/>\n" 
         html += common.textArea(self.id, self.field.content)
         html += "<br/>\n"
@@ -161,7 +161,7 @@ class FeedbackEditorElement(EditorElement):
         """
         html  = "<b>" + self.field.name + "</b> "
         if self.field.instruc != "":
-            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+            html += common.elementInstruc(self.field.instruc)
         html += "<br/>\n" 
         html += common.textArea(self.id, self.field.feedback)
         html += "<br/>\n"
@@ -199,7 +199,7 @@ class ImageEditorElement(EditorElement):
         """
         html  = "<b>" + self.field.name + "</b> "
         if self.field.instruc != "":
-            html += common.elementInstruc("instruc"+self.id, self.field.instruc)
+            html += common.elementInstruc(self.field.instruc)
         html += "<br/>" 
         html += common.image("img"+self.id, 
                              "/images/"+ImageEditorElement.DefaultImage,

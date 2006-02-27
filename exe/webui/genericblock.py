@@ -58,9 +58,9 @@ class GenericBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div><p>\n"
+        html  = u'<div><div class="block">\n'
         html += common.textInput("title"+self.id, self.idevice.title) 
-        html += u"</p>\n"
+        html += u"</div>\n"
         for element in self.elements:
             html += element.renderEdit() + "<br/>"
         html += self.renderEditButtons()
@@ -76,8 +76,9 @@ class GenericBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.icon:
-            html += u'<img alt="" class="iDevice_icon" '
-            html += u"src=\"/style/"+style
+            html += u'<img alt="%s" ' % _(u'IDevice Icon')
+            html += u'     class="iDevice_icon" '
+	    html += u"src=\"/style/"+style
             html += u"/icon_"+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
         html += self.idevice.title
@@ -100,7 +101,8 @@ class GenericBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.icon:
-            html += u'<img alt="" class="iDevice_icon" '
+            html += u'<img alt="%s" ' % _(u'IDevice Icon')
+            html += u'     class="iDevice_icon" '
             html += u"src=\"icon_"+self.idevice.icon+".gif\"/>\n"
         html += u"<span class=\"iDeviceTitle\">"
         html += self.idevice.title

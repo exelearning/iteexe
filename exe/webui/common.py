@@ -25,8 +25,18 @@ import logging
 from nevow      import tags as T
 from nevow.flat import flatten
 
-log = logging.getLogger(__name__)
+lastId = 0
 
+def newId():
+    """
+    Generates a sequential id unique for this exe session. 
+    """
+    global lastId
+    lastId += 1
+    return 'id%d' % lastId
+
+    
+log = logging.getLogger(__name__)
 
 def docType():
     """Generates the documentation type string"""
@@ -105,11 +115,13 @@ def richTextArea(name, value="", width="100%", height=100):
     return html
 
 
-def image(name, value, width="", height=""):
+def image(name, value, width="", height="", alt=None):
     """Returns the XHTML for an image"""
+    if alt is None:
+    	alt = name
     log.debug(u"image %s" % value)
     html  = u"<img id=\"%s\" " % name
-    html += u'alt="%s" ' % name
+    html += u'alt="%s" ' % alt
     if width:
         html += u"width=\"%s\" " % width
     if height:
@@ -187,7 +199,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
         titleText = u'title="%s" ' % title
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s">' % onclick
-    html += u'<img alt="Submit" src="%s"/>' % imageFile
+    html += u'<img alt="%s" src="%s"/>' % (_('Submit'), imageFile)
     html += u'</a>\n' 
     return html
 
@@ -204,7 +216,7 @@ def confirmThenSubmitImage(message, action, object_, imageFile,
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+message+"', '"+action+"', "
     html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img alt="Confirm and submit" src="%s"/>' % imageFile
+    html += u'<img alt="%s" src="%s"/>' % (_('Confirm and submit'), imageFile)
     html += u'</a>\n' 
     return html
 
@@ -232,26 +244,26 @@ def checkbox(name, checked, value="", title="", instruction=""):
              u' value="%s" %s/>\n' % 
               (name, value, chkStr))
     if instruction:
-        html += elementInstruc(name+'.help', instruction)
+        html += elementInstruc(instruction)
     return html
 
 
-def elementInstruc(instrucId, instruc, imageFile="help.gif",
-                   label=None):
-    """add a help instruction for a element"""
+def elementInstruc(instruc, imageFile="help.gif", label=None):
+    """Add a help instruction for a element"""
     if label is None:
         label = _(u"Instructions")
     if not instruc.strip():
         html = u''
     else:
+        id_ = newId()
         html  = u'<a onmousedown="Javascript:updateCoords(event);" '
         html += u' title="%s" ' % _(u'Instructions for completion')
-        html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % instrucId
+        html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % id_
         html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
         html += u'<img alt="%s" ' % _(u'Instructions for completion')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
-        html += u'<div id="i%s" style="display:none;">' % instrucId
+        html += u'<div id="i%s" style="display:none;">' % id_
         html += u'<div style="float:right;" >'
         html += u'<img alt="%s" ' % _("Close")
         html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
@@ -260,8 +272,24 @@ def elementInstruc(instrucId, instruc, imageFile="help.gif",
         html += u'</div>\n'
     return html
 
+def formField(type_, caption, action, object_='', instruction='', *args, **kwargs):
+    """
+    A standard way for showing any form field nicely
+    """
+    html  = '<div class="block">'
+    html += '<strong>%s</strong>' % caption
+    if instruction:
+        html += elementInstruc(instruction, **kwargs)
+    html += '</div>'
+    html += '<div class="block">'
+    if type_ == 'select':
+        html += select(action, object_, *args, **kwargs)
+    elif type_ == 'checkbox':
+        html += checkbox(*args, **kwargs)
+    html += '</div>'
+    return html
 
-def select(action, options, object_="", selection=None):
+def select(action, object_='', options=[], selection=None):
     """Adds a dropdown selection to a form"""
     html  = u'<select '
     html += u'name="'+action+object_+'" '

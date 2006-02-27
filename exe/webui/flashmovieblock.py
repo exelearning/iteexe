@@ -72,22 +72,24 @@ class FlashMovieBlock(Block):
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
         html += self.flashMovieElement.renderEdit()       
-	html += u'<p>'
-        html += u"<b>%s</b>\n " % _("Align:")
         floatArr    = [[_(u'Left'), 'left'],
                       [_(u'Right'), 'right'],
                       [_(u'None'),  'none']]
-        html += common.select("float"+self.id, 
-                              floatArr, selection=self.idevice.float)
-	html += u'</p>\n'
-	html += u'<p>'
+        html += common.formField('select', _("Align:"),
+                                 "float" + self.id,
+                                 options = floatArr,
+                                 selection = self.idevice.float)
+        html += u'<div class="block">'
         html += u"<b>%s </b>" % _(u"Caption:")
-	html += u'</p>\n'
+        html += common.elementInstruc(self.idevice.captionInstruc)
+        html += u'</div>\n'
+        html += u'<div class="block">'
         html += common.textInput("caption" + self.id, self.idevice.caption)
-        html += common.elementInstruc("cap" + self.id, 
-                                      self.idevice.captionInstruc)
+        html += u'</div>\n'
+        html += u'<div class="block">'
         html += self.textElement.renderEdit()
         html += self.renderEditButtons()
+        html += u'</div>\n'
         html += u"</div>\n"
         return html
 

@@ -96,11 +96,13 @@ class TextElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/>\n"
+        html  = u'<div class="block">'
+        html += u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.field.instruc)
+        html += u"</div>\n"
+        html += '<div class="block">\n'
         html += common.textInput(self.id, self.field.content)
-        html += "<br/>\n"
+        html += "</div>\n"
 
         return html
 
@@ -137,11 +139,13 @@ class FeedbackElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/>\n"
+        html  = u'<div class="block">'
+        html += u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.field.instruc)
+        html += u"</div>\n"
+        html += '<div class="block">\n'
         html += common.richTextArea(self.id, self.field.feedback)
-        html += "<br/>\n"
+        html += "</div>\n"
 
         return html
 
@@ -152,11 +156,11 @@ class FeedbackElement(Element):
         """
         html = ""
         if self.field.feedback != "":
+            html += '<div class="block">\n '
             html += common.feedbackButton('btn' + self.id,
                 self.field.buttonCaption,
-                class_='feedbackbutton',
                 onclick="toggleFeedback('%s')" % self.id)
-            html += '<br/>\n '
+            html += '</div>\n '
             html += '<div id="fb%s" class="feedback" style="display: none;"> ' % self.id
             html += self.field.feedback
             html += "</div>\n"
@@ -197,9 +201,10 @@ class TextAreaElement(Element):
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
 
-        html  = u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/>\n"
+        html  = u'<div class="block">'
+        html += u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.field.instruc)
+        html += u'</div>'
         html += common.richTextArea(self.id, self.field.content,
                                     self.width, self.height)
 
@@ -252,10 +257,12 @@ class ImageElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html  = u"<p><b>"+self.field.name+":</b></p>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/>\n"
-        html += u'<img alt="" '
+        html  = u'<div class="block">'
+        html += u'<b>'+self.field.name+':</b>\n'
+        html += common.elementInstruc(self.field.instruc)
+        html += u"</div>\n"
+        html += u'<div class="block">'
+        html += u'<img alt="%s" ' % _('Add Image')
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addImage('"+self.id+"');\" "
         html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
@@ -264,16 +271,18 @@ class ImageElement(Element):
         if self.field.height:
             html += u"height=\""+self.field.height+"\" "
         html += u"/>\n"
+        html += u"</div>"
 
         html += u'<script type="text/javascript">\n'
         html += u"document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', imageChanged, true);\n"
         html += u'</script>\n'
 
-        html += "<br/><br/>" + common.textInput("path"+self.id, "", 50)
+        html += u'<div class="block">'
+        html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addImage(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select an image")
-        html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
+        html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "
@@ -288,6 +297,7 @@ class ImageElement(Element):
         html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
         html += u"size=\"4\"/>px \n"
         html += u"(%s) \n" % _(u"blank for original size")
+        html += u"</div>"
 
         return html
 
@@ -358,39 +368,45 @@ class MagnifierElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html  = u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/>\n"
-        html += u'<img alt="" '
+        html  = u'<div class="block">\n'
+        html += u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.field.instruc)
+        html += u"</div>\n"
+        html += u'<div class="block">\n'
+        html += u'<img alt="%s" ' % _('Add JPEG Image')
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addJpgImage('"+self.id+"');\" "
         html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
         html += u"/>\n"
+        html += u"</div>\n"
 
         html += u'<script type="text/javascript">\n'
         html += u"document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', magnifierImageChanged, true);\n"
         html += u'</script>\n'
 
-        html += "<br/><br/>" + common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addJpgImage(\'%s\')"' % self.id
-        html += u' value="%s" /><br/>' % _(u"Select an image (JPG file)")
+        html += u'<div class="block">\n'
+        html += common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" class="block" '
+        html += u' onclick="addJpgImage(\'%s\')"' % self.id
+        html += u' value="%s" />' % _(u"Select an image (JPG file)")
         
-        html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
-        html += u"<input type=\"text\" "
-        html += u"id=\"width"+self.id+"\" "
-        html += u"name=\"width"+self.id+"\" "
-        html += u"value=\"%s\" " % self.field.width
-        html += u"onchange=\"changeMagnifierImageWidth('"+self.id+"');\" "
-        html += u"size=\"4\" />\n"
-        html += u"x\n"
-        html += u"<input type=\"text\" "
-        html += u"id=\"height"+self.id+"\" "
-        html += u"name=\"height"+self.id+"\" "
-        html += u"value=\"%s\" " % self.field.height
-        html += u"onchange=\"changeMagnifierImageHeight('"+self.id+"');\" "
-        html += u"size=\"4\" />\n"
-        html += u"(%s) \n" % _(u"blank for original size")
+        html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
+        html += u'<input type="text" class="block" '
+        html += u'id="width%s" ' % self.id
+        html += u'name="width%s" ' % self.id
+        html += u'value="%s" ' % self.field.width
+        html += u'onchange="changeMagnifierImageWidth('"+self.id+"');" '
+        html += u'size="4" />\n'
+        html += u'\n'
+        html += u'<input type="text" class="block" '
+        html += u'id="height'+self.id+'" '
+        html += u'name="height'+self.id+'" '
+        html += u'value="%s" ' % self.field.height
+        html += u'onchange="changeMagnifierImageHeight(''+self.id+'');" '
+        html += u'size="4" />\n'
+        html += u'(%s) \n' % _(u'blank for original size')
+        html += u'</div>\n'
 
         return html
 
@@ -543,7 +559,10 @@ class ClozeElement(Element):
             ("You must call ClozeElement.renderEditScripts() once for each "
              "idevice before calling self.renderEdit()")
         html = [
-            common.elementInstruc(self.id, self.field.instruc),
+            u'<div class="block">',
+            u'<b>%s</b>' % self.field.name,
+            common.elementInstruc(self.field.instruc),
+            u'</div>',
             # Render the iframe box
             u' <iframe id="%s" style="width:100%%;height:250px">' % \
                 self.editorId,
@@ -633,7 +652,7 @@ class ClozeElement(Element):
 
         # Score string
         html += ['<p id="clozeScore%s"></p>' % self.id]
-	html += ['<p>\n']
+	html += ['<div class="block">\n']
         if self.field.instantMarking:
             html += ['<input type="button" ',
                      'value="%s"' % _(u"Get score"),
@@ -674,7 +693,7 @@ class ClozeElement(Element):
                     style=style,
                     onclick=onclick),
 		]
-	html += ['</p>\n']
+	html += ['</div>\n']
         return '\n'.join(html) + '</div>'
 
 # ===========================================================================
@@ -709,15 +728,15 @@ class FlashElement(Element):
         """
         log.debug("renderEdit")
 
-        html  = u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.id, self.field.instruc)
-        html += u"<br/><br/>\n"
+        html  = u'<div class="block">'
+        html += u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.field.instruc)
+        html += u"</div>\n"
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlash(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select Flash Object")
-        html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
-        html += u"<br/>\n"
-        html += u"<p><b>%s</b></p>\n" % _(u"Display as:")
+        html += common.elementInstruc(self.field.fileInstruc)
+        html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
         html += u"name=\"width"+self.id+"\" "
@@ -784,11 +803,13 @@ class FlashMovieElement(Element):
         """
         log.debug("renderEdit")
 
-        html  = u"<b>"+self.field.name+":</b><br/><br/>\n"
+        html  = u'<div class="block">'
+        html += u"<b>"+self.field.name+":</b>"
+        html += common.elementInstruc(self.field.fileInstruc)
+        html += u"</div>"
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a flash video")
-        html += common.elementInstruc("file"+self.id, self.field.fileInstruc)
 
 
         return html

@@ -73,7 +73,7 @@ class WikipediaBlock(Block):
 
         html  = u"<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
+
         sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/"),
                  (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/"),
                  (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/"),
@@ -87,13 +87,15 @@ class WikipediaBlock(Block):
                  (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/"),
                  (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/"),
                  (_(u"Wikibooks Article"),         "http://en.wikibooks.org/")]
-        html += common.select("site", sites,
-                              selection=self.idevice.site)
-        html += common.elementInstruc("langWikipedia"+self.id, 
-                                      self.idevice.langInstruc)
+
+        html += common.formField('select', _('Site'),
+                                 'site', self.id,
+                                 self.idevice.langInstruc,
+                                 sites,
+                                 self.idevice.site)
+
         html += common.textInput("article", self.idevice.articleName)
-        html += common.elementInstruc("searchWikipedia"+self.id, 
-                                      self.idevice.searchInstruc)
+        html += common.elementInstruc(self.idevice.searchInstruc)
         html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
         
         html += u"<br/>\n"
@@ -101,10 +103,13 @@ class WikipediaBlock(Block):
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
                           (_(u"Some emphasis"),   Idevice.SomeEmphasis),
                           (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
-        html += common.select("emphasis", emphasisValues,
-                              self.id,
-                              self.idevice.emphasis)
-        html += u"<br/><br/>\n"
+
+        html += common.formField('select', _('Emphasis'),
+                                 'emphasis', self.id,
+                                 '', # TODO: Instructions
+                                 emphasisValues,
+                                 self.idevice.emphasis)
+
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html

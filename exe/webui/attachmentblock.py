@@ -77,19 +77,16 @@ class AttachmentBlock(Block):
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
-        html += common.elementInstruc('filename'+self.id,
-                                      self.idevice.filenameInstruc)
-        html += u'<br/>\n'
+        html += common.elementInstruc(self.idevice.filenameInstruc)
+        html += u'<div class="block">\n'
         html += u'\n<b>%s</b>\n' % _(u'Label')
-        html += common.elementInstruc('label'+self.id,
-                                      self.idevice.labelInstruc)
-        html += u'<br/>\n'
+        html += common.elementInstruc(self.idevice.labelInstruc)
+        html += u'</div>\n'
         html += common.textInput(u'label'+self.id, self.idevice.label)
-        html += u'<br/>\n'
+        html += u'<div class="block">\n'
         html += u'<b>%s</b>\n' % _(u'Description:')
-        html += common.elementInstruc('description'+self.id,
-                                      self.idevice.descriptionInstruc)
-        html += u'<br/>\n'
+        html += common.elementInstruc(self.idevice.descriptionInstruc)
+        html += u'</div>\n'
         html += common.richTextArea(u'description'+self.id,
                                     self.idevice.description)
 
@@ -98,8 +95,9 @@ class AttachmentBlock(Block):
             html += self.idevice.userResources[0].storageName
             html += u'</span>\n'
 
-        html += u'<br/>\n'
+        html += u'<div class="block">\n'
         html += self.renderEditButtons()
+        html += u'</div>\n'
         html += u'\n</div>\n'
 
         return html
@@ -122,9 +120,9 @@ class AttachmentBlock(Block):
             html += self.idevice.label
             html += u"</a>\n"
 
-        html += u"<br/>\n"
+        html += u'<div class="block">\n'
         html += self.idevice.description 
-        html += u"<br/>\n"
+        html += u"</div>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
 
@@ -147,8 +145,9 @@ class AttachmentBlock(Block):
             html += self.idevice.label
             html += u"</a> \n"
 
-        html += u"<br/>\n"
-        html += self.idevice.description + u"<br/>"
+        html += u'<div class="block">\n'
+        html += self.idevice.description
+        html += u"</div>"
         html += u"</div>\n"
 
         return html

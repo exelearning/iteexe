@@ -78,11 +78,12 @@ class PreferencesPage(RenderableResource):
         html += u"<div id=\"main\"> \n"     
         html += u"<form method=\"post\" action=\"\" "
         html += u"id=\"contentForm\" >"  
-        html += u"<b>"
-        html += _(u"Select Language")
-        html += u"</b>\n"
-        html += common.select("locale", self.localeNames, "", 
-                              self.config.locale)
+
+        html += common.formField('select', _(u"Select Language"),
+                                 'locale',
+                                 options = self.localeNames,
+                                 selection = self.config.locale)
+
         html += u"<div id=\"editorButtons\"> \n"     
         html += u"<br/>" 
         html += common.submitButton("ok", _("OK"))

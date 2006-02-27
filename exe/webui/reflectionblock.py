@@ -67,10 +67,10 @@ class ReflectionBlock(Block):
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
         html += "<b>" + _(u"Reflective question:") + "</b>"
-        html += common.elementInstruc("activity"+self.id, self.activityInstruc)
+        html += common.elementInstruc(self.activityInstruc)
         html += "<br/>" + common.richTextArea("activity"+self.id, self.activity)
         html += "<b>" + _("Feedback:") + "</b>"
-        html += common.elementInstruc("answer"+self.id, self.answerInstruc)
+        html += common.elementInstruc(self.answerInstruc)
         html += "<br/>" + common.richTextArea("answer"+self.id, self.answer)
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"

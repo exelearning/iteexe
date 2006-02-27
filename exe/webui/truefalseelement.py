@@ -76,8 +76,7 @@ class TrueFalseElement(object):
         Returns an XHTML string for editing this option element
         """
         html  = _("Question")
-        html += common.elementInstruc("question"+self.id, 
-                                      self.idevice.questionInstruc)
+        html += common.elementInstruc(self.idevice.questionInstruc)
 
         html += common.richTextArea(self.questionId, 
                                     self.question.question)
@@ -87,17 +86,14 @@ class TrueFalseElement(object):
         html += common.option(self.keyId, not self.question.isCorrect, "false")
         html += "<br/><br/>\n"
 
-        html += common.elementInstruc("key"+self.id, 
-                                      self.idevice.keyInstruc)
+        html += common.elementInstruc(self.idevice.keyInstruc)
         html += _("Feedback")
-        html += common.elementInstruc("feed"+self.id, 
-                                      self.idevice.feedbackInstruc)
+        html += common.elementInstruc(self.idevice.feedbackInstruc)
         html += common.richTextArea(self.feedbackId, 
                                     self.question.feedback)
 
         html += _("Hint")
-        html += common.elementInstruc("hint"+self.id, 
-                                      self.idevice.hintInstruc)
+        html += common.elementInstruc(self.idevice.hintInstruc)
 
         html += common.richTextArea(self.hintId, 
                                     self.question.hint)
@@ -142,7 +138,7 @@ class TrueFalseElement(object):
         """
         html  = self.renderQuestion()
         html += " &nbsp;&nbsp;\n"
-        html += common.elementInstruc(self.hintId, self.question.hint, 
+        html += common.elementInstruc(self.question.hint, 
                                       "panel-amusements.png", "Hint")
         return html
 

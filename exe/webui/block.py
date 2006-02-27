@@ -223,18 +223,18 @@ class Block(Renderable):
 
         options  = [(_(u"---Move To---"), "")]
         options += self.__getNodeOptions(self.package.root, 0)
-        html += common.select(u"move", options, self.id)
+        html += common.select(u"move", self.id, options)
 
         if self.purpose.strip() or self.tip.strip():
             html += u'<a title="%s" ' % _(u'Pedagogical Help')
             html += u'onmousedown="Javascript:updateCoords(event);" '
             html += u"onclick=\"Javascript:showMe('p"+self.id+"', 420, 240);\" "
             html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
-            html += u'<img alt="info" src="/images/info.png" '
+            html += u'<img alt="%s" src="/images/info.png" ' % _('Information')
             html += u'style="align:middle;" /></a>\n'
             html += u'<div id="p%s" style="display:none;">' % self.id
             html += u'<div style="float:right;">'
-            html += u'<img alt="close" src="/images/stock-stop.png" '
+            html += u'<img alt="%s" src="/images/stock-stop.png" ' % _('Close')
             html += u' title="%s" ' % _(u"Close")
             html += u'onmousedown="Javascript:hideMe();"/></div>'
 
@@ -244,7 +244,7 @@ class Block(Renderable):
                 html += self.purpose 
                 
             if self.tip != "":
-                html += u'<p><b>' + _(u"Tip:") + u'</b></p>'
+                html += u'<div class="block"><b>' + _(u"Tip:") + u'</b></div>'
                 html += self.tip 
                 html += u'\n'
                 
@@ -273,7 +273,7 @@ class Block(Renderable):
         html += u"ondblclick=\"submitLink('edit', "+self.id+", 0);\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
-                html += u'<img alt="idevice icon" class="iDevice_icon" '
+                html += u'<img alt="%s" class="iDevice_icon" ' % _('IDevice Icon')
                 html += u" src=\"/style/"+style
                 html += "/icon_"+self.idevice.icon+".gif\"/>\n"
             html += u"<span class=\"iDeviceTitle\">"
@@ -294,7 +294,7 @@ class Block(Renderable):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
-                html += u'<img alt="iDevice icon" class="iDevice_icon" '
+                html += u'<img alt="%s" class="iDevice_icon" ' % _('iDevice icon')
                 html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
