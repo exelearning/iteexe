@@ -96,13 +96,15 @@ class TextElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = u'<div class="block">'
-        html += u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.field.instruc)
-        html += u"</div>\n"
-        html += '<div class="block">\n'
-        html += common.textInput(self.id, self.field.content)
-        html += "</div>\n"
+	html = common.formField('textInput',self.field.name,'',
+				self.id,self.field.content)
+        #html  = u'<div class="block">'
+        #html += u"<b>"+self.field.name+":</b>\n"
+        #html += common.elementInstruc(self.field.instruc)
+        #html += u"</div>\n"
+        #html += '<div class="block">\n'
+        #html += common.textInput(self.id, self.field.content)
+        #html += "</div>\n"
 
         return html
 
@@ -200,13 +202,16 @@ class TextAreaElement(Element):
         """
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
-
-        html  = u'<div class="block">'
-        html += u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.field.instruc)
-        html += u'</div>'
-        html += common.richTextArea(self.id, self.field.content,
-                                    self.width, self.height)
+	html = common.formField('richTextArea',self.field.name,'',
+				self.id, self.field.instruc,
+				self.field.content,
+				str(self.width), str(self.height))
+        #html  = u'<div class="block">'
+        #html += u"<b>"+self.field.name+":</b>\n"
+        #html += common.elementInstruc(self.field.instruc)
+        #html += u'</div>'
+        #html += common.richTextArea(self.id, self.field.content,
+                                    #self.width, self.height)
 
         return html
 

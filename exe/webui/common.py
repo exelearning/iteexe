@@ -284,6 +284,8 @@ def formField(type_, caption, action, object_='', instruction='', *args, **kwarg
     html += '<div class="block">'
     if type_ == 'select':
         html += select(action, object_, *args, **kwargs)
+    elif type_ == 'richTextArea':
+	html += richTextArea(action+object_, *args, **kwargs)
     elif type_ == 'checkbox':
         html += checkbox(*args, **kwargs)
     html += '</div>'
