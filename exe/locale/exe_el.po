@@ -2,12 +2,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: exe/idevices/forumblock.py:54
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-10 14:51+1300\n"
+"POT-Creation-Date: 2006-03-01 11:48+1300\n"
 "PO-Revision-Date: 2006-01-10 13:23+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -22,17 +21,19 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Μετακίνηση σε---"
 
+#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:283
-#: exe/xului/mainpage.py:328
+#: exe/xului/mainpage.py:328 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
 msgstr ". Παρακαλώ, χρησιμοποιήστε ονόματα ASCII."
 
 #: exe/engine/clozeidevice.py:58
 #, fuzzy
-msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>"
+msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
 msgstr "<dl>  <dt>Εάν στόχος σας είναι να εξετάσετε την κατανόηση βασικών εννοιών ή αναγνωστέας ύλης </dt> < dd > < p > γράψτε μια περίληψη της έννοιας ή της αναγνωστέας ύλης. Αυτή θα πρέπει να είναι αρκετά μακροσκελής για να εξετάσει επαρκώς τη γνώση που στοχεύετε, αλλά και αρκετά μικρή ώστε να μην προκαλεί κούραση. Λιγότερο από μια δακτυλογραφημένη σελίδα είναι πιθανόν επαρκής, αλλά μπορεί να θέλετε να γράψετε λιγότερα για τα αρχάριους σπουδαστές.    </p > < p>Επιλέξτε τις λέξεις κλειδία του κειμένου για την κατανόηση των εννοιών. Αυτές θα είναι πιθανώς ρήματα, ουσιαστικά και βασικά επιρρήματα. Επιλέξτε εναλλακτικές λύσεις με μια σωστή απάντηση. </p> <dd > < dt>Αν στόχος σας είναι να εξετάσετε τη γνώση του λεξιλογίου <dt> < dd>γράψτε ένα κείμενο που χρησιμοποιεί το λεξιλόγιο που στοχεύετε. Το κείμενο αυτό πρέπει να είναι συνεπές και συνεκτικό, και να είναι κατάλληλου μήκος. Δώστε έμφαση στις λέξεις στόχου του κειμένου. Επιλέξτε εναλλακτικές λύσεις με μια καθαρή απάντηση.  </dd > < dt>Αν στόχος σας είναι να εξετάσετε τη γραμματική:  </dt > < dd > < p>γράψτε ένα κείμενο που χρησιμοποιεί τη γραμματική που στοχεύετε. Αυτό το κείμενο πρέπει να είναι συνεπές και συνεκτικό, και να είναι κατάλληλου μήκους. Θυμηθείτε ότι στόχος δεν είναι η γνώση του λεξιλογίου, έτσι οι έννοιες των λέξεων κλειδιών πρέπει να είναι γνωστές στους σπουδαστές.  </p > < p>Επισημάνετε τις λέξεις που στοχεύετε στο κείμενο. Παρέχετε εναλλακτικές με την ίδια ρίζα λέξης αλλά με διαφορετικές προσθήκες. Είναι καλή ιδέα να εξετάσει ένας συνάδελφος την άσκηση για να σιγουρευτείτε ότι δεν υπάρχουν εκπλήξεις!  </p >"
 
-#: exe/engine/imagewithtextidevice.py:40
+#: exe/engine/imagewithtextidevice.py:41
 #, fuzzy
 msgid ""
 "<p>\n"
@@ -89,32 +90,46 @@ msgstr "<p>Εκχώριση ετικέτας για το επισυναπτόμ�
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
 msgstr "<p>Οι κλειστές ασκήσεις είναι κείμενα ή προτάσεις όπου μερικές λέξεις ή φράσεις έχουν διαγραφεί. Οι σπουδαστές πρέπει να συμπληρώσουν τις ελλείπουσες λέξεις. Χρησιμοποιούνται συχνά για τους ακόλουθους λόγους:</p><ol><li>έλεγχο γνώσης βασικών εννοιών των μαθημάτων (αυτό θα μπορούσε να είναι ένας προέλεγχος, τυπική άσκηση, ή αθροιστικός έλεγχος).</li><li>Έλεγχος κατανόησης ανάγνωσης.</li><li>Έλεγχος γνώσης λεξιλογίου (συνήθως για τους μη ιθαγενείς αγγλικούς ομιλητές).</li><li>Έλεγχος σύνταξης προτάσεων ή γραμματική ικανότητα. </li >"
 
-#: exe/engine/clozeidevice.py:120
+#: exe/engine/clozeidevice.py:122
 #, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly into the \n"
-"field.</P><p> To select words to hide, double click on the word to select it and \n"
-"click on the <Hide/Show Word¡± button below.</p>"
+"field.</p><p> To select words to hide, double click on the word to select it and \n"
+"click on the Hide/Show Word button below.</p>"
 msgstr "Εισάγετε το κείμενο για την τελευταία άσκηση επικολώντας ή πληκτρολογώντας στο πεδίο κλεισίματος. Για να επιλέξετε τις λέξεις που επιθυμείτε να αποκρύψετε κάντε κλικ στη λέξη και στη συνέχεια κλικ στο κουμπί <i>Απόκρυψη/Εμφάνιση Λέξης</i>."
 
-#: exe/engine/field.py:378
+#: exe/engine/field.py:391
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> and both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorythm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Εάν αυτή η επιλογή αφεθεί μη επιλεγμένη θα χρησιμοποιηθεί ένας fuzzy αλγόριθμος για να βαθμολογήσει τις απαντήσεις των μαθητών. Θα δεχτεί ένα μικρό ποσοστό λαθών ορθογραφίας και κεφαλαιοποίησης στις λέξεις που είναι μεγαλύτερες από 4 γράμματα. Αυτό θα συμβεί ακόμα κι αν η \"Κεφαλαιοποίηση ελέγχου\" είναι ενεργοποιημένη.</p><p><strong>Για παράδειγμα:</strong > εάν η σωστή απάντηση είναι < code>Ελέφαντας</code> τότε και το< code>ελέφαντας</code> και το <code>Ελίφαντας</code > θα κριθούν < em > \"αρκετά σωστά \"</em > από τον αλγόριθμο δεδομένου ότι έχει μόνο ένα γράμμα λανθασμένο, ακόμα κι αν ο \"Έλεγχος κεφαλαιοποίησης \"είναι ενεργοποιημένος.</p><p>Αν ο έλεγχος κεφαλαιοποίησης είναι απενεργοποιημένος στο ανωτέρω παράδειγμα, το πεζό < code>ε</code > δεν θα θεωρηθεί λάθος και το < code>ελίφαντας</code > θα γίνει επίσης αποδεκτό.</p><p>Αν και το δύο \"Αυστηρή βαθμολογία \"και \"Έλεγχος Κεφαλαιοποίησης \" είναι ενεργοποιημένα, η μόνη σωστή απάντηση είναι \"Ελέφαντας \". Εάν μόνο το \"Αυστηρή βαθμολογία \" είναι ενεργοποιημένο και ο \"Έλεγχος Κεφαλαιοποίησης\"δεν είναι, τότε και το \"ελέφαντας \" θα γίνει αποδεκτό.</p >"
 
-#: exe/engine/field.py:399
+#: exe/engine/field.py:412
 #, fuzzy
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Αν επιλεγεί αυτή η επιλογή, υποβληθείσες απαντήσεις με διαφορετική κεφαλαιοποίηση θα βαθμολογηθούν ως λάθος.</p>"
 
-#: exe/engine/field.py:404
+#: exe/engine/field.py:417
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather then all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr "<p>Αν επιλεγεί αυτή η επιλογή, κάθε λέξη θα βαθμολογείται όταν πληκτρολογείται από το σπουδαστή, αντί όλες οι λέξεις να βαθμολογηθούν στο τέλος.</p>"
+
+#: exe/engine/idevicestore.py:246
+#, fuzzy
+msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
+msgstr "Οι δάσκαλοι πρέπει να λάβουν τα εξής υπόψη κατά τη χρησιμοποίηση αυτού του εκπαιδευτικού εργαλείου: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον πόρο σας που θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο σπουδαστής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν πόρο διδασκαλίας.</li><li>Από μια προοπτική οπτικής σχεδίασης, αποφύγετε να έχετε δύο εκπαιδευτικά εργαλεία ακολουθώντας αμέσως το ένα το άλλο χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε ένα εκπαιδευτικό εργαλείο. </li><li>3.Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος εκπλήρωσης της δραστηριότητας ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
+
+#: exe/engine/idevicestore.py:241
+msgid ""
+"<p>The Reading Activity will primarily \n"
+"be used to check a learner's comprehension of a given text. This can be done \n"
+"by asking the learner to reflect on the reading and respond to questions about \n"
+"the reading, or by having them complete some other possibly more physical task \n"
+"based on the reading.</p>"
+msgstr ""
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -127,7 +142,7 @@ msgid ""
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
 
-#: exe/engine/idevicestore.py:239
+#: exe/engine/idevicestore.py:349
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -136,22 +151,14 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:478
+#: exe/engine/galleryidevice.py:482
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/webui/externalurlblock.py:66
-msgid "<strong>Frame Height:</strong> "
-msgstr "<strong>Ύψος πλαισίου:</strong> "
-
-#: exe/webui/externalurlblock.py:60
-msgid "<strong>url:</strong> "
-msgstr "<strong>url:</strong> "
-
-#: exe/engine/package.py:105
+#: exe/engine/package.py:161
 msgid "?????"
 msgstr "?????"
 
@@ -191,22 +198,30 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Μια παιδαγωγική συμβουλεί σας επιτρέπει να περιγράψετε την προτιμώμενη χρήση και την παιδαγωγική πίσω από την ανάπτυξη των εργαλείων."
 
-#: exe/idevices/forumelement.py:75
-msgid "A single simple discussion"
-msgstr "Μια απλή συζήτηση"
-
 #: exe/webui/editorpane.py:224
 msgid "Actions"
 msgstr "Ενέργειες"
 
-#: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:322
-#: exe/engine/idevicestore.py:330 exe/webui/questionelement.py:70
+#: exe/engine/idevicestore.py:285 exe/engine/idevicestore.py:324
+#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:393
+#: exe/engine/idevicestore.py:431 exe/engine/idevicestore.py:439
+#: exe/webui/questionelement.py:70
 msgid "Activity"
 msgstr "Δραστηριότητα"
 
 #: exe/webui/editorpane.py:213
 msgid "Add"
 msgstr "Προσθήκη"
+
+#: exe/webui/element.py:270
+#, fuzzy
+msgid "Add Image"
+msgstr "Προσθήκη εικόνων"
+
+#: exe/webui/element.py:381
+#, fuzzy
+msgid "Add JPEG Image"
+msgstr "Προσθήκη σελίδας"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
@@ -220,7 +235,7 @@ msgstr "Εισάγετε ένα πλαίσιο κειμένου σε ένα εκ
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Προσθήκη εικόνας στο εκπαιδευτικό εργαλείο σας. Σας δίνει τη δυνατότητα να επιλέξετε μια εικόνα από τις αποθηκευμένες."
 
-#: exe/webui/testquestionelement.py:109
+#: exe/webui/testquestionelement.py:106
 #, fuzzy
 msgid "Add another Option"
 msgstr "Προσθέστε άλλη επιλογή"
@@ -234,11 +249,11 @@ msgstr "Προσθήκη ερώτησης"
 msgid "Add another option"
 msgstr "Προσθέστε άλλη επιλογή"
 
-#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:91
+#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:93
 msgid "Add another question"
 msgstr "Προσθήκη ερώτησης"
 
-#: exe/webui/galleryblock.py:176
+#: exe/webui/galleryblock.py:174
 msgid "Add images"
 msgstr "Προσθήκη εικόνων"
 
@@ -246,12 +261,12 @@ msgstr "Προσθήκη εικόνων"
 msgid "Add interactive feedback to your iDevice."
 msgstr "Προσθέστε αλληλεπιδραστική ανατροφοδότηση στο εκπαιδευτικό εργαλείο σας. "
 
-#: exe/webui/imagemagnifierblock.py:96 exe/webui/imagewithtextblock.py:75
-#: exe/webui/flashmovieblock.py:76 exe/webui/flashwithtextblock.py:77
+#: exe/webui/imagewithtextblock.py:79 exe/webui/flashmovieblock.py:78
+#: exe/webui/flashwithtextblock.py:79 exe/webui/imagemagnifierblock.py:97
 msgid "Align:"
 msgstr "Στοίχιση:"
 
-#: exe/engine/field.py:442
+#: exe/engine/field.py:455
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -259,7 +274,7 @@ msgstr ""
 "Επιτρέψτε αυτόματη συμπλήρωση όταν \n"
 "                                       ο χρήστης συμπληρώνει τα κενά."
 
-#: exe/engine/clozeidevice.py:158
+#: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
 msgstr ""
 "Επιτρέψτε αυτόματη συμπλήρωση όταν \n"
@@ -298,7 +313,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:325
+#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:434
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -329,21 +344,19 @@ msgstr "Συγγραφέας"
 msgid "Button Caption"
 msgstr "Λεζάντα Κουμπιού:"
 
-#: exe/idevices/forumelement.py:102
-msgid "Can a student post to this forum?:"
-msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' αυτή τη δημόσια συζήτηση;"
-
-#: exe/webui/preferencespage.py:88 exe/webui/editorpane.py:232
+#: exe/webui/preferencespage.py:90 exe/webui/editorpane.py:232
 msgid "Cancel"
 msgstr "Ακύρωση"
 
+#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:227 exe/xului/mainpage.py:281
-#: exe/xului/mainpage.py:326
+#: exe/xului/mainpage.py:326 exe/xului/mainpage.old.py:222
+#: exe/xului/mainpage.old.py:303
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση στον κατάλογο"
 
-#: exe/webui/imagemagnifierblock.py:102 exe/webui/imagewithtextblock.py:81
-#: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:86
+#: exe/webui/imagewithtextblock.py:84 exe/webui/flashmovieblock.py:83
+#: exe/webui/flashwithtextblock.py:84 exe/webui/imagemagnifierblock.py:103
 msgid "Caption:"
 msgstr "Λεζάντα:"
 
@@ -351,7 +364,12 @@ msgstr "Λεζάντα:"
 msgid "Case Study"
 msgstr "Μελέτη σκοπιμότητας"
 
-#: exe/webui/element.py:593
+#: exe/webui/galleryblock.py:189 exe/webui/galleryblock.py:206
+msgid "Change Image"
+msgstr ""
+
+#: exe/webui/element.py:597 exe/webui/element.stan.py:461
+#: exe/webui/element.prestan.py:459
 msgid "Check Caps?"
 msgstr "Έλεγχος για κεφαλαία;"
 
@@ -359,15 +377,11 @@ msgstr "Έλεγχος για κεφαλαία;"
 msgid "Chinese Wikipedia Article"
 msgstr "Άρθρο της Κινέζικης Βίκι εγκυκλοπαίδειας"
 
-#: exe/idevices/forumidevice.py:107
-msgid "Choose a LMS"
-msgstr "Επιλέξτε Σ.Τ.Κ. (Σύστημα Τηλεκατάρτισης)"
-
 #: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Κάντε κλικ στο <strong>Επιλέξτε αρχείο</strong> και επιλέξτε το αρχείο που θέλετε να επισυνάψετε."
 
-#: exe/engine/field.py:132 exe/webui/questionelement.py:96
+#: exe/engine/field.py:135 exe/webui/questionelement.py:95
 msgid "Click Here"
 msgstr "Κάντε κλικ εδώ "
 
@@ -375,16 +389,17 @@ msgstr "Κάντε κλικ εδώ "
 msgid "Click here"
 msgstr "Κάντε κλικ εδώ"
 
-#: exe/engine/galleryidevice.py:278 exe/webui/common.py:257
-#: exe/webui/common.py:258 exe/webui/multichoiceblock.py:152
-#: exe/webui/multichoiceblock.py:153 exe/webui/truefalseelement.py:127
-#: exe/webui/truefalseelement.py:128 exe/webui/block.py:238
-#: exe/webui/editorpane.py:328 exe/webui/editorpane.py:329
+#: exe/engine/galleryidevice.py:282 exe/webui/common.py:268
+#: exe/webui/common.py:269 exe/webui/multichoiceblock.py:153
+#: exe/webui/multichoiceblock.py:154 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/editorpane.py:328
+#: exe/webui/editorpane.py:329 exe/webui/editorpane.py:349
 #: exe/webui/editorpane.py:350
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: exe/engine/clozeidevice.py:119
+#: exe/engine/clozeidevice.py:121
 msgid "Cloze"
 msgstr "Κλείσιμο"
 
@@ -392,12 +407,16 @@ msgstr "Κλείσιμο"
 msgid "Cloze Activity"
 msgstr "Κλείσιμο Δραστηριότητας"
 
-#: exe/webui/optionelement.py:82 exe/webui/optionelement.py:131
-#: exe/webui/testquestionelement.py:95
+#: exe/webui/common.py:219
+msgid "Confirm and submit"
+msgstr ""
+
+#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
+#: exe/webui/testquestionelement.py:93
 msgid "Correct"
 msgstr "Σωστό"
 
-#: exe/webui/truefalseelement.py:176
+#: exe/webui/truefalseelement.py:172
 msgid "Correct!"
 msgstr "Σωστό!"
 
@@ -409,21 +428,26 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 
-#: exe/webui/block.py:208 exe/webui/editorpage.py:176
-#: exe/webui/editorpage.py:180 exe/webui/editorelement.py:76
-#: exe/webui/editorelement.py:111 exe/webui/editorelement.py:149
-#: exe/webui/editorelement.py:185
+#: exe/webui/galleryblock.py:239 exe/webui/block.py:208
+#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
+#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:149 exe/webui/editorelement.py:185
 #: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
 #: label="Delete">
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:93
+#: exe/webui/galleryblock.py:237
+#, fuzzy
+msgid "Delete Image"
+msgstr "Επιλογή εικόνας"
+
+#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:92
 msgid "Delete option"
 msgstr "Επιλογή διαγραφής"
 
-#: exe/webui/questionelement.py:80 exe/webui/truefalseelement.py:106
-#: exe/webui/testquestionelement.py:86
+#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
+#: exe/webui/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -444,7 +468,7 @@ msgid ""
 "presented. "
 msgstr ""
 
-#: exe/engine/idevicestore.py:318
+#: exe/engine/idevicestore.py:320 exe/engine/idevicestore.py:427
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -452,13 +476,13 @@ msgstr ""
 "Περιγράψτε τις προαπαιτούμενες γνώσεις που θα πρέπει να έχουν οι μαθητές\n"
 " για ολοκληρώσουν με επιτυχία το μάθημα."
 
-#: exe/engine/idevicestore.py:284
+#: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:394
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
 
-#: exe/engine/idevicestore.py:331
+#: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:440
 msgid "Describe the tasks the learners should complete."
 msgstr "Περιγράψτε τις εργασίες που θα πρέπει να ολοκληρώσουν οι μαθητές."
 
@@ -467,27 +491,13 @@ msgstr "Περιγράψτε τις εργασίες που θα πρέπει ν
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: exe/webui/attachmentblock.py:89
+#: exe/webui/attachmentblock.py:87
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: exe/idevices/forumidevice.py:40
-msgid "Discussion Activity"
-msgstr "Δραστηριότητα συζήτησης:"
-
-#: exe/idevices/forumelement.py:220
-msgid "Discussion Topic/Thread:"
-msgstr "Θέμα συζήτησης "
-
-#: exe/idevices/forumidevice.py:141
-msgid "Discussion topic/Thread"
-msgstr "Θέμα συζήτησης: "
-
-#: exe/idevices/forumelement.py:79
-msgid "Discussions and replies are allowed"
-msgstr "Επιτρέπονται οι συζητήσεις και οι απαντήσεις"
-
-#: exe/webui/element.py:278 exe/webui/element.py:385 exe/webui/element.py:735
+#: exe/webui/element.py:290 exe/webui/element.py:399 exe/webui/element.py:744
+#: exe/webui/element.stan.py:278 exe/webui/element.stan.py:608
+#: exe/webui/element.prestan.py:276 exe/webui/element.prestan.py:601
 msgid "Display as:"
 msgstr "Απεικόνιση ως:"
 
@@ -499,35 +509,34 @@ msgstr "Ολοκληρώθηκε"
 msgid "Dutch Wikipedia Article"
 msgstr "Άρθρο της Ολλανδικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/element.py:44
+#: exe/webui/element.py:44 exe/webui/element.stan.py:46
+#: exe/webui/element.prestan.py:44
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ΛΑΘΟΣ: Απευθείας κλήση του Element.process  μέσω της κλάσης %s"
 
-#: exe/webui/element.py:53
+#: exe/webui/element.py:53 exe/webui/element.stan.py:55
+#: exe/webui/element.prestan.py:53
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ΛΑΘΟΣ: Απευθείας κλήση του Element.renderEdit  μέσω της κλάσης %s"
 
-#: exe/webui/element.py:70
+#: exe/webui/element.py:70 exe/webui/element.stan.py:72
+#: exe/webui/element.prestan.py:70
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ΛΑΘΟΣ: Απευθείας κλήση του Element.renderView μέσω της κλάσης %s"
 
-#: exe/webui/block.py:313
+#: exe/webui/block.py:312
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ΛΑΘΟΣ:  Άμεση κλήση του Block.renderViewContent"
 
-#: exe/idevices/forumelement.py:76
-msgid "Each person posts one discussion"
-msgstr "Κάθε άτομο δημοσιεύει μια συζήτηση"
-
-#: exe/webui/block.py:322 exe/webui/editorpage.py:198
+#: exe/webui/block.py:321 exe/webui/editorpage.py:199
 #: exe/webui/editorpane.py:229
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: exe/webui/editorpane.py:299
+#: exe/webui/wikipediablock.py:107 exe/webui/editorpane.py:299
 msgid "Emphasis"
 msgstr "Έμφαση"
 
@@ -583,7 +592,7 @@ msgid ""
 "default feedback will be provided."
 msgstr "Εισάγετε όποια ανατροφοδότηση επιθυμείτε να παρέχετε στον εκπαιδευόμενο στο πεδίο ανατροφοδότησης. Το πεδίο αυτό μπορεί να μείνει κενό."
 
-#: exe/engine/clozeidevice.py:126
+#: exe/engine/clozeidevice.py:128
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "Εισάγετε όποια ανατροφοδότηση επιθυμείτε να παρέχετε στον εκπαιδευόμενο στο πεδίο ανατροφοδότησης. Το πεδίο αυτό μπορεί να μείνει κενό."
 
@@ -609,7 +618,7 @@ msgstr ""
 " στο κουμπί \"ΠΡΟΣΘΗΚΗ ΑΛΛΗΣ ΕΠΙΛΟΓΗΣ\".\n"
 " Μπορείτε να διαγράψετε επιλογές κάνοντας κλικ στο \"x\" δεξιά από κάθε επιλογή."
 
-#: exe/engine/idevicestore.py:280
+#: exe/engine/idevicestore.py:282 exe/engine/idevicestore.py:390
 #, fuzzy
 msgid ""
 "Enter the details of the reading including reference details. The \n"
@@ -649,7 +658,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr ""
 
-#: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagewithtextidevice.py:62
 #, fuzzy
 msgid ""
 "Enter the text you wish to \n"
@@ -662,7 +671,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Enter the text you wish to \n"
-"                                associate with the flash."
+"                                 associate with the image."
 msgstr ""
 "Επιτρέψτε αυτόματη συμπλήρωση όταν \n"
 "                                       ο χρήστης συμπληρώνει τα κενά."
@@ -673,20 +682,19 @@ msgid ""
 "associate with the file."
 msgstr ""
 
-#: exe/xului/mainpage.py:498
+#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:498
+#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Λάθος κατά τη φόρτωση του πακέτου \"%s\": %s"
 
-#: exe/idevices/exampleidevice.py:44
-msgid "Example"
+#: exe/webui/element.stan.py:456 exe/webui/element.prestan.py:454
+msgid "Exact Spelling?"
 msgstr ""
 
-#: exe/idevices/exampleidevice.py:39
-msgid "Example Example"
-msgstr ""
-
+#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
+#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωσή στο %s"
@@ -699,15 +707,15 @@ msgstr "Εξωτερικός ιστοχώρος"
 msgid "Extra large"
 msgstr "Πολύ μεγάλο"
 
-#: exe/webui/truefalseelement.py:86 exe/webui/truefalseelement.py:159
+#: exe/webui/truefalseelement.py:85 exe/webui/truefalseelement.py:155
 msgid "False"
 msgstr "Λάθος"
 
-#: exe/engine/clozeidevice.py:125 exe/engine/clozeidevice.py:149
-#: exe/engine/idevicestore.py:287 exe/engine/genericidevice.py:155
-#: exe/webui/questionelement.py:73 exe/webui/common.py:176
-#: exe/webui/truefalseelement.py:92 exe/webui/optionelement.py:94
-#: exe/webui/editorpane.py:220
+#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
+#: exe/engine/idevicestore.py:289 exe/engine/idevicestore.py:397
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
+#: exe/webui/common.py:186 exe/webui/truefalseelement.py:90
+#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
@@ -722,7 +730,9 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Ανατροφοδότηση:"
 
+#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:373 exe/xului/mainpage.py:410
+#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να αντικατασταθεί"
@@ -747,21 +757,9 @@ msgstr ""
 "το οποίο μπορεί να είναι προβληματικό, το εκπαιδευτικό εργαλείο φορτώνει το κατάλληλο περιεχόμενο\n"
 " σε ένα πλαίσιο. Χρησιμοποιήστε το μόνο αν θέλετε το περιεχόμενό σας να είναι σε σύνδεση (online)."
 
-#: exe/idevices/forumelement.py:107
-msgid "Force everyone to be subscribed?:"
-msgstr "Να εγγραφούν όλοι υποχρεωτικά;"
-
-#: exe/idevices/forumelement.py:192
-msgid "Forum Name:"
-msgstr "Όνομα δημόσιας συζήτησης: "
-
-#: exe/idevices/forumelement.py:265 exe/idevices/forumelement.py:279
-msgid "Forum Name: "
-msgstr "Όνομα δημόσιας συζήτησης: "
-
-#: exe/idevices/forumelement.py:96
-msgid "Forum type:"
-msgstr "Τύπος δημόσιας συζήτησης:"
+#: exe/webui/externalurlblock.py:71
+msgid "Frame Height:"
+msgstr ""
 
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
@@ -771,29 +769,43 @@ msgstr "Ελεύθερο κείμενο"
 msgid "French Wikipedia Article"
 msgstr "Άρθρο της Γαλλικής Βίκι εγκυκλοπαίδειας"
 
+#: exe/webui/wikipediablock.py:171
+msgid "GNU Free Documentation License"
+msgstr ""
+
 #: exe/webui/wikipediablock.py:79
 msgid "German Wikipedia Article"
 msgstr "Άρθρο της Γερμανικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/element.py:659
+#: exe/webui/element.py:663 exe/webui/element.stan.py:537
+#: exe/webui/element.prestan.py:533
 msgid "Get score"
 msgstr "Λήψη βαθμολογίας"
 
-#: exe/idevices/forumelement.py:113
-msgid "Group mode:"
-msgstr "Κατάσταση ομάδας:"
+#: exe/webui/galleryblock.py:214
+msgid "Go Back"
+msgstr ""
 
-#: exe/webui/questionelement.py:101 exe/webui/reflectionblock.py:93
-#: exe/idevices/forumelement.py:92
+#: exe/webui/galleryblock.py:226
+msgid "Go Forward"
+msgstr ""
+
+#: exe/webui/galleryblock.py:233
+msgid "Go Forward (Not Available)"
+msgstr ""
+
+#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
 msgid "Hide"
 msgstr "Απόκρυψη"
 
-#: exe/webui/element.py:583
+#: exe/webui/element.py:587 exe/webui/element.stan.py:451
+#: exe/webui/element.prestan.py:449
 msgid "Hide/Show Word"
 msgstr "Απόκρυψη/Εμφάνιση Λέξης"
 
-#: exe/webui/multichoiceblock.py:156 exe/webui/truefalseelement.py:98
-#: exe/webui/truefalseelement.py:121 exe/webui/truefalseelement.py:131
+#: exe/webui/multichoiceblock.py:157 exe/webui/multichoiceblock.py:182
+#: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
+#: exe/webui/truefalseelement.py:127
 msgid "Hint"
 msgstr "Συμβουλή"
 
@@ -801,19 +813,31 @@ msgstr "Συμβουλή"
 msgid "Hint:"
 msgstr "Συμβουλή:"
 
-#: exe/engine/package.py:60
+#: exe/engine/package.py:93
 msgid "Home"
 msgstr "Αρχή"
+
+#: exe/webui/multichoiceblock.py:175 exe/webui/galleryblock.py:304
+#: exe/webui/block.py:276 exe/webui/genericblock.py:79
+#: exe/webui/genericblock.py:104
+#, fuzzy
+msgid "IDevice Icon"
+msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
+
+#: exe/webui/multichoiceblock.py:133
+#, fuzzy
+msgid "IDevice Question Icon"
+msgstr "Διαγραφή ερώτησης"
 
 #: exe/webui/editorpane.py:331
 msgid "Icons"
 msgstr "Εικονίδια"
 
-#: exe/engine/imagewithtextidevice.py:57 exe/webui/editorpane.py:218
+#: exe/engine/imagewithtextidevice.py:58 exe/webui/editorpane.py:218
 msgid "Image"
 msgstr "Εικόνα"
 
-#: exe/engine/galleryidevice.py:476
+#: exe/engine/galleryidevice.py:480
 msgid "Image Gallery"
 msgstr "Γκαλερί εικόνων"
 
@@ -821,7 +845,7 @@ msgstr "Γκαλερί εικόνων"
 msgid "Image Magnifier"
 msgstr "Μεγενθυντής εικόνας"
 
-#: exe/engine/imagewithtextidevice.py:38
+#: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
 msgstr "Εικόνα με κείμενο"
 
@@ -829,29 +853,40 @@ msgstr "Εικόνα με κείμενο"
 msgid "ImageMagnifier"
 msgstr "ΜεγενθυντήςΕικόνας"
 
-#: exe/webui/truefalseelement.py:177
+#: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
 msgstr "Λανθασμένο!"
 
-#: exe/webui/element.py:598
+#: exe/webui/editorpane.py:345
+#, fuzzy
+msgid "Info"
+msgstr "Πληροφορίες εκσφαλμάτωσης"
+
+#: exe/webui/block.py:233
+#, fuzzy
+msgid "Information"
+msgstr "Οδηγίες"
+
+#: exe/webui/element.py:602 exe/webui/element.stan.py:466
+#: exe/webui/element.prestan.py:464
 msgid "Instant Marking?"
 msgstr "Άμεση βαθμολογία;"
 
-#: exe/engine/clozeidevice.py:112 exe/webui/common.py:244
+#: exe/engine/clozeidevice.py:114 exe/webui/common.py:254
 msgid "Instructions"
 msgstr "Οδηγίες"
 
-#: exe/engine/clozeidevice.py:144
+#: exe/engine/clozeidevice.py:146
 msgid "Instructions For Learners"
 msgstr "Οδηγίες για μαθητές"
 
-#: exe/webui/common.py:249 exe/webui/common.py:252
+#: exe/webui/common.py:260 exe/webui/common.py:263
 msgid "Instructions for completion"
 msgstr "Οδηγίες για συμπλήρωση"
 
-#: exe/idevices/forumelement.py:215
-msgid "Introduction"
-msgstr "Εισαγωγή"
+#: exe/webui/wikipediablock.py:172
+msgid "It uses material from the "
+msgstr ""
 
 #: exe/webui/wikipediablock.py:82
 msgid "Italian Wikipedia Article"
@@ -861,7 +896,7 @@ msgstr "Άρθρο της Ιταλικής Βίκι εγκυκλοπαίδεια
 msgid "Japanese Wikipedia Article"
 msgstr "Άρθρο της Ιαπωνικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/attachmentblock.py:83
+#: exe/webui/attachmentblock.py:82
 msgid "Label"
 msgstr "Ετικέτα"
 
@@ -869,16 +904,8 @@ msgstr "Ετικέτα"
 msgid "Large"
 msgstr "Μεγάλο"
 
-#: exe/idevices/forumidevice.py:158
-msgid "Learning Management System"
-msgstr "Σύστημα Τηλεκατάρτισης"
-
-#: exe/idevices/forumelement.py:239
-msgid "Learning Management System:"
-msgstr "Σύστημα Τηλεκατάρτισης:"
-
-#: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:78
+#: exe/webui/imagewithtextblock.py:75 exe/webui/flashmovieblock.py:75
+#: exe/webui/flashwithtextblock.py:75 exe/webui/imagemagnifierblock.py:87
 msgid "Left"
 msgstr "Αριστερά"
 
@@ -894,34 +921,35 @@ msgstr "Επίπεδο 2:"
 msgid "Level 3: "
 msgstr "Επίπεδο 3:"
 
-#: exe/idevices/forumidevice.py:161
-msgid "Link to the forum"
-msgstr "Σύνδεση στην ομάδα συζήτησης"
-
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:99
 msgid "Load"
 msgstr "Φόρτωση"
 
-#: exe/webui/imagemagnifierblock.py:120
+#: exe/webui/imagemagnifierblock.py:130 exe/webui/imagemagnifierblock.py:147
 msgid "Magnify initial zoom? "
 msgstr "Αρχική Μεγένθυση;"
 
-#: exe/webui/imagemagnifierblock.py:111
+#: exe/webui/imagemagnifierblock.py:124 exe/webui/imagemagnifierblock.py:141
 #, fuzzy
-msgid "Maximum zoom "
+msgid "Maximum zoom"
 msgstr "Μέγιστη μεγένθυνση"
 
 #: exe/webui/imagemagnifierblock.py:91
 msgid "Medium"
 msgstr "Μέτριο"
 
-#: exe/idevices/forumelement.py:248
-msgid "Moodle"
-msgstr "Moodle"
-
 #: exe/webui/block.py:222
 msgid "Move Down"
 msgstr "Μετακίνηση κάτω"
+
+#: exe/webui/galleryblock.py:212
+#, fuzzy
+msgid "Move Image Left"
+msgstr "Δεν φορτώθηκαν εικόνες"
+
+#: exe/webui/galleryblock.py:224
+msgid "Move Image Right"
+msgstr ""
 
 #: exe/webui/block.py:215
 msgid "Move Up"
@@ -935,15 +963,7 @@ msgstr "Ερώτηση πολλαπλών επιλογών"
 msgid "Name"
 msgstr "Όνομα"
 
-#: exe/idevices/forumelement.py:202
-msgid "New Forum"
-msgstr "Νέα ομάδα συζήτησης"
-
-#: exe/idevices/forumelement.py:230
-msgid "New Topic"
-msgstr "Νέο Κεφάλαιο"
-
-#: exe/webui/editorpage.py:203
+#: exe/webui/editorpage.py:204
 msgid "New iDevice"
 msgstr "Νέο εκπαιδευτικό εργαλείο"
 
@@ -952,12 +972,12 @@ msgstr "Νέο εκπαιδευτικό εργαλείο"
 msgid "Next"
 msgstr "Κείμενο"
 
-#: exe/webui/imagemagnifierblock.py:124 exe/webui/imagemagnifierblock.py:128
-#: exe/idevices/forumelement.py:83
+#: exe/webui/imagemagnifierblock.py:134 exe/webui/imagemagnifierblock.py:138
+#: exe/webui/imagemagnifierblock.py:151 exe/webui/imagemagnifierblock.py:155
 msgid "No"
 msgstr "Όχι"
 
-#: exe/webui/galleryblock.py:183 exe/webui/galleryblock.py:255
+#: exe/webui/galleryblock.py:178 exe/webui/galleryblock.py:264
 msgid "No Images Loaded"
 msgstr "Δεν φορτώθηκαν εικόνες"
 
@@ -970,37 +990,25 @@ msgstr "Δεν υπάρχουν διαθέσιμα εικονίδια. Αποτ�
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Δεν υπάρχουν διαθέσιμα εικονίδια. Αποτυχία σμίκρυνσης εικόνας."
 
-#: exe/idevices/forumelement.py:80
-msgid "No discussions, but replies are allowed"
-msgstr "Δεν υπάρχουν συζητήσεις, αλλά επιτρέπονται απαντήσεις"
-
-#: exe/idevices/forumelement.py:81
-msgid "No discussions, no replies"
-msgstr "Δεν υπάρχουν συζητήσεις, δεν επιτρέπονται απαντήσεις"
-
-#: exe/webui/wikipediablock.py:101 exe/webui/editorpane.py:302
+#: exe/webui/wikipediablock.py:103 exe/webui/editorpane.py:302
 msgid "No emphasis"
 msgstr "Χωρίς έμφαση"
 
-#: exe/idevices/forumelement.py:87
-msgid "No groups"
-msgstr "Δεν υπάρχουν ομάδες"
-
-#: exe/webui/imagemagnifierblock.py:89 exe/webui/imagewithtextblock.py:78
-#: exe/webui/flashmovieblock.py:79 exe/webui/flashwithtextblock.py:80
-#: exe/idevices/forumelement.py:226
+#: exe/webui/imagewithtextblock.py:77 exe/webui/flashmovieblock.py:77
+#: exe/webui/flashwithtextblock.py:77 exe/webui/imagemagnifierblock.py:89
 msgid "None"
 msgstr "Κανένα"
 
-#: exe/webui/preferencespage.py:87
+#: exe/webui/preferencespage.py:89
 msgid "OK"
 msgstr "ΟΚ"
 
-#: exe/engine/idevicestore.py:294 exe/engine/idevicestore.py:303
+#: exe/engine/idevicestore.py:296 exe/engine/idevicestore.py:305
+#: exe/engine/idevicestore.py:403 exe/engine/idevicestore.py:412
 msgid "Objectives"
 msgstr "Αντικειμενικοί σκοποί"
 
-#: exe/engine/idevicestore.py:297
+#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:406
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1010,37 +1018,34 @@ msgstr ""
 " θα πρέπει να καθορίζουν τι θα μπορούν να κάνουν\n"
 " όταν τελειώσουν το μάθημα."
 
-#: exe/engine/field.py:525
+#: exe/engine/field.py:540
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/engine/field.py:470
+#: exe/engine/field.py:483
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
 
-#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:82
-#: exe/webui/testquestionelement.py:98
+#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
+#: exe/webui/testquestionelement.py:95
 msgid "Option"
 msgstr "Επιλογή"
 
-#: exe/webui/testquestionelement.py:92
+#: exe/webui/testquestionelement.py:91
 #, fuzzy
 msgid "Options"
 msgstr "Επιλογή"
-
-#: exe/idevices/forumelement.py:252
-msgid "Other"
-msgstr "Άλλο"
 
 #: exe/xului/outlinepane.py:236
 msgid "Outline"
 msgstr "Περίγραμμα"
 
-#: exe/xului/mainpage.py:246 exe/xului/mainpage.py:348
+#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:246
+#: exe/xului/mainpage.py:348 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
@@ -1053,33 +1058,13 @@ msgstr "Παιδαγωγική βοήθεια"
 msgid "Pedagogical Tip"
 msgstr "Παιδαγωγική συμβουλή"
 
-#: exe/idevices/forumblock.py:131
-msgid "Please enter a discussion topic name.\n"
-msgstr "Παρακαλώ εισάγετε ένα όνομα για το θέμα συζήτησης.\n"
-
-#: exe/idevices/forumblock.py:117
-msgid "Please enter a name for the forum\n"
-msgstr "Παρακαλώ εισάγετε ένα όνομα για τη δημόσια συζήτηση\n"
-
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
 msgstr "Παρακαλώ εισάγετε ένα όνομα για το εκπαιδευτικό εργαλείο"
 
-#: exe/idevices/forumblock.py:126
-msgid "Please select LMS.\n"
-msgstr "Παρακαλώ επιλέξτε Σ.Τ.Κ.\n"
-
-#: exe/idevices/forumelement.py:244
-msgid "Please select a LMS"
-msgstr "Παρακαλώ επιλέξτε Σ.Τ.Κ."
-
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Παρακαλώ επιλέξτε μια σωστή απάντηση για κάθε ερώτηση."
-
-#: exe/idevices/forumblock.py:112
-msgid "Please select a forum.\n"
-msgstr "Παρακαλώ επιλέξτε ομάδα συζήτησης.\n"
 
 #: exe/webui/wikipediablock.py:83
 msgid "Polish Wikipedia Article"
@@ -1089,11 +1074,12 @@ msgstr "Άρθρο της Πολωνικής Βίκι εγκυκλοπαίδει
 msgid "Portugese Wikipedia Article"
 msgstr "Άρθρο της Πορτογαλλικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:317
+#: exe/engine/idevicestore.py:309 exe/engine/idevicestore.py:319
+#: exe/engine/idevicestore.py:416 exe/engine/idevicestore.py:426
 msgid "Preknowledge"
 msgstr "Προαπαιτούμενα"
 
-#: exe/engine/idevicestore.py:310
+#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:419
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1116,13 +1102,23 @@ msgstr "Προεπισκόπιση"
 msgid "Previous"
 msgstr "Προεπισκόπιση"
 
-#: exe/webui/propertiespage.py:76
+#: exe/webui/propertiespage.py:77
 msgid "Project Properties"
+msgstr "Ιδιότητες έργου"
+
+#: exe/xului/propertiespage.py:114
+#, fuzzy
+msgid "Project Properties Updated"
 msgstr "Ιδιότητες έργου"
 
 #: exe/webui/propertiespane.py:96
 msgid "Project title:"
 msgstr "Τίτλος έργου:"
+
+#: exe/xului/propertiespage.py:83
+#, fuzzy
+msgid "Properties Updated"
+msgstr "Ιδιότητες"
 
 #: exe/engine/attachmentidevice.py:74
 msgid "Provide a brief description of the file"
@@ -1152,13 +1148,13 @@ msgstr ""
 "Επιτρέψτε αυτόματη συμπλήρωση όταν \n"
 "                                       ο χρήστης συμπληρώνει τα κενά."
 
-#: exe/engine/imagewithtextidevice.py:66
+#: exe/engine/imagewithtextidevice.py:67
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
 
-#: exe/engine/clozeidevice.py:113
+#: exe/engine/clozeidevice.py:115
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
@@ -1174,7 +1170,7 @@ msgstr ""
 msgid "Purpose"
 msgstr "Σκοπός"
 
-#: exe/engine/clozeidevice.py:145
+#: exe/engine/clozeidevice.py:147
 msgid "Put instructions for learners here"
 msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 
@@ -1182,7 +1178,7 @@ msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 msgid "Question"
 msgstr "Ερώτηση"
 
-#: exe/webui/casestudyblock.py:84
+#: exe/webui/casestudyblock.py:85
 #, fuzzy
 msgid "Question(s)"
 msgstr "Ερωτήσεις"
@@ -1191,21 +1187,21 @@ msgstr "Ερωτήσεις"
 msgid "Question:"
 msgstr "Ερώτηση:"
 
-#: exe/engine/clozeidevice.py:146
+#: exe/engine/clozeidevice.py:148
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που λείπουν"
 
-#: exe/engine/clozeidevice.py:116
+#: exe/engine/clozeidevice.py:118
 #, fuzzy
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Διαβάστε την παράγραφο που ακολουθεί και συμπληρώστε τις λέξεις που λείπουν"
 
-#: exe/engine/idevicestore.py:218 exe/engine/idevicestore.py:236
+#: exe/engine/idevicestore.py:220 exe/engine/idevicestore.py:238
 #: exe/engine/genericidevice.py:165
 msgid "Reading Activity"
 msgstr "Δραστηριότητα διαβάσματος"
 
-#: exe/engine/genericidevice.py:163
+#: exe/engine/idevicestore.py:346 exe/engine/genericidevice.py:163
 msgid "Reading Activity 0.11"
 msgstr "Δραστηριότητα διαβάσματος 0.11"
 
@@ -1233,18 +1229,15 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Ερώτηση με απεικόνιση:"
 
-#: exe/webui/element.py:679
+#: exe/webui/element.py:683 exe/webui/element.stan.py:557
+#: exe/webui/element.prestan.py:550
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
-#: exe/webui/imagemagnifierblock.py:88 exe/webui/imagewithtextblock.py:77
-#: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:79
+#: exe/webui/imagewithtextblock.py:76 exe/webui/flashmovieblock.py:76
+#: exe/webui/flashwithtextblock.py:76 exe/webui/imagemagnifierblock.py:88
 msgid "Right"
 msgstr "Δεξιά"
-
-#: exe/webui/quiztestblock.py:95
-msgid "SCORM Multiple Choice Quiz:"
-msgstr "Κουίζ πολλαπλών επιλογών τύπου SCORM"
 
 #: exe/engine/quiztestidevice.py:93
 #, fuzzy
@@ -1255,44 +1248,49 @@ msgstr "Δοκιμαστικό κουίζ τύπου SCORM"
 msgid "SUBMIT ANSWERS"
 msgstr "ΚΑΤΑΧΩΡΗΣΗ ΑΠΑΝΤΗΣΕΩΝ"
 
-#: exe/webui/editorpage.py:178 exe/webui/editorpage.py:181
+#: exe/webui/editorpage.py:179 exe/webui/editorpage.py:182
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: exe/webui/editorpage.py:182
+#: exe/webui/editorpage.py:183
 msgid "Save as"
 msgstr "Αποθήκευση ως"
 
-#: exe/engine/package.py:54
+#: exe/engine/package.py:86
 msgid "Section"
 msgstr "Ενότητα"
 
-#: exe/webui/element.py:732
+#: exe/webui/element.py:742
 #, fuzzy
 msgid "Select Flash Object"
 msgstr "Επιλογή αρχείου flash"
 
-#: exe/webui/preferencespage.py:81
+#: exe/webui/preferencespage.py:82
+#: exe/xului/templates/dublincore.xul:<menulist id="dc:language" label="Select
+#: Language">
 msgid "Select Language"
 msgstr "Επιλογή γλώσσας"
 
-#: exe/idevices/forumelement.py:198
-msgid "Select a Forum"
-msgstr "Επιλογή δημόσιας συζήτησης"
-
-#: exe/webui/attachmentblock.py:77
+#: exe/webui/attachmentblock.py:79
 msgid "Select a file"
 msgstr "Επιλογή αρχείου"
 
-#: exe/webui/element.py:810
+#: exe/webui/element.stan.py:606 exe/webui/element.prestan.py:599
+#, fuzzy
+msgid "Select a flash file"
+msgstr "Επιλογή ταινίας flash "
+
+#: exe/webui/element.py:817 exe/webui/element.stan.py:680
+#: exe/webui/element.prestan.py:673
 msgid "Select a flash video"
 msgstr "Επιλογή ταινίας flash "
 
-#: exe/webui/element.py:276
+#: exe/webui/element.py:289 exe/webui/element.stan.py:276
+#: exe/webui/element.prestan.py:274
 msgid "Select an image"
 msgstr "Επιλογή εικόνας"
 
-#: exe/webui/element.py:383
+#: exe/webui/element.py:397
 #, fuzzy
 msgid "Select an image (JPG file)"
 msgstr "Επιλογή εικόνας"
@@ -1313,27 +1311,31 @@ msgid ""
 "on the radio button."
 msgstr ""
 
-#: exe/idevices/forumelement.py:88
-msgid "Separate groups"
-msgstr "Ξεχωριστές ομάδες"
+#: exe/webui/galleryblock.py:272
+#, python-format
+msgid "Show %s Image"
+msgstr ""
 
-#: exe/idevices/forumelement.py:91
-msgid "Show"
-msgstr "Εμφάνιση"
-
-#: exe/webui/element.py:684
+#: exe/webui/element.py:690
 msgid "Show Answers"
 msgstr "Εμφάνιση Απαντήσεων"
 
-#: exe/webui/element.py:670
+#: exe/webui/element.py:674 exe/webui/element.stan.py:566
+#: exe/webui/element.prestan.py:558
 msgid "Show/Clear Answers"
 msgstr "Εμφάνιση/Καθαρισμός Απαντήσεων"
 
-#: exe/webui/element.py:665
+#: exe/webui/element.py:669 exe/webui/element.stan.py:541
+#: exe/webui/element.prestan.py:538
 msgid "Show/Hide Feedback"
 msgstr "Εμφάνιση/Απόκρυψη Ανατροφοδότησης"
 
-#: exe/webui/imagemagnifierblock.py:107
+#: exe/webui/wikipediablock.py:91
+#, fuzzy
+msgid "Site"
+msgstr "Τίτλος"
+
+#: exe/webui/imagemagnifierblock.py:111
 msgid "Size of magnifying glass: "
 msgstr "Μέγεθος μεγενθυντικού φακού:"
 
@@ -1341,15 +1343,17 @@ msgstr "Μέγεθος μεγενθυντικού φακού:"
 msgid "Small"
 msgstr "Μικρό"
 
-#: exe/webui/wikipediablock.py:102 exe/webui/editorpane.py:303
+#: exe/webui/wikipediablock.py:104 exe/webui/editorpane.py:303
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
 
-#: exe/xului/mainpage.py:497
+#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:497
+#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
 
-#: exe/xului/mainpage.py:495
+#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:495
+#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1362,27 +1366,25 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Άρθρο της Ισπανικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/idevices/forumelement.py:77
-msgid "Standard forum for general use"
-msgstr "Πρότυπη ομάδα συζητήσεων γενικής χρήσης"
-
 #: exe/webui/casestudyblock.py:81
 msgid "Story:"
 msgstr "Σενάριο:"
 
-#: exe/webui/element.py:588
+#: exe/webui/element.py:592
 msgid "Strict Marking?"
 msgstr "Αυστηρή βαθμολογία;"
 
-#: exe/webui/wikipediablock.py:103 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:105 exe/webui/editorpane.py:304
 msgid "Strong emphasis"
 msgstr "Έντονη έμφαση"
 
-#: exe/webui/element.py:674
+#: exe/webui/common.py:202 exe/webui/editorpane.py:392
+#: exe/webui/element.py:678 exe/webui/element.stan.py:550
+#: exe/webui/element.prestan.py:545
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: exe/webui/quiztestblock.py:356
+#: exe/webui/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "Καταχώριση απάντησης"
 
@@ -1394,12 +1396,12 @@ msgstr "Άρθρο της Σουηδικής Βίκι εγκυκλοπαίδει
 msgid "Taxonomy"
 msgstr "Ταξινόμηση"
 
-#: exe/engine/idevicestore.py:244
+#: exe/engine/idevicestore.py:354
 #, fuzzy
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Οι δάσκαλοι πρέπει να λάβουν τα εξής υπόψη κατά τη χρησιμοποίηση αυτού του εκπαιδευτικού εργαλείου: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον πόρο σας που θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο σπουδαστής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν πόρο διδασκαλίας.</li><li>Από μια προοπτική οπτικής σχεδίασης, αποφύγετε να έχετε δύο εκπαιδευτικά εργαλεία ακολουθώντας αμέσως το ένα το άλλο χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε ένα εκπαιδευτικό εργαλείο. </li><li>3.Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος εκπλήρωσης της δραστηριότητας ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:60
+#: exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:49
 msgid "Text"
 msgstr "Κείμενο"
@@ -1446,6 +1448,10 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "Ο διάλογος σκοπού σας επιτρέπει να περιγράψετε το σκοπό της συσκευής σε άλλους πιθανούς χρήστες."
 
+#: exe/webui/wikipediablock.py:168
+msgid "This article is licensed under the "
+msgstr ""
+
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
 "This iDevice only supports the Flash Video File (.FLV) format, and will not\n"
@@ -1465,17 +1471,6 @@ msgstr ""
 msgid "This is a free text field general learning content can be entered."
 msgstr "Πεδίο ελεύθερου κειμένου όπου μπορεί να εισαχθεί μαθησιακό περιεχόμενο γενικής φύσης."
 
-#: exe/idevices/exampleidevice.py:45
-#, fuzzy
-msgid "This is a free text field."
-msgstr "Το πεδίο είναι προαιρετικό"
-
-#: exe/idevices/exampleidevice.py:41
-msgid ""
-"This is an example of a user created\n"
-"iDevice plugin."
-msgstr ""
-
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
 msgstr "Το πεδίο είναι προαιρετικό"
@@ -1485,10 +1480,6 @@ msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr ""
 "Το εκπαιδευτικό εργαλείο θα διαγραφεί.\n"
 " Είστε σίγουροι ότι θέλετε να προχωρήσετε;"
-
-#: exe/idevices/forumelement.py:335 exe/idevices/forumelement.py:347
-msgid "Thread: "
-msgstr "Συζήτηση:"
 
 #: exe/webui/block.py:247
 msgid "Tip:"
@@ -1503,11 +1494,11 @@ msgstr ""
 "Για να δηλώσετε τη σωστή απάντηση, κλικ στο\n"
 " κουμπί επιλογής δεξιά από τη σωστή επιλογή."
 
-#: exe/engine/package.py:54
+#: exe/engine/package.py:86
 msgid "Topic"
 msgstr "Κεφάλαιο"
 
-#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:157
+#: exe/webui/truefalseelement.py:83 exe/webui/truefalseelement.py:153
 msgid "True"
 msgstr "Σωστό"
 
@@ -1526,13 +1517,9 @@ msgstr ""
 " όπου ο μαθητής πρέπει να αποφασίσει αν η φράση είναι αληθής. Αυτός ο τύπος ερώτησης\n"
 " δουλεύει εντάξει για τεκμηριωμένες πληροφορίες και πληροφορίες που προσφέρονται σε μια μόνο από τις δυο απαντήσεις."
 
-#: exe/idevices/forumidevice.py:145
+#: exe/engine/field.py:596
 msgid "Type a discussion topic here."
 msgstr "Πληκτρολογήστε ένα θέμα συζήτησης εδώ."
-
-#: exe/idevices/forumidevice.py:101
-msgid "Type a forum name here"
-msgstr "Πληκτρολογήστε ένα όνομα ομάδας συζήτησης εδώ"
 
 #: exe/engine/multichoiceidevice.py:96
 #, fuzzy
@@ -1561,7 +1548,7 @@ msgstr ""
 "το eXe θα παρέχει την εξής αυτόματη ανατροφοδότηση: \"Σωστή απάντηση\"\n"
 " που δηλώνει τη σωστή απάντηση ή \"Λάθος απάντηση\" για τις εναλλακτικές."
 
-#: exe/engine/idevicestore.py:304
+#: exe/engine/idevicestore.py:306 exe/engine/idevicestore.py:413
 msgid "Type the learning objectives for this resource."
 msgstr "Δώστε τους μαθησιακούς αντικειμενικούς σκοπούς για τον πόρο."
 
@@ -1576,24 +1563,29 @@ msgid ""
 "be ambiguous."
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:92
+#: exe/webui/externalurlblock.py:60
+msgid "URL:"
+msgstr ""
+
+#: exe/engine/wikipediaidevice.py:93
 msgid "Unable to connect to "
 msgstr "Η σύνδεση είναι αδύνατη"
 
-#: exe/engine/package.py:54
+#: exe/engine/package.py:86
 msgid "Unit"
 msgstr "Παράγραφος"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:477 exe/engine/wikipediaidevice.py:52
+#: exe/engine/galleryidevice.py:481 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:94
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:39
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
-#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:238
-#: exe/engine/idevicestore.py:296 exe/engine/idevicestore.py:324
-#: exe/idevices/forumidevice.py:41 exe/idevices/exampleidevice.py:40
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/attachmentidevice.py:42 exe/engine/flashmovieidevice.py:40
+#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
+#: exe/engine/idevicestore.py:240 exe/engine/idevicestore.py:298
+#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:348
+#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:433
+#: exe/engine/imagemagnifieridevice.py:39
 msgid "University of Auckland"
 msgstr "Πανεπιστήμιο του Auckland"
 
@@ -1610,7 +1602,7 @@ msgstr ""
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Χρησιμοποιήστε έμφαση για να διαχωρίσετε τη σημασία της πληροφορίας που παρουσιάζεται από το εκπαιδευτικό εργαλείο."
 
-#: exe/engine/idevicestore.py:288
+#: exe/engine/idevicestore.py:290 exe/engine/idevicestore.py:398
 #, fuzzy
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
@@ -1622,7 +1614,7 @@ msgstr ""
 " της μελέτης παρέχοντας μια ερώτηση ή μια σύσταση να ξεκινήσει\n"
 " μια συζήτηση."
 
-#: exe/engine/galleryidevice.py:481
+#: exe/engine/galleryidevice.py:485
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Χρησιμοποιήστε το εκπαιδευτικό εργαλείο αυτό αν έχετε να δείξετε πολλές εικόνες."
 
@@ -1633,15 +1625,7 @@ msgid ""
 "text through the text editing buttons associated with the field."
 msgstr ""
 
-#: exe/idevices/forumelement.py:89
-msgid "Visible groups"
-msgstr "Ορατές ομάδες"
-
-#: exe/idevices/forumelement.py:118
-msgid "Visible to students:"
-msgstr "Ορατό στους μαθητές:"
-
-#: exe/engine/idevicestore.py:279
+#: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
 msgid "What to read"
 msgstr "Τι να διαβάσετε"
 
@@ -1679,48 +1663,39 @@ msgstr "Άρθρο βιβλίων Βίκι"
 msgid "Wikipedia Article"
 msgstr "Άρθρο της Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/optionelement.py:133
+#: exe/webui/optionelement.py:131
 msgid "Wrong"
 msgstr ""
 
-#: exe/webui/imagemagnifierblock.py:121
+#: exe/webui/imagemagnifierblock.py:131 exe/webui/imagemagnifierblock.py:148
 msgid "Yes"
 msgstr "Ναι"
-
-#: exe/idevices/forumelement.py:84
-msgid "Yes, forever"
-msgstr "Ναι, για πάντα"
-
-#: exe/idevices/forumelement.py:85
-msgid "Yes, initially"
-msgstr "Ναι, αρχικά"
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Το νέο εκπαιδευτικό εργαλείο θα εμφανιστεί στην περιοχή εκπαιδευτικών εργαλείων με αυτόν τον τίτλο. Αυτό το πεδίο είναι υποχρεωτικό και θα σας ζητηθεί να δώσετε ένα όνομα αν προσπαθήσετε να καταχωρήσετε το εκπαιδευτικό εργαλείο σας χωρίς όνομα."
 
-#: exe/webui/element.py:292 exe/webui/element.py:399 exe/webui/element.py:747
+#: exe/webui/wikipediablock.py:175
+#, fuzzy
+msgid "article "
+msgstr "Άρθρο"
+
+#: exe/webui/element.py:304 exe/webui/element.py:413 exe/webui/element.py:756
+#: exe/webui/element.stan.py:292 exe/webui/element.stan.py:620
+#: exe/webui/element.prestan.py:290 exe/webui/element.prestan.py:613
 msgid "blank for original size"
 msgstr "κενό για αρχικό μέγεθος"
 
-#: exe/idevices/forumblock.py:122
-msgid "duplicate forum name.\n"
-msgstr "αναπαραγωγή θέματος.\n"
-
-#: exe/idevices/forumblock.py:135
-msgid "duplicate topic name."
-msgstr "αναπαραγωγή θέματος"
-
-#: exe/export/scormexport.py:244 exe/export/imsexport.py:176
+#: exe/export/scormexport.py:256 exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:53 exe/webui/preferencespage.py:72
-#: exe/webui/editorpage.py:160
+#: exe/webui/common.py:66 exe/webui/preferencespage.py:73
+#: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως μάθηση"
 
-#: exe/engine/wikipediaidevice.py:176
+#: exe/engine/wikipediaidevice.py:177
 msgid "http://en.wikipedia.org/"
 msgstr "http://el.wikipedia.org/"
 
@@ -1729,9 +1704,14 @@ msgstr "http://el.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "Το εκπαιδευτικό εργαλείο %s δεν έχει πακέτο"
 
-#: exe/engine/package.py:198 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:253 exe/xului/templates/mainpage.xul:<menuitem
 #: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
+msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
+
+#: exe/webui/block.py:297
+#, fuzzy
+msgid "iDevice icon"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
 
 #: exe/webui/renderable.py:249
@@ -1749,6 +1729,12 @@ msgstr "Ετικέτα"
 #: exe/webui/renderable.py:254
 msgid "title"
 msgstr "Τίτλος"
+
+#: exe/xului/templates/dublincore.xul:<menulist id="dc:format" label="Select
+#: Format">
+#, fuzzy
+msgid "Select Format"
+msgstr "Επιλογή δημόσιας συζήτησης"
 
 #: exe/xului/templates/mainpage.xul:<menuitem oncommand="insertPackage()"
 #: label="Insert Package">
@@ -1940,9 +1926,138 @@ msgstr "Συγγραφή"
 msgid "Properties"
 msgstr "Ιδιότητες"
 
+#~ msgid "<strong>Frame Height:</strong> "
+#~ msgstr "<strong>Ύψος πλαισίου:</strong> "
+
+#~ msgid "<strong>url:</strong> "
+#~ msgstr "<strong>url:</strong> "
+
+#~ msgid "A single simple discussion"
+#~ msgstr "Μια απλή συζήτηση"
+
+#~ msgid "Can a student post to this forum?:"
+#~ msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' αυτή τη δημόσια συζήτηση;"
+
+#~ msgid "Choose a LMS"
+#~ msgstr "Επιλέξτε Σ.Τ.Κ. (Σύστημα Τηλεκατάρτισης)"
+
+#~ msgid "Discussion Activity"
+#~ msgstr "Δραστηριότητα συζήτησης:"
+
+#~ msgid "Discussion Topic/Thread:"
+#~ msgstr "Θέμα συζήτησης "
+
+#~ msgid "Discussion topic/Thread"
+#~ msgstr "Θέμα συζήτησης: "
+
+#~ msgid "Discussions and replies are allowed"
+#~ msgstr "Επιτρέπονται οι συζητήσεις και οι απαντήσεις"
+
+#~ msgid "Each person posts one discussion"
+#~ msgstr "Κάθε άτομο δημοσιεύει μια συζήτηση"
+
+#~ msgid "Force everyone to be subscribed?:"
+#~ msgstr "Να εγγραφούν όλοι υποχρεωτικά;"
+
+#~ msgid "Forum Name:"
+#~ msgstr "Όνομα δημόσιας συζήτησης: "
+
+#~ msgid "Forum Name: "
+#~ msgstr "Όνομα δημόσιας συζήτησης: "
+
+#~ msgid "Forum type:"
+#~ msgstr "Τύπος δημόσιας συζήτησης:"
+
+#~ msgid "Group mode:"
+#~ msgstr "Κατάσταση ομάδας:"
+
+#~ msgid "Introduction"
+#~ msgstr "Εισαγωγή"
+
+#~ msgid "Learning Management System"
+#~ msgstr "Σύστημα Τηλεκατάρτισης"
+
+#~ msgid "Learning Management System:"
+#~ msgstr "Σύστημα Τηλεκατάρτισης:"
+
+#~ msgid "Link to the forum"
+#~ msgstr "Σύνδεση στην ομάδα συζήτησης"
+
+#~ msgid "Moodle"
+#~ msgstr "Moodle"
+
+#~ msgid "New Forum"
+#~ msgstr "Νέα ομάδα συζήτησης"
+
+#~ msgid "New Topic"
+#~ msgstr "Νέο Κεφάλαιο"
+
+#~ msgid "No discussions, but replies are allowed"
+#~ msgstr "Δεν υπάρχουν συζητήσεις, αλλά επιτρέπονται απαντήσεις"
+
+#~ msgid "No discussions, no replies"
+#~ msgstr "Δεν υπάρχουν συζητήσεις, δεν επιτρέπονται απαντήσεις"
+
+#~ msgid "No groups"
+#~ msgstr "Δεν υπάρχουν ομάδες"
+
+#~ msgid "Other"
+#~ msgstr "Άλλο"
+
+#~ msgid "Please enter a discussion topic name.\n"
+#~ msgstr "Παρακαλώ εισάγετε ένα όνομα για το θέμα συζήτησης.\n"
+
+#~ msgid "Please enter a name for the forum\n"
+#~ msgstr "Παρακαλώ εισάγετε ένα όνομα για τη δημόσια συζήτηση\n"
+
+#~ msgid "Please select LMS.\n"
+#~ msgstr "Παρακαλώ επιλέξτε Σ.Τ.Κ.\n"
+
+#~ msgid "Please select a LMS"
+#~ msgstr "Παρακαλώ επιλέξτε Σ.Τ.Κ."
+
+#~ msgid "Please select a forum.\n"
+#~ msgstr "Παρακαλώ επιλέξτε ομάδα συζήτησης.\n"
+
+#~ msgid "SCORM Multiple Choice Quiz:"
+#~ msgstr "Κουίζ πολλαπλών επιλογών τύπου SCORM"
+
+#~ msgid "Separate groups"
+#~ msgstr "Ξεχωριστές ομάδες"
+
+#~ msgid "Show"
+#~ msgstr "Εμφάνιση"
+
+#~ msgid "Standard forum for general use"
+#~ msgstr "Πρότυπη ομάδα συζητήσεων γενικής χρήσης"
+
 #, fuzzy
-#~ msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-#~ msgstr "Οι δάσκαλοι πρέπει να λάβουν τα εξής υπόψη κατά τη χρησιμοποίηση αυτού του εκπαιδευτικού εργαλείου: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον πόρο σας που θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο σπουδαστής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν πόρο διδασκαλίας.</li><li>Από μια προοπτική οπτικής σχεδίασης, αποφύγετε να έχετε δύο εκπαιδευτικά εργαλεία ακολουθώντας αμέσως το ένα το άλλο χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε ένα εκπαιδευτικό εργαλείο. </li><li>3.Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος εκπλήρωσης της δραστηριότητας ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
+#~ msgid "This is a free text field."
+#~ msgstr "Το πεδίο είναι προαιρετικό"
+
+#~ msgid "Thread: "
+#~ msgstr "Συζήτηση:"
+
+#~ msgid "Type a forum name here"
+#~ msgstr "Πληκτρολογήστε ένα όνομα ομάδας συζήτησης εδώ"
+
+#~ msgid "Visible groups"
+#~ msgstr "Ορατές ομάδες"
+
+#~ msgid "Visible to students:"
+#~ msgstr "Ορατό στους μαθητές:"
+
+#~ msgid "Yes, forever"
+#~ msgstr "Ναι, για πάντα"
+
+#~ msgid "Yes, initially"
+#~ msgstr "Ναι, αρχικά"
+
+#~ msgid "duplicate forum name.\n"
+#~ msgstr "αναπαραγωγή θέματος.\n"
+
+#~ msgid "duplicate topic name."
+#~ msgstr "αναπαραγωγή θέματος"
 
 #~ msgid "Reference"
 #~ msgstr "Αναφορά"
