@@ -1,99 +1,69 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
 
-<window title="Project Properties"
-        xmlns:html="http://www.w3.org/1999/xhtml"
-        xmlns:n="http://nevow.com/ns/nevow/0.1"
-        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<overlay title="Project Properties"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <n:invisible n:render="liveid"/>
-    <n:invisible n:render="liveglue"/>
+  <script>
+  <![CDATA[
+  function setText(textID) {
+    var help = document.getElementById(textID).collapsed;
+    if (help == false) {
+      document.getElementById(textID).collapsed=true;
+    } else {
+      document.getElementById(textID).collapsed=false;
+    }
+  }
 
-<script>
-<![CDATA[
-function setText(textID)
- {
-  var help = document.getElementById(textID).collapsed;
-  if (help == false) {
-	document.getElementById(textID).collapsed=true; }
-  else {
-  document.getElementById(textID).collapsed=false;
-}
-}
-
-function submitForm() {
-    var title = document.getElementById('dc:title').value;
-    var creator = document.getElementById('dc:creator').value;
-    var subject = document.getElementById('dc:subject').value;
-    var description = document.getElementById('dc:description').value;
-    var publisher = document.getElementById('dc:publisher').value;
-    var contributor = document.getElementById('dc:contributor').value;
-    var date = document.getElementById('dc:date').value;
-    var type = document.getElementById('dc:type').value;
-    var format = document.getElementById('dc:format').value;
-    var identifier = document.getElementById('dc:identifier').value;
-    var source = document.getElementById('dc:source').value;
-    var language = document.getElementById('dc:language').value;
-    var relation = document.getElementById('dc:relation').value;
-    var coverage = document.getElementById('dc:coverage').value;
-    var rights = document.getElementById('dc:rights').value;
-
-    nevow_clientToServerEvent('submit', this, '', title, creator, 
-        subject, description, publisher, contributor, 
-        date, type, format, identifier, source, language,
-        relation, coverage, rights);
-}
-]]>
-</script>
-
-<groupbox flex="0" >
-  <caption label="Project Properties" />
-
-<vbox flex="0" style="overflow: auto" >
-
-   <hbox align="center">
-      <label style="width:8em" value="Project Title:" tooltiptext="The projects name." />
-      <textbox n:render="title" id="title" size="40" />
-   </hbox>
-  
-   <hbox align="center">
-      <label style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
-      <textbox n:render="author" id="author" size="40" />
-   </hbox>
-
-   <hbox align="center">
-      <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
-      <textbox n:render="description" id="description" multiline="true" rows="4" cols="38" /> 
-   </hbox>
-
-</vbox>
-
-</groupbox>
-
-<groupbox flex="0">
- <caption label="Taxonomy" />
-
-<hbox align="center">
-      <label style="width:8em" value="Level 1:" tooltiptext="" />
-      <textbox n:render="level1" id="level1" size="40" />
-   </hbox>
-   
-   <hbox align="center">
-      <label style="width:8em" value="Level 2:" tooltiptext="" />
-      <textbox n:render="level2" id="level2" size="40" />
-   </hbox>
-   
-   <hbox align="center">
-      <label style="width:8em" value="Level 3:" tooltiptext="" />
-      <textbox n:render="level3" id="level3" size="40" />
-   </hbox>
-
-
-
-</groupbox>
-
- <hbox align="left">
-       <button label="Done" oncommand="submitForm()"/>
- </hbox>
-  
-</window>
+  function submitProjectProperties() {
+      var title = document.getElementById('pp_title').value;
+      var author = document.getElementById('pp_author').value;
+      var description = document.getElementById('pp_description').value;
+      var level1 = document.getElementById('pp_level1').value;
+      var level2 = document.getElementById('pp_level2').value;
+      var level3 = document.getElementById('pp_level3').value;
+      nevow_clientToServerEvent('submitProjectProperties', this, '',
+                                title, author, description,
+                                level1, level2, level3);
+  }
+  ]]>
+  </script>
+  <vbox id="projectProperties" flex="1">
+  <groupbox flex="0" >
+    <caption label="Project Properties" />
+    <vbox flex="0" style="overflow: auto" >
+       <hbox align="center">
+          <label style="width:8em" value="Project Title:" tooltiptext="The project's title." />
+          <textbox id="pp_title" size="40" />
+       </hbox>
+       <hbox align="center">
+          <label style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
+          <textbox id="pp_author" size="40" />
+       </hbox>
+       <hbox align="center">
+          <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
+          <textbox id="pp_description" multiline="true" rows="4" cols="38" /> 
+       </hbox>
+    </vbox>
+  </groupbox>
+  <groupbox flex="0">
+  <caption label="Taxonomy" />
+  <hbox align="center">
+        <label style="width:8em" value="Level 1:" tooltiptext="" />
+        <textbox id="pp_level1" size="40" />
+     </hbox>
+     <hbox align="center">
+        <label style="width:8em" value="Level 2:" tooltiptext="" />
+        <textbox id="pp_level2" size="40" />
+     </hbox>
+     <hbox align="center">
+        <label style="width:8em" value="Level 3:" tooltiptext="" />
+        <textbox id="pp_level3" size="40" />
+     </hbox>
+  </groupbox>
+  <hbox align="left">
+     <button label="Done" oncommand="submitProjectProperties()"/>
+  </hbox>
+  </vbox>
+</overlay>

@@ -6,8 +6,6 @@
         xmlns:n="http://nevow.com/ns/nevow/0.1"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <n:invisible n:render="liveid"/>
-    <n:invisible n:render="liveglue"/>
 
 <script>
 <![CDATA[

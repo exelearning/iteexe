@@ -3,8 +3,39 @@
 
 <window title="Package Properties"
         xmlns:html="http://www.w3.org/1999/xhtml"
-        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+        xmlns:n="http://nevow.com/ns/nevow/0.1"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="fillInForms()">
 
+<n:invisible n:render="liveid"/>
+<n:invisible n:render="liveglue"/>
+
+<?xul-overlay href="/xultemplates/projectproperties.xul"?>
+
+  <script>
+  <![CDATA[
+  regEx = /[a-z][a-z]_\w+/
+
+  function collectIds(ids, start) {
+    if (start.id && start.id.match(regEx)) {
+        ids.push(start.id);
+    }
+    for (var i in start.childNodes) {
+        var node = start.childNodes[i];
+        collectIds(ids, node); // Recurse
+    }
+  }
+
+  // On document load, we get all the form values from the server
+  function fillInForms() {
+    var fieldIds = new Array()
+    collectIds(fieldIds, document.documentElement);
+    for (var i in fieldIds) {
+        nevow_clientToServerEvent('fillInField', this, '', fieldIds[i])
+    }
+  }
+  ]]>
+  </script>
 
  <tabbox flex="1" selectedTab="Package">
                 <tabs align="end" pack="end">
@@ -13,9 +44,8 @@
                     <tab label="Export"/>
                 </tabs>
                 <tabpanels flex="1">
-
-                    <tabpanel id="packageproperties">
-                        <iframe flex="1" name="package" id="package" src="/xultemplates/projectproperties.xul"/>
+                    <tabpanel>
+                        <vbox id="projectProperties" />
                     </tabpanel>
                     <tabpanel id="metadata">
                         <iframe flex="1" name="metadata" id="metadata" src="/xultemplates/dublincore.xul"/>

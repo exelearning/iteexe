@@ -66,7 +66,12 @@ class Package(Persistable):
     """
     persistenceVersion = 6
     nonpersistant      = ['resourceDir', 'filename']
-    _name              = ''
+    # Name is used in filenames and urls (saving and navigating)
+    _name              = '' 
+    # Title is rendered in exports
+    _title             = '' 
+    _author            = ''
+    _description       = ''
 
     def __init__(self, name):
         """
@@ -75,11 +80,12 @@ class Package(Persistable):
         log.debug(u"init " + repr(name))
         self._nextIdeviceId = 0
         self._nextNodeId    = 0
-        self.name           = name
         # For looking up nodes by ids
         self._nodeIdDict    = {} 
 
         self._levelNames    = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
+        self.name           = name
+        self._title         = u''
 
         # Empty if never saved/loaded
         self.filename      = u''
@@ -95,12 +101,42 @@ class Package(Persistable):
         self.resourceDir = TempDirPath()
 
 
-    # Properties
-    def get_name(self):
-        return self._name
+    # Property Handlers
+
     def set_name(self, value):
         self._name = toUnicode(value)
-    name = property(get_name, set_name)
+    def set_title(self, value):
+        self._title = toUnicode(value)
+    def set_author(self, value):
+        self._author = toUnicode(value)
+    def set_description(self, value):
+        self._description = toUnicode(value)
+
+    def get_level1(self):
+        return self.levelName(0)
+    def set_level1(self, value):
+        self._levelNames[0] = value
+
+    def get_level2(self):
+        return self.levelName(1)
+    def set_level2(self, value):
+        self._levelNames[1] = value
+
+    def get_level3(self):
+        return self.levelName(2)
+    def set_level3(self, value):
+        self._levelNames[2] = value
+
+    # Properties
+
+    name        = property(lambda self:self._name, set_name)
+    title       = property(lambda self:self._title, set_title)
+    author      = property(lambda self:self._author, set_author)
+    description = property(lambda self:self._description, set_description)
+
+    level1 = property(get_level1, set_level1)
+    level2 = property(get_level2, set_level2)
+    level3 = property(get_level3, set_level3)
 
     def findNode(self, nodeId):
         """
@@ -302,7 +338,9 @@ class Package(Persistable):
         For version 0.14
         """
         self.dublinCore = DublinCore()
-        self.dublinCore.title = self._name
+        # Copy some of the package properties to dublin core
+        self.title = self.root.title
+        self.dublinCore.title = self.root.title
         self.dublinCore.creator = self._author
         self.dublinCore.description = self._description
 

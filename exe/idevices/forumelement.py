@@ -103,7 +103,7 @@ class LmsElement(object):
                                      postArr, self.lms.studentpost)
 
             html  = common.formField('select', 
-                                     _(u"Force everyone to be subscribed?:")
+                                     _(u"Force everyone to be subscribed?:"),
                                      'subscription', self.id,
                                      self.lms.subscInstruc,
                                      subscArr, self.lms.subscription)

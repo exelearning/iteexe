@@ -55,6 +55,12 @@ class PropertiesPage(RenderableLivePage):
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         hndlr = handler(self.handleSubmit, identifier='submit')
         hndlr(ctx, client) # Stores it
+        hndlr = handler(self.submitProjectProperties,
+                        identifier='submitProjectProperties')
+        hndlr(ctx, client) # Stores it
+        hndlr = handler(self.fillInField,
+                        identifier='fillInField')
+        hndlr(ctx, client) # Stores it
 
     def handleSubmit(self, client, title, creator, subject, description, 
                      publisher, contributor, date, type, format, identifier,
@@ -81,11 +87,63 @@ class PropertiesPage(RenderableLivePage):
         """
         Provides auto field fill-ins
         """
-        if name.startswith('render_') and \
-           hasattr(self.package.dublinCore, name[7:]):
-            return lambda ctx, data: ctx.tag(
-                value=getattr(self.package.dublinCore, name[7:]))
+        if name.startswith('render_'):
+            localName = name[7:] # Get rid of render
+            # Name contains pp_abc to get package.abc or dc_abc to get dc.abc
+            # pp means Project Properties
+            # dc means Dublin Core
+            # eo means Export Options
+            print '--- Request for ', localName
+            if '_' in localName:
+                obj, name = self.fieldId2obj(localName)
+                return lambda ctx, data: ctx.tag(value=getattr(obj, localName))
         return RenderableLivePage.__getattribute__(self, name)
+
+    def submitProjectProperties(self, client,
+                                title, author, description,
+                                level1, level2, level3):
+        """
+        Handles the submission of the project properties
+        """
+        self.package.title = title
+        self.package.author = author
+        self.package.description = description
+        self.package.level1 = level1
+        self.package.level2 = level2
+        self.package.level3 = level3
+        client.alert(_(u'Project Properties Updated'))
+        client.sendScript(js('top.location = top.location;'))
+
+    def fieldId2obj(self, fieldId):
+        """
+        Takes a field id of the form xx_name and returns the object associated
+        with xx and name. These can be used with getattr and setattr
+        """
+        if '_' in fieldId:
+            part, name = fieldId.split('_', 1)
+            # Get the object
+            if part == 'pp':
+                obj = self.package
+            if part == 'dc':
+                obj = self.package.dublinCore
+            if part == 'eo':
+                obj = self.package.exportOptions
+            if hasattr(obj, name):
+                return obj, name
+        raise ValueError("field id '%s' doesn't refer "
+                         "to a valid object attribute" % fieldId)
+
+
+    def fillInField(self, client, fieldId):
+        """
+        Makes the server fill in the value of a field on the client. 
+        n:render for people who don't have LivePage objects for xul overlays
+        """
+        # Get the object
+        obj, name = self.fieldId2obj(fieldId)
+        value = getattr(obj, name)
+        client.sendScript(js(
+            'document.getElementById("%s").value = "%s"' % (fieldId, value)))
 
     def render_POST(self, request):
         """
