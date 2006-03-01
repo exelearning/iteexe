@@ -61,7 +61,7 @@ class Application:
         self.processArgs()
         self.loadConfiguration()
         self.preLaunch()
-        #self.launch()
+        self.launch()
         log.info('serving')
         self.serve()
         log.info('done serving')
