@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="/xultemplates/properties.css" type="text/css"?>
 
 <window title="Package Properties"
         xmlns:html="http://www.w3.org/1999/xhtml"
@@ -32,6 +33,17 @@
     collectIds(fieldIds, document.documentElement);
     for (var i in fieldIds) {
         nevow_clientToServerEvent('fillInField', this, '', fieldIds[i])
+    }
+  }
+
+  // Post data for a form to the server
+  // Submits the value for all the fields inside 'container'
+  function submitForm(container) {
+    var fieldIds = new Array()
+    collectIds(fieldIds, container);
+    for (var i in fieldIds) {
+        var value = document.getElementById(fieldIds[i]).value;
+        nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], value)
     }
   }
   ]]>

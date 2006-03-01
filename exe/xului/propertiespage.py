@@ -145,6 +145,15 @@ class PropertiesPage(RenderableLivePage):
         client.sendScript(js(
             'document.getElementById("%s").value = "%s"' % (fieldId, value)))
 
+    def recieveFieldData(self, client, fieldId, value):
+        """
+        Called by client to give us a value from a certain field
+        """
+        obj, name = self.fieldId2obj(fieldId)
+        setattr(obj, name, value)
+        client.sendScript(js(
+            'document.getElementById("%s").style.backgroundColor = "white"'))
+
     def render_POST(self, request):
         """
         Handles the submission of the properties form,

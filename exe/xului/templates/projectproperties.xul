@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
 
+
 <overlay title="Project Properties"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -30,40 +31,42 @@
   ]]>
   </script>
   <vbox id="projectProperties" flex="1">
-  <groupbox flex="0" >
-    <caption label="Project Properties" />
-    <vbox flex="0" style="overflow: auto" >
-       <hbox align="center">
-          <label style="width:8em" value="Project Title:" tooltiptext="The project's title." />
-          <textbox id="pp_title" size="40" />
+    <groupbox flex="0" >
+      <caption label="Project Properties" />
+      <vbox flex="0" style="overflow: auto" >
+         <hbox align="center">
+            <label style="width:8em" value="Project Title:" tooltiptext="The project's title." />
+            <textbox id="pp_title" size="40"
+             style="background-color:yellow ! important"
+             class="modified" onchange="this.style" />
+         </hbox>
+         <hbox align="center">
+            <label style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
+            <textbox id="pp_author" class="modified" size="40" onchange="this.style.backgroundColor='yellow'" />
+         </hbox>
+         <hbox align="center">
+            <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
+            <textbox id="pp_description" style="background-color: red" multiline="true" rows="4" cols="38" onchange="this.style.backgroundColor='yellow'" /> 
+         </hbox>
+      </vbox>
+    </groupbox>
+    <groupbox flex="0">
+    <caption label="Taxonomy" />
+    <hbox align="center">
+          <label style="width:8em" value="Level 1:" tooltiptext="" />
+          <textbox id="pp_level1" size="40" onchange="this.style.backgroundColor='yellow'" />
        </hbox>
        <hbox align="center">
-          <label style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
-          <textbox id="pp_author" size="40" />
+          <label style="width:8em" value="Level 2:" tooltiptext="" />
+          <textbox id="pp_level2" size="40" onchange="this.style.backgroundColor='yellow'" />
        </hbox>
        <hbox align="center">
-          <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
-          <textbox id="pp_description" multiline="true" rows="4" cols="38" /> 
+          <label style="width:8em" value="Level 3:" tooltiptext="" />
+          <textbox id="pp_level3" size="40" onchange="this.style.backgroundColor='yellow'" />
        </hbox>
-    </vbox>
-  </groupbox>
-  <groupbox flex="0">
-  <caption label="Taxonomy" />
-  <hbox align="center">
-        <label style="width:8em" value="Level 1:" tooltiptext="" />
-        <textbox id="pp_level1" size="40" />
-     </hbox>
-     <hbox align="center">
-        <label style="width:8em" value="Level 2:" tooltiptext="" />
-        <textbox id="pp_level2" size="40" />
-     </hbox>
-     <hbox align="center">
-        <label style="width:8em" value="Level 3:" tooltiptext="" />
-        <textbox id="pp_level3" size="40" />
-     </hbox>
-  </groupbox>
-  <hbox align="left">
-     <button label="Done" oncommand="submitProjectProperties()"/>
-  </hbox>
+    </groupbox>
+    <hbox align="left">
+       <button label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
+    </hbox>
   </vbox>
 </overlay>
