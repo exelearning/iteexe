@@ -32,7 +32,7 @@ class ImageWithTextIdevice(Idevice):
     """
     A ImageWithText Idevice is one built up from an image and free text.
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
@@ -106,5 +106,13 @@ you have just inserted.""")
         log.debug("upgrade to version 5")
         self._upgradeIdeviceToVersion2()        
         self.image._upgradeFieldToVersion2()
+        
+    def upgradeToVersion6(self):
+        """
+        Called to upgrade from 0.13 release
+        """
+        self.captionInstruc  = _(u"""Provide a caption for the image 
+you have just inserted.""")
+
 
 # ===========================================================================

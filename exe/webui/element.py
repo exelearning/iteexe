@@ -141,13 +141,16 @@ class FeedbackElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html  = u'<div class="block">'
-        html += u"<b>"+self.field.name+":</b>\n"
-        html += common.elementInstruc(self.field.instruc)
-        html += u"</div>\n"
-        html += '<div class="block">\n'
-        html += common.richTextArea(self.id, self.field.feedback)
-        html += "</div>\n"
+	html = common.formField('richTextArea',self.field.name,'',
+				self.id, self.field.instruc,
+				self.field.feedback)
+        #html  = u'<div class="block">'
+        #html += u"<b>"+self.field.name+":</b>\n"
+        #html += common.elementInstruc(self.field.instruc)
+        #html += u"</div>\n"
+        #html += '<div class="block">\n'
+        #html += common.richTextArea(self.id, self.field.feedback)
+        #html += "</div>\n"
 
         return html
 
@@ -206,12 +209,7 @@ class TextAreaElement(Element):
 				self.id, self.field.instruc,
 				self.field.content,
 				str(self.width), str(self.height))
-        #html  = u'<div class="block">'
-        #html += u"<b>"+self.field.name+":</b>\n"
-        #html += common.elementInstruc(self.field.instruc)
-        #html += u'</div>'
-        #html += common.richTextArea(self.id, self.field.content,
-                                    #self.width, self.height)
+       
 
         return html
 

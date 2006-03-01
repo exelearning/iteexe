@@ -73,7 +73,6 @@ class AttachmentBlock(Block):
         """
         log.debug("renderEdit")
         html  = u'<div class="iDevice">\n'
-       # html += "<pre>%s</pre>\n" % str(request.args)
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
@@ -83,12 +82,9 @@ class AttachmentBlock(Block):
         html += common.elementInstruc(self.idevice.labelInstruc)
         html += u'</div>\n'
         html += common.textInput(u'label'+self.id, self.idevice.label)
-        html += u'<div class="block">\n'
-        html += u'<b>%s</b>\n' % _(u'Description:')
-        html += common.elementInstruc(self.idevice.descriptionInstruc)
-        html += u'</div>\n'
-        html += common.richTextArea(u'description'+self.id,
-                                    self.idevice.description)
+        html += common.formField('richTextArea',u'Description:','description',
+                                 self.id, self.idevice.descriptionInstruc,
+                                 self.idevice.description)
 
         if self.idevice.userResources:
             html += u'<span style="text-decoration:underline">'

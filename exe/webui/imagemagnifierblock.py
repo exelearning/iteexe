@@ -139,10 +139,10 @@ class ImageMagnifierBlock(Block):
             html += common.option("initial"+self.id, 0, "no")
 
         html += common.formField('select', _(u"Maximum zoom"),
-                                 "maxZoom" + self.id,
-                                 options = glassSizeArr, 
-                                 selection = \
-                                    self.idevice.imageMagnifier.glassSize)
+                                 "maxZoom", self.id,
+                                 '',
+                                 glassSizeArr, 
+                                 self.idevice.imageMagnifier.glassSize)
             
         html += "<b>" +_(u"Magnify initial zoom? ")  + "</b>"
         html += _(u"Yes")

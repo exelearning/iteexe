@@ -75,11 +75,10 @@ class TrueFalseElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        html  = _("Question")
-        html += common.elementInstruc(self.idevice.questionInstruc)
-
-        html += common.richTextArea(self.questionId, 
-                                    self.question.question)
+        
+        html  = common.formField('richTextArea',_(u'Question:'),'',
+                                self.questionId, self.idevice.questionInstruc,
+                                self.question.question)
         html += _("True") + " " 
         html += common.option(self.keyId, self.question.isCorrect, "true") 
         html += _("False") + " " 
@@ -87,16 +86,17 @@ class TrueFalseElement(object):
         html += "<br/><br/>\n"
 
         html += common.elementInstruc(self.idevice.keyInstruc)
-        html += _("Feedback")
-        html += common.elementInstruc(self.idevice.feedbackInstruc)
-        html += common.richTextArea(self.feedbackId, 
-                                    self.question.feedback)
+        
+        html += common.formField('richTextArea',_(u'Feedback'),'',
+                                self.feedbackId, self.idevice.feedbackInstruc,
+                                self.question.feedback)
+    
+                                    
+        html += common.formField('richTextArea',_(u'Hint'),'',
+                                self.hintId, self.idevice.hintInstruc,
+                                self.question.hint)
 
-        html += _("Hint")
-        html += common.elementInstruc(self.idevice.hintInstruc)
-
-        html += common.richTextArea(self.hintId, 
-                                    self.question.hint)
+        
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))

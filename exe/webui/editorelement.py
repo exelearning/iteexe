@@ -112,7 +112,10 @@ class TextAreaEditorElement(EditorElement):
         html += "<br/>\n"
         html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
-        html += common.richTextArea("instruc"+self.id, self.field.instruc)
+        html += common.formField('richTextArea', '','instruc',
+                                 self.id, '',
+                                 self.field.instruc)
+        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
@@ -150,7 +153,10 @@ class FeedbackEditorElement(EditorElement):
         html += "<br/>\n"
         html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
-        html += common.richTextArea("instruc"+self.id, self.field.instruc)
+        html += common.formField('richTextArea', '','instruc',
+                                 self.id, '',
+                                 self.field.instruc)
+        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
         return html
     
@@ -189,7 +195,10 @@ class ImageEditorElement(EditorElement):
                              self.field.width,
                              self.field.height)
         html += "<br/>\n"
-        html += common.richTextArea("instruc"+self.id, self.field.instruc)
+        html += common.formField('richTextArea', '','instruc',
+                                 self.id, '',
+                                 self.field.instruc)
+        #html += common.richTextArea("instruc"+self.id, self.field.instruc)
         return html
     
 

@@ -289,13 +289,18 @@ data is entered into this field.""")))
             html += "<b>" + _("Author") + ": </b>\n"
             html += common.elementInstruc(self.authorInstruc) + "<br/>"
             html += common.textInput("author", self.idevice.author) + "<br/>\n"
-            html += "<b>" + _("Purpose") + ": </b>\n"
-            html += common.elementInstruc(self.purposeInstruc)
-            html += "<br/>" +common.richTextArea("purpose", 
-                                                 self.purpose)
-            html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
-            html += common.elementInstruc(self.tipInstruc) + "<br/>"
-            html += common.richTextArea("tip", self.tip) + "<br/>\n"  
+            html += common.formField('richTextArea', _(u"Purpose"),'purpose',
+                                     '', self.purposeInstruc, self.purpose)
+                                     
+            #html += "<b>" + _("Purpose") + ": </b>\n"
+            #html += common.elementInstruc(self.purposeInstruc)
+            #html += "<br/>" +common.richTextArea("purpose", 
+                                                 #self.purpose)
+            html += common.formField('richTextArea', _(u"Pedagogical Tip"),'tip',
+                                     '', self.tipInstruc, self.tip)
+            #html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
+            #html += common.elementInstruc(self.tipInstruc) + "<br/>"
+            #html += common.richTextArea("tip", self.tip) + "<br/>\n"  
             html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
 

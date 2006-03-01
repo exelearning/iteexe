@@ -85,13 +85,14 @@ class MultichoiceBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
-        html += "<b>" + _("Question:") + " </b>"   
-        html += common.elementInstruc(self.questionInstruc)
-        html += common.richTextArea("question"+self.id, self.question)
-        html += "<b>" + _("Hint:") + " </b>"   
-        html += common.elementInstruc(self.hintInstruc)
-        html += common.richTextArea("hint"+self.id, self.hint)
+       
+        html += common.formField('richTextArea',_(u'Question:'),'question',
+                                self.id, self.questionInstruc,
+                                self.question)
+        html += common.formField('richTextArea',_(u'Hint:'),'hint',
+                                self.id, self.hintInstruc,
+                                self.hint)
+       
         html += "<table width =\"100%%\">"
         #html += "<thead>"
         #html += "<tr>"
