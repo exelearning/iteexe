@@ -64,7 +64,7 @@
         </hbox>
         <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
-            <description>
+            <description id="dbDesc">
               Type includes terms describing general categories, functions, or
               genres, for content. Recommended best practice is to select a value
               from a controlled vocabulary, for example, the ??????????<html:br/>
@@ -94,7 +94,7 @@
         </hbox>
         <hbox align="center">
           <label style="width:8em" value="Language:" tooltiptext="Select a language."/>
-          <menulist class="simple" id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
+          <menulist id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
             <menupopup>
               <menuitem label="select a language"/>
               <menuitem label="Russian" value="ru"/>

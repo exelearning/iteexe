@@ -138,7 +138,6 @@ class PropertiesPage(RenderableLivePage):
         raise ValueError("field id '%s' doesn't refer "
                          "to a valid object attribute" % fieldId)
 
-
     def fillInField(self, client, fieldId):
         """
         Makes the server fill in the value of a field on the client. 
@@ -149,6 +148,20 @@ class PropertiesPage(RenderableLivePage):
         value = getattr(obj, name)
         client.sendScript(js(
             'document.getElementById("%s").value = "%s"' % (fieldId, value)))
+
+    def translateElement(self, client, elementId, attribute, string):
+        """
+        Translates a string from an element
+        """
+        if attribute == '!contents!':
+            client.sendScript(js(
+                "document.getElementById('%s').setAttribute('%s', '%s')" % 
+                    (elementId, attribute, string)))
+        else:
+            client.sendScript(js(
+                "document.getElementById('%s').setAttribute('%s', '%s')" % 
+                    (elementId, attribute, string)))
+        
 
     def recieveFieldData(self, client, fieldId, value, number, total):
         """

@@ -17,6 +17,27 @@
   <![CDATA[
   regEx = /[a-z][a-z]_\w+/
 
+  # Translates all the nodes in the document
+  function translate(start) {
+    if (start.nodeName == '#text') {
+        nevow_clientToServerEvent('translate', this, '', start.parentNode.id, '!contents!', start.data)
+    } else if (start.hasAttribute('label')) {
+      nevow_clientToServerEvent('translate', this, '', start.id, 'label', start.value)
+    } else if (start.nodeName == 'label') {
+      nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value)
+    } else if (start.nodeName == 'key') {
+        if (start.hasAttribute('key')
+      nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value)
+    } else if (start.hasAttribute('label')) {
+
+    for (var i in start.childNodes) {
+        var node = start.childNodes[i];
+        collectIds(ids, node); // Recurse
+    }
+      nodeName
+      data
+  }
+
   function setText(textID) {
       var help = document.getElementById(textID).collapsed;
       if (help == false) {

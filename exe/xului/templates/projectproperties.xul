@@ -3,7 +3,7 @@
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <vbox id="projectProperties" flex="1">
     <groupbox flex="0" >
-      <caption label="Project Properties" />
+      <caption id="pptitle" label="Project Properties" />
       <vbox flex="0" style="overflow: auto" >
          <hbox align="center">
             <label style="width:8em" value="Project Title:" tooltiptext="The project's title." />
