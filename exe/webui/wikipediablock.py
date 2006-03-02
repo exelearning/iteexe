@@ -86,7 +86,8 @@ class WikipediaBlock(Block):
                                                    "http://pt.wikipedia.org/"),
                  (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/"),
                  (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/"),
-                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/")]
+                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/"),
+                 (_(u"Wikieducator Content"),      "http://wikieducator.org/")]
 
         html += common.formField('select', _('Site'),
                                  'site', self.id,

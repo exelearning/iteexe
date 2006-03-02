@@ -97,15 +97,39 @@
           <menulist class="simple" id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
             <menupopup>
               <menuitem label="select a language"/>
-              <menuitem label="Abkhazian; abk" value="abk"/>
-              <menuitem label="Achinese; ace" value="ace"/>
-              <menuitem label="Acoli; ach" value="ach"/>
-              <menuitem label="Adangme; ada" value="ada"/>
-              <menuitem label="Adyghe; ady" value="ady"/>
-              <menuitem label="Afar; aar" value="aar"/>
-              <menuitem label="Afrihili; afh" value="afh"/>
-              <menuitem label="Afrikaans; afr" value="afr"/>
-              <menuitem label="Afro-Asiatic (Other); afa" value="afa"/>
+              <menuitem label="Russian" value="ru"/>
+              <menuitem label="Ukranian" value="uk"/>
+              <menuitem label="English" value="en"/>
+              <menuitem label="Finnish" value="fi"/>
+              <menuitem label="French" value="fr"/>
+              <menuitem label="German" value="de"/>
+              <menuitem label="Spanish" value="es"/>
+              <menuitem label="Italian" value="it"/>
+              <menuitem label="Croatian" value="hr"/>
+              <menuitem label="Belarusian" value="be"/>
+              <menuitem label="Serbian" value="sr"/>
+              <menuitem label="Moldavian" value="mo"/>
+              <menuitem label="Norvegian" value="no"/>
+              <menuitem label="Georgian" value="ka"/>
+              <menuitem label="Armenian" value="hy"/>
+              <menuitem label="Azerbaijan" value="az"/>
+              <menuitem label="Kazakh" value="kk"/>
+              <menuitem label="Uzbek" value="uz"/> 
+              <menuitem label="Latvian" value="la"/>
+              <menuitem label="Lithuanian" value="lt"/>
+              <menuitem label="Estonian" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+              <menuitem label="" value=""/>
+
+
+
             </menupopup>
           </menulist>
         </hbox>
