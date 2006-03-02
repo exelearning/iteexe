@@ -46,6 +46,9 @@ class TestQuestion(Persistable):
     """
     A TestQuestion is built up of question and AnswerOptions.
     """
+    
+    persistenceVersion = 1
+    
     def __init__(self, question=""):
         """
         Initialize 
@@ -75,6 +78,15 @@ click the radio button next to the correct option.""")
         Add a new option to this question. 
         """
         self.options.append(AnswerOption())
+        
+    def upgradeToVersion1(self):
+        """
+        Upgrades to v 0.13
+        """
+        self._optionInstruc = x_(u"""Enter an answer option. Provide 
+a range of plausible distractors (usually 3-4) as well as the correct answer. 
+Click on the &lt;Add another option&gt; button to add another answer.""")
+        
 
 
 

@@ -111,7 +111,7 @@ you have just inserted.""")
         """
         Called to upgrade from 0.13 release
         """
-        self.captionInstruc  = _(u"""Provide a caption for the image 
+        self._captionInstruc  = x_(u"""Provide a caption for the image 
 you have just inserted.""")
 
 

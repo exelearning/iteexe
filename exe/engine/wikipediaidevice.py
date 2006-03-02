@@ -45,7 +45,7 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
 
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
@@ -218,4 +218,12 @@ within Wikipedia.""")
                 imageResource = Resource(self.parentNode.package, Path(image))
                 self.userResources.append(imageResource) 
 
+    def upgradeToVersion7(self):
+        """
+        Upgrades to v0.12
+        """
+        self._langInstruc   = x_(u"""Select the appropriate language version 
+of Wikipedia to search and enter search term.""")
+        self._searchInstruc = x_("""Enter a phrase or term you wish to search 
+within Wikipedia.""")
 # ===========================================================================
