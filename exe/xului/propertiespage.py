@@ -46,6 +46,7 @@ class PropertiesPage(RenderableLivePage):
         mainxul = Path(self.config.xulDir).joinpath('templates', 'properties.xul')
         self.docFactory  = loaders.xmlfile(mainxul)
         self.client = None
+        self.fieldsReceived = set()
 
         # Processing
         log.info("creating the properties page")
@@ -53,13 +54,18 @@ class PropertiesPage(RenderableLivePage):
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
+
         hndlr = handler(self.handleSubmit, identifier='submit')
         hndlr(ctx, client) # Stores it
+
         hndlr = handler(self.submitProjectProperties,
                         identifier='submitProjectProperties')
         hndlr(ctx, client) # Stores it
-        hndlr = handler(self.fillInField,
-                        identifier='fillInField')
+
+        hndlr = handler(self.fillInField, identifier='fillInField')
+        hndlr(ctx, client) # Stores it
+
+        hndlr = handler(self.recieveFieldData, identifier='recieveFieldData')
         hndlr(ctx, client) # Stores it
 
     def handleSubmit(self, client, title, creator, subject, description, 
@@ -93,7 +99,6 @@ class PropertiesPage(RenderableLivePage):
             # pp means Project Properties
             # dc means Dublin Core
             # eo means Export Options
-            print '--- Request for ', localName
             if '_' in localName:
                 obj, name = self.fieldId2obj(localName)
                 return lambda ctx, data: ctx.tag(value=getattr(obj, localName))
@@ -145,14 +150,22 @@ class PropertiesPage(RenderableLivePage):
         client.sendScript(js(
             'document.getElementById("%s").value = "%s"' % (fieldId, value)))
 
-    def recieveFieldData(self, client, fieldId, value):
+    def recieveFieldData(self, client, fieldId, value, number, total):
         """
         Called by client to give us a value from a certain field
         """
+        number = int(number)
+        total = int(total)
+        if number == 0:
+            self.fieldsReceived = set([0])
+        else:
+            self.fieldsReceived.add(fieldId)
         obj, name = self.fieldId2obj(fieldId)
         setattr(obj, name, value)
         client.sendScript(js(
-            'document.getElementById("%s").style.backgroundColor = "white"'))
+            'document.getElementById("%s").style.color = "black"' % fieldId))
+        if len(self.fieldsReceived) == total - 1:
+            client.sendScript(js('alert("%s")' % _('Settings saved')))
 
     def render_POST(self, request):
         """

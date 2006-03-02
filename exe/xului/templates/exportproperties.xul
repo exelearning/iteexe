@@ -1,44 +1,20 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
-
-<window title="Dublin Core"
-        xmlns:html="http://www.w3.org/1999/xhtml"
-        xmlns:n="http://nevow.com/ns/nevow/0.1"
-        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-
-    <n:invisible n:render="liveid"/>
-    <n:invisible n:render="liveglue"/>
-
-<script>
-<![CDATA[
-
-function submitForm() {
-    var scolinks = document.getElementById('scolinks').value;
-
-    nevow_clientToServerEvent('submit', this, '', title, creator, 
-        subject, description, publisher, contributor, 
-        date, type, format, identifier, source, language,
-        relation, coverage, rights);
-}
-]]>
-</script>
-
-<groupbox flex="0" >
-  <caption label="SCORM 1.2 Options" />
-
-<vbox flex="0" style="overflow: auto" >
-
-   <hbox align="center">
-     <checkbox id="scolinks" checked="false" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality."/> 
-   </hbox>
-    
-</vbox>
-
-</groupbox>
-
- <hbox align="left">
-       <button label="Done" oncommand="submitForm()"/>
-   </hbox>
-
-
-</window>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <vbox id="exportProperties" flex="1">
+    <groupbox flex="0" >
+      <caption label="SCORM 1.2 Options" />
+      <vbox flex="0" style="overflow: auto" >
+        <hbox align="center">
+          <checkbox id="scolinks" 
+                    checked="false" 
+                    label="Add Previous/Next links within SCOs?"
+                    tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality."/> 
+        </hbox>
+      </vbox>
+    </groupbox>
+    <hbox align="left">
+      <button label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
+    </hbox>
+  </vbox>
+</overlay>

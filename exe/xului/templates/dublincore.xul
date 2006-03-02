@@ -1,197 +1,136 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
-
-<window title="Dublin Core"
-        xmlns:html="http://www.w3.org/1999/xhtml"
-        xmlns:n="http://nevow.com/ns/nevow/0.1"
-        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-
-
-<script>
-<![CDATA[
-function setText(textID)
- {
-  var help = document.getElementById(textID).collapsed;
-  if (help == false) {
-	document.getElementById(textID).collapsed=true; }
-  else {
-  document.getElementById(textID).collapsed=false;
-}
-}
-
-function submitForm() {
-    var title = document.getElementById('dc:title').value;
-    var creator = document.getElementById('dc:creator').value;
-    var subject = document.getElementById('dc:subject').value;
-    var description = document.getElementById('dc:description').value;
-    var publisher = document.getElementById('dc:publisher').value;
-    var contributor = document.getElementById('dc:contributor').value;
-    var date = document.getElementById('dc:date').value;
-    var type = document.getElementById('dc:type').value;
-    var format = document.getElementById('dc:format').value;
-    var identifier = document.getElementById('dc:identifier').value;
-    var source = document.getElementById('dc:source').value;
-    var language = document.getElementById('dc:language').value;
-    var relation = document.getElementById('dc:relation').value;
-    var coverage = document.getElementById('dc:coverage').value;
-    var rights = document.getElementById('dc:rights').value;
-
-    nevow_clientToServerEvent('submit', this, '', title, creator, 
-        subject, description, publisher, contributor, 
-        date, type, format, identifier, source, language,
-        relation, coverage, rights);
-}
-]]>
-</script>
-
-<groupbox flex="0" >
-
-<caption label="Dublin Core Metadata" />
-  <vbox flex="0" style="overflow: auto" >
-
-   <hbox align="center">
-      <label style="width:8em" value="Title:" tooltiptext="The name given to the resource." />
-      <textbox n:render="title" id="dc:title" size="40" />
-   </hbox>
-  
-   <hbox align="center">
-      <label style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
-      <textbox n:render="creator" id="dc:creator" size="40" />
-   </hbox>
-
-   <hbox align="center">
-      <label style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
-      <textbox n:render="subject" id="dc:subject" size="40" />
-      <image src="http://localhost:8081/images/info.png"
-             onclick="setText('dc-subject');"
-             style="cursor:help;" />
-   </hbox>
-
-  <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:21em;">   
- 		     <description>Typically, Subject will be expressed as keywords, key phrases or classification codes that describe a topic of the resource. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme.</description>
-	    </groupbox>
-   </hbox>   
-
-
-   <hbox align="center">
-      <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
-      <textbox n:render="description" id="dc:description" multiline="true" rows="4" cols="38" /> 
-   </hbox>
-
-   <hbox align="center">
-      <label style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
-      <textbox n:render="publisher" id="dc:publisher" size="40" />
-   </hbox>
-
-   <hbox align="center">
-      <label style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource." />
-      <textbox n:render="contributors" id="dc:contributor" multiline="true" rows="4" cols="38" /> 
-   </hbox>
-   
-   <hbox align="center">
-      <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource." />
-      <textbox n:render="date" id="dc:date" size="40" />
-      <image src="http://localhost:8081/images/info.png"
-             onclick="setText('dc-date');"
-             style="cursor:help;" />
-   </hbox>
-  
-   <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:21em;">   
- 		     <description>Typically, Date will be associated with the creation or availability of the resource. Recommended best practice for encoding the date value is defined in a profile called <html:em>ISO 8601</html:em> <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a> and includes (among others) dates of the form YYYY-MM-DD. 
-                </description>
-	     </groupbox>
-   </hbox>   
-
-   <hbox align="center">
-      <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
-      <textbox n:render="type" id="dc:type" value="text" size="40" />
-      <image src="http://localhost:8081/images/info.png"
-             onclick="setText('dc-type');"
-             style="cursor:help;" />
-
-   </hbox>
-
-   <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:21em;">   
- 	    	<description>Type includes terms describing general categories, functions, or genres, for content. Recommended best practice is to select a value from a controlled vocabulary, for example, the ??????????<html:br/> To describe the physical or digital manifestation of the resource, use the FORMAT element.
-               </description>
-     	</groupbox>
-   </hbox>  
-  
-  <hbox align="center">
-      <label style="width:8em" value="Format:" tooltiptext="Select a Format." />
-      <menulist n:render="format" id="dc:format" label="Select Format">
-       <menupopup>
-          <menuitem label="XHTML" value="XHTML" />          
-          <menuitem label="SCORM 1.2" value="SCORM 1.2" />
-          <menuitem label="IMS Content Package 1.1.3" value="IMS-CP" />
-          <menuitem label="Web Site" value="Web Site" />
-       </menupopup>
-     </menulist>
-   </hbox>
-   
-   <hbox align="center">
-      <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
-      <textbox n:render="identifier" id="dc:identifier" size="40" />
-   </hbox>
-    
-   <hbox align="center">
-
-      <label style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived." />
-      <textbox n:render="source" id="dc:source" size="40" />
-   </hbox>
-
-   <hbox align="center">
-      <label style="width:8em" value="Language:" tooltiptext="Select a language." />
-      <menulist n:render="language" id="dc:language" label="Select Language">
-       <menupopup>
-          <menuitem label="select a language" />          
-          <menuitem label="Abkhazian; abk" value="abk" />
-          <menuitem label="Achinese; ace" value="ace" />
-          <menuitem label="Acoli; ach" value="ach" />
-          <menuitem label="Adangme; ada" value="ada" />
-          <menuitem label="Adyghe; ady" value="ady" />
-          <menuitem label="Afar; aar" value="aar" />
-          <menuitem label="Afrihili; afh" value="afh" />
-          <menuitem label="Afrikaans; afr" value="afr" />
-          <menuitem label="Afro-Asiatic (Other); afa" value="afa" />
-       </menupopup>
-     </menulist>
-   </hbox>
-   
-   <hbox align="center">
-      <label style="width:8em" value="Relation:" tooltiptext="A reference to a related resource." />
-      <textbox n:render="relation" id="dc:relation" size="40" />
-   </hbox>
-   
-   <hbox align="center">
-      <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource." />
-      <textbox n:render="coverage" id="dc:coverage" size="40" />
-   </hbox>
-  
-   <hbox align="center">
-      <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource." />
-      <textbox n:render="rights" id="dc:rights" size="40" />
-      <image src="http://localhost:8081/images/info.png"
-             onclick="setText('dc-rights');"
-             style="cursor:help;" />
-   </hbox>
-   
-   <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;"> 
-        <groupbox style="width:21em;">   
- 		<description>Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
-	    </groupbox>
-   </hbox>  
-
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+  <vbox id="dublinCore" style="overflow: auto;" flex="1">
+    <groupbox flex="0">
+      <caption label="Dublin Core Metadata"/>
+      <vbox flex="0">
+        <hbox align="center">
+          <label style="width:8em" value="Title:" tooltiptext="The name given to the resource."/>
+          <textbox id="dc_title" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
+          <textbox id="dc_creator" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
+          <textbox id="dc_subject" size="40" onchange="this.style.color = 'blue'" />
+          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description>
+                Typically, Subject will be expressed as keywords, key phrases or
+                classification codes that describe a topic of the resource.
+                Recommended best practice is to select a value from a controlled
+                vocabulary or formal classification scheme.
+              </description>
+          </groupbox>
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource."/>
+          <textbox id="dc_description" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
+          <textbox id="dc_publisher" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource."/>
+          <textbox id="dc_contributors" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource."/>
+          <textbox id="dc_date" size="40" onchange="this.style.color = 'blue'" />
+          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description>
+                 Typically, Date will be associated with the creation or
+                 availability of the resource. Recommended best practice for
+                 encoding the date value is defined in a profile called
+                 <html:em>ISO 8601</html:em> 
+                 <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a>
+                 and includes (among others) dates of the form YYYY-MM-DD.
+                  </description>
+          </groupbox>
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
+          <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'blue'" />
+          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description>
+              Type includes terms describing general categories, functions, or
+              genres, for content. Recommended best practice is to select a value
+              from a controlled vocabulary, for example, the ??????????<html:br/>
+              To describe the physical or digital manifestation of the resource,
+              use the FORMAT element.
+            </description>
+          </groupbox>
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Format:" tooltiptext="Select a Format."/>
+          <menulist id="dc_format" label="Select Format" onchange="this.style.color = 'blue'" >
+            <menupopup>
+              <menuitem label="XHTML" value="XHTML"/>
+              <menuitem label="SCORM 1.2" value="SCORM 1.2"/>
+              <menuitem label="IMS Content Package 1.1.3" value="IMS-CP"/>
+              <menuitem label="Web Site" value="Web Site"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
+          <textbox id="dc_identifier" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived."/>
+          <textbox id="dc_source" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Language:" tooltiptext="Select a language."/>
+          <menulist class="simple" id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
+            <menupopup>
+              <menuitem label="select a language"/>
+              <menuitem label="Abkhazian; abk" value="abk"/>
+              <menuitem label="Achinese; ace" value="ace"/>
+              <menuitem label="Acoli; ach" value="ach"/>
+              <menuitem label="Adangme; ada" value="ada"/>
+              <menuitem label="Adyghe; ady" value="ady"/>
+              <menuitem label="Afar; aar" value="aar"/>
+              <menuitem label="Afrihili; afh" value="afh"/>
+              <menuitem label="Afrikaans; afr" value="afr"/>
+              <menuitem label="Afro-Asiatic (Other); afa" value="afa"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Relation:" tooltiptext="A reference to a related resource."/>
+          <textbox id="dc_relation" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource."/>
+          <textbox id="dc_coverage" size="40" onchange="this.style.color = 'blue'" />
+        </hbox>
+        <hbox align="center">
+          <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource."/>
+          <textbox id="dc_rights" size="40" onchange="this.style.color = 'blue'" />
+          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
+        </hbox>
+        <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;">
+          <groupbox style="width:21em;">
+            <description>Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
+          </groupbox>
+        </hbox>
+      </vbox>
+    </groupbox>
+    <hbox align="left">
+      <button label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
+    </hbox>
   </vbox>
-
-</groupbox>
-
- <hbox align="left">
-      <button label="Done" oncommand="submitForm()"/>
- </hbox>
-
-
-</window>
+</overlay>

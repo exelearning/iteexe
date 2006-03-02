@@ -1,21 +1,30 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
-<?xml-stylesheet href="/xultemplates/properties.css" type="text/css"?>
 
 <window title="Package Properties"
-        xmlns:html="http://www.w3.org/1999/xhtml"
-        xmlns:n="http://nevow.com/ns/nevow/0.1"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:n="http://nevow.com/ns/nevow/0.1"
         onload="fillInForms()">
 
 <n:invisible n:render="liveid"/>
 <n:invisible n:render="liveglue"/>
 
 <?xul-overlay href="/xultemplates/projectproperties.xul"?>
+<?xul-overlay href="/xultemplates/dublincore.xul"?>
+<?xul-overlay href="/xultemplates/exportproperties.xul"?>
 
   <script>
   <![CDATA[
   regEx = /[a-z][a-z]_\w+/
+
+  function setText(textID) {
+      var help = document.getElementById(textID).collapsed;
+      if (help == false) {
+          document.getElementById(textID).collapsed=true; 
+      } else {
+          document.getElementById(textID).collapsed=false;
+      }
+  }
 
   function collectIds(ids, start) {
     if (start.id && start.id.match(regEx)) {
@@ -39,11 +48,11 @@
   // Post data for a form to the server
   // Submits the value for all the fields inside 'container'
   function submitForm(container) {
-    var fieldIds = new Array()
+    var fieldIds = new Array();
     collectIds(fieldIds, container);
     for (var i in fieldIds) {
         var value = document.getElementById(fieldIds[i]).value;
-        nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], value)
+        nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], value, i, fieldIds.length)
     }
   }
   ]]>
@@ -60,10 +69,10 @@
                         <vbox id="projectProperties" />
                     </tabpanel>
                     <tabpanel id="metadata">
-                        <iframe flex="1" name="metadata" id="metadata" src="/xultemplates/dublincore.xul"/>
+                        <vbox id="dublinCore" />
                     </tabpanel>
                     <tabpanel id="export">
-                        <iframe flex="1" name="export" id="exportproperties" src="/xultemplates/exportproperties.xul"/>
+                        <vbox id="exportProperties" />
                     </tabpanel>
                 </tabpanels>
             </tabbox>
