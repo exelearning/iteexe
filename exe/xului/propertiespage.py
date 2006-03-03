@@ -176,7 +176,6 @@ class PropertiesPage(RenderableLivePage):
         """
         if data.strip() and data != 'undefined':
             newText = _(data)
-            print '====> Translating:', elementId, attribute, data, '-- to --', newText
             if newText != data and elementId != '':
                 newText = newText.replace('\\', '\\\\').replace("'", "\\'").replace('\n', '\\n')
                 if elementId:
