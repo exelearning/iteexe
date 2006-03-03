@@ -51,7 +51,7 @@ class ForumBlock(Block):
         """
         Block.process(self, request)
             
-        self._message = x_("")
+        self._message = ''
         self.forumElement.process(request)
             
             

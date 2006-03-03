@@ -68,6 +68,9 @@ class PropertiesPage(RenderableLivePage):
         hndlr = handler(self.recieveFieldData, identifier='recieveFieldData')
         hndlr(ctx, client) # Stores it
 
+        hndlr = handler(self.translate, identifier='translate')
+        hndlr(ctx, client) # Stores it
+
     def handleSubmit(self, client, title, creator, subject, description, 
                      publisher, contributor, date, type, format, identifier,
                      source, language, relation, coverage, rights):
@@ -147,21 +150,8 @@ class PropertiesPage(RenderableLivePage):
         obj, name = self.fieldId2obj(fieldId)
         value = getattr(obj, name)
         client.sendScript(js(
-            'document.getElementById("%s").value = "%s"' % (fieldId, value)))
-
-    def translateElement(self, client, elementId, attribute, string):
-        """
-        Translates a string from an element
-        """
-        if attribute == '!contents!':
-            client.sendScript(js(
-                "document.getElementById('%s').setAttribute('%s', '%s')" % 
-                    (elementId, attribute, string)))
-        else:
-            client.sendScript(js(
-                "document.getElementById('%s').setAttribute('%s', '%s')" % 
-                    (elementId, attribute, string)))
-        
+            'document.getElementById("%s").value = "%s"' % \
+                (fieldId, value.encode('utf-8'))))
 
     def recieveFieldData(self, client, fieldId, value, number, total):
         """
@@ -180,20 +170,21 @@ class PropertiesPage(RenderableLivePage):
         if len(self.fieldsReceived) == total - 1:
             client.sendScript(js('alert("%s")' % _('Settings saved')))
 
-    def render_POST(self, request):
+    def translate(self, client, elementId, attribute, data):
         """
-        Handles the submission of the properties form,
-        creating a page that redirects the brower's top document
-        back to the original package, thereby updating all the tree elements
+        Translates a string from an element
         """
-        # TODO: Make the script actually dynamically update the tree elements
-        # without reloading the top form and losing our location. In fact
-        # you don't even have to send this different new page,
-        # You could rename the tree elements in the on submit handler or
-        # something...
-        log.info("after propertityPane process:"+ repr(request.args))
-        return '\n'.join(
-            ['<html>'
-             ' <head/>',
-             ' <body onload="top.location = top.location"/>',
-             '</html>']).encode('utf8')
+        if data.strip() and data != 'undefined':
+            newText = _(data)
+            print '====> Translating:', elementId, attribute, data, '-- to --', newText
+            if newText != data and elementId != '':
+                newText = newText.replace('\\', '\\\\').replace("'", "\\'").replace('\n', '\\n')
+                if elementId:
+                    if attribute == '!contents!':
+                        client.sendScript(js(
+                            "document.getElementById(\"%s\").firstChild.data = '%s');" % 
+                                (elementId, newText)))
+                    else:
+                        client.sendScript(js(
+                            "document.getElementById(\"%s\").setAttribute('%s', '%s');" % 
+                                (elementId, attribute, newText)))

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-01 11:48+1300\n"
+"POT-Creation-Date: 2006-03-03 12:54+1300\n"
 "PO-Revision-Date: 2006-02-09 11:25+0200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: \n"
@@ -191,6 +191,10 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Pedagoogiline vihje võimaldab kirjeldada iDevice arendamisega kaasnevat pedagoogiat ja kasutust."
 
+#: exe/idevices/forumelement.py:75
+msgid "A single simple discussion"
+msgstr "Üks lihtne vestlus"
+
 #: exe/webui/editorpane.py:224
 msgid "Actions"
 msgstr "Tegevused"
@@ -206,12 +210,12 @@ msgstr "Tegevus"
 msgid "Add"
 msgstr "Lisa"
 
-#: exe/webui/element.py:270
+#: exe/webui/element.py:268
 #, fuzzy
 msgid "Add Image"
 msgstr "Lisa pilte"
 
-#: exe/webui/element.py:381
+#: exe/webui/element.py:379
 #, fuzzy
 msgid "Add JPEG Image"
 msgstr "Lisa lehekülg"
@@ -238,13 +242,18 @@ msgstr "Lisa veel valikuid"
 msgid "Add another Question"
 msgstr "Lisa veel küsimusi"
 
-#: exe/webui/multichoiceblock.py:117
+#: exe/webui/multichoiceblock.py:118
 msgid "Add another option"
 msgstr "Lisa veel valikuid"
 
 #: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:93
 msgid "Add another question"
 msgstr "Lisa veel küsimusi"
+
+#: exe/idevices/appletblock.py:80
+#, fuzzy
+msgid "Add files"
+msgstr "Lisa pilte"
 
 #: exe/webui/galleryblock.py:174
 msgid "Add images"
@@ -254,8 +263,8 @@ msgstr "Lisa pilte"
 msgid "Add interactive feedback to your iDevice."
 msgstr "Lisa oma iDevice-le interaktiivset tagasisidet."
 
-#: exe/webui/imagewithtextblock.py:79 exe/webui/flashmovieblock.py:78
-#: exe/webui/flashwithtextblock.py:79 exe/webui/imagemagnifierblock.py:97
+#: exe/webui/imagemagnifierblock.py:97 exe/webui/imagewithtextblock.py:79
+#: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:79
 msgid "Align:"
 msgstr "Reasta:"
 
@@ -313,6 +322,10 @@ msgstr ""
 "Esita selge ülesande püstitus ja võta arvesse kõikvõimalikke tingimusi\n"
 "mis võivad aidata või takistada õppijat selle ülesande jõudsal läbimisel."
 
+#: exe/idevices/appletblock.py:87
+msgid "Applet Code:"
+msgstr ""
+
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
 msgstr "Artikkel"
@@ -330,9 +343,13 @@ msgstr "Manusel  %s puudub parentNode"
 msgid "Author"
 msgstr "Autor"
 
-#: exe/webui/editorelement.py:142
+#: exe/webui/editorelement.py:145
 msgid "Button Caption"
 msgstr "Nupu tekst"
+
+#: exe/idevices/forumelement.py:100
+msgid "Can a student post to this forum?:"
+msgstr "Kas õpilane võib sellesse foorumisse postitada ?:"
 
 #: exe/webui/preferencespage.py:90 exe/webui/editorpane.py:232
 msgid "Cancel"
@@ -345,8 +362,8 @@ msgstr "Tühista"
 msgid "Cannot access directory named "
 msgstr "Puudub ligipääs kataloogile nimega"
 
-#: exe/webui/imagewithtextblock.py:84 exe/webui/flashmovieblock.py:83
-#: exe/webui/flashwithtextblock.py:84 exe/webui/imagemagnifierblock.py:103
+#: exe/webui/imagemagnifierblock.py:103 exe/webui/imagewithtextblock.py:84
+#: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:84
 msgid "Caption:"
 msgstr "Pealkiri:"
 
@@ -358,14 +375,17 @@ msgstr "Juhtumi kirjeldus"
 msgid "Change Image"
 msgstr ""
 
-#: exe/webui/element.py:597 exe/webui/element.stan.py:461
-#: exe/webui/element.prestan.py:459
+#: exe/webui/element.py:595
 msgid "Check Caps?"
 msgstr "Kontrolli suuri/väikeseid tähti ?"
 
 #: exe/webui/wikipediablock.py:78
 msgid "Chinese Wikipedia Article"
 msgstr "Hiina Wikipedia artikkel"
+
+#: exe/idevices/forumidevice.py:107
+msgid "Choose a LMS"
+msgstr "Vali LMS"
 
 #: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
@@ -380,12 +400,12 @@ msgid "Click here"
 msgstr "Kliki siia"
 
 #: exe/engine/galleryidevice.py:282 exe/webui/common.py:268
-#: exe/webui/common.py:269 exe/webui/multichoiceblock.py:153
-#: exe/webui/multichoiceblock.py:154 exe/webui/truefalseelement.py:123
+#: exe/webui/common.py:269 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
 #: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/editorpane.py:328
-#: exe/webui/editorpane.py:329 exe/webui/editorpane.py:349
-#: exe/webui/editorpane.py:350
+#: exe/webui/block.py:238 exe/webui/editorpane.py:333
+#: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
+#: exe/webui/editorpane.py:355
 msgid "Close"
 msgstr "Sulge"
 
@@ -421,10 +441,15 @@ msgstr ""
 #: exe/webui/galleryblock.py:239 exe/webui/block.py:208
 #: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
-#: exe/webui/editorelement.py:149 exe/webui/editorelement.py:185
-#: exe/xului/templates/mainpage.xul:<toolbarbutton key="delNodeKey"
-#: label="Delete">
+#: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
+#: key="delNodeKey" label="Delete">
 msgid "Delete"
+msgstr "Kustuta"
+
+#: exe/idevices/appletblock.py:101
+#, fuzzy
+msgid "Delete File"
 msgstr "Kustuta"
 
 #: exe/webui/galleryblock.py:237
@@ -482,17 +507,35 @@ msgstr "Kirjelda ülesanded, mida õpilane peab läbima"
 msgid "Description"
 msgstr "Kirjeldus"
 
-#: exe/webui/attachmentblock.py:87
-msgid "Description:"
-msgstr "Kirjeldus:"
+#: exe/idevices/forumidevice.py:40
+#, fuzzy
+msgid "Discussion Activity"
+msgstr "Vestluse teema:"
 
-#: exe/webui/element.py:290 exe/webui/element.py:399 exe/webui/element.py:744
-#: exe/webui/element.stan.py:278 exe/webui/element.stan.py:608
-#: exe/webui/element.prestan.py:276 exe/webui/element.prestan.py:601
+#: exe/idevices/forumelement.py:224
+#, fuzzy
+msgid "Discussion Topic/Thread:"
+msgstr "Vestluse teema"
+
+#: exe/idevices/forumidevice.py:141
+#, fuzzy
+msgid "Discussion topic/Thread"
+msgstr "Vestluse teema:"
+
+#: exe/idevices/forumelement.py:79
+msgid "Discussions and replies are allowed"
+msgstr "Vestlused ja vastused on lubatud"
+
+#: exe/webui/element.py:288 exe/webui/element.py:397 exe/webui/element.py:742
 msgid "Display as:"
 msgstr "Näita kui:"
 
 #: exe/webui/block.py:200 exe/webui/propertiespane.py:123
+#: exe/xului/templates/dublincore.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" label="Done">
+#: exe/xului/templates/exportproperties.xul:<button
+#: exe/xului/templates/projectproperties.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode);"
 msgid "Done"
 msgstr "Tehtud"
 
@@ -500,20 +543,17 @@ msgstr "Tehtud"
 msgid "Dutch Wikipedia Article"
 msgstr "Hollandi Wkipedia artikkel"
 
-#: exe/webui/element.py:44 exe/webui/element.stan.py:46
-#: exe/webui/element.prestan.py:44
+#: exe/webui/element.py:44
 #, fuzzy, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROR Element.process called directly"
 
-#: exe/webui/element.py:53 exe/webui/element.stan.py:55
-#: exe/webui/element.prestan.py:53
+#: exe/webui/element.py:53
 #, fuzzy, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROR Element.renderEdit called directly"
 
-#: exe/webui/element.py:70 exe/webui/element.stan.py:72
-#: exe/webui/element.prestan.py:70
+#: exe/webui/element.py:70
 #, fuzzy, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR Element.renderView called directly"
@@ -522,12 +562,16 @@ msgstr "ERROR Element.renderView called directly"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
+#: exe/idevices/forumelement.py:76
+msgid "Each person posts one discussion"
+msgstr "Iga isik postitab ühe vestluse"
+
 #: exe/webui/block.py:321 exe/webui/editorpage.py:199
 #: exe/webui/editorpane.py:229
 msgid "Edit"
 msgstr "Redigeeri"
 
-#: exe/webui/wikipediablock.py:107 exe/webui/editorpane.py:299
+#: exe/webui/wikipediablock.py:108 exe/webui/editorpane.py:304
 msgid "Emphasis"
 msgstr "Rõhuasetus"
 
@@ -553,7 +597,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Sisesta siia vihje. Kui sa seda teha ei soovi, võid selle välja tühjaks jätta."
 
-#: exe/engine/wikipediaidevice.py:71
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:227
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -568,7 +612,7 @@ msgstr ""
 "Sisesta tegevuse detailid, mille üle \n"
 "õpilased mõtisklema peavad."
 
-#: exe/engine/quiztestidevice.py:61
+#: exe/engine/quiztestidevice.py:64 exe/engine/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -643,7 +687,7 @@ msgstr "Sisesta siia juhendid läbimiseks"
 msgid "Enter the label here"
 msgstr "Sisesta märge siia"
 
-#: exe/engine/quiztestidevice.py:58
+#: exe/engine/quiztestidevice.py:61
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -682,9 +726,13 @@ msgstr ""
 msgid "Error loading package \"%s\": %s"
 msgstr "Viga paketi  \"%s\" laadimisel: %s"
 
-#: exe/webui/element.stan.py:456 exe/webui/element.prestan.py:454
-msgid "Exact Spelling?"
-msgstr ""
+#: exe/idevices/exampleidevice.py:44
+msgid "Example"
+msgstr "Näide"
+
+#: exe/idevices/exampleidevice.py:39
+msgid "Example Example"
+msgstr "Näitlik näide"
 
 #: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
@@ -701,7 +749,7 @@ msgstr "Väline veebileht"
 msgid "Extra large"
 msgstr "Ekstra suur"
 
-#: exe/webui/truefalseelement.py:85 exe/webui/truefalseelement.py:155
+#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
 msgid "False"
 msgstr "Väär"
 
@@ -752,6 +800,24 @@ msgstr ""
 "Vastandlikult tavalisele pop-up aknale, millel võivad olla teatud kasutusproblemaatilised tagajärjedl\n"
 ", laeb see iDevice kohase info sisemisse freimi. Kasutada ainult online-sisu puhul."
 
+#: exe/idevices/forumelement.py:106
+msgid "Force everyone to be subscribed?:"
+msgstr "Sundida kõiki registreeruma?:"
+
+#: exe/idevices/forumelement.py:203
+#, fuzzy
+msgid "Forum Name:"
+msgstr "Foorumi nimi:"
+
+#: exe/idevices/forumelement.py:250 exe/idevices/forumelement.py:267
+#, fuzzy
+msgid "Forum Name: "
+msgstr "Foorumi nimi:"
+
+#: exe/idevices/forumelement.py:94
+msgid "Forum type:"
+msgstr "Foorumi tüüp:"
+
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
 msgstr ""
@@ -764,7 +830,7 @@ msgstr "Vaba tekst"
 msgid "French Wikipedia Article"
 msgstr "Prantsuse Wikipedia artikkel"
 
-#: exe/webui/wikipediablock.py:171
+#: exe/webui/wikipediablock.py:172
 msgid "GNU Free Documentation License"
 msgstr ""
 
@@ -772,8 +838,7 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Saksa Wikipeedia artikkel"
 
-#: exe/webui/element.py:663 exe/webui/element.stan.py:537
-#: exe/webui/element.prestan.py:533
+#: exe/webui/element.py:661
 msgid "Get score"
 msgstr "Punktid"
 
@@ -789,16 +854,20 @@ msgstr ""
 msgid "Go Forward (Not Available)"
 msgstr ""
 
+#: exe/idevices/forumelement.py:112 exe/idevices/forumelement.py:119
+msgid "Group mode:"
+msgstr "Grupi rezhiim:"
+
 #: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
 msgid "Hide"
 msgstr "Peida"
 
-#: exe/webui/element.py:587 exe/webui/element.stan.py:451
-#: exe/webui/element.prestan.py:449
+#: exe/webui/element.py:585
 msgid "Hide/Show Word"
 msgstr "Peida / näita sõna"
 
-#: exe/webui/multichoiceblock.py:157 exe/webui/multichoiceblock.py:182
+#: exe/webui/multichoiceblock.py:158 exe/webui/multichoiceblock.py:183
 #: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
 #: exe/webui/truefalseelement.py:127
 msgid "Hint"
@@ -812,19 +881,19 @@ msgstr "Vihje:"
 msgid "Home"
 msgstr "Kodu"
 
-#: exe/webui/multichoiceblock.py:175 exe/webui/galleryblock.py:304
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:304
 #: exe/webui/block.py:276 exe/webui/genericblock.py:79
 #: exe/webui/genericblock.py:104
 #, fuzzy
 msgid "IDevice Icon"
 msgstr "iDevide redaktor"
 
-#: exe/webui/multichoiceblock.py:133
+#: exe/webui/multichoiceblock.py:134
 #, fuzzy
 msgid "IDevice Question Icon"
 msgstr "Kustuta küsimus"
 
-#: exe/webui/editorpane.py:331
+#: exe/webui/editorpane.py:336
 msgid "Icons"
 msgstr "Ikoonid"
 
@@ -853,7 +922,7 @@ msgstr "PildiLuup"
 msgid "Incorrect!"
 msgstr "Väär !"
 
-#: exe/webui/editorpane.py:345
+#: exe/webui/editorpane.py:350
 #, fuzzy
 msgid "Info"
 msgstr "debugInfo"
@@ -863,8 +932,7 @@ msgstr "debugInfo"
 msgid "Information"
 msgstr "Juhised"
 
-#: exe/webui/element.py:602 exe/webui/element.stan.py:466
-#: exe/webui/element.prestan.py:464
+#: exe/webui/element.py:600
 msgid "Instant Marking?"
 msgstr "Kohene märkimine ?"
 
@@ -880,7 +948,12 @@ msgstr "Juhised õpilastele"
 msgid "Instructions for completion"
 msgstr "Juhendid läbimiseks"
 
-#: exe/webui/wikipediablock.py:172
+#: exe/idevices/forumelement.py:213
+#, fuzzy
+msgid "Introduction"
+msgstr "Juhised"
+
+#: exe/webui/wikipediablock.py:173
 msgid "It uses material from the "
 msgstr ""
 
@@ -892,7 +965,11 @@ msgstr "Itaalia Wikipedia artikkel"
 msgid "Japanese Wikipedia Article"
 msgstr "Jaapani Wikipedia artikkel"
 
-#: exe/webui/attachmentblock.py:82
+#: exe/idevices/appletidevice.py:48
+msgid "Java Applet"
+msgstr ""
+
+#: exe/webui/attachmentblock.py:81
 msgid "Label"
 msgstr "Märge"
 
@@ -901,8 +978,16 @@ msgstr "Märge"
 msgid "Large"
 msgstr "Märge"
 
-#: exe/webui/imagewithtextblock.py:75 exe/webui/flashmovieblock.py:75
-#: exe/webui/flashwithtextblock.py:75 exe/webui/imagemagnifierblock.py:87
+#: exe/idevices/forumidevice.py:158
+msgid "Learning Management System"
+msgstr "E-õpihalduskeskkond"
+
+#: exe/idevices/forumelement.py:236
+msgid "Learning Management System:"
+msgstr "E-õpihalduskeskkond:"
+
+#: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:75
+#: exe/webui/flashmovieblock.py:75 exe/webui/flashwithtextblock.py:75
 msgid "Left"
 msgstr "Vasak"
 
@@ -918,7 +1003,11 @@ msgstr "Tase 2:"
 msgid "Level 3: "
 msgstr "Tase 3:"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/idevices/forumidevice.py:161
+msgid "Link to the forum"
+msgstr "Link foorumile"
+
+#: exe/webui/wikipediablock.py:100
 msgid "Load"
 msgstr "Lae"
 
@@ -934,6 +1023,10 @@ msgstr "Maksimaalne suurendus"
 #: exe/webui/imagemagnifierblock.py:91
 msgid "Medium"
 msgstr "Keskmine"
+
+#: exe/idevices/forumelement.py:232
+msgid "Moodle"
+msgstr "Moodle"
 
 #: exe/webui/block.py:222
 msgid "Move Down"
@@ -960,6 +1053,15 @@ msgstr "Valikvastustega küsimus"
 msgid "Name"
 msgstr "Nimi"
 
+#: exe/idevices/forumelement.py:195
+msgid "New Forum"
+msgstr "Uus foorum"
+
+#: exe/idevices/forumelement.py:217
+#, fuzzy
+msgid "New Topic"
+msgstr "Teema"
+
 #: exe/webui/editorpage.py:204
 msgid "New iDevice"
 msgstr "Uus iDevice"
@@ -971,6 +1073,7 @@ msgstr "Tekst"
 
 #: exe/webui/imagemagnifierblock.py:134 exe/webui/imagemagnifierblock.py:138
 #: exe/webui/imagemagnifierblock.py:151 exe/webui/imagemagnifierblock.py:155
+#: exe/idevices/forumelement.py:83
 msgid "No"
 msgstr "Ei"
 
@@ -987,12 +1090,25 @@ msgstr "Pisipilt puudub kuna pildi vähendamine ebaõnnestus."
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Pisipilt puudub kuna pildi vähendamine ebaõnnestus."
 
-#: exe/webui/wikipediablock.py:103 exe/webui/editorpane.py:302
+#: exe/idevices/forumelement.py:80
+msgid "No discussions, but replies are allowed"
+msgstr "Vestlused pole lubatud, kuid vastused on lubatud"
+
+#: exe/idevices/forumelement.py:81
+msgid "No discussions, no replies"
+msgstr "Vestlused ega vastused pole lubatud"
+
+#: exe/webui/wikipediablock.py:104 exe/webui/editorpane.py:307
 msgid "No emphasis"
 msgstr "Puudub rõhuasetus"
 
-#: exe/webui/imagewithtextblock.py:77 exe/webui/flashmovieblock.py:77
-#: exe/webui/flashwithtextblock.py:77 exe/webui/imagemagnifierblock.py:89
+#: exe/idevices/forumelement.py:87
+msgid "No groups"
+msgstr "Gruppe pole"
+
+#: exe/webui/imagemagnifierblock.py:89 exe/webui/imagewithtextblock.py:77
+#: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:77
+#: exe/idevices/forumelement.py:217
 msgid "None"
 msgstr "Puudub"
 
@@ -1040,6 +1156,10 @@ msgstr "Valik"
 msgid "Options"
 msgstr "Valik"
 
+#: exe/idevices/forumelement.py:233
+msgid "Other"
+msgstr "Muu"
+
 #: exe/xului/outlinepane.py:236
 msgid "Outline"
 msgstr "Ülevaade"
@@ -1050,21 +1170,43 @@ msgstr "Ülevaade"
 msgid "Package saved to: %s"
 msgstr "Pakett salvestatud siia: %s"
 
-#: exe/webui/block.py:229 exe/webui/editorpane.py:341
+#: exe/webui/block.py:229 exe/webui/editorpane.py:346
 msgid "Pedagogical Help"
 msgstr "Pedagoogiline abi"
 
-#: exe/webui/editorpane.py:296
+#: exe/webui/editorpane.py:299
 msgid "Pedagogical Tip"
 msgstr "Pedagoogiline vihje"
+
+#: exe/idevices/forumblock.py:131
+#, fuzzy
+msgid "Please enter a discussion topic name.\n"
+msgstr "Palun sisesta iDevice nimi."
+
+#: exe/idevices/forumblock.py:117
+#, fuzzy
+msgid "Please enter a name for the forum\n"
+msgstr "Palun sisesta iDevice nimi."
 
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
 msgstr "Palun sisesta iDevice nimi."
 
+#: exe/idevices/forumblock.py:126
+msgid "Please select LMS.\n"
+msgstr "Palun vali LMS.\n"
+
+#: exe/idevices/forumelement.py:231
+msgid "Please select a LMS"
+msgstr "Palun vali LMS"
+
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Palun vali iga küsimuse jaoks õige vastus."
+
+#: exe/idevices/forumblock.py:112
+msgid "Please select a forum.\n"
+msgstr "Palun vali foorum.\n"
 
 #: exe/webui/wikipediablock.py:83
 msgid "Polish Wikipedia Article"
@@ -1102,10 +1244,12 @@ msgid "Previous"
 msgstr "Eelvaade"
 
 #: exe/webui/propertiespage.py:77
+#: exe/xului/templates/projectproperties.xul:<caption id="pptitle"
+#: label="Project Properties">
 msgid "Project Properties"
 msgstr "Projekti omadused"
 
-#: exe/xului/propertiespage.py:114
+#: exe/xului/propertiespage.py:122
 #, fuzzy
 msgid "Project Properties Updated"
 msgstr "Projekti omadused"
@@ -1114,7 +1258,7 @@ msgstr "Projekti omadused"
 msgid "Project title:"
 msgstr "Projekti nimi:"
 
-#: exe/xului/propertiespage.py:83
+#: exe/xului/propertiespage.py:92
 #, fuzzy
 msgid "Properties Updated"
 msgstr "Omadused"
@@ -1146,6 +1290,7 @@ msgstr ""
 " kui kasutaja lünkasid täidab."
 
 #: exe/engine/imagewithtextidevice.py:67
+#: exe/engine/imagewithtextidevice.py:114
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
@@ -1173,16 +1318,13 @@ msgstr "Eesmärk"
 msgid "Put instructions for learners here"
 msgstr "Sisesta siia instruktsioonid õpilastele"
 
-#: exe/webui/truefalseelement.py:78
-msgid "Question"
-msgstr "Küsimus"
-
 #: exe/webui/casestudyblock.py:85
 #, fuzzy
 msgid "Question(s)"
 msgstr "Küsimus"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
+#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
+#: exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Küsimus:"
 
@@ -1228,17 +1370,16 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Mõtisklev küsimus:"
 
-#: exe/webui/element.py:683 exe/webui/element.stan.py:557
-#: exe/webui/element.prestan.py:550
+#: exe/webui/element.py:681
 msgid "Restart"
 msgstr "Alusta uuesti"
 
-#: exe/webui/imagewithtextblock.py:76 exe/webui/flashmovieblock.py:76
-#: exe/webui/flashwithtextblock.py:76 exe/webui/imagemagnifierblock.py:88
+#: exe/webui/imagemagnifierblock.py:88 exe/webui/imagewithtextblock.py:76
+#: exe/webui/flashmovieblock.py:76 exe/webui/flashwithtextblock.py:76
 msgid "Right"
 msgstr "Parem"
 
-#: exe/engine/quiztestidevice.py:93
+#: exe/engine/quiztestidevice.py:105
 #, fuzzy
 msgid "SCORM Quiz"
 msgstr "SCORM Eksperimentaalne Test"
@@ -1259,37 +1400,30 @@ msgstr "Salvesta kui"
 msgid "Section"
 msgstr "Peatükk"
 
-#: exe/webui/element.py:742
+#: exe/webui/element.py:740
 #, fuzzy
 msgid "Select Flash Object"
 msgstr "Vali Flash-fail"
 
 #: exe/webui/preferencespage.py:82
-#: exe/xului/templates/dublincore.xul:<menulist id="dc:language" label="Select
-#: Language">
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
+#: 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr "Vali keel"
 
-#: exe/webui/attachmentblock.py:79
+#: exe/webui/attachmentblock.py:78
 msgid "Select a file"
 msgstr "Vali fail"
 
-#: exe/webui/element.stan.py:606 exe/webui/element.prestan.py:599
-#, fuzzy
-msgid "Select a flash file"
-msgstr "Vali Flash-video"
-
-#: exe/webui/element.py:817 exe/webui/element.stan.py:680
-#: exe/webui/element.prestan.py:673
+#: exe/webui/element.py:815
 msgid "Select a flash video"
 msgstr "Vali Flash-video"
 
-#: exe/webui/element.py:289 exe/webui/element.stan.py:276
-#: exe/webui/element.prestan.py:274
+#: exe/webui/element.py:287
 msgid "Select an image"
 msgstr "Vali pilt"
 
-#: exe/webui/element.py:397
+#: exe/webui/element.py:395
 #, fuzzy
 msgid "Select an image (JPG file)"
 msgstr "Vali pilt"
@@ -1298,7 +1432,7 @@ msgstr "Vali pilt"
 msgid "Select pass rate: "
 msgstr "Vali läbimise aste:"
 
-#: exe/engine/wikipediaidevice.py:69
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:225
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1310,27 +1444,37 @@ msgid ""
 "on the radio button."
 msgstr "Õige valiku tegemiseks kliki raadio-nupul."
 
+#: exe/idevices/forumelement.py:88
+msgid "Separate groups"
+msgstr "Erista grupid"
+
+#: exe/xului/propertiespage.py:171
+msgid "Settings saved"
+msgstr ""
+
+#: exe/idevices/forumelement.py:91
+msgid "Show"
+msgstr "Näita"
+
 #: exe/webui/galleryblock.py:272
 #, python-format
 msgid "Show %s Image"
 msgstr ""
 
-#: exe/webui/element.py:690
+#: exe/webui/element.py:688
 #, fuzzy
 msgid "Show Answers"
 msgstr "Näita / puhasta vastused"
 
-#: exe/webui/element.py:674 exe/webui/element.stan.py:566
-#: exe/webui/element.prestan.py:558
+#: exe/webui/element.py:672
 msgid "Show/Clear Answers"
 msgstr "Näita / puhasta vastused"
 
-#: exe/webui/element.py:669 exe/webui/element.stan.py:541
-#: exe/webui/element.prestan.py:538
+#: exe/webui/element.py:667
 msgid "Show/Hide Feedback"
 msgstr "Näita / peida tagasiside"
 
-#: exe/webui/wikipediablock.py:91
+#: exe/webui/wikipediablock.py:92
 #, fuzzy
 msgid "Site"
 msgstr "pealkiri"
@@ -1343,7 +1487,7 @@ msgstr "Luubi suurus:"
 msgid "Small"
 msgstr "Väike"
 
-#: exe/webui/wikipediablock.py:104 exe/webui/editorpane.py:303
+#: exe/webui/wikipediablock.py:105 exe/webui/editorpane.py:308
 msgid "Some emphasis"
 msgstr "Mõningane rõhuasetus"
 
@@ -1366,21 +1510,24 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Hispaania Wikipedia artikkel"
 
-#: exe/webui/casestudyblock.py:81
+#: exe/idevices/forumelement.py:77
+msgid "Standard forum for general use"
+msgstr "Foorum üldiseks kasutamiseks"
+
+#: exe/webui/casestudyblock.py:80
 msgid "Story:"
 msgstr "Lugu:"
 
-#: exe/webui/element.py:592
+#: exe/webui/element.py:590
 msgid "Strict Marking?"
 msgstr "Range hindamine ?"
 
-#: exe/webui/wikipediablock.py:105 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:106 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
 msgstr "Tugev rõhusasetus"
 
-#: exe/webui/common.py:202 exe/webui/editorpane.py:392
-#: exe/webui/element.py:678 exe/webui/element.stan.py:550
-#: exe/webui/element.prestan.py:545
+#: exe/webui/common.py:202 exe/webui/editorpane.py:397
+#: exe/webui/element.py:676
 #, fuzzy
 msgid "Submit"
 msgstr "Saada vastus"
@@ -1394,6 +1541,7 @@ msgid "Swedish Wikipedia Article"
 msgstr "Rootsi Wikipedia artikkel"
 
 #: exe/webui/propertiespane.py:110
+#: exe/xului/templates/projectproperties.xul:<caption label="Taxonomy">
 msgid "Taxonomy"
 msgstr "Taksonoomia"
 
@@ -1449,7 +1597,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "Selle dialoogi eesmärk on kirjeldada sinu iDevice sihtkasutust teistele võimalikele kasutajatele."
 
-#: exe/webui/wikipediablock.py:168
+#: exe/webui/wikipediablock.py:169
 msgid "This article is licensed under the "
 msgstr ""
 
@@ -1470,6 +1618,17 @@ msgstr ""
 msgid "This is a free text field general learning content can be entered."
 msgstr "See on vaba tekstiväli õppematerjali sisule."
 
+#: exe/idevices/exampleidevice.py:45
+#, fuzzy
+msgid "This is a free text field."
+msgstr "See väli ei ole kohustuslik."
+
+#: exe/idevices/exampleidevice.py:41
+msgid ""
+"This is an example of a user created\n"
+"iDevice plugin."
+msgstr "See on näide kasutaja loodud iDevice pluginist."
+
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
 msgstr "See väli ei ole kohustuslik."
@@ -1478,11 +1637,15 @@ msgstr "See väli ei ole kohustuslik."
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr "See kustutab iDevice.\\nKas soovid tõesti seda teha?"
 
+#: exe/idevices/forumelement.py:322 exe/idevices/forumelement.py:341
+msgid "Thread: "
+msgstr "Lõim:"
+
 #: exe/webui/block.py:247
 msgid "Tip:"
 msgstr "Vihje:"
 
-#: exe/engine/quiztestidevice.py:64
+#: exe/engine/quiztestidevice.py:67
 #, fuzzy
 msgid ""
 "To indicate the correct answer, \n"
@@ -1495,7 +1658,7 @@ msgstr ""
 msgid "Topic"
 msgstr "Teema"
 
-#: exe/webui/truefalseelement.py:83 exe/webui/truefalseelement.py:153
+#: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
 msgid "True"
 msgstr "Tõene"
 
@@ -1514,10 +1677,14 @@ msgstr ""
 "õpilane peab otsustama selle tõesuse üle. Seda tüüpi küsimused töötavad \n"
 " hästi nii faktuaalse kui ka sellise informatsiooni puhul, mida võib mõlemat pidi mõista."
 
-#: exe/engine/field.py:596
+#: exe/engine/field.py:596 exe/idevices/forumidevice.py:145
 #, fuzzy
 msgid "Type a discussion topic here."
 msgstr "Vestluse teema:"
+
+#: exe/idevices/forumidevice.py:101
+msgid "Type a forum name here"
+msgstr "Sisesta siia foorumi nimi"
 
 #: exe/engine/multichoiceidevice.py:96
 #, fuzzy
@@ -1580,19 +1747,20 @@ msgstr "Osa"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
 #: exe/engine/galleryidevice.py:481 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:94
+#: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:106
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/flashmovieidevice.py:40
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:240 exe/engine/idevicestore.py:298
-#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:348
-#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:433
-#: exe/engine/imagemagnifieridevice.py:39
+#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:39
+#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:240
+#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:326
+#: exe/engine/idevicestore.py:348 exe/engine/idevicestore.py:405
+#: exe/engine/idevicestore.py:433 exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
 msgstr "Aucklandi Ülikool"
 
-#: exe/engine/quiztestidevice.py:95
+#: exe/engine/quiztestidevice.py:107
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -1600,6 +1768,11 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+
+#: exe/idevices/appletblock.py:82
+#, fuzzy
+msgid "Upload"
+msgstr "Lae"
 
 #: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
@@ -1626,6 +1799,14 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+
+#: exe/idevices/forumelement.py:89
+msgid "Visible groups"
+msgstr "Nähtavad grupid"
+
+#: exe/idevices/forumelement.py:118
+msgid "Visible to students:"
+msgstr "Nähtav õpilastele:"
 
 #: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
 msgid "What to read"
@@ -1659,6 +1840,10 @@ msgstr ""
 msgid "Wikibooks Article"
 msgstr "Wikibooks artikkel"
 
+#: exe/webui/wikipediablock.py:90
+msgid "Wikieducator Content"
+msgstr ""
+
 #: exe/engine/wikipediaidevice.py:51
 msgid "Wikipedia Article"
 msgstr "Wikipedia artikkel"
@@ -1671,20 +1856,34 @@ msgstr "Vale"
 msgid "Yes"
 msgstr "Jah"
 
+#: exe/idevices/forumelement.py:84
+msgid "Yes, forever"
+msgstr "Jah, alati"
+
+#: exe/idevices/forumelement.py:85
+msgid "Yes, initially"
+msgstr "Jah, algselt"
+
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Sinu uus iDevice tekib iDevice-ribale selle pealkirjaga. See on kohustuslik väli ja kui üritatakse lisada iDevice ilma nimeta, tehakse sellekohane meeldetuletus."
 
-#: exe/webui/wikipediablock.py:175
+#: exe/webui/wikipediablock.py:176
 #, fuzzy
 msgid "article "
 msgstr "Artikkel"
 
-#: exe/webui/element.py:304 exe/webui/element.py:413 exe/webui/element.py:756
-#: exe/webui/element.stan.py:292 exe/webui/element.stan.py:620
-#: exe/webui/element.prestan.py:290 exe/webui/element.prestan.py:613
+#: exe/webui/element.py:302 exe/webui/element.py:411 exe/webui/element.py:754
 msgid "blank for original size"
 msgstr "originaalsuurusele tühi"
+
+#: exe/idevices/forumblock.py:122
+msgid "duplicate forum name.\n"
+msgstr "duplitseeritud foorumin nimi.\n"
+
+#: exe/idevices/forumblock.py:135
+msgid "duplicate topic name."
+msgstr "duplitseeritud teema nimi."
 
 #: exe/export/scormexport.py:256 exe/export/imsexport.py:188
 msgid "eXe"
@@ -1695,17 +1894,22 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: e-õppe XHTML redaktor"
 
+#: exe/idevices/appletidevice.py:68
+#, fuzzy, python-format
+msgid "file %s has no parentNode"
+msgstr "Manusel  %s puudub parentNode"
+
 #: exe/engine/wikipediaidevice.py:177
 msgid "http://en.wikipedia.org/"
 msgstr "http://et.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:95
+#: exe/engine/attachmentidevice.py:95 exe/idevices/appletidevice.py:70
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice-l %s pudub pakett"
 
 #: exe/engine/package.py:253 exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="toolsEditor()" label="iDevice Editor">
+#: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevide redaktor"
 
@@ -1730,204 +1934,525 @@ msgstr "märge"
 msgid "title"
 msgstr "pealkiri"
 
-#: exe/xului/templates/dublincore.xul:<menulist id="dc:format" label="Select
-#: Format">
+#: exe/xului/templates/dublincore.xul:<caption label="Dublin Core Metadata">
+msgid "Dublin Core Metadata"
+msgstr ""
+
+#: exe/xului/templates/exportproperties.xul:<caption label="SCORM 1.2
+#: Options">
+msgid "SCORM 1.2 Options"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="insertPackage()" label="Insert Package">
+msgid "Insert Package"
+msgstr "Sisesta pakett"
+
+#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+msgid "Dublin Core"
+msgstr ""
+
+#: exe/xului/templates/projectproperties.xul:<label value="Project Title:"
+#: style="width:8em" tooltiptext="The project's title.">
+#, fuzzy
+msgid "Project Title:"
+msgstr "Projekti nimi:"
+
+#: exe/xului/templates/properties.xul:<tab label="Package">
+#, fuzzy
+msgid "Package"
+msgstr "Sisesta pakett"
+
+#: exe/xului/templates/dublincore.xul:<label value="Title:" style="width:8em"
+#: tooltiptext="The name given to the resource.">
+#, fuzzy
+msgid "Title:"
+msgstr "pealkiri"
+
+#: exe/xului/templates/exportproperties.xul:<checkbox id="scolinks" label="Add
+#: Previous/Next links within SCOs?" tooltiptext="Checking this box will cause
+#: eXe to add Previous and Next individual pages your SCO. The LMS also still
+#: kind of functionality." checked="false">
+msgid "Add Previous/Next links within SCOs?"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" label="Extract Package">
+msgid "Extract Package"
+msgstr "Ava pakett"
+
+#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+msgid "IEEE LOM"
+msgstr ""
+
+#: exe/xului/templates/projectproperties.xul:<label value="Author:"
+#: style="width:8em" tooltiptext="Primary author of the resource.">
+#, fuzzy
+msgid "Author:"
+msgstr "Autor"
+
+#: exe/xului/templates/properties.xul:<tab label="Metadata">
+msgid "Metadata"
+msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<label value="Creator:"
+#: style="width:8em" tooltiptext="An entity primarily responsible for making
+#: the content of resource.">
+#, fuzzy
+msgid "Creator:"
+msgstr "Pealkiri:"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="addChild"
+#: keycode="VK_INSERT" id="addChildKey">
+msgid "VK_INSERT"
+msgstr "VK_INSERT"
+
+#: exe/xului/templates/projectproperties.xul:<label value="Level 1:"
+#: style="width:8em" tooltiptext="">
+#, fuzzy
+msgid "Level 1:"
+msgstr "Tase 1:"
+
+#: exe/xului/templates/properties.xul:<tab label="Export">
+#, fuzzy
+msgid "Export"
+msgstr "Eksporditud: %s"
+
+#: exe/xului/templates/dublincore.xul:<label value="Subject:"
+#: style="width:8em" tooltiptext="The topic of the content resource.">
+msgid "Subject:"
+msgstr "Teema:"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
+#: keycode="VK_DELETE" id="delNodeKey">
+msgid "VK_DELETE"
+msgstr "VK_DELETE"
+
+#: exe/xului/templates/projectproperties.xul:<label value="Level 2:"
+#: style="width:8em" tooltiptext="">
+#, fuzzy
+msgid "Level 2:"
+msgstr "Tase 2:"
+
+#: exe/xului/templates/dublincore.xul:<description >
+msgid ""
+"'\n"
+"'                Typically, Subject will be expressed as keywords, key phrases or\n"
+"'                classification codes that describe a topic of the resource.\n"
+"'                Recommended best practice is to select a value from a controlled\n"
+"'                vocabulary or formal classification scheme.\n"
+"'              "
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
+#: modifiers="control" id="renNodeKey">
+msgid "R"
+msgstr "R"
+
+#: exe/xului/templates/projectproperties.xul:<label value="Level 3:"
+#: style="width:8em" tooltiptext="">
+#, fuzzy
+msgid "Level 3:"
+msgstr "Tase 3:"
+
+#: exe/xului/templates/dublincore.xul:<label value="Description:"
+#: style="width:8em" tooltiptext="An account of the content resource.">
+#: exe/xului/templates/projectproperties.xul:<label
+msgid "Description:"
+msgstr "Kirjeldus:"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
+#: modifiers="control" id="promoteKey">
+msgid "VK_LEFT"
+msgstr "VK_LEFT"
+
+#: exe/xului/templates/dublincore.xul:<label value="Publisher:"
+#: style="width:8em" tooltiptext="An entity responsible for making the
+#: resource available.">
+msgid "Publisher:"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
+#: modifiers="control" id="demoteKey">
+msgid "VK_RIGHT"
+msgstr "VK_RIGHT"
+
+#: exe/xului/templates/dublincore.xul:<label value="Contributors:"
+#: style="width:8em" tooltiptext="An entity responsible for making
+#: contributions to the content of resource.">
+msgid "Contributors:"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
+#: modifiers="control" id="upKey">
+msgid "U"
+msgstr "U"
+
+#: exe/xului/templates/dublincore.xul:<label value="Date:" style="width:8em"
+#: tooltiptext="A date of an event in the lifecycle resource.">
+msgid "Date:"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
+#: modifiers="control" id="downKey">
+msgid "D"
+msgstr "D"
+
+#: exe/xului/templates/dublincore.xul:<description >
+msgid ""
+"'\n"
+"'                 Typically, Date will be associated with the creation or\n"
+"'                 availability of the resource. Recommended best practice for\n"
+"'                 encoding the date value is defined in a profile called\n"
+"'                 "
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
+#: modifiers="control" id="file-new-key" oncommand="fileNew()">
+msgid "N"
+msgstr "N"
+
+#: exe/xului/templates/dublincore.xul:<label value="Type:" style="width:8em"
+#: tooltiptext="The nature or genre of the content resource.">
+#, fuzzy
+msgid "Type:"
+msgstr "Vihje:"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
+#: modifiers="control" id="file-save-key" oncommand="fileSave()">
+msgid "S"
+msgstr "S"
+
+#: exe/xului/templates/dublincore.xul:<description id="dbDesc">
+msgid ""
+"'\n"
+"'              Type includes terms describing general categories, functions, or\n"
+"'              genres, for content. Recommended best practice is to select a value\n"
+"'              from a controlled vocabulary, for example, the ??????????"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
+#: modifiers="control" id="file-open-key" oncommand="fileOpen()">
+msgid "O"
+msgstr "O"
+
+#: exe/xului/templates/dublincore.xul:<label value="Format:" style="width:8em"
+#: tooltiptext="Select a Format.">
+#, fuzzy
+msgid "Format:"
+msgstr "XXX Float: XXX"
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
+#: accesskey="f" label="File">
+msgid "label=\"File\" accesskey=\"f\""
+msgstr "label=\"Fail\" accesskey=\"f\""
+
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
+#: 'blue'" id="dc_format" label="Select Format">
 #, fuzzy
 msgid "Select Format"
 msgstr "Vali pilt"
 
-#: exe/xului/templates/mainpage.xul:<menuitem oncommand="insertPackage()"
-#: label="Insert Package">
-msgid "Insert Package"
-msgstr "Sisesta pakett"
-
-#: exe/xului/templates/mainpage.xul:<menuitem oncommand="extractPackage()"
-#: label="Extract Package">
-msgid "Extract Package"
-msgstr "Ava pakett"
-
-#: exe/xului/templates/mainpage.xul:<key id="addChildKey" keycode="VK_INSERT">
-msgid "VK_INSERT"
-msgstr "VK_INSERT"
-
-#: exe/xului/templates/mainpage.xul:<key id="delNodeKey" keycode="VK_DELETE">
-msgid "VK_DELETE"
-msgstr "VK_DELETE"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="renNodeKey"
-#: key="R">
-msgid "R"
-msgstr "R"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="promoteKey"
-#: keycode="VK_LEFT">
-msgid "VK_LEFT"
-msgstr "VK_LEFT"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="demoteKey"
-#: keycode="VK_RIGHT">
-msgid "VK_RIGHT"
-msgstr "VK_RIGHT"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="upKey"
-#: key="U">
-msgid "U"
-msgstr "U"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="downKey"
-#: key="D">
-msgid "D"
-msgstr "D"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control" id="file-new-key"
-#: key="N" oncommand="fileNew()">
-msgid "N"
-msgstr "N"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control"
-#: id="file-save-key" key="S" oncommand="fileSave()">
-msgid "S"
-msgstr "S"
-
-#: exe/xului/templates/mainpage.xul:<key modifiers="control"
-#: id="file-open-key" key="O" oncommand="fileOpen()">
-msgid "O"
-msgstr "O"
-
-#: exe/xului/templates/mainpage.xul:<menu accesskey="f" id="file-menu"
-#: label="File">
-msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"Fail\" accesskey=\"f\""
-
-#: exe/xului/templates/mainpage.xul:<menu accesskey="t" id="tools-menu"
-#: label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Vahendid\" accesskey=\"t\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="n"
-#: oncommand="fileNew()" key="file-new-key" label="New">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Uus\" accesskey=\"n\""
 
-#: exe/xului/templates/mainpage.xul:<menu accesskey="s" id="styles-menu"
-#: label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Stiilid\" accesskey=\"s\""
+#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" label="XHTML">
+msgid "XHTML"
+msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="o"
-#: oncommand="fileOpen()" key="file-open-key" label="Open">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Ava\" accesskey=\"o\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem oncommand="toolsPreferences()"
-#: label="Preferences">
-msgid "Preferences"
-msgstr "Eelistused"
+#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" label="SCORM
+#: 1.2">
+#, fuzzy
+msgid "SCORM 1.2"
+msgstr "SCORM Eksperimentaalne Test"
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="r"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: label="Refresh">
-msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr "label=\"Uuenda\" accesskey=\"r\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
-#: oncommand="fileSave()" key="file-save-key" label="Save">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Salvesta\" accesskey=\"s\""
 
-#: exe/xului/templates/mainpage.xul:<menu accesskey="h" id="help-menu"
-#: label="Help">
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Abi\" accesskey=\"h\""
+#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" label="IMS
+#: Content Package 1.1.3">
+#, fuzzy
+msgid "IMS Content Package 1.1.3"
+msgstr "Sisesta pakett"
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
-#: oncommand="fileSaveAs()" label="Save As...">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Salvesta kui...\" accesskey=\"a\""
 
-#: exe/xului/templates/mainpage.xul:<label value="debugInfo">
-msgid "debugInfo"
-msgstr "debugInfo"
+#: exe/xului/templates/dublincore.xul:<menuitem value="Web Site" label="Web
+#: Site">
+#, fuzzy
+msgid "Web Site"
+msgstr "pealkiri"
 
-#: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="export-menu"
-#: label="Export">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Eksport\" accesskey=\"e\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="a"
-#: oncommand="aboutPage()" label="About">
-msgid "label=\"About\" accesskey=\"a\""
-msgstr "label=\"Meist...\" accesskey=\"a\""
+#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
+#: style="width:8em" tooltiptext="An unambiguous reference to the resource
+#: within a given context.">
+#, fuzzy
+msgid "Identifier:"
+msgstr "PildiLuup"
 
-#: exe/xului/templates/mainpage.xul:<menu accesskey="e" id="merging-menu"
-#: label="Merging">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+
+#: exe/xului/templates/dublincore.xul:<label value="Source:" style="width:8em"
+#: tooltiptext="A Reference to a resource from which the present is derived.">
+#, fuzzy
+msgid "Source:"
+msgstr "Lugu:"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS Sisupakett\" accesskey=\"i\""
+
+#: exe/xului/templates/dublincore.xul:<label value="Language:"
+#: style="width:8em" tooltiptext="Select a language.">
+#, fuzzy
+msgid "Language:"
+msgstr "Vali keel"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: key="file-export-website-key" oncommand="exportPackage('webSite')"
+#: accesskey="w" label="Web Site">
+msgid "label=\"Web Site\" accesskey=\"w\""
+msgstr "label=\"Veebileht\" accesskey=\"w\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem label="select a language">
+#, fuzzy
+msgid "select a language"
+msgstr "Vali keel"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Üks leht\" accesskey=\"p\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ru" label="Russian">
+msgid "Russian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="e" label="Merging">
 #, fuzzy
 msgid "label=\"Merging\" accesskey=\"e\""
 msgstr "label=\"Ava\" accesskey=\"o\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="R"
-#: oncommand="registerOnline()" label="Register Online">
-msgid "label=\"Register Online\" accesskey=\"R\""
-msgstr "label=\"Registreeru internetis\" accesskey=\"R\""
+#: exe/xului/templates/dublincore.xul:<menuitem value="uk" label="Ukranian">
+msgid "Ukranian"
+msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="s"
-#: oncommand="exportPackage('scorm')" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
-
-#: exe/xului/templates/mainpage.xul:<toolbarbutton key="addChildKey"
-#: label="Add Page">
-msgid "Add Page"
-msgstr "Lisa lehekülg"
-
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
-#: oncommand="exportPackage('ims')" label="IMS Content Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Sisupakett\" accesskey=\"i\""
-
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="i"
-#: oncommand="insertPackage()" label="Insert Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #, fuzzy
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"IMS Sisupakett\" accesskey=\"i\""
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton id="btnRename"
-#: key="renNodeKey" label="Rename">
-msgid "Rename"
-msgstr "Muuda nimi"
+#: exe/xului/templates/dublincore.xul:<menuitem value="en" label="English">
+msgid "English"
+msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<label flex="1" value="outlinePane">
-msgid "outlinePane"
-msgstr "Sisukorra riba"
-
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="E"
-#: oncommand="extractPackage()" label="Extract Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #, fuzzy
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"IMS Sisupakett\" accesskey=\"i\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="w"
-#: oncommand="exportPackage('webSite')" key="file-export-website-key"
-#: label="Web Site">
-msgid "label=\"Web Site\" accesskey=\"w\""
-msgstr "label=\"Veebileht\" accesskey=\"w\""
+#: exe/xului/templates/dublincore.xul:<menuitem value="fi" label="Finnish">
+msgid "Finnish"
+msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<label flex="1" value="iDevicePane">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Vahendid\" accesskey=\"t\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="fr" label="French">
+msgid "French"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Eelistused"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="de" label="German">
+msgid "German"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Stiilid\" accesskey=\"s\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="es" label="Spanish">
+msgid "Spanish"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh">
+msgid "label=\"Refresh\" accesskey=\"r\""
+msgstr "label=\"Uuenda\" accesskey=\"r\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="it" label="Italian">
+msgid "Italian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: accesskey="h" label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Abi\" accesskey=\"h\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" label="Croatian">
+#, fuzzy
+msgid "Croatian"
+msgstr "Pealkiri:"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="aboutPage()" accesskey="a" label="About">
+msgid "label=\"About\" accesskey=\"a\""
+msgstr "label=\"Meist...\" accesskey=\"a\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" label="Belarusian">
+msgid "Belarusian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="registerOnline()" accesskey="R" label="Register Online">
+msgid "label=\"Register Online\" accesskey=\"R\""
+msgstr "label=\"Registreeru internetis\" accesskey=\"R\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="sr" label="Serbian">
+msgid "Serbian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
+#: value="debugInfo">
+msgid "debugInfo"
+msgstr "debugInfo"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="mo" label="Moldavian">
+msgid "Moldavian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
+#: key="addChildKey" label="Add Page">
+msgid "Add Page"
+msgstr "Lisa lehekülg"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="no" label="Norvegian">
+msgid "Norvegian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
+#: key="renNodeKey" id="btnRename" label="Rename">
+msgid "Rename"
+msgstr "Muuda nimi"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ka" label="Georgian">
+msgid "Georgian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
+#: value="outlinePane">
+msgid "outlinePane"
+msgstr "Sisukorra riba"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="hy" label="Armenian">
+msgid "Armenian"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<label value="iDevices"
+#: style="margin-top:5px;">
+#, fuzzy
+msgid "iDevices"
+msgstr "iDevice Riba"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="az" label="Azerbaijan">
+msgid "Azerbaijan"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
+#: value="iDevicePane">
 msgid "iDevicePane"
 msgstr "iDevice Riba"
 
-#: exe/xului/templates/mainpage.xul:<menuitem accesskey="p"
-#: oncommand="exportPackage('singlePage')" label="Single Page">
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Üks leht\" accesskey=\"p\""
+#: exe/xului/templates/dublincore.xul:<menuitem value="kk" label="Kazakh">
+msgid "Kazakh"
+msgstr ""
 
-#: exe/xului/templates/mainpage.xul:<tab label="Authoring">
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Authoring">
 msgid "Authoring"
 msgstr "Autorlus"
 
-#: exe/xului/templates/mainpage.xul:<tab label="Properties">
+#: exe/xului/templates/dublincore.xul:<menuitem value="uz" label="Uzbek">
+msgid "Uzbek"
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
 msgid "Properties"
 msgstr "Omadused"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="la" label="Latvian">
+msgid "Latvian"
+msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="lt" label="Lithuanian">
+msgid "Lithuanian"
+msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="" label="Estonian">
+msgid "Estonian"
+msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<label value="Relation:"
+#: style="width:8em" tooltiptext="A reference to a related resource.">
+#, fuzzy
+msgid "Relation:"
+msgstr "Mõtisklus"
+
+#: exe/xului/templates/dublincore.xul:<label value="Coverage:"
+#: style="width:8em" tooltiptext="The extent or scope of the content
+#: resource.">
+msgid "Coverage:"
+msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<label value="Rights:" style="width:8em"
+#: tooltiptext="Information about rights held in and over the resource.">
+#, fuzzy
+msgid "Rights:"
+msgstr "Parem"
+
+#: exe/xului/templates/dublincore.xul:<description >
+msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
+msgstr ""
+
+#~ msgid "Question"
+#~ msgstr "Küsimus"
+
+#, fuzzy
+#~ msgid "Select a flash file"
+#~ msgstr "Vali Flash-video"
 
 #~ msgid "<strong>Frame Height:</strong> "
 #~ msgstr "<strong>Freimi kõrgus:</strong>"
@@ -1935,152 +2460,8 @@ msgstr "Omadused"
 #~ msgid "<strong>url:</strong> "
 #~ msgstr "<strong>url:</strong> "
 
-#~ msgid "A single simple discussion"
-#~ msgstr "Üks lihtne vestlus"
-
-#~ msgid "Can a student post to this forum?:"
-#~ msgstr "Kas õpilane võib sellesse foorumisse postitada ?:"
-
-#~ msgid "Choose a LMS"
-#~ msgstr "Vali LMS"
-
-#, fuzzy
-#~ msgid "Discussion Activity"
-#~ msgstr "Vestluse teema:"
-
-#, fuzzy
-#~ msgid "Discussion Topic/Thread:"
-#~ msgstr "Vestluse teema"
-
-#, fuzzy
-#~ msgid "Discussion topic/Thread"
-#~ msgstr "Vestluse teema:"
-
-#~ msgid "Discussions and replies are allowed"
-#~ msgstr "Vestlused ja vastused on lubatud"
-
-#~ msgid "Each person posts one discussion"
-#~ msgstr "Iga isik postitab ühe vestluse"
-
-#~ msgid "Example"
-#~ msgstr "Näide"
-
-#~ msgid "Example Example"
-#~ msgstr "Näitlik näide"
-
-#~ msgid "Force everyone to be subscribed?:"
-#~ msgstr "Sundida kõiki registreeruma?:"
-
-#, fuzzy
-#~ msgid "Forum Name:"
-#~ msgstr "Foorumi nimi:"
-
-#, fuzzy
-#~ msgid "Forum Name: "
-#~ msgstr "Foorumi nimi:"
-
-#~ msgid "Forum type:"
-#~ msgstr "Foorumi tüüp:"
-
-#~ msgid "Group mode:"
-#~ msgstr "Grupi rezhiim:"
-
-#, fuzzy
-#~ msgid "Introduction"
-#~ msgstr "Juhised"
-
-#~ msgid "Learning Management System"
-#~ msgstr "E-õpihalduskeskkond"
-
-#~ msgid "Learning Management System:"
-#~ msgstr "E-õpihalduskeskkond:"
-
-#~ msgid "Link to the forum"
-#~ msgstr "Link foorumile"
-
-#~ msgid "Moodle"
-#~ msgstr "Moodle"
-
-#~ msgid "New Forum"
-#~ msgstr "Uus foorum"
-
-#, fuzzy
-#~ msgid "New Topic"
-#~ msgstr "Teema"
-
-#~ msgid "No discussions, but replies are allowed"
-#~ msgstr "Vestlused pole lubatud, kuid vastused on lubatud"
-
-#~ msgid "No discussions, no replies"
-#~ msgstr "Vestlused ega vastused pole lubatud"
-
-#~ msgid "No groups"
-#~ msgstr "Gruppe pole"
-
-#~ msgid "Other"
-#~ msgstr "Muu"
-
-#, fuzzy
-#~ msgid "Please enter a discussion topic name.\n"
-#~ msgstr "Palun sisesta iDevice nimi."
-
-#, fuzzy
-#~ msgid "Please enter a name for the forum\n"
-#~ msgstr "Palun sisesta iDevice nimi."
-
-#~ msgid "Please select LMS.\n"
-#~ msgstr "Palun vali LMS.\n"
-
-#~ msgid "Please select a LMS"
-#~ msgstr "Palun vali LMS"
-
-#~ msgid "Please select a forum.\n"
-#~ msgstr "Palun vali foorum.\n"
-
 #~ msgid "SCORM Multiple Choice Quiz:"
 #~ msgstr "SCORM valikvastustega küsimustik"
-
-#~ msgid "Separate groups"
-#~ msgstr "Erista grupid"
-
-#~ msgid "Show"
-#~ msgstr "Näita"
-
-#~ msgid "Standard forum for general use"
-#~ msgstr "Foorum üldiseks kasutamiseks"
-
-#, fuzzy
-#~ msgid "This is a free text field."
-#~ msgstr "See väli ei ole kohustuslik."
-
-#~ msgid ""
-#~ "This is an example of a user created\n"
-#~ "iDevice plugin."
-#~ msgstr "See on näide kasutaja loodud iDevice pluginist."
-
-#~ msgid "Thread: "
-#~ msgstr "Lõim:"
-
-#~ msgid "Type a forum name here"
-#~ msgstr "Sisesta siia foorumi nimi"
-
-#~ msgid "Visible groups"
-#~ msgstr "Nähtavad grupid"
-
-#~ msgid "Visible to students:"
-#~ msgstr "Nähtav õpilastele:"
-
-#~ msgid "Yes, forever"
-#~ msgstr "Jah, alati"
-
-#~ msgid "Yes, initially"
-#~ msgstr "Jah, algselt"
-
-#~ msgid "duplicate forum name.\n"
-#~ msgstr "duplitseeritud foorumin nimi.\n"
-
-#~ msgid "duplicate topic name."
-#~ msgstr "duplitseeritud teema nimi."
 
 #~ msgid ""
 #~ "Describe the resource the learner must read in order to be able to \n"
@@ -2144,9 +2525,6 @@ msgstr "Omadused"
 #~ msgid "Flash Video File"
 #~ msgstr "Flash video fail"
 
-#~ msgid "Float:"
-#~ msgstr "XXX Float: XXX"
-
 #~ msgid "Provide details of the reading materials learners should  read."
 #~ msgstr "Sisesta detailid õpilastele mõeldud lugemismaterjalide kohta."
 
@@ -2192,7 +2570,4 @@ msgstr "Omadused"
 #~ msgstr "Teade:"
 
 #~ msgid "Subject"
-#~ msgstr "Teema:"
-
-#~ msgid "Subject:"
 #~ msgstr "Teema:"

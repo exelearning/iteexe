@@ -96,7 +96,8 @@ except ImportError, error:
         raise error
 
 from exe.engine.path import Path
-from nevow import loaders
+from xml.dom.ext.reader import Sax2
+from xml.dom.NodeFilter import NodeFilter
 
 # -----------------------------------------------------------------------------
 # Global variables
@@ -374,17 +375,19 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
             else:
                 if verbose:
                     print "template: ", fn
-                docTree = loaders.xmlfile(fn).load()
-                ctxs = [ctx for ctx in docTree
-                        if not isinstance(ctx, basestring)]
-                xul2dict(ctxs, messages, seq, fn.relpath())
+                reader = Sax2.Reader()
+                doc = reader.fromStream(file(fn, 'rb'))
+                xul2dict(doc, messages, seq, fn.relpath())
     dict2pot(messages, 'messages.pot')
 
-def xul2dict(ctxs, messages, seq, filename):
+def xul2dict(doc, messages, seq, filename):
     """Recursively translates some "stan" contexts and
     fills out the messages dict, which should be passed to dict2pot later
     """
-    for ctx in ctxs:
+    walker = doc.createTreeWalker(doc.documentElement,
+                                  NodeFilter.SHOW_ELEMENT, None, 0)
+    node = walker.currentNode
+    while 1:
         # IF YOU CHANGE THE BELOW RULES, CHANGE THEIR COPY IN:
         #   exe/webui/renderable.py
         # Here we have some rules:
@@ -399,28 +402,32 @@ def xul2dict(ctxs, messages, seq, filename):
         # We can do this because the whole tag is stuck in the comment
         # part so the translator can use that.
         # 5. For 'window' tags, the 'title' attribute is translated
+        if node is None:
+            break
         toTranslate = None
-        if 'label' in ctx.tag.attributes:
-            if 'accesskey' in ctx.tag.attributes:
+        if node.nodeName == 'description':
+            toTranslate = node.firstChild.data
+        elif node.hasAttribute('label'):
+            if node.hasAttribute('accesskey'):
                 toTranslate = 'label="%s" accesskey="%s"' % (
-                    ctx.tag.attributes.get('label'),
-                    ctx.tag.attributes.get('accesskey'))
+                    node.getAttribute('label'),
+                    node.getAttribute('accesskey'))
             else:
-                toTranslate = ctx.tag.attributes.get('label')
-        elif ctx.tag.tagName == 'label':
-            toTranslate = ctx.tag.attributes.get('value')
-        elif ctx.tag.tagName == 'key':
-            if 'key' in ctx.tag.attributes:
-                toTranslate = ctx.tag.attributes['key']
+                toTranslate = node.getAttribute('label')
+        elif node.nodeName == 'label':
+            toTranslate = node.getAttribute('value')
+        elif node.nodeName == 'key':
+            if node.hasAttribute('key'):
+                toTranslate = node.getAttribute('key')
             else:
-                toTranslate = ctx.tag.attributes['keycode']
-        elif ctx.tag.tagName == 'window':
-            toTranslate = ctx.tag.attributes.get('title')
+                toTranslate = node.getAttribute('keycode')
+        elif node.hasAttribute('window'):
+            toTranslate = node.getAttribute('title')
         if toTranslate:
             # Write it in the file
-            attributes = ' '.join(['%s="%s"' % (name, val) for name, val
-                                   in ctx.tag.attributes.items()])
-            tagStr = '<%s %s>' % (ctx.tag.tagName, attributes)
+            attributes = ' '.join(['%s="%s"' % (attr.name, attr.value) for attr
+                                   in node.attributes.values()])
+            tagStr = '<%s %s>' % (node.nodeName, attributes)
             if toTranslate in messages:
                 order, comments, msgStr = messages[toTranslate]
                 comments += ('#: %s:%s' % (filename, tagStr),)
@@ -429,10 +436,9 @@ def xul2dict(ctxs, messages, seq, filename):
                 messages[toTranslate] = seq, \
                     ('#: %s:%s' % (filename, tagStr),), ''
                 seq += 1
-        # Recurse
-        xul2dict([child for child 
-                  in ctx.tag.children 
-                  if not isinstance(child, basestring)], messages, seq, filename)
+        # Next node
+        node = walker.nextNode()
+
 
 def pot2dict(filename):
     """

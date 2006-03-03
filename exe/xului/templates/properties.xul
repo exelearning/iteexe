@@ -4,7 +4,7 @@
 <window title="Package Properties"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:n="http://nevow.com/ns/nevow/0.1"
-        onload="fillInForms()">
+        onload="fillInForms(); translate(document.documentElement);">
 
 <n:invisible n:render="liveid"/>
 <n:invisible n:render="liveglue"/>
@@ -17,7 +17,7 @@
   <![CDATA[
   regEx = /[a-z][a-z]_\w+/
 
-  # Translates all the nodes in the document
+  // Translates all the nodes in the document
   function translate(start) {
     if (start.nodeName == '#text') {
         nevow_clientToServerEvent('translate', this, '', start.parentNode.id, '!contents!', start.data)
@@ -26,16 +26,19 @@
     } else if (start.nodeName == 'label') {
       nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value)
     } else if (start.nodeName == 'key') {
-        if (start.hasAttribute('key')
-      nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value)
-    } else if (start.hasAttribute('label')) {
-
-    for (var i in start.childNodes) {
-        var node = start.childNodes[i];
-        collectIds(ids, node); // Recurse
+        if (start.hasAttribute('key')) {
+            nevow_clientToServerEvent('translate', this, '', start.id, 'key', start.value)
+        } else {
+            nevow_clientToServerEvent('translate', this, '', start.id, 'keycode', start.value)
+        }
+    } else if (start.nodeName == 'window') {
+      nevow_clientToServerEvent('translate', this, '', start.id, 'title', start.value)
     }
-      nodeName
-      data
+    // Drill down
+    for (var i=0; i < start.childNodes.length; i++) {
+        var node = start.childNodes[i];
+        translate(node);
+    }
   }
 
   function setText(textID) {

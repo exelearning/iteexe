@@ -6,15 +6,15 @@
       <caption id="pptitle" label="Project Properties" />
       <vbox flex="0" style="overflow: auto" >
          <hbox align="center">
-            <label style="width:8em" value="Project Title:" tooltiptext="The project's title." />
+            <label id="ppProjectTitle" style="width:8em" value="Project Title:" tooltiptext="The project's title." />
             <textbox id="pp_title" size="40" onchange="this.style.color='blue';" />
          </hbox>
          <hbox align="center">
-            <label style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
+            <label id="ppAuthor" style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
             <textbox id="pp_author" size="40" onchange="this.style.color='blue';" />
          </hbox>
          <hbox align="center">
-            <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
+            <label id="ppDescription" style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
             <textbox id="pp_description" multiline="true" rows="4" cols="38" onchange="this.style.color='blue';" /> 
          </hbox>
       </vbox>
@@ -22,15 +22,15 @@
     <groupbox flex="0">
     <caption label="Taxonomy" />
     <hbox align="center">
-          <label style="width:8em" value="Level 1:" tooltiptext="" />
+          <label id="ppLevel1" style="width:8em" value="Level 1:" tooltiptext="" />
           <textbox id="pp_level1" size="40" onchange="this.style.color='blue';" />
        </hbox>
        <hbox align="center">
-          <label style="width:8em" value="Level 2:" tooltiptext="" />
+          <label id="ppLevel2" style="width:8em" value="Level 2:" tooltiptext="" />
           <textbox id="pp_level2" size="40" onchange="this.style.color='blue';" />
        </hbox>
        <hbox align="center">
-          <label style="width:8em" value="Level 3:" tooltiptext="" />
+          <label id="ppLevel3" style="width:8em" value="Level 3:" tooltiptext="" />
           <textbox id="pp_level3" size="40" onchange="this.style.color='blue';" />
        </hbox>
     </groupbox>
