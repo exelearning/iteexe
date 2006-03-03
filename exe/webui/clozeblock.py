@@ -67,7 +67,6 @@ class ClozeBlock(Block):
         which words are hidden.
         """
         html = [
-            ClozeElement.renderEditScripts(),
             u'<div class="iDevice emphasis%s">' % \
               unicode(self.idevice.emphasis),
             u'<div class="block">',

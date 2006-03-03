@@ -303,11 +303,8 @@ class ClozeHTMLParser(HTMLParser):
         """
         Turn on inGap if necessary
         """
-        if tag.lower() == 'span':
-            attrs = dict(attrs)
-            style = attrs.get('style', '')
-            if 'underline' in style:
-                self.inGap = True
+        if tag.lower() == 'u':
+            self.inGap = True
         elif tag.lower() == 'br':
             if self.inGap:
                 self.lastGap += '<br/>' 
@@ -318,7 +315,7 @@ class ClozeHTMLParser(HTMLParser):
         """
         Turns of inGap
         """
-        if tag.lower() == 'span' and self.inGap:
+        if tag.lower() == 'u' and self.inGap:
             self.inGap = False
             self._endGap()
 
@@ -433,11 +430,9 @@ exercise.</p>""")
         for shown, hidden in parser.result:
             encodedContent += shown
             if hidden:
-                encodedContent += ' <span'
-                encodedContent += \
-                    '  style=&quot;text-decoration:underline&quot;>'
+                encodedContent += ' <u>'
                 encodedContent += hidden
-                encodedContent += '</span> ' 
+                encodedContent += '</u> ' 
         self._encodedContent = encodedContent
     
     # Properties

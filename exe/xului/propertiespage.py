@@ -182,8 +182,8 @@ class PropertiesPage(RenderableLivePage):
                     if attribute == '!contents!':
                         client.sendScript(js(
                             "document.getElementById(\"%s\").firstChild.data = '%s');" % 
-                                (elementId, newText)))
+                                (elementId, newText.encode('utf-8'))))
                     else:
                         client.sendScript(js(
                             "document.getElementById(\"%s\").setAttribute('%s', '%s');" % 
-                                (elementId, attribute, newText)))
+                                (elementId, attribute, newText.encode('utf-8'))))

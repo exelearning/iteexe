@@ -96,8 +96,8 @@ class TextElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-	html = common.formField('textInput',self.field.name,'',
-				self.id,self.field.content)
+        html = common.formField('textInput',self.field.name,'',
+                                self.id,self.field.content)
         #html  = u'<div class="block">'
         #html += u"<b>"+self.field.name+":</b>\n"
         #html += common.elementInstruc(self.field.instruc)
@@ -141,17 +141,9 @@ class FeedbackElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-	html = common.formField('richTextArea',self.field.name,'',
-				self.id, self.field.instruc,
-				self.field.feedback)
-        #html  = u'<div class="block">'
-        #html += u"<b>"+self.field.name+":</b>\n"
-        #html += common.elementInstruc(self.field.instruc)
-        #html += u"</div>\n"
-        #html += '<div class="block">\n'
-        #html += common.richTextArea(self.id, self.field.feedback)
-        #html += "</div>\n"
-
+        html = common.formField('richTextArea',self.field.name,'',
+                                self.id, self.field.instruc,
+                                self.field.feedback)
         return html
 
 
@@ -169,7 +161,6 @@ class FeedbackElement(Element):
             html += '<div id="fb%s" class="feedback" style="display: none;"> ' % self.id
             html += self.field.feedback
             html += "</div>\n"
-
         return html
 
 # ===========================================================================
@@ -205,12 +196,10 @@ class TextAreaElement(Element):
         """
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
-	html = common.formField('richTextArea',self.field.name,'',
-				self.id, self.field.instruc,
-				self.field.content,
-				str(self.width), str(self.height))
-       
-
+        html = common.formField('richTextArea',self.field.name,'',
+                                self.id, self.field.instruc,
+                                self.field.content,
+                                str(self.width), str(self.height))
         return html
 
 
@@ -223,7 +212,7 @@ class TextAreaElement(Element):
         else:
             visible = 'style="display:none"'
         return '<div id="ta%s" class="%s" %s>%s</div>' % (
-		self.id, class_, visible, self.field.content)
+        self.id, class_, visible, self.field.content)
     
 # ===========================================================================
 class ImageElement(Element):
@@ -462,10 +451,6 @@ class MagnifierElement(Element):
                 'bgcolor': '#888888',
                 'FlashVars': flashVars})
         
-# ==============================================================================
-# A wussy check to see that at least one element once has rendered scripts
-# before rendering edit mode content
-haveRenderedEditScripts = False
 
 
 class ClozeElement(Element):
@@ -504,9 +489,8 @@ class ClozeElement(Element):
         """
         Sets the encodedContent of our field
         """
-        clozeid = 'cloze%s' % self.id
-        if clozeid in request.args:
-            self.field.encodedContent = request.args[clozeid][0]
+        if self.editorId in request.args:
+            self.field.encodedContent = request.args[self.editorId][0]
             self.field.strictMarking = \
                 'strictMarking%s' % self.id in request.args
             self.field.checkCaps = \
@@ -514,76 +498,22 @@ class ClozeElement(Element):
             self.field.instantMarking = \
                 'instantMarking%s' % self.id in request.args
 
-    @staticmethod
-    def renderEditScripts():
-        """
-        Any block that includes one or more of these elements must include one
-        'renderEditScripts' result before any of the elements are rendered
-        """
-        global haveRenderedEditScripts
-        haveRenderedEditScripts = True
-        return u"""
-<script type="text/javascript">
-<!--
-  // Turns the editor on
-  function startEdit(editorString, hiddenField) {
-    var editor = eval(editorString);
-    var content = hiddenField.value.replace('&quot;', '"');
-    content = content.replace('&amp;', '&');
-    editor.designMode = "on";
-    editor.lastChild.style.backgroundColor = "white";
-    // editor.lastChild.lastChild.innerHTML = unescape(hiddenField.value);
-    editor.lastChild.lastChild.innerHTML = content;
-    beforeSubmitHandlers.push([clozeBeforeSubmit,
-        [editor.lastChild.lastChild, hiddenField]]);
-  };
-
-  // Makes the selected word become a gap
-  function makeGap(editor) {
-    editor.execCommand("underline", false, null);
-  };
-
-  // Uploads the editor content to the server
-  function clozeBeforeSubmit(node, hiddenField) {
-    var content = node.innerHTML.replace(/&/g, "&amp;")
-    content = content.replace(/"/g, "&quot;")
-    hiddenField.value = content
-  };
--->
-</script>
-"""
-
     def renderEdit(self):
         """
         Enables the user to set up their passage of text
         """
-        # Check that haveRenderedEditScripts has been called exactly once
-        assert haveRenderedEditScripts, \
-            ("You must call ClozeElement.renderEditScripts() once for each "
-             "idevice before calling self.renderEdit()")
         html = [
-            u'<div class="block">',
-            u'<b>%s</b>' % self.field.name,
-            common.elementInstruc(self.field.instruc),
-            u'</div>',
             # Render the iframe box
-            u' <iframe id="%s" style="width:100%%;height:250px">' % \
-                self.editorId,
-            u' </iframe>',
-            common.hiddenField('cloze'+self.id, self.field.encodedContent),
-            u' <script type="text/javascript">',
-            u' <!--',
-            ur'onLoadHandlers.push([startEdit, ["%s", %s]])' % \
-                (self.editorJs, self.hiddenFieldJs),
-            u' -->',
-            u' </script>',
+            common.formField('richTextArea', _('Cloze Text'),'',
+                             self.editorId, self.field.instruc,
+                             self.field.encodedContent),
             # Render our toolbar
             u'<table style="width: 100%;">',
             u'<tbody>',
             u'<tr>',
             u'<td>',
             u'  <input type="button" value="%s" ' % _("Hide/Show Word")+
-            ur"""onclick="makeGap(%s);"/>""" % self.editorJs,
+            ur"""onclick="tinyMCE.execInstanceCommand('mce_editor_1','Underline', false);"/>"""
             u'</td><td>',
             common.checkbox('strictMarking%s' % self.id,
                             self.field.strictMarking,
@@ -655,7 +585,7 @@ class ClozeElement(Element):
 
         # Score string
         html += ['<p id="clozeScore%s"></p>' % self.id]
-	html += ['<div class="block">\n']
+        html += ['<div class="block">\n']
         if self.field.instantMarking:
             html += ['<input type="button" ',
                      'value="%s"' % _(u"Get score"),
@@ -680,7 +610,7 @@ class ClozeElement(Element):
                         'restart%s' % self.id,
                         _(u"Restart"),
                         id='restart%s' % self.id,
-			style="display: none;",
+            style="display: none;",
                         onclick="clozeRestart('%s')" % self.id),
                      ]
             # Set the show/hide answers button attributes
@@ -695,8 +625,8 @@ class ClozeElement(Element):
                     id='showAnswersButton%s' % self.id,
                     style=style,
                     onclick=onclick),
-		]
-	html += ['</div>\n']
+        ]
+        html += ['</div>\n']
         return '\n'.join(html) + '</div>'
 
 # ===========================================================================
