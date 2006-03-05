@@ -26,7 +26,7 @@ from twisted.persisted.styles import requireUpgrade
 import logging
 
 from exe.engine.idevice  import Idevice
-from exe.engine.path     import Path, TempDirPath, toUnicode
+from exe.engine.path     import Path, toUnicode
 from exe.engine.persist  import Persistable
 from exe.engine.resource import Resource
 
@@ -70,7 +70,7 @@ class AppletIdevice(Idevice):
                _('iDevice %s has no package') % self.parentNode.id)
 
         if resourceFile.isfile():
-            self.userResources += [ Resource(self.parentNode.package, 
+            self.userResources += [ Resource(self.parentNode.package,
                                             resourceFile) ]
         else:
             log.error('File %s is not a file' % resourceFile)

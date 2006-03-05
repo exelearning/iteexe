@@ -80,13 +80,11 @@ class AppletBlock(Block):
         html += u'value="%s" />\n' % _(u"Add files")
         html += u'<input type="submit" name="%s" value="%s"' % ("upload"+self.id,
                                                                 _(u"Upload"))
-        html += common.elementInstruc('file'+self.id,
-                                      self.idevice.fileInstruc)
+        html += common.elementInstruc(self.idevice.fileInstruc)
         html += u'<br/>\n'
 
         html += u'<b>%s</b>\n' % _(u'Applet Code:')
-        html += common.elementInstruc('code'+self.id,
-                                      self.idevice.codeInstruc)
+        html += common.elementInstruc(self.idevice.codeInstruc)
         html += u'<br/>\n'
 
         html += common.textArea('code'+self.id,
