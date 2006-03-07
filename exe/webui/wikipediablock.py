@@ -50,19 +50,23 @@ class WikipediaBlock(Block):
         apply to this block
         """
         log.debug("process " + repr(request.args))
+        
+        # Get the combo box vals
+        fieldNames = ['emphasis', 'site']
+        fieldMap = [(field, field + self.id) for field in fieldNames]
+        for attr, fieldName in fieldMap:
+            if fieldName in request.args:
+                setattr(self.idevice, attr, request.args[fieldName][0])
 
-        if u"emphasis"+self.id in request.args:
-            self.idevice.emphasis = int(request.args["emphasis"+self.id][0])
-
-        if u"loadWikipedia"+self.id in request.args:
-            self.idevice.site = request.args["site"][0]
-            self.idevice.loadArticle(request.args["article"][0])
+        if 'loadWikipedia'+self.id in request.args:
+            # If they've hit submit
+            self.idevice.loadArticle(request.args['article'][0])
         else:
             Block.process(self, request)
-
-            if (u"action" not in request.args or
-                request.args[u"action"][0] != u"delete"):
-                self.articleElement.process(request)
+        if (u"action" not in request.args or
+            request.args[u"action"][0] != u"delete"):
+            # If the text has been changed
+            self.articleElement.process(request)
 
 
     def renderEdit(self, style):
@@ -72,7 +76,7 @@ class WikipediaBlock(Block):
         log.debug("renderEdit")
 
         html  = u"<div class=\"iDevice\"><br/>\n"
-        html += common.textInput("title"+self.id, self.idevice.title)
+        html += common.textInput("title" + self.id, self.idevice.title)
 
         sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/"),
                  (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/"),
