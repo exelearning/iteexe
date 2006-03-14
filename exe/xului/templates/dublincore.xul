@@ -6,15 +6,15 @@
       <caption label="Dublin Core Metadata"/>
       <vbox flex="0">
         <hbox align="center">
-          <label style="width:8em" value="Title:" tooltiptext="The name given to the resource."/>
+          <label id="dcTitle" style="width:8em" value="Title:" tooltiptext="The name given to the resource."/>
           <textbox id="dc_title" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
+          <label id="dcCreator" style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
           <textbox id="dc_creator" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
+          <label id="dcSubject" style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
           <textbox id="dc_subject" size="40" onchange="this.style.color = 'blue'" />
           <image src="http://localhost:8081/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
         </hbox>
@@ -29,19 +29,19 @@
           </groupbox>
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Description:" tooltiptext="An account of the content of the resource."/>
+          <label id="dcDescription" style="width:8em" value="Description:" tooltiptext="An account of the content of the resource."/>
           <textbox id="dc_description" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
+          <label id="dcPublisher" style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
           <textbox id="dc_publisher" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource."/>
+          <label id="dcContributors" style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource."/>
           <textbox id="dc_contributors" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource."/>
+          <label id="dcDate" style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource."/>
           <textbox id="dc_date" size="40" onchange="this.style.color = 'blue'" />
           <image src="http://localhost:8081/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
         </hbox>
@@ -58,7 +58,7 @@
           </groupbox>
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
+          <label id="dcType" style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
           <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'blue'" />
           <image src="http://localhost:8081/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
         </hbox>
@@ -74,7 +74,7 @@
           </groupbox>
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Format:" tooltiptext="Select a Format."/>
+          <label id="dcFormat" style="width:8em" value="Format:" tooltiptext="Select a Format."/>
           <menulist id="dc_format" label="Select Format" onchange="this.style.color = 'blue'" >
             <menupopup>
               <menuitem label="XHTML" value="XHTML"/>
@@ -85,64 +85,197 @@
           </menulist>
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
+          <label id="dcIdentifier" style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
           <textbox id="dc_identifier" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived."/>
+          <label id="dcSource" style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived."/>
           <textbox id="dc_source" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Language:" tooltiptext="Select a language."/>
+          <label id="dcLanguage" style="width:8em" value="Language:" tooltiptext="Select a language."/>
           <menulist id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
             <menupopup>
-              <menuitem label="select a language"/>
-              <menuitem label="Russian" value="ru"/>
-              <menuitem label="Ukranian" value="uk"/>
-              <menuitem label="English" value="en"/>
-              <menuitem label="Finnish" value="fi"/>
-              <menuitem label="French" value="fr"/>
-              <menuitem label="German" value="de"/>
-              <menuitem label="Spanish" value="es"/>
-              <menuitem label="Italian" value="it"/>
-              <menuitem label="Croatian" value="hr"/>
-              <menuitem label="Belarusian" value="be"/>
-              <menuitem label="Serbian" value="sr"/>
-              <menuitem label="Moldavian" value="mo"/>
-              <menuitem label="Norvegian" value="no"/>
-              <menuitem label="Georgian" value="ka"/>
-              <menuitem label="Armenian" value="hy"/>
-              <menuitem label="Azerbaijan" value="az"/>
-              <menuitem label="Kazakh" value="kk"/>
-              <menuitem label="Uzbek" value="uz"/> 
-              <menuitem label="Latvian" value="la"/>
-              <menuitem label="Lithuanian" value="lt"/>
-              <menuitem label="Estonian" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-              <menuitem label="" value=""/>
-
-
-
+                <menuitem value="aa" label="Afar. "/>
+                <menuitem value="ab" label="Abkhazian. "/>
+                <menuitem value="ae" label="Avestan. "/>
+                <menuitem value="af" label="Afrikaans. "/>
+                <menuitem value="am" label="Amharic. "/>
+                <menuitem value="ar" label="Arabic. "/>
+                <menuitem value="as" label="Assamese. "/>
+                <menuitem value="ay" label="Aymara. "/>
+                <menuitem value="az" label="Azerbaijani. "/>
+                <menuitem value="ba" label="Bashkir. "/>
+                <menuitem value="be" label="Byelorussian; Belarusian. "/>
+                <menuitem value="bg" label="Bulgarian. "/>
+                <menuitem value="bh" label="Bihari. "/>
+                <menuitem value="bi" label="Bislama. "/>
+                <menuitem value="bn" label="Bengali; Bangla. "/>
+                <menuitem value="bo" label="Tibetan. "/>
+                <menuitem value="br" label="Breton. "/>
+                <menuitem value="bs" label="Bosnian. "/>
+                <menuitem value="ca" label="Catalan. "/>
+                <menuitem value="ce" label="Chechen. "/>
+                <menuitem value="ch" label="Chamorro. "/>
+                <menuitem value="co" label="Corsican. "/>
+                <menuitem value="cs" label="Czech. "/>
+                <menuitem value="cu" label="Church Slavic. "/>
+                <menuitem value="cv" label="Chuvash. "/>
+                <menuitem value="cy" label="Welsh. "/>
+                <menuitem value="da" label="Danish. "/>
+                <menuitem value="de" label="German. "/>
+                <menuitem value="dz" label="Dzongkha; Bhutani. "/>
+                <menuitem value="el" label="Greek. "/>
+                <menuitem value="en" label="English. "/>
+                <menuitem value="eo" label="Esperanto. "/>
+                <menuitem value="es" label="Spanish. "/>
+                <menuitem value="et" label="Estonian. "/>
+                <menuitem value="eu" label="Basque. "/>
+                <menuitem value="fa" label="Persian. "/>
+                <menuitem value="fi" label="Finnish. "/>
+                <menuitem value="fj" label="Fijian; Fiji. "/>
+                <menuitem value="fo" label="Faroese. "/>
+                <menuitem value="fr" label="French. "/>
+                <menuitem value="fy" label="Frisian. "/>
+                <menuitem value="ga" label="Irish. "/>
+                <menuitem value="gd" label="Scots; Gaelic. "/>
+                <menuitem value="gl" label="Gallegan; Galician. "/>
+                <menuitem value="gn" label="Guarani. "/>
+                <menuitem value="gu" label="Gujarati. "/>
+                <menuitem value="gv" label="Manx. "/>
+                <menuitem value="ha" label="Hausa (?). "/>
+                <menuitem value="he" label="Hebrew (formerly iw). "/>
+                <menuitem value="hi" label="Hindi. "/>
+                <menuitem value="ho" label="Hiri Motu. "/>
+                <menuitem value="hr" label="Croatian. "/>
+                <menuitem value="hu" label="Hungarian. "/>
+                <menuitem value="hy" label="Armenian. "/>
+                <menuitem value="hz" label="Herero. "/>
+                <menuitem value="ia" label="Interlingua. "/>
+                <menuitem value="id" label="Indonesian (formerly in). "/>
+                <menuitem value="ie" label="Interlingue. "/>
+                <menuitem value="ik" label="Inupiak. "/>
+                <menuitem value="io" label="Ido. "/>
+                <menuitem value="is" label="Icelandic. "/>
+                <menuitem value="it" label="Italian. "/>
+                <menuitem value="iu" label="Inuktitut. "/>
+                <menuitem value="ja" label="Japanese. "/>
+                <menuitem value="jv" label="Javanese. "/>
+                <menuitem value="ka" label="Georgian. "/>
+                <menuitem value="ki" label="Kikuyu. "/>
+                <menuitem value="kj" label="Kuanyama. "/>
+                <menuitem value="kk" label="Kazakh. "/>
+                <menuitem value="kl" label="Kalaallisut; Greenlandic. "/>
+                <menuitem value="km" label="Khmer; Cambodian. "/>
+                <menuitem value="kn" label="Kannada. "/>
+                <menuitem value="ko" label="Korean. "/>
+                <menuitem value="ks" label="Kashmiri. "/>
+                <menuitem value="ku" label="Kurdish. "/>
+                <menuitem value="kv" label="Komi. "/>
+                <menuitem value="kw" label="Cornish. "/>
+                <menuitem value="ky" label="Kirghiz. "/>
+                <menuitem value="la" label="Latin. "/>
+                <menuitem value="lb" label="Letzeburgesch. "/>
+                <menuitem value="ln" label="Lingala. "/>
+                <menuitem value="lo" label="Lao; Laotian. "/>
+                <menuitem value="lt" label="Lithuanian. "/>
+                <menuitem value="lv" label="Latvian; Lettish. "/>
+                <menuitem value="mg" label="Malagasy. "/>
+                <menuitem value="mh" label="Marshall. "/>
+                <menuitem value="mi" label="Maori. "/>
+                <menuitem value="mk" label="Macedonian. "/>
+                <menuitem value="ml" label="Malayalam. "/>
+                <menuitem value="mn" label="Mongolian. "/>
+                <menuitem value="mo" label="Moldavian. "/>
+                <menuitem value="mr" label="Marathi. "/>
+                <menuitem value="ms" label="Malay. "/>
+                <menuitem value="mt" label="Maltese. "/>
+                <menuitem value="my" label="Burmese. "/>
+                <menuitem value="na" label="Nauru. "/>
+                <menuitem value="nb" label="Norwegian Bokmål. "/>
+                <menuitem value="nd" label="Ndebele, North. "/>
+                <menuitem value="ne" label="Nepali. "/>
+                <menuitem value="ng" label="Ndonga. "/>
+                <menuitem value="nl" label="Dutch. "/>
+                <menuitem value="nn" label="Norwegian Nynorsk. "/>
+                <menuitem value="no" label="Norwegian. "/>
+                <menuitem value="nr" label="Ndebele, South. "/>
+                <menuitem value="nv" label="Navajo. "/>
+                <menuitem value="ny" label="Chichewa; Nyanja. "/>
+                <menuitem value="oc" label="Occitan; Provençal. "/>
+                <menuitem value="om" label="(Afan) Oromo. "/>
+                <menuitem value="or" label="Oriya. "/>
+                <menuitem value="os" label="Ossetian; Ossetic. "/>
+                <menuitem value="pa" label="Panjabi; Punjabi. "/>
+                <menuitem value="pi" label="Pali. "/>
+                <menuitem value="pl" label="Polish. "/>
+                <menuitem value="ps" label="Pashto, Pushto. "/>
+                <menuitem value="pt" label="Portuguese. "/>
+                <menuitem value="qu" label="Quechua. "/>
+                <menuitem value="rm" label="Rhaeto-Romance. "/>
+                <menuitem value="rn" label="Rundi; Kirundi. "/>
+                <menuitem value="ro" label="Romanian. "/>
+                <menuitem value="ru" label="Russian. "/>
+                <menuitem value="rw" label="Kinyarwanda. "/>
+                <menuitem value="sa" label="Sanskrit. "/>
+                <menuitem value="sc" label="Sardinian. "/>
+                <menuitem value="sd" label="Sindhi. "/>
+                <menuitem value="se" label="Northern Sami. "/>
+                <menuitem value="sg" label="Sango; Sangro. "/>
+                <menuitem value="si" label="Sinhalese. "/>
+                <menuitem value="sk" label="Slovak. "/>
+                <menuitem value="sl" label="Slovenian. "/>
+                <menuitem value="sm" label="Samoan. "/>
+                <menuitem value="sn" label="Shona. "/>
+                <menuitem value="so" label="Somali. "/>
+                <menuitem value="sq" label="Albanian. "/>
+                <menuitem value="sr" label="Serbian. "/>
+                <menuitem value="ss" label="Swati; Siswati. "/>
+                <menuitem value="st" label="Sesotho; Sotho, Southern. "/>
+                <menuitem value="su" label="Sundanese. "/>
+                <menuitem value="sv" label="Swedish. "/>
+                <menuitem value="sw" label="Swahili. "/>
+                <menuitem value="ta" label="Tamil. "/>
+                <menuitem value="te" label="Telugu. "/>
+                <menuitem value="tg" label="Tajik. "/>
+                <menuitem value="th" label="Thai. "/>
+                <menuitem value="ti" label="Tigrinya. "/>
+                <menuitem value="tk" label="Turkmen. "/>
+                <menuitem value="tl" label="Tagalog. "/>
+                <menuitem value="tn" label="Tswana; Setswana. "/>
+                <menuitem value="to" label="Tonga (?). "/>
+                <menuitem value="tr" label="Turkish. "/>
+                <menuitem value="ts" label="Tsonga. "/>
+                <menuitem value="tt" label="Tatar. "/>
+                <menuitem value="tw" label="Twi. "/>
+                <menuitem value="ty" label="Tahitian. "/>
+                <menuitem value="ug" label="Uighur. "/>
+                <menuitem value="uk" label="Ukrainian. "/>
+                <menuitem value="ur" label="Urdu. "/>
+                <menuitem value="uz" label="Uzbek. "/>
+                <menuitem value="vi" label="Vietnamese. "/>
+                <menuitem value="vo" label="Volapük; Volapuk. "/>
+                <menuitem value="wa" label="Walloon. "/>
+                <menuitem value="wo" label="Wolof. "/>
+                <menuitem value="xh" label="Xhosa. "/>
+                <menuitem value="yi" label="Yiddish (formerly ji). "/>
+                <menuitem value="yo" label="Yoruba. "/>
+                <menuitem value="za" label="Zhuang. "/>
+                <menuitem value="zh" label="Chinese. "/>
+                <menuitem value="zu" label="Zulu."/>
             </menupopup>
           </menulist>
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Relation:" tooltiptext="A reference to a related resource."/>
+          <label id="dcRelation" style="width:8em" value="Relation:" tooltiptext="A reference to a related resource."/>
           <textbox id="dc_relation" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource."/>
+          <label id="dcCoverage" style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource."/>
           <textbox id="dc_coverage" size="40" onchange="this.style.color = 'blue'" />
         </hbox>
         <hbox align="center">
-          <label style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource."/>
+          <label id="dcRights" style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource."/>
           <textbox id="dc_rights" size="40" onchange="this.style.color = 'blue'" />
           <image src="http://localhost:8081/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
         </hbox>

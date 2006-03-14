@@ -61,11 +61,13 @@ class ForumBlock(Block):
              self.id in request.args)):
             self.idevice.edit = True
             self.idevice.noForum = False
+            self.idevice.isNewForum = False
             
             value = request.args["object"][0]
 
             if value == "":
                 self.idevice.noForum = True
+                self.idevice.forum = Forum()
             elif value == "newForum":
                 forum = Forum()
                 self.idevice.forum = forum
@@ -158,8 +160,10 @@ class ForumBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = self.forumElement.renderEdit()
+        html  = "<div class=\"iDevice\">\n"
+        html += self.forumElement.renderEdit()
         html += u"<p>" + self.renderEditButtons() + "</p>"
+        html += "</div>\n"
 
         return html
     
@@ -169,7 +173,8 @@ class ForumBlock(Block):
         Returns an XHTML string for previewing this block
         """
         html  = u'<div class="iDevice '
-        html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
+        html += u'emphasis'+unicode(self.idevice.emphasis)+'"\n'
+        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u'<img alt="" class="iDevice_icon" '
         html += u'src="/style/'+style+'/icon_'+self.idevice.icon+'.gif" />\n'
         html += u'<span class="iDeviceTitle">'

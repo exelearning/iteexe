@@ -22,11 +22,12 @@ The PropertiesPage is for user to enter or edit package's properties
 """
 
 import logging
-from exe.webui.propertiespane import PropertiesPane
-from exe.webui.renderable import RenderableLivePage
-from nevow import loaders, inevow, stan
-from nevow.livepage import handler, js
-from exe.engine.path import Path
+from exe.webui.renderable     import RenderableLivePage
+from nevow                    import loaders, inevow, stan
+from nevow.livepage           import handler, js
+from exe.engine.path          import Path, toUnicode
+import re
+
 
 log = logging.getLogger(__name__)
 
@@ -37,6 +38,12 @@ class PropertiesPage(RenderableLivePage):
     """
     _templateFileName = 'properties.xul'
     name = 'properties'
+    # List of field names that contain boolean values
+    booleanFieldNames = ('pp_scolinks',)
+    # Used for url encoding with unicode support
+    reUni = re.compile('(%u)([0-9,A-F,a-f]{4})')
+    reChr = re.compile('(%)([0-9,A-F,a-f]{2})')
+    reRaw = re.compile('(.)')
 
     def __init__(self, parent):
         """
@@ -55,13 +62,6 @@ class PropertiesPage(RenderableLivePage):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
 
-        hndlr = handler(self.handleSubmit, identifier='submit')
-        hndlr(ctx, client) # Stores it
-
-        hndlr = handler(self.submitProjectProperties,
-                        identifier='submitProjectProperties')
-        hndlr(ctx, client) # Stores it
-
         hndlr = handler(self.fillInField, identifier='fillInField')
         hndlr(ctx, client) # Stores it
 
@@ -71,26 +71,6 @@ class PropertiesPage(RenderableLivePage):
         hndlr = handler(self.translate, identifier='translate')
         hndlr(ctx, client) # Stores it
 
-    def handleSubmit(self, client, title, creator, subject, description, 
-                     publisher, contributor, date, type, format, identifier,
-                     source, language, relation, coverage, rights):
-        self.package.dublinCore.title = title
-        self.package.dublinCore.creator = creator
-        self.package.dublinCore.subject = subject
-        self.package.dublinCore.description = description
-        self.package.dublinCore.publisher = publisher
-        self.package.dublinCore.contributor = contributor
-        self.package.dublinCore.date = date
-        self.package.dublinCore.type = type
-        self.package.dublinCore.format = format 
-        self.package.dublinCore.identifier = identifier
-        self.package.dublinCore.source = source
-        self.package.dublinCore.language = language
-        self.package.dublinCore.relation = relation
-        self.package.dublinCore.coverage = coverage
-        self.package.dublinCore.rights = rights
-        client.alert(_(u'Properties Updated'))
-        client.sendScript(js('top.location = top.location;'))
 
     def __getattribute__(self, name):
         """
@@ -107,20 +87,6 @@ class PropertiesPage(RenderableLivePage):
                 return lambda ctx, data: ctx.tag(value=getattr(obj, localName))
         return RenderableLivePage.__getattribute__(self, name)
 
-    def submitProjectProperties(self, client,
-                                title, author, description,
-                                level1, level2, level3):
-        """
-        Handles the submission of the project properties
-        """
-        self.package.title = title
-        self.package.author = author
-        self.package.description = description
-        self.package.level1 = level1
-        self.package.level2 = level2
-        self.package.level3 = level3
-        client.alert(_(u'Project Properties Updated'))
-        client.sendScript(js('top.location = top.location;'))
 
     def fieldId2obj(self, fieldId):
         """
@@ -149,9 +115,18 @@ class PropertiesPage(RenderableLivePage):
         # Get the object
         obj, name = self.fieldId2obj(fieldId)
         value = getattr(obj, name)
-        client.sendScript(js(
-            'document.getElementById("%s").value = "%s"' % \
-                (fieldId, value.encode('utf-8'))))
+        if fieldId in self.booleanFieldNames:
+            client.sendScript(js(
+                'document.getElementById("%s").checked = %s' % \
+                    (fieldId, str(value).lower())))
+        else:
+            # Remove enters
+            encoded = ''
+            for char in value:
+                encoded += '%%u%04x' % ord(char[0])
+            client.sendScript(js(
+                'document.getElementById("%s").value = unescape("%s")' % \
+                    (fieldId, encoded)))
 
     def recieveFieldData(self, client, fieldId, value, number, total):
         """
@@ -164,11 +139,42 @@ class PropertiesPage(RenderableLivePage):
         else:
             self.fieldsReceived.add(fieldId)
         obj, name = self.fieldId2obj(fieldId)
-        setattr(obj, name, value)
+        # Decode the value
+        decoded = ''
+        toSearch = value
+        def getMatch():
+            if toSearch and toSearch[0] == '%':
+                match1 = self.reUni.search(toSearch)
+                match2 = self.reChr.search(toSearch)
+                if match1 and match2:
+                    if match1.start() < match2.start():
+                        return match1
+                    else:
+                        return match2
+                else:
+                    return match1 or match2
+            else:
+                return self.reRaw.search(toSearch)
+        match = getMatch()
+        while match:
+            num = match.groups()[-1]
+            if len(num) > 1:
+                decoded += unichr(int(num, 16))
+            else:
+                decoded += num
+            toSearch = toSearch[match.end():]
+            match = getMatch()
+        # Check the field type
+        if fieldId in self.booleanFieldNames:
+            setattr(obj, name, decoded[0].lower() == 't')
+        else:
+            # Must be a string
+            setattr(obj, name, toUnicode(decoded))
         client.sendScript(js(
             'document.getElementById("%s").style.color = "black"' % fieldId))
-        if len(self.fieldsReceived) == total - 1:
-            client.sendScript(js('alert("%s")' % _('Settings saved')))
+        if len(self.fieldsReceived) == total:
+            client.sendScript(js.alert(
+                (u"%s" % _('Settings saved')).encode('utf8')))
 
     def translate(self, client, elementId, attribute, data):
         """

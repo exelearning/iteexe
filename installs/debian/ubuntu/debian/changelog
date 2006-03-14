@@ -1,8 +1,136 @@
+python-exe (0.14-0.1ubuntu1) unstable; urgency=low
+
+  * New properties pages with dublin core properties for export
+  * Better International Support
+  * Better XHTML Compliance
+  * Styling and CSS improvements
+  * Next/Previous buttons on SCORM export
+  * New editor for Cloze IDevice
+  * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.13-0.1ubuntu1) unstable; urgency=low
+
+    * Cleverer ready to run version 
+    * Better International Support
+    * Image magnifier IDevice
+    * New Gallery Interface
+    * Better XHTML Compliance
+    * Stabalisation of SCORM Quiz
+    * Styling and CSS improvements
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.12-0.1ubuntu1) unstable; urgency=low
+
+    * Merging: insert and extract packages
+    * Discussion iDevice plug-in
+    * Enhanced Cloze iDevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
 python-exe (0.11-0.1ubuntu1) unstable; urgency=low
 
-  [ Unknown ]
+    * New Flash movie iDevice
+    * Feedback field in iDevice Editor
+    * Mac release
+    * Dutch, Icelandic and Swedish languages
+    * Online registration with exelearning.org
+    * Improved Wikipedia Idevice
+    * Bug fixes
 
-  [ Matthew Sherborne ]
-  * Created automatically by dh_make (distutils 2.4.1)
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
 
- -- Matthew Sherborne <matthew@exelearning.org>  Tue, 27 Sep 2005 16:02:38 +1200
+python-exe (0.10-0.1ubuntu1) unstable; urgency=low
+
+    * Browser interface with much better usability
+    * Using TinyMCE rich text editor
+    * Preferences dialog for changing language
+    * German, Greek, Spanish and Chinese languages
+    * New Style: Kahurangi
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.9-0.1ubuntu1) unstable; urgency=low
+
+    * More work on GtkMozEmbed interface
+    * Drag and drop tree
+    * New Cloze and External Website iDevices
+    * Bug Fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.8-0.1ubuntu1) unstable; urgency=low
+
+    * Return to web interface
+    * iDevice plug-in interface
+    * Flash iDevice
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.7-0.1ubuntu1) unstable; urgency=low
+
+    * Experimental GtkMozEmbed interface
+    * Gallery iDevice
+    * Improved iDevice editor
+    * New default style
+    * Single page export
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.6-0.1ubuntu1) unstable; urgency=low
+
+    * New Attachment and Wikipedia iDevices
+    * ImageWithText iDevice can now have image left or right aligned
+    * Bug fixes
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.5-0.1ubuntu1) unstable; urgency=low
+
+    * True-False Question iDevice
+    * Image and Text iDevice
+    * ongoing code development
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.4-0.1ubuntu1) unstable; urgency=low
+
+    * basic iDevice editor
+    * XUL interface development
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.3-0.1ubuntu1) unstable; urgency=low
+
+    * modified Case Study iDevice
+    * new Web Site export
+    * Firefox bundled with eXe as one install
+    * Improved file format (not sure it will be final)
+    * A new installer which will launch the User Guide when finished
+      and will remove old versions of eXe
+    * Fixes for bugs # 7, 13, 14, 10, 9, 22, 24, 25, 4, 37, 15, 18, 34, 35
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.2-0.1ubuntu1) unstable; urgency=low
+
+    * significant improvements in the user interface
+    * the addition of more iDevices
+    * the ability to change Styles
+    * the addition of pedagogical help and tips to iDevices.
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+
+python-exe (0.1-0.1ubuntu1) unstable; urgency=low
+
+    * initial release
+
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 14 Mar 2006 16:29:41 +1300
+

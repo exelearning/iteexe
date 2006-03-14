@@ -509,7 +509,7 @@ def dict2pot(dct, filename, verbose=False):
         # comments
         write('\n')
         for line in comments:
-            write('%s\n' % line)
+            write('%s\n' % line.encode('utf8'))
         # Msgid
         if '\n' in msgid:
             write('msgid ""\n')

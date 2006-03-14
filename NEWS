@@ -1,3 +1,22 @@
+Version 0.14 - (((Mangled Moa)))
+* New properties pages with dublin core properties for export
+* Better International Support
+* Better XHTML Compliance
+* Styling and CSS improvements
+* Next/Previous buttons on SCORM export
+* New editor for Cloze IDevice
+* Bug fixes
+
+Version 0.13 - (((Pouty Pipi)))
+* Cleverer ready to run version 
+* Better International Support
+* Image magnifier IDevice
+* New Gallery Interface
+* Better XHTML Compliance
+* Stabalisation of SCORM Quiz
+* Styling and CSS improvements
+* Bug fixes
+
 Version 0.12 - (((Merry Santa)))
 * Merging: insert and extract packages
 * Discussion iDevice plug-in

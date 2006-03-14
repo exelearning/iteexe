@@ -130,7 +130,7 @@ def image(name, value, width="", height="", alt=None):
     html += u"/>\n"
     return html
 
-def flash(src, width, height, id_=None, params={}, **kwparams):
+def flash(src, width, height, id_=None, params=None, **kwparams):
     """Returns the XHTML for flash.
     'params' is a dictionary of name, value pairs that will be turned into a
     bunch of <param> tags"""
@@ -141,17 +141,20 @@ def flash(src, width, height, id_=None, params={}, **kwparams):
                  height=height,
                  **kwparams)
     if id_:
-        stan = stan(id=id_)
-    if src:
-        stan = stan(data=src)
+        stan.attributes['id'] = id_
+    stan.attributes['data'] = src
+    if params is None:
+        params = {}
+    params.setdefault('movie', src)
     for name, value in params.items():
         stan = stan[T.param(name=name, value=value)]
-    return flatten(stan)
+    return unicode(flatten(stan).replace('&amp;', '&'), 'utf8')
 
-def flashMovie(src, width, height):
+def flashMovie(movie, width, height, resourcesDir=''):
     """Returns the XHTML for a flash movie"""
-    log.debug(u"flash %s" % src)
-    src = 'videoContainer.swf?videoSource=%s&amp;autoPlay=false' % src
+    log.debug(u"flash %s" % movie)
+    src = resourcesDir
+    src += 'videoContainer.swf?videoSource=%s&autoPlay=false' % movie
     return flash(src, width, height,
         params={'movie': src,
                 'menu' : 'false'})

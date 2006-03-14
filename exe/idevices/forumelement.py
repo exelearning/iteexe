@@ -91,36 +91,42 @@ class LmsElement(object):
             visibleArr = [[_(u'Show'), '1'], 
                           [_(u'Hide'), '0']]
 
+    
+            
             html  = common.formField('select', _(u"Forum type:"),
-                                     'type', self.id,
+                                     "type" + self.id, '',
                                      self.lms.typeInstruc,
-                                     typeArr, self.lms.type)
-
-            html  = common.formField('select', 
+                                     typeArr, 
+                                     self.lms.type)
+           
+            html += common.formField('select', 
                                      _(u"Can a student post to this forum?:"),
-                                     'studentpost', self.id,
+                                     "studentpost" + self.id, '',
                                      self.lms.postInstruc,
-                                     postArr, self.lms.studentpost)
-
-            html  = common.formField('select', 
+                                     postArr, 
+                                     self.lms.studentpost)
+                                  
+            html += common.formField('select', 
                                      _(u"Force everyone to be subscribed?:"),
-                                     'subscription', self.id,
+                                     "subscription" + self.id, '',
                                      self.lms.subscInstruc,
-                                     subscArr, self.lms.subscription)
-
-            html  = common.formField('select', 
+                                     subscArr, 
+                                     self.lms.subscription)
+                                  
+            html += common.formField('select', 
                                      _(u"Group mode:"),
-                                     'groupmode', self.id,
+                                     "groupmode" + self.id, '',
                                      self.lms.groupInstruc,
-                                     groupArr, self.lms.groupmode)
-
-            html  = common.formField('select', 
+                                     groupArr, 
+                                     self.lms.groupmode)
+                                  
+            html += common.formField('select', 
                                      _(u"Visible to students:"),
-                                     _(u"Group mode:"),
-                                     'visible', self.id,
-                                     self.lms.visibleArr,
-                                     visibleArr, self.lms.visible)
-
+                                     "visible" + self.id, '',
+                                     self.lms.visibleInstruc,
+                                     visibleArr, 
+                                     self.lms.visible)
+            
         else:
             html  = common.textInput("other"+self.id, 
                                      self.lms.otherLabel)
@@ -185,59 +191,78 @@ class ForumElement(object):
         """
         html  = ""
         if self.idevice.message <> "":
-            html += '<p style="color: red; font-weight: bold;">'
-            html += '%s</p>' % self.idevice.message
+            html += '<br/><font color="red">'
+            html += '<b>%s</font></b><br/>' % self.idevice.message
 
-        html += u'<p>'
-        html += common.textInput("name"+ self.id, self.idevice.title)
-        html += u'</p>'
-
-        forums = [(_(u"New Forum"), 'newForum')]
-        forums += [(pt.forumName, pt.forumName) for pt in 
-                    self.idevice.forumsCache.getForums()]
+        html += '<br/>' + common.textInput("name"+ self.id, self.idevice.title)
+        html += '<br/><br/><b>%s</b><br/>' % _(u"Forum Name:")
+        html += '<select onchange='
+        html += '"submitChange(\'%s\',\'forumSelect%s\');" ' % ("changeForum",
+                                                               self.id)
+                                                       
+        html += 'name="forumSelect%s" id="forumSelect%s">\n' % (self.id, self.id)
+        html += '<option value = "" '
+        if self.idevice.noForum:
+            html += 'selected '
+        html += '>'+ _(u"Select a Forum") + '</option>'
+        html += '<option value = "newForum" '
         if self.idevice.isNewForum:
-            selected = 'newForum'
-        else:
-            selected = self.forum.forumName
-        html  = common.formField('select', 
-                                 _(u"Forum Name:"),
-                                 'changeForum', 'forumSelect'+self.id,
-                                 '',
-                                 forums, selected)
-
+            html += 'selected '
+        html += '>'+ _(u"New Forum") + '</option>'
+        for prototype in self.idevice.forumsCache.getForums():
+            html += '<option value="'+u'%s' % prototype.forumName+'" '
+            if self.forum.forumName == prototype.forumName:
+                html += 'selected '
+            html += '>' + prototype.forumName + '</option>\n'
+        html += '</select> \n'
         if not self.idevice.noForum:
             introduction = self.forum.introduction.replace("\r", "")
             introduction = introduction.replace("\n","\\n")
             html += common.textInput("fName"+ self.id, self.forum.forumName)
             html += common.elementInstruc(self.forum.nameInstruc)
-            html += "<p><b>%s</b></p>" % _("Introduction")
+            html += "<br/><br/><b>%s</b><br/>" % _("Introduction")
             html += common.richTextArea("fIntro"+self.id, 
                                         introduction)
 
-        topics = [(_('None'), 'none'), (_('New Topic'), 'newTopic')]
-        topics += [(pt.topic, pt.topic) for pt in self.forum.discussions]
+        html += "<br/>\n"
+        
+        html += '<br/><b>%s</b><br/>' % _(u"Discussion Topic/Thread:")
+        html += '<select onchange='
+        html += '"submitChange(\'%s\',\'topicSelect%s\');" ' % ("changeTopic",
+                                                               self.id)
+        html += 'name="topicSelect%s" id="topicSelect%s">\n' % (self.id, self.id)
+        html += '<option value = "none"'
+        html += '>%s </option>' % _("None")
+        html += '<option value = "newTopic" '
         if self.idevice.isNewTopic:
-            selected = 'newTopic'
-        else:
-            selected = self.idevice.discussion.topic
-        html  = common.formField('select', 
-                                 _(u"Discussion Topic/Thread:"),
-                                 'changeTopic', 'topicSelect'+self.id,
-                                 '',
-                                 topics, selected)
-
+            html += 'selected '
+        html += '>'+ _(u"New Topic") + '</option>'
+        for prototype in self.forum.discussions:
+            html += '<option value="'+prototype.name+'" '
+            if self.idevice.discussion.topic == prototype.topic:
+                html += 'selected '
+            html += '>' + prototype.topic + '</option>\n'
+        html += '</select> \n'
         html += self.discussionElement.renderEdit()
 
-        lmss = [(_(u"Please select a LMS"), ''),
-                (_('Moodle'), 'moodle'),
-                (_('Other'), 'other')]
         
-        html  = common.formField('select', 
-                                 _(u"Learning Management System:"),
-                                 'changeLms', 'lmsSelect'+self.id,
-                                 self.forum.lmsInstruc,
-                                 lmss, self.forum.lms.lms)
-
+        html += '<br/><br/><b>%s</b><br/>' % _(u"Learning Management System:")
+        html += '<select onchange='
+        html += '"submitChange(\'%s\',\'lmsSelect%s\');" ' % ("changeLms",
+                                                               self.id)
+        html += 'name="lmsSelect%s" id="lmsSelect%s">\n' % (self.id, self.id)
+        html += '<option value="">%s</option>' % _(u"Please select a LMS")
+        html += '<option value = "moodle" '
+        if self.forum.lms.lms == "moodle":
+            html += 'selected '
+        html += '>'+ _(u"Moodle") + '</option>'
+        html += '<option value = "other" '
+        if self.forum.lms.lms == "other":
+            html += 'selected '
+        html += '>'+ _(u"Other") + '</option>'
+        html += '</select>\n'
+        html += common.elementInstruc(self.forum.lmsInstruc)
+        html += "<br/><br/>"
         html += self.lmsElement.renderEdit()
         
         return html
@@ -248,11 +273,11 @@ class ForumElement(object):
         """
         html  = ""
         html += u'<b>%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName)
-        html += u"<p>%s</p>" % self.forum.introduction
-        html += u"<p>"
+        html += u"<br/>%s<br/>" % self.forum.introduction
         html += self.discussionElement.renderPreview()
         html += self.lmsElement.renderView()
-        html += u"</p>\n"
+                                                
+        html += u"<br/><br/>\n"
         
         return html
     
@@ -265,11 +290,13 @@ class ForumElement(object):
             link = "<!--%slink-->\n" % self.forum.forumName
         html  = ""
         html += u'<b>%s%s%s</b>' % (_(u"Forum Name: "),self.forum.forumName,link)
-        html += u"<p>%s</p>" % self.forum.introduction
-        html += u"<p>"
+        
+        html += u"<br/>%s<br/>" % self.forum.introduction
+        
         html += self.discussionElement.renderView()
         html += self.lmsElement.renderView()
-        html += u"</p>\n"
+                                                
+        html += u"<br/><br/>\n"
         
         return html
  
@@ -304,10 +331,9 @@ class DiscussionElement(object):
         if self.discussion.isNone:
             return ""
         
-        html  = u"<p>"
-        html += common.textInput("topic" + self.id, self.discussion.topic)
+        html  = common.textInput("topic" + self.id, self.discussion.topic)
         html += common.elementInstruc(self.discussion.instruc)
-        html += u"</p>\n"
+        html += u"<br/>\n"
         html += common.richTextArea("dIntro" + self.id, self.discussion.intro)
 
         return html
@@ -319,11 +345,9 @@ class DiscussionElement(object):
         if self.discussion.isNone:
             return ""
         html = ""
-        html += u"<p><b>%s" % _(u"Thread: ")
-        html += u"%s</b></p>\n" % self.discussion.topic
-        html += u"<p>"
-        html += self.discussion.intro
-        html += u"</p>\n"
+        html += u"<br/><b>%s" % _(u"Thread: ")
+        html += u"%s</b><br/>\n" % self.discussion.topic
+        html += self.discussion.intro + "<br/>"
         return html   
 
     def renderView(self):
@@ -335,14 +359,13 @@ class DiscussionElement(object):
         link = ""
         if self.idevice.forum.lms.lms == "moodle":
             topic = self.discussion.topic.replace(" ", "_")
-            link  = u"<!--%slink_%s--><br/>\n" % \
-            (self.idevice.forum.forumName,link)
+            link  = u"<!--%slink_%s--><br/>\n" % (self.idevice.forum.forumName, 
+                                                  topic)
         html = ""
-        html += u"<p><b>%s" % _(u"Thread: ")
-        html += u"%s%s</b></p>\n" % (self.discussion.topic, link)
-        html += u"<p>"
-        html += self.discussion.intro
-        html += u"</p>\n"
+        html += u"<br/><b>%s" % _(u"Thread: ")
+        html += u"%s%s</b>\n" % (self.discussion.topic, link)
+    
+        html += self.discussion.intro + "<br/>"
         return html
    
     

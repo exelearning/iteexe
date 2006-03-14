@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<metadata
+  xmlns="http://www.exelearning.org/metadata/dc/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exelearning.org/metadata/dc/ http://www.exelearning.org/metadata/dc/schema.xsd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/cd/terms/">
+
+<dc:title>%(title)s</dc:title>
+<dc:creator>%(creator)s</dc:creator>
+<dc:subject>%(subject)s</dc:subject>
+<dc:description>%(description)s</dc:description>
+<dc:publisher>%(publisher)s</dc:publisher>
+<dc:contributor>%(contributors)s</dc:contributor>
+<dc:date>%(date)s</dc:date>
+<dc:type>%(type)s</dc:type>
+<dc:format>%(format)s</dc:format>
+<dc:identifier>%(identifier)s</dc:identifier>
+<dc:source>%(source)s</dc:source>
+<dc:language>%(language)s</dc:language>
+<dc:relation>%(relation)s</dc:relation>
+<dc:coverage>%(coverage)s</dc:coverage>
+<dc:rights>%(rights)s</dc:rights>
+
+</metadata>

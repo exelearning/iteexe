@@ -212,7 +212,7 @@ class TextAreaElement(Element):
         else:
             visible = 'style="display:none"'
         return '<div id="ta%s" class="%s" %s>%s</div>' % (
-        self.id, class_, visible, self.field.content)
+            self.id, class_, visible, self.field.content)
     
 # ===========================================================================
 class ImageElement(Element):
@@ -257,7 +257,7 @@ class ImageElement(Element):
         html += u'<img alt="%s" ' % _('Add Image')
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addImage('"+self.id+"');\" "
-        html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
+        html += u"src=\"./resources/"+self.field.imageResource.storageName+"\" "
         if self.field.width:
             html += u"width=\""+self.field.width+"\" "
         if self.field.height:
@@ -302,7 +302,7 @@ class ImageElement(Element):
             self.field.setDefaultImage()
 
         html = common.image("img"+self.id,
-                            "resources/"+self.field.imageResource.storageName,
+                            "resources/%s" % (self.field.imageResource.storageName),
                             self.field.width,
                             self.field.height)
         return html
@@ -368,7 +368,7 @@ class MagnifierElement(Element):
         html += u'<img alt="%s" ' % _('Add JPEG Image')
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addJpgImage('"+self.id+"');\" "
-        html += u"src=\"resources/"+self.field.imageResource.storageName+"\" "
+        html += u'src="resources/%s" '%(self.field.imageResource.storageName)
         html += u"/>\n"
         html += u"</div>\n"
 
@@ -383,20 +383,22 @@ class MagnifierElement(Element):
         html += u' onclick="addJpgImage(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select an image (JPG file)")
         
-        html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
-        html += u'<input type="text" class="block" '
+        html += u'<div class="block"><b>%s</b>' % _(u"Display as:")
+        html += common.elementInstruc(self.field.idevice.dimensionInstruc)
+        html += u'</div>\n'
+        html += u'<input type="text" '
         html += u'id="width%s" ' % self.id
         html += u'name="width%s" ' % self.id
         html += u'value="%s" ' % self.field.width
-        html += u'onchange="changeMagnifierImageWidth('"+self.id+"');" '
-        html += u'size="4" />\n'
-        html += u'\n'
-        html += u'<input type="text" class="block" '
-        html += u'id="height'+self.id+'" '
-        html += u'name="height'+self.id+'" '
+        html += u'onchange="changeMagnifierImageWidth(\'%s\');" ' % self.id
+        html += u'size="4" />&nbsp;pixels&nbsp;<strong>by</strong>&nbsp;'
+        html += u'<input type="text" '
+        html += u'id="height%s" ' % self.id
+        html += u'name="height%s" ' % self.id
         html += u'value="%s" ' % self.field.height
-        html += u'onchange="changeMagnifierImageHeight(''+self.id+'');" '
-        html += u'size="4" />\n'
+        html += u'onchange="changeMagnifierImageHeight(\'%s\');" ' % self.id
+        html += u'size="4" />&nbsp;pixels.\n'
+        html += u'\n'
         html += u'(%s) \n' % _(u'blank for original size')
         html += u'</div>\n'
 
@@ -410,9 +412,11 @@ class MagnifierElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html = self.renderManifier(
-                            "resources/"+self.field.imageResource.storageName,
-                            "/templates/magnifier.swf")
+        html = self.renderMagnifier(
+                        '../%s/resources/%s' % (
+                            self.field.idevice.parentNode.package.name,
+                            self.field.imageResource.storageName),
+                        "../templates/magnifier.swf")
         return html
 
 
@@ -423,24 +427,31 @@ class MagnifierElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html = self.renderManifier(self.field.imageResource.storageName,                            
+        html = self.renderMagnifier(self.field.imageResource.storageName,                            
                                    "magnifier.swf")
 
 
         return html
     
-    def renderManifier(self, imageFile, magnifierFile):
+    def renderMagnifier(self, imageFile, magnifierFile):
         """
         Renders the magnifier flash thingie
+
         """
         field = self.field
-        flashVars = (
-            u'value="file=%s' % imageFile,
-            u'&amp;width=%s&amp;height=%s' % (field.width, field.height),
-            u'&amp;borderWidth=12&amp;glassSize=%s' % self.field.glassSize,
-            u'&amp;initialZoomSize=%s' % field.initialZSize,
-            u'&amp;maxZoomSize=%s' % field.maxZSize,
-            u'&amp;targetColor=#FF0000" />\n')
+        flashVars = {
+            'file': imageFile,
+            'width': field.width,
+            'height': field.height,
+            'borderWidth': '12',
+            'glassSize': field.glassSize,
+            'initialZoomSize': field.initialZSize,
+            'maxZoomSize': field.maxZSize,
+            'targetColor': '#FF0000'}
+        # Format the flash vars
+        flashVars = '&'.join(
+            ['%s=%s' % (name, value) for
+             name, value in flashVars.items()])
         return common.flash(magnifierFile, field.width, field.height,
             id='magnifier%s' % self.id,
             params = {
@@ -562,7 +573,11 @@ class ClozeElement(Element):
             for letter in word:
                 result += unichr(ord(key) ^ ord(letter))
                 key = letter
-            return result.encode('base64')
+            # Encode for javascript
+            output = ''
+            for char in result:
+                output += '%%u%04x' % ord(char[0])
+            return output.encode('base64')
         for i, (text, missingWord) in enumerate(self.field.parts):
             if text:
                 html.append(text)
@@ -675,13 +690,12 @@ class FlashElement(Element):
         html += u"name=\"width"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.width
         html += u"size=\"4\" />px\n"
-        html += u"<b>by</b> \n"
+        html += u"by \n"
         html += u"<input type=\"text\" "
         html += u"id=\"height"+self.id+"\" "
         html += u"name=\"height"+self.id+"\" "
         html += u"value=\"%s\" " % self.field.height
         html += u"size=\"4\" />px\n"
-        html += u"(%s) \n" % _(u"blank for original size")
 
 
         return html
@@ -753,11 +767,13 @@ class FlashMovieElement(Element):
         Returns an XHTML string for previewing this image
         """
         if self.field.flashResource:
-            flashFile = 'resources/' + self.field.flashResource.storageName
+            flashFile = '../%s/resources/%s' % (
+                self.field.idevice.parentNode.package.name,
+                self.field.flashResource.storageName)
         else:
             flashFile = ""
-        return common.flashMovie(flashFile, self.field.width, self.field.height)
-        return html
+        return common.flashMovie(flashFile, self.field.width,
+                                 self.field.height, '../templates/')
 
 
     def renderView(self):

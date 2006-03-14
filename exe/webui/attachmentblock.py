@@ -82,7 +82,7 @@ class AttachmentBlock(Block):
         html += common.elementInstruc(self.idevice.labelInstruc)
         html += u'</div>\n'
         html += common.textInput(u'label'+self.id, self.idevice.label)
-        html += common.formField('richTextArea',u'Description:','description',
+        html += common.formField('richTextArea',_(u'Description:'),'description',
                                  self.id, self.idevice.descriptionInstruc,
                                  self.idevice.description)
 

@@ -229,3 +229,15 @@ function convertTotalSeconds(ts)
    return rtnVal;
 }
 
+function goBack() {
+doLMSSetValue('nav.event','previous');
+var coreSCOLocation = doLMSGetValue("cmi.core.lesson_location");
+window.location = coreSCOLocation;
+}
+
+
+function goForward() {
+doLMSSetValue('nav.event','continue');
+var coreSCOLocation = doLMSGetValue("cmi.core.lesson_location");
+window.location = coreSCOLocation;
+}

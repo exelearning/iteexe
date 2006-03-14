@@ -4,9 +4,10 @@ import os, sys
 
 def main():
     if len(sys.argv) < 2:
-        print 'Usage: %s [version]' % sys.argv[0]
+        print 'Usage: %s [version] [--install] [--local|username password]' % sys.argv[0]
         print 'Where [version] is the branch you want to checkout'
-        print 'Eg. %s 0.7' % sys.argv[0]
+        print 'and username and password are for your eduforge account'
+        print 'Eg. %s 0.7 --local' % sys.argv[0]
     else:
         version = sys.argv[1]
         # Calc the svn branch name
@@ -27,10 +28,23 @@ def main():
         os.chdir(tmp)
         # Upload it
         if '--local' not in sys.argv:
-            open('sftpbatch.tmp', 'w').write(
-                'cd /home/pub/exe\n'
-                'put %s\n' % tarball)
-            os.system('sftp -b sftpbatch.tmp matiu@shell.eduforge.org')
+            # Connect with sftp
+            try:
+                from paramiko import Transport
+            except ImportError:
+                print 'To upload you need to install paramiko python library from:'
+                print 'http://www.lag.net/paramiko'
+                sys.exit(2)
+            from socket import socket, gethostbyname
+            s = socket()
+            s.connect((gethostbyname('shell.eduforge.org'), 22))
+            t = Transport(s)
+            t.connect()
+            t.auth_password(sys.argv[-2], sys.argv[-1])
+            f = t.open_sftp_client()
+            # See that the directory structure looks good
+            f.chdir('/home/pub/exe')
+            f.put(tarball.encode('utf8'), tarball.basename().encode('utf8'))
         # If we're root, copy the tarball to the portage cache dir to save
         # downloading it when emerging (for me anyway)
         if os.getuid() == 0:

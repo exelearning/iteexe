@@ -23,7 +23,7 @@ This module contains resource classes used for eXe
 import logging
 import os.path
 from exe.engine.persist   import Persistable
-from exe.engine.path      import toUnicode
+from exe.engine.path      import Path
 
 log = logging.getLogger(__name__)
 
@@ -44,8 +44,7 @@ class Resource(Persistable):
         """
         log.debug(u"init resourceFile=%s" % resourceFile)
         self._package     = package
-        self._storageName = toUnicode(resourceFile.basename())
-
+        self._storageName = self._fn2ascii(resourceFile)
         if not hasattr(package, "resourceDir"):
             log.debug(u"package doesn't have a resourceDir, must be upgrading")
 
@@ -107,7 +106,6 @@ class Resource(Persistable):
         copy the resourceFile given into our package's resourceDir
         """
         log.debug(u"copyFile %s" % resourceFile)
-        self._storageName = toUnicode(resourceFile.basename())
         uniqueId = 1
         while (self._package.resourceDir/self._storageName).exists():
             nameBase, ext = os.path.splitext(self._storageName)
@@ -116,6 +114,25 @@ class Resource(Persistable):
 
         log.debug(u"storageName=%s" % self._storageName)
         resourceFile.copyfile(self._package.resourceDir/self._storageName)
+
+    def _fn2ascii(self, filename):
+        """
+        Changes any filename to pure ascii
+        """
+        nameBase, ext = Path(filename.basename()).splitext()
+        # Check if the filename is ascii so that twisted can serve it
+        try:
+            nameBase.encode('ascii')
+        except UnicodeEncodeError:
+            nameBase = nameBase.encode('utf8').encode('hex')
+        # Encode the extension separately so that you can keep file types a bit
+        # at least
+        try:
+            ext = ext.encode('ascii')
+        except UnicodeEncodeError:
+            ext = ext.encode('utf8').encode('hex')
+        return str(nameBase + ext)
+
 
 
 # ===========================================================================

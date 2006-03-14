@@ -59,14 +59,15 @@ class WikipediaBlock(Block):
                 setattr(self.idevice, attr, request.args[fieldName][0])
 
         if 'loadWikipedia'+self.id in request.args:
-            # If they've hit submit
+            # If they've hit "load" instead of "the tick"
             self.idevice.loadArticle(request.args['article'][0])
         else:
+            # If they hit "the tick" instead of "load"
             Block.process(self, request)
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
-            # If the text has been changed
-            self.articleElement.process(request)
+            if (u"action" not in request.args or
+                request.args[u"action"][0] != u"delete"):
+                # If the text has been changed
+                self.articleElement.process(request)
 
 
     def renderEdit(self, style):
@@ -94,7 +95,7 @@ class WikipediaBlock(Block):
                  (_(u"Wikieducator Content"),      "http://wikieducator.org/")]
 
         html += common.formField('select', _('Site'),
-                                 'site', self.id,
+                                 'site'+self.id, '',
                                  self.idevice.langInstruc,
                                  sites,
                                  self.idevice.site)
@@ -110,7 +111,7 @@ class WikipediaBlock(Block):
                           (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
 
         html += common.formField('select', _('Emphasis'),
-                                 'emphasis', self.id,
+                                 'emphasis'+self.id, '',
                                  '', # TODO: Instructions
                                  emphasisValues,
                                  self.idevice.emphasis)

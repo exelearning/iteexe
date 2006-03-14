@@ -351,8 +351,8 @@ class QuizTestBlock(Block):
             html += element.renderView() + "<br/>"
         html += self.renderViewButtons()
        
-        html += '<input type="button" name="submitScore"'
-        html += ' onclick="calcScore()" value="%s"/> ' % _("Submit Answer")
+        html += '<input type="submit" name="submitScore"'
+        html += ' value="%s"/> ' % _("Submit Answer")
         
         if not self.idevice.score == -1:
             message = "Your score is " + unicode(self.idevice.score) + "%"

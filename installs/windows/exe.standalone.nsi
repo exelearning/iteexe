@@ -2,7 +2,7 @@
 ; Wraps the py2exe output and firefox and everything.
 ; When running extracts them all to a temp dir and runs from there.
 
-!define EXE_VERSION "0.13"
+!define EXE_VERSION "0.14"
 !define APPNAMEANDVERSION "eXe Standalone ${EXE_VERSION}"
 
 ; Main Install settings

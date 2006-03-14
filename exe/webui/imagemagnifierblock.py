@@ -69,14 +69,12 @@ class ImageMagnifierBlock(Block):
                 request.args["glass"+self.id][0]
             
         if "initial"+self.id in request.args:
-            if request.args["initial"+self.id][0] == "yes":
-                self.idevice.imageMagnifier.initialZSize = "120"
-            else:
-                self.idevice.imageMagnifier.initialZSize ="100"
+            self.idevice.imageMagnifier.initialZSize = \
+                request.args["initial"+self.id][0]
                 
         if "maxZoom"+self.id in request.args:
             self.idevice.imageMagnifier.maxZSize = \
-                request.args["maxZoom"+self.id][0] 
+                request.args["maxZoom"+self.id][0]
 
 
     def renderEdit(self, style):
@@ -87,75 +85,61 @@ class ImageMagnifierBlock(Block):
         floatArr        = [[_(u'Left'), 'left'],
                           [_(u'Right'), 'right'],
                           [_(u'None'),  'none']]
-        glassSizeArr    = [[_(u'Small'), '1'],
-                          [_(u'Medium'),'2'],
-                          [_(u'Large'),'3'],
-                          [_(u'Extra large'),'4'],]
         html  = u"<div class=\"iDevice\">\n"
-        html += self.imageMagnifierElement.renderEdit()       
-
-        html += common.formField('select', _("Align:"),
-                                 "float" + self.id, '',
-                                 self.idevice.dimensionInstruc,
-                                 floatArr, self.idevice.float)
-
+        
+        # Caption
         html += '<div class="block">'
-        html += u"<b>%s </b>" % _(u"Caption:")
-        html += common.textInput("caption" + self.id, self.idevice.caption)
+        html += u"<strong>%s</strong>" % _(u"Caption:")
         html += common.elementInstruc(self.idevice.captionInstruc)
         html += '</div>'
+        html += '<div class="block">'
+        html += common.textInput("caption" + self.id, self.idevice.caption)
+        html += '</div>'
+        
+        # Text
         html += '<div class="block">'
         html += self.textElement.renderEdit()
         html += '</div>'
 
-        html += common.formField('select', _(u"Size of magnifying glass: "),
-                                 "glass" + self.id,
-                                 options = glassSizeArr, 
-                                 selection = \
-                                 self.idevice.imageMagnifier.glassSize)
-            
+        # Image
+        html += self.imageMagnifierElement.renderEdit()       
+
+        # Align
+        html += common.formField('select', _("Align:"),
+                                 "float" + self.id, '',
+                                 self.idevice.alignInstruc,
+                                 floatArr, self.idevice.float)
+
+        # Initial and Max Zoom opts
         zoomOpts = []
-        selected = ''
-        for i in range(10, 21):
-            if str(i)+ "0" == self.idevice.imageMagnifier.maxZSize:
-                selected = str(i)
-            zoomOpts.append((str(i), str(i)))
+        for i in range(100, 201, 10):
+            zoomOpts.append(('%d%%' % (i), str(i)))
 
-        html += common.formField('select', _(u"Maximum zoom"),
-                                 "maxZoom" + self.id,
-                                 options = zoomOpts, 
-                                 selection = selected)
+        # Initial Zoom Size
+        selection = self.idevice.imageMagnifier.initialZSize
+        html += common.formField('select', _(u"Initial Zoom"),
+                                 "initial" + self.id, '',
+                                 self.idevice.initialZoomInstruc,
+                                 zoomOpts, selection)
             
-        html += '<div class="block">'
-        html += "<b>" +_(u"Magnify initial zoom? ")  + "</b>"
-        html += _(u"Yes")
-        if self.idevice.imageMagnifier.initialZSize == "100":
-            html += common.option("initial"+self.id, 0, "yes")
-            html += _(u"No")
-            html += common.option("initial"+self.id, 1, "no")
-        else:
-            html += common.option("initial"+self.id, 1, "yes")
-            html += _(u"No")
-            html += common.option("initial"+self.id, 0, "no")
-
+        # Maximum Zoom
+        selection = self.idevice.imageMagnifier.maxZSize
         html += common.formField('select', _(u"Maximum zoom"),
-                                 "maxZoom", self.id,
-                                 '',
+                                 "maxZoom" + self.id, '',
+                                 self.idevice.maxZoomInstruc,
+                                 zoomOpts, selection)
+            
+        # Size of Magnifying Glass
+        glassSizeArr    = [[_(u'Small'), '1'],
+                          [_(u'Medium'),'2'],
+                          [_(u'Large'),'3'],
+                          [_(u'Extra large'),'4'],]
+        html += common.formField('select', _(u"Size of magnifying glass: "),
+                                 "glass" + self.id, '',
+                                 self.idevice.glassSizeInstruc,
                                  glassSizeArr, 
                                  self.idevice.imageMagnifier.glassSize)
             
-        html += "<b>" +_(u"Magnify initial zoom? ")  + "</b>"
-        html += _(u"Yes")
-        if self.idevice.imageMagnifier.initialZSize == "100":
-            html += common.option("initial"+self.id, 0, "yes")
-            html += _(u"No")
-            html += common.option("initial"+self.id, 1, "no")
-        else:
-            html += common.option("initial"+self.id, 1, "yes")
-            html += _(u"No")
-            html += common.option("initial"+self.id, 0, "no")
-        html += '</div>'
-
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -165,7 +149,6 @@ class ImageMagnifierBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        
         log.debug("renderPreview")
         html  = u"\n<!-- image with text iDevice -->\n"
         html  = u"<div class=\"iDevice "

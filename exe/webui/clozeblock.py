@@ -67,8 +67,7 @@ class ClozeBlock(Block):
         which words are hidden.
         """
         html = [
-            u'<div class="iDevice emphasis%s">' % \
-              unicode(self.idevice.emphasis),
+            u'<div class="iDevice">',
             u'<div class="block">',
             common.textInput("title"+self.id, self.idevice.title),
             u'</div>',

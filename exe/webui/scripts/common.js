@@ -635,6 +635,7 @@ function getClozeAnswer(ele) {
     var answerSpan = document.getElementById('clozeAnswer'+ident+'.'+inputId);
     var code = answerSpan.innerHTML;
     code = decode64(code)
+    code = unescape(code)
     // XOR "Decrypt"
     result = '';
     var key = 'X'.charCodeAt(0);
@@ -677,7 +678,6 @@ function decode64(input) {
    } while (i < input.length);
    return output;
 }
-
 
 // Returns the corrected word or an empty string
 function checkClozeWord(ele) {

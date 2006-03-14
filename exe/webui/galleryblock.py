@@ -187,7 +187,8 @@ class GalleryBlock(Block):
                     return "javascript:submitLink(%s)" % params
                 changeGalleryImage = '\n'.join([
                         u'           <a title="%s"' % _(u'Change Image'),
-                        u'              href="javascript:changeGalleryImage(' +
+                        u'              href="#" ',
+                        u'              onclick="changeGalleryImage(' +
                         u"'%s', '%s')" % (self.id, image.id) +
                         u'">'])
                 result = [changeGalleryImage,
@@ -210,7 +211,7 @@ class GalleryBlock(Block):
                 if image.index > 0:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Left'),
-			  u'           href="javascript:%s"' % submitLink('moveLeft'),
+			  u'           href="javascript:%s">' % submitLink('moveLeft'),
                           u'        <img alt="%s"' % _(u'Go Back'),
 			  u'         src="/images/stock-go-back.png"/>'
                           u'        </a>',
@@ -222,7 +223,7 @@ class GalleryBlock(Block):
                 if image.index < len(image.parent.images)-1:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Right'),
-			  u'           href="javascript:%s"' % submitLink('moveRight'),
+			  u'           href="javascript:%s">' % submitLink('moveRight'),
                           u'        <img alt="%s"' % _(u'Go Forward'),
 			  u'         src="/images/stock-go-forward.png"/>',
                           u'        </a>',
@@ -235,7 +236,7 @@ class GalleryBlock(Block):
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
-			  u'           href="javascript:%s"' % submitLink('delete'),
+			  u'           href="javascript:%s">' % submitLink('delete'),
                           u'        <img alt="%s" ' % _(u'Delete'),
                           u'             src="/images/stock-delete.png"/>',
                           u'        </a>',
@@ -271,7 +272,8 @@ class GalleryBlock(Block):
                 width, height = image.size
 		title = _(u'Show %s Image') % image.caption
                 return [u'        <a title="%s" ' % title,
-			            u'         href="javascript:window.open(',
+			            u'         href="#"',
+                        u'         onclick="window.open(',
                         u"'%s', 'galleryImage', " % image.htmlSrc +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
                         u"width=640," +
@@ -279,7 +281,7 @@ class GalleryBlock(Block):
                         u"screenX='+((screen.width/2)-(640/2))+" +
                         u"',screenY='+((screen.height/2)-(480/2))" +
                         u');"',
-                        u'           style="cursor: pointer; align:center top;"',
+                        u'           style="cursor: pointer; align:center top;">',
                         u'          <img alt="%s"' % title,
                         u'               src="%s"/>' % image.thumbnailSrc,
                         u'        </a>',

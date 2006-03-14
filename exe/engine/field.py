@@ -75,7 +75,8 @@ class Field(Persistable):
         """
         Upgrades to exe v0.10
         """
-        self._name    = self.__dict__['name']
+        self._name = self.__dict__['name']
+        del self.__dict__['name']
         # Pre 0.5 packages need special care
         if self.__dict__.has_key('instruc'):
             self._instruc = self.__dict__['instruc']
@@ -303,21 +304,45 @@ class ClozeHTMLParser(HTMLParser):
         """
         Turn on inGap if necessary
         """
-        if tag.lower() == 'u':
-            self.inGap = True
-        elif tag.lower() == 'br':
-            if self.inGap:
-                self.lastGap += '<br/>' 
-            else:
+        if not self.inGap:
+            if tag.lower() == 'u':
+                self.inGap = True
+            elif tag.lower() == 'span':
+                attrs = dict(attrs)
+                style = attrs.get('style', '')
+                if 'underline' in style:
+                    self.inGap = True
+            elif tag.lower() == 'br':
                 self.lastText += '<br/>' 
+            else:
+                self.writeTag(tag, attrs)
+
+    def writeTag(self, tag, attrs=None):
+        """
+        Outputs a tag "as is"
+        """
+        if attrs is None:
+            self.lastText += '</%s>' % tag
+        else:
+            attrs = ['"%s"="%s"' % (name, val) for name, val in attrs]
+            if attrs:
+                self.lastText += '<%s %s>' % (tag, ' '.join(attrs))
+            else:
+                self.lastText += '<%s>' % tag
 
     def handle_endtag(self, tag):
         """
         Turns of inGap
         """
-        if tag.lower() == 'u' and self.inGap:
-            self.inGap = False
-            self._endGap()
+        if self.inGap:
+            if tag.lower() == 'u':
+                self.inGap = False
+                self._endGap()
+            elif tag.lower() == 'span' and self.inGap:
+                self.inGap = False
+                self._endGap()
+        elif tag.lower() != 'br':
+            self.writeTag(tag)
 
     def _endGap(self):
         """
@@ -331,6 +356,7 @@ class ClozeHTMLParser(HTMLParser):
             gapSpacers.append(None)
         gaps = zip(gapWords, gapSpacers)
         lastText = self.lastText
+        # Split gaps up on whitespace
         for gap, text in gaps:
             if gap == '<br/>':
                 self.result.append((lastText, None))
@@ -390,9 +416,9 @@ class ClozeField(Field):
                 "an exact match in spelling and capitalization will be accepted."
                 "</p>"
                 "<p><strong>For example:</strong> If the correct answer is "
-                "<code>Elephant</code> and both <code>elephant</code> and "
+                "<code>Elephant</code> then both <code>elephant</code> and "
                 "<code>Eliphant</code> will be judged "
-                "<em>\"close enough\"</em> by the algorythm as it only has "
+                "<em>\"close enough\"</em> by the algorithm as it only has "
                 "one letter wrong, even if \"Check Capitilization\" is on."
                 "</p>"
                 "<p>If capitalzation checking is off in the above example, "
@@ -518,6 +544,14 @@ this iDevice.""")
             self.flashResource = None
         del self.flashName
 
+
+    def _upgradeFieldToVersion3(self):
+        """
+        Upgrades to exe v0.13
+        """
+        self._fileInstruc   = x_("""Only select .swf (Flash Objects) for 
+this iDevice.""")
+
 # ===========================================================================
 
 class FlashMovieField(Field):
@@ -582,6 +616,14 @@ this iDevice.""")
         else:
             self.flashResource = None
         del self.flashName
+
+
+    def _upgradeFieldToVersion3(self):
+        """
+        Upgrades to exe v0.14
+        """
+        self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
+this iDevice.""")
 
 
 # ===========================================================================

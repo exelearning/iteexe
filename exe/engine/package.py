@@ -39,21 +39,22 @@ class DublinCore(Jellyable, Unjellyable):
     Holds dublin core info
     """
 
-    title = ''
-    creator = ''
-    subject = ''
-    description = ''
-    publisher = ''
-    contributors = ''
-    date = ''
-    type = ''
-    format = ''
-    identifier = ''
-    source = ''
-    language = ''
-    relation = ''
-    coverage = ''
-    rights = ''
+    def __init__(self):
+        self.title = ''
+        self.creator = ''
+        self.subject = ''
+        self.description = ''
+        self.publisher = ''
+        self.contributors = ''
+        self.date = ''
+        self.type = ''
+        self.format = ''
+        self.identifier = ''
+        self.source = ''
+        self.language = ''
+        self.relation = ''
+        self.coverage = ''
+        self.rights = ''
 
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
@@ -72,6 +73,7 @@ class Package(Persistable):
     _title             = '' 
     _author            = ''
     _description       = ''
+
 
     def __init__(self, name):
         """
@@ -96,6 +98,7 @@ class Package(Persistable):
         self.isChanged     = 0
         self.idevices      = []
         self.dublinCore    = DublinCore()
+        self.scolinks      = False
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -126,6 +129,7 @@ class Package(Persistable):
         return self.levelName(2)
     def set_level3(self, value):
         self._levelNames[2] = value
+
 
     # Properties
 
@@ -343,6 +347,7 @@ class Package(Persistable):
         self.dublinCore.title = self.root.title
         self.dublinCore.creator = self._author
         self.dublinCore.description = self._description
+        self.scolinks = False
 
 # ===========================================================================
 

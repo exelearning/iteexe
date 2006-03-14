@@ -69,7 +69,7 @@ class Manifest(object):
         template = open(templateFilename, 'rb').read()
         xml = template % self.package.dublinCore.__dict__
         out = open(self.outputDir/'dublincore.xml', 'wb')
-        out.write(xml)
+        out.write(xml.encode('utf8'))
         out.close()
         
     def createForumXML(self):
@@ -286,6 +286,10 @@ class ScormPage(Page):
 
         html += u"</div>\n"
         html += u"</div>\n"
+	if self.node.package.scolinks:
+	    html += u'<a class="previouslink" '
+	    html += u'href="javascript: goBack();">Previous</a> | <a class="nextlink"'
+	    html += u'href="javascript: goForward();">Next</a>'
         html += u"</body></html>\n"
         html = html.encode('utf8')
         return html
@@ -346,6 +350,8 @@ class ScormExport(object):
             page.save(outputDir)
             if not self.hasForum:
                 for idevice in page.node.idevices:
+                    # TODO: title may be translated or changed by user, so check
+                    # won't work always
                     if idevice.title == "Discussion Activity":
                         if idevice.forum.lms.lms == "moodle":
                             self.hasForum = True

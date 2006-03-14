@@ -1,21 +1,20 @@
 ; Script generated with the Venis Install Wizard
 
 ; Define your application name
-!define APPNAME "eXe Language Pack update"
+!define APPNAME "eXe Applet iDevice update"
 
 !define EXE_VERSION "0.14"
 !define APPNAMEANDVERSION "${APPNAME} ${EXE_VERSION}"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
-InstallDir "$PROGRAMFILES\exe"
-InstallDirRegKey HKLM "Software\${APPNAME}" ""
+InstallDir "$APPDATA\exe\idevices"
 Icon "..\..\eXe_icon.ico"
-OutFile "eXe_language_update.exe"
+OutFile "eXe_applet_update.exe"
 
 Section Install
-   SetOutPath "$INSTDIR\locale"
-   File /r "..\..\exe\locale\??"
+   SetOutPath "$APPDATA\exe\idevices"
+   File "..\..\exe\idevices\applet*.py"
 SectionEnd
 
-BrandingText "EXE Language Pack Update"
+BrandingText "EXE"

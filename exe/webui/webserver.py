@@ -24,10 +24,21 @@
 WebServer module
 """
 
-from twisted.internet              import reactor
-from twisted.internet.error        import CannotListenError
-from nevow                         import appserver
-from twisted.web                   import static
+# Redirect std err for importing twisted and nevow
+import sys
+from cStringIO import StringIO
+sys.stderr, oldStdErr = StringIO(), sys.stderr
+sys.stdout, oldStdOut = StringIO(), sys.stdout
+try:
+    from twisted.internet              import reactor
+    from twisted.internet.error        import CannotListenError
+    from nevow                         import appserver
+    from twisted.web                   import static
+finally:
+    print sys.stderr
+    sys.stderr = oldStdErr
+    print sys.stdout
+    sys.stdout = oldStdOut
 from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage

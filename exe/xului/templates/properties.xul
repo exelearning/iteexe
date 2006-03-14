@@ -75,8 +75,15 @@
     var fieldIds = new Array();
     collectIds(fieldIds, container);
     for (var i in fieldIds) {
-        var value = document.getElementById(fieldIds[i]).value;
-        nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], value, i, fieldIds.length)
+        var ele = document.getElementById(fieldIds[i]);
+        if (ele.nodeName == 'checkbox') {
+            // Moz 1.8 and ff >= 1.5 don't need this. They work with straight value but
+            // < ff 1.5 needs this check.
+            var value = "" + ele.checked; // Convert to string
+        } else {
+            var value = ele.value;
+        }
+        nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), i, fieldIds.length);
     }
   }
   ]]>

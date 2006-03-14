@@ -34,7 +34,7 @@ class FlashWithTextIdevice(Idevice):
     A FlashWithText Idevice is one built up from a flash file and free text.
     """
 
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self):
         Idevice.__init__(self, x_(u"Flash with Text"), 
@@ -76,5 +76,15 @@ The width and height dimensions will alter proportionally.""")
         self._upgradeIdeviceToVersion2()
         self.flash._upgradeFieldToVersion2()
 
+    def upgradeToVersion3(self):
+        """
+        Upgrades to v0.13
+        """
+        self._captionInstruc   = x_(u"""Provide a caption for the flash you 
+                                  have just inserted.""")
+        self._dimensionInstruc = x_(u"""Enter the flash display 
+dimensions (in pixels) and determine the alignment of the image on screen. 
+The width and height dimensions will alter proportionally.""")
+        self.flash._upgradeFieldToVersion3()
         
 # ===========================================================================
