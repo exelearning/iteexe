@@ -64,8 +64,13 @@ class SinglePageExport(object):
 
         self.html  = self.renderHeader(package.name)
         self.html += u"<body>\n"
+        self.html += u"<div id=\"content\">\n"
+        self.html += u"<div id=\"header\">\n"
+        self.html += escape(package.title)
+        self.html += u"</div>\n"
         self.html += u"<div id=\"main\">\n"
         self.renderNode(package.root)
+        self.html += u"</div>\n"
         self.html += u"</div>\n"
         self.html += u"</body></html>\n"
         self.save(self.outputDir/"index.html")

@@ -10,6 +10,11 @@
             <textbox id="pp_title" size="40" onchange="this.style.color='blue';" />
          </hbox>
          <hbox align="center">
+            <label style="width:8em" value="Header Background:"/>
+            <image id="pp_imgBackground" src='my-face.png' width='60' height='80' onclick="addImage('Background');"/>
+            <textbox id="pp_pathBackground" size="40"/>
+         </hbox>
+         <hbox align="center">
             <label id="ppAuthor" style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
             <textbox id="pp_author" size="40" onchange="this.style.color='blue';" />
          </hbox>

@@ -78,6 +78,10 @@ class WebsitePage(object):
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u"<body>\n"
+        html += u"<div id=\"content\">\n"
+        html += u"<div id=\"header\">\n"
+        html += escape(self.node.package.title)
+        html += u"</div>\n"
         
         # add left navigation html
         html += u"<div id=\"navcontainer\">\n"
@@ -102,6 +106,7 @@ class WebsitePage(object):
                 html += block.renderView(style)
         
         html += self.getNavigationLink(prevPage, nextPage)
+        html += u"</div>\n"
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')

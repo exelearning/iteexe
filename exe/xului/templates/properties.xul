@@ -50,6 +50,27 @@
       }
   }
 
+
+  // Called by the user to provide an image file name to add to the package
+  function addImage(elementId) {
+      netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+      var nsIFilePicker = Components.interfaces.nsIFilePicker;
+      var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+      fp.init(window, "Select an image", nsIFilePicker.modeOpen);
+      fp.appendFilter("Image Files", "*.jpg; *.jpeg; *.png; *.gif");
+      fp.appendFilters(nsIFilePicker.filterAll);
+      var res = fp.show();
+      if (res == nsIFilePicker.returnOK) {
+          var image = document.getElementById('pp_img'+elementId);
+          alert(image);
+          image.removeAttribute('width');
+          image.removeAttribute('height');
+          var path  = document.getElementById('pp_path'+elementId);
+          path.value = fp.file.path;
+          image.src  = 'file://'+fp.file.path;
+      }
+  }
+  
   function collectIds(ids, start) {
     if (start.id && start.id.match(regEx)) {
         ids.push(start.id);
