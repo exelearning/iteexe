@@ -81,7 +81,8 @@ class Manifest(object):
         
         for page in self.pages:
             for idevice in page.node.idevices:
-                if idevice.title == "Discussion Activity":
+               # if idevice.title == "Discussion Activity":
+	       if hasattr(idevice, "isForum"):
                     forums = idevice.forumsCache.getForums()
                     xmlStr += self.moodleForums(forums)
                     break
@@ -350,9 +351,7 @@ class ScormExport(object):
             page.save(outputDir)
             if not self.hasForum:
                 for idevice in page.node.idevices:
-                    # TODO: title may be translated or changed by user, so check
-                    # won't work always
-                    if idevice.title == "Discussion Activity":
+		    if hasattr(idevice, "isForum"):
                         if idevice.forum.lms.lms == "moodle":
                             self.hasForum = True
                             break
