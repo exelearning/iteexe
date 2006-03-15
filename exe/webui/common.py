@@ -40,9 +40,10 @@ log = logging.getLogger(__name__)
 
 def docType():
     """Generates the documentation type string"""
-    return (u'<?xml version="1.0" encoding="iso-8859-1"?>\n'
-            u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"'
-            u' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n')
+    return (u'<?xml version="1.0" encoding="UTF-8"?>\n'
+            u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
+            u'Transitional//EN" '
+            u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
 
 
 def header(style=u'default'):
