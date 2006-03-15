@@ -27,16 +27,26 @@
     <groupbox flex="0">
     <caption label="Taxonomy" />
     <hbox align="center">
-          <label id="ppLevel1" style="width:8em" value="Level 1:" tooltiptext="" />
+          <label id="ppLevel1" style="width:8em" value="Level 1:"
+                 tooltiptext="Default name for level 1 nodes" />
           <textbox id="pp_level1" size="40" onchange="this.style.color='blue';" />
        </hbox>
        <hbox align="center">
-          <label id="ppLevel2" style="width:8em" value="Level 2:" tooltiptext="" />
+          <label id="ppLevel2" style="width:8em" value="Level 2:" 
+                 tooltiptext="Default name for level 2 nodes" />
           <textbox id="pp_level2" size="40" onchange="this.style.color='blue';" />
        </hbox>
        <hbox align="center">
-          <label id="ppLevel3" style="width:8em" value="Level 3:" tooltiptext="" />
+          <label id="ppLevel3" style="width:8em" value="Level 3:"
+                 tooltiptext="Default name for level 3 nodes" />
           <textbox id="pp_level3" size="40" onchange="this.style.color='blue';" />
+       </hbox>
+       <hbox flex="0" align="center">
+           <button label="Update Tree"
+                   oncommand="submitForm(this.parentNode.parentNode);
+                   window.parent.location.reload(true);"
+                   tooltiptext="Submit changes and update the tree display" 
+                   flex="0"/>
        </hbox>
     </groupbox>
     <hbox align="left">
