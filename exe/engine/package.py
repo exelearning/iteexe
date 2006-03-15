@@ -229,7 +229,6 @@ class Package(Persistable):
 
         # Extract resource files from package to temporary directory
         for filename in zippedFile.namelist():
-            print filename
             if unicode(filename, 'utf8') != u"content.data":
                 outFile = open(newPackage.resourceDir/filename, "wb")
                 outFile.write(zippedFile.read(filename))
