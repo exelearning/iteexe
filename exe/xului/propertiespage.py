@@ -18,7 +18,21 @@
 # ===========================================================================
 
 """
-The PropertiesPage is for user to enter or edit package's properties
+The PropertiesPage is for user to enter or edit package's properties.
+
+It works with AJAX magic.
+
+It has 3 functions:
+1. Translate the user interface of the xulpages on the fly (translate)
+2. Fill in xul fields from engine object attributes when the page loads (fillInField)
+3. Recieve user changes to those attributes (recieveFieldData)
+
+All fields are assumed to be string fields, except for a small list of
+attribute names found in 'PropertiesPage.booleanFieldNames' class attribute. To
+add any other type of field, create a similar list as this.
+
+There is more documentation in the headers of the files in xului/templates
+diretory about how to add fields etc.
 """
 
 import logging
