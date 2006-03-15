@@ -175,6 +175,10 @@ class ForumElement(object):
         """
         log.debug("process " + repr(request.args))
         self.idevice.message = ""
+        
+        if "name"+ self.id in request.args:
+            self.idevice.title = request.args["name"+self.id][0]
+            
         if "fName"+self.id in request.args:
             self.forum.forumName = request.args["fName"+self.id][0]
             
