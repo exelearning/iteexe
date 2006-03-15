@@ -83,7 +83,6 @@ div#nodeDecoration {
    background-image:url(top_right_corner.gif);
    background-position:top right;
    background-repeat:no-repeat;
-   position: inline;
    top: 0;
 } 
 
