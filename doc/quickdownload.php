@@ -20,8 +20,8 @@
             print "python2.4-twisted_2.0.1-999_all.deb</a><br/>\n";
             print "</p><p>or</p>";
             print "<p>add this line to your /etc/apt/sources.list:</p>";
-            print "<code>deb ftp ftp://ftp.eduforge.org/pub/exe/ubuntu current contrib</code>";
-            print "<p>And then type <code>apt-get install python2.4-exe</code></p><p>";
+            print "<p><code>deb ftp ftp://ftp.eduforge.org/pub/exe/ubuntu current contrib</code></p>";
+            print "<p>And then type <code>apt-get install python2.4-exe</code> as root.</p><p>";
         }
         else
         {
