@@ -1,0 +1,9 @@
+#! /bin/sh
+# Brings up a meld of the latest svn file to your local file
+svn diff $1 > $1.patch
+echo :vert diffpatch $1.patch > $1.script
+cp -i $1 $1.old
+patch -R $1.old $1.patch
+meld $1.old $1
+rm $1.patch
+rm $1.old
