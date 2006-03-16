@@ -786,16 +786,28 @@ function showClozeScore(ident, mark) {
 function getCloseInputs(ident) {
     var result = new Array;
     var clozeDiv = document.getElementById('cloze'+ident)
-    for (var i=0; i<clozeDiv.childNodes.length; i++) {
-        var ele = clozeDiv.childNodes[i];
+    recurseFindClozeInputs(clozeDiv, ident, result)
+    return result
+}
+
+// Adds any cloze inputs found to result, recurses down
+function recurseFindClozeInputs(dad, ident, result) {
+    for (var i=0; i<dad.childNodes.length; i++) {
+        var ele = dad.childNodes[i];
+        // See if it is a blank
         if (ele.id) {
             if (ele.id.search('clozeBlank'+ident) == 0) {
                 result.push(ele);
+                continue;
             }
         }
+        // See if it contains blanks
+        if (ele.hasChildNodes()) {
+            recurseFindClozeInputs(ele, ident, result);
+        }
     }
-    return result
 }
+    
 
 // Pass the cloze element's id, and the visible property of the feedback element
 // associated with it will be toggled. If there is no feedback field, does
