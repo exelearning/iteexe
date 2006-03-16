@@ -18,6 +18,10 @@
             print "python2.4-exe_0.14-0.1ubuntu1_all.deb</a><br/>\n";
             print "<a href=\"http://eduforge.org/frs/download.php/141/python2.4-twisted_2.0.1-999_all.deb\">";
             print "python2.4-twisted_2.0.1-999_all.deb</a><br/>\n";
+            print "</p><p>or</p>";
+            print "<p>add this line to your /etc/apt/sources.list:</p>";
+            print "<code>deb ftp ftp://ftp.eduforge.org/pub/exe/ubuntu current contrib</code>";
+            print "<p>And then type <code>apt-get install python2.4-exe</code></p><p>";
         }
         else
         {
