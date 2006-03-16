@@ -28,6 +28,7 @@ from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
+from htmlentitydefs       import name2codepoint
 import re
 import urllib
 log = logging.getLogger(__name__)
@@ -446,8 +447,8 @@ exercise.</p>""")
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
-        value = value.replace('&quot;', '"')
-        value = value.replace('&amp;', '&')
+        for key, val in name2codepoint.items():
+            value = value.replace('&%s;' % key, unichr(val))
         parser = ClozeHTMLParser()
         parser.feed(value)
         parser.close()
