@@ -143,7 +143,8 @@ class WikipediaBlock(Block):
         html += self.articleElement.renderPreview()
         html += u"<br/>\n"
         html += u"This article is licensed under the "
-        html += u'<span style="text-decoration: underline;">GNU Free Documentation License</span>. It uses material '
+        html += u'<span style="text-decoration: underline;">'
+        html += u"GNU Free Documentation License</span>. It uses material "
         html += u'from the <span style="text-decoration: underline;">article '
         html += u'"%s"</span>.<br/>\n' % self.idevice.articleName
         html += self.renderViewButtons()
@@ -180,7 +181,8 @@ class WikipediaBlock(Block):
         html += _(u"It uses material from the ")
         html += u"<a href=\""+self.idevice.site+u"wiki/"
         html += self.idevice.articleName+u"\">"
-        html += _(u"article ") + u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
+        html += _(u"article ") 
+        html += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
             html += u"</div></div>\n"
         else:
