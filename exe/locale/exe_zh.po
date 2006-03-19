@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-14 14:26+1300\n"
+"POT-Creation-Date: 2006-03-20 09:41+1200\n"
 "PO-Revision-Date: 2006-03-13 13:41+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -123,7 +123,7 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr " "
 
-#: exe/engine/package.py:166
+#: exe/engine/package.py:165
 msgid "?????"
 msgstr "?????"
 
@@ -181,14 +181,14 @@ msgstr "学习活动"
 msgid "Add"
 msgstr "添加"
 
-#: exe/webui/element.py:257 exe/webui/element2.py:257
+#: exe/webui/element.py:257
 msgid "Add Image"
 msgstr "添加图片"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/element.py:368 exe/webui/element2.py:368
+#: exe/webui/element.py:368
 msgid "Add JPEG Image"
 msgstr "添加JPEG图片"
 
@@ -237,8 +237,8 @@ msgstr "添加互动式评语."
 msgid "Align:"
 msgstr "对齐:"
 
-#: exe/engine/imagemagnifieridevice.py:64
-#: exe/engine/imagemagnifieridevice.py:87
+#: exe/engine/imagemagnifieridevice.py:65
+#: exe/engine/imagemagnifieridevice.py:89
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
@@ -304,7 +304,7 @@ msgstr "作者"
 msgid "Button Caption"
 msgstr "按钮标签:"
 
-#: exe/idevices/forumelement.py:102
+#: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
 msgstr "学生能否在此论坛发表文章"
 
@@ -332,7 +332,7 @@ msgstr "案例分析"
 msgid "Change Image"
 msgstr "改换图片"
 
-#: exe/webui/element.py:535 exe/webui/element2.py:535
+#: exe/webui/element.py:536
 msgid "Check Caps?"
 msgstr "检查大小写?"
 
@@ -340,15 +340,15 @@ msgstr "检查大小写?"
 msgid "Chinese Wikipedia Article"
 msgstr "中文Wikipedia 文章"
 
-#: exe/idevices/forumidevice.py:107
+#: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
 msgstr "选择学习管理系统"
 
-#: exe/engine/imagemagnifieridevice.py:47
+#: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
 msgstr "选择图片"
 
-#: exe/engine/imagemagnifieridevice.py:60
+#: exe/engine/imagemagnifieridevice.py:61
 msgid ""
 "Choose the size you want \n"
 "your image to display at. The measurements are in pixels. Generally, 100 \n"
@@ -356,7 +356,7 @@ msgid ""
 "image to display at its original size."
 msgstr " "
 
-#: exe/engine/imagemagnifieridevice.py:47
+#: exe/engine/imagemagnifieridevice.py:48
 msgid ""
 "Click \n"
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
@@ -367,7 +367,7 @@ msgstr " "
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意:文件名不可含有中文字, 否则该软件不识别."
 
-#: exe/engine/field.py:136 exe/webui/questionelement.py:95
+#: exe/engine/field.py:137 exe/webui/questionelement.py:95
 msgid "Click Here"
 msgstr "点击"
 
@@ -375,8 +375,8 @@ msgstr "点击"
 msgid "Click here"
 msgstr "点击这里"
 
-#: exe/engine/galleryidevice.py:290 exe/webui/common.py:271
-#: exe/webui/common.py:272 exe/webui/multichoiceblock.py:154
+#: exe/engine/galleryidevice.py:290 exe/webui/common.py:272
+#: exe/webui/common.py:273 exe/webui/multichoiceblock.py:154
 #: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
 #: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
 #: exe/webui/block.py:238 exe/webui/editorpane.py:333
@@ -393,11 +393,11 @@ msgstr "填空题"
 msgid "Cloze Activity"
 msgstr "填空练习"
 
-#: exe/webui/element.py:517 exe/webui/element2.py:517
+#: exe/webui/element.py:518
 msgid "Cloze Text"
 msgstr "填空题"
 
-#: exe/webui/common.py:222
+#: exe/webui/common.py:223
 msgid "Confirm and submit"
 msgstr "确认及提交"
 
@@ -498,11 +498,11 @@ msgstr "描述:"
 msgid "Discussion Activity"
 msgstr "论坛"
 
-#: exe/idevices/forumelement.py:224
+#: exe/idevices/forumelement.py:233
 msgid "Discussion Topic/Thread:"
 msgstr "讨论主题:"
 
-#: exe/idevices/forumidevice.py:141
+#: exe/idevices/forumidevice.py:147
 msgid "Discussion topic/Thread"
 msgstr "讨论主题:"
 
@@ -510,9 +510,7 @@ msgstr "讨论主题:"
 msgid "Discussions and replies are allowed"
 msgstr "允许发表及回复文章"
 
-#: exe/webui/element.py:277 exe/webui/element.py:386 exe/webui/element.py:686
-#: exe/webui/element2.py:277 exe/webui/element2.py:386
-#: exe/webui/element2.py:704
+#: exe/webui/element.py:277 exe/webui/element.py:386 exe/webui/element.py:687
 msgid "Display as:"
 msgstr "显示为:"
 
@@ -528,17 +526,17 @@ msgstr "完成"
 msgid "Dutch Wikipedia Article"
 msgstr "荷兰文Wikipedia 文章"
 
-#: exe/webui/element.py:44 exe/webui/element2.py:44
+#: exe/webui/element.py:44
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROR Element.process called directly with %s class"
 
-#: exe/webui/element.py:53 exe/webui/element2.py:53
+#: exe/webui/element.py:53
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROR Element.renderEdit called directly with %s class"
 
-#: exe/webui/element.py:70 exe/webui/element2.py:70
+#: exe/webui/element.py:70
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR Element.renderView called directly with %s class"
@@ -556,7 +554,7 @@ msgstr "限每人发表一次"
 msgid "Edit"
 msgstr "编辑"
 
-#: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:304
 msgid "Emphasis"
 msgstr "强调"
 
@@ -580,7 +578,7 @@ msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:226
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:227
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -634,7 +632,7 @@ msgid ""
 "department."
 msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校所采用的模式."
 
-#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:86
+#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -669,7 +667,7 @@ msgid ""
 "                                 associate with the image."
 msgstr "输入有关图片的描述."
 
-#: exe/engine/imagemagnifieridevice.py:53
+#: exe/engine/imagemagnifieridevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -711,7 +709,7 @@ msgstr "错"
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
 #: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
-#: exe/webui/common.py:189 exe/webui/truefalseelement.py:90
+#: exe/webui/common.py:190 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
 msgstr "评语"
@@ -749,19 +747,19 @@ msgid ""
 "into an inline frame. Use only if your content will be online."
 msgstr " "
 
-#: exe/idevices/forumelement.py:109
+#: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
 msgstr "使每个会员均加入?:"
 
-#: exe/idevices/forumelement.py:197
+#: exe/idevices/forumelement.py:202
 msgid "Forum Name:"
 msgstr "论坛名称:"
 
-#: exe/idevices/forumelement.py:269 exe/idevices/forumelement.py:286
+#: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
 msgid "Forum Name: "
 msgstr "论坛名称:"
 
-#: exe/idevices/forumelement.py:95
+#: exe/idevices/forumelement.py:96
 msgid "Forum type:"
 msgstr "论坛类别:"
 
@@ -777,7 +775,7 @@ msgstr "自由文本"
 msgid "French Wikipedia Article"
 msgstr "法文Wikipedia 文章"
 
-#: exe/webui/wikipediablock.py:177
+#: exe/webui/wikipediablock.py:178
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
@@ -785,7 +783,7 @@ msgstr "GNU Free Documentation License"
 msgid "German Wikipedia Article"
 msgstr "德文Wikipedia 文章"
 
-#: exe/webui/element.py:605 exe/webui/element2.py:605
+#: exe/webui/element.py:606
 msgid "Get score"
 msgstr "得分"
 
@@ -801,7 +799,7 @@ msgstr "向前"
 msgid "Go Forward (Not Available)"
 msgstr "Go Forward (Not Available)"
 
-#: exe/idevices/forumelement.py:116
+#: exe/idevices/forumelement.py:117
 msgid "Group mode:"
 msgstr "分组类别:"
 
@@ -810,7 +808,7 @@ msgstr "分组类别:"
 msgid "Hide"
 msgstr "隐藏"
 
-#: exe/webui/element.py:525 exe/webui/element2.py:525
+#: exe/webui/element.py:526
 msgid "Hide/Show Word"
 msgstr "隐藏/显示 文字"
 
@@ -853,7 +851,7 @@ msgstr "图像"
 msgid "Image Gallery"
 msgstr "图象画廊"
 
-#: exe/engine/imagemagnifieridevice.py:39
+#: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
 msgstr "图像放大器"
 
@@ -880,11 +878,11 @@ msgstr "资讯"
 msgid "Initial Zoom"
 msgstr "初始放大倍数"
 
-#: exe/webui/element.py:540 exe/webui/element2.py:540
+#: exe/webui/element.py:541
 msgid "Instant Marking?"
 msgstr "快速评分?"
 
-#: exe/engine/clozeidevice.py:114 exe/webui/common.py:257
+#: exe/engine/clozeidevice.py:114 exe/webui/common.py:258
 msgid "Instructions"
 msgstr "说明"
 
@@ -892,15 +890,15 @@ msgstr "说明"
 msgid "Instructions For Learners"
 msgstr "练习说明"
 
-#: exe/webui/common.py:263 exe/webui/common.py:266
+#: exe/webui/common.py:264 exe/webui/common.py:267
 msgid "Instructions for completion"
 msgstr "完成说明"
 
-#: exe/idevices/forumelement.py:219
+#: exe/idevices/forumelement.py:227
 msgid "Introduction"
 msgstr "说明"
 
-#: exe/webui/wikipediablock.py:178
+#: exe/webui/wikipediablock.py:179
 msgid "It uses material from the "
 msgstr "所用资料来源于"
 
@@ -924,11 +922,11 @@ msgstr "标签"
 msgid "Large"
 msgstr "大"
 
-#: exe/idevices/forumidevice.py:158
+#: exe/idevices/forumidevice.py:164
 msgid "Learning Management System"
 msgstr "学习管理系统"
 
-#: exe/idevices/forumelement.py:243
+#: exe/idevices/forumelement.py:253
 msgid "Learning Management System:"
 msgstr "学习管理系统:"
 
@@ -937,11 +935,11 @@ msgstr "学习管理系统:"
 msgid "Left"
 msgstr "左"
 
-#: exe/idevices/forumidevice.py:161
+#: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
 msgstr "链接至论坛"
 
-#: exe/webui/wikipediablock.py:105
+#: exe/webui/wikipediablock.py:106
 msgid "Load"
 msgstr "载入"
 
@@ -953,7 +951,7 @@ msgstr "最大放大倍数"
 msgid "Medium"
 msgstr "中"
 
-#: exe/idevices/forumelement.py:252
+#: exe/idevices/forumelement.py:262
 msgid "Moodle"
 msgstr "Moodle"
 
@@ -981,11 +979,11 @@ msgstr "选择题"
 msgid "Name"
 msgstr "名称"
 
-#: exe/idevices/forumelement.py:207
+#: exe/idevices/forumelement.py:215
 msgid "New Forum"
 msgstr "新论坛"
 
-#: exe/idevices/forumelement.py:234
+#: exe/idevices/forumelement.py:243
 msgid "New Topic"
 msgstr "新主题"
 
@@ -1025,7 +1023,7 @@ msgstr "不能发表文章, 但可回复"
 msgid "No discussions, no replies"
 msgstr "不能发表文章, 不能回复"
 
-#: exe/webui/wikipediablock.py:109 exe/webui/editorpane.py:307
+#: exe/webui/wikipediablock.py:110 exe/webui/editorpane.py:307
 msgid "No emphasis"
 msgstr "不强调"
 
@@ -1035,7 +1033,7 @@ msgstr "不分组"
 
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
 #: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:77
-#: exe/idevices/forumelement.py:230
+#: exe/idevices/forumelement.py:239
 msgid "None"
 msgstr "无"
 
@@ -1061,7 +1059,7 @@ msgid ""
 "this iDevice."
 msgstr "只能选用.flv (Flash Video Files)."
 
-#: exe/engine/field.py:506 exe/engine/field.py:553
+#: exe/engine/field.py:505 exe/engine/field.py:553
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1076,7 +1074,7 @@ msgstr "选项"
 msgid "Options"
 msgstr "选项"
 
-#: exe/idevices/forumelement.py:256
+#: exe/idevices/forumelement.py:266
 msgid "Other"
 msgstr "其它"
 
@@ -1098,11 +1096,11 @@ msgstr "教学帮助"
 msgid "Pedagogical Tip"
 msgstr "教学提示"
 
-#: exe/idevices/forumblock.py:131
+#: exe/idevices/forumblock.py:133
 msgid "Please enter a discussion topic name.\n"
 msgstr "请填入讨论主题名称.\n"
 
-#: exe/idevices/forumblock.py:117
+#: exe/idevices/forumblock.py:119
 msgid "Please enter a name for the forum\n"
 msgstr "请填入论坛名称.\n"
 
@@ -1110,11 +1108,11 @@ msgstr "请填入论坛名称.\n"
 msgid "Please enter an idevice name."
 msgstr "请填入iDevice名称."
 
-#: exe/idevices/forumblock.py:126
+#: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
 msgstr "请选择学习管理系统.\n"
 
-#: exe/idevices/forumelement.py:248
+#: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
 msgstr "请选择学习管理系统."
 
@@ -1122,7 +1120,7 @@ msgstr "请选择学习管理系统."
 msgid "Please select a correct answer for each question."
 msgstr "请为每个问题选择一个正确的答案."
 
-#: exe/idevices/forumblock.py:112
+#: exe/idevices/forumblock.py:114
 msgid "Please select a forum.\n"
 msgstr "请选择论坛.\n"
 
@@ -1160,7 +1158,7 @@ msgstr "前一页"
 msgid "Provide a brief description of the file"
 msgstr "提供文件的简单描述."
 
-#: exe/engine/imagemagnifieridevice.py:58
+#: exe/engine/imagemagnifieridevice.py:59
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
@@ -1172,7 +1170,7 @@ msgid ""
 "you have just inserted."
 msgstr "为 flash电影提供标题."
 
-#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:84
+#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1249,7 +1247,7 @@ msgstr "立时回应是一种常用于联系理论和实践的教学方式. 立�
 msgid "Reflective question:"
 msgstr "问题:"
 
-#: exe/webui/element.py:625 exe/webui/element2.py:625
+#: exe/webui/element.py:626
 msgid "Restart"
 msgstr "重新开始"
 
@@ -1278,7 +1276,7 @@ msgstr "另存为"
 msgid "Section"
 msgstr "节"
 
-#: exe/webui/element.py:684 exe/webui/element2.py:702
+#: exe/webui/element.py:685
 msgid "Select Flash Object"
 msgstr "选择flash文档"
 
@@ -1292,7 +1290,7 @@ msgstr "选择语言"
 
 # exe/xului/templates/dublincore.xul:<menulist
 # id="dc:format"
-#: exe/idevices/forumelement.py:203
+#: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
 msgstr "选择论坛"
 
@@ -1300,15 +1298,15 @@ msgstr "选择论坛"
 msgid "Select a file"
 msgstr "选择文档"
 
-#: exe/webui/element.py:758 exe/webui/element2.py:776
+#: exe/webui/element.py:759
 msgid "Select a flash video"
 msgstr "选择flash电影文档"
 
-#: exe/webui/element.py:276 exe/webui/element2.py:276
+#: exe/webui/element.py:276
 msgid "Select an image"
 msgstr "选择图片"
 
-#: exe/webui/element.py:384 exe/webui/element2.py:384
+#: exe/webui/element.py:384
 msgid "Select an image (JPG file)"
 msgstr "选择图片 (JPG 文档)"
 
@@ -1316,7 +1314,7 @@ msgstr "选择图片 (JPG 文档)"
 msgid "Select pass rate: "
 msgstr "选择及格线"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:224
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:225
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1332,21 +1330,21 @@ msgstr "点击选项旁的点选钮来选择正确选项."
 msgid "Separate groups"
 msgstr "分组"
 
-#: exe/engine/imagemagnifieridevice.py:66
-#: exe/engine/imagemagnifieridevice.py:89
+#: exe/engine/imagemagnifieridevice.py:67
+#: exe/engine/imagemagnifieridevice.py:91
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr " "
 
-#: exe/engine/imagemagnifieridevice.py:68
-#: exe/engine/imagemagnifieridevice.py:91
+#: exe/engine/imagemagnifieridevice.py:69
+#: exe/engine/imagemagnifieridevice.py:93
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr " "
 
-#: exe/xului/propertiespage.py:175
+#: exe/xului/propertiespage.py:191
 msgid "Settings saved"
 msgstr "设置已保存"
 
@@ -1359,19 +1357,19 @@ msgstr "显示"
 msgid "Show %s Image"
 msgstr "显示 %s 图象"
 
-#: exe/webui/element.py:632 exe/webui/element2.py:632
+#: exe/webui/element.py:633
 msgid "Show Answers"
 msgstr "显示 答案"
 
-#: exe/webui/element.py:616 exe/webui/element2.py:616
+#: exe/webui/element.py:617
 msgid "Show/Clear Answers"
 msgstr "显示/清除 答案"
 
-#: exe/webui/element.py:611 exe/webui/element2.py:611
+#: exe/webui/element.py:612
 msgid "Show/Hide Feedback"
 msgstr "显示/隐藏 评语"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:98
 msgid "Site"
 msgstr "Site"
 
@@ -1383,7 +1381,13 @@ msgstr "放大镜尺寸:"
 msgid "Small"
 msgstr "小"
 
-#: exe/webui/wikipediablock.py:110 exe/webui/editorpane.py:308
+# exe/xului/templates/dublincore.xul:<menuitem
+#: exe/webui/wikipediablock.py:92
+#, fuzzy
+msgid "Solvenian"
+msgstr "Slovenian. "
+
+#: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:308
 msgid "Some emphasis"
 msgstr "一般强调"
 
@@ -1402,7 +1406,7 @@ msgstr ""
 "对不起, 文件格式错误:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:92
+#: exe/webui/wikipediablock.py:93
 msgid "Spanish Wikipedia Article"
 msgstr "西班牙文Wikipedia 文章"
 
@@ -1414,16 +1418,16 @@ msgstr "标准论坛"
 msgid "Story:"
 msgstr "事件:"
 
-#: exe/webui/element.py:530 exe/webui/element2.py:530
+#: exe/webui/element.py:531
 msgid "Strict Marking?"
 msgstr "严格评分?"
 
-#: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:309
+#: exe/webui/wikipediablock.py:112 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
 msgstr "特别强调"
 
-#: exe/webui/common.py:205 exe/webui/editorpane.py:397
-#: exe/webui/element.py:620 exe/webui/element2.py:620
+#: exe/webui/common.py:206 exe/webui/editorpane.py:397
+#: exe/webui/element.py:621
 msgid "Submit"
 msgstr "提交"
 
@@ -1431,7 +1435,7 @@ msgstr "提交"
 msgid "Submit Answer"
 msgstr "提交答案"
 
-#: exe/webui/wikipediablock.py:93
+#: exe/webui/wikipediablock.py:94
 msgid "Swedish Wikipedia Article"
 msgstr "瑞典文Wikipedia 文章"
 
@@ -1440,7 +1444,7 @@ msgid "Teachers should keep the following in mind when using this iDevice: <ol><
 msgstr "  "
 
 #: exe/engine/imagewithtextidevice.py:61
-#: exe/engine/imagemagnifieridevice.py:52
+#: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "文字"
 
@@ -1464,7 +1468,7 @@ msgid ""
 "the learners will view."
 msgstr " "
 
-#: exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/imagemagnifieridevice.py:42
 msgid ""
 "The image magnifier is a magnifying tool enabling\n"
 " learners to magnify the view of the image they have been given. Moving the \n"
@@ -1483,12 +1487,12 @@ msgstr "大多数课件都是要编写课文，传授知识和提供基本信息
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "描述这个iDevice的目的."
 
-#: exe/webui/wikipediablock.py:174
+#: exe/webui/wikipediablock.py:175
 msgid "This article is licensed under the "
 msgstr "This article is licensed under the "
 
-#: exe/engine/imagemagnifieridevice.py:70
-#: exe/engine/imagemagnifieridevice.py:93
+#: exe/engine/imagemagnifieridevice.py:71
+#: exe/engine/imagemagnifieridevice.py:95
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
@@ -1525,7 +1529,7 @@ msgstr "这是一个非必要栏域."
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
 msgstr "将要删除这个iDevice. 你真的要删除它吗?"
 
-#: exe/idevices/forumelement.py:342 exe/idevices/forumelement.py:359
+#: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
 msgid "Thread: "
 msgstr "Thread: "
 
@@ -1559,11 +1563,11 @@ msgid ""
 "responses."
 msgstr "是非题提供一个陈述句, 让学生判断其陈述是否正确."
 
-#: exe/engine/field.py:634 exe/idevices/forumidevice.py:145
+#: exe/engine/field.py:634 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "输入讨论主题:"
 
-#: exe/idevices/forumidevice.py:101
+#: exe/idevices/forumidevice.py:107
 msgid "Type a forum name here"
 msgstr "在此输入论坛标题"
 
@@ -1616,7 +1620,7 @@ msgstr "单元"
 #: exe/engine/galleryidevice.py:489 exe/engine/wikipediaidevice.py:52
 #: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:106
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:40
+#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
 #: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
 #: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
 #: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
@@ -1666,7 +1670,7 @@ msgstr " "
 msgid "Visible groups"
 msgstr "组别可视性"
 
-#: exe/idevices/forumelement.py:123
+#: exe/idevices/forumelement.py:124
 msgid "Visible to students:"
 msgstr "学生可看:"
 
@@ -1697,11 +1701,11 @@ msgstr ""
 "<li> 错误选项应是不正确的,但似乎合理的. </li>\n"
 "</ul>\n"
 
-#: exe/webui/wikipediablock.py:94
+#: exe/webui/wikipediablock.py:95
 msgid "Wikibooks Article"
 msgstr "Wikibooks 文章"
 
-#: exe/webui/wikipediablock.py:95
+#: exe/webui/wikipediablock.py:96
 msgid "Wikieducator Content"
 msgstr "Wikieducato 文章"
 
@@ -1725,28 +1729,27 @@ msgstr "是, 最初"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "你新的iDevice将以此名称列在iDevice栏中. 这是一个必须填写的栏目."
 
-#: exe/webui/wikipediablock.py:181
+#: exe/webui/wikipediablock.py:182
 msgid "article "
 msgstr "文章"
 
-#: exe/webui/element.py:291 exe/webui/element.py:402 exe/webui/element2.py:291
-#: exe/webui/element2.py:402
+#: exe/webui/element.py:291 exe/webui/element.py:402
 msgid "blank for original size"
 msgstr "空白为原来的大小尺寸"
 
-#: exe/idevices/forumblock.py:122
+#: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
 msgstr "此论坛标题已被使用, 请输入其它标题.\n"
 
-#: exe/idevices/forumblock.py:135
+#: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
 msgstr "重复的主题名"
 
-#: exe/export/scormexport.py:256 exe/export/imsexport.py:188
+#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:66 exe/webui/preferencespage.py:73
+#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
 #: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 编辑器"
@@ -1756,7 +1759,7 @@ msgstr "eXe:  elearning XHTML 编辑器"
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:176
+#: exe/engine/wikipediaidevice.py:177
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -1769,7 +1772,7 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:258 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:257 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"
@@ -1888,11 +1891,10 @@ msgstr "创作者:"
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Author:"
-#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
-#: resource.">
-msgid "Author:"
-msgstr "作者"
+#: exe/xului/templates/projectproperties.xul:<label value="Header Background:"
+#: style="width:8em">
+msgid "Header Background:"
+msgstr ""
 
 # exe/xului/templates/properties.xul:<tab
 #: exe/xului/templates/properties.xul:<tab label="Export">
@@ -1915,9 +1917,11 @@ msgstr "课目:"
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
-#: exe/xului/templates/projectproperties.xul:<caption label="Taxonomy">
-msgid "Taxonomy"
-msgstr "分类名称"
+#: exe/xului/templates/projectproperties.xul:<label value="Author:"
+#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
+#: resource.">
+msgid "Author:"
+msgstr "作者"
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/xului/templates/dublincore.xul:<description >
@@ -1945,10 +1949,9 @@ msgstr ""
 msgid "R"
 msgstr "R"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="">
-msgid "Level 1:"
-msgstr "一级:"
+#: exe/xului/templates/projectproperties.xul:<caption label="Taxonomy">
+msgid "Taxonomy"
+msgstr "分类名称"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Publisher:"
@@ -1967,10 +1970,11 @@ msgstr "出版商:"
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="">
-msgid "Level 2:"
-msgstr "二级:"
+#: exe/xului/templates/projectproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+msgid "Level 1:"
+msgstr "一级:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Contributors:"
@@ -1989,10 +1993,11 @@ msgstr "贡献者:"
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="">
-msgid "Level 3:"
-msgstr "三级:"
+#: exe/xului/templates/projectproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: nodes">
+msgid "Level 2:"
+msgstr "二级:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Date:"
@@ -2010,6 +2015,12 @@ msgstr "日期:"
 #: modifiers="control" id="upKey">
 msgid "U"
 msgstr "U"
+
+#: exe/xului/templates/projectproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+msgid "Level 3:"
+msgstr "三级:"
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/xului/templates/dublincore.xul:<description >
@@ -2029,6 +2040,13 @@ msgstr " "
 #: modifiers="control" id="downKey">
 msgid "D"
 msgstr "D"
+
+#: exe/xului/templates/projectproperties.xul:<button flex="0"
+#: oncommand="submitForm(this.parentNode.parentNode);
+#: window.parent.location.reload(true);" label="Update Tree"
+#: tooltiptext="Submit changes and update the tree display">
+msgid "Update Tree"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content

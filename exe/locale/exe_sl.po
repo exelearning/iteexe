@@ -5,35 +5,55 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ExeLearning\n"
+"Project-Id-Version: SLOVENIAN LANGUAGE PACKAGE VERSION 0.12\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-20 09:41+1200\n"
-"PO-Revision-Date: 2006-01-17 10:54+1200\n"
-"Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
-"Language-Team: Hungarian <bard.andras@villanyi.avf.hu>\n"
+"PO-Revision-Date: 2006-02-28 13:46+0100\n"
+"Last-Translator: Iztok Osredkar <iztok.osredkar@institut-oko.si>\n"
+"Language-Team: Institut OKO <okoinfo@institut-oko.si>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: Hungary\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
-msgstr ""
+msgstr "---Move To---"
 
 #: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:283
 #: exe/xului/mainpage.py:328 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ".Prosimo uporabljajte ASCII imena."
 
 #: exe/engine/clozeidevice.py:58
+#, fuzzy
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
 msgstr ""
+"<dl><dt>Če je vaš cilj preizkusiti razumevanje glavnih misli  ali\n"
+"razumevanje branja.</dt><dd><p> Napišite povzetek misli ali branja.\n"
+"Ta bi moral biti dovolj dolg, da primerno preizkusi  vaše ciljno znanje,\n"
+"vendar ne predolg, da  bi postal utrujajoč.. Manj kot ena tipkana stran\n"
+"verjetno ustreza, vi pa morda želite napisati  precej manj besedila za vaše\n"
+"mlade slušatelje ali začetnike.</p><p>V besedilu izberite besede, ki\n"
+"so ključ za razumevanje pojmov. To bodo verjetno glagoli, samostalniki in\n"
+"ključni prislovi.Izberite alternative z enim jasnim odgovorom.</p></dd><dt>\n"
+"Če je vaš cilj preizkusiti besedišče </dt>  <dd>Napišite besedilo z uporabo\n"
+"ciljnega besedišča.To besedilo mora biti soodvisno in vezljivo in ter\n"
+"primerno dolgo.Označite ciljne besede v besedilu.Izberite alternative z enim\n"
+"samim razumljivim odgovorom.</dd><dt>Če je vaš cilj preizkusiti oblikovanje\n"
+"besed/slovnico:</dt><dd><p>Napišite besedilo z uporabo ciljnih oblik.\n"
+"To besedilo bi moralo biti soodvisno in vezljivo ter primerno\n"
+"dolgo. Zapomnite si, da cilj ni znanje besedišča, zato bi moral biti glavni\n"
+"pomen besednih korenov dobro znan slušateljem.</p><p>Označite ciljne besede\n"
+"v besedilu. Podajte alternative z istim besednim korenom, vendar z\n"
+"različnimi obrazili. Dobro je imeti partnerja za preizkušanje testa vaj, da\n"
+"boste prepričani, da ne bo presenečenj!</p>\n"
 
 #: exe/engine/imagewithtextidevice.py:41
+#, fuzzy
 msgid ""
 "<p>\n"
 "The image with text iDevice can be used in a number of ways to support both\n"
@@ -52,41 +72,124 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"Slika z besedilom iNaprave je lahko uporabljena na številne načine v podporo\n"
+"obeh/n dimenzij čustvenih (emocionalnih) in učnih (poznavalnih) nalog eXe\n"
+"vsebine. Dajemo  primer za posamezne dimenzije:\n"
+"</p><p>\n"
+"<b>Predavateljski profil (čustvena dimenzija)</b>\n"
+"</p><p>\n"
+"Raziskava kaže na to, da slušatelji, ki so povezani na splet, cenijo\n"
+"osebnostni pristop. Način, da to lahko dosežemo, je, da podamo kratek opis\n"
+"predavateljev in ostalega osebja, ki je vključeno v podajanje znanja.\n"
+"Profil (z osebno fotografijo) se ne uporablja samo za sporočanje vloge\n"
+"priporočila predavatelja, temveč tudi za potrjevanje neposrednega\n"
+"odnosa med slušateljem in predavateljem, bolj kot pa za vsebino in sredstvo\n"
+"podajanja (računalnik). Profili  bi morali biti napisani v\n"
+"\"ne-akademskem\" tonu z uporabo osebnih zaimkov.\n"
+"</p><p>\n"
+"<b>Povezovanje likov s povzetki v besedah</b>\n"
+"</p><p>\n"
+"Kognitivni psihologi navajajo, da če slušateljem predstavimo\n"
+"slikovno podobo in ustrezni besedni povzetek(ki je predstavljen\n"
+"istočasno), to  lahko zmanjša napor za spoznavanje in izboljša ohranitev\n"
+"učenja.\n"
+"Ta iNaprava se uporablja za  za predstavitev slik (fotografij, diagramov ali\n"
+"grafike) skupaj z kratkim besednim povzetkom, s tem, da se zajamejo glavne\n"
+"točke, ki se nanašajo na\n"
+"sliko. Na primer, če bi poučevali funkcije štiri-taktnega\n"
+"motorja z notrajim izgorevanjem, bi morali imeti sliko za vsakega od štirih\n"
+"položajev bata skupaj s kratkim besednim povzetkom  kot ključnim vidikom\n"
+"za vsako sliko.\n"
+"</p>"
 
 #: exe/engine/attachmentidevice.py:57
+#, fuzzy
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr ""
+"<p>Določite označbo za priponko. Koristno je vključiti določene\n"
+"vrste datoteke. Npr. pdf, ppt, itd.</p><p>Vključevanje določene velikosti\n"
+"je tudi priporočena zato da se kasneje vaš paket izvozi na spletno stran,\n"
+"ljudje bodo imeli predstavo, kako dolgo se nalaga ta priponka.\n"
+"</p><p>Primer: <code>Napovedi_za_prodajo.doc (500kb)</code></p>\n"
 
 #: exe/engine/clozeidevice.py:46
+#, fuzzy
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
 msgstr ""
+"<p>Preizkusi ali vaje s sobesedilnim izpolnjevanjem so besedila ali\n"
+"stavki, kjer so bile nekatere besede ali fraze izbrisane. Slušatelji morajo\n"
+"vnesti manjkajoče besede. Pogosto so uporabljene za naslednji namene:\n"
+"</p><ol><li>Da se preverja znanje glavnega toka misli (to bi lahko bilo\n"
+"pred-pregledovanje, preoblikovalne naloge ali seštevalni pregledi).</li>\n"
+"<li>Da preverja bralno razumevanje.</li>\n"
+"<li>Da preverja besedno znanje (uporabno za angleško govoreče nedomačine)</li>\n"
+"<li>Za pregled besedotvorja inli slovnične primernosti.</li>"
 
 #: exe/engine/clozeidevice.py:122
+#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
+"Vpišite besedilo za vaše vaje za sobesedilno izpolnjevanje z vnosom\n"
+"ali tipkanjem v polje izpolnjevalnega sobesedila . Za izbiro besed, ki jih\n"
+"želite skriti, dvakrat kliknite na besedo in kliknite na gumb\n"
+"<i>Skrij/Prikaži besedo. </i> "
 
 #: exe/engine/field.py:415
+#, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
+"<p>If this option is left unchecked a fuzzy algorythm will be used\n"
+"to mark learners answers. It will accept a small amount of spelling and\n"
+"capitalization errors on words longer than 4 letters. This will happen\n"
+"even if \"Check capitalization\" is on.</p><p><strong>For example:\n"
+"</strong> If the correct answer is <code>Elephant</code> and both\n"
+"<code>elephant</code> and <code>Eliphant</code> will be judged <em>\n"
+"\"close enough\"</em> by the algorythm as it only has one letter wrong,\n"
+"even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is\n"
+"off in the above example, the lowercase <code>e</code> will not be\n"
+"considered a mistake and <code>eliphant</code> will also be accepted.\n"
+"</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set,\n"
+"the only correct answer is \"Elephant\". If only \"Strict Marking\" is\n"
+"checked and \"Check Capitilization\" is not, \"elephant\" will also be\n"
+"accepted.</p>"
 
 #: exe/engine/field.py:436
+#, fuzzy
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr ""
+"<p>If this option is checked, submitted answers with different\n"
+"capitalization will be marked as wrong.</p>\n"
 
 #: exe/engine/field.py:441
+#, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather then all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>If this option is set, each word will be marked as the learner\n"
+"types it in, instead of all the words bieng marked at the end.</p>\n"
 
 #: exe/engine/idevicestore.py:245
+#, fuzzy
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"Učitelji bi morali imeti v mislih naslednje, kadar uporabljajo\n"
+"iNapravo:<ol><li>Razmisliti o številu različnih vrst aktivnosti, načrtovanih\n"
+"za vaš vir, ki bodo vizualno  označene v vsebini. Izogibajte se preveliki\n"
+"uporabi različnih vrst ali razvrščanju aktivnosti, ker bo sicer slušatelj\n"
+"postal zmeden. Običajno so tri do štiri različne vrste več kot primerne\n"
+"za učne vire.</li><li>Iz oblikovnega stališča, se izognite uporabi dveh\n"
+"iNaprav, ki si  takoj sledita drug drugi brez vmesnega besedila. Če je to\n"
+"zahtevano, raje združite dve vprašanji ali dogodka v eno iNapravo .\n"
+"</li><li>3.Premislite o aktivnostih kjer zaznana korist opravljanja \n"
+"aktivnosti odtehta čas in napor, ki sta potrebna za dokončanje te aktivnost.\n"
+"</li></ol>"
 
 #: exe/engine/idevicestore.py:240
 msgid ""
@@ -126,9 +229,10 @@ msgstr ""
 
 #: exe/engine/package.py:165
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/casestudyidevice.py:58
+#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -144,6 +248,19 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Študijski primer je zgodba ki  \n"
+"prinaša vzgojno sporočilo Študijski primer se lahko uporabi za  predstavitev\n"
+"realne situacije \n"
+"ki omogoča slušateljem, da uporabljajo svoje lastno znanje in izkušnje.\n"
+"Kadar oblikujete študijski primer, bi morda razmislili o naslednjem:<ul>\n"
+"<li>\t Katere vzgojne točke prinaša zgodba</li>\n"
+"</li>\tKatere naprave bodo slušatelji potrebovali , preden se bodo ukvarjali\n"
+"s študijskim primeru</li>\n"
+"<li>\tKje se  študijski primer vklaplja v ostalo vsebino študija</li>\n"
+"<li>\tKako se bodo slušatelji medsebojno obnašali do gradiv in drug do\n"
+"drugega n.pr. e.g če ob uporabi v razredni situaciji lahko postavijo \n"
+"delovne skupine za delo na različne vidike brez nobenega primera in če je\n"
+"tako, kako so ideje ponovno uporabljene v  razredu</li></ul>\""
 
 #: exe/engine/truefalseidevice.py:65
 msgid ""
@@ -152,80 +269,97 @@ msgid ""
 msgstr ""
 
 #: exe/webui/editorpane.py:72
+#, fuzzy
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr ""
+"Po pedagoški poti lahko opišete nameravano uporabo in  pedagogiko\n"
+"za razvoj naprav."
 
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
-msgstr ""
+msgstr "Posamezna preprosta razprava "
 
 #: exe/webui/editorpane.py:224
 msgid "Actions"
-msgstr ""
+msgstr "Ukrepanja "
 
 #: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:323
 #: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:392
 #: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:438
 #: exe/webui/questionelement.py:70
 msgid "Activity"
-msgstr ""
+msgstr "Aktivnost"
 
 #: exe/webui/editorpane.py:213
 msgid "Add"
-msgstr ""
+msgstr "Dodaj "
 
 #: exe/webui/element.py:257
+#, fuzzy
 msgid "Add Image"
-msgstr ""
+msgstr "Dodaj slike"
 
 #: exe/webui/element.py:368
+#, fuzzy
 msgid "Add JPEG Image"
-msgstr ""
+msgstr "Dodaj stran"
 
 #: exe/webui/editorpane.py:75
+#, fuzzy
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
 msgstr ""
+"Dodaj posamezno vrstico besedila v iNapravo. Koristno, če želite\n"
+"možnost dati  oznako v napravo."
 
 #: exe/webui/editorpane.py:78
+#, fuzzy
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
 msgstr ""
+"Dodaj okvir za vnos besedila v iNapravo. Uporabno za vnos besedilno\n"
+"opisne vsebine"
 
 #: exe/webui/editorpane.py:81
+#, fuzzy
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr ""
+"Dodaj sliko v vašo iNapravo. Lahko se izbere  slika iz vaše shranjene\n"
+"slikovne datoteke."
 
 #: exe/webui/testquestionelement.py:106
+#, fuzzy
 msgid "Add another Option"
-msgstr ""
+msgstr "Dodaj drugo možnost"
 
 #: exe/webui/quiztestblock.py:101
+#, fuzzy
 msgid "Add another Question"
-msgstr ""
+msgstr "Dodaj drugo vprašanje"
 
 #: exe/webui/multichoiceblock.py:118
 msgid "Add another option"
-msgstr ""
+msgstr "Dodaj drugo možnost"
 
 #: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:93
 msgid "Add another question"
-msgstr ""
+msgstr "Dodaj drugo vprašanje"
 
 #: exe/idevices/appletblock.py:80
+#, fuzzy
 msgid "Add files"
-msgstr ""
+msgstr "Dodaj slike"
 
 #: exe/webui/galleryblock.py:174
 msgid "Add images"
-msgstr ""
+msgstr "Dodaj slike"
 
 #: exe/webui/editorpane.py:84
 msgid "Add interactive feedback to your iDevice."
-msgstr ""
+msgstr "Dodajte medsebojno povratno informacijo vaši iNapravi."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:79
 msgid "Align:"
-msgstr ""
+msgstr "Poravnaj:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:89
@@ -239,12 +373,17 @@ msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Omogoči avtomatično dokončanje kadar \n"
+"                                    uporabnik izpolnjuje prazna mesta."
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
 msgstr ""
+"Omogoči avtomatično dokončanje kadar \n"
+" uporabnik iizpolnjuje prazna mesta."
 
 #: exe/engine/multichoiceidevice.py:59
+#, fuzzy
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -261,6 +400,17 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Čeprav je pogosteje uporabljeno v uradnem testiranju\n"
+"situacij se lahko MCQs uporabla kot preizkusno orodje za spodbujanje\n"
+"mišljenja in razprav o predmetih kjer se lahko slušatelji počutijo zadržani\n"
+"v odzivanju.\n"
+"Kadar načrtujete MCQ preizkus razmislite sledeče:<ul>\n"
+"<li>Kakšni so  učni rezultati,  ki se preizkušajo s vprašanji</li>\n"
+"<li>Katere umske veščine se preizkušajo</li>\n"
+"<li>Kakšne  so jezikovne veščine poslušalcev </li>\n"
+"<li>Spolna in kulturna vprašanja </li>\n"
+"<li>Izogibajte se slovničnega jezika in zgradbe vprašanj, ki lahko\n"
+"usmerja</li></ul>\n"
 
 #: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:433
 msgid ""
@@ -268,6 +418,9 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Aktivnost se lahko definira kot naloga ali skupek nalog, ki jih mora\n"
+"slušatelj izpolniti. Nalogo podajte razumljivo in razmislite o pogojih\n"
+"ki lahko pomagajo ali ovirajo slušatelja pri izvedbi naloge."
 
 #: exe/idevices/appletblock.py:86
 msgid "Applet Code:"
@@ -275,48 +428,48 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
-msgstr ""
+msgstr "Članek"
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
-msgstr ""
+msgstr "Priponka"
 
 #: exe/engine/attachmentidevice.py:93
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Priponka %s nima nobenega prakolena"
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
-msgstr ""
+msgstr "Avtor"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr ""
+msgstr "Podnaslov gumba "
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
-msgstr ""
+msgstr "Ali lahko slušatelj pošilja  na ta forum?: "
 
 #: exe/webui/preferencespage.py:90 exe/webui/editorpane.py:232
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:227 exe/xului/mainpage.py:281
 #: exe/xului/mainpage.py:326 exe/xului/mainpage.old.py:222
 #: exe/xului/mainpage.old.py:303
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Ne morem dostopati do imenovane  mape"
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:84
 msgid "Caption:"
-msgstr ""
+msgstr "Podnaslov:"
 
 #: exe/engine/casestudyidevice.py:56
 msgid "Case Study"
-msgstr ""
+msgstr "Študijski primer "
 
 #: exe/webui/galleryblock.py:189 exe/webui/galleryblock.py:207
 msgid "Change Image"
@@ -324,19 +477,20 @@ msgstr ""
 
 #: exe/webui/element.py:536
 msgid "Check Caps?"
-msgstr ""
+msgstr "Check Caps?"
 
 #: exe/webui/wikipediablock.py:83
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Kitajski članki iz Wikipedije"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
-msgstr ""
+msgstr "Izberi LMS"
 
 #: exe/engine/imagemagnifieridevice.py:48
+#, fuzzy
 msgid "Choose an Image"
-msgstr ""
+msgstr "Izberi LMS"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -354,16 +508,19 @@ msgid ""
 msgstr ""
 
 #: exe/engine/attachmentidevice.py:53
+#, fuzzy
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr ""
+"Kliknite<strong> izberi datoteko</strong>,prebrskajte med datotekami\n"
+"in izberite tisto, ki jo želite pripeti."
 
 #: exe/engine/field.py:137 exe/webui/questionelement.py:95
 msgid "Click Here"
-msgstr ""
+msgstr "Pritisnite  Tukaj"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
-msgstr ""
+msgstr "Pritisnite Tukaj"
 
 #: exe/engine/galleryidevice.py:290 exe/webui/common.py:272
 #: exe/webui/common.py:273 exe/webui/multichoiceblock.py:154
@@ -373,19 +530,20 @@ msgstr ""
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
-msgstr ""
+msgstr "Zapri"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
-msgstr ""
+msgstr "Izpolni v sobesedilu"
 
 #: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Sobesedilno izpolnjevanje "
 
 #: exe/webui/element.py:518
+#, fuzzy
 msgid "Cloze Text"
-msgstr ""
+msgstr "Izpolni v sobesedilu"
 
 #: exe/webui/common.py:223
 msgid "Confirm and submit"
@@ -394,11 +552,11 @@ msgstr ""
 #: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
 #: exe/webui/testquestionelement.py:93
 msgid "Correct"
-msgstr ""
+msgstr "Pravilno"
 
 #: exe/webui/truefalseelement.py:172
 msgid "Correct!"
-msgstr ""
+msgstr "Popravi!"
 
 #: exe/engine/casestudyidevice.py:76
 msgid ""
@@ -415,24 +573,26 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: exe/idevices/appletblock.py:99
+#, fuzzy
 msgid "Delete File"
-msgstr ""
+msgstr "Izbriši"
 
 #: exe/webui/galleryblock.py:238
+#, fuzzy
 msgid "Delete Image"
-msgstr ""
+msgstr "Izberite sliko"
 
 #: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:92
 msgid "Delete option"
-msgstr ""
+msgstr "Izbrišite Izbiro"
 
 #: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
 #: exe/webui/testquestionelement.py:85
 msgid "Delete question"
-msgstr ""
+msgstr "Izbrišite vprašanje"
 
 #: exe/engine/reflectionidevice.py:56
 msgid ""
@@ -440,6 +600,9 @@ msgid ""
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
 msgstr ""
+"Opiši kako bodo slušatelji ocenili  kako  \n"
+"so naredili vajo. (Rubrike so koristne pri podajanju \n"
+"povratne informacije.)"
 
 #: exe/engine/casestudyidevice.py:80
 msgid ""
@@ -454,6 +617,8 @@ msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Opišite potrebno predhodno znanje slušateljev ,da bi uspešno\n"
+"zaključili to učenje "
 
 #: exe/engine/idevicestore.py:285 exe/engine/idevicestore.py:393
 msgid ""
@@ -463,38 +628,38 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:439
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Opišite naloge, katere naj bi slušatelji zaključili"
 
 #: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: exe/webui/attachmentblock.py:85 exe/xului/templates/dublincore.xul:<label
 #: value="Description:" id="dcDescription" style="width:8em" tooltiptext="An
 #: account of the content resource.">
 #: exe/xului/templates/projectproperties.xul:<label id="ppDescription"
 msgid "Description:"
-msgstr ""
+msgstr "Opis:"
 
 #: exe/idevices/forumidevice.py:40
 msgid "Discussion Activity"
-msgstr ""
+msgstr "Aktivna razprava"
 
 #: exe/idevices/forumelement.py:233
 msgid "Discussion Topic/Thread:"
-msgstr ""
+msgstr "Razpravna tema "
 
 #: exe/idevices/forumidevice.py:147
 msgid "Discussion topic/Thread"
-msgstr ""
+msgstr "Razprava teme"
 
 #: exe/idevices/forumelement.py:79
 msgid "Discussions and replies are allowed"
-msgstr ""
+msgstr "Razprave in odgovori so dovoljeni"
 
 #: exe/webui/element.py:277 exe/webui/element.py:386 exe/webui/element.py:687
 msgid "Display as:"
-msgstr ""
+msgstr "Prikaži kot:"
 
 #: exe/webui/block.py:200 exe/xului/templates/dublincore.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" label="Done">
@@ -502,47 +667,51 @@ msgstr ""
 #: exe/xului/templates/projectproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);"
 msgid "Done"
-msgstr ""
+msgstr "Narejeno"
 
 #: exe/webui/wikipediablock.py:89
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Nizozemski članki iz Wikipedije"
 
 #: exe/webui/element.py:44
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "NAPAKA Dejavnik.postopka je imenovana direktno z %s razredom"
 
 #: exe/webui/element.py:53
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr ""
+"NAPAKA sestavni del Vrinjenega Urejanja je imenovana direktno z\n"
+"%s razredom"
 
 #: exe/webui/element.py:70
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr ""
+"NAPAKA Sestavni del Vrinjenega Pogleda je imenovan direktno z\n"
+"%s razredom"
 
 #: exe/webui/block.py:312
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "NAPAKA: Zapora.ponujenPogledVsebine je imenovan neposredno"
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
-msgstr ""
+msgstr "Vsak posameznik pošlje ji eno razpravo "
 
 #: exe/webui/block.py:321 exe/webui/editorpage.py:199
 #: exe/webui/editorpane.py:229
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 #: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:304
 msgid "Emphasis"
-msgstr ""
+msgstr "Poudarki"
 
 #: exe/webui/wikipediablock.py:82
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Angleški članki iz Wikipedije"
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -555,10 +724,15 @@ msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Tukaj vpišite namig.Če ne\n"
+"neželite  ponuditi namiga, pustite to polje prazno."
 
 #: exe/engine/multichoiceidevice.py:126
+#, fuzzy
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr ""
+"Tukaj vpišite namig.Če ne\n"
+"neželite  ponuditi namiga, pustite to polje prazno."
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:227
 msgid ""
@@ -567,10 +741,13 @@ msgid ""
 msgstr ""
 
 #: exe/engine/reflectionidevice.py:54
+#, fuzzy
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Vpišite podrobnosti aktivnosti, ki jih \n"
+" morajo slušatelji  razmisliti."
 
 #: exe/engine/quiztestidevice.py:64 exe/engine/quiztestidevice.py:86
 msgid ""
@@ -580,19 +757,25 @@ msgid ""
 msgstr ""
 
 #: exe/engine/truefalseidevice.py:72
+#, fuzzy
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
 msgstr ""
+"Vpišite povratno informacijo ki jo želite dati slušateljem v polje\n"
+"za povratno informacijo. To polje lahko pustite prazno. "
 
 #: exe/engine/clozeidevice.py:128
+#, fuzzy
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr ""
+"Vpišite povratno informacijo ki jo želite dati slušateljem v polje\n"
+"za povratno informacijo. To polje lahko pustite prazno. "
 
 #: exe/webui/editorpane.py:141
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Tukaj vnesite navodila za izpolnitev"
 
 #: exe/engine/externalurlidevice.py:47 exe/engine/externalurlidevice.py:69
 msgid ""
@@ -601,18 +784,27 @@ msgid ""
 msgstr ""
 
 #: exe/engine/multichoiceidevice.py:93
+#, fuzzy
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Vpišite vsako opcijo, iz katere morajo slušatelji izbrati v primerno\n"
+"izbranem opcijskem okviru. Lahko dodate izbiro z klikom na gumb\n"
+"\"DODAJ DRUGO IZBIRO\". Lahko izbrišete izbiro s klikom na\n"
+"\"x\"poleg vsake opcije"
 
 #: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
+#, fuzzy
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Podajte podrobne napotke za izbrana bralna gradiva. \n"
+"Izbirni stil napotkov bo odvisen od prednosti vašega oddelka  ali \n"
+" učnega osebja. "
 
 #: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
@@ -623,12 +815,12 @@ msgstr ""
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:149
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Tukaj vnesite navodila za izpolnitev "
 
 #: exe/webui/editorpane.py:140 exe/webui/editorpane.py:144
 #: exe/webui/editorpane.py:148 exe/webui/editorpane.py:155
 msgid "Enter the label here"
-msgstr ""
+msgstr "Tukaj vnesite označbo"
 
 #: exe/engine/quiztestidevice.py:61
 msgid ""
@@ -638,16 +830,22 @@ msgid ""
 msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:62
+#, fuzzy
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Omogoči avtomatično dokončanje kadar \n"
+"                                    uporabnik izpolnjuje prazna mesta."
 
 #: exe/engine/flashwithtextidevice.py:50
+#, fuzzy
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Omogoči avtomatično dokončanje kadar \n"
+"                                    uporabnik izpolnjuje prazna mesta."
 
 #: exe/engine/imagemagnifieridevice.py:54
 msgid ""
@@ -659,7 +857,7 @@ msgstr ""
 #: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
-msgstr ""
+msgstr "Napaka nameščanja paketa \"%s\": %s "
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
@@ -674,19 +872,19 @@ msgstr ""
 #: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Izvozi v  %s"
 
 #: exe/engine/externalurlidevice.py:37
 msgid "External Web Site"
-msgstr ""
+msgstr "Zunanja  spletna  strani"
 
 #: exe/webui/imagemagnifierblock.py:136
 msgid "Extra large"
-msgstr ""
+msgstr "Posebno velik"
 
 #: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
 msgid "False"
-msgstr ""
+msgstr "Napačno"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
@@ -694,7 +892,7 @@ msgstr ""
 #: exe/webui/common.py:190 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
-msgstr ""
+msgstr "Povratna informacija"
 
 #: exe/webui/editorpane.py:156
 msgid ""
@@ -703,47 +901,53 @@ msgid ""
 msgstr ""
 
 #: exe/webui/reflectionblock.py:72
+#, fuzzy
 msgid "Feedback:"
-msgstr ""
+msgstr "Povratna informacija"
 
 #: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:373 exe/xului/mainpage.py:410
 #: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "Ime datoteke %s je datoteka, ni je mogoče zamenjati."
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Flash  Film"
 
 #: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash z besedilom"
 
 #: exe/engine/externalurlidevice.py:39
+#, fuzzy
 msgid ""
 "For use if you need to include an external\n"
 "web page into your content. Rather than popup an external window, which can have some\n"
 "problematic usability consequences, this iDevice loads the appropriate content \n"
 "into an inline frame. Use only if your content will be online."
 msgstr ""
+"Za uporabo če potrebujete vključitev zunanje\n"
+"spletne strani v vašo vsebino. Raje kot da odpre zunanje okno, kar ima lahko\n"
+"problematične uporabniške posledice, ta iNaprava namesti primerno vsebino \n"
+"v ogrodje okvirja. Uporabno v primeru, če bo vaša vsebina dana na splet . "
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
-msgstr ""
+msgstr "Prisili vsakogar k prijavi? "
 
 #: exe/idevices/forumelement.py:202
 msgid "Forum Name:"
-msgstr ""
+msgstr "Razprava Foruma "
 
 #: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
 msgid "Forum Name: "
-msgstr ""
+msgstr "Razprava Foruma :"
 
 #: exe/idevices/forumelement.py:96
 msgid "Forum type:"
-msgstr ""
+msgstr "Tip Foruma:"
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
@@ -751,11 +955,11 @@ msgstr ""
 
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
-msgstr ""
+msgstr "Samostojno besedilo"
 
 #: exe/webui/wikipediablock.py:85
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Francoski članki iz Wikipedije"
 
 #: exe/webui/wikipediablock.py:178
 msgid "GNU Free Documentation License"
@@ -763,11 +967,11 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:84
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Nemški članki iz Wikipedije"
 
 #: exe/webui/element.py:606
 msgid "Get score"
-msgstr ""
+msgstr "Pridobi razultat"
 
 #: exe/webui/galleryblock.py:215
 msgid "Go Back"
@@ -783,72 +987,76 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:117
 msgid "Group mode:"
-msgstr ""
+msgstr "Skupinski način:"
 
 #: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
 #: exe/idevices/forumelement.py:92
 msgid "Hide"
-msgstr ""
+msgstr "Skrij"
 
 #: exe/webui/element.py:526
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Skrij/prikaži besedo"
 
 #: exe/webui/multichoiceblock.py:158 exe/webui/multichoiceblock.py:183
 #: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
 #: exe/webui/truefalseelement.py:127
 msgid "Hint"
-msgstr ""
+msgstr "Namig"
 
 #: exe/webui/multichoiceblock.py:92
 msgid "Hint:"
-msgstr ""
+msgstr "Namig:"
 
 #: exe/engine/package.py:95
 msgid "Home"
-msgstr ""
+msgstr "Domov"
 
 #: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:306
 #: exe/webui/block.py:276 exe/webui/genericblock.py:79
 #: exe/webui/genericblock.py:104
+#, fuzzy
 msgid "IDevice Icon"
-msgstr ""
+msgstr "Urejevalnik iNaprave"
 
 #: exe/webui/multichoiceblock.py:134
+#, fuzzy
 msgid "IDevice Question Icon"
-msgstr ""
+msgstr "Izbrišite vprašanje"
 
 #: exe/webui/editorpane.py:336
 msgid "Icons"
-msgstr ""
+msgstr "Ikone"
 
 #: exe/engine/imagewithtextidevice.py:58 exe/webui/editorpane.py:218
 msgid "Image"
-msgstr ""
+msgstr "Slika"
 
 #: exe/engine/galleryidevice.py:488
 msgid "Image Gallery"
-msgstr ""
+msgstr "Album slik"
 
 #: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Povečevalec slike"
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
-msgstr ""
+msgstr "Slika z besedilom"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
-msgstr ""
+msgstr "Napačno!"
 
 #: exe/webui/editorpane.py:350
+#, fuzzy
 msgid "Info"
-msgstr ""
+msgstr "Informacije o odkrivanju napak"
 
 #: exe/webui/block.py:233
+#, fuzzy
 msgid "Information"
-msgstr ""
+msgstr "Navodila"
 
 #: exe/webui/imagemagnifierblock.py:120
 msgid "Initial Zoom"
@@ -856,23 +1064,23 @@ msgstr ""
 
 #: exe/webui/element.py:541
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Trenutni zaznamek?"
 
 #: exe/engine/clozeidevice.py:114 exe/webui/common.py:258
 msgid "Instructions"
-msgstr ""
+msgstr "Navodila"
 
 #: exe/engine/clozeidevice.py:146
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Navodila za slušatelje"
 
 #: exe/webui/common.py:264 exe/webui/common.py:267
 msgid "Instructions for completion"
-msgstr ""
+msgstr "Navodila za izpolnjevanje"
 
 #: exe/idevices/forumelement.py:227
 msgid "Introduction"
-msgstr ""
+msgstr "Predstavitev"
 
 #: exe/webui/wikipediablock.py:179
 msgid "It uses material from the "
@@ -880,11 +1088,11 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:87
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Italijanski članki iz Wikipediije"
 
 #: exe/webui/wikipediablock.py:86
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Japonski članki iz Wikipedije"
 
 #: exe/idevices/appletidevice.py:48
 msgid "Java Applet"
@@ -892,52 +1100,54 @@ msgstr ""
 
 #: exe/webui/attachmentblock.py:81
 msgid "Label"
-msgstr ""
+msgstr "Označba"
 
 #: exe/webui/imagemagnifierblock.py:135
 msgid "Large"
-msgstr ""
+msgstr "Levo"
 
 #: exe/idevices/forumidevice.py:164
 msgid "Learning Management System"
-msgstr ""
+msgstr "Sistem za upravljanje učnih vsebin"
 
 #: exe/idevices/forumelement.py:253
 msgid "Learning Management System:"
-msgstr ""
+msgstr "Sistem za upravljanje učnih vsebin:"
 
 #: exe/webui/imagemagnifierblock.py:85 exe/webui/imagewithtextblock.py:75
 #: exe/webui/flashmovieblock.py:75 exe/webui/flashwithtextblock.py:75
 msgid "Left"
-msgstr ""
+msgstr "Levo"
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
-msgstr ""
+msgstr "Povezava na Forum"
 
 #: exe/webui/wikipediablock.py:106
 msgid "Load"
-msgstr ""
+msgstr "Naloži"
 
 #: exe/webui/imagemagnifierblock.py:127
+#, fuzzy
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Največja povečava"
 
 #: exe/webui/imagemagnifierblock.py:134
 msgid "Medium"
-msgstr ""
+msgstr "Srednje"
 
 #: exe/idevices/forumelement.py:262
 msgid "Moodle"
-msgstr ""
+msgstr "Moodle"
 
 #: exe/webui/block.py:222
 msgid "Move Down"
-msgstr ""
+msgstr "Premakni Navzdol"
 
 #: exe/webui/galleryblock.py:213
+#, fuzzy
 msgid "Move Image Left"
-msgstr ""
+msgstr "Nobena slika ni naložena"
 
 #: exe/webui/galleryblock.py:225
 msgid "Move Image Right"
@@ -945,82 +1155,85 @@ msgstr ""
 
 #: exe/webui/block.py:215
 msgid "Move Up"
-msgstr ""
+msgstr "Premakni Navzgor"
 
 #: exe/engine/multichoiceidevice.py:57
 msgid "Multi-Choice Question"
-msgstr ""
+msgstr "Več izbirna vprašanja"
 
 #: exe/webui/editorpane.py:286
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: exe/idevices/forumelement.py:215
 msgid "New Forum"
-msgstr ""
+msgstr "Novi Forum"
 
 #: exe/idevices/forumelement.py:243
 msgid "New Topic"
-msgstr ""
+msgstr "Novi predmet"
 
 #: exe/webui/editorpage.py:204
 msgid "New iDevice"
-msgstr ""
+msgstr "Nova  iNaprava"
 
 #: exe/engine/galleryidevice.py:194
+#, fuzzy
 msgid "Next"
-msgstr ""
+msgstr "Besedilo"
 
 #: exe/idevices/forumelement.py:83
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: exe/webui/galleryblock.py:178 exe/webui/galleryblock.py:265
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Nobena slika ni naložena"
 
 #: exe/engine/galleryidevice.py:100
+#, fuzzy
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Noben Thumbnail ni na voljo . Ne morem skrčiti slike."
 
 #: exe/engine/galleryidevice.py:142
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Noben Thumbnail ni na voljo . Ne morem skrčiti slike."
 
 #: exe/engine/galleryidevice.py:110
+#, fuzzy
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Noben Thumbnail ni na voljo . Ne morem skrčiti slike."
 
 #: exe/idevices/forumelement.py:80
 msgid "No discussions, but replies are allowed"
-msgstr ""
+msgstr "Ni razprav,odgovori so dovoljeni"
 
 #: exe/idevices/forumelement.py:81
 msgid "No discussions, no replies"
-msgstr ""
+msgstr "Ni razprav,Ni odgovorov"
 
 #: exe/webui/wikipediablock.py:110 exe/webui/editorpane.py:307
 msgid "No emphasis"
-msgstr ""
+msgstr "Ni poudarka"
 
 #: exe/idevices/forumelement.py:87
 msgid "No groups"
-msgstr ""
+msgstr "Ni skupin"
 
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
 #: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:77
 #: exe/idevices/forumelement.py:239
 msgid "None"
-msgstr ""
+msgstr "Nič"
 
 #: exe/webui/preferencespage.py:89
 msgid "OK"
-msgstr ""
+msgstr "Vredu"
 
 #: exe/engine/idevicestore.py:295 exe/engine/idevicestore.py:304
 #: exe/engine/idevicestore.py:402 exe/engine/idevicestore.py:411
 msgid "Objectives"
-msgstr ""
+msgstr "Predmeti"
 
 #: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:405
 msgid ""
@@ -1028,6 +1241,9 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Ciljii opisujejo pričakovane izide o učenju in bi morali \n"
+"opredeliti, kaj naj bi bili slušatelji sposobni narediti \n"
+"ko bodo zaključili naloge. "
 
 #: exe/engine/field.py:570 exe/engine/field.py:626
 msgid ""
@@ -1044,76 +1260,78 @@ msgstr ""
 #: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
 #: exe/webui/testquestionelement.py:95
 msgid "Option"
-msgstr ""
+msgstr "Možnosti"
 
 #: exe/webui/testquestionelement.py:91
+#, fuzzy
 msgid "Options"
-msgstr ""
+msgstr "Možnosti"
 
 #: exe/idevices/forumelement.py:266
 msgid "Other"
-msgstr ""
+msgstr "Ostalo"
 
 #: exe/xului/outlinepane.py:236
 msgid "Outline"
-msgstr ""
+msgstr "Izven dosega"
 
 #: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:246
 #: exe/xului/mainpage.py:348 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Paket shranjen  v: %s"
 
 #: exe/webui/block.py:229 exe/webui/editorpane.py:346
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Pedagoška Pomoč"
 
 #: exe/webui/editorpane.py:299
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Pedagoški Namig"
 
 #: exe/idevices/forumblock.py:133
 msgid "Please enter a discussion topic name.\n"
-msgstr ""
+msgstr "Prosim vpišite razpravo imena predmeta.\n"
 
 #: exe/idevices/forumblock.py:119
 msgid "Please enter a name for the forum\n"
-msgstr ""
+msgstr "Prosim vpišite ime za razpravo\n"
 
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Prosim vnesite ime za iNapravo"
 
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
-msgstr ""
+msgstr "Prosim izberite LMS.\n"
 
 #: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
-msgstr ""
+msgstr "Prosim izberite LMS"
 
 #: exe/webui/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Prosim izberite  pravilen odgovore za vsako posamezno vprašanje"
 
 #: exe/idevices/forumblock.py:114
 msgid "Please select a forum.\n"
-msgstr ""
+msgstr "Prosim izberite razpravo.\n"
 
 #: exe/webui/wikipediablock.py:88
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Poljski  članki iz Wikipedije"
 
 #: exe/webui/wikipediablock.py:90
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Portugalski članki iz Wikipedije"
 
 #: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:318
 #: exe/engine/idevicestore.py:415 exe/engine/idevicestore.py:425
 msgid "Preknowledge"
-msgstr ""
+msgstr "Predznanje"
 
 #: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:418
+#, fuzzy
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1121,18 +1339,25 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
+"Predznanje se nanaša na znanje, ki bi ga Izkušeni slušatelji že morali\n"
+"imeti, da bi biti \n"
+"sposobni učinkovito zaključiti izobraževanje.Primeri\n"
+"pred-znanja so lahko: <ul>\n"
+"<li>Slušatelji bi morali imeti 4. nivo angleščine</li>\n"
+"<li>Slušatelji bi morali biti sposobni izbirati standardna orodja</li></ul>\n"
 
 #: exe/webui/editorpane.py:227
 msgid "Preview"
-msgstr ""
+msgstr "Predogled"
 
 #: exe/engine/galleryidevice.py:189
+#, fuzzy
 msgid "Previous"
-msgstr ""
+msgstr "Predogled"
 
 #: exe/engine/attachmentidevice.py:74
 msgid "Provide a brief description of the file"
-msgstr ""
+msgstr "Podajte kratek opis datoteke "
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
@@ -1147,10 +1372,13 @@ msgid ""
 msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
+#, fuzzy
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Omogoči avtomatično dokončanje kadar \n"
+"                                    uporabnik izpolnjuje prazna mesta."
 
 #: exe/engine/imagewithtextidevice.py:67
 #: exe/engine/imagewithtextidevice.py:114
@@ -1173,43 +1401,46 @@ msgstr ""
 
 #: exe/webui/block.py:243 exe/webui/editorpane.py:292
 msgid "Purpose"
-msgstr ""
+msgstr "Namen"
 
 #: exe/engine/clozeidevice.py:147
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Tukaj postavite navodila za slušatelje"
 
 #: exe/webui/casestudyblock.py:85
+#, fuzzy
 msgid "Question(s)"
-msgstr ""
+msgstr "Vprašanje"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
 #: exe/webui/testquestionelement.py:81
 msgid "Question:"
-msgstr ""
+msgstr "Vprašanje:"
 
 #: exe/engine/clozeidevice.py:148
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Preberite spodnji odstavek in dopolnite manjkajoče besede "
 
 #: exe/engine/clozeidevice.py:118
+#, fuzzy
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Preberite spodnji odstavek in dopolnite manjkajoče besede "
 
 #: exe/engine/idevicestore.py:219 exe/engine/idevicestore.py:237
 #: exe/engine/genericidevice.py:165
 msgid "Reading Activity"
-msgstr ""
+msgstr "Bralna Aktivnost"
 
 #: exe/engine/idevicestore.py:345 exe/engine/genericidevice.py:163
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Bralna Aktivnost 0.11"
 
 #: exe/engine/reflectionidevice.py:43
 msgid "Reflection"
-msgstr ""
+msgstr "Razglabljanje"
 
 #: exe/engine/reflectionidevice.py:45
+#, fuzzy
 msgid ""
 "Reflection is a teaching method often used to \n"
 "connect theory to practice. Reflection tasks often provide learners with an \n"
@@ -1218,73 +1449,82 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
 msgstr ""
+"Razglabljanje je  učna metoda, pogosto uporabljena pri\n"
+"povezovanju  teorije s prakso. Razglabljalne naloge pogosto nudijo\n"
+"slušateljem priložnost opazovanja in premišljevanja o njihovih opazovanjih\n"
+"pred predstavitvijo tega kot del akademskega dela. Časopisi, dnevniki,\n"
+"profili, in porfelji so koristna orodja za zbiranje in opazovanje podatkov.\n"
+"Rubrike in vodniki so lahko učinkovita orodja za povratno informiranje."
 
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
-msgstr ""
+msgstr "Vprašanje za razmislek:"
 
 #: exe/webui/element.py:626
 msgid "Restart"
-msgstr ""
+msgstr "Ponovno naloži"
 
 #: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
 #: exe/webui/flashmovieblock.py:76 exe/webui/flashwithtextblock.py:76
 msgid "Right"
-msgstr ""
+msgstr "Desno"
 
 #: exe/engine/quiztestidevice.py:105
+#, fuzzy
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "SCORM Poskusni Kviz "
 
 #: exe/webui/quiztestblock.py:137
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "PREDLOŽI  ODGOVORE "
 
 #: exe/webui/editorpage.py:179 exe/webui/editorpage.py:182
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: exe/webui/editorpage.py:183
 msgid "Save as"
-msgstr ""
+msgstr "Shrani kot"
 
 #: exe/engine/package.py:88
 msgid "Section"
-msgstr ""
+msgstr "Sekcija"
 
 #: exe/webui/element.py:685
+#, fuzzy
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Izberite flash datoteko"
 
 #: exe/webui/preferencespage.py:82
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
-msgstr ""
+msgstr "Izberite Jezik"
 
 #: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
-msgstr ""
+msgstr "Izberi Forum"
 
 #: exe/webui/attachmentblock.py:78
 msgid "Select a file"
-msgstr ""
+msgstr "Izberite  datoteko"
 
 #: exe/webui/element.py:759
 msgid "Select a flash video"
-msgstr ""
+msgstr "Izberite flash video datoteko"
 
 #: exe/webui/element.py:276
 msgid "Select an image"
-msgstr ""
+msgstr "Izberite sliko"
 
 #: exe/webui/element.py:384
+#, fuzzy
 msgid "Select an image (JPG file)"
-msgstr ""
+msgstr "Izberite sliko"
 
 #: exe/webui/quiztestblock.py:104
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Select pass rate: "
 
 #: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:225
 msgid ""
@@ -1300,7 +1540,7 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:88
 msgid "Separate groups"
-msgstr ""
+msgstr "Ločene skupine"
 
 #: exe/engine/imagemagnifieridevice.py:67
 #: exe/engine/imagemagnifieridevice.py:91
@@ -1322,7 +1562,7 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:91
 msgid "Show"
-msgstr ""
+msgstr "Prikaži"
 
 #: exe/webui/galleryblock.py:273
 #, python-format
@@ -1331,27 +1571,28 @@ msgstr ""
 
 #: exe/webui/element.py:633
 msgid "Show Answers"
-msgstr ""
+msgstr "Prikaži odgovor"
 
 #: exe/webui/element.py:617
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Prikaži/izbriši odgovor"
 
 #: exe/webui/element.py:612
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Prikaži/skrij odziv"
 
 #: exe/webui/wikipediablock.py:98
+#, fuzzy
 msgid "Site"
-msgstr ""
+msgstr "naslov"
 
 #: exe/webui/imagemagnifierblock.py:137
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Size of magnifying glass: "
 
 #: exe/webui/imagemagnifierblock.py:133
 msgid "Small"
-msgstr ""
+msgstr "Majhen"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Solvenian"
@@ -1359,12 +1600,12 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:308
 msgid "Some emphasis"
-msgstr ""
+msgstr "Nekaj poudarkov"
 
 #: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:497
 #: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Oprostite, napačen format datoteke "
 
 #: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:495
 #: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
@@ -1373,60 +1614,81 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Oprostite, napačen format datoteke:\n"
+"%s "
 
 #: exe/webui/wikipediablock.py:93
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Španjski članki iz Wikipedije"
 
 #: exe/idevices/forumelement.py:77
 msgid "Standard forum for general use"
-msgstr ""
+msgstr "Standardni forum za splošno uporabo "
 
 #: exe/webui/casestudyblock.py:80
 msgid "Story:"
-msgstr ""
+msgstr "Zgodba:"
 
 #: exe/webui/element.py:531
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Natančno označevanje?"
 
 #: exe/webui/wikipediablock.py:112 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
-msgstr ""
+msgstr "Močan poudarek"
 
 #: exe/webui/common.py:206 exe/webui/editorpane.py:397
 #: exe/webui/element.py:621
 msgid "Submit"
-msgstr ""
+msgstr "Predložite"
 
 #: exe/webui/quiztestblock.py:355
 msgid "Submit Answer"
-msgstr ""
+msgstr "Predložite odgovor "
 
 #: exe/webui/wikipediablock.py:94
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Švedski  članki iz Wikipedije"
 
 #: exe/engine/idevicestore.py:353
+#, fuzzy
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr ""
+"Učitelji bi morali imeti v mislih naslednje, kadar uporabljajo\n"
+"iNapravo:<ol><li>Razmisliti o številu različnih vrst aktivnosti, načrtovanih\n"
+"za vaš vir, ki bodo vizualno  označene v vsebini. Izogibajte se preveliki\n"
+"uporabi različnih vrst ali razvrščanju aktivnosti, ker bo sicer slušatelj\n"
+"postal zmeden. Običajno so tri do štiri različne vrste več kot primerne\n"
+"za učne vire.</li><li>Iz oblikovnega stališča, se izognite uporabi dveh\n"
+"iNaprav, ki si  takoj sledita drug drugi brez vmesnega besedila. Če je to\n"
+"zahtevano, raje združite dve vprašanji ali dogodka v eno iNapravo .\n"
+"</li><li>3.Premislite o aktivnostih kjer zaznana korist opravljanja \n"
+"aktivnosti odtehta čas in napor, ki sta potrebna za dokončanje te aktivnost.\n"
+"</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
-msgstr ""
+msgstr "Besedilo"
 
 #: exe/webui/editorpane.py:216
 msgid "Text Box"
-msgstr ""
+msgstr "Okvir za besedilo"
 
 #: exe/webui/editorpane.py:214
 msgid "Text Line"
-msgstr ""
+msgstr "Besedna vrstica"
 
 #: exe/engine/attachmentidevice.py:44
+#, fuzzy
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
 msgstr ""
+"Priponka iNaprave je uporabljena za pripenjanje že obstoječe\n"
+"datoteke vaše vsebine pomoči. Na primer, lahko imate PDF datoteko ali\n"
+"PPT predstavitveno datoteko, za katero vi želite, da imajo slušatelji\n"
+"dostop, ta je lahko pripeta in označena, da nakaže kaj priponka je in\n"
+"kako velika je datoteka. Slušatelji lahko kliknejo na povezavo priponke\n"
+"in jo prenesejo."
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -1444,16 +1706,24 @@ msgid ""
 msgstr ""
 
 #: exe/engine/freetextidevice.py:39
+#, fuzzy
 msgid ""
 "The majority of a learning resource will be \n"
 "establishing context, delivering instructions and providing general information.\n"
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"Večina učnih virov bo v \n"
+"osnovanju konteksta, dostavljanju navodil in podajanju splošnih informacij. \n"
+"To ponuja  delovno ogrodje v katerem so zgrajene in \n"
+"dostavljene učne aktivnosti."
 
 #: exe/webui/editorpane.py:66
+#, fuzzy
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr ""
+"Namenski dialog vam omogoča opisati namen vaše naprave drugim\n"
+"potencialnim uporabnikom."
 
 #: exe/webui/wikipediablock.py:175
 msgid "This article is licensed under the "
@@ -1474,14 +1744,20 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Ta iNaprava podpira samo format Flash video datoteko (.FLV) in ne bo\n"
+"sprejela drugih video formatov. Lahko pa vseeno spremenite ostale formate\n"
+"filmov (e.g. mov, wmf etc) v format.FLV enkoderjev tretje stranke.Ti niso\n"
+"podprti v eXe. Uporabniki morajo prenesti Flash 8 predvajalnik z spletnega\n"
+"naslova http://www.macromedia.com/ da lahko predvajajo video."
 
 #: exe/engine/freetextidevice.py:68
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "To je samostojno besedno polje, lahko so vnesene splošne učne vsebine."
 
 #: exe/idevices/exampleidevice.py:45
+#, fuzzy
 msgid "This is a free text field."
-msgstr ""
+msgstr "To je izbirno polje"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
@@ -1491,55 +1767,64 @@ msgstr ""
 
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
-msgstr ""
+msgstr "To je izbirno polje"
 
 #: exe/webui/block.py:203
 msgid "This will delete this iDevice.\\nDo you really want to do this?"
-msgstr ""
+msgstr "To bo izbrisalo iNapravo.\\nAli res želite narediti to? "
 
 #: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
 msgid "Thread: "
-msgstr ""
+msgstr "Nit:"
 
 #: exe/webui/block.py:247
 msgid "Tip:"
-msgstr ""
+msgstr "Vrsta:"
 
 #: exe/engine/quiztestidevice.py:67
+#, fuzzy
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Za izbiro pravilenega odgovora, pritisnite\n"
+"sporočlni gumb poleg pravilne izbire."
 
 #: exe/engine/package.py:88
 msgid "Topic"
-msgstr ""
+msgstr "Predmet razprave"
 
 #: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
 msgid "True"
-msgstr ""
+msgstr "Pravilno"
 
 #: exe/engine/truefalseidevice.py:58
 msgid "True-False Question"
-msgstr ""
+msgstr "Vprašanje Pravilno - Narobe"
 
 #: exe/engine/truefalseidevice.py:60
+#, fuzzy
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
+"Vprašanja pravilno – narobe predstavijo navedbo, kjer se morajo\n"
+"slušatelji odločiti ,če je navedba pravilna. Ta vrsta vprašanj je dobra za\n"
+"dejanske informacije ter informacije, ki same ponujajo enega od obeh\n"
+"odgovorov."
 
 #: exe/engine/field.py:634 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Tukaj vpišite razpravo predmeta"
 
 #: exe/idevices/forumidevice.py:107
 msgid "Type a forum name here"
-msgstr ""
+msgstr "Tukaj vpišite ime razprave"
 
 #: exe/engine/multichoiceidevice.py:96
+#, fuzzy
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -1547,8 +1832,14 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other options."
 msgstr ""
+"Vpišite povratno informacijo, za katero želite, da jo\n"
+"slušatelj vidi ko izbira posamezno izbiro. Če ne izponite tega \n"
+"okvirja, bo eXe samodejno  zaznal privzeto povratno informacijo kot sledi:\n"
+"\"Popravite odgovor\" kot je navedeno z izbiro pravilnega odgovora; ali\n"
+"\"Napačen odgovor\" za druge možnosti."
 
 #: exe/engine/truefalseidevice.py:140
+#, fuzzy
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -1556,14 +1847,19 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Vpišite povratno informacijo, za katero želite, da jo\n"
+"slušatelj vidi ko izbira posamezno izbiro. Če ne izponite tega\n"
+"okvirja, bo eXe samodejno  zaznal privzeto povratno informacijo kot sledi:\n"
+"\"Popravite odgovor\" kot je navedeno z izbiro pravilnega odgovora; ali\n"
+"\"Napačen odgovor\" za druge možnosti."
 
 #: exe/engine/idevicestore.py:305 exe/engine/idevicestore.py:412
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Vpišite učne cilje za ta vir. "
 
 #: exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
-msgstr ""
+msgstr "Vpišite osnovo vprašanja. "
 
 #: exe/engine/truefalseidevice.py:68
 msgid ""
@@ -1578,11 +1874,11 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:93
 msgid "Unable to connect to "
-msgstr ""
+msgstr "Ne morem se povezati na"
 
 #: exe/engine/package.py:88
 msgid "Unit"
-msgstr ""
+msgstr "Enota"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
 #: exe/engine/galleryidevice.py:489 exe/engine/wikipediaidevice.py:52
@@ -1597,7 +1893,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
-msgstr ""
+msgstr "Univerza v Aucklandu"
 
 #: exe/engine/quiztestidevice.py:107
 msgid ""
@@ -1609,23 +1905,32 @@ msgid ""
 msgstr ""
 
 #: exe/idevices/appletblock.py:82
+#, fuzzy
 msgid "Upload"
-msgstr ""
+msgstr "Naloži"
 
 #: exe/webui/editorpane.py:69
+#, fuzzy
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr ""
+"Uporabi poudarke za razločevanje pomembnosti podatkov, ki so\n"
+"predstavljeni v iNparav."
 
 #: exe/engine/idevicestore.py:289 exe/engine/idevicestore.py:397
+#, fuzzy
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Uporaba tega elementa je prožna. Uporabite  ga za podajo povzetka  o \n"
+" točkah, ki jih vsebuje branje, ali kot izhodišče za nadaljnjo analizo \n"
+"branja  s postavljanjem vprašanja ali dajanja navedbe, da se začne\n"
+" razprava."
 
 #: exe/engine/galleryidevice.py:493
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Uporabo to iNapravo če imaš veliko slik za prikazat."
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
@@ -1636,17 +1941,18 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
-msgstr ""
+msgstr "Vidne skupine"
 
 #: exe/idevices/forumelement.py:124
 msgid "Visible to students:"
-msgstr ""
+msgstr "Vidno  slušateljem"
 
 #: exe/engine/idevicestore.py:280 exe/engine/idevicestore.py:388
 msgid "What to read"
-msgstr ""
+msgstr "Kaj prebrati"
 
 #: exe/engine/multichoiceidevice.py:72
+#, fuzzy
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -1660,10 +1966,20 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Kadar gradite nek MCQ upoštevajte naslednje:<ul>\n"
+"<li>Stavke iz besedne rabe, ki jih slušatelji poznajo in so se z njimi\n"
+"srečali pri njihovem študiju</li>\n"
+"<li>Držite se jedrnatih odgovorov</li>\n"
+"<li>Med osnovo in odgovorom naj obstaja določena povezanosti</li>\n"
+"<li>Podajte dovolj izbir, da izzovete slušatelje, da premislijo o svojih\n"
+"odgovorih</li>\n"
+"<li>Poskušajte zagotoviti, da pravilni odgovori niso bolj podrobni kot so\n"
+"zavajajoči</li>\n"
+"<li>Zavajanje naj bo nepravilno, vendar verjetno</li></ul>"
 
 #: exe/webui/wikipediablock.py:95
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Članki iz Wikipedije "
 
 #: exe/webui/wikipediablock.py:96
 msgid "Wikieducator Content"
@@ -1671,7 +1987,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:51
 msgid "Wikipedia Article"
-msgstr ""
+msgstr "Članki iz Wikipedije "
 
 #: exe/webui/optionelement.py:131
 msgid "Wrong"
@@ -1679,79 +1995,85 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:84
 msgid "Yes, forever"
-msgstr ""
+msgstr "Da, vselej "
 
 #: exe/idevices/forumelement.py:85
 msgid "Yes, initially"
-msgstr ""
+msgstr "Da, v začetku"
 
 #: exe/webui/editorpane.py:61
+#, fuzzy
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr ""
+"Vaša nova iNaprava se bo pojavila v okvirju iNaprave  s tem naslovom.\n"
+"To je obvezna polje in boste pozvani, da vnesete označbo če boste poskušali\n"
+"predložiti vašo iNaprave brez nje."
 
 #: exe/webui/wikipediablock.py:182
+#, fuzzy
 msgid "article "
-msgstr ""
+msgstr "Članek"
 
 #: exe/webui/element.py:291 exe/webui/element.py:402
 msgid "blank for original size"
-msgstr ""
+msgstr "prazno za prvotno velikost"
 
 #: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
-msgstr ""
+msgstr "podvojeno ime razprave.\n"
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
-msgstr ""
+msgstr "podvojeno ime predmeta"
 
 #: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
-msgstr ""
+msgstr "eXe"
 
 #: exe/webui/common.py:67 exe/webui/preferencespage.py:73
 #: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : XHTML urejevalnik za e-gradiva"
 
 #: exe/idevices/appletidevice.py:68
-#, python-format
+#, fuzzy, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "Priponka %s nima nobenega prakolena"
 
 #: exe/engine/wikipediaidevice.py:177
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/engine/attachmentidevice.py:95 exe/idevices/appletidevice.py:70
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "iNaprava %s nima nobenega paketa"
 
 #: exe/engine/package.py:257 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
-msgstr ""
+msgstr "Urejevalnik iNaprave"
 
 #: exe/webui/block.py:297
+#, fuzzy
 msgid "iDevice icon"
-msgstr ""
+msgstr "Urejevalnik iNaprave"
 
 #: exe/webui/renderable.py:249
 msgid "key"
-msgstr ""
+msgstr "ključ"
 
 #: exe/webui/renderable.py:251
 msgid "keycode"
-msgstr ""
+msgstr "Ključ kode"
 
 #: exe/webui/renderable.py:242
 msgid "label"
-msgstr ""
+msgstr "označba"
 
 #: exe/webui/renderable.py:254
 msgid "title"
-msgstr ""
+msgstr "naslov"
 
 #: exe/xului/templates/dublincore.xul:<caption label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
@@ -1765,7 +2087,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
 msgid "Insert Package"
-msgstr ""
+msgstr "Vstavi paket"
 
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 msgid "Dublin Core"
@@ -1774,16 +2096,18 @@ msgstr ""
 #: exe/xului/templates/projectproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
-msgstr ""
+msgstr "Lastnosti projekta"
 
 #: exe/xului/templates/properties.xul:<tab label="Package">
+#, fuzzy
 msgid "Package"
-msgstr ""
+msgstr "Vstavi paket"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
+#, fuzzy
 msgid "Title:"
-msgstr ""
+msgstr "naslov"
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add
@@ -1796,7 +2120,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 msgid "Extract Package"
-msgstr ""
+msgstr "Razširi paket"
 
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 msgid "IEEE LOM"
@@ -1804,8 +2128,9 @@ msgstr ""
 
 #: exe/xului/templates/projectproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+#, fuzzy
 msgid "Project Title:"
-msgstr ""
+msgstr "Ime Projekta"
 
 #: exe/xului/templates/properties.xul:<tab label="Metadata">
 msgid "Metadata"
@@ -1814,13 +2139,14 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
+#, fuzzy
 msgid "Creator:"
-msgstr ""
+msgstr "Podnaslov:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
 msgid "VK_INSERT"
-msgstr ""
+msgstr "VK_VSTAVI"
 
 #: exe/xului/templates/projectproperties.xul:<label value="Header Background:"
 #: style="width:8em">
@@ -1828,8 +2154,9 @@ msgid "Header Background:"
 msgstr ""
 
 #: exe/xului/templates/properties.xul:<tab label="Export">
+#, fuzzy
 msgid "Export"
-msgstr ""
+msgstr "Izvozi v  %s"
 
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
@@ -1839,13 +2166,14 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
-msgstr ""
+msgstr "VK_IZBRIŠI"
 
 #: exe/xului/templates/projectproperties.xul:<label value="Author:"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource.">
+#, fuzzy
 msgid "Author:"
-msgstr ""
+msgstr "Avtor"
 
 #: exe/xului/templates/dublincore.xul:<description >
 msgid ""
@@ -1860,11 +2188,11 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: exe/xului/templates/projectproperties.xul:<caption label="Taxonomy">
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taksonomija (razvrščanje)"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -1875,13 +2203,14 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
 msgid "VK_LEFT"
-msgstr ""
+msgstr "VK_LEVO"
 
 #: exe/xului/templates/projectproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes">
+#, fuzzy
 msgid "Level 1:"
-msgstr ""
+msgstr "Nivo 1"
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
@@ -1892,13 +2221,14 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
-msgstr ""
+msgstr "VK_Desno"
 
 #: exe/xului/templates/projectproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
+#, fuzzy
 msgid "Level 2:"
-msgstr ""
+msgstr "Nivo 2"
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
@@ -1909,13 +2239,14 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: exe/xului/templates/projectproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
+#, fuzzy
 msgid "Level 3:"
-msgstr ""
+msgstr "Nivo 3"
 
 #: exe/xului/templates/dublincore.xul:<description >
 msgid ""
@@ -1929,7 +2260,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: exe/xului/templates/projectproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode);
@@ -1941,13 +2272,14 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource.">
+#, fuzzy
 msgid "Type:"
-msgstr ""
+msgstr "Vrsta:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: exe/xului/templates/dublincore.xul:<description id="dbDesc">
 msgid ""
@@ -1960,27 +2292,29 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
+#, fuzzy
 msgid "Format:"
-msgstr ""
+msgstr "Poravnava:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
+#, fuzzy
 msgid "Select Format"
-msgstr ""
+msgstr "Izberi Forum"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
 #: accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
-msgstr ""
+msgstr "label=\"Datoteka\" accesskey=\"D\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" label="XHTML">
 msgid "XHTML"
@@ -1989,7 +2323,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr ""
+msgstr "label=\"Nova\" accesskey=\"N\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" label="SCORM
 #: 1.2">
@@ -1999,59 +2333,64 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr ""
+msgstr "label=\"Odpri\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" label="IMS
 #: Content Package 1.1.3">
+#, fuzzy
 msgid "IMS Content Package 1.1.3"
-msgstr ""
+msgstr "Vstavi paket"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"Shrani\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site" label="Web
 #: Site">
+#, fuzzy
 msgid "Web Site"
-msgstr ""
+msgstr "Zunanja  spletna  strani"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"Shrani kot ...\"accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
+#, fuzzy
 msgid "Identifier:"
-msgstr ""
+msgstr "Povečevalec slike"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"Izvoz\"accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
+#, fuzzy
 msgid "Source:"
-msgstr ""
+msgstr "Zgodba:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"SCORM 1.2\"accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
+#, fuzzy
 msgid "Language:"
-msgstr ""
+msgstr "Izberite Jezik"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"IMS vsebinski paket\"accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" label="Afar. ">
 msgid "Afar. "
@@ -2061,7 +2400,7 @@ msgstr ""
 #: key="file-export-website-key" oncommand="exportPackage('webSite')"
 #: accesskey="w" label="Web Site">
 msgid "label=\"Web Site\" accesskey=\"w\""
-msgstr ""
+msgstr "label=\"Spletno mesto\"accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" label="Abkhazian.
 #: ">
@@ -2071,7 +2410,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr ""
+msgstr "label=\"Posamezna stran\"accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" label="Avestan. ">
 msgid "Avestan. "
@@ -2080,7 +2419,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="e" label="Merging">
 msgid "label=\"Merging\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"Integracija\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" label="Afrikaans.
 #: ">
@@ -2090,7 +2429,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"Vstavi paket\" accesskey=\"v\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" label="Amharic. ">
 msgid "Amharic. "
@@ -2099,7 +2438,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr ""
+msgstr "label=\"Razširi paket\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" label="Arabic. ">
 msgid "Arabic. "
@@ -2108,7 +2447,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr ""
+msgstr "label=\"Orodja\" accesskey=\"O\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" label="Assamese. ">
 msgid "Assamese. "
@@ -2117,7 +2456,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr ""
+msgstr "Prednostne nastavitve"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" label="Aymara. ">
 msgid "Aymara. "
@@ -2126,7 +2465,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"Slogi\" accesskey=\"S\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" label="Azerbaijani.
 #: ">
@@ -2137,7 +2476,7 @@ msgstr ""
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr ""
+msgstr "label=\"Osveži\"accesskey=\"O\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" label="Bashkir. ">
 msgid "Bashkir. "
@@ -2146,7 +2485,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr ""
+msgstr "label=\"Pomoč\"accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be"
 #: label="Byelorussian; Belarusian. ">
@@ -2156,7 +2495,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
 msgid "label=\"About\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"okoli\"accesskey=\"o\" "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" label="Bulgarian.
 #: ">
@@ -2166,7 +2505,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="registerOnline()" accesskey="R" label="Register Online">
 msgid "label=\"Register Online\" accesskey=\"R\""
-msgstr ""
+msgstr "label=\registriraj zunaj mreže\"accesskey=\"R\" "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" label="Bihari. ">
 msgid "Bihari. "
@@ -2175,7 +2514,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo">
 msgid "debugInfo"
-msgstr ""
+msgstr "Informacije o odkrivanju napak"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" label="Bislama. ">
 msgid "Bislama. "
@@ -2184,7 +2523,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" label="Add Page">
 msgid "Add Page"
-msgstr ""
+msgstr "Dodaj stran"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" label="Bengali;
 #: Bangla. ">
@@ -2194,7 +2533,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
-msgstr ""
+msgstr "Preimenuj"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" label="Tibetan. ">
 msgid "Tibetan. "
@@ -2203,7 +2542,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
-msgstr ""
+msgstr "Okvir zunaj mreže "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" label="Breton. ">
 msgid "Breton. "
@@ -2211,8 +2550,9 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
+#, fuzzy
 msgid "iDevices"
-msgstr ""
+msgstr "Okvir iNaprave"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" label="Bosnian. ">
 msgid "Bosnian. "
@@ -2221,7 +2561,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
 msgid "iDevicePane"
-msgstr ""
+msgstr "Okvir iNaprave"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" label="Catalan. ">
 msgid "Catalan. "
@@ -2230,7 +2570,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
-msgstr ""
+msgstr "Avtorstvo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" label="Chechen. ">
 msgid "Chechen. "
@@ -2239,7 +2579,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties">
 msgid "Properties"
-msgstr ""
+msgstr "Lastnosti"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" label="Chamorro. ">
 msgid "Chamorro. "
@@ -2731,8 +3071,9 @@ msgid "Shona. "
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="so" label="Somali. ">
+#, fuzzy
 msgid "Somali. "
-msgstr ""
+msgstr "Majhen"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" label="Albanian. ">
 msgid "Albanian. "
@@ -2885,8 +3226,9 @@ msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
+#, fuzzy
 msgid "Relation:"
-msgstr ""
+msgstr "Razglabljanje"
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
@@ -2897,9 +3239,119 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
+#, fuzzy
 msgid "Rights:"
-msgstr ""
+msgstr "Desno"
 
 #: exe/xului/templates/dublincore.xul:<description >
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+
+#~ msgid "<strong>Frame Height:</strong> "
+#~ msgstr "<strong>Velikost okvirjat:</strong> "
+
+#~ msgid "<strong>url:</strong> "
+#~ msgstr "<strong>spletni naslov:</strong> "
+
+#~ msgid "Add Question"
+#~ msgstr "Dodaj Vprašanje"
+
+#~ msgid "Alternatives"
+#~ msgstr "Druge možnosti"
+
+#~ msgid "Content"
+#~ msgstr "Vsebina"
+
+#~ msgid ""
+#~ "Create the case story.  A good case is one \n"
+#~ "that describes a controversy."
+#~ msgstr ""
+#~ "Ustvari študisjko zgodbo. Dober je tisti primer \n"
+#~ "ki opisuje neko nasprotnost. "
+
+#~ msgid ""
+#~ "Describe the rationale behind the selection of the reading and how it will\n"
+#~ "enrich the learning."
+#~ msgstr ""
+#~ "Opišite utemeljitev za izbiro branja in kako bo to \n"
+#~ "obogatilo učenje. "
+
+#~ msgid ""
+#~ "Enter a hint here. If you do not want to provide a hint, leave this\n"
+#~ "field blank."
+#~ msgstr ""
+#~ "Tukaj vpišite namig.Če neneželite ponuditi namiga, pustite to polje\n"
+#~ "prazno."
+
+#~ msgid ""
+#~ "Enter the study question.  These questions \n"
+#~ "should draw out the educational messages presented in the case.  Consider \n"
+#~ "aspects of the case like, characters, timeliness, relevance, dilemmas."
+#~ msgstr ""
+#~ "Vpišite študijsko vprašanje. Ta vprašanja \n"
+#~ "bi morala opisati izobraževalna sporočila, predstavljena v primeru.\n"
+#~ "Razmislite ovidikih kot so znažaji, časovnost, bistvenost, dileme."
+
+#~ msgid "Flash"
+#~ msgstr "Flash"
+
+#~ msgid "Flash Video File"
+#~ msgstr "Flash  Video datoteka"
+
+#~ msgid "Incorrect"
+#~ msgstr "Napačno"
+
+#~ msgid "Magnify initial zoom? "
+#~ msgstr "Povečaj začetno povečavo?"
+
+#~ msgid "Provide details of the reading materials learners should  read."
+#~ msgstr ""
+#~ "Podajte podrobnostii bralnega gradiva, ki bi ga uprabniki morali\n"
+#~ "prebrati"
+
+#~ msgid ""
+#~ "Provide feedback on the question.  This may\n"
+#~ "be a summary of the main points or concepts."
+#~ msgstr ""
+#~ "Podajte povratno informacijo na vprašanje. To je lahko\n"
+#~ " povzetek bistvenih točk ali misli. "
+
+#~ msgid ""
+#~ "Provide instructions to learners on what they must do to complete the\n"
+#~ "cloze exercise."
+#~ msgstr ""
+#~ "Dajte navodila slušateljem kaj morajo narediti za končanje vaje\n"
+#~ "sobesedilnega izpolnjevanja"
+
+#~ msgid "Reference"
+#~ msgstr "Priporočila"
+
+#~ msgid "Response:"
+#~ msgstr "Odziv"
+
+#~ msgid "SCORM Multiple Choice Quiz:"
+#~ msgstr "SCORM Večizbirni Kviz "
+
+#~ msgid ""
+#~ "The Wikipedia iDevice takes a copy of an\n"
+#~ "article from en.wikipedia.org, including copying the associated images."
+#~ msgstr ""
+#~ "Wikipedija iNaprave naredi kopijo predmeta iz\n"
+#~ "članka en.wikipedia.org, vključno s kopijami združenih slik. "
+
+#~ msgid ""
+#~ "This Idevice exists to show a group of images in an easily\n"
+#~ "understandable way. For example to show many different sample solutions\n"
+#~ "in the form of images"
+#~ msgstr ""
+#~ "Ta iNaprava obstaja za prikaz skupine slik na lahko razumljiv način.\n"
+#~ "Na primer za prikazovanje številnih različnih vzorčnih rešitev v obliki slik."
+
+#~ msgid "Type the question's hint here."
+#~ msgstr "Tukaj vpišite namig vprašanja. "
+
+#~ msgid "Why it should be read"
+#~ msgstr "Zakaj bi moralo biti prebrano"
+
+#~ msgid "Yes"
+#~ msgstr "Da"
