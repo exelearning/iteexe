@@ -61,7 +61,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
             <textbox id="pp_title" size="40" onchange="this.style.color='blue';" />
          </hbox>
          <hbox align="center">
-            <label style="width:8em" value="Header Background:"/>
+            <label id="ppBackgroundImg" style="width:8em" value="Header Background:"/>
             <image id="pp_backgroundImg" src='' onclick="addImage('pp_backgroundImg');"/>
          </hbox>
          <hbox align="center">
@@ -75,8 +75,8 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
       </vbox>
     </groupbox>
     <groupbox flex="0">
-    <caption label="Taxonomy" />
-    <hbox align="center">
+       <caption id="ppCaptionTaxonomy" label="Taxonomy" />
+       <hbox align="center">
           <label id="ppLevel1" style="width:8em" value="Level 1:"
                  tooltiptext="Default name for level 1 nodes" />
           <textbox id="pp_level1" size="40" onchange="this.style.color='blue';" />
@@ -92,15 +92,15 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
           <textbox id="pp_level3" size="40" onchange="this.style.color='blue';" />
        </hbox>
        <hbox flex="0" align="center">
-           <button label="Update Tree"
-                   oncommand="submitForm(this.parentNode.parentNode);
-                   window.parent.location.reload(true);"
+           <button id="ppBtnUpdateTree"
+                   label="Update Tree"
+                   oncommand="submitForm(this.parentNode.parentNode); window.parent.location.reload(true);"
                    tooltiptext="Submit changes and update the tree display" 
                    flex="0"/>
        </hbox>
     </groupbox>
     <hbox align="left">
-       <button label="Done" oncommand="submitForm(this.parentNode.parentNode);"/>
+       <button id="ppBtnDone" label="Done" oncommand="submitForm(this.parentNode.parentNode);"/>
     </hbox>
   </vbox>
 </overlay>

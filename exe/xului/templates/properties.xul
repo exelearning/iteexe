@@ -160,23 +160,23 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
   ]]>
   </script>
 
- <tabbox flex="1" selectedTab="Package">
-                <tabs align="end" pack="end">
-                    <tab label="Package"/>
-                    <tab label="Metadata"/>
-                    <tab label="Export"/>
-                </tabs>
-                <tabpanels flex="1">
-                    <tabpanel>
-                        <vbox id="projectProperties" />
-                    </tabpanel>
-                    <tabpanel id="metadata">
-                        <vbox id="dublinCore" />
-                    </tabpanel>
-                    <tabpanel id="export">
-                        <vbox id="exportProperties" />
-                    </tabpanel>
-                </tabpanels>
-            </tabbox>
+  <tabbox flex="1" selectedTab="Package">
+    <tabs align="end" pack="end">
+        <tab id="tabPackage" label="Package"/>
+        <tab id="tabMetadata" label="Metadata"/>
+        <tab id="tabExport" label="Export"/>
+    </tabs>
+    <tabpanels flex="1">
+        <tabpanel>
+            <vbox id="projectProperties" />
+        </tabpanel>
+        <tabpanel id="metadata">
+            <vbox id="dublinCore" />
+        </tabpanel>
+        <tabpanel id="export">
+            <vbox id="exportProperties" />
+        </tabpanel>
+    </tabpanels>
+  </tabbox>
 
 </window>

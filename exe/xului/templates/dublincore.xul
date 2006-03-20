@@ -3,7 +3,7 @@
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
   <vbox id="dublinCore" style="overflow: auto;" flex="1">
     <groupbox flex="0">
-      <caption label="Dublin Core Metadata"/>
+      <caption id="dcCaptionMetadata" label="Dublin Core Metadata"/>
       <vbox flex="0">
         <hbox align="center">
           <label id="dcTitle" style="width:8em" value="Title:" tooltiptext="The name given to the resource."/>
@@ -20,12 +20,12 @@
         </hbox>
         <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
-            <description>
+             <description id="dcDescSubject">
                 Typically, Subject will be expressed as keywords, key phrases or
                 classification codes that describe a topic of the resource.
                 Recommended best practice is to select a value from a controlled
                 vocabulary or formal classification scheme.
-              </description>
+             </description>
           </groupbox>
         </hbox>
         <hbox align="center">
@@ -47,14 +47,14 @@
         </hbox>
         <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
-            <description>
+            <description id="dcDescDate">
                  Typically, Date will be associated with the creation or
                  availability of the resource. Recommended best practice for
                  encoding the date value is defined in a profile called
                  <html:em>ISO 8601</html:em> 
                  <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a>
                  and includes (among others) dates of the form YYYY-MM-DD.
-                  </description>
+            </description>
           </groupbox>
         </hbox>
         <hbox align="center">
@@ -64,7 +64,7 @@
         </hbox>
         <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
-            <description id="dbDesc">
+            <description id="dcDescType">
               Type includes terms describing general categories, functions, or
               genres, for content. Recommended best practice is to select a value
               from a controlled vocabulary, for example, the ??????????<html:br/>
@@ -77,10 +77,10 @@
           <label id="dcFormat" style="width:8em" value="Format:" tooltiptext="Select a Format."/>
           <menulist id="dc_format" label="Select Format" onchange="this.style.color = 'blue'" >
             <menupopup>
-              <menuitem label="XHTML" value="XHTML"/>
-              <menuitem label="SCORM 1.2" value="SCORM 1.2"/>
-              <menuitem label="IMS Content Package 1.1.3" value="IMS-CP"/>
-              <menuitem label="Web Site" value="Web Site"/>
+              <menuitem id="dcmiXHTML"   label="XHTML" value="XHTML"/>
+              <menuitem id="dcmiSCORM"   label="SCORM 1.2" value="SCORM 1.2"/>
+              <menuitem id="dcmiIMS"     label="IMS Content Package 1.1.3" value="IMS-CP"/>
+              <menuitem id="dcmiWebSite" label="Web Site" value="Web Site"/>
             </menupopup>
           </menulist>
         </hbox>
@@ -96,173 +96,178 @@
           <label id="dcLanguage" style="width:8em" value="Language:" tooltiptext="Select a language."/>
           <menulist id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
             <menupopup>
-                <menuitem value="aa" label="Afar. "/>
-                <menuitem value="ab" label="Abkhazian. "/>
-                <menuitem value="ae" label="Avestan. "/>
-                <menuitem value="af" label="Afrikaans. "/>
-                <menuitem value="am" label="Amharic. "/>
-                <menuitem value="ar" label="Arabic. "/>
-                <menuitem value="as" label="Assamese. "/>
-                <menuitem value="ay" label="Aymara. "/>
-                <menuitem value="az" label="Azerbaijani. "/>
-                <menuitem value="ba" label="Bashkir. "/>
-                <menuitem value="be" label="Byelorussian; Belarusian. "/>
-                <menuitem value="bg" label="Bulgarian. "/>
-                <menuitem value="bh" label="Bihari. "/>
-                <menuitem value="bi" label="Bislama. "/>
-                <menuitem value="bn" label="Bengali; Bangla. "/>
-                <menuitem value="bo" label="Tibetan. "/>
-                <menuitem value="br" label="Breton. "/>
-                <menuitem value="bs" label="Bosnian. "/>
-                <menuitem value="ca" label="Catalan. "/>
-                <menuitem value="ce" label="Chechen. "/>
-                <menuitem value="ch" label="Chamorro. "/>
-                <menuitem value="co" label="Corsican. "/>
-                <menuitem value="cs" label="Czech. "/>
-                <menuitem value="cu" label="Church Slavic. "/>
-                <menuitem value="cv" label="Chuvash. "/>
-                <menuitem value="cy" label="Welsh. "/>
-                <menuitem value="da" label="Danish. "/>
-                <menuitem value="de" label="German. "/>
-                <menuitem value="dz" label="Dzongkha; Bhutani. "/>
-                <menuitem value="el" label="Greek. "/>
-                <menuitem value="en" label="English. "/>
-                <menuitem value="eo" label="Esperanto. "/>
-                <menuitem value="es" label="Spanish. "/>
-                <menuitem value="et" label="Estonian. "/>
-                <menuitem value="eu" label="Basque. "/>
-                <menuitem value="fa" label="Persian. "/>
-                <menuitem value="fi" label="Finnish. "/>
-                <menuitem value="fj" label="Fijian; Fiji. "/>
-                <menuitem value="fo" label="Faroese. "/>
-                <menuitem value="fr" label="French. "/>
-                <menuitem value="fy" label="Frisian. "/>
-                <menuitem value="ga" label="Irish. "/>
-                <menuitem value="gd" label="Scots; Gaelic. "/>
-                <menuitem value="gl" label="Gallegan; Galician. "/>
-                <menuitem value="gn" label="Guarani. "/>
-                <menuitem value="gu" label="Gujarati. "/>
-                <menuitem value="gv" label="Manx. "/>
-                <menuitem value="ha" label="Hausa (?). "/>
-                <menuitem value="he" label="Hebrew (formerly iw). "/>
-                <menuitem value="hi" label="Hindi. "/>
-                <menuitem value="ho" label="Hiri Motu. "/>
-                <menuitem value="hr" label="Croatian. "/>
-                <menuitem value="hu" label="Hungarian. "/>
-                <menuitem value="hy" label="Armenian. "/>
-                <menuitem value="hz" label="Herero. "/>
-                <menuitem value="ia" label="Interlingua. "/>
-                <menuitem value="id" label="Indonesian (formerly in). "/>
-                <menuitem value="ie" label="Interlingue. "/>
-                <menuitem value="ik" label="Inupiak. "/>
-                <menuitem value="io" label="Ido. "/>
-                <menuitem value="is" label="Icelandic. "/>
-                <menuitem value="it" label="Italian. "/>
-                <menuitem value="iu" label="Inuktitut. "/>
-                <menuitem value="ja" label="Japanese. "/>
-                <menuitem value="jv" label="Javanese. "/>
-                <menuitem value="ka" label="Georgian. "/>
-                <menuitem value="ki" label="Kikuyu. "/>
-                <menuitem value="kj" label="Kuanyama. "/>
-                <menuitem value="kk" label="Kazakh. "/>
-                <menuitem value="kl" label="Kalaallisut; Greenlandic. "/>
-                <menuitem value="km" label="Khmer; Cambodian. "/>
-                <menuitem value="kn" label="Kannada. "/>
-                <menuitem value="ko" label="Korean. "/>
-                <menuitem value="ks" label="Kashmiri. "/>
-                <menuitem value="ku" label="Kurdish. "/>
-                <menuitem value="kv" label="Komi. "/>
-                <menuitem value="kw" label="Cornish. "/>
-                <menuitem value="ky" label="Kirghiz. "/>
-                <menuitem value="la" label="Latin. "/>
-                <menuitem value="lb" label="Letzeburgesch. "/>
-                <menuitem value="ln" label="Lingala. "/>
-                <menuitem value="lo" label="Lao; Laotian. "/>
-                <menuitem value="lt" label="Lithuanian. "/>
-                <menuitem value="lv" label="Latvian; Lettish. "/>
-                <menuitem value="mg" label="Malagasy. "/>
-                <menuitem value="mh" label="Marshall. "/>
-                <menuitem value="mi" label="Maori. "/>
-                <menuitem value="mk" label="Macedonian. "/>
-                <menuitem value="ml" label="Malayalam. "/>
-                <menuitem value="mn" label="Mongolian. "/>
-                <menuitem value="mo" label="Moldavian. "/>
-                <menuitem value="mr" label="Marathi. "/>
-                <menuitem value="ms" label="Malay. "/>
-                <menuitem value="mt" label="Maltese. "/>
-                <menuitem value="my" label="Burmese. "/>
-                <menuitem value="na" label="Nauru. "/>
-                <menuitem value="nb" label="Norwegian Bokmål. "/>
-                <menuitem value="nd" label="Ndebele, North. "/>
-                <menuitem value="ne" label="Nepali. "/>
-                <menuitem value="ng" label="Ndonga. "/>
-                <menuitem value="nl" label="Dutch. "/>
-                <menuitem value="nn" label="Norwegian Nynorsk. "/>
-                <menuitem value="no" label="Norwegian. "/>
-                <menuitem value="nr" label="Ndebele, South. "/>
-                <menuitem value="nv" label="Navajo. "/>
-                <menuitem value="ny" label="Chichewa; Nyanja. "/>
-                <menuitem value="oc" label="Occitan; Provençal. "/>
-                <menuitem value="om" label="(Afan) Oromo. "/>
-                <menuitem value="or" label="Oriya. "/>
-                <menuitem value="os" label="Ossetian; Ossetic. "/>
-                <menuitem value="pa" label="Panjabi; Punjabi. "/>
-                <menuitem value="pi" label="Pali. "/>
-                <menuitem value="pl" label="Polish. "/>
-                <menuitem value="ps" label="Pashto, Pushto. "/>
-                <menuitem value="pt" label="Portuguese. "/>
-                <menuitem value="qu" label="Quechua. "/>
-                <menuitem value="rm" label="Rhaeto-Romance. "/>
-                <menuitem value="rn" label="Rundi; Kirundi. "/>
-                <menuitem value="ro" label="Romanian. "/>
-                <menuitem value="ru" label="Russian. "/>
-                <menuitem value="rw" label="Kinyarwanda. "/>
-                <menuitem value="sa" label="Sanskrit. "/>
-                <menuitem value="sc" label="Sardinian. "/>
-                <menuitem value="sd" label="Sindhi. "/>
-                <menuitem value="se" label="Northern Sami. "/>
-                <menuitem value="sg" label="Sango; Sangro. "/>
-                <menuitem value="si" label="Sinhalese. "/>
-                <menuitem value="sk" label="Slovak. "/>
-                <menuitem value="sl" label="Slovenian. "/>
-                <menuitem value="sm" label="Samoan. "/>
-                <menuitem value="sn" label="Shona. "/>
-                <menuitem value="so" label="Somali. "/>
-                <menuitem value="sq" label="Albanian. "/>
-                <menuitem value="sr" label="Serbian. "/>
-                <menuitem value="ss" label="Swati; Siswati. "/>
-                <menuitem value="st" label="Sesotho; Sotho, Southern. "/>
-                <menuitem value="su" label="Sundanese. "/>
-                <menuitem value="sv" label="Swedish. "/>
-                <menuitem value="sw" label="Swahili. "/>
-                <menuitem value="ta" label="Tamil. "/>
-                <menuitem value="te" label="Telugu. "/>
-                <menuitem value="tg" label="Tajik. "/>
-                <menuitem value="th" label="Thai. "/>
-                <menuitem value="ti" label="Tigrinya. "/>
-                <menuitem value="tk" label="Turkmen. "/>
-                <menuitem value="tl" label="Tagalog. "/>
-                <menuitem value="tn" label="Tswana; Setswana. "/>
-                <menuitem value="to" label="Tonga (?). "/>
-                <menuitem value="tr" label="Turkish. "/>
-                <menuitem value="ts" label="Tsonga. "/>
-                <menuitem value="tt" label="Tatar. "/>
-                <menuitem value="tw" label="Twi. "/>
-                <menuitem value="ty" label="Tahitian. "/>
-                <menuitem value="ug" label="Uighur. "/>
-                <menuitem value="uk" label="Ukrainian. "/>
-                <menuitem value="ur" label="Urdu. "/>
-                <menuitem value="uz" label="Uzbek. "/>
-                <menuitem value="vi" label="Vietnamese. "/>
-                <menuitem value="vo" label="Volapük; Volapuk. "/>
-                <menuitem value="wa" label="Walloon. "/>
-                <menuitem value="wo" label="Wolof. "/>
-                <menuitem value="xh" label="Xhosa. "/>
-                <menuitem value="yi" label="Yiddish (formerly ji). "/>
-                <menuitem value="yo" label="Yoruba. "/>
-                <menuitem value="za" label="Zhuang. "/>
-                <menuitem value="zh" label="Chinese. "/>
-                <menuitem value="zu" label="Zulu."/>
+                <!-- The unique ids for these menu items only exist for
+                     translation. The name dcmixx comes from:
+                     dc = Dublin Core
+                     mi = Menu Item
+                     xx = Language Code -->
+                <menuitem id="dcmiaa" value="aa" label="Afar. "/>
+                <menuitem id="dcmiab" value="ab" label="Abkhazian. "/>
+                <menuitem id="dcmiae" value="ae" label="Avestan. "/>
+                <menuitem id="dcmiaf" value="af" label="Afrikaans. "/>
+                <menuitem id="dcmiam" value="am" label="Amharic. "/>
+                <menuitem id="dcmiar" value="ar" label="Arabic. "/>
+                <menuitem id="dcmias" value="as" label="Assamese. "/>
+                <menuitem id="dcmiay" value="ay" label="Aymara. "/>
+                <menuitem id="dcmiaz" value="az" label="Azerbaijani. "/>
+                <menuitem id="dcmiba" value="ba" label="Bashkir. "/>
+                <menuitem id="dcmibe" value="be" label="Byelorussian; Belarusian. "/>
+                <menuitem id="dcmibg" value="bg" label="Bulgarian. "/>
+                <menuitem id="dcmibh" value="bh" label="Bihari. "/>
+                <menuitem id="dcmibi" value="bi" label="Bislama. "/>
+                <menuitem id="dcmibn" value="bn" label="Bengali; Bangla. "/>
+                <menuitem id="dcmibo" value="bo" label="Tibetan. "/>
+                <menuitem id="dcmibr" value="br" label="Breton. "/>
+                <menuitem id="dcmibs" value="bs" label="Bosnian. "/>
+                <menuitem id="dcmica" value="ca" label="Catalan. "/>
+                <menuitem id="dcmice" value="ce" label="Chechen. "/>
+                <menuitem id="dcmich" value="ch" label="Chamorro. "/>
+                <menuitem id="dcmico" value="co" label="Corsican. "/>
+                <menuitem id="dcmics" value="cs" label="Czech. "/>
+                <menuitem id="dcmicu" value="cu" label="Church Slavic. "/>
+                <menuitem id="dcmicv" value="cv" label="Chuvash. "/>
+                <menuitem id="dcmicy" value="cy" label="Welsh. "/>
+                <menuitem id="dcmida" value="da" label="Danish. "/>
+                <menuitem id="dcmide" value="de" label="German. "/>
+                <menuitem id="dcmidz" value="dz" label="Dzongkha; Bhutani. "/>
+                <menuitem id="dcmiel" value="el" label="Greek. "/>
+                <menuitem id="dcmien" value="en" label="English. "/>
+                <menuitem id="dcmieo" value="eo" label="Esperanto. "/>
+                <menuitem id="dcmies" value="es" label="Spanish. "/>
+                <menuitem id="dcmiet" value="et" label="Estonian. "/>
+                <menuitem id="dcmieu" value="eu" label="Basque. "/>
+                <menuitem id="dcmifa" value="fa" label="Persian. "/>
+                <menuitem id="dcmifi" value="fi" label="Finnish. "/>
+                <menuitem id="dcmifj" value="fj" label="Fijian; Fiji. "/>
+                <menuitem id="dcmifo" value="fo" label="Faroese. "/>
+                <menuitem id="dcmifr" value="fr" label="French. "/>
+                <menuitem id="dcmify" value="fy" label="Frisian. "/>
+                <menuitem id="dcmiga" value="ga" label="Irish. "/>
+                <menuitem id="dcmigd" value="gd" label="Scots; Gaelic. "/>
+                <menuitem id="dcmigl" value="gl" label="Gallegan; Galician. "/>
+                <menuitem id="dcmign" value="gn" label="Guarani. "/>
+                <menuitem id="dcmigu" value="gu" label="Gujarati. "/>
+                <menuitem id="dcmigv" value="gv" label="Manx. "/>
+                <menuitem id="dcmiha" value="ha" label="Hausa (?). "/>
+                <menuitem id="dcmihe" value="he" label="Hebrew (formerly iw). "/>
+                <menuitem id="dcmihi" value="hi" label="Hindi. "/>
+                <menuitem id="dcmiho" value="ho" label="Hiri Motu. "/>
+                <menuitem id="dcmihr" value="hr" label="Croatian. "/>
+                <menuitem id="dcmihu" value="hu" label="Hungarian. "/>
+                <menuitem id="dcmihy" value="hy" label="Armenian. "/>
+                <menuitem id="dcmihz" value="hz" label="Herero. "/>
+                <menuitem id="dcmiia" value="ia" label="Interlingua. "/>
+                <menuitem id="dcmiid" value="id" label="Indonesian (formerly in). "/>
+                <menuitem id="dcmiie" value="ie" label="Interlingue. "/>
+                <menuitem id="dcmiik" value="ik" label="Inupiak. "/>
+                <menuitem id="dcmiio" value="io" label="Ido. "/>
+                <menuitem id="dcmiis" value="is" label="Icelandic. "/>
+                <menuitem id="dcmiit" value="it" label="Italian. "/>
+                <menuitem id="dcmiiu" value="iu" label="Inuktitut. "/>
+                <menuitem id="dcmija" value="ja" label="Japanese. "/>
+                <menuitem id="dcmijv" value="jv" label="Javanese. "/>
+                <menuitem id="dcmika" value="ka" label="Georgian. "/>
+                <menuitem id="dcmiki" value="ki" label="Kikuyu. "/>
+                <menuitem id="dcmikj" value="kj" label="Kuanyama. "/>
+                <menuitem id="dcmikk" value="kk" label="Kazakh. "/>
+                <menuitem id="dcmikl" value="kl" label="Kalaallisut; Greenlandic. "/>
+                <menuitem id="dcmikm" value="km" label="Khmer; Cambodian. "/>
+                <menuitem id="dcmikn" value="kn" label="Kannada. "/>
+                <menuitem id="dcmiko" value="ko" label="Korean. "/>
+                <menuitem id="dcmiks" value="ks" label="Kashmiri. "/>
+                <menuitem id="dcmiku" value="ku" label="Kurdish. "/>
+                <menuitem id="dcmikv" value="kv" label="Komi. "/>
+                <menuitem id="dcmikw" value="kw" label="Cornish. "/>
+                <menuitem id="dcmiky" value="ky" label="Kirghiz. "/>
+                <menuitem id="dcmila" value="la" label="Latin. "/>
+                <menuitem id="dcmilb" value="lb" label="Letzeburgesch. "/>
+                <menuitem id="dcmiln" value="ln" label="Lingala. "/>
+                <menuitem id="dcmilo" value="lo" label="Lao; Laotian. "/>
+                <menuitem id="dcmilt" value="lt" label="Lithuanian. "/>
+                <menuitem id="dcmilv" value="lv" label="Latvian; Lettish. "/>
+                <menuitem id="dcmimg" value="mg" label="Malagasy. "/>
+                <menuitem id="dcmimh" value="mh" label="Marshall. "/>
+                <menuitem id="dcmimi" value="mi" label="Maori. "/>
+                <menuitem id="dcmimk" value="mk" label="Macedonian. "/>
+                <menuitem id="dcmiml" value="ml" label="Malayalam. "/>
+                <menuitem id="dcmimn" value="mn" label="Mongolian. "/>
+                <menuitem id="dcmimo" value="mo" label="Moldavian. "/>
+                <menuitem id="dcmimr" value="mr" label="Marathi. "/>
+                <menuitem id="dcmims" value="ms" label="Malay. "/>
+                <menuitem id="dcmimt" value="mt" label="Maltese. "/>
+                <menuitem id="dcmimy" value="my" label="Burmese. "/>
+                <menuitem id="dcmina" value="na" label="Nauru. "/>
+                <menuitem id="dcminb" value="nb" label="Norwegian Bokmål. "/>
+                <menuitem id="dcmind" value="nd" label="Ndebele, North. "/>
+                <menuitem id="dcmine" value="ne" label="Nepali. "/>
+                <menuitem id="dcming" value="ng" label="Ndonga. "/>
+                <menuitem id="dcminl" value="nl" label="Dutch. "/>
+                <menuitem id="dcminn" value="nn" label="Norwegian Nynorsk. "/>
+                <menuitem id="dcmino" value="no" label="Norwegian. "/>
+                <menuitem id="dcminr" value="nr" label="Ndebele, South. "/>
+                <menuitem id="dcminv" value="nv" label="Navajo. "/>
+                <menuitem id="dcminy" value="ny" label="Chichewa; Nyanja. "/>
+                <menuitem id="dcmioc" value="oc" label="Occitan; Provençal. "/>
+                <menuitem id="dcmiom" value="om" label="(Afan) Oromo. "/>
+                <menuitem id="dcmior" value="or" label="Oriya. "/>
+                <menuitem id="dcmios" value="os" label="Ossetian; Ossetic. "/>
+                <menuitem id="dcmipa" value="pa" label="Panjabi; Punjabi. "/>
+                <menuitem id="dcmipi" value="pi" label="Pali. "/>
+                <menuitem id="dcmipl" value="pl" label="Polish. "/>
+                <menuitem id="dcmips" value="ps" label="Pashto, Pushto. "/>
+                <menuitem id="dcmipt" value="pt" label="Portuguese. "/>
+                <menuitem id="dcmiqu" value="qu" label="Quechua. "/>
+                <menuitem id="dcmirm" value="rm" label="Rhaeto-Romance. "/>
+                <menuitem id="dcmirn" value="rn" label="Rundi; Kirundi. "/>
+                <menuitem id="dcmiro" value="ro" label="Romanian. "/>
+                <menuitem id="dcmiru" value="ru" label="Russian. "/>
+                <menuitem id="dcmirw" value="rw" label="Kinyarwanda. "/>
+                <menuitem id="dcmisa" value="sa" label="Sanskrit. "/>
+                <menuitem id="dcmisc" value="sc" label="Sardinian. "/>
+                <menuitem id="dcmisd" value="sd" label="Sindhi. "/>
+                <menuitem id="dcmise" value="se" label="Northern Sami. "/>
+                <menuitem id="dcmisg" value="sg" label="Sango; Sangro. "/>
+                <menuitem id="dcmisi" value="si" label="Sinhalese. "/>
+                <menuitem id="dcmisk" value="sk" label="Slovak. "/>
+                <menuitem id="dcmisl" value="sl" label="Slovenian. "/>
+                <menuitem id="dcmism" value="sm" label="Samoan. "/>
+                <menuitem id="dcmisn" value="sn" label="Shona. "/>
+                <menuitem id="dcmiso" value="so" label="Somali. "/>
+                <menuitem id="dcmisq" value="sq" label="Albanian. "/>
+                <menuitem id="dcmisr" value="sr" label="Serbian. "/>
+                <menuitem id="dcmiss" value="ss" label="Swati; Siswati. "/>
+                <menuitem id="dcmist" value="st" label="Sesotho; Sotho, Southern. "/>
+                <menuitem id="dcmisu" value="su" label="Sundanese. "/>
+                <menuitem id="dcmisv" value="sv" label="Swedish. "/>
+                <menuitem id="dcmisw" value="sw" label="Swahili. "/>
+                <menuitem id="dcmita" value="ta" label="Tamil. "/>
+                <menuitem id="dcmite" value="te" label="Telugu. "/>
+                <menuitem id="dcmitg" value="tg" label="Tajik. "/>
+                <menuitem id="dcmith" value="th" label="Thai. "/>
+                <menuitem id="dcmiti" value="ti" label="Tigrinya. "/>
+                <menuitem id="dcmitk" value="tk" label="Turkmen. "/>
+                <menuitem id="dcmitl" value="tl" label="Tagalog. "/>
+                <menuitem id="dcmitn" value="tn" label="Tswana; Setswana. "/>
+                <menuitem id="dcmito" value="to" label="Tonga (?). "/>
+                <menuitem id="dcmitr" value="tr" label="Turkish. "/>
+                <menuitem id="dcmits" value="ts" label="Tsonga. "/>
+                <menuitem id="dcmitt" value="tt" label="Tatar. "/>
+                <menuitem id="dcmitw" value="tw" label="Twi. "/>
+                <menuitem id="dcmity" value="ty" label="Tahitian. "/>
+                <menuitem id="dcmiug" value="ug" label="Uighur. "/>
+                <menuitem id="dcmiuk" value="uk" label="Ukrainian. "/>
+                <menuitem id="dcmiur" value="ur" label="Urdu. "/>
+                <menuitem id="dcmiuz" value="uz" label="Uzbek. "/>
+                <menuitem id="dcmivi" value="vi" label="Vietnamese. "/>
+                <menuitem id="dcmivo" value="vo" label="Volapük; Volapuk. "/>
+                <menuitem id="dcmiwa" value="wa" label="Walloon. "/>
+                <menuitem id="dcmiwo" value="wo" label="Wolof. "/>
+                <menuitem id="dcmixh" value="xh" label="Xhosa. "/>
+                <menuitem id="dcmiyi" value="yi" label="Yiddish (formerly ji). "/>
+                <menuitem id="dcmiyo" value="yo" label="Yoruba. "/>
+                <menuitem id="dcmiza" value="za" label="Zhuang. "/>
+                <menuitem id="dcmizh" value="zh" label="Chinese. "/>
+                <menuitem id="dcmizu" value="zu" label="Zulu."/>
             </menupopup>
           </menulist>
         </hbox>
@@ -281,13 +286,13 @@
         </hbox>
         <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
-            <description>Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
+            <description id="dcDescRights">Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource.</description>
           </groupbox>
         </hbox>
       </vbox>
     </groupbox>
     <hbox align="left">
-      <button label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
+      <button id="dcBtnDone" label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
     </hbox>
   </vbox>
 </overlay>
