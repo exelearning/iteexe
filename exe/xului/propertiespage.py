@@ -54,6 +54,8 @@ class PropertiesPage(RenderableLivePage):
     name = 'properties'
     # List of field names that contain boolean values
     booleanFieldNames = ('pp_scolinks',)
+    # List of field names that contain image values
+    imgFieldNames     = ('pp_backgroundImg',)
     # Used for url encoding with unicode support
     reUni = re.compile('(%u)([0-9,A-F,a-f]{4})')
     reChr = re.compile('(%)([0-9,A-F,a-f]{2})')
@@ -133,6 +135,13 @@ class PropertiesPage(RenderableLivePage):
             client.sendScript(js(
                 'document.getElementById("%s").checked = %s' % \
                     (fieldId, str(value).lower())))
+        elif fieldId in self.imgFieldNames:
+            encoded = ''
+            for char in value:
+                encoded += '%%u%04x' % ord(char[0])
+            client.sendScript(js(
+                'document.getElementById("%s").src = unescape("%s")' % \
+                    (fieldId, encoded)))
         else:
             # Remove enters
             encoded = ''
@@ -181,6 +190,8 @@ class PropertiesPage(RenderableLivePage):
         # Check the field type
         if fieldId in self.booleanFieldNames:
             setattr(obj, name, decoded[0].lower() == 't')
+        elif fieldId in self.imgFieldNames:
+            setattr(obj, name, toUnicode(decoded))
         else:
             # Must be a string
             setattr(obj, name, toUnicode(decoded))

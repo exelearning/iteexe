@@ -28,6 +28,7 @@ from exe.engine.node           import Node
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.persist        import Persistable, encodeObject, \
                                       decodeObject, decodeObjectRaw
+from exe.engine.resource       import Resource
 from twisted.persisted.styles  import Versioned, doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
 
@@ -65,7 +66,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -73,6 +74,7 @@ class Package(Persistable):
     _title             = '' 
     _author            = ''
     _description       = ''
+    _backgroundImg     = ''
 
 
     def __init__(self, name):
@@ -88,6 +90,7 @@ class Package(Persistable):
         self._levelNames    = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
         self.name           = name
         self._title         = u''
+        self._backgroundImg = u''
 
         # Empty if never saved/loaded
         self.filename      = u''
@@ -115,6 +118,16 @@ class Package(Persistable):
     def set_description(self, value):
         self._description = toUnicode(value)
 
+    def get_backgroundImg(self):
+        if self._backgroundImg:
+            return "file://" + self._backgroundImg.path
+        else:
+            return ""
+    def set_backgroundImg(self, value):
+        if value.startswith("file://"):
+            value = value[7:]
+        self._backgroundImg = Resource(self, Path(value))
+
     def get_level1(self):
         return self.levelName(0)
     def set_level1(self, value):
@@ -133,10 +146,12 @@ class Package(Persistable):
 
     # Properties
 
-    name        = property(lambda self:self._name, set_name)
-    title       = property(lambda self:self._title, set_title)
-    author      = property(lambda self:self._author, set_author)
-    description = property(lambda self:self._description, set_description)
+    name          = property(lambda self:self._name, set_name)
+    title         = property(lambda self:self._title, set_title)
+    author        = property(lambda self:self._author, set_author)
+    description   = property(lambda self:self._description, set_description)
+
+    backgroundImg = property(get_backgroundImg, set_backgroundImg)
 
     level1 = property(get_level1, set_level1)
     level2 = property(get_level2, set_level2)
@@ -348,6 +363,12 @@ class Package(Persistable):
         self.dublinCore.creator = self._author
         self.dublinCore.description = self._description
         self.scolinks = False
+
+    def upgradeToVersion7(self):
+        """
+        For version 0.15
+        """
+        _backgroundImg = ''
 
 # ===========================================================================
 

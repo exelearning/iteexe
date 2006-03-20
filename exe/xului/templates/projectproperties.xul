@@ -62,8 +62,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
          </hbox>
          <hbox align="center">
             <label style="width:8em" value="Header Background:"/>
-            <image id="pp_imgBackground" src='my-face.png' width='60' height='80' onclick="addImage('Background');"/>
-            <textbox id="pp_pathBackground" size="40"/>
+            <image id="pp_backgroundImg" src='' onclick="addImage('pp_backgroundImg');"/>
          </hbox>
          <hbox align="center">
             <label id="ppAuthor" style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>

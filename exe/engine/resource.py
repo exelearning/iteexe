@@ -115,6 +115,7 @@ class Resource(Persistable):
         log.debug(u"storageName=%s" % self._storageName)
         resourceFile.copyfile(self._package.resourceDir/self._storageName)
 
+
     def _fn2ascii(self, filename):
         """
         Changes any filename to pure ascii
