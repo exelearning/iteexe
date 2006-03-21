@@ -88,7 +88,6 @@ exe/webui/blockfactory.py
 exe/webui/__init__.py
 exe/webui/casestudyblock.py
 exe/webui/testquestionelement.py
-exe/webui/element2.py
 exe/webui/editorelement.py
 exe/idevices/appletblock.py
 exe/idevices/forumidevice.py

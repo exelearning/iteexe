@@ -341,7 +341,7 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     #   --files-from=app.fil        : The list of files is taken from the file: app.fil
     #   --output=                   : specifies the name of the output file (using a .pot extension)
     cmd = 'xgettext -kx_ -s --no-wrap --files-from=app.fil ' \
-          '--output=messages.pot --from-code=utf8'
+          '--output=exe/locale/messages.pot --from-code=utf8'
     if verbose: print cmd
     os.system(cmd)                                                
     os.chdir(currentDir)
@@ -349,8 +349,8 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
 
     # Merge new pot with .po files
     localeDirs = Path('exe/locale')
-    for filename in localeDirs.glob('*_*.po'):
-        cmd = "msgmerge -U --no-wrap %s messages.pot" % filename
+    for filename in localeDirs.walkfiles('*_*.po'):
+        cmd = "msgmerge -U --no-wrap %s exe/locale/messages.pot" % filename
         if verbose: print cmd
         os.system(cmd)
 
@@ -360,7 +360,7 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
     if verbose:
         print "Importing xul templates..."
     path = Path(applicationDirectoryPath)
-    messages = pot2dict('messages.pot')
+    messages = pot2dict('exe/locale/messages.pot')
     messageCommentTemplate = '\n#: %s:%s\nmsgid "'
     seq = len(messages)
     skipPaths = (
@@ -378,7 +378,7 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
                 reader = Sax2.Reader()
                 doc = reader.fromStream(file(fn, 'rb'))
                 xul2dict(doc, messages, seq, fn.relpath())
-    dict2pot(messages, 'messages.pot')
+    dict2pot(messages, 'exe/locale/messages.pot')
 
 def xul2dict(doc, messages, seq, filename):
     """Recursively translates some "stan" contexts and
@@ -611,7 +611,7 @@ def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbo
     currentDir = os.getcwd()
     os.chdir(applicationDirectoryPath)                    
     
-    for filename in targetDir.glob('*_*.po'):
+    for filename in targetDir.walkfiles('*_*.po'):
         langCode = filename.split('_', 1)[1].split('.', 1)[0]
         mo_targetDir = Path("%s/%s/LC_MESSAGES" % (targetDir,langCode))
         if not mo_targetDir.exists():
