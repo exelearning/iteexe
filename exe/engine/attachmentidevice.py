@@ -49,11 +49,14 @@ class AttachmentIdevice(Idevice):
                              "what the attachment is and how large the file is. "
                              "Learners can click on the attachment link and can "
                              "download the attachment."), u"", u"")
+
         self.emphasis           = Idevice.NoEmphasis
+        self.label              = u''
+        self.description        = u''
+
         self._filenameInstruc   = x_(u'Click <strong>Select a file</strong>, '
                                     'browse to the file you want '
                                     'to attach and select it.')
-        self.label              = u""
         self._labelInstruc      = x_(u"<p>"
                                     "Assign a label for the attachment. It "
                                     "is useful to include the type of file. "
@@ -70,9 +73,12 @@ class AttachmentIdevice(Idevice):
                                     "For example: "
                                     "<code>Sales Forecast.doc (500kb)</code>"
                                     "</p>")
-        self.description         = u""
-        self._descriptionInstruc = x_(u"Provide a brief description of the "
-                                    "file")
+        self._descriptionInstruc = x_(u"Enter the text you wish to associate "
+                                      u"with the downloaded file. You might "
+                                      u"want to provide instructions on what "
+                                      u"you require the learner to do once "
+                                      u"the file is downloaded or how the "
+                                      u"material should be used.")
 
 
     # Properties
