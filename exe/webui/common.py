@@ -261,10 +261,10 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
     else:
         id_ = newId()
         html  = u'<a onmousedown="Javascript:updateCoords(event);" '
-        html += u' title="%s" ' % _(u'Instructions for completion')
+        html += u' title="%s" ' % _(u'Click for completion instructions')
         html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % id_
         html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
-        html += u'<img alt="%s" ' % _(u'Instructions for completion')
+        html += u'<img alt="%s" ' % _(u'Click for completion instructions')
         html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
         html += u'<div id="i%s" style="display:none;">' % id_
