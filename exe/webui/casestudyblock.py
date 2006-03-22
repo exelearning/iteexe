@@ -77,8 +77,9 @@ class CasestudyBlock(Block):
         """
         html  = u'<div class="iDevice"><br/>\n'
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += common.formField('richTextArea',_(u'Story:'),'story',
-                                 self.id, self.storyInstruc,
+        html += common.formField('richTextArea', _(u'Story:'),
+                                 'story', self.id,
+                                 self.storyInstruc,
                                  self.story)
 
         html += u'<div class="block">'
