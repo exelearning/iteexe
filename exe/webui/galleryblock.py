@@ -167,11 +167,17 @@ class GalleryBlock(Block):
         move/add/delete/change each gallery image
         """
         html = [u'<div class="iDevice">',
-                common.textInput("title"+self.id, self.idevice.title),
-                u'<br/><br/>',
+                common.formField('textInput', _('Title'),
+                                 "title"+self.id, '',
+                                 self.idevice.titleInstruc,
+                                 self.idevice.title),
+                u'<div class="block">',
                 u'<input type="button" ',
                 u'onclick="addGalleryImage(\'%s\')"' % self.id,
-                u'value="%s" /><br/><br/>\n' % _(u"Add images")]
+                u'value="%s" />\n' % _(u"Add images"),
+                common.elementInstruc(self.idevice.addImageInstr),
+                u'</div>',
+                ]
 
         if len(self.idevice.images) == 0:
             html += [u'<div style="align:center center">',

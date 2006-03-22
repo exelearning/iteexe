@@ -25,14 +25,15 @@ import Image, ImageDraw
 from twisted.persisted.styles import requireUpgrade
 import logging
 
-from exe.engine.idevice  import Idevice
-from exe.engine.field    import TextField
-from exe.engine.path     import Path, TempDirPath, toUnicode
-from exe.engine.persist  import Persistable
-from nevow               import tags as T
-from nevow.stan          import raw
-from nevow.flat          import flatten
-from exe.engine.resource import Resource
+from exe.engine.idevice   import Idevice
+from exe.engine.field     import TextField
+from exe.engine.path      import Path, TempDirPath, toUnicode
+from exe.engine.persist   import Persistable
+from nevow                import tags as T
+from nevow.stan           import raw
+from nevow.flat           import flatten
+from exe.engine.resource  import Resource
+from exe.engine.translate import lateTranslate
 
 log = logging.getLogger(__name__)
 
@@ -499,6 +500,16 @@ these in a gallery context rather then individually.</p>"""),
         self.images            = GalleryImages(self)
         self.currentImageIndex = 0
         self.systemResources  += ["stock-insert-image.png"]
+        self._titleInstruc     = x_(u'Enter a title for the gallery')
+        self._addImageInstr    = x_(u"Click on the Add images button to select "
+                                    u"an image file. The image will appear "
+                                    u"below where you will be able to label "
+                                    u"it. It's always good practice to put "
+                                    u"the file size in the label.")
+
+    # Properties
+    addImageInstr = lateTranslate('addImageInstr')
+    titleInstruc = lateTranslate('titleInstruc')
 
 
     def genImageId(self):
