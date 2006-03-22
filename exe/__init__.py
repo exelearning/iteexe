@@ -1,6 +1,6 @@
 # ===========================================================================
 # __init__.py
-# Copyright 2004, University of Auckland
+# Copyright 2004-2006, University of Auckland
 #
 # This is a placeholder
 #

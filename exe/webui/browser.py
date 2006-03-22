@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # ===========================================================================
 # eXe
-# Copyright 2004-2005, University of Auckland
+# Copyright 2004-2006, University of Auckland
 #
 # This module is for the TwiSteD web server.
 #

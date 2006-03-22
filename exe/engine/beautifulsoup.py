@@ -43,7 +43,7 @@ from __future__ import generators
 __author__ = "Leonard Richardson (leonardr@segfault.org)"
 __version__ = "2.1.0"
 __date__ = "$Date: 2004/10/18 00:14:20 $"
-__copyright__ = "Copyright (c) 2004-2005 Leonard Richardson"
+__copyright__ = "Copyright (c) 2004-2006 Leonard Richardson"
 __license__ = "PSF"
 
 from sgmllib import SGMLParser, SGMLParseError

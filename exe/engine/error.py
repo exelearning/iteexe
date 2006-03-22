@@ -1,6 +1,6 @@
 # ===========================================================================
 # eXe
-# Copyright 2004, University of Auckland
+# Copyright 2004-2006, University of Auckland
 #
 # Config settings loaded from exe.conf
 # Is responsible for the system-wide settings we use

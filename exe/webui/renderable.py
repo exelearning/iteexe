@@ -1,6 +1,6 @@
 # ===========================================================================
 # eXe 
-# Copyright 2004-2005, University of Auckland
+# Copyright 2004-2006, University of Auckland
 # $Id: idevicepane.py 1162 2005-08-18 05:40:48Z matthew $
 #
 # This program is free software; you can redistribute it and/or modify
