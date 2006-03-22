@@ -79,7 +79,7 @@ class AboutPage(RenderableResource):
         xul += u'      <label style="text-align: center;" \n'
         xul += u'             value="Revision: '+version.revision+'" />\n'
         xul += u'      <description id="copyright">Copyright University of '
-        xul += u'Auckland, 2005.<html:br/>\n'
+        xul += u'Auckland, 2005-2006.<html:br/>\n'
         xul += u'email: exe@exelearning.org\n'
         xul += u'      </description>\n'
         xul += u'      <vbox id="detailsBox" align="center" flex="1">\n'
