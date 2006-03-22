@@ -599,7 +599,6 @@ class ClozeElement(Element):
                         self.id, i, encrypt(missingWord))]
 
         # Score string
-        html += ['<p id="clozeScore%s"></p>' % self.id]
         html += ['<div class="block">\n']
         if self.field.instantMarking:
             html += ['<input type="button" ',
@@ -641,6 +640,7 @@ class ClozeElement(Element):
                     style=style,
                     onclick=onclick),
         ]
+        html += ['<p id="clozeScore%s"></p>' % self.id]
         html += ['</div>\n']
         return '\n'.join(html) + '</div>'
 
