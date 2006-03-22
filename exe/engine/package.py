@@ -91,6 +91,7 @@ class Package(Persistable):
         self.name           = name
         self._title         = u''
         self._backgroundImg = u''
+        self.backgroundImgTile = False
 
         # Empty if never saved/loaded
         self.filename      = u''
@@ -119,14 +120,22 @@ class Package(Persistable):
         self._description = toUnicode(value)
 
     def get_backgroundImg(self):
+        """Get the background image for this package"""
         if self._backgroundImg:
             return "file://" + self._backgroundImg.path
         else:
             return ""
+
     def set_backgroundImg(self, value):
+        """Set the background image for this package"""
+        if self._backgroundImg:
+            self._backgroundImg.delete()
+
         if value.startswith("file://"):
             value = value[7:]
-        self._backgroundImg = Resource(self, Path(value))
+
+        imgFile = Path(value)
+        self._backgroundImg = Resource(self, Path(imgFile))
 
     def get_level1(self):
         return self.levelName(0)
@@ -368,7 +377,8 @@ class Package(Persistable):
         """
         For version 0.15
         """
-        _backgroundImg = ''
+        self._backgroundImg = ''
+        self.backgroundImgTile = False
 
 # ===========================================================================
 

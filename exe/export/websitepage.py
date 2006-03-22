@@ -80,7 +80,18 @@ class WebsitePage(object):
         html += u"</head>\n"
         html += u"<body>\n"
         html += u"<div id=\"content\">\n"
-        html += u"<div id=\"header\">\n"
+        html += u"<div id=\"header\" "
+
+        if self.node.package.backgroundImg:
+            html += u" style=\"background-image: url("
+            html += self.node.package.backgroundImg.basename()
+            html += u"); "
+
+            if self.node.package.backgroundImgTile:
+                html += "background-repeat: repeat-x;"
+
+            html += u"\""
+        html += u">\n"
         html += escape(self.node.package.title)
         html += u"</div>\n"
         

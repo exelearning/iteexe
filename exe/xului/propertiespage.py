@@ -53,7 +53,7 @@ class PropertiesPage(RenderableLivePage):
     _templateFileName = 'properties.xul'
     name = 'properties'
     # List of field names that contain boolean values
-    booleanFieldNames = ('pp_scolinks',)
+    booleanFieldNames = ('pp_scolinks', 'pp_backgroundImgTile')
     # List of field names that contain image values
     imgFieldNames     = ('pp_backgroundImg',)
     # Used for url encoding with unicode support
@@ -66,7 +66,8 @@ class PropertiesPage(RenderableLivePage):
         Initialize
         """
         RenderableLivePage.__init__(self, parent)
-        mainxul = Path(self.config.xulDir).joinpath('templates', 'properties.xul')
+        mainxul = Path(self.config.xulDir).joinpath('templates', 
+                                                    'properties.xul')
         self.docFactory  = loaders.xmlfile(mainxul)
         self.client = None
         self.fieldsReceived = set()

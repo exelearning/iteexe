@@ -60,7 +60,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
 <n:invisible n:render="liveid"/>
 <n:invisible n:render="liveglue"/>
 
-<?xul-overlay href="/xultemplates/projectproperties.xul"?>
+<?xul-overlay href="/xultemplates/packageproperties.xul"?>
 <?xul-overlay href="/xultemplates/dublincore.xul"?>
 <?xul-overlay href="/xultemplates/exportproperties.xul"?>
 
@@ -113,10 +113,18 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
       var res = fp.show();
       if (res == nsIFilePicker.returnOK) {
           var image = document.getElementById(elementId);
-          image.removeAttribute('width');
-          image.removeAttribute('height');
           image.src  = 'file://'+fp.file.path;
+          image.width  = '450';
+          image.height = '100';
       }
+  }
+ 
+  // Called by the user to clear an image from the package
+  function clearImage(elementId) {
+      var image = document.getElementById(elementId);
+      image.src    = '';
+      image.width  = '450';
+      image.height = '100';
   }
   
   function collectIds(ids, start) {

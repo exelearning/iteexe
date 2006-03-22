@@ -43,6 +43,13 @@ form > #main {
 li {list-style-position: inside;}
 
 
+
+#header { 
+    color: #3C5866;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-align: center;
+}
 /* -- style the node title on each page -- */
 
 p#nodeTitle { 
