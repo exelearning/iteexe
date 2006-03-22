@@ -24,6 +24,7 @@ import logging
 from exe.webui.block               import Block
 from exe.webui.truefalseelement    import TrueFalseElement
 from exe.webui                     import common
+from exe.webui.element             import TextAreaElement
 
 log = logging.getLogger(__name__)
 
@@ -43,7 +44,9 @@ class TrueFalseBlock(Block):
         self.questionInstruc = idevice.questionInstruc
         self.keyInstruc      = idevice.keyInstruc
         self.feedbackInstruc = idevice.feedbackInstruc
-        self.hintInstruc     = idevice.hintInstruc        
+        self.hintInstruc     = idevice.hintInstruc 
+        self.instructionElement = \
+            TextAreaElement(idevice.instructionsForLearners)
         
         i = 0
         for question in idevice.questions:
@@ -76,6 +79,7 @@ class TrueFalseBlock(Block):
         html  = u"<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
+        html += self.instructionElement.renderEdit()
 
         for element in self.questionElements:
             html += element.renderEdit() 
@@ -100,6 +104,7 @@ class TrueFalseBlock(Block):
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"     
         html += u"<div class=\"iDevice_inner\">\n"
+        html += self.instructionElement.renderView()
         
         for element in self.questionElements:
             html += element.renderQuestionPreview()
@@ -125,6 +130,7 @@ class TrueFalseBlock(Block):
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += u"<div class=\"iDevice_inner\">\n"
+        html += self.instructionElement.renderView()
         
         for element in self.questionElements:
             html += element.renderQuestionView()

@@ -24,6 +24,7 @@ import logging
 from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
+from exe.engine.field     import TextAreaField
 log = logging.getLogger(__name__)
 
 
@@ -75,6 +76,13 @@ default feedback will be provided.""")
         self.questions.append(TrueFalseQuestion())
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
+        self.instructionsForLearners = TextAreaField(
+            x_(u'Instructions'),
+            x_(u"""Provide instruction on how the True/False Question should be 
+completed."""),
+            u'')
+                
+        self.instructionsForLearners.idevice = self
         
 
     # Properties
@@ -150,5 +158,17 @@ this box, eXe will automatically provide default feedback as follows:
         self._upgradeIdeviceToVersion2()        
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
+        
+    def upgradeToVersion8(self):
+        """
+        Upgrades to v0.15
+        """
+        self.instructionsForLearners = TextAreaField(
+            x_(u'Instructions'),
+            x_(u"""Provide instruction on how the True/False Question should be 
+completed."""),
+            x_(u'Read the paragraph below and '
+                'fill in the missing words.'))
+        self.instructionsForLearners.idevice = self
     
 # ===========================================================================

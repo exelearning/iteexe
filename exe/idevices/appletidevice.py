@@ -53,8 +53,16 @@ class AppletIdevice(Idevice):
                              parentNode)
         self.emphasis          = Idevice.NoEmphasis
         self.appletCode        = u""
-        self.fileInstruc       = u""
-        self.codeInstruc       = u""
+        self._fileInstruc      = x_(u"""Add all the files provided for the applet
+except the .txt file one at a time using the add files and upload buttons. The 
+files, once loaded will be displayed beneath the Applet code field.""")
+        self._codeInstruc      = x_(u""""Find the .txt file (in the applet file) 
+and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet 
+code field.""")
+        
+    # Properties    
+    fileInstruc = lateTranslate('fileInstruc')
+    codeInstruc = lateTranslate('codeInstruc')
 
     def uploadFile(self, filePath):
         """
