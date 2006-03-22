@@ -70,7 +70,6 @@ class OutlinePane(Renderable):
                 else:
                     log.error("deleteNode cannot locate "+nodeId)
 
-            
     def handleAddChild(self, client, parentNodeId):
         """Called from client via xmlhttp. When the addChild button is called.
         Hooked up by authoringPage.py
@@ -117,6 +116,14 @@ class OutlinePane(Renderable):
         client.sendScript(command.encode('utf-8'))
 
 
+    def handleSetTreeSelection(self, client):
+        """
+        Called when the client want's to update the tree with the correct
+        selection
+        """
+        client.call('XHSelectTreeNode', self.package.currentNode.id)
+        
+            
     def _doJsRename(self, client, node):
         """
         Recursively renames all children to their default names on
@@ -221,10 +228,11 @@ class OutlinePane(Renderable):
         # Now do the rendering
         log.debug("render")
         xul = (u'<!-- start outline pane -->',
-                '    <tree id="outlineTree" hidecolumnpicker="true" '+
-                'onselect="outlineClick()" ',
+                '    <tree id="outlineTree"',
+                '          hidecolumnpicker="true" ',
+                '          onselect="outlineClick()" ',
                 '          context="outlineMenu" flex="1"',
-                '          ondraggesture="treeDragGesture(event)"'
+                '          ondraggesture="treeDragGesture(event)"',
                 '          ondragenter="treeDragEnter(event)"',
                 '          ondragover="treeDragOver(event)"',
                 '          ondragexit="treeDragExit(event)"',

@@ -52,18 +52,23 @@ function serverId2TreeId(serverId) {
     }
 }
 
+// Called when window shown/refreshed. Tells the server that now is a good time
+// to put the correct selection in the node tree
 function initWindow() {
     if (haveLoaded) {return}
-    // Select the root tree item
+    // Select the correct tree item
+    nevow_clientToServerEvent('setTreeSelection', this, '')
+    haveLoaded = true
+}
+
+// Called by the server. Causes the correct selection to be put into the node
+// tree.
+function XHSelectTreeNode(serverId) {
+    var index = serverId2TreeId(serverId)
     var tree = document.getElementById('outlineTree')
     var sel = tree.view.selection
-    var index = serverId2TreeId('0')  // The root section is always id '0'
-    var oldSelect = tree.getAttribute('onselect')
-    // For some reason, onload is called whenever the form
-    // in the iframe is refreshed. So to stop recursion, we
-    // remove it here
-    haveLoaded = true
-    sel.select(index)
+    sel.currentIndex = index
+    sel.timedSelect(index, 100)
     tree.focus()
 }
 

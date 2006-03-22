@@ -106,6 +106,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleRegister,        'register')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
+        setUpHandler(self.outlinePane.handleSetTreeSelection,  'setTreeSelection')
         self.idevicePane.client = client
 
 
