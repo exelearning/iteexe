@@ -81,13 +81,15 @@ def hiddenField(name, value=u""):
     return html
 
 
-def textInput(name, value=u"", size=40, disabled=u""):
+def textInput(name, value=u"", size=40, disabled=u"", **kwargs):
     """Adds a text input to a form"""
     html  = u"<input type=\"text\" "
     html += u"name=\"%s\" " % name
     html += u"id=\"%s\" " % name
     html += u"value=\"%s\" " % value
     html += u"size=\"%s\" " % size
+    for key, val in kwargs.items():
+        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
     html += disabled+u" />\n"
     return html
 
@@ -119,7 +121,7 @@ def richTextArea(name, value="", width="100%", height=100):
 def image(name, value, width="", height="", alt=None):
     """Returns the XHTML for an image"""
     if alt is None:
-    	alt = name
+        alt = name
     log.debug(u"image %s" % value)
     html  = u"<img id=\"%s\" " % name
     html += u'alt="%s" ' % alt
@@ -283,13 +285,15 @@ def formField(type_, caption, action, object_='', instruction='', *args, **kwarg
     html  = '<div class="block">'
     html += '<strong>%s</strong>' % caption
     if instruction:
-        html += elementInstruc(instruction, **kwargs)
+        html += elementInstruc(instruction)
     html += '</div>'
     html += '<div class="block">'
     if type_ == 'select':
         html += select(action, object_, *args, **kwargs)
     elif type_ == 'richTextArea':
-	html += richTextArea(action+object_, *args, **kwargs)
+        html += richTextArea(action+object_, *args, **kwargs)
+    elif type_ == 'textInput':
+        html += textInput(action+object_, *args, **kwargs)
     elif type_ == 'checkbox':
         html += checkbox(*args, **kwargs)
     html += '</div>'

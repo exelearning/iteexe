@@ -73,23 +73,33 @@ class AttachmentBlock(Block):
         """
         log.debug("renderEdit")
         html  = u'<div class="iDevice">\n'
-        html += common.textInput("path"+self.id, "", 50)
+        html += u'<div class="block">\n'
+
+        label = _(u'Filename')
+        if self.idevice.userResources:
+            label += u': '
+            label += u'<span style="text-decoration:underline">'
+            label += self.idevice.userResources[0].storageName
+            label += u'</span>\n'
+            
+        html += common.formField('textInput',
+                                 label,
+                                 'path'+self.id, '',
+                                 self.idevice.filenameInstruc,
+                                 size=50)
+
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
-        html += common.elementInstruc(self.idevice.filenameInstruc)
+        html += u'</div>\n'
         html += u'<div class="block">\n'
         html += u'\n<b>%s</b>\n' % _(u'Label')
         html += common.elementInstruc(self.idevice.labelInstruc)
         html += u'</div>\n'
         html += common.textInput(u'label'+self.id, self.idevice.label)
-        html += common.formField('richTextArea',_(u'Description:'),'description',
-                                 self.id, self.idevice.descriptionInstruc,
+        html += common.formField('richTextArea', _(u'Description:'),
+                                 'description', self.id,
+                                 self.idevice.descriptionInstruc,
                                  self.idevice.description)
-
-        if self.idevice.userResources:
-            html += u'<span style="text-decoration:underline">'
-            html += self.idevice.userResources[0].storageName
-            html += u'</span>\n'
 
         html += u'<div class="block">\n'
         html += self.renderEditButtons()
