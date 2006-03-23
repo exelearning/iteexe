@@ -90,7 +90,7 @@ msgid ""
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr "<p>Entre el texto dejando unos espacios en blanco para escribir o pegar en este archivo.</p><p> Para hacer un espacio en blanco haga doble click en la palabra que quieres ocultar para seleccionarlo, y haga un click en el botón que se llama <i>Ocultar/Mostrar Palabra</i></p>."
+msgstr "<p>Entre el texto dejando unos espacios en blanco para escribir o pegar en este archivo.</p><p> Para hacer un espacio en blanco haga doble click en la palabra que quieres ocultar para seleccionarlo, y haga un click en el botón <i>Ocultar/Mostrar Palabra</i></p>."
 
 #: exe/engine/field.py:415
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
