@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-21 12:21+1200\n"
-"PO-Revision-Date: 2006-03-14 13:05+1200\n"
-"Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
+"PO-Revision-Date: 2006-03-23 12:41+1200\n"
+"Last-Translator: brent simpson <brent.simpson@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Pootle 0.6.3.20060116\n"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -1495,9 +1496,8 @@ msgid "Small"
 msgstr "Pequeño"
 
 #: exe/webui/wikipediablock.py:92
-#, fuzzy
 msgid "Solvenian"
-msgstr "Esloveno. "
+msgstr "Esloveno"
 
 #: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:308
 msgid "Some emphasis"
@@ -3291,3 +3291,4 @@ msgstr "Típicamente, un elemento de las derechas contendrá una declaración de
 
 #~ msgid "SCORM Multiple Choice Quiz:"
 #~ msgstr "Exámen SCORM multiples elecciones"
+

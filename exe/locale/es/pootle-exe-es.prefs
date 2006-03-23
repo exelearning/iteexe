@@ -1,2 +1,6 @@
 # Pootle preferences for project exe, language es
 
+rights:
+  default = u'view, suggest, translate, review, archive, pocompile'
+  matiu = u'view, translate, review, archive, pocompile, assign'
+  nobody = u'view'
