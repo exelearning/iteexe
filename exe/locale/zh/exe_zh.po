@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-21 12:21+1200\n"
-"PO-Revision-Date: 2006-03-13 13:41+1200\n"
+"PO-Revision-Date: 2006-03-24 11:15+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: 汉语\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Pootle 0.6.3.20060116\n"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -94,7 +95,7 @@ msgid ""
 "by asking the learner to reflect on the reading and respond to questions about \n"
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
-msgstr " "
+msgstr "<p>阅读活动主要用于检查学生对指定课文的理解. 可通过回答问题等完成.</p>"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -114,14 +115,14 @@ msgid ""
 "should be directly related to the text the learner has been asked to read. \n"
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
-msgstr " "
+msgstr " <P>阅读活动, 顾名思义是要学生完成一些任务. 此活动须与阅读内容直接相关. 可给学生一些相应的评语, 提供回答问题的指导.</P>"
 
 #: exe/engine/galleryidevice.py:490
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
-msgstr " "
+msgstr "当有一组相关的图片要展示时或对一个特定的练习,要显示几张图片."
 
 #: exe/engine/package.py:165
 msgid "?????"
@@ -242,7 +243,7 @@ msgstr "对齐:"
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr " "
+msgstr "对齐可用于选择图象显示的位置."
 
 #: exe/engine/field.py:477
 msgid ""
@@ -354,14 +355,14 @@ msgid ""
 "your image to display at. The measurements are in pixels. Generally, 100 \n"
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
-msgstr " "
+msgstr "选择图片显示的尺寸, 单位为像素. 100像素像约为3厘米. 如要显示图片原尺寸, 则让此二栏空白."
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
 "Click \n"
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
-msgstr " "
+msgstr "点击图片或\"添加图片\"按钮来选择所要放大的图片文档."
 
 #: exe/engine/attachmentidevice.py:53
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
@@ -3313,3 +3314,4 @@ msgstr " "
 
 #~ msgid "Project title:"
 #~ msgstr "课件标题:"
+

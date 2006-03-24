@@ -3,3 +3,4 @@
 rights:
   default = u'view, suggest, archive, pocompile'
   nobody = u'view'
+  jenny = u'view, translate, review, archive, pocompile, admin'
