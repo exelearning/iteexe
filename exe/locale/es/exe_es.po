@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-24 17:19+1200\n"
+"POT-Creation-Date: 2006-03-24 18:18+1200\n"
 "PO-Revision-Date: 2006-03-24 17:45+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -3356,4 +3356,3 @@ msgstr "Típicamente, un elemento de las derechas contendrá una declaración de
 #
 #~ msgid "SCORM Multiple Choice Quiz:"
 #~ msgstr "Exámen SCORM multiples elecciones"
-
