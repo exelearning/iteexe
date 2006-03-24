@@ -1,0 +1,6 @@
+# Pootle preferences for project exe, language ptbr
+
+rights:
+  arjun = u'view, translate, review, archive, pocompile'
+  default = u'view, suggest, archive, pocompile'
+  nobody = u'view'

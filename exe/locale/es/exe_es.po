@@ -3349,5 +3349,11 @@ msgstr "Típicamente, un elemento de las derechas contendrá una declaración de
 #~ msgid "<strong>url:</strong> "
 #~ msgstr "<strong>url:</strong> "
 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 #~ msgid "SCORM Multiple Choice Quiz:"
 #~ msgstr "Exámen SCORM multiples elecciones"
+
