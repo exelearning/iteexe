@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-21 12:21+1200\n"
+"POT-Creation-Date: 2006-03-24 17:19+1200\n"
 "PO-Revision-Date: 2005-12-05 10:37+0100\n"
 "Last-Translator: Fredrik Paulsson <frepa@frepa.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,13 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Svensk\n"
 
+#: exe/idevices/appletidevice.py:59
+msgid ""
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr ""
+
 #: exe/webui/block.py:224
 msgid "---Move To---"
 msgstr "---Flytta till---"
 
 #: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
-#: exe/xului/mainpage.py:229 exe/xului/mainpage.py:283
-#: exe/xului/mainpage.py:328 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.py:230 exe/xului/mainpage.py:284
+#: exe/xului/mainpage.py:329 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
 msgstr ". Använd ASCII namn."
@@ -51,7 +58,7 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:57
+#: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Ge den bifogade filen en etikett. Det är bra att även ange filtyp. T.ex. pdf, ppt, etc.</p><p> Det är också bra att ange filens storlek för att ge användare en uppfattning om hur lång tid nerladdningen kommer att ta.</P> Exempelvis: <conde>Att göra en IUP.odt (500 kb)</code></p>"
 
@@ -117,14 +124,14 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 
-#: exe/engine/galleryidevice.py:490
+#: exe/engine/galleryidevice.py:491
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 
-#: exe/engine/package.py:165
+#: exe/engine/package.py:189
 msgid "?????"
 msgstr "?????"
 
@@ -150,7 +157,7 @@ msgstr ""
 "som ger eleven möjlighet att tillämpa sin egen kunskap och erfarenhet. När \n"
 "du designar en case-studie kan det vara lämpligt att beakta följande:<ul>\n"
 
-#: exe/engine/truefalseidevice.py:65
+#: exe/engine/truefalseidevice.py:66
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -198,6 +205,13 @@ msgstr "Lägg till en textrad till en iDevice. Användbart om du vill lägga til
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
 msgstr "Lägg till ett textfält till en iDevice. Används för att fylla i beskrivande text."
 
+#: exe/idevices/appletidevice.py:56
+msgid ""
+"Add all the files provided for the applet\n"
+"except the .txt file one at a time using the add files and upload buttons. The \n"
+"files, once loaded will be displayed beneath the Applet code field."
+msgstr ""
+
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Lägg till en bild till din iDevice. Du kan välja bild bland tidigare lagrade bilder."
@@ -216,7 +230,7 @@ msgstr "Lägg till ytterligare en fråga"
 msgid "Add another option"
 msgstr "Lägg till ytterligare ett val"
 
-#: exe/webui/truefalseblock.py:83 exe/webui/casestudyblock.py:93
+#: exe/webui/truefalseblock.py:87 exe/webui/casestudyblock.py:94
 msgid "Add another question"
 msgstr "Lägg till ytterligare en fråga"
 
@@ -225,7 +239,7 @@ msgstr "Lägg till ytterligare en fråga"
 msgid "Add files"
 msgstr "Lägg till bilder"
 
-#: exe/webui/galleryblock.py:174
+#: exe/webui/galleryblock.py:177
 msgid "Add images"
 msgstr "Lägg till bilder"
 
@@ -300,7 +314,7 @@ msgstr "Artikel"
 msgid "Attachment"
 msgstr "Bilaga"
 
-#: exe/engine/attachmentidevice.py:93
+#: exe/engine/attachmentidevice.py:99
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Bilaga %s har ingen föräldranod"
@@ -323,8 +337,8 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
-#: exe/xului/mainpage.py:227 exe/xului/mainpage.py:281
-#: exe/xului/mainpage.py:326 exe/xului/mainpage.old.py:222
+#: exe/xului/mainpage.py:228 exe/xului/mainpage.py:282
+#: exe/xului/mainpage.py:327 exe/xului/mainpage.old.py:222
 #: exe/xului/mainpage.old.py:303
 #, fuzzy
 msgid "Cannot access directory named "
@@ -339,7 +353,7 @@ msgstr "Rubrik:"
 msgid "Case Study"
 msgstr "Fallstudie"
 
-#: exe/webui/galleryblock.py:189 exe/webui/galleryblock.py:207
+#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:213
 msgid "Change Image"
 msgstr ""
 
@@ -376,7 +390,7 @@ msgid ""
 "magnified."
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:53
+#: exe/engine/attachmentidevice.py:57
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klicka på <strong>Välj fil</strong>, navigera till filen och välj den."
 
@@ -385,12 +399,20 @@ msgstr "Klicka på <strong>Välj fil</strong>, navigera till filen och välj den
 msgid "Click Here"
 msgstr "Klicka här"
 
+#: exe/webui/common.py:266 exe/webui/common.py:269
+msgid "Click for completion instructions"
+msgstr ""
+
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
 msgstr "Klicka här"
 
-#: exe/engine/galleryidevice.py:290 exe/webui/common.py:272
-#: exe/webui/common.py:273 exe/webui/multichoiceblock.py:154
+#: exe/engine/galleryidevice.py:504
+msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
+msgstr ""
+
+#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
 #: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
 #: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
 #: exe/webui/block.py:238 exe/webui/editorpane.py:333
@@ -412,7 +434,7 @@ msgstr "Stäng aktivitet"
 msgid "Cloze Text"
 msgstr "Stäng"
 
-#: exe/webui/common.py:223
+#: exe/webui/common.py:225
 msgid "Confirm and submit"
 msgstr ""
 
@@ -434,7 +456,7 @@ msgid ""
 msgstr ""
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/galleryblock.py:240 exe/webui/block.py:208
+#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
 #: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
@@ -449,7 +471,7 @@ msgstr "Radera"
 msgid "Delete File"
 msgstr "Radera"
 
-#: exe/webui/galleryblock.py:238
+#: exe/webui/galleryblock.py:244
 #, fuzzy
 msgid "Delete Image"
 msgstr "Välj bild"
@@ -501,10 +523,10 @@ msgstr "Beskriv den uppgift som eleven skall göra."
 msgid "Description"
 msgstr "Beskrivning"
 
-#: exe/webui/attachmentblock.py:85 exe/xului/templates/dublincore.xul:<label
-#: value="Description:" id="dcDescription" style="width:8em" tooltiptext="An
-#: account of the content resource.">
-#: exe/xului/templates/projectproperties.xul:<label id="ppDescription"
+#: exe/webui/attachmentblock.py:99
+#: exe/xului/templates/packageproperties.xul:<label value="Description:"
+#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
+#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "Description:"
 msgstr "Beskrivning:"
 
@@ -531,11 +553,11 @@ msgstr "Diskussion och svar är tillåtna"
 msgid "Display as:"
 msgstr "Visa som:"
 
-#: exe/webui/block.py:200 exe/xului/templates/dublincore.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
-#: label="Done"> exe/xului/templates/exportproperties.xul:<button
-#: id="exportPropsDone" exe/xului/templates/projectproperties.xul:<button
+#: exe/webui/block.py:200 exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
+#: label="Done"> exe/xului/templates/dublincore.xul:<button
+#: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
+#: exe/xului/templates/exportproperties.xul:<button id="exportPropsDone"
 msgid "Done"
 msgstr "Klar"
 
@@ -572,7 +594,7 @@ msgstr "Varje person postar en diskussion"
 msgid "Edit"
 msgstr "Redigera"
 
-#: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:304
 msgid "Emphasis"
 msgstr "Huvudfokus"
 
@@ -617,6 +639,10 @@ msgstr ""
 "Fyll i alla detaljer om den aktivitet som eleven\n"
 " skall reflektera över."
 
+#: exe/engine/galleryidevice.py:503
+msgid "Enter a title for the gallery"
+msgstr ""
+
 #: exe/engine/quiztestidevice.py:64 exe/engine/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
@@ -624,7 +650,7 @@ msgid ""
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
 
-#: exe/engine/truefalseidevice.py:72
+#: exe/engine/truefalseidevice.py:73
 #, fuzzy
 msgid ""
 "Enter any feedback you wish to provide \n"
@@ -716,7 +742,11 @@ msgid ""
 "associate with the file."
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:498
+#: exe/engine/attachmentidevice.py:76
+msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
+msgstr ""
+
+#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:499
 #: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
@@ -731,7 +761,7 @@ msgid "Example Example"
 msgstr ""
 
 #: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
-#: exe/xului/mainpage.py:443 exe/xului/mainpage.py:461
+#: exe/xului/mainpage.py:444 exe/xului/mainpage.py:462
 #: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
@@ -752,7 +782,7 @@ msgstr "Falskt"
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
 #: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
-#: exe/webui/common.py:190 exe/webui/truefalseelement.py:90
+#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
 msgstr "Återkoppling"
@@ -768,8 +798,14 @@ msgstr ""
 msgid "Feedback:"
 msgstr "Återkoppling"
 
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/attachmentblock.py:78
+#, fuzzy
+msgid "Filename"
+msgstr "Byt namn"
+
 #: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
-#: exe/xului/mainpage.py:373 exe/xului/mainpage.py:410
+#: exe/xului/mainpage.py:374 exe/xului/mainpage.py:411
 #: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
@@ -826,7 +862,7 @@ msgstr "Fritext"
 msgid "French Wikipedia Article"
 msgstr "Wikipedia-artikel"
 
-#: exe/webui/wikipediablock.py:178
+#: exe/webui/wikipediablock.py:180
 msgid "GNU Free Documentation License"
 msgstr ""
 
@@ -835,19 +871,19 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Wikipedia-artikel"
 
-#: exe/webui/element.py:606
+#: exe/webui/element.py:605
 msgid "Get score"
 msgstr "Visa resultat"
 
-#: exe/webui/galleryblock.py:215
+#: exe/webui/galleryblock.py:221
 msgid "Go Back"
 msgstr ""
 
-#: exe/webui/galleryblock.py:227
+#: exe/webui/galleryblock.py:233
 msgid "Go Forward"
 msgstr ""
 
-#: exe/webui/galleryblock.py:234
+#: exe/webui/galleryblock.py:240
 msgid "Go Forward (Not Available)"
 msgstr ""
 
@@ -874,12 +910,12 @@ msgstr "Ledtråd"
 msgid "Hint:"
 msgstr "Ledtråd:"
 
-#: exe/engine/package.py:95
+#: exe/engine/package.py:99
 msgid "Home"
 msgstr "Hem"
 
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:306
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
 #: exe/webui/block.py:276 exe/webui/genericblock.py:79
 #: exe/webui/genericblock.py:104
 #, fuzzy
@@ -899,7 +935,7 @@ msgstr "Ikoner"
 msgid "Image"
 msgstr "Bild"
 
-#: exe/engine/galleryidevice.py:488
+#: exe/engine/galleryidevice.py:489
 msgid "Image Gallery"
 msgstr "Bildgalleri"
 
@@ -935,7 +971,8 @@ msgstr ""
 msgid "Instant Marking?"
 msgstr ""
 
-#: exe/engine/clozeidevice.py:114 exe/webui/common.py:258
+#: exe/engine/truefalseidevice.py:80 exe/engine/truefalseidevice.py:167
+#: exe/engine/clozeidevice.py:114 exe/webui/common.py:260
 msgid "Instructions"
 msgstr "Instruktioner"
 
@@ -943,16 +980,12 @@ msgstr "Instruktioner"
 msgid "Instructions For Learners"
 msgstr "Instruktioner för elever"
 
-#: exe/webui/common.py:264 exe/webui/common.py:267
-msgid "Instructions for completion"
-msgstr "Instruktioner för fullbordande"
-
 #: exe/idevices/forumelement.py:227
 #, fuzzy
 msgid "Introduction"
 msgstr "Instruktioner"
 
-#: exe/webui/wikipediablock.py:179
+#: exe/webui/wikipediablock.py:181
 msgid "It uses material from the "
 msgstr ""
 
@@ -970,7 +1003,7 @@ msgstr "Wikipedia-artikel"
 msgid "Java Applet"
 msgstr ""
 
-#: exe/webui/attachmentblock.py:81
+#: exe/webui/attachmentblock.py:95
 msgid "Label"
 msgstr "Etikett"
 
@@ -996,7 +1029,7 @@ msgstr "Vänster"
 msgid "Link to the forum"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:106
+#: exe/webui/wikipediablock.py:107
 msgid "Load"
 msgstr "Ladda"
 
@@ -1016,12 +1049,12 @@ msgstr ""
 msgid "Move Down"
 msgstr "Flytta ner"
 
-#: exe/webui/galleryblock.py:213
+#: exe/webui/galleryblock.py:219
 #, fuzzy
 msgid "Move Image Left"
 msgstr "Inga bilder har laddats"
 
-#: exe/webui/galleryblock.py:225
+#: exe/webui/galleryblock.py:231
 msgid "Move Image Right"
 msgstr ""
 
@@ -1051,7 +1084,7 @@ msgstr "Ämne"
 msgid "New iDevice"
 msgstr "Ny iDevice"
 
-#: exe/engine/galleryidevice.py:194
+#: exe/engine/galleryidevice.py:195
 #, fuzzy
 msgid "Next"
 msgstr "Text"
@@ -1060,20 +1093,20 @@ msgstr "Text"
 msgid "No"
 msgstr "Nej"
 
-#: exe/webui/galleryblock.py:178 exe/webui/galleryblock.py:265
+#: exe/webui/galleryblock.py:184 exe/webui/galleryblock.py:271
 msgid "No Images Loaded"
 msgstr "Inga bilder har laddats"
 
-#: exe/engine/galleryidevice.py:100
+#: exe/engine/galleryidevice.py:101
 #, fuzzy
 msgid "No Thumbnail Available. Could not load original image."
 msgstr "Ingen förhandsgranskning tillgänglig. Kan inte förminska bilden"
 
-#: exe/engine/galleryidevice.py:142
+#: exe/engine/galleryidevice.py:143
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "Ingen förhandsgranskning tillgänglig. Kan inte förminska bilden"
 
-#: exe/engine/galleryidevice.py:110
+#: exe/engine/galleryidevice.py:111
 #, fuzzy
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Ingen förhandsgranskning tillgänglig. Kan inte förminska bilden"
@@ -1086,7 +1119,7 @@ msgstr "Ingen diskussion, men svar är tillåtna"
 msgid "No discussions, no replies"
 msgstr "Ingen diskussion, inga svar"
 
-#: exe/webui/wikipediablock.py:110 exe/webui/editorpane.py:307
+#: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:307
 #, fuzzy
 msgid "No emphasis"
 msgstr "Inget huvudfokus"
@@ -1146,12 +1179,12 @@ msgstr "Val"
 msgid "Other"
 msgstr ""
 
-#: exe/xului/outlinepane.py:236
+#: exe/xului/outlinepane.py:244
 msgid "Outline"
 msgstr "Översikt"
 
-#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:246
-#: exe/xului/mainpage.py:348 exe/xului/mainpage.old.py:239
+#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:247
+#: exe/xului/mainpage.py:349 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paketet har sparats till: %s"
@@ -1230,14 +1263,10 @@ msgstr ""
 msgid "Preview"
 msgstr "Förhandsgranska"
 
-#: exe/engine/galleryidevice.py:189
+#: exe/engine/galleryidevice.py:190
 #, fuzzy
 msgid "Previous"
 msgstr "Förhandsgranska"
-
-#: exe/engine/attachmentidevice.py:74
-msgid "Provide a brief description of the file"
-msgstr "Kortfattad beskrivning av filen"
 
 #: exe/engine/imagemagnifieridevice.py:59
 #, fuzzy
@@ -1273,6 +1302,12 @@ msgid ""
 "you have just inserted."
 msgstr ""
 
+#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
+msgid ""
+"Provide instruction on how the True/False Question should be \n"
+"completed."
+msgstr ""
+
 #: exe/engine/clozeidevice.py:115
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
@@ -1293,7 +1328,7 @@ msgstr "Syfte"
 msgid "Put instructions for learners here"
 msgstr "Fyll i elevinstruktioner"
 
-#: exe/webui/casestudyblock.py:85
+#: exe/webui/casestudyblock.py:86
 #, fuzzy
 msgid "Question(s)"
 msgstr "Fråga"
@@ -1307,7 +1342,7 @@ msgstr "Fråga:"
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Läs nedanstående stycke och fyll i de ord som saknas"
 
-#: exe/engine/clozeidevice.py:118
+#: exe/engine/truefalseidevice.py:170 exe/engine/clozeidevice.py:118
 #, fuzzy
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Läs nedanstående stycke och fyll i de ord som saknas"
@@ -1345,7 +1380,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Reflektiv fråga"
 
-#: exe/webui/element.py:626
+#: exe/webui/element.py:625
 msgid "Restart"
 msgstr ""
 
@@ -1371,7 +1406,7 @@ msgstr "Spara"
 msgid "Save as"
 msgstr "Spara som"
 
-#: exe/engine/package.py:88
+#: exe/engine/package.py:90
 msgid "Section"
 msgstr "Sektion"
 
@@ -1391,7 +1426,7 @@ msgstr "Välj språk"
 msgid "Select a Forum"
 msgstr "Välj bild"
 
-#: exe/webui/attachmentblock.py:78
+#: exe/webui/attachmentblock.py:92
 msgid "Select a file"
 msgstr "Välj fil"
 
@@ -1443,7 +1478,7 @@ msgid ""
 "as a percentage of the original image size"
 msgstr ""
 
-#: exe/xului/propertiespage.py:191
+#: exe/xului/propertiespage.py:203
 msgid "Settings saved"
 msgstr ""
 
@@ -1451,25 +1486,25 @@ msgstr ""
 msgid "Show"
 msgstr "Visa"
 
-#: exe/webui/galleryblock.py:273
+#: exe/webui/galleryblock.py:279
 #, python-format
 msgid "Show %s Image"
 msgstr ""
 
-#: exe/webui/element.py:633
+#: exe/webui/element.py:632
 #, fuzzy
 msgid "Show Answers"
 msgstr "Visa/göm svar"
 
-#: exe/webui/element.py:617
+#: exe/webui/element.py:616
 msgid "Show/Clear Answers"
 msgstr "Visa/göm svar"
 
-#: exe/webui/element.py:612
+#: exe/webui/element.py:611
 msgid "Show/Hide Feedback"
 msgstr "Visa/Göm återkoppling"
 
-#: exe/webui/wikipediablock.py:98
+#: exe/webui/wikipediablock.py:99
 #, fuzzy
 msgid "Site"
 msgstr "titel"
@@ -1478,24 +1513,25 @@ msgstr "titel"
 msgid "Size of magnifying glass: "
 msgstr ""
 
+#: exe/webui/wikipediablock.py:92
+#, fuzzy
+msgid "Slovenian Wikipedia Article"
+msgstr "Wikipedia-artikel"
+
 #: exe/webui/imagemagnifierblock.py:133
 msgid "Small"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:92
-msgid "Solvenian"
-msgstr ""
-
-#: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:308
+#: exe/webui/wikipediablock.py:112 exe/webui/editorpane.py:308
 msgid "Some emphasis"
 msgstr "Delfokus"
 
-#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:497
+#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:498
 #: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
 msgstr "Tyvärr, fel filformat"
 
-#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:495
+#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:496
 #: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
 #, python-format
 msgid ""
@@ -1505,7 +1541,7 @@ msgstr ""
 "Tyvärr, fel filformat:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:93
+#: exe/webui/wikipediablock.py:94
 #, fuzzy
 msgid "Spanish Wikipedia Article"
 msgstr "Wikipedia-artikel"
@@ -1522,12 +1558,12 @@ msgstr "Story:"
 msgid "Strict Marking?"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:112 exe/webui/editorpane.py:309
+#: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
 msgstr "Huvudfokus"
 
-#: exe/webui/common.py:206 exe/webui/editorpane.py:397
-#: exe/webui/element.py:621
+#: exe/webui/common.py:208 exe/webui/editorpane.py:397
+#: exe/webui/element.py:620
 #, fuzzy
 msgid "Submit"
 msgstr "Skicka svar"
@@ -1536,7 +1572,7 @@ msgstr "Skicka svar"
 msgid "Submit Answer"
 msgstr "Skicka svar"
 
-#: exe/webui/wikipediablock.py:94
+#: exe/webui/wikipediablock.py:95
 #, fuzzy
 msgid "Swedish Wikipedia Article"
 msgstr "Wikipedia-artikel"
@@ -1593,7 +1629,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "Syftedialogen låter dig beskriva ditt tänkta syfte med dina iDevicer för andra potentiella användare"
 
-#: exe/webui/wikipediablock.py:175
+#: exe/webui/wikipediablock.py:177
 msgid "This article is licensed under the "
 msgstr ""
 
@@ -1644,6 +1680,11 @@ msgstr ""
 msgid "Tip:"
 msgstr "Tips:"
 
+#: exe/webui/galleryblock.py:170
+#, fuzzy
+msgid "Title"
+msgstr "titel"
+
 #: exe/engine/quiztestidevice.py:67
 #, fuzzy
 msgid ""
@@ -1653,7 +1694,7 @@ msgstr ""
 "För att ange rätt svar, klicka på \n"
 " radioknappen intill det rätta svaret"
 
-#: exe/engine/package.py:88
+#: exe/engine/package.py:90
 msgid "Topic"
 msgstr "Ämne"
 
@@ -1661,11 +1702,11 @@ msgstr "Ämne"
 msgid "True"
 msgstr "Sant"
 
-#: exe/engine/truefalseidevice.py:58
+#: exe/engine/truefalseidevice.py:59
 msgid "True-False Question"
 msgstr "Sant -eller falsktfråga"
 
-#: exe/engine/truefalseidevice.py:60
+#: exe/engine/truefalseidevice.py:61
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -1698,7 +1739,7 @@ msgstr ""
 "\"Rätt svar\" som indikation på val av rätt svar, respektive \n"
 "\"Fel svar\" för alla andra alternativ."
 
-#: exe/engine/truefalseidevice.py:140
+#: exe/engine/truefalseidevice.py:148
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -1719,7 +1760,7 @@ msgstr "Beskriv målet för denna resurs,"
 msgid "Type the question stem."
 msgstr "Fyll i frågestam"
 
-#: exe/engine/truefalseidevice.py:68
+#: exe/engine/truefalseidevice.py:69
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -1734,13 +1775,13 @@ msgstr ""
 msgid "Unable to connect to "
 msgstr "Kan inte ansluta till"
 
-#: exe/engine/package.py:88
+#: exe/engine/package.py:90
 msgid "Unit"
 msgstr "Enhet"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:489 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:59 exe/engine/quiztestidevice.py:106
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
 #: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
 #: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
 #: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
@@ -1783,7 +1824,7 @@ msgstr ""
 " materialet genom att presentera en frågeställning eller ett påstående som kan\n"
 " utgöra grunden för en debatt."
 
-#: exe/engine/galleryidevice.py:493
+#: exe/engine/galleryidevice.py:494
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Använd denna iDevice om Du har många bilder att visa"
 
@@ -1821,11 +1862,11 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:95
+#: exe/webui/wikipediablock.py:96
 msgid "Wikibooks Article"
 msgstr "Wikibokartiklar"
 
-#: exe/webui/wikipediablock.py:96
+#: exe/webui/wikipediablock.py:97
 msgid "Wikieducator Content"
 msgstr ""
 
@@ -1849,7 +1890,7 @@ msgstr "Ja, inledningsvis"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Din nya iDevice kommer att visas i iDevice-panelen med denna titel. "
 
-#: exe/webui/wikipediablock.py:182
+#: exe/webui/wikipediablock.py:184
 #, fuzzy
 msgid "article "
 msgstr "Artikel"
@@ -1875,7 +1916,7 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML editor för e-lärande"
 
-#: exe/idevices/appletidevice.py:68
+#: exe/idevices/appletidevice.py:76
 #, fuzzy, python-format
 msgid "file %s has no parentNode"
 msgstr "Bilaga %s har ingen föräldranod"
@@ -1884,13 +1925,13 @@ msgstr "Bilaga %s har ingen föräldranod"
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:95 exe/idevices/appletidevice.py:70
+#: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:78
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s har inget paket"
 
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:257 exe/xului/templates/mainpage.xul:<menuitem
+#: exe/engine/package.py:281 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
@@ -1936,7 +1977,7 @@ msgstr ""
 msgid "Dublin Core"
 msgstr ""
 
-#: exe/xului/templates/projectproperties.xul:<caption id="pptitle"
+#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
 msgstr "Projektets egenskaper"
@@ -1968,7 +2009,7 @@ msgstr ""
 msgid "IEEE LOM"
 msgstr ""
 
-#: exe/xului/templates/projectproperties.xul:<label value="Project Title:"
+#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 #, fuzzy
 msgid "Project Title:"
@@ -1991,7 +2032,7 @@ msgstr "Rubrik:"
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Header Background:"
+#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
 #: id="ppBackgroundImg" style="width:8em">
 msgid "Header Background:"
 msgstr ""
@@ -2012,12 +2053,12 @@ msgstr "Ämne:"
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Author:"
-#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
-#: resource.">
+#: exe/xului/templates/packageproperties.xul:<button
+#: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
+#: Image">
 #, fuzzy
-msgid "Author:"
-msgstr "Författare"
+msgid "Load Image"
+msgstr "Lägg till bilder"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
@@ -2036,10 +2077,12 @@ msgstr ""
 msgid "R"
 msgstr "R"
 
-#: exe/xului/templates/projectproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
-msgid "Taxonomy"
-msgstr "Taxonomi"
+#: exe/xului/templates/packageproperties.xul:<button
+#: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
+#: Image">
+#, fuzzy
+msgid "Clear Image"
+msgstr "Välj bild"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -2053,12 +2096,11 @@ msgstr ""
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
-#, fuzzy
-msgid "Level 1:"
-msgstr "Nivå 1:"
+#: exe/xului/templates/packageproperties.xul:<checkbox
+#: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
+#: label="Tile background image?" checked="false">
+msgid "Tile background image?"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
@@ -2072,12 +2114,12 @@ msgstr ""
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
+#: exe/xului/templates/packageproperties.xul:<label value="Author:"
+#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
+#: resource.">
 #, fuzzy
-msgid "Level 2:"
-msgstr "Nivå 2:"
+msgid "Author:"
+msgstr "Författare"
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
@@ -2092,12 +2134,10 @@ msgstr ""
 msgid "U"
 msgstr "U"
 
-#: exe/xului/templates/projectproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
-#, fuzzy
-msgid "Level 3:"
-msgstr "Nivå 3:"
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
+#: label="Taxonomy">
+msgid "Taxonomy"
+msgstr "Taxonomi"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2115,12 +2155,12 @@ msgstr ""
 msgid "D"
 msgstr "D"
 
-#: exe/xului/templates/projectproperties.xul:<button flex="0"
-#: oncommand="submitForm(this.parentNode.parentNode);
-#: window.parent.location.reload(true);" id="ppBtnUpdateTree" label="Update
-#: Tree" tooltiptext="Submit changes and update the tree display">
-msgid "Update Tree"
-msgstr ""
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+#, fuzzy
+msgid "Level 1:"
+msgstr "Nivå 1:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2135,6 +2175,13 @@ msgstr "Tips:"
 #, fuzzy
 msgid "N"
 msgstr "N"
+
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: nodes">
+#, fuzzy
+msgid "Level 2:"
+msgstr "Nivå 2:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2151,6 +2198,13 @@ msgstr ""
 msgid "S"
 msgstr "S"
 
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: nodes">
+#, fuzzy
+msgid "Level 3:"
+msgstr "Nivå 3:"
+
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
 #, fuzzy
@@ -2163,6 +2217,13 @@ msgstr "Float:"
 #, fuzzy
 msgid "O"
 msgstr "O"
+
+#: exe/xului/templates/packageproperties.xul:<button flex="0"
+#: oncommand="submitForm(this.parentNode.parentNode);
+#: window.parent.location.reload(true);" id="ppBtnUpdateTree" label="Update
+#: Tree" tooltiptext="Submit changes and update the tree display">
+msgid "Update Tree"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
@@ -3248,6 +3309,12 @@ msgstr "Höger"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+
+#~ msgid "Instructions for completion"
+#~ msgstr "Instruktioner för fullbordande"
+
+#~ msgid "Provide a brief description of the file"
+#~ msgstr "Kortfattad beskrivning av filen"
 
 #~ msgid "Level 1: "
 #~ msgstr "Nivå 1:"
