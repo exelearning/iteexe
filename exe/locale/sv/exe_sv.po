@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.11)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-24 18:18+1200\n"
+"POT-Creation-Date: 2006-03-27 15:46+1200\n"
 "PO-Revision-Date: 2005-12-05 10:37+0100\n"
 "Last-Translator: Fredrik Paulsson <frepa@frepa.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,13 +23,18 @@ msgid ""
 "code field."
 msgstr ""
 
+#: exe/xului/mainpage.py:245
+#, python-format
+msgid "%s already exists, please try again with a different filename"
+msgstr ""
+
 #: exe/webui/block.py:224
 msgid "---Move To---"
 msgstr "---Flytta till---"
 
 #: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
-#: exe/xului/mainpage.py:230 exe/xului/mainpage.py:284
-#: exe/xului/mainpage.py:329 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.py:230 exe/xului/mainpage.py:288
+#: exe/xului/mainpage.py:333 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
 msgstr ". Använd ASCII namn."
@@ -336,10 +341,14 @@ msgstr "Kan en student posta till detta forum?:"
 msgid "Cancel"
 msgstr "Avbryt"
 
+#: exe/xului/mainpage.py:286
+#, fuzzy
+msgid "Canno  access directory named "
+msgstr "Har ej tillträde till"
+
 #: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
-#: exe/xului/mainpage.py:228 exe/xului/mainpage.py:282
-#: exe/xului/mainpage.py:327 exe/xului/mainpage.old.py:222
-#: exe/xului/mainpage.old.py:303
+#: exe/xului/mainpage.py:228 exe/xului/mainpage.py:331
+#: exe/xului/mainpage.old.py:222 exe/xului/mainpage.old.py:303
 #, fuzzy
 msgid "Cannot access directory named "
 msgstr "Har ej tillträde till"
@@ -746,7 +755,7 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:499
+#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:503
 #: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
@@ -761,7 +770,7 @@ msgid "Example Example"
 msgstr ""
 
 #: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
-#: exe/xului/mainpage.py:444 exe/xului/mainpage.py:462
+#: exe/xului/mainpage.py:448 exe/xului/mainpage.py:466
 #: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
@@ -805,7 +814,7 @@ msgid "Filename"
 msgstr "Byt namn"
 
 #: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
-#: exe/xului/mainpage.py:374 exe/xului/mainpage.py:411
+#: exe/xului/mainpage.py:378 exe/xului/mainpage.py:415
 #: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
@@ -1183,8 +1192,8 @@ msgstr ""
 msgid "Outline"
 msgstr "Översikt"
 
-#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:247
-#: exe/xului/mainpage.py:349 exe/xului/mainpage.old.py:239
+#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:251
+#: exe/xului/mainpage.py:353 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paketet har sparats till: %s"
@@ -1526,12 +1535,12 @@ msgstr ""
 msgid "Some emphasis"
 msgstr "Delfokus"
 
-#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:498
+#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:502
 #: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
 msgstr "Tyvärr, fel filformat"
 
-#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:496
+#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:500
 #: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
 #, python-format
 msgid ""
