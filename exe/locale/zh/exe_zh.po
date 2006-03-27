@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-24 18:18+1200\n"
-"PO-Revision-Date: 2006-03-24 11:15+1200\n"
+"PO-Revision-Date: 2006-03-27 16:05+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
-msgstr ""
+msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet code栏域."
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -213,7 +213,7 @@ msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
-msgstr ""
+msgstr "加载除.txt文档外所有的applet文档. 使用\"添加文档\"和\"上载\"按钮,一次加载一个文档. 已上载的文档将显示在Applet code栏域下面."
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
@@ -388,7 +388,7 @@ msgstr "点击"
 
 #: exe/webui/common.py:266 exe/webui/common.py:269
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "点击看完成说明."
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
@@ -396,7 +396,7 @@ msgstr "点击这里"
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "点击\"添加图片\"按钮来选择图片文档.所选图片将显示在下面,你可为其加上标签. 最好在标签上加上文档大小."
 
 #: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
 #: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
@@ -439,7 +439,7 @@ msgid ""
 "that describes a controversy or sets the scene by describing the characters \n"
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
-msgstr " "
+msgstr "拟写案例故事.一个好的案例描述有争议性的,或不同人物和环境的情景.并能采取某些行动来解决问题."
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
@@ -480,7 +480,7 @@ msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr " "
+msgstr "描述学生将怎样评估及完成练习."
 
 #: exe/engine/casestudyidevice.py:80
 msgid ""
@@ -611,11 +611,11 @@ msgstr " 输入关键词."
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr " "
+msgstr "输入问题."
 
 #: exe/engine/galleryidevice.py:503
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "输入标题为图象画廊."
 
 #: exe/engine/quiztestidevice.py:64 exe/engine/quiztestidevice.py:86
 msgid ""
@@ -643,7 +643,7 @@ msgstr "在此输入完成说明"
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
-msgstr " "
+msgstr "输入所要显示网页的网址并选择显示的大小尺寸."
 
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
@@ -3387,3 +3387,4 @@ msgstr " "
 
 #~ msgid "Project title:"
 #~ msgstr "课件标题:"
+

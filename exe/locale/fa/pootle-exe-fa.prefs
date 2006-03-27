@@ -3,3 +3,4 @@
 rights:
   default = u'view, suggest, archive, pocompile'
   nobody = u'view'
+  abbas = u'view, translate, review, archive, pocompile'

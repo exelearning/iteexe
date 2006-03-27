@@ -3,4 +3,5 @@
 
 rights:
   default = u'view, suggest, archive, pocompile'
+  bard = u'view, translate, review, archive, pocompile'
   nobody = u'view'
