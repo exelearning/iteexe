@@ -241,6 +241,10 @@ class MainPage(RenderableLivePage):
         # Add the extension if its not already there
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
+            if Path(filename).exists():
+                client.alert(_(u'SAVE FAILED.\n"%s" already exists.\nPlease try again with '
+                                'a different filename') % filename)
+                return
         self.package.save(filename) # This can change the package name
         # start exe
         # Tell the user and continue
