@@ -351,10 +351,14 @@ function fileSave(onProceed) {
 // filename of the package we are currently editing
 function fileSave2(filename, onDone) {
     if (filename) {
+        saveWorkInProgress();
         // If the package has been previously saved/loaded
         // Just save it over the old file
-        if (onDone) nevow_clientToServerEvent('savePackage', this, '', '', onDone)
-        else nevow_clientToServerEvent('savePackage', this, '')
+        if (onDone) {
+            nevow_clientToServerEvent('savePackage', this, '', '', onDone);
+        } else {
+            nevow_clientToServerEvent('savePackage', this, '');
+        }
     } else {
         // If the package is new (never saved/loaded) show a
         // fileSaveAs dialog
@@ -371,6 +375,7 @@ function fileSaveAs(onDone) {
     fp.appendFilter("eXe Package Files","*.elp");
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+        saveWorkInProgress();
         if (onDone) {
             nevow_clientToServerEvent('savePackage', this, '', fp.file.path, onDone)
         } else {
@@ -379,6 +384,17 @@ function fileSaveAs(onDone) {
     } else {
         eval(onDone)
     }
+}
+
+// Submit any open iDevices
+function saveWorkInProgress() {
+    // Do a submit so any editing is saved to the server
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm');
+    if (!theForm) {
+        // try and find the form for the authoring page
+        theForm = document.getElementById('contentForm');
+    }
+    theForm.submit();
 }
 
 // Launch the iDevice Editor Window
@@ -416,6 +432,11 @@ function aboutPage() {
 // Go to the exelearning.org/register.php site
 function registerOnline() {
     nevow_clientToServerEvent('register', this, '');
+}
+
+// Go to the exelearning.org/mantis site
+function reportIssue() {
+    nevow_clientToServerEvent('reportIssue', this, '');
 }
 
 

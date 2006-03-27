@@ -47,7 +47,6 @@ log = logging.getLogger(__name__)
 class MainPage(RenderableLivePage):
     """
     This is the main XUL page.  Responsible for handling URLs.
-    Rendering and processing is delegated to the Pane classes.
     """
     
     _templateFileName = 'mainpage.xul'
@@ -104,9 +103,11 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleLoadPackage,     'loadPackage')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleRegister,        'register')
+        setUpHandler(self.handleReportIssue,     'reportIssue')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
-        setUpHandler(self.outlinePane.handleSetTreeSelection,  'setTreeSelection')
+        setUpHandler(self.outlinePane.handleSetTreeSelection,  
+                                                 'setTreeSelection')
         self.idevicePane.client = client
 
 
@@ -307,6 +308,14 @@ class MainPage(RenderableLivePage):
             os.startfile("http://exelearning.org/register.php")
         else:
             os.system("firefox http://exelearning.org/register.php&")
+
+
+    def handleReportIssue(self, client):
+        """Go to the exelearning.org/mantis site"""
+        if hasattr(os, 'startfile'):
+            os.startfile("http://exelearning.org/mantis")
+        else:
+            os.system("firefox http://exelearning.org/mantis&")
 
 
     def handleInsertPackage(self, client, filename):

@@ -78,6 +78,7 @@
               <menupopup id="help-popup">
                 <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
                 <menuitem n:render="translate" label="Register Online" accesskey="R" oncommand="registerOnline()"/>
+                <menuitem n:render="translate" label="Report an Issue" accesskey="R" oncommand="reportIssue()"/>
               </menupopup>
             </menu>
          </menubar>
