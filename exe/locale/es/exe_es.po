@@ -23,7 +23,7 @@ msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
-msgstr "Encontrar el archivo .txt (en el archivo del subprograma (applet)) \n y abrirlo. Copiar los contenidos de éste archivo <ctrl A, ctrl C> en el campo de código del subprograma (applet) \n"
+msgstr "Encontrar el archivo .txt (en el archivo del subprograma (applet)) \n y abrirlo. Copiar los contenidos de éste archivo <ctrl A, ctrl C> en el campo de código del subprograma (applet)."
 
 #: exe/xului/mainpage.py:245
 #, python-format
