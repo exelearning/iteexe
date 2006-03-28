@@ -1,3 +1,4 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
@@ -9,7 +10,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
 "X-Generator: Pootle 0.6.3.20060116\n"
 "X-Poedit-Language: L33t\n"
 "X-Poedit-Country: Geekdom\n"
