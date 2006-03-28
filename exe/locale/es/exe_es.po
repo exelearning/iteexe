@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
-"PO-Revision-Date: 2006-03-24 17:45+1200\n"
-"Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
+"PO-Revision-Date: 2006-03-28 12:09+1200\n"
+"Last-Translator: Carlos Zarate <carlos@freioss.net>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,12 @@ msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
-msgstr ""
+msgstr "Encontrar el archivo .txt (en el archivo del subprograma (applet)) \n y abrirlo. Copiar los contenidos de éste archivo <ctrl A, ctrl C> en el campo de código del subprograma (applet) \n"
 
 #: exe/xului/mainpage.py:245
 #, python-format
 msgid "%s already exists, please try again with a different filename"
-msgstr ""
+msgstr "%s ya existe, por favor tratar nuevamente con un nombre diferente de archivo"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -39,7 +39,7 @@ msgstr "---Mover A---"
 #: exe/xului/mainpage.py:333 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
-msgstr ". Por favor usa nombres en ASCII."
+msgstr ". Por favor usar nombres en ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
@@ -237,34 +237,34 @@ msgstr "Actividad"
 
 #: exe/webui/editorpane.py:213
 msgid "Add"
-msgstr "Adicionar"
+msgstr "Agregar"
 
 #: exe/webui/element.py:257
 msgid "Add Image"
-msgstr "Agregue Imagen"
+msgstr "Agregar Imagen"
 
 #: exe/webui/element.py:368
 msgid "Add JPEG Image"
-msgstr "Agregue Imagen de JPEG"
+msgstr "Agregar imagen JPEG"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
-msgstr "Adiciona una simple linea de texto a un IDevice. Eso es útil si tú desea que sea conveniente poner una etiqueta dentro del IDevice."
+msgstr "Agregar una simple linea de texto a un IDevice. Eso es útil si Usted desea disponer de la posibilidad de colocar una etiqueta dentro del IDevice."
 
 #: exe/webui/editorpane.py:78
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
-msgstr "Adiciona un recuadro texto a un IDevice. Usado para ingresar el contenido de una descripción textual."
+msgstr "Agregar un recuadro de texto a un IDevice. Esto es usado para ingresar el contenido de una descripción textual."
 
 #: exe/idevices/appletidevice.py:56
 msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
-msgstr ""
+msgstr "Agregar todos los archivos provisionados por el subprograma/applet \n excepto el archivo .txt de una sola vez usando los botones de agregar y cargar (upload). Una vez cargados los archivos \n serán mostrados bajo el campo de código del subprograma/applet."
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
-msgstr "Adiciona una imagen a tu IDevice. Habilita la selección de una imagen desde  tu almacén de archivos de fotos. "
+msgstr "Agregar una imagen a su IDevice. Esto habilita la selección de una imagen desde  su directorio de archivos de fotos. "
 
 #: exe/webui/testquestionelement.py:106
 msgid "Add another Option"
@@ -276,49 +276,48 @@ msgstr "Agregar otra pregunta"
 
 #: exe/webui/multichoiceblock.py:118
 msgid "Add another option"
-msgstr "Adicionar otra opción"
+msgstr "Agregar otra opción"
 
 #: exe/webui/truefalseblock.py:87 exe/webui/casestudyblock.py:94
 msgid "Add another question"
-msgstr "Adicionar otra pregunta"
+msgstr "Agregar otra pregunta"
 
 #: exe/idevices/appletblock.py:80
 msgid "Add files"
-msgstr "Agregue Archivos"
+msgstr "Agregar Archivos"
 
 #: exe/webui/galleryblock.py:177
 msgid "Add images"
-msgstr "Agregue Imagenes"
+msgstr "Agregar Imágenes"
 
 #: exe/webui/editorpane.py:84
 msgid "Add interactive feedback to your iDevice."
-msgstr "Pon regeneración interactivo en tu iDevice."
+msgstr "Agregar retroalimentación interactiva en su iDevice."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:79
 msgid "Align:"
-msgstr "Alinar:"
+msgstr "Alinear:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:89
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr ""
-"Alineamiento le permite \n"
-"escoger donde en la pantalla el imagen estará posicionado. "
+msgstr "Alineamiento le permite \n"
+"escoger donde la imagen estará posicionada en la pantalla. "
 
 #: exe/engine/field.py:477
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
-msgstr ""
-"Accepta contestas que so\n"
-"                                     mas o menos correcto como si fueran perfecto."
+msgstr "Acepta auto completar cuando \n"
+"el usuario está llenando los espacios."
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
-msgstr "Accepta contestas que son mas o menos correcto como si fueran perfecto."
+msgstr "Acepta auto completar cuando \n"
+"el usuario está llenando los espacios."
 
 #: exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -3365,3 +3364,4 @@ msgstr "Típicamente, un elemento de las derechas contendrá una declaración de
 #
 #~ msgid "SCORM Multiple Choice Quiz:"
 #~ msgstr "Exámen SCORM multiples elecciones"
+

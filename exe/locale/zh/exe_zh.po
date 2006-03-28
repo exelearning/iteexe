@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
-"PO-Revision-Date: 2006-03-27 16:05+1200\n"
+"PO-Revision-Date: 2006-03-28 12:13+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet co
 #: exe/xului/mainpage.py:245
 #, python-format
 msgid "%s already exists, please try again with a different filename"
-msgstr ""
+msgstr "%s 已存在, 请使用别的文件名."
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -489,7 +489,7 @@ msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr "描述学生将怎样评估及完成练习."
+msgstr "描述学生应怎样评估和完成练习."
 
 #: exe/engine/casestudyidevice.py:80
 msgid ""
@@ -497,7 +497,7 @@ msgid ""
 "to the case story provided. These could be in the form of questions or \n"
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
-msgstr " "
+msgstr "描述学生应完成的阅读任务."
 
 #: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:426
 msgid ""
@@ -631,7 +631,7 @@ msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
-msgstr " "
+msgstr "输入回答选项. 提供几个错误选项(通常3-4)和一个正确选项. 点击&lt;添加选项&gt;来加增选项."
 
 #: exe/engine/truefalseidevice.py:73
 msgid ""
@@ -673,7 +673,7 @@ msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
-msgstr " "
+msgstr "输入显示flash的尺寸并选择向哪边对齐. flash的长和宽会按比例自动调节."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:149
 msgid "Enter the instructions for completion here"
@@ -711,7 +711,7 @@ msgstr "输入有关文档的描述."
 
 #: exe/engine/attachmentidevice.py:76
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr ""
+msgstr "输入有关文档的描述."
 
 #: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:503
 #: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
@@ -1947,7 +1947,7 @@ msgstr "VK_INSERT"
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
 #: id="ppBackgroundImg" style="width:8em">
 msgid "Header Background:"
-msgstr ""
+msgstr "标题背景:"
 
 # exe/xului/templates/properties.xul:<tab
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
@@ -3396,3 +3396,4 @@ msgstr " "
 
 #~ msgid "Project title:"
 #~ msgstr "课件标题:"
+

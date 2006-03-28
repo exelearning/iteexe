@@ -1,0 +1,6 @@
+#: exe/xului/mainpage.py:245
+#, python-format
+msgid "_:suggested by carlos"
+"%s already exists, please try again with a different filename\n"
+msgstr "%s ya existe, por favor trate nuevamente con un nombre diferente de archivo"
+
