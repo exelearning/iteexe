@@ -11,6 +11,15 @@ body {
    margin: 0px;
 }
 
+#header {
+    color: #4D4D4D;
+    background-color: #E0DFD8;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
 #navcontainer {
    background-image:url(top_nav.jpg);
    background-position:top left;
