@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SLOVENIAN LANGUAGE PACKAGE VERSION 0.12\n"
+"Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
 "PO-Revision-Date: 2006-02-28 13:46+0100\n"
