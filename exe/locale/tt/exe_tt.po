@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
-"PO-Revision-Date: 2006-03-28 14:14+1200\n"
+"PO-Revision-Date: 2006-03-28 15:19+1200\n"
 "Last-Translator: David Moore <d.moore@auckland.ac.nz>\n"
 "Language-Team: l33t <l33t@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,6 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "X-Generator: Pootle 0.6.3.20060116\n"
+"X-Poedit-Language: L33t\n"
+"X-Poedit-Country: Geekdom\n"
 
 #: exe/idevices/appletidevice.py:59
 msgid ""
@@ -24,7 +26,7 @@ msgstr "\"ph1ND 73h .7X7 Ph1L3 (1n 73H APpl37 pH1l3) \\N"
 #: exe/xului/mainpage.py:245
 #, python-format
 msgid "%s already exists, please try again with a different filename"
-msgstr "%2 4lre4dy EXI572, pLEe2 7RY 494IN wI7 4 differen7 PhiLEn4Me"
+msgstr "%s 4lre4dy EXI572, pLEe2 7RY 494IN wI7 4 differen7 PhiLEn4Me"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -39,7 +41,7 @@ msgstr ". pl332 u23 45cii N4M32."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
+msgstr "<dl> <dt>1f j00R 90al 12 70 7e57 UndEr57aNd1n9 0f k0re k0NCeP72 0R rEAd1n9 K0MPreHEN510n </dt> <dd> <P> wR17E a 5UMmAry 0F 7eh k0NCEp7 0R ReAd1n9 L0n9 en0U9H 70 aDeKWA7Ely 7E57 7eh 7aR9E7'2 KN0WLed9e, 8u7 5h0R7 En0U9H n07 70 1NDuce pha719uE. le52 7hAN 0nE 7YPEd pA9e 12 pR08a8LY ADEKwa7e, 8u7 Pr08a8LY K0N51dera8LY Le52 ph0R J00N9 57uDEN72 0r 8e91nner2. </p> <P>5EleC7 w0rD2 1N 7EH 7EX7 7hA7aRE kEy 70 uNDer57aND1n9 7eH k0ncep72. 7HE5eW1lL Pr08A8lY 8E VER82, N0un2, anD keY adver82.CH002e Al7ernA71VE2 w17h 0nE CLeAr an5WEr. </p> </dd> <dt>1F J00r 90AL 12 70 7E57 V0ca8ulARy Kn0wLed9e </dt> <dd><p>wR17E a 7ex7 U51n9 7eh 7Ar9e7 v0ca8ulARy. 7H12 7EX7 5H0uLD 8E k0HerEn7 aNd K0HE51ve, and 8E 0f A aPpr0PR1A7e LEn97H. h19Hl19h7 7EH 7aR9e7 w0rD2 1N 7EH 7Ex7. cH002E aL7ErNa71vE2 W17H 0Ne cLeAr AN5WeR.</p> </dd> <dt>1F j00R 90AL 12 70 7E57 W0rd ph0RMA710n/9raMmar: </dt> <dd> <P>wR17e a 7eX7 U51n9 7eH 7AR9E7 Ph0rM2. 7h12 7eX7 5H0uLD 8E k0HERen7 AnD K0hE51Ve, AND 8E 0f A ApPR0Pr1A7e LEn97H. rEmEm8eR 7H@ 7Eh 90AL 12 N07 v0Ca8UlArY KN0WLeD9E, 50 7Eh k0re MeAN1N92 0F 7eH 57eM W0rD2 5h0uLD 8e WeLL kn0Wn 70 7EH 57udEN72. </p> <P>H19hL19H7 7eH 7ar9E7 w0Rd2 1n 7Eh 7EX7. pr0V1De Al7eRNa71ve2 w17h 7eH 5aME w0Rd 57EM, 8u7 d1ffERen7 AFF1Xe2. 17 12 A 900D 1deA 70 9e7 a K0llEa9UE 70 7e57 7eh 7E57/eXERc12E 70 maKe 5uRE 7hEre ARe N0 5urpr15e2! </p> </dd></dl>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -60,14 +62,31 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"7eH 1Ma9e w17h 7EX7 1dev1cE cAn be U5Ed 1N a NUmber 0f wAY2 70 5UPp0R7 B07H\n"
+"7eh eM0710NAL (afFEc71Ve) anD LEArn1n9 7a5k (c09n171vE) D1men510n2 0f EXe\n"
+"c0N7En7. \n"
+"</p><p>\n"
+"<b>1n7E9RA71n9 v15uAL2 W17H vERbAL 5uMmar1e5</b>\n"
+"</p><p>\n"
+"c09N171VE P5Ych0l091572 1ND1ca7E 7h@ pRE5eN71N9 leArnEr2 W17h A\n"
+"repre5en7a71ve 1MA9E And C0rre5p0nd1N9 veRbAl 5ummAry (7h@ 12 pRE5eN7eD\n"
+"51mUl7ane0U5ly) Can rEDUCe C09N171VE L0ad aND EnHANCE leaRN1n9 re7EN710N.\n"
+"7h12 1DEv1cE can BE U5ed 70 pre5en7 A 1MA9E (PH0709raPh, d1a9Ram 0R\n"
+"9rApH1c) W17h A bR1ef VerbaL 5UMMarY C0vEr1n9 7eH mA1n p01n72 reLA71N9 70\n"
+"7Eh 1mA9E. f0R EXAMPLE, 1f y0u WeRE 7each1N9 7eH fUnc710n2 0f A f0ur-57R0ke\n"
+"C0MBu5710n En91nE, Y0U C0UlD HaVE a V15UAl F0R EAcH 0F 7eH f0uR P051710n2 0f\n"
+"7EH p1570N W17h a bR1Ef 7Ex7uAL 5UmMArY 0F 7eh kEY a5pEc72 0f EaCh V15UaL.\n"
+"</p>"
+""
 
 #: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
+msgstr "<p>422I9N 4 l483L pHor T3H 4Tt4CHM3nT. It I2 US3FUL To iNClUd3 T3H tYp3 oF PhiL3. 39. Pdf, PpT, 3tC.</p><p>InclUdin' t3H SI23 i2 4lso R3ComM3Nd3d So TH@ 4ft3r Ur P4Ck493 i2 3XPorT3d To 4 W38 SIt3, p3OpL3 WIlL H4V3 4 id34 hOW LON9 it WOUld t4k3 To dOwnLO4d THi2 4tT4ChM3nT.</p><p>FoR 3X4mpl3: <code>s4l32 PhOr3c4ST.DOc (500K8)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr ""
+msgstr "<p>CL0z3 3X3rC153z R 73X7Z 0R 53N73NC3Z wH3r3 57uD3N7Z MU57 f1LL 1N M1551n' w0rdZ. 7h3y r 0F73N U53D f0r 7H3 f0ll0w1N' PuRP053Z:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -1280,11 +1299,11 @@ msgstr ""
 
 #: exe/webui/editorpage.py:179 exe/webui/editorpage.py:182
 msgid "Save"
-msgstr ""
+msgstr "5AV3"
 
 #: exe/webui/editorpage.py:183
 msgid "Save as"
-msgstr ""
+msgstr "5AV3 az"
 
 #: exe/engine/package.py:90
 msgid "Section"
@@ -1964,7 +1983,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S" modifiers="control" id="file-save-key" oncommand="fileSave()">
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3 nodes">
 msgid "Level 3:"
@@ -2012,7 +2031,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"5av3\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site" id="dcmiWebSite" label="Web Site">
 msgid "Web Site"
@@ -2020,7 +2039,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"5av3 4z...\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference to the resource within a given context.">
 msgid "Identifier:"
@@ -2028,7 +2047,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"XP0r7\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to a resource from which the present resource is derived.">
 msgid "Source:"
@@ -2044,7 +2063,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"1Mz K0n73N7 p4ck493\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar. ">
 msgid "Afar. "
@@ -2052,7 +2071,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-export-website-key" oncommand="exportPackage('webSite')" accesskey="w" label="Web Site">
 msgid "label=\"Web Site\" accesskey=\"w\""
-msgstr ""
+msgstr "label=\"W3B 5173\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab" label="Abkhazian. ">
 msgid "Abkhazian. "
