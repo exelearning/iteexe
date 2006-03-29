@@ -3,6 +3,16 @@
 	Centre for Flexible and Distance Learning
 */
 
+#header {
+    color: #A1B386;
+    background-color: transparent;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+
 #navcontainer {
 	width: 169px;
 	float: left;
