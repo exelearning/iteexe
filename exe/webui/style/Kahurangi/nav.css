@@ -4,6 +4,14 @@ Created by Brent Simpson, brent.simpson@auckland.ac.nz
 Centre for Flexible and Distance Learning
 ============================================= */
 
+#header {
+    color: #006699;
+    background-color: transparent;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
 
 #navcontainer {
    z-index:1000;
