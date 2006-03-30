@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+@import url(/css/exe.css);
+@import url(/style/base.css);
+@import url(/style/standardwhite/content.css);</style>
+<script type="text/javascript" src="/scripts/libot_drag.js"></script>
+<script type="text/javascript" src="/scripts/common.js"></script>
+<title>eXe : elearning XHTML editor</title>
+<meta http-equiv="content-type" content="text/html;  charset=UTF-8"></meta>
+</head>
+<body>
+<div id="main"> 
+<form method="post" action="" id="contentForm" ><input type="hidden" name="action" id="action" value=""/>
+<input type="hidden" name="object" id="object" value=""/>
+<input type="hidden" name="isChanged" id="isChanged" value="1"/>
+<font color="red"<b></b></font><div id="editorButtons"> 
+<fieldset><legend><b>Edit</b></legend><select onchange="submitIdevice();" name="ideviceSelect">
+<option value = "newIdevice" selected >New iDevice</option><option value="18" >Reading Activity</option>
+<option value="19" >Objectives</option>
+<option value="20" >Preknowledge</option>
+<option value="21" >Activity</option>
+</select> 
+</fieldset>
+<font color="red"<b></b></font><fieldset><legend><b>Add</b></legend><input class="button" type="submit" name="addText" value="Text Line" />
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid59', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid59" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>Add a single text line to an iDevice. Useful if you want the ability to place a label within the device.</div>
+<br/><input class="button" type="submit" name="addTextArea" value="Text Box" />
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid60', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid60" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>Add a text entry box to an iDevice. Used for entering description textual content.</div>
+<br/><input class="button" type="submit" name="addImage" value="Image" />
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid61', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid61" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>Add an image to your iDevice. Enables the selection of an image from your stored picture files.</div>
+<br/><input class="button" type="submit" name="addFeedback" value="Feedback" />
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid62', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid62" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>Add interactive feedback to your iDevice.</div>
+<br/></fieldset>
+<fieldset><legend><b>Actions</b></legend><input class="button" type="submit" name="preview" value="Preview" />
+<br/><input class="button" type="submit" name="cancel" value="Cancel" />
+<br/><input class="button" type="submit" name="delete" value="Delete"  disabled/>
+<br/><input class="button" type="submit" name="save" value="Save"  disabled/>
+<br/><input class="button" type="submit" name="add" value="Save as" />
+</fieldset></div>
+<div id="editorWorkspace">
+<script type="text/javascript">
+<!--
+
+            function submitLink(action, object, changed) 
+            {
+                var form = document.getElementById("contentForm")
+            
+                form.action.value = action;
+                form.object.value = object;
+                form.isChanged.value = changed;
+                form.submit();
+            }
+
+            function submitIdevice() 
+            {
+                var form = document.getElementById("contentForm")
+                if (form.ideviceSelect.value == "newIdevice")
+                    form.action.value = "newIdevice"
+                else
+                    form.action.value = "changeIdevice"
+                form.object.value = form.ideviceSelect.value;
+                form.isChanged.value = 1;
+                form.submit();
+            }
+
+            function submitStyle()
+            {
+                var form = document.getElementById("contentForm")
+                form.action.value = "changeStyle";
+                form.object.value = form.styleSelect.value;
+                form.isChanged.value = 0;
+                form.submit();
+            }
+//-->
+</script>
+<b>Name: </b>
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid63', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid63" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one.</div>
+<br/><input type="text" name="title" id="title" value="" size="40"  />
+<br/>
+<b>Author: </b>
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid64', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid64" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>This is an optional field.</div>
+<br/><input type="text" name="author" id="author" value="" size="40"  />
+<br/>
+<div class="block"><strong>Purpose</strong><a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid65', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid65" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>The purpose dialogue allows you to describe your intended purpose of the device to other potential users.</div>
+</div><div class="block"><textarea name="purpose" style="width:100%; height:100px;" class="mceEditor" cols="52" rows="8"></textarea><br/></div><div class="block"><strong>Pedagogical Tip</strong><a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid66', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid66" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development.</div>
+</div><div class="block"><textarea name="tip" style="width:100%; height:100px;" class="mceEditor" cols="52" rows="8"></textarea><br/></div><b>Emphasis:</b> <select onchange="submit();" name="emphasis">
+<option value="0" >No emphasis</option>
+<option value="1" selected >Some emphasis</option>
+<option value="2" >Strong emphasis</option>
+</select> 
+<a onmousedown="Javascript:updateCoords(event);"  title="Click for completion instructions" onclick="Javascript:showMe('iid67', 350, 100);" href="Javascript:void(0)" style="cursor:help;"> <img alt="Click for completion instructions" src="/images/help.gif" style="vertical-align:middle;"/></a>
+<div id="iid67" style="display:none;"><div style="float:right;" ><img alt="Close" src="/images/stock-stop.png" title="Close"  onmousedown="Javascript:hideMe();"/></div><div class="popupDivLabel">Instructions</div>Use Emphasis to distinguish the importance  of the information being presented in the iDevice.</div>
+<br/><br/>
+<select onchange="submitStyle();" name="styleSelect">
+<option value="default" >default</option>
+<option value="garden" >garden</option>
+<option value="Kahurangi" >Kahurangi</option>
+<option value="seamist" >seamist</option>
+<option value="silver" selected >silver</option>
+<option value="standardwhite" >standardwhite</option>
+</select> 
+ <a href="#" onmousedown="Javascript:updateCoords(event);"
+onclick="Javascript:showMe('iconpanel', 350, 100);">Select an icon:</a> 
+<img align="middle" src="/style/silver/icon_None.gif"/><br/><div id="iconpanel" style="display:none; z-index:99;"><div style="float:right;" >
+<img alt="Close" src="/images/stock-stop.png" title="Close"
+onmousedown="Javascript:hideMe();"/></div><br/> 
+<div align="center"><b>Icons:</b></div><br/><div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_activity.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','activity',1)">
+<br/>activity.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_assignment.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','assignment',1)">
+<br/>assignment.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_calc.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','calc',1)">
+<br/>calc.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_casestudy.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','casestudy',1)">
+<br/>casestudy.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_define.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','define',1)">
+<br/>define.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_diagnosis.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','diagnosis',1)">
+<br/>diagnosis.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_discussion.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','discussion',1)">
+<br/>discussion.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_experiment.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','experiment',1)">
+<br/>experiment.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_e_gloss.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','e_gloss',1)">
+<br/>e_gloss.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_e_journal.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','e_journal',1)">
+<br/>e_journal.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_gallery.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','gallery',1)">
+<br/>gallery.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_generic.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','generic',1)">
+<br/>generic.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_inter.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','inter',1)">
+<br/>inter.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_key_points.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','key_points',1)">
+<br/>key_points.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_multimedia.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','multimedia',1)">
+<br/>multimedia.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_objectives.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','objectives',1)">
+<br/>objectives.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_preknowledge.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','preknowledge',1)">
+<br/>preknowledge.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_present.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','present',1)">
+<br/>present.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_question.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','question',1)">
+<br/>question.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_reading.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','reading',1)">
+<br/>reading.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_reflection.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','reflection',1)">
+<br/>reflection.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_review.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','review',1)">
+<br/>review.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_summary.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','summary',1)">
+<br/>summary.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_synthesis.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','synthesis',1)">
+<br/>synthesis.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_technology.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','technology',1)">
+<br/>technology.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_time.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','time',1)">
+<br/>time.gif</div>
+<div style="float:left; text-align:center; width:80px;
+margin-right:10px; margin-bottom:10px" > <img src="/style/silver/icon_web_resource.gif" 
+ alt="Submit" onclick="submitLink('selectIcon','web_resource',1)">
+<br/>web_resource.gif</div>
+</div><br/>
+</div>
+</div>
+<br/></form>
+</body>
+</html>
