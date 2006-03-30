@@ -243,7 +243,8 @@ class MainPage(RenderableLivePage):
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
             if Path(filename).exists():
-                client.alert(_(u'SAVE FAILED.\n"%s" already exists.\nPlease try again with '
+                client.alert(_(u'SAVE FAILED.\n"%s" already exists.\n'
+                                'Please try again with '
                                 'a different filename') % filename)
                 return
         self.package.save(filename) # This can change the package name
@@ -345,6 +346,12 @@ class MainPage(RenderableLivePage):
         # Add the extension if its not already there
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
+
+        if Path(filename).exists():
+            client.alert(_(u'EXPORT FAILED.\n"%s" already exists.\n'
+                            'Please try again with '
+                            'a different filename') % filename)
+            return
 
         # Create a new package for the extracted nodes
         package = Package(filename.namebase)
