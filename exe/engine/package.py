@@ -131,11 +131,14 @@ class Package(Persistable):
         if self._backgroundImg:
             self._backgroundImg.delete()
 
-        if value.startswith("file://"):
-            value = value[7:]
+        if value:
+            if value.startswith("file://"):
+                value = value[7:]
 
-        imgFile = Path(value)
-        self._backgroundImg = Resource(self, Path(imgFile))
+            imgFile = Path(value)
+            self._backgroundImg = Resource(self, Path(imgFile))
+        else:
+            self._backgroundImg = u''
 
     def get_level1(self):
         return self.levelName(0)
