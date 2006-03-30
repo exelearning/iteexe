@@ -158,10 +158,9 @@ class PropertiesPage(RenderableLivePage):
         """
         number = int(number)
         total = int(total)
-        if number == 0:
-            self.fieldsReceived = set([0])
-        else:
-            self.fieldsReceived.add(fieldId)
+        if len(self.fieldsReceived) == total:
+            self.fieldsReceived = set()
+        self.fieldsReceived.add(fieldId)
         obj, name = self.fieldId2obj(fieldId)
         # Decode the value
         decoded = ''
