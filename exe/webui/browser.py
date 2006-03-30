@@ -51,7 +51,14 @@ def launchBrowser(config, packageName):
     log.info("Creating FireFox profile copied from"+
              config.webDir/profile+" to "+
              config.configDir/profile)
-    (config.webDir/profile).copytree(config.configDir/profile)
+    if not (config.configDir/profile).exists():
+        (config.configDir/profile).mkdir()
+    for filename in (config.webDir/profile).files():
+        filename.copy(config.configDir/profile)
+    if not (config.configDir/profile/'Cache').exists():
+        (config.configDir/profile/'Cache').mkdir()
+    for filename in (config.webDir/profile/'Cache').files():
+        filename.copy(config.configDir/profile/'Cache')
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)
