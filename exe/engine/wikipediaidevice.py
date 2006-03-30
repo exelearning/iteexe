@@ -58,7 +58,7 @@ copies in eXe, a fresh copy of the article will need to be taken. Likewise,
 changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content 
 is covered by the GNU free documentation license.</p>"""), 
                          u"", u"")
-        self.emphasis         = Idevice.NoEmphasis
+        self.emphasis         = Idevice.StrongEmphasis
         self.articleName      = u""
         self.article          = TextAreaField(x_(u"Article"))
         self.article.idevice  = self

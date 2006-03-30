@@ -51,12 +51,6 @@ class WikipediaBlock(Block):
         """
         log.debug("process " + repr(request.args))
         
-        # Get the combo box vals
-        fieldNames = ['emphasis', 'site']
-        fieldMap = [(field, field + self.id) for field in fieldNames]
-        for attr, fieldName in fieldMap:
-            if fieldName in request.args:
-                setattr(self.idevice, attr, request.args[fieldName][0])
 
         if 'loadWikipedia'+self.id in request.args:
             # If they've hit "load" instead of "the tick"
@@ -68,6 +62,12 @@ class WikipediaBlock(Block):
                 request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.articleElement.process(request)
+                
+        if 'emphasis'+self.id in request.args:
+            self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
+            
+        if 'site'+self.id in request.args:
+            self.idevice.site = request.args['site'+self.id][0]
 
 
     def renderEdit(self, style):
@@ -113,7 +113,7 @@ class WikipediaBlock(Block):
                           (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
 
         html += common.formField('select', _('Emphasis'),
-                                 'emphasis'+self.id, '',
+                                 'emphasis', self.id, 
                                  '', # TODO: Instructions
                                  emphasisValues,
                                  self.idevice.emphasis)
