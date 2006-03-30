@@ -42,3 +42,7 @@ user_pref("security.warn_submit_insecure", false);
 user_pref("security.warn_viewing_mixed", false);
 user_pref("signed.applets.codebase_principal_support", true);
 user_pref("update.severity", 2);
+user_pref("capability.policy.localfilelinks.checkloaduri.enabled", "allAccess");
+user_pref("capability.policy.policynames", "localfilelinks");
+user_pref("capability.policy.localfilelinks.sites", "http://127.0.0.1:8081");
+user_pref("signed.applets.codebase_principal_support", true);

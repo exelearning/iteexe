@@ -46,14 +46,14 @@ def launchBrowser(config, packageName):
     else:
         profile    = "linux-profile"
 
-    if not (config.configDir/profile).exists():
-        log.info("Creating FireFox profile copied from"+
-                 config.webDir/profile+" to "+
-                 config.configDir/profile)
-        (config.webDir/profile).copytree(config.configDir/profile)
+    if (config.configDir/profile).exists():
+        (config.configDir/profile).rmtree()
+    log.info("Creating FireFox profile copied from"+
+             config.webDir/profile+" to "+
+             config.configDir/profile)
+    (config.webDir/profile).copytree(config.configDir/profile)
 
-        log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
-
+    log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)
 
     if sys.platform[:3] == u"win":
