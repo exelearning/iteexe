@@ -75,6 +75,8 @@ class Package(Persistable):
     _author            = ''
     _description       = ''
     _backgroundImg     = ''
+    # This is like a constant
+    defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
 
 
     def __init__(self, name):
@@ -87,7 +89,7 @@ class Package(Persistable):
         # For looking up nodes by ids
         self._nodeIdDict    = {} 
 
-        self._levelNames    = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
+        self._levelNames    = self.defaultLevelNames
         self.name           = name
         self._title         = u''
         self._backgroundImg = u''
@@ -143,17 +145,26 @@ class Package(Persistable):
     def get_level1(self):
         return self.levelName(0)
     def set_level1(self, value):
-        self._levelNames[0] = value
+        if value != '':
+            self._levelNames[0] = value 
+        else:
+            self._levelNames[0] = self.defaultLevelNames[0]
 
     def get_level2(self):
         return self.levelName(1)
     def set_level2(self, value):
-        self._levelNames[1] = value
+        if value != '':
+            self._levelNames[1] = value 
+        else:
+            self._levelNames[1] = self.defaultLevelNames[1]
 
     def get_level3(self):
         return self.levelName(2)
     def set_level3(self, value):
-        self._levelNames[2] = value
+        if value != '':
+            self._levelNames[2] = value 
+        else:
+            self._levelNames[2] = self.defaultLevelNames[2]
 
 
     # Properties
