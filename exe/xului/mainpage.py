@@ -398,8 +398,12 @@ class MainPage(RenderableLivePage):
             return
         else:
             # Wipe it out
-            filename.rmtree()
-            filename.mkdir()
+            try:
+                filename.rmtree()
+                filename.mkdir()
+            except Exception, e:
+                client.alert(_('There was an error in the export:\n%s') % str(e))
+                return
         # Now do the export
         singlePageExport = SinglePageExport(stylesDir, filename, 
                                             imagesDir, scriptsDir, templatesDir)
@@ -435,8 +439,12 @@ class MainPage(RenderableLivePage):
             return
         else:
             # Wipe it out
-            filename.rmtree()
-            filename.mkdir()
+            try:
+                filename.rmtree()
+                filename.mkdir()
+            except Exception, e:
+                client.alert(_('There was an error in the export:\n%s') % str(e))
+                return
         # Now do the export
         websiteExport = WebsiteExport(stylesDir, filename, 
                                       imagesDir, scriptsDir, templatesDir)
