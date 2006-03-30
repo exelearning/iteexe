@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
-"PO-Revision-Date: 2006-03-28 12:09+1200\n"
+"PO-Revision-Date: 2006-03-28 19:55+1200\n"
 "Last-Translator: Carlos Zarate <carlos@freioss.net>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -387,9 +387,8 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: exe/xului/mainpage.py:286
-#, fuzzy
 msgid "Canno  access directory named "
-msgstr "No se puede accesar directorio que se llama"
+msgstr "No se puede acceder al directorio llamado"
 
 #: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:228 exe/xului/mainpage.py:331
@@ -457,7 +456,7 @@ msgstr "Click aquí"
 
 #: exe/webui/common.py:266 exe/webui/common.py:269
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Haga un clic para completar las instrucciones"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
@@ -465,7 +464,7 @@ msgstr "Click aquí"
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "Haga un clic sobre el botón de agregar imágenes para seleccionar un archivo de imagen. La imagen aparecerá en la parte inferior y dónde Ud. podrá etiquetarla. Es una buena práctica indicar el tamaño en la etiqueta de la imagen."
 
 #: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
 #: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
@@ -692,7 +691,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:503
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Ingresar un título para la galería"
 
 #: exe/engine/quiztestidevice.py:64 exe/engine/quiztestidevice.py:86
 msgid ""

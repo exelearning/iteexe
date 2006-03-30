@@ -1,0 +1,10 @@
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+msgid "_:suggested by versionmerge"
+"label=\"Save\" accesskey=\"s\"\n"
+msgstr "label=\"5av3\" accesskey=\"5\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+msgid "_:suggested by versionmerge"
+"label=\"Save\" accesskey=\"s\"\n"
+msgstr "label=\"5av3\" accesskey=\"5\""
+

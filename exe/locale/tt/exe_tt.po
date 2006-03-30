@@ -1,11 +1,10 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
-"PO-Revision-Date: 2006-03-28 15:19+1200\n"
-"Last-Translator: David Moore <d.moore@auckland.ac.nz>\n"
+"PO-Revision-Date: 2006-03-31 11:54+1200\n"
+"Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: l33t <l33t@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -170,103 +169,119 @@ msgid ""
 "<li>\tHow the learners will interact with the materials and each other e.g.\n"
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
-msgstr ""
+msgstr "4 K423 57udY i2 4 D3VIc3 7h@ Pr0Vid32 l34rN3R2 \n"
+"wi7 4 5IMul47i0n 7H@ H42 4 3dUc47I0n4L 845I2. I7 74k32 4 5i7u47I0n, 93N3r4LLy \n"
+"8453d iN r34Li7Y, 4nD 45x L34rn3r2 70 D3M0n57R473 0r d35CRi83 wh@ 4C7i0n 7H3y \n"
+"W0uld 74k3 70 K0mPl373 4 745k 0R R350lv3 4 5I7U47I0n. 73h K423 57uDY 4lL0w2 \n"
+"L34Rn3r2 4pPLY 7h3IR 0WN kN0Wl3d93 4nd 3xP3Ri3nC3 70 K0MPl37in9 73h 745X \n"
+"422i9n3d. Wh3N d35I9Nin9 4 k423 57UdY K0n5iD3r 73h F0lL0WIN9:<ul> \n"
+"<li>\tWH@ 3DUC47i0N4L p0In72 R K0nV3y3D iN 73h 570RY</li>\n"
+"<li>\tWh@ pR3p4R47i0N wilL 73H L34rN3r2 n33D 70 D0 PRI0R 70 W0rkIn9 0n 73h \n"
+"K423 57uDY</li>\n"
+"<li>\tWh3r3 73H k423 57Udy FI72 In70 73h R357 0F 73H k0Ur53</li>\n"
+"<li>\th0W 73h l34rn3R2 wiLl in73R4C7 WI7 73h m473rI4L2 4Nd 34ch 07h3r 3.9.\n"
+"iF ruN IN 4 cl422r00m 5I7u47i0n k4n 734m2 83 537up 70 w0Rk 0n dIff3r3N7 45p3c75\n"
+"0F 73h K423 4Nd If 50 H0w r id342 F33d 84cK 70 73h cL422</li></ul>"
 
 #: exe/engine/truefalseidevice.py:66
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr ""
+msgstr "4 h1N7 m4y 8E PR0v1dED 70 422157 7eh \n"
+"lE4rner 1n 4N5Wer1N9 7EH KWe5710n.N"
 
 #: exe/webui/editorpane.py:72
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
-msgstr ""
+msgstr "4 P3D49091C4l T1p 4lL0Wz j00 T0 d35cr183 J00R 1nT3nd3d u53 4ND TH3 p3d4909Y 83H1nD tH3 d3V1c3Z d3V3L0pm3Nt."
 
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
-msgstr ""
+msgstr "4 51NGl3 51mPl3 d15Cu5510n"
 
 #: exe/webui/editorpane.py:224
 msgid "Actions"
-msgstr ""
+msgstr "4c710N5"
 
 #: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:323
 #: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:392
 #: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:438
 #: exe/webui/questionelement.py:70
 msgid "Activity"
-msgstr ""
+msgstr "4c71V17y"
 
 #: exe/webui/editorpane.py:213
 msgid "Add"
-msgstr ""
+msgstr "4dd"
 
 #: exe/webui/element.py:257
 msgid "Add Image"
-msgstr ""
+msgstr "4DD 1m49e"
 
 #: exe/webui/element.py:368
 msgid "Add JPEG Image"
-msgstr ""
+msgstr "4Dd JPE9 1m49E"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
-msgstr ""
+msgstr "4Dd 4 51n9Le 7EX7 l1nE 70 4 1DEv1Ce. u5Eful 1F J00 w4n7 7hE 4B1L17y 70 Pl4ce 4 L4bel w17H1N 7HE dev1Ce."
 
 #: exe/webui/editorpane.py:78
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
-msgstr ""
+msgstr "4DD 4 7ex7 eN7Ry b0x 70 4 1DEV1CE. U5ED ph0R EN7eR1n' De5cR1p710n 7ex7u4l K0N7En7."
 
 #: exe/idevices/appletidevice.py:56
 msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
-msgstr ""
+msgstr "4Dd 4lL 7HE Ph1LE2 pr0V1DeD pH0r 7hE 4PpLe7\n"
+"ExcEP7 7hE .7X7 PH1lE 0ne @ 4 71ME u51n' 7HE 4dD pH1Le2 4nD upl04D BU770n2. 7He \n"
+"ph1lE2, 0nCe L04DEd W1Ll be D15pl4YEd BenE47h 7He 4PPle7 K0De PH1ELd."
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
-msgstr ""
+msgstr "4Dd 4 1m493 70 J00R 1d3V1c3. 3N48l32 73h 53L3C710n 0f 4 1M493 PhR0M J00r 570r3D P1X0R ph1l32."
 
 #: exe/webui/testquestionelement.py:106
 msgid "Add another Option"
-msgstr ""
+msgstr "4DD 4n07h3r 0P710n"
 
 #: exe/webui/quiztestblock.py:101
 msgid "Add another Question"
-msgstr ""
+msgstr "4Dd 4N07H3r KW35710n"
 
 #: exe/webui/multichoiceblock.py:118
 msgid "Add another option"
-msgstr ""
+msgstr "4dd 4N07h3r 0P710n"
 
 #: exe/webui/truefalseblock.py:87 exe/webui/casestudyblock.py:94
 msgid "Add another question"
-msgstr ""
+msgstr "4dd 4N07h3r kw35710N"
 
 #: exe/idevices/appletblock.py:80
 msgid "Add files"
-msgstr ""
+msgstr "4dd pH1l32"
 
 #: exe/webui/galleryblock.py:177
 msgid "Add images"
-msgstr ""
+msgstr "4dd 1m4932"
 
 #: exe/webui/editorpane.py:84
 msgid "Add interactive feedback to your iDevice."
-msgstr ""
+msgstr "4DD 1N73R4C71v3 pH33Db4CK 70 J00R 1d3V1C3."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:79
 msgid "Align:"
-msgstr ""
+msgstr "4L19n:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:89
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr ""
+msgstr "4l19nM3N7 4lL0w2 u 70 \n"
+"cH0053 wH3r3 0n 73h 5cR33N 73h 1M493 W1ll B3 p051710N3d."
 
 #: exe/engine/field.py:477
 msgid ""
@@ -313,12 +328,12 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
-msgstr ""
+msgstr "4774CHM3n7"
 
 #: exe/engine/attachmentidevice.py:99
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "4774chm3n7 %s h4Z n0 p4R3n7 n0D3"
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
@@ -353,7 +368,7 @@ msgstr ""
 
 #: exe/engine/casestudyidevice.py:56
 msgid "Case Study"
-msgstr ""
+msgstr "k423 57Udy"
 
 #: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:213
 msgid "Change Image"
@@ -1482,7 +1497,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
+msgstr "t3h 4tT4chM3Nt 1d3v1c3 1z u53D TO 4tT4cH 3X15T1n' f1l3Z TO joOr .3lP konT3nT. fOR 3X4MpL3, joo M19Ht H4V3 4 PDF f1L3 oR 4 Ppt pR353nT4t1on f1L3 tH4t Joo w15H T3h l34rn3rZ TO H4V3 4CC355 TO, tH3z3 C4N 83 4Tt4CH3d 4nD L483L3D To 1nd1c4T3 Wh4T t3H 4TT4cHM3Nt 1z 4nD hoW l4r93 t3h f1l3 1Z. l34Rn3rz c4n Cl1CK on T3H 4tt4chm3nt L1nK 4nD c4n DOwnlO4D t3h 4TT4cHM3nT."
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -2007,35 +2022,35 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu" accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
-msgstr ""
+msgstr "label=\"Ph1l3\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML" label="XHTML">
 msgid "XHTML"
-msgstr ""
+msgstr "XH7Ml"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr ""
+msgstr "label=\"n3W\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
 msgid "SCORM 1.2"
-msgstr ""
+msgstr "5c0rM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr ""
+msgstr "label=\"0P3N\" accesskey=\"0\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
 msgid "IMS Content Package 1.1.3"
-msgstr ""
+msgstr "1ms K0N73N7 p4CK493 1.1.3"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"5av3\" accesskey=\"s\""
+msgstr "label=\"5av3\" accesskey=\"5\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site" id="dcmiWebSite" label="Web Site">
 msgid "Web Site"
-msgstr ""
+msgstr "W3b 5173"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
@@ -2043,27 +2058,27 @@ msgstr "label=\"5av3 4z...\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference to the resource within a given context.">
 msgid "Identifier:"
-msgstr ""
+msgstr "1d3n71f13R:"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr "label=\"XP0r7\" accesskey=\"e\""
+msgstr "label=\"XP0r7\" accesskey=\"x\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to a resource from which the present resource is derived.">
 msgid "Source:"
-msgstr ""
+msgstr "s0uRce:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"sc0rM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a language.">
 msgid "Language:"
-msgstr ""
+msgstr "l4N9u493:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"1Mz K0n73N7 p4ck493\" accesskey=\"i\""
+msgstr "label=\"1Mz K0n73N7 p4ck493\" accesskey=\"1\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar. ">
 msgid "Afar. "
@@ -2079,7 +2094,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr ""
+msgstr "label=\"51n9l3 P493\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae" label="Avestan. ">
 msgid "Avestan. "
@@ -2087,7 +2102,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="merging-menu" accesskey="e" label="Merging">
 msgid "label=\"Merging\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"meR91N\\'\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf" label="Afrikaans. ">
 msgid "Afrikaans. "
@@ -2095,7 +2110,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"1n53R7 paCkA93\" accesskey=\"1\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam" label="Amharic. ">
 msgid "Amharic. "
@@ -2103,7 +2118,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr ""
+msgstr "label=\"3X7R4c7 p4Ck493\" accesskey=\"3\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar" label="Arabic. ">
 msgid "Arabic. "
@@ -2111,7 +2126,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu" accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr ""
+msgstr "label=\"7OoL2\" accesskey=\"7\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias" label="Assamese. ">
 msgid "Assamese. "
@@ -2119,7 +2134,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr ""
+msgstr "pr3F3r3Nc32"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay" label="Aymara. ">
 msgid "Aymara. "
@@ -2127,7 +2142,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"57Yl32\" accesskey=\"5\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz" label="Azerbaijani. ">
 msgid "Azerbaijani. "
@@ -2135,7 +2150,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="window.location = window.location" id="refresh-menu" accesskey="r" label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr ""
+msgstr "label=\"R3FR35h\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba" label="Bashkir. ">
 msgid "Bashkir. "
@@ -2143,7 +2158,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu" accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr ""
+msgstr "label=\"h3LP\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe" label="Byelorussian; Belarusian. ">
 msgid "Byelorussian; Belarusian. "
@@ -2151,7 +2166,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="aboutPage()" accesskey="a" label="About">
 msgid "label=\"About\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"a8Ou7\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg" label="Bulgarian. ">
 msgid "Bulgarian. "
@@ -2159,7 +2174,7 @@ msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="registerOnline()" accesskey="R" label="Register Online">
 msgid "label=\"Register Online\" accesskey=\"R\""
-msgstr ""
+msgstr "label=\"rEGis7ER 0nLinE\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh" label="Bihari. ">
 msgid "Bihari. "

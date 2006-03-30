@@ -1,0 +1,7 @@
+#: exe/engine/clozeidevice.py:115
+msgid ""
+"_: suggested by versionmerge"
+"Provide instruction on how the cloze activity should be \n"
+"completed. Default text will be entered if there are no changes to this field.\n"
+msgstr "提供怎样完成添空题的说明. \n"
+

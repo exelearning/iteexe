@@ -4,4 +4,4 @@ rights:
   default = u'view, suggest, archive, pocompile'
   nobody = u'view'
   thomas = u'view, suggest, translate, review, archive, pocompile'
-  ralf = u'view, suggest, translate, review, archive, pocompile'
+  ralfh = u'view, suggest, translate, review, archive, pocompile'

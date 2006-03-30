@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-27 15:46+1200\n"
-"PO-Revision-Date: 2006-03-30 10:23+1200\n"
+"PO-Revision-Date: 2006-03-30 11:58+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -862,7 +862,7 @@ msgid ""
 "web page into your content. Rather than popup an external window, which can have some\n"
 "problematic usability consequences, this iDevice loads the appropriate content \n"
 "into an inline frame. Use only if your content will be online."
-msgstr " "
+msgstr "只有当课件内容需要包含一个在线的外部网页时使用它."
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
@@ -1326,6 +1326,7 @@ msgstr "为插图提供标题."
 
 #: exe/engine/truefalseidevice.py:81
 #: exe/engine/truefalseidevice.py:168
+#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1335,13 +1336,13 @@ msgstr "提供怎样完成判断题的说明."
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
-msgstr " \n"
+msgstr "提供怎样完成填空题的说明.\n"
 
 #: exe/engine/casestudyidevice.py:84
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr " "
+msgstr "提供相关评语. "
 
 #: exe/webui/block.py:243
 #: exe/webui/editorpane.py:292
@@ -1493,14 +1494,14 @@ msgstr "分组"
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
-msgstr " "
+msgstr "设置初始放大倍数, 为原图象尺寸的百分比."
 
 #: exe/engine/imagemagnifieridevice.py:69
 #: exe/engine/imagemagnifieridevice.py:93
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
-msgstr " "
+msgstr "设置最大放大倍数, 为原图象尺寸的百分比. "
 
 #: exe/xului/propertiespage.py:203
 msgid "Settings saved"
@@ -3790,6 +3791,11 @@ msgstr " "
 #~ msgstr "提供文件的简单描述."
 
 # exe/xului/templates/dublincore.xul:<menuitem
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 #, fuzzy
 #~ msgid "Solvenian"
 #~ msgstr "Slovenian. "
