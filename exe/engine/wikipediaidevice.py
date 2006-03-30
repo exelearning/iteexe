@@ -82,7 +82,7 @@ within Wikipedia.""")
         """
         self.articleName = name
 
-        name = urllib.quote(name.replace(" ", "_"))
+        name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
         try:
             net  = urllib.urlopen(self.site+'wiki/'+name)
             page = net.read()
