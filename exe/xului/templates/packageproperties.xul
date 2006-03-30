@@ -52,10 +52,10 @@ You could call this function in the onchange handler of a single element passing
 this.parentNode to do auto updates of just this field (and any siblings) if you want.
 -->
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <vbox id="projectProperties" flex="1">
-    <groupbox flex="0" >
+  <vbox id="projectProperties" style="overflow: auto;" flex="1">
+    <groupbox flex="0" style="overflow: auto">
       <caption id="pptitle" label="Project Properties" />
-      <vbox flex="0" style="overflow: auto" >
+      <vbox flex="0">
          <hbox align="center">
             <label id="ppProjectTitle" style="width:8em" value="Project Title:" tooltiptext="The project's title." />
             <textbox id="pp_title" size="40" onchange="this.style.color='blue';" />
@@ -63,10 +63,10 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
          <hbox align="center">
              <label id="ppBackgroundImg" style="width:8em" 
                  value="Header Background:"/>
-             <vbox flex="0" style="overflow: auto" >
+             <vbox flex="0">
                  <image id="pp_backgroundImg" src='' width="400" height="100" 
                      onclick="addImage('pp_backgroundImg');"/>
-                 <hbox flex="0" style="overflow: auto" >
+                 <hbox flex="0">
                      <button id="loadImage"  label="Load Image" 
                          oncommand="addImage('pp_backgroundImg');"/>
                      <button id="clearImage" label="Clear Image" 
@@ -88,7 +88,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
          </hbox>
       </vbox>
     </groupbox>
-    <groupbox flex="0">
+    <groupbox flex="0" style="overflow: auto;">
        <caption id="ppCaptionTaxonomy" label="Taxonomy" />
        <hbox align="center">
           <label id="ppLevel1" style="width:8em" value="Level 1:"
