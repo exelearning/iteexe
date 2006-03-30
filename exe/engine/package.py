@@ -89,7 +89,7 @@ class Package(Persistable):
         # For looking up nodes by ids
         self._nodeIdDict    = {} 
 
-        self._levelNames    = self.defaultLevelNames
+        self._levelNames    = self.defaultLevelNames[:]
         self.name           = name
         self._title         = u''
         self._backgroundImg = u''

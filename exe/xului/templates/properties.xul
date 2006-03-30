@@ -148,7 +148,8 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
 
   // Post data for a form to the server
   // Submits the value for all the fields inside 'container'
-  function submitForm(container) {
+  // onDone is java script that will be evaluated after all the fields are done
+  function submitForm(container, onDone) {
     var fieldIds = new Array();
     collectIds(fieldIds, container);
     for (var i in fieldIds) {
@@ -162,7 +163,11 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
         } else {
             var value = ele.value;
         }
-        nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), i, fieldIds.length);
+        if (onDone) {
+            nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), fieldIds.length, onDone);
+        } else {
+            nevow_clientToServerEvent('recieveFieldData', this, '', fieldIds[i], escape(value), fieldIds.length);
+        }
     }
   }
   ]]>
