@@ -484,7 +484,7 @@ function exportPackage(exportType) {
             title = "INVALID VALUE PASSED TO exportPackage";
         fp.init(window, title, nsIFilePicker.modeSave);
         fp.appendFilter("SCORM/IMS Packages", "*.zip");
-        fp.appendFilter("All Files", "*.*");
+        fp.appendFilters(nsIFilePicker.filterAll);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
@@ -498,6 +498,8 @@ function insertPackage() {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, "Select package to insert", nsIFilePicker.modeOpen);
+    fp.appendFilter("eXe Package Files","*.elp");
+    fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
         nevow_clientToServerEvent('insertPackage', this, '', fp.file.path)
@@ -510,6 +512,8 @@ function extractPackage() {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     fp.init(window, "Save extracted package as", nsIFilePicker.modeSave);
+    fp.appendFilter("eXe Package Files","*.elp");
+    fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
         nevow_clientToServerEvent('extractPackage', this, '', fp.file.path)
