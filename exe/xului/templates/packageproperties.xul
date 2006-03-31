@@ -66,7 +66,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
                  value="Header Background:"/>
              <vbox flex="0">
                  <hbox autoscroll="never" flex="1">
-                 <image id="pp_backgroundImg" src="" width="400" height="100"
+                 <image id="pp_backgroundImg" src=""
                      onclick="addImage('pp_backgroundImg');" flex="0"/>
                  <spring flex="1" />
                  </hbox>
