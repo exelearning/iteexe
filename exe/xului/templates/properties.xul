@@ -114,8 +114,8 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
       if (res == nsIFilePicker.returnOK) {
           var image = document.getElementById(elementId);
           image.src  = 'file://'+fp.file.path;
-          image.width  = '450';
-          image.height = '100';
+          image.removeAttribute('width');
+          image.removeAttribute('height');
       }
   }
  
@@ -123,7 +123,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
   function clearImage(elementId) {
       var image = document.getElementById(elementId);
       image.src    = '';
-      image.width  = '450';
+      image.width  = '400';
       image.height = '100';
   }
   
