@@ -157,8 +157,6 @@ class PropertiesPage(RenderableLivePage):
         Called by client to give us a value from a certain field
         """
         total = int(total)
-        if len(self.fieldsReceived) == total:
-            self.fieldsReceived = set()
         self.fieldsReceived.add(fieldId)
         obj, name = self.fieldId2obj(fieldId)
         # Decode the value
@@ -197,10 +195,11 @@ class PropertiesPage(RenderableLivePage):
         client.sendScript(js(
             'document.getElementById("%s").style.color = "black"' % fieldId))
         if len(self.fieldsReceived) == total:
+            self.fieldsReceived = set()
             client.sendScript(js.alert(
                 (u"%s" % _('Settings saved')).encode('utf8')))
             if onDone:
-                client.sendScript(onDone)
+                client.sendScript(js(onDone))
 
     def translate(self, client, elementId, attribute, data):
         """
