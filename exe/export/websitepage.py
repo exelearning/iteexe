@@ -81,7 +81,7 @@ class WebsitePage(object):
         html += u"<body>\n"
         html += u"<div id=\"content\">\n"
 
-        if self.node.package.backgroundImg or self.package.title:
+        if self.node.package.backgroundImg or self.node.package.title:
             html += u"<div id=\"header\" "
 
             if self.node.package.backgroundImg:
