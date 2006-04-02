@@ -1,411 +1,807 @@
-2006-03-14 01:47  matthew
-
-	* branches/0.14/ChangeLog, branches/0.14/app.fil,
-	  branches/0.14/exe/locale/de/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/el/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/en/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/es/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/et/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/exe_de.po,
-	  branches/0.14/exe/locale/exe_el.po,
-	  branches/0.14/exe/locale/exe_en.po,
-	  branches/0.14/exe/locale/exe_es.po,
-	  branches/0.14/exe/locale/exe_et.po,
-	  branches/0.14/exe/locale/exe_fa.po,
-	  branches/0.14/exe/locale/exe_hu.po,
-	  branches/0.14/exe/locale/exe_is.po,
-	  branches/0.14/exe/locale/exe_it.po,
-	  branches/0.14/exe/locale/exe_mi.po,
-	  branches/0.14/exe/locale/exe_nl.po,
-	  branches/0.14/exe/locale/exe_pl.po,
-	  branches/0.14/exe/locale/exe_pt.po,
-	  branches/0.14/exe/locale/exe_pt_BR.po,
-	  branches/0.14/exe/locale/exe_sk.po,
-	  branches/0.14/exe/locale/exe_sv.po,
-	  branches/0.14/exe/locale/exe_zh.po,
-	  branches/0.14/exe/locale/exe_zu.po, branches/0.14/exe/locale/gr,
-	  branches/0.14/exe/locale/gr/LC_MESSAGES,
-	  branches/0.14/exe/locale/gr/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/is/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/mi/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/nl/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/pl/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/pt/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/sv/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/zh/LC_MESSAGES/exe.mo,
-	  branches/0.14/messages.pot: updated all translations
-
-2006-03-14 00:36  matthew
-
-	* branches/0.14/exe/locale/exe_de.po,
-	  branches/0.14/exe/locale/exe_es.po: Imported some po files
-
-2006-03-13 03:50  jenny
-
-	* branches/0.14/exe/idevices/forumblock.py,
-	  branches/0.14/exe/idevices/forumelement.py,
-	  branches/0.14/installs/windows/applet update.nsi: fixed issue 312
-	  Discussion iDevice locks up, and add applet update.nsi.
-
-2006-03-13 01:00  jenny
-
-	* branches/0.14/exe/locale/exe_zh.po,
-	  branches/0.14/exe/locale/zh/LC_MESSAGES/exe.mo: update Chinese po
-	  and mo files.
-
-2006-03-12 23:10  matthew
-
-	* branches/0.14/exe/webui/style/default/content.css: Made idevice
-	  title padding be 10px
-
-2006-03-12 22:37  djm
-
-	* branches/0.14/exe/engine/field.py,
-	  branches/0.14/exe/engine/flashmovieidevice.py: Fixed bug
-	  introduced into flashmovie idevice
-
-2006-03-12 22:22  jenny
-
-	* branches/0.14/exe/idevices/forumblock.py: fixed issue 305
-	  Discussion Idevice doesn't have double-click to edit.
-
-2006-03-12 21:46  jenny
-
-	* branches/0.14/exe/locale/exe_zh.po,
-	  branches/0.14/exe/locale/zh/LC_MESSAGES/exe.mo: update Chinese po
-	  and mo files.
-
-2006-03-12 02:46  matthew
-
-	* branches/0.14/app.fil,
-	  branches/0.14/exe/locale/de/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/el/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/en/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/es/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/et/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/exe_de.po,
-	  branches/0.14/exe/locale/exe_el.po,
-	  branches/0.14/exe/locale/exe_en.po,
-	  branches/0.14/exe/locale/exe_es.po,
-	  branches/0.14/exe/locale/exe_et.po,
-	  branches/0.14/exe/locale/exe_fa.po,
-	  branches/0.14/exe/locale/exe_hu.po,
-	  branches/0.14/exe/locale/exe_is.po,
-	  branches/0.14/exe/locale/exe_it.po,
-	  branches/0.14/exe/locale/exe_mi.po,
-	  branches/0.14/exe/locale/exe_nl.po,
-	  branches/0.14/exe/locale/exe_pl.po,
-	  branches/0.14/exe/locale/exe_pt.po,
-	  branches/0.14/exe/locale/exe_pt_BR.po,
-	  branches/0.14/exe/locale/exe_sv.po,
-	  branches/0.14/exe/locale/exe_zh.po,
-	  branches/0.14/exe/locale/exe_zu.po,
-	  branches/0.14/exe/locale/is/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/mi/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/nl/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/pl/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/pt/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/sv/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/zh/LC_MESSAGES/exe.mo,
-	  branches/0.14/messages.pot, branches/0.14/tools/mki18n.py:
-	  Imported Estonian and Polish translations and ran mk18n.py
+2006-03-31 04:08  djm
+
+	* exe/xului/templates/packageproperties.xul: don't give bg images a
+	  default size
 
-2006-03-11 23:36  matthew
+2006-03-31 04:04  djm
 
-	* branches/0.14/exe/locale/exe_sk.po: Slovakian translation. Empty
-	  so far
+	* exe/export/websitepage.py: thanks for testing this
 
-2006-03-11 23:25  matthew
+2006-03-31 03:29  djm
 
-	* branches/0.14/exe/xului/propertiespage.py: Removed unnecesarry and
-	  broken import
+	* exe/xului/templates/packageproperties.xul,
+	  exe/xului/templates/properties.xul: don't scale header bkgrnd
+	  image, make sure the scroll bars work tho
 
-2006-03-10 03:49  matthew
+2006-03-31 02:12  matthew
 
-	* branches/0.14/exe/engine/field.py: Made cloze IDevice support old
-	  style (pre-tinymce) markup
+	* exe/xului/propertiespage.py: Fixed bug with properties pages.
 
-2006-03-10 01:50  matthew
+2006-03-30 23:58  matthew
 
-	* branches/0.14/exe/export/scormexport.py: Added a comment for a fix
-	  for next release
+	* exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_pt_pt.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/jp/exe_jp.po, exe/locale/messages.pot,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/mi/exe_mi.po,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/tt/exe_tt.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zu/exe_zu.po: Ran mki18n.py
 
-2006-03-10 01:30  djm
+2006-03-30 23:55  matthew
 
-	* branches/0.14/exe/engine/field.py,
-	  branches/0.14/exe/engine/flashwithtextidevice.py: Fix buggy code
-	  introduced into Flash iDevice while I've been away
+	* exe/locale/de/exe_de.po, exe/locale/de/exe_de.po.stats,
+	  exe/locale/de/pootle-exe-de.prefs,
+	  exe/locale/de/pootle-exe-de.stats,
+	  exe/locale/el/pootle-exe-el.prefs, exe/locale/es/exe_es.po,
+	  exe/locale/es/exe_es.po.stats, exe/locale/es/pootle-exe-es.stats,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sv/pootle-exe-sv.prefs,
+	  exe/locale/tt/exe_tt.po, exe/locale/tt/exe_tt.po.pending,
+	  exe/locale/tt/exe_tt.po.stats, exe/locale/tt/pootle-exe-tt.stats,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh/exe_zh.po.pending,
+	  exe/locale/zh/exe_zh.po.stats, exe/locale/zh/pootle-exe-zh.stats:
+	  Pootle input
 
-2006-03-10 01:05  jenny
+2006-03-30 23:37  jenny
 
-	* branches/0.14/exe/engine/imagemagnifieridevice.py,
-	  branches/0.14/exe/webui/attachmentblock.py: upgrade image
-	  magnifier idevice to v0.14
+	* exe/engine/wikipediaidevice.py: Change Wikipedia iDevice default
+	  emphasis back to NoEmphasis.
 
-2006-03-10 00:41  matthew
+2006-03-30 23:34  jenny
 
-	* branches/0.14/exe/webui/style/Kahurangi/popup_bg.gif,
-	  branches/0.14/exe/webui/style/default/popup_bg.gif,
-	  branches/0.14/exe/webui/style/garden/popup_bg.gif,
-	  branches/0.14/exe/webui/style/seamist/popup_bg.gif,
-	  branches/0.14/exe/webui/style/standardwhite/popup_bg.gif: Copied
-	  the popup_bg.gif to all the styles, so that it will always be
-	  shown
+	* exe/webui/browser.py: Made browser only copy root level profile
+	  files and the cache, because it was crashing development exe when
+	  copying read-only .svn folder contents.
 
-2006-03-09 22:18  matthew
+2006-03-30 23:33  jenny
 
-	* branches/0.14/exe/webui/propertiespage.py,
-	  branches/0.14/exe/webui/propertiespane.py: Removed no-longer used
-	  html properties pages. Now in xului
+	* exe/webui/win-profile/Cache/079F2B7Fd01,
+	  exe/webui/win-profile/Cache/18878E21d01,
+	  exe/webui/win-profile/Cache/27B00883d01,
+	  exe/webui/win-profile/Cache/27B008C3d01,
+	  exe/webui/win-profile/Cache/27B008E3d01,
+	  exe/webui/win-profile/Cache/3082FB3Dd01,
+	  exe/webui/win-profile/Cache/B4047CD4d01,
+	  exe/webui/win-profile/Cache/BBA51E1Ad01,
+	  exe/webui/win-profile/Cache/E1A04B46d01,
+	  exe/webui/win-profile/Cache/_CACHE_001_,
+	  exe/webui/win-profile/Cache/_CACHE_002_,
+	  exe/webui/win-profile/Cache/_CACHE_003_,
+	  exe/webui/win-profile/Cache/_CACHE_MAP_: Made a nice beautiful
+	  cache for windows profile (MS)
 
-2006-03-09 22:18  matthew
+2006-03-30 23:30  djm
 
-	* branches/0.14/exe/webui/element.py: Removed misleading string
-	  about leaving size blank
+	* exe/export/websitepage.py: export background image
 
-2006-03-09 21:24  jenny
+2006-03-30 23:05  jenny
 
-	* branches/0.14/exe/locale/exe_zh.po,
-	  branches/0.14/exe/locale/zh/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/webui/clozeblock.py,
-	  branches/0.14/installs/windows/exe.nsi,
-	  branches/0.14/installs/windows/exe.standalone.nsi,
-	  branches/0.14/installs/windows/forum update.nsi,
-	  branches/0.14/installs/windows/language pack update.nsi: updated
-	  Chinese po & mo files and installation files.
+	* exe/engine/wikipediaidevice.py, exe/webui/wikipediablock.py: fixed
+	  issue 346 Wikipedia not storing emphasis.
 
-2006-03-09 04:20  matthew
+2006-03-30 05:21  matthew
 
-	* branches/0.14/exe/xului/propertiespage.py,
-	  branches/0.14/exe/xului/templates/properties.xul: Now takes all
-	  kinds of chinese and enters etc. in metadata and properties
+	* exe/engine/wikipediaidevice.py: Issue 343: Now loads chinese
+	  Wikipedia articles
 
-2006-03-09 01:39  matthew
+2006-03-30 05:06  matthew
 
-	* branches/0.14/exe/xului/propertiespage.py: Now handles packages
-	  with enters in the properties
+	* exe/engine/package.py, exe/xului/propertiespage.py,
+	  exe/xului/templates/packageproperties.xul,
+	  exe/xului/templates/properties.xul: Issue 345: Can properly
+	  properly handle blank names and the Update Tree button works
+	  properly
 
-2006-03-09 01:18  matthew
+2006-03-30 04:53  matthew
 
-	* branches/0.14/exe/engine/field.py: Make upgraded field names be
-	  translated
+	* exe/engine/package.py: Issue 345: Now can handle blank lines in
+	  package properties for node names.
 
-2006-03-09 01:11  matthew
+2006-03-30 04:35  matthew
 
-	* branches/0.14/exe/webui/common.py: Making Flash with text idevice
-	  work with IE
+	* exe/xului/propertiespage.py: Issue 342: Should make Done button
+	  work better. Needs testing still.
 
-2006-03-09 00:59  matthew
+2006-03-30 03:15  djm
 
-	* branches/0.14/exe/webui/common.py: Trying to make flash with text
-	  idevice work with IE
+	* exe/engine/package.py: fixed bug with clearing background image
 
-2006-03-09 00:37  jenny
+2006-03-30 03:14  djm
 
-	* branches/0.14/exe/webui/quiztestblock.py: fixed SCORM Quiz idevice
-	  "Submit Answers" button bug in Preview mode.
+	* exe/webui/browser.py, exe/webui/linux-profile/prefs.js,
+	  exe/webui/win-profile/prefs.js: Fixed bug with image not changing
+	  in Firefox 1.5.01
 
-2006-03-08 23:18  matthew
+2006-03-30 02:59  matthew
 
-	* branches/0.14/exe/engine/galleryidevice.py,
-	  branches/0.14/exe/engine/resource.py: Issue 297: Attachment and
-	  Gallery can now load chinese files. Also fixed a gallery bug where
-	  some images couldn't be shrunk.
+	* exe/xului/mainpage.py: Made it so when you try to export to where
+	  you don't have permission, will show error message
 
-2006-03-08 22:23  matthew
+2006-03-30 02:49  matthew
 
-	* branches/0.14/exe/webui/element.py,
-	  branches/0.14/exe/webui/scripts/common.js: Made Cloze IDevice
-	  support Chinese and friends
+	* exe/xului/templates/packageproperties.xul: Made project properties
+	  scrollable
 
-2006-03-08 21:48  jenny
+2006-03-30 02:35  matthew
 
-	* branches/0.14/exe/idevices/forumelement.py: fixed forum idevice
-	  select display bugs.
+	* exe/xului/mainpage.py: Made extract package not overwrite other
+	  packages, when the user doesn't supply an extension.
 
-2006-03-08 03:41  matthew
+2006-03-30 02:31  matthew
 
-	* branches/0.14/exe/webui/galleryblock.py: Made gallery work on IE.
-	  Janney to test
+	* exe/xului/scripts/mainpage.js: Issue 303: Made insert and extract
+	  packages have nice file filters.
 
-2006-03-08 03:26  matthew
+2006-03-29 22:43  jenny
 
-	* branches/0.14/exe/webui/galleryblock.py: Made gallery not have a
-	  problem when switching to slideshow mode
+	* exe/locale/zh/exe_zh.po: updated Chinese po file.
 
-2006-03-08 03:20  matthew
+2006-03-29 02:27  brent
 
-	* branches/0.14/exe/webui/element.py: Image with text now shows
-	  images again
+	* exe/webui/style/garden/nav.css, exe/webui/style/seamist/nav.css,
+	  exe/webui/style/silver/nav.css,
+	  exe/webui/style/standardwhite/nav.css: header titles and graphics
+	  for all styles now. still needs input and tweaking.
 
-2006-03-08 03:12  matthew
+2006-03-29 00:58  brent
 
-	* branches/0.14/exe/webui/common.py: Can now import chinese files
-	  with all flash idevices. Jenny to test
+	* exe/webui/style/Kahurangi/nav.css,
+	  exe/webui/style/default/nav.css: more work on header titles and
+	  images.
 
-2006-03-08 02:01  matthew
+2006-03-28 23:11  brent
 
-	* branches/0.14/exe/engine/imagemagnifieridevice.py,
-	  branches/0.14/exe/webui/element.py,
-	  branches/0.14/exe/webui/imagemagnifierblock.py: Issue 290: Added
-	  instructions to image magnifier idevice
+	* exe/xului/templates/dublincore.xul: fixed bug 315.
 
-2006-03-08 01:25  jenny
+2006-03-28 22:30  brent
 
-	* branches/0.14/exe/idevices/forumelement.py,
-	  branches/0.14/exe/xului/templates/dublincore.xul: fixed forum
-	  idevice help tip bugs and matadata property translation strings.
+	* exe/webui/style/default/nav.css: working on header text and
+	  graphic for defualt style.
 
-2006-03-08 00:59  matthew
+2006-03-28 05:15  djm
 
-	* branches/0.14/exe/webui/element.py,
-	  branches/0.14/exe/webui/imagemagnifierblock.py: ImageMagnifier
-	  Fixups
+	* exe/webui/docs/credits.xhtml: fixed Helena's name in the about box
 
-2006-03-08 00:43  matthew
+2006-03-28 03:43  matthew
 
-	* branches/0.14/exe/webui/imagemagnifierblock.py,
-	  branches/0.14/exe/webui/style/silver/popup_bg.gif: Tidied up
-	  magnifier, fixed silver style prob
+	* exe/locale/pt/exe_pt_br.po, exe/locale/tt/exe_tt.po,
+	  exe/locale/tt/exe_tt.po.stats, exe/locale/tt/pootle-exe-tt.stats:
+	  Removed plural forms in tt and pt_br
 
-2006-03-08 00:20  matthew
+2006-03-28 03:37  matthew
 
-	* branches/0.14/exe/engine/field.py,
-	  branches/0.14/exe/webui/common.py,
-	  branches/0.14/exe/webui/element.py,
-	  branches/0.14/exe/webui/imagemagnifierblock.py: ImageMagnifier
-	  Fixups
+	* exe/locale/es/exe_es.po: Fixed spanish po file prob
 
-2006-03-08 00:19  matthew
+2006-03-28 03:35  matthew
 
-	* branches/0.14/exe/webui/wikipediablock.py: Tiny fixups on
-	  wikipedia to stop posting when seleting combo boxes
+	* exe/locale/pt/exe_pt_br.po: Removed bad header from pt_br.po
 
-2006-03-07 03:17  matthew
+2006-03-28 03:32  djm
 
-	* branches/0.14/exe/engine/field.py: Fixed cloze idevice
+	* exe/locale/tt/exe_tt.po: 4dD3d 70 73h L337 7R4N5l47I0N
 
-2006-03-07 01:00  jenny
+2006-03-28 03:12  matthew
 
-	* branches/0.14/exe/engine/package.py,
-	  branches/0.14/exe/export/scormexport.py,
-	  branches/0.14/exe/webui/element.py,
-	  branches/0.14/exe/webui/scripts/SCOFunctions.js,
-	  branches/0.14/exe/xului/propertiespage.py,
-	  branches/0.14/exe/xului/templates/dublincore.xml,
-	  branches/0.14/exe/xului/templates/dublincore.xul,
-	  branches/0.14/exe/xului/templates/exportproperties.xul,
-	  branches/0.14/exe/xului/templates/properties.xul: add
-	  Next/Previous links to scorm export if user want to.
+	* exe/locale/en/exe_en.po, exe/locale/jp/exe_jp.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/sl/exe_sl.po,
+	  exe/locale/tt, exe/locale/tt/exe_tt.po,
+	  exe/locale/tt/exe_tt.po.pending, exe/locale/tt/exe_tt.po.stats,
+	  exe/locale/tt/pootle-exe-tt.prefs,
+	  exe/locale/tt/pootle-exe-tt.stats: Tidied up some po files
 
-2006-03-07 00:40  matthew
+2006-03-28 01:31  matthew
 
-	* branches/0.14/exe/webui/webserver.py: Got rid of evil twisted
-	  error messages at start of program
+	* exe/locale/de/exe_de.po.stats, exe/locale/de/pootle-exe-de.prefs,
+	  exe/locale/de/pootle-exe-de.stats, exe/locale/el/exe_el.po.stats,
+	  exe/locale/el/pootle-exe-el.stats, exe/locale/es/exe_es.po,
+	  exe/locale/es/exe_es.po.pending, exe/locale/es/exe_es.po.stats,
+	  exe/locale/es/pootle-exe-es.prefs,
+	  exe/locale/es/pootle-exe-es.stats, exe/locale/et/exe_et.po,
+	  exe/locale/et/exe_et.po.stats, exe/locale/et/pootle-exe-et.stats,
+	  exe/locale/exe_pt_pt.po, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fa/pootle-exe-fa.stats, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/hu/pootle-exe-hu.stats, exe/locale/is/exe_is.po.stats,
+	  exe/locale/is/pootle-exe-is.stats, exe/locale/it/exe_it.po.stats,
+	  exe/locale/it/pootle-exe-it.stats,
+	  exe/locale/jp/pootle-exe-jp.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.stats, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.stats, exe/locale/pt/exe_pt.po,
+	  exe/locale/pt/exe_pt.po.stats, exe/locale/pt/exe_pt_br.po,
+	  exe/locale/pt/pootle-exe-pt.prefs,
+	  exe/locale/pt/pootle-exe-pt.stats, exe/locale/ptbr,
+	  exe/locale/sk/exe_sk.po.stats, exe/locale/sk/pootle-exe-sk.stats,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sl/pootle-exe-sl.stats,
+	  exe/locale/sv/exe_sv.po.stats, exe/locale/sv/pootle-exe-sv.stats,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.stats, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.stats: Pootle input. Moved portuguese
+	  translations around
 
-2006-03-06 22:57  brent
+2006-03-27 23:34  djm
 
-	* branches/0.14/exe/xului/templates/dublincore.xml: added
-	  dublincore.xml - template for DC metadata.
-
-2006-03-06 22:33  matthew
-
-	* branches/0.14/exe/xului/templates/dublincore.xul: Update language
-	  list for dublin core properties page
-
-2006-03-06 04:37  matthew
-
-	* branches/0.14/exe/engine/field.py: Removed break point
-
-2006-03-06 03:00  matthew
-
-	* branches/0.14/exe/webui/element.py: Flash movie to run in exe.
-
-2006-03-06 02:53  matthew
-
-	* branches/0.14/exe/webui/element.py: flash fixes hopefully
-
-2006-03-06 02:41  matthew
-
-	* branches/0.14/exe/webui/element.py: More flash movie and
-	  magnidfier changes
-
-2006-03-06 02:35  matthew
-
-	* branches/0.14/exe/webui/common.py: Made flash movie work inside
-	  exe hopefully
-
-2006-03-06 02:25  matthew
-
-	* branches/0.14/exe/webui/common.py: flash movie change
-
-2006-03-06 02:22  matthew
-
-	* branches/0.14/exe/engine/flashmovieidevice.py,
-	  branches/0.14/exe/webui/common.py,
-	  branches/0.14/exe/webui/element.py: Hopefully fixed flash movie
-
-2006-03-06 01:42  matthew
-
-	* branches/0.14/exe/webui/common.py: Fixed big flash bug!
-
-2006-03-06 01:33  matthew
-
-	* branches/0.14/exe/engine/wikipediaidevice.py,
-	  branches/0.14/exe/webui/wikipediablock.py: Make wikipedia work
-
-2006-03-06 01:17  matthew
-
-	* branches/0.14/exe/webui/common.py: Hopefully made flash work in
-	  firefox
-
-2006-03-05 23:12  matthew
-
-	* branches/0.14/exe/xului/propertiespage.py: Fixed error where after
-	  entering in chinese level names, when adding a new level got ascii
-	  codec out of range error
-
-2006-03-05 23:01  matthew
-
-	* branches/0.14/exe/engine/field.py,
-	  branches/0.14/exe/locale/de/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/el/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/en/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/es/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/et/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/exe_de.po,
-	  branches/0.14/exe/locale/exe_el.po,
-	  branches/0.14/exe/locale/exe_en.po,
-	  branches/0.14/exe/locale/exe_es.po,
-	  branches/0.14/exe/locale/exe_et.po,
-	  branches/0.14/exe/locale/exe_fa.po,
-	  branches/0.14/exe/locale/exe_hu.po,
-	  branches/0.14/exe/locale/exe_is.po,
-	  branches/0.14/exe/locale/exe_it.po,
-	  branches/0.14/exe/locale/exe_mi.po,
-	  branches/0.14/exe/locale/exe_nl.po,
-	  branches/0.14/exe/locale/exe_pl.po,
-	  branches/0.14/exe/locale/exe_pt.po,
-	  branches/0.14/exe/locale/exe_pt_BR.po,
-	  branches/0.14/exe/locale/exe_sv.po,
-	  branches/0.14/exe/locale/exe_zh.po,
-	  branches/0.14/exe/locale/exe_zu.po,
-	  branches/0.14/exe/locale/is/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/mi/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/nl/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/pl/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/pt/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/sv/LC_MESSAGES/exe.mo,
-	  branches/0.14/exe/locale/zh/LC_MESSAGES/exe.mo,
-	  branches/0.14/messages.pot: Ran mki18n.py
-
-2006-03-05 23:00  matthew
-
-	* branches/0.14/exe/engine/version.py: 0.14 version write
-
-2006-03-05 22:58  matthew
-
-	* branches/0.14: 0.14 Branch
+	* exe/webui/images/sunflowers.jpg: Fixed 0000279: image with text
+	  image placeholder made default image smaller
+
+2006-03-27 23:34  jenny
+
+	* exe/xului/propertiespage.py: fixed properties page bugs.
+
+2006-03-27 05:05  djm
+
+	* exe/xului/mainpage.py, exe/xului/scripts/mainpage.js,
+	  exe/xului/templates/mainpage.xul: Fixed Issue 0000201: direct link
+	  from exe app to bug tracker. Some progress on Issue 0000140:
+	  saving .elp to close and save any open idevices before saving the
+	  package
+
+2006-03-27 04:49  matthew
+
+	* exe/xului/mainpage.py: Issue 318: Stopped server from overwriting
+	  on save
+
+2006-03-27 04:11  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/fa/exe_fa.po, exe/locale/hu/exe_hu.po,
+	  exe/locale/is/LC_MESSAGES/exe.mo, exe/locale/is/exe_is.po,
+	  exe/locale/it/exe_it.po, exe/locale/jp/exe_jp.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/exe_pt.po, exe/locale/ptbr/exe_pt_br.po,
+	  exe/locale/sk/exe_sk.po, exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/locale/sl/exe_sl.po, exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/exe_sv.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zu/exe_zu.po: Ran mki18n.py
+
+2006-03-27 04:06  matthew
+
+	* exe/locale/de/exe_de.po.stats, exe/locale/de/pootle-exe-de.stats,
+	  exe/locale/el/exe_el.po.stats, exe/locale/el/pootle-exe-el.stats,
+	  exe/locale/et/exe_et.po.stats, exe/locale/et/pootle-exe-et.prefs,
+	  exe/locale/et/pootle-exe-et.stats, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fa/pootle-exe-fa.prefs,
+	  exe/locale/fa/pootle-exe-fa.stats, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/hu/pootle-exe-hu.prefs,
+	  exe/locale/hu/pootle-exe-hu.stats, exe/locale/is/exe_is.po.stats,
+	  exe/locale/is/pootle-exe-is.stats,
+	  exe/locale/jp/pootle-exe-jp.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.stats, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.prefs,
+	  exe/locale/pl/pootle-exe-pl.stats, exe/locale/pt/exe_pt.po.stats,
+	  exe/locale/pt/pootle-exe-pt.stats, exe/locale/ptbr/exe_pt_br.po,
+	  exe/locale/ptbr/pootle-exe-ptbr.stats,
+	  exe/locale/sk/exe_sk.po.stats, exe/locale/sk/pootle-exe-sk.stats,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sl/pootle-exe-sl.stats,
+	  exe/locale/sv/exe_sv.po.stats, exe/locale/sv/pootle-exe-sv.stats,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.stats: Import from pootle
+
+2006-03-24 06:39  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_pt_BR.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/jp/exe_jp.po, exe/locale/messages.pot,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/mi/exe_mi.po,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/LC_MESSAGES/exe.mo, exe/locale/pt/exe_pt.po,
+	  exe/locale/ptbr/exe_pt_br.po, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/locale/zh/exe_zh.po,
+	  exe/locale/zu/exe_zu.po: Ran mki18n.py and deleted old ptbr
+	  translation
+
+2006-03-24 06:35  matthew
+
+	* exe/locale/es/exe_es.po, exe/locale/es/exe_es.po.stats,
+	  exe/locale/it/exe_it.po.stats, exe/locale/it/pootle-exe-it.prefs,
+	  exe/locale/it/pootle-exe-it.stats, exe/locale/jp/exe_jp.po,
+	  exe/locale/jp/messages.po, exe/locale/ptbr/exe_pt_br.po,
+	  exe/locale/ptbr/messages.po, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.stats: Renamed jp and ptbr messages.po
+	  to real names. Added Carla to italian translation
+
+2006-03-24 05:41  matthew
+
+	* exe/locale/es/exe_es.po, exe/locale/es/exe_es.po.stats,
+	  exe/locale/es/pootle-exe-es.stats, exe/locale/jp,
+	  exe/locale/jp/messages.po, exe/locale/jp/messages.po.pending,
+	  exe/locale/jp/messages.po.stats,
+	  exe/locale/jp/pootle-exe-jp.prefs,
+	  exe/locale/jp/pootle-exe-jp.stats, exe/locale/ptbr,
+	  exe/locale/ptbr/messages.po, exe/locale/ptbr/messages.po.pending,
+	  exe/locale/ptbr/messages.po.stats,
+	  exe/locale/ptbr/pootle-exe-ptbr.prefs,
+	  exe/locale/ptbr/pootle-exe-ptbr.stats: Added Japonese and ptbr
+	  translations
+
+2006-03-24 05:40  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_pt_BR.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/exe_pt.po, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/locale/zh/exe_zh.po,
+	  exe/locale/zu/exe_zu.po: Ran mki18l.py
+
+2006-03-24 05:38  matthew
+
+	* exe/locale/es/exe_es.po, exe/locale/es/exe_es.po.stats,
+	  exe/locale/es/pootle-exe-es.prefs,
+	  exe/locale/es/pootle-exe-es.stats, exe/locale/zh/exe_zh.po,
+	  exe/locale/zh/exe_zh.po.stats, exe/locale/zh/pootle-exe-zh.prefs,
+	  exe/locale/zh/pootle-exe-zh.stats: Update of translations from
+	  pootle server
+
+2006-03-23 01:03  matthew
+
+	* exe/locale/de/exe_de.po.stats, exe/locale/de/pootle-exe-de.prefs,
+	  exe/locale/de/pootle-exe-de.stats, exe/locale/el/exe_el.po.stats,
+	  exe/locale/el/pootle-exe-el.prefs,
+	  exe/locale/en/pootle-exe-en.prefs, exe/locale/es/exe_es.po,
+	  exe/locale/es/exe_es.po.stats, exe/locale/es/pootle-exe-es.prefs,
+	  exe/locale/es/pootle-exe-es.stats, exe/locale/et/exe_et.po.stats,
+	  exe/locale/et/pootle-exe-et.prefs, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fa/pootle-exe-fa.prefs, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/hu/pootle-exe-hu.prefs, exe/locale/is/exe_is.po.stats,
+	  exe/locale/is/pootle-exe-is.prefs, exe/locale/it/exe_it.po.stats,
+	  exe/locale/it/pootle-exe-it.prefs, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.prefs, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.prefs, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.prefs, exe/locale/pt/exe_pt.po.stats,
+	  exe/locale/pt/pootle-exe-pt.prefs, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sk/pootle-exe-sk.prefs, exe/locale/sl/exe_sl.po.stats,
+	  exe/locale/sl/pootle-exe-sl.prefs, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/sv/pootle-exe-sv.prefs, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.prefs,
+	  exe/locale/zh/pootle-exe-zh.stats, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.prefs: Changes to Pootle
+
+2006-03-23 00:03  matthew
+
+	* exe/locale/es/exe_es.po: Test commit to spanish translation to
+	  test pootle update
+
+2006-03-22 22:18  jenny
+
+	* exe/engine/truefalseidevice.py, exe/idevices/appletidevice.py,
+	  exe/webui/truefalseblock.py: fixed isseues 198 instructions for
+	  learners field in true false idevice and 294 Java applet iDevice -
+	  instructions for completion.
+
+2006-03-22 10:56  matthew
+
+	* exe/__init__.py, exe/application.py, exe/engine/__init__.py,
+	  exe/engine/attachmentidevice.py, exe/engine/beautifulsoup.py,
+	  exe/engine/casestudyidevice.py, exe/engine/clozeidevice.py,
+	  exe/engine/config.py, exe/engine/configparser.py,
+	  exe/engine/error.py, exe/engine/externalurlidevice.py,
+	  exe/engine/field.py, exe/engine/flashmovieidevice.py,
+	  exe/engine/flashwithtextidevice.py, exe/engine/freetextidevice.py,
+	  exe/engine/galleryidevice.py, exe/engine/genericidevice.py,
+	  exe/engine/idevice.py, exe/engine/idevicestore.py,
+	  exe/engine/imagemagnifieridevice.py,
+	  exe/engine/imagewithtextidevice.py, exe/engine/linuxconfig.py,
+	  exe/engine/locales.py, exe/engine/macconfig.py,
+	  exe/engine/multichoiceidevice.py, exe/engine/node.py,
+	  exe/engine/package.py, exe/engine/packagestore.py,
+	  exe/engine/persist.py, exe/engine/quiztestidevice.py,
+	  exe/engine/reflectionidevice.py, exe/engine/resource.py,
+	  exe/engine/standaloneconfig.py, exe/engine/titleidevice.py,
+	  exe/engine/translate.py, exe/engine/truefalseidevice.py,
+	  exe/engine/uniqueidgenerator.py, exe/engine/version.py,
+	  exe/engine/wikipediaidevice.py, exe/engine/winconfig.py,
+	  exe/webui/__init__.py, exe/webui/aboutpage.py,
+	  exe/webui/attachmentblock.py, exe/webui/authoringpage.py,
+	  exe/webui/block.py, exe/webui/blockfactory.py,
+	  exe/webui/browser.py, exe/webui/builtinblocks.py,
+	  exe/webui/casestudyblock.py, exe/webui/clozeblock.py,
+	  exe/webui/common.py, exe/webui/editorelement.py,
+	  exe/webui/editorpage.py, exe/webui/editorpane.py,
+	  exe/webui/element.py, exe/webui/elementfactory.py,
+	  exe/webui/errorpage.py, exe/webui/externalurlblock.py,
+	  exe/webui/flashmovieblock.py, exe/webui/flashwithtextblock.py,
+	  exe/webui/freetextblock.py, exe/webui/galleryblock.py,
+	  exe/webui/genericblock.py, exe/webui/imagemagnifierblock.py,
+	  exe/webui/imagewithtextblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/optionelement.py, exe/webui/packageredirectpage.py,
+	  exe/webui/preferencespage.py, exe/webui/questionelement.py,
+	  exe/webui/quiztestblock.py, exe/webui/reflectionblock.py,
+	  exe/webui/renderable.py, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py, exe/webui/truefalseblock.py,
+	  exe/webui/truefalseelement.py, exe/webui/webserver.py,
+	  exe/webui/wikipediablock.py: Issue 302: Updated all copyright
+	  notices
+
+2006-03-22 10:50  matthew
+
+	* exe/webui/aboutpage.py: Issue 302: Updated copyright to 2006
+
+2006-03-22 10:49  matthew
+
+	* exe/engine/galleryidevice.py, exe/webui/galleryblock.py: Issue
+	  289: Made gallery have instructions!
+
+2006-03-22 10:27  matthew
+
+	* exe/webui/element.py: Issue 288: Made cloze score be displayed
+	  below buttons
+
+2006-03-22 09:59  matthew
+
+	* exe/webui/attachmentblock.py, exe/webui/common.py: Issue 287: Made
+	  attachment block show Filename: label
+
+2006-03-22 09:56  matthew
+
+	* exe/webui/casestudyblock.py: Code tidy
+
+2006-03-22 09:17  matthew
+
+	* exe/webui/common.py: Made hint more useful
+
+2006-03-22 09:15  matthew
+
+	* exe/engine/attachmentidevice.py: Issue 285: Changed the
+	  description of attachment idevice
+
+2006-03-22 09:07  matthew
+
+	* exe/xului/mainpage.py, exe/xului/outlinepane.py,
+	  exe/xului/scripts/mainpage.js: Issue 295: Made outline node
+	  selection match the real selection when loading
+
+2006-03-22 01:06  djm
+
+	* exe/engine/package.py, exe/export/websitepage.py,
+	  exe/webui/style/seamist/content.css, exe/xului/propertiespage.py,
+	  exe/xului/templates/packageproperties.xul,
+	  exe/xului/templates/projectproperties.xul,
+	  exe/xului/templates/properties.xul: Background image exporting
+	  (with tile option)
+
+2006-03-21 00:44  matthew
+
+	* app.fil, exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/de/exe_de.po, exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/el/exe_el.po, exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/en/exe_en.po, exe/locale/es/LC_MESSAGES/exe.mo,
+	  exe/locale/es/exe_es.po, exe/locale/et/LC_MESSAGES/exe.mo,
+	  exe/locale/et/exe_et.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/exe_pt.po, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/locale/zh/exe_zh.po,
+	  exe/locale/zu/exe_zu.po, messages.pot, tools/mki18n.py: Updated
+	  all po files for use with pootle
+
+2006-03-20 23:53  matthew
+
+	* exe/xului/templates/dublincore.xul,
+	  exe/xului/templates/exportproperties.xul,
+	  exe/xului/templates/projectproperties.xul,
+	  exe/xului/templates/properties.xul: Updated xul templates so more
+	  strings will be translated
+
+2006-03-20 23:16  matthew
+
+	* messages.pot: Updated messages.pot
+
+2006-03-20 05:34  djm
+
+	* exe/engine/package.py, exe/engine/resource.py,
+	  exe/xului/propertiespage.py,
+	  exe/xului/templates/projectproperties.xul,
+	  exe/xului/templates/properties.xul: Can now save background images
+	  in packages
+
+2006-03-20 03:00  djm
+
+	* exe/locale/de/exe_de.po.pending, exe/locale/de/exe_de.po.stats,
+	  exe/locale/de/pootle-exe-de.prefs,
+	  exe/locale/de/pootle-exe-de.stats,
+	  exe/locale/el/exe_el.po.pending, exe/locale/el/exe_el.po.stats,
+	  exe/locale/el/pootle-exe-el.prefs,
+	  exe/locale/el/pootle-exe-el.stats,
+	  exe/locale/en/exe_en.po.pending, exe/locale/en/exe_en.po.stats,
+	  exe/locale/en/pootle-exe-en.prefs,
+	  exe/locale/en/pootle-exe-en.stats,
+	  exe/locale/es/exe_es.po.pending, exe/locale/es/exe_es.po.stats,
+	  exe/locale/es/pootle-exe-es.prefs,
+	  exe/locale/es/pootle-exe-es.stats,
+	  exe/locale/et/exe_et.po.pending, exe/locale/et/exe_et.po.stats,
+	  exe/locale/et/pootle-exe-et.prefs,
+	  exe/locale/et/pootle-exe-et.stats,
+	  exe/locale/fa/exe_fa.po.pending, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fa/pootle-exe-fa.prefs,
+	  exe/locale/fa/pootle-exe-fa.stats,
+	  exe/locale/hu/exe_hu.po.pending, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/hu/pootle-exe-hu.prefs,
+	  exe/locale/hu/pootle-exe-hu.stats,
+	  exe/locale/is/exe_is.po.pending, exe/locale/is/exe_is.po.stats,
+	  exe/locale/is/pootle-exe-is.prefs,
+	  exe/locale/is/pootle-exe-is.stats,
+	  exe/locale/it/exe_it.po.pending, exe/locale/it/exe_it.po.stats,
+	  exe/locale/it/pootle-exe-it.prefs,
+	  exe/locale/it/pootle-exe-it.stats,
+	  exe/locale/mi/exe_mi.po.pending, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.prefs,
+	  exe/locale/mi/pootle-exe-mi.stats,
+	  exe/locale/nl/exe_nl.po.pending, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.prefs,
+	  exe/locale/nl/pootle-exe-nl.stats,
+	  exe/locale/pl/exe_pl.po.pending, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.prefs,
+	  exe/locale/pl/pootle-exe-pl.stats,
+	  exe/locale/pt/exe_pt.po.pending, exe/locale/pt/exe_pt.po.stats,
+	  exe/locale/pt/pootle-exe-pt.prefs,
+	  exe/locale/pt/pootle-exe-pt.stats,
+	  exe/locale/sk/exe_sk.po.pending, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sk/pootle-exe-sk.prefs,
+	  exe/locale/sk/pootle-exe-sk.stats,
+	  exe/locale/sl/exe_sl.po.pending, exe/locale/sl/exe_sl.po.stats,
+	  exe/locale/sl/pootle-exe-sl.prefs,
+	  exe/locale/sl/pootle-exe-sl.stats,
+	  exe/locale/sv/exe_sv.po.pending, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/sv/pootle-exe-sv.prefs,
+	  exe/locale/sv/pootle-exe-sv.stats,
+	  exe/locale/zh/exe_zh.po.pending, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.prefs,
+	  exe/locale/zh/pootle-exe-zh.stats,
+	  exe/locale/zu/exe_zu.po.pending, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.prefs,
+	  exe/locale/zu/pootle-exe-zu.stats: Added pootle files to locale
+	  dirs
+
+2006-03-20 02:26  matthew
+
+	* exe/locale/de/exe_de.po, exe/locale/el/exe_el.po,
+	  exe/locale/en/exe_en.po, exe/locale/es/exe_es.po,
+	  exe/locale/et/exe_et.po, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_et.po, exe/locale/exe_fa.po, exe/locale/exe_hu.po,
+	  exe/locale/exe_is.po, exe/locale/exe_it.po, exe/locale/exe_mi.po,
+	  exe/locale/exe_nl.po, exe/locale/exe_pl.po, exe/locale/exe_pt.po,
+	  exe/locale/exe_sk.po, exe/locale/exe_sl.po, exe/locale/exe_sv.po,
+	  exe/locale/exe_zh.po, exe/locale/exe_zu.po, exe/locale/fa,
+	  exe/locale/fa/exe_fa.po, exe/locale/hu, exe/locale/hu/exe_hu.po,
+	  exe/locale/is/exe_is.po, exe/locale/it, exe/locale/it/exe_it.po,
+	  exe/locale/mi/exe_mi.po, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/exe_pt.po, exe/locale/sk,
+	  exe/locale/sk/exe_sk.po, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/exe_sv.po, exe/locale/zh/exe_zh.po, exe/locale/zu,
+	  exe/locale/zu/exe_zu.po: Moved all po files into sub dirs
+
+2006-03-20 02:26  matthew
+
+	* exe/locale/exe_sk.po: Added Slovakian
+
+2006-03-20 01:23  djm
+
+	* exe/locale/gr: remove this locale, the correct code for greek is
+	  el
+
+2006-03-19 22:03  matthew
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_et.po, exe/locale/exe_fa.po, exe/locale/exe_hu.po,
+	  exe/locale/exe_is.po, exe/locale/exe_it.po, exe/locale/exe_mi.po,
+	  exe/locale/exe_nl.po, exe/locale/exe_pl.po, exe/locale/exe_pt.po,
+	  exe/locale/exe_pt_BR.po, exe/locale/exe_sl.po,
+	  exe/locale/exe_sv.po, exe/locale/exe_zh.po, exe/locale/exe_zu.po,
+	  exe/locale/gr/LC_MESSAGES/exe.mo,
+	  exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/LC_MESSAGES/exe.mo, exe/locale/sl,
+	  exe/locale/sl/LC_MESSAGES, exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo: Added Slovenian 0.12 translation
+	  and ran mk18nl.py
+
+2006-03-19 21:56  djm
+
+	* exe/webui/wikipediablock.py: quick tidyup
+
+2006-03-19 21:49  djm
+
+	* exe/webui/wikipediablock.py: spelling not so good
+
+2006-03-19 21:39  djm
+
+	* exe/webui/wikipediablock.py: half aslepp
+
+2006-03-19 21:23  djm
+
+	* exe/webui/wikipediablock.py: Issues 328 & 323: fixed Italian and
+	  added Slovenian Wikipedia URL
+
+2006-03-16 23:34  matthew
+
+	* exe/engine/field.py: Made cloze idevice support umlautes and
+	  friends
+
+2006-03-16 23:33  matthew
+
+	* exe/webui/scripts/common.js: Made cloze idevice find blanks deep
+	  in HTML
+
+2006-03-16 23:31  matthew
+
+	* tools/svnmeld: Added a new tool for melding a local file to svn
+	  version
+
+2006-03-16 04:13  matthew
+
+	* doc/quickdownload.php: Replaced contrib with main for ubuntu info
+
+2006-03-16 04:10  matthew
+
+	* doc/quickdownload.php: Added quotes to home page ubuntu section
+
+2006-03-16 04:05  matthew
+
+	* doc/quickdownload.php: Made changes to doc thing
+
+2006-03-16 03:59  matthew
+
+	* doc/quickdownload.php: Added more ubuntu lines to web page
+
+2006-03-16 03:55  djm
+
+	* doc/quickdownload.php: Updated for 0.14, added Ubuntu
+
+2006-03-15 22:01  matthew
+
+	* exe/engine/package.py: Removed print statement
+
+2006-03-15 22:00  matthew
+
+	* exe/xului/propertiespage.py, exe/xului/templates/dublincore.xml,
+	  exe/xului/templates/exportproperties.xul,
+	  exe/xului/templates/projectproperties.xul,
+	  exe/xului/templates/properties.xul: Added developer documentation
+	  to properties pages.
+
+2006-03-15 21:38  matthew
+
+	* exe/engine/package.py: Made exe load packages with german
+	  filenames on attachments/flash, etc.
+
+2006-03-15 21:26  jenny
+
+	* exe/idevices/forumelement.py: fixed forum idevice title bug.
+
+2006-03-15 08:46  jenny
+
+	* exe/export/scormexport.py, exe/idevices/forumidevice.py: fixed
+	  issue 309 "Discussion Activity" won't work for non English.
+
+2006-03-15 05:29  matthew
+
+	* exe/xului/templates/projectproperties.xul: Issue 306: Added button
+	  that for project properties that makes it reload the tree.
+
+2006-03-15 05:28  matthew
+
+	* exe/export/singlepageexport.py, exe/export/websitepage.py,
+	  exe/webui/common.py: Made XHTML be transitional again!
+
+2006-03-15 05:17  matthew
+
+	* exe/webui/style/default/content.css: Remvoed invalid css line
+
+2006-03-15 04:20  djm
+
+	* doc/eXe-tutorial.elp, exe/export/singlepageexport.py,
+	  exe/export/websitepage.py,
+	  exe/xului/templates/projectproperties.xul,
+	  exe/xului/templates/properties.xul: Added changes for headers in
+	  export
+
+2006-03-14 05:44  matthew
+
+	* ChangeLog, NEWS, README, app.fil, exe/engine/field.py,
+	  exe/engine/flashmovieidevice.py,
+	  exe/engine/flashwithtextidevice.py, exe/engine/galleryidevice.py,
+	  exe/engine/imagemagnifieridevice.py, exe/engine/package.py,
+	  exe/engine/resource.py, exe/engine/version.py,
+	  exe/export/scormexport.py, exe/idevices/forumblock.py,
+	  exe/idevices/forumelement.py, exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/exe_de.po,
+	  exe/locale/exe_el.po, exe/locale/exe_en.po, exe/locale/exe_es.po,
+	  exe/locale/exe_et.po, exe/locale/exe_fa.po, exe/locale/exe_hu.po,
+	  exe/locale/exe_is.po, exe/locale/exe_it.po, exe/locale/exe_mi.po,
+	  exe/locale/exe_nl.po, exe/locale/exe_pl.po, exe/locale/exe_pt.po,
+	  exe/locale/exe_pt_BR.po, exe/locale/exe_sv.po,
+	  exe/locale/exe_zh.po, exe/locale/exe_zu.po, exe/locale/gr,
+	  exe/locale/gr/LC_MESSAGES, exe/locale/gr/LC_MESSAGES/exe.mo,
+	  exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/webui/attachmentblock.py,
+	  exe/webui/clozeblock.py, exe/webui/common.py,
+	  exe/webui/element.py, exe/webui/galleryblock.py,
+	  exe/webui/imagemagnifierblock.py, exe/webui/propertiespage.py,
+	  exe/webui/propertiespane.py, exe/webui/quiztestblock.py,
+	  exe/webui/scripts/SCOFunctions.js, exe/webui/scripts/common.js,
+	  exe/webui/style/Kahurangi/popup_bg.gif,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/default/popup_bg.gif,
+	  exe/webui/style/garden/popup_bg.gif,
+	  exe/webui/style/seamist/popup_bg.gif,
+	  exe/webui/style/silver/popup_bg.gif,
+	  exe/webui/style/standardwhite/popup_bg.gif,
+	  exe/webui/webserver.py, exe/webui/wikipediablock.py,
+	  exe/xului/propertiespage.py, exe/xului/templates/dublincore.xml,
+	  exe/xului/templates/dublincore.xul,
+	  exe/xului/templates/exportproperties.xul,
+	  exe/xului/templates/properties.xul,
+	  installs/debian/ubuntu/buildUbuntuPackage.py,
+	  installs/debian/ubuntu/debian/PKG-INFO,
+	  installs/debian/ubuntu/debian/changelog,
+	  installs/gentoo/exe-0.14.ebuild, installs/gentoo/makeEbuild.py,
+	  installs/windows/applet update.nsi, installs/windows/exe.nsi,
+	  installs/windows/exe.standalone.nsi, installs/windows/forum
+	  update.nsi, installs/windows/language pack update.nsi,
+	  messages.pot, tools/mki18n.py: Merged from 0.14 branch to trunk
+
+2006-03-07 03:18  matthew
+
+	* exe/webui/wikipediablock.py: Fixed wikipedia block
 
 2006-03-05 22:54  jenny
 

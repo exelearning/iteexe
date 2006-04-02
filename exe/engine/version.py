@@ -20,11 +20,11 @@
 
 """
 Version Information
-2006-01-11
+2006-04-03
 """
 
 project        = "exe"
-release        = "0.14"
+release        = "0.15"
 revision       = "$Revision$"[11:-2]
 version        = release + "." + revision
 
