@@ -69,6 +69,9 @@ class WikipediaBlock(Block):
         if 'site'+self.id in request.args:
             self.idevice.site = request.args['site'+self.id][0]
 
+        if 'title'+self.id in request.args:
+            self.idevice.title = request.args['title'+self.id][0]
+
 
     def renderEdit(self, style):
         """
