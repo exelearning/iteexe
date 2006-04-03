@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-03 15:19+1200\n"
+"POT-Creation-Date: 2006-04-04 10:11+1200\n"
 "PO-Revision-Date: 2006-01-10 13:23+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -28,8 +28,10 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Μετακίνηση σε---"
 
+#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
-#: exe/xului/mainpage.py:343
+#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
 msgstr ". Παρακαλώ, χρησιμοποιήστε ονόματα ASCII."
 
@@ -384,8 +386,10 @@ msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' α�
 msgid "Cancel"
 msgstr "Ακύρωση"
 
+#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:288
-#: exe/xului/mainpage.py:341
+#: exe/xului/mainpage.py:341 exe/xului/mainpage.old.py:222
+#: exe/xului/mainpage.old.py:303
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση στον κατάλογο"
 
@@ -454,11 +458,11 @@ msgstr "Κάντε κλικ εδώ"
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr ""
 
-#: exe/engine/galleryidevice.py:291 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155 exe/webui/common.py:274
-#: exe/webui/common.py:275 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:333
+#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/editorpane.py:333
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
@@ -481,8 +485,8 @@ msgstr "Κλείσιμο"
 msgid "Confirm and submit"
 msgstr ""
 
-#: exe/webui/testquestionelement.py:93 exe/webui/optionelement.py:81
-#: exe/webui/optionelement.py:129
+#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
+#: exe/webui/testquestionelement.py:93
 msgid "Correct"
 msgstr "Σωστό"
 
@@ -498,10 +502,10 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 
+#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
+#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
-#: exe/webui/block.py:208 exe/webui/editorpage.py:177
-#: exe/webui/editorpage.py:181 exe/webui/galleryblock.py:246
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -521,8 +525,8 @@ msgstr "Επιλογή εικόνας"
 msgid "Delete option"
 msgstr "Επιλογή διαγραφής"
 
-#: exe/webui/testquestionelement.py:85 exe/webui/questionelement.py:79
-#: exe/webui/truefalseelement.py:102
+#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
+#: exe/webui/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -561,7 +565,7 @@ msgstr ""
 msgid "Describe the tasks the learners should complete."
 msgstr "Περιγράψτε τις εργασίες που θα πρέπει να ολοκληρώσουν οι μαθητές."
 
-#: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:49
+#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Περιγραφή"
 
@@ -787,7 +791,8 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
-#: exe/xului/mainpage.py:527
+#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:527
+#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Λάθος κατά τη φόρτωση του πακέτου \"%s\": %s"
@@ -800,7 +805,9 @@ msgstr ""
 msgid "Example Example"
 msgstr ""
 
+#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:472 exe/xului/mainpage.py:490
+#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωσή στο %s"
@@ -817,11 +824,11 @@ msgstr "Πολύ μεγάλο"
 msgid "False"
 msgstr "Λάθος"
 
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
-#: exe/engine/genericidevice.py:155 exe/webui/common.py:192
-#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:90
-#: exe/webui/editorpane.py:220 exe/webui/optionelement.py:93
+#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
+#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
+#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
@@ -841,7 +848,9 @@ msgstr "Ανατροφοδότηση:"
 msgid "Filename"
 msgstr "Μετονομασία"
 
+#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:394 exe/xului/mainpage.py:435
+#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να αντικατασταθεί"
@@ -945,9 +954,9 @@ msgstr "Συμβουλή:"
 msgid "Home"
 msgstr "Αρχή"
 
-#: exe/webui/block.py:276 exe/webui/multichoiceblock.py:176
-#: exe/webui/genericblock.py:79 exe/webui/genericblock.py:104
-#: exe/webui/galleryblock.py:312
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
+#: exe/webui/block.py:276 exe/webui/genericblock.py:79
+#: exe/webui/genericblock.py:104
 #, fuzzy
 msgid "IDevice Icon"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
@@ -1187,8 +1196,8 @@ msgid ""
 "this iDevice."
 msgstr ""
 
-#: exe/webui/testquestionelement.py:95 exe/webui/optionelement.py:76
-#: exe/webui/optionelement.py:81
+#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
+#: exe/webui/testquestionelement.py:95
 msgid "Option"
 msgstr "Επιλογή"
 
@@ -1205,7 +1214,8 @@ msgstr "Άλλο"
 msgid "Outline"
 msgstr "Περίγραμμα"
 
-#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:369
+#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:253
+#: exe/xului/mainpage.py:369 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
@@ -1347,8 +1357,8 @@ msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 msgid "Question(s)"
 msgstr "Ερωτήσεις"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
-#: exe/webui/truefalseelement.py:79
+#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
+#: exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -1546,11 +1556,13 @@ msgstr "Μικρό"
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
 
-#: exe/xului/mainpage.py:526
+#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:526
+#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
 
-#: exe/xului/mainpage.py:524
+#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:524
+#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1579,8 +1591,8 @@ msgstr "Αυστηρή βαθμολογία;"
 msgid "Strong emphasis"
 msgstr "Έντονη έμφαση"
 
-#: exe/webui/common.py:208 exe/webui/element.py:620
-#: exe/webui/editorpane.py:397
+#: exe/webui/common.py:208 exe/webui/editorpane.py:397
+#: exe/webui/element.py:620
 msgid "Submit"
 msgstr "Υποβολή"
 
@@ -1597,8 +1609,8 @@ msgstr "Άρθρο της Σουηδικής Βίκι εγκυκλοπαίδει
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Οι δάσκαλοι πρέπει να λάβουν τα εξής υπόψη κατά τη χρησιμοποίηση αυτού του εκπαιδευτικού εργαλείου: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον πόρο σας που θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο σπουδαστής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν πόρο διδασκαλίας.</li><li>Από μια προοπτική οπτικής σχεδίασης, αποφύγετε να έχετε δύο εκπαιδευτικά εργαλεία ακολουθώντας αμέσως το ένα το άλλο χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε ένα εκπαιδευτικό εργαλείο. </li><li>3.Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος εκπλήρωσης της δραστηριότητας ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
 
-#: exe/engine/imagemagnifieridevice.py:53
 #: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "Κείμενο"
 
@@ -1809,18 +1821,17 @@ msgstr "Η σύνδεση είναι αδύνατη"
 msgid "Unit"
 msgstr "Παράγραφος"
 
-#: exe/engine/wikipediaidevice.py:52 exe/engine/flashmovieidevice.py:40
-#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
-#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41
-#: exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
-#: exe/engine/truefalseidevice.py:60 exe/engine/externalurlidevice.py:38
-#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:297
-#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:347
-#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:432
-#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:42
-#: exe/engine/galleryidevice.py:490 exe/idevices/forumidevice.py:41
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
+#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
+#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
+#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
 msgstr "Πανεπιστήμιο του Auckland"
@@ -1949,12 +1960,12 @@ msgstr "αναπαραγωγή θέματος.\n"
 msgid "duplicate topic name."
 msgstr "αναπαραγωγή θέματος"
 
-#: exe/export/imsexport.py:188 exe/export/scormexport.py:257
+#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/editorpage.py:161 exe/webui/common.py:67
-#: exe/webui/preferencespage.py:73
+#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
+#: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως μάθηση"
 

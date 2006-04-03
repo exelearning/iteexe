@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-03 15:19+1200\n"
+"POT-Creation-Date: 2006-04-04 10:11+1200\n"
 "PO-Revision-Date: 2006-04-03 23:50+1200\n"
 "Last-Translator: Ralf Hilgenstock <ralf.hilgenstock@dialoge.net>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
@@ -23,7 +23,8 @@ msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
-msgstr "Suchen Sie die .txt-Datei (in der Anwendung)\n"
+msgstr ""
+"Suchen Sie die .txt-Datei (in der Anwendung)\n"
 "und öffnen Sie diese. Kopieren Sie den Inhalt der Datei\n"
 "mit Strg+A (alles markieren) und Strg+C (kopieren) in das Feld.\n"
 
@@ -31,8 +32,10 @@ msgstr "Suchen Sie die .txt-Datei (in der Anwendung)\n"
 msgid "---Move To---"
 msgstr "---Verschieben nach---"
 
+#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
-#: exe/xului/mainpage.py:343
+#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.old.py:305
 msgid ". Please use ASCII names."
 msgstr ". Verwenden Sie bitte ASCII-Zeichen."
 
@@ -273,7 +276,8 @@ msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
-msgstr "Fügen Sie nun alle Dateien mit \n"
+msgstr ""
+"Fügen Sie nun alle Dateien mit \n"
 "Ausnahme der .txt-Dateien hinzu\n"
 "Laden Sie jede Datei einzeln mit \n"
 "der Upload-Funktion hinzu.\n"
@@ -415,8 +419,10 @@ msgstr "Können Teilnehmer/innen in diesem Forum Beiträge posten?"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:288
-#: exe/xului/mainpage.py:341
+#: exe/xului/mainpage.py:341 exe/xului/mainpage.old.py:222
+#: exe/xului/mainpage.old.py:303
 msgid "Cannot access directory named "
 msgstr "Der Zugriff auf das angegebene Verzeichnis ist nicht möglich."
 
@@ -462,7 +468,8 @@ msgid ""
 "Click \n"
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
-msgstr "Klicken sie auf das Bild oder\n"
+msgstr ""
+"Klicken sie auf das Bild oder\n"
 "den Bild hinzufügen'-Button,\n"
 "um eine Bilddatei auszuwählen,\n"
 "die vergrößert angezeigt werden soll."
@@ -487,11 +494,11 @@ msgstr "Klicken Sie hier"
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Klicken Sie auf den 'Bild hinzufügen'-Button, um ein Bild auszuwählen. Das Bild erscheint unten und kann von Ihnen mit ergänzenden Textinformationen versehen werden. Geben Sie möglichst auch eine Bildgröße mit an."
 
-#: exe/engine/galleryidevice.py:291 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155 exe/webui/common.py:274
-#: exe/webui/common.py:275 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:333
+#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/editorpane.py:333
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
@@ -513,8 +520,8 @@ msgstr "Lückentext"
 msgid "Confirm and submit"
 msgstr "Zurückmelden und abgeben"
 
-#: exe/webui/testquestionelement.py:93 exe/webui/optionelement.py:81
-#: exe/webui/optionelement.py:129
+#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
+#: exe/webui/testquestionelement.py:93
 msgid "Correct"
 msgstr "Richtig"
 
@@ -537,10 +544,10 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
+#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
-#: exe/webui/block.py:208 exe/webui/editorpage.py:177
-#: exe/webui/editorpage.py:181 exe/webui/galleryblock.py:246
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -564,8 +571,8 @@ msgstr "Bild löschen"
 msgid "Delete option"
 msgstr "Löschoption"
 
-#: exe/webui/testquestionelement.py:85 exe/webui/questionelement.py:79
-#: exe/webui/truefalseelement.py:102
+#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
+#: exe/webui/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Frage löschen"
 
@@ -608,7 +615,7 @@ msgstr ""
 msgid "Describe the tasks the learners should complete."
 msgstr "Beschreiben Sie die Aufgabenstellung"
 
-#: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:49
+#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -676,7 +683,8 @@ msgid ""
 "EXPORT FAILED.\n"
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "Fehler beim Export.\n"
+msgstr ""
+"Fehler beim Export.\n"
 "\"%s\" besteht bereits.\n"
 "Versuchen Sie es erneut mit einem anderen Dateinamen."
 
@@ -856,7 +864,8 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr "Geben Sie einen Text ein, der mit der herunterzuladenden Datei angezeigt werden soll. Das können Hinweise zur Nutzung und Bearbeitung der Datei und ihres Inhalts sein."
 
-#: exe/xului/mainpage.py:527
+#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:527
+#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Fehler beim Laden des Paketes \"%s\".%s"
@@ -869,7 +878,9 @@ msgstr "Beispiel"
 msgid "Example Example"
 msgstr "Beispiel Beispiel"
 
+#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:472 exe/xului/mainpage.py:490
+#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportier tzu %s"
@@ -886,11 +897,11 @@ msgstr "Extra groß"
 msgid "False"
 msgstr "Falsch"
 
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
-#: exe/engine/genericidevice.py:155 exe/webui/common.py:192
-#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:90
-#: exe/webui/editorpane.py:220 exe/webui/optionelement.py:93
+#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
+#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
+#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -913,7 +924,9 @@ msgstr "Feedback"
 msgid "Filename"
 msgstr "Dtaeiname"
 
+#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:394 exe/xului/mainpage.py:435
+#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Dateiname %s ist eine Datei, sie kann nicht ersetzt werden."
@@ -1019,9 +1032,9 @@ msgstr "Home"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/block.py:276 exe/webui/multichoiceblock.py:176
-#: exe/webui/genericblock.py:79 exe/webui/genericblock.py:104
-#: exe/webui/galleryblock.py:312
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
+#: exe/webui/block.py:276 exe/webui/genericblock.py:79
+#: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
 msgstr "IDevice Icon"
 
@@ -1259,8 +1272,8 @@ msgstr ""
 "Für dieses iDevice bitte nur .swf (Flash-Objekte)\n"
 "auswählen."
 
-#: exe/webui/testquestionelement.py:95 exe/webui/optionelement.py:76
-#: exe/webui/optionelement.py:81
+#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
+#: exe/webui/testquestionelement.py:95
 msgid "Option"
 msgstr "Antwort"
 
@@ -1276,7 +1289,8 @@ msgstr "Andere"
 msgid "Outline"
 msgstr "Übersicht"
 
-#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:369
+#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:253
+#: exe/xului/mainpage.py:369 exe/xului/mainpage.old.py:239
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paket gespeichert zu %s"
@@ -1355,7 +1369,8 @@ msgstr "Vorheriges"
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
-msgstr "Geben Sie eine Beschreibung\n"
+msgstr ""
+"Geben Sie eine Beschreibung\n"
 "für das zu vergrößernde Bild ein."
 
 #: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:78
@@ -1387,9 +1402,9 @@ msgstr ""
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
-msgstr "Geben Sie eine Anleitung wie die \n"
+msgstr ""
+"Geben Sie eine Anleitung wie die \n"
 "Richtig-Falsch-Frage vervollständigt werden soll."
-""
 
 #: exe/engine/clozeidevice.py:115
 msgid ""
@@ -1419,8 +1434,8 @@ msgstr "Anweisung für Teilnehmer/innen hier einfügen."
 msgid "Question(s)"
 msgstr "Frage(n)"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
-#: exe/webui/truefalseelement.py:79
+#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
+#: exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Frage:"
 
@@ -1480,7 +1495,8 @@ msgid ""
 "SAVE FAILED.\n"
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "Fehler beim Speichern.\n"
+msgstr ""
+"Fehler beim Speichern.\n"
 "\"%a\" besteht bereits\n"
 "Versuchen Sie es mit einem anderen Dateinamen noch einmal."
 
@@ -1563,7 +1579,8 @@ msgstr "Getrennte Gruppen"
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
-msgstr "Der anfängliche Vergrößerungsfaktor\n"
+msgstr ""
+"Der anfängliche Vergrößerungsfaktor\n"
 "beim Laden des iDevices in Prozent\n"
 "der Original-Bildgröße"
 
@@ -1572,7 +1589,8 @@ msgstr "Der anfängliche Vergrößerungsfaktor\n"
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
-msgstr "Höchstgröße für die Vergrößerung\n"
+msgstr ""
+"Höchstgröße für die Vergrößerung\n"
 "als Prozentwert der Original- \n"
 "Bildgröße"
 
@@ -1621,11 +1639,13 @@ msgstr "Klein"
 msgid "Some emphasis"
 msgstr "Einige Bedeutung"
 
-#: exe/xului/mainpage.py:526
+#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:526
+#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
 msgid "Sorry, wrong file format"
 msgstr "Sorry, falsches Dateiformat"
 
-#: exe/xului/mainpage.py:524
+#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:524
+#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1654,8 +1674,8 @@ msgstr "Strenge Bewertung?"
 msgid "Strong emphasis"
 msgstr "Hohe Bedeutung"
 
-#: exe/webui/common.py:208 exe/webui/element.py:620
-#: exe/webui/editorpane.py:397
+#: exe/webui/common.py:208 exe/webui/editorpane.py:397
+#: exe/webui/element.py:620
 msgid "Submit"
 msgstr "Antwort abgeben "
 
@@ -1671,8 +1691,8 @@ msgstr "Wikipedia Artikel (Schwedisch)"
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Trainer/innen sollten folgende Hinweise beim Erstellen von iDevices beachten:<ol><li>Zu viele verschiedene Aktivitäten können bei den Teilnehmer/innen zu Verwirrung führen. Zumeist reichen drei oder vier verschiedene Arten von Aktivitäten völlig aus.</li><li>Vermeiden Sie mehrere iDevices direkt hintereinander ohne einen Informationstext dazwischen, der Orientierung gibt.</li><li>Achten Sie auf den Zeitaufwand zur Bearbeitung einer Aktivität. Er sollte in einem angemessenen Verhältnis zum Lerneffekt stehen.y/li></ol>"
 
-#: exe/engine/imagemagnifieridevice.py:53
 #: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "Text"
 
@@ -1730,7 +1750,8 @@ msgstr "Tragen Sie hier den Zweck des Lernschritts ein. Er ist ein Hinweis für 
 msgid ""
 "There was an error in the export:\n"
 "%s"
-msgstr "Beim Export ist ein Fehler aufgetreten:\n"
+msgstr ""
+"Beim Export ist ein Fehler aufgetreten:\n"
 "%s"
 
 #: exe/webui/wikipediablock.py:180
@@ -1742,8 +1763,7 @@ msgstr "Der Beitrag ist lizensiert unter der"
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
-msgstr "Wählen Sie die anfängliche Größen"
-"der Lupe."
+msgstr "Wählen Sie die anfängliche Größender Lupe."
 
 #: exe/engine/flashmovieidevice.py:41
 msgid ""
@@ -1891,18 +1911,17 @@ msgstr "Verbindung konnte nicht hergestellt werden mit "
 msgid "Unit"
 msgstr "Einheit"
 
-#: exe/engine/wikipediaidevice.py:52 exe/engine/flashmovieidevice.py:40
-#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
-#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41
-#: exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
-#: exe/engine/truefalseidevice.py:60 exe/engine/externalurlidevice.py:38
-#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:297
-#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:347
-#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:432
-#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:42
-#: exe/engine/galleryidevice.py:490 exe/idevices/forumidevice.py:41
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
+#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
+#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
+#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
 msgstr "Universität Auckland"
@@ -2036,12 +2055,12 @@ msgstr "Forentitel duplizieren\n"
 msgid "duplicate topic name."
 msgstr "Überschrift duplizieren"
 
-#: exe/export/imsexport.py:188 exe/export/scormexport.py:257
+#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/editorpage.py:161 exe/webui/common.py:67
-#: exe/webui/preferencespage.py:73
+#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
+#: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: elearning XHTML Editor"
 
@@ -2214,7 +2233,8 @@ msgid ""
 "'                Recommended best practice is to select a value from a controlled\n"
 "'                vocabulary or formal classification scheme.\n"
 "'             "
-msgstr "'\n"
+msgstr ""
+"'\n"
 "' Der Gegenstand/Inhalt wird am besten durch\n"
 "'                Kernbegriffe oder Stichworte beschrieben.\n"
 "'                Falls ein Klassifikationsschema existiert, kann\n"
@@ -2359,7 +2379,8 @@ msgid ""
 "'              Type includes terms describing general categories, functions, or\n"
 "'              genres, for content. Recommended best practice is to select a value\n"
 "'              from a controlled vocabulary or controlled classification scheme."
-msgstr "'\n"
+msgstr ""
+"'\n"
 "'Typ  umfasst Begriffe und grundlegende Kategorien, Funktionen\n"
 "'oder Genres des Inhalts. Hilfreich ist es  wenn hierfür\n"
 "'ein gemeinsames Vokabular genutzt wird."
@@ -3186,6 +3207,7 @@ msgstr "Nauru"
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
 #: label="Norwegian Bokmål ">
+#, fuzzy
 msgid "Norwegian Bokml "
 msgstr "Norwegisch"
 
@@ -3511,6 +3533,7 @@ msgstr "Vietnamesisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
 #: label="Volapük; Volapuk ">
+#, fuzzy
 msgid "Volapk; Volapuk "
 msgstr "Volapk; Volapuk"
 
@@ -3634,4 +3657,3 @@ msgstr "Der Urheberrechtshinweis macht deutlich aus welchen Quellen Material sta
 
 #~ msgid "select a language"
 #~ msgstr "Sprache auswählen "
-
