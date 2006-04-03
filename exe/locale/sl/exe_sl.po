@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-31 11:35+1200\n"
+"POT-Creation-Date: 2006-04-03 15:19+1200\n"
 "PO-Revision-Date: 2006-02-28 13:46+0100\n"
 "Last-Translator: Iztok Osredkar <iztok.osredkar@institut-oko.si>\n"
 "Language-Team: Institut OKO <okoinfo@institut-oko.si>\n"
@@ -28,10 +28,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Move To---"
 
-#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
-#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
-#: exe/xului/mainpage.old.py:305
+#: exe/xului/mainpage.py:343
 msgid ". Please use ASCII names."
 msgstr ".Prosimo uporabljajte ASCII imena."
 
@@ -469,10 +467,8 @@ msgstr "Ali lahko slušatelj pošilja  na ta forum?: "
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:288
-#: exe/xului/mainpage.py:341 exe/xului/mainpage.old.py:222
-#: exe/xului/mainpage.old.py:303
+#: exe/xului/mainpage.py:341
 msgid "Cannot access directory named "
 msgstr "Ne morem dostopati do imenovane  mape"
 
@@ -493,7 +489,7 @@ msgstr ""
 msgid "Check Caps?"
 msgstr "Check Caps?"
 
-#: exe/webui/wikipediablock.py:83
+#: exe/webui/wikipediablock.py:86
 msgid "Chinese Wikipedia Article"
 msgstr "Kitajski članki iz Wikipedije"
 
@@ -544,11 +540,11 @@ msgstr "Pritisnite Tukaj"
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr ""
 
-#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
-#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/editorpane.py:333
+#: exe/engine/galleryidevice.py:291 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:333
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
@@ -571,8 +567,8 @@ msgstr "Izpolni v sobesedilu"
 msgid "Confirm and submit"
 msgstr ""
 
-#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:93
+#: exe/webui/testquestionelement.py:93 exe/webui/optionelement.py:81
+#: exe/webui/optionelement.py:129
 msgid "Correct"
 msgstr "Pravilno"
 
@@ -588,10 +584,10 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 
-#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
-#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
+#: exe/webui/block.py:208 exe/webui/editorpage.py:177
+#: exe/webui/editorpage.py:181 exe/webui/galleryblock.py:246
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -611,8 +607,8 @@ msgstr "Izberite sliko"
 msgid "Delete option"
 msgstr "Izbrišite Izbiro"
 
-#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
-#: exe/webui/testquestionelement.py:85
+#: exe/webui/testquestionelement.py:85 exe/webui/questionelement.py:79
+#: exe/webui/truefalseelement.py:102
 msgid "Delete question"
 msgstr "Izbrišite vprašanje"
 
@@ -652,7 +648,7 @@ msgstr ""
 msgid "Describe the tasks the learners should complete."
 msgstr "Opišite naloge, katere naj bi slušatelji zaključili"
 
-#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:49
 msgid "Description"
 msgstr "Opis"
 
@@ -691,7 +687,7 @@ msgstr "Prikaži kot:"
 msgid "Done"
 msgstr "Narejeno"
 
-#: exe/webui/wikipediablock.py:89
+#: exe/webui/wikipediablock.py:92
 msgid "Dutch Wikipedia Article"
 msgstr "Nizozemski članki iz Wikipedije"
 
@@ -735,11 +731,11 @@ msgstr "Vsak posameznik pošlje ji eno razpravo "
 msgid "Edit"
 msgstr "Uredi"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:118 exe/webui/editorpane.py:304
 msgid "Emphasis"
 msgstr "Poudarki"
 
-#: exe/webui/wikipediablock.py:82
+#: exe/webui/wikipediablock.py:85
 msgid "English Wikipedia Article"
 msgstr "Angleški članki iz Wikipedije"
 
@@ -891,8 +887,7 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:527
-#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
+#: exe/xului/mainpage.py:527
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Napaka nameščanja paketa \"%s\": %s "
@@ -905,9 +900,7 @@ msgstr ""
 msgid "Example Example"
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:472 exe/xului/mainpage.py:490
-#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Izvozi v  %s"
@@ -924,11 +917,11 @@ msgstr "Posebno velik"
 msgid "False"
 msgstr "Napačno"
 
-#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
-#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
-#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
-#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
+#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
+#: exe/engine/genericidevice.py:155 exe/webui/common.py:192
+#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:90
+#: exe/webui/editorpane.py:220 exe/webui/optionelement.py:93
 msgid "Feedback"
 msgstr "Povratna informacija"
 
@@ -948,9 +941,7 @@ msgstr "Povratna informacija"
 msgid "Filename"
 msgstr "Preimenuj"
 
-#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:394 exe/xului/mainpage.py:435
-#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ime datoteke %s je datoteka, ni je mogoče zamenjati."
@@ -1000,15 +991,15 @@ msgstr ""
 msgid "Free Text"
 msgstr "Samostojno besedilo"
 
-#: exe/webui/wikipediablock.py:85
+#: exe/webui/wikipediablock.py:88
 msgid "French Wikipedia Article"
 msgstr "Francoski članki iz Wikipedije"
 
-#: exe/webui/wikipediablock.py:180
+#: exe/webui/wikipediablock.py:183
 msgid "GNU Free Documentation License"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:84
+#: exe/webui/wikipediablock.py:87
 msgid "German Wikipedia Article"
 msgstr "Nemški članki iz Wikipedije"
 
@@ -1055,9 +1046,9 @@ msgstr "Namig:"
 msgid "Home"
 msgstr "Domov"
 
-#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
-#: exe/webui/block.py:276 exe/webui/genericblock.py:79
-#: exe/webui/genericblock.py:104
+#: exe/webui/block.py:276 exe/webui/multichoiceblock.py:176
+#: exe/webui/genericblock.py:79 exe/webui/genericblock.py:104
+#: exe/webui/galleryblock.py:312
 #, fuzzy
 msgid "IDevice Icon"
 msgstr "Urejevalnik iNaprave"
@@ -1122,15 +1113,15 @@ msgstr "Navodila za slušatelje"
 msgid "Introduction"
 msgstr "Predstavitev"
 
-#: exe/webui/wikipediablock.py:181
+#: exe/webui/wikipediablock.py:184
 msgid "It uses material from the "
 msgstr ""
 
-#: exe/webui/wikipediablock.py:87
+#: exe/webui/wikipediablock.py:90
 msgid "Italian Wikipedia Article"
 msgstr "Italijanski članki iz Wikipediije"
 
-#: exe/webui/wikipediablock.py:86
+#: exe/webui/wikipediablock.py:89
 msgid "Japanese Wikipedia Article"
 msgstr "Japonski članki iz Wikipedije"
 
@@ -1163,7 +1154,7 @@ msgstr "Levo"
 msgid "Link to the forum"
 msgstr "Povezava na Forum"
 
-#: exe/webui/wikipediablock.py:107
+#: exe/webui/wikipediablock.py:110
 msgid "Load"
 msgstr "Naloži"
 
@@ -1252,7 +1243,7 @@ msgstr "Ni razprav,odgovori so dovoljeni"
 msgid "No discussions, no replies"
 msgstr "Ni razprav,Ni odgovorov"
 
-#: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:307
+#: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:307
 msgid "No emphasis"
 msgstr "Ni poudarka"
 
@@ -1297,8 +1288,8 @@ msgid ""
 "this iDevice."
 msgstr ""
 
-#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
-#: exe/webui/testquestionelement.py:95
+#: exe/webui/testquestionelement.py:95 exe/webui/optionelement.py:76
+#: exe/webui/optionelement.py:81
 msgid "Option"
 msgstr "Možnosti"
 
@@ -1315,8 +1306,7 @@ msgstr "Ostalo"
 msgid "Outline"
 msgstr "Izven dosega"
 
-#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:253
-#: exe/xului/mainpage.py:369 exe/xului/mainpage.old.py:239
+#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:369
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paket shranjen  v: %s"
@@ -1357,11 +1347,11 @@ msgstr "Prosim izberite  pravilen odgovore za vsako posamezno vprašanje"
 msgid "Please select a forum.\n"
 msgstr "Prosim izberite razpravo.\n"
 
-#: exe/webui/wikipediablock.py:88
+#: exe/webui/wikipediablock.py:91
 msgid "Polish Wikipedia Article"
 msgstr "Poljski  članki iz Wikipedije"
 
-#: exe/webui/wikipediablock.py:90
+#: exe/webui/wikipediablock.py:93
 msgid "Portugese Wikipedia Article"
 msgstr "Portugalski članki iz Wikipedije"
 
@@ -1454,8 +1444,8 @@ msgstr "Tukaj postavite navodila za slušatelje"
 msgid "Question(s)"
 msgstr "Vprašanje"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
-#: exe/webui/testquestionelement.py:81
+#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
+#: exe/webui/truefalseelement.py:79
 msgid "Question:"
 msgstr "Vprašanje:"
 
@@ -1606,7 +1596,7 @@ msgid ""
 "as a percentage of the original image size"
 msgstr ""
 
-#: exe/xului/propertiespage.py:201
+#: exe/xului/propertiespage.py:200
 msgid "Settings saved"
 msgstr ""
 
@@ -1631,7 +1621,7 @@ msgstr "Prikaži/izbriši odgovor"
 msgid "Show/Hide Feedback"
 msgstr "Prikaži/skrij odziv"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:102
 #, fuzzy
 msgid "Site"
 msgstr "naslov"
@@ -1640,7 +1630,7 @@ msgstr "naslov"
 msgid "Size of magnifying glass: "
 msgstr "Size of magnifying glass: "
 
-#: exe/webui/wikipediablock.py:92
+#: exe/webui/wikipediablock.py:95
 #, fuzzy
 msgid "Slovenian Wikipedia Article"
 msgstr "Italijanski članki iz Wikipediije"
@@ -1649,17 +1639,15 @@ msgstr "Italijanski članki iz Wikipediije"
 msgid "Small"
 msgstr "Majhen"
 
-#: exe/webui/wikipediablock.py:112 exe/webui/editorpane.py:308
+#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:308
 msgid "Some emphasis"
 msgstr "Nekaj poudarkov"
 
-#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:526
-#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
+#: exe/xului/mainpage.py:526
 msgid "Sorry, wrong file format"
 msgstr "Oprostite, napačen format datoteke "
 
-#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:524
-#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
+#: exe/xului/mainpage.py:524
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1668,7 +1656,7 @@ msgstr ""
 "Oprostite, napačen format datoteke:\n"
 "%s "
 
-#: exe/webui/wikipediablock.py:94
+#: exe/webui/wikipediablock.py:97
 msgid "Spanish Wikipedia Article"
 msgstr "Španjski članki iz Wikipedije"
 
@@ -1684,12 +1672,12 @@ msgstr "Zgodba:"
 msgid "Strict Marking?"
 msgstr "Natančno označevanje?"
 
-#: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:309
+#: exe/webui/wikipediablock.py:116 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
 msgstr "Močan poudarek"
 
-#: exe/webui/common.py:208 exe/webui/editorpane.py:397
-#: exe/webui/element.py:620
+#: exe/webui/common.py:208 exe/webui/element.py:620
+#: exe/webui/editorpane.py:397
 msgid "Submit"
 msgstr "Predložite"
 
@@ -1697,7 +1685,7 @@ msgstr "Predložite"
 msgid "Submit Answer"
 msgstr "Predložite odgovor "
 
-#: exe/webui/wikipediablock.py:95
+#: exe/webui/wikipediablock.py:98
 msgid "Swedish Wikipedia Article"
 msgstr "Švedski  članki iz Wikipedije"
 
@@ -1717,8 +1705,8 @@ msgstr ""
 "aktivnosti odtehta čas in napor, ki sta potrebna za dokončanje te aktivnost.\n"
 "</li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
+#: exe/engine/imagewithtextidevice.py:61
 msgid "Text"
 msgstr "Besedilo"
 
@@ -1783,7 +1771,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:177
+#: exe/webui/wikipediablock.py:180
 msgid "This article is licensed under the "
 msgstr ""
 
@@ -1943,17 +1931,18 @@ msgstr "Ne morem se povezati na"
 msgid "Unit"
 msgstr "Enota"
 
-#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
-#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
-#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
+#: exe/engine/wikipediaidevice.py:52 exe/engine/flashmovieidevice.py:40
+#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
+#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:106
+#: exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
+#: exe/engine/truefalseidevice.py:60 exe/engine/externalurlidevice.py:38
+#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:297
+#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:347
+#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:432
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:42
+#: exe/engine/galleryidevice.py:490 exe/idevices/forumidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
 msgstr "Univerza v Aucklandu"
@@ -2040,11 +2029,11 @@ msgstr ""
 "zavajajoči</li>\n"
 "<li>Zavajanje naj bo nepravilno, vendar verjetno</li></ul>"
 
-#: exe/webui/wikipediablock.py:96
+#: exe/webui/wikipediablock.py:99
 msgid "Wikibooks Article"
 msgstr "Članki iz Wikipedije "
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:100
 msgid "Wikieducator Content"
 msgstr ""
 
@@ -2072,7 +2061,7 @@ msgstr ""
 "To je obvezna polje in boste pozvani, da vnesete označbo če boste poskušali\n"
 "predložiti vašo iNaprave brez nje."
 
-#: exe/webui/wikipediablock.py:184
+#: exe/webui/wikipediablock.py:187
 #, fuzzy
 msgid "article "
 msgstr "Članek"
@@ -2089,12 +2078,12 @@ msgstr "podvojeno ime razprave.\n"
 msgid "duplicate topic name."
 msgstr "podvojeno ime predmeta"
 
-#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
+#: exe/export/imsexport.py:188 exe/export/scormexport.py:257
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
-#: exe/webui/editorpage.py:161
+#: exe/webui/editorpage.py:161 exe/webui/common.py:67
+#: exe/webui/preferencespage.py:73
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML urejevalnik za e-gradiva"
 
@@ -2213,7 +2202,8 @@ msgid "VK_INSERT"
 msgstr "VK_VSTAVI"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em">
+#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
+#: header (an 100px high is recommended).">
 msgid "Header Background:"
 msgstr ""
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-31 11:35+1200\n"
+"POT-Creation-Date: 2006-04-03 15:19+1200\n"
 "PO-Revision-Date: 2006-03-27 22:25+1200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: \n"
@@ -28,10 +28,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Liiguta---"
 
-#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
-#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
-#: exe/xului/mainpage.old.py:305
+#: exe/xului/mainpage.py:343
 msgid ". Please use ASCII names."
 msgstr ". Palun kasuta ASCII nimesid."
 
@@ -383,10 +381,8 @@ msgstr "Kas õpilane võib sellesse foorumisse postitada ?:"
 msgid "Cancel"
 msgstr "Tühista"
 
-#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:288
-#: exe/xului/mainpage.py:341 exe/xului/mainpage.old.py:222
-#: exe/xului/mainpage.old.py:303
+#: exe/xului/mainpage.py:341
 msgid "Cannot access directory named "
 msgstr "Puudub ligipääs kataloogile nimega"
 
@@ -407,7 +403,7 @@ msgstr "Muuda pilti"
 msgid "Check Caps?"
 msgstr "Kontrolli suuri/väikeseid tähti ?"
 
-#: exe/webui/wikipediablock.py:83
+#: exe/webui/wikipediablock.py:86
 msgid "Chinese Wikipedia Article"
 msgstr "Hiina Wikipedia artikkel"
 
@@ -457,11 +453,11 @@ msgstr "Kliki siia"
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr ""
 
-#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
-#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/editorpane.py:333
+#: exe/engine/galleryidevice.py:291 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:333
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
@@ -483,8 +479,8 @@ msgstr "Täida lüngad"
 msgid "Confirm and submit"
 msgstr "Kinnita ja saada"
 
-#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:93
+#: exe/webui/testquestionelement.py:93 exe/webui/optionelement.py:81
+#: exe/webui/optionelement.py:129
 msgid "Correct"
 msgstr "Õige"
 
@@ -500,10 +496,10 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 
-#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
-#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
+#: exe/webui/block.py:208 exe/webui/editorpage.py:177
+#: exe/webui/editorpage.py:181 exe/webui/galleryblock.py:246
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -521,8 +517,8 @@ msgstr "Kustuta pilt"
 msgid "Delete option"
 msgstr "Kustuta valik"
 
-#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
-#: exe/webui/testquestionelement.py:85
+#: exe/webui/testquestionelement.py:85 exe/webui/questionelement.py:79
+#: exe/webui/truefalseelement.py:102
 msgid "Delete question"
 msgstr "Kustuta küsimus"
 
@@ -564,7 +560,7 @@ msgstr ""
 msgid "Describe the tasks the learners should complete."
 msgstr "Kirjelda ülesanded, mida õpilane peab läbima"
 
-#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:49
 msgid "Description"
 msgstr "Kirjeldus"
 
@@ -603,7 +599,7 @@ msgstr "Näita kui:"
 msgid "Done"
 msgstr "Tehtud"
 
-#: exe/webui/wikipediablock.py:89
+#: exe/webui/wikipediablock.py:92
 msgid "Dutch Wikipedia Article"
 msgstr "Hollandi Wkipedia artikkel"
 
@@ -643,11 +639,11 @@ msgstr "Iga isik postitab ühe vestluse"
 msgid "Edit"
 msgstr "Redigeeri"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:118 exe/webui/editorpane.py:304
 msgid "Emphasis"
 msgstr "Rõhuasetus"
 
-#: exe/webui/wikipediablock.py:82
+#: exe/webui/wikipediablock.py:85
 msgid "English Wikipedia Article"
 msgstr "Inglise Wikipedia artikkel"
 
@@ -797,8 +793,7 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:527
-#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
+#: exe/xului/mainpage.py:527
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Viga paketi  \"%s\" laadimisel: %s"
@@ -811,9 +806,7 @@ msgstr "Näide"
 msgid "Example Example"
 msgstr "Näitlik näide"
 
-#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:472 exe/xului/mainpage.py:490
-#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Eksporditud: %s"
@@ -830,11 +823,11 @@ msgstr "Ekstra suur"
 msgid "False"
 msgstr "Väär"
 
-#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
-#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
-#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
-#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
+#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
+#: exe/engine/genericidevice.py:155 exe/webui/common.py:192
+#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:90
+#: exe/webui/editorpane.py:220 exe/webui/optionelement.py:93
 msgid "Feedback"
 msgstr "Tagasiside"
 
@@ -854,9 +847,7 @@ msgstr "Tagasiside:"
 msgid "Filename"
 msgstr "Failinimi"
 
-#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:394 exe/xului/mainpage.py:435
-#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Failinimi %s on fail, ei saa asendada"
@@ -904,15 +895,15 @@ msgstr "Freimi kõrgus:"
 msgid "Free Text"
 msgstr "Vaba tekst"
 
-#: exe/webui/wikipediablock.py:85
+#: exe/webui/wikipediablock.py:88
 msgid "French Wikipedia Article"
 msgstr "Prantsuse Wikipedia artikkel"
 
-#: exe/webui/wikipediablock.py:180
+#: exe/webui/wikipediablock.py:183
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
-#: exe/webui/wikipediablock.py:84
+#: exe/webui/wikipediablock.py:87
 msgid "German Wikipedia Article"
 msgstr "Saksa Wikipeedia artikkel"
 
@@ -959,9 +950,9 @@ msgstr "Vihje:"
 msgid "Home"
 msgstr "Kodu"
 
-#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
-#: exe/webui/block.py:276 exe/webui/genericblock.py:79
-#: exe/webui/genericblock.py:104
+#: exe/webui/block.py:276 exe/webui/multichoiceblock.py:176
+#: exe/webui/genericblock.py:79 exe/webui/genericblock.py:104
+#: exe/webui/galleryblock.py:312
 msgid "IDevice Icon"
 msgstr "iDevide ikoon"
 
@@ -1022,15 +1013,15 @@ msgstr "Juhised õpilastele"
 msgid "Introduction"
 msgstr "Sissejuhatus"
 
-#: exe/webui/wikipediablock.py:181
+#: exe/webui/wikipediablock.py:184
 msgid "It uses material from the "
 msgstr "See kasutab materjale"
 
-#: exe/webui/wikipediablock.py:87
+#: exe/webui/wikipediablock.py:90
 msgid "Italian Wikipedia Article"
 msgstr "Itaalia Wikipedia artikkel"
 
-#: exe/webui/wikipediablock.py:86
+#: exe/webui/wikipediablock.py:89
 msgid "Japanese Wikipedia Article"
 msgstr "Jaapani Wikipedia artikkel"
 
@@ -1063,7 +1054,7 @@ msgstr "Vasak"
 msgid "Link to the forum"
 msgstr "Link foorumile"
 
-#: exe/webui/wikipediablock.py:107
+#: exe/webui/wikipediablock.py:110
 msgid "Load"
 msgstr "Lae"
 
@@ -1147,7 +1138,7 @@ msgstr "Vestlused pole lubatud, kuid vastused on lubatud"
 msgid "No discussions, no replies"
 msgstr "Vestlused ega vastused pole lubatud"
 
-#: exe/webui/wikipediablock.py:111 exe/webui/editorpane.py:307
+#: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:307
 msgid "No emphasis"
 msgstr "Puudub rõhuasetus"
 
@@ -1195,8 +1186,8 @@ msgstr ""
 "Vali ainult .swf (Flash Objects) selle  \n"
 "iDevice jaoks."
 
-#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
-#: exe/webui/testquestionelement.py:95
+#: exe/webui/testquestionelement.py:95 exe/webui/optionelement.py:76
+#: exe/webui/optionelement.py:81
 msgid "Option"
 msgstr "Valik"
 
@@ -1212,8 +1203,7 @@ msgstr "Muu"
 msgid "Outline"
 msgstr "Ülevaade"
 
-#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:253
-#: exe/xului/mainpage.py:369 exe/xului/mainpage.old.py:239
+#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:369
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakett salvestatud siia: %s"
@@ -1254,11 +1244,11 @@ msgstr "Palun vali iga küsimuse jaoks õige vastus."
 msgid "Please select a forum.\n"
 msgstr "Palun vali foorum.\n"
 
-#: exe/webui/wikipediablock.py:88
+#: exe/webui/wikipediablock.py:91
 msgid "Polish Wikipedia Article"
 msgstr "Poola Wikipedia artikkel"
 
-#: exe/webui/wikipediablock.py:90
+#: exe/webui/wikipediablock.py:93
 msgid "Portugese Wikipedia Article"
 msgstr "Portugali Wikipedia artikkel"
 
@@ -1347,8 +1337,8 @@ msgstr "Sisesta siia instruktsioonid õpilastele"
 msgid "Question(s)"
 msgstr "Küsimus(ed)"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
-#: exe/webui/testquestionelement.py:81
+#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
+#: exe/webui/truefalseelement.py:79
 msgid "Question:"
 msgstr "Küsimus:"
 
@@ -1501,7 +1491,7 @@ msgstr ""
 "Seadista maksimaalne suurendus, \n"
 " protsentides originaalpildi suurusest."
 
-#: exe/xului/propertiespage.py:201
+#: exe/xului/propertiespage.py:200
 msgid "Settings saved"
 msgstr "Seaded salvestatud"
 
@@ -1526,7 +1516,7 @@ msgstr "Näita / puhasta vastused"
 msgid "Show/Hide Feedback"
 msgstr "Näita / peida tagasiside"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:102
 msgid "Site"
 msgstr "Asukoht"
 
@@ -1534,7 +1524,7 @@ msgstr "Asukoht"
 msgid "Size of magnifying glass: "
 msgstr "Luubi suurus:"
 
-#: exe/webui/wikipediablock.py:92
+#: exe/webui/wikipediablock.py:95
 msgid "Slovenian Wikipedia Article"
 msgstr "Sloveenida Wikipedia artikkel"
 
@@ -1542,17 +1532,15 @@ msgstr "Sloveenida Wikipedia artikkel"
 msgid "Small"
 msgstr "Väike"
 
-#: exe/webui/wikipediablock.py:112 exe/webui/editorpane.py:308
+#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:308
 msgid "Some emphasis"
 msgstr "Mõningane rõhuasetus"
 
-#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:526
-#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
+#: exe/xului/mainpage.py:526
 msgid "Sorry, wrong file format"
 msgstr "Vabandust, vale failiformaat"
 
-#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:524
-#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
+#: exe/xului/mainpage.py:524
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1561,7 +1549,7 @@ msgstr ""
 "Vabandust, vale failiformaat:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:94
+#: exe/webui/wikipediablock.py:97
 msgid "Spanish Wikipedia Article"
 msgstr "Hispaania Wikipedia artikkel"
 
@@ -1577,12 +1565,12 @@ msgstr "Lugu:"
 msgid "Strict Marking?"
 msgstr "Range hindamine ?"
 
-#: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:309
+#: exe/webui/wikipediablock.py:116 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
 msgstr "Tugev rõhusasetus"
 
-#: exe/webui/common.py:208 exe/webui/editorpane.py:397
-#: exe/webui/element.py:620
+#: exe/webui/common.py:208 exe/webui/element.py:620
+#: exe/webui/editorpane.py:397
 msgid "Submit"
 msgstr "Saada"
 
@@ -1590,7 +1578,7 @@ msgstr "Saada"
 msgid "Submit Answer"
 msgstr "Saada vastus"
 
-#: exe/webui/wikipediablock.py:95
+#: exe/webui/wikipediablock.py:98
 msgid "Swedish Wikipedia Article"
 msgstr "Rootsi Wikipedia artikkel"
 
@@ -1599,8 +1587,8 @@ msgstr "Rootsi Wikipedia artikkel"
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Õpetajad peaksid seda iDevice-i kasutades meeles pidama järgmist:<ol><li>1. Pööra tähelepanu erinevatele õpperessursis sisalduvate tegevuste tüüpidele, mis on visuaalsed nähtavad. Vältimaks õpilase segadusse viimist, ära kasuta liiga palju erinevaid tegevuste tüüpe või klassifikatsioone. Tavaliselt piisab ühe õpperessursi jaoks 3-4 tüübist täielikult.</li><li>2. Visuaalse disaini vinklist väldi kahte järjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks küsimust või sündmust samasse iDevice-i.</li><li>3. Mõtle selliste tegevuste peale, kus tegevuse läbimise tajutav kasu kaalub üles sellele kuluva aja ja pingutuse.</li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
+#: exe/engine/imagewithtextidevice.py:61
 msgid "Text"
 msgstr "Tekst"
 
@@ -1660,7 +1648,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:177
+#: exe/webui/wikipediablock.py:180
 msgid "This article is licensed under the "
 msgstr "See artikkel on litsentseeritud"
 
@@ -1816,17 +1804,18 @@ msgstr "Ei saa ühendust:"
 msgid "Unit"
 msgstr "Osa"
 
-#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
-#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
-#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
+#: exe/engine/wikipediaidevice.py:52 exe/engine/flashmovieidevice.py:40
+#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
+#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:106
+#: exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
+#: exe/engine/truefalseidevice.py:60 exe/engine/externalurlidevice.py:38
+#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:297
+#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:347
+#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:432
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:42
+#: exe/engine/galleryidevice.py:490 exe/idevices/forumidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
 msgstr "Aucklandi Ülikool"
@@ -1909,11 +1898,11 @@ msgstr ""
 "<li> Segavad vastused peaksid olema väärad kuid mõeldavad</li>\n"
 "</ul>\n"
 
-#: exe/webui/wikipediablock.py:96
+#: exe/webui/wikipediablock.py:99
 msgid "Wikibooks Article"
 msgstr "Wikibooks artikkel"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:100
 msgid "Wikieducator Content"
 msgstr "Wikieducator sisu"
 
@@ -1937,7 +1926,7 @@ msgstr "Jah, algselt"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Sinu uus iDevice tekib iDevice-ribale selle pealkirjaga. See on kohustuslik väli ja kui üritatakse lisada iDevice ilma nimeta, tehakse sellekohane meeldetuletus."
 
-#: exe/webui/wikipediablock.py:184
+#: exe/webui/wikipediablock.py:187
 msgid "article "
 msgstr "artikkel"
 
@@ -1953,12 +1942,12 @@ msgstr "duplitseeritud foorumin nimi.\n"
 msgid "duplicate topic name."
 msgstr "duplitseeritud teema nimi."
 
-#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
+#: exe/export/imsexport.py:188 exe/export/scormexport.py:257
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
-#: exe/webui/editorpage.py:161
+#: exe/webui/editorpage.py:161 exe/webui/common.py:67
+#: exe/webui/preferencespage.py:73
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: e-õppe XHTML redaktor"
 
@@ -2072,7 +2061,8 @@ msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em">
+#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
+#: header (an 100px high is recommended).">
 msgid "Header Background:"
 msgstr "Päise taust:"
 
