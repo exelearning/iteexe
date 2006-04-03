@@ -4,3 +4,16 @@ msgid "_:suggested by carlos"
 "%s already exists, please try again with a different filename\n"
 msgstr "%s ya existe, por favor trate nuevamente con un nombre diferente de archivo"
 
+#: exe/engine/attachmentidevice.py:76
+msgid "_: suggested by matiu"
+"Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
+msgstr "Tipea el texto que desa que sea asociado con el archivo descargado. De-repente quireis proveer instruciones on que quire usted que el estudiante hace cuando ya esta descargado el archivo o en como el material debe ser usado."
+
+#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
+msgid ""
+"_: suggested by matiu"
+"Provide instruction on how the True/False Question should be \n"
+"completed."
+msgstr "Provea instrucion en como la pregunta de Verdadero/Falso debe ser \n"
+"completado."
+

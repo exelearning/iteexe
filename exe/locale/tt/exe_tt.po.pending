@@ -3,8 +3,12 @@ msgid "_:suggested by versionmerge"
 "label=\"Save\" accesskey=\"s\"\n"
 msgstr "label=\"5av3\" accesskey=\"5\""
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
-msgid "_:suggested by versionmerge"
-"label=\"Save\" accesskey=\"s\"\n"
-msgstr "label=\"5av3\" accesskey=\"5\""
+#: exe/engine/clozeidevice.py:122
+msgid ""
+"_: suggested by freddy"
+"<p>Enter the text for the cloze activity in to the cloze field \n"
+"by either pasting text from another source or by typing text directly into the \n"
+"field.</p><p> To select words to hide, double click on the word to select it and \n"
+"click on the Hide/Show Word button below.</p>"
+msgstr "Something 3ls3"
 

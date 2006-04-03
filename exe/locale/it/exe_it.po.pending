@@ -1,0 +1,66 @@
+#: exe/idevices/appletidevice.py:59
+msgid ""
+"_:suggested by myhns"
+"\"Find the .txt file (in the applet file)\n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr "\"Cerca il file con estensione .txt  (in the applet file) \n"
+"e aprilo. Copiane il contenuto <ctrl A, ctrl C> nel campo codice \n dell'applet."
+
+#: exe/idevices/appletidevice.py:59
+msgid ""
+"_:suggested by myhns"
+"\"Find the .txt file (in the applet file)\n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr "\"Cerca il file con estensione .txt  (in the applet file) \n"
+"e aprilo. Copiane il contenuto <ctrl A, ctrl C> nel campo codice \n dell'applet."
+
+#: exe/webui/block.py:224
+msgid "_: suggested by myhns"
+"---Move To---"
+msgstr "---Sposta In---"
+
+#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
+#: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
+#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.old.py:305
+msgid "_: suggested by myhns"
+". Please use ASCII names."
+msgstr ". Per favore usa caratteri ASCII."
+
+#: exe/engine/package.py:203
+msgid "_: suggested by myhns"
+"?????"
+msgstr "?????"
+
+#: exe/engine/truefalseidevice.py:66
+msgid ""
+"_: suggested by myhns"
+"A hint may be provided to assist the \n"
+"learner in answering the question."
+msgstr "Un suggerimento può essere previsto per aiutare \n lo studente a rispondere alla domanda."
+
+#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:323
+#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:392
+#: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:438
+#: exe/webui/questionelement.py:70
+msgid "_: suggested by myhns"
+"Activity"
+msgstr "Attività"
+
+#: exe/webui/editorpane.py:213
+msgid "_: suggested by myhns"
+"Add"
+msgstr "Aggiungi"
+
+#: exe/webui/element.py:257
+msgid "_: suggested by myhns"
+"Add Image"
+msgstr "Aggiungi Immagine"
+
+#: exe/webui/element.py:368
+msgid "_: suggested by myhns"
+"Add JPEG Image"
+msgstr "Aggiungi Immagine Jpeg"
+
