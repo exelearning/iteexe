@@ -29,7 +29,7 @@ body {
    height: 100%; /* the holly hack for IE! */
    float: left;
    margin-top: 0px;
-   padding-top: 115px;
+   padding-top: 82px;
    text-align:left;
    position:absolute;
    background-color:transparent;
@@ -135,7 +135,7 @@ position:absolute;
 
 #main {
 margin-left: 260px;
-margin-top: 40px;
+margin-top: 0px;
 position:absolute;
 text-align:left;
 width: 65%;
