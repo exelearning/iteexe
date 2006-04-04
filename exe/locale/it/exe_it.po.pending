@@ -17,27 +17,27 @@ msgstr "\"Cerca il file con estensione .txt  (in the applet file) \n"
 "e aprilo. Copiane il contenuto <ctrl A, ctrl C> nel campo codice \n dell'applet."
 
 #: exe/webui/block.py:224
-msgid "_: suggested by myhns"
-"---Move To---"
+msgid "_:suggested by myhns"
+"---Move To---\n"
 msgstr "---Sposta In---"
 
 #: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
 #: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
-msgid "_: suggested by myhns"
-". Please use ASCII names."
+msgid "_:suggested by myhns"
+". Please use ASCII names.\n"
 msgstr ". Per favore usa caratteri ASCII."
 
 #: exe/engine/package.py:203
-msgid "_: suggested by myhns"
-"?????"
+msgid "_:suggested by myhns"
+"?????\n"
 msgstr "?????"
 
 #: exe/engine/truefalseidevice.py:66
 msgid ""
-"_: suggested by myhns"
-"A hint may be provided to assist the \n"
+"_:suggested by myhns"
+"A hint may be provided to assist the\n"
 "learner in answering the question."
 msgstr "Un suggerimento può essere previsto per aiutare \n lo studente a rispondere alla domanda."
 
@@ -45,22 +45,30 @@ msgstr "Un suggerimento può essere previsto per aiutare \n lo studente a rispon
 #: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:392
 #: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:438
 #: exe/webui/questionelement.py:70
-msgid "_: suggested by myhns"
-"Activity"
+msgid "_:suggested by myhns"
+"Activity\n"
 msgstr "Attività"
 
 #: exe/webui/editorpane.py:213
-msgid "_: suggested by myhns"
-"Add"
+msgid "_:suggested by myhns"
+"Add\n"
 msgstr "Aggiungi"
 
 #: exe/webui/element.py:257
-msgid "_: suggested by myhns"
-"Add Image"
+msgid "_:suggested by myhns"
+"Add Image\n"
 msgstr "Aggiungi Immagine"
 
 #: exe/webui/element.py:368
-msgid "_: suggested by myhns"
-"Add JPEG Image"
+msgid "_:suggested by myhns"
+"Add JPEG Image\n"
 msgstr "Aggiungi Immagine Jpeg"
+
+#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
+#: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
+#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
+#: exe/xului/mainpage.old.py:305
+msgid "_: suggested by Petrossi"
+". Please use ASCII names."
+msgstr ".Usa nomi in ASCII."
 
