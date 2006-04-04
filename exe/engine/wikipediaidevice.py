@@ -123,7 +123,6 @@ within Wikipedia.""")
         for imageTag in content.fetch('img'):
             imageSrc  = unicode(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
-            print imageName
 
             # Search if we've already got this image
             if imageName not in self.images:
@@ -131,7 +130,6 @@ within Wikipedia.""")
                     if imageSrc.startswith("/"):
                         imageSrc = imageSrc[1:]
                     imageSrc = self.site + imageSrc
-                print imageSrc
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
                 self.images[imageName] = True
                 self.userResources.append(Resource(self.parentNode.package,
