@@ -84,7 +84,16 @@ within Wikipedia.""")
 
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
         try:
-            net  = urllib.urlopen(self.site+'wiki/'+name)
+            # UGLY UGLY UGLY KLUDGE for Wayne
+            # "BIG please - Will you check that the Wikieducator url is changed
+            # for the next release - not sure if we'll get the image thing
+            # sorted, but this is pretty important strategically re the
+            # international growth of eXe.  Not a new feature <smile> just a
+            # small change to a string."
+            if self.site == u"http://wikieducator.org/":
+                net  = urllib.urlopen(self.site+name)
+            else:
+                net  = urllib.urlopen(self.site+'wiki/'+name)
             page = net.read()
             net.close()
 
@@ -114,11 +123,15 @@ within Wikipedia.""")
         for imageTag in content.fetch('img'):
             imageSrc  = unicode(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
+            print imageName
 
             # Search if we've already got this image
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
+                    if imageSrc.startswith("/"):
+                        imageSrc = imageSrc[1:]
                     imageSrc = self.site + imageSrc
+                print imageSrc
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
                 self.images[imageName] = True
                 self.userResources.append(Resource(self.parentNode.package,
@@ -136,8 +149,18 @@ within Wikipedia.""")
         """
         Changes links, etc
         """
-        content = re.sub(r'href="/wiki/', 
-                         r'href="'+self.site+'wiki/', content)
+        # UGLY UGLY UGLY KLUDGE for Wayne
+        # "BIG please - Will you check that the Wikieducator url is changed
+        # for the next release - not sure if we'll get the image thing
+        # sorted, but this is pretty important strategically re the
+        # international growth of eXe.  Not a new feature <smile> just a
+        # small change to a string."
+        if self.site == u"http://wikieducator.org/":
+            content = re.sub(r'href="/', 
+                             r'href="'+self.site, content)
+        else:
+            content = re.sub(r'href="/wiki/', 
+                             r'href="'+self.site+'wiki/', content)
         content = re.sub(r'<div class="editsection".*?</div>', '', content)
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")

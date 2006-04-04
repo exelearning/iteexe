@@ -51,6 +51,14 @@ class WikipediaBlock(Block):
         """
         log.debug("process " + repr(request.args))
         
+        if 'emphasis'+self.id in request.args:
+            self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
+            
+        if 'site'+self.id in request.args:
+            self.idevice.site = request.args['site'+self.id][0]
+
+        if 'title'+self.id in request.args:
+            self.idevice.title = request.args['title'+self.id][0]
 
         if 'loadWikipedia'+self.id in request.args:
             # If they've hit "load" instead of "the tick"
@@ -62,15 +70,6 @@ class WikipediaBlock(Block):
                 request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.articleElement.process(request)
-                
-        if 'emphasis'+self.id in request.args:
-            self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
-            
-        if 'site'+self.id in request.args:
-            self.idevice.site = request.args['site'+self.id][0]
-
-        if 'title'+self.id in request.args:
-            self.idevice.title = request.args['title'+self.id][0]
 
 
     def renderEdit(self, style):
@@ -182,7 +181,15 @@ class WikipediaBlock(Block):
         html += u"href=\"javascript:window.open('fdl.html')\">"
         html += u"%s</a>. " % _(u"GNU Free Documentation License")
         html += _(u"It uses material from the ")
-        html += u"<a href=\""+self.idevice.site+u"wiki/"
+        # UGLY UGLY UGLY KLUDGE for Wayne
+        # "BIG please - Will you check that the Wikieducator url is changed for
+        # the next release - not sure if we'll get the image thing sorted, but
+        # this is pretty important strategically re the international growth of
+        # eXe.  Not a new feature <smile> just a small change to a string."
+        if self.idevice.site == u"http://wikieducator.org/":
+            html += u"<a href=\""+self.idevice.site
+        else:
+            html += u"<a href=\""+self.idevice.site+u"wiki/"
         html += self.idevice.articleName+u"\">"
         html += _(u"article ") 
         html += u"\""+self.idevice.articleName+u"\"</a>.<br/>\n"
