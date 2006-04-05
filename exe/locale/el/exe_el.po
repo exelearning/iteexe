@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-04 10:11+1200\n"
+"POT-Creation-Date: 2006-04-05 14:01+1200\n"
 "PO-Revision-Date: 2006-01-10 13:23+0200\n"
 "Last-Translator: Γιάννης Κωστάρας <jkost@ebox.gr>\n"
 "Language-Team: GREEK <info@exelearning.org>\n"
@@ -28,10 +28,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Μετακίνηση σε---"
 
-#: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
-#: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
-#: exe/xului/mainpage.old.py:305
+#: exe/xului/mainpage.py:343
 msgid ". Please use ASCII names."
 msgstr ". Παρακαλώ, χρησιμοποιήστε ονόματα ASCII."
 
@@ -386,10 +384,8 @@ msgstr "Μπορεί ένας μαθητής να δημοσιεύσει σ' α�
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: exe/xului/mainpage.1484.py:204 exe/xului/mainpage.1484.py:266
 #: exe/xului/mainpage.py:229 exe/xului/mainpage.py:288
-#: exe/xului/mainpage.py:341 exe/xului/mainpage.old.py:222
-#: exe/xului/mainpage.old.py:303
+#: exe/xului/mainpage.py:341
 msgid "Cannot access directory named "
 msgstr "Αδύνατη η προσπέλαση στον κατάλογο"
 
@@ -410,7 +406,7 @@ msgstr ""
 msgid "Check Caps?"
 msgstr "Έλεγχος για κεφαλαία;"
 
-#: exe/webui/wikipediablock.py:86
+#: exe/webui/wikipediablock.py:85
 msgid "Chinese Wikipedia Article"
 msgstr "Άρθρο της Κινέζικης Βίκι εγκυκλοπαίδειας"
 
@@ -458,11 +454,11 @@ msgstr "Κάντε κλικ εδώ"
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr ""
 
-#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
-#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/editorpane.py:333
+#: exe/engine/galleryidevice.py:291 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:333
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
@@ -485,8 +481,8 @@ msgstr "Κλείσιμο"
 msgid "Confirm and submit"
 msgstr ""
 
-#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:93
+#: exe/webui/testquestionelement.py:93 exe/webui/optionelement.py:81
+#: exe/webui/optionelement.py:129
 msgid "Correct"
 msgstr "Σωστό"
 
@@ -502,10 +498,10 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 
-#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
-#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
+#: exe/webui/block.py:208 exe/webui/editorpage.py:177
+#: exe/webui/editorpage.py:181 exe/webui/galleryblock.py:246
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -525,8 +521,8 @@ msgstr "Επιλογή εικόνας"
 msgid "Delete option"
 msgstr "Επιλογή διαγραφής"
 
-#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
-#: exe/webui/testquestionelement.py:85
+#: exe/webui/testquestionelement.py:85 exe/webui/questionelement.py:79
+#: exe/webui/truefalseelement.py:102
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
@@ -565,7 +561,7 @@ msgstr ""
 msgid "Describe the tasks the learners should complete."
 msgstr "Περιγράψτε τις εργασίες που θα πρέπει να ολοκληρώσουν οι μαθητές."
 
-#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:49
 msgid "Description"
 msgstr "Περιγραφή"
 
@@ -604,7 +600,7 @@ msgstr "Απεικόνιση ως:"
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
-#: exe/webui/wikipediablock.py:92
+#: exe/webui/wikipediablock.py:91
 msgid "Dutch Wikipedia Article"
 msgstr "Άρθρο της Ολλανδικής Βίκι εγκυκλοπαίδειας"
 
@@ -644,11 +640,11 @@ msgstr "Κάθε άτομο δημοσιεύει μια συζήτηση"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: exe/webui/wikipediablock.py:118 exe/webui/editorpane.py:304
+#: exe/webui/wikipediablock.py:117 exe/webui/editorpane.py:304
 msgid "Emphasis"
 msgstr "Έμφαση"
 
-#: exe/webui/wikipediablock.py:85
+#: exe/webui/wikipediablock.py:84
 msgid "English Wikipedia Article"
 msgstr "Άρθρο της Αγγλικής Βίκι εγκυκλοπαίδειας"
 
@@ -670,7 +666,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Δώστε μια συμβουλή. Αν δεν θέλετε να δώσετε μια συμβουλή, αφήστε το πεδίο κενό."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:227
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:248
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -791,8 +787,7 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:248 exe/xului/mainpage.py:527
-#: exe/xului/mainpage.old.py:266 exe/xului/mainpage.old.py:285
+#: exe/xului/mainpage.py:527
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Λάθος κατά τη φόρτωση του πακέτου \"%s\": %s"
@@ -805,9 +800,7 @@ msgstr ""
 msgid "Example Example"
 msgstr ""
 
-#: exe/xului/mainpage.1484.py:380 exe/xului/mainpage.1484.py:398
 #: exe/xului/mainpage.py:472 exe/xului/mainpage.py:490
-#: exe/xului/mainpage.old.py:417 exe/xului/mainpage.old.py:435
 #, python-format
 msgid "Exported to %s"
 msgstr "Εξαγωσή στο %s"
@@ -824,11 +817,11 @@ msgstr "Πολύ μεγάλο"
 msgid "False"
 msgstr "Λάθος"
 
-#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
-#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
-#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
-#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
+#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
+#: exe/engine/genericidevice.py:155 exe/webui/common.py:192
+#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:90
+#: exe/webui/editorpane.py:220 exe/webui/optionelement.py:93
 msgid "Feedback"
 msgstr "Ανατροφοδότηση"
 
@@ -848,9 +841,7 @@ msgstr "Ανατροφοδότηση:"
 msgid "Filename"
 msgstr "Μετονομασία"
 
-#: exe/xului/mainpage.1484.py:303 exe/xului/mainpage.1484.py:343
 #: exe/xului/mainpage.py:394 exe/xului/mainpage.py:435
-#: exe/xului/mainpage.old.py:340 exe/xului/mainpage.old.py:380
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Το %s είναι όνομα αρχείου, δεν μπορεί να αντικατασταθεί"
@@ -899,15 +890,15 @@ msgstr ""
 msgid "Free Text"
 msgstr "Ελεύθερο κείμενο"
 
-#: exe/webui/wikipediablock.py:88
+#: exe/webui/wikipediablock.py:87
 msgid "French Wikipedia Article"
 msgstr "Άρθρο της Γαλλικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/wikipediablock.py:183
+#: exe/webui/wikipediablock.py:182
 msgid "GNU Free Documentation License"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:87
+#: exe/webui/wikipediablock.py:86
 msgid "German Wikipedia Article"
 msgstr "Άρθρο της Γερμανικής Βίκι εγκυκλοπαίδειας"
 
@@ -954,9 +945,9 @@ msgstr "Συμβουλή:"
 msgid "Home"
 msgstr "Αρχή"
 
-#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
-#: exe/webui/block.py:276 exe/webui/genericblock.py:79
-#: exe/webui/genericblock.py:104
+#: exe/webui/block.py:276 exe/webui/multichoiceblock.py:176
+#: exe/webui/genericblock.py:79 exe/webui/genericblock.py:104
+#: exe/webui/galleryblock.py:312
 #, fuzzy
 msgid "IDevice Icon"
 msgstr "Επεξεργαστής κειμένου εκπαιδευτικών εργαλείων"
@@ -1021,15 +1012,15 @@ msgstr "Οδηγίες για μαθητές"
 msgid "Introduction"
 msgstr "Εισαγωγή"
 
-#: exe/webui/wikipediablock.py:184
+#: exe/webui/wikipediablock.py:183
 msgid "It uses material from the "
 msgstr ""
 
-#: exe/webui/wikipediablock.py:90
+#: exe/webui/wikipediablock.py:89
 msgid "Italian Wikipedia Article"
 msgstr "Άρθρο της Ιταλικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/wikipediablock.py:89
+#: exe/webui/wikipediablock.py:88
 msgid "Japanese Wikipedia Article"
 msgstr "Άρθρο της Ιαπωνικής Βίκι εγκυκλοπαίδειας"
 
@@ -1062,7 +1053,7 @@ msgstr "Αριστερά"
 msgid "Link to the forum"
 msgstr "Σύνδεση στην ομάδα συζήτησης"
 
-#: exe/webui/wikipediablock.py:110
+#: exe/webui/wikipediablock.py:109
 msgid "Load"
 msgstr "Φόρτωση"
 
@@ -1151,7 +1142,7 @@ msgstr "Δεν υπάρχουν συζητήσεις, αλλά επιτρέπο�
 msgid "No discussions, no replies"
 msgstr "Δεν υπάρχουν συζητήσεις, δεν επιτρέπονται απαντήσεις"
 
-#: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:307
+#: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:307
 msgid "No emphasis"
 msgstr "Χωρίς έμφαση"
 
@@ -1196,8 +1187,8 @@ msgid ""
 "this iDevice."
 msgstr ""
 
-#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
-#: exe/webui/testquestionelement.py:95
+#: exe/webui/testquestionelement.py:95 exe/webui/optionelement.py:76
+#: exe/webui/optionelement.py:81
 msgid "Option"
 msgstr "Επιλογή"
 
@@ -1214,8 +1205,7 @@ msgstr "Άλλο"
 msgid "Outline"
 msgstr "Περίγραμμα"
 
-#: exe/xului/mainpage.1484.py:221 exe/xului/mainpage.py:253
-#: exe/xului/mainpage.py:369 exe/xului/mainpage.old.py:239
+#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:369
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
@@ -1256,11 +1246,11 @@ msgstr "Παρακαλώ επιλέξτε μια σωστή απάντηση γ�
 msgid "Please select a forum.\n"
 msgstr "Παρακαλώ επιλέξτε ομάδα συζήτησης.\n"
 
-#: exe/webui/wikipediablock.py:91
+#: exe/webui/wikipediablock.py:90
 msgid "Polish Wikipedia Article"
 msgstr "Άρθρο της Πολωνικής Βίκι εγκυκλοπαίδειας"
 
-#: exe/webui/wikipediablock.py:93
+#: exe/webui/wikipediablock.py:92
 msgid "Portugese Wikipedia Article"
 msgstr "Άρθρο της Πορτογαλλικής Βίκι εγκυκλοπαίδειας"
 
@@ -1357,8 +1347,8 @@ msgstr "Εισάγετε οδηγίες για τους μαθητές εδώ"
 msgid "Question(s)"
 msgstr "Ερωτήσεις"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
-#: exe/webui/testquestionelement.py:81
+#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
+#: exe/webui/truefalseelement.py:79
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -1479,7 +1469,7 @@ msgstr "Επιλογή εικόνας"
 msgid "Select pass rate: "
 msgstr "Επιλέξτε βαθμό βάσης:"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:225
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:246
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1534,7 +1524,7 @@ msgstr "Εμφάνιση/Καθαρισμός Απαντήσεων"
 msgid "Show/Hide Feedback"
 msgstr "Εμφάνιση/Απόκρυψη Ανατροφοδότησης"
 
-#: exe/webui/wikipediablock.py:102
+#: exe/webui/wikipediablock.py:101
 #, fuzzy
 msgid "Site"
 msgstr "Τίτλος"
@@ -1543,7 +1533,7 @@ msgstr "Τίτλος"
 msgid "Size of magnifying glass: "
 msgstr "Μέγεθος μεγενθυντικού φακού:"
 
-#: exe/webui/wikipediablock.py:95
+#: exe/webui/wikipediablock.py:94
 #, fuzzy
 msgid "Slovenian Wikipedia Article"
 msgstr "Άρθρο της Ιταλικής Βίκι εγκυκλοπαίδειας"
@@ -1552,17 +1542,15 @@ msgstr "Άρθρο της Ιταλικής Βίκι εγκυκλοπαίδεια
 msgid "Small"
 msgstr "Μικρό"
 
-#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:308
+#: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:308
 msgid "Some emphasis"
 msgstr "Μερική έμφαση"
 
-#: exe/xului/mainpage.1484.py:247 exe/xului/mainpage.py:526
-#: exe/xului/mainpage.old.py:265 exe/xului/mainpage.old.py:284
+#: exe/xului/mainpage.py:526
 msgid "Sorry, wrong file format"
 msgstr "Συγνώμη, λάθος μορφή αρχείου"
 
-#: exe/xului/mainpage.1484.py:245 exe/xului/mainpage.py:524
-#: exe/xului/mainpage.old.py:263 exe/xului/mainpage.old.py:282
+#: exe/xului/mainpage.py:524
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1571,7 +1559,7 @@ msgstr ""
 "Συγνώμη, λάθος μορφή αρχείου:\n"
 "%s"
 
-#: exe/webui/wikipediablock.py:97
+#: exe/webui/wikipediablock.py:96
 msgid "Spanish Wikipedia Article"
 msgstr "Άρθρο της Ισπανικής Βίκι εγκυκλοπαίδειας"
 
@@ -1587,12 +1575,12 @@ msgstr "Σενάριο:"
 msgid "Strict Marking?"
 msgstr "Αυστηρή βαθμολογία;"
 
-#: exe/webui/wikipediablock.py:116 exe/webui/editorpane.py:309
+#: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:309
 msgid "Strong emphasis"
 msgstr "Έντονη έμφαση"
 
-#: exe/webui/common.py:208 exe/webui/editorpane.py:397
-#: exe/webui/element.py:620
+#: exe/webui/common.py:208 exe/webui/element.py:620
+#: exe/webui/editorpane.py:397
 msgid "Submit"
 msgstr "Υποβολή"
 
@@ -1600,7 +1588,7 @@ msgstr "Υποβολή"
 msgid "Submit Answer"
 msgstr "Καταχώριση απάντησης"
 
-#: exe/webui/wikipediablock.py:98
+#: exe/webui/wikipediablock.py:97
 msgid "Swedish Wikipedia Article"
 msgstr "Άρθρο της Σουηδικής Βίκι εγκυκλοπαίδειας"
 
@@ -1609,8 +1597,8 @@ msgstr "Άρθρο της Σουηδικής Βίκι εγκυκλοπαίδει
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Οι δάσκαλοι πρέπει να λάβουν τα εξής υπόψη κατά τη χρησιμοποίηση αυτού του εκπαιδευτικού εργαλείου: <ol><li>Σκεφτείτε τον αριθμό των διαφορετικών τύπων δραστηριοτήτων που προγραμματίσατε για τον πόρο σας που θα επισημαθεί οπτικά στο περιεχόμενο. Αποφύγετε πάρα πολλούς διαφορετικούς τύπους ταξινόμησης των δραστηριοτήτων ειδάλλως ο σπουδαστής μπορεί να μπερδευτεί. Συνήθως τρεις ή τέσσερις διαφορετικοί τύποι είναι περισσότερο από επαρκείς για έναν πόρο διδασκαλίας.</li><li>Από μια προοπτική οπτικής σχεδίασης, αποφύγετε να έχετε δύο εκπαιδευτικά εργαλεία ακολουθώντας αμέσως το ένα το άλλο χωρίς κείμενο ενδιάμεσα. Εάν αυτό απαιτείται, καλύτερα ενώστε δύο ερωτήσεις ή γεγονότα σε ένα εκπαιδευτικό εργαλείο. </li><li>3.Σκεφτείτε δραστηριότητες όπου το αντιληπτό όφελος εκπλήρωσης της δραστηριότητας ξεπερνά το χρόνο και την προσπάθεια που χρειάζεται για να ολοκληρωθεί η δραστηριότητα. </li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
+#: exe/engine/imagewithtextidevice.py:61
 msgid "Text"
 msgstr "Κείμενο"
 
@@ -1663,7 +1651,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/webui/wikipediablock.py:180
+#: exe/webui/wikipediablock.py:179
 msgid "This article is licensed under the "
 msgstr ""
 
@@ -1813,7 +1801,7 @@ msgstr ""
 msgid "URL:"
 msgstr ""
 
-#: exe/engine/wikipediaidevice.py:93
+#: exe/engine/wikipediaidevice.py:102
 msgid "Unable to connect to "
 msgstr "Η σύνδεση είναι αδύνατη"
 
@@ -1821,17 +1809,18 @@ msgstr "Η σύνδεση είναι αδύνατη"
 msgid "Unit"
 msgstr "Παράγραφος"
 
-#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
-#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
-#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
+#: exe/engine/wikipediaidevice.py:52 exe/engine/flashmovieidevice.py:40
+#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
+#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:106
+#: exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
+#: exe/engine/truefalseidevice.py:60 exe/engine/externalurlidevice.py:38
+#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:297
+#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:347
+#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:432
+#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:42
+#: exe/engine/galleryidevice.py:490 exe/idevices/forumidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
 msgid "University of Auckland"
 msgstr "Πανεπιστήμιο του Auckland"
@@ -1915,11 +1904,11 @@ msgstr ""
 "<li> Οι λάθος απαντήσεις θα πρέπει να 'ναι αληθοφανής </li>\n"
 "</ul>\n"
 
-#: exe/webui/wikipediablock.py:99
+#: exe/webui/wikipediablock.py:98
 msgid "Wikibooks Article"
 msgstr "Άρθρο βιβλίων Βίκι"
 
-#: exe/webui/wikipediablock.py:100
+#: exe/webui/wikipediablock.py:99
 msgid "Wikieducator Content"
 msgstr ""
 
@@ -1943,7 +1932,7 @@ msgstr "Ναι, αρχικά"
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
 msgstr "Το νέο εκπαιδευτικό εργαλείο θα εμφανιστεί στην περιοχή εκπαιδευτικών εργαλείων με αυτόν τον τίτλο. Αυτό το πεδίο είναι υποχρεωτικό και θα σας ζητηθεί να δώσετε ένα όνομα αν προσπαθήσετε να καταχωρήσετε το εκπαιδευτικό εργαλείο σας χωρίς όνομα."
 
-#: exe/webui/wikipediablock.py:187
+#: exe/webui/wikipediablock.py:194
 #, fuzzy
 msgid "article "
 msgstr "Άρθρο"
@@ -1960,12 +1949,12 @@ msgstr "αναπαραγωγή θέματος.\n"
 msgid "duplicate topic name."
 msgstr "αναπαραγωγή θέματος"
 
-#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
+#: exe/export/imsexport.py:188 exe/export/scormexport.py:257
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
-#: exe/webui/editorpage.py:161
+#: exe/webui/editorpage.py:161 exe/webui/common.py:67
+#: exe/webui/preferencespage.py:73
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως μάθηση"
 
@@ -1974,7 +1963,7 @@ msgstr "eXe : XHTML κειμενογράφος για εξ' αποστάσεως
 msgid "file %s has no parentNode"
 msgstr "Το επισυναπτόμενο αρχείο %s δεν έχει πατρικό κόμβο"
 
-#: exe/engine/wikipediaidevice.py:177
+#: exe/engine/wikipediaidevice.py:198
 msgid "http://en.wikipedia.org/"
 msgstr "http://el.wikipedia.org/"
 
