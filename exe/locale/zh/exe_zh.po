@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-04 10:11+1200\n"
-"PO-Revision-Date: 2006-04-04 16:01+1200\n"
+"PO-Revision-Date: 2006-04-05 13:35+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin@auckland.ac.nz>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -2016,7 +2016,7 @@ msgstr "标题"
 #: id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
-msgstr "Dublin Core Metadata"
+msgstr "Dublin Core 元数据"
 
 # exe/xului/templates/exportproperties.xul:<caption
 #: exe/xului/templates/exportproperties.xul:<caption
@@ -2100,7 +2100,7 @@ msgstr "课件标题:"
 #: exe/xului/templates/properties.xul:<tab
 #: id="tabMetadata" label="Metadata">
 msgid "Metadata"
-msgstr "Metadata"
+msgstr "元数据"
 
 #: exe/xului/templates/dublincore.xul:<label
 #: value="Creator:"
