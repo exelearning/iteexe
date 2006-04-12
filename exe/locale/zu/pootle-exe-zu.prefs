@@ -1,6 +1,6 @@
 # Pootle preferences for project exe, language zu
 
 rights:
-  default = u'view, suggest, archive, pocompile'
-  nobody = u'view'
+  default = u'view, suggest, translate, archive, pocompile'
+  nobody = u'view, suggest'
   matiu = u'view, suggest, translate, review, archive, pocompile'
