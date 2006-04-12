@@ -205,6 +205,7 @@ class PropertiesPage(RenderableLivePage):
         """
         Translates a string from an element
         """
+        data = unicode(data, 'utf8')
         if data.strip() and data != 'undefined':
             newText = _(data)
             if newText != data and elementId != '':

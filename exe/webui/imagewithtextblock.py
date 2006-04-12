@@ -96,7 +96,7 @@ class ImageWithTextBlock(Block):
         """
         log.debug("renderPreview")
         html  = u"\n<!-- image with text iDevice -->\n"
-        html  = u"<div class=\"iDevice "
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"<div class=\"image_text\" style=\""

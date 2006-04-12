@@ -1,4 +1,24 @@
-Version 0.14 - (((Mangled Moa)))
+Version 0.15 - Awkward Albatross
+* Add a background image to the package properties
+* Added Slovenian wiki url to wiki iDevice
+* Added Zulu translation
+* Numberous bug fixes including
+ * Discussion Activity" for non English
+ * Outline location and content page opened match
+ * Flash with text in IE
+ * Attachment with Chinese filename
+ * Upgraded Cloze iDevice
+ * Copyright notice updated for 2006
+ * Level names update
+ * Magnifier iDevice interface cleanup
+ * Right strings in dublin core properties
+ * Correct url for Italian Wikipedia
+ * Chinese Wikipedia article search
+ * Wikipedia storing emphasis
+ * Wikipedia iDevice "saves" title edits
+ * Images in Wikieducator iDevice
+
+Version 0.14 - Mangled Moa
 * New properties pages with dublin core properties for export
 * Better International Support
 * Better XHTML Compliance
@@ -7,7 +27,7 @@ Version 0.14 - (((Mangled Moa)))
 * New editor for Cloze IDevice
 * Bug fixes
 
-Version 0.13 - (((Pouty Pipi)))
+Version 0.13 - Pouty Pipi
 * Cleverer ready to run version 
 * Better International Support
 * Image magnifier IDevice
@@ -17,7 +37,7 @@ Version 0.13 - (((Pouty Pipi)))
 * Styling and CSS improvements
 * Bug fixes
 
-Version 0.12 - (((Merry Santa)))
+Version 0.12 - Merry Santa
 * Merging: insert and extract packages
 * Discussion iDevice plug-in
 * Enhanced Cloze iDevice

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: iso-8859-1 -*-
+# -*- coding: utf-8 -*-
 # 
 #   PYTHON MODULE:     MKI18N.PY
 #                      =========
@@ -210,7 +210,7 @@ iso639_languageDict = { 'aa'    : 'Afar. ',
                         'mt'    : 'Maltese. ',
                         'my'    : 'Burmese. ',
                         'na'    : 'Nauru. ',
-                        'nb'    : 'Norwegian Bokmål. ',
+                        'nb'    : 'Norwegian BokmÃ¥l. ',
                         'nd'    : 'Ndebele, North. ',
                         'ne'    : 'Nepali. ',
                         'ng'    : 'Ndonga. ',
@@ -220,7 +220,7 @@ iso639_languageDict = { 'aa'    : 'Afar. ',
                         'nr'    : 'Ndebele, South. ',
                         'nv'    : 'Navajo. ',
                         'ny'    : 'Chichewa; Nyanja. ',
-                        'oc'    : 'Occitan; Provençal. ',
+                        'oc'    : 'Occitan; ProvenÃ§al. ',
                         'om'    : '(Afan) Oromo. ',
                         'or'    : 'Oriya. ',
                         'os'    : 'Ossetian; Ossetic. ',
@@ -272,7 +272,7 @@ iso639_languageDict = { 'aa'    : 'Afar. ',
                         'ur'    : 'Urdu. ',
                         'uz'    : 'Uzbek. ',
                         'vi'    : 'Vietnamese. ',
-                        'vo'    : 'Volapük; Volapuk. ',
+                        'vo'    : 'VolapÃ¼k; Volapuk. ',
                         'wa'    : 'Walloon. ',
                         'wo'    : 'Wolof. ',
                         'xh'    : 'Xhosa. ',
@@ -501,27 +501,24 @@ def dict2pot(dct, filename, verbose=False):
             msgid, (seq, comments, msgstr) in
             dct.items()]
     for seq, comments, msgid, msgstr in sorted(data):
-        if isinstance(msgid, unicode):
-            # Cut off the u in front of the string
-            start = 2
-        else:
-            start = 1
         # comments
         write('\n')
         for line in comments:
             write('%s\n' % line.encode('utf8'))
         # Msgid
-        if '\n' in msgid:
+	msgid = msgid.encode('utf8').replace('"', r'\"')
+        if '\n' in msgid or len(msgid) > 80:
             write('msgid ""\n')
             write(multiLineOutput(msgid))
         else:
-            write('msgid "%s"\n' % `msgid`[start:-1].replace('"', '\\"'))
+            write('msgid "%s"\n' % msgid)
         # Msgstr
-        if '\n' in msgstr:
+	msgstr = msgstr.encode('utf8').replace('"', r'\"')
+        if '\n' in msgstr or len(msgstr) > 80:
             write('msgstr ""\n')
             write(multiLineOutput(msgstr))
         else:
-            write('msgstr "%s"\n' % `msgstr`[start:-1].replace('"', '\\"'))
+            write('msgstr "%s"\n' % msgstr)
 
 
 def multiLineOutput(string):
@@ -531,15 +528,11 @@ def multiLineOutput(string):
     result = ''
     lines = string.split('\n')
     for line in lines[:-1]:
-        result += '"%s\\n"\n' % `line`[1:-1].replace('"', '\\"')
+        result += '"%s\\n"\n' % line
     if lines[-1]:
-        result += '"%s"\n' % `lines[-1]`[1:-1].replace('"', '\\"') 
+        result += '"%s"\n' % lines[-1]
     return result
-                
 
-    
-    
-    
 
 # -----------------------------------------------------------------------------
 # c a t P O ( )         -- Concatenate one or several PO files with the application domain files. --

@@ -3,3 +3,4 @@
 rights:
   default = u'view, suggest, archive, pocompile'
   nobody = u'view'
+  matiu = u'view, suggest, translate, review, archive, pocompile'

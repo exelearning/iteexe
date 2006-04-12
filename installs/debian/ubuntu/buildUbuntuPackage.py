@@ -35,7 +35,10 @@ if 'build' in sys.argv:
         raise Exception('exe/debian directory/file already exists, aborting....')
     Path('debian').abspath().symlink(newDir)
     exeDir.chdir()
-    os.system('fakeroot debian/rules binary')
+    if os.path.exists(exeDir/'exe/webui/firefox'):
+        os.system('fakeroot debian/rules binary')
+    else:
+        raise Exception('You need to copy the firefox installation to "exe/webui/firefox"')
 
 packages = (exeDir/'..').glob('*.deb')
 if not packages:

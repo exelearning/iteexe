@@ -23,6 +23,7 @@ This class transforms an eXe node into a page on a self-contained website
 import logging
 import re
 from cgi                      import escape
+from urllib                   import quote
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
@@ -86,7 +87,7 @@ class WebsitePage(object):
 
             if self.node.package.backgroundImg:
                 html += u" style=\"background-image: url("
-                html += self.node.package.backgroundImg.basename()
+                html += quote(self.node.package.backgroundImg.basename())
                 html += u"); "
 
                 if self.node.package.backgroundImgTile:

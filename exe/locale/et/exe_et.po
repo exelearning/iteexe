@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-05 14:01+1200\n"
-"PO-Revision-Date: 2006-03-27 22:25+1200\n"
+"POT-Creation-Date: 2006-04-11 12:13+1200\n"
+"PO-Revision-Date: 2006-04-10 01:41+1200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Pootle 0.6.3.20060116\n"
 
-#: exe/idevices/appletidevice.py:59
+#: exe/idevices/appletidevice.py:60
 msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
@@ -34,12 +34,10 @@ msgid ". Please use ASCII names."
 msgstr ". Palun kasuta ASCII nimesid."
 
 #: exe/engine/clozeidevice.py:58
-#, fuzzy
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Kui sinu eesmärgiks on testida loetud materjali põhimõistetest arusaamist:</dt>  <dd>    <p> Kirjuta kokkuvõte tekstist või mõistest. See peaks olema piisavalt pikk, et testida antud info omandamist, kuid samas piisavalt lühike, et ei oleks koormav. Kuni üks trükitud lehekülg peaks olema piisav, kuid noorematele ja algajatele õpilastele võiks olla tunduvalt lühem.</p>    <p>Vali tekstist võtmesõnad, mis märgivad mõistetest arusaamist. Need on tõenäoliselt tegu-. nimi- ja määrsõnad. Vali alternatiivid, millele oleks üks selge vastus.</p>  </dd>  <dt>Kui sinu eesmärgiks on testida sõnade tundmist:</dt>  <dd>Kirjuta tekst, mis sisaldaks vastavaid sõnu. See tekst peaks olema arusaadav ja seotud ning ka siinkohal pööra tähelepanu teksti pikkusele. Märgista tekstis võtmesõnad. Vali alternatiivid, millele oleks üks selge vastus.</dd>  <dt>Kui sinu eesmärgiks on testida lausete moodustamine ja grammatikat: </dt>  <dd>  <p>Kasuta tekstis soovitud lausevorme. See tekst peaks olema arusaadav ja seotud ning ka siinkohal pööra tähelepanu teksti pikkusele. Pea meeles, et eesmärgiks ei ole sõnade tundmine, nii et kasutatud sõnade tähendused peavad olema õpilastele hästi teada.</p>  <p>Märgista tekstis võtmesõnad. Paku välja alternatiive samade sõnatüvedega, kuid teistes käänetes/pööretes. Hea mõte on lasta kolleegil eelnevalt koostatud testi või ülesannet lahendada/kontrollida, et vältida üllatusi !</p>"
+msgstr "<dl>  <dt>Kui sinu eesmärgiks on testida loetud materjali põhimõistetest arusaamine</dt>  <dd>    <p> Kirjuta kokkuvõte tekstist või mõistest. See peaks olema piisavalt pikk, et testida antud info omandamist, kuid samas piisavalt lühike, et ei oleks koormav. Kuni üks trükitud lehekülg peaks olema piisav, kuid noorematele ja algajatele õpilastele võiks olla tunduvalt lühem.</p>    <p>Vali tekstist võtmesõnad, mis märgivad mõistetest arusaamist. Need on tõenäoliselt tegu-. nimi- ja määrsõnad. Vali alternatiivid, millele oleks üks selge vastus.</p>  </dd>  <dt>Kui sinu eesmärgiks on testida sõnade tundmist:</dt>  <dd><p>Kirjuta tekst, mis sisaldaks vastavaid sõnu. See tekst peaks olema arusaadav ja seotud ning ka siinkohal pööra tähelepanu teksti pikkusele. Märgista tekstis võtmesõnad. Vali alternatiivid, millele oleks üks selge vastus.</p></dd>  <dt>Kui sinu eesmärgiks on testida lausete moodustamine ja grammatikat: </dt>  <dd>  <p>Kasuta tekstis soovitud lausevorme. See tekst peaks olema arusaadav ja seotud ning ka siinkohal pööra tähelepanu teksti pikkusele. Pea meeles, et eesmärgiks ei ole sõnade tundmine, nii et kasutatud sõnade tähendused peavad olema õpilastele hästi teada.</p>  <p>Märgista tekstis võtmesõnad. Paku välja alternatiive samade sõnatüvedega, kuid teistes käänetes/pööretes. Hea mõte on lasta kolleegil eelnevalt koostatud testi või ülesannet lahendada/kontrollida, et vältida üllatusi !</p></dd></dl>"
 
 #: exe/engine/imagewithtextidevice.py:41
-#, fuzzy
 msgid ""
 "<p>\n"
 "The image with text iDevice can be used in a number of ways to support both\n"
@@ -60,19 +58,7 @@ msgid ""
 msgstr ""
 "<p>\n"
 "Teksti iDevice-ga kaasa olevat teksti võib kasutada mitmel viisil, toetamaks\n"
-"nii eXe sisu emotsionaalset kui ka kognitiivset dimensiooni. Järgnevalt pakume\n"
-"välja näiteid sellistest dimensioonidest:\n"
-"</p><p>\n"
-"<b>Õpetaja profiil (emotsionaalne dimensioon)</b>\n"
-"</p><p>\n"
-"Uurimuste põhjal võib öelda et e-õpilased peavad lugu personaalsest\n"
-"lähenemisest. Üks võimalus selle saavutamiseks on lühitutvustuse tegemine\n"
-" õpetajate ja muu personali kohta, kes kursuse edasi andmisega seotud.\n"
-"Profiili, mis sisaldab ka inimese fotot, ei saa kasutada ainult õpetaja rolli ja \n"
-"andmete kommunikeerimiseks, vaid ka õpilane-õpetaja suhte otseseks \n"
-"esile toomiseks, vastandina arvutile. Profiilid peaksid olema kirjutatud\n"
-"\"mitte-akadeemilises\" võtmes, kasutades personaalseid asesõnu.\n"
-"</p><p>\n"
+"nii eXe sisu emotsionaalset kui ka kognitiivset dimensiooni.</p><p>\n"
 "<b>Visuaalse ja suulise info integreerimine</b>\n"
 "</p><p>\n"
 "Kognitiivpsühholoogid on välja pakkunud, et esitades õpilasele koos pildiga \n"
@@ -89,22 +75,22 @@ msgid "<p>Assign a label for the attachment. It is useful to include the type of
 msgstr "<p>Lisa manusele märge, mis võiks sisaldada faili tüüpi (nt .pdf, .ppt, jne).</p><p>Kasulik on ka faili suuruse näitamine, et pärast eksportimist oleks inimestel ettekujutus faili allalaadimisele kuluvast ajast.</p><p>Näiteks: <code>tulemused.doc (500KB)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
-#, fuzzy
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr "<p>Cloze-testid või ülesanded on tekstid või laused kust on kustutatud mõned sõnad või fraasid. Neid kasutatakse tihti järgmistel puhkudel:</p><ol><li>Kontrollimaks teadmisi kursuse põhimõistete kohta (see peaks olema kursusele eelnev test, ülesanne või kokkuvõttev kontroll.</li><li>Kontrollimaks loetust arusaamist.</li><li>Kontrollimaks sõnade tähenduste tundmist (näiteks õpilaste puhul kelle jaoks õppematerjalid pole emakeeles).</li><li>Kontrollimaks lausete-sõnade moodustamist ja/või grammatika tundmist.</li>"
+msgstr "<p>\"Täida lüngad\"-testid või ülesanded on tekstid või laused kust on kustutatud mõned sõnad või fraasid. Neid kasutatakse tihti järgmistel puhkudel:</p><ol><li>Kontrollimaks teadmisi kursuse põhimõistete kohta (see peaks olema kursusele eelnev test, ülesanne või kokkuvõttev kontroll).</li><li>Kontrollimaks loetust arusaamist.</li><li>Kontrollimaks sõnade tähenduste tundmist.</li><li>Kontrollimaks lausete-sõnade moodustamist ja/või grammatika tundmist.</li></ol>"
 
 #: exe/engine/clozeidevice.py:122
-#, fuzzy
 msgid ""
 "<p>Enter the text for the cloze activity in to the cloze field \n"
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr "Sisesta enda cloze-ülesandele tekst, trükkides selle cloze-välja. Et valida peidetavad sõnad, tee antud sõnal topelt-klikk jad kliki <i>Peida/Näita Sõnda</i> nupul."
+msgstr ""
+"<p>Sisesta \"Täida lüngad\"-ülesandele tekst, trükkides selle lünkade täitmise\n"
+" väljadesse, kas kopeerides mõnest muust allikast või sisestades teksti otse sellesse välja.</p><p> Et valida peidetavad sõnad, tee antud sõnal topelt-klikk selle valimiseks ja kliki Peida/Näita Sõna nupul.</p>"
 
 #: exe/engine/field.py:415
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr ""
+msgstr "<p>Kui jätta see valimata, aktsepteeritakse väikest hulka õigekirja ja suur/väike-tähtede vigu. Kui on valitud, ei aktsepteerita ühtegi viga.</p><p><strong>Näiteks:</strong> Kui õige vastus on <code>Elevant</code> siis nii <code>elevant</code> kui ka <code>elivant</code> loetakse algoritmi poolt <em>\"piisavalt õigeks\"</em>, kuna ainult üks täht on valesti, isegi siis kui \"Kontrolli suuri-väikseid tähti\" on valitus.</p><p>Kui suurte/väike-tähtede kontrollimine ei ole aktiivne, ei peeta väiketäht <code>e</code> veaks ja ka <code>elivant</code> on aktsepteeritud.</p><p>Kui nii \"Kindel märkimine\" kui ka \"Kontrolli suuri-väikseid tähti\" on valitud, on ainuke õige vastus \"Elevant\". Kui ainult \"Kindel märkimine\" on valitud ja \"Kontrolli suuri-väikseid tähti\" mitte, siis loetakse ka \"elevant\" õigeks.</p>"
 
 #: exe/engine/field.py:436
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
@@ -121,9 +107,8 @@ msgstr ""
 "kõiki sõnu ülesande lõpus."
 
 #: exe/engine/idevicestore.py:245
-#, fuzzy
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "Õpetajad peaksid seda iDevice-i kasutades meeles pidama järgmist:<ol><li>1. Pööra tähelepanu erinevatele õpperessursis sisalduvate tegevuste tüüpidele, mis on visuaalsed nähtavad. Vältimaks õpilase segadusse viimist, ära kasuta liiga palju erinevaid tegevuste tüüpe või klassifikatsioone. Tavaliselt piisab ühe õpperessursi jaoks 3-4 tüübist täielikult.</li><li>2. Visuaalse disaini vinklist väldi kahte järjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks küsimust või sündmust samasse iDevice-i.</li><li>3. Mõtle selliste tegevuste peale, kus tegevuse läbimise tajutav kasu kaalub üles sellele kuluva aja ja pingutuse.</li></ol>"
+msgstr "<p>Õpetajad peaksid seda iDevice-i kasutades meeles pidama järgmist:</p><ol><li>Pööra tähelepanu erinevatele õpperessursis sisalduvate tegevuste tüüpidele, mis on visuaalsed nähtavad. Vältimaks õpilase segadusse viimist, ära kasuta liiga palju erinevaid tegevuste tüüpe või klassifikatsioone. Tavaliselt piisab ühe õpperessursi jaoks 3-4 tüübist täielikult.</li><li>Visuaalse disaini vaatenurgast väldi kahte järjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks küsimust või sündmust samasse iDevice-i.</li><li>Mõtle selliste tegevuste peale, kus tegevuse läbimise tajutav kasu kaalub üles sellele kuluva aja ja pingutuse.</li></ol>"
 
 #: exe/engine/idevicestore.py:240
 msgid ""
@@ -133,6 +118,11 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Lugemise tegevust kasutatakse \n"
+"õpilase testimiseks tekstist arusaamisel.\n"
+"Selle teostamiseks võib õpilasel paluda\n"
+" mõtiskleda loetud teemal ja vastata küsimustele \n"
+"või lasta neil täita mõni loetul põhinev \"füüsilisem\" ülesanne.</p>"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -144,6 +134,11 @@ msgid ""
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
+"<p>Wikipedia iDevice lubab sul leida \n"
+"Wikipedias olevat sisumaterjali ja laadida se alla sinu eXe ressurssi. \n"
+" Wikipedia Artikli iDevice teeb koopia artikli sisust. \n"
+"Uuendused Wikipedia lehel ei uuene automaatselt eXe-s asuvates koopiates, seega peab artiklist tegema uue koopia.\n"
+" Sarnaselt ei uuenda ka eXe-s tehtud muudatused Wikipedia lehel asuvat artiklit.</p> <p>Wikipedia sisu on kaitstud <i>GNU free documentation</i> litsentsiga.</p>"
 
 #: exe/engine/idevicestore.py:348
 msgid ""
@@ -153,6 +148,11 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>Lugemis-tegevus, nagu ka nimi ütleb,\n"
+" peaks õpilasel paluma täita mingi tegevuse.\n"
+"See tegevus peaks olema otseselt seotud loetd tekstiga.\n"
+"Tegevuse tagasiside, kus sobilik, võib \n"
+"õpilasele pakkuda reflektiivset suunamist.</p>"
 
 #: exe/engine/galleryidevice.py:491
 msgid ""
@@ -169,7 +169,6 @@ msgid "?????"
 msgstr "?????"
 
 #: exe/engine/casestudyidevice.py:58
-#, fuzzy
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -241,12 +240,15 @@ msgstr "Lisa iDevice'i üks tekstirida. Kasulik kui soovid lisada märgise võim
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
 msgstr "Lisa iDevice-i teksti kast. Kasutatakse sisestamaks kirjeldavat tekstisisu."
 
-#: exe/idevices/appletidevice.py:56
+#: exe/idevices/appletidevice.py:57
 msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Lisa ühekaupa kõik appleti failid, v.a. .txt-fail, \n"
+"kasutades selleks failide lisamise ja ülesalaadimise nuppe. \n"
+"Kui failid on laetud, näidatakse neid appleti koodivälja all."
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
@@ -307,7 +309,6 @@ msgid "Allow auto completion when user filling the gaps."
 msgstr "Luba automaatne täitmine kui kasutaja lünkasid täidab."
 
 #: exe/engine/multichoiceidevice.py:59
-#, fuzzy
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -328,7 +329,7 @@ msgstr ""
 "olukordades, võib MCQ-sid kasutada kui testimisvahendit mõtete / vestluste \n"
 "stimuleerimiseks teemadel, mille väljendamisel või õpilane olla tagasihoidlik. \n"
 "\n"
-"MSQ-testi disainimisel pea meeles järgmist:\n"
+"MCQ-testi disainimisel pea meeles järgmist:\n"
 "<ul>\n"
 "<li> Mis on õppe tulemused, millised on küsimuste testimisomadused</li>\n"
 "<li> Milliseid intellektuaalseid võimeid testitakse</li>\n"
@@ -422,6 +423,11 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
 msgstr ""
+"Vali pildi kuvamise suurus. \n"
+"Mõõdud on pikslites. \n"
+"Üldiselt vastab 100 pikslit umbes 3 cm-le. \n"
+"Jäta mõlemad väljad tühjaks kui soovid \n"
+"pilti kuvada originaalsuuruses."
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -451,13 +457,13 @@ msgstr "Kliki siia"
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "Pildi-faili lisamiseks kliki \"Lisa pildid\" nupul. Pilt ilmub allapoole, kus võid selle märgendada. Hea tava on märgendisse lisada ka faili suurus."
 
-#: exe/engine/galleryidevice.py:291 exe/webui/block.py:237
-#: exe/webui/block.py:238 exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155 exe/webui/common.py:274
-#: exe/webui/common.py:275 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:333
+#: exe/engine/galleryidevice.py:291 exe/webui/common.py:274
+#: exe/webui/common.py:275 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/editorpane.py:333
 #: exe/webui/editorpane.py:334 exe/webui/editorpane.py:354
 #: exe/webui/editorpane.py:355
 msgid "Close"
@@ -479,8 +485,8 @@ msgstr "Täida lüngad"
 msgid "Confirm and submit"
 msgstr "Kinnita ja saada"
 
-#: exe/webui/testquestionelement.py:93 exe/webui/optionelement.py:81
-#: exe/webui/optionelement.py:129
+#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
+#: exe/webui/testquestionelement.py:93
 msgid "Correct"
 msgstr "Õige"
 
@@ -495,11 +501,17 @@ msgid ""
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Loo juhtumi kirjeldus. Hea juhtum one \n"
+" selline, mis kirjeldab teatud vastuolu või\n"
+" loob teatud olukorra (stseeni), \n"
+"kirjeldades sellega seotud tegelaskujusid ja situatsiooni. See peaks \n"
+"ka lubama teatud tegevuste teostamist, mis oleksid suunatud olukorra \n"
+"lahendamisele."
 
+#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
+#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
-#: exe/webui/block.py:208 exe/webui/editorpage.py:177
-#: exe/webui/editorpage.py:181 exe/webui/galleryblock.py:246
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -517,8 +529,8 @@ msgstr "Kustuta pilt"
 msgid "Delete option"
 msgstr "Kustuta valik"
 
-#: exe/webui/testquestionelement.py:85 exe/webui/questionelement.py:79
-#: exe/webui/truefalseelement.py:102
+#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
+#: exe/webui/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Kustuta küsimus"
 
@@ -539,6 +551,9 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
 msgstr ""
+"Kirjelda tegevusülesandeid, mis on olulised antud juhtumi kirjelduse puhul.\n"
+"Need peaksid olema küsimuste või juhendite vormis, ning suunama õpilast esitatud \n"
+"dilemma lahendamisel."
 
 #: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:426
 msgid ""
@@ -560,7 +575,7 @@ msgstr ""
 msgid "Describe the tasks the learners should complete."
 msgstr "Kirjelda ülesanded, mida õpilane peab läbima"
 
-#: exe/engine/flashmovieidevice.py:52 exe/engine/flashwithtextidevice.py:49
+#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Kirjeldus"
 
@@ -623,12 +638,15 @@ msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
 #: exe/xului/mainpage.py:351
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "EXPORT FAILED.\n"
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "%s on juba olemas, palun proovi uuesti muudetud failinimega"
+msgstr ""
+"EKSPORT EBAÕNNESTUS. \n"
+"\"%s\" on juba olemas. \n"
+"Palun proovi uuesti muudetud failinimega"
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
@@ -717,15 +735,13 @@ msgstr ""
 "ja vali ala suurus, milles soovid seda kuvada."
 
 #: exe/engine/multichoiceidevice.py:93
-#, fuzzy
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
-"Sisesta kõik valikud, millede hulgast õpilased  \n"
-"valima peavad, vastavasse kasti. Võid valikuid lisada klikkides \n"
-"\"Lisa veel valikuid\" nupul. Valikute kustutamiseks kliki \"x\" märgil iga valiku taga."
+"Sisesta siia kõik võimalikud valikud.  \n"
+"Võid valikuid lisada klikkides \"Lisa veel valikuid\" nupul. Valikute kustutamiseks kliki punasel \"X\" märgil iga valiku kõrval."
 
 #: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
 msgid ""
@@ -791,7 +807,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:76
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr ""
+msgstr "Sisesta tekst mida soovid allalaetud failiga seostada. See võib olla näiteks tegevusjuhend õpilasele pärast faili allalaadimst või kuidas laetud materjale kasutada."
 
 #: exe/xului/mainpage.py:527
 #, python-format
@@ -823,11 +839,11 @@ msgstr "Ekstra suur"
 msgid "False"
 msgstr "Väär"
 
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
-#: exe/engine/genericidevice.py:155 exe/webui/common.py:192
-#: exe/webui/questionelement.py:73 exe/webui/truefalseelement.py:90
-#: exe/webui/editorpane.py:220 exe/webui/optionelement.py:93
+#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
+#: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
+#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
 msgstr "Tagasiside"
 
@@ -950,9 +966,9 @@ msgstr "Vihje:"
 msgid "Home"
 msgstr "Kodu"
 
-#: exe/webui/block.py:276 exe/webui/multichoiceblock.py:176
-#: exe/webui/genericblock.py:79 exe/webui/genericblock.py:104
-#: exe/webui/galleryblock.py:312
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
+#: exe/webui/block.py:276 exe/webui/genericblock.py:79
+#: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
 msgstr "iDevide ikoon"
 
@@ -1025,7 +1041,7 @@ msgstr "Itaalia Wikipedia artikkel"
 msgid "Japanese Wikipedia Article"
 msgstr "Jaapani Wikipedia artikkel"
 
-#: exe/idevices/appletidevice.py:48
+#: exe/idevices/appletidevice.py:49
 msgid "Java Applet"
 msgstr "Java Applet"
 
@@ -1186,8 +1202,8 @@ msgstr ""
 "Vali ainult .swf (Flash Objects) selle  \n"
 "iDevice jaoks."
 
-#: exe/webui/testquestionelement.py:95 exe/webui/optionelement.py:76
-#: exe/webui/optionelement.py:81
+#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
+#: exe/webui/testquestionelement.py:95
 msgid "Option"
 msgstr "Valik"
 
@@ -1337,8 +1353,8 @@ msgstr "Sisesta siia instruktsioonid õpilastele"
 msgid "Question(s)"
 msgstr "Küsimus(ed)"
 
-#: exe/webui/multichoiceblock.py:89 exe/webui/testquestionelement.py:81
-#: exe/webui/truefalseelement.py:79
+#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
+#: exe/webui/testquestionelement.py:81
 msgid "Question:"
 msgstr "Küsimus:"
 
@@ -1393,12 +1409,15 @@ msgid "Right"
 msgstr "Parem"
 
 #: exe/xului/mainpage.py:246
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "SAVE FAILED.\n"
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "%s on juba olemas, palun proovi uuesti muudetud failinimega"
+msgstr ""
+"SALVESTAMINE EBAÕNNESTUS.\n"
+"\"%s\" on juba olemas. \n"
+"Palun proovi uuesti muudetud failinimega"
 
 #: exe/engine/quiztestidevice.py:105
 msgid "SCORM Quiz"
@@ -1569,8 +1588,8 @@ msgstr "Range hindamine ?"
 msgid "Strong emphasis"
 msgstr "Tugev rõhusasetus"
 
-#: exe/webui/common.py:208 exe/webui/element.py:620
-#: exe/webui/editorpane.py:397
+#: exe/webui/common.py:208 exe/webui/editorpane.py:397
+#: exe/webui/element.py:620
 msgid "Submit"
 msgstr "Saada"
 
@@ -1583,12 +1602,11 @@ msgid "Swedish Wikipedia Article"
 msgstr "Rootsi Wikipedia artikkel"
 
 #: exe/engine/idevicestore.py:353
-#, fuzzy
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "Õpetajad peaksid seda iDevice-i kasutades meeles pidama järgmist:<ol><li>1. Pööra tähelepanu erinevatele õpperessursis sisalduvate tegevuste tüüpidele, mis on visuaalsed nähtavad. Vältimaks õpilase segadusse viimist, ära kasuta liiga palju erinevaid tegevuste tüüpe või klassifikatsioone. Tavaliselt piisab ühe õpperessursi jaoks 3-4 tüübist täielikult.</li><li>2. Visuaalse disaini vinklist väldi kahte järjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks küsimust või sündmust samasse iDevice-i.</li><li>3. Mõtle selliste tegevuste peale, kus tegevuse läbimise tajutav kasu kaalub üles sellele kuluva aja ja pingutuse.</li></ol>"
+msgstr "Õpetajad peaksid seda iDevice-i kasutades meeles pidama järgmist:<ol><li>Pööra tähelepanu erinevatele õpperessursis sisalduvate tegevuste tüüpidele, mis on visuaalsed nähtavad. Vältimaks õpilase segadusse viimist, ära kasuta liiga palju erinevaid tegevuste tüüpe või klassifikatsioone. Tavaliselt piisab ühe õpperessursi jaoks 3-4 tüübist täielikult.</li><li>Visuaalse disaini vinklist väldi kahte järjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks küsimust või sündmust samasse iDevice-i.</li><li>Mõtle selliste tegevuste peale, kus tegevuse läbimise tajutav kasu kaalub üles sellele kuluva aja ja pingutuse.</li></ol>"
 
-#: exe/engine/imagemagnifieridevice.py:53
 #: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "Tekst"
 
@@ -1647,6 +1665,8 @@ msgid ""
 "There was an error in the export:\n"
 "%s"
 msgstr ""
+"Viga eksportimisel:\n"
+"%s"
 
 #: exe/webui/wikipediablock.py:179
 msgid "This article is licensed under the "
@@ -1691,8 +1711,12 @@ msgid "This is an optional field."
 msgstr "See väli ei ole kohustuslik."
 
 #: exe/webui/block.py:203
-msgid "This will delete this iDevice.\\nDo you really want to do this?"
-msgstr "See kustutab iDevice.\\nKas soovid tõesti seda teha?"
+msgid ""
+"This will delete this iDevice.\n"
+"Do you really want to do this?"
+msgstr ""
+"See kustutab selle iDevice.\n"
+"Kas soovid tõesti seda teha?"
 
 #: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
 msgid "Thread: "
@@ -1746,7 +1770,6 @@ msgid "Type a forum name here"
 msgstr "Sisesta siia foorumi nimi"
 
 #: exe/engine/multichoiceidevice.py:96
-#, fuzzy
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -1804,19 +1827,18 @@ msgstr "Ei saa ühendust:"
 msgid "Unit"
 msgstr "Osa"
 
-#: exe/engine/wikipediaidevice.py:52 exe/engine/flashmovieidevice.py:40
-#: exe/engine/casestudyidevice.py:57 exe/engine/multichoiceidevice.py:58
-#: exe/engine/freetextidevice.py:38 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41
-#: exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
-#: exe/engine/truefalseidevice.py:60 exe/engine/externalurlidevice.py:38
-#: exe/engine/idevicestore.py:239 exe/engine/idevicestore.py:297
-#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:347
-#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:432
-#: exe/engine/clozeidevice.py:45 exe/engine/attachmentidevice.py:42
-#: exe/engine/galleryidevice.py:490 exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:49
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
+#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
+#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
+#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
 msgstr "Aucklandi Ülikool"
 
@@ -1828,6 +1850,13 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"Vastupidiselt MCQ-testile on SCORM-test \n"
+"kasutatav õpilaste teadmiste testimisel \n"
+"mingil teemal ning tagasisideta õige \n"
+"vastuse kohta. Test tuleb tavaliselt teha\n"
+" pärast seda kui õpilasel on olnud\n"
+" aega õppida ning harjutada kasutades \n"
+"õpitud informatsiooni või oskust."
 
 #: exe/idevices/appletblock.py:82
 msgid "Upload"
@@ -1838,15 +1867,13 @@ msgid "Use Emphasis to distinguish the importance  of the information being pres
 msgstr "Kasuta rõhuasetust iDevice's esitatud olulise informatsiooni välja toomisel."
 
 #: exe/engine/idevicestore.py:289 exe/engine/idevicestore.py:397
-#, fuzzy
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
-"Selle elemendi kasutus on paindlik. Kasuta seda kokkuvõtte tegemiseks \n"
-"lugemismaterjalides kaetud punktidest, või alguspunktina materjalide edasisele \n"
-"analüüsile, esitades debatti algatava küsimuse või seiuskoha. "
+"Kasuta tagasisidet seda kokkuvõtte tegemiseks lugemismaterjalides kaetud punktidest\n"
+", või alguspunktina materjalide edasisele analüüsile, esitades debatti algatava küsimuse või seiuskoha. "
 
 #: exe/engine/galleryidevice.py:494
 msgid "Use this Idevice if you have a lot of images to show."
@@ -1875,7 +1902,6 @@ msgid "What to read"
 msgstr "Mida lugeda"
 
 #: exe/engine/multichoiceidevice.py:72
-#, fuzzy
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -1942,16 +1968,16 @@ msgstr "duplitseeritud foorumin nimi.\n"
 msgid "duplicate topic name."
 msgstr "duplitseeritud teema nimi."
 
-#: exe/export/imsexport.py:188 exe/export/scormexport.py:257
+#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/editorpage.py:161 exe/webui/common.py:67
-#: exe/webui/preferencespage.py:73
+#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
+#: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: e-õppe XHTML redaktor"
 
-#: exe/idevices/appletidevice.py:76
+#: exe/idevices/appletidevice.py:77
 #, python-format
 msgid "file %s has no parentNode"
 msgstr "failil  %s puudub parentNode"
@@ -1960,7 +1986,7 @@ msgstr "failil  %s puudub parentNode"
 msgid "http://en.wikipedia.org/"
 msgstr "http://et.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:78
+#: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:79
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice-l %s pudub pakett"
@@ -2088,13 +2114,19 @@ msgstr "Lae pilt"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
-"'\n"
-"'                Typically, Subject will be expressed as keywords, key phrases or\n"
-"'                classification codes that describe a topic of the resource.\n"
-"'                Recommended best practice is to select a value from a controlled\n"
-"'                vocabulary or formal classification scheme.\n"
-"'             "
+"\n"
+"                Typically, Subject will be expressed as keywords, key phrases or\n"
+"                classification codes that describe a topic of the resource.\n"
+"                Recommended best practice is to select a value from a controlled\n"
+"                vocabulary or formal classification scheme.\n"
+"             "
 msgstr ""
+"\n"
+"Tavaliselt väljendatakse Teemat kui võtmesõnu, fraase või \n"
+" klassifitseerimiskoode, mis kirjeldavad ressursi teemat.\n"
+"Soovitatav praktika on valida variandid piiratud sõnade hulgast \n"
+"või formaalsest klassifitseerimis-skeemist.\n"
+"             "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
@@ -2159,12 +2191,16 @@ msgstr "Taksonoomia"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
-"'\n"
-"'                 Typically, Date will be associated with the creation or\n"
-"'                 availability of the resource. Recommended best practice for\n"
-"'                 encoding the date value is defined in a profile called\n"
-"'                 "
+"\n"
+"                 Typically, Date will be associated with the creation or\n"
+"                 availability of the resource. Recommended best practice for\n"
+"                 encoding the date value is defined in a profile called\n"
+"                 "
 msgstr ""
+"\n"
+"Tavaliselt seostatakse Kuupäeva ressurssi loomise või kättesaadavaks tegemise \n"
+" kuupäevaga. Soovitatav praktika kuupäeva kodeerimiseks on defineeritud profiilis nimega \n"
+"                 "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
@@ -2196,11 +2232,14 @@ msgstr "Tase 2:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
-"'\n"
-"'              Type includes terms describing general categories, functions, or\n"
-"'              genres, for content. Recommended best practice is to select a value\n"
-"'              from a controlled vocabulary or controlled classification scheme."
+"\n"
+"              Type includes terms describing general categories, functions, or\n"
+"              genres, for content. Recommended best practice is to select a value\n"
+"              from a controlled vocabulary or controlled classification scheme."
 msgstr ""
+"\n"
+"Tüüp sisaldab sisu jaoks termineid, mis kirjeldavad üldisi kategooriaid, funktsioone või zhanreid.\n"
+"Soovitatav praktika on valida variandid piiratud sõnade hulgast või kontrollitud klassifikatsiooni skeemist."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
@@ -2315,9 +2354,8 @@ msgstr "label=\"IMS Sisupakett\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
-#, fuzzy
 msgid "Afar "
-msgstr "Afar."
+msgstr "Afar"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-export-website-key" oncommand="exportPackage('webSite')"
@@ -2327,7 +2365,6 @@ msgstr "label=\"Veebileht\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
-#, fuzzy
 msgid "Abkhazian "
 msgstr "Abhaasia"
 
@@ -2338,9 +2375,8 @@ msgstr "label=\"Üks leht\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
-#, fuzzy
 msgid "Avestan "
-msgstr "Avestan."
+msgstr "Avestan"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="e" label="Merging">
@@ -2349,7 +2385,6 @@ msgstr "label=\"Paketid...\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
-#, fuzzy
 msgid "Afrikaans "
 msgstr "Aafrika"
 
@@ -2360,7 +2395,6 @@ msgstr "label=\"Sisesta pakett\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
-#, fuzzy
 msgid "Amharic "
 msgstr "Amhaari"
 
@@ -2371,7 +2405,6 @@ msgstr "label=\"Ava pakett\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
-#, fuzzy
 msgid "Arabic "
 msgstr "Araabia"
 
@@ -2382,7 +2415,6 @@ msgstr "label=\"Vahendid\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
-#, fuzzy
 msgid "Assamese "
 msgstr "Assameesi"
 
@@ -2393,7 +2425,6 @@ msgstr "Eelistused"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
-#, fuzzy
 msgid "Aymara "
 msgstr "Aymara"
 
@@ -2404,7 +2435,6 @@ msgstr "label=\"Stiilid\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
-#, fuzzy
 msgid "Azerbaijani "
 msgstr "Azerbaidzhaani"
 
@@ -2416,7 +2446,6 @@ msgstr "label=\"Uuenda\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
-#, fuzzy
 msgid "Bashkir "
 msgstr "Bashkiiri."
 
@@ -2427,9 +2456,8 @@ msgstr "label=\"Abi\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
-#, fuzzy
 msgid "Byelorussian; Belarusian "
-msgstr "Valgevene."
+msgstr "Valgevene"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
@@ -2438,9 +2466,8 @@ msgstr "label=\"Meist...\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
-#, fuzzy
 msgid "Bulgarian "
-msgstr "Bulgaaria."
+msgstr "Bulgaaria"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="registerOnline()" accesskey="R" label="Register Online">
@@ -2449,21 +2476,18 @@ msgstr "label=\"Registreeru internetis\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
-#, fuzzy
 msgid "Bihari "
-msgstr "Bihaari."
+msgstr "Bihaari"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
-#, fuzzy
 msgid "label=\"Report an Issue\" accesskey=\"R\""
-msgstr "label=\"Eksport\" accesskey=\"e\""
+msgstr "label=\"Teata veast\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
-#, fuzzy
 msgid "Bislama "
-msgstr "Bislama."
+msgstr "Bislama"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo">
@@ -2472,9 +2496,8 @@ msgstr "debugInfo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
-#, fuzzy
 msgid "Bengali; Bangla "
-msgstr "Bengaali."
+msgstr "Bengaali"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" label="Add Page">
@@ -2483,9 +2506,8 @@ msgstr "Lisa lehekülg"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
 #: label="Tibetan ">
-#, fuzzy
 msgid "Tibetan "
-msgstr "Tiibeti."
+msgstr "Tiibeti"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
@@ -2494,9 +2516,8 @@ msgstr "Muuda nimi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton ">
-#, fuzzy
 msgid "Breton "
-msgstr "Bretooni."
+msgstr "Bretooni"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
@@ -2505,9 +2526,8 @@ msgstr "Sisukorra riba"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
-#, fuzzy
 msgid "Bosnian "
-msgstr "Bosnia."
+msgstr "Bosnia"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
@@ -2516,9 +2536,8 @@ msgstr "iDevice"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
-#, fuzzy
 msgid "Catalan "
-msgstr "Kataloonia."
+msgstr "Kataloonia"
 
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
@@ -2527,9 +2546,8 @@ msgstr "iDevice Riba"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
-#, fuzzy
 msgid "Chechen "
-msgstr "Tshetsheenia."
+msgstr "Tshetsheenia"
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring">
@@ -2538,9 +2556,8 @@ msgstr "Autorlus"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
-#, fuzzy
 msgid "Chamorro "
-msgstr "Kamorro."
+msgstr "Kamorro"
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties">
@@ -2549,873 +2566,728 @@ msgstr "Omadused"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
-#, fuzzy
 msgid "Corsican "
-msgstr "Korsika."
+msgstr "Korsika"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
-#, fuzzy
 msgid "Czech "
-msgstr "Tsehhi."
+msgstr "Tsehhi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
-#, fuzzy
 msgid "Church Slavic "
-msgstr "Slaavi."
+msgstr "Slaavi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
-#, fuzzy
 msgid "Chuvash "
-msgstr "Tshuvashi."
+msgstr "Tshuvashi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
 #: label="Welsh ">
-#, fuzzy
 msgid "Welsh "
-msgstr "Walesi."
+msgstr "Walesi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish ">
-#, fuzzy
 msgid "Danish "
-msgstr "Taani."
+msgstr "Taani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
 #: label="German ">
-#, fuzzy
 msgid "German "
-msgstr "Saksa."
+msgstr "Saksa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
-#, fuzzy
 msgid "Dzongkha; Bhutani "
-msgstr "Butaani."
+msgstr "Butaani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek ">
-#, fuzzy
 msgid "Greek "
-msgstr "Kreeka."
+msgstr "Kreeka"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
 #: label="English ">
-#, fuzzy
 msgid "English "
-msgstr "Inglise."
+msgstr "Inglise"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
-#, fuzzy
 msgid "Esperanto "
-msgstr "Esperanto."
+msgstr "Esperanto"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
 #: label="Spanish ">
-#, fuzzy
 msgid "Spanish "
-msgstr "Hispaania."
+msgstr "Hispaania"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
 #: label="Estonian ">
-#, fuzzy
 msgid "Estonian "
-msgstr "Eesti."
+msgstr "Eesti"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
-#, fuzzy
 msgid "Basque "
-msgstr "Baski."
+msgstr "Baski"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
 #: label="Persian ">
-#, fuzzy
 msgid "Persian "
-msgstr "Pärsia."
+msgstr "Pärsia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
 #: label="Finnish ">
-#, fuzzy
 msgid "Finnish "
-msgstr "Soome."
+msgstr "Soome"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
 #: label="Fijian; Fiji ">
-#, fuzzy
 msgid "Fijian; Fiji "
-msgstr "Fidzhi."
+msgstr "Fidzhi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
 #: label="Faroese ">
-#, fuzzy
 msgid "Faroese "
-msgstr "Fääri."
+msgstr "Fääri"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
 #: label="French ">
-#, fuzzy
 msgid "French "
-msgstr "Prantsuse."
+msgstr "Prantsuse"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
 #: label="Frisian ">
-#, fuzzy
 msgid "Frisian "
-msgstr "Friisia."
+msgstr "Friisia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
 #: label="Irish ">
-#, fuzzy
 msgid "Irish "
-msgstr "Iiri."
+msgstr "Iiri"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
 #: label="Scots; Gaelic ">
-#, fuzzy
 msgid "Scots; Gaelic "
-msgstr "Shoti."
+msgstr "Shoti"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
-#, fuzzy
 msgid "Gallegan; Galician "
-msgstr "Galliitsia."
+msgstr "Galliitsia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
-#, fuzzy
 msgid "Guarani "
-msgstr "Guaraani."
+msgstr "Guaraani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
 #: label="Gujarati ">
-#, fuzzy
 msgid "Gujarati "
-msgstr "Gujarati."
+msgstr "Gujarati"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
 #: label="Manx ">
-#, fuzzy
 msgid "Manx "
-msgstr "Manksi."
+msgstr "Manksi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
 #: label="Hausa (?) ">
-#, fuzzy
 msgid "Hausa (?) "
-msgstr "Hausa (?)."
+msgstr "Hausa (?)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
-#, fuzzy
 msgid "Hebrew (formerly iw) "
-msgstr "Heebrea."
+msgstr "Heebrea"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
 #: label="Hindi ">
-#, fuzzy
 msgid "Hindi "
-msgstr "Hindi."
+msgstr "Hindi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
-#, fuzzy
 msgid "Hiri Motu "
-msgstr "Hiri Motu."
+msgstr "Hiri Motu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
 #: label="Croatian ">
-#, fuzzy
 msgid "Croatian "
-msgstr "Horvaatia."
+msgstr "Horvaatia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
 #: label="Hungarian ">
-#, fuzzy
 msgid "Hungarian "
-msgstr "Ungari."
+msgstr "Ungari"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
-#, fuzzy
 msgid "Armenian "
-msgstr "Armeenia."
+msgstr "Armeenia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
 #: label="Herero ">
-#, fuzzy
 msgid "Herero "
-msgstr "Herero."
+msgstr "Herero"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
 #: label="Interlingua ">
-#, fuzzy
 msgid "Interlingua "
-msgstr "Interlingua."
+msgstr "Interlingua"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
 #: label="Indonesian (formerly in) ">
-#, fuzzy
 msgid "Indonesian (formerly in) "
-msgstr "Indoneesia."
+msgstr "Indoneesia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
 #: label="Interlingue ">
-#, fuzzy
 msgid "Interlingue "
-msgstr "Interlingue."
+msgstr "Interlingue"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
 #: label="Inupiak ">
-#, fuzzy
 msgid "Inupiak "
-msgstr "Inupiak."
+msgstr "Inupiak"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
 #: label="Ido ">
-#, fuzzy
 msgid "Ido "
-msgstr "Ido."
+msgstr "Ido"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
 #: label="Icelandic ">
-#, fuzzy
 msgid "Icelandic "
-msgstr "Islandi."
+msgstr "Islandi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
 #: label="Italian ">
-#, fuzzy
 msgid "Italian "
-msgstr "Itaalia."
+msgstr "Itaalia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
 #: label="Inuktitut ">
-#, fuzzy
 msgid "Inuktitut "
-msgstr "Inuktitut."
+msgstr "Inuktitut"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
-#, fuzzy
 msgid "Japanese "
-msgstr "Jaapani."
+msgstr "Jaapani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
 #: label="Javanese ">
-#, fuzzy
 msgid "Javanese "
-msgstr "Jaava."
+msgstr "Jaava"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
 #: label="Georgian ">
-#, fuzzy
 msgid "Georgian "
-msgstr "Gruusia."
+msgstr "Gruusia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
 #: label="Kikuyu ">
-#, fuzzy
 msgid "Kikuyu "
-msgstr "Kikuju."
+msgstr "Kikuju"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
 #: label="Kuanyama ">
-#, fuzzy
 msgid "Kuanyama "
-msgstr "Kuanjaami."
+msgstr "Kuanjaami"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
 #: label="Kazakh ">
-#, fuzzy
 msgid "Kazakh "
-msgstr "Kasahhi."
+msgstr "Kasahhi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
 #: label="Kalaallisut; Greenlandic ">
-#, fuzzy
 msgid "Kalaallisut; Greenlandic "
-msgstr "Gröönimaa."
+msgstr "Gröönimaa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
 #: label="Khmer; Cambodian ">
-#, fuzzy
 msgid "Khmer; Cambodian "
-msgstr "Kambodzha."
+msgstr "Kambodzha"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
 #: label="Kannada ">
-#, fuzzy
 msgid "Kannada "
-msgstr "Kannada."
+msgstr "Kannada"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
 #: label="Korean ">
-#, fuzzy
 msgid "Korean "
-msgstr "Korea."
+msgstr "Korea"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
 #: label="Kashmiri ">
-#, fuzzy
 msgid "Kashmiri "
-msgstr "Kashmiiri."
+msgstr "Kashmiiri"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
 #: label="Kurdish ">
-#, fuzzy
 msgid "Kurdish "
-msgstr "Kurdi."
+msgstr "Kurdi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
 #: label="Komi ">
-#, fuzzy
 msgid "Komi "
-msgstr "Komi."
+msgstr "Komi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish ">
-#, fuzzy
 msgid "Cornish "
-msgstr "Korni."
+msgstr "Korni"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
 #: label="Kirghiz ">
-#, fuzzy
 msgid "Kirghiz "
-msgstr "Kirgiisi."
+msgstr "Kirgiisi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
 #: label="Latin ">
-#, fuzzy
 msgid "Latin "
-msgstr "Ladina."
+msgstr "Ladina"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
 #: label="Letzeburgesch ">
-#, fuzzy
 msgid "Letzeburgesch "
-msgstr "Letseburgi."
+msgstr "Letseburgi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
 #: label="Lingala ">
-#, fuzzy
 msgid "Lingala "
-msgstr "Lingaala."
+msgstr "Lingaala"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
 #: label="Lao; Laotian ">
-#, fuzzy
 msgid "Lao; Laotian "
-msgstr "Laose."
+msgstr "Laose"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
 #: label="Lithuanian ">
-#, fuzzy
 msgid "Lithuanian "
-msgstr "Leedu."
+msgstr "Leedu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
 #: label="Latvian; Lettish ">
-#, fuzzy
 msgid "Latvian; Lettish "
-msgstr "Läti."
+msgstr "Läti"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
 #: label="Malagasy ">
-#, fuzzy
 msgid "Malagasy "
-msgstr "Malagaasi."
+msgstr "Malagaasi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
 #: label="Marshall ">
-#, fuzzy
 msgid "Marshall "
-msgstr "Marshalli."
+msgstr "Marshalli"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
 #: label="Maori ">
-#, fuzzy
 msgid "Maori "
-msgstr "Maori."
+msgstr "Maori"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
 #: label="Macedonian ">
-#, fuzzy
 msgid "Macedonian "
-msgstr "Makedoonia."
+msgstr "Makedoonia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
-#, fuzzy
 msgid "Malayalam "
-msgstr "Malajalaami."
+msgstr "Malajalaami"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
 #: label="Mongolian ">
-#, fuzzy
 msgid "Mongolian "
-msgstr "Mongoolia."
+msgstr "Mongoolia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
 #: label="Moldavian ">
-#, fuzzy
 msgid "Moldavian "
-msgstr "Moldaavia."
+msgstr "Moldaavia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
 #: label="Marathi ">
-#, fuzzy
 msgid "Marathi "
-msgstr "Marati."
+msgstr "Marati"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
 #: label="Malay ">
-#, fuzzy
 msgid "Malay "
-msgstr "Malai."
+msgstr "Malai"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
 #: label="Maltese ">
-#, fuzzy
 msgid "Maltese "
-msgstr "Malta."
+msgstr "Malta"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
-#, fuzzy
 msgid "Burmese "
-msgstr "Birma."
+msgstr "Birma"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
 #: label="Nauru ">
-#, fuzzy
 msgid "Nauru "
-msgstr "Nauru."
+msgstr "Nauru"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
 #: label="Norwegian Bokmål ">
-#, fuzzy
-msgid "Norwegian Bokml "
-msgstr "Norra."
+msgid "Norwegian Bokmål "
+msgstr "Norra"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
 #: label="Ndebele, North ">
-#, fuzzy
 msgid "Ndebele, North "
-msgstr "Ndebel, põhja."
+msgstr "Ndebel, põhja"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
 #: label="Nepali ">
-#, fuzzy
 msgid "Nepali "
-msgstr "Nepaali."
+msgstr "Nepaali"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
 #: label="Ndonga ">
-#, fuzzy
 msgid "Ndonga "
-msgstr "Ndonga."
+msgstr "Ndonga"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
 #: label="Dutch ">
-#, fuzzy
 msgid "Dutch "
-msgstr "Hollandi."
+msgstr "Hollandi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
 #: label="Norwegian Nynorsk ">
-#, fuzzy
 msgid "Norwegian Nynorsk "
-msgstr "Norra (nynorsk)."
+msgstr "Norra (nynorsk)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino"
 #: label="Norwegian ">
-#, fuzzy
 msgid "Norwegian "
-msgstr "Norra."
+msgstr "Norra"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
 #: label="Ndebele, South ">
-#, fuzzy
 msgid "Ndebele, South "
-msgstr "Ndebele, lõuna."
+msgstr "Ndebele, lõuna"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
 #: label="Navajo ">
-#, fuzzy
 msgid "Navajo "
-msgstr "Navajo."
+msgstr "Navajo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
 #: label="Chichewa; Nyanja ">
-#, fuzzy
 msgid "Chichewa; Nyanja "
-msgstr "Chichewa; Nyanja. "
+msgstr "Chichewa; Nyanja."
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
 #: label="Occitan; Provençal ">
-#, fuzzy
-msgid "Occitan; Provenzl "
-msgstr "Occitan; Provenzl. "
+msgid "Occitan; Provençal "
+msgstr "Occitan; Provenzl."
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
 #: label="(Afan) Oromo ">
-#, fuzzy
 msgid "(Afan) Oromo "
-msgstr "(Afan) Oromo. "
+msgstr "(Afan) Oromo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior"
 #: label="Oriya ">
-#, fuzzy
 msgid "Oriya "
-msgstr "Oriya. "
+msgstr "Oriya"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
 #: label="Ossetian; Ossetic ">
-#, fuzzy
 msgid "Ossetian; Ossetic "
-msgstr "Osseetia."
+msgstr "Osseetia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
 #: label="Panjabi; Punjabi ">
-#, fuzzy
 msgid "Panjabi; Punjabi "
-msgstr "Panjabi; Punjabi. "
+msgstr "Panjabi; Punjabi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
 #: label="Pali ">
-#, fuzzy
 msgid "Pali "
-msgstr "Pali. "
+msgstr "Pali"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl"
 #: label="Polish ">
-#, fuzzy
 msgid "Polish "
-msgstr "Poola."
+msgstr "Poola"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
 #: label="Pashto, Pushto ">
-#, fuzzy
 msgid "Pashto, Pushto "
-msgstr "Pashto, Pushto. "
+msgstr "Pashto, Pushto"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
 #: label="Portuguese ">
-#, fuzzy
 msgid "Portuguese "
-msgstr "Portugali."
+msgstr "Portugali"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
 #: label="Quechua ">
-#, fuzzy
 msgid "Quechua "
-msgstr "Quechua. "
+msgstr "Quechua"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
 #: label="Rhaeto-Romance ">
-#, fuzzy
 msgid "Rhaeto-Romance "
-msgstr "Retro-romaani."
+msgstr "Retro-romaani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn"
 #: label="Rundi; Kirundi ">
-#, fuzzy
 msgid "Rundi; Kirundi "
-msgstr "Rundi; Kirundi. "
+msgstr "Rundi; Kirundi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
 #: label="Romanian ">
-#, fuzzy
 msgid "Romanian "
-msgstr "Rumeenia."
+msgstr "Rumeenia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru"
 #: label="Russian ">
-#, fuzzy
 msgid "Russian "
-msgstr "Vene."
+msgstr "Vene"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
 #: label="Kinyarwanda ">
-#, fuzzy
 msgid "Kinyarwanda "
-msgstr "Kinyarwanda. "
+msgstr "Kinyarwanda"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa"
 #: label="Sanskrit ">
-#, fuzzy
 msgid "Sanskrit "
-msgstr "Sanskrit. "
+msgstr "Sanskrit"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc"
 #: label="Sardinian ">
-#, fuzzy
 msgid "Sardinian "
-msgstr "Sardiinia."
+msgstr "Sardiinia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd"
 #: label="Sindhi ">
-#, fuzzy
 msgid "Sindhi "
-msgstr "Sindhi. "
+msgstr "Sindhi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise"
 #: label="Northern Sami ">
-#, fuzzy
 msgid "Northern Sami "
-msgstr "Põhja-Saami."
+msgstr "Põhja-Saami"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg"
 #: label="Sango; Sangro ">
-#, fuzzy
 msgid "Sango; Sangro "
-msgstr "Sango; Sangro. "
+msgstr "Sango; Sangro"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi"
 #: label="Sinhalese ">
-#, fuzzy
 msgid "Sinhalese "
-msgstr "Sinhalese. "
+msgstr "Sinhalese"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk"
 #: label="Slovak ">
-#, fuzzy
 msgid "Slovak "
-msgstr "Slovaki."
+msgstr "Slovaki"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl"
 #: label="Slovenian ">
-#, fuzzy
 msgid "Slovenian "
-msgstr "Sloveenia."
+msgstr "Sloveenia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
 #: label="Samoan ">
-#, fuzzy
 msgid "Samoan "
-msgstr "Samoa. "
+msgstr "Samoa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
 #: label="Shona ">
-#, fuzzy
 msgid "Shona "
-msgstr "Shona. "
+msgstr "Shona"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso"
 #: label="Somali ">
-#, fuzzy
 msgid "Somali "
-msgstr "Somaali."
+msgstr "Somaali"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
-#, fuzzy
 msgid "Albanian "
-msgstr "Albaania."
+msgstr "Albaania"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
 #: label="Serbian ">
-#, fuzzy
 msgid "Serbian "
-msgstr "Serbia."
+msgstr "Serbia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
 #: label="Swati; Siswati ">
-#, fuzzy
 msgid "Swati; Siswati "
-msgstr "Swati; Siswati. "
+msgstr "Swati; Siswati"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist"
 #: label="Sesotho; Sotho, Southern ">
-#, fuzzy
 msgid "Sesotho; Sotho, Southern "
-msgstr "Sesotho; Sotho, lõuna. "
+msgstr "Sesotho; Sotho, lõuna"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu"
 #: label="Sundanese ">
-#, fuzzy
 msgid "Sundanese "
-msgstr "Sundaneesi."
+msgstr "Sundaneesi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv"
 #: label="Swedish ">
-#, fuzzy
 msgid "Swedish "
-msgstr "Rootsi."
+msgstr "Rootsi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
 #: label="Swahili ">
-#, fuzzy
 msgid "Swahili "
-msgstr "Suahiili."
+msgstr "Suahiili"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
 #: label="Tamil ">
-#, fuzzy
 msgid "Tamil "
-msgstr "Tamili."
+msgstr "Tamili"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
 #: label="Telugu ">
-#, fuzzy
 msgid "Telugu "
-msgstr "Telugu. "
+msgstr "Telugu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
 #: label="Tajik ">
-#, fuzzy
 msgid "Tajik "
-msgstr "Tadzhiki."
+msgstr "Tadzhiki"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
 #: label="Thai ">
-#, fuzzy
 msgid "Thai "
-msgstr "Tai."
+msgstr "Tai"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
 #: label="Tigrinya ">
-#, fuzzy
 msgid "Tigrinya "
-msgstr "Tigriinia."
+msgstr "Tigriinia"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk"
 #: label="Turkmen ">
-#, fuzzy
 msgid "Turkmen "
-msgstr "Turkmeeni."
+msgstr "Turkmeeni"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl"
 #: label="Tagalog ">
-#, fuzzy
 msgid "Tagalog "
-msgstr "Tagalog. "
+msgstr "Tagalog"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
 #: label="Tswana; Setswana ">
-#, fuzzy
 msgid "Tswana; Setswana "
-msgstr "Tswana; Setswana. "
+msgstr "Tswana; Setswana"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
 #: label="Tonga (?) ">
-#, fuzzy
 msgid "Tonga (?) "
-msgstr "Tonga."
+msgstr "Tonga"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
 #: label="Turkish ">
-#, fuzzy
 msgid "Turkish "
-msgstr "Türgi."
+msgstr "Türgi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
 #: label="Tsonga ">
-#, fuzzy
 msgid "Tsonga "
-msgstr "Tsonga."
+msgstr "Tsonga"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
 #: label="Tatar ">
-#, fuzzy
 msgid "Tatar "
-msgstr "Tatari."
+msgstr "Tatari"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
 #: label="Twi ">
-#, fuzzy
 msgid "Twi "
-msgstr "Twi. "
+msgstr "Twi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity"
 #: label="Tahitian ">
-#, fuzzy
 msgid "Tahitian "
-msgstr "Tahiiti."
+msgstr "Tahiiti"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug"
 #: label="Uighur ">
-#, fuzzy
 msgid "Uighur "
-msgstr "Uighur. "
+msgstr "Uighur"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
 #: label="Ukrainian ">
-#, fuzzy
 msgid "Ukrainian "
-msgstr "Ukraina."
+msgstr "Ukraina"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
 #: label="Urdu ">
-#, fuzzy
 msgid "Urdu "
-msgstr "Urdu."
+msgstr "Urdu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
 #: label="Uzbek ">
-#, fuzzy
 msgid "Uzbek "
-msgstr "Usbeki."
+msgstr "Usbeki"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi"
 #: label="Vietnamese ">
-#, fuzzy
 msgid "Vietnamese "
-msgstr "Vietnami."
+msgstr "Vietnami"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
 #: label="Volapük; Volapuk ">
-#, fuzzy
-msgid "Volapk; Volapuk "
-msgstr "Volapk; Volapuk. "
+msgid "Volapük; Volapuk "
+msgstr "Volapk; Volapuk"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa"
 #: label="Walloon ">
-#, fuzzy
 msgid "Walloon "
-msgstr "Walloon. "
+msgstr "Walloon"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo"
 #: label="Wolof ">
-#, fuzzy
 msgid "Wolof "
-msgstr "Wolof. "
+msgstr "Wolof"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh"
 #: label="Xhosa ">
-#, fuzzy
 msgid "Xhosa "
-msgstr "Xhosa. "
+msgstr "Xhosa"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
 #: label="Yiddish (formerly ji) ">
-#, fuzzy
 msgid "Yiddish (formerly ji) "
-msgstr "Jiddish."
+msgstr "Jiddish"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
 #: label="Yoruba ">
-#, fuzzy
 msgid "Yoruba "
-msgstr "Yoruba. "
+msgstr "Yoruba"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
 #: label="Zhuang ">
-#, fuzzy
 msgid "Zhuang "
-msgstr "Zhuang. "
+msgstr "Zhuang"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
-#, fuzzy
 msgid "Chinese "
-msgstr "Hiina."
+msgstr "Hiina"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
 #: label="Zulu.">
@@ -3441,7 +3313,7 @@ msgstr "Õigused:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
+msgstr "Tavaliselt sisaldab Õiguste element ressursi jaoks õiguste korraldamise avaldust või viidet teenusele, mis seda informatsiooni pakub. Õiguste informatsioon sisaldab tihti intellektuaalse omandi õigust, autorikaitset ja muid erinevaid omandiõiguseid. Kui õiguste element puudub, ei saa teha mingeid järeldusi selle ressursi õiguste staatuse kohta"
 
 #~ msgid "Canno  access directory named "
 #~ msgstr "Puudub ligipääs kataloogile nimega"

@@ -1,0 +1,10 @@
+#: exe/webui/common.py:225
+msgid "_: suggested by thomas"
+"Confirm and submit"
+msgstr "Bestätigen und senden"
+
+#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:92
+msgid "_: suggested by thomas"
+"Delete option"
+msgstr "Antwortmöglichkeit löschen"
+

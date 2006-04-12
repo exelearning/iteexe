@@ -151,7 +151,7 @@ class ImageMagnifierBlock(Block):
         """
         log.debug("renderPreview")
         html  = u"\n<!-- image with text iDevice -->\n"
-        html  = u"<div class=\"iDevice "
+        html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += u"  <div class=\"image_text\" style=\""
@@ -195,7 +195,6 @@ class ImageMagnifierBlock(Block):
         else:
             html += '&nbsp;'
         html += u'\n<div style="clear:both;height:1px;overflow:hidden;"></div>\n'
-        html += u'\n<div style="clear:both;"></div>\n'
         html += u"</div> <!-- class=\"iDevice emphasisX\" -->\n" 
         return html
     

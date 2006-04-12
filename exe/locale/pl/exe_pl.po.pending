@@ -1,0 +1,10 @@
+#: exe/webui/wikipediablock.py:101
+msgid "_: suggested by arek"
+"Site"
+msgstr "Strona"
+
+#: exe/webui/wikipediablock.py:194
+msgid "_: suggested by arek"
+"article "
+msgstr "artykuł "
+

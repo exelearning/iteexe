@@ -73,7 +73,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
     if (start.nodeName == '#text') {
         nevow_clientToServerEvent('translate', this, '', start.parentNode.id, '!contents!', start.data)
     } else if (start.hasAttribute('label')) {
-      nevow_clientToServerEvent('translate', this, '', start.id, 'label', start.value)
+      nevow_clientToServerEvent('translate', this, '', start.id, 'label', start.label)
     } else if (start.nodeName == 'label') {
       nevow_clientToServerEvent('translate', this, '', start.id, 'value', start.value)
     } else if (start.nodeName == 'key') {
