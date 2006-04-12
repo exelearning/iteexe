@@ -9,9 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Português\n"
-"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: Portugal\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-EXE-Language: Portugais (de Portugál)\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""
