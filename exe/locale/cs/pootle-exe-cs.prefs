@@ -1,0 +1,5 @@
+# Pootle preferences for project exe, language cs
+
+rights:
+  default = u'view, translate, review, archive, pocompile'
+  nobody = u'view'
