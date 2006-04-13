@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Marathi\n"
 "X-Poedit-Country: India\n"
-"X-EXE-Language: \n"
+"X-EXE-Language: मराठी\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""
