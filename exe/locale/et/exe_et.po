@@ -1,3 +1,8 @@
+# EXELearning Estonian PO file
+# Copyright (C) 2004-2006 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# Matthew Sherborne <msherborne@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
@@ -5,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2006-04-11 12:13+1200\n"
 "PO-Revision-Date: 2006-04-10 01:41+1200\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
-"Language-Team: \n"
+"Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Eesti\n"
+"X-EXE-Language: Eesti\n"
+"X-Poedit-Language: Estonian\n"
 "X-Poedit-Country: ESTONIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Pootle 0.6.3.20060116\n"

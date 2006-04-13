@@ -1,16 +1,22 @@
-#, fuzzy
+# EXELearning Czech PO file
+# Copyright (C) 2004-2006 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# Matthew Sherborne <msherborne@gmail.com>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: EXELearning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-11 12:15+1200\n"
 "PO-Revision-Date: 2006-04-13 11:37+1200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Matthew Sherborne <msherborne@gmail.com.>\n"
+"Language-Team: Matthew Sherborne <msherborne@gmail.com.>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-EXE-Language: Česky\n"
+"X-Poedit-Language: Czech\n"
 "X-Generator: Translate Toolkit 0.8\n"
 
 #: exe/idevices/appletidevice.py:60

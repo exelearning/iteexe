@@ -1,3 +1,8 @@
+# EXELearning Portuguese (Portugual) PO file
+# Copyright (C) 2004-2006 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# Matthew Sherborne <msherborne@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
@@ -9,10 +14,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-EXE-Language: Português (de Portugál)\n"
 "X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: Portugal\n"
+"X-Poedit-Country: PORTUGAL\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-EXE-Language: Portugais (de Portugál)\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""

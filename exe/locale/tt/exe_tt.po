@@ -1,3 +1,8 @@
+# EXELearning L33t PO file
+# Copyright (C) 2004-2006 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# Matthew Sherborne <msherborne@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
@@ -10,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 0.6.3.20060116\n"
+"X-EXE-Language: 1337\n"
 "X-Poedit-Language: L33t\n"
 "X-Poedit-Country: Geekdom\n"
 

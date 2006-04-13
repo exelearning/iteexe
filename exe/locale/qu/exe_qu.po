@@ -1,4 +1,8 @@
-#, fuzzy
+# EXELearning Quechua PO file
+# Copyright (C) 2004-2006 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# Matthew Sherborne <msherborne@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
@@ -11,6 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 0.8\n"
+"X-EXE-Language: Runa Simi\n"
+"X-Poedit-Language: Quechua\n"
+"X-Poedit-Country: Peru\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""

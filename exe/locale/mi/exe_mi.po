@@ -1,3 +1,8 @@
+# EXELearning Maori PO file
+# Copyright (C) 2004-2006 EXELearning.org
+# This file is distributed under the same license as the EXE package.
+# Matthew Sherborne <msherborne@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: EXE Trunk (0.11)\n"
@@ -9,10 +14,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-EXE-Language: Māori\n"
 "X-Poedit-Language: Maori\n"
 "X-Poedit-Country: NEW ZEALAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: ../..\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""
