@@ -3,7 +3,7 @@
 ; Define your application name
 !define APPNAME "exe"
 
-!define EXE_VERSION "0.15"
+!define EXE_VERSION "0.16"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
@@ -23,15 +23,19 @@ OutFile "eXe_install_windows.exe"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "..\..\dist\exeLicense.txt"
 !insertmacro MUI_PAGE_DIRECTORY
-!insertmacro MUI_PAGE_INSTFILES
+Page custom IdevicePage
+!insertmacro MUI_PAGE_INSTFILES 
 !insertmacro MUI_PAGE_FINISH
-
+;InstallOptions::dialog "INSTDIR\eXe_applet_update.exe"
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 
 ; Set languages (first is default language)
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_RESERVEFILE_LANGDLL
+
+ReserveFile "idevices.ini"
+!insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
 
 !define SHCNE_ASSOCCHANGED 0x08000000
 !define SHCNF_IDLIST 0
@@ -118,6 +122,49 @@ Section "exe" Section2
 	NoIniUpdate:
 
 SectionEnd
+
+;Variables
+
+  Var INI_VALUE1
+	Var INI_VALUE2
+	Var INI_VALUE3
+	
+Section "ideveice plugins" Section3
+
+  
+  ;Read a value from an InstallOptions INI file
+  !insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE1 "idevices.ini" "Field 1" "State"
+	!insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE2 "idevices.ini" "Field 2" "State"
+	!insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE3 "idevices.ini" "Field 3" "State"
+  
+  ;run idevice plug-ins updates if check box was checked
+  StrCmp $INI_VALUE1 "1" "" +2
+    ExecWait "$INSTDIR\eXe_applet_update.exe"
+
+	StrCmp $INI_VALUE2 "1" "" +2
+    ExecWait "$INSTDIR\eXe_flashmovie_update.exe"
+		
+	StrCmp $INI_VALUE3 "1" "" +2
+    ExecWait "$INSTDIR\eXe_scormquiz_update.exe"
+SectionEnd
+
+Function .onInit
+
+  ;Extract InstallOptions INI files
+  !insertmacro MUI_INSTALLOPTIONS_EXTRACT "idevices.ini"
+  
+FunctionEnd
+
+LangString TEXT_IO_TITLE ${LANG_ENGLISH} "Idevice Plug-ins page"
+LangString TEXT_IO_SUBTITLE ${LANG_ENGLISH} "Please choose the idevice plug-ins updates which you want to install."
+
+
+Function IdevicePage
+
+  !insertmacro MUI_HEADER_TEXT "$(TEXT_IO_TITLE)" "$(TEXT_IO_SUBTITLE)"
+  !insertmacro MUI_INSTALLOPTIONS_DISPLAY "idevices.ini"
+
+FunctionEnd
 
 Section -FinishSection
 

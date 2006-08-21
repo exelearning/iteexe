@@ -1,8 +1,10 @@
 #!/usr/bin/python
-from exe.engine.path import Path, TempDirPath
 import sys, os
+exeDir = '../../..'
+sys.path.insert(0, exeDir)
+from exe.engine.path import Path, TempDirPath
+exeDir = Path(exeDir).abspath()
 
-exeDir = Path('../../..').abspath()
 
 usage = """
 Build ubuntu and debian packages of exe script.
@@ -55,8 +57,11 @@ if 'index' in sys.argv:
     pool = tmp/'pool'
     pool.mkdir()
     pool.chdir()
-    print 'Downloading cusomised twisted package...'
-    os.system('ncftpget ftp://ftp.eduforge.org/pub/exe/ubuntu/binary-i386/python2.4-twisted_2.0.1-999_all.deb')
+    print 'Downloading customised twisted package for "breezy users"...'
+    os.system('ncftpget ftp://ftp.eduforge.org/pub/exe/ubuntu/pool/python2.4-twisted_2.0.1-999_all.deb')
+    package.copyfile(pool/package.basename())
+    print 'Downloading old nevow 0.4.1 package for "dapper users"...'
+    os.system('ncftpget ftp://ftp.eduforge.org/pub/exe/ubuntu/pool/python2.4-nevow_0.4.1-1.1ubuntu1_all.deb')
     package.copyfile(pool/package.basename())
     tmp.chdir()
     os.system('dpkg-scanpackages pool /dev/null | gzip -9c > pool/Packages.gz')
@@ -102,10 +107,14 @@ if 'sftp' in sys.argv:
                     f.mkdir(part)
                 f.chdir(part)
             f.chdir('/home/pub/exe')
-    # Upload the binary package to the pool dir
-    print 'Uploading Package %s ...' % package
+    # Upload the binary package twice
+    print 'Uploading Package %s to main dir...' % package
+    f.put(package.encode('utf-8'), package.basename().encode('utf-8'))
+    f.chmod(package.basename().encode('utf-8'), 0x774)
+    print 'Uploading Package %s to pool dir...' % package
     f.chdir('/home/pub/exe/' + poolDir)
     f.put(package.encode('utf-8'), package.basename().encode('utf-8'))
+    f.chmod(package.basename().encode('utf-8'), 0x774)
     # Replace Packages.gz files
     print 'Uploading indexes...'
     for fn in packageDirs:
@@ -114,5 +123,6 @@ if 'sftp' in sys.argv:
         if 'Packages.gz' in f.listdir():
             f.remove('Packages.gz')
         f.put((pool/'Packages.gz').encode('utf-8'), 'Packages.gz')
+        f.chmod('Packages.gz', 0x774)
     print 'done'
 

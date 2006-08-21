@@ -1,3 +1,11 @@
+python-exe (0.16-0.1ubuntu1) unstable; urgency=low
+
+    * Added slovenian and french languages
+    * Fixed bug in True/False IDevice not storing instructions
+    * Fixed bug with gallery images with umlautes in filenames
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Wed, 12 Apr 2006 16:45:03 +1300
+
 python-exe (0.15-0.1ubuntu1) unstable; urgency=low
 
     * Add a background image to the package properties
