@@ -1,0 +1,8 @@
+.tabbedPane div {
+  padding: 1em;
+}
+
+.tabbedPane .tabs li, .tabbedPane div { 
+  border: 1px solid #c6b6c6;
+}
+
