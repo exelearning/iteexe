@@ -3,7 +3,7 @@
 ; Define your application name
 !define APPNAME "exe"
 
-!define EXE_VERSION "0.16"
+!define EXE_VERSION "0.17"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
@@ -17,6 +17,7 @@ OutFile "eXe_install_windows.exe"
 !include "MUI.nsh"
 
 !define MUI_ABORTWARNING
+
 ;!define MUI_FINISHPAGE_RUN "$INSTDIR\exe.exe"
 ;!define MUI_FINISHPAGE_RUN_PARAMETERS eXe-tutorial.elp
 
