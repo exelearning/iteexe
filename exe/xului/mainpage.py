@@ -111,6 +111,12 @@ class MainPage(RenderableLivePage):
                                                  'setTreeSelection')
         self.idevicePane.client = client
 
+    def render_mainMenu(self, ctx, data):
+        """Mac menubars are not shown
+        so make it a toolbar"""
+        if sys.platform[:6] == "darwin":
+            ctx.tag.tagName = 'toolbar'
+        return ctx.tag
 
     def render_addChild(self, ctx, data):
         """Fills in the oncommand handler for the 
@@ -312,6 +318,9 @@ class MainPage(RenderableLivePage):
         """Go to the exelearning.org/register.php site"""
         if hasattr(os, 'startfile'):
             os.startfile("http://exelearning.org/register.php")
+        elif sys.platform[:6] == "darwin":
+            import webbrowser
+            webbrowser.open("http://exelearning.org/register.php", new=True)
         else:
             os.system("firefox http://exelearning.org/register.php&")
 
@@ -320,6 +329,9 @@ class MainPage(RenderableLivePage):
         """Go to the exelearning.org/mantis site"""
         if hasattr(os, 'startfile'):
             os.startfile("http://exelearning.org/mantis")
+        elif sys.platform[:6] == "darwin":
+            import webbrowser
+            webbrowser.open("http://exelearning.org/mantis", new=True)
         else:
             os.system("firefox http://exelearning.org/mantis&")
 
