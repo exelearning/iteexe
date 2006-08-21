@@ -121,11 +121,9 @@ class IdeviceStore:
         from exe.engine.wikipediaidevice      import WikipediaIdevice
         from exe.engine.attachmentidevice     import AttachmentIdevice
         from exe.engine.titleidevice          import TitleIdevice
-        from exe.engine.quiztestidevice       import QuizTestIdevice
         from exe.engine.galleryidevice        import GalleryIdevice
         from exe.engine.clozeidevice          import ClozeIdevice
-        from exe.engine.flashwithtextidevice  import FlashWithTextIdevice
-        from exe.engine.flashmovieidevice     import FlashMovieIdevice        
+        from exe.engine.flashwithtextidevice  import FlashWithTextIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice 
 
@@ -148,11 +146,9 @@ class IdeviceStore:
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         self.extended.append(WikipediaIdevice(defaultSite))
         self.extended.append(AttachmentIdevice())
-        self.extended.append(QuizTestIdevice())
         self.extended.append(GalleryIdevice())
         self.extended.append(ClozeIdevice())
         self.extended.append(FlashWithTextIdevice())
-        self.extended.append(FlashMovieIdevice())
         self.extended.append(ExternalUrlIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes

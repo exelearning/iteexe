@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-11 12:13+1200\n"
+"POT-Creation-Date: 2006-06-07 14:00+1200\n"
 "PO-Revision-Date: 2006-04-11 11:30+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
@@ -109,11 +109,11 @@ msgstr ""
 " umfundi elithayipha esikhundleni sokuthi onke amagama amakwe ekupheleni \n"
 "kwesivivinyo.&lt;/p&gt;"
 
-#: exe/engine/idevicestore.py:245
+#: exe/engine/idevicestore.py:241
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.&lt;/li&gt;&lt;li&gtCabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;/li&gt;&lt;/ol&gt;"
 
-#: exe/engine/idevicestore.py:240
+#: exe/engine/idevicestore.py:236
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -145,7 +145,7 @@ msgstr ""
 "ushintsho olwenziwa kwi-eXe ngeke lufake okusha kwi-Wikipedia. &lt;/p&gt; &lt;p&gt;Okuqukethwe kwi-Wikipedia \n"
 "kuvikelwe ushicilelo lwesigunyazi lwamahhala i-GNU.&lt;/p&gt;"
 
-#: exe/engine/idevicestore.py:348
+#: exe/engine/idevicestore.py:344
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -222,9 +222,9 @@ msgstr "Ingxoxo eyodwa elula"
 msgid "Actions"
 msgstr "Okwenziwayo"
 
-#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:323
-#: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:392
-#: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:438
+#: exe/engine/idevicestore.py:280 exe/engine/idevicestore.py:319
+#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:388
+#: exe/engine/idevicestore.py:426 exe/engine/idevicestore.py:434
 #: exe/webui/questionelement.py:70
 msgid "Activity"
 msgstr "Umsebenzi"
@@ -260,11 +260,11 @@ msgstr ""
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "Faka isithombe kwi-iDevice yakho.Kwenzelwa ukukhethwa kwesithombe kwifayela yakho yezithombe ezigciniwe."
 
-#: exe/webui/testquestionelement.py:106
+#: exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
 msgstr "Faka okunye Okungakhethwa"
 
-#: exe/webui/quiztestblock.py:101
+#: exe/idevices/quiztestblock.py:101
 msgid "Add another Question"
 msgstr "Faka omunye Umbuzo"
 
@@ -289,7 +289,7 @@ msgid "Add interactive feedback to your iDevice."
 msgstr "Faka indlela yokuphendulana kwi-iDevice yakho."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
-#: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:79
+#: exe/webui/flashwithtextblock.py:79 exe/idevices/flashmovieblock.py:78
 msgid "Align:"
 msgstr "Qondanisa:"
 
@@ -345,7 +345,7 @@ msgstr ""
 "&lt;/ul&gt;\n"
 " "
 
-#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:433
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:429
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -394,7 +394,7 @@ msgid "Cannot access directory named "
 msgstr "Isiqondisi esinikeziwe asifinyeleleki"
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
-#: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:84
+#: exe/webui/flashwithtextblock.py:84 exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "Ukulandisa ngamafuphi:"
 
@@ -491,7 +491,7 @@ msgid "Confirm and submit"
 msgstr "Qinisekisa bese uthumela"
 
 #: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
-#: exe/webui/testquestionelement.py:93
+#: exe/idevices/testquestionelement.py:93
 msgid "Correct"
 msgstr "Kulungile"
 
@@ -528,12 +528,12 @@ msgstr "Susa Ifayela"
 msgid "Delete Image"
 msgstr "Susa isithombe"
 
-#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:92
+#: exe/webui/optionelement.py:92 exe/idevices/testoptionelement.py:86
 msgid "Delete option"
 msgstr "Susa okukhethiwe"
 
 #: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
-#: exe/webui/testquestionelement.py:85
+#: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Susa umbuzo"
 
@@ -558,7 +558,7 @@ msgstr ""
 "nendaba enikezwe emgodleni. Lena kumele kube imibuzo noma iziyalezo zomsebenzi okungaholela abafundi ekuxazululeni inkinga \n"
 "ababhekene nayo."
 
-#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:426
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:422
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -566,7 +566,7 @@ msgstr ""
 "Chaza ulwazi abafundi okumele babe nalo ukuze benze lesi sifundo\n"
 "ngokufanelekile."
 
-#: exe/engine/idevicestore.py:285 exe/engine/idevicestore.py:393
+#: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -574,11 +574,11 @@ msgstr ""
 "Chaza imisebenzi ehlobene nokufundwayo abafundi okumele bayenze. \n"
 "Lokhu kusiza abafundi babone ukuhlobana."
 
-#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:439
+#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:435
 msgid "Describe the tasks the learners should complete."
 msgstr "Chaza umsebenzi abafundi okumele bawenze."
 
-#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Incazelo"
 
@@ -665,7 +665,7 @@ msgstr "Ukugcizelela"
 msgid "English Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiNgisi"
 
-#: exe/engine/flashmovieidevice.py:52
+#: exe/idevices/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
@@ -705,7 +705,7 @@ msgstr ""
 msgid "Enter a title for the gallery"
 msgstr ""
 
-#: exe/engine/quiztestidevice.py:64 exe/engine/quiztestidevice.py:86
+#: exe/idevices/quiztestidevice.py:64 exe/idevices/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -750,7 +750,7 @@ msgstr ""
 "Ungongeza okukhethwayo ngokucindezela inkinobho \"Ongeza Ngokunye Okukhethwayo\".Cima okukhethwayo \n"
 "ngokucindezela u \"X\" obomvu eceleni kwakho."
 
-#: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
+#: exe/engine/idevicestore.py:277 exe/engine/idevicestore.py:385
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -779,7 +779,7 @@ msgstr "Faka iziyalezo zokwenziwa komsebenzi lapha"
 msgid "Enter the label here"
 msgstr "Faka ilebula lapha"
 
-#: exe/engine/quiztestidevice.py:61
+#: exe/idevices/quiztestidevice.py:61
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -848,7 +848,7 @@ msgid "False"
 msgstr "Amanga"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:392
 #: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
 #: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
@@ -876,7 +876,7 @@ msgstr "Phinduqambe"
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 
-#: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
+#: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
 msgstr "Umboniso bhanyabhanya"
 
@@ -1071,7 +1071,7 @@ msgid "Learning Management System:"
 msgstr "Isimiso Sokulawula Ukufunda:"
 
 #: exe/webui/imagemagnifierblock.py:85 exe/webui/imagewithtextblock.py:75
-#: exe/webui/flashmovieblock.py:75 exe/webui/flashwithtextblock.py:75
+#: exe/webui/flashwithtextblock.py:75 exe/idevices/flashmovieblock.py:75
 msgid "Left"
 msgstr "Kwesokunxele"
 
@@ -1172,8 +1172,8 @@ msgid "No groups"
 msgstr "Akukho maqembu"
 
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
-#: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:77
-#: exe/idevices/forumelement.py:239
+#: exe/webui/flashwithtextblock.py:77 exe/idevices/forumelement.py:239
+#: exe/idevices/flashmovieblock.py:77
 msgid "None"
 msgstr "Akukho"
 
@@ -1181,12 +1181,12 @@ msgstr "Akukho"
 msgid "OK"
 msgstr "Kulungile"
 
-#: exe/engine/idevicestore.py:295 exe/engine/idevicestore.py:304
-#: exe/engine/idevicestore.py:402 exe/engine/idevicestore.py:411
+#: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:300
+#: exe/engine/idevicestore.py:398 exe/engine/idevicestore.py:407
 msgid "Objectives"
 msgstr "Izinjongo"
 
-#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:405
+#: exe/engine/idevicestore.py:294 exe/engine/idevicestore.py:401
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1213,11 +1213,11 @@ msgstr ""
 "kuphela."
 
 #: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
-#: exe/webui/testquestionelement.py:95
+#: exe/idevices/testquestionelement.py:95
 msgid "Option"
 msgstr "Okukhethwayo"
 
-#: exe/webui/testquestionelement.py:91
+#: exe/idevices/testquestionelement.py:91
 msgid "Options"
 msgstr "Okukhethwayo"
 
@@ -1262,7 +1262,7 @@ msgstr "Ucelwa ukuba ukhethe i-LMS.\n"
 msgid "Please select a LMS"
 msgstr "Ucelwa ukuba ukhethe i-LMS"
 
-#: exe/webui/quiztestblock.py:93
+#: exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Ucelwa ukuba ukhethe impendulo efanele yalowo nalowo mbuzo."
 
@@ -1278,12 +1278,12 @@ msgstr "Ukulandisa okubhaliwe kwe-Wilipedia yesiPholishi"
 msgid "Portugese Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiPutukezi"
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:318
-#: exe/engine/idevicestore.py:415 exe/engine/idevicestore.py:425
+#: exe/engine/idevicestore.py:304 exe/engine/idevicestore.py:314
+#: exe/engine/idevicestore.py:411 exe/engine/idevicestore.py:421
 msgid "Preknowledge"
 msgstr "Ulwazi lwangaphambili"
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:418
+#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:414
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1313,7 +1313,7 @@ msgstr ""
 "Nikeza incazelo emfushane \n"
 "yesithombe esizokhuliswa."
 
-#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:78
+#: exe/idevices/flashmovieidevice.py:57 exe/idevices/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
@@ -1373,7 +1373,7 @@ msgid "Question(s)"
 msgstr "U(I)mbuzo"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
-#: exe/webui/testquestionelement.py:81
+#: exe/idevices/testquestionelement.py:81
 msgid "Question:"
 msgstr "Umbuzo:"
 
@@ -1385,12 +1385,12 @@ msgstr "Funda isigaba esingezansi bese ugcwalisa ngamagama ezikhaleni"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Funda isigaba esingezansi bese ugcwalisa ngamagama ezikhaleni."
 
-#: exe/engine/idevicestore.py:219 exe/engine/idevicestore.py:237
+#: exe/engine/idevicestore.py:215 exe/engine/idevicestore.py:233
 #: exe/engine/genericidevice.py:165
 msgid "Reading Activity"
 msgstr "Umsebenzi wokuFundwa"
 
-#: exe/engine/idevicestore.py:345 exe/engine/genericidevice.py:163
+#: exe/engine/idevicestore.py:341 exe/engine/genericidevice.py:163
 msgid "Reading Activity 0.11"
 msgstr "Umsebenzi wokuFundwa 0.11"
 
@@ -1423,7 +1423,7 @@ msgid "Restart"
 msgstr "Phinduqale"
 
 #: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashmovieblock.py:76 exe/webui/flashwithtextblock.py:76
+#: exe/webui/flashwithtextblock.py:76 exe/idevices/flashmovieblock.py:76
 msgid "Right"
 msgstr "Kwesokudla"
 
@@ -1435,11 +1435,11 @@ msgid ""
 "Please try again with a different filename"
 msgstr ""
 
-#: exe/engine/quiztestidevice.py:105
+#: exe/idevices/quiztestidevice.py:105
 msgid "SCORM Quiz"
 msgstr "Isiphico se-SCORM"
 
-#: exe/webui/quiztestblock.py:137
+#: exe/idevices/quiztestblock.py:137
 msgid "SUBMIT ANSWERS"
 msgstr "THUMELA IZIMPENDULO"
 
@@ -1485,7 +1485,7 @@ msgstr "Ketha isithombe"
 msgid "Select an image (JPG file)"
 msgstr "Khetha isithombe (JPG file)"
 
-#: exe/webui/quiztestblock.py:104
+#: exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
 msgstr "Khetha izinga lokuphumelela:"
 
@@ -1610,7 +1610,7 @@ msgstr "Ukugcizelela okunamandla"
 msgid "Submit"
 msgstr "Thumela"
 
-#: exe/webui/quiztestblock.py:355
+#: exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "Thumela impendulo"
 
@@ -1618,7 +1618,7 @@ msgstr "Thumela impendulo"
 msgid "Swedish Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiSwedishi"
 
-#: exe/engine/idevicestore.py:353
+#: exe/engine/idevicestore.py:349
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.&lt;/li&gt;&lt;li&gtCabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;/li&gt;&lt;/ol&gt;"
 
@@ -1696,7 +1696,7 @@ msgstr ""
 "Lokhu kukhetha ubungako bokuqala \n"
 "bengilazi yokukhulisa."
 
-#: exe/engine/flashmovieidevice.py:41
+#: exe/idevices/flashmovieidevice.py:41
 msgid ""
 "This iDevice only supports the Flash Video File (.FLV) format, and will not\n"
 "accept other video formats. You can however convert other movie formats\n"
@@ -1746,7 +1746,7 @@ msgstr "Isixwayiso:"
 msgid "Title"
 msgstr "Isihloko:"
 
-#: exe/engine/quiztestidevice.py:67
+#: exe/idevices/quiztestidevice.py:67
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -1814,7 +1814,7 @@ msgstr ""
 "\"Impendulo efanele\" njengoba kuboniswa ukukhethwa kwempendulo efanele; noma \n"
 " \"Impendulo eyiphutha\" ngokunye okukhethwayo."
 
-#: exe/engine/idevicestore.py:305 exe/engine/idevicestore.py:412
+#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:408
 msgid "Type the learning objectives for this resource."
 msgstr "Thayipha izinjongo zokufundiso zalomthombo wokufunda."
 
@@ -1845,20 +1845,20 @@ msgstr "Isigatshana"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
 #: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60 exe/engine/quiztestidevice.py:106
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/flashmovieidevice.py:40 exe/engine/clozeidevice.py:45
+#: exe/engine/truefalseidevice.py:60 exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/attachmentidevice.py:42
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/clozeidevice.py:45
 #: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:239
-#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:325
-#: exe/engine/idevicestore.py:347 exe/engine/idevicestore.py:404
-#: exe/engine/idevicestore.py:432 exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40 exe/idevices/appletidevice.py:50
+#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:235
+#: exe/engine/idevicestore.py:293 exe/engine/idevicestore.py:321
+#: exe/engine/idevicestore.py:343 exe/engine/idevicestore.py:400
+#: exe/engine/idevicestore.py:428 exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40 exe/idevices/quiztestidevice.py:106
+#: exe/idevices/flashmovieidevice.py:40 exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
 msgstr "I-Yunivesithi yase-Auckland"
 
-#: exe/engine/quiztestidevice.py:107
+#: exe/idevices/quiztestidevice.py:107
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -1878,7 +1878,7 @@ msgstr "Layishela phezulu"
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Sebenzisa ukugcizelela ukwehlukanisa ukubaluleka kokwaziswa okunikezwa kwi-iDevice."
 
-#: exe/engine/idevicestore.py:289 exe/engine/idevicestore.py:397
+#: exe/engine/idevicestore.py:285 exe/engine/idevicestore.py:393
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -1910,7 +1910,7 @@ msgstr "Amaqembu abonakalayo"
 msgid "Visible to students:"
 msgstr "Okubonakalayo kubafundi:"
 
-#: exe/engine/idevicestore.py:280 exe/engine/idevicestore.py:388
+#: exe/engine/idevicestore.py:276 exe/engine/idevicestore.py:384
 msgid "What to read"
 msgstr "Yini efundwayo"
 

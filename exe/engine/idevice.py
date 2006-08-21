@@ -187,10 +187,10 @@ class Idevice(Persistable):
         Should be called in derived classes.
         """
         log.debug("upgrading to version 1")
-        self._title   = self.__dict__['title']
-        self._author  = self.__dict__['author']
-        self._purpose = self.__dict__['purpose']
-        self._tip     = self.__dict__['tip']
+        self._title   = self.__dict__.get('title', self.title)
+        self._author  = self.__dict__.get('author', self.title)
+        self._purpose = self.__dict__.get('purpose', self.title)
+        self._tip     = self.__dict__.get('tip', self.title)
 
 
     def _upgradeIdeviceToVersion2(self):

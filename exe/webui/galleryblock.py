@@ -42,7 +42,7 @@ class GalleryBlock(Block):
     # Default Attribute Values
     thumbnailsPerRow = 4
     thumbnailSize = (96, 96)
-    unicodeRe = re.compile(r'(%u(\d|[A-F,a-f])+)')
+    unicodeRe = re.compile(r'(%u(\d|[A-F,a-f]){4})|(%(\d|[A-F,a-f]){2})')
 
     def __init__(self, parent, idevice):
         """
@@ -116,13 +116,16 @@ class GalleryBlock(Block):
             # Add an image
             if action == 'addImage':
                 # Decode multiple filenames
-                filenames = map(urllib.unquote, params.split('&'))
-                for filename in filenames:
-                    # Unquote unicode chars
+                for filename in params.split('&'):
+                    # Unquote normal and unicode chars
                     match = self.unicodeRe.search(filename)
                     while match:
                         start, end = match.span()
-                        code = unichr(int(filename[start+2:end], 16))
+                        if match.groups()[0]:
+                            numStart = start + 2 # '%u'
+                        else:
+                            numStart = start + 1 # '%'
+                        code = unichr(int(filename[numStart:end], 16))
                         filename = filename[:start] + code + filename[end:]
                         match = self.unicodeRe.search(filename)
                     self.idevice.addImage(filename)
@@ -309,7 +312,7 @@ class GalleryBlock(Block):
             html  = [u'<div class="iDevice emphasis%s" ' %
                      unicode(self.idevice.emphasis),
                      u'>',
-                     u'<img alt="%s" ' % _(u'iDevice Icon'),
+                     u'<img alt="%s" ' % _(u'IDevice Icon'),
 		     u'     class="iDevice_icon" ',
                      u'src="icon_'+self.idevice.icon+'.gif" />'
                      u'<span class="iDeviceTitle">',      

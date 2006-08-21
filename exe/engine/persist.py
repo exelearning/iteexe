@@ -72,19 +72,45 @@ def encodeObject(toEncode):
 
     return strBuffer.getvalue()
 
+def decodeToList(toDecode):
+    """
+    Decodes an object to a list of jelly strings, but doesn't unjelly them
+    """
+    log.debug(u"decodeObjectRaw")
+    decoder = banana.Banana()
+    decoder.connectionMade()
+    decoder._selectDialect(u"none")
+    jellyData = []
+    decoder.expressionReceived = jellyData.append
+    decoder.dataReceived(toDecode)
+    return jellyData
+
+def fixDataForMovedObjects(jellyData):
+    """
+    Fixes the jelly data so that IDevices that have moved can still be loaded.
+    Removes 'exe.engine' from the module path, so that you can add their 'dir'
+    to 'sys.path' and then jelly will just load them
+    """
+    for i, element in enumerate(jellyData):
+        if isinstance(element, list):
+            # Recurse
+            fixDataForMovedObjects(element)
+        elif isinstance(element, str):
+            if element in ('exe.engine.flashmovieidevice.FlashMovieIdevice',
+                           'exe.engine.quiztestidevice.QuizTestIdevice',
+                           'exe.engine.quiztestidevice.TestQuestion',
+                           'exe.engine.quiztestidevice.AnswerOption'):
+                mod, cls = element.split('.')[-2:]
+                jellyData[i] = '%s.%s' % (mod, cls)
+
+
 def decodeObjectRaw(toDecode):
     """
     Decodes the object the same as decodeObject but doesn't upgrade it.
     """
-    log.debug(u"decodeObject")
-
-    decoder = banana.Banana()
-    decoder.connectionMade()
-    decoder._selectDialect(u"none")
-    data = []
-    decoder.expressionReceived = data.append
-    decoder.dataReceived(toDecode)
-    decoded = jelly.unjelly(data[0])
+    jellyData = decodeToList(toDecode)
+    fixDataForMovedObjects(jellyData)
+    decoded = jelly.unjelly(jellyData[0])
     return decoded
 
 def decodeObject(toDecode):

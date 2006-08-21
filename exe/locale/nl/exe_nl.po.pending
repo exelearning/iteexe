@@ -1,0 +1,24 @@
+#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
+msgid "_: suggested by spicavet"
+"Hide"
+msgstr "Verbergen"
+
+#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
+msgid "_: suggested by spicavet"
+"Hide"
+msgstr "Verbergen"
+
+#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
+msgid "_: suggested by spicavet"
+"Hide"
+msgstr "Verbergen"
+
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
+#: label="SCORM 1.2 Options">
+msgid "_: suggested by spicavet"
+"SCORM 1.2 Options"
+msgstr "Opties SCORM 1.2"
+

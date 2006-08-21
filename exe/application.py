@@ -124,6 +124,8 @@ class Application:
         self.packageStore = PackageStore()
         self.ideviceStore = IdeviceStore(self.config)
         self.ideviceStore.load()
+        # Make it so jelly can load objects from ~/.exe/idevices
+        sys.path.append(self.config.configDir/'idevices')
         self.webServer = WebServer(self)
 
 

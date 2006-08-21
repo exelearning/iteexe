@@ -59,6 +59,7 @@ class TrueFalseBlock(Block):
         """
         Block.process(self, request)
     
+        self.instructionElement.process(request)
             
         if ("addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()

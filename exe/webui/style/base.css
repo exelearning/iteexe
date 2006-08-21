@@ -30,6 +30,10 @@ img {
     border: 0;
 }
 
+li {
+    list-style-position: inside;
+}
+
 p#nodeTitle { 
     font-weight: bold;
     display: inline;

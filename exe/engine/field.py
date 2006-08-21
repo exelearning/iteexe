@@ -537,13 +537,13 @@ this iDevice.""")
         """
         Upgrades to exe v0.12
         """
-        if self.flashName and self.idevice.parentNode:
-            self.flashResource = Resource(self.idevice.parentNode.package,
-                                          Path(self.flashName))
-            self.idevice.userResources.append(self.flashResource)
-        else:
-            self.flashResource = None
-        del self.flashName
+        if hasattr(self, 'flashName'): 
+            if self.flashName and self.idevice.parentNode:
+                self.flashResource = Resource(self.idevice.parentNode.package, Path(self.flashName))
+                self.idevice.userResources.append(self.flashResource)
+            else:
+                self.flashResource = None
+            del self.flashName
 
 
     def _upgradeFieldToVersion3(self):
@@ -610,13 +610,13 @@ this iDevice.""")
         """
         Upgrades to exe v0.12
         """
-        if self.flashName and self.idevice.parentNode:
-            self.flashResource = Resource(self.idevice.parentNode.package,
-                                          Path(self.flashName))
-            self.idevice.userResources.append(self.flashResource)
-        else:
-            self.flashResource = None
-        del self.flashName
+        if hasattr(self, 'flashName'):
+            if self.flashName and self.idevice.parentNode:
+                self.flashResource = Resource(self.idevice.parentNode.package, Path(self.flashName))
+                self.idevice.userResources.append(self.flashResource)
+            else:
+                self.flashResource = None
+            del self.flashName
 
 
     def _upgradeFieldToVersion3(self):

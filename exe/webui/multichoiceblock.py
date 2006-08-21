@@ -131,7 +131,7 @@ class MultichoiceBlock(Block):
         html += u'<script type="text/javascript" src="libot_drag.js"></script>\n'
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u'<img alt="%s" ' % _(u'iDevice Question Icon')
+        html += u'<img alt="%s" ' % _(u'IDevice Question Icon')
         html += u'     class="iDevice_icon" '
         html += "src=\"icon_question.gif\" />\n"
         html += "<span class=\"iDeviceTitle\">"       
@@ -173,7 +173,7 @@ class MultichoiceBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u'<img alt="%s" ' % _(u'iDevice Icon')
+        html += u'<img alt="%s" ' % _(u'IDevice Icon')
         html += u'     class="iDevice_icon" '
         html += u"src=\"/style/"+style+"/icon_"+self.idevice.icon+".gif\" />\n"
         html += u"<span class=\"iDeviceTitle\">"       
