@@ -25,7 +25,9 @@ files = { '../Resources/exe': ["README",
                              "NEWS", 
                              "ChangeLog",
                              "doc/eXe-tutorial.elp",
-                             "exe/webui/mr_x.gif"]}
+                             "exe/webui/mr_x.gif"],
+          '../Resources' : ["exe_elp.icns"],
+        }
 
 
 def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
@@ -56,10 +58,27 @@ dataFiles('exe/xului', '../Resources/exe', ['scripts', 'templates'])
 import sys
 print sys.path
 
+plist = dict(
+    CFBundleDocumentTypes = [
+        dict(
+            CFBundleTypeExtensions=['elp'],
+            CFBundleTypeIconFile='exe_elp.icns',
+            CFBundleTypeMIMETypes=['text/xml'],
+            CFBundleTypeName='Binary',
+            CFBundleTypeRole='Editor',
+            LSTypeIsPackage=False,
+            NSDocumentClass='MyDocument',
+            NSPersistentStoreTypeKey='Binary',
+        ),
+    ],
+)
+
 py2appParams = {
   'includes': 'PngImagePlugin,JpegImagePlugin,GifImagePlugin,IcoImagePlugin,BmpImagePlugin',
   'packages': 'encodings,nevow',
-  'argv_emulation': True}
+  'argv_emulation': True,
+  'plist' : plist,
+  'iconfile': 'exe.icns'}
 
 setup(name         = version.project,
       version      = version.release,
