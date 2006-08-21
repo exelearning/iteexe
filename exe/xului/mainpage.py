@@ -35,6 +35,7 @@ from exe.webui.renderable        import RenderableLivePage
 from exe.xului.propertiespage    import PropertiesPage
 from exe.webui.authoringpage     import AuthoringPage
 from exe.export.websiteexport    import WebsiteExport
+from exe.export.textexport       import TextExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
@@ -294,8 +295,12 @@ class MainPage(RenderableLivePage):
             self.exportSinglePage(client, filename, webDir, stylesDir)
 
         elif exportType == 'webSite':
-            self.exportWebSite(client, filename, webDir, stylesDir)
-
+            self.exportWebSite(client, filename, stylesDir)
+            
+        elif exportType == 'zipFile':
+            self.exportWebZip(client, filename, stylesDir)
+        elif exportType == 'textFile':
+            self.exportText(client, filename)
         elif exportType == "scorm":
             self.exportScorm(client, filename, stylesDir)
 
@@ -412,15 +417,12 @@ class MainPage(RenderableLivePage):
         self._startFile(filename)
 
 
-    def exportWebSite(self, client, filename, webDir, stylesDir):
+    def exportWebSite(self, client, filename, stylesDir):
         """
         Export 'client' to a web site,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
         """
-        imagesDir    = webDir.joinpath('images')
-        scriptsDir   = webDir.joinpath('scripts')
-        templatesDir = webDir.joinpath('templates')
         # filename is a directory where we will export the website to
         # We assume that the user knows what they are doing
         # and don't check if the directory is already full or not
@@ -446,13 +448,42 @@ class MainPage(RenderableLivePage):
                 client.alert(_('There was an error in the export:\n%s') % str(e))
                 return
         # Now do the export
-        websiteExport = WebsiteExport(stylesDir, filename, 
-                                      imagesDir, scriptsDir, templatesDir)
+        websiteExport = WebsiteExport(self.config, stylesDir, filename)
         websiteExport.export(self.package)
         # Show the newly exported web site in a new window
         self._startFile(filename)
             
 
+    def exportWebZip(self, client, filename, stylesDir):
+        filename = Path(filename)
+        log.debug(u"exportWebsite, filename=%s" % filename)
+        # Append an extension if required
+        #if not filename.lower().endswith('.zip'): 
+        if not filename.ext.lower() == '.zip': 
+            filename += '.zip'
+        # Remove any old existing files
+        if filename.exists(): 
+            filename.remove()
+        # Do the export
+        websiteExport = WebsiteExport(self.config, stylesDir, filename)
+        websiteExport.exportZip(self.package)
+        client.alert(_(u'Exported to %s') % filename)
+        
+    def exportText(self, client, filename):
+        filename = Path(filename)
+        log.debug(u"exportWebsite, filename=%s" % filename)
+        # Append an extension if required
+        #if not filename.lower().endswith('.zip'): 
+        if not filename.ext.lower() == '.txt': 
+            filename += '.txt'
+        # Remove any old existing files
+        if filename.exists(): 
+            filename.remove()
+        # Do the export
+        textExport = TextExport(filename)
+        textExport.export(self.package)
+        client.alert(_(u'Exported to %s') % filename)
+        
     def exportScorm(self, client, filename, stylesDir):
         """
         Exports this package to a scorm package file

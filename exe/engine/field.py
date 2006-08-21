@@ -278,6 +278,48 @@ class MagnifierField(Field):
             
 #===============================================================================
 
+class MultimediaField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+    def __init__(self, name, instruc=""):
+        """
+        """
+        Field.__init__(self, name, instruc)
+        self.width         = "320"
+        self.height        = "100"
+        self.mediaResource = None
+
+
+    def setMedia(self, mediaPath):
+        """
+        Store the media file in the package
+        Needs to be in a package to work.
+        """
+        log.debug(u"setMedia "+unicode(mediaPath))
+        resourceFile = Path(mediaPath)
+
+        assert(self.idevice.parentNode,
+               'Media '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if resourceFile.isfile():
+            if self.mediaResource:
+                self.mediaResource.delete()
+                self.idevice.userResources.remove(self.mediaResource)
+            self.mediaResource = Resource(self.idevice.parentNode.package,
+                                          resourceFile)
+            self.idevice.userResources.append(self.mediaResource)
+
+        else:
+            log.error('File %s is not a file' % resourceFile)
+            
+            
+            
+#==============================================================================
+
 class ClozeHTMLParser(HTMLParser):
     """
     Separates out gaps from our raw cloze data

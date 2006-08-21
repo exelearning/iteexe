@@ -104,8 +104,8 @@ class SinglePageExport(object):
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
         #videofile.copyfile(self.outputDir/'videoContainer.swf')
-        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf'),
-                                    self.outputDir)
+        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
+                                    'mp3player.swf'),outputDir)
 
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')

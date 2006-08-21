@@ -285,8 +285,8 @@ class IMSExport(object):
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
         #videofile.copyfile(outputDir/'videoContainer.swf')
-        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf'),
-                                    outputDir)
+        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
+                                    'mp3player.swf'),outputDir)
 
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
