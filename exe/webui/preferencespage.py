@@ -44,7 +44,10 @@ class PreferencesPage(RenderableResource):
         
         for locale, translation in self.config.locales.items():
             localeName  = locale + ": " 
-            localeName += translation.info().get('x-poedit-language', '')
+            langName = translation.info().get('x-exe-language', None)
+            if langName == None:
+                langName = translation.info().get('x-poedit-language', '')
+            localeName += langName
             self.localeNames.append((localeName, locale))
 
         
