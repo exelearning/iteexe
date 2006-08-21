@@ -475,15 +475,27 @@ function exportPackage(exportType) {
                                       exportType, 
                                       fp.file.path)
         }
+    } else if(exportType == "textFile"){
+	    title = "Export text package as";
+	    fp.init(window, title, nsIFilePicker.modeSave);
+            fp.appendFilter("Text File", "*.txt");
+	    fp.appendFilters(nsIFilePicker.filterAll);
+            var res = fp.show();
+            if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace)
+             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
     } else {
         if (exportType == "scorm")
             title = "Export SCORM package as";
         else if (exportType == "ims")
             title = "Export IMS package as";
+	else if (exportType == "zipFile")
+            title = "Export Website package as";
+	else if (exportType == "ipod")
+            title = "Export iPod package as";
         else
             title = "INVALID VALUE PASSED TO exportPackage";
         fp.init(window, title, nsIFilePicker.modeSave);
-        fp.appendFilter("SCORM/IMS Packages", "*.zip");
+        fp.appendFilter("SCORM/IMS/ZipFile", "*.zip");
         fp.appendFilters(nsIFilePicker.filterAll);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {

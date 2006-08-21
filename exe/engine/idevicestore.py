@@ -125,7 +125,7 @@ class IdeviceStore:
         from exe.engine.clozeidevice          import ClozeIdevice
         from exe.engine.flashwithtextidevice  import FlashWithTextIdevice        
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
-        from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice 
+        from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
 
         self.extended.append(FreeTextIdevice())
         

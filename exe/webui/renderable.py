@@ -33,6 +33,7 @@ template to do your rendering, even if you're part of a bigger block.
 from nevow import loaders
 from nevow.livepage import LivePage
 from twisted.web.resource import Resource
+from nevow import tags
 import re
 
 # Constants
@@ -305,3 +306,6 @@ class RenderableLivePage(_RenderablePage, LivePage):
         """
         LivePage.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+
+    def render_liveglue(self, ctx, data):
+        return tags.script(src='/xulscripts/nevow_glue.js')
