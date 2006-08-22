@@ -49,6 +49,7 @@ class PreferencesPage(RenderableResource):
                 langName = translation.info().get('x-poedit-language', '')
             localeName += langName
             self.localeNames.append((localeName, locale))
+        self.localeNames.sort()
 
         
     def getChild(self, name, request):
