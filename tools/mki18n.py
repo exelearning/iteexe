@@ -777,7 +777,7 @@ if __name__ == "__main__":
             (curdur/'exe').chdir()
     elif curdir.basename() == 'locale':
         (curdir/'..'/'..').chdir()
-    print 'Running from: %s' % Path('.').absdir()
+    print 'Running from: %s' % Path('.').abspath()
     # Fill out the options
     option = {}
     option['forceEnglish'] = 0

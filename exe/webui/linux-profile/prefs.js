@@ -9,8 +9,10 @@
  * For more information, see http://www.mozilla.org/unix/customizing.html#prefs
  */
 
+user_pref("app.update.enabled", false);
 user_pref("app.update.lastUpdateTime.background-update-timer", 1143683825);
 user_pref("browser.search.selectedEngine", "Google");
+user_pref("browser.search.update", false);
 user_pref("browser.shell.checkDefaultBrowser", false);
 user_pref("browser.startup.homepage_override.mstone", "rv:1.7.6");
 user_pref("capability.policy.localfilelinks.checkloaduri.enabled", "allAccess");
@@ -28,6 +30,7 @@ user_pref("capability.principal.codebase.p5.granted", "UniversalXPConnect");
 user_pref("capability.principal.codebase.p5.id", "http://127.0.0.1:8081");
 user_pref("extensions.disabledObsolete", true);
 user_pref("extensions.lastAppVersion", "1.5.0.1");
+user_pref("extensions.update.enabled", false);
 user_pref("general.open_location.last_window_choice", 0);
 user_pref("intl.charsetmenu.browser.cache", "UTF-8");
 user_pref("network.cookie.prefsMigrated", true);
