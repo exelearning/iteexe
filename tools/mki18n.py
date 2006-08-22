@@ -603,13 +603,15 @@ def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbo
         applicationName = applicationDomain
     currentDir = os.getcwd()
     os.chdir(applicationDirectoryPath)                    
+
+    exp = re.compile(r'exe_(.*)\.po')
     
     for filename in targetDir.walkfiles('*_*.po'):
-        langCode = filename.split('_', 1)[1].split('.', 1)[0]
-        mo_targetDir = Path("%s/%s/LC_MESSAGES" % (targetDir,langCode))
+        langCode = exp.match(filename.basename()).group(1)
+        mo_targetDir = targetDir/langCode/'LC_MESSAGES'
         if not mo_targetDir.exists():
             mo_targetDir.makedirs()
-        cmd = "msgfmt --output-file=%s.mo %s" % (
+        cmd = "msgfmt -f --statistics -c --output-file=%s.mo %s" % (
                mo_targetDir/applicationName,filename)
         if verbose:
             print cmd
@@ -618,7 +620,7 @@ def makeMO(applicationDirectoryPath,targetDir=None,applicationDomain=None, verbo
     os.chdir(currentDir)
    
 # -----------------------------------------------------------------------------
-# p r i n t U s a g e         -- Displays how to use this script from the command line --
+# p r i n t U s a g e         -- Displays how to use this script from the command line - 
 # ^^^^^^^^^^^^^^^^^^^
 #
 def printUsage(errorMsg=None) :
@@ -767,7 +769,15 @@ def unixpath(thePath) :
 # 
 if __name__ == "__main__":
     # Move to the right dir
-    (Path(sys.argv[0]).dirname()/'..').chdir()
+    curdir = Path('.').abspath()
+    if curdir.basename() == 'exe':
+        if 'locale' in [p.relpath() for p in curdir.dirs()]:
+            (curdir/'..').chdir()
+        elif (curdur/'exe').isdir():
+            (curdur/'exe').chdir()
+    elif curdir.basename() == 'locale':
+        (curdir/'..'/'..').chdir()
+    print 'Running from: %s' % Path('.').absdir()
     # Fill out the options
     option = {}
     option['forceEnglish'] = 0
@@ -775,7 +785,7 @@ if __name__ == "__main__":
     option['po'] = 0        
     option['verbose'] = 1
     option['domain'] = None
-    option['moTarget'] = None
+    option['moTarget'] = Path('exe/locale').abspath()
     option['domain'] = 'exe'
     if option['verbose']:
         print "Application domain used is: '%s'" % option['domain']        

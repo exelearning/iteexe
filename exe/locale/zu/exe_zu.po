@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-07 14:00+1200\n"
-"PO-Revision-Date: 2006-04-11 11:30+1200\n"
-"Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
+"POT-Creation-Date: 2006-07-31 12:37+1200\n"
+"PO-Revision-Date: 2006-07-28 15:40+1200\n"
+"Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: Sipho <siphomsi@webmail.co.za>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -29,8 +29,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---Iya E---"
 
-#: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
-#: exe/xului/mainpage.py:343
+#: exe/xului/mainpage.py:239 exe/xului/mainpage.py:298
+#: exe/xului/mainpage.py:361
 msgid ". Please use ASCII names."
 msgstr ". Ucelwa ukuba usebenzise amagama e-ASCII."
 
@@ -91,15 +91,15 @@ msgstr ""
 "esikhaleni.&lt;/p&gt;&lt;p&gt;Ukukhetha amagama azofihlwa, cindezela kabili egameni ukulikhetha bese \n"
 "ucindezela inkinobho Fihla/Bonisa Igama ngezansi.&lt;/p&gt;"
 
-#: exe/engine/field.py:415
+#: exe/engine/field.py:457
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "&lt;p&gt;Uma kushiywe kungenamaka amaphutha amancane obizelomagama nosonhlamvukazi ayokwamukelwa.Uma kunomaka ubizelomagama okuyilo nosonhlamvukazi okuyibo kuphela okuyokwamukelwa.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Ngokwesibonelo:&lt;/strong&gt; Uma impendulo efanele ku &lt;code&gt;Indlovu&lt;/code&gt; kokubili &lt;code&gt;indlovu&lt;/code&gt; no &lt;code&gt;Indhlovu&lt;/code&gt; kuyokwahlulelwa &lt;em&gt;\"close enough\"&lt;/em&gt; ngeqoqo lemithetho njengokunohlamvu olulodwa oluyiphutha, noma ngabe uku \"Hlola Osonhlamvukazi\" kusebenza.&lt;/p&gt;&lt;p&gt;Uma ukuhlola osonhlamvukazi kungasebenzi esibonelweni esingaphezulu, uhlamvu oluncane &lt;code&gt;e&lt;/code&gt; ngeke luthathwe njengoluyiphutha futhi          &lt;code&gt;indhlovu&lt;/code&gt;iyokwamukelwa.&lt;/p&gt;&lt;p&gt;Uma kokubili \"Ukumaka Ngokungathi Sina\" noku \"Hlola Osonhlamvukazi\" kusebenza, Impendulo efanele u \"Indlovu\" kuphela.Uma \"Ukumaka Ngokungathi Sina\" kuphela kusebenza uku \"Hlola Osonhlamvukazi\" kungasebenzi, u \"indlovu\" uyokwamukelwa.&lt;/p&gt;"
 
-#: exe/engine/field.py:436
+#: exe/engine/field.py:478
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "&lt;p&gt;Uma lokhu kunomaka, izimpendulo ezithunyelwe zinosonhlamvukazi abahlukile ziyomakwa njengeziyiphutha.&lt;/p&gt;"
 
-#: exe/engine/field.py:441
+#: exe/engine/field.py:483
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather then all the words being marked the end of the \n"
@@ -109,11 +109,11 @@ msgstr ""
 " umfundi elithayipha esikhundleni sokuthi onke amagama amakwe ekupheleni \n"
 "kwesivivinyo.&lt;/p&gt;"
 
-#: exe/engine/idevicestore.py:241
+#: exe/engine/idevicestore.py:243
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.&lt;/li&gt;&lt;li&gtCabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;/li&gt;&lt;/ol&gt;"
 
-#: exe/engine/idevicestore.py:236
+#: exe/engine/idevicestore.py:238
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -145,7 +145,7 @@ msgstr ""
 "ushintsho olwenziwa kwi-eXe ngeke lufake okusha kwi-Wikipedia. &lt;/p&gt; &lt;p&gt;Okuqukethwe kwi-Wikipedia \n"
 "kuvikelwe ushicilelo lwesigunyazi lwamahhala i-GNU.&lt;/p&gt;"
 
-#: exe/engine/idevicestore.py:344
+#: exe/engine/idevicestore.py:346
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -214,7 +214,7 @@ msgstr ""
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
 msgstr "Ukucebisa komfundisi kukuvumela ukuba uchaze ohlose ukukwenza kanye nesisusa sokuthuthukiswa kwalengosi yokufundisa."
 
-#: exe/idevices/forumelement.py:75
+#: exe/webui/forumblock.py:86 exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
 msgstr "Ingxoxo eyodwa elula"
 
@@ -222,9 +222,9 @@ msgstr "Ingxoxo eyodwa elula"
 msgid "Actions"
 msgstr "Okwenziwayo"
 
-#: exe/engine/idevicestore.py:280 exe/engine/idevicestore.py:319
-#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:388
-#: exe/engine/idevicestore.py:426 exe/engine/idevicestore.py:434
+#: exe/engine/idevicestore.py:282 exe/engine/idevicestore.py:321
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:390
+#: exe/engine/idevicestore.py:428 exe/engine/idevicestore.py:436
 #: exe/webui/questionelement.py:70
 msgid "Activity"
 msgstr "Umsebenzi"
@@ -233,13 +233,18 @@ msgstr "Umsebenzi"
 msgid "Add"
 msgstr "Ongeza"
 
-#: exe/webui/element.py:257
+#: exe/webui/element.py:258
 msgid "Add Image"
 msgstr "Faka isithombe"
 
-#: exe/webui/element.py:368
+#: exe/webui/element.py:541
 msgid "Add JPEG Image"
 msgstr "Faka isithombe se-JPEG"
+
+#: exe/webui/quiztestblock.py:110
+#, fuzzy
+msgid "Add Question"
+msgstr "Umbuzo:"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
@@ -268,11 +273,11 @@ msgstr "Faka okunye Okungakhethwa"
 msgid "Add another Question"
 msgstr "Faka omunye Umbuzo"
 
-#: exe/webui/multichoiceblock.py:118
+#: exe/webui/multichoiceblock.py:118 exe/webui/testquestionelement.py:109
 msgid "Add another option"
 msgstr "Faka okunye okungakhethwa"
 
-#: exe/webui/truefalseblock.py:87 exe/webui/casestudyblock.py:94
+#: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:94
 msgid "Add another question"
 msgstr "Faka omunye umbuzo"
 
@@ -280,7 +285,7 @@ msgstr "Faka omunye umbuzo"
 msgid "Add files"
 msgstr "Faka amafayela"
 
-#: exe/webui/galleryblock.py:177
+#: exe/webui/galleryblock.py:180
 msgid "Add images"
 msgstr "Faka izithombe"
 
@@ -289,7 +294,8 @@ msgid "Add interactive feedback to your iDevice."
 msgstr "Faka indlela yokuphendulana kwi-iDevice yakho."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
-#: exe/webui/flashwithtextblock.py:79 exe/idevices/flashmovieblock.py:78
+#: exe/webui/flashmovieblock.py:76 exe/webui/flashwithtextblock.py:79
+#: exe/idevices/flashmovieblock.py:78 exe/idevices/multimediablock.py:79
 msgid "Align:"
 msgstr "Qondanisa:"
 
@@ -302,7 +308,7 @@ msgstr ""
 "Ukuqondanusa kukuvumela ukuba \n"
 "ukhethe ukuthi isithombe kumele sibe kuphi kwisibonisi."
 
-#: exe/engine/field.py:477
+#: exe/engine/field.py:519
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -313,6 +319,10 @@ msgstr ""
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Vumela ukuqedela ngokuzenzakalelayo uma umsebenzisi egcwalisa izikhala."
+
+#: exe/webui/testquestionelement.py:92
+msgid "Alternatives"
+msgstr ""
 
 #: exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -345,7 +355,7 @@ msgstr ""
 "&lt;/ul&gt;\n"
 " "
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:324 exe/engine/idevicestore.py:431
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -372,7 +382,7 @@ msgstr "Isinamathiselo"
 msgid "Attachment %s has no parentNode"
 msgstr "Isinamathiselo %s asinawo umsuka"
 
-#: exe/webui/editorpane.py:289
+#: exe/webui/editorpane.py:289 exe/webui/propertiespane.py:100
 msgid "Author"
 msgstr "Umbhali"
 
@@ -380,21 +390,22 @@ msgstr "Umbhali"
 msgid "Button Caption"
 msgstr "Inkinobho yokulandisa ngamafuphi"
 
-#: exe/idevices/forumelement.py:103
+#: exe/webui/forumblock.py:124 exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
 msgstr "Ingabe umfundi angakwazi ukuposela kulangosi?:"
 
-#: exe/webui/preferencespage.py:90 exe/webui/editorpane.py:232
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:232
 msgid "Cancel"
 msgstr "Nqamula"
 
-#: exe/xului/mainpage.py:229 exe/xului/mainpage.py:288
-#: exe/xului/mainpage.py:341
+#: exe/xului/mainpage.py:237 exe/xului/mainpage.py:296
+#: exe/xului/mainpage.py:359
 msgid "Cannot access directory named "
 msgstr "Isiqondisi esinikeziwe asifinyeleleki"
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
-#: exe/webui/flashwithtextblock.py:84 exe/idevices/flashmovieblock.py:83
+#: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:84
+#: exe/idevices/flashmovieblock.py:83 exe/idevices/multimediablock.py:84
 msgid "Caption:"
 msgstr "Ukulandisa ngamafuphi:"
 
@@ -402,11 +413,11 @@ msgstr "Ukulandisa ngamafuphi:"
 msgid "Case Study"
 msgstr "Umgodla Wokufunda"
 
-#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:213
+#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:216
 msgid "Change Image"
 msgstr "Shintsha Isithombe"
 
-#: exe/webui/element.py:536
+#: exe/webui/element.py:709
 msgid "Check Caps?"
 msgstr "Hlola Osonhlamvukazi?"
 
@@ -416,6 +427,11 @@ msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiShayina"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
+msgstr "Khetha i-LMS"
+
+#: exe/idevices/multimediaidevice.py:46
+#, fuzzy
+msgid "Choose a MP3 file"
 msgstr "Khetha i-LMS"
 
 #: exe/engine/imagemagnifieridevice.py:48
@@ -439,6 +455,17 @@ msgid ""
 "Click \n"
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
+msgstr ""
+"Cindezela \n"
+"esithombeni esingezansi noma ku \"Faka Isithombe\" ukukhetha ifayela yesithombe \n"
+"esizokhuliswa."
+
+#: exe/idevices/multimediaidevice.py:46
+#, fuzzy
+msgid ""
+"Click \n"
+"on the picture below or the \"Add MP3\" button to select a MP3 file to be \n"
+"embed."
 msgstr ""
 "Cindezela \n"
 "esithombeni esingezansi noma ku \"Faka Isithombe\" ukukhetha ifayela yesithombe \n"
@@ -482,7 +509,7 @@ msgstr "Okuvalekile"
 msgid "Cloze Activity"
 msgstr "Umsebenzi Ovalekile"
 
-#: exe/webui/element.py:518
+#: exe/webui/element.py:691
 msgid "Cloze Text"
 msgstr "Okubhaliwe Okuvalekile"
 
@@ -491,7 +518,7 @@ msgid "Confirm and submit"
 msgstr "Qinisekisa bese uthumela"
 
 #: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
-#: exe/idevices/testquestionelement.py:93
+#: exe/webui/testquestionelement.py:95 exe/idevices/testquestionelement.py:93
 msgid "Correct"
 msgstr "Kulungile"
 
@@ -511,7 +538,7 @@ msgstr ""
 "abasendabeni kanye nesimo.Kumele futhi ivumele ukwenziwa kokuthile \n"
 "ngenjongo yokuthola isixazululo kuleso simo."
 
-#: exe/webui/galleryblock.py:246 exe/webui/block.py:208
+#: exe/webui/galleryblock.py:249 exe/webui/block.py:208
 #: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
@@ -524,16 +551,17 @@ msgstr "Susa"
 msgid "Delete File"
 msgstr "Susa Ifayela"
 
-#: exe/webui/galleryblock.py:244
+#: exe/webui/galleryblock.py:247
 msgid "Delete Image"
 msgstr "Susa isithombe"
 
-#: exe/webui/optionelement.py:92 exe/idevices/testoptionelement.py:86
+#: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:92
+#: exe/idevices/testoptionelement.py:86
 msgid "Delete option"
 msgstr "Susa okukhethiwe"
 
 #: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
-#: exe/idevices/testquestionelement.py:85
+#: exe/webui/testquestionelement.py:86 exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Susa umbuzo"
 
@@ -558,7 +586,7 @@ msgstr ""
 "nendaba enikezwe emgodleni. Lena kumele kube imibuzo noma iziyalezo zomsebenzi okungaholela abafundi ekuxazululeni inkinga \n"
 "ababhekene nayo."
 
-#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:422
+#: exe/engine/idevicestore.py:317 exe/engine/idevicestore.py:424
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -566,7 +594,7 @@ msgstr ""
 "Chaza ulwazi abafundi okumele babe nalo ukuze benze lesi sifundo\n"
 "ngokufanelekile."
 
-#: exe/engine/idevicestore.py:281 exe/engine/idevicestore.py:389
+#: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:391
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -574,11 +602,12 @@ msgstr ""
 "Chaza imisebenzi ehlobene nokufundwayo abafundi okumele bayenze. \n"
 "Lokhu kusiza abafundi babone ukuhlobana."
 
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:435
+#: exe/engine/idevicestore.py:330 exe/engine/idevicestore.py:437
 msgid "Describe the tasks the learners should complete."
 msgstr "Chaza umsebenzi abafundi okumele bawenze."
 
-#: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49 exe/webui/propertiespane.py:105
+#: exe/idevices/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Incazelo"
 
@@ -593,6 +622,11 @@ msgstr "Incazelo:"
 msgid "Discussion Activity"
 msgstr "Umsebenzi Wokuxoxisana"
 
+#: exe/webui/forumblock.py:169 exe/webui/forumblock.py:186
+#, fuzzy
+msgid "Discussion Topic"
+msgstr "Isihloko/Isixhumanisi Sengxoxo:"
+
 #: exe/idevices/forumelement.py:233
 msgid "Discussion Topic/Thread:"
 msgstr "Isihloko/Isixhumanisi Sengxoxo:"
@@ -601,15 +635,21 @@ msgstr "Isihloko/Isixhumanisi Sengxoxo:"
 msgid "Discussion topic/Thread"
 msgstr "Isihloko/Isixhumanisi Sengxoxo"
 
-#: exe/idevices/forumelement.py:79
+#: exe/webui/forumblock.py:145
+#, fuzzy
+msgid "Discussion topic:"
+msgstr "Isihloko/Isixhumanisi Sengxoxo"
+
+#: exe/webui/forumblock.py:90 exe/idevices/forumelement.py:79
 msgid "Discussions and replies are allowed"
 msgstr "Izingxoxo nezimpendulo zivumelekile"
 
-#: exe/webui/element.py:277 exe/webui/element.py:386 exe/webui/element.py:687
+#: exe/webui/element.py:278 exe/webui/element.py:559 exe/webui/element.py:860
 msgid "Display as:"
 msgstr "Kubonise njenge:"
 
-#: exe/webui/block.py:200 exe/xului/templates/packageproperties.xul:<button
+#: exe/webui/block.py:200 exe/webui/propertiespane.py:123
+#: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
 #: label="Done"> exe/xului/templates/dublincore.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
@@ -621,17 +661,17 @@ msgstr "Kwenziwe"
 msgid "Dutch Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiDashi"
 
-#: exe/webui/element.py:44
+#: exe/webui/element.py:45
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "Isici soMONAKALO.inqubo yokusebenza ishukunyiswa ngokuqondile ngesigaba se %s"
 
-#: exe/webui/element.py:53
+#: exe/webui/element.py:54
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "Isici soMONAKALO.enzaUkulungisa ngokushukunyiswa ngokuqondile ngesigaba se %s"
 
-#: exe/webui/element.py:70
+#: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "Isici soMONAKALO.enza ukuBuka ngokushukunyiswa ngokuqondile ngesigaba se %s"
@@ -640,7 +680,7 @@ msgstr "Isici soMONAKALO.enza ukuBuka ngokushukunyiswa ngokuqondile ngesigaba se
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "KUNOMONAKALO: Thibela.enza ukuBukaOkuqukethwe ngokushukunyiswa ngokuqondile ngesigaba se %s"
 
-#: exe/xului/mainpage.py:351
+#: exe/xului/mainpage.py:369
 #, python-format
 msgid ""
 "EXPORT FAILED.\n"
@@ -648,7 +688,7 @@ msgid ""
 "Please try again with a different filename"
 msgstr ""
 
-#: exe/idevices/forumelement.py:76
+#: exe/webui/forumblock.py:87 exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
 msgstr "Umuntu ngamunye uposa ingxoxo eyodwa"
 
@@ -750,7 +790,7 @@ msgstr ""
 "Ungongeza okukhethwayo ngokucindezela inkinobho \"Ongeza Ngokunye Okukhethwayo\".Cima okukhethwayo \n"
 "ngokucindezela u \"X\" obomvu eceleni kwakho."
 
-#: exe/engine/idevicestore.py:277 exe/engine/idevicestore.py:385
+#: exe/engine/idevicestore.py:279 exe/engine/idevicestore.py:387
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -805,7 +845,7 @@ msgstr ""
 "Faka okubhaliwe ofisa \n"
 "ukukuhlanganisa nesithombe."
 
-#: exe/engine/imagemagnifieridevice.py:54
+#: exe/engine/imagemagnifieridevice.py:54 exe/idevices/multimediaidevice.py:51
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -817,7 +857,7 @@ msgstr ""
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr ""
 
-#: exe/xului/mainpage.py:527
+#: exe/xului/mainpage.py:575
 #, python-format
 msgid "Error loading package \"%s\": %s"
 msgstr "Iphakethe lokulayisha okonakele ''%s'': %s"
@@ -830,7 +870,8 @@ msgstr "Isibonelo"
 msgid "Example Example"
 msgstr "Isibonelo Isibonelo"
 
-#: exe/xului/mainpage.py:472 exe/xului/mainpage.py:490
+#: exe/xului/mainpage.py:487 exe/xului/mainpage.py:502
+#: exe/xului/mainpage.py:520 exe/xului/mainpage.py:538
 #, python-format
 msgid "Exported to %s"
 msgstr "Kuthunyelwe e %s"
@@ -848,7 +889,7 @@ msgid "False"
 msgstr "Amanga"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
-#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:392
+#: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:394
 #: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
 #: exe/webui/common.py:192 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
@@ -871,13 +912,19 @@ msgstr "Umbono ngokwenziwe:"
 msgid "Filename"
 msgstr "Phinduqambe"
 
-#: exe/xului/mainpage.py:394 exe/xului/mainpage.py:435
+#: exe/xului/mainpage.py:412 exe/xului/mainpage.py:453
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Igama lefayela %s ifayela, ngeke lithathe isikhundla salo"
 
-#: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
+#: exe/engine/flashmovieidevice.py:38 exe/idevices/flashmovieidevice.py:39
+#: exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
+msgstr "Umboniso bhanyabhanya"
+
+#: exe/engine/flashmovieidevice.py:44
+#, fuzzy
+msgid "Flash Video File"
 msgstr "Umboniso bhanyabhanya"
 
 #: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
@@ -896,9 +943,14 @@ msgstr ""
 "eyinkinga kusetshenzwa, le-iDevice ilayisha okuqukethwe okufanele \n"
 "ohlakeni olusolayinini. Kusebenzise kuphela uma okuqukethwe kwakho kuzoba kwi-interent."
 
-#: exe/idevices/forumelement.py:110
+#: exe/webui/forumblock.py:129 exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
 msgstr "Phoqa wonk' umuntu abe ilunga?:"
+
+#: exe/engine/forumidevice.py:37 exe/webui/forumblock.py:167
+#: exe/webui/forumblock.py:184
+msgid "Forum Discussion"
+msgstr ""
 
 #: exe/idevices/forumelement.py:202
 msgid "Forum Name:"
@@ -908,7 +960,17 @@ msgstr "iGama leNgosi:"
 msgid "Forum Name: "
 msgstr "iGama leNgosi:"
 
-#: exe/idevices/forumelement.py:96
+#: exe/webui/forumblock.py:119
+#, fuzzy
+msgid "Forum introduction:"
+msgstr "Isingeniso"
+
+#: exe/webui/forumblock.py:109
+#, fuzzy
+msgid "Forum name:"
+msgstr "iGama leNgosi:"
+
+#: exe/webui/forumblock.py:114 exe/idevices/forumelement.py:96
 msgid "Forum type:"
 msgstr "Uhlobo lwengosi:"
 
@@ -932,32 +994,32 @@ msgstr "Ushicilelo Lwesigunyazi Lwamahhala Lwe-GNU"
 msgid "German Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiJalimane"
 
-#: exe/webui/element.py:605
+#: exe/webui/element.py:778
 msgid "Get score"
 msgstr "Thola okuzuziwe"
 
-#: exe/webui/galleryblock.py:221
+#: exe/webui/galleryblock.py:224
 msgid "Go Back"
 msgstr "Buyela Emuva"
 
-#: exe/webui/galleryblock.py:233
+#: exe/webui/galleryblock.py:236
 msgid "Go Forward"
 msgstr "Iya Phambili"
 
-#: exe/webui/galleryblock.py:240
+#: exe/webui/galleryblock.py:243
 msgid "Go Forward (Not Available)"
 msgstr "Iya Phambili (Akukho)"
 
-#: exe/idevices/forumelement.py:117
+#: exe/webui/forumblock.py:135 exe/idevices/forumelement.py:117
 msgid "Group mode:"
 msgstr "Eqenjini"
 
 #: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
-#: exe/idevices/forumelement.py:92
+#: exe/webui/forumblock.py:103 exe/idevices/forumelement.py:92
 msgid "Hide"
 msgstr "Fihla"
 
-#: exe/webui/element.py:526
+#: exe/webui/element.py:699
 msgid "Hide/Show Word"
 msgstr "Fihla/Bonisa iGama"
 
@@ -975,7 +1037,7 @@ msgstr "Icebiso:"
 msgid "Home"
 msgstr "iKhaya"
 
-#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:312
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:315
 #: exe/webui/block.py:276 exe/webui/genericblock.py:79
 #: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
@@ -1021,7 +1083,7 @@ msgstr "Ukwaziswa"
 msgid "Initial Zoom"
 msgstr "Ukukhulisa kokuqala"
 
-#: exe/webui/element.py:541
+#: exe/webui/element.py:714
 msgid "Instant Marking?"
 msgstr "Ukumaka ngaso leso sikhathi?"
 
@@ -1071,9 +1133,25 @@ msgid "Learning Management System:"
 msgstr "Isimiso Sokulawula Ukufunda:"
 
 #: exe/webui/imagemagnifierblock.py:85 exe/webui/imagewithtextblock.py:75
-#: exe/webui/flashwithtextblock.py:75 exe/idevices/flashmovieblock.py:75
+#: exe/webui/flashmovieblock.py:77 exe/webui/flashwithtextblock.py:75
+#: exe/idevices/flashmovieblock.py:75 exe/idevices/multimediablock.py:75
 msgid "Left"
 msgstr "Kwesokunxele"
+
+#: exe/webui/propertiespane.py:113
+#, fuzzy
+msgid "Level 1: "
+msgstr "Izinga 1:"
+
+#: exe/webui/propertiespane.py:116
+#, fuzzy
+msgid "Level 2: "
+msgstr "Izinga 2:"
+
+#: exe/webui/propertiespane.py:120
+#, fuzzy
+msgid "Level 3: "
+msgstr "Izinga 3:"
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
@@ -1083,6 +1161,11 @@ msgstr "Xhumana nengosi"
 msgid "Load"
 msgstr "Layisha"
 
+#: exe/idevices/multimediaidevice.py:40
+#, fuzzy
+msgid "MP3 With Text"
+msgstr "Umboniso wesikhashana onokubhaliwe"
+
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
 msgstr "Ukukhulisa okuphezulu"
@@ -1090,6 +1173,10 @@ msgstr "Ukukhulisa okuphezulu"
 #: exe/webui/imagemagnifierblock.py:134
 msgid "Medium"
 msgstr "Maphakathi"
+
+#: exe/webui/forumblock.py:151
+msgid "Message:"
+msgstr ""
 
 #: exe/idevices/forumelement.py:262
 msgid "Moodle"
@@ -1099,11 +1186,11 @@ msgstr "Moodle"
 msgid "Move Down"
 msgstr "Iya ezansi"
 
-#: exe/webui/galleryblock.py:219
+#: exe/webui/galleryblock.py:222
 msgid "Move Image Left"
 msgstr "Yisa Isithombe Kwesokunxele"
 
-#: exe/webui/galleryblock.py:231
+#: exe/webui/galleryblock.py:234
 msgid "Move Image Right"
 msgstr "Yisa Isithombe Kwesokudla"
 
@@ -1135,11 +1222,11 @@ msgstr "I-iDevice eNtsha"
 msgid "Next"
 msgstr "Okulandelayo"
 
-#: exe/idevices/forumelement.py:83
+#: exe/webui/forumblock.py:94 exe/idevices/forumelement.py:83
 msgid "No"
 msgstr "Cha"
 
-#: exe/webui/galleryblock.py:184 exe/webui/galleryblock.py:271
+#: exe/webui/galleryblock.py:187 exe/webui/galleryblock.py:274
 msgid "No Images Loaded"
 msgstr "Akukho Zithombe Ezilayishiwe"
 
@@ -1155,11 +1242,11 @@ msgstr "Akukho Sithonjana. Isithombe asinciphisekanga."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Akukho Sithonjana. Isithombe soqobo asinciphisekanga."
 
-#: exe/idevices/forumelement.py:80
+#: exe/webui/forumblock.py:91 exe/idevices/forumelement.py:80
 msgid "No discussions, but replies are allowed"
 msgstr "Akukho zingxoxo, kodwa izimpendulo zamukelekile"
 
-#: exe/idevices/forumelement.py:81
+#: exe/webui/forumblock.py:92 exe/idevices/forumelement.py:81
 msgid "No discussions, no replies"
 msgstr "Akukho zingxoxo, akukho zimpendulo"
 
@@ -1167,26 +1254,27 @@ msgstr "Akukho zingxoxo, akukho zimpendulo"
 msgid "No emphasis"
 msgstr "Akukho ukugcizelela"
 
-#: exe/idevices/forumelement.py:87
+#: exe/webui/forumblock.py:98 exe/idevices/forumelement.py:87
 msgid "No groups"
 msgstr "Akukho maqembu"
 
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
-#: exe/webui/flashwithtextblock.py:77 exe/idevices/forumelement.py:239
-#: exe/idevices/flashmovieblock.py:77
+#: exe/webui/flashmovieblock.py:79 exe/webui/flashwithtextblock.py:77
+#: exe/idevices/forumelement.py:239 exe/idevices/flashmovieblock.py:77
+#: exe/idevices/multimediablock.py:77
 msgid "None"
 msgstr "Akukho"
 
-#: exe/webui/preferencespage.py:89
+#: exe/webui/preferencespage.py:93
 msgid "OK"
 msgstr "Kulungile"
 
-#: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:300
-#: exe/engine/idevicestore.py:398 exe/engine/idevicestore.py:407
+#: exe/engine/idevicestore.py:293 exe/engine/idevicestore.py:302
+#: exe/engine/idevicestore.py:400 exe/engine/idevicestore.py:409
 msgid "Objectives"
 msgstr "Izinjongo"
 
-#: exe/engine/idevicestore.py:294 exe/engine/idevicestore.py:401
+#: exe/engine/idevicestore.py:296 exe/engine/idevicestore.py:403
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1196,7 +1284,7 @@ msgstr ""
 "zichaze ukuthi yini abafundi abayokwazi ukuyenza uma sebeqedile\n"
 "imisebenzi yesifundo."
 
-#: exe/engine/field.py:570 exe/engine/field.py:626
+#: exe/engine/field.py:612 exe/engine/field.py:668
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1204,7 +1292,7 @@ msgstr ""
 "Khethela le-iDevice i- .flv (Flash Video Files) \n"
 "kuphela."
 
-#: exe/engine/field.py:505 exe/engine/field.py:553
+#: exe/engine/field.py:547 exe/engine/field.py:595
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1213,7 +1301,7 @@ msgstr ""
 "kuphela."
 
 #: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
-#: exe/idevices/testquestionelement.py:95
+#: exe/webui/testquestionelement.py:98 exe/idevices/testquestionelement.py:95
 msgid "Option"
 msgstr "Okukhethwayo"
 
@@ -1229,7 +1317,7 @@ msgstr "Okunye"
 msgid "Outline"
 msgstr "Uhlaka"
 
-#: exe/xului/mainpage.py:253 exe/xului/mainpage.py:369
+#: exe/xului/mainpage.py:261 exe/xului/mainpage.py:387
 #, python-format
 msgid "Package saved to: %s"
 msgstr "iPhakethe ligcinwe e: %s"
@@ -1262,7 +1350,7 @@ msgstr "Ucelwa ukuba ukhethe i-LMS.\n"
 msgid "Please select a LMS"
 msgstr "Ucelwa ukuba ukhethe i-LMS"
 
-#: exe/idevices/quiztestblock.py:93
+#: exe/webui/quiztestblock.py:93 exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "Ucelwa ukuba ukhethe impendulo efanele yalowo nalowo mbuzo."
 
@@ -1278,12 +1366,12 @@ msgstr "Ukulandisa okubhaliwe kwe-Wilipedia yesiPholishi"
 msgid "Portugese Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiPutukezi"
 
-#: exe/engine/idevicestore.py:304 exe/engine/idevicestore.py:314
-#: exe/engine/idevicestore.py:411 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:306 exe/engine/idevicestore.py:316
+#: exe/engine/idevicestore.py:413 exe/engine/idevicestore.py:423
 msgid "Preknowledge"
 msgstr "Ulwazi lwangaphambili"
 
-#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:414
+#: exe/engine/idevicestore.py:309 exe/engine/idevicestore.py:416
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1304,6 +1392,26 @@ msgstr "Umboniso"
 #: exe/engine/galleryidevice.py:190
 msgid "Previous"
 msgstr "Kwangaphambili"
+
+#: exe/webui/propertiespage.py:76
+#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
+#: label="Project Properties">
+msgid "Project Properties"
+msgstr "Ubunjalo Bomsebenzi"
+
+#: exe/webui/propertiespane.py:96
+#, fuzzy
+msgid "Project title:"
+msgstr "Isihloko Somsebenzi:"
+
+#: exe/idevices/multimediaidevice.py:56
+#, fuzzy
+msgid ""
+"Provide a caption for the \n"
+"MP3 file."
+msgstr ""
+"Nikeza incazelo emfushane \n"
+"yesithombe esizokhuliswa."
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
@@ -1373,7 +1481,7 @@ msgid "Question(s)"
 msgstr "U(I)mbuzo"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
-#: exe/idevices/testquestionelement.py:81
+#: exe/webui/testquestionelement.py:81 exe/idevices/testquestionelement.py:81
 msgid "Question:"
 msgstr "Umbuzo:"
 
@@ -1385,12 +1493,12 @@ msgstr "Funda isigaba esingezansi bese ugcwalisa ngamagama ezikhaleni"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Funda isigaba esingezansi bese ugcwalisa ngamagama ezikhaleni."
 
-#: exe/engine/idevicestore.py:215 exe/engine/idevicestore.py:233
+#: exe/engine/idevicestore.py:217 exe/engine/idevicestore.py:235
 #: exe/engine/genericidevice.py:165
 msgid "Reading Activity"
 msgstr "Umsebenzi wokuFundwa"
 
-#: exe/engine/idevicestore.py:341 exe/engine/genericidevice.py:163
+#: exe/engine/idevicestore.py:343 exe/engine/genericidevice.py:163
 msgid "Reading Activity 0.11"
 msgstr "Umsebenzi wokuFundwa 0.11"
 
@@ -1418,16 +1526,17 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Umbuzo obonisa ubunjalo:"
 
-#: exe/webui/element.py:625
+#: exe/webui/element.py:798
 msgid "Restart"
 msgstr "Phinduqale"
 
 #: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashwithtextblock.py:76 exe/idevices/flashmovieblock.py:76
+#: exe/webui/flashmovieblock.py:78 exe/webui/flashwithtextblock.py:76
+#: exe/idevices/flashmovieblock.py:76 exe/idevices/multimediablock.py:76
 msgid "Right"
 msgstr "Kwesokudla"
 
-#: exe/xului/mainpage.py:246
+#: exe/xului/mainpage.py:254
 #, python-format
 msgid ""
 "SAVE FAILED.\n"
@@ -1435,11 +1544,21 @@ msgid ""
 "Please try again with a different filename"
 msgstr ""
 
+#: exe/webui/quiztestblock.py:95
+#, fuzzy
+msgid "SCORM Multiple Choice Quiz:"
+msgstr "Umbuzo ongumazikhethele"
+
 #: exe/idevices/quiztestidevice.py:105
 msgid "SCORM Quiz"
 msgstr "Isiphico se-SCORM"
 
-#: exe/idevices/quiztestblock.py:137
+#: exe/engine/quiztestidevice.py:81
+#, fuzzy
+msgid "SCORM Quiz Experimental"
+msgstr "Isiphico se-SCORM"
+
+#: exe/webui/quiztestblock.py:135 exe/idevices/quiztestblock.py:137
 msgid "SUBMIT ANSWERS"
 msgstr "THUMELA IZIMPENDULO"
 
@@ -1455,11 +1574,11 @@ msgstr "Gcina njenge"
 msgid "Section"
 msgstr "iSigaba"
 
-#: exe/webui/element.py:685
+#: exe/webui/element.py:858
 msgid "Select Flash Object"
 msgstr "Khetha isiThombe esiBanizayo"
 
-#: exe/webui/preferencespage.py:82
+#: exe/webui/preferencespage.py:86
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
@@ -1469,23 +1588,28 @@ msgstr "Khetha uLimi"
 msgid "Select a Forum"
 msgstr "Khetha iNgosi yeNgxoxo"
 
+#: exe/webui/element.py:358
+#, fuzzy
+msgid "Select a MP3"
+msgstr "Khetha ifayela"
+
 #: exe/webui/attachmentblock.py:92
 msgid "Select a file"
 msgstr "Khetha ifayela"
 
-#: exe/webui/element.py:759
+#: exe/webui/element.py:932
 msgid "Select a flash video"
 msgstr "Khetha ifayela lomboniso wesikhashana"
 
-#: exe/webui/element.py:276
+#: exe/webui/element.py:277
 msgid "Select an image"
 msgstr "Ketha isithombe"
 
-#: exe/webui/element.py:384
+#: exe/webui/element.py:557
 msgid "Select an image (JPG file)"
 msgstr "Khetha isithombe (JPG file)"
 
-#: exe/idevices/quiztestblock.py:104
+#: exe/webui/quiztestblock.py:97 exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
 msgstr "Khetha izinga lokuphumelela:"
 
@@ -1505,7 +1629,7 @@ msgstr ""
 "Khetha okufanele ngokucindezela \n"
 "inkinobho."
 
-#: exe/idevices/forumelement.py:88
+#: exe/webui/forumblock.py:99 exe/idevices/forumelement.py:88
 msgid "Separate groups"
 msgstr "Amaqembu ahlukene"
 
@@ -1531,24 +1655,24 @@ msgstr ""
 msgid "Settings saved"
 msgstr "Izilungisi zigciniwe"
 
-#: exe/idevices/forumelement.py:91
+#: exe/webui/forumblock.py:102 exe/idevices/forumelement.py:91
 msgid "Show"
 msgstr "Bonisa"
 
-#: exe/webui/galleryblock.py:279
+#: exe/webui/galleryblock.py:282
 #, python-format
 msgid "Show %s Image"
 msgstr "Bonisa %s Isithombe"
 
-#: exe/webui/element.py:632
+#: exe/webui/element.py:805
 msgid "Show Answers"
 msgstr "Bonisa iziMpendulo"
 
-#: exe/webui/element.py:616
+#: exe/webui/element.py:789
 msgid "Show/Clear Answers"
 msgstr "Bonisa/Susa iziMpendulo"
 
-#: exe/webui/element.py:611
+#: exe/webui/element.py:784
 msgid "Show/Hide Feedback"
 msgstr "Bonisa/Fihla uMbono ngokwenziwe"
 
@@ -1572,11 +1696,11 @@ msgstr "Okuncane"
 msgid "Some emphasis"
 msgstr "Ukugcizelela okuyingcosana"
 
-#: exe/xului/mainpage.py:526
+#: exe/xului/mainpage.py:574
 msgid "Sorry, wrong file format"
 msgstr "Xola, isakhiwo sefayela esiyiphutha"
 
-#: exe/xului/mainpage.py:524
+#: exe/xului/mainpage.py:572
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1589,7 +1713,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiPanishi"
 
-#: exe/idevices/forumelement.py:77
+#: exe/webui/forumblock.py:88 exe/idevices/forumelement.py:77
 msgid "Standard forum for general use"
 msgstr "Isikhungo sengxoxo esivamile esingasetshenziselwa noma yini"
 
@@ -1597,7 +1721,7 @@ msgstr "Isikhungo sengxoxo esivamile esingasetshenziselwa noma yini"
 msgid "Story:"
 msgstr "Indaba:"
 
-#: exe/webui/element.py:531
+#: exe/webui/element.py:704
 msgid "Strict Marking?"
 msgstr "Ukumaka okuNgathi Sina?"
 
@@ -1605,12 +1729,23 @@ msgstr "Ukumaka okuNgathi Sina?"
 msgid "Strong emphasis"
 msgstr "Ukugcizelela okunamandla"
 
+#: exe/webui/forumblock.py:170 exe/webui/forumblock.py:187
+#, fuzzy
+msgid "Subject"
+msgstr "Isimemela:"
+
+#: exe/webui/forumblock.py:146 exe/xului/templates/dublincore.xul:<label
+#: value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of
+#: the content resource.">
+msgid "Subject:"
+msgstr "Isimemela:"
+
 #: exe/webui/common.py:208 exe/webui/editorpane.py:397
-#: exe/webui/element.py:620
+#: exe/webui/element.py:793
 msgid "Submit"
 msgstr "Thumela"
 
-#: exe/idevices/quiztestblock.py:355
+#: exe/webui/quiztestblock.py:353 exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "Thumela impendulo"
 
@@ -1618,12 +1753,19 @@ msgstr "Thumela impendulo"
 msgid "Swedish Wikipedia Article"
 msgstr "Ukulandisa okubhaliwe kwe-Wikipedia yesiSwedishi"
 
-#: exe/engine/idevicestore.py:349
+#: exe/webui/propertiespane.py:110
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
+#: label="Taxonomy">
+msgid "Taxonomy"
+msgstr "Ukuhlukanisa ngokufana"
+
+#: exe/engine/idevicestore.py:351
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.&lt;/li&gt;&lt;li&gtCabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;/li&gt;&lt;/ol&gt;"
 
 #: exe/engine/imagewithtextidevice.py:61
-#: exe/engine/imagemagnifieridevice.py:53
+#: exe/engine/imagemagnifieridevice.py:53 exe/engine/flashmovieidevice.py:52
+#: exe/idevices/multimediaidevice.py:50
 msgid "Text"
 msgstr "Okubhaliwe"
 
@@ -1676,7 +1818,7 @@ msgstr ""
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "Ukuxoxisana ngenjongo kukuvumela ukuba uchaze ngenjongo oyifisayo ngalengosi yokufunda kwabanesifiso sokuyisebenzisa."
 
-#: exe/xului/mainpage.py:405 exe/xului/mainpage.py:446
+#: exe/xului/mainpage.py:423 exe/xului/mainpage.py:464
 #, python-format
 msgid ""
 "There was an error in the export:\n"
@@ -1696,7 +1838,7 @@ msgstr ""
 "Lokhu kukhetha ubungako bokuqala \n"
 "bengilazi yokukhulisa."
 
-#: exe/idevices/flashmovieidevice.py:41
+#: exe/engine/flashmovieidevice.py:44 exe/idevices/flashmovieidevice.py:41
 msgid ""
 "This iDevice only supports the Flash Video File (.FLV) format, and will not\n"
 "accept other video formats. You can however convert other movie formats\n"
@@ -1742,7 +1884,7 @@ msgstr "Isihlanganisi:"
 msgid "Tip:"
 msgstr "Isixwayiso:"
 
-#: exe/webui/galleryblock.py:170
+#: exe/webui/galleryblock.py:173
 msgid "Title"
 msgstr "Isihloko:"
 
@@ -1778,7 +1920,7 @@ msgstr ""
 "kahle ngokwazisa okungokoqobo nokwazisa okuzibeka kweyodwa \n"
 "yalezimpendulo."
 
-#: exe/engine/field.py:634 exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:676 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "Thayipha isihloko sengxoxo lapha."
 
@@ -1814,7 +1956,7 @@ msgstr ""
 "\"Impendulo efanele\" njengoba kuboniswa ukukhethwa kwempendulo efanele; noma \n"
 " \"Impendulo eyiphutha\" ngokunye okukhethwayo."
 
-#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:408
+#: exe/engine/idevicestore.py:303 exe/engine/idevicestore.py:410
 msgid "Type the learning objectives for this resource."
 msgstr "Thayipha izinjongo zokufundiso zalomthombo wokufunda."
 
@@ -1844,15 +1986,17 @@ msgid "Unit"
 msgstr "Isigatshana"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60 exe/engine/flashwithtextidevice.py:41
+#: exe/engine/forumidevice.py:38 exe/engine/galleryidevice.py:490
+#: exe/engine/wikipediaidevice.py:52 exe/engine/truefalseidevice.py:60
+#: exe/engine/quiztestidevice.py:82 exe/engine/flashwithtextidevice.py:41
 #: exe/engine/imagewithtextidevice.py:40 exe/engine/attachmentidevice.py:42
-#: exe/engine/imagemagnifieridevice.py:41 exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:57 exe/engine/idevicestore.py:235
-#: exe/engine/idevicestore.py:293 exe/engine/idevicestore.py:321
-#: exe/engine/idevicestore.py:343 exe/engine/idevicestore.py:400
-#: exe/engine/idevicestore.py:428 exe/idevices/forumidevice.py:41
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:39
+#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
+#: exe/engine/idevicestore.py:237 exe/engine/idevicestore.py:295
+#: exe/engine/idevicestore.py:323 exe/engine/idevicestore.py:345
+#: exe/engine/idevicestore.py:402 exe/engine/idevicestore.py:430
+#: exe/idevices/forumidevice.py:41 exe/idevices/multimediaidevice.py:41
 #: exe/idevices/exampleidevice.py:40 exe/idevices/quiztestidevice.py:106
 #: exe/idevices/flashmovieidevice.py:40 exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
@@ -1878,7 +2022,7 @@ msgstr "Layishela phezulu"
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "Sebenzisa ukugcizelela ukwehlukanisa ukubaluleka kokwaziswa okunikezwa kwi-iDevice."
 
-#: exe/engine/idevicestore.py:285 exe/engine/idevicestore.py:393
+#: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:395
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -1902,15 +2046,15 @@ msgstr ""
 "iDevice ayinakho ukugcizelela okusetshenzisiwe nakuba izakhi ezilinganiselwe zingasetshenziswa \n"
 "kokubhaliwe ngokusebenzisa izinkinobho zokulungisa okubhaliwe ezihambisana nalesi sikhala."
 
-#: exe/idevices/forumelement.py:89
+#: exe/webui/forumblock.py:100 exe/idevices/forumelement.py:89
 msgid "Visible groups"
 msgstr "Amaqembu abonakalayo"
 
-#: exe/idevices/forumelement.py:124
+#: exe/webui/forumblock.py:140 exe/idevices/forumelement.py:124
 msgid "Visible to students:"
 msgstr "Okubonakalayo kubafundi:"
 
-#: exe/engine/idevicestore.py:276 exe/engine/idevicestore.py:384
+#: exe/engine/idevicestore.py:278 exe/engine/idevicestore.py:386
 msgid "What to read"
 msgstr "Yini efundwayo"
 
@@ -1955,11 +2099,11 @@ msgstr "Ukulandisa okubhaliwe kwe-Wikipedia"
 msgid "Wrong"
 msgstr "Iphutha"
 
-#: exe/idevices/forumelement.py:84
+#: exe/webui/forumblock.py:95 exe/idevices/forumelement.py:84
 msgid "Yes, forever"
 msgstr "Yebo,phakade"
 
-#: exe/idevices/forumelement.py:85
+#: exe/webui/forumblock.py:96 exe/idevices/forumelement.py:85
 msgid "Yes, initially"
 msgstr "Yebo,ekuqaleni"
 
@@ -1971,7 +2115,7 @@ msgstr "I-iDevice yakho entsha izovela esikhaleni se-iDevice nalesi sihloko. Les
 msgid "article "
 msgstr "ukulandisa okubhaliwe"
 
-#: exe/webui/element.py:291 exe/webui/element.py:402
+#: exe/webui/element.py:292 exe/webui/element.py:575
 msgid "blank for original size"
 msgstr "akunalutho kobungako bokuqala"
 
@@ -1987,7 +2131,7 @@ msgstr "igama lesihloko eliphindwe kabili."
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:73
+#: exe/webui/common.py:67 exe/webui/preferencespage.py:77
 #: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : umhleli we-XHTML ye-elearning"
@@ -2015,19 +2159,19 @@ msgstr "uMhleli we-iDevice"
 msgid "iDevice icon"
 msgstr "Isithanjana se-iDevice"
 
-#: exe/webui/renderable.py:249
+#: exe/webui/renderable.py:250
 msgid "key"
 msgstr "isihluthulelo"
 
-#: exe/webui/renderable.py:251
+#: exe/webui/renderable.py:252
 msgid "keycode"
 msgstr "ikhodi eyisihluthulelo"
 
-#: exe/webui/renderable.py:242
+#: exe/webui/renderable.py:243
 msgid "label"
 msgstr "lebula"
 
-#: exe/webui/renderable.py:254
+#: exe/webui/renderable.py:255
 msgid "title"
 msgstr "isihloko"
 
@@ -2050,10 +2194,10 @@ msgstr "Faka i-Phakethe"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
-#: label="Project Properties">
-msgid "Project Properties"
-msgstr "Ubunjalo Bomsebenzi"
+#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
+#: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+msgid "Project Title:"
+msgstr "Isihloko Somsebenzi:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
@@ -2081,10 +2225,11 @@ msgstr "Khipha i-Phakethe"
 msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
-#: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
-msgid "Project Title:"
-msgstr "Isihloko Somsebenzi:"
+#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
+#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
+#: header (an 100px high is recommended).">
+msgid "Header Background:"
+msgstr ""
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
@@ -2101,31 +2246,15 @@ msgstr "Umqambi:"
 msgid "VK_INSERT"
 msgstr "VK_FAKA"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
-#: header (an 100px high is recommended).">
-msgid "Header Background:"
-msgstr ""
-
-#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
-msgid "Export"
-msgstr "Thumela"
-
-#: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
-#: style="width:8em" tooltiptext="The topic of the content resource.">
-msgid "Subject:"
-msgstr "Isimemela:"
-
-#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
-#: keycode="VK_DELETE" id="delNodeKey">
-msgid "VK_DELETE"
-msgstr "VK-SUSA"
-
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
 #: Image">
 msgid "Load Image"
 msgstr "Faka isithombe"
+
+#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
+msgid "Export"
+msgstr "Thumela"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
@@ -2143,10 +2272,10 @@ msgstr ""
 "                alawulekayo noma uhlelo lokuhlukanisa oluhlelekile.\n"
 "             "
 
-#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
-#: modifiers="control" id="renNodeKey">
-msgid "R"
-msgstr "E"
+#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
+#: keycode="VK_DELETE" id="delNodeKey">
+msgid "VK_DELETE"
+msgstr "VK-SUSA"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
@@ -2160,10 +2289,10 @@ msgstr "Susa isithombe"
 msgid "Publisher:"
 msgstr "Umshicileli"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
-#: modifiers="control" id="promoteKey">
-msgid "VK_LEFT"
-msgstr "VK_KWESOKUNXELE"
+#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
+#: modifiers="control" id="renNodeKey">
+msgid "R"
+msgstr "E"
 
 #: exe/xului/templates/packageproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
@@ -2177,10 +2306,10 @@ msgstr ""
 msgid "Contributors:"
 msgstr "Ababambe Iqhaza:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
-#: modifiers="control" id="demoteKey">
-msgid "VK_RIGHT"
-msgstr "VK_KWESOKUDLA"
+#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
+#: modifiers="control" id="promoteKey">
+msgid "VK_LEFT"
+msgstr "VK_KWESOKUNXELE"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Author:"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
@@ -2194,15 +2323,16 @@ msgstr "Umbhali:"
 msgid "Date:"
 msgstr "Usuku:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
-#: modifiers="control" id="upKey">
-msgid "U"
-msgstr "P"
+#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
+#: modifiers="control" id="demoteKey">
+msgid "VK_RIGHT"
+msgstr "VK_KWESOKUDLA"
 
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
-msgid "Taxonomy"
-msgstr "Ukuhlukanisa ngokufana"
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: nodes">
+msgid "Level 1:"
+msgstr "Izinga 1:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2218,16 +2348,16 @@ msgstr ""
 "                 ukuze wakhe ikhodi yesilinganiso sosuku kuchazwe kwisichazi'nqo esibizwa ngokuthi\n"
 "                 "
 
-#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
-#: modifiers="control" id="downKey">
-msgid "D"
+#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
+#: modifiers="control" id="upKey">
+msgid "U"
 msgstr "P"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes">
-msgid "Level 1:"
-msgstr "Izinga 1:"
+msgid "Level 2:"
+msgstr "Izinga 2:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
@@ -2235,16 +2365,16 @@ msgstr "Izinga 1:"
 msgid "Type:"
 msgstr "Uhlobo:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
-#: modifiers="control" id="file-new-key" oncommand="fileNew()">
-msgid "N"
-msgstr "H"
+#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
+#: modifiers="control" id="downKey">
+msgid "D"
+msgstr "P"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes">
-msgid "Level 2:"
-msgstr "Izinga 2:"
+msgid "Level 3:"
+msgstr "Izinga 3:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
@@ -2258,26 +2388,10 @@ msgstr ""
 "              uhlobo oluthile, kokuqukethwe.Okungenziwa okunconywayo kakhulu ukukhetha isilinganiso\n"
 "              emagameni alawulekayo, ngokwesibonelo,i ??????????'"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
-#: modifiers="control" id="file-save-key" oncommand="fileSave()">
-msgid "S"
-msgstr "G"
-
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
-msgid "Level 3:"
-msgstr "Izinga 3:"
-
-#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
-#: style="width:8em" tooltiptext="Select a Format.">
-msgid "Format:"
-msgstr "Isakhiwo:"
-
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
-#: modifiers="control" id="file-open-key" oncommand="fileOpen()">
-msgid "O"
-msgstr "V"
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
+#: modifiers="control" id="file-new-key" oncommand="fileNew()">
+msgid "N"
+msgstr "H"
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2287,25 +2401,35 @@ msgstr "V"
 msgid "Update Tree"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
+#: style="width:8em" tooltiptext="Select a Format.">
+msgid "Format:"
+msgstr "Isakhiwo:"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
+#: modifiers="control" id="file-save-key" oncommand="fileSave()">
+msgid "S"
+msgstr "G"
+
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
 msgid "Select Format"
 msgstr "Khetha Isakhiwo"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
-#: accesskey="f" label="File">
-msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"iFayela\" accesskey=\"f\""
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
+#: modifiers="control" id="file-open-key" oncommand="fileOpen()">
+msgid "O"
+msgstr "V"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
 msgid "XHTML"
 msgstr "XHTML"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
-msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"OkuSha\" accesskey=\"s\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
+#: accesskey="f" label="File">
+msgid "label=\"File\" accesskey=\"f\""
+msgstr "label=\"iFayela\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
@@ -2313,9 +2437,9 @@ msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
-msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"Vula\" accesskey=\"v\""
+#: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
+msgid "label=\"New\" accesskey=\"n\""
+msgstr "label=\"OkuSha\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
@@ -2323,19 +2447,20 @@ msgid "IMS Content Package 1.1.3"
 msgstr "IPhakethe Lokuqukethwe Le-IMS 1.1.3"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
-msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"Gcina\" accesskey=\"g\""
+#: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
+msgid "label=\"Open\" accesskey=\"o\""
+msgstr "label=\"Vula\" accesskey=\"v\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site"
-#: id="dcmiWebSite" label="Web Site">
+#: id="dcmiWebSite" label="Web Site"> exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate" id="website"
 msgid "Web Site"
 msgstr "Isiza Se-Internet."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
-msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"Gcina Njenge...\" accesskey=\"c\""
+#: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+msgid "label=\"Save\" accesskey=\"s\""
+msgstr "label=\"Gcina\" accesskey=\"g\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
@@ -2343,10 +2468,10 @@ msgstr "label=\"Gcina Njenge...\" accesskey=\"c\""
 msgid "Identifier:"
 msgstr "Isitholi:"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="export-menu" accesskey="e" label="Export">
-msgid "label=\"Export\" accesskey=\"e\""
-msgstr "label=\"Thumela\" accesskey=\"t\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
+msgid "label=\"Save As...\" accesskey=\"a\""
+msgstr "label=\"Gcina Njenge...\" accesskey=\"c\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
@@ -2354,10 +2479,10 @@ msgstr "label=\"Thumela\" accesskey=\"t\""
 msgid "Source:"
 msgstr "Umthombo:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="export-menu" accesskey="e" label="Export">
+msgid "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"Thumela\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
@@ -2365,9 +2490,9 @@ msgid "Language:"
 msgstr "Ulimi:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IPhakethe Lokuqukethwe Le-IMS\" accesskey=\"i\""
+#: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
@@ -2375,10 +2500,9 @@ msgid "Afar "
 msgstr "Afar."
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-export-website-key" oncommand="exportPackage('webSite')"
-#: accesskey="w" label="Web Site">
-msgid "label=\"Web Site\" accesskey=\"w\""
-msgstr "label=\"iSiza se-internet\" accesskey=\"s\""
+#: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IPhakethe Lokuqukethwe Le-IMS\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
@@ -2386,19 +2510,19 @@ msgid "Abkhazian "
 msgstr "Abkhazian. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Ikhasi Elilodwa\" accesskey=\"k\""
+#: oncommand="exportPackage('webSite')" label="Self-contained Folder">
+msgid "Self-contained Folder"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
 msgid "Avestan "
 msgstr "Avestan. "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="e" label="Merging">
-msgid "label=\"Merging\" accesskey=\"e\""
-msgstr "label=\"Ukuhlanganisa\" accesskey=\"h\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile')" label="Zip File">
+msgid "Zip File"
+msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -2406,9 +2530,9 @@ msgid "Afrikaans "
 msgstr "Afrikaans. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Faka IPhakethe\" accesskey=\"f\""
+#: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Ikhasi Elilodwa\" accesskey=\"k\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -2416,19 +2540,20 @@ msgid "Amharic "
 msgstr "Amharic. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Khipha IPhakethe\" accesskey=\"K\""
+#: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
+#, fuzzy
+msgid "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"iFayela\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
 msgstr "Arabic. "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Amathuluzi\" accesskey=\"t\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="e" label="Merging">
+msgid "label=\"Merging\" accesskey=\"e\""
+msgstr "label=\"Ukuhlanganisa\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
@@ -2436,50 +2561,49 @@ msgid "Assamese "
 msgstr "Assamese. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "Okuncamelwayo:"
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"Faka IPhakethe\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
 msgid "Aymara "
 msgstr "Aymara. "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Izitayela\" accesskey=\"z\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Khipha IPhakethe\" accesskey=\"K\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 msgid "Azerbaijani "
 msgstr "Azerbaijani. "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh">
-msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr "label=\"Akha Kabusha\" accesskey=\"a\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Amathuluzi\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
 msgid "Bashkir "
 msgstr "Bashkir. "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Usizo\" accesskey=\"z\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Okuncamelwayo:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
 msgid "Byelorussian; Belarusian "
 msgstr "Byelorussian; Belarusian. "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="aboutPage()" accesskey="a" label="About">
-msgid "label=\"About\" accesskey=\"a\""
-msgstr "label=\"Nge\" accesskey=\"n\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Izitayela\" accesskey=\"z\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -2487,114 +2611,130 @@ msgid "Bulgarian "
 msgstr "Bulgarian. "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="registerOnline()" accesskey="R" label="Register Online">
-msgid "label=\"Register Online\" accesskey=\"R\""
-msgstr "label=\"Bhalisa Kwi-Internet\" accesskey=\"B\""
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh">
+msgid "label=\"Refresh\" accesskey=\"r\""
+msgstr "label=\"Akha Kabusha\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
 msgid "Bihari "
 msgstr "Bihari. "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
-msgid "label=\"Report an Issue\" accesskey=\"R\""
-msgstr "label=\"Thumela\" accesskey=\"t\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: accesskey="h" label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Usizo\" accesskey=\"z\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
 msgid "Bislama "
 msgstr "Bislama. "
 
-#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
-#: value="debugInfo">
-msgid "debugInfo"
-msgstr "Ukwaziswangesisusazikhubekiso"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="aboutPage()" accesskey="a" label="About">
+msgid "label=\"About\" accesskey=\"a\""
+msgstr "label=\"Nge\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
 msgid "Bengali; Bangla "
 msgstr "Bengali; Bangla. "
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
-#: key="addChildKey" label="Add Page">
-msgid "Add Page"
-msgstr "Faka iKhasi"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="registerOnline()" accesskey="R" label="Register Online">
+msgid "label=\"Register Online\" accesskey=\"R\""
+msgstr "label=\"Bhalisa Kwi-Internet\" accesskey=\"B\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
 #: label="Tibetan ">
 msgid "Tibetan "
 msgstr "Tibetan. "
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
-#: key="renNodeKey" id="btnRename" label="Rename">
-msgid "Rename"
-msgstr "Phinduqambe"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
+msgid "label=\"Report an Issue\" accesskey=\"R\""
+msgstr "label=\"Thumela\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton ">
 msgid "Breton "
 msgstr "Breton. "
 
-#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
-#: value="outlinePane">
-msgid "outlinePane"
-msgstr "isikhalasoHlaka"
+#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
+#: value="debugInfo">
+msgid "debugInfo"
+msgstr "Ukwaziswangesisusazikhubekiso"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
 msgid "Bosnian "
 msgstr "Bosnian."
 
-#: exe/xului/templates/mainpage.xul:<label value="iDevices"
-#: style="margin-top:5px;">
-msgid "iDevices"
-msgstr "iDevices"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
+#: key="addChildKey" label="Add Page">
+msgid "Add Page"
+msgstr "Faka iKhasi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
 msgid "Catalan "
 msgstr "Catalan. "
 
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
-msgid "iDevicePane"
-msgstr "Isikhalase-iDevice"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
+#: key="renNodeKey" id="btnRename" label="Rename">
+msgid "Rename"
+msgstr "Phinduqambe"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
 msgid "Chechen "
 msgstr "Chechen."
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
-msgid "Authoring"
-msgstr "Ukuqamba"
+#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
+#: value="outlinePane">
+msgid "outlinePane"
+msgstr "isikhalasoHlaka"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
 msgid "Chamorro "
 msgstr "Chamorro. "
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
-msgid "Properties"
-msgstr "Ubunjalo"
+#: exe/xului/templates/mainpage.xul:<label value="iDevices"
+#: style="margin-top:5px;">
+msgid "iDevices"
+msgstr "iDevices"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
 msgid "Corsican "
 msgstr "Corsican. "
 
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
+#: value="iDevicePane">
+msgid "iDevicePane"
+msgstr "Isikhalase-iDevice"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
 msgid "Czech "
 msgstr "Czech. "
 
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Authoring">
+msgid "Authoring"
+msgstr "Ukuqamba"
+
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
 msgid "Church Slavic "
 msgstr "Church Slavic. "
+
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: label="Properties">
+msgid "Properties"
+msgstr "Ubunjalo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
@@ -3331,6 +3471,9 @@ msgstr "Amalungelo:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Ngokucacile, isici samaLungelo siyoqukatha ukulandisa kokuphathwa kwamalungelo endingeko, noma sinikeze okungahlinzeka ngalokho kwazisa. Ukwazisa ngamalunelo kubandakanya i-International Property Rights (IPR),Ilungelo Lokukopisha, kanye namaLungelo eMpahla ahlikene. Uma isici samalungelo singekho, akukho ukucabangela okungenziwa ngomumo wawo kanye namanye amalungelo mayelana nalo mthombo wokufundisa."
+
+#~ msgid "label=\"Web Site\" accesskey=\"w\""
+#~ msgstr "label=\"iSiza se-internet\" accesskey=\"s\""
 
 #~ msgid "&lt;p&gt;Teachers should keep the following in mind when using this iDevice: &lt;/p&gt;&lt;ol&gt;&lt;li&gt;Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.&lt;/li&gt;&lt;li&gt;From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. &lt;/li&gt;&lt;li&gt;Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. &lt;/li&gt;&lt;/ol&gt;"
 #~ msgstr "&lt;p&gt;OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;/p&gt;&lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.Cabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;/li&gt;&lt;/ol&gt;"
