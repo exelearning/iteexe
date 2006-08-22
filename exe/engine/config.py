@@ -268,12 +268,14 @@ class Config:
         Scans the eXe style directory and builds a list of styles
         """
         log = logging.getLogger()
-        log.debug("loadStyles")
         self.styles = []
         styleDir    = self.webDir/"style"
 
-        for subDir in styleDir.listdir():
-            styleSheet = styleDir/subDir/'content.css'
+        log.debug("loadStyles from %s" % styleDir)
+
+        for subDir in styleDir.dirs():
+            styleSheet = subDir/'content.css'
+            log.debug(" checking %s" % styleSheet)
             if styleSheet.exists():
                 style = subDir.basename()
                 log.debug(" loading style %s" % style)
