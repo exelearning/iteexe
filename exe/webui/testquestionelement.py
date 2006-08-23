@@ -79,7 +79,8 @@ class TestquestionElement(object):
         """
         html  = u"<div class=\"iDevice\">\n"
         html += u"<b>" + _("Question:") + " </b>" 
-        html += common.elementInstruc(self.question.questionInstruc)
+        html += common.elementInstruc("question"+self.id, 
+                                      self.question.questionInstruc)
         html += u" " + common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
@@ -88,10 +89,12 @@ class TestquestionElement(object):
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
         html += u"<tr>"
-        html += u"<th>%s " % _("Options")
-        html += common.elementInstruc(self.question.optionInstruc)
+        html += u"<th>%s " % _("Alternatives")
+        html += common.elementInstruc("option"+self.id, 
+                                      self.question.optionInstruc)
         html += u"</th><th align=\"left\">%s "  % _("Correct")
-        html += common.elementInstruc(self.question.correctAnswerInstruc)
+        html += common.elementInstruc("answer"+self.id, 
+                                      self.question.correctAnswerInstruc)
         html += u"<br/>" + _("Option")
         html += u"</th>"
         html += u"</tr>"
@@ -103,7 +106,7 @@ class TestquestionElement(object):
             
         html += u"</tbody>"
         html += u"</table>\n"
-        value = _(u"Add another Option")    
+        value = _(u"Add another option")    
         html += common.submitButton("addOption"+unicode(self.id), value)
         html += u"<br />"
         html += u"</div>\n"

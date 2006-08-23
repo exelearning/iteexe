@@ -168,18 +168,19 @@ class IdeviceStore:
             idevicePath.makedirs()
         sys.path = [idevicePath] + sys.path
         
-        # add to the list of extended idevices
+        # Add to the list of extended idevices
         for path in idevicePath.listdir("*idevice.py"):
             log.debug("loading "+path)
             moduleName = path.basename().splitext()[0]
             module = __import__(moduleName, globals(), locals(), [])
             module.register(self)
 
-        # register the blocks for rendering the idevices
+        # Register the blocks for rendering the idevices
         for path in idevicePath.listdir("*block.py"):
             log.debug("loading "+path)
             moduleName = path.basename().splitext()[0]
             module = __import__(moduleName, globals(), locals(), [])
+            print 'x', moduleName
             module.register()
 
 

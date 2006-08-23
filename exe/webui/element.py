@@ -21,6 +21,7 @@ Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
 from exe.webui       import common
+from exe.engine.path import Path
 
 log = logging.getLogger(__name__)
 
@@ -322,9 +323,182 @@ class ImageElement(Element):
 
         return html
 
+    
+class MultimediaElement(Element):
+    """
+    for media element processing
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
 
 
-# ===========================================================================
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if "path"+self.id in request.args:
+            self.field.setMedia(request.args["path"+self.id][0])
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit")
+
+        html  = u'<div class="block">'
+        html += u'<b>'+self.field.name+':</b>\n'
+        html += common.elementInstruc(self.field.instruc)
+
+        html += u'<div class="block">'
+        html += common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += u' value="%s" />' % _(u"Select a MP3")
+        
+        if self.field.mediaResource:
+            html += '<p>'+ self.field.mediaResource.storageName + '</P>'
+
+        return html
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this image
+        """
+
+        html = self.renderMP3(
+                        '../%s/resources/%s' % (
+                            self.field.idevice.parentNode.package.name,
+                            self.field.mediaResource.storageName),
+                        "../templates/mp3player.swf")
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this image
+        """
+
+        html = self.renderMP3(self.field.mediaResource.storageName,                            
+                                   "mp3player.swf")
+
+        return html
+    
+    def renderMP3(self, filename, mp3player):
+        path = Path(filename)
+        fileExtension =path.ext.lower()
+	mp3Str_mat = common.flash(filename, self.field.width, self.field.height,
+			      id="mp3player",
+			      params = {
+				      'movie': '%s?src=%s' % (mp3player, filename),
+				      'quality': 'high',
+				      'bgcolor': '#333333',
+				      'flashvars': 'bgColour=000000&amp;btnColour=ffffff&amp;'
+        					   'btnBorderColour=cccccc&amp;iconColour=000000&amp;'
+						   'iconOverColour=00cc00&amp;trackColour=cccccc&amp;'
+						   'handleColour=ffffff&amp;loaderColour=ffffff&amp;'})
+
+        mp3Str = """
+        <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab
+        #version=6,0,0,0"
+        id="mp3player" height="100" width="320"> 
+        <param name="movie" value="%s?src=%s"> 
+        <param name="quality" value="high"> 
+        <param name="bgcolor" value="#333333"> 
+        <param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;
+        btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;
+        trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
+        <embed src="%s?src=%s" quality="high"
+        bgcolor="#333333" name="mp3player" type="application/x-shockwave-flash"
+        flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;
+        iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;
+        handleColour=ffffff&amp;loaderColour=ffffff&amp;"
+        pluginspage="http://www.macromedia.com/go/getflashplayer" height="100" width="320">
+            </object>
+        
+        """ % (mp3player, filename, mp3player, filename)
+        
+	wmvStr = common.flash(filename, self.field.width, self.field.height,
+			      id="mp3player",
+			      params = {
+				      'Filename': filename,
+				      'ShowControls': 'true',
+				      'AutoRewind': 'true',
+				      'AutoStart': 'false',
+				      'AutoSize': 'true',
+				      'EnableContextMenu': 'true',
+				      'TransparentAtStart': 'false',
+				      'AnimationAtStart': 'false',
+				      'ShowGotoBar': 'false',
+				      'EnableFullScreenControls': 'true'})
+
+        wmvStr = """
+        <p class="mediaplugin">
+        <object classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95"
+ codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701" 
+        standby="Loading Microsoft Windows Media Player components..." 
+        id="msplayer" align="" type="application/x-oleobject">
+        <param name="Filename" value="%s">
+        <param name="ShowControls" value=true />
+        <param name="AutoRewind" value=true />
+        <param name="AutoStart" value=false />
+        <param name="Autosize" value=true />
+        <param name="EnableContextMenu" value=true />
+        <param name="TransparentAtStart" value=false />
+        <param name="AnimationAtStart" value=false />
+        <param name="ShowGotoBar" value=false />
+        <param name="EnableFullScreenControls" value=true />
+        <embed src="%s" name="msplayer" type="video/x-ms-wmv" 
+         ShowControls="1" AutoRewind="1" AutoStart="0" Autosize="0" 
+         EnableContextMenu="1" TransparentAtStart="0" AnimationAtStart="0" 
+         ShowGotoBar="0" EnableFullScreenControls="1" 
+pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/">
+        </embed>
+        </object></p>
+        """ %(filename, filename)
+        
+        aviStr = """
+        <p class="mediaplugin"><object width="240" height="180">
+        <param name="src" value="%s">
+        <param name="controller" value="true">
+        <param name="autoplay" value="false">
+        <embed src="%s" width="240" height="180" 
+        controller="true" autoplay="false"> </embed>
+        </object></p>
+        """ % (filename, filename)
+        
+        mpgStr = """
+        <p class="mediaplugin"><object width="240" height="180">
+        <param name="src" value="%s">
+        <param name="controller" value="true">
+        <param name="autoplay" value="false">
+        <embed src="%s" width="240" height="180"
+        controller="true" autoplay="false"> </embed>
+        </object></p>
+        """ % (filename, filename)
+        
+        if fileExtension == ".mp3":
+            return mp3Str
+        #elif fileExtension == ".wav":
+        #    return wavStr
+        elif fileExtension == ".wmv" or fileExtension == ".wma":
+            return wmvStr
+        #elif fileExtension == ".mov":
+            return movStr
+        elif fileExtension == ".mpg":
+            return mpgStr
+        elif fileExtension == ".avi":
+            return aviStr
+        else:
+            return ""
+  
+
+#============================================================================
+
+
 class MagnifierElement(Element):
     """
     for magnifier element processing
