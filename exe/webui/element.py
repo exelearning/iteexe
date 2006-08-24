@@ -995,16 +995,26 @@ class MathElement(Element):
         Returns an XHTML string with the form element for editing this field
         """
         # Title and help button
+	#symbols = ["alpha", "beta", "gamma", "delta", "epsilon", "theta", "pi",
+		   #"lambda", "Sigma", "phi", "varphi", "psi", "omega"]
+	from exe.application import application
+	webDir = application.config.webDir
+	greekDir = Path(webDir+'/images/maths/greek letters')
         html = u'<div class="block">'
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
         html += u"<br/></div>\n"
         # Latex input
         html += '<div class="maths">\n'
-	html += common.insertSymbol(self.id, 
-                                   u"/images/alpha.gif", r"\\alpha", 1)
+	for file in greekDir.files():
+	    if file.ext == ".gif" or file.ext == ".png":
+		symbol = file.namebase
+		html += common.insertSymbol("input"+self.id, 
+			u"/images/maths/greek letters/%s", 
+					    "%s", r"\\%s", 1) % (symbol, symbol,
+								file.basename())
 	html += "</div>\n"
-        html += '<br/>' + common.textArea('input'+self.id, self.field.input)
+        html += common.textArea('input'+self.id, self.field.input)
         
         # Preview
 	

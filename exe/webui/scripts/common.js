@@ -870,3 +870,35 @@ function toggleFeedback(id) {
         ele.style.display = "block";
     }
 }
+
+function insertAtCursor(myField, myValue) {
+    // calling the function
+    //insertAtCursor(document.formName.fieldName, this value);
+    //IE support
+    if (document.selection) {
+        myField.focus();
+        sel = document.selection.createRange();
+        sel.text = myValue;
+    }
+    //MOZILLA/NETSCAPE support
+    else if (myField.selectionStart || myField.selectionStart == '0') {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        myField.value = myField.value.substring(0, startPos)
+            + myValue
+            + myField.value.substring(endPos, myField.value.length);
+    } else {
+        myField.value += myValue;
+    }
+}
+
+function insertSymbol(id, string, isChanged){
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+    if (!theForm) {
+        // try and find the form for the authoring page
+        theForm = document.getElementById('contentForm')
+    }
+    theForm.isChanged.value = isChanged;
+    var ele = document.getElementById(id);
+    insertAtCursor(ele, string)
+}

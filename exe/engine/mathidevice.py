@@ -45,12 +45,6 @@ delivered."""), "", "")
 
 
 
-   # def upgradeToVersion1(self):
-    #    """
-     #   Upgrades the node from version 0 (eXe version 0.4) to 1.
-      #  Adds icon
-       # """
-        #self.icon = ""
 
 
 # ===========================================================================

@@ -210,15 +210,15 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     html += u'</a>\n' 
     return html
 
-def insertSymbol(name, image, string, isChanged=1):
+def insertSymbol(name, image, title, string, isChanged=1):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
     onclick = "insertSymbol('%s', '%s', %d);" % (name, string, isChanged)
-
-    html  = u'<a href="#" onclick="%s">' % onclick
-    html += u'<img alt="%s" src="%s"/>' % ('alpha', image)
+    html = u'<a href="#" onclick="%s" ' % onclick
+    html += u'title="%s">' % title
+    html += u'<img alt="%s" src="%s"/>' % ('symbol', image)
     html += u'</a>\n' 
     return html
 
