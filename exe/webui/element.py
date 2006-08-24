@@ -367,23 +367,23 @@ class MultimediaElement(Element):
         """
         Returns an XHTML string for previewing this image
         """
-
-        html = self.renderMP3(
-                        '../%s/resources/%s' % (
-                            self.field.idevice.parentNode.package.name,
-                            self.field.mediaResource.storageName),
-                        "../templates/mp3player.swf")
+	html = ""
+	if self.field.mediaResource:
+	    html = self.renderMP3(
+			    '../%s/resources/%s' % (
+				self.field.idevice.parentNode.package.name,
+				self.field.mediaResource.storageName),
+			    "../templates/mp3player.swf")
         return html
-
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this image
         """
-
-        html = self.renderMP3(self.field.mediaResource.storageName,                            
-                                   "mp3player.swf")
-
+	html = ""
+	if self.field.mediaResource:
+	    html += self.renderMP3(self.field.mediaResource.storageName,                            
+				       "mp3player.swf")
         return html
     
     def renderMP3(self, filename, mp3player):
@@ -1006,21 +1006,31 @@ class MathElement(Element):
         # Preview
 	
 	html += '<div class="block">\n'
-	html += common.submitButton('preview'+self.id, _('Preview'))
+	html += common.submitButton('preview'+self.id, _('Preview')) + '<br/>'
 	if self.field.gifResource:
 	    html += '<p><img src="resources/%s"/></p>' % (self.field.gifResource.storageName) 
 	    html += "</div>\n"
+        else:
+            html += '<br/>'
         return html
 
-
-    def renderView(self):
+    def renderPreview(self):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-	if self.field.gifResource:
+        if self.field.gifResource:
 	    html = '<div class="block">\n'
 	    html += '<img src="resources/%s"/>' % (self.field.gifResource.storageName) 
 	    html += "</div>\n"
         return html
 
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        if self.field.gifResource:
+	    html = '<div class="block">\n'
+	    html += '<img src="%s"/>' % (self.field.gifResource.storageName) 
+	    html += "</div>\n"
+        return html
 
