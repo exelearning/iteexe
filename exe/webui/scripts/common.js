@@ -890,6 +890,7 @@ function insertAtCursor(myField, myValue) {
     } else {
         myField.value += myValue;
     }
+    myField.focus();
 }
 
 function insertSymbol(id, string){

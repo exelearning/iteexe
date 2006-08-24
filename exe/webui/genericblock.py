@@ -79,9 +79,10 @@ class GenericBlock(Block):
             html += u'     class="iDevice_icon" '
 	    html += u"src=\"/style/"+style
             html += u"/icon_"+self.idevice.icon+".gif\"/>\n"
-        html += u"<span class=\"iDeviceTitle\">"
-        html += self.idevice.title
-        html += u"</span>\n"
+	if self.idevice.emphasis > 0:
+	    html += u"<span class=\"iDeviceTitle\">"
+	    html += self.idevice.title
+	    html += u"</span>\n"
         html += u"<div class=\"iDevice_inner\">\n"
         for element in self.elements:
             html += element.renderPreview()

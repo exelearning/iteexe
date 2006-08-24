@@ -97,16 +97,9 @@ class TextElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        html = common.formField('textInput',self.field.name,'',
-                                self.id,self.field.content)
-        #html  = u'<div class="block">'
-        #html += u"<b>"+self.field.name+":</b>\n"
-        #html += common.elementInstruc(self.field.instruc)
-        #html += u"</div>\n"
-        #html += '<div class="block">\n'
-        #html += common.textInput(self.id, self.field.content)
-        #html += "</div>\n"
-
+        html = common.formField('textInput', self.field.name, '',
+                                self.id, '', self.field.content)
+       
         return html
 
 
@@ -1027,7 +1020,7 @@ class MathElement(Element):
 		symbol = file.namebase
 		html += common.insertSymbol("input"+self.id, 
 			u"/images/maths/relations/%s", 
-					    "%s", r"\\%s", 1) % (symbol, symbol,
+					    "%s", r"\\%s") % (symbol, symbol,
 								file.basename())
 	html += "</div>\n"
         html += common.textArea('input'+self.id, self.field.input)
@@ -1037,7 +1030,8 @@ class MathElement(Element):
 	html += '<div class="block">\n'
 	html += common.submitButton('preview'+self.id, _('Preview')) + '<br/>'
 	if self.field.gifResource:
-	    html += '<p><img src="resources/%s"/></p>' % (self.field.gifResource.storageName) 
+	    html += '<p align="center">'
+	    html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 
 	    html += "</div>\n"
         else:
             html += '<br/>'
