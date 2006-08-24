@@ -35,6 +35,7 @@ from exe.webui.clozeblock             import ClozeBlock
 from exe.webui.flashwithtextblock     import FlashWithTextBlock
 from exe.webui.externalurlblock       import ExternalUrlBlock
 from exe.webui.imagemagnifierblock    import ImageMagnifierBlock
+from exe.webui.mathblock              import MathBlock
 
 # ===========================================================================
 

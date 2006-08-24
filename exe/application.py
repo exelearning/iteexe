@@ -36,6 +36,8 @@ import logging
  
 log = logging.getLogger(__name__)
 
+# Global application variable
+application = None
 
 class Application:
     """
@@ -46,12 +48,15 @@ class Application:
         """
         Initialize
         """
+        global application
         self.config       = None
         self.packageStore = None
         self.ideviceStore = None
         self.packagePath  = None
         self.webServer    = None
         self.standalone   = False # Used for the ready to run exe
+        assert application is None, "You tried to instantiate two Application objects"
+        application = self
 
 
     def main(self):

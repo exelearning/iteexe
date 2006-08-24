@@ -120,7 +120,7 @@ class Resource(Persistable):
         """
         Changes any filename to pure ascii
         """
-        nameBase, ext = Path(filename.basename()).splitext()
+        nameBase, ext = Path(Path(filename).basename()).splitext()
         # Check if the filename is ascii so that twisted can serve it
         try:
             nameBase.encode('ascii')

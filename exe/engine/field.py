@@ -26,6 +26,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.path      import Path
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
+from exe.engine.mimetex   import compile
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 from htmlentitydefs       import name2codepoint
@@ -680,5 +681,59 @@ class DiscussionField(Field):
         Field.__init__(self, name, instruc)
         self.content = content
 
+#=========================================================================
+
+
+class MathField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+
+    def __init__(self, name, instruc="", latex=""):
+        """
+        Initialize 
+        'self._latex' is a string of latex
+        'self.gifResource' is a resouce that points to a cached gif
+        rendered from the latex
+        """
+        Field.__init__(self, name, instruc)
+        self.input = ""
+        self._latex = latex
+        self.gifResource = None
+       
+    # Property Handlers
     
-# ===========================================================================
+    def get_latex(self):
+        """
+        Returns latex string
+        """
+        return self._latex
+        
+    def set_latex(self, latex):
+        """
+        Replaces current gifResource
+        """
+        if self.gifResource is not None:
+            self.gifResource.delete()
+            self.gifResource = None
+        tempFileName = compile(latex)
+
+        self.gifResource = Resource(self.idevice.parentNode.package, tempFileName)
+        # Delete the temp file made by compile
+        Path(tempFileName).remove()
+        
+    def get_gifURL(self):
+        """
+        Returns the url to our gif for putting inside
+        <img src=""/> tag attributes
+        """
+        if self.gifResource is None:
+            return ''
+        else:
+            return self.gifResource.path
+    
+    # Properties
+    
+    latex = property(get_latex, set_latex)
+    gifURL = property(get_gifURL)

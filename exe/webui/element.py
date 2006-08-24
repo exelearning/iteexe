@@ -965,3 +965,62 @@ class FlashMovieElement(Element):
                                  
 
         return html
+
+# ===========================================================================
+
+class MathElement(Element):
+    """
+    MathElement is a single line of text
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if 'preview'+self.id in request.args:
+            self.field.latex = request.args[self.id][0]
+	    self.field.idevice.edit = True
+        if self.id in request.args:
+            self.field.input = request.args[self.id][0]
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        # Title and help button
+        html = u'<div class="block">'
+        html += u"<b>"+self.field.name+":</b>\n"
+        html += common.elementInstruc(self.field.instruc)
+        html += u"</div>\n"
+        # Latex input
+        html += '<div class="block">\n'
+        html += common.textArea(self.id, self.field.input)
+        html += "</div>\n"
+        # Preview
+	
+	html += '<div class="block">\n'
+	html += common.submitButton('preview'+self.id, _('Preview'))
+	if self.field.gifResource:
+	    html += '<p><img src="resources/%s"/></p>' % (self.field.gifResource.storageName) 
+	    html += "</div>\n"
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+	if self.field.gifResource:
+	    html = '<div class="block">\n'
+	    html += '<img src="resources/%s"/>' % (self.field.gifResource.storageName) 
+	    html += "</div>\n"
+        return html
+
+

@@ -1,5 +1,6 @@
 import sys, os, shutil
 import warnings
+from exe.engine.path import Path
 from subprocess import Popen, PIPE
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
 
@@ -22,11 +23,13 @@ def compile(latex, fontsize=4):
         '<img src="%s"/>' self.resource.path
         (or copy image with text idevice if this doesn't work)
     """
-    # Must pass 0-9 to api
+    # Import global application instance
+    from exe.application import application
     if os.name == 'nt':
-        cmd = 'mimetex.exe'
+        cmd = application.config.webDir/'templates'/'mimetex.exe'
     else:
-        cmd = './mimetex.cgi'
+        cmd = application.config.webDir/'templates'/'mimetex.cgi'
+    # Must pass 0-9 to api
     process = Popen([cmd, cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8092, stdout=PIPE, stderr=PIPE)
     returnCode = process.wait()
     if returnCode != 0:
@@ -37,6 +40,7 @@ def compile(latex, fontsize=4):
     outputFile.close()
     process.stderr.close()
     process.stdout.close()
+    outputFileName = Path(outputFileName).rename(outputFileName+'.gif')
     return outputFileName
 
 if __name__ == '__main__':
