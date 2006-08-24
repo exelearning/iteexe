@@ -360,38 +360,40 @@ class MultimediaElement(Element):
         """
         Returns an XHTML string for previewing this image
         """
-	html = ""
-	if self.field.mediaResource:
-	    html = self.renderMP3(
-			    '../%s/resources/%s' % (
-				self.field.idevice.parentNode.package.name,
-				self.field.mediaResource.storageName),
-			    "../templates/mp3player.swf")
+        html = ""
+        if self.field.mediaResource:
+            html = self.renderMP3(
+                            '../%s/resources/%s' % (
+                                self.field.idevice.parentNode.package.name,
+                                self.field.mediaResource.storageName),
+                            "../templates/mp3player.swf")
         return html
+
 
     def renderView(self):
         """
         Returns an XHTML string for viewing this image
         """
-	html = ""
-	if self.field.mediaResource:
-	    html += self.renderMP3(self.field.mediaResource.storageName,                            
-				       "mp3player.swf")
+        html = ""
+        if self.field.mediaResource:
+            html += self.renderMP3(self.field.mediaResource.storageName,                            
+                                       "mp3player.swf")
+
         return html
     
     def renderMP3(self, filename, mp3player):
         path = Path(filename)
         fileExtension =path.ext.lower()
-	mp3Str_mat = common.flash(filename, self.field.width, self.field.height,
-			      id="mp3player",
-			      params = {
-				      'movie': '%s?src=%s' % (mp3player, filename),
-				      'quality': 'high',
-				      'bgcolor': '#333333',
-				      'flashvars': 'bgColour=000000&amp;btnColour=ffffff&amp;'
-        					   'btnBorderColour=cccccc&amp;iconColour=000000&amp;'
-						   'iconOverColour=00cc00&amp;trackColour=cccccc&amp;'
-						   'handleColour=ffffff&amp;loaderColour=ffffff&amp;'})
+        mp3Str_mat = common.flash(filename, self.field.width, self.field.height,
+                              id="mp3player",
+                              params = {
+                                      'movie': '%s?src=%s' % (mp3player, filename),
+                                      'quality': 'high',
+                                      'bgcolor': '#333333',
+                                      'flashvars': 'bgColour=000000&amp;btnColour=ffffff&amp;'
+                                                   'btnBorderColour=cccccc&amp;iconColour=000000&amp;'
+                                                   'iconOverColour=00cc00&amp;trackColour=cccccc&amp;'
+                                                   'handleColour=ffffff&amp;loaderColour=ffffff&amp;'})
 
         mp3Str = """
         <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
@@ -414,19 +416,19 @@ class MultimediaElement(Element):
         
         """ % (mp3player, filename, mp3player, filename)
         
-	wmvStr = common.flash(filename, self.field.width, self.field.height,
-			      id="mp3player",
-			      params = {
-				      'Filename': filename,
-				      'ShowControls': 'true',
-				      'AutoRewind': 'true',
-				      'AutoStart': 'false',
-				      'AutoSize': 'true',
-				      'EnableContextMenu': 'true',
-				      'TransparentAtStart': 'false',
-				      'AnimationAtStart': 'false',
-				      'ShowGotoBar': 'false',
-				      'EnableFullScreenControls': 'true'})
+        wmvStr = common.flash(filename, self.field.width, self.field.height,
+                              id="mp3player",
+                              params = {
+                                      'Filename': filename,
+                                      'ShowControls': 'true',
+                                      'AutoRewind': 'true',
+                                      'AutoStart': 'false',
+                                      'AutoSize': 'true',
+                                      'EnableContextMenu': 'true',
+                                      'TransparentAtStart': 'false',
+                                      'AnimationAtStart': 'false',
+                                      'ShowGotoBar': 'false',
+                                      'EnableFullScreenControls': 'true'})
 
         wmvStr = """
         <p class="mediaplugin">
@@ -978,7 +980,7 @@ class MathElement(Element):
         """
         if 'preview'+self.id in request.args:
             self.field.latex = request.args['input'+self.id][0]
-	    self.field.idevice.edit = True
+            self.field.idevice.edit = True
         if 'input'+self.id in request.args:
             self.field.input = request.args['input'+self.id][0]
 
@@ -987,11 +989,11 @@ class MathElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-	from exe.application import application
-	webDir = application.config.webDir
-	greekDir = Path(webDir+'/images/maths/greek letters')
-	oprationDir = Path(webDir+'/images/maths/binary oprations')
-	relationDir = Path(webDir+'/images/maths/relations')
+        from exe.application import application
+        webDir = application.config.webDir
+        greekDir = Path(webDir+'/images/maths/greek letters')
+        oprationDir = Path(webDir+'/images/maths/binary oprations')
+        relationDir = Path(webDir+'/images/maths/relations')
         html = u'<div class="block">'
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
@@ -999,40 +1001,39 @@ class MathElement(Element):
         # Latex input
         html += '<div class="maths">\n'
 
-	for file in greekDir.files():
-	    if file.ext == ".gif" or file.ext == ".png":
-		symbol = file.namebase
-		html += common.insertSymbol("input"+self.id, 
-			u"/images/maths/greek letters/%s", 
-					    "%s", r"\\%s") % (symbol, symbol,
-								file.basename())
-	html += u"<br/>"	
-	for file in oprationDir.files():
-	    if file.ext == ".gif" or file.ext == ".png":
-		symbol = file.namebase
-		html += common.insertSymbol("input"+self.id, 
-			u"/images/maths/binary oprations/%s", 
-					    "%s", r"\\%s") % (symbol, symbol,
-								file.basename())
-	html += u"<br/>"	
-	for file in relationDir.files():
-	    if file.ext == ".gif" or file.ext == ".png":
-		symbol = file.namebase
-		html += common.insertSymbol("input"+self.id, 
-			u"/images/maths/relations/%s", 
-					    "%s", r"\\%s") % (symbol, symbol,
-								file.basename())
-	html += "</div>\n"
+        for file in greekDir.files():
+            if file.ext == ".gif" or file.ext == ".png":
+                symbol = file.namebase
+                html += common.insertSymbol("input"+self.id, 
+                        u"/images/maths/greek letters/%s", 
+                                            "%s", r"\\%s") % (symbol, symbol,
+                                                                file.basename())
+        html += u"<br/>"        
+        for file in oprationDir.files():
+            if file.ext == ".gif" or file.ext == ".png":
+                symbol = file.namebase
+                html += common.insertSymbol("input"+self.id, 
+                        u"/images/maths/binary oprations/%s", 
+                                            "%s", r"\\%s") % (symbol, symbol,
+                                                                file.basename())
+        html += u"<br/>"        
+        for file in relationDir.files():
+            if file.ext == ".gif" or file.ext == ".png":
+                symbol = file.namebase
+                html += common.insertSymbol("input"+self.id, 
+                        u"/images/maths/relations/%s", 
+                                            "%s", r"\\%s") % (symbol, symbol,
+                                                                file.basename())
+        html += "</div>\n"
         html += common.textArea('input'+self.id, self.field.input)
         
         # Preview
-	
-	html += '<div class="block">\n'
-	html += common.submitButton('preview'+self.id, _('Preview')) + '<br/>'
-	if self.field.gifResource:
-	    html += '<p align="center">'
-	    html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 
-	    html += "</div>\n"
+        html += '<div class="block">\n'
+        html += common.submitButton('preview'+self.id, _('Preview')) + '<br/>'
+        if self.field.gifResource:
+            html += '<p align="center">'
+            html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 
+            html += "</div>\n"
         else:
             html += '<br/>'
         return html
@@ -1041,23 +1042,23 @@ class MathElement(Element):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-	html = ""
+        html = ""
         if self.field.gifResource:
-	    html += '<div class="block">\n'
-	    html += '<p align="center">'
-	    html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 
-	    html += '</div>\n'
+            html += '<div class="block">\n'
+            html += '<p align="center">'
+            html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 
+            html += '</div>\n'
         return html
 
     def renderView(self):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-	html = ""
+        html = ""
         if self.field.gifResource:
-	    html += '<div class="block">\n'
-	    html += '<p align="center">'
-	    html += '<img src="%s" /></p>' % (self.field.gifResource.storageName) 
-	    html += "</div>\n"
+            html += '<div class="block">\n'
+            html += '<p align="center">'
+            html += '<img src="%s" /></p>' % (self.field.gifResource.storageName) 
+            html += "</div>\n"
         return html
 
