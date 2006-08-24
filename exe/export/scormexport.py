@@ -82,7 +82,7 @@ class Manifest(object):
         for page in self.pages:
             for idevice in page.node.idevices:
                # if idevice.title == "Discussion Activity":
-	       if hasattr(idevice, "isForum"):
+               if hasattr(idevice, "isForum"):
                     forums = idevice.forumsCache.getForums()
                     xmlStr += self.moodleForums(forums)
                     break
@@ -106,9 +106,9 @@ class Manifest(object):
                 escape(introduction).replace( '<','&lt;' ).replace( '>', '&gt;' )
                 forumStr += u"<type>%s</type>" % forum.lms.type.encode()
                 forumStr += u"<studentpost>%s</studentpost>\n" % \
-                             forum.lms.studentpost
+                            forum.lms.studentpost
                 forumStr += u"<subscription>%s</subscription>\n" % \
-                             forum.lms.subscription
+                            forum.lms.subscription
                 forumStr += u"<tracking>1</tracking>\n"
                 forumStr += u"<attachmentsize></attachmentsize>\n"
                 forumStr += u"<ratings>0</ratings>\n"
@@ -287,10 +287,10 @@ class ScormPage(Page):
 
         html += u"</div>\n"
         html += u"</div>\n"
-	if self.node.package.scolinks:
-	    html += u'<a class="previouslink" '
-	    html += u'href="javascript: goBack();">Previous</a> | <a class="nextlink"'
-	    html += u'href="javascript: goForward();">Next</a>'
+        if self.node.package.scolinks:
+            html += u'<a class="previouslink" '
+            html += u'href="javascript: goBack();">Previous</a> | <a class="nextlink"'
+            html += u'href="javascript: goForward();">Next</a>'
         html += u"</body></html>\n"
         html = html.encode('utf8')
         return html
@@ -327,7 +327,7 @@ class ScormExport(object):
         # Copy the style sheet files to the output dir
         # But not nav.css
         styleFiles  = [self.styleDir/'..'/'base.css']
-	styleFiles += [self.styleDir/'..'/'popup_bg.gif']
+        styleFiles += [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += self.styleDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
@@ -351,7 +351,7 @@ class ScormExport(object):
             page.save(outputDir)
             if not self.hasForum:
                 for idevice in page.node.idevices:
-		    if hasattr(idevice, "isForum"):
+                    if hasattr(idevice, "isForum"):
                         if idevice.forum.lms.lms == "moodle":
                             self.hasForum = True
                             break
