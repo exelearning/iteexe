@@ -984,10 +984,10 @@ class MathElement(Element):
         Process arguments from the web server.
         """
         if 'preview'+self.id in request.args:
-            self.field.latex = request.args[self.id][0]
+            self.field.latex = request.args['input'+self.id][0]
 	    self.field.idevice.edit = True
-        if self.id in request.args:
-            self.field.input = request.args[self.id][0]
+        if 'input'+self.id in request.args:
+            self.field.input = request.args['input'+self.id][0]
 
 
     def renderEdit(self):
@@ -998,11 +998,14 @@ class MathElement(Element):
         html = u'<div class="block">'
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
-        html += u"</div>\n"
+        html += u"<br/></div>\n"
         # Latex input
-        html += '<div class="block">\n'
-        html += common.textArea(self.id, self.field.input)
-        html += "</div>\n"
+        html += '<div class="maths">\n'
+	html += common.insertSymbol(self.id, 
+                                   u"/images/alpha.gif", r"\\alpha", 1)
+	html += "</div>\n"
+        html += '<br/>' + common.textArea('input'+self.id, self.field.input)
+        
         # Preview
 	
 	html += '<div class="block">\n'
@@ -1018,8 +1021,9 @@ class MathElement(Element):
         """
         Returns an XHTML string for viewing or previewing this element
         """
+	html = ""
         if self.field.gifResource:
-	    html = '<div class="block">\n'
+	    html += '<div class="block">\n'
 	    html += '<img src="resources/%s"/>' % (self.field.gifResource.storageName) 
 	    html += "</div>\n"
         return html
@@ -1028,8 +1032,9 @@ class MathElement(Element):
         """
         Returns an XHTML string for viewing or previewing this element
         """
+	html = ""
         if self.field.gifResource:
-	    html = '<div class="block">\n'
+	    html += '<div class="block">\n'
 	    html += '<img src="%s"/>' % (self.field.gifResource.storageName) 
 	    html += "</div>\n"
         return html

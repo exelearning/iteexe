@@ -98,9 +98,10 @@ def textArea(name, value="", disabled=""):
     """Adds a text area to a form"""
     log.debug(u"textArea %s" % value)
     html  = u'<textarea name="%s" ' % name
+    html += 'id = "%s"' % name
     if disabled:
         html += u'disabled="disabled" '
-    html += u'cols="52" rows="8">'
+    html += u'cols="90" rows="8">'
     html += value
     html += u'</textarea><br/>'
     return html
@@ -206,6 +207,18 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s">' % onclick
     html += u'<img alt="%s" src="%s"/>' % (_('Submit'), imageFile)
+    html += u'</a>\n' 
+    return html
+
+def insertSymbol(name, image, string, isChanged=1):
+    """
+    Adds an image link which will trigger the javascript needed to
+    post a form with the action and object passed in the args
+    """
+    onclick = "insertSymbol('%s', '%s', %d);" % (name, string, isChanged)
+
+    html  = u'<a href="#" onclick="%s">' % onclick
+    html += u'<img alt="%s" src="%s"/>' % ('alpha', image)
     html += u'</a>\n' 
     return html
 
