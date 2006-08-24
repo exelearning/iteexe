@@ -101,7 +101,8 @@ def textArea(name, value="", disabled=""):
     html += 'id = "%s"' % name
     if disabled:
         html += u'disabled="disabled" '
-    html += u'cols="90" rows="8">'
+    html += u'style=\"width:100%"'
+    html += u'cols="80" rows="8">'
     html += value
     html += u'</textarea><br/>'
     return html

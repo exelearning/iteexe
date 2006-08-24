@@ -994,12 +994,11 @@ class MathElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        # Title and help button
-	#symbols = ["alpha", "beta", "gamma", "delta", "epsilon", "theta", "pi",
-		   #"lambda", "Sigma", "phi", "varphi", "psi", "omega"]
 	from exe.application import application
 	webDir = application.config.webDir
 	greekDir = Path(webDir+'/images/maths/greek letters')
+	oprationDir = Path(webDir+'/images/maths/binary oprations')
+	relationDir = Path(webDir+'/images/maths/relations')
         html = u'<div class="block">'
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
@@ -1011,6 +1010,22 @@ class MathElement(Element):
 		symbol = file.namebase
 		html += common.insertSymbol("input"+self.id, 
 			u"/images/maths/greek letters/%s", 
+					    "%s", r"\\%s", 1) % (symbol, symbol,
+								file.basename())
+	html += u"<br/>"	
+	for file in oprationDir.files():
+	    if file.ext == ".gif" or file.ext == ".png":
+		symbol = file.namebase
+		html += common.insertSymbol("input"+self.id, 
+			u"/images/maths/binary oprations/%s", 
+					    "%s", r"\\%s", 1) % (symbol, symbol,
+								file.basename())
+	html += u"<br/>"	
+	for file in relationDir.files():
+	    if file.ext == ".gif" or file.ext == ".png":
+		symbol = file.namebase
+		html += common.insertSymbol("input"+self.id, 
+			u"/images/maths/relations/%s", 
 					    "%s", r"\\%s", 1) % (symbol, symbol,
 								file.basename())
 	html += "</div>\n"

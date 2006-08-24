@@ -24,8 +24,10 @@ import logging
 from exe.webui.block   import Block
 from exe.webui.element import TextAreaElement, MultimediaElement
 from exe.webui         import common
+from exe.engine.idevice import Idevice
 
 log = logging.getLogger(__name__)
+
 
 # ===========================================================================
 class MultimediaBlock(Block):
@@ -56,6 +58,9 @@ class MultimediaBlock(Block):
             request.args[u"action"][0] != u"delete"):
             self.mediaElement.process(request)
             self.textElement.process(request)
+
+        if 'emphasis'+self.id in request.args:
+            self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
             
         if "float"+self.id in request.args:
             self.idevice.float = request.args["float"+self.id][0]
@@ -84,6 +89,15 @@ class MultimediaBlock(Block):
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc(self.idevice.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
+        emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
+                          (_(u"Some emphasis"),   Idevice.SomeEmphasis),
+                          (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
+
+        html += common.formField('select', _('Emphasis'),
+                                 'emphasis', self.id, 
+                                 '', # TODO: Instructions
+                                 emphasisValues,
+                                 self.idevice.emphasis)
         html += self.renderEditButtons()
         html += u"</div>\n"
         return html
@@ -98,6 +112,15 @@ class MultimediaBlock(Block):
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        if self.idevice.emphasis != Idevice.NoEmphasis:
+            if self.idevice.icon:
+                html += u'<img alt="idevice icon" class="iDevice_icon" '
+                html += u" src=\"/style/"+style
+                html += "/icon_"+self.idevice.icon+".gif\"/>\n"
+            html += u"<span class=\"iDeviceTitle\">"
+            html += self.idevice.title
+            html += u"</span>\n"
+            html += u"<div class=\"iDevice_inner\">\n"
         html += u"<div class=\"media_text\" style=\""
         html += u"width:" + str(self.idevice.media.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
@@ -122,8 +145,16 @@ class MultimediaBlock(Block):
         html  = u"\n<!-- image with text iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html += u'<img alt="idevice icon" class="iDevice_icon" '
+        html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"#
+        
+        html += u"<span class=\"iDeviceTitle\">"
+        html += self.idevice.title
+        html += u"</span>\n"
+        html += u"<div class=\"iDevice_inner\">\n"
+        
         html += u"<div class=\"media_text\" style=\""
-      #  html += u"width:" + str(self.idevice.image.width) + "px; "
+        html += u"width:" + str(self.idevice.media.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderView()
