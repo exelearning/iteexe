@@ -1,5 +1,6 @@
 import sys, os, shutil
 import warnings
+from subprocess import Popen, PIPE
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
 
 def compile(latex, fontsize=4):
@@ -22,14 +23,20 @@ def compile(latex, fontsize=4):
         (or copy image with text idevice if this doesn't work)
     """
     # Must pass 0-9 to api
-    if os.name == 'posix':
-        pout = os.popen('./mimetex.cgi -d "%s" -s %s' % (latex, fontsize-1), 'rb')
+    if os.name == 'nt':
+        cmd = 'mimetex.exe'
     else:
-        pout = os.popen('mimetex -d "%s" -s "%s"' % (latex, fontsize-1), 'rb')
+        cmd = './mimetex.cgi'
+    process = Popen([cmd, cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8092, stdout=PIPE, stderr=PIPE)
+    returnCode = process.wait()
+    if returnCode != 0:
+        raise Exception("Couldn't parse latex:\n%s" % process.stderr)
     outputFileName = os.tmpnam()
     outputFile = open(outputFileName, 'wb')
-    shutil.copyfileobj(pout, outputFile)
+    shutil.copyfileobj(process.stdout, outputFile)
     outputFile.close()
+    process.stderr.close()
+    process.stdout.close()
     return outputFileName
 
 if __name__ == '__main__':
