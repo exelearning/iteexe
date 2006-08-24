@@ -892,13 +892,7 @@ function insertAtCursor(myField, myValue) {
     }
 }
 
-function insertSymbol(id, string, isChanged){
-    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
-    if (!theForm) {
-        // try and find the form for the authoring page
-        theForm = document.getElementById('contentForm')
-    }
-    theForm.isChanged.value = isChanged;
+function insertSymbol(id, string){
     var ele = document.getElementById(id);
     insertAtCursor(ele, string)
 }

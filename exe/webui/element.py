@@ -1005,12 +1005,13 @@ class MathElement(Element):
         html += u"<br/></div>\n"
         # Latex input
         html += '<div class="maths">\n'
+
 	for file in greekDir.files():
 	    if file.ext == ".gif" or file.ext == ".png":
 		symbol = file.namebase
 		html += common.insertSymbol("input"+self.id, 
 			u"/images/maths/greek letters/%s", 
-					    "%s", r"\\%s", 1) % (symbol, symbol,
+					    "%s", r"\\%s") % (symbol, symbol,
 								file.basename())
 	html += u"<br/>"	
 	for file in oprationDir.files():
@@ -1018,7 +1019,7 @@ class MathElement(Element):
 		symbol = file.namebase
 		html += common.insertSymbol("input"+self.id, 
 			u"/images/maths/binary oprations/%s", 
-					    "%s", r"\\%s", 1) % (symbol, symbol,
+					    "%s", r"\\%s") % (symbol, symbol,
 								file.basename())
 	html += u"<br/>"	
 	for file in relationDir.files():
@@ -1049,8 +1050,9 @@ class MathElement(Element):
 	html = ""
         if self.field.gifResource:
 	    html += '<div class="block">\n'
-	    html += '<img src="resources/%s"/>' % (self.field.gifResource.storageName) 
-	    html += "</div>\n"
+	    html += '<p align="center">'
+	    html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 
+	    html += '</div>\n'
         return html
 
     def renderView(self):
@@ -1060,7 +1062,8 @@ class MathElement(Element):
 	html = ""
         if self.field.gifResource:
 	    html += '<div class="block">\n'
-	    html += '<img src="%s"/>' % (self.field.gifResource.storageName) 
+	    html += '<p align="center">'
+	    html += '<img src="%s" /></p>' % (self.field.gifResource.storageName) 
 	    html += "</div>\n"
         return html
 
