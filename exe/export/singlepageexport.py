@@ -105,11 +105,11 @@ class SinglePageExport(object):
         #videofile = (self.templatesDir/'videoContainer.swf')
         #videofile.copyfile(self.outputDir/'videoContainer.swf')
         self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
-                                    'mp3player.swf'),outputDir)
+                                    'mp3player.swf'),self.outputDir)
 
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
-            
+
 
     def renderHeader(self, name):
         """
