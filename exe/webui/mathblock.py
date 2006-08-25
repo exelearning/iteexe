@@ -30,7 +30,6 @@ log = logging.getLogger(__name__)
 class MathBlock(Block):
     """
     MathBlock can render and process MathIdevices as XHTML
-    GenericBlock will replace it..... one day
     """
 
     def __init__(self, parent, idevice):
