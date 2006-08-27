@@ -1029,7 +1029,8 @@ class MathElement(Element):
         
         # Preview
         html += '<div class="block">\n'
-        html += common.submitButton('preview'+self.id, _('Preview')) + '<br/>'
+        html += common.submitButton('preview'+self.id, _('Preview'))
+        html += common.elementInstruc(self.field.previewInstruc) + '<br/>'
         if self.field.gifResource:
             html += '<p>'
             html += '<img src="resources/%s" /></p>' % (self.field.gifResource.storageName) 

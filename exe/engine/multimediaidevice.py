@@ -53,15 +53,16 @@ associate with the file."""))
         self.text.idevice                = self
         self.float                       = u"left"
         self.caption                     = u""
+        self.icon                        = u"inter"
         self._captionInstruc             = x_(u"""Provide a caption for the 
 MP3 file.""")
        
-       # self._alignInstruc               = x_(u"""Alignment allows you to 
-#choose where on the screen the image will be positioned.""")
+        self._alignInstruc               = x_(u"""Alignment allows you to 
+choose where on the screen the media player will be positioned.""")
        
     # Properties
     captionInstruc     = lateTranslate('captionInstruc')
-   # alignInstruc       = lateTranslate('alignInstruc')
+    alignInstruc       = lateTranslate('alignInstruc')
    
 def register(ideviceStore):
     """Register with the ideviceStore"""

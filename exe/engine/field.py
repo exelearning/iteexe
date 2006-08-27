@@ -739,9 +739,13 @@ class MathField(Field):
         self.input = ""
         self._latex = latex
         self.gifResource = None
+        self.instruc = x_("some latex instruction here.")
+        self._previewInstruc = x_("""Click on Preview button to convert 
+                                  the latex into a symbols image.""")
        
     # Property Handlers
-    
+    # Properties
+    previewInstruc      = lateTranslate('previewInstruc')
     def get_latex(self):
         """
         Returns latex string

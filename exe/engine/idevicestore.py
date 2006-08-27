@@ -128,7 +128,7 @@ class IdeviceStore:
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
         from exe.engine.mathidevice           import MathIdevice
         from exe.engine.multimediaidevice     import MultimediaIdevice        
-        from exe.engine.rssidevice            import RssIdevice 
+        #from exe.engine.rssidevice            import RssIdevice 
 
         self.extended.append(FreeTextIdevice())
         
@@ -155,7 +155,7 @@ class IdeviceStore:
         self.extended.append(ExternalUrlIdevice())
         self.extended.append(MathIdevice())
         self.extended.append(MultimediaIdevice())
-        self.extended.append(RssIdevice())
+        #self.extended.append(RssIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

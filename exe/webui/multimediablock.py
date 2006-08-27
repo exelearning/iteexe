@@ -17,13 +17,13 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-MultimediaWithTextBlock can render and process MultimediaWithTextIdevices as XHTML
+MultimediaBlock can render and process MultimediaIdevices as XHTML
 """
 
 import logging
-from exe.webui.block   import Block
-from exe.webui.element import TextAreaElement, MultimediaElement
-from exe.webui         import common
+from exe.webui.block    import Block
+from exe.webui.element  import TextAreaElement, MultimediaElement
+from exe.webui          import common
 from exe.engine.idevice import Idevice
 
 log = logging.getLogger(__name__)
@@ -82,9 +82,8 @@ class MultimediaBlock(Block):
 
         html += common.formField('select', _("Align:"),
                                  "float" + self.id, '',
-                                 '',
+                                 self.idevice.alignInstruc,
                                  floatArr, self.idevice.float)
-
         html += u'<div class="block"><b>%s</b></div>' % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc(self.idevice.captionInstruc)
@@ -145,12 +144,15 @@ class MultimediaBlock(Block):
         html  = u"\n<!-- image with text iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u'<img alt="idevice icon" class="iDevice_icon" '
-        html += u" src=\"icon_"+self.idevice.icon+".gif\"/>\n"#
+        if self.idevice.emphasis != Idevice.NoEmphasis:
+            if self.idevice.icon:
+                html += u'<img alt="idevice icon" class="iDevice_icon" '
+                html += u' src="/icon_"+self.idevice.icon+".gif"/>\n'
+            html += u"<span class=\"iDeviceTitle\">"
+            html += self.idevice.title
+            html += u"</span>\n"
+            html += u"<div class=\"iDevice_inner\">\n"
         
-        html += u"<span class=\"iDeviceTitle\">"
-        html += self.idevice.title
-        html += u"</span>\n"
         html += u"<div class=\"iDevice_inner\">\n"
         
         html += u"<div class=\"media_text\" style=\""
@@ -166,12 +168,10 @@ class MultimediaBlock(Block):
         html += u"</div>\n"
         return html
     
-# ===========================================================================
-def register():
-    """Register this block with the BlockFactory"""
-    from multimediaidevice          import MultimediaIdevice
-    from exe.webui.blockfactory     import g_blockFactory
-    g_blockFactory.registerBlockType(MultimediaBlock, MultimediaIdevice)    
+
+from exe.engine.multimediaidevice import MultimediaIdevice
+from exe.webui.blockfactory       import g_blockFactory
+g_blockFactory.registerBlockType(MultimediaBlock, MultimediaIdevice)    
 
 
 # ===========================================================================

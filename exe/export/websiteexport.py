@@ -51,7 +51,7 @@ class WebsiteExport(object):
         self.stylesDir    = Path(styleDir)
         self.filename     = Path(filename)
         self.pages        = []
-        self.outputDir    = Path(outputDir)
+      #  self.outputDir    = Path(outputDir)
 
     def exportZip(self, package):
 	""" 
