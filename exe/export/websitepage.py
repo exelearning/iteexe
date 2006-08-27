@@ -52,6 +52,8 @@ class WebsitePage(object):
         file.  'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
+        import pdb
+        pdb.set_trace()
         outfile = open(outputDir / self.name+".html", "w")
         outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()
@@ -187,13 +189,13 @@ class WebsitePage(object):
 
         if prevPage:
             html += "<a href=\""+prevPage.name+".html\">"
-            html += "&laquo; previous</a>"
+            html += "&laquo; %s</a>" % _('Previous')
 
         if nextPage:
             if prevPage:
                 html += " | "
             html += "<a href=\""+nextPage.name+".html\">"
-            html += "next &raquo;</a>"""
+            html += "&raquo; %s</a>" % _('Next')
             
         html += "</div>\n"
         return html

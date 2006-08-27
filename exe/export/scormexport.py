@@ -289,8 +289,8 @@ class ScormPage(Page):
         html += u"</div>\n"
         if self.node.package.scolinks:
             html += u'<a class="previouslink" '
-            html += u'href="javascript: goBack();">Previous</a> | <a class="nextlink"'
-            html += u'href="javascript: goForward();">Next</a>'
+            html += u'href="javascript: goBack();">%s</a> | <a class="nextlink"' % _('Previous')
+            html += u'href="javascript: goForward();">%s</a>' % _('Next')
         html += u"</body></html>\n"
         html = html.encode('utf8')
         return html
