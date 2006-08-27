@@ -282,9 +282,9 @@ class MainPage(RenderableLivePage):
     def handleExport(self, client, exportType, filename):
         """
         Called by js. 
-        'exportType' can be one of 'scormMeta' 'scormNoMeta' 'scormNoScormType'
-        'webSite'
         Exports the current package to one of the above formats
+        'exportType' can be one of 'singlePage' 'webSite' 'zipFile'
+                     'textFile' or 'scorm'
         'filename' is a file for scorm pages, and a directory for websites
         """ 
         webDir     = Path(self.config.webDir)
