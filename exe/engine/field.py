@@ -148,46 +148,6 @@ class FeedbackField(Field):
         """
         self.buttonCaption = self.__dict__['buttonCaption']
 
-# ===========================================================================
-
-class MathField(Field):
-    """
-    A Generic iDevice is built up of these fields.  Each field can be
-    rendered as an XHTML element
-    """
-    def __init__(self, name, instruc=""):
-        """
-        """
-        Field.__init__(self, name, instruc)
-        self.width         = ""
-        self.height        = ""
-        self.imageResource = None
-
-
-    def setGiffile(self, gifFile):
-        """
-        Store the image in the package
-        Needs to be in a package to work.
-        """
-        #log.debug(u"setImage "+unicode(imagePath))
-        resourceFile = Path(gifFile)
-
-        assert(self.idevice.parentNode,
-               'Image '+self.idevice.id+' has no parentNode')
-        assert(self.idevice.parentNode.package,
-               'iDevice '+self.idevice.parentNode.id+' has no package')
-
-        if resourceFile.isfile():
-            if self.imageResource:
-                self.imageResource.delete()
-                self.idevice.userResources.remove(self.imageResource)
-            self.imageResource = Resource(self.idevice.parentNode.package,
-                                          resourceFile)
-            self.idevice.userResources.append(self.imageResource)
-
-        else:
-            log.error('File %s is not a file' % resourceFile)
-
 
 # ===========================================================================
 
@@ -742,10 +702,9 @@ class MathField(Field):
         rendered from the latex
         """
         Field.__init__(self, name, instruc)
-        self.input = ""
-        self._latex = latex
+        self._latex      = latex # The latex entered by the user
         self.gifResource = None
-        self.instruc = x_("some latex instruction here.")
+        self.instruc     = x_("some latex instruction here.")
         self._previewInstruc = x_("""Click on Preview button to convert 
                                   the latex into a symbols image.""")
        
@@ -766,10 +725,10 @@ class MathField(Field):
             self.gifResource = None
         if latex <> "":
             tempFileName = compile(latex)
-    
             self.gifResource = Resource(self.idevice.parentNode.package, tempFileName)
             # Delete the temp file made by compile
             Path(tempFileName).remove()
+        self._latex = latex
         
     def get_gifURL(self):
         """
