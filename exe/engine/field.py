@@ -30,6 +30,8 @@ from exe.engine.mimetex   import compile
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 from htmlentitydefs       import name2codepoint
+#from exe.application import application
+
 import re
 import urllib
 log = logging.getLogger(__name__)
@@ -243,6 +245,11 @@ class ImageField(Field):
         if self.defaultImage:
             self.setImage(self.defaultImage)
 
+    def isDefault(self):
+        """
+        Returns true if the field holds it's default image
+        """
+        return self.imageResource.path == self.defaultImage
 
     def _upgradeFieldToVersion2(self):
         """
@@ -719,7 +726,7 @@ class DiscussionField(Field):
         Field.__init__(self, name, instruc)
         self.content = content
 
-#=========================================================================
+#=========================================================================    
 
 
 class MathField(Field):
@@ -739,13 +746,9 @@ class MathField(Field):
         self.input = ""
         self._latex = latex
         self.gifResource = None
-        self.instruc = x_("some latex instruction here.")
-        self._previewInstruc = x_("""Click on Preview button to convert 
-                                  the latex into a symbols image.""")
        
     # Property Handlers
-    # Properties
-    previewInstruc      = lateTranslate('previewInstruc')
+    
     def get_latex(self):
         """
         Returns latex string
@@ -780,3 +783,7 @@ class MathField(Field):
     
     latex = property(get_latex, set_latex)
     gifURL = property(get_gifURL)
+
+
+
+    

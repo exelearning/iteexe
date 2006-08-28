@@ -23,9 +23,12 @@ A multichoice Idevice is one built up from question and options
 import logging
 from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
+from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
+# Constants
+DEFAULT_IMAGE = 'empty.gif'
 
 # ===========================================================================
 class Question(Persistable):
@@ -33,12 +36,25 @@ class Question(Persistable):
     A Case iDevice is built up of question and options.  Each option can 
     be rendered as an XHTML element
     """
-    def __init__(self, question="", feedback=""):
+
+    def __init__(self, idevice):
         """
         Initialize 
         """
-        self.question  = question
-        self.feedback  = feedback
+        self.question  = u''
+        self.feedback  = u''
+        self.setupImage(idevice)
+    
+    def setupImage(self, idevice):
+        """
+        Creates our image field
+        """
+        # TODO: Get helena to check instructions
+        self.image = ImageField(x_(u"Feedback Image"),
+                                x_(u"Choose an image to be shown to the student "
+                                    "on completion of this question")) 
+        self.image.idevice = idevice
+        self.image.defaultImage  = idevice.defaultImage
 
 
 # ===========================================================================
@@ -46,9 +62,9 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 5
+    persistenceVersion = 6
 
-    def __init__(self, story=""):
+    def __init__(self, story="", defaultImage=None):
         """
         Initialize 
         """
@@ -71,6 +87,7 @@ of the case and if so how are ideas feed back to the class</li></ul>"""),
                          "",
                          u"casestudy")
         self.emphasis     = Idevice.SomeEmphasis
+        
         self.story        = story
         self.questions    = []
         self._storyInstruc = x_(u"""Create the case story. A good case is one 
@@ -83,8 +100,12 @@ instructions for activity which may lead the learner to resolving a dilemma
 presented. """)
         self._feedbackInstruc = x_(u"""Provide relevant feedback on the 
 situation.""")
+        if defaultImage is None:
+            from exe.application import application
+            defaultImage = application.config.webDir/'images'/DEFAULT_IMAGE
+        self.defaultImage = defaultImage
         self.addQuestion()
-        
+
     # Properties
     storyInstruc    = lateTranslate('storyInstruc')
     questionInstruc = lateTranslate('questionInstruc')
@@ -97,7 +118,7 @@ situation.""")
         """
         Add a new question to this iDevice. 
         """
-        self.questions.append(Question())
+        self.questions.append(Question(self))
 
 
     def upgradeToVersion1(self):
@@ -137,6 +158,15 @@ situation.""")
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()
+        
+    def upgradeToVersion6(self):
+        """
+        Upgrades for v0.18
+        """
+        from exe.application import application
+        self.defaultImage = application.config.webDir/'images'/DEFAULT_IMAGE
+        for question in self.questions:
+            question.setupImage(self)
 
 
 # ===========================================================================
