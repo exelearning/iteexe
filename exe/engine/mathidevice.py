@@ -34,9 +34,14 @@ class MathIdevice(Idevice):
     def __init__(self, instruc="", latex=""):
         Idevice.__init__(self, x_(u"Maths"), 
                          x_(u"University of Auckland"), 
-                         x_(u"""Use this iDevice if  you need to include 
-mathematical equations in your content. This iDevice turns maths into images 
-which may not be suitable for people with visual disabilities."""), "", "")
+                         x_(u"""The mathematical language LATEX has been 
+                        used to enable you to create mathematical formula 
+                        within you content. It does this by translating the 
+                        LATEX into a graphical image which is then displayed
+                         within your eXe content. We would recommend that 
+                        you use the Free Text iDevice to provide 
+                        explanatory notes and learning instruction around 
+                        this graphic."""), "", "")
         self.emphasis = Idevice.NoEmphasis
         self.content  = MathField(x_(u"Maths"), 
                                       x_(u"""You can use the toolbar or enter latex manually into the textarea. """))
