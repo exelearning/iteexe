@@ -147,7 +147,7 @@ class MultimediaBlock(Block):
         if self.idevice.emphasis != Idevice.NoEmphasis:
             if self.idevice.icon:
                 html += u'<img alt="idevice icon" class="iDevice_icon" '
-                html += u' src="/icon_"+self.idevice.icon+".gif"/>\n'
+                html += u' src="icon_'+self.idevice.icon+'.gif"/>\n'
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
