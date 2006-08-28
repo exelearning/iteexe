@@ -1,3 +1,21 @@
+Version 0.18 - Trippy Tuatara
+* Added Multi-Media IDevice (see https://bugzilla.mozilla.org/show_bug.cgi?id=280600)
+* Added Math IDevice
+* Added Image in Feedback of case study
+* Fixed translation of Previous/Next buttons on exports
+* Other bug fixes (see http://exelearning.org/projects/exe1/milestone/0.18%20Trippy%20Tuatara )
+
+Version 0.17 - King Kea
+* Added Czeck translation
+* Text export for mobile devices
+* Various Bug Fixes
+
+Version 0.16 - Waihorotiu Walrus
+* Added Brazillian Portuguese, french, slovenian, zulu and czech languages
+* Flash Movie and SCORM quiz are now plugin idevices (optional additions during install)
+* Fixed IMS export bug
+* Gallery can now import filenames with umlautes
+
 Version 0.15 - Awkward Albatross
 * Add a background image to the package properties
 * Added Slovenian wiki url to wiki iDevice
