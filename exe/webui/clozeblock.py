@@ -56,8 +56,7 @@ class ClozeBlock(Block):
         object = request.args.get('object', [''])[0]
         action = request.args.get('action', [''])[0]
         self.instructionElement.process(request)
-        if object == self.id:
-            self.clozeElement.process(request)
+        self.clozeElement.process(request)
         self.feedbackElement.process(request)
         Block.process(self, request)
 
