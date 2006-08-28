@@ -351,7 +351,7 @@ class MultimediaElement(Element):
 
         html += u'<div class="block">'
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += u'<input type="button" onclick="addMp3(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select a MP3")
         
         if self.field.mediaResource:
@@ -478,16 +478,50 @@ pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaP
         </object></p>
         """ % (filename, filename)
         
+        wavStr = r"""
+        <input type="button" value="Hear it" 
+        OnClick="document.getElementById('dummy_%s').innerHTML='<embed src=%s hidden=true loop=false>'"
+        <div id="dummy_%s"></div>
+        """ % (self.id, filename, self.id)
+        
+        movStr = """
+        <p class="mediaplugin"><object classid="CLSID:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+                codebase="http://www.apple.com/qtactivex/qtplugin.cab" 
+                height="300" width="400"
+                id="quicktime" align="" type="application/x-oleobject">
+        <param name="src" value="%s" />
+        <param name="autoplay" value=false />
+        <param name="loop" value=true />
+        <param name="controller" value=true />
+        <param name="scale" value="aspect" />
+        <embed src="%s" name="quicktime" type="video/quicktime" 
+         height="300" width="400" scale="aspect" 
+         autoplay="false" controller="true" loop="true" 
+         pluginspage="http://quicktime.apple.com/">
+        </embed>
+        </object></p>
+        """ %(filename, filename)
+        
+        mpgStr = """
+        <p class="mediaplugin"><object width="240" height="180">
+        <param name="src" value="%s">
+        <param name="controller" value="true">
+        <param name="autoplay" value="false">
+        <embed src="%s" width="240" height="180"
+        controller="true" autoplay="false"> </embed>
+        </object></p>
+        """
+        
         if fileExtension == ".mp3":
             return mp3Str
-        #elif fileExtension == ".wav":
-        #    return wavStr
+        elif fileExtension == ".wav":
+            return wavStr
         elif fileExtension == ".wmv" or fileExtension == ".wma":
             return wmvStr
-        #elif fileExtension == ".mov":
+        elif fileExtension == ".mov":
             return movStr
-        elif fileExtension == ".mpg":
-            return mpgStr
+        #elif fileExtension == ".mpg":
+            #return mpgStr
         elif fileExtension == ".avi":
             return aviStr
         else:
@@ -983,7 +1017,9 @@ class MathElement(Element):
         """
         if 'preview'+self.id in request.args:
             self.field.idevice.edit = True
-        if 'input'+self.id in request.args:
+        if 'input'+self.id in request.args and \
+            not(request.args[u"action"][0] == u"delete" and 
+                request.args[u"object"][0]==self.field.idevice.id):
             self.field.latex = request.args['input'+self.id][0]
 
 

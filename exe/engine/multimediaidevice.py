@@ -37,7 +37,7 @@ class MultimediaIdevice(Idevice):
     
     def __init__(self, defaultMedia = None):
         Idevice.__init__(self, 
-                         x_(u"MP3 With Text"), 
+                         x_(u"MP3"), 
                          x_(u"University of Auckland"), 
                          x_(u""), 
                          u"", u"")

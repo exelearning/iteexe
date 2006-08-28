@@ -319,6 +319,21 @@ function addFlash(blockId) {
     }
 }
 
+function addMp3(blockId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a mp3 file", nsIFilePicker.modeOpen);
+    fp.appendFilter("Mp3 Audio", "*.mp3");
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        var path  = document.getElementById('path'+blockId);
+        path.type  = 'text';
+        path.value = fp.file.path;
+    }
+}
+
 
 // Called by the user to provide a file name to add to the package
 function addFile(blockId) {
