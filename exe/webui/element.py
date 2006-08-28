@@ -251,7 +251,10 @@ class ImageElement(Element):
         html += u'<img alt="%s" ' % _('Add Image')
         html += u'id="img%s" ' % self.id
         html += u"onclick=\"addImage('"+self.id+"');\" "
-        html += u"src=\"./resources/"+self.field.imageResource.storageName+"\" "
+        if self.field.imageResource:
+            html += u'src="./resources/'+self.field.imageResource.storageName+'" '
+        else:
+            html += u'src=""'
         if self.field.width:
             html += u"width=\""+self.field.width+"\" "
         if self.field.height:

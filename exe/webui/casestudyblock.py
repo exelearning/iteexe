@@ -23,6 +23,7 @@ CasestudyBlock can render and process CasestudyIdevices as XHTML
 import logging
 from exe.webui.block               import Block
 from exe.webui.questionelement     import QuestionElement
+from exe.webui.element             import ImageElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
@@ -44,6 +45,7 @@ class CasestudyBlock(Block):
         self.questionInstruc   = idevice.questionInstruc
         self.storyInstruc      = idevice.storyInstruc
         self.feedbackInstruc   = idevice.feedbackInstruc
+        self.previewing        = False # In view or preview render 
         i = 0
         
         for question in idevice.questions:
@@ -66,9 +68,10 @@ class CasestudyBlock(Block):
             
         if "title"+self.id in request.args:
             self.idevice.title = request.args["title"+self.id][0]
-
-        for element in self.questionElements:
-            element.process(request)
+            
+        if request.args[u"action"][0] != u"delete":
+            for element in self.questionElements:
+                element.process(request)
 
 
     def renderEdit(self, style):
@@ -97,6 +100,21 @@ class CasestudyBlock(Block):
         html += u"</div>\n"
         return html
 
+    def renderView(self, style):
+        """
+        Remembers if we're previewing or not,
+        then implicitly calls self.renderViewContent (via Block.renderView)
+        """
+        self.previewing = False
+        return Block.renderView(self, style)
+    
+    def renderPreview(self, style):
+        """
+        Remembers if we're previewing or not,
+        then implicitly calls self.renderViewContent (via Block.renderPreview)
+        """
+        self.previewing = True
+        return Block.renderPreview(self, style)
     
     def renderViewContent(self):
         """
@@ -105,8 +123,12 @@ class CasestudyBlock(Block):
         html  = u"<div class=\"iDevice_inner\">\n"
         html += self.story + u"<br/>\n"
             
-        for element in self.questionElements:
-            html += element.renderView()
+        if self.previewing:
+            for element in self.questionElements:
+                html += element.renderPreview()
+        else:
+            for element in self.questionElements:
+                html += element.renderView()
 
         html += u"</div>\n"
 
