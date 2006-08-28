@@ -704,7 +704,13 @@ class MathField(Field):
         Field.__init__(self, name, instruc)
         self._latex      = latex # The latex entered by the user
         self.gifResource = None
-        self.instruc     = x_("some latex instruction here.")
+        self.instruc     = x_(u""
+        "<ol>" 
+        "<li>Select symbols from the text editor below to create mathematical formula."
+        " Each symbol will be viewed in the display field in the mathematical "
+        "language LATEX which can be previewed using the &lt;Preview&gt;"
+        " button below.</li> ")
+        "</ol>"
         self._previewInstruc = x_("""Click on Preview button to convert 
                                   the latex into a symbols image.""")
        
