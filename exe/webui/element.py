@@ -982,10 +982,9 @@ class MathElement(Element):
         Process arguments from the web server.
         """
         if 'preview'+self.id in request.args:
-            self.field.latex = request.args['input'+self.id][0]
             self.field.idevice.edit = True
         if 'input'+self.id in request.args:
-            self.field.input = request.args['input'+self.id][0]
+            self.field.latex = request.args['input'+self.id][0]
 
 
     def renderEdit(self):
@@ -1028,7 +1027,7 @@ class MathElement(Element):
                                             "%s", r"\\%s") % (symbol, symbol,
                                                                 file.basename())
         html += "</div>\n"
-        html += common.textArea('input'+self.id, self.field.input)
+        html += common.textArea('input'+self.id, self.field.latex)
         
         # Preview
         html += '<div class="block">\n'
