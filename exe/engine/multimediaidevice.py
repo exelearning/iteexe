@@ -40,7 +40,9 @@ class MultimediaIdevice(Idevice):
                          x_(u"MP3"), 
                          x_(u"University of Auckland"), 
                          x_(u""), 
-                         u"", u"")
+                         u"The MP3 with text iDevice allows you to attach a MP3" 
+                            "media file to your content along with relevant textual"
+                            "learning instruction.", u"")
         self.emphasis                    = Idevice.NoEmphasis
         self.media                       = MultimediaField(
                                            x_(u"Choose a MP3 file"),
