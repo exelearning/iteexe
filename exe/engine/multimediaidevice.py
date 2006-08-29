@@ -40,15 +40,15 @@ class MultimediaIdevice(Idevice):
                          x_(u"MP3"), 
                          x_(u"University of Auckland"), 
                          x_(u""), 
-                         u"The MP3 with text iDevice allows you to attach a MP3" 
+                         u"The MP3 iDevice allows you to attach an MP3 " 
                             "media file to your content along with relevant textual"
-                            "learning instruction.", u"")
+                            "learning instructions.", u"")
         self.emphasis                    = Idevice.NoEmphasis
         self.media                       = MultimediaField(
                                            x_(u"Choose a MP3 file"),
                                            x_(u""
             "<ol>"
-            "  <li>Click on the &lt;Select a MP3&gt; and browse to the MP3 "
+            "  <li>Click &lt;Select a MP3&gt; and browse to the MP3 "
             "      file you want to insert</li>"
             " <li>Click on the dropdown arrow and select the position "
             "       that you want the file displayed on screen.</li>"

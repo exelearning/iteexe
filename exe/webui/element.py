@@ -355,7 +355,7 @@ class MultimediaElement(Element):
         html += u' value="%s" />' % _(u"Select a MP3")
         
         if self.field.mediaResource:
-            html += '<p>'+ self.field.mediaResource.storageName + '</P>'
+            html += '<p style="color: red;">'+ self.field.mediaResource.storageName + '</P>'
 
         return html
 
@@ -402,19 +402,19 @@ class MultimediaElement(Element):
         <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
         codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab
         #version=6,0,0,0"
-        id="mp3player" height="100" width="320"> 
+        id="mp3player" height="34" width="320"> 
         <param name="movie" value="%s?src=%s"> 
         <param name="quality" value="high"> 
-        <param name="bgcolor" value="#333333"> 
+        <param name="bgcolor" value="#ffffff"> 
         <param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;
         btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;
         trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
         <embed src="%s?src=%s" quality="high"
-        bgcolor="#333333" name="mp3player" type="application/x-shockwave-flash"
+        bgcolor="#FFFFFF" name="mp3player" type="application/x-shockwave-flash"
         flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;
         iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;
         handleColour=ffffff&amp;loaderColour=ffffff&amp;"
-        pluginspage="http://www.macromedia.com/go/getflashplayer" height="100" width="320">
+        pluginspage="http://www.macromedia.com/go/getflashplayer" height="34" width="320">
             </object>
         
         """ % (mp3player, filename, mp3player, filename)
