@@ -326,14 +326,14 @@ class MainPage(RenderableLivePage):
 
 
     def handleReportIssue(self, client):
-        """Go to the exelearning.org/mantis site"""
+        """Go to the exelearning.org issue tracker"""
         if hasattr(os, 'startfile'):
-            os.startfile("http://exelearning.org/mantis")
+            os.startfile("http://exelearning.org/issue.php")
         elif sys.platform[:6] == "darwin":
             import webbrowser
-            webbrowser.open("http://exelearning.org/mantis", new=True)
+            webbrowser.open("http://exelearning.org/issue.php", new=True)
         else:
-            os.system("firefox http://exelearning.org/mantis&")
+            os.system("firefox http://exelearning.org/issue.php&")
 
 
     def handleInsertPackage(self, client, filename):
