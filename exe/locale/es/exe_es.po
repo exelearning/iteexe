@@ -3,23 +3,17 @@
 # This file is distributed under the same license as the EXE package.
 # Matthew Sherborne <msherborne@gmail.com>
 #
-#: exe/engine/multimediaidevice.py:42 exe/engine/rssidevice.py:41
-#: exe/engine/rssidevice.py:42 exe/engine/rssidevice.py:48
 msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-28 16:00+1200\n"
-"PO-Revision-Date: 2006-07-28 15:27+1200\n"
+"POT-Creation-Date: 2006-09-04 16:07+1200\n"
+"PO-Revision-Date: 2006-09-01 22:08+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Spanish\n"
-"X-EXE-Language: Español\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Pootle 0.10beta\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""
@@ -42,6 +36,14 @@ msgstr ". Por favor usar nombres en ASCII."
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
 msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la compresnsión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  de tiempo largo  que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos que uno haya tipeado la pagina es probablemente adecuado, pero considerablemente menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en la llave de texto para entender los conceptos . Estas serán probablemente verbos, sustantivos y adverbios. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en voabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y cohesivo, y ser de un apropiado largo. Resaltando las palabras importantes en el texto. Elija una alternativa limpia.</p>  </dd>  <dt>si su meta es probar palabras para la formación de la gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y ser de un apropiado largo. Recuerde que la meta no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resaltando las palabras importantes en el texto. Prove alternativas con la misma palabra raíz , pero con diferentes significados. Es una buena idea conseguir a un colega para probar los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
+
+#: exe/engine/multimediaidevice.py:50
+msgid "<ol>  <li>Click &lt;Select a MP3&gt; and browse to the MP3       file you want to insert</li> <li>Click on the dropdown arrow and select the position        that you want the file displayed on screen.</li>  <li>Enter a caption for your file.</li> <li>Associate relevant text to the MP3 file.</li> <li>Choose the type of style you want the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+msgstr ""
+
+#: exe/engine/field.py:707
+msgid "<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -103,15 +105,15 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "<p>Entre el texto dejando unos espacios en blanco para escribir o pegar en este archivo.</p><p> Para hacer un espacio en blanco haga doble click en la palabra que quieres ocultar para seleccionarlo, y haga un click en el botón <i>Ocultar/Mostrar Palabra</i></p>."
 
-#: exe/engine/field.py:496
+#: exe/engine/field.py:462
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Si se marca esto, un pequeño número de errores de deletreo y de capitalización, serán aceptados. Si esta marcado, no se aceptaría ningún error de deletreo, y si también esta marcado el opción \"compruebe capitalización\" ningún error de capitalización será aceptado tampoco</p><p><strong>Si esta marcado</strong>: Si la respuesta correcta es <code>Elefante</code> y pone <code>elefante</code> o <code>Elifante</code> ambos serán considerados como <em>\"bastantes cercanos\"</em> por el algoritmo, pues existe solo un error de letra, Si  es que  \"Compruebe Capitalización\" esta encendido.</p><p>Si el checkeo de capitalización esta apagado en este ejemplo, la letra minúscula <code>e</code> no es considerada un error y <code>eliphant</code> también es aceptado.</p><p>Si \"Marca Terminante\" y \"Compruebe Capitalización\" están activados, La única respuesta correcta es  \"Elefante\". Si solamente \"Marca Terminante\" esta activado y \"Compruebe Capitalización\" no, \"elefante\" también será aceptado.</p>\""
 
-#: exe/engine/field.py:517
+#: exe/engine/field.py:483
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Si esta opción esta marcada, las respuestas sometidas con una diferente capitalización serán marcadas como incorrectas.</p>"
 
-#: exe/engine/field.py:522
+#: exe/engine/field.py:488
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather then all the words being marked the end of the \n"
@@ -183,7 +185,7 @@ msgstr ""
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:58
+#: exe/engine/casestudyidevice.py:74
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -229,7 +231,7 @@ msgstr "Acciones"
 #: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:325
 #: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:394
 #: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:440
-#: exe/webui/questionelement.py:70
+#: exe/webui/questionelement.py:74
 msgid "Activity"
 msgstr "Actividad"
 
@@ -241,7 +243,7 @@ msgstr "Agregar"
 msgid "Add Image"
 msgstr "Agregar Imagen"
 
-#: exe/webui/element.py:537
+#: exe/webui/element.py:574
 msgid "Add JPEG Image"
 msgstr "Agregar imagen JPEG"
 
@@ -279,7 +281,7 @@ msgstr "Agregar otra pregunta"
 msgid "Add another option"
 msgstr "Agregar otra opción"
 
-#: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:94
+#: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:97
 msgid "Add another question"
 msgstr "Agregar otra pregunta"
 
@@ -310,7 +312,16 @@ msgstr ""
 "Alineamiento le permite \n"
 "escoger donde la imagen estará posicionada en la pantalla. "
 
-#: exe/engine/field.py:558
+#: exe/engine/multimediaidevice.py:74
+#, fuzzy
+msgid ""
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Alineamiento le permite \n"
+"escoger donde la imagen estará posicionada en la pantalla. "
+
+#: exe/engine/field.py:524
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -375,6 +386,10 @@ msgstr "Adjuntar"
 msgid "Attachment %s has no parentNode"
 msgstr "Accesorio %s no tiene pariente"
 
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "Auckland Univeristy of Technology"
+msgstr ""
+
 #: exe/webui/editorpane.py:289
 msgid "Author"
 msgstr "Autor"
@@ -397,12 +412,12 @@ msgid "Cannot access directory named "
 msgstr "No se puede accesar directorio que se llama"
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
-#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:88
+#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "Precaución:"
 
-#: exe/engine/casestudyidevice.py:56
+#: exe/engine/casestudyidevice.py:72
 msgid "Case Study"
 msgstr "Caso de estudio"
 
@@ -410,7 +425,7 @@ msgstr "Caso de estudio"
 msgid "Change Image"
 msgstr "Cambia Imagen"
 
-#: exe/webui/element.py:705
+#: exe/webui/element.py:742
 msgid "Check Caps?"
 msgstr "¿Marcar cápsula?"
 
@@ -422,14 +437,17 @@ msgstr "Artículo De Wikipedia en Chino"
 msgid "Choose a LMS"
 msgstr "Elija un LMS"
 
-#: exe/engine/multimediaidevice.py:46
-#, fuzzy
+#: exe/engine/multimediaidevice.py:49
 msgid "Choose a MP3 file"
-msgstr "Elija un LMS"
+msgstr "Elija un Archivo de MP3"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
 msgstr "Elija un Imagen"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "Choose an image to be shown to the student on completion of this question"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -452,22 +470,11 @@ msgstr ""
 "en el imagen abajo o en el botón de \"Subir Imagen\" para seleccionar un archivo de imagen para ser \n"
 "magnificado."
 
-#: exe/engine/multimediaidevice.py:46
-#, fuzzy
-msgid ""
-"Click \n"
-"on the picture below or the \"Add MP3\" button to select a MP3 file to be \n"
-"embed."
-msgstr ""
-"Has \"Click\" \n"
-"en el imagen abajo o en el botón de \"Subir Imagen\" para seleccionar un archivo de imagen para ser \n"
-"magnificado."
-
 #: exe/engine/attachmentidevice.py:57
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Has click <strong>Selecto un Archivo</strong>, hojee al archivo que usted desea unir y selecciónelo."
 
-#: exe/engine/field.py:138 exe/webui/questionelement.py:95
+#: exe/engine/field.py:139
 msgid "Click Here"
 msgstr "Click aquí"
 
@@ -478,6 +485,15 @@ msgstr "Haga un clic para completar las instrucciones"
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
 msgstr "Click aquí"
+
+#: exe/engine/field.py:714
+#, fuzzy
+msgid ""
+"Click on Preview button to convert \n"
+"                                  the latex into a symbols image."
+msgstr ""
+"Ingrese el texto que desea\n"
+"                                     asociar al archivo de flash"
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
@@ -501,7 +517,7 @@ msgstr "Cloze"
 msgid "Cloze Activity"
 msgstr "Actividad de Espacios en Blanco"
 
-#: exe/webui/element.py:687
+#: exe/webui/element.py:724
 msgid "Cloze Text"
 msgstr "Texto de espacios en blanco."
 
@@ -518,7 +534,7 @@ msgstr "Correcto"
 msgid "Correct!"
 msgstr "Correcto!"
 
-#: exe/engine/casestudyidevice.py:76
+#: exe/engine/casestudyidevice.py:93
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -551,7 +567,7 @@ msgstr "Elimina el imagen"
 msgid "Delete option"
 msgstr "Eliminar opción"
 
-#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
+#: exe/webui/questionelement.py:87 exe/webui/truefalseelement.py:102
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Eliminar pregunta"
@@ -563,7 +579,7 @@ msgid ""
 "reflective feedback.)"
 msgstr "Describir como los estudiantes evaluarán como ellos han hecho el ejercicio.(Rúbricas son dispositivos útiles a proveer información reflexiva.)"
 
-#: exe/engine/casestudyidevice.py:80
+#: exe/engine/casestudyidevice.py:97
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -620,7 +636,7 @@ msgstr "Tema de discusión"
 msgid "Discussions and replies are allowed"
 msgstr "Las discuciones y las contestaciones son permitidas"
 
-#: exe/webui/element.py:271 exe/webui/element.py:555 exe/webui/element.py:856
+#: exe/webui/element.py:274 exe/webui/element.py:592 exe/webui/element.py:893
 msgid "Display as:"
 msgstr "Mostrar como:"
 
@@ -676,7 +692,7 @@ msgid "Edit"
 msgstr "Edita"
 
 #: exe/webui/wikipediablock.py:117 exe/webui/editorpane.py:304
-#: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:96
+#: exe/webui/rssblock.py:95 exe/webui/multimediablock.py:95
 msgid "Emphasis"
 msgstr "Enfasis"
 
@@ -817,7 +833,7 @@ msgstr ""
 "Ingrese el texto que desea\n"
 "                                     asociar al archivo de flash"
 
-#: exe/engine/multimediaidevice.py:51 exe/engine/imagemagnifieridevice.py:54
+#: exe/engine/multimediaidevice.py:65 exe/engine/imagemagnifieridevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -862,10 +878,15 @@ msgstr "Falso"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:290 exe/engine/idevicestore.py:398
-#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:77
 #: exe/webui/common.py:194 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
+msgstr "Información"
+
+#: exe/engine/casestudyidevice.py:53
+#, fuzzy
+msgid "Feedback Image"
 msgstr "Información"
 
 #: exe/webui/editorpane.py:156
@@ -946,7 +967,7 @@ msgstr "Licencia De la Documentación Libre del GNU"
 msgid "German Wikipedia Article"
 msgstr "Artículo De Wikipedia en Aleman"
 
-#: exe/webui/element.py:774
+#: exe/webui/element.py:811
 msgid "Get score"
 msgstr "Consiga la cuenta"
 
@@ -966,12 +987,16 @@ msgstr "Adelante (No disponible)"
 msgid "Group mode:"
 msgstr "Modo de Grupo:"
 
-#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
-#: exe/idevices/forumelement.py:92
+#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
 msgid "Hide"
 msgstr "Ocultar"
 
-#: exe/webui/element.py:695
+#: exe/webui/questionelement.py:107
+#, fuzzy
+msgid "Hide Feedback"
+msgstr "Demuestrar/Ocultar Información"
+
+#: exe/webui/element.py:732
 msgid "Hide/Show Word"
 msgstr "Ocultar/Demuestrar Palabra"
 
@@ -1035,7 +1060,7 @@ msgstr "Información"
 msgid "Initial Zoom"
 msgstr "Enfoque Inicial"
 
-#: exe/webui/element.py:710
+#: exe/webui/element.py:747
 msgid "Instant Marking?"
 msgstr "¿Marca Inmediata?"
 
@@ -1094,16 +1119,15 @@ msgstr "Izquierda"
 msgid "Link to the forum"
 msgstr "Enlaza al foro"
 
-#: exe/webui/wikipediablock.py:109 exe/webui/rssblock.py:83
+#: exe/webui/wikipediablock.py:109 exe/webui/rssblock.py:87
 msgid "Load"
 msgstr "Cargar"
 
 #: exe/engine/multimediaidevice.py:40
-#, fuzzy
-msgid "MP3 With Text"
-msgstr "Texto Flash"
+msgid "MP3"
+msgstr ""
 
-#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:41
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
 #, fuzzy
 msgid "Maths"
 msgstr "Marathi."
@@ -1156,7 +1180,8 @@ msgstr "Nuevo Tópico"
 msgid "New iDevice"
 msgstr "Nuevo D.E."
 
-#: exe/engine/galleryidevice.py:195
+#: exe/engine/galleryidevice.py:195 exe/export/scormexport.py:293
+#: exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Siguiente"
 
@@ -1189,7 +1214,7 @@ msgid "No discussions, no replies"
 msgstr "No discusiones, no contestaciones"
 
 #: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:307
-#: exe/webui/rssblock.py:87 exe/webui/multimediablock.py:92
+#: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:91
 msgid "No emphasis"
 msgstr "No énfasis"
 
@@ -1219,7 +1244,7 @@ msgid ""
 "learning tasks."
 msgstr "Los objetivos describen los resultados previstos de la enseñanza y debería definir cuál estudiantes serán capaces hacerlo cuando han terminado las tareas del aprendizaje."
 
-#: exe/engine/field.py:651 exe/engine/field.py:707
+#: exe/engine/field.py:617 exe/engine/field.py:673
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1227,7 +1252,7 @@ msgstr ""
 "Solamente seleccione archivos con extensión .flv (Flash Video Files) para \n"
 " este iDevice."
 
-#: exe/engine/field.py:586 exe/engine/field.py:634
+#: exe/engine/field.py:552 exe/engine/field.py:600
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1318,15 +1343,16 @@ msgstr ""
 "<li>        Estudiantes deben tener un nivel 4 de inglés </li>\n"
 " <li>        Estudiantes deben ser capaz de armar las potentes herramientas estándares </li></ul>\n"
 
-#: exe/webui/editorpane.py:227 exe/webui/element.py:1032
+#: exe/webui/editorpane.py:227 exe/webui/element.py:1070
 msgid "Preview"
 msgstr "Previo"
 
-#: exe/engine/galleryidevice.py:190
+#: exe/engine/galleryidevice.py:190 exe/export/scormexport.py:292
+#: exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Anterior"
 
-#: exe/engine/multimediaidevice.py:56
+#: exe/engine/multimediaidevice.py:71
 #, fuzzy
 msgid ""
 "Provide a caption for the \n"
@@ -1384,7 +1410,7 @@ msgstr ""
 "Proporciona instrucciones de como la actividad deberia ser \n"
 "terminada. El texto por defecto será ingresado, si no hay cambios en este campo.\n"
 
-#: exe/engine/casestudyidevice.py:84
+#: exe/engine/casestudyidevice.py:101
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1400,7 +1426,7 @@ msgstr "Proposito"
 msgid "Put instructions for learners here"
 msgstr "Ingrese aquí las instrucciones para los estudiantes."
 
-#: exe/webui/casestudyblock.py:86
+#: exe/webui/casestudyblock.py:89
 msgid "Question(s)"
 msgstr "Pregunta(s)"
 
@@ -1409,7 +1435,7 @@ msgstr "Pregunta(s)"
 msgid "Question:"
 msgstr "Pregunta:"
 
-#: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:45
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:47
 msgid "RSS"
 msgstr ""
 
@@ -1448,7 +1474,7 @@ msgstr "La reflexión es un método de enseñanza usado a menudo a conectar la t
 msgid "Reflective question:"
 msgstr "Pregunta reflexiva:"
 
-#: exe/webui/element.py:794
+#: exe/webui/element.py:831
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -1489,7 +1515,7 @@ msgstr "Salvar como"
 msgid "Section"
 msgstr "Sección"
 
-#: exe/webui/element.py:854
+#: exe/webui/element.py:891
 msgid "Select Flash Object"
 msgstr "Seleccione un objeto flash"
 
@@ -1503,7 +1529,7 @@ msgstr "Seleccionar Lenguaje"
 msgid "Select a Forum"
 msgstr "Seleccione un foro"
 
-#: exe/webui/element.py:352
+#: exe/webui/element.py:355
 #, fuzzy
 msgid "Select a MP3"
 msgstr "Seleccionar un archivo"
@@ -1512,15 +1538,15 @@ msgstr "Seleccionar un archivo"
 msgid "Select a file"
 msgstr "Seleccionar un archivo"
 
-#: exe/webui/element.py:928
+#: exe/webui/element.py:965
 msgid "Select a flash video"
 msgstr "Seleccionar un video de flash"
 
-#: exe/webui/element.py:270
+#: exe/webui/element.py:273
 msgid "Select an image"
 msgstr "Seleccionar una imagen"
 
-#: exe/webui/element.py:553
+#: exe/webui/element.py:590
 msgid "Select an image (JPG file)"
 msgstr "Seleccionar una imagen"
 
@@ -1579,15 +1605,20 @@ msgstr "Mostrar"
 msgid "Show %s Image"
 msgstr "Muestra Imagen %s"
 
-#: exe/webui/element.py:801
+#: exe/webui/element.py:838
 msgid "Show Answers"
 msgstr "Mostrar las respuestas"
 
-#: exe/webui/element.py:785
+#: exe/webui/questionelement.py:102
+#, fuzzy
+msgid "Show Feedback"
+msgstr "Demuestrar/Ocultar Información"
+
+#: exe/webui/element.py:822
 msgid "Show/Clear Answers"
 msgstr "Demuestrar/Ocultar las respuestas"
 
-#: exe/webui/element.py:780
+#: exe/webui/element.py:817
 msgid "Show/Hide Feedback"
 msgstr "Demuestrar/Ocultar Información"
 
@@ -1608,7 +1639,7 @@ msgid "Small"
 msgstr "Pequeño"
 
 #: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:308
-#: exe/webui/rssblock.py:88 exe/webui/multimediablock.py:93
+#: exe/webui/rssblock.py:92 exe/webui/multimediablock.py:92
 msgid "Some emphasis"
 msgstr "Poco énfasis"
 
@@ -1633,21 +1664,21 @@ msgstr "Artículo de Wikipedia en Español"
 msgid "Standard forum for general use"
 msgstr "Foro estándar para el uso general"
 
-#: exe/webui/casestudyblock.py:80
+#: exe/webui/casestudyblock.py:83
 msgid "Story:"
 msgstr "Historia:"
 
-#: exe/webui/element.py:700
+#: exe/webui/element.py:737
 msgid "Strict Marking?"
 msgstr "Marca terminante?"
 
 #: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:309
-#: exe/webui/rssblock.py:89 exe/webui/multimediablock.py:94
+#: exe/webui/rssblock.py:93 exe/webui/multimediablock.py:93
 msgid "Strong emphasis"
 msgstr "Recalcado énfasis "
 
 #: exe/webui/common.py:210 exe/webui/editorpane.py:397
-#: exe/webui/element.py:789
+#: exe/webui/element.py:826
 msgid "Submit"
 msgstr "someta"
 
@@ -1663,7 +1694,7 @@ msgstr "Artículo de Wikipedia en Suizo"
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Profesores deben recordar lo siguiente cuando esten usando este IDevice<ol><li>Piensa en el cantidad de diferentes tipos de actividades planificado como recurso los cuales seran señalado visualmente como contenido.Tratar de no usar demasiados tipos de clasifcacion diferentes de actividades para que el estudiante no se confunda. Normalmente tres o cuatro tipos diferentes son mas que suficientes para un recurso de aprendizaje.</li><li>Desde una perspectiva de diseño visual, trata no de no tener dos iDevices pegados sin texto entre ellos. Si esto es necesario, es mejor hacer los dos preguntas o eventos en otor IDevice.</li><li>Motiva al estudiante a realizar la actividad haciendole saber que resultará</li></ol>"
 
-#: exe/engine/multimediaidevice.py:50 exe/engine/imagewithtextidevice.py:61
+#: exe/engine/multimediaidevice.py:64 exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "Texto"
@@ -1675,6 +1706,10 @@ msgstr "Recuadro Texto"
 #: exe/webui/editorpane.py:214
 msgid "Text Line"
 msgstr "Linea Texto"
+
+#: exe/engine/multimediaidevice.py:42
+msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
@@ -1711,6 +1746,18 @@ msgid ""
 msgstr ""
 "La mayor parte de un recurso de enseñanza será establecido en el contexto, dando instrucciones y proporcionando información general. \n"
 "Este proporciona el esquema dentro del cual las actividades del aprendizaje son construidas y proporcionadas."
+
+#: exe/engine/mathidevice.py:37
+msgid ""
+"The mathematical language LATEX has been \n"
+"                        used to enable you to create mathematical formula \n"
+"                        within you content. It does this by translating the \n"
+"                        LATEX into a graphical image which is then displayed\n"
+"                         within your eXe content. We would recommend that \n"
+"                        you use the Free Text iDevice to provide \n"
+"                        explanatory notes and learning instruction around \n"
+"                        this graphic."
+msgstr ""
 
 #: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
@@ -1819,7 +1866,7 @@ msgstr ""
 "Las preguntas Verdadero/Falso presentan una declaración donde el estudiante debe decidir si la declaración es verdad. \n"
 "Este tipo de pregunta trabaja bién para una verdadera información e información que se presta para otras respuestas."
 
-#: exe/engine/field.py:715 exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:681 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "Ingrese un tema de discusión aqui:"
 
@@ -1885,18 +1932,18 @@ msgid "Unit"
 msgstr "Unidad"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/multimediaidevice.py:41 exe/engine/galleryidevice.py:490
-#: exe/engine/wikipediaidevice.py:52 exe/engine/truefalseidevice.py:60
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:241 exe/engine/idevicestore.py:299
-#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:349
-#: exe/engine/idevicestore.py:406 exe/engine/idevicestore.py:434
-#: exe/engine/mathidevice.py:36 exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40 exe/idevices/quiztestidevice.py:106
-#: exe/idevices/flashmovieidevice.py:40 exe/idevices/appletidevice.py:50
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/attachmentidevice.py:42
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:73 exe/engine/idevicestore.py:241
+#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:327
+#: exe/engine/idevicestore.py:349 exe/engine/idevicestore.py:406
+#: exe/engine/idevicestore.py:434 exe/engine/mathidevice.py:36
+#: exe/idevices/forumidevice.py:41 exe/idevices/exampleidevice.py:40
+#: exe/idevices/quiztestidevice.py:106 exe/idevices/flashmovieidevice.py:40
+#: exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
 msgstr "Universidad de Auckland"
 
@@ -1944,13 +1991,6 @@ msgstr ""
 "Use this field to enter text. This \n"
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
-
-#: exe/engine/mathidevice.py:37
-msgid ""
-"Use this iDevice if  you need to include \n"
-"mathematical equations in your content. This iDevice turns maths into images \n"
-"which may not be suitable for people with visual disabilities."
-msgstr ""
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
@@ -2013,7 +2053,7 @@ msgstr "Sí, siempre"
 msgid "Yes, initially"
 msgstr "Sí, inicialmente"
 
-#: exe/engine/mathidevice.py:42
+#: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
 
@@ -2025,7 +2065,7 @@ msgstr "Tú nuevo IDevice aparecerá en el panel del IDevices con este título. 
 msgid "article "
 msgstr "Artículo"
 
-#: exe/webui/element.py:285 exe/webui/element.py:571
+#: exe/webui/element.py:288 exe/webui/element.py:608
 msgid "blank for original size"
 msgstr "blanco para el tamaño original"
 
@@ -2080,6 +2120,10 @@ msgstr "keycode"
 #: exe/webui/renderable.py:243
 msgid "label"
 msgstr "Etiqueta"
+
+#: exe/engine/rssidevice.py:50
+msgid "some help tip here."
+msgstr ""
 
 #: exe/webui/renderable.py:255
 msgid "title"
@@ -3568,6 +3612,20 @@ msgstr "Derechas:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Típicamente, un elemento de las derechas contendrá una declaración de la gerencia de las derechas para el recurso, o referirá a un servicio que proveerá este información. La información de las derechas abarca a menudo las derechas de característica intelectual (IPR), el Copyright, y las varias derechas de característica. Si el elemento de las derechas está ausente, ningunas asunciones se pueden hacer sobre el estado de éstos y de otras derechas con respecto al recurso."
+
+#, fuzzy
+#~ msgid ""
+#~ "Click \n"
+#~ "on the picture below or the \"Add MP3\" button to select a MP3 file to be \n"
+#~ "embed."
+#~ msgstr ""
+#~ "Has \"Click\" \n"
+#~ "en el imagen abajo o en el botón de \"Subir Imagen\" para seleccionar un archivo de imagen para ser \n"
+#~ "magnificado."
+
+#, fuzzy
+#~ msgid "MP3 With Text"
+#~ msgstr "Texto Flash"
 
 #, fuzzy
 #~ msgid "Add Question"

@@ -3,13 +3,11 @@
 # This file is distributed under the same license as the EXE package.
 # Matthew Sherborne <msherborne@gmail.com>
 #
-#: exe/engine/multimediaidevice.py:42 exe/engine/rssidevice.py:41
-#: exe/engine/rssidevice.py:42 exe/engine/rssidevice.py:48
 msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-28 16:00+1200\n"
+"POT-Creation-Date: 2006-09-04 16:07+1200\n"
 "PO-Revision-Date: 2006-07-28 15:28+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -44,6 +42,14 @@ msgstr ". Palun kasuta ASCII nimesid."
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
 msgstr "<dl>  <dt>Kui sinu eesmärgiks on testida loetud materjali põhimõistetest arusaamine</dt>  <dd>    <p> Kirjuta kokkuvõte tekstist või mõistest. See peaks olema piisavalt pikk, et testida antud info omandamist, kuid samas piisavalt lühike, et ei oleks koormav. Kuni üks trükitud lehekülg peaks olema piisav, kuid noorematele ja algajatele õpilastele võiks olla tunduvalt lühem.</p>    <p>Vali tekstist võtmesõnad, mis märgivad mõistetest arusaamist. Need on tõenäoliselt tegu-. nimi- ja määrsõnad. Vali alternatiivid, millele oleks üks selge vastus.</p>  </dd>  <dt>Kui sinu eesmärgiks on testida sõnade tundmist:</dt>  <dd><p>Kirjuta tekst, mis sisaldaks vastavaid sõnu. See tekst peaks olema arusaadav ja seotud ning ka siinkohal pööra tähelepanu teksti pikkusele. Märgista tekstis võtmesõnad. Vali alternatiivid, millele oleks üks selge vastus.</p></dd>  <dt>Kui sinu eesmärgiks on testida lausete moodustamine ja grammatikat: </dt>  <dd>  <p>Kasuta tekstis soovitud lausevorme. See tekst peaks olema arusaadav ja seotud ning ka siinkohal pööra tähelepanu teksti pikkusele. Pea meeles, et eesmärgiks ei ole sõnade tundmine, nii et kasutatud sõnade tähendused peavad olema õpilastele hästi teada.</p>  <p>Märgista tekstis võtmesõnad. Paku välja alternatiive samade sõnatüvedega, kuid teistes käänetes/pööretes. Hea mõte on lasta kolleegil eelnevalt koostatud testi või ülesannet lahendada/kontrollida, et vältida üllatusi !</p></dd></dl>"
+
+#: exe/engine/multimediaidevice.py:50
+msgid "<ol>  <li>Click &lt;Select a MP3&gt; and browse to the MP3       file you want to insert</li> <li>Click on the dropdown arrow and select the position        that you want the file displayed on screen.</li>  <li>Enter a caption for your file.</li> <li>Associate relevant text to the MP3 file.</li> <li>Choose the type of style you want the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+msgstr ""
+
+#: exe/engine/field.py:707
+msgid "<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
+msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -96,15 +102,15 @@ msgstr ""
 "<p>Sisesta \"Täida lüngad\"-ülesandele tekst, trükkides selle lünkade täitmise\n"
 " väljadesse, kas kopeerides mõnest muust allikast või sisestades teksti otse sellesse välja.</p><p> Et valida peidetavad sõnad, tee antud sõnal topelt-klikk selle valimiseks ja kliki Peida/Näita Sõna nupul.</p>"
 
-#: exe/engine/field.py:496
+#: exe/engine/field.py:462
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Kui jätta see valimata, aktsepteeritakse väikest hulka õigekirja ja suur/väike-tähtede vigu. Kui on valitud, ei aktsepteerita ühtegi viga.</p><p><strong>Näiteks:</strong> Kui õige vastus on <code>Elevant</code> siis nii <code>elevant</code> kui ka <code>elivant</code> loetakse algoritmi poolt <em>\"piisavalt õigeks\"</em>, kuna ainult üks täht on valesti, isegi siis kui \"Kontrolli suuri-väikseid tähti\" on valitus.</p><p>Kui suurte/väike-tähtede kontrollimine ei ole aktiivne, ei peeta väiketäht <code>e</code> veaks ja ka <code>elivant</code> on aktsepteeritud.</p><p>Kui nii \"Kindel märkimine\" kui ka \"Kontrolli suuri-väikseid tähti\" on valitud, on ainuke õige vastus \"Elevant\". Kui ainult \"Kindel märkimine\" on valitud ja \"Kontrolli suuri-väikseid tähti\" mitte, siis loetakse ka \"elevant\" õigeks.</p>"
 
-#: exe/engine/field.py:517
+#: exe/engine/field.py:483
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Selle valiku puhul märgitakse erinevused suurte-väikeste tähtede kasutamisel vastustes valeks.</p>"
 
-#: exe/engine/field.py:522
+#: exe/engine/field.py:488
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather then all the words being marked the end of the \n"
@@ -176,7 +182,7 @@ msgstr ""
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:58
+#: exe/engine/casestudyidevice.py:74
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -224,7 +230,7 @@ msgstr "Tegevused"
 #: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:325
 #: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:394
 #: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:440
-#: exe/webui/questionelement.py:70
+#: exe/webui/questionelement.py:74
 msgid "Activity"
 msgstr "Tegevus"
 
@@ -236,7 +242,7 @@ msgstr "Lisa"
 msgid "Add Image"
 msgstr "Lisa pilt"
 
-#: exe/webui/element.py:537
+#: exe/webui/element.py:574
 msgid "Add JPEG Image"
 msgstr "Lisa JPEG-pilt"
 
@@ -274,7 +280,7 @@ msgstr "Lisa küsimus"
 msgid "Add another option"
 msgstr "Lisa veel valikuid"
 
-#: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:94
+#: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:97
 msgid "Add another question"
 msgstr "Lisa veel küsimusi"
 
@@ -305,7 +311,16 @@ msgstr ""
 "Joondamine lubab sul valida, \n"
 "kuhu ekraanil pilt asetada."
 
-#: exe/engine/field.py:558
+#: exe/engine/multimediaidevice.py:74
+#, fuzzy
+msgid ""
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Joondamine lubab sul valida, \n"
+"kuhu ekraanil pilt asetada."
+
+#: exe/engine/field.py:524
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -375,6 +390,10 @@ msgstr "Manus"
 msgid "Attachment %s has no parentNode"
 msgstr "Manusel  %s puudub parentNode"
 
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "Auckland Univeristy of Technology"
+msgstr ""
+
 #: exe/webui/editorpane.py:289
 msgid "Author"
 msgstr "Autor"
@@ -397,12 +416,12 @@ msgid "Cannot access directory named "
 msgstr "Puudub ligipääs kataloogile nimega"
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
-#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:88
+#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "Pealkiri:"
 
-#: exe/engine/casestudyidevice.py:56
+#: exe/engine/casestudyidevice.py:72
 msgid "Case Study"
 msgstr "Juhtumi kirjeldus"
 
@@ -410,7 +429,7 @@ msgstr "Juhtumi kirjeldus"
 msgid "Change Image"
 msgstr "Muuda pilti"
 
-#: exe/webui/element.py:705
+#: exe/webui/element.py:742
 msgid "Check Caps?"
 msgstr "Kontrolli suuri/väikeseid tähti ?"
 
@@ -422,7 +441,7 @@ msgstr "Hiina Wikipedia artikkel"
 msgid "Choose a LMS"
 msgstr "Vali LMS"
 
-#: exe/engine/multimediaidevice.py:46
+#: exe/engine/multimediaidevice.py:49
 #, fuzzy
 msgid "Choose a MP3 file"
 msgstr "Vali LMS"
@@ -430,6 +449,10 @@ msgstr "Vali LMS"
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
 msgstr "Vali pilt"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "Choose an image to be shown to the student on completion of this question"
+msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -454,22 +477,11 @@ msgstr ""
 "nupul \"Lisa pilt\" valimaks \n"
 "pildifaili, mida suurendada."
 
-#: exe/engine/multimediaidevice.py:46
-#, fuzzy
-msgid ""
-"Click \n"
-"on the picture below or the \"Add MP3\" button to select a MP3 file to be \n"
-"embed."
-msgstr ""
-"Kliki alloleval pildil või \n"
-"nupul \"Lisa pilt\" valimaks \n"
-"pildifaili, mida suurendada."
-
 #: exe/engine/attachmentidevice.py:57
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klili <strong>Vali fail</strong>, mine failini, mida soovid manusesse panna ja vali see."
 
-#: exe/engine/field.py:138 exe/webui/questionelement.py:95
+#: exe/engine/field.py:139
 msgid "Click Here"
 msgstr "Kliki siia"
 
@@ -480,6 +492,15 @@ msgstr "Kliki, et näha läbimise juhendit"
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
 msgstr "Kliki siia"
+
+#: exe/engine/field.py:714
+#, fuzzy
+msgid ""
+"Click on Preview button to convert \n"
+"                                  the latex into a symbols image."
+msgstr ""
+"Sisesta tekst, mida soovid \n"
+"pildiga seostada."
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
@@ -503,7 +524,7 @@ msgstr "Täida"
 msgid "Cloze Activity"
 msgstr "Täida lüngad"
 
-#: exe/webui/element.py:687
+#: exe/webui/element.py:724
 msgid "Cloze Text"
 msgstr "Täida lüngad"
 
@@ -520,7 +541,7 @@ msgstr "Õige"
 msgid "Correct!"
 msgstr "Õige !"
 
-#: exe/engine/casestudyidevice.py:76
+#: exe/engine/casestudyidevice.py:93
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -555,7 +576,7 @@ msgstr "Kustuta pilt"
 msgid "Delete option"
 msgstr "Kustuta valik"
 
-#: exe/webui/questionelement.py:79 exe/webui/truefalseelement.py:102
+#: exe/webui/questionelement.py:87 exe/webui/truefalseelement.py:102
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Kustuta küsimus"
@@ -570,7 +591,7 @@ msgstr ""
 "ülesannete tulemusi. (Rubriigid on kasulikud vahendid pakkumaks  \n"
 "kaalutletud tagasisidet."
 
-#: exe/engine/casestudyidevice.py:80
+#: exe/engine/casestudyidevice.py:97
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -628,7 +649,7 @@ msgstr "Vestluse teema/Lõim:"
 msgid "Discussions and replies are allowed"
 msgstr "Vestlused ja vastused on lubatud"
 
-#: exe/webui/element.py:271 exe/webui/element.py:555 exe/webui/element.py:856
+#: exe/webui/element.py:274 exe/webui/element.py:592 exe/webui/element.py:893
 msgid "Display as:"
 msgstr "Näita kui:"
 
@@ -684,7 +705,7 @@ msgid "Edit"
 msgstr "Redigeeri"
 
 #: exe/webui/wikipediablock.py:117 exe/webui/editorpane.py:304
-#: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:96
+#: exe/webui/rssblock.py:95 exe/webui/multimediablock.py:95
 msgid "Emphasis"
 msgstr "Rõhuasetus"
 
@@ -824,7 +845,7 @@ msgstr ""
 "Sisesta tekst, mida soovid \n"
 "pildiga seostada."
 
-#: exe/engine/multimediaidevice.py:51 exe/engine/imagemagnifieridevice.py:54
+#: exe/engine/multimediaidevice.py:65 exe/engine/imagemagnifieridevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -869,10 +890,15 @@ msgstr "Väär"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:290 exe/engine/idevicestore.py:398
-#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:73
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:77
 #: exe/webui/common.py:194 exe/webui/truefalseelement.py:90
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 msgid "Feedback"
+msgstr "Tagasiside"
+
+#: exe/engine/casestudyidevice.py:53
+#, fuzzy
+msgid "Feedback Image"
 msgstr "Tagasiside"
 
 #: exe/webui/editorpane.py:156
@@ -951,7 +977,7 @@ msgstr "GNU Free Documentation License"
 msgid "German Wikipedia Article"
 msgstr "Saksa Wikipeedia artikkel"
 
-#: exe/webui/element.py:774
+#: exe/webui/element.py:811
 msgid "Get score"
 msgstr "Punktid"
 
@@ -971,12 +997,16 @@ msgstr "Mine edasi (Pole saadaval)"
 msgid "Group mode:"
 msgstr "Grupi rezhiim:"
 
-#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
-#: exe/idevices/forumelement.py:92
+#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
 msgid "Hide"
 msgstr "Peida"
 
-#: exe/webui/element.py:695
+#: exe/webui/questionelement.py:107
+#, fuzzy
+msgid "Hide Feedback"
+msgstr "Näita / peida tagasiside"
+
+#: exe/webui/element.py:732
 msgid "Hide/Show Word"
 msgstr "Peida / näita sõna"
 
@@ -1040,7 +1070,7 @@ msgstr "Informatsioon"
 msgid "Initial Zoom"
 msgstr "Algne suurendus"
 
-#: exe/webui/element.py:710
+#: exe/webui/element.py:747
 msgid "Instant Marking?"
 msgstr "Kohene märkimine ?"
 
@@ -1099,16 +1129,15 @@ msgstr "Vasak"
 msgid "Link to the forum"
 msgstr "Link foorumile"
 
-#: exe/webui/wikipediablock.py:109 exe/webui/rssblock.py:83
+#: exe/webui/wikipediablock.py:109 exe/webui/rssblock.py:87
 msgid "Load"
 msgstr "Lae"
 
 #: exe/engine/multimediaidevice.py:40
-#, fuzzy
-msgid "MP3 With Text"
-msgstr "Flash tekstiga"
+msgid "MP3"
+msgstr ""
 
-#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:41
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
 #, fuzzy
 msgid "Maths"
 msgstr "Marati"
@@ -1161,7 +1190,8 @@ msgstr "Uus teema"
 msgid "New iDevice"
 msgstr "Uus iDevice"
 
-#: exe/engine/galleryidevice.py:195
+#: exe/engine/galleryidevice.py:195 exe/export/scormexport.py:293
+#: exe/export/websitepage.py:196
 msgid "Next"
 msgstr "Järgmine"
 
@@ -1194,7 +1224,7 @@ msgid "No discussions, no replies"
 msgstr "Vestlused ega vastused pole lubatud"
 
 #: exe/webui/wikipediablock.py:113 exe/webui/editorpane.py:307
-#: exe/webui/rssblock.py:87 exe/webui/multimediablock.py:92
+#: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:91
 msgid "No emphasis"
 msgstr "Puudub rõhuasetus"
 
@@ -1226,7 +1256,7 @@ msgstr ""
 "Eesmärgid kirjeldavad õppimise oodatud tulemus ja peaksid defineerima\n"
 "selle, mida õpilased on võimelised tegema peale õppetükkide läbimist."
 
-#: exe/engine/field.py:651 exe/engine/field.py:707
+#: exe/engine/field.py:617 exe/engine/field.py:673
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1234,7 +1264,7 @@ msgstr ""
 "Vali ainult .flv (Flash Video Files) selle  \n"
 "iDevice jaoks."
 
-#: exe/engine/field.py:586 exe/engine/field.py:634
+#: exe/engine/field.py:552 exe/engine/field.py:600
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1326,15 +1356,16 @@ msgstr ""
 "<li>       Õpilastel inglise keel peab olema tasemel X. </li>\n"
 "<li>       Õpilased peavad tundma matemaatika põhimõisteid. </li></ul>\n"
 
-#: exe/webui/editorpane.py:227 exe/webui/element.py:1032
+#: exe/webui/editorpane.py:227 exe/webui/element.py:1070
 msgid "Preview"
 msgstr "Eelvaade"
 
-#: exe/engine/galleryidevice.py:190
+#: exe/engine/galleryidevice.py:190 exe/export/scormexport.py:292
+#: exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "Eelmine"
 
-#: exe/engine/multimediaidevice.py:56
+#: exe/engine/multimediaidevice.py:71
 #, fuzzy
 msgid ""
 "Provide a caption for the \n"
@@ -1380,7 +1411,7 @@ msgstr ""
 "Sisesta juhised lünkade täitmiseks. Kui seda välja ei muudeta, siis sisestatakse \n"
 "automaatselt vaikimisi tekst. \n"
 
-#: exe/engine/casestudyidevice.py:84
+#: exe/engine/casestudyidevice.py:101
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1396,7 +1427,7 @@ msgstr "Eesmärk"
 msgid "Put instructions for learners here"
 msgstr "Sisesta siia instruktsioonid õpilastele"
 
-#: exe/webui/casestudyblock.py:86
+#: exe/webui/casestudyblock.py:89
 msgid "Question(s)"
 msgstr "Küsimus(ed)"
 
@@ -1405,7 +1436,7 @@ msgstr "Küsimus(ed)"
 msgid "Question:"
 msgstr "Küsimus:"
 
-#: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:45
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:47
 msgid "RSS"
 msgstr ""
 
@@ -1450,7 +1481,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Mõtisklev küsimus:"
 
-#: exe/webui/element.py:794
+#: exe/webui/element.py:831
 msgid "Restart"
 msgstr "Alusta uuesti"
 
@@ -1491,7 +1522,7 @@ msgstr "Salvesta kui"
 msgid "Section"
 msgstr "Peatükk"
 
-#: exe/webui/element.py:854
+#: exe/webui/element.py:891
 msgid "Select Flash Object"
 msgstr "Vali Flash objekt"
 
@@ -1505,7 +1536,7 @@ msgstr "Vali keel"
 msgid "Select a Forum"
 msgstr "Vali foorum"
 
-#: exe/webui/element.py:352
+#: exe/webui/element.py:355
 #, fuzzy
 msgid "Select a MP3"
 msgstr "Vali fail"
@@ -1514,15 +1545,15 @@ msgstr "Vali fail"
 msgid "Select a file"
 msgstr "Vali fail"
 
-#: exe/webui/element.py:928
+#: exe/webui/element.py:965
 msgid "Select a flash video"
 msgstr "Vali Flash-video"
 
-#: exe/webui/element.py:270
+#: exe/webui/element.py:273
 msgid "Select an image"
 msgstr "Vali pilt"
 
-#: exe/webui/element.py:553
+#: exe/webui/element.py:590
 msgid "Select an image (JPG file)"
 msgstr "Vali pilt (JPG fail)"
 
@@ -1580,15 +1611,20 @@ msgstr "Näita"
 msgid "Show %s Image"
 msgstr "Näita %s pilti"
 
-#: exe/webui/element.py:801
+#: exe/webui/element.py:838
 msgid "Show Answers"
 msgstr "Näita vastused"
 
-#: exe/webui/element.py:785
+#: exe/webui/questionelement.py:102
+#, fuzzy
+msgid "Show Feedback"
+msgstr "Näita / peida tagasiside"
+
+#: exe/webui/element.py:822
 msgid "Show/Clear Answers"
 msgstr "Näita / puhasta vastused"
 
-#: exe/webui/element.py:780
+#: exe/webui/element.py:817
 msgid "Show/Hide Feedback"
 msgstr "Näita / peida tagasiside"
 
@@ -1609,7 +1645,7 @@ msgid "Small"
 msgstr "Väike"
 
 #: exe/webui/wikipediablock.py:114 exe/webui/editorpane.py:308
-#: exe/webui/rssblock.py:88 exe/webui/multimediablock.py:93
+#: exe/webui/rssblock.py:92 exe/webui/multimediablock.py:92
 msgid "Some emphasis"
 msgstr "Mõningane rõhuasetus"
 
@@ -1634,21 +1670,21 @@ msgstr "Hispaania Wikipedia artikkel"
 msgid "Standard forum for general use"
 msgstr "Foorum üldiseks kasutamiseks"
 
-#: exe/webui/casestudyblock.py:80
+#: exe/webui/casestudyblock.py:83
 msgid "Story:"
 msgstr "Lugu:"
 
-#: exe/webui/element.py:700
+#: exe/webui/element.py:737
 msgid "Strict Marking?"
 msgstr "Range hindamine ?"
 
 #: exe/webui/wikipediablock.py:115 exe/webui/editorpane.py:309
-#: exe/webui/rssblock.py:89 exe/webui/multimediablock.py:94
+#: exe/webui/rssblock.py:93 exe/webui/multimediablock.py:93
 msgid "Strong emphasis"
 msgstr "Tugev rõhusasetus"
 
 #: exe/webui/common.py:210 exe/webui/editorpane.py:397
-#: exe/webui/element.py:789
+#: exe/webui/element.py:826
 msgid "Submit"
 msgstr "Saada"
 
@@ -1664,7 +1700,7 @@ msgstr "Rootsi Wikipedia artikkel"
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Õpetajad peaksid seda iDevice-i kasutades meeles pidama järgmist:<ol><li>Pööra tähelepanu erinevatele õpperessursis sisalduvate tegevuste tüüpidele, mis on visuaalsed nähtavad. Vältimaks õpilase segadusse viimist, ära kasuta liiga palju erinevaid tegevuste tüüpe või klassifikatsioone. Tavaliselt piisab ühe õpperessursi jaoks 3-4 tüübist täielikult.</li><li>Visuaalse disaini vinklist väldi kahte järjestikust iDevice-i ilma mingi tekstita nende vahel. Kui see on siiski vajalik, siis pigem koonda kaks küsimust või sündmust samasse iDevice-i.</li><li>Mõtle selliste tegevuste peale, kus tegevuse läbimise tajutav kasu kaalub üles sellele kuluva aja ja pingutuse.</li></ol>"
 
-#: exe/engine/multimediaidevice.py:50 exe/engine/imagewithtextidevice.py:61
+#: exe/engine/multimediaidevice.py:64 exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "Tekst"
@@ -1676,6 +1712,10 @@ msgstr "Teksti kast"
 #: exe/webui/editorpane.py:214
 msgid "Text Line"
 msgstr "Teksti joon"
+
+#: exe/engine/multimediaidevice.py:42
+msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
+msgstr ""
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
@@ -1713,6 +1753,18 @@ msgstr ""
 "Suurem osa õpiressursist kuulub konteksti \n"
 "loomisele, juhiste ja üldinfo edastamisele. See loob raamistiku, milles õppetegevusi \n"
 "luua ja pakkuda."
+
+#: exe/engine/mathidevice.py:37
+msgid ""
+"The mathematical language LATEX has been \n"
+"                        used to enable you to create mathematical formula \n"
+"                        within you content. It does this by translating the \n"
+"                        LATEX into a graphical image which is then displayed\n"
+"                         within your eXe content. We would recommend that \n"
+"                        you use the Free Text iDevice to provide \n"
+"                        explanatory notes and learning instruction around \n"
+"                        this graphic."
+msgstr ""
 
 #: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
@@ -1820,7 +1872,7 @@ msgstr ""
 "õpilane peab otsustama selle tõesuse üle. Seda tüüpi küsimused töötavad \n"
 " hästi nii faktuaalse kui ka sellise informatsiooni puhul, mida võib mõlemat pidi mõista."
 
-#: exe/engine/field.py:715 exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:681 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "Sisesta siia vestluse teema:"
 
@@ -1887,18 +1939,18 @@ msgid "Unit"
 msgstr "Osa"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/multimediaidevice.py:41 exe/engine/galleryidevice.py:490
-#: exe/engine/wikipediaidevice.py:52 exe/engine/truefalseidevice.py:60
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42 exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:57
-#: exe/engine/idevicestore.py:241 exe/engine/idevicestore.py:299
-#: exe/engine/idevicestore.py:327 exe/engine/idevicestore.py:349
-#: exe/engine/idevicestore.py:406 exe/engine/idevicestore.py:434
-#: exe/engine/mathidevice.py:36 exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40 exe/idevices/quiztestidevice.py:106
-#: exe/idevices/flashmovieidevice.py:40 exe/idevices/appletidevice.py:50
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/attachmentidevice.py:42
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:73 exe/engine/idevicestore.py:241
+#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:327
+#: exe/engine/idevicestore.py:349 exe/engine/idevicestore.py:406
+#: exe/engine/idevicestore.py:434 exe/engine/mathidevice.py:36
+#: exe/idevices/forumidevice.py:41 exe/idevices/exampleidevice.py:40
+#: exe/idevices/quiztestidevice.py:106 exe/idevices/flashmovieidevice.py:40
+#: exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
 msgstr "Aucklandi Ülikool"
 
@@ -1948,13 +2000,6 @@ msgstr ""
 "Kasuta seda välja teksti sisestamiseks.  \n"
 "Sellel iDevice-l puudub rõhuasetus, kuid piiratud teksti vormimine on võimalik  \n"
 "tänu väljaga seotud redigeerimisnuppudele."
-
-#: exe/engine/mathidevice.py:37
-msgid ""
-"Use this iDevice if  you need to include \n"
-"mathematical equations in your content. This iDevice turns maths into images \n"
-"which may not be suitable for people with visual disabilities."
-msgstr ""
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
@@ -2015,7 +2060,7 @@ msgstr "Jah, alati"
 msgid "Yes, initially"
 msgstr "Jah, algselt"
 
-#: exe/engine/mathidevice.py:42
+#: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr ""
 
@@ -2027,7 +2072,7 @@ msgstr "Sinu uus iDevice tekib iDevice-ribale selle pealkirjaga. See on kohustus
 msgid "article "
 msgstr "artikkel"
 
-#: exe/webui/element.py:285 exe/webui/element.py:571
+#: exe/webui/element.py:288 exe/webui/element.py:608
 msgid "blank for original size"
 msgstr "originaalsuurusele tühi"
 
@@ -2082,6 +2127,10 @@ msgstr "klahvikood"
 #: exe/webui/renderable.py:243
 msgid "label"
 msgstr "märge"
+
+#: exe/engine/rssidevice.py:50
+msgid "some help tip here."
+msgstr ""
 
 #: exe/webui/renderable.py:255
 msgid "title"
@@ -3396,6 +3445,20 @@ msgstr "Õigused:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Tavaliselt sisaldab Õiguste element ressursi jaoks õiguste korraldamise avaldust või viidet teenusele, mis seda informatsiooni pakub. Õiguste informatsioon sisaldab tihti intellektuaalse omandi õigust, autorikaitset ja muid erinevaid omandiõiguseid. Kui õiguste element puudub, ei saa teha mingeid järeldusi selle ressursi õiguste staatuse kohta"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click \n"
+#~ "on the picture below or the \"Add MP3\" button to select a MP3 file to be \n"
+#~ "embed."
+#~ msgstr ""
+#~ "Kliki alloleval pildil või \n"
+#~ "nupul \"Lisa pilt\" valimaks \n"
+#~ "pildifaili, mida suurendada."
+
+#, fuzzy
+#~ msgid "MP3 With Text"
+#~ msgstr "Flash tekstiga"
 
 #~ msgid "Add Question"
 #~ msgstr "Lisa küsimus"
