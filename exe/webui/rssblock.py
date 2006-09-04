@@ -85,7 +85,7 @@ class RssBlock(Block):
         html += '<br/><br/>RSS URL ' + common.textInput("url" + self.id,
                                                         self.idevice.url)
         html += common.submitButton(u"loadRss"+self.id, _(u"Load"))
-        
+        html += common.elementInstruc(self.idevice.urlInstruc)
         html += u"<br/>\n"
         html += self.rssElement.renderEdit()
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),

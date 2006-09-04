@@ -45,13 +45,13 @@ class RssIdevice(Idevice):
         self.rss              = TextAreaField(x_(u"RSS"))
         self.rss.idevice      = self
         self.icon             = u"inter"
-        self._urlInstruc      = x_(u"")
+        self._urlInstruc      = x_(u"some help tip here.")
         self.url              = ""
         
 
         
     # Properties
-    urlInstruc      = lateTranslate('langInstruc')
+    urlInstruc      = lateTranslate('urlInstruc')
 
    
     def loadRss(self, url):
