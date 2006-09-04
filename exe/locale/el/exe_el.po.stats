@@ -1,4 +1,4 @@
-1153380665 1153380665
+1153380665 1156891500
 check-validchars:
 check-numbers:407,409
 check-unchanged:16,185,349,373,377,383,386
@@ -23,7 +23,7 @@ check-startwhitespace:
 check-accelerators:
 check-long:
 check-musttranslatewords:
-has-suggestion:
+has-suggestion:12
 check-puncspacing:4,5,8,42,61,113,137,228,319,320,337
 check-notranslatewords:
 check-variables:

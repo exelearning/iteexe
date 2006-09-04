@@ -22,3 +22,330 @@ msgid "_: suggested by spicavet"
 "SCORM 1.2 Options"
 msgstr "Opties SCORM 1.2"
 
+#: exe/webui/wikipediablock.py:182
+msgid "_: suggested by lvandijck"
+"GNU Free Documentation License"
+msgstr "GNU Free Documentation Licentie"
+
+#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+msgid "_: suggested by lvandijck"
+"IEEE LOM"
+msgstr "IEEE LOM"
+
+#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+msgid ""
+"_: suggested by lvandijck"
+"\n"
+"                Typically, Subject will be expressed as keywords, key phrases or\n"
+"                classification codes that describe a topic of the resource.\n"
+"                Recommended best practice is to select a value from a controlled\n"
+"                vocabulary or formal classification scheme.\n"
+"             "
+msgstr "                Het Onderwerp wordt normaal aangeduid met sleutelwoorden of -uitdrukkingen of                 classificatiecodes die de inhoud van de bron beschrijven.                Het wordt aanbevolen om te kiezen uit een vaste woordenlijst                of uit een vast omschreven classificatieschema.             "
+
+#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+msgid ""
+"_: suggested by lvandijck"
+"\n"
+"                 Typically, Date will be associated with the creation or\n"
+"                 availability of the resource. Recommended best practice for\n"
+"                 encoding the date value is defined in a profile called\n"
+"                 "
+msgstr "                 Typically, Date will be associated with the creation or                 availability of the resource. Recommended best practice for                 encoding the date value is defined in a profile called                 "
+
+#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+msgid ""
+"_: suggested by lvandijck"
+"\n"
+"              Type includes terms describing general categories, functions, or\n"
+"              genres, for content. Recommended best practice is to select a value\n"
+"              from a controlled vocabulary or controlled classification scheme."
+msgstr "              Type includes terms describing general categories, functions, or              genres, for content. Recommended best practice is to select a value              from a controlled vocabulary or controlled classification scheme."
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
+#: label="Afar ">
+msgid "_: suggested by lvandijck"
+"Afar "
+msgstr "Afar "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
+#: label="Abkhazian ">
+msgid "_: suggested by lvandijck"
+"Abkhazian "
+msgstr "Abchazisch"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: label="Avestan ">
+msgid "_: suggested by lvandijck"
+"Avestan "
+msgstr "Avestaans"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
+#: label="Assamese ">
+msgid "_: suggested by lvandijck"
+"Assamese "
+msgstr "Assamees"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
+#: label="Aymara ">
+msgid "_: suggested by lvandijck"
+"Aymara "
+msgstr "Aymaraans"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: label="Bashkir ">
+msgid "_: suggested by lvandijck"
+"Bashkir "
+msgstr "Bashkir "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "_: suggested by lvandijck"
+"Bihari "
+msgstr "Bihari "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "_: suggested by lvandijck"
+"Bislama "
+msgstr "Bislama "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "_: suggested by lvandijck"
+"Chamorro "
+msgstr "Chamorro "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "_: suggested by lvandijck"
+"Church Slavic "
+msgstr "Kerkslavisch"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "_: suggested by lvandijck"
+"Chuvash "
+msgstr "Chuvash "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
+#: label="Dzongkha; Bhutani ">
+msgid "_: suggested by lvandijck"
+"Dzongkha; Bhutani "
+msgstr "Dzongkha; Bhutani "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
+#: label="Fijian; Fiji ">
+msgid "_: suggested by lvandijck"
+"Fijian; Fiji "
+msgstr "Fiji "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
+#: label="Guarani ">
+msgid "_: suggested by lvandijck"
+"Guarani "
+msgstr "Guarani "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
+#: label="Gujarati ">
+msgid "_: suggested by lvandijck"
+"Gujarati "
+msgstr "Gujarati "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
+#: label="Hausa (?) ">
+msgid "_: suggested by lvandijck"
+"Hausa (?) "
+msgstr "Hausa (?) "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
+#: label="Hiri Motu ">
+msgid "_: suggested by lvandijck"
+"Hiri Motu "
+msgstr "Hiri Motu "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
+#: label="Herero ">
+msgid "_: suggested by lvandijck"
+"Herero "
+msgstr "Herero "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
+#: label="Interlingue ">
+msgid "_: suggested by lvandijck"
+"Interlingue "
+msgstr "Interlingua"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
+#: label="Inupiak ">
+msgid "_: suggested by lvandijck"
+"Inupiak "
+msgstr "Inupiak "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
+#: label="Inuktitut ">
+msgid "_: suggested by lvandijck"
+"Inuktitut "
+msgstr "Inuktitut "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
+#: label="Kikuyu ">
+msgid "_: suggested by lvandijck"
+"Kikuyu "
+msgstr "Kikuyu "
+
+#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
+msgid "_: suggested by lvandijck"
+"Hide"
+msgstr "Verbergen"
+
+#: exe/webui/wikipediablock.py:182
+msgid "_: suggested by lvandijck"
+"GNU Free Documentation License"
+msgstr "GNU Vrije Documentatie Licentie"
+
+#: exe/webui/questionelement.py:100 exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
+msgid "_: suggested by lvandijck"
+"Hide"
+msgstr "Verbergen"
+
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
+#: label="SCORM 1.2 Options">
+msgid "_: suggested by lvandijck"
+"SCORM 1.2 Options"
+msgstr "Opties SCORM 1.2"
+
+#: exe/engine/externalurlidevice.py:39
+msgid ""
+"_: suggested by lvandijck"
+"For use if you need to include an external\n"
+"web page into your content. Rather than popup an external window, which can have some\n"
+"problematic usability consequences, this iDevice loads the appropriate content \n"
+"into an inline frame. Use only if your content will be online."
+msgstr ""
+"Om een externe webpagina toe te voegen.\n"
+"Het iDevice gebruikt geen extra pop-up-venster maar toont de pagina in een frame.\n"
+"Alleen te gebruiken als de opgegeven inhoud ook effectief online is."
+
+#: exe/webui/wikipediablock.py:182
+msgid "_: suggested by lvandijck"
+"GNU Free Documentation License"
+msgstr "GNU Free Documentation Licentie"
+
+#: exe/webui/wikipediablock.py:99
+msgid "_: suggested by lvandijck"
+"Wikieducator Content"
+msgstr "Wikieducator-inhoud"
+
+#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
+#: label="Dublin Core Metadata">
+msgid "_: suggested by lvandijck"
+"Dublin Core Metadata"
+msgstr "Dublin Core Metadata"
+
+#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+msgid "_: suggested by lvandijck"
+"Dublin Core"
+msgstr ""
+
+#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+msgid "_: suggested by lvandijck"
+"IEEE LOM"
+msgstr "IEEE LOM"
+
+#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+msgid ""
+"_: suggested by lvandijck"
+"\n"
+"                Typically, Subject will be expressed as keywords, key phrases or\n"
+"                classification codes that describe a topic of the resource.\n"
+"                Recommended best practice is to select a value from a controlled\n"
+"                vocabulary or formal classification scheme.\n"
+"             "
+msgstr "Meestal wordt Onderwerp beschreven met sleutelwoorden of -zinnen, of met classificatiecodes die de inhoud omschrijven. Aanbevolen wordt te werken met een vastgesteld kwalificatieschema."
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
+#: label="Afar ">
+msgid "_: suggested by lvandijck"
+"Afar "
+msgstr "Afar"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
+#: label="Abkhazian ">
+msgid "_: suggested by lvandijck"
+"Abkhazian "
+msgstr "Abkhazisch"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: label="Avestan ">
+msgid "_: suggested by lvandijck"
+"Avestan "
+msgstr "Avestaans"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
+#: label="Assamese ">
+msgid "_: suggested by lvandijck"
+"Assamese "
+msgstr "Assamees"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
+#: label="Aymara ">
+msgid "_: suggested by lvandijck"
+"Aymara "
+msgstr "Aymara "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: label="Bashkir ">
+msgid "_: suggested by lvandijck"
+"Bashkir "
+msgstr "Bashkir "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: label="Bihari ">
+msgid "_: suggested by lvandijck"
+"Bihari "
+msgstr "Bihari "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: label="Bislama ">
+msgid "_: suggested by lvandijck"
+"Bislama "
+msgstr "Bislama "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "_: suggested by lvandijck"
+"Chamorro "
+msgstr "Chamorro"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "_: suggested by lvandijck"
+"Church Slavic "
+msgstr "Kerkslavisch"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "_: suggested by lvandijck"
+"Chuvash "
+msgstr "Chuvash "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
+#: label="Dzongkha; Bhutani ">
+msgid "_: suggested by lvandijck"
+"Dzongkha; Bhutani "
+msgstr "Dzongkha; Bhutani "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
+#: label="Fijian; Fiji ">
+msgid "_: suggested by lvandijck"
+"Fijian; Fiji "
+msgstr "Fijinees"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
+#: label="Fijian; Fiji ">
+msgid "_: suggested by lvandijck"
+"Fijian; Fiji "
+msgstr "Fijinees"
