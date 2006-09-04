@@ -37,10 +37,12 @@ class RssIdevice(Idevice):
     A RSS Idevice is one built from a RSS feed.
     """
     def __init__(self):
-        Idevice.__init__(self, x_(u"RSS"), 
-                         x_(u""), 
-                         x_(u""), 
-                         u"", u"")
+        Idevice.__init__(self,
+                         x_(u"RSS"), 
+                         x_(u"Auckland Univeristy of Technology"), 
+                         u"", 
+                         u"",
+                         u"")
         self.emphasis         = Idevice.NoEmphasis
         self.rss              = TextAreaField(x_(u"RSS"))
         self.rss.idevice      = self
