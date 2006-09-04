@@ -52,8 +52,6 @@ class WebsitePage(object):
         file.  'outputDir' is the directory where the filenames will be saved
         (a 'path' instance)
         """
-        import pdb
-        pdb.set_trace()
         outfile = open(outputDir / self.name+".html", "w")
         outfile.write(self.render(prevPage, nextPage, pages))
         outfile.close()

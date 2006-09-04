@@ -59,6 +59,9 @@ class RssBlock(Block):
 
         if 'title'+self.id in request.args:
             self.idevice.title = request.args['title'+self.id][0]
+            
+        if "url" + self.id in request.args:
+            self.idevice.url = request.args['url'+ self.id][0]
 
         if 'loadRss'+self.id in request.args:
             self.idevice.loadRss(request.args['url'+ self.id][0])
@@ -79,7 +82,8 @@ class RssBlock(Block):
         html  = u"<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title" + self.id, self.idevice.title)
 
-        html += '<br/><br/>RSS URL ' + common.textInput("url" + self.id)
+        html += '<br/><br/>RSS URL ' + common.textInput("url" + self.id,
+                                                        self.idevice.url)
         html += common.submitButton(u"loadRss"+self.id, _(u"Load"))
         
         html += u"<br/>\n"
@@ -130,7 +134,7 @@ class RssBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        content = self.articleElement.renderView()
+        content = self.rssElement.renderView()
         content = re.sub(r'src="/.*?/resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"

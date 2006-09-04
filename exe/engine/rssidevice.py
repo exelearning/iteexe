@@ -46,6 +46,7 @@ class RssIdevice(Idevice):
         self.rss.idevice      = self
         self.icon             = u"inter"
         self._urlInstruc      = x_(u"")
+        self.url              = ""
         
 
         
