@@ -70,6 +70,12 @@ div#nodeDecoration {
    text-align:left;
 }
 
+
+.iDevice li {
+	list-style-position: outside;
+	margin-left: 20px;
+}
+
 .iDeviceTitle {
    color: #568D14;
    font-size: 24px;
