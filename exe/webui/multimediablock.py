@@ -119,7 +119,6 @@ class MultimediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
-            html += u"<div class=\"iDevice_inner\">\n"
         html += u"<div class=\"media_text\" style=\""
         html += u"width:" + str(self.idevice.media.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
@@ -151,10 +150,6 @@ class MultimediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
-            html += u"<div class=\"iDevice_inner\">\n"
-        
-        html += u"<div class=\"iDevice_inner\">\n"
-        
         html += u"<div class=\"media_text\" style=\""
         html += u"width:" + str(self.idevice.media.width) + "px; "
         html += u"float:%s;\">\n" % self.idevice.float
