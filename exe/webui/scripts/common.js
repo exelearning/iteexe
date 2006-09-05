@@ -886,17 +886,11 @@ function toggleFeedback(id) {
     }
 }
 
+// Call the function like this:
+//insertAtCursor(document.formName.fieldName, this value);
 function insertAtCursor(myField, myValue) {
-    // calling the function
-    //insertAtCursor(document.formName.fieldName, this value);
-    //IE support
-    if (document.selection) {
-        myField.focus();
-        sel = document.selection.createRange();
-        sel.text = myValue;
-    }
     //MOZILLA/NETSCAPE support
-    else if (myField.selectionStart || myField.selectionStart == '0') {
+    if (myField.selectionStart || myField.selectionStart == '0') {
         var startPos = myField.selectionStart;
         var endPos = myField.selectionEnd;
         myField.value = myField.value.substring(0, startPos)
@@ -906,6 +900,12 @@ function insertAtCursor(myField, myValue) {
         myField.value += myValue;
     }
     myField.focus();
+}
+
+// Move the cursor back num spaces in textblocks
+function moveCursorBack(myField, num) {
+    myField.selectionStart = myField.selectionStart - num;
+    myField.selectionEnd = myField.selectionStart;
 }
 
 function insertSymbol(id, string){
