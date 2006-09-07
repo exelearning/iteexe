@@ -888,27 +888,25 @@ function toggleFeedback(id) {
 
 // Call the function like this:
 //insertAtCursor(document.formName.fieldName, this value);
-function insertAtCursor(myField, myValue) {
+function insertAtCursor(myField, myValue, num) {
     //MOZILLA/NETSCAPE support
+   
     if (myField.selectionStart || myField.selectionStart == '0') {
         var startPos = myField.selectionStart;
         var endPos = myField.selectionEnd;
         myField.value = myField.value.substring(0, startPos)
             + myValue
             + myField.value.substring(endPos, myField.value.length);
+        myField.selectionStart = startPos + myValue.length - num
     } else {
         myField.value += myValue;
-    }
+    } 
+    myField.selectionEnd = myField.selectionStart
     myField.focus();
 }
 
-// Move the cursor back num spaces in textblocks
-function moveCursorBack(myField, num) {
-    myField.selectionStart = myField.selectionStart - num;
-    myField.selectionEnd = myField.selectionStart;
-}
-
-function insertSymbol(id, string){
+//used by maths idevice
+function insertSymbol(id, string, num){
     var ele = document.getElementById(id);
-    insertAtCursor(ele, string)
+    insertAtCursor(ele, string, num)
 }

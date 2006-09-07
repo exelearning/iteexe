@@ -1046,6 +1046,9 @@ class MathElement(Element):
                         u"/images/maths/greek letters/%s", 
                                             "%s", r"\\%s") % (symbol, symbol,
                                                                 file.basename())
+        html += common.insertSymbol("input"+self.id, "", "",
+                            r"\\begin{verbatim}\\end{verbatim}", _("text"), 14)
+        html += common.insertSymbol("input"+self.id, "", "", r"\\\\\n", _("newline"))
         html += u"<br/>"        
         for file in oprationDir.files():
             if file.ext == ".gif" or file.ext == ".png":
