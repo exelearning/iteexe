@@ -50,7 +50,7 @@ def getFileSystemEncoding():
     """
     encoding = sys.getfilesystemencoding()
     if encoding is None:
-        return 'ascii'
+        return 'utf-8'
     else:
         return encoding
 
@@ -66,7 +66,7 @@ class Path(unicode):
 
     fileSystemEncoding = getFileSystemEncoding()
 
-    def __new__(cls, filename=u'', encoding='utf8'):
+    def __new__(cls, filename=u'', encoding=None):
         """
         Gently converts the filename to unicode
         """
