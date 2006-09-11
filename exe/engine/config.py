@@ -208,6 +208,8 @@ class Config:
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
             self.dataDir = tempfile.gettempdir()
+        # make the webDir absolute, to hide path joins of relative paths
+        self.webDir = self.webDir.expand().abspath()
         # If the configDir doesn't exist (as it may be a default setting with a
         # new installation) create it
         if not self.configDir.exists():
