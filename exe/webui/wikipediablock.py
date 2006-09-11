@@ -111,8 +111,7 @@ class WikipediaBlock(Block):
         html += u"<br/>\n"
         html += self.articleElement.renderEdit()
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
-                          (_(u"Some emphasis"),   Idevice.SomeEmphasis),
-                          (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
+                          (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
 
         html += common.formField('select', _('Emphasis'),
                                  'emphasis', self.id, 

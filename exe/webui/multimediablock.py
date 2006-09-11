@@ -89,8 +89,7 @@ class MultimediaBlock(Block):
         html += common.elementInstruc(self.idevice.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
-                          (_(u"Some emphasis"),   Idevice.SomeEmphasis),
-                          (_(u"Strong emphasis"), Idevice.StrongEmphasis)]
+                          (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
 
         html += common.formField('select', _('Emphasis'),
                                  'emphasis', self.id, 

@@ -305,8 +305,7 @@ data is entered into this field.""")))
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
 
             emphasisValues = {Idevice.NoEmphasis:     _(u"No emphasis"),
-                              Idevice.SomeEmphasis:   _(u"Some emphasis"),
-                              Idevice.StrongEmphasis: _(u"Strong emphasis")}
+                              Idevice.SomeEmphasis:   _(u"Some emphasis")}
             for value, description in emphasisValues.items():
                 html += "<option value=\""+unicode(value)+"\" "
                 if self.idevice.emphasis == value:
