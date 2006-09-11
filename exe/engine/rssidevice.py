@@ -39,7 +39,7 @@ class RssIdevice(Idevice):
     def __init__(self):
         Idevice.__init__(self,
                          x_(u"RSS"), 
-                         x_(u"Auckland Univeristy of Technology"), 
+                         x_(u"Auckland University of Technology"), 
                          x_(u"""The RSS file format describes web feed formats 
 that is used to instructs servers to feed new content to an individual users 
 machine. (see http://en.wikipedia.org/wiki/RSS_%28file_format%29. Using this 
