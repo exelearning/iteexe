@@ -352,7 +352,7 @@ class MultimediaElement(Element):
         html += u'<div class="block">'
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addMp3(\'%s\')"' % self.id
-        html += u' value="%s" />' % _(u"Select a MP3")
+        html += u' value="%s" />' % _(u"Select an MP3")
         
         if self.field.mediaResource:
             html += '<p style="color: red;">'+ self.field.mediaResource.storageName + '</P>'

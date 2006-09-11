@@ -46,16 +46,16 @@ class MultimediaIdevice(Idevice):
                          u"")
         self.emphasis                    = Idevice.NoEmphasis
         self.media                       = MultimediaField(
-                                           x_(u"Choose a MP3 file"),
+                                           x_(u"Choose an MP3 file"),
                                            x_(u""
             "<ol>"
-            "  <li>Click &lt;Select a MP3&gt; and browse to the MP3 "
-            "      file you want to insert</li>"
-            " <li>Click on the dropdown arrow and select the position "
+            "  <li>Click &lt;Select an MP3&gt; and browse to the MP3 "
+            "      file you wish to insert</li>"
+            " <li>Click on the dropdown menu to select the position "
             "       that you want the file displayed on screen.</li>"
-            "  <li>Enter a caption for your file.</li>"
-            " <li>Associate relevant text to the MP3 file.</li>"
-            " <li>Choose the type of style you want the iDevice to"
+            "  <li>Enter an optional caption for your file.</li>"
+            " <li>Associate any relevant text to the MP3 file.</li>"
+            " <li>Choose the type of style you would like the iDevice to"
             "       display e.g. 'Some emphasis' "
             "applies a border and icon to the iDevice content displayed.</li>"
             "</ol>"
