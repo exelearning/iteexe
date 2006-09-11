@@ -193,7 +193,8 @@ class WebsitePage(object):
             if prevPage:
                 html += " | "
             html += "<a href=\""+nextPage.name+".html\">"
-            html += "&raquo; %s</a>" % _('Next')
+            html += " %s &raquo</a>" % _('Next')
+            #html += "&raquo; %s</a>" % _('Next')
             
         html += "</div>\n"
         return html
