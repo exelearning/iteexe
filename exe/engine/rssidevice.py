@@ -40,14 +40,26 @@ class RssIdevice(Idevice):
         Idevice.__init__(self,
                          x_(u"RSS"), 
                          x_(u"Auckland Univeristy of Technology"), 
-                         u"", 
+                         x_(u"""The RSS file format describes web feed formats 
+that is used to instructs servers to feed new content to an individual users 
+machine. (see http://en.wikipedia.org/wiki/RSS_%28file_format%29. Using this 
+iDevice you can provide links from sites you select for learners to monitor in 
+their own learning."""), 
                          u"",
                          u"")
         self.emphasis         = Idevice.NoEmphasis
         self.rss              = TextAreaField(x_(u"RSS"))
         self.rss.idevice      = self
         self.icon             = u"inter"
-        self._urlInstruc      = x_(u"some help tip here.")
+        self._urlInstruc      = x_(u"""Enter an RSS URL for the RSS feed you 
+want to attach to your content. For those new to eb feeds a feed will generally
+ be identified by a small graphic icon or the text "RSS Feed". Rolling over the
+ icon or text label will display a URL for the link at the bottom left hand 
+corner of your screen. Right click to open a menu box and click on COPY LINK 
+LOCATION. Come back to eXe and open the RSS bookmark iDevice. Paste the URL 
+into the RSS URL field and click the LOAD button. RSS feed articles will 
+display in the RSS Bookmark field. From here you can edit the bookmarks and add
+ instructions or additional learning information.""")
         self.url              = ""
         
 
