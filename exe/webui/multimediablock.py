@@ -121,7 +121,7 @@ class MultimediaBlock(Block):
         html += u"<div class=\"media_text\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderPreview()
-        html += u"" + self.idevice.caption + "</div>"
+        html += u"<br />" + self.idevice.caption + "</div>"
         html += u"</div>\n"
         html += self.textElement.renderPreview()
         html += u"<br/>\n"        
