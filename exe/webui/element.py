@@ -369,7 +369,7 @@ class MultimediaElement(Element):
                             '../%s/resources/%s' % (
                                 self.field.idevice.parentNode.package.name,
                                 self.field.mediaResource.storageName),
-                            "../templates/mp3player.swf")
+                            "../templates/xspf_player.swf")
         return html
 
 
@@ -380,7 +380,7 @@ class MultimediaElement(Element):
         html = ""
         if self.field.mediaResource:
             html += self.renderMP3(self.field.mediaResource.storageName,                            
-                                       "mp3player.swf")
+                                       "xspf_player.swf")
 
         return html
     
@@ -390,34 +390,26 @@ class MultimediaElement(Element):
         mp3Str_mat = common.flash(filename, self.field.width, self.field.height,
                               id="mp3player",
                               params = {
-                                      'movie': '%s?src=%s' % (mp3player, filename),
+                                      'movie': '%s?song_url=%s&song_title=%s' % (mp3player, filename, self.field.idevice.caption),
                                       'quality': 'high',
-                                      'bgcolor': '#333333',
-                                      'flashvars': 'bgColour=000000&amp;btnColour=ffffff&amp;'
-                                                   'btnBorderColour=cccccc&amp;iconColour=000000&amp;'
-                                                   'iconOverColour=00cc00&amp;trackColour=cccccc&amp;'
-                                                   'handleColour=ffffff&amp;loaderColour=ffffff&amp;'})
+                                      'bgcolor': '#E6E6E6'})
 
         mp3Str = """
         <object class="mediaplugin mp3" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
         codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab
         #version=6,0,0,0"
-        id="mp3player" height="34" width="320"> 
-        <param name="movie" value="%s?src=%s"> 
+        id="mp3player" height="15" width="400"> 
+        <param name="movie" value="%(mp3player)s?song_url=%(url)s&song_title=%(caption)s"> 
         <param name="quality" value="high"> 
         <param name="bgcolor" value="#ffffff"> 
-        <param name="flashvars" value="bgColour=000000&amp;btnColour=ffffff&amp;
-        btnBorderColour=cccccc&amp;iconColour=000000&amp;iconOverColour=00cc00&amp;
-        trackColour=cccccc&amp;handleColour=ffffff&amp;loaderColour=ffffff&amp;">
-        <embed src="%s?src=%s" quality="high"
+        <embed src="%(mp3player)s?song_url=%(url)s&song_title=%(caption)s" quality="high"
         bgcolor="#FFFFFF" name="mp3player" type="application/x-shockwave-flash"
-        flashvars="bgColour=000000&amp;btnColour=ffffff&amp;btnBorderColour=cccccc&amp;
-        iconColour=000000&amp;iconOverColour=00cc00&amp;trackColour=cccccc&amp;
-        handleColour=ffffff&amp;loaderColour=ffffff&amp;"
-        pluginspage="http://www.macromedia.com/go/getflashplayer" height="34" width="320">
+        pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="400">
             </object>
         
-        """ % (mp3player, filename, mp3player, filename)
+        """ % {'mp3player': mp3player,
+  	       'url':       filename,
+               'caption':   self.field.idevice.caption}
         
         wmvStr = common.flash(filename, self.field.width, self.field.height,
                               id="mp3player",

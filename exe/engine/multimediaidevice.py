@@ -67,9 +67,9 @@ associate with the file."""))
         self.text.idevice                = self
         self.float                       = u"left"
         self.caption                     = u""
-        self.icon                        = u"inter"
+        self.icon                        = u"multimedia"
         self._captionInstruc             = x_(u"""Provide a caption for the 
-MP3 file.""")
+MP3 file. This will appear in the players title bar as well.""")
        
         self._alignInstruc               = x_(u"""Alignment allows you to 
 choose where on the screen the media player will be positioned.""")

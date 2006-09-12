@@ -106,7 +106,7 @@ class MultimediaBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"\n<!-- image with text iDevice -->\n"
+        html  = u"\n<!-- MP3 iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
@@ -118,9 +118,7 @@ class MultimediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
-        html += u"<div class=\"media_text\" style=\""
-        html += u"width:" + str(self.idevice.media.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
+        html += u"<div class=\"media_text\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderPreview()
         html += u"" + self.idevice.caption + "</div>"
@@ -139,7 +137,7 @@ class MultimediaBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"\n<!-- image with text iDevice -->\n"
+        html  = u"\n<!-- MP3 iDevice -->\n"
         html += u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
@@ -149,9 +147,7 @@ class MultimediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
-        html += u"<div class=\"media_text\" style=\""
-        html += u"width:" + str(self.idevice.media.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
+        html += u"<div class=\"media_text\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderView()
         html += u"<br/>" + self.idevice.caption + "</div>"
