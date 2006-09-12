@@ -1,8 +1,11 @@
 import sys, os, shutil
+import signal
+import logging
 import warnings
 from exe.engine.path import Path
 from subprocess import Popen, PIPE
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
+log = logging.getLogger(__name__)
 
 def compile(latex, fontsize=4):
     """
@@ -27,13 +30,21 @@ def compile(latex, fontsize=4):
     from exe.application import application
     if os.name == 'nt':
         cmd = application.config.webDir/'templates'/'mimetex.exe'
+    elif sys.platform[:6] == "darwin":
+        cmd = application.config.webDir/'templates'/'mimetex-darwin.cgi'
     else:
         cmd = application.config.webDir/'templates'/'mimetex.cgi'
+    log.debug(u"mimetex command=%s" % cmd)
     # Must pass 0-9 to api
-    process = Popen([cmd, cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8092, stdout=PIPE, stderr=PIPE)
+    oldsig = signal.getsignal(signal.SIGCHLD)
+    signal.signal(signal.SIGCHLD, signal.SIG_DFL)
+    process = Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdout=PIPE, stderr=PIPE)
     returnCode = process.wait()
+    log.debug(u"mimetex returnCode=%d", returnCode)
     if returnCode != 0:
         raise Exception("Couldn't parse latex:\n%s" % process.stderr)
+    signal.signal(signal.SIGCHLD, oldsig)
+
     outputFileName = os.tmpnam()
     outputFile = open(outputFileName, 'wb')
     shutil.copyfileobj(process.stdout, outputFile)
