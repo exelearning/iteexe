@@ -18,7 +18,7 @@
 # ===========================================================================
 
 """
-A RSS Idevice is one built from a RSS feed.
+An RSS Idevice is one built from a RSS feed.
 """
 
 import re
@@ -34,17 +34,15 @@ from exe.engine.resource      import Resource
 # ===========================================================================
 class RssIdevice(Idevice):
     """
-    A RSS Idevice is one built from a RSS feed.
+    An RSS Idevice is one built from a RSS feed.
     """
     def __init__(self):
         Idevice.__init__(self,
                          x_(u"RSS"), 
                          x_(u"Auckland University of Technology"), 
-                         x_(u"""The RSS file format describes web feed formats 
-that is used to instructs servers to feed new content to an individual users 
-machine. (see http://en.wikipedia.org/wiki/RSS_%28file_format%29. Using this 
-iDevice you can provide links from sites you select for learners to monitor in 
-their own learning."""), 
+                         x_(u"""The RSS format describes a web feed and is used 
+to provide new content to an individual users machine. Using this
+iDevice you can provide links from a feed you select for learners to view."""), 
                          u"",
                          u"")
         self.emphasis         = Idevice.NoEmphasis
@@ -52,9 +50,9 @@ their own learning."""),
         self.rss.idevice      = self
         self.icon             = u"inter"
         self._urlInstruc      = x_(u"""Enter an RSS URL for the RSS feed you 
-want to attach to your content. For those new to eb feeds a feed will generally
- be identified by a small graphic icon or the text "RSS Feed". Rolling over the
- icon or text label will display a URL for the link at the bottom left hand 
+want to attach to your content. Feeds are often identified by a small graphic
+ icon or the text "RSS Feed". Clicking on the <img src="/images/feed-icon.png" />
+ icon or text label will display an URL for the link at the bottom left hand 
 corner of your screen. Right click to open a menu box and click on COPY LINK 
 LOCATION. Come back to eXe and open the RSS bookmark iDevice. Paste the URL 
 into the RSS URL field and click the LOAD button. RSS feed articles will 
