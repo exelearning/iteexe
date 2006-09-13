@@ -35,7 +35,8 @@ def compile(latex, fontsize=4):
     else:
         cmd = application.config.webDir/'templates'/'mimetex.cgi'
     log.debug(u"mimetex command=%s" % cmd)
-    # Must pass 0-9 to api
+    # Twisted uses SIGCHLD in a way that conflicts with the Popen() family
+    # (see Twisted FAQ)  So save their handler and temporarily restore default.
     if hasattr(signal, 'SIGCHLD'):
         oldsig = signal.getsignal(signal.SIGCHLD)
         signal.signal(signal.SIGCHLD, signal.SIG_DFL)
