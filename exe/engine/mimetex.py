@@ -38,13 +38,14 @@ def compile(latex, fontsize=4):
     # Must pass 0-9 to api
     oldsig = signal.getsignal(signal.SIGCHLD)
     signal.signal(signal.SIGCHLD, signal.SIG_DFL)
-    process = Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdout=PIPE, stderr=PIPE)
-    returnCode = process.wait()
-    log.debug(u"mimetex returnCode=%d", returnCode)
-    if returnCode != 0:
-        raise Exception("Couldn't parse latex:\n%s" % process.stderr)
-    signal.signal(signal.SIGCHLD, oldsig)
-
+    try:
+        process = Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdout=PIPE, stderr=PIPE)
+        returnCode = process.wait()
+        log.debug(u"mimetex returnCode=%d", returnCode)
+        if returnCode != 0:
+            raise Exception("Couldn't parse latex:\n%s" % process.stderr)
+    finally:
+        signal.signal(signal.SIGCHLD, oldsig)
     outputFileName = os.tmpnam()
     outputFile = open(outputFileName, 'wb')
     shutil.copyfileobj(process.stdout, outputFile)
