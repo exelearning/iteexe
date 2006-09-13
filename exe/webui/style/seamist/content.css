@@ -83,6 +83,8 @@ div#nodeDecoration {
 .iDevice p, .iDevice div.block {
     padding-left: 24px;
     padding-right: 20px;
+    line-height: 16px;
+    text-align: left;
 }
 
 .iDeviceTitle {
@@ -101,8 +103,10 @@ input.feedbackbutton {
 /* styles for image with text iDevice */
 
 .image_text { 
-    border-color: #3C5866;
+    border: 1px solid #3C5866;
     background: #FFF;
+    padding: 4px;
+    margin: 0px 20px 4px 4px;
 }
 
 p.reading_feedback {

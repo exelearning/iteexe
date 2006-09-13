@@ -124,6 +124,8 @@ p.reading_feedback {
 /* styles for image with text iDevice */
 
 .image_text { 
-    border-color: #CCC;
+    border: 1px solid #CCC;
     background: #F9F9F9;
+    padding: 4px;
+    margin: 0px 20px 4px 4px;
 }

@@ -47,8 +47,14 @@ div#nodeDecoration {
     margin: 10px;
 }
 
-.iDevice p {
+.iDevice p, .iDevice div.block {
     padding-left: 24px;
+    line-height: 16px;
+    text-align: left;
+}
+
+.iDevice li {
+	list-style-position: outside;
 }
 
 .iDeviceTitle {
@@ -76,5 +82,8 @@ p.reading_feedback {
 }
 
 .image_text { 
+    border: 1px solid #CCC; 
     background: #F9F9F9;
+    padding: 4px;
+    margin: 0px 20px 4px 4px;
 }

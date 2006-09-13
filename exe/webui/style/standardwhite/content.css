@@ -65,6 +65,12 @@ input.feedbackbutton {
     border-bottom: 1px solid #DDD;
 }
 
+.iDevice p, .iDevice div.block {
+    padding-left: 24px;
+    line-height: 16px;
+    text-align: left;
+}
+
 .iDeviceTitle {
     color: #000;
     font-size: 17px;
@@ -83,7 +89,7 @@ input.feedbackbutton {
 	border: 1px solid #CCC;
 	background: #F9F9F9;
 	padding: 4px;
-	margin: 4px;
+	margin: 0px 20px 4px 4px;
 }
 
 p.reading_feedback {

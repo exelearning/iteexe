@@ -1055,11 +1055,9 @@ class MathElement(Element):
                                             "%s", r"\\%s") % (symbol, symbol,
                                                                 file.basename())
         html += "<br />" 
-        html += '<span style="color: #000;"> ' 
         html += common.insertSymbol("input"+self.id, "", "",
                             r"\\begin{verbatim}\\end{verbatim}", _("text"), 14)
         html += common.insertSymbol("input"+self.id, "", "", r"\\\\\n", _("newline"))
-        html += "</span>" 
         html += "</div>\n"
         html += common.textArea('input'+self.id, self.field.latex)
         

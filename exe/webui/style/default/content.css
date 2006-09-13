@@ -145,7 +145,9 @@ p.reading_feedback {
 /* styles for image with text iDevice */
 
 .image_text { 
-	border-color: #9D9D9D;
+	border: 1px solid #9D9D9D;
 	background: transparent;
+	padding: 4px;
+        margin: 0px 20px 4px 4px;
 }
 

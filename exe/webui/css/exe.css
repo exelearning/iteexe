@@ -1,6 +1,7 @@
 /*  ===========================================================================
      eXe
      Copyright 2004-2005, University of Auckland
+     Auckland University of Technology & Tairawhiti Polytechnic, 2006.
 
      These style elements are only used in the editing pane of eXe. They do not 
      apply when content is exported. Brent.  
@@ -61,4 +62,7 @@ p.editModeHeading {
 .maths {
 border: 1px solid #CCC;
 padding: 2px;
+color: #000000;
 }
+
+.maths a { color: #000000; }
