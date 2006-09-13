@@ -1,3 +1,21 @@
+python-exe (0.18-0.1ubuntu1) unstable; urgency=low
+
+    * Maths IDevice
+    * Ability to include image in Case Study feedback field.
+    * Added Multimedia IDevice (play mp3 and wmv video).
+    * Added Czech, Tagalog, Twi and Ewe languages.
+    * Have previous/next be translated in export to website.
+    * Various bug fixes.
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 12 Sep 2006 13:32:15 +1300
+
+python-exe (0.17-0.1ubuntu1) unstable; urgency=low
+
+    * Text export for mobile devices
+    * Various bug fixes
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 01 Aug 2006 14:07:12 +1300
+
 python-exe (0.16-0.1ubuntu1) unstable; urgency=low
 
     * Added slovenian and french languages

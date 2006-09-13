@@ -27,6 +27,27 @@ if len(sys.argv) == 1:
     print usage
     sys.exit(1)
 
+# Quick pre-check...
+if 'sftp' in sys.argv:
+    # Check that we have the appropriate library
+    try:
+        from paramiko import Transport
+    except ImportError:
+        print
+        print 'To upload you need to install paramiko python library from:'
+        print 'http://www.lag.net/paramiko',
+        print 'or go: apt-get install python2.4-paramiko'
+        print 'Or remove "sftp" and username and password from command line'
+        print
+        sys.exit(2)
+    # Check that they have supplied the username and password
+    pos = sys.argv.index('sftp')
+    if len(sys.argv) != pos + 3:
+        print
+        print 'You passed "sftp" on the command line but it was not followed by a username and password'
+        print usage
+        sys.exit(1)
+
 
 if 'build' in sys.argv:
     newDir = exeDir/'debian'
@@ -38,6 +59,23 @@ if 'build' in sys.argv:
     Path('debian').abspath().symlink(newDir)
     exeDir.chdir()
     if os.path.exists(exeDir/'exe/webui/firefox'):
+        ok = True
+        print
+        if not os.path.exists('/usr/bin/fakeroot'):
+            ok = False
+            print '"fakeroot" not found. Go: sudo apt-get install fakeroot'
+        if not os.path.exists('/usr/bin/make'):
+            ok = False
+            print '"make" not found. Go: sudo apt-get install make'
+        if not os.path.exists('/usr/bin/dh_testdir'):
+            ok = False
+            print '"dh_testdir" not found. Go: sudo apt-get install dh-make'
+        if not os.path.exists('/usr/bin/ncftpget'):
+            ok = False
+            print '"ncftpget" not found. Go: sudo apt-get install ncftp'
+        if not ok:
+            sys.exit(1)
+        # If all is good do it!
         os.system('fakeroot debian/rules binary')
     else:
         raise Exception('You need to copy the firefox installation to "exe/webui/firefox"')
@@ -45,7 +83,7 @@ if 'build' in sys.argv:
 packages = (exeDir/'..').glob('*.deb')
 if not packages:
     print 'No packages found'
-    sys.halt(1)
+    sys.exit(1)
 packages.sort()
 package = packages[-1]
 
@@ -57,12 +95,6 @@ if 'index' in sys.argv:
     pool = tmp/'pool'
     pool.mkdir()
     pool.chdir()
-    print 'Downloading customised twisted package for "breezy users"...'
-    os.system('ncftpget ftp://ftp.eduforge.org/pub/exe/ubuntu/pool/python2.4-twisted_2.0.1-999_all.deb')
-    package.copyfile(pool/package.basename())
-    print 'Downloading old nevow 0.4.1 package for "dapper users"...'
-    os.system('ncftpget ftp://ftp.eduforge.org/pub/exe/ubuntu/pool/python2.4-nevow_0.4.1-1.1ubuntu1_all.deb')
-    package.copyfile(pool/package.basename())
     tmp.chdir()
     os.system('dpkg-scanpackages pool /dev/null | gzip -9c > pool/Packages.gz')
 
@@ -75,12 +107,6 @@ if 'copy' in sys.argv:
 
 if 'sftp' in sys.argv:
     # Connect with sftp
-    try:
-        from paramiko import Transport
-    except ImportError:
-        print 'To upload you need to install paramiko python library from:'
-        print 'http://www.lag.net/paramiko'
-        sys.exit(2)
     print 'connecting to sftp server...'
     from socket import socket, gethostbyname
     s = socket()

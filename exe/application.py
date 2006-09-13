@@ -24,9 +24,12 @@ Main application class, pulls together everything and runs it.
 
 import os
 import sys
+# Make it so we can import our own nevow and twisted etc.
+if os.name == 'posix':
+    sys.path.insert(0, '/usr/share/exe')
 from getopt import getopt, GetoptError
 from exe.webui.webserver     import WebServer
-# must import reactor AFTER WebServer. It's yucky, but that's life
+# Must import reactor AFTER WebServer. It's yucky, but that's life
 from twisted.internet import reactor
 from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
