@@ -71,15 +71,15 @@ Section "Remove Old Version" Section1
 			RMDir "$R1"
 	Next:
 	; Uninstall previous msi packages...
-  StrCpy $R0 "{053B45FD-255C-4E20-AA9D-218BB8A2B215}";  the MSI's ProductID of my package
-  Call UninstallMSI
-  StrCpy $R0 "{B4E5B5BC-087B-44D3-AD94-9DA209C70979}";  the MSI's ProductID of my package
-  Call UninstallMSI
+    StrCpy $R0 "{053B45FD-255C-4E20-AA9D-218BB8A2B215}";  the MSI's ProductID of my package
+    Call UninstallMSI
+    StrCpy $R0 "{B4E5B5BC-087B-44D3-AD94-9DA209C70979}";  the MSI's ProductID of my package
+    Call UninstallMSI
 	StrCpy $R0 "{3BEEE1AE-B96C-4E83-A63A-5886E4C1707C}";  the MSI's ProductID of my package
 	Call UninstallMSI
 	; If still there, tell them to manually uninstall it!
-  IfFileExists "$PROGRAMFILES\exe\server.exe" 0 Done
-	  MessageBox MB_OK "Before continuing please manually uninstall the old version of exe using the controla panel, 'add remove programs' utility. Press OK when this is done"
+    IfFileExists "$PROGRAMFILES\exe\exe.exe" 0 Done
+	  MessageBox MB_OK "Before continuing please manually uninstall the old version of exe using the control panel, 'add remove programs' utility. Press OK when this is done."
 	Done:
 SectionEnd
 	
