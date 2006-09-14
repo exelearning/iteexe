@@ -68,8 +68,7 @@ choose where on the screen the image will be positioned.""")
 when the IDevice loads, as a percentage of the original image size""")
         self._maxZoomInstruc             = x_(u"""Set the maximum level of zoom, 
 as a percentage of the original image size""")
-        self._glassSizeInstruc           = x_(u"""This chooses the initial size 
-of the magnifying glass""")
+        self._glassSizeInstruc           = x_(u"""Select the size of the magnifying glass""")
         self.systemResources            += ['magnifier.swf']
         self.systemResources            += ['magnifier.swf']
 
