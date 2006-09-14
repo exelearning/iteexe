@@ -74,12 +74,13 @@ class QuestionElement(object):
         html  = "<tr><td><b>%s</b>\n" % _("Activity")
         html += common.elementInstruc(self.idevice.questionInstruc)
         html += common.richTextArea(self.quesId, self.question.question)
+        html += self.imageElement.renderEdit()
         html += "<b>%s</b>\n" % _("Feedback")
         html += common.elementInstruc(self.idevice.feedbackInstruc)
         html += common.richTextArea(self.feedbackId, self.question.feedback)
         if self.imageElement.field.imageResource is None:
             self.imageElement.field.setDefaultImage()
-        html += self.imageElement.renderEdit()
+        
 
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
