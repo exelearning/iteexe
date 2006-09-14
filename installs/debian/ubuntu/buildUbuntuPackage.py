@@ -3,18 +3,20 @@ import sys, os
 exeDir = '../../..'
 sys.path.insert(0, exeDir)
 from exe.engine.path import Path, TempDirPath
+from getpass import getpass
 exeDir = Path(exeDir).abspath()
 
 
 usage = """
 Build ubuntu and debian packages of exe script.
 
-Usage: %s [build] [index] [sftp username password]
+Usage: %s [build] [index] [sftp-edu|sftp-sf username]
 
 build - Builds the package
 index - Downloads cusomtized twisted package and generates Packages.gz file
-sftp - Uploads indexes and package to eduforge
-username and pasword for your eduforge account are needed for sftp and should
+sftp-edu - Uploads indexes and package to eduforge
+sftp-sf - Uploads indexes and package to sourceforge
+username and pasword for your eduforge/sourceforge account are needed for sftp and should
 always be the last two parameters
 
 Debugging options:
@@ -28,7 +30,7 @@ if len(sys.argv) == 1:
     sys.exit(1)
 
 # Quick pre-check...
-if 'sftp' in sys.argv:
+if 'sftp-edu' in sys.argv or 'sftp-sf' in sys.argv:
     # Check that we have the appropriate library
     try:
         from paramiko import Transport
@@ -37,14 +39,17 @@ if 'sftp' in sys.argv:
         print 'To upload you need to install paramiko python library from:'
         print 'http://www.lag.net/paramiko',
         print 'or go: apt-get install python2.4-paramiko'
-        print 'Or remove "sftp" and username and password from command line'
+        print 'Or remove "sftp-edu", "sft-sf" and username from command line'
         print
         sys.exit(2)
-    # Check that they have supplied the username and password
-    pos = sys.argv.index('sftp')
-    if len(sys.argv) != pos + 3:
+    # Check that they have supplied the username
+    if 'sftp-edu' in sys.argv:
+        pos = sys.argv.index('sftp-edu')
+    else:
+        pos = sys.argv.index('sftp-sf')
+    if len(sys.argv) != pos + 2:
         print
-        print 'You passed "sftp" on the command line but it was not followed by a username and password'
+        print 'You passed "sftp-*" on the command line but it was not followed by a username'
         print usage
         sys.exit(1)
 
@@ -94,6 +99,8 @@ if 'index' in sys.argv:
     tmp = TempDirPath()
     pool = tmp/'pool'
     pool.mkdir()
+    # Copy the package to the pool dir
+    package.copyfile(pool/package.basename())
     pool.chdir()
     tmp.chdir()
     os.system('dpkg-scanpackages pool /dev/null | gzip -9c > pool/Packages.gz')
@@ -105,18 +112,29 @@ if 'copy' in sys.argv:
         (pool/'Packages.gz').copy(exeDir)
     pool = exeDir
 
-if 'sftp' in sys.argv:
+if 'sftp-edu' in sys.argv:
+    server = 'shell.eduforge.org'
+    basedir = '/home/pub/sourceforge/e/ex/exe/'
+elif 'sftp-sf' in sys.argv:
+    server = 'ssh.sourceforge.net'
+    basedir = '/home/groups/e/ex/exe/htdocs/'
+else:
+    server = None
+
+if server:
     # Connect with sftp
-    print 'connecting to sftp server...'
+    print 'Please enter password for %s@%s:' % (sys.argv[-1], server)
+    password = getpass()
+    print 'connecting to %s...' % server
     from socket import socket, gethostbyname
     s = socket()
-    s.connect((gethostbyname('shell.eduforge.org'), 22))
+    s.connect((gethostbyname(server), 22))
     t = Transport(s)
     t.connect()
-    t.auth_password(sys.argv[-2], sys.argv[-1])
+    t.auth_password(sys.argv[-1], password)
     f = t.open_sftp_client()
     # See that the directory structure looks good
-    f.chdir('/home/pub/exe')
+    f.chdir(basedir)
     poolDir = 'ubuntu/pool'
     packageDirs = [
         'ubuntu/dists/current/main/binary-i386',
@@ -132,23 +150,25 @@ if 'sftp' in sys.argv:
                     print 'Creating Dir on server:', fn, ':', part
                     f.mkdir(part)
                 f.chdir(part)
-            f.chdir('/home/pub/exe')
+            f.chdir(basedir)
     # Upload the binary package twice
-    print 'Uploading Package %s to main dir...' % package
-    f.put(package.encode('utf-8'), package.basename().encode('utf-8'))
-    f.chmod(package.basename().encode('utf-8'), 0x774)
+    def upFile(filename):
+        rFilename = str(filename.basename())
+        if rFilename in f.listdir():
+            f.remove(rFilename)
+        f.put(filename, rFilename)
+        f.chmod(rFilename, 0x774)
+    if server == 'shell.eduforge.org':
+        print 'Uploading Package %s to main dir...' % package.basename()
+        upFile(package)
     print 'Uploading Package %s to pool dir...' % package
-    f.chdir('/home/pub/exe/' + poolDir)
-    f.put(package.encode('utf-8'), package.basename().encode('utf-8'))
-    f.chmod(package.basename().encode('utf-8'), 0x774)
+    f.chdir(basedir + poolDir)
+    upFile(package)
     # Replace Packages.gz files
     print 'Uploading indexes...'
     for fn in packageDirs:
         print '  ', fn.split('/')[-1], '...'
-        f.chdir('/home/pub/exe/'+fn)
-        if 'Packages.gz' in f.listdir():
-            f.remove('Packages.gz')
-        f.put((pool/'Packages.gz').encode('utf-8'), 'Packages.gz')
-        f.chmod('Packages.gz', 0x774)
+        f.chdir(basedir+fn)
+        upFile(pool/'Packages.gz')
     print 'done'
 
