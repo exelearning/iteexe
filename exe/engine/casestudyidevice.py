@@ -51,7 +51,7 @@ class Question(Persistable):
         """
         # TODO: Get helena to check instructions
         self.image = ImageField(x_(u"Feedback Image"),
-                                x_(u"Choose an image to be shown to the student "
+                                x_(u"Choose an optional image to be shown to the student "
                                     "on completion of this question")) 
         self.image.idevice = idevice
         self.image.defaultImage  = idevice.defaultImage
