@@ -40,7 +40,7 @@ class RssIdevice(Idevice):
         Idevice.__init__(self,
                          x_(u"RSS"), 
                          x_(u"Auckland University of Technology"), 
-                         x_(u"""The RSS format describes a web feed and is used 
+                         x_(u"""The RSS iDevice is used 
 to provide new content to an individual users machine. Using this
 iDevice you can provide links from a feed you select for learners to view."""), 
                          u"",
@@ -51,12 +51,12 @@ iDevice you can provide links from a feed you select for learners to view."""),
         self.icon             = u"inter"
         self._urlInstruc      = x_(u"""Enter an RSS URL for the RSS feed you 
 want to attach to your content. Feeds are often identified by a small graphic
- icon or the text "RSS Feed". Clicking on the <img src="/images/feed-icon.png" />
- icon or text label will display an URL for the link at the bottom left hand 
-corner of your screen. Right click to open a menu box and click on COPY LINK 
-LOCATION. Come back to eXe and open the RSS bookmark iDevice. Paste the URL 
-into the RSS URL field and click the LOAD button. RSS feed articles will 
-display in the RSS Bookmark field. From here you can edit the bookmarks and add
+ icon (often like this <img src="/images/feed-icon.png" />) or the text "RSS". Clicking on the 
+ icon or text label will display an RSS feed right in your browser. You can copy and paste the
+URL into this field. Alternately, right clicking on the link or graphic will open a menu box;
+click on COPY LINK LOCATION or Copy Shortcut. Back in eXe open the RSS bookmark iDevice and Paste the URL 
+into the RSS URL field and click the LOAD button. This will extract the titles from your feed and
+display them as links in your content. From here you can edit the bookmarks and add
  instructions or additional learning information.""")
         self.url              = ""
         
