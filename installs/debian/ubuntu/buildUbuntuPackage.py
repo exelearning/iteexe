@@ -30,6 +30,7 @@ if len(sys.argv) == 1:
     sys.exit(1)
 
 # Quick pre-check...
+server = None
 if 'sftp-edu' in sys.argv or 'sftp-sf' in sys.argv:
     # Check that we have the appropriate library
     try:
@@ -52,6 +53,15 @@ if 'sftp-edu' in sys.argv or 'sftp-sf' in sys.argv:
         print 'You passed "sftp-*" on the command line but it was not followed by a username'
         print usage
         sys.exit(1)
+    if 'sftp-edu' in sys.argv:
+        server = 'shell.eduforge.org'
+        basedir = '/home/pub/sourceforge/e/ex/exe/'
+    elif 'sftp-sf' in sys.argv:
+        server = 'ssh.sourceforge.net'
+        basedir = '/home/groups/e/ex/exe/htdocs/'
+    # Get the users' password
+    print 'Please enter password for %s@%s:' % (sys.argv[-1], server)
+    password = getpass()
 
 
 if 'build' in sys.argv:
@@ -112,19 +122,8 @@ if 'copy' in sys.argv:
         (pool/'Packages.gz').copy(exeDir)
     pool = exeDir
 
-if 'sftp-edu' in sys.argv:
-    server = 'shell.eduforge.org'
-    basedir = '/home/pub/sourceforge/e/ex/exe/'
-elif 'sftp-sf' in sys.argv:
-    server = 'ssh.sourceforge.net'
-    basedir = '/home/groups/e/ex/exe/htdocs/'
-else:
-    server = None
-
 if server:
     # Connect with sftp
-    print 'Please enter password for %s@%s:' % (sys.argv[-1], server)
-    password = getpass()
     print 'connecting to %s...' % server
     from socket import socket, gethostbyname
     s = socket()

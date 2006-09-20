@@ -1,3 +1,1695 @@
+2006-09-19 03:05  brent
+
+	* exe/webui/multimediablock.py: fixing layout of mp3 idevice.
+
+2006-09-18 00:12  sean
+
+	* installs/windows/exe.standalone.nsi: changed the version number to
+	  0.18
+
+2006-09-14 22:42  matiu
+
+	* installs/debian/ubuntu/buildUbuntuPackage.py: Made ubuntu build
+	  script upload to sf.net or eduforge.
+
+2006-09-14 03:07  sean
+
+	* installs/windows/exe.nsi: changes made by matiu to nsi file
+
+2006-09-14 02:44  sean
+
+	* exe/webui/questionelement.py: Re adjusted the position of the
+	  image filed
+
+2006-09-14 01:06  brent
+
+	* exe/engine/casestudyidevice.py: minor change to chase study tip.
+
+2006-09-14 00:50  sean
+
+	* exe/engine/imagemagnifieridevice.py: Fixed issue #476
+
+2006-09-14 00:49  brent
+
+	* exe/engine/rssidevice.py: ped help and tip for RSS iDevice
+
+2006-09-14 00:49  sean
+
+	* exe/engine/field.py: Removed the figure 1 in the math idevice help
+
+2006-09-13 04:22  brent
+
+	* exe/engine/rssidevice.py, exe/webui/images/feed-icon.png: added
+	  rss icon and working on ped tip.
+
+2006-09-13 03:06  brent
+
+	* exe/webui/css/exe.css, exe/webui/element.py,
+	  exe/webui/style/Kahurangi/content.css, exe/webui/style/base.css,
+	  exe/webui/style/default/content.css,
+	  exe/webui/style/garden/content.css,
+	  exe/webui/style/seamist/content.css,
+	  exe/webui/style/silver/content.css,
+	  exe/webui/style/standardwhite/content.css: fixed problem with
+	  lists and image w/ text. left justified all the maths equations.
+
+2006-09-13 02:29  jim
+
+	* exe/engine/mimetex.py: explain why we save/restore SIGCHLD before
+	  invoking mimetex
+
+2006-09-13 01:25  matiu
+
+	* exe/engine/mimetex.py: Made work on Windoze again
+
+2006-09-13 01:04  matiu
+
+	* exe/application.py, installs/debian/ubuntu/buildUbuntuPackage.py,
+	  installs/debian/ubuntu/debian/PKG-INFO,
+	  installs/debian/ubuntu/debian/changelog,
+	  installs/debian/ubuntu/debian/control, setup.py: Changes for
+	  ubuntu
+
+2006-09-13 00:16  matiu
+
+	* exe/engine/mimetex.py: Put try..finally around signal stuff in
+	  mimetex calling
+
+2006-09-12 23:40  jim
+
+	* exe/engine/mimetex.py, exe/webui/templates/mimetex-darwin.cgi: add
+	  Mac OS X version of mimetex executable preserve and reset SIGCHLD
+	  handler around mimetex process invocation
+
+2006-09-12 23:21  brent
+
+	* exe/webui/element.py: for maths idevice, formatting, or something
+	  like that....
+
+2006-09-12 22:25  brent
+
+	* exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/websiteexport.py: now
+	  exports new flash player for mp3 idevice.
+
+2006-09-12 04:13  matiu
+
+	* exe/engine/appletidevice.py, exe/idevices/appletblock.py,
+	  exe/idevices/appletidevice.py, exe/webui/appletblock.py: Put
+	  applet back in the right place and back how it was before [2210]
+
+2006-09-12 03:05  brent
+
+	* exe/webui/multimediablock.py: fixed alignment of caption.
+
+2006-09-12 02:33  brent
+
+	* exe/engine/multimediaidevice.py, exe/webui/element.py,
+	  exe/webui/multimediablock.py,
+	  exe/webui/style/seamist/icon_multimedia.gif,
+	  exe/webui/templates/xspf_player.swf: new multimedia swf player for
+	  mp3
+
+2006-09-12 02:20  sean
+
+	* exe/engine/appletidevice.py, exe/exe.bak,
+	  exe/webui/appletblock.py: Reverted change [2210]
+
+2006-09-12 02:01  sean
+
+	* exe/exe.bak, exe/idevices/appletblock.py,
+	  exe/idevices/appletidevice.py: applet idevice and block updated
+
+2006-09-11 23:31  jenny
+
+	* exe/webui/editorpane.py, exe/webui/multimediablock.py,
+	  exe/webui/rssblock.py, exe/webui/wikipediablock.py: Take off
+	  strong emphasis from idevice editor, RSS, MP3 and Wikipedia
+	  idevices.
+
+2006-09-11 22:46  brent
+
+	* exe/engine/multimediaidevice.py, exe/webui/element.py,
+	  exe/webui/style/base.css, exe/webui/style/default/content.css:
+	  minor fix to wording of MP3 and some css that i don't really
+	  remember what it is :-)
+
+2006-09-11 21:34  sean
+
+	* exe/export/websitepage.py: * the formatting of the >> Next to Next
+	  >>
+
+2006-09-11 02:38  jim
+
+	* exe/engine/multimediaidevice.py: trivial: correct typo in
+	  university name
+
+2006-09-11 02:33  jim
+
+	* exe/engine/rssidevice.py: trivial: correct typo in university name
+
+2006-09-11 01:46  jenny
+
+	* exe/engine/rssidevice.py,
+	  exe/webui/images/maths/relations/sqsubset.gif: fixed issue 464 rss
+	  idevice help tips. 438 math idevice remove broken toolbar buttons.
+
+2006-09-11 00:16  jim
+
+	* exe/engine/config.py: coerce WebDir to be an absolute path
+
+2006-09-10 22:47  matiu
+
+	* exe/locale/cs/LC_MESSAGES, exe/locale/cs/LC_MESSAGES/exe.mo,
+	  exe/locale/tl/LC_MESSAGES, exe/locale/tl/LC_MESSAGES/exe.mo,
+	  exe/locale/tl/exe_tg.po: Added Czech and Tagalog to release
+
+2006-09-10 22:31  matiu
+
+	* exe/locale/ca/exe_ca.po, exe/locale/cs/exe_cs.po,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/ee/LC_MESSAGES/exe.mo, exe/locale/ee/exe_ee.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/fa/exe_fa.po, exe/locale/fr/LC_MESSAGES/exe.mo,
+	  exe/locale/fr/exe_fr.po, exe/locale/hi/exe_hi.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/LC_MESSAGES/exe.mo,
+	  exe/locale/it/exe_it.po, exe/locale/ja/exe_ja.po,
+	  exe/locale/ja/exe_jp.po, exe/locale/le/exe_l7.po,
+	  exe/locale/le/exe_le.po, exe/locale/le/exe_tt.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/mr/exe_mr.po,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/LC_MESSAGES/exe.mo, exe/locale/pt/exe_pt.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/qu/exe_qu.po,
+	  exe/locale/sk/LC_MESSAGES/exe.mo, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/tg/exe_tg.po, exe/locale/tl/exe_tg.po,
+	  exe/locale/tl/exe_tl.po, exe/locale/tw/LC_MESSAGES/exe.mo,
+	  exe/locale/tw/exe_tw.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh_tw/LC_MESSAGES/exe.mo,
+	  exe/locale/zh_tw/exe_zh_tw.po, exe/locale/zu/LC_MESSAGES/exe.mo,
+	  exe/locale/zu/exe_zu.po: Ran mki18n.py
+
+2006-09-10 22:28  matiu
+
+	* exe/locale/ca/exe_ca.po.stats, exe/locale/ca/pootle-exe-ca.stats,
+	  exe/locale/cs/exe_cs.po.stats, exe/locale/cs/pootle-exe-cs.stats,
+	  exe/locale/de/exe_de.po.stats, exe/locale/de/pootle-exe-de.stats,
+	  exe/locale/el/exe_el.po.stats, exe/locale/el/pootle-exe-el.stats,
+	  exe/locale/en/exe_en.po.stats, exe/locale/en/pootle-exe-en.stats,
+	  exe/locale/es/exe_es.po.stats, exe/locale/es/pootle-exe-es.stats,
+	  exe/locale/et/exe_et.po.stats, exe/locale/et/pootle-exe-et.stats,
+	  exe/locale/fa/exe_fa.po.stats, exe/locale/fa/pootle-exe-fa.stats,
+	  exe/locale/fr/exe_fr.po.stats, exe/locale/fr/pootle-exe-fr.stats,
+	  exe/locale/hi/exe_hi.po.stats, exe/locale/hi/pootle-exe-hi.stats,
+	  exe/locale/hu/exe_hu.po.stats, exe/locale/hu/pootle-exe-hu.stats,
+	  exe/locale/is/exe_is.po.stats, exe/locale/is/pootle-exe-is.stats,
+	  exe/locale/it/exe_it.po.stats, exe/locale/it/pootle-exe-it.stats,
+	  exe/locale/ja/exe_ja.po.stats, exe/locale/ja/exe_jp.po.stats,
+	  exe/locale/ja/pootle-exe-ja.stats, exe/locale/le/exe_l7.po.stats,
+	  exe/locale/le/exe_le.po.stats, exe/locale/le/exe_tt.po.stats,
+	  exe/locale/le/pootle-exe-le.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.stats, exe/locale/mr/exe_mr.po.stats,
+	  exe/locale/mr/pootle-exe-mr.stats, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.stats, exe/locale/pt/exe_pt.po.stats,
+	  exe/locale/pt/pootle-exe-pt.stats, exe/locale/qu/exe_qu.po.stats,
+	  exe/locale/qu/pootle-exe-qu.stats, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sk/pootle-exe-sk.stats, exe/locale/sl/exe_sl.po.stats,
+	  exe/locale/sl/pootle-exe-sl.stats, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/sv/pootle-exe-sv.stats, exe/locale/tl/exe_tg.po.stats,
+	  exe/locale/tl/exe_tl.po, exe/locale/tl/exe_tl.po.stats,
+	  exe/locale/tl/pootle-exe-tl.stats, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.stats,
+	  exe/locale/zh_tw/exe_zh_tw.po.stats,
+	  exe/locale/zh_tw/pootle-exe-zh_tw.stats,
+	  exe/locale/zu/exe_zu.po.stats, exe/locale/zu/pootle-exe-zu.stats:
+	  Incoming from pootle
+
+2006-09-10 22:23  matiu
+
+	* exe/engine/path.py: Should now work ok on Turkish machines: fixes
+	  #440
+
+2006-09-07 23:15  jenny
+
+	* installs/windows/exe.nsi: update exe.nsi for 0.18 installation.
+
+2006-09-07 22:59  jenny
+
+	* exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: add math verbatim button for maths
+	  idevice. issue # 460.
+
+2006-09-05 22:35  matiu
+
+	* exe/webui/scripts/common.js: re: #460 Added move cursor method for
+	  textblocks
+
+2006-09-05 21:59  jenny
+
+	* exe/webui/multimediablock.py: fixed mp3 idevice bugs.
+
+2006-09-05 21:49  brent
+
+	* exe/webui/style/default/content.css: fixes the problem with the
+	  style of the list items in Image w/ Text. Not sure if this is
+	  totally the right way to do it. will explore more.
+
+2006-09-04 05:03  matiu
+
+	* exe/locale/ca/exe_ca.po, exe/locale/cs/exe_cs.po,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/ee/LC_MESSAGES/exe.mo, exe/locale/ee/exe_ee.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/fa/exe_fa.po, exe/locale/fr/LC_MESSAGES/exe.mo,
+	  exe/locale/fr/exe_fr.po, exe/locale/hi/exe_hi.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/LC_MESSAGES/exe.mo,
+	  exe/locale/it/exe_it.po, exe/locale/ja/exe_ja.po,
+	  exe/locale/ja/exe_jp.po, exe/locale/le/exe_l7.po,
+	  exe/locale/le/exe_le.po, exe/locale/le/exe_tt.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/mr/exe_mr.po,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/LC_MESSAGES/exe.mo, exe/locale/pt/exe_pt.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/qu/exe_qu.po,
+	  exe/locale/sk/LC_MESSAGES/exe.mo, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/tg/exe_tg.po, exe/locale/tl/exe_tg.po,
+	  exe/locale/tl/exe_tl.po, exe/locale/tw/LC_MESSAGES/exe.mo,
+	  exe/locale/tw/exe_tw.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh_tw/LC_MESSAGES/exe.mo,
+	  exe/locale/zh_tw/exe_zh_tw.po, exe/locale/zu/LC_MESSAGES/exe.mo,
+	  exe/locale/zu/exe_zu.po: Ran mki18n.py
+
+2006-09-04 04:06  matiu
+
+	* exe/engine/mathidevice.py, exe/engine/multimediaidevice.py,
+	  exe/engine/rssidevice.py: * Removed blank strings bieng translated
+	  * Moved tip text into purpose
+
+2006-09-04 03:54  matiu
+
+	* exe/locale/cs/exe_cs.po, exe/locale/cs/exe_cs.po.stats,
+	  exe/locale/el/exe_el.po.pending, exe/locale/el/exe_el.po.stats,
+	  exe/locale/hu/exe_hu.po.pending, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/nl/exe_nl.po.pending, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/qu/exe_qu.po.stats, exe/locale/qu/pootle-exe-qu.stats,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sl/pootle-exe-sl.stats,
+	  exe/locale/tg/exe_tg.po, exe/locale/tg/exe_tg.po.stats,
+	  exe/locale/tl/exe_tl.po, exe/locale/tl/exe_tl.po.stats,
+	  exe/locale/tl/pootle-exe-tl.stats: Incoming from pootle
+
+2006-09-04 02:53  jenny
+
+	* exe/engine/rssidevice.py, exe/webui/rssblock.py: add loading url
+	  help for rss idevice.
+
+2006-09-04 02:40  jenny
+
+	* exe/engine/idevicestore.py, exe/engine/rssidevice.py,
+	  exe/export/websitepage.py, exe/webui/builtinblocks.py,
+	  exe/webui/rssblock.py: fixed rss idevice bugs.
+
+2006-09-01 11:29  jim
+
+	* exe/xului/mainpage.py: connect "report issue" menu item to
+	  http://exelearning.org/issue.php rather than directly to Mantis
+	  (or Trac)
+
+2006-08-29 21:58  brent
+
+	* exe/engine/multimediaidevice.py, exe/webui/element.py: file name
+	  is now in red, minor change to ped tip.
+
+2006-08-29 01:24  sean
+
+	* exe/engine/mathidevice.py: change from instruction to pedagogical
+	  tip for the math idevice
+
+2006-08-29 01:22  sean
+
+	* exe/engine/multimediaidevice.py: change from instruction to
+	  pedagogical tip for the mp3 idevice
+
+2006-08-28 23:47  brent
+
+	* exe/webui/images/maths/relations/geq.gif: modified this little
+	  sucker to reflect the image that it generates.
+
+2006-08-28 23:44  jenny
+
+	* exe/engine/multimediaidevice.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: change mp3 idevice only plays mp3
+	  file and fixed maths idevice deleting bugs.
+
+2006-08-28 23:44  sean
+
+	* exe/engine/mathidevice.py: Fix spelling error in instructions for
+	  completion earlier added
+
+2006-08-28 23:12  sean
+
+	* exe/webui/element.py: * Removed redundant input attribute from
+	  math field
+
+2006-08-28 23:04  sean
+
+	* exe/engine/mathidevice.py: The Pedagogical tips for the math
+	  idevice reviewed and updated
+
+2006-08-28 22:48  sean
+
+	* exe/engine/field.py: * instructions for completion of the math
+	  idevice revised
+
+2006-08-28 22:29  sean
+
+	* exe/engine/field.py: * Removed duplicate math field * Removed
+	  redundant input attribute from math field
+
+2006-08-28 22:05  sean
+
+	* exe/engine/multimediaidevice.py: * add instructions for completion
+	  of mp3 idevice
+
+2006-08-28 22:03  sean
+
+	* exe/engine/field.py: * Put jenny's change back for math idevice *
+	  Clean up
+
+2006-08-28 04:26  matiu
+
+	* app.fil, exe/locale/ca/exe_ca.po, exe/locale/cs/exe_cs.po,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/fa/exe_fa.po, exe/locale/fr/LC_MESSAGES/exe.mo,
+	  exe/locale/fr/exe_fr.po, exe/locale/hi/exe_hi.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/LC_MESSAGES/exe.mo,
+	  exe/locale/it/exe_it.po, exe/locale/ja/exe_ja.po,
+	  exe/locale/ja/exe_jp.po, exe/locale/le/exe_l7.po,
+	  exe/locale/le/exe_le.po, exe/locale/le/exe_tt.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/mr/exe_mr.po,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/LC_MESSAGES/exe.mo, exe/locale/pt/exe_pt.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/qu/exe_qu.po,
+	  exe/locale/sk/LC_MESSAGES/exe.mo, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/tg/exe_tg.po, exe/locale/tl/exe_tg.po,
+	  exe/locale/tl/exe_tl.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh_tw/LC_MESSAGES/exe.mo,
+	  exe/locale/zh_tw/exe_zh_tw.po, exe/locale/zu/LC_MESSAGES/exe.mo,
+	  exe/locale/zu/exe_zu.po: Ran mki18n.py
+
+2006-08-28 04:24  matiu
+
+	* exe/locale/ee, exe/locale/ee/LC_MESSAGES,
+	  exe/locale/ee/LC_MESSAGES/exe.mo, exe/locale/ee/exe_ee.po,
+	  exe/locale/tw, exe/locale/tw/LC_MESSAGES,
+	  exe/locale/tw/LC_MESSAGES/exe.mo, exe/locale/tw/exe_tw.po: Added
+	  1/2 done Ewe and Twi Languages from Ghana, West Africa
+
+2006-08-28 04:22  matiu
+
+	* exe/engine/version.py: Updated version.py
+
+2006-08-28 04:21  matiu
+
+	* NEWS, README: Updated readme and news
+
+2006-08-28 03:55  matiu
+
+	* exe/locale/exe_de.po, exe/locale/exe_el.po, exe/locale/exe_en.po,
+	  exe/locale/exe_es.po, exe/locale/exe_is.po, exe/locale/exe_it.po,
+	  exe/locale/exe_mi.po, exe/locale/exe_nl.po,
+	  exe/locale/exe_pt_pt.po, exe/locale/exe_sv.po,
+	  exe/locale/exe_zh.po: Clean up locale dir part 1
+
+2006-08-28 03:35  matiu
+
+	* exe/webui/clozeblock.py: Now cloze saves, when you add another
+	  idevice instead of clicking the tick. Fixes #446
+
+2006-08-28 02:46  jenny
+
+	* exe/webui/multimediablock.py: fixed multimedia idevice export not
+	  showing icon bugs.
+
+2006-08-28 01:15  sean
+
+	* exe/engine/casestudyidevice.py, exe/engine/field.py: Made image
+	  available in feedback for case study idevice. Fixes #437
+
+2006-08-28 01:14  sean
+
+	* exe/webui/casestudyblock.py, exe/webui/element.py,
+	  exe/webui/images/empty.gif, exe/webui/questionelement.py: Made
+	  image available in feedback for case study idevice. Fixes #437
+
+2006-08-27 23:49  sean
+
+	* exe/xului/mainpage.py: Fixed incorrect comment
+
+2006-08-27 23:48  sean
+
+	* exe/export/scormexport.py, exe/export/websitepage.py: Made next
+	  and previous be translated on both scorm and website export. Fixes
+	  #448
+
+2006-08-27 23:34  jenny
+
+	* exe/engine/field.py, exe/engine/idevicestore.py,
+	  exe/engine/multimediaidevice.py, exe/export/websiteexport.py,
+	  exe/webui/builtinblocks.py, exe/webui/element.py,
+	  exe/webui/multimediablock.py: fixed multimedia idevice bugs.
+
+2006-08-25 03:17  brent
+
+	* exe/webui/style/seamist/icon_discussion.gif: added discussion icon
+	  to seamist.
+
+2006-08-25 03:05  matiu
+
+	* README: Updated tracker link in README. refs #449
+
+2006-08-25 03:01  brent
+
+	* exe/webui/css/exe.css, exe/webui/element.py,
+	  exe/webui/mathblock.py: minor adjustment to maths preview and css
+	  for latex buttons.
+
+2006-08-25 02:52  jenny
+
+	* exe/webui/images/maths/arrows: fixes #444
+
+2006-08-25 02:11  brent
+
+	* exe/engine/mathidevice.py: added pedagogical help and instructions
+	  for completion.
+
+2006-08-24 23:45  jenny
+
+	* installs/windows/idevices.ini: add idevices.ini for windows
+	  installation.
+
+2006-08-24 23:38  jenny
+
+	* exe/webui/templates/mimetex.exe: Mimetex for windows
+
+2006-08-24 23:33  matiu
+
+	* exe/engine/multichoiceidevice.py,
+	  exe/idevices/multichoiceblock.py,
+	  exe/idevices/multichoiceidevice.py, exe/webui/multichoiceblock.py:
+	  Put multichoiceidevice as a builtin as it always should have been.
+
+2006-08-24 06:49  matiu
+
+	* exe/webui/element.py: Detabify
+
+2006-08-24 06:43  matiu
+
+	* exe/engine/idevicestore.py, exe/engine/rssidevice.py,
+	  exe/export/scormexport.py, exe/webui/builtinblocks.py,
+	  exe/webui/rssblock.py: Added rssidevice (Jenny)
+
+2006-08-24 06:42  matiu
+
+	* exe/engine/idevicestore.py, exe/webui/builtinblocks.py: Finish
+	  moving Multimedia IDevice into builtins
+
+2006-08-24 06:36  matiu
+
+	* exe/engine/multimediaidevice.py, exe/idevices/multimediablock.py,
+	  exe/idevices/multimediaidevice.py, exe/webui/multimediablock.py:
+	  Make multimedia into builtin again! oops.
+
+2006-08-24 06:34  matiu
+
+	* exe/engine/multichoiceidevice.py,
+	  exe/idevices/multichoiceblock.py,
+	  exe/idevices/multichoiceidevice.py, exe/webui/multichoiceblock.py:
+	  Changed multimedia IDevice into a plugin.
+
+2006-08-24 06:31  matiu
+
+	* exe/webui/element.py, exe/webui/genericblock.py,
+	  exe/webui/images/maths/relations/bowtie.gif,
+	  exe/webui/images/maths/relations/cong.gif,
+	  exe/webui/images/maths/relations/doteq.gif,
+	  exe/webui/images/maths/relations/join.gif,
+	  exe/webui/images/maths/relations/models.gif,
+	  exe/webui/scripts/common.js, exe/webui/testoptionelement.py,
+	  exe/webui/testquestionelement.py: * Remove some math toolbar
+	  images (jenny) fixes #438 * Fix some bugs in IDevice editor
+	  (jenny)
+
+2006-08-24 05:57  matiu
+
+	* exe/webui/common.py, exe/webui/element.py,
+	  exe/webui/scripts/common.js: * Removed ischanged from maths
+	  toolbar clicks to fix mibehaviour (jenny)
+
+2006-08-24 05:49  matiu
+
+	* exe/idevices/multimediablock.py, exe/webui/common.py,
+	  exe/webui/element.py, exe/webui/images/maths/arrows,
+	  exe/webui/images/maths/arrows/bigcap.gif,
+	  exe/webui/images/maths/arrows/bigcup.gif,
+	  exe/webui/images/maths/arrows/bigdownarrow.gif,
+	  exe/webui/images/maths/arrows/bigleftarrow.gif,
+	  exe/webui/images/maths/arrows/bigleftrightarrow.gif,
+	  exe/webui/images/maths/arrows/biguparrow.gif,
+	  exe/webui/images/maths/binary oprations,
+	  exe/webui/images/maths/binary oprations/Thumbs.db,
+	  exe/webui/images/maths/binary oprations/amalg.gif,
+	  exe/webui/images/maths/binary oprations/bigcirc.gif,
+	  exe/webui/images/maths/binary oprations/bigtriangledown.gif,
+	  exe/webui/images/maths/binary oprations/bigtriangleup.gif,
+	  exe/webui/images/maths/binary oprations/bullet.gif,
+	  exe/webui/images/maths/binary oprations/cap.gif,
+	  exe/webui/images/maths/binary oprations/cdot.gif,
+	  exe/webui/images/maths/binary oprations/circ.gif,
+	  exe/webui/images/maths/binary oprations/cup.gif,
+	  exe/webui/images/maths/binary oprations/dagger.gif,
+	  exe/webui/images/maths/binary oprations/ddagger.gif,
+	  exe/webui/images/maths/binary oprations/diamond.gif,
+	  exe/webui/images/maths/binary oprations/div.gif,
+	  exe/webui/images/maths/binary oprations/mp.gif,
+	  exe/webui/images/maths/binary oprations/odot.gif,
+	  exe/webui/images/maths/binary oprations/ominus.gif,
+	  exe/webui/images/maths/binary oprations/oplus.gif,
+	  exe/webui/images/maths/binary oprations/oslash.gif,
+	  exe/webui/images/maths/binary oprations/otimes.gif,
+	  exe/webui/images/maths/binary oprations/pm.gif,
+	  exe/webui/images/maths/binary oprations/setminus.gif,
+	  exe/webui/images/maths/binary oprations/sqcap.gif,
+	  exe/webui/images/maths/binary oprations/sqcup.gif,
+	  exe/webui/images/maths/binary oprations/times.gif,
+	  exe/webui/images/maths/binary oprations/triangleleft.gif,
+	  exe/webui/images/maths/binary oprations/triangleright.gif,
+	  exe/webui/images/maths/binary oprations/uplus.gif,
+	  exe/webui/images/maths/binary oprations/vee.gif,
+	  exe/webui/images/maths/binary oprations/wedge.gif,
+	  exe/webui/images/maths/binary oprations/wr.gif,
+	  exe/webui/images/maths/relations,
+	  exe/webui/images/maths/relations/Thumbs.db,
+	  exe/webui/images/maths/relations/approx.gif,
+	  exe/webui/images/maths/relations/asymp.gif,
+	  exe/webui/images/maths/relations/bowtie.gif,
+	  exe/webui/images/maths/relations/cong.gif,
+	  exe/webui/images/maths/relations/dashv.gif,
+	  exe/webui/images/maths/relations/doteq.gif,
+	  exe/webui/images/maths/relations/equiv.gif,
+	  exe/webui/images/maths/relations/frown.gif,
+	  exe/webui/images/maths/relations/geq.gif,
+	  exe/webui/images/maths/relations/gg.gif,
+	  exe/webui/images/maths/relations/in.gif,
+	  exe/webui/images/maths/relations/join.gif,
+	  exe/webui/images/maths/relations/leq.gif,
+	  exe/webui/images/maths/relations/ll.gif,
+	  exe/webui/images/maths/relations/mid.gif,
+	  exe/webui/images/maths/relations/models.gif,
+	  exe/webui/images/maths/relations/neq.gif,
+	  exe/webui/images/maths/relations/ni.gif,
+	  exe/webui/images/maths/relations/parallel.gif,
+	  exe/webui/images/maths/relations/perp.gif,
+	  exe/webui/images/maths/relations/prec.gif,
+	  exe/webui/images/maths/relations/preceq.gif,
+	  exe/webui/images/maths/relations/propto.gif,
+	  exe/webui/images/maths/relations/sim.gif,
+	  exe/webui/images/maths/relations/simeq.gif,
+	  exe/webui/images/maths/relations/smile.gif,
+	  exe/webui/images/maths/relations/sqsubset.gif,
+	  exe/webui/images/maths/relations/sqsubseteq.gif,
+	  exe/webui/images/maths/relations/sqsupset.gif,
+	  exe/webui/images/maths/relations/sqsupseteq.gif,
+	  exe/webui/images/maths/relations/subset.gif,
+	  exe/webui/images/maths/relations/subseteq.gif,
+	  exe/webui/images/maths/relations/succ.gif,
+	  exe/webui/images/maths/relations/succeq.gif,
+	  exe/webui/images/maths/relations/supset.gif,
+	  exe/webui/images/maths/relations/supseteq.gif,
+	  exe/webui/images/maths/relations/vdash.gif: * Extra images for
+	  math toolbar (jenny) * Add emphasis to multimediablock (sean) re
+	  #445
+
+2006-08-24 05:23  matiu
+
+	* README: Updated readme for mac (jim)
+
+2006-08-24 04:53  matiu
+
+	* exe/export/singlepageexport.py: Fixed singlepage export bug
+
+2006-08-24 04:50  matiu
+
+	* exe/engine/mathidevice.py, exe/webui/common.py,
+	  exe/webui/element.py, exe/webui/images/maths,
+	  exe/webui/images/maths/greek letters, exe/webui/images/maths/greek
+	  letters/Sigma.png, exe/webui/images/maths/greek letters/alpha.gif,
+	  exe/webui/images/maths/greek letters/beta.gif,
+	  exe/webui/images/maths/greek letters/chi.gif,
+	  exe/webui/images/maths/greek letters/delta.gif,
+	  exe/webui/images/maths/greek letters/epsilon.gif,
+	  exe/webui/images/maths/greek letters/eta.gif,
+	  exe/webui/images/maths/greek letters/gamma.gif,
+	  exe/webui/images/maths/greek letters/kappa.gif,
+	  exe/webui/images/maths/greek letters/lambda.gif,
+	  exe/webui/images/maths/greek letters/mu.gif,
+	  exe/webui/images/maths/greek letters/nu.gif,
+	  exe/webui/images/maths/greek letters/omega.gif,
+	  exe/webui/images/maths/greek letters/phi.gif,
+	  exe/webui/images/maths/greek letters/pi.gif,
+	  exe/webui/images/maths/greek letters/psi.gif,
+	  exe/webui/images/maths/greek letters/rho.gif,
+	  exe/webui/images/maths/greek letters/sigma.gif,
+	  exe/webui/images/maths/greek letters/tau.gif,
+	  exe/webui/images/maths/greek letters/theta.gif,
+	  exe/webui/images/maths/greek letters/upsilon.gif,
+	  exe/webui/images/maths/greek letters/varepsilon.gif,
+	  exe/webui/images/maths/greek letters/varphi.gif,
+	  exe/webui/images/maths/greek letters/varpi.gif,
+	  exe/webui/images/maths/greek letters/varrho.gif,
+	  exe/webui/images/maths/greek letters/varsigma.gif,
+	  exe/webui/images/maths/greek letters/vartheta.gif,
+	  exe/webui/images/maths/greek letters/xi.gif,
+	  exe/webui/images/maths/greek letters/zeta.gif,
+	  exe/webui/scripts/common.js: Working math toolbar. re #438
+
+2006-08-24 02:25  matiu
+
+	* exe/engine/field.py, exe/webui/common.py, exe/webui/css/exe.css,
+	  exe/webui/element.py: Toolbar for maths idevice
+
+2006-08-24 01:58  matiu
+
+	* exe/engine/mathidevice.py, exe/webui/element.py,
+	  exe/webui/mathblock.py: * Math IDevice added * Small bug fix for
+	  multimedia IDevice
+
+2006-08-24 00:45  matiu
+
+	* exe/application.py, exe/engine/field.py,
+	  exe/engine/idevicestore.py, exe/engine/mimetex.py,
+	  exe/engine/resource.py, exe/webui/builtinblocks.py,
+	  exe/webui/element.py: Math IDevice Added
+
+2006-08-24 00:24  matiu
+
+	* exe/engine/mimetex.py: Made mimetex work on both linux and windows
+
+2006-08-24 00:20  matiu
+
+	* exe/engine/idevicestore.py: IDeviceStore.py
+
+2006-08-23 23:46  matiu
+
+	* exe/engine/feedparser.py, exe/engine/flashmovieidevice.py,
+	  exe/engine/idevicestore.py, exe/engine/mimetex.py,
+	  exe/engine/quiztestidevice.py, exe/export/websiteexport.py,
+	  exe/webui/docs/credits.xhtml, exe/webui/element.py,
+	  exe/webui/flashmovieblock.py, exe/webui/quiztestblock.py,
+	  exe/webui/templates/mp3player.swf,
+	  exe/webui/testquestionelement.py: Final tidyups to make it 0.17 or
+	  near enough.
+
+2006-08-23 01:58  matiu
+
+	* exe/export/textexport.py: Updated textexport
+
+2006-08-22 03:05  matiu
+
+	* exe/engine/mimetex.py, exe/webui/templates/mimetex.64.cgi,
+	  exe/webui/templates/mimetex.cgi: Mimetex linux bits...
+
+2006-08-22 01:59  matiu
+
+	* exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/webui/linux-profile/prefs.js, tools/mki18n.py: * Fixed silly
+	  bug in mki18n.py * Jim's fix to stop firefox auto-updating *
+	  Slovenian .mo file as received from urska, because po file was
+	  incomplete
+
+2006-08-22 01:50  matiu
+
+	* app.fil, exe/locale/ca/exe_ca.po, exe/locale/cs/exe_cs.po,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_de.po, exe/locale/exe_el.po, exe/locale/exe_en.po,
+	  exe/locale/exe_es.po, exe/locale/exe_is.po, exe/locale/exe_it.po,
+	  exe/locale/exe_mi.po, exe/locale/exe_nl.po, exe/locale/exe_sv.po,
+	  exe/locale/exe_zh.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/fr/LC_MESSAGES, exe/locale/fr/LC_MESSAGES/exe.mo,
+	  exe/locale/fr/exe_fr.po, exe/locale/hi/exe_hi.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/LC_MESSAGES,
+	  exe/locale/it/LC_MESSAGES/exe.mo, exe/locale/it/exe_it.po,
+	  exe/locale/le/exe_le.po, exe/locale/le/exe_le.po.pending,
+	  exe/locale/le/exe_le.po.stats, exe/locale/le/pootle-exe-le.prefs,
+	  exe/locale/le/pootle-exe-le.stats, exe/locale/messages.pot,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/mi/exe_mi.po,
+	  exe/locale/mr/exe_mr.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/exe_pt.po, exe/locale/qu/exe_qu.po,
+	  exe/locale/sk/LC_MESSAGES, exe/locale/sk/LC_MESSAGES/exe.mo,
+	  exe/locale/sk/exe_sk.po, exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/locale/sl/exe_sl.po, exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/exe_sv.po, exe/locale/tl/exe_tg.po,
+	  exe/locale/tl/exe_tl.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zh_tw/LC_MESSAGES/exe.mo,
+	  exe/locale/zh_tw/exe_zh_tw.po, exe/locale/zu/LC_MESSAGES,
+	  exe/locale/zu/LC_MESSAGES/exe.mo, exe/locale/zu/exe_zu.po,
+	  tools/mki18n.py: Update from pootle
+
+2006-08-22 00:18  matiu
+
+	* exe/engine/config.py: fix scan for styles so that it works when
+	  webDir is a relative directory name (Jim)
+
+2006-08-22 00:16  matiu
+
+	* exe/webui/preferencespage.py: sort locales in preference pane
+	  option list (Jim)
+
+2006-08-22 00:13  matiu
+
+	* exe/locale/de/LC_MESSAGES/exe.mo,
+	  exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/es/LC_MESSAGES/exe.mo,
+	  exe/locale/et/LC_MESSAGES/exe.mo,
+	  exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh_tw/LC_MESSAGES/exe.mo: Update all .mo files by jenny
+	  in windows using poedit
+
+2006-08-21 23:58  matiu
+
+	* exe/xului/mainpage.py, exe/xului/templates/mainpage.xul: Mac:
+	  special case handleRegister and handleReportIssue to launch
+	  webbrowser on Mac. add handler to render mainMenu, which is
+	  converted to toolbar on Mac (matiu). (Jim)
+
+2006-08-21 23:27  matiu
+
+	* exe.icns, exe_elp.icns: Mac: associate .elp files with eXe Mac:
+	  add icons for eXe application and .elp documents (Jim)
+
+2006-08-21 23:26  matiu
+
+	* mac-setup.py: Mac: associate .elp files with eXe Mac: add icons
+	  for eXe application and .elp documents (Jim)
+
+2006-08-21 22:45  matiu
+
+	* exe/webui/preferencespage.py: Made it check both poedit-language
+	  and exe-language again.
+
+2006-08-21 22:43  matiu
+
+	* exe/webui/aboutpage.py: Updated Copyright Statement in about page
+
+2006-08-21 22:38  matiu
+
+	* exe/locale/sl/exe_sl.po, exe/locale/zh_tw/exe_zh_tw.po: Updated
+	  exe names for some po files
+
+2006-08-21 22:05  matiu
+
+	* installs/rpm/exe.spec: RPM Spec file
+
+2006-08-21 22:02  matiu
+
+	* exe/locale/zh_tw/LC_MESSAGES, exe/locale/zh_tw/LC_MESSAGES/exe.mo:
+	  Windows compiled traditional chinese binary.
+
+2006-08-21 22:00  matiu
+
+	* installs/windows/exe.nsi, installs/windows/flashmovie update.nsi,
+	  installs/windows/scormquiz update.nsi: Update of windows installs
+
+2006-08-21 21:55  matiu
+
+	* exe/engine/idevicestore.py, exe/engine/version.py,
+	  exe/webui/renderable.py, exe/xului/scripts/mainpage.js,
+	  exe/xului/templates/mainpage.xul: Add Text Export
+
+2006-08-21 04:05  matiu
+
+	* exe/locale/es/exe_es.po, exe/locale/es/exe_es.po.stats,
+	  exe/locale/sk/exe_sk.po.stats, exe/locale/sk/pootle-exe-sk.stats,
+	  exe/locale/tl/exe_tg.po.stats, exe/locale/tl/exe_tl.po.stats,
+	  exe/locale/tl/pootle-exe-tl.stats, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.stats, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.stats: Incoming from pootle
+
+2006-08-21 03:59  matiu
+
+	* exe/locale/zh_tw, exe/locale/zh_tw/exe_zh_tw.po,
+	  exe/locale/zh_tw/exe_zh_tw.po.pending,
+	  exe/locale/zh_tw/exe_zh_tw.po.stats,
+	  exe/locale/zh_tw/pootle-exe-zh_tw.prefs,
+	  exe/locale/zh_tw/pootle-exe-zh_tw.stats: Chinese traditional
+	  (Taiwan) translation
+
+2006-08-21 03:54  matiu
+
+	* exe/engine/field.py, exe/engine/htmlToText.py,
+	  exe/export/imsexport.py, exe/export/scormexport.py,
+	  exe/export/singlepageexport.py, exe/export/textexport.py,
+	  exe/export/websiteexport.py, exe/idevices/multimediablock.py,
+	  exe/idevices/multimediaidevice.py, exe/xului/mainpage.py: Add
+	  website zip export, text export and mp3 idevice. (Jenny)
+
+2006-08-21 03:52  matiu
+
+	* exe_48x48.png: Found this file lying around in my source tree!
+
+2006-08-21 03:32  matiu
+
+	* exe/locale/l7, exe/locale/le: Renamed l33t translation
+
+2006-08-21 03:25  matiu
+
+	* formless, formless/__init__.py, formless/annotate.py,
+	  formless/configurable.py, formless/formutils.py,
+	  formless/freeform-default.css, formless/iformless.py,
+	  formless/processors.py, formless/test, formless/test/__init__.py,
+	  formless/test/test_formless.py, formless/test/test_freeform.py,
+	  formless/webform.py: Moved formless into the source, because
+	  fedora doesn't have a package for it.
+
+2006-08-21 03:13  matiu
+
+	* nevow, nevow/Canvas.swf, nevow/__init__.py, nevow/accessors.py,
+	  nevow/appserver.py, nevow/blocks.py, nevow/canvas.py,
+	  nevow/compy.py, nevow/compyCompat.py, nevow/context.py,
+	  nevow/dirlist.py, nevow/entities.py, nevow/events.py,
+	  nevow/failure.py, nevow/flat, nevow/flat/__init__.py,
+	  nevow/flat/flatmdom.py, nevow/flat/flatsax.py,
+	  nevow/flat/flatstan.py, nevow/flat/ten.py, nevow/flat/twist.py,
+	  nevow/guard.py, nevow/i18n.py, nevow/inevow.py,
+	  nevow/itaglibrary.py, nevow/liveevil.js, nevow/liveevil.py,
+	  nevow/liveglue.js, nevow/livepage.py,
+	  nevow/livetest-postscripts.js, nevow/livetest.css,
+	  nevow/livetest.js, nevow/livetest.py, nevow/loaders.py,
+	  nevow/query.py, nevow/rend.py, nevow/scripts,
+	  nevow/scripts/__init__.py, nevow/scripts/xmlgettext.py,
+	  nevow/stan.py, nevow/static.py, nevow/taglibrary,
+	  nevow/taglibrary/__init__.py, nevow/taglibrary/cal.py,
+	  nevow/taglibrary/progressbar.py,
+	  nevow/taglibrary/tabbedPane-layout.css,
+	  nevow/taglibrary/tabbedPane-style.css,
+	  nevow/taglibrary/tabbedPane.js, nevow/taglibrary/tabbedPane.py,
+	  nevow/tags.py, nevow/test, nevow/test/__init__.py,
+	  nevow/test/test_accessors.py, nevow/test/test_appserver.py,
+	  nevow/test/test_context.py, nevow/test/test_disktemplate.py,
+	  nevow/test/test_flatsax.py, nevow/test/test_flatstan.py,
+	  nevow/test/test_flatten.py, nevow/test/test_guard.py,
+	  nevow/test/test_i18n.py, nevow/test/test_later.py,
+	  nevow/test/test_livepage.py, nevow/test/test_loaders.py,
+	  nevow/test/test_passobj.py, nevow/test/test_query.py,
+	  nevow/test/test_rend.py, nevow/test/test_stan.py,
+	  nevow/test/test_static.py, nevow/test/test_url.py,
+	  nevow/testutil.py, nevow/url.py, nevow/util.py, nevow/vhost.py,
+	  nevow/wsgi.py, nevow/zomnesrv.py, twisted, twisted/__init__.py,
+	  twisted/application, twisted/application/__init__.py,
+	  twisted/application/app.py, twisted/application/compat.py,
+	  twisted/application/internet.py, twisted/application/service.py,
+	  twisted/application/strports.py, twisted/copyright.py,
+	  twisted/cred, twisted/cred/__init__.py,
+	  twisted/cred/authorizer.py, twisted/cred/checkers.py,
+	  twisted/cred/credentials.py, twisted/cred/error.py,
+	  twisted/cred/identity.py, twisted/cred/pamauth.py,
+	  twisted/cred/perspective.py, twisted/cred/portal.py,
+	  twisted/cred/service.py, twisted/cred/util.py, twisted/enterprise,
+	  twisted/enterprise/__init__.py, twisted/enterprise/adbapi.py,
+	  twisted/enterprise/reflector.py, twisted/enterprise/row.py,
+	  twisted/enterprise/sqlreflector.py, twisted/enterprise/util.py,
+	  twisted/enterprise/xmlreflector.py, twisted/im.py,
+	  twisted/internet, twisted/internet/__init__.py,
+	  twisted/internet/_dumbwin32proc.py,
+	  twisted/internet/_javaserialport.py,
+	  twisted/internet/_pollingfile.py,
+	  twisted/internet/_posixserialport.py,
+	  twisted/internet/_posixstdio.py,
+	  twisted/internet/_win32serialport.py,
+	  twisted/internet/_win32stdio.py, twisted/internet/abstract.py,
+	  twisted/internet/address.py, twisted/internet/app.py,
+	  twisted/internet/base.py, twisted/internet/cfreactor.py,
+	  twisted/internet/cfsupport, twisted/internet/cfsupport/cfdate.pxi,
+	  twisted/internet/cfsupport/cfdecl.pxi,
+	  twisted/internet/cfsupport/cfrunloop.pxi,
+	  twisted/internet/cfsupport/cfsocket.pxi,
+	  twisted/internet/cfsupport/cfsupport.c,
+	  twisted/internet/cfsupport/cfsupport.pyx,
+	  twisted/internet/cfsupport/python.pxi,
+	  twisted/internet/default.py, twisted/internet/defer.py,
+	  twisted/internet/error.py, twisted/internet/fdesc.py,
+	  twisted/internet/glib2reactor.py, twisted/internet/gtk2reactor.py,
+	  twisted/internet/gtkreactor.py, twisted/internet/interfaces.py,
+	  twisted/internet/iocpreactor,
+	  twisted/internet/iocpreactor/__init__.py,
+	  twisted/internet/iocpreactor/_iocp.c,
+	  twisted/internet/iocpreactor/abstract.py,
+	  twisted/internet/iocpreactor/client.py,
+	  twisted/internet/iocpreactor/iocpdebug.py,
+	  twisted/internet/iocpreactor/ops.py,
+	  twisted/internet/iocpreactor/proactor.py,
+	  twisted/internet/iocpreactor/process.py,
+	  twisted/internet/iocpreactor/process_waiter.py,
+	  twisted/internet/iocpreactor/server.py,
+	  twisted/internet/iocpreactor/tcp.py,
+	  twisted/internet/iocpreactor/udp.py,
+	  twisted/internet/iocpreactor/util.py,
+	  twisted/internet/kqreactor.py, twisted/internet/main.py,
+	  twisted/internet/pollreactor.py, twisted/internet/posixbase.py,
+	  twisted/internet/process.py, twisted/internet/protocol.py,
+	  twisted/internet/pyuisupport.py, twisted/internet/qtreactor.py,
+	  twisted/internet/reactor.py, twisted/internet/selectreactor.py,
+	  twisted/internet/serialport.py, twisted/internet/ssl.py,
+	  twisted/internet/stdio.py, twisted/internet/task.py,
+	  twisted/internet/tcp.py,
+	  twisted/internet/threadedselectreactor.py,
+	  twisted/internet/threads.py, twisted/internet/tksupport.py,
+	  twisted/internet/udp.py, twisted/internet/unix.py,
+	  twisted/internet/utils.py, twisted/internet/win32eventreactor.py,
+	  twisted/internet/wxreactor.py, twisted/internet/wxsupport.py,
+	  twisted/manhole, twisted/manhole/__init__.py,
+	  twisted/manhole/_inspectro.py, twisted/manhole/explorer.py,
+	  twisted/manhole/gladereactor.glade,
+	  twisted/manhole/gladereactor.py, twisted/manhole/inspectro.glade,
+	  twisted/manhole/logview.glade, twisted/manhole/service.py,
+	  twisted/manhole/telnet.py, twisted/manhole/ui,
+	  twisted/manhole/ui/__init__.py,
+	  twisted/manhole/ui/gtk2manhole.glade,
+	  twisted/manhole/ui/gtk2manhole.py,
+	  twisted/manhole/ui/gtkmanhole.py, twisted/manhole/ui/gtkrc,
+	  twisted/manhole/ui/pywidgets.py,
+	  twisted/manhole/ui/spelunk_gnome.py, twisted/pb,
+	  twisted/pb/__init__.py, twisted/pb/banana.py,
+	  twisted/pb/base32.py, twisted/pb/broker.py, twisted/pb/call.py,
+	  twisted/pb/copyable.py, twisted/pb/crypto.py, twisted/pb/debug.py,
+	  twisted/pb/ipb.py, twisted/pb/negotiate.py, twisted/pb/pb.py,
+	  twisted/pb/promise.py, twisted/pb/referenceable.py,
+	  twisted/pb/remoteinterface.py, twisted/pb/schema.py,
+	  twisted/pb/slicer.py, twisted/pb/sslverify.py,
+	  twisted/pb/storage.py, twisted/pb/test,
+	  twisted/pb/test/__init__.py, twisted/pb/test/common.py,
+	  twisted/pb/test/test_banana.py, twisted/pb/test/test_copyable.py,
+	  twisted/pb/test/test_crypto.py, twisted/pb/test/test_negotiate.py,
+	  twisted/pb/test/test_pb.py, twisted/pb/test/test_promise.py,
+	  twisted/pb/test/test_schema.py, twisted/pb/test/test_sturdyref.py,
+	  twisted/pb/tokens.py, twisted/persisted,
+	  twisted/persisted/__init__.py, twisted/persisted/aot.py,
+	  twisted/persisted/crefutil.py, twisted/persisted/dirdbm.py,
+	  twisted/persisted/journal, twisted/persisted/journal/__init__.py,
+	  twisted/persisted/journal/base.py,
+	  twisted/persisted/journal/picklelog.py,
+	  twisted/persisted/journal/rowjournal.py,
+	  twisted/persisted/marmalade.py, twisted/persisted/sob.py,
+	  twisted/persisted/styles.py, twisted/plugin.py, twisted/plugins,
+	  twisted/plugins/__init__.py, twisted/plugins/dropin.cache,
+	  twisted/plugins/notestplugin.py, twisted/plugins/testplugin.py,
+	  twisted/plugins/twisted_ftp.py, twisted/plugins/twisted_inet.py,
+	  twisted/plugins/twisted_manhole.py,
+	  twisted/plugins/twisted_portforward.py,
+	  twisted/plugins/twisted_socks.py,
+	  twisted/plugins/twisted_telnet.py,
+	  twisted/plugins/twisted_trial.py, twisted/plugins/twisted_web.py,
+	  twisted/protocols, twisted/protocols/__init__.py,
+	  twisted/protocols/_c_urlarg.c, twisted/protocols/_c_urlarg.so,
+	  twisted/protocols/basic.py, twisted/protocols/dict.py,
+	  twisted/protocols/dns.py, twisted/protocols/ethernet.py,
+	  twisted/protocols/finger.py, twisted/protocols/ftp.py,
+	  twisted/protocols/gps, twisted/protocols/gps/__init__.py,
+	  twisted/protocols/gps/nmea.py, twisted/protocols/gps/rockwell.py,
+	  twisted/protocols/htb.py, twisted/protocols/http.py,
+	  twisted/protocols/ident.py, twisted/protocols/imap4.py,
+	  twisted/protocols/ip.py, twisted/protocols/irc.py,
+	  twisted/protocols/jabber.py, twisted/protocols/loopback.py,
+	  twisted/protocols/mice, twisted/protocols/mice/__init__.py,
+	  twisted/protocols/mice/mouseman.py, twisted/protocols/msn.py,
+	  twisted/protocols/nntp.py, twisted/protocols/oscar.py,
+	  twisted/protocols/pcp.py, twisted/protocols/policies.py,
+	  twisted/protocols/pop3.py, twisted/protocols/portforward.py,
+	  twisted/protocols/postfix.py, twisted/protocols/raw.py,
+	  twisted/protocols/rawudp.py, twisted/protocols/shoutcast.py,
+	  twisted/protocols/sip.py, twisted/protocols/smtp.py,
+	  twisted/protocols/socks.py, twisted/protocols/stateful.py,
+	  twisted/protocols/sux.py, twisted/protocols/telnet.py,
+	  twisted/protocols/toc.py, twisted/protocols/wire.py,
+	  twisted/protocols/xmlstream.py, twisted/python,
+	  twisted/python/__init__.py, twisted/python/_twisted_zsh_stub,
+	  twisted/python/compat.py, twisted/python/components.py,
+	  twisted/python/context.py, twisted/python/dispatch.py,
+	  twisted/python/dist.py, twisted/python/dxprofile.py,
+	  twisted/python/failure.py, twisted/python/filepath.py,
+	  twisted/python/finalize.py, twisted/python/formmethod.py,
+	  twisted/python/hook.py, twisted/python/htmlizer.py,
+	  twisted/python/lockfile.py, twisted/python/log.py,
+	  twisted/python/logfile.py, twisted/python/otp.py,
+	  twisted/python/plugin.py, twisted/python/procutils.py,
+	  twisted/python/rebuild.py, twisted/python/reflect.py,
+	  twisted/python/release.py, twisted/python/roots.py,
+	  twisted/python/runtime.py, twisted/python/shortcut.py,
+	  twisted/python/syslog.py, twisted/python/text.py,
+	  twisted/python/threadable.py, twisted/python/threadpool.py,
+	  twisted/python/timeoutqueue.py, twisted/python/urlpath.py,
+	  twisted/python/usage.py, twisted/python/util.py,
+	  twisted/python/win32.py, twisted/python/zipstream.py,
+	  twisted/python/zsh, twisted/python/zsh/README,
+	  twisted/python/zsh/_cftp, twisted/python/zsh/_ckeygen,
+	  twisted/python/zsh/_conch, twisted/python/zsh/_lore,
+	  twisted/python/zsh/_manhole, twisted/python/zsh/_mktap,
+	  twisted/python/zsh/_pyhtmlizer, twisted/python/zsh/_tap2deb,
+	  twisted/python/zsh/_tap2rpm, twisted/python/zsh/_tapconvert,
+	  twisted/python/zsh/_tkconch, twisted/python/zsh/_tkmktap,
+	  twisted/python/zsh/_trial, twisted/python/zsh/_twistd,
+	  twisted/python/zsh/_websetroot, twisted/python/zshcomp.py,
+	  twisted/scripts, twisted/scripts/__init__.py,
+	  twisted/scripts/_twistw.py, twisted/scripts/htmlizer.py,
+	  twisted/scripts/manhole.py, twisted/scripts/mktap.py,
+	  twisted/scripts/tap2deb.py, twisted/scripts/tap2rpm.py,
+	  twisted/scripts/tapconvert.py, twisted/scripts/tkmktap.py,
+	  twisted/scripts/tkunzip.py, twisted/scripts/trial.py,
+	  twisted/scripts/twistd.py, twisted/spread,
+	  twisted/spread/__init__.py, twisted/spread/banana.py,
+	  twisted/spread/cBanana.c, twisted/spread/cBanana.so,
+	  twisted/spread/flavors.py, twisted/spread/interfaces.py,
+	  twisted/spread/jelly.py, twisted/spread/newjelly.py,
+	  twisted/spread/pb.py, twisted/spread/publish.py,
+	  twisted/spread/refpath.py, twisted/spread/sturdy.py,
+	  twisted/spread/ui, twisted/spread/ui/__init__.py,
+	  twisted/spread/ui/gtk2util.py, twisted/spread/ui/gtkutil.py,
+	  twisted/spread/ui/login2.glade, twisted/spread/ui/tktree.py,
+	  twisted/spread/ui/tkutil.py, twisted/spread/util.py, twisted/tap,
+	  twisted/tap/__init__.py, twisted/tap/ftp.py,
+	  twisted/tap/manhole.py, twisted/tap/portforward.py,
+	  twisted/tap/socks.py, twisted/tap/telnet.py, twisted/test,
+	  twisted/test/__init__.py, twisted/test/crash_test_dummy.py,
+	  twisted/test/myrebuilder1.py, twisted/test/myrebuilder2.py,
+	  twisted/test/process_cmdline.py, twisted/test/process_echoer.py,
+	  twisted/test/process_fds.py, twisted/test/process_linger.py,
+	  twisted/test/process_reader.py, twisted/test/process_signal.py,
+	  twisted/test/process_stdinreader.py,
+	  twisted/test/process_tester.py, twisted/test/process_tty.py,
+	  twisted/test/process_twisted.py, twisted/test/proto_helpers.py,
+	  twisted/test/reflect_helper_VE.py,
+	  twisted/test/reflect_helper_ZDE.py, twisted/test/server.pem,
+	  twisted/test/ssl_helpers.py, twisted/test/test_adbapi.py,
+	  twisted/test/test_app.py, twisted/test/test_application.py,
+	  twisted/test/test_assertions.py, twisted/test/test_banana.py,
+	  twisted/test/test_compat.py, twisted/test/test_components.py,
+	  twisted/test/test_context.py, twisted/test/test_cred.py,
+	  twisted/test/test_defer.py, twisted/test/test_defgen.py,
+	  twisted/test/test_dict.py, twisted/test/test_dirdbm.py,
+	  twisted/test/test_doc.py, twisted/test/test_enterprise.py,
+	  twisted/test/test_error.py, twisted/test/test_explorer.py,
+	  twisted/test/test_extensions.py, twisted/test/test_factories.py,
+	  twisted/test/test_failure.py, twisted/test/test_finger.py,
+	  twisted/test/test_formmethod.py, twisted/test/test_ftp.py,
+	  twisted/test/test_hook.py, twisted/test/test_htb.py,
+	  twisted/test/test_ident.py, twisted/test/test_import.py,
+	  twisted/test/test_internet.py, twisted/test/test_iutils.py,
+	  twisted/test/test_jelly.py, twisted/test/test_journal.py,
+	  twisted/test/test_lockfile.py, twisted/test/test_log.py,
+	  twisted/test/test_logfile.py, twisted/test/test_loopback.py,
+	  twisted/test/test_manhole.py, twisted/test/test_newcred.py,
+	  twisted/test/test_newjelly.py, twisted/test/test_nmea.py,
+	  twisted/test/test_paths.py, twisted/test/test_pb.py,
+	  twisted/test/test_pbfailure.py, twisted/test/test_pcp.py,
+	  twisted/test/test_persisted.py, twisted/test/test_plugin.py,
+	  twisted/test/test_policies.py, twisted/test/test_postfix.py,
+	  twisted/test/test_process.py, twisted/test/test_protocols.py,
+	  twisted/test/test_rebuild.py, twisted/test/test_reflect.py,
+	  twisted/test/test_reflector.py, twisted/test/test_release.py,
+	  twisted/test/test_roots.py, twisted/test/test_shortcut.py,
+	  twisted/test/test_sip.py, twisted/test/test_sob.py,
+	  twisted/test/test_socks.py, twisted/test/test_split_compat.py,
+	  twisted/test/test_spread.py, twisted/test/test_ssl.py,
+	  twisted/test/test_stateful.py, twisted/test/test_strports.py,
+	  twisted/test/test_task.py, twisted/test/test_tcp.py,
+	  twisted/test/test_text.py, twisted/test/test_threadable.py,
+	  twisted/test/test_threadpool.py, twisted/test/test_threads.py,
+	  twisted/test/test_timeoutqueue.py, twisted/test/test_tpfile.py,
+	  twisted/test/test_udp.py, twisted/test/test_unix.py,
+	  twisted/test/test_usage.py, twisted/test/test_util.py,
+	  twisted/test/test_zipstream.py, twisted/test/testutils.py,
+	  twisted/test/threading_latency.py, twisted/test/time_helpers.py,
+	  twisted/trial, twisted/trial/NOTES, twisted/trial/__init__.py,
+	  twisted/trial/assertions.py, twisted/trial/itrial.py,
+	  twisted/trial/reporter.py, twisted/trial/runner.py,
+	  twisted/trial/test, twisted/trial/test/__init__.py,
+	  twisted/trial/test/detests.py, twisted/trial/test/erroneous.py,
+	  twisted/trial/test/mockdoctest.py,
+	  twisted/trial/test/moduletest.py, twisted/trial/test/notpython,
+	  twisted/trial/test/novars.py, twisted/trial/test/packages.py,
+	  twisted/trial/test/sample.py, twisted/trial/test/scripttest.py,
+	  twisted/trial/test/suppression.py,
+	  twisted/trial/test/test_assertions.py,
+	  twisted/trial/test/test_class.py,
+	  twisted/trial/test/test_deferred.py,
+	  twisted/trial/test/test_doctest.py,
+	  twisted/trial/test/test_keyboard.py,
+	  twisted/trial/test/test_loader.py,
+	  twisted/trial/test/test_output.py,
+	  twisted/trial/test/test_reporter.py,
+	  twisted/trial/test/test_runner.py,
+	  twisted/trial/test/test_script.py,
+	  twisted/trial/test/test_test_visitor.py,
+	  twisted/trial/test/test_tests.py, twisted/trial/test/test_util.py,
+	  twisted/trial/unittest.py, twisted/trial/util.py, twisted/web,
+	  twisted/web/__init__.py, twisted/web/client.py,
+	  twisted/web/demo.py, twisted/web/distrib.py,
+	  twisted/web/domhelpers.py, twisted/web/error.py,
+	  twisted/web/google.py, twisted/web/guard.py, twisted/web/html.py,
+	  twisted/web/http.py, twisted/web/microdom.py,
+	  twisted/web/monitor.py, twisted/web/proxy.py,
+	  twisted/web/resource.py, twisted/web/rewrite.py,
+	  twisted/web/script.py, twisted/web/scripts,
+	  twisted/web/scripts/__init__.py,
+	  twisted/web/scripts/websetroot.py, twisted/web/server.py,
+	  twisted/web/soap.py, twisted/web/static.py, twisted/web/sux.py,
+	  twisted/web/tap.py, twisted/web/test,
+	  twisted/web/test/__init__.py, twisted/web/test/test_distrib.py,
+	  twisted/web/test/test_domhelpers.py,
+	  twisted/web/test/test_http.py, twisted/web/test/test_mvc.py,
+	  twisted/web/test/test_soap.py, twisted/web/test/test_static.py,
+	  twisted/web/test/test_web.py, twisted/web/test/test_webclient.py,
+	  twisted/web/test/test_woven.py, twisted/web/test/test_xml.py,
+	  twisted/web/test/test_xmlrpc.py, twisted/web/trp.py,
+	  twisted/web/twcgi.py, twisted/web/util.py, twisted/web/vhost.py,
+	  twisted/web/widgets.py, twisted/web/woven,
+	  twisted/web/woven/FlashConduit.fla,
+	  twisted/web/woven/FlashConduit.swf,
+	  twisted/web/woven/FlashConduitGlue.html,
+	  twisted/web/woven/WebConduit2_mozilla.js,
+	  twisted/web/woven/WebConduit2_msie.js,
+	  twisted/web/woven/WebConduitGlue.html,
+	  twisted/web/woven/__init__.py, twisted/web/woven/controller.py,
+	  twisted/web/woven/dirlist.py, twisted/web/woven/flashconduit.py,
+	  twisted/web/woven/form.py, twisted/web/woven/guard.py,
+	  twisted/web/woven/input.py, twisted/web/woven/interfaces.py,
+	  twisted/web/woven/model.py, twisted/web/woven/page.py,
+	  twisted/web/woven/simpleguard.py, twisted/web/woven/tapestry.py,
+	  twisted/web/woven/template.py, twisted/web/woven/utils.py,
+	  twisted/web/woven/view.py, twisted/web/woven/widgets.py,
+	  twisted/web/xmlrpc.py: Moved twisted and nevow source inside of
+	  exe
+
+2006-08-21 03:01  matiu
+
+	* exe/locale/sl/exe_sl.po: Slovenian translation updated
+
+2006-08-21 02:58  matiu
+
+	* app.fil: Crash recovery...
+
+2006-08-21 02:32  matiu
+
+	* installs/windows/logo.jpeg: Stuff from after the great crash
+
+2006-08-21 02:32  matiu
+
+	* installs/debian/ubuntu/buildUbuntuPackage.py,
+	  installs/debian/ubuntu/debian/changelog,
+	  installs/debian/ubuntu/debian/control, installs/windows/exe.nsi:
+	  Stuff from after the great crash
+
+2006-08-21 02:14  matiu
+
+	* exe/locale/ca, exe/locale/ca/exe_ca.po,
+	  exe/locale/ca/exe_ca.po.pending, exe/locale/ca/exe_ca.po.stats,
+	  exe/locale/ca/pootle-exe-ca.prefs,
+	  exe/locale/ca/pootle-exe-ca.stats, exe/locale/cs/exe_cs.po.stats,
+	  exe/locale/cs/pootle-exe-cs.stats, exe/locale/de/exe_de.po.stats,
+	  exe/locale/de/pootle-exe-de.stats, exe/locale/el/exe_el.po.stats,
+	  exe/locale/el/pootle-exe-el.stats, exe/locale/en/exe_en.po.stats,
+	  exe/locale/en/pootle-exe-en.stats, exe/locale/es/exe_es.po.stats,
+	  exe/locale/es/pootle-exe-es.stats, exe/locale/et/exe_et.po.stats,
+	  exe/locale/et/pootle-exe-et.stats, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fa/pootle-exe-fa.stats, exe/locale/fr/exe_fr.po.stats,
+	  exe/locale/fr/pootle-exe-fr.stats, exe/locale/hi/exe_hi.po.stats,
+	  exe/locale/hi/pootle-exe-hi.stats, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/hu/pootle-exe-hu.stats, exe/locale/is/exe_is.po.stats,
+	  exe/locale/is/pootle-exe-is.stats, exe/locale/it/exe_it.po.stats,
+	  exe/locale/it/pootle-exe-it.stats, exe/locale/ja,
+	  exe/locale/ja/LC_MESSAGES, exe/locale/ja/exe_ja.po,
+	  exe/locale/ja/exe_ja.po.pending, exe/locale/ja/exe_ja.po.stats,
+	  exe/locale/ja/exe_ja.xlf, exe/locale/ja/exe_jp.po,
+	  exe/locale/ja/exe_jp.po.pending, exe/locale/ja/exe_jp.po.stats,
+	  exe/locale/ja/exe_jp.xlf, exe/locale/ja/messages.po.pending,
+	  exe/locale/ja/messages.po.stats,
+	  exe/locale/ja/pootle-exe-ja.prefs,
+	  exe/locale/ja/pootle-exe-ja.stats,
+	  exe/locale/ja/pootle-exe-jp.prefs,
+	  exe/locale/ja/pootle-exe-jp.stats, exe/locale/jp, exe/locale/l7,
+	  exe/locale/l7/LC_MESSAGES, exe/locale/l7/exe_l7.po,
+	  exe/locale/l7/exe_l7.po.pending, exe/locale/l7/exe_l7.po.stats,
+	  exe/locale/l7/exe_tt.po, exe/locale/l7/exe_tt.po.pending,
+	  exe/locale/l7/exe_tt.po.stats, exe/locale/l7/pootle-exe-l7.prefs,
+	  exe/locale/l7/pootle-exe-l7.stats,
+	  exe/locale/l7/pootle-exe-tt.prefs,
+	  exe/locale/l7/pootle-exe-tt.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.stats, exe/locale/mr/exe_mr.po.stats,
+	  exe/locale/mr/pootle-exe-mr.stats, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.stats, exe/locale/pt/exe_pt.po.stats,
+	  exe/locale/pt/pootle-exe-pt.stats, exe/locale/sl/exe_sl.po.stats,
+	  exe/locale/sl/pootle-exe-sl.stats, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/sv/pootle-exe-sv.stats, exe/locale/tl,
+	  exe/locale/tl/exe_tg.po, exe/locale/tl/exe_tg.po.pending,
+	  exe/locale/tl/exe_tg.po.stats, exe/locale/tl/exe_tl.po,
+	  exe/locale/tl/exe_tl.po.pending,
+	  exe/locale/tl/exe_tl.po.pending.stats,
+	  exe/locale/tl/exe_tl.po.stats, exe/locale/tl/pootle-exe-tg.prefs,
+	  exe/locale/tl/pootle-exe-tg.stats,
+	  exe/locale/tl/pootle-exe-tl.prefs,
+	  exe/locale/tl/pootle-exe-tl.stats, exe/locale/tt: Incoming from
+	  pootle server
+
+2006-08-21 01:53  matiu
+
+	* exe/application.py, exe/engine/field.py, exe/engine/idevice.py,
+	  exe/engine/idevicestore.py, exe/engine/persist.py,
+	  exe/engine/version.py, exe/export/imsexport.py,
+	  exe/idevices/flashmovieblock.py,
+	  exe/idevices/flashmovieidevice.py, exe/idevices/quiztestblock.py,
+	  exe/idevices/quiztestidevice.py,
+	  exe/idevices/testoptionelement.py,
+	  exe/idevices/testquestionelement.py, exe/locale/cs/exe_cs.po,
+	  exe/locale/cs/exe_cs.po.stats, exe/locale/cs/pootle-exe-cs.stats,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/es/exe_es.po.stats, exe/locale/es/pootle-exe-es.prefs,
+	  exe/locale/es/pootle-exe-es.stats,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_de.po, exe/locale/exe_el.po, exe/locale/exe_en.po,
+	  exe/locale/exe_es.po, exe/locale/exe_is.po, exe/locale/exe_it.po,
+	  exe/locale/exe_mi.po, exe/locale/exe_nl.po, exe/locale/exe_sv.po,
+	  exe/locale/exe_zh.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/fr/exe_fr.po, exe/locale/fr/exe_fr.po.stats,
+	  exe/locale/fr/pootle-exe-fr.stats, exe/locale/hi/exe_hi.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/jp/exe_jp.po, exe/locale/messages.pot,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/mi/exe_mi.po,
+	  exe/locale/mr/exe_mr.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/nl/exe_nl.po.pending,
+	  exe/locale/nl/exe_nl.po.stats, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pl/exe_pl.po.pending,
+	  exe/locale/pl/exe_pl.po.stats, exe/locale/pt/LC_MESSAGES/exe.mo,
+	  exe/locale/pt/exe_pt.po, exe/locale/qu/exe_qu.po,
+	  exe/locale/sk/exe_sk.po, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sk/pootle-exe-sk.prefs,
+	  exe/locale/sk/pootle-exe-sk.stats,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/tt/exe_tt.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zu/exe_zu.po,
+	  exe/webui/builtinblocks.py, exe/webui/galleryblock.py,
+	  exe/webui/genericblock.py, exe/webui/multichoiceblock.py,
+	  exe/webui/style/base.css, exe/webui/truefalseblock.py: Updates to
+	  bring us to 0.16. Recovered from the great crash.
+
+2006-05-02 10:25  brent
+
+	* exe/webui/galleryblock.py, exe/webui/genericblock.py,
+	  exe/webui/multichoiceblock.py: tiny idiosynchratic spelling fix.
+
+2006-04-30 23:51  matthew
+
+	* exe/locale/fr/exe_fr.po, exe/locale/fr/exe_fr.po.stats,
+	  exe/locale/fr/pootle-exe-fr.stats: Update from pootle
+
+2006-04-25 01:13  matthew
+
+	* exe/locale/cs/exe_cs.po, exe/locale/cs/exe_cs.po.stats,
+	  exe/locale/cs/pootle-exe-cs.stats, exe/locale/de/exe_de.po,
+	  exe/locale/de/exe_de.po.stats, exe/locale/fr/exe_fr.po,
+	  exe/locale/fr/exe_fr.po.stats, exe/locale/fr/pootle-exe-fr.stats,
+	  exe/locale/tg, exe/locale/tg/exe_tg.po,
+	  exe/locale/tg/exe_tg.po.pending, exe/locale/tg/exe_tg.po.stats,
+	  exe/locale/tg/pootle-exe-tg.prefs,
+	  exe/locale/tg/pootle-exe-tg.stats: update from pootle. Added
+	  Tagalog language
+
+2006-04-13 22:04  matthew
+
+	* exe/locale/hi/exe_hi.po.pending, exe/locale/hi/exe_hi.po.stats,
+	  exe/locale/hi/pootle-exe-hi.prefs,
+	  exe/locale/hi/pootle-exe-hi.stats,
+	  exe/locale/mr/exe_mr.po.pending, exe/locale/mr/exe_mr.po.stats,
+	  exe/locale/mr/pootle-exe-mr.prefs,
+	  exe/locale/mr/pootle-exe-mr.stats: Added hindi and Marathi stat
+	  files for pootle
+
+2006-04-13 21:55  matthew
+
+	* exe/locale/hi/exe_hi.po, exe/locale/mr/exe_mr.po: added native
+	  language names for hindi and marathi
+
+2006-04-13 21:52  matthew
+
+	* exe/locale/cs/exe_cs.po, exe/locale/cs/exe_cs.po.stats,
+	  exe/locale/cs/pootle-exe-cs.stats, exe/locale/de/exe_de.po.stats,
+	  exe/locale/el/exe_el.po.stats, exe/locale/es/exe_es.po.stats,
+	  exe/locale/et/exe_et.po.stats, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fr/exe_fr.po.stats, exe/locale/hi,
+	  exe/locale/hi/exe_hi.po, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/is/exe_is.po.stats, exe/locale/it/exe_it.po.stats,
+	  exe/locale/jp/exe_jp.po.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mr, exe/locale/mr/exe_mr.po,
+	  exe/locale/nl/exe_nl.po.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/qu/exe_qu.po.stats, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/tt/exe_tt.po.stats, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zu/exe_zu.po.stats: added empty marathi and hindi po
+	  files
+
+2006-04-13 02:32  matthew
+
+	* exe/locale/cs/exe_cs.po, exe/locale/de/exe_de.po,
+	  exe/locale/el/exe_el.po, exe/locale/en/exe_en.po,
+	  exe/locale/es/exe_es.po, exe/locale/et/exe_et.po,
+	  exe/locale/exe_pt_pt.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/fr/exe_fr.po, exe/locale/hu/exe_hu.po,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/jp/exe_jp.po, exe/locale/mi/exe_mi.po,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/qu/exe_qu.po,
+	  exe/locale/sk/exe_sk.po, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/exe_sv.po, exe/locale/tt/exe_tt.po,
+	  exe/locale/zh/exe_zh.po, exe/locale/zu/exe_zu.po: Updated PO File
+	  headers
+
+2006-04-12 23:44  matthew
+
+	* exe/locale/exe_pt_pt.po, exe/locale/jp/exe_jp.po.stats: Updated
+	  some po files from pootle
+
+2006-04-12 23:40  matthew
+
+	* exe/locale/cs, exe/locale/cs/exe_cs.po,
+	  exe/locale/cs/exe_cs.po.pending,
+	  exe/locale/cs/exe_cs.po.pending.stats,
+	  exe/locale/cs/exe_cs.po.stats, exe/locale/cs/messages.po.pending,
+	  exe/locale/cs/pootle-exe-cs.prefs,
+	  exe/locale/cs/pootle-exe-cs.stats: added czeck translation
+
+2006-04-12 23:33  matthew
+
+	* exe/locale/jp/LC_MESSAGES, exe/locale/jp/exe_jp.po.pending,
+	  exe/locale/jp/exe_jp.po.stats, exe/locale/jp/exe_jp.po~,
+	  exe/locale/jp/exe_jp.xlf, exe/locale/pt/LC_MESSAGES/exe.mo: Tidy
+	  up language files
+
+2006-04-12 23:31  matthew
+
+	* exe/locale/de/exe_de.po.stats, exe/locale/el/exe_el.po.stats,
+	  exe/locale/es/exe_es.po.stats, exe/locale/es/pootle-exe-es.stats,
+	  exe/locale/et/exe_et.po.stats, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fr/exe_fr.po.stats, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/is/exe_is.po.stats, exe/locale/it/exe_it.po.stats,
+	  exe/locale/mi/exe_mi.po.stats, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pt/pootle-exe-pt.stats, exe/locale/qu,
+	  exe/locale/qu/LC_MESSAGES, exe/locale/qu/exe_qu.po,
+	  exe/locale/qu/exe_qu.po.pending, exe/locale/qu/exe_qu.po.stats,
+	  exe/locale/qu/pootle-exe-qu.prefs,
+	  exe/locale/qu/pootle-exe-qu.stats, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/tt/exe_tt.po.stats, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.stats, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.prefs,
+	  exe/locale/zu/pootle-exe-zu.stats: More merging in from pootle and
+	  exe.0.15
+
+2006-04-12 23:25  matthew
+
+	* NEWS, README, app.fil, doc/exe_class.xmi,
+	  exe/export/websitepage.py, exe/idevices/appletidevice.py,
+	  exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/de/exe_de.po.pending, exe/locale/de/exe_de.po.stats,
+	  exe/locale/de/pootle-exe-de.stats,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/el/exe_el.po.stats, exe/locale/el/pootle-exe-el.stats,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/es/exe_es.po.pending, exe/locale/es/exe_es.po.stats,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/et/exe_et.po.stats, exe/locale/et/pootle-exe-et.stats,
+	  exe/locale/exe_pt_pt.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/fa/exe_fa.po.stats, exe/locale/fa/pootle-exe-fa.stats,
+	  exe/locale/fr/exe_fr.po, exe/locale/fr/exe_fr.po.stats,
+	  exe/locale/fr/pootle-exe-fr.stats, exe/locale/hu/exe_hu.po,
+	  exe/locale/hu/exe_hu.po.stats, exe/locale/hu/pootle-exe-hu.stats,
+	  exe/locale/is/LC_MESSAGES/exe.mo, exe/locale/is/exe_is.po,
+	  exe/locale/is/exe_is.po.stats, exe/locale/is/pootle-exe-is.stats,
+	  exe/locale/it/exe_it.po, exe/locale/it/exe_it.po.stats,
+	  exe/locale/it/pootle-exe-it.stats, exe/locale/jp/exe_jp.po,
+	  exe/locale/jp/pootle-exe-jp.stats, exe/locale/messages.pot,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/mi/exe_mi.po,
+	  exe/locale/mi/exe_mi.po.stats, exe/locale/mi/pootle-exe-mi.stats,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/nl/exe_nl.po.stats, exe/locale/nl/pootle-exe-nl.stats,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pl/exe_pl.po.pending, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.stats, exe/locale/pt/exe_pt_br.po,
+	  exe/locale/sk/exe_sk.po, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sk/pootle-exe-sk.stats,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sl/exe_sl.po.stats, exe/locale/sl/pootle-exe-sl.stats,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/sv/exe_sv.po.stats, exe/locale/sv/pootle-exe-sv.stats,
+	  exe/locale/tt/exe_tt.po, exe/locale/tt/exe_tt.po.stats,
+	  exe/locale/tt/pootle-exe-tt.stats,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/locale/zh/exe_zh.po,
+	  exe/locale/zh/exe_zh.po.stats, exe/locale/zh/pootle-exe-zh.stats,
+	  exe/locale/zu/exe_zu.po, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.prefs,
+	  exe/locale/zu/pootle-exe-zu.stats,
+	  exe/webui/imagemagnifierblock.py, exe/webui/imagewithtextblock.py,
+	  exe/webui/style/seamist/icon_activity.gif,
+	  exe/webui/style/seamist/icon_casestudy.gif,
+	  exe/webui/style/seamist/icon_diagnosis.gif,
+	  exe/webui/style/seamist/icon_experiment.gif,
+	  exe/webui/style/seamist/icon_gallery.gif,
+	  exe/webui/style/seamist/icon_generic.gif,
+	  exe/webui/style/seamist/icon_inter.gif,
+	  exe/webui/style/seamist/icon_objectives.gif,
+	  exe/webui/style/seamist/icon_preknowledge.gif,
+	  exe/webui/style/seamist/icon_question.gif,
+	  exe/webui/style/seamist/icon_reading.gif,
+	  exe/webui/style/seamist/icon_reflection.gif,
+	  exe/webui/style/seamist/icon_technology.gif,
+	  exe/webui/style/seamist/icon_time.gif,
+	  exe/xului/propertiespage.py, exe/xului/templates/properties.xul,
+	  installs/debian/ubuntu/buildUbuntuPackage.py,
+	  installs/debian/ubuntu/debian/changelog, installs/windows/applet
+	  update.nsi, installs/windows/exe.nsi,
+	  installs/windows/exe.standalone.nsi, installs/windows/forum
+	  update.nsi, installs/windows/language pack update.nsi,
+	  tools/mki18n.py: Merged in changes from 0.15 branch
+
+2006-04-05 02:47  jenny
+
+	* exe/locale/zh/exe_zh.po: up date Chinese po file.
+
+2006-04-05 02:23  djm
+
+	* app.fil, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_pt_pt.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/fr/exe_fr.po, exe/locale/hu/exe_hu.po,
+	  exe/locale/is/LC_MESSAGES/exe.mo, exe/locale/is/exe_is.po,
+	  exe/locale/it/exe_it.po, exe/locale/jp/exe_jp.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/exe_pt_br.po,
+	  exe/locale/sk/exe_sk.po, exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/locale/sl/exe_sl.po, exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/exe_sv.po, exe/locale/tt/exe_tt.po,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/locale/zh/exe_zh.po,
+	  exe/locale/zu/exe_zu.po: Updated locale
+
+2006-04-05 01:56  jenny
+
+	* exe/locale/zh/exe_zh.po: up date Chinese po file.
+
+2006-04-04 23:56  matthew
+
+	* exe/locale/de/exe_de.po.stats, exe/locale/de/pootle-exe-de.stats,
+	  exe/locale/el/exe_el.po.stats, exe/locale/es/exe_es.po.stats,
+	  exe/locale/et/exe_et.po.stats, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fr, exe/locale/fr/exe_fr.po,
+	  exe/locale/fr/exe_fr.po.pending, exe/locale/fr/exe_fr.po.stats,
+	  exe/locale/fr/pootle-exe-fr.prefs,
+	  exe/locale/fr/pootle-exe-fr.stats, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/is/exe_is.po.stats, exe/locale/it/exe_it.po.pending,
+	  exe/locale/it/exe_it.po.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/nl/exe_nl.po.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/sk/exe_sk.po.stats, exe/locale/sl/exe_sl.po.stats,
+	  exe/locale/sv/exe_sv.po.stats, exe/locale/tt/exe_tt.po.stats,
+	  exe/locale/zh/exe_zh.po.stats, exe/locale/zh/pootle-exe-zh.stats,
+	  exe/locale/zu/exe_zu.po.stats: Commit from Pootle
+
+2006-04-04 23:53  djm
+
+	* exe/engine/wikipediaidevice.py: removed print statments
+
+2006-04-04 23:51  djm
+
+	* exe/engine/wikipediaidevice.py, exe/webui/wikipediablock.py: Made
+	  UGLY KLUDGE in wikipedia idevice for Wayne
+
+2006-04-04 04:47  jenny
+
+	* exe/locale/zh/exe_zh.po: up date Chinese po file.
+
+2006-04-04 04:31  brent
+
+	* exe/webui/style/standardwhite/icon_assessment.gif,
+	  exe/webui/style/standardwhite/icon_attention.gif,
+	  exe/webui/style/standardwhite/icon_calc.gif,
+	  exe/webui/style/standardwhite/icon_define.gif,
+	  exe/webui/style/standardwhite/icon_discussion.gif,
+	  exe/webui/style/standardwhite/icon_key_points.gif,
+	  exe/webui/style/standardwhite/icon_multimedia.gif,
+	  exe/webui/style/standardwhite/icon_time.gif,
+	  exe/webui/style/standardwhite/icon_web_resource.gif: added more
+	  icons to stardardwhite style.
+
+2006-04-04 03:09  brent
+
+	* exe/webui/style/default/nav.css,
+	  exe/webui/style/default/top_nav.jpg: small fix to defualt layout
+	  with banner
+
+2006-04-03 22:33  matthew
+
+	* exe/locale/de/exe_de.po, exe/locale/el/LC_MESSAGES/exe.mo,
+	  exe/locale/el/exe_el.po, exe/locale/en/LC_MESSAGES/exe.mo,
+	  exe/locale/en/exe_en.po, exe/locale/es/LC_MESSAGES/exe.mo,
+	  exe/locale/es/exe_es.po, exe/locale/et/LC_MESSAGES/exe.mo,
+	  exe/locale/et/exe_et.po, exe/locale/exe_pt_pt.po,
+	  exe/locale/fa/exe_fa.po, exe/locale/hu/exe_hu.po,
+	  exe/locale/is/LC_MESSAGES/exe.mo, exe/locale/is/exe_is.po,
+	  exe/locale/it/exe_it.po, exe/locale/jp/exe_jp.po,
+	  exe/locale/messages.pot, exe/locale/mi/LC_MESSAGES/exe.mo,
+	  exe/locale/mi/exe_mi.po, exe/locale/nl/LC_MESSAGES/exe.mo,
+	  exe/locale/nl/exe_nl.po, exe/locale/pl/LC_MESSAGES/exe.mo,
+	  exe/locale/pl/exe_pl.po, exe/locale/pt/exe_pt_br.po,
+	  exe/locale/sk/exe_sk.po, exe/locale/sl/LC_MESSAGES/exe.mo,
+	  exe/locale/sl/exe_sl.po, exe/locale/sv/LC_MESSAGES/exe.mo,
+	  exe/locale/sv/exe_sv.po, exe/locale/tt/exe_tt.po,
+	  exe/locale/zh/LC_MESSAGES/exe.mo, exe/locale/zh/exe_zh.po,
+	  exe/locale/zu/exe_zu.po:
+
+2006-04-03 22:06  jenny
+
+	* exe/locale/zh/exe_zh.po: up date Chinese po file.
+
+2006-04-03 21:52  matthew
+
+	* exe/locale/de/exe_de.po, exe/locale/de/exe_de.po.stats,
+	  exe/locale/de/pootle-exe-de.stats, exe/locale/el/exe_el.po.stats,
+	  exe/locale/el/pootle-exe-el.stats, exe/locale/es/exe_es.po,
+	  exe/locale/es/exe_es.po.pending, exe/locale/es/exe_es.po.stats,
+	  exe/locale/es/pootle-exe-es.stats, exe/locale/et/exe_et.po.stats,
+	  exe/locale/et/pootle-exe-et.stats, exe/locale/fa/exe_fa.po.stats,
+	  exe/locale/fa/pootle-exe-fa.stats, exe/locale/hu/exe_hu.po.stats,
+	  exe/locale/hu/pootle-exe-hu.stats, exe/locale/is/exe_is.po.stats,
+	  exe/locale/is/pootle-exe-is.stats,
+	  exe/locale/it/exe_it.po.pending, exe/locale/it/exe_it.po.stats,
+	  exe/locale/it/pootle-exe-it.stats, exe/locale/jp/exe_jp.po,
+	  exe/locale/jp/pootle-exe-jp.stats, exe/locale/mi/exe_mi.po.stats,
+	  exe/locale/mi/pootle-exe-mi.stats, exe/locale/nl/exe_nl.po.stats,
+	  exe/locale/nl/pootle-exe-nl.stats, exe/locale/pl/exe_pl.po.stats,
+	  exe/locale/pl/pootle-exe-pl.stats,
+	  exe/locale/pt/pootle-exe-pt.stats, exe/locale/sk/exe_sk.po.stats,
+	  exe/locale/sk/pootle-exe-sk.stats, exe/locale/sl/exe_sl.po.stats,
+	  exe/locale/sl/pootle-exe-sl.stats, exe/locale/sv/exe_sv.po.stats,
+	  exe/locale/sv/pootle-exe-sv.stats,
+	  exe/locale/tt/exe_tt.po.pending, exe/locale/tt/exe_tt.po.stats,
+	  exe/locale/tt/pootle-exe-tt.stats, exe/locale/zh/exe_zh.po.stats,
+	  exe/locale/zh/pootle-exe-zh.stats, exe/locale/zu/exe_zu.po.stats,
+	  exe/locale/zu/pootle-exe-zu.stats: Pootle import
+
+2006-04-03 03:41  djm
+
+	* exe/locale/de/LC_MESSAGES/exe.mo, exe/locale/de/exe_de.po,
+	  exe/locale/el/LC_MESSAGES/exe.mo, exe/locale/el/exe_el.po,
+	  exe/locale/en/LC_MESSAGES/exe.mo, exe/locale/en/exe_en.po,
+	  exe/locale/es/LC_MESSAGES/exe.mo, exe/locale/es/exe_es.po,
+	  exe/locale/et/LC_MESSAGES/exe.mo, exe/locale/et/exe_et.po,
+	  exe/locale/exe_pt_pt.po, exe/locale/fa/exe_fa.po,
+	  exe/locale/hu/exe_hu.po, exe/locale/is/LC_MESSAGES/exe.mo,
+	  exe/locale/is/exe_is.po, exe/locale/it/exe_it.po,
+	  exe/locale/jp/exe_jp.po, exe/locale/messages.pot,
+	  exe/locale/mi/LC_MESSAGES/exe.mo, exe/locale/mi/exe_mi.po,
+	  exe/locale/nl/LC_MESSAGES/exe.mo, exe/locale/nl/exe_nl.po,
+	  exe/locale/pl/LC_MESSAGES/exe.mo, exe/locale/pl/exe_pl.po,
+	  exe/locale/pt/exe_pt_br.po, exe/locale/sk/exe_sk.po,
+	  exe/locale/sl/LC_MESSAGES/exe.mo, exe/locale/sl/exe_sl.po,
+	  exe/locale/sv/LC_MESSAGES/exe.mo, exe/locale/sv/exe_sv.po,
+	  exe/locale/tt/exe_tt.po, exe/locale/zh/LC_MESSAGES/exe.mo,
+	  exe/locale/zh/exe_zh.po, exe/locale/zu/exe_zu.po,
+	  exe/xului/templates/packageproperties.xul: added help text
+
+2006-04-03 02:03  jenny
+
+	* exe/locale/zh/exe_zh.po: up date Chinese po file.
+
+2006-04-03 02:01  jenny
+
+	* exe/locale/zh/exe_zh.po: up date Chinese po file.
+
+2006-04-03 00:20  djm
+
+	* exe/webui/wikipediablock.py: fixed title so changes are saved
+
+2006-04-02 23:29  djm
+
+	* ChangeLog, exe/engine/version.py: Updated changelog and version
+
 2006-03-31 04:08  djm
 
 	* exe/xului/templates/packageproperties.xul: don't give bg images a
