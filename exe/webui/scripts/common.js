@@ -747,8 +747,8 @@ function checkClozeWord(ele) {
                              Math.abs(guess.length - answer.length)) / 2)
                 var max = Math.min(string1.length, string2.length)
                 for (j = 0; j < max; j++) {
-                    var a = string2[j];
-                    var b = string1[j];
+                    var a = string2.charAt(j);
+                    var b = string1.charAt(j);
                     if (a != b)
                         misses += 1;
                     if (misses > maxMisses)
