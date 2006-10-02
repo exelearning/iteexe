@@ -46,3 +46,4 @@ user_pref("capability.policy.localfilelinks.checkloaduri.enabled", "allAccess");
 user_pref("capability.policy.policynames", "localfilelinks");
 user_pref("capability.policy.localfilelinks.sites", "http://127.0.0.1:8081");
 user_pref("signed.applets.codebase_principal_support", true);
+user_pref("dom.allow_scripts_to_close_windows", true);
