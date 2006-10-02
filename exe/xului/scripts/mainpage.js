@@ -141,6 +141,8 @@ function XHAddChildTreeItem(nodeid, name) {
     var newTreeItem = document.createElement('treeitem')
     newTreeItem.appendChild(newTreeRow)
     insertChildTreeItem(treeitem, newTreeItem)
+    // Select the new child
+    tree.view.selection.select(tree.view.getIndexOfItem(newTreeItem))
 }
 
 function insertChildTreeItem(parentItem, newTreeItem, nextSibling) {
