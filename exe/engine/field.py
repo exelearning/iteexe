@@ -704,6 +704,7 @@ class MathField(Field):
         Field.__init__(self, name, instruc)
         self._latex      = latex # The latex entered by the user
         self.gifResource = None
+        self.fontsize = 4
         self.instruc     = x_(u""
         "<p>" 
         "Select symbols from the text editor below to create mathematical formula."
@@ -730,7 +731,7 @@ class MathField(Field):
             self.gifResource.delete()
             self.gifResource = None
         if latex <> "":
-            tempFileName = compile(latex)
+            tempFileName = compile(latex, self.fontsize)
             self.gifResource = Resource(self.idevice.parentNode.package, tempFileName)
             # Delete the temp file made by compile
             Path(tempFileName).remove()
@@ -751,3 +752,109 @@ class MathField(Field):
     latex = property(get_latex, set_latex)
     gifURL = property(get_gifURL)
     previewInstruc = lateTranslate('previewInstruc')
+    
+# ===========================================================================
+class QuizOptionField(Field):
+    """
+    A Question is built up of question and options.  Each
+    option can be rendered as an XHTML element
+    """
+    def __init__(self, name="", instruc=""):
+        """
+        Initialize 
+        """
+        Field.__init__(self, name, instruc)
+        self.idevice   = None
+        self.question  = None
+        self.answer    = ""
+        self.isCorrect = False
+        self.feedback  = ""
+        
+#===============================================================================
+
+class QuizQuestionField(Field):
+    """
+    A Question is built up of question and Options.
+    """
+    
+    def __init__(self, name, instruc=""):
+        """
+        Initialize 
+        """
+        Field.__init__(self, name, instruc)
+        self.question             = ""
+        self.hint                 = ""
+        self.options              = []
+
+    def addOption(self):
+        """
+        Add a new option to this question. 
+        """
+        option = QuizOptionField()
+        option.question = self
+        option.idevice  = self.idevice
+        self.options.append(option)
+        
+        
+# ===========================================================================
+class SelectOptionField(Field):
+    """
+    A Question is built up of question and options.  Each
+    option can be rendered as an XHTML element
+    """
+    def __init__(self, name="", instruc=""):
+        """
+        Initialize 
+        """
+        Field.__init__(self, name, instruc)
+        self.idevice   = None
+        self.question  = None
+        self.answer    = ""
+        self.isCorrect = False
+       # self.isChecked = False
+        
+        
+#===============================================================================
+
+class SelectQuestionField(Field):
+    """
+    A Question is built up of question and Options.
+    """
+    
+    def __init__(self, name, instruc=""):
+        """
+        Initialize 
+        """
+        Field.__init__(self, name, instruc)
+        self.question             = ""
+        self.options              = []
+        #self.addOption()
+        self._questionInstruc      = x_(u"""Enter the question stem. 
+The quest should be clear and unambiguous. Avoid negative premises 
+as these can tend to be ambiguous.""")
+        self._optionInstruc        = x_(u"""Enter an answer option. Provide 
+a range of plausible distractors (usually 3-4) as well as the correct answer. 
+Click on the &lt;Add another option&gt; button to add another answer.""")
+        self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
+click the radio button next to the correct option.""")
+        self.feedback              = ""
+        self.feedbackInstruc       = ""
+    
+    
+    # Properties
+    questionInstruc      = lateTranslate('questionInstruc')
+    optionInstruc        = lateTranslate('optionInstruc')
+    correctAnswerInstruc = lateTranslate('correctAnswerInstruc')
+    
+    def addOption(self):
+        """
+        Add a new option to this question. 
+        """
+        option = SelectOptionField()
+        option.question = self
+        option.idevice  = self.idevice
+        self.options.append(option)
+        
+        
+
+# ===========================================================================

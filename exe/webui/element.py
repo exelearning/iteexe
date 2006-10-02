@@ -1007,12 +1007,15 @@ class MathElement(Element):
         """
         Process arguments from the web server.
         """
+        if 'fontsize'+self.id in request.args:
+            self.field.fontsize = int(request.args["fontsize"+self.id][0])        
         if 'preview'+self.id in request.args:
             self.field.idevice.edit = True
         if 'input'+self.id in request.args and \
             not(request.args[u"action"][0] == u"delete" and 
                 request.args[u"object"][0]==self.field.idevice.id):
-            self.field.latex = request.args['input'+self.id][0]
+            self.field.latex = request.args['input'+self.id][0]         
+        
 
 
     def renderEdit(self):
@@ -1058,6 +1061,17 @@ class MathElement(Element):
         html += common.insertSymbol("input"+self.id, "", "",
                             r"\\begin{verbatim}\\end{verbatim}", _("text"), 14)
         html += common.insertSymbol("input"+self.id, "", "", r"\\\\\n", _("newline"))
+        # font size select
+        html += '<br/>'
+        html +=  _("Select a font size: ")
+        html += "<select name=\"fontsize%s\">\n" % self.id
+        template = '  <option value="%s"%s>%s</option>\n' 
+        for i in range(1, 11):
+            if i == self.field.fontsize:
+                html += template % (str(i), ' selected="selected"', str(i))
+            else:
+                html += template % (str(i), '', str(i))
+        html += "</select>\n"
         html += "</div>\n"
         html += common.textArea('input'+self.id, self.field.latex)
         
@@ -1097,3 +1111,404 @@ class MathElement(Element):
             html += "</div>\n"
         return html
 
+# ===========================================================================
+class SelectOptionElement(Element):
+    """
+    SelectOptionElement is responsible for a block of option.  Used by
+    SelectQuestionElement.
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        self.index = 0
+
+    def process(self, request):
+        """
+        Process arguments from the web server.  Return any which apply to this 
+        element.
+        """
+        log.debug("process " + repr(request.args))
+        
+        if "ans"+self.id in request.args:
+            self.field.answer = request.args["ans"+self.id][0]
+                        
+        if "c"+self.id in request.args:
+            self.field.isCorrect = True 
+            log.debug("option " + repr(self.field.isCorrect))
+        elif "ans"+self.id in request.args:
+            self.field.isCorrect = False
+            
+        if "action" in request.args and \
+           request.args["action"][0] == "del"+self.id:
+            self.field.question.options.remove(self.option)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string for editing this option element
+        """
+        html = u"<tr><td>"
+        html += common.richTextArea("ans"+self.id, self.field.answer)
+        html += "</td><td align=\"center\">\n"
+        html += common.option("c"+self.id, 
+                              self.field.isCorrect, self.index)
+        html += "</td><td>\n"
+        html += common.submitImage("del"+self.id, self.field.idevice.id, 
+                                   "/images/stock-cancel.png",
+                                   _(u"Delete option"))
+        html += "</td></tr>\n"
+        return html
+
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this option element
+        """
+        log.debug("renderView called")
+        ident = self.field.question.id + str(self.index)
+        html  = '<tr><td>'
+        #chk = u''
+        #if self.field.isChecked:
+            #chk = u'checked'          
+        html += u'<input type="checkbox" id="%s"' % ident
+        html += u' value="%s" >\n' %str(self.field.isCorrect)
+        ansIdent = "ans" + self.field.question.id + str(self.index)
+        html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
+        html += self.field.answer + "</div></td></tr>\n"
+       
+        return html
+    
+    
+# ===========================================================================
+class SelectquestionElement(Element):
+    """
+    SelectQuestionElement is responsible for a block of question.  
+    Used by QuizTestBlock
+    """
+            
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        #self.index = index
+        self.options    = []
+        i = 0
+        for option in self.field.options:
+            ele = SelectOptionElement(option)
+            ele.index = i
+            self.options.append(ele)
+            i += 1
+
+    def process(self, request):
+        """
+        Process the request arguments from the web server
+        """
+        log.info("process " + repr(request.args))
+        
+        if "question"+self.id in request.args:
+            self.field.question = request.args["question"+self.id][0]
+            
+        if ("addOption"+unicode(self.id)) in request.args: 
+            self.field.addOption()
+            self.field.idevice.edit = True
+            
+        if "feedback"+self.id in request.args:
+            self.field.feedback = request.args["feedback"+self.id][0]
+            
+        if "action" in request.args and \
+           request.args["action"][0] == "del" + self.id:
+            self.field.idevice.questions.remove(self.question)
+
+        for element in self.options:
+            element.process(request)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this element
+        """
+        html  = u"<div class=\"iDevice\">\n"
+        html += u"<b>" + _("Question:") + " </b>" 
+        html += common.elementInstruc(self.field.questionInstruc)
+        html += u" " + common.submitImage("del" + self.id, self.field.idevice.id, 
+                                   "/images/stock-cancel.png",
+                                   _("Delete question"))
+        html += common.richTextArea("question"+self.id, 
+                                    self.field.question)
+        html += u"<table width =\"100%%\">"
+        html += u"<thead>"
+        html += u"<tr>"
+        html += u"<th>%s " % _("Options")
+        html += common.elementInstruc(self.field.optionInstruc)
+        html += u"</th><th align=\"left\">%s "  % _("Correct")
+        html += common.elementInstruc(self.field.correctAnswerInstruc)
+        html += u"<br/>" + _("Option")
+        html += u"</th>"
+        html += u"</tr>"
+        html += u"</thead>"
+        html += u"<tbody>"
+
+        for element in self.options:
+            html += element.renderEdit() 
+            
+        html += u"</tbody>"
+        html += u"</table>\n"
+        value = _(u"Add another Option")    
+        html += common.submitButton("addOption"+self.id, value)
+        html += u"<br />"
+        html += common.formField('richTextArea', _(u'Feedback:'),
+                                 'feedback', self.id,
+                                 self.field.feedbackInstruc,
+                                 self.field.feedback)
+        html += u"</div>\n"
+
+        return html
+
+    
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this element
+        """
+
+        html  = "<b>" + self.field.question +"</b><br/>\n"
+        html += "<table>"
+        for element in self.options:
+            html += element.renderView()      
+        html += "</table>"   
+        html += '<input type="button" name="submitSelect"' 
+        html += ' value="%s" ' % _("Submit Answer")
+        html += 'onclick="calcScore(%d, \'%s\')"/> ' %(len(self.options), 
+                                                       self.field.id)
+        html += "<br/>\n"
+        html += '<div id="%s" style="display:none">' % ("f"+self.field.id)
+        html += self.field.feedback
+        html += '</div><br/>'
+
+        return html
+
+
+    
+# ===========================================================================
+class QuizOptionElement(Element):
+    """
+    QuizOptionElement is responsible for a block of option.  Used by
+    QuizQuestionElement.
+    """
+
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        self.index = 0
+
+    def process(self, request):
+        """
+        Process arguments from the web server.  Return any which apply to this 
+        element.
+        """
+        log.debug("process " + repr(request.args))
+        
+        if "ans"+self.id in request.args:
+            self.field.answer = request.args["ans"+self.id][0]
+            
+        if "f"+self.id in request.args:
+            self.field.feedback = request.args["f"+self.id][0]
+                        
+        if ("c"+self.field.question.id in request.args and 
+            request.args["c"+self.field.question.id][0]==str(self.index)):
+            self.field.isCorrect = True 
+        elif "ans"+self.id in request.args:
+            self.field.isCorrect = False
+            
+        if "action" in request.args and \
+           request.args["action"][0] == "del"+self.id:
+            self.field.question.options.remove(self.field)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string for editing this option element
+        """
+        html  = u"<tr><td align=\"center\"><b>%s</b>" % _("Option")
+        html += common.elementInstruc(self.field.idevice.answerInstruc)
+        header = ""
+        
+        if self.index == 0:
+            header = _("Correct") + "<br/>" + _("Option")
+            
+        html += u"</td><td align=\"center\"><b>%s</b>\n" % header
+        html += common.elementInstruc(self.field.idevice.keyInstruc)
+        html += "</td><td></td></tr><tr><td>\n" 
+        html += common.textArea("ans"+self.id, self.field.answer, rows="4")
+        html += "</td><td align=\"center\">\n"
+        html += common.option("c"+self.field.question.id, 
+                              self.field.isCorrect, self.index)   
+        html += "</td><td>\n"
+        html += common.submitImage("del"+self.id, self.field.idevice.id, 
+                                   "/images/stock-cancel.png",
+                                   _(u"Delete option"))
+        html += "</td></tr><tr><td align=\"center\"><b>%s</b>" % _("Feedback")
+        html += common.elementInstruc(self.field.idevice.feedbackInstruc)
+        html += "</td><td></td><td></td></tr><tr><td>\n" 
+        html += common.textArea('f'+self.id, self.field.feedback, rows="4")
+        html += "</td><td></td><td></td></tr>\n"
+
+        return html
+    
+    def renderAnswerView(self):
+        """
+        Returns an XHTML string for viewing and previewing this option element
+        """
+        log.debug("renderView called")
+  
+        length = len(self.field.question.options)
+        html  = '<tr><td>'
+        html += '<input type="radio" name="option%s" ' % self.field.question.id
+        html += 'id="i%s" ' % self.id
+        html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, 
+                                                length, self.field.question.id)
+        html += '</td><td>\n'
+        html += self.field.answer + "</td></tr>\n"
+       
+        return html
+    
+
+    def renderFeedbackView(self):
+        """
+        return xhtml string for display this option's feedback
+        """
+        feedbackStr = ""
+        if self.field.feedback != "":
+            feedbackStr = self.field.feedback
+        else:
+            if self.field.isCorrect:
+                feedbackStr = _("Correct")
+            else:
+                feedbackStr = _("Wrong")
+        html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' % (str(self.index), 
+                                                                      self.field.question.id)
+        html += 'display: none;">' 
+        html += feedbackStr + '</div>\n'
+        
+        return html
+
+
+# ===========================================================================
+
+class QuizQuestionElement(Element):
+    """
+    QuizQuestionElement is responsible for a block of question.  
+    Used by QuizTestBlock
+    """
+            
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        #self.index = index
+        self.options    = []
+        i = 0
+        for option in self.field.options:
+            ele = QuizOptionElement(option)
+            ele.index = i
+            self.options.append(ele)
+            i += 1
+
+    def process(self, request):
+        """
+        Process the request arguments from the web server
+        """
+        log.info("process " + repr(request.args))
+        
+        if "question"+self.id in request.args:
+            self.field.question = request.args["question"+self.id][0]
+            
+        if "hint"+self.id in request.args:
+            self.field.hint = request.args["hint"+self.id][0]
+            
+        if ("addOption"+unicode(self.id)) in request.args: 
+            self.field.addOption()
+            self.field.idevice.edit = True
+            
+            
+        if "action" in request.args and \
+           request.args["action"][0] == "del" + self.id:
+            self.field.idevice.questions.remove(self.field)
+
+        for element in self.options:
+            element.process(request)
+
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this element
+        """
+        #html  = u"<div class=\"iDevice\">\n"
+        html  = u"<b>" + _("Question:") + " </b>" 
+        html += common.elementInstruc(self.field.idevice.questionInstruc)
+        html += u" " + common.submitImage("del" + self.id, self.field.idevice.id, 
+                                   "/images/stock-cancel.png",
+                                   _("Delete question"))
+        html += common.textArea("question"+self.id, 
+                                    self.field.question, rows="6")
+        html += common.formField('richTextArea',_(u'Hint:'),'hint',
+                                self.id, self.field.idevice.hintInstruc,
+                                self.field.hint)
+        html += "<table width =\"100%%\">"
+    
+        html += "<tbody>"
+
+        for element in self.options:
+            html += element.renderEdit() 
+            
+        html += "</tbody>"
+        html += "</table>\n"
+        value = _("Add another option")    
+        html += common.submitButton("addOption"+unicode(self.id), value)
+
+        return html
+
+    
+    def renderView(self,img):
+        """
+        Returns an XHTML string for viewing this element
+        """
+        html  = self.field.question+" &nbsp;&nbsp;\n"
+        if self.field.hint:
+            html += '<span '
+            html += ' style="background-image:url(\'%s\');">' % img
+            html += '\n<a onmousedown="Javascript:updateCoords(event);'
+            html += 'showMe(\'hint%s\', 350, 100);" ' % self.id
+            html += 'style="cursor:help;align:center;vertical-align:middle;" '
+            html += 'title="Hint" \n'
+            html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
+            html += '</span>'
+            html += '<div id="hint'+self.id+'" '
+            html += 'style="display:none; z-index:99;">'
+            html += '<div style="float:right;" >'
+            html += '<img alt="%s" ' % _('Close')
+            html += 'src="stock-stop.png" title="%s"' % _('Close')
+            html += " onmousedown=\"Javascript:hideMe();\"/></div>"
+            html += '<div class="popupDivLabel">'
+            html += _("Hint")
+            html += '</div>\n'
+            html += self.field.hint
+            html += "</div>\n"
+        html += "<table>\n"
+        html += "<tbody>\n"
+
+        for element in self.options:
+            html += element.renderAnswerView()
+            
+        html += "</tbody>\n"
+        html += "</table>\n"
+            
+        for element in self.options:
+            html += element.renderFeedbackView()
+
+        return html
