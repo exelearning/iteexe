@@ -555,22 +555,28 @@ class MainPage(RenderableLivePage):
 
     def _loadPackage(self, client, filename):
         """Load the package named 'filename'"""
+
         try:
+            
             encoding = sys.getfilesystemencoding()
             if encoding is None:
-                encoding = 'ascii'
-            filename = unicode(filename, encoding)
-            log.debug("filename and path" + filename)
-            package = Package.load(filename)
+                encoding = 'utf-8'
+            filename2 = unicode(filename, encoding)
+            log.debug("filename and path" + filename2)
+            package = Package.load(filename2)
+            if package is None:
+                filename2 = unicode(filename, 'utf-8')
+                package = Package.load(filename2)
+                if package is None:
+                    raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
             else:
                 client.alert(_(u'Sorry, wrong file format'))
             log.error(_(u'Error loading package "%s": %s') % \
-                      (filename, unicode(exc)))
+                      (filename2, unicode(exc)))
             log.error((u'Traceback:\n%s' % traceback.format_exc()))
             raise
-
         return package
 
