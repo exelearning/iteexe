@@ -25,6 +25,7 @@ import os
 import sys
 import logging
 import traceback
+from twisted.internet            import reactor
 from twisted.web                 import static
 from nevow                       import loaders, inevow, stan
 from nevow.livepage              import handler, js
@@ -103,6 +104,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleSavePackage,     'savePackage')
         setUpHandler(self.handleLoadPackage,     'loadPackage')
         setUpHandler(self.handleExport,          'exportPackage')
+        setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleRegister,        'register')
         setUpHandler(self.handleReportIssue,     'reportIssue')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
@@ -309,10 +311,14 @@ class MainPage(RenderableLivePage):
             self.exportText(client, filename)
         elif exportType == "scorm":
             self.exportScorm(client, filename, stylesDir)
-
         else:
             self.exportIMS(client, filename, stylesDir)
 
+    def handleQuit(self, client):
+        """
+        Stops the server
+        """
+        reactor.stop()
 
     def handleRegister(self, client):
         """Go to the exelearning.org/register.php site"""

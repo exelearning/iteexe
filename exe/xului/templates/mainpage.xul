@@ -34,6 +34,7 @@
         <key n:render="translate" id="file-new-key" modifiers="control" key="N" oncommand="fileNew()"/>
         <key n:render="translate" id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
         <key n:render="translate" id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
+        <key n:render="translate" id="file-quit-key" modifiers="control" key="Q" oncommand="fileQuit()"/>
     </keyset>
     <vbox flex="1">
         <!-- Start Menus -->
@@ -53,9 +54,9 @@
                     <menuitem n:render="translate" label="IMS Content Package" accesskey="i" oncommand="exportPackage('ims')"/>
                     <menu n:render="translate" id="website" label="Web Site">
                       <menupopup id="web-export-popup">
-			<menuitem n:render="translate" label="Self-contained Folder" oncommand="exportPackage('webSite')"/>
-			<menuitem n:render="translate" label="Zip File" oncommand="exportPackage('zipFile')"/>
-		      </menupopup>
+                        <menuitem n:render="translate" label="Self-contained Folder" oncommand="exportPackage('webSite')"/>
+                        <menuitem n:render="translate" label="Zip File" oncommand="exportPackage('zipFile')"/>
+                      </menupopup>
                     </menu> 
                      <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage')"/>
                      <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile')"/>
@@ -67,6 +68,8 @@
                     <menuitem n:render="translate" label="Extract Package" accesskey="E" oncommand="extractPackage()"/>
                   </menupopup>
                 </menu>
+                <menuseparator/>
+                  <menuitem n:render="translate" label="Quit" accesskey="q" oncommand="fileQuit()"/>
               </menupopup>
             </menu>
             <menu n:render="translate" id="tools-menu" label="Tools" accesskey="t">

@@ -22,7 +22,6 @@ must fill in.
 """
 
 import logging
-import urllib
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import ClozeElement, TextAreaElement

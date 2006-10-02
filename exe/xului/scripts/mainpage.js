@@ -57,8 +57,8 @@ function serverId2TreeId(serverId) {
 function initWindow() {
     if (haveLoaded) {return}
     // Select the correct tree item
-    nevow_clientToServerEvent('setTreeSelection', this, '')
-    haveLoaded = true
+    nevow_clientToServerEvent('setTreeSelection', this, '');
+    haveLoaded = true;
 }
 
 // Called by the server. Causes the correct selection to be put into the node
@@ -282,7 +282,7 @@ function askDirty(nextStep) {
 // This is called by the server to ask the user if they want to save their
 // package before changing filenew/fileopen
 // 'onProceed' is a string that is evaluated after the package has been saved or
-// the user has chosen not to save the package
+// the user has chosen not to save the package, but not if user cancels
 function askSave(onProceed) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var promptClass = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
@@ -388,6 +388,20 @@ function fileSaveAs(onDone) {
     }
 }
 
+// Quit the application
+function fileQuit() {
+    // Call file - save as
+    saveWorkInProgress()
+    askSave('doQuit()')
+}
+
+// Closes the window and stops the server
+function doQuit() {
+    nevow_clientToServerEvent('quit', this, '');
+    // Todo: Put this in a timer or something
+    top.close()
+}
+
 // Submit any open iDevices
 function saveWorkInProgress() {
     // Do a submit so any editing is saved to the server
@@ -419,16 +433,14 @@ function toolsPreferences() {
 // but you get the idea right ;-) i just make em look purty!
 
 function metadataEditor() {
-	var features = "width=500,height=640,status=yes,resizeable=yes,"+
-			"scrollbars=yes";
-	var metadataWin = window.open ("/templates/metadata.xul", 
-                                       "metadata editor", features);}
+    var features = "width=500,height=640,status=yes,resizeable=yes,scrollbars=yes";
+    var metadataWin = window.open ("/templates/metadata.xul", "metadata editor", features);
+}
 
 // load the About page
 function aboutPage() {
-	var features = "width=235,height=440,status=1,resizable=1,"+
-			"left=260,top=200";
-	aboutWin = window.open ("/about", "About", features);
+    var features = "width=235,height=440,status=1,resizable=1,left=260,top=200";
+    aboutWin = window.open ("/about", "About", features);
 }
 
 // Go to the exelearning.org/register.php site
@@ -470,29 +482,24 @@ function exportPackage(exportType) {
                          nsIFilePicker.modeGetFolder);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK) {
-
-            nevow_clientToServerEvent('exportPackage', 
-                                      this, 
-                                      '', 
-                                      exportType, 
-                                      fp.file.path)
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
         }
     } else if(exportType == "textFile"){
-	    title = "Export text package as";
-	    fp.init(window, title, nsIFilePicker.modeSave);
-            fp.appendFilter("Text File", "*.txt");
-	    fp.appendFilters(nsIFilePicker.filterAll);
-            var res = fp.show();
-            if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace)
-             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
+        title = "Export text package as";
+        fp.init(window, title, nsIFilePicker.modeSave);
+        fp.appendFilter("Text File", "*.txt");
+        fp.appendFilters(nsIFilePicker.filterAll);
+        var res = fp.show();
+        if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace)
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
     } else {
         if (exportType == "scorm")
             title = "Export SCORM package as";
         else if (exportType == "ims")
             title = "Export IMS package as";
-	else if (exportType == "zipFile")
+        else if (exportType == "zipFile")
             title = "Export Website package as";
-	else if (exportType == "ipod")
+        else if (exportType == "ipod")
             title = "Export iPod package as";
         else
             title = "INVALID VALUE PASSED TO exportPackage";
