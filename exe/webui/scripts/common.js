@@ -424,7 +424,6 @@ function clearHidden()
     theForm.object.value = "";
 }
 
-
 // Sets the hidden action and object fields, then submits the 
 // contentForm to the server
 function submitLink(action, object, changed) 
@@ -449,21 +448,6 @@ function confirmThenSubmitLink(message, action, object, changed)
         submitLink(action, object, changed);
     }
 }
-
-
-function beforeUnload(){
-    if (document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value=="1")
-        if (window.confirm("Do you want to save the package?"))
-            saveChange("saveChange")
-}
-
-
-function saveChange(action){
-    document.getElementById("contentFrame").contentDocument.contentForm.isChanged.value = 0
-    document.getElementById("contentFrame").contentDocument.contentForm.action.value = action;
-    document.getElementById("contentFrame").contentDocument.contentForm.submit();
-}
-
 
 function getFeedback(optionId, optionsNum, ideviceId, mode) {
     for (i = 0; i< optionsNum; i++) { 

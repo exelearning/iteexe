@@ -408,7 +408,7 @@ class MultimediaElement(Element):
             </object>
         
         """ % {'mp3player': mp3player,
-  	       'url':       filename,
+               'url':       filename,
                'caption':   self.field.idevice.caption}
         
         wmvStr = common.flash(filename, self.field.width, self.field.height,
