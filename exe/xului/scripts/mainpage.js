@@ -59,6 +59,7 @@ function initWindow() {
     // Select the correct tree item
     nevow_clientToServerEvent('setTreeSelection', this, '');
     haveLoaded = true;
+    top.onclose = onclose;
 }
 
 // Called by the server. Causes the correct selection to be put into the node
@@ -395,11 +396,19 @@ function fileQuit() {
     askSave('doQuit()')
 }
 
+function onclose(aEvent) {
+    alert("closing");
+    return false;
+}
+
 // Closes the window and stops the server
 function doQuit() {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     nevow_clientToServerEvent('quit', this, '');
-    // Todo: Put this in a timer or something
-    top.close()
+    klass = Components.classes["@mozilla.org/toolkit/app-startup;1"]
+    interfac = Components.interfaces.nsIAppStartup
+    instance = klass.getService(interfac)
+    instance.quit(3)
 }
 
 // Submit any open iDevices
