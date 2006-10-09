@@ -45,7 +45,7 @@ class WikipediaIdevice(Idevice):
     """
     A Wikipedia Idevice is one built from a Wikipedia article.
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
 
     def __init__(self, defaultSite):
         Idevice.__init__(self, x_(u"Wikipedia Article"), 
@@ -70,6 +70,7 @@ is covered by the GNU free documentation license.</p>"""),
 of Wikipedia to search and enter search term.""")
         self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
+        self.ownUrl               = ""
 
         
     # Properties
@@ -84,22 +85,16 @@ within Wikipedia.""")
 
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
         try:
-            # UGLY UGLY UGLY KLUDGE for Wayne
-            # "BIG please - Will you check that the Wikieducator url is changed
-            # for the next release - not sure if we'll get the image thing
-            # sorted, but this is pretty important strategically re the
-            # international growth of eXe.  Not a new feature <smile> just a
-            # small change to a string."
-            if self.site == u"http://wikieducator.org/":
-                net  = urllib.urlopen(self.site+name)
-            else:
-                net  = urllib.urlopen(self.site+'wiki/'+name)
+            url  = (self.site or self.ownUrl)
+            if not url.endswith('/'): url += '/'
+            if '://' not in url: url = 'http://' + url
+            url += name
+            net  = urllib.urlopen(url)
             page = net.read()
             net.close()
-
         except IOError, error:
             log.warning(unicode(error))
-            self.article.content = _(u"Unable to connect to ") + self.site
+            self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
             return
 
         # avoidParserProblems is set to False because BeautifulSoup's
@@ -118,47 +113,34 @@ within Wikipedia.""")
         self.userResources = []
         self.images        = {}
             
-        # download the images
+        # Download the images
+        bits = url.split('/')
+        netloc = '%s//%s' % (bits[0], bits[2])
+        path = '/'.join(bits[3:-1])
         tmpDir = TempDirPath()
         for imageTag in content.fetch('img'):
             imageSrc  = unicode(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
-
             # Search if we've already got this image
             if imageName not in self.images:
                 if not imageSrc.startswith("http://"):
                     if imageSrc.startswith("/"):
-                        imageSrc = imageSrc[1:]
-                    imageSrc = self.site + imageSrc
+                        imageSrc = netloc + imageSrc
+                    else:
+                        imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
                 self.images[imageName] = True
-                self.userResources.append(Resource(self.parentNode.package,
-                                                   tmpDir/imageName))
-
+                self.userResources.append(Resource(self.parentNode.package, tmpDir/imageName))
             # We have to use absolute URLs if we want the images to
             # show up in edit mode inside FCKEditor
-            imageTag['src'] = (u"/" + self.parentNode.package.name + 
-                               u"/resources/" + imageName)
+            imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
+        self.article.content = self.reformatArticle(netloc, unicode(content))
 
-        self.article.content = self.reformatArticle(unicode(content))
-
-
-    def reformatArticle(self, content):
+    def reformatArticle(self, netloc, content):
         """
         Changes links, etc
         """
-        # UGLY UGLY UGLY KLUDGE for Wayne
-        # "BIG please - Will you check that the Wikieducator url is changed
-        # for the next release - not sure if we'll get the image thing
-        # sorted, but this is pretty important strategically re the
-        # international growth of eXe.  Not a new feature <smile> just a
-        # small change to a string."
-        if self.site == u"http://wikieducator.org/":
-            content = re.sub(r'href="/', 
-                             r'href="'+self.site, content)
-        else:
-            content = re.sub(r'href="/wiki/', 
-                             r'href="'+self.site+'wiki/', content)
+        content = re.sub(r'href="/', r'href="%s/' % netloc, content)
         content = re.sub(r'<div class="editsection".*?</div>', '', content)
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
@@ -247,4 +229,10 @@ within Wikipedia.""")
 of Wikipedia to search and enter search term.""")
         self._searchInstruc = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
+        
+    def upgradeToVersion8(self):
+        """
+        Upgrades to v0.19
+        """
+        self.ownUrl = ""
 # ===========================================================================

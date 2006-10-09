@@ -54,13 +54,18 @@ class WikipediaBlock(Block):
         if 'emphasis'+self.id in request.args:
             self.idevice.emphasis = int(request.args['emphasis'+self.id][0])
             
-        if 'site'+self.id in request.args:
-            self.idevice.site = request.args['site'+self.id][0]
+        if 'ssite'+self.id in request.args:
+            self.idevice.site = request.args['ssite'+self.id][0]
+            
+        if 'ownUrl'+self.id in request.args:
+            self.idevice.ownUrl = request.args['ownUrl'+self.id][0]
 
         if 'title'+self.id in request.args:
             self.idevice.title = request.args['title'+self.id][0]
-
-        if 'loadWikipedia'+self.id in request.args:
+            
+        if ("object" in request.args and request.args["object"][0] == "site" + self.id):
+            pass
+        elif 'loadWikipedia'+self.id in request.args:
             # If they've hit "load" instead of "the tick"
             self.idevice.loadArticle(request.args['article'][0])
         else:
@@ -70,40 +75,48 @@ class WikipediaBlock(Block):
                 request.args[u"action"][0] != u"delete"):
                 # If the text has been changed
                 self.articleElement.process(request)
-
-
+                
+        
+            
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
+        
 
         html  = u"<div class=\"iDevice\"><br/>\n"
-        html += common.textInput("title" + self.id, self.idevice.title)
+        html += common.textInput("title" + self.id, self.idevice.title) + "<br/><br/>"
 
-        sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/"),
-                 (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/"),
-                 (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/"),
-                 (_(u"French Wikipedia Article"),  "http://fr.wikipedia.org/"),
-                 (_(u"Japanese Wikipedia Article"),"http://ja.wikipedia.org/"),
-                 (_(u"Italian Wikipedia Article"), "http://it.wikipedia.org/"),
-                 (_(u"Polish Wikipedia Article"),  "http://pl.wikipedia.org/"),
-                 (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/"),
-                 (_(u"Portugese Wikipedia Article"),
-                                                   "http://pt.wikipedia.org/"),
-                 (_(u"Slovenian Wikipedia Article"), 
-                                                   "http://sl.wikipedia.org/"),
-                 (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/"),
-                 (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/"),
-                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/"),
-                 (_(u"Wikieducator Content"),      "http://wikieducator.org/")]
+        sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/wiki/"),
+                 (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/wiki/"),
+                 (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/wiki/"),
+                 (_(u"French Wikipedia Article"),  "http://fr.wikipedia.org/wiki/"),
+                 (_(u"Japanese Wikipedia Article"),"http://ja.wikipedia.org/wiki/"),
+                 (_(u"Italian Wikipedia Article"), "http://it.wikipedia.org/wiki/"),
+                 (_(u"Polish Wikipedia Article"),  "http://pl.wikipedia.org/wiki/"),
+                 (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/wiki/"),
+                 (_(u"Portugese Wikipedia Article"), "http://pt.wikipedia.org/wiki/"),
+                 (_(u"Slovenian Wikipedia Article"), "http://sl.wikipedia.org/wiki/"),
+                 (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/wiki/"),
+                 (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/wiki/"),
+                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/wiki/"),
+                 (_(u"Wikieducator Content"),      "http://wikieducator.org/"),
+                 (_(u"Other"),                     "")]          
 
-        html += common.formField('select', _('Site'),
-                                 'site'+self.id, '',
+        html += common.formField('select', _('Site'),'s',
+                                 'site'+self.id,
                                  self.idevice.langInstruc,
                                  sites,
                                  self.idevice.site)
 
+        
+        url = "none"
+        if self.idevice.site == "":
+            url = "block"
+        html += '<div style="display:%s"> %s: <br/>' % (url, _("Own site"))
+        html += common.textInput("ownUrl"+self.id, self.idevice.ownUrl) + '<br/></div>'
+        html += "<br/>"
         html += common.textInput("article", self.idevice.articleName)
         html += common.elementInstruc(self.idevice.searchInstruc)
         html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
