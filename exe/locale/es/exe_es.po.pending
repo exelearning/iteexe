@@ -4,3 +4,45 @@ msgid "_:suggested by carlos"
 "%s already exists, please try again with a different filename\n"
 msgstr "%s ya existe, por favor trate nuevamente con un nombre diferente de archivo"
 
+#: exe/engine/imagemagnifieridevice.py:67
+#: exe/engine/imagemagnifieridevice.py:91
+msgid ""
+"_: suggested by jmunoz"
+"Set the initial level of zoom \n"
+"when the IDevice loads, as a percentage of the original image size"
+msgstr ""
+"Fije el nivel inicial del zoom \n"
+" cuando se carga el IDevice, como porcentaje del tamaño original de la imagen"
+
+#: exe/idevices/forumelement.py:103
+msgid "_: suggested by jmunoz"
+"Can a student post to this forum?:"
+msgstr "¿Puede un estudiante enviar mensajes a este foro?:"
+
+#: exe/webui/editorelement.py:145
+msgid "_: suggested by jmunoz"
+"Button Caption"
+msgstr "Título de botón"
+
+#: exe/idevices/forumelement.py:103
+msgid "_: suggested by jmunoz"
+"Can a student post to this forum?:"
+msgstr "¿Puede un estudiante enviar mensajes a este foro?:"
+
+#: exe/xului/mainpage.py:236 exe/xului/mainpage.py:295
+#: exe/xului/mainpage.py:358
+msgid "_: suggested by jmunoz"
+"Cannot access directory named "
+msgstr "No se puede accesar al directorio"
+
+#: exe/engine/casestudyidevice.py:72
+msgid "_: suggested by jmunoz"
+"Case Study"
+msgstr "Estudio de caso"
+
+#: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
+#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
+#: exe/idevices/flashmovieblock.py:83
+msgid "_: suggested by jmunoz"
+"Caption:"
+msgstr "Título:"

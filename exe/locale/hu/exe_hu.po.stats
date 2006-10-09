@@ -1,4 +1,4 @@
-1157346577 1157338854
+1157927493 1157338854
 check-validchars:
 check-numbers:
 check-unchanged:
@@ -23,7 +23,7 @@ check-startwhitespace:
 check-accelerators:
 check-long:
 check-musttranslatewords:
-has-suggestion:47,48,51,52,61,63,66,70,78,79,82,91,92,93,98,99,103,105,106,108,114
+has-suggestion:47,48,51,52,61,63,66,70,78,79,82,91,92,93,98,99,103,105,108,114
 check-puncspacing:
 check-notranslatewords:
 check-variables:

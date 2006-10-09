@@ -1,0 +1,116 @@
+#: exe/engine/field.py:707
+msgid "_: suggested by mellik"
+"<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
+msgstr "<ol><li>Matemaatilise valemi sisestamiseks vali tekstiredakorist sümbolid. Iga sümbolit saab vaadata LATEX-keeles vastavas aknas, mille eelvaatamine on võimalik alloleva &lt;Eelvaade&gt; nupu abil.</li>"
+
+#: exe/engine/multimediaidevice.py:74
+msgid ""
+"_: suggested by mellik"
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Joondamine lubab sul valida asukohta ekraanil, \n"
+"kuhu meedia-pleier paigutada."
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "_: suggested by mellik"
+"Auckland Univeristy of Technology"
+msgstr "Aucklandi Tehnikaülikool"
+
+#: exe/engine/multimediaidevice.py:49
+msgid "_: suggested by mellik"
+"Choose a MP3 file"
+msgstr "Vali MP3-fail"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "_: suggested by mellik"
+"Choose an image to be shown to the student on completion of this question"
+msgstr "Vali pilt, mida õpilasele näidatakse ülesande läbimisel"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "_: suggested by mellik"
+"Choose an image to be shown to the student on completion of this question"
+msgstr "Vali pilt, mida õpilasele näidatakse selle küsimuse vastamise järel"
+
+#: exe/engine/field.py:714
+msgid ""
+"_: suggested by mellik"
+"Click on Preview button to convert \n"
+"                                  the latex into a symbols image."
+msgstr ""
+"Kliki \"Eelvaade\"-nupul, konverteerimaks\n"
+"latex-teksti sümbolite pildiks."
+
+#: exe/engine/casestudyidevice.py:53
+msgid "_: suggested by mellik"
+"Feedback Image"
+msgstr "Tagasiside pilt"
+
+#: exe/webui/questionelement.py:107
+msgid "_: suggested by mellik"
+"Hide Feedback"
+msgstr "Peida tagasiside"
+
+#: exe/engine/multimediaidevice.py:40
+msgid "_: suggested by mellik"
+"MP3"
+msgstr "MP3"
+
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
+msgid "_: suggested by mellik"
+"Maths"
+msgstr "Matemaatika"
+
+#: exe/engine/multimediaidevice.py:71
+msgid ""
+"_: suggested by mellik"
+"Provide a caption for the \n"
+"MP3 file."
+msgstr "Lisa märgend MP3-failile."
+
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:47
+msgid "_: suggested by mellik"
+"RSS"
+msgstr "RSS"
+
+#: exe/webui/element.py:355
+msgid "_: suggested by mellik"
+"Select a MP3"
+msgstr "Vali MP3-fail"
+
+#: exe/webui/questionelement.py:102
+msgid "_: suggested by mellik"
+"Show Feedback"
+msgstr "Näita tagasiside"
+
+#: exe/engine/multimediaidevice.py:42
+msgid "_: suggested by mellik"
+"The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
+msgstr "MP3 iDevice lubab sul sisusse lisada MP3-formaadis faile koos vajalike õpijuhistega"
+
+#: exe/engine/mathidevice.py:49
+msgid "_: suggested by mellik"
+"You can use the toolbar or enter latex manually into the textarea. "
+msgstr "See menüüriba võimaldab LATEXi manuaalset sisestamist teksti-aknasse."
+
+#: exe/engine/rssidevice.py:50
+msgid "_: suggested by mellik"
+"some help tip here."
+msgstr "abivihje siia."
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile')" label="Zip File">
+msgid "_: suggested by mellik"
+"Zip File"
+msgstr "Zip-fail"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
+msgid "_: suggested by mellik"
+"label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"Tekstifail\" accesskey=\"t\""
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "_: suggested by kot"
+"Auckland Univeristy of Technology"
+msgstr "Auckland Tehnikaülikool"

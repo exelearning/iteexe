@@ -8,12 +8,13 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2006-09-01 22:08+1200\n"
-"Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
+"PO-Revision-Date: 2006-10-10 05:40+1300\n"
+"Last-Translator: Juan Muñoz Justicia <juan.munoz@uab.es>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 0.10beta\n"
 "X-EXE-Language: Español\n"
 "X-Poedit-Language: Spanish\n"
 
@@ -37,15 +38,15 @@ msgstr ". Por favor usar nombres en ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la compresnsión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  de tiempo largo  que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos que uno haya tipeado la pagina es probablemente adecuado, pero considerablemente menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en la llave de texto para entender los conceptos . Estas serán probablemente verbos, sustantivos y adverbios. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en voabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y cohesivo, y ser de un apropiado largo. Resaltando las palabras importantes en el texto. Elija una alternativa limpia.</p>  </dd>  <dt>si su meta es probar palabras para la formación de la gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y ser de un apropiado largo. Recuerde que la meta no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resaltando las palabras importantes en el texto. Prove alternativas con la misma palabra raíz , pero con diferentes significados. Es una buena idea conseguir a un colega para probar los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
+msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  de tiempo largo  que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos que uno haya tipeado la pagina es probablemente adecuado, pero considerablemente menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en la llave de texto para entender los conceptos . Estas serán probablemente verbos, sustantivos y adverbios. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en voabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y cohesivo, y ser de un apropiado largo. Resaltando las palabras importantes en el texto. Elija una alternativa limpia.</p>  </dd>  <dt>si su meta es probar palabras para la formación de la gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y ser de un apropiado largo. Recuerde que la meta no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resaltando las palabras importantes en el texto. Prove alternativas con la misma palabra raíz , pero con diferentes significados. Es una buena idea conseguir a un colega para probar los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select a MP3&gt; and browse to the MP3       file you want to insert</li> <li>Click on the dropdown arrow and select the position        that you want the file displayed on screen.</li>  <li>Enter a caption for your file.</li> <li>Associate relevant text to the MP3 file.</li> <li>Choose the type of style you want the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Click &lt;Seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en que quiere que se muestre el archivo.</li>  <li>Introduzca un título para su archivo.</li> <li>Associate relevant text to the MP3 file.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice, p.ej. 'Énfasis' aplica un borde y un icono al contenido del iDevice.</li></ol>"
 
 #: exe/engine/field.py:707
 msgid "<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
-msgstr ""
+msgstr "<ol><li>Seleccione símbolos del editor de texto inferior para crear fórmulas matemáticas. Cada símbolo se mostrará en el campo de visualización en el formato matemático LATEX que puede ser previsualizado utilizando el botón &lt;Preview&gt; inferior"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -67,8 +68,7 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"La imagen con el texto en el IDevice puede ser usado de muchas maneras a soportar las dos dimensiones del contenido del EXE;\n"
-"lo emocional (afectivo) y aprendiendo las tareas (cognoscitiva).\n"
+"El IDevice imagen con texto en el IDevice puede ser utilizado de muchas maneras para apoyar tanto la dimensión emocional (afectiva) como la tarea de aprendizadje (cognitiva) de EXE.\n"
 "Nosotros te proporcionamos un ejemplo por cada dimension:\n"
 "</p><p>\n"
 "<b>Perfil del profesor (dimension emocional)</b>\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr "<p>Asigne una etiqueta para el accesorio.  Es útil incluir el tipo de archivo. Eg. pdf, ppt, etc.</p><p>Incluyendo el tamaño también se recomienda de modo que después de que su paquete se exporte a un Web site, la gente tenga una idea cuánto tiempo llevaría la transferencia directa este accesorio. Por ejemplo: Ventas Forecast.doc (500kb)</p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
+msgstr "<p>Asigne una etiqueta para el adjunto.  Es útil incluir el tipo de archivo. Ej. pdf, ppt, etc.</p><p>También se recomienda incluir el tamaño de forma que después de que su paquete se exporte a un Web site, la gente tenga una idea sobre cuánto tiempo supondría la descarga de este adjunto. </p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
@@ -168,8 +168,8 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
 msgstr ""
-"<p>La actividad de lectura, como su nombre lo sugiere, pide al estudiante que realice alguna forma de esta actividad \n"
-"Debería ser relacionada con el el texto que el estudiante haya leido. \n"
+"<p>La actividad de lectura, como su nombre sugiere, pide al estudiante que realice algún tipo de actividad. \n"
+"Debería estar relacionada directamente con el el texto que el estudiante haya leido. \n"
 "Rehacer la actividad donde sea apropiado, puede proveer al estudiante alguna\n"
 "reflexión guiada .</p>"
 
@@ -315,13 +315,12 @@ msgstr ""
 "escoger donde la imagen estará posicionada en la pantalla. "
 
 #: exe/engine/multimediaidevice.py:74
-#, fuzzy
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
 "Alineamiento le permite \n"
-"escoger donde la imagen estará posicionada en la pantalla. "
+"escoger donde se posicionará la imagen en la pantalla. "
 
 #: exe/engine/field.py:524
 msgid ""
@@ -579,7 +578,7 @@ msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr "Describir como los estudiantes evaluarán como ellos han hecho el ejercicio.(Rúbricas son dispositivos útiles a proveer información reflexiva.)"
+msgstr "Describir cómo los estudiantes evaluarán la forma en que han realizado el ejercicio.(Rúbricas son dispositivos útiles a proveer información reflexiva.)"
 
 #: exe/engine/casestudyidevice.py:97
 msgid ""
@@ -680,9 +679,9 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"EXPORTACÌON FALLO.\n"
+"FALLO EN LA EXPORTACIÓN.\n"
 " \"%s\" ya existe.\n"
-" Por favor tratar nuevamente con un nombre de archivo diferente."
+" Por favor vuelva a intentarlo con un nombre de archivo diferente."
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
@@ -696,7 +695,7 @@ msgstr "Edita"
 #: exe/webui/wikipediablock.py:117 exe/webui/editorpane.py:304
 #: exe/webui/rssblock.py:95 exe/webui/multimediablock.py:95
 msgid "Emphasis"
-msgstr "Enfasis"
+msgstr "Énfasis"
 
 #: exe/webui/wikipediablock.py:84
 msgid "English Wikipedia Article"
@@ -707,7 +706,7 @@ msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
-"Ingrese\n"
+"Introduzca\n"
 "el texto que desea asociar con el archivo."
 
 #: exe/engine/multichoiceidevice.py:87
@@ -718,14 +717,14 @@ msgstr "Ingrese una sugerencia aquí, deja este campo en blanco."
 
 #: exe/engine/multichoiceidevice.py:126
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr "Ingrese una sugerencia aquí, si quiere preveer un sugescion deja este campo en blanco."
+msgstr "Introduzca aquí una sugerencia. Si no quiere ofrecer una sugerencia deja este campo en blanco."
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:248
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
-"Ingrese la frase o texto que desea buscar  \n"
+"Introduzca la frase o texto que desea buscar  \n"
 "dentro de wikipedia."
 
 #: exe/engine/reflectionidevice.py:54
@@ -733,12 +732,12 @@ msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
-"Inngrese una pregunta para que los estudiantes \n"
-" se reflejen sobre ellos."
+"Introduzca una pregunta para que los estudiantes \n"
+" reflexionen."
 
 #: exe/engine/galleryidevice.py:503
 msgid "Enter a title for the gallery"
-msgstr "Ingresar un título para la galería"
+msgstr "Introduzca un título para la galería"
 
 #: exe/idevices/quiztestidevice.py:64 exe/idevices/quiztestidevice.py:86
 msgid ""
@@ -746,31 +745,33 @@ msgid ""
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
-"Ingrese un opción de respuesta. Provea \n"
-"un rango de posibilidades detractores (usualmente 3-4) así como la respuesta correcta. \n"
-"Haga un click en el botón \"Agregue otra opción\"  para agregar otra respuesta."
+"Introduzca un opción de respuesta. Provea \n"
+"un rango de posibilidades distractoras (usualmente 3-4) así como la respuesta correcta. \n"
+"Haga click en el botón \"Agregue otra opción\"  para agregar otra respuesta."
 
 #: exe/engine/truefalseidevice.py:73
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
-msgstr "Ingrese lal retroalimentación que usted quiere que vean los estudiantes despues que han tratado de completar el actividad. Este campo, se puede dejar vacio."
+msgstr ""
+"Introduzca la retroalimentación que quiere que vean los estudiantes despues de haber intentado completar la actividad. Este campo se puede dejar vacio. Si este campo está vacío \n"
+" se ofrecerá la retroalimentación por defecto."
 
 #: exe/engine/clozeidevice.py:128
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
-msgstr "Entra el regeneración que quieres que vean los estudiantes despues que han tratado de completer el actividad. Este campo, se lo puede dejar vacio."
+msgstr "Introduzca la retroalimentación que quiera que vean los estudiantes después de haber intentado completer la actividad. Este campo, se puede dejar vacio."
 
 #: exe/webui/editorpane.py:141
 msgid "Enter instructions for completion here"
-msgstr "Ingrese aquí las instrucciones para la terminación."
+msgstr "Introduzca aquí las instrucciones para la realización."
 
 #: exe/engine/externalurlidevice.py:47 exe/engine/externalurlidevice.py:69
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
-"Ingrese la URL que usted desea ver\n"
+"Introduzca la URL que desea mostrar\n"
 "y seleccione el tamaño del área a ser mostrada."
 
 #: exe/engine/multichoiceidevice.py:93
@@ -779,16 +780,16 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
-"Ingrese las opciones disponibles aquí. \n"
-"Usted puede agregar opciones haciendo un click en el botón \"Agregar otra opción\". \n"
-"Tú puedes eliminar opciones haciendoun click en el botón \"X\" que se encuentra al lado de cada opción."
+"Introduzca aquí las opciones disponibles. \n"
+"Puede agregar opciones haciendo click en el botón \"Agregar otra opción\". \n"
+"Puede eliminar opciones haciendo click en el botón \"X\" que se encuentra al lado de cada opción."
 
 #: exe/engine/idevicestore.py:285 exe/engine/idevicestore.py:393
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
-msgstr "Ingrese los detalles de la lectura incluyendo las referencias. El estilo de  referencia usada dependerá de la preferencia que tenga su facultad o departamento."
+msgstr "Introduzca los detalles de la lectura incluyendo las referencias. El estilo de  referencia usada dependerá de las preferencias que tenga su facultad o departamento."
 
 #: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
@@ -796,18 +797,18 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
-"Ingrese las dimensiones del archivo flash  \n"
+"Introduzca las dimensiones del archivo flash  \n"
 " (en pixeles) y determine su alineación. \n"
 "El largo y ancho se alterarán proporcionalmente."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:149
 msgid "Enter the instructions for completion here"
-msgstr "Ingrese aquí las instrucciones para la terminación."
+msgstr "Introduzca aquí las instrucciones para la realización."
 
 #: exe/webui/editorpane.py:140 exe/webui/editorpane.py:144
 #: exe/webui/editorpane.py:148 exe/webui/editorpane.py:155
 msgid "Enter the label here"
-msgstr "Ingresa la etiqueta aquí"
+msgstr "Introduzca aquí la etiqueta"
 
 #: exe/idevices/quiztestidevice.py:61
 msgid ""
@@ -815,7 +816,7 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
-"Ingrese la pregunta raíz. \n"
+"Introduzca la pregunta raíz. \n"
 "La pregunta debe ser clara y no ambigua. Evite las premisas negativas \n"
 "ya que estas tienden a ser ambiguas."
 
@@ -824,7 +825,7 @@ msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
-"Ingrese el texto que desea\n"
+"Introduzca el texto que desea\n"
 "                                     asociar con la imagen."
 
 #: exe/engine/flashwithtextidevice.py:50
@@ -832,7 +833,7 @@ msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
-"Ingrese el texto que desea\n"
+"Introduzca el texto que desea\n"
 "                                     asociar al archivo de flash"
 
 #: exe/engine/multimediaidevice.py:65 exe/engine/imagemagnifieridevice.py:54
@@ -840,12 +841,12 @@ msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
-"Ingrese el texto que desea  \n"
+"Introduzca el texto que desee  \n"
 "asociar con el archivo."
 
 #: exe/engine/attachmentidevice.py:76
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr "Tipea el texto que desa que sea asociado con el archivo descargado. De-repente quireis proveer instruciones on que quire usted que el estudiante hace cuando ya esta descargado el archivo o en como el material debe ser usado."
+msgstr "Introduzca el texto que desee asociar con el archivo descargado. Puede ofrecer instrucciones sobre qué se requiere que realice el estudiante una vez descargado el archivo o sobre cómo debe ser utilizado el material."
 
 #: exe/xului/mainpage.py:570
 #, python-format
@@ -994,13 +995,12 @@ msgid "Hide"
 msgstr "Ocultar"
 
 #: exe/webui/questionelement.py:107
-#, fuzzy
 msgid "Hide Feedback"
-msgstr "Demuestrar/Ocultar Información"
+msgstr "Ocultar Información"
 
 #: exe/webui/element.py:732
 msgid "Hide/Show Word"
-msgstr "Ocultar/Demuestrar Palabra"
+msgstr "Ocultar/Mostrar Palabra"
 
 #: exe/webui/multichoiceblock.py:158 exe/webui/multichoiceblock.py:183
 #: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
@@ -1347,7 +1347,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:227 exe/webui/element.py:1070
 msgid "Preview"
-msgstr "Previo"
+msgstr "Visualización previa"
 
 #: exe/engine/galleryidevice.py:190 exe/export/scormexport.py:292
 #: exe/export/websitepage.py:190
@@ -1384,8 +1384,8 @@ msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
-"Proporciona una captura del archivo flash\n"
-"                                     que usted acaba de insertar."
+"Proporcione un título para el archivo flash\n"
+"                                     que acaba de insertar."
 
 #: exe/engine/imagewithtextidevice.py:67
 #: exe/engine/imagewithtextidevice.py:114
@@ -1393,16 +1393,16 @@ msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
-"Proporciona un titulo para la imagen  \n"
-"que usted acaba de insertar."
+"Proporcione un título para la imagen  \n"
+"que acaba de insertar."
 
 #: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
-"Provea instrucion en como la pregunta de Verdadero/Falso debe ser \n"
-"completado."
+"Ofrezca instruciones sobre cómo debe ser completada la pregunta Verdadero/Falso \n"
+"."
 
 #: exe/engine/clozeidevice.py:115
 msgid ""
@@ -1443,7 +1443,7 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:148
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "Lea el párrafo que aparece abajo y llene los espacios en blancos"
+msgstr "Lea el párrafo que aparece abajo y llene los espacios en blanco"
 
 #: exe/engine/truefalseidevice.py:170 exe/engine/clozeidevice.py:118
 msgid "Read the paragraph below and fill in the missing words."
@@ -1470,7 +1470,7 @@ msgid ""
 "these as a piece of academic work. Journals, diaries, profiles and portfolios \n"
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
-msgstr "La reflexión es un método de enseñanza usado a menudo a conectar la teoría con la práctica.Las tareas de la reflexión proveen a menudo estudiantes con una oportunidad a observar y reflejar sus observaciones antes de presentar una parte de un trabajo académico. Diarios, perfiles y portafolios son herramientas útiles para recoger datos de la observación. Las rúbricas y las guías pueden ser herramientas eficaces de la información."
+msgstr "La reflexión es un método de enseñanza usado a menudo para conectar la teoría con la práctica. Las tareas de reflexión ofrecen a menudo a los estudiantes la oportunidad a observar y reflejar sus observaciones antes de presentar una parte de un trabajo académico. Diarios, perfiles y portafolios son herramientas útiles para recoger datos de la observación. Las rúbricas y las guías pueden ser herramientas eficaces de la información."
 
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
@@ -1612,17 +1612,16 @@ msgid "Show Answers"
 msgstr "Mostrar las respuestas"
 
 #: exe/webui/questionelement.py:102
-#, fuzzy
 msgid "Show Feedback"
-msgstr "Demuestrar/Ocultar Información"
+msgstr "Mostrar Información"
 
 #: exe/webui/element.py:822
 msgid "Show/Clear Answers"
-msgstr "Demuestrar/Ocultar las respuestas"
+msgstr "Mostrar/Ocultar las respuestas"
 
 #: exe/webui/element.py:817
 msgid "Show/Hide Feedback"
-msgstr "Demuestrar/Ocultar Información"
+msgstr "Mostrar/Ocultar Información"
 
 #: exe/webui/wikipediablock.py:101
 msgid "Site"
@@ -2184,7 +2183,7 @@ msgstr "IEEE LOM"
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 msgid "Project Title:"
-msgstr "Titulo del Proyecto:"
+msgstr "Título del Proyecto:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
@@ -2253,15 +2252,14 @@ msgstr "R"
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image">
-#, fuzzy
 msgid "Clear Image"
-msgstr "Elimina el imagen"
+msgstr "Eliminar imagen"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "Publisher:"
-msgstr "Publicador:"
+msgstr "Editor:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
@@ -2484,7 +2482,7 @@ msgstr "Afar."
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Carpeta auto-contenida"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
@@ -2495,7 +2493,7 @@ msgstr "Abkhazian."
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
 msgid "Zip File"
-msgstr ""
+msgstr "Archivo comprimido"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -2506,7 +2504,7 @@ msgstr "Avestan."
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Pagina Sola\" accesskey=\"p\""
+msgstr "label=\"Página Sola\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
