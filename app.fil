@@ -105,7 +105,6 @@ exe/idevices/forumblock.py
 exe/idevices/appletidevice.py
 exe/idevices/__init__.py
 exe/idevices/testquestionelement.py
-exe/xului/xulrunner.py
 exe/xului/idevicepane.py
 exe/xului/mainpage.py
 exe/xului/stylemenu.py
