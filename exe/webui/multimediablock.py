@@ -147,7 +147,7 @@ class MultimediaBlock(Block):
             html += u"<span class=\"iDeviceTitle\">"
             html += self.idevice.title
             html += u"</span>\n"
-        html += u"<div class=\"media_text\"> "
+        html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderView()
         html += u"<br/>" + self.idevice.caption + "</div>"
