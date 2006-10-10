@@ -82,7 +82,7 @@ within Wikipedia.""")
         Load the article from Wikipedia
         """
         self.articleName = name
-
+        url = ""
         name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
         try:
             url  = (self.site or self.ownUrl)
@@ -106,6 +106,8 @@ within Wikipedia.""")
 
         if not content:
             log.error("no content")
+            self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+            return
 
         # clear out any old images
         for resource in self.userResources:
