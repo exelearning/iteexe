@@ -26,6 +26,19 @@ a:hover {
     text-decoration: none;
 }
 
+/* a:[href^="http://"]:before { content: "\2197\a0" } */
+
+a[href^="http://"]::before,
+a[href^="https://"]::before {
+/* Nord-Ost-Pfeil und Leerzeichen vor externen Links */
+content: "\2197\00A0";
+text-decoration:underline;
+background-color:yellow;
+font-weight:bold;
+}
+
+
+
 p#nodeTitle { 
     color: #006699;
     font-size: 20px;
