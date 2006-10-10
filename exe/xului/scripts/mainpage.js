@@ -59,7 +59,6 @@ function initWindow() {
     // Select the correct tree item
     nevow_clientToServerEvent('setTreeSelection', this, '');
     haveLoaded = true;
-    top.onclose = onclose;
 }
 
 // Called by the server. Causes the correct selection to be put into the node
@@ -393,7 +392,7 @@ function fileSaveAs(onDone) {
 function fileQuit() {
     // Call file - save as
     saveWorkInProgress()
-    askSave('doQuit()')
+    askDirty('doQuit()')
 }
 
 function onclose(aEvent) {
