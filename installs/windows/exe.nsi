@@ -52,168 +52,152 @@ Function UninstallMSI
   push $R1
   ReadRegStr $R1 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$R0" "UninstallString"
   StrCmp $R1 "" UninstallMSI_nomsi
-    ExecWait '"msiexec.exe" /x $R0 /qn /passive'
-UninstallMSI_nomsi: 
-  pop $R1
+  ExecWait '"msiexec.exe" /x $R0 /qn /passive'
+  UninstallMSI_nomsi: 
+    pop $R1
 FunctionEnd
 
 Section "Remove Old Version" Section1
-	; Remove any previous nsis install...
-	; Read where the last nsis install was
-	ReadRegStr $R1 HKLM "Software\${APPNAME}" ""
-	StrCmp $R1 "" SetR1 DoUninstall
-	SetR1:
-	  StrCpy $R1 "$PROGRAMFILES\exe"
-	DoUninstall:
-		IfFileExists "$R1\uninstall.exe" 0 Next
-			ExecWait '"$R1\uninstall.exe" /S _?=$R1'
-			Delete "$R1\uninstall.exe"
-			RMDir "$R1"
-	Next:
-	; Uninstall previous msi packages...
+    ; Remove any previous nsis install...
+    ; Read where the last nsis install was
+    ReadRegStr $R1 HKLM "Software\${APPNAME}" ""
+    StrCmp $R1 "" SetR1 DoUninstall
+    SetR1:
+        StrCpy $R1 "$PROGRAMFILES\exe"
+    DoUninstall:
+        IfFileExists "$R1\uninstall.exe" 0 Next
+            ExecWait '"$R1\uninstall.exe" /S _?=$R1'
+            Delete "$R1\uninstall.exe"
+            RMDir "$R1"
+    Next:
+        ; Uninstall previous msi packages...
         StrCpy $R0 "{053B45FD-255C-4E20-AA9D-218BB8A2B215}";  the MSI's ProductID of my package
         Call UninstallMSI
         StrCpy $R0 "{B4E5B5BC-087B-44D3-AD94-9DA209C70979}";  the MSI's ProductID of my package
         Call UninstallMSI
-	StrCpy $R0 "{3BEEE1AE-B96C-4E83-A63A-5886E4C1707C}";  the MSI's ProductID of my package
-	Call UninstallMSI
-	; If still there, tell them to manually uninstall it!
+        StrCpy $R0 "{3BEEE1AE-B96C-4E83-A63A-5886E4C1707C}";  the MSI's ProductID of my package
+        Call UninstallMSI
+        ; If still there, tell them to manually uninstall it!
         IfFileExists "$PROGRAMFILES\exe\exe.exe" 0 Done
-	  MessageBox MB_OK "Before continuing please manually uninstall the old version of exe using the control panel, 'add remove programs' utility. Press OK when this is done."
-	Done:
+          MessageBox MB_OK "Before continuing please manually uninstall the old version of exe using the control panel, 'add remove programs' utility. Press OK when this is done."
+    Done:
 SectionEnd
-	
-
-
+    
 Section "exe" Section2
+    ; Set Section properties
+    SetOverwrite ifnewer
 
-	; Set Section properties
-	SetOverwrite ifnewer
-
-	; Set Section Files and Shortcuts
-	SetOutPath "$INSTDIR\"
-	File /r "..\..\dist\*.*"
-	CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
-	CreateDirectory "$SMPROGRAMS\exe"
-	CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
-	CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
-	
-	; Associtate elp files with exe.exe
-	!define Index "Line${__LINE__}"
-  ReadRegStr $1 HKCR ".elp" ""
-  StrCmp $1 "" "${Index}-NoBackup"
-  StrCmp $1 "exePackageFile" "${Index}-NoBackup"
-  WriteRegStr HKCR ".elp" "backup_val" $1
-	"${Index}-NoBackup:"
-    WriteRegStr HKCR ".elp" "" "exePackageFile"
-    ReadRegStr $0 HKCR "exePackageFile" ""
-	  WriteRegStr HKCR "exePackageFile" "" "eXe Package File"
-	  WriteRegStr HKCR "exePackageFile\shell" "" "open"
-	  WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\eXe_icon.ico"
-    WriteRegStr HKCR "exePackageFile\shell\open\command" "" \
-    '$INSTDIR\exe.exe "%1"'
-		Call RefreshShellIcons
-    ;;WriteRegStr HKCR "exePackageFile\shell\edit" "" "Edit Options File"
-    ;;WriteRegStr HKCR "exePackageFile\shell\edit\command" "" \
-    ;;'$INSTDIR\server.exe "%1"'
-  !undef Index
-	
-	IfFileExists "$APPDATA\exe\exe.conf" 0 NoIniUpdate
-		WriteINIStr "$APPDATA\exe\exe.conf" system webDir "$INSTDIR"
-	NoIniUpdate:
+    ; Set Section Files and Shortcuts
+    SetOutPath "$INSTDIR\"
+    File /r "..\..\dist\*.*"
+    CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
+    CreateDirectory "$SMPROGRAMS\exe"
+    CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
+    CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
+    
+    ; Associtate elp files with exe.exe
+    !define Index "Line${__LINE__}"
+        ReadRegStr $1 HKCR ".elp" ""
+        StrCmp $1 "" "${Index}-NoBackup"
+        StrCmp $1 "exePackageFile" "${Index}-NoBackup"
+        WriteRegStr HKCR ".elp" "backup_val" $1
+        "${Index}-NoBackup:"
+        WriteRegStr HKCR ".elp" "" "exePackageFile"
+        ReadRegStr $0 HKCR "exePackageFile" ""
+        WriteRegStr HKCR "exePackageFile" "" "eXe Package File"
+        WriteRegStr HKCR "exePackageFile\shell" "" "open"
+        WriteRegStr HKCR "exePackageFile\DefaultIcon" "" "$INSTDIR\eXe_icon.ico"
+        WriteRegStr HKCR "exePackageFile\shell\open\command" "" '$INSTDIR\exe.exe "%1"'
+        Call RefreshShellIcons
+        ;;WriteRegStr HKCR "exePackageFile\shell\edit" "" "Edit Options File"
+        ;;WriteRegStr HKCR "exePackageFile\shell\edit\command" "" '$INSTDIR\server.exe "%1"'
+    !undef Index
+    
+    IfFileExists "$APPDATA\exe\exe.conf" 0 NoIniUpdate
+        WriteINIStr "$APPDATA\exe\exe.conf" system webDir "$INSTDIR"
+    NoIniUpdate:
 
 SectionEnd
 
 ;Variables
 
-  Var INI_VALUE1
-	Var INI_VALUE2
-	Var INI_VALUE3
-	
+Var INI_VALUE1
+Var INI_VALUE2
+Var INI_VALUE3
+    
 Section "ideveice plugins" Section3
-
-  
   ;Read a value from an InstallOptions INI file
   !insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE1 "idevices.ini" "Field 1" "State"
-	!insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE2 "idevices.ini" "Field 2" "State"
-	!insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE3 "idevices.ini" "Field 3" "State"
+  !insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE2 "idevices.ini" "Field 2" "State"
+  !insertmacro MUI_INSTALLOPTIONS_READ $INI_VALUE3 "idevices.ini" "Field 3" "State"
   
   ;run idevice plug-ins updates if check box was checked
   StrCmp $INI_VALUE1 "1" "" +2
-    ExecWait "$INSTDIR\eXe_applet_update.exe"
+  ExecWait "$INSTDIR\eXe_applet_update.exe"
 
-	StrCmp $INI_VALUE2 "1" "" +2
-    ExecWait "$INSTDIR\eXe_flashmovie_update.exe"
-		
-	StrCmp $INI_VALUE3 "1" "" +2
-    ExecWait "$INSTDIR\eXe_scormquiz_update.exe"
+  StrCmp $INI_VALUE2 "1" "" +2
+  ExecWait "$INSTDIR\eXe_flashmovie_update.exe"
+        
+  StrCmp $INI_VALUE3 "1" "" +2
+  ExecWait "$INSTDIR\eXe_scormquiz_update.exe"
 SectionEnd
 
 Function .onInit
-
   ;Extract InstallOptions INI files
   !insertmacro MUI_INSTALLOPTIONS_EXTRACT "idevices.ini"
-  
 FunctionEnd
 
 LangString TEXT_IO_TITLE ${LANG_ENGLISH} "Idevice Plug-ins page"
 LangString TEXT_IO_SUBTITLE ${LANG_ENGLISH} "Please choose the idevice plug-ins updates which you want to install."
 
-
 Function IdevicePage
-
   !insertmacro MUI_HEADER_TEXT "$(TEXT_IO_TITLE)" "$(TEXT_IO_SUBTITLE)"
   !insertmacro MUI_INSTALLOPTIONS_DISPLAY "idevices.ini"
-
 FunctionEnd
 
 Section -FinishSection
-
-	WriteRegStr HKLM "Software\${APPNAME}" "" "$INSTDIR"
-	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "${APPNAME}"
-	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "UninstallString" "$INSTDIR\uninstall.exe"
-	WriteUninstaller "$INSTDIR\uninstall.exe"
-
+    WriteRegStr HKLM "Software\${APPNAME}" "" "$INSTDIR"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "${APPNAME}"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "UninstallString" "$INSTDIR\uninstall.exe"
+    WriteUninstaller "$INSTDIR\uninstall.exe"
 SectionEnd
 
 ; Modern install component descriptions
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-	!insertmacro MUI_DESCRIPTION_TEXT ${Section1} ""
+!insertmacro MUI_DESCRIPTION_TEXT ${Section1} ""
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;Uninstall section
 Section Uninstall
+    ;Remove from registry...
+    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"
+    DeleteRegKey HKLM "SOFTWARE\${APPNAME}"
 
-	;Remove from registry...
-	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"
-	DeleteRegKey HKLM "SOFTWARE\${APPNAME}"
+    ; Delete self
+    Delete "$INSTDIR\uninstall.exe"
 
-	; Delete self
-	Delete "$INSTDIR\uninstall.exe"
-
-	; Delete Shortcuts
-	Delete "$DESKTOP\exe-${EXE_VERSION}.lnk"
-	Delete "$SMPROGRAMS\exe\exe.lnk"
-	Delete "$SMPROGRAMS\exe\Uninstall.lnk"
-	
-	; Unassociate elp files
-	!define Index "Line${__LINE__}"
-  ReadRegStr $1 HKCR ".elp" ""
-  StrCmp $1 "exePackageFile" 0 "${Index}-NoOwn" ; only do this if we own it
+    ; Delete Shortcuts
+    Delete "$DESKTOP\exe-${EXE_VERSION}.lnk"
+    Delete "$SMPROGRAMS\exe\exe.lnk"
+    Delete "$SMPROGRAMS\exe\Uninstall.lnk"
+    
+    ; Unassociate elp files
+    !define Index "Line${__LINE__}"
+    ReadRegStr $1 HKCR ".elp" ""
+    StrCmp $1 "exePackageFile" 0 "${Index}-NoOwn" ; only do this if we own it
     ReadRegStr $1 HKCR ".elp" "backup_val"
     StrCmp $1 "" 0 "${Index}-Restore" ; if backup="" then delete the whole key
-		DeleteRegKey HKCR ".elp"
+        DeleteRegKey HKCR ".elp"
     Goto "${Index}-NoOwn"
-  "${Index}-Restore:"
-		WriteRegStr HKCR ".elp" "" $1
-		DeleteRegValue HKCR ".elp" "backup_val"
+    "${Index}-Restore:"
+        WriteRegStr HKCR ".elp" "" $1
+        DeleteRegValue HKCR ".elp" "backup_val"
     DeleteRegKey HKCR "exePackageFile" ;Delete key with association settings
-  "${Index}-NoOwn:"
-  !undef Index
+    "${Index}-NoOwn:"
+    !undef Index
 
-	; Clean up exe
-	RMDir /r "$INSTDIR"
-
+    ; Clean up exe
+    RMDir /r "$INSTDIR"
 SectionEnd
 
 BrandingText "EXE"
