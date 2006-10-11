@@ -47,7 +47,7 @@ class TestQuestion(Persistable):
     A TestQuestion is built up of question and AnswerOptions.
     """
     
-    persistenceVersion = 1
+    persistenceVersion = 3
     
     def __init__(self, question=""):
         """
@@ -87,8 +87,20 @@ click the radio button next to the correct option.""")
 a range of plausible distractors (usually 3-4) as well as the correct answer. 
 Click on the &lt;Add another option&gt; button to add another answer.""")
         
+    def upgradeToVersion2(self):
+        """
+        Upgrades to v 0.13
+        """
+        self._questionInstruc= x_(u"""Enter the question stem. 
+The quest should be clear and unambiguous. Avoid negative premises 
+as these can tend to be ambiguous.""")
 
-
+    def upgradeToVersion3(self):
+        """
+        Upgrades to v 0.13
+        """
+        self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
+click the radio button next to the correct option.""")
 
 # ===========================================================================
 class QuizTestIdevice(Idevice):
