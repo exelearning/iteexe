@@ -49,7 +49,7 @@ class TrueFalseIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
 
     def __init__(self):
         """
