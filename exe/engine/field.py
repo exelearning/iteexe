@@ -303,6 +303,7 @@ class MultimediaField(Field):
         Needs to be in a package to work.
         """
         log.debug(u"setMedia "+unicode(mediaPath))
+        
         resourceFile = Path(mediaPath)
 
         assert(self.idevice.parentNode,
@@ -316,6 +317,13 @@ class MultimediaField(Field):
                 self.idevice.userResources.remove(self.mediaResource)
             self.mediaResource = Resource(self.idevice.parentNode.package,
                                           resourceFile)
+            if '+' in self.mediaResource.storageName:
+                path = self.mediaResource.path
+                newPath = path.replace('+','')
+                Path(path).rename(newPath)
+                self.mediaResource._storageName = \
+                    self.mediaResource.storageName.replace('+','')
+                self.mediaResource._path = newPath
             self.idevice.userResources.append(self.mediaResource)
 
         else:
@@ -693,6 +701,8 @@ class MathField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+    
+    persistenceVersion = 1
 
     def __init__(self, name, instruc="", latex=""):
         """
@@ -746,6 +756,12 @@ class MathField(Field):
             return ''
         else:
             return self.gifResource.path
+        
+    def _upgradeFieldToVersion1(self):
+        """
+        Upgrades to exe v0.19
+        """
+        self.fontsize = "4"
     
     # Properties
     
