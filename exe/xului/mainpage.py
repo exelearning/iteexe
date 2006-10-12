@@ -310,7 +310,9 @@ class MainPage(RenderableLivePage):
         elif exportType == 'textFile':
             self.exportText(client, filename)
         elif exportType == "scorm":
-            self.exportScorm(client, filename, stylesDir)
+            self.exportScorm(client, filename, stylesDir, "scorm1.2")
+        elif exportType == "scorm2004":
+            self.exportScorm(client, filename, stylesDir, "scorm2004")
         else:
             self.exportIMS(client, filename, stylesDir)
 
@@ -502,7 +504,7 @@ class MainPage(RenderableLivePage):
         textExport.export(self.package)
         client.alert(_(u'Exported to %s') % filename)
         
-    def exportScorm(self, client, filename, stylesDir):
+    def exportScorm(self, client, filename, stylesDir, scormType):
         """
         Exports this package to a scorm package file
         """
@@ -516,7 +518,7 @@ class MainPage(RenderableLivePage):
         if filename.exists(): 
             filename.remove()
         # Do the export
-        scormExport = ScormExport(self.config, stylesDir, filename)
+        scormExport = ScormExport(self.config, stylesDir, filename, scormType)
         scormExport.export(self.package)
         client.alert(_(u'Exported to %s') % filename)
 
