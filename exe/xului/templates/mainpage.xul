@@ -63,7 +63,7 @@
                      <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile')"/>
                   </menupopup>
                 </menu>
-                <menu n:render="translate" id="merging-menu" label="Merging" accesskey="e">
+                <menu n:render="translate" id="merging-menu" label="Merging" accesskey="m">
                   <menupopup id="merging-popup">
                     <menuitem n:render="translate" label="Insert Package" accesskey="i" oncommand="insertPackage()"/>
                     <menuitem n:render="translate" label="Extract Package" accesskey="E" oncommand="extractPackage()"/>
