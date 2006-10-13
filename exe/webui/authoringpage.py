@@ -144,7 +144,8 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
         html += u"tinyMCE.init({   " 
-	html += u" mode : \"textareas\",\n"
+        html += u"extended_valid_elements: \"object[width|height],param[name|value],embed[src|wmode|width|height|type]\",\n"
+        html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,"
         html += u" contextmenu,paste,directionality\","
@@ -162,8 +163,8 @@ class AuthoringPage(RenderableResource):
         html += u" theme_advanced_buttons3 : \"\",\n"
       
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
-	html += u"    theme_advanced_resize_horizontal : false,\n"
-	html += u"    theme_advanced_resizing : true\n"
+        html += u"    theme_advanced_resize_horizontal : false,\n"
+        html += u"    theme_advanced_resizing : true\n"
         html += u" });\n"
         html += u"//-->\n"
         html += u"</script>\n"
