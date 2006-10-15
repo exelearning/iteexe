@@ -717,13 +717,14 @@ class MathField(Field):
         self.fontsize = 4
         self.instruc     = x_(u""
         "<p>" 
-        "Select symbols from the text editor below to create mathematical formula."
-        " Each symbol will be viewed in the display field in the mathematical "
-        "language LATEX which can be previewed using the &lt;Preview&gt;"
+        "Select symbols from the text editor below or enter LATEX manually"
+        " to create mathematical formula."
+        " To preview your LATEX as it will display use the &lt;Preview&gt;"
         " button below.")
         "</p>"
         self._previewInstruc = x_("""Click on Preview button to convert 
-                                  the latex into a symbols image.""")
+                                  the latex into an image.""")
+
        
     # Property Handlers
     

@@ -35,9 +35,9 @@ class MathIdevice(Idevice):
         Idevice.__init__(self, x_(u"Maths"), 
                          x_(u"University of Auckland"), 
                          x_("""The mathematical language LATEX has been 
-                        used to enable you to create mathematical formula 
-                        within you content. It does this by translating the 
-                        LATEX into a graphical image which is then displayed
+                        used to enable your to insert mathematical formula 
+                        into your content. It does this by translating 
+                        LATEX into an image which is then displayed
                          within your eXe content. We would recommend that 
                         you use the Free Text iDevice to provide 
                         explanatory notes and learning instruction around 
