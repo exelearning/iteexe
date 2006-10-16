@@ -94,7 +94,7 @@ def textInput(name, value=u"", size=40, disabled=u"", **kwargs):
     return html
 
 
-def textArea(name, value="", disabled=""):
+def textArea(name, value="", disabled="", cols="80", rows="8"):
     """Adds a text area to a form"""
     log.debug(u"textArea %s" % value)
     html  = u'<textarea name="%s" ' % name
@@ -102,7 +102,7 @@ def textArea(name, value="", disabled=""):
     if disabled:
         html += u'disabled="disabled" '
     html += u'style=\"width:100%"'
-    html += u'cols="80" rows="8">'
+    html += u'cols="%s" rows="%s">' %(cols, rows)
     html += value
     html += u'</textarea><br/>'
     return html
@@ -307,6 +307,8 @@ def formField(type_, caption, action, object_='', instruction='', *args, **kwarg
         html += select(action, object_, *args, **kwargs)
     elif type_ == 'richTextArea':
         html += richTextArea(action+object_, *args, **kwargs)
+    elif type_ == 'textArea':
+        html += textArea(action+object_, *args, **kwargs)
     elif type_ == 'textInput':
         html += textInput(action+object_, *args, **kwargs)
     elif type_ == 'checkbox':

@@ -894,3 +894,24 @@ function insertSymbol(id, string, num){
     var ele = document.getElementById(id);
     insertAtCursor(ele, string, num)
 }
+
+//used for multiple select idevice for calculating score and showing feedback.
+function calcScore(num, ident){
+    var score = 0;
+    for(i=0; i<num; i++){
+        var chkele = document.getElementById(ident+i.toString());        
+        var ansele = document.getElementById("ans"+ident+i.toString())
+        chk = "False"
+        if (chkele.checked==1)
+            chk = "True"   
+        if (chk == chkele.value){
+            score++
+            ansele.style.color = "black"
+        }else{            
+            ansele.style.color = "red"
+        }
+    }
+    var fele = document.getElementById("f"+ident)
+    fele.style.display = "block"
+    alert("Your score is " + score + "/" + num)
+}

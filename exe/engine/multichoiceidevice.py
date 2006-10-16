@@ -23,6 +23,7 @@ A multichoice Idevice is one built up from question and options
 import logging
 from twisted.spread       import jelly
 from exe.engine.idevice   import Idevice
+from exe.engine.field     import QuizQuestionField, QuizOptionField
 from exe.engine.translate import lateTranslate
 log = logging.getLogger(__name__)
 
@@ -41,20 +42,19 @@ class Option(jelly.Jellyable):
         self.isCorrect = isCorrect
         self.feedback  = feedback
 
-
 # ===========================================================================
 class MultichoiceIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
 
     def __init__(self, question=""):
         """
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"Multi-Choice Question"),
+                         x_(u"Quiz"),
                          x_(u"University of Auckland"),
                          x_(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  
@@ -82,12 +82,16 @@ distractors </li>
 </ul>
 """), u"question")
         self.emphasis         = Idevice.SomeEmphasis
-        self.question         = question
+        self.questions        = []
+        self.options          = []
+        self.question         = ""
         self.hint             = ""
+        self.addQuestion()
         self._hintInstruc     = x_(u"""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
-        self.options          = []
-        self._questionInstruc = x_(u"Type the question stem.")
+        self._questionInstruc      = x_(u"""Enter the question stem. 
+The quest should be clear and unambiguous. Avoid negative premises 
+as these can tend to be ambiguous.""")
         self._keyInstruc      = x_(u"""Select the correct option by clicking 
 on the radio button.""")
         self._answerInstruc   = x_(u"""Enter the available choices here. 
@@ -100,20 +104,22 @@ answer" as indicated by the selection for the correct answer; or "Wrong answer"
 for the other options.""")
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
-        
+        self.message          = ""
     # Properties
     hintInstruc     = lateTranslate('hintInstruc')
     questionInstruc = lateTranslate('questionInstruc')
     keyInstruc      = lateTranslate('keyInstruc')
     answerInstruc   = lateTranslate('answerInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')
-
-
-    def addOption(self):
+        
+    def addQuestion(self):
         """
-        Add a new option to this iDevice. 
+        Add a new question to this iDevice. 
         """
-        self.options.append(Option())
+        question = QuizQuestionField(x_(u'Question'))
+        question.idevice = self
+        question.addOption()
+        self.questions.append(question)
 
 
     def upgradeToVersion1(self):
@@ -171,5 +177,32 @@ for the other options.""")
         self._upgradeIdeviceToVersion2()
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
+        
+    def upgradeToVersion7(self):
+        """
+        Upgrades to v0.19
+        """
+        self.questions = []
+        length = len(self.options)
+        if length >0:
+            self.addQuestion()
+           # self.questions[0].qusetion = self.question
+            self.questions[0].hint = self.hint
+            self.questions[0].question = self.question
+            
+            for i in range(1, length):
+                self.questions[0].addOption()
+                i += 1
+            for i in range(0, length):
+                self.questions[0].options[i].answer    = self.options[i].answer
+                self.questions[0].options[i].feedback  = self.options[i].feedback
+                self.questions[0].options[i].isCorrect = self.options[i].isCorrect
+                self.questions[0].options[i].question  = self.questions[0]
+                self.questions[0].options[i].idevice   = self
+                i += 1
+ 
+            self.question = ""
+            self.options  = []
+            self.hint     = ""
 
 # ===========================================================================

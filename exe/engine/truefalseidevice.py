@@ -31,7 +31,7 @@ log = logging.getLogger(__name__)
 # ===========================================================================
 class TrueFalseQuestion(Persistable):
     """
-    A Multichoice iDevice is built up of question and options.  Each option can
+    A TrueFalse iDevice is built up of questions.  Each question can
     be rendered as an XHTML element
     """
     def __init__(self, question="", isCorrect=False, feedback="", hint=""):
@@ -47,7 +47,7 @@ class TrueFalseQuestion(Persistable):
 # ===========================================================================
 class TrueFalseIdevice(Idevice):
     """
-    A multichoice Idevice is one built up from question and options
+    A TrueFalse Idevice is one built up from question and options
     """
     persistenceVersion = 8
 

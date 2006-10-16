@@ -113,7 +113,7 @@ class IdeviceStore:
         self.__loadUserExtended()
 
         from exe.engine.freetextidevice       import FreeTextIdevice
-        from exe.engine.multichoiceidevice    import MultichoiceIdevice
+        from exe.engine.multimediaidevice     import MultimediaIdevice
         from exe.engine.reflectionidevice     import ReflectionIdevice
         from exe.engine.casestudyidevice      import CasestudyIdevice
         from exe.engine.truefalseidevice      import TrueFalseIdevice
@@ -127,14 +127,15 @@ class IdeviceStore:
         from exe.engine.externalurlidevice    import ExternalUrlIdevice
         from exe.engine.imagemagnifieridevice import ImageMagnifierIdevice
         from exe.engine.mathidevice           import MathIdevice
-        from exe.engine.multimediaidevice     import MultimediaIdevice        
+        from exe.engine.multichoiceidevice    import MultichoiceIdevice        
         from exe.engine.rssidevice            import RssIdevice 
+        from exe.engine.multiselectidevice    import MultiSelectIdevice
 
         self.extended.append(FreeTextIdevice())
         
-        multichoice = MultichoiceIdevice()
-        multichoice.addOption()
-        self.extended.append(multichoice)
+       # multichoice = QuizIdevice()
+       # multichoice.addOption()
+        self.extended.append(MultichoiceIdevice())
                 
         self.extended.append(ReflectionIdevice())
                 
@@ -156,6 +157,7 @@ class IdeviceStore:
         self.extended.append(MathIdevice())
         self.extended.append(MultimediaIdevice())
         self.extended.append(RssIdevice())
+        self.extended.append(MultiSelectIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

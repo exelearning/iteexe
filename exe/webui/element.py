@@ -1142,7 +1142,7 @@ class SelectOptionElement(Element):
             
         if "action" in request.args and \
            request.args["action"][0] == "del"+self.id:
-            self.field.question.options.remove(self.option)
+            self.field.question.options.remove(self.field)
 
 
     def renderEdit(self):
@@ -1150,9 +1150,9 @@ class SelectOptionElement(Element):
         Returns an XHTML string for editing this option element
         """
         html = u"<tr><td>"
-        html += common.richTextArea("ans"+self.id, self.field.answer)
+        html += common.textArea("ans"+self.id, self.field.answer,rows="4")
         html += "</td><td align=\"center\">\n"
-        html += common.option("c"+self.id, 
+        html += common.checkbox("c"+self.id, 
                               self.field.isCorrect, self.index)
         html += "</td><td>\n"
         html += common.submitImage("del"+self.id, self.field.idevice.id, 
@@ -1168,10 +1168,7 @@ class SelectOptionElement(Element):
         """
         log.debug("renderView called")
         ident = self.field.question.id + str(self.index)
-        html  = '<tr><td>'
-        #chk = u''
-        #if self.field.isChecked:
-            #chk = u'checked'          
+        html  = '<tr><td>'      
         html += u'<input type="checkbox" id="%s"' % ident
         html += u' value="%s" >\n' %str(self.field.isCorrect)
         ansIdent = "ans" + self.field.question.id + str(self.index)
@@ -1220,7 +1217,7 @@ class SelectquestionElement(Element):
             
         if "action" in request.args and \
            request.args["action"][0] == "del" + self.id:
-            self.field.idevice.questions.remove(self.question)
+            self.field.idevice.questions.remove(self.field)
 
         for element in self.options:
             element.process(request)
@@ -1236,8 +1233,8 @@ class SelectquestionElement(Element):
         html += u" " + common.submitImage("del" + self.id, self.field.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
-        html += common.richTextArea("question"+self.id, 
-                                    self.field.question)
+        html += common.textArea("question"+self.id, 
+                                    self.field.question, rows="4")
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
         html += u"<tr>"
@@ -1456,9 +1453,9 @@ class QuizQuestionElement(Element):
                                    _("Delete question"))
         html += common.textArea("question"+self.id, 
                                     self.field.question, rows="6")
-        html += common.formField('richTextArea',_(u'Hint:'),'hint',
+        html += common.formField('textArea',_(u'Hint:'),'hint',
                                 self.id, self.field.idevice.hintInstruc,
-                                self.field.hint)
+                                self.field.hint, rows="4")
         html += "<table width =\"100%%\">"
     
         html += "<tbody>"

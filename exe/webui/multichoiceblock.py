@@ -22,7 +22,7 @@ MultichoiceBlock can render and process MultichoiceIdevices as XHTML
 
 import logging
 from exe.webui.block               import Block
-from exe.webui.optionelement       import OptionElement
+from exe.webui.element             import QuizQuestionElement
 from exe.webui                     import common
 
 log = logging.getLogger(__name__)
@@ -40,83 +40,69 @@ class MultichoiceBlock(Block):
         """
         Block.__init__(self, parent, idevice)
         self.idevice         = idevice
-        self.optionElements  = []
-        self.question        = idevice.question
+        self.questionElements  = []
         self.questionInstruc = idevice.questionInstruc
         self.keyInstruc      = idevice.keyInstruc
         self.answerInstruc   = idevice.answerInstruc
         self.feedbackInstruc = idevice.feedbackInstruc
-        self.hint            = idevice.hint
-        self.hintId          = "hint" + idevice.id
+      #  self.hint            = idevice.hint
         self.hintInstruc     = idevice.hintInstruc
+
         
-        i = 0
-        for option in idevice.options:
-            self.optionElements.append(OptionElement(i, idevice, option))
-            i += 1
+        for question in idevice.questions:
+            self.questionElements.append(QuizQuestionElement(question))
+
 
     def process(self, request):
         """
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        
-        questionId = "question"+unicode(self.id)
-        if questionId in request.args:
-            self.idevice.question = request.args[questionId][0]
-            
-        if self.hintId in request.args:
-            self.idevice.hint = request.args[self.hintId][0]
-            
-        if ("addOption"+unicode(self.id)) in request.args: 
-            self.idevice.addOption()
+        self.idevice.message = ""
+  
+    
+        if ("addQuestion"+unicode(self.id)) in request.args: 
+            self.idevice.addQuestion()
             self.idevice.edit = True
         
         if "title"+self.id in request.args:
             self.idevice.title = request.args["title"+self.id][0]
 
-        for element in self.optionElements:
+        for element in self.questionElements:
             element.process(request)
-
-
+        
+        if ("action" in request.args and request.args["action"][0] == "done"
+            or not self.idevice.edit):
+            for question in self.idevice.questions:
+                isAnswered = False
+                for option in question.options:
+                    if option.isCorrect:
+                        isAnswered = True
+                        break
+                if not isAnswered: 
+                    self.idevice.edit = True
+                    self.idevice.message = \
+                        x_("Please select a correct answer for each question.")
+                    break
+ 
+        
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div class=\"iDevice\"><br/>\n"
-        html += common.textInput("title"+self.id, self.idevice.title)
-       
-        html += common.formField('richTextArea',_(u'Question:'),'question',
-                                self.id, self.questionInstruc,
-                                self.question)
-        html += common.formField('richTextArea',_(u'Hint:'),'hint',
-                                self.id, self.hintInstruc,
-                                self.hint)
-       
-        html += "<table width =\"100%%\">"
-        #html += "<thead>"
-        #html += "<tr>"
-        #html += "<th>%s " % _("Options")
-        #html += common.elementInstruc(self.answerInstruc)
-        #html += "</th>"
-        #html += "<th>%s"  % _("Correct")
-        #html += "<br/>" + _("Option")
-        #html += common.elementInstruc(self.keyInstruc)
-        #html += "</th>"
-        #html += "<th>%s " % _("Feedback")
-        #html += common.elementInstruc(self.feedbackInstruc)
-        #html += "</th>"
-        #html += "</tr>"
-        #html += "</thead>"
-        html += "<tbody>"
-
-        for element in self.optionElements:
-            html += element.renderEdit() 
+        if self.idevice.message<>"":
+            html += '<span style="color:red">' 
+            html += common.editModeHeading(self.idevice.message) + '</span>'
+        html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
             
-        html += "</tbody>"
-        html += "</table>\n"
-        value = _("Add another option")    
-        html += common.submitButton("addOption"+unicode(self.id), value)
+        for element in self.questionElements:
+            html += element.renderEdit() 
+            html += "<br/>"
+            
+        html += "<br/>"
+        value = _("Add another question")    
+        html += common.submitButton("addQuestion"+unicode(self.id), value)
         html += "<br /><br />" + self.renderEditButtons()
         html += "</div>\n"
 
@@ -137,29 +123,11 @@ class MultichoiceBlock(Block):
         html += "<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += "<div class=\"iDevice_inner\">\n"
-        html += self.question+" &nbsp;&nbsp;\n"
         
-        if self.hint:
-            html += '<span '
-            html += ' style="background-image:url(\'panel-amusements.png\');">'
-            html += '\n<a onmousedown="Javascript:updateCoords(event);'
-            html += 'showMe(\'%s\', 350, 100);" ' % self.hintId
-            html += 'style="cursor:help;align:center;vertical-align:middle;" '
-            html += 'title="Hint" \n'
-            html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
-            html += '</span>'
-            html += '<div id="'+self.hintId+'" '
-            html += 'style="display:none; z-index:99;">'
-            html += '<div style="float:right;" >'
-            html += '<img alt="%s" ' % _('Close')
-            html += 'src="stock-stop.png" title="%s"' % _('Close')
-            html += " onmousedown=\"Javascript:hideMe();\"/></div>"
-            html += '<div class="popupDivLabel">'
-            html += _("Hint")
-            html += '</div>\n'
-            html += self.hint
-            html += "</div>\n"
-        html += self.renderViewContent()    
+        for element in self.questionElements:
+            html += element.renderView("panel-amusements.png")  
+            html += "<br/>"
+            
         html += "</div>\n"
         html += "</div>\n"
 
@@ -179,10 +147,11 @@ class MultichoiceBlock(Block):
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"
         html += "<div class=\"iDevice_inner\">\n"
-        html += self.question+" &nbsp;&nbsp;\n"
-        html += common.elementInstruc(self.hint, "panel-amusements.png", _("Hint"))
-                                                                             
-        html += self.renderViewContent()      
+        
+        for element in self.questionElements:
+            html += element.renderView("/images/panel-amusements.png") 
+            html += "<br/>"
+            
         html += self.renderViewButtons()
         html += "</div>\n"    
         html += "</div>\n"
@@ -190,23 +159,6 @@ class MultichoiceBlock(Block):
         return html
 
 
-    def renderViewContent(self):
-        """
-        Returns an XHTML string for this block
-        """
-        html  = "<table>\n"
-        html += "<tbody>\n"
-
-        for element in self.optionElements:
-            html += element.renderAnswerView()
-            
-        html += "</tbody>\n"
-        html += "</table>\n"
-            
-        for element in self.optionElements:
-            html += element.renderFeedbackView()
-
-        return html
 
 from exe.engine.multichoiceidevice import MultichoiceIdevice
 from exe.webui.blockfactory        import g_blockFactory
