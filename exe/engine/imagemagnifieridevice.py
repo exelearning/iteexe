@@ -70,7 +70,6 @@ when the IDevice loads, as a percentage of the original image size""")
 as a percentage of the original image size""")
         self._glassSizeInstruc           = x_(u"""Select the size of the magnifying glass""")
         self.systemResources            += ['magnifier.swf']
-        self.systemResources            += ['magnifier.swf']
 
     # Properties
     captionInstruc     = lateTranslate('captionInstruc')

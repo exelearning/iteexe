@@ -182,11 +182,7 @@ class ImageField(Field):
         if resourceFile.isfile():
             if self.imageResource:
                 self.imageResource.delete()
-                self.idevice.userResources.remove(self.imageResource)
-            self.imageResource = Resource(self.idevice.parentNode.package,
-                                          resourceFile)
-            self.idevice.userResources.append(self.imageResource)
-
+            self.imageResource = Resource(self.idevice, resourceFile)
         else:
             log.error('File %s is not a file' % resourceFile)
 
@@ -216,9 +212,7 @@ class ImageField(Field):
         """
         log.debug("ImageField upgrade field to version 2")
         if self.imageName and self.idevice.parentNode:
-            self.imageResource = Resource(self.idevice.parentNode.package,
-                                          Path(self.imageName))
-            self.idevice.userResources.append(self.imageResource)
+            self.imageResource = Resource(self.idevice, Path(self.imageName))
         else:
             self.imageResource = None
         del self.imageName
@@ -259,11 +253,7 @@ class MagnifierField(Field):
         if resourceFile.isfile():
             if self.imageResource:
                 self.imageResource.delete()
-                self.idevice.userResources.remove(self.imageResource)
-            self.imageResource = Resource(self.idevice.parentNode.package,
-                                          resourceFile)
-            self.idevice.userResources.append(self.imageResource)
-
+            self.imageResource = Resource(self.idevice, resourceFile)
         else:
             log.error('File %s is not a file' % resourceFile)
 
@@ -314,9 +304,7 @@ class MultimediaField(Field):
         if resourceFile.isfile():
             if self.mediaResource:
                 self.mediaResource.delete()
-                self.idevice.userResources.remove(self.mediaResource)
-            self.mediaResource = Resource(self.idevice.parentNode.package,
-                                          resourceFile)
+            self.mediaResource = Resource(self.idevice, resourceFile)
             if '+' in self.mediaResource.storageName:
                 path = self.mediaResource.path
                 newPath = path.replace('+','')
@@ -324,8 +312,6 @@ class MultimediaField(Field):
                 self.mediaResource._storageName = \
                     self.mediaResource.storageName.replace('+','')
                 self.mediaResource._path = newPath
-            self.idevice.userResources.append(self.mediaResource)
-
         else:
             log.error('File %s is not a file' % resourceFile)
             
@@ -579,10 +565,7 @@ this iDevice.""")
         if resourceFile.isfile():
             if self.flashResource:
                 self.flashResource.delete()
-                self.idevice.userResources.remove(self.flashResource)
-            self.flashResource = Resource(self.idevice.parentNode.package,
-                                          resourceFile)
-            self.idevice.userResources.append(self.flashResource)
+            self.flashResource = Resource(self.idevice, resourceFile)
 
         else:
             log.error('File %s is not a file' % resourceFile)
@@ -594,8 +577,7 @@ this iDevice.""")
         """
         if hasattr(self, 'flashName'): 
             if self.flashName and self.idevice.parentNode:
-                self.flashResource = Resource(self.idevice.parentNode.package, Path(self.flashName))
-                self.idevice.userResources.append(self.flashResource)
+                self.flashResource = Resource(self.idevice, Path(self.flashName))
             else:
                 self.flashResource = None
             del self.flashName
@@ -644,16 +626,11 @@ this iDevice.""")
         if resourceFile.isfile():
             if self.flashResource:
                 self.flashResource.delete()
-                self.idevice.userResources.remove(self.flashResource)
-
             try:
                 flvDic = FLVReader(resourceFile)
                 self.height = flvDic["height"] +30        
                 self.width  = flvDic["width"]
-
-                self.flashResource = Resource(self.idevice.parentNode.package,
-                                              resourceFile)
-                self.idevice.userResources.append(self.flashResource)
+                self.flashResource = Resource(self.idevice, resourceFile)
             except AssertionError: 
                 log.error('File %s is not a flash movie' % resourceFile)
 
@@ -667,8 +644,7 @@ this iDevice.""")
         """
         if hasattr(self, 'flashName'):
             if self.flashName and self.idevice.parentNode:
-                self.flashResource = Resource(self.idevice.parentNode.package, Path(self.flashName))
-                self.idevice.userResources.append(self.flashResource)
+                self.flashResource = Resource(self.idevice, Path(self.flashName))
             else:
                 self.flashResource = None
             del self.flashName
@@ -743,7 +719,7 @@ class MathField(Field):
             self.gifResource = None
         if latex <> "":
             tempFileName = compile(latex, self.fontsize)
-            self.gifResource = Resource(self.idevice.parentNode.package, tempFileName)
+            self.gifResource = Resource(self.idevice, tempFileName)
             # Delete the temp file made by compile
             Path(tempFileName).remove()
         self._latex = latex

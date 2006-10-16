@@ -113,9 +113,8 @@ class Idevice(Persistable):
         delete an iDevice from it's parentNode
         """
         # clear out old user resources
-        for resource in self.userResources:
-            resource.delete()
-        self.userResources = []
+        while self.userResources:
+            self.userResources[0].delete()
 
         if self.parentNode:
             self.parentNode.idevices.remove(self)

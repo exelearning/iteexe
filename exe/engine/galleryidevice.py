@@ -83,32 +83,25 @@ class GalleryImage(Persistable):
         if originalImagePath is not None:
             originalImagePath = Path(originalImagePath)
             # Copy the original image
-            self._imageResource = Resource(package, originalImagePath)
-            self.parent.userResources.append(self._imageResource)
-
+            self._imageResource = Resource(self.parent, originalImagePath)
         # Create the thumbnail
         tmpDir = TempDirPath()
-        htmlPath = (package.resourceDir/ 
-                    self._imageResource.path.namebase + ".html")
+        htmlPath = (package.resourceDir/self._imageResource.path.namebase + ".html")
         try:
             image = Image.open(toUnicode(self._imageResource.path))
         except Exception, e:
             # If we can't load the image, apologize to the user...
-            log.error("Couldn't load image: %s\nBecause: %s" % \
-                      (self._imageResource.path, str(e)))
+            log.error("Couldn't load image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image,
-                _(u"No Thumbnail Available. Could not load original image."))
+            self._msgImage(image, _(u"No Thumbnail Available. Could not load original image."))
         self.size = image.size
         try:
             image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
         except Exception, e:
             # If we can't load the image, apologize to the user...
-            log.error("Couldn't shrink image: %s\nBecause: %s" % \
-                      (self._imageResource.path, str(e)))
+            log.error("Couldn't shrink image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image,
-                _(u"No Thumbnail Available. Could not shrink original image."))
+            self._msgImage(image, _(u"No Thumbnail Available. Could not shrink original image."))
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
         width1, height1 = image.size
         width2, height2 = image2.size
@@ -122,18 +115,14 @@ class GalleryImage(Persistable):
             # the thumbnail
             self._defaultThumbnail(image2)
 
-        thumbnailPath = (package.resourceDir/ 
-                         self._imageResource.path.namebase + "Thumbnail.png")
+        thumbnailPath = (package.resourceDir/self._imageResource.path.namebase + "Thumbnail.png")
         image2.save(thumbnailPath)
-        self._thumbnailResource = Resource(package, thumbnailPath)
-        self.parent.userResources.append(self._thumbnailResource)
+        self._thumbnailResource = Resource(self.parent, thumbnailPath)
 
         # Create the HTML popup window
-        htmlPath = (package.resourceDir/ 
-                    self._imageResource.path.namebase + ".html")
+        htmlPath = (package.resourceDir/self._imageResource.path.namebase + ".html")
         self._createHTMLPopupFile(htmlPath)
-        self._htmlResource = Resource(package, htmlPath)
-        self.parent.userResources.append(self._htmlResource)
+        self._htmlResource = Resource(self.parent, htmlPath)
 
     def _defaultThumbnail(self, image):
         """
@@ -310,9 +299,6 @@ class GalleryImage(Persistable):
         """
         Removes our files from resources and removes us from our parent's list
         """
-        self.parent.userResources.remove(self._imageResource)
-        self.parent.userResources.remove(self._thumbnailResource)
-        self.parent.userResources.remove(self._htmlResource)
         self._imageResource.delete()
         self._thumbnailResource.delete()
         self._htmlResource.delete()
@@ -402,19 +388,9 @@ class GalleryImage(Persistable):
         """
         # in case upgradeToVersion1 above has not been called yet
         requireUpgrade(self)
-
-        self._imageResource     = Resource(self.parent.parentNode.package,
-                                           Path(self._imageFilename))
-        self.parent.userResources.append(self._imageResource)
-
-        self._thumbnailResource = Resource(self.parent.parentNode.package,
-                                           Path(self._thumbnailFilename))
-        self.parent.userResources.append(self._thumbnailResource)
-
-        self._htmlResource      = Resource(self.parent.parentNode.package,
-                                           Path(self._htmlFilename))
-        self.parent.userResources.append(self._htmlResource)
-
+        self._imageResource = Resource(self.parent, Path(self._imageFilename))
+        self._thumbnailResource = Resource(self.parent, Path(self._thumbnailFilename))
+        self._htmlResource = Resource(self.parent, Path(self._htmlFilename))
         del self._imageFilename
         del self._thumbnailFilename
         del self._htmlFilename
@@ -479,7 +455,7 @@ class GalleryIdevice(Idevice):
     thumbnails.
     """
 
-    persistenceVersion = 4
+    persistenceVersion = 5
 
     def __init__(self, parentNode=None):
         """
@@ -578,3 +554,10 @@ these in a gallery context rather then individually.</p>"""),
         # Recreate all the html and thumbnail resources
         package = self.parentNode.package
         package.afterUpgradeHandlers.append(self.recreateResources)
+
+    def upgradeToVersion5(self):
+        """
+        Upgrades to v0.19
+        Some old resources had no storageName.
+        """
+        self.userResources = [res for res in self.userResources if res.storageName is not None]

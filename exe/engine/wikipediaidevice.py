@@ -110,9 +110,8 @@ within Wikipedia.""")
             return
 
         # clear out any old images
-        for resource in self.userResources:
-            resource.delete()
-        self.userResources = []
+        while self.userResources:
+            self.userResources[0].delete()
         self.images        = {}
             
         # Download the images
@@ -132,7 +131,7 @@ within Wikipedia.""")
                         imageSrc = '%s/%s/%s' % (netloc, path, imageSrc)
                 urllib.urlretrieve(imageSrc, tmpDir/imageName)
                 self.images[imageName] = True
-                self.userResources.append(Resource(self.parentNode.package, tmpDir/imageName))
+                Resource(self, tmpDir/imageName)
             # We have to use absolute URLs if we want the images to
             # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
@@ -220,8 +219,7 @@ within Wikipedia.""")
 
         if self.images and self.parentNode:
             for image in self.images:
-                imageResource = Resource(self.parentNode.package, Path(image))
-                self.userResources.append(imageResource) 
+                imageResource = Resource(self, Path(image))
 
     def upgradeToVersion7(self):
         """

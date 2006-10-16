@@ -72,26 +72,22 @@ code field.""")
         """ 
         log.debug(u"uploadFile "+unicode(filePath))
         resourceFile = Path(filePath)
-
-        assert(self.parentNode,
-               _('file %s has no parentNode') % self.id)
-        assert(self.parentNode.package,
-               _('iDevice %s has no package') % self.parentNode.id)
-
+        assert(self.parentNode, _('file %s has no parentNode') % self.id)
+        assert(self.parentNode.package, _('iDevice %s has no package') % self.parentNode.id)
         if resourceFile.isfile():
-            self.userResources += [ Resource(self.parentNode.package,
-                                            resourceFile) ]
+             Resource(self, resourceFile)
         else:
             log.error('File %s is not a file' % resourceFile)
     
     
-    def deleteFile(self, file):
+    def deleteFile(self, fileName):
         """
-        delete a selected file
+        Delete a selected file
         """
         for resource in self.userResources:
-            if resource.storageName == file:
-                self.userResources.remove(resource)
+            if resource.storageName == fileName:
+                resource.delete()
+                break
    
 # ===========================================================================
 def register(ideviceStore):

@@ -102,14 +102,11 @@ class AttachmentIdevice(Idevice):
 
         if resourceFile.isfile():
             if self.userResources:
-                # clear out old attachment/s
-                for resource in self.userResources:
-                    resource.delete()
-                self.userResources = []
-
-            self.userResources = [ Resource(self.parentNode.package, 
-                                            resourceFile) ]
-
+                # Clear out old attachment/s
+                while self.userResources:
+                    self.userResources[0].delete()
+            # Create the new resource
+            Resource(self, resourceFile)
         else:
             log.error('File %s is not a file' % resourceFile)
 
@@ -136,8 +133,7 @@ class AttachmentIdevice(Idevice):
         """
         self._upgradeIdeviceToVersion2()
         if self.filename and self.parentNode:
-            self.userResources = [ Resource(self.parentNode.package,
-                                            Path(self.filename)) ]
+            Resource(self, Path(self.filename))
         del self.filename
 
 # ===========================================================================

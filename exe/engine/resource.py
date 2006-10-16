@@ -37,21 +37,21 @@ class Resource(Persistable):
     # Class attributes
     persistenceVersion = 1
 
-    def __init__(self, package, resourceFile):
+    def __init__(self, idevice, resourceFile):
         """
         Initialize a resource object, and copy the file into the package's
         resouceDir unless it is already there
         """
         log.debug(u"init resourceFile=%s" % resourceFile)
-        self._package     = package
+        self._package     = idevice.parentNode.package
+        self._idevice     = idevice
+        idevice.userResources.append(self)
         self._storageName = self._fn2ascii(resourceFile)
-        if not hasattr(package, "resourceDir"):
+        if not hasattr(self._package, "resourceDir"):
             log.debug(u"package doesn't have a resourceDir, must be upgrading")
-
-        elif resourceFile.dirname() == package.resourceDir:
-            log.debug(u"storageName=%s was already in package resources" % 
+        elif resourceFile.dirname() == self._package.resourceDir:
+            log.debug(u"storageName=%s was already in self._package resources" % 
                       self._storageName)
-
         else:
             self._copyFile(resourceFile)
 
@@ -88,7 +88,9 @@ class Resource(Persistable):
         """
         Remove a resource from a package
         """
-        self.path.remove()
+        if self.path.isfile():
+            self.path.remove()
+        self._idevice.userResources.remove(self)
         self._storageName = None
 
 

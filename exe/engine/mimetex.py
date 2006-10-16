@@ -19,7 +19,7 @@ def compile(latex, fontsize=4):
     if self.resource is not None:
         self.resource.delete()
     tempFileName = compile('x^y')
-    self.resource = Resource(self.package, tempFileName)
+    self.resource = Resource(self, tempFileName)
     Path(tempFileName).remove()
 
     to render:

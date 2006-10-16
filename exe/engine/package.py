@@ -78,7 +78,6 @@ class Package(Persistable):
     # This is like a constant
     defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
 
-
     def __init__(self, name):
         """
         Initialize 
