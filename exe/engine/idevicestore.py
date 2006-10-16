@@ -129,12 +129,11 @@ class IdeviceStore:
         from exe.engine.mathidevice           import MathIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice        
         from exe.engine.rssidevice            import RssIdevice 
-        from exe.engine.multiselectidevice    import MultiSelectIdevice
+      #  from exe.engine.multiselectidevice    import MultiSelectIdevice
 
         self.extended.append(FreeTextIdevice())
         
-       # multichoice = QuizIdevice()
-       # multichoice.addOption()
+
         self.extended.append(MultichoiceIdevice())
                 
         self.extended.append(ReflectionIdevice())
@@ -157,7 +156,7 @@ class IdeviceStore:
         self.extended.append(MathIdevice())
         self.extended.append(MultimediaIdevice())
         self.extended.append(RssIdevice())
-        self.extended.append(MultiSelectIdevice())
+     #   self.extended.append(MultiSelectIdevice())
 
         # generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:

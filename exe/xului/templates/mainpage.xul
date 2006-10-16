@@ -51,7 +51,7 @@
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
                     <menuitem n:render="translate" label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm')"/>
-					<menuitem n:render="translate" label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004')"/>
+					<!--for next release <menuitem n:render="translate" label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004')"/> -->
                     <menuitem n:render="translate" label="IMS Content Package" accesskey="i" oncommand="exportPackage('ims')"/>
                     <menu n:render="translate" id="website" label="Web Site">
                       <menupopup id="web-export-popup">
