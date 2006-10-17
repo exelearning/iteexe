@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+
+<window title="Dublin Core"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+ <tabbox flex="1" selectedTab="Dublin Core">
+                <tabs align="end" pack="end">
+                    <tab label="Dublin Core"/>
+                    <tab label="IEEE LOM"/>
+                </tabs>
+                <tabpanels flex="1">
+                    <tabpanel id="metadataeditor">
+                        <iframe flex="1" name="dublincore" id="dublincore" src="/templates/dublincore.xul"/>
+                    </tabpanel>
+                    <tabpanel id="propertiesPane">
+                        <iframe flex="1" src="/templates/IEEE-LOM.xul"/>
+                    </tabpanel>
+                </tabpanels>
+            </tabbox>
+
+</window>
