@@ -563,9 +563,7 @@ class MainPage(RenderableLivePage):
 
     def _loadPackage(self, client, filename):
         """Load the package named 'filename'"""
-
         try:
-            
             encoding = sys.getfilesystemencoding()
             if encoding is None:
                 encoding = 'utf-8'

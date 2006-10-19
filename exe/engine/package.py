@@ -231,8 +231,7 @@ class Package(Persistable):
         
         try:
             for resourceFile in self.resourceDir.files():
-                zippedFile.write(unicode(resourceFile.normpath()),
-                                 resourceFile.name.encode('utf8'))
+                zippedFile.write(unicode(resourceFile.normpath()), resourceFile.name.encode('utf8'))
             zippedFile.writestr("content.data", encodeObject(self))
         finally:
             zippedFile.close()
