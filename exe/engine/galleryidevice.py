@@ -23,6 +23,7 @@ Gallery Idevice. Enables you to easily manage a bunch of images and thumbnails
 
 import Image, ImageDraw
 from twisted.persisted.styles import requireUpgrade
+from copy import copy, deepcopy
 import logging
 
 from exe.engine.idevice   import Idevice
@@ -62,7 +63,7 @@ class GalleryImage(Persistable):
         """
         'parent' is a GalleryIdevice instance
         'caption' is some text that will be displayed with the image
-        'originalImagePath' is the local path to the image
+        'poriginalImagePath' is the local path to the image
         """
         self.parent             = parent
         self._caption           = TextField(caption)
@@ -70,7 +71,6 @@ class GalleryImage(Persistable):
         self._thumbnailResource = None
         self._htmlResource      = None
         self._saveFiles(originalImagePath)
-
 
     def _saveFiles(self, originalImagePath=None):
         """
@@ -373,7 +373,6 @@ class GalleryImage(Persistable):
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
 
-    
     def upgradeToVersion1(self):
         """
         Called to upgrade from 0.10 to 0.11
@@ -381,12 +380,11 @@ class GalleryImage(Persistable):
         # Create the HTML popup window
         self._htmlFilename = Path(self._imageFilename).namebase + '.html'
 
-
     def _upgradeImageToVersion2(self):
         """
         Upgrades to exe v0.12
         """
-        # in case upgradeToVersion1 above has not been called yet
+        # In case upgradeToVersion1 above has not been called yet
         requireUpgrade(self)
         self._imageResource = Resource(self.parent, Path(self._imageFilename))
         self._thumbnailResource = Resource(self.parent, Path(self._thumbnailFilename))
@@ -447,6 +445,16 @@ class GalleryImages(Persistable, list):
         """
         self[index].delete()
 
+    def __deepcopy__(self, memo):
+        """
+        Makes sure deepcopy doesn't double the entries in our list
+        """
+        result = GalleryImages(memo[id(self.idevice)])
+        memo[id(self)] = result
+        for image in self:
+            result.append(deepcopy(image, memo))
+        return result
+
 
 # ===========================================================================
 class GalleryIdevice(Idevice):
@@ -487,13 +495,11 @@ these in a gallery context rather then individually.</p>"""),
     addImageInstr = lateTranslate('addImageInstr')
     titleInstruc = lateTranslate('titleInstruc')
 
-
     def genImageId(self):
         """Generate a unique id for an image.
         Called by 'GalleryImage'"""
         self.nextImageId += 1
         return '%s.%s' % (self.id, self.nextImageId - 1)
-
 
     def addImage(self, imagePath):
         """
@@ -502,7 +508,6 @@ these in a gallery context rather then individually.</p>"""),
         the resources directory.
         """
         return GalleryImage(self, '', imagePath)
-
 
     def onResourceNamesChanged(self, resourceNamesChanged):
         """
@@ -530,13 +535,11 @@ these in a gallery context rather then individually.</p>"""),
         """
         self.lastIdevice = False
 
-
     def upgradeToVersion2(self):
         """
         Upgrades exe to v0.10
         """
         self._upgradeIdeviceToVersion1()
-    
 
     def upgradeToVersion3(self):
         """
@@ -545,7 +548,6 @@ these in a gallery context rather then individually.</p>"""),
         self._upgradeIdeviceToVersion2()
         for image in self.images:
             image._upgradeImageToVersion2()
-
 
     def upgradeToVersion4(self):
         """
