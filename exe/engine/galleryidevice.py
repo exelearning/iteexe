@@ -63,7 +63,7 @@ class GalleryImage(Persistable):
         """
         'parent' is a GalleryIdevice instance
         'caption' is some text that will be displayed with the image
-        'poriginalImagePath' is the local path to the image
+        'originalImagePath' is the local path to the image
         """
         self.parent             = parent
         self._caption           = TextField(caption)
