@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2006-10-06 22:56+1300\n"
+"PO-Revision-Date: 2006-10-12 17:38+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,9 +41,8 @@ msgid "<dl>  <dt>If your goal is to test understanding of core concepts or readi
 msgstr "<dl>  <dt>Kung ang layon mo ay subukin ang pag-unawa sa mga batayang konsepto o pag-unawa sa binabasa  </dt>  <dd>    <p>  Magsulat ng buod ng konsepto na may sapat na haba upang masubok ang kaalaman ng target, pero sapat ang iksi upang hindi makahapo.  Marahil ay sapat na ang hindi lalabis sa isang pahinang itineklado, o mas maigsi pa para sa mga batang mag-aaral o baguhan.    </p>    <p>Pumili ng mga salita sa teksto na magsisilbing susi sa pag-unawa sa mga konsepto.  Marahil ay mga pandiwa, pangngalan, at mga susing pang-abay.  Pumili ng mga alternatibo na may iisang malinaw na sagot.    </p>  </dd>  <dt>Kung ang layon mo ay subukin ang kalamang bokabularyo  </dt>  <dd><p>Magsulat ng teksto gamit ang target na bokabularyo.  Ang tekstong ito ay dapat maliwanag at magkakaugnay, at may angkop na haba.  Patingkarin ang mga target na salita sa teksto.  Pumili ng mga alternatibo na may iisang malinaw na sagot.</p>  </dd>  <dt>Kung ang layon mo ay subukin ang pagbuo ng mga salita/balarila:    </dt>  <dd>  <p>Magsulat ng teksto sa pamamagitan ng mga target na form.  Dapat ay maliwanag at magkakaugnay ang mga tekstong ito, at may angkop na haba.  Tandaan na ang layunin ay hindi kaalamang bokabularyo, kaya't dapat na alam ng mga mag-aaral ang mga buod na kahulugan ng mga salitang-ugat.  </p>  <p>Patingkarin ang mga target na salita sa teksto.  Magbigay ng mga alternatibo na may katulad na salitang-ugat, pero iba ang panlapi.  Magandang ideya na pakiusapan ang isang kasamahan na subukin ang pagsusulit/pagsasanay upang matiyak na walang sorpresang lalabas!  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
-#, fuzzy
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol> <li>Iklik ang &lt;Piliin ang MP3&gt; at pumunta sa sakong MP3 na nai mong isingit</li> <li>Iklik ang dropdown arrow at piliin ang posisyon kung saan mo nais makita ang ang sako sa iskrin.</li> <li>Magsulat ng pamagat ng sako mo. <li>Mag-ugnay ng angkop na teksto sa iyong sakong MP3.</li> <li>Piliin ang uri ng estilo na nais mong ipakita ng iDevice hal. 'Kaunting diin' ay naglalagay ng border at icon sa ipapakitang nilalaman ng iDevice.</li></ol>"
+msgstr "<ol> <li>Iklik ang &lt;Piliin ang MP3&gt; at pumunta sa sakong MP3 na nai mong isingit</li> <li>Iklik ang dropdown arrow at piliin ang posisyon kung saan mo nais makita ang sako sa iskrin.</li> <li>Magsulat ng pamagat ng sako mo. <li>Mag-ugnay ng angkop na teksto sa iyong sakong MP3.</li> <li>Piliin ang uri ng estilo na nais mong ipakita ng iDevice hal. 'Kaunting diin' ay naglalagay ng border at icon sa ipapakitang nilalaman ng iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -122,9 +121,8 @@ msgstr ""
 "salita sa dulo ng pagsasanay.</p>"
 
 #: exe/engine/field.py:708
-#, fuzzy
 msgid "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
-msgstr "<ol><li>Pumili ng mga simbolo sa editor ng teksto sa ibaba upang makalikha ng pormulang pangmatematika.  Ang bawat simbolo ay ipapakita sa pitak na pandispley, sa wikang pangmatematika na LATEX, at maaari itong silipin sa pamamagitan ng &lt;Silipin&gt; na buton sa ibaba.</li> "
+msgstr "<p>Pumili ng mga simbolo sa editor ng teksto sa ibaba upang makalikha ng pormulang pangmatematika.  Ang bawat simbolo ay ipapakita sa pitak na pandispley, sa wikang pangmatematika na LATEX, at maaari itong silipin sa pamamagitan ng &lt;Silipin&gt; na buton sa ibaba."
 
 #: exe/engine/idevicestore.py:247
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -410,9 +408,8 @@ msgid "Attachment %s has no parentNode"
 msgstr "Ang kalakip na %s ay walang parentNode"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
-#, fuzzy
 msgid "Auckland University of Technology"
-msgstr "Auckland Univeristy of Technology"
+msgstr "Auckland University of Technology"
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
@@ -466,12 +463,10 @@ msgid "Choose an Image"
 msgstr "Pumili ng Larawan"
 
 #: exe/engine/multimediaidevice.py:49
-#, fuzzy
 msgid "Choose an MP3 file"
 msgstr "Pumili ng sakong MP3"
 
 #: exe/engine/casestudyidevice.py:54
-#, fuzzy
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr "Pumili ng larawan na ipapakita sa mag-aaral kapag natapos na niya ang tanong na ito"
 
@@ -564,7 +559,7 @@ msgstr "Wasto!"
 
 #: exe/xului/mainpage.py:577
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Hindi maikarga ang sako, paki-email ang sako sa bugs@exelearning.org"
 
 #: exe/engine/casestudyidevice.py:93
 msgid ""
@@ -791,6 +786,15 @@ msgid ""
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Maglagay ng RSS URL ng RSS feed na \n"
+"nais mong ikabit sa iyong nilalaman. Ang mga feed ay karaniwang nakikilala sa pamamagitan ng isang maliit na larawang icon \n"
+"(karaniwan ay tulad nito <img src=\"/images/feed-icon.png\" />) o ng salitang \"RSS\". Ang pagklik sa \n"
+"icon o etiketang salita ay magpapakita ng RSS feed sa inyong browser. Maaari ninyong kopyahin at idikit ang\n"
+"URL sa pitak na ito. O kaya, ay ikanang-klik ang link o larawan at may lilitaw na kahong menu;\n"
+"iklik ang  COPY LINK LOCATION o Copy Shortcut. Sa eXe ay buksan ang RSS bookmark iDevice at idikit ang URL \n"
+"sa pitak ng RSS URL at iklik ang IKARGA na buton. Bubuklatin nito ang mga pamagat mula sa feed mo at\n"
+"iapapakita ito bilang mga link sa iyong nilalaman.  Ngayon ay puwede mo nang editin ang mga bookmark at magdagdag\n"
+"ng mga panuto o dagdag na impormasyon hinggil sa pag-aaral."
 
 #: exe/engine/field.py:835 exe/idevices/quiztestidevice.py:64
 #: exe/idevices/quiztestidevice.py:86
@@ -1345,7 +1349,7 @@ msgstr "Balangkas"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Own site"
-msgstr ""
+msgstr "Sariling site"
 
 #: exe/xului/mainpage.py:262 exe/xului/mainpage.py:392
 #, python-format
@@ -1430,6 +1434,8 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Magbigay ng pamagat para sa \n"
+"sakong MP3.  Lilitaw din ito sa bar ng pamagat ng player."
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
@@ -1615,12 +1621,10 @@ msgid "Select a flash video"
 msgstr "Pumili ng flash video"
 
 #: exe/webui/element.py:1066
-#, fuzzy
 msgid "Select a font size: "
-msgstr "Pumili ng sako"
+msgstr "Pumili ng laki ng font: "
 
 #: exe/webui/element.py:355
-#, fuzzy
 msgid "Select an MP3"
 msgstr "Pumili ng MP3"
 
@@ -1653,9 +1657,8 @@ msgstr ""
 "ng pagklik sa radio button."
 
 #: exe/engine/imagemagnifieridevice.py:71
-#, fuzzy
 msgid "Select the size of the magnifying glass"
-msgstr "Laki ng magnifying glass: "
+msgstr "Piliin ang laki ng magnifying glass: "
 
 #: exe/idevices/forumelement.py:88
 msgid "Separate groups"
@@ -1798,6 +1801,9 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"Ang RSS iDevice ay ginagamit \n"
+"sa pagbibigay ng bagong nilalaman sa isang makita ng indibidwal na tagagamit. Sa pamamagitan ng\n"
+"iDevice na ito makapaghahandog ka ng mga link mula sa isang feed na pipiliin mong makita ng mga mag-aaral mo."
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
@@ -2035,7 +2041,7 @@ msgstr "URL:"
 #: exe/engine/wikipediaidevice.py:97
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "Hindi makapaglusong mula sa %s <br/>Pakitsek po ang ispeling at koneksiyon at ulitin muli."
 
 #: exe/engine/package.py:79
 msgid "Unit"
@@ -2238,14 +2244,12 @@ msgid "label"
 msgstr "etiketa"
 
 #: exe/webui/element.py:1063
-#, fuzzy
 msgid "newline"
-msgstr "Interlingue "
+msgstr "newline"
 
 #: exe/webui/element.py:1062
-#, fuzzy
 msgid "text"
-msgstr "Susunod"
+msgstr "teksto"
 
 #: exe/webui/renderable.py:255
 msgid "title"
@@ -2517,7 +2521,7 @@ msgstr "Piliin ang Anyo"
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2679,9 +2683,8 @@ msgstr "Azerbaijani "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
-#, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Hinggil\" accesskey=\"h\""
+msgstr "label=\"Umayaw\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -3557,7 +3560,7 @@ msgstr "Zulu."
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
 #: style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "Relation:"
-msgstr "Relasyon:"
+msgstr "Kaugnay:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
 #: style="width:8em" tooltiptext="The extent or scope of the content
@@ -3573,7 +3576,7 @@ msgstr "Karapatan:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
+msgstr "Karaniwan, ang Karapatan na elemento ay maglalaman ng pahayag na pangangasiwa ng karapatan sa rekurso o pagsangguni sa isang serbisyo na naghahandog ng ganitong impormasyon. Kalimitang sinasaklaw ng impormasyong Karapatan ang Intellectual Property Rights (IPR), Copyright, atbpng. Karapatang-Ari. Kung walang elementong Karapatan, walang puwedeng akalain hinggil sa estado nito o iba pang karapatan na may kinalaman sa rekurso."
 
 #~ msgid ""
 #~ "Provide a caption for the \n"

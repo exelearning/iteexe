@@ -349,3 +349,262 @@ msgstr "Fijinees"
 msgid "_: suggested by lvandijck"
 "Fijian; Fiji "
 msgstr "Fijinees"
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "_: suggested by lvandijck"
+"Auckland University of Technology"
+msgstr "Auckland University of Technology"
+
+#: exe/webui/editorpane.py:289
+msgid "_: suggested by lvandijck"
+"Author"
+msgstr "Auteur"
+
+#: exe/webui/editorelement.py:145
+msgid "_: suggested by lvandijck"
+"Button Caption"
+msgstr "Opschrift knop"
+
+#: exe/engine/multimediaidevice.py:49
+msgid "_: suggested by lvandijck"
+"Choose an MP3 file"
+msgstr "Selecteer een MP3-bestand"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "_: suggested by lvandijck"
+"Choose an optional image to be shown to the student on completion of this question"
+msgstr "Optioneel: kies een afbeelding die de student ziet nadat de vraag voltooid is."
+
+#: exe/engine/field.py:715
+msgid ""
+"_: suggested by lvandijck"
+"Click on Preview button to convert \n"
+"                                  the latex into a symbols image."
+msgstr ""
+"Klik op de knop Voorbeeld om de\n"
+"latex om te zetten in een afbeelding met symbolen."
+
+#: exe/xului/mainpage.py:577
+msgid "_: suggested by lvandijck"
+"Couldn't load file, please email file to bugs@exelearning.org"
+msgstr "Kon bestand niet laden. Stuur bestand a.u.b. naar bugs@exelearning.org"
+
+#: exe/engine/multimediaidevice.py:74
+msgid ""
+"_: suggested by lvandijck"
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Met uitlijning bepaalt u waar\n"
+"de media player op het scherm komt."
+
+#: exe/engine/multimediaidevice.py:49
+msgid "_: suggested by lvandijck"
+"Choose an MP3 file"
+msgstr "Selecteer een MP3-bestand"
+
+#: exe/engine/multimediaidevice.py:50
+msgid "_: suggested by lvandijck"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+msgstr "<ol>  <li>Klik op &lt;Kies een MP3-bestand&gt; en blader naar het MP3-bestand dat u wil toevoegen</li> <li>Klik op de vervolgkeuzelijst om aan te geven waar op het scherm het bestand getoond moet worden.</li>  <li>Optioneel: geef een bijschrift voor het bestand.</li> <li>Voeg de nodige tekst of beschrijving toe.</li> <li>Kies een stijl voor het iDevice Bijv. 'Met nadruk' zorgt voor een kader en een pictogram bij de getoonde inhoud van het iDevice.</li></ol>"
+
+#: exe/engine/field.py:708
+msgid "_: suggested by lvandijck"
+"<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
+msgstr "<p>Selecteer symbolen in de teksteditor om wiskundige formules samen te stellen. Ieder symbool wordt later getoond in de wiskundige taal LATEX; bekijk het resultaat met de knop &lt;Voorbeeld&gt; hieronder"
+
+#: exe/engine/multimediaidevice.py:74
+msgid ""
+"_: suggested by lvandijck"
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Met uitlijning bepaalt u waar\n"
+"de media speler op het scherm wordt getoond."
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "_: suggested by lvandijck"
+"Auckland University of Technology"
+msgstr "Auckland University of Technology"
+
+#: exe/engine/multimediaidevice.py:49
+msgid "_: suggested by lvandijck"
+"Choose an MP3 file"
+msgstr "Selecteer een MP3-bestand"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "_: suggested by lvandijck"
+"Choose an optional image to be shown to the student on completion of this question"
+msgstr "Optioneel: kies een afbeelding die de student ziet als de vraag voltooid is"
+
+#: exe/engine/field.py:715
+msgid ""
+"_: suggested by lvandijck"
+"Click on Preview button to convert \n"
+"                                  the latex into a symbols image."
+msgstr ""
+"Klik op de knop Voorbeeld om de\n"
+"LATEX-tekst om te zetten in symbolen."
+
+#: exe/xului/mainpage.py:577
+msgid "_: suggested by lvandijck"
+"Couldn't load file, please email file to bugs@exelearning.org"
+msgstr "Kan bestand niet laden. Stuur het a.u.b. naar bugs@exelearning.org"
+
+#: exe/engine/casestudyidevice.py:53
+msgid "_: suggested by lvandijck"
+"Feedback Image"
+msgstr "Feedback-afbeelding"
+
+#: exe/webui/wikipediablock.py:194
+msgid "_: suggested by lvandijck"
+"GNU Free Documentation License"
+msgstr "Licentie GNU Vrije Documentatie"
+
+#: exe/webui/questionelement.py:108
+msgid "_: suggested by lvandijck"
+"Hide Feedback"
+msgstr "Verberg feedback"
+
+#: exe/engine/multimediaidevice.py:40
+msgid "_: suggested by lvandijck"
+"MP3"
+msgstr "MP3"
+
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
+msgid "_: suggested by lvandijck"
+"Maths"
+msgstr "Wiskunde "
+
+#: exe/webui/wikipediablock.py:117
+msgid "_: suggested by lvandijck"
+"Own site"
+msgstr "Eigen site"
+
+#: exe/engine/multimediaidevice.py:71
+msgid ""
+"_: suggested by lvandijck"
+"Provide a caption for the \n"
+"MP3 file. This will appear in the players title bar as well."
+msgstr ""
+"Geef een bijschrift voor het \n"
+"MP3-bestand. Dit wordt ook getoond in de titelbalk van de mediaspeler"
+
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
+msgid "_: suggested by lvandijck"
+"RSS"
+msgstr "RSS"
+
+#: exe/webui/element.py:1066
+msgid "_: suggested by lvandijck"
+"Select a font size: "
+msgstr "Kies een lettergrootte:"
+
+#: exe/webui/element.py:355
+msgid "_: suggested by lvandijck"
+"Select an MP3"
+msgstr "Kies een MP3-bestand"
+
+#: exe/engine/imagemagnifieridevice.py:71
+msgid "_: suggested by lvandijck"
+"Select the size of the magnifying glass"
+msgstr "Omvang van het vergrootglas:"
+
+#: exe/webui/questionelement.py:103
+msgid "_: suggested by lvandijck"
+"Show Feedback"
+msgstr "Toon feedback"
+
+#: exe/engine/multimediaidevice.py:42
+msgid "_: suggested by lvandijck"
+"The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
+msgstr "Het MP3-iDevice laat toe een MP3-bestand toe te voegen samen met relevante tekst of instructies."
+
+#: exe/engine/rssidevice.py:43
+msgid ""
+"_: suggested by lvandijck"
+"The RSS iDevice is used \n"
+"to provide new content to an individual users machine. Using this\n"
+"iDevice you can provide links from a feed you select for learners to view."
+msgstr ""
+"Het RSS-iDevice dient om\n"
+"nieuwe inhoud door te sturen naar de toestellen van individuele gebruikers.\n"
+"Hiermee kan u links leggen naar illekeurige 'feeds' die u uw studenten wil tonen."
+
+#: exe/engine/wikipediaidevice.py:97
+#, python-format
+msgid "_: suggested by lvandijck"
+"Unable to download from %s <br/>Please check the spelling and connection and try again."
+msgstr "Kan niet downloaden van %s <br/>Controleer spelling en verbinding en probeer opnieuw"
+
+#: exe/webui/wikipediablock.py:104
+msgid "_: suggested by lvandijck"
+"Wikieducator Content"
+msgstr "Inhoud van Wikieducator"
+
+#: exe/engine/mathidevice.py:49
+msgid "_: suggested by lvandijck"
+"You can use the toolbar or enter latex manually into the textarea. "
+msgstr "U kan de knoppenbalk gebruiken of zelf LATEX invoeren in het tekstvak"
+
+#: exe/webui/element.py:1063
+msgid "_: suggested by lvandijck"
+"newline"
+msgstr "nieuweregel"
+
+#: exe/webui/element.py:1062
+msgid "_: suggested by lvandijck"
+"text"
+msgstr "tekst"
+
+#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
+#: label="Dublin Core Metadata">
+msgid "_: suggested by lvandijck"
+"Dublin Core Metadata"
+msgstr "Dublin Core Metadata"
+
+#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+msgid "_: suggested by lvandijck"
+"Dublin Core"
+msgstr "Dublin Core"
+
+#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+msgid "_: suggested by lvandijck"
+"IEEE LOM"
+msgstr "IEEE LOM"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
+#: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
+msgid "_: suggested by lvandijck"
+"Q"
+msgstr "Q"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
+#: label="Afar ">
+msgid "_: suggested by lvandijck"
+"Afar "
+msgstr "Afar "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
+#: label="Abkhazian ">
+msgid "_: suggested by lvandijck"
+"Abkhazian "
+msgstr "Abchazisch"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('webSite')" label="Self-contained Folder">
+msgid "_: suggested by lvandijck"
+"Self-contained Folder"
+msgstr "Self-contained map"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: label="Avestan ">
+msgid "_: suggested by lvandijck"
+"Avestan "
+msgstr "Avestaans"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('zipFile')" label="Zip File">
+msgid "_: suggested by lvandijck"
+"Zip File"
+msgstr "ZIP-bestand"

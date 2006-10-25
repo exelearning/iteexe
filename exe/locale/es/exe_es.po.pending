@@ -46,3 +46,8 @@ msgstr "Estudio de caso"
 msgid "_: suggested by jmunoz"
 "Caption:"
 msgstr "Título:"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "_: suggested by matiu"
+"Choose an optional image to be shown to the student on completion of this question"
+msgstr "Escoje un imagen opcional ser mostrado al estudiante cuando terminen de contestar esta pregunta."

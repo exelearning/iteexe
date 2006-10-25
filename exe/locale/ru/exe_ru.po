@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2006-09-22 10:20+1200\n"
-"Last-Translator: EXE Team <exe@exelearning.org>\n"
+"PO-Revision-Date: 2006-10-25 08:39+1300\n"
+"Last-Translator: Vychegzhanin Anton <vashot@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bitX-Poedit-Language: Russian\n"
 "X-EXE-Language: русский язык\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Pootle 0.6.3.20060116\n"
+"X-Generator: Pootle 0.10beta\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""
@@ -24,15 +24,17 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
+"\"Найти текстовый файл (в файле апплета)\n"
+"и открыть его. Скопировать его содержимое <ctrl A, ctrl C> в поле кода апплета"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
-msgstr ""
+msgstr "---Перейти к---"
 
 #: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
 #: exe/xului/mainpage.py:366
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Пожалуйста, используйте имена из символов ASCII (латинские буквы и цифры)."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
@@ -64,7 +66,7 @@ msgstr ""
 
 #: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
+msgstr "<p>Укажите ярлык для приложения. Полезно указать тип файла. Например pdf, ppt, и тд.</p><p>Так же рекомендуется указать размер приложения, чтобы после того, как оно будет экспортировано на веб сайт, люди имели представление о том, как долго это приложение будет загружаться.</p><p>Например: <code>Sales Forecast.doc (500kb)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
@@ -95,7 +97,7 @@ msgstr ""
 
 #: exe/engine/field.py:708
 msgid "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
-msgstr ""
+msgstr "<p>Выберите символы из нижеследующего редактора, чтобы создать математическую формулу. Каждый сивол будет виден в поле на математическом языке LATEX. Для предварительного просмотра можно воспользоваться кнопкой &lt;Предварительный вид&gt;, расположенной ниже."
 
 #: exe/engine/idevicestore.py:247
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -174,26 +176,26 @@ msgstr ""
 
 #: exe/webui/editorpane.py:224
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:325
 #: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:394
 #: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:440
 #: exe/webui/questionelement.py:74
 msgid "Activity"
-msgstr ""
+msgstr "Задание"
 
 #: exe/webui/editorpane.py:213
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
 #: exe/webui/element.py:251
 msgid "Add Image"
-msgstr ""
+msgstr "Добавить изображение"
 
 #: exe/webui/element.py:566
 msgid "Add JPEG Image"
-msgstr ""
+msgstr "Добавить JPEG изображение"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
@@ -232,21 +234,21 @@ msgstr ""
 
 #: exe/idevices/appletblock.py:80
 msgid "Add files"
-msgstr ""
+msgstr "Добавить файлы"
 
 #: exe/webui/galleryblock.py:180
 msgid "Add images"
-msgstr ""
+msgstr "Добавить изображения"
 
 #: exe/webui/editorpane.py:84
 msgid "Add interactive feedback to your iDevice."
-msgstr ""
+msgstr "Добавить элемент интерактивной обратной связи в Ваш iDevice."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
 #: exe/idevices/flashmovieblock.py:78
 msgid "Align:"
-msgstr ""
+msgstr "Выравнивание:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:88
@@ -254,22 +256,28 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Выравнивание позволяет Вам определить \n"
+"где на экране будет размещено изображение."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Выравнивание позволяет Вам определить \n"
+"где на экране будет размещён медиа-проигрыватель."
 
 #: exe/engine/field.py:524
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Разрешает автозаполнение, \n"
+"когда пользователь заполняет пробелы."
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Разрешить автозаполнение во время заполнения пользователем пробелов."
 
 #: exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -302,47 +310,47 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
-msgstr ""
+msgstr "статья"
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
-msgstr ""
+msgstr "Приложение"
 
 #: exe/engine/attachmentidevice.py:99
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Вложение %s не имеет parentNode"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Оклендский Технологический Университет"
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
-msgstr ""
+msgstr "Автор"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr ""
+msgstr "Заголовок кнопки"
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
-msgstr ""
+msgstr "Может ли студент писать в этот форум?:"
 
 #: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:232
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 #: exe/xului/mainpage.py:238 exe/xului/mainpage.py:297
 #: exe/xului/mainpage.py:364
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Не возможно получить доступ к названному каталогу "
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
 #: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
-msgstr ""
+msgstr "Заголовок:"
 
 #: exe/engine/casestudyidevice.py:72
 msgid "Case Study"
@@ -350,27 +358,27 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:216
 msgid "Change Image"
-msgstr ""
+msgstr "Изменить изображение"
 
 #: exe/webui/element.py:734
 msgid "Check Caps?"
-msgstr ""
+msgstr "Проверить регистр?"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Статья из Китайской Wikipedia"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
-msgstr ""
+msgstr "Выбрать LMS"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr ""
+msgstr "Выбрать изображение"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Выбрать MP3 файл"
 
 #: exe/engine/casestudyidevice.py:54
 msgid "Choose an optional image to be shown to the student on completion of this question"
@@ -397,15 +405,15 @@ msgstr ""
 
 #: exe/engine/field.py:139
 msgid "Click Here"
-msgstr ""
+msgstr "Щелкните здесь"
 
 #: exe/webui/common.py:281 exe/webui/common.py:284
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Щелкните для завершения инструкций"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
-msgstr ""
+msgstr "Щелкните здесь"
 
 #: exe/engine/field.py:715
 msgid ""
@@ -426,7 +434,7 @@ msgstr ""
 #: exe/webui/editorpane.py:354 exe/webui/element.py:1494
 #: exe/webui/element.py:1495
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
@@ -442,21 +450,21 @@ msgstr ""
 
 #: exe/webui/common.py:240
 msgid "Confirm and submit"
-msgstr ""
+msgstr "Подтвердить и отправить"
 
 #: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
 #: exe/webui/element.py:1246 exe/webui/element.py:1341
 #: exe/webui/element.py:1389 exe/idevices/testquestionelement.py:93
 msgid "Correct"
-msgstr ""
+msgstr "Правильно"
 
 #: exe/webui/truefalseelement.py:172
 msgid "Correct!"
-msgstr ""
+msgstr "Правильно!"
 
 #: exe/xului/mainpage.py:577
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Невозможно загрузить файл, пожалуйста сообщите об ошибке по электронный почте (bugs@exelearning.org)"
 
 #: exe/engine/casestudyidevice.py:93
 msgid ""
@@ -473,26 +481,26 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: exe/idevices/appletblock.py:99
 msgid "Delete File"
-msgstr ""
+msgstr "Удалить файл"
 
 #: exe/webui/galleryblock.py:247
 msgid "Delete Image"
-msgstr ""
+msgstr "Удалить изображение"
 
 #: exe/webui/optionelement.py:92 exe/webui/element.py:1160
 #: exe/webui/element.py:1353 exe/idevices/testoptionelement.py:86
 msgid "Delete option"
-msgstr ""
+msgstr "Удалить опцию"
 
 #: exe/webui/questionelement.py:88 exe/webui/truefalseelement.py:102
 #: exe/webui/element.py:1238 exe/webui/element.py:1456
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
-msgstr ""
+msgstr "Удалить вопрос"
 
 #: exe/engine/reflectionidevice.py:56
 msgid ""
@@ -527,14 +535,14 @@ msgstr ""
 
 #: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: exe/webui/attachmentblock.py:99
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "Description:"
-msgstr ""
+msgstr "Описание:"
 
 #: exe/idevices/forumidevice.py:40
 msgid "Discussion Activity"
@@ -562,7 +570,7 @@ msgstr ""
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
 #: exe/xului/templates/exportproperties.xul:<button id="exportPropsDone"
 msgid "Done"
-msgstr ""
+msgstr "Сделано"
 
 #: exe/webui/wikipediablock.py:98
 msgid "Dutch Wikipedia Article"
@@ -602,7 +610,7 @@ msgstr ""
 #: exe/webui/block.py:321 exe/webui/editorpage.py:199
 #: exe/webui/editorpane.py:229
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: exe/webui/wikipediablock.py:129 exe/webui/editorpane.py:304
 #: exe/webui/rssblock.py:94 exe/webui/multimediablock.py:94
@@ -753,7 +761,7 @@ msgstr ""
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
-msgstr ""
+msgstr "Пример"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
@@ -771,11 +779,11 @@ msgstr ""
 
 #: exe/webui/imagemagnifierblock.py:136
 msgid "Extra large"
-msgstr ""
+msgstr "Очень большой"
 
 #: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
 msgid "False"
-msgstr ""
+msgstr "Неверно"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:290 exe/engine/idevicestore.py:398
@@ -784,7 +792,7 @@ msgstr ""
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 #: exe/webui/element.py:1354
 msgid "Feedback"
-msgstr ""
+msgstr "Обратная связь"
 
 #: exe/engine/casestudyidevice.py:53
 msgid "Feedback Image"
@@ -798,11 +806,11 @@ msgstr ""
 
 #: exe/webui/reflectionblock.py:72 exe/webui/element.py:1262
 msgid "Feedback:"
-msgstr ""
+msgstr "Обратная связь:"
 
 #: exe/webui/attachmentblock.py:78
 msgid "Filename"
-msgstr ""
+msgstr "Название файла"
 
 #: exe/xului/mainpage.py:417 exe/xului/mainpage.py:455
 #, python-format
@@ -831,19 +839,19 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:202
 msgid "Forum Name:"
-msgstr ""
+msgstr "Название форума:"
 
 #: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
 msgid "Forum Name: "
-msgstr ""
+msgstr "Название форума: "
 
 #: exe/idevices/forumelement.py:96
 msgid "Forum type:"
-msgstr ""
+msgstr "Тип форума:"
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
-msgstr ""
+msgstr "Высота фрэйма:"
 
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
@@ -867,15 +875,15 @@ msgstr ""
 
 #: exe/webui/galleryblock.py:224
 msgid "Go Back"
-msgstr ""
+msgstr "Назад"
 
 #: exe/webui/galleryblock.py:236
 msgid "Go Forward"
-msgstr ""
+msgstr "Вперед"
 
 #: exe/webui/galleryblock.py:243
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Вперед (Недоступно)"
 
 #: exe/idevices/forumelement.py:117
 msgid "Group mode:"
@@ -883,11 +891,11 @@ msgstr ""
 
 #: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
 msgid "Hide"
-msgstr ""
+msgstr "Скрыть"
 
 #: exe/webui/questionelement.py:108
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Скрыть \"Обратная связь\""
 
 #: exe/webui/element.py:724
 msgid "Hide/Show Word"
@@ -923,11 +931,11 @@ msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:58 exe/webui/editorpane.py:218
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #: exe/engine/galleryidevice.py:489
 msgid "Image Gallery"
-msgstr ""
+msgstr "Галерея изображений"
 
 #: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
@@ -935,19 +943,19 @@ msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
-msgstr ""
+msgstr "Изображение с текстом"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
-msgstr ""
+msgstr "Неправильно!"
 
 #: exe/webui/editorpane.py:349
 msgid "Info"
-msgstr ""
+msgstr "Информация"
 
 #: exe/webui/block.py:233
 msgid "Information"
-msgstr ""
+msgstr "Информация"
 
 #: exe/webui/imagemagnifierblock.py:120
 msgid "Initial Zoom"
@@ -960,15 +968,15 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:80 exe/engine/truefalseidevice.py:167
 #: exe/engine/clozeidevice.py:114 exe/webui/common.py:275
 msgid "Instructions"
-msgstr ""
+msgstr "Инструкции"
 
 #: exe/engine/clozeidevice.py:146
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Инструкции для учащихся"
 
 #: exe/idevices/forumelement.py:227
 msgid "Introduction"
-msgstr ""
+msgstr "Введение"
 
 #: exe/webui/wikipediablock.py:195
 msgid "It uses material from the "
@@ -1006,19 +1014,19 @@ msgstr ""
 #: exe/webui/flashwithtextblock.py:75 exe/webui/multimediablock.py:79
 #: exe/idevices/flashmovieblock.py:75
 msgid "Left"
-msgstr ""
+msgstr "Лево"
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
-msgstr ""
+msgstr "Ссылка на форум"
 
 #: exe/webui/wikipediablock.py:122 exe/webui/rssblock.py:87
 msgid "Load"
-msgstr ""
+msgstr "Загрузить"
 
 #: exe/engine/multimediaidevice.py:40
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
 msgid "Maths"
@@ -1038,19 +1046,19 @@ msgstr ""
 
 #: exe/webui/block.py:222
 msgid "Move Down"
-msgstr ""
+msgstr "Переместить вниз"
 
 #: exe/webui/galleryblock.py:222
 msgid "Move Image Left"
-msgstr ""
+msgstr "Переместить изображение влево"
 
 #: exe/webui/galleryblock.py:234
 msgid "Move Image Right"
-msgstr ""
+msgstr "Переместить изображение вправо"
 
 #: exe/webui/block.py:215
 msgid "Move Up"
-msgstr ""
+msgstr "Переместить вверх"
 
 #: exe/engine/multichoiceidevice.py:57
 msgid "Multi-Choice Question"
@@ -1058,15 +1066,15 @@ msgstr ""
 
 #: exe/webui/editorpane.py:286
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: exe/idevices/forumelement.py:215
 msgid "New Forum"
-msgstr ""
+msgstr "Новый форум"
 
 #: exe/idevices/forumelement.py:243
 msgid "New Topic"
-msgstr ""
+msgstr "Новая тема"
 
 #: exe/webui/editorpage.py:204
 msgid "New iDevice"
@@ -1075,15 +1083,15 @@ msgstr ""
 #: exe/engine/galleryidevice.py:195 exe/export/scormexport.py:293
 #: exe/export/websitepage.py:196
 msgid "Next"
-msgstr ""
+msgstr "Следующий"
 
 #: exe/idevices/forumelement.py:83
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: exe/webui/galleryblock.py:187 exe/webui/galleryblock.py:274
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Не загружено ни одного изображения"
 
 #: exe/engine/galleryidevice.py:101
 msgid "No Thumbnail Available. Could not load original image."
@@ -1122,7 +1130,7 @@ msgstr ""
 
 #: exe/webui/preferencespage.py:93
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:306
 #: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:413
@@ -1160,15 +1168,15 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:105 exe/idevices/forumelement.py:266
 msgid "Other"
-msgstr ""
+msgstr "Другое"
 
 #: exe/xului/outlinepane.py:244
 msgid "Outline"
-msgstr ""
+msgstr "Подчеркнуть"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Own site"
-msgstr ""
+msgstr "Свой сайт"
 
 #: exe/xului/mainpage.py:262 exe/xului/mainpage.py:392
 #, python-format
@@ -1189,7 +1197,7 @@ msgstr ""
 
 #: exe/idevices/forumblock.py:119
 msgid "Please enter a name for the forum\n"
-msgstr ""
+msgstr "Пожалуйста, введите название форума"
 
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
@@ -1198,18 +1206,20 @@ msgstr ""
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
 msgstr ""
+"Пожалуйста, выберите LMS.\n"
 
 #: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
-msgstr ""
+msgstr "Пожалуйста, выберите LMS"
 
 #: exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Пожалуйста, выберите правильный ответ для каждого вопроса"
 
 #: exe/idevices/forumblock.py:114
 msgid "Please select a forum.\n"
 msgstr ""
+"Пожалуйста, выберите форум.\n"
 
 #: exe/webui/wikipediablock.py:97
 msgid "Polish Wikipedia Article"
@@ -1235,12 +1245,12 @@ msgstr ""
 
 #: exe/webui/editorpane.py:227 exe/webui/element.py:1080
 msgid "Preview"
-msgstr ""
+msgstr "Предварительный просмотр"
 
 #: exe/engine/galleryidevice.py:190 exe/export/scormexport.py:292
 #: exe/export/websitepage.py:190
 msgid "Previous"
-msgstr ""
+msgstr "Предыдущий"
 
 #: exe/engine/multimediaidevice.py:71
 msgid ""
@@ -1301,25 +1311,25 @@ msgstr ""
 
 #: exe/webui/casestudyblock.py:89
 msgid "Question(s)"
-msgstr ""
+msgstr "Воспрос(ы)"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
 #: exe/webui/element.py:1234 exe/webui/element.py:1452
 #: exe/idevices/testquestionelement.py:81
 msgid "Question:"
-msgstr ""
+msgstr "Вопросы:"
 
 #: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/clozeidevice.py:148
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Прочитайте нижеследующий параграф и вставьте пропущенные слова"
 
 #: exe/engine/truefalseidevice.py:170 exe/engine/clozeidevice.py:118
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Прочитайте нижеследующий параграф и вставьте пропущенные слова."
 
 #: exe/engine/idevicestore.py:221 exe/engine/idevicestore.py:239
 #: exe/engine/genericidevice.py:165
@@ -1350,13 +1360,13 @@ msgstr ""
 
 #: exe/webui/element.py:823
 msgid "Restart"
-msgstr ""
+msgstr "Начать заново"
 
 #: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
 #: exe/webui/flashwithtextblock.py:76 exe/webui/multimediablock.py:80
 #: exe/idevices/flashmovieblock.py:76
 msgid "Right"
-msgstr ""
+msgstr "Справа"
 
 #: exe/xului/mainpage.py:255
 #, python-format
@@ -1376,11 +1386,11 @@ msgstr ""
 
 #: exe/webui/editorpage.py:179 exe/webui/editorpage.py:182
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: exe/webui/editorpage.py:183
 msgid "Save as"
-msgstr ""
+msgstr "Сохранить как"
 
 #: exe/engine/package.py:79
 msgid "Section"
@@ -1394,15 +1404,15 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
-msgstr ""
+msgstr "Выбрать язык"
 
 #: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
-msgstr ""
+msgstr "Выбрать форум"
 
 #: exe/webui/attachmentblock.py:92
 msgid "Select a file"
-msgstr ""
+msgstr "Выбрать файл"
 
 #: exe/webui/element.py:957
 msgid "Select a flash video"
@@ -1410,19 +1420,19 @@ msgstr ""
 
 #: exe/webui/element.py:1066
 msgid "Select a font size: "
-msgstr ""
+msgstr "Выбрать размер шрифта: "
 
 #: exe/webui/element.py:355
 msgid "Select an MP3"
-msgstr ""
+msgstr "Выбрать MP3"
 
 #: exe/webui/element.py:273
 msgid "Select an image"
-msgstr ""
+msgstr "Выбрать изображение"
 
 #: exe/webui/element.py:582
 msgid "Select an image (JPG file)"
-msgstr ""
+msgstr "Выбрать изображение (JPG файл)"
 
 #: exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
@@ -1464,28 +1474,28 @@ msgstr ""
 
 #: exe/xului/propertiespage.py:200
 msgid "Settings saved"
-msgstr ""
+msgstr "Настройки сохранены"
 
 #: exe/idevices/forumelement.py:91
 msgid "Show"
-msgstr ""
+msgstr "Показать"
 
 #: exe/webui/galleryblock.py:282
 #, python-format
 msgid "Show %s Image"
-msgstr ""
+msgstr "Показать изображение %s "
 
 #: exe/webui/element.py:830
 msgid "Show Answers"
-msgstr ""
+msgstr "Показать ответы"
 
 #: exe/webui/questionelement.py:103
 msgid "Show Feedback"
-msgstr ""
+msgstr "Показать \"Обратная связь\""
 
 #: exe/webui/element.py:814
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Показать/Очистить Ответы"
 
 #: exe/webui/element.py:809
 msgid "Show/Hide Feedback"
@@ -1717,7 +1727,7 @@ msgstr ""
 
 #: exe/idevices/forumidevice.py:107
 msgid "Type a forum name here"
-msgstr ""
+msgstr "Здесь напечатайте название форума"
 
 #: exe/engine/multichoiceidevice.py:96
 msgid ""
@@ -1739,7 +1749,7 @@ msgstr ""
 
 #: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:414
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Введите цели изучения для этого ресурса."
 
 #: exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
@@ -1754,12 +1764,12 @@ msgstr ""
 
 #: exe/webui/externalurlblock.py:60
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/engine/wikipediaidevice.py:97
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "Невозможно скачать с %s <br/>Пожалуйста, проверьте правописание и соединение и попробуйте еще раз."
 
 #: exe/engine/package.py:79
 msgid "Unit"
@@ -1792,7 +1802,7 @@ msgstr ""
 
 #: exe/idevices/appletblock.py:82
 msgid "Upload"
-msgstr ""
+msgstr "Загрузить"
 
 #: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
@@ -1818,15 +1828,15 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
-msgstr ""
+msgstr "Видимые группы"
 
 #: exe/idevices/forumelement.py:124
 msgid "Visible to students:"
-msgstr ""
+msgstr "Видимые студентам:"
 
 #: exe/engine/idevicestore.py:282 exe/engine/idevicestore.py:390
 msgid "What to read"
-msgstr ""
+msgstr "Что читать"
 
 #: exe/engine/multichoiceidevice.py:72
 msgid ""
@@ -1853,19 +1863,19 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:51
 msgid "Wikipedia Article"
-msgstr ""
+msgstr "Статья Википедии"
 
 #: exe/webui/optionelement.py:131 exe/webui/element.py:1391
 msgid "Wrong"
-msgstr ""
+msgstr "Неправильно"
 
 #: exe/idevices/forumelement.py:84
 msgid "Yes, forever"
-msgstr ""
+msgstr "Да, всегда"
 
 #: exe/idevices/forumelement.py:85
 msgid "Yes, initially"
-msgstr ""
+msgstr "Да, первоначально"
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -1877,19 +1887,19 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:206
 msgid "article "
-msgstr ""
+msgstr "статья "
 
 #: exe/webui/element.py:288 exe/webui/element.py:600
 msgid "blank for original size"
-msgstr ""
+msgstr "пустой для оригинального размера"
 
 #: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
-msgstr ""
+msgstr "дублировать название форума."
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
-msgstr ""
+msgstr "дублировать название темы."
 
 #: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
@@ -1907,7 +1917,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:180
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://ru.wikipedia.org/"
 
 #: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:79
 #, python-format
@@ -1925,27 +1935,27 @@ msgstr ""
 
 #: exe/webui/renderable.py:250
 msgid "key"
-msgstr ""
+msgstr "клавиша"
 
 #: exe/webui/renderable.py:252
 msgid "keycode"
-msgstr ""
+msgstr "код клавиши"
 
 #: exe/webui/renderable.py:243
 msgid "label"
-msgstr ""
+msgstr "ярлык"
 
 #: exe/webui/element.py:1063
 msgid "newline"
-msgstr ""
+msgstr "новая строка"
 
 #: exe/webui/element.py:1062
 msgid "text"
-msgstr ""
+msgstr "текст"
 
 #: exe/webui/renderable.py:255
 msgid "title"
-msgstr ""
+msgstr "заголовок"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
@@ -1969,16 +1979,16 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
-msgstr ""
+msgstr "Свойства проекта"
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
-msgstr ""
+msgstr "Пакет"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
 msgid "Title:"
-msgstr ""
+msgstr "Заголовок:"
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add
@@ -1986,12 +1996,12 @@ msgstr ""
 #: eXe to add Previous and Next individual pages your SCO. The LMS also still
 #: kind of functionality." checked="false">
 msgid "Add Previous/Next links within SCOs?"
-msgstr ""
+msgstr "Добавить ссылки на Следующий/Предыдущий в SCO?"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 msgid "Extract Package"
-msgstr ""
+msgstr "Извлечь пакет (разархивировать)"
 
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 msgid "IEEE LOM"
@@ -2000,17 +2010,17 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 msgid "Project Title:"
-msgstr ""
+msgstr "Название проекта:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
-msgstr ""
+msgstr "Метаданные"
 
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "Creator:"
-msgstr ""
+msgstr "Создатель:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
@@ -2021,16 +2031,16 @@ msgstr "VK_INSERT"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Header Background:"
-msgstr ""
+msgstr "Фон заголовка:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
-msgstr ""
+msgstr "Экспорт"
 
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 msgid "Subject:"
-msgstr ""
+msgstr "Тема:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
@@ -2041,7 +2051,7 @@ msgstr "VK_DELETE"
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
 #: Image">
 msgid "Load Image"
-msgstr ""
+msgstr "Загрузить изображение"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
@@ -2056,19 +2066,19 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 msgid "R"
-msgstr ""
+msgstr "Р"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image">
 msgid "Clear Image"
-msgstr ""
+msgstr "Очистить изображение"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "Publisher:"
-msgstr ""
+msgstr "Издатель:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
@@ -2254,7 +2264,7 @@ msgstr ""
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "Source:"
-msgstr ""
+msgstr "Источник:"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
@@ -2264,7 +2274,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
 msgid "Language:"
-msgstr ""
+msgstr "Язык:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
@@ -2284,12 +2294,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
 msgid "Abkhazian "
-msgstr ""
+msgstr "Абхазский"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Отдельная папка"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -2299,7 +2309,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
 msgid "Zip File"
-msgstr ""
+msgstr "Zip файл"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -2314,7 +2324,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
 msgid "Amharic "
-msgstr ""
+msgstr "Амхарский "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
@@ -2324,7 +2334,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
-msgstr ""
+msgstr "Арабский "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="e" label="Merging">
@@ -2354,7 +2364,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Азербайджанский "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
@@ -2364,7 +2374,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
 msgid "Bashkir "
-msgstr ""
+msgstr "Башкирский "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
@@ -2374,17 +2384,17 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
 msgid "Byelorussian; Belarusian "
-msgstr ""
+msgstr "Белорусский "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr ""
+msgstr "Предпочтение"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
 msgid "Bulgarian "
-msgstr ""
+msgstr "Болгарский "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
@@ -2415,7 +2425,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
 msgid "Bengali; Bangla "
-msgstr ""
+msgstr "Бенгальский "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
@@ -2425,7 +2435,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
 #: label="Tibetan ">
 msgid "Tibetan "
-msgstr ""
+msgstr "Тибетский "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="registerOnline()" accesskey="R" label="Register Online">
@@ -2435,7 +2445,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton ">
 msgid "Breton "
-msgstr ""
+msgstr "Бретонский "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
@@ -2445,7 +2455,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
 msgid "Bosnian "
-msgstr ""
+msgstr "Боснийский "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo">
@@ -2455,27 +2465,27 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
 msgid "Catalan "
-msgstr ""
+msgstr "Каталанский "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" label="Add Page">
 msgid "Add Page"
-msgstr ""
+msgstr "Добавить страницу"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
 msgid "Chechen "
-msgstr ""
+msgstr "Чеченский "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
-msgstr ""
+msgstr "Переименовать"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
 msgid "Chamorro "
-msgstr ""
+msgstr "Чаморро "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
@@ -2485,7 +2495,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
 msgid "Corsican "
-msgstr ""
+msgstr "Корсиканский "
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
@@ -2495,7 +2505,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
 msgid "Czech "
-msgstr ""
+msgstr "Чешский "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
@@ -2505,37 +2515,37 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
 msgid "Church Slavic "
-msgstr ""
+msgstr "Церковно славянский "
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
-msgstr ""
+msgstr "Авторская разработка"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
 msgid "Chuvash "
-msgstr ""
+msgstr "Чувашский "
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties">
 msgid "Properties"
-msgstr ""
+msgstr "Свойства"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
 #: label="Welsh ">
 msgid "Welsh "
-msgstr ""
+msgstr "Валлийский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish ">
 msgid "Danish "
-msgstr ""
+msgstr "Датский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
 #: label="German ">
 msgid "German "
-msgstr ""
+msgstr "Немецкий "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
@@ -2545,72 +2555,72 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek ">
 msgid "Greek "
-msgstr ""
+msgstr "Греческий "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
 #: label="English ">
 msgid "English "
-msgstr ""
+msgstr "Английский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
 msgid "Esperanto "
-msgstr ""
+msgstr "Эсперанто "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
 #: label="Spanish ">
 msgid "Spanish "
-msgstr ""
+msgstr "Испанский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
 #: label="Estonian ">
 msgid "Estonian "
-msgstr ""
+msgstr "Эстонский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
 msgid "Basque "
-msgstr ""
+msgstr "Баскский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
 #: label="Persian ">
 msgid "Persian "
-msgstr ""
+msgstr "Персидский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
 #: label="Finnish ">
 msgid "Finnish "
-msgstr ""
+msgstr "Финский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
 #: label="Fijian; Fiji ">
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Фиджи "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
 #: label="Faroese ">
 msgid "Faroese "
-msgstr ""
+msgstr "Фарерский"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
 #: label="French ">
 msgid "French "
-msgstr ""
+msgstr "Французский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
 #: label="Frisian ">
 msgid "Frisian "
-msgstr ""
+msgstr "Фриза "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
 #: label="Irish ">
 msgid "Irish "
-msgstr ""
+msgstr "Ирландский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
 #: label="Scots; Gaelic ">
 msgid "Scots; Gaelic "
-msgstr ""
+msgstr "Шотландский; Гэльский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
@@ -2620,12 +2630,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani ">
 msgid "Guarani "
-msgstr ""
+msgstr "Гуарани "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
 #: label="Gujarati ">
 msgid "Gujarati "
-msgstr ""
+msgstr "Гуджарати "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
 #: label="Manx ">
@@ -2640,12 +2650,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
 msgid "Hebrew (formerly iw) "
-msgstr ""
+msgstr "Редактируют иврит (прежде iw) "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
 #: label="Hindi ">
 msgid "Hindi "
-msgstr ""
+msgstr "Хинди "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
@@ -2655,57 +2665,57 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
 #: label="Croatian ">
 msgid "Croatian "
-msgstr ""
+msgstr "Хорватский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
 #: label="Hungarian ">
 msgid "Hungarian "
-msgstr ""
+msgstr "Венгерский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
 msgid "Armenian "
-msgstr ""
+msgstr "Армянский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
 #: label="Herero ">
 msgid "Herero "
-msgstr ""
+msgstr " "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
 #: label="Interlingua ">
 msgid "Interlingua "
-msgstr ""
+msgstr "Интерлингва "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
 #: label="Indonesian (formerly in) ">
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Индонезийский язык "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
 #: label="Interlingue ">
 msgid "Interlingue "
-msgstr ""
+msgstr "Интерлинга "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
 #: label="Inupiak ">
 msgid "Inupiak "
-msgstr ""
+msgstr "Инупиак "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
 #: label="Ido ">
 msgid "Ido "
-msgstr ""
+msgstr "Идо "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
 #: label="Icelandic ">
 msgid "Icelandic "
-msgstr ""
+msgstr "Исландский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
 #: label="Italian ">
 msgid "Italian "
-msgstr ""
+msgstr "Итальянский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
 #: label="Inuktitut ">
@@ -2715,17 +2725,17 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
 msgid "Japanese "
-msgstr ""
+msgstr "Японский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
 #: label="Javanese ">
 msgid "Javanese "
-msgstr ""
+msgstr "Яванский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
 #: label="Georgian ">
 msgid "Georgian "
-msgstr ""
+msgstr "Грузинский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
 #: label="Kikuyu ">
@@ -2740,7 +2750,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
 #: label="Kazakh ">
 msgid "Kazakh "
-msgstr ""
+msgstr "Казахский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
 #: label="Kalaallisut; Greenlandic ">
@@ -2760,37 +2770,37 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
 #: label="Korean ">
 msgid "Korean "
-msgstr ""
+msgstr "Корейский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
 #: label="Kashmiri ">
 msgid "Kashmiri "
-msgstr ""
+msgstr "Кашмирский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
 #: label="Kurdish ">
 msgid "Kurdish "
-msgstr ""
+msgstr "Курдский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
 #: label="Komi ">
 msgid "Komi "
-msgstr ""
+msgstr "Коми "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish ">
 msgid "Cornish "
-msgstr ""
+msgstr "Корнуэльский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
 #: label="Kirghiz ">
 msgid "Kirghiz "
-msgstr ""
+msgstr "Киргизский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
 #: label="Latin ">
 msgid "Latin "
-msgstr ""
+msgstr "Латынь "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
 #: label="Letzeburgesch ">
@@ -2810,12 +2820,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
 #: label="Lithuanian ">
 msgid "Lithuanian "
-msgstr ""
+msgstr "Литовский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
 #: label="Latvian; Lettish ">
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Латышский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
 #: label="Malagasy ">
@@ -2830,57 +2840,57 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
 #: label="Maori ">
 msgid "Maori "
-msgstr ""
+msgstr "Маори "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
 #: label="Macedonian ">
 msgid "Macedonian "
-msgstr ""
+msgstr "Македонский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
 msgid "Malayalam "
-msgstr ""
+msgstr "Малайялам "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
 #: label="Mongolian ">
 msgid "Mongolian "
-msgstr ""
+msgstr "Монгольский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
 #: label="Moldavian ">
 msgid "Moldavian "
-msgstr ""
+msgstr "Молдавский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
 #: label="Marathi ">
 msgid "Marathi "
-msgstr ""
+msgstr "Маратхи "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
 #: label="Malay ">
 msgid "Malay "
-msgstr ""
+msgstr "Малайский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
 #: label="Maltese ">
 msgid "Maltese "
-msgstr ""
+msgstr "Мальтийский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
 msgid "Burmese "
-msgstr ""
+msgstr "Бирманский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
 #: label="Nauru ">
 msgid "Nauru "
-msgstr ""
+msgstr "Науру "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
 #: label="Norwegian Bokmål ">
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Норвежский Bokmål "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
 #: label="Ndebele, North ">
@@ -2890,7 +2900,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
 #: label="Nepali ">
 msgid "Nepali "
-msgstr ""
+msgstr "Непальский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
 #: label="Ndonga ">
@@ -2900,17 +2910,17 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
 #: label="Dutch ">
 msgid "Dutch "
-msgstr ""
+msgstr "Нидерландский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
 #: label="Norwegian Nynorsk ">
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Норвежский Nynorsk "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino"
 #: label="Norwegian ">
 msgid "Norwegian "
-msgstr ""
+msgstr "Норвежский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
 #: label="Ndebele, South ">
@@ -2920,7 +2930,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
 #: label="Navajo ">
 msgid "Navajo "
-msgstr ""
+msgstr "Навахо "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
 #: label="Chichewa; Nyanja ">
@@ -2930,7 +2940,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
 #: label="Occitan; Provençal ">
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Occitan; Провансальский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
 #: label="(Afan) Oromo ">
@@ -2945,22 +2955,22 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
 #: label="Ossetian; Ossetic ">
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Осетинский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
 #: label="Panjabi; Punjabi ">
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Пенджаби "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
 #: label="Pali ">
 msgid "Pali "
-msgstr ""
+msgstr "Пали "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl"
 #: label="Polish ">
 msgid "Polish "
-msgstr ""
+msgstr "Польский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
 #: label="Pashto, Pushto ">
@@ -2970,12 +2980,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
 #: label="Portuguese ">
 msgid "Portuguese "
-msgstr ""
+msgstr "Португальский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
 #: label="Quechua ">
 msgid "Quechua "
-msgstr ""
+msgstr "Кечуа "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
 #: label="Rhaeto-Romance ">
@@ -2990,12 +3000,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
 #: label="Romanian ">
 msgid "Romanian "
-msgstr ""
+msgstr "Румынский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru"
 #: label="Russian ">
 msgid "Russian "
-msgstr ""
+msgstr "Русский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
 #: label="Kinyarwanda ">
@@ -3005,7 +3015,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa"
 #: label="Sanskrit ">
 msgid "Sanskrit "
-msgstr ""
+msgstr "Санскрит"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc"
 #: label="Sardinian ">
@@ -3035,17 +3045,17 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk"
 #: label="Slovak ">
 msgid "Slovak "
-msgstr ""
+msgstr "Словацкий "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl"
 #: label="Slovenian ">
 msgid "Slovenian "
-msgstr ""
+msgstr "Словенский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
 #: label="Samoan ">
 msgid "Samoan "
-msgstr ""
+msgstr "Полинезийский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
 #: label="Shona ">
@@ -3055,17 +3065,17 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso"
 #: label="Somali ">
 msgid "Somali "
-msgstr ""
+msgstr "Сомали "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
 #: label="Albanian ">
 msgid "Albanian "
-msgstr ""
+msgstr "Албанский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
 #: label="Serbian ">
 msgid "Serbian "
-msgstr ""
+msgstr "Сербский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
 #: label="Swati; Siswati ">
@@ -3085,22 +3095,22 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv"
 #: label="Swedish ">
 msgid "Swedish "
-msgstr ""
+msgstr "Шведский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
 #: label="Swahili ">
 msgid "Swahili "
-msgstr ""
+msgstr "Суахили "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
 #: label="Tamil ">
 msgid "Tamil "
-msgstr ""
+msgstr "Тамильский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
 #: label="Telugu ">
 msgid "Telugu "
-msgstr ""
+msgstr "Телугу "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
 #: label="Tajik ">
@@ -3110,7 +3120,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
 #: label="Thai ">
 msgid "Thai "
-msgstr ""
+msgstr "Тайский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
 #: label="Tigrinya ">
@@ -3125,7 +3135,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl"
 #: label="Tagalog ">
 msgid "Tagalog "
-msgstr ""
+msgstr "Тагальский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
 #: label="Tswana; Setswana ">
@@ -3140,7 +3150,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
 #: label="Turkish ">
 msgid "Turkish "
-msgstr ""
+msgstr "Турецкий "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
 #: label="Tsonga ">
@@ -3150,7 +3160,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
 #: label="Tatar ">
 msgid "Tatar "
-msgstr ""
+msgstr "Татарский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
 #: label="Twi ">
@@ -3170,7 +3180,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
 #: label="Ukrainian ">
 msgid "Ukrainian "
-msgstr ""
+msgstr "Украинский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
 #: label="Urdu ">
@@ -3180,12 +3190,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
 #: label="Uzbek ">
 msgid "Uzbek "
-msgstr ""
+msgstr "Узбекский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi"
 #: label="Vietnamese ">
 msgid "Vietnamese "
-msgstr ""
+msgstr "Вьетнамский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
 #: label="Volapük; Volapuk ">
@@ -3210,12 +3220,12 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
 #: label="Yiddish (formerly ji) ">
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Идиш (прежде, чжи) "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
 #: label="Yoruba ">
 msgid "Yoruba "
-msgstr ""
+msgstr "Йоруба"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
 #: label="Zhuang ">
@@ -3225,7 +3235,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
 msgid "Chinese "
-msgstr ""
+msgstr "Китайский "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
 #: label="Zulu.">
@@ -3247,7 +3257,7 @@ msgstr ""
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Rights:"
-msgstr ""
+msgstr "Права:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."

@@ -114,3 +114,22 @@ msgstr "label=\"Tekstifail\" accesskey=\"t\""
 msgid "_: suggested by kot"
 "Auckland Univeristy of Technology"
 msgstr "Auckland Tehnikaülikool"
+
+#: exe/engine/multimediaidevice.py:74
+msgid ""
+"_: suggested by mellik"
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Joondamine lubab sul valida, \n"
+"kuhu meedia-pleier ekraanil paigutada."
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "_: suggested by mellik"
+"Auckland University of Technology"
+msgstr "Aucklandi Tehnikaülikool"
+
+#: exe/engine/multimediaidevice.py:49
+msgid "_: suggested by mellik"
+"Choose an MP3 file"
+msgstr "Vali MP3-fail"

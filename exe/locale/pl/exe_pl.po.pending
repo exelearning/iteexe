@@ -1,0 +1,4 @@
+#: exe/engine/field.py:708
+msgid "_: suggested by sebastiankom"
+"<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
+msgstr "<p> Wybierz symbole z poniższego edytora tekstowego, żeby stworzyć wyrażenie matematyczne. Każdy symbol będzie widziany jako znak języka LATEX który może zostać podejrzany przed publikacją przy pomocy przycisku &lt;Podgląd&gt;."

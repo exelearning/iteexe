@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2006-09-20 11:20+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2006-10-21 22:31+1300\n"
+"Last-Translator: jil quillevere <jil.quillevere@free.fr>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-EXE-Language: français\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Pootle 0.6.3.20060116\n"
+"X-Generator: Pootle 0.10beta\n"
 
 #: exe/idevices/appletidevice.py:60
 msgid ""
@@ -43,7 +43,7 @@ msgstr "<dl> <dt> Si votre but est de tester la compréhension des concepts de b
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol> <li> Cliquez &lt;Choisir le MP3&gt; et naviguez jusqu'au fichier MP3 que vous souhaitez insérer</li> <li> Cliquez sur le menu déroulant pour choisir l'emplacement où vous souhaitez positionner votre insertion à l'écran.</li> <li> Donnez éventuellement un titre à votre fichier.</li> <li> Rédigez toute note opportune et associez la au fichier MP3.</li> <li> Choisissez le type de style que vous souhaitez appliquer à l'outil pédagogique. Par exemple ' Some emphasis' applique une bordure et une icône au contenu mis en ligne.</li><ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -109,7 +109,7 @@ msgstr "<p> Si cette case est cochée, chaque mot tapé sera validé au fur et �
 
 #: exe/engine/field.py:708
 msgid "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
-msgstr ""
+msgstr "<p> Choisissez les symboles mathématiques à partir de l'éditeur de texte ci-dessous pour créer vos formules. Chaque symbole sera visualisé dans le champ en langage mathématique LATEX, dont un aperçu peut être demandé par le bouton &lt;Aperçu&gt; situé en-dessous."
 
 #: exe/engine/idevicestore.py:247
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -277,11 +277,10 @@ msgid ""
 msgstr "La mise en page vous permet de choisir le positionnement de votre image à l'écran."
 
 #: exe/engine/multimediaidevice.py:74
-#, fuzzy
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
-msgstr "La mise en page vous permet de choisir le positionnement de votre image à l'écran."
+msgstr "La mise en page vous permet de choisir le positionnement du lecteur à l'écran."
 
 #: exe/engine/field.py:524
 msgid ""
@@ -348,7 +347,7 @@ msgstr "le fichier attaché %s n'a pas de lien "
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Université de Technologie d'Auckland"
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
@@ -375,7 +374,7 @@ msgstr "l'application ne peut accéder à ce répertoire"
 #: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
-msgstr "légende"
+msgstr "titre-légende"
 
 #: exe/engine/casestudyidevice.py:72
 msgid "Case Study"
@@ -402,13 +401,12 @@ msgid "Choose an Image"
 msgstr "Choisir une image"
 
 #: exe/engine/multimediaidevice.py:49
-#, fuzzy
 msgid "Choose an MP3 file"
-msgstr "choisir une plate-forme de FOAD"
+msgstr "choisir un fichier MP3"
 
 #: exe/engine/casestudyidevice.py:54
 msgid "Choose an optional image to be shown to the student on completion of this question"
-msgstr ""
+msgstr "Choisir éventuellement une image destinée à l'apprenant en complément de la question"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -442,11 +440,10 @@ msgid "Click here"
 msgstr "Clicquer ici"
 
 #: exe/engine/field.py:715
-#, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into a symbols image."
-msgstr "Rédigez le texte que vous souhaitez associer à l'image."
+msgstr "Clicquez sur le bouton 'Aperçu' pour convertir les symboles Latex en images."
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
@@ -491,7 +488,7 @@ msgstr "Exact !"
 
 #: exe/xului/mainpage.py:577
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Si vous ne pouvez télécharger le fichier, merci d'adresser un e-mail à bugs@exelearning.org"
 
 #: exe/engine/casestudyidevice.py:93
 msgid ""
@@ -700,7 +697,7 @@ msgid ""
 "into the RSS URL field and click the LOAD button. This will extract the titles from your feed and\n"
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
-msgstr ""
+msgstr "Entrez l'adresse URL du flux RSS que vous souhaitez associer au contenu.Les flux RSS sont souvent identifiés par une petite icône graphique (souvent comme cette image <img src=\"/images/feed-icon.png\"/> ou par le texte \"RSS\". En clicquant sur l'icône ou sur le texte vous ferez apparaître correctement le flux RSS dans votre navigateur.Vous pouvez copier-coller l'adresse URL dans ce champ. D'une autre manière, en faisant un clic droit sur le lien ou l'icône vous ouvrez une boite de menu; clicquez sur COPY LINK LOCATION ou copiez le raccourci. Dans l'interface d'Exe, ouvrez l'outil pédagogique signet RSS, copiez l'adresse URL dans le champ URL RSS et clicquer le bouton Télécharger. Ceci vous permettra d'extraire les titres de votre flux RSS et de les afficher comme liens dans votre contenu. Vous pouvez ainsi éditer vos signets et ajouter des consignes ou des informations complémentaires d'apprentissage."
 
 #: exe/engine/field.py:835 exe/idevices/quiztestidevice.py:64
 #: exe/idevices/quiztestidevice.py:86
@@ -837,9 +834,8 @@ msgid "Feedback"
 msgstr "\"Echo en retour\""
 
 #: exe/engine/casestudyidevice.py:53
-#, fuzzy
 msgid "Feedback Image"
-msgstr "\"Echo en retour\""
+msgstr "\"Image d'Echo en retour\""
 
 #: exe/webui/editorpane.py:156
 msgid ""
@@ -937,9 +933,8 @@ msgid "Hide"
 msgstr "Cacher"
 
 #: exe/webui/questionelement.py:108
-#, fuzzy
 msgid "Hide Feedback"
-msgstr "Montrer/ Cacher l'écho"
+msgstr "Cacher l'écho en retour"
 
 #: exe/webui/element.py:724
 msgid "Hide/Show Word"
@@ -1070,12 +1065,11 @@ msgstr "Charger"
 
 #: exe/engine/multimediaidevice.py:40
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
-#, fuzzy
 msgid "Maths"
-msgstr "Marathi"
+msgstr "Mathématiques"
 
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
@@ -1221,7 +1215,7 @@ msgstr "Plan"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Own site"
-msgstr ""
+msgstr "Site personnel"
 
 #: exe/xului/mainpage.py:262 exe/xului/mainpage.py:392
 #, python-format
@@ -1302,7 +1296,7 @@ msgstr "Précédent"
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
-msgstr ""
+msgstr "Donnez un titre-légende au fichier MP3. Il apparaîtra également dans la barre de titres du lecteur."
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
@@ -1377,7 +1371,7 @@ msgstr "Question:"
 
 #: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
 msgid "RSS"
-msgstr ""
+msgstr "Flux RSS"
 
 #: exe/engine/clozeidevice.py:148
 msgid "Read the paragraph below and fill in the missing words"
@@ -1478,14 +1472,12 @@ msgid "Select a flash video"
 msgstr "Sélectionnez une vidéo Flash (.flv)"
 
 #: exe/webui/element.py:1066
-#, fuzzy
 msgid "Select a font size: "
-msgstr "Sélectionnez un fichier"
+msgstr "Choisir une taille de police:"
 
 #: exe/webui/element.py:355
-#, fuzzy
 msgid "Select an MP3"
-msgstr "Sélectionnez un fichier"
+msgstr "Sélectionnez un fichier MP3"
 
 #: exe/webui/element.py:273
 msgid "Select an image"
@@ -1512,9 +1504,8 @@ msgid ""
 msgstr "Sélectionnez l'option qui convient en clicquant sur le bouton "
 
 #: exe/engine/imagemagnifieridevice.py:71
-#, fuzzy
 msgid "Select the size of the magnifying glass"
-msgstr "Taille de la loupe"
+msgstr "Choisir la taille d'agrandissement de la loupe"
 
 #: exe/idevices/forumelement.py:88
 msgid "Separate groups"
@@ -1552,9 +1543,8 @@ msgid "Show Answers"
 msgstr "Montrer les réponses"
 
 #: exe/webui/questionelement.py:103
-#, fuzzy
 msgid "Show Feedback"
-msgstr "Montrer/ Cacher l'écho"
+msgstr "Montrer l'écho en retour"
 
 #: exe/webui/element.py:814
 msgid "Show/Clear Answers"
@@ -1570,7 +1560,7 @@ msgstr "site"
 
 #: exe/webui/imagemagnifierblock.py:137
 msgid "Size of magnifying glass: "
-msgstr "Taille de la loupe"
+msgstr "Taille d'agrandissement de la loupe :"
 
 #: exe/webui/wikipediablock.py:100
 msgid "Slovenian Wikipedia Article"
@@ -1583,7 +1573,7 @@ msgstr "Petit"
 #: exe/webui/wikipediablock.py:127 exe/webui/editorpane.py:308
 #: exe/webui/rssblock.py:92 exe/webui/multimediablock.py:92
 msgid "Some emphasis"
-msgstr "Un peu d'accentuation"
+msgstr "Importance"
 
 #: exe/xului/mainpage.py:582
 msgid "Sorry, wrong file format"
@@ -1646,14 +1636,14 @@ msgstr "Ligne de texte"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
+msgstr "L'outil pédagogique MP3 vous permet d'insérer un fichier MP3 au sein de votre contenu et d'y associer les consignes écrites appropriées."
 
 #: exe/engine/rssidevice.py:43
 msgid ""
 "The RSS iDevice is used \n"
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
-msgstr ""
+msgstr "L'outil pédagogique RSS permet d'actualiser certains contenus. En utilisant cet outil, vous pouvez créer des liens vers des flux d'informations sélectionnées que vous souhaitez partager avec les apprenants."
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
@@ -1692,7 +1682,7 @@ msgid ""
 "                        you use the Free Text iDevice to provide \n"
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
-msgstr ""
+msgstr "Le langage mathématique LATEX a été implémenté afin de vous permettre de créer des objets mathématiques au sein de votre contenu. Cela fonctionne par une transposition du langage LATEX sous forme d'images de symboles que vous pouvez insérer au sein de votre contenu sous Exe. L'équipe Exe recommande l'utilisation conjointe de l'outil pédagogique Texte libre pour les notes explicatives associées ainsi que pour les consignes d'apprentissage liées aux formules."
 
 #: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
@@ -1824,14 +1814,14 @@ msgstr "Rédigez les objectifs pédagogiques pour cette ressource."
 
 #: exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
-msgstr "Rédigez la trame..? de la question"
+msgstr "Rédigez la question de base"
 
 #: exe/engine/truefalseidevice.py:69
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
 "be ambiguous."
-msgstr "Rédigez la trame..? de la question. Celle-ci doit être claire et sans ambiguité. Evitez les intitulés négatifs qui pourraient induire quelque ambiguité."
+msgstr "Rédigez la question de base. Celle-ci doit être claire et sans ambiguité. Evitez les intitulés négatifs qui pourraient induire quelque ambiguité."
 
 #: exe/webui/externalurlblock.py:60
 msgid "URL:"
@@ -1840,7 +1830,7 @@ msgstr "URL:"
 #: exe/engine/wikipediaidevice.py:97
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "Impossible de télécharger depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
 
 #: exe/engine/package.py:79
 msgid "Unit"
@@ -1877,7 +1867,7 @@ msgstr "Télécharger"
 
 #: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
-msgstr "Utiliser l'accentuation ou la mise en évidence pour souligner l'importance de l'information présentée par l'outil pédagogique."
+msgstr "Utiliser IMPORTANCE pour souligner l'importance de l'information présentée par l'outil pédagogique."
 
 #: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
 msgid ""
@@ -1907,7 +1897,7 @@ msgstr "Visualisable par les apprenants"
 
 #: exe/engine/idevicestore.py:282 exe/engine/idevicestore.py:390
 msgid "What to read"
-msgstr "Que faut-il lire ou qu'est ce que lire?"
+msgstr "Que faut-il lire ?"
 
 #: exe/engine/multichoiceidevice.py:72
 msgid ""
@@ -1958,7 +1948,7 @@ msgstr "Oui, au départ"
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr ""
+msgstr "Vous pouvez utiliser la barre de titres ou insérer manuellement le symbole en Latex dans le champ texte."
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
@@ -1974,7 +1964,8 @@ msgstr "Laissez vide pour affichage à la taille d'origine"
 
 #: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
-msgstr "Répéter le nom du forum.\n"
+msgstr ""
+"Répéter le nom du forum.\n"
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
@@ -2025,14 +2016,12 @@ msgid "label"
 msgstr "titre nom"
 
 #: exe/webui/element.py:1063
-#, fuzzy
 msgid "newline"
-msgstr "Interlingue"
+msgstr "nouvelle ligne"
 
 #: exe/webui/element.py:1062
-#, fuzzy
 msgid "text"
-msgstr "Suivant"
+msgstr "texte"
 
 #: exe/webui/renderable.py:255
 msgid "title"
@@ -2106,7 +2095,7 @@ msgstr "Auteur:"
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
 msgid "VK_INSERT"
-msgstr "VK_INSERT"
+msgstr "VK_INSERTION"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
@@ -2126,7 +2115,7 @@ msgstr "objet:"
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
-msgstr "VK_DELETE"
+msgstr "VK_SUPPRESSION"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
@@ -2157,7 +2146,7 @@ msgstr "R"
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image">
 msgid "Clear Image"
-msgstr "Effacer l'image"
+msgstr "Réactualiser l'image"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
@@ -2168,13 +2157,13 @@ msgstr "Publicateur:"
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
 msgid "VK_LEFT"
-msgstr "VK_LEFT"
+msgstr "VK_A_GAUCHE"
 
 #: exe/xului/templates/packageproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
 #: label="Tile background image?" checked="false">
 msgid "Tile background image?"
-msgstr "Recouvrir ? ou Tuiler? l'image d'arrière-plan?"
+msgstr "Tuiler l'image d'arrière-plan?"
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
@@ -2185,7 +2174,7 @@ msgstr "Contributeurs:"
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
-msgstr "VK_RIGHT"
+msgstr "VK_A_DROITE"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Author:"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
@@ -2207,7 +2196,7 @@ msgstr "U"
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
 msgid "Taxonomy"
-msgstr "Taxonomie (science des lois de la classification des E.V.)"
+msgstr "Arborescence"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
@@ -2295,7 +2284,7 @@ msgstr "Sélectionner le format de fichier"
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
@@ -2388,7 +2377,7 @@ msgstr "Abkhazian"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Dossier auto-packagé"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -2398,7 +2387,7 @@ msgstr "Avestan"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
 msgid "Zip File"
-msgstr ""
+msgstr "fichier compressé ZIP"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -2417,9 +2406,8 @@ msgstr "Amharic"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
-#, fuzzy
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"fichier\" accesskey=\"f\""
+msgstr "label=\"fichier texte\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
@@ -2458,9 +2446,8 @@ msgstr "Azerbaijani"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
-#, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"à propos\" accesskey=\"a\""
+msgstr "label=\"quitter\" accesskey=\"q\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
