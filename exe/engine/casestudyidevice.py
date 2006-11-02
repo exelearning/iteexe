@@ -102,7 +102,7 @@ presented. """)
 situation.""")
         if defaultImage is None:
             from exe.application import application
-            defaultImage = application.config.webDir/'images'/DEFAULT_IMAGE
+            defaultImage = application.config.resourceDir/'exportable'/'misc'/DEFAULT_IMAGE
         self.defaultImage = defaultImage
         self.addQuestion()
 
@@ -164,7 +164,7 @@ situation.""")
         Upgrades for v0.18
         """
         from exe.application import application
-        self.defaultImage = application.config.webDir/'images'/DEFAULT_IMAGE
+        self.defaultImage = application.config.resourceDir/'exportable'/'images'/DEFAULT_IMAGE
         for question in self.questions:
             question.setupImage(self)
 

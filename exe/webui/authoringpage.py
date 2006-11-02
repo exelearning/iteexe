@@ -139,7 +139,7 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" '
-        html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
+        html += u'src="/tinymce/jscripts/tiny_mce/tiny_mce.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'

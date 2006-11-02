@@ -48,7 +48,7 @@ class EditorPane(object):
         Initialize
         """
         self.ideviceStore     = webServer.application.ideviceStore
-        self.webDir           = webServer.application.config.webDir
+        self.resouceDir       = webServer.application.config.resourceDir
         self.styles           = webServer.application.config.styles
         self.elements         = []
         self.idevice          = GenericIdevice("", "", "", "", "")
@@ -147,7 +147,7 @@ class EditorPane(object):
         if "addImage" in request.args:
             field = ImageField(_(u"Enter the label here"),
                                _(u"Enter the instructions for completion here"))
-            imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
+            imagePath = self.resourceDir/'exportable'/'images'/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
             
@@ -383,7 +383,7 @@ data is entered into this field.""")))
         """
         Return xhtml string for dispay all icons
         """
-        iconpath  = Path(self.webDir).joinpath("style", self.style)
+        iconpath  = self.resourceDir/'exportable'/'style'/self.style
         iconfiles = iconpath.files("icon_*")
         html = ""
         for iconfile in iconfiles:

@@ -129,24 +129,18 @@ class IdeviceStore:
         from exe.engine.mathidevice           import MathIdevice
         from exe.engine.multichoiceidevice    import MultichoiceIdevice        
         from exe.engine.rssidevice            import RssIdevice 
-      #  from exe.engine.multiselectidevice    import MultiSelectIdevice
+        # from exe.engine.multiselectidevice    import MultiSelectIdevice
+
+        defaultImage = unicode(self.config.resourceDir/"exportable"/"images"/"sunflowers.jpg")
+        defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
 
         self.extended.append(FreeTextIdevice())
-        
-
         self.extended.append(MultichoiceIdevice())
-                
         self.extended.append(ReflectionIdevice())
-                
         self.extended.append(CasestudyIdevice())
         self.extended.append(TrueFalseIdevice())
-        
-        defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
         self.extended.append(ImageWithTextIdevice(defaultImage))
         self.extended.append(ImageMagnifierIdevice(defaultImage))
-        
-        defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
-        defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         self.extended.append(WikipediaIdevice(defaultSite))
         self.extended.append(AttachmentIdevice())
         self.extended.append(GalleryIdevice())
@@ -156,9 +150,8 @@ class IdeviceStore:
         self.extended.append(MathIdevice())
         self.extended.append(MultimediaIdevice())
         self.extended.append(RssIdevice())
-     #   self.extended.append(MultiSelectIdevice())
-
-        # generate new ids for these iDevices, to avoid any clashes
+        ##self.extended.append(MultiSelectIdevice())
+        # Generate new ids for these iDevices, to avoid any clashes
         for idevice in self.extended:
             idevice.id = self.getNewIdeviceId()
   

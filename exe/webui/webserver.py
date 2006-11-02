@@ -43,6 +43,7 @@ from exe.webui.packageredirectpage import PackageRedirectPage
 from exe.webui.editorpage          import EditorPage
 from exe.webui.preferencespage     import PreferencesPage
 from exe.webui.aboutpage           import AboutPage
+from twisted.web import resource
 
 import logging
 log = logging.getLogger(__name__)
@@ -69,20 +70,10 @@ class WebServer:
         Start serving webpages from the local web server
         """
         log.debug("start web server running")
-        
-        # web resources
-        webDir = self.config.webDir
-        self.root.putChild("images",      static.File(webDir+"/images"))
-        self.root.putChild("css",         static.File(webDir+"/css"))   
-        self.root.putChild("scripts",     static.File(webDir+"/scripts"))
-        self.root.putChild("style",       static.File(webDir+"/style"))
-        self.root.putChild("docs",        static.File(webDir+"/docs"))
 
-        # xul resources
-        xulDir = self.config.xulDir
-        self.root.putChild("xulscripts",  static.File(xulDir+"/scripts"))
-        self.root.putChild("xultemplates",  static.File(xulDir+"/templates"))
-        self.root.putChild("templates",   static.File(webDir+"/templates"))
+        # web resources
+        resourceDir = self.config.resourceDir
+        self.root.putChild("tinymce", static.File(resourceDir/'internal'/'tinymce'))
 
         # sub applications
         self.root.putChild("editor",      self.editor)

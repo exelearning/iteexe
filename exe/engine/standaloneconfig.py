@@ -42,7 +42,7 @@ class StandaloneConfig(Config):
             self.exePath = self.exePath.dirname()
         exePath = self.exePath
         # Override the default settings
-        self.webDir        = exePath
+        self.resourceDir   = exePath/'resources'
         self.dataDir       = exePath/'packages'
         if not self.dataDir.exists():
             self.dataDir.makedirs()

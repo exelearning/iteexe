@@ -60,9 +60,9 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
 <n:invisible n:render="liveid"/>
 <n:invisible n:render="liveglue"/>
 
-<?xul-overlay href="/xultemplates/packageproperties.xul"?>
-<?xul-overlay href="/xultemplates/dublincore.xul"?>
-<?xul-overlay href="/xultemplates/exportproperties.xul"?>
+<?xul-overlay href="/packageproperties.xul"?>
+<?xul-overlay href="/dublincore.xul"?>
+<?xul-overlay href="/exportproperties.xul"?>
 
   <script>
   <![CDATA[

@@ -1023,10 +1023,10 @@ class MathElement(Element):
         Returns an XHTML string with the form element for editing this field
         """
         from exe.application import application
-        webDir = application.config.webDir
-        greekDir = Path(webDir+'/images/maths/greek letters')
-        oprationDir = Path(webDir+'/images/maths/binary oprations')
-        relationDir = Path(webDir+'/images/maths/relations')
+        resourceDir = application.config.resourceDir
+        greekDir = Path(resourceDir/'exportable'/'images'/'maths'/'greek letters')
+        oprationDir = Path(resourceDir/'exportable'/'images'/'maths'/'binary oprations')
+        relationDir = Path(resourceDir/'exportable'/'images'/'maths'/'relations')
         html = u'<div class="block">'
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)

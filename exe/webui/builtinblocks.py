@@ -38,7 +38,7 @@ from exe.webui.imagemagnifierblock    import ImageMagnifierBlock
 from exe.webui.mathblock              import MathBlock
 from exe.webui.multimediablock        import MultimediaBlock
 from exe.webui.rssblock               import RssBlock
-from exe.webui.multiselectblock       import MultiSelectBlock
+#from exe.webui.multiselectblock       import MultiSelectBlock
 
 # ===========================================================================
 

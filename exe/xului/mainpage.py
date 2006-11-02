@@ -59,11 +59,12 @@ class MainPage(RenderableLivePage):
         Initialize a new XUL page
         'package' is the package that we look after
         """
+        self.package = package
         self.name = package.name
         RenderableLivePage.__init__(self, parent, package)
         self.putChild("resources", static.File(package.resourceDir))
 
-        mainxul = Path(self.config.xulDir).joinpath('templates', 'mainpage.xul')
+        mainxul = self.config.resourceDir/'internal'/'templates'/'mainpage.xul'
         self.docFactory  = loaders.xmlfile(mainxul)
 
         # Create all the children on the left
@@ -75,7 +76,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
-
     def getChild(self, name, request):
         """
         Try and find the child for the name given
@@ -85,11 +85,9 @@ class MainPage(RenderableLivePage):
         else:
             return super(self, self.__class__).getChild(self, name, request)
 
-
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
-        inevow.IRequest(ctx).setHeader('content-type',
-                                       'application/vnd.mozilla.xul+xml')
+        inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
             """
@@ -235,9 +233,7 @@ class MainPage(RenderableLivePage):
         filename = Path(filename)
         saveDir  = filename.dirname()
         if saveDir and not saveDir.exists():
-            client.alert(_(u'Cannot access directory named ') +
-                         unicode(saveDir) +
-                         _(u'. Please use ASCII names.'))
+            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
             return
         
         oldName = self.package.name
@@ -252,12 +248,10 @@ class MainPage(RenderableLivePage):
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
             if Path(filename).exists():
-                client.alert(_(u'SAVE FAILED.\n"%s" already exists.\n'
-                                'Please try again with '
-                                'a different filename') % filename)
+                client.alert(_(u'SAVE FAILED.\n"%s" already exists.\nPlease try again with a different filename') % filename)
                 return
         self.package.save(filename) # This can change the package name
-        # start exe
+        # Start exe
         # Tell the user and continue
         client.alert(_(u'Package saved to: %s' % filename))
         if onDone:
@@ -289,8 +283,8 @@ class MainPage(RenderableLivePage):
                      'textFile' or 'scorm'
         'filename' is a file for scorm pages, and a directory for websites
         """ 
-        webDir     = Path(self.config.webDir)
-        stylesDir  = webDir.joinpath('style', self.package.style)
+        resourceDir = Path(self.config.resourceDir)
+        stylesDir = resourceDir/'exportable'/'style'/self.package.style
 
         exportDir  = Path(filename).dirname()
         if exportDir and not exportDir.exists():
@@ -300,11 +294,11 @@ class MainPage(RenderableLivePage):
             return
 
         if exportType == 'singlePage':
-            self.exportSinglePage(client, filename, webDir, stylesDir)
+            self.exportSinglePage(client, filename, resourceDir, stylesDir)
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
-            
+        
         elif exportType == 'zipFile':
             self.exportWebZip(client, filename, stylesDir)
         elif exportType == 'textFile':
@@ -356,26 +350,23 @@ class MainPage(RenderableLivePage):
                           self.package.name).encode('utf8'))
 
 
-    def handleExtractPackage(self, client, filename):
+    def handleExtractPackage(self, client, filename, existOk):
         """
         Create a new package consisting of the current node and export
+        'existOk' means the user has been informed of existance and ok'd it
         """
         filename  = Path(filename)
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
-            client.alert(_(u'Cannot access directory named ') +
-                         unicode(saveDir) +
-                         _(u'. Please use ASCII names.'))
+            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
             return
 
         # Add the extension if its not already there
         if not filename.lower().endswith('.elp'):
             filename += '.elp'
 
-        if Path(filename).exists():
-            client.alert(_(u'EXPORT FAILED.\n"%s" already exists.\n'
-                            'Please try again with '
-                            'a different filename') % filename)
+        if Path(filename).exists() and existOk != 'true':
+            client.alert(_(u'EXPORT FAILED.\n"%s" already exists.\nPlease try again with a different filename') % filename)
             return
 
         # Create a new package for the extracted nodes
@@ -396,15 +387,15 @@ class MainPage(RenderableLivePage):
 
     # Public Methods
 
-    def exportSinglePage(self, client, filename, webDir, stylesDir):
+    def exportSinglePage(self, client, filename, resourceDir, stylesDir):
         """
         Export 'client' to a single web page,
-        'webDir' is just read from config.webDir
+        'resourceDir' is just read from config.resourceDir
         'stylesDir' is where to copy the style sheet information from
         """
-        imagesDir    = webDir.joinpath('images')
-        scriptsDir   = webDir.joinpath('scripts')
-        templatesDir = webDir.joinpath('templates')
+        imagesDir    = resourceDir/ 'exportable'/'images'
+        scriptsDir   = resourceDir/'exportable'/'scripts'
+        templatesDir = resourceDir/'exportable'/'templates'
         # filename is a directory where we will export the website to
         # We assume that the user knows what they are doing
         # and don't check if the directory is already full or not
@@ -440,7 +431,7 @@ class MainPage(RenderableLivePage):
     def exportWebSite(self, client, filename, stylesDir):
         """
         Export 'client' to a web site,
-        'webDir' is just read from config.webDir
+        'filename is a directory where we will export the website to
         'stylesDir' is where to copy the style sheet information from
         """
         # filename is a directory where we will export the website to

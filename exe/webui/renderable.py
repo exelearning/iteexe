@@ -105,7 +105,7 @@ class Renderable(object):
             self.webServer = None
         if self._templateFileName:
             if hasattr(self, 'config') and self.config:
-                pth = self.config.webDir/'templates'/self._templateFileName
+                pth = self.config.resourceDir/'internal'/'templates'/self._templateFileName
                 self.docFactory = loaders.xmlfile(pth)
             else:
                 # Assume directory is included in the filename

@@ -593,6 +593,7 @@ msgstr ""
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
+#: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
 msgstr "Löschen"
 
@@ -667,6 +668,8 @@ msgstr "Beschreibung"
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
+#: exe/resources/internal/templates/packageproperties.xul:<label
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Description:"
 msgstr "Beschreibung:"
 
@@ -695,6 +698,9 @@ msgstr "Bildgröße"
 #: label="Done"> exe/xului/templates/dublincore.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
 #: exe/xului/templates/exportproperties.xul:<button id="exportPropsDone"
+#: exe/resources/internal/templates/packageproperties.xul:<button
+#: exe/resources/internal/templates/dublincore.xul:<button
+#: exe/resources/internal/templates/exportproperties.xul:<button
 msgid "Done"
 msgstr "Fertig"
 
@@ -1621,6 +1627,7 @@ msgstr "Flash-Objekt auswählen"
 #: exe/webui/preferencespage.py:86
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
+#: exe/resources/internal/templates/dublincore.xul:<menulist
 msgid "Select Language"
 msgstr "Sprache auswählen"
 
@@ -2225,6 +2232,7 @@ msgstr "iDevice %s hat kein Paket"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/engine/package.py:295 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
@@ -2263,12 +2271,14 @@ msgstr "Titel"
 # exe/xului/templates/dublincore.xul:<caption
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
+#: exe/resources/internal/templates/dublincore.xul:<caption
 msgid "Dublin Core Metadata"
 msgstr "Dublin Core Metadata"
 
 # exe/xului/templates/exportproperties.xul:<caption
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
 #: label="SCORM 1.2 Options">
+#: exe/resources/internal/templates/exportproperties.xul:<caption
 msgid "SCORM 1.2 Options"
 msgstr "SCORM 1.2 Optionen"
 
@@ -2276,27 +2286,32 @@ msgstr "SCORM 1.2 Optionen"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Insert Package"
 msgstr "In Paket einfügen"
 
 # exe/xului/templates/metadata.xul:<tab
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+#: exe/resources/internal/templates/metadata.xul:<tab
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
+#: exe/resources/internal/templates/packageproperties.xul:<caption
 msgid "Project Properties"
 msgstr "Projekteigenschaften"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
+#: exe/resources/internal/templates/properties.xul:<tab
 msgid "Package"
 msgstr "Paket"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Title:"
 msgstr "Titel:"
 
@@ -2306,6 +2321,7 @@ msgstr "Titel:"
 #: Previous/Next links within SCOs?" tooltiptext="Checking this box will cause
 #: eXe to add Previous and Next individual pages your SCO. The LMS also still
 #: kind of functionality." checked="false">
+#: exe/resources/internal/templates/exportproperties.xul:<checkbox
 msgid "Add Previous/Next links within SCOs?"
 msgstr "Link zu vorheriger/nächster Seite bei den Einheiten anzeigen?"
 
@@ -2313,27 +2329,32 @@ msgstr "Link zu vorheriger/nächster Seite bei den Einheiten anzeigen?"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Extract Package"
 msgstr "Paket entpacken"
 
 # exe/xului/templates/metadata.xul:<tab
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+#: exe/resources/internal/templates/metadata.xul:<tab
 msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+#: exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Project Title:"
 msgstr "Projekttitel: "
 
 # exe/xului/templates/properties.xul:<tab
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
+#: exe/resources/internal/templates/properties.xul:<tab
 msgid "Metadata"
 msgstr "Metadaten"
 
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Creator:"
 msgstr "Ersteller/in:"
 
@@ -2342,17 +2363,20 @@ msgstr "Ersteller/in:"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
+#: exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Header Background:"
 msgstr "Überschrift Hintergrund"
 
 # exe/xului/templates/properties.xul:<tab
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
+#: exe/resources/internal/templates/properties.xul:<tab
 msgid "Export"
 msgstr "Export"
 
@@ -2360,6 +2384,7 @@ msgstr "Export"
 # value="Subject:"
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Subject:"
 msgstr "Inhalt:"
 
@@ -2368,17 +2393,19 @@ msgstr "Inhalt:"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
-#: Image">
+#: Image"> exe/resources/internal/templates/packageproperties.xul:<button
 msgid "Load Image"
 msgstr "Bild hinzufügen"
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+#: exe/resources/internal/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                Typically, Subject will be expressed as keywords, key phrases or\n"
@@ -2399,6 +2426,7 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "R"
 msgstr "R"
 
@@ -2407,7 +2435,7 @@ msgstr "R"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
-#: Image">
+#: Image"> exe/resources/internal/templates/packageproperties.xul:<button
 msgid "Clear Image"
 msgstr "Bild Löschen"
 
@@ -2416,6 +2444,7 @@ msgstr "Bild Löschen"
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Publisher:"
 msgstr "Veröffentlicht durch:"
 
@@ -2424,12 +2453,14 @@ msgstr "Veröffentlicht durch:"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
 #: exe/xului/templates/packageproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
 #: label="Tile background image?" checked="false">
+#: exe/resources/internal/templates/packageproperties.xul:<checkbox
 msgid "Tile background image?"
 msgstr "Hintergrundbild als Kachelmuster?"
 
@@ -2438,6 +2469,7 @@ msgstr "Hintergrundbild als Kachelmuster?"
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Contributors:"
 msgstr "Mitwirkende:"
 
@@ -2446,12 +2478,13 @@ msgstr "Mitwirkende:"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Author:"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
-#: resource.">
+#: resource."> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Author:"
 msgstr "Autor/in:"
 
@@ -2459,7 +2492,7 @@ msgstr "Autor/in:"
 # value="Date:"
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
-#: resource.">
+#: resource."> exe/resources/internal/templates/dublincore.xul:<label
 msgid "Date:"
 msgstr "Datum"
 
@@ -2468,16 +2501,19 @@ msgstr "Datum"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "U"
 msgstr "U"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
+#: exe/resources/internal/templates/packageproperties.xul:<caption
 msgid "Taxonomy"
 msgstr "Gliederungsebenen (Begriffe)"
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+#: exe/resources/internal/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                 Typically, Date will be associated with the creation or\n"
@@ -2496,18 +2532,19 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "D"
 msgstr "D"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
+#: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Level 1:"
 msgstr "Level 1: "
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
-#: resource.">
+#: resource."> exe/resources/internal/templates/dublincore.xul:<label
 msgid "Type:"
 msgstr "Typ:"
 
@@ -2516,17 +2553,19 @@ msgstr "Typ:"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "N"
 msgstr "N"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
+#: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Level 2:"
 msgstr "Level 2: "
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+#: exe/resources/internal/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "              Type includes terms describing general categories, functions, or\n"
@@ -2543,17 +2582,19 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "S"
 msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
+#: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Level 3:"
 msgstr "Level 3: "
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Format:"
 msgstr "Format:"
 
@@ -2562,6 +2603,7 @@ msgstr "Format:"
 # exe/xului/templates/mainpage.xul:<key
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "O"
 msgstr "O"
 
@@ -2569,23 +2611,25 @@ msgstr "O"
 #: oncommand="submitForm(this.parentNode.parentNode,
 #: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
-#: display">
+#: display"> exe/resources/internal/templates/packageproperties.xul:<button
 msgid "Update Tree"
 msgstr "Verzeichnisstruktur aktualisieren"
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
+#: exe/resources/internal/templates/dublincore.xul:<menulist
 msgid "Select Format"
 msgstr "Format auswählen"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
+#: exe/resources/internal/templates/mainpage.xul:<key
 msgid "Q"
 msgstr ""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
-#: label="XHTML">
+#: label="XHTML"> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "XHTML"
 msgstr "XHTML"
 
@@ -2594,11 +2638,13 @@ msgstr "XHTML"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
 #: accesskey="f" label="File">
+#: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"Datei\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "SCORM 1.2"
 msgstr "SCORM ."
 
@@ -2607,6 +2653,7 @@ msgstr "SCORM ."
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"Neu\" accesskey=\"n\""
 
@@ -2614,6 +2661,7 @@ msgstr "label=\"Neu\" accesskey=\"n\""
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "IMS Content Package 1.1.3"
 msgstr "IMS Content Paket 1.1.3"
 
@@ -2622,12 +2670,15 @@ msgstr "IMS Content Paket 1.1.3"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"Öffnen\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site"
 #: id="dcmiWebSite" label="Web Site"> exe/xului/templates/mainpage.xul:<menu
 #: n:render="translate" id="website"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "Web Site"
 msgstr "Webseite"
 
@@ -2636,12 +2687,14 @@ msgstr "Webseite"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"Speichern\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Identifier:"
 msgstr "Identifier:"
 
@@ -2650,12 +2703,14 @@ msgstr "Identifier:"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"Speichern unter...\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
 #: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Source:"
 msgstr "Quelle"
 
@@ -2664,11 +2719,13 @@ msgstr "Quelle"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
+#: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Exportieren\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
+#: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Language:"
 msgstr "Sprache:"
 
@@ -2677,11 +2734,12 @@ msgstr "Sprache:"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
-#: label="Afar ">
+#: label="Afar "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Afar "
 msgstr "Weit"
 
@@ -2690,33 +2748,38 @@ msgstr "Weit"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Abkhazian "
 msgstr "Abkhazian"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Self-contained Folder"
 msgstr ""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
-#: label="Avestan ">
+#: label="Avestan "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Avestan "
 msgstr "Avestisch"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Zip File"
 msgstr ""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Afrikaans "
 msgstr "Afrikaans"
 
@@ -2725,11 +2788,12 @@ msgstr "Afrikaans"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Einzelne Seite \" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
-#: label="Amharic ">
+#: label="Amharic "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Amharic "
 msgstr "Amharisch"
 
@@ -2738,12 +2802,13 @@ msgstr "Amharisch"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"Datei\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
-#: label="Arabic ">
+#: label="Arabic "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Arabic "
 msgstr "Arabisch"
 
@@ -2757,6 +2822,7 @@ msgstr "label=\"Verbinden\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Assamese "
 msgstr "Assamesisch"
 
@@ -2765,11 +2831,12 @@ msgstr "Assamesisch"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"Paket einfügen\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
-#: label="Aymara ">
+#: label="Aymara "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Aymara "
 msgstr "Aymarisch"
 
@@ -2778,12 +2845,14 @@ msgstr "Aymarisch"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"Paket entpacken \" accesskey=\"E\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Azerbaijani "
 msgstr "Azerbaijanisch"
 
@@ -2792,12 +2861,13 @@ msgstr "Azerbaijanisch"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 #, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr "label=\"Über\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
+#: label="Bashkir "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bashkir "
 msgstr "Bashkirisch"
 
@@ -2806,11 +2876,13 @@ msgstr "Bashkirisch"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
+#: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"Tools\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Byelorussian; Belarusian "
 msgstr "Belarussisch"
 
@@ -2818,12 +2890,14 @@ msgstr "Belarussisch"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Preferences"
 msgstr "Präferenzen"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bulgarian "
 msgstr "Bulgarisch"
 
@@ -2832,11 +2906,12 @@ msgstr "Bulgarisch"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
+#: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"Styles\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
+#: label="Bihari "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bihari "
 msgstr "Biharisch"
 
@@ -2846,11 +2921,12 @@ msgstr "Biharisch"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr "label=\"Aktualisieren\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
+#: label="Bislama "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bislama "
 msgstr "Bislamisch"
 
@@ -2859,11 +2935,13 @@ msgstr "Bislamisch"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
+#: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Hilfe\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bengali; Bangla "
 msgstr "Bengalisch"
 
@@ -2872,11 +2950,12 @@ msgstr "Bengalisch"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"Über\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
-#: label="Tibetan ">
+#: label="Tibetan "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Tibetan "
 msgstr "Tibetanisch"
 
@@ -2885,11 +2964,12 @@ msgstr "Tibetanisch"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="registerOnline()" accesskey="R" label="Register Online">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Register Online\" accesskey=\"R\""
 msgstr "label=\"Online registrieren\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
+#: label="Breton "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Breton "
 msgstr "Bretonisch"
 
@@ -2898,12 +2978,13 @@ msgstr "Bretonisch"
 # exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
+#: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Report an Issue\" accesskey=\"R\""
 msgstr "label=\"Bericht erstellen\" accesskey=\"R\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
+#: label="Bosnian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bosnian "
 msgstr "Bosnisch"
 
@@ -2911,13 +2992,13 @@ msgstr "Bosnisch"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
-#: value="debugInfo">
+#: value="debugInfo"> exe/resources/internal/templates/mainpage.xul:<label
 msgid "debugInfo"
 msgstr "debugInfo"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
+#: label="Catalan "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Catalan "
 msgstr "Catalanisch"
 
@@ -2926,11 +3007,12 @@ msgstr "Catalanisch"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" label="Add Page">
+#: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
 msgid "Add Page"
 msgstr "Seite hinzufügen"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
+#: label="Chechen "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Chechen "
 msgstr "Chechen"
 
@@ -2939,11 +3021,13 @@ msgstr "Chechen"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
+#: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
 msgid "Rename"
 msgstr "Umbenennen"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Chamorro "
 msgstr "Chamorro"
 
@@ -2951,23 +3035,25 @@ msgstr "Chamorro"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
-#: value="outlinePane">
+#: value="outlinePane"> exe/resources/internal/templates/mainpage.xul:<label
 msgid "outlinePane"
 msgstr "Struktur"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Corsican "
 msgstr "Korsisch"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
+#: exe/resources/internal/templates/mainpage.xul:<label
 msgid "iDevices"
 msgstr "iDevices"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
-#: label="Czech ">
+#: label="Czech "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Czech "
 msgstr "Tschechisch"
 
@@ -2975,12 +3061,13 @@ msgstr "Tschechisch"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
+#: value="iDevicePane"> exe/resources/internal/templates/mainpage.xul:<label
 msgid "iDevicePane"
 msgstr "iDevice-Fenster"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Church Slavic "
 msgstr "Kirchenslawisch (alt)"
 
@@ -2988,12 +3075,12 @@ msgstr "Kirchenslawisch (alt)"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Authoring">
+#: label="Authoring"> exe/resources/internal/templates/mainpage.xul:<tab
 msgid "Authoring"
 msgstr "Autorenebene"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
+#: label="Chuvash "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Chuvash "
 msgstr "Chuvash"
 
@@ -3001,779 +3088,825 @@ msgstr "Chuvash"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
-#: label="Properties">
+#: label="Properties"> exe/resources/internal/templates/mainpage.xul:<tab
 msgid "Properties"
 msgstr "Projekteigenschaften "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
-#: label="Welsh ">
+#: label="Welsh "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Welsh "
 msgstr "Walisisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
-#: label="Danish ">
+#: label="Danish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Danish "
 msgstr "Dänisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
-#: label="German ">
+#: label="German "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "German "
 msgstr "Deutsch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Dzongkha; Bhutani "
 msgstr "Dzongkha"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
-#: label="Greek ">
+#: label="Greek "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Greek "
 msgstr "Griechisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
-#: label="English ">
+#: label="English "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "English "
 msgstr "Englisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Esperanto "
 msgstr "Esperanto"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
-#: label="Spanish ">
+#: label="Spanish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Spanish "
 msgstr "Spanisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
 #: label="Estonian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Estonian "
 msgstr "Estnisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
+#: label="Basque "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Basque "
 msgstr "Baskisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
-#: label="Persian ">
+#: label="Persian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Persian "
 msgstr "Persisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
-#: label="Finnish ">
+#: label="Finnish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Finnish "
 msgstr "Finnisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
 #: label="Fijian; Fiji ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Fijian; Fiji "
 msgstr "Fiji"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
-#: label="Faroese ">
+#: label="Faroese "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Faroese "
 msgstr "Faroese"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
-#: label="French ">
+#: label="French "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "French "
 msgstr "Französisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
-#: label="Frisian ">
+#: label="Frisian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Frisian "
 msgstr "Frisisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
-#: label="Irish ">
+#: label="Irish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Irish "
 msgstr "Irisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
 #: label="Scots; Gaelic ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Scots; Gaelic "
 msgstr "Schottisch /Gälisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Gallegan; Galician "
 msgstr "Galizisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
-#: label="Guarani ">
+#: label="Guarani "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Guarani "
 msgstr "Guarani"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
 #: label="Gujarati ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Gujarati "
 msgstr "Gujarati"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
-#: label="Manx ">
+#: label="Manx "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Manx "
 msgstr "Manx"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
 #: label="Hausa (?) ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hausa (?) "
 msgstr "Hausa (?)"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hebrew (formerly iw) "
 msgstr "Hebräisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
-#: label="Hindi ">
+#: label="Hindi "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hindi "
 msgstr "Hindi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hiri Motu "
 msgstr "Hiri Motu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
 #: label="Croatian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Croatian "
 msgstr "Kroatisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
 #: label="Hungarian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hungarian "
 msgstr "Ungarisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Armenian "
 msgstr "Armenisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
-#: label="Herero ">
+#: label="Herero "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Herero "
 msgstr "Herero"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
 #: label="Interlingua ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Interlingua "
 msgstr "Interlingua"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
 #: label="Indonesian (formerly in) ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Indonesian (formerly in) "
 msgstr "Indonesisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
 #: label="Interlingue ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Interlingue "
 msgstr "Interlingue"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
-#: label="Inupiak ">
+#: label="Inupiak "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Inupiak "
 msgstr "Inupiak"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
-#: label="Ido ">
+#: label="Ido "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Ido "
 msgstr "Ido"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
 #: label="Icelandic ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Icelandic "
 msgstr "Isländisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
-#: label="Italian ">
+#: label="Italian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Italian "
 msgstr "Italienisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
 #: label="Inuktitut ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Inuktitut "
 msgstr "Inuktitut"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Japanese "
 msgstr "Japanisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
 #: label="Javanese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Javanese "
 msgstr "Javanesisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
 #: label="Georgian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Georgian "
 msgstr "Georgisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
-#: label="Kikuyu ">
+#: label="Kikuyu "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kikuyu "
 msgstr "Kikuyu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
 #: label="Kuanyama ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kuanyama "
 msgstr "Kuanyama"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
-#: label="Kazakh ">
+#: label="Kazakh "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kazakh "
 msgstr "Kasachisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
 #: label="Kalaallisut; Greenlandic ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kalaallisut; Greenlandic "
 msgstr "Grönländisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
 #: label="Khmer; Cambodian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Khmer; Cambodian "
 msgstr "Kambodshanisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
-#: label="Kannada ">
+#: label="Kannada "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kannada "
 msgstr "Kannadisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
-#: label="Korean ">
+#: label="Korean "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Korean "
 msgstr "Koreanisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
 #: label="Kashmiri ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kashmiri "
 msgstr "Kashmiri"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
-#: label="Kurdish ">
+#: label="Kurdish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kurdish "
 msgstr "Kurdisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
-#: label="Komi ">
+#: label="Komi "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Komi "
 msgstr "Komi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
+#: label="Cornish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Cornish "
 msgstr "Kornisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
-#: label="Kirghiz ">
+#: label="Kirghiz "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kirghiz "
 msgstr "Kirghisisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
-#: label="Latin ">
+#: label="Latin "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Latin "
 msgstr "Latein"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
 #: label="Letzeburgesch ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Letzeburgesch "
 msgstr "Luxemburgisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
-#: label="Lingala ">
+#: label="Lingala "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Lingala "
 msgstr "Lingala"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
 #: label="Lao; Laotian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Lao; Laotian "
 msgstr "Laotisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
 #: label="Lithuanian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Lithuanian "
 msgstr "Litauisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
 #: label="Latvian; Lettish ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Latvian; Lettish "
 msgstr "Lettisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
 #: label="Malagasy ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Malagasy "
 msgstr "Malagassisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
 #: label="Marshall ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Marshall "
 msgstr "Marshal"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
-#: label="Maori ">
+#: label="Maori "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Maori "
 msgstr "Maori"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
 #: label="Macedonian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Macedonian "
 msgstr "Mazedonisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Malayalam "
 msgstr "Malayisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
 #: label="Mongolian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Mongolian "
 msgstr "Mongolisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
 #: label="Moldavian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Moldavian "
 msgstr "Moldavisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
-#: label="Marathi ">
+#: label="Marathi "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Marathi "
 msgstr "Marathi"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
-#: label="Malay ">
+#: label="Malay "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Malay "
 msgstr "Malay"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
-#: label="Maltese ">
+#: label="Maltese "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Maltese "
 msgstr "Maltesisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
+#: label="Burmese "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Burmese "
 msgstr "Burmesisch"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
-#: label="Nauru ">
+#: label="Nauru "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Nauru "
 msgstr "Nauru"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
-#: label="Norwegian Bokmål ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nb"
+#: id="dcminb" label="Norwegian Bokmål ">
 msgid "Norwegian Bokmål "
 msgstr "Norwegisch Bokmal"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
-#: label="Ndebele, North ">
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/resources/internal/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
+#, fuzzy
+msgid "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"Verbinden\" accesskey=\"e\""
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nd"
+#: id="dcmind" label="Ndebele, North ">
 msgid "Ndebele, North "
 msgstr "Ndebele"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
-#: label="Nepali ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ne"
+#: id="dcmine" label="Nepali ">
 msgid "Nepali "
 msgstr "Nepalesisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
-#: label="Ndonga ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ng"
+#: id="dcming" label="Ndonga ">
 msgid "Ndonga "
 msgstr "Ndonga"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
-#: label="Dutch ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nl"
+#: id="dcminl" label="Dutch ">
 msgid "Dutch "
 msgstr "Niederländisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
-#: label="Norwegian Nynorsk ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nn"
+#: id="dcminn" label="Norwegian Nynorsk ">
 msgid "Norwegian Nynorsk "
 msgstr "Norwegisch (Nynorsk)"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino"
-#: label="Norwegian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="no"
+#: id="dcmino" label="Norwegian ">
 msgid "Norwegian "
 msgstr "Norwegisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
-#: label="Ndebele, South ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nr"
+#: id="dcminr" label="Ndebele, South ">
 msgid "Ndebele, South "
 msgstr "Ndebele (Süd)"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
-#: label="Navajo ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nv"
+#: id="dcminv" label="Navajo ">
 msgid "Navajo "
 msgstr "Navajo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
-#: label="Chichewa; Nyanja ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ny"
+#: id="dcminy" label="Chichewa; Nyanja ">
 msgid "Chichewa; Nyanja "
 msgstr "Chichewa"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
-#: label="Occitan; Provençal ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="oc"
+#: id="dcmioc" label="Occitan; Provençal ">
 msgid "Occitan; Provençal "
 msgstr "Occitanisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
-#: label="(Afan) Oromo ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="om"
+#: id="dcmiom" label="(Afan) Oromo ">
 msgid "(Afan) Oromo "
 msgstr "(Afan) Oromo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior"
-#: label="Oriya ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="or"
+#: id="dcmior" label="Oriya ">
 msgid "Oriya "
 msgstr "Oriya"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
-#: label="Ossetian; Ossetic ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="os"
+#: id="dcmios" label="Ossetian; Ossetic ">
 msgid "Ossetian; Ossetic "
 msgstr "Ossetisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
-#: label="Panjabi; Punjabi ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pa"
+#: id="dcmipa" label="Panjabi; Punjabi ">
 msgid "Panjabi; Punjabi "
 msgstr "Panjabi; Punjabi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
-#: label="Pali ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pi"
+#: id="dcmipi" label="Pali ">
 msgid "Pali "
 msgstr "Pali"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl"
-#: label="Polish ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pl"
+#: id="dcmipl" label="Polish ">
 msgid "Polish "
 msgstr "Polnisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
-#: label="Pashto, Pushto ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ps"
+#: id="dcmips" label="Pashto, Pushto ">
 msgid "Pashto, Pushto "
 msgstr "Pashto; Pushto"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
-#: label="Portuguese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pt"
+#: id="dcmipt" label="Portuguese ">
 msgid "Portuguese "
 msgstr "Portugisisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
-#: label="Quechua ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="qu"
+#: id="dcmiqu" label="Quechua ">
 msgid "Quechua "
 msgstr "Quechua"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
-#: label="Rhaeto-Romance ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="rm"
+#: id="dcmirm" label="Rhaeto-Romance ">
 msgid "Rhaeto-Romance "
 msgstr "Räto-Romanisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn"
-#: label="Rundi; Kirundi ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="rn"
+#: id="dcmirn" label="Rundi; Kirundi ">
 msgid "Rundi; Kirundi "
 msgstr "Rundi; Kirundi"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
-#: label="Romanian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ro"
+#: id="dcmiro" label="Romanian ">
 msgid "Romanian "
 msgstr "Rumänisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru"
-#: label="Russian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ru"
+#: id="dcmiru" label="Russian ">
 msgid "Russian "
 msgstr "Russisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
-#: label="Kinyarwanda ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="rw"
+#: id="dcmirw" label="Kinyarwanda ">
 msgid "Kinyarwanda "
 msgstr "Kinyarwanda"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa"
-#: label="Sanskrit ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sa"
+#: id="dcmisa" label="Sanskrit ">
 msgid "Sanskrit "
 msgstr "Sanskrit"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc"
-#: label="Sardinian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sc"
+#: id="dcmisc" label="Sardinian ">
 msgid "Sardinian "
 msgstr "Sardisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd"
-#: label="Sindhi ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sd"
+#: id="dcmisd" label="Sindhi ">
 msgid "Sindhi "
 msgstr "Sindhi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise"
-#: label="Northern Sami ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="se"
+#: id="dcmise" label="Northern Sami ">
 msgid "Northern Sami "
 msgstr "Nord-Samisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg"
-#: label="Sango; Sangro ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sg"
+#: id="dcmisg" label="Sango; Sangro ">
 msgid "Sango; Sangro "
 msgstr "Sango; Sangro"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi"
-#: label="Sinhalese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="si"
+#: id="dcmisi" label="Sinhalese ">
 msgid "Sinhalese "
 msgstr "Singhalesisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk"
-#: label="Slovak ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sk"
+#: id="dcmisk" label="Slovak ">
 msgid "Slovak "
 msgstr "Slovakisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl"
-#: label="Slovenian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sl"
+#: id="dcmisl" label="Slovenian ">
 msgid "Slovenian "
 msgstr "Slowenisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
-#: label="Samoan ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sm"
+#: id="dcmism" label="Samoan ">
 msgid "Samoan "
 msgstr "Samoan"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
-#: label="Shona ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sn"
+#: id="dcmisn" label="Shona ">
 msgid "Shona "
 msgstr "Shona"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso"
-#: label="Somali ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="so"
+#: id="dcmiso" label="Somali ">
 msgid "Somali "
 msgstr "Somali"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
-#: label="Albanian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sq"
+#: id="dcmisq" label="Albanian ">
 msgid "Albanian "
 msgstr "Albanisch"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
-#: label="Serbian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sr"
+#: id="dcmisr" label="Serbian ">
 msgid "Serbian "
 msgstr "Serbisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
-#: label="Swati; Siswati ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ss"
+#: id="dcmiss" label="Swati; Siswati ">
 msgid "Swati; Siswati "
 msgstr "Swati; Siswati"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist"
-#: label="Sesotho; Sotho, Southern ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="st"
+#: id="dcmist" label="Sesotho; Sotho, Southern ">
 msgid "Sesotho; Sotho, Southern "
 msgstr "Sesotho; Sotho, Southern"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu"
-#: label="Sundanese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="su"
+#: id="dcmisu" label="Sundanese ">
 msgid "Sundanese "
 msgstr "Sundanesisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv"
-#: label="Swedish ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sv"
+#: id="dcmisv" label="Swedish ">
 msgid "Swedish "
 msgstr "Schwedisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
-#: label="Swahili ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sw"
+#: id="dcmisw" label="Swahili ">
 msgid "Swahili "
 msgstr "Swahili"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
-#: label="Tamil ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ta"
+#: id="dcmita" label="Tamil ">
 msgid "Tamil "
 msgstr "Tamil"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
-#: label="Telugu ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="te"
+#: id="dcmite" label="Telugu ">
 msgid "Telugu "
 msgstr "Telugu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
-#: label="Tajik ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tg"
+#: id="dcmitg" label="Tajik ">
 msgid "Tajik "
 msgstr "Tajik"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
-#: label="Thai ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="th"
+#: id="dcmith" label="Thai ">
 msgid "Thai "
 msgstr "Thai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
-#: label="Tigrinya ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ti"
+#: id="dcmiti" label="Tigrinya ">
 msgid "Tigrinya "
 msgstr "Tigrinya"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk"
-#: label="Turkmen ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tk"
+#: id="dcmitk" label="Turkmen ">
 msgid "Turkmen "
 msgstr "Turkmenisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl"
-#: label="Tagalog ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tl"
+#: id="dcmitl" label="Tagalog ">
 msgid "Tagalog "
 msgstr "Tagalog"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
-#: label="Tswana; Setswana ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tn"
+#: id="dcmitn" label="Tswana; Setswana ">
 msgid "Tswana; Setswana "
 msgstr "Tswana; Setswana"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
-#: label="Tonga (?) ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="to"
+#: id="dcmito" label="Tonga (?) ">
 msgid "Tonga (?) "
 msgstr "Tonga (?)"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
-#: label="Turkish ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tr"
+#: id="dcmitr" label="Turkish ">
 msgid "Turkish "
 msgstr "Türkisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
-#: label="Tsonga ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ts"
+#: id="dcmits" label="Tsonga ">
 msgid "Tsonga "
 msgstr "Tsonga"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
-#: label="Tatar ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tt"
+#: id="dcmitt" label="Tatar ">
 msgid "Tatar "
 msgstr "Tatar"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
-#: label="Twi ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tw"
+#: id="dcmitw" label="Twi ">
 msgid "Twi "
 msgstr "Twi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity"
-#: label="Tahitian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ty"
+#: id="dcmity" label="Tahitian ">
 msgid "Tahitian "
 msgstr "Tahiti"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug"
-#: label="Uighur ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ug"
+#: id="dcmiug" label="Uighur ">
 msgid "Uighur "
 msgstr "Uighur"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
-#: label="Ukrainian ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="uk"
+#: id="dcmiuk" label="Ukrainian ">
 msgid "Ukrainian "
 msgstr "Ukrainisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
-#: label="Urdu ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ur"
+#: id="dcmiur" label="Urdu ">
 msgid "Urdu "
 msgstr "Urdu"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
-#: label="Uzbek ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="uz"
+#: id="dcmiuz" label="Uzbek ">
 msgid "Uzbek "
 msgstr "Usbekisch"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi"
-#: label="Vietnamese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="vi"
+#: id="dcmivi" label="Vietnamese ">
 msgid "Vietnamese "
 msgstr "Vietnamesisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
-#: label="Volapük; Volapuk ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="vo"
+#: id="dcmivo" label="Volapük; Volapuk ">
 msgid "Volapük; Volapuk "
 msgstr "Volapük; Volapuk"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa"
-#: label="Walloon ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="wa"
+#: id="dcmiwa" label="Walloon ">
 msgid "Walloon "
 msgstr "Wallonisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo"
-#: label="Wolof ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="wo"
+#: id="dcmiwo" label="Wolof ">
 msgid "Wolof "
 msgstr "Wolof"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh"
-#: label="Xhosa ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="xh"
+#: id="dcmixh" label="Xhosa ">
 msgid "Xhosa "
 msgstr "Xhosa"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
-#: label="Yiddish (formerly ji) ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="yi"
+#: id="dcmiyi" label="Yiddish (formerly ji) ">
 msgid "Yiddish (formerly ji) "
 msgstr "Jiddisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
-#: label="Yoruba ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="yo"
+#: id="dcmiyo" label="Yoruba ">
 msgid "Yoruba "
 msgstr "Yoruba"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
-#: label="Zhuang ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="za"
+#: id="dcmiza" label="Zhuang ">
 msgid "Zhuang "
 msgstr "Zhuang"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="zh"
+#: id="dcmizh" label="Chinese ">
 msgid "Chinese "
 msgstr "Chinesisch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
-#: label="Zulu.">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="zu"
+#: id="dcmizu" label="Zulu.">
 msgid "Zulu."
 msgstr "Zulu"
 
-#: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
-#: style="width:8em" tooltiptext="A reference to a related resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label value="Relation:"
+#: id="dcRelation" style="width:8em" tooltiptext="A reference to a related
+#: resource.">
 msgid "Relation:"
 msgstr "Relation:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Coverage:"
-#: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
-#: style="width:8em" tooltiptext="The extent or scope of the content
-#: resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label value="Coverage:"
+#: id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the
+#: content resource.">
 msgid "Coverage:"
 msgstr "Einsatzfeld:"
 
-#: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
-#: style="width:8em" tooltiptext="Information about rights held in and over
-#: the resource.">
+#: exe/resources/internal/templates/dublincore.xul:<label value="Rights:"
+#: id="dcRights" style="width:8em" tooltiptext="Information about rights held
+#: in and over the resource.">
 msgid "Rights:"
 msgstr "Rechte"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
+#: exe/resources/internal/templates/dublincore.xul:<description
+#: id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Der Urheberrechtshinweis macht deutlich aus welchen Quellen Material stammt, das im Kurs verwendet wurde und welche urheberrechtlichen Auflagen bei der Verwendung zu beachten sind. Urheberrechtliche Fragen sind sehr komplex und von nationalem Recht abhängig. In Deutschland sind fürSchulen, Hochschulen und andere Bildungsbereiche unterschiedliche Vorgaben zu beachten. Wenn Sie selbst erstelltes Material zur Verfügung stellen, sind Sie selberUrheber und Rechteinhaber. Mit dem Urheberrechtshinweis legen sie fest, wie andere Ihre Materialien verwenden dürfen."
 
