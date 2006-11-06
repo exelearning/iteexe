@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2006-10-25 08:39+1300\n"
+"PO-Revision-Date: 2006-11-04 12:15+1300\n"
 "Last-Translator: Vychegzhanin Anton <vashot@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
-msgstr "---Перейти к---"
+msgstr "---Перейти---"
 
 #: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
 #: exe/xului/mainpage.py:366
@@ -38,7 +38,7 @@ msgstr ". Пожалуйста, используйте имена из симв�
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
+msgstr "<dl>  <dt>Если Ваша цель- проверить понимание основных понятий прочитанного материала:  </dt>  <dd>    <p>  Напишите резюме текста.  Достаточно объемное, чтобы проверить понимание материала, но и достаточно короткое, чтобы не вызывать усталость. Примерно одна страница печатного текста- этого должно быть достаточно. Для маленьких и начинающих учеников лучше, если текст будет еще короче.    </p>    <p>Выберите из текста ключевые для понимания слова. Это скорее всего будут глаголы, существительные и ключевые наречия. Предложитете несколько альтернативных вариантов, из которыз один единственный  вариант правильный.     </p>  </dd>  <dt>Если Ваша цель- проверить знание слов:  </dt>  <dd><p>Напишите текст, используя проверяемые слова. Текст должен быть последовательным, связным и подходящего объема. Выделите ключевые слова в тексте. Сделайте несколько альтернативных вариантов, из которыз один единственный вариант правильный.</p>  </dd>  <dt>Если Ваша цель- проверить знание грамматики/правил словообразования:  </dt>  <dd>  <p>Напишите текст, используя проверяемые грамматические конструкции/формы слов. Текст должен быть последовательным, связным и подходящего объема. Не забывайте, что цель- не проверка словарного запаса, поэтому значения слов должны быть хорошо знакомы учащимся.  </p>  <p>Выделите ключевые слова в тексте. Предложите несколько вариантов с одинаковыми словами, но в разных формах. Хорошо бы дать прорешать тест для начала коллеге, чтобы избежать сюрпризов!  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
@@ -70,7 +70,7 @@ msgstr "<p>Укажите ярлык для приложения. Полезно
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr ""
+msgstr "<p>Упражнения типа \"заполни пропуски\" -это тексты или фразы, в которых пропущены некоторые слова, которые учащийся должен найти и вписать. Они часто используются в следующих случаях:</p><ol><li>Проверка знаний основных понятий курса (это может быть тест предшествующий курсу, упражнение или обобщающий тест по завершению курса)</li><li>Для проверки понимания прочитанного.</li><li>Для проверки словарного запаса.</li><li>Для проверки знаний грамматики и правил словообразования. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -78,7 +78,7 @@ msgid ""
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr ""
+msgstr "<p>Введите текст для упражнения типа \"заполни пропуски\" в предназначенное для этого вида упражнений поле, копированием текста из другого рессурса,  или печатая текст прямо в поле.</p><p> Чтобы выбрать слово, которое следует скрыть, щелкните дважды по этому слову, а затем нажмите на кнопку  Скрыть/Показать слово.</p>"
 
 #: exe/engine/field.py:462
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: exe/engine/field.py:483
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr ""
+msgstr "<p>Если эта оптиция выбрана, то введенные ответы, в которых заглавные и строчные буквы не совпадают с правильным ответом, считаются неправильными.</p>"
 
 #: exe/engine/field.py:488
 msgid ""
@@ -218,19 +218,19 @@ msgstr ""
 
 #: exe/webui/element.py:1259 exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
-msgstr ""
+msgstr "Добавить ещё один Вариант для ответа"
 
 #: exe/idevices/quiztestblock.py:101
 msgid "Add another Question"
-msgstr ""
+msgstr "Добавить ещё один Вопрос"
 
 #: exe/webui/multichoiceblock.py:118 exe/webui/element.py:1471
 msgid "Add another option"
-msgstr ""
+msgstr "Добавить ещё один вариант для ответа"
 
 #: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:97
 msgid "Add another question"
-msgstr ""
+msgstr "Добавить ещё один вопрос"
 
 #: exe/idevices/appletblock.py:80
 msgid "Add files"
@@ -273,7 +273,7 @@ msgid ""
 "                                       user filling the gaps."
 msgstr ""
 "Разрешает автозаполнение, \n"
-"когда пользователь заполняет пробелы."
+"                                        когда пользователь заполняет пробелы."
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."

@@ -1,4 +1,4 @@
-1160434421 1157338800
+1160434421 1162341020
 check-validchars:
 check-numbers:
 check-unchanged:
@@ -23,7 +23,7 @@ check-startwhitespace:
 check-accelerators:
 check-long:
 check-musttranslatewords:
-has-suggestion:1,18,20,25
+has-suggestion:0,1,2,8,10,11,12,14,18,20,25
 check-puncspacing:
 check-notranslatewords:
 check-variables:

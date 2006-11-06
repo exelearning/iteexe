@@ -72,3 +72,84 @@ msgid "_: suggested by Petrossi"
 ". Please use ASCII names."
 msgstr ".Usa nomi in ASCII."
 
+#: exe/idevices/appletidevice.py:60
+msgid ""
+"_: suggested by gand"
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr ""
+"Trova il file .txt (nel file applet) \n"
+"e aprilo. Copia il contenuto di questo file <ctrl A, ctrl C> \n"
+"el campo del codice dell'applet"
+
+#: exe/idevices/appletidevice.py:60
+msgid ""
+"_: suggested by gand"
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr "\"Find the .txt file (in the applet file) and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet code field."
+
+#: exe/idevices/appletidevice.py:60
+msgid ""
+"_: suggested by gand"
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr ""
+"\"Trova il file .txt (nel file applet) \n"
+"e aprilo. copia il contenuto di questo file <ctrl A, ctrl C> \n"
+"nel campo codice dell'applet."
+
+#: exe/webui/block.py:224
+msgid "_: suggested by gand"
+"---Move To---"
+msgstr "---Muovi---"
+
+#: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
+#: exe/xului/mainpage.py:366
+msgid "_: suggested by gand"
+". Please use ASCII names."
+msgstr "Usa in nomi ASCI."
+
+#: exe/engine/clozeidevice.py:122
+msgid ""
+"_: suggested by gand"
+"<p>Enter the text for the cloze activity in to the cloze field \n"
+"by either pasting text from another source or by typing text directly into the \n"
+"field.</p><p> To select words to hide, double click on the word to select it and \n"
+"click on the Hide/Show Word button below.</p>"
+msgstr ""
+"<p>Inserisci il testo per l'attività cloze nel campo cloze \n"
+"sia incollando il testo da un'altra fonte o digitando il testo \n"
+"direttamente nel campo.</p><p> Per scegliere le parole da nascondere, fai doppio click sulla parola per selezionarla \n"
+"e fai click sul bottone sottostante Nascondi/Mostra.</p>"
+
+#: exe/engine/field.py:483
+msgid "_: suggested by gand"
+"<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
+msgstr "<p>Se questa opzione è selezonata, le risposte con una diversa capitalizzazione saranno segante come sbagliate</p>"
+
+#: exe/engine/field.py:488
+msgid ""
+"_: suggested by gand"
+"<p>If this option is set, each word will be marked as the \n"
+"learner types it rather then all the words being marked the end of the \n"
+"exercise.</p>"
+msgstr "Se questa opzione è selezionata, ogni parola sarà valutata appena viene scritta dallo studente invece che tutte le parole vengono valutate alla fine dell'esercizio."
+
+#: exe/engine/field.py:708
+msgid "_: suggested by gand"
+"<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
+msgstr "<p>Scegliete i simboli dal sottostante editor di testi per creare una formula matematica. Ogni simbolo verrà mostrato nel campo mostra nel linguaggio matematico LATEX che può essere visto in anteprima usando il bottone &lt;Anteprima&gt; sottostante."
+
+#: exe/engine/idevicestore.py:242
+msgid ""
+"_: suggested by gand"
+"<p>The Reading Activity will primarily \n"
+"be used to check a learner's comprehension of a given text. This can be done \n"
+"by asking the learner to reflect on the reading and respond to questions about \n"
+"the reading, or by having them complete some other possibly more physical task \n"
+"based on the reading.</p>"
+msgstr "<p>L'Attività Lettura sarà usata principalmente per verificare la comprensione dello studente sul testo sottoposto. Questo può essere fatto chiedendo allo studente di riflettere sulla lettura e di rispondere alle domande pertinenti al testo, o completando dei compiti più concreti basati sulla letture.</p>"
