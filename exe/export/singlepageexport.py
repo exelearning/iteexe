@@ -98,8 +98,7 @@ class SinglePageExport(object):
         package.resourceDir.copyfiles(self.outputDir)
 
         # copy script files.
-        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
-                                     self.outputDir)
+        self.scriptsDir.copylist(('libot_drag.js', 'common_exportable.js'), self.outputDir)
 
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
@@ -130,7 +129,7 @@ class SinglePageExport(object):
         html += "</title>\n"
         html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
         html += u" charset=utf-8\" />\n";
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
+        html += u'<script type="text/javascript" src="common_exportable.js"></script>\n'
         html += u"</head>\n"
         return html
 

@@ -51,7 +51,7 @@ iDevice you can provide links from a feed you select for learners to view."""),
         self.icon             = u"inter"
         self._urlInstruc      = x_(u"""Enter an RSS URL for the RSS feed you 
 want to attach to your content. Feeds are often identified by a small graphic
- icon (often like this <img src="/images/feed-icon.png" />) or the text "RSS". Clicking on the 
+ icon (often like this <img src="feed-icon.png" />) or the text "RSS". Clicking on the 
  icon or text label will display an RSS feed right in your browser. You can copy and paste the
 URL into this field. Alternately, right clicking on the link or graphic will open a menu box;
 click on COPY LINK LOCATION or Copy Shortcut. Back in eXe open the RSS bookmark iDevice and Paste the URL 
@@ -73,7 +73,6 @@ display them as links in your content. From here you can edit the bookmarks and 
         content = ""
         rssDic = feedparser.parse(url)
         length = len(rssDic['entries'])
-        print str(length)
         if length > 0 :
             for i in range(0, length):
                 content += '<p><A href="%s">%s</A></P>' %(

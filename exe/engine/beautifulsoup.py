@@ -232,7 +232,6 @@ class PageElement:
             yield i
 
     def _matches(self, chunk, howToMatch):
-        #print 'looking for %s in %s' % (howToMatch, chunk)
         #
         # If given a list of items, return true if the list contains a
         # text element that matches.
@@ -714,13 +713,11 @@ class BeautifulStoneSoup(Tag, SGMLParser):
            isinstance(self.currentTag.contents[0], NavigableText):
             self.currentTag.string = self.currentTag.contents[0]
 
-        #print "Pop", tag.name
         if self.tagStack:
             self.currentTag = self.tagStack[-1]
         return self.currentTag
 
     def pushTag(self, tag):
-        #print "Push", tag.name
         if self.currentTag:
             self.currentTag.append(tag)
         self.tagStack.append(tag)
@@ -753,7 +750,6 @@ class BeautifulStoneSoup(Tag, SGMLParser):
         if name == self.ROOT_TAG_NAME:
             return            
 
-        #print "Pop to tag", name
         numPops = 0
         mostRecentTag = None
         for i in range(len(self.tagStack)-1, 0, -1):
@@ -818,7 +814,6 @@ class BeautifulStoneSoup(Tag, SGMLParser):
     def unknown_starttag(self, name, attrs, selfClosing=0):
         if self.quoteStack:
             #This is not a real tag.
-            #print "<%s> is not real!" % name
             attrs = ''.join(map(lambda(x, y): ' %s="%s"' % (x, y), attrs))
             self.handle_data('<%s%s>' % (name, attrs))
             return
@@ -833,13 +828,11 @@ class BeautifulStoneSoup(Tag, SGMLParser):
         if selfClosing or name in self.SELF_CLOSING_TAGS:
             self.popTag()                
         if name in self.QUOTE_TAGS:
-            #print "Beginning quote (%s)" % name
             self.quoteStack.append(name)
 
     def unknown_endtag(self, name):
         if self.quoteStack and self.quoteStack[-1] != name:
             #This is not a real end tag.
-            #print "</%s> is not real!" % name
             self.handle_data('</%s>' % name)
             return
         self.endData()

@@ -122,7 +122,7 @@ class TrueFalseBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u'<script type="text/javascript" src="common.js"></script>\n'
+        html  = u'<script type="text/javascript" src="common_exportable.js"></script>\n'
         html += u'<script type="text/javascript" src="libot_drag.js"></script>'
         html += u"\n<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"

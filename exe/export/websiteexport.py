@@ -150,7 +150,7 @@ class WebsiteExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # copy script files.
-        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
+        self.scriptsDir.copylist(('libot_drag.js', 'common_exportable.js'), 
                                   outputDir)
 
         # copy video container file for flash movies.

@@ -190,7 +190,7 @@ class IMSPage(Page):
         html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"
-        html += u'<script type="text/javascript" src="common.js"></script>\n'
+        html += u'<script type="text/javascript" src="common_exportable.js"></script>\n'
         html += u"</head>\n"
         html += u"<body>\n"
         html += u"<div id=\"outer\">\n"
@@ -280,7 +280,7 @@ class IMSExport(object):
                                   'imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',
                                   'ims_xml.xsd',
-                                  'common.js'), outputDir)
+                                  'common_exportable.js'), outputDir)
 
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')

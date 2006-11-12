@@ -50,16 +50,6 @@ class EditorPage(RenderableResource):
         self.isNewIdevice = True
         self.message      = ""
         
-    def getChild(self, name, request):
-        """
-        Try and find the child for the name given
-        """
-        if name == "":
-            return self
-        else:
-            return Resource.getChild(self, name, request)
-
-
     def process(self, request):
         """
         Process current package 
@@ -154,9 +144,9 @@ class EditorPage(RenderableResource):
         html += "@import url(/css/exe.css);\n"
         html += '@import url(/style/base.css);\n'
         html += "@import url(/style/standardwhite/content.css);</style>\n"
-        html += '<script type="text/javascript" src="/scripts/libot_drag.js">'
+        html += '<script type="text/javascript" src="libot_drag.js">'
         html += '</script>\n'
-        html += '<script type="text/javascript" src="/scripts/common.js">'
+        html += '<script type="text/javascript" src="common_internal.js">'
         html += '</script>\n'
         html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "

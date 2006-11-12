@@ -214,7 +214,7 @@ class GalleryBlock(Block):
                           # Edit button
                           changeGalleryImage,
                           u'          <img alt="%s"' % _(u'Change Image'),
-			  u'           src="/images/stock-edit.png"/>'
+			  u'           src="stock-edit.png"/>'
 			  u'        </a>']
                 # Move left button
                 if image.index > 0:
@@ -222,32 +222,32 @@ class GalleryBlock(Block):
                           u'        <a title="%s"' % _(u'Move Image Left'),
 			  u'           href="javascript:%s">' % submitLink('moveLeft'),
                           u'        <img alt="%s"' % _(u'Go Back'),
-			  u'         src="/images/stock-go-back.png"/>'
+			  u'         src="stock-go-back.png"/>'
                           u'        </a>',
                           ]
                 else:
                     result += [
-                          u'        <img src="/images/stock-go-back-off.png"/>']
+                          u'        <img src="stock-go-back-off.png"/>']
                 # Move right button
                 if image.index < len(image.parent.images)-1:
                     result += [
                           u'        <a title="%s"' % _(u'Move Image Right'),
 			  u'           href="javascript:%s">' % submitLink('moveRight'),
                           u'        <img alt="%s"' % _(u'Go Forward'),
-			  u'         src="/images/stock-go-forward.png"/>',
+			  u'         src="stock-go-forward.png"/>',
                           u'        </a>',
 			  ]
                 else:
                     result += [
                           u'        ' + 
                           u'<img alt="%s" ' % _(u'Go Forward (Not Available)'),
-			  u' src="/images/stock-go-forward-off.png"/>']
+			  u' src="stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
                           u'        <a title="%s"' % _(u'Delete Image'),
 			  u'           href="javascript:%s">' % submitLink('delete'),
                           u'        <img alt="%s" ' % _(u'Delete'),
-                          u'             src="/images/stock-delete.png"/>',
+                          u'             src="stock-delete.png"/>',
                           u'        </a>',
                           u'      </span>']
                 return result

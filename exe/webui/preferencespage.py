@@ -51,17 +51,6 @@ class PreferencesPage(RenderableResource):
             self.localeNames.append((localeName, locale))
         self.localeNames.sort()
 
-        
-    def getChild(self, name, request):
-        """
-        Try and find the child for the name given
-        """
-        if name == "":
-            return self
-        else:
-            return Resource.getChild(self, name, request)
-
-
     def render_GET(self, request):
         """Render the preferences"""
         log.debug("render_GET")

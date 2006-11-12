@@ -67,7 +67,6 @@ exe/webui/multichoiceblock.py
 exe/webui/mathblock.py
 exe/webui/clozeblock.py
 exe/webui/errorpage.py
-exe/webui/quiztestblock.py
 exe/webui/freetextblock.py
 exe/webui/galleryblock.py
 exe/webui/webserver.py

@@ -253,6 +253,7 @@ class NevowSite(server.Site):
             context.RequestContext(tag=request))
 
     def handleSegment(self, result, request, path, pageContext):
+        print request.path, result
         if result is errorMarker:
             return errorMarker
 

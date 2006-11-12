@@ -30,10 +30,14 @@ but you don't have to use that functionality. It means you can use a rendering
 template to do your rendering, even if you're part of a bigger block.
 """
 
-from nevow import loaders
-from nevow.livepage import LivePage
+from nevow                import tags
+from nevow                import inevow
+from nevow                import loaders
+from nevow.livepage       import LivePage
+from nevow.appserver      import OldResourceAdapter
 from twisted.web.resource import Resource
-from nevow import tags
+from twisted.web          import static
+from exe.engine.path      import toUnicode
 import re
 
 # Constants
@@ -81,8 +85,7 @@ class Renderable(object):
             raise AssertionError('Element of class "%s" created with no name.' %
                                  self.__class__.__name__)
             
-        # Make pylint happy. These attributes will be gotten from
-        # self.application
+        # Make pylint happy. These attributes will be gotten from self.application
         self.config = Unset
         self.ideviceStore = Unset
         self.packageStore = Unset
@@ -154,7 +157,6 @@ class Renderable(object):
                 res = getattr(baseget('webServer').application, attr)
             setattr(self, attr, res)
         return res
-
 
     def process(self, request):
         """
@@ -282,7 +284,117 @@ class _RenderablePage(Renderable):
         return ctx
 
 
-class RenderableResource(_RenderablePage, Resource):
+class MagicStepMixin(object):
+    """
+    A mixin to help pages find resources, without caring about the path
+    """
+
+    __implements__ = inevow.IResource,
+
+    def __init__(self):
+        self.oldResourceAdapter = OldResourceAdapter(self)
+        if self.parent and self.parent.cache:
+            self.cache = self.parent.cache
+            self.styleCache = self.parent.styleCache
+        else:
+            self.cache = self.makeCache()
+            self.styleCache = self.makeStyleCache()
+
+    def makeCache(self):
+        """
+        Creates a dictionary of magic filenames
+        """
+        dontImportDirs = ['.svn', 'tinymce', 'win-profile', 'linux-profile'] + map(toUnicode, self.config.styles)
+        cache = {}
+        for fn in self.config.resourceDir.walkfiles():
+            name = str(fn.basename())
+            for badDir in dontImportDirs:
+                if badDir in fn:
+                    break
+            else:
+                if name in cache:
+                    raise Exception('Two resource files with same name: "%s" and "%s"' % (fn, cache[name].path))
+                cache[name] = static.File(fn.abspath())
+        return cache
+
+    def makeStyleCache(self):
+        """
+        Returns a mapping of style name to {filename -> static.File} dict
+        """
+        cache = {}
+        for style in self.config.styles:
+            cache[style] = subCache = {}
+            for fn in (self.config.resourceDir/'exportable'/'style'/style).walkfiles():
+                if '.svn' in fn:
+                    continue
+                name = str(fn.basename())
+                if name in subCache:
+                    raise Exception('Two style files with same name: "%s" and "%s"' % (fn, cache[fn].path))
+                subCache[name] = static.File(fn)
+        return cache
+
+    def getChild(self, name, request):
+        """
+        Get the child page for the name given.
+        This is called if the child is not in our static self.children liset
+        This is probably because the url is in unicode
+        """
+        if name == '':
+            return self
+        else:
+            # See if we're a branch or a leaf
+            if len(request.postpath):
+                ##print 'Recursing', '/'.join(request.postpath)
+                return self
+            # We're here
+            result = self.cache.get(request.prepath[-1])
+            if result is None:
+                # Ask out 
+                # Check the style cache
+                result = self.styleCache.get(self.currentMainPage.package.style).get(request.prepath[-1])
+                if result is None:
+                    print self.__class__.__name__, request.path, 'not found'
+                    # This will just raise an error
+                    return RenderableResource.getChild(self, name, request)
+            return result
+
+    def getChildWithDefault(self, path, request):
+        """Retrieve a static or dynamically generated child resource from me.
+        First checks if a resource was added manually by putChild, and then
+        call getChild to check for dynamic resources. Only override if you want
+        to affect behaviour of all child lookups, rather than just dynamic
+        ones.
+        This will check to see if I have a pre-registered child resource of the
+        given name, and call getChild if I do not.
+        """
+        if self.children.has_key(path):
+            return self.children[path]
+        return self.getChild(path, request)
+
+    # IResource Implentation
+
+    def locateChild(self, ctx, segments):
+        print 'locateChild(', self, ctx, segments, ')'
+        return self.oldResourceAdapter.locateChild(ctx, segments)
+
+    def _handle_NOT_DONE_YET(self, data, request):
+        print '_handle_NOT_DONE_YET(', self, data, request, ')'
+        return self.oldResourceAdapter._handle_NOT_DONE_YET(data, request)
+    
+    def renderHTTP(self, ctx):
+        print 'renderHTTP(', self, ctx, ')'
+        return self.oldResourceAdapter.renderHTTP(ctx)
+
+    def willHandle_notFound(self, request):
+        print 'willHandle_notFound(', self, request, ')'
+        return self.oldResourceAdapter.willHandle_notFound(request)
+
+    def renderHTTP_notFound(self, ctx):
+        print 'renderHTTP_notFound(', self, ctx, ')'
+        return self.oldResourceAdapter.renderHTTP_notFound(ctx)
+
+
+class RenderableResource(_RenderablePage, MagicStepMixin, Resource):
     """
     It is a page and renderable, but not live
     """
@@ -293,9 +405,10 @@ class RenderableResource(_RenderablePage, Resource):
         """
         Resource.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+        MagicStepMixin.__init__(self)
 
 
-class RenderableLivePage(_RenderablePage, LivePage):
+class RenderableLivePage(MagicStepMixin, _RenderablePage, LivePage):
     """
     This class is both a renderable and a LivePage/Resource
     """
@@ -306,6 +419,7 @@ class RenderableLivePage(_RenderablePage, LivePage):
         """
         LivePage.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
+        MagicStepMixin.__init__(self)
 
     def render_liveglue(self, ctx, data):
-        return tags.script(src='/xulscripts/nevow_glue.js')
+        return tags.script(src='nevow_glue.js')

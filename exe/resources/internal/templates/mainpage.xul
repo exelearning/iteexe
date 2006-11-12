@@ -12,9 +12,9 @@
     <n:invisible n:render="liveglue"/>
 
     <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
-    <script language="JavaScript" src="/scripts/common.js"/>
-    <script language="JavaScript" src="/xulscripts/draganddrop.js"/>
-    <script language="JavaScript" src="/xulscripts/mainpage.js"/>
+    <script language="JavaScript" src="/common_internal.js"/>
+    <script language="JavaScript" src="/draganddrop.js"/>
+    <script language="JavaScript" src="/mainpage.js"/>
     <popupset> 
      <popup id="outlineMenu">
       <menuitem n:render="translate" label="Insert Package" oncommand="insertPackage()"/>

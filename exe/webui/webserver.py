@@ -71,11 +71,11 @@ class WebServer:
         """
         log.debug("start web server running")
 
-        # web resources
+        # Web resources
         resourceDir = self.config.resourceDir
         self.root.putChild("tinymce", static.File(resourceDir/'internal'/'tinymce'))
 
-        # sub applications
+        # Sub pages
         self.root.putChild("editor",      self.editor)
         self.root.putChild("preferences", self.preferences)
         self.root.putChild("about",       self.about)

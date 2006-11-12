@@ -76,15 +76,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
-    def getChild(self, name, request):
-        """
-        Try and find the child for the name given
-        """
-        if name == '':
-            return self
-        else:
-            return super(self, self.__class__).getChild(self, name, request)
-
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
