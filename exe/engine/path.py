@@ -34,6 +34,8 @@ from __future__ import generators
 
 import sys, os, fnmatch, glob, shutil, codecs, md5
 from tempfile import mkdtemp
+import logging
+log = logging.getLogger(__name__)
 
 __version__ = '2.0.4'
 __all__ = ['Path', 'TempDirPath']
@@ -418,7 +420,7 @@ class Path(unicode):
         return fnmatch.fnmatch(self.name, pattern)
 
     def glob(self, pattern):
-        """ Return a list of path objects that match the pattern.
+        """Return a list of path objects that match the pattern.
 
         pattern - a path relative to this directory, with wildcards.
 
@@ -559,7 +561,6 @@ class Path(unicode):
         specified 'encoding' (or the default encoding if 'encoding'
         isn't specified).  The 'errors' argument applies only to this
         conversion.
-
         """
         if isinstance(text, unicode):
             if linesep is not None:
@@ -585,6 +586,60 @@ class Path(unicode):
                 bytes = text.replace('\n', linesep)
 
         self.write_bytes(bytes, append)
+
+    def safeSave(self, saveFunc, endOfWorld, *args):
+        """
+        Saves to this file, keeping the old one available, and not trashing it
+        if save fails.
+        'saveFunc' takes a file like object and writes data to it.
+        'endOfWorld' is a message to show to the user if their data is stuck in 'filename.old.ext'
+        '*args' will be passed to 'saveFunc', after the 'fileObj'
+        """
+        if not self.exists():
+            # Normal save
+            saveFunc(self, *args)
+        else:
+            # If original exists, back it up
+            try:
+                backupName = self.dirname() / self.namebase + '.old' + self.ext
+                i = 0
+                while backupName.exists():
+                    i += 1
+                    backupName = self.dirname() / self.namebase + '.old' + str(i) + self.ext
+                self.rename(backupName)
+            except Exception, e:
+                log.warn('Failed to rename file on saving: %s -> %s -- %s' % (self, backupName, str(e)))
+                backupName = None
+            try:        
+                # Begin saving
+                saveFunc(self, *args)
+            except Exception, e:
+                # Restore the backup if available
+                if backupName is not None and backupName.exists():
+                    if self.exists():
+                        try:
+                            crashedFilename = self.dirname() / self.namebase + '.crashed' + self.ext
+                            i = 0
+                            while crashedFilename.exists():
+                                i += 1
+                                crashedFilename = self.dirname() / self.namebase + '.crashed' + str(i) + self.ext
+                            self.rename(crashedFilename)
+                        except Exception, e:
+                            log.warn('Failed to rename crashed file on saving: %s -> %s -- %s' % (self, crashedFilename, str(e)))
+                            try:
+                                self.remove()
+                            except Exception, e:
+                                raise Exception(endOfWorld % backupName)
+                    backupName.rename(self)
+                raise Exception(_("%s\n%s unchanged" % (e, self)))
+            # If save completed ok, delete backup
+            if backupName.exists():
+                try:
+                    backupName.remove()
+                except Exception, e:
+                    log.warn('Save completed but unable to delete backup "%s"' % backupName)
+            
+                    
 
     def lines(self, encoding=None, errors='strict', retain=True):
         """ Open this file, read all lines, return them in a list.

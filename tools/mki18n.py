@@ -329,6 +329,7 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     else:
         applicationName = applicationDomain
     currentDir = os.getcwd()
+    makeXulPO(applicationDirectoryPath, applicationDomain, verbose)
     os.chdir(applicationDirectoryPath)                    
     if not os.path.exists('app.fil'):
         raise IOError(2,'No module file: app.fil')
@@ -340,12 +341,10 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     #   -s                          : sort output by string content (easier to use when we need to merge several .po files)
     #   --files-from=app.fil        : The list of files is taken from the file: app.fil
     #   --output=                   : specifies the name of the output file (using a .pot extension)
-    cmd = 'xgettext -kx_ -s --no-wrap --files-from=app.fil ' \
-          '--output=exe/locale/messages.pot --from-code=utf8'
+    cmd = 'xgettext -kx_ -s -j --no-wrap --files-from=app.fil --output=exe/locale/messages.pot --from-code=utf8'
     if verbose: print cmd
     os.system(cmd)                                                
     os.chdir(currentDir)
-    makeXulPO(applicationDirectoryPath, applicationDomain, verbose)
 
     # Merge new pot with .po files
     localeDirs = Path('exe/locale')
@@ -378,6 +377,10 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
                 reader = Sax2.Reader()
                 doc = reader.fromStream(file(fn, 'rb'))
                 xul2dict(doc, messages, seq, fn.relpath())
+    pot = Path('exe/locale/messages.pot') 
+    if pot.exists(): 
+        pot.remove() 
+    pot.touch() 
     dict2pot(messages, 'exe/locale/messages.pot')
 
 def xul2dict(doc, messages, seq, filename):
@@ -473,13 +476,13 @@ def pot2dict(filename):
                 msgstr += eval(line)
             elif not line.strip():
                 state = START
-                result[msgid] = (seq, comments, msgstr)
+                result[unicode(msgid, 'utf8')] = (seq, [unicode(comment, 'utf8') for comment in comments], unicode(msgstr, 'utf8')) 
                 comments = []
                 msgid = ''
                 msgstr = ''
                 seq += 1
     if msgid not in result:
-        result[msgid] = (seq, comments, msgstr)
+        result[unicode(msgid, 'utf8')] = (seq, [unicode(comment, 'utf8') for comment in comments], unicode(msgstr, 'utf8')) 
     return result
 
 def dict2pot(dct, filename, verbose=False):
@@ -506,14 +509,14 @@ def dict2pot(dct, filename, verbose=False):
         for line in comments:
             write('%s\n' % line.encode('utf8'))
         # Msgid
-	msgid = msgid.encode('utf8').replace('"', r'\"')
+        msgid = msgid.encode('utf8').replace('"', r'\"')
         if '\n' in msgid or len(msgid) > 80:
             write('msgid ""\n')
             write(multiLineOutput(msgid))
         else:
             write('msgid "%s"\n' % msgid)
         # Msgstr
-	msgstr = msgstr.encode('utf8').replace('"', r'\"')
+        msgstr = msgstr.encode('utf8').replace('"', r'\"')
         if '\n' in msgstr or len(msgstr) > 80:
             write('msgstr ""\n')
             write(multiLineOutput(msgstr))

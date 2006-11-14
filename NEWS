@@ -1,3 +1,13 @@
+Version 0.19 - Tidy Tui
+* MP3 iDevice
+* Make Scorm Quiz work in IE in moodle
+* Turn Multichoice Question IDevice into Multichoice Quiz
+* Safer saving options to protect old files
+* Strong option emphasis option removed
+* German preference works well 
+* Attachement opens without first opening a blank     window
+* Other bug fixes (see http://exelearning.org/projects/exe1/milestone/0.19%20Tidy%20Tui)
+
 Version 0.18 - Trippy Tuatara
 * Added Multi-Media IDevice (see https://bugzilla.mozilla.org/show_bug.cgi?id=280600)
 * Added Math IDevice

@@ -1,3 +1,11 @@
+python-exe (0.19-0.1ubuntu1) unstable; urgency=low
+    * MP3 iDevice
+    * Make Scorm Quiz work in IE in moodle
+    * Turn Multichoice Question IDevice into Multichoice Quiz
+    * Other bug fixes (see http://exelearning.org/projects/exe1/milestone/0.19%20Tidy%20Tui)
+    
+ -- Matthew Sherborne <matthew@exelearning.org>  Tue, 27 Oct 2006 11:56:57 +1300
+
 python-exe (0.18-0.1ubuntu1) unstable; urgency=low
 
     * Maths IDevice

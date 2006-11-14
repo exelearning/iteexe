@@ -207,6 +207,7 @@ class Package(Persistable):
         Save package to disk
         pass an optional filename
         """
+        # Get the filename
         if filename:
             filename = Path(filename)
             # If we are being given a new filename...
@@ -221,21 +222,24 @@ class Package(Persistable):
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
             raise AssertionError(u'No name passed when saving a new package')
-
         # Store our new filename for next file|save
         self.filename = filename
-
+        # Save!
         log.debug(u"Will save %s to: %s" % (self.name, filename))
+        filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
         self.isChanged = 0
-        zippedFile = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
-        
+
+    def doSave(self, fileObj):
+        """
+        Actually performs the save to 'fileObj'.
+        """
+        zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
             for resourceFile in self.resourceDir.files():
-                zippedFile.write(unicode(resourceFile.normpath()), resourceFile.name.encode('utf8'))
+                zippedFile.write(unicode(resourceFile.normpath()), resourceFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
             zippedFile.writestr("content.data", encodeObject(self))
         finally:
             zippedFile.close()
-
 
     @staticmethod
     def load(filename):

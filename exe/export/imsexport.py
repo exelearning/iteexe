@@ -190,7 +190,7 @@ class IMSPage(Page):
         html += u"@import url(base.css);\n"
         html += u"@import url(content.css);\n"
         html += u"</style>\n"
-        html += u'<script type="text/javascript" src="common_exportable.js"></script>\n'
+        html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u"<body>\n"
         html += u"<div id=\"outer\">\n"
@@ -247,8 +247,8 @@ class IMSExport(object):
 
         # Copy the style sheet files to the output dir
         # But not nav.css
-	styleFiles  = [self.styleDir/'..'/'base.css']
-	styleFiles += [self.styleDir/'..'/'popup_bg.gif']
+        styleFiles  = [self.styleDir/'..'/'base.css']
+        styleFiles += [self.styleDir/'..'/'popup_bg.gif']
         styleFiles += self.styleDir.files("*.css")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")
@@ -259,7 +259,7 @@ class IMSExport(object):
         styleFiles += self.styleDir.files("*.html")
         self.styleDir.copylist(styleFiles, outputDir)
 
-        # copy the package's resource files
+        # Copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             
         # Export the package content
@@ -280,7 +280,7 @@ class IMSExport(object):
                                   'imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',
                                   'ims_xml.xsd',
-                                  'common_exportable.js'), outputDir)
+                                  'common.js'), outputDir)
 
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
@@ -290,18 +290,19 @@ class IMSExport(object):
 
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
-
-        # Zip up the package
-        zipped = ZipFile(self.filename, "w")
-        for scormFile in outputDir.files():
-            zipped.write(scormFile,
-                         scormFile.basename().encode('utf8'),
-                         ZIP_DEFLATED)
-        zipped.close()
-
+        # Zip it up!
+        self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
         outputDir.rmtree()
-                
+
+    def doZip(self, fileObj, outputDir):
+        """
+        Actually does the zipping of the file. Called by 'Path.safeSave'
+        """
+        zipped = ZipFile(fileObj, "w")
+        for scormFile in outputDir.files():
+            zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+        zipped.close()
 
     def generatePages(self, node, depth):
         """

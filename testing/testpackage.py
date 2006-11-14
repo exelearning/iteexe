@@ -112,6 +112,8 @@ class TestPackage(unittest.TestCase):
                     # Non persistent should exist after load
                     # but not be the same
                     assert d2.has_key(key)
+                elif key == 'dublinCore':
+                    checkInst(val, val2)
                 else:
                     # Everything else must match
                     self.assertEquals(val, val2)

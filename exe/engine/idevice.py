@@ -68,6 +68,8 @@ class Idevice(Persistable):
         Gives a nicely encoded and translated title that can be put inside
         xul labels (eg. <label value="my &quot;idevice&quot;">)
         """
+        if not hasattr(self, '_title'):
+            self._title = 'NO TITLE'
         if self._title:
             title = _(self._title)
             title = title.replace('&', '&amp;') 

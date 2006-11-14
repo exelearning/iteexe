@@ -18,6 +18,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+import sys
+sys.path.insert(0, '..')
 import unittest
 from testconfig        import TestConfig
 from testconfigparser  import TestConfigParser, TestSections
@@ -33,7 +35,7 @@ from testpersist       import TestPersist
 #from testexport        import TestScormMetaExport
 #from testexport        import TestScormNoMetaExport
 from testresource      import TestResource
-from testforumscache   import TestForumsCache
+#from testforumscache   import TestForumsCache
 
 
 # ===========================================================================
@@ -55,5 +57,5 @@ if __name__ == "__main__":
 #    suite.addTest(unittest.makeSuite(TestScormMetaExport))
 #    suite.addTest(unittest.makeSuite(TestScormNoMetaExport))
     suite.addTest(unittest.makeSuite(TestResource))
-    suite.addTest(unittest.makeSuite(TestForumsCache))
+    #suite.addTest(unittest.makeSuite(TestForumsCache))
     unittest.TextTestRunner(verbosity=2).run(suite)

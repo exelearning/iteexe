@@ -37,15 +37,21 @@ class Resource(Persistable):
     # Class attributes
     persistenceVersion = 1
 
-    def __init__(self, idevice, resourceFile):
+    def __init__(self, owner, resourceFile):
         """
         Initialize a resource object, and copy the file into the package's
         resouceDir unless it is already there
+        'owner' is either an IDevice or a Package
         """
         log.debug(u"init resourceFile=%s" % resourceFile)
-        self._package     = idevice.parentNode.package
-        self._idevice     = idevice
-        idevice.userResources.append(self)
+        from exe.engine.package import Package # Forgive the slackiness
+        if isinstance(owner, Package):
+            self._package = owner
+            self._idevice = None
+        else:
+            self._package     = owner.parentNode.package
+            self._idevice     = owner
+            self._idevice.userResources.append(self)
         self._storageName = self._fn2ascii(resourceFile)
         if not hasattr(self._package, "resourceDir"):
             log.debug(u"package doesn't have a resourceDir, must be upgrading")
@@ -90,7 +96,8 @@ class Resource(Persistable):
         """
         if self.path.isfile():
             self.path.remove()
-        self._idevice.userResources.remove(self)
+        if self._idevice:
+            self._idevice.userResources.remove(self)
         self._storageName = None
 
 

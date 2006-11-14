@@ -156,6 +156,10 @@ class ImageField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+
+    # Default value
+    isDefaultImage = True
+
     def __init__(self, name, instruc=""):
         """
         """
@@ -164,7 +168,7 @@ class ImageField(Field):
         self.height        = ""
         self.imageResource = None
         self.defaultImage  = ""
-
+        self.isDefaultImage = True
 
     def setImage(self, imagePath):
         """
@@ -183,6 +187,7 @@ class ImageField(Field):
             if self.imageResource:
                 self.imageResource.delete()
             self.imageResource = Resource(self.idevice, resourceFile)
+            self.isDefaultImage  = False
         else:
             log.error('File %s is not a file' % resourceFile)
 
@@ -199,12 +204,7 @@ class ImageField(Field):
         # another package).  We should probably revisit this.
         if self.defaultImage:
             self.setImage(self.defaultImage)
-
-    def isDefault(self):
-        """
-        Returns true if the field holds it's default image
-        """
-        return self.imageResource.path == self.defaultImage
+            self.isDefaultImage = True
 
     def _upgradeFieldToVersion2(self):
         """
@@ -628,8 +628,8 @@ this iDevice.""")
                 self.flashResource.delete()
             try:
                 flvDic = FLVReader(resourceFile)
-                self.height = flvDic["height"] +30        
-                self.width  = flvDic["width"]
+                self.height = flvDic.get("height", 100) + 30        
+                self.width  = flvDic.get("width", 100)
                 self.flashResource = Resource(self.idevice, resourceFile)
             except AssertionError: 
                 log.error('File %s is not a flash movie' % resourceFile)

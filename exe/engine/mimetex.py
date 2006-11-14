@@ -29,11 +29,11 @@ def compile(latex, fontsize=4):
     # Import global application instance
     from exe.application import application
     if os.name == 'nt':
-        cmd = application.config.resourceDir/'internal'/'misc'/'mimetex.exe'
+        cmd = application.config.webDir/'templates'/'mimetex.exe'
     elif sys.platform[:6] == "darwin":
-        cmd = application.config.resourceDir/'internal'/'misc'/'mimetex-darwin.cgi'
+        cmd = application.config.webDir/'templates'/'mimetex-darwin.cgi'
     else:
-        cmd = application.config.resourceDir/'internal'/'misc'/'mimetex.cgi'
+        cmd = application.config.webDir/'templates'/'mimetex.cgi'
     log.debug(u"mimetex command=%s" % cmd)
     # Twisted uses SIGCHLD in a way that conflicts with the Popen() family
     # (see Twisted FAQ)  So save their handler and temporarily restore default.

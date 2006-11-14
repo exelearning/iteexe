@@ -39,7 +39,8 @@ class TestResource(unittest.TestCase):
         """
         Test we have a resource directory and resource files can be stored in
         """
-        oliver = Resource(self.package, Path("oliver.jpg"))
+        myIdevice = Idevice("My Idevice", "UoA", "Testing", "Help tip", "icon", self.package.root)
+        oliver = Resource(myIdevice, Path("oliver.jpg"))
         self.assert_((self.package.resourceDir/"oliver.jpg").exists())
         oliver.delete()
         self.assert_(not (self.package.resourceDir/"oliver.jpg").exists())

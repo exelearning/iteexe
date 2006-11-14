@@ -38,12 +38,12 @@ class LinuxConfig(Config):
         Setup with our default settings
         """
         # Override the default settings
-        self.resourceDir = Path("/usr/share/exe/resources")
-        self.localeDir = Path("/usr/share/exe/locale")
-        self.dataDir = Path(os.environ['HOME'])
-        self.configDir = Path(self.dataDir)/'.exe'
-        exeDir = self.exePath.dirname()
-        browserPath = exeDir/'firefox'/'firefox'
+        self.webDir      = Path("/usr/share/exe")
+        self.xulDir      = Path("/usr/share/exe")
+        self.localeDir   = Path("/usr/share/exe/locale")
+        self.dataDir     = Path(os.environ['HOME'])
+        self.configDir   = Path(self.dataDir)/'.exe'
+        browserPath      = self.webDir/'firefox'/'firefox'
         if browserPath.isfile():
             self.browserPath = browserPath
 
@@ -51,10 +51,9 @@ class LinuxConfig(Config):
         """
         Returns the best places for a linux config file
         """
-        exeDir = self.exePath.dirname()
         return [Path(os.environ["HOME"])/'.exe/exe.conf',
                 Path('/etc/exe/exe.conf'),
-                exeDir/'exe.conf']
+                self.webDir/'exe.conf']
 
 
 # ===========================================================================

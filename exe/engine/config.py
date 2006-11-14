@@ -41,7 +41,7 @@ class Config:
 
     # Class attributes
     optionNames = {
-        'system': ('resourceDir', 'port', 'dataDir', 
+        'system': ('webDir', 'xulDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browserPath'),
         'user': ('locale',)
     }
@@ -55,8 +55,10 @@ class Config:
         # Set default values
         # exePath is the whole path and filename of the exe executable
         self.exePath     = Path(sys.argv[0]).abspath()
-        # resourceDir is where all shared resources are found
-        self.resourceDir = self.exePath.dirname() / 'resources'
+        # webDir is the parent directory for styles,scripts and templates
+        self.webDir      = self.exePath.dirname()
+        # xulDir is the parent directory for styles,scripts and templates
+        self.xulDir      = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
         # port is the port the exe webserver will listen on
@@ -76,6 +78,17 @@ class Config:
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
+        # Try to make the defaults a little intelligent
+        # Under devel trees, webui is the default webdir
+        self.webDir = Path(self.webDir)
+        if not (self.webDir/'scripts').isdir() \
+           and (self.webDir/'webui').isdir():
+            self.webDir /= 'webui'
+        # Under devel trees, xului is the default xuldir
+        self.xulDir = Path(self.xulDir)
+        if not (self.xulDir/'scripts').isdir() \
+           and (self.xulDir/'xului').isdir():
+            self.xulDir /= 'xului'
         # Find where the config file will be saved
         self.__setConfigPath()
         # Fill in any undefined config options with our defaults
@@ -185,7 +198,8 @@ class Config:
         # System Section
         if self.configParser.has_section('system'):
             system = self.configParser.system
-            self.resourceDir    = Path(system.resourceDir)
+            self.webDir         = Path(system.webDir)
+            self.xulDir         = Path(system.xulDir)
             self.localeDir      = Path(system.localeDir)
             self.port           = int(system.port)
             self.browserPath    = Path(system.browserPath)
@@ -194,19 +208,8 @@ class Config:
         # If the dataDir points to some other dir, fix it
         if not self.dataDir.isdir():
             self.dataDir = tempfile.gettempdir()
-        # If we're upgrading from an old config file, get resourceDir from webdir
-        if self.resourceDir == '':
-            webDir = Path(system.webDir)
-            if webDir.isdir():
-                newDir = (webDir/'resources')
-                if newDir.isdir():
-                    self.resourceDir = newDir
-                else:
-                    newDir = webDir/'..'/'resources'
-                    if newDir.isdir():
-                        self.resourceDir = newDir
-        # Make the resourceDir absolute, to hide path joins of relative paths
-        self.resourceDir = self.resourceDir.expand().abspath()
+        # make the webDir absolute, to hide path joins of relative paths
+        self.webDir = self.webDir.expand().abspath()
         # If the configDir doesn't exist (as it may be a default setting with a
         # new installation) create it
         if not self.configDir.exists():
@@ -253,7 +256,8 @@ class Config:
         log.info("configPath  = %s" % self.configPath)
         log.info("exePath     = %s" % self.exePath)
         log.info("browserPath = %s" % self.browserPath)
-        log.info("resourceDir = %s" % self.resourceDir)
+        log.info("webDir      = %s" % self.webDir)
+        log.info("xulDir      = %s" % self.xulDir)
         log.info("localeDir   = %s" % self.localeDir)
         log.info("port        = %d" % self.port)
         log.info("dataDir     = %s" % self.dataDir)
@@ -267,12 +271,10 @@ class Config:
         """
         log = logging.getLogger()
         self.styles = []
-        styleDir    = self.resourceDir/'exportable'/'style'
+        styleDir    = self.webDir/"style"
 
         log.debug("loadStyles from %s" % styleDir)
 
-        # Import each sub folder of styles that contains a 'content.css' into
-        # our list of styles
         for subDir in styleDir.dirs():
             styleSheet = subDir/'content.css'
             log.debug(" checking %s" % styleSheet)

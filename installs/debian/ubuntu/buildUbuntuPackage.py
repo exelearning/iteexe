@@ -55,7 +55,7 @@ if 'sftp-edu' in sys.argv or 'sftp-sf' in sys.argv:
         sys.exit(1)
     if 'sftp-edu' in sys.argv:
         server = 'shell.eduforge.org'
-        basedir = '/home/pub/sourceforge/e/ex/exe/'
+        basedir = '/home/pub/exe/'
     elif 'sftp-sf' in sys.argv:
         server = 'ssh.sourceforge.net'
         basedir = '/home/groups/e/ex/exe/htdocs/'

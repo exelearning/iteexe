@@ -74,7 +74,6 @@ exe/webui/attachmentblock.py
 exe/webui/preferencespage.py
 exe/webui/truefalseelement.py
 exe/webui/block.py
-exe/webui/multiselectblock.py
 exe/webui/genericblock.py
 exe/webui/packageredirectpage.py
 exe/webui/editorpage.py

@@ -25,6 +25,8 @@ from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
+from exe.engine.path      import  toUnicode
+
 log = logging.getLogger(__name__)
 
 # Constants
@@ -50,7 +52,7 @@ class Question(Persistable):
         Creates our image field
         """
         # TODO: Get helena to check instructions
-        self.image = ImageField(x_(u"Feedback Image"),
+        self.image = ImageField(x_(u"Image"),
                                 x_(u"Choose an optional image to be shown to the student "
                                     "on completion of this question")) 
         self.image.idevice = idevice
@@ -102,8 +104,8 @@ presented. """)
 situation.""")
         if defaultImage is None:
             from exe.application import application
-            defaultImage = application.config.resourceDir/'exportable'/'misc'/DEFAULT_IMAGE
-        self.defaultImage = defaultImage
+            defaultImage = application.config.webDir/'images'/DEFAULT_IMAGE
+        self.defaultImage = toUnicode(defaultImage)
         self.addQuestion()
 
     # Properties
@@ -164,7 +166,7 @@ situation.""")
         Upgrades for v0.18
         """
         from exe.application import application
-        self.defaultImage = application.config.resourceDir/'exportable'/'images'/DEFAULT_IMAGE
+        self.defaultImage = toUnicode(application.config.webDir/'images'/DEFAULT_IMAGE)
         for question in self.questions:
             question.setupImage(self)
 

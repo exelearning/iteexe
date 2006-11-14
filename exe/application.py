@@ -34,6 +34,7 @@ from twisted.internet import reactor
 from exe.webui.browser       import launchBrowser
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.packagestore import PackageStore
+from exe.engine.translate    import installSafeTranslate
 from exe.engine              import version
 import logging
  
@@ -68,6 +69,7 @@ class Application:
         """
         self.processArgs()
         self.loadConfiguration()
+        installSafeTranslate()
         self.preLaunch()
         self.launch()
         log.info('serving')

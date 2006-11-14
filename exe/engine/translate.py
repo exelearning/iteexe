@@ -47,3 +47,32 @@ def lateTranslate(propName):
         else:
             return value
     return property(get_prop, set_prop)
+
+def installSafeTranslate():
+    """
+    Makes '_' do safe translating
+    Assumes '_' is already installed as the normal translate method
+    """
+    def checkInstall():
+        return __builtins__['_'] is installSafeTranslate
+    if checkInstall(): return
+    else:
+        __builtins__['__old_translate__'] = __builtins__['_']
+        __builtins__['_'] = safeTranslate
+
+def safeTranslate(message, encoding='utf-8'):
+    """
+    Safely translates a string
+    """
+    # Allow translating from foreign strings
+    # Had a prob, trying to translate the "purpose"
+    # of an idevice from Spanish to Spanish. Unicode couldn't
+    # decode the accents, because it was assuming that it was
+    # in ASCII codec
+    try:
+        return __old_translate__(message)
+    except UnicodeDecodeError, e:
+        try:
+            return __old_translate__(unicode(message, encoding))
+        except Exception:
+            raise e

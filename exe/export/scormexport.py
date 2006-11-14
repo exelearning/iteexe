@@ -305,7 +305,7 @@ class ScormPage(Page):
         html += u"src=\"APIWrapper.js\"></script>\n" 
         html += u"<script type=\"text/javascript\" "
         html += u"src=\"SCOFunctions.js\"></script>\n"             
-        html += u'<script type="text/javascript" src="common_exportable.js"></script>\n'
+        html += u'<script type="text/javascript" src="common.js"></script>\n'
         html += u"</head>\n"
         html += u'<body onload="loadPage()" ' # onbeforeunload="unloadPage()" '
         html += u'onunload="unloadPage()">'
@@ -411,7 +411,7 @@ class ScormExport(object):
                                   'adlcp_rootv1p2.xsd',
                                   'SCOFunctions.js', 
                                   'libot_drag.js',
-                                  'common_exportable.js'), outputDir)
+                                  'common.js'), outputDir)
 
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
@@ -419,20 +419,24 @@ class ScormExport(object):
         self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
                                     'xspf_player.swf'),outputDir)
 
-        # copy a copy of the GNU Free Documentation Licence
+        # Copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
+        # Zip it up!
+        self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
+        # Clean up the temporary dir
+        outputDir.rmtree()
 
+    def doZip(self, fileObj, outputDir):
+        """
+        Actually does the zipping of the file. Called by 'Path.safeSave'
+        """
         # Zip up the scorm package
-        zipped = ZipFile(self.filename, "w")
+        zipped = ZipFile(fileObj, "w")
         for scormFile in outputDir.files():
             zipped.write(scormFile,
                          scormFile.basename().encode('utf8'),
                          ZIP_DEFLATED)
         zipped.close()
-
-        # Clean up the temporary dir
-        outputDir.rmtree()
-                
 
     def generatePages(self, node, depth):
         """

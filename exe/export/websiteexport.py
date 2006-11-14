@@ -44,24 +44,22 @@ class WebsiteExport(object):
         'outputDir' is the directory that will be [over]written
         with the website
         """
-	self.config       = config
+        self.config       = config
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
         self.templatesDir = config.webDir/"templates"
         self.stylesDir    = Path(styleDir)
         self.filename     = Path(filename)
         self.pages        = []
-      #  self.outputDir    = Path(outputDir)
 
     def exportZip(self, package):
-	""" 
+        """ 
         Export web site
         Cleans up the previous packages pages and performs the export
         """
-	
-	outputDir = TempDirPath()
+        
+        outputDir = TempDirPath()
         self.copyFiles(package, outputDir)
-
 
         # Import the Website Page class.  If the style has it's own page class
         # use that, else use the default one.
@@ -84,18 +82,20 @@ class WebsiteExport(object):
             thisPage = nextPage
 
         thisPage.save(outputDir, prevPage, None, self.pages)
-	
-	 # Zip up the website package
-        zipped = ZipFile(self.filename, "w")
-        for scormFile in outputDir.files():
-            zipped.write(scormFile,
-                         scormFile.basename().encode('utf8'),
-                         ZIP_DEFLATED)
-        zipped.close()
-
+        # Zip up the website package
+        self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
         outputDir.rmtree()
-	
+
+    def doZip(self, fileObj, outputDir):
+        """
+        Actually saves the zip data. Called by 'Path.safeSave'
+        """
+        zipped = ZipFile(fileObj, "w")
+        for scormFile in outputDir.files():
+            zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+        zipped.close()
+        
     def export(self, package):
         """ 
         Export web site
@@ -150,14 +150,12 @@ class WebsiteExport(object):
         package.resourceDir.copyfiles(outputDir)
             
         # copy script files.
-        self.scriptsDir.copylist(('libot_drag.js', 'common_exportable.js'), 
+        self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                   outputDir)
 
         # copy video container file for flash movies.
-        #videofile = (self.templatesDir/'videoContainer.swf')
-        #videofile.copyfile(self.outputDir/'videoContainer.swf')
         self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
-                                    'xspf_player.swf'),outputDir)
+                                    'xspf_player.swf'), outputDir)
                                     
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
