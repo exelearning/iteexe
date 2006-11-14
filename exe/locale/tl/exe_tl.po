@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2006-10-12 17:38+1300\n"
+"PO-Revision-Date: 2006-11-10 17:13+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
@@ -3331,7 +3331,6 @@ msgstr "Norwegian Bokmål "
 
 #: exe/resources/internal/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
-#, fuzzy
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"Pagsanib\" accesskey=\"p\""
 
