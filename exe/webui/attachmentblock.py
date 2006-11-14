@@ -75,24 +75,25 @@ class AttachmentBlock(Block):
         html  = u'<div class="iDevice">\n'
         html += u'<div class="block">\n'
 
-        label = _(u'Filename')
+        label = _(u'Filename:')
         if self.idevice.userResources:
             label += u': '
             label += u'<span style="text-decoration:underline">'
             label += self.idevice.userResources[0].storageName
             label += u'</span>\n'
-            
+        html += u'<table><tr style="vertical-align: bottom;"><td>' 
         html += common.formField('textInput',
                                  label,
                                  'path'+self.id, '',
                                  self.idevice.filenameInstruc,
                                  size=50)
-
+        html += u'</td><td>'
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
+        html += u'</td></tr></table>' 
         html += u'</div>\n'
         html += u'<div class="block">\n'
-        html += u'\n<b>%s</b>\n' % _(u'Label')
+        html += u'\n<b>%s</b>\n' % _(u'Label:')
         html += common.elementInstruc(self.idevice.labelInstruc)
         html += u'</div>\n'
         html += common.textInput(u'label'+self.id, self.idevice.label)

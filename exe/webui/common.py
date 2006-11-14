@@ -46,6 +46,27 @@ def docType():
             u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n')
 
 
+def header(style=u'default'):
+    """Generates the common header XHTML"""
+    # NB: Authoring Page has its own header
+    return (docType() + 
+            u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
+            u'<head>\n'
+            u'<style type="text/css">\n'
+            u'  @import url(/css/exe.css);\n'
+            u'  @import url(/style/base.css);\n'
+            u'  @import url(/style/%s/content.css);</style>\n'
+            u'<script type="text/javascript" src="/scripts/common.js">'
+            u'</script>\n'
+            u'<script type="text/javascript" src="/scripts/libot_drag.js">'
+            u'</script>\n'
+            u'<title>%s</title>\n'
+            u'<meta http-equiv="content-type" '
+            u' content="text/html; charset=UTF-8"></meta>\n'
+            u'</head>\n'
+            % (style, _('eXe : elearning XHTML editor')))
+
+
 def footer():
     """Generates the common page footer XHTML"""
     return u'</form></body></html>\n'
@@ -261,12 +282,12 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html += u'onclick="Javascript:showMe(\'i%s\', 350, 100);" ' % id_
         html += u'href="Javascript:void(0)" style="cursor:help;"> ' 
         html += u'<img alt="%s" ' % _(u'Click for completion instructions')
-        html += u'src="%s" style="vertical-align:middle;"/>' % imageFile
+        html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
         html += u'</a>\n'
         html += u'<div id="i%s" style="display:none;">' % id_
         html += u'<div style="float:right;" >'
         html += u'<img alt="%s" ' % _("Close")
-        html += u'src="stock-stop.png" title="%s" ' % _("Close")
+        html += u'src="/images/stock-stop.png" title="%s" ' % _("Close")
         html += u' onmousedown="Javascript:hideMe();"/></div>'
         html += u'<div class="popupDivLabel">%s</div>%s' % (label, instruc)
         html += u'</div>\n'

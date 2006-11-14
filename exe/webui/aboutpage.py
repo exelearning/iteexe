@@ -42,6 +42,17 @@ class AboutPage(RenderableResource):
         """
         RenderableResource.__init__(self, parent)
 
+        
+    def getChild(self, name, request):
+        """
+        Try and find the child for the name given
+        """
+        if name == "":
+            return self
+        else:
+            return Resource.getChild(self, name, request)
+
+
     def render_GET(self, request):
         """Called for all requests to this object"""
         log.debug("render_GET")

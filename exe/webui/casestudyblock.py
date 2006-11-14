@@ -69,7 +69,7 @@ class CasestudyBlock(Block):
         if "title"+self.id in request.args:
             self.idevice.title = request.args["title"+self.id][0]
             
-        if request.args[u"action"][0] != u"delete":
+        if "action" in request.args and request.args[u"action"][0] != u"delete":
             for element in self.questionElements:
                 element.process(request)
 
@@ -85,16 +85,16 @@ class CasestudyBlock(Block):
                                  self.storyInstruc,
                                  self.story)
 
-        html += u'<div class="block">'
-        html += u"<strong>%s</strong>" % _("Question(s)")
-        html += u'</div>'
+#        html += u'<div class="block">'
+#        html += u"<strong>%s</strong>" % _("Question(s)")
+#        html += u'</div>'
         html += u'<table width ="100%">\n'
         
         for element in self.questionElements:
             html += element.renderEdit() 
          
         html += u"</table>\n"
-        value = _(u"Add another question")    
+        value = _(u"Add another activity")    
         html += common.submitButton(u"addQuestion"+unicode(self.id), value)
         html += u"<br /><br />" + self.renderEditButtons()
         html += u"</div>\n"

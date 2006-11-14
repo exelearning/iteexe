@@ -1023,10 +1023,10 @@ class MathElement(Element):
         Returns an XHTML string with the form element for editing this field
         """
         from exe.application import application
-        resourceDir = application.config.resourceDir
-        greekDir = Path(resourceDir/'exportable'/'images'/'maths'/'greek letters')
-        oprationDir = Path(resourceDir/'exportable'/'images'/'maths'/'binary oprations')
-        relationDir = Path(resourceDir/'exportable'/'images'/'maths'/'relations')
+        webDir = application.config.webDir
+        greekDir = Path(webDir+'/images/maths/greek letters')
+        oprationDir = Path(webDir+'/images/maths/binary oprations')
+        relationDir = Path(webDir+'/images/maths/relations')
         html = u'<div class="block">'
         html += u"<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
@@ -1479,18 +1479,18 @@ class QuizQuestionElement(Element):
         if self.field.hint:
             html += '<span '
             html += ' style="background-image:url(\'%s\');">' % img
-            html += '\n<a onmousedown="Javascript:updateCoords(event);'
+            html += '\n<a onmousedown="javascript:updateCoords(event);'
             html += 'showMe(\'hint%s\', 350, 100);" ' % self.id
             html += 'style="cursor:help;align:center;vertical-align:middle;" '
             html += 'title="Hint" \n'
-            html += 'href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
+            html += 'onmouseover="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;</a>'
             html += '</span>'
             html += '<div id="hint'+self.id+'" '
             html += 'style="display:none; z-index:99;">'
             html += '<div style="float:right;" >'
             html += '<img alt="%s" ' % _('Close')
-            html += 'src="stock-stop.png" title="%s"' % _('Close')
-            html += " onmousedown=\"Javascript:hideMe();\"/></div>"
+            html += 'src="/images/stock-stop.png" title="%s"' % _('Close')
+            html += " onmousedown=\"javascript:hideMe();\"/></div>"
             html += '<div class="popupDivLabel">'
             html += _("Hint")
             html += '</div>\n'

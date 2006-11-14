@@ -48,7 +48,7 @@ class EditorPane(object):
         Initialize
         """
         self.ideviceStore     = webServer.application.ideviceStore
-        self.resouceDir       = webServer.application.config.resourceDir
+        self.webDir           = webServer.application.config.webDir
         self.styles           = webServer.application.config.styles
         self.elements         = []
         self.idevice          = GenericIdevice("", "", "", "", "")
@@ -147,7 +147,7 @@ class EditorPane(object):
         if "addImage" in request.args:
             field = ImageField(_(u"Enter the label here"),
                                _(u"Enter the instructions for completion here"))
-            imagePath = self.resourceDir/'exportable'/'images'/ImageEditorElement.DefaultImage
+            imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
             self.idevice.addField(field)
             
@@ -330,7 +330,7 @@ data is entered into this field.""")))
                 html += u'<div id="iconpanel" style="display:none; z-index:99;">'
                 html += u'<div style="float:right;" >\n'
                 html += u'<img alt="%s" ' % _("Close")
-                html += u'src="stock-stop.png" title="%s"\n' % _("Close")
+                html += u'src="/images/stock-stop.png" title="%s"\n' % _("Close")
                 html += u'onmousedown="Javascript:hideMe();"/></div><br/> \n'
                 html += u'<div align="center"><b>%s:</b></div><br/>' % _("Icons")
                 html += self.__renderIcons()
@@ -346,11 +346,11 @@ data is entered into this field.""")))
                 html += "onmousedown=\"Javascript:updateCoords(event);\" \n"
                 html += "onclick=\"Javascript:showMe('phelp', 380, 240);\" \n" 
                 html += "href=\"Javascript:void(0)\" style=\"cursor:help;\">\n " 
-                html += '<img alt="%s" src="info.png" border="0" \n' % _('Info')
+                html += '<img alt="%s" src="/images/info.png" border="0" \n' % _('Info')
                 html += "align=\"middle\" /></a>\n"
                 html += "<div id=\"phelp\" style=\"display:none;\">\n"
                 html += "<div style=\"float:right;\" "
-                html += '<img alt="%s" src="stock-stop.png" \n' % _('Close')
+                html += '<img alt="%s" src="/images/stock-stop.png" \n' % _('Close')
                 html += " title='"+_("Close")+"' border='0' align='middle' \n"
                 html += "onmousedown=\"Javascript:hideMe();\"/></div>\n"
                 if self.idevice.purpose != "":
@@ -383,7 +383,7 @@ data is entered into this field.""")))
         """
         Return xhtml string for dispay all icons
         """
-        iconpath  = self.resourceDir/'exportable'/'style'/self.style
+        iconpath  = Path(self.webDir).joinpath("style", self.style)
         iconfiles = iconpath.files("icon_*")
         html = ""
         for iconfile in iconfiles:

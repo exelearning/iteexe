@@ -21,8 +21,9 @@ QuestionElement is responsible for a block of option.  Used by MultichoiceBlock
 """
 
 import logging
-from exe.webui         import common
-from exe.webui.element import ImageElement
+from exe.webui           import common
+from exe.webui.element   import ImageElement
+from exe.engine.resource import Resource
 
 log = logging.getLogger(__name__)
 # ===========================================================================
@@ -97,7 +98,9 @@ class QuestionElement(object):
         log.debug("renderView called")
               
         html  = self.question.question 
-        if self.question.feedback != "":
+        field = self.imageElement.field
+       
+        if  not field.isDefaultImage or self.question.feedback != "" :            
             html += '<div id="view%s" style="display:block;">' % self.id
             html += common.feedbackButton('btnshow' + self.id,
                         _(u"Show Feedback"),
@@ -122,6 +125,8 @@ class QuestionElement(object):
             html += 'display: none;">'
             html += self.question.feedback
             html += "</div><br/>\n"
+        else:
+            html += "<br/>\n"
         
         return html
 

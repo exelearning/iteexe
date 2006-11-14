@@ -121,12 +121,11 @@ class MultimediaBlock(Block):
         html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderPreview()
-        html += u"<br />" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
+        html += u"<br />" + self.idevice.caption + "</div>\n"
         html += self.textElement.renderPreview()
         html += u"<br/>\n"        
         html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += u"</div></div>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
         return html
@@ -151,7 +150,6 @@ class MultimediaBlock(Block):
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderView()
         html += u"<br/>" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"

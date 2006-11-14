@@ -81,7 +81,7 @@ class ReflectionBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html  = u'<script type="text/javascript" src="common_exportable.js"></script>\n'
+        html  = u'<script type="text/javascript" src="common.js"></script>\n'
         html += u'<div class="iDevice_inner">\n'
     
         html += self.activity   

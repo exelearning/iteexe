@@ -48,6 +48,16 @@ class AuthoringPage(RenderableResource):
         RenderableResource.__init__(self, parent)
         self.blocks  = []
 
+    def getChild(self, name, request):
+        """
+        Try and find the child for the name given
+        """
+        if name == "":
+            return self
+        else:
+            return Resource.getChild(self, name, request)
+
+
     def _process(self, request):
         """
         Delegates processing of args to blocks
@@ -55,7 +65,6 @@ class AuthoringPage(RenderableResource):
         # Still need to call parent (mainpage.py) process
         # because the idevice pane needs to know that new idevices have been
         # added/edited..
-        # TODO: Once pyxpcom comes along, we'll fix these
         self.parent.process(request)
         if ("action" in request.args and 
             request.args["action"][0] == u"saveChange"):
@@ -64,8 +73,7 @@ class AuthoringPage(RenderableResource):
             log.debug(u"package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
-        log.debug(u"after authoringPage process" + repr(request.args))
-
+        log.debug(u"After authoringPage process" + repr(request.args))
 
     def render_GET(self, request=None):
         """
@@ -100,7 +108,7 @@ class AuthoringPage(RenderableResource):
         html += u'<div id="nodeDecoration">\n'
         html += u'<p id="nodeTitle">\n'
         html += escape(topNode.titleLong)
-        html += u'</p>\n' 
+        html += u'</p>\n'
         html += u'</div>\n'
 
         for block in self.blocks:
@@ -125,10 +133,10 @@ class AuthoringPage(RenderableResource):
         html += u'@import url(/style/base.css);\n'
         html += u'@import url(/style/%s/content.css);\n' % self.package.style
         html += u'</style>\n'
-        html += u'<script type="text/javascript" src="common_internal.js">'
+        html += u'<script type="text/javascript" src="/scripts/common.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript" '
-        html += u'src="/tinymce/jscripts/tiny_mce/tiny_mce.js">'
+        html += u'src="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js">'
         html += u'</script>\n'
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
@@ -157,7 +165,7 @@ class AuthoringPage(RenderableResource):
         html += u" });\n"
         html += u"//-->\n"
         html += u"</script>\n"
-        html += u'<script type="text/javascript" src="libot_drag.js">'
+        html += u'<script type="text/javascript" src="/scripts/libot_drag.js">'
         html += u'</script>\n'
         html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
         html += u'<meta http-equiv="content-type" content="text/html; '

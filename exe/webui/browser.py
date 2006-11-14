@@ -48,19 +48,20 @@ def launchBrowser(config, packageName):
 
     if (config.configDir/profile).exists():
         (config.configDir/profile).rmtree()
-    profileSource = config.resourceDir/'internal'/profile
-    profileDest = config.configDir/profile
-    log.info("Creating FireFox profile copied from %s to %s" % (profileSource, profileDest))
-    if not profileDest.exists():
-        profileDest.mkdir()
-    for filename in profileSource.files():
-        filename.copy(profileDest/filename.basename())
-    if not (profileDest/'Cache').exists():
-        (profileDest/'Cache').mkdir()
-    for filename in (profileSource/'Cache').files():
-        filename.copy(profileDest/'Cache'/filename.basename())
+    log.info("Creating FireFox profile copied from"+
+             config.webDir/profile+" to "+
+             config.configDir/profile)
+    if not (config.configDir/profile).exists():
+        (config.configDir/profile).mkdir()
+    for filename in (config.webDir/profile).files():
+        filename.copy(config.configDir/profile)
+    if not (config.configDir/profile/'Cache').exists():
+        (config.configDir/profile/'Cache').mkdir()
+    for filename in (config.webDir/profile/'Cache').files():
+        filename.copy(config.configDir/profile/'Cache')
 
-    log.info("Have setup mozilla profile in: %s" % profileDest)
+    log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
+    log.info(u"profile = " + config.configDir/profile)
 
     if sys.platform[:3] == u"win":
         try:
@@ -70,10 +71,8 @@ def launchBrowser(config, packageName):
                       config.browserPath,
                       config.browserPath.basename(),
                       '-profile', 
-                      '"' + profileDest + '"', 
+                      '"' + config.configDir/profile + '"', 
                       url)
-            # ugly hack to try and fix the firefox not starting first time bug
-            reactor.callLater(10, tryAgain, config, profileDest, url)
         except OSError:
             print u"Cannot launch Firefox, please manually run Firefox"
             print u"and go to", url     
@@ -82,22 +81,8 @@ def launchBrowser(config, packageName):
         # Set LOGNAME so exe doesn't conflict with Firefox
         launchString  = 'LOGNAME=eXe7913 '
         launchString += config.browserPath
-        launchString += ' -profile "' + profileDest + '" '
+        launchString += ' -profile "' + config.configDir/profile + '" '
         launchString += url
         launchString += "&"
         log.info(u'Launching firefox with: ' + launchString)
         os.system(launchString)
-
-
-def tryAgain(config, profileDest, url):
-    """
-    Second try of launching the browser,
-    called by reactor on a timer thingy
-    """
-    os.spawnl(os.P_DETACH, 
-              config.browserPath,
-              config.browserPath.basename(),
-              '-profile', 
-              '"' + profileDest + '"', 
-              url)
-

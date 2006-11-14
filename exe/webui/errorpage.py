@@ -40,6 +40,16 @@ class ErrorPage(Resource):
         Resource.__init__(self)
         self.errMessage = errMessage
         
+    def getChild(self, name, request):
+        """
+        Get the child page for the name given
+        """
+        if name == '':
+            return self
+        else:
+            return Resource.getChild(self, name, request)
+
+
     def render_GET(self, request):
         """
         Create a new package and redirect the webrowser to the URL for it
