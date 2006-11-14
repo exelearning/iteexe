@@ -1,0 +1,43 @@
+// Russian translation by Roman Filippov
+// romanf@terrahost.ca
+// www.hunox.ca
+
+tinyMCE.addToLang('',{
+bold_desc : 'Полужирный',
+italic_desc : 'Курсив',
+underline_desc : 'По&auml;ч&aring;ркивани&aring;',
+striketrough_desc : 'П&aring;р&aring;ч&aring;ркивани&aring;',
+justifyleft_desc : 'Вырвнивани&aring; вл&aring;во',
+justifycenter_desc : 'Вырвнивани&aring; по &ouml;&aring;нтру',
+justifyright_desc : 'Вырвнивани&aring; вправо',
+justifyfull_desc : 'Вырвнивани&aring; равном&aring;рно',
+bullist_desc : 'Маркированный список',
+numlist_desc : 'Нум&aring;рованный список',
+outdent_desc : 'Ум&aring;ньшить отступ',
+indent_desc : 'Ув&aring;личить отспут',
+undo_desc : 'Отм&aring;нить',
+redo_desc : 'В&aring;рнуть',
+link_desc : 'Вставить/изм&aring;нить ссылку',
+unlink_desc : 'Убрать ссылку',
+image_desc : 'Вставить/изм&aring;нить изображ&aring;ни&aring;',
+cleanup_desc : 'Вычистить грязный ко&auml;',
+focus_alert : 'Вы &auml;олжны нахо&auml;ится в пол&aring; р&aring;&auml;актора п&aring;р&aring;&auml; использовани&aring;м &auml;анной коман&auml;ы.',
+edit_confirm : 'Хотит&aring; ли Вы воспользоваться WYSIWYG р&aring;&auml;актором &auml;ля этого поля вво&auml;а?',
+insert_link_title : 'Вставить/изм&aring;нить ссылку',
+insert : 'Вставить',
+update : 'Вставить',
+cancel : 'Отм&aring;нить',
+insert_link_url : 'А&auml;р&aring;с',
+insert_link_target : 'Открыть в...:',
+insert_link_target_same : 'том ж&aring; окн&aring;',
+insert_link_target_blank : 'новом окн&aring;',
+insert_image_title : 'Вставить/изм&aring;нить изображ&aring;ни&aring;',
+insert_image_src : 'А&auml;р&aring;с',
+insert_image_alt : 'Описани&aring;',
+help_desc : 'Помощь',
+bold_img : "bold_ru.gif",
+italic_img : "italic_ru.gif",
+underline_img : "underline_ru.gif",
+clipboard_msg : 'Copy/Cut/Paste is not available in Mozilla and Firefox.\nDo you want more information about this issue?',
+popup_blocked : 'Sorry, but we have noticed that your popup-blocker has disabled a window that provides application functionality. You will need to disable popup blocking on this site in order to fully utilize this tool.'
+});
