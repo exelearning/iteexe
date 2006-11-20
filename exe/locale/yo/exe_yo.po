@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bitX-Poedit-Language: Yoruba\n"
 "X-EXE-Language:Yorùbá\n"
+"X-Poedit-Language: Yoruba\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Pootle 0.6.3.20060116\n"
 
