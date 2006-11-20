@@ -27,24 +27,16 @@ from urllib                   import quote
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
-from exe.export.pages         import uniquifyNames
+from exe.export.pages         import Page, uniquifyNames
 
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class WebsitePage(object):
+class WebsitePage(Page):
     """
     This class transforms an eXe node into a page on a self-contained website
     """
-    def __init__(self, name, depth, node):
-        """
-        Initialize
-        """
-        self.name  = name
-        self.depth = depth
-        self.node  = node
-    
 
     def save(self, outputDir, prevPage, nextPage, pages):
         """
