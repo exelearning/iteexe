@@ -148,19 +148,34 @@ class Application:
         log.info("eXe running...")
         self.webServer.run()
 
+    def _loadPackage(self, packagePath):
+        """
+        Convenience function for loading the first package that we'll browse to
+        """
+        try:
+            package = self.packageStore.loadPackage(packagePath)
+            log.debug("loading package "+package.name)
+            self.webServer.root.bindNewPackage(package)
+            launchBrowser(self.config, package.name)
+            return package
+        except Exception, e:
+            log.error('Error loading first Package (%s): %s' % (packagePath, e))
+            return None
 
     def launch(self):
         """
         launches the webbrowser
         """
+        package = None
         if self.packagePath:
-            package = self.packageStore.loadPackage(self.packagePath)
-            log.debug("loading package "+package.name)
-            self.webServer.root.bindNewPackage(package)
-            launchBrowser(self.config, package.name)
+            package = self._loadPackage(self.packagePath)
         else:
+            unsavedWork = self.config.configDir/'unsavedWork.elp'
+            if unsavedWork.isfile():
+                package = self._loadPackage(unsavedWork)
+                package.isChanged = True # So it will be saved if user goes immediately file,quit
+        if not package:
             launchBrowser(self.config, "")
-
 
     def usage(self):
         """

@@ -70,6 +70,7 @@ class Package(Persistable):
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
+    tempFile           = False # This is set when the package is saved as a temp copy file
     # Title is rendered in exports
     _title             = '' 
     _author            = ''
@@ -202,18 +203,20 @@ class Package(Persistable):
             return _(u"?????")
         
 
-    def save(self, filename=None):
+    def save(self, filename=None, tempFile=False):
         """
         Save package to disk
         pass an optional filename
         """
+        self.tempFile = tempFile
         # Get the filename
         if filename:
             filename = Path(filename)
             # If we are being given a new filename...
             # Change our name to match our new filename
             name = filename.splitpath()[1]
-            self.name = name.basename().splitext()[0]
+            if not tempFile:
+                self.name = name.basename().splitext()[0]
         elif self.filename:
             # Otherwise use our last saved/loaded from filename
             filename = Path(self.filename)
@@ -222,11 +225,21 @@ class Package(Persistable):
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
             raise AssertionError(u'No name passed when saving a new package')
-        # Store our new filename for next file|save
-        self.filename = filename
-        # Save!
+        # Store our new filename for next file|save, and save the package
         log.debug(u"Will save %s to: %s" % (self.name, filename))
-        filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
+        if tempFile:
+            self.nonpersistant.remove('filename')
+            oldFilename, self.filename = self.filename, unicode(self.filename)
+            try:
+                filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
+            finally:
+                self.nonpersistant.append('filename')
+                self.filename = oldFilename
+        else:
+            # Update our new filename for future saves
+            if not tempFile:
+                self.filename = filename
+            filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
         self.isChanged = 0
 
     def doSave(self, fileObj):
@@ -260,9 +273,13 @@ class Package(Persistable):
             traceback.print_exc()
             raise
 
-        # newPackage.filename is the name that the package was last loaded from
-        # or saved to
-        newPackage.filename = Path(filename)
+        if newPackage.tempFile:
+            # newPackage.filename was stored as it's original filename
+            newPackage.tempFile = False
+        else:
+            # newPackage.filename is the name that the package was last loaded from
+            # or saved to
+            newPackage.filename = Path(filename)
 
         # Need to add a TempDirPath because it is a nonpersistant member
         newPackage.resourceDir = TempDirPath()

@@ -27,6 +27,7 @@ import logging
 import traceback
 from twisted.internet            import reactor
 from twisted.web                 import static
+from twisted.internet.defer      import Deferred
 from nevow                       import loaders, inevow, stan
 from nevow.livepage              import handler, js
 from exe.xului.idevicepane       import IdevicePane
@@ -54,6 +55,9 @@ class MainPage(RenderableLivePage):
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
 
+    # Default attribute values
+    closing = None
+
     def __init__(self, parent, package):
         """
         Initialize a new XUL page
@@ -75,6 +79,32 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
+    def NOT_closeComplete(self, failure=None): 
+        """ 
+        We override this from nevow.livepage's implementation 
+        to fix a bug in livepage 
+        """ 
+        if self.closed: 
+            return 
+        self.closed = True 
+        # TODO: As soon as livepage adds this line in their code, we won't need 
+        # to override this method anymore 
+        if self.timeoutLoop.running: 
+            self.timeoutLoop.stop() 
+        self.timeoutLoop = None 
+        for notify in self.closeNotifications[:]: 
+            if failure is not None: 
+                notify.errback(failure) 
+            else: 
+                notify.callback(None) 
+        self.closeNotifications = [] 
+        
+    def onClose(self, reason, data=None): 
+        """ 
+        Called when the user has closed the window 
+        """ 
+        self.package.save(self.config.configDir/'unsavedWork.elp', True) 
+        self.closing = reactor.callLater(10, reactor.stop)
 
     def getChild(self, name, request):
         """
@@ -85,11 +115,11 @@ class MainPage(RenderableLivePage):
         else:
             return super(self, self.__class__).getChild(self, name, request)
 
-
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
-        inevow.IRequest(ctx).setHeader('content-type',
-                                       'application/vnd.mozilla.xul+xml')
+        if self.closing:
+            self.closing.cancel()
+        inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
             """
@@ -112,6 +142,13 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
                                                  'setTreeSelection')
         self.idevicePane.client = client
+        # Sign up to know the connection is closed 
+        d = Deferred() 
+        d.addCallbacks(self.onClose, self.onClose) 
+        client.closeNotifications.append(d) 
+        # Render the js 
+        handleId = "'", client.handleId, "'" 
+
 
     def render_mainMenu(self, ctx, data):
         """Mac menubars are not shown
@@ -263,6 +300,8 @@ class MainPage(RenderableLivePage):
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
         try:
             self.package.save(filename) # This can change the package name
+	        # Delete the "unsavedWork.elp" file so it's not loaded next time we start exe 
+            (self.config.configDir/'unsavedWork.elp').remove()
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s' % str(e)))
             raise
@@ -285,7 +324,15 @@ class MainPage(RenderableLivePage):
         self.root.bindNewPackage(package)
         client.sendScript((u'top.location = "/%s"' % \
                           package.name).encode('utf8'))
-
+ 
+    def handle_pageUnloaded(self, ctx): 
+        """ 	
+        Called after a refresh or window close. Save the page 
+        """
+        print 'Page Unloaded'  	
+        # Save the package in the config dir 
+        self.client.send(js.alert('Page Unloaded Matey')) 
+        self.package.save(self.config.configDir/'unsavedWork.elp', True) 
 
     def handleExport(self, client, exportType, filename):
         """
@@ -388,16 +435,16 @@ class MainPage(RenderableLivePage):
 
         try:
             # Create a new package for the extracted nodes
-            package = Package(filename.namebase)
-            package.style  = self.package.style
-            package.author = self.package.author
+            newPackage = Package(filename.namebase)
+            newPackage.style  = self.package.style
+            newPackage.author = self.package.author
             # Copy the nodes from the original package
             # and merge into the root of the new package
             extractNode  = self.package.currentNode.clone()
-            extractNode.mergeIntoPackage(package)
-            package.root = package.currentNode = extractNode
+            extractNode.mergeIntoPackage(newPackage)
+            newPackage.root = newPackage.currentNode = extractNode
             # Save the new package
-            package.save(filename)
+            newPackage.save(filename)
         except Exception, e:
             client.alert(_('EXTRACT FAILED!\n%s' % str(e)))
             raise

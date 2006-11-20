@@ -418,7 +418,8 @@ function saveWorkInProgress() {
         // try and find the form for the authoring page
         theForm = document.getElementById('contentForm');
     }
-    theForm.submit();
+    if (theForm)
+        theForm.submit();
 }
 
 // Launch the iDevice Editor Window
