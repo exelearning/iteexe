@@ -36,10 +36,11 @@ class ExternalUrlIdevice(Idevice):
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"External Web Site"), 
                          x_(u"University of Auckland"), 
-                         x_(u"""For use if you need to include an external
-web page into your content. Rather than popup an external window, which can have some
-problematic usability consequences, this iDevice loads the appropriate content 
-into an inline frame. Use only if your content will be online."""), "", "")
+                         x_(u"""The external website iDevice loads an external website 
+into an inline frame in your eXe content rather then opening it in a popup box. 
+This means learners are not having to juggle windows. 
+This iDevice should only be used if your content 
+will be view by learners online."""), "", "")
         self.emphasis = Idevice.NoEmphasis
         self.url      = ""
         self.height   = "300"
