@@ -237,10 +237,32 @@ class Package(Persistable):
                 self.filename = oldFilename
         else:
             # Update our new filename for future saves
-            if not tempFile:
-                self.filename = filename
+            self.filename = filename
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
-        self.isChanged = 0
+            self.isChanged = 0
+            self.updateRecentDocuments(filename)
+
+    def updateRecentDocuments(self, filename):
+        """
+        Updates the list of recent documents
+        """
+        from exe.application import application
+        # Don't update the list for the generic.data "package"
+        genericData = application.config.configDir/'idevices'/'generic.data'
+        if genericData.isfile() or genericData.islink():
+            if Path(filename).samefile(genericData):
+                return
+        # Save in recentDocuments list
+        recentProjects = application.config.recentProjects
+        fn = filename.encode('utf-8')
+        if fn in recentProjects:
+            # If we're already number one, carry on
+            if recentProjects[0] == fn: 
+                return
+            recentProjects.remove(fn)
+        recentProjects.insert(0, filename)
+        del recentProjects[5:] # Delete any older names from the list
+        application.config.configParser.write() # Save the settings
 
     def doSave(self, fileObj):
         """
@@ -294,7 +316,7 @@ class Package(Persistable):
         for handler in newPackage.afterUpgradeHandlers:
             handler()
         del newPackage.afterUpgradeHandlers
-
+        newPackage.updateRecentDocuments(newPackage.filename)
         return newPackage
 
 

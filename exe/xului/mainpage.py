@@ -41,7 +41,7 @@ from exe.export.textexport       import TextExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
-from exe.engine.path             import Path
+from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 
 log = logging.getLogger(__name__)
@@ -133,6 +133,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
         setUpHandler(self.handleSavePackage,     'savePackage')
         setUpHandler(self.handleLoadPackage,     'loadPackage')
+        setUpHandler(self.handleLoadRecent,      'loadRecent')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleRegister,        'register')
@@ -217,9 +218,21 @@ class MainPage(RenderableLivePage):
         Down button and shortcut key"""
         return self._passHandle(ctx, 'Down')
 
+    def render_recentProjects(self, ctx, data):
+        """
+        Fills in the list of recent projects menu
+        """
+        result = ['<menupopup id="recent-projects-popup">\n']
+        for num, path in enumerate(self.config.recentProjects):
+            result.append('  <menuitem label="%(num)s. %(path)s"'
+                          ' accesskey="%(num)s"'
+                          ' oncommand="fileOpenRecent(\'%(num)s\')"/>' %
+                          {'num': num + 1, 'path': path})
+        result.append('</menupopup>')
+        return stan.xml('\n'.join(result))
 
     def render_debugInfo(self, ctx, data):
-        """Renders debug info to the top
+        """Renders debug info to the to
         of the screen if logging is set to debug level
         """
         if log.getEffectiveLevel() == logging.DEBUG:
@@ -325,6 +338,13 @@ class MainPage(RenderableLivePage):
         client.sendScript((u'top.location = "/%s"' % \
                           package.name).encode('utf8'))
  
+    def handleLoadRecent(self, client, number):
+        """
+        Loads a file from our recent files list
+        """
+        filename = self.config.recentProjects[int(number) - 1]
+        self.handleLoadPackage(client, filename)
+
     def handle_pageUnloaded(self, ctx): 
         """ 	
         Called after a refresh or window close. Save the page 
@@ -627,11 +647,11 @@ class MainPage(RenderableLivePage):
             encoding = sys.getfilesystemencoding()
             if encoding is None:
                 encoding = 'utf-8'
-            filename2 = unicode(filename, encoding)
+            filename2 = toUnicode(filename, encoding)
             log.debug("filename and path" + filename2)
             package = Package.load(filename2)
             if package is None:
-                filename2 = unicode(filename, 'utf-8')
+                filename2 = toUnicode(filename, 'utf-8')
                 package = Package.load(filename2)
                 if package is None:
                     raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))

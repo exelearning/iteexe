@@ -337,6 +337,17 @@ function fileOpen2() {
     }
 }
 
+// Opens a recent document
+function fileOpenRecent(number) {
+    askDirty("fileOpenRecent2('" + number + "');")
+}
+
+// Actually does the openning of the recent file, once the current package has 
+// been saved or discarded
+function fileOpenRecent2(number) {
+    nevow_clientToServerEvent('loadRecent', this, '', number)
+}
+
 // Called by the user when they want to save their package
 // Also called by some java script to cause a whole
 // proper save process.

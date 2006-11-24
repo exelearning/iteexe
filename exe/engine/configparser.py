@@ -36,9 +36,14 @@ class ConfigParser(object):
     # Set this to write after each attribute change
     autoWrite = False 
 
-    def __init__(self):
+    def __init__(self, onWrite=None):
+        """
+        set 'onWrite' to a method that will be called passing the parser as the
+        only parameter, just before we write the file.
+        """
         self._sections = {}
         self._originalFile = None
+        self._onWrite = onWrite
 
     def __getattr__(self, attr):
         """
@@ -146,6 +151,9 @@ class ConfigParser(object):
 
     def write(self, file_=None):
         """Writes the options to the file_"""
+        # Let any interested partys make last minute alterations
+        if self._onWrite:
+            self._onWrite(self)
         # Use default file if none specified
         if not file_:
             file_ = self._originalFile
@@ -317,6 +325,7 @@ class ConfigParser(object):
         if self._sections.has_key(sectionName):
             if optionName is None:
                 del self._sections[sectionName]
+                delattr(self, sectionName)
                 if self.autoWrite:
                     self.write()
             else:

@@ -45,6 +45,11 @@
               <menupopup id="file-popup">
                 <menuitem n:render="translate" label="New" key="file-new-key" accesskey="n" oncommand="fileNew()"/>
                 <menuitem n:render="translate" label="Open" key="file-open-key" accesskey="o" oncommand="fileOpen()"/>
+                <menu n:render="translate" id="recent-projects-menu" label="Recent Projects..." accesskey="r">
+                  <menupopup n:render="recentProjects" id="recent-projects-popup">
+                     <!-- This will be filled by server -->
+                  </menupopup>
+                </menu>
                     <menuseparator/>
                 <menuitem n:render="translate" label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
                 <menuitem n:render="translate" label="Save As..." accesskey="a" oncommand="fileSaveAs()"/>

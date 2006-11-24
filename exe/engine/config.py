@@ -43,7 +43,7 @@ class Config:
     optionNames = {
         'system': ('webDir', 'xulDir', 'port', 'dataDir', 
                    'configDir', 'localeDir', 'browserPath'),
-        'user': ('locale',)
+        'user': ('locale',),
     }
 
     def __init__(self):
@@ -51,7 +51,7 @@ class Config:
         Initialise
         """
         self.configPath = None
-        self.configParser = ConfigParser()
+        self.configParser = ConfigParser(self.onWrite)
         # Set default values
         # exePath is the whole path and filename of the exe executable
         self.exePath     = Path(sys.argv[0]).abspath()
@@ -75,6 +75,8 @@ class Config:
         self.locale = chooseDefaultLocale(self.localeDir)
         # styles is the list of style names available for loading
         self.styles      = []
+        # The documents that we've recently looked at
+        self.recentProjects = []
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -126,6 +128,7 @@ class Config:
                 self.configParser.setdefault(sectionName, 
                                              optionName, 
                                              defaultVal)
+        # Logging can't really be changed from inside the program at the moment...
         self.configParser.setdefault('logging', 'root', 'INFO')
 
 
@@ -218,8 +221,25 @@ class Config:
         if self.configParser.has_section('user'):
             if self.configParser.user.has_option('locale'):
                 self.locale = self.configParser.user.locale
-                return
+        # Get the list of recently opened projects
+        self.recentProjects = []
+        if self.configParser.has_section('recent_projects'):
+            recentProjectsSection = self.configParser.recent_projects
+            for key, path in recentProjectsSection.items():
+                self.recentProjects.append(path)
         self.locale = chooseDefaultLocale(self.localeDir)
+
+    def onWrite(self, configParser):
+        """
+        Called just before the config file is written.
+        We use it to fill out any settings that are stored here and 
+        not in the config parser itself
+        """
+        # Recent projects
+        self.configParser.delete('recent_projects')
+        recentProjectsSection = self.configParser.addSection('recent_projects')
+        for num, path in enumerate(self.recentProjects):
+            recentProjectsSection[str(num)] = path
 
     def setupLogging(self):
         """
