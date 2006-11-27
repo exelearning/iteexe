@@ -102,7 +102,7 @@ class WikipediaBlock(Block):
                  (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/wiki/"),
                  (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/wiki/"),
                  (_(u"Wikibooks Article"),         "http://en.wikibooks.org/wiki/"),
-                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/wiki/"),
+                 (_(u"Wikiversity"),         "http://en.wikiversity.org/wiki/"),
                  (_(u"Wiktionary"),         "http://en.wiktionary.org/wiki/"),
                  (_(u"Wikieducator Content"),      "http://wikieducator.org/"),
                  (_(u"Other"),                     "")]          
