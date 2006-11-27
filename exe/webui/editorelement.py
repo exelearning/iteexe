@@ -74,8 +74,8 @@ class TextEditorElement(EditorElement):
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
-        html += "<br/>\n"
-        html += common.textInput(self.id, "", 40, "Disabled")
+        #html += "<br/>\n"
+        #html += common.textInput(self.id, "", 40, "Disabled")
         html += "<br/>\n"
         html += common.richTextArea("instruc"+self.id, self.field.instruc)
         html += "<br/>"
@@ -109,8 +109,8 @@ class TextAreaEditorElement(EditorElement):
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
-        html += "<br/>\n"
-        html += common.textArea(self.id, "", "Disabled")
+        #html += "<br/>\n"
+        #html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
@@ -150,8 +150,8 @@ class FeedbackEditorElement(EditorElement):
         html += common.submitImage("deleteField", self.id, 
                                    "/images/stock-cancel.png", 
                                    _("Delete"), 1)
-        html += "<br/>\n"
-        html += common.textArea(self.id, "", "Disabled")
+        #html += "<br/>\n"
+        #html += common.textArea(self.id, "", "Disabled")
         html += "<br/>\n"
         html += common.formField('richTextArea', '','instruc',
                                  self.id, '',
@@ -214,6 +214,14 @@ class ImageEditorElement(EditorElement):
                              "/images/"+ImageEditorElement.DefaultImage,
                              self.field.width,
                              self.field.height)
+        floatArr    = [[_(u'Left'), 'left'],
+                      [_(u'Right'), 'right'],
+                      [_(u'None'),  'none']]
+
+        html += common.formField('select', _("Align:"),
+                                 "float" + self.id, '',
+                                 '',
+                                 floatArr, '')
         html += "<br/>\n"
         return html
     

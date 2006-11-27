@@ -286,11 +286,11 @@ data is entered into this field.""")))
             html += "<b>" + _("Name") + ": </b>\n"
             html += common.elementInstruc(self.nameInstruc) + "<br/>"
             html += common.textInput("title", self.idevice.title) + "<br/>\n"
-            html += "<b>" + _("Author") + ": </b>\n"
-            html += common.elementInstruc(self.authorInstruc) + "<br/>"
-            html += common.textInput("author", self.idevice.author) + "<br/>\n"
-            html += common.formField('richTextArea', _(u"Purpose"),'purpose',
-                                     '', self.purposeInstruc, self.purpose)
+            #html += "<b>" + _("Author") + ": </b>\n"
+            #html += common.elementInstruc(self.authorInstruc) + "<br/>"
+            #html += common.textInput("author", self.idevice.author) + "<br/>\n"
+            #html += common.formField('richTextArea', _(u"Purpose"),'purpose',
+                                     #'', self.purposeInstruc, self.purpose)
                                      
             #html += "<b>" + _("Purpose") + ": </b>\n"
             #html += common.elementInstruc(self.purposeInstruc)
