@@ -61,8 +61,8 @@ class Config:
         self.xulDir      = self.exePath.dirname()
         # localeDir is the base directory where all the locales are stored
         self.localeDir   = self.exePath.dirname()/"locale"
-        # port is the port the exe webserver will listen on
-        self.port        = 8081
+        # port is the port the exe webserver will listen on (previous default was 8081)
+        self.port        = 51235
         # dataDir is the default directory that is shown to the user
         # to save packages and exports in
         self.dataDir     = Path(".")

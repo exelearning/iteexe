@@ -89,11 +89,49 @@ class WebServer:
         self.root.putChild("preferences", self.preferences)
         self.root.putChild("about",       self.about)
 
-        try:
-            reactor.listenTCP(self.config.port, appserver.NevowSite(self.root),
-                              interface="127.0.0.1")
-        except CannotListenError, exc:
-            log.error("Can't listen on interface 127.0.0.1, port %s: %s" % 
-                      (self.config.port, unicode(exc)))
-        else:
+
+        # check the configured port.  If not available, then
+        # loop through a range of available ports to try and find a free one:
+        verbose_port_search = 0
+        port_test_done = 0
+        found_port = 0
+        test_port_num = self.config.port
+        test_port_count = 0
+        # could set a maximum range within the users's config file, but for now, just hardcode a max:
+        max_port_tests = 5000
+        while not port_test_done:
+            test_port_num = self.config.port + test_port_count
+            try:
+                if verbose_port_search:
+                    print "trying to listenTCP on port# ", test_port_num
+                reactor.listenTCP(test_port_num, appserver.NevowSite(self.root),
+                                  interface="127.0.0.1")
+                if verbose_port_search:
+                    print "still here after listenTCP on port# ", test_port_num
+                found_port = 1
+                #
+                # for testing purposes, can *sometimes* comment out the following assignment of port_test_done = 1,
+                # which will then cause a duplicate attempt at the first port, effectively hosing all subsequent attempts....
+                # (this may only apply with max_port_tests < 100 or so, otherwise socket errors for too many files open)
+                #
+                port_test_done = 1
+            except CannotListenError, exc:
+                if verbose_port_search:
+                    print "caught exception after listenTCP on port# ", test_port_num
+                last_exception = exc
+                test_port_count += 1
+                if test_port_count >= max_port_tests:
+                    port_test_done = 1
+            
+        if found_port:
+            self.config.port = test_port_num
+            if verbose_port_search:
+                print "found available eXe port# ", self.config.port
             reactor.run()
+        else:
+            print "Sorry, unable to find an available port in the range of: ", self.config.port, " - ", test_port_num
+            print "last exception: ", unicode(last_exception)
+            log.error("Can't listen on interface 127.0.0.1, ports %s-%s, last exception: %s" % 
+                          (self.config.port, test_port_num, unicode(last_exception)))
+
+
