@@ -48,7 +48,7 @@ class WikipediaIdevice(Idevice):
     persistenceVersion = 8
 
     def __init__(self, defaultSite):
-        Idevice.__init__(self, x_(u"Wikipedia Article"), 
+        Idevice.__init__(self, x_(u"Wiki Article"), 
                          x_(u"University of Auckland"), 
                          x_(u"""<p>The Wikipedia iDevice allows you to locate 
 existing content from within Wikipedia and download this content into your eXe 
