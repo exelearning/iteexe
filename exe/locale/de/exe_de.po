@@ -3941,6 +3941,15 @@ msgstr "Rechte"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Der Urheberrechtshinweis macht deutlich aus welchen Quellen Material stammt, das im Kurs verwendet wurde und welche urheberrechtlichen Auflagen bei der Verwendung zu beachten sind. Urheberrechtliche Fragen sind sehr komplex und von nationalem Recht abhängig. In Deutschland sind fürSchulen, Hochschulen und andere Bildungsbereiche unterschiedliche Vorgaben zu beachten. Wenn Sie selbst erstelltes Material zur Verfügung stellen, sind Sie selberUrheber und Rechteinhaber. Mit dem Urheberrechtshinweis legen sie fest, wie andere Ihre Materialien verwenden dürfen."
 
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#, fuzzy
+msgid "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Aktualisieren\" accesskey=\"r\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

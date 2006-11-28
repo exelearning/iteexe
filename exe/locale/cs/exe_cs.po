@@ -3665,6 +3665,12 @@ msgstr "Práva:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Typicky v položce Práva bude obsažena specifikace oprávnění vedení k daným zdrojům nebo odkaz na takové informace. Informace o oprávnění zahrnují často Intellectual Property Rights (IPR), Copyright a jiná vlastnická práva. Pokud nebude položka Práva uvedena, nelze vytvářet domněnky o stavu jakýchkoli práv s ohledem na zdroje."
 
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#, fuzzy
+msgid "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Obnovit\" accesskey=\"o\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

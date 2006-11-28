@@ -3838,6 +3838,15 @@ msgstr "Prawa:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Zazwyczaj, element Prawa zawiera opis praw autorskich dla danego zasobu lub  spis odnosników zawierających takie informacje. Informacje o prawach często obejmują Intellectual Property Rights (IPR), Copyrights, oraz niektóre Prawa Własności. Jeśli element ten jest pusty, należy respektować prawa autorskie dla tego zasobu."
 
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#, fuzzy
+msgid "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Odśwież\" accesskey=\"r\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

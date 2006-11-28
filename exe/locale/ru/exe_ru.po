@@ -1203,7 +1203,7 @@ msgstr ""
 
 #: exe/idevices/forumblock.py:119
 msgid "Please enter a name for the forum\n"
-msgstr "Пожалуйста, введите название форума"
+msgstr "Пожалуйста, введите название форума\n"
 
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
@@ -1900,7 +1900,7 @@ msgstr "пустой для оригинального размера"
 
 #: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
-msgstr "дублировать название форума."
+msgstr "дублировать название форума.\n"
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
@@ -3418,4 +3418,9 @@ msgstr "Права:"
 #: exe/resources/internal/templates/dublincore.xul:<description
 #: id="dcDescRights"> exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
+msgstr ""
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr ""

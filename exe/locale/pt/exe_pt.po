@@ -3703,6 +3703,12 @@ msgstr "Direitos:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Tipicamente o elemento Direitos (Rights) contém um afirmação relativa aos direitos para o recurso ou uma referência a um serviço que fornece essa informação. Os direitos de informação frequentemente  andam de mãos dadas com os direitos de propriedade intelectual . Se os direitos de autor estão ausentes não se pode assumir qualquer informação relativamente a estes direitos no recurso em causa."
 
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#, fuzzy
+msgid "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Actualizar\" accesskey=\"r\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
