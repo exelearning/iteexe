@@ -608,3 +608,294 @@ msgstr "Avestaans"
 msgid "_: suggested by lvandijck"
 "Zip File"
 msgstr "ZIP-bestand"
+
+#: exe/engine/multimediaidevice.py:50
+msgid "_: suggested by lvandijck"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+msgstr "<ol>  <li>Klik op &lt;Kies een MP3&gt; en blader naar het MP3-bestand dat u wil toevoegen</li> <li>Bepaal de positie op het scherm met het dropdownmenu.</li>  <li>Optioneel: geef een bijschrift.</li> <li>AVoeg relevante tekst toe aan het MP3-bestand.</li> <li>Kies een visuele stijl voor het iDevice bijv. 'Lichte nadruk' toont een boord en pictogram bij de inhoud van het iDevice.</li></ol>"
+
+#: exe/engine/field.py:708
+msgid "_: suggested by lvandijck"
+"<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
+msgstr "<p>Stel wiskundige formules op door symbolen te selecteren in onderstaande editor. Ieder symbool wordt later getoond in de wiskundige taal LATEX. Bekijk een voorbeeld met de knop &lt;Voorbeeld&gt; beneden."
+
+#: exe/engine/multimediaidevice.py:74
+msgid ""
+"_: suggested by lvandijck"
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"Met uitlijning bepaalt u waar\n"
+"de mediaspeler op het scherm staat."
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid "_: suggested by lvandijck"
+"Auckland University of Technology"
+msgstr "Auckland University of Technology"
+
+#: exe/engine/multimediaidevice.py:49
+msgid "_: suggested by lvandijck"
+"Choose an MP3 file"
+msgstr "Selecteer een MP3-bestand"
+
+#: exe/engine/casestudyidevice.py:54
+msgid "_: suggested by lvandijck"
+"Choose an optional image to be shown to the student on completion of this question"
+msgstr "Optioneel: kies een afbeelding die getoond wordt na het beëindigen van de vraag."
+
+#: exe/engine/field.py:715
+msgid ""
+"_: suggested by lvandijck"
+"Click on Preview button to convert \n"
+"                                  the latex into a symbols image."
+msgstr "Klik op de knop Voorbeeld om de LATEX-notatie                                    om te zetten in afbeelding met symbolen."
+
+#: exe/xului/mainpage.py:577
+msgid "_: suggested by lvandijck"
+"Couldn't load file, please email file to bugs@exelearning.org"
+msgstr "Kon het bestand niet laden. Stuur het bestand naar bugs@exelearning.org"
+
+#: exe/engine/casestudyidevice.py:53
+msgid "_: suggested by lvandijck"
+"Feedback Image"
+msgstr "Feedback-afbeelding"
+
+#: exe/webui/wikipediablock.py:194
+msgid "_: suggested by lvandijck"
+"GNU Free Documentation License"
+msgstr "GNU Free Documentation Licentie"
+
+#: exe/webui/questionelement.py:108
+msgid "_: suggested by lvandijck"
+"Hide Feedback"
+msgstr "Verberg feedback"
+
+#: exe/engine/multimediaidevice.py:40
+msgid "_: suggested by lvandijck"
+"MP3"
+msgstr "MP3"
+
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
+msgid "_: suggested by lvandijck"
+"Maths"
+msgstr "Wiskunde"
+
+#: exe/webui/wikipediablock.py:117
+msgid "_: suggested by lvandijck"
+"Own site"
+msgstr "Eigen site"
+
+#: exe/engine/multimediaidevice.py:71
+msgid ""
+"_: suggested by lvandijck"
+"Provide a caption for the \n"
+"MP3 file. This will appear in the players title bar as well."
+msgstr "Geef een bijschrift voor het MP3-bestand. Dit verschijnt in de titelbalk van de mediaspeler"
+
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
+msgid "_: suggested by lvandijck"
+"RSS"
+msgstr "RSS"
+
+#: exe/webui/element.py:1066
+msgid "_: suggested by lvandijck"
+"Select a font size: "
+msgstr "Kies een lettergrootte:"
+
+#: exe/webui/element.py:355
+msgid "_: suggested by lvandijck"
+"Select an MP3"
+msgstr "Kies een MP3-bestand"
+
+#: exe/engine/imagemagnifieridevice.py:71
+msgid "_: suggested by lvandijck"
+"Select the size of the magnifying glass"
+msgstr "Bepaal de grootte van het vergrootglas"
+
+#: exe/webui/questionelement.py:103
+msgid "_: suggested by lvandijck"
+"Show Feedback"
+msgstr "Toon feedback"
+
+#: exe/engine/multimediaidevice.py:42
+msgid "_: suggested by lvandijck"
+"The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
+msgstr "Met het iDevice MP3 kunt u een MP3-bestand toevoegen met relevante tekstinstructies."
+
+#: exe/engine/rssidevice.py:43
+msgid ""
+"_: suggested by lvandijck"
+"The RSS iDevice is used \n"
+"to provide new content to an individual users machine. Using this\n"
+"iDevice you can provide links from a feed you select for learners to view."
+msgstr ""
+"Met het iDevice RSS \n"
+" wordt nieuwe inhoud rechtstreeks naar de computer van de leerling gestuurd. \n"
+" U maakt hiermee een link naar een geselecteerde RSS-feed."
+
+#: exe/engine/wikipediaidevice.py:97
+#, python-format
+msgid "_: suggested by lvandijck"
+"Unable to download from %s <br/>Please check the spelling and connection and try again."
+msgstr "Kan niet downloaden van %s <br/>Controleer de spelling en de verbinding en probeer opnieuw."
+
+#: exe/webui/wikipediablock.py:104
+msgid "_: suggested by lvandijck"
+"Wikieducator Content"
+msgstr "Wikieducator-materiaal"
+
+#: exe/engine/mathidevice.py:49
+msgid "_: suggested by lvandijck"
+"You can use the toolbar or enter latex manually into the textarea. "
+msgstr "U kunt de knoppenbalk gebruiken of zelf LATEX intypen in het tekstveld."
+
+#: exe/webui/element.py:1063
+msgid "_: suggested by lvandijck"
+"newline"
+msgstr "nieuwe regel"
+
+#: exe/webui/element.py:1062
+msgid "_: suggested by lvandijck"
+"text"
+msgstr "tekst"
+
+#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
+#: label="Dublin Core Metadata">
+#: exe/resources/internal/templates/dublincore.xul:<caption
+msgid "_: suggested by lvandijck"
+"Dublin Core Metadata"
+msgstr "Dublin Core Metadata"
+
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
+#: label="SCORM 1.2 Options">
+#: exe/resources/internal/templates/exportproperties.xul:<caption
+msgid "_: suggested by lvandijck"
+"SCORM 1.2 Options"
+msgstr "Opties SCORM 1.2"
+
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
+#: label="SCORM 1.2 Options">
+#: exe/resources/internal/templates/exportproperties.xul:<caption
+msgid "_: suggested by lvandijck"
+"SCORM 1.2 Options"
+msgstr "Opties SCORM 1.2"
+
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
+#: label="SCORM 1.2 Options">
+#: exe/resources/internal/templates/exportproperties.xul:<caption
+msgid "_: suggested by lvandijck"
+"SCORM 1.2 Options"
+msgstr "Opties SCORM 1.2"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
+#: label="Kashmiri ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Kashmiri "
+msgstr "Kasjmiers"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
+#: label="Kirghiz "> exe/resources/internal/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Kirghiz "
+msgstr "Kirgizisch"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
+#: label="Malagasy ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Malagasy "
+msgstr "Madagassisch"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
+#: label="Marshall ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Marshall "
+msgstr "Marshall "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
+#: label="Malayalam ">
+#: exe/resources/internal/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Malayalam "
+msgstr "Malayalam "
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
+#: label="Nauru "> exe/resources/internal/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Nauru "
+msgstr "Nauru "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nd"
+#: id="dcmind" label="Ndebele, North ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Ndebele, North "
+msgstr "Noord-Ndebele"
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ng"
+#: id="dcming" label="Ndonga "> exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Ndonga "
+msgstr "Ndonga "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nr"
+#: id="dcminr" label="Ndebele, South ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Ndebele, South "
+msgstr "Zuid-Ndebele"
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nv"
+#: id="dcminv" label="Navajo "> exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Navajo "
+msgstr "Navajo "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ny"
+#: id="dcminy" label="Chichewa; Nyanja ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Chichewa; Nyanja "
+msgstr "Chichewa; Chinyanja "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="oc"
+#: id="dcmioc" label="Occitan; Provençal ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Occitan; Provençal "
+msgstr "Occitaans; Provencaals "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="om"
+#: id="dcmiom" label="(Afan) Oromo ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"(Afan) Oromo "
+msgstr "(Afan) Oromo "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="or"
+#: id="dcmior" label="Oriya "> exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Oriya "
+msgstr "Oriya "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="os"
+#: id="dcmios" label="Ossetian; Ossetic ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Ossetian; Ossetic "
+msgstr "Ossetisch"
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pa"
+#: id="dcmipa" label="Panjabi; Punjabi ">
+#: exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Panjabi; Punjabi "
+msgstr "Punjabi "
+
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pi"
+#: id="dcmipi" label="Pali "> exe/xului/templates/dublincore.xul:<menuitem
+msgid "_: suggested by lvandijck"
+"Pali "
+msgstr "Pali "

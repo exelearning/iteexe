@@ -1,4 +1,4 @@
-1162850511 1162891787
+1163562564 1162891787
 check-validchars:
 check-numbers:63,279
 check-unchanged:18,59,176,198,213,282,297,346,372,375,394,398,402,408,411,430,432,443
@@ -23,7 +23,7 @@ check-startwhitespace:65,66,72,118,131,390,422
 check-accelerators:
 check-long:
 check-musttranslatewords:
-has-suggestion:635
+has-suggestion:
 check-puncspacing:0,2,3,6,7,8,9,13,15,16,19,44,67,111,117,148,214,215,222,223,287,310,319,325,337,341,342,350,359,404,516
 check-notranslatewords:
 check-variables:
