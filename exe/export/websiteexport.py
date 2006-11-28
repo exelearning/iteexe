@@ -80,6 +80,7 @@ class WebsiteExport(object):
             thisPage.save(outputDir, prevPage, nextPage, self.pages)
             prevPage = thisPage
             thisPage = nextPage
+            
 
         thisPage.save(outputDir, prevPage, None, self.pages)
         # Zip up the website package

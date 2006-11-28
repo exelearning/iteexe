@@ -331,6 +331,8 @@ class ScormPage(Page):
             html += u'<a class="previouslink" '
             html += u'href="javascript: goBack();">%s</a> | <a class="nextlink"' % _('Previous')
             html += u'href="javascript: goForward();">%s</a>' % _('Next')
+        html += self.renderLicense()
+        html += self.renderFooter()
         html += u"</body></html>\n"
         html = html.encode('utf8')
         return html
@@ -351,6 +353,7 @@ class ScormExport(object):
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
         self.templatesDir = config.webDir/"templates"
+        self.schemasDir   = config.webDir/"schemas"
         self.styleDir     = Path(styleDir)
         self.filename     = Path(filename)
         self.pages        = []
@@ -405,13 +408,23 @@ class ScormExport(object):
         
         # Copy the scripts
         self.scriptsDir.copylist(('APIWrapper.js', 
-                                  'imscp_rootv1p1p2.xsd',
-                                  'imsmd_rootv1p2p1.xsd',
-                                  'ims_xml.xsd',
-                                  'adlcp_rootv1p2.xsd',
+                                  #'imscp_rootv1p1p2.xsd',
+                                  #'imsmd_rootv1p2p1.xsd',
+                                  #'ims_xml.xsd',
+                                  #'adlcp_rootv1p2.xsd',
                                   'SCOFunctions.js', 
                                   'libot_drag.js',
                                   'common.js'), outputDir)
+        schemasDir = ""
+        if self.scormType == "scorm1.2":
+            schemasDir = self.schemasDir/"scorm1.2"
+        else:
+            schemasDir = self.schemasDir/"scorm2004"
+
+        schemasDir.copylist(('imscp_rootv1p1p2.xsd',
+                            'imsmd_rootv1p2p1.xsd',
+                            'adlcp_rootv1p2.xsd'), outputDir)
+ 
 
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')

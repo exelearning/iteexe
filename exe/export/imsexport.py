@@ -212,6 +212,8 @@ class IMSPage(Page):
                 html += block.renderView(self.node.package.style)
 
         html += u"</div>\n"
+        html += self.renderLicense()
+        html += self.renderFooter()
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')
@@ -233,6 +235,7 @@ class IMSExport(object):
         self.imagesDir    = config.webDir/"images"
         self.scriptsDir   = config.webDir/"scripts"
         self.templatesDir = config.webDir/"templates"
+        self.schemasDir   = config.webDir/"schemas/ims"
         self.styleDir     = Path(styleDir)
         self.filename     = Path(filename)
         self.pages        = []
@@ -277,10 +280,11 @@ class IMSExport(object):
         
         # Copy the scripts
         self.scriptsDir.copylist(('libot_drag.js',
-                                  'imscp_v1p1.xsd',
-                                  'imsmd_v1p2p2.xsd',
-                                  'ims_xml.xsd',
                                   'common.js'), outputDir)
+        
+        self.schemasDir.copylist(('imscp_v1p1.xsd',
+                                  'imsmd_v1p2p2.xsd',
+                                  'ims_xml.xsd'), outputDir)
 
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
