@@ -66,7 +66,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -105,6 +105,8 @@ class Package(Persistable):
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self.scolinks      = False
+        self.license       = "None"
+        self.footer        = ""
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
@@ -434,6 +436,14 @@ class Package(Persistable):
         """
         self._backgroundImg = ''
         self.backgroundImgTile = False
+        
+    def upgradeToVersion8(self):
+        """
+        For version 0.20
+        """
+        self.license = 'None'
+        self.footer = ""
+
 
 # ===========================================================================
 
