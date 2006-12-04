@@ -48,6 +48,7 @@ exe/engine/version.py
 exe/export/singlepageexport.py
 exe/export/scormexport.py
 exe/export/pages.py
+exe/export/singlepage.py
 exe/export/textexport.py
 exe/export/websiteexport.py
 exe/export/imsexport.py

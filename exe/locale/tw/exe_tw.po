@@ -3439,6 +3439,11 @@ msgstr ""
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+msgid "label=\"SCORM 2004\" accesskey=\"c\""
+msgstr ""
+
 #~ msgid "Strong emphasis"
 #~ msgstr "Nsiso a emu yɛ den"
 

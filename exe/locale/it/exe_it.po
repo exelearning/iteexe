@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
 "PO-Revision-Date: 2006-07-28 15:30+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
-"Language-Team: Dott.ssa Carla Impagliazzo <c.impagliazzo@euriskonapoli.it>\n"
+"Language-Team: Prof. Carlo Gandolfi <crgand@users.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,23 +25,25 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
+"\"Trovare il file .txt (nel file applet) \n"
+"e aprirlo. Copia il contenuto di questo file <ctrl A, ctrl C> nel campo codice dell'applet."
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
-msgstr ""
+msgstr "---Muovi a-->"
 
 #: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
 #: exe/xului/mainpage.py:366
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Usare nomi in formato ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
+msgstr "<dl>  <dt>Se il tuo obiettivo è provare la conoscenza di concetti base o la comprensione del testo  </dt>  <dd>    <p>  Scrivere un sommario di concetti o un testo abbastanza lungo per testare gli obiettivi della conoscenza, ma non eccessivamente lungo da indurre pesantezza. Meno di una pagina scritta è probabilmente adeguata, ma probabilmente troppo poco per studenti giovani o per principianti.    </p>    <p>Evidenziare le parole del testo che sono parole chiavi per la conoscenza dei concetti. Questi dovrebbero essere probabilmente verbi, nomi e avverbi. Scegliere la alternative con una chiara risposta.    </p>  </dd>  <dt>Se l'obiettivo è provare  la conoscenza di un vocabolario  </dt>  <dd><p>Scrivere un testo usando le parole obiettivo del vocabolario. Questo testo dovrebbe essere coerente e conciso, e di adeguata lunghezza. Evidenziare le parole obiettivo nel testo. Scegliere le alternative con una chiara risposta.</p>  </dd>  <dt>Se l'obiettivo è verificare la formazione di parole o la grammatica:  </dt>  <dd>  <p>Scrivere un testo usando forme  obiettivo. Questo testo dovrebbe essere coerente e conciso, e di adeguata lunghezza. Ricordare che se l'obiettivo non è la conoscenza di un vocabolario di parole, il significato delle parole dovrebbe essere già  noto agli studenti.  </p>  <p>Evidenziare le parole chiavi nel testo. Fornire alternative con lo stesso in sieme di parole, ma con differente struttura. E' una buona idea prendere collegamenti per verificare  con test/esercizi  per essere sicuri che non ci saranno sorprese!  </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Premere su &lt;Seleziona MP3&gt; e raggiungere il file MP3 che si desidera inserire</li> <li>Premere sul menù a comparsa per selezionare la posizione        in cui apparirà il file sullo schermo.</li>  <li>Inserire una didascalia opzionale per il file.</li> <li>Associare ogni informazione rilevante al file MP3.</li> <li>Scegliere la tipologia di stile che verrà mostrata dal'iDevice       es.: 'Una certa enfasi' applica un bordo ed un'icona al contenuto mostrato dall'iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -62,14 +64,30 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"L'immagine con l'iDevice di testo può essere usata in diversi modi per sostenere\n"
+"le dimensioni dei contenuti di eXe in entrambi i processi emozionale (affettivo)\n"
+"e di apprendimento (cognitivo). \n"
+"</p><p>\n"
+"<b>Integrare la visione con commenti verbali</b>\n"
+"</p><p>\n"
+"I psicologi cognitivi affermano che presentare agli studenti una\n"
+"immagine rappresentativa con il corrispondente commento verbale (presentati\n"
+"contemporaneamente) può  ridurre il carico cognitivo ed esaltare la retenzione delle conoscenze.\n"
+"Questo iDevice può essere utilizzato per presentare una immagine (fotografia, diagrammma o\n"
+"grafico) con un breve commento verbale che include i principali punti di relazione con\n"
+"l'immagine. Per esempio, se si stà insegnando il funzionamento di un motore a combustione interna\n"
+"a quattro tempi, si dovrebbe visualizzare immagini per ciascuna delle quattro posizioni dei pistoni\n"
+"con un breve commento per gli aspetti chiave di ciascuna immagine.\n"
+"</p>"
 
 #: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
+msgstr "<p>Assegnare una etichetta per l'allegato. E' preferibile includere file del tipo pdf, ppt, etc.</p><p>L'inclusione delle dimensioni è raccomandata in modo che, dopo che un pacchetto viene esportato su in sito web, l'utente abbia una idea di quanto sarà il dowloading.</p><p>Per esempio: <code>File Forecast.doc (500kb)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr ""
+msgstr "<p>Gli esercizi Cloze sono testi o affermazioni in cui gli studenti devono riempire la parole mancanti. Essi sono spesso utilizzati per i seguenti obiettivi:</p><ol><li>Verificare la conoscenza dei concetti base del corso (essi dovrebbero essere verifiche preliminari, esercizi formativi, o verifiche sommative).</li><li>Per verificare la comprensione alla lettura.</li><li>Per verificare la conoscenza di un vocabolario.</li><li>Per verificare la formazione di una parola e/o competenze grammaticali. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -78,14 +96,18 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
+"<p>Inserire il testo per una attivitÃ  cloze nel campo cloze\n"
+"mediante copia-incolla da un'altra sorgente oppure inserendo il testo direttamente nel\n"
+"campo. </p><p> Per selezionare le parole da nascondere, doppio click sulla parola\n"
+"da selezionare e premere sul pulsante Nascondi/Mostra Parola in basso.</p>"
 
 #: exe/engine/field.py:462
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr ""
+msgstr "<p>Se si lascia disabilitato saranno accettati solo un piccolo numero di errori ortografici o maiuscolo/minuscolo. Se abilitato sarà accettata l'esatta corrispondenza ortografica e di maiuscolo/minuscolo.</p><p><strong>Per esempio:</strong> Se la risposta corretta è <code>Elefante</code> quindi entrambe <code>elefante</code> e <code>Elifante</code> saranno giudicate <em>\"abbastanza vicino\"</em> dall'algoritmo anche se si ha una lettera errata, quando \"Verifica Maiuscolo/Minuscolo\" è abilitato.</p><p>Se la verifica Maiuscolo/minuscolo è disabilitata nell'esempio precedente, la lettera minuscola <code>e</code> non sarà  considerata un errore e <code>elifante</code> sarà anch'essa accettata.</p><p>Se entrambe \"Verifica stringente\" and \"Verifica Maiuscolo/Minuscolo\" sono impostate, la sola risposta corretta è  \"Elefante\". Solo se \"Verifica stringente\" è abilitata e \"Verifica Maiuscolo/Minuscolo\" non lo è, \"elefante\" sarà anche essa accettata.</p>"
 
 #: exe/engine/field.py:483
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr ""
+msgstr "<p>Se questa opzione è abilitata, le risposte inviate con diversi formati Maiuscolo/Minuscolo sono identificate come sbagliate.</p>"
 
 #: exe/engine/field.py:488
 msgid ""
@@ -93,14 +115,17 @@ msgid ""
 "learner types it rather then all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Se questa opzione è abilitata, ogni parola sarà evidenziata appena\n"
+"lo studente la inserisce invece di evidenziare tutte le parole alla fine\n"
+"dell'esercizio.</p>"
 
 #: exe/engine/field.py:708
 msgid "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
-msgstr ""
+msgstr "<p>Seleziona i simboli dall'area di testo sottostante per creare formule matematiche. Ogni simbolo verrà visalizzato nel campo col linguaggio matematico LATEX la cui anteprima può essere vista usando il bottone  &lt;Anteprima&gt;."
 
 #: exe/engine/idevicestore.py:247
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
+msgstr "<p>Gli insegnanti dovrebbero tenere in mente le seguenti informazioni quando usano gli iDevice: </p><ol><li>Pensare sul numero di differenti tipi di attività pianificate per le risorse che saranno segnalate in modo visuale nel contenuto. Non utilizzare un numero elevato di tipi o attivita di classificazione differenti altrimenti lo studente si potrebbe confondere. Normalmente tre o quattro tipi diversi sono più che adeguati per la risorsa di insegnamento.</li><li>Da una prospettiva di progettazione visuale, evitare di generare due iDevices consecutivi senza testo fra di essi. Se questo è proprio necessario, riunire due domande o eventi in un solo iDevices. </li><li>Pensare  alle attività in modo tale che il beneficio percepito per farla supera il tempo e lo sforzo che sarà necessario per progettarla. </li></ol>"
 
 #: exe/engine/idevicestore.py:242
 msgid ""
@@ -110,6 +135,11 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>L'attività  di lettura sarà  principalmente \n"
+"utilizzata per verificare la coprensione da parte dello studente di un dato testo. \n"
+"Questo può essere fatto mediante le risposte dello studente per riflettere sulla lettura \n"
+"e rispondendo a domande su di essa, o mediante completamento di altre possibili processi \n"
+"fisici basati sulla lettura.</p>"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -121,6 +151,13 @@ msgid ""
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
+"<p>L'iDevice Wikipedia permette di localizzare \n"
+"un contenuto esistente dentro Wikipedia ed effettuare lo scaricamento dei contenuti \n"
+"nelle risorse di eXe. L'iDevice Articolo Wikipedia prende una fotografia istantanea \n"
+"della copia del contenuto dell'articolo . I cambiamenti in Wikipedia non saranno automaticamente \n"
+"aggiornati e copiati in eXe, dovrà essere presa una copia aggiornata dell'articolo. \n"
+"Nel contempo i cambiamente fatti in eXe son saranno aggiornati in Wikipedia.</p> <p>I contenuti Wikipedia \n"
+"sono coperti dalla licenza di documentazione libera GNU.</p>"
 
 #: exe/engine/idevicestore.py:350
 msgid ""
@@ -130,6 +167,11 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>L'attività  di lettura, come il nome \n"
+"suggerisce, dovrebbe aiutare lo studente ad eseguire alcune forme di attività. \n"
+"Queste attività  dovrebbero essere direttamente correlate con il testo richiesto da \n"
+"leggere allo studente. Le risposte di ritorno all'attività, quando sono appropriate, \n"
+"possono fornire indicazioni sulle capacità  di orientamento.</p>"
 
 #: exe/engine/galleryidevice.py:491
 msgid ""
@@ -137,10 +179,13 @@ msgid ""
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Quando si hanno un certo numero di immagini che sono in relazione \n"
+"tra loro o con un particolare esercizio di apprendimento, bisognerebbe visualizzarle \n"
+"nel contesto di una galleria di immagini invece che individualmente.</p>"
 
 #: exe/engine/package.py:203
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/casestudyidevice.py:74
 msgid ""
@@ -158,51 +203,65 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Un Caso di Studio è un iDevices che fornisce agli studenti \n"
+"mediante una simulazione, contenuti che hanno basi educative. Esso esamina una situazione, generalmente \n"
+"basata sulla realtà, e richiede agli studenti di dimostrare o descrivere quali azioni essi \n"
+"dovrebbero intraprendere per completare un lavoro o risolvere una situazione. Un Caso di Studio permette \n"
+"agli studenti di applicare le loro personali conoscenze ed esperienze per completare i lavori assegnati. \n"
+"Quando si progetta un Caso di Studio bisogna considerare che:<ul> \n"
+"<li>\tQuali punti educativi sono trasferiti nella storia</li>\n"
+"<li>\tQuale preparazione dovrebbero avere gli studenti prima di affrontare il Caso di Studio</li> \n"
+"<li>\tDove il caso di studio si collega con il resto del corso</li> \n"
+"<li>\tCome gli studenti interagiranno con i materiali e tra loro es.: \n"
+"In una situazione interna ad una classe se è possibile creare gruppi di lavoro ed assegnare \n"
+"ad essi diversi aspetti ed in caso affermativo avere una idea della reazione della classe.</li></ul>"
 
 #: exe/engine/truefalseidevice.py:66
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Può essere fornito un suggerimento per assistere lo \n"
+"studente nel rispondere alla domanda."
 
 #: exe/webui/editorpane.py:72
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
-msgstr ""
+msgstr "Un suggerimento pedagogico chiarisce l'uso che si intende fare e fornisce l'aspetto pedagogico utilizzato nello sviluppo dei dispositivi."
 
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
-msgstr ""
+msgstr "Una unica semplice discussione"
 
 #: exe/webui/editorpane.py:224
 msgid "Actions"
-msgstr ""
+msgstr "Azioni"
 
 #: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:325
 #: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:394
 #: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:440
 #: exe/webui/questionelement.py:74
 msgid "Activity"
-msgstr ""
+msgstr "Attività"
 
 #: exe/webui/editorpane.py:213
 msgid "Add"
-msgstr ""
+msgstr "Aggiungi"
 
 #: exe/webui/element.py:251
 msgid "Add Image"
-msgstr ""
+msgstr "Aggiungi Immagine"
 
 #: exe/webui/element.py:566
 msgid "Add JPEG Image"
-msgstr ""
+msgstr "Aggiungi Immagine JPEG"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
-msgstr ""
+msgstr "Aggiungere una singola linea di testo ad un iDevices. Utile se si vuole l'abilità di posizionare di una etichetta dentro il dispositivo."
 
 #: exe/webui/editorpane.py:78
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
-msgstr ""
+msgstr "Aggiungere un casella di testo ad un iDevice. Usata per inserire la descrizione di un contenuto testuale."
 
 #: exe/idevices/appletidevice.py:57
 msgid ""
@@ -210,44 +269,47 @@ msgid ""
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Aggiungere tutti i files previsti per l'applet\n"
+"eccetto i file .txt che vengono aggiunti uno alla volta con il pulsante Upload. I \n"
+"files, una volta caricati, sarnno visualizzati sotto il campo di codice dell'Applet."
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
-msgstr ""
+msgstr "Aggiunge una immagine ad un iDevice. Abilita la selezione di un immagine da un archivivio con files di  immagini."
 
 #: exe/webui/element.py:1259 exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
-msgstr ""
+msgstr "Aggiungere un'altra Opzione"
 
 #: exe/idevices/quiztestblock.py:101
 msgid "Add another Question"
-msgstr ""
+msgstr "Aggiungere un'altra Domanda"
 
 #: exe/webui/multichoiceblock.py:118 exe/webui/element.py:1471
 msgid "Add another option"
-msgstr ""
+msgstr "Aggiungere un'altra opzione"
 
 #: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:97
 msgid "Add another question"
-msgstr ""
+msgstr "Aggiungere un'altra domanda"
 
 #: exe/idevices/appletblock.py:80
 msgid "Add files"
-msgstr ""
+msgstr "Aggiungere files"
 
 #: exe/webui/galleryblock.py:180
 msgid "Add images"
-msgstr ""
+msgstr "Aggiungere immagini"
 
 #: exe/webui/editorpane.py:84
 msgid "Add interactive feedback to your iDevice."
-msgstr ""
+msgstr "Aggiungere risposte interattive all'iDevice."
 
 #: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
 #: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
 #: exe/idevices/flashmovieblock.py:78
 msgid "Align:"
-msgstr ""
+msgstr "Allineamento:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:88
@@ -255,22 +317,28 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
+"Allineamento che permette \n"
+"di scegliere dove sarà posizionata un'immagne nello schermo."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
+"Allineamento che permette \n"
+"di scegliere dove sarà posizionato il media player nello schermo."
 
 #: exe/engine/field.py:524
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Permette il completamento automatico quando \n"
+"                                       l'utente riempie gli spazi vuoti."
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Permette il completamento automatico quando l'utente riempie i spazi vuoti."
 
 #: exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -289,6 +357,21 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Sebbene più delle volte utilizzato in verifiche formali di situazioni, \n"
+"le Domande a Risposta Multipla possono essere utilizzate come mezzo \n"
+"di stimolo del pensiero e di discussione su argomenti in cui gli studenti \n"
+"sono un poco reticenti nelle risposte. \n"
+"\n"
+"Quando si progetta un test con Domande a Risposta Multipla bisogna considerare quanto segue: \n"
+"<ul>\n"
+"<li> Quali aspettative di apprendimento verificano le domande</li>\n"
+"<li> Quali abilità intellettive esse verificano</li>\n"
+"<li> Quali sono le abilità linguistiche degli studenti</li>\n"
+"<li> Genere ed esiti culturali</li>\n"
+"<li> Evitare strutture linguistiche e grammaticali che potrebbero \n"
+"     fornire gli indizii</li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:435
 msgid ""
@@ -296,23 +379,27 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Una attività può essere definita come un processo o un insieme di processi \n"
+"che uno studente deve completare. Fornire un chiara dichiarazione del processo \n"
+"e considerare ogni condizione che può aiutare oppure ostacolare lo studente \n"
+"nelle prestazioni del processo."
 
 #: exe/idevices/appletblock.py:86
 msgid "Applet Code:"
-msgstr ""
+msgstr "Codice Applet:"
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
-msgstr ""
+msgstr "Articolo"
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
-msgstr ""
+msgstr "Allegato"
 
 #: exe/engine/attachmentidevice.py:99
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "L'allegato %s non ha un nodo genitore"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
 msgid "Auckland University of Technology"
@@ -320,62 +407,62 @@ msgstr ""
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
-msgstr ""
+msgstr "Autore"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr ""
+msgstr "Testo del Pulsante"
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
-msgstr ""
+msgstr "Può uno studente comunicare in questo forum?:"
 
 #: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:232
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: exe/xului/mainpage.py:238 exe/xului/mainpage.py:297
 #: exe/xului/mainpage.py:364
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "Impossibile accedere alla directory "
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
 #: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
-msgstr ""
+msgstr "Didascalia:"
 
 #: exe/engine/casestudyidevice.py:72
 msgid "Case Study"
-msgstr ""
+msgstr "Caso di studio"
 
 #: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:216
 msgid "Change Image"
-msgstr ""
+msgstr "Cambiare Immagine"
 
 #: exe/webui/element.py:734
 msgid "Check Caps?"
-msgstr ""
+msgstr "Verifica Maiuscolo?"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Cinese"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
-msgstr ""
+msgstr "Scegliere un LMS"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr ""
+msgstr "Scegliere una Immagine"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Scegliere un file MP3"
 
 #: exe/engine/casestudyidevice.py:54
 msgid "Choose an optional image to be shown to the student on completion of this question"
-msgstr ""
+msgstr "Scegliere una immagine opzionale da mostrare allo studente al completamento di questa domanda"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -384,6 +471,10 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
 msgstr ""
+"Scegliere le dimensioni dell'immagine da visualizzare. \n"
+"Le dimensioni sono in pixels. Generalmente, 100 \n"
+"pixels sono circa 3 cm. Lasciare in bianco entrambi i campi se si vuole che \n"
+"l'immagine sia visualizzata con le dimensioni originali."
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -391,32 +482,37 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
 msgstr ""
+"Premere \n"
+"sull'immagine seguente oppure sul pulsante \"Aggiungere Immagine\" per selezionare \n"
+"un file di immagine da ingrandire."
 
 #: exe/engine/attachmentidevice.py:57
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr ""
+msgstr "Premere <strong>Seleziona un file</strong>, raggiungere il file che si vuole allegare e selezionarlo."
 
 #: exe/engine/field.py:139
 msgid "Click Here"
-msgstr ""
+msgstr "Premere Qui"
 
 #: exe/webui/common.py:281 exe/webui/common.py:284
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Premere per le istruzioni di completamento"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
-msgstr ""
+msgstr "Premere Qui"
 
 #: exe/engine/field.py:715
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into a symbols image."
 msgstr ""
+"Premere il pulsante Anteprima per convertire \n"
+"                                  il codice latex nell'immagine del simbolo."
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "Premere sul pulsante Aggiungi Immagini per selezionare un file di immagine. L'immagine apparirà sotto dove potrete identificarla.  E sempre buona pratica mettere la dimensione del file (in bytes) nell'etichetta."
 
 #: exe/engine/galleryidevice.py:291 exe/webui/common.py:289
 #: exe/webui/common.py:290 exe/webui/multichoiceblock.py:154
@@ -427,37 +523,37 @@ msgstr ""
 #: exe/webui/editorpane.py:354 exe/webui/element.py:1494
 #: exe/webui/element.py:1495
 msgid "Close"
-msgstr ""
+msgstr "Chiudere"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
-msgstr ""
+msgstr "Cloze"
 
 #: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Attività Cloze"
 
 #: exe/webui/element.py:716
 msgid "Cloze Text"
-msgstr ""
+msgstr "Testo Cloze"
 
 #: exe/webui/common.py:240
 msgid "Confirm and submit"
-msgstr ""
+msgstr "Conferma ed invia"
 
 #: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
 #: exe/webui/element.py:1246 exe/webui/element.py:1341
 #: exe/webui/element.py:1389 exe/idevices/testquestionelement.py:93
 msgid "Correct"
-msgstr ""
+msgstr "Corretto"
 
 #: exe/webui/truefalseelement.py:172
 msgid "Correct!"
-msgstr ""
+msgstr "Corretto!"
 
 #: exe/xului/mainpage.py:577
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "Non potendo caricare un file, spedirlo a bugs@exelearning.org"
 
 #: exe/engine/casestudyidevice.py:93
 msgid ""
@@ -466,6 +562,10 @@ msgid ""
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Creare una Storia del caso. Un buon caso è quello \n"
+"che descrive una controversia o un insieme di situazioni mediante la descrizione \n"
+"delle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \n"
+"una qualche azione per la risoluzione della situazione."
 
 #: exe/webui/galleryblock.py:249 exe/webui/block.py:208
 #: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
@@ -475,26 +575,26 @@ msgstr ""
 #: key="delNodeKey" label="Delete">
 #: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
-msgstr ""
+msgstr "Elimina"
 
 #: exe/idevices/appletblock.py:99
 msgid "Delete File"
-msgstr ""
+msgstr "Elinina File"
 
 #: exe/webui/galleryblock.py:247
 msgid "Delete Image"
-msgstr ""
+msgstr "Elimina Immagine"
 
 #: exe/webui/optionelement.py:92 exe/webui/element.py:1160
 #: exe/webui/element.py:1353 exe/idevices/testoptionelement.py:86
 msgid "Delete option"
-msgstr ""
+msgstr "Elimina opzione"
 
 #: exe/webui/questionelement.py:88 exe/webui/truefalseelement.py:102
 #: exe/webui/element.py:1238 exe/webui/element.py:1456
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
-msgstr ""
+msgstr "Elimina domanda"
 
 #: exe/engine/reflectionidevice.py:56
 msgid ""
@@ -502,6 +602,9 @@ msgid ""
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
 msgstr ""
+"Descrivere come gli studenti saranno valutati per \n"
+"quello cha hanno fatto nell'esercitazione.  (Rubriche sono dispositivi utili per fornire le \n"
+"risposte di ritorno.)"
 
 #: exe/engine/casestudyidevice.py:97
 msgid ""
@@ -510,26 +613,33 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
 msgstr ""
+"Descrivere i compiti delle attività  che sono rilevanti  \n"
+"per la Storia del Caso. Queste attività, potrebbero essere poste in forma di domande \n"
+"o di istruzioni per condurre lo studente alla risoluzione un dilemma presentato."
 
 #: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:428
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Descrivere i pre-requisiti di conoscenza che gli studenti dovrebbero avere \n"
+"effettivamente per completare l'apprendimento."
 
 #: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:395
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Descrivere i compiti relativi alla lettura che lo studente dovrebbe intraprendere. \n"
+"Questo contribuisce a dimostrare le attitudini degli studenti."
 
 #: exe/engine/idevicestore.py:334 exe/engine/idevicestore.py:441
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Descrivere i compiti  che gli studenti dovrebbero completare."
 
 #: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #: exe/webui/attachmentblock.py:99
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
@@ -538,27 +648,27 @@ msgstr ""
 #: exe/resources/internal/templates/packageproperties.xul:<label
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Description:"
-msgstr ""
+msgstr "Descrizione:"
 
 #: exe/idevices/forumidevice.py:40
 msgid "Discussion Activity"
-msgstr ""
+msgstr "Attività  di discussione"
 
 #: exe/idevices/forumelement.py:233
 msgid "Discussion Topic/Thread:"
-msgstr ""
+msgstr "Discussione Soggetto/Sezione:"
 
 #: exe/idevices/forumidevice.py:147
 msgid "Discussion topic/Thread"
-msgstr ""
+msgstr "Discussione Soggetto/Sezione"
 
 #: exe/idevices/forumelement.py:79
 msgid "Discussions and replies are allowed"
-msgstr ""
+msgstr "Sono permesse discussioni e repliche"
 
 #: exe/webui/element.py:274 exe/webui/element.py:584 exe/webui/element.py:885
 msgid "Display as:"
-msgstr ""
+msgstr "Visualizza come:"
 
 #: exe/webui/block.py:200 exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
@@ -569,30 +679,30 @@ msgstr ""
 #: exe/resources/internal/templates/dublincore.xul:<button
 #: exe/resources/internal/templates/exportproperties.xul:<button
 msgid "Done"
-msgstr ""
+msgstr "Fatto"
 
 #: exe/webui/wikipediablock.py:98
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Olandese"
 
 #: exe/webui/element.py:45
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "ERRORE Element.process chiamato direttamente con %s classe"
 
 #: exe/webui/element.py:54
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "ERRORE Element.renderEdit chiamato direttamente con %s classe"
 
 #: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "ERRORE Element.renderView chiamato direttamente con %s classe"
 
 #: exe/webui/block.py:312
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "eERRORE: Block.renderViewContent chiamato direttamente"
 
 #: exe/xului/mainpage.py:374
 #, python-format
@@ -601,56 +711,67 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"ESPORTAZIONE FALLITA.\n"
+"\"%s\" esiste già.\n"
+"Provare ancora con un nome di file differente"
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
-msgstr ""
+msgstr "Ogni persona invia una discussione"
 
 #: exe/webui/block.py:321 exe/webui/editorpage.py:199
 #: exe/webui/editorpane.py:229
 msgid "Edit"
-msgstr ""
+msgstr "Edita"
 
 #: exe/webui/wikipediablock.py:129 exe/webui/editorpane.py:304
 #: exe/webui/rssblock.py:94 exe/webui/multimediablock.py:94
 msgid "Emphasis"
-msgstr ""
+msgstr "Enfasi"
 
 #: exe/webui/wikipediablock.py:91
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Inglese"
 
 #: exe/idevices/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Inserire \n"
+"il testo che si desidera associare con il file."
 
 #: exe/engine/multichoiceidevice.py:87
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Inserire un suggerimento. Se non\n"
+"desiderate fornire un suggerimento, lasciare il campo vuoto."
 
 #: exe/engine/multichoiceidevice.py:126
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr ""
+msgstr "Inserire un suggerimento. Se non desiderate fornire un suggerimento, lasciare il campo vuoto."
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:230
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Inserire una frase o un termine che si vuole cercare \n"
+"all'interno di Wikipedia."
 
 #: exe/engine/reflectionidevice.py:54
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Inserire una domanda affinchè \n"
+"gli studenti  ci riflettano sù."
 
 #: exe/engine/galleryidevice.py:503
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Inserire un titolo per la galleria"
 
 #: exe/engine/rssidevice.py:52
 msgid ""
@@ -664,6 +785,15 @@ msgid ""
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Inserire un URL RSS per l'RSS feed che \n"
+"si vuole in allegato ai contenuti. I Feeds sono spesso identificati da una piccola\n"
+"icona (spesso come questa <img src=\"/images/feed-icon.png\" />) o il testo \"RSS\". Premendo \n"
+"sull'icona o sul testo \"RSS\" verrà visualizzato il feed RSS sulla destra del browser. Si può copiare\n"
+"e incollare l'URL in questo campo. In alternativa, premere con il tasto destro sul link o sull'icona \n"
+"per aprire il menù contestuale; premere su COPIA LINK o Copia Scorciatoia. Tornare in eXe, \n"
+"aprire l'RSS iDevice, copiare l'URL nel campo RSS URL e premere il pulsante CARICA. \n"
+"Questo carica i titoli dal feed scelto e li elenca come link nel contenuto della pagina. \n"
+"Da qui è possiblie editare i bookmark e aggiungere istruzioni o ulteriori informazioni didattiche."
 
 #: exe/engine/field.py:835 exe/idevices/quiztestidevice.py:64
 #: exe/idevices/quiztestidevice.py:86
@@ -672,6 +802,9 @@ msgid ""
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Inserire una opzione di risposta. Fornire \n"
+"un intervallo di distrattori plausibili (normalmente 3-4) insieme con la risposta corretta. \n"
+"Premere sul pulsante &lt;Aggiungere un'altra opzione&gt; per aggiungere un'altra risposta."
 
 #: exe/engine/truefalseidevice.py:73
 msgid ""
@@ -679,20 +812,25 @@ msgid ""
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
 msgstr ""
+"Inserire tutte le informazioni di ritorno che si desidera fornire \n"
+"allo studente. Questo campo può essere lasciato in bianco. Se questo campo è lasciato in bianco \n"
+"viene fornita la riposta di ritorno predefinita."
 
 #: exe/engine/clozeidevice.py:128
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
-msgstr ""
+msgstr "Inserire tutte le informazioni di ritorno che si desidera fornire allo studente con il campo informazioni di ritorno. Questo campo può essere lasciato in bianco."
 
 #: exe/webui/editorpane.py:141
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Inserire qui le istruzioni per il completamento"
 
 #: exe/engine/externalurlidevice.py:47 exe/engine/externalurlidevice.py:69
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Inserire la URL che si desidera visualizzare\n"
+"e selezionare la dimensione dell'area di visualizzazione."
 
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
@@ -700,6 +838,9 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Inserire qui le scelte disponibili. \n"
+"Si possono aggiungere le Opzioni premendo il pulsante \"Aggiungere un'altra opzione\". \n"
+"Per cancellare le opzioni premere sulla \"X\" rossa vicino alle Opzioni."
 
 #: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:391
 msgid ""
@@ -707,6 +848,9 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Inserire i dettagli della lettura includendo i particolari di riferimento. Lo \n"
+"stile dei riferimenti utilizzato dipende dalle preferenze della Facoltà o \n"
+"dipartimento."
 
 #: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
@@ -714,15 +858,18 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Inserire le dimensioni (in pixels) \n"
+"dell'immagine flash e determinare il suo all'ineamento sullo schermo. \n"
+"Le dimensioni della larghezza e dell'altezza saranno modificate in modo proporzionale."
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:149
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Inserire quà le istruzioni per il completamento"
 
 #: exe/webui/editorpane.py:140 exe/webui/editorpane.py:144
 #: exe/webui/editorpane.py:148 exe/webui/editorpane.py:155
 msgid "Enter the label here"
-msgstr ""
+msgstr "Inserire quà l'etichetta"
 
 #: exe/engine/field.py:832 exe/idevices/quiztestidevice.py:61
 msgid ""
@@ -730,59 +877,68 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Inserire i punti di una domanda. \n"
+"La domanda dovrebbe essere chiara ed inequivocabile. Evitare premesse \n"
+"in forma negativa che tendono ad essere ambigue."
 
 #: exe/engine/imagewithtextidevice.py:62
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Inserire il testo che si desidera \n"
+"                                                associare con l'immagine."
 
 #: exe/engine/flashwithtextidevice.py:50
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Inserire il testo che si desidera \n"
+"                                                associare con l'immagine."
 
 #: exe/engine/multimediaidevice.py:65 exe/engine/imagemagnifieridevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Inserire il testo che si desidera \n"
+"associare con il file."
 
 #: exe/engine/attachmentidevice.py:76
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr ""
+msgstr "Inserire il testo che si desidera associare con il file scaricato. E' necessario fornire le istruzioni su quello che si richiede di fare, allo studente, con il file scaricato o come il materiale dovrebbe essere utilizzato."
 
 #: exe/xului/mainpage.py:583
 #, python-format
 msgid "Error loading package \"%s\": %s"
-msgstr ""
+msgstr "Errore nel caricamento del pacchetto \"%s\": %s"
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
-msgstr ""
+msgstr "Esempio"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Esempio Esempio"
 
 #: exe/xului/mainpage.py:488 exe/xului/mainpage.py:503
 #: exe/xului/mainpage.py:521 exe/xului/mainpage.py:539
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Esportato a %s"
 
 #: exe/engine/externalurlidevice.py:37
 msgid "External Web Site"
-msgstr ""
+msgstr "Sito Web Esterno"
 
 #: exe/webui/imagemagnifierblock.py:136
 msgid "Extra large"
-msgstr ""
+msgstr "Molto grande"
 
 #: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
 #: exe/engine/idevicestore.py:290 exe/engine/idevicestore.py:398
@@ -791,38 +947,40 @@ msgstr ""
 #: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 #: exe/webui/element.py:1354
 msgid "Feedback"
-msgstr ""
+msgstr "Informazioni di ritorno"
 
 #: exe/engine/casestudyidevice.py:53
 msgid "Feedback Image"
-msgstr ""
+msgstr "Informazioni di ritorno dell'immagine"
 
 #: exe/webui/editorpane.py:156
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"Il pulsante delle informazioni di ritorno non apparirà \n"
+"se i dati non vengono inseriti in questo campo."
 
 #: exe/webui/reflectionblock.py:72 exe/webui/element.py:1262
 msgid "Feedback:"
-msgstr ""
+msgstr "Informazioni di ritorno:"
 
 #: exe/webui/attachmentblock.py:78
 msgid "Filename"
-msgstr ""
+msgstr "Nome file"
 
 #: exe/xului/mainpage.py:417 exe/xului/mainpage.py:455
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "Nome file %s è un file, non si può sostituire"
 
 #: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "video Flash"
 
 #: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash con testo"
 
 #: exe/engine/externalurlidevice.py:39
 msgid ""
@@ -831,310 +989,314 @@ msgid ""
 "problematic usability consequences, this iDevice loads the appropriate content \n"
 "into an inline frame. Use only if your content will be online."
 msgstr ""
+"Da usare quando si deve includere al contenuto una pagina Web esterna\n"
+"Questo iDevice carica il contenuto appropriato in una cornice invece\n"
+"di utilizzare una finestra a scomparsa esterna che può avere conseguenze problematiche \n"
+"di impiego. Usare soltanto se il vostro contenuto è linea."
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
-msgstr ""
+msgstr "Obbligare tutti ad iscriversi?:"
 
 #: exe/idevices/forumelement.py:202
 msgid "Forum Name:"
-msgstr ""
+msgstr "Nome Forum:"
 
 #: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
 msgid "Forum Name: "
-msgstr ""
+msgstr "Nome Forum: "
 
 #: exe/idevices/forumelement.py:96
 msgid "Forum type:"
-msgstr ""
+msgstr "Tipo Forum:"
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
-msgstr ""
+msgstr "Altezza Frame:"
 
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
-msgstr ""
+msgstr "Testo libero"
 
 #: exe/webui/wikipediablock.py:94
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Francese"
 
 #: exe/webui/wikipediablock.py:194
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "Licenza di Documentazione Libera GNU"
 
 #: exe/webui/wikipediablock.py:93
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Tedesco"
 
 #: exe/webui/element.py:803
 msgid "Get score"
-msgstr ""
+msgstr "Visualizza punteggio"
 
 #: exe/webui/galleryblock.py:224
 msgid "Go Back"
-msgstr ""
+msgstr "Vai indietro"
 
 #: exe/webui/galleryblock.py:236
 msgid "Go Forward"
-msgstr ""
+msgstr "Vai avanti"
 
 #: exe/webui/galleryblock.py:243
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Vai direttamente (Non disponibile)"
 
 #: exe/idevices/forumelement.py:117
 msgid "Group mode:"
-msgstr ""
+msgstr "Modo gruppo:"
 
 #: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
 msgid "Hide"
-msgstr ""
+msgstr "Nascondere"
 
 #: exe/webui/questionelement.py:108
 msgid "Hide Feedback"
-msgstr ""
+msgstr "Nascondere informazioni di ritorno"
 
 #: exe/webui/element.py:724
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "Nascondere/Mostrare Parole"
 
 #: exe/webui/multichoiceblock.py:158 exe/webui/multichoiceblock.py:183
 #: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
 #: exe/webui/truefalseelement.py:127 exe/webui/element.py:1498
 msgid "Hint"
-msgstr ""
+msgstr "Suggerimento"
 
 #: exe/webui/multichoiceblock.py:92 exe/webui/element.py:1459
 msgid "Hint:"
-msgstr ""
+msgstr "Suggerimento:"
 
 #: exe/engine/package.py:101
 msgid "Home"
-msgstr ""
+msgstr "Inizio"
 
 #: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:315
 #: exe/webui/block.py:276 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
-msgstr ""
+msgstr "Icona iDevice"
 
 #: exe/webui/multichoiceblock.py:134
 msgid "IDevice Question Icon"
-msgstr ""
+msgstr "Icona domanda iDevice"
 
 #: exe/webui/editorpane.py:335
 msgid "Icons"
-msgstr ""
+msgstr "Icona"
 
 #: exe/engine/imagewithtextidevice.py:58 exe/webui/editorpane.py:218
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: exe/engine/galleryidevice.py:489
 msgid "Image Gallery"
-msgstr ""
+msgstr "Galleria Immagini"
 
 #: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
-msgstr ""
+msgstr "Ingrandimento Immagine"
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
-msgstr ""
+msgstr "Immagine con Testo"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
-msgstr ""
+msgstr "Sbagliato!"
 
 #: exe/webui/editorpane.py:349
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: exe/webui/block.py:233
 msgid "Information"
-msgstr ""
+msgstr "Informazioni"
 
 #: exe/webui/imagemagnifierblock.py:120
 msgid "Initial Zoom"
-msgstr ""
+msgstr "Zoom iniziale"
 
 #: exe/webui/element.py:739
 msgid "Instant Marking?"
-msgstr ""
+msgstr "Marcatura istantanea?"
 
 #: exe/engine/truefalseidevice.py:80 exe/engine/truefalseidevice.py:167
 #: exe/engine/clozeidevice.py:114 exe/webui/common.py:275
 msgid "Instructions"
-msgstr ""
+msgstr "Istruzioni"
 
 #: exe/engine/clozeidevice.py:146
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "Istruzioni per gli Studenti"
 
 #: exe/idevices/forumelement.py:227
 msgid "Introduction"
-msgstr ""
+msgstr "Introduzione"
 
 #: exe/webui/wikipediablock.py:195
 msgid "It uses material from the "
-msgstr ""
+msgstr "Esso usa materiale da"
 
 #: exe/webui/wikipediablock.py:96
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Italiano"
 
 #: exe/webui/wikipediablock.py:95
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Giapponese"
 
 #: exe/idevices/appletidevice.py:49
 msgid "Java Applet"
-msgstr ""
+msgstr "Applet Java"
 
 #: exe/webui/attachmentblock.py:95
 msgid "Label"
-msgstr ""
+msgstr "Etichetta"
 
 #: exe/webui/imagemagnifierblock.py:135
 msgid "Large"
-msgstr ""
+msgstr "Largo"
 
 #: exe/idevices/forumidevice.py:164
 msgid "Learning Management System"
-msgstr ""
+msgstr "Sistema di gestione dell'apprendimento (LMS)"
 
 #: exe/idevices/forumelement.py:253
 msgid "Learning Management System:"
-msgstr ""
+msgstr "Sistema di gestione dell'apprendimento (LMS):"
 
 #: exe/webui/imagemagnifierblock.py:85 exe/webui/imagewithtextblock.py:75
 #: exe/webui/flashwithtextblock.py:75 exe/webui/multimediablock.py:79
 #: exe/idevices/flashmovieblock.py:75
 msgid "Left"
-msgstr ""
+msgstr "Sinistra"
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
-msgstr ""
+msgstr "Collegamento al forum"
 
 #: exe/webui/wikipediablock.py:122 exe/webui/rssblock.py:87
 msgid "Load"
-msgstr ""
+msgstr "Carica"
 
 #: exe/engine/multimediaidevice.py:40
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
 msgid "Maths"
-msgstr ""
+msgstr "Maths"
 
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Zoom massimo"
 
 #: exe/webui/imagemagnifierblock.py:134
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: exe/idevices/forumelement.py:262
 msgid "Moodle"
-msgstr ""
+msgstr "Moodle"
 
 #: exe/webui/block.py:222
 msgid "Move Down"
-msgstr ""
+msgstr "Muovi in basso"
 
 #: exe/webui/galleryblock.py:222
 msgid "Move Image Left"
-msgstr ""
+msgstr "Muove Immagine a Sinistra"
 
 #: exe/webui/galleryblock.py:234
 msgid "Move Image Right"
-msgstr ""
+msgstr "Muove Immagine a Destra"
 
 #: exe/webui/block.py:215
 msgid "Move Up"
-msgstr ""
+msgstr "Muovi in alto"
 
 #: exe/engine/multichoiceidevice.py:57
 msgid "Multi-Choice Question"
-msgstr ""
+msgstr "Domanda a Scelta Multipla"
 
 #: exe/webui/editorpane.py:286
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: exe/idevices/forumelement.py:215
 msgid "New Forum"
-msgstr ""
+msgstr "Nuovo Forum"
 
 #: exe/idevices/forumelement.py:243
 msgid "New Topic"
-msgstr ""
+msgstr "Nuovo titolo"
 
 #: exe/webui/editorpage.py:204
 msgid "New iDevice"
-msgstr ""
+msgstr "Nuovo iDevice"
 
 #: exe/engine/galleryidevice.py:195 exe/export/scormexport.py:293
 #: exe/export/websitepage.py:196
 msgid "Next"
-msgstr ""
+msgstr "Prossimo"
 
 #: exe/idevices/forumelement.py:83
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: exe/webui/galleryblock.py:187 exe/webui/galleryblock.py:274
 msgid "No Images Loaded"
-msgstr ""
+msgstr "Non è stata caricata nessuna immagine"
 
 #: exe/engine/galleryidevice.py:101
 msgid "No Thumbnail Available. Could not load original image."
-msgstr ""
+msgstr "Nessuna miniatura disponibile. Impossibile caricare l'immagine originale."
 
 #: exe/engine/galleryidevice.py:143
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr ""
+msgstr "Nessuna miniatura disponibile. Impossibile rimpicciolire l'immagine."
 
 #: exe/engine/galleryidevice.py:111
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr ""
+msgstr "Nessuna miniatura disponibile. Impossibile rimpicciolire l'immagine originale."
 
 #: exe/idevices/forumelement.py:80
 msgid "No discussions, but replies are allowed"
-msgstr ""
+msgstr "Nessuna discussione, ma le repliche sono permesse"
 
 #: exe/idevices/forumelement.py:81
 msgid "No discussions, no replies"
-msgstr ""
+msgstr "Niente discussioni, nessuna replica"
 
 #: exe/webui/wikipediablock.py:126 exe/webui/editorpane.py:307
 #: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:91
 msgid "No emphasis"
-msgstr ""
+msgstr "Nessuna enfasi"
 
 #: exe/idevices/forumelement.py:87
 msgid "No groups"
-msgstr ""
+msgstr "Nesun gruppo"
 
 #: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
 #: exe/webui/flashwithtextblock.py:77 exe/webui/multimediablock.py:81
 #: exe/idevices/forumelement.py:239 exe/idevices/flashmovieblock.py:77
 msgid "None"
-msgstr ""
+msgstr "Nessuno"
 
 #: exe/webui/preferencespage.py:93
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:306
 #: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:413
 msgid "Objectives"
-msgstr ""
+msgstr "Obiettivi"
 
 #: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:407
 msgid ""
@@ -1142,94 +1304,101 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Gli obiettivi descrivono i risultati previsti nell'apprendimento e dovrebbero\n"
+"definire che cosa gli studenti potranno fare quando essi hanno completato\n"
+"i compiti appresi."
 
 #: exe/engine/field.py:617 exe/engine/field.py:673
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
+"Selezionare solamente .flv (Flash Video Files) per \n"
+"questo iDevice."
 
 #: exe/engine/field.py:552 exe/engine/field.py:600
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
+"Selezionare solamente .swf (Flash Objects) per \n"
+"questo iDevice."
 
 #: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
 #: exe/webui/element.py:1248 exe/webui/element.py:1336
 #: exe/webui/element.py:1341 exe/idevices/testquestionelement.py:95
 msgid "Option"
-msgstr ""
+msgstr "Opzione"
 
 #: exe/webui/element.py:1244 exe/idevices/testquestionelement.py:91
 msgid "Options"
-msgstr ""
+msgstr "Opzioni"
 
 #: exe/webui/wikipediablock.py:105 exe/idevices/forumelement.py:266
 msgid "Other"
-msgstr ""
+msgstr "Altro"
 
 #: exe/xului/outlinepane.py:244
 msgid "Outline"
-msgstr ""
+msgstr "Outline"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Own site"
-msgstr ""
+msgstr "Sito proprio"
 
 #: exe/xului/mainpage.py:262 exe/xului/mainpage.py:392
 #, python-format
 msgid "Package saved to: %s"
-msgstr ""
+msgstr "Pacchetto salvato in: %s"
 
 #: exe/webui/block.py:229 exe/webui/editorpane.py:345
 msgid "Pedagogical Help"
-msgstr ""
+msgstr "Aiuto Pedagogico"
 
 #: exe/webui/editorpane.py:299
 msgid "Pedagogical Tip"
-msgstr ""
+msgstr "Suggerimento Pedagogico"
 
 #: exe/idevices/forumblock.py:133
 msgid "Please enter a discussion topic name.\n"
-msgstr ""
+msgstr "Inserire il titolo dell'argomento della discussione.\n"
 
 #: exe/idevices/forumblock.py:119
 msgid "Please enter a name for the forum\n"
-msgstr ""
+msgstr "Inserire il nome per il Forum\n"
 
 #: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
-msgstr ""
+msgstr "Inserire il nome di un iDevice."
 
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
-msgstr ""
+msgstr "Selezionare un LMS.\n"
 
 #: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
-msgstr ""
+msgstr "Selezionare un LMS."
 
 #: exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
-msgstr ""
+msgstr "Selezionare la risposta corretta per ogni domanda."
 
 #: exe/idevices/forumblock.py:114
 msgid "Please select a forum.\n"
-msgstr ""
+msgstr "Selezionare un Forum.\n"
 
 #: exe/webui/wikipediablock.py:97
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Polacco"
 
 #: exe/webui/wikipediablock.py:99
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Portoghese"
 
 #: exe/engine/idevicestore.py:310 exe/engine/idevicestore.py:320
 #: exe/engine/idevicestore.py:417 exe/engine/idevicestore.py:427
 msgid "Preknowledge"
-msgstr ""
+msgstr "Conoscenze preliminari"
 
 #: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:420
 msgid ""
@@ -1239,39 +1408,52 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
+"Prerequisiti di conoscenza che gli studenti dovrebbero avere\n"
+"per essere in grado di completare l'apprendimento. Esempi di\n"
+"pre-conoscenze potrebbero essere: <ul>\n"
+"<li>        Gli studenti devono avere un livello 4 in inglese </li>\n"
+"<li>        Gli studenti devono essere abili ad assemblare utensili standard di potenza </li></ul>\n"
 
 #: exe/webui/editorpane.py:227 exe/webui/element.py:1080
 msgid "Preview"
-msgstr ""
+msgstr "Anteprima"
 
 #: exe/engine/galleryidevice.py:190 exe/export/scormexport.py:292
 #: exe/export/websitepage.py:190
 msgid "Previous"
-msgstr ""
+msgstr "Precedente"
 
 #: exe/engine/multimediaidevice.py:71
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"Fornire una intestazione per il \n"
+"file MP3. Questa apparirà anche nella barra del titolo dei players."
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
+"Fornire una intestazione per \n"
+"l'immagine da ingrandire."
 
 #: exe/idevices/flashmovieidevice.py:57 exe/idevices/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
+"Fornire una intestazione per il video Flash \n"
+"che è stato appena inserito."
 
 #: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
+"Fornire una intestazione per Flash che \n"
+"                                   è stato appena inserito."
 
 #: exe/engine/imagewithtextidevice.py:67
 #: exe/engine/imagewithtextidevice.py:114
@@ -1279,67 +1461,75 @@ msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
+"Fornire una intestazione per l'immagine \n"
+"che è stata appena inserita."
 
 #: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
 msgstr ""
+"Fornire le istruzioni di come le Domande Vero/Falso dovrebbero \n"
+"essere completate."
 
 #: exe/engine/clozeidevice.py:115
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr ""
+"Fornire le istruzioni su come l' attività  Cloze dovrebbe essere completata. \n"
+"Un testo predefinito sarà  inserito se non ci sono cambiamenti in questo campo.\n"
 
 #: exe/engine/casestudyidevice.py:101
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
 msgstr ""
+"Fornire una rivelante risposta di ritorno sulla \n"
+"situazione."
 
 #: exe/webui/block.py:243 exe/webui/editorpane.py:292
 msgid "Purpose"
-msgstr ""
+msgstr "Scopo"
 
 #: exe/engine/clozeidevice.py:147
 msgid "Put instructions for learners here"
-msgstr ""
+msgstr "Inserire quà le istruzione per gli studenti"
 
 #: exe/webui/casestudyblock.py:89
 msgid "Question(s)"
-msgstr ""
+msgstr "Domanda(e)"
 
 #: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
 #: exe/webui/element.py:1234 exe/webui/element.py:1452
 #: exe/idevices/testquestionelement.py:81
 msgid "Question:"
-msgstr ""
+msgstr "Domanda:"
 
 #: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: exe/engine/clozeidevice.py:148
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Leggere il paragrafo seguente e riempire le parole mancanti"
 
 #: exe/engine/truefalseidevice.py:170 exe/engine/clozeidevice.py:118
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Leggere il paragrafo seguente e riempire le parole mancanti."
 
 #: exe/engine/idevicestore.py:221 exe/engine/idevicestore.py:239
 #: exe/engine/genericidevice.py:165
 msgid "Reading Activity"
-msgstr ""
+msgstr "Attività  di lettura"
 
 #: exe/engine/idevicestore.py:347 exe/engine/genericidevice.py:163
 msgid "Reading Activity 0.11"
-msgstr ""
+msgstr "Attività  di lettura 0.11"
 
 #: exe/engine/reflectionidevice.py:43
 msgid "Reflection"
-msgstr ""
+msgstr "Riflessione"
 
 #: exe/engine/reflectionidevice.py:45
 msgid ""
@@ -1350,20 +1540,27 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
 msgstr ""
+"La riflessione è un metodo d'insegnamento usato spesso per \n"
+"collegare la teoria alla pratica. I compiti della riflessione forniscono \n"
+"spesso agli studenti un'occasione per osservare e riflettere sulle loro \n"
+"osservazioni prima di presentare queste come parte di lavoro \n"
+"accademico. Le pubblicazioni, i diari, i profili sono mezzi utili alla \n"
+"raccolta dei dati di osservazione. Le rubriche e le guide possono \n"
+"essere mezzi efficaci per le risposte di ritorno."
 
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
-msgstr ""
+msgstr "Domanda di Riflessione:"
 
 #: exe/webui/element.py:823
 msgid "Restart"
-msgstr ""
+msgstr "Riavvia"
 
 #: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
 #: exe/webui/flashwithtextblock.py:76 exe/webui/multimediablock.py:80
 #: exe/idevices/flashmovieblock.py:76
 msgid "Right"
-msgstr ""
+msgstr "Corretto"
 
 #: exe/xului/mainpage.py:255
 #, python-format
@@ -1372,89 +1569,96 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"SALVATAGGIO FALLITO.\n"
+"\"%s\" esiste già.\n"
+"Riprovare con un nome di file differente"
 
 #: exe/idevices/quiztestidevice.py:105
 msgid "SCORM Quiz"
-msgstr ""
+msgstr "SCORM Quiz"
 
 #: exe/idevices/quiztestblock.py:137
 msgid "SUBMIT ANSWERS"
-msgstr ""
+msgstr "INVIA RISPOSTE"
 
 #: exe/webui/editorpage.py:179 exe/webui/editorpage.py:182
 msgid "Save"
-msgstr ""
+msgstr "Salva"
 
 #: exe/webui/editorpage.py:183
 msgid "Save as"
-msgstr ""
+msgstr "Salva come"
 
 #: exe/engine/package.py:79
 msgid "Section"
-msgstr ""
+msgstr "Sezione"
 
 #: exe/webui/element.py:883
 msgid "Select Flash Object"
-msgstr ""
+msgstr "Selezionare oggetto Flash"
 
 #: exe/webui/preferencespage.py:86
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 #: exe/resources/internal/templates/dublincore.xul:<menulist
 msgid "Select Language"
-msgstr ""
+msgstr "Selezionare un lingua"
 
 #: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
-msgstr ""
+msgstr "Selezionare un Forum"
 
 #: exe/webui/attachmentblock.py:92
 msgid "Select a file"
-msgstr ""
+msgstr "Selezionare un File"
 
 #: exe/webui/element.py:957
 msgid "Select a flash video"
-msgstr ""
+msgstr "Selezionare un video Flash"
 
 #: exe/webui/element.py:1066
 msgid "Select a font size: "
-msgstr ""
+msgstr "Selezionare una dimensione font: "
 
 #: exe/webui/element.py:355
 msgid "Select an MP3"
-msgstr ""
+msgstr "Selezionare un file MP3"
 
 #: exe/webui/element.py:273
 msgid "Select an image"
-msgstr ""
+msgstr "Selezionare una immagine"
 
 #: exe/webui/element.py:582
 msgid "Select an image (JPG file)"
-msgstr ""
+msgstr "Selezionare una immagine (file JPG)"
 
 #: exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
-msgstr ""
+msgstr "Selezionare velocità di transizione: "
 
 #: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:228
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Selezionare la versione di lingua appropriata \n"
+"di Wikipedia per la ricerca ed inserire il termine da ricercare."
 
 #: exe/engine/multichoiceidevice.py:91
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
+"Selezionare l'opzione corretta attivando \n"
+"il pulsante radio."
 
 #: exe/engine/imagemagnifieridevice.py:71
 msgid "Select the size of the magnifying glass"
-msgstr ""
+msgstr "Selezionare la dimensione della lente di ingrandimento"
 
 #: exe/idevices/forumelement.py:88
 msgid "Separate groups"
-msgstr ""
+msgstr "Gruppi separati"
 
 #: exe/engine/imagemagnifieridevice.py:67
 #: exe/engine/imagemagnifieridevice.py:90
@@ -1462,6 +1666,8 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
+"Impostare il livello iniziale di ingrandimento \n"
+"quando l'iDevice viene caricato, come percentuale delle dimensioni originali dell'immagine"
 
 #: exe/engine/imagemagnifieridevice.py:69
 #: exe/engine/imagemagnifieridevice.py:92
@@ -1469,60 +1675,62 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
+"Impostare il masimo livello di ingrandimento, \n"
+"come percentuale delle dimensioni originali dell'immagine"
 
 #: exe/xului/propertiespage.py:200
 msgid "Settings saved"
-msgstr ""
+msgstr "Impostazioni salvate"
 
 #: exe/idevices/forumelement.py:91
 msgid "Show"
-msgstr ""
+msgstr "Mostra"
 
 #: exe/webui/galleryblock.py:282
 #, python-format
 msgid "Show %s Image"
-msgstr ""
+msgstr "Mostra %s Immagine"
 
 #: exe/webui/element.py:830
 msgid "Show Answers"
-msgstr ""
+msgstr "Mostra le Risposte"
 
 #: exe/webui/questionelement.py:103
 msgid "Show Feedback"
-msgstr ""
+msgstr "Mostra le informazioni di ritorno"
 
 #: exe/webui/element.py:814
 msgid "Show/Clear Answers"
-msgstr ""
+msgstr "Mostra/Cancella Risposte"
 
 #: exe/webui/element.py:809
 msgid "Show/Hide Feedback"
-msgstr ""
+msgstr "Mostra/Nascondi informazioni di ritorno"
 
 #: exe/webui/wikipediablock.py:107
 msgid "Site"
-msgstr ""
+msgstr "Sito"
 
 #: exe/webui/imagemagnifierblock.py:137
 msgid "Size of magnifying glass: "
-msgstr ""
+msgstr "Dimensione della lente di ingrandimento: "
 
 #: exe/webui/wikipediablock.py:100
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Sloveno"
 
 #: exe/webui/imagemagnifierblock.py:133
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: exe/webui/wikipediablock.py:127 exe/webui/editorpane.py:308
 #: exe/webui/rssblock.py:92 exe/webui/multimediablock.py:92
 msgid "Some emphasis"
-msgstr ""
+msgstr "Una certa enfasi"
 
 #: exe/xului/mainpage.py:582
 msgid "Sorry, wrong file format"
-msgstr ""
+msgstr "Spiacente, formato errato del file"
 
 #: exe/xului/mainpage.py:580
 #, python-format
@@ -1530,56 +1738,58 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
+"Spiacente, formato del file errato:\n"
+"%s"
 
 #: exe/webui/wikipediablock.py:101
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Spagnolo"
 
 #: exe/idevices/forumelement.py:77
 msgid "Standard forum for general use"
-msgstr ""
+msgstr "Forum standard per uso generale"
 
 #: exe/webui/casestudyblock.py:83
 msgid "Story:"
-msgstr ""
+msgstr "Storia:"
 
 #: exe/webui/element.py:729
 msgid "Strict Marking?"
-msgstr ""
+msgstr "Verifica stringente?"
 
 #: exe/webui/common.py:210 exe/webui/editorpane.py:396
 #: exe/webui/element.py:818
 msgid "Submit"
-msgstr ""
+msgstr "Invia"
 
 #: exe/webui/element.py:1282 exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
-msgstr ""
+msgstr "Invia Risposta"
 
 #: exe/webui/wikipediablock.py:102
 msgid "Swedish Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia in Svedese"
 
 #: exe/engine/idevicestore.py:355
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
+msgstr "Gli insegnanti dovrebbero tenere in mente le seguenti informazioni quando usano gli iDevice: </p><ol><li>Pensare sul numero di differenti tipi di attività  pianificate per le risorse che saranno segnalate in modo visuale nel contenuto. Non utilizzare un numero elevato di tipi o attivita di classificazione differenti altrimenti lo studente si potrebbe confondere. Normalmente tre o quattro tipi diversi sono più che adeguati per la risorsa di insegnamento.</li><li>Da una prospettiva di progettazione visuale, evitare di generare due iDevices consecutivi senza testo fra di essi. Se questo è proprio necessario, riunire due domande o eventi in un solo iDevices. </li><li>Pensare alle attività in modo tale che il beneficio percepito per farla supera il tempo e lo sforzo che sarà necessaria per progettarla. </li></ol>"
 
 #: exe/engine/multimediaidevice.py:64 exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
-msgstr ""
+msgstr "Testo"
 
 #: exe/webui/editorpane.py:216
 msgid "Text Box"
-msgstr ""
+msgstr "Casella testo"
 
 #: exe/webui/editorpane.py:214
 msgid "Text Line"
-msgstr ""
+msgstr "Linea di testo"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
+msgstr "L'iDevice MP3 permette di allegare un file MP3 al contenuto con un testo di istruzioni rilevanti per apprendimento"
 
 #: exe/engine/rssidevice.py:43
 msgid ""
@@ -1587,10 +1797,13 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"l'iDevice RSS è usato \n"
+"per fornire nuovi conenuti alla macchina di ogni singolo utente. Usando questo\n"
+"iDevice si provvede a fornire i links da feed scelti per essere visti dagli studenti."
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
+msgstr "L'iDevice di Allegato è usato per collegare i files esistenti al contenuto del file .elp di eXe. Per esempio, potreste avere la necessità che un file PDF o una presentazione PPT sia accessibile agli studenti, questi files  possono essere collegati ed etichettati opportunamente per indicare a cosa servono e quanto grandi sono le loro dimensioni. Gli studenti possono premere sul collegamento dell'allegato ed effettuare lo scaricamento."
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -1599,6 +1812,10 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
+"L'iDevice Flash con Testo permette di \n"
+"associare informazioni testuali ad un file Flash. Questo può essere utile \n"
+"quando si deve fornire istruzioni educative riguardanti il file Flash \n"
+"che gli studenti vedranno."
 
 #: exe/engine/imagemagnifieridevice.py:42
 msgid ""
@@ -1606,6 +1823,9 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"L'ingranditore di immagine è uno strumento che permette\n"
+"agli studenti di ingrandire la vista di una immagine. Muovendo \n"
+"la lente di ingrandimento si permette lo studio di dettagli più grandi."
 
 #: exe/engine/freetextidevice.py:39
 msgid ""
@@ -1614,6 +1834,10 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"La parte principale dello sviluppo di una risorsa per l'apprendimento \n"
+"sarà  quella di stabilire il contesto, realizzare le istruzioni e fornire informazioni.\n"
+"Questa risorsa fornisce la struttura, all'interno della quale, le attività \n"
+"di apprendimento sono costruite e sviluppate."
 
 #: exe/engine/mathidevice.py:37
 msgid ""
@@ -1626,10 +1850,18 @@ msgid ""
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
 msgstr ""
+"Il linguaggio matematico LATEX è stato \n"
+"                        usato per permettere la creazione di formule matematiche \n"
+"                        all'interno dei contenuti. E' fatto trasformando il linguaggio\n"
+"                        LATEX in immagini grafiche che sono poi mostrate\n"
+"                        all'interno dei contenuti eXe. Si raccomanda l'uso \n"
+"                        dell'iDevice Testo Libero per fornire \n"
+"                        note esplicative e istruzioni didattiche sui \n"
+"                        simboli grafici usati."
 
 #: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
-msgstr ""
+msgstr "Lo scopo del dialogo è di permette di descrivere gli scopi dell'iDevice per gli altri potenziali utenti."
 
 #: exe/xului/mainpage.py:428 exe/xului/mainpage.py:466
 #, python-format
@@ -1637,16 +1869,20 @@ msgid ""
 "There was an error in the export:\n"
 "%s"
 msgstr ""
+"Ci sono errori nel processo di esportazione:\n"
+"%s"
 
 #: exe/webui/wikipediablock.py:191
 msgid "This article is licensed under the "
-msgstr ""
+msgstr "Questo articolo è sotto la licenza"
 
 #: exe/engine/imagemagnifieridevice.py:94
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
 msgstr ""
+"Questo sceglie la dimensione iniziale \n"
+"della lente di ingrandimento"
 
 #: exe/idevices/flashmovieidevice.py:41
 msgid ""
@@ -1656,60 +1892,71 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"Questo iDevice permette soltanto i formati dei file Flash Video (FLV) e non ne accetta altri.\n"
+"Si può tuttavia convertire gli altri formati video (per esempio: mov, wmf, etc.) in formato Flash .FLV\n"
+"usando codificatori di terze parti. Questi codificatori non sono forniti con eXe. Agli\n"
+"utenti inoltre è richiesto di effettuare il download di Flash Player 8 da http://www.macromedia.com\n"
+"per visualizzare i video."
 
 #: exe/engine/freetextidevice.py:68
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Questo è un campo di testo libero in cui può essere inserito i contenuti generali per l'apprendimento."
 
 #: exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr ""
+msgstr "Questo è un campo di testo libero."
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
+"Questo è un esempio di un plugin di un iDevice\n"
+"creato dall'utente."
 
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
-msgstr ""
+msgstr "Questo è un campo opzionale."
 
 #: exe/webui/block.py:203
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
+"Cancellazione dell' iDevice.\n"
+"Si vuole veramente fare questo?"
 
 #: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
 msgid "Thread: "
-msgstr ""
+msgstr "Sezione:"
 
 #: exe/webui/block.py:247
 msgid "Tip:"
-msgstr ""
+msgstr "Suggerimento:"
 
 #: exe/webui/galleryblock.py:173
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: exe/engine/field.py:838 exe/idevices/quiztestidevice.py:67
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"Per indicare la risposta corretta, \n"
+"premere il pulsante di scelta vicino alla opzione corretta."
 
 #: exe/engine/package.py:79
 msgid "Topic"
-msgstr ""
+msgstr "Argomento"
 
 #: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
 msgid "True"
-msgstr ""
+msgstr "Vero"
 
 #: exe/engine/truefalseidevice.py:59
 msgid "True-False Question"
-msgstr ""
+msgstr "Domanda Vero-Falso"
 
 #: exe/engine/truefalseidevice.py:61
 msgid ""
@@ -1718,14 +1965,18 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
+"Le domande Vero/Falso presentano una dichiarazione per la quale \n"
+"lo studente deve decidere se essa è vera o falsa. Questo tipo di domande \n"
+"funzionano bene per le informazioni effettive (Vero) e per le informazioni \n"
+"che si prestano ad una o all'altra risposta (Vero e Falso)."
 
 #: exe/engine/field.py:681 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
-msgstr ""
+msgstr "Scrivere qui un argomento di discussione."
 
 #: exe/idevices/forumidevice.py:107
 msgid "Type a forum name here"
-msgstr ""
+msgstr "Scrivere qui il nome del Forum"
 
 #: exe/engine/multichoiceidevice.py:96
 msgid ""
@@ -1735,6 +1986,11 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other options."
 msgstr ""
+"Scrivere le informazioni che si vogliono visualizzare \n"
+"allo studente quando seleziona una particolare opzione. Se non si completa \n"
+"questo campo, eXe  fornirà  automaticamente una informazione predefinita del tipo: \n"
+"\"Risposta Corretta\"  per indicare la selezione di una risposta corretta; oppure \n"
+"\"Risposta Sbagliata\" per le altre opzioni."
 
 #: exe/engine/truefalseidevice.py:148
 msgid ""
@@ -1744,14 +2000,19 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Scrivere le informazioni che si vogliono visualizzare \n"
+"allo studente quando seleziona una particolare domanda. Se non si completa \n"
+"questo campo, eXe  fornirà  automaticamente una informazione predefinita del tipo: \n"
+"\"Risposta Corretta\"  per indicare la selezione di una risposta corretta; oppure \n"
+"\"Risposta Sbagliata\" per le altre alternative."
 
 #: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:414
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "Scrivere gli obiettivi di apprendimento per questa risorsa."
 
 #: exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
-msgstr ""
+msgstr "Scrivere un punto di domanda."
 
 #: exe/engine/truefalseidevice.py:69
 msgid ""
@@ -1759,19 +2020,22 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
 "be ambiguous."
 msgstr ""
+"Scrivere un punto di domanda. \n"
+"La domanda dovrebbe essere chiara ed univoca. Evitare premesse in forma \n"
+"negativa che tendono ad essere ambigue."
 
 #: exe/webui/externalurlblock.py:60
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: exe/engine/wikipediaidevice.py:97
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "Impossibile effettuare lo scaricamento da %s <br/>Controllare il collegamento e la connessione e riprovare."
 
 #: exe/engine/package.py:79
 msgid "Unit"
-msgstr ""
+msgstr "Unità"
 
 #: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
 #: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
@@ -1787,7 +2051,7 @@ msgstr ""
 #: exe/idevices/quiztestidevice.py:106 exe/idevices/flashmovieidevice.py:40
 #: exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
-msgstr ""
+msgstr "Università di Auckland"
 
 #: exe/idevices/quiztestidevice.py:107
 msgid ""
@@ -1797,14 +2061,18 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"Diversamente dalle Domande a Risposta Multipla, il quiz SCORM è usato per verificare \n"
+"la conoscenza degli studenti su un argomento senza fornire la risposta corretta. \n"
+"Il quiz sarà  dato più di una volta allo studente per il tempo necessario ad \n"
+"imparare e ad esercitarsi usando le informazioni o le sue abilità. "
 
 #: exe/idevices/appletblock.py:82
 msgid "Upload"
-msgstr ""
+msgstr "Caricamento"
 
 #: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
-msgstr ""
+msgstr "Usare l'Enfasi per distinguere l'importanza delle informazioni presentate nell'iDevice."
 
 #: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
 msgid ""
@@ -1812,10 +2080,13 @@ msgid ""
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Usa le risposte di ritorno per fornire un sommario dei punti coperti nella lettura, \n"
+"oppure un punto di partenza per ulteriore analisi della lettura proponendo una \n"
+"domanda o fornendo una dichiarazione per iniziare un dibattito."
 
 #: exe/engine/galleryidevice.py:494
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "Usare questo iDevice se si hanno parecchie immagini da visualizzare."
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
@@ -1823,18 +2094,21 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Usare questo campo per inserire il testo. Questo \n"
+"iDevice  non ha posibilità di enfasi sebbene possono essere applicate formattazioni \n"
+"di testo utilizzando i pulsanti di editing associati al campo."
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
-msgstr ""
+msgstr "Gruppi visibili"
 
 #: exe/idevices/forumelement.py:124
 msgid "Visible to students:"
-msgstr ""
+msgstr "Visibile agli studenti:"
 
 #: exe/engine/idevicestore.py:282 exe/engine/idevicestore.py:390
 msgid "What to read"
-msgstr ""
+msgstr "Che cosa leggere"
 
 #: exe/engine/multichoiceidevice.py:72
 msgid ""
@@ -1850,77 +2124,87 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Quando si costruisce una Domanda a Risposta Multipla considerare i seguenti suggerimenti: <ul>\n"
+"<li> Usare frasi che sono familiari agli studenti e che essi \n"
+"hanno già incontrato nei loro studi </li>\n"
+"<li> Fornire risposte concise </li>\n"
+"<li> Creare una certa consistenza tra i punti e le risposte </li>\n"
+"<li> Fornire abbastanza opzioni per impegnare gli studenti a pensare alle loro risposte\n"
+"</li>\n"
+"<li> Assicurarsi che le risposte corrette non siano più dettagliate dei distrattori </li>\n"
+"<li> I distrattori devono essere sbagliati ma in forma plausibile </li>\n"
+"</ul>\n"
 
 #: exe/webui/wikipediablock.py:103
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "Articolo Wikibooks"
 
 #: exe/webui/wikipediablock.py:104
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "Contenuto Wikieducator"
 
 #: exe/engine/wikipediaidevice.py:51
 msgid "Wikipedia Article"
-msgstr ""
+msgstr "Articolo Wikipedia"
 
 #: exe/webui/optionelement.py:131 exe/webui/element.py:1391
 msgid "Wrong"
-msgstr ""
+msgstr "Sbagliato"
 
 #: exe/idevices/forumelement.py:84
 msgid "Yes, forever"
-msgstr ""
+msgstr "Si, sempre"
 
 #: exe/idevices/forumelement.py:85
 msgid "Yes, initially"
-msgstr ""
+msgstr "Si, all'inizio"
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr ""
+msgstr "Utilizzare la barra degli strumenti o inserire manualmente il latex nel campo del testo. "
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
-msgstr ""
+msgstr "Il nuovo iDevice verrà visualizzato nel pannello con questo titolo. Questo è un campo obbligatorio e verrà richiesto l'inserimento di una etichetta se si conferma un iDevice senza di esso."
 
 #: exe/webui/wikipediablock.py:206
 msgid "article "
-msgstr ""
+msgstr "articolo"
 
 #: exe/webui/element.py:288 exe/webui/element.py:600
 msgid "blank for original size"
-msgstr ""
+msgstr "vuoto per dimensioni originali"
 
 #: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
-msgstr ""
+msgstr "nome di Forum duplicato.\n"
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
-msgstr ""
+msgstr "nome argomento duplicato"
 
 #: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
-msgstr ""
+msgstr "eXe"
 
 #: exe/webui/common.py:67 exe/webui/preferencespage.py:77
 #: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
-msgstr ""
+msgstr "eXe : elearning XHTML editor"
 
 #: exe/idevices/appletidevice.py:77
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "il file %s non ha un nodo genitore"
 
 #: exe/engine/wikipediaidevice.py:180
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:79
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "L'iDevice %s non ha un pacchetto"
 
 #: exe/engine/package.py:295 exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
@@ -1930,71 +2214,71 @@ msgstr ""
 
 #: exe/webui/block.py:297
 msgid "iDevice icon"
-msgstr ""
+msgstr "Editor iDevice"
 
 #: exe/webui/renderable.py:250
 msgid "key"
-msgstr ""
+msgstr "tasto"
 
 #: exe/webui/renderable.py:252
 msgid "keycode"
-msgstr ""
+msgstr "codice tasto"
 
 #: exe/webui/renderable.py:243
 msgid "label"
-msgstr ""
+msgstr "etichetta"
 
 #: exe/webui/element.py:1063
 msgid "newline"
-msgstr ""
+msgstr "nuova linea"
 
 #: exe/webui/element.py:1062
 msgid "text"
-msgstr ""
+msgstr "testo"
 
 #: exe/webui/renderable.py:255
 msgid "title"
-msgstr ""
+msgstr "titolo"
 
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
 #: exe/resources/internal/templates/dublincore.xul:<caption
 msgid "Dublin Core Metadata"
-msgstr ""
+msgstr "Dublin Core Metadata"
 
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
 #: label="SCORM 1.2 Options">
 #: exe/resources/internal/templates/exportproperties.xul:<caption
 msgid "SCORM 1.2 Options"
-msgstr ""
+msgstr "Opzioni SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Insert Package"
-msgstr ""
+msgstr "Inserisci Pacchetto"
 
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 #: exe/resources/internal/templates/metadata.xul:<tab
 msgid "Dublin Core"
-msgstr ""
+msgstr "Dublin Core"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 #: exe/resources/internal/templates/packageproperties.xul:<caption
 msgid "Project Properties"
-msgstr ""
+msgstr "Proprietà del progetto"
 
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 #: exe/resources/internal/templates/properties.xul:<tab
 msgid "Package"
-msgstr ""
+msgstr "Pacchetto"
 
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
 #: style="width:8em" tooltiptext="The name given to the resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Title:"
-msgstr ""
+msgstr "Titolo:"
 
 #: exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add
@@ -2003,42 +2287,42 @@ msgstr ""
 #: kind of functionality." checked="false">
 #: exe/resources/internal/templates/exportproperties.xul:<checkbox
 msgid "Add Previous/Next links within SCOs?"
-msgstr ""
+msgstr "Aggiungi collegamenti Precedente/Successivo all'interno degli SCO?"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Extract Package"
-msgstr ""
+msgstr "Estrai Pacchetto"
 
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 #: exe/resources/internal/templates/metadata.xul:<tab
 msgid "IEEE LOM"
-msgstr ""
+msgstr "IEEE LOM"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
 #: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 #: exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Project Title:"
-msgstr ""
+msgstr "Titolo del Progetto:"
 
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 #: exe/resources/internal/templates/properties.xul:<tab
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
 #: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Creator:"
-msgstr ""
+msgstr "Progettista:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_INSERT"
-msgstr ""
+msgstr "VK_INSERT"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
 #: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
@@ -2050,25 +2334,25 @@ msgstr ""
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 #: exe/resources/internal/templates/properties.xul:<tab
 msgid "Export"
-msgstr ""
+msgstr "Esporta"
 
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
 #: style="width:8em" tooltiptext="The topic of the content resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Subject:"
-msgstr ""
+msgstr "Soggetto:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_DELETE"
-msgstr ""
+msgstr "VK_DELETE"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
 #: Image"> exe/resources/internal/templates/packageproperties.xul:<button
 msgid "Load Image"
-msgstr ""
+msgstr "Carica Immagine"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 #: exe/resources/internal/templates/dublincore.xul:<description
@@ -2080,75 +2364,81 @@ msgid ""
 "                vocabulary or formal classification scheme.\n"
 "             "
 msgstr ""
+"\n"
+"                Tipicamente, i Soggetti devono essere espressi come parole chiave, frasi chiave o\n"
+"                codici di classificazione che descrivono gli argomenti di una risorsa.\n"
+"                La migliore pratica raccomandata è selezionare un valore da un vocabolario\n"
+"                controllato o da uno schema di classificazione.\n"
+"             "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image"> exe/resources/internal/templates/packageproperties.xul:<button
 msgid "Clear Image"
-msgstr ""
+msgstr "Cancella Immagine"
 
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:"
 #: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Publisher:"
-msgstr ""
+msgstr "Editore"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_LEFT"
-msgstr ""
+msgstr "VK_LEFT"
 
 #: exe/xului/templates/packageproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
 #: label="Tile background image?" checked="false">
 #: exe/resources/internal/templates/packageproperties.xul:<checkbox
 msgid "Tile background image?"
-msgstr ""
+msgstr "Immagine di fondo del titolo"
 
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:"
 #: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Contributors:"
-msgstr ""
+msgstr "Contributori:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "VK_RIGHT"
-msgstr ""
+msgstr "VK_RIGHT"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Author:"
 #: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource."> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Author:"
-msgstr ""
+msgstr "Autore:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
 #: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource."> exe/resources/internal/templates/dublincore.xul:<label
 msgid "Date:"
-msgstr ""
+msgstr "Data:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
 #: exe/resources/internal/templates/packageproperties.xul:<caption
 msgid "Taxonomy"
-msgstr ""
+msgstr "Tassonomia"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 #: exe/resources/internal/templates/dublincore.xul:<description
@@ -2159,36 +2449,41 @@ msgid ""
 "                 encoding the date value is defined in a profile called\n"
 "                 "
 msgstr ""
+"\n"
+"                 Tipicamente, la Data dovrebbe essere associata con la creazione o con\n"
+"                 la disponibilità della risorsa. La raccomandazione migliore per\n"
+"                 la codifica della data è definirla in un profilo chiamato\n"
+"                 "
 
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Level 1:"
-msgstr ""
+msgstr "Livello 1:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
 #: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource."> exe/resources/internal/templates/dublincore.xul:<label
 msgid "Type:"
-msgstr ""
+msgstr "Tipologia:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Level 2:"
-msgstr ""
+msgstr "Livello 2:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 #: exe/resources/internal/templates/dublincore.xul:<description
@@ -2198,30 +2493,34 @@ msgid ""
 "              genres, for content. Recommended best practice is to select a value\n"
 "              from a controlled vocabulary or controlled classification scheme."
 msgstr ""
+"\n"
+"              La Tipologia include termini che descrivono categorie generali, funzioni, o\n"
+"              generi, per i contenuti. La pratica migliore suggerita è selezionare un valore\n"
+"              a partire da un vocabolario controllato o da uno schema controllato di classificazione."
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
 msgid "Level 3:"
-msgstr ""
+msgstr "Livello 3:"
 
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
 #: style="width:8em" tooltiptext="Select a Format.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Format:"
-msgstr ""
+msgstr "Formato:"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
 #: exe/resources/internal/templates/mainpage.xul:<key
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2229,13 +2528,13 @@ msgstr ""
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
 #: display"> exe/resources/internal/templates/packageproperties.xul:<button
 msgid "Update Tree"
-msgstr ""
+msgstr "Aggiorna Albero"
 
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
 #: exe/resources/internal/templates/dublincore.xul:<menulist
 msgid "Select Format"
-msgstr ""
+msgstr "Seleziona formato"
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
@@ -2252,31 +2551,31 @@ msgstr ""
 #: accesskey="f" label="File">
 #: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"File\" accesskey=\"f\""
-msgstr ""
+msgstr "label=\"File\" accesskey=\"f\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "SCORM 1.2"
-msgstr ""
+msgstr "SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"New\" accesskey=\"n\""
-msgstr ""
+msgstr "label=\"Nuovo\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "IMS Content Package 1.1.3"
-msgstr ""
+msgstr "IMS Content Package 1.1.3"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr ""
+msgstr "label=\"Apri\" accesskey=\"o\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site"
 #: id="dcmiWebSite" label="Web Site"> exe/xului/templates/mainpage.xul:<menu
@@ -2284,20 +2583,20 @@ msgstr ""
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 #: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "Web Site"
-msgstr ""
+msgstr "Sito Web"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"Salva\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:"
 #: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Identifier:"
-msgstr ""
+msgstr "Identificatore:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
@@ -2310,1110 +2609,1121 @@ msgstr ""
 #: present is derived.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Source:"
-msgstr ""
+msgstr "Sorgente:"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 #: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Export\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"Esporta\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
 #: style="width:8em" tooltiptext="Select a language.">
 #: exe/resources/internal/templates/dublincore.xul:<label
 msgid "Language:"
-msgstr ""
+msgstr "Lingua:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Afar "
-msgstr ""
+msgstr "Afar "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Abkhazian "
-msgstr ""
+msgstr "Abkhazian "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Self-contained Folder"
-msgstr ""
+msgstr "Self-contained Folder"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Avestan "
-msgstr ""
+msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Zip File"
-msgstr ""
+msgstr "File Zip"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Afrikaans "
-msgstr ""
+msgstr "Afrikaans "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr ""
+msgstr "label=\"Pagina Singola\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Amharic "
-msgstr ""
+msgstr "Amharic "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr ""
+msgstr "label=\"File Testo\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Arabic "
-msgstr ""
+msgstr "Arabic "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="e" label="Merging">
 msgid "label=\"Merging\" accesskey=\"e\""
-msgstr ""
+msgstr "label=\"Fusione\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Assamese "
-msgstr ""
+msgstr "Assamese "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr ""
+msgstr "label=\"Inserisci Pacchetto\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Aymara "
-msgstr ""
+msgstr "Aymara "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr ""
+msgstr "label=\"Estrai Pacchetto\" accesskey=\"E\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Azerbaijani "
-msgstr ""
+msgstr "Azerbaijani "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr ""
+msgstr "label=\"Quit\" accesskey=\"q\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bashkir "
-msgstr ""
+msgstr "Bashkir "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
 #: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr ""
+msgstr "label=\"Utilità\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Byelorussian; Belarusian "
-msgstr ""
+msgstr "Byelorussian; Belarusian "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "Preferences"
-msgstr ""
+msgstr "Preferenze"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bulgarian "
-msgstr ""
+msgstr "Bulgarian "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 #: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr ""
+msgstr "label=\"Stili\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bihari "
-msgstr ""
+msgstr "Bihari "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr ""
+msgstr "label=\"Rinfresca\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bislama "
-msgstr ""
+msgstr "Bislama "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 #: exe/resources/internal/templates/mainpage.xul:<menu
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr ""
+msgstr "label=\"Aiuto\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bengali; Bangla "
-msgstr ""
+msgstr "Bengali; Bangla "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"About\" accesskey=\"a\""
-msgstr ""
+msgstr "label=\"Informazioni\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
 #: label="Tibetan "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Tibetan "
-msgstr ""
+msgstr "Tibetan "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="registerOnline()" accesskey="R" label="Register Online">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Register Online\" accesskey=\"R\""
-msgstr ""
+msgstr "label=\"Registrazione Online\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Breton "
-msgstr ""
+msgstr "Breton "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Report an Issue\" accesskey=\"R\""
-msgstr ""
+msgstr "label=\"Riportare un problema\" accesskey=\"R\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Bosnian "
-msgstr ""
+msgstr "Bosnian "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo"> exe/resources/internal/templates/mainpage.xul:<label
 msgid "debugInfo"
-msgstr ""
+msgstr "debugInfo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Catalan "
-msgstr ""
+msgstr "Catalan "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" label="Add Page">
 #: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
 msgid "Add Page"
-msgstr ""
+msgstr "Aggiungi Pagina"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Chechen "
-msgstr ""
+msgstr "Chechen "
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 #: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
 msgid "Rename"
-msgstr ""
+msgstr "Rinomina"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Chamorro "
-msgstr ""
+msgstr "Chamorro "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane"> exe/resources/internal/templates/mainpage.xul:<label
 msgid "outlinePane"
-msgstr ""
+msgstr "outlinePane"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Corsican "
-msgstr ""
+msgstr "Corsican "
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 #: exe/resources/internal/templates/mainpage.xul:<label
 msgid "iDevices"
-msgstr ""
+msgstr "iDevices"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Czech "
-msgstr ""
+msgstr "Czech "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane"> exe/resources/internal/templates/mainpage.xul:<label
 msgid "iDevicePane"
-msgstr ""
+msgstr "iDevicePane"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Church Slavic "
-msgstr ""
+msgstr "Church Slavic "
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring"> exe/resources/internal/templates/mainpage.xul:<tab
 msgid "Authoring"
-msgstr ""
+msgstr "Authoring"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Chuvash "
-msgstr ""
+msgstr "Chuvash "
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties"> exe/resources/internal/templates/mainpage.xul:<tab
 msgid "Properties"
-msgstr ""
+msgstr "Proprietà"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
 #: label="Welsh "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Welsh "
-msgstr ""
+msgstr "Welsh "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Danish "
-msgstr ""
+msgstr "Danish"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
 #: label="German "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "German "
-msgstr ""
+msgstr "German "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Dzongkha; Bhutani "
-msgstr ""
+msgstr "Dzongkha; Bhutani "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Greek "
-msgstr ""
+msgstr "Greek "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
 #: label="English "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "English "
-msgstr ""
+msgstr "English "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Esperanto "
-msgstr ""
+msgstr "Esperanto "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
 #: label="Spanish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Spanish "
-msgstr ""
+msgstr "Spanish "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
 #: label="Estonian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Estonian "
-msgstr ""
+msgstr "Estonian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Basque "
-msgstr ""
+msgstr "Basque "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
 #: label="Persian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Persian "
-msgstr ""
+msgstr "Persian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
 #: label="Finnish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Finnish "
-msgstr ""
+msgstr "Finnish "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
 #: label="Fijian; Fiji ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Fijian; Fiji "
-msgstr ""
+msgstr "Fijian; Fiji "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
 #: label="Faroese "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Faroese "
-msgstr ""
+msgstr "Faroese "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
 #: label="French "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "French "
-msgstr ""
+msgstr "French "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
 #: label="Frisian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Frisian "
-msgstr ""
+msgstr "Frisian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
 #: label="Irish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Irish "
-msgstr ""
+msgstr "Irish "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
 #: label="Scots; Gaelic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Scots; Gaelic "
-msgstr ""
+msgstr "Scots; Gaelic "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Gallegan; Galician "
-msgstr ""
+msgstr "Gallegan; Galician "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Guarani "
-msgstr ""
+msgstr "Guarani "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
 #: label="Gujarati ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Gujarati "
-msgstr ""
+msgstr "Gujarati "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
 #: label="Manx "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Manx "
-msgstr ""
+msgstr "Manx "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
 #: label="Hausa (?) ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hausa (?) "
-msgstr ""
+msgstr "Hausa (?) "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hebrew (formerly iw) "
-msgstr ""
+msgstr "Hebrew (formerly iw) "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
 #: label="Hindi "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hindi "
-msgstr ""
+msgstr "Hindi "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hiri Motu "
-msgstr ""
+msgstr "Hiri Motu "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
 #: label="Croatian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Croatian "
-msgstr ""
+msgstr "Croatian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
 #: label="Hungarian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Hungarian "
-msgstr ""
+msgstr "Hungarian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Armenian "
-msgstr ""
+msgstr "Armenian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
 #: label="Herero "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Herero "
-msgstr ""
+msgstr "Herero "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
 #: label="Interlingua ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Interlingua "
-msgstr ""
+msgstr "Interlingua "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
 #: label="Indonesian (formerly in) ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Indonesian (formerly in) "
-msgstr ""
+msgstr "Indonesian (formerly in) "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
 #: label="Interlingue ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Interlingue "
-msgstr ""
+msgstr "Interlingue "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
 #: label="Inupiak "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Inupiak "
-msgstr ""
+msgstr "Inupiak "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
 #: label="Ido "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Ido "
-msgstr ""
+msgstr "Ido "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
 #: label="Icelandic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Icelandic "
-msgstr ""
+msgstr "Icelandic "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
 #: label="Italian "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Italian "
-msgstr ""
+msgstr "Italiano "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
 #: label="Inuktitut ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Japanese "
-msgstr ""
+msgstr "Japanese "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
 #: label="Javanese ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Javanese "
-msgstr ""
+msgstr "Javanese "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
 #: label="Georgian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Georgian "
-msgstr ""
+msgstr "Georgian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
 #: label="Kikuyu "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kikuyu "
-msgstr ""
+msgstr "Kikuyu "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
 #: label="Kuanyama ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kuanyama "
-msgstr ""
+msgstr "Kuanyama "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
 #: label="Kazakh "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kazakh "
-msgstr ""
+msgstr "Kazakh "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
 #: label="Kalaallisut; Greenlandic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kalaallisut; Greenlandic "
-msgstr ""
+msgstr "Kalaallisut; Greenlandic "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
 #: label="Khmer; Cambodian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Khmer; Cambodian "
-msgstr ""
+msgstr "Khmer; Cambodian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
 #: label="Kannada "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kannada "
-msgstr ""
+msgstr "Kannada "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
 #: label="Korean "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Korean "
-msgstr ""
+msgstr "Korean "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
 #: label="Kashmiri ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kashmiri "
-msgstr ""
+msgstr "Kashmiri "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
 #: label="Kurdish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kurdish "
-msgstr ""
+msgstr "Kurdish "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
 #: label="Komi "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Komi "
-msgstr ""
+msgstr "Komi "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Cornish "
-msgstr ""
+msgstr "Cornish "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
 #: label="Kirghiz "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Kirghiz "
-msgstr ""
+msgstr "Kirghiz "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
 #: label="Latin "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Latin "
-msgstr ""
+msgstr "Latin "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
 #: label="Letzeburgesch ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Letzeburgesch "
-msgstr ""
+msgstr "Letzeburgesch "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
 #: label="Lingala "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Lingala "
-msgstr ""
+msgstr "Lingala "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
 #: label="Lao; Laotian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Lao; Laotian "
-msgstr ""
+msgstr "Lao; Laotian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
 #: label="Lithuanian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Lithuanian "
-msgstr ""
+msgstr "Lithuanian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
 #: label="Latvian; Lettish ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Latvian; Lettish "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
 #: label="Malagasy ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Malagasy "
-msgstr ""
+msgstr "Malagasy "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
 #: label="Marshall ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Marshall "
-msgstr ""
+msgstr "Marshall "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
 #: label="Maori "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Maori "
-msgstr ""
+msgstr "Maori "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
 #: label="Macedonian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Macedonian "
-msgstr ""
+msgstr "Macedonian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Malayalam "
-msgstr ""
+msgstr "Malayalam "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
 #: label="Mongolian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Mongolian "
-msgstr ""
+msgstr "Mongolian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
 #: label="Moldavian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Moldavian "
-msgstr ""
+msgstr "Moldavian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
 #: label="Marathi "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Marathi "
-msgstr ""
+msgstr "Marathi "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
 #: label="Malay "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Malay "
-msgstr ""
+msgstr "Malay "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
 #: label="Maltese "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Maltese "
-msgstr ""
+msgstr "Maltese "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Burmese "
-msgstr ""
+msgstr "Burmese "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
 #: label="Nauru "> exe/resources/internal/templates/dublincore.xul:<menuitem
 msgid "Nauru "
-msgstr ""
+msgstr "Nauru "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="nb"
 #: id="dcminb" label="Norwegian Bokmål ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#, fuzzy
 msgid "Norwegian Bokmål "
-msgstr ""
+msgstr "Norwegian BokmÃ¥l "
 
 #: exe/resources/internal/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
 #: exe/xului/templates/mainpage.xul:<menu
+#, fuzzy
 msgid "label=\"Merging\" accesskey=\"m\""
-msgstr ""
+msgstr "label=\"Fusione\" accesskey=\"e\""
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="nd"
 #: id="dcmind" label="Ndebele, North ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndebele, North "
-msgstr ""
+msgstr "Ndebele, North "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ne"
 #: id="dcmine" label="Nepali "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Nepali "
-msgstr ""
+msgstr "Nepali "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ng"
 #: id="dcming" label="Ndonga "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndonga "
-msgstr ""
+msgstr "Ndonga "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="nl"
 #: id="dcminl" label="Dutch "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Dutch "
-msgstr ""
+msgstr "Dutch "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="nn"
 #: id="dcminn" label="Norwegian Nynorsk ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian Nynorsk "
-msgstr ""
+msgstr "Norwegian Nynorsk  "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="no"
 #: id="dcmino" label="Norwegian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian "
-msgstr ""
+msgstr "Norwegian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="nr"
 #: id="dcminr" label="Ndebele, South ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndebele, South "
-msgstr ""
+msgstr "Ndebele, South "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="nv"
 #: id="dcminv" label="Navajo "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Navajo "
-msgstr ""
+msgstr "Navajo "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ny"
 #: id="dcminy" label="Chichewa; Nyanja ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chichewa; Nyanja "
-msgstr ""
+msgstr "Chichewa; Nyanja "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="oc"
 #: id="dcmioc" label="Occitan; Provençal ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#, fuzzy
 msgid "Occitan; Provençal "
-msgstr ""
+msgstr "Occitan; ProvenÃ§al "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="om"
 #: id="dcmiom" label="(Afan) Oromo ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "(Afan) Oromo "
-msgstr ""
+msgstr "(Afan) Oromo "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="or"
 #: id="dcmior" label="Oriya "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Oriya "
-msgstr ""
+msgstr "Oriya "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="os"
 #: id="dcmios" label="Ossetian; Ossetic ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ossetian; Ossetic "
-msgstr ""
+msgstr "Ossetian; Ossetic "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="pa"
 #: id="dcmipa" label="Panjabi; Punjabi ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Panjabi; Punjabi "
-msgstr ""
+msgstr "Panjabi; Punjabi "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="pi"
 #: id="dcmipi" label="Pali "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Pali "
-msgstr ""
+msgstr "Pali "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="pl"
 #: id="dcmipl" label="Polish "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Polish "
-msgstr ""
+msgstr "Polish "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ps"
 #: id="dcmips" label="Pashto, Pushto ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Pashto, Pushto "
-msgstr ""
+msgstr "Pashto, Pushto "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="pt"
 #: id="dcmipt" label="Portuguese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Portuguese "
-msgstr ""
+msgstr "Portuguese"
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="qu"
 #: id="dcmiqu" label="Quechua "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Quechua "
-msgstr ""
+msgstr "Quechua "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="rm"
 #: id="dcmirm" label="Rhaeto-Romance ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Rhaeto-Romance "
-msgstr ""
+msgstr "Rhaeto-Romance "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="rn"
 #: id="dcmirn" label="Rundi; Kirundi ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Rundi; Kirundi "
-msgstr ""
+msgstr "Rundi; Kirundi "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ro"
 #: id="dcmiro" label="Romanian "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Romanian "
-msgstr ""
+msgstr "Romanian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ru"
 #: id="dcmiru" label="Russian "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Russian "
-msgstr ""
+msgstr "Russian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="rw"
 #: id="dcmirw" label="Kinyarwanda ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kinyarwanda "
-msgstr ""
+msgstr "Kinyarwanda "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sa"
 #: id="dcmisa" label="Sanskrit "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sanskrit "
-msgstr ""
+msgstr "Sanskrit "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sc"
 #: id="dcmisc" label="Sardinian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sardinian "
-msgstr ""
+msgstr "Sardinian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sd"
 #: id="dcmisd" label="Sindhi "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sindhi "
-msgstr ""
+msgstr "Sindhi "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="se"
 #: id="dcmise" label="Northern Sami ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Northern Sami "
-msgstr ""
+msgstr "Northern Sami "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sg"
 #: id="dcmisg" label="Sango; Sangro ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sango; Sangro "
-msgstr ""
+msgstr "Sango; Sangro "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="si"
 #: id="dcmisi" label="Sinhalese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sinhalese "
-msgstr ""
+msgstr "Sinhalese "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sk"
 #: id="dcmisk" label="Slovak "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Slovak "
-msgstr ""
+msgstr "Slovak "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sl"
 #: id="dcmisl" label="Slovenian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Slovenian "
-msgstr ""
+msgstr "Slovenian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sm"
 #: id="dcmism" label="Samoan "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Samoan "
-msgstr ""
+msgstr "Samoan "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sn"
 #: id="dcmisn" label="Shona "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Shona "
-msgstr ""
+msgstr "Shona "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="so"
 #: id="dcmiso" label="Somali "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Somali "
-msgstr ""
+msgstr "Somali "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sq"
 #: id="dcmisq" label="Albanian "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Albanian "
-msgstr ""
+msgstr "Albanian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sr"
 #: id="dcmisr" label="Serbian "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Serbian "
-msgstr ""
+msgstr "Serbian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ss"
 #: id="dcmiss" label="Swati; Siswati ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swati; Siswati "
-msgstr ""
+msgstr "Swati; Siswati "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="st"
 #: id="dcmist" label="Sesotho; Sotho, Southern ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sesotho; Sotho, Southern "
-msgstr ""
+msgstr "Sesotho; Sotho, Southern "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="su"
 #: id="dcmisu" label="Sundanese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sundanese "
-msgstr ""
+msgstr "Sundanese "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sv"
 #: id="dcmisv" label="Swedish "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swedish "
-msgstr ""
+msgstr "Swedish "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="sw"
 #: id="dcmisw" label="Swahili "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swahili "
-msgstr ""
+msgstr "Swahili "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ta"
 #: id="dcmita" label="Tamil "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tamil "
-msgstr ""
+msgstr "Tamil "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="te"
 #: id="dcmite" label="Telugu "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Telugu "
-msgstr ""
+msgstr "Telugu "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tg"
 #: id="dcmitg" label="Tajik "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tajik "
-msgstr ""
+msgstr "Tajik "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="th"
 #: id="dcmith" label="Thai "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Thai "
-msgstr ""
+msgstr "Thai "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ti"
 #: id="dcmiti" label="Tigrinya "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tigrinya "
-msgstr ""
+msgstr "Tigrinya "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tk"
 #: id="dcmitk" label="Turkmen "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Turkmen "
-msgstr ""
+msgstr "Turkmen "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tl"
 #: id="dcmitl" label="Tagalog "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tagalog "
-msgstr ""
+msgstr "Tagalog "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tn"
 #: id="dcmitn" label="Tswana; Setswana ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tswana; Setswana "
-msgstr ""
+msgstr "Tswana; Setswana "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="to"
 #: id="dcmito" label="Tonga (?) ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tonga (?) "
-msgstr ""
+msgstr "Tonga (?) "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tr"
 #: id="dcmitr" label="Turkish "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Turkish "
-msgstr ""
+msgstr "Turkish "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ts"
 #: id="dcmits" label="Tsonga "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tsonga "
-msgstr ""
+msgstr "Tsonga "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tt"
 #: id="dcmitt" label="Tatar "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tatar "
-msgstr ""
+msgstr "Tatar "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="tw"
 #: id="dcmitw" label="Twi "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Twi "
-msgstr ""
+msgstr "Twi "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ty"
 #: id="dcmity" label="Tahitian "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tahitian "
-msgstr ""
+msgstr "Tahitian"
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ug"
 #: id="dcmiug" label="Uighur "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Uighur "
-msgstr ""
+msgstr "Uighur "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="uk"
 #: id="dcmiuk" label="Ukrainian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ukrainian "
-msgstr ""
+msgstr "Ukrainian "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="ur"
 #: id="dcmiur" label="Urdu "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Urdu "
-msgstr ""
+msgstr "Urdu "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="uz"
 #: id="dcmiuz" label="Uzbek "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Uzbek "
-msgstr ""
+msgstr "Uzbek "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="vi"
 #: id="dcmivi" label="Vietnamese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Vietnamese "
-msgstr ""
+msgstr "Vietnamese "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="vo"
 #: id="dcmivo" label="Volapük; Volapuk ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#, fuzzy
 msgid "Volapük; Volapuk "
-msgstr ""
+msgstr "VolapÃ¼k; Volapuk "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="wa"
 #: id="dcmiwa" label="Walloon "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Walloon "
-msgstr ""
+msgstr "Walloon "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="wo"
 #: id="dcmiwo" label="Wolof "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Wolof "
-msgstr ""
+msgstr "Wolof "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="xh"
 #: id="dcmixh" label="Xhosa "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Xhosa "
-msgstr ""
+msgstr "Xhosa "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="yi"
 #: id="dcmiyi" label="Yiddish (formerly ji) ">
 #: exe/xului/templates/dublincore.xul:<menuitem
 msgid "Yiddish (formerly ji) "
-msgstr ""
+msgstr "Yiddish (formerly ji) "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="yo"
 #: id="dcmiyo" label="Yoruba "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Yoruba "
-msgstr ""
+msgstr "Yoruba "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="za"
 #: id="dcmiza" label="Zhuang "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Zhuang "
-msgstr ""
+msgstr "Zhuang "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="zh"
 #: id="dcmizh" label="Chinese "> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chinese "
-msgstr ""
+msgstr "Chinese "
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem value="zu"
 #: id="dcmizu" label="Zulu."> exe/xului/templates/dublincore.xul:<menuitem
 msgid "Zulu."
-msgstr ""
+msgstr "Zulu"
 
 #: exe/resources/internal/templates/dublincore.xul:<label value="Relation:"
 #: id="dcRelation" style="width:8em" tooltiptext="A reference to a related
 #: resource."> exe/xului/templates/dublincore.xul:<label
 msgid "Relation:"
-msgstr ""
+msgstr "Relazione:"
 
 #: exe/resources/internal/templates/dublincore.xul:<label value="Coverage:"
 #: id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the
 #: content resource."> exe/xului/templates/dublincore.xul:<label
 msgid "Coverage:"
-msgstr ""
+msgstr "Riempimento:"
 
 #: exe/resources/internal/templates/dublincore.xul:<label value="Rights:"
 #: id="dcRights" style="width:8em" tooltiptext="Information about rights held
 #: in and over the resource."> exe/xului/templates/dublincore.xul:<label
 msgid "Rights:"
-msgstr ""
+msgstr "Diritti:"
 
 #: exe/resources/internal/templates/dublincore.xul:<description
 #: id="dcDescRights"> exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
+msgstr "Tipicamente, un elemento di diritti conterrà una dichiarazione sulla gestione dei diritti per la risorsa, o il riferimento ad  un servizio che fornisce tali informazioni. Le informazioni sui diritti comprendono spesso i diritti di proprietà intellettuale (IPR), il copyright ed i vari diritti di proprietà . Se l'elemento di diritti è assente, nessun presupposto può essere fatto circa la condizione di questi e di altri diritti riguardo alla risorsa."
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#, fuzzy
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr ""
+msgstr "label=\"Rinfresca\" accesskey=\"r\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+#, fuzzy
+msgid "label=\"SCORM 2004\" accesskey=\"c\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""

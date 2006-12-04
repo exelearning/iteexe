@@ -3680,6 +3680,12 @@ msgstr "Ngokucacile, isici samaLungelo siyoqukatha ukulandisa kokuphathwa kwamal
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"Akha Kabusha\" accesskey=\"a\""
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+#, fuzzy
+msgid "label=\"SCORM 2004\" accesskey=\"c\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

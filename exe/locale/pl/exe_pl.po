@@ -3847,6 +3847,15 @@ msgstr "Zazwyczaj, element Prawa zawiera opis praw autorskich dla danego zasobu 
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"Odśwież\" accesskey=\"r\""
 
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+#, fuzzy
+msgid "label=\"SCORM 2004\" accesskey=\"c\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

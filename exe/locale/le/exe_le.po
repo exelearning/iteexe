@@ -3463,6 +3463,12 @@ msgstr ""
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"R3FR35h\" accesskey=\"r\""
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+#, fuzzy
+msgid "label=\"SCORM 2004\" accesskey=\"c\""
+msgstr "label=\"sc0rM 1.2\" accesskey=\"s\""
+
 #, fuzzy
 #~ msgid "Add Question"
 #~ msgstr "4Dd 4N07H3r KW35710n"
