@@ -744,6 +744,12 @@ class Path(unicode):
 
     if hasattr(os.path, 'samefile'):
         samefile = os.path.samefile
+    else:
+        def samefile(self, filename):
+            """
+            This is a hacky windows version.
+            """
+            return toUnicode(self.abspath()) == toUnicode(Path(filename).abspath())
 
     getatime = os.path.getatime
     atime = property(
