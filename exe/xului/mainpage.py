@@ -79,31 +79,17 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
-    def NOT_closeComplete(self, failure=None): 
-        """ 
-        We override this from nevow.livepage's implementation 
-        to fix a bug in livepage 
-        """ 
-        if self.closed: 
-            return 
-        self.closed = True 
-        # TODO: As soon as livepage adds this line in their code, we won't need 
-        # to override this method anymore 
-        if self.timeoutLoop.running: 
-            self.timeoutLoop.stop() 
-        self.timeoutLoop = None 
-        for notify in self.closeNotifications[:]: 
-            if failure is not None: 
-                notify.errback(failure) 
-            else: 
-                notify.callback(None) 
-        self.closeNotifications = [] 
-        
     def onClose(self, reason, data=None): 
         """ 
         Called when the user has closed the window 
         """ 
-        self.package.save(self.config.configDir/'unsavedWork.elp', True) 
+        if self.closing:
+            # If this is second or more time bieng called in a row, cancel the previous timeout
+            self.closing.cancel()
+        else:
+            # If this is first time being called in a row, save
+            self.package.save(self.config.configDir/'unsavedWork.elp', True)
+        # Start a self destruct timer (close server in 10 secs)
         self.closing = reactor.callLater(10, reactor.stop)
 
     def getChild(self, name, request):
@@ -117,8 +103,9 @@ class MainPage(RenderableLivePage):
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
-        if self.closing:
+        if self.closing: 
             self.closing.cancel()
+            self.closing = None
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
