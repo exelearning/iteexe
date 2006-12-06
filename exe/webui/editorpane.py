@@ -162,7 +162,7 @@ data is entered into this field.""")))
 
         if "preview" in request.args:
             if self.idevice.title == "":
-                self.message = _("Please enter an idevice name.")
+                self.message = _("Please enter<br />an idevice name.")
             else:
                 self.idevice.edit = False
 
@@ -210,7 +210,7 @@ data is entered into this field.""")))
         """
         html = "<font color=\"red\"<b>"+self.message+"</b></font>"
         
-        html += "<fieldset><legend><b>" + _("Add")+ "</b></legend>"
+        html += "<fieldset><legend><b>" + _("Add Field")+ "</b></legend>"
         html += common.submitButton("addText", _("Text Line"))
         html += common.elementInstruc(self.lineInstruc) + "<br/>"
         html += common.submitButton("addTextArea", _("Text Box"))
