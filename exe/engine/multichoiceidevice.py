@@ -54,7 +54,7 @@ class MultichoiceIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"Quiz"),
+                         x_(u"Multi-choice"),
                          x_(u"University of Auckland"),
                          x_(u"""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  

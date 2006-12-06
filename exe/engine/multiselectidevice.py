@@ -38,7 +38,7 @@ class MultiSelectIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"Multiple Select"),
+                         x_(u"Multi-select"),
                          x_(u"University of Auckland"),
                          x_(u"""Unlike the MCQ the SCORM quiz is used to test 
 the learners knowledge on a topic without providing the learner with feedback 
