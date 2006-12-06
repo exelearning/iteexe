@@ -35,7 +35,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -49,6 +49,7 @@ class GenericIdevice(Idevice):
         self.class_  = class_
         self.icon    = icon
         self.fields  = []
+        self.nextFieldId = 0
         self.systemResources += ["common.js", "libot_drag.js"]
 
 
@@ -71,7 +72,26 @@ class GenericIdevice(Idevice):
                       (field.idevice.title, self.title))
         field.idevice = self
         self.fields.append(field)
-
+        
+    def getUniqueFieldId(self):
+        """
+        Returns a unique id (within this idevice) for a field
+        """
+        self.calcNextFieldId()
+        result = self.nextFieldId
+        self.nextFieldId += 1
+        return result
+        
+    def calcNextFieldId(self):
+        """
+        Returns a nextFieldId for a field
+        """
+        if self.nextFieldId == 0:
+            maxId = 0
+            for field in self.fields:
+                if field.getFieldId() > maxId:
+                    maxId = field.getFieldId()
+                    self.nextFieldId = maxId 
 
     def __iter__(self):
         return iter(self.fields)
@@ -166,6 +186,14 @@ class GenericIdevice(Idevice):
             if self.title == u'Reading Activity 0.11':
                 # If created in english, upgrade in english
                 self.title = u'Reading Activity'
+                
+    def upgradeToVersion8(self):
+        """
+        Upgrades to v0.20
+        """
+        self.nextFieldId = 0
+
+        
 
 
 # ===========================================================================

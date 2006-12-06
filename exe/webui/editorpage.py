@@ -27,6 +27,8 @@ from exe.webui                 import common
 from exe.engine.genericidevice import GenericIdevice
 from exe.webui.editorpane      import EditorPane
 from exe.webui.renderable      import RenderableResource
+from exe.engine.package        import Package
+from exe.engine.path           import Path
 
 log = logging.getLogger(__name__)
 
@@ -80,9 +82,10 @@ class EditorPage(RenderableResource):
                     self.__saveChanges(idevice, copyIdevice)
                 
                 for idevice in genericIdevices:
-                    if idevice.id == request.args["object"][0]:
+                    if idevice.title == request.args["object"][0]:
                         break
                 self.isNewIdevice = False
+                #idevice.calcNextFieldId
                 self.editorPane.setIdevice(idevice)               
                 self.editorPane.process(request, "new")
                 
@@ -96,7 +99,9 @@ class EditorPage(RenderableResource):
             self.ideviceStore.save()
             self.__createNewIdevice(request) 
             
-        if "add" in request.args:
+
+        if ("action" in request.args and 
+             request.args["action"][0] == "new"):
             if self.editorPane.idevice.title == "":
                 self.message = _("Please enter an idevice name.")
             else:
@@ -108,13 +113,16 @@ class EditorPage(RenderableResource):
                 self.ideviceStore.save()
                 self.isNewIdevice = False
                 
-        if "save" in request.args: 
+        if ("action" in request.args and 
+             request.args["action"][0] == "save"): 
             genericIdevices = self.ideviceStore.generic
             for idevice in genericIdevices:
-                if idevice.id == self.editorPane.idevice.id:
+                if idevice.title == self.editorPane.idevice.title:
                     break
             copyIdevice = self.editorPane.idevice.clone()
             self.__saveChanges(idevice, copyIdevice)
+            self.ideviceStore.save()
+       
             
     def __createNewIdevice(self, request):
         """
@@ -139,6 +147,8 @@ class EditorPage(RenderableResource):
         idevice.emphasis = copyIdevice.emphasis
         idevice.icon     = copyIdevice.icon
         
+  
+        
     def render_GET(self, request):
         """Called for all requests to this object"""
         
@@ -158,6 +168,8 @@ class EditorPage(RenderableResource):
         html += '</script>\n'
         html += '<script type="text/javascript" src="/scripts/common.js">'
         html += '</script>\n'
+        html += '<script type="text/javascript" src="/scripts/editor.js">'
+        html += '</script>\n'
         html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += "<meta http-equiv=\"content-type\" content=\"text/html; "
         html += " charset=UTF-8\"></meta>\n";
@@ -176,11 +188,16 @@ class EditorPage(RenderableResource):
         if self.isNewIdevice:
             html += "<br/>" + common.submitButton("delete", _("Delete"), 
                                                         False)
-            html += "<br/>" + common.submitButton("save", _("Save"), False)
+
         else:
             html += "<br/>" + common.submitButton("delete", _("Delete"))
-            html += "<br/>" + common.submitButton("save", _("Save"))
-        html += "<br/>" + common.submitButton("add", _("Save as"))
+        html += '<br/><input class="button" type="button" name="save" '
+        title = "none"
+        if self.editorPane.idevice.edit == False:
+            title = self.editorPane.idevice.title
+        html += 'onclick=saveIdevice("%s") value="%s"/>' % (title, _("Save"))
+        
+        html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"
         html += self.editorPane.renderIdevice(request)
@@ -197,13 +214,13 @@ class EditorPage(RenderableResource):
         Render the list of generic iDevice
         """
         html  = "<fieldset><legend><b>" + _("Edit")+ "</b></legend>"
-        html += '<select onchange="submitIdevice();" name="ideviceSelect">\n'
+        html += '<select onchange="submitIdevice();" name="ideviceSelect" id="ideviceSelect">\n'
         html += "<option value = \"newIdevice\" "
         if self.isNewIdevice:
             html += "selected "
         html += ">"+ _("New iDevice") + "</option>"
         for prototype in self.ideviceStore.generic:
-            html += "<option value=\""+prototype.id+"\" "
+            html += "<option value=\""+prototype.title+"\" "
             if self.editorPane.idevice.id == prototype.id:
                 html += "selected "
             title = prototype.title

@@ -72,7 +72,27 @@ class Field(Persistable):
         fieldId += unicode(self._id)
         return fieldId
     id = property(getId)
-
+            
+    def getFieldId(self):
+        """
+        return the field id
+        """
+        return self._id
+    
+    def setIDevice(self, idevice):
+        """
+        Gives ourselves a new ID unique to the new idevice.
+        """
+        if hasattr(idevice, 'getUniqueFieldId'):
+            self._id = idevice.getUniqueFieldId()
+        self._idevice = idevice
+        
+    def getIDevice(self):
+        if hasattr(self, '_idevice'):
+            return self._idevice
+        else:
+            return None
+    idevice = property(getIDevice, setIDevice)
 
     def upgradeToVersion1(self):
         """
@@ -278,6 +298,7 @@ class MultimediaField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+    persistenceVersion = 2
     def __init__(self, name, instruc=""):
         """
         """
@@ -285,7 +306,11 @@ class MultimediaField(Field):
         self.width         = "320"
         self.height        = "100"
         self.mediaResource = None
-
+        self.caption       = ""
+        self._captionInstruc = x_(u"""Provide a caption for the 
+MP3 file. This will appear in the players title bar as well.""")
+    # Properties
+    captionInstruc    = lateTranslate('captionInstruc')
 
     def setMedia(self, mediaPath):
         """
@@ -314,6 +339,22 @@ class MultimediaField(Field):
                 self.mediaResource._path = newPath
         else:
             log.error('File %s is not a file' % resourceFile)
+            
+    def upgradeToVersion2(self):
+        """
+        Upgrades to exe v0.20
+        """
+        if hasattr(Field, 'updateToVersion2'):
+            Field.upgradeToVersion2(self)
+        if hasattr(self.idevice, 'caption'):
+            self.caption = self.idevice.caption
+        elif self.mediaResource:
+            self.caption = self.mediaResource.storageName 
+        else:
+            self.caption   = ""
+
+        self._captionInstruc = x_(u"""Provide a caption for the 
+MP3 file. This will appear in the players title bar as well.""")
             
             
             
@@ -804,7 +845,6 @@ class SelectOptionField(Field):
         self.question  = None
         self.answer    = ""
         self.isCorrect = False
-       # self.isChecked = False
         
         
 #===============================================================================

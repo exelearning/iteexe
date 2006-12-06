@@ -337,7 +337,10 @@ class MultimediaElement(Element):
         """
         if "path"+self.id in request.args:
             self.field.setMedia(request.args["path"+self.id][0])
-
+            
+        if "caption" + self.id in request.args:
+            self.field.caption = request.args["caption"+self.id][0]
+        
 
     def renderEdit(self):
         """
@@ -345,17 +348,22 @@ class MultimediaElement(Element):
         """
         log.debug("renderEdit")
 
-        html  = u'<div class="block">'
+        html  = ""
         html += u'<b>'+self.field.name+':</b>\n'
-        html += common.elementInstruc(self.field.instruc)
+        html += common.elementInstruc(self.field.instruc)+'<br/>'
 
-        html += u'<div class="block">'
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addMp3(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select an MP3")
         
+        
         if self.field.mediaResource:
             html += '<p style="color: red;">'+ self.field.mediaResource.storageName + '</P>'
+            
+        html += '<br/><b>%s</b><br/>' % _(u"Caption:")
+        html += common.textInput("caption" + self.id, self.field.caption)
+        html += common.elementInstruc(self.field.captionInstruc)
+
 
         return html
 
@@ -390,7 +398,7 @@ class MultimediaElement(Element):
         mp3Str_mat = common.flash(filename, self.field.width, self.field.height,
                               id="mp3player",
                               params = {
-                                      'movie': '%s?song_url=%s&song_title=%s' % (mp3player, filename, self.field.idevice.caption),
+                                      'movie': '%s?song_url=%s&song_title=%s' % (mp3player, filename, self.field.caption),
                                       'quality': 'high',
                                       'bgcolor': '#E6E6E6'})
 
@@ -409,7 +417,7 @@ class MultimediaElement(Element):
         
         """ % {'mp3player': mp3player,
                'url':       filename,
-               'caption':   self.field.idevice.caption}
+               'caption':   self.field.caption}
         
         wmvStr = common.flash(filename, self.field.width, self.field.height,
                               id="mp3player",

@@ -23,12 +23,14 @@ The EditorPane is responsible for creating new idevice
 
 import logging
 from exe.webui                 import common
-from exe.engine.field          import TextField, TextAreaField, ImageField
-from exe.engine.field          import FeedbackField
+from exe.engine.field          import TextField, TextAreaField, ImageField, FlashField
+from exe.engine.field          import FeedbackField, MultimediaField
 from exe.webui.editorelement   import TextEditorElement
 from exe.webui.editorelement   import TextAreaEditorElement
 from exe.webui.editorelement   import ImageEditorElement
 from exe.webui.editorelement   import FeedbackEditorElement
+from exe.webui.editorelement   import FlashEditorElement
+from exe.webui.editorelement   import MultimediaEditorElement
 from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.path           import Path
@@ -82,6 +84,8 @@ class EditorPane(object):
                                  u"the selection of an image from your stored "
                                  u"picture files.")
         self._feedbackInstruc = x_(u"Add interactive feedback to your iDevice.")
+        self._flashInstruc = x_(u"Add a flash video to your iDevice.")
+        self._mp3Instruc = x_(u"Add a mp3 file to your iDevice.")
 
         self.style            = "default"
    
@@ -96,6 +100,8 @@ class EditorPane(object):
     textBoxInstruc  = lateTranslate('textBoxInstruc')
     imageInstruc    = lateTranslate('imageInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')
+    flashInstruc    = lateTranslate('flashInstruc')
+    mp3Instruc      = lateTranslate('mp3Instruc')
     
     def setIdevice(self, idevice):
         """
@@ -120,12 +126,6 @@ class EditorPane(object):
             if "title" in request.args:
                 self.idevice.title = unicode(request.args["title"][0], 'utf8')
     
-            if "author" in request.args:
-                self.idevice.author = unicode(request.args["author"][0], 'utf8')
-    
-            if "purpose" in request.args:
-                self.idevice.purpose = unicode(request.args["purpose"][0], 
-                                               'utf8')
     
             if "tip" in request.args:
                 self.idevice.tip = unicode(request.args["tip"][0], 'utf8')
@@ -137,24 +137,47 @@ class EditorPane(object):
         
         
         if "addText" in request.args:
-            self.idevice.addField(TextField(_(u"Enter the label here"),
-                 _(u"Enter instructions for completion here")))
+            field = TextField(_(u"Enter the label here"),
+                 _(u"Enter instructions for completion here"))
+            field.setIDevice(self.idevice)
+            self.idevice.addField(field)
         
         if "addTextArea" in request.args:
-            self.idevice.addField(TextAreaField(_(u"Enter the label here"), 
-                 _(u"Enter the instructions for completion here")))
+            field = TextAreaField(_(u"Enter the label here"), 
+                 _(u"Enter the instructions for completion here"))
+            field.setIDevice(self.idevice)
+            self.idevice.addField(field)
+           
                 
         if "addImage" in request.args:
             field = ImageField(_(u"Enter the label here"),
                                _(u"Enter the instructions for completion here"))
             imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
             field.defaultImage = unicode(imagePath.abspath())
+            field.setIDevice(self.idevice)
             self.idevice.addField(field)
             
+            
         if "addFeedback" in request.args:
-            self.idevice.addField(FeedbackField(_(u"Enter the label here"), 
+            field = FeedbackField(_(u"Enter the label here"), 
                  _(u"""Feedback button will not appear if no 
-data is entered into this field.""")))
+data is entered into this field."""))
+            field.setIDevice(self.idevice)
+            self.idevice.addField(field)
+            
+        #if "addFlash" in request.args:
+            #print "add a flash"
+            #field = FlashField(_(u"Enter the label here"), 
+                 #_(u"Enter the instructions for completion here"))
+            #field.setIDevice(self.idevice)
+            #self.idevice.addField(field)
+            
+        if "addMP3" in request.args:
+
+            field = MultimediaField(_(u"Enter the label here"), 
+                 _(u"Enter the instructions for completion here"))
+            field.setIDevice(self.idevice)
+            self.idevice.addField(field)
             
         if ("action" in request.args and 
             request.args["action"][0] == "selectIcon"):
@@ -189,7 +212,9 @@ data is entered into this field.""")))
         elementTypeMap = {TextField:      TextEditorElement,
                           TextAreaField:  TextAreaEditorElement,
                           ImageField:     ImageEditorElement,
-                          FeedbackField:  FeedbackEditorElement}
+                          FeedbackField:  FeedbackEditorElement,
+                          MultimediaField: MultimediaEditorElement,
+                          FlashField:     FlashEditorElement}
         
         for field in self.idevice.fields:
             elementType = elementTypeMap.get(field.__class__)
@@ -219,6 +244,10 @@ data is entered into this field.""")))
         html += common.elementInstruc(self.imageInstruc) + "<br/>"
         html += common.submitButton("addFeedback", _("Feedback"))
         html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
+        #html += common.submitButton("addFlash", _("Flash"))
+        #html += common.elementInstruc(self.flashInstruc) + "<br/>"
+        html += common.submitButton("addMP3", _("MP3"))
+        html += common.elementInstruc(self.mp3Instruc) + "<br/>"
         html += "</fieldset>\n"
 
         html += "<fieldset><legend><b>" + _("Actions") + "</b></legend>"
@@ -285,22 +314,11 @@ data is entered into this field.""")))
         if self.idevice.edit:
             html += "<b>" + _("Name") + ": </b>\n"
             html += common.elementInstruc(self.nameInstruc) + "<br/>"
-            html += common.textInput("title", self.idevice.title) + "<br/>\n"
-            #html += "<b>" + _("Author") + ": </b>\n"
-            #html += common.elementInstruc(self.authorInstruc) + "<br/>"
-            #html += common.textInput("author", self.idevice.author) + "<br/>\n"
-            #html += common.formField('richTextArea', _(u"Purpose"),'purpose',
-                                     #'', self.purposeInstruc, self.purpose)
-                                     
-            #html += "<b>" + _("Purpose") + ": </b>\n"
-            #html += common.elementInstruc(self.purposeInstruc)
-            #html += "<br/>" +common.richTextArea("purpose", 
-                                                 #self.purpose)
+            html += '<input type="text" name= "title" id="title" value="%s"/>' % self.idevice.title
+   
             html += common.formField('richTextArea', _(u"Pedagogical Tip"),'tip',
                                      '', self.tipInstruc, self.tip)
-            #html += "<b>" + _("Pedagogical Tip") + ": </b>\n"
-            #html += common.elementInstruc(self.tipInstruc) + "<br/>"
-            #html += common.richTextArea("tip", self.tip) + "<br/>\n"  
+     
             html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
 

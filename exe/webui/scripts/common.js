@@ -335,12 +335,13 @@ function addMp3(blockId) {
 }
 
 
-// Called by the user to provide a file name to add to the package
+// Called by the user to provide a package name in order to get the user created idevices
+// used by idevice editor
 function addFile(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
+    fp.init(window, "Select a package", nsIFilePicker.modeOpen);
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {

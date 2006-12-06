@@ -65,8 +65,8 @@ class MultimediaBlock(Block):
         if "float"+self.id in request.args:
             self.idevice.float = request.args["float"+self.id][0]
             
-        if "caption"+self.id in request.args:
-            self.idevice.caption = request.args["caption"+self.id][0]
+        #if "caption"+self.id in request.args:
+            #self.idevice.media.caption = request.args["caption"+self.id][0]
 
 
     def renderEdit(self, style):
@@ -84,9 +84,9 @@ class MultimediaBlock(Block):
                                  "float" + self.id, '',
                                  self.idevice.alignInstruc,
                                  floatArr, self.idevice.float)
-        html += u'<div class="block"><b>%s</b></div>' % _(u"Caption:")
-        html += common.textInput("caption" + self.id, self.idevice.caption)
-        html += common.elementInstruc(self.idevice.captionInstruc)
+        #html += u'<div class="block">' #<b>%s</b></div>' % _(u"Caption:")
+        #html += common.textInput("caption" + self.id, self.idevice.media.caption)
+        #html += common.elementInstruc(self.idevice.media.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
         emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
                           (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
@@ -121,7 +121,7 @@ class MultimediaBlock(Block):
         html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderPreview()
-        html += u"<br />" + self.idevice.caption + "</div>\n"
+       # html += u"<br />" + self.idevice.media.caption + "</div>\n"
         html += self.textElement.renderPreview()
         html += u"<br/>\n"        
         html += u"<div style=\"clear:both;\">"
@@ -149,7 +149,7 @@ class MultimediaBlock(Block):
         html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n"
         html += self.mediaElement.renderView()
-        html += u"<br/>" + self.idevice.caption + "</div>"
+       # html += u"<br/>" + self.idevice.media.caption + "</div>"
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
         html += u"</div>\n"
