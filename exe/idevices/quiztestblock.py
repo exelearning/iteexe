@@ -122,7 +122,7 @@ class QuizTestBlock(Block):
         Returns an XHTML string for viewing this block
         """
         html  = u'<form id="quizForm%s" ' % self.idevice.id
-        html += u'action="javascript:calcScore();">\n'
+        html += u'action="javascript:calcScore2();">\n'
         html += u'<div class="iDevice '
         html += u'emphasis'+unicode(self.idevice.emphasis)+'">\n'
         html += u'<img alt="" class="iDevice_icon" '
@@ -203,7 +203,7 @@ class QuizTestBlock(Block):
         
         }
         
-        function calcScore()
+        function calcScore2()
         {
             getAnswer();
      
@@ -288,7 +288,7 @@ class QuizTestBlock(Block):
         scriptStr += """
         }
         
-        function calcScore()
+        function calcScore2()
         {
            computeTime();  // the student has stopped here.
      
