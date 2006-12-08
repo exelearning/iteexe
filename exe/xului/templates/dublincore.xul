@@ -16,7 +16,7 @@
         <hbox align="center">
           <label id="dcSubject" style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
           <textbox id="dc_subject" size="40" onchange="this.style.color = 'blue'" />
-          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
+          <image src="/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
@@ -43,7 +43,7 @@
         <hbox align="center">
           <label id="dcDate" style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource."/>
           <textbox id="dc_date" size="40" onchange="this.style.color = 'blue'" />
-          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
+          <image src="/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
@@ -52,7 +52,7 @@
                  availability of the resource. Recommended best practice for
                  encoding the date value is defined in a profile called
                  <html:em>ISO 8601</html:em> 
-                 <html:a href="http://localhost:8081/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a>
+                 <html:a href="/docs/W3C-NOTE-datetime.html" target="_blank">W3C Date and Time Formats</html:a>
                  and includes (among others) dates of the form YYYY-MM-DD.
             </description>
           </groupbox>
@@ -60,7 +60,7 @@
         <hbox align="center">
           <label id="dcType" style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
           <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'blue'" />
-          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
+          <image src="/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
@@ -282,7 +282,7 @@
         <hbox align="center">
           <label id="dcRights" style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource."/>
           <textbox id="dc_rights" size="40" onchange="this.style.color = 'blue'" />
-          <image src="http://localhost:8081/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
+          <image src="/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;">
           <groupbox style="width:21em;">
