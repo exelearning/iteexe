@@ -25,32 +25,25 @@ anything it just redirects the user to a new package.
 import logging
 from exe.webui.renderable     import RenderableResource
 from exe.xului.mainpage       import MainPage
-from exe.webui.renderable     import RenderableLivePage
-from nevow                    import inevow
-from twisted.internet         import reactor
-from twisted.internet.defer   import Deferred
 
 log = logging.getLogger(__name__)
 
 
-class PackageRedirectPage(RenderableLivePage):
+class PackageRedirectPage(RenderableResource):
     """
     PackageRedirectPage is the first screen the user loads.  It doesn't show
     anything it just redirects the user to a new package or loads an existing 
     package.
     """
     
-    # Default attribute values
-    _templateFileName = 'root.xul'
     name = '/'
-    closing = None
-    package = None
 
     def __init__(self, webServer):
         """
         Initialize
         """
-        RenderableLivePage.__init__(self, None, None, webServer)
+        RenderableResource.__init__(self, None, None, webServer)
+        self.webServer = webServer
         # See if all out main pages are not showing
         # This is a twisted timer
         self.stopping = None
@@ -77,45 +70,23 @@ class PackageRedirectPage(RenderableLivePage):
         and creates a MainPage instance for it
         and a directory for the resource files
 
-        In the GTK version, this should actually
+	    In the GTK version, this should actually
         redirect people to MainPage. Copy from
-        svn revision 1311 to re-enable gtk.
+	    svn revision 1311 to re-enable gtk.
         """
-        self.package = package
         MainPage(self, package)
 
-    def goingLive(self, ctx, client):
+
+    def render_GET(self, request):
         """
-        Create a new package and stick it in a frame
+        Create a new package and redirect the webrowser to the URL for it
         """
-        if self.closing:
-            self.closing.cancel()
-            self.closing = None
+        log.debug("render_GET" + repr(request.args))
         # Create new package
         package = self.packageStore.createPackage()
         self.bindNewPackage(package)
-        log.info("Created a new package name=" + package.name)
-        # Render it in a frame
-        inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
-        # Sign up to know the connection is closed 
-        d = Deferred()
-        d.addCallbacks(self.onClose, self.onClose) 
-        client.closeNotifications.append(d) 
-
-    def render_frame(self, ctx, data):
-        """
-        Make the big iframe in the middle point to our package
-        """
-        return ctx.tag(src=self.package.name)
-
-    def onClose(self, reason, data=None): 
-        """ 
-        Called when the user has closed the window 
-        """ 
-        print 'Closing'
-        if self.package is not None:
-            print 'Saving', self.package.name
-            self.package.save(self.config.configDir/'unsavedWork.elp', True) 
-        self.closing = reactor.callLater(1, reactor.stop)
-
+        log.info("Created a new package name="+ package.name)
+        # Tell the web browser to show it
+        request.redirect(package.name.encode('utf8'))
+        return ''
 

@@ -361,7 +361,7 @@ function uploadFile(blockId) {
         var path  = document.getElementById('path'+blockId);
         path.value = fp.file.path;
     }
-    var theForm = top["mainFrame"]["authoringIFrame1"].document.getElementById('contentForm')
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
     if (!theForm) {
         // try and find the form for the authoring page
         theForm = document.getElementById('contentForm')
@@ -416,7 +416,7 @@ function updateCoords(e) {
 // action and object fields so they can be used by submitLink
 function clearHidden()
 {
-    var theForm = top["mainFrame"]["authoringIFrame1"].document.getElementById('contentForm')
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
     if (!theForm) {
         // try and find the form for the authoring page
         theForm = document.getElementById('contentForm')
@@ -429,7 +429,7 @@ function clearHidden()
 // contentForm to the server
 function submitLink(action, object, changed) 
 {
-    var theForm = top["mainFrame"]["authoringIFrame1"].document.getElementById('contentForm')
+    var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
     if (!theForm) {
         // try and find the form for the authoring page
         theForm = document.getElementById('contentForm')
