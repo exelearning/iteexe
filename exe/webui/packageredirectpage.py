@@ -77,9 +77,9 @@ class PackageRedirectPage(RenderableLivePage):
         and creates a MainPage instance for it
         and a directory for the resource files
 
-	    In the GTK version, this should actually
+        In the GTK version, this should actually
         redirect people to MainPage. Copy from
-	    svn revision 1311 to re-enable gtk.
+        svn revision 1311 to re-enable gtk.
         """
         self.package = package
         MainPage(self, package)
@@ -98,9 +98,12 @@ class PackageRedirectPage(RenderableLivePage):
         # Render it in a frame
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Sign up to know the connection is closed 
+        # Get the clientHandle (poll every 60 seconds, call onClose if poll fails 
+        # 9999 times in a row. (When dialogs are open on client polling fails) 
+        self.client = self.clientFactory.newClientHandle(self, 60, 9999)
         d = Deferred()
         d.addCallbacks(self.onClose, self.onClose) 
-        client.closeNotifications.append(d) 
+        self.client.closeNotifications.append(d) 
 
     def render_frame(self, ctx, data):
         """
