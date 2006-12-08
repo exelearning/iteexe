@@ -55,9 +55,6 @@ class MainPage(RenderableLivePage):
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
 
-    # Default attribute values
-    closing = None
-
     def __init__(self, parent, package):
         """
         Initialize a new XUL page
@@ -79,18 +76,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
-    def onClose(self, reason, data=None): 
-        """ 
-        Called when the user has closed the window 
-        """ 
-        if self.closing:
-            # If this is second or more time bieng called in a row, cancel the previous timeout
-            self.closing.cancel()
-        else:
-            # If this is first time being called in a row, save
-            self.package.save(self.config.configDir/'unsavedWork.elp', True)
-        # Start a self destruct timer (close server in 10 secs)
-        self.closing = reactor.callLater(10, reactor.stop)
 
     def getChild(self, name, request):
         """
@@ -103,9 +88,6 @@ class MainPage(RenderableLivePage):
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
-        if self.closing: 
-            self.closing.cancel()
-            self.closing = None
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
@@ -130,13 +112,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
                                                  'setTreeSelection')
         self.idevicePane.client = client
-        # Sign up to know the connection is closed 
-        d = Deferred() 
-        d.addCallbacks(self.onClose, self.onClose) 
-        client.closeNotifications.append(d) 
-        # Render the js 
-        handleId = "'", client.handleId, "'" 
-
 
     def render_mainMenu(self, ctx, data):
         """Mac menubars are not shown
@@ -313,7 +288,7 @@ class MainPage(RenderableLivePage):
             # Redirect the client if the package name has changed
             self.webServer.root.putChild(self.package.name, self)
             log.info('Package saved, redirecting client to /%s' % self.package.name)
-            client.sendScript('top.location = "/%s"' % self.package.name.encode('utf8'))
+            client.sendScript('top.frames[0].location = "/%s"' % self.package.name.encode('utf8'))
 
 
     def handleLoadPackage(self, client, filename):
@@ -322,7 +297,7 @@ class MainPage(RenderableLivePage):
         packageStore = self.webServer.application.packageStore
         packageStore.addPackage(package)
         self.root.bindNewPackage(package)
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'top.frames[0].location = "/%s"' % \
                           package.name).encode('utf8'))
  
     def handleLoadRecent(self, client, number):
@@ -416,7 +391,7 @@ class MainPage(RenderableLivePage):
         insertNode = package.root
         insertNode.mergeIntoPackage(self.package)
         insertNode.move(self.package.currentNode)
-        client.sendScript((u'top.location = "/%s"' % \
+        client.sendScript((u'top.frames[0].location = "/%s"' % \
                           self.package.name).encode('utf8'))
 
 

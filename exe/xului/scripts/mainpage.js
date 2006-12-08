@@ -204,7 +204,7 @@ function XHRenNode(titleShort, titleLong, titleFull, id) {
     treeitem.getElementsByTagName('treecell')[0].setAttribute('label', titleShort);
     treeitem.getElementsByTagName('treecell')[0].setAttribute('name', titleFull);
     // Update the authoring page iframe
-    var titleElement = top.frames[0].document.getElementById('nodeTitle');
+    var titleElement = top.frames[0].frames[0].document.getElementById('nodeTitle');
     // Sometimes when promoting/demoting nodes
     // the title element isn't there/renedered for some reason
     // Looping doesn't fix that, so we just tell firefox
@@ -212,7 +212,7 @@ function XHRenNode(titleShort, titleLong, titleFull, id) {
     if (titleElement) {
         titleElement.firstChild.nodeValue = titleLong;
     } else {
-        top.frames[0].src = top.frames[0].src;
+        top.frames[0].frames[0].src = top.frames[0].src;
     }
 }
 
@@ -424,7 +424,7 @@ function doQuit() {
 // Submit any open iDevices
 function saveWorkInProgress() {
     // Do a submit so any editing is saved to the server
-    var theForm = top["authoringIFrame1"].document.getElementById('contentForm');
+    var theForm = top["mainFrame"]["authoringIFrame1"].document.getElementById('contentForm');
     if (!theForm) {
         // try and find the form for the authoring page
         theForm = document.getElementById('contentForm');
