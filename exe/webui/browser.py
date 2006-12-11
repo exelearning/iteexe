@@ -48,7 +48,8 @@ def launchBrowser(config, packageName):
     log.info("Creating FireFox profile copied from"+
              config.webDir/profile+" to "+
              config.configDir/profile)
-    (config.webDir/profile).copytree(config.configDir/profile)
+    # Copy over the tree
+    (config.webDir/profile).copytreeFilter(config.configDir/profile, filterDir=lambda dirName: dirName.basename() != '.svn')
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)

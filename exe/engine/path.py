@@ -921,6 +921,60 @@ class Path(unicode):
     def copytree(self, dst):
         """Wraps shutil.copytree"""
         return shutil.copytree(toUnicode(self), toUnicode(dst))
+    def copytreeFilter(self, dst, symlinks=False, filterDir=None, filterFile=None):
+        """Recursively copy a directory tree using copy2().
+
+        The destination directory must not already exist.
+        If exception(s) occur, an Error is raised with a list of reasons.
+
+        If the optional symlinks flag is true, symbolic links in the
+        source tree result in symbolic links in the destination tree; if
+        it is false, the contents of the files pointed to by symbolic
+        links are copied.
+
+        XXX Consider this example code rather than the ultimate tool.
+
+        'filterDir' will be called passing each source directory name, if it returns False, the directory will not be copied.
+        'filterFile' will be called passing each source file name, if it returns False, the file will not be copied.
+        """
+        print self, dst
+        dst = Path(dst)
+        names = self.listdir()
+        dst.mkdir()
+        errors = []
+        for name in names:
+            srcname = self/self.relpathto(name)
+            dstname = dst/self.relpathto(name)
+            try:
+                if symlinks and os.path.islink(srcname):
+                    linkto = os.readlink(srcname)
+                    os.symlink(linkto, dstname)
+                elif os.path.isdir(srcname):
+                    if filterDir is not None:
+                        if not filterDir(srcname):
+                            continue
+                    srcname.copytreeFilter(dstname, symlinks, filterDir, filterFile)
+                else:
+                    if filterFile is not None:
+                        if not filterFile(srcname):
+                            continue
+                    srcname.copy2(dstname)
+                # XXX What about devices, sockets etc.?
+            except (IOError, os.error), why:
+                import pdb
+                pdb.set_trace()
+                errors.append((srcname, dstname, why))
+            # catch the Error from the recursive copytree so that we can
+            # continue with other files
+            except shutil.Error, err:
+                import pdb
+                pdb.set_trace()
+                errors.extend(err.args[0])
+        if errors:
+            import pdb
+            pdb.set_trace()
+            raise shutil.Error, errors
+
     if hasattr(shutil, 'move'):
         def move(self, dst):
             """Wraps shutil.move"""
