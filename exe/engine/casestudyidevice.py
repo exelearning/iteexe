@@ -25,7 +25,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
-from exe.engine.path      import  toUnicode
+from exe.engine.path      import toUnicode
 
 log = logging.getLogger(__name__)
 
@@ -45,19 +45,12 @@ class Question(Persistable):
         """
         self.question  = u''
         self.feedback  = u''
-        self.setupImage(idevice)
-    
-    def setupImage(self, idevice):
-        """
-        Creates our image field
-        """
-        # TODO: Get helena to check instructions
         self.image = ImageField(x_(u"Image"),
                                 x_(u"Choose an optional image to be shown to the student "
                                     "on completion of this question")) 
         self.image.idevice = idevice
-        self.image.defaultImage  = idevice.defaultImage
-
+        self.image.defaultImage = idevice.defaultImage
+    
 
 # ===========================================================================
 class CasestudyIdevice(Idevice):

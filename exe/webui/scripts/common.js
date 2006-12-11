@@ -170,16 +170,6 @@ function changeGalleryImage(galleryId, imageId) {
 }
 
 
-function imageChanged(event) {
-    var id = event.currentTarget.getAttribute('id');
-    var elementId = id.substring(3, id.length);
-    var image  = document.getElementById('img'+elementId);
-    var width  = document.getElementById('width'+elementId);
-    var height = document.getElementById('height'+elementId);
-    width.value  = image.width;
-    height.value = image.height;
-}
-
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');
     var elementId = id.substring(3, id.length);
@@ -205,6 +195,16 @@ function magnifierImageChanged(event) {
         height.value = 160
 }
 
+function imageChanged(event) {
+    var id = event.currentTarget.getAttribute('id');
+    var elementId = id.substring(3, id.length);
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    width.value  = image.width;
+    height.value = image.height;
+}
+
 function changeImageWidth(elementId) {
     var image  = document.getElementById('img'+elementId);
     var width  = document.getElementById('width'+elementId);
@@ -212,11 +212,29 @@ function changeImageWidth(elementId) {
     image.removeAttribute('height');
     if (width.value) {
         image.width  = width.value;
-    } else {
+    } else if (image.hasAttribute('src')) {
         image.removeAttribute('width');
-        width.value  = image.width;
+        width.value = image.width;
+    } else {
+        width.value = "";
     }
     height.value = image.height;
+}
+
+function changeImageHeight(elementId) {
+    var image  = document.getElementById('img'+elementId);
+    var width  = document.getElementById('width'+elementId);
+    var height = document.getElementById('height'+elementId);
+    image.removeAttribute('width');
+    if (height.value) {
+        image.height = height.value;
+    } else if (image.hasAttribute('src')) {
+        image.removeAttribute('height');
+        height.value = image.height;
+    } else {
+        height.value = "";
+    }
+    width.value  = image.width;
 }
 
 function changeMagnifierImageWidth(elementId) {
@@ -271,21 +289,6 @@ function changeMagnifierImageHeight(elementId) {
     if (height.value < 160)
         height.value = 160
 }
-
-function changeImageHeight(elementId) {
-    var image  = document.getElementById('img'+elementId);
-    var width  = document.getElementById('width'+elementId);
-    var height = document.getElementById('height'+elementId);
-    image.removeAttribute('width');
-    if (height.value) {
-        image.height = height.value;
-    } else {
-        image.removeAttribute('height');
-        height.value = image.height;
-    }
-    width.value  = image.width;
-}
-
 
 // Called by the user to provide a flash movie file name to add to the package
 function addFlashMovie(blockId) {
