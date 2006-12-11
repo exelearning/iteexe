@@ -48,8 +48,6 @@ def launchBrowser(config, packageName):
     log.info("Creating FireFox profile copied from"+
              config.webDir/profile+" to "+
              config.configDir/profile)
-    import pdb
-    pdb.set_trace()
     (config.webDir/profile).copytree(config.configDir/profile)
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
