@@ -55,9 +55,6 @@ class MainPage(RenderableLivePage):
     _templateFileName = 'mainpage.xul'
     name = 'to_be_defined'
 
-    # Default attribute values
-    closing = None
-
     def __init__(self, parent, package):
         """
         Initialize a new XUL page
@@ -79,19 +76,6 @@ class MainPage(RenderableLivePage):
         self.authoringPage  = AuthoringPage(self)
         self.propertiesPage = PropertiesPage(self)
 
-    def onClose(self, reason, data=None): 
-        """ 
-        Called when the user has closed the window 
-        """ 
-        if self.closing:
-            # If this is second or more time bieng called in a row, cancel the previous timeout
-            self.closing.cancel()
-        else:
-            # If this is first time being called in a row, save
-            self.package.save(self.config.configDir/'unsavedWork.elp', True)
-        # Start a self destruct timer (close server in 10 secs)
-        self.closing = reactor.callLater(10, reactor.stop)
-
     def getChild(self, name, request):
         """
         Try and find the child for the name given
@@ -103,9 +87,6 @@ class MainPage(RenderableLivePage):
 
     def goingLive(self, ctx, client):
         """Called each time the page is served/refreshed"""
-        if self.closing: 
-            self.closing.cancel()
-            self.closing = None
         inevow.IRequest(ctx).setHeader('content-type', 'application/vnd.mozilla.xul+xml')
         # Set up named server side funcs that js can call
         def setUpHandler(func, name, *args, **kwargs):
@@ -130,10 +111,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
                                                  'setTreeSelection')
         self.idevicePane.client = client
-        # Sign up to know the connection is closed 
-        d = Deferred() 
-        d.addCallbacks(self.onClose, self.onClose) 
-        client.closeNotifications.append(d) 
         # Render the js 
         handleId = "'", client.handleId, "'" 
 
@@ -331,15 +308,6 @@ class MainPage(RenderableLivePage):
         """
         filename = self.config.recentProjects[int(number) - 1]
         self.handleLoadPackage(client, filename)
-
-    def handle_pageUnloaded(self, ctx): 
-        """ 	
-        Called after a refresh or window close. Save the page 
-        """
-        print 'Page Unloaded'  	
-        # Save the package in the config dir 
-        self.client.send(js.alert('Page Unloaded Matey')) 
-        self.package.save(self.config.configDir/'unsavedWork.elp', True) 
 
     def handleExport(self, client, exportType, filename):
         """

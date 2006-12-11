@@ -169,12 +169,6 @@ class Application:
         package = None
         if self.packagePath:
             package = self._loadPackage(self.packagePath)
-        else:
-            unsavedWork = self.config.configDir/'unsavedWork.elp'
-            if unsavedWork.isfile():
-                package = self._loadPackage(unsavedWork)
-                if package:
-                    package.isChanged = True # So it will be saved if user goes immediately file,quit
         if not package:
             launchBrowser(self.config, "")
 
