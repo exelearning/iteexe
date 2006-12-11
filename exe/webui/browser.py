@@ -41,24 +41,16 @@ def launchBrowser(config, packageName):
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url "+url)
 
-    if sys.platform[:3] == u"win":
-        profile    = "win-profile"
-    else:
-        profile    = "linux-profile"
+    profile    = "linux-profile"
 
     if (config.configDir/profile).exists():
         (config.configDir/profile).rmtree()
     log.info("Creating FireFox profile copied from"+
              config.webDir/profile+" to "+
              config.configDir/profile)
-    if not (config.configDir/profile).exists():
-        (config.configDir/profile).mkdir()
-    for filename in (config.webDir/profile).files():
-        filename.copy(config.configDir/profile)
-    if not (config.configDir/profile/'Cache').exists():
-        (config.configDir/profile/'Cache').mkdir()
-    for filename in (config.webDir/profile/'Cache').files():
-        filename.copy(config.configDir/profile/'Cache')
+    import pdb
+    pdb.set_trace()
+    (config.webDir/profile).copytree(config.configDir/profile)
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)
