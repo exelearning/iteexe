@@ -13,12 +13,16 @@ user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1165800059)
 user_pref("app.update.lastUpdateTime.background-update-timer", 1165800058);
 user_pref("app.update.lastUpdateTime.blocklist-background-update-timer", 1165800059);
 user_pref("app.update.lastUpdateTime.search-engine-update-timer", 1165800064);
+user_pref("capability.principal.codebase.p0.granted", "UniversalXPConnect");
+user_pref("capability.principal.codebase.p0.id", "http://127.0.0.1:8081");
+user_pref("capability.principal.codebase.p0.subjectName", "");
 user_pref("dom.allow_scripts_to_close_windows", true);
 user_pref("extensions.lastAppVersion", "2.0");
 user_pref("general.open_location.last_url", "about:config");
 user_pref("general.open_location.last_window_choice", 0);
 user_pref("network.cookie.prefsMigrated", true);
 user_pref("security.checkloaduri", false);
+user_pref("security.warn_submit_insecure", false);
 user_pref("signed.applets.codebase_principal_support", true);
 user_pref("spellchecker.dictionary", "en-US");
 user_pref("urlclassifier.keyupdatetime.https://sb-ssl.google.com/safebrowsing/getkey?client=navclient-auto-ffox2.0&", 1165886465);
