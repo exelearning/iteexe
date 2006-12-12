@@ -40,6 +40,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/docs",
            "exe/webui/linux-profile",
            "exe/webui/scripts",
+           "exe/webui/schemas",
            "exe/webui/templates"])
 
 g_oldBase = "exe"
