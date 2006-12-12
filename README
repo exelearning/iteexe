@@ -87,7 +87,7 @@ UBUNTU LINUX
 ============
 
 The eXe Ubuntu Linux install consists of 
-* python2.4-exe_0.19.1.1-0.1ubuntu1_all.deb
+* python2.4-exe_0.20.1-0.1ubuntu1_all.deb
 
 Add:
 deb http://exe.sourceforge.net/ubuntu current main
@@ -115,7 +115,7 @@ To build exe you'll need to install the following packages:
 * PIL - http://www.pythonware.com/products/pil/
 
 unzip the source tarball:
-tar xzvf exe-source-0.19.tgz
+tar xzvf exe-source-0.20.tgz
 
 To run from source (on linux):
 cd exe

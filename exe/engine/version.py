@@ -24,7 +24,7 @@ Version Information
 """
 
 project        = "exe"
-release        = "0.19.1"
+release        = "0.20"
 revision       = "$Revision$"[11:-2]
 version        = release + "." + revision
 

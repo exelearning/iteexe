@@ -38,7 +38,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/css",
            "exe/webui/images",
            "exe/webui/docs",
-           "exe/webui/win-profile",
+           "exe/webui/linux-profile",
            "exe/webui/scripts",
            "exe/webui/templates"])
 
@@ -65,10 +65,10 @@ setup(console=["exe/exe"],
       packages=["exe", "exe.engine", "exe.webui", "exe.export", "exe.xului"],
       description  = "eLearning XHTML editor",
       url          = "http://exelearning.org",
-      author       = "University of Auckland",
+      author       = "EXE Team",
       author_email = "exe@exelearning.org",
       license      = "GPL",
       scripts      = ["exe/exe",],
       options      = opts,
       data_files   = g_files.items(),
-     )
+)
