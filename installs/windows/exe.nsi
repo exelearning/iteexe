@@ -3,7 +3,7 @@
 ; Define your application name
 !define APPNAME "exe"
 
-!define EXE_VERSION "0.20"
+!define EXE_VERSION "0.20.alpha"
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
@@ -11,7 +11,7 @@ Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\exe"
 InstallDirRegKey HKLM "Software\${APPNAME}" ""
 Icon "..\..\dist\eXe_icon.ico"
-OutFile "eXe_install_windows.exe"
+OutFile "eXe-install-${EXE_VERSION}.exe"
 
 ; Modern interface settings
 !include "MUI.nsh"
