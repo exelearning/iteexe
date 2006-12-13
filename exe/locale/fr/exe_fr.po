@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: French\n"
-"X-EXE-Language: français\n"
+"X-EXE-Language: Français\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Pootle 0.10beta\n"
 
