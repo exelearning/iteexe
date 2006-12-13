@@ -40,7 +40,7 @@ class ExternalUrlIdevice(Idevice):
 into an inline frame in your eXe content rather then opening it in a popup box. 
 This means learners are not having to juggle windows. 
 This iDevice should only be used if your content 
-will be view by learners online."""), "", "")
+will be viewed by learners online."""), "", "")
         self.emphasis = Idevice.NoEmphasis
         self.url      = ""
         self.height   = "300"
