@@ -277,8 +277,6 @@ class MainPage(RenderableLivePage):
         filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
         try:
             self.package.save(filename) # This can change the package name
-	        # Delete the "unsavedWork.elp" file so it's not loaded next time we start exe 
-            (self.config.configDir/'unsavedWork.elp').remove()
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s' % str(e)))
             raise
