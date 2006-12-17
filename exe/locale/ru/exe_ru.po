@@ -17,6 +17,7 @@ msgstr ""
 "X-Poedit-Language: Russian\n"
 "X-EXE-Language: русский язык\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: RUSSIA\n"
 "X-Generator: Pootle 0.10beta\n"
 
 #: exe/idevices/appletidevice.py:60
