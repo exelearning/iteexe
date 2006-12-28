@@ -26,6 +26,12 @@ Version Information
 project        = "exe"
 release        = "0.20.alpha2"
 revision       = "$Revision$"[11:-2]
+# if it is available, get the SVN revision
+try:
+    from version_svn import revision
+except ImportError:
+    pass
+
 version        = release + "." + revision
 
 if __name__ == '__main__':
