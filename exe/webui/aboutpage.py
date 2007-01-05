@@ -81,7 +81,7 @@ class AboutPage(RenderableResource):
         xul += u'      <description id="copyright">Portions Copyright University of '
         xul += u'Auckland, 2004-2006.<html:br/>\n'
         xul += u'       Portions Copyright Auckland University '
-        xul += u'       of Technology and Tairawhiti Polytechnic 2006<html:br/>\n'
+        xul += u'       of Technology and Tairawhiti Polytechnic 2006-2007<html:br/>\n'
         xul += u'email: exe@exelearning.org\n'
         xul += u'      </description>\n'
         xul += u'      <vbox id="detailsBox" align="center" flex="1">\n'
