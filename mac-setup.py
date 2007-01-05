@@ -2,12 +2,31 @@
 
 # setup.py
 import glob
-import os.path
+import os
+import subprocess
 from distutils.command.install import install
 from distutils.core            import setup
 from exe.engine                import version
 from exe.engine.path           import Path
 import py2app
+
+# update the svn revision number
+REVISION_FILE = 'exe/engine/version_svn.py'
+
+try:
+    os.unlink(REVISION_FILE)
+except OSError:
+    pass
+
+try:
+    psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
+    psvn.wait()
+    revision = psvn.stdout.read().strip()
+except OSError:
+    revision = None
+
+if revision:
+    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 
 # Make main.py if it doesn't exist
 if not Path('exe/main.py').exists():
@@ -89,7 +108,7 @@ web content without the need to become proficient in HTML or XML markup.
 Content generated using eXe can be used by any Learning Management System.  
 """,
       url          = "http://exelearning.org",
-      author       = "University of Auckland",
+      author       = "Auckland University of Technology/Tairawhiti Polytechnic",
       author_email = "exe@exelearning.org",
       license      = "GPL",
       packages     = ["exe", "exe.webui", "exe.xului", 
