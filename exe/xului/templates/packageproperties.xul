@@ -87,6 +87,27 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
             <textbox id="pp_author" size="40" onchange="this.style.color='blue';" />
          </hbox>
          <hbox align="center">
+          <label id="ppLicense" style="width:8em" value="License:" tooltiptext="Select a license."/>
+          
+          <menulist id="pp_license" label="Select License" onchange="this.style.color = 'blue'" >
+            <menupopup>
+              <menuitem id="ppminone"  label="None" value="None"/>
+              <menuitem id="ppmigfdl"   label="GNU Free Documentation License" value="GNU Free Documentation License"/>
+              <menuitem id="ppcca1"   label="Creative Commons Attribution 2.5 License" value="Creative Commons Attribution 2.5 License"/>
+              <menuitem id="ppcca2"   label="Creative Commons Attribution-ShareAlike 2.5 License" value="Creative Commons Attribution-ShareAlike 2.5 License"/>
+              <menuitem id="ppcca3"   label="Creative Commons Attribution-NoDerivs 2.5 License" value="Creative Commons Attribution-NoDerivs 2.5 License"/>
+              <menuitem id="ppcca4"   label="Creative Commons Attribution-NonCommercial 2.5 License" value="Creative Commons Attribution-NonCommercial 2.5 License"/>
+              <menuitem id="ppcca5"   label="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License" value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"/>
+              <menuitem id="ppcca6"   label="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License" value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"/>
+              <menuitem id="ppdn"   label="Developing Nations 2.0" value="Developing Nations 2.0"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+         <hbox align="center">
+            <label id="ppFooter" style="width:8em" value="Footer:" tooltiptext="Web pages footer." />
+            <textbox id="pp_footer" multiline="true" rows="4" cols="38" onchange="this.style.color='blue';" /> 
+         </hbox>
+         <hbox align="center">
             <label id="ppDescription" style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
             <textbox id="pp_description" multiline="true" rows="4" cols="38" onchange="this.style.color='blue';" /> 
          </hbox>

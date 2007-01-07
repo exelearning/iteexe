@@ -189,7 +189,6 @@ class WebsitePage(Page):
                 html += " | "
             html += "<a href=\""+nextPage.name+".html\">"
             html += " %s &raquo</a>" % _('Next')
-            #html += "&raquo; %s</a>" % _('Next')
             
         html += "</div>\n"
         return html

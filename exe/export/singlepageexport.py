@@ -65,18 +65,6 @@ class SinglePageExport(object):
 	
 	page = SinglePage("index", 1, package.root)
 
-        #self.html  = page.renderHeader(package.name)
-        #self.html += u"<body>\n"
-        #self.html += u"<div id=\"content\">\n"
-        #self.html += u"<div id=\"header\">\n"
-        #self.html += escape(package.title)
-        #self.html += u"</div>\n"
-        #self.html += u"<div id=\"main\">\n"
-        #self.html += page.renderNode(package.root)
-        #self.html += u"</div>\n"
-	#self.html += page.renderLicense()
-        #self.html += u"</div>\n"
-        #self.html += u"</body></html>\n"
         page.save(self.outputDir/"index.html")
 
 
@@ -105,9 +93,7 @@ class SinglePageExport(object):
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
 
-        # copy video container file for flash movies.
-        #videofile = (self.templatesDir/'videoContainer.swf')
-        #videofile.copyfile(self.outputDir/'videoContainer.swf')
+        # copy video container file for flash movie
         self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
                                     'xspf_player.swf'),self.outputDir)
 
@@ -115,60 +101,4 @@ class SinglePageExport(object):
         (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')
 
 
-    #def renderHeader(self, name):
-        #"""
-        #Returns an XHTML string for the header of this page.
-        #"""
-        #html  = u"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-        #html += u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-        #html += u'Transitional//EN" '
-        #html += u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
-        #html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        #html += u"<head>\n"
-        #html += u"<style type=\"text/css\">\n"
-        #html += u"@import url(base.css);\n"
-        #html += u"@import url(content.css);\n"
-        #html += u"</style>"
-        #html += u"<title>"
-        #html += name
-        #html += "</title>\n"
-        #html += u"<meta http-equiv=\"Content-Type\" content=\"text/html; "
-        #html += u" charset=utf-8\" />\n";
-        #html += u'<script type="text/javascript" src="common.js"></script>\n'
-        #html += u"</head>\n"
-        #return html
-
-
-    #def renderNode(self, node):
-        #"""
-        #Returns an XHTML string for this node and recurse for the children
-        #"""
-        #self.html += '<div id=\"nodeDecoration\">'
-        #self.html += '<p id=\"nodeTitle\">'
-        #self.html += escape(node.titleLong)
-        #self.html += '</p></div>\n'
-
-        #for idevice in node.idevices:
-            #block = g_blockFactory.createBlock(None, idevice)
-            #if not block:
-                #log.critical("Unable to render iDevice.")
-                #raise Error("Unable to render iDevice.")
-            #if hasattr(idevice, "isQuiz"):
-                #self.html += block.renderJavascriptForWeb()
-            #self.html += block.renderView(self.style)
-
-        #for child in node.children:
-            #self.renderNode(child)
-        
-
-    #def save(self, filename):
-        #"""
-        #Save page to a file.  
-        #'outputDir' is the directory where the filenames will be saved
-        #(a 'path' instance)
-        #"""
-        #outfile = open(filename, "w")
-        #outfile.write(self.html.encode('utf8'))
-        #outfile.close()
-        
 # ===========================================================================

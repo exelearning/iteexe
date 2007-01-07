@@ -124,6 +124,7 @@ class AppletBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += appletcode
+        html += u"<br/>"
         html += self.renderViewButtons()
         html += u"</div>\n"
 
@@ -145,6 +146,7 @@ class AppletBlock(Block):
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&nbsp;', '')
         html += appletcode
+        html += u"<br/>"
         html += u"</div>\n"
 
         return html

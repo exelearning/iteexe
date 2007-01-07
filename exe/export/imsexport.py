@@ -287,8 +287,7 @@ class IMSExport(object):
                                   'ims_xml.xsd'), outputDir)
 
         # copy video container file for flash movies.
-        #videofile = (self.templatesDir/'videoContainer.swf')
-        #videofile.copyfile(outputDir/'videoContainer.swf')
+
         self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
                                     'xspf_player.swf'),outputDir)
 

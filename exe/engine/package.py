@@ -59,7 +59,7 @@ class DublinCore(Jellyable, Unjellyable):
 
     def __setattr__(self, name, value):
         self.__dict__[name] = toUnicode(value)
-
+  
 
 class Package(Persistable):
     """
@@ -443,6 +443,7 @@ class Package(Persistable):
         """
         self.license = 'None'
         self.footer = ""
+        self.idevices = []
 
 
 # ===========================================================================
