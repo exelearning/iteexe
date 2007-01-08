@@ -17,21 +17,27 @@ msgstr "\"Cerca il file con estensione .txt  (in the applet file) \n"
 "e aprilo. Copiane il contenuto <ctrl A, ctrl C> nel campo codice \n dell'applet."
 
 #: exe/webui/block.py:224
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 "---Move To---\n"
+""
 msgstr "---Sposta In---"
 
 #: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
 #: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 ". Please use ASCII names.\n"
+""
 msgstr ". Per favore usa caratteri ASCII."
 
 #: exe/engine/package.py:203
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 "?????\n"
+""
 msgstr "?????"
 
 #: exe/engine/truefalseidevice.py:66
@@ -45,31 +51,41 @@ msgstr "Un suggerimento può essere previsto per aiutare \n lo studente a rispon
 #: exe/engine/idevicestore.py:331 exe/engine/idevicestore.py:392
 #: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:438
 #: exe/webui/questionelement.py:70
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 "Activity\n"
+""
 msgstr "Attività"
 
 #: exe/webui/editorpane.py:213
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 "Add\n"
+""
 msgstr "Aggiungi"
 
 #: exe/webui/element.py:257
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 "Add Image\n"
+""
 msgstr "Aggiungi Immagine"
 
 #: exe/webui/element.py:368
-msgid "_:suggested by myhns"
+msgid ""
+"_:suggested by myhns"
 "Add JPEG Image\n"
+""
 msgstr "Aggiungi Immagine Jpeg"
 
 #: exe/xului/mainpage.1484.py:206 exe/xului/mainpage.1484.py:268
 #: exe/xului/mainpage.py:231 exe/xului/mainpage.py:290
 #: exe/xului/mainpage.py:343 exe/xului/mainpage.old.py:224
 #: exe/xului/mainpage.old.py:305
-msgid "_: suggested by Petrossi"
+msgid ""
+"_: suggested by Petrossi"
 ". Please use ASCII names."
+""
 msgstr ".Usa nomi in ASCII."
 
 #: exe/idevices/appletidevice.py:60
@@ -103,14 +119,18 @@ msgstr ""
 "nel campo codice dell'applet."
 
 #: exe/webui/block.py:224
-msgid "_: suggested by gand"
+msgid ""
+"_: suggested by gand"
 "---Move To---"
+""
 msgstr "---Muovi---"
 
 #: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
 #: exe/xului/mainpage.py:366
-msgid "_: suggested by gand"
+msgid ""
+"_: suggested by gand"
 ". Please use ASCII names."
+""
 msgstr "Usa in nomi ASCI."
 
 #: exe/engine/clozeidevice.py:122
@@ -127,8 +147,10 @@ msgstr ""
 "e fai click sul bottone sottostante Nascondi/Mostra.</p>"
 
 #: exe/engine/field.py:483
-msgid "_: suggested by gand"
+msgid ""
+"_: suggested by gand"
 "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
+""
 msgstr "<p>Se questa opzione è selezonata, le risposte con una diversa capitalizzazione saranno segante come sbagliate</p>"
 
 #: exe/engine/field.py:488
@@ -140,8 +162,10 @@ msgid ""
 msgstr "Se questa opzione è selezionata, ogni parola sarà valutata appena viene scritta dallo studente invece che tutte le parole vengono valutate alla fine dell'esercizio."
 
 #: exe/engine/field.py:708
-msgid "_: suggested by gand"
+msgid ""
+"_: suggested by gand"
 "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
+""
 msgstr "<p>Scegliete i simboli dal sottostante editor di testi per creare una formula matematica. Ogni simbolo verrà mostrato nel campo mostra nel linguaggio matematico LATEX che può essere visto in anteprima usando il bottone &lt;Anteprima&gt; sottostante."
 
 #: exe/engine/idevicestore.py:242
@@ -153,3 +177,146 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
 msgstr "<p>L'Attività Lettura sarà usata principalmente per verificare la comprensione dello studente sul testo sottoposto. Questo può essere fatto chiedendo allo studente di riflettere sulla lettura e di rispondere alle domande pertinenti al testo, o completando dei compiti più concreti basati sulla letture.</p>"
+
+#: exe/engine/clozeidevice.py:58
+msgid ""
+"_: suggested by augustocostantini"
+"<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
+""
+msgstr ""
+
+#: exe/engine/multimediaidevice.py:50
+msgid ""
+"_: suggested by augustocostantini"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+""
+msgstr ""
+
+#: exe/idevices/appletidevice.py:60
+msgid ""
+"_: suggested by augustocostantini"
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr ""
+"\\\"Trovare il file .txt (nel file applet) \n"
+"e aprirlo. Copia il contenuto di questo file <ctrl A,ctrl C> nel campo codice dell'applet."
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by augustocostantini"
+"---Move To---"
+""
+msgstr "--Muovi a---"
+
+#: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
+#: exe/xului/mainpage.py:366
+msgid ""
+"_: suggested by augustocostantini"
+". Please use ASCII names."
+""
+msgstr ". Usare nomi in formato ASCII."
+
+#: exe/engine/clozeidevice.py:58
+msgid ""
+"_: suggested by augustocostantini"
+"<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
+""
+msgstr "Se il tuo obiettivo è provare la conoscenza di concetti base o la comprensione del testo    Scrivere un sommario di concetti o un testo abbastanza lungo per testare gli obiettivi della conoscenza, ma non eccessivamente lungo da indurre pesantezza. Meno di una pagina scritta è probabilmente adeguata, ma probabilmente troppo poco per studenti giovani o per principianti.    Evidenziare le parole del testo che sono parole chiavi per la conoscenza dei concetti. Questi dovrebbero essere probabilmente verbi, nomi e avverbi. Scegliere la alternative con una chiara risposta.Se l'obiettivo è provare la conoscenza di un vocabolario    Scrivere un testo usando le parole obiettivo del vocabolario. Questo testo dovrebbe essere coerente e conciso, e di adeguata lunghezza. Evidenziare le parole obiettivo nel testo. Scegliere le alternative con una chiara risposta.Se l'obiettivo è verificare la formazione di parole o la grammatica:    Scrivere un testo usando forme obiettivo. Questo testo dovrebbe essere coerente e conciso, e di adeguata lunghezza. Ricordare che se l'obiettivo non è la conoscenza di un vocabolario di parole, il significato delle parole dovrebbe essere già  noto agli studenti.    Evidenziare le parole chiavi nel testo. Fornire alternative con lo stesso in sieme di parole, ma con differente struttura. E' una buona idea prendere collegamenti per verificare con test/esercizi per essere sicuri che non ci saranno sorprese!"
+
+#: exe/engine/multimediaidevice.py:50
+msgid ""
+"_: suggested by augustocostantini"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+""
+msgstr "   1.  Premere su <Seleziona MP3> e raggiungere il file MP3 che si desidera inserire   2. Premere sul menù a comparsa per selezionare la posizione in cui apparirà il file sullo schermo.   3. Inserire una didascalia opzionale per il file.   4. Associare ogni informazione rilevante al file MP3.   5. Scegliere la tipologia di stile che verrà mostrata dal'iDevice es.: 'Una certa enfasi' applica un bordo ed un'icona al contenuto mostrato dall'iDevice."
+
+#: exe/engine/imagewithtextidevice.py:41
+msgid ""
+"_: suggested by augustocostantini"
+"<p>\n"
+"The image with text iDevice can be used in a number of ways to support both\n"
+"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
+"content. \n"
+"</p><p>\n"
+"<b>Integrating visuals with verbal summaries</b>\n"
+"</p><p>\n"
+"Cognitive psychologists indicate that presenting learners with a\n"
+"representative image and corresponding verbal summary (that is presented\n"
+"simultaneously) can reduce cognitive load and enhance learning retention.\n"
+"This iDevice can be used to present an image (photograph, diagram or\n"
+"graphic) with a brief verbal summary covering the main points relating to\n"
+"the image. For example, if you were teaching the functions of a four-stroke\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
+"the piston with a brief textual summary of the key aspects of each visual.\n"
+"</p>"
+msgstr ""
+"\n"
+"L'immagine con l'iDevice di testo può essere usata in diversi modi per sostenere\n"
+"le dimensioni dei contenuti di eXe in entrambi i processi emozionale (affettivo)\n"
+"e di apprendimento (cognitivo). \n"
+"\n"
+"Integrare la visione con commenti verbali\n"
+"\n"
+"I psicologi cognitivi affermano che presentare agli studenti una\n"
+"immagine rappresentativa con il corrispondente commento verbale (presentati\n"
+"contemporaneamente) può ridurre il carico cognitivo ed esaltare la retenzione delle conoscenze.\n"
+"Questo iDevice può essere utilizzato per presentare una immagine (fotografia, diagrammma o\n"
+"grafico) con un breve commento verbale che include i principali punti di relazione con\n"
+"l'immagine. Per esempio, se si stà insegnando il funzionamento di un motore a combustione interna\n"
+"a quattro tempi, si dovrebbe visualizzare immagini per ciascuna delle quattro posizioni dei pistoni\n"
+"con un breve commento per gli aspetti chiave di ciascuna immagine.\n"
+
+#: exe/engine/attachmentidevice.py:60
+msgid ""
+"_: suggested by augustocostantini"
+"<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
+""
+msgstr "Assegnare una etichetta per l'allegato. E' preferibile includere file del tipo pdf, ppt, etc.L'inclusione delle dimensioni è raccomandata in modo che, dopo che un pacchetto viene esportato su in sito web, l'utente abbia una idea di quanto sarà il dowloading.Per esempio: File Forecast.doc (500kb)"
+
+#: exe/engine/clozeidevice.py:46
+msgid ""
+"_: suggested by augustocostantini"
+"<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
+""
+msgstr "Gli esercizi Cloze sono testi o affermazioni in cui gli studenti devono riempire la parole mancanti. Essi sono spesso utilizzati per i seguenti obiettivi:   1. Verificare la conoscenza dei concetti base del corso (essi dovrebbero essere verifiche preliminari, esercizi formativi, o verifiche sommative).   2. Per verificare la comprensione alla lettura.   3. Per verificare la conoscenza di un vocabolario.   4. Per verificare la formazione di una parola e/o competenze grammaticali. "
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by augustocostantini"
+"---Move To---"
+""
+msgstr "---Muovi a---"
+
+#: exe/idevices/appletidevice.py:60
+msgid ""
+"_: suggested by augustocostantini"
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr "\"Find the .txt file (in the applet file) and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet code field."
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by augustocostantini"
+"---Move To---"
+msgstr ""
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by augustocostantini"
+"---Move To---"
+msgstr "---Muovi a---"
+
+#: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
+#: exe/xului/mainpage.py:366
+msgid ""
+"_: suggested by augustocostantini"
+". Please use ASCII names."
+msgstr "Per favore usare nomi in formato ASCII."
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by augustocostantini"
+"---Move To---"
+msgstr "---Muovi a---"

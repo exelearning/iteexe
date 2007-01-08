@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2006-11-04 12:15+1300\n"
-"Last-Translator: Vychegzhanin Anton <vashot@gmail.com>\n"
+"PO-Revision-Date: 2006-12-30 00:48+1300\n"
+"Last-Translator: Jekaterina <katja@jukulab.ee>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,7 @@ msgstr "<dl>  <dt>Если Ваша цель- проверить пониман�
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Кликните на &lt;Выбрать MP3&gt; и загрузите        файл, который вы хотите вставить</li> <li>Кликните на выпадающиее меню, чтобы выбрать позицию,         на которой вы хотите, чтобы файл отображался на экране.</li>  <li>Введите название для вашего файла.</li> <li>Добавьте связующий текст к MP3 файлу.</li> <li>Выберите стиль, в котором Вы хотите, чтобы iDevice отображался, например  'Some emphasis' добавляет рамку и изображение к содержимому iDevice-а</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
