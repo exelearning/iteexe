@@ -1,3 +1,5 @@
+exe/profile.py
+exe/changeset?format=diff&new=2364&old=2415&new_path=trunk%2Fexe%2Fwebui%2Fpackageredirectpage.py&old_path=trunk%2Fexe%2Fwebui%2Fpackageredirectpage.py
 exe/__init__.py
 exe/application.py
 exe/engine/feedparser.py

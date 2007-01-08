@@ -29,8 +29,7 @@ msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet co
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:240
-#: exe/xului/mainpage.py:299
+#: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
 #: exe/xului/mainpage.py:366
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
@@ -185,12 +184,9 @@ msgstr "限每人发表一篇文章的讨论区"
 msgid "Actions"
 msgstr "动作"
 
-#: exe/engine/idevicestore.py:286
-#: exe/engine/idevicestore.py:325
-#: exe/engine/idevicestore.py:333
-#: exe/engine/idevicestore.py:394
-#: exe/engine/idevicestore.py:432
-#: exe/engine/idevicestore.py:440
+#: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:325
+#: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:394
+#: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:440
 #: exe/webui/questionelement.py:74
 msgid "Activity"
 msgstr "学习活动"
@@ -229,8 +225,7 @@ msgstr "加载除.txt文档外所有的applet文档. 使用\"添加文档\"和\"
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "添加图片, 可从您的图像库中选出."
 
-#: exe/webui/element.py:1259
-#: exe/idevices/testquestionelement.py:106
+#: exe/webui/element.py:1259 exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
 msgstr "添加选项"
 
@@ -238,13 +233,11 @@ msgstr "添加选项"
 msgid "Add another Question"
 msgstr "添加问题"
 
-#: exe/webui/multichoiceblock.py:118
-#: exe/webui/element.py:1471
+#: exe/webui/multichoiceblock.py:118 exe/webui/element.py:1471
 msgid "Add another option"
 msgstr "添加选项"
 
-#: exe/webui/truefalseblock.py:88
-#: exe/webui/casestudyblock.py:97
+#: exe/webui/truefalseblock.py:88 exe/webui/casestudyblock.py:97
 msgid "Add another question"
 msgstr "添加问题"
 
@@ -260,10 +253,8 @@ msgstr "添加图片"
 msgid "Add interactive feedback to your iDevice."
 msgstr "添加互动式评语."
 
-#: exe/webui/imagemagnifierblock.py:108
-#: exe/webui/imagewithtextblock.py:79
-#: exe/webui/flashwithtextblock.py:79
-#: exe/webui/multimediablock.py:83
+#: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
+#: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
 #: exe/idevices/flashmovieblock.py:78
 msgid "Align:"
 msgstr "对齐:"
@@ -309,8 +300,7 @@ msgid ""
 " "
 msgstr " "
 
-#: exe/engine/idevicestore.py:328
-#: exe/engine/idevicestore.py:435
+#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:435
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -334,8 +324,7 @@ msgstr "附件"
 msgid "Attachment %s has no parentNode"
 msgstr "Attachment %s has no parentNode"
 
-#: exe/engine/multimediaidevice.py:41
-#: exe/engine/rssidevice.py:42
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
 msgid "Auckland University of Technology"
 msgstr "奥克兰技术大学"
 
@@ -351,21 +340,17 @@ msgstr "按钮标签:"
 msgid "Can a student post to this forum?:"
 msgstr "学生能否在此论坛发表文章"
 
-#: exe/webui/preferencespage.py:94
-#: exe/webui/editorpane.py:232
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:232
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:238
-#: exe/xului/mainpage.py:297
+#: exe/xului/mainpage.py:238 exe/xului/mainpage.py:297
 #: exe/xului/mainpage.py:364
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
-#: exe/webui/imagemagnifierblock.py:92
-#: exe/webui/imagewithtextblock.py:84
-#: exe/webui/flashwithtextblock.py:84
-#: exe/webui/multimediablock.py:87
+#: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
+#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "标题:"
@@ -374,8 +359,7 @@ msgstr "标题:"
 msgid "Case Study"
 msgstr "案例分析"
 
-#: exe/webui/galleryblock.py:198
-#: exe/webui/galleryblock.py:216
+#: exe/webui/galleryblock.py:198 exe/webui/galleryblock.py:216
 msgid "Change Image"
 msgstr "改换图片"
 
@@ -426,8 +410,7 @@ msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意
 msgid "Click Here"
 msgstr "点击"
 
-#: exe/webui/common.py:281
-#: exe/webui/common.py:284
+#: exe/webui/common.py:281 exe/webui/common.py:284
 msgid "Click for completion instructions"
 msgstr "点击看完成说明."
 
@@ -445,20 +428,13 @@ msgstr "点击预览按钮显示数学符号."
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "点击\"添加图片\"按钮来选择图片文档.所选图片将显示在下面,你可为其加上标签. 最好在标签上加上文档大小."
 
-#: exe/engine/galleryidevice.py:291
-#: exe/webui/common.py:289
-#: exe/webui/common.py:290
-#: exe/webui/multichoiceblock.py:154
-#: exe/webui/multichoiceblock.py:155
-#: exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124
-#: exe/webui/block.py:237
-#: exe/webui/block.py:238
-#: exe/webui/editorpane.py:332
-#: exe/webui/editorpane.py:333
-#: exe/webui/editorpane.py:353
-#: exe/webui/editorpane.py:354
-#: exe/webui/element.py:1494
+#: exe/engine/galleryidevice.py:291 exe/webui/common.py:289
+#: exe/webui/common.py:290 exe/webui/multichoiceblock.py:154
+#: exe/webui/multichoiceblock.py:155 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/block.py:237
+#: exe/webui/block.py:238 exe/webui/editorpane.py:332
+#: exe/webui/editorpane.py:333 exe/webui/editorpane.py:353
+#: exe/webui/editorpane.py:354 exe/webui/element.py:1494
 #: exe/webui/element.py:1495
 msgid "Close"
 msgstr "关闭"
@@ -479,12 +455,9 @@ msgstr "填空题"
 msgid "Confirm and submit"
 msgstr "确认及提交"
 
-#: exe/webui/optionelement.py:81
-#: exe/webui/optionelement.py:129
-#: exe/webui/element.py:1246
-#: exe/webui/element.py:1341
-#: exe/webui/element.py:1389
-#: exe/idevices/testquestionelement.py:93
+#: exe/webui/optionelement.py:81 exe/webui/optionelement.py:129
+#: exe/webui/element.py:1246 exe/webui/element.py:1341
+#: exe/webui/element.py:1389 exe/idevices/testquestionelement.py:93
 msgid "Correct"
 msgstr "正确"
 
@@ -508,18 +481,14 @@ msgstr "拟写案例故事.一个好的案例描述有争议性的,或不同人�
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/galleryblock.py:249
-#: exe/webui/block.py:208
-#: exe/webui/editorpage.py:177
-#: exe/webui/editorpage.py:181
-#: exe/webui/editorelement.py:76
-#: exe/webui/editorelement.py:111
-#: exe/webui/editorelement.py:152
-#: exe/webui/editorelement.py:191
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: n:render="delNode"
+#: exe/webui/galleryblock.py:249 exe/webui/block.py:208
+#: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
+#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
 #: key="delNodeKey" label="Delete">
 #: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<toolbarbutton
 msgid "Delete"
 msgstr "删除"
 
@@ -535,17 +504,13 @@ msgstr "删除文档"
 msgid "Delete Image"
 msgstr "删除图片"
 
-#: exe/webui/optionelement.py:92
-#: exe/webui/element.py:1160
-#: exe/webui/element.py:1353
-#: exe/idevices/testoptionelement.py:86
+#: exe/webui/optionelement.py:92 exe/webui/element.py:1160
+#: exe/webui/element.py:1353 exe/idevices/testoptionelement.py:86
 msgid "Delete option"
 msgstr "删除选项"
 
-#: exe/webui/questionelement.py:88
-#: exe/webui/truefalseelement.py:102
-#: exe/webui/element.py:1238
-#: exe/webui/element.py:1456
+#: exe/webui/questionelement.py:88 exe/webui/truefalseelement.py:102
+#: exe/webui/element.py:1238 exe/webui/element.py:1456
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "删除问题"
@@ -565,39 +530,34 @@ msgid ""
 "presented. "
 msgstr "描述学生应完成的阅读任务."
 
-#: exe/engine/idevicestore.py:321
-#: exe/engine/idevicestore.py:428
+#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:428
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "用于描述学生为完成此课所应具备的知识."
 
-#: exe/engine/idevicestore.py:287
-#: exe/engine/idevicestore.py:395
+#: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:395
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "描述学生应完成的阅读任务."
 
-#: exe/engine/idevicestore.py:334
-#: exe/engine/idevicestore.py:441
+#: exe/engine/idevicestore.py:334 exe/engine/idevicestore.py:441
 msgid "Describe the tasks the learners should complete."
 msgstr "描述学生需要完成的学习任务."
 
-#: exe/engine/flashwithtextidevice.py:49
-#: exe/idevices/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
 msgid "Description"
 msgstr "描述"
 
 #: exe/webui/attachmentblock.py:99
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Description:"
-#: id="ppDescription" style="width:8em"
-#: tooltiptext="An account of the content
-#: resource."> exe/xului/templates/dublincore.xul:<label
-#: id="dcDescription"
+#: exe/xului/templates/packageproperties.xul:<label value="Description:"
+#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
+#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 #: exe/resources/internal/templates/packageproperties.xul:<label
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Description:"
 msgstr "描述:"
 
@@ -617,22 +577,21 @@ msgstr "讨论主题:"
 msgid "Discussions and replies are allowed"
 msgstr "允许发表及回复文章"
 
-#: exe/webui/element.py:274
-#: exe/webui/element.py:584
-#: exe/webui/element.py:885
+#: exe/webui/element.py:274 exe/webui/element.py:584 exe/webui/element.py:885
 msgid "Display as:"
 msgstr "显示为:"
 
-#: exe/webui/block.py:200
-#: exe/xului/templates/packageproperties.xul:<button
+#: exe/webui/block.py:200 exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
 #: label="Done"> exe/xului/templates/dublincore.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
-#: exe/xului/templates/exportproperties.xul:<button
-#: id="exportPropsDone"
+#: exe/xului/templates/exportproperties.xul:<button id="exportPropsDone"
 #: exe/resources/internal/templates/packageproperties.xul:<button
 #: exe/resources/internal/templates/dublincore.xul:<button
 #: exe/resources/internal/templates/exportproperties.xul:<button
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<button
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/exportproperties.xul:<button
 msgid "Done"
 msgstr "完成"
 
@@ -671,16 +630,13 @@ msgstr "%s 已存在, 请使用别的文件名."
 msgid "Each person posts one discussion"
 msgstr "限每人发表一次"
 
-#: exe/webui/block.py:321
-#: exe/webui/editorpage.py:199
+#: exe/webui/block.py:321 exe/webui/editorpage.py:199
 #: exe/webui/editorpane.py:229
 msgid "Edit"
 msgstr "编辑"
 
-#: exe/webui/wikipediablock.py:129
-#: exe/webui/editorpane.py:304
-#: exe/webui/rssblock.py:94
-#: exe/webui/multimediablock.py:94
+#: exe/webui/wikipediablock.py:129 exe/webui/editorpane.py:304
+#: exe/webui/rssblock.py:94 exe/webui/multimediablock.py:94
 msgid "Emphasis"
 msgstr "强调"
 
@@ -704,8 +660,7 @@ msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 
-#: exe/engine/wikipediaidevice.py:71
-#: exe/engine/wikipediaidevice.py:230
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:230
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -734,8 +689,7 @@ msgid ""
 " instructions or additional learning information."
 msgstr " "
 
-#: exe/engine/field.py:835
-#: exe/idevices/quiztestidevice.py:64
+#: exe/engine/field.py:835 exe/idevices/quiztestidevice.py:64
 #: exe/idevices/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
@@ -758,8 +712,7 @@ msgstr "用评语栏输入评语提供给学生. 此栏可空白."
 msgid "Enter instructions for completion here"
 msgstr "在此输入完成说明"
 
-#: exe/engine/externalurlidevice.py:47
-#: exe/engine/externalurlidevice.py:69
+#: exe/engine/externalurlidevice.py:47 exe/engine/externalurlidevice.py:69
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
@@ -772,36 +725,30 @@ msgid ""
 "by clicking the red \"X\" next to the Option."
 msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
 
-#: exe/engine/idevicestore.py:283
-#: exe/engine/idevicestore.py:391
+#: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:391
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校所采用的模式."
 
-#: exe/engine/flashwithtextidevice.py:57
-#: exe/engine/flashwithtextidevice.py:85
+#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr "输入显示flash的尺寸并选择向哪边对齐. flash的长和宽会按比例自动调节."
 
-#: exe/webui/editorpane.py:145
-#: exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:145 exe/webui/editorpane.py:149
 msgid "Enter the instructions for completion here"
 msgstr "在此输入完成说明"
 
-#: exe/webui/editorpane.py:140
-#: exe/webui/editorpane.py:144
-#: exe/webui/editorpane.py:148
-#: exe/webui/editorpane.py:155
+#: exe/webui/editorpane.py:140 exe/webui/editorpane.py:144
+#: exe/webui/editorpane.py:148 exe/webui/editorpane.py:155
 msgid "Enter the label here"
 msgstr "在此输入标题"
 
-#: exe/engine/field.py:832
-#: exe/idevices/quiztestidevice.py:61
+#: exe/engine/field.py:832 exe/idevices/quiztestidevice.py:61
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -820,8 +767,7 @@ msgid ""
 "                                 associate with the image."
 msgstr "输入有关图片的描述."
 
-#: exe/engine/multimediaidevice.py:65
-#: exe/engine/imagemagnifieridevice.py:54
+#: exe/engine/multimediaidevice.py:65 exe/engine/imagemagnifieridevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -844,10 +790,8 @@ msgstr "例子"
 msgid "Example Example"
 msgstr "例子"
 
-#: exe/xului/mainpage.py:488
-#: exe/xului/mainpage.py:503
-#: exe/xului/mainpage.py:521
-#: exe/xului/mainpage.py:539
+#: exe/xului/mainpage.py:488 exe/xului/mainpage.py:503
+#: exe/xului/mainpage.py:521 exe/xului/mainpage.py:539
 #, python-format
 msgid "Exported to %s"
 msgstr "导出至 %s"
@@ -860,21 +804,15 @@ msgstr "外部网页"
 msgid "Extra large"
 msgstr "特大"
 
-#: exe/webui/truefalseelement.py:84
-#: exe/webui/truefalseelement.py:155
+#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
 msgid "False"
 msgstr "错"
 
-#: exe/engine/clozeidevice.py:127
-#: exe/engine/clozeidevice.py:151
-#: exe/engine/idevicestore.py:290
-#: exe/engine/idevicestore.py:398
-#: exe/engine/genericidevice.py:155
-#: exe/webui/questionelement.py:78
-#: exe/webui/common.py:194
-#: exe/webui/truefalseelement.py:90
-#: exe/webui/optionelement.py:93
-#: exe/webui/editorpane.py:220
+#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:151
+#: exe/engine/idevicestore.py:290 exe/engine/idevicestore.py:398
+#: exe/engine/genericidevice.py:155 exe/webui/questionelement.py:78
+#: exe/webui/common.py:194 exe/webui/truefalseelement.py:90
+#: exe/webui/optionelement.py:93 exe/webui/editorpane.py:220
 #: exe/webui/element.py:1354
 msgid "Feedback"
 msgstr "评语"
@@ -889,8 +827,7 @@ msgid ""
 "data is entered into this field."
 msgstr "如果此栏空白, 评语按钮将不显示."
 
-#: exe/webui/reflectionblock.py:72
-#: exe/webui/element.py:1262
+#: exe/webui/reflectionblock.py:72 exe/webui/element.py:1262
 msgid "Feedback:"
 msgstr "评语:"
 
@@ -902,19 +839,16 @@ msgstr "评语:"
 msgid "Filename"
 msgstr "文件名"
 
-#: exe/xului/mainpage.py:417
-#: exe/xului/mainpage.py:455
+#: exe/xului/mainpage.py:417 exe/xului/mainpage.py:455
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "文件名%s是个文档, 无法覆盖它"
 
-#: exe/idevices/flashmovieidevice.py:39
-#: exe/idevices/flashmovieidevice.py:50
+#: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
 msgstr "Flash 电影"
 
-#: exe/engine/flashwithtextidevice.py:40
-#: exe/engine/flashwithtextidevice.py:47
+#: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
 msgstr "文字及Flash"
 
@@ -934,8 +868,7 @@ msgstr "使每个会员均加入?:"
 msgid "Forum Name:"
 msgstr "论坛名称:"
 
-#: exe/idevices/forumelement.py:279
-#: exe/idevices/forumelement.py:296
+#: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
 msgid "Forum Name: "
 msgstr "论坛名称:"
 
@@ -947,8 +880,7 @@ msgstr "论坛类别:"
 msgid "Frame Height:"
 msgstr "页框高:"
 
-#: exe/engine/freetextidevice.py:37
-#: exe/engine/freetextidevice.py:44
+#: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
 msgstr "自由文本"
 
@@ -957,6 +889,9 @@ msgid "French Wikipedia Article"
 msgstr "法文Wikipedia 文章"
 
 #: exe/webui/wikipediablock.py:194
+#: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
+#: Documentation License" id="ppmigfdl" label="GNU License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "GNU Free Documentation License"
 msgstr "GNU Free Documentation License"
 
@@ -984,8 +919,7 @@ msgstr "Go Forward (Not Available)"
 msgid "Group mode:"
 msgstr "分组类别:"
 
-#: exe/webui/reflectionblock.py:93
-#: exe/idevices/forumelement.py:92
+#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
 msgid "Hide"
 msgstr "隐藏"
 
@@ -997,17 +931,13 @@ msgstr "隐藏 评语"
 msgid "Hide/Show Word"
 msgstr "隐藏/显示 文字"
 
-#: exe/webui/multichoiceblock.py:158
-#: exe/webui/multichoiceblock.py:183
-#: exe/webui/truefalseelement.py:95
-#: exe/webui/truefalseelement.py:117
-#: exe/webui/truefalseelement.py:127
-#: exe/webui/element.py:1498
+#: exe/webui/multichoiceblock.py:158 exe/webui/multichoiceblock.py:183
+#: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
+#: exe/webui/truefalseelement.py:127 exe/webui/element.py:1498
 msgid "Hint"
 msgstr "提示"
 
-#: exe/webui/multichoiceblock.py:92
-#: exe/webui/element.py:1459
+#: exe/webui/multichoiceblock.py:92 exe/webui/element.py:1459
 msgid "Hint:"
 msgstr "提示:"
 
@@ -1018,10 +948,8 @@ msgstr "首页"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/multichoiceblock.py:176
-#: exe/webui/galleryblock.py:315
-#: exe/webui/block.py:276
-#: exe/webui/genericblock.py:78
+#: exe/webui/multichoiceblock.py:176 exe/webui/galleryblock.py:315
+#: exe/webui/block.py:276 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
 msgstr "iDevice 图标"
@@ -1034,8 +962,7 @@ msgstr "IDevice问题图标"
 msgid "Icons"
 msgstr "图标"
 
-#: exe/engine/imagewithtextidevice.py:58
-#: exe/webui/editorpane.py:218
+#: exe/engine/imagewithtextidevice.py:58 exe/webui/editorpane.py:218
 msgid "Image"
 msgstr "图像"
 
@@ -1074,10 +1001,8 @@ msgstr "初始放大倍数"
 msgid "Instant Marking?"
 msgstr "快速评分?"
 
-#: exe/engine/truefalseidevice.py:80
-#: exe/engine/truefalseidevice.py:167
-#: exe/engine/clozeidevice.py:114
-#: exe/webui/common.py:275
+#: exe/engine/truefalseidevice.py:80 exe/engine/truefalseidevice.py:167
+#: exe/engine/clozeidevice.py:114 exe/webui/common.py:275
 msgid "Instructions"
 msgstr "说明"
 
@@ -1121,10 +1046,8 @@ msgstr "学习管理系统"
 msgid "Learning Management System:"
 msgstr "学习管理系统:"
 
-#: exe/webui/imagemagnifierblock.py:85
-#: exe/webui/imagewithtextblock.py:75
-#: exe/webui/flashwithtextblock.py:75
-#: exe/webui/multimediablock.py:79
+#: exe/webui/imagemagnifierblock.py:85 exe/webui/imagewithtextblock.py:75
+#: exe/webui/flashwithtextblock.py:75 exe/webui/multimediablock.py:79
 #: exe/idevices/flashmovieblock.py:75
 msgid "Left"
 msgstr "左"
@@ -1133,8 +1056,7 @@ msgstr "左"
 msgid "Link to the forum"
 msgstr "链接至论坛"
 
-#: exe/webui/wikipediablock.py:122
-#: exe/webui/rssblock.py:87
+#: exe/webui/wikipediablock.py:122 exe/webui/rssblock.py:87
 msgid "Load"
 msgstr "载入"
 
@@ -1142,8 +1064,7 @@ msgstr "载入"
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/engine/mathidevice.py:35
-#: exe/engine/mathidevice.py:48
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
 msgid "Maths"
 msgstr "数学公式"
 
@@ -1195,8 +1116,7 @@ msgstr "新主题"
 msgid "New iDevice"
 msgstr "新的 iDevice"
 
-#: exe/engine/galleryidevice.py:195
-#: exe/export/scormexport.py:293
+#: exe/engine/galleryidevice.py:195 exe/export/scormexport.py:293
 #: exe/export/websitepage.py:196
 msgid "Next"
 msgstr "下一页"
@@ -1205,8 +1125,7 @@ msgstr "下一页"
 msgid "No"
 msgstr "不"
 
-#: exe/webui/galleryblock.py:187
-#: exe/webui/galleryblock.py:274
+#: exe/webui/galleryblock.py:187 exe/webui/galleryblock.py:274
 msgid "No Images Loaded"
 msgstr "无图像显示"
 
@@ -1230,10 +1149,8 @@ msgstr "不能发表文章, 但可回复"
 msgid "No discussions, no replies"
 msgstr "不能发表文章, 不能回复"
 
-#: exe/webui/wikipediablock.py:126
-#: exe/webui/editorpane.py:307
-#: exe/webui/rssblock.py:91
-#: exe/webui/multimediablock.py:91
+#: exe/webui/wikipediablock.py:126 exe/webui/editorpane.py:307
+#: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:91
 msgid "No emphasis"
 msgstr "不强调"
 
@@ -1241,12 +1158,12 @@ msgstr "不强调"
 msgid "No groups"
 msgstr "不分组"
 
-#: exe/webui/imagemagnifierblock.py:87
-#: exe/webui/imagewithtextblock.py:77
-#: exe/webui/flashwithtextblock.py:77
-#: exe/webui/multimediablock.py:81
-#: exe/idevices/forumelement.py:239
-#: exe/idevices/flashmovieblock.py:77
+#: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
+#: exe/webui/flashwithtextblock.py:77 exe/webui/multimediablock.py:81
+#: exe/idevices/forumelement.py:239 exe/idevices/flashmovieblock.py:77
+#: exe/xului/templates/packageproperties.xul:<menuitem value="None"
+#: id="ppminone" label="None">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "None"
 msgstr "无"
 
@@ -1254,51 +1171,41 @@ msgstr "无"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:297
-#: exe/engine/idevicestore.py:306
-#: exe/engine/idevicestore.py:404
-#: exe/engine/idevicestore.py:413
+#: exe/engine/idevicestore.py:297 exe/engine/idevicestore.py:306
+#: exe/engine/idevicestore.py:404 exe/engine/idevicestore.py:413
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:300
-#: exe/engine/idevicestore.py:407
+#: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:407
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr "用于描述学习此课的目的及将要达到的结果."
 
-#: exe/engine/field.py:617
-#: exe/engine/field.py:673
+#: exe/engine/field.py:617 exe/engine/field.py:673
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "只能选用.flv (Flash Video Files)."
 
-#: exe/engine/field.py:552
-#: exe/engine/field.py:600
+#: exe/engine/field.py:552 exe/engine/field.py:600
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "只能选用.swf (Flash Object)."
 
-#: exe/webui/optionelement.py:76
-#: exe/webui/optionelement.py:81
-#: exe/webui/element.py:1248
-#: exe/webui/element.py:1336
-#: exe/webui/element.py:1341
-#: exe/idevices/testquestionelement.py:95
+#: exe/webui/optionelement.py:76 exe/webui/optionelement.py:81
+#: exe/webui/element.py:1248 exe/webui/element.py:1336
+#: exe/webui/element.py:1341 exe/idevices/testquestionelement.py:95
 msgid "Option"
 msgstr "选项"
 
-#: exe/webui/element.py:1244
-#: exe/idevices/testquestionelement.py:91
+#: exe/webui/element.py:1244 exe/idevices/testquestionelement.py:91
 msgid "Options"
 msgstr "选项"
 
-#: exe/webui/wikipediablock.py:105
-#: exe/idevices/forumelement.py:266
+#: exe/webui/wikipediablock.py:105 exe/idevices/forumelement.py:266
 msgid "Other"
 msgstr "其它"
 
@@ -1310,14 +1217,12 @@ msgstr "目录"
 msgid "Own site"
 msgstr "自定义网页"
 
-#: exe/xului/mainpage.py:262
-#: exe/xului/mainpage.py:392
+#: exe/xului/mainpage.py:262 exe/xului/mainpage.py:392
 #, python-format
 msgid "Package saved to: %s"
 msgstr "课件存至: %s"
 
-#: exe/webui/block.py:229
-#: exe/webui/editorpane.py:345
+#: exe/webui/block.py:229 exe/webui/editorpane.py:345
 msgid "Pedagogical Help"
 msgstr "教学帮助"
 
@@ -1333,8 +1238,7 @@ msgstr "请填入讨论主题名称.\n"
 msgid "Please enter a name for the forum\n"
 msgstr "请填入论坛名称.\n"
 
-#: exe/webui/editorpage.py:101
-#: exe/webui/editorpane.py:165
+#: exe/webui/editorpage.py:101 exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
 msgstr "请填入iDevice名称."
 
@@ -1362,15 +1266,12 @@ msgstr "波兰文Wikipedia 文章"
 msgid "Portugese Wikipedia Article"
 msgstr "葡萄牙文Wikipedia 文章"
 
-#: exe/engine/idevicestore.py:310
-#: exe/engine/idevicestore.py:320
-#: exe/engine/idevicestore.py:417
-#: exe/engine/idevicestore.py:427
+#: exe/engine/idevicestore.py:310 exe/engine/idevicestore.py:320
+#: exe/engine/idevicestore.py:417 exe/engine/idevicestore.py:427
 msgid "Preknowledge"
 msgstr "预备知识"
 
-#: exe/engine/idevicestore.py:313
-#: exe/engine/idevicestore.py:420
+#: exe/engine/idevicestore.py:313 exe/engine/idevicestore.py:420
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1379,13 +1280,11 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr "预备知识是指学生为完成此课所应具备的知识.\n"
 
-#: exe/webui/editorpane.py:227
-#: exe/webui/element.py:1080
+#: exe/webui/editorpane.py:227 exe/webui/element.py:1080
 msgid "Preview"
 msgstr "预览"
 
-#: exe/engine/galleryidevice.py:190
-#: exe/export/scormexport.py:292
+#: exe/engine/galleryidevice.py:190 exe/export/scormexport.py:292
 #: exe/export/websitepage.py:190
 msgid "Previous"
 msgstr "前一页"
@@ -1402,15 +1301,13 @@ msgid ""
 "image to be magnified."
 msgstr "为插图提供标题."
 
-#: exe/idevices/flashmovieidevice.py:57
-#: exe/idevices/flashmovieidevice.py:78
+#: exe/idevices/flashmovieidevice.py:57 exe/idevices/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr "为 flash电影提供标题."
 
-#: exe/engine/flashwithtextidevice.py:55
-#: exe/engine/flashwithtextidevice.py:83
+#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1423,8 +1320,7 @@ msgid ""
 "you have just inserted."
 msgstr "为插图提供标题."
 
-#: exe/engine/truefalseidevice.py:81
-#: exe/engine/truefalseidevice.py:168
+#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1442,8 +1338,7 @@ msgid ""
 "situation."
 msgstr "提供相关评语. "
 
-#: exe/webui/block.py:243
-#: exe/webui/editorpane.py:292
+#: exe/webui/block.py:243 exe/webui/editorpane.py:292
 msgid "Purpose"
 msgstr "用途"
 
@@ -1455,16 +1350,13 @@ msgstr "在此输入完成说明"
 msgid "Question(s)"
 msgstr "问题"
 
-#: exe/webui/multichoiceblock.py:89
-#: exe/webui/truefalseelement.py:79
-#: exe/webui/element.py:1234
-#: exe/webui/element.py:1452
+#: exe/webui/multichoiceblock.py:89 exe/webui/truefalseelement.py:79
+#: exe/webui/element.py:1234 exe/webui/element.py:1452
 #: exe/idevices/testquestionelement.py:81
 msgid "Question:"
 msgstr "问题:"
 
-#: exe/engine/rssidevice.py:41
-#: exe/engine/rssidevice.py:49
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
 msgid "RSS"
 msgstr "RSS"
 
@@ -1472,19 +1364,16 @@ msgstr "RSS"
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "阅读以下段落并填空"
 
-#: exe/engine/truefalseidevice.py:170
-#: exe/engine/clozeidevice.py:118
+#: exe/engine/truefalseidevice.py:170 exe/engine/clozeidevice.py:118
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "阅读以下段落并填空."
 
-#: exe/engine/idevicestore.py:221
-#: exe/engine/idevicestore.py:239
+#: exe/engine/idevicestore.py:221 exe/engine/idevicestore.py:239
 #: exe/engine/genericidevice.py:165
 msgid "Reading Activity"
 msgstr "阅读活动"
 
-#: exe/engine/idevicestore.py:347
-#: exe/engine/genericidevice.py:163
+#: exe/engine/idevicestore.py:347 exe/engine/genericidevice.py:163
 msgid "Reading Activity 0.11"
 msgstr "阅读活动 0.11"
 
@@ -1510,10 +1399,8 @@ msgstr "问题:"
 msgid "Restart"
 msgstr "重新开始"
 
-#: exe/webui/imagemagnifierblock.py:86
-#: exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashwithtextblock.py:76
-#: exe/webui/multimediablock.py:80
+#: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
+#: exe/webui/flashwithtextblock.py:76 exe/webui/multimediablock.py:80
 #: exe/idevices/flashmovieblock.py:76
 msgid "Right"
 msgstr "右"
@@ -1534,8 +1421,7 @@ msgstr "SCORM 练习题"
 msgid "SUBMIT ANSWERS"
 msgstr "提交答案"
 
-#: exe/webui/editorpage.py:179
-#: exe/webui/editorpage.py:182
+#: exe/webui/editorpage.py:179 exe/webui/editorpage.py:182
 msgid "Save"
 msgstr "保存"
 
@@ -1554,10 +1440,10 @@ msgstr "选择flash文档"
 # exe/xului/templates/dublincore.xul:<menulist
 # id="dc:language"
 #: exe/webui/preferencespage.py:86
-#: exe/xului/templates/dublincore.xul:<menulist
-#: onchange="this.style.color =
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 #: exe/resources/internal/templates/dublincore.xul:<menulist
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menulist
 msgid "Select Language"
 msgstr "选择语言"
 
@@ -1595,8 +1481,7 @@ msgstr "选择图片 (JPG 文档)"
 msgid "Select pass rate: "
 msgstr "选择及格线"
 
-#: exe/engine/wikipediaidevice.py:69
-#: exe/engine/wikipediaidevice.py:228
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:228
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1675,10 +1560,8 @@ msgstr "斯洛法尼亚文Wikipedia 文章"
 msgid "Small"
 msgstr "小"
 
-#: exe/webui/wikipediablock.py:127
-#: exe/webui/editorpane.py:308
-#: exe/webui/rssblock.py:92
-#: exe/webui/multimediablock.py:92
+#: exe/webui/wikipediablock.py:127 exe/webui/editorpane.py:308
+#: exe/webui/rssblock.py:92 exe/webui/multimediablock.py:92
 msgid "Some emphasis"
 msgstr "一般强调"
 
@@ -1711,14 +1594,12 @@ msgstr "事件:"
 msgid "Strict Marking?"
 msgstr "严格评分?"
 
-#: exe/webui/common.py:210
-#: exe/webui/editorpane.py:396
+#: exe/webui/common.py:210 exe/webui/editorpane.py:396
 #: exe/webui/element.py:818
 msgid "Submit"
 msgstr "提交"
 
-#: exe/webui/element.py:1282
-#: exe/idevices/quiztestblock.py:355
+#: exe/webui/element.py:1282 exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "提交答案"
 
@@ -1730,8 +1611,7 @@ msgstr "瑞典文Wikipedia 文章"
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "  "
 
-#: exe/engine/multimediaidevice.py:64
-#: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/multimediaidevice.py:64 exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "文字"
@@ -1798,8 +1678,7 @@ msgstr "LATEX是用于创建公式符号的数学语言. 这个iDevice将LATEX�
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
 msgstr "描述这个iDevice的目的."
 
-#: exe/xului/mainpage.py:428
-#: exe/xului/mainpage.py:466
+#: exe/xului/mainpage.py:428 exe/xului/mainpage.py:466
 #, python-format
 msgid ""
 "There was an error in the export:\n"
@@ -1851,8 +1730,7 @@ msgid ""
 "Do you really want to do this?"
 msgstr "将要删除这个iDevice. 你真的要删除它吗?"
 
-#: exe/idevices/forumelement.py:352
-#: exe/idevices/forumelement.py:369
+#: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
 msgid "Thread: "
 msgstr "Thread: "
 
@@ -1864,8 +1742,7 @@ msgstr "提示:"
 msgid "Title"
 msgstr "标题"
 
-#: exe/engine/field.py:838
-#: exe/idevices/quiztestidevice.py:67
+#: exe/engine/field.py:838 exe/idevices/quiztestidevice.py:67
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -1875,8 +1752,7 @@ msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 msgid "Topic"
 msgstr "课题"
 
-#: exe/webui/truefalseelement.py:82
-#: exe/webui/truefalseelement.py:153
+#: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
 msgid "True"
 msgstr "对"
 
@@ -1892,8 +1768,7 @@ msgid ""
 "responses."
 msgstr "是非题提供一个陈述句, 让学生判断其陈述是否正确."
 
-#: exe/engine/field.py:681
-#: exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:681 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "输入讨论主题:"
 
@@ -1919,8 +1794,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项. "
 
-#: exe/engine/idevicestore.py:307
-#: exe/engine/idevicestore.py:414
+#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:414
 msgid "Type the learning objectives for this resource."
 msgstr "学习此课的目的"
 
@@ -1948,30 +1822,18 @@ msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
 msgid "Unit"
 msgstr "单元"
 
-#: exe/engine/externalurlidevice.py:38
-#: exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:490
-#: exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60
-#: exe/engine/flashwithtextidevice.py:41
-#: exe/engine/imagewithtextidevice.py:40
-#: exe/engine/attachmentidevice.py:42
-#: exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/clozeidevice.py:45
-#: exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:73
-#: exe/engine/idevicestore.py:241
-#: exe/engine/idevicestore.py:299
-#: exe/engine/idevicestore.py:327
-#: exe/engine/idevicestore.py:349
-#: exe/engine/idevicestore.py:406
-#: exe/engine/idevicestore.py:434
-#: exe/engine/mathidevice.py:36
-#: exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40
-#: exe/idevices/quiztestidevice.py:106
-#: exe/idevices/flashmovieidevice.py:40
+#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
+#: exe/engine/galleryidevice.py:490 exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60 exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:40 exe/engine/attachmentidevice.py:42
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38 exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:73 exe/engine/idevicestore.py:241
+#: exe/engine/idevicestore.py:299 exe/engine/idevicestore.py:327
+#: exe/engine/idevicestore.py:349 exe/engine/idevicestore.py:406
+#: exe/engine/idevicestore.py:434 exe/engine/mathidevice.py:36
+#: exe/idevices/forumidevice.py:41 exe/idevices/exampleidevice.py:40
+#: exe/idevices/quiztestidevice.py:106 exe/idevices/flashmovieidevice.py:40
 #: exe/idevices/appletidevice.py:50
 msgid "University of Auckland"
 msgstr "奥克兰大学"
@@ -1993,8 +1855,7 @@ msgstr "上载"
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "用强调程度来区别该 iDevice所呈现信息的重要性."
 
-#: exe/engine/idevicestore.py:291
-#: exe/engine/idevicestore.py:399
+#: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2020,8 +1881,7 @@ msgstr "组别可视性"
 msgid "Visible to students:"
 msgstr "学生可看:"
 
-#: exe/engine/idevicestore.py:282
-#: exe/engine/idevicestore.py:390
+#: exe/engine/idevicestore.py:282 exe/engine/idevicestore.py:390
 msgid "What to read"
 msgstr "阅读资料"
 
@@ -2060,8 +1920,7 @@ msgstr "Wikieducato 文章"
 msgid "Wikipedia Article"
 msgstr "Wikipedia 文章"
 
-#: exe/webui/optionelement.py:131
-#: exe/webui/element.py:1391
+#: exe/webui/optionelement.py:131 exe/webui/element.py:1391
 msgid "Wrong"
 msgstr "错误"
 
@@ -2085,8 +1944,7 @@ msgstr "你新的iDevice将以此名称列在iDevice栏中. 这是一个必须�
 msgid "article "
 msgstr "文章"
 
-#: exe/webui/element.py:288
-#: exe/webui/element.py:600
+#: exe/webui/element.py:288 exe/webui/element.py:600
 msgid "blank for original size"
 msgstr "空白为原来的大小尺寸"
 
@@ -2098,13 +1956,11 @@ msgstr "此论坛标题已被使用, 请输入其它标题.\n"
 msgid "duplicate topic name."
 msgstr "重复的主题名"
 
-#: exe/export/scormexport.py:257
-#: exe/export/imsexport.py:188
+#: exe/export/scormexport.py:257 exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67
-#: exe/webui/preferencespage.py:77
+#: exe/webui/common.py:67 exe/webui/preferencespage.py:77
 #: exe/webui/editorpage.py:161
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 编辑器"
@@ -2118,8 +1974,7 @@ msgstr "file %s has no parentNode"
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:101
-#: exe/idevices/appletidevice.py:79
+#: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:79
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s has no package"
@@ -2128,11 +1983,10 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/engine/package.py:295
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="toolsEditor()" label="iDevice Editor">
+#: exe/engine/package.py:295 exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"
 
@@ -2168,18 +2022,18 @@ msgid "title"
 msgstr "标题"
 
 # exe/xului/templates/dublincore.xul:<caption
-#: exe/xului/templates/dublincore.xul:<caption
-#: id="dcCaptionMetadata"
+#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
 #: exe/resources/internal/templates/dublincore.xul:<caption
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<caption
 msgid "Dublin Core Metadata"
 msgstr "Dublin Core 元数据"
 
 # exe/xului/templates/exportproperties.xul:<caption
-#: exe/xului/templates/exportproperties.xul:<caption
-#: id="ppScolinks"
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
 #: label="SCORM 1.2 Options">
 #: exe/resources/internal/templates/exportproperties.xul:<caption
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/exportproperties.xul:<caption
 msgid "SCORM 1.2 Options"
 msgstr "SCORM 1.2 选项"
 
@@ -2187,24 +2041,24 @@ msgstr "SCORM 1.2 选项"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "Insert Package"
 msgstr "插入课件"
 
 # exe/xului/templates/metadata.xul:<tab
-#: exe/xului/templates/metadata.xul:<tab
-#: label="Dublin Core">
+#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 #: exe/resources/internal/templates/metadata.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/metadata.xul:<tab
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: exe/xului/templates/packageproperties.xul:<caption
-#: id="pptitle"
+#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
 #: label="Project Properties">
 #: exe/resources/internal/templates/packageproperties.xul:<caption
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<caption
 msgid "Project Properties"
 msgstr "课件属性"
 
@@ -2212,18 +2066,16 @@ msgstr "课件属性"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/properties.xul:<tab
-#: id="tabPackage" label="Package">
+#: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 #: exe/resources/internal/templates/properties.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/properties.xul:<tab
 msgid "Package"
 msgstr "课件"
 
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Title:"
-#: id="dcTitle"
-#: style="width:8em"
-#: tooltiptext="The name given to the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
+#: style="width:8em" tooltiptext="The name given to the resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Title:"
 msgstr "标题"
 
@@ -2234,6 +2086,7 @@ msgstr "标题"
 #: eXe to add Previous and Next individual pages your SCO. The LMS also still
 #: kind of functionality." checked="false">
 #: exe/resources/internal/templates/exportproperties.xul:<checkbox
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/exportproperties.xul:<checkbox
 msgid "Add Previous/Next links within SCOs?"
 msgstr "在SCOs中添加前一页/后一页链接?"
 
@@ -2241,42 +2094,39 @@ msgstr "在SCOs中添加前一页/后一页链接?"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "Extract Package"
 msgstr "引出课件"
 
 # exe/xului/templates/metadata.xul:<tab
-#: exe/xului/templates/metadata.xul:<tab
-#: label="IEEE LOM">
+#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 #: exe/resources/internal/templates/metadata.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/metadata.xul:<tab
 msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Project Title:"
-#: id="ppProjectTitle" style="width:8em"
-#: tooltiptext="The project's title.">
+#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
+#: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 #: exe/resources/internal/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Project Title:"
 msgstr "课件标题:"
 
 # exe/xului/templates/properties.xul:<tab
-#: exe/xului/templates/properties.xul:<tab
-#: id="tabMetadata" label="Metadata">
+#: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 #: exe/resources/internal/templates/properties.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/properties.xul:<tab
 msgid "Metadata"
 msgstr "元数据"
 
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Creator:"
-#: id="dcCreator"
-#: style="width:8em"
-#: tooltiptext="An entity primarily responsible for making
+#: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
+#: style="width:8em" tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Creator:"
 msgstr "创作者:"
 
@@ -2284,37 +2134,34 @@ msgstr "创作者:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="addChild"
+#: exe/xului/templates/mainpage.xul:<key n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em"
-#: tooltiptext="Background image for a
+#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
+#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 #: exe/resources/internal/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Header Background:"
 msgstr "标题背景:"
 
 # exe/xului/templates/properties.xul:<tab
-#: exe/xului/templates/properties.xul:<tab
-#: id="tabExport" label="Export">
+#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 #: exe/resources/internal/templates/properties.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/properties.xul:<tab
 msgid "Export"
 msgstr "导出"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Subject:"
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Subject:"
-#: id="dcSubject"
-#: style="width:8em"
-#: tooltiptext="The topic of the content resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
+#: style="width:8em" tooltiptext="The topic of the content resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Subject:"
 msgstr "课目:"
 
@@ -2322,23 +2169,24 @@ msgstr "课目:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="delNode"
+#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
 #: Image"> exe/resources/internal/templates/packageproperties.xul:<button
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button
 msgid "Load Image"
 msgstr "装载图像"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description
-#: id="dcDescSubject">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 #: exe/resources/internal/templates/dublincore.xul:<description
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                Typically, Subject will be expressed as keywords, key phrases or\n"
@@ -2358,28 +2206,27 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="renNode"
-#: key="R"
+#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
 #: modifiers="control" id="renNodeKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "R"
 msgstr "R"
 
 #: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image"> exe/resources/internal/templates/packageproperties.xul:<button
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button
 msgid "Clear Image"
 msgstr "清除图像"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Publisher:"
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Publisher:"
-#: id="dcPublisher" style="width:8em"
-#: tooltiptext="An entity responsible for
+#: exe/xului/templates/dublincore.xul:<label value="Publisher:"
+#: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
 #: making the resource available.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Publisher:"
 msgstr "出版商:"
 
@@ -2387,11 +2234,10 @@ msgstr "出版商:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="promote"
-#: keycode="VK_LEFT"
+#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
@@ -2399,17 +2245,17 @@ msgstr "VK_LEFT"
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
 #: label="Tile background image?" checked="false">
 #: exe/resources/internal/templates/packageproperties.xul:<checkbox
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<checkbox
 msgid "Tile background image?"
 msgstr "标题背景图像?"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Contributors:"
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Contributors:"
-#: id="dcContributors" style="width:8em"
-#: tooltiptext="An entity responsible
+#: exe/xului/templates/dublincore.xul:<label value="Contributors:"
+#: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Contributors:"
 msgstr "贡献者:"
 
@@ -2417,30 +2263,26 @@ msgstr "贡献者:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="demote"
-#: keycode="VK_RIGHT"
+#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Author:"
-#: id="ppAuthor" style="width:8em"
-#: tooltiptext="Primary author of the
+#: exe/xului/templates/packageproperties.xul:<label value="Author:"
+#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
 #: resource."> exe/resources/internal/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Author:"
 msgstr "作者"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Date:"
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Date:"
-#: id="dcDate"
-#: style="width:8em"
-#: tooltiptext="A date of an event in the lifecycle
+#: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
+#: style="width:8em" tooltiptext="A date of an event in the lifecycle
 #: resource."> exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Date:"
 msgstr "日期:"
 
@@ -2448,25 +2290,24 @@ msgstr "日期:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="up"
-#: key="U"
+#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
 #: modifiers="control" id="upKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "U"
 msgstr "U"
 
-#: exe/xului/templates/packageproperties.xul:<caption
-#: id="ppCaptionTaxonomy"
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
 #: exe/resources/internal/templates/packageproperties.xul:<caption
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<caption
 msgid "Taxonomy"
 msgstr "分类名称"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description
-#: id="dcDescDate">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 #: exe/resources/internal/templates/dublincore.xul:<description
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "                 Typically, Date will be associated with the creation or\n"
@@ -2484,28 +2325,24 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="down"
-#: key="D"
+#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
 #: modifiers="control" id="downKey">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "D"
 msgstr "D"
 
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Level 1:"
-#: id="ppLevel1" style="width:8em"
-#: tooltiptext="Default name for level 1
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
+#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
 #: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Level 1:"
 msgstr "一级:"
 
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Type:"
-#: id="dcType"
-#: style="width:8em"
-#: tooltiptext="The nature or genre of the content
+#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
+#: style="width:8em" tooltiptext="The nature or genre of the content
 #: resource."> exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Type:"
 msgstr "类别:"
 
@@ -2513,26 +2350,24 @@ msgstr "类别:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="N"
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "N"
 msgstr "不"
 
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Level 2:"
-#: id="ppLevel2" style="width:8em"
-#: tooltiptext="Default name for level 2
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
+#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
 #: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Level 2:"
 msgstr "二级:"
 
 # exe/xului/templates/dublincore.xul:<description
-#: exe/xului/templates/dublincore.xul:<description
-#: id="dcDescType">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 #: exe/resources/internal/templates/dublincore.xul:<description
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description
 msgid ""
 "\n"
 "              Type includes terms describing general categories, functions, or\n"
@@ -2548,28 +2383,24 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="S"
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "S"
 msgstr "S"
 
-#: exe/xului/templates/packageproperties.xul:<label
-#: value="Level 3:"
-#: id="ppLevel3" style="width:8em"
-#: tooltiptext="Default name for level 3
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
+#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
 #: nodes"> exe/resources/internal/templates/packageproperties.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Level 3:"
 msgstr "三级:"
 
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Format:"
-#: id="dcFormat"
-#: style="width:8em"
-#: tooltiptext="Select a Format.">
+#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
+#: style="width:8em" tooltiptext="Select a Format.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Format:"
 msgstr "格式:"
 
@@ -2577,44 +2408,42 @@ msgstr "格式:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="O"
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "O"
 msgstr "O"
 
-#: exe/xului/templates/packageproperties.xul:<button
-#: flex="0"
+#: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
 #: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
 #: display"> exe/resources/internal/templates/packageproperties.xul:<button
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button
 msgid "Update Tree"
 msgstr "更新目录树"
 
 # exe/xului/templates/dublincore.xul:<menulist
 # id="dc:format"
-#: exe/xului/templates/dublincore.xul:<menulist
-#: onchange="this.style.color =
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
 #: exe/resources/internal/templates/dublincore.xul:<menulist
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menulist
 msgid "Select Format"
 msgstr "选择格式"
 
-#: exe/xului/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="Q"
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 #: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "Q"
 msgstr "Q"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="XHTML" id="dcmiXHTML"
+#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
 #: label="XHTML"> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "XHTML"
 msgstr "XHTML"
 
@@ -2622,18 +2451,17 @@ msgstr "XHTML"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="file-menu"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
 #: accesskey="f" label="File">
 #: exe/resources/internal/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"文件\" accesskey=\"f\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="SCORM 1.2"
+#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
@@ -2641,10 +2469,10 @@ msgstr "SCORM 1.2"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"新建文件\" accesskey=\"n\""
 
@@ -2652,10 +2480,10 @@ msgstr "label=\"新建文件\" accesskey=\"n\""
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="IMS-CP" id="dcmiIMS"
+#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "IMS Content Package 1.1.3"
 msgstr "IMS Content Package 1.1.3"
 
@@ -2663,20 +2491,20 @@ msgstr "IMS Content Package 1.1.3"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"打开\" accesskey=\"o\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="Web Site"
+#: exe/xului/templates/dublincore.xul:<menuitem value="Web Site"
 #: id="dcmiWebSite" label="Web Site"> exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="website"
+#: n:render="translate" id="website"
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 #: exe/resources/internal/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "Web Site"
 msgstr "网页"
 
@@ -2684,19 +2512,18 @@ msgstr "网页"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"保存\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Identifier:"
-#: id="dcIdentifier" style="width:8em"
-#: tooltiptext="An unambiguous reference
+#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
+#: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Identifier:"
 msgstr "课件码:"
 
@@ -2704,20 +2531,18 @@ msgstr "课件码:"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"另存为...\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Source:"
-#: id="dcSource"
-#: style="width:8em"
-#: tooltiptext="A Reference to a resource from which the
+#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
+#: style="width:8em" tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Source:"
 msgstr "来源:"
 
@@ -2725,21 +2550,19 @@ msgstr "来源:"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 #: exe/resources/internal/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"导出\" accesskey=\"e\""
 
 # exe/xului/templates/dublincore.xul:<menulist
 # id="dc:language"
-#: exe/xului/templates/dublincore.xul:<label
-#: value="Language:"
-#: id="dcLanguage"
-#: style="width:8em"
-#: tooltiptext="Select a language.">
+#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
+#: style="width:8em" tooltiptext="Select a language.">
 #: exe/resources/internal/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Language:"
 msgstr "语言:"
 
@@ -2747,16 +2570,16 @@ msgstr "语言:"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="aa" id="dcmiaa"
+#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Afar "
 msgstr "阿法尔 语"
 
@@ -2764,44 +2587,44 @@ msgstr "阿法尔 语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ab" id="dcmiab"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
 #: label="Abkhazian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Abkhazian "
 msgstr "阿布哈西亚语"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "Self-contained Folder"
 msgstr "独立的文件夹"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ae" id="dcmiae"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Avestan "
 msgstr "阿维斯陀语"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "Zip File"
 msgstr "Zip文档"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="af" id="dcmiaf"
+#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Afrikaans "
 msgstr "南非荷兰语"
 
@@ -2809,16 +2632,16 @@ msgstr "南非荷兰语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"单一网页\" accesskey=\"p\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="am" id="dcmiam"
+#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Amharic "
 msgstr "阿比西尼亚语"
 
@@ -2826,16 +2649,16 @@ msgstr "阿比西尼亚语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"文本文件\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ar" id="dcmiar"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Arabic "
 msgstr "阿拉伯语"
 
@@ -2843,16 +2666,15 @@ msgstr "阿拉伯语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="e" label="Merging">
 msgid "label=\"Merging\" accesskey=\"e\""
 msgstr "label=\"合并\" accesskey=\"e\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="as" id="dcmias"
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Assamese "
 msgstr "阿萨姆语"
 
@@ -2860,16 +2682,16 @@ msgstr "阿萨姆语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"插入课件\" accesskey=\"i\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ay" id="dcmiay"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Aymara "
 msgstr "艾马拉语"
 
@@ -2877,18 +2699,18 @@ msgstr "艾马拉语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"引出课件\" accesskey=\"i\""
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="az" id="dcmiaz"
+#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Azerbaijani "
 msgstr "阿塞拜疆语"
 
@@ -2896,16 +2718,16 @@ msgstr "阿塞拜疆语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr "label=\"退出\" accesskey=\"q\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ba" id="dcmiba"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bashkir "
 msgstr "巴什基尔语"
 
@@ -2913,18 +2735,17 @@ msgstr "巴什基尔语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="tools-menu"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
 #: accesskey="t" label="Tools">
 #: exe/resources/internal/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"工具\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="be" id="dcmibe"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Byelorussian; Belarusian "
 msgstr "白俄罗斯语"
 
@@ -2932,18 +2753,18 @@ msgstr "白俄罗斯语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "Preferences"
 msgstr "使用偏好"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="bg" id="dcmibg"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bulgarian "
 msgstr "保加利亚语"
 
@@ -2951,16 +2772,16 @@ msgstr "保加利亚语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 #: exe/resources/internal/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"页面风格\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="bh" id="dcmibh"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bihari "
 msgstr "比哈里 语"
 
@@ -2968,17 +2789,17 @@ msgstr "比哈里 语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr "label=\"重新载入\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="bi" id="dcmibi"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bislama "
 msgstr "比斯拉马语"
 
@@ -2986,18 +2807,17 @@ msgstr "比斯拉马语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="help-menu"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 #: exe/resources/internal/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"帮助\" accesskey=\"h\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="bn" id="dcmibn"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bengali; Bangla "
 msgstr "孟加拉语"
 
@@ -3005,16 +2825,16 @@ msgstr "孟加拉语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"关于\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="bo" id="dcmibo"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
 #: label="Tibetan "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tibetan "
 msgstr "藏语"
 
@@ -3022,16 +2842,15 @@ msgstr "藏语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="registerOnline()" accesskey="R" label="Register Online">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 msgid "label=\"Register Online\" accesskey=\"R\""
 msgstr "label=\"在线注册\" accesskey=\"R\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="br" id="dcmibr"
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Breton "
 msgstr "不列塔尼语"
 
@@ -3039,16 +2858,16 @@ msgstr "不列塔尼语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"Report an Issue\" accesskey=\"R\""
 msgstr "label=\"报告问题\" accesskey=\"R\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="bs" id="dcmibs"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Bosnian "
 msgstr "波西尼亚语"
 
@@ -3056,16 +2875,16 @@ msgstr "波西尼亚语"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
-#: exe/xului/templates/mainpage.xul:<label
-#: n:render="debugInfo"
+#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
 #: value="debugInfo"> exe/resources/internal/templates/mainpage.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label
 msgid "debugInfo"
 msgstr "debugInfo"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ca" id="dcmica"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Catalan "
 msgstr "加泰罗尼亚语"
 
@@ -3073,16 +2892,16 @@ msgstr "加泰罗尼亚语"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: n:render="addChild"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" label="Add Page">
 #: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<toolbarbutton
 msgid "Add Page"
 msgstr "添加页面"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ce" id="dcmice"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chechen "
 msgstr "车臣语"
 
@@ -3090,17 +2909,17 @@ msgstr "车臣语"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/xului/templates/mainpage.xul:<toolbarbutton
-#: n:render="renNode"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 #: exe/resources/internal/templates/mainpage.xul:<toolbarbutton
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<toolbarbutton
 msgid "Rename"
 msgstr "重命名"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ch" id="dcmich"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chamorro "
 msgstr "查莫罗语"
 
@@ -3108,30 +2927,29 @@ msgstr "查莫罗语"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
-#: exe/xului/templates/mainpage.xul:<label
-#: n:render="outlinePane"
-#: flex="1"
+#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane"> exe/resources/internal/templates/mainpage.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label
 msgid "outlinePane"
 msgstr "目录栏"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="co" id="dcmico"
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
 #: label="Corsican ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Corsican "
 msgstr "科西嘉语"
 
-#: exe/xului/templates/mainpage.xul:<label
-#: value="iDevices"
+#: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
 #: exe/resources/internal/templates/mainpage.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label
 msgid "iDevices"
 msgstr "iDevice"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="cs" id="dcmics"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Czech "
 msgstr "捷克语"
 
@@ -3139,17 +2957,16 @@ msgstr "捷克语"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
-#: exe/xului/templates/mainpage.xul:<label
-#: n:render="idevicePane"
-#: flex="1"
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane"> exe/resources/internal/templates/mainpage.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label
 msgid "iDevicePane"
 msgstr "iDevice栏"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="cu" id="dcmicu"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Church Slavic "
 msgstr "教会斯拉夫语"
 
@@ -3157,15 +2974,15 @@ msgstr "教会斯拉夫语"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
-#: exe/xului/templates/mainpage.xul:<tab
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring"> exe/resources/internal/templates/mainpage.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<tab
 msgid "Authoring"
 msgstr "制作"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="cv" id="dcmicv"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chuvash "
 msgstr "楚瓦什语"
 
@@ -3173,494 +2990,494 @@ msgstr "楚瓦什语"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
-#: exe/xului/templates/mainpage.xul:<tab
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties"> exe/resources/internal/templates/mainpage.xul:<tab
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<tab
 msgid "Properties"
 msgstr "属性"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="cy" id="dcmicy"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
 #: label="Welsh "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Welsh "
 msgstr "威尔士语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="da" id="dcmida"
+#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
 #: label="Danish "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Danish "
 msgstr "丹麦语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="de" id="dcmide"
+#: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
 #: label="German "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "German "
 msgstr "丹麦语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="dz" id="dcmidz"
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Dzongkha; Bhutani "
 msgstr "宗卡语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="el" id="dcmiel"
+#: exe/xului/templates/dublincore.xul:<menuitem value="el" id="dcmiel"
 #: label="Greek "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Greek "
 msgstr "希腊语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="en" id="dcmien"
+#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
 #: label="English "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "English "
 msgstr "英语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="eo" id="dcmieo"
+#: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Esperanto "
 msgstr "世界语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="es" id="dcmies"
+#: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
 #: label="Spanish "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Spanish "
 msgstr "西班牙语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="et" id="dcmiet"
+#: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
 #: label="Estonian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Estonian "
 msgstr "爱沙尼亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="eu" id="dcmieu"
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Basque "
 msgstr "巴斯克语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="fa" id="dcmifa"
+#: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
 #: label="Persian "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Persian "
 msgstr "波斯语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="fi" id="dcmifi"
+#: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
 #: label="Finnish "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Finnish "
 msgstr "芬兰语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="fj" id="dcmifj"
+#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
 #: label="Fijian; Fiji ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Fijian; Fiji "
 msgstr "斐济语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="fo" id="dcmifo"
+#: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
 #: label="Faroese "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Faroese "
 msgstr "法罗语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="fr" id="dcmifr"
+#: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
 #: label="French "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "French "
 msgstr "法语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="fy" id="dcmify"
+#: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
 #: label="Frisian "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Frisian "
 msgstr "弗里西亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ga" id="dcmiga"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
 #: label="Irish "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Irish "
 msgstr "爱尔兰语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="gd" id="dcmigd"
+#: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
 #: label="Scots; Gaelic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Scots; Gaelic "
 msgstr "苏格兰盖尔语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="gl" id="dcmigl"
+#: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Gallegan; Galician "
 msgstr "加利西亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="gn" id="dcmign"
+#: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
 #: label="Guarani "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Guarani "
 msgstr "瓜拉尼语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="gu" id="dcmigu"
+#: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
 #: label="Gujarati ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Gujarati "
 msgstr "古吉拉特语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="gv" id="dcmigv"
+#: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
 #: label="Manx "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Manx "
 msgstr "马恩语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ha" id="dcmiha"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
 #: label="Hausa (?) ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hausa (?) "
 msgstr "豪萨语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="he" id="dcmihe"
+#: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hebrew (formerly iw) "
 msgstr "希伯来语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="hi" id="dcmihi"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
 #: label="Hindi "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hindi "
 msgstr "印地语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ho" id="dcmiho"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
 #: label="Hiri Motu ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hiri Motu "
 msgstr "希里莫图语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="hr" id="dcmihr"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
 #: label="Croatian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Croatian "
 msgstr "克罗地亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="hu" id="dcmihu"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
 #: label="Hungarian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Hungarian "
 msgstr "匈牙利语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="hy" id="dcmihy"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Armenian "
 msgstr "亚美尼亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="hz" id="dcmihz"
+#: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
 #: label="Herero "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Herero "
 msgstr "赫雷罗语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ia" id="dcmiia"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
 #: label="Interlingua ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Interlingua "
 msgstr "拉丁国际语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="id" id="dcmiid"
+#: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
 #: label="Indonesian (formerly in) ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Indonesian (formerly in) "
 msgstr "印尼语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ie" id="dcmiie"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
 #: label="Interlingue ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Interlingue "
 msgstr "国际语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ik" id="dcmiik"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
 #: label="Inupiak "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Inupiak "
 msgstr "伊帕语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="io" id="dcmiio"
+#: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
 #: label="Ido "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ido "
 msgstr "伊多语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="is" id="dcmiis"
+#: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
 #: label="Icelandic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Icelandic "
 msgstr "冰岛语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="it" id="dcmiit"
+#: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
 #: label="Italian "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Italian "
 msgstr "意大利语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="iu" id="dcmiiu"
+#: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
 #: label="Inuktitut ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Inuktitut "
 msgstr "伊努克迪特语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ja" id="dcmija"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
 #: label="Japanese ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Japanese "
 msgstr "日语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="jv" id="dcmijv"
+#: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
 #: label="Javanese ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Javanese "
 msgstr "爪哇语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ka" id="dcmika"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
 #: label="Georgian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Georgian "
 msgstr "格鲁吉亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ki" id="dcmiki"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
 #: label="Kikuyu "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kikuyu "
 msgstr "吉库犹语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="kj" id="dcmikj"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
 #: label="Kuanyama ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kuanyama "
 msgstr "夸尼亚玛语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="kk" id="dcmikk"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
 #: label="Kazakh "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kazakh "
 msgstr "哈萨克 语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="kl" id="dcmikl"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
 #: label="Kalaallisut; Greenlandic ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kalaallisut; Greenlandic "
 msgstr "格陵兰语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="km" id="dcmikm"
+#: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
 #: label="Khmer; Cambodian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Khmer; Cambodian "
 msgstr "柬埔语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="kn" id="dcmikn"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
 #: label="Kannada "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kannada "
 msgstr "坎拿达语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ko" id="dcmiko"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
 #: label="Korean "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Korean "
 msgstr "韩国语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ks" id="dcmiks"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
 #: label="Kashmiri ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kashmiri "
 msgstr "克什米尔语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ku" id="dcmiku"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
 #: label="Kurdish "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kurdish "
 msgstr "库尔德语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="kv" id="dcmikv"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
 #: label="Komi "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Komi "
 msgstr "科米语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="kw" id="dcmikw"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Cornish "
 msgstr "科尼什语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ky" id="dcmiky"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
 #: label="Kirghiz "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kirghiz "
 msgstr "吉尔吉斯语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="la" id="dcmila"
+#: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
 #: label="Latin "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Latin "
 msgstr "拉丁语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="lb" id="dcmilb"
+#: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
 #: label="Letzeburgesch ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Letzeburgesch "
 msgstr "立陶宛语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ln" id="dcmiln"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
 #: label="Lingala "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Lingala "
 msgstr "林加拉语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="lo" id="dcmilo"
+#: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
 #: label="Lao; Laotian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Lao; Laotian "
 msgstr "老挝语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="lt" id="dcmilt"
+#: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
 #: label="Lithuanian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Lithuanian "
 msgstr "立陶宛语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="lv" id="dcmilv"
+#: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
 #: label="Latvian; Lettish ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Latvian; Lettish "
 msgstr "拉脱维亚语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mg" id="dcmimg"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
 #: label="Malagasy ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Malagasy "
 msgstr "马达加斯加语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mh" id="dcmimh"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
 #: label="Marshall ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Marshall "
 msgstr "马歇尔语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mi" id="dcmimi"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
 #: label="Maori "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Maori "
 msgstr "毛利语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mk" id="dcmimk"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
 #: label="Macedonian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Macedonian "
 msgstr "马其顿语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ml" id="dcmiml"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
 #: label="Malayalam ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Malayalam "
 msgstr "马拉亚拉姆语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mn" id="dcmimn"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
 #: label="Mongolian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Mongolian "
 msgstr "蒙古文"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mo" id="dcmimo"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
 #: label="Moldavian ">
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Moldavian "
 msgstr "摩尔多瓦语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mr" id="dcmimr"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
 #: label="Marathi "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Marathi "
 msgstr "马拉提语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="ms" id="dcmims"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
 #: label="Malay "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Malay "
 msgstr "马来语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="mt" id="dcmimt"
+#: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
 #: label="Maltese "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Maltese "
 msgstr "马尔他语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="my" id="dcmimy"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Burmese "
 msgstr "缅甸语"
 
-#: exe/xului/templates/dublincore.xul:<menuitem
-#: value="na" id="dcmina"
+#: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
 #: label="Nauru "> exe/resources/internal/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Nauru "
 msgstr "瑙鲁语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="nb"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nb"
 #: id="dcminb" label="Norwegian Bokmål ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian Bokmål "
 msgstr "挪威语"
 
@@ -3668,497 +3485,495 @@ msgstr "挪威语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/resources/internal/templates/mainpage.xul:<menu
-#: n:render="translate"
+#: exe/resources/internal/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
 #: exe/xului/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"合并\" accesskey=\"m\""
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="nd"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nd"
 #: id="dcmind" label="Ndebele, North ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndebele, North "
 msgstr "北恩德贝勒语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ne"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ne"
 #: id="dcmine" label="Nepali "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Nepali "
 msgstr "尼泊尔语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ng"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ng"
 #: id="dcming" label="Ndonga "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndonga "
 msgstr "尼东阁语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="nl"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nl"
 #: id="dcminl" label="Dutch "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Dutch "
 msgstr "荷兰语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="nn"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nn"
 #: id="dcminn" label="Norwegian Nynorsk ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian Nynorsk "
 msgstr "新挪威语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="no"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="no"
 #: id="dcmino" label="Norwegian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Norwegian "
 msgstr "挪威语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="nr"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nr"
 #: id="dcminr" label="Ndebele, South ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ndebele, South "
 msgstr "南恩德贝勒语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="nv"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="nv"
 #: id="dcminv" label="Navajo "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Navajo "
 msgstr "那伐鹤语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ny"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ny"
 #: id="dcminy" label="Chichewa; Nyanja ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chichewa; Nyanja "
 msgstr "齐切瓦语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="oc"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="oc"
 #: id="dcmioc" label="Occitan; Provençal ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Occitan; Provençal "
 msgstr "奥克西唐语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="om"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="om"
 #: id="dcmiom" label="(Afan) Oromo ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "(Afan) Oromo "
 msgstr "阿芳·奥洛莫语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="or"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="or"
 #: id="dcmior" label="Oriya "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Oriya "
 msgstr "奥里亚语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="os"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="os"
 #: id="dcmios" label="Ossetian; Ossetic ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ossetian; Ossetic "
 msgstr "奥塞梯语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="pa"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pa"
 #: id="dcmipa" label="Panjabi; Punjabi ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Panjabi; Punjabi "
 msgstr "旁遮普语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="pi"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pi"
 #: id="dcmipi" label="Pali "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Pali "
 msgstr "巴利语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="pl"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pl"
 #: id="dcmipl" label="Polish "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Polish "
 msgstr "波兰语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ps"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ps"
 #: id="dcmips" label="Pashto, Pushto ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Pashto, Pushto "
 msgstr "普什图语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="pt"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="pt"
 #: id="dcmipt" label="Portuguese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Portuguese "
 msgstr "葡萄牙语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="qu"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="qu"
 #: id="dcmiqu" label="Quechua "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Quechua "
 msgstr "克家语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="rm"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="rm"
 #: id="dcmirm" label="Rhaeto-Romance ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Rhaeto-Romance "
 msgstr "利托—罗曼语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="rn"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="rn"
 #: id="dcmirn" label="Rundi; Kirundi ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Rundi; Kirundi "
 msgstr "隆迪语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ro"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ro"
 #: id="dcmiro" label="Romanian "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Romanian "
 msgstr "罗马尼亚语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ru"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ru"
 #: id="dcmiru" label="Russian "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Russian "
 msgstr "俄语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="rw"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="rw"
 #: id="dcmirw" label="Kinyarwanda ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Kinyarwanda "
 msgstr "基尼亚卢旺达语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sa"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sa"
 #: id="dcmisa" label="Sanskrit "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sanskrit "
 msgstr "梵语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sc"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sc"
 #: id="dcmisc" label="Sardinian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sardinian "
 msgstr "萨丁语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sd"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sd"
 #: id="dcmisd" label="Sindhi "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sindhi "
 msgstr "辛地语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="se"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="se"
 #: id="dcmise" label="Northern Sami ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Northern Sami "
 msgstr "萨摩亚语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sg"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sg"
 #: id="dcmisg" label="Sango; Sangro ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sango; Sangro "
 msgstr "桑戈语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="si"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="si"
 #: id="dcmisi" label="Sinhalese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sinhalese "
 msgstr "僧伽罗语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sk"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sk"
 #: id="dcmisk" label="Slovak "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Slovak "
 msgstr "斯洛伐克语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sl"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sl"
 #: id="dcmisl" label="Slovenian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Slovenian "
 msgstr "斯洛文尼亚语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sm"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sm"
 #: id="dcmism" label="Samoan "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Samoan "
 msgstr "萨摩亚语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sn"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sn"
 #: id="dcmisn" label="Shona "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Shona "
 msgstr "修纳语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="so"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="so"
 #: id="dcmiso" label="Somali "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Somali "
 msgstr "索马里语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sq"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sq"
 #: id="dcmisq" label="Albanian "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Albanian "
 msgstr "阿尔巴尼亚语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sr"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sr"
 #: id="dcmisr" label="Serbian "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Serbian "
 msgstr "塞尔维亚语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ss"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ss"
 #: id="dcmiss" label="Swati; Siswati ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swati; Siswati "
 msgstr "斯瓦特语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="st"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="st"
 #: id="dcmist" label="Sesotho; Sotho, Southern ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sesotho; Sotho, Southern "
 msgstr "南莱索托语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="su"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="su"
 #: id="dcmisu" label="Sundanese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Sundanese "
 msgstr "巽他语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sv"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sv"
 #: id="dcmisv" label="Swedish "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swedish "
 msgstr "瑞典语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="sw"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="sw"
 #: id="dcmisw" label="Swahili "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Swahili "
 msgstr "斯瓦希里语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ta"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ta"
 #: id="dcmita" label="Tamil "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tamil "
 msgstr "泰米尔语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="te"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="te"
 #: id="dcmite" label="Telugu "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Telugu "
 msgstr "泰卢固语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tg"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tg"
 #: id="dcmitg" label="Tajik "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tajik "
 msgstr "塔吉克语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="th"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="th"
 #: id="dcmith" label="Thai "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Thai "
 msgstr "泰国语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ti"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ti"
 #: id="dcmiti" label="Tigrinya "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tigrinya "
 msgstr "提格里尼亚语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tk"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tk"
 #: id="dcmitk" label="Turkmen "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Turkmen "
 msgstr "土库曼语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tl"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tl"
 #: id="dcmitl" label="Tagalog "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tagalog "
 msgstr "塔加拉族语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tn"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tn"
 #: id="dcmitn" label="Tswana; Setswana ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tswana; Setswana "
 msgstr "茨瓦纳语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="to"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="to"
 #: id="dcmito" label="Tonga (?) ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tonga (?) "
 msgstr "汤加语 "
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tr"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tr"
 #: id="dcmitr" label="Turkish "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Turkish "
 msgstr "土耳其语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ts"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ts"
 #: id="dcmits" label="Tsonga "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tsonga "
 msgstr "通加语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tt"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tt"
 #: id="dcmitt" label="Tatar "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tatar "
 msgstr "鞑靼语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="tw"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="tw"
 #: id="dcmitw" label="Twi "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Twi "
 msgstr "特威语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ty"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ty"
 #: id="dcmity" label="Tahitian "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Tahitian "
 msgstr "塔西提语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ug"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ug"
 #: id="dcmiug" label="Uighur "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Uighur "
 msgstr "回鹘文"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="uk"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="uk"
 #: id="dcmiuk" label="Ukrainian ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Ukrainian "
 msgstr "乌克兰语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="ur"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="ur"
 #: id="dcmiur" label="Urdu "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Urdu "
 msgstr "晤鲁都语"
 
 # exe/xului/templates/dublincore.xul:<menuitem
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="uz"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="uz"
 #: id="dcmiuz" label="Uzbek "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Uzbek "
 msgstr "乌兹别克语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="vi"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="vi"
 #: id="dcmivi" label="Vietnamese ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Vietnamese "
 msgstr "越南语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="vo"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="vo"
 #: id="dcmivo" label="Volapük; Volapuk ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Volapük; Volapuk "
 msgstr "沃拉普克语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="wa"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="wa"
 #: id="dcmiwa" label="Walloon "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Walloon "
 msgstr "华隆语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="wo"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="wo"
 #: id="dcmiwo" label="Wolof "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Wolof "
 msgstr "沃洛夫语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="xh"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="xh"
 #: id="dcmixh" label="Xhosa "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Xhosa "
 msgstr "科萨语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="yi"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="yi"
 #: id="dcmiyi" label="Yiddish (formerly ji) ">
 #: exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Yiddish (formerly ji) "
 msgstr "意第绪语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="yo"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="yo"
 #: id="dcmiyo" label="Yoruba "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Yoruba "
 msgstr "约鲁巴人语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="za"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="za"
 #: id="dcmiza" label="Zhuang "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Zhuang "
 msgstr "壮族语"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="zh"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="zh"
 #: id="dcmizh" label="Chinese "> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Chinese "
 msgstr "中文"
 
-#: exe/resources/internal/templates/dublincore.xul:<menuitem
-#: value="zu"
+#: exe/resources/internal/templates/dublincore.xul:<menuitem value="zu"
 #: id="dcmizu" label="Zulu."> exe/xului/templates/dublincore.xul:<menuitem
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem
 msgid "Zulu."
 msgstr "祖鲁语"
 
-#: exe/resources/internal/templates/dublincore.xul:<label
-#: value="Relation:"
-#: id="dcRelation" style="width:8em"
-#: tooltiptext="A reference to a related
+#: exe/resources/internal/templates/dublincore.xul:<label value="Relation:"
+#: id="dcRelation" style="width:8em" tooltiptext="A reference to a related
 #: resource."> exe/xului/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Relation:"
 msgstr "关系:"
 
 # exe/xului/templates/dublincore.xul:<label
 # value="Coverage:"
-#: exe/resources/internal/templates/dublincore.xul:<label
-#: value="Coverage:"
-#: id="dcCoverage" style="width:8em"
-#: tooltiptext="The extent or scope of the
+#: exe/resources/internal/templates/dublincore.xul:<label value="Coverage:"
+#: id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the
 #: content resource."> exe/xului/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Coverage:"
 msgstr "范围:"
 
-#: exe/resources/internal/templates/dublincore.xul:<label
-#: value="Rights:"
-#: id="dcRights" style="width:8em"
-#: tooltiptext="Information about rights held
+#: exe/resources/internal/templates/dublincore.xul:<label value="Rights:"
+#: id="dcRights" style="width:8em" tooltiptext="Information about rights held
 #: in and over the resource."> exe/xului/templates/dublincore.xul:<label
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label
 msgid "Rights:"
 msgstr "权限:"
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/resources/internal/templates/dublincore.xul:<description
 #: id="dcDescRights"> exe/xului/templates/dublincore.xul:<description
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr " "
 
@@ -4166,9 +3981,9 @@ msgstr " "
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"近期课件\" accesskey=\"r\""
 
@@ -4176,20 +3991,90 @@ msgstr "label=\"近期课件\" accesskey=\"r\""
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
 msgid "label=\"SCORM 2004\" accesskey=\"c\""
 msgstr "label=\"SCORM 2004\" accesskey=\"c\""
+
+#: exe/xului/templates/packageproperties.xul:<label value="License:"
+#: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
+msgid "License:"
+msgstr ""
+
+# exe/xului/templates/dublincore.xul:<menulist
+# id="dc:language"
+#: exe/xului/templates/packageproperties.xul:<menulist
+#: onchange="this.style.color = 'blue'" id="pp_license" label="Select
+#: License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menulist
+#, fuzzy
+msgid "Select License"
+msgstr "选择语言"
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Creative Commons Attribution 2.5 License"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: label="Creative License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
+#: License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
+#: Nations 2.0" id="ppdn" label="Developing 2.0">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
+msgid "Developing Nations 2.0"
+msgstr ""
+
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
+#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
+msgid "Footer:"
+msgstr ""
 
 #~ msgid ""
 #~ "Provide a caption for the \n"
 #~ "MP3 file."
 #~ msgstr "为MP3提供标题."
+
 #~ msgid "Strong emphasis"
 #~ msgstr "特别强调"
+
 #~ msgid "Unable to connect to "
 #~ msgstr "无法连接至"
+
 #~ msgid "some help tip here."
 #~ msgstr " "
 
@@ -4227,12 +4112,16 @@ msgstr "label=\"SCORM 2004\" accesskey=\"c\""
 #, fuzzy
 #~ msgid "Forum name:"
 #~ msgstr "论坛名称:"
+
 #~ msgid "Level 1: "
 #~ msgstr "一级"
+
 #~ msgid "Level 2: "
 #~ msgstr "二级"
+
 #~ msgid "Level 3: "
 #~ msgstr "三级"
+
 #~ msgid "Project title:"
 #~ msgstr "课件标题:"
 
@@ -4256,12 +4145,16 @@ msgstr "label=\"SCORM 2004\" accesskey=\"c\""
 # exe/xului/templates/mainpage.xul:<menuitem
 #~ msgid "label=\"Web Site\" accesskey=\"w\""
 #~ msgstr "label=\"网站\" accesskey=\"w\""
+
 #~ msgid "Canno  access directory named "
 #~ msgstr "不能识别路径名称"
+
 #~ msgid "Instructions for completion"
 #~ msgstr "完成说明"
+
 #~ msgid "Provide a brief description of the file"
 #~ msgstr "提供文件的简单描述."
+
 # exe/xului/templates/dublincore.xul:<menuitem
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
@@ -4271,15 +4164,18 @@ msgstr "label=\"SCORM 2004\" accesskey=\"c\""
 #, fuzzy
 #~ msgid "Solvenian"
 #~ msgstr "Slovenian. "
+
 #~ msgid ""
 #~ "Enter the image display \n"
 #~ "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 #~ "The width and height dimensions will alter proportionally."
 #~ msgstr " "
+
 #~ msgid "ImageMagnifier"
 #~ msgstr "图像放大器"
+
 #~ msgid "Magnify initial zoom? "
 #~ msgstr "初始放大?"
+
 #~ msgid "Project Properties Updated"
 #~ msgstr "课件属性更新"
-
