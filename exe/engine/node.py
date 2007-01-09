@@ -135,7 +135,7 @@ class Node(Persistable):
         log.debug(u"getResources ")
         resources = {}
         for idevice in self.idevices:
-            reses = [unicode(res.storageName, 'utf8') for res in idevice.userResources]
+            reses = [toUnicode(res.storageName, 'utf8') for res in idevice.userResources]
             for resource in (idevice.systemResources + reses):
                 resources[resource] = True
         return resources.keys()
