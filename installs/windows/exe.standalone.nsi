@@ -2,7 +2,9 @@
 ; Wraps the py2exe output and firefox and everything.
 ; When running extracts them all to a temp dir and runs from there.
 
-!define EXE_VERSION "0.20.alpha"
+!ifndef EXE_VERSION
+  !define EXE_VERSION "0.20.alpha2"
+!endif
 !define APPNAMEANDVERSION "eXe Standalone ${EXE_VERSION}"
 
 ; Main Install settings
@@ -41,7 +43,7 @@ Function repositionWindow
         ; Subtract half our width
 	IntOp $1 $4 / 2
 	IntOp $0 $0 - $1
-	; Verical Center - half of image with (240/2=120)
+	; Vertical Center - half of image with (240/2=120)
 	IntOp $1 $7 / 2
 	IntOp $1 $1 + 120
 	System::Call "User32::SetWindowPos(i, i, i, i, i, i, i) b ($HWNDPARENT, 0, $0, $1, 0, 0, 0x201)"
@@ -55,9 +57,14 @@ Section main
     ; Check if exe exists in the temp dir
     IfFileExists "$TEMP\exe\exe.exe" 0 Extract
     ; Get its version
-    GetDllVersion "$TEMP\exe\exe.exe" $0 $1
+    GetDLLVersion "$TEMP\exe\exe.exe" $R0 $R1
+    IntOp $R2 $R0 / 0x00010000 ; $R2 major version
+    IntOp $R3 $R0 & 0x0000FFFF ; $R3 minor version
+    IntOp $R4 $R1 / 0x00010000 ; $R4 release
+    IntOp $R5 $R1 & 0x0000FFFF ; $R5 build
+    StrCpy "$0" "$R2.$R3.$R4.$R5"
     ; If its version is ok
-    StrCmp "$1.$0" ${EXE_VERSION} Splash CleanUp
+    StrCmp "$0" ${EXE_VERSION} Splash CleanUp
   CleanUp:
     ; Clean up
     RMDir /r "$TEMP\exe"

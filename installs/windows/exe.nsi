@@ -3,7 +3,9 @@
 ; Define your application name
 !define APPNAME "exe"
 
-!define EXE_VERSION "0.20.alpha2"
+!ifndef EXE_VERSION
+  !define EXE_VERSION "0.20.alpha2"
+!endif
 !define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
 
 ; Main Install settings
