@@ -6,7 +6,6 @@ import os
 import subprocess
 from distutils.core import setup
 import py2exe
-from exe.engine import version
 
 # update the svn revision number
 REVISION_FILE = 'exe/engine/version_svn.py'
@@ -20,12 +19,11 @@ try:
     psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
     psvn.wait()
     revision = psvn.stdout.read().strip()
+    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
 except OSError:
     print "*** Warning: 'svnversion' tool not available to update revision number"
-    revision = None
 
-if revision:
-    open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
+from exe.engine import version
 
 g_files = { '.': ["README", 
                   "COPYING", 

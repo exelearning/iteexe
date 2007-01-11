@@ -6,7 +6,6 @@ import os
 import subprocess
 from distutils.command.install import install
 from distutils.core            import setup
-from exe.engine                import version
 from exe.engine.path           import Path
 import py2app
 
@@ -22,11 +21,11 @@ try:
     psvn = subprocess.Popen('svnversion', stdout=subprocess.PIPE)
     psvn.wait()
     revision = psvn.stdout.read().strip()
-except OSError:
-    revision = None
-
-if revision:
     open(REVISION_FILE, 'wt').write('revision = "%s"\n' % revision)
+except OSError:
+    print "*** Warning: 'svnversion' tool not available to update revision number"
+
+from exe.engine                import version
 
 # Make main.py if it doesn't exist
 if not Path('exe/main.py').exists():
