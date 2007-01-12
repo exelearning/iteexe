@@ -29,6 +29,19 @@ from twisted.spread  import banana
 
 log = logging.getLogger(__name__)
 
+# Choose between cBanana and banana
+import pdb
+pdb.set_trace()
+try:
+    from twisted.spread import cBanana
+    banana.cBanana = cBanana
+    Banana = banana.Canana
+    log.info('Using cBanana')
+except ImportError:
+    Banana = banana.Banana
+    log.info('Using pyBanana')
+    
+
 
 class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
     """
@@ -63,7 +76,7 @@ def encodeObject(toEncode):
     """
     log.debug(u"encodeObject")
 
-    encoder = banana.Banana()
+    encoder = Banana()
     encoder.connectionMade()
     encoder._selectDialect(u"none")
     strBuffer = cStringIO.StringIO()
@@ -77,7 +90,7 @@ def decodeToList(toDecode):
     Decodes an object to a list of jelly strings, but doesn't unjelly them
     """
     log.debug(u"decodeObjectRaw")
-    decoder = banana.Banana()
+    decoder = Banana()
     decoder.connectionMade()
     decoder._selectDialect(u"none")
     jellyData = []
