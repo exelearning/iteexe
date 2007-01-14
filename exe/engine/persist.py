@@ -30,8 +30,6 @@ from twisted.spread  import banana
 log = logging.getLogger(__name__)
 
 # Choose between cBanana and banana
-import pdb
-pdb.set_trace()
 try:
     from twisted.spread import cBanana
     banana.cBanana = cBanana
