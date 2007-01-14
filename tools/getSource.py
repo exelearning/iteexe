@@ -10,7 +10,7 @@ import tarfile
 from shutil import copyfileobj
 from exe.engine.path import Path
 
-EXTERN_DIR = Path('extern')
+EXTERN_DIR = Path('extern/src')
 if not EXTERN_DIR.exists():
     EXTERN_DIR.makedirs()
 
@@ -42,40 +42,62 @@ def extract(fileobj, mode='r|gz'):
     tar = tarfile.open(mode=mode, fileobj=fileobj)
     for input in tar:
         print '==>', input.name, input.size
-        tar.extract(input, EXTERN_DIR/input.name)
-    return (EXTERN_DIR/input.name).split
+        tar.extract(input, EXTERN_DIR)
+    return (EXTERN_DIR/input.name).splitpath()[0]
 
-def get(name, dirname, url):
+def build(dirname, buildInstruction):
+    """
+    Builds 'dirname' (extern/src/xxx) into extern/build/xxx
+    """
+    srcDir, modName = dirname.splitpath()
+    buildDir = srcDir.splitpath()[0]/'build'
+    if not buildDir.exists():
+        buildDir.makedirs()
+    buildDir = (buildDir/modName).abspath()
+    oldDir = Path('.').abspath()
+    os.chdir(dirname)
+    try:
+        os.system(buildInstruction % buildDir)
+    finally:
+        os.chdir(oldDir)
+
+def get(name):
     """
     Downloads and extracts a URL automagically
     """
+    dirname, buildInstruction, url = deps[name]
     if (EXTERN_DIR/dirname).isdir():
         print '%s already downloaded' % name
-        return
+        srcDir = Path('extern/src')/dirname
     else:
         print "Downloading and extracting %s" % name
-    # Check the extension of the url
-    ext = url.rsplit('.', 1)[-1]
-    if ext == 'tar':
-        mode = 'r|'
-    elif ext in ('gz', 'bz2', 'tgz', 'tbz2'):
-        mode = 'r|' + ext
-    else:
-        raise Exception("Don't know how to extract files of type '%s'." % ext)
-    stream = download(url)
-    return extract(stream, mode)
+        # Check the extension of the url
+        ext = url.rsplit('.', 1)[-1]
+        if ext == 'tar':
+            mode = 'r|'
+        elif ext in ('gz', 'bz2', 'tgz', 'tbz2'):
+            mode = 'r|' + ext
+        else:
+            raise Exception("Don't know how to extract files of type '%s'." % ext)
+        stream = download(url)
+        srcDir = extract(stream, mode)
+    ##build(srcDir, buildInstruction)
+    return srcDir
 
-# Zope-interfaces
-get('Zope Interfaces 3.0.0', 'zope.interface-3.3.0', 'http://www.zope.org/Products/ZopeInterface/3.3.0/zope.interface-3.3.0.tar.gz')
+deps = {
+    # Name                   # archive 1st dir       # Build instruction        # URL       
+    'Zope Interfaces 3.0.0':('zope.interface-3.3.0', 'python setup.py build -b %s',   
+    'http://www.zope.org/Products/ZopeInterface/3.3.0/zope.interface-3.3.0.tar.gz'),
+    'Twisted 2.4':          ('Twisted-2.4.0',        'python setup.py build -b %s',   
+    'http://tmrc.mit.edu/mirror/twisted/Twisted/2.4/Twisted-2.4.0.tar.bz2'),
+    'PIL 1.1.6':            ('Imaging-1.1.6',        'python setup.py build -b %s',   
+    'http://effbot.org/downloads/Imaging-1.1.6.tar.gz'),
+    'nevow 0.4.1':          ('nevow-0.4.1',          'python setup.py build -b %s',   
+    'http://exelearning.org/BuildingFromSource?action=AttachFile&do=get&target=nevow-0.4.1.tar.gz'),
+    'CTypes':               ('ctypes-1.0.1',         'python setup.py build -b %s',   
+    'http://optusnet.dl.sourceforge.net/sourceforge/ctypes/ctypes-1.0.1.tar.gz'),
+    'Python 2.5':           ('Python-2.5',           './configure --prefix=%s; make; make install',   
+    'http://www.python.org/ftp/python/2.5/Python-2.5.tar.bz2')}
 
-# Twisted 2.4
-get('Twisted 2.4', 'Twisted-2.4.0', 'http://tmrc.mit.edu/mirror/twisted/Twisted/2.4/Twisted-2.4.0.tar.bz2')
-
-# PIL
-get('PIL 1.1.6', 'Imaging-1.1.6', 'http://effbot.org/downloads/Imaging-1.1.6.tar.gz')
-
-# Nevow 0.4
-get('nevow 0.4.1', 'nevow-0.4.1', 'http://exelearning.org/BuildingFromSource?action=AttachFile&do=get&target=nevow-0.4.1.tar.gz')
-
-# CTypes
-get('CTypes', 'ctypes-1.0.1', 'http://optusnet.dl.sourceforge.net/sourceforge/ctypes/ctypes-1.0.1.tar.gz')
+for key in deps:
+    get(key)
