@@ -70,8 +70,8 @@ Section main
     RMDir /r "$TEMP\exe"
   Extract:
     ; Show a nice splash screen
-    File "splash1.jpg"
-    newadvsplash::show /NOUNLOAD 99999 1 1 -1 /BANNER /NOCANCEL "$TEMP\exe\splash1.jpg"
+    File "splashb.jpg"
+    newadvsplash::show /NOUNLOAD 99999 1 1 -1 /BANNER /NOCANCEL "$TEMP\exe\splashb.jpg"
     ; Decompress the stuff
     File /R "..\..\dist\*.*"
     SetOutPath "$TEMP\exe\firefox"
@@ -82,8 +82,8 @@ Section main
   Splash:
     ; Show a short splash screen
     InitPluginsDir
-    File "splash1.jpg"
-    newadvsplash::show /NOUNLOAD 4000 1 1 -1 /BANNER "$TEMP\exe\splash1.jpg"
+    File "splashb.jpg"
+    newadvsplash::show /NOUNLOAD 4000 1 1 -1 /BANNER "$TEMP\exe\splashb.jpg"
   Run:
     HideWindow
     ; Launch exe
