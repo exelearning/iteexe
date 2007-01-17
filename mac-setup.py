@@ -114,5 +114,6 @@ Content generated using eXe can be used by any Learning Management System.
                       "exe.engine", "exe.export"],
       data_files   = files.items(),
       app          = ["exe/main.py"],
-      options      = {'py2app': py2appParams}
+      options      = {'py2app': py2appParams},
+      setup_requires = ["py2app"],
      )
