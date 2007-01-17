@@ -6,6 +6,10 @@ nsis_options = ''
 # if makensis.exe is not in your PATH, specify explicit pathname here
 nsis = 'c:\Program Files\NSIS\makensis.exe'
 
+# name used for temporary file that contains branded splash screen
+BRANDED_JPG = 'splashb.jpg'
+
+import os
 import subprocess
 import Image, ImageFont, ImageDraw
 
@@ -13,8 +17,9 @@ import Image, ImageFont, ImageDraw
 import sys
 sys.path.insert(0, '../..')
 from exe.engine import version
-versions = "/DEXE_VERSION=%s /DEXE_REVISION=%s" % (version.release,
-                                                   version.revision)
+versions = "/DEXE_VERSION=%s /DEXE_REVISION=%s /DEXE_SPLASH=%s" \
+        % (version.release, version.revision, BRANDED_JPG)
+
 # brand the splash screen
 font = ImageFont.truetype("arial.ttf", 12)
 fontcolor = '#808080'
@@ -26,7 +31,7 @@ draw.text((150, 102), "Version: " + version.release, font=font,
 draw.text((150, 102+h), "Revision: " + version.revision,
         font=font, fill=fontcolor)
 del draw
-im.save("splashb.jpg")
+im.save(BRANDED_JPG)
 
 # make the installers
 for installer in ('exe.nsi', 'exe.standalone.nsi'):
@@ -42,3 +47,5 @@ for installer in ('exe.nsi', 'exe.standalone.nsi'):
             print '    in make.py'
     pnsis.wait()
 
+# remove branded splash screen
+os.remove(BRANDED_JPG)

@@ -6,6 +6,9 @@
   !define EXE_VERSION "0.20.alpha2"
 !endif
 !define APPNAMEANDVERSION "eXe Standalone ${EXE_VERSION}"
+!ifndef EXE_SPLASH
+  !define EXE_SPLASH "splash1.jpg"
+!endif
 
 ; Main Install settings
 SetCompressor /SOLID /FINAL lzma
@@ -70,8 +73,8 @@ Section main
     RMDir /r "$TEMP\exe"
   Extract:
     ; Show a nice splash screen
-    File "splashb.jpg"
-    newadvsplash::show /NOUNLOAD 99999 1 1 -1 /BANNER /NOCANCEL "$TEMP\exe\splashb.jpg"
+    File ${EXE_SPLASH}
+    newadvsplash::show /NOUNLOAD 99999 1 1 -1 /BANNER /NOCANCEL "$TEMP\exe\${EXE_SPLASH}"
     ; Decompress the stuff
     File /R "..\..\dist\*.*"
     SetOutPath "$TEMP\exe\firefox"
@@ -82,8 +85,8 @@ Section main
   Splash:
     ; Show a short splash screen
     InitPluginsDir
-    File "splashb.jpg"
-    newadvsplash::show /NOUNLOAD 4000 1 1 -1 /BANNER "$TEMP\exe\splashb.jpg"
+    File ${EXE_SPLASH}
+    newadvsplash::show /NOUNLOAD 4000 1 1 -1 /BANNER "$TEMP\exe\${EXE_SPLASH}"
   Run:
     HideWindow
     ; Launch exe
