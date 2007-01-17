@@ -391,10 +391,11 @@ class ClozeHTMLParser(HTMLParser):
             if tag.lower() == 'u':
                 self.inGap = True
             elif tag.lower() == 'span':
-                attrs = dict(attrs)
-                style = attrs.get('style', '')
+                style = dict(attrs).get('style', '')
                 if 'underline' in style:
                     self.inGap = True
+                else:
+                    self.writeTag(tag, attrs)
             elif tag.lower() == 'br':
                 self.lastText += '<br/>' 
             else:
@@ -407,7 +408,7 @@ class ClozeHTMLParser(HTMLParser):
         if attrs is None:
             self.lastText += '</%s>' % tag
         else:
-            attrs = ['"%s"="%s"' % (name, val) for name, val in attrs]
+            attrs = ['%s="%s"' % (name, val) for name, val in attrs]
             if attrs:
                 self.lastText += '<%s %s>' % (tag, ' '.join(attrs))
             else:
@@ -415,13 +416,13 @@ class ClozeHTMLParser(HTMLParser):
 
     def handle_endtag(self, tag):
         """
-        Turns of inGap
+        Turns off inGap
         """
         if self.inGap:
             if tag.lower() == 'u':
                 self.inGap = False
                 self._endGap()
-            elif tag.lower() == 'span' and self.inGap:
+            elif tag.lower() == 'span':
                 self.inGap = False
                 self._endGap()
         elif tag.lower() != 'br':
@@ -531,6 +532,8 @@ exercise.</p>""")
         """
         for key, val in name2codepoint.items():
             value = value.replace('&%s;' % key, unichr(val))
+        # workaround for Microsoft Word which incorrectly quotes font names
+        value = re.sub(r'font-family:\s*"([^"]+)"', r'font-family: \1', value)
         parser = ClozeHTMLParser()
         parser.feed(value)
         parser.close()
