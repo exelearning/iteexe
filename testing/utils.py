@@ -99,6 +99,13 @@ class SuperTestCase(unittest.TestCase):
         self.app.webServer.root.bindNewPackage(self.package)
         self.mainpage = self.app.webServer.root.children['temp']
 
+    def tearDown(self):
+        """
+        Remove the global app instance
+        """
+        from exe import application
+        application.application = None
+
     def _setupConfigFile(self, configParser):
         """
         Override this to setup any customised config
@@ -109,6 +116,7 @@ class SuperTestCase(unittest.TestCase):
         system.exePath = '../exe/exe'
         system.exeDir = '../exe'
         system.webDir = '../exe/webui'
+        system.localeDir = '../exe/locale'
         system.port = 8081
         # Make a temporary dir where we can save packages and exports etc
         tmpDir = Path('tmp')

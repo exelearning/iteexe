@@ -110,6 +110,7 @@ class Package(Persistable):
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
+        self.resources = {} # MD5-[Resource(),..]
 
 
     # Property Handlers
