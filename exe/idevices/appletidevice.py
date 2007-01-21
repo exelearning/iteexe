@@ -33,6 +33,9 @@ from exe.engine.translate import lateTranslate
 
 log = logging.getLogger(__name__)
 
+# Constants
+GEOGEBRA_FILE_NAMES = set(["geogebra.jar", "geogebra_cas.jar", "geogebra_export.jar", "geogebra_gui.jar", "geogebra_properties.jar"])
+
 # ===========================================================================
 
 class AppletIdevice(Idevice):
@@ -54,16 +57,20 @@ class AppletIdevice(Idevice):
                              parentNode)
         self.emphasis          = Idevice.NoEmphasis
         self.appletCode        = u""
+        self.type              = u"other"
         self._fileInstruc      = x_(u"""Add all the files provided for the applet
 except the .txt file one at a time using the add files and upload buttons. The 
 files, once loaded will be displayed beneath the Applet code field.""")
         self._codeInstruc      = x_(u""""Find the .txt file (in the applet file) 
 and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet 
 code field.""")
+        self._typeInstruc     = x_(u"Please choose a applet type.")
+        self.message          = ""
         
     # Properties    
     fileInstruc = lateTranslate('fileInstruc')
     codeInstruc = lateTranslate('codeInstruc')
+    typeInstruc = lateTranslate('typeInstruc')
 
     def uploadFile(self, filePath):
         """
@@ -74,8 +81,12 @@ code field.""")
         resourceFile = Path(filePath)
         assert(self.parentNode, _('file %s has no parentNode') % self.id)
         assert(self.parentNode.package, _('iDevice %s has no package') % self.parentNode.id)
+        
         if resourceFile.isfile():
-             Resource(self, resourceFile)
+            self.message = ""
+            Resource(self, resourceFile)
+            if self.type == "geogebra":
+                self.appletCode = self.getAppletcode(resourceFile.basename())
         else:
             log.error('File %s is not a file' % resourceFile)
     
@@ -88,7 +99,39 @@ code field.""")
             if resource.storageName == fileName:
                 resource.delete()
                 break
-   
+            
+    def getAppletcode(self, filename):
+        """
+        xhtml string for GeoGebraApplet
+        """
+        
+        html = """
+        <applet code="geogebra.GeoGebraApplet.class" archive="geogebra.jar" width="750" height="450">
+            <param name="filename" value="%s">
+            <param name="framePossible" value="false">
+            Please <a href="http://java.sun.com/getjava"> install Java 1.4</a> (or later) to use this page.
+        </applet> """ % filename
+        
+        return html
+    
+    def copyFiles(self):
+        """
+        if geogebra, then copy all jar files, otherwise delete all jar files.
+        """
+        
+        for resource in reversed(self.userResources):
+            resource.delete()
+            
+        self.appletCode = ""
+        self.message = ""
+        if self.type == "geogebra":
+            from exe.application import application
+            ideviceDir = application.config.configDir/'idevices'            
+            for file in GEOGEBRA_FILE_NAMES:
+                filename = ideviceDir/file
+                self.uploadFile(filename)
+            self.appletCode = self.getAppletcode("")
+          
 # ===========================================================================
 def register(ideviceStore):
     """Register with the ideviceStore"""

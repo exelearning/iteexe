@@ -23,6 +23,7 @@ AppletBlock can render and process AppletIdevices as XHTML
 import os.path
 from exe.webui.block   import Block
 from exe.webui         import common
+#from string            import Template
 
 import logging
 log = logging.getLogger(__name__)
@@ -50,20 +51,28 @@ class AppletBlock(Block):
       
            
         if "code" + self.id in request.args:
-            self.idevice.appletCode = (request.args["code" + self.id][0])
-          
+            self.idevice.appletCode = request.args["code" + self.id][0]
                     
         if "action" in request.args and request.args["action"][0] == self.id:
             self.idevice.deleteFile(request.args["object"][0])
             self.idevice.edit = True
             
+        if "action" in request.args and request.args["action"][0] == "changeType" + self.id:
+            self.idevice.type = request.args["object"][0]
+            self.idevice.copyFiles()
+            self.idevice.edit = True
+            
+            
         if "upload" + self.id in request.args:
             if "path" + self.id in request.args:
                 filePath = request.args["path"+self.id][0]
                 if filePath:
-                    self.idevice.uploadFile(filePath)                     
+                    if self.idevice.type == "geogebra" and not filePath.endswith(".ggb"):
+                        self.idevice.message = _("Please upload a .ggb file.")
+                    else:
+                        self.idevice.uploadFile(filePath)
+                        self.idevice.message = ""                   
             self.idevice.edit = True    
-
 
 
     def renderEdit(self, style):
@@ -75,6 +84,25 @@ class AppletBlock(Block):
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
         html += u"<br/><br/>\n"
+       
+        types = [(_(u"Geogebra"), "geogebra"),
+                 (_(u"Other"), "other")]
+        html += u"<b>%s</b>" % _("Applet Type")
+        
+        html += '<select onchange="submitChange(\'changeType%s\', \'type%s\')";' % (self.id, self.id)
+        html += 'name="type%s" id="type%s">\n' % (self.id, self.id)
+        
+        for type, value in types:
+            html += "<option value=\""+value+"\" "
+            if self.idevice.type == value:
+                html += "selected "
+            html += ">" + type + "</option>\n"
+        html += "</select> \n"
+        html += common.elementInstruc(self.idevice.typeInstruc) + "<br/><br/>"
+        
+        if self.idevice.message <> "":
+            html += '<p style="color:red"><b>' + self.idevice.message + '</b></p>'
+        
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u'value="%s" />\n' % _(u"Add files")
@@ -88,7 +116,7 @@ class AppletBlock(Block):
         html += u'<br/>\n'
 
         html += common.textArea('code'+self.id,
-                                    self.idevice.appletCode)
+                                    self.idevice.appletCode,rows="12")
 
         if self.idevice.userResources:
             html += '<table>'
@@ -112,13 +140,14 @@ class AppletBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
+        
         appletcode = self.idevice.appletCode
         appletcode = appletcode.replace('&gt;', '>')
         appletcode = appletcode.replace('&lt;', '<')
         appletcode = appletcode.replace('&quot;', '"')
         appletcode = appletcode.replace('&nbsp;', '')
         appletcode = appletcode.replace('<applet','<applet CODEBASE="resources"')
-        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"')
+        appletcode = appletcode.replace('<APPLET','<applet CODEBASE="resources"')       
         
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
