@@ -3,7 +3,7 @@
 ; Define your application name
 !define APPNAME "eXe ScormQuiz iDevice update"
 
-!define EXE_VERSION "0.17"
+!define EXE_VERSION "0.20"
 !define APPNAMEANDVERSION "${APPNAME} ${EXE_VERSION}"
 
 ; Main Install settings
