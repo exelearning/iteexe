@@ -34,7 +34,7 @@ g_files = { '.': ["README",
                   "exe/webui/mr_x.gif",
                   "exe/msvcr71.dll",
                   "doc/eXe-tutorial.elp", 
-                  "installs/windows/exeLicense.txt",
+                  "installs/windows/exeLicense.txt",                  
                   "installs/windows/eXe_applet_update.exe",
                   "installs/windows/eXe_scormquiz_update.exe",
                   "installs/windows/eXe_flashmovie_update.exe"]}
@@ -62,11 +62,7 @@ dataFiles(["exe/webui/style",
            "exe/webui/linux-profile",
            "exe/webui/scripts",
            "exe/webui/schemas",
-           "exe/webui/templates",
-           "exe/idevices/*.jar",
-           "installs/windows/eXe_applet_update.exe",
-           "installs/windows/eXe_scormquiz_update.exe",
-           "installs/windows/eXe_flashmovie_update.exe"])
+           "exe/webui/templates"])
 
 g_oldBase = "exe"
 g_newBase = "."
