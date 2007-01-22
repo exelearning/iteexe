@@ -1,8 +1,10 @@
 /*
 ===========================================================================
 eXe
-Copyright 2004-2005, University of Auckland
+Copyright 2007. eXelearning.
 style sheet for default theme
+see: http://exelearning.org/Creating_a_new_Style for more info on how
+to modify this style for your needs.
 ===========================================================================
 */
 
@@ -13,6 +15,7 @@ body {
    background: #E0DFD8;
 }
 
+
 a {
  color: #FF6600;
 }
@@ -20,6 +23,8 @@ a {
 a:hover {
  color: #B34700;
 }
+
+/* --- Styles for the node/page titles --- */
 
 p#nodeTitle { 
    color: #4d4d4d;
@@ -47,22 +52,13 @@ div#nodeDecoration {
 .emphasis1 {
    background-color: #FFF;
    border-bottom: 1px solid #9d9d9d;
-   background-image:url(top_left_corner.gif);
+   background-image:url(top_left_corner.gif); //the left curve
    background-position:top left;
    background-repeat:no-repeat;
    margin-bottom: 30px;
    text-align:left;
 }
 
-.emphasis2 {
-   background-color: #E0DFD8;
-   border-bottom: 3px solid #9d9d9d;
-   background-image:url(body_top_bg.gif);
-   background-position:top left;
-   background-repeat:no-repeat;
-   margin-bottom: 10px;
-   text-align:left;
-}
 
 .iDevice p, .iDevice div.block {
    padding-left: 0px;
@@ -113,15 +109,6 @@ div#nodeDecoration {
    top: 0;
 }
 
-input.feedbackbutton {
-	background: #DBE992;
-}
-
-p.reading_feedback {
-   border: 1px dashed #ADADAD;
-   background-color: #FFF;
-}
-
 .iDevice_inner {
    color:#4d4d4d;
    background-color:#f2f2ef;
@@ -139,6 +126,17 @@ p.reading_feedback {
    margin: 10px;
    margin-top: 12px;
    padding-top: 10px;
+}
+
+/* styles for iDevices with Feedback and form buttons */
+
+input.feedbackbutton {
+	background: #DBE992;
+}
+
+p.reading_feedback {
+   border: 1px dashed #ADADAD;
+   background-color: #FFF;
 }
 
 
