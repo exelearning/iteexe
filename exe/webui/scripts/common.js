@@ -97,6 +97,13 @@ function addImage(elementId) {
         var path  = document.getElementById('path'+elementId);
         path.value = imagePath;
         image.src  = 'file://'+imagePath;
+        var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+        if (!theForm) {
+            theForm = document.getElementById('contentForm')
+        }
+        theForm.action.value = "addImage"
+        theForm.object.value = elementId 
+        theForm.submit()
     }
 }
 

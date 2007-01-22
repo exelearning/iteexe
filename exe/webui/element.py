@@ -209,6 +209,48 @@ class TextAreaElement(Element):
             self.id, class_, visible, self.field.content)
     
 # ===========================================================================
+
+class PlainTextAreaElement(Element):
+    """
+    PlainTextAreaElement is responsible for a block of text
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+        self.cols = "80"
+        self.rows = "10"
+
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if self.id in request.args:
+            self.field.content = request.args[self.id][0]
+            
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit content="+self.field.content+
+                  ", height="+unicode(self.height))
+        html = common.formField('textArea',self.field.name,'',
+                                self.id, self.field.instruc,
+                                self.field.content, '',
+                                self.cols, self.rows)
+        return html
+
+
+    def renderView(self, visible=True, class_="block"):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        return self.field.content + '<br/>'
+    
+# ===========================================================================
 class ImageElement(Element):
     """
     for image element processing
@@ -232,6 +274,10 @@ class ImageElement(Element):
 
         if "height"+self.id in request.args:
             self.field.height = request.args["height"+self.id][0]
+            
+        if "action" in request.args and request.args["action"][0]=="addImage" and \
+           request.args["object"][0]==self.id:
+            self.field.idevice.edit = True
 
 
     def renderEdit(self):
