@@ -65,16 +65,16 @@ class MultimediaBlock(Block):
         if "float"+self.id in request.args:
             self.idevice.float = request.args["float"+self.id][0]
             
-        #if "caption"+self.id in request.args:
-            #self.idevice.media.caption = request.args["caption"+self.id][0]
-
-
+        if "title"+self.id in request.args:
+            self.idevice.title = request.args["title"+self.id][0]
+      
     def renderEdit(self, style):
         """
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
         html  = u"<div class=\"iDevice\">\n"
+        html += common.textInput("title"+self.id, self.idevice.title) + '<br/><br/>'
         html += self.mediaElement.renderEdit()       
         floatArr    = [[_(u'Left'), 'left'],
                       [_(u'Right'), 'right'],
