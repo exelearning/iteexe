@@ -35,10 +35,7 @@ class Resource(Persistable):
     """
     
     # Class attributes
-    persistenceVersion = 2
-
-    # Default attribute values
-    _package = None
+    persistenceVersion = 1
 
     def __init__(self, owner, resourceFile):
         """
@@ -47,86 +44,62 @@ class Resource(Persistable):
         'owner' is either an IDevice or a Package
         """
         log.debug(u"init resourceFile=%s" % resourceFile)
-        from exe.engine.package import Package # Friend class? :)
-        self.md5 = Path(resourceFile).md5
-        # _storageName may be changed when the package is set
-        self._storageName = self._fn2ascii(resourceFile)
-        # self._userName is the basename name originally given by the user
-        self._userName = self._storageName
-        self._originalFile = resourceFile
+        from exe.engine.package import Package # Forgive the slackiness
         if isinstance(owner, Package):
-            self.package = owner
+            self._package = owner
             self._idevice = None
         else:
-            self.package      = owner.parentNode.package
+            self._package     = owner.parentNode.package
             self._idevice     = owner
             self._idevice.userResources.append(self)
-        # Don't need to save the original file name between sessions
-        # It was just used for changing the package
-        del self._originalFile
-
-    def _setPackage(self, package):
-        """
-        Used to change the package.
-        """
-        if package is self._package: return
-        toDelete = None
-        if self._package:
-            # Remove our self from old package's list of resources
-            siblings = self._package.resources[self.md5]
-            siblings.remove(self)
-            if len(siblings) == 0:
-                # We are the last user of this file
-                del self._package.resources[self.md5]
-                toDelete = self.path  # Will delete after we copy it
-            # If our idevice has not already moved, cut ourselves off from it
-            if self._idevice and self._idevice.parentNode.package is self._package:
-                self._idevice.userResources.remove(self)
-            oldPath = self.path
+        self._storageName = self._fn2ascii(resourceFile)
+        if not hasattr(self._package, "resourceDir"):
+            log.debug(u"package doesn't have a resourceDir, must be upgrading")
+        elif resourceFile.dirname() == self._package.resourceDir:
+            log.debug(u"storageName=%s was already in self._package resources" % 
+                      self._storageName)
         else:
-            assert hasattr(self, '_originalFile')
-            oldPath = self._originalFile
-        self._package = package
-        if self._package:
-            # Add ourselves to our new package's list of resources
-            siblings = self._package.resources.setdefault(self.md5, [])
-            if siblings:
-                self._storageName = siblings[0]._storageName
-            else:
-                if not hasattr(self._package, "resourceDir"):
-                    log.debug(u"Package doesn't have a resourceDir, must be upgrading")
-                elif self._originalFile.dirname() == self._package.resourceDir:
-                    log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
-                else:
-                    self._copyFile(oldPath)
-            siblings.append(self)
-        # Remove the resource file of the original package
-        if toDelete:
-            toDelete.remove()
+            self._copyFile(resourceFile)
+
 
     # Properties
     storageName = property(lambda self:self._storageName)
-    userName = property(lambda self:self._userName)
-    package = property(lambda self:self._package, _setPackage)
-
-    @property
-    def path(self):
-        """
-        Returns the path to the resource
-        """
-        if self._package:
-            return self._package.resourceDir/self._storageName
-        else:
-            return self._storageName
+    path = property(lambda self:self._package.resourceDir/self._storageName)
 
     # Public methods
+
+    def changePackage(self, package):
+        """
+        Change this resource to being owned by another package
+        returns a tuple of (oldFilename, newFilename) iff the storageName 
+        changes
+        """
+        log.debug(u"changePackage new package=%s" % package.name)
+
+        if package == self._package:
+            log.warning(u"already in that package")
+            return None
+
+        oldPath       = self.path
+        self._package = package
+        self._copyFile(oldPath)
+
+        if self._storageName != oldPath.basename():
+            return (oldPath.basename(), self._storageName)
+        else:
+            return None
+
 
     def delete(self):
         """
         Remove a resource from a package
         """
-        # Just unhooking from our package, does all we need
-        self.package = None
+        if self.path.isfile():
+            self.path.remove()
+        if self._idevice:
+            self._idevice.userResources.remove(self)
+        self._storageName = None
+
 
     def __unicode__(self):
         """
@@ -154,7 +127,7 @@ class Resource(Persistable):
 
     def _fn2ascii(self, filename):
         """
-        Changes any filename to pure ascii, returns only the basename
+        Changes any filename to pure ascii
         """
         nameBase, ext = Path(Path(filename).basename()).splitext()
         # Check if the filename is ascii so that twisted can serve it

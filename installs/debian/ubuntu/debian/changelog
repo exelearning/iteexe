@@ -1,5 +1,6 @@
 python-exe (0.20-0.1ubuntu1) unstable; urgency=low
     * Bug Fixes
+    * This is a nightly build, UNSTABLE
 
  -- Matthew Sherborne <matthew@exelearning.org>  Tue, 12 Dec 2006 15:44:54 +1300
 
