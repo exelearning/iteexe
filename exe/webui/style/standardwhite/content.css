@@ -38,20 +38,17 @@ div#nodeDecoration {
 
 /* --- iDevice Styles --- */
 
+.emphasis0 {
+	padding-top: 10px;
+
+}
+
 .emphasis1 {
     background-color: #FFF;
     padding-left: 10px;
     padding-bottom: 16px;
     border-top: 1px solid #DDD;
     margin: 10px;
-}
-
-.emphasis2 {
-    background-color: #FFF;
-    padding-left: 10px;
-    padding-bottom: 16px;
-    border: 3px solid #DDD;
-    margin: 20px;
 }
 
 
