@@ -1,5 +1,19 @@
 from struct import unpack
-from datetime import datetime
+from datetime import *
+from datetime import timedelta
+
+#from time import strftime
+import logging
+
+log = logging.getLogger(__name__)
+
+class FixedOffset(tzinfo):
+    """Fixed offset in minutes east from UTC."""
+    def __init__(self, offset): self.__offset = timedelta(minutes = offset)
+    def utcoffset(self, dt): return self.__offset
+    def tzname(self, dt): return self.__name
+    def dst(self, dt): return ZERO
+
 
 class FLVReader(dict):
     """
@@ -18,22 +32,38 @@ class FLVReader(dict):
         data.
         """
         # Lock on to the file
+        self.filename = filename
         self.file = open(filename, 'rb')
         self.signature = self.file.read(3)
-        assert self.signature == 'FLV', 'Not an flv file'
+        print  " Signature:", self.signature
+        #assert self.signature == 'FLV', 'Not an flv file'
         self.version = self.readbyte()
-        self.typeFlags = self.readbyte()
+        print "Version:", self.version
+        flags = self.readbyte()
+        self.typeFlagsReserved = flags >> 3
+        self.typeFlagsAudio = (flags & 0x07) >> 2
+        self.typeFlagsReserved2 = (flags & 0x03) >> 1
+        self.typeFlagsVideo = (flags & 0x01)
+        print "TypeFlagsReserved:",self.typeFlagsReserved
+     
+        print "TypeFlagsAudio:",self.typeFlagsAudio
+        print "TypeFlagsReserved2:",self.typeFlagsReserved2  
+        print "TypeFlagsVideo:",self.typeFlagsVideo
+ 
         self.dataOffset = self.readint()
+        print "dataOffset:",self.dataOffset
         extraDataLen = self.dataOffset - self.file.tell()
         self.extraData = self.file.read(extraDataLen)
         self.readtag()
 
     def readtag(self):
-        unknown = self.readint()
+        previousTagSize = self.readint()
         tagType = self.readbyte()
         dataSize = self.read24bit()
         timeStamp = self.read24bit()
-        unknown = self.readint()
+        print timeStamp
+        timeStampExtended = self.readbyte()
+        streamID = self.read24bit()
         if tagType == self.AUDIO:
             print "Can't handle audio tags yet"
         elif tagType == self.VIDEO:
@@ -68,6 +98,7 @@ class FLVReader(dict):
     def readAMFData(self, dataType=None):
         if dataType is None:
             dataType = self.readbyte()
+        print ('type(%s)' % dataType),
         funcs = {
             0: self.readAMFDouble,
             1: self.readAMFBoolean,
@@ -77,9 +108,16 @@ class FLVReader(dict):
            10: self.readAMFArray,
            11: self.readAMFDate
         }
-        func = funcs[dataType]
-        if callable(func):
-            return func()
+        func = funcs.get(dataType)
+        if func is None:
+            log.warn("Unknown data type '%s' in '%s'" % (dataType, self.filename))
+            raise Exception('Corrupt mate')
+            return None
+        else:
+            if callable(func):
+                val = func()
+                print val
+                return val
 
     def readAMFDouble(self):
         return unpack('>d', self.file.read(8))[0]
@@ -92,10 +130,9 @@ class FLVReader(dict):
         return self.file.read(size)
 
     def readAMFObject(self):
-        data = self.readAMFMixedArray()
-        result = object()
-        result.__dict__.update(data)
-        return result
+        name = self.readAMFString()
+        data = self.readAMFData()
+        result = name, data
 
     def readAMFMixedArray(self):
         size = self.readint()
@@ -105,6 +142,7 @@ class FLVReader(dict):
             dataType = self.readbyte()
             if not key and dataType == 9:
                 break
+            print key, '=',
             result[key] = self.readAMFData(dataType)
         return result
 
@@ -112,11 +150,28 @@ class FLVReader(dict):
         size = self.readint()
         result = []
         for i in range(size):
-            result.append(self.readAMFData)
+            result.append(self.readAMFData())
         return result
 
     def readAMFDate(self):
-        return datetime.fromtimestamp(self.readAMFDouble())
+        
+        delta = self.readAMFDouble()
+        localOffsetMins = self.readshort()
+        try:
+            
+            td = timedelta(milliseconds=delta)
+            localOffset = FixedOffset(localOffsetMins)
+            
+            beg = datetime(1970, 1, 1, tzinfo=localOffset)
+            
+            timestamp = td + beg
+         
+            #timestamp = datetime.fromtimestamp(delta)
+            return timestamp
+            
+        except ValueError:
+            log.warning('Failed to convert %s to date' % delta)
+            return datetime.fromtimestamp(0) # in relation to platform time 
         
 
 if __name__ == '__main__':
