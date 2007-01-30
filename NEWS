@@ -1,5 +1,11 @@
 Version 0.20 - Arachnidian Avondale
 * Improved IDevice Editor
+* Geogebra iDevice
+* Improve loading speed of some complex eXe packages
+* Add the ability to have an optional footer on all pages of project
+* Update copyright
+* Add release and revision to ready2run splash screen
+* Add work around for broken Microsoft Word span tags
 * Bug fixes
 
 Version 0.19 - Tidy Tui
