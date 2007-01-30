@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-01-31 11:11+1200\n"
+"PO-Revision-Date: 2007-01-31 11:24+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "<ol>  <li>&lt;MP3を選択&gt;をクリックし、挿入したいMP3フ
 
 #: exe/engine/field.py:707
 msgid "<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
-msgstr "<ol><li>数式を作成するため下のテキストエディターから記号を選びなさい。それぞれの記号はディスプレイフィールド上で、下の&lt;プリビュー&gt;ボタンを利用して数学用言語LATEXで見ることができます。</li> "
+msgstr "<ol><li>数式を作成するため下のテキストエディターから記号を選びなさい。それぞれの記号はディスプレイフィールド上で、下の&lt;プリビュー&gt;ボタンを利用して数学用言語LATEXで見ることができます。</li> </ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
