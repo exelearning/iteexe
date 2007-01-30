@@ -1,12 +1,14 @@
 Version 0.20 - Arachnidian Avondale
 * Improved IDevice Editor
 * Geogebra iDevice
+* Add SCORM2004 export
 * Improve loading speed of some complex eXe packages
 * Add the ability to have an optional footer on all pages of project
+* Keep hidden backup .elp
 * Update copyright
 * Add release and revision to ready2run splash screen
 * Add work around for broken Microsoft Word span tags
-* Bug fixes
+* Many, many bug fixes (see http://exelearning.org/projects/exe1/milestone/0.20%20Arachnidian%20Avondale)
 
 Version 0.19 - Tidy Tui
 * MP3 iDevice
