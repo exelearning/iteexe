@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-01-30 16:06+1200\n"
+"PO-Revision-Date: 2007-01-30 16:37+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -307,7 +307,7 @@ msgstr ""
 
 #: exe/idevices/appletblock.py:86
 msgid "Applet Code:"
-msgstr ""
+msgstr "アプレットコード"
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
@@ -329,7 +329,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:289
 msgid "Author"
-msgstr ""
+msgstr "著者"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
@@ -342,7 +342,7 @@ msgstr ""
 #: exe/webui/preferencespage.py:94
 #: exe/webui/editorpane.py:232
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: exe/xului/mainpage.py:236
 #: exe/xului/mainpage.py:295
@@ -360,7 +360,7 @@ msgstr ""
 
 #: exe/engine/casestudyidevice.py:72
 msgid "Case Study"
-msgstr ""
+msgstr "ケーススタディー"
 
 #: exe/webui/galleryblock.py:198
 #: exe/webui/galleryblock.py:216
@@ -373,7 +373,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:85
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "中国語ウィキペディア記事"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
@@ -599,7 +599,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:91
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "オランダ語ウィキペディア記事"
 
 #: exe/webui/element.py:45
 #, python-format
@@ -647,7 +647,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:84
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "英語ウィキペディア記事"
 
 #: exe/idevices/flashmovieidevice.py:52
 msgid ""
@@ -671,6 +671,8 @@ msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"検索したいフレーズや単語を入力してください。\n"
+"ウィキペディアの中でwithin Wikipedia."
 
 #: exe/engine/reflectionidevice.py:54
 msgid ""
@@ -851,7 +853,7 @@ msgstr ""
 #: exe/idevices/flashmovieidevice.py:39
 #: exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "フラッシュムービー"
 
 #: exe/engine/flashwithtextidevice.py:40
 #: exe/engine/flashwithtextidevice.py:47
@@ -881,20 +883,20 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:96
 msgid "Forum type:"
-msgstr ""
+msgstr "フォーラムのタイプ"
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
-msgstr ""
+msgstr "フレームの高さ"
 
 #: exe/engine/freetextidevice.py:37
 #: exe/engine/freetextidevice.py:44
 msgid "Free Text"
-msgstr ""
+msgstr "フリーテキスト"
 
 #: exe/webui/wikipediablock.py:87
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "フランス語ウィキペディア記事"
 
 #: exe/webui/wikipediablock.py:182
 msgid "GNU Free Documentation License"
@@ -902,19 +904,19 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:86
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "ドイツ語ウィキペディア記事"
 
 #: exe/webui/element.py:811
 msgid "Get score"
-msgstr ""
+msgstr "スコアを表示"
 
 #: exe/webui/galleryblock.py:224
 msgid "Go Back"
-msgstr ""
+msgstr "戻る"
 
 #: exe/webui/galleryblock.py:236
 msgid "Go Forward"
-msgstr ""
+msgstr "進む"
 
 #: exe/webui/galleryblock.py:243
 msgid "Go Forward (Not Available)"
@@ -922,16 +924,16 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:117
 msgid "Group mode:"
-msgstr ""
+msgstr "グループモード："
 
 #: exe/webui/reflectionblock.py:93
 #: exe/idevices/forumelement.py:92
 msgid "Hide"
-msgstr ""
+msgstr "隠す"
 
 #: exe/webui/questionelement.py:107
 msgid "Hide Feedback"
-msgstr ""
+msgstr "フィードバックを隠す"
 
 #: exe/webui/element.py:732
 msgid "Hide/Show Word"
@@ -943,11 +945,11 @@ msgstr ""
 #: exe/webui/truefalseelement.py:117
 #: exe/webui/truefalseelement.py:127
 msgid "Hint"
-msgstr ""
+msgstr "ヒント"
 
 #: exe/webui/multichoiceblock.py:92
 msgid "Hint:"
-msgstr ""
+msgstr "ヒント："
 
 #: exe/engine/package.py:101
 msgid "Home"
@@ -959,20 +961,20 @@ msgstr "ホーム"
 #: exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
-msgstr ""
+msgstr "IDeviceアイコン"
 
 #: exe/webui/multichoiceblock.py:134
 msgid "IDevice Question Icon"
-msgstr ""
+msgstr "IDeviceクエスチョンアイコン"
 
 #: exe/webui/editorpane.py:336
 msgid "Icons"
-msgstr ""
+msgstr "アイコン"
 
 #: exe/engine/imagewithtextidevice.py:58
 #: exe/webui/editorpane.py:218
 msgid "Image"
-msgstr ""
+msgstr "画像"
 
 #: exe/engine/galleryidevice.py:489
 msgid "Image Gallery"
@@ -984,11 +986,11 @@ msgstr ""
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
-msgstr ""
+msgstr "テキスト付イ画像"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
-msgstr ""
+msgstr "不正解！"
 
 #: exe/webui/editorpane.py:350
 msgid "Info"
@@ -996,7 +998,7 @@ msgstr ""
 
 #: exe/webui/block.py:233
 msgid "Information"
-msgstr ""
+msgstr "インフォメーション"
 
 #: exe/webui/imagemagnifierblock.py:120
 msgid "Initial Zoom"
@@ -1015,11 +1017,11 @@ msgstr ""
 
 #: exe/engine/clozeidevice.py:146
 msgid "Instructions For Learners"
-msgstr ""
+msgstr "学習者へのイントロダクション"
 
 #: exe/idevices/forumelement.py:227
 msgid "Introduction"
-msgstr ""
+msgstr "イントロダクション"
 
 #: exe/webui/wikipediablock.py:183
 msgid "It uses material from the "
@@ -1027,15 +1029,15 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:89
 msgid "Italian Wikipedia Article"
-msgstr ""
+msgstr "イタリア語ウィキペディア記事"
 
 #: exe/webui/wikipediablock.py:88
 msgid "Japanese Wikipedia Article"
-msgstr ""
+msgstr "日本語ウィキペディア記事"
 
 #: exe/idevices/appletidevice.py:49
 msgid "Java Applet"
-msgstr ""
+msgstr "Javaアプレット"
 
 #: exe/webui/attachmentblock.py:95
 msgid "Label"
@@ -1047,11 +1049,11 @@ msgstr ""
 
 #: exe/idevices/forumidevice.py:164
 msgid "Learning Management System"
-msgstr ""
+msgstr "ラーニングマネジメントシステム"
 
 #: exe/idevices/forumelement.py:253
 msgid "Learning Management System:"
-msgstr ""
+msgstr "ラーニングマネージメントシステム："
 
 #: exe/webui/imagemagnifierblock.py:85
 #: exe/webui/imagewithtextblock.py:75
@@ -1063,7 +1065,7 @@ msgstr ""
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
-msgstr ""
+msgstr "フォーラムへのリンク"
 
 #: exe/webui/wikipediablock.py:109
 #: exe/webui/rssblock.py:87
@@ -1072,12 +1074,12 @@ msgstr ""
 
 #: exe/engine/multimediaidevice.py:40
 msgid "MP3"
-msgstr ""
+msgstr "MP3"
 
 #: exe/engine/mathidevice.py:35
 #: exe/engine/mathidevice.py:48
 msgid "Maths"
-msgstr ""
+msgstr "数学"
 
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
@@ -1089,7 +1091,7 @@ msgstr ""
 
 #: exe/idevices/forumelement.py:262
 msgid "Moodle"
-msgstr ""
+msgstr "Moodle"
 
 #: exe/webui/block.py:222
 msgid "Move Down"
@@ -1184,14 +1186,14 @@ msgstr ""
 
 #: exe/webui/preferencespage.py:93
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: exe/engine/idevicestore.py:299
 #: exe/engine/idevicestore.py:308
 #: exe/engine/idevicestore.py:406
 #: exe/engine/idevicestore.py:415
 msgid "Objectives"
-msgstr ""
+msgstr "目的"
 
 #: exe/engine/idevicestore.py:302
 #: exe/engine/idevicestore.py:409
@@ -1219,11 +1221,11 @@ msgstr ""
 #: exe/webui/optionelement.py:81
 #: exe/idevices/testquestionelement.py:95
 msgid "Option"
-msgstr ""
+msgstr "オプション"
 
 #: exe/idevices/testquestionelement.py:91
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 #: exe/idevices/forumelement.py:266
 msgid "Other"
@@ -1231,7 +1233,7 @@ msgstr ""
 
 #: exe/xului/outlinepane.py:244
 msgid "Outline"
-msgstr ""
+msgstr "概要"
 
 #: exe/xului/mainpage.py:260
 #: exe/xului/mainpage.py:386
@@ -1279,11 +1281,11 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:90
 msgid "Polish Wikipedia Article"
-msgstr ""
+msgstr "ポーランド語ウィキペディア記事"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Portugese Wikipedia Article"
-msgstr ""
+msgstr "ポルトガル語ウィキペディア記事"
 
 #: exe/engine/idevicestore.py:312
 #: exe/engine/idevicestore.py:322
@@ -1577,7 +1579,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:94
 msgid "Slovenian Wikipedia Article"
-msgstr ""
+msgstr "スロベニア語ウィキペディア記事"
 
 #: exe/webui/imagemagnifierblock.py:133
 msgid "Small"
@@ -1603,7 +1605,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:96
 msgid "Spanish Wikipedia Article"
-msgstr ""
+msgstr "スペイン語ウィキペディア記事"
 
 #: exe/idevices/forumelement.py:77
 msgid "Standard forum for general use"
@@ -1944,15 +1946,15 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:98
 msgid "Wikibooks Article"
-msgstr ""
+msgstr "ウィキブック記事"
 
 #: exe/webui/wikipediablock.py:99
 msgid "Wikieducator Content"
-msgstr ""
+msgstr "ウィキエデュケーター・コンテンツ"
 
 #: exe/engine/wikipediaidevice.py:51
 msgid "Wikipedia Article"
-msgstr ""
+msgstr "ウィキペディア記事"
 
 #: exe/webui/optionelement.py:131
 msgid "Wrong"
@@ -2009,7 +2011,7 @@ msgstr ""
 
 #: exe/engine/wikipediaidevice.py:198
 msgid "http://en.wikipedia.org/"
-msgstr ""
+msgstr "http://en.wikipedia.org/"
 
 #: exe/engine/attachmentidevice.py:101
 #: exe/idevices/appletidevice.py:79
@@ -2667,19 +2669,19 @@ msgstr ""
 #: n:render="addChild"
 #: key="addChildKey" label="Add Page">
 msgid "Add Page"
-msgstr ""
+msgstr "ページ追加"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="bs" id="dcmibs"
 #: label="Bosnian ">
 msgid "Bosnian "
-msgstr ""
+msgstr "ボスニア語"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
-msgstr ""
+msgstr "名前変更"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="ca" id="dcmica"
@@ -2729,7 +2731,7 @@ msgstr ""
 #: n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
-msgstr ""
+msgstr "編集"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="cs" id="dcmics"
