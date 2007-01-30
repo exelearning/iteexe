@@ -3804,6 +3804,11 @@ msgstr ""
 msgid "Footer:"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: label="Tongan ">
+msgid "Tongan  "
+msgstr ""
+
 #, fuzzy
 #~ msgid "Add Question"
 #~ msgstr "4Dd 4N07H3r KW35710n"

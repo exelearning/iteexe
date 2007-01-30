@@ -4040,6 +4040,11 @@ msgstr ""
 msgid "Footer:"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: label="Tongan ">
+msgid "Tongan  "
+msgstr ""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

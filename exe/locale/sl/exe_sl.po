@@ -4118,6 +4118,12 @@ msgstr ""
 msgid "Footer:"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: label="Tongan ">
+#, fuzzy
+msgid "Tongan  "
+msgstr "Estonsko.  "
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

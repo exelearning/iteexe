@@ -3780,6 +3780,12 @@ msgstr ""
 msgid "Footer:"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: label="Tongan ">
+#, fuzzy
+msgid "Tongan  "
+msgstr "Tsonga kasa"
+
 #~ msgid "Strong emphasis"
 #~ msgstr "Nsiso a emu yɛ den"
 

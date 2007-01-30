@@ -3804,5 +3804,10 @@ msgstr ""
 msgid "Footer:"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: label="Tongan ">
+msgid "Tongan  "
+msgstr ""
+
 #~ msgid "label=\"Web Site\" accesskey=\"w\""
 #~ msgstr "label=\"W3B 5173\" accesskey=\"w\""

@@ -3755,3 +3755,8 @@ msgstr ""
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Footer:"
 msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: label="Tongan ">
+msgid "Tongan  "
+msgstr ""
