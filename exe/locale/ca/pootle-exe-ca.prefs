@@ -1,2 +1,6 @@
 # Pootle preferences for project exe, language ca
 
+rights:
+	default = u'view, suggest, archive, pocompile'
+	nobody  = u'view'
+

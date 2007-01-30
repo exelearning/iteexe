@@ -1,6 +1,6 @@
 # Pootle preferences for project exe, language el
 
 rights:
-  default = u'view, suggest, archive, pocompile'
-  nobody = u'view'
-  jkost = u'view, suggest, translate, review, archive, pocompile'
+	default = u'view, suggest, archive, pocompile'
+	nobody  = u'view'
+

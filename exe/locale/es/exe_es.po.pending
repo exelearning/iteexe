@@ -1,7 +1,9 @@
 #: exe/xului/mainpage.py:245
 #, python-format
-msgid "_:suggested by carlos"
+msgid ""
+"_:suggested by carlos"
 "%s already exists, please try again with a different filename\n"
+""
 msgstr "%s ya existe, por favor trate nuevamente con un nombre diferente de archivo"
 
 #: exe/engine/imagemagnifieridevice.py:67
@@ -15,39 +17,597 @@ msgstr ""
 " cuando se carga el IDevice, como porcentaje del tamaño original de la imagen"
 
 #: exe/idevices/forumelement.py:103
-msgid "_: suggested by jmunoz"
+msgid ""
+"_: suggested by jmunoz"
 "Can a student post to this forum?:"
+""
 msgstr "¿Puede un estudiante enviar mensajes a este foro?:"
 
 #: exe/webui/editorelement.py:145
-msgid "_: suggested by jmunoz"
+msgid ""
+"_: suggested by jmunoz"
 "Button Caption"
+""
 msgstr "Título de botón"
 
 #: exe/idevices/forumelement.py:103
-msgid "_: suggested by jmunoz"
+msgid ""
+"_: suggested by jmunoz"
 "Can a student post to this forum?:"
+""
 msgstr "¿Puede un estudiante enviar mensajes a este foro?:"
 
 #: exe/xului/mainpage.py:236 exe/xului/mainpage.py:295
 #: exe/xului/mainpage.py:358
-msgid "_: suggested by jmunoz"
+msgid ""
+"_: suggested by jmunoz"
 "Cannot access directory named "
+""
 msgstr "No se puede accesar al directorio"
 
 #: exe/engine/casestudyidevice.py:72
-msgid "_: suggested by jmunoz"
+msgid ""
+"_: suggested by jmunoz"
 "Case Study"
+""
 msgstr "Estudio de caso"
 
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
 #: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
 #: exe/idevices/flashmovieblock.py:83
-msgid "_: suggested by jmunoz"
+msgid ""
+"_: suggested by jmunoz"
 "Caption:"
+""
 msgstr "Título:"
 
 #: exe/engine/casestudyidevice.py:54
-msgid "_: suggested by matiu"
+msgid ""
+"_: suggested by matiu"
 "Choose an optional image to be shown to the student on completion of this question"
+""
 msgstr "Escoje un imagen opcional ser mostrado al estudiante cuando terminen de contestar esta pregunta."
+
+#: exe/engine/clozeidevice.py:58
+msgid ""
+"_: suggested by paco"
+"<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
+""
+msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  suficientemente extenso que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos de una página es probablemente adecuado, pero debe considerar menos menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en el texto que sean claves para entender los conceptos . Estas podrian ser verbos, sustantivos y adverbios clave. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en vocabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y coherente, y ser de una longitud apropiada. Resalte las palabras importantes en el texto. Escoja alternativas inequívocas.</p>  </dd>  <dt>si su meta es probar composición de palaras o gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y tener una longitud apropiada. Recuerde que el objetivo no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resalte las palabras importantes en el texto. Proporcione alternativas con la misma palabra raíz, pero con diferentes significados. ¡Es una buena idea conseguir que un colega pruebe los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
+
+#: exe/engine/clozeidevice.py:58
+msgid ""
+"_: suggested by paco"
+"<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
+""
+msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  suficientemente extenso que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos de una página es probablemente adecuado, pero debe considerar menos menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en el texto que sean claves para entender los conceptos . Estas podrian ser verbos, sustantivos y adverbios clave. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en vocabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y coherente, y ser de una longitud apropiada. Resalte las palabras importantes en el texto. Escoja alternativas inequívocas.</p>  </dd>  <dt>si su meta es probar composición de palaras o gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y tener una longitud apropiada. Recuerde que el objetivo no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resalte las palabras importantes en el texto. Proporcione alternativas con la misma palabra raíz, pero con diferentes significados. ¡Es una buena idea conseguir que un colega pruebe los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
+
+#: exe/engine/multimediaidevice.py:50
+msgid ""
+"_: suggested by paco"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+""
+msgstr "<ol>  <li>Click &lt;Seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la lista desplegable y seleccione la posición en pantalla en que quiere que se muestre el archivo.</li>  <li>Introduzca un título para su archivo.</li> <li>Associate relevant text to the MP3 file.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice, p.ej. 'Énfasis' aplica un borde y un icono al contenido del iDevice.</li></ol>"
+
+#: exe/engine/clozeidevice.py:46
+msgid ""
+"_: suggested by paco"
+"<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
+""
+msgstr "<p>Los ejercicios Cloze son textos  u oraciones donde los estudiantes deben completar con las palabras que faltan. Este tipo de ejercicios es usado para diversos propósitos:</p><ol><li>Para comprobar los conocimientos de los conceptos claves de un curso (esto podría ser una prubea de diagnóstico, una prueba formativa o una prueba sumativa).</li><li>Para comprobar la comprensión lectora.</li><li>Para comprobar el conocimiento en vocabulario.</li><li>Para comprobar las competencias en gramatica. </li></ol>"
+
+#: exe/engine/multimediaidevice.py:50
+msgid ""
+"_: suggested by paco"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+""
+msgstr "<ol>  <li>Click &lt;Seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en que quiere que se muestre el archivo.</li>  <li>Introduzca un título para su archivo.</li> <li>Asocie cualquier texto relevant al fichero MP3.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice, p.ej. 'Énfasis' aplica un marco y un icono al contenido del iDevice.</li></ol>"
+
+#: exe/engine/imagewithtextidevice.py:41
+msgid ""
+"_: suggested by paco"
+"<p>\n"
+"The image with text iDevice can be used in a number of ways to support both\n"
+"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
+"content. \n"
+"</p><p>\n"
+"<b>Integrating visuals with verbal summaries</b>\n"
+"</p><p>\n"
+"Cognitive psychologists indicate that presenting learners with a\n"
+"representative image and corresponding verbal summary (that is presented\n"
+"simultaneously) can reduce cognitive load and enhance learning retention.\n"
+"This iDevice can be used to present an image (photograph, diagram or\n"
+"graphic) with a brief verbal summary covering the main points relating to\n"
+"the image. For example, if you were teaching the functions of a four-stroke\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
+"the piston with a brief textual summary of the key aspects of each visual.\n"
+"</p>"
+msgstr ""
+"<p>\n"
+"El IDevice \"imagen con texto\" puede ser utilizado de muchas maneras para apoyar tanto la dimensión emocional (afectiva) como la instruccional (cognitiva) de EXE.\n"
+"Le proporcionaremos un ejemplo de cada tipo:\n"
+"</p><p>\n"
+"<b>Perfil del profesor (dimension emocional)</b>\n"
+"</p><p>\n"
+"La investigacion sugiere que los estudiantes en linea aprecien un acercamiento personalizado.\n"
+"Una manera de lograr esto es proporcionarle una descripcion breve \n"
+"del profesor y de otro personal relacionado a este modo de aprendizaje. El \n"
+"perfil (con la foto personal) no solo es usado a describir el rol \n"
+"y credenciales del profesor sino tambien tener una relacion directa \n"
+"entre el estudiante y el profesor mas el contenido intermediario (la computadora). Los perfiles deberan ser escritos de una \n"
+"forma \"no academica\" haciendo uso de pronombres personales.\n"
+"</p><p>\n"
+"<b>Integrando imágenes con textos</b>\n"
+"</p><p>\n"
+"Los psicólogos cognitivistas sugieren que presentar a los estudiantes una imagen representativa y el correspondiente texto (simultáneamente) puede reducir la carga cognitiva y mejorar la retención en el aprendizaje.Este IDevice se puede utilizar para presentar una imagen (fotografía, diagrama o gráfico)\n"
+"con un breve resumen textual que cubra los principales puntos relacionado a la imagen.\n"
+"Por ejemplo, si se estuviera enseñando las funciones de un motor de combustión de cuatro tiempos, \n"
+"se podría tener una representación visual de cada uno de las cuatro posiciones del pistón con un \n"
+"con un breve resumen textual de los aspectos claves de cada uno.</p>"
+
+#: exe/engine/attachmentidevice.py:60
+msgid ""
+"_: suggested by paco"
+"<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
+""
+msgstr "<p>Asigne una etiqueta para el dichero adjunto.  Es útil incluir el tipo de archivo. Ej. pdf, ppt, etc.</p><p>También se recomienda incluir el tamaño de forma que la gente tenga una idea sobre cuánto tiempo supondría la descarga de este fichero. </p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
+
+#: exe/engine/clozeidevice.py:46
+msgid ""
+"_: suggested by paco"
+"<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
+""
+msgstr "<p>Los ejercicios \"Cloze\" son textos  u oraciones que los estudiantes deben completar con las palabras que faltan. Este tipo de ejercicios es usado para diversos propósitos:</p><ol><li>Para comprobar los conocimientos de los conceptos claves de un curso (esto podría ser una prueba para diagnosticar los conocimientos previos, una prueba formativa o una evaluación sumativa).</li><li>Para comprobar la comprensión lectora.</li><li>Para comprobar el conocimiento de vocabulario.</li><li>Para comprobar las competencias en gramatica. </li></ol>"
+
+#: exe/engine/clozeidevice.py:122
+msgid ""
+"_: suggested by paco"
+"<p>Enter the text for the cloze activity in to the cloze field \n"
+"by either pasting text from another source or by typing text directly into the \n"
+"field.</p><p> To select words to hide, double click on the word to select it and \n"
+"click on the Hide/Show Word button below.</p>"
+msgstr "<p>Introduzca el texto dejando espacios en blanco para escribir o pegar en este archivo.</p><p> Para hacer un espacio en blanco haga doble click en la palabra que se desea ocultar para seleccionarlo, y haga un click en el botón <i>Ocultar/Mostrar Palabra</i></p>."
+
+#: exe/engine/field.py:462
+msgid ""
+"_: suggested by paco"
+"<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
+""
+msgstr "<p>Si NO se marca esto, los pequeños errores de deletreo y de capitalización serán aceptados. Si esta marcado, no se aceptaría ningún error de deletreo, y si también esta marcado la opción \"compruebe capitalización\" ningún error de capitalización (mayúsculas por minúsculas o biceversa) tampoco será aceptado</p><p><strong>Por ejemplo:</strong> Si la respuesta correcta es <code>Elefante</code> y pone <code>elefante</code> o <code>Elifante</code> ambos serán considerados como <em>\"bastantes cercanos\"</em> por el algoritmo, pues existe solo un error de letra, incluso si  \"Compruebe Capitalización\" esta marcado.</p><p>Si la marca de capitalización esta quitada, en este ejemplo, la letra minúscula <code>e</code> no es considerada un error y <code>elefante</code> también es aceptado.</p><p>Si \"Comprobación stricta\" y \"Compruebe Capitalización\" están activados, La única respuesta correcta es  \"Elefante\". Si solamente \"Comprobación Estricta\" esta activado y \"Compruebe Capitalización\" no, \"elefante\" también será aceptado.</p>\""
+
+#: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:395
+msgid ""
+"_: suggested by paco"
+"Describe the tasks related to the reading learners should undertake. \n"
+"This helps demonstrate relevance for learners."
+msgstr ""
+"Describe las tareas relacionadas con la  lectura que los estudiantes deberían realizar \n"
+"Esta ayuda es importante para los estudiantes."
+
+#: exe/engine/idevicestore.py:321 exe/engine/idevicestore.py:428
+msgid ""
+"_: suggested by paco"
+"Describe the prerequisite knowledge learners should have to effectively\n"
+"complete this learning."
+msgstr "Describir a los estudiantes los pre-requisitos de conocimiento que deberían poseer para conseguir un aprendizaje eficaz."
+
+#: exe/engine/casestudyidevice.py:97
+msgid ""
+"_: suggested by paco"
+"Describe the activity tasks relevant \n"
+"to the case story provided. These could be in the form of questions or \n"
+"instructions for activity which may lead the learner to resolving a dilemma \n"
+"presented. "
+msgstr ""
+"Describir las actividaes relevantes para\n"
+"el caso presentado. Estas deben ser en forma de preguntas o \n"
+"instrucciones que conduzcan al estudiante a resolver el problema \n"
+"propuesto. "
+
+#: exe/engine/reflectionidevice.py:56
+msgid ""
+"_: suggested by paco"
+"Describe how learners will assess how \n"
+"they have done in the exercise. (Rubrics are useful devices for providing \n"
+"reflective feedback.)"
+msgstr "Describir cómo los estudiantes evaluarán la manera en que han realizado el ejercicio. (Rubrics son dispositivos útiles para proporcionar información al alumno.)"
+
+#: exe/engine/casestudyidevice.py:93
+msgid ""
+"_: suggested by paco"
+"Create the case story. A good case is one \n"
+"that describes a controversy or sets the scene by describing the characters \n"
+"involved and the situation. It should also allow for some action to be taken \n"
+"in order to gain resolution of the situation."
+msgstr ""
+"Crear un estudio de caso. Un buen caso es uno  \n"
+"que describe una controversia o proponer una escena describiendo los carácteres \n"
+"involucrados y la situación. Esto también permite acciones \n"
+"para mejorar la resolución de la situación."
+
+#: exe/webui/common.py:240
+msgid ""
+"_: suggested by paco"
+"Confirm and submit"
+""
+msgstr "Confirme y envíe"
+
+#: exe/webui/element.py:716
+msgid ""
+"_: suggested by paco"
+"Cloze Text"
+""
+msgstr "Texto con espacios en blanco."
+
+#: exe/engine/galleryidevice.py:504
+msgid ""
+"_: suggested by paco"
+"Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
+""
+msgstr "Haga un clic sobre el botón de agregar imágenes para seleccionar un archivo de imagen. La imagen aparecerá en la parte inferior dónde podrá ser etiquetada. Es una buena práctica indicar el tamaño en la etiqueta de la imagen."
+
+#: exe/engine/field.py:139
+msgid ""
+"_: suggested by paco"
+"Click Here"
+""
+msgstr "haga click aquí"
+
+#: exe/webui/common.py:281 exe/webui/common.py:284
+msgid ""
+"_: suggested by paco"
+"Click for completion instructions"
+""
+msgstr "Haga clic aquí para completar las instrucciones"
+
+#: exe/webui/reflectionblock.py:89
+msgid ""
+"_: suggested by paco"
+"Click here"
+""
+msgstr "Haga click aquí"
+
+#: exe/engine/attachmentidevice.py:57
+msgid ""
+"_: suggested by paco"
+"Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
+""
+msgstr "Haga click en <strong>seleccionar archivo</strong>, busque el archivo que usted desea adjuntar y selecciónelo."
+
+#: exe/engine/imagemagnifieridevice.py:48
+msgid ""
+"_: suggested by paco"
+"Click \n"
+"on the picture below or the \"Add Image\" button to select an image file to be \n"
+"magnified."
+msgstr ""
+"Haga \"Click\" \n"
+"en la imagen de abajo o en el botón de \"Añadir Imagen\" para seleccionar un archivo de imagen para ser \n"
+"ampliado."
+
+#: exe/engine/imagemagnifieridevice.py:61
+msgid ""
+"_: suggested by paco"
+"Choose the size you want \n"
+"your image to display at. The measurements are in pixels. Generally, 100 \n"
+"pixels equals approximately 3cm. Leave both fields blank if you want the \n"
+"image to display at its original size."
+msgstr ""
+"Escoja el tamaño para \n"
+"mostrar la imagen. Los medidas son en \"pixels\". Generalmente, 100 \n"
+"pixels es mas o menos igual a 3 cm.Deje los campos en blanco si desea mostrar la imagen con su tamaño original."
+
+#: exe/engine/casestudyidevice.py:54
+msgid ""
+"_: suggested by paco"
+"Choose an optional image to be shown to the student on completion of this question"
+""
+msgstr "Escoger una imagen opcional para que sea mostrada al estudiante cuando complete la pregunta"
+
+#: exe/webui/element.py:734
+msgid ""
+"_: suggested by paco"
+"Check Caps?"
+""
+msgstr "¿Marcar Mayúsculas?"
+
+#: exe/engine/casestudyidevice.py:72
+msgid ""
+"_: suggested by paco"
+"Case Study"
+""
+msgstr "Estudio de Caso"
+
+#: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
+#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
+#: exe/idevices/flashmovieblock.py:83
+msgid ""
+"_: suggested by paco"
+"Caption:"
+""
+msgstr "texto al pié"
+
+#: exe/engine/casestudyidevice.py:72
+msgid ""
+"_: suggested by paco"
+"Case Study"
+""
+msgstr "Estudio de caso"
+
+#: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
+#: exe/webui/flashwithtextblock.py:84 exe/webui/multimediablock.py:87
+#: exe/idevices/flashmovieblock.py:83
+msgid ""
+"_: suggested by paco"
+"Caption:"
+""
+msgstr "Pié de foto"
+
+#: exe/webui/editorelement.py:145
+msgid ""
+"_: suggested by paco"
+"Button Caption"
+""
+msgstr "Boton de pié de foto"
+
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid ""
+"_: suggested by paco"
+"Auckland University of Technology"
+""
+msgstr "Universidad Tecnológica de Auckland"
+
+#: exe/engine/attachmentidevice.py:99
+#, python-format
+msgid ""
+"_: suggested by paco"
+"Attachment %s has no parentNode"
+""
+msgstr "El fichero adjunto %s no tiene nodo matriz"
+
+#: exe/engine/attachmentidevice.py:41
+msgid ""
+"_: suggested by paco"
+"Attachment"
+""
+msgstr "Fichero adjunto"
+
+#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:435
+msgid ""
+"_: suggested by paco"
+"An activity can be defined as a task or set of tasks a learner must\n"
+"complete. Provide a clear statement of the task and consider any conditions\n"
+"that may help or hinder the learner in the performance of the task."
+msgstr "Una actividad puede ser definida como una tarea o conjunto de tareas que un estudiante debe completar. Proporcione una declaración clara de la tarea y considere cualquier condicion que pueda ayudar o estorbar al estudiante en el desarrollo de la tarea."
+
+#: exe/engine/multichoiceidevice.py:59
+msgid ""
+"_: suggested by paco"
+"Although more often used in formal testing \n"
+"situations MCQs can be used as a testing tool to stimulate thought and  \n"
+"discussion on topics students may feel a little reticent in responding to. \n"
+"\n"
+"When designing a MCQ test consider the following:\n"
+"<ul>\n"
+"<li> What learning outcomes are the questions testing</li>\n"
+"<li>    What intellectual skills are being tested</li>\n"
+"<li> What are the language skills of the audience</li>\n"
+"<li> Gender and cultural issues</li>\n"
+"<li> Avoid grammar language and question structures that might provide \n"
+"     clues</li>\n"
+"</ul>\n"
+" "
+msgstr ""
+"Aunque es usado muy a menudo en situaciones de pruebas formales los MCQs pueden ser usados como herramientas de prueba que estimulan el pensamiento y la discusión sobre topicos donde los estudiantes pueden sentirse un poco reacios a responder. \n"
+"<ul>\n"
+" Cuando se diseña una evaluación de MCQ considere lo siguiente: \n"
+"<li>Que las preguntas de evaluación sean sobre objetivos de aprendizaje</li>\n"
+"<li>Qué habilidades intelectuales están siendo evaluadas </li>\n"
+"<li>Cuáles son la habilidades lingüísticas de la audiencia </li>\n"
+"<li>Asuntos de género y cuestiones culturales </li>\n"
+"<li>Evitar que la gramatica del lenguaje y la estructura de la pregunta contengan pistas </li>\n"
+"</ul>"
+
+#: exe/engine/clozeidevice.py:160
+msgid ""
+"_: suggested by paco"
+"Allow auto completion when user filling the gaps."
+""
+msgstr ""
+"Permitir auto completar cuando \n"
+"el usuario está llenando los espacios."
+
+#: exe/engine/field.py:524
+msgid ""
+"_: suggested by paco"
+"Allow auto completion when \n"
+"                                       user filling the gaps."
+msgstr ""
+"Permitir auto completar cuando \n"
+"el usuario está llenando los espacios."
+
+#: exe/engine/imagemagnifieridevice.py:65
+#: exe/engine/imagemagnifieridevice.py:88
+msgid ""
+"_: suggested by paco"
+"Alignment allows you to \n"
+"choose where on the screen the image will be positioned."
+msgstr ""
+"La alineación le permite \n"
+"escoger donde estará posicionada la imagen en la pantalla. "
+
+#: exe/engine/multimediaidevice.py:74
+msgid ""
+"_: suggested by paco"
+"Alignment allows you to \n"
+"choose where on the screen the media player will be positioned."
+msgstr ""
+"LA alineación le permite \n"
+"escoger donde se posicionará el reproductor de medios en la pantalla. "
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by paco"
+"---Move To---"
+""
+msgstr "---Mover a---"
+
+#: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
+#: exe/xului/mainpage.py:366
+msgid ""
+"_: suggested by paco"
+". Please use ASCII names."
+""
+msgstr ". Por favor, utilice nombres en ASCII."
+
+#: exe/idevices/appletidevice.py:60
+msgid ""
+"_: suggested by paco"
+"\"Find the .txt file (in the applet file) \n"
+"and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
+"code field."
+msgstr ""
+"\"Localice el archivo .txt (en el archivo del subprograma (applet)) \n"
+" y ábralo. Copie los contenidos de este archivo <ctrl A, ctrl C> en el campo de código del subprograma (applet)."
+
+#: exe/webui/block.py:224
+msgid ""
+"_: suggested by paco"
+"---Move To---"
+""
+msgstr "---Mover a---"
+
+#: exe/xului/mainpage.py:240 exe/xului/mainpage.py:299
+#: exe/xului/mainpage.py:366
+msgid ""
+"_: suggested by paco"
+". Please use ASCII names."
+""
+msgstr ". Por favor, use nombres ASCII."
+
+#: exe/engine/clozeidevice.py:58
+msgid ""
+"_: suggested by paco"
+"<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
+""
+msgstr "<dl>  <dt>Si su objetivo es probar la comprensión de los conceptos de base o la comprensión lectora:  </dt>  <dd>    <p>  escriba un resumen del concepto o lectura  lo bastante extensa para adecuar la prueba al objetivo de conocimiento, pero lo bastante corta para no inducir a fatiga. Algo menos de una sola página es probablemente lo adecuado, incluso considerablemente menos para alumnos jóvenes o principiantes.  </p>    <p> Escoja la palabras en el texto que sirvan de clave para comprender los conveptos. Estas serán posiblemente verbos, nombres y adverbios clave. Escoja alternativas con una respuesta clara. /p>  </dd>  <dt>Si su objetivo es probar conocimiento de vocabulario: </dt>  <dd><p> escriba un texto utilizando el vocabulario objetivo. Este texto debe ser coherente y cohesivo, y de una extensión adecuada. Marque las palabras objetivo en el texto. Escoja alternativas con una respuesta clara.</p>  </dd>  <dt>Si su objetivo es probar la formación o las funciones de palabras: </dt>  <dd>  <p> escriba un texto utilizando la forma objetivo. Este texto debe ser coherente y cohesivo, y de una extensión adecuada. Recuerde que el objetivo no es el conocimiento de vocabulario, así, los significados esenciales de la palabra raíz han de ser bien conocidos por los alumnos.  </p>  <p>Marque las palabras objetivo en el texto. Proporcione alternativas con la misma raíz de la palabra, pero con diversos afijos. Es una buena idea que un colega pruebe el examen o el ejercicio para asegurarse de que no hay sorpresas./p>  </dd></dl>"
+
+#: exe/engine/imagewithtextidevice.py:41
+msgid ""
+"_: suggested by paco"
+"<p>\n"
+"The image with text iDevice can be used in a number of ways to support both\n"
+"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
+"content. \n"
+"</p><p>\n"
+"<b>Integrating visuals with verbal summaries</b>\n"
+"</p><p>\n"
+"Cognitive psychologists indicate that presenting learners with a\n"
+"representative image and corresponding verbal summary (that is presented\n"
+"simultaneously) can reduce cognitive load and enhance learning retention.\n"
+"This iDevice can be used to present an image (photograph, diagram or\n"
+"graphic) with a brief verbal summary covering the main points relating to\n"
+"the image. For example, if you were teaching the functions of a four-stroke\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
+"the piston with a brief textual summary of the key aspects of each visual.\n"
+"</p>"
+msgstr ""
+"<p>\n"
+"El iDevice Imagen con texto  puede  utilizarse de algunas maneras para apoyar ambas dimensiones de contenido eXe: la emocional (afectiva) y la de actividad de aprendizaje (cognitiva)\n"
+" </p><p>\n"
+"<b>Integración de resúmenes visuales y verbales</b>\n"
+"</p><p>\n"
+"Los psicólogos cognitivos indican que presentar a los alumnos con una imagen representativa y un resumen verbal (presentado simultáneamente), puede reduci la carga cognitiva y aumentar la retención de aprendizaje. Este iDevice puede usarse para presentar una imagen (foto, diagrama o gráfico) con un breve resumen verbal que cubra los puntos principales relativos a la imagen. Por ejemplo, si estuvieras explicando las funciones de un motor de cuatro tiempos, podrías tener una visual de cada una de las posiciones del pistón con un breve resumen verbal de los aspectos clave de cada visual.</p>"
+
+#: exe/engine/multimediaidevice.py:50
+msgid ""
+"_: suggested by paco"
+"<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
+""
+msgstr "<ol>  <li>Haga clic;&lt;seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en la que quiere que se muestre el archivo.</li><li>Escriba un subtítulo opcional para su archivo.</li> <li>Asocie cualquier texto relevante al archivo MP3.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice. Por ejemplo, 'Énfasis' aplica un borde y un icono al contenido del iDevice mostrado.</li></ol>"
+
+#: exe/engine/attachmentidevice.py:60
+msgid ""
+"_: suggested by paco"
+"<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
+""
+msgstr "<p>Asigne una etiqueta para el archivo adjunto.  Es útil incluir el tipo de archivo. Ej. pdf, ppt, etc.</p><p>También se recomienda incluir el tamaño, de forma que después de que su paquete se exporte a un sitio web, los usuarios tendrán una idea de cuánto tiempo supondría la descarga de este archivo adjunto. </p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
+
+#: exe/engine/clozeidevice.py:46
+msgid ""
+"_: suggested by paco"
+"<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
+""
+msgstr "<p>Los ejercicios Cloze son textos u oraciones donde los estudiantes deben completar las palabras que faltan. Este tipo de ejercicios se usa para diversos propósitos:</p><ol><li>para comprobar los conocimientos de los conceptos clave de un curso (esto podría ser un pre-control, una prueba formativa o una prueba sumativa).</li><li>Para comprobar la comprensión lectora.</li><li>Para comprobar el conocimiento en vocabulario.</li><li>Para comprobar la competencia gramatical. </li></ol>"
+
+#: exe/engine/clozeidevice.py:122
+msgid ""
+"_: suggested by paco"
+"<p>Enter the text for the cloze activity in to the cloze field \n"
+"by either pasting text from another source or by typing text directly into the \n"
+"field.</p><p> To select words to hide, double click on the word to select it and \n"
+"click on the Hide/Show Word button below.</p>"
+msgstr "<p>Esriba el texto para la actividad cloze dentro del campo cloze bien pegando texto de otra fuente o tecleando el texto diretamente en el campo.</p><p> Para seleccionar las palabras a esconder, haga doble clic en la palabra para seleccionarla, y pulse en el botón Esconder/Mostrar palabra de abajo."
+
+#: exe/engine/field.py:462
+msgid ""
+"_: suggested by paco"
+"<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
+""
+msgstr "<p>Si lo deja sin marcar, un pequeño número de errores de deletreo y mayúsculas será aceptado. Si lo deja marcado, solo serán aceptados un número exacto de aciertos de deletreo y mayúsculas. </p><p><strong>Por ejemplo: si la respuesta correcta es <code>Elefante</code>, entonces  tanto <code>elefante</code> como <code>elifante</code> serán juzgadas lo <em>bastante próximas</em> por el algoritmo como si solo hubier una letra incorrecta, incluso si \"Comprobar mayúsculas\" está activa. </p><p>Si el control de mayúsculas está inactivo en el ejemplo anterior, la minúscula e no será considerada un error y <code>elifante</code> será aceptada. </p><p>Si \"Nota exacta\" y \"Comprobar mayúsculas\" están unidas, la única respuesta correcta es \"Elefante\". Si solo está marcada \"Nota exacta\" y \"Comprobar mayúsculas\" no, \"elfante\" srá también aceptado.</p>"
+
+#: exe/engine/field.py:483
+msgid ""
+"_: suggested by paco"
+"<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
+""
+msgstr "<p>Si esta opción esta marcada, las respuestas enviadas con una mayúscula diferente serán marcadas como incorrectas.</p>"
+
+#: exe/engine/field.py:488
+msgid ""
+"_: suggested by paco"
+"<p>If this option is set, each word will be marked as the \n"
+"learner types it rather then all the words being marked the end of the \n"
+"exercise.</p>"
+msgstr ""
+"<p>Si esta opción esta fijada, cada palabra será marcadacomo \n"
+" la escriba el alumno, mejor dicho, todas las  palabras serán marcadas del principio al final del ejercicio.</p>"
+
+# This is a comment
+#: exe/engine/idevicestore.py:247
+msgid ""
+"_: suggested by paco"
+"<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
+""
+msgstr "<p>Los profesores deben recordar lo siguiente cuando estén usando este iDevice:</p><ol><li>Piensa en el número de tipos diferentes de actividades planificadas para tu recurso que serán señaladas visualmente en el contenido. Trata de no usar demasiados tipos o clasificaciones de actividades para que el estudiante no se confunda. Normalmente, tres o cuatro tipos son más que suficiente por un recurso de enseñanza.</li><li>Desde una perspectiva de diseño visual, trata de no poner dos iDevices juntos sin texto entre ellos. Si esto es necesario, une los dos IDevices en uno.</li><li>Piensa en actividades donde el beneficio percibido de llevarla a cabo el actividad pese más que el tiempo y el esfuerzo que se toma en completar la actividad. </li></ol>"
+
+#: exe/webui/element.py:734
+msgid ""
+"_: suggested by paco"
+"Check Caps?"
+msgstr "¿Comprobar mayúsculas?"
+
+#: exe/idevices/forumelement.py:103
+msgid ""
+"_: suggested by paco"
+"Can a student post to this forum?:"
+msgstr "¿Puede un alumno enviar mensajes a este foro?:"
+
+#: exe/xului/mainpage.py:238 exe/xului/mainpage.py:297
+#: exe/xului/mainpage.py:364
+msgid ""
+"_: suggested by paco"
+"Cannot access directory named "
+msgstr "No se puede acceder al directorio llamado_"
+
+#: exe/webui/wikipediablock.py:92
+msgid ""
+"_: suggested by paco"
+"Chinese Wikipedia Article"
+msgstr "Artículo De Wikipedia en chino"
+
+#: exe/engine/casestudyidevice.py:54
+msgid ""
+"_: suggested by paco"
+"Choose an optional image to be shown to the student on completion of this question"
+msgstr "Escoja una imagen opcional para ser mostrada al alumno como finalización de esta pregunta."

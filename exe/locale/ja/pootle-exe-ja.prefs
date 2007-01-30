@@ -1,6 +1,6 @@
-# Pootle preferences for project exe, language jp
+# Pootle preferences for project exe, language ja
 
 rights:
-  Jun = u'view, translate, review, archive, pocompile, assign'
-  default = u'view, suggest, archive, pocompile'
-  nobody = u'view'
+	default = u'view, suggest, archive, pocompile'
+	nobody  = u'view'
+

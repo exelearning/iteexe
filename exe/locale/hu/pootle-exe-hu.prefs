@@ -1,7 +1,6 @@
-
 # Pootle preferences for project exe, language hu
 
 rights:
-  default = u'view, suggest, archive, pocompile'
-  bard = u'view, translate, review, archive, pocompile'
-  nobody = u'view'
+	default = u'view, suggest, archive, pocompile'
+	nobody  = u'view'
+
