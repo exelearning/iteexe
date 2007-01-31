@@ -64,7 +64,7 @@ files, once loaded will be displayed beneath the Applet code field.""")
         self._codeInstruc      = x_(u""""Find the .txt file (in the applet file) 
 and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet 
 code field.""")
-        self._typeInstruc     = x_(u"Please choose a applet type.")
+        self._typeInstruc     = x_(u"Please choose an applet type.")
         self.message          = ""
         
     # Properties    
