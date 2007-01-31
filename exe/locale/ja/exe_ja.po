@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-01-31 15:22+1200\n"
+"PO-Revision-Date: 2007-01-31 16:18+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -70,6 +70,22 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"The image with text iDevice can be used in a number of ways to support both\n"
+"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
+"content. \n"
+"</p><p>\n"
+"<b>Integrating visuals with verbal summaries</b>\n"
+"</p><p>\n"
+"Cognitive psychologists indicate that presenting learners with a\n"
+"representative image and corresponding verbal summary (that is presented\n"
+"simultaneously) can reduce cognitive load and enhance learning retention.\n"
+"This iDevice can be used to present an image (photograph, diagram or\n"
+"graphic) with a brief verbal summary covering the main points relating to\n"
+"the image. For example, if you were teaching the functions of a four-stroke\n"
+"combustion engine, you could have a visual for each of the four positions of\n"
+"the piston with a brief textual summary of the key aspects of each visual.\n"
+"</p>"
 
 #: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
@@ -314,7 +330,7 @@ msgstr "アプレットコード"
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
-msgstr ""
+msgstr "記事"
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
@@ -351,7 +367,7 @@ msgstr "キャンセル"
 #: exe/xului/mainpage.py:295
 #: exe/xului/mainpage.py:358
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "という名前のディレクトリーにアクセスできません"
 
 #: exe/webui/imagemagnifierblock.py:92
 #: exe/webui/imagewithtextblock.py:84
@@ -372,7 +388,7 @@ msgstr "画像の変更"
 
 #: exe/webui/element.py:742
 msgid "Check Caps?"
-msgstr ""
+msgstr "大文字と小文字の区別"
 
 #: exe/webui/wikipediablock.py:85
 msgid "Chinese Wikipedia Article"
@@ -392,7 +408,7 @@ msgstr "画像を選択する"
 
 #: exe/engine/casestudyidevice.py:54
 msgid "Choose an image to be shown to the student on completion of this question"
-msgstr ""
+msgstr "学生がこの質問に答えた後、提示する画像を選んでください"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -656,17 +672,17 @@ msgstr "英語ウィキペディア記事"
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
-msgstr ""
+msgstr "ファイルに関連するテキストを挿入してください"
 
 #: exe/engine/multichoiceidevice.py:87
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
-msgstr ""
+msgstr "ここにヒントを記入してください。もしヒントを提供しないならば、この領域は空白のままにしておいてください。"
 
 #: exe/engine/multichoiceidevice.py:126
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr ""
+msgstr "ここにヒントを記入してください。もし、ヒントを提供しない場合は、この領域を空白のままにしておいて下さい。"
 
 #: exe/engine/wikipediaidevice.py:71
 #: exe/engine/wikipediaidevice.py:248
@@ -681,7 +697,7 @@ msgstr ""
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr ""
+msgstr "学習に役立つ質問を入力してください。"
 
 #: exe/engine/galleryidevice.py:503
 msgid "Enter a title for the gallery"
@@ -769,7 +785,7 @@ msgstr ""
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
-msgstr ""
+msgstr "画像に関するテキストを入力してください。"
 
 #: exe/engine/multimediaidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:54
@@ -940,7 +956,7 @@ msgstr "フィードバックを隠す"
 
 #: exe/webui/element.py:732
 msgid "Hide/Show Word"
-msgstr ""
+msgstr "単語を隠す／表示する"
 
 #: exe/webui/multichoiceblock.py:158
 #: exe/webui/multichoiceblock.py:183
@@ -1073,7 +1089,7 @@ msgstr "フォーラムへのリンク"
 #: exe/webui/wikipediablock.py:109
 #: exe/webui/rssblock.py:87
 msgid "Load"
-msgstr ""
+msgstr "ロード"
 
 #: exe/engine/multimediaidevice.py:40
 msgid "MP3"
@@ -1724,7 +1740,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:179
 msgid "This article is licensed under the "
-msgstr ""
+msgstr "この記事は次のもとで許可を受けています"
 
 #: exe/engine/imagemagnifieridevice.py:71
 #: exe/engine/imagemagnifieridevice.py:95
@@ -1783,7 +1799,7 @@ msgstr "タイトル"
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
-msgstr ""
+msgstr "正しい解答を表示するために、正しい解答の横にあるラジオボタンをクリックしてください。"
 
 #: exe/engine/package.py:79
 msgid "Topic"
@@ -1836,7 +1852,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:309
 #: exe/engine/idevicestore.py:416
 msgid "Type the learning objectives for this resource."
-msgstr ""
+msgstr "このリソースに対する学習目標を記述してください。"
 
 #: exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
@@ -1916,7 +1932,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:494
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr ""
+msgstr "表示する画像が多いときにはこのiDeviceを利用します"
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
@@ -1987,7 +2003,7 @@ msgstr ""
 
 #: exe/webui/wikipediablock.py:194
 msgid "article "
-msgstr ""
+msgstr "記事"
 
 #: exe/webui/element.py:288
 #: exe/webui/element.py:608
@@ -2086,7 +2102,7 @@ msgstr ""
 #: id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
-msgstr ""
+msgstr "プロジェクトの特性"
 
 #: exe/xului/templates/properties.xul:<tab
 #: id="tabPackage" label="Package">
@@ -2365,7 +2381,7 @@ msgstr "O"
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
 #: display">
 msgid "Update Tree"
-msgstr ""
+msgstr "ツリーをアップデートします"
 
 #: exe/xului/templates/dublincore.xul:<menulist
 #: onchange="this.style.color =
@@ -2672,7 +2688,7 @@ msgstr ""
 #: value="br" id="dcmibr"
 #: label="Breton ">
 msgid "Breton "
-msgstr ""
+msgstr "ブルトン語"
 
 #: exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="addChild"
@@ -2696,7 +2712,7 @@ msgstr "名前変更"
 #: value="ca" id="dcmica"
 #: label="Catalan ">
 msgid "Catalan "
-msgstr ""
+msgstr "カタロニア語"
 
 #: exe/xului/templates/mainpage.xul:<label
 #: n:render="outlinePane"
@@ -2709,7 +2725,7 @@ msgstr ""
 #: value="ce" id="dcmice"
 #: label="Chechen ">
 msgid "Chechen "
-msgstr ""
+msgstr "チェチェン語"
 
 #: exe/xului/templates/mainpage.xul:<label
 #: value="iDevices"
@@ -2734,7 +2750,7 @@ msgstr ""
 #: value="co" id="dcmico"
 #: label="Corsican ">
 msgid "Corsican "
-msgstr ""
+msgstr "コルシカ方言"
 
 #: exe/xului/templates/mainpage.xul:<tab
 #: n:render="translate"
@@ -2746,7 +2762,7 @@ msgstr "編集"
 #: value="cs" id="dcmics"
 #: label="Czech ">
 msgid "Czech "
-msgstr ""
+msgstr "チェコ語"
 
 #: exe/xului/templates/mainpage.xul:<tab
 #: n:render="translate"
@@ -2896,7 +2912,7 @@ msgstr ""
 #: value="gv" id="dcmigv"
 #: label="Manx ">
 msgid "Manx "
-msgstr ""
+msgstr "マン島語"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="ha" id="dcmiha"
@@ -2932,7 +2948,7 @@ msgstr "クロアチア語"
 #: value="hu" id="dcmihu"
 #: label="Hungarian ">
 msgid "Hungarian "
-msgstr ""
+msgstr "ハンガリー語"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="hy" id="dcmihy"
@@ -3004,7 +3020,7 @@ msgstr "日本語"
 #: value="jv" id="dcmijv"
 #: label="Javanese ">
 msgid "Javanese "
-msgstr ""
+msgstr "ジャワ語"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="ka" id="dcmika"
@@ -3028,7 +3044,7 @@ msgstr ""
 #: value="kk" id="dcmikk"
 #: label="Kazakh ">
 msgid "Kazakh "
-msgstr ""
+msgstr "カザフ語"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="kl" id="dcmikl"
@@ -3172,7 +3188,7 @@ msgstr ""
 #: value="ms" id="dcmims"
 #: label="Malay ">
 msgid "Malay "
-msgstr ""
+msgstr "マレー語"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="mt" id="dcmimt"
@@ -3394,7 +3410,7 @@ msgstr ""
 #: value="sm" id="dcmism"
 #: label="Samoan ">
 msgid "Samoan "
-msgstr ""
+msgstr "サモア語"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="sn" id="dcmisn"
@@ -3624,7 +3640,7 @@ msgstr "ズールー語"
 #: style="width:8em"
 #: tooltiptext="A reference to a related resource.">
 msgid "Relation:"
-msgstr ""
+msgstr "関連："
 
 #: exe/xului/templates/dublincore.xul:<label
 #: value="Coverage:"
@@ -3642,7 +3658,7 @@ msgstr ""
 #: tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Rights:"
-msgstr ""
+msgstr "権利："
 
 #: exe/xului/templates/dublincore.xul:<description
 #: id="dcDescRights">
