@@ -672,8 +672,20 @@ this iDevice.""")
                 self.flashResource.delete()
             try:
                 flvDic = FLVReader(resourceFile)
-                self.height = flvDic.get("height", 100) + 30        
-                self.width  = flvDic.get("width", 100)
+                height = flvDic.get("height", None)
+                width = flvDic.get("width", None)
+                if not width and not height:
+                    # If we have no width or height, default to 100x130
+                    self.width = 100
+                    self.height = 130
+                else:
+                    # If we have one, make it squareish
+                    # If we have both, use them
+                    if height: self.height = height 
+                    else: self.height = width 
+                    if width: self.width = width
+                    else: self.width =height 
+                    
                 self.flashResource = Resource(self.idevice, resourceFile)
             except AssertionError: 
                 log.error('File %s is not a flash movie' % resourceFile)
@@ -734,14 +746,14 @@ class MathField(Field):
         Field.__init__(self, name, instruc)
         self._latex      = latex # The latex entered by the user
         self.gifResource = None
-        self.fontsize = 4
-        self.instruc     = x_(u""
-        "<p>" 
-        "Select symbols from the text editor below or enter LATEX manually"
-        " to create mathematical formula."
-        " To preview your LATEX as it will display use the &lt;Preview&gt;"
-        " button below.")
-        "</p>"
+        self.fontsize    = 4
+        self._instruc    = x_(u""
+            "<p>" 
+            "Select symbols from the text editor below or enter LATEX manually"
+            " to create mathematical formula."
+            " To preview your LATEX as it will display use the &lt;Preview&gt;"
+            " button below."
+            "</p>")
         self._previewInstruc = x_("""Click on Preview button to convert 
                                   the latex into an image.""")
 
@@ -788,6 +800,7 @@ class MathField(Field):
     
     latex = property(get_latex, set_latex)
     gifURL = property(get_gifURL)
+    instruc = lateTranslate('instruc')
     previewInstruc = lateTranslate('previewInstruc')
     
 # ===========================================================================
