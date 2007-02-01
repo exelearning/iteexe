@@ -48,7 +48,7 @@ files = { '../Resources/exe': ["README",
         }
 
 
-def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
+def dataFiles(baseSourceDir, baseDestDir, sourceDirs, excludes=[]):
     """Recursively get all the files in these directories"""
     baseSourceDir = Path(baseSourceDir)
     baseDestDir = Path(baseDestDir)
@@ -60,13 +60,15 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
                 continue
             newExtDir = baseSourceDir.relpathto(subDir)
             fileList = files.setdefault(baseDestDir/newExtDir, [])
-            fileList += subDir.files()
-              
+            for file in subDir.files():
+                if file.name not in excludes:
+                    fileList.append(file)
     
 # Add all the webui dirs
 dataFiles('exe/webui', '../Resources/exe', 
           ['style', 'css', 'docs', 'images', 'scripts',
-           'linux-profile', 'firefox', 'templates'])
+           'linux-profile', 'firefox', 'templates'],
+          excludes=['mimetex.cgi', 'mimetex.64.cgi', 'mimetex.exe'])
 
 # Add in the 
 dataFiles('exe', '../Resources/exe', ['locale'])

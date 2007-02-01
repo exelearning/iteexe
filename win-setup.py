@@ -40,20 +40,21 @@ g_files = { '.': ["README",
                   "installs/windows/eXe_flashmovie_update.exe"]}
 g_oldBase = "exe/webui"
 g_newBase = "."
-def dataFiles(dirs):
+def dataFiles(dirs, excludes=[]):
     """Recursively get all the files in these directories"""
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
             if os.path.isfile(file):
                 path = file[len(g_oldBase)+1:]
-                dir  = g_newBase + "/" + os.path.dirname(path)
-                if dir in g_files:
-                    g_files[dir].append(file)
-                else:
-                    g_files[dir] = [file]
+                dir = os.path.join(g_newBase, os.path.dirname(path))
+                if os.path.basename(path) not in excludes:
+                    if dir in g_files:
+                        g_files[dir].append(file)
+                    else:
+                        g_files[dir] = [file]
 
             elif os.path.isdir(file):
-                dataFiles(glob.glob(file+"/*"))
+                dataFiles(glob.glob(file+"/*"), excludes)
                 
 dataFiles(["exe/webui/style",
            "exe/webui/css",
@@ -62,7 +63,8 @@ dataFiles(["exe/webui/style",
            "exe/webui/linux-profile",
            "exe/webui/scripts",
            "exe/webui/schemas",
-           "exe/webui/templates"])
+           "exe/webui/templates"],
+           excludes = ['mimetex.cgi', 'mimetex.64.cgi', 'mimetex-darwin.cgi'])
 
 g_oldBase = "exe"
 g_newBase = "."
