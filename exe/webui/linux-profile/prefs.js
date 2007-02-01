@@ -38,3 +38,6 @@ user_pref("urlclassifier.tableversion.goog-black-enchash", "1.14444");
 user_pref("urlclassifier.tableversion.goog-black-url", "1.7417");
 user_pref("urlclassifier.tableversion.goog-white-domain", "1.18");
 user_pref("urlclassifier.tableversion.goog-white-url", "1.371");
+user_pref("app.update.auto", false);
+user_pref("app.update.enabled", false);
+user_pref("extensions.update.enabled", false);
