@@ -45,6 +45,12 @@ class Question(Persistable):
         """
         self.question  = u''
         self.feedback  = u''
+        self.setupImage(idevice)
+
+    def setupImage(self, idevice):
+        """
+        Creates our image field
+        """
         self.image = ImageField(x_(u"Image"),
                                 x_(u"Choose an optional image to be shown to the student "
                                     "on completion of this question")) 
