@@ -1,3 +1,10 @@
+Version 0.20.1 - Arachnidian Avondale (bug-less)
+* Improved ability to upgrade projects made with version 0.19 and earlier
+* Updated Japanese and Chinese translations
+* Removed access to SCORM2004 export
+* Fix translation ability of math field
+* Disable Firefox update check
+
 Version 0.20 - Arachnidian Avondale
 * Improved IDevice Editor
 * Geogebra iDevice
