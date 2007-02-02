@@ -89,8 +89,8 @@ class GenericIdevice(Idevice):
         if self.nextFieldId == 0:
             maxId = 0
             for field in self.fields:
-                if field.getFieldId() > maxId:
-                    maxId = field.getFieldId()
+                if field.id > maxId:
+                    maxId = field.id
                     self.nextFieldId = maxId 
 
     def __iter__(self):

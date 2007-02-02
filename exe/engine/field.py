@@ -43,7 +43,7 @@ class Field(Persistable):
     rendered as an XHTML element
     """
     # Class attributes
-    persistenceVersion = 1
+    persistenceVersion = 2
     nextId = 1
 
     def __init__(self, name, instruc=""):
@@ -73,12 +73,6 @@ class Field(Persistable):
         return fieldId
     id = property(getId)
             
-    def getFieldId(self):
-        """
-        return the field id
-        """
-        return self._id
-    
     def setIDevice(self, idevice):
         """
         Gives ourselves a new ID unique to the new idevice.
@@ -106,6 +100,13 @@ class Field(Persistable):
         else:
             self._instruc = self.__dict__['instruction']
 
+    def upgradeToVersion2(self):
+        """
+        Upgrades to 0.21
+        """
+        if 'idevice' in self.__dict__:
+            self._idevice = self.__dict__['idevice']
+            del self.__dict__['idevice']
 
     def _upgradeFieldToVersion2(self):
         """
@@ -231,8 +232,9 @@ class ImageField(Field):
         Upgrades to exe v0.12
         """
         log.debug("ImageField upgrade field to version 2")
-        if self.imageName and self.idevice.parentNode:
-            self.imageResource = Resource(self.idevice, Path(self.imageName))
+        idevice = self.idevice or self.__dict__.get('idevice')
+        if self.imageName and idevice.parentNode:
+            self.imageResource = Resource(idevice, Path(self.imageName))
         else:
             self.imageResource = None
         del self.imageName
@@ -344,6 +346,7 @@ MP3 file. This will appear in the players title bar as well.""")
         """
         Upgrades to exe v0.20
         """
+        Field.upgradeToVersion2(self)
         if hasattr(Field, 'updateToVersion2'):
             Field.upgradeToVersion2(self)
         if hasattr(self.idevice, 'caption'):
@@ -566,6 +569,7 @@ exercise.</p>""")
         """
         Upgrades to exe v0.12
         """
+        Field.upgradeToVersion2(self)
         strictMarking = not self.autoCompletion
         del self.autoCompletion
         del self.autoCompletionInstruc
@@ -582,6 +586,7 @@ class FlashField(Field):
 
     def __init__(self, name, instruc=""):
         """
+        Set default elps.
         """
         Field.__init__(self, name, instruc)
         self.width         = 300
@@ -814,7 +819,6 @@ class QuizOptionField(Field):
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.idevice   = None
         self.question  = None
         self.answer    = ""
         self.isCorrect = False
@@ -857,7 +861,6 @@ class SelectOptionField(Field):
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.idevice   = None
         self.question  = None
         self.answer    = ""
         self.isCorrect = False
