@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-01 16:30+1200\n"
+"PO-Revision-Date: 2007-02-02 16:21+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -120,7 +120,7 @@ msgstr "<p>このオプションが設定された場合, 最後に一括して�
 
 #: exe/engine/idevicestore.py:249
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
+msgstr "<p>教師はこのiDeviceを利用する際は次の点を考慮する必要があります。</p><ol><li>あなたが利用する教材に対して利用する活動の種類と数については、よく考えて計画してください。あまりに多くの種類や、分類を用いた場合、学習者は混乱する可能性があります。通常１つの教材に対して３つか４つの種類を利用することが適当です。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめしますが、できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとが見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考えてください。</li></ol>"
 
 #: exe/engine/idevicestore.py:244
 msgid ""
@@ -140,7 +140,7 @@ msgid ""
 "copies in eXe, a fresh copy of the article will need to be taken. Likewise, \n"
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
-msgstr ""
+msgstr "<p>ウィキペディアのiDeviceの利用により、ウィキペディアにあるコンテンツを検索し、教材として取り込むことができます。ウィキペディア記事のiDeviceではウィキペディアの記事を瞬時に取り出すことができます。ウィキペディアの情報は度々更新されますが、eXeで取り込んだ内容は自動的に更新されるわけではありません。そのため更新された内容を取り込むには新規に取り込む必要があります。同様に、eXeで変更した内容はウィキペディアに反映されるわけではありません。</p> <p>ウィキペディアの内容はGNU free documentation licenseによって保護されています。</p>"
 
 #: exe/engine/idevicestore.py:352
 msgid ""
@@ -1995,7 +1995,7 @@ msgstr "ツールバーを利用するかテキストエリアに手動でLATEX�
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
-msgstr ""
+msgstr "あなたの作成した新規のiDeviceはこのタイトルでiDevice用の枠に表示されます。これは書き込み必須の領域ですのでiDeviceを作成する際にはラベルを入力してください。"
 
 #: exe/webui/wikipediablock.py:194
 msgid "article "
@@ -2028,7 +2028,7 @@ msgstr "eXe : ｅラーニングXHTMLエディター"
 #: exe/idevices/appletidevice.py:77
 #, python-format
 msgid "file %s has no parentNode"
-msgstr ""
+msgstr "ファイル %s はparentNodeを持っていません"
 
 #: exe/engine/wikipediaidevice.py:198
 msgid "http://en.wikipedia.org/"
@@ -2038,7 +2038,7 @@ msgstr "http://en.wikipedia.org/"
 #: exe/idevices/appletidevice.py:79
 #, python-format
 msgid "iDevice %s has no package"
-msgstr ""
+msgstr "iDevice %s はパッケージをもっていません"
 
 #: exe/engine/package.py:295
 #: exe/xului/templates/mainpage.xul:<menuitem
