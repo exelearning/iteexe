@@ -503,6 +503,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode" key="delNodeKey" label="Delete">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode" key="delNodeKey" label="Delete">
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode" key="delNodeKey" label="Delete">
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode" key="delNodeKey" label="Delete">
 msgid "Delete"
 msgstr ""
 
@@ -599,6 +600,8 @@ msgstr ""
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Description:" id="dcDescription" style="width:8em" tooltiptext="An account of the content of the resource.">
 #: exe/xului/templates/packageproperties.xul:<label value="Description:" id="ppDescription" style="width:8em" tooltiptext="An account of the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Description:" id="dcDescription" style="width:8em" tooltiptext="An account of the content of the resource.">
+#: exe/xului/templates/packageproperties.xul:<label value="Description:" id="ppDescription" style="width:8em" tooltiptext="An account of the content of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Description:" id="dcDescription" style="width:8em" tooltiptext="An account of the content of the resource.">
 msgid "Description:"
 msgstr ""
 
@@ -677,6 +680,9 @@ msgstr ""
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone" label="Done">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<button oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone" label="Done">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/exportproperties.xul:<button oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone" label="Done">
+#: exe/xului/templates/packageproperties.xul:<button oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone" label="Done">
+#: exe/xului/templates/dublincore.xul:<button oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone" label="Done">
+#: exe/xului/templates/exportproperties.xul:<button oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone" label="Done">
 #: exe/xului/templates/packageproperties.xul:<button oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone" label="Done">
 #: exe/xului/templates/dublincore.xul:<button oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone" label="Done">
 #: exe/xului/templates/exportproperties.xul:<button oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone" label="Done">
@@ -978,6 +984,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free Documentation License" id="ppmigfdl" label="GNU Free Documentation License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free Documentation License" id="ppmigfdl" label="GNU Free Documentation License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free Documentation License" id="ppmigfdl" label="GNU Free Documentation License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free Documentation License" id="ppmigfdl" label="GNU Free Documentation License">
 msgid "GNU Free Documentation License"
 msgstr ""
 
@@ -1243,6 +1250,7 @@ msgstr ""
 #: exe/idevices/forumelement.py:239 exe/idevices/flashmovieblock.py:77
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None" id="ppminone" label="None">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="None" id="ppminone" label="None">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="None" id="ppminone" label="None">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None" id="ppminone" label="None">
 msgid "None"
 msgstr ""
@@ -1540,6 +1548,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_language" label="Select Language">
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_language" label="Select Language">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_language" label="Select Language">
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_language" label="Select Language">
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr ""
@@ -2090,6 +2099,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr ""
 
@@ -2140,6 +2150,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata" label="Dublin Core Metadata">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata" label="Dublin Core Metadata">
 #: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata" label="Dublin Core Metadata">
+#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata" label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
 msgstr ""
 
@@ -2161,6 +2172,7 @@ msgstr ""
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks" label="SCORM 1.2 Options">
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks" label="SCORM 1.2 Options">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/exportproperties.xul:<caption id="ppScolinks" label="SCORM 1.2 Options">
+#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks" label="SCORM 1.2 Options">
 #: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks" label="SCORM 1.2 Options">
 msgid "SCORM 1.2 Options"
 msgstr ""
@@ -2184,6 +2196,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" label="Insert Package">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" label="Insert Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" label="Insert Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" label="Insert Package">
 msgid "Insert Package"
 msgstr ""
 
@@ -2205,6 +2218,7 @@ msgstr ""
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 #: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
 msgid "Dublin Core"
 msgstr ""
@@ -2228,6 +2242,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle" label="Project Properties">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<caption id="pptitle" label="Project Properties">
 #: exe/xului/templates/packageproperties.xul:<caption id="pptitle" label="Project Properties">
+#: exe/xului/templates/packageproperties.xul:<caption id="pptitle" label="Project Properties">
 msgid "Project Properties"
 msgstr ""
 
@@ -2249,6 +2264,7 @@ msgstr ""
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
+#: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 #: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
 msgid "Package"
 msgstr ""
@@ -2272,6 +2288,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle" style="width:8em" tooltiptext="The name given to the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle" style="width:8em" tooltiptext="The name given to the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle" style="width:8em" tooltiptext="The name given to the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle" style="width:8em" tooltiptext="The name given to the resource.">
 msgid "Title:"
 msgstr ""
 
@@ -2293,6 +2310,7 @@ msgstr ""
 #: exe/xului/templates/exportproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality." checked="false">
 #: exe/xului/templates/exportproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality." checked="false">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/exportproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality." checked="false">
+#: exe/xului/templates/exportproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality." checked="false">
 #: exe/xului/templates/exportproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add Previous/Next links within SCOs?" tooltiptext="Checking this box will cause eXe to add Previous and Next links to individual pages within your SCO. The LMS will also still add this kind of functionality." checked="false">
 msgid "Add Previous/Next links within SCOs?"
 msgstr ""
@@ -2316,6 +2334,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" label="Extract Package">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" label="Extract Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" label="Extract Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" label="Extract Package">
 msgid "Extract Package"
 msgstr ""
 
@@ -2337,6 +2356,7 @@ msgstr ""
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 #: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
 msgid "IEEE LOM"
 msgstr ""
@@ -2360,6 +2380,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:" id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Project Title:" id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 #: exe/xului/templates/packageproperties.xul:<label value="Project Title:" id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+#: exe/xului/templates/packageproperties.xul:<label value="Project Title:" id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
 msgid "Project Title:"
 msgstr ""
 
@@ -2381,6 +2402,7 @@ msgstr ""
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
+#: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 #: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
 msgid "Metadata"
 msgstr ""
@@ -2404,6 +2426,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator" style="width:8em" tooltiptext="An entity primarily responsible for making the content of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator" style="width:8em" tooltiptext="An entity primarily responsible for making the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator" style="width:8em" tooltiptext="An entity primarily responsible for making the content of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator" style="width:8em" tooltiptext="An entity primarily responsible for making the content of the resource.">
 msgid "Creator:"
 msgstr ""
 
@@ -2425,6 +2448,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild" keycode="VK_INSERT" id="addChildKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild" keycode="VK_INSERT" id="addChildKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="addChild" keycode="VK_INSERT" id="addChildKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="addChild" keycode="VK_INSERT" id="addChildKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="addChild" keycode="VK_INSERT" id="addChildKey">
 msgid "VK_INSERT"
 msgstr ""
@@ -2448,6 +2472,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:" id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a header (an image 100px high is recommended).">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Header Background:" id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a header (an image 100px high is recommended).">
 #: exe/xului/templates/packageproperties.xul:<label value="Header Background:" id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a header (an image 100px high is recommended).">
+#: exe/xului/templates/packageproperties.xul:<label value="Header Background:" id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a header (an image 100px high is recommended).">
 msgid "Header Background:"
 msgstr ""
 
@@ -2469,6 +2494,7 @@ msgstr ""
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
+#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 #: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
 msgid "Export"
 msgstr ""
@@ -2492,6 +2518,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of the content of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of the content of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of the content of the resource.">
 msgid "Subject:"
 msgstr ""
 
@@ -2513,6 +2540,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
 msgstr ""
@@ -2536,6 +2564,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<button oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load Image">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load Image">
 #: exe/xului/templates/packageproperties.xul:<button oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load Image">
+#: exe/xului/templates/packageproperties.xul:<button oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load Image">
 msgid "Load Image"
 msgstr ""
 
@@ -2557,6 +2586,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
 msgid ""
 "\n"
@@ -2586,6 +2616,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R" modifiers="control" id="renNodeKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R" modifiers="control" id="renNodeKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R" modifiers="control" id="renNodeKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R" modifiers="control" id="renNodeKey">
 msgid "R"
 msgstr ""
 
@@ -2607,6 +2638,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<button oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear Image">
 #: exe/xului/templates/packageproperties.xul:<button oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear Image">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear Image">
+#: exe/xului/templates/packageproperties.xul:<button oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear Image">
 #: exe/xului/templates/packageproperties.xul:<button oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear Image">
 msgid "Clear Image"
 msgstr ""
@@ -2630,6 +2662,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:" id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for making the resource available.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Publisher:" id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for making the resource available.">
 #: exe/xului/templates/dublincore.xul:<label value="Publisher:" id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for making the resource available.">
+#: exe/xului/templates/dublincore.xul:<label value="Publisher:" id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for making the resource available.">
 msgid "Publisher:"
 msgstr ""
 
@@ -2651,6 +2684,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
 msgid "VK_LEFT"
 msgstr ""
@@ -2674,6 +2708,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile" label="Tile background image?" checked="false">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile" label="Tile background image?" checked="false">
 #: exe/xului/templates/packageproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile" label="Tile background image?" checked="false">
+#: exe/xului/templates/packageproperties.xul:<checkbox oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile" label="Tile background image?" checked="false">
 msgid "Tile background image?"
 msgstr ""
 
@@ -2695,6 +2730,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An entity responsible for making contributions to the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An entity responsible for making contributions to the content of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An entity responsible for making contributions to the content of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An entity responsible for making contributions to the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An entity responsible for making contributions to the content of the resource.">
 msgid "Contributors:"
 msgstr ""
@@ -2718,6 +2754,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT" modifiers="control" id="demoteKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT" modifiers="control" id="demoteKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT" modifiers="control" id="demoteKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT" modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
 msgstr ""
 
@@ -2739,6 +2776,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author of the resource.">
 #: exe/xului/templates/packageproperties.xul:<label value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author of the resource.">
+#: exe/xului/templates/packageproperties.xul:<label value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author of the resource.">
 #: exe/xului/templates/packageproperties.xul:<label value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author of the resource.">
 msgid "Author:"
 msgstr ""
@@ -2762,6 +2800,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate" style="width:8em" tooltiptext="A date of an event in the lifecycle of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate" style="width:8em" tooltiptext="A date of an event in the lifecycle of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate" style="width:8em" tooltiptext="A date of an event in the lifecycle of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate" style="width:8em" tooltiptext="A date of an event in the lifecycle of the resource.">
 msgid "Date:"
 msgstr ""
 
@@ -2783,6 +2822,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U" modifiers="control" id="upKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U" modifiers="control" id="upKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="up" key="U" modifiers="control" id="upKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U" modifiers="control" id="upKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="up" key="U" modifiers="control" id="upKey">
 msgid "U"
 msgstr ""
@@ -2806,6 +2846,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy" label="Taxonomy">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy" label="Taxonomy">
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy" label="Taxonomy">
+#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy" label="Taxonomy">
 msgid "Taxonomy"
 msgstr ""
 
@@ -2827,6 +2868,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
 "\n"
@@ -2855,6 +2897,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D" modifiers="control" id="downKey">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="down" key="D" modifiers="control" id="downKey">
 #: exe/xului/templates/mainpage.xul:<key n:render="down" key="D" modifiers="control" id="downKey">
+#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D" modifiers="control" id="downKey">
 msgid "D"
 msgstr ""
 
@@ -2876,6 +2919,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1 nodes">
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1 nodes">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1 nodes">
+#: exe/xului/templates/packageproperties.xul:<label value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1 nodes">
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1 nodes">
 msgid "Level 1:"
 msgstr ""
@@ -2899,6 +2943,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType" style="width:8em" tooltiptext="The nature or genre of the content of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType" style="width:8em" tooltiptext="The nature or genre of the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType" style="width:8em" tooltiptext="The nature or genre of the content of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType" style="width:8em" tooltiptext="The nature or genre of the content of the resource.">
 msgid "Type:"
 msgstr ""
 
@@ -2920,6 +2965,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N" modifiers="control" id="file-new-key" oncommand="fileNew()">
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N" modifiers="control" id="file-new-key" oncommand="fileNew()">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="translate" key="N" modifiers="control" id="file-new-key" oncommand="fileNew()">
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N" modifiers="control" id="file-new-key" oncommand="fileNew()">
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N" modifiers="control" id="file-new-key" oncommand="fileNew()">
 msgid "N"
 msgstr ""
@@ -2943,6 +2989,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:" id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2 nodes">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Level 2:" id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2 nodes">
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:" id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2 nodes">
+#: exe/xului/templates/packageproperties.xul:<label value="Level 2:" id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2 nodes">
 msgid "Level 2:"
 msgstr ""
 
@@ -2964,6 +3011,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description id="dcDescType">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescType">
 msgid ""
 "\n"
@@ -2991,6 +3039,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S" modifiers="control" id="file-save-key" oncommand="fileSave()">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="translate" key="S" modifiers="control" id="file-save-key" oncommand="fileSave()">
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S" modifiers="control" id="file-save-key" oncommand="fileSave()">
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S" modifiers="control" id="file-save-key" oncommand="fileSave()">
 msgid "S"
 msgstr ""
 
@@ -3012,6 +3061,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3 nodes">
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3 nodes">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3 nodes">
+#: exe/xului/templates/packageproperties.xul:<label value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3 nodes">
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3 nodes">
 msgid "Level 3:"
 msgstr ""
@@ -3035,6 +3085,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat" style="width:8em" tooltiptext="Select a Format.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat" style="width:8em" tooltiptext="Select a Format.">
 #: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat" style="width:8em" tooltiptext="Select a Format.">
+#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat" style="width:8em" tooltiptext="Select a Format.">
 msgid "Format:"
 msgstr ""
 
@@ -3056,6 +3107,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O" modifiers="control" id="file-open-key" oncommand="fileOpen()">
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O" modifiers="control" id="file-open-key" oncommand="fileOpen()">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="translate" key="O" modifiers="control" id="file-open-key" oncommand="fileOpen()">
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O" modifiers="control" id="file-open-key" oncommand="fileOpen()">
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O" modifiers="control" id="file-open-key" oncommand="fileOpen()">
 msgid "O"
 msgstr ""
@@ -3079,6 +3131,7 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<button flex="0" oncommand="submitForm(this.parentNode.parentNode, 'window.parent.location.reload(true);');" id="ppBtnUpdateTree" label="Update Tree" tooltiptext="Submit changes and update the tree display">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<button flex="0" oncommand="submitForm(this.parentNode.parentNode, 'window.parent.location.reload(true);');" id="ppBtnUpdateTree" label="Update Tree" tooltiptext="Submit changes and update the tree display">
 #: exe/xului/templates/packageproperties.xul:<button flex="0" oncommand="submitForm(this.parentNode.parentNode, 'window.parent.location.reload(true);');" id="ppBtnUpdateTree" label="Update Tree" tooltiptext="Submit changes and update the tree display">
+#: exe/xului/templates/packageproperties.xul:<button flex="0" oncommand="submitForm(this.parentNode.parentNode, 'window.parent.location.reload(true);');" id="ppBtnUpdateTree" label="Update Tree" tooltiptext="Submit changes and update the tree display">
 msgid "Update Tree"
 msgstr ""
 
@@ -3100,6 +3153,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_format" label="Select Format">
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_format" label="Select Format">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_format" label="Select Format">
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_format" label="Select Format">
 #: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color = 'blue'" id="dc_format" label="Select Format">
 msgid "Select Format"
 msgstr ""
@@ -3123,6 +3177,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q" modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q" modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q" modifiers="control" id="file-quit-key" oncommand="fileQuit()">
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q" modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 msgid "Q"
 msgstr ""
 
@@ -3144,6 +3199,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML" label="XHTML">
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML" label="XHTML">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML" label="XHTML">
+#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML" label="XHTML">
 #: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML" label="XHTML">
 msgid "XHTML"
 msgstr ""
@@ -3167,6 +3223,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu" accesskey="f" label="File">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu" accesskey="f" label="File">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu" accesskey="f" label="File">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu" accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
 msgstr ""
 
@@ -3188,6 +3245,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
+#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
 msgid "SCORM 1.2"
 msgstr ""
@@ -3211,6 +3269,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
 msgstr ""
 
@@ -3233,6 +3292,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
 #: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
+#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
 msgid "IMS Content Package 1.1.3"
 msgstr ""
 
@@ -3254,6 +3314,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr ""
@@ -3296,6 +3357,8 @@ msgstr ""
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website" label="Web Site">
 #: exe/xului/templates/dublincore.xul:<menuitem value="Web Site" id="dcmiWebSite" label="Web Site">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website" label="Web Site">
+#: exe/xului/templates/dublincore.xul:<menuitem value="Web Site" id="dcmiWebSite" label="Web Site">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website" label="Web Site">
 msgid "Web Site"
 msgstr ""
 
@@ -3317,6 +3380,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr ""
@@ -3340,6 +3404,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference to the resource within a given context.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference to the resource within a given context.">
 #: exe/xului/templates/dublincore.xul:<label value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference to the resource within a given context.">
+#: exe/xului/templates/dublincore.xul:<label value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference to the resource within a given context.">
 msgid "Identifier:"
 msgstr ""
 
@@ -3361,6 +3426,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr ""
@@ -3384,6 +3450,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to a resource from which the present resource is derived.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to a resource from which the present resource is derived.">
 #: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to a resource from which the present resource is derived.">
+#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to a resource from which the present resource is derived.">
 msgid "Source:"
 msgstr ""
 
@@ -3405,6 +3472,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr ""
@@ -3428,6 +3496,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a language.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a language.">
 #: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a language.">
+#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a language.">
 msgid "Language:"
 msgstr ""
 
@@ -3450,6 +3519,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
+#: exe/xului/templates/mainpage.xul:<menuitem oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr ""
 
@@ -3471,6 +3541,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa" label="Afar ">
 msgid "Afar "
 msgstr ""
@@ -3494,6 +3565,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr ""
 
@@ -3515,6 +3587,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab" label="Abkhazian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab" label="Abkhazian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab" label="Abkhazian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab" label="Abkhazian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab" label="Abkhazian ">
 msgid "Abkhazian "
 msgstr ""
@@ -3538,6 +3611,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('webSite')" label="Self-contained Folder">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('webSite')" label="Self-contained Folder">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('webSite')" label="Self-contained Folder">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('webSite')" label="Self-contained Folder">
 msgid "Self-contained Folder"
 msgstr ""
 
@@ -3559,6 +3633,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae" label="Avestan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae" label="Avestan ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae" label="Avestan ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae" label="Avestan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae" label="Avestan ">
 msgid "Avestan "
 msgstr ""
@@ -3582,6 +3657,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('zipFile')" label="Zip File">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('zipFile')" label="Zip File">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('zipFile')" label="Zip File">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('zipFile')" label="Zip File">
 msgid "Zip File"
 msgstr ""
 
@@ -3603,6 +3679,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf" label="Afrikaans ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf" label="Afrikaans ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf" label="Afrikaans ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf" label="Afrikaans ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf" label="Afrikaans ">
 msgid "Afrikaans "
 msgstr ""
@@ -3626,6 +3703,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr ""
 
@@ -3647,6 +3725,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam" label="Amharic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam" label="Amharic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam" label="Amharic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam" label="Amharic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam" label="Amharic ">
 msgid "Amharic "
 msgstr ""
@@ -3670,6 +3749,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr ""
 
@@ -3691,6 +3771,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar" label="Arabic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar" label="Arabic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar" label="Arabic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar" label="Arabic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar" label="Arabic ">
 msgid "Arabic "
 msgstr ""
@@ -3718,6 +3799,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias" label="Assamese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias" label="Assamese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias" label="Assamese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias" label="Assamese ">
 msgid "Assamese "
 msgstr ""
 
@@ -3739,6 +3821,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" accesskey="i" label="Insert Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" accesskey="i" label="Insert Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr ""
@@ -3762,6 +3845,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay" label="Aymara ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay" label="Aymara ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay" label="Aymara ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay" label="Aymara ">
 msgid "Aymara "
 msgstr ""
 
@@ -3783,6 +3867,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" accesskey="E" label="Extract Package">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" accesskey="E" label="Extract Package">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr ""
@@ -3806,6 +3891,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz" label="Azerbaijani ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz" label="Azerbaijani ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz" label="Azerbaijani ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz" label="Azerbaijani ">
 msgid "Azerbaijani "
 msgstr ""
 
@@ -3827,6 +3913,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr ""
@@ -3850,6 +3937,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba" label="Bashkir ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba" label="Bashkir ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba" label="Bashkir ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba" label="Bashkir ">
 msgid "Bashkir "
 msgstr ""
 
@@ -3871,6 +3959,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu" accesskey="t" label="Tools">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu" accesskey="t" label="Tools">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu" accesskey="t" label="Tools">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu" accesskey="t" label="Tools">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu" accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr ""
@@ -3894,6 +3983,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe" label="Byelorussian; Belarusian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe" label="Byelorussian; Belarusian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe" label="Byelorussian; Belarusian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe" label="Byelorussian; Belarusian ">
 msgid "Byelorussian; Belarusian "
 msgstr ""
 
@@ -3915,6 +4005,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsPreferences()" label="Preferences">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsPreferences()" label="Preferences">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsPreferences()" label="Preferences">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsPreferences()" label="Preferences">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
 msgstr ""
@@ -3938,6 +4029,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg" label="Bulgarian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg" label="Bulgarian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg" label="Bulgarian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg" label="Bulgarian ">
 msgid "Bulgarian "
 msgstr ""
 
@@ -3959,6 +4051,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="styles-menu" accesskey="s" label="Styles">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="styles-menu" accesskey="s" label="Styles">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="styles-menu" accesskey="s" label="Styles">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="styles-menu" accesskey="s" label="Styles">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr ""
@@ -3982,6 +4075,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh" label="Bihari ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh" label="Bihari ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh" label="Bihari ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh" label="Bihari ">
 msgid "Bihari "
 msgstr ""
 
@@ -4003,6 +4097,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="window.location = window.location" id="refresh-menu" accesskey="r" label="Refresh">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="window.location = window.location" id="refresh-menu" accesskey="r" label="Refresh">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="window.location = window.location" id="refresh-menu" accesskey="r" label="Refresh">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="window.location = window.location" id="refresh-menu" accesskey="r" label="Refresh">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="window.location = window.location" id="refresh-menu" accesskey="r" label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr ""
@@ -4026,6 +4121,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi" label="Bislama ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi" label="Bislama ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi" label="Bislama ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi" label="Bislama ">
 msgid "Bislama "
 msgstr ""
 
@@ -4047,6 +4143,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu" accesskey="h" label="Help">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu" accesskey="h" label="Help">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu" accesskey="h" label="Help">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu" accesskey="h" label="Help">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu" accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr ""
@@ -4070,6 +4167,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn" label="Bengali; Bangla ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn" label="Bengali; Bangla ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn" label="Bengali; Bangla ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn" label="Bengali; Bangla ">
 msgid "Bengali; Bangla "
 msgstr ""
 
@@ -4092,6 +4190,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="aboutPage()" accesskey="a" label="About">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="aboutPage()" accesskey="a" label="About">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="aboutPage()" accesskey="a" label="About">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="aboutPage()" accesskey="a" label="About">
 msgid "label=\"About\" accesskey=\"a\""
 msgstr ""
 
@@ -4113,6 +4212,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo" label="Tibetan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo" label="Tibetan ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo" label="Tibetan ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo" label="Tibetan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo" label="Tibetan ">
 msgid "Tibetan "
 msgstr ""
@@ -4155,6 +4255,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr" label="Breton ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr" label="Breton ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr" label="Breton ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr" label="Breton ">
 msgid "Breton "
 msgstr ""
 
@@ -4176,6 +4277,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="reportIssue()" accesskey="R" label="Report an Issue">
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate" oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"R\""
 msgstr ""
@@ -4199,6 +4301,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs" label="Bosnian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs" label="Bosnian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs" label="Bosnian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs" label="Bosnian ">
 msgid "Bosnian "
 msgstr ""
 
@@ -4220,6 +4323,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo" value="debugInfo">
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo" value="debugInfo">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label n:render="debugInfo" value="debugInfo">
+#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo" value="debugInfo">
 #: exe/xului/templates/mainpage.xul:<label n:render="debugInfo" value="debugInfo">
 msgid "debugInfo"
 msgstr ""
@@ -4243,6 +4347,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica" label="Catalan ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica" label="Catalan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica" label="Catalan ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica" label="Catalan ">
 msgid "Catalan "
 msgstr ""
 
@@ -4264,6 +4369,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild" key="addChildKey" label="Add Page">
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild" key="addChildKey" label="Add Page">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild" key="addChildKey" label="Add Page">
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild" key="addChildKey" label="Add Page">
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild" key="addChildKey" label="Add Page">
 msgid "Add Page"
 msgstr ""
@@ -4287,6 +4393,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice" label="Chechen ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice" label="Chechen ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice" label="Chechen ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice" label="Chechen ">
 msgid "Chechen "
 msgstr ""
 
@@ -4308,6 +4415,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
 msgstr ""
@@ -4331,6 +4439,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich" label="Chamorro ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich" label="Chamorro ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich" label="Chamorro ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich" label="Chamorro ">
 msgid "Chamorro "
 msgstr ""
 
@@ -4352,6 +4461,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1" value="outlinePane">
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1" value="outlinePane">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1" value="outlinePane">
+#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1" value="outlinePane">
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1" value="outlinePane">
 msgid "outlinePane"
 msgstr ""
@@ -4375,6 +4485,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico" label="Corsican ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico" label="Corsican ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico" label="Corsican ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico" label="Corsican ">
 msgid "Corsican "
 msgstr ""
 
@@ -4396,6 +4507,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label value="iDevices" style="margin-top:5px;">
 #: exe/xului/templates/mainpage.xul:<label value="iDevices" style="margin-top:5px;">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label value="iDevices" style="margin-top:5px;">
+#: exe/xului/templates/mainpage.xul:<label value="iDevices" style="margin-top:5px;">
 #: exe/xului/templates/mainpage.xul:<label value="iDevices" style="margin-top:5px;">
 msgid "iDevices"
 msgstr ""
@@ -4419,6 +4531,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics" label="Czech ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics" label="Czech ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics" label="Czech ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics" label="Czech ">
 msgid "Czech "
 msgstr ""
 
@@ -4440,6 +4553,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1" value="iDevicePane">
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1" value="iDevicePane">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1" value="iDevicePane">
+#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1" value="iDevicePane">
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1" value="iDevicePane">
 msgid "iDevicePane"
 msgstr ""
@@ -4463,6 +4577,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu" label="Church Slavic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu" label="Church Slavic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu" label="Church Slavic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu" label="Church Slavic ">
 msgid "Church Slavic "
 msgstr ""
 
@@ -4484,6 +4599,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Authoring">
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Authoring">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Authoring">
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Authoring">
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Authoring">
 msgid "Authoring"
 msgstr ""
@@ -4507,6 +4623,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv" label="Chuvash ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv" label="Chuvash ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv" label="Chuvash ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv" label="Chuvash ">
 msgid "Chuvash "
 msgstr ""
 
@@ -4528,6 +4645,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Properties">
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Properties">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Properties">
+#: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Properties">
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate" label="Properties">
 msgid "Properties"
 msgstr ""
@@ -4551,6 +4669,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy" label="Welsh ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy" label="Welsh ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy" label="Welsh ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy" label="Welsh ">
 msgid "Welsh "
 msgstr ""
 
@@ -4572,6 +4691,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida" label="Danish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida" label="Danish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida" label="Danish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida" label="Danish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida" label="Danish ">
 msgid "Danish "
 msgstr ""
@@ -4595,6 +4715,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide" label="German ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide" label="German ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide" label="German ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide" label="German ">
 msgid "German "
 msgstr ""
 
@@ -4616,6 +4737,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
 msgid "Dzongkha; Bhutani "
 msgstr ""
@@ -4660,6 +4782,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien" label="English ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien" label="English ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien" label="English ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien" label="English ">
 msgid "English "
 msgstr ""
 
@@ -4681,6 +4804,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo" label="Esperanto ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo" label="Esperanto ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo" label="Esperanto ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo" label="Esperanto ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo" label="Esperanto ">
 msgid "Esperanto "
 msgstr ""
@@ -4704,6 +4828,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies" label="Spanish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies" label="Spanish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies" label="Spanish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies" label="Spanish ">
 msgid "Spanish "
 msgstr ""
 
@@ -4725,6 +4850,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet" label="Estonian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet" label="Estonian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet" label="Estonian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet" label="Estonian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet" label="Estonian ">
 msgid "Estonian "
 msgstr ""
@@ -4748,6 +4874,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu" label="Basque ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu" label="Basque ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu" label="Basque ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu" label="Basque ">
 msgid "Basque "
 msgstr ""
 
@@ -4769,6 +4896,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa" label="Persian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa" label="Persian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa" label="Persian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa" label="Persian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa" label="Persian ">
 msgid "Persian "
 msgstr ""
@@ -4792,6 +4920,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi" label="Finnish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi" label="Finnish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi" label="Finnish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi" label="Finnish ">
 msgid "Finnish "
 msgstr ""
 
@@ -4813,6 +4942,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj" label="Fijian; Fiji ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj" label="Fijian; Fiji ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj" label="Fijian; Fiji ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj" label="Fijian; Fiji ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj" label="Fijian; Fiji ">
 msgid "Fijian; Fiji "
 msgstr ""
@@ -4836,6 +4966,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo" label="Faroese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo" label="Faroese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo" label="Faroese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo" label="Faroese ">
 msgid "Faroese "
 msgstr ""
 
@@ -4857,6 +4988,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr" label="French ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr" label="French ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr" label="French ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr" label="French ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr" label="French ">
 msgid "French "
 msgstr ""
@@ -4880,6 +5012,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify" label="Frisian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify" label="Frisian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify" label="Frisian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify" label="Frisian ">
 msgid "Frisian "
 msgstr ""
 
@@ -4901,6 +5034,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga" label="Irish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga" label="Irish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga" label="Irish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga" label="Irish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga" label="Irish ">
 msgid "Irish "
 msgstr ""
@@ -4924,6 +5058,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd" label="Scots; Gaelic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd" label="Scots; Gaelic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd" label="Scots; Gaelic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd" label="Scots; Gaelic ">
 msgid "Scots; Gaelic "
 msgstr ""
 
@@ -4945,6 +5080,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl" label="Gallegan; Galician ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl" label="Gallegan; Galician ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl" label="Gallegan; Galician ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl" label="Gallegan; Galician ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl" label="Gallegan; Galician ">
 msgid "Gallegan; Galician "
 msgstr ""
@@ -4968,6 +5104,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign" label="Guarani ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign" label="Guarani ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign" label="Guarani ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign" label="Guarani ">
 msgid "Guarani "
 msgstr ""
 
@@ -4989,6 +5126,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu" label="Gujarati ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu" label="Gujarati ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu" label="Gujarati ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu" label="Gujarati ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu" label="Gujarati ">
 msgid "Gujarati "
 msgstr ""
@@ -5012,6 +5150,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv" label="Manx ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv" label="Manx ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv" label="Manx ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv" label="Manx ">
 msgid "Manx "
 msgstr ""
 
@@ -5033,6 +5172,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha" label="Hausa (?) ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha" label="Hausa (?) ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha" label="Hausa (?) ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha" label="Hausa (?) ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha" label="Hausa (?) ">
 msgid "Hausa (?) "
 msgstr ""
@@ -5056,6 +5196,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe" label="Hebrew (formerly iw) ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe" label="Hebrew (formerly iw) ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe" label="Hebrew (formerly iw) ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe" label="Hebrew (formerly iw) ">
 msgid "Hebrew (formerly iw) "
 msgstr ""
 
@@ -5077,6 +5218,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi" label="Hindi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi" label="Hindi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi" label="Hindi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi" label="Hindi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi" label="Hindi ">
 msgid "Hindi "
 msgstr ""
@@ -5100,6 +5242,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho" label="Hiri Motu ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho" label="Hiri Motu ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho" label="Hiri Motu ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho" label="Hiri Motu ">
 msgid "Hiri Motu "
 msgstr ""
 
@@ -5121,6 +5264,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr" label="Croatian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr" label="Croatian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr" label="Croatian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr" label="Croatian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr" label="Croatian ">
 msgid "Croatian "
 msgstr ""
@@ -5144,6 +5288,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu" label="Hungarian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu" label="Hungarian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu" label="Hungarian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu" label="Hungarian ">
 msgid "Hungarian "
 msgstr ""
 
@@ -5165,6 +5310,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy" label="Armenian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy" label="Armenian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy" label="Armenian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy" label="Armenian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy" label="Armenian ">
 msgid "Armenian "
 msgstr ""
@@ -5188,6 +5334,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz" label="Herero ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz" label="Herero ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz" label="Herero ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz" label="Herero ">
 msgid "Herero "
 msgstr ""
 
@@ -5209,6 +5356,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia" label="Interlingua ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia" label="Interlingua ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia" label="Interlingua ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia" label="Interlingua ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia" label="Interlingua ">
 msgid "Interlingua "
 msgstr ""
@@ -5232,6 +5380,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid" label="Indonesian (formerly in) ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid" label="Indonesian (formerly in) ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid" label="Indonesian (formerly in) ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid" label="Indonesian (formerly in) ">
 msgid "Indonesian (formerly in) "
 msgstr ""
 
@@ -5253,6 +5402,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie" label="Interlingue ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie" label="Interlingue ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie" label="Interlingue ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie" label="Interlingue ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie" label="Interlingue ">
 msgid "Interlingue "
 msgstr ""
@@ -5276,6 +5426,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik" label="Inupiak ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik" label="Inupiak ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik" label="Inupiak ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik" label="Inupiak ">
 msgid "Inupiak "
 msgstr ""
 
@@ -5297,6 +5448,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio" label="Ido ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio" label="Ido ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio" label="Ido ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio" label="Ido ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio" label="Ido ">
 msgid "Ido "
 msgstr ""
@@ -5320,6 +5472,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis" label="Icelandic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis" label="Icelandic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis" label="Icelandic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis" label="Icelandic ">
 msgid "Icelandic "
 msgstr ""
 
@@ -5341,6 +5494,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit" label="Italian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit" label="Italian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit" label="Italian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit" label="Italian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit" label="Italian ">
 msgid "Italian "
 msgstr ""
@@ -5364,6 +5518,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu" label="Inuktitut ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu" label="Inuktitut ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu" label="Inuktitut ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu" label="Inuktitut ">
 msgid "Inuktitut "
 msgstr ""
 
@@ -5385,6 +5540,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija" label="Japanese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija" label="Japanese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija" label="Japanese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija" label="Japanese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija" label="Japanese ">
 msgid "Japanese "
 msgstr ""
@@ -5408,6 +5564,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv" label="Javanese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv" label="Javanese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv" label="Javanese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv" label="Javanese ">
 msgid "Javanese "
 msgstr ""
 
@@ -5429,6 +5586,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika" label="Georgian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika" label="Georgian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika" label="Georgian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika" label="Georgian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika" label="Georgian ">
 msgid "Georgian "
 msgstr ""
@@ -5452,6 +5610,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki" label="Kikuyu ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki" label="Kikuyu ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki" label="Kikuyu ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki" label="Kikuyu ">
 msgid "Kikuyu "
 msgstr ""
 
@@ -5473,6 +5632,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj" label="Kuanyama ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj" label="Kuanyama ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj" label="Kuanyama ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj" label="Kuanyama ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj" label="Kuanyama ">
 msgid "Kuanyama "
 msgstr ""
@@ -5496,6 +5656,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk" label="Kazakh ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk" label="Kazakh ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk" label="Kazakh ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk" label="Kazakh ">
 msgid "Kazakh "
 msgstr ""
 
@@ -5517,6 +5678,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
 msgid "Kalaallisut; Greenlandic "
 msgstr ""
@@ -5540,6 +5702,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm" label="Khmer; Cambodian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm" label="Khmer; Cambodian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm" label="Khmer; Cambodian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm" label="Khmer; Cambodian ">
 msgid "Khmer; Cambodian "
 msgstr ""
 
@@ -5561,6 +5724,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn" label="Kannada ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn" label="Kannada ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn" label="Kannada ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn" label="Kannada ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn" label="Kannada ">
 msgid "Kannada "
 msgstr ""
@@ -5584,6 +5748,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko" label="Korean ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko" label="Korean ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko" label="Korean ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko" label="Korean ">
 msgid "Korean "
 msgstr ""
 
@@ -5605,6 +5770,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks" label="Kashmiri ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks" label="Kashmiri ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks" label="Kashmiri ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks" label="Kashmiri ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks" label="Kashmiri ">
 msgid "Kashmiri "
 msgstr ""
@@ -5628,6 +5794,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku" label="Kurdish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku" label="Kurdish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku" label="Kurdish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku" label="Kurdish ">
 msgid "Kurdish "
 msgstr ""
 
@@ -5649,6 +5816,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv" label="Komi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv" label="Komi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv" label="Komi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv" label="Komi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv" label="Komi ">
 msgid "Komi "
 msgstr ""
@@ -5672,6 +5840,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw" label="Cornish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw" label="Cornish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw" label="Cornish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw" label="Cornish ">
 msgid "Cornish "
 msgstr ""
 
@@ -5693,6 +5862,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky" label="Kirghiz ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky" label="Kirghiz ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky" label="Kirghiz ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky" label="Kirghiz ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky" label="Kirghiz ">
 msgid "Kirghiz "
 msgstr ""
@@ -5716,6 +5886,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila" label="Latin ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila" label="Latin ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila" label="Latin ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila" label="Latin ">
 msgid "Latin "
 msgstr ""
 
@@ -5737,6 +5908,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb" label="Letzeburgesch ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb" label="Letzeburgesch ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb" label="Letzeburgesch ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb" label="Letzeburgesch ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb" label="Letzeburgesch ">
 msgid "Letzeburgesch "
 msgstr ""
@@ -5760,6 +5932,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln" label="Lingala ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln" label="Lingala ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln" label="Lingala ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln" label="Lingala ">
 msgid "Lingala "
 msgstr ""
 
@@ -5781,6 +5954,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo" label="Lao; Laotian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo" label="Lao; Laotian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo" label="Lao; Laotian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo" label="Lao; Laotian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo" label="Lao; Laotian ">
 msgid "Lao; Laotian "
 msgstr ""
@@ -5804,6 +5978,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt" label="Lithuanian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt" label="Lithuanian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt" label="Lithuanian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt" label="Lithuanian ">
 msgid "Lithuanian "
 msgstr ""
 
@@ -5825,6 +6000,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv" label="Latvian; Lettish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv" label="Latvian; Lettish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv" label="Latvian; Lettish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv" label="Latvian; Lettish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv" label="Latvian; Lettish ">
 msgid "Latvian; Lettish "
 msgstr ""
@@ -5848,6 +6024,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg" label="Malagasy ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg" label="Malagasy ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg" label="Malagasy ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg" label="Malagasy ">
 msgid "Malagasy "
 msgstr ""
 
@@ -5869,6 +6046,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh" label="Marshall ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh" label="Marshall ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh" label="Marshall ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh" label="Marshall ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh" label="Marshall ">
 msgid "Marshall "
 msgstr ""
@@ -5892,6 +6070,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi" label="Maori ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi" label="Maori ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi" label="Maori ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi" label="Maori ">
 msgid "Maori "
 msgstr ""
 
@@ -5913,6 +6092,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk" label="Macedonian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk" label="Macedonian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk" label="Macedonian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk" label="Macedonian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk" label="Macedonian ">
 msgid "Macedonian "
 msgstr ""
@@ -5936,6 +6116,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml" label="Malayalam ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml" label="Malayalam ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml" label="Malayalam ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml" label="Malayalam ">
 msgid "Malayalam "
 msgstr ""
 
@@ -5957,6 +6138,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn" label="Mongolian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn" label="Mongolian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn" label="Mongolian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn" label="Mongolian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn" label="Mongolian ">
 msgid "Mongolian "
 msgstr ""
@@ -5980,6 +6162,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo" label="Moldavian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo" label="Moldavian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo" label="Moldavian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo" label="Moldavian ">
 msgid "Moldavian "
 msgstr ""
 
@@ -6001,6 +6184,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr" label="Marathi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr" label="Marathi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr" label="Marathi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr" label="Marathi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr" label="Marathi ">
 msgid "Marathi "
 msgstr ""
@@ -6024,6 +6208,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims" label="Malay ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims" label="Malay ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims" label="Malay ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims" label="Malay ">
 msgid "Malay "
 msgstr ""
 
@@ -6045,6 +6230,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt" label="Maltese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt" label="Maltese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt" label="Maltese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt" label="Maltese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt" label="Maltese ">
 msgid "Maltese "
 msgstr ""
@@ -6068,6 +6254,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy" label="Burmese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy" label="Burmese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy" label="Burmese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy" label="Burmese ">
 msgid "Burmese "
 msgstr ""
 
@@ -6090,6 +6277,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina" label="Nauru ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina" label="Nauru ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina" label="Nauru ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina" label="Nauru ">
 msgid "Nauru "
 msgstr ""
 
@@ -6107,6 +6295,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb" label="Norwegian Bokmål ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb" label="Norwegian Bokmål ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb" label="Norwegian Bokmål ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb" label="Norwegian Bokmål ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb" label="Norwegian Bokmål ">
 msgid "Norwegian Bokmål "
 msgstr ""
@@ -6126,6 +6315,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="merging-menu" accesskey="m" label="Merging">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="merging-menu" accesskey="m" label="Merging">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="merging-menu" accesskey="m" label="Merging">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="merging-menu" accesskey="m" label="Merging">
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr ""
 
@@ -6143,6 +6333,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind" label="Ndebele, North ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind" label="Ndebele, North ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind" label="Ndebele, North ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind" label="Ndebele, North ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind" label="Ndebele, North ">
 msgid "Ndebele, North "
 msgstr ""
@@ -6162,6 +6353,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine" label="Nepali ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine" label="Nepali ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine" label="Nepali ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine" label="Nepali ">
 msgid "Nepali "
 msgstr ""
 
@@ -6179,6 +6371,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming" label="Ndonga ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming" label="Ndonga ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming" label="Ndonga ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming" label="Ndonga ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming" label="Ndonga ">
 msgid "Ndonga "
 msgstr ""
@@ -6198,6 +6391,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl" label="Dutch ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl" label="Dutch ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl" label="Dutch ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl" label="Dutch ">
 msgid "Dutch "
 msgstr ""
 
@@ -6215,6 +6409,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn" label="Norwegian Nynorsk ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn" label="Norwegian Nynorsk ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn" label="Norwegian Nynorsk ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn" label="Norwegian Nynorsk ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn" label="Norwegian Nynorsk ">
 msgid "Norwegian Nynorsk "
 msgstr ""
@@ -6234,6 +6429,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino" label="Norwegian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino" label="Norwegian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino" label="Norwegian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino" label="Norwegian ">
 msgid "Norwegian "
 msgstr ""
 
@@ -6251,6 +6447,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr" label="Ndebele, South ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr" label="Ndebele, South ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr" label="Ndebele, South ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr" label="Ndebele, South ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr" label="Ndebele, South ">
 msgid "Ndebele, South "
 msgstr ""
@@ -6270,6 +6467,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv" label="Navajo ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv" label="Navajo ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv" label="Navajo ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv" label="Navajo ">
 msgid "Navajo "
 msgstr ""
 
@@ -6287,6 +6485,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy" label="Chichewa; Nyanja ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy" label="Chichewa; Nyanja ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy" label="Chichewa; Nyanja ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy" label="Chichewa; Nyanja ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy" label="Chichewa; Nyanja ">
 msgid "Chichewa; Nyanja "
 msgstr ""
@@ -6306,6 +6505,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc" label="Occitan; Provençal ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc" label="Occitan; Provençal ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc" label="Occitan; Provençal ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc" label="Occitan; Provençal ">
 msgid "Occitan; Provençal "
 msgstr ""
 
@@ -6323,6 +6523,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom" label="(Afan) Oromo ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom" label="(Afan) Oromo ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom" label="(Afan) Oromo ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom" label="(Afan) Oromo ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom" label="(Afan) Oromo ">
 msgid "(Afan) Oromo "
 msgstr ""
@@ -6342,6 +6543,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior" label="Oriya ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior" label="Oriya ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior" label="Oriya ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior" label="Oriya ">
 msgid "Oriya "
 msgstr ""
 
@@ -6359,6 +6561,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios" label="Ossetian; Ossetic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios" label="Ossetian; Ossetic ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios" label="Ossetian; Ossetic ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios" label="Ossetian; Ossetic ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios" label="Ossetian; Ossetic ">
 msgid "Ossetian; Ossetic "
 msgstr ""
@@ -6378,6 +6581,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa" label="Panjabi; Punjabi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa" label="Panjabi; Punjabi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa" label="Panjabi; Punjabi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa" label="Panjabi; Punjabi ">
 msgid "Panjabi; Punjabi "
 msgstr ""
 
@@ -6395,6 +6599,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi" label="Pali ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi" label="Pali ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi" label="Pali ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi" label="Pali ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi" label="Pali ">
 msgid "Pali "
 msgstr ""
@@ -6414,6 +6619,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl" label="Polish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl" label="Polish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl" label="Polish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl" label="Polish ">
 msgid "Polish "
 msgstr ""
 
@@ -6431,6 +6637,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips" label="Pashto, Pushto ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips" label="Pashto, Pushto ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips" label="Pashto, Pushto ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips" label="Pashto, Pushto ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips" label="Pashto, Pushto ">
 msgid "Pashto, Pushto "
 msgstr ""
@@ -6450,6 +6657,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt" label="Portuguese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt" label="Portuguese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt" label="Portuguese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt" label="Portuguese ">
 msgid "Portuguese "
 msgstr ""
 
@@ -6467,6 +6675,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu" label="Quechua ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu" label="Quechua ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu" label="Quechua ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu" label="Quechua ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu" label="Quechua ">
 msgid "Quechua "
 msgstr ""
@@ -6486,6 +6695,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm" label="Rhaeto-Romance ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm" label="Rhaeto-Romance ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm" label="Rhaeto-Romance ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm" label="Rhaeto-Romance ">
 msgid "Rhaeto-Romance "
 msgstr ""
 
@@ -6503,6 +6713,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn" label="Rundi; Kirundi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn" label="Rundi; Kirundi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn" label="Rundi; Kirundi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn" label="Rundi; Kirundi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn" label="Rundi; Kirundi ">
 msgid "Rundi; Kirundi "
 msgstr ""
@@ -6522,6 +6733,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro" label="Romanian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro" label="Romanian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro" label="Romanian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro" label="Romanian ">
 msgid "Romanian "
 msgstr ""
 
@@ -6539,6 +6751,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru" label="Russian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru" label="Russian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru" label="Russian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru" label="Russian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru" label="Russian ">
 msgid "Russian "
 msgstr ""
@@ -6558,6 +6771,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw" label="Kinyarwanda ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw" label="Kinyarwanda ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw" label="Kinyarwanda ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw" label="Kinyarwanda ">
 msgid "Kinyarwanda "
 msgstr ""
 
@@ -6575,6 +6789,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa" label="Sanskrit ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa" label="Sanskrit ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa" label="Sanskrit ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa" label="Sanskrit ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa" label="Sanskrit ">
 msgid "Sanskrit "
 msgstr ""
@@ -6594,6 +6809,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc" label="Sardinian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc" label="Sardinian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc" label="Sardinian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc" label="Sardinian ">
 msgid "Sardinian "
 msgstr ""
 
@@ -6611,6 +6827,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd" label="Sindhi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd" label="Sindhi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd" label="Sindhi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd" label="Sindhi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd" label="Sindhi ">
 msgid "Sindhi "
 msgstr ""
@@ -6630,6 +6847,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise" label="Northern Sami ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise" label="Northern Sami ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise" label="Northern Sami ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise" label="Northern Sami ">
 msgid "Northern Sami "
 msgstr ""
 
@@ -6647,6 +6865,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg" label="Sango; Sangro ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg" label="Sango; Sangro ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg" label="Sango; Sangro ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg" label="Sango; Sangro ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg" label="Sango; Sangro ">
 msgid "Sango; Sangro "
 msgstr ""
@@ -6666,6 +6885,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi" label="Sinhalese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi" label="Sinhalese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi" label="Sinhalese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi" label="Sinhalese ">
 msgid "Sinhalese "
 msgstr ""
 
@@ -6683,6 +6903,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk" label="Slovak ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk" label="Slovak ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk" label="Slovak ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk" label="Slovak ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk" label="Slovak ">
 msgid "Slovak "
 msgstr ""
@@ -6702,6 +6923,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl" label="Slovenian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl" label="Slovenian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl" label="Slovenian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl" label="Slovenian ">
 msgid "Slovenian "
 msgstr ""
 
@@ -6719,6 +6941,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism" label="Samoan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism" label="Samoan ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism" label="Samoan ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism" label="Samoan ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism" label="Samoan ">
 msgid "Samoan "
 msgstr ""
@@ -6738,6 +6961,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn" label="Shona ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn" label="Shona ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn" label="Shona ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn" label="Shona ">
 msgid "Shona "
 msgstr ""
 
@@ -6755,6 +6979,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso" label="Somali ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso" label="Somali ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso" label="Somali ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso" label="Somali ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso" label="Somali ">
 msgid "Somali "
 msgstr ""
@@ -6774,6 +6999,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq" label="Albanian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq" label="Albanian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq" label="Albanian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq" label="Albanian ">
 msgid "Albanian "
 msgstr ""
 
@@ -6791,6 +7017,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr" label="Serbian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr" label="Serbian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr" label="Serbian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr" label="Serbian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr" label="Serbian ">
 msgid "Serbian "
 msgstr ""
@@ -6810,6 +7037,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss" label="Swati; Siswati ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss" label="Swati; Siswati ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss" label="Swati; Siswati ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss" label="Swati; Siswati ">
 msgid "Swati; Siswati "
 msgstr ""
 
@@ -6827,6 +7055,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
 msgid "Sesotho; Sotho, Southern "
 msgstr ""
@@ -6846,6 +7075,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu" label="Sundanese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu" label="Sundanese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu" label="Sundanese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu" label="Sundanese ">
 msgid "Sundanese "
 msgstr ""
 
@@ -6863,6 +7093,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv" label="Swedish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv" label="Swedish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv" label="Swedish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv" label="Swedish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv" label="Swedish ">
 msgid "Swedish "
 msgstr ""
@@ -6882,6 +7113,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw" label="Swahili ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw" label="Swahili ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw" label="Swahili ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw" label="Swahili ">
 msgid "Swahili "
 msgstr ""
 
@@ -6899,6 +7131,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita" label="Tamil ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita" label="Tamil ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita" label="Tamil ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita" label="Tamil ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita" label="Tamil ">
 msgid "Tamil "
 msgstr ""
@@ -6918,6 +7151,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite" label="Telugu ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite" label="Telugu ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite" label="Telugu ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite" label="Telugu ">
 msgid "Telugu "
 msgstr ""
 
@@ -6935,6 +7169,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg" label="Tajik ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg" label="Tajik ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg" label="Tajik ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg" label="Tajik ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg" label="Tajik ">
 msgid "Tajik "
 msgstr ""
@@ -6954,6 +7189,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith" label="Thai ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith" label="Thai ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith" label="Thai ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith" label="Thai ">
 msgid "Thai "
 msgstr ""
 
@@ -6971,6 +7207,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti" label="Tigrinya ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti" label="Tigrinya ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti" label="Tigrinya ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti" label="Tigrinya ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti" label="Tigrinya ">
 msgid "Tigrinya "
 msgstr ""
@@ -6990,6 +7227,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk" label="Turkmen ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk" label="Turkmen ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk" label="Turkmen ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk" label="Turkmen ">
 msgid "Turkmen "
 msgstr ""
 
@@ -7008,6 +7246,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl" label="Tagalog ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl" label="Tagalog ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl" label="Tagalog ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl" label="Tagalog ">
 msgid "Tagalog "
 msgstr ""
 
@@ -7025,6 +7264,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn" label="Tswana; Setswana ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn" label="Tswana; Setswana ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn" label="Tswana; Setswana ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn" label="Tswana; Setswana ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn" label="Tswana; Setswana ">
 msgid "Tswana; Setswana "
 msgstr ""
@@ -7061,6 +7301,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr" label="Turkish ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr" label="Turkish ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr" label="Turkish ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr" label="Turkish ">
 msgid "Turkish "
 msgstr ""
 
@@ -7078,6 +7319,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits" label="Tsonga ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits" label="Tsonga ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits" label="Tsonga ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits" label="Tsonga ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits" label="Tsonga ">
 msgid "Tsonga "
 msgstr ""
@@ -7097,6 +7339,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt" label="Tatar ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt" label="Tatar ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt" label="Tatar ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt" label="Tatar ">
 msgid "Tatar "
 msgstr ""
 
@@ -7114,6 +7357,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw" label="Twi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw" label="Twi ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw" label="Twi ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw" label="Twi ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw" label="Twi ">
 msgid "Twi "
 msgstr ""
@@ -7133,6 +7377,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity" label="Tahitian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity" label="Tahitian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity" label="Tahitian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity" label="Tahitian ">
 msgid "Tahitian "
 msgstr ""
 
@@ -7150,6 +7395,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug" label="Uighur ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug" label="Uighur ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug" label="Uighur ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug" label="Uighur ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug" label="Uighur ">
 msgid "Uighur "
 msgstr ""
@@ -7169,6 +7415,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk" label="Ukrainian ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk" label="Ukrainian ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk" label="Ukrainian ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk" label="Ukrainian ">
 msgid "Ukrainian "
 msgstr ""
 
@@ -7186,6 +7433,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur" label="Urdu ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur" label="Urdu ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur" label="Urdu ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur" label="Urdu ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur" label="Urdu ">
 msgid "Urdu "
 msgstr ""
@@ -7205,6 +7453,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz" label="Uzbek ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz" label="Uzbek ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz" label="Uzbek ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz" label="Uzbek ">
 msgid "Uzbek "
 msgstr ""
 
@@ -7222,6 +7471,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi" label="Vietnamese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi" label="Vietnamese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi" label="Vietnamese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi" label="Vietnamese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi" label="Vietnamese ">
 msgid "Vietnamese "
 msgstr ""
@@ -7241,6 +7491,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo" label="Volapük; Volapuk ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo" label="Volapük; Volapuk ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo" label="Volapük; Volapuk ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo" label="Volapük; Volapuk ">
 msgid "Volapük; Volapuk "
 msgstr ""
 
@@ -7258,6 +7509,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa" label="Walloon ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa" label="Walloon ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa" label="Walloon ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa" label="Walloon ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa" label="Walloon ">
 msgid "Walloon "
 msgstr ""
@@ -7277,6 +7529,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo" label="Wolof ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo" label="Wolof ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo" label="Wolof ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo" label="Wolof ">
 msgid "Wolof "
 msgstr ""
 
@@ -7294,6 +7547,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh" label="Xhosa ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh" label="Xhosa ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh" label="Xhosa ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh" label="Xhosa ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh" label="Xhosa ">
 msgid "Xhosa "
 msgstr ""
@@ -7313,6 +7567,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi" label="Yiddish (formerly ji) ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi" label="Yiddish (formerly ji) ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi" label="Yiddish (formerly ji) ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi" label="Yiddish (formerly ji) ">
 msgid "Yiddish (formerly ji) "
 msgstr ""
 
@@ -7330,6 +7585,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo" label="Yoruba ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo" label="Yoruba ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo" label="Yoruba ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo" label="Yoruba ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo" label="Yoruba ">
 msgid "Yoruba "
 msgstr ""
@@ -7349,6 +7605,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza" label="Zhuang ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza" label="Zhuang ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza" label="Zhuang ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza" label="Zhuang ">
 msgid "Zhuang "
 msgstr ""
 
@@ -7366,6 +7623,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh" label="Chinese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh" label="Chinese ">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh" label="Chinese ">
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh" label="Chinese ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh" label="Chinese ">
 msgid "Chinese "
 msgstr ""
@@ -7385,6 +7643,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu" label="Zulu.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu" label="Zulu.">
 #: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu" label="Zulu.">
+#: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu" label="Zulu.">
 msgid "Zulu."
 msgstr ""
 
@@ -7402,6 +7661,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A reference to a related resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A reference to a related resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A reference to a related resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A reference to a related resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A reference to a related resource.">
 msgid "Relation:"
 msgstr ""
@@ -7421,6 +7681,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the content of the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the content of the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the content of the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage" style="width:8em" tooltiptext="The extent or scope of the content of the resource.">
 msgid "Coverage:"
 msgstr ""
 
@@ -7438,6 +7699,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information about rights held in and over the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information about rights held in and over the resource.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information about rights held in and over the resource.">
+#: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information about rights held in and over the resource.">
 #: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information about rights held in and over the resource.">
 msgid "Rights:"
 msgstr ""
@@ -7457,6 +7719,7 @@ msgstr ""
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid ""
 "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
@@ -7468,6 +7731,7 @@ msgstr ""
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr ""
@@ -7484,11 +7748,13 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<label value="License:" id="ppLicense" style="width:8em" tooltiptext="Select a license.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="License:" id="ppLicense" style="width:8em" tooltiptext="Select a license.">
 #: exe/xului/templates/packageproperties.xul:<label value="License:" id="ppLicense" style="width:8em" tooltiptext="Select a license.">
+#: exe/xului/templates/packageproperties.xul:<label value="License:" id="ppLicense" style="width:8em" tooltiptext="Select a license.">
 msgid "License:"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menulist onchange="this.style.color = 'blue'" id="pp_license" label="Select License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menulist onchange="this.style.color = 'blue'" id="pp_license" label="Select License">
+#: exe/xului/templates/packageproperties.xul:<menulist onchange="this.style.color = 'blue'" id="pp_license" label="Select License">
 #: exe/xului/templates/packageproperties.xul:<menulist onchange="this.style.color = 'blue'" id="pp_license" label="Select License">
 msgid "Select License"
 msgstr ""
@@ -7496,11 +7762,13 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution 2.5 License" id="ppcca1" label="Creative Commons Attribution 2.5 License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution 2.5 License" id="ppcca1" label="Creative Commons Attribution 2.5 License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution 2.5 License" id="ppcca1" label="Creative Commons Attribution 2.5 License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution 2.5 License" id="ppcca1" label="Creative Commons Attribution 2.5 License">
 msgid "Creative Commons Attribution 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative Commons Attribution-ShareAlike 2.5 License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative Commons Attribution-ShareAlike 2.5 License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative Commons Attribution-ShareAlike 2.5 License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative Commons Attribution-ShareAlike 2.5 License">
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr ""
@@ -7508,11 +7776,13 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative Commons Attribution-NoDerivs 2.5 License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative Commons Attribution-NoDerivs 2.5 License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative Commons Attribution-NoDerivs 2.5 License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative Commons Attribution-NoDerivs 2.5 License">
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative Commons Attribution-NonCommercial 2.5 License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative Commons Attribution-NonCommercial 2.5 License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative Commons Attribution-NonCommercial 2.5 License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative Commons Attribution-NonCommercial 2.5 License">
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr ""
@@ -7520,11 +7790,13 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5" label="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5" label="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5" label="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5" label="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License">
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License">
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr ""
@@ -7532,15 +7804,18 @@ msgstr ""
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing Nations 2.0" id="ppdn" label="Developing Nations 2.0">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem value="Developing Nations 2.0" id="ppdn" label="Developing Nations 2.0">
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing Nations 2.0" id="ppdn" label="Developing Nations 2.0">
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing Nations 2.0" id="ppdn" label="Developing Nations 2.0">
 msgid "Developing Nations 2.0"
 msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:" id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label value="Footer:" id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:" id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+#: exe/xului/templates/packageproperties.xul:<label value="Footer:" id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Footer:"
 msgstr ""
 
+#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito" label="Tongan  ">
 #: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito" label="Tongan  ">
 msgid "Tongan  "
 msgstr ""
