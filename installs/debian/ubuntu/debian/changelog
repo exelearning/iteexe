@@ -1,8 +1,21 @@
-python-exe (0.20-0.1ubuntu1) unstable; urgency=low
-    * Bug Fixes
-    * This is a nightly build, UNSTABLE
+python-exe (0.20.1-0.1ubuntu1) unstable; urgency=low
+    * Improved ability to upgrade projects made with version 0.19 and earlier
+    * Updated Japanese and Chinese translations
+    * Removed access to SCORM2004 export
+    * Fix translation ability of math field
+    * Disable Firefox update check
+    * Improved IDevice Editor
+    * Geogebra iDevice
+    * Add SCORM2004 export
+    * Improve loading speed of some complex eXe packages
+    * Add the ability to have an optional footer on all pages of project
+    * Keep hidden backup .elp
+    * Update copyright
+    * Add release and revision to ready2run splash screen
+    * Add work around for broken Microsoft Word span tags
+    * Many, many bug fixes (see http://exelearning.org/projects/exe1/milestone/0.20%20Arachnidian%20Avondale)
 
- -- Matthew Sherborne <matthew@exelearning.org>  Tue, 12 Dec 2006 15:44:54 +1300
+ -- Matthew Sherborne <matthew@exelearning.org>  Fri, 02 Feb 2007 18:57:52 +1300
 
 python-exe (0.19.1-0.1ubuntu1) unstable; urgency=low
     * Went back to old firefox
