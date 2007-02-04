@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2007-02-02 16:21+1200\n"
+"PO-Revision-Date: 2007-02-05 11:51+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -150,14 +150,14 @@ msgid ""
 "should be directly related to the text the learner has been asked to read. \n"
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
-msgstr ""
+msgstr "<p>リーディング活動はその名が示すように、学習者が読んだ内容についてに学習活動をするものです。適所でフィードバックを与えることで、学習者に学習内容についてこうさつさせることできます。</p>"
 
 #: exe/engine/galleryidevice.py:491
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
-msgstr ""
+msgstr "<p>あなたが相互に関連がある画像、あるいは特定の学習活動に関連がある画像をたくさん持っておられる場合、それらの画像を個別に表示するより、ギャラリー形式で表示されてはどうでしょう。</p>"
 
 #: exe/engine/package.py:203
 msgid "?????"
@@ -192,11 +192,11 @@ msgstr "「指導上のヒント」を利用することで、あなたの意図
 
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
-msgstr ""
+msgstr "簡単なディスカッション"
 
 #: exe/webui/editorpane.py:224
 msgid "Actions"
-msgstr ""
+msgstr "アクション"
 
 #: exe/engine/idevicestore.py:286 exe/engine/idevicestore.py:325
 #: exe/engine/idevicestore.py:333 exe/engine/idevicestore.py:394
@@ -219,11 +219,11 @@ msgstr "JPEG画像の追加"
 
 #: exe/webui/editorpane.py:75
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
-msgstr ""
+msgstr "iDeviceに一行分のテキストを追加します。iDevice内にラベルを配置したい場合便利です。"
 
 #: exe/webui/editorpane.py:78
 msgid "Add a text entry box to an iDevice. Used for entering description textual content."
-msgstr ""
+msgstr "iDeviceにテキスト入力ボックスを追加してください。テキストによる内容を記述するのに利用できます。"
 
 #: exe/idevices/appletidevice.py:57
 msgid ""
@@ -231,6 +231,9 @@ msgid ""
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"アプレット用のファイル（テキストファイル.txt以外）をすべて追加してください。\n"
+"一度にひとつずつ「ファイルを追加」と「アップロード」ボタンを利用して行ってください。\n"
+"ファイルは取り込まれるとアプレッとコードの領域の下に表示されます。"
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
@@ -275,23 +278,23 @@ msgstr "位置："
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr ""
+msgstr "「配置」により、画面のどの部分に画像を配置するか決めることができます。"
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
-msgstr ""
+msgstr "「配置」により、画面のどの部分にメディアプレーヤーを配置するか決めることができます。"
 
 #: exe/engine/field.py:524
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
-msgstr ""
+msgstr "学習者が空所補充をすべて終えた際、自動的に終了する。"
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "学習者が空所補充をすべて終えた際、自動的に終了する。"
 
 #: exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -310,6 +313,17 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"MCQsは、通常のテストでも利用できますが、学習者が返答したがらないような \n"
+"トピックに関して考えさせたり、議論させるためのテスト用ツールとしても利用できます。 \n"
+"MCQを設計する際は、次のことを考慮にいれてください。 \n"
+"<ul>\n"
+"<li> どのような学習結果を計るのか</li>\n"
+"<li> どのような知識や技能を計るのか</li>\n"
+"<li> 学習者の言語能力はどの程度か</li>\n"
+"<li> 性別や文化的背景</li>\n"
+"<li> 文法用語や解答のかぎを与えるような質問構成は避ける</li>\n"
+"</ul>\n"
+" "
 
 #: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:435
 msgid ""
@@ -317,6 +331,9 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"「アクティビティー」は学習者が取り組むタスクとして定義されます。タスクについえは\n"
+"明確な説明を与え、学習がタスクに取り組む上で、支援したり、あるいは妨げと\n"
+"なるような状況について考慮してください。"
 
 #: exe/idevices/appletblock.py:86
 msgid "Applet Code:"
@@ -333,7 +350,7 @@ msgstr "添付"
 #: exe/engine/attachmentidevice.py:99
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "添付ファイル%s はeXeでは対応していません"
 
 #: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
 #, fuzzy
@@ -346,7 +363,7 @@ msgstr "著者"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr ""
+msgstr "ボタンキャプション"
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
@@ -408,6 +425,9 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
 msgstr ""
+"画像を表示したいサイズを選択してください。大きさはピクセルで表示されます。一般的には\n"
+"100ピクセルがおおよそ3cmの画像となります。画像をオリジナルのサイズで表示したい場合は、\n"
+"両方のフィールドを空白のままにしておいてください。"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -415,10 +435,12 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
 msgstr ""
+"下の画像をクリックするか\n"
+"\"イメージを追加する\" ボタンをクリックし、拡大したい画像ファイルを選択してください。"
 
 #: exe/engine/attachmentidevice.py:57
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr ""
+msgstr "<strong>ファイルを選択する</strong>をクリックし, 添付するファイルを探し、そのファイルを選択してください。"
 
 #: exe/engine/field.py:139
 msgid "Click Here"
@@ -426,7 +448,7 @@ msgstr "ここをクリックする"
 
 #: exe/webui/common.py:281 exe/webui/common.py:284
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "指示の終了のため、クリックしてください"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
@@ -436,11 +458,11 @@ msgstr "ここをクリックする"
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into a symbols image."
-msgstr ""
+msgstr "LATEXを記号イメージに変換するためプレレビューボタンをクリックしてください。"
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "「画像を追加する」をクリックし、画像ファイルを選択してください。画像が下に表示され、ラベルの記入ができます。ラベルにファイルサイズを記入しておくと利用者には便利です。"
 
 #: exe/engine/galleryidevice.py:291 exe/webui/common.py:289
 #: exe/webui/common.py:290 exe/webui/multichoiceblock.py:154
@@ -490,6 +512,9 @@ msgid ""
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"ケーススタディ用のストーリーを作成してください。よいストーリーとは、論争をしやすい状況を \n"
+"描写したもの、あるいは関わる人物像や状況を克明に描写したシーンが設定されたものです。\n"
+"また、その状況を解決するために行動する必要があるケースの設定もかのうです。"
 
 #: exe/webui/galleryblock.py:249 exe/webui/block.py:208
 #: exe/webui/editorpage.py:177 exe/webui/editorpage.py:181
@@ -526,7 +551,7 @@ msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr ""
+msgstr "学習者が自分がやった学習活動の評価方法について記述してください。（Rubrics「評価表」はフィードバックを与える際有効なデバイスとなります）"
 
 #: exe/engine/casestudyidevice.py:97
 msgid ""
