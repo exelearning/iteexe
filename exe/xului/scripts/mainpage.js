@@ -463,6 +463,13 @@ function aboutPage() {
     aboutWin = window.open ("/about", "About", features);
 }
 
+// load the Live Chat page
+function liveChatPage() {
+    // use the user's default browser, as per the reportIssue() command, 
+    // rather than the current FireFox instance (too open, security-wise):
+    nevow_clientToServerEvent('liveChat', this, '');
+}
+
 // Go to the exelearning.org/register.php site
 function registerOnline() {
     nevow_clientToServerEvent('register', this, '');

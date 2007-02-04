@@ -106,6 +106,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleRegister,        'register')
         setUpHandler(self.handleReportIssue,     'reportIssue')
+        setUpHandler(self.handleLiveChat,        'liveChat')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
@@ -372,6 +373,16 @@ class MainPage(RenderableLivePage):
             webbrowser.open("http://exelearning.org/issue.php", new=True)
         else:
             os.system("firefox http://exelearning.org/issue.php&")
+
+    def handleLiveChat(self, client):
+        """Go to the IRC page, but via the exelearning redirect"""
+        if hasattr(os, 'startfile'):
+            os.startfile("http://exelearning.org/cgi-bin/irc/irc.cgi")
+        elif sys.platform[:6] == "darwin":
+            import webbrowser
+            webbrowser.open("http://exelearning.org/cgi-bin/irc/irc.cgi", new=True)
+        else:
+            os.system("firefox http://exelearning.org/cgi-bin/irc/irc.cgi&")
 
 
     def handleInsertPackage(self, client, filename):
