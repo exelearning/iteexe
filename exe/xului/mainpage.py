@@ -377,12 +377,12 @@ class MainPage(RenderableLivePage):
     def handleLiveChat(self, client):
         """Go to the IRC page, but via the exelearning redirect"""
         if hasattr(os, 'startfile'):
-            os.startfile("http://exelearning.org/cgi-bin/irc/irc.cgi")
+            os.startfile("http://exelearning.org/irc.php")
         elif sys.platform[:6] == "darwin":
             import webbrowser
-            webbrowser.open("http://exelearning.org/cgi-bin/irc/irc.cgi", new=True)
+            webbrowser.open("http://exelearning.org/irc.php", new=True)
         else:
-            os.system("firefox http://exelearning.org/cgi-bin/irc/irc.cgi&")
+            os.system("firefox http://exelearning.org/irc.php&")
 
 
     def handleInsertPackage(self, client, filename):
