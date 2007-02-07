@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-07 09:12+1200\n"
+"PO-Revision-Date: 2007-02-07 14:24+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -25,9 +25,8 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
-"\"アプレットファイルからテキストファイルを探し、\n"
-"開きますand open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
-"code field."
+"\"アプレットファイルからテキストファイルを探し、開きます。そのファイルから\n"
+"コンテンツをアプレットコード領域にコピーしてください。<ctrl A, ctrl C>"
 
 #: exe/webui/block.py:224
 msgid "---Move To---"
@@ -41,7 +40,7 @@ msgstr ". アスキーネームを利用してください."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>もしあなたの目的が主要なコンセプトあるいは読解力をテストすることであれば  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
+msgstr "<dl>  <dt>主要なコンセプトあるいは読解力をテストすることが目的の場合</dt>  <dd> <p> コンセプトの要約、もしくはリーディンヅ内容を記入してください。その際、目標とすべき知識を得るのに十分な長さをもち、かつ読み疲れない程度に留める必要があります。１ページ分のタイプされた量であれば十分といえますが、若年層の学習者や初心者にとってはもう少し短いほうが適当だと思われます。</p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer. </p></dd><dt>語彙力をテストすることが目的の場合</dt>  <dd><p>ターゲットとする語彙を含むテキストを記入してください。テキストは首尾一貫し、適度の長さをもったものでなければなりません。テキスト中のターゲットとなる単語は強調してください。明確に解答となる単語とともに他の選択肢を選んでください。</p>  </dd>  <dt>単語の形成や文法力のテストを目的とする場合 </dt>  <dd>  <p>ターゲットとなる語の形成を含むテキストを記入してください。テキストは首尾一貫し、適度の長さをもったものでなければなりません。目的は語彙力を試すものではありませんので、語幹となる単語の核となる意味は学習者がよく知っていることが必要です。</p>  <p>テキスト中のターゲットとなる単語は強調してください。同じ語幹と異なった接辞をもつ選択肢を準備してください。間違いがないように事前に同僚にテストをチェックyしてもらうと良いでしょう </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select a MP3&gt; and browse to the MP3       file you want to insert</li> <li>Click on the dropdown arrow and select the position        that you want the file displayed on screen.</li>  <li>Enter a caption for your file.</li> <li>Associate relevant text to the MP3 file.</li> <li>Choose the type of style you want the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
@@ -71,20 +70,16 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"The image with text iDevice can be used in a number of ways to support both\n"
-"the emotional (affective) and learning task (cognitive) dimensions of eXe\n"
-"content. \n"
+"「テキスト付画像」の iDevice は、eXeのコンテンツにおいて、感情に関する（情緒）点と\n"
+"学習タスク(認知)の点の両方をサポートするのに様々な方法で活用できます。\n"
 "</p><p>\n"
-"<b>Integrating visuals with verbal summaries</b>\n"
+"<b>言葉による説明と視覚の統合</b>\n"
 "</p><p>\n"
-"Cognitive psychologists indicate that presenting learners with a\n"
-"representative image and corresponding verbal summary (that is presented\n"
-"simultaneously) can reduce cognitive load and enhance learning retention.\n"
-"This iDevice can be used to present an image (photograph, diagram or\n"
-"graphic) with a brief verbal summary covering the main points relating to\n"
-"the image. For example, if you were teaching the functions of a four-stroke\n"
-"combustion engine, you could have a visual for each of the four positions of\n"
-"the piston with a brief textual summary of the key aspects of each visual.\n"
+"認知心理学者は、学習者に画像とそれに関連する言葉による説明を同時に提供することは\n"
+"認知面での負担を軽減し、学習による記憶を高めると指摘しています。\n"
+"このThis iDeviceにより、画像（写真、グラフ、図表、グラフィック）を、画像に関連する簡単な説明\n"
+"とともに表示することができます。例えば、もしあなたが４気筒のエンジンの機能について説明したい場合、\n"
+"ピストンの４つの位置に冠する画像と、それぞれの画像にテキストによる説明を盛り込むことができます。\n"
 "</p>"
 
 #: exe/engine/attachmentidevice.py:60
@@ -178,6 +173,18 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"「ケーススタディ」は、教育的なベースをもったシュミレーションを学習者に提供するためのiDeviceです。\n"
+"通常事実に基づいた状況を必要とし、学習者はタスクを実行する、あるいはその状況を解決するために\n"
+"どのような行動を彼らが取るのか、例証あるいは記述することが求められます。\n"
+"「ケーススタディ」では、学習者は割り当てられたタスクをこなすために彼らの知識や経験を応用することが\n"
+"求められます。\n"
+"｢ケーススタディー」を設計する際は次の点を留意することが必要です<ul> \n"
+"<li>どのよう教育的なポイントがストーリーに盛り込まれているか</li>\n"
+"<li>ケーススタディーに取り組む前に学習者はどのような準備が必要か</li>\n"
+"<li>学習コースのどの部分でケーススタディが最も適合するか</li>\n"
+"<li>学習者がどのように教材や他の学習者と影響しあうのか。\n"
+"（例）もし教室で実施する場合、異なったケースに取り組むためチームが結成ができるか\n"
+"もしそれが可能ならどのように考えがクラスにフィードバックされるのか</li></ul>"
 
 #: exe/engine/truefalseidevice.py:66
 msgid ""
@@ -929,6 +936,9 @@ msgid ""
 "problematic usability consequences, this iDevice loads the appropriate content \n"
 "into an inline frame. Use only if your content will be online."
 msgstr ""
+"もし外部のWebサイトを教材に入れる必要があれば、このiDeviceを利用することで \n"
+"フレーム内にページを表示できます。ポップアップで表示すると、利用上問題が生じる \n"
+"可能性がありますのでiDeviceの利用をお勧めします（ただしオンラインでの利用のみ）"
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
@@ -1367,6 +1377,10 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
+"「必須知識」とは、学習者が効果的に学習を行うために必要な知識です。\n"
+"例：　<ul>\n"
+"<li> 学習者はレベル４の英語力を必要とする </li>\n"
+"<li> 学習者は基本的な工具の組み立てができなければならない </li></ul>\n"
 
 #: exe/webui/editorpane.py:227
 #: exe/webui/element.py:1070
@@ -1488,6 +1502,11 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
 msgstr ""
+"リフレクションは理論と実践を結びつけるためによく用いられる指導方法です。\n"
+"リフレクション用のタスクでは、学習者に、観察する機会と、観察した内容を学術的な \n"
+"作品として提示する前に、内容について考察する機会を与えます。\n"
+"ジャーナル、日誌、プロファイルやポートフォリオなどは観察したデータを集約するのに \n"
+"役立ちます。評価表やガイドの利用は効果的なフィードバックとして役立ちます。"
 
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
@@ -1715,7 +1734,7 @@ msgstr "スウェーデン語のウィキペディア記事"
 
 #: exe/engine/idevicestore.py:357
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
+msgstr "教師はこのiDeviceを利用する際、次の点に留意する必要があります。<ol><li>あなたのリソースに対して利用する学習活動の数と種類についてよく考えて計画してください。それらはすべてコンテンツ上で表示されることになります。学習者が混乱するのを避けるため、活動の種類、あるいは活動の分類の多用はおすすめしません。通常１つの学習リソースに対して３つか４つの異なる種類の利用は混乱をきたす可能性があります。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめしますが、もしその必要があれば、できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとって見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考えてください。</li></ol>"
 
 #: exe/engine/multimediaidevice.py:64
 #: exe/engine/imagewithtextidevice.py:61
@@ -1737,7 +1756,7 @@ msgstr "MP3のiDeviceを利用することで、関連するテキスト情報�
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
+msgstr "添付iDeviceはあなたの作成したコンテンツに既存のファイルを添付するのに利用できます。例えば、学習者にアクセスさせたいPDF （Acrobat用）ファイルや、PPT（パワーポイント用）ファイルを利用したい場合、ファイルを添付し、ファイルについての説明文やファイルサイズをラベルとして記入することができます。学習者は添付ファイルをクリックすることでファイルをダウンロードできます。"
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -1746,6 +1765,8 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
+"テキスト付のフラッシュの利用により、フラッシュファイルに追加でテキスト情報を記入できます \n"
+"学習者が見るフラッシュファイルに関して学習に役立つ指示を与え対場合に便利です。"
 
 #: exe/engine/imagemagnifieridevice.py:42
 msgid ""
@@ -1753,6 +1774,8 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"画像拡大は、学習者が与えられた画像を拡大することができるツールです。\n"
+"画面上で拡大鏡を移動することで画像の詳細を学習できます。"
 
 #: exe/engine/freetextidevice.py:39
 msgid ""
@@ -1761,6 +1784,8 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"学習用のリソースの多くは学習用コンテキストの作成、助言や一般的な情報提供のために \n"
+"用いられます。ここでは、学習活動の構成や配信に関するフレームワークを提供します。"
 
 #: exe/engine/mathidevice.py:37
 msgid ""
@@ -1773,10 +1798,14 @@ msgid ""
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
 msgstr ""
+"数学用の言語LATEXは、あなたの作成する教材内で数式を作成するために \n"
+"使われます。ここではLATEXを画像イメージに変換し,eXe内で教示できるようにします。\n"
+"その際は、フリーテキストiDeviceを利用して説明文を記入し、画像の周辺に学習用の \n"
+"指示を提供することをおすすめします。"
 
 #: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
-msgstr ""
+msgstr "目的ダイアログの利用により、Deviceの利用目的を記述し、他のユーザに知らせることができます。"
 
 #: exe/xului/mainpage.py:422
 #: exe/xului/mainpage.py:460
@@ -1807,6 +1836,11 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
+"このiDeviceはフラッシュムービーファイル(.FLV)のフォーマットのみサポートしています。\n"
+"他のビデオ用ムービーフォーマット(例： mov, wmf など)からフラッシュムービー　\n"
+"フォーマットに変換することができます。エンコーダーについてははeXeでは扱っていません。\n"
+"また、フラッシュムービーを再生するにはFlash 8 playerを次のサイトからダウンロードする　\n"
+"必要があります。http://www.macromedia.com"
 
 #: exe/engine/freetextidevice.py:68
 msgid "This is a free text field general learning content can be entered."
@@ -1820,7 +1854,7 @@ msgstr "ここはフリーテキスト用のフィールドです。"
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
-msgstr ""
+msgstr "これはユーザーが作成したiDeviceプラグインの例です。"
 
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
@@ -1871,6 +1905,9 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
+"正誤問題は、学習者に記述された内容が正しいか違っているか判断させるための \n"
+"質問形式です。この種類の質問形式は、事実に基づいた情報や、正しいか間違って\n"
+"いるかの判断がしやすい情報を利用する際効果があります。"
 
 #: exe/engine/field.py:681
 #: exe/idevices/forumidevice.py:151
@@ -1889,6 +1926,10 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other options."
 msgstr ""
+"学習者が特定のオプションを選択した際に提供するフィードバックを記入してください。 \n"
+"このボックスに何も記入しない場合、eXeは次の様なデフォルトのフィードバックを \n"
+"自動的に提示します。\n"
+" 正答の場合には、\"正解\"、正答以外のオプションを選んだ場合には、\"不正解\""
 
 #: exe/engine/truefalseidevice.py:148
 msgid ""
@@ -1898,6 +1939,14 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Type in the feedback that you want the \n"
+"student to see when selecting the particular question. If you don't complete\n"
+"this box, eXe will automatically provide default feedback as follows: \n"
+"\"Correct answer\" as indicated by the selection for the correct answer; or \n"
+"\"Wrong answer\" for the other alternatives.学習者が特定の質問を選択した際、学習者に提供するフィードバックを記入してください。 \n"
+"このボックスに何も記入しない場合、eXeは次の様なデフォルトのフィードバックを \n"
+"自動的に提示します。\n"
+" 正答の場合には、\"正解\"、正答以外のオプションを選んだ場合には、\"不正解\""
 
 #: exe/engine/idevicestore.py:309
 #: exe/engine/idevicestore.py:416
@@ -1966,6 +2015,10 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"MCQとは異なり、SCROMクイズは、学習者の正答に対するフィードバックを \n"
+"提供せず、あるトピックに関する学習者の知識をテストするために利用できます。\n"
+"このクイズは学習者が情報や技能を利用して学習したり練習した後、利用する \n"
+"こともできます。"
 
 #: exe/idevices/appletblock.py:82
 msgid "Upload"
@@ -1982,6 +2035,9 @@ msgid ""
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"フィードバックは、リーディングに関する要点を提示するために利用できます。 \n"
+"また、質問を貸したり議論を始めるための状況を提供することで、リーディング \n"
+"内容の詳細な分析を促すためにも利用できます。"
 
 #: exe/engine/galleryidevice.py:494
 msgid "Use this Idevice if you have a lot of images to show."
@@ -2021,6 +2077,14 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"MCQ の構築の際は、次のことを念頭においてください。<ul>\n"
+"<li> 学習者になじみのある、あるいはこれまでの学習で見聞きした表現を用いる</li>\n"
+"<li> 選択肢の内容は簡潔なものとする </li>\n"
+"<li> 質問と選択肢には一貫性を持たせる </li>\n"
+"<li> 学習者が解答の際、考えることができるよう十分な数のオプションを提示する</li>\n"
+"<li> 正解が他の選択肢と比較してより詳細な記述とならないよう留意する </li>\n"
+"<li> 他の選択肢は不正解であっても、もっともらしい内容とする </li>\n"
+"</ul>\n"
 
 #: exe/webui/wikipediablock.py:98
 msgid "Wikibooks Article"
@@ -2259,6 +2323,10 @@ msgid ""
 "                vocabulary or formal classification scheme.\n"
 "             "
 msgstr ""
+"\n"
+"                一般的に主題（Subject）は、利用するリソースのトピックについて説明するキーワード、\n"
+"　　　　　　　　キーフレーズ、分類コードの形で記述されます。できれば制限語彙や形式的な分類法 \n"
+"　　　　　　　　から選ぶことをお勧めします。"
 
 #: exe/xului/templates/mainpage.xul:<key
 #: n:render="renNode"
@@ -2348,6 +2416,9 @@ msgid ""
 "                 encoding the date value is defined in a profile called\n"
 "                 "
 msgstr ""
+"\n"
+"                 一般的に日付（Date）では、作成日時やリソースの利用開始日時を記載します。\n"
+"                 推奨するデータ記入法は、作業を行った日付によって定義することです。"
 
 #: exe/xului/templates/mainpage.xul:<key
 #: n:render="down"
@@ -2396,6 +2467,9 @@ msgid ""
 "              genres, for content. Recommended best practice is to select a value\n"
 "              from a controlled vocabulary or controlled classification scheme."
 msgstr ""
+"\n"
+"              「タイプ」では、コンテンツの一般的なカテゴリー、機能、種類を記載する用語を記入します。\n"
+"　　　　　　　できれば制限語彙や形式的な分類法から選ぶことをお勧めします。"
 
 #: exe/xului/templates/mainpage.xul:<key
 #: n:render="translate"
@@ -3716,5 +3790,5 @@ msgstr "権利："
 #: exe/xului/templates/dublincore.xul:<description
 #: id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
+msgstr "一般的に「権利」部分は、リソースに関する権利の管理、あるいはその情報を提供するサービスの文献を含みます。権利に関する情報は通常、知的所有権(IPR)、著作権（Copyright）、そして多様な所有に関する権利を包括します。｢権利」部分に記入がない場合、リソースに関するこれらの権利の位置づけや他の権利ついて判断できないことになります。"
 
