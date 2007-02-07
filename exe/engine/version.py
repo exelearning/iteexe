@@ -24,7 +24,7 @@ Version Information
 """
 
 project        = "exe"
-release        = "0.20.1"
+release        = "0.20.2"
 revision       = "$Revision$"[11:-2]
 # if it is available, get the SVN revision
 try:

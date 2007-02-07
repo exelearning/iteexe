@@ -1,3 +1,9 @@
+Version 0.20.2
+* Improved Japanese translation
+* Add Live Chat to Help menu to open link that connects to IRC CGI
+* Fix to allow use of iDevices created in 0.19
+* OS X: Add SCORM 1.2 export schema
+
 Version 0.20.1 - Arachnidian Avondale (bug-less)
 * Improved ability to upgrade projects made with version 0.19 and earlier
 * Updated Japanese and Chinese translations
