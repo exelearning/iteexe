@@ -95,7 +95,7 @@
                 <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
                 <!-- <menuitem n:render="translate" label="Register Online" accesskey="R" oncommand="registerOnline()"/> -->
                 <menuitem n:render="translate" label="Report an Issue" accesskey="R" oncommand="reportIssue()"/>
-		<menuitem n:render="translate" label="eXe Live Chat" accesskey="a" oncommand="liveChatPage()"/>
+		<menuitem n:render="translate" label="eXe Live Chat" accesskey="c" oncommand="liveChatPage()"/>
               </menupopup>
             </menu>
          </menubar>
