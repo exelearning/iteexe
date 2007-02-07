@@ -73,7 +73,7 @@ class EditorPane(object):
                                  u"iDevice.")
         self._tipInstruc      = x_(u"A pedagogical tip allows you to describe "
                                  u"your intended use and the pedagogy behind "
-                                 u"the devices development.")
+                                 u"the device's development.")
         self._lineInstruc     = x_(u"Add a single text line to an iDevice. "
                                  u"Useful if you want the ability to place a "
                                  u"label within the device.")
