@@ -1405,7 +1405,7 @@ class QuizOptionElement(Element):
         html += "</td></tr><tr><td align=\"center\"><b>%s</b>" % _("Feedback")
         html += common.elementInstruc(self.field.idevice.feedbackInstruc)
         html += "</td><td></td><td></td></tr><tr><td>\n" 
-        html += common.textArea('f'+self.id, self.field.feedback, rows="4")
+        html += common.richTextArea('f'+self.id, self.field.feedback)
         html += "</td><td></td><td></td></tr>\n"
 
         return html
