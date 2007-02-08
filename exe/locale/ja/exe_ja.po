@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-07 14:24+1200\n"
+"PO-Revision-Date: 2007-02-09 12:38+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
-"\"アプレットファイルからテキストファイルを探し、開きます。そのファイルから\n"
+"\"アプレットファイルからテキストファイルを探し、開iいてください。そのファイルから\n"
 "コンテンツをアプレットコード領域にコピーしてください。<ctrl A, ctrl C>"
 
 #: exe/webui/block.py:224
@@ -40,15 +40,15 @@ msgstr ". アスキーネームを利用してください."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>主要なコンセプトあるいは読解力をテストすることが目的の場合</dt>  <dd> <p> コンセプトの要約、もしくはリーディンヅ内容を記入してください。その際、目標とすべき知識を得るのに十分な長さをもち、かつ読み疲れない程度に留める必要があります。１ページ分のタイプされた量であれば十分といえますが、若年層の学習者や初心者にとってはもう少し短いほうが適当だと思われます。</p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer. </p></dd><dt>語彙力をテストすることが目的の場合</dt>  <dd><p>ターゲットとする語彙を含むテキストを記入してください。テキストは首尾一貫し、適度の長さをもったものでなければなりません。テキスト中のターゲットとなる単語は強調してください。明確に解答となる単語とともに他の選択肢を選んでください。</p>  </dd>  <dt>単語の形成や文法力のテストを目的とする場合 </dt>  <dd>  <p>ターゲットとなる語の形成を含むテキストを記入してください。テキストは首尾一貫し、適度の長さをもったものでなければなりません。目的は語彙力を試すものではありませんので、語幹となる単語の核となる意味は学習者がよく知っていることが必要です。</p>  <p>テキスト中のターゲットとなる単語は強調してください。同じ語幹と異なった接辞をもつ選択肢を準備してください。間違いがないように事前に同僚にテストをチェックyしてもらうと良いでしょう </p>  </dd></dl>"
+msgstr "<dl>  <dt>主要なコンセプトあるいは読解力のテストが目的の場合</dt>  <dd> <p> コンセプトの要約、もしくはリーディング内容を記入してください。長さは、目標とすべき知識を得るのに十分な量があり、かつ読み疲れない程度に留める必要があります。１ページ分のタイプした量であれば十分といえますが、若年層の学習者や初心者にとってはもう少し短いほうが適当だと思われます。</p>    <p>コンセプトを理解するためにキーワードを選択してください。動詞、名詞、副詞などがキーワードになるでしょう。ひとつの明確に解答となる単語とともに他の選択肢を選んでください。 </p></dd><dt>語彙力のテストが目的の場合</dt>  <dd><p>ターゲットとする語彙を含むテキストを記入してください。テキストは首尾一貫し、適度の長さをもったものでなければなりません。テキスト中のターゲットとなる単語は強調してください。明確に解答となる単語とともに他の選択肢を選んでください。</p>  </dd>  <dt>単語の形成や文法力のテストを目的とする場合 </dt>  <dd>  <p>ターゲットとなる語の形成を含むテキストを記入してください。テキストは内容が首尾一貫し、適度の長さがなければなりません。目的は語彙力を試すものではありませんので、学習者が単語の語幹となる語の意味を知っている必要があります。</p>  <p>テキスト中のターゲットとなる単語は強調してください。同じ語幹をもち、接辞の異なる単語を選択肢として準備してください。内容に間違いがないように、事前に同僚にテストをチェックしてもらうとよいでしょう </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select a MP3&gt; and browse to the MP3       file you want to insert</li> <li>Click on the dropdown arrow and select the position        that you want the file displayed on screen.</li>  <li>Enter a caption for your file.</li> <li>Associate relevant text to the MP3 file.</li> <li>Choose the type of style you want the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>&lt;MP3を選択&gt;をクリックし、挿入したいMP3ファイルをブラウズしてください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所をクリックしてください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルに関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例） e.g. '強調する' 。これらは表示されるiDeviceの内容の境界線やアイコンに反映されます。</li></ol>"
+msgstr "<ol>  <li>&lt;MP3を選択&gt;をクリックし、挿入したいMP3ファイルを選んでください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所を選んでください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルの内容に関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例）'強調する' 。「強調」は、表示されるiDeviceのコンテンツの境界線やアイコンに反映されます。</li></ol>"
 
 #: exe/engine/field.py:707
 msgid "<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
-msgstr "<ol><li>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイフィールド上で、下の&lt;プリビュー&gt;ボタンを利用して数学用言語LATEXで見ることができます。</li></ol>"
+msgstr "<ol><li>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -70,25 +70,25 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"「テキスト付画像」の iDevice は、eXeのコンテンツにおいて、感情に関する（情緒）点と\n"
-"学習タスク(認知)の点の両方をサポートするのに様々な方法で活用できます。\n"
+"「テキスト付画像」の iDevice は、eXeのコンテンツにおいて、感情（情緒）面と\n"
+"学習(認知)面の両方をサポートし、様々な方法で活用できます。\n"
 "</p><p>\n"
 "<b>言葉による説明と視覚の統合</b>\n"
 "</p><p>\n"
-"認知心理学者は、学習者に画像とそれに関連する言葉による説明を同時に提供することは\n"
+"認知心理学者は、画像とそれに関連する言葉による説明を同時に学習者に提示することは、\n"
 "認知面での負担を軽減し、学習による記憶を高めると指摘しています。\n"
-"このThis iDeviceにより、画像（写真、グラフ、図表、グラフィック）を、画像に関連する簡単な説明\n"
-"とともに表示することができます。例えば、もしあなたが４気筒のエンジンの機能について説明したい場合、\n"
-"ピストンの４つの位置に冠する画像と、それぞれの画像にテキストによる説明を盛り込むことができます。\n"
+"このThis iDeviceの利用により、画像（写真、グラフ、図表、グラフィック）を、画像に関連する簡単な説明\n"
+"とともに表示することができます。例えば、４気筒のエンジンの機能について説明したい場合、\n"
+"ピストンの４つの位置に関する画像と、それぞれの画像にテキストによる説明を盛り込むことができます。\n"
 "</p>"
 
 #: exe/engine/attachmentidevice.py:60
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr "<p>添付ファイルにラベルを割り当ててください。 ファイルの種類を記入しておくと便利です。（例： pdf, ppt　など）</p><p>ファイルサイズを記入しておくことを薦めます。教材パッケージをウェブサイトに掲載した際、利用者が添付ファイルのダウンロードにかかる時間を想定することができます。</p><p>例: <code>売り上げ予想.doc (500kb)</code></p>"
+msgstr "<p>添付ファイルにラベルを割り当ててください。 ファイルの種類を記入しておくと便利です。（例： pdf, ppt等）</p><p>ラベルにファイルサイズを記入しておくといいと思われます。教材パッケージをウェブサイトに掲載した際、利用者が添付ファイルのダウンロードにかかる時間を想定することができます。</p><p>例: <code>売り上げ予想.doc (500kb)</code></p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr "<p>空所補充活動は学習者が文中の空所を補充するための学習活動です。この活動は通常次の様な目的で利用することができます。</p><ol><li>コースのコアとなる概念に関する知識を確認する (事前チェック、フォーマティブチェック、サマティブチェック).</li><li>読解力を確認する</li><li>語彙に関する知識を確認する</li><li>単語の成り立ちや文法力を確認する</li></ol>"
+msgstr "<p>「空所補充」は、学習者に文中の空所を補充させる学習活動です。この活動は通常次の様な目的で利用することができます。</p><ol><li>コースのコア概念に関する知識の確認 (事前チェック、フォーマティブチェック、サマティブチェック).</li><li>読解力を確認する</li><li>語彙に関する知識の確認</li><li>単語の成り立ちや文法力の確認</li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -96,26 +96,26 @@ msgid ""
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr "<p>空所補充のフィールドに空所補充活動で用いるテキストを入力してください。他のリソースからコピーしたものを貼付け（ペースト）してもいいですし、直接フィールドに入力してもいいです。</p><p>空所とする単語を選択するには、単語をダブルクリックし、その後下にある「単語を隠す／表示する」ボタンをクリックしてください。</p>"
+msgstr "<p>空所補充のフィールドに空所補充による学習活動で用いるテキストを入力してください。他のリソースからコピーしたものを貼付け（ペースト）つこともできますし、直接フィールドに入力することもできます。</p><p>空所とする単語を選択するには、単語をダブルクリックし、その後、下にある「単語を隠す／表示する」ボタンをクリックしてください。</p>"
 
 #: exe/engine/field.py:462
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr "<p>この機能をチェックしない場合は、いくらかのスペルや大文字小文字のエラーは許容されます。チェックした場合、スペル、大文字小文字の区別とも完璧にマッチした場合のみ正解として許容されます。</p><p><strong>例：</strong>もし正解が<code>Elephant</code>の場合、<code>elephant</code>や<code>Eliphant</code>は、一字しか違っていないことからアルゴリズムにより<em>\"ほぼ正解\"</em>とみなされます。これは仮に\"大文字小文字を区別する\" 設定となっている場合もそうです。</p><p>上の例で「大文字小文字を区別する」が設定されてない場合、, 小文字の<code>e</code>は、間違いと見なされません。また<code>eliphant</code>についても許容されます。</p><p>\"厳しく採点する\"と\"大文字小文字をチェックする\"の両方が設定されている場合、\"Elephant\"が唯一の正解となります。.\"厳しく採点する\"が設定され、 \"大文字小文字をチェックする\"が設定されていない場合のみ、 \"elephant\" が許容されます</p>"
+msgstr "<p>この機能をチェックしない場合は、いくらかのスペルや大文字小文字のエラーは許容されます。この機能をチェックした場合、スペル、大文字小文字の区別とも完璧にマッチした場合のみ正解として許容されます。</p><p><strong>例：</strong>もし正解が<code>Elephant</code>の場合、<code>elephant</code>や<code>Eliphant</code>は、一字しか違っていないことから、アルゴリズムにより<em>\"ほぼ正解\"</em>とみなされます。これは仮に\"大文字小文字を区別する\" 設定となっている場合もそうです。</p><p>上の例で「大文字小文字を区別する」が設定されてない場合、, 小文字の<code>e</code>は、間違いと見なされません。また<code>eliphant</code>についても許容されます。</p><p>\"厳しく採点する\"と\"大文字小文字をチェックする\"の両方が設定されている場合、\"Elephant\"が唯一の正解となります。.\"厳しく採点する\"が設定され、 \"大文字小文字をチェックする\"の設定がされていない場合のみ、 \"elephant\"は許容されます。</p>"
 
 #: exe/engine/field.py:483
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr "<p>このオプションをチェックした場合、提出された解答は,大文字小文字が一致しない場合不正解として採点されます。</p>"
+msgstr "<p>このオプションをチェックした場合、提出された解答は,大文字小文字が一致しない場合、「不正解」として採点されます。</p>"
 
 #: exe/engine/field.py:488
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather then all the words being marked the end of the \n"
 "exercise.</p>"
-msgstr "<p>このオプションが設定された場合, 最後に一括して採点するのではなく学習者が単語を入力する度採点されます。</p>"
+msgstr "<p>このオプションが設定された場合, 学習者が全問題を解答後一括採点するのではなく、解答を入力する度採点されます。</p>"
 
 #: exe/engine/idevicestore.py:249
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "<p>教師はこのiDeviceを利用する際は次の点を考慮する必要があります。</p><ol><li>あなたが利用する教材に対して利用する活動の種類と数については、よく考えて計画してください。あまりに多くの種類や、分類を用いた場合、学習者は混乱する可能性があります。通常１つの教材に対して３つか４つの種類を利用することが適当です。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめしますが、できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとが見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考えてください。</li></ol>"
+msgstr "<p>教師はこのiDeviceを利用する際は次の点を考慮する必要があります。</p><ol><li>教材に対して利用する活動の種類と数については、よく考えて計画してください。あまりに多くの種類や、数を用いた場合、学習者は混乱する可能性があります。通常１つの教材に対して、３、４種類を利用することが適当です。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめします。できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとって見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考慮してください。</li></ol>"
 
 #: exe/engine/idevicestore.py:244
 msgid ""
@@ -124,7 +124,7 @@ msgid ""
 "by asking the learner to reflect on the reading and respond to questions about \n"
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
-msgstr "<p>「リーディング活動」は主に与えられたテキストに対する学習者の理解度をチェックするための活動です。この「リーディング活動」では、学習者にリーディング内容について考えさせたり、質問に答えさせます。また、他のリーディングに基づいた学習タスクに取り組ませることも可能です。</p>"
+msgstr "<p>「リーディング活動」は、主に与えられたテキストに対する学習者の理解度をチェックするための活動です。この「リーディング活動」では、学習者にリーディング内容について考えさせたり、質問に答えさせることができます。また、他のリーディングに基づいた学習タスクに取り組ませることも可能です。</p>"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -135,7 +135,7 @@ msgid ""
 "copies in eXe, a fresh copy of the article will need to be taken. Likewise, \n"
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
-msgstr "<p>ウィキペディアのiDeviceの利用により、ウィキペディアにあるコンテンツを検索し、教材として取り込むことができます。ウィキペディア記事のiDeviceではウィキペディアの記事を瞬時に取り出すことができます。ウィキペディアの情報は度々更新されますが、eXeで取り込んだ内容は自動的に更新されるわけではありません。そのため更新された内容を取り込むには新規に取り込む必要があります。同様に、eXeで変更した内容はウィキペディアに反映されるわけではありません。</p> <p>ウィキペディアの内容はGNU free documentation licenseによって保護されています。</p>"
+msgstr "<p>ウィキペディア用のiDeviceの利用により、ウィキペディアにあるコンテンツを検索し、教材として取り込むことができます。「ウィキペディア記事」のiDeviceでは、ウィキペディアの記事を瞬時に取り出すことができます。ウィキペディアの情報は度々更新されますが、eXeで取り込んだ内容は自動的に内容が更新されるわけではありませんので、更新された内容を取り込むには新規に取り込む必要があります。同様に、eXeで変更した内容はウィキペディアに反映されるわけではありません。</p> <p>ウィキペディアの内容はGNU free documentation license(グニュー・フリー・ドキュメンテーション・ライセンス)によって保護されています。</p>"
 
 #: exe/engine/idevicestore.py:352
 msgid ""
@@ -144,14 +144,14 @@ msgid ""
 "should be directly related to the text the learner has been asked to read. \n"
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
-msgstr "<p>リーディング活動はその名が示すように、学習者が読んだ内容についてに学習活動をするものです。適所でフィードバックを与えることで、学習者に学習内容についてこうさつさせることできます。</p>"
+msgstr "<p>「リーディング活動」は、その名が示すように、学習者にリーディングした内容について学習活動をさせるものです。適所でフィードバックを与えることで、学習者に学習内容について考察させることできます。</p>"
 
 #: exe/engine/galleryidevice.py:491
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
-msgstr "<p>あなたが相互に関連がある画像、あるいは特定の学習活動に関連がある画像をたくさん持っておられる場合、それらの画像を個別に表示するより、ギャラリー形式で表示されてはどうでしょう。</p>"
+msgstr "<p>相互に関連がある画像、あるいは特定の学習活動に関連する画像がたくさんある場合、画像を個別に表示するより、ギャラリー形式で表示するのも一案です。</p>"
 
 #: exe/engine/package.py:203
 msgid "?????"
@@ -173,24 +173,24 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"「ケーススタディ」は、教育的なベースをもったシュミレーションを学習者に提供するためのiDeviceです。\n"
-"通常事実に基づいた状況を必要とし、学習者はタスクを実行する、あるいはその状況を解決するために\n"
-"どのような行動を彼らが取るのか、例証あるいは記述することが求められます。\n"
-"「ケーススタディ」では、学習者は割り当てられたタスクをこなすために彼らの知識や経験を応用することが\n"
+"「ケーススタディ」は、教育的な基盤を背景に持ったシュミレーションを学習者に提供するためのiDeviceです。\n"
+"通常、事実に基づいた状況を必要とし、学習者はタスクを実行するため、あるいはその状況を解決するために、\n"
+"どのような行動を彼らが取るのかについて例証もしくは記述することが求められます。\n"
+"「ケーススタディ」では、学習者は割り当てられたタスクをこなすために、彼らの知識や経験を応用することが\n"
 "求められます。\n"
-"｢ケーススタディー」を設計する際は次の点を留意することが必要です<ul> \n"
-"<li>どのよう教育的なポイントがストーリーに盛り込まれているか</li>\n"
-"<li>ケーススタディーに取り組む前に学習者はどのような準備が必要か</li>\n"
-"<li>学習コースのどの部分でケーススタディが最も適合するか</li>\n"
-"<li>学習者がどのように教材や他の学習者と影響しあうのか。\n"
-"（例）もし教室で実施する場合、異なったケースに取り組むためチームが結成ができるか\n"
-"もしそれが可能ならどのように考えがクラスにフィードバックされるのか</li></ul>"
+"｢ケーススタディー」を設計する際は、次の点を確認してください<ul> \n"
+"<li>どのよう教育的な面がストーリーによって展開されるのか</li>\n"
+"<li>ケーススタディーに取り組む前に、学習者はどのような準備が必要か</li>\n"
+"<li>ケーススタディを学習コースのどの部分で行うのが最も適当か</li>\n"
+"<li>学習者が、どのように教材や他の学習者と影響しあうのか\n"
+"（例）もし教室で実施する場合、異なったケースに取り組ませるためチームが結成できるか？\n"
+"もしそれが可能なら、どのように個々のチーム考えがクラスにフィードバックされるのか？</li></ul>"
 
 #: exe/engine/truefalseidevice.py:66
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr "「ヒント」は学習者が質問に答える際、解答を支援するために提示されます。"
+msgstr "「ヒント」は学習者が質問に答える際、解答を支援するために提示するために利用できます。"
 
 #: exe/webui/editorpane.py:72
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the devices development."
@@ -241,41 +241,41 @@ msgid ""
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
 "アプレット用のファイル（テキストファイル.txt以外）をすべて追加してください。\n"
-"一度にひとつずつ「ファイルを追加」と「アップロード」ボタンを利用して行ってください。\n"
-"ファイルは取り込まれるとアプレッとコードの領域の下に表示されます。"
+"一度に一つずつ「ファイルを追加」と「アップロード」ボタンを利用して、ファイルの追加をしてください。\n"
+"ファイルは取り込まれるとアプレットコード領域の下に表示されます。"
 
 #: exe/webui/editorpane.py:81
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
-msgstr "あなたのｉDeviceに画像を追加します。あなたの所有する画像ファイル集から画像の選択を可能にします。"
+msgstr "ｉDeviceに画像を追加します。あなたの所有する画像ファイルから画像の選択が可能になります。"
 
 #: exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
-msgstr "別のオプションを追加する"
+msgstr "別のオプションを追加"
 
 #: exe/idevices/quiztestblock.py:101
 msgid "Add another Question"
-msgstr "別の質問を追加する"
+msgstr "別の質問を追加"
 
 #: exe/webui/multichoiceblock.py:118
 msgid "Add another option"
-msgstr "別のオプションを追加する"
+msgstr "別のオプションを追加"
 
 #: exe/webui/truefalseblock.py:88
 #: exe/webui/casestudyblock.py:97
 msgid "Add another question"
-msgstr "別の質問を追加する"
+msgstr "別の質問を追加"
 
 #: exe/idevices/appletblock.py:80
 msgid "Add files"
-msgstr "ファイルを追加する"
+msgstr "ファイルを追加"
 
 #: exe/webui/galleryblock.py:180
 msgid "Add images"
-msgstr "イメージを追加する"
+msgstr "画像を追加"
 
 #: exe/webui/editorpane.py:84
 msgid "Add interactive feedback to your iDevice."
-msgstr "iDeviceにインタラクティブなフィードバックを追加する"
+msgstr "iDeviceにインタラクティブなフィードバックを追加"
 
 #: exe/webui/imagemagnifierblock.py:108
 #: exe/webui/imagewithtextblock.py:79
@@ -283,7 +283,7 @@ msgstr "iDeviceにインタラクティブなフィードバックを追加す�
 #: exe/webui/multimediablock.py:83
 #: exe/idevices/flashmovieblock.py:78
 msgid "Align:"
-msgstr "位置："
+msgstr "配置："
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:89
@@ -302,11 +302,13 @@ msgstr "「配置」により、画面のどの部分にメディアプレーヤ
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
-msgstr "学習者が空所補充をすべて終えた際、自動的に終了する。"
+msgstr ""
+"学習者が空所補充をすべて終えた際、\n"
+"　　　　　　　　　　　　　　　　　　　　自動的に終了させる。"
 
 #: exe/engine/clozeidevice.py:160
 msgid "Allow auto completion when user filling the gaps."
-msgstr "学習者が空所補充をすべて終えた際、自動的に終了する。"
+msgstr "学習者が空所補充をすべて終えた際、自動的に終了させる。"
 
 #: exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -325,15 +327,15 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"MCQsは、通常のテストでも利用できますが、学習者が返答したがらないような \n"
+"「MCQs」は、通常のテストでも利用できますが、学習者が返答したがらないような \n"
 "トピックに関して考えさせたり、議論させるためのテスト用ツールとしても利用できます。 \n"
-"MCQを設計する際は、次のことを考慮にいれてください。 \n"
+"MCQを設計する際は、次の点について考慮してください。 \n"
 "<ul>\n"
-"<li> どのような学習結果を計るのか</li>\n"
-"<li> どのような知識や技能を計るのか</li>\n"
-"<li> 学習者の言語能力はどの程度か</li>\n"
-"<li> 性別や文化的背景</li>\n"
-"<li> 文法用語や解答のかぎを与えるような質問構成は避ける</li>\n"
+"<li> どのような学習結果を計るのか？</li>\n"
+"<li> どのような知識や技能を計るのか？</li>\n"
+"<li> 学習者の言語能力はどの程度か？</li>\n"
+"<li> 学習者の性別、文化的背景</li>\n"
+"<li> 文法用語の利用、解答のヒントを与えるような質問構成については極力避ける</li>\n"
 "</ul>\n"
 " "
 
@@ -344,13 +346,13 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
-"「アクティビティー」は学習者が取り組むタスクとして定義されます。タスクについえは\n"
-"明確な説明を与え、学習がタスクに取り組む上で、支援したり、あるいは妨げと\n"
-"なるような状況について考慮してください。"
+"「アクティビティー」は、学習者が取り組むタスクとして定義されます。タスクの設定の際は、\n"
+"明確な説明を与え、タスクを実行する上で、支援するような状況、あるいはタスクの妨げと\n"
+"なるような状況については、よく考慮してください。"
 
 #: exe/idevices/appletblock.py:86
 msgid "Applet Code:"
-msgstr "アプレットコード"
+msgstr "アプレットコード："
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
@@ -380,7 +382,7 @@ msgstr "ボタンキャプション"
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
-msgstr "学習者がこのフォーラムに投稿してもよいですか？"
+msgstr "学習者に、このフォーラムへの投稿を許可しますか？"
 
 #: exe/webui/preferencespage.py:94
 #: exe/webui/editorpane.py:232
@@ -420,19 +422,19 @@ msgstr "中国語ウィキペディア記事"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
-msgstr "LMSを選択する"
+msgstr "LMSの選択"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose a MP3 file"
-msgstr "MP3ファイルを選択する"
+msgstr "MP3ファイルの選択"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr "画像を選択する"
+msgstr "画像の選択"
 
 #: exe/engine/casestudyidevice.py:54
 msgid "Choose an image to be shown to the student on completion of this question"
-msgstr "学生がこの質問に答えた後、提示する画像を選んでください"
+msgstr "学生がこの質問に答えた後、提示する画像を選択してください"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -442,7 +444,7 @@ msgid ""
 "image to display at its original size."
 msgstr ""
 "画像を表示したいサイズを選択してください。大きさはピクセルで表示されます。一般的には\n"
-"100ピクセルがおおよそ3cmの画像となります。画像をオリジナルのサイズで表示したい場合は、\n"
+"100ピクセルがおおよそ3cm四方の画像となります。画像をオリジナルのサイズで表示したい場合は、\n"
 "両方のフィールドを空白のままにしておいてください。"
 
 #: exe/engine/imagemagnifieridevice.py:48
@@ -452,11 +454,11 @@ msgid ""
 "magnified."
 msgstr ""
 "下の画像をクリックするか\n"
-"\"イメージを追加する\" ボタンをクリックし、拡大したい画像ファイルを選択してください。"
+"\"画像の追加\" ボタンをクリックし、拡大したい画像ファイルを選択してください。"
 
 #: exe/engine/attachmentidevice.py:57
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr "<strong>ファイルを選択する</strong>をクリックし, 添付するファイルを探し、そのファイルを選択してください。"
+msgstr "<strong>ファイルの選択</strong>をクリックし, 添付するファイルを探し、そのファイルを選択してください。"
 
 #: exe/engine/field.py:139
 msgid "Click Here"
@@ -465,7 +467,7 @@ msgstr "ここをクリックする"
 #: exe/webui/common.py:280
 #: exe/webui/common.py:283
 msgid "Click for completion instructions"
-msgstr "指示の終了のため、クリックしてください"
+msgstr "指示を終了するため、クリックしてください"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
@@ -475,11 +477,13 @@ msgstr "ここをクリックする"
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into a symbols image."
-msgstr "LATEXを記号イメージに変換するためプレレビューボタンをクリックしてください。"
+msgstr ""
+"LATEXを記号イメージに変換するため\n"
+"　　　　　　　　　　　　　　　　　「プレレビューボタン」をクリックしてください。"
 
 #: exe/engine/galleryidevice.py:504
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr "「画像を追加する」をクリックし、画像ファイルを選択してください。画像が下に表示され、ラベルの記入ができます。ラベルにファイルサイズを記入しておくと利用者には便利です。"
+msgstr "「画像の追加」をクリックし、画像ファイルを選択してください。画像が下に表示され、ラベルの記入ができます。ラベルにファイルサイズを記入しておくと利用者にとって便利です。"
 
 #: exe/engine/galleryidevice.py:291
 #: exe/webui/common.py:288
@@ -531,8 +535,8 @@ msgid ""
 "in order to gain resolution of the situation."
 msgstr ""
 "ケーススタディ用のストーリーを作成してください。よいストーリーとは、論争をしやすい状況を \n"
-"描写したもの、あるいは関わる人物像や状況を克明に描写したシーンが設定されたものです。\n"
-"また、その状況を解決するために行動する必要があるケースの設定もかのうです。"
+"記述したもの、関わる人物像や状況が克明に描写されているものです。\n"
+"また、状況を解決するために何らかの行動を取る必要性があるようなケースの設定も可能です。"
 
 #: exe/webui/galleryblock.py:249
 #: exe/webui/block.py:208
@@ -550,29 +554,29 @@ msgstr "削除"
 
 #: exe/idevices/appletblock.py:99
 msgid "Delete File"
-msgstr "ファイルを削除する"
+msgstr "ファイルの削除"
 
 #: exe/webui/galleryblock.py:247
 msgid "Delete Image"
-msgstr "画像を削除する"
+msgstr "画像の削除"
 
 #: exe/webui/optionelement.py:92
 #: exe/idevices/testoptionelement.py:86
 msgid "Delete option"
-msgstr "オプションを削除する"
+msgstr "オプションの削除"
 
 #: exe/webui/questionelement.py:87
 #: exe/webui/truefalseelement.py:102
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
-msgstr "質問を削除する"
+msgstr "質問の削除"
 
 #: exe/engine/reflectionidevice.py:56
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr "学習者が自分がやった学習活動の評価方法について記述してください。（Rubrics「評価表」はフィードバックを与える際有効なデバイスとなります）"
+msgstr "学習者が自分が行った学習活動の評価方法について記述してください。（Rubrics「評価表」は、考察目的のフィードバックを与える際有効な方法です。）"
 
 #: exe/engine/casestudyidevice.py:97
 msgid ""
@@ -581,23 +585,22 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
 msgstr ""
-"提供するケースストーリーに関する活動タスクを記述してください。\n"
-"学習者が与えられたジレンマの解決を手助けするような質問や指示を \n"
-"与えるといいと思います。"
+"提供するケーススタディーのストーリーに関する学習タスクを記述してください。\n"
+"与えられたジレンマの解決を手助けするような質問や指示を与えると学習者に役立ちます。"
 
 #: exe/engine/idevicestore.py:323
 #: exe/engine/idevicestore.py:430
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
-msgstr "学習者がこの学習を効果的に行う上で必須となる知識について記述してください。"
+msgstr "学習者がこの学習を効果的に行う際、あらかじめ必要な知識について記述してください。"
 
 #: exe/engine/idevicestore.py:289
 #: exe/engine/idevicestore.py:397
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
-msgstr "学習者が取り組むリーディングのタスクを記述してください。これは学習者にリーシングに関連した内容を説明するのに役立ちます。"
+msgstr "学習者が取り組むリーディングに関するタスクを記述してください。学習者にリーディングに関連した内容を説明するのに役立ちます。"
 
 #: exe/engine/idevicestore.py:336
 #: exe/engine/idevicestore.py:443
@@ -625,11 +628,11 @@ msgstr "ディスカッション"
 
 #: exe/idevices/forumelement.py:233
 msgid "Discussion Topic/Thread:"
-msgstr "ディスカッショントピック／スレッド："
+msgstr "ディスカッション用トピック／スレッド："
 
 #: exe/idevices/forumidevice.py:147
 msgid "Discussion topic/Thread"
-msgstr "ディスカッショントピック／スレッド"
+msgstr "ディスカッション用トピック／スレッド"
 
 #: exe/idevices/forumelement.py:79
 msgid "Discussions and replies are allowed"
@@ -639,7 +642,7 @@ msgstr "ディスカッションと返答が許可されています"
 #: exe/webui/element.py:592
 #: exe/webui/element.py:893
 msgid "Display as:"
-msgstr "～として表示する"
+msgstr "として表示"
 
 #: exe/webui/block.py:200
 #: exe/xului/templates/packageproperties.xul:<button
@@ -680,11 +683,14 @@ msgid ""
 "EXPORT FAILED.\n"
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
-msgstr "エキスポートに失敗しました。\"%s\" は既に使われています。違うファイル名でもう一度試してください"
+msgstr ""
+"エキスポートに失敗しました。\n"
+"\"%s\" は既に使われています。\n"
+"違うファイル名でもう一度試してください"
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
-msgstr "学習者それぞれがディスカッションを投稿する"
+msgstr "学習者が個々にディスカッションを投稿する"
 
 #: exe/webui/block.py:321
 #: exe/webui/editorpage.py:198
@@ -697,7 +703,7 @@ msgstr "編集"
 #: exe/webui/rssblock.py:95
 #: exe/webui/multimediablock.py:95
 msgid "Emphasis"
-msgstr "強調する"
+msgstr "強調"
 
 #: exe/webui/wikipediablock.py:84
 msgid "English Wikipedia Article"
@@ -707,13 +713,15 @@ msgstr "英語ウィキペディア記事"
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
-msgstr "ファイルに関連するテキストを挿入してください"
+msgstr "ファイルに関連するテキストを記入してください"
 
 #: exe/engine/multichoiceidevice.py:87
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
-msgstr "ここにヒントを記入してください。もしヒントを提供しないならば、この領域は空白のままにしておいてください。"
+msgstr ""
+"ここにヒントを記入してください。もしヒントを提供しない\n"
+"ならば、この領域は空白のままにしておいてください。"
 
 #: exe/engine/multichoiceidevice.py:126
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
@@ -724,17 +732,19 @@ msgstr "ここにヒントを記入してください。もし、ヒントを提
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
-msgstr "ウィキペディアの中で検索したいフレーズや単語を入力してください。"
+msgstr ""
+"ウィキペディアの中で検索したいフレーズや\n"
+"単語を入力してください。"
 
 #: exe/engine/reflectionidevice.py:54
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr "学習に役立つ質問を入力してください。"
+msgstr "考察に役立つような質問を入力してください。"
 
 #: exe/engine/galleryidevice.py:503
 msgid "Enter a title for the gallery"
-msgstr "画像集にタイトルをつける"
+msgstr "画像集にタイトルを入力してください。"
 
 #: exe/idevices/quiztestidevice.py:64
 #: exe/idevices/quiztestidevice.py:86
@@ -744,7 +754,7 @@ msgid ""
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
 "解答のオプションを入力してください。正答とともに、もっともらしい選択肢を（３~４つ） \n"
-"準備してください。たの解答を追加する場合は &lt;他のオプションを追加する&gt;ボタンをクリックしてください。"
+"準備してください。たの解答を追加する場合は &lt;別のオプションを追加&gt;ボタンをクリックしてください。"
 
 #: exe/engine/truefalseidevice.py:73
 msgid ""
@@ -769,7 +779,9 @@ msgstr "ここに解答に関する指示を入力してください"
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
-msgstr "表示したいURLを入力し、それを表示するための領域サイズを選択してください。"
+msgstr ""
+"表示したいURLを入力し、それを表示\n"
+"するための領域サイズを選択してください。"
 
 #: exe/engine/multichoiceidevice.py:93
 msgid ""
@@ -778,9 +790,9 @@ msgid ""
 "by clicking the red \"X\" next to the Option."
 msgstr ""
 "ここに選択肢を記入してください。 \n"
-"\"別のオプションを追加する\" ボタンをクリックすることで \n"
+"\"別のオプションを追加\" ボタンをクリックすることで \n"
 "オプションの追加ができます。オプションの横にある赤い \"X\" をクリック \n"
-"することでオプションを削除できます。"
+"するとオプションが削除できます。"
 
 #: exe/engine/idevicestore.py:285
 #: exe/engine/idevicestore.py:393
@@ -801,12 +813,12 @@ msgid ""
 msgstr ""
 "フラッシュを表示する領域（ピクセル）を入力し、\n"
 "スクリーン上の配置を決定してください。\n"
-"幅と高さは比例するように自動的に変換されます。"
+"幅と高さは自動的に比例して変換されます。"
 
 #: exe/webui/editorpane.py:145
 #: exe/webui/editorpane.py:149
 msgid "Enter the instructions for completion here"
-msgstr "ここに指示を入力してください"
+msgstr "ここに解答のために必要な指示を入力してください"
 
 #: exe/webui/editorpane.py:140
 #: exe/webui/editorpane.py:144
@@ -821,7 +833,7 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
-"基本的な質問を記入してください。\n"
+"基本となる質問を記入してください。\n"
 "質問は明確に、またあいまいにならないようにしてください。消極的な表現は避け、\n"
 "あいまいな表現にならないように、明確に記述してください。"
 
@@ -829,13 +841,13 @@ msgstr ""
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
-msgstr "画像に関する内容を記入してください"
+msgstr "画像に関する内容を記入してください。"
 
 #: exe/engine/flashwithtextidevice.py:50
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
-msgstr "画像に関するテキストを入力してください"
+msgstr "画像に関するテキストを入力してください。"
 
 #: exe/engine/multimediaidevice.py:65
 #: exe/engine/imagemagnifieridevice.py:54
@@ -846,7 +858,7 @@ msgstr "ファイルに関する内容を記入してください。"
 
 #: exe/engine/attachmentidevice.py:76
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr "ダウンロードしたファイルに関して説明するテキストを記入してください。ダウンロード後学習者が何をすべきか、あるいはその教材をどのように使うかについて指示を与えてください。"
+msgstr "ダウンロードしたファイルに関して内容を説明するテキストを記入してください。ダウンロード後学習者が何をすべきか、あるいはその教材をどのように使うかについて指示を与えてください。"
 
 #: exe/xului/mainpage.py:570
 #, python-format
@@ -903,7 +915,9 @@ msgstr "フィードバック用画像"
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
-msgstr "このフィールドにデータが記入されない場合、フィードバックボタンは表示されません。"
+msgstr ""
+"このフィールドにデータが記入されない場合、\n"
+"フィードバックボタンは表示されません。"
 
 #: exe/webui/reflectionblock.py:72
 msgid "Feedback:"
@@ -938,7 +952,7 @@ msgid ""
 msgstr ""
 "もし外部のWebサイトを教材に入れる必要があれば、このiDeviceを利用することで \n"
 "フレーム内にページを表示できます。ポップアップで表示すると、利用上問題が生じる \n"
-"可能性がありますのでiDeviceの利用をお勧めします（ただしオンラインでの利用のみ）"
+"可能性がありますのでiDeviceのフレーム内での利用をお勧めします（ただしオンラインでの利用のみ）。"
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
@@ -955,11 +969,11 @@ msgstr "フォーラム名："
 
 #: exe/idevices/forumelement.py:96
 msgid "Forum type:"
-msgstr "フォーラムの種類"
+msgstr "フォーラムの種類："
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
-msgstr "フレームの高さ"
+msgstr "フレームの高さ："
 
 #: exe/engine/freetextidevice.py:37
 #: exe/engine/freetextidevice.py:44
@@ -972,7 +986,7 @@ msgstr "フランス語ウィキペディア記事"
 
 #: exe/webui/wikipediablock.py:182
 msgid "GNU Free Documentation License"
-msgstr "GNUフリードキュメンテーションライセンス"
+msgstr "GNU（グニュー）フリードキュメンテーションライセンス"
 
 #: exe/webui/wikipediablock.py:86
 msgid "German Wikipedia Article"
@@ -1037,7 +1051,7 @@ msgstr "IDeviceアイコン"
 
 #: exe/webui/multichoiceblock.py:134
 msgid "IDevice Question Icon"
-msgstr "IDeviceクエスチョンアイコン"
+msgstr "IDevice質問アイコン"
 
 #: exe/webui/editorpane.py:336
 msgid "Icons"
@@ -1058,7 +1072,7 @@ msgstr "画像拡大"
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
-msgstr "テキスト付イ画像"
+msgstr "テキスト付画像"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
@@ -1070,7 +1084,7 @@ msgstr "情報"
 
 #: exe/webui/block.py:233
 msgid "Information"
-msgstr "インフォメーション"
+msgstr "情報"
 
 #: exe/webui/imagemagnifierblock.py:120
 msgid "Initial Zoom"
@@ -1097,7 +1111,7 @@ msgstr "イントロダクション"
 
 #: exe/webui/wikipediablock.py:183
 msgid "It uses material from the "
-msgstr "～教材を利用しています"
+msgstr "の教材を利用しています"
 
 #: exe/webui/wikipediablock.py:89
 msgid "Italian Wikipedia Article"
@@ -1121,11 +1135,11 @@ msgstr "大"
 
 #: exe/idevices/forumidevice.py:164
 msgid "Learning Management System"
-msgstr "ラーニングマネジメントシステム"
+msgstr "LMS（ラーニングマネジメントシステム）"
 
 #: exe/idevices/forumelement.py:253
 msgid "Learning Management System:"
-msgstr "ラーニングマネージメントシステム："
+msgstr "LMS(ラーニングマネージメントシステム）："
 
 #: exe/webui/imagemagnifierblock.py:85
 #: exe/webui/imagewithtextblock.py:75
@@ -1151,7 +1165,7 @@ msgstr "MP3"
 #: exe/engine/mathidevice.py:35
 #: exe/engine/mathidevice.py:48
 msgid "Maths"
-msgstr "数学"
+msgstr "算数・数学"
 
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
@@ -1163,7 +1177,7 @@ msgstr "中"
 
 #: exe/idevices/forumelement.py:262
 msgid "Moodle"
-msgstr "Moodle"
+msgstr "Moodle（ムードル）"
 
 #: exe/webui/block.py:222
 msgid "Move Down"
@@ -1183,7 +1197,7 @@ msgstr "上に移動"
 
 #: exe/engine/multichoiceidevice.py:57
 msgid "Multi-Choice Question"
-msgstr "多肢選択問題"
+msgstr "多肢選択"
 
 #: exe/webui/editorpane.py:286
 msgid "Name"
@@ -1230,11 +1244,11 @@ msgstr "サムネイルが表示できません。オリジナル画像を縮小
 
 #: exe/idevices/forumelement.py:80
 msgid "No discussions, but replies are allowed"
-msgstr "ディスカッションはしないが返事は許可する"
+msgstr "ディスカッションは許可しないが、返答は許可する"
 
 #: exe/idevices/forumelement.py:81
 msgid "No discussions, no replies"
-msgstr "ディスカッションも返事も許可しない"
+msgstr "ディスカッションも返答も許可しない"
 
 #: exe/webui/wikipediablock.py:113
 #: exe/webui/editorpane.py:307
@@ -1282,14 +1296,14 @@ msgstr ""
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
-msgstr "このiDeviceでは.flv（Flashムービーファイル）のみを選択してください。"
+msgstr "このiDeviceでは.flv（フラッシュムービーファイル）のみ選択できます。"
 
 #: exe/engine/field.py:552
 #: exe/engine/field.py:600
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
-msgstr "このiDeviceでは.swf（Flashオブジェクト）のみを選択してください。"
+msgstr "このiDeviceでは.swf（フラッシュオブジェクト）のみ選択できます。"
 
 #: exe/webui/optionelement.py:76
 #: exe/webui/optionelement.py:81
@@ -1313,7 +1327,7 @@ msgstr "概要"
 #: exe/xului/mainpage.py:386
 #, python-format
 msgid "Package saved to: %s"
-msgstr "～にパッケージが保存されました: %s"
+msgstr "パッケージが次の場所に保存されました: %s"
 
 #: exe/webui/block.py:229
 #: exe/webui/editorpane.py:346
@@ -1335,15 +1349,15 @@ msgstr "フォーラムの名前を記入してください\n"
 #: exe/webui/editorpage.py:101
 #: exe/webui/editorpane.py:165
 msgid "Please enter an idevice name."
-msgstr "iDeviceの名前を記入してください"
+msgstr "iDeviceの名前を記入してください。"
 
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
-msgstr "LMSを選択してください.\n"
+msgstr "LMS（ラーニングマネジメントシステム）を選択してください.\n"
 
 #: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
-msgstr "LMSを選択してください、"
+msgstr "LMS（ラーニングマネジメントシステム）を選択してください"
 
 #: exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
@@ -1377,7 +1391,7 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
-"「必須知識」とは、学習者が効果的に学習を行うために必要な知識です。\n"
+"「予備知識」とは、学習者が効果的に学習を行うために必要な知識です。\n"
 "例：　<ul>\n"
 "<li> 学習者はレベル４の英語力を必要とする </li>\n"
 "<li> 学習者は基本的な工具の組み立てができなければならない </li></ul>\n"
@@ -1397,53 +1411,55 @@ msgstr "前へ"
 msgid ""
 "Provide a caption for the \n"
 "MP3 file."
-msgstr "MP3ファイルにタイトルをつける"
+msgstr "MP3ファイルにタイトルをつけてください。"
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
-msgstr "拡大する画像にタイトルをつける"
+msgstr "拡大する画像にタイトルをつけてください。"
 
 #: exe/idevices/flashmovieidevice.py:57
 #: exe/idevices/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
-msgstr "挿入したフラッシュムービーにタイトルをつける"
+msgstr "挿入したフラッシュムービーにタイトルをつけてください。"
 
 #: exe/engine/flashwithtextidevice.py:55
 #: exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
-msgstr "挿入したフラッシュにタイトルをつける"
+msgstr "挿入したフラッシュにタイトルをつけてください。"
 
 #: exe/engine/imagewithtextidevice.py:67
 #: exe/engine/imagewithtextidevice.py:114
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
-msgstr "挿入した画像にタイトルをつける"
+msgstr "挿入した画像にタイトルをつけてください。"
 
 #: exe/engine/truefalseidevice.py:81
 #: exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
-msgstr "正誤問題の解答の方法について指示を記入する"
+msgstr "正誤問題の解答方法について指示を記入してください。"
 
 #: exe/engine/clozeidevice.py:115
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
-msgstr "空所補充問題の解答方法について指示を記入する。何も記入しない場合はデフォルトの指示が表示されます。\n"
+msgstr ""
+"「空所補充」問題の解答方法について指示を記入してください。\n"
+"何も記入しない場合はデフォルトの指示が表示されます。\n"
 
 #: exe/engine/casestudyidevice.py:101
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr "関連したフィードバックを記入してください。"
+msgstr "状況に関連したフィードバックを記入してください。"
 
 #: exe/webui/block.py:243
 #: exe/webui/editorpane.py:292
@@ -1491,7 +1507,7 @@ msgstr "リーディング活動　0.11"
 
 #: exe/engine/reflectionidevice.py:43
 msgid "Reflection"
-msgstr "リフレクション"
+msgstr "考察"
 
 #: exe/engine/reflectionidevice.py:45
 msgid ""
@@ -1502,15 +1518,15 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
 msgstr ""
-"リフレクションは理論と実践を結びつけるためによく用いられる指導方法です。\n"
-"リフレクション用のタスクでは、学習者に、観察する機会と、観察した内容を学術的な \n"
+"「考察」は、理論と実践を結びつけるためによく用いられる指導方法です。\n"
+"考察用のタスクでは、学習者に、観察する機会と、観察した内容を学術的な \n"
 "作品として提示する前に、内容について考察する機会を与えます。\n"
 "ジャーナル、日誌、プロファイルやポートフォリオなどは観察したデータを集約するのに \n"
 "役立ちます。評価表やガイドの利用は効果的なフィードバックとして役立ちます。"
 
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
-msgstr "リフレクション用質問"
+msgstr "考察用質問："
 
 #: exe/webui/element.py:831
 msgid "Restart"
@@ -1558,42 +1574,42 @@ msgstr "セクション"
 
 #: exe/webui/element.py:891
 msgid "Select Flash Object"
-msgstr "フラッシュオブジェクトを選択する"
+msgstr "フラッシュオブジェクトの選択"
 
 #: exe/webui/preferencespage.py:86
 #: exe/xului/templates/dublincore.xul:<menulist
 #: onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
-msgstr "言語を選択する"
+msgstr "言語の選択"
 
 #: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
-msgstr "フォーラムを選択する"
+msgstr "フォーラムの選択"
 
 #: exe/webui/element.py:355
 msgid "Select a MP3"
-msgstr "MP3を選択する"
+msgstr "MP3の選択"
 
 #: exe/webui/attachmentblock.py:92
 msgid "Select a file"
-msgstr "ファイルを選択する"
+msgstr "ファイルの選択"
 
 #: exe/webui/element.py:965
 msgid "Select a flash video"
-msgstr "フラッシュビデオを選択する"
+msgstr "フラッシュビデオの選択"
 
 #: exe/webui/element.py:273
 msgid "Select an image"
-msgstr "画像を選択する"
+msgstr "画像の選択"
 
 #: exe/webui/element.py:590
 msgid "Select an image (JPG file)"
-msgstr "画像（jpegファイル）を選択する"
+msgstr "画像（jpegファイル）の選択"
 
 #: exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
-msgstr "セクションパスレート"
+msgstr "パスレートの選択："
 
 #: exe/engine/wikipediaidevice.py:69
 #: exe/engine/wikipediaidevice.py:246
@@ -1620,15 +1636,15 @@ msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
-"Set the initial level of zoom \n"
-"when the IDevice loads, as a percentage of the original image size"
+"iDeviceが画像を取り込んだ際の初期のズームレベルを設定してください。\n"
+"（オリジナル画像サイズの%で）"
 
 #: exe/engine/imagemagnifieridevice.py:69
 #: exe/engine/imagemagnifieridevice.py:93
 msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
-msgstr "オリジナルの画像サイズのパーセンテージによってズームの最大レベルを設定してください。 "
+msgstr "オリジナルの画像サイズの%によって、ズームの最大レベルを設定してください。 "
 
 #: exe/xului/propertiespage.py:200
 msgid "Settings saved"
@@ -1641,7 +1657,7 @@ msgstr "表示する"
 #: exe/webui/galleryblock.py:282
 #, python-format
 msgid "Show %s Image"
-msgstr "Show %s Image"
+msgstr "表示 %s　画像 "
 
 #: exe/webui/element.py:838
 msgid "Show Answers"
@@ -1734,7 +1750,7 @@ msgstr "スウェーデン語のウィキペディア記事"
 
 #: exe/engine/idevicestore.py:357
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "教師はこのiDeviceを利用する際、次の点に留意する必要があります。<ol><li>あなたのリソースに対して利用する学習活動の数と種類についてよく考えて計画してください。それらはすべてコンテンツ上で表示されることになります。学習者が混乱するのを避けるため、活動の種類、あるいは活動の分類の多用はおすすめしません。通常１つの学習リソースに対して３つか４つの異なる種類の利用は混乱をきたす可能性があります。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめしますが、もしその必要があれば、できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとって見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考えてください。</li></ol>"
+msgstr "教師はこのiDeviceを利用する際、次の点に留意する必要があります。<ol><li>教材に対して利用する学習活動の数と種類についてよく考えて計画してください。それらはすべてコンテンツ上で表示されることになります。学習者が混乱するのを避けるため、活動の種類、あるいは活動の分類の多用はおすすめしません。通常１つの学習リソースに対して３つか４つの異なる種類を利用すると学習者に混乱をきたす可能性があります。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめしますが、もしその必要があれば、できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとって見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考えてください。</li></ol>"
 
 #: exe/engine/multimediaidevice.py:64
 #: exe/engine/imagewithtextidevice.py:61
@@ -1756,7 +1772,7 @@ msgstr "MP3のiDeviceを利用することで、関連するテキスト情報�
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr "添付iDeviceはあなたの作成したコンテンツに既存のファイルを添付するのに利用できます。例えば、学習者にアクセスさせたいPDF （Acrobat用）ファイルや、PPT（パワーポイント用）ファイルを利用したい場合、ファイルを添付し、ファイルについての説明文やファイルサイズをラベルとして記入することができます。学習者は添付ファイルをクリックすることでファイルをダウンロードできます。"
+msgstr "添付iDeviceは、作成したコンテンツに既存のファイルを添付するのに利用できます。例えば、学習者にアクセスさせたいPDF （Acrobat用）ファイルや、PPT（パワーポイント用）ファイルを利用したい場合、ファイルを添付し、ファイルについての説明文やファイルサイズをラベルとして記入することができます。学習者は添付ファイルをクリックすることでファイルをダウンロードできます。"
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -1766,7 +1782,7 @@ msgid ""
 "the learners will view."
 msgstr ""
 "テキスト付のフラッシュの利用により、フラッシュファイルに追加でテキスト情報を記入できます \n"
-"学習者が見るフラッシュファイルに関して学習に役立つ指示を与え対場合に便利です。"
+"学習者が見るフラッシュファイルに関して学習に役立つ指示を与えたい場合に便利な機能です。"
 
 #: exe/engine/imagemagnifieridevice.py:42
 msgid ""
@@ -1784,7 +1800,7 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
-"学習用のリソースの多くは学習用コンテキストの作成、助言や一般的な情報提供のために \n"
+"学習用の教材の多くは、学習用コンテキストの作成、助言や一般的な情報提供のために \n"
 "用いられます。ここでは、学習活動の構成や配信に関するフレームワークを提供します。"
 
 #: exe/engine/mathidevice.py:37
@@ -1805,7 +1821,7 @@ msgstr ""
 
 #: exe/webui/editorpane.py:66
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
-msgstr "目的ダイアログの利用により、Deviceの利用目的を記述し、他のユーザに知らせることができます。"
+msgstr "目的ダイアログの利用により、Deviceの利用目的を記述し、他のユーザにそれを知らせることができます。"
 
 #: exe/xului/mainpage.py:422
 #: exe/xului/mainpage.py:460
@@ -1814,12 +1830,12 @@ msgid ""
 "There was an error in the export:\n"
 "%s"
 msgstr ""
-"エキスポートする際エラーがありました:\n"
+"エキスポートする際エラーが生じました:\n"
 "%s"
 
 #: exe/webui/wikipediablock.py:179
 msgid "This article is licensed under the "
-msgstr "この記事は次のもとで許可を受けています"
+msgstr "この記事は次のもとで掲載の許諾を得ています。"
 
 #: exe/engine/imagemagnifieridevice.py:71
 #: exe/engine/imagemagnifieridevice.py:95
