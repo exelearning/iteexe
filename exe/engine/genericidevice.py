@@ -76,22 +76,33 @@ class GenericIdevice(Idevice):
     def getUniqueFieldId(self):
         """
         Returns a unique id (within this idevice) for a field
+        of the form ii_ff where ii is the idevice and ff the field
         """
         self.calcNextFieldId()
-        result = self.nextFieldId
+        result = self.id + '_' + unicode(self.nextFieldId)
         self.nextFieldId += 1
+        log.debug(u"UniqueFieldId: %s" % (result))
         return result
         
     def calcNextFieldId(self):
         """
-        Returns a nextFieldId for a field
+        initializes nextFieldId if it is still 0
         """
         if self.nextFieldId == 0:
+            log.debug(u"nextFieldId==0 for self.class_ %s" % (self.class_))
             maxId = 0
             for field in self.fields:
-                if field.id > maxId:
-                    maxId = field.id
-                    self.nextFieldId = maxId 
+                if isinstance(field.id, unicode):
+                    log.debug(u"** field.id = u: %s" % (field.id))
+                    # only look at the part after the (last) underbar
+                    c = field.id.split('_')
+                    if int(c[-1]) > maxId:
+                        maxId = int(c[-1])
+                else:
+                    log.error(u"** field.id is not unicode= %d" % (field.id))
+                    if field.id > maxId:
+                        maxId = field.id
+            self.nextFieldId = maxId + 1
 
     def __iter__(self):
         return iter(self.fields)
