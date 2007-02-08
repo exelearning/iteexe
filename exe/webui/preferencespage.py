@@ -46,7 +46,7 @@ class PreferencesPage(RenderableResource):
             localeName  = locale + ": " 
             langName = translation.info().get('x-exe-language', None)
             if langName == None:
-                langName = translation.info().get('x-poedit-language', '')
+                langName = translation.info().get('x-poedit-language', 'English')
             localeName += langName
             self.localeNames.append((localeName, locale))
         self.localeNames.sort()
