@@ -39,17 +39,17 @@ class MultimediaIdevice(Idevice):
         Idevice.__init__(self, 
                          x_(u"MP3"), 
                          x_(u"Auckland University of Technology"), 
-                         x_(u"The MP3 iDevice allows you to attach an MP3 " 
+                         x_(u"The MP3 iDevice allows you to attach a MP3 " 
                             "media file to your content along with relevant textual"
                             "learning instructions."),
                          u"", 
                          u"")
         self.emphasis                    = Idevice.NoEmphasis
         self.media                       = MultimediaField(
-                                           x_(u"Choose an MP3 file"),
+                                           x_(u"Choose a MP3 file"),
                                            x_(u""
             "<ol>"
-            "  <li>Click &lt;Select an MP3&gt; and browse to the MP3 "
+            "  <li>Click &lt;Select a MP3&gt; and browse to the MP3 "
             "      file you wish to insert</li>"
             " <li>Click on the dropdown menu to select the position "
             "       that you want the file displayed on screen.</li>"
