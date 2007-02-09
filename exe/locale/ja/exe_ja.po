@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-09 13:50+1200\n"
+"PO-Revision-Date: 2007-02-09 14:10+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "<dl>  <dt>主要なコンセプトあるいは読解力のテストが�
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select a MP3&gt; and browse to the MP3       file you want to insert</li> <li>Click on the dropdown arrow and select the position        that you want the file displayed on screen.</li>  <li>Enter a caption for your file.</li> <li>Associate relevant text to the MP3 file.</li> <li>Choose the type of style you want the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>&lt;MP3を選択&gt;をクリックし、挿入したいMP3ファイルを選んでください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所を選んでください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルの内容に関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例）'強調する' 。「強調」は、表示されるiDeviceのコンテンツの境界線やアイコンに反映されます。</li></ol>"
+msgstr "<ol>  <li>&lt;MP3の選択&gt;をクリックし、挿入したいMP3ファイルを選んでください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所を選んでください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルの内容に関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例）'強調する' 。「強調」は、表示されるiDeviceのコンテンツの境界線やアイコンに反映されます。</li></ol>"
 
 #: exe/engine/field.py:707
 msgid "<ol><li>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below.</li> "
@@ -426,7 +426,7 @@ msgstr "LMSの選択"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose a MP3 file"
-msgstr "MP3ファイルの選択"
+msgstr "「MP3」ファイルの選択"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
@@ -467,7 +467,7 @@ msgstr "ここをクリックする"
 #: exe/webui/common.py:280
 #: exe/webui/common.py:283
 msgid "Click for completion instructions"
-msgstr "指示を終了するため、クリックしてください"
+msgstr "ガイドを表示するため、クリックしてください"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
@@ -1589,7 +1589,7 @@ msgstr "フォーラムの選択"
 
 #: exe/webui/element.py:355
 msgid "Select a MP3"
-msgstr "MP3の選択"
+msgstr "MP3ファイルの選択"
 
 #: exe/webui/attachmentblock.py:92
 msgid "Select a file"
@@ -1696,7 +1696,7 @@ msgstr "小"
 #: exe/webui/rssblock.py:92
 #: exe/webui/multimediablock.py:92
 msgid "Some emphasis"
-msgstr "強調"
+msgstr "強調する"
 
 #: exe/xului/mainpage.py:569
 msgid "Sorry, wrong file format"
@@ -2041,7 +2041,7 @@ msgstr "アップロード"
 
 #: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
-msgstr "iDeviceで表現される情報の中で、重要なものには「強調」を利用してください。"
+msgstr "iDeviceで表現される情報の中で、重要なものには「強調する」を利用してください。"
 
 #: exe/engine/idevicestore.py:293
 #: exe/engine/idevicestore.py:401
