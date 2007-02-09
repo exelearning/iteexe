@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-09 12:38+1200\n"
+"PO-Revision-Date: 2007-02-09 13:50+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -1874,13 +1874,15 @@ msgstr "これはユーザーが作成したiDeviceプラグインの例です�
 
 #: exe/webui/editorpane.py:65
 msgid "This is an optional field."
-msgstr "ここはオプショナルの領域です"
+msgstr "ここはオプションの領域です。"
 
 #: exe/webui/block.py:203
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
-msgstr "iDeviceを削除します。本当によろしいですか？"
+msgstr ""
+"iDeviceを削除します。\n"
+"本当によろしいですか？"
 
 #: exe/idevices/forumelement.py:352
 #: exe/idevices/forumelement.py:369
@@ -1899,7 +1901,9 @@ msgstr "タイトル"
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
-msgstr "正しい解答を表示するために、正しい解答の横にあるラジオボタンをクリックしてください。"
+msgstr ""
+"正しい解答を示すために、正しい解答の横に\n"
+"あるラジオボタンをクリックしてください。"
 
 #: exe/engine/package.py:79
 msgid "Topic"
@@ -1921,14 +1925,14 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
-"正誤問題は、学習者に記述された内容が正しいか違っているか判断させるための \n"
+"「正誤問題」は、記述された内容が正しいか違っているか学習者に判断させるための \n"
 "質問形式です。この種類の質問形式は、事実に基づいた情報や、正しいか間違って\n"
-"いるかの判断がしやすい情報を利用する際効果があります。"
+"いるかの判断がしやすい情報を利用する際に効果があります。"
 
 #: exe/engine/field.py:681
 #: exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
-msgstr "ここにディスカッショントピックをタイプしてください。"
+msgstr "ここにディスカッション用のトピックをタイプしてください。"
 
 #: exe/idevices/forumidevice.py:107
 msgid "Type a forum name here"
@@ -1943,9 +1947,9 @@ msgid ""
 "for the other options."
 msgstr ""
 "学習者が特定のオプションを選択した際に提供するフィードバックを記入してください。 \n"
-"このボックスに何も記入しない場合、eXeは次の様なデフォルトのフィードバックを \n"
+"このボックスに何も記入しない場合、eXeは次の様なデフォルト（既定）のフィードバックを \n"
 "自動的に提示します。\n"
-" 正答の場合には、\"正解\"、正答以外のオプションを選んだ場合には、\"不正解\""
+" 正答の場合、\"正解\"、正答以外のオプションを選んだ場合、\"不正解\""
 
 #: exe/engine/truefalseidevice.py:148
 msgid ""
@@ -1955,19 +1959,15 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
-"Type in the feedback that you want the \n"
-"student to see when selecting the particular question. If you don't complete\n"
-"this box, eXe will automatically provide default feedback as follows: \n"
-"\"Correct answer\" as indicated by the selection for the correct answer; or \n"
-"\"Wrong answer\" for the other alternatives.学習者が特定の質問を選択した際、学習者に提供するフィードバックを記入してください。 \n"
-"このボックスに何も記入しない場合、eXeは次の様なデフォルトのフィードバックを \n"
+"学習者が特定の質問を選択した際、学習者に提供するフィードバックを記入してください。 \n"
+"このボックスに何も記入しない場合、eXeは次の様なデフォルト（既定）のフィードバックを \n"
 "自動的に提示します。\n"
-" 正答の場合には、\"正解\"、正答以外のオプションを選んだ場合には、\"不正解\""
+" 正答の場合、\"正解\"、正答以外のオプションを選んだ場合、\"不正解\""
 
 #: exe/engine/idevicestore.py:309
 #: exe/engine/idevicestore.py:416
 msgid "Type the learning objectives for this resource."
-msgstr "このリソースに対する学習目標を記述してください。"
+msgstr "この教材に関する学習目標を記述してください。"
 
 #: exe/engine/multichoiceidevice.py:90
 msgid "Type the question stem."
@@ -1979,8 +1979,8 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
 "be ambiguous."
 msgstr ""
-"基本となる質問をタイプしてください。質問は明確かつ\n"
-"あいまいでないものにしてください。消極的な表現をすると\n"
+"基本となる質問をタイプしてください。質問は明確にし、\n"
+"あいまいにならないようにしてください。遠慮をしたような書き方をすると\n"
 "あいまいな表現になりやすくなります。"
 
 #: exe/webui/externalurlblock.py:60
@@ -2031,10 +2031,9 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
-"MCQとは異なり、SCROMクイズは、学習者の正答に対するフィードバックを \n"
-"提供せず、あるトピックに関する学習者の知識をテストするために利用できます。\n"
-"このクイズは学習者が情報や技能を利用して学習したり練習した後、利用する \n"
-"こともできます。"
+"「MCQ」とは異なり、「SCROM」クイズは、学習者の正答に対するフィードバックを \n"
+"提供しないで、あるトピックに関する学習者の知識をテストするのに利用できます。\n"
+"このクイズは、学習者が情報や技能を用いて学習したり演習をした後、よく利用されます。"
 
 #: exe/idevices/appletblock.py:82
 msgid "Upload"
@@ -2042,7 +2041,7 @@ msgstr "アップロード"
 
 #: exe/webui/editorpane.py:69
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
-msgstr "iDeviceで表現される情報の中で重要なものには「強調する」を利用してください。"
+msgstr "iDeviceで表現される情報の中で、重要なものには「強調」を利用してください。"
 
 #: exe/engine/idevicestore.py:293
 #: exe/engine/idevicestore.py:401
@@ -2052,19 +2051,23 @@ msgid ""
 "or providing a statement to begin a debate."
 msgstr ""
 "フィードバックは、リーディングに関する要点を提示するために利用できます。 \n"
-"また、質問を貸したり議論を始めるための状況を提供することで、リーディング \n"
+"また、質問をしたり、議論を始めるための状況を提供することで、リーディング \n"
 "内容の詳細な分析を促すためにも利用できます。"
 
 #: exe/engine/galleryidevice.py:494
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "表示する画像が多いときにはこのiDeviceを利用します"
+msgstr "表示する画像が多いときにはこのiDeviceを利用します。"
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
 "Use this field to enter text. This \n"
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
-msgstr "テキストを挿入する場合このフィールドを利用してください。iDeviceには強調機能がありませんが、フィールドにあるテキスト編集ボタンを利用することでいくらかのフォーマットの編集を行うことができます。"
+msgstr ""
+"テキストを挿入する場合このフィールドを利用してください。\n"
+"iDeviceには強調機能がありませんが、フィールドにある \n"
+"テキスト編集ボタンを利用することでいくらかのフォーマット \n"
+"編集を行うことができます。"
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
@@ -2072,7 +2075,7 @@ msgstr "ビジブルグループ"
 
 #: exe/idevices/forumelement.py:124
 msgid "Visible to students:"
-msgstr "学生に表示"
+msgstr "学生に表示："
 
 #: exe/engine/idevicestore.py:284
 #: exe/engine/idevicestore.py:392
@@ -2093,12 +2096,12 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"MCQ の構築の際は、次のことを念頭においてください。<ul>\n"
-"<li> 学習者になじみのある、あるいはこれまでの学習で見聞きした表現を用いる</li>\n"
+"「MCQ」の構築の際は、次の点を考慮してください。<ul>\n"
+"<li> 学習者に馴染みのある、あるいは、これまでの学習で見聞きした表現を用いる</li>\n"
 "<li> 選択肢の内容は簡潔なものとする </li>\n"
 "<li> 質問と選択肢には一貫性を持たせる </li>\n"
-"<li> 学習者が解答の際、考えることができるよう十分な数のオプションを提示する</li>\n"
-"<li> 正解が他の選択肢と比較してより詳細な記述とならないよう留意する </li>\n"
+"<li> 学習者が解答の際、十分考えることができるよう、十分な数のオプションを提示する</li>\n"
+"<li> 正解が他の選択肢と比較して、より詳細な記述とならないよう留意する </li>\n"
 "<li> 他の選択肢は不正解であっても、もっともらしい内容とする </li>\n"
 "</ul>\n"
 
@@ -2128,11 +2131,11 @@ msgstr "はい。一時的にこの設定とします。"
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr "ツールバーを利用するかテキストエリアに手動でLATEXを挿入できます。"
+msgstr "ツールバーを利用によって、もしくは手動でテキストエリアにLATEXを挿入できます。"
 
 #: exe/webui/editorpane.py:61
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
-msgstr "あなたの作成した新規のiDeviceはこのタイトルでiDevice用の枠に表示されます。これは書き込み必須の領域ですのでiDeviceを作成する際にはラベルを入力してください。"
+msgstr "あなたの作成した新規のiDeviceは、このタイトルでiDevice用の枠に表示されます。これは書き込み必須の領域ですので、iDeviceを作成する際には、ラベルを必ず入力してください。"
 
 #: exe/webui/wikipediablock.py:194
 msgid "article "
@@ -2149,7 +2152,7 @@ msgstr "フォーラム名をコピーする\n"
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
-msgstr "トピック名をコピーする"
+msgstr "トピック名をコピーします。"
 
 #: exe/export/scormexport.py:257
 #: exe/export/imsexport.py:188
@@ -2212,7 +2215,7 @@ msgstr "タイトル"
 #: id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
-msgstr "ダブリンコアメタデータ"
+msgstr "ダブリン・コア・メタデータ"
 
 #: exe/xului/templates/exportproperties.xul:<caption
 #: id="ppScolinks"
@@ -2229,7 +2232,7 @@ msgstr "パッケージの追加"
 #: exe/xului/templates/metadata.xul:<tab
 #: label="Dublin Core">
 msgid "Dublin Core"
-msgstr "Dublin Core"
+msgstr "ダブリン・コア"
 
 #: exe/xului/templates/packageproperties.xul:<caption
 #: id="pptitle"
@@ -2327,7 +2330,7 @@ msgstr "VK_DELETE"
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
 #: Image">
 msgid "Load Image"
-msgstr "画像ロード"
+msgstr "画像のロード"
 
 #: exe/xului/templates/dublincore.xul:<description
 #: id="dcDescSubject">
@@ -2340,7 +2343,7 @@ msgid ""
 "             "
 msgstr ""
 "\n"
-"                一般的に主題（Subject）は、利用するリソースのトピックについて説明するキーワード、\n"
+"                一般的に主題（Subject）は、利用する教材のトピックについて説明するキーワード、\n"
 "　　　　　　　　キーフレーズ、分類コードの形で記述されます。できれば制限語彙や形式的な分類法 \n"
 "　　　　　　　　から選ぶことをお勧めします。"
 
@@ -2434,7 +2437,7 @@ msgid ""
 msgstr ""
 "\n"
 "                 一般的に日付（Date）では、作成日時やリソースの利用開始日時を記載します。\n"
-"                 推奨するデータ記入法は、作業を行った日付によって定義することです。"
+"                 推奨するデータ記入法は、作業を行った日付を記入することです。"
 
 #: exe/xului/templates/mainpage.xul:<key
 #: n:render="down"
@@ -2530,7 +2533,7 @@ msgstr "ツリーをアップデートします"
 #: onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
 msgid "Select Format"
-msgstr "フォーマットを選ぶ"
+msgstr "フォーマットの選択"
 
 #: exe/xului/templates/mainpage.xul:<menu
 #: n:render="translate"
@@ -2567,7 +2570,7 @@ msgstr "label=\"開く\" accesskey=\"o\""
 #: value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
 msgid "IMS Content Package 1.1.3"
-msgstr "IMS Content Package 1.1.3"
+msgstr "IMS コンテンツパッケージ1.1.3"
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate"
@@ -2630,7 +2633,7 @@ msgstr "言語："
 #: n:render="translate"
 #: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS コンテンツパッケージ\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="aa" id="dcmiaa"
@@ -2702,7 +2705,7 @@ msgstr "アラビア語"
 #: n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"パッケージの挿入\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="as" id="dcmias"
@@ -2739,7 +2742,7 @@ msgstr "アゼルバイジャン語"
 #: n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr "優先"
+msgstr "言語の選択"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="ba" id="dcmiba"
@@ -2764,7 +2767,7 @@ msgstr "ベラルーシ語"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr "label=\"リフレッシュ\" accesskey=\"r\""
+msgstr "label=\"更新\" accesskey=\"r\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="bg" id="dcmibg"
@@ -3806,5 +3809,5 @@ msgstr "権利："
 #: exe/xului/templates/dublincore.xul:<description
 #: id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr "一般的に「権利」部分は、リソースに関する権利の管理、あるいはその情報を提供するサービスの文献を含みます。権利に関する情報は通常、知的所有権(IPR)、著作権（Copyright）、そして多様な所有に関する権利を包括します。｢権利」部分に記入がない場合、リソースに関するこれらの権利の位置づけや他の権利ついて判断できないことになります。"
+msgstr "一般的に「権利」部分は、リソースに関する権利の管理、あるいはその情報を提供するサービスの文献を含みます。権利に関する情報は通常、知的所有権(IPR)、著作権（Copyright）、そして多様な所有に関する権利を含みます。｢権利」部分に記入がない場合、リソースに関するこれらの権利の位置づけや他の権利ついて判断できないことになります。"
 
