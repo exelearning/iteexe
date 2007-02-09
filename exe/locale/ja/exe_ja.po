@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-09 14:28+1200\n"
+"PO-Revision-Date: 2007-02-09 16:11+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -1092,7 +1092,7 @@ msgstr "イニシャルズーム"
 
 #: exe/webui/element.py:747
 msgid "Instant Marking?"
-msgstr "即時採点？"
+msgstr "即時に採点しますか？"
 
 #: exe/engine/truefalseidevice.py:80
 #: exe/engine/truefalseidevice.py:167
