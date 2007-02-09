@@ -586,7 +586,7 @@ class MainPage(RenderableLivePage):
             raise
         client.alert(_(u'Exported to %s' % filename))
 
-    # Utiltity methods
+    # Utility methods
     def _startFile(self, filename):
         """
         Launches an exported web site or page
@@ -613,12 +613,19 @@ class MainPage(RenderableLivePage):
                 encoding = 'utf-8'
             filename2 = toUnicode(filename, encoding)
             log.debug("filename and path" + filename2)
+            # see if the file exists AND is readable by the user
+            try:
+                open(filename2, 'rb').close()
+            except IOError:
+                filename2 = toUnicode(filename, 'utf-8')
+                try:
+                    open(filename2, 'rb').close()
+                except IOError:
+                    client.alert(_(u'File %s does not exist or is not readable.') % filename2)
+                    return None
             package = Package.load(filename2)
             if package is None:
-                filename2 = toUnicode(filename, 'utf-8')
-                package = Package.load(filename2)
-                if package is None:
-                    raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))
+                raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))
         except Exception, exc:
             if log.getEffectiveLevel() == logging.DEBUG:
                 client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
