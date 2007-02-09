@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-11 10:29+1200\n"
-"PO-Revision-Date: 2007-02-09 14:10+1200\n"
+"PO-Revision-Date: 2007-02-09 14:28+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -1099,7 +1099,7 @@ msgstr "即時採点？"
 #: exe/engine/clozeidevice.py:114
 #: exe/webui/common.py:274
 msgid "Instructions"
-msgstr "指示"
+msgstr "ガイド"
 
 #: exe/engine/clozeidevice.py:146
 msgid "Instructions For Learners"
