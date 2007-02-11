@@ -291,7 +291,7 @@ function askSave(onProceed) {
                 promptService.BUTTON_TITLE_IS_STRING * promptService.BUTTON_POS_1 +
                 promptService.BUTTON_TITLE_CANCEL * promptService.BUTTON_POS_2
     var res = promptService.confirmEx(window,"Save Package first?",
-                                      "The current package has been modified and not yet saved." +
+                                      "The current package has been modified and not yet saved. " +
                                       "Would you like to save it before loading the new package?",
                                       flags, null, 'Discard', null, '', {});
     if (res == 0) {
