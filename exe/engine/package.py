@@ -28,6 +28,7 @@ from exe.engine.node           import Node
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.persist        import Persistable, encodeObject, \
                                       decodeObject, decodeObjectRaw
+from exe                       import globals as G
 from exe.engine.resource       import Resource
 from twisted.persisted.styles  import Versioned, doUpgrade
 from twisted.spread.jelly      import Jellyable, Unjellyable
@@ -66,7 +67,7 @@ class Package(Persistable):
     Package represents the collection of resources the user is editing
     i.e. the "package".
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     nonpersistant      = ['resourceDir', 'filename']
     # Name is used in filenames and urls (saving and navigating)
     _name              = '' 
@@ -101,7 +102,7 @@ class Package(Persistable):
         self.root          = Node(self, None, _(u"Home"))
         self.currentNode   = self.root
         self.style         = u"default"
-        self.isChanged     = 0
+        self.isChanged     = False
         self.idevices      = []
         self.dublinCore    = DublinCore()
         self.scolinks      = False
@@ -110,6 +111,7 @@ class Package(Persistable):
 
         # Temporary directory to hold resources in
         self.resourceDir = TempDirPath()
+        self.resources = {} # Checksum-[_Resource(),..]
 
 
     # Property Handlers
@@ -241,21 +243,20 @@ class Package(Persistable):
             # Update our new filename for future saves
             self.filename = filename
             filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'))
-            self.isChanged = 0
+            self.isChanged = False
             self.updateRecentDocuments(filename)
 
     def updateRecentDocuments(self, filename):
         """
         Updates the list of recent documents
         """
-        from exe.application import application
         # Don't update the list for the generic.data "package"
-        genericData = application.config.configDir/'idevices'/'generic.data'
+        genericData = G.application.config.configDir/'idevices'/'generic.data'
         if genericData.isfile() or genericData.islink():
             if Path(filename).samefile(genericData):
                 return
         # Save in recentDocuments list
-        recentProjects = application.config.recentProjects
+        recentProjects = G.application.config.recentProjects
         fn = filename.encode('utf-8')
         if fn in recentProjects:
             # If we're already number one, carry on
@@ -264,7 +265,7 @@ class Package(Persistable):
             recentProjects.remove(fn)
         recentProjects.insert(0, filename)
         del recentProjects[5:] # Delete any older names from the list
-        application.config.configParser.write() # Save the settings
+        G.application.config.configParser.write() # Save the settings
 
     def doSave(self, fileObj):
         """
@@ -287,10 +288,23 @@ class Package(Persistable):
             return None
 
         zippedFile = zipfile.ZipFile(filename, "r", zipfile.ZIP_DEFLATED)
+        
+        # Get the jellied package data
         toDecode   = zippedFile.read(u"content.data")
+
+        # Need to add a TempDirPath because it is a nonpersistant member
+        resourceDir = TempDirPath()
+
+        # Extract resource files from package to temporary directory
+        for fn in zippedFile.namelist():
+            if unicode(fn, 'utf8') != u"content.data":
+                outFile = open(resourceDir/fn, "wb")
+                outFile.write(zippedFile.read(fn))
+
         try:
             newPackage = decodeObjectRaw(toDecode)
             newPackage.afterUpgradeHandlers = []
+            newPackage.resourceDir = resourceDir
             doUpgrade()
         except:
             import traceback
@@ -305,21 +319,26 @@ class Package(Persistable):
             # or saved to
             newPackage.filename = Path(filename)
 
-        # Need to add a TempDirPath because it is a nonpersistant member
-        newPackage.resourceDir = TempDirPath()
-
-        # Extract resource files from package to temporary directory
-        for filename in zippedFile.namelist():
-            if unicode(filename, 'utf8') != u"content.data":
-                outFile = open(newPackage.resourceDir/filename, "wb")
-                outFile.write(zippedFile.read(filename))
-                
         # Let idevices and nodes handle any resource upgrading they may need to
         for handler in newPackage.afterUpgradeHandlers:
             handler()
         del newPackage.afterUpgradeHandlers
         newPackage.updateRecentDocuments(newPackage.filename)
+        newPackage.isChanged = False
         return newPackage
+
+    def cleanUpResources(self):
+        """
+        Removes duplicate resource files
+        """
+        # Delete unused resources.
+        # Only really needed for upgrading to version 0.20,
+        # but upgrading of resources and package happens in no particular order
+        # and must be done after all resources have been upgraded
+        existingFiles = set([fn.basename() for fn in self.resourceDir.files()])
+        usedFiles = set([reses[0].storageName for reses in self.resources.values()])
+        for fn in existingFiles - usedFiles:
+            (self.resourceDir/fn).remove()
 
 
     def upgradeToVersion1(self):
@@ -439,12 +458,17 @@ class Package(Persistable):
         
     def upgradeToVersion8(self):
         """
-        For version 0.20
+        For version 0.20, alpha, for nightlies r2469
         """
         self.license = 'None'
         self.footer = ""
         self.idevices = []
 
+    def upgradeToVersion9(self):
+        """
+        For version 0.20
+        """
+        self.afterUpgradeHandlers.append(self.cleanUpResources)
 
 # ===========================================================================
 
