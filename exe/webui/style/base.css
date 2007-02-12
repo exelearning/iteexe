@@ -31,7 +31,7 @@ img {
 }
 
 li {
-    list-style-position: outside;
+    list-style-position: inside;
 }
 
 p#nodeTitle { 
