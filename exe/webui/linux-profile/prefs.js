@@ -41,3 +41,5 @@ user_pref("urlclassifier.tableversion.goog-white-url", "1.371");
 user_pref("app.update.auto", false);
 user_pref("app.update.enabled", false);
 user_pref("extensions.update.enabled", false);
+user_pref("dom.popup_allowed_events", "change click dblclick mouseup reset submit keypress");
+
