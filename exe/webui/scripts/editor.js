@@ -8,7 +8,7 @@ function ideviceExists(ideviceName) {
     }
     return false;
 }
-
+  
 function saveIdevice(title){
     var title1
     if (title == "none")
@@ -29,3 +29,39 @@ function saveIdevice(title){
     
 }
 
+// Called by the user to provide a file name to add to the package
+function importPackage(blockId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
+    fp.appendFilter("eXe idevices", "*.idp");
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        var path  = document.getElementById('path'+blockId);
+        path.type  = 'eXe';
+        path.value = fp.file.path;
+        var theForm = document.getElementById('contentForm')
+        theForm.action.value = "import";
+        theForm.submit()
+    }
+}
+
+function exportPackage(blockId) {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(window, "Select a file", nsIFilePicker.modeSave);
+    fp.appendFilter("eXe idevices", "*.idp");
+    fp.appendFilters(nsIFilePicker.filterAll);
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        var path  = document.getElementById('path'+blockId);
+        path.type  = 'eXe';
+        path.value = fp.file.path;
+        var theForm = document.getElementById('contentForm')
+        theForm.action.value = "export";
+        theForm.submit()
+    }
+}

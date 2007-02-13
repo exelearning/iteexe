@@ -85,7 +85,6 @@ class EditorPage(RenderableResource):
                     if idevice.title == request.args["object"][0]:
                         break
                 self.isNewIdevice = False
-                #idevice.calcNextFieldId
                 self.editorPane.setIdevice(idevice)               
                 self.editorPane.process(request, "new")
                 
@@ -99,7 +98,6 @@ class EditorPage(RenderableResource):
             self.ideviceStore.save()
             self.__createNewIdevice(request) 
             
-
         if ("action" in request.args and 
              request.args["action"][0] == "new"):
             if self.editorPane.idevice.title == "":
@@ -122,7 +120,16 @@ class EditorPage(RenderableResource):
             copyIdevice = self.editorPane.idevice.clone()
             self.__saveChanges(idevice, copyIdevice)
             self.ideviceStore.save()
-       
+            
+        if ("action" in request.args and 
+             request.args["action"][0] == "export"):
+            filename = request.args["pathpackage"][0]
+            self.__exportIdevice(filename)
+            
+        if ("action" in request.args and 
+             request.args["action"][0] == "import"):
+            filename = request.args["pathpackage"][0]
+            self.__importIdevice(filename)
             
     def __createNewIdevice(self, request):
         """
@@ -134,7 +141,7 @@ class EditorPage(RenderableResource):
         self.editorPane.setIdevice(idevice)
         self.editorPane.process(request, "new")      
         self.isNewIdevice = True
-        
+          
     def __saveChanges(self, idevice, copyIdevice):
         """
         Save changes to generic idevice list.
@@ -147,7 +154,38 @@ class EditorPage(RenderableResource):
         idevice.emphasis = copyIdevice.emphasis
         idevice.icon     = copyIdevice.icon
         
-  
+    def __importIdevice(self, filename):
+        
+        """
+        import the idevices which are not existed in current package from another package
+        """
+        newPackage = Package.load(filename)
+
+        for idevice in newPackage.idevices:
+            isExisted = False
+            for currentIdevice in self.ideviceStore.generic:
+                if idevice.title == currentIdevice.title:
+                    isExisted = True
+                    break
+            if not isExisted:
+                newIdevice = idevice.clone()
+                self.ideviceStore.addIdevice(newIdevice)
+        self.ideviceStore.save()
+        
+    def __exportIdevice(self, filename):
+        """
+        export the current generic idevices.
+        """
+        if not filename.endswith('.idp'):
+            filename = filename + '.idp'
+        name = Path(filename).namebase
+        package = Package(name)
+
+        for idevice in self.ideviceStore.generic:
+            package.idevices.append(idevice.clone())                
+        package.save(filename)
+        
+        
         
     def render_GET(self, request):
         """Called for all requests to this object"""
@@ -188,7 +226,6 @@ class EditorPage(RenderableResource):
         if self.isNewIdevice:
             html += "<br/>" + common.submitButton("delete", _("Delete"), 
                                                         False)
-
         else:
             html += "<br/>" + common.submitButton("delete", _("Delete"))
         html += '<br/><input class="button" type="button" name="save" '
@@ -196,7 +233,10 @@ class EditorPage(RenderableResource):
         if self.editorPane.idevice.edit == False:
             title = self.editorPane.idevice.title
         html += 'onclick=saveIdevice("%s") value="%s"/>' % (title, _("Save"))
-        
+        html += u'<br/><input class="button" type="button" name="import" onclick="importPackage(\'package\')"' 
+        html += u' value="%s" />'  % _("Import iDevices")
+        html += u'<br/><input class="button" type="button" name="export" onclick="exportPackage(\'package\')"' 
+        html += u' value="%s" />'  % _("Export iDevices")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"
