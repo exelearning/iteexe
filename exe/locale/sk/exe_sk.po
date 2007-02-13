@@ -3957,6 +3957,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Mongolsky."
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Webové sídlo\" accesskey=\"w\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4036,9 +4042,6 @@ msgstr "Mongolsky."
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "Predmet: "
-
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"Webové sídlo\" accesskey=\"w\""
 
 #~ msgid "Instructions for completion"
 #~ msgstr "Pokyny pre dokončenie"

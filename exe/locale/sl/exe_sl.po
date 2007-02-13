@@ -4124,6 +4124,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Estonsko.  "
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Spletno mesto\" accesskey=\"m\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4203,6 +4209,3 @@ msgstr "Estonsko.  "
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "Predmet  "
-
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"Spletno mesto\" accesskey=\"m\""

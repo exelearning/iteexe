@@ -3786,6 +3786,11 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Tsonga kasa"
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr ""
+
 #~ msgid "Strong emphasis"
 #~ msgstr "Nsiso a emu yɛ den"
 

@@ -3773,3 +3773,8 @@ msgstr ""
 #, fuzzy
 msgid "Tongan  "
 msgstr "Монгольский "
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr ""

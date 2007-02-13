@@ -4045,6 +4045,13 @@ msgstr ""
 msgid "Tongan  "
 msgstr ""
 
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Webbplats\" accesskey=\"w\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4115,10 +4122,6 @@ msgstr ""
 
 #~ msgid "Subject"
 #~ msgstr "Ämne"
-
-# exe/xului/templates/mainpage.xul:<menuitem
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"Webbplats\" accesskey=\"w\""
 
 #, fuzzy
 #~ msgid "Canno  access directory named "

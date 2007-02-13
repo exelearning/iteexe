@@ -776,8 +776,6 @@ if __name__ == "__main__":
     if curdir.basename() == 'exe':
         if 'locale' in [p.relpath() for p in curdir.dirs()]:
             (curdir/'..').chdir()
-        elif (curdur/'exe').isdir():
-            (curdur/'exe').chdir()
     elif curdir.basename() == 'locale':
         (curdir/'..'/'..').chdir()
     print 'Running from: %s' % Path('.').abspath()

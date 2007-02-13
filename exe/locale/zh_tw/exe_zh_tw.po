@@ -4089,6 +4089,16 @@ msgstr ""
 msgid "Tongan  "
 msgstr "通加語"
 
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"網站\" accesskey=\"w\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4161,13 +4171,6 @@ msgstr "通加語"
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "課目:"
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"網站\" accesskey=\"w\""
 
 #~ msgid "Canno  access directory named "
 #~ msgstr "不能識別路徑名稱"

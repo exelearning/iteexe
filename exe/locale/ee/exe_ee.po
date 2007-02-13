@@ -3816,6 +3816,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Nudzraɖoƒe sue\" accesskey=\"f\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"

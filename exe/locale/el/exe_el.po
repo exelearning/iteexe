@@ -4054,14 +4054,17 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Tsonga "
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Ιστοχώρος\" accesskey=\"ω\""
+
 #~ msgid "Strong emphasis"
 #~ msgstr "Έντονη έμφαση"
 
 #~ msgid "Unable to connect to "
 #~ msgstr "Η σύνδεση είναι αδύνατη"
-
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"Ιστοχώρος\" accesskey=\"ω\""
 
 #, fuzzy
 #~ msgid "Canno  access directory named "

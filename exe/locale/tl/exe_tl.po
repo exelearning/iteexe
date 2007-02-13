@@ -4090,6 +4090,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Tsonga "
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Sakong Teksto\" accesskey=\"t\""
+
 #~ msgid ""
 #~ "Provide a caption for the \n"
 #~ "MP3 file."

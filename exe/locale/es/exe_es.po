@@ -4184,6 +4184,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Tsonga."
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Web Site\" accesskey=\"w\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4263,9 +4269,6 @@ msgstr "Tsonga."
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "Tema:"
-
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"Web Site\" accesskey=\"w\""
 
 #~ msgid "Canno  access directory named "
 #~ msgstr "No se puede acceder al directorio llamado"

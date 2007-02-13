@@ -4028,6 +4028,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Tsonga. "
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"iSiza se-internet\" accesskey=\"s\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4107,9 +4113,6 @@ msgstr "Tsonga. "
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "Isimemela:"
-
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"iSiza se-internet\" accesskey=\"s\""
 
 #~ msgid "&lt;p&gt;Teachers should keep the following in mind when using this iDevice: &lt;/p&gt;&lt;ol&gt;&lt;li&gt;Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.&lt;/li&gt;&lt;li&gt;From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. &lt;/li&gt;&lt;li&gt;Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. &lt;/li&gt;&lt;/ol&gt;"
 #~ msgstr "&lt;p&gt;OThisha kumele bagcine lokhu okulandelayo emqondweni uma besebenzisa i-iDevice: &lt;/p&gt;&lt;ol&gt;&lt;li&gt;Cabanga ngezinhlobo ezahlukene zemisebenzi ehlelelwe isidingo sokusebenzisa okubonakalayo kokuqukethwe.Gwema ukusebenzisa izinhlobo ezahlukene noma ukwahlukanisa imisebenzi ngale kwalokho abafundi bangadideka.Ngokuvamile izinhlobo ezintathu noma ezine ezihlukene ziyizindingeko ezanele zokufundisa.&lt;/li&gt;&lt;li&gt;Ngokuphathelene nomklamo wokubonakalayo, gwema ukuba nama iDevice amabili alandelana ngokushesha emva kwenye ngaphandle kokubhaliwe maphakathi nawo.Uma lokhu kudingeka, vele uhlakaze imibuzo emibili noma izehlakalo ukwenze kwi-iDevice eyodwa.Cabanga ngemisebenzi lapho inzuzo ebonakalayo yokwenza umsebenzi yedlula isikhathi nomzamo okuwuthathayo ukuwenza. &lt;/li&gt;&lt;/ol&gt;"

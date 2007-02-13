@@ -3809,9 +3809,12 @@ msgstr ""
 msgid "Tongan  "
 msgstr ""
 
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"W3B 5173\" accesskey=\"w\""
+
 #, fuzzy
 #~ msgid "Add Question"
 #~ msgstr "4Dd 4N07H3r KW35710n"
-
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"W3B 5173\" accesskey=\"w\""

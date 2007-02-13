@@ -4301,6 +4301,15 @@ msgstr ""
 msgid "Tongan  "
 msgstr "Tsonga"
 
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Webseite\" accesskey=\"w\""
+
 #, fuzzy
 #~ msgid ""
 #~ "Provide a caption for the \n"
@@ -4379,12 +4388,6 @@ msgstr "Tsonga"
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "Inhalt:"
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#~ msgid "label=\"Web Site\" accesskey=\"w\""
-#~ msgstr "label=\"Webseite\" accesskey=\"w\""
 
 #, fuzzy
 #~ msgid "Canno  access directory named "
