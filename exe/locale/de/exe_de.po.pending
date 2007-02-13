@@ -1,10 +1,43 @@
 #: exe/webui/common.py:225
-msgid "_: suggested by thomas"
+msgid ""
+"_: suggested by thomas"
 "Confirm and submit"
+""
 msgstr "Bestätigen und senden"
 
 #: exe/webui/testoptionelement.py:86 exe/webui/optionelement.py:92
-msgid "_: suggested by thomas"
+msgid ""
+"_: suggested by thomas"
 "Delete option"
+""
 msgstr "Antwortmöglichkeit löschen"
 
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+msgid ""
+"_: suggested by jim"
+"Auckland University of Technology"
+""
+msgstr "Auckland University of Technology"
+
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
+msgid ""
+"_: suggested by jim"
+"RSS"
+""
+msgstr "RSS"
+
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
+#: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
+#: exe/resources/internal/templates/mainpage.xul:<key
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
+msgid ""
+"_: suggested by jim"
+"Q"
+""
+msgstr "Q"
+
+#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
+msgid ""
+"_: suggested by jim"
+"RSS"
+msgstr "RSS"
