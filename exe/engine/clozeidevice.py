@@ -35,7 +35,7 @@ class ClozeIdevice(Idevice):
     Holds a paragraph with words missing that the student must fill in
     """
     
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self, parentNode=None):
         """
@@ -130,6 +130,7 @@ click on the Hide/Show Word button below.</p>"""))
         self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
         self.systemResources += ["common.js"]
+        self.isCloze = True
 
 
     # Properties
@@ -166,4 +167,10 @@ click on the Hide/Show Word button below.</p>"""))
         """
         self._upgradeIdeviceToVersion2()
         self.systemResources += ["common.js"]
+        
+    def upgradeToVersion4(self):
+        """
+        Upgrades to v0.20.3
+        """
+        self.isCloze = True
 # ===========================================================================

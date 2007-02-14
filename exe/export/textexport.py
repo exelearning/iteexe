@@ -70,7 +70,10 @@ class TextExport(object):
             if not block:
                 log.critical("Unable to render iDevice.")
                 raise Error("Unable to render iDevice.")
-            self.html += block.renderView('default')
+            if hasattr(idevice, 'isCloze'):
+                self.html += block.renderText()
+            else:
+                self.html += block.renderView('default')
 
         for child in node.children:
             self.renderNode(child)

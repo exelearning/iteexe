@@ -895,6 +895,38 @@ class ClozeElement(Element):
         html += ['<p id="clozeScore%s"></p>' % self.id]
         html += ['</div>\n']
         return '\n'.join(html) + '</div>'
+    
+    def renderText(self):
+        """
+        Shows the text with gaps for text file export
+        """
+        html = ""
+        for text, missingWord in self.field.parts:
+            if text:
+                html += text
+            if missingWord:
+                for x in missingWord:
+                    html += "_"
+                    
+        return html
+    
+    def renderAnswers(self):        
+        """
+        Shows the answers for text file export
+        """
+        html = ""
+
+        html += "<p>%s: </p><p>"  % _(u"Answsers")
+        answers = ""
+        for i, (text, missingWord) in enumerate(self.field.parts):
+            if missingWord:
+                answers += str(i+1) + '.' + missingWord + ' '
+        if answers <> "":        
+            html += answers +'</p>'
+        else:
+            html = ""
+                
+        return html
 
 # ===========================================================================
 class FlashElement(Element):

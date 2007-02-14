@@ -99,7 +99,19 @@ class ClozeBlock(Block):
             ]
         return u'\n    '.join(html)
 
+    def renderText(self): 
         
+        """
+        Returns an XHTML string for text file export.
+        """
+        
+        html = '<p>' +  self.instructionElement.renderView() +'</p>'
+        html += '<p>' + self.clozeElement.renderText() + '</p>'
+        if self.feedbackElement.field.content:
+            html += '<p>%s:</P>' % _(u"Feedback")
+            html += '<p>' +self.feedbackElement.renderView(False, class_="feedback") +'</p>'
+        html += self.clozeElement.renderAnswers()
+        return html
     
 from exe.engine.clozeidevice import ClozeIdevice
 from exe.webui.blockfactory  import g_blockFactory
