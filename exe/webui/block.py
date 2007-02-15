@@ -21,6 +21,7 @@ Block is the base class for the classes which are responsible for
 rendering and processing Idevices in XHTML
 """
 
+import sys
 from exe.webui import common
 from exe.webui.renderable import Renderable
 from exe.engine.idevice   import Idevice
@@ -164,20 +165,22 @@ class Block(Renderable):
         Returns the appropriate XHTML string for whatever mode this block is in
         """
         html = u''
-        if self.mode == Block.Edit:
-            self.idevice.lastIdevice = True
-            html += u'<a name="currentBlock"></a>\n'
-            html += self.renderEdit(style)
-            
-        elif self.mode == Block.View:
-            html = self.renderView(style)
-        
-        elif self.mode == Block.Preview:
-            html = u""
-            if self.idevice.lastIdevice:
+        broken = '<p><span style="font-weight: bold">%s:</span> %%s</p>' % _('IDevice broken')
+        try:
+            if self.mode == Block.Edit:
+                self.idevice.lastIdevice = True
                 html += u'<a name="currentBlock"></a>\n'
-            html += self.renderPreview(style)
-
+                html += self.renderEdit(style)
+            elif self.mode == Block.View:
+                html += self.renderView(style)
+            elif self.mode == Block.Preview:
+                if self.idevice.lastIdevice:
+                    html += u'<a name="currentBlock"></a>\n'
+                html += self.renderPreview(style)
+        except Exception, e:
+            from traceback import format_tb
+            log.error('%s:\n%s' % (str(e), '\n'.join(format_tb(sys.exc_traceback))))
+            html += broken % str(e)
         return html
 
 

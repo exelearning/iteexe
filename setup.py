@@ -3,8 +3,10 @@
 # setup.py
 import os
 import subprocess
-from distutils.command.install import install
-from distutils.core            import setup
+from setuptools                 import setup
+#from distutils.core            import setup
+
+#from distutils.command.install import install
 from exe.engine                import version
 from exe.engine.path           import Path
 

@@ -35,18 +35,14 @@ def int2b128(integer, stream):
         stream(chr(integer & 0x7f))
         integer = integer >> 7
 
-def b1282int(st):
-    oneHundredAndTwentyEight = 128l
+def b1282int(st, _powersOfOneTwentyEight = []):
     i = 0
-    place = 0
-    for char in st:
+    if len(st) > len(_powersOfOneTwentyEight):
+        _powersOfOneTwentyEight.extend([128 ** n for n in xrange(len(_powersOfOneTwentyEight), len(st))])
+    for place, char in enumerate(st):
         num = ord(char)
-        i = i + (num * (oneHundredAndTwentyEight ** place))
-        place = place + 1
-    if i <= 2147483647:
-        return int(i)
-    else:
-        return i
+        i = i + (num * _powersOfOneTwentyEight[place])
+    return i
 
 # delimiter characters.
 LIST     = chr(0x80)
@@ -116,6 +112,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
     buffer = ''
 
     def dataReceived(self, chunk):
+        print 'WORKING!'
         buffer = self.buffer + chunk
         listStack = self.listStack
         gotItem = self.gotItem

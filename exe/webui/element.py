@@ -404,7 +404,7 @@ class MultimediaElement(Element):
         
         
         if self.field.mediaResource:
-            html += '<p style="color: red;">'+ self.field.mediaResource.storageName + '</P>'
+            html += '<p style="color: red;">'+ self.field.mediaResource.userName + '</P>'
             
         html += '<br/><b>%s</b><br/>' % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.field.caption)

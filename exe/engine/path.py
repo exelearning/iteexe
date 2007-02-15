@@ -639,7 +639,19 @@ class Path(unicode):
                 except Exception, e:
                     log.warn('Save completed but unable to delete backup "%s"' % backupName)
             
-                    
+    def unique(self):
+        """
+        Returns a unique file name in the current dir,
+        by adding a dot and a number just before the extension.
+        """
+        dirname = self.dirname()
+        if not dirname.isdir() and not dirname.ismount():
+            raise Exception('Use self.dirname.makedirs() first')
+        i = 1
+        path = Path(self)
+        while path.exists():
+            path = Path(self.dirname()/self.namebase + '.' + str(i) + self.ext)
+        return path
 
     def lines(self, encoding=None, errors='strict', retain=True):
         """ Open this file, read all lines, return them in a list.
@@ -731,7 +743,6 @@ class Path(unicode):
                 file_.write(line)
         finally:
             file_.close()
-
 
     # --- Methods for querying the filesystem.
 
@@ -1056,7 +1067,6 @@ class TempDirPath(Path):
         """Destroy the temporary directory"""
         if self.exists():
             self.rmtree()
-
 
 def toUnicode(string, encoding='utf8'):
     """

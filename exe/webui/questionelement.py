@@ -23,7 +23,6 @@ QuestionElement is responsible for a block of option.  Used by MultichoiceBlock
 import logging
 from exe.webui           import common
 from exe.webui.element   import ImageElement
-from exe.engine.resource import Resource
 
 log = logging.getLogger(__name__)
 # ===========================================================================

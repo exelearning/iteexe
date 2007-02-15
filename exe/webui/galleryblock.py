@@ -100,6 +100,8 @@ class GalleryBlock(Block):
         action = request.args.get('action', [''])[0]
         if action.startswith('gallery.'):
             self.processGallery(action)
+        if action == 'done':
+            self.idevice.recreateResources()
         if self.mode == Block.Edit:
             self.processCaptions(request)
         # Let our ancestor deal with the rest
@@ -269,6 +271,7 @@ class GalleryBlock(Block):
         """
         HTML shared by view and preview
         """
+        cls = self.idevice.__class__
         if len(self.idevice.images) == 0:
             html = [u'   <div style="align:center center">',
                     _(u'No Images Loaded'),
@@ -283,7 +286,7 @@ class GalleryBlock(Block):
                 return [u'        <a title="%s" ' % title,
                         u'         href="#"',
                         u'         onclick="window.open(',
-                        u"'%s', 'galleryImage', " % image.htmlSrc +
+                        u"'%s', 'galleryImage', " % self.idevice.htmlSrc +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
                         u"width=640," +
                         u"height=480,scrollbars=yes," +
@@ -299,15 +302,22 @@ class GalleryBlock(Block):
                         u'        </div>']
             html = self._generateTable(genCell)
         return u'\n    '.join(html)
+
+    def renderPreview(self, style):
+        """
+        Renders html for teacher preview inside of exe
+        """
+        cls = self.idevice.__class__
+        cls.preview()
+        return Block.renderPreview(self, style)
         
     def renderView(self, style):
         """
         Renders the html for export
         """
         # Temporarily change the resources Url for exporting the images nicely
-        if len(self.idevice.images) > 0:
-            cls = self.idevice.images[0].__class__
-            oldUrl, cls.resourcesUrl = cls.resourcesUrl, ''
+        cls = self.idevice.__class__
+        cls.export()
         try:
             html  = [u'<div class="iDevice emphasis%s" ' %
                      unicode(self.idevice.emphasis),
@@ -322,9 +332,8 @@ class GalleryBlock(Block):
             html += [u'</div>']
             return u'\n    '.join(html)
         finally:
-            # Put the resource url back
-            if len(self.idevice.images) > 0:
-                cls.resourcesUrl = oldUrl
+            # Put everything back into the default preview mode
+            cls.preview()
 
 from exe.engine.galleryidevice  import GalleryIdevice
 from exe.webui.blockfactory     import g_blockFactory

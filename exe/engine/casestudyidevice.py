@@ -26,6 +26,7 @@ from exe.engine.idevice   import Idevice
 from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
 from exe.engine.path      import toUnicode
+from exe                  import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -102,8 +103,7 @@ presented. """)
         self._feedbackInstruc = x_(u"""Provide relevant feedback on the 
 situation.""")
         if defaultImage is None:
-            from exe.application import application
-            defaultImage = application.config.webDir/'images'/DEFAULT_IMAGE
+            defaultImage = G.application.config.webDir/'images'/DEFAULT_IMAGE
         self.defaultImage = toUnicode(defaultImage)
         self.addQuestion()
 
@@ -164,8 +164,7 @@ situation.""")
         """
         Upgrades for v0.18
         """
-        from exe.application import application
-        self.defaultImage = toUnicode(application.config.webDir/'images'/DEFAULT_IMAGE)
+        self.defaultImage = toUnicode(G.application.config.webDir/'images'/DEFAULT_IMAGE)
         for question in self.questions:
             question.setupImage(self)
 

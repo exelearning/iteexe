@@ -38,23 +38,45 @@ from exe.engine.translate import lateTranslate
 
 log = logging.getLogger(__name__)
 
+class _ShowsResources(Persistable):
+    """
+    Base class for gallery and gallery image.
+    In Preview mode, resourcesUrl = 'resources/' but in export mode, resourcesUrl = None.
+    Doing it this way, we don't need seperate functions for preview and view/export.
+    The ideal solution would be to not have the URL to resources change ever.
+    """
+
+    # Class attribute
+    resourcesUrl = 'resources/'
+
+    @staticmethod
+    def export():
+        """
+        Turns on export mode.
+        """
+        _ShowsResources.resourcesUrl = ''
+
+    @staticmethod
+    def preview():
+        """
+        Turns on preview mode.
+        """
+        _ShowsResources.resourcesUrl = 'resources/'
+
+
 # ===========================================================================
-class GalleryImage(Persistable):
+class GalleryImage(_ShowsResources):
     """
     Holds a gallery image and its caption. Can produce a thumbnail
     and a preview, popup window.
     """
-    persistenceVersion = 1
-
-    # Class attributes
-    resourcesUrl  = 'resources/'
+    persistenceVersion = 2
 
     # Default attribute values
     _parent       = None
-    _caption      = None
+    _caption       = None
     _id           = None
     thumbnailSize = (128, 128)
-    previewSize   = (320.0, 240.0)
     size          = thumbnailSize
     bgColour      = 0x808080
 
@@ -66,17 +88,16 @@ class GalleryImage(Persistable):
         'originalImagePath' is the local path to the image
         """
         self.parent             = parent
-        self._caption           = TextField(caption)
+        self._caption            = TextField(caption)
         self._imageResource     = None
         self._thumbnailResource = None
-        self._htmlResource      = None
         self._saveFiles(originalImagePath)
 
     def _saveFiles(self, originalImagePath=None):
         """
-        Copies the image file and saves the thumbna il file
+        Copies the image file and saves the thumbnail file
         'originalImagePath' is a Path instance
-        setting 'originalImagePath' to None, will just recreate the html and
+        setting 'originalImagePath' to None, will just recreate the
         thumbnail resources from the existing image resource.
         """
         package = self.parent.parentNode.package
@@ -85,8 +106,6 @@ class GalleryImage(Persistable):
             # Copy the original image
             self._imageResource = Resource(self.parent, originalImagePath)
         # Create the thumbnail
-        tmpDir = TempDirPath()
-        htmlPath = (package.resourceDir/self._imageResource.path.namebase + ".html")
         try:
             image = Image.open(toUnicode(self._imageResource.path))
         except Exception, e:
@@ -107,7 +126,6 @@ class GalleryImage(Persistable):
         width2, height2 = image2.size
         left = int(round((width2 - width1) / 2.))
         top = int(round((height2 - height1) / 2.))
-
         try:
             image2.paste(image, (left, top))
         except IOError:
@@ -115,14 +133,13 @@ class GalleryImage(Persistable):
             # the thumbnail
             self._defaultThumbnail(image2)
 
-        thumbnailPath = (package.resourceDir/self._imageResource.path.namebase + "Thumbnail.png")
-        image2.save(thumbnailPath)
-        self._thumbnailResource = Resource(self.parent, thumbnailPath)
-
-        # Create the HTML popup window
-        htmlPath = (package.resourceDir/self._imageResource.path.namebase + ".html")
-        self._createHTMLPopupFile(htmlPath)
-        self._htmlResource = Resource(self.parent, htmlPath)
+        tmpDir = TempDirPath()
+        thumbnailPath = Path(tmpDir/self._imageResource.path.namebase + "Thumbnail.png").unique()
+        try:
+            image2.save(thumbnailPath)
+            self._thumbnailResource = Resource(self.parent, thumbnailPath)
+        finally:
+            thumbnailPath.remove()
 
     def _defaultThumbnail(self, image):
         """
@@ -155,155 +172,17 @@ class GalleryImage(Persistable):
             words = words[ln:]
             top += size[1]
 
-
-    def _createHTMLPopupFile(self, htmlPath):
-        """
-        Renders an HTML page that show's the image
-        (Only realy needed for stupid IE)
-        """
-        log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
-        # Choose our style dir
-        if self.parent.parentNode:
-            styleDir = self.parent.parentNode.package.style 
-        else:
-            # Should really never get here, but just in case...
-            styleDir = 'default'
-
-        # Render!
-        if htmlPath.ext == ".html":
-            index = self.parent.images.index(self)
-            if index == 0:
-                backStan = raw('&nbsp;')
-            else:
-                prevUrl = self.parent.images[index - 1]._htmlResource.storageName
-                backStan = T.a(href=prevUrl)[_('Previous')]
-            if index == len(self.parent.images) - 1:
-                nextStan = raw('&nbsp;')
-            else:
-                nextUrl = self.parent.images[index + 1]._htmlResource.storageName
-                nextStan = T.a(href=nextUrl)[_('Next')]
-            data = flatten(
-               T.html[
-                 T.head[
-                   T.title[self.caption],
-                   # One style import for preview mode
-                   T.style(type="text/css")[
-                    '@import url(/style/base.css);'],
-                   T.style(type="text/css")[
-                    '@import url(/style/%s/content.css);' % styleDir],
-                   # One style import for export mode
-                   T.style(type="text/css")[
-                    '@import url(base.css);'],
-                   T.style(type="text/css")[
-                    '@import url(content.css);'],
-                   T.script[
-                     raw(
-                         '\n'.join([
-                             '  imgObj = new Image();',
-                             '  imgObj.src = "%s";' % \
-                                self._imageResource.storageName, 
-                             '  multiplier = 1;',
-                             '  imageExpanded = false;',
-                             '  imageCanExpand = false;',
-                             '  maxWidth = %s;' % self.previewSize[0],
-                             '  maxHeight = %s;' % self.previewSize[1],
-                             '',
-                             '// Returns the multiplier to shink the Image',
-                             'function getShrinkMod() {',
-                             '  if (imgObj.width > imgObj.height) {',
-                             '    if (imgObj.width > maxWidth) {',
-                             '      imageCanExpand = true;'
-                             '      return maxWidth / imgObj.width;',
-                             '    } else {', 
-                             '       return 1;',
-                             '    }', 
-                             '  } else {', 
-                             '    if (imgObj.height > maxHeight) {',
-                             '      imageCanExpand = true;'
-                             '      return maxHeight / imgObj.height;',
-                             '    } else {', 
-                             '       return 1;',
-                             '    }', 
-                             '  }', 
-                             '}', 
-                             '',
-                             '// Resize the image',
-                             'function onLoad() {',
-                             '  var imgEle = document.getElementById("the_image");',
-                             '  multiplier = getShrinkMod();',
-                             '  if (imageCanExpand) {',
-                             '      // Shrink the Image',
-                             '      imgEle.width = imgObj.width * multiplier;',
-                             '      imgEle.height = imgObj.height * multiplier;',
-                             '  }', 
-                             '}', 
-                             '',
-                             'function growImage() {',
-                             '  var imgEle = document.getElementById("the_image");',
-                             '  if (imageCanExpand) {',
-                             '    if (imageExpanded) {',
-                             '        // Shrink Image',
-                             '        imgEle.width = imgObj.width * multiplier;',
-                             '        imgEle.height = imgObj.height * multiplier;',
-                             '    } else {',
-                             '        // Grow Image',
-                             '        imgEle.width = imgObj.width;',
-                             '        imgEle.height = imgObj.height;',
-                             '    }',
-                             '    imageExpanded = !imageExpanded;',
-                             '  }',
-                             '}'])),
-                     ]
-                 ],
-                 T.body(onLoad="onLoad()")[
-                   T.h1(id='nodeTitle')[self.caption],
-                   T.p(align='center') [
-                     T.table(width="100%")[
-                       T.tr[
-                         T.td(width="100%", align="center", colspan=3)[
-                             T.a(href="javascript:growImage()")[
-                                 T.img(id='the_image',
-                                       src=unicode(self._imageResource.storageName),
-                                       width=min(self.size[0],
-                                                 self.previewSize[0]),
-                                       height=min(self.size[1],
-                                                  self.previewSize[1]))
-                             ]
-                         ]
-                       ],
-                       T.tr[
-                         T.td(align="right", width="33%")[
-                           backStan
-                         ],
-                         T.td(align="center", width="33%")[
-                           T.a(href='javascript:window.close()')[
-                             _('Close')
-                           ],
-                         ],
-                         T.td(align="left", width="33%")[
-                            nextStan
-                         ]
-                       ]
-                     ]
-                   ]
-                 ]
-               ])
-            htmlFile = open(htmlPath, 'wb')
-            htmlFile.write(data)
-            htmlFile.close()
-
-
     # Public Methods
 
     def delete(self):
         """
         Removes our files from resources and removes us from our parent's list
         """
-        self._imageResource.delete()
-        self._thumbnailResource.delete()
-        self._htmlResource.delete()
-        self.parent = None
-
+        if self._imageResource:
+            self._imageResource.delete()
+        if self._thumbnailResource:
+            self._thumbnailResource.delete()
+        self.parent = None # This also removes our self from our parent's list
 
     # Property Handlers
 
@@ -322,21 +201,11 @@ class GalleryImage(Persistable):
             self._parent = parent
 
 
-    def set_caption(self, value):
-        """
-        Lets you set our caption as a string
-        """
-        self._caption.content = value
-        if self._htmlResource:
-            self._createHTMLPopupFile(self._htmlResource.path)
-
-
     def get_imageFilename(self):
         """
         Returns the full path to the image
         """
         return self._imageResource.path
-
 
     def set_imageFilename(self, filename):
         """
@@ -345,9 +214,7 @@ class GalleryImage(Persistable):
         if self._imageResource:
             self._imageResource.delete()
             self._thumbnailResource.delete()
-            self._htmlResource.delete()
         self._saveFiles(filename)
-
 
     def get_thumbnailFilename(self):
         """
@@ -355,20 +222,20 @@ class GalleryImage(Persistable):
         """
         return self._thumbnailResource.path
 
+    def set_caption(self, value):
+        """
+        Set's the text of our caption
+        """
+        self._caption.content = value
+
     # Properties
 
     imageFilename = property(get_imageFilename, set_imageFilename)
     thumbnailFilename = property(get_thumbnailFilename)
+    caption = property(lambda self: self._caption.content, set_caption)
     parent  = property(lambda self: self._parent, set_parent)
-    caption = property(lambda self: unicode(self._caption.content), set_caption)
-    imageSrc = property(lambda self: '%s%s' % 
-                   (self.resourcesUrl , self._imageResource.storageName))
-    thumbnailSrc = property(lambda self: '%s%s' %
-                            (self.resourcesUrl, 
-                             self._thumbnailResource.storageName))
-    htmlSrc = property(lambda self: '%s%s' %
-                            (self.resourcesUrl, 
-                             self._htmlResource.storageName))
+    imageSrc = property(lambda self: '%s%s' % (self.resourcesUrl , self._imageResource.storageName))
+    thumbnailSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._thumbnailResource.storageName))
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
@@ -392,6 +259,21 @@ class GalleryImage(Persistable):
         del self._imageFilename
         del self._thumbnailFilename
         del self._htmlFilename
+
+    def _deleteHTMLResource(self):
+        """
+        Delete our HTML Resource
+        """
+        if hasattr(self, '_htmlResource') and self._htmlResource:
+            self._htmlResource.delete()
+            del self._htmlResource
+
+    def upgradeToVersion2(self):
+        """
+        Upgrades to verison 0.20
+        """
+        package = self.parent.parentNode.package
+        package.afterUpgradeHandlers.append(self._deleteHTMLResource)
 
 
 # ===========================================================================
@@ -457,13 +339,18 @@ class GalleryImages(Persistable, list):
 
 
 # ===========================================================================
-class GalleryIdevice(Idevice):
+class GalleryIdevice(_ShowsResources, Idevice):
     """
     Gallery Idevice. Enables you to easily manage a bunch of images and
     thumbnails.
     """
 
-    persistenceVersion = 5
+    # Class attributes
+    persistenceVersion = 7
+    previewSize        = (320.0, 240.0)
+    
+    # Default attribute values
+    _htmlResource      = None
 
     def __init__(self, parentNode=None):
         """
@@ -494,6 +381,7 @@ these in a gallery context rather then individually.</p>"""),
     # Properties
     addImageInstr = lateTranslate('addImageInstr')
     titleInstruc = lateTranslate('titleInstruc')
+    htmlSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._htmlResource.storageName))
 
     def genImageId(self):
         """Generate a unique id for an image.
@@ -524,8 +412,247 @@ these in a gallery context rather then individually.</p>"""),
         Recreates all the thumbnails and html pages from the original image
         resources.
         """
+        self._createHTMLPopupFile()
         for image in self.images:
             image._saveFiles()
+
+    def _killBadImages(self):
+        """
+        Kills images that have somehow gotten corrupted and lost their
+        reference to their resource (See #601)
+        """
+        for i in range(len(self.images)-1, -1, -1):
+            image = self.images[i]
+            if hasattr(image, '_htmlResource'): 
+                if image._imageResource is None or image._htmlResource is None:
+                    del self.images[i]
+
+    def _createHTMLPopupFile(self):
+        """
+        Renders an HTML page that show's the image
+        (Only realy needed for stupid IE)
+        """
+        _ShowsResources.export()
+        try:
+            # Choose our style dir
+            if self.parentNode:
+                styleDir = self.parentNode.package.style 
+            else:
+                # Should really never get here, but just in case...
+                styleDir = 'default'
+            # Render!
+            img = self.images[0]
+            data = flatten(
+               T.html[
+                 T.head[
+                   T.title[self.title],
+                   # One style import for preview mode
+                   T.style(type="text/css")[
+                    '@import url(/style/base.css);'],
+                   T.style(type="text/css")[
+                    '@import url(/style/%s/content.css);' % styleDir],
+                   # One style import for export mode
+                   T.style(type="text/css")[
+                    '@import url(base.css);'],
+                   T.style(type="text/css")[
+                    '@import url(content.css);'],
+                   T.script[
+                     raw(
+                         '\n'.join([
+                            '  imgObj = new Image();',
+                            '  imgObj.src = "%s";' % img.imageSrc,
+                            '  multiplier = 1;',
+                            '  imageExpanded = false;',
+                            '  imageCanExpand = false;',
+                            '  maxWidth = %s;' % self.previewSize[0],
+                            '  maxHeight = %s;' % self.previewSize[1],
+                            '  imageIdx = 0;',
+                            '  images = %s;' % [img.imageSrc for img in self.images],
+                            '  titles = %s;' % [img.caption for img in self.images],
+                            '',
+                            '// Returns the multiplier to shink the Image',
+                            'function getShrinkMod() {',
+                            '  if (imgObj.width > imgObj.height) {',
+                            '    if (imgObj.width > maxWidth) {',
+                            '      imageCanExpand = true;      return maxWidth / imgObj.width;',
+                            '    } else {',
+                            '      return 1;',
+                            '    }',
+                            '  } else {',
+                            '    if (imgObj.height > maxHeight) {',
+                            '      imageCanExpand = true;      return maxHeight / imgObj.height;',
+                            '    } else {',
+                            '      return 1;',
+                            '    }',
+                            '  }',
+                            '}',
+                            '',
+                            '// Resize the image',
+                            'function onLoad() {',
+                            '  updateWindow();',
+                            '}',
+                            '',
+                            'function growImage() {',
+                            '  var imgEle = document.getElementById("the_image");',
+                            '  if (imageCanExpand) {',
+                            '    if (imageExpanded) {',
+                            '        // Shrink Image',
+                            '        imgEle.width = imgObj.width * multiplier;',
+                            '        imgEle.height = imgObj.height * multiplier;',
+                            '    } else {',
+                            '        // Grow Image',
+                            '        imgEle.width = imgObj.width;',
+                            '        imgEle.height = imgObj.height;',
+                            '    }',
+                            '    imageExpanded = !imageExpanded;',
+                            '  }',
+                            '}',
+                            '',
+                            '// Goes one image forward (if possible), then updates the screen',
+                            'function next() {',
+                            '    if (imageIdx < images.length - 1) {',
+                            '        imageIdx++;',
+                            '        updateWindow();',
+                            '    }',
+                            '}',
+                            '',
+                            '// Goes one image back (if possible), then updates the screen',
+                            'function prev() {',
+                            '    if (imageIdx > 0) {',
+                            '        imageIdx--;',
+                            '        updateWindow();',
+                            '    }',
+                            '}',
+                            '',
+                            '// Updates the screen',
+                            'function updateWindow() {',
+                            '    // Show/hide previous button',
+                            '    var btnPrev = document.getElementById("btnPrev");',
+                            '    if (imageIdx > 0) {',
+                            '        btnPrev.style.display = "block";',
+                            '    } else {',
+                            '        btnPrev.style.display = "none";',
+                            '    }',
+                            '    // Show/hide next button',
+                            '    var btnNext = document.getElementById("btnNext");',
+                            '    if (imageIdx < images.length - 1) {',
+                            '        btnNext.style.display = "block";',
+                            '    } else {',
+                            '        btnNext.style.display = "none";',
+                            '    }',
+                            '    // Update image',
+                            '    var img = document.getElementById("the_image");',
+                            '    img.setAttribute("src", images[imageIdx]);',
+                            '    imgObj = new Image();',
+                            '    imgObj.src = images[imageIdx];',
+                            '    // UnZoom img',
+                            '    multiplier = getShrinkMod();',
+                            '    if (imageExpanded) growImage();',
+                            '    // Update title',
+                            '    var title = document.getElementById("nodeTitle");',
+                            '    title.innerHTML = titles[imageIdx];',
+                            '}',
+                            '',
+                            
+                            '  imgObj.src = "%s";' % img.imageSrc,
+                            '  multiplier = 1;',
+                            '  imageExpanded = false;',
+                            '  imageCanExpand = false;',
+                            '  maxWidth = %s;' % self.previewSize[0],
+                            '  maxHeight = %s;' % self.previewSize[1],
+                            '',
+                            '// Returns the multiplier to shink the Image',
+                            'function getShrinkMod() {',
+                            '  if (imgObj.width > imgObj.height) {',
+                            '    if (imgObj.width > maxWidth) {',
+                            '      imageCanExpand = true;'
+                            '      return maxWidth / imgObj.width;',
+                            '    } else {', 
+                            '       return 1;',
+                            '    }', 
+                            '  } else {', 
+                            '    if (imgObj.height > maxHeight) {',
+                            '      imageCanExpand = true;'
+                            '      return maxHeight / imgObj.height;',
+                            '    } else {', 
+                            '       return 1;',
+                            '    }', 
+                            '  }', 
+                            '}', 
+                            '',
+                            '// Resize the image',
+                            'function onLoad() {',
+                            '  var imgEle = document.getElementById("the_image");',
+                            '  multiplier = getShrinkMod();',
+                            '  if (imageCanExpand) {',
+                            '      // Shrink the Image',
+                            '      imgEle.width = imgObj.width * multiplier;',
+                            '      imgEle.height = imgObj.height * multiplier;',
+                            '  }', 
+                            '}', 
+                            '',
+                            'function growImage() {',
+                            '  var imgEle = document.getElementById("the_image");',
+                            '  if (imageCanExpand) {',
+                            '    if (imageExpanded) {',
+                            '        // Shrink Image',
+                            '        imgEle.width = imgObj.width * multiplier;',
+                            '        imgEle.height = imgObj.height * multiplier;',
+                            '    } else {',
+                            '        // Grow Image',
+                            '        imgEle.width = imgObj.width;',
+                            '        imgEle.height = imgObj.height;',
+                            '    }',
+                            '    imageExpanded = !imageExpanded;',
+                            '  }',
+                            '}'])),
+                     ]
+                 ],
+                 T.body(onLoad="onLoad()")[
+                   T.h1(id='nodeTitle')[img.caption],
+                   T.p(align='center') [
+                     T.table(width="100%")[
+                       T.tr[
+                         T.td(width="100%", align="center", colspan=3)[
+                             T.a(href="javascript:growImage()")[
+                                 T.img(id='the_image',
+                                       src=unicode(img.imageSrc),
+                                       width=min(img.size[0], self.previewSize[0]),
+                                       height=min(img.size[1], self.previewSize[1]))
+                             ]
+                         ]
+                       ],
+                       T.tr[
+                         T.td(align="right", width="33%")[
+                           T.a(href='javascript:prev()', id='btnPrev')[_('Previous')]
+                         ],
+                         T.td(align="center", width="33%")[
+                           T.a(href='javascript:window.close()')[
+                             _('Close')
+                           ],
+                         ],
+                         T.td(align="left", width="33%")[
+                            T.a(href='javascript:next()', id='btnNext')[_('Next')]
+                         ]
+                       ]
+                     ]
+                   ]
+                 ]
+               ]
+            )
+        finally:
+            _ShowsResources.preview()
+        # Create the HTML popup window
+        tmpDir = TempDirPath()
+        htmlPath = Path(tmpDir/'galleryPopup.html')
+        log.debug("_createHTMLPopupFile htmlPath=%s" % htmlPath)
+        try:
+            htmlFile = open(htmlPath, 'wb')
+            htmlFile.write(data)
+            htmlFile.close()
+            self._htmlResource = Resource(self, htmlPath)
+        finally:
+            htmlPath.remove()
 
     # Upgrade Methods
 
@@ -563,3 +690,20 @@ these in a gallery context rather then individually.</p>"""),
         Some old resources had no storageName.
         """
         self.userResources = [res for res in self.userResources if res.storageName is not None]
+
+    def upgradeToVersion6(self):
+        """
+        Upgrades to exe version 0.20.alpha (nightlies)
+        Some packages were corrupted (See #601).
+        """
+        # TODO: See what caused this corruption. See #601.
+        package = self.parentNode.package
+        package.afterUpgradeHandlers.append(self._killBadImages)
+
+    def upgradeToVersion7(self):
+        """
+        Upgrades to Version 0.20
+        """
+        self.recreateResources()
+
+

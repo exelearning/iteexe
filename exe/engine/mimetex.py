@@ -4,6 +4,8 @@ import logging
 import warnings
 from exe.engine.path import Path
 from subprocess import Popen, PIPE
+from exe.globals import application
+
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
 log = logging.getLogger(__name__)
 
@@ -27,7 +29,6 @@ def compile(latex, fontsize=4):
         (or copy image with text idevice if this doesn't work)
     """
     # Import global application instance
-    from exe.application import application
     if os.name == 'nt':
         cmd = application.config.webDir/'templates'/'mimetex.exe'
     elif sys.platform[:6] == "darwin":

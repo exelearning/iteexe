@@ -27,8 +27,6 @@ from exe.engine               import feedparser
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
-from exe.engine.path          import Path, TempDirPath
-from exe.engine.resource      import Resource
 
 
 # ===========================================================================

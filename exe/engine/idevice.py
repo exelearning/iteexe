@@ -24,6 +24,7 @@ import copy
 import logging
 from exe.engine.persist import Persistable
 from exe.engine.translate import lateTranslate
+from exe.engine.resource import Resource
 
 log = logging.getLogger(__name__)
 
@@ -55,12 +56,13 @@ class Idevice(Persistable):
         self._purpose    = purpose
         self._tip        = tip
         self.icon        = icon
+        # userResources are copied into and stored in the package
         self.userResources = []
+        # systemResources are resources from whatever style dir we are using at render time
         if self.icon:
             self.systemResources = ["icon_"+self.icon+".gif"]
         else:
             self.systemResources = []
-
 
     # Properties
     def get_title(self):
@@ -98,6 +100,7 @@ class Idevice(Persistable):
         """
         return cmp(self.id, other.id)
 
+    # Public Methods
 
     def clone(self):
         """
@@ -114,7 +117,7 @@ class Idevice(Persistable):
         """
         delete an iDevice from it's parentNode
         """
-        # clear out old user resources
+        # Clear out old user resources
         while self.userResources:
             self.userResources[0].delete()
 

@@ -404,8 +404,7 @@ class ScormExport(object):
         # copy video container file for flash movies.
         #videofile = (self.templatesDir/'videoContainer.swf')
         #videofile.copyfile(outputDir/'videoContainer.swf')
-        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
-                                    'xspf_player.swf'),outputDir)
+        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf', 'xspf_player.swf'),outputDir)
 
         # Copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')

@@ -327,6 +327,14 @@ class Node(Persistable):
 
         return sibling
 
+    def walkDescendants(self):
+        """
+        Generator that walks all descendant nodes
+        """
+        for child in self.children:
+            yield child
+            for descendant in child.walkDescendants():
+                yield descendant
 
     def __str__(self):
         """

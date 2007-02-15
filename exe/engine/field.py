@@ -233,8 +233,13 @@ class ImageField(Field):
         """
         log.debug("ImageField upgrade field to version 2")
         idevice = self.idevice or self.__dict__.get('idevice')
+        package = idevice.parentNode.package
+        # This hack is due to the un-ordered ness of jelly restoring and upgrading
+        if not hasattr(package, 'resources'):
+            package.resources = {}
+        imgPath = package.resourceDir/self.imageName
         if self.imageName and idevice.parentNode:
-            self.imageResource = Resource(idevice, Path(self.imageName))
+            self.imageResource = Resource(idevice, imgPath)
         else:
             self.imageResource = None
         del self.imageName

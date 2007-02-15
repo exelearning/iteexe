@@ -50,7 +50,8 @@ class GenericIdevice(Idevice):
         self.icon    = icon
         self.fields  = []
         self.nextFieldId = 0
-        self.systemResources += ["common.js", "libot_drag.js"]
+        self.systemResources.append('common.js')
+        self.systemResources.append('libot_drag.js')
 
 
     def clone(self):

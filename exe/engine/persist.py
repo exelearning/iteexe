@@ -65,6 +65,11 @@ class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
 
         return Versioned.__getstate__(self, toPersist)
 
+    def afterUpgrade(self):
+        """
+        Called after all items bieng loaded have been loaded
+        and upgraded.
+        """
 
 
 
