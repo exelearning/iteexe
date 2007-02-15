@@ -56,6 +56,7 @@ class _Resource(Persistable):
         log.debug(u"init resourceFile=%s" % resourceFile)
         # _storageName may be changed when the package is set
         self._storageName = self._fn2ascii(resourceFile)
+        # self._userName is the basename name originally given by the user
         self._userName = self._storageName
         self._originalFile = resourceFile
         self.checksum = resourceFile.md5
@@ -93,7 +94,13 @@ class _Resource(Persistable):
         self._package = package
         if self._package:
             self._addOurselvesToPackage()
-        self.onPackageChanged(oldPath, oldPackage)
+        # Remove our old file if necessary
+        if oldPackage and self.checksum not in oldPackage.resources:
+            oldPath.remove()
+        # If our Idevice has not already moved, cut ourselves off from it
+        if self._idevice and self._idevice.parentNode.package is not self._package:
+            self._idevice.userResources.remove(self)
+            self._idevice = None
 
     # Properties
     storageName = property(lambda self:self._storageName)
@@ -115,6 +122,10 @@ class _Resource(Persistable):
         else:
             if Path(self._originalFile).dirname() == self._package.resourceDir:
                 log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
+            else:
+                filename = (self._package.resourceDir/self._originalFile.basename()).unique()
+                self._storageName = filename.basename()
+                self._originalFile.copy(filename)
         siblings.append(self)
 
     # Public methods
@@ -135,22 +146,13 @@ class _Resource(Persistable):
 
     # Protected methods
 
-    def _copyFile(self, resourceFile):
-        """
-        copy the resourceFile given into our package's resourceDir
-        """
-        log.debug(u"copyFile %s" % resourceFile)
-        resourceFile.copyfile((self._package.resourceDir/self._storageName).unique())
-
-
     def _fn2ascii(self, filename):
         """
         Changes any filename to pure ascii, returns only the basename
         """
         nameBase, ext = Path(Path(filename).basename()).splitext()
         # Check if the filename is ascii so that twisted can serve it
-        try:
-            nameBase.encode('ascii')
+        try: nameBase.encode('ascii')
         except UnicodeEncodeError:
             nameBase = nameBase.encode('utf8').encode('hex')
         # Encode the extension separately so that you can keep file types a bit
@@ -181,21 +183,6 @@ class Resource(_Resource):
         _Resource.__init__(self, owner, resourceFile)
         if self._idevice:
             self._idevice.userResources.append(self)
-
-    def onPackageChanged(self, oldPath, oldPackage):
-        """
-        Called before the package is changed. Used to handle deleting the old resource File
-        """
-        if oldPath and self.package:
-            # If the new package doesn't already have us, if we're not upgrading copy ourselves
-            if hasattr(self.package, 'resourceDir') and len(self.package.resources[self.checksum]) == 1:
-                self._copyFile(oldPath)
-        if oldPackage and self.checksum not in oldPackage.resources:
-            oldPath.remove()
-        # If our Idevice has not already moved, cut ourselves off from it
-        if self._idevice and self._idevice.parentNode.package is not self._package:
-            self._idevice.userResources.remove(self)
-            self._idevice = None
 
     @property
     def path(self):

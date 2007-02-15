@@ -52,7 +52,7 @@ div#nodeDecoration {
 .emphasis1 {
    background-color: #FFF;
    border-bottom: 1px solid #9d9d9d;
-   background-image:url(top_left_corner.gif); //the left curve
+   background-image:url(top_left_corner.gif); /* The left curve */
    background-position:top left;
    background-repeat:no-repeat;
    margin-bottom: 30px;

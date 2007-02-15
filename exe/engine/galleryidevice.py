@@ -467,32 +467,34 @@ these in a gallery context rather then individually.</p>"""),
                             '  maxWidth = %s;' % self.previewSize[0],
                             '  maxHeight = %s;' % self.previewSize[1],
                             '  imageIdx = 0;',
-                            '  images = %s;' % [img.imageSrc for img in self.images],
-                            '  titles = %s;' % [img.caption for img in self.images],
+                            '  images = %s;' % [img.imageSrc.encode('utf-8') for img in self.images],
+                            '  titles = %s;' % [img.caption.encode('utf-8') for img in self.images],
                             '',
                             '// Returns the multiplier to shink the Image',
                             'function getShrinkMod() {',
                             '  if (imgObj.width > imgObj.height) {',
                             '    if (imgObj.width > maxWidth) {',
-                            '      imageCanExpand = true;      return maxWidth / imgObj.width;',
-                            '    } else {',
-                            '      return 1;',
-                            '    }',
-                            '  } else {',
+                            '      imageCanExpand = true;'
+                            '      return maxWidth / imgObj.width;',
+                            '    } else {', 
+                            '       return 1;',
+                            '    }', 
+                            '  } else {', 
                             '    if (imgObj.height > maxHeight) {',
-                            '      imageCanExpand = true;      return maxHeight / imgObj.height;',
-                            '    } else {',
-                            '      return 1;',
-                            '    }',
-                            '  }',
-                            '}',
+                            '      imageCanExpand = true;'
+                            '      return maxHeight / imgObj.height;',
+                            '    } else {', 
+                            '       return 1;',
+                            '    }', 
+                            '  }', 
+                            '}', 
                             '',
                             '// Resize the image',
                             'function onLoad() {',
                             '  updateWindow();',
                             '}',
                             '',
-                            'function growImage() {',
+                            'function toggleZoom() {',
                             '  var imgEle = document.getElementById("the_image");',
                             '  if (imageCanExpand) {',
                             '    if (imageExpanded) {',
@@ -541,72 +543,17 @@ these in a gallery context rather then individually.</p>"""),
                             '        btnNext.style.display = "none";',
                             '    }',
                             '    // Update image',
-                            '    var img = document.getElementById("the_image");',
-                            '    img.setAttribute("src", images[imageIdx]);',
+                            '    var imgEle = document.getElementById("the_image");',
+                            '    imgEle.setAttribute("src", images[imageIdx]);',
                             '    imgObj = new Image();',
                             '    imgObj.src = images[imageIdx];',
-                            '    // UnZoom img',
+                            '    // UnZoom imgEle',
                             '    multiplier = getShrinkMod();',
-                            '    if (imageExpanded) growImage();',
+                            '    if (imageExpanded) toggleZoom();',
                             '    // Update title',
                             '    var title = document.getElementById("nodeTitle");',
                             '    title.innerHTML = titles[imageIdx];',
-                            '}',
-                            '',
-                            
-                            '  imgObj.src = "%s";' % img.imageSrc,
-                            '  multiplier = 1;',
-                            '  imageExpanded = false;',
-                            '  imageCanExpand = false;',
-                            '  maxWidth = %s;' % self.previewSize[0],
-                            '  maxHeight = %s;' % self.previewSize[1],
-                            '',
-                            '// Returns the multiplier to shink the Image',
-                            'function getShrinkMod() {',
-                            '  if (imgObj.width > imgObj.height) {',
-                            '    if (imgObj.width > maxWidth) {',
-                            '      imageCanExpand = true;'
-                            '      return maxWidth / imgObj.width;',
-                            '    } else {', 
-                            '       return 1;',
-                            '    }', 
-                            '  } else {', 
-                            '    if (imgObj.height > maxHeight) {',
-                            '      imageCanExpand = true;'
-                            '      return maxHeight / imgObj.height;',
-                            '    } else {', 
-                            '       return 1;',
-                            '    }', 
-                            '  }', 
-                            '}', 
-                            '',
-                            '// Resize the image',
-                            'function onLoad() {',
-                            '  var imgEle = document.getElementById("the_image");',
-                            '  multiplier = getShrinkMod();',
-                            '  if (imageCanExpand) {',
-                            '      // Shrink the Image',
-                            '      imgEle.width = imgObj.width * multiplier;',
-                            '      imgEle.height = imgObj.height * multiplier;',
-                            '  }', 
-                            '}', 
-                            '',
-                            'function growImage() {',
-                            '  var imgEle = document.getElementById("the_image");',
-                            '  if (imageCanExpand) {',
-                            '    if (imageExpanded) {',
-                            '        // Shrink Image',
-                            '        imgEle.width = imgObj.width * multiplier;',
-                            '        imgEle.height = imgObj.height * multiplier;',
-                            '    } else {',
-                            '        // Grow Image',
-                            '        imgEle.width = imgObj.width;',
-                            '        imgEle.height = imgObj.height;',
-                            '    }',
-                            '    imageExpanded = !imageExpanded;',
-                            '  }',
-                            '}'])),
-                     ]
+                            '}', ])),
                  ],
                  T.body(onLoad="onLoad()")[
                    T.h1(id='nodeTitle')[img.caption],
@@ -614,7 +561,7 @@ these in a gallery context rather then individually.</p>"""),
                      T.table(width="100%")[
                        T.tr[
                          T.td(width="100%", align="center", colspan=3)[
-                             T.a(href="javascript:growImage()")[
+                             T.a(href="javascript:toggleZoom()")[
                                  T.img(id='the_image',
                                        src=unicode(img.imageSrc),
                                        width=min(img.size[0], self.previewSize[0]),
@@ -639,7 +586,8 @@ these in a gallery context rather then individually.</p>"""),
                    ]
                  ]
                ]
-            )
+             ]
+           )
         finally:
             _ShowsResources.preview()
         # Create the HTML popup window
@@ -704,6 +652,11 @@ these in a gallery context rather then individually.</p>"""),
         """
         Upgrades to Version 0.20
         """
+        package = self.parentNode.package
+        # This hack is needed, because jelly doesn't upgrade things in order.
+        # Sometimes the child is loaded before the parent
+        if not hasattr(package, 'resources'):
+            package.resources = {}
         self.recreateResources()
 
 
