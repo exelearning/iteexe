@@ -142,8 +142,7 @@ within Wikipedia.""")
         Changes links, etc
         """
         content = re.sub(r'href="/', r'href="%s/' % netloc, content)
-        content = re.sub(r'<(span|div)\s+class="editsection".*?</\1>',
-                '', content)
+        content = re.sub(r'<(span|div)\s+(id|class)="(editsection|jump-to-nav)".*?</\1>', '', content)
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
         content = re.sub(r'<script.*?</script>', '', content)
