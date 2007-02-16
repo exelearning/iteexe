@@ -25,6 +25,7 @@ import os
 import sys
 import logging
 import traceback
+from xml.sax.saxutils            import escape
 from twisted.internet            import reactor
 from twisted.web                 import static
 from twisted.internet.defer      import Deferred
@@ -192,7 +193,7 @@ class MainPage(RenderableLivePage):
             result.append('  <menuitem label="%(num)s. %(path)s"'
                           ' accesskey="%(num)s"'
                           ' oncommand="fileOpenRecent(\'%(num)s\')"/>' %
-                          {'num': num + 1, 'path': path})
+                          {'num': num + 1, 'path': escape(path)})
         result.append('</menupopup>')
         return stan.xml('\n'.join(result))
 
