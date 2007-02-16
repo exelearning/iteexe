@@ -207,7 +207,7 @@ class Block(Renderable):
               u"\\n"
               u"Do you really want to do this?"),
             u"delete",
-            self.id, u"/images/stock-delete.png", 
+            self.id, u"/images/stock-cancel.png", 
             _(u"Delete"), 1)
 
         if self.idevice.isFirst():
