@@ -16,6 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
+import os
 
 class HtmlToText(object):
   
@@ -34,7 +35,7 @@ class HtmlToText(object):
         if ch == ">":
           inBrackets = False
         elif ch.lower() == "p" and lastch == "<":
-          text += "\r\n\r\n"
+          text += os.linesep * 2
       elif not (lastch in whitespace and ch in whitespace):         
         text += ch
       lastch = ch
