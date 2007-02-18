@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 11:47+1300\n"
-"PO-Revision-Date: 2007-02-14 11:23+1200\n"
+"PO-Revision-Date: 2007-02-19 11:43+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,6 @@ msgid "<dl>  <dt>If your goal is to test understanding of core concepts or readi
 msgstr "<dl>  <dt>主要なコンセプトあるいは読解力のテストが目的の場合</dt>  <dd> <p> コンセプトの要約、もしくはリーディング内容を記入してください。長さは、目標とすべき知識を得るのに十分な量があり、かつ読み疲れない程度に留める必要があります。１ページ分のタイプした量であれば十分といえますが、若年層の学習者や初心者にとってはもう少し短いほうが適当だと思われます。</p>    <p>コンセプトを理解するためにキーワードを選択してください。動詞、名詞、副詞などがキーワードになるでしょう。ひとつの明確に解答となる単語とともに他の選択肢を選んでください。 </p></dd><dt>語彙力のテストが目的の場合</dt>  <dd><p>ターゲットとする語彙を含むテキストを記入してください。テキストは首尾一貫し、適度の長さをもったものでなければなりません。テキスト中のターゲットとなる単語は強調してください。明確に解答となる単語とともに他の選択肢を選んでください。</p>  </dd>  <dt>単語の形成や文法力のテストを目的とする場合 </dt>  <dd>  <p>ターゲットとなる語の形成を含むテキストを記入してください。テキストは内容が首尾一貫し、適度の長さがなければなりません。目的は語彙力を試すものではありませんので、学習者が単語の語幹となる語の意味を知っている必要があります。</p>  <p>テキスト中のターゲットとなる単語は強調してください。同じ語幹をもち、接辞の異なる単語を選択肢として準備してください。内容に間違いがないように、事前に同僚にテストをチェックしてもらうとよいでしょう </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
-#, fuzzy
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
 msgstr "<ol>  <li>&lt;MP3の選択&gt;をクリックし、挿入したいMP3ファイルを選んでください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所を選んでください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルの内容に関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例）'強調する' 。「強調」は、表示されるiDeviceのコンテンツの境界線やアイコンに反映されます。</li></ol>"
 
@@ -110,9 +109,8 @@ msgid ""
 msgstr "<p>このオプションが設定された場合, 学習者が全問題を解答後一括採点するのではなく、解答を入力する度採点されます。</p>"
 
 #: exe/engine/field.py:708
-#, fuzzy
 msgid "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
-msgstr "<ol><li>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。</li></ol>"
+msgstr "<p>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。"
 
 #: exe/engine/idevicestore.py:247
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -372,7 +370,6 @@ msgstr "添付ファイル%s はeXeでは対応していません"
 
 #: exe/engine/multimediaidevice.py:41
 #: exe/engine/rssidevice.py:42
-#, fuzzy
 msgid "Auckland University of Technology"
 msgstr "オークランド工科大学"
 
@@ -433,14 +430,12 @@ msgid "Choose an Image"
 msgstr "画像の選択"
 
 #: exe/engine/multimediaidevice.py:49
-#, fuzzy
 msgid "Choose an MP3 file"
-msgstr "「MP3」ファイルの選択"
+msgstr "MP3ファイルの選択"
 
 #: exe/engine/casestudyidevice.py:54
-#, fuzzy
 msgid "Choose an optional image to be shown to the student on completion of this question"
-msgstr "学生がこの質問に答えた後、提示する画像を選択してください"
+msgstr "学生がこの質問に答えた後、追加して提示したい画像があれば選択してください"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -540,7 +535,7 @@ msgstr "正解！"
 
 #: exe/xului/mainpage.py:577
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "ファイルをロードできませんでした。bugs@exelearning.orgにメールで連絡してください。"
 
 #: exe/engine/casestudyidevice.py:93
 msgid ""
@@ -789,6 +784,16 @@ msgid ""
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"コンテンツに添付するRSS feed のURLを入力してください。 \n"
+"フィードは、よくアイコンやテキストで表示されます。\n"
+" （アイコン：<img src=\"/images/feed-icon.png\" />、もしくはテキスト： \"RSS\"） \n"
+"アイコンやテキストをクリックすることで、RSS フィードをブラウザに表示することができます。\n"
+"URLをコピーと貼り付けでURLをこのフィールドに入力できます。 また、別の方法としてリンクや\n"
+"画像を右クリックすることでメニューボックスが開きます。「リンクロケーションのコピー」あるいは、\n"
+"「ショートカットをコピー」をクリックしてください。eXeでは、RSSブックマークideviceを開き、\n"
+"RSS用URL欄にURLを貼り付け、「ロード」ボタンをクリックしてください。こうすることでフィードから\n"
+"タイトルを抽出し、あなたのコンテンツ上でそれらを表示できます。ここでブックマークの編集、\n"
+"指示の入力、追加の学習用の情報提供ができます。"
 
 #: exe/engine/field.py:835
 #: exe/idevices/quiztestidevice.py:64
@@ -1388,7 +1393,7 @@ msgstr "概要"
 
 #: exe/webui/wikipediablock.py:117
 msgid "Own site"
-msgstr ""
+msgstr "独自のサイト"
 
 #: exe/xului/mainpage.py:262
 #: exe/xului/mainpage.py:392
@@ -1479,6 +1484,8 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
+"MP3ファイルに表題を入力してください。 \n"
+"この表題はプレーヤーのタイトルバーにも表記されます。"
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
@@ -1667,14 +1674,12 @@ msgid "Select a flash video"
 msgstr "フラッシュビデオの選択"
 
 #: exe/webui/element.py:1066
-#, fuzzy
 msgid "Select a font size: "
-msgstr "ファイルの選択"
+msgstr "フォントサイズの選択"
 
 #: exe/webui/element.py:355
-#, fuzzy
 msgid "Select an MP3"
-msgstr "MP3ファイルの選択"
+msgstr "MP3の選択"
 
 #: exe/webui/element.py:273
 msgid "Select an image"
@@ -1704,9 +1709,8 @@ msgstr ""
 "オプションを選択してください。"
 
 #: exe/engine/imagemagnifieridevice.py:71
-#, fuzzy
 msgid "Select the size of the magnifying glass"
-msgstr "拡大鏡のサイズ"
+msgstr "拡大鏡のサイズの選択"
 
 #: exe/idevices/forumelement.py:88
 msgid "Separate groups"
@@ -1851,7 +1855,7 @@ msgid ""
 "The RSS iDevice is used \n"
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
-msgstr ""
+msgstr "「RSS」は、学習者個々のユーザーマシンに新しいコンテンツを提供するために利用されます。このiDeviceにより、あなたが学習者用に選んだfeedからリンクを提供できます。"
 
 #: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
@@ -2073,7 +2077,7 @@ msgstr "URL:"
 #: exe/engine/wikipediaidevice.py:97
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr ""
+msgstr "ダウンロードできません。 %s　 <br/>ファイル名とネットワークの接続を確認してもう一度試してください。"
 
 #: exe/engine/package.py:79
 msgid "Unit"
@@ -2291,14 +2295,12 @@ msgid "label"
 msgstr "ラベル"
 
 #: exe/webui/element.py:1063
-#, fuzzy
 msgid "newline"
-msgstr "インターリンガ"
+msgstr "ニューライン"
 
 #: exe/webui/element.py:1062
-#, fuzzy
 msgid "text"
-msgstr "次へ"
+msgstr "テキスト"
 
 #: exe/webui/renderable.py:255
 msgid "title"
@@ -2714,7 +2716,7 @@ msgstr "フォーマットの選択"
 #: exe/resources/internal/templates/mainpage.xul:<key
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<key
 msgid "Q"
-msgstr ""
+msgstr "Q"
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="XHTML" id="dcmiXHTML"
@@ -2973,9 +2975,8 @@ msgstr "アゼルバイジャン語"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 #: exe/resources/internal/templates/mainpage.xul:<menuitem
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
-#, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"関連情報\" accesskey=\"a\""
+msgstr "label=\"終了\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="ba" id="dcmiba"
@@ -3767,9 +3768,8 @@ msgstr "ノルウェー語（Bokmå ）"
 #: id="merging-menu" accesskey="m" label="Merging">
 #: exe/xului/templates/mainpage.xul:<menu
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
-#, fuzzy
 msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"結合する\" accesskey=\"e\""
+msgstr "label=\"結合\" accesskey=\"e\""
 
 #: exe/resources/internal/templates/dublincore.xul:<menuitem
 #: value="nd"
@@ -4326,17 +4326,15 @@ msgstr "一般的に「権利」部分は、リソースに関する権利の管
 #: n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
-#, fuzzy
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"更新\" accesskey=\"r\""
+msgstr "label=\"最近作成したプロジェクト\" accesskey=\"r\""
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate"
 #: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
-#, fuzzy
 msgid "label=\"SCORM 2004\" accesskey=\"c\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 2004\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<label
 #: value="License:"
@@ -4344,36 +4342,35 @@ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 #: tooltiptext="Select a license.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "License:"
-msgstr ""
+msgstr "ライセンス："
 
 #: exe/xului/templates/packageproperties.xul:<menulist
 #: onchange="this.style.color = 'blue'" id="pp_license" label="Select
 #: License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menulist
-#, fuzzy
 msgid "Select License"
-msgstr "言語の選択"
+msgstr "ライセンスの選択"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
 #: Attribution 2.5 License" id="ppcca1" label="Creative License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution 2.5 License"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
 #: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-ShareAlike 2.5 License"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
 #: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NoDerivs 2.5 License"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
@@ -4381,7 +4378,7 @@ msgstr ""
 #: License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial 2.5 License"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
@@ -4389,7 +4386,7 @@ msgstr ""
 #: label="Creative License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
@@ -4397,14 +4394,14 @@ msgstr ""
 #: License">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menuitem
 msgid "Developing Nations 2.0"
-msgstr ""
+msgstr "Developing Nations 2.0"
 
 #: exe/xului/templates/packageproperties.xul:<label
 #: value="Footer:"
@@ -4412,21 +4409,19 @@ msgstr ""
 #: tooltiptext="Web pages footer.">
 #: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<label
 msgid "Footer:"
-msgstr ""
+msgstr "フッター："
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="to" id="dcmito"
 #: label="Tongan ">
-#, fuzzy
 msgid "Tongan  "
-msgstr "ツォンガ語"
+msgstr "トンガ語"
 
 #: exe/xului/templates/mainpage.xul:<menuitem
 #: n:render="translate"
 #: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
-#, fuzzy
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"テキストファイル\" accesskey=\"t\""
+msgstr "label=\"eXe ライブチャット\" accesskey=\"c\""
 
 #~ msgid ""
 #~ "Provide a caption for the \n"
