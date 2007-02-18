@@ -20,6 +20,7 @@
 TextPageExport will export a package as a text file.
 """
 
+import os
 from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
@@ -62,7 +63,7 @@ class TextExport(object):
         Returns an XHTML string for this node and recurse for the children
         """
 
-        self.html += "\r\n\r\n**" + escape(node.titleLong) + "**"
+        self.html += os.linesep*2 + "**" + escape(node.titleLong) + "**"
 
 
         for idevice in node.idevices:
@@ -77,7 +78,7 @@ class TextExport(object):
 
         for child in node.children:
             self.renderNode(child)
-        
+        print self.html
 
     def save(self, filename):
         """
