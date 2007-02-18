@@ -39,6 +39,8 @@ class HtmlToText(object):
       elif not (lastch in whitespace and ch in whitespace):         
         text += ch
       lastch = ch
+    text = text.replace('\n', os.linesep)
+    text = text.replace('\r', os.linesep)
     text = text.replace('&nbsp;','')
     text = text.replace('&lt;', '<')
     text = text.replace('&gt;', '>')
