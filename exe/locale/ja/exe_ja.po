@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 14:14+1300\n"
-"PO-Revision-Date: 2007-02-19 13:22+1200\n"
+"PO-Revision-Date: 2007-02-19 14:56+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -26,16 +26,22 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>追加するアプレットがこのドロップダウンにあるプログラムの一つを使って作成 \n"
+"されている場合、それを選択し、その後、あなたのプログラムで作成した \n"
+"データ／アプレットファイルを追加してください。</p>\n"
+"<p>例：　Geogebra アプレットを追加する場合、「geogebra」を選択し、\n"
+"あなたがGeogebraで作成した .ggb ファイルを追加してください。</p>"
 
-#: exe/xului/mainpage.py:252 exe/xului/mainpage.py:417
-#: exe/xului/mainpage.py:536 exe/xului/mainpage.py:558
+#: exe/xului/mainpage.py:252
+#: exe/xului/mainpage.py:417
+#: exe/xului/mainpage.py:536
+#: exe/xului/mainpage.py:558
 #: exe/xului/mainpage.py:579
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"保存できませんでした\n"
 "\"%s\"は、既に存在しています。\n"
 "違ったファイル名で再度お試しください"
 
@@ -52,7 +58,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---移動します---"
 
-#: exe/xului/mainpage.py:270 exe/xului/mainpage.py:327
+#: exe/xului/mainpage.py:270
+#: exe/xului/mainpage.py:327
 #: exe/xului/mainpage.py:409
 msgid ". Please use ASCII names."
 msgstr ". アスキーネームを利用してください."
@@ -129,9 +136,8 @@ msgid ""
 msgstr "<p>このオプションが設定された場合, 学習者が全問題を解答後一括採点するのではなく、解答を入力する度採点されます。</p>"
 
 #: exe/engine/field.py:760
-#, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr "<p>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。"
+msgstr "<p>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。</P>"
 
 #: exe/engine/idevicestore.py:248
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -213,9 +219,8 @@ msgid ""
 msgstr "「ヒント」は学習者が質問に答える際、解答を支援するために提示するために利用できます。"
 
 #: exe/webui/editorpane.py:74
-#, fuzzy
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the device's development."
-msgstr "「指導上のヒント」を利用することで、あなたの意図する利用法や、デバイス開発の背景にある指導法について記述することができます。"
+msgstr "「指導上のヒント」を利用することで、あなたの意図する利用法や、デバイス開発の背景にある指導法について記述ができます。"
 
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
@@ -225,17 +230,19 @@ msgstr "簡単なディスカッション"
 msgid "Actions"
 msgstr "アクション"
 
-#: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:326
-#: exe/engine/idevicestore.py:334 exe/engine/idevicestore.py:395
-#: exe/engine/idevicestore.py:433 exe/engine/idevicestore.py:441
+#: exe/engine/idevicestore.py:287
+#: exe/engine/idevicestore.py:326
+#: exe/engine/idevicestore.py:334
+#: exe/engine/idevicestore.py:395
+#: exe/engine/idevicestore.py:433
+#: exe/engine/idevicestore.py:441
 #: exe/webui/questionelement.py:74
 msgid "Activity"
 msgstr "アクティビティー"
 
 #: exe/webui/editorpane.py:238
-#, fuzzy
 msgid "Add Field"
-msgstr "ファイルを追加"
+msgstr "フィールドを追加"
 
 #: exe/webui/element.py:297
 msgid "Add Image"
@@ -246,14 +253,12 @@ msgid "Add JPEG Image"
 msgstr "JPEG画像の追加"
 
 #: exe/webui/editorpane.py:87
-#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr "iDeviceにインタラクティブなフィードバックを追加"
+msgstr "iDeviceにFLASHビデオを追加"
 
 #: exe/webui/editorpane.py:88
-#, fuzzy
 msgid "Add a mp3 file to your iDevice."
-msgstr "iDeviceにインタラクティブなフィードバックを追加"
+msgstr "iDeviceにmp3ファイルを追加"
 
 #: exe/webui/editorpane.py:77
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
@@ -277,24 +282,26 @@ msgstr ""
 msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
 msgstr "ｉDeviceに画像を追加します。あなたの所有する画像ファイルから画像の選択が可能になります。"
 
-#: exe/webui/element.py:1342 exe/idevices/testquestionelement.py:106
+#: exe/webui/element.py:1342
+#: exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
 msgstr "別のオプションを追加"
 
-#: exe/webui/multiselectblock.py:78 exe/idevices/quiztestblock.py:101
+#: exe/webui/multiselectblock.py:78
+#: exe/idevices/quiztestblock.py:101
 msgid "Add another Question"
 msgstr "別の質問を追加"
 
 #: exe/webui/casestudyblock.py:97
-#, fuzzy
 msgid "Add another activity"
-msgstr "別のオプションを追加"
+msgstr "別のアクティビティーを追加"
 
 #: exe/webui/element.py:1554
 msgid "Add another option"
 msgstr "別のオプションを追加"
 
-#: exe/webui/truefalseblock.py:88 exe/webui/multichoiceblock.py:104
+#: exe/webui/truefalseblock.py:88
+#: exe/webui/multichoiceblock.py:104
 msgid "Add another question"
 msgstr "別の質問を追加"
 
@@ -310,9 +317,12 @@ msgstr "画像を追加"
 msgid "Add interactive feedback to your iDevice."
 msgstr "iDeviceにインタラクティブなフィードバックを追加"
 
-#: exe/webui/imagewithtextblock.py:79 exe/webui/editorelement.py:221
-#: exe/webui/multimediablock.py:83 exe/webui/flashwithtextblock.py:79
-#: exe/webui/imagemagnifierblock.py:108 exe/idevices/flashmovieblock.py:78
+#: exe/webui/imagewithtextblock.py:79
+#: exe/webui/editorelement.py:221
+#: exe/webui/multimediablock.py:83
+#: exe/webui/flashwithtextblock.py:79
+#: exe/webui/imagemagnifierblock.py:108
+#: exe/idevices/flashmovieblock.py:78
 msgid "Align:"
 msgstr "配置："
 
@@ -370,7 +380,8 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:436
+#: exe/engine/idevicestore.py:329
+#: exe/engine/idevicestore.py:436
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -381,18 +392,16 @@ msgstr ""
 "なるような状況については、よく考慮してください。"
 
 #: exe/webui/element.py:919
-#, fuzzy
 msgid "Answsers"
-msgstr "解答を表示する"
+msgstr "解答"
 
 #: exe/idevices/appletblock.py:114
 msgid "Applet Code:"
 msgstr "アプレットコード："
 
 #: exe/idevices/appletblock.py:90
-#, fuzzy
 msgid "Applet Type"
-msgstr "アプレットコード："
+msgstr "アプレットタイプ："
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
@@ -407,7 +416,8 @@ msgstr "添付"
 msgid "Attachment %s has no parentNode"
 msgstr "添付ファイル%s はeXeでは対応していません"
 
-#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:40
+#: exe/engine/multimediaidevice.py:41
+#: exe/engine/rssidevice.py:40
 msgid "Auckland University of Technology"
 msgstr "オークランド工科大学"
 
@@ -419,18 +429,23 @@ msgstr "ボタンキャプション"
 msgid "Can a student post to this forum?:"
 msgstr "学習者に、このフォーラムへの投稿を許可しますか？"
 
-#: exe/webui/editorpane.py:261 exe/webui/preferencespage.py:94
+#: exe/webui/editorpane.py:261
+#: exe/webui/preferencespage.py:94
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: exe/xului/mainpage.py:270 exe/xului/mainpage.py:325
+#: exe/xului/mainpage.py:270
+#: exe/xului/mainpage.py:325
 #: exe/xului/mainpage.py:409
 msgid "Cannot access directory named "
 msgstr "という名前のディレクトリーにアクセスできません"
 
-#: exe/webui/imagewithtextblock.py:84 exe/webui/editorelement.py:322
-#: exe/webui/flashwithtextblock.py:84 exe/webui/element.py:409
-#: exe/webui/imagemagnifierblock.py:92 exe/idevices/flashmovieblock.py:83
+#: exe/webui/imagewithtextblock.py:84
+#: exe/webui/editorelement.py:322
+#: exe/webui/flashwithtextblock.py:84
+#: exe/webui/element.py:409
+#: exe/webui/imagemagnifierblock.py:92
+#: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "表題："
 
@@ -438,7 +453,8 @@ msgstr "表題："
 msgid "Case Study"
 msgstr "ケーススタディー"
 
-#: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:218
+#: exe/webui/galleryblock.py:200
+#: exe/webui/galleryblock.py:218
 msgid "Change Image"
 msgstr "画像の変更"
 
@@ -494,7 +510,8 @@ msgstr "<strong>ファイルの選択</strong>をクリックし, 添付する�
 msgid "Click Here"
 msgstr "ここをクリックする"
 
-#: exe/webui/common.py:281 exe/webui/common.py:284
+#: exe/webui/common.py:281
+#: exe/webui/common.py:284
 msgid "Click for completion instructions"
 msgstr "ガイドを表示するため、クリックしてください"
 
@@ -503,23 +520,29 @@ msgid "Click here"
 msgstr "ここをクリックする"
 
 #: exe/engine/field.py:767
-#, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
 "LATEXを記号イメージに変換するため\n"
-"　　　　　　　　　　　　　　　　　「プレレビューボタン」をクリックしてください。"
+"　　　　　　　　　　　　　　　　　「プレビューボタン」をクリックしてください。"
 
 #: exe/engine/galleryidevice.py:375
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "「画像の追加」をクリックし、画像ファイルを選択してください。画像が下に表示され、ラベルの記入ができます。ラベルにファイルサイズを記入しておくと利用者にとって便利です。"
 
-#: exe/engine/galleryidevice.py:578 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:350
-#: exe/webui/editorpane.py:351 exe/webui/editorpane.py:371
-#: exe/webui/editorpane.py:372 exe/webui/block.py:240 exe/webui/block.py:241
-#: exe/webui/common.py:289 exe/webui/common.py:290 exe/webui/element.py:1577
+#: exe/engine/galleryidevice.py:578
+#: exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124
+#: exe/webui/editorpane.py:350
+#: exe/webui/editorpane.py:351
+#: exe/webui/editorpane.py:371
+#: exe/webui/editorpane.py:372
+#: exe/webui/block.py:240
+#: exe/webui/block.py:241
+#: exe/webui/common.py:289
+#: exe/webui/common.py:290
+#: exe/webui/element.py:1577
 #: exe/webui/element.py:1578
 msgid "Close"
 msgstr "閉じる"
@@ -540,8 +563,10 @@ msgstr "空所補充用テキスト"
 msgid "Confirm and submit"
 msgstr "確認して提出"
 
-#: exe/webui/element.py:1329 exe/webui/element.py:1424
-#: exe/webui/element.py:1472 exe/idevices/testquestionelement.py:93
+#: exe/webui/element.py:1329
+#: exe/webui/element.py:1424
+#: exe/webui/element.py:1472
+#: exe/idevices/testquestionelement.py:93
 msgid "Correct"
 msgstr "正解"
 
@@ -564,12 +589,18 @@ msgstr ""
 "記述したもの、関わる人物像や状況が克明に描写されているものです。\n"
 "また、状況を解決するために何らかの行動を取る必要性があるようなケースの設定も可能です。"
 
-#: exe/webui/block.py:211 exe/webui/editorelement.py:76
-#: exe/webui/editorelement.py:111 exe/webui/editorelement.py:152
-#: exe/webui/editorelement.py:191 exe/webui/editorelement.py:242
-#: exe/webui/editorelement.py:296 exe/webui/galleryblock.py:251
-#: exe/webui/editorpage.py:227 exe/webui/editorpage.py:230
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
+#: exe/webui/block.py:211
+#: exe/webui/editorelement.py:76
+#: exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:152
+#: exe/webui/editorelement.py:191
+#: exe/webui/editorelement.py:242
+#: exe/webui/editorelement.py:296
+#: exe/webui/galleryblock.py:251
+#: exe/webui/editorpage.py:227
+#: exe/webui/editorpage.py:230
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
+#: n:render="delNode"
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
 msgstr "削除"
@@ -582,13 +613,16 @@ msgstr "ファイルの削除"
 msgid "Delete Image"
 msgstr "画像の削除"
 
-#: exe/webui/element.py:1246 exe/webui/element.py:1436
+#: exe/webui/element.py:1246
+#: exe/webui/element.py:1436
 #: exe/idevices/testoptionelement.py:86
 msgid "Delete option"
 msgstr "オプションの削除"
 
-#: exe/webui/truefalseelement.py:102 exe/webui/element.py:1321
-#: exe/webui/element.py:1539 exe/webui/questionelement.py:88
+#: exe/webui/truefalseelement.py:102
+#: exe/webui/element.py:1321
+#: exe/webui/element.py:1539
+#: exe/webui/questionelement.py:88
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "質問の削除"
@@ -610,30 +644,37 @@ msgstr ""
 "提供するケーススタディーのストーリーに関する学習タスクを記述してください。\n"
 "与えられたジレンマの解決を手助けするような質問や指示を与えると学習者に役立ちます。"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:322
+#: exe/engine/idevicestore.py:429
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "学習者がこの学習を効果的に行う際、あらかじめ必要な知識について記述してください。"
 
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/idevicestore.py:288
+#: exe/engine/idevicestore.py:396
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "学習者が取り組むリーディングに関するタスクを記述してください。学習者にリーディングに関連した内容を説明するのに役立ちます。"
 
-#: exe/engine/idevicestore.py:335 exe/engine/idevicestore.py:442
+#: exe/engine/idevicestore.py:335
+#: exe/engine/idevicestore.py:442
 msgid "Describe the tasks the learners should complete."
 msgstr "学習者が取り組むタスクについて記述してください。"
 
-#: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49
+#: exe/idevices/flashmovieidevice.py:52
 msgid "Description"
 msgstr "記述"
 
 #: exe/webui/attachmentblock.py:100
-#: exe/xului/templates/packageproperties.xul:<label value="Description:"
-#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
-#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Description:"
+#: id="ppDescription" style="width:8em"
+#: tooltiptext="An account of the content
+#: resource."> exe/xului/templates/dublincore.xul:<label
+#: id="dcDescription"
 msgid "Description:"
 msgstr "記述："
 
@@ -653,15 +694,19 @@ msgstr "ディスカッション用トピック／スレッド"
 msgid "Discussions and replies are allowed"
 msgstr "ディスカッションと返答が許可されています"
 
-#: exe/webui/element.py:320 exe/webui/element.py:638 exe/webui/element.py:971
+#: exe/webui/element.py:320
+#: exe/webui/element.py:638
+#: exe/webui/element.py:971
 msgid "Display as:"
 msgstr "として表示"
 
-#: exe/webui/block.py:203 exe/xului/templates/packageproperties.xul:<button
+#: exe/webui/block.py:203
+#: exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
 #: label="Done"> exe/xului/templates/exportproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
-#: exe/xului/templates/dublincore.xul:<button id="dcBtnDone"
+#: exe/xului/templates/dublincore.xul:<button
+#: id="dcBtnDone"
 msgid "Done"
 msgstr "完了"
 
@@ -688,48 +733,65 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:337 exe/xului/mainpage.py:342
-#: exe/xului/mainpage.py:345 exe/xului/mainpage.py:348
+#: exe/xului/mainpage.py:337
+#: exe/xului/mainpage.py:342
+#: exe/xului/mainpage.py:345
+#: exe/xului/mainpage.py:348
 #: exe/xului/mainpage.py:520
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "エクスポートに失敗しました！"
 
-#: exe/xului/mainpage.py:510 exe/xului/mainpage.py:524
-#: exe/xului/mainpage.py:537 exe/xului/mainpage.py:543
-#: exe/xului/mainpage.py:559 exe/xului/mainpage.py:565
-#: exe/xului/mainpage.py:580 exe/xului/mainpage.py:586
+#: exe/xului/mainpage.py:510
+#: exe/xului/mainpage.py:524
+#: exe/xului/mainpage.py:537
+#: exe/xului/mainpage.py:543
+#: exe/xului/mainpage.py:559
+#: exe/xului/mainpage.py:565
+#: exe/xului/mainpage.py:580
+#: exe/xului/mainpage.py:586
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"エキスポートに失敗しました！\n"
+"%s"
 
-#: exe/export/imsexport.py:297 exe/export/websiteexport.py:87
+#: exe/export/imsexport.py:297
+#: exe/export/websiteexport.py:87
 #: exe/export/scormexport.py:412
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"エキスポートに失敗しました！\n"
+"最後に成功したエキスポートは次のものです %s."
 
-#: exe/xului/mainpage.py:418 exe/xului/mainpage.py:434
+#: exe/xului/mainpage.py:418
+#: exe/xului/mainpage.py:434
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"ファイルの解答に失敗しました！\n"
+"%s"
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
 msgstr "学習者が個々にディスカッションを投稿する"
 
-#: exe/webui/editorpane.py:258 exe/webui/block.py:324
+#: exe/webui/editorpane.py:258
+#: exe/webui/block.py:324
 #: exe/webui/editorpage.py:256
 msgid "Edit"
 msgstr "編集"
 
-#: exe/webui/editorpane.py:322 exe/webui/multimediablock.py:94
-#: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:94
+#: exe/webui/editorpane.py:322
+#: exe/webui/multimediablock.py:94
+#: exe/webui/wikipediablock.py:132
+#: exe/webui/rssblock.py:94
 msgid "Emphasis"
 msgstr "強調"
 
@@ -755,7 +817,8 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "ここにヒントを記入してください。もし、ヒントを提供しない場合は、この領域を空白のままにしておいて下さい。"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:230
+#: exe/engine/wikipediaidevice.py:71
+#: exe/engine/wikipediaidevice.py:230
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -796,7 +859,8 @@ msgstr ""
 "タイトルを抽出し、あなたのコンテンツ上でそれらを表示できます。ここでブックマークの編集、\n"
 "指示の入力、追加の学習用の情報提供ができます。"
 
-#: exe/engine/field.py:892 exe/idevices/quiztestidevice.py:64
+#: exe/engine/field.py:892
+#: exe/idevices/quiztestidevice.py:64
 #: exe/idevices/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
@@ -824,7 +888,8 @@ msgstr "フィードバックの領域にあなたが学習者に提供したい
 msgid "Enter instructions for completion here"
 msgstr "ここに解答に関する指示を入力してください"
 
-#: exe/engine/externalurlidevice.py:48 exe/engine/externalurlidevice.py:70
+#: exe/engine/externalurlidevice.py:48
+#: exe/engine/externalurlidevice.py:70
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
@@ -843,7 +908,8 @@ msgstr ""
 "オプションの追加ができます。オプションの横にある赤い \"X\" をクリック \n"
 "するとオプションが削除できます。"
 
-#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:392
+#: exe/engine/idevicestore.py:284
+#: exe/engine/idevicestore.py:392
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -852,7 +918,8 @@ msgstr ""
 "参考文献を含め、リーディング内容の詳細を記入してください。\n"
 "文献引用の際のスタイルは、所属する学部や学会の形式に合わせてください。"
 
-#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
+#: exe/engine/flashwithtextidevice.py:57
+#: exe/engine/flashwithtextidevice.py:85
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -862,19 +929,24 @@ msgstr ""
 "スクリーン上の配置を決定してください。\n"
 "幅と高さは自動的に比例して変換されます。"
 
-#: exe/webui/editorpane.py:147 exe/webui/editorpane.py:154
+#: exe/webui/editorpane.py:147
+#: exe/webui/editorpane.py:154
 #: exe/webui/editorpane.py:178
 msgid "Enter the instructions for completion here"
 msgstr "ここに解答のために必要な指示を入力してください"
 
-#: exe/webui/editorpane.py:140 exe/webui/editorpane.py:146
-#: exe/webui/editorpane.py:153 exe/webui/editorpane.py:162
+#: exe/webui/editorpane.py:140
+#: exe/webui/editorpane.py:146
+#: exe/webui/editorpane.py:153
+#: exe/webui/editorpane.py:162
 #: exe/webui/editorpane.py:177
 msgid "Enter the label here"
 msgstr "ラベルをここに入力してください"
 
-#: exe/engine/multichoiceidevice.py:92 exe/engine/field.py:889
-#: exe/idevices/quiztestidevice.py:61 exe/idevices/quiztestidevice.py:94
+#: exe/engine/multichoiceidevice.py:92
+#: exe/engine/field.py:889
+#: exe/idevices/quiztestidevice.py:61
+#: exe/idevices/quiztestidevice.py:94
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -896,7 +968,8 @@ msgid ""
 "                                 associate with the image."
 msgstr "画像に関するテキストを入力してください。"
 
-#: exe/engine/imagemagnifieridevice.py:54 exe/engine/multimediaidevice.py:65
+#: exe/engine/imagemagnifieridevice.py:54
+#: exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -915,12 +988,13 @@ msgid "Example Example"
 msgstr "例"
 
 #: exe/webui/editorpage.py:239
-#, fuzzy
 msgid "Export iDevices"
-msgstr "iDevices"
+msgstr "iDevicesのエキスポート"
 
-#: exe/xului/mainpage.py:526 exe/xului/mainpage.py:545
-#: exe/xului/mainpage.py:567 exe/xului/mainpage.py:588
+#: exe/xului/mainpage.py:526
+#: exe/xului/mainpage.py:545
+#: exe/xului/mainpage.py:567
+#: exe/xului/mainpage.py:588
 #, python-format
 msgid "Exported to %s"
 msgstr "エキスポートする%s"
@@ -933,15 +1007,21 @@ msgstr "外部のウェブサイト"
 msgid "Extra large"
 msgstr "特大"
 
-#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
+#: exe/webui/truefalseelement.py:84
+#: exe/webui/truefalseelement.py:155
 msgid "False"
 msgstr "間違い"
 
-#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:152
-#: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
-#: exe/engine/genericidevice.py:187 exe/webui/truefalseelement.py:90
-#: exe/webui/editorpane.py:245 exe/webui/common.py:194
-#: exe/webui/element.py:1437 exe/webui/questionelement.py:78
+#: exe/engine/clozeidevice.py:127
+#: exe/engine/clozeidevice.py:152
+#: exe/engine/idevicestore.py:291
+#: exe/engine/idevicestore.py:399
+#: exe/engine/genericidevice.py:187
+#: exe/webui/truefalseelement.py:90
+#: exe/webui/editorpane.py:245
+#: exe/webui/common.py:194
+#: exe/webui/element.py:1437
+#: exe/webui/questionelement.py:78
 #: exe/webui/clozeblock.py:111
 msgid "Feedback"
 msgstr "フィードバック"
@@ -954,37 +1034,41 @@ msgstr ""
 "このフィールドにデータが記入されない場合、\n"
 "フィードバックボタンは表示されません。"
 
-#: exe/webui/reflectionblock.py:72 exe/webui/element.py:1345
+#: exe/webui/reflectionblock.py:72
+#: exe/webui/element.py:1345
 msgid "Feedback:"
 msgstr "フィードバック："
 
 #: exe/xului/mainpage.py:625
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "ファイル %s は存在しないか、読み込むことができません。"
 
-#: exe/xului/mainpage.py:461 exe/xului/mainpage.py:497
+#: exe/xului/mainpage.py:461
+#: exe/xului/mainpage.py:497
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
 
 #: exe/webui/attachmentblock.py:78
-#, fuzzy
 msgid "Filename:"
-msgstr "ファイル名"
+msgstr "ファイル名："
 
-#: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
+#: exe/idevices/flashmovieidevice.py:39
+#: exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
 msgstr "フラッシュムービー"
 
-#: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
+#: exe/engine/flashwithtextidevice.py:40
+#: exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
 msgstr "テクスト付フラッシュ"
 
-#: exe/xului/mainpage.py:467 exe/xului/mainpage.py:503
+#: exe/xului/mainpage.py:467
+#: exe/xului/mainpage.py:503
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
-msgstr ""
+msgstr "フォルダー名　%s は既に存在しています。他の名前にするか、現存するフォルダを削除し、再度試してください。"
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
@@ -994,7 +1078,8 @@ msgstr "全員に提出を強制しますか？"
 msgid "Forum Name:"
 msgstr "フォーラム名："
 
-#: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
+#: exe/idevices/forumelement.py:279
+#: exe/idevices/forumelement.py:296
 msgid "Forum Name: "
 msgstr "フォーラム名："
 
@@ -1006,7 +1091,8 @@ msgstr "フォーラムの種類："
 msgid "Frame Height:"
 msgstr "フレームの高さ："
 
-#: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
+#: exe/engine/freetextidevice.py:37
+#: exe/engine/freetextidevice.py:44
 msgid "Free Text"
 msgstr "フリーテキスト"
 
@@ -1015,14 +1101,15 @@ msgid "French Wikipedia Article"
 msgstr "フランス語ウィキペディア記事"
 
 #: exe/webui/wikipediablock.py:197
-#: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
 msgstr "GNU（グニュー）フリードキュメンテーションライセンス"
 
 #: exe/idevices/appletblock.py:88
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/wikipediablock.py:95
 msgid "German Wikipedia Article"
@@ -1045,15 +1132,15 @@ msgid "Go Forward (Not Available)"
 msgstr "進む（利用不可）"
 
 #: exe/webui/wikipediablock.py:96
-#, fuzzy
 msgid "Greek Wikipedia Article"
-msgstr "フランス語ウィキペディア記事"
+msgstr "ギリシャ語ウィキペディア記事"
 
 #: exe/idevices/forumelement.py:117
 msgid "Group mode:"
 msgstr "グループモード："
 
-#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
+#: exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
 msgid "Hide"
 msgstr "隠す"
 
@@ -1065,8 +1152,10 @@ msgstr "フィードバックを隠す"
 msgid "Hide/Show Word"
 msgstr "単語を隠す／表示する"
 
-#: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
-#: exe/webui/truefalseelement.py:127 exe/webui/element.py:1581
+#: exe/webui/truefalseelement.py:95
+#: exe/webui/truefalseelement.py:117
+#: exe/webui/truefalseelement.py:127
+#: exe/webui/element.py:1581
 msgid "Hint"
 msgstr "ヒント"
 
@@ -1078,8 +1167,10 @@ msgstr "ヒント："
 msgid "Home"
 msgstr "ホーム"
 
-#: exe/webui/block.py:279 exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:325
+#: exe/webui/block.py:279
+#: exe/webui/genericblock.py:78
+#: exe/webui/genericblock.py:104
+#: exe/webui/galleryblock.py:325
 #: exe/webui/multichoiceblock.py:144
 msgid "IDevice Icon"
 msgstr "IDeviceアイコン"
@@ -1089,15 +1180,15 @@ msgid "IDevice Question Icon"
 msgstr "IDevice質問アイコン"
 
 #: exe/webui/block.py:168
-#, fuzzy
 msgid "IDevice broken"
-msgstr "IDeviceアイコン"
+msgstr "IDeviceが壊れています"
 
 #: exe/webui/editorpane.py:353
 msgid "Icons"
 msgstr "アイコン"
 
-#: exe/engine/casestudyidevice.py:55 exe/engine/imagewithtextidevice.py:58
+#: exe/engine/casestudyidevice.py:55
+#: exe/engine/imagewithtextidevice.py:58
 #: exe/webui/editorpane.py:243
 msgid "Image"
 msgstr "画像"
@@ -1115,9 +1206,8 @@ msgid "Image with Text"
 msgstr "テキスト付画像"
 
 #: exe/webui/editorpage.py:237
-#, fuzzy
 msgid "Import iDevices"
-msgstr "iDevices"
+msgstr "iDevicesのインポート"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
@@ -1139,8 +1229,10 @@ msgstr "イニシャルズーム"
 msgid "Instant Marking?"
 msgstr "即時に採点しますか？"
 
-#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:80
-#: exe/engine/truefalseidevice.py:167 exe/webui/common.py:275
+#: exe/engine/clozeidevice.py:114
+#: exe/engine/truefalseidevice.py:80
+#: exe/engine/truefalseidevice.py:167
+#: exe/webui/common.py:275
 msgid "Instructions"
 msgstr "ガイド"
 
@@ -1169,9 +1261,8 @@ msgid "Java Applet"
 msgstr "Javaアプレット"
 
 #: exe/webui/attachmentblock.py:96
-#, fuzzy
 msgid "Label:"
-msgstr "ラベル"
+msgstr "ラベル："
 
 #: exe/webui/imagemagnifierblock.py:135
 msgid "Large"
@@ -1185,30 +1276,36 @@ msgstr "LMS（ラーニングマネジメントシステム）"
 msgid "Learning Management System:"
 msgstr "LMS(ラーニングマネージメントシステム）："
 
-#: exe/webui/imagewithtextblock.py:75 exe/webui/editorelement.py:217
-#: exe/webui/multimediablock.py:79 exe/webui/flashwithtextblock.py:75
-#: exe/webui/imagemagnifierblock.py:85 exe/idevices/flashmovieblock.py:75
+#: exe/webui/imagewithtextblock.py:75
+#: exe/webui/editorelement.py:217
+#: exe/webui/multimediablock.py:79
+#: exe/webui/flashwithtextblock.py:75
+#: exe/webui/imagemagnifierblock.py:85
+#: exe/idevices/flashmovieblock.py:75
 msgid "Left"
 msgstr "左"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
-#, fuzzy
+#: exe/export/pages.py:68
+#: exe/export/textexport.py:53
 msgid "Licensed under the "
-msgstr "この記事は次のもとで掲載の許諾を得ています。"
+msgstr "掲載許諾"
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
 msgstr "フォーラムへのリンク"
 
-#: exe/webui/wikipediablock.py:125 exe/webui/rssblock.py:87
+#: exe/webui/wikipediablock.py:125
+#: exe/webui/rssblock.py:87
 msgid "Load"
 msgstr "ロード"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:249
+#: exe/engine/multimediaidevice.py:40
+#: exe/webui/editorpane.py:249
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
+#: exe/engine/mathidevice.py:35
+#: exe/engine/mathidevice.py:48
 msgid "Maths"
 msgstr "算数・数学"
 
@@ -1241,13 +1338,12 @@ msgid "Move Up"
 msgstr "上に移動"
 
 #: exe/engine/multichoiceidevice.py:57
-#, fuzzy
 msgid "Multi-choice"
-msgstr "多肢選択"
+msgstr "多肢選択（単独解答）"
 
 #: exe/engine/multiselectidevice.py:41
 msgid "Multi-select"
-msgstr ""
+msgstr "多肢選択（複数回答）"
 
 #: exe/webui/editorpane.py:315
 msgid "Name"
@@ -1262,11 +1358,11 @@ msgid "New Topic"
 msgstr "新しいトピック"
 
 #: exe/webui/editorpage.py:261
-#, fuzzy
 msgid "New iDevice"
-msgstr "新しいiDeｖice"
+msgstr "新しい iDeｖice"
 
-#: exe/engine/galleryidevice.py:582 exe/export/websitepage.py:192
+#: exe/engine/galleryidevice.py:582
+#: exe/export/websitepage.py:192
 #: exe/export/scormexport.py:312
 msgid "Next"
 msgstr "次へ"
@@ -1275,7 +1371,8 @@ msgstr "次へ"
 msgid "No"
 msgstr "No"
 
-#: exe/webui/galleryblock.py:189 exe/webui/galleryblock.py:277
+#: exe/webui/galleryblock.py:189
+#: exe/webui/galleryblock.py:277
 msgid "No Images Loaded"
 msgstr "画像が挿入されませんでした"
 
@@ -1299,8 +1396,10 @@ msgstr "ディスカッションは許可しないが、返答は許可する"
 msgid "No discussions, no replies"
 msgstr "ディスカッションも返答も許可しない"
 
-#: exe/webui/editorpane.py:325 exe/webui/multimediablock.py:91
-#: exe/webui/wikipediablock.py:129 exe/webui/rssblock.py:91
+#: exe/webui/editorpane.py:325
+#: exe/webui/multimediablock.py:91
+#: exe/webui/wikipediablock.py:129
+#: exe/webui/rssblock.py:91
 msgid "No emphasis"
 msgstr "強調しない"
 
@@ -1308,11 +1407,15 @@ msgstr "強調しない"
 msgid "No groups"
 msgstr "グループなし"
 
-#: exe/webui/imagewithtextblock.py:77 exe/webui/editorelement.py:219
-#: exe/webui/multimediablock.py:81 exe/webui/flashwithtextblock.py:77
-#: exe/webui/imagemagnifierblock.py:87 exe/idevices/forumelement.py:239
+#: exe/webui/imagewithtextblock.py:77
+#: exe/webui/editorelement.py:219
+#: exe/webui/multimediablock.py:81
+#: exe/webui/flashwithtextblock.py:77
+#: exe/webui/imagemagnifierblock.py:87
+#: exe/idevices/forumelement.py:239
 #: exe/idevices/flashmovieblock.py:77
-#: exe/xului/templates/packageproperties.xul:<menuitem value="None"
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="None"
 #: id="ppminone" label="None">
 msgid "None"
 msgstr "None"
@@ -1321,12 +1424,15 @@ msgstr "None"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:307
-#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:414
+#: exe/engine/idevicestore.py:298
+#: exe/engine/idevicestore.py:307
+#: exe/engine/idevicestore.py:405
+#: exe/engine/idevicestore.py:414
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:408
+#: exe/engine/idevicestore.py:301
+#: exe/engine/idevicestore.py:408
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1335,28 +1441,34 @@ msgstr ""
 "「目的」では、学習者の期待される学習結果を記述するとともに、学習者が学習タスクを　\n"
 "終了した後、学習者がなにができるようになるか定義する必要があります。"
 
-#: exe/engine/field.py:661 exe/engine/field.py:723
+#: exe/engine/field.py:661
+#: exe/engine/field.py:723
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "このiDeviceでは.flv（フラッシュムービーファイル）のみ選択できます。"
 
-#: exe/engine/field.py:600 exe/engine/field.py:644
+#: exe/engine/field.py:600
+#: exe/engine/field.py:644
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "このiDeviceでは.swf（フラッシュオブジェクト）のみ選択できます。"
 
-#: exe/webui/element.py:1331 exe/webui/element.py:1419
-#: exe/webui/element.py:1424 exe/idevices/testquestionelement.py:95
+#: exe/webui/element.py:1331
+#: exe/webui/element.py:1419
+#: exe/webui/element.py:1424
+#: exe/idevices/testquestionelement.py:95
 msgid "Option"
 msgstr "オプション"
 
-#: exe/webui/element.py:1327 exe/idevices/testquestionelement.py:91
+#: exe/webui/element.py:1327
+#: exe/idevices/testquestionelement.py:91
 msgid "Options"
 msgstr "オプション"
 
-#: exe/webui/wikipediablock.py:108 exe/idevices/appletblock.py:89
+#: exe/webui/wikipediablock.py:108
+#: exe/idevices/appletblock.py:89
 #: exe/idevices/forumelement.py:266
 msgid "Other"
 msgstr "その他"
@@ -1370,16 +1482,17 @@ msgid "Own site"
 msgstr "独自のサイト"
 
 #: exe/xului/mainpage.py:436
-#, fuzzy, python-format
+#, python-format
 msgid "Package extracted to: %s"
-msgstr "パッケージが次の場所に保存されました: %s"
+msgstr "パッケージが次の場所に解凍されました: %s"
 
 #: exe/xului/mainpage.py:286
 #, python-format
 msgid "Package saved to: %s"
 msgstr "パッケージが次の場所に保存されました: %s"
 
-#: exe/webui/editorpane.py:363 exe/webui/block.py:232
+#: exe/webui/editorpane.py:363
+#: exe/webui/block.py:232
 msgid "Pedagogical Help"
 msgstr "指導上のヘルプ"
 
@@ -1400,9 +1513,8 @@ msgid "Please enter an idevice name."
 msgstr "iDeviceの名前を記入してください。"
 
 #: exe/webui/editorpane.py:188
-#, fuzzy
 msgid "Please enter<br />an idevice name."
-msgstr "iDeviceの名前を記入してください。"
+msgstr "<br />iDeviceの名前を記入してください。"
 
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
@@ -1412,7 +1524,8 @@ msgstr "LMS（ラーニングマネジメントシステム）を選択してく
 msgid "Please select a LMS"
 msgstr "LMS（ラーニングマネジメントシステム）を選択してください"
 
-#: exe/webui/multichoiceblock.py:85 exe/idevices/quiztestblock.py:93
+#: exe/webui/multichoiceblock.py:85
+#: exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
 msgstr "それぞれの質問に対して正しい解答を選んでください。"
 
@@ -1422,7 +1535,7 @@ msgstr "フォーラムを選択してください\n"
 
 #: exe/idevices/appletblock.py:71
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "ggbファイルをアップロードしてください。"
 
 #: exe/webui/wikipediablock.py:99
 msgid "Polish Wikipedia Article"
@@ -1432,12 +1545,15 @@ msgstr "ポーランド語ウィキペディア記事"
 msgid "Portugese Wikipedia Article"
 msgstr "ポルトガル語ウィキペディア記事"
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:321
-#: exe/engine/idevicestore.py:418 exe/engine/idevicestore.py:428
+#: exe/engine/idevicestore.py:311
+#: exe/engine/idevicestore.py:321
+#: exe/engine/idevicestore.py:418
+#: exe/engine/idevicestore.py:428
 msgid "Preknowledge"
 msgstr "予備知識"
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:314
+#: exe/engine/idevicestore.py:421
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1450,16 +1566,19 @@ msgstr ""
 "<li> 学習者はレベル４の英語力を必要とする </li>\n"
 "<li> 学習者は基本的な工具の組み立てができなければならない </li></ul>\n"
 
-#: exe/webui/editorpane.py:256 exe/webui/element.py:1166
+#: exe/webui/editorpane.py:256
+#: exe/webui/element.py:1166
 msgid "Preview"
 msgstr "プレビュー"
 
-#: exe/engine/galleryidevice.py:574 exe/export/websitepage.py:186
+#: exe/engine/galleryidevice.py:574
+#: exe/export/websitepage.py:186
 #: exe/export/scormexport.py:311
 msgid "Previous"
 msgstr "前へ"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:317
+#: exe/engine/multimediaidevice.py:71
+#: exe/engine/field.py:317
 #: exe/engine/field.py:364
 msgid ""
 "Provide a caption for the \n"
@@ -1474,13 +1593,15 @@ msgid ""
 "image to be magnified."
 msgstr "拡大する画像にタイトルをつけてください。"
 
-#: exe/idevices/flashmovieidevice.py:57 exe/idevices/flashmovieidevice.py:78
+#: exe/idevices/flashmovieidevice.py:57
+#: exe/idevices/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr "挿入したフラッシュムービーにタイトルをつけてください。"
 
-#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
+#: exe/engine/flashwithtextidevice.py:55
+#: exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1493,7 +1614,8 @@ msgid ""
 "you have just inserted."
 msgstr "挿入した画像にタイトルをつけてください。"
 
-#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
+#: exe/engine/truefalseidevice.py:81
+#: exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1521,17 +1643,20 @@ msgstr "目的"
 msgid "Put instructions for learners here"
 msgstr "学習者への指示をここに記入してください"
 
-#: exe/engine/multichoiceidevice.py:119 exe/engine/multiselectidevice.py:58
-#, fuzzy
+#: exe/engine/multichoiceidevice.py:119
+#: exe/engine/multiselectidevice.py:58
 msgid "Question"
-msgstr "質問："
+msgstr "質問"
 
-#: exe/webui/truefalseelement.py:79 exe/webui/element.py:1317
-#: exe/webui/element.py:1535 exe/idevices/testquestionelement.py:81
+#: exe/webui/truefalseelement.py:79
+#: exe/webui/element.py:1317
+#: exe/webui/element.py:1535
+#: exe/idevices/testquestionelement.py:81
 msgid "Question:"
 msgstr "質問："
 
-#: exe/engine/rssidevice.py:39 exe/engine/rssidevice.py:47
+#: exe/engine/rssidevice.py:39
+#: exe/engine/rssidevice.py:47
 msgid "RSS"
 msgstr "RSS"
 
@@ -1539,16 +1664,19 @@ msgstr "RSS"
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "下記のパラグラフを読み、空所を埋めなさい"
 
-#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:170
+#: exe/engine/clozeidevice.py:118
+#: exe/engine/truefalseidevice.py:170
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "下記のパラグラフを読み、空所を埋めなさい。"
 
-#: exe/engine/idevicestore.py:222 exe/engine/idevicestore.py:240
+#: exe/engine/idevicestore.py:222
+#: exe/engine/idevicestore.py:240
 #: exe/engine/genericidevice.py:197
 msgid "Reading Activity"
 msgstr "リーディング活動"
 
-#: exe/engine/idevicestore.py:348 exe/engine/genericidevice.py:195
+#: exe/engine/idevicestore.py:348
+#: exe/engine/genericidevice.py:195
 msgid "Reading Activity 0.11"
 msgstr "リーディング活動　0.11"
 
@@ -1579,29 +1707,38 @@ msgstr "考察用質問："
 msgid "Restart"
 msgstr "再起動"
 
-#: exe/webui/imagewithtextblock.py:76 exe/webui/editorelement.py:218
-#: exe/webui/multimediablock.py:80 exe/webui/flashwithtextblock.py:76
-#: exe/webui/imagemagnifierblock.py:86 exe/idevices/flashmovieblock.py:76
+#: exe/webui/imagewithtextblock.py:76
+#: exe/webui/editorelement.py:218
+#: exe/webui/multimediablock.py:80
+#: exe/webui/flashwithtextblock.py:76
+#: exe/webui/imagemagnifierblock.py:86
+#: exe/idevices/flashmovieblock.py:76
 msgid "Right"
 msgstr "右"
 
 #: exe/xului/mainpage.py:279
 msgid "SAVE FAILED!"
-msgstr ""
+msgstr "保存に失敗しました！"
 
-#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:474
+#: exe/xului/mainpage.py:283
+#: exe/xului/mainpage.py:474
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
+"保存に失敗しました！\n"
+"%s"
 
-#: exe/engine/package.py:238 exe/engine/package.py:245
+#: exe/engine/package.py:238
+#: exe/engine/package.py:245
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
+"保存に失敗しました！\n"
+"最後にうまく保存できたのは次のファイルです。 %s."
 
 #: exe/idevices/quiztestidevice.py:117
 msgid "SCORM Quiz"
@@ -1619,20 +1756,21 @@ msgstr "保存"
 msgid "Section"
 msgstr "セクション"
 
-#: exe/webui/editorelement.py:265 exe/webui/element.py:969
+#: exe/webui/editorelement.py:265
+#: exe/webui/element.py:969
 msgid "Select Flash Object"
 msgstr "フラッシュオブジェクトの選択"
 
 #: exe/webui/preferencespage.py:86
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
+#: exe/xului/templates/dublincore.xul:<menulist
+#: onchange="this.style.color =
 #: 'blue'" id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr "言語の選択"
 
 #: exe/webui/editorelement.py:319
-#, fuzzy
 msgid "Select MP3 file"
-msgstr "ファイルの選択"
+msgstr "ＭＰ３ファイルの選択"
 
 #: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
@@ -1666,7 +1804,8 @@ msgstr "画像（jpegファイル）の選択"
 msgid "Select pass rate: "
 msgstr "パスレートの選択："
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:228
+#: exe/engine/wikipediaidevice.py:69
+#: exe/engine/wikipediaidevice.py:228
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1749,8 +1888,10 @@ msgstr "スロベニア語ウィキペディア記事"
 msgid "Small"
 msgstr "小"
 
-#: exe/webui/editorpane.py:326 exe/webui/multimediablock.py:92
-#: exe/webui/wikipediablock.py:130 exe/webui/rssblock.py:92
+#: exe/webui/editorpane.py:326
+#: exe/webui/multimediablock.py:92
+#: exe/webui/wikipediablock.py:130
+#: exe/webui/rssblock.py:92
 msgid "Some emphasis"
 msgstr "強調する"
 
@@ -1783,12 +1924,14 @@ msgstr "ストーリー："
 msgid "Strict Marking?"
 msgstr "厳しく採点しますか？"
 
-#: exe/webui/editorpane.py:414 exe/webui/common.py:210
+#: exe/webui/editorpane.py:414
+#: exe/webui/common.py:210
 #: exe/webui/element.py:872
 msgid "Submit"
 msgstr "提出する"
 
-#: exe/webui/element.py:1365 exe/idevices/quiztestblock.py:355
+#: exe/webui/element.py:1365
+#: exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "解答を提出する"
 
@@ -1801,7 +1944,8 @@ msgid "Teachers should keep the following in mind when using this iDevice: <ol><
 msgstr "教師はこのiDeviceを利用する際、次の点に留意する必要があります。<ol><li>教材に対して利用する学習活動の数と種類についてよく考えて計画してください。それらはすべてコンテンツ上で表示されることになります。学習者が混乱するのを避けるため、活動の種類、あるいは活動の分類の多用はおすすめしません。通常１つの学習リソースに対して３つか４つの異なる種類を利用すると学習者に混乱をきたす可能性があります。</li><li>視覚的デザインの点から言うと、２つのiDeviceを利用する際は、間にテキストを入れることをおすすめしますが、もしその必要があれば、できるだけ１つのiDeviceに複数の質問や学習活動を盛り込むほうが学習者にとって見やすいと思われます。 </li><li>学習者が取り組む活動が、それにかかる時間と努力に見合うものであるかどうかよく考えてください。</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:53
-#: exe/engine/imagewithtextidevice.py:61 exe/engine/multimediaidevice.py:64
+#: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/multimediaidevice.py:64
 msgid "Text"
 msgstr "テキスト"
 
@@ -1836,6 +1980,11 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"「外部のウェブサイト」用iDeviceは、ポップアップウィンドウを開かずに、\n"
+"あなたの作成するeXeコンテンツのフレーム内に外部のウェブサイトを \n"
+"盛り込むことができます。これによって学習者は、複数のウィンドウを \n"
+"あれこれ操作する必要がなくなります。このiDeviceは、コンテンツが \n"
+"オンラインで利用される場合のみ、使うようにしてください。"
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -1867,7 +2016,6 @@ msgstr ""
 "用いられます。ここでは、学習活動の構成や配信に関するフレームワークを提供します。"
 
 #: exe/engine/mathidevice.py:37
-#, fuzzy
 msgid ""
 "The mathematical language LATEX has been \n"
 "                        used to enable your to insert mathematical formula \n"
@@ -1878,10 +2026,10 @@ msgid ""
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
 msgstr ""
-"数学用の言語LATEXは、あなたの作成する教材内で数式を作成するために \n"
-"使われます。ここではLATEXを画像イメージに変換し,eXe内で教示できるようにします。\n"
-"その際は、フリーテキストiDeviceを利用して説明文を記入し、画像の周辺に学習用の \n"
-"指示を提供することをおすすめします。"
+"数学用の言語LATEXは、あなたの作成する教材で数式を作成するために \n"
+"使われます。LATEXを画像イメージに変換し,eXe内で教示できるようにします。\n"
+"その際は、フリーテキストiDeviceを利用して説明文を記入し、画像の周辺に \n"
+"学習用の指示を提供することをおすすめします。"
 
 #: exe/webui/editorpane.py:68
 msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
@@ -1930,15 +2078,15 @@ msgid "This is an optional field."
 msgstr "ここはオプションの領域です。"
 
 #: exe/webui/block.py:206
-#, fuzzy
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
-"iDeviceを削除します。\n"
+"このiDeviceを削除します。\n"
 "本当によろしいですか？"
 
-#: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
+#: exe/idevices/forumelement.py:352
+#: exe/idevices/forumelement.py:369
 msgid "Thread: "
 msgstr "スレッド："
 
@@ -1950,7 +2098,8 @@ msgstr "ヒント："
 msgid "Title"
 msgstr "タイトル"
 
-#: exe/engine/field.py:895 exe/idevices/quiztestidevice.py:67
+#: exe/engine/field.py:895
+#: exe/idevices/quiztestidevice.py:67
 #: exe/idevices/quiztestidevice.py:102
 msgid ""
 "To indicate the correct answer, \n"
@@ -1963,7 +2112,8 @@ msgstr ""
 msgid "Topic"
 msgstr "トピック"
 
-#: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
+#: exe/webui/truefalseelement.py:82
+#: exe/webui/truefalseelement.py:153
 msgid "True"
 msgstr "正解"
 
@@ -1982,7 +2132,8 @@ msgstr ""
 "質問形式です。この種類の質問形式は、事実に基づいた情報や、正しいか間違って\n"
 "いるかの判断がしやすい情報を利用する際に効果があります。"
 
-#: exe/engine/field.py:731 exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:731
+#: exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "ここにディスカッション用のトピックをタイプしてください。"
 
@@ -2016,7 +2167,8 @@ msgstr ""
 "自動的に提示します。\n"
 " 正答の場合、\"正解\"、正答以外のオプションを選んだ場合、\"不正解\""
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:415
+#: exe/engine/idevicestore.py:308
+#: exe/engine/idevicestore.py:415
 msgid "Type the learning objectives for this resource."
 msgstr "この教材に関する学習目標を記述してください。"
 
@@ -2034,7 +2186,8 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97
+#: exe/engine/wikipediaidevice.py:109
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "ダウンロードできません。 %s　 <br/>ファイル名とネットワークの接続を確認してもう一度試してください。"
@@ -2043,23 +2196,37 @@ msgstr "ダウンロードできません。 %s　 <br/>ファイル名とネッ
 msgid "Unit"
 msgstr "ユニット"
 
-#: exe/engine/imagemagnifieridevice.py:41 exe/engine/galleryidevice.py:361
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:75
-#: exe/engine/externalurlidevice.py:38 exe/engine/clozeidevice.py:45
-#: exe/engine/imagewithtextidevice.py:40 exe/engine/reflectionidevice.py:44
-#: exe/engine/truefalseidevice.py:60 exe/engine/idevicestore.py:242
-#: exe/engine/idevicestore.py:300 exe/engine/idevicestore.py:328
-#: exe/engine/idevicestore.py:350 exe/engine/idevicestore.py:407
-#: exe/engine/idevicestore.py:435 exe/engine/multiselectidevice.py:42
-#: exe/engine/wikipediaidevice.py:52 exe/engine/freetextidevice.py:38
-#: exe/engine/attachmentidevice.py:42 exe/engine/mathidevice.py:36
-#: exe/engine/flashwithtextidevice.py:41 exe/idevices/quiztestidevice.py:118
-#: exe/idevices/appletidevice.py:53 exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40 exe/idevices/flashmovieidevice.py:40
+#: exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/galleryidevice.py:361
+#: exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:75
+#: exe/engine/externalurlidevice.py:38
+#: exe/engine/clozeidevice.py:45
+#: exe/engine/imagewithtextidevice.py:40
+#: exe/engine/reflectionidevice.py:44
+#: exe/engine/truefalseidevice.py:60
+#: exe/engine/idevicestore.py:242
+#: exe/engine/idevicestore.py:300
+#: exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:350
+#: exe/engine/idevicestore.py:407
+#: exe/engine/idevicestore.py:435
+#: exe/engine/multiselectidevice.py:42
+#: exe/engine/wikipediaidevice.py:52
+#: exe/engine/freetextidevice.py:38
+#: exe/engine/attachmentidevice.py:42
+#: exe/engine/mathidevice.py:36
+#: exe/engine/flashwithtextidevice.py:41
+#: exe/idevices/quiztestidevice.py:118
+#: exe/idevices/appletidevice.py:53
+#: exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40
+#: exe/idevices/flashmovieidevice.py:40
 msgid "University of Auckland"
 msgstr "オークランド大学"
 
-#: exe/engine/multiselectidevice.py:43 exe/idevices/quiztestidevice.py:119
+#: exe/engine/multiselectidevice.py:43
+#: exe/idevices/quiztestidevice.py:119
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2079,7 +2246,8 @@ msgstr "アップロード"
 msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 msgstr "iDeviceで表現される情報の中で、重要なものには「強調する」を利用してください。"
 
-#: exe/engine/idevicestore.py:292 exe/engine/idevicestore.py:400
+#: exe/engine/idevicestore.py:292
+#: exe/engine/idevicestore.py:400
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2112,7 +2280,8 @@ msgstr "ビジブルグループ"
 msgid "Visible to students:"
 msgstr "学生に表示："
 
-#: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:391
+#: exe/engine/idevicestore.py:283
+#: exe/engine/idevicestore.py:391
 msgid "What to read"
 msgstr "読み物"
 
@@ -2140,9 +2309,8 @@ msgstr ""
 "</ul>\n"
 
 #: exe/engine/wikipediaidevice.py:51
-#, fuzzy
 msgid "Wiki Article"
-msgstr "ウィキブック記事"
+msgstr "ウィキ記事"
 
 #: exe/webui/wikipediablock.py:104
 msgid "Wikibooks Article"
@@ -2154,11 +2322,11 @@ msgstr "ウィキエデュケーター・コンテンツ"
 
 #: exe/webui/wikipediablock.py:105
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:106
 msgid "Wiktionary"
-msgstr ""
+msgstr "Wiktionary"
 
 #: exe/webui/element.py:1474
 msgid "Wrong"
@@ -2184,7 +2352,8 @@ msgstr "あなたの作成した新規のiDeviceは、このタイトルでiDevi
 msgid "article "
 msgstr "記事"
 
-#: exe/webui/element.py:334 exe/webui/element.py:654
+#: exe/webui/element.py:334
+#: exe/webui/element.py:654
 msgid "blank for original size"
 msgstr "オリジナルのサイズにするため空白"
 
@@ -2196,11 +2365,13 @@ msgstr "フォーラム名をコピーする\n"
 msgid "duplicate topic name."
 msgstr "トピック名をコピーします。"
 
-#: exe/export/imsexport.py:188 exe/export/scormexport.py:276
+#: exe/export/imsexport.py:188
+#: exe/export/scormexport.py:276
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:77
+#: exe/webui/common.py:67
+#: exe/webui/preferencespage.py:77
 #: exe/webui/editorpage.py:211
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : ｅラーニングXHTMLエディター"
@@ -2214,13 +2385,16 @@ msgstr "ファイル %s はparentNodeを持っていません"
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:87
+#: exe/engine/attachmentidevice.py:101
+#: exe/idevices/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s はパッケージをもっていません"
 
-#: exe/engine/package.py:356 exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
+#: exe/engine/package.py:356
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
+#: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "ｉＤｅｖｉｃｅ編集"
 
@@ -2252,36 +2426,45 @@ msgstr "テキスト"
 msgid "title"
 msgstr "タイトル"
 
-#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
+#: exe/xului/templates/dublincore.xul:<caption
+#: id="dcCaptionMetadata"
 #: label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
 msgstr "ダブリン・コア・メタデータ"
 
-#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
+#: exe/xului/templates/exportproperties.xul:<caption
+#: id="ppScolinks"
 #: label="SCORM 1.2 Options">
 msgid "SCORM 1.2 Options"
 msgstr "SCORM 1.2 オプション"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
 msgid "Insert Package"
 msgstr "パッケージの追加"
 
-#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+#: exe/xului/templates/metadata.xul:<tab
+#: label="Dublin Core">
 msgid "Dublin Core"
 msgstr "ダブリン・コア"
 
-#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
+#: exe/xului/templates/packageproperties.xul:<caption
+#: id="pptitle"
 #: label="Project Properties">
 msgid "Project Properties"
 msgstr "プロジェクトの特性"
 
-#: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
+#: exe/xului/templates/properties.xul:<tab
+#: id="tabPackage" label="Package">
 msgid "Package"
 msgstr "パッケージ"
 
-#: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
-#: style="width:8em" tooltiptext="The name given to the resource.">
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Title:"
+#: id="dcTitle"
+#: style="width:8em"
+#: tooltiptext="The name given to the resource.">
 msgid "Title:"
 msgstr "タイトル："
 
@@ -2293,51 +2476,67 @@ msgstr "タイトル："
 msgid "Add Previous/Next links within SCOs?"
 msgstr "前／次のリンクをSCOに追加しますか？"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 msgid "Extract Package"
 msgstr "パッケージを開きますか？"
 
-#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+#: exe/xului/templates/metadata.xul:<tab
+#: label="IEEE LOM">
 msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
-#: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Project Title:"
+#: id="ppProjectTitle" style="width:8em"
+#: tooltiptext="The project's title.">
 msgid "Project Title:"
 msgstr "プロジェクトタイトル："
 
-#: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
+#: exe/xului/templates/properties.xul:<tab
+#: id="tabMetadata" label="Metadata">
 msgid "Metadata"
 msgstr "メタデータ"
 
-#: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
-#: style="width:8em" tooltiptext="An entity primarily responsible for making
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Creator:"
+#: id="dcCreator"
+#: style="width:8em"
+#: tooltiptext="An entity primarily responsible for making
 #: the content of resource.">
 msgid "Creator:"
 msgstr "作者："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="addChild"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Header Background:"
+#: id="ppBackgroundImg" style="width:8em"
+#: tooltiptext="Background image for a
 #: header (an 100px high is recommended).">
 msgid "Header Background:"
 msgstr "ヘッダーの背景："
 
-#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
+#: exe/xului/templates/properties.xul:<tab
+#: id="tabExport" label="Export">
 msgid "Export"
 msgstr "エキスポート"
 
-#: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
-#: style="width:8em" tooltiptext="The topic of the content resource.">
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Subject:"
+#: id="dcSubject"
+#: style="width:8em"
+#: tooltiptext="The topic of the content resource.">
 msgid "Subject:"
 msgstr "主題："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
@@ -2348,7 +2547,8 @@ msgstr "VK_DELETE"
 msgid "Load Image"
 msgstr "画像のロード"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+#: exe/xului/templates/dublincore.xul:<description
+#: id="dcDescSubject">
 msgid ""
 "\n"
 "                Typically, Subject will be expressed as keywords, key phrases or\n"
@@ -2362,7 +2562,9 @@ msgstr ""
 "　　　　　　　　キーフレーズ、分類コードの形で記述されます。できれば制限語彙や形式的な分類法 \n"
 "　　　　　　　　から選ぶことをお勧めします。"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="renNode"
+#: key="R"
 #: modifiers="control" id="renNodeKey">
 msgid "R"
 msgstr "R"
@@ -2373,13 +2575,17 @@ msgstr "R"
 msgid "Clear Image"
 msgstr "画像をクリア"
 
-#: exe/xului/templates/dublincore.xul:<label value="Publisher:"
-#: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Publisher:"
+#: id="dcPublisher" style="width:8em"
+#: tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "Publisher:"
 msgstr "発行者："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="promote"
+#: keycode="VK_LEFT"
 #: modifiers="control" id="promoteKey">
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
@@ -2390,40 +2596,54 @@ msgstr "VK_LEFT"
 msgid "Tile background image?"
 msgstr "タイトル背景画像？"
 
-#: exe/xului/templates/dublincore.xul:<label value="Contributors:"
-#: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Contributors:"
+#: id="dcContributors" style="width:8em"
+#: tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "Contributors:"
 msgstr "協力者："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="demote"
+#: keycode="VK_RIGHT"
 #: modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Author:"
-#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Author:"
+#: id="ppAuthor" style="width:8em"
+#: tooltiptext="Primary author of the
 #: resource.">
 msgid "Author:"
 msgstr "著者："
 
-#: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
-#: style="width:8em" tooltiptext="A date of an event in the lifecycle
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Date:"
+#: id="dcDate"
+#: style="width:8em"
+#: tooltiptext="A date of an event in the lifecycle
 #: resource.">
 msgid "Date:"
 msgstr "日付："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="up"
+#: key="U"
 #: modifiers="control" id="upKey">
 msgid "U"
 msgstr "U"
 
-#: exe/xului/templates/packageproperties.xul:<label value="License:"
-#: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="License:"
+#: id="ppLicense" style="width:8em"
+#: tooltiptext="Select a license.">
 msgid "License:"
 msgstr "ライセンス："
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+#: exe/xului/templates/dublincore.xul:<description
+#: id="dcDescDate">
 msgid ""
 "\n"
 "                 Typically, Date will be associated with the creation or\n"
@@ -2435,7 +2655,9 @@ msgstr ""
 "                 一般的に日付（Date）では、作成日時やリソースの利用開始日時を記載します。\n"
 "                 推奨するデータ記入法は、作業を行った日付を記入することです。"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="down"
+#: key="D"
 #: modifiers="control" id="downKey">
 msgid "D"
 msgstr "D"
@@ -2446,23 +2668,30 @@ msgstr "D"
 msgid "Select License"
 msgstr "ライセンスの選択"
 
-#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
-#: style="width:8em" tooltiptext="The nature or genre of the content
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Type:"
+#: id="dcType"
+#: style="width:8em"
+#: tooltiptext="The nature or genre of the content
 #: resource.">
 msgid "Type:"
 msgstr "種類："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="translate"
+#: key="N"
 #: modifiers="control" id="file-new-key" oncommand="fileNew()">
 msgid "N"
 msgstr "N"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons
 #: Attribution 2.5 License" id="ppcca1" label="Creative License">
 msgid "Creative Commons Attribution 2.5 License"
 msgstr "Creative Commons Attribution 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+#: exe/xului/templates/dublincore.xul:<description
+#: id="dcDescType">
 msgid ""
 "\n"
 "              Type includes terms describing general categories, functions, or\n"
@@ -2473,159 +2702,203 @@ msgstr ""
 "              「タイプ」では、コンテンツの一般的なカテゴリー、機能、種類を記載する用語を記入します。\n"
 "　　　　　　　できれば制限語彙や形式的な分類法から選ぶことをお勧めします。"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="translate"
+#: key="S"
 #: modifiers="control" id="file-save-key" oncommand="fileSave()">
 msgid "S"
 msgstr "S"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons
 #: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr "Creative Commons Attribution-ShareAlike 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
-#: style="width:8em" tooltiptext="Select a Format.">
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Format:"
+#: id="dcFormat"
+#: style="width:8em"
+#: tooltiptext="Select a Format.">
 msgid "Format:"
 msgstr "フォーマット："
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="translate"
+#: key="O"
 #: modifiers="control" id="file-open-key" oncommand="fileOpen()">
 msgid "O"
 msgstr "O"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons
 #: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr "Creative Commons Attribution-NoDerivs 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
+#: exe/xului/templates/dublincore.xul:<menulist
+#: onchange="this.style.color =
 #: 'blue'" id="dc_format" label="Select Format">
 msgid "Select Format"
 msgstr "フォーマットの選択"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
+#: exe/xului/templates/mainpage.xul:<key
+#: n:render="translate"
+#: key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 msgid "Q"
 msgstr "Q"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons
 #: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
 #: License">
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="XHTML" id="dcmiXHTML"
 #: label="XHTML">
 msgid "XHTML"
 msgstr "XHTML"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
+#: id="file-menu"
 #: accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
 msgstr "label=\"ファイル\" accesskey=\"f\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
 #: label="Creative License">
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
 msgstr "label=\"新規\" accesskey=\"n\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons
 #: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
 #: License">
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="IMS-CP" id="dcmiIMS"
 #: label="IMS Content Package 1.1.3">
 msgid "IMS Content Package 1.1.3"
 msgstr "IMS コンテンツパッケージ1.1.3"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"開く\" accesskey=\"o\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
+#: exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
 msgid "Developing Nations 2.0"
 msgstr "Developing Nations 2.0"
 
-#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
-#: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Identifier:"
+#: id="dcIdentifier" style="width:8em"
+#: tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "Identifier:"
 msgstr "確認者："
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
 msgstr "label=\"最近作成したプロジェクト\" accesskey=\"r\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Footer:"
+#: id="ppFooter" style="width:8em"
+#: tooltiptext="Web pages footer.">
 msgid "Footer:"
 msgstr "フッター："
 
-#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
-#: style="width:8em" tooltiptext="A Reference to a resource from which the
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Source:"
+#: id="dcSource"
+#: style="width:8em"
+#: tooltiptext="A Reference to a resource from which the
 #: present is derived.">
 msgid "Source:"
 msgstr "ソース："
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"保存する\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
+#: exe/xului/templates/packageproperties.xul:<caption
+#: id="ppCaptionTaxonomy"
 #: label="Taxonomy">
 msgid "Taxonomy"
 msgstr "分類"
 
-#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
-#: style="width:8em" tooltiptext="Select a language.">
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Language:"
+#: id="dcLanguage"
+#: style="width:8em"
+#: tooltiptext="Select a language.">
 msgid "Language:"
 msgstr "言語："
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"名前をつけて保存\" accesskey=\"a\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Level 1:"
+#: id="ppLevel1" style="width:8em"
+#: tooltiptext="Default name for level 1
 #: nodes">
 msgid "Level 1:"
 msgstr "Level 1:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ab" id="dcmiab"
 #: label="Abkhazian ">
 msgid "Abkhazian "
 msgstr "アブハーズ語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"エキスポート\" accesskey=\"e\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Level 2:"
+#: id="ppLevel2" style="width:8em"
+#: tooltiptext="Default name for level 2
 #: nodes">
 msgid "Level 2:"
 msgstr "Level 2:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="aa" id="dcmiaa"
 #: label="Afar ">
 msgid "Afar "
 msgstr "アファル語"
@@ -2635,23 +2908,28 @@ msgstr "アファル語"
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
+#: exe/xului/templates/packageproperties.xul:<label
+#: value="Level 3:"
+#: id="ppLevel3" style="width:8em"
+#: tooltiptext="Default name for level 3
 #: nodes">
 msgid "Level 3:"
 msgstr "Level 3:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="af" id="dcmiaf"
 #: label="Afrikaans ">
 msgid "Afrikaans "
 msgstr "アフリカーンス語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS コンテンツパッケージ\" accesskey=\"i\""
 
-#: exe/xului/templates/packageproperties.xul:<button flex="0"
+#: exe/xului/templates/packageproperties.xul:<button
+#: flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
 #: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
 #: label="Update Tree" tooltiptext="Submit changes and update the tree
@@ -2659,976 +2937,1177 @@ msgstr "label=\"IMS コンテンツパッケージ\" accesskey=\"i\""
 msgid "Update Tree"
 msgstr "ツリーをアップデートします"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sq" id="dcmisq"
 #: label="Albanian ">
 msgid "Albanian "
 msgstr "アルバニア語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
+#: id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem
+#: value="Web
 #: Site" id="dcmiWebSite"
 msgid "Web Site"
 msgstr "ウェブサイト"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="am" id="dcmiam"
 #: label="Amharic ">
 msgid "Amharic "
 msgstr "アムハラ語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="exportPackage('webSite')" label="Self-contained Folder">
 msgid "Self-contained Folder"
 msgstr "独立フォルダ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
 msgstr "アラビア語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="exportPackage('zipFile')" label="Zip File">
 msgid "Zip File"
 msgstr "Zipファイル"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="hy" id="dcmihy"
 #: label="Armenian ">
 msgid "Armenian "
 msgstr "アルメニア語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"単独ページ\" accesskey=\"p\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="as" id="dcmias"
 #: label="Assamese ">
 msgid "Assamese "
 msgstr "アッサム語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"テキストファイル\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ae" id="dcmiae"
 #: label="Avestan ">
 msgid "Avestan "
 msgstr "アヴェスター語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"結合\" accesskey=\"e\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ay" id="dcmiay"
 #: label="Aymara ">
 msgid "Aymara "
 msgstr "アイマラ語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"パッケージの挿入\" accesskey=\"i\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 msgid "Azerbaijani "
 msgstr "アゼルバイジャン語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
 msgstr "label=\"パッケージを取り出す\" accesskey=\"E\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ba" id="dcmiba"
 #: label="Bashkir ">
 msgid "Bashkir "
 msgstr "バシキール語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
 msgstr "label=\"終了\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="eu" id="dcmieu"
 #: label="Basque ">
 msgid "Basque "
 msgstr "バスク語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
+#: id="tools-menu"
 #: accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
 msgstr "label=\"ツール\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
 msgid "Bengali; Bangla "
 msgstr "ベンガル語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
 msgstr "言語の選択"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="bh" id="dcmibh"
 #: label="Bihari ">
 msgid "Bihari "
 msgstr "ビハール語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"スタイル\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="bi" id="dcmibi"
 #: label="Bislama ">
 msgid "Bislama "
 msgstr "ビーチラマー語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
 msgstr "label=\"更新\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="bs" id="dcmibs"
 #: label="Bosnian ">
 msgid "Bosnian "
 msgstr "ボスニア語"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: exe/xului/templates/mainpage.xul:<menu
+#: n:render="translate"
+#: id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"ヘルプ\" accesskey=\"h\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="br" id="dcmibr"
 #: label="Breton ">
 msgid "Breton "
 msgstr "ブルトン語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
 msgid "label=\"About\" accesskey=\"a\""
 msgstr "label=\"関連情報\" accesskey=\"a\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
 msgid "Byelorussian; Belarusian "
 msgstr "ベラルーシ語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"R\""
 msgstr "label=\"問題点を報告する\" accesskey=\"R\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="bg" id="dcmibg"
 #: label="Bulgarian ">
 msgid "Bulgarian "
 msgstr "ブルガリア語"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: n:render="translate"
 #: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"eXe ライブチャット\" accesskey=\"c\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="my" id="dcmimy"
 #: label="Burmese ">
 msgid "Burmese "
 msgstr "ビルマ語"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
+#: exe/xului/templates/mainpage.xul:<label
+#: n:render="debugInfo"
 #: value="debugInfo">
 msgid "debugInfo"
 msgstr "デバッグ情報"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ca" id="dcmica"
 #: label="Catalan ">
 msgid "Catalan "
 msgstr "カタロニア語"
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
+#: n:render="addChild"
 #: key="addChildKey" label="Add Page">
 msgid "Add Page"
 msgstr "ページ追加"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ch" id="dcmich"
 #: label="Chamorro ">
 msgid "Chamorro "
 msgstr "チャモロ語"
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton
+#: n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
 msgstr "名前変更"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ce" id="dcmice"
 #: label="Chechen ">
 msgid "Chechen "
 msgstr "チェチェン語"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
+#: exe/xului/templates/mainpage.xul:<label
+#: n:render="outlinePane"
+#: flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
 msgstr "アウトラインウィンドウ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="zh" id="dcmizh"
 #: label="Chinese ">
 msgid "Chinese "
 msgstr "中国語"
 
-#: exe/xului/templates/mainpage.xul:<label value="iDevices"
+#: exe/xului/templates/mainpage.xul:<label
+#: value="iDevices"
 #: style="margin-top:5px;">
-#, fuzzy
 msgid "iDevices"
-msgstr "新しいiDeｖice"
+msgstr "iDeｖice"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="cu" id="dcmicu"
 #: label="Church Slavic ">
 msgid "Church Slavic "
 msgstr "教会スラブ語"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
+#: exe/xului/templates/mainpage.xul:<label
+#: n:render="idevicePane"
+#: flex="1"
 #: value="iDevicePane">
 msgid "iDevicePane"
 msgstr "iDeviceウィンドウ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="cv" id="dcmicv"
 #: label="Chuvash ">
 msgid "Chuvash "
 msgstr "チュヴァシ語"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: exe/xului/templates/mainpage.xul:<tab
+#: n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
 msgstr "編集"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="kw" id="dcmikw"
 #: label="Cornish ">
 msgid "Cornish "
 msgstr "コーンウォール語"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+#: exe/xului/templates/mainpage.xul:<tab
+#: n:render="translate"
 #: label="Properties">
 msgid "Properties"
 msgstr "属性"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="co" id="dcmico"
 #: label="Corsican ">
 msgid "Corsican "
 msgstr "コルシカ方言"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="hr" id="dcmihr"
 #: label="Croatian ">
 msgid "Croatian "
 msgstr "クロアチア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="cs" id="dcmics"
 #: label="Czech ">
 msgid "Czech "
 msgstr "チェコ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="da" id="dcmida"
 #: label="Danish ">
 msgid "Danish "
 msgstr "デンマーク語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="dz" id="dcmidz"
 #: label="Dzongkha; Bhutani ">
 msgid "Dzongkha; Bhutani "
 msgstr "ゾンカ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="en" id="dcmien"
 #: label="English ">
 msgid "English "
 msgstr "英語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="eo" id="dcmieo"
 #: label="Esperanto ">
 msgid "Esperanto "
 msgstr "エスペラント語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="et" id="dcmiet"
 #: label="Estonian ">
 msgid "Estonian "
 msgstr "エストニア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="fi" id="dcmifi"
 #: label="Finnish ">
 msgid "Finnish "
 msgstr "フィンランド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="fj" id="dcmifj"
 #: label="Fijian; Fiji ">
 msgid "Fijian; Fiji "
 msgstr "フィジー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="fo" id="dcmifo"
 #: label="Faroese ">
 msgid "Faroese "
 msgstr "フェロー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="fr" id="dcmifr"
 #: label="French ">
 msgid "French "
 msgstr "フランス語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="fy" id="dcmify"
 #: label="Frisian ">
 msgid "Frisian "
 msgstr "フリジア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="gd" id="dcmigd"
 #: label="Scots; Gaelic ">
 msgid "Scots; Gaelic "
 msgstr "スコットランド語、ゲール語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="gl" id="dcmigl"
 #: label="Gallegan; Galician ">
 msgid "Gallegan; Galician "
 msgstr "ガリシア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ka" id="dcmika"
 #: label="Georgian ">
 msgid "Georgian "
 msgstr "グリジア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="de" id="dcmide"
 #: label="German ">
 msgid "German "
 msgstr "ドイツ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="gn" id="dcmign"
 #: label="Guarani ">
 msgid "Guarani "
 msgstr "グアラニー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="gu" id="dcmigu"
 #: label="Gujarati ">
 msgid "Gujarati "
 msgstr "グジャラート語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ha" id="dcmiha"
 #: label="Hausa (?) ">
 msgid "Hausa (?) "
 msgstr "ハウサ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="he" id="dcmihe"
 #: label="Hebrew (formerly iw) ">
 msgid "Hebrew (formerly iw) "
 msgstr "ヘブライ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="hi" id="dcmihi"
 #: label="Hindi ">
 msgid "Hindi "
 msgstr "ヒンディー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ho" id="dcmiho"
 #: label="Hiri Motu ">
 msgid "Hiri Motu "
 msgstr "モツ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="hu" id="dcmihu"
 #: label="Hungarian ">
 msgid "Hungarian "
 msgstr "ハンガリー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="hz" id="dcmihz"
 #: label="Herero ">
 msgid "Herero "
 msgstr "ヘレロ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ia" id="dcmiia"
 #: label="Interlingua ">
 msgid "Interlingua "
 msgstr "インターリングア"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="id" id="dcmiid"
 #: label="Indonesian (formerly in) ">
 msgid "Indonesian (formerly in) "
 msgstr "インドネシア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ie" id="dcmiie"
 #: label="Interlingue ">
 msgid "Interlingue "
 msgstr "インターリンガ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ik" id="dcmiik"
 #: label="Inupiak ">
 msgid "Inupiak "
 msgstr "イヌピアト語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="io" id="dcmiio"
 #: label="Ido ">
 msgid "Ido "
 msgstr "イド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="is" id="dcmiis"
 #: label="Icelandic ">
 msgid "Icelandic "
 msgstr "アイスランド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ga" id="dcmiga"
 #: label="Irish ">
 msgid "Irish "
 msgstr "アイルランド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="it" id="dcmiit"
 #: label="Italian ">
 msgid "Italian "
 msgstr "イタリア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="iu" id="dcmiiu"
 #: label="Inuktitut ">
 msgid "Inuktitut "
 msgstr "イヌクティトットﾄ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ja" id="dcmija"
 #: label="Japanese ">
 msgid "Japanese "
 msgstr "日本語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="jv" id="dcmijv"
 #: label="Javanese ">
 msgid "Javanese "
 msgstr "ジャワ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ki" id="dcmiki"
 #: label="Kikuyu ">
 msgid "Kikuyu "
 msgstr "キクーユ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="kj" id="dcmikj"
 #: label="Kuanyama ">
 msgid "Kuanyama "
 msgstr "Kuanyama "
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="kk" id="dcmikk"
 #: label="Kazakh ">
 msgid "Kazakh "
 msgstr "カザフ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="kl" id="dcmikl"
 #: label="Kalaallisut; Greenlandic ">
 msgid "Kalaallisut; Greenlandic "
 msgstr "グリーンランド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="km" id="dcmikm"
 #: label="Khmer; Cambodian ">
 msgid "Khmer; Cambodian "
 msgstr "クメール語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="kn" id="dcmikn"
 #: label="Kannada ">
 msgid "Kannada "
 msgstr "カナラ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ko" id="dcmiko"
 #: label="Korean ">
 msgid "Korean "
 msgstr "韓国語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ks" id="dcmiks"
 #: label="Kashmiri ">
 msgid "Kashmiri "
 msgstr "カシミール語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="rw" id="dcmirw"
 #: label="Kinyarwanda ">
 msgid "Kinyarwanda "
 msgstr "キニャルワンダ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ky" id="dcmiky"
 #: label="Kirghiz ">
 msgid "Kirghiz "
 msgstr "ギルギス語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="kv" id="dcmikv"
 #: label="Komi ">
 msgid "Komi "
 msgstr "コミ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ku" id="dcmiku"
 #: label="Kurdish ">
 msgid "Kurdish "
 msgstr "ケルディスタン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="la" id="dcmila"
 #: label="Latin ">
 msgid "Latin "
 msgstr "ラテン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="lb" id="dcmilb"
 #: label="Letzeburgesch ">
 msgid "Letzeburgesch "
 msgstr "ルクセンブルグ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ln" id="dcmiln"
 #: label="Lingala ">
 msgid "Lingala "
 msgstr "リンガラ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="lo" id="dcmilo"
 #: label="Lao; Laotian ">
 msgid "Lao; Laotian "
 msgstr "ラオ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="lt" id="dcmilt"
 #: label="Lithuanian ">
 msgid "Lithuanian "
 msgstr "リトアニア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="lv" id="dcmilv"
 #: label="Latvian; Lettish ">
 msgid "Latvian; Lettish "
 msgstr "ラトヴィア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mg" id="dcmimg"
 #: label="Malagasy ">
 msgid "Malagasy "
 msgstr "マラガシ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="gv" id="dcmigv"
 #: label="Manx ">
 msgid "Manx "
 msgstr "マン島語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mh" id="dcmimh"
 #: label="Marshall ">
 msgid "Marshall "
 msgstr "マーシャル語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mi" id="dcmimi"
 #: label="Maori ">
 msgid "Maori "
 msgstr "マオリ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mk" id="dcmimk"
 #: label="Macedonian ">
 msgid "Macedonian "
 msgstr "マセドニアン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mr" id="dcmimr"
 #: label="Marathi ">
 msgid "Marathi "
 msgstr "マラーティー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ml" id="dcmiml"
 #: label="Malayalam ">
 msgid "Malayalam "
 msgstr "マラヤーラム語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mo" id="dcmimo"
 #: label="Moldavian ">
 msgid "Moldavian "
 msgstr "モルダヴィア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mn" id="dcmimn"
 #: label="Mongolian ">
 msgid "Mongolian "
 msgstr "モンゴル語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ms" id="dcmims"
 #: label="Malay ">
 msgid "Malay "
 msgstr "マレー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="mt" id="dcmimt"
 #: label="Maltese ">
 msgid "Maltese "
 msgstr "マルタ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="na" id="dcmina"
 #: label="Nauru ">
 msgid "Nauru "
 msgstr "ナウル語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="nb" id="dcminb"
 #: label="Norwegian Bokmål ">
 msgid "Norwegian Bokmål "
 msgstr "ノルウェー語（Bokmå ）"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="nd" id="dcmind"
 #: label="Ndebele, North ">
 msgid "Ndebele, North "
 msgstr "ヌデベレ語(北部)"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ne" id="dcmine"
 #: label="Nepali ">
 msgid "Nepali "
 msgstr "ネパール語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ng" id="dcming"
 #: label="Ndonga ">
 msgid "Ndonga "
 msgstr "Ndonga "
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="nl" id="dcminl"
 #: label="Dutch ">
 msgid "Dutch "
 msgstr "オランダ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="nn" id="dcminn"
 #: label="Norwegian Nynorsk ">
 msgid "Norwegian Nynorsk "
 msgstr "ノルウェー語（Nynorsk）"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="no" id="dcmino"
 #: label="Norwegian ">
 msgid "Norwegian "
 msgstr "ノルウェー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="nr" id="dcminr"
 #: label="Ndebele, South ">
 msgid "Ndebele, South "
 msgstr "ヌデベレ語（南部）"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="nv" id="dcminv"
 #: label="Navajo ">
 msgid "Navajo "
 msgstr "ナヴァホ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ny" id="dcminy"
 #: label="Chichewa; Nyanja ">
 msgid "Chichewa; Nyanja "
 msgstr "チチェワ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="oc" id="dcmioc"
 #: label="Occitan; Provençal ">
 msgid "Occitan; Provençal "
 msgstr "オクシタン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="om" id="dcmiom"
 #: label="(Afan) Oromo ">
 msgid "(Afan) Oromo "
 msgstr "オロモ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="or" id="dcmior"
 #: label="Oriya ">
 msgid "Oriya "
 msgstr "オリヤー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="os" id="dcmios"
 #: label="Ossetian; Ossetic ">
 msgid "Ossetian; Ossetic "
 msgstr "オセット語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="pa" id="dcmipa"
 #: label="Panjabi; Punjabi ">
 msgid "Panjabi; Punjabi "
 msgstr "パンジャブ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="pi" id="dcmipi"
 #: label="Pali ">
 msgid "Pali "
 msgstr "パーリ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="fa" id="dcmifa"
 #: label="Persian ">
 msgid "Persian "
 msgstr "ペルシャ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="pl" id="dcmipl"
 #: label="Polish ">
 msgid "Polish "
 msgstr "ポーランド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ps" id="dcmips"
 #: label="Pashto, Pushto ">
 msgid "Pashto, Pushto "
 msgstr "パシュトー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="pt" id="dcmipt"
 #: label="Portuguese ">
 msgid "Portuguese "
 msgstr "ポルトガル語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="qu" id="dcmiqu"
 #: label="Quechua ">
 msgid "Quechua "
 msgstr "ケチュア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="rm" id="dcmirm"
 #: label="Rhaeto-Romance ">
 msgid "Rhaeto-Romance "
 msgstr "レートロマンス語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="rn" id="dcmirn"
 #: label="Rundi; Kirundi ">
 msgid "Rundi; Kirundi "
 msgstr "ルンディ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ro" id="dcmiro"
 #: label="Romanian ">
 msgid "Romanian "
 msgstr "ルーマニア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ru" id="dcmiru"
 #: label="Russian ">
 msgid "Russian "
 msgstr "ロシア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sa" id="dcmisa"
 #: label="Sanskrit ">
 msgid "Sanskrit "
 msgstr "サンスクリット語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sc" id="dcmisc"
 #: label="Sardinian ">
 msgid "Sardinian "
 msgstr "サルデーニャ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="se" id="dcmise"
 #: label="Northern Sami ">
 msgid "Northern Sami "
 msgstr "北サーメ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sm" id="dcmism"
 #: label="Samoan ">
 msgid "Samoan "
 msgstr "サモア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sg" id="dcmisg"
 #: label="Sango; Sangro ">
 msgid "Sango; Sangro "
 msgstr "サンゴ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="st" id="dcmist"
 #: label="Sesotho; Sotho, Southern ">
 msgid "Sesotho; Sotho, Southern "
 msgstr "セストゥ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sn" id="dcmisn"
 #: label="Shona ">
 msgid "Shona "
 msgstr "ショナ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sd" id="dcmisd"
 #: label="Sindhi ">
 msgid "Sindhi "
 msgstr "シンド語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sr" id="dcmisr"
 #: label="Serbian ">
 msgid "Serbian "
 msgstr "セルビア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="si" id="dcmisi"
 #: label="Sinhalese ">
 msgid "Sinhalese "
 msgstr "シンハラ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sk" id="dcmisk"
 #: label="Slovak ">
 msgid "Slovak "
 msgstr "スロヴァキア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sl" id="dcmisl"
 #: label="Slovenian ">
 msgid "Slovenian "
 msgstr "スロヴェニア語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="so" id="dcmiso"
 #: label="Somali ">
 msgid "Somali "
 msgstr "ソマリ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="es" id="dcmies"
 #: label="Spanish ">
 msgid "Spanish "
 msgstr "スペイン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ss" id="dcmiss"
 #: label="Swati; Siswati ">
 msgid "Swati; Siswati "
 msgstr "スワート語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="su" id="dcmisu"
 #: label="Sundanese ">
 msgid "Sundanese "
 msgstr "スンダ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sw" id="dcmisw"
 #: label="Swahili ">
 msgid "Swahili "
 msgstr "スワヒリ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="sv" id="dcmisv"
 #: label="Swedish ">
 msgid "Swedish "
 msgstr "スウェーデン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tl" id="dcmitl"
 #: label="Tagalog ">
 msgid "Tagalog "
 msgstr "タガログ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ty" id="dcmity"
 #: label="Tahitian ">
 msgid "Tahitian "
 msgstr "タヒチ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tg" id="dcmitg"
 #: label="Tajik ">
 msgid "Tajik "
 msgstr "タジク語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ta" id="dcmita"
 #: label="Tamil ">
 msgid "Tamil "
 msgstr "タミル語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tt" id="dcmitt"
 #: label="Tatar ">
 msgid "Tatar "
 msgstr "タタール語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="te" id="dcmite"
 #: label="Telugu ">
 msgid "Telugu "
 msgstr "テルグ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="th" id="dcmith"
 #: label="Thai ">
 msgid "Thai "
 msgstr "タイ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="bo" id="dcmibo"
 #: label="Tibetan ">
 msgid "Tibetan "
 msgstr "チベット語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ti" id="dcmiti"
 #: label="Tigrinya ">
 msgid "Tigrinya "
 msgstr "ティグリニャ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ts" id="dcmits"
 #: label="Tsonga ">
 msgid "Tsonga "
 msgstr "ツォンガ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tn" id="dcmitn"
 #: label="Tswana; Setswana ">
 msgid "Tswana; Setswana "
 msgstr "ツワナ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="to" id="dcmito"
 #: label="Tongan ">
 msgid "Tongan  "
 msgstr "トンガ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tr" id="dcmitr"
 #: label="Turkish ">
 msgid "Turkish "
 msgstr "トルコ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tk" id="dcmitk"
 #: label="Turkmen ">
 msgid "Turkmen "
 msgstr "トルクメン語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="tw" id="dcmitw"
 #: label="Twi ">
 msgid "Twi "
 msgstr "チュイ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ug" id="dcmiug"
 #: label="Uighur ">
 msgid "Uighur "
 msgstr "ウイグル語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="uk" id="dcmiuk"
 #: label="Ukrainian ">
 msgid "Ukrainian "
 msgstr "ウクライナ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="ur" id="dcmiur"
 #: label="Urdu ">
 msgid "Urdu "
 msgstr "ウルドゥー語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="uz" id="dcmiuz"
 #: label="Uzbek ">
 msgid "Uzbek "
 msgstr "ウズベク語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="vi" id="dcmivi"
 #: label="Vietnamese ">
 msgid "Vietnamese "
 msgstr "ベトナム語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="vo" id="dcmivo"
 #: label="Volapük; Volapuk ">
 msgid "Volapük; Volapuk "
 msgstr "ヴォラピューク語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="wa" id="dcmiwa"
 #: label="Walloon ">
 msgid "Walloon "
 msgstr "ツォンガ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="cy" id="dcmicy"
 #: label="Welsh ">
 msgid "Welsh "
 msgstr "ウェールズ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="wo" id="dcmiwo"
 #: label="Wolof ">
 msgid "Wolof "
 msgstr "ウォロフ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="xh" id="dcmixh"
 #: label="Xhosa ">
 msgid "Xhosa "
 msgstr "コーサ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="yi" id="dcmiyi"
 #: label="Yiddish (formerly ji) ">
 msgid "Yiddish (formerly ji) "
 msgstr "イディッシュ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="yo" id="dcmiyo"
 #: label="Yoruba ">
 msgid "Yoruba "
 msgstr "ヨルバ語"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="za" id="dcmiza"
 #: label="Zhuang ">
 msgid "Zhuang "
 msgstr "Zhuang "
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
+#: exe/xului/templates/dublincore.xul:<menuitem
+#: value="zu" id="dcmizu"
 #: label="Zulu.">
 msgid "Zulu."
 msgstr "ズールー語"
 
-#: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
-#: style="width:8em" tooltiptext="A reference to a related resource.">
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Relation:"
+#: id="dcRelation"
+#: style="width:8em"
+#: tooltiptext="A reference to a related resource.">
 msgid "Relation:"
 msgstr "関連："
 
-#: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
-#: style="width:8em" tooltiptext="The extent or scope of the content
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Coverage:"
+#: id="dcCoverage"
+#: style="width:8em"
+#: tooltiptext="The extent or scope of the content
 #: resource.">
 msgid "Coverage:"
 msgstr "適用："
 
-#: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
-#: style="width:8em" tooltiptext="Information about rights held in and over
+#: exe/xului/templates/dublincore.xul:<label
+#: value="Rights:"
+#: id="dcRights"
+#: style="width:8em"
+#: tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Rights:"
 msgstr "権利："
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
+#: exe/xului/templates/dublincore.xul:<description
+#: id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "一般的に「権利」部分は、リソースに関する権利の管理、あるいはその情報を提供するサービスの文献を含みます。権利に関する情報は通常、知的所有権(IPR)、著作権（Copyright）、そして多様な所有に関する権利を含みます。｢権利」部分に記入がない場合、リソースに関するこれらの権利の位置づけや他の権利ついて判断できないことになります。"
 
 #~ msgid "Add"
 #~ msgstr "追加"
-
 #~ msgid "Author"
 #~ msgstr "著者"
-
 #~ msgid ""
 #~ "EXPORT FAILED.\n"
 #~ "\"%s\" already exists.\n"
@@ -3637,13 +4116,10 @@ msgstr "一般的に「権利」部分は、リソースに関する権利の管
 #~ "エキスポートに失敗しました。\n"
 #~ "\"%s\" は既に使われています。\n"
 #~ "違うファイル名でもう一度試してください"
-
 #~ msgid "Error loading package \"%s\": %s"
 #~ msgstr "パッケージ取り込みエラー \"%s\": %s"
-
 #~ msgid "Feedback Image"
 #~ msgstr "フィードバック用画像"
-
 #~ msgid ""
 #~ "For use if you need to include an external\n"
 #~ "web page into your content. Rather than popup an external window, which can have some\n"
@@ -3653,51 +4129,38 @@ msgstr "一般的に「権利」部分は、リソースに関する権利の管
 #~ "もし外部のWebサイトを教材に入れる必要があれば、このiDeviceを利用することで \n"
 #~ "フレーム内にページを表示できます。ポップアップで表示すると、利用上問題が生じる \n"
 #~ "可能性がありますのでiDeviceのフレーム内での利用をお勧めします（ただしオンラインでの利用のみ）。"
-
 #~ msgid "Question(s)"
 #~ msgstr "質問"
-
 #~ msgid "Save as"
 #~ msgstr "名前をつけて保存"
-
 #~ msgid ""
 #~ "There was an error in the export:\n"
 #~ "%s"
 #~ msgstr ""
 #~ "エキスポートする際エラーが生じました:\n"
 #~ "%s"
-
 #~ msgid "Type the question stem."
 #~ msgstr "基本的な質問をタイプしてください。"
-
 #~ msgid "Wikipedia Article"
 #~ msgstr "ウィキペディア記事"
-
 #~ msgid "label=\"Merging\" accesskey=\"e\""
 #~ msgstr "label=\"結合する\" accesskey=\"e\""
-
 #~ msgid "label=\"Register Online\" accesskey=\"R\""
 #~ msgstr "label=\"オンラインに登録Register Online\" accesskey=\"R\""
-
 #~ msgid "Greek "
 #~ msgstr "ギリシャ語"
-
 #~ msgid "Tonga (?) "
 #~ msgstr "トンガ語"
-
 #~ msgid "label=\"SCORM 2004\" accesskey=\"c\""
 #~ msgstr "label=\"SCORM 2004\" accesskey=\"s\""
-
 #~ msgid ""
 #~ "Provide a caption for the \n"
 #~ "MP3 file."
 #~ msgstr "MP3ファイルにタイトルをつけてください。"
-
 #~ msgid "Strong emphasis"
 #~ msgstr "強調（最大）"
-
 #~ msgid "Unable to connect to "
 #~ msgstr "接続できません"
-
 #~ msgid "some help tip here."
 #~ msgstr "ヒントがあります"
+
