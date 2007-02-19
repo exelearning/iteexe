@@ -41,6 +41,20 @@ import logging
  
 log = logging.getLogger(__name__)
 
+class Windows_Log(object):
+    """
+    Logging for py2exe application
+    """
+    def __init__(self, level):
+        self.level = level
+    def write(self, text):
+        log.log(self.level, text)
+if sys.platform[:3] == "win":
+    # put stderr and stdout into the log file
+    sys.stdout = Windows_Log(logging.INFO)
+    sys.stderr = Windows_Log(logging.ERROR)
+del Windows_Log
+
 # Global application variable
 globals.application = None
 
