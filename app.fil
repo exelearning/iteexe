@@ -1,5 +1,6 @@
 exe/__init__.py
 exe/application.py
+exe/globals.py
 exe/engine/imagemagnifieridevice.py
 exe/engine/galleryidevice.py
 exe/engine/persist.py

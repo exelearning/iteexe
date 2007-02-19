@@ -329,8 +329,14 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     else:
         applicationName = applicationDomain
     currentDir = os.getcwd()
-    makeXulPO(applicationDirectoryPath, applicationDomain, verbose)
-    os.chdir(applicationDirectoryPath)                    
+    messages_pot = Path('exe/locale/messages.pot')
+    # Use xgettext to make the base messages.pot (with header, etc.)
+    if messages_pot.exists():
+        messages_pot.remove()
+    messages_pot.touch()
+    cmd = 'xgettext -kx_ -s -j --no-wrap --output=exe/locale/messages.pot --from-code=utf8 exe/engine/package.py'
+    if verbose: print cmd
+    os.system(cmd)                                                
     if not os.path.exists('app.fil'):
         raise IOError(2,'No module file: app.fil')
 
@@ -341,10 +347,13 @@ def makePO(applicationDirectoryPath,  applicationDomain=None, verbose=1) :
     #   -s                          : sort output by string content (easier to use when we need to merge several .po files)
     #   --files-from=app.fil        : The list of files is taken from the file: app.fil
     #   --output=                   : specifies the name of the output file (using a .pot extension)
-    cmd = 'xgettext -kx_ -s -j --no-wrap --files-from=app.fil --output=exe/locale/messages.pot --from-code=utf8'
+    cmd = 'xgettext -kx_ -s -j --no-wrap --output=exe/locale/messages.pot --from-code=utf8 %s'
     if verbose: print cmd
-    os.system(cmd)                                                
-    os.chdir(currentDir)
+    for fn in open('app.fil'):
+        print 'Extracting from', fn,
+        os.system(cmd % fn[:-1])
+
+    makeXulPO(applicationDirectoryPath, applicationDomain, verbose)
 
     # Merge new pot with .po files
     localeDirs = Path('exe/locale')
