@@ -78,7 +78,6 @@ class TextExport(object):
 
         for child in node.children:
             self.renderNode(child)
-        print self.html
 
     def save(self, filename):
         """

@@ -22,6 +22,7 @@ Classes to XHTML elements.  Used by GenericBlock
 import logging
 from exe.webui       import common
 from exe.engine.path import Path
+from exe             import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -1108,8 +1109,7 @@ class MathElement(Element):
         """
         Returns an XHTML string with the form element for editing this field
         """
-        from exe.application import application
-        webDir = application.config.webDir
+        webDir = G.application.config.webDir
         greekDir = Path(webDir+'/images/maths/greek letters')
         oprationDir = Path(webDir+'/images/maths/binary oprations')
         relationDir = Path(webDir+'/images/maths/relations')
