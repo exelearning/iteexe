@@ -186,6 +186,7 @@ Section Uninstall
     Delete "$DESKTOP\exe-${EXE_VERSION}.lnk"
     Delete "$SMPROGRAMS\exe\exe.lnk"
     Delete "$SMPROGRAMS\exe\Uninstall.lnk"
+		RMDir  "$SMPROGRAMS\exe"
     
     ; Unassociate elp files
     !define Index "Line${__LINE__}"
