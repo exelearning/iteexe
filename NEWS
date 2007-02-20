@@ -1,3 +1,12 @@
+Version
+* Enabled rich text editor context menu cut/copy/paste
+* Add import/export features for iDevice editor
+* Windows: removed console window
+* Update parsing of Wikipedia articles
+* Improve text export
+* Optimize internal resource handling
+* Updated translations
+
 Version 0.20.2
 * Improved Japanese translation
 * Add Live Chat to Help menu to open link that connects to IRC CGI
