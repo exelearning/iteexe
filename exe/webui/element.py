@@ -1025,8 +1025,14 @@ class FlashMovieElement(Element):
         """
         Process arguments from the web server.
         """
+        self.field.message = ""
         if "path"+self.id in request.args:
-            self.field.setFlash(request.args["path"+self.id][0])
+            path = request.args["path"+self.id][0]
+            if path.endswith(".flv"):
+                self.field.setFlash(request.args["path"+self.id][0])
+            elif path <> "":
+                self.field.message = _(u"Please select a .flv file.")
+                self.field.idevice.edit = True
 
 
     def renderEdit(self):
@@ -1042,6 +1048,8 @@ class FlashMovieElement(Element):
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a flash video")
+        if self.field.message <> "":
+            html += '<span style="color:red">' + self.field.message + '</span>'
 
 
         return html

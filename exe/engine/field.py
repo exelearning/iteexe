@@ -651,6 +651,8 @@ class FlashMovieField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+    persistenceVersion = 4
+    
     def __init__(self, name, instruc=""):
         """
         """
@@ -658,6 +660,7 @@ class FlashMovieField(Field):
         self.width         = 300
         self.height        = 250
         self.flashResource = None
+        self.message       = ""
         self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
 this iDevice.""")
 
@@ -669,6 +672,7 @@ this iDevice.""")
         Store the image in the package
         Needs to be in a package to work.
         """
+        
         log.debug(u"setFlash "+unicode(flashPath))
         resourceFile = Path(flashPath)
 
@@ -723,7 +727,11 @@ this iDevice.""")
         self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
 this iDevice.""")
 
-
+    def _upgradeFieldToVersion4(self):
+        """
+        Upgrades to exe v0.20.3
+        """
+        self.message   = ""
 # ===========================================================================
 
 
