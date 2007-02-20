@@ -19,6 +19,7 @@
 
 import unittest
 from os.path                   import join
+from utils                     import SuperTestCase
 from exe.engine.package        import Package
 from exe.engine.config         import Config
 from exe.engine.packagestore   import PackageStore
@@ -29,42 +30,43 @@ from exe.engine.path           import Path
 
 # ===========================================================================
 class TestPackage(SuperTestCase):
-    def setUp(self):
-        self.packageStore = PackageStore()
 
 
     def testCreatePackage(self):
-        package      = self.packageStore.createPackage()
+        package      = self.package
         self.assert_(package)
         self.assert_(package.name)
         
 
     def testSaveAndLoad(self):
-        package = self.packageStore.createPackage()
+        packageStore = PackageStore()
+        package = packageStore.createPackage()
         # Check that it has been given a default name
         self.assertEquals(package.name, "newPackage")
         package.author = "UoA"
+        package.description = "Nice test package"
         Config._getConfigPathOptions = lambda s: ['exe.conf']
         config  = Config()
-        package.save(config.dataDir/'package1.elp')
-        
         filePath = config.dataDir/'package1.elp'
-        package1 = self.packageStore.loadPackage(filePath)
+        package.save(filePath)
+        
+        package1 = Package(filePath)
         self.assert_(package1)
         self.assertEquals(package1.author, "UoA")
+        self.assertEquals(package1.description, "Nice test package")
         # Package name should have been set when it was saved
         self.assertEquals(package.name, "package1")
         self.assertEquals(package1.name, "package1")
         
 
     def testfindNode(self):
-        package = self.packageStore.createPackage()
+        package = self.package
         node1 = package.root.createChild()
         self.assertEquals(package.findNode(node1.id), node1)
         
 
     def testLevelName(self):
-        package = self.packageStore.createPackage()
+        package = self.package
         package._levelNames = ["Month", "Week", "Day"]
         self.assertEquals(package.levelName(0), "Month")
         self.assertEquals(package.levelName(1), "Week")
@@ -72,7 +74,7 @@ class TestPackage(SuperTestCase):
 
 
     def testNodeIds(self):
-        package = self.packageStore.createPackage()
+        package = self.package
         assert package._nextNodeId == 1, package._nextNodeId
         assert package.findNode(package.root.id) is package.root
         newNode = Node(package, package.root)
