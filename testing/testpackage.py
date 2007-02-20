@@ -28,7 +28,7 @@ from exe.engine.path           import Path
 
 
 # ===========================================================================
-class TestPackage(unittest.TestCase):
+class TestPackage(SuperTestCase):
     def setUp(self):
         self.packageStore = PackageStore()
 

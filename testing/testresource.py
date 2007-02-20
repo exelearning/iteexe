@@ -64,9 +64,9 @@ class TestResource(SuperTestCase):
         res1, res2, res3, res4 = map(lambda f: Resource(self.package, f), (res1, res2, res3, res4))
         assert res1.storageName == 'my.resource1.bin', res1.storageName
         assert res2.storageName == 'my.resource1.bin', res2.storageName
-        assert res3.storageName == 'my.resource1.bin'
-        assert res4.storageName == 'my.resource11.bin'
-        assert res4.userName == 'my.resource1.bin'
+        assert res3.storageName == 'my.resource1.bin', res3.storageName
+        assert res4.storageName == 'my.resource1.1.bin', res4.storageName
+        assert res4.userName == 'my.resource1.bin', res4.userName
         assert len(self.package.resources) == 2
         assert len(self.package.resources[res1.path.md5]) == 3
         assert len(self.package.resources[res4.path.md5]) == 1
@@ -99,7 +99,7 @@ class TestResource(SuperTestCase):
         assert fn.isfile() or fn.islink()
         package = self.package.__class__.load(fn)
         assert hasattr(package, 'resources')
-        assert len(package.resources) == 9, len(package.resources)
+        assert len(package.resources) == 8, len(package.resources)
         for checksum, resources in package.resources.items():
             storageNames = []
             userNames = []
@@ -107,7 +107,6 @@ class TestResource(SuperTestCase):
                 storageNames.append(res.storageName)
                 userNames.append(res.userName)
             assert len(set(storageNames)) == 1, 'Two identical resources have different storage names:\n%s' % storageNames
-            assert len(set(userNames)) == len(userNames), 'One would surppose all user names (original storageName) to be different'
         allResourceNames = []
         for reses in package.resources.values():
             allResourceNames.append(reses[0].storageName)

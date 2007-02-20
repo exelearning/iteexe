@@ -59,20 +59,22 @@ class _Resource(Persistable):
         # self._userName is the basename name originally given by the user
         self._userName = self._storageName
         self._originalFile = resourceFile
-        self.checksum = resourceFile.md5
-        from exe.engine.idevice   import Idevice
-        if isinstance(owner, Idevice):
-            self._idevice     = owner
-            if owner.parentNode:
-                self.package  = owner.parentNode.package
+        try:
+            self.checksum = resourceFile.md5
+            from exe.engine.idevice import Idevice
+            if isinstance(owner, Idevice):
+                self._idevice     = owner
+                if owner.parentNode:
+                    self.package  = owner.parentNode.package
+                else:
+                    self.package  = None
             else:
-                self.package  = None
-        else:
-            self._idevice = None
-            self.package = owner
-        # Don't need to save the original file name between sessions
-        # It was just used for changing the package
-        del self._originalFile
+                self._idevice = None
+                self.package = owner
+        finally:
+            # Don't need to save the original file name between sessions
+            # It was just used for changing the package
+            del self._originalFile
 
     def _setPackage(self, package):
         """
@@ -106,6 +108,7 @@ class _Resource(Persistable):
     storageName = property(lambda self:self._storageName)
     userName = property(lambda self:self._userName)
     package = property(lambda self:self._package, _setPackage)
+    path = property(lambda self:self._package.resourceDir/self._storageName)
 
     # Protected methods
 
@@ -118,13 +121,19 @@ class _Resource(Persistable):
         # Add ourselves to our new package's list of resources
         siblings = self._package.resources.setdefault(self.checksum, [])
         if siblings:
-            self._storageName = siblings[0]._storageName
+            # If we're in the resource dir, and already have a filename that's different to our siblings, delete the original file
+            # It probably means we're upgrading from pre-single-file-resources or someone has created the file to be imported inside the resource dir
+            # We are assuming that it's not a file used by other resources...
+            newName = siblings[0]._storageName
+            if Path(self._originalFile).dirname() == self._package.resourceDir and self._storageName != newName:
+                self._originalFile.remove()
+            self._storageName = self._fn2ascii(newName)
         else:
             if Path(self._originalFile).dirname() == self._package.resourceDir:
                 log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
             else:
                 filename = (self._package.resourceDir/self._originalFile.basename()).unique()
-                self._storageName = filename.basename()
+                self._storageName = self._fn2ascii(filename.basename())
                 self._originalFile.copy(filename)
         siblings.append(self)
 
@@ -209,12 +218,20 @@ class Resource(_Resource):
         if self.path.isfile():
             self.checksum = self.path.md5
             self._originalFile = self.path  # Pretend we're a newly added file
-            self._addOurselvesToPackage()
-            del self._originalFile
+            try:
+                self._addOurselvesToPackage()
+            finally:
+                del self._originalFile
         else:
             log.error('Resource file "%s" not found. Deleting resource object' % self.path)
             if self._idevice:
                 self._idevice.userResources.remove(self)
+
+    def __repr__(self):
+        """
+        Represents 'Resource' as a string for the programmer
+        """
+        return '<%s.%s for "%s" at %s>' % (__name__, self.__class__.__name__, self._storageName, id(self))
 
 
 # ===========================================================================
