@@ -145,7 +145,7 @@ class AuthoringPage(RenderableResource):
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,media,"
-        html += u" contextmenu,paste,directionality\","
+        html += u" paste,directionality\","
         html += u" theme : \"advanced\",\n"
         html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
         html += u"theme_advanced_toolbar_location : \"top\",\n"  
