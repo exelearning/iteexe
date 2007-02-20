@@ -34,7 +34,7 @@ class UrlOpener(urllib.FancyURLopener):
     """
     Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
     """
-    version = "eXe/exe@auckland.ac.nz"
+    version = "eXe/exe@exelearning.org"
 urllib._urlopener = UrlOpener()
 
 import logging
