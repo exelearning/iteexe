@@ -32,31 +32,27 @@ body {
    height: 100%; /* the holly hack for IE! */
    float: left;
    margin-top: 0px;
-   padding-top: 82px;
+   padding-top: 72px;
    text-align:left;
    position:absolute;
    background-color:transparent;
 }
 
-#navlist {
-   margin-left: 30px;
-   position:absolute;
-}
 
 #navcontainer ul {
-margin-left: 30px;
+margin-left: 10px;
 padding-left: 0;
 margin-top: 0;
 list-style-type: none;
 font-family: Arial, Helvetica, sans-serif;
 }
 
-#navcontainer a {
+#navcontainer a {  /* sections not active */
 display: block;
-padding: 4px 0 4px 6px;
+padding: 4px 0 4px 18px;
 background-color: #FFF;
 border-bottom: 1px solid #ffffff;
-width: 163px;
+width: 195px;
 border-top: 1px solid #ffffff;
 }
 
@@ -84,48 +80,46 @@ margin-left: 0;
 /* End hide from IE5/mac */
 
 div #active {
-padding: 3px 0 3px 20px;
-width: 149px !important; /* the Housley Hack for Firefox... */
-width: 163px; /* for IE */
+padding: 0px 0px 3px 18px;
+width: 195px !important; /* the Housley Hack for Firefox... */
+width: 209px; /* for IE */
 background-color: #706F61;
 color: #ffffff;
 border-bottom: 1px solid #fff;
 border-top: 6px solid #706f61;
 background-image:url(active_bg.gif);
-background-position:left middle;
+background-position: -2px 2px;
 background-repeat:no-repeat;
 }
 
 div #subnav {
 }
 
-#subnav a {
+#subnav a { /* subnav when parent is selected */
 display: block;
 border: 0 !important;
-width: 153px;
+width: 187px;
 margin-left: 10px;
-padding: 4px 0 4px 6px;
-font-size: 12px;
-font-size:11px;
+padding: 4px 0 4px 16px;
 }
 
 #subnav a:hover {
 color: #4d4d4d;
 background-color: #C7C5B9;
-font-size:11px;
 }	
 
-#subnav #active {
+#subnav #active { /* subnav selected */
+display: block;
 margin-left: 10px;
-background-color: #706F61;
-width: 139px !important; /* the Housley Hack for Firefox... */
-width: 153px; /* for IE */
+width: 187px !important; /* the Housley Hack for Firefox... */
+width: 201px; /* for IE */
+padding: 4px 0 4px 16px;
 color: #ffffff;
 font-size:11px;
+background-color: #706F61;
 background-image:url(active_bg.gif);
-background-position:left middle;
+background-position:-2px 2px;
 background-repeat:no-repeat;
-height: 15px;
 border-top: 2px solid #706f61;
 }	
 
