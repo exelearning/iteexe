@@ -412,7 +412,8 @@ these in a gallery context rather then individually.</p>"""),
         Recreates all the thumbnails and html pages from the original image
         resources.
         """
-        self._createHTMLPopupFile()
+        if len(self.images) > 0:
+            self._createHTMLPopupFile()
         for image in self.images:
             image._saveFiles()
 
