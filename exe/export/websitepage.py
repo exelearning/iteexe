@@ -116,10 +116,10 @@ class WebsitePage(Page):
                 html += block.renderView(style)
         
         html += self.getNavigationLink(prevPage, nextPage)
-        html += u"</div>\n"
-        # put footer here
+        # writes the footer for each page 
         html += self.renderLicense()
         html += self.renderFooter()
+        html += u"</div>\n"
         html += u"</div>\n"
         html += u"</body></html>\n"
         html = html.encode('utf8')
