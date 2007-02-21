@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 14:14+1300\n"
-"PO-Revision-Date: 2007-02-20 16:03+1200\n"
+"PO-Revision-Date: 2007-02-21 16:34+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "<dl>  <dt>主要なコンセプトあるいは読解力のテストが�
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>&lt;MP3の選択&gt;をクリックし、挿入したいMP3ファイルを選んでください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所を選んでください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルの内容に関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例）'強調する' 。「強調」は、表示されるiDeviceのコンテンツの境界線やアイコンに反映されます。</li></ol>"
+msgstr "<ol>  <li>&lt;MP3の選択&gt;をクリックし、挿入したいMP3ファイルを選んでください。</li> <li>ドロップダウンメニューをクリックし、スクリーン上でファイルを表示したい場所を選んでください。</li>  <li>ファイルにタイトルをつけてください。</li> <li>MP3ファイルの内容に関連するテキストを入力してください。</li> <li>iDeviceを表示するスタイルを選択してください。（例）「強調する」は、表示されるiDeviceのコンテンツの境界線やアイコンに反映されます。</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -118,7 +118,7 @@ msgid ""
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr "<p>空所補充のフィールドに空所補充による学習活動で用いるテキストを入力してください。他のリソースからコピーしたものを貼付け（ペースト）つこともできますし、直接フィールドに入力することもできます。</p><p>空所とする単語を選択するには、単語をダブルクリックし、その後、下にある「単語を隠す／表示する」ボタンをクリックしてください。</p>"
+msgstr "<p>空所補充のフィールドに空所補充による学習活動で用いるテキストを入力してください。他のリソースからコピーしたものを貼付け（ペースト）ることもできますし、直接フィールドに入力することもできます。</p><p>空所とする単語を選択するには、単語をダブルクリックし、その後、下にある「単語を隠す／表示する」ボタンをクリックしてください。</p>"
 
 #: exe/engine/field.py:506
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
@@ -177,7 +177,7 @@ msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
-msgstr "<p>相互に関連がある画像、あるいは特定の学習活動に関連する画像がたくさんある場合、画像を個別に表示するより、ギャラリー形式で表示するのも一案です。</p>"
+msgstr "<p>相互に関連がある画像、あるいは特定の学習活動に関連する画像がたくさんある場合、画像を個別に表示するより、ギャラリー形式で表示すると便利です。</p>"
 
 #: exe/engine/package.py:207
 msgid "?????"
@@ -216,7 +216,9 @@ msgstr ""
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr "「ヒント」は学習者が質問に答える際、解答を支援するために提示するために利用できます。"
+msgstr ""
+"「ヒント」は、学習者が質問に解答する際、解答を\n"
+"支援する目的で提示することができます。"
 
 #: exe/webui/editorpane.py:74
 msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the device's development."
@@ -368,9 +370,9 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
-"「Multiple-choice（多肢選択）」は、通常のテストでも利用できますが、学習者が返答したがらないような \n"
+"「多肢選択（単独回答）」は、通常のテストでも利用できますが、学習者が返答したがらないような \n"
 "トピックに関して考えさせたり、議論させるためのテスト用ツールとしても利用できます。 \n"
-"MCQを設計する際は、次の点について考慮してください。 \n"
+"「多肢選択（単独回答）」を設計する際は、次の点について考慮してください。 \n"
 "<ul>\n"
 "<li> どのような学習結果を計るのか？</li>\n"
 "<li> どのような知識や技能を計るのか？</li>\n"
@@ -849,14 +851,14 @@ msgid ""
 " instructions or additional learning information."
 msgstr ""
 "コンテンツに添付するRSS feed のURLを入力してください。 \n"
-"フィードは、よくアイコンやテキストで表示されます。\n"
-" （アイコン：<img src=\"/images/feed-icon.png\" />、もしくはテキスト： \"RSS\"） \n"
+"フィードは、通常アイコンやテキストで表示されます。\n"
+" （アイコン：<img src=\"/images/feed-icon.png\" />、テキスト： \"RSS\"） \n"
 "アイコンやテキストをクリックすることで、RSS フィードをブラウザに表示することができます。\n"
-"URLをコピーと貼り付けでURLをこのフィールドに入力できます。 また、別の方法としてリンクや\n"
+"URLをコピーと貼り付けでこのフィールドに入力できます。 また、別の方法としてリンクや\n"
 "画像を右クリックすることでメニューボックスが開きます。「リンクロケーションのコピー」あるいは、\n"
 "「ショートカットをコピー」をクリックしてください。eXeでは、RSSブックマークideviceを開き、\n"
 "RSS用URL欄にURLを貼り付け、「ロード」ボタンをクリックしてください。こうすることでフィードから\n"
-"タイトルを抽出し、あなたのコンテンツ上でそれらを表示できます。ここでブックマークの編集、\n"
+"タイトルを抽出し、あなたのコンテンツ上でそれらを表示できます。そこでは、ブックマークの編集、\n"
 "指示の入力、追加の学習用の情報提供ができます。"
 
 #: exe/engine/field.py:892
@@ -1343,7 +1345,7 @@ msgstr "多肢選択（単独解答）"
 
 #: exe/engine/multiselectidevice.py:41
 msgid "Multi-select"
-msgstr "多肢選択（複数回答）"
+msgstr "多肢選択（複数解答）"
 
 #: exe/webui/editorpane.py:315
 msgid "Name"
@@ -1438,8 +1440,8 @@ msgid ""
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
-"「目的」では、学習者の期待される学習結果を記述するとともに、学習者が学習タスクを　\n"
-"終了した後、学習者がなにができるようになるか定義する必要があります。"
+"「目的」では、学習者の期待される学習結果を記述するとともに、学習タスクの\n"
+"終了後、学習者が何ができるようになるかを定義する必要があります。"
 
 #: exe/engine/field.py:661
 #: exe/engine/field.py:723
@@ -1983,8 +1985,8 @@ msgstr ""
 "「外部のウェブサイト」用iDeviceは、ポップアップウィンドウを開かずに、\n"
 "あなたの作成するeXeコンテンツのフレーム内に外部のウェブサイトを \n"
 "盛り込むことができます。これによって学習者は、複数のウィンドウを \n"
-"あれこれ操作する必要がなくなります。このiDeviceは、コンテンツが \n"
-"オンラインで利用される場合のみ、使うようにしてください。"
+"操作する必要がなくなります。このiDeviceは、コンテンツを \n"
+"オンラインで表示する場合のみ利用してください。"
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -2054,9 +2056,9 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
 "このiDeviceはフラッシュムービーファイル(.FLV)のフォーマットのみサポートしています。\n"
-"他のビデオ用ムービーフォーマット(例： mov, wmf など)からフラッシュムービー　\n"
-"フォーマットに変換することができます。エンコーダーについてははeXeでは扱っていません。\n"
-"また、フラッシュムービーを再生するにはFlash 8 playerを次のサイトからダウンロードする　\n"
+"他のビデオ用ムービーフォーマット(例： mov, wmf など)からフラッシュムービー\n"
+"フォーマットに変換することができます。エンコーダーについては、eXeでは扱っていません。\n"
+"また、フラッシュムービーを再生するにはFlash 8 playerを次のサイトからダウンロードする\n"
 "必要があります。http://www.macromedia.com"
 
 #: exe/engine/freetextidevice.py:68
@@ -2115,7 +2117,7 @@ msgstr "トピック"
 #: exe/webui/truefalseelement.py:82
 #: exe/webui/truefalseelement.py:153
 msgid "True"
-msgstr "正解"
+msgstr "正しい"
 
 #: exe/engine/truefalseidevice.py:59
 msgid "True-False Question"
@@ -2179,7 +2181,7 @@ msgid ""
 "be ambiguous."
 msgstr ""
 "基本となる質問をタイプしてください。質問は明確にし、\n"
-"あいまいにならないようにしてください。遠慮をしたような書き方をすると\n"
+"あいまいにならないようにしてください。遠慮をした書き方をすると\n"
 "あいまいな表現になりやすくなります。"
 
 #: exe/webui/externalurlblock.py:60
@@ -2234,7 +2236,7 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
-"「Multi-choice（多肢選択）」とは異なり、「SCORM」クイズは、学習者の正答に対するフィードバックを \n"
+"「多肢選択（単独解答）」とは異なり、「SCORM」クイズは、学習者の正答に対するフィードバックを \n"
 "提供しないで、あるトピックに関する学習者の知識をテストするのに利用できます。\n"
 "このクイズは、学習者が情報や技能を用いて学習したり演習をした後、よく利用されます。"
 
@@ -2259,7 +2261,7 @@ msgstr ""
 
 #: exe/engine/galleryidevice.py:365
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "表示する画像が多いときにはこのiDeviceを利用します。"
+msgstr "表示する画像が多いときにはこのiDeviceを利用してください。"
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
@@ -2299,7 +2301,7 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
-"「Multiple-choice（多肢選択）」の構築の際は、次の点を考慮してください。<ul>\n"
+"「多肢選択（単独回答）」の構築の際は、次の点を考慮してください。<ul>\n"
 "<li> 学習者に馴染みのある、あるいは、これまでの学習で見聞きした表現を用いる</li>\n"
 "<li> 選択肢の内容は簡潔なものとする </li>\n"
 "<li> 質問と選択肢には一貫性を持たせる </li>\n"
