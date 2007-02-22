@@ -81,6 +81,8 @@ Section main
     newadvsplash::show /NOUNLOAD 99999 1 1 -1 /BANNER /NOCANCEL "$TEMP\exe\${EXE_SPLASH}"
     ; Decompress the stuff
     File /R "..\..\dist\*.*"
+    SetOutPath "$TEMP\exe\config\idevices"
+    File "..\..\exe\idevices\*test*.py"
     SetOutPath "$TEMP\exe\firefox"
     File /R "..\..\exe\webui\Mozilla Firefox\*.*"
     ; Remove the splash screen
