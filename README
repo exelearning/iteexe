@@ -7,6 +7,7 @@ $Id$
 
 ===========================================================================
 Copyright 2004-2005, University of Auckland
+Copyright 2006-2007, Auckland University of Technology
 All rights reserved, see COPYING for details.
 
 This program is free software; you can redistribute it and/or modify
@@ -104,26 +105,8 @@ From the command line type exe to start.
 BUILDING FROM SOURCE
 ====================
 
-To build exe you'll need to install the following packages:
-* python 2.4 - http://www.python.org
-* Zope Interfaces - http://www.zope.org/Products/ZopeInterface
-* twisted 2.0.1 - http://twistedmatrix.com (You need twisted core and twisted web)
- * needs patches/jelly.patch applied, see patches/jelly.readme (from the source tree)
-* nevow 0.4.1 - http://nevow.com/
- * needs patches/livepage.patch applied, see patches/livepage.readme (from the source tree)
-* CTypes (on Windows) - http://starship.python.net/crew/theller/ctypes/
-* PIL - http://www.pythonware.com/products/pil/
-
-unzip the source tarball:
-tar xzvf exe-source-0.20.tgz
-
-To run from source (on linux):
-cd exe
-./exe
-
-To run from source (on windows):
-cd exe
-c:\python24\python exe
+Please see http://eXeLearning.org/BuildingFrom/Source for information
+on obtaining and building eXe and its dependencies.
 
 
 CREDITS
