@@ -208,7 +208,8 @@ class MainPage(RenderableLivePage):
                              '    <label>%s</label>\n'
                              '    <label>%s</label>\n'
                              '</hbox>\n' %
-                             (request.prepath, self.package.name)))
+                             ([escape(x) for x in request.prepath],
+                              escape(self.package.name))))
         else:
             return ''
 
