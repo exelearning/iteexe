@@ -686,21 +686,22 @@ this iDevice.""")
                 self.flashResource.delete()
             try:
                 flvDic = FLVReader(resourceFile)
-                height = flvDic.get("height", None)
-                width = flvDic.get("width", None)
-                if not width and not height:
+                self.height = flvDic.get("height", 100)+30
+                self.width = flvDic.get("width", 100)
+                self.flashResource = Resource(self.idevice, resourceFile)
+                #if not width and not height:
                     # If we have no width or height, default to 100x130
-                    self.width = 100
-                    self.height = 130
-                else:
+                    #self.width = 100
+                    #self.height = 130
+                ##else:
                     # If we have one, make it squareish
                     # If we have both, use them
-                    if height: self.height = height 
-                    else: self.height = width 
-                    if width: self.width = width
-                    else: self.width =height 
+                    #if height: self.height = height 
+                    #else: self.height = width 
+                    #if width: self.width = width
+                    #else: self.width =height 
                     
-                self.flashResource = Resource(self.idevice, resourceFile)
+                #self.flashResource = Resource(self.idevice, resourceFile)
             except AssertionError: 
                 log.error('File %s is not a flash movie' % resourceFile)
 
@@ -771,7 +772,8 @@ class MathField(Field):
             " to create mathematical formula."
             " To preview your LATEX as it will display use the &lt;Preview&gt;"
             " button below."
-            "</p>")
+            "</p>"
+            )
         self._previewInstruc = x_("""Click on Preview button to convert 
                                   the latex into an image.""")
 
