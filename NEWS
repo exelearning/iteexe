@@ -1,11 +1,13 @@
-Version
+Version 0.21
 * Enabled rich text editor context menu cut/copy/paste
 * Add import/export features for iDevice editor
-* Windows: removed console window
 * Update parsing of Wikipedia articles
 * Improve text export
 * Optimize internal resource handling
+* Windows: removed console window
 * Updated translations
+* Include SCORM Quiz iDevice in Windows ready2run version
+* fix web export CSS for MSIE
 
 Version 0.20.2
 * Improved Japanese translation
