@@ -2,9 +2,9 @@ import sys, os, shutil
 import signal
 import logging
 import warnings
-from exe.engine.path import Path
 from subprocess import Popen, PIPE
-from exe.globals import application
+from exe.engine.path import Path
+from exe import globals as G
 
 warnings.filterwarnings('ignore', 'tmpnam is a potential security risk to your program')
 log = logging.getLogger(__name__)
@@ -30,11 +30,11 @@ def compile(latex, fontsize=4):
     """
     # Import global application instance
     if os.name == 'nt':
-        cmd = application.config.webDir/'templates'/'mimetex.exe'
+        cmd = G.application.config.webDir/'templates'/'mimetex.exe'
     elif sys.platform[:6] == "darwin":
-        cmd = application.config.webDir/'templates'/'mimetex-darwin.cgi'
+        cmd = G.application.config.webDir/'templates'/'mimetex-darwin.cgi'
     else:
-        cmd = application.config.webDir/'templates'/'mimetex.cgi'
+        cmd = G.application.config.webDir/'templates'/'mimetex.cgi'
     log.debug(u"mimetex command=%s" % cmd)
     # Twisted uses SIGCHLD in a way that conflicts with the Popen() family
     # (see Twisted FAQ)  So save their handler and temporarily restore default.

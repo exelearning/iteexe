@@ -129,8 +129,8 @@ you created in Geogebra.</p>""")
         self.appletCode = ""
         self.message = ""
         if self.type == "geogebra":
-            from exe.application import application
-            ideviceDir = application.config.configDir/'idevices'            
+            from exe import globals as G
+            ideviceDir = G.application.config.configDir/'idevices'            
             for file in GEOGEBRA_FILE_NAMES:
                 filename = ideviceDir/file
                 self.uploadFile(filename)
