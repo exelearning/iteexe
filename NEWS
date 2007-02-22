@@ -7,6 +7,7 @@ Version 0.21
 * Windows: removed console window
 * Updated translations
 * Include SCORM Quiz iDevice in Windows ready2run version
+* fix FLV player dimensions
 * fix web export CSS for MSIE
 
 Version 0.20.2
