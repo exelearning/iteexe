@@ -513,13 +513,13 @@ class ClozeField(Field):
                 "<em>\"close enough\"</em> by the algorithm as it only has "
                 "one letter wrong, even if \"Check Capitilization\" is on."
                 "</p>"
-                "<p>If capitalzation checking is off in the above example, "
+                "<p>If capitalization checking is off in the above example, "
                 "the lowercase <code>e</code> will not be considered a "
                 "mistake and <code>eliphant</code> will also be accepted."
                 "</p>"
-                "<p>If both \"Strict Marking\" and \"Check Capitilization\" "
+                "<p>If both \"Strict Marking\" and \"Check Capitalization\" "
                 "are set, the only correct answer is \"Elephant\". If only "
-                "\"Strict Marking\" is checked and \"Check Capitilization\" "
+                "\"Strict Marking\" is checked and \"Check Capitalization\" "
                 "is not, \"elephant\" will also be accepted."
                 "</p>")
         self.checkCaps = False
@@ -530,7 +530,7 @@ class ClozeField(Field):
         self.instantMarking = False
         self._instantMarkingInstruc = \
             x_(u"""<p>If this option is set, each word will be marked as the 
-learner types it rather then all the words being marked the end of the 
+learner types it rather than all the words being marked the end of the 
 exercise.</p>""")
 
     # Property handlers
