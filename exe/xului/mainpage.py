@@ -44,6 +44,7 @@ from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
 from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
+from tempfile                    import mkdtemp
 
 log = logging.getLogger(__name__)
 
@@ -112,6 +113,11 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleExtractPackage,  'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
                                                  'setTreeSelection')
+        setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
+        setUpHandler(self.handleTestGetMsg,      'testGetMessage')
+        setUpHandler(self.handleMakeTempDir,     'makeTempDir')
+        setUpHandler(self.handleRemoveTempDir,   'removeTempDir')
+
         self.idevicePane.client = client
         # Render the js 
         handleId = "'", client.handleId, "'" 
@@ -310,7 +316,58 @@ class MainPage(RenderableLivePage):
         filename = self.config.recentProjects[int(number) - 1]
         self.handleLoadPackage(client, filename)
 
-    def handleExport(self, client, exportType, filename):
+    # r3m0: testing....
+    def handleTestPrintMsg(self, client, message):
+        """
+        Prints a test message, and yup, that's all!
+        """
+        print "Test Message: ", message, " [eol, eh!]"
+
+    # r3m0: testing....
+    def handleTestGetMsg(self, client, message, callback):
+        """
+        Sends a test message, and yup, that's all!  Does a callback, but nothing more....
+        """
+        #test_message = "{TestMessage from mainpage.py's handleTestGetMesg: welcome!}"
+        test_message = "{TestMessage includes: ", message, "}"
+        print "handleTestGetMsg received Test Message: ", message, " [eol, eh!]"
+        print "   and about to call JS (callback=", callback, ") with test_message: ", test_message, "[eol]"
+        client.call(callback, test_message)
+
+
+    def handleMakeTempDir(self, client, suffix, prefix, callback):
+        """
+        Makes a temporary directory, and yup, that's all!
+        """
+        # Okay, now try the test_message being the name of a created temp directory:
+        #test_message =  mkdtemp("","eXe_TempPrintDir_","")   # suffix, prefix, name
+        temp_dir = mkdtemp(suffix, prefix, "")  # suffix, prefix, dirname
+        client.call(callback, temp_dir)
+
+    def handleRemoveTempDir(self, client, tempdir):
+        """
+        Removes a temporary directory and any contents therein(from the bottom up), and yup, that's all!
+        """
+        #
+        # from an example on http://docs.python.org/lib/os-file-dir.html
+        top = tempdir
+        ################################################################
+        # Delete everything reachable from the directory named in 'top',
+        # assuming there are no symbolic links.
+        # CAUTION:  This is dangerous!  For example, if top == '/', it
+        # could delete all your disk files.
+        import os
+        for root, dirs, files in os.walk(top, topdown=False):
+            for name in files:
+                os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+        #
+        ##################################################################
+        # and finally, go ahead and remove the top-level tempdir itself:
+        os.rmdir(tempdir)
+
+    def handleExport(self, client, exportType, filename, print_callback=''):
         """
         Called by js. 
         Exports the current package to one of the above formats
@@ -328,8 +385,17 @@ class MainPage(RenderableLivePage):
                          _(u'. Please use ASCII names.'))
             return
 
-        if exportType == 'singlePage':
-            self.exportSinglePage(client, filename, webDir, stylesDir)
+        """ if exportType == 'singlePage':
+        r3m0: adding the print feature in using the same export functionality:
+        """
+        if exportType == 'singlePage' or exportType == 'printSinglePage':
+            printit = 0
+            if exportType == 'printSinglePage':
+                printit = 1
+            exported_dir = self.exportSinglePage(client, filename, webDir, stylesDir, printit)
+            if printit == 1:
+                # now that this has ben exported, go ahead and trigger the requested printing callback:
+                client.call(print_callback, filename, exported_dir)
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
@@ -438,11 +504,13 @@ class MainPage(RenderableLivePage):
 
     # Public Methods
 
-    def exportSinglePage(self, client, filename, webDir, stylesDir):
+    #def exportSinglePage(self, client, filename, webDir, stylesDir):
+    def exportSinglePage(self, client, filename, webDir, stylesDir, printFlag):
         """
         Export 'client' to a single web page,
         'webDir' is just read from config.webDir
         'stylesDir' is where to copy the style sheet information from
+        'printFlag' indicates whether or not this is for print (and whatever else that might mean)
         """
         try:
             imagesDir    = webDir.joinpath('images')
@@ -470,12 +538,16 @@ class MainPage(RenderableLivePage):
                 return 
             # Now do the export
             singlePageExport = SinglePageExport(stylesDir, filename, imagesDir, scriptsDir, templatesDir)
-            singlePageExport.export(self.package)
+            singlePageExport.export(self.package, printFlag)
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s' % str(e)))
             raise
         # Show the newly exported web site in a new window
-        self._startFile(filename)
+        if not printFlag:
+           self._startFile(filename)
+        # and return a string of the actual directory name, in case the package name was added, etc.:
+        return filename.abspath().encode('utf-8')
+        # WARNING: the above only returns the RELATIVE pathname
 
     def exportWebSite(self, client, filename, stylesDir):
         """

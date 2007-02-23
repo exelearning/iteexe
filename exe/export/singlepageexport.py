@@ -55,7 +55,7 @@ class SinglePageExport(object):
             self.outputDir.mkdir()
 
 
-    def export(self, package):
+    def export(self, package, for_print=0):
         """ 
         Export web site
         Cleans up the previous packages pages and performs the export
@@ -65,7 +65,7 @@ class SinglePageExport(object):
 	
 	page = SinglePage("index", 1, package.root)
 
-        page.save(self.outputDir/"index.html")
+        page.save(self.outputDir/"index.html", for_print)
 
 
     def copyFiles(self, package):

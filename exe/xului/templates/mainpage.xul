@@ -36,6 +36,7 @@
         <key n:render="translate" id="file-save-key" modifiers="control" key="S" oncommand="fileSave()"/>
         <key n:render="translate" id="file-open-key" modifiers="control" key="O" oncommand="fileOpen()"/>
         <key n:render="translate" id="file-quit-key" modifiers="control" key="Q" oncommand="fileQuit()"/>
+	<key n:render="translate" id="file-print-key" modifiers="control" key="P" oncommand="filePrint()"/> 
     </keyset>
     <vbox flex="1">
         <!-- Start Menus -->
@@ -54,19 +55,21 @@
                 <menuitem n:render="translate" label="Save" key="file-save-key" accesskey="s" oncommand="fileSave()"/>
                 <menuitem n:render="translate" label="Save As..." accesskey="a" oncommand="fileSaveAs()"/>
                     <menuseparator/>
+		    <menuitem n:render="translate" label="Print" key="file-print-key" accesskey="p" oncommand="filePrint()"/>
+                    <menuseparator/>
                 <menu n:render="translate" id="export-menu" label="Export" accesskey="e">
                   <menupopup id="export-popup">
-                    <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm')"/>
-		    <!--<menuitem label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004')"/>-->
-                    <menuitem n:render="translate" label="IMS Content Package" accesskey="i" oncommand="exportPackage('ims')"/>
+                    <menuitem label="SCORM 1.2" accesskey="s" oncommand="exportPackage('scorm','')"/>
+		    <!--<menuitem label="SCORM 2004" accesskey="c" oncommand="exportPackage('scorm2004','')"/>-->
+                    <menuitem n:render="translate" label="IMS Content Package" accesskey="i" oncommand="exportPackage('ims','')"/>
                     <menu n:render="translate" id="website" label="Web Site">
                       <menupopup id="web-export-popup">
-                        <menuitem n:render="translate" label="Self-contained Folder" oncommand="exportPackage('webSite')"/>
-                        <menuitem n:render="translate" label="Zip File" oncommand="exportPackage('zipFile')"/>
+                        <menuitem n:render="translate" label="Self-contained Folder" oncommand="exportPackage('webSite','')"/>
+                        <menuitem n:render="translate" label="Zip File" oncommand="exportPackage('zipFile','')"/>
                       </menupopup>
                     </menu> 
-                     <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage')"/>
-                     <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile')"/>
+                     <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage','')"/>
+                     <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile','')"/>
                   </menupopup>
                 </menu>
                 <menu n:render="translate" id="merging-menu" label="Merging" accesskey="m">

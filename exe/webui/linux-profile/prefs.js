@@ -24,6 +24,8 @@ user_pref("capability.principal.codebase.p2.granted", "UniversalXPConnect");
 user_pref("capability.principal.codebase.p2.id", "http://127.0.0.1:51236");
 user_pref("capability.principal.codebase.p2.subjectName", "");
 user_pref("dom.allow_scripts_to_close_windows", true);
+user_pref("dom.popup_allowed_events", "change click dblclick mouseup reset submit keypress contextmenu");
+user_pref("dom.disable_open_during_load", false);
 user_pref("extensions.lastAppVersion", "2.0");
 user_pref("general.open_location.last_url", "about:config");
 user_pref("general.open_location.last_window_choice", 0);
