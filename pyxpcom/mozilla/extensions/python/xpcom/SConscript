@@ -1,0 +1,92 @@
+import os
+
+# Choose a python version
+PYTHON_VER = '2.4'
+
+# Where header files are found
+CPPPATH = [
+    '/usr/include',
+    '/usr/include/firefox',
+    '/usr/include/firefox/string',
+    '/usr/include/firefox/xpcom',
+    '/usr/include/firefox/nspr',
+    '/usr/include/python2.4']
+
+# What's already defined
+CPPDEFINES = [
+    'IS_COMPONENT',
+    'MOZILLA_INTERNAL_API',
+    'FORCE_SHARED_LIB',
+    'FORCE_USE_PIC',
+    ('PYTHON_SO', r'\"libpython%s.so\"' % PYTHON_VER),
+    ]
+
+# Where libraries can be found
+LIBPATH = [
+    '/usr/lib',
+    '/usr/lib/firefox'
+    '/usr/lib/python%s' % PYTHON_VER,
+    ]
+
+# How to compile .pyc and .pyo files
+pycBuilder = Builder(action = 'python%s -c "import py_compile; py_compile.compile(\'$SOURCE\')"' % PYTHON_VER, suffix = '.pyc', src_suffix = '.py')
+pyoBuilder = Builder(action = 'python%s -O -c "import py_compile; py_compile.compile(\'$SOURCE\')"' % PYTHON_VER, suffix = '.pyo', src_suffix = '.py')
+BUILDERS = {'Pyc': pycBuilder, 'Pyo': pyoBuilder}
+
+# This is our build envrionment
+Import('env')
+env.Append(CPPPATH=CPPPATH)
+env.Append(CPPDEFINES=CPPDEFINES)
+env.Append(LIBPATH=LIBPATH)
+env.Append(BUILDERS=BUILDERS)
+
+# Check all the stuff we need is around
+conf = Configure(env)
+# Find Python deps
+if not conf.CheckCHeader('Python.h'):
+    print 'Please install python include files'
+    Exit(1)
+if not conf.CheckLib('python'+PYTHON_VER):
+    print 'Please install python lib'
+    Exit(1)
+# Find mozilla deps
+if not conf.CheckCXXHeader('nsXPCOM.h'):
+    print 'Need mozilla xpcom headers'
+    Exit(1)
+##if not conf.CheckLib('xpcom'):
+    ##print 'Need mozilla xpcom library'
+    ##Exit(1)
+env = conf.Finish()
+
+# Build the python stuff
+
+pys = [
+	'__init__.py',
+	'components.py',
+	'file.py',
+	'nsError.py',
+	'register.py',
+	'xpcom_consts.py',
+	'xpt.py',
+	]
+pycs = map(env.Pyc, pys)
+pyos = map(env.Pyo, pys)
+allPyFiles = pys + pycs + pyos
+#
+# Do an install if necessary
+# Find the installation place
+
+env.Import('installDir')
+dist = env.Install('#dist/pyxpcom', allPyFiles)
+install = env.Install(os.path.join(installDir, 'pyxpcom'), allPyFiles)
+Export('env dist install')
+
+# Build the other python libs
+SConscript('client/SConscript')
+SConscript('server/SConscript')
+SConscript('tools/SConscript')
+
+# Build the .so/.pyd and the loader component
+SConscript('src/SConscript')
+
+Return('dist install')

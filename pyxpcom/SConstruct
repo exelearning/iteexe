@@ -1,0 +1,60 @@
+"""
+This make script checksout pyxpcom src from CVS and compiles it.
+It requires what you download the firefox2 and python, headers and lib files separately
+"""
+
+"""
+CVS EXample
+
+import os
+env = Environment(ENV = { 'PATH' : os.environ['PATH'] })
+# We used to use the SourceForge server, but SourceForge has restrictions
+# that make them deny access on occasion.  Leave the incantation here
+# in case we need to use it again some day.
+#cvs = env.CVS(':pserver:anonymous@cvs.sourceforge.net:/cvsroot/scons')
+cvs = env.CVS(':pserver:anonymous@cvs.tigris.org:/cvs')
+env.SourceCode('.', cvs)
+env.Install('install', 'scons/SConstruct')
+"""
+
+import os, shutil
+
+# This is our build envrionment
+env = Environment()
+env.Append(CVSCOFLAGS=['-r', 'FIREFOX_2_0_0_1_RELEASE'])
+
+# Tell it where to find missing source files
+cvs = env.CVS(':pserver:anonymous@cvs-mirror.mozilla.org:/cvsroot')
+pyxpcom = env.SourceCode('.', cvs)
+
+# Now install
+if COMMAND_LINE_TARGETS: targets = COMMAND_LINE_TARGETS
+else: targets = DEFAULT_TARGETS
+
+installDir = ARGUMENTS.get('installDir', '')
+if not installDir or not os.path.exists(installDir):
+    places = [
+        '/usr/share/firefox/components',
+        '/usr/lib/firefox/components',
+        '/usr/local/share/firefox/components',
+        '/usr/local/lib/firefox/components',
+        r'c:\Program Files\Mozilla Firefox\Components']
+    for place in places:
+        if os.path.exists(place):
+            installDir = place
+            break
+
+if installDir.lower().endswith('components'):
+    installDir = os.path.abspath(os.path.join(installDir, '..'))
+
+if 'install' in targets and not os.path.exists(installDir):
+    raise Exception("Couldn't find firefox. Please add installDir=/usr/lib/whereMyFFIs/components")
+
+# Now do the build
+env.Export('env installDir')
+dist, install = SConscript('mozilla/extensions/python/xpcom/SConscript')
+
+# Don't install by default. Just build the dist directory
+env.Default(dist)
+env.Alias('install', install)
+

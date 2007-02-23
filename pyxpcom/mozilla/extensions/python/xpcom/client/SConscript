@@ -1,0 +1,14 @@
+import os
+
+Import('env dist install installDir')
+
+pys = [
+	'__init__.py',
+    ]
+
+pycs = map(env.Pyc, pys)
+pyos = map(env.Pyo, pys)
+allPyFiles = pys + pycs + pyos
+
+dist += env.Install('#dist/pyxpcom/client/', allPyFiles)
+install += env.Install(os.path.join(installDir, 'pyxpcom', 'client'), allPyFiles)

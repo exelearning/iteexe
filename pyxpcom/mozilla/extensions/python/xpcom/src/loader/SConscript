@@ -1,0 +1,8 @@
+import os
+
+Import('env dist xpcom install installDir')
+
+loader = env.SharedLibrary('pyloader', 'pyloader.cpp', LIBS=[xpcom])
+dist += env.Install('#dist/Components', loader)
+install += env.Install(os.path.join(installDir, 'components'), loader)
+
