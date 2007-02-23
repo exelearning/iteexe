@@ -58,6 +58,7 @@ class IdevicePane(Renderable):
         if ("action" in request.args and 
             request.args["action"][0] == "AddIdevice"):
 
+            self.package.isChanged = True
             prototype = self.prototypes.get(request.args["object"][0])
             if prototype:
                 self.package.currentNode.addIdevice(prototype.clone())

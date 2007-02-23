@@ -62,7 +62,10 @@ class Block(Renderable):
         log.debug(u"process id="+self.id)
         
         if u"object" in request.args and request.args[u"object"][0] == self.id:
-            self.package.isChanged = 1
+            # changing to a different node does not dirty package
+            if request.args[u"action"][0] != u"changeNode":
+                self.package.isChanged = 1
+                log.debug(u"package.isChanged action="+request.args[u"action"][0])
             if request.args[u"action"][0] == u"done":               
                 self.processDone(request)
                 
