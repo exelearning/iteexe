@@ -28,6 +28,8 @@ includes = ['PyXPCOM.h', 'PyXPCOM_std.h']
 
 # Build
 xpcom = env.SharedLibrary('_xpcom', sourceFiles)
+# Here we just use the includes, to force cvs to get them
+env.Command('ls $source', includes, includes)
 env.Depends(xpcom, includes)
 dist += env.Install('#dist', xpcom)
 install += env.Install(installDir, xpcom)
