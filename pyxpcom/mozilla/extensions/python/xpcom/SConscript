@@ -24,7 +24,7 @@ CPPDEFINES = [
 # Where libraries can be found
 LIBPATH = [
     '/usr/lib',
-    '/usr/lib/firefox'
+    '/usr/lib/firefox',
     '/usr/lib/python%s' % PYTHON_VER,
     ]
 
@@ -79,7 +79,7 @@ allPyFiles = pys + pycs + pyos
 env.Import('installDir')
 dist = env.Install('#dist/pyxpcom', allPyFiles)
 install = env.Install(os.path.join(installDir, 'pyxpcom'), allPyFiles)
-Export('env dist install')
+Export('env dist install PYTHON_VER')
 
 # Build the other python libs
 SConscript('client/SConscript')
@@ -88,5 +88,8 @@ SConscript('tools/SConscript')
 
 # Build the .so/.pyd and the loader component
 SConscript('src/SConscript')
+
+# Build the test component
+SConscript('test/SConscript')
 
 Return('dist install')

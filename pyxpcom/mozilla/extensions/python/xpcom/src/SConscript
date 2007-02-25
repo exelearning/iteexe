@@ -1,4 +1,4 @@
-Import('env dist install installDir')
+Import('env dist install installDir PYTHON_VER')
 
 sourceFiles = [
     'ErrorUtils.cpp',
@@ -27,9 +27,9 @@ sourceFiles = [
 includes = ['PyXPCOM.h', 'PyXPCOM_std.h']
 
 # Build
-xpcom = env.SharedLibrary('_xpcom', sourceFiles)
+xpcom = env.SharedLibrary('_xpcom', sourceFiles, LIBS=['xpcom', 'python%s' % PYTHON_VER])
 # Here we just use the includes, to force cvs to get them
-env.Command('ls $source', includes, includes)
+env.Command('#$source', includes, includes)
 env.Depends(xpcom, includes)
 dist += env.Install('#dist', xpcom)
 install += env.Install(installDir, xpcom)
@@ -37,4 +37,3 @@ install += env.Install(installDir, xpcom)
 # Make the loader
 env.Export('xpcom')
 SConscript('loader/SConscript')
-

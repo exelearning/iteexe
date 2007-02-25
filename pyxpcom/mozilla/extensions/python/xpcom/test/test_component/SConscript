@@ -1,0 +1,45 @@
+import os
+
+Import('env dist install installDir')
+
+pys = [
+    'py_test_component.py',
+    ]
+
+pycs = map(env.Pyc, pys)
+pyos = map(env.Pyo, pys)
+allPyFiles = pys + pycs + pyos
+
+testFiles = allPyFiles[:]
+dist += env.Install('#dist/pyxpcom/test/test_component/', allPyFiles)
+install += env.Install(os.path.join(installDir, 'pyxpcom', 'test', 'test_component'), allPyFiles)
+
+# The HTML file
+dist += env.Install('#dist/pyxpcom/test/test_component/', 'py_test_component.html')
+install += env.Install(os.path.join(installDir, 'pyxpcom', 'test', 'test_component'), 'py_test_component.html')
+
+# IDL file
+# Find the idl include dir
+places = [
+    '/usr/share/idl/firefox',
+    '/usr/local/share/idl/firefox',
+    ]
+includeDir = ''
+for place in places:
+    if os.path.exists(os.path.join(place, 'nsISupports.idl')):
+        includeDir = place
+
+# Create an xpidl builder
+xpidl = os.path.join(installDir, 'xpidl')
+xpidl_params = '-I %s -m typelib -e $TARGET' % includeDir 
+action = '%s %s $SOURCE' % (xpidl, xpidl_params)
+xpidlBuilder = env.Builder(action = action, src_suffix='.idl', suffix='.xpt')
+env.Append(BUILDERS={'XPIDL': xpidlBuilder})
+
+#xpt = env.XPIDL('py_test_component.xpt', 'py_test_component.idl')
+xpt = env.Command('py_test_component.xpt', 'py_test_component.idl', action)
+testFiles += xpt
+dist += env.Install('#dist/components', xpt)
+install += env.Install(os.path.join(installDir, 'components'), xpt)
+
+env.Alias('test', testFiles)
