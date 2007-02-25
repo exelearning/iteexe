@@ -120,7 +120,7 @@ class AttachmentBlock(Block):
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
 
         if self.idevice.userResources:
-            html += u"<a style=\"cursor: pointer;\" "
+            html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
             html += u" onclick=\"window.open('resources/"
             html += self.idevice.userResources[0].storageName
             html += u"', '_blank');\" >"
