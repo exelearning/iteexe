@@ -40,7 +40,6 @@ class AttachmentIdevice(Idevice):
         Idevice.__init__(self, 
                          x_(u"Attachment"), 
                          x_(u"University of Auckland"), 
-                         u"", 
                          x_(u"The attachment iDevice is used to attach "
                              "existing files to your .elp content. For example, "
                              "you might have a PDF file or a PPT presentation "

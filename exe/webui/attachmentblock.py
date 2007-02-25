@@ -81,16 +81,16 @@ class AttachmentBlock(Block):
             label += u'<span style="text-decoration:underline">'
             label += self.idevice.userResources[0].userName
             label += u'</span>\n'
-#        html += u'<table><tr style="vertical-align: bottom;"><td>' 
+        html += u'<div style="float: left;">' 
         html += common.formField('textInput',
                                  label,
                                  'path'+self.id, '',
                                  self.idevice.filenameInstruc,
                                  size=50)
-#        html += u'</td><td>'
+        html += u'</div"><div style="padding-top:28px;" >'
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
-#        html += u'</td></tr></table>' 
+        html += u'</div><br style="clear:both;" />' 
         html += u'</div>\n'
         html += u'<div class="block">\n'
         html += u'\n<b>%s</b>\n' % _(u'Label:')
