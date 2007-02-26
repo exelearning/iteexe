@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 14:14+1300\n"
-"PO-Revision-Date: 2007-02-21 16:34+1200\n"
+"PO-Revision-Date: 2007-02-27 11:53+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -2418,7 +2418,7 @@ msgstr "ラベル"
 
 #: exe/webui/element.py:1149
 msgid "newline"
-msgstr "ニューライン"
+msgstr "新規のライン"
 
 #: exe/webui/element.py:1148
 msgid "text"
@@ -2596,7 +2596,7 @@ msgstr "VK_LEFT"
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
 #: label="Tile background image?" checked="false">
 msgid "Tile background image?"
-msgstr "タイトル背景画像？"
+msgstr "背景画像？"
 
 #: exe/xului/templates/dublincore.xul:<label
 #: value="Contributors:"
