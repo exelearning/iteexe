@@ -27,7 +27,7 @@ sourceFiles = [
 includes = ['PyXPCOM.h', 'PyXPCOM_std.h']
 
 # Build
-xpcom = env.SharedLibrary('_xpcom', sourceFiles, LIBS=['xpcom', 'python%s' % PYTHON_VER])
+xpcom = env.SharedLibrary('_xpcom', sourceFiles, LIBS=['nspr4', 'xpcom', 'python%s' % PYTHON_VER])
 # Here we just use the includes, to force cvs to get them
 env.Command('#$source', includes, includes)
 env.Depends(xpcom, includes)

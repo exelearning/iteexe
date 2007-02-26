@@ -1,8 +1,8 @@
 import os
 
-Import('env dist xpcom install installDir')
+Import('env dist xpcom install installDir PYTHON_VER')
 
-loader = env.SharedLibrary('pyloader', 'pyloader.cpp', LIBS=[xpcom])
+loader = env.SharedLibrary('pyloader', 'pyloader.cpp', LIBS=[xpcom, 'python%s' % PYTHON_VER, 'xpcom'])
 dist += env.Install('#dist/Components', loader)
 install += env.Install(os.path.join(installDir, 'components'), loader)
 

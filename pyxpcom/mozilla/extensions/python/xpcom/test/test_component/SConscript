@@ -38,6 +38,8 @@ env.Append(BUILDERS={'XPIDL': xpidlBuilder})
 
 #xpt = env.XPIDL('py_test_component.xpt', 'py_test_component.idl')
 xpt = env.Command('py_test_component.xpt', 'py_test_component.idl', action)
+xpt += env.Pyc('py_test_component.py')
+xpt += env.Pyo('py_test_component.py')
 testFiles += xpt
 dist += env.Install('#dist/components', xpt)
 install += env.Install(os.path.join(installDir, 'components'), xpt)
