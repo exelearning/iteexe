@@ -57,4 +57,3 @@ dist, install = SConscript('mozilla/extensions/python/xpcom/SConscript')
 # Don't install by default. Just build the dist directory
 env.Default(dist)
 env.Alias('install', install)
-

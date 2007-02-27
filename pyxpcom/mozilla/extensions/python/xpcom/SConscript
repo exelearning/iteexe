@@ -10,7 +10,9 @@ CPPPATH = [
     '/usr/include/firefox/string',
     '/usr/include/firefox/xpcom',
     '/usr/include/firefox/nspr',
-    '/usr/include/python2.4']
+    '/usr/include/python%s' % PYTHON_VER,
+    '/usr/lib/python%s/config' % PYTHON_VER,
+    ]
 
 # What's already defined
 CPPDEFINES = [
@@ -21,6 +23,16 @@ CPPDEFINES = [
     ('PYTHON_SO', r'\"libpython%s.so\"' % PYTHON_VER),
     ]
 
+# C++ Flags
+CXXFLAGS = [
+    '-fno-rtti', '-fno-exceptions', '-Wall', '-Wconversion', '-Wpointer-arith', '-Wcast-align',
+    '-Woverloaded-virtual', '-Wsynth', '-Wno-ctor-dtor-privacy', '-Wno-non-virtual-dtor', '-Wno-long-long',
+    '-pedantic', '-fshort-wchar', '-pthread', '-pipe', '-DNDEBUG',
+    '-DTRIMMED', '-O2', '-fPIC',
+    '-Wl,-z,defs',
+    '-Wl,-h,lib_xpcom.so',
+    ]
+
 # Where libraries can be found
 LIBPATH = [
     '/usr/lib',
@@ -29,21 +41,22 @@ LIBPATH = [
     ]
 
 # How to compile .pyc and .pyo files
-pycBuilder = Builder(action = 'python%s -c "import py_compile; py_compile.compile(\'$SOURCE\')"' % PYTHON_VER, suffix = '.pyc', src_suffix = '.py')
-pyoBuilder = Builder(action = 'python%s -O -c "import py_compile; py_compile.compile(\'$SOURCE\')"' % PYTHON_VER, suffix = '.pyo', src_suffix = '.py')
+pycBuilder = Builder(action = '/usr/bin/python%s -c "import py_compile; py_compile.compile(\'$SOURCE\')"' % PYTHON_VER, suffix = '.pyc', src_suffix = '.py')
+pyoBuilder = Builder(action = '/usr/bin/python%s -O -c "import py_compile; py_compile.compile(\'$SOURCE\')"' % PYTHON_VER, suffix = '.pyo', src_suffix = '.py')
 BUILDERS = {'Pyc': pycBuilder, 'Pyo': pyoBuilder}
 
 # This is our build envrionment
 Import('env')
 env.Append(CPPPATH=CPPPATH)
 env.Append(CPPDEFINES=CPPDEFINES)
+env.Append(CXXFLAGS=CXXFLAGS)
 env.Append(LIBPATH=LIBPATH)
 env.Append(BUILDERS=BUILDERS)
 
 # Check all the stuff we need is around
 conf = Configure(env)
 # Find Python deps
-if not conf.CheckCHeader('Python.h'):
+if not conf.CheckHeader('Python.h'):
     print 'Please install python include files'
     Exit(1)
 if not conf.CheckLib('python'+PYTHON_VER):
@@ -53,9 +66,9 @@ if not conf.CheckLib('python'+PYTHON_VER):
 if not conf.CheckCXXHeader('nsXPCOM.h'):
     print 'Need mozilla xpcom headers'
     Exit(1)
-##if not conf.CheckLib('xpcom'):
-    ##print 'Need mozilla xpcom library'
-    ##Exit(1)
+if not conf.CheckLib('xpcom'):
+    print 'Need mozilla xpcom library'
+    Exit(1)
 env = conf.Finish()
 
 # Build the python stuff

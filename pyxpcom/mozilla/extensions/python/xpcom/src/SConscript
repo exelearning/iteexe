@@ -26,10 +26,12 @@ sourceFiles = [
 
 includes = ['PyXPCOM.h', 'PyXPCOM_std.h']
 
+LIBS = ['python%s' % PYTHON_VER, 'xpcom', 'xpcom_core', 'plds4', 'plc4', 'nspr4', 'pthread', 'dl', 'm', 'python2.4']
+
 # Build
-xpcom = env.SharedLibrary('_xpcom', sourceFiles, LIBS=['nspr4', 'xpcom', 'python%s' % PYTHON_VER])
+xpcom = env.SharedLibrary('_xpcom', sourceFiles, LIBS=LIBS)
 # Here we just use the includes, to force cvs to get them
-env.Command('#$source', includes, includes)
+#env.Command('#$source', includes, includes)
 env.Depends(xpcom, includes)
 dist += env.Install('#dist', xpcom)
 install += env.Install(installDir, xpcom)
