@@ -40,11 +40,31 @@ class MultiSelectIdevice(Idevice):
         Idevice.__init__(self,
                          x_(u"Multi-select"),
                          x_(u"University of Auckland"),
-                         x_(u"""Unlike the MCQ the SCORM quiz is used to test 
-the learners knowledge on a topic without providing the learner with feedback 
-to the correct answer. The quiz will often be given once the learner has had 
-time to learn and practice using the information or skill.
- """), u"", "question")
+                         x_(u"""Although more often used in formal testing 
+situations MCQs can be used as a testing tool to stimulate thought and  
+discussion on topics students may feel a little reticent in responding to. 
+
+When designing a MCQ test consider the following:
+<ul>
+<li> What learning outcomes are the questions testing</li>
+<li>    What intellectual skills are being tested</li>
+<li> What are the language skills of the audience</li>
+<li> Gender and cultural issues</li>
+<li> Avoid grammar language and question structures that might provide 
+     clues</li>
+</ul>
+ """), x_(u"""When building an MCQ consider the following: <ul>
+<li> Use phrases that learners are familiar with and have 
+encountered in their study </li>
+<li> Keep responses concise </li>
+<li> There should be some consistency between the stem and the responses </li>
+<li> Provide enough options to challenge learners to think about their response
+</li>
+<li> Try to make sure that correct responses are not more detailed than the 
+distractors </li>
+<li> Distractors should be incorrect but plausible </li>
+</ul>
+"""), u"", "question")
         self.emphasis   = Idevice.SomeEmphasis
         self.questions  = []
         self.addQuestion()

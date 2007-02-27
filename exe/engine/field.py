@@ -895,17 +895,17 @@ class SelectQuestionField(Field):
         Field.__init__(self, name, instruc)
         self.question             = ""
         self.options              = []
-        #self.addOption()
         self._questionInstruc      = x_(u"""Enter the question stem. 
-The quest should be clear and unambiguous. Avoid negative premises 
-as these can tend to be ambiguous.""")
-        self._optionInstruc        = x_(u"""Enter an answer option. Provide 
-a range of plausible distractors (usually 3-4) as well as the correct answer. 
-Click on the &lt;Add another option&gt; button to add another answer.""")
-        self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
-click the radio button next to the correct option.""")
+The question should be clear and unambiguous. Avoid negative premises as these 
+can tend to confuse learners.""")
+        self._optionInstruc        = x_(u"""Enter the available choices here. 
+You can add options by clicking the "Add another option" button. Delete options by 
+clicking the red X next to the option.""")
+        self._correctAnswerInstruc = x_(u"""Select as many correct answer 
+options as required by clicking the radio button beside the option.""")
         self.feedback              = ""
-        self.feedbackInstruc       = ""
+        self.feedbackInstruc       = x_(u"""Type in the feedback you want 
+to provide the learner with.""")
     
     
     # Properties
