@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 14:14+1300\n"
-"PO-Revision-Date: 2007-02-27 11:53+1200\n"
+"PO-Revision-Date: 2007-02-27 14:54+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
 "MIME-Version: 1.0\n"
@@ -2788,7 +2788,7 @@ msgstr "SCORM 1.2"
 #: n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"新規\" accesskey=\"n\""
+msgstr "label=\"新規作成\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Creative Commons
@@ -2807,7 +2807,7 @@ msgstr "IMS コンテンツパッケージ1.1.3"
 #: n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"開く\" accesskey=\"o\""
+msgstr "label=\"ファイルを開く\" accesskey=\"o\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem
 #: value="Developing
@@ -2849,7 +2849,7 @@ msgstr "ソース："
 #: n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"保存する\" accesskey=\"s\""
+msgstr "label=\"上書き保存する\" accesskey=\"s\""
 
 #: exe/xului/templates/packageproperties.xul:<caption
 #: id="ppCaptionTaxonomy"
@@ -2869,7 +2869,7 @@ msgstr "言語："
 #: n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"名前をつけて保存\" accesskey=\"a\""
+msgstr "label=\"名前をつけて保存する\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<label
 #: value="Level 1:"
