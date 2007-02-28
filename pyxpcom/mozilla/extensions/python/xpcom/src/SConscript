@@ -5,16 +5,15 @@ Import('env dist install installDir PYTHON_VER')
 sourceFiles = [
     'ErrorUtils.cpp',
     'PyGBase.cpp',
+    'PyGInputStream.cpp',
     'PyGModule.cpp',
     'PyGStub.cpp',
-    'PyGInputStream.cpp',
     'PyGWeakReference.cpp',
     'PyIClassInfo.cpp',
     'PyIComponentManager.cpp',
-    'PyIComponentManagerObsolete.cpp',
-    'PyIInputStream.cpp',
     'PyIEnumerator.cpp',
     'PyIID.cpp',
+    'PyIInputStream.cpp',
     'PyIInterfaceInfo.cpp',
     'PyIInterfaceInfoManager.cpp',
     'PyISimpleEnumerator.cpp',
@@ -24,24 +23,24 @@ sourceFiles = [
     'TypeObject.cpp',
     'VariantUtils.cpp',
     'dllmain.cpp',
-    'xpcom.cpp']
+    ]
 
-includes = ['PyXPCOM.h', 'PyXPCOM_std.h']
+includes = ['PyXPCOM.h', 'PyXPCOM_std.h', 'readme.html']
 
 LIBS = ['python%s' % PYTHON_VER, 'xpcom', 'xpcom_core', 'plds4', 'plc4', 'nspr4', 'pthread', 'dl', 'm', 'python2.4']
 
 # Build
 
-if os.name == 'nt':
-    _xpcom = env.SharedLibrary('_xpcom', sourceFiles, SHLIBPREFIX='', SHLIBSUFFIX='.pyd', LIBS=LIBS)
-else:
-    _xpcom = env.SharedLibrary('_xpcom', sourceFiles, SHLIBPREFIX='', LIBS=LIBS)
+_xpcomDeps = env.Object(sourceFiles, LIBS=LIBS)
 
 # Here we just use the includes, to force cvs to get them
 #env.Command('', includes, includes)
-env.Depends(_xpcom, includes)
-dist += env.Install('#dist/xpcom', _xpcom)
-install += env.Install(os.path.join(installDir, 'xpcom'), _xpcom)
+env.Depends(_xpcomDeps, includes)
+
+# Make the module
+env.Export('_xpcomDeps')
+env.SConscript('module/SConscript')
 
 # Make the loader
-SConscript('loader/SConscript')
+env.SConscript('loader/SConscript')
+

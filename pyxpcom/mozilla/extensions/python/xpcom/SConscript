@@ -185,7 +185,7 @@ if not conf.CheckLib('python'+PYTHON_VER):
     print 'Please install python lib'
     Exit(1)
 # Find mozilla deps
-if not conf.CheckCXXHeader('xpcom-config.h'):
+if not conf.CheckHeader('xpcom-config.h'):
     print 'Need mozilla xpcom headers'
     Exit(1)
 #if not conf.CheckLib('xpcom'):
@@ -196,13 +196,14 @@ env = conf.Finish()
 # Build the python stuff
 
 pys = [
-	'__init__.py',
-	'components.py',
-	'file.py',
-	'nsError.py',
-	'register.py',
-	'xpcom_consts.py',
-	'xpt.py',
+    '__init__.py',
+    'components.py',
+    'file.py',
+    'nsError.py',
+    'primitives.py',
+    'shutdown.py',
+    'xpcom_consts.py',
+    'xpt.py',
 	]
 pycs = map(env.Pyc, pys)
 pyos = map(env.Pyo, pys)

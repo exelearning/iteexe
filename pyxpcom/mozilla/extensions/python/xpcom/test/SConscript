@@ -4,14 +4,14 @@ Import('env dist install installDir')
 
 pys = [
     'pyxpcom_test_tools.py',
-    'test_com_exceptions.py',
-    'test_isupports_primitives.py',
-    'test_streams.py',
-    'test_test_component.py',
     'regrtest.py',
+    'test_com_exceptions.py',
     'test_comfile.py',
     'test_components.py',
+    'test_isupports_primitives.py',
     'test_misc.py',
+    'test_streams.py',
+    'test_test_component.py',
     'test_weakreferences.py',
     ]
 

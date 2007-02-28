@@ -1,0 +1,17 @@
+import os
+
+Import('env dist install installDir PYTHON_VER')
+
+env.Append(INCLUDE=['..'])
+env.Import('_xpcomDeps')
+
+LIBS = ['python%s' % PYTHON_VER, 'xpcom', 'xpcom_core', 'plds4', 'plc4', 'nspr4', 'pthread', 'dl', 'm', 'python2.4']
+                                                            
+if os.name == 'nt':
+    _xpcomDeps = env.SharedLibrary('_xpcom', ['_xpcom.so', _xpcomDeps], SHLIBPREFIX='', SHLIBSUFFIX='.pyd', LIBS=LIBS)
+else:
+    _xpcomDeps = env.SharedLibrary('_xpcom', ['_xpcom.so', _xpcomDeps], SHLIBPREFIX='', LIBS=LIBS)
+
+dist += env.Install('#dist/xpcom', _xpcom)
+install += env.Install(os.path.join(installDir, 'xpcom'), _xpcom)
+

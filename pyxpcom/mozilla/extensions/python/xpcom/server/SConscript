@@ -3,12 +3,12 @@ import os
 Import('env dist install installDir')
 
 pys = [
-	'__init__.py',
-	'enumerator.py',
-	'factory.py',
-	'loader.py',
-	'module.py',
-	'policy.py',
+    '__init__.py',
+    'enumerator.py',
+    'factory.py',
+    'loader.py',
+    'module.py',
+    'policy.py',
 	]
 
 pycs = map(env.Pyc, pys)
