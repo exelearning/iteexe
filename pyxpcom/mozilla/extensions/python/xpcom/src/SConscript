@@ -1,3 +1,5 @@
+import os
+
 Import('env dist install installDir PYTHON_VER')
 
 sourceFiles = [
@@ -29,13 +31,17 @@ includes = ['PyXPCOM.h', 'PyXPCOM_std.h']
 LIBS = ['python%s' % PYTHON_VER, 'xpcom', 'xpcom_core', 'plds4', 'plc4', 'nspr4', 'pthread', 'dl', 'm', 'python2.4']
 
 # Build
-xpcom = env.SharedLibrary('_xpcom', sourceFiles, LIBS=LIBS)
+
+if os.name == 'nt':
+    _xpcom = env.SharedLibrary('_xpcom', sourceFiles, SHLIBPREFIX='', SHLIBSUFFIX='.pyd', LIBS=LIBS)
+else:
+    _xpcom = env.SharedLibrary('_xpcom', sourceFiles, SHLIBPREFIX='', LIBS=LIBS)
+
 # Here we just use the includes, to force cvs to get them
-#env.Command('#$source', includes, includes)
-env.Depends(xpcom, includes)
-dist += env.Install('#dist', xpcom)
-install += env.Install(installDir, xpcom)
+#env.Command('', includes, includes)
+env.Depends(_xpcom, includes)
+dist += env.Install('#dist/xpcom', _xpcom)
+install += env.Install(os.path.join(installDir, 'xpcom'), _xpcom)
 
 # Make the loader
-env.Export('xpcom')
 SConscript('loader/SConscript')

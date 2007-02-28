@@ -10,5 +10,5 @@ pycs = map(env.Pyc, pys)
 pyos = map(env.Pyo, pys)
 allPyFiles = pys + pycs + pyos
 
-dist += env.Install('#dist/pyxpcom/client/', allPyFiles)
-install += env.Install(os.path.join(installDir, 'pyxpcom', 'client'), allPyFiles)
+dist += env.Install('#dist/xpcom/client/', allPyFiles)
+install += env.Install(os.path.join(installDir, 'xpcom', 'client'), allPyFiles)

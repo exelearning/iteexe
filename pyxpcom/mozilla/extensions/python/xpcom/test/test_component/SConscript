@@ -11,12 +11,12 @@ pyos = map(env.Pyo, pys)
 allPyFiles = pys + pycs + pyos
 
 testFiles = allPyFiles[:]
-dist += env.Install('#dist/pyxpcom/test/test_component/', allPyFiles)
-install += env.Install(os.path.join(installDir, 'pyxpcom', 'test', 'test_component'), allPyFiles)
+dist += env.Install('#dist/xpcom/test/test_component/', allPyFiles)
+install += env.Install(os.path.join(installDir, 'xpcom', 'test', 'test_component'), allPyFiles)
 
 # The HTML file
-dist += env.Install('#dist/pyxpcom/test/test_component/', 'py_test_component.html')
-install += env.Install(os.path.join(installDir, 'pyxpcom', 'test', 'test_component'), 'py_test_component.html')
+dist += env.Install('#dist/xpcom/test/test_component/', 'py_test_component.html')
+install += env.Install(os.path.join(installDir, 'xpcom', 'test', 'test_component'), 'py_test_component.html')
 
 # IDL file
 # Find the idl include dir

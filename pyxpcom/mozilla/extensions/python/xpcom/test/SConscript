@@ -19,10 +19,10 @@ pycs = map(env.Pyc, pys)
 pyos = map(env.Pyo, pys)
 allPyFiles = pys + pycs + pyos
 
-dist += env.Install('#dist/pyxpcom/test/', allPyFiles)
-install += env.Install(os.path.join(installDir, 'pyxpcom', 'test'), allPyFiles)
+dist += env.Install('#dist/xpcom/test/', allPyFiles)
+install += env.Install(os.path.join(installDir, 'xpcom', 'test'), allPyFiles)
 
-dist += env.Install('#dist/pyxpcom/test/', 'test_test_component.js')
-install += env.Install(os.path.join(installDir, 'pyxpcom', 'test'), 'test_test_component.js')
+dist += env.Install('#dist/xpcom/test/', 'test_test_component.js')
+install += env.Install(os.path.join(installDir, 'xpcom', 'test'), 'test_test_component.js')
     
 SConscript('test_component/SConscript')

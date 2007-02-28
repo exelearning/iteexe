@@ -1,8 +1,12 @@
 import os
 
-Import('env dist xpcom install installDir PYTHON_VER')
+Import('env dist install installDir PYTHON_VER')
 
-loader = env.SharedLibrary('pyloader', 'pyloader.cpp', LIBS=[xpcom, 'python%s' % PYTHON_VER, 'xpcom'])
+env.Append(INCLUDE=['..'])
+
+LIBS = ['python%s' % PYTHON_VER, 'xpcom', 'xpcom_core', 'plds4', 'plc4', 'nspr4', 'pthread', 'dl', 'm', 'python2.4']
+                                                            
+loader = env.SharedLibrary('pyloader', 'pyloader.cpp', LIBS=LIBS)
 dist += env.Install('#dist/Components', loader)
 install += env.Install(os.path.join(installDir, 'components'), loader)
 
