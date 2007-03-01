@@ -1,0 +1,33 @@
+#: exe/resources/internal/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
+#: exe/xului/templates/mainpage.xul:<menu
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
+msgid ""
+"_: suggested by quillevere"
+"label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"fusionner\" accesskey=\"m\""
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menu
+msgid ""
+"_: suggested by quillevere"
+"label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Projets récents\" accesskey=\"r\""
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('scorm2004')" accesskey="c" label="SCORM 2004">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/mainpage.xul:<menuitem
+msgid ""
+"_: suggested by quillevere"
+"label=\"SCORM 2004\" accesskey=\"c\""
+msgstr "label=\"SCORM 2004\" accesskey=\"c\""
+
+#: exe/xului/templates/packageproperties.xul:<menulist
+#: onchange="this.style.color = 'blue'" id="pp_license" label="Select
+#: License">
+#: build/bdist.linux-x86_64/rpm/BUILD/exe-0.20.alpha2/exe/xului/templates/packageproperties.xul:<menulist
+msgid ""
+"_: suggested by quillevere"
+"Select License"
+msgstr "Choisissez une licence"
