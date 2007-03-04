@@ -39,7 +39,7 @@ env.Depends(_xpcomDeps, includes)
 
 # Make the module
 env.Export('_xpcomDeps')
-env.SConscript('module/SConscript')
+#env.SConscript('module/SConscript')
 
 # Make the loader
 env.SConscript('loader/SConscript')

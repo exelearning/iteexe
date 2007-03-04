@@ -200,9 +200,8 @@ pys = [
     'components.py',
     'file.py',
     'nsError.py',
-    'primitives.py',
-    'shutdown.py',
-    'xpcom_consts.py',
+    'register.py',  
+    'automagicPyXPCOM.py',  
     'xpt.py',
 	]
 pycs = map(env.Pyc, pys)

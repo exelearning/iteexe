@@ -21,7 +21,7 @@ import os, shutil
 
 # This is our build envrionment
 env = Environment()
-#env.Append(CVSCOFLAGS=['-r', 'FIREFOX_2_0_0_1_RELEASE'])
+env.Append(CVSCOFLAGS=['-r', 'FIREFOX_2_0_0_1_RELEASE'])
 
 # Tell it where to find missing source files
 cvs = env.CVS(':pserver:anonymous@cvs-mirror.mozilla.org:/cvsroot')
