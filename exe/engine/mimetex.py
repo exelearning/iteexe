@@ -2,7 +2,7 @@ import sys, os, shutil
 import signal
 import logging
 import warnings
-from subprocess import Popen, PIPE
+import subprocess
 from exe.engine.path import Path
 from exe import globals as G
 
@@ -42,7 +42,10 @@ def compile(latex, fontsize=4):
         oldsig = signal.getsignal(signal.SIGCHLD)
         signal.signal(signal.SIGCHLD, signal.SIG_DFL)
     try:
-        process = Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdout=PIPE, stderr=PIPE)
+	# start without console window on Windows
+	startupinfo = subprocess.STARTUPINFO()
+	startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        process = subprocess.Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
         returnCode = process.wait()
         log.debug(u"mimetex returnCode=%d", returnCode)
         if returnCode != 0:
