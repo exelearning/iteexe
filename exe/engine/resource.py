@@ -24,7 +24,7 @@ import logging
 import os
 from string               import Template
 from exe.engine.persist   import Persistable
-from exe.engine.path      import Path
+from exe.engine.path      import Path, toUnicode
 
 log = logging.getLogger(__name__)
 
@@ -57,7 +57,7 @@ class _Resource(Persistable):
         # _storageName may be changed when the package is set
         self._storageName = self._fn2ascii(resourceFile)
         # self._userName is the basename name originally given by the user
-        self._userName = self._storageName
+        self._userName = resourceFile.encode('utf-8')
         self._originalFile = resourceFile
         try:
             self.checksum = resourceFile.md5
@@ -98,7 +98,11 @@ class _Resource(Persistable):
             self._addOurselvesToPackage()
         # Remove our old file if necessary
         if oldPackage and self.checksum not in oldPackage.resources:
-            oldPath.remove()
+            if oldPath.exists():
+                oldPath.remove()
+            else:
+                log.error("Tried to delete a resource that's already not there anymore: "
+                          "filename=\"%s\" userName=\"%s\"" % (oldPath, self.userName))
         # If our Idevice has not already moved, cut ourselves off from it
         if self._idevice and self._idevice.parentNode.package is not self._package:
             self._idevice.userResources.remove(self)
@@ -127,14 +131,16 @@ class _Resource(Persistable):
             newName = siblings[0]._storageName
             if Path(self._originalFile).dirname() == self._package.resourceDir and self._storageName != newName:
                 self._originalFile.remove()
-            self._storageName = self._fn2ascii(newName)
+            self._storageName = newName
         else:
             if Path(self._originalFile).dirname() == self._package.resourceDir:
                 log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
             else:
-                filename = (self._package.resourceDir/self._originalFile.basename()).unique()
-                self._storageName = self._fn2ascii(filename.basename())
-                self._originalFile.copy(filename)
+                filename = (self._package.resourceDir/self._originalFile.basename())
+                storageName = self._fn2ascii(filename)
+                storageName = (self._package.resourceDir/storageName).unique()
+                self._storageName = str(storageName.basename())
+                self._originalFile.copy(self.path)
         siblings.append(self)
 
     # Public methods
@@ -151,19 +157,18 @@ class _Resource(Persistable):
         return the string
         """
         return self._storageName
-
-
+    
     # Protected methods
 
     def _fn2ascii(self, filename):
         """
         Changes any filename to pure ascii, returns only the basename
-        """
+        """     
         nameBase, ext = Path(Path(filename).basename()).splitext()
         # Check if the filename is ascii so that twisted can serve it
         try: nameBase.encode('ascii')
         except UnicodeEncodeError:
-            nameBase = nameBase.encode('utf8').encode('hex')
+            nameBase = nameBase.encode('utf-8').encode('hex')
         # Encode the extension separately so that you can keep file types a bit
         # at least
         try:
