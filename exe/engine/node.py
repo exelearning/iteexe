@@ -213,18 +213,13 @@ class Node(Persistable):
         Changes the package of this node and all it's children
         """
         log.debug(u"mergeIntoPackage " + package.name)
-
+        
         self._package = package
         self._id      = package._regNewNode(self)
 
         for idevice in self.idevices:
-            resourceNamesChanged = []
             for resource in idevice.userResources:
-                nameChanged = resource.changePackage(package)
-                if nameChanged:
-                    resourceNamesChanged.append(nameChanged)
-
-            idevice.onResourceNamesChanged(resourceNamesChanged)
+                resource.package = package
 
         for child in self.children:
             child.mergeIntoPackage(package)

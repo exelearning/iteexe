@@ -397,16 +397,6 @@ these in a gallery context rather then individually.</p>"""),
         """
         return GalleryImage(self, '', imagePath)
 
-    def onResourceNamesChanged(self, resourceNamesChanged):
-        """
-        Called when the iDevice's resources need their names changed
-        """
-        for oldName, newName in resourceNamesChanged:
-            for image in self.images:
-                if image._imageResource.storageName == newName:
-                    htmlPath = self.parentNode.package.resourceDir/newName
-                    image._createHTMLPopupFile(htmlPath)
-
     def recreateResources(self):
         """
         Recreates all the thumbnails and html pages from the original image

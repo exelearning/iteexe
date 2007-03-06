@@ -95,7 +95,7 @@ class _Resource(Persistable):
             oldPath = self._originalFile
         self._package = package
         if self._package:
-            self._addOurselvesToPackage()
+            self._addOurselvesToPackage(oldPath)
         # Remove our old file if necessary
         if oldPackage and self.checksum not in oldPackage.resources:
             if oldPath.exists():
@@ -116,7 +116,7 @@ class _Resource(Persistable):
 
     # Protected methods
 
-    def _addOurselvesToPackage(self):
+    def _addOurselvesToPackage(self, oldPath):
         """
         Adds ourselves into self._package.resources.
         Don't call if self._package is None.
@@ -129,18 +129,18 @@ class _Resource(Persistable):
             # It probably means we're upgrading from pre-single-file-resources or someone has created the file to be imported inside the resource dir
             # We are assuming that it's not a file used by other resources...
             newName = siblings[0]._storageName
-            if Path(self._originalFile).dirname() == self._package.resourceDir and self._storageName != newName:
-                self._originalFile.remove()
+            if oldPath.dirname() == self._package.resourceDir and self._storageName != newName:
+                oldPath.remove()
             self._storageName = newName
         else:
-            if Path(self._originalFile).dirname() == self._package.resourceDir:
+            if Path(oldPath).dirname() == self._package.resourceDir:
                 log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
             else:
-                filename = (self._package.resourceDir/self._originalFile.basename())
+                filename = (self._package.resourceDir/oldPath.basename())
                 storageName = self._fn2ascii(filename)
                 storageName = (self._package.resourceDir/storageName).unique()
                 self._storageName = str(storageName.basename())
-                self._originalFile.copy(self.path)
+                oldPath.copy(self.path)
         siblings.append(self)
 
     # Public methods
@@ -224,7 +224,7 @@ class Resource(_Resource):
             self.checksum = self.path.md5
             self._originalFile = self.path  # Pretend we're a newly added file
             try:
-                self._addOurselvesToPackage()
+                self._addOurselvesToPackage(self.path)
             finally:
                 del self._originalFile
         else:
