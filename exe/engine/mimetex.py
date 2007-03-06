@@ -43,8 +43,11 @@ def compile(latex, fontsize=4):
         signal.signal(signal.SIGCHLD, signal.SIG_DFL)
     try:
 	# start without console window on Windows
-	startupinfo = subprocess.STARTUPINFO()
-	startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        if sys.platform[:3] == "win":
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        else:
+            startupinfo = None
         process = subprocess.Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
         returnCode = process.wait()
         log.debug(u"mimetex returnCode=%d", returnCode)
