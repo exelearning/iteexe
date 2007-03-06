@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 14:14+1300\n"
-"PO-Revision-Date: 2007-03-06 13:23+1200\n"
+"PO-Revision-Date: 2007-03-06 13:33+1200\n"
 "Last-Translator: \n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
 "MIME-Version: 1.0\n"
@@ -3306,7 +3306,7 @@ msgstr "Bashkirisch"
 #: n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Afsluiten\" accesskey=\"a\""
+msgstr "label=\"Beenden\" accesskey=\"a\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem
 #: value="eu" id="dcmieu"
