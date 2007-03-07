@@ -2,5 +2,5 @@
 
 rights:
   Jun = u'view, translate, review, archive, pocompile, assign'
-  default = u'view, suggest, archive, pocompile'
+  default = u'view, suggest, translate, archive, pocompile'
   nobody = u'view'

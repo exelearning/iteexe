@@ -1,4 +1,4 @@
-# Pootle preferences for project exe, language is
+# Pootle preferences for project exe, language ru
 
 rights:
 	default = u'view, suggest, translate, archive, pocompile'
