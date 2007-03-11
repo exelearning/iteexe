@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-19 14:14+1300\n"
+"POT-Creation-Date: 2007-03-12 11:09+1300\n"
 "PO-Revision-Date: 2006-12-06 20:36+1300\n"
 "Last-Translator: Roel Cantada <matangdilis@yahoo.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:252 exe/xului/mainpage.py:417
-#: exe/xului/mainpage.py:536 exe/xului/mainpage.py:558
-#: exe/xului/mainpage.py:579
+#: exe/xului/mainpage.py:259 exe/xului/mainpage.py:486
+#: exe/xului/mainpage.py:613 exe/xului/mainpage.py:635
+#: exe/xului/mainpage.py:656
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -48,12 +48,12 @@ msgstr ""
 "\"Hanapin ang sakong txt (sa sakong applet) \n"
 "at buksan ito. Kopyahin ang laman ng sako <ctrl A, ctrl C> sa pitak para sa code ng applet. "
 
-#: exe/webui/block.py:227
+#: exe/webui/block.py:230
 msgid "---Move To---"
 msgstr "---Ilipat Sa---"
 
-#: exe/xului/mainpage.py:270 exe/xului/mainpage.py:327
-#: exe/xului/mainpage.py:409
+#: exe/xului/mainpage.py:277 exe/xului/mainpage.py:385
+#: exe/xului/mainpage.py:478
 msgid ". Please use ASCII names."
 msgstr ". Gumamit po ng mga pangalang ASCII."
 
@@ -103,7 +103,7 @@ msgstr ""
 "maigsing buod na salita tungkol sa mga punong aspekto ng bawat larawan\n"
 "</p>"
 
-#: exe/engine/attachmentidevice.py:60
+#: exe/engine/attachmentidevice.py:59
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Bigyan ng etiketa ang bawat kalakip.  Makabubuti na isama ang uri ng sako.  Eg. pdf, ppt, atb.</p><p>Ang pagbanggit ng laki ay iminumungkahi rin upang pagkatapos mailuwas ang pakete mo sa isang web site, magkakaroon ng ideya ang mga tao kung gaano katagal ilusong ang kalakip na ito.</p><p>Halimbawa: <code>Hula ng Benta.doc (500kb)</code></p>"
 
@@ -124,7 +124,8 @@ msgstr ""
 "iklik ang Itago/Ilantad ang Salita na buton sa ibaba.</p>"
 
 #: exe/engine/field.py:506
-msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalzation checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitilization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitilization\" is not, \"elephant\" will also be accepted.</p>"
+#, fuzzy
+msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Kapag walang tsek, tatanggapin ang maliit na bilang ng maling baybay at laki ng titik.  Kapag may tsek, tanging eksaktong tugma sa baybay at laki ng titik ang tatanggapin.</p><p><strong>Halimbawa:</strong> Kung ang tamang sagot ay <code>Elepante</code> ang <code>elepante</code> at <code>Elipante</code> ay parehong hahatulan na <em>\"malapit na\"</em> ng algoritmo dahil isang titik lamang ang mali, kahit na buhay ang \"Suriin ang Laki ng Titik\".</p><p>Kapag patay ang pagsusuri ng laki ng titik sa halimbawa sa itaas, ang maliit na titik na  <code>e</code> ay hindi ituturing na mali at tatanggapin din ang  <code>elipante</code> </p><p>Kung sabay pinagana ang  \"Istriktong Marka\" at \"Suriin ang Laki ng Titik\", ang tanging wastong sagot ay \"Elepante\". Kung ang tsinekan lamang ay  \"Istriktong Marka\" at hindi ang  \"Suriin ang Laki ng Titik\", ang \"elepante\" ay tatanggapin din. </p>"
 
 #: exe/engine/field.py:527
@@ -132,16 +133,17 @@ msgid "<p>If this option is checked, submitted answers with different capitaliza
 msgstr "<p>Kapag tsinekan ang opsiyong ito, ang mga ipinasang sagot na iba ang laki ng titik ay mamarkahang mali.</p>"
 
 #: exe/engine/field.py:532
+#, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
-"learner types it rather then all the words being marked the end of the \n"
+"learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 "<p>Kapag binuhay ang opsiyong ito, ang bawat salita ay mamarkahan\n"
 "habang nagtiteklado ang mag-aaral sa halip na markahan lahat ng \n"
 "salita sa dulo ng pagsasanay.</p>"
 
-#: exe/engine/field.py:760
+#: exe/engine/field.py:769
 #, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Pumili ng mga simbolo sa editor ng teksto sa ibaba upang makalikha ng pormulang pangmatematika.  Ang bawat simbolo ay ipapakita sa pitak na pandispley, sa wikang pangmatematika na LATEX, at maaari itong silipin sa pamamagitan ng &lt;Silipin&gt; na buton sa ibaba."
@@ -252,16 +254,11 @@ msgstr ""
 "Maaaring magbigay ng himaton upang\n"
 "matulungan ang mag-aaral na masagot ang tanong."
 
-#: exe/webui/editorpane.py:74
-#, fuzzy
-msgid "A pedagogical tip allows you to describe your intended use and the pedagogy behind the device's development."
-msgstr "Sa pamamagitan ng tip na pangpedagohiya, mailalarawan mo ang binabalak mong paggamit nito, at ang pedagohiya na pinagbatayan sa pagbuo ng mga device."
-
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
 msgstr "Isang simpleng usapin"
 
-#: exe/webui/editorpane.py:253
+#: exe/webui/editorpane.py:256
 msgid "Actions"
 msgstr "Mga Aksiyon"
 
@@ -272,35 +269,32 @@ msgstr "Mga Aksiyon"
 msgid "Activity"
 msgstr "Aktibidad"
 
-#: exe/webui/editorpane.py:238
+#: exe/webui/editorpane.py:241
 #, fuzzy
 msgid "Add Field"
 msgstr "Magdagdag ng sako"
 
-#: exe/webui/element.py:297
+#: exe/webui/element.py:298
 msgid "Add Image"
 msgstr "Idagdag ang Larawan"
 
-#: exe/webui/element.py:620
+#: exe/webui/element.py:621
 msgid "Add JPEG Image"
 msgstr "Idagdag ang JPEG na Larawan"
 
-#: exe/webui/editorpane.py:87
+#: exe/webui/editorpane.py:90
 #, fuzzy
 msgid "Add a flash video to your iDevice."
 msgstr "Magdagdag ng interaktibong puna sa iyong iDevice."
 
-#: exe/webui/editorpane.py:88
+#: exe/webui/editorpane.py:80
 #, fuzzy
-msgid "Add a mp3 file to your iDevice."
-msgstr "Magdagdag ng interaktibong puna sa iyong iDevice."
-
-#: exe/webui/editorpane.py:77
-msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the device."
+msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
 msgstr "Magdagdag ng isang linya ng teksto sa isang iDevice. Kapakipakinabang kung nais mo ang abilidad na makapaglagay ng etiketa sa loob ng device."
 
-#: exe/webui/editorpane.py:80
-msgid "Add a text entry box to an iDevice. Used for entering description textual content."
+#: exe/webui/editorpane.py:83
+#, fuzzy
+msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
 msgstr "Magdagdag ng isang kahon na pasukan ng teksto sa isang iDevice. Ginagamit sa pagpasok ng mga deskripsiyon na tekstong nilalaman."
 
 #: exe/idevices/appletidevice.py:61
@@ -313,11 +307,22 @@ msgstr ""
 "maliban sa sakong .txt, nang isa-isa sa pamamagitan ng mga buton na magdagdag at mag-ahon. Ang \n"
 "mga sako, matapos maikarga ay ipapakita sa ilalim ng pitak para sa code ng Applet."
 
-#: exe/webui/editorpane.py:83
-msgid "Add an image to your iDevice. Enables the selection of an image from your stored picture files."
+#: exe/webui/editorpane.py:86
+#, fuzzy
+msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
 msgstr "Magdagdag ng larawan sa iyong iDevice. Pinapahintulutan nito ang pagpili ng larawan mula sa iyong mga nakaimbak na sako ng larawan."
 
-#: exe/webui/element.py:1342 exe/idevices/testquestionelement.py:106
+#: exe/webui/editorpane.py:89
+#, fuzzy
+msgid "Add an interactive feedback field to your iDevice."
+msgstr "Magdagdag ng interaktibong puna sa iyong iDevice."
+
+#: exe/webui/editorpane.py:91
+#, fuzzy
+msgid "Add an mp3 file to your iDevice."
+msgstr "Magdagdag ng interaktibong puna sa iyong iDevice."
+
+#: exe/webui/element.py:1350 exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
 msgstr "Magdagdag ng isa pang Opsiyon"
 
@@ -330,7 +335,7 @@ msgstr "Magdagdag ng isa pang Tanong"
 msgid "Add another activity"
 msgstr "Magdagdag ng isa pang Opsiyon"
 
-#: exe/webui/element.py:1554
+#: exe/webui/element.py:1562
 msgid "Add another option"
 msgstr "Magdagdag ng isa pang opsiyon"
 
@@ -345,10 +350,6 @@ msgstr "Magdagdag ng sako"
 #: exe/webui/galleryblock.py:182
 msgid "Add images"
 msgstr "Magdagdag ng larawan"
-
-#: exe/webui/editorpane.py:86
-msgid "Add interactive feedback to your iDevice."
-msgstr "Magdagdag ng interaktibong puna sa iyong iDevice."
 
 #: exe/webui/imagewithtextblock.py:79 exe/webui/editorelement.py:221
 #: exe/webui/multimediablock.py:83 exe/webui/flashwithtextblock.py:79
@@ -385,7 +386,7 @@ msgstr ""
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Pahintulutan ang kusang pagkumpleto kapag pinupuno ng tagagamit ang mga patlang."
 
-#: exe/engine/multichoiceidevice.py:59
+#: exe/engine/multichoiceidevice.py:59 exe/engine/multiselectidevice.py:43
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -429,7 +430,7 @@ msgstr ""
 "at isipin ang anumang kondisyon na maaaring makatulong o maging\n"
 "sagabal sa mag-aaral na maisakatuparan ang gawain."
 
-#: exe/webui/element.py:919
+#: exe/webui/element.py:920
 #, fuzzy
 msgid "Answsers"
 msgstr "Ipakita ang mga Sagot"
@@ -451,7 +452,7 @@ msgstr "Artikulo"
 msgid "Attachment"
 msgstr "Kalakip"
 
-#: exe/engine/attachmentidevice.py:99
+#: exe/engine/attachmentidevice.py:98
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Ang kalakip na %s ay walang parentNode"
@@ -468,17 +469,17 @@ msgstr "Pamagat ng Buton"
 msgid "Can a student post to this forum?:"
 msgstr "Maaari bang magpaskil ang mag-aaral sa talakayang ito?:"
 
-#: exe/webui/editorpane.py:261 exe/webui/preferencespage.py:94
+#: exe/webui/editorpane.py:264 exe/webui/preferencespage.py:94
 msgid "Cancel"
 msgstr "Balewalain"
 
-#: exe/xului/mainpage.py:270 exe/xului/mainpage.py:325
-#: exe/xului/mainpage.py:409
+#: exe/xului/mainpage.py:277 exe/xului/mainpage.py:383
+#: exe/xului/mainpage.py:478
 msgid "Cannot access directory named "
 msgstr "Hindi mapasok ang pinangalanang direktoryo "
 
 #: exe/webui/imagewithtextblock.py:84 exe/webui/editorelement.py:322
-#: exe/webui/flashwithtextblock.py:84 exe/webui/element.py:409
+#: exe/webui/flashwithtextblock.py:84 exe/webui/element.py:410
 #: exe/webui/imagemagnifierblock.py:92 exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "Pamagat:"
@@ -491,7 +492,7 @@ msgstr "Pag-aaral ng Kaso"
 msgid "Change Image"
 msgstr "Baguhin ang Larawan"
 
-#: exe/webui/element.py:788
+#: exe/webui/element.py:789
 msgid "Check Caps?"
 msgstr "Susuriin ba ang Titik?"
 
@@ -537,7 +538,7 @@ msgstr ""
 "ang larawan sa ibaba o ang buton na \"Idagdag ang Larawan\" upang mapili ang\n"
 "sako ng larawan na palalakihin."
 
-#: exe/engine/attachmentidevice.py:57
+#: exe/engine/attachmentidevice.py:56
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Iklik ang <strong>Pumili ng sako</strong>, hanapin ang sako na nais mong ilakip at piliin ito."
 
@@ -553,7 +554,7 @@ msgstr "Iklik para sa mga panuto ng pagkumpleto"
 msgid "Click here"
 msgstr "Iklik ito"
 
-#: exe/engine/field.py:767
+#: exe/engine/field.py:777
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -566,12 +567,12 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Iklik ang butong Magdagdag ng larawan upang makapili ng sakong larawan. Ang larawan ay lilitaw sa ibaba kung saan mo ito malalagyan ng etiketa. Magandang gawi ang paglalagay ng laki ng sako sa etiketa."
 
-#: exe/engine/galleryidevice.py:578 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:350
-#: exe/webui/editorpane.py:351 exe/webui/editorpane.py:371
-#: exe/webui/editorpane.py:372 exe/webui/block.py:240 exe/webui/block.py:241
-#: exe/webui/common.py:289 exe/webui/common.py:290 exe/webui/element.py:1577
-#: exe/webui/element.py:1578
+#: exe/engine/galleryidevice.py:569 exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:353
+#: exe/webui/editorpane.py:354 exe/webui/editorpane.py:374
+#: exe/webui/editorpane.py:375 exe/webui/block.py:243 exe/webui/block.py:244
+#: exe/webui/common.py:289 exe/webui/common.py:290 exe/webui/element.py:1585
+#: exe/webui/element.py:1586
 msgid "Close"
 msgstr "Isara"
 
@@ -583,7 +584,7 @@ msgstr "Cloze"
 msgid "Cloze Activity"
 msgstr "Aktibidad na Cloze"
 
-#: exe/webui/element.py:770
+#: exe/webui/element.py:771
 msgid "Cloze Text"
 msgstr "Tekstong Cloze"
 
@@ -591,8 +592,8 @@ msgstr "Tekstong Cloze"
 msgid "Confirm and submit"
 msgstr "Kumpirmahin at ipasa"
 
-#: exe/webui/element.py:1329 exe/webui/element.py:1424
-#: exe/webui/element.py:1472 exe/idevices/testquestionelement.py:93
+#: exe/webui/element.py:1337 exe/webui/element.py:1432
+#: exe/webui/element.py:1480 exe/idevices/testquestionelement.py:93
 msgid "Correct"
 msgstr "Wasto"
 
@@ -600,7 +601,7 @@ msgstr "Wasto"
 msgid "Correct!"
 msgstr "Wasto!"
 
-#: exe/xului/mainpage.py:629
+#: exe/xului/mainpage.py:706
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Hindi maikarga ang sako, paki-email ang sako sa bugs@exelearning.org"
 
@@ -616,7 +617,7 @@ msgstr ""
 "ng paglarawan sa mga tauhan na may kinalaman sa sitwasyon. Dapat din \n"
 "itong may aksiyon na kailangang gawin upang maresolba ang sitwasyon."
 
-#: exe/webui/block.py:211 exe/webui/editorelement.py:76
+#: exe/webui/block.py:214 exe/webui/editorelement.py:76
 #: exe/webui/editorelement.py:111 exe/webui/editorelement.py:152
 #: exe/webui/editorelement.py:191 exe/webui/editorelement.py:242
 #: exe/webui/editorelement.py:296 exe/webui/galleryblock.py:251
@@ -634,13 +635,13 @@ msgstr "Burahin ang Sako"
 msgid "Delete Image"
 msgstr "Burahin ang Larawan"
 
-#: exe/webui/element.py:1246 exe/webui/element.py:1436
+#: exe/webui/element.py:1254 exe/webui/element.py:1444
 #: exe/idevices/testoptionelement.py:86
 msgid "Delete option"
 msgstr "Burahin ang opsiyon"
 
-#: exe/webui/truefalseelement.py:102 exe/webui/element.py:1321
-#: exe/webui/element.py:1539 exe/webui/questionelement.py:88
+#: exe/webui/truefalseelement.py:102 exe/webui/element.py:1329
+#: exe/webui/element.py:1547 exe/webui/questionelement.py:88
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Burahin ang tanong"
@@ -714,11 +715,11 @@ msgstr "Paksa/thread ng Usapin"
 msgid "Discussions and replies are allowed"
 msgstr "Pinapahintulutan ang usapin at tugon"
 
-#: exe/webui/element.py:320 exe/webui/element.py:638 exe/webui/element.py:971
+#: exe/webui/element.py:321 exe/webui/element.py:639 exe/webui/element.py:972
 msgid "Display as:"
 msgstr "Ipakita na:"
 
-#: exe/webui/block.py:203 exe/xului/templates/packageproperties.xul:<button
+#: exe/webui/block.py:206 exe/xului/templates/packageproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
 #: label="Done"> exe/xului/templates/exportproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
@@ -730,35 +731,35 @@ msgstr "Tapos"
 msgid "Dutch Wikipedia Article"
 msgstr "Olandes na Artikulong Wikipedia"
 
-#: exe/webui/element.py:45
+#: exe/webui/element.py:46
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "ERROR direktang tinawag ang Element.process ng %s class"
 
-#: exe/webui/element.py:54
+#: exe/webui/element.py:55
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "ERROR direktang tinawag ang Element.renderEdit ng %s class"
 
-#: exe/webui/element.py:71
+#: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "ERROR direktang tinawag ang Element.renderView ng %s class"
 
-#: exe/webui/block.py:315
+#: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: direktang tinawag ang Block.renderViewContent"
 
-#: exe/xului/mainpage.py:337 exe/xului/mainpage.py:342
-#: exe/xului/mainpage.py:345 exe/xului/mainpage.py:348
-#: exe/xului/mainpage.py:520
+#: exe/xului/mainpage.py:404 exe/xului/mainpage.py:409
+#: exe/xului/mainpage.py:412 exe/xului/mainpage.py:415
+#: exe/xului/mainpage.py:597
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:510 exe/xului/mainpage.py:524
-#: exe/xului/mainpage.py:537 exe/xului/mainpage.py:543
-#: exe/xului/mainpage.py:559 exe/xului/mainpage.py:565
-#: exe/xului/mainpage.py:580 exe/xului/mainpage.py:586
+#: exe/xului/mainpage.py:587 exe/xului/mainpage.py:601
+#: exe/xului/mainpage.py:614 exe/xului/mainpage.py:620
+#: exe/xului/mainpage.py:636 exe/xului/mainpage.py:642
+#: exe/xului/mainpage.py:657 exe/xului/mainpage.py:663
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -773,7 +774,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:418 exe/xului/mainpage.py:434
+#: exe/xului/mainpage.py:487 exe/xului/mainpage.py:505
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -784,12 +785,12 @@ msgstr ""
 msgid "Each person posts one discussion"
 msgstr "Magpapaskil ang bawat tao ng isang usapin"
 
-#: exe/webui/editorpane.py:258 exe/webui/block.py:324
+#: exe/webui/editorpane.py:261 exe/webui/block.py:327
 #: exe/webui/editorpage.py:256
 msgid "Edit"
 msgstr "Iedit"
 
-#: exe/webui/editorpane.py:322 exe/webui/multimediablock.py:94
+#: exe/webui/editorpane.py:325 exe/webui/multimediablock.py:94
 #: exe/webui/wikipediablock.py:132 exe/webui/rssblock.py:94
 msgid "Emphasis"
 msgstr "Diin"
@@ -818,7 +819,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Ipasok ang himaton dito. Kung ayaw mong magbigay ng himaton, iwang blangko ang pitak."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:230
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:232
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -860,8 +861,7 @@ msgstr ""
 "iapapakita ito bilang mga link sa iyong nilalaman.  Ngayon ay puwede mo nang editin ang mga bookmark at magdagdag\n"
 "ng mga panuto o dagdag na impormasyon hinggil sa pag-aaral."
 
-#: exe/engine/field.py:892 exe/idevices/quiztestidevice.py:64
-#: exe/idevices/quiztestidevice.py:86
+#: exe/idevices/quiztestidevice.py:64 exe/idevices/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -887,7 +887,7 @@ msgstr ""
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "\"\"Ipasok ang anumang puna na nais mong sabihin sa mag-aaral sa loob ng pitak ng puna. Maaaring iwang blangko ang pitak na ito."
 
-#: exe/webui/editorpane.py:141
+#: exe/webui/editorpane.py:144
 msgid "Enter instructions for completion here"
 msgstr "Ipasok ang mga panuto para makumpleto dito"
 
@@ -904,6 +904,18 @@ msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
+msgstr ""
+"Ipasok ang magagamit na pagpipilian dito.\n"
+"Makapagdaragdag ka ng opsiyon sa pamamagitan ng pagklik ng buton na \n"
+"\"Magdagdag ng Isa Pang Opsiyon\". Magbura ng opsiyon sa pamamagitan ng\n"
+"pagklik sa pulang \"X\"sa tabi ng Opsiyon."
+
+#: exe/engine/field.py:901
+#, fuzzy
+msgid ""
+"Enter the available choices here. \n"
+"You can add options by clicking the \"Add another option\" button. Delete options by \n"
+"clicking the red X next to the option."
 msgstr ""
 "Ipasok ang magagamit na pagpipilian dito.\n"
 "Makapagdaragdag ka ng opsiyon sa pamamagitan ng pagklik ng buton na \n"
@@ -930,23 +942,34 @@ msgstr ""
 "at itakda ang pagkakahanay ng larawan sa iskrin. \n"
 "Ang lapad at taas ay magbabago nang proporsiyonal."
 
-#: exe/webui/editorpane.py:147 exe/webui/editorpane.py:154
-#: exe/webui/editorpane.py:178
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:157
+#: exe/webui/editorpane.py:181
 msgid "Enter the instructions for completion here"
 msgstr "Ipasok ang mga panuto para sa pagkumpleto dito"
 
-#: exe/webui/editorpane.py:140 exe/webui/editorpane.py:146
-#: exe/webui/editorpane.py:153 exe/webui/editorpane.py:162
-#: exe/webui/editorpane.py:177
+#: exe/webui/editorpane.py:143 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:156 exe/webui/editorpane.py:165
+#: exe/webui/editorpane.py:180
 msgid "Enter the label here"
 msgstr "Ipasok ang etiketa rito"
 
-#: exe/engine/multichoiceidevice.py:92 exe/engine/field.py:889
-#: exe/idevices/quiztestidevice.py:61 exe/idevices/quiztestidevice.py:94
+#: exe/engine/multichoiceidevice.py:92 exe/idevices/quiztestidevice.py:61
+#: exe/idevices/quiztestidevice.py:94
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
+msgstr ""
+"Ipasok ang puno ng tanong. \n"
+"Dapat ay malinaw ang tanong. Iwasan ang mga negatibong pangungusap.\n"
+"dahil medyo nakakalito ito."
+
+#: exe/engine/field.py:898
+#, fuzzy
+msgid ""
+"Enter the question stem. \n"
+"The question should be clear and unambiguous. Avoid negative premises as these \n"
+"can tend to confuse learners."
 msgstr ""
 "Ipasok ang puno ng tanong. \n"
 "Dapat ay malinaw ang tanong. Iwasan ang mga negatibong pangungusap.\n"
@@ -976,7 +999,7 @@ msgstr ""
 "Ipasok ang teksto na nais mong·\n"
 "iugnay sa sako."
 
-#: exe/engine/attachmentidevice.py:76
+#: exe/engine/attachmentidevice.py:75
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr "Ipasok ang teksto na nais mong makaugnay ng inilusong na sako. Maaaring kang magbigay ng panuto ng dapat gawin ng mag-aaral kapag ang sako ay nailusong na o kung paano gagamitin ang materyales."
 
@@ -993,8 +1016,8 @@ msgstr "Halimbawa Halimbawa"
 msgid "Export iDevices"
 msgstr "iDevices"
 
-#: exe/xului/mainpage.py:526 exe/xului/mainpage.py:545
-#: exe/xului/mainpage.py:567 exe/xului/mainpage.py:588
+#: exe/xului/mainpage.py:603 exe/xului/mainpage.py:622
+#: exe/xului/mainpage.py:644 exe/xului/mainpage.py:665
 #, python-format
 msgid "Exported to %s"
 msgstr "Iniluwas sa %s"
@@ -1014,13 +1037,13 @@ msgstr "Mali"
 #: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:152
 #: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
 #: exe/engine/genericidevice.py:187 exe/webui/truefalseelement.py:90
-#: exe/webui/editorpane.py:245 exe/webui/common.py:194
-#: exe/webui/element.py:1437 exe/webui/questionelement.py:78
+#: exe/webui/editorpane.py:248 exe/webui/common.py:194
+#: exe/webui/element.py:1445 exe/webui/questionelement.py:78
 #: exe/webui/clozeblock.py:111
 msgid "Feedback"
 msgstr "Puna"
 
-#: exe/webui/editorpane.py:163
+#: exe/webui/editorpane.py:166
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
@@ -1028,16 +1051,16 @@ msgstr ""
 "Hindi lilitaw ang buton ng puna kung \n"
 "walang datos na ipinasok sa pitak na ito."
 
-#: exe/webui/reflectionblock.py:72 exe/webui/element.py:1345
+#: exe/webui/reflectionblock.py:72 exe/webui/element.py:1353
 msgid "Feedback:"
 msgstr "Puna:"
 
-#: exe/xului/mainpage.py:625
+#: exe/xului/mainpage.py:702
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:461 exe/xului/mainpage.py:497
+#: exe/xului/mainpage.py:534 exe/xului/mainpage.py:574
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Ang ngalan ng sako na %s ay isa nang sako, hindi ito mapapalitan"
@@ -1055,7 +1078,7 @@ msgstr "Pelikulang Flash"
 msgid "Flash with Text"
 msgstr "Flash na may Teksto"
 
-#: exe/xului/mainpage.py:467 exe/xului/mainpage.py:503
+#: exe/xului/mainpage.py:540 exe/xului/mainpage.py:580
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -1102,7 +1125,7 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Aleman na Artikulong Wikipedia"
 
-#: exe/webui/element.py:857
+#: exe/webui/element.py:858
 msgid "Get score"
 msgstr "Kunin ang iskor"
 
@@ -1135,16 +1158,16 @@ msgstr "Itago"
 msgid "Hide Feedback"
 msgstr "Itago ang Puna"
 
-#: exe/webui/element.py:778
+#: exe/webui/element.py:779
 msgid "Hide/Show Word"
 msgstr "Itago/Ilantad ang Salita"
 
 #: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
-#: exe/webui/truefalseelement.py:127 exe/webui/element.py:1581
+#: exe/webui/truefalseelement.py:127 exe/webui/element.py:1589
 msgid "Hint"
 msgstr "Himaton"
 
-#: exe/webui/element.py:1542
+#: exe/webui/element.py:1550
 msgid "Hint:"
 msgstr "Himaton:"
 
@@ -1152,7 +1175,7 @@ msgstr "Himaton:"
 msgid "Home"
 msgstr "Tahanan"
 
-#: exe/webui/block.py:279 exe/webui/genericblock.py:78
+#: exe/webui/block.py:282 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:325
 #: exe/webui/multichoiceblock.py:144
 msgid "IDevice Icon"
@@ -1162,17 +1185,17 @@ msgstr "IDevice Icon"
 msgid "IDevice Question Icon"
 msgstr "Icon ng IDevice na Tanong"
 
-#: exe/webui/block.py:168
+#: exe/webui/block.py:171
 #, fuzzy
 msgid "IDevice broken"
 msgstr "IDevice Icon"
 
-#: exe/webui/editorpane.py:353
+#: exe/webui/editorpane.py:356
 msgid "Icons"
 msgstr "Mga icon"
 
 #: exe/engine/casestudyidevice.py:55 exe/engine/imagewithtextidevice.py:58
-#: exe/webui/editorpane.py:243
+#: exe/webui/editorpane.py:246
 msgid "Image"
 msgstr "Larawan"
 
@@ -1197,11 +1220,11 @@ msgstr "iDevices"
 msgid "Incorrect!"
 msgstr "Mali!"
 
-#: exe/webui/editorpane.py:367
+#: exe/webui/editorpane.py:370
 msgid "Info"
 msgstr "Impo"
 
-#: exe/webui/block.py:236
+#: exe/webui/block.py:239
 msgid "Information"
 msgstr "Impormasyon"
 
@@ -1209,7 +1232,7 @@ msgstr "Impormasyon"
 msgid "Initial Zoom"
 msgstr "Panimulang Zoom"
 
-#: exe/webui/element.py:793
+#: exe/webui/element.py:794
 msgid "Instant Marking?"
 msgstr "Kagyat ba ang Pagmamarka?"
 
@@ -1278,7 +1301,7 @@ msgstr "Link sa talakayan"
 msgid "Load"
 msgstr "Ikarga"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:249
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:252
 msgid "MP3"
 msgstr "MP3"
 
@@ -1298,7 +1321,7 @@ msgstr "Katamtaman"
 msgid "Moodle"
 msgstr "Moodle"
 
-#: exe/webui/block.py:225
+#: exe/webui/block.py:228
 msgid "Move Down"
 msgstr "Ilipat pababa"
 
@@ -1310,7 +1333,7 @@ msgstr "Ilipat ang Larawan Pakaliwa"
 msgid "Move Image Right"
 msgstr "Ilipat ang Larawan Pakanan"
 
-#: exe/webui/block.py:218
+#: exe/webui/block.py:221
 msgid "Move Up"
 msgstr "Ilipat Pataas"
 
@@ -1323,7 +1346,7 @@ msgstr "Maraming-Pagpipiliang-Tanong"
 msgid "Multi-select"
 msgstr ""
 
-#: exe/webui/editorpane.py:315
+#: exe/webui/editorpane.py:318
 msgid "Name"
 msgstr "Pangalan"
 
@@ -1340,7 +1363,7 @@ msgstr "Bagong Paksa"
 msgid "New iDevice"
 msgstr "Bagong iDevice"
 
-#: exe/engine/galleryidevice.py:582 exe/export/websitepage.py:192
+#: exe/engine/galleryidevice.py:573 exe/export/websitepage.py:192
 #: exe/export/scormexport.py:312
 msgid "Next"
 msgstr "Susunod"
@@ -1373,7 +1396,7 @@ msgstr "Walang usapin, pero pinapahintulutan ang pagtugon"
 msgid "No discussions, no replies"
 msgstr "Walang usapin, walang tugon"
 
-#: exe/webui/editorpane.py:325 exe/webui/multimediablock.py:91
+#: exe/webui/editorpane.py:328 exe/webui/multimediablock.py:91
 #: exe/webui/wikipediablock.py:129 exe/webui/rssblock.py:91
 msgid "No emphasis"
 msgstr "Walang diin"
@@ -1410,7 +1433,7 @@ msgstr ""
 "itakda ang dapat magawa ng mag-aaral kapag nakumpleto na nila ang \n"
 "aralin."
 
-#: exe/engine/field.py:661 exe/engine/field.py:723
+#: exe/engine/field.py:664 exe/engine/field.py:728
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1426,12 +1449,12 @@ msgstr ""
 "Piliin lamang ang .swf (Flash Object) para \n"
 "sa iDevice na ito."
 
-#: exe/webui/element.py:1331 exe/webui/element.py:1419
-#: exe/webui/element.py:1424 exe/idevices/testquestionelement.py:95
+#: exe/webui/element.py:1339 exe/webui/element.py:1427
+#: exe/webui/element.py:1432 exe/idevices/testquestionelement.py:95
 msgid "Option"
 msgstr "Opsiyon"
 
-#: exe/webui/element.py:1327 exe/idevices/testquestionelement.py:91
+#: exe/webui/element.py:1335 exe/idevices/testquestionelement.py:91
 msgid "Options"
 msgstr "Mga opsiyon"
 
@@ -1448,21 +1471,21 @@ msgstr "Balangkas"
 msgid "Own site"
 msgstr "Sariling site"
 
-#: exe/xului/mainpage.py:436
+#: exe/xului/mainpage.py:507
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Isinilid ang pakete sa: %s"
 
-#: exe/xului/mainpage.py:286
+#: exe/xului/mainpage.py:293
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Isinilid ang pakete sa: %s"
 
-#: exe/webui/editorpane.py:363 exe/webui/block.py:232
+#: exe/webui/editorpane.py:366 exe/webui/block.py:235
 msgid "Pedagogical Help"
 msgstr "Tulong na Pangpedagohiya"
 
-#: exe/webui/editorpane.py:319
+#: exe/webui/editorpane.py:322
 msgid "Pedagogical Tip"
 msgstr "Tip na Pangpedagohiya"
 
@@ -1478,7 +1501,7 @@ msgstr "Ipasok po ang pangalan ng talakayan\n"
 msgid "Please enter an idevice name."
 msgstr "Ipasok po ang pangalan ng idevice."
 
-#: exe/webui/editorpane.py:188
+#: exe/webui/editorpane.py:191
 #, fuzzy
 msgid "Please enter<br />an idevice name."
 msgstr "Ipasok po ang pangalan ng idevice."
@@ -1486,6 +1509,11 @@ msgstr "Ipasok po ang pangalan ng idevice."
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
 msgstr "Piliin po ang LMS.\n"
+
+#: exe/webui/element.py:1034
+#, fuzzy
+msgid "Please select a .flv file."
+msgstr "Pumili po ng talakayan."
 
 #: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
@@ -1531,11 +1559,11 @@ msgstr ""
 "<li>        Dapat ay kayang mag-asembol ng mag-aaral ng istandard na \n"
 "kasangkapang dekuryente </li></ul>\n"
 
-#: exe/webui/editorpane.py:256 exe/webui/element.py:1166
+#: exe/webui/editorpane.py:259 exe/webui/element.py:1174
 msgid "Preview"
 msgstr "Silipin"
 
-#: exe/engine/galleryidevice.py:574 exe/export/websitepage.py:186
+#: exe/engine/galleryidevice.py:565 exe/export/websitepage.py:186
 #: exe/export/scormexport.py:311
 msgid "Previous"
 msgstr "Nakaraan"
@@ -1606,7 +1634,7 @@ msgstr ""
 "Magbigay ng angkop na puna sa \n"
 "sitwasyon."
 
-#: exe/webui/block.py:246
+#: exe/webui/block.py:249
 msgid "Purpose"
 msgstr "Tungkulin"
 
@@ -1614,13 +1642,13 @@ msgstr "Tungkulin"
 msgid "Put instructions for learners here"
 msgstr "Maglagay ng mga panuto para sa mag-aaral dito"
 
-#: exe/engine/multichoiceidevice.py:119 exe/engine/multiselectidevice.py:58
+#: exe/engine/multichoiceidevice.py:119 exe/engine/multiselectidevice.py:78
 #, fuzzy
 msgid "Question"
 msgstr "Tanong:"
 
-#: exe/webui/truefalseelement.py:79 exe/webui/element.py:1317
-#: exe/webui/element.py:1535 exe/idevices/testquestionelement.py:81
+#: exe/webui/truefalseelement.py:79 exe/webui/element.py:1325
+#: exe/webui/element.py:1543 exe/idevices/testquestionelement.py:81
 msgid "Question:"
 msgstr "Tanong:"
 
@@ -1669,7 +1697,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Pagninilay na tanong:"
 
-#: exe/webui/element.py:877
+#: exe/webui/element.py:878
 msgid "Restart"
 msgstr "Patayin at patakbuhin muli"
 
@@ -1679,11 +1707,11 @@ msgstr "Patayin at patakbuhin muli"
 msgid "Right"
 msgstr "Kanan"
 
-#: exe/xului/mainpage.py:279
+#: exe/xului/mainpage.py:286
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:283 exe/xului/mainpage.py:474
+#: exe/xului/mainpage.py:290 exe/xului/mainpage.py:547
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1713,7 +1741,7 @@ msgstr "Isilid"
 msgid "Section"
 msgstr "Seksiyon"
 
-#: exe/webui/editorelement.py:265 exe/webui/element.py:969
+#: exe/webui/editorelement.py:265 exe/webui/element.py:970
 msgid "Select Flash Object"
 msgstr "Pillin ang Flash Object"
 
@@ -1736,31 +1764,40 @@ msgstr "Pumili ng Talakayan"
 msgid "Select a file"
 msgstr "Pumili ng sako"
 
-#: exe/webui/element.py:1043
+#: exe/webui/element.py:1050
 msgid "Select a flash video"
 msgstr "Pumili ng flash video"
 
-#: exe/webui/element.py:1152
+#: exe/webui/element.py:1160
 msgid "Select a font size: "
 msgstr "Pumili ng laki ng font: "
 
-#: exe/webui/element.py:403
+#: exe/webui/element.py:404
 msgid "Select an MP3"
 msgstr "Pumili ng MP3"
 
-#: exe/webui/element.py:319
+#: exe/webui/element.py:320
 msgid "Select an image"
 msgstr "Pumili ng larawan"
 
-#: exe/webui/element.py:636
+#: exe/webui/element.py:637
 msgid "Select an image (JPG file)"
 msgstr "Pumili ng larawan (sakong JPG)"
+
+#: exe/engine/field.py:904
+#, fuzzy
+msgid ""
+"Select as many correct answer \n"
+"options as required by clicking the radio button beside the option."
+msgstr ""
+"Piliin ang wastong opsiyon sa pamamagitan\n"
+"ng pagklik sa radio button."
 
 #: exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
 msgstr "Pumili ng reyt ng pasado:"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:228
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:230
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1815,7 +1852,7 @@ msgstr "Ipakita"
 msgid "Show %s Image"
 msgstr "Ipakita ang %s Larawan"
 
-#: exe/webui/element.py:884
+#: exe/webui/element.py:885
 msgid "Show Answers"
 msgstr "Ipakita ang mga Sagot"
 
@@ -1823,11 +1860,11 @@ msgstr "Ipakita ang mga Sagot"
 msgid "Show Feedback"
 msgstr "Ipakita ang Puna"
 
-#: exe/webui/element.py:868
+#: exe/webui/element.py:869
 msgid "Show/Clear Answers"
 msgstr "Ipakita/Alisin ang mga Sagot"
 
-#: exe/webui/element.py:863
+#: exe/webui/element.py:864
 msgid "Show/Hide Feedback"
 msgstr "Ilantad/Itago ang Puna"
 
@@ -1847,16 +1884,16 @@ msgstr "Sloveniang Artikulong Wikipedia"
 msgid "Small"
 msgstr "Maliit"
 
-#: exe/webui/editorpane.py:326 exe/webui/multimediablock.py:92
+#: exe/webui/editorpane.py:329 exe/webui/multimediablock.py:92
 #: exe/webui/wikipediablock.py:130 exe/webui/rssblock.py:92
 msgid "Some emphasis"
 msgstr "Kaunting diin"
 
-#: exe/xului/mainpage.py:634
+#: exe/xului/mainpage.py:711
 msgid "Sorry, wrong file format"
 msgstr "Paumanhin, mali ang anyo ng sako"
 
-#: exe/xului/mainpage.py:632
+#: exe/xului/mainpage.py:709
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1877,16 +1914,16 @@ msgstr "Istandard na talakayan para sa pangkalahatang gamit"
 msgid "Story:"
 msgstr "Kuwento:"
 
-#: exe/webui/element.py:783
+#: exe/webui/element.py:784
 msgid "Strict Marking?"
 msgstr "Istriktong ba ang Pagmamarka?"
 
-#: exe/webui/editorpane.py:414 exe/webui/common.py:210
-#: exe/webui/element.py:872
+#: exe/webui/editorpane.py:417 exe/webui/common.py:210
+#: exe/webui/element.py:873
 msgid "Submit"
 msgstr "Ipasa"
 
-#: exe/webui/element.py:1365 exe/idevices/quiztestblock.py:355
+#: exe/webui/element.py:1373 exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "Ipasa ang Sagot"
 
@@ -1903,11 +1940,11 @@ msgstr "Dapat isaisip ng mga guro ang sumusunod kapag gumagamit ng iDevice na it
 msgid "Text"
 msgstr "Teksto"
 
-#: exe/webui/editorpane.py:241
+#: exe/webui/editorpane.py:244
 msgid "Text Box"
 msgstr "Kahon ng Teksto"
 
-#: exe/webui/editorpane.py:239
+#: exe/webui/editorpane.py:242
 msgid "Text Line"
 msgstr "Linya ng Teksto"
 
@@ -1925,7 +1962,7 @@ msgstr ""
 "sa pagbibigay ng bagong nilalaman sa isang makita ng indibidwal na tagagamit. Sa pamamagitan ng\n"
 "iDevice na ito makapaghahandog ka ng mga link mula sa isang feed na pipiliin mong makita ng mga mag-aaral mo."
 
-#: exe/engine/attachmentidevice.py:44
+#: exe/engine/attachmentidevice.py:43
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
 msgstr "Ang kalakip na iDevice ay ginagamit sa paglakip ng sako sa inyong nilalamang .elp. Halimbawa, maaaring may sakong PDF o presentasyong PPT kayo na nais ninyong makita ng mag-aaral, maaari itong ilakip at lagyan ng etiketa na nagsasabi kung ano ang kalakip at kung gaano ito kalaki. Puwedeng iklik ng mag-aaral ang link ng kalakip at ilusong ito."
 
@@ -1996,7 +2033,8 @@ msgstr ""
 "palibot ng larawang ito."
 
 #: exe/webui/editorpane.py:68
-msgid "The purpose dialogue allows you to describe your intended purpose of the device to other potential users."
+#, fuzzy
+msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
 msgstr "Ang dayalogong tungkulin ay ginagamit sa paglalarawan ng inaasahan ninyong magiging tungkulin ng device para sa mga posibleng gagamit nito."
 
 #: exe/webui/wikipediablock.py:194
@@ -2049,7 +2087,7 @@ msgstr ""
 msgid "This is an optional field."
 msgstr "Ito ay opsiyonal na pitak."
 
-#: exe/webui/block.py:206
+#: exe/webui/block.py:209
 #, fuzzy
 msgid ""
 "This will delete this iDevice.\n"
@@ -2062,7 +2100,7 @@ msgstr ""
 msgid "Thread: "
 msgstr "Thread: "
 
-#: exe/webui/block.py:250
+#: exe/webui/block.py:253
 msgid "Tip:"
 msgstr "Tip:"
 
@@ -2070,8 +2108,7 @@ msgstr "Tip:"
 msgid "Title"
 msgstr "Pamagat"
 
-#: exe/engine/field.py:895 exe/idevices/quiztestidevice.py:67
-#: exe/idevices/quiztestidevice.py:102
+#: exe/idevices/quiztestidevice.py:67 exe/idevices/quiztestidevice.py:102
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -2103,7 +2140,7 @@ msgstr ""
 "tanong ay mahusay para sa mga impormasyong katunayan at impormasyon \n"
 "na masasagot ng alinman sa dalawang tugon."
 
-#: exe/engine/field.py:731 exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:740 exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
 msgstr "Magteklado ng paksa ng usapin dito."
 
@@ -2138,6 +2175,12 @@ msgstr ""
 "kinumpleto ang kahon na ito, awtomatikong ibibigay ng eXe ang default na \n"
 "punang: \"Wastong sagot\" kapag pinili ang wastong sagot, o \"Maling sagot\"\n"
 "kapag pinili nila ang iba pang alternatibo."
+
+#: exe/engine/field.py:907
+msgid ""
+"Type in the feedback you want \n"
+"to provide the learner with."
+msgstr ""
 
 #: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:415
 msgid "Type the learning objectives for this resource."
@@ -2182,7 +2225,7 @@ msgstr "Yunit"
 msgid "University of Auckland"
 msgstr "University of Auckland"
 
-#: exe/engine/multiselectidevice.py:43 exe/idevices/quiztestidevice.py:119
+#: exe/idevices/quiztestidevice.py:119
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2201,10 +2244,6 @@ msgstr ""
 msgid "Upload"
 msgstr "Iahon"
 
-#: exe/webui/editorpane.py:71
-msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
-msgstr "Gamitin ang Diin upang palutangin ang kahalagahan ng impormasyong ihinahandog sa iDevice."
-
 #: exe/engine/idevicestore.py:292 exe/engine/idevicestore.py:400
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
@@ -2220,6 +2259,11 @@ msgstr ""
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "Gamitin ang IDevice na ito kung marami kayong larawan na ipapakita."
 
+#: exe/webui/editorpane.py:75
+#, fuzzy
+msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
+msgstr "Sa pamamagitan ng tip na pangpedagohiya, mailalarawan mo ang binabalak mong paggamit nito, at ang pedagohiya na pinagbatayan sa pagbuo ng mga device."
+
 #: exe/engine/freetextidevice.py:45
 msgid ""
 "Use this field to enter text. This \n"
@@ -2230,6 +2274,10 @@ msgstr ""
 "Walang diin na inilalapat sa iDevice na ito, pero magagamit ang limitadong porma\n"
 "sa teksto sa pamamagitan ng mga buton na pang-edit ng teksto na kaugnay \n"
 "ng pitak."
+
+#: exe/webui/editorpane.py:71
+msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
+msgstr ""
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
@@ -2243,7 +2291,7 @@ msgstr "Nakikita ng mag-aaral:"
 msgid "What to read"
 msgstr "Ano ang babasahin"
 
-#: exe/engine/multichoiceidevice.py:72
+#: exe/engine/multichoiceidevice.py:72 exe/engine/multiselectidevice.py:56
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -2291,7 +2339,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1474
+#: exe/webui/element.py:1482
 msgid "Wrong"
 msgstr "Mali"
 
@@ -2308,14 +2356,15 @@ msgid "You can use the toolbar or enter latex manually into the textarea. "
 msgstr "Magagamit mo ang toolbar o magpasok ng latex nang mano-mano sa textarea. "
 
 #: exe/webui/editorpane.py:63
-msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your idevice without one."
+#, fuzzy
+msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
 msgstr "Lilitaw ang bago mong iDevice sa kuwadro ng iDevice na ganito ang pamagat. Kinakailangan ang pitak na ito, at huhudyatan kang ipasok ang etiketa kapag tinangka mong ipasa ang idevice mo nang wala nito."
 
 #: exe/webui/wikipediablock.py:209
 msgid "article "
 msgstr "artikulo "
 
-#: exe/webui/element.py:334 exe/webui/element.py:654
+#: exe/webui/element.py:335 exe/webui/element.py:655
 msgid "blank for original size"
 msgstr "blangko para sa orihinal na laki"
 
@@ -2345,7 +2394,7 @@ msgstr "ang sako na %s ay walang parentNode"
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:101 exe/idevices/appletidevice.py:87
+#: exe/engine/attachmentidevice.py:100 exe/idevices/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "Ang iDevice na %s ay walang pakete"
@@ -2355,7 +2404,7 @@ msgstr "Ang iDevice na %s ay walang pakete"
 msgid "iDevice Editor"
 msgstr "iDevice Editor"
 
-#: exe/webui/block.py:300
+#: exe/webui/block.py:303
 msgid "iDevice icon"
 msgstr "iDevice icon"
 
@@ -2371,11 +2420,11 @@ msgstr "keycode"
 msgid "label"
 msgstr "etiketa"
 
-#: exe/webui/element.py:1149
+#: exe/webui/element.py:1157
 msgid "newline"
 msgstr "newline"
 
-#: exe/webui/element.py:1148
+#: exe/webui/element.py:1156
 msgid "text"
 msgstr "teksto"
 
@@ -2659,10 +2708,10 @@ msgstr ""
 msgid "XHTML"
 msgstr "XHTML"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
-#: accesskey="f" label="File">
-msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"Sako\" accesskey= \"s\""
+#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="P"
+#: modifiers="control" id="file-print-key" oncommand="filePrint()">
+msgid "P"
+msgstr ""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
@@ -2675,10 +2724,10 @@ msgstr ""
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
-msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"Bago\" accesskey=\"g\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
+#: accesskey="f" label="File">
+msgid "label=\"File\" accesskey=\"f\""
+msgstr "label=\"Sako\" accesskey= \"s\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
 #: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
@@ -2692,9 +2741,9 @@ msgid "IMS Content Package 1.1.3"
 msgstr "IMS Content Package 1.1.3"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
-msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"Buksan\" accesskey=\"b\""
+#: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
+msgid "label=\"New\" accesskey=\"n\""
+msgstr "label=\"Bago\" accesskey=\"g\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
@@ -2707,10 +2756,10 @@ msgstr ""
 msgid "Identifier:"
 msgstr "Pangkilala:"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
-msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"Mga Bagong Proyekto...\" acesskey=\"m\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
+msgid "label=\"Open\" accesskey=\"o\""
+msgstr "label=\"Buksan\" accesskey=\"b\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
@@ -2723,10 +2772,10 @@ msgstr ""
 msgid "Source:"
 msgstr "Pinagmulan:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
-msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"Isilid\" accesskey=\"I\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+msgid "label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Mga Bagong Proyekto...\" acesskey=\"m\""
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
@@ -2739,9 +2788,9 @@ msgid "Language:"
 msgstr "Wika:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
-msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"Isilid Sa...\" accesskey=\"a\""
+#: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
+msgid "label=\"Save\" accesskey=\"s\""
+msgstr "label=\"Isilid\" accesskey=\"I\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
 #: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
@@ -2754,10 +2803,10 @@ msgstr "Antas 1:"
 msgid "Abkhazian "
 msgstr "Abkhazian "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="export-menu" accesskey="e" label="Export">
-msgid "label=\"Export\" accesskey=\"e\""
-msgstr "label=\"Iluwas\" accesskey=\"l\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
+msgid "label=\"Save As...\" accesskey=\"a\""
+msgstr "label=\"Isilid Sa...\" accesskey=\"a\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
 #: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
@@ -2770,10 +2819,11 @@ msgstr "Antas 2:"
 msgid "Afar "
 msgstr "Afar "
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm')" accesskey="s" label="SCORM 1.2">
-msgid "label=\"SCORM 1.2\" accesskey=\"s\""
-msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
+#, fuzzy
+msgid "label=\"Print\" accesskey=\"p\""
+msgstr "label=\"Umayaw\" accesskey=\"w\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -2786,10 +2836,10 @@ msgstr "Antas 3:"
 msgid "Afrikaans "
 msgstr "Afrikaans "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims')" accesskey="i" label="IMS Content Package">
-msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Content Package\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="export-menu" accesskey="e" label="Export">
+msgid "label=\"Export\" accesskey=\"e\""
+msgstr "label=\"Iluwas\" accesskey=\"l\""
 
 #: exe/xului/templates/packageproperties.xul:<button flex="0"
 #: oncommand="submitForm(this.parentNode.parentNode,
@@ -2804,11 +2854,10 @@ msgstr "Gawing Bago ang Puno"
 msgid "Albanian "
 msgstr "Albanian "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
-#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
-#: Site" id="dcmiWebSite"
-msgid "Web Site"
-msgstr "Web Site"
+#: exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm','')" accesskey="s" label="SCORM 1.2">
+msgid "label=\"SCORM 1.2\" accesskey=\"s\""
+msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
 #: label="Amharic ">
@@ -2816,19 +2865,21 @@ msgid "Amharic "
 msgstr "Amharic "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite')" label="Self-contained Folder">
-msgid "Self-contained Folder"
-msgstr "Folder na nagsasarili"
+#: oncommand="exportPackage('ims','')" accesskey="i" label="IMS Content
+#: Package">
+msgid "label=\"IMS Content Package\" accesskey=\"i\""
+msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
 #: label="Arabic ">
 msgid "Arabic "
 msgstr "Arabo "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile')" label="Zip File">
-msgid "Zip File"
-msgstr "Sakong Zip"
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
+#: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
+#: Site" id="dcmiWebSite"
+msgid "Web Site"
+msgstr "Web Site"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
@@ -2836,9 +2887,9 @@ msgid "Armenian "
 msgstr "Armenian "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage')" accesskey="p" label="Single Page">
-msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Isang Pahina\" accesskey=\"p\""
+#: oncommand="exportPackage('webSite','')" label="Self-contained Folder">
+msgid "Self-contained Folder"
+msgstr "Folder na nagsasarili"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
@@ -2846,19 +2897,20 @@ msgid "Assamese "
 msgstr "Assamese "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('textFile')" accesskey="t" label="Text File">
-msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Sakong Teksto\" accesskey=\"t\""
+#: oncommand="exportPackage('zipFile','')" label="Zip File">
+msgid "Zip File"
+msgstr "Sakong Zip"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
 msgid "Avestan "
 msgstr "Avestan "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
-msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Pagsanib\" accesskey=\"p\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="exportPackage('singlePage','')" accesskey="p" label="Single
+#: Page">
+msgid "label=\"Single Page\" accesskey=\"p\""
+msgstr "label=\"Isang Pahina\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -2866,19 +2918,19 @@ msgid "Aymara "
 msgstr "Aymara "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
-msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Isingit ang Pakete\" accesskey=\"i\""
+#: oncommand="exportPackage('textFile','')" accesskey="t" label="Text File">
+msgid "label=\"Text File\" accesskey=\"t\""
+msgstr "label=\"Sakong Teksto\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
 #: label="Azerbaijani ">
 msgid "Azerbaijani "
 msgstr "Azerbaijani "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Buklatin ang Pakete\" accesskey=\"b\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="merging-menu" accesskey="m" label="Merging">
+msgid "label=\"Merging\" accesskey=\"m\""
+msgstr "label=\"Pagsanib\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
 #: label="Bashkir ">
@@ -2886,19 +2938,19 @@ msgid "Bashkir "
 msgstr "Bashkir "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Umayaw\" accesskey=\"w\""
+#: oncommand="insertPackage()" accesskey="i" label="Insert Package">
+msgid "label=\"Insert Package\" accesskey=\"i\""
+msgstr "label=\"Isingit ang Pakete\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
 msgid "Basque "
 msgstr "Basco "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Gamit\" accesskey=\"g\""
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Buklatin ang Pakete\" accesskey=\"b\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
@@ -2906,19 +2958,19 @@ msgid "Bengali; Bangla "
 msgstr "Bengali; Bangla "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "Ibig"
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"Umayaw\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
 msgid "Bihari "
 msgstr "Bihari "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
-msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Istilo\" accesskey=\"i\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Gamit\" accesskey=\"g\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
@@ -2926,20 +2978,19 @@ msgid "Bislama "
 msgstr "Bislama "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh">
-msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr "label=\"Sariwain\" accesskey=\"w\""
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Ibig"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
 #: label="Bosnian ">
 msgid "Bosnian "
 msgstr "Bosnian "
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
-msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Tulong\" accesskey=\"t\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="styles-menu" accesskey="s" label="Styles">
+msgid "label=\"Styles\" accesskey=\"s\""
+msgstr "label=\"Istilo\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton ">
@@ -2947,19 +2998,20 @@ msgid "Breton "
 msgstr "Breton "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="aboutPage()" accesskey="a" label="About">
-msgid "label=\"About\" accesskey=\"a\""
-msgstr "label=\"Hinggil\" accesskey=\"h\""
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh">
+msgid "label=\"Refresh\" accesskey=\"r\""
+msgstr "label=\"Sariwain\" accesskey=\"w\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
 msgid "Byelorussian; Belarusian "
 msgstr "Byelorussian; Belarusian "
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
-msgid "label=\"Report an Issue\" accesskey=\"R\""
-msgstr "label=\"Mag-ulat ng Usapin\" accesskey=\"u\""
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
+#: accesskey="h" label="Help">
+msgid "label=\"Help\" accesskey=\"h\""
+msgstr "label=\"Tulong\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -2967,55 +3019,75 @@ msgid "Bulgarian "
 msgstr "Bulgarian "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
-#, fuzzy
-msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"Sakong Teksto\" accesskey=\"t\""
+#: oncommand="aboutPage()" accesskey="a" label="About">
+msgid "label=\"About\" accesskey=\"a\""
+msgstr "label=\"Hinggil\" accesskey=\"h\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
 msgid "Burmese "
 msgstr "Burmese "
 
-#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
-#: value="debugInfo">
-msgid "debugInfo"
-msgstr "debugInfo"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
+msgid "label=\"Report an Issue\" accesskey=\"R\""
+msgstr "label=\"Mag-ulat ng Usapin\" accesskey=\"u\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
 msgid "Catalan "
 msgstr "Catalan "
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
-#: key="addChildKey" label="Add Page">
-msgid "Add Page"
-msgstr "Magdagdag"
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+#, fuzzy
+msgid "label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"Sakong Teksto\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
 msgid "Chamorro "
 msgstr "Chamorro "
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
-#: key="renNodeKey" id="btnRename" label="Rename">
-msgid "Rename"
-msgstr "Palitan"
+#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
+#: value="debugInfo">
+msgid "debugInfo"
+msgstr "debugInfo"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
 #: label="Chechen ">
 msgid "Chechen "
 msgstr "Chechen "
 
-#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
-#: value="outlinePane">
-msgid "outlinePane"
-msgstr "outlinePane"
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
+#: key="addChildKey" label="Add Page">
+msgid "Add Page"
+msgstr "Magdagdag"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
 #: label="Chinese ">
 msgid "Chinese "
 msgstr "Tsino "
+
+#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
+#: key="renNodeKey" id="btnRename" label="Rename">
+msgid "Rename"
+msgstr "Palitan"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr "Slavic na Pangsimbahan "
+
+#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
+#: value="outlinePane">
+msgid "outlinePane"
+msgstr "outlinePane"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
+msgstr "Chuvash "
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
@@ -3023,45 +3095,35 @@ msgstr "Tsino "
 msgid "iDevices"
 msgstr "Bagong iDevice"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
-msgstr "Slavic na Pangsimbahan "
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
+msgstr "Cornish "
 
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
 msgid "iDevicePane"
 msgstr "iDevicePane"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
-msgstr "Chuvash "
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: label="Corsican ">
+msgid "Corsican "
+msgstr "Corsican "
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
 msgstr "Paglikha"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr "Cornish "
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: label="Croatian ">
+msgid "Croatian "
+msgstr "Croatian "
 
 #: exe/xului/templates/mainpage.xul:<tab n:render="translate"
 #: label="Properties">
 msgid "Properties"
 msgstr "Katangian"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
-msgid "Corsican "
-msgstr "Corsican "
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
-msgid "Croatian "
-msgstr "Croatian "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
 #: label="Czech ">
@@ -3764,6 +3826,9 @@ msgstr "Karapatan:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Karaniwan, ang Karapatan na elemento ay maglalaman ng pahayag na pangangasiwa ng karapatan sa rekurso o pagsangguni sa isang serbisyo na naghahandog ng ganitong impormasyon. Kalimitang sinasaklaw ng impormasyong Karapatan ang Intellectual Property Rights (IPR), Copyright, atbpng. Karapatang-Ari. Kung walang elementong Karapatan, walang puwedeng akalain hinggil sa estado nito o iba pang karapatan na may kinalaman sa rekurso."
+
+#~ msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
+#~ msgstr "Gamitin ang Diin upang palutangin ang kahalagahan ng impormasyong ihinahandog sa iDevice."
 
 #~ msgid "Add"
 #~ msgstr "Idagdag"
