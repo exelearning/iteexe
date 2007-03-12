@@ -902,7 +902,7 @@ can tend to confuse learners.""")
 You can add options by clicking the "Add another option" button. Delete options by 
 clicking the red X next to the option.""")
         self._correctAnswerInstruc = x_(u"""Select as many correct answer 
-options as required by clicking the radio button beside the option.""")
+options as required by clicking the check box beside the option.""")
         self.feedback              = ""
         self.feedbackInstruc       = x_(u"""Type in the feedback you want 
 to provide the learner with.""")
