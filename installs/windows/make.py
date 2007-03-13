@@ -9,9 +9,6 @@ nsis = 'c:\Program Files\NSIS\makensis.exe'
 # name used for temporary file that contains branded splash screen
 BRANDED_JPG = 'splashb.jpg'
 
-# eXe working directory path
-WDIR = 'C:/exe'
-
 import sys
 import os
 import shutil
@@ -19,7 +16,7 @@ import subprocess
 import Image, ImageFont, ImageDraw
 
 # clean out the build and dist dirs
-os.chdir(WDIR)
+os.chdir('../..'); WDIR = os.getcwd()
 shutil.rmtree('build', True)
 shutil.rmtree('dist', True)
 
