@@ -470,8 +470,6 @@ class MainPage(RenderableLivePage):
         Create a new package consisting of the current node and export
         'existOk' means the user has been informed of existance and ok'd it
         """
-        import pdb
-        pdb.set_trace()
         filename  = Path(filename)
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
