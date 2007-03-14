@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: eXeLearning Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-12 11:09+1300\n"
-"PO-Revision-Date: 2007-03-06 13:33+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-03-15 09:43+1300\n"
+"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft <rh@dialoge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-EXE-Language: Deutsch\n"
 "X-Poedit-Country: Germany\n"
-"X-Generator: Pootle 0.6.3.20060116\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/idevices/appletidevice.py:67
 msgid ""
@@ -2651,9 +2651,8 @@ msgstr "U"
 
 #: exe/xului/templates/packageproperties.xul:<label value="License:"
 #: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
-#, fuzzy
 msgid "License:"
-msgstr "Sprache auswählen"
+msgstr "Lizenz wählen:"
 
 # exe/xului/templates/dublincore.xul:<description
 #: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
