@@ -216,9 +216,6 @@ within Wikipedia.""")
         """
         self._upgradeIdeviceToVersion2()
         self.systemResources += ["fdl.html"]
-        import pdb
-        pdb.set_trace()
-
         if self.images and self.parentNode:
             for image in self.images:
                 imageResource = Resource(self, Path(image))

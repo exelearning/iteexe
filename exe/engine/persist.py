@@ -30,14 +30,14 @@ from twisted.spread  import banana
 log = logging.getLogger(__name__)
 
 # Choose between cBanana and banana
-#try:
-    #from twisted.spread import cBanana
-    #banana.cBanana = cBanana
-    #Banana = banana.Canana
-    #log.info('Using cBanana')
-#except ImportError:
-Banana = banana.Banana
-log.info('Using pyBanana')
+try:
+    from twisted.spread import cBanana
+    banana.cBanana = cBanana
+    Banana = banana.Canana
+    log.info('Using cBanana')
+except ImportError:
+    Banana = banana.Banana
+    log.info('Using pyBanana')
     
 
 
