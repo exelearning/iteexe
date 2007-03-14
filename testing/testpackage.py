@@ -50,7 +50,7 @@ class TestPackage(SuperTestCase):
         filePath = config.dataDir/'package1.elp'
         package.save(filePath)
         
-        package1 = Package(filePath)
+        package1 = Package.load(filePath)
         self.assert_(package1)
         self.assertEquals(package1.author, "UoA")
         self.assertEquals(package1.description, "Nice test package")
@@ -121,6 +121,42 @@ class TestPackage(SuperTestCase):
                     self.assertEquals(val, val2)
                     assert val == val2, '%s.%s: %s/%s' % (inst1.__class__.__name__, key, val2, val)
         checkInst(package, package2)
+
+    def testExtract(self):    
+        """
+        Extracts a node of a package
+        """
+        package = self.package.load('extractionTestPackage.elp')
+        if package is None:
+            self.fail('extractionTestPackage.elp doesn\'t exist')
+        # Select the first child of the first node
+        package.currentNode = package.root.children[0]
+        # Perform the extraction
+        newPackage = package.extractNode()
+        # Compare the packages
+        assert newPackage.title == package.currentNode.title
+        for checksum in newPackage.resources.keys():
+            reses1 = newPackage.resources[checksum]
+            reses2 = package.resources[checksum]
+            for res1, res2 in zip(reses1, reses2):
+                self.assertEqual(res1.storageName, res2.storageName)
+                assert res1.checksum == res2.checksum == checksum
+        # Walk the node tree's in both packages to compare them (and collect references to resources)
+        nodes1 = [package.currentNode] + list(package.currentNode.walkDescendants())
+        nodes2 = [newPackage.root] + list(newPackage.root.walkDescendants())
+        allResources = []
+        for node1, node2 in zip(nodes1, nodes2):
+            for idevice1, idevice2 in zip(node1.idevices, node2.idevices):
+                if isinstance(idevice1, GenericIdevice):
+                    self.assertEquals(idevice1.nextFieldId, idevice2.nextFieldId)
+                allResources += idevice1.userResources
+                self.assertEqual(idevice1.title, idevice2.title)
+                self.assertEqual([res.checksum for res in idevice1.userResources], [res.checksum for res in idevice2.userResources])
+        # Copy's resources should be the same as all the resources we just collected
+        newPackageResourceKeys = set(newPackage.resources.keys())
+        self.failUnlessEqual(newPackageResourceKeys, set([res.checksum for res in allResources]))
+        self.failUnless(newPackageResourceKeys < set(package.resources.keys()))
+
 
 
         

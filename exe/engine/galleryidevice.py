@@ -331,7 +331,7 @@ class GalleryImages(Persistable, list):
         """
         Makes sure deepcopy doesn't double the entries in our list
         """
-        result = GalleryImages(memo[id(self.idevice)])
+        result = GalleryImages(deepcopy(self.idevice, memo))
         memo[id(self)] = result
         for image in self:
             result.append(deepcopy(image, memo))

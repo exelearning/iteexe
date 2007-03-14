@@ -22,6 +22,7 @@ This module contains resource classes used for eXe
 
 import logging
 import os
+from copy                 import deepcopy
 from string               import Template
 from exe.engine.persist   import Persistable
 from exe.engine.path      import Path, toUnicode
@@ -157,6 +158,37 @@ class _Resource(Persistable):
         return the string
         """
         return self._storageName
+
+    def __getinitargs__NOT__(self):
+        """
+        Used by copy.deepcopy, which is used by exe.engine.node.clone().
+        Makes it so the copy for this resource, actually gets __init__ called
+        """
+        if self._idevice:
+            return self._idevice, self.path
+        else:
+            return self._package, self.path
+
+    def __deepcopy__(self, others={}):
+        """
+        Returns a copy of self, letting our package and idevice know what has happened
+        'others' is the dict of id, object of everything that's been copied already
+        """
+        # Create a new me
+        miniMe = self.__class__.__new__(self.__class__)
+        others[id(self)] = miniMe
+        # Do normal deep copy
+        for key, val in self.__dict__.items():
+            if id(val) in others:
+                setattr(miniMe, key, others[id(val)])
+            else:
+                new = deepcopy(val, others)
+                others[id(val)] = new
+                setattr(miniMe, key, new)
+        if miniMe.package:
+            miniMe._addOurselvesToPackage(self.path)
+        #if miniMe._idevice: miniMe._idevice.userResources.append(miniMe)
+        return miniMe
     
     # Protected methods
 

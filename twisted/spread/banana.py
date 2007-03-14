@@ -112,7 +112,6 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
     buffer = ''
 
     def dataReceived(self, chunk):
-        print 'WORKING!'
         buffer = self.buffer + chunk
         listStack = self.listStack
         gotItem = self.gotItem

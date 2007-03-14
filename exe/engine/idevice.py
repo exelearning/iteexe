@@ -22,9 +22,10 @@ The base class for all iDevices
 
 import copy
 import logging
-from exe.engine.persist import Persistable
+from copy                 import deepcopy
+from exe.engine.persist   import Persistable
 from exe.engine.translate import lateTranslate
-from exe.engine.resource import Resource
+from exe.engine.resource  import Resource
 
 log = logging.getLogger(__name__)
 
@@ -100,6 +101,23 @@ class Idevice(Persistable):
         """
         return cmp(self.id, other.id)
 
+    def __deepcopy__(self, others):
+        """
+        Override deepcopy because normal one seems to skip things when called from resource.__deepcopy__
+        """
+        # Create a new me
+        miniMe = self.__class__.__new__(self.__class__)
+        others[id(self)] = miniMe
+        # Copy our resources first
+        miniMe.userResources = []
+        for resource in self.userResources:
+            miniMe.userResources.append(deepcopy(resource, others))
+        # Copy the rest of our attributes
+        for key, val in self.__dict__.items():
+            if key != 'userResources':
+                setattr(miniMe, key, deepcopy(val, others))
+        return miniMe
+
     # Public Methods
 
     def clone(self):
@@ -111,7 +129,6 @@ class Idevice(Persistable):
         newIdevice.id = unicode(Idevice.nextId)
         Idevice.nextId += 1
         return newIdevice
-
         
     def delete(self):
         """

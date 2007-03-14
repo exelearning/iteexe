@@ -458,9 +458,9 @@ class MainPage(RenderableLivePage):
         Load the package and insert in current node
         """
         package = self._loadPackage(client, filename)
-        insertNode = package.root
-        insertNode.mergeIntoPackage(self.package)
-        insertNode.move(self.package.currentNode)
+        loadedNode = package.root
+        newNode = loadedNode.copyToPackage(self.package)
+        newNode.move(self.package.currentNode)
         client.sendScript((u'top.location = "/%s"' % \
                           self.package.name).encode('utf8'))
 
@@ -470,6 +470,8 @@ class MainPage(RenderableLivePage):
         Create a new package consisting of the current node and export
         'existOk' means the user has been informed of existance and ok'd it
         """
+        import pdb
+        pdb.set_trace()
         filename  = Path(filename)
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
@@ -487,14 +489,7 @@ class MainPage(RenderableLivePage):
 
         try:
             # Create a new package for the extracted nodes
-            newPackage = Package(filename.namebase)
-            newPackage.style  = self.package.style
-            newPackage.author = self.package.author
-            # Copy the nodes from the original package
-            # and merge into the root of the new package
-            extractNode  = self.package.currentNode.clone()
-            extractNode.mergeIntoPackage(newPackage)
-            newPackage.root = newPackage.currentNode = extractNode
+            newPackage = self.package.extractNode()
             # Save the new package
             newPackage.save(filename)
         except Exception, e:

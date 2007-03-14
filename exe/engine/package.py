@@ -279,10 +279,23 @@ class Package(Persistable):
         finally:
             zippedFile.close()
 
+    def extractNode(self):
+        """
+        Clones and extracts the currently selected node into a new package.
+        """
+        newPackage = Package('NoName') # Name will be set once it is saved..
+        newPackage.title  = self.currentNode.title
+        newPackage.style  = self.style
+        newPackage.author = self.author
+        # Copy the nodes from the original package
+        # and merge into the root of the new package
+        self.currentNode.copyToPackage(newPackage)
+        return newPackage
+
     @staticmethod
     def load(filename):
         """
-        Load package from disk, returns a package
+        Load package from disk, returns a package.
         """
         if not zipfile.is_zipfile(filename):
             return None

@@ -21,7 +21,7 @@ Nodes provide the structure to the package hierarchy
 """
 
 import logging
-import copy
+from copy               import deepcopy
 from exe.engine.persist import Persistable
 from exe.engine.path    import toUnicode
 
@@ -100,19 +100,32 @@ class Node(Persistable):
         if toUnicode(title) != toUnicode(self._title):
             self._title = title
             self.package.isChanged = True
+
     title = property(getTitle, setTitle)
     titleShort = property(lambda self: self.title.split('--', 1)[0].strip())
     titleLong = property(lambda self: self.title.split('--', 1)[-1].strip())
 
     # Normal methods
 
-    def clone(self):
+    def copyToPackage(self, newPackage, newParentNode=None):
         """
-        Clone a node just like this one, still belonging to this package
-        """
-        log.debug(u"clone ")
-        return copy.deepcopy(self, {id(self._package): self._package})
+        Clone a node just like this one, still belonging to this package.
+        if 'newParentNode' is None, the newly created node will replace the 
+            root of 'newPackage'
 
+        The newly inserted node is automatically selected.
+        """
+        log.debug(u"clone " + self.title)
+        newNode = deepcopy(self, {id(self._package): newPackage})
+        newNode._id = newPackage._regNewNode(newNode)
+        if newParentNode is None:
+            newNode.parent = None
+            newPackage.root = newPackage.currentNode = newNode
+        else:
+            newNode.parent = newParentNode
+            newNode.parent.children.append(self)
+            newPackage.currentNode = newNode
+        return newNode
 
     def ancestors(self):
         """Iterates over our ancestors"""
@@ -206,23 +219,6 @@ class Node(Persistable):
                 newParent.children.append(self)
 
         self.package.isChanged = True
-
-
-    def mergeIntoPackage(self, package):
-        """
-        Changes the package of this node and all it's children
-        """
-        log.debug(u"mergeIntoPackage " + package.name)
-        
-        self._package = package
-        self._id      = package._regNewNode(self)
-
-        for idevice in self.idevices:
-            for resource in idevice.userResources:
-                resource.package = package
-
-        for child in self.children:
-            child.mergeIntoPackage(package)
 
 
     def promote(self):
@@ -330,6 +326,22 @@ class Node(Persistable):
             yield child
             for descendant in child.walkDescendants():
                 yield descendant
+
+    def __deepcopy__(self, others):
+        """
+        This is to stop the copy going back up the tree
+        """
+        # Create a new me
+        miniMe = self.__class__.__new__(self.__class__)
+        others[id(self)] = miniMe
+        # Copy our resources first
+        miniMe.userResources = []
+        # Copy the bits and pieces
+        for key, val in self.__dict__.items():
+            # Don't copy parent!
+            if key != 'parent':
+                setattr(miniMe, key, deepcopy(val, others))
+        return miniMe
 
     def __str__(self):
         """
