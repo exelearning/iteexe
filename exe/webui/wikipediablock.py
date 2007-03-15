@@ -178,7 +178,7 @@ class WikipediaBlock(Block):
         """        
         log.debug("renderView")
         content = self.articleElement.renderView()
-        content = re.sub(r'src="/.*?/resources/', 'src="', content)
+        content = re.sub(r'src="resources/', 'src="', content)
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
         if self.idevice.emphasis != Idevice.NoEmphasis:
