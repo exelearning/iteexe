@@ -457,10 +457,8 @@ class MainPage(RenderableLivePage):
         """
         Load the package and insert in current node
         """
-        package = self._loadPackage(client, filename)
-        loadedNode = package.root
-        newNode = loadedNode.copyToPackage(self.package)
-        newNode.move(self.package.currentNode)
+        loadedPackage = self._loadPackage(client, filename)
+        newNode = loadedPackage.root.copyToPackage(self.package, self.package.currentNode)
         client.sendScript((u'top.location = "/%s"' % \
                           self.package.name).encode('utf8'))
 

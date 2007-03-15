@@ -116,6 +116,8 @@ class Idevice(Persistable):
         for key, val in self.__dict__.items():
             if key != 'userResources':
                 setattr(miniMe, key, deepcopy(val, others))
+        miniMe.id = unicode(Idevice.nextId)
+        Idevice.nextId += 1
         return miniMe
 
     # Public Methods
@@ -125,9 +127,7 @@ class Idevice(Persistable):
         Clone an iDevice just like this one
         """
         log.debug("Cloning iDevice")
-        newIdevice    = copy.deepcopy(self)
-        newIdevice.id = unicode(Idevice.nextId)
-        Idevice.nextId += 1
+        newIdevice = copy.deepcopy(self)
         return newIdevice
         
     def delete(self):

@@ -287,6 +287,7 @@ class Package(Persistable):
         newPackage.title  = self.currentNode.title
         newPackage.style  = self.style
         newPackage.author = self.author
+        newPackage._nextNodeId = self._nextNodeId
         # Copy the nodes from the original package
         # and merge into the root of the new package
         self.currentNode.copyToPackage(newPackage)

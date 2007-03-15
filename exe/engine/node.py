@@ -116,14 +116,21 @@ class Node(Persistable):
         The newly inserted node is automatically selected.
         """
         log.debug(u"clone " + self.title)
-        newNode = deepcopy(self, {id(self._package): newPackage})
+        # Setting self.parent in the copy to None, so it doesn't 
+        # go up copying the whole tree
+        newNode = deepcopy(self, {id(self._package): newPackage,
+                                  id(self.parent): None})
         newNode._id = newPackage._regNewNode(newNode)
+        # Give all the new nodes id's
+        for node in newNode.walkDescendants():
+            node._id = newPackage._regNewNode(node)
+        # Insert into the new package
         if newParentNode is None:
             newNode.parent = None
             newPackage.root = newPackage.currentNode = newNode
         else:
             newNode.parent = newParentNode
-            newNode.parent.children.append(self)
+            newNode.parent.children.append(newNode)
             newPackage.currentNode = newNode
         return newNode
 
@@ -327,7 +334,7 @@ class Node(Persistable):
             for descendant in child.walkDescendants():
                 yield descendant
 
-    def __deepcopy__(self, others):
+    def NOT__deepcopy__(self, others):
         """
         This is to stop the copy going back up the tree
         """

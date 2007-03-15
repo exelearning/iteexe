@@ -32,13 +32,13 @@ from exe.engine.path           import Path
 class TestPackage(SuperTestCase):
 
 
-    def testCreatePackage(self):
+    def _testCreatePackage(self):
         package      = self.package
         self.assert_(package)
         self.assert_(package.name)
         
 
-    def testSaveAndLoad(self):
+    def _testSaveAndLoad(self):
         packageStore = PackageStore()
         package = packageStore.createPackage()
         # Check that it has been given a default name
@@ -59,13 +59,13 @@ class TestPackage(SuperTestCase):
         self.assertEquals(package1.name, "package1")
         
 
-    def testfindNode(self):
+    def _testfindNode(self):
         package = self.package
         node1 = package.root.createChild()
         self.assertEquals(package.findNode(node1.id), node1)
         
 
-    def testLevelName(self):
+    def _testLevelName(self):
         package = self.package
         package._levelNames = ["Month", "Week", "Day"]
         self.assertEquals(package.levelName(0), "Month")
@@ -73,7 +73,7 @@ class TestPackage(SuperTestCase):
         self.assertEquals(package.levelName(2), "Day")
 
 
-    def testNodeIds(self):
+    def _testNodeIds(self):
         package = self.package
         assert package._nextNodeId == 1, package._nextNodeId
         assert package.findNode(package.root.id) is package.root
@@ -122,7 +122,7 @@ class TestPackage(SuperTestCase):
                     assert val == val2, '%s.%s: %s/%s' % (inst1.__class__.__name__, key, val2, val)
         checkInst(package, package2)
 
-    def testExtract(self):    
+    def _testExtract(self):    
         """
         Extracts a node of a package
         """
@@ -156,7 +156,6 @@ class TestPackage(SuperTestCase):
         newPackageResourceKeys = set(newPackage.resources.keys())
         self.failUnlessEqual(newPackageResourceKeys, set([res.checksum for res in allResources]))
         self.failUnless(newPackageResourceKeys < set(package.resources.keys()))
-
 
 
         
