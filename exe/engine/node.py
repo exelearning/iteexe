@@ -334,22 +334,6 @@ class Node(Persistable):
             for descendant in child.walkDescendants():
                 yield descendant
 
-    def NOT__deepcopy__(self, others):
-        """
-        This is to stop the copy going back up the tree
-        """
-        # Create a new me
-        miniMe = self.__class__.__new__(self.__class__)
-        others[id(self)] = miniMe
-        # Copy our resources first
-        miniMe.userResources = []
-        # Copy the bits and pieces
-        for key, val in self.__dict__.items():
-            # Don't copy parent!
-            if key != 'parent':
-                setattr(miniMe, key, deepcopy(val, others))
-        return miniMe
-
     def __str__(self):
         """
         Return a node as a string
