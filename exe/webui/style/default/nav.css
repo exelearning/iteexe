@@ -1,7 +1,6 @@
 /* ==========================================
 Copyright University of Auckland 2004
-Created by Brent Simpson, brent.simpson@auckland.ac.nz
-Centre for Flexible and Distance Learning
+Created by Brent Simpson, brent@exelearning.org
 ============================================= */
 
 body {
@@ -29,7 +28,7 @@ body {
    height: 100%; /* the holly hack for IE! */
    float: left;
    margin-top: 0px;
-   padding-top: 72px;
+   padding-top: 88px;
    text-align:left;
    position:absolute;
    background-color:transparent;
@@ -87,9 +86,6 @@ border-top: 6px solid #706f61;
 background-image:url(active_bg.gif);
 background-position: -2px 2px;
 background-repeat:no-repeat;
-}
-
-div #subnav {
 }
 
 #subnav a { /* subnav when parent is selected */

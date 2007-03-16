@@ -1,6 +1,6 @@
 """A more user friendly configParser
 
-Copyright 2005-2006 Matthew Sherborne. All rights reserved.
+Copyright 2005-2006 Matthew Sherborne. 
 
 Released under the GPL2 license found at
 http://www.fsf.org/licensing/licenses/gpl.txt
