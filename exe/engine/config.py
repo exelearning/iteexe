@@ -217,16 +217,19 @@ class Config:
         # new installation) create it
         if not self.configDir.exists():
             self.configDir.mkdir()
-        # Load the "user" section
-        if self.configParser.has_section('user'):
-            if self.configParser.user.has_option('locale'):
-                self.locale = self.configParser.user.locale
+                
         # Get the list of recently opened projects
         self.recentProjects = []
         if self.configParser.has_section('recent_projects'):
             recentProjectsSection = self.configParser.recent_projects
             for key, path in recentProjectsSection.items():
                 self.recentProjects.append(path)
+                
+        # Load the "user" section
+        if self.configParser.has_section('user'):
+            if self.configParser.user.has_option('locale'):
+                self.locale = self.configParser.user.locale
+                return
         self.locale = chooseDefaultLocale(self.localeDir)
 
     def onWrite(self, configParser):
