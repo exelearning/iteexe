@@ -49,6 +49,7 @@ class SinglePageExport(object):
         self.imagesDir    = Path(imagesDir)
         self.scriptsDir   = Path(scriptsDir)
         self.templatesDir = Path(templatesDir)
+	self.page         = None
 
         # Create the output dir if it doesn't already exist
         if not self.outputDir.exists(): 
@@ -60,12 +61,13 @@ class SinglePageExport(object):
         Export web site
         Cleans up the previous packages pages and performs the export
         """
-        self.style = package.style
-        self.copyFiles(package)
+        self.style = package.style       
 	
-	page = SinglePage("index", 1, package.root)
+	self.page = SinglePage("index", 1, package.root)
 
-        page.save(self.outputDir/"index.html", for_print)
+        self.page.save(self.outputDir/"index.html", for_print)
+	
+	self.copyFiles(package)
 
 
     def copyFiles(self, package):
@@ -92,10 +94,35 @@ class SinglePageExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                      self.outputDir)
+	
+	# copy players for media idevices.                
+        hasVideoContainer = False
+        hasMagnifier      = False
+        hasXspfplayer     = False
 
-        # copy video container file for flash movie
-        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
-                                    'xspf_player.swf'),self.outputDir)
+	for idevice in self.page.node.idevices:
+	    if (hasVideoContainer and hasMagnifier and hasXspfplayer):
+		break
+	    if not hasVideoContainer:
+		if 'videoContainer.swf' in idevice.systemResources:
+		    hasVideoContainer = True
+	    if not hasMagnifier:
+		if 'magnifier.swf' in idevice.systemResources:
+		    hasMagnifier = True
+	    if not hasXspfplayer:
+		if 'xspf_player.swf' in idevice.systemResources:
+		    hasXspfplayer = True
+                        
+        if hasVideoContainer:
+            videofile = (self.templatesDir/'videoContainer.swf')
+            videofile.copyfile(self.outputDir/'videoContainer.swf')
+        if hasMagnifier:
+            videofile = (self.templatesDir/'magnifier.swf')
+            videofile.copyfile(self.outputDir/'magnifier.swf')
+        if hasXspfplayer:
+            videofile = (self.templatesDir/'xspf_player.swf')
+            videofile.copyfile(self.outputDir/'xspf_player.swf')
+
 
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(self.outputDir/'fdl.html')

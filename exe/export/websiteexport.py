@@ -59,7 +59,6 @@ class WebsiteExport(object):
         """
         
         outputDir = TempDirPath()
-        self.copyFiles(package, outputDir)
 
         # Import the Website Page class.  If the style has it's own page class
         # use that, else use the default one.
@@ -83,6 +82,7 @@ class WebsiteExport(object):
             
 
         thisPage.save(outputDir, prevPage, None, self.pages)
+        self.copyFiles(package, outputDir)
         # Zip up the website package
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
@@ -106,9 +106,6 @@ class WebsiteExport(object):
         if not outputDir.exists(): 
             outputDir.mkdir()
         
-        self.copyFiles(package, outputDir)
-
-
         # Import the Website Page class.  If the style has it's own page class
         # use that, else use the default one.
         if (self.stylesDir/"websitepage.py").exists():
@@ -130,6 +127,8 @@ class WebsiteExport(object):
             thisPage = nextPage
 
         thisPage.save(outputDir, prevPage, None, self.pages)
+        
+        self.copyFiles(package, outputDir)
 
 
     def copyFiles(self, package, outputDir):
@@ -153,10 +152,40 @@ class WebsiteExport(object):
         # copy script files.
         self.scriptsDir.copylist(('libot_drag.js', 'common.js'), 
                                   outputDir)
+        
+        # copy players for media idevices.                
+        hasVideoContainer = False
+        hasMagnifier      = False
+        hasXspfplayer     = False
+        isBreak           = False
+        
+        for page in self.pages:
+            if isBreak:
+                break
+            for idevice in page.node.idevices:
+                if (hasVideoContainer and hasMagnifier and hasXspfplayer):
+                    isBreak = True
+                    break
+                if not hasVideoContainer:
+                    if 'videoContainer.swf' in idevice.systemResources:
+                        hasVideoContainer = True
+                if not hasMagnifier:
+                    if 'magnifier.swf' in idevice.systemResources:
+                        hasMagnifier = True
+                if not hasXspfplayer:
+                    if 'xspf_player.swf' in idevice.systemResources:
+                        hasXspfplayer = True
+                        
+        if hasVideoContainer:
+            videofile = (self.templatesDir/'videoContainer.swf')
+            videofile.copyfile(outputDir/'videoContainer.swf')
+        if hasMagnifier:
+            videofile = (self.templatesDir/'magnifier.swf')
+            videofile.copyfile(outputDir/'magnifier.swf')
+        if hasXspfplayer:
+            videofile = (self.templatesDir/'xspf_player.swf')
+            videofile.copyfile(outputDir/'xspf_player.swf')
 
-        # copy video container file for flash movies.
-        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
-                                    'xspf_player.swf'), outputDir)
                                     
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')

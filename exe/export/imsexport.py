@@ -285,11 +285,39 @@ class IMSExport(object):
         self.schemasDir.copylist(('imscp_v1p1.xsd',
                                   'imsmd_v1p2p2.xsd',
                                   'ims_xml.xsd'), outputDir)
-
-        # copy video container file for flash movies.
-
-        self.templatesDir.copylist(('videoContainer.swf', 'magnifier.swf',
-                                    'xspf_player.swf'),outputDir)
+        
+        # copy players for media idevices.                
+        hasVideoContainer = False
+        hasMagnifier      = False
+        hasXspfplayer     = False
+        isBreak           = False
+        
+        for page in self.pages:
+            if isBreak:
+                break
+            for idevice in page.node.idevices:
+                if (hasVideoContainer and hasMagnifier and hasXspfplayer):
+                    isBreak = True
+                    break
+                if not hasVideoContainer:
+                    if 'videoContainer.swf' in idevice.systemResources:
+                        hasVideoContainer = True
+                if not hasMagnifier:
+                    if 'magnifier.swf' in idevice.systemResources:
+                        hasMagnifier = True
+                if not hasXspfplayer:
+                    if 'xspf_player.swf' in idevice.systemResources:
+                        hasXspfplayer = True
+                        
+        if hasVideoContainer:
+            videofile = (self.templatesDir/'videoContainer.swf')
+            videofile.copyfile(outputDir/'videoContainer.swf')
+        if hasMagnifier:
+            videofile = (self.templatesDir/'magnifier.swf')
+            videofile.copyfile(outputDir/'magnifier.swf')
+        if hasXspfplayer:
+            videofile = (self.templatesDir/'xspf_player.swf')
+            videofile.copyfile(outputDir/'xspf_player.swf')
 
         # copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')

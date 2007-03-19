@@ -59,7 +59,7 @@ class WebsitePage(Page):
         html += u'Transitional//EN" '
         html += u'"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n'
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-	html += u"<!-- Created using eXe: http://exelearning.org -->\n"
+        html += u"<!-- Created using eXe: http://exelearning.org -->\n"
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(base.css);\n"

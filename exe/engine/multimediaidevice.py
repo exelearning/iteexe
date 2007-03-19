@@ -33,7 +33,7 @@ class MultimediaIdevice(Idevice):
     A Multimedia Idevice is one built up from an Multimedia file and free text.
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
     
     def __init__(self, defaultMedia = None):
         Idevice.__init__(self, 
@@ -73,14 +73,20 @@ MP3 file. This will appear in the players title bar as well.""")
        
         self._alignInstruc               = x_(u"""Alignment allows you to 
 choose where on the screen the media player will be positioned.""")
+        self.systemResources += ['xspf_player.swf']
        
     # Properties
     captionInstruc     = lateTranslate('captionInstruc')
     alignInstruc       = lateTranslate('alignInstruc')
-   
-def register(ideviceStore):
-    """Register with the ideviceStore"""
-    ideviceStore.extended.append(MultimediaIdevice())
+
+
+    def upgradeToVersion2(self):
+        """
+        (We skipped version 1 by accident)
+        Upgrades to 0.22
+        """
+        self.systemResources += ['xspf_player.swf']
+    
 
    
 # ===========================================================================
