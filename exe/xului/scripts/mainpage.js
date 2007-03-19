@@ -401,49 +401,29 @@ function fileSaveAs(onDone) {
 
 // print the package:
 function filePrint() {
-   ////////////////////////////
-   // window.print();
-   // 
-   // okay, that above JavaScript LOOKS like the good way of getting a tie into FireFox's File->Print menu,
-   // but the problem now being encountered is that FireFox (v1.5 on MacOSX) then complains of:
-   //        "PRINTER ERROR: We are unable to Print or Print Preview this page"
-   //  hmmmmmm....... still back to the possibility of a CSS problem in defining the print media?
-   //  or, maybe..... something in the XUL configuration itself?
-   //
-   //  ahhhh, that's okay, cuz we don't wan't to print exactly the full eXe application, but just the rendered frame,
-   //  so, instead, wrap all of the exportPackage stuff with a bit of extra temporary-directory creation and removal,
-   //  and a bit of extra JavaScript (to print onOpen) if exporting for_print.
-   ////////////////////////////
-
    // filePrint step#1: create a temporary print directory, and return that to filePrint2, which will then call exportPackage():
    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
    var tmpdir_suffix = ""
    var tmpdir_prefix = "eXeTempPrintDir_"
-   nevow_clientToServerEvent('makeTempDir', this, '', tmpdir_suffix, tmpdir_prefix, 'filePrint2')
-
-
-   // (which will itself need a part2 callback for the answer)
-   // by calling exportPackage('printSinglePage',tempPrintDir);
+   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, tmpdir_prefix, 'filePrint2')
+   // note: as discussed below, at the end of filePrint3_openPrintWin(), the above makeTempPrintDir also removes any previous print jobs
 }
 
 // continue to print the package:
 function filePrint2(tempPrintDir) {
-    // while filePrint() might have been setup to have the makeTempDir callback go straight to exportPackage(),
-    // this extra level of indirection here may be used for any other pre-printing tasks, once the tempDir has been created.
-
-    //
-    // for now, though, all that's really needed is a straight call to makeTempDir using the new export type of 'printSinglePage':
+    // while filePrint() could have been setup to direct the makeTempPrintDir callback straight to exportPackage(),
+    // this extra level of indirection here may be used for any other pre-printing tasks, now that the tempPrintDir has been created.
+    // for now, though, all that's really needed is a straight call to exportPackage using the new export type of 'printSinglePage':
    exportPackage('printSinglePage',tempPrintDir);
-
 }
 
 
-// continue to print the package:
-function filePrint3_wrapup(tempPrintDir, tempExportedDir) {
+// and continue to print the package:
+function filePrint3_openPrintWin(tempPrintDir, tempExportedDir) {
     // okay, at this point, exportPackage() has already been called and the exported file created, complete with its printing Javascript
-    // while the tempPrintDir was created (and everything below it, and including it, will need to be removed),
-    // the actual exported for printing was exported into tempExportedDir/index.html, where tempExportedDir might differ from
-    // from tempPrintDir in the addition of the package name.
+    // into the tempPrintDir was created (and everything below it, and including it, will need to be removed),
+    // the actual files for printing were exported into tempExportedDir/index.html, where tempExportedDir is typically a subdirectory of tempDir,
+    // named as the package name.
    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
 
     // Still needs to be (a) opened, printed, and closed:
@@ -454,20 +434,13 @@ function filePrint3_wrapup(tempPrintDir, tempExportedDir) {
     print_url = "file://"+tempExportedDir+"/index.html"
     printWin = window.open (print_url, "Apparently Useless Title which is Overridden", features);
 
-    //nevow_clientToServerEvent('testPrintMessage', this, '', 'DEBUG: filePrint3 about to call removeTempDir on: ['+print_url+']')
-    nevow_clientToServerEvent('testPrintMessage', this, '', 'DEBUG: filePrint3 NOT YET calling removeTempDir on: ['+print_url+']')
-
-    // and (b), all that's left is to remove the entire temporary printing directory structure, with no further callbacks, etc.:
-    //netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
-    //nevow_clientToServerEvent('removeTempDir', this, '', tempPrintDir)
-
-// WARNING: currently experiencing a strange timing issue with the above, in that the printWin window.open() does not block,
-// and therefore the clientToServerEvent('testPrintMessage',...) will begin removing files before their are loaded up in the new window.
-// this shows up, typically, as a plain-text window without any graphics.
-
     // and that's all she wrote!
-}
 
+    // note that due to difficulty with timing issues, the files are not (yet!) immediately removed upon completion of the print job 
+    // the hope is for this to be resolved someday, somehow, 
+    // but for now the nevow_clientToServerEvent('makeTempPrintDir',...) call in filePrint() also clears out any previous print jobs,
+    // and this is called upon Quit of eXe as well, leaving *at most* one temporary print job sitting around.
+} // function filePrint3_openPrintWin()
 
 
 
@@ -575,22 +548,14 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
 function exportPackage(exportType, exportDir) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 
-    // r3m0: testing status
-    nevow_clientToServerEvent('testPrintMessage', this, '', 'DEBUG: in exportPackage, exportDir='+exportDir+', fine as...')
-
-
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    // if (exportType == 'webSite' || exportType == 'singlePage') {
-    // r3m0: playing with the print feature to use the existing export functionality
-    // note that next up would be to hide this temporary file-selection bit:
     if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage') {
         if (exportDir == '') {
             fp.init(window, "Select the parent folder for export.",
                          nsIFilePicker.modeGetFolder);
             var res = fp.show();
             if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-                //nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
                 nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path, '')
             }
         }
@@ -598,8 +563,8 @@ function exportPackage(exportType, exportDir) {
             // use the supplied exportDir, rather than asking.
             // NOTE: currently only the printing mechanism will provide an exportDir, hence the hardcoded callback function.
             // if/when this opens up to other calling functions desiring a callback, then certainly parameterize this better,
-            // but, at least for now, a supplied exportDir will automatically callback to filePrint3_wrapup:
-            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, 'filePrint3_wrapup')
+            // but, at least for now, a supplied exportDir will automatically callback to filePrint3_openPrintWin:
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, 'filePrint3_openPrintWin')
         }
     } else if(exportType == "textFile"){
         title = "Export text package as";
@@ -630,18 +595,6 @@ function exportPackage(exportType, exportDir) {
     }
 } // exportPackage()
 
-// r3m0: testing.....
-// This test function sees how deferred callbacks can be used.....
-function testCallbacksYup(msg) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var test_msg = "Testing print message FROM JAVASCRIPTs testCallbacksYup, with msg = " + msg + " [end-o-msg]. DONE!"
-    //nevow_clientToServerEvent('testPrintMessage', this, '', "Testing print message FROM JAVASCRIPTs testCallbacksYup, but ignoring message yup.")
-    nevow_clientToServerEvent('testPrintMessage', this, '', test_msg)
-    // yup, works, now instead, try to pass on to a deleteTmpDir
-    // but not yet:  (using the passed in msg as the name of the created tempdir)
-// FIRST: go ahead and create some temporary files within this directory:
-    //nevow_clientToServerEvent('removeTempDir', this, '', msg)
-}
 
 // This function takes care of mergeing packages
 function insertPackage() {

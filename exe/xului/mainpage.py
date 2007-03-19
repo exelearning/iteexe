@@ -45,6 +45,7 @@ from exe.export.imsexport        import IMSExport
 from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 from tempfile                    import mkdtemp
+from stat                        import *
 
 log = logging.getLogger(__name__)
 
@@ -113,9 +114,8 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleExtractPackage,  'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
                                                  'setTreeSelection')
-        setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
-        setUpHandler(self.handleTestGetMsg,      'testGetMessage')
-        setUpHandler(self.handleMakeTempDir,     'makeTempDir')
+        setUpHandler(self.handleClearAndMakeTempPrintDir,
+                                                 'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir,   'removeTempDir')
 
         self.idevicePane.client = client
@@ -316,40 +316,12 @@ class MainPage(RenderableLivePage):
         filename = self.config.recentProjects[int(number) - 1]
         self.handleLoadPackage(client, filename)
 
-    # r3m0: testing....
-    def handleTestPrintMsg(self, client, message):
-        """
-        Prints a test message, and yup, that's all!
-        """
-        print "Test Message: ", message, " [eol, eh!]"
-
-    # r3m0: testing....
-    def handleTestGetMsg(self, client, message, callback):
-        """
-        Sends a test message, and yup, that's all!  Does a callback, but nothing more....
-        """
-        #test_message = "{TestMessage from mainpage.py's handleTestGetMesg: welcome!}"
-        test_message = "{TestMessage includes: ", message, "}"
-        print "handleTestGetMsg received Test Message: ", message, " [eol, eh!]"
-        print "   and about to call JS (callback=", callback, ") with test_message: ", test_message, "[eol]"
-        client.call(callback, test_message)
-
-
-    def handleMakeTempDir(self, client, suffix, prefix, callback):
-        """
-        Makes a temporary directory, and yup, that's all!
-        """
-        # Okay, now try the test_message being the name of a created temp directory:
-        #test_message =  mkdtemp("","eXe_TempPrintDir_","")   # suffix, prefix, name
-        temp_dir = mkdtemp(suffix, prefix, "")  # suffix, prefix, dirname
-        client.call(callback, temp_dir)
-
-    def handleRemoveTempDir(self, client, tempdir):
+    def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """
         Removes a temporary directory and any contents therein(from the bottom up), and yup, that's all!
         """
         #
-        # from an example on http://docs.python.org/lib/os-file-dir.html
+        # swiped from an example on http://docs.python.org/lib/os-file-dir.html
         top = tempdir
         ################################################################
         # Delete everything reachable from the directory named in 'top',
@@ -360,12 +332,71 @@ class MainPage(RenderableLivePage):
         for root, dirs, files in os.walk(top, topdown=False):
             for name in files:
                 os.remove(os.path.join(root, name))
-                for name in dirs:
-                    os.rmdir(os.path.join(root, name))
+            for name in dirs:
+                os.rmdir(os.path.join(root, name))
         #
         ##################################################################
         # and finally, go ahead and remove the top-level tempdir itself:
-        os.rmdir(tempdir)
+        if (int(rm_top_dir) != 0):
+            os.rmdir(tempdir)
+
+    def ClearParentTempPrintDirs(self, client, verbose):
+        """
+        Determine the parent temporary printing directory, and clear them if safe to do so (i.e., if not the config dir itself, for example)
+        Makes (if necessary), and clears out (if applicable) the parent temporary directory.
+        The subsequent handleClearAndMakeTempPrintDir() shall then make a specific print-job subdirectory.
+        """
+        #
+        # start off with the parent temp print dir to be hardcoded under the config dir, as: ~/.exe/temp_print_dirs
+        # (eventually may want to allow this information to be configured by the user, stored in globals, etc.)
+        config_dirname = self.config.configDir.abspath().encode('utf-8')
+        under_dirname = os.path.join(config_dirname,"temp_print_dirs")
+        clear_tempdir = 0
+
+
+        # but first need to ensure that under_dirname itself is available; if not, create it:
+        if cmp(under_dirname,"") != 0:
+            if os.path.exists(under_dirname):
+                # Good, it is already available, but.... is it actually a directory?
+                if (os.path.isdir(under_dirname)):
+                    # Yes, this directory already exists.  As such, let's pre-clean it, keeping the clutter down:
+                    clear_tempdir = 1
+                else:
+                    if verbose:
+                        print "WARNING: The desired Temporary Print Directory, \"" + under_dirname + "\", already exists, but as a file!"
+                    under_dirname = config_dirname
+                    if verbose:
+                        print "     RECOMMENDATION: please remove/rename this file to allow eXe easier management of its temporary print files."
+                        print "     eXe will create the temporary printing directory directly under \"" + under_dirname + "\" instead, but this might leave some files around after eXe terminates..."
+                    # and note that we do NOT want to clear_tempdir on the config dir itself!!!!!
+            else:
+                os.makedirs(under_dirname)
+                # and while we could clear_tempdir on it, there's no need to...
+
+        if clear_tempdir : 
+            # before making this particular print job's temporary print directory underneath the now-existing temp_print_dirs, 
+            # go ahead and clear out temp_print_dirs such that we have AT MOST one old temporary set of print job files still existing 
+            # once eXe terminates:
+            rm_topdir = "0"  # note: passed in as a string since handleRemoveTempDir expects as such from nevow's clientToServerEvent() call
+            self.handleRemoveTempDir(client, under_dirname, rm_topdir)
+        
+        return under_dirname
+
+    def handleClearAndMakeTempPrintDir(self, client, suffix, prefix, callback):
+        """
+        Makes a temporary printing directory, and yup, that's pretty much all!
+        """
+
+        # First get the name of the parent temp directory, after making it (if necessary) and clearing (if applicable):
+        verbose_dir_messages = 1
+        under_dirname = self.ClearParentTempPrintDirs(client, verbose_dir_messages)
+
+        # Next, go ahead and create this particular print job's temporary directory under the parent temp directory:
+        temp_dir = mkdtemp(suffix, prefix, under_dirname)  # suffix, prefix, dirname
+
+        # Finally, pass the created temp_dir back to the expecting callback:
+        client.call(callback, temp_dir)
+
 
     def handleExport(self, client, exportType, filename, print_callback=''):
         """
@@ -419,6 +450,10 @@ class MainPage(RenderableLivePage):
         """
         Stops the server
         """
+        # first, go ahead and clear out any temp job files still in the temporary print directory:
+        verbose_dir_messages = 0
+        parent_temp_print_dir = self.ClearParentTempPrintDirs(client, verbose_dir_messages)
+
         reactor.stop()
 
     def handleRegister(self, client):

@@ -95,27 +95,8 @@ class SinglePage(Page):
         html += u'<script type="text/javascript" src="common.js"></script>\n'
         if for_print:
             # include extra print-script for onload bit 
-
-            #################################################
-            # r3m0: for the below test of nevow_clientToServerEvent():
-            #html += u'<script src="/xulscripts/nevow_glue.js"></script>\n'
-            #html += u'<script src="/scripts/common.js"></script>\n'
-            #html += u'<script src="/xulscripts/mainpage.js"></script>\n'
-            # currently also missing:
-            # - chrome:..../sTransferable.js
-            # - /xulscripts/draganddrop.js
-            # and perhaps most importantly (once the JS even finds the nevow_clientToServer() function),
-            # var nevow_clientHandleId ????
-            #################################################
-
             html += u'<script type="text/javascript">\n'
             html += u'function print_page() {\n'
-            #################################################
-            # r3m0: try embedding the XPCOM calls here, to see if we can delete ONCE LOADED!:
-            #html += u'   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");\n'
-            #html += u'   nevow_clientToServerEvent(\'testPrintMessage\', this, \'\', \'DEBUG: Calling from the TempPrint Javascript!...\');\n'
-            # r3m0: end of above test.
-            #################################################
             html += u'     window.print();\n'
             html += u'     window.close();\n'
             html += u'}\n'
