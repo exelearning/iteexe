@@ -56,7 +56,7 @@ the text you wish to associate with the file."""))
         self.caption          = ""
         self._captionInstruc  = x_(u"""Provide a caption for the flash movie 
 you have just inserted.""")
-        self.systemResources += ['videoContainer.swf']
+        self.systemResources += ['FlowPlayer.swf']
     
     # Properties
     captionInstruc = lateTranslate('captionInstruc')
