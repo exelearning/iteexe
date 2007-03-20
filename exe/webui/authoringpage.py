@@ -141,7 +141,9 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
         html += u"tinyMCE.init({   " 
-        html += u"extended_valid_elements: \"object[width|height],param[name|value],embed[src|wmode|width|height|type]\",\n"
+        html += u"valid_elements : \"*[*]\",\n"
+        html += u"verify_html : false, \n"
+        html += u"apply_source_formatting : true, \n"
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,media,"
