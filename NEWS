@@ -1,3 +1,20 @@
+Version 0.22
+* Add File... Print to print an entire course (same as export singlepage)
+* Add attachment icon in preview mode
+* Add Slate style
+* Add help tips for multi-select iDevice
+* Don't add unneeded large files to SCORM exports
+* Fix maintaining language preference across starts
+* Fix Merge Import and Extract
+* Fix maths iDevice input file descriptor on Windows
+* Fix uploads of non-ASCII filenames
+* Fix line endings in text exports
+* Fix file copying in applet iDevice
+* Fix &raquo; in web export
+* Changing to another node does not mark package as needing saving
+* Updated translations
+* Updated build scripts for Windows and OS X
+
 Version 0.21
 * Enabled rich text editor context menu cut/copy/paste
 * Add import/export features for iDevice editor
