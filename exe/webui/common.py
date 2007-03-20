@@ -155,14 +155,26 @@ def flash(src, width, height, id_=None, params=None, **kwparams):
         stan = stan[T.param(name=name, value=value)]
     return unicode(flatten(stan).replace('&amp;', '&'), 'utf8')
 
-def flashMovie(movie, width, height, resourcesDir=''):
+def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
     """Returns the XHTML for a flash movie"""
     log.debug(u"flash %s" % movie)
-    src = resourcesDir
-    src += 'videoContainer.swf?videoSource=%s&autoPlay=false' % movie
-    return flash(src, width, height,
-        params={'movie': src,
-                'menu' : 'false'})
+    src = resourcesDir + 'FlowPlayer.swf'
+    params={'movie': src,
+            'allowScriptAccess' :'sameDomain', 
+            'quality' :'high', 
+            'scale':'noScale',
+            'wmode':'transparent',
+            'allowNetworking':'all',
+            'flashvars' : 'config={ '
+                'autoPlay: %(autoplay)s, '
+                'loop: false, '
+                'initialScale: \'scale\', ' 
+                'showLoopButton: false, '
+                'showPlayListButtons: false, '
+                'playList: [ { url: \'%(movie)s\' }, ]'
+            '}' % {'movie': movie, 'autoplay': autoplay}
+            }
+    return flash(src, width, height, id="FlowPlayer", params=params)
 
 
 def submitButton(name, value, enabled=True, **kwargs):

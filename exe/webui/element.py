@@ -1060,13 +1060,13 @@ class FlashMovieElement(Element):
         Returns an XHTML string for previewing this image
         """
         if self.field.flashResource:
-            flashFile = '../%s/resources/%s' % (
-                self.field.idevice.parentNode.package.name,
+            flashFile = 'resources/%s' % (
                 self.field.flashResource.storageName)
         else:
             flashFile = ""
         return common.flashMovie(flashFile, self.field.width,
-                                 self.field.height, '../templates/')
+                                 self.field.height, '../templates/',
+                                 autoplay='false')
 
 
     def renderView(self):
@@ -1080,7 +1080,8 @@ class FlashMovieElement(Element):
 
         html = common.flashMovie(flashFile,
                                  self.field.width,
-                                 self.field.height)
+                                 self.field.height,
+                                 autoplay='true')
                                  
 
         return html
