@@ -657,8 +657,8 @@ class FlashMovieField(Field):
         """
         """
         Field.__init__(self, name, instruc)
-        self.width         = 300
-        self.height        = 250
+        self.width         = 320
+        self.height        = 240
         self.flashResource = None
         self.message       = ""
         self._fileInstruc   = x_("""Only select .flv (Flash Video Files) for 
@@ -686,8 +686,8 @@ this iDevice.""")
                 self.flashResource.delete()
             try:
                 flvDic = FLVReader(resourceFile)
-                self.height = flvDic.get("height", 100)+30
-                self.width = flvDic.get("width", 100)
+                self.height = flvDic.get("height", 240)+30
+                self.width = flvDic.get("width", 320)
                 self.flashResource = Resource(self.idevice, resourceFile)
                 #if not width and not height:
                     # If we have no width or height, default to 100x130
