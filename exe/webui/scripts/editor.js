@@ -1,5 +1,5 @@
 // Strings to be translated
-DO_YOU_WANT_TO_OVERWRITE_THE_EXSITING_IDEVICE = 'Do you want to overwrite the exsiting idevice ';
+DO_YOU_WANT_TO_OVERWRITE_THE_EXISTING_IDEVICE = 'Do you want to overwrite the existing iDevice ';
 SELECT_A_FILE = "Select a file";
 EXE_IDEVICES = "eXe idevices";
 
@@ -24,7 +24,7 @@ function saveIdevice(title){
     var theForm = document.getElementById('contentForm')
     
     if (ideviceExists(title1)){
-        if (confirm(DO_YOU_WANT_TO_OVERWRITE_THE_EXSITING_IDEVICE + title1 + '?')){
+        if (confirm(DO_YOU_WANT_TO_OVERWRITE_THE_EXISTING_IDEVICE + title1 + '?')){
             theForm.action.value = "save"
         }else
             return
