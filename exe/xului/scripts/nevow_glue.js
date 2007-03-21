@@ -1,3 +1,7 @@
+// Strings to be translated
+EXCEPTION_ = "Exception: ";
+CAUSED_BY_SCRIPT_ = 'Caused by script:';
+
 var liveevil_unload = false; var auto_open = true;
 
 var base_url = this.location.toString()
@@ -30,7 +34,7 @@ function connect(outputNum) {
                 try {
                     eval(xmlhttp.responseText)
                 } catch (e) {
-                    alert("Exception: " + e.toString()+'\nCaused by script:'+xmlhttp.responseText)
+                    alert(EXCEPTION_ + e.toString()+'\n'+CAUSED_BY_SCRIPT_+xmlhttp.responseText)
                     throw e
                 }
                 if (!liveevil_unload && auto_open) {

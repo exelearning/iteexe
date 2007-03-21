@@ -19,6 +19,34 @@
 
 // This file contains all the js related to the main xul page
 
+// Strings to be translated
+DELETE_  = 'Delete "';
+NODE_AND_ALL_ITS_CHILDREN_ARE_YOU_SURE_ = '" node and all its children. Are you sure?';
+RENAME_ = 'Rename "';
+ENTER_THE_NEW_NAME = "Enter the new name";
+SAVE_PACKAGE_FIRST_ = "Save Package first?";
+THE_CURRENT_PACKAGE_HAS_BEEN_MODIFIED_AND_NOT_YET_SAVED_ = "The current package has been modified and not yet saved. ";
+WOULD_YOU_LIKE_TO_SAVE_IT_BEFORE_LOADING_THE_NEW_PACKAGE_ = "Would you like to save it before loading the new package?";
+DISCARD = 'Discard';
+SELECT_A_FILE = "Select a File";
+EXE_PACKAGE_FILES = "eXe Package Files";
+APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN = "Apparently Useless Title which is Overridden";
+IDEVICE_EDITOR = "iDevice Editor";
+PREFERENCES = "Preferences";
+METADATA_EDITOR = "metadata editor";
+ABOUT = "About";
+SELECT_THE_PARENT_FOLDER_FOR_EXPORT_ = "Select the parent folder for export.";
+EXPORT_TEXT_PACKAGE_AS = "Export text package as";
+TEXT_FILE = "Text File";
+EXPORT_SCORM_PACKAGE_AS = "Export SCORM package as";
+EXPORT_IMS_PACKAGE_AS = "Export IMS package as";
+EXPORT_WEBSITE_PACKAGE_AS = "Export Website package as";
+EXPORT_IPOD_PACKAGE_AS = "Export iPod package as";
+INVALID_VALUE_PASSED_TO_EXPORTPACKAGE = "INVALID VALUE PASSED TO exportPackage";
+SELECT_PACKAGE_TO_INSERT = "Select package to insert";
+SAVE_EXTRACTED_PACKAGE_AS = "Save extracted package as";
+
+
 // This var is needed, because initWindow is called twice for some reason
 var haveLoaded = false
 
@@ -120,7 +148,7 @@ function currentOutlineId(index)
 function confirmDelete() {
     var id = currentOutlineId()
     if (id != '0') {
-        return confirm('Delete "' + currentOutlineLabel() + '" node and all its children. Are you sure?')
+        return confirm(DELETE_  + currentOutlineLabel() + NODE_AND_ALL_ITS_CHILDREN_ARE_YOU_SURE_)
     } else {
         return 'false' 
     }
@@ -249,7 +277,7 @@ function XHMoveNode(id, parentId, nextSiblingId) {
 function askNodeName() {
     var treeitem = currentOutlineItem()
     var oldLabel = treeitem.getElementsByTagName('treecell')[0].getAttribute('name')
-    var name = prompt("Rename '"+oldLabel+"'\nEnter the new name", oldLabel);
+    var name = prompt(RENAME_+oldLabel+'"\n'+ENTER_THE_NEW_NAME, oldLabel);
     return name
 }
 
@@ -290,10 +318,10 @@ function askSave(onProceed) {
     var flags = promptService.BUTTON_TITLE_SAVE * promptService.BUTTON_POS_0 +
                 promptService.BUTTON_TITLE_IS_STRING * promptService.BUTTON_POS_1 +
                 promptService.BUTTON_TITLE_CANCEL * promptService.BUTTON_POS_2
-    var res = promptService.confirmEx(window,"Save Package first?",
-                                      "The current package has been modified and not yet saved. " +
-                                      "Would you like to save it before loading the new package?",
-                                      flags, null, 'Discard', null, '', {});
+    var res = promptService.confirmEx(window,SAVE_PACKAGE_FIRST_,
+                                      THE_CURRENT_PACKAGE_HAS_BEEN_MODIFIED_AND_NOT_YET_SAVED_ +
+                                      WOULD_YOU_LIKE_TO_SAVE_IT_BEFORE_LOADING_THE_NEW_PACKAGE_,
+                                      flags, null, DISCARD, null, '', {});
     if (res == 0) {
       // If we need to save the file
       // go through the whole save process
@@ -328,8 +356,8 @@ function fileOpen2() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a File", nsIFilePicker.modeOpen);
-    fp.appendFilter("eXe Package Files","*.elp");
+    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
+    fp.appendFilter(EXE_PACKAGE_FILES,"*.elp");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -384,8 +412,8 @@ function fileSaveAs(onDone) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a File", nsIFilePicker.modeSave);
-    fp.appendFilter("eXe Package Files","*.elp");
+    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeSave);
+    fp.appendFilter(EXE_PACKAGE_FILES,"*.elp");
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
         saveWorkInProgress();
@@ -432,7 +460,7 @@ function filePrint3_openPrintWin(tempPrintDir, tempExportedDir) {
     // need UniversalFileRead to load a "file:" URL:
     netscape.security.PrivilegeManager.enablePrivilege('UniversalFileRead');
     print_url = "file://"+tempExportedDir+"/index.html"
-    printWin = window.open (print_url, "Apparently Useless Title which is Overridden", features);
+    printWin = window.open (print_url, APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN, features);
 
     // and that's all she wrote!
 
@@ -482,14 +510,14 @@ function saveWorkInProgress() {
 function toolsEditor() {
     var features  = "width=800,height=700,status=no,resizeable=yes,"+
                     "scrollbars=yes";
-    var editorWin = window.open("/editor", "iDevice Editor", features);
+    var editorWin = window.open("/editor", IDEVICE_EDITOR, features);
 }
 
 // Launch the Preferences Window
 function toolsPreferences() {
     var features  = "width=500,height=200,status=no,resizeable=yes,"+
                     "scrollbars=yes";
-    var editorWin = window.open("/preferences", "Preferences", features);
+    var editorWin = window.open("/preferences", PREFERENCES, features);
 }
 
 // launch brents crazy robot metadata editor and tag warehouse 
@@ -499,13 +527,13 @@ function toolsPreferences() {
 
 function metadataEditor() {
     var features = "width=500,height=640,status=yes,resizeable=yes,scrollbars=yes";
-    var metadataWin = window.open ("/templates/metadata.xul", "metadata editor", features);
+    var metadataWin = window.open ("/templates/metadata.xul", METADATA_EDITOR, features);
 }
 
 // load the About page
 function aboutPage() {
     var features = "width=235,height=440,status=1,resizable=1,left=260,top=200";
-    aboutWin = window.open ("/about", "About", features);
+    aboutWin = window.open ("/about", ABOUT, features);
 }
 
 // load the Live Chat page
@@ -552,7 +580,7 @@ function exportPackage(exportType, exportDir) {
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
     if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage') {
         if (exportDir == '') {
-            fp.init(window, "Select the parent folder for export.",
+            fp.init(window, SELECT_THE_PARENT_FOLDER_FOR_EXPORT_,
                          nsIFilePicker.modeGetFolder);
             var res = fp.show();
             if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
@@ -567,24 +595,24 @@ function exportPackage(exportType, exportDir) {
             nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, 'filePrint3_openPrintWin')
         }
     } else if(exportType == "textFile"){
-        title = "Export text package as";
+        title = EXPORT_TEXT_PACKAGE_AS;
         fp.init(window, title, nsIFilePicker.modeSave);
-        fp.appendFilter("Text File", "*.txt");
+        fp.appendFilter(TEXT_FILE, "*.txt");
         fp.appendFilters(nsIFilePicker.filterAll);
         var res = fp.show();
         if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace)
             nevow_clientToServerEvent('exportPackage', this, '', exportType, fp.file.path)
     } else {
         if (exportType == "scorm")
-            title = "Export SCORM package as";
+            title = EXPORT_SCORM_PACKAGE_AS;
         else if (exportType == "ims")
-            title = "Export IMS package as";
+            title = EXPORT_IMS_PACKAGE_AS;
         else if (exportType == "zipFile")
-            title = "Export Website package as";
+            title = EXPORT_WEBSITE_PACKAGE_AS;
         else if (exportType == "ipod")
-            title = "Export iPod package as";
+            title = EXPORT_IPOD_PACKAGE_AS;
         else
-            title = "INVALID VALUE PASSED TO exportPackage";
+            title = INVALID_VALUE_PASSED_TO_EXPORTPACKAGE;
         fp.init(window, title, nsIFilePicker.modeSave);
         fp.appendFilter("SCORM/IMS/ZipFile", "*.zip");
         fp.appendFilters(nsIFilePicker.filterAll);
@@ -601,8 +629,8 @@ function insertPackage() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select package to insert", nsIFilePicker.modeOpen);
-    fp.appendFilter("eXe Package Files","*.elp");
+    fp.init(window, SELECT_PACKAGE_TO_INSERT, nsIFilePicker.modeOpen);
+    fp.appendFilter(EXE_PACKAGE_FILES,"*.elp");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -615,8 +643,8 @@ function extractPackage() {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Save extracted package as", nsIFilePicker.modeSave);
-    fp.appendFilter("eXe Package Files","*.elp");
+    fp.init(window, SAVE_EXTRACTED_PACKAGE_AS, nsIFilePicker.modeSave);
+    fp.appendFilter(EXE_PACKAGE_FILES,"*.elp");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {

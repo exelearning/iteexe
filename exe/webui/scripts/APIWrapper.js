@@ -55,6 +55,24 @@
 **
 *******************************************************************************/
 
+// Strings to be translated
+UNABLE_TO_LOCATE_THE_LMS_API = "Unable to locate the LMS's API Implementation.";
+LMSINITIALIZE_WAS_NOT_SUCCESSFUL = "LMSInitialize was not successful.";
+LMSFINISH_WAS_NOT_SUCCESSFUL = "LMSFinish was not successful.";
+LMSGETVALUE_WAS_NOT_SUCCESSFUL = "LMSGetValue was not successful.";
+FAILED = "failed";
+LMSSETVALUE_WAS_NOT_SUCCESSFUL = "LMSSetValue was not successful.";
+LMSCOMMIT_WAS_NOT_SUCCESSFUL = "LMSCommit was not successful.";
+LMSGETLASTERROR_WAS_NOT_SUCCESSFUL = "LMSGetLastError was not successful.";
+WAS_NOT_SUCCESSFUL = "was not successful.";
+LMSGETERRORSTRING_WAS_NOT_SUCCESSFUL = "LMSGetErrorString was not successful.";
+LMSGETDIAGNOSTIC_WAS_NOT_SUCCESSFUL = "LMSGetDiagnostic was not successful.";
+LMSISINITIALIZED_FAILED = "LMSIsInitialized() failed.";
+CANNOT_DETERMINE_LMS_ERROR_CODE = "Cannot determine LMS error code.";
+ERROR_FINDING_API_TOO_DEEPLY_NESTED = "Error finding API -- too deeply nested.";
+UNABLE_TO_FIND_AN_API_ADAPTER = "Unable to find an API adapter";
+
+
 var _Debug = false;  // set this to false to turn debugging off
                      // and get rid of those annoying alert boxes.
 
@@ -96,7 +114,7 @@ function doLMSInitialize()
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSInitialize was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + '\n' + LMSINITIALIZE_WAS_NOT_SUCCESSFUL);
       return "false";
    }
 
@@ -127,7 +145,7 @@ function doLMSFinish()
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSFinish was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSFINISH_WAS_NOT_SUCCESSFUL);
       return "false";
    }
    else
@@ -163,7 +181,7 @@ function doLMSGetValue(name)
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSGetValue was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSGETVALUE_WAS_NOT_SUCCESSFUL);
       return "";
    }
    else
@@ -174,7 +192,7 @@ function doLMSGetValue(name)
       {
          // an error was encountered so display the error description
          var errDescription = api.LMSGetErrorString(errCode);
-         alert("LMSGetValue("+name+") failed. \n"+ errDescription);
+         alert("LMSGetValue("+name+") "+FAILED+"\n"+errDescription);
          return "";
       }
       else
@@ -202,7 +220,7 @@ function doLMSSetValue(name, value)
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSSetValue was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSSETVALUE_WAS_NOT_SUCCESSFUL);
       return;
    }
    else
@@ -232,7 +250,7 @@ function doLMSCommit()
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSCommit was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSCOMMIT_WAS_NOT_SUCCESSFUL);
       return "false";
    }
    else
@@ -262,7 +280,7 @@ function doLMSGetLastError()
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSGetLastError was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSGETLASTERROR_WAS_NOT_SUCCESSFUL);
       //since we can't get the error code from the LMS, return a general error
       return _GeneralError;
    }
@@ -285,7 +303,7 @@ function doLMSGetErrorString(errorCode)
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSGetErrorString was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSGETERRORSTRING_WAS_NOT_SUCCESSFUL);
    }
 
    return api.LMSGetErrorString(errorCode).toString();
@@ -307,7 +325,7 @@ function doLMSGetDiagnostic(errorCode)
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSGetDiagnostic was not successful.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSGETDIAGNOSTIC_WAS_NOT_SUCCESSFUL);
    }
 
    return api.LMSGetDiagnostic(errorCode).toString();
@@ -332,7 +350,7 @@ function LMSIsInitialized()
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nLMSIsInitialized() failed.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + LMSISINITIALIZED_FAILED);
       return false;
    }
    else
@@ -367,7 +385,7 @@ function ErrorHandler()
    var api = getAPIHandle();
    if (api == null)
    {
-      alert("Unable to locate the LMS's API Implementation.\nCannot determine LMS error code.");
+      alert(UNABLE_TO_LOCATE_THE_LMS_API + "\n" + CANNOT_DETERMINE_LMS_ERROR_CODE);
       return;
    }
 
@@ -432,7 +450,7 @@ function findAPI(win)
       // Note: 7 is an arbitrary number, but should be more than sufficient
       if (findAPITries > 7) 
       {
-         alert("Error finding API -- too deeply nested.");
+         alert(ERROR_FINDING_API_TOO_DEEPLY_NESTED);
          return null;
       }
       
@@ -465,7 +483,7 @@ function getAPI()
    }
    if (theAPI == null)
    {
-      alert("Unable to find an API adapter");
+      alert(UNABLE_TO_FIND_AN_API_ADAPTER);
    }
    return theAPI
 }

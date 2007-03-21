@@ -17,14 +17,19 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // ===========================================================================
 
+// Strings to be translated
+SELECT_A_FILE = "Select a File"
+EXE_PACKAGE_FILES = "eXe Package Files"
+
+
 // Scripts for the load page
 
 function chooseFile() {
   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
   var nsIFilePicker = Components.interfaces.nsIFilePicker;
   var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-  fp.init(window, "Select a File", nsIFilePicker.modeOpen);
-  fp.appendFilter("eXe Package Files","*.elp");
+  fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
+  fp.appendFilter(EXE_PACKAGE_FILES,"*.elp");
   var res = fp.show();
   if (res == nsIFilePicker.returnOK) {
     document.getElementById('file').setAttribute('value', fp.file.path);

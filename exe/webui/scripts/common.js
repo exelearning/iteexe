@@ -32,6 +32,19 @@ function onLoadHandler() {
     runFuncArray(onLoadHandlers)
 }
 
+// Strings to be translated
+SELECT_AN_IMAGE    = "Select an image";
+IMAGE_FILES        = "Image Files";
+JPEG_FILES         = "JPEG Files";
+SELECT_A_FILE      = "Select a file";
+FLASH_MOVIE        = "Flash Movie";
+FLASH_OBJECT       = "Flash Object";
+SELECT_AN_MP3_FILE = "Select an mp3 file";
+MP3_AUDIO          = "MP3 Audio";
+SELECT_A_PACKAGE   = "Select a package";
+YOUR_SCORE_IS      = "Your score is ";
+
+
 // Calls function in an array where each 'row' of the array is in the format:
 // func
 // or
@@ -58,8 +71,8 @@ function askUserForImage(multiple) {
     } else {
         var mode = nsIFilePicker.modeOpen;
     }
-    fp.init(window, "Select an image", mode);
-    fp.appendFilter("Image Files", "*.jpg; *.jpeg; *.png; *.gif");
+    fp.init(window, SELECT_AN_IMAGE, mode);
+    fp.appendFilter(IMAGE_FILES, "*.jpg; *.jpeg; *.png; *.gif");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -130,8 +143,8 @@ function askUserForJpgImage(multiple) {
     } else {
         var mode = nsIFilePicker.modeOpen;
     }
-    fp.init(window, "Select an image ", mode);
-    fp.appendFilter("JPEG Files", "*.jpg; *.jpeg");
+    fp.init(window, SELECT_AN_IMAGE, mode);
+    fp.appendFilter(JPEG_FILES, "*.jpg; *.jpeg");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -302,8 +315,8 @@ function addFlashMovie(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("Flash Movie", "*.flv");
+    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
+    fp.appendFilter(FLASH_MOVIE, "*.flv");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -318,8 +331,8 @@ function addFlash(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
-    fp.appendFilter("Flash Object", "*.swf");
+    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
+    fp.appendFilter(FLASH_OBJECT, "*.swf");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -333,8 +346,8 @@ function addMp3(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a mp3 file", nsIFilePicker.modeOpen);
-    fp.appendFilter("Mp3 Audio", "*.mp3");
+    fp.init(window, SELECT_AN_MP3_FILE, nsIFilePicker.modeOpen);
+    fp.appendFilter(MP3_AUDIO, "*.mp3");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -351,7 +364,7 @@ function addFile(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a package", nsIFilePicker.modeOpen);
+    fp.init(window, SELECT_A_PACKAGE, nsIFilePicker.modeOpen);
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -364,7 +377,7 @@ function uploadFile(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
+    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -789,7 +802,7 @@ function showClozeScore(ident, mark) {
     }
     // Show it in a nice paragraph
     var scorePara = document.getElementById('clozeScore' + ident);
-    scorePara.innerHTML = "Your score is " + score + "/" + inputs.length + ".";
+    scorePara.innerHTML = YOUR_SCORE_IS + score + "/" + inputs.length + ".";
 }
 
 // Returns an array of input elements that are associated with a certain idevice
@@ -924,5 +937,5 @@ function calcScore(num, ident){
     }
     var fele = document.getElementById("f"+ident)
     fele.style.display = "block"
-    alert("Your score is " + score + "/" + num)
+    alert(YOUR_SCORE_IS  + score + "/" + num)
 }
