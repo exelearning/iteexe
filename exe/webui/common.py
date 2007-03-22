@@ -158,7 +158,7 @@ def flash(src, width, height, id_=None, params=None, **kwparams):
 def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
     """Returns the XHTML for a flash movie"""
     log.debug(u"flash %s" % movie)
-    src = resourcesDir + 'FlowPlayer.swf'
+    src = resourcesDir + 'flowPlayer.swf'
     params={'movie': src,
             'allowScriptAccess' :'sameDomain', 
             'quality' :'high', 
@@ -174,7 +174,7 @@ def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
                 'playList: [ { url: \'%(movie)s\' }, ]'
             '}' % {'movie': movie, 'autoplay': autoplay}
             }
-    return flash(src, width, height, id="FlowPlayer", params=params)
+    return flash(src, width, height, id="flowPlayer", params=params)
 
 
 def submitButton(name, value, enabled=True, **kwargs):
