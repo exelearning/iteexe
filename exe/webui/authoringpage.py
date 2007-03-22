@@ -141,7 +141,7 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript">\n'
         html += u'<!--\n'
         html += u"tinyMCE.init({   " 
-        html += u"content_css : \"/style/base.css\", \n"
+#        html += u"content_css : \"/style/base.css\", \n"
         html += u"valid_elements : \"*[*]\",\n"
         html += u"verify_html : false, \n"
         html += u"apply_source_formatting : true, \n"
