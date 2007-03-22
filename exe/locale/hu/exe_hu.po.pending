@@ -777,3 +777,90 @@ msgid ""
 "_: suggested by lukacsp\n"
 "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "Nem lehet betölteni az állományt, kérem küldje el a bugs@exelearning.org címre."
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
+#: label="Lingala ">
+msgid ""
+"_: suggested by Spy\n"
+"Lingala "
+msgstr "Lingala"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
+#: label="Frisian ">
+msgid ""
+"_: suggested by Spy\n"
+"Frisian "
+msgstr "Fríz"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid ""
+"_: suggested by Spy\n"
+"Cornish "
+msgstr "Cornwalli"
+
+#: exe/xului/templates/mainpage.xul:<label value="iDevices"
+#: style="margin-top:5px;">
+msgid ""
+"_: suggested by Spy\n"
+"iDevices"
+msgstr "iDevice-ok"
+
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
+msgid ""
+"_: suggested by Spy\n"
+"label=\"eXe Live Chat\" accesskey=\"c\""
+msgstr "label=\"eXe Chat\" accesskey=\"c\""
+
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+#: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
+msgid ""
+"_: suggested by Spy\n"
+"label=\"Recent Projects...\" accesskey=\"r\""
+msgstr "label=\"Legutóbbi projektek...\" accesskey=\"r\""
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
+#: label="Creative License">
+msgid ""
+"_: suggested by Spy\n"
+"Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Licensz"
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
+#: License">
+msgid ""
+"_: suggested by Spy\n"
+"Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 Licensz"
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
+#: License">
+msgid ""
+"_: suggested by Spy\n"
+"Creative Commons Attribution-NonCommercial 2.5 License"
+msgstr "Creative Commons Attribution-NonCommercial 2.5 Licensz"
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+msgid ""
+"_: suggested by Spy\n"
+"Creative Commons Attribution-ShareAlike 2.5 License"
+msgstr "Creative Commons Attribution-ShareAlike 2.5 Licensz"
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+msgid ""
+"_: suggested by Spy\n"
+"Creative Commons Attribution-NoDerivs 2.5 License"
+msgstr "Creative Commons Attribution-NoDerivs 2.5 Licensz"
+
+#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
+#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+msgid ""
+"_: suggested by Spy\n"
+"Creative Commons Attribution 2.5 License"
+msgstr "Creative Commons Attribution 2.5 Licensz"

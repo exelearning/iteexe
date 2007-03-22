@@ -585,12 +585,14 @@ msgstr "<p>Los profesores deben recordar lo siguiente cuando estén usando este 
 msgid ""
 "_: suggested by paco"
 "Check Caps?"
+""
 msgstr "¿Comprobar mayúsculas?"
 
 #: exe/idevices/forumelement.py:103
 msgid ""
 "_: suggested by paco"
 "Can a student post to this forum?:"
+""
 msgstr "¿Puede un alumno enviar mensajes a este foro?:"
 
 #: exe/xului/mainpage.py:238 exe/xului/mainpage.py:297
@@ -598,16 +600,25 @@ msgstr "¿Puede un alumno enviar mensajes a este foro?:"
 msgid ""
 "_: suggested by paco"
 "Cannot access directory named "
+""
 msgstr "No se puede acceder al directorio llamado_"
 
 #: exe/webui/wikipediablock.py:92
 msgid ""
 "_: suggested by paco"
 "Chinese Wikipedia Article"
+""
 msgstr "Artículo De Wikipedia en chino"
 
 #: exe/engine/casestudyidevice.py:54
 msgid ""
 "_: suggested by paco"
 "Choose an optional image to be shown to the student on completion of this question"
+""
 msgstr "Escoja una imagen opcional para ser mostrada al alumno como finalización de esta pregunta."
+
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
+msgid ""
+"_: suggested by ppernias\n"
+"Maths"
+msgstr "Editor Matemático"

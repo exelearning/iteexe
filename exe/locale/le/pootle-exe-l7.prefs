@@ -2,6 +2,6 @@
 
 rights:
   david = u'view, suggest, translate, review, archive, pocompile'
-  default = u'view, translate, suggest, archive, pocompile'
+  default = u'view, translate, suggest, commit, archive, pocompile'
   nobody = u'view'
   matiu = u'view, suggest, translate, review, archive, pocompile'

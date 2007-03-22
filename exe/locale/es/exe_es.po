@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-12 11:09+1300\n"
-"PO-Revision-Date: 2006-11-03 01:00+1300\n"
-"Last-Translator: Juan Muñoz Justicia <juan.munoz@uab.es>\n"
+"PO-Revision-Date: 2007-03-14 09:28+1300\n"
+"Last-Translator: Pedro Pernías <p.pernias@ua.es>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 0.10beta\n"
+"X-Generator: Pootle 0.10.1\n"
 "X-EXE-Language: Español\n"
 "X-Poedit-Language: Spanish\n"
 
@@ -59,12 +59,11 @@ msgstr ". Por favor usar nombres en ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  de tiempo largo  que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos que uno haya tipeado la pagina es probablemente adecuado, pero considerablemente menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en la llave de texto para entender los conceptos . Estas serán probablemente verbos, sustantivos y adverbios. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en voabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y cohesivo, y ser de un apropiado largo. Resaltando las palabras importantes en el texto. Elija una alternativa limpia.</p>  </dd>  <dt>si su meta es probar palabras para la formación de la gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y ser de un apropiado largo. Recuerde que la meta no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resaltando las palabras importantes en el texto. Prove alternativas con la misma palabra raíz , pero con diferentes significados. Es una buena idea conseguir a un colega para probar los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
+msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  suficientemente extenso sea adecuado para el objetivo de conocimiento, pero que sea breve para no inducir fatiga. Una pagina escrita sería probablemente adecuada, pero debería ser considerablemente menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras importantes o clave para entender los conceptos . Podrían ser probablemente verbos, sustantivos y adverbios. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en vocabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y cohesivo, y ser de una extensión apropiada. Resaltando las palabras importantes en el texto. Elija una alternativa clara.</p>  </dd>  <dt>si su meta es probar palabras para la formación en gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y ser de una extensión adecuada. Recuerde que la meta no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resaltando las palabras importantes en el texto. Prove alternativas con la misma palabra raíz , pero con diferentes significados. Es una buena idea conseguir la revisión de un colega para probar los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
 
 #: exe/engine/multimediaidevice.py:50
-#, fuzzy
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>Click &lt;Seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en que quiere que se muestre el archivo.</li>  <li>Introduzca un título para su archivo.</li> <li>Associate relevant text to the MP3 file.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice, p.ej. 'Énfasis' aplica un borde y un icono al contenido del iDevice.</li></ol>"
+msgstr "<ol>  <li>Click &lt;Seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en que quiere que se muestre el archivo.</li>  <li>Introduzca un título para su archivo.</li> <li>Asocie cualquier texto relevante para el MP3.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice, p.ej. 'Énfasis' aplica un borde y un icono al contenido del iDevice.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -87,31 +86,31 @@ msgid ""
 msgstr ""
 "<p>\n"
 "El IDevice imagen con texto en el IDevice puede ser utilizado de muchas maneras para apoyar tanto la dimensión emocional (afectiva) como la tarea de aprendizadje (cognitiva) de EXE.\n"
-"Nosotros te proporcionamos un ejemplo por cada dimension:\n"
+"Nosotros le proporcionamos un ejemplo por cada dimension:\n"
 "</p><p>\n"
 "<b>Perfil del profesor (dimension emocional)</b>\n"
 "</p><p>\n"
-"La investigacion sugiere que los estudiantes en linea aprecien un acercamiento personalizado.\n"
+"La investigacion sugiere que los estudiantes en linea aprecian un acercamiento personalizado.\n"
 "Una manera de lograr esto es proporcionarle una descripcion breve \n"
 "del profesor y de otro personal relacionado a este modo de aprendizaje. El \n"
 "perfil (con la foto personal) no solo es usado a describir el rol \n"
-"y credenciales del profesor sino tambien tener una relacion directa \n"
+"y credenciales del profesor sino también tener una relacion directa \n"
 "entre el estudiante y el profesor mas el contenido intermediario (la computadora). Los perfiles deberan ser escritos de una \n"
 "forma \"no academica\" haciendo uso de pronombres personales.\n"
 "</p><p>\n"
 "<b>Integrando lo visual con lo resumenes verbales</b>\n"
 "</p><p>\n"
-"Los psicólogos cognoscitivos indican que la presentación de los estudiantes con una imagen representativa y un resumen verbal correspondiente (que es presentado simultáneamente) \n"
-"reduce la carga cognoscitiva y aumenta la retencion del estudiante.\n"
+"Los psicólogos cognitivos indican que la presentación de los estudiantes con una imagen representativa y un resumen verbal correspondiente (que es presentado simultáneamente) \n"
+"reduce la carga cognitiva y aumenta la retención del estudiante.\n"
 "El IDevice se puede utilizar para presentar una imagen (fotografía, diagrama o gráfico)\n"
 "con un breve resumen verbal que cubre los principales puntos relacionado a la imagen.\n"
-"Por ejemplo, si tu estuvieras enseñando las funciones de un motor de combustión de cuatro tiempos, \n"
-"tu podrías tener una representación visual de cada uno de las cuatro posiciones del pistón con un \n"
+"Por ejemplo, si se estuviera enseñando las funciones de un motor de combustión de cuatro tiempos, \n"
+"se podría tener una representación visual de cada uno de las cuatro posiciones del pistón con un \n"
 "con un breve resumen textual de los aspectos claves de cada uno.</p>"
 
 #: exe/engine/attachmentidevice.py:59
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr "<p>Asigne una etiqueta para el adjunto.  Es útil incluir el tipo de archivo. Ej. pdf, ppt, etc.</p><p>También se recomienda incluir el tamaño de forma que después de que su paquete se exporte a un Web site, la gente tenga una idea sobre cuánto tiempo supondría la descarga de este adjunto. </p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
+msgstr "<p>Asigne una etiqueta para el adjunto.  Es útil incluir el tipo de archivo. Ej. pdf, ppt, etc.</p><p>También se recomienda incluir el tamaño de forma que después de que su paquete se exporte a un Web site, los alumnos tengan una idea sobre cuánto tiempo supondría la descarga de este adjunto. </p><p>Por ejemplo:</p><code>Ventas Forecast.doc (500kb)</code>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
@@ -1262,9 +1261,8 @@ msgid "MP3"
 msgstr ""
 
 #: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
-#, fuzzy
 msgid "Maths"
-msgstr "Marathi."
+msgstr "Editor matemático"
 
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
@@ -3905,11 +3903,11 @@ msgstr "Cobertura:"
 #: style="width:8em" tooltiptext="Information about rights held in and over
 #: the resource.">
 msgid "Rights:"
-msgstr "Derechas:"
+msgstr "Derechos:"
 
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr "Típicamente, un elemento de las derechas contendrá una declaración de la gerencia de las derechas para el recurso, o referirá a un servicio que proveerá este información. La información de las derechas abarca a menudo las derechas de característica intelectual (IPR), el Copyright, y las varias derechas de característica. Si el elemento de las derechas está ausente, ningunas asunciones se pueden hacer sobre el estado de éstos y de otras derechas con respecto al recurso."
+msgstr "Típicamente, un elemento de de \"derechos\"contendrá una declaración de la gestión de derechos de propiedad intelectual para el recurso, o se referirá a un servicio que proveerá este información. La información sobre \"derechos\" abarca a menudo las derechos de propiedad intelectual (IPR), el Copyright y otros elementos imilares. Si el elemento de \"derechos\" está ausente, se considera que \"todos los derechos están reservados\""
 
 #~ msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 #~ msgstr "Use énfasis para señalar la información importante que va a ser presentada en el IDevice."
