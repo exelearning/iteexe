@@ -297,10 +297,7 @@ class ClientHandle(object):
         self.timeoutCount += 1
         if self.timeoutCount >= self.targetTimeoutCount:
             ## This connection timed out.
-            self._closeComplete(
-                TimeoutException(
-                    "This connection did not ACK in at least %s seconds." % (
-                        self.targetTimeoutCount * self.refreshInterval, )))
+            pass
 
     def outputGone(self, failure, output):
         assert output == self.outputConduit
