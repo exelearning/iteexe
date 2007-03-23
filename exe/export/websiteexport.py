@@ -154,7 +154,7 @@ class WebsiteExport(object):
                                   outputDir)
         
         # copy players for media idevices.                
-        hasVideoContainer = False
+        hasFlowplayer     = False
         hasMagnifier      = False
         hasXspfplayer     = False
         isBreak           = False
@@ -163,12 +163,12 @@ class WebsiteExport(object):
             if isBreak:
                 break
             for idevice in page.node.idevices:
-                if (hasVideoContainer and hasMagnifier and hasXspfplayer):
+                if (hasFlowplayer and hasMagnifier and hasXspfplayer):
                     isBreak = True
                     break
-                if not hasVideoContainer:
-                    if 'videoContainer.swf' in idevice.systemResources:
-                        hasVideoContainer = True
+                if not hasFlowplayer:
+                    if 'flowPlayer.swf' in idevice.systemResources:
+                        hasFlowplayer = True
                 if not hasMagnifier:
                     if 'magnifier.swf' in idevice.systemResources:
                         hasMagnifier = True
@@ -176,9 +176,9 @@ class WebsiteExport(object):
                     if 'xspf_player.swf' in idevice.systemResources:
                         hasXspfplayer = True
                         
-        if hasVideoContainer:
-            videofile = (self.templatesDir/'videoContainer.swf')
-            videofile.copyfile(outputDir/'videoContainer.swf')
+        if hasFlowplayer:
+            videofile = (self.templatesDir/'flowPlayer.swf')
+            videofile.copyfile(outputDir/'flowPlayer.swf')
         if hasMagnifier:
             videofile = (self.templatesDir/'magnifier.swf')
             videofile.copyfile(outputDir/'magnifier.swf')

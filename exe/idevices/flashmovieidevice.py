@@ -33,7 +33,7 @@ class FlashMovieIdevice(Idevice):
     """
     A FlashMovie Idevice is one built up from a flash file and free text.
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
 
     def __init__(self):
         Idevice.__init__(self, x_(u"Flash Movie"), 
@@ -56,7 +56,7 @@ the text you wish to associate with the file."""))
         self.caption          = ""
         self._captionInstruc  = x_(u"""Provide a caption for the flash movie 
 you have just inserted.""")
-        self.systemResources += ['FlowPlayer.swf']
+        self.systemResources += ['flowPlayer.swf']
     
     # Properties
     captionInstruc = lateTranslate('captionInstruc')
@@ -78,6 +78,14 @@ you have just inserted.""")
         self._captionInstruc  = x_(u"""Provide a caption for the flash movie 
 you have just inserted.""")
         self.flash._upgradeFieldToVersion3()
+        
+    def upgradeToVersion4(self):
+        """
+        Upgrades to v0.23
+        """
+        self.systemResources.remove('videoContainer.swf')
+        self.systemResources += ['flowPlayer.swf']
+        
 
 # ===========================================================================
 def register(ideviceStore):
