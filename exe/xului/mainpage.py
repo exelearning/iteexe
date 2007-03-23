@@ -107,9 +107,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleLoadRecent,      'loadRecent')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleQuit,            'quit')
-        setUpHandler(self.handleRegister,        'register')
-        setUpHandler(self.handleReportIssue,     'reportIssue')
-        setUpHandler(self.handleLiveChat,        'liveChat')
+        setUpHandler(self.handleBrowseURL,       'browseURL')
         setUpHandler(self.handleInsertPackage,   'insertPackage')
         setUpHandler(self.handleExtractPackage,  'extractPackage')
         setUpHandler(self.outlinePane.handleSetTreeSelection,  
@@ -456,37 +454,15 @@ class MainPage(RenderableLivePage):
 
         reactor.stop()
 
-    def handleRegister(self, client):
-        """Go to the exelearning.org/register.php site"""
+    def handleBrowseURL(self, client, url):
+        """visit the specified URL using the system browser"""
         if hasattr(os, 'startfile'):
-            os.startfile("http://exelearning.org/register.php")
+            os.startfile(url)
         elif sys.platform[:6] == "darwin":
             import webbrowser
-            webbrowser.open("http://exelearning.org/register.php", new=True)
+            webbrowser.open(url, new=True)
         else:
-            os.system("firefox http://exelearning.org/register.php&")
-
-
-    def handleReportIssue(self, client):
-        """Go to the exelearning.org issue tracker"""
-        if hasattr(os, 'startfile'):
-            os.startfile("http://exelearning.org/issue.php")
-        elif sys.platform[:6] == "darwin":
-            import webbrowser
-            webbrowser.open("http://exelearning.org/issue.php", new=True)
-        else:
-            os.system("firefox http://exelearning.org/issue.php&")
-
-    def handleLiveChat(self, client):
-        """Go to the IRC page, but via the exelearning redirect"""
-        if hasattr(os, 'startfile'):
-            os.startfile("http://exelearning.org/irc.php")
-        elif sys.platform[:6] == "darwin":
-            import webbrowser
-            webbrowser.open("http://exelearning.org/irc.php", new=True)
-        else:
-            os.system("firefox http://exelearning.org/irc.php&")
-
+            os.system("firefox " + url + "&")
 
     def handleInsertPackage(self, client, filename):
         """

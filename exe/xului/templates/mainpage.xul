@@ -95,10 +95,15 @@
             <menuitem n:render="translate" id="refresh-menu" label="Refresh" accesskey="r" oncommand="window.location = window.location"></menuitem>
            <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
-                <menuitem n:render="translate" label="About" accesskey="a" oncommand="aboutPage()"/>
+		<menuitem n:render="translate" label="Online eXe Manual" accesskey="m" oncommand="browseURL('http://exelearning.org/manual.php')"/>
+		<menuitem n:render="translate" label="Tips and Tricks" accesskey="t" oncommand="browseURL('http://exelearning.org/tips.php')"/>
+		<menuitem n:render="translate" label="Release Notes" accesskey="n" oncommand="browseURL('http://exelearning.org/Release_Notes')"/>
+		<menuseparator/>
                 <!-- <menuitem n:render="translate" label="Register Online" accesskey="R" oncommand="registerOnline()"/> -->
-                <menuitem n:render="translate" label="Report an Issue" accesskey="R" oncommand="reportIssue()"/>
-		<menuitem n:render="translate" label="eXe Live Chat" accesskey="c" oncommand="liveChatPage()"/>
+		<menuitem n:render="translate" label="Report an Issue" accesskey="r" oncommand="browseURL('http://exelearning.org/issue.php')"/>
+		<menuitem n:render="translate" label="eXe Live Chat" accesskey="c" oncommand="browseURL('http://exelearning.org/irc.php')"/>
+                <menuseparator/>
+                <menuitem n:render="translate" label="About eXe" accesskey="a" oncommand="aboutPage()"/>
               </menupopup>
             </menu>
          </menubar>

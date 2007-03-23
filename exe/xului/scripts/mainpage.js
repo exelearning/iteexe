@@ -536,23 +536,10 @@ function aboutPage() {
     aboutWin = window.open ("/about", ABOUT, features);
 }
 
-// load the Live Chat page
-function liveChatPage() {
-    // use the user's default browser, as per the reportIssue() command, 
-    // rather than the current FireFox instance (too open, security-wise):
-    nevow_clientToServerEvent('liveChat', this, '');
+// browse the specified URL in system browser
+function browseURL(url) {
+    nevow_clientToServerEvent('browseURL', this, '', url);
 }
-
-// Go to the exelearning.org/register.php site
-function registerOnline() {
-    nevow_clientToServerEvent('register', this, '');
-}
-
-// Go to the exelearning.org/mantis site
-function reportIssue() {
-    nevow_clientToServerEvent('reportIssue', this, '');
-}
-
 
 // Appends an iDevice
 // XH means that the func is actually called by the server over xmlhttp
