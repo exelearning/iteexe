@@ -44,6 +44,7 @@ from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
 from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
+from exe                         import globals as G
 from tempfile                    import mkdtemp
 from stat                        import *
 
@@ -105,6 +106,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleSavePackage,     'savePackage')
         setUpHandler(self.handleLoadPackage,     'loadPackage')
         setUpHandler(self.handleLoadRecent,      'loadRecent')
+        setUpHandler(self.handleClearRecent,     'clearRecent')
         setUpHandler(self.handleExport,          'exportPackage')
         setUpHandler(self.handleQuit,            'quit')
         setUpHandler(self.handleBrowseURL,       'browseURL')
@@ -198,6 +200,10 @@ class MainPage(RenderableLivePage):
                           ' accesskey="%(num)s"'
                           ' oncommand="fileOpenRecent(\'%(num)s\')"/>' %
                           {'num': num + 1, 'path': escape(path)})
+        result.append('  <menuseparator/>')
+        result.append('  <menuitem label="%s"'
+                      ' oncommand="fileRecentClear()"/>' %
+                      _('Clear Recent Projects List'))
         result.append('</menupopup>')
         return stan.xml('\n'.join(result))
 
@@ -313,6 +319,15 @@ class MainPage(RenderableLivePage):
         """
         filename = self.config.recentProjects[int(number) - 1]
         self.handleLoadPackage(client, filename)
+
+    def handleClearRecent(self, client):
+        """
+        Clear the recent project list
+        """
+        G.application.config.recentProjects = []
+        G.application.config.configParser.write()
+        # rerender the menus
+        client.sendScript('top.location = "/%s"' % self.package.name.encode('utf8'))
 
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """

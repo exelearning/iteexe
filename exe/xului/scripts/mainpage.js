@@ -376,6 +376,11 @@ function fileOpenRecent2(number) {
     nevow_clientToServerEvent('loadRecent', this, '', number)
 }
 
+// Clear recent files menu
+function fileRecentClear() {
+    nevow_clientToServerEvent('clearRecent', this, '')
+}
+
 // Called by the user when they want to save their package
 // Also called by some java script to cause a whole
 // proper save process.
