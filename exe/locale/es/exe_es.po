@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-22 22:16+0000\n"
-"PO-Revision-Date: 2007-03-14 09:28+1300\n"
-"Last-Translator: Pedro Pernías <p.pernias@ua.es>\n"
+"PO-Revision-Date: 2007-03-27 14:00+1200\n"
+"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,11 +59,11 @@ msgstr ". Por favor usar nombres en ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  suficientemente extenso sea adecuado para el objetivo de conocimiento, pero que sea breve para no inducir fatiga. Una pagina escrita sería probablemente adecuada, pero debería ser considerablemente menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras importantes o clave para entender los conceptos . Podrían ser probablemente verbos, sustantivos y adverbios. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en vocabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y cohesivo, y ser de una extensión apropiada. Resaltando las palabras importantes en el texto. Elija una alternativa clara.</p>  </dd>  <dt>si su meta es probar palabras para la formación en gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y ser de una extensión adecuada. Recuerde que la meta no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resaltando las palabras importantes en el texto. Prove alternativas con la misma palabra raíz , pero con diferentes significados. Es una buena idea conseguir la revisión de un colega para probar los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
+msgstr "<dl>  <dt>Si su meta es probar la comprensión de los conceptos de base o la comprensión lectora  </dt>  <dd>    <p>  Escriba un resumen del concepto o lectura  suficientemente extenso que sea adecuada para el objetivo de conocimiento, pero que sea corto para no inducir fatiga. Menos de una página es probablemente adecuado, pero debe considerar menos menos para estudiantes jóvenes y principiantes    </p>    <p>Seleccione palabras en el texto que sean claves para entender los conceptos . Estas podrian ser verbos, sustantivos y adverbios clave. Elija alternativas con una respuesta clara.    </p>  </dd>  <dt>Si su meta es probar el conocimiento en vocabulario  </dt>  <dd><p>Escriba un texto usando como objetivo el vocabulario. Este texto debería ser coherente y coherente, y ser de una longitud apropiada. Resalte las palabras importantes en el texto. Escoja alternativas inequívocas.</p>  </dd>  <dt>si su meta es probar composición de palaras o gramática:  </dt>  <dd>  <p>Escriba un texto considerando estos objetivos. Este texto deberia ser coherente y cohesivo y tener una longitud apropiada. Recuerde que el objetivo no es el conocimiento del vocabulario, sino el significado mas profundo de las palabras que deben conocer los estudiantes.  </p>  <p>Resalte las palabras importantes en el texto. Proporcione alternativas con la misma palabra raíz, pero con diferentes significados. ¡Es una buena idea conseguir que un colega pruebe los ejercicios para asegurarse de que no hayan sorpresas!  </p>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr "<ol>  <li>Click &lt;Seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en que quiere que se muestre el archivo.</li>  <li>Introduzca un título para su archivo.</li> <li>Asocie cualquier texto relevante para el MP3.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice, p.ej. 'Énfasis' aplica un borde y un icono al contenido del iDevice.</li></ol>"
+msgstr "<ol>  <li>Haga clic;&lt;seleccione un MP3&gt; y busque el archivo MP3 que quiera insertar </li> <li>Haga clic en la flecha de la lista desplegable y seleccione la posición en pantalla en la que quiere que se muestre el archivo.</li><li>Escriba un subtítulo opcional para su archivo.</li> <li>Asocie cualquier texto relevante al archivo MP3.</li> <li>Escoja el estilo con el que desea que se muestre el iDevice. Por ejemplo, 'Énfasis' aplica un borde y un icono al contenido del iDevice mostrado.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -85,28 +85,11 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"El IDevice imagen con texto en el IDevice puede ser utilizado de muchas maneras para apoyar tanto la dimensión emocional (afectiva) como la tarea de aprendizadje (cognitiva) de EXE.\n"
-"Nosotros le proporcionamos un ejemplo por cada dimension:\n"
+"El iDevice Imagen con texto  puede  utilizarse de algunas maneras para apoyar ambas dimensiones de contenido eXe: la emocional (afectiva) y la de actividad de aprendizaje (cognitiva)\n"
+" </p><p>\n"
+"<b>Integración de resúmenes visuales y verbales</b>\n"
 "</p><p>\n"
-"<b>Perfil del profesor (dimension emocional)</b>\n"
-"</p><p>\n"
-"La investigacion sugiere que los estudiantes en linea aprecian un acercamiento personalizado.\n"
-"Una manera de lograr esto es proporcionarle una descripcion breve \n"
-"del profesor y de otro personal relacionado a este modo de aprendizaje. El \n"
-"perfil (con la foto personal) no solo es usado a describir el rol \n"
-"y credenciales del profesor sino también tener una relacion directa \n"
-"entre el estudiante y el profesor mas el contenido intermediario (la computadora). Los perfiles deberan ser escritos de una \n"
-"forma \"no academica\" haciendo uso de pronombres personales.\n"
-"</p><p>\n"
-"<b>Integrando lo visual con lo resumenes verbales</b>\n"
-"</p><p>\n"
-"Los psicólogos cognitivos indican que la presentación de los estudiantes con una imagen representativa y un resumen verbal correspondiente (que es presentado simultáneamente) \n"
-"reduce la carga cognitiva y aumenta la retención del estudiante.\n"
-"El IDevice se puede utilizar para presentar una imagen (fotografía, diagrama o gráfico)\n"
-"con un breve resumen verbal que cubre los principales puntos relacionado a la imagen.\n"
-"Por ejemplo, si se estuviera enseñando las funciones de un motor de combustión de cuatro tiempos, \n"
-"se podría tener una representación visual de cada uno de las cuatro posiciones del pistón con un \n"
-"con un breve resumen textual de los aspectos claves de cada uno.</p>"
+"Los psicólogos cognitivos indican que presentar a los alumnos con una imagen representativa y un resumen verbal (presentado simultáneamente), puede reduci la carga cognitiva y aumentar la retención de aprendizaje. Este iDevice puede usarse para presentar una imagen (foto, diagrama o gráfico) con un breve resumen verbal que cubra los puntos principales relativos a la imagen. Por ejemplo, si estuvieras explicando las funciones de un motor de cuatro tiempos, podrías tener una visual de cada una de las posiciones del pistón con un breve resumen verbal de los aspectos clave de cada visual.</p>"
 
 #: exe/engine/attachmentidevice.py:59
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
@@ -114,7 +97,7 @@ msgstr "<p>Asigne una etiqueta para el adjunto.  Es útil incluir el tipo de arc
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr "<p>Los ejercicios Cloze son textos  texts u oraciones donde los estudiantes deben completar con las palabras que faltan. Este tipo de ejercicios es usado para diversos propósitos:</p><ol><li>Para comprobar los conocimientos de los conceptos claves de un curso (esto podría ser una prubea de diagnóstico, una prueba formativa o una prueba sumativa).</li><li>Para comprobar la comprensión lectora.</li><li>Para comprobar el conocimiento en vocabulario.</li><li>Para comprobar las competencias en gramatica. </li></ol>"
+msgstr "<p>Los ejercicios Cloze son textos u oraciones donde los estudiantes deben completar las palabras que faltan. Este tipo de ejercicios se usa para diversos propósitos:</p><ol><li>para comprobar los conocimientos de los conceptos clave de un curso (esto podría ser un pre-control, una prueba formativa o una prueba sumativa).</li><li>Para comprobar la comprensión lectora.</li><li>Para comprobar el conocimiento en vocabulario.</li><li>Para comprobar la competencia gramatical. </li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -122,7 +105,7 @@ msgid ""
 "by either pasting text from another source or by typing text directly into the \n"
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
-msgstr "<p>Entre el texto dejando unos espacios en blanco para escribir o pegar en este archivo.</p><p> Para hacer un espacio en blanco haga doble click en la palabra que quieres ocultar para seleccionarlo, y haga un click en el botón <i>Ocultar/Mostrar Palabra</i></p>."
+msgstr "<p>Esriba el texto para la actividad cloze dentro del campo cloze bien pegando texto de otra fuente o tecleando el texto diretamente en el campo.</p><p> Para seleccionar las palabras a esconder, haga doble clic en la palabra para seleccionarla, y pulse en el botón Esconder/Mostrar palabra de abajo."
 
 #: exe/engine/field.py:506
 #, fuzzy
@@ -359,8 +342,8 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
-"Alineamiento le permite \n"
-"escoger donde se posicionará la imagen en la pantalla. "
+"LA alineación le permite \n"
+"escoger donde se posicionará el reproductor de medios en la pantalla. "
 
 #: exe/engine/field.py:570
 msgid ""
@@ -430,7 +413,7 @@ msgstr "Articulo"
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
-msgstr "Adjuntar"
+msgstr "Fichero adjunto"
 
 #: exe/engine/attachmentidevice.py:98
 #, python-format
@@ -443,11 +426,11 @@ msgstr "Auckland University of Technology"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr "Capcion de Button"
+msgstr "Boton de pié de foto"
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
-msgstr "¿Puede un estudiante enviar mensajes a este foro?:"
+msgstr "¿Puede un alumno enviar mensajes a este foro?:"
 
 #: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:264
 msgid "Cancel"
@@ -478,7 +461,7 @@ msgstr "¿Marcar cápsula?"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Chinese Wikipedia Article"
-msgstr "Artículo De Wikipedia en Chino"
+msgstr "Artículo De Wikipedia en chino"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
@@ -486,7 +469,10 @@ msgstr "Elija un LMS"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr "Elija un Imagen"
+msgstr ""
+"Haga \"Click\" \n"
+"en la imagen de abajo o en el botón de \"Añadir Imagen\" para seleccionar un archivo de imagen para ser \n"
+"ampliado."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
@@ -504,8 +490,8 @@ msgid ""
 "image to display at its original size."
 msgstr ""
 "Escoja el tamaño para \n"
-"mostrar su imagen en. Los medidas son en \"pixels\". Generalmente, 100 \n"
-"pixels es mas o menos igual con 3 cm."
+"mostrar la imagen. Los medidas son en \"pixels\". Generalmente, 100 \n"
+"pixels es mas o menos igual a 3 cm.Deje los campos en blanco si desea mostrar la imagen con su tamaño original."
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
