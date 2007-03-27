@@ -424,7 +424,9 @@ class Session(components.Componentized):
             #log.msg("session given the will to live for 30 more minutes")
             reactor.callLater(1800, self.checkExpired)
 
-version = "TwistedWeb/%s" % copyright.version
+# previously merely: version = "TwistedWeb/%s" % copyright.version
+# but customized so that we can easily tell if another eXe server is running [and not just another TwistedWeb app :-)], to:
+version = "eXeTwistedWeb/%s" % copyright.version
 
 
 class Site(http.HTTPFactory):

@@ -84,10 +84,14 @@ class Application:
         self.loadConfiguration()
         installSafeTranslate()
         self.preLaunch()
-        self.launch()
-        log.info('serving')
-        self.serve()
-        log.info('done serving')
+        # preLaunch() has now called the server's find_port(), setting config.port >= 0 if valid:
+        if self.config.port >= 0:
+            self.launch()
+            log.info('serving')
+            self.serve()
+            log.info('done serving')
+        else:
+            log.error('looks like the eXe server was not able to find a valid port; terminating...')
 
 
     def processArgs(self):
@@ -150,6 +154,8 @@ class Application:
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
         self.webServer = WebServer(self)
+        # and determine the web server's port before launching the client, so it can use the same port#:
+        self.webServer.find_port()
 
 
     def serve(self):
