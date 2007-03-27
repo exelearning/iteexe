@@ -14,7 +14,7 @@ Quick HowTo add a normal string field:
 ===============================
 1. Make a normal label and a textbox like this:
 <label id="ppmyattrib" value="My Label"/>
-<textbox id="pp_myAttrib" onchange="this.style.color='blue';" />
+<textbox id="pp_myAttrib" onchange="this.style.color='red';" />
 
 Rules:
 1. Label must have a unique id. It must be unique overall the properties pages
@@ -59,7 +59,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
          <hbox align="center">
              <label id="ppProjectTitle" style="width:8em" value="Project Title:" 
                  tooltiptext="The project's title." />
-            <textbox id="pp_title" size="40" onchange="this.style.color='blue';" />
+            <textbox id="pp_title" size="40" onchange="this.style.color='red';" />
          </hbox>
          <hbox align="center">
              <label id="ppBackgroundImg" style="width:8em" 
@@ -78,18 +78,18 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
                      <checkbox id="pp_backgroundImgTile" 
                          checked="false" 
                          label="Tile background image?"
-                         oncommand="this.style.color = 'blue';"/> 
+                         oncommand="this.style.color = 'red';"/> 
                  </hbox>
              </vbox>
          </hbox>
          <hbox align="center">
             <label id="ppAuthor" style="width:8em" value="Author:" tooltiptext="Primary author of the resource."/>
-            <textbox id="pp_author" size="40" onchange="this.style.color='blue';" />
+            <textbox id="pp_author" size="40" onchange="this.style.color='red';" />
          </hbox>
          <hbox align="center">
           <label id="ppLicense" style="width:8em" value="License:" tooltiptext="Select a license."/>
           
-          <menulist id="pp_license" label="Select License" onchange="this.style.color = 'blue'" >
+          <menulist id="pp_license" label="Select License" onchange="this.style.color = 'red'" >
             <menupopup>
               <menuitem id="ppminone"  label="None" value="None"/>
               <menuitem id="ppmigfdl"   label="GNU Free Documentation License" value="GNU Free Documentation License"/>
@@ -105,11 +105,11 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
         </hbox>
          <hbox align="center">
             <label id="ppFooter" style="width:8em" value="Footer:" tooltiptext="Web pages footer." />
-            <textbox id="pp_footer" multiline="true" rows="4" cols="38" onchange="this.style.color='blue';" /> 
+            <textbox id="pp_footer" multiline="true" rows="4" cols="38" onchange="this.style.color='red';" /> 
          </hbox>
          <hbox align="center">
             <label id="ppDescription" style="width:8em" value="Description:" tooltiptext="An account of the content of the resource." />
-            <textbox id="pp_description" multiline="true" rows="4" cols="38" onchange="this.style.color='blue';" /> 
+            <textbox id="pp_description" multiline="true" rows="4" cols="38" onchange="this.style.color='red';" /> 
          </hbox>
       </vbox>
     </groupbox>
@@ -118,17 +118,17 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
        <hbox align="center">
           <label id="ppLevel1" style="width:8em" value="Level 1:"
                  tooltiptext="Default name for level 1 nodes" />
-          <textbox id="pp_level1" size="40" onchange="this.style.color='blue';" />
+          <textbox id="pp_level1" size="40" onchange="this.style.color='red';" />
        </hbox>
        <hbox align="center">
           <label id="ppLevel2" style="width:8em" value="Level 2:" 
                  tooltiptext="Default name for level 2 nodes" />
-          <textbox id="pp_level2" size="40" onchange="this.style.color='blue';" />
+          <textbox id="pp_level2" size="40" onchange="this.style.color='red';" />
        </hbox>
        <hbox align="center">
           <label id="ppLevel3" style="width:8em" value="Level 3:"
                  tooltiptext="Default name for level 3 nodes" />
-          <textbox id="pp_level3" size="40" onchange="this.style.color='blue';" />
+          <textbox id="pp_level3" size="40" onchange="this.style.color='red';" />
        </hbox>
        <hbox flex="0" align="center">
            <button id="ppBtnUpdateTree"
@@ -139,7 +139,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
        </hbox>
     </groupbox>
     <hbox align="left">
-       <button id="ppBtnDone" label="Done" oncommand="submitForm(this.parentNode.parentNode);"/>
+       <button id="ppBtnDone" label="Apply" oncommand="submitForm(this.parentNode.parentNode);"/>
     </hbox>
   </vbox>
 </overlay>

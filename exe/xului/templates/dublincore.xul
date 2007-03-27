@@ -7,15 +7,15 @@
       <vbox flex="0">
         <hbox align="center">
           <label id="dcTitle" style="width:8em" value="Title:" tooltiptext="The name given to the resource."/>
-          <textbox id="dc_title" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_title" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcCreator" style="width:8em" value="Creator:" tooltiptext="An entity primarily responsible for making the content of the resource."/>
-          <textbox id="dc_creator" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_creator" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcSubject" style="width:8em" value="Subject:" tooltiptext="The topic of the content of the resource."/>
-          <textbox id="dc_subject" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_subject" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-subject');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-subject" collapsed="true" style="padding-left:9em;">
@@ -30,19 +30,19 @@
         </hbox>
         <hbox align="center">
           <label id="dcDescription" style="width:8em" value="Description:" tooltiptext="An account of the content of the resource."/>
-          <textbox id="dc_description" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_description" multiline="true" rows="4" cols="38" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcPublisher" style="width:8em" value="Publisher:" tooltiptext="An entity responsible for making the resource available."/>
-          <textbox id="dc_publisher" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_publisher" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcContributors" style="width:8em" value="Contributors:" tooltiptext="An entity responsible for making contributions to the content of the resource."/>
-          <textbox id="dc_contributors" multiline="true" rows="4" cols="38" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_contributors" multiline="true" rows="4" cols="38" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcDate" style="width:8em" value="Date:" tooltiptext="A date of an event in the lifecycle of the resource."/>
-          <textbox id="dc_date" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_date" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-date');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-date" collapsed="true" style="padding-left:9em;">
@@ -59,7 +59,7 @@
         </hbox>
         <hbox align="center">
           <label id="dcType" style="width:8em" value="Type:" tooltiptext="The nature or genre of the content of the resource."/>
-          <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_type" value="text" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-type');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-type" collapsed="true" style="padding-left:9em;">
@@ -75,7 +75,7 @@
         </hbox>
         <hbox align="center">
           <label id="dcFormat" style="width:8em" value="Format:" tooltiptext="Select a Format."/>
-          <menulist id="dc_format" label="Select Format" onchange="this.style.color = 'blue'" >
+          <menulist id="dc_format" label="Select Format" onchange="this.style.color = 'red'" >
             <menupopup>
               <menuitem id="dcmiXHTML"   label="XHTML" value="XHTML"/>
               <menuitem id="dcmiSCORM"   label="SCORM 1.2" value="SCORM 1.2"/>
@@ -86,15 +86,15 @@
         </hbox>
         <hbox align="center">
           <label id="dcIdentifier" style="width:8em" value="Identifier:" tooltiptext="An unambiguous reference to the resource within a given context."/>
-          <textbox id="dc_identifier" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_identifier" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcSource" style="width:8em" value="Source:" tooltiptext="A Reference to a resource from which the present resource is derived."/>
-          <textbox id="dc_source" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_source" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcLanguage" style="width:8em" value="Language:" tooltiptext="Select a language."/>
-          <menulist id="dc_language" label="Select Language" onchange="this.style.color = 'blue'" >
+          <menulist id="dc_language" label="Select Language" onchange="this.style.color = 'red'" >
             <menupopup>
                 <!-- The unique ids for these menu items only exist for
                      translation. The name dcmixx comes from:
@@ -266,21 +266,21 @@
                 <menuitem id="dcmiyi" value="yi" label="Yiddish (formerly ji) "/>
                 <menuitem id="dcmiyo" value="yo" label="Yoruba "/>
                 <menuitem id="dcmiza" value="za" label="Zhuang "/>
-                <menuitem id="dcmizu" value="zu" label="Zulu."/>
+                <menuitem id="dcmizu" value="zu" label="Zulu "/>
             </menupopup>
           </menulist>
         </hbox>
         <hbox align="center">
           <label id="dcRelation" style="width:8em" value="Relation:" tooltiptext="A reference to a related resource."/>
-          <textbox id="dc_relation" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_relation" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcCoverage" style="width:8em" value="Coverage:" tooltiptext="The extent or scope of the content of the resource."/>
-          <textbox id="dc_coverage" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_coverage" size="40" onchange="this.style.color = 'red'" />
         </hbox>
         <hbox align="center">
           <label id="dcRights" style="width:8em" value="Rights:" tooltiptext="Information about rights held in and over the resource."/>
-          <textbox id="dc_rights" size="40" onchange="this.style.color = 'blue'" />
+          <textbox id="dc_rights" size="40" onchange="this.style.color = 'red'" />
           <image src="/images/info.png" onclick="setText('dc-rights');" style="cursor:help;"/>
         </hbox>
         <hbox flex="0" id="dc-rights" collapsed="true" style="padding-left:9em;">
@@ -291,7 +291,7 @@
       </vbox>
     </groupbox>
     <hbox align="left">
-      <button id="dcBtnDone" label="Done" oncommand="submitForm(this.parentNode.parentNode)"/>
+      <button id="dcBtnDone" label="Apply" oncommand="submitForm(this.parentNode.parentNode)"/>
     </hbox>
   </vbox>
 </overlay>
