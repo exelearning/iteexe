@@ -85,13 +85,14 @@
               <menupopup id="tools-popup">
                 <menuitem n:render="translate" label="iDevice Editor" oncommand="toolsEditor()"/>
                 <menuitem n:render="translate" label="Preferences" oncommand="toolsPreferences()"/>
+		<menuseparator/>
+                <menuitem n:render="translate" id="refresh-menu" label="Refresh Display" accesskey="r" oncommand="window.location = window.location"></menuitem>
               </menupopup>
             </menu>
             <menu n:render="translate" id="styles-menu" label="Styles" accesskey="s">
               <menupopup id="styles-popup" n:render="stylePane">
               </menupopup>
             </menu>
-            <menuitem n:render="translate" id="refresh-menu" label="Refresh" accesskey="r" onclick="window.location = window.location"></menuitem>
            <menu n:render="translate" id="help-menu" label="Help" accesskey="h">
               <menupopup id="help-popup">
 		<menuitem n:render="translate" label="Online eXe Manual" accesskey="m" oncommand="browseURL('http://exelearning.org/manual.php')"/>
