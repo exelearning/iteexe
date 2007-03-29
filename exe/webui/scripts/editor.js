@@ -1,8 +1,3 @@
-// Strings to be translated
-DO_YOU_WANT_TO_OVERWRITE_THE_EXISTING_IDEVICE = 'Do you want to overwrite the existing iDevice ';
-SELECT_A_FILE = "Select a file";
-EXE_IDEVICES = "eXe idevices";
-
 function ideviceExists(ideviceName) {
     var ele = document.getElementById('ideviceSelect');
     var ideviceNameLower = ideviceName.toLowerCase()
@@ -24,7 +19,7 @@ function saveIdevice(title){
     var theForm = document.getElementById('contentForm')
     
     if (ideviceExists(title1)){
-        if (confirm(DO_YOU_WANT_TO_OVERWRITE_THE_EXISTING_IDEVICE + title1 + '?')){
+        if (confirm('Do you want to overwrite the exsiting idevice ' + title1 + '?')){
             theForm.action.value = "save"
         }else
             return
@@ -39,8 +34,8 @@ function importPackage(blockId) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeOpen);
-    fp.appendFilter(EXE_IDEVICES, "*.idp");
+    fp.init(window, "Select a file", nsIFilePicker.modeOpen);
+    fp.appendFilter("eXe idevices", "*.idp");
     fp.appendFilters(nsIFilePicker.filterAll);
     var res = fp.show();
     if (res == nsIFilePicker.returnOK) {
@@ -53,20 +48,24 @@ function importPackage(blockId) {
     }
 }
 
-function exportPackage(blockId) {
-    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var nsIFilePicker = Components.interfaces.nsIFilePicker;
-    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(window, SELECT_A_FILE, nsIFilePicker.modeSave);
-    fp.appendFilter(EXE_IDEVICES, "*.idp");
-    fp.appendFilters(nsIFilePicker.filterAll);
-    var res = fp.show();
-    if (res == nsIFilePicker.returnOK) {
-        var path  = document.getElementById('path'+blockId);
-        path.type  = 'eXe';
-        path.value = fp.file.path;
-        var theForm = document.getElementById('contentForm')
-        theForm.action.value = "export";
-        theForm.submit()
+function exportPackage(blockId, isNew) {
+    if (isNew == 1)
+        alert("Please save the idevice first, then try to export it.")
+    else{
+        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+        var nsIFilePicker = Components.interfaces.nsIFilePicker;
+        var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+        fp.init(window, "Select a file", nsIFilePicker.modeSave);
+        fp.appendFilter("eXe idevices", "*.idp");
+        fp.appendFilters(nsIFilePicker.filterAll);
+        var res = fp.show();
+        if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+            var path  = document.getElementById('path'+blockId);
+            path.type  = 'eXe';
+            path.value = fp.file.path;
+            var theForm = document.getElementById('contentForm')
+            theForm.action.value = "export";
+            theForm.submit()
+        }
     }
 }

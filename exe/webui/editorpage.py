@@ -88,10 +88,12 @@ class EditorPage(RenderableResource):
                 self.editorPane.setIdevice(idevice)               
                 self.editorPane.process(request, "new")
                 
+        
         if (("action" in request.args and 
              request.args["action"][0] == "newIdevice")
             or "new" in request.args):
             self.__createNewIdevice(request)
+            
 
         if "delete" in request.args:
             self.ideviceStore.delGenericIdevice(self.editorPane.idevice)
@@ -122,7 +124,7 @@ class EditorPage(RenderableResource):
             self.ideviceStore.save()
             
         if ("action" in request.args and 
-             request.args["action"][0] == "export"):
+             request.args["action"][0] == "export"):          
             filename = request.args["pathpackage"][0]
             self.__exportIdevice(filename)
             
@@ -159,18 +161,22 @@ class EditorPage(RenderableResource):
         """
         import the idevices which are not existed in current package from another package
         """
-        newPackage = Package.load(filename)
-
-        for idevice in newPackage.idevices:
-            isExisted = False
+        try:       
+            newPackage = Package.load(filename)
+        except:
+            self.message = _("Sorry, wrong file format.")
+            return
+        
+        if newPackage:   
+            newIdevice = newPackage.idevices[-1].clone()
             for currentIdevice in self.ideviceStore.generic:
-                if idevice.title == currentIdevice.title:
-                    isExisted = True
+                if newIdevice.title == currentIdevice.title:
+                    newIdevice.title += "1"
                     break
-            if not isExisted:
-                newIdevice = idevice.clone()
-                self.ideviceStore.addIdevice(newIdevice)
-        self.ideviceStore.save()
+            self.ideviceStore.addIdevice(newIdevice) 
+            self.ideviceStore.save()
+        else:
+            self.message = _("Sorry, wrong file format.")
         
     def __exportIdevice(self, filename):
         """
@@ -180,9 +186,7 @@ class EditorPage(RenderableResource):
             filename = filename + '.idp'
         name = Path(filename).namebase
         package = Package(name)
-
-        for idevice in self.ideviceStore.generic:
-            package.idevices.append(idevice.clone())                
+        package.idevices.append(self.editorPane.idevice.clone())
         package.save(filename)
         
         
@@ -234,9 +238,10 @@ class EditorPage(RenderableResource):
             title = self.editorPane.idevice.title
         html += 'onclick=saveIdevice("%s") value="%s"/>' % (title, _("Save"))
         html += u'<br/><input class="button" type="button" name="import" onclick="importPackage(\'package\')"' 
-        html += u' value="%s" />'  % _("Import iDevices")
-        html += u'<br/><input class="button" type="button" name="export" onclick="exportPackage(\'package\')"' 
-        html += u' value="%s" />'  % _("Export iDevices")
+        html += u' value="%s" />'  % _("Import iDevice")
+        html += u'<br/><input class="button" type="button" name="export" '
+        html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
+        html += u' value="%s" />'  % _("Export iDevice")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"
