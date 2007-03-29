@@ -443,29 +443,33 @@ function filePrint() {
 }
 
 // continue to print the package:
-function filePrint2(tempPrintDir) {
-    // while filePrint() could have been setup to direct the makeTempPrintDir callback straight to exportPackage(),
-    // this extra level of indirection here may be used for any other pre-printing tasks, now that the tempPrintDir has been created.
-    // for now, though, all that's really needed is a straight call to exportPackage using the new export type of 'printSinglePage':
-   exportPackage('printSinglePage',tempPrintDir);
+function filePrint2(tempPrintDir, printDir_warnings) {
+   // first see if there's even a message, but for now, straight out:
+   if (printDir_warnings.length > 0) {
+      alert(printDir_warnings)
+   }
+
+   exportPackage('printSinglePage', tempPrintDir, "filePrint3_openPrintWin");
 }
 
 
 // and continue to print the package:
-function filePrint3_openPrintWin(tempPrintDir, tempExportedDir) {
+function filePrint3_openPrintWin(tempPrintDir, tempExportedDir, webPrintDir) {
     // okay, at this point, exportPackage() has already been called and the exported file created, complete with its printing Javascript
     // into the tempPrintDir was created (and everything below it, and including it, will need to be removed),
     // the actual files for printing were exported into tempExportedDir/index.html, where tempExportedDir is typically a subdirectory of tempDir,
     // named as the package name.
+    // Now also passing in the http:// webdir, such that a file:// URL is no longer necessary!
+
    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
 
     // Still needs to be (a) opened, printed, and closed:
     //
     var features = "width=680,height=440,status=1,resizable=1,left=260,top=200";
-    // need UniversalFileRead to load a "file:" URL:
-    netscape.security.PrivilegeManager.enablePrivilege('UniversalFileRead');
-    print_url = "file://"+tempExportedDir+"/index.html"
+    print_url = webPrintDir+"/index.html"
+
     printWin = window.open (print_url, APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN, features);
+
 
     // and that's all she wrote!
 
@@ -565,7 +569,7 @@ function XHAddIdeviceListItem(ideviceId, ideviceTitle) {
 // 'exportType' is passed straight to the server
 // Currently valid values are:
 // 'scoem' 'ims' 'webSite'
-function exportPackage(exportType, exportDir) {
+function exportPackage(exportType, exportDir, printCallback) {
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
@@ -581,10 +585,8 @@ function exportPackage(exportType, exportDir) {
         }
         else {
             // use the supplied exportDir, rather than asking.
-            // NOTE: currently only the printing mechanism will provide an exportDir, hence the hardcoded callback function.
-            // if/when this opens up to other calling functions desiring a callback, then certainly parameterize this better,
-            // but, at least for now, a supplied exportDir will automatically callback to filePrint3_openPrintWin:
-            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, 'filePrint3_openPrintWin')
+            // NOTE: currently only the printing mechanism will provide an exportDir, hence the printCallback function.
+            nevow_clientToServerEvent('exportPackage', this, '', exportType, exportDir, printCallback)
         }
     } else if(exportType == "textFile"){
         title = EXPORT_TEXT_PACKAGE_AS;

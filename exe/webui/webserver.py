@@ -150,6 +150,8 @@ class WebServer:
         self.root.putChild("scripts",     static.File(webDir+"/scripts"))
         self.root.putChild("style",       static.File(webDir+"/style"))
         self.root.putChild("docs",        static.File(webDir+"/docs"))
+        self.root.putChild("temp_print_dirs",
+                                          static.File(webDir+"/temp_print_dirs"))
 
         # xul resources
         xulDir = self.config.xulDir

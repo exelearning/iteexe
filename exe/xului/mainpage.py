@@ -353,19 +353,35 @@ class MainPage(RenderableLivePage):
         if (int(rm_top_dir) != 0):
             os.rmdir(tempdir)
 
-    def ClearParentTempPrintDirs(self, client, verbose):
+
+    def get_printdir_relative2web(self, exported_dir):
+        """
+        related to the following ClearParentTempPrintDirs(), 
+        get_printdir_relative2webdir() will merely strip off the initial portions of the absolute pathname
+        which precede the webdir, such that the calling javascript may give an http url relative to the server path.
+        """
+        web_dirname = self.config.webDir.abspath().encode('utf-8')
+        # at this point, go ahead and strip off this much of the exported_dir [replace it with ""], 
+        # leaving "temp_print_dirs" and below, but preceding it with the local web server
+        http_relative_pathname = "http://127.0.0.1:"+str(self.config.port)+exported_dir.replace(web_dirname, "", 1)
+        return http_relative_pathname
+
+
+
+    def ClearParentTempPrintDirs(self, client, log_dir_warnings):
         """
         Determine the parent temporary printing directory, and clear them if safe to do so (i.e., if not the config dir itself, for example)
         Makes (if necessary), and clears out (if applicable) the parent temporary directory.
-        The subsequent handleClearAndMakeTempPrintDir() shall then make a specific print-job subdirectory.
+        The calling handleClearAndMakeTempPrintDir() shall then make a specific print-job subdirectory.
         """
         #
-        # start off with the parent temp print dir to be hardcoded under the config dir, as: ~/.exe/temp_print_dirs
+        # Create the parent temp print dir as hardcoded under the webdir, as: http://temp_print_dirs
         # (eventually may want to allow this information to be configured by the user, stored in globals, etc.)
-        config_dirname = self.config.configDir.abspath().encode('utf-8')
-        under_dirname = os.path.join(config_dirname,"temp_print_dirs")
+        #
+        web_dirname = self.config.webDir.abspath().encode('utf-8')
+        under_dirname = os.path.join(web_dirname,"temp_print_dirs")
         clear_tempdir = 0
-
+        dir_warnings = ""
 
         # but first need to ensure that under_dirname itself is available; if not, create it:
         if cmp(under_dirname,"") != 0:
@@ -375,12 +391,20 @@ class MainPage(RenderableLivePage):
                     # Yes, this directory already exists.  As such, let's pre-clean it, keeping the clutter down:
                     clear_tempdir = 1
                 else:
-                    if verbose:
-                        print "WARNING: The desired Temporary Print Directory, \"" + under_dirname + "\", already exists, but as a file!"
-                    under_dirname = config_dirname
-                    if verbose:
-                        print "     RECOMMENDATION: please remove/rename this file to allow eXe easier management of its temporary print files."
-                        print "     eXe will create the temporary printing directory directly under \"" + under_dirname + "\" instead, but this might leave some files around after eXe terminates..."
+                    dir_warnings = "WARNING: The desired Temporary Print Directory, \"" + under_dirname + "\", already exists, but as a file!\n"
+                    if log_dir_warnings:
+                        log.warn("ClearParentTempPrintDirs(): The desired Temporary Print Directory, \"%s\", already exists, but as a file!", under_dirname)
+
+                    under_dirname = web_dirname
+                    # but, we can't just put the tempdirs directly underneath the webDir, since no server object exists for it.
+                    # So, as a quick and dirty solution, go ahead and put them in the images folder:
+                    under_dirname = os.path.join(under_dirname,"images")
+
+                    dir_warnings += "     RECOMMENDATION: please remove/rename this file to allow eXe easier management of its temporary print files.\n"
+                    dir_warnings += "     eXe will create the temporary printing directory directly under \"" + under_dirname + "\" instead, but this might leave some files around after eXe terminates..."
+                    if log_dir_warnings:
+                        log.warn("     RECOMMENDATION: please remove/rename this file to allow eXe easier management of its temporary print files.")
+                        log.warn("     eXe will create the temporary printing directory directly under \"%s\" instead, but this might leave some files around after eXe terminates...", under_dirname)
                     # and note that we do NOT want to clear_tempdir on the config dir itself!!!!!
             else:
                 os.makedirs(under_dirname)
@@ -392,8 +416,8 @@ class MainPage(RenderableLivePage):
             # once eXe terminates:
             rm_topdir = "0"  # note: passed in as a string since handleRemoveTempDir expects as such from nevow's clientToServerEvent() call
             self.handleRemoveTempDir(client, under_dirname, rm_topdir)
-        
-        return under_dirname
+
+        return under_dirname, dir_warnings
 
     def handleClearAndMakeTempPrintDir(self, client, suffix, prefix, callback):
         """
@@ -401,14 +425,14 @@ class MainPage(RenderableLivePage):
         """
 
         # First get the name of the parent temp directory, after making it (if necessary) and clearing (if applicable):
-        verbose_dir_messages = 1
-        under_dirname = self.ClearParentTempPrintDirs(client, verbose_dir_messages)
+        log_dir_warnings = 1  # and go ahead and warn of any issues with the directories at each initial directory creation
+        (under_dirname, dir_warnings) = self.ClearParentTempPrintDirs(client, log_dir_warnings)
 
         # Next, go ahead and create this particular print job's temporary directory under the parent temp directory:
         temp_dir = mkdtemp(suffix, prefix, under_dirname)  # suffix, prefix, dirname
 
         # Finally, pass the created temp_dir back to the expecting callback:
-        client.call(callback, temp_dir)
+        client.call(callback, temp_dir, dir_warnings)
 
 
     def handleExport(self, client, exportType, filename, print_callback=''):
@@ -437,9 +461,11 @@ class MainPage(RenderableLivePage):
             if exportType == 'printSinglePage':
                 printit = 1
             exported_dir = self.exportSinglePage(client, filename, webDir, stylesDir, printit)
+            # and truncate the local webserver filesystem from the above absolute path, giving only the relative web path:
+            web_printdir = self.get_printdir_relative2web(exported_dir)
             if printit == 1:
                 # now that this has ben exported, go ahead and trigger the requested printing callback:
-                client.call(print_callback, filename, exported_dir)
+                client.call(print_callback, filename, exported_dir, web_printdir)
 
         elif exportType == 'webSite':
             self.exportWebSite(client, filename, stylesDir)
@@ -464,8 +490,8 @@ class MainPage(RenderableLivePage):
         Stops the server
         """
         # first, go ahead and clear out any temp job files still in the temporary print directory:
-        verbose_dir_messages = 0
-        parent_temp_print_dir = self.ClearParentTempPrintDirs(client, verbose_dir_messages)
+        log_dir_warnings = 0  # but don't warn of any issues with the directories at quit, since already warned at initial directory creation
+        (parent_temp_print_dir, dir_warnings) = self.ClearParentTempPrintDirs(client, log_dir_warnings)
 
         reactor.stop()
 
