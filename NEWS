@@ -1,6 +1,7 @@
 * Change FLV player to FlowPlayer
 * Move Refresh menu button to a Tools menu item
 * Add links to online manual, tips and tricks, and release notes to Help menu
+* Add iPod Notes format export
 * Add Wikiversity
 * Add "Clear Recent Projects" menu item
 * Add check for existing eXe server when starting new one

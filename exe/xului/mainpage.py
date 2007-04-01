@@ -42,6 +42,7 @@ from exe.export.textexport       import TextExport
 from exe.export.singlepageexport import SinglePageExport
 from exe.export.scormexport      import ScormExport
 from exe.export.imsexport        import IMSExport
+from exe.export.ipodexport       import IpodExport
 from exe.engine.path             import Path, toUnicode
 from exe.engine.package          import Package
 from exe                         import globals as G
@@ -439,7 +440,7 @@ class MainPage(RenderableLivePage):
         """
         Called by js. 
         Exports the current package to one of the above formats
-        'exportType' can be one of 'singlePage' 'webSite' 'zipFile'
+        'exportType' can be one of 'singlePage' 'webSite' 'zipFile' 'ipod'
                      'textFile' or 'scorm'
         'filename' is a file for scorm pages, and a directory for websites
         """ 
@@ -475,6 +476,8 @@ class MainPage(RenderableLivePage):
             self.exportWebZip(client, filename, stylesDir)
         elif exportType == 'textFile':
             self.exportText(client, filename)
+        elif exportType == 'ipod':
+            self.exportIpod(client, filename)
         elif exportType == "scorm":
             filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm1.2")
@@ -660,6 +663,40 @@ class MainPage(RenderableLivePage):
             raise
         client.alert(_(u'Exported to %s') % filename)
         
+    def exportIpod(self, client, filename):
+        """
+        Export 'client' to an iPod Notes folder tree
+        'webDir' is just read from config.webDir
+        """
+        try:
+            # filename is a directory where we will export the notes to
+            # We assume that the user knows what they are doing
+            # and don't check if the directory is already full or not
+            # and we just overwrite what's already there
+            filename = Path(filename)
+            # Append the package name to the folder path if necessary
+            if filename.basename() != self.package.name:
+                filename /= self.package.name
+            if not filename.exists():
+                filename.makedirs()
+            elif not filename.isdir():
+                client.alert(_(u'Filename %s is a file, cannot replace it') % 
+                             filename)
+                log.error("Couldn't export web page: "+
+                          "Filename %s is a file, cannot replace it" % filename)
+                return
+            else:
+                client.alert(_(u'Folder name %s already exists. '
+                                'Please choose another one or delete existing one then try again.') % filename)           
+                return 
+            # Now do the export
+            ipodExport = IpodExport(self.config, filename)
+            ipodExport.export(self.package)
+        except Exception, e:
+            client.alert(_('EXPORT FAILED!\n%s') % str(e))
+            raise
+        client.alert(_(u'Exported to %s') % filename)
+
     def exportScorm(self, client, filename, stylesDir, scormType):
         """
         Exports this package to a scorm package file

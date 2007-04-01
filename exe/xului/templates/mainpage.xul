@@ -69,6 +69,7 @@
                     </menu> 
                      <menuitem n:render="translate" label="Single Page" accesskey="p" oncommand="exportPackage('singlePage','','')"/>
                      <menuitem n:render="translate" label="Text File" accesskey="t" oncommand="exportPackage('textFile','','')"/>
+		     <menuitem n:render="translate" label="iPod Notes" accesskey="n" oncommand="exportPackage('ipod', '', '')"/>
                   </menupopup>
                 </menu>
                 <menu n:render="translate" id="merging-menu" label="Merging" accesskey="m">

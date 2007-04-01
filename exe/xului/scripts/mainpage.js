@@ -574,7 +574,7 @@ function exportPackage(exportType, exportDir, printCallback) {
 
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage') {
+    if (exportType == 'webSite' || exportType == 'singlePage' || exportType == 'printSinglePage' || exportType == 'ipod' ) {
         if (exportDir == '') {
             fp.init(window, SELECT_THE_PARENT_FOLDER_FOR_EXPORT_,
                          nsIFilePicker.modeGetFolder);
@@ -603,8 +603,6 @@ function exportPackage(exportType, exportDir, printCallback) {
             title = EXPORT_IMS_PACKAGE_AS;
         else if (exportType == "zipFile")
             title = EXPORT_WEBSITE_PACKAGE_AS;
-        else if (exportType == "ipod")
-            title = EXPORT_IPOD_PACKAGE_AS;
         else
             title = INVALID_VALUE_PASSED_TO_EXPORTPACKAGE;
         fp.init(window, title, nsIFilePicker.modeSave);
