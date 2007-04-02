@@ -56,9 +56,10 @@ class StyleMenu(Renderable):
         xul += u"<menupopup>\n"
 
         # Render each style individually
-        for style in self.config.styles:
-            xul += u"  <menuitem label=\""+style+"\" "
-            xul += u"onclick=\"submitLink('ChangeStyle', '"+style+"', 1);\"/>\n"
+        printableStyles = [(x.capitalize(), x) for x in self.config.styles]
+        for printableStyle, style in printableStyles:
+            xul += u"  <menuitem label=\""+printableStyle+"\" "
+            xul += u"oncommand=\"submitLink('ChangeStyle', '"+style+"', 1);\"/>\n"
 
         # Render the end tags
         xul += u"</menupopup>\n"
