@@ -81,7 +81,7 @@ class AttachmentBlock(Block):
             label += u'<span style="text-decoration:underline">'
             label += self.idevice.userResources[0].userName
             label += u'</span>\n'
-        html += u'<div style="float: left;">' 
+        html += u'<div>' 
         html += common.formField('textInput',
                                  label,
                                  'path'+self.id, '',
