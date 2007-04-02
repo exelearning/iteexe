@@ -1,3 +1,4 @@
+Version 0.23 (r2729)
 * Change FLV player to FlowPlayer
 * Move Refresh menu button to a Tools menu item
 * Add links to online manual, tips and tricks, and release notes to Help menu
@@ -6,7 +7,9 @@
 * Add "Clear Recent Projects" menu item
 * Add check for existing eXe server when starting new one
 * Allow translations for some Javascript message strings
-* Disable nevow timeout exceptions that could be triggered by Firefox dialogs
+* Fix Styles menu to display capitalized, alphabetized list
+* Fix Styles menu to accept normal click-select-release
+* Disable Nevow timeout exceptions that could be triggered by Firefox dialogs
 * Update to TinyMCE 2.1.0
 
 Version 0.22 (r2674)
