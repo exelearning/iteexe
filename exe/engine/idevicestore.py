@@ -219,7 +219,7 @@ class IdeviceStore:
             if idevice.class_ == 'reading':
                 if readingActivitiesFound == 0:
                     # Rename the first one we find
-                    idevice.title = _(u"Reading Activity")
+                    idevice.title = x_(u"Reading Activity")
                 else:
                     # Destroy the second
                     self.generic.remove(idevice)
