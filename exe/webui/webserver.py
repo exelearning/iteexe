@@ -112,12 +112,22 @@ class WebServer:
                 try:
                     data = s.recv(1024)
                     log.debug("find_port(): socket test of existing port gave result of: %s", repr(data))
+                    # to check for an eXe server specifically (once so indicated, from ~v0.23 onwards):
                     exe_server_string = "Server: eXeTwistedWeb/" # followed by the actual TwistedWeb version number
                     exe_server_string_pos = data.find(exe_server_string)
                     if exe_server_string_pos >= 0:
                         log.debug("find_port(): appears that another eXe server is running on port# %d; terminating.", test_port_num)
                         found_other_eXe = 1                        
                         port_test_done = 1
+                    else:
+                        log.debug("find_port(): port# %d not in use by a newer eXe server, but checking if it is Twisted server, in general...", test_port_num)
+                        # or, for older versions of eXe, check for regular ol' TwistedWeb server:
+                        twisted_server_string = "Server: TwistedWeb/" # followed by the Actual TwistedWeb version number
+                        twisted_server_string_pos = data.find(twisted_server_string)
+                        if twisted_server_string_pos >= 0:
+                            log.debug("find_port(): appears that an earlier version of an eXe server might already running on port# %d; terminating.", test_port_num)
+                            found_other_eXe = 1                        
+                            port_test_done = 1
                 except socket.error, msg:
                     log.debug("find_port(): timeout on socket port# %d, probably not an eXe so continuing search.  [timeout exception = %s]", test_port_num, str(msg))
                 s.close()                #
