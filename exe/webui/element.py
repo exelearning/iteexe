@@ -20,11 +20,26 @@
 Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
+import re
 from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
 
 log = logging.getLogger(__name__)
+
+def replaceLinks(matchobj):
+    """ replace external links with calls to user's preferred browser """
+    anchor = matchobj.group(0)
+    do = re.search(r'(?i)href\s*=\s*"?([^>"]+)"?', anchor)
+    # only modify links to external targets
+    if do \
+    and do.group(1).find('http://') >=0 \
+    and not do.group(1).find('http://127.0.0.1') >= 0:
+        return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
+                r'''href="\1" onclick="window.parent.browseURL('\1'); return false"''',
+                anchor)
+    else:
+        return anchor
 
 # ===========================================================================
 class Element(object):
@@ -197,8 +212,12 @@ class TextAreaElement(Element):
                                 str(self.width), str(self.height))
         return html
 
+    def renderPreview(self):
+        content = re.sub(r'(?i)<\s*a[^>]+>', replaceLinks,
+                self.field.content)
+        return self.renderView(content=content)
 
-    def renderView(self, visible=True, class_="block"):
+    def renderView(self, visible=True, class_="block", content=None):
         """
         Returns an XHTML string for viewing or previewing this element
         """
@@ -206,8 +225,10 @@ class TextAreaElement(Element):
             visible = 'style="display:block"'
         else:
             visible = 'style="display:none"'
+        if content is None:
+            content = self.field.content
         return '<div id="ta%s" class="%s" %s>%s</div>' % (
-            self.id, class_, visible, self.field.content)
+            self.id, class_, visible, content)
     
 # ===========================================================================
 
@@ -245,11 +266,18 @@ class PlainTextAreaElement(Element):
         return html
 
 
-    def renderView(self, visible=True, class_="block"):
+    def renderPreview(self):
+        content = re.sub(r'(?i)<\s*a[^>]+>', replaceLinks,
+                self.field.content)
+        return self.renderView(content=content)
+
+    def renderView(self, visible=True, class_="block", content=None):
         """
         Returns an XHTML string for viewing or previewing this element
         """
-        return self.field.content + '<br/>'
+        if content is None:
+            content = self.field.content
+        return content + '<br/>'
     
 # ===========================================================================
 class ImageElement(Element):
