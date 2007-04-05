@@ -219,7 +219,7 @@ def submitImage(action, object_, imageFile, title=u"", isChanged=1):
         titleText = u'title="%s" ' % title
     html  = u'<a %s' % titleText
     html += u' href="#" onclick="%s">' % onclick
-    html += u'<img alt="%s" src="%s"/>' % (_('Submit'), imageFile)
+    html += u'<img alt="%s" class="submit" src="%s"/>' % (_('Submit'), imageFile)
     html += u'</a>\n' 
     return html
 

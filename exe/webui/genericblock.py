@@ -87,8 +87,8 @@ class GenericBlock(Block):
         for element in self.elements:
             html += element.renderPreview()
             html += u"<br/>\n"
-        html += self.renderViewButtons()
         html += u"</div>\n"
+        html += self.renderViewButtons()
         html += u"</div>\n"
         return html
 
