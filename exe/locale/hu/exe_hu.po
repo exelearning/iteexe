@@ -1,20 +1,13 @@
-# EXELearning English PO file.
-# Copyright (C) 2004-2006
-# This file is distributed under the same license as the EXE package.
-# Matthew Sherborne <msherborne@gmail.com>, 2006.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-22 22:16+0000\n"
-"PO-Revision-Date: 2007-01-04 02:38+0100\n"
-"Last-Translator: Császár-Cs. Péter <spy@ttk.pte.hu>\n"
-"Language-Team: Császár-Cs. Péter <spy@ttk.pte.hu>\n"
+"Project-Id-Version: eXe Editor\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-04-10 14:23+1200\n"
+"Last-Translator: sean <sean@exelearning.org>\n"
+"Language-Team: CONSEDU <info@consedu.hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-EXE-Language: English\n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -27,17 +20,24 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Ha Ön egy Java appletet szeretne hozzáadni a tananyaghoz, \n"
+"válasszon ebből legördülő menüből, majd töltse fel a szükséges adat- \n"
+"és appletállományokat, amelyek a program generálásához kellenek.</p>\n"
+"<p>A GeoGebra applethez válassza a GeoGebrát, majd töltse \n"
+"fel azt .ggb állományt, amit a GeoGebrában készített.</p>"
 
-#: exe/xului/mainpage.py:259 exe/xului/mainpage.py:517
-#: exe/xului/mainpage.py:635 exe/xului/mainpage.py:657
+#: exe/xului/mainpage.py:259
+#: exe/xului/mainpage.py:517
+#: exe/xului/mainpage.py:635
+#: exe/xului/mainpage.py:657
 #: exe/xului/mainpage.py:678
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
 "\"%s\" már létezik.\n"
-"Kérem próbálja újból egy másik file-névvel"
+"Kérem, próbálja újra más állománynévvel"
 
 #: exe/idevices/appletidevice.py:64
 msgid ""
@@ -45,26 +45,27 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
-"\"Keresse meg a .txt file-t (az applet file-ban) \n"
-"és nyissa meg. Másolja a file tartalmát <ctrl A, ctrl C> az applet \n"
-"kódmezőjébe."
+"\"Keresse meg a .txt állományt (in the applet file) \n"
+"és nyissa meg. Másolja az állomány tartalmát <ctrl A, ctrl C> az applet \n"
+"kód mezőbe."
 
 #: exe/webui/block.py:230
 msgid "---Move To---"
-msgstr "---Mozgatás---"
+msgstr "--Áthelyezés--"
 
-#: exe/xului/mainpage.py:277 exe/xului/mainpage.py:416
+#: exe/xului/mainpage.py:277
+#: exe/xului/mainpage.py:416
 #: exe/xului/mainpage.py:509
 msgid ". Please use ASCII names."
-msgstr ". Használjon ASCII neveket."
+msgstr ". Kérem használjon ASCII nevet."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
+msgstr "<dl>  <dt>Ha az a célja, hogy az alapfogalmak, az olvasottak megértését teszteli: </dt>  <dd>    <p>  Írjon az ismeretterület fogalmához egy összefoglalót, vagy egy hosszabb olvasmányt, de ne túl hosszút, hogy a tanuló ne fáradjon el. Kevesebb mint egy gépelt oldal valószínűleg megfelelő, de valószínűleg fiatalabb diákoknak vagy kezdőknek kevesebb is elég.</p>    <p>Válassza ki a kulcsfontosságú szavakat a szövegben! Ezek valószínűleg igék, főnevek, és határozószavak lesznek. Esetleg biztosítson alternatív válaszokat.   </p>  </dd>  <dt>Ha az a célja, hogy a szótári tudást ellenőrízze:  </dt>  <dd><p>Írjon szöveget, amely tartalmazza az adott szókészletet. Ennek a szövegnek összefüggőnek és egységesnek kellene lennie, valamint legyen megfelelően hosszú. Hangsúlyozza ki a célszavakat a szövegben. Esetleg biztosítson alternatív válaszokat. </p>  </dd>  <dt>Ha az a célja, hogy a nyelvtani, helyesírási ismereteket ellenőrízze:  </dt>  <dd>  <p>Írjon szöveget a használni kívánt szóalakokkal.  Ennek a szövegnek összefüggőnek és egységesnek kellene lennie, valamint legyen megfelelően hosszú. Emlékezzen arra, hogy nem a szótári tudás ellenőrzése a cél, úgyhogy az ellenőrzendő szavakat a tanulóknak jól kell ismerniük.  </p>  <p>Jelölje ki a kívánt szavakat a szövegben. Ugyanarra a szóra adjon meg több alternatívát, de más-más toldalékokkal. Jól jöhet, ha megkér egy kollégát, ellenőrízze a tesztet, hogy ne maradjanak benne hibák, meglepetések. </p>  </dd></dl>"
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Kattintson az &lt;Válasszon egy MP3-at&gt; gombra és keresse meg azt az állomámyt, amelyet be kíván szúrni</li> <li>Kattintson a legördülő menüre és válassza ki, hogy hova legyen igazítva az állomány a képernyőn.</li>  <li>Adjon egy felirtot az állományhoz.</li> <li>A \"Szöveg\" mezőbe írja be a tárgyhoz tartozó szöveget.</li> <li>Válassza ki a modul megjelenési stílusát. Ha a 'Kiemelés' opciót választja, a modul kerettel és ikonnal jelenik meg a képernyőn.</li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -85,14 +86,30 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"A \"Kép szöveggel\" iDevice modult több módon lehet használni. Támogatja az \n"
+"eXe tartalomban érzelmi (affectív) és a tanulási feladathoz kötődő (kognitív) \n"
+"dimenziók kiteljesedését.\n"
+"</p><p>\n"
+"<b>Integrálja a vizuáls és a verbális összefoglalást.</b>\n"
+"</p><p>\n"
+"A kognitív pszichológia szerint ha a tanulóknak egyszerre biztosítunk egy \n"
+"jellegzetes képet és a megfelelő szóbeli összefoglalást, csökkenti a koknitív \n"
+"terhelést és erősíti az emlékezetet.\n"
+"Ezt a modult arra használhatjuk, hogy bemutassunk egy képet (fotót, diagrammot \n"
+"vagy ábrát) rövid szóbeli összefoglalóval, amely leírja a kép lényegét. \n"
+"Például: Ha ha tanítom a négyütemű belső égésű motor funkcióit, bemutatok egy \n"
+"képet, amelyen látszik a dugattyú mind a nény állása. A képet pedig kiegészítem egy \n"
+"leírással, amely minden lényeges mozzanatot, jellemzőt bemutat.\n"
+"</p>"
 
 #: exe/engine/attachmentidevice.py:59
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
+msgstr "<p>Rendeljünk címkét a csatolt állományhoz! Hasznos, ha következő fájltípusok valamelyikét választja: .pdf, .ppt, .doc, .xls, stb.</p><p>A címkében élszerű megadni az állomány méretét, hogy a felhasználók felbecsülhessék, hogy milyen hosszú lesz a letöltési idő.</p><p><strong>Például</strong>: Gyakorló feladat - formazas.doc (50kb)</p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr ""
+msgstr "<p>A \"Szókitöltős teszt\" szövegeket vagy mondatokat tartalmaz, amelyekben a tanulóknak a hiányzó szavakat kell beírniuk. Gyakran használjuk a következő célokra:</p><ol><li>A kurzushoz tartozó alapfogalmak ismeretének ellenőrzésére (ez lehet előzetes vagy összegző ellenőrzés, valamint képzési célú ).</li><li>Az olvasó felfogóképességének ellenőrzésére</li><li>Szótári tudás ellenőrzésére.</li><li>A nyelvtani, helyesírási és/vagy toldalékolási ismeretek ellenőrzésére.</li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -101,14 +118,18 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
+"<p>Írja be szókitöltős teszt szövegét a mezőbe! \n"
+"A szöveget más alkalmazásból is beillesztheti, vagy közvetlenül be is gépelheti. \n"
+"</p><p> Válassza ki az elrejteni kívánt szavakat, és a \"Szó elrejtése/megjelenítése\" \n"
+"gombra kattintva rejtse el azokat.</p>"
 
 #: exe/engine/field.py:506
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr ""
+msgstr "<p>Ha ez az opció <strong>nincs</strong> beállítva, az eXe néhány helyesírási hiba, elírás esetén is elfogadja a választ. Ha <strong>be van jelölve</strong>, csak a helyesírásilag kifogástalan és a megfelelő betűméretű (kis/nagy) alakot fogadja el.</p> <p><strong>Példa:</strong> Ha a helyes válasz a Mihály, mindkét szó a <em>Míhály</em> és a <em>Mihaly</em> is elfogadásra kerül. Az algoritmus csak egy betű eltérést enged meg, ha a nagybetűs írásmód ellenőrzése be van kapcsolva.</p> <p>Ha a nagybetűs írásmód figyelése ki van kapcsolva a kis <em>m</em>-mel írott <em>mihaly</em> szót is helyesként fogadja el az eXe. </p> <p>Ha mind a  \"Pontos értékelés\" mind a \"Nagybetűs írásmód ellenőrzése\" be van állítva, csak a helyes Mihály szó kerül elfogadásra. ha csak a \"Pontos értékelés\" van beállítva, de a \"Nagybetűs írásmód ellenőrzése\" nem, a \"mihály\" szót is elfogadja.</p>"
 
 #: exe/engine/field.py:527
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr "<p>Ha az opció ki van választva, az eltérő betűnagysággal elküldött válaszok, hibásként lesznek megjelölve.</p>"
+msgstr "<p>Ha ez az opció be van állítva, az eXe  különbséget tesz a kis- és nagybetűs írásmód között.Az eredetitől eltérő írásmód esetén hibásnak jelöli a választ. </p>"
 
 #: exe/engine/field.py:532
 msgid ""
@@ -116,15 +137,17 @@ msgid ""
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
+"<p>Ha ez az opció be van állítva, minden szó azonnal értékelésre kerül. \n"
+"Ahogy a tanuló gépeli a szavakat, az eXe színnel jelöli, hogy helyes-e. \n"
+"Sőt, az utolsó betűket automatikusan kitölti.</p>"
 
 #: exe/engine/field.py:769
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr ""
+msgstr "<p>Válasszon egy szimbólumot az alábbi szövegből vagy írja be a kézzel a matematikai formulát LATEX formátumban. A végső megjelenés megtekintéséhez kattintson az &lt;Előnézet&gt; gombra.</p>"
 
 #: exe/engine/idevicestore.py:248
-#, fuzzy
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "Ez az iDevice használata közben, a tanárok a felsoroltakra figyeljenek oda: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
+msgstr "A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegység tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. Kerülje a túl sok különböző típusú vagy besorolású tevékenység használatát, mert a tanulókat megzavarhatja. Általában három négy különböző típus több, mint megfelelő egy tananyagegységen belül .</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik nyújt többet. </li></ol>"
 
 #: exe/engine/idevicestore.py:243
 msgid ""
@@ -134,6 +157,11 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>Az \"Olvasnivalót\" elsődlegesen arra használjuk, \n"
+"hogy ellenőrízzük a tanulók szövegértelmezési képességét. Ezt úgy tehetjük \n"
+"meg, hogy a tanulóknak feladatokat adunk az  olvasottakkal kapcsolatosan. \n"
+"Mérlegelnie kell az olvasottakat és kérdésekre kell válaszolnia, vagy esetleg néhány \n"
+" másik feladatot kell befejezni az olvasottak alapján.</p>"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -145,6 +173,13 @@ msgid ""
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
+"<p>A \"Wiki szócikk\" lehetőséget ad a Wikipédiéban már létező tartalmak \n"
+"letöltésére és az eXe forrásba történő beillezstésére. \n"
+"A \"Wiki szócikk\" iDevice modul másolatot készít a keresett szócikk tartalmáról. \n"
+"A Wikipédiában végbemenő változásokat nem frissíti automatikusan az eXe-ben. \n"
+"A változás követéséhez újabb másolat készítésére van szükség. Hasonlóképpen \n"
+"az eXe-ban végrehajtott változtatások sem fognak frissülni a Wikipédiában. </p> <p>A Wikipédia tartalmak \n"
+"a GNU Szabad Dokumentáció licenc alá esnek.</p>"
 
 #: exe/engine/idevicestore.py:351
 msgid ""
@@ -154,6 +189,11 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>Az \"Olvasnivaló\" - nevéből következően - néhány \n"
+"tennivaló elvégzésére szólítja fel a tanulót. Ezeknek a tevékenységeknek közvetlen \n"
+"kapcsolatban kell állniuk azokkal a szövegekkel, amit a tanulóknak el kell olvasniuk. \n"
+"Megfelő visszacsatolás lehet a tevékenység elvégzéséhez, ha a tanulónak néhány \n"
+"elgondolkodtató tanácsot ad.</p>"
 
 #: exe/engine/galleryidevice.py:362
 msgid ""
@@ -161,10 +201,13 @@ msgid ""
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>Ahol több egymással kapcsolatos képet kell bemutatnia \n"
+"bizonyos tanulási feladatokhoz, ott használja a \"Képgalériát\"! \n"
+"A galéria képeit aztán egyenként is meg lehet tekinteni.</p>"
 
 #: exe/engine/package.py:207
 msgid "?????"
-msgstr "?????"
+msgstr "Adjon címet a szintnek!"
 
 #: exe/engine/casestudyidevice.py:76
 msgid ""
@@ -182,32 +225,49 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Az esettanulmány eszközt biztosít a tanuló számára egy \n"
+"oktatási alaphelyzet szimulálásához. A szituáció általában a valóságos helyzetből \n"
+"indul ki, és felkérjük a tanulót, hogy írja le, mutassa be milyen módon kívánja \n"
+"megoldani az adott helyzetet. Az esettanulmány lehetőséget biztosít a tanuló \n"
+"számára, hogy az adott feladatban alkalmazza ismereteit  és tapasztalatait.  \n"
+"Amikor esettanulmányt tervez a következő szempontokat vegye figyelembe:<ul> \n"
+"<li>\tMilyen oktatási pontokat közvetít a történet</li>\n"
+"<li>\tA tanulóknak milyen előkészületeket kell tenniük azt megelőzően, hogy dolgoznak \n"
+"az esettanulmányon.</li>\n"
+"<li>\tAz esettanulmány hogyan illeszkedik a kurzus többi részébe</li>\n"
+"<li>\tHogy a tanulók milyen kölcsönhatásba kerülnek a tananyaggal, vagy egymással. \n"
+"Például ha osztályteremben, csoportokat kialakítva dolgoznak, s az esetet különböző aspektusból \n"
+"vizsgálják, és hogy milyen gondolatok, vélemények fogalmazódhatnak meg az osztályban. </li></ul>"
 
 #: exe/engine/truefalseidevice.py:66
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
 msgstr ""
+"Egy útmutató jó segítség lehet a tanuló \n"
+"számára a kérdés megválaszolásában."
 
 #: exe/idevices/forumelement.py:75
 msgid "A single simple discussion"
-msgstr "Magában álló egyszerű vita"
+msgstr "Egyetlen téma megvitatása"
 
 #: exe/webui/editorpane.py:256
 msgid "Actions"
-msgstr "Hatás"
+msgstr "Tevékenységek"
 
-#: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:326
-#: exe/engine/idevicestore.py:334 exe/engine/idevicestore.py:395
-#: exe/engine/idevicestore.py:433 exe/engine/idevicestore.py:441
+#: exe/engine/idevicestore.py:287
+#: exe/engine/idevicestore.py:326
+#: exe/engine/idevicestore.py:334
+#: exe/engine/idevicestore.py:395
+#: exe/engine/idevicestore.py:433
+#: exe/engine/idevicestore.py:441
 #: exe/webui/questionelement.py:74
 msgid "Activity"
 msgstr "Tevékenység"
 
 #: exe/webui/editorpane.py:241
-#, fuzzy
 msgid "Add Field"
-msgstr "File-ok hozzáadása"
+msgstr "Mező hozzáadása"
 
 #: exe/webui/element.py:298
 msgid "Add Image"
@@ -215,20 +275,19 @@ msgstr "Kép hozzáadása"
 
 #: exe/webui/element.py:621
 msgid "Add JPEG Image"
-msgstr "JPEG hozzáadása"
+msgstr "JPEG kép hozzáadása"
 
 #: exe/webui/editorpane.py:90
-#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr "Interaktív visszajelzés hozzáadása az iDevice-hez."
+msgstr "Flash video hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:80
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr ""
+msgstr "Egysoros szövegmező hozzáadása az iDevice modulhoz. Hasznos lehet például, ha címkét akar elhelyezni az iDevice modulban."
 
 #: exe/webui/editorpane.py:83
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr ""
+msgstr "Szövegdoboz hozzáadása az iDevice modulhoz."
 
 #: exe/idevices/appletidevice.py:61
 msgid ""
@@ -236,52 +295,59 @@ msgid ""
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Töltse fel az összes állományt, amelyre az appletnek szüksége van \n"
+"kivéve a .txt állományt. Használja az \"Állomány hozzáadása\" és a \"Feltöltés\" gombokat. \n"
+"A már feltöltött állományok megjelennek az \"Applet kód\" mező alatti területen."
 
 #: exe/webui/editorpane.py:86
 msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr ""
+msgstr "Egy kép hozzáadása az iDevice modulhoz. Lehetővé teszi egy kép beszúrását az iDevice modulba."
 
 #: exe/webui/editorpane.py:89
-#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "Interaktív visszajelzés hozzáadása az iDevice-hez."
+msgstr "Visszajelzés hozzáadása az iDevice modulhoz."
 
 #: exe/webui/editorpane.py:91
-#, fuzzy
 msgid "Add an mp3 file to your iDevice."
-msgstr "Interaktív visszajelzés hozzáadása az iDevice-hez."
+msgstr "MP3 állomány hozzáadása az iDevice modulhoz."
 
-#: exe/webui/element.py:1351 exe/idevices/testquestionelement.py:106
+#: exe/webui/element.py:1351
+#: exe/idevices/testquestionelement.py:106
 msgid "Add another Option"
-msgstr "További opció hozzáadása"
+msgstr "Új válasz hozzáadása"
 
-#: exe/webui/multiselectblock.py:78 exe/idevices/quiztestblock.py:101
+#: exe/webui/multiselectblock.py:78
+#: exe/idevices/quiztestblock.py:101
 msgid "Add another Question"
-msgstr "További kérdés hozzáadása"
+msgstr "Új kérdés hozzáadása"
 
 #: exe/webui/casestudyblock.py:97
 msgid "Add another activity"
-msgstr "További tevékenység hozzáadása"
+msgstr "Új tevékenység hozzáadása"
 
 #: exe/webui/element.py:1563
 msgid "Add another option"
-msgstr "További opció hozzáadása"
+msgstr "Új opció hozzáadása"
 
-#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:88
+#: exe/webui/multichoiceblock.py:104
+#: exe/webui/truefalseblock.py:88
 msgid "Add another question"
-msgstr "További kérdés hozzáadása"
+msgstr "Új kérdés hozzáadása"
 
 #: exe/idevices/appletblock.py:108
 msgid "Add files"
-msgstr "File-ok hozzáadása"
+msgstr "Állomány hozzáadása"
 
 #: exe/webui/galleryblock.py:182
 msgid "Add images"
 msgstr "Kép hozzáadása"
 
-#: exe/webui/imagemagnifierblock.py:108 exe/webui/imagewithtextblock.py:79
-#: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
-#: exe/webui/editorelement.py:221 exe/idevices/flashmovieblock.py:78
+#: exe/webui/imagemagnifierblock.py:108
+#: exe/webui/imagewithtextblock.py:79
+#: exe/webui/flashwithtextblock.py:79
+#: exe/webui/multimediablock.py:83
+#: exe/webui/editorelement.py:221
+#: exe/idevices/flashmovieblock.py:78
 msgid "Align:"
 msgstr "Igazítás:"
 
@@ -291,30 +357,31 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
-"Az igazítás lehetővé teszi, \n"
-"hogy a képet az általunk kiválasztott helyre pozícionáljuk."
+"Az igazítás lehetővé teszi \n"
+"hogy meghatározzuk, hogy a kép hol helyezkedjen el a képernyőn."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
-"Az igazítás lehetővé teszi, \n"
-"hogy a media player-t az általunk kiválasztott helyre pozícionáljuk."
+"Az igazítás lehetővé teszi \n"
+"hogy meghatározzuk, hogy a médialejátszó hol helyezkedjen el a képernyőn."
 
 #: exe/engine/field.py:570
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
-"Automatikus kiegészítés engedélyezése \n"
-"                                       a hézagok kitöltésére."
+"Automatikus befejezés engedélyezése, \n"
+"                                       amikor a felhasználó kitölti a mezőt."
 
 #: exe/engine/clozeidevice.py:161
 msgid "Allow auto completion when user filling the gaps."
-msgstr "Automatikus kiegészítés engedélyezése a hézagok kitöltésére."
+msgstr "Automatikus befejezés engedélyezése, amikor a felhasználó kitölti a mezőt."
 
-#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43
+#: exe/engine/multichoiceidevice.py:59
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -331,99 +398,125 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"A feleletválasztós kérdést gyakran használják különböző \n"
+"szituációkban formális tesztként, ezt az eszközt használhatjuk gondolatok, \n"
+"viták ébresztésére bár a tanulók kissé tartózkodónak érezhetikmagukat a \n"
+"válaszok során. \n"
+"A feleletválasztós kérdés tervezése során a következőket vehetjük figyelembe: \n"
+"<ul>\n"
+"<li> Milyen tanulási eredményeket akarok a kérdésekkel tesztelni</li>\n"
+"<li> Milyen szellemi készséget tesztelek</li>\n"
+"<li> A hallgatóságnak milyenek a nyelvi készségei</li>\n"
+"<li> Nemi és kultúrális problémák</li>\n"
+"<li> Nyelvtenilag kerüljük azokat a kérdésszerkezeteket, amelyek tartalmazzák \n"
+"    a megoldási kulcsot.</li>\n"
+"</ul>\n"
+" "
 
-#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:436
+#: exe/engine/idevicestore.py:329
+#: exe/engine/idevicestore.py:436
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Egy tevékenységet meghatározhat egy feladat, vagy a egy feladatcsoport,\n"
+"amit a tanulónak teljesíteni kell. Adjon egyértelmű utasításokat, amelyek minden\n"
+"feltételt figyelembe vesznek, amik a tanulót segíthetik, vagy akadályozhatják\n"
+"a feladat teljesítésében."
 
 #: exe/webui/element.py:920
-#, fuzzy
 msgid "Answsers"
-msgstr "Mutassa a válaszokat"
+msgstr "Válaszok"
 
 #: exe/idevices/appletblock.py:114
 msgid "Applet Code:"
 msgstr "Applet kód:"
 
 #: exe/idevices/appletblock.py:90
-#, fuzzy
 msgid "Applet Type"
-msgstr "Applet kód:"
+msgstr "Az applet típusa"
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
-msgstr "Cikk"
+msgstr "Szócikk"
 
 #: exe/engine/attachmentidevice.py:41
 msgid "Attachment"
-msgstr "Melléklet"
+msgstr "Állomány csatolása"
 
 #: exe/engine/attachmentidevice.py:98
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "A mellékletnek %s nincsen szülő-csomópontja"
+msgstr "A csatolt állomány %s nem szülőcsomópont"
 
-#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:40
+#: exe/engine/multimediaidevice.py:41
+#: exe/engine/rssidevice.py:40
 msgid "Auckland University of Technology"
 msgstr "Aucklandi Műszaki Egyetem"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr "Gombfelirat"
+msgstr "Gomb felirata"
 
 #: exe/idevices/forumelement.py:103
 msgid "Can a student post to this forum?:"
-msgstr "A hallgatók hozzászólhatnak ehhez a fórumhoz?:"
+msgstr "Diák hozzá tud szólni ehhez a fórumhoz?:"
 
-#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:264
+#: exe/webui/preferencespage.py:94
+#: exe/webui/editorpane.py:264
 msgid "Cancel"
-msgstr "Mégsem"
+msgstr "Mégse"
 
-#: exe/xului/mainpage.py:277 exe/xului/mainpage.py:414
+#: exe/xului/mainpage.py:277
+#: exe/xului/mainpage.py:414
 #: exe/xului/mainpage.py:509
 msgid "Cannot access directory named "
-msgstr "Nem tudok hozzáférni a könyvtárhoz"
+msgstr "Nem nevezheti át a könyvtárat"
 
-#: exe/webui/imagemagnifierblock.py:92 exe/webui/imagewithtextblock.py:84
-#: exe/webui/flashwithtextblock.py:84 exe/webui/element.py:410
-#: exe/webui/editorelement.py:322 exe/idevices/flashmovieblock.py:83
+#: exe/webui/imagemagnifierblock.py:92
+#: exe/webui/imagewithtextblock.py:84
+#: exe/webui/flashwithtextblock.py:84
+#: exe/webui/element.py:410
+#: exe/webui/editorelement.py:322
+#: exe/idevices/flashmovieblock.py:83
 msgid "Caption:"
 msgstr "Felirat:"
 
 #: exe/engine/casestudyidevice.py:74
 msgid "Case Study"
-msgstr ""
+msgstr "Esettanulmány"
 
-#: exe/webui/galleryblock.py:200 exe/webui/galleryblock.py:218
+#: exe/webui/galleryblock.py:200
+#: exe/webui/galleryblock.py:218
 msgid "Change Image"
-msgstr "Kép megváltoztatása"
+msgstr "Kép cseréje"
 
 #: exe/webui/element.py:789
 msgid "Check Caps?"
-msgstr "Caps-Lock figyelése?"
+msgstr "Kis/nagybetűs írásmód különböző?"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Chinese Wikipedia Article"
-msgstr "Kínai Wikipedia cikk"
+msgstr "Kínai nyelvű Wikipédia szócikk"
 
 #: exe/idevices/forumidevice.py:113
 msgid "Choose a LMS"
-msgstr "LMS kiválasztása"
+msgstr "Válasszon egy LMS-t"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr "Kép kiválasztása"
+msgstr "Válasszon egy képet"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "MP3 file kiválasztása"
+msgstr "Válasszon egy MP3-as állományt"
 
 #: exe/engine/casestudyidevice.py:56
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr ""
+"Tevékenységenként megjeleníthet egy képet, ami a feladat megoldását segíti. \n"
+"(Feltétlen állítsa be a megjelenítendő kép szélességét és magasságát!)"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -432,6 +525,13 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
 msgstr ""
+"Határozza meg a kép megjelenési méretét pixelben! \n"
+"100 pixel körülbelül 3 cm-nek felel meg. \n"
+"Ha azt szeretné, hogy a kép eredeti méretében jelenjen meg, \n"
+"hagyja a mezőket üresen. \n"
+"Ha az eredeti mérettől eltérő méretet kíván beállítani, \n"
+"olyan értékeket adjon meg, hogy az oldalak aránya megmaradjon, \n"
+"s a kép ne torzuljon. (Pl.: eredeti méret: 360 x 280, új méret: 180 x 140 )"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -439,64 +539,75 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
 msgstr ""
+"Kattintson \n"
+"az alábbi képen, vagy a \"Válasszon egy képet\" gombon a bagyítandó kép \n"
+"kiválasztásához."
 
 #: exe/engine/attachmentidevice.py:56
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr ""
+msgstr "Kattintson a <strong>Válasszon egy állományt</strong> gombra, majd keresse meg a csatolni kívánt állományt és válassza ki."
 
 #: exe/engine/field.py:160
 msgid "Click Here"
 msgstr "Kattintson ide"
 
-#: exe/webui/common.py:293 exe/webui/common.py:296
+#: exe/webui/common.py:293
+#: exe/webui/common.py:296
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "A teljes utasítás megjelenítéséhez kattintson egyet!"
 
 #: exe/webui/reflectionblock.py:89
 msgid "Click here"
 msgstr "Kattintson ide"
 
 #: exe/engine/field.py:777
-#, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
-"Kattintson az Előnézet gombra, hogy a latex-et \n"
-" képpé alakítsuk."
+"Kattintson az Előnézet gombra \n"
+"                                   a megjelenítés ellenőrzéséhez."
 
 #: exe/engine/galleryidevice.py:375
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "Kattintson a \"Kép hozzáadása\" gombra és válasszon egy képet. A képek alatt található egy címke, amit érdemes kitölteni. A jó gyakorlat kialakítása érdekében adja meg itt a kép eredeti méretét (pl.: 450 x 320). Célszerű, ha a képeket azonos méretűre méretezi át, s így tölti fel a galériába. A felhasználók hálásak lesznek."
 
-#: exe/engine/galleryidevice.py:569 exe/webui/common.py:301
-#: exe/webui/common.py:302 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/block.py:243
-#: exe/webui/block.py:244 exe/webui/editorpane.py:353
-#: exe/webui/editorpane.py:354 exe/webui/editorpane.py:374
-#: exe/webui/editorpane.py:375 exe/webui/element.py:1586
+#: exe/engine/galleryidevice.py:569
+#: exe/webui/common.py:301
+#: exe/webui/common.py:302
+#: exe/webui/truefalseelement.py:123
+#: exe/webui/truefalseelement.py:124
+#: exe/webui/block.py:243
+#: exe/webui/block.py:244
+#: exe/webui/editorpane.py:353
+#: exe/webui/editorpane.py:354
+#: exe/webui/editorpane.py:374
+#: exe/webui/editorpane.py:375
+#: exe/webui/element.py:1586
 #: exe/webui/element.py:1587
 msgid "Close"
-msgstr "Bezár"
+msgstr "Bezárás"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
-msgstr "Szövegértés"
+msgstr "Bezárás"
 
 #: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
-msgstr "Szövegértési tevékenység"
+msgstr "Szókitöltős teszt"
 
 #: exe/webui/element.py:771
 msgid "Cloze Text"
-msgstr "Szövegértési kiírás"
+msgstr "Szöveg"
 
 #: exe/webui/common.py:252
 msgid "Confirm and submit"
-msgstr "Megerősít és elküld"
+msgstr "Megerősítés és leadás"
 
-#: exe/webui/element.py:1338 exe/webui/element.py:1433
-#: exe/webui/element.py:1481 exe/idevices/testquestionelement.py:93
+#: exe/webui/element.py:1338
+#: exe/webui/element.py:1433
+#: exe/webui/element.py:1481
+#: exe/idevices/testquestionelement.py:93
 msgid "Correct"
 msgstr "Helyes"
 
@@ -506,7 +617,7 @@ msgstr "Helyes!"
 
 #: exe/xului/mainpage.py:728
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr "Nem tudom betölteni a file-t, kérem küldje el a bugs@exelearning.org címre."
+msgstr "Az állományt nem lehet betölteni. Kérem, küldje el e-mail-ben az állományt a bugs@exelearning.org címre!"
 
 #: exe/engine/casestudyidevice.py:95
 msgid ""
@@ -515,32 +626,45 @@ msgid ""
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Itt írja le az esettörténetet! A jó eset egy problémát, \n"
+"helyszínt, egy karaktert, egy bonyolult szituációt ír le. \n"
+"Az esetleírást azzal a céllal tesszük közzé, hogy a megfelelő \n"
+"eljárás kialakítását elősegítsük."
 
-#: exe/webui/galleryblock.py:251 exe/webui/block.py:214
-#: exe/webui/editorpage.py:227 exe/webui/editorpage.py:230
-#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
-#: exe/webui/editorelement.py:152 exe/webui/editorelement.py:191
-#: exe/webui/editorelement.py:242 exe/webui/editorelement.py:296
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="delNode"
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# n:render="delNode"
+#: exe/webui/galleryblock.py:251
+#: exe/webui/block.py:214
+#: exe/webui/editorpage.py:227
+#: exe/webui/editorpage.py:230
+#: exe/webui/editorelement.py:76
+#: exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:152
+#: exe/webui/editorelement.py:191
+#: exe/webui/editorelement.py:242
+#: exe/webui/editorelement.py:296
 #: key="delNodeKey" label="Delete">
 msgid "Delete"
-msgstr "Töröl"
+msgstr "Törlés"
 
 #: exe/idevices/appletblock.py:127
 msgid "Delete File"
-msgstr "Törli a file-t"
+msgstr "Állomány törlése"
 
 #: exe/webui/galleryblock.py:249
 msgid "Delete Image"
-msgstr "Törli a képet"
+msgstr "Kép törlése"
 
-#: exe/webui/element.py:1255 exe/webui/element.py:1445
+#: exe/webui/element.py:1255
+#: exe/webui/element.py:1445
 #: exe/idevices/testoptionelement.py:86
 msgid "Delete option"
 msgstr "Opció törlése"
 
-#: exe/webui/questionelement.py:88 exe/webui/truefalseelement.py:102
-#: exe/webui/element.py:1330 exe/webui/element.py:1548
+#: exe/webui/questionelement.py:88
+#: exe/webui/truefalseelement.py:102
+#: exe/webui/element.py:1330
+#: exe/webui/element.py:1548
 #: exe/idevices/testquestionelement.py:85
 msgid "Delete question"
 msgstr "Kérdés törlése"
@@ -551,6 +675,9 @@ msgid ""
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
 msgstr ""
+"Írja le, hogy a tanulók hogyan mérjék fel, \n"
+"hogyan értékeljék a gyakorlatot. (A magyarázatok hasznos eszközök \n"
+"a gondolkodtató visszacsatolás biztosítására.)"
 
 #: exe/engine/casestudyidevice.py:99
 msgid ""
@@ -559,173 +686,206 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
 msgstr ""
+"Itt írja le az esettanulmányhoz kapcsolódó \n"
+"tevékenységeket. Adja meg azoknak az utasításokat, \n"
+"amelyek rávezethetik a tanulót egy dilemma megoldására."
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:322
+#: exe/engine/idevicestore.py:429
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Írja le azokat a tanuló számára szükséges előismereteket, amelyek a \n"
+"soron következő tananyag hatékony elsajátításához szükségesek."
 
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/idevicestore.py:288
+#: exe/engine/idevicestore.py:396
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Írja le a tanuló által vállalt ovasmányokhoz kapcsolódó feladatokat. \n"
+"Ez hasznos segítség a tanuló számára."
 
-#: exe/engine/idevicestore.py:335 exe/engine/idevicestore.py:442
+#: exe/engine/idevicestore.py:335
+#: exe/engine/idevicestore.py:442
 msgid "Describe the tasks the learners should complete."
-msgstr "Írja le a feladatot a hallgatóknak, melyet el kell végezniük."
+msgstr "Írja le azokat a feladatokat, amelyeket a tanulónak teljesíteni kell!"
 
-#: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49
+#: exe/idevices/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Leírás"
 
+# exe/xului/templates/packageproperties.xul:<label
+# value="Description:"
+# exe/xului/templates/dublincore.xul:<label
 #: exe/webui/attachmentblock.py:100
-#: exe/xului/templates/packageproperties.xul:<label value="Description:"
-#: id="ppDescription" style="width:8em" tooltiptext="An account of the content
-#: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
+#: id="ppDescription" style="width:8
+#: em"
+#: tooltiptext="An account of the content resource."> id="dcDescription"
 msgid "Description:"
 msgstr "Leírás:"
 
 #: exe/idevices/forumidevice.py:40
 msgid "Discussion Activity"
-msgstr "Vita tevékenység"
+msgstr "Megbeszélés"
 
 #: exe/idevices/forumelement.py:233
 msgid "Discussion Topic/Thread:"
-msgstr "Vita téma/szál:"
+msgstr "Megbeszélés Téma/Szál:"
 
 #: exe/idevices/forumidevice.py:147
 msgid "Discussion topic/Thread"
-msgstr "Vita téma/szál"
+msgstr "Megbeszélés Téma/Szál"
 
 #: exe/idevices/forumelement.py:79
 msgid "Discussions and replies are allowed"
-msgstr "Vita és válasz hozzáfűzése megengedett"
+msgstr "Viták és válaszok megengedettek"
 
-#: exe/webui/element.py:321 exe/webui/element.py:639 exe/webui/element.py:972
+#: exe/webui/element.py:321
+#: exe/webui/element.py:639
+#: exe/webui/element.py:972
 msgid "Display as:"
-msgstr "Megjelenítés mint:"
+msgstr "Megjelenítés:"
 
-#: exe/webui/block.py:206 exe/xului/templates/packageproperties.xul:<button
-#: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
-#: label="Done"> exe/xului/templates/dublincore.xul:<button
+# exe/xului/templates/packageproperties.xul:<button
+# exe/xului/templates/exportproperties.xul:<button
+# exe/xului/templates/dublincore.xul:<button
+#: exe/webui/block.py:206
+#: oncommand="submitForm(this.parentNode.parentNode);"
+#: id="ppBtnDone" label="Done">
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
-#: exe/xului/templates/exportproperties.xul:<button id="exportPropsDone"
+#: id="exportPropsDone"
 msgid "Done"
-msgstr "Kész"
+msgstr "Rendben"
 
 #: exe/webui/wikipediablock.py:93
 msgid "Dutch Wikipedia Article"
-msgstr "Holland Wikipedia cikk"
+msgstr "Holland nyelvű Wikipédia szócikk"
 
 #: exe/webui/element.py:46
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "HIBA Az Element.process közvetlenül hívta a %s osztályt"
 
 #: exe/webui/element.py:55
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "HIBA Az Element.renderEdit közvetlenül hívta a %s osztályt"
 
 #: exe/webui/element.py:72
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "HIBA Az Element.renderView közvetlenül hívta a %s osztályt"
 
 #: exe/webui/block.py:318
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "HIBA: Az Block.renderViewContent közvetlen hívás"
 
-#: exe/xului/mainpage.py:435 exe/xului/mainpage.py:440
-#: exe/xului/mainpage.py:443 exe/xului/mainpage.py:446
+#: exe/xului/mainpage.py:435
+#: exe/xului/mainpage.py:440
+#: exe/xului/mainpage.py:443
+#: exe/xului/mainpage.py:446
 #: exe/xului/mainpage.py:619
 msgid "EXPORT FAILED!"
-msgstr "EXPORT sikertelen!"
+msgstr "SIKERTELEN EXPORTÁLÁS!"
 
-#: exe/xului/mainpage.py:609 exe/xului/mainpage.py:623
-#: exe/xului/mainpage.py:636 exe/xului/mainpage.py:642
-#: exe/xului/mainpage.py:658 exe/xului/mainpage.py:664
-#: exe/xului/mainpage.py:679 exe/xului/mainpage.py:685
+#: exe/xului/mainpage.py:609
+#: exe/xului/mainpage.py:623
+#: exe/xului/mainpage.py:636
+#: exe/xului/mainpage.py:642
+#: exe/xului/mainpage.py:658
+#: exe/xului/mainpage.py:664
+#: exe/xului/mainpage.py:679
+#: exe/xului/mainpage.py:685
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
-"EXPORT sikertelen!\n"
+"SIKERTELEN EXPORTÁLÁS!\n"
 "%s"
 
-#: exe/export/scormexport.py:440 exe/export/websiteexport.py:87
+#: exe/export/scormexport.py:440
+#: exe/export/websiteexport.py:87
 #: exe/export/imsexport.py:325
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
-"EXPORT sikertelen!\n"
-"A legutolsó sikeres export %s."
+"SIKERTELEN EXPORTÁLÁS!\n"
+"Az utolsó sikeres export: %s."
 
-#: exe/xului/mainpage.py:518 exe/xului/mainpage.py:527
+#: exe/xului/mainpage.py:518
+#: exe/xului/mainpage.py:527
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"Kicsomagolás sikertelen!!\n"
+"SIKERTELEN KICSOMAGOLÁS!\n"
 "%s"
 
 #: exe/idevices/forumelement.py:76
 msgid "Each person posts one discussion"
-msgstr "Minden személy egy vitaszöveget küldhet be"
+msgstr "Mindenki egy vitát kezdeményezhet."
 
-#: exe/webui/block.py:327 exe/webui/editorpage.py:256
+#: exe/webui/block.py:327
+#: exe/webui/editorpage.py:256
 #: exe/webui/editorpane.py:261
 msgid "Edit"
-msgstr "Szerkeszt"
+msgstr "Szerkesztés"
 
-#: exe/webui/wikipediablock.py:132 exe/webui/editorpane.py:325
-#: exe/webui/rssblock.py:94 exe/webui/multimediablock.py:94
+#: exe/webui/wikipediablock.py:132
+#: exe/webui/editorpane.py:325
+#: exe/webui/rssblock.py:94
+#: exe/webui/multimediablock.py:94
 msgid "Emphasis"
-msgstr "Hangsúly"
+msgstr "Kiemelés"
 
 #: exe/webui/wikipediablock.py:91
 msgid "English Wikipedia Article"
-msgstr "Angol Wikipedia cikk"
+msgstr "Angol nyelvű Wikipédia szócikk"
 
 #: exe/idevices/flashmovieidevice.py:52
-#, fuzzy
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
-msgstr "Adja meg a szöveget, mellyet hozzá akar rendelni a képhez."
+msgstr "Írja be azt a szöveget, amely kapcsolódik az állományhoz."
 
 #: exe/engine/multichoiceidevice.py:90
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Írjon egy útmutatót a kérdés megoldásához! \n"
+"Ha nem kíván útmutatót, figyelmeztetést írni, hagyja üresen ezt a mezőt!"
 
 #: exe/engine/multichoiceidevice.py:132
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr ""
+msgstr "Írjon egy útmutatást! Ha nem kíván útmutatást adni a megoldáshoz, hagyja üresen ezt a mezőt!"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:229
-#, fuzzy
+#: exe/engine/wikipediaidevice.py:71
+#: exe/engine/wikipediaidevice.py:229
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
-msgstr "Adja meg a szöveget, mellyet hozzá akar rendelni a képhez."
+msgstr "Írja be a keresett szót vagy kifejezést!"
 
 #: exe/engine/reflectionidevice.py:54
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
 msgstr ""
+"Tegyen fel egy kérdést a tanulóknak, \n"
+"amelyre reflektál."
 
 #: exe/engine/galleryidevice.py:374
 msgid "Enter a title for the gallery"
-msgstr "Adja meg a galéria címét"
+msgstr "Írja be a galéria címét"
 
 #: exe/engine/rssidevice.py:50
 msgid ""
@@ -739,13 +899,28 @@ msgid ""
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Adja meg annak az RSS-nek az URL-jét, amelyik hírcsatornájához \n"
+"csatlakozni szeretne.A hírcsatornák kis ikonokkal azonosítják \n"
+"(Gyakran ilyennel: <img src=\"/images/feed-icon.png\" />), vagy az \"RSS\" felirattal. Kattintson \n"
+"az ikonra vagy a címkére és az RSS hírcsatorna megjelenik a böngészőjében. Másolja a címsorban \n"
+"található URL-t ebbe a mezőbe. Másként: kattintson jobb egérgommbbal az ikonon, vagy a hivatkozáson \n"
+"és amegjelenő helyi menüben válassza a \"Hivatkozás címének másolása\" menüpontot. \n"
+"Térjen vissza az eXe-be, válassza az RSS modult és illessze be az URL-t az \"RSS URL\" mezőbe,\n"
+"majd kattintson a \"Betöltés\" gombra. Ezután az alábbi ablakban hivatkozásként megjelennek \n"
+"a hírcsatorna címei. Ebben az ablakban tovább tudja szerkeszteni a huvatkozásokat, illetve \n"
+"utasításokat, magyarázatokat írhat be."
 
-#: exe/idevices/quiztestidevice.py:64 exe/idevices/quiztestidevice.py:86
+#: exe/idevices/quiztestidevice.py:64
+#: exe/idevices/quiztestidevice.py:86
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Írjon be egy lehetséges választ! Adjon meg legalább 3-4 \n"
+"válaszlehetőséget, amely tartalmazza helyes és eltéítő választ is. \n"
+"Kattintson az &lt;Új válasz hozzáadása&gt; gombra az új \n"
+"válaszlehetőség megadása érdekében."
 
 #: exe/engine/truefalseidevice.py:73
 msgid ""
@@ -753,21 +928,26 @@ msgid ""
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
 msgstr ""
+"Írjon valamilyen visszajelzést a tanulóknak! \n"
+"Ha ezt a mezőt üresen hagyja, akkor az alapértelmezett \n"
+"visszajelzés jelenik meg."
 
 #: exe/engine/clozeidevice.py:128
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
-msgstr ""
+msgstr "Írjon valamilyen visszajelzést a tanulók számára a visszajelzés mezőbe. Ezt a mezőt üresen hagyhatja."
 
 #: exe/webui/editorpane.py:144
-#, fuzzy
 msgid "Enter instructions for completion here"
-msgstr "Írjon ide útmutatást a tanulóknak"
+msgstr "Ide írja be a teljesítéshez szükséges utasításokat"
 
-#: exe/engine/externalurlidevice.py:48 exe/engine/externalurlidevice.py:70
+#: exe/engine/externalurlidevice.py:48
+#: exe/engine/externalurlidevice.py:70
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
 msgstr ""
+"Adja meg annak az oldalnak az URL-jét, amit be szertne mutatni,\n"
+"és válassza ki a megjelenítendő terület méretét!"
 
 #: exe/engine/multichoiceidevice.py:97
 msgid ""
@@ -775,6 +955,9 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Adjon meg egy választási lehetőséget! \n"
+"Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
+"az piros \"X\"-re kattintva a válasz sorában."
 
 #: exe/engine/field.py:901
 msgid ""
@@ -782,40 +965,56 @@ msgid ""
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Adjon meg egy választási lehetőséget! \n"
+"Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
+"a piros \"X\"-re kattintva a válasz sorában."
 
-#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:392
+#: exe/engine/idevicestore.py:284
+#: exe/engine/idevicestore.py:392
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Írja le a hivatkozott iodalom részleteit. \n"
+"A hivatkozások formája függ az Ön tanszékén, karán előnyben \n"
+"részesített formától."
 
-#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
+#: exe/engine/flashwithtextidevice.py:57
+#: exe/engine/flashwithtextidevice.py:85
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Adja meg az animáció megjelenítéséhez szükséges méreteket \n"
+"(pixelben) és határozza meg az animáció igazítását a képernyőn. \n"
+"A szélesség és a magasság méreteit arányosan változtassa. "
 
-#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:157
+#: exe/webui/editorpane.py:150
+#: exe/webui/editorpane.py:157
 #: exe/webui/editorpane.py:181
-#, fuzzy
 msgid "Enter the instructions for completion here"
-msgstr "Írjon ide útmutatást a tanulóknak"
+msgstr "A befejezéshez írja be ide az utasításait"
 
-#: exe/webui/editorpane.py:143 exe/webui/editorpane.py:149
-#: exe/webui/editorpane.py:156 exe/webui/editorpane.py:165
+#: exe/webui/editorpane.py:143
+#: exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:156
+#: exe/webui/editorpane.py:165
 #: exe/webui/editorpane.py:180
 msgid "Enter the label here"
-msgstr "Adja meg a címke nevét"
+msgstr "Írja be a címke nevét!"
 
-#: exe/engine/multichoiceidevice.py:92 exe/idevices/quiztestidevice.py:61
+#: exe/engine/multichoiceidevice.py:92
+#: exe/idevices/quiztestidevice.py:61
 #: exe/idevices/quiztestidevice.py:94
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Írja be a kérdést! \n"
+"Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a kétértelmű fogylmazást!"
 
 #: exe/engine/field.py:898
 msgid ""
@@ -823,29 +1022,37 @@ msgid ""
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
 "can tend to confuse learners."
 msgstr ""
+"Írja be a kérdést! \n"
+"Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a kétértelmű fogalmazást!"
 
 #: exe/engine/imagewithtextidevice.py:62
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
-msgstr "Adja meg a szöveget, mellyet hozzá akar rendelni a képhez."
+msgstr ""
+"Írja be azt a szöveget, \n"
+"                                                ami a képhez kapcsolódik."
 
 #: exe/engine/flashwithtextidevice.py:50
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
-msgstr "Adja meg a szöveget, mellyet hozzá akar rendelni a képhez."
+msgstr ""
+"Írja be azt a szöveget,  \n"
+"                                 amely kapcsolódik az animációhoz."
 
-#: exe/engine/multimediaidevice.py:65 exe/engine/imagemagnifieridevice.py:54
-#, fuzzy
+#: exe/engine/multimediaidevice.py:65
+#: exe/engine/imagemagnifieridevice.py:54
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
-msgstr "Adja meg a szöveget, mellyet hozzá akar rendelni a képhez."
+msgstr ""
+"Adjon meg egy szöveget, \n"
+"amely az állománnyal kapcsolatos."
 
 #: exe/engine/attachmentidevice.py:75
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr ""
+msgstr "Írjon egy szöveget, amely kapcsolatos a letöltendő állománnyal. Például adjon utasításokat arra vonatkozóan, hogy a tanulónak mit kell tennie az adott állománnyal, hogyyan használhatja fel a tanulásban."
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
@@ -853,18 +1060,19 @@ msgstr "Példa"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr "Példa példája"
+msgstr "Mintapélda"
 
 #: exe/webui/editorpage.py:239
-#, fuzzy
 msgid "Export iDevices"
-msgstr "iDevices"
+msgstr "Exportálás"
 
-#: exe/xului/mainpage.py:625 exe/xului/mainpage.py:644
-#: exe/xului/mainpage.py:666 exe/xului/mainpage.py:687
+#: exe/xului/mainpage.py:625
+#: exe/xului/mainpage.py:644
+#: exe/xului/mainpage.py:666
+#: exe/xului/mainpage.py:687
 #, python-format
 msgid "Exported to %s"
-msgstr "Exportálva ide %s"
+msgstr "Exportálva %s"
 
 #: exe/engine/externalurlidevice.py:37
 msgid "External Web Site"
@@ -872,17 +1080,23 @@ msgstr "Külső weboldal"
 
 #: exe/webui/imagemagnifierblock.py:136
 msgid "Extra large"
-msgstr "Különlegesen nagy"
+msgstr "Extra nagy"
 
-#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
+#: exe/webui/truefalseelement.py:84
+#: exe/webui/truefalseelement.py:155
 msgid "False"
 msgstr "Hamis"
 
-#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:152
-#: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
-#: exe/engine/genericidevice.py:187 exe/webui/questionelement.py:78
-#: exe/webui/common.py:206 exe/webui/clozeblock.py:111
-#: exe/webui/truefalseelement.py:90 exe/webui/editorpane.py:248
+#: exe/engine/clozeidevice.py:127
+#: exe/engine/clozeidevice.py:152
+#: exe/engine/idevicestore.py:291
+#: exe/engine/idevicestore.py:399
+#: exe/engine/genericidevice.py:187
+#: exe/webui/questionelement.py:78
+#: exe/webui/common.py:206
+#: exe/webui/clozeblock.py:111
+#: exe/webui/truefalseelement.py:90
+#: exe/webui/editorpane.py:248
 #: exe/webui/element.py:1446
 msgid "Feedback"
 msgstr "Visszajelzés"
@@ -892,86 +1106,93 @@ msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
-"A Visszajelzés gomb nem fog látszani, amennyiben \n"
-"semmilyen adat nincs kitöltve a mezőben."
+"A Visszajelzés gomb nem fog megójelenni, \n"
+"ha nem írnak adatokat ebbe a mezőbe."
 
-#: exe/webui/reflectionblock.py:72 exe/webui/element.py:1354
+#: exe/webui/reflectionblock.py:72
+#: exe/webui/element.py:1354
 msgid "Feedback:"
 msgstr "Visszajelzés:"
 
 #: exe/xului/mainpage.py:724
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "A(z) %s állomány nem létezik vagy nem olvasható."
 
-#: exe/xului/mainpage.py:556 exe/xului/mainpage.py:596
+#: exe/xului/mainpage.py:556
+#: exe/xului/mainpage.py:596
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr "A%s file-név egy file, cseréje nem lehetséges"
+msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
 #: exe/webui/attachmentblock.py:78
-#, fuzzy
 msgid "Filename:"
-msgstr "File-név:"
+msgstr "Állománynév:"
 
-#: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
+#: exe/idevices/flashmovieidevice.py:39
+#: exe/idevices/flashmovieidevice.py:50
 msgid "Flash Movie"
 msgstr "Flash videó"
 
-#: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
+#: exe/engine/flashwithtextidevice.py:40
+#: exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
-msgstr "Flash, szöveggel"
+msgstr "Flash animáció"
 
-#: exe/xului/mainpage.py:562 exe/xului/mainpage.py:602
+#: exe/xului/mainpage.py:562
+#: exe/xului/mainpage.py:602
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
-msgstr "A %s könyvtár már létezik. Kérem válasszon másikat vagy törölje a meglévőt és próbálja újból."
+msgstr "A %s könyvtárnév már létezik. Kérem, válasszon más nevet, vagy törölje a létező könyvtárat, s próbálja újra!"
 
 #: exe/idevices/forumelement.py:110
 msgid "Force everyone to be subscribed?:"
-msgstr ""
+msgstr "Mindenkit fel kell íratni?"
 
 #: exe/idevices/forumelement.py:202
 msgid "Forum Name:"
-msgstr "Fórumnév:"
+msgstr "A fórum neve:"
 
-#: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
+#: exe/idevices/forumelement.py:279
+#: exe/idevices/forumelement.py:296
 msgid "Forum Name: "
-msgstr "Fórumnév:"
+msgstr "A fórum neve:"
 
 #: exe/idevices/forumelement.py:96
 msgid "Forum type:"
-msgstr "Fórum típus:"
+msgstr "A fórum típusa:"
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
-msgstr "Keret magassága:"
+msgstr "Keret (frame) magassága"
 
-#: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
+#: exe/engine/freetextidevice.py:37
+#: exe/engine/freetextidevice.py:44
 msgid "Free Text"
 msgstr "Szöveg"
 
 #: exe/webui/wikipediablock.py:94
 msgid "French Wikipedia Article"
-msgstr "Francia Wikipedia cikk"
+msgstr "Francia nyelvű Wikipédia szócikk"
 
+# exe/xului/templates/packageproperties.xul:<menuitem
 #: exe/webui/wikipediablock.py:197
-#: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
-#: Documentation License" id="ppmigfdl" label="GNU License">
+#: value="GNU Free Documentation License"
+#: id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
-msgstr "GNU Szabad Dokumentációs Licenc"
+msgstr "GNU Szabad dokumentáció licenc"
 
 #: exe/idevices/appletblock.py:88
 msgid "Geogebra"
-msgstr ""
+msgstr "GeoGebra"
 
 #: exe/webui/wikipediablock.py:95
 msgid "German Wikipedia Article"
-msgstr "Német Wikipedia cikk"
+msgstr "Német nyelvű Wikipédia szócikk"
 
 #: exe/webui/element.py:858
 msgid "Get score"
-msgstr "Pontok lekérése"
+msgstr "Pontozás"
 
 #: exe/webui/galleryblock.py:226
 msgid "Go Back"
@@ -979,23 +1200,24 @@ msgstr "Vissza"
 
 #: exe/webui/galleryblock.py:238
 msgid "Go Forward"
-msgstr "Tovább"
+msgstr "Előre"
 
 #: exe/webui/galleryblock.py:245
 msgid "Go Forward (Not Available)"
-msgstr "Tovább (Nem elérhető)"
+msgstr "Előre (Nem elérhető)"
 
 #: exe/webui/wikipediablock.py:96
 msgid "Greek Wikipedia Article"
-msgstr "Görög Wikipedia cikk"
+msgstr "Görög nyelvű Wikipédia szócikk"
 
 #: exe/idevices/forumelement.py:117
 msgid "Group mode:"
-msgstr "Csoport mód:"
+msgstr "Csoportmód:"
 
-#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
+#: exe/webui/reflectionblock.py:93
+#: exe/idevices/forumelement.py:92
 msgid "Hide"
-msgstr "Elrejt"
+msgstr "Elrejtés"
 
 #: exe/webui/questionelement.py:110
 msgid "Hide Feedback"
@@ -1003,41 +1225,45 @@ msgstr "Visszajelzés elrejtése"
 
 #: exe/webui/element.py:779
 msgid "Hide/Show Word"
-msgstr "Szó Elrejtése/Mutatása"
+msgstr "Szó elrejtése/megjelenítése"
 
-#: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
-#: exe/webui/truefalseelement.py:127 exe/webui/element.py:1590
+#: exe/webui/truefalseelement.py:95
+#: exe/webui/truefalseelement.py:117
+#: exe/webui/truefalseelement.py:127
+#: exe/webui/element.py:1590
 msgid "Hint"
-msgstr "Tipp"
+msgstr "Útmutató"
 
 #: exe/webui/element.py:1551
 msgid "Hint:"
-msgstr "Tipp:"
+msgstr "Útmutató: "
 
 #: exe/engine/package.py:102
 msgid "Home"
 msgstr "Kezdőoldal"
 
-#: exe/webui/multichoiceblock.py:144 exe/webui/galleryblock.py:325
-#: exe/webui/block.py:282 exe/webui/genericblock.py:78
+#: exe/webui/multichoiceblock.py:144
+#: exe/webui/galleryblock.py:325
+#: exe/webui/block.py:282
+#: exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104
 msgid "IDevice Icon"
-msgstr "IDevice ikon"
+msgstr "iDevice ikon"
 
 #: exe/webui/multichoiceblock.py:120
 msgid "IDevice Question Icon"
-msgstr "IDevice kérés ikon"
+msgstr "iDevice kérdés ikon"
 
 #: exe/webui/block.py:171
-#, fuzzy
 msgid "IDevice broken"
-msgstr "IDevice ikon"
+msgstr "Az iDevice modul elromlott"
 
 #: exe/webui/editorpane.py:356
 msgid "Icons"
 msgstr "Ikonok"
 
-#: exe/engine/imagewithtextidevice.py:58 exe/engine/casestudyidevice.py:55
+#: exe/engine/imagewithtextidevice.py:58
+#: exe/engine/casestudyidevice.py:55
 #: exe/webui/editorpane.py:246
 msgid "Image"
 msgstr "Kép"
@@ -1048,16 +1274,15 @@ msgstr "Képgaléria"
 
 #: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
-msgstr "Kép nagyítóüveggel nézve"
+msgstr "Nagyító"
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
-msgstr "Kép szövegaláírással"
+msgstr "Kép szöveggel"
 
 #: exe/webui/editorpage.py:237
-#, fuzzy
 msgid "Import iDevices"
-msgstr "iDevices"
+msgstr "Importálás"
 
 #: exe/webui/truefalseelement.py:173
 msgid "Incorrect!"
@@ -1065,7 +1290,7 @@ msgstr "Helytelen!"
 
 #: exe/webui/editorpane.py:370
 msgid "Info"
-msgstr "Infó"
+msgstr "Info"
 
 #: exe/webui/block.py:239
 msgid "Information"
@@ -1073,43 +1298,44 @@ msgstr "Információ"
 
 #: exe/webui/imagemagnifierblock.py:120
 msgid "Initial Zoom"
-msgstr "Kezdő zoom"
+msgstr "Kezdeti nagyítás"
 
 #: exe/webui/element.py:794
 msgid "Instant Marking?"
-msgstr "Azonnali megjelölés?"
+msgstr "Azonnali értékelés?"
 
-#: exe/engine/truefalseidevice.py:80 exe/engine/truefalseidevice.py:167
-#: exe/engine/clozeidevice.py:114 exe/webui/common.py:287
+#: exe/engine/truefalseidevice.py:80
+#: exe/engine/truefalseidevice.py:167
+#: exe/engine/clozeidevice.py:114
+#: exe/webui/common.py:287
 msgid "Instructions"
-msgstr "Utasítások"
+msgstr "Utasítás"
 
 #: exe/engine/clozeidevice.py:147
 msgid "Instructions For Learners"
-msgstr "Utasítások a tanulók számára"
+msgstr "Utasítás a tanulónak"
 
 #: exe/idevices/forumelement.py:227
 msgid "Introduction"
-msgstr "Utasítások"
+msgstr "Bevezetés"
 
 #: exe/webui/wikipediablock.py:198
 msgid "It uses material from the "
-msgstr ""
+msgstr "Használja ezt az anyagot"
 
 #: exe/webui/wikipediablock.py:97
 msgid "Italian Wikipedia Article"
-msgstr "Olasz Wikipedia cikk"
+msgstr "Olasz nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:98
 msgid "Japanese Wikipedia Article"
-msgstr "Japán Wikipedia cikk"
+msgstr "Japán nyelvű Wikiédia szócikk"
 
 #: exe/idevices/appletidevice.py:52
 msgid "Java Applet"
 msgstr "Java applet"
 
 #: exe/webui/attachmentblock.py:96
-#, fuzzy
 msgid "Label:"
 msgstr "Címke:"
 
@@ -1119,42 +1345,48 @@ msgstr "Nagy"
 
 #: exe/idevices/forumidevice.py:164
 msgid "Learning Management System"
-msgstr "Oktatásmenedzsment rendszer"
+msgstr "Tanulásirányítási rendszer (LMS)"
 
 #: exe/idevices/forumelement.py:253
 msgid "Learning Management System:"
-msgstr "Oktatásmenedzsment rendszer:"
+msgstr "Tanulásirányítási rendszer (LMS):"
 
-#: exe/webui/imagemagnifierblock.py:85 exe/webui/imagewithtextblock.py:75
-#: exe/webui/flashwithtextblock.py:75 exe/webui/multimediablock.py:79
-#: exe/webui/editorelement.py:217 exe/idevices/flashmovieblock.py:75
+#: exe/webui/imagemagnifierblock.py:85
+#: exe/webui/imagewithtextblock.py:75
+#: exe/webui/flashwithtextblock.py:75
+#: exe/webui/multimediablock.py:79
+#: exe/webui/editorelement.py:217
+#: exe/idevices/flashmovieblock.py:75
 msgid "Left"
-msgstr "Bal"
+msgstr "Balra igazítás"
 
-#: exe/export/pages.py:68 exe/export/textexport.py:53
-#, fuzzy
+#: exe/export/pages.py:68
+#: exe/export/textexport.py:53
 msgid "Licensed under the "
-msgstr "Ez a cikk engedélyezve van a(z)"
+msgstr "A tananyag a követkkező licenc alá esik:"
 
 #: exe/idevices/forumidevice.py:167
 msgid "Link to the forum"
 msgstr "Hivatkozás a fórumra"
 
-#: exe/webui/wikipediablock.py:125 exe/webui/rssblock.py:87
+#: exe/webui/wikipediablock.py:125
+#: exe/webui/rssblock.py:87
 msgid "Load"
-msgstr "Betölt"
+msgstr "Betöltés"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:252
+#: exe/engine/multimediaidevice.py:40
+#: exe/webui/editorpane.py:252
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
+#: exe/engine/mathidevice.py:35
+#: exe/engine/mathidevice.py:48
 msgid "Maths"
-msgstr "Matematikai képlet"
+msgstr "Képletszerkesztő"
 
 #: exe/webui/imagemagnifierblock.py:127
 msgid "Maximum zoom"
-msgstr "Legnagyobb zoom"
+msgstr "Maximális nagyítási"
 
 #: exe/webui/imagemagnifierblock.py:134
 msgid "Medium"
@@ -1166,28 +1398,27 @@ msgstr "Moodle"
 
 #: exe/webui/block.py:228
 msgid "Move Down"
-msgstr "Lefelé mozgat"
+msgstr "Le"
 
 #: exe/webui/galleryblock.py:224
 msgid "Move Image Left"
-msgstr "Kép mozgatása balra"
+msgstr "Kép áthelyezése balra"
 
 #: exe/webui/galleryblock.py:236
 msgid "Move Image Right"
-msgstr "Kép mozgatása jobbra"
+msgstr "Kép áthelyezése jobbra"
 
 #: exe/webui/block.py:221
 msgid "Move Up"
-msgstr "Felfelé mozgat"
+msgstr "Fel"
 
 #: exe/engine/multichoiceidevice.py:57
-#, fuzzy
 msgid "Multi-choice"
-msgstr "Kérdés törlése"
+msgstr "Feleletválaszós teszt"
 
 #: exe/engine/multiselectidevice.py:41
 msgid "Multi-select"
-msgstr ""
+msgstr "Feleletválasztós teszt (több jó válasz)"
 
 #: exe/webui/editorpane.py:318
 msgid "Name"
@@ -1202,11 +1433,11 @@ msgid "New Topic"
 msgstr "Új téma"
 
 #: exe/webui/editorpage.py:261
-#, fuzzy
 msgid "New iDevice"
-msgstr "Új iDevice"
+msgstr "Új iDevice modul"
 
-#: exe/engine/galleryidevice.py:573 exe/export/scormexport.py:312
+#: exe/engine/galleryidevice.py:573
+#: exe/export/scormexport.py:312
 #: exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Következő"
@@ -1215,98 +1446,115 @@ msgstr "Következő"
 msgid "No"
 msgstr "Nem"
 
-#: exe/webui/galleryblock.py:189 exe/webui/galleryblock.py:277
+#: exe/webui/galleryblock.py:189
+#: exe/webui/galleryblock.py:277
 msgid "No Images Loaded"
-msgstr "Nem található betöltött kép"
+msgstr "Nincsenek feltöltött képek"
 
 #: exe/engine/galleryidevice.py:115
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "Miniatűrök nem elérhetőek. Az eredeti kép nem tölthető be."
+msgstr "A miniatür nem elérhető. Az eredeti képet nem töltötte be."
 
 #: exe/engine/galleryidevice.py:149
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "Miniatűrök nem elérhetőek. A kép nem zsugorítható."
+msgstr "A miniatür nem elérhető. Nem lehetett kicsinyíteni a képet."
 
 #: exe/engine/galleryidevice.py:123
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "Miniatűrök nem elérhetőek. Az eredeti kép nem zsugorítható."
+msgstr "A miniatür nem elérhető. Az eredeti képetnem lehetett kicsinyíteni."
 
 #: exe/idevices/forumelement.py:80
 msgid "No discussions, but replies are allowed"
-msgstr "Viták nem találhatóak, de reagálások beküldése megengedett"
+msgstr "Nem kezdeményezhet vitát, de válaszok megengedettek."
 
 #: exe/idevices/forumelement.py:81
 msgid "No discussions, no replies"
-msgstr "Viták, reagálások nem találhatóak"
+msgstr "Nem kezdeményezhet vitát, nem válaszolhat."
 
-#: exe/webui/wikipediablock.py:129 exe/webui/editorpane.py:328
-#: exe/webui/rssblock.py:91 exe/webui/multimediablock.py:91
+#: exe/webui/wikipediablock.py:129
+#: exe/webui/editorpane.py:328
+#: exe/webui/rssblock.py:91
+#: exe/webui/multimediablock.py:91
 msgid "No emphasis"
-msgstr "Nincs hangsúly"
+msgstr "Nincs kiemelés"
 
 #: exe/idevices/forumelement.py:87
 msgid "No groups"
-msgstr "Csoportok nem találhatóak"
+msgstr "Nincs csoport"
 
-#: exe/webui/imagemagnifierblock.py:87 exe/webui/imagewithtextblock.py:77
-#: exe/webui/flashwithtextblock.py:77 exe/webui/multimediablock.py:81
-#: exe/webui/editorelement.py:219 exe/idevices/forumelement.py:239
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: exe/webui/imagemagnifierblock.py:87
+#: exe/webui/imagewithtextblock.py:77
+#: exe/webui/flashwithtextblock.py:77
+#: exe/webui/multimediablock.py:81
+#: exe/webui/editorelement.py:219
+#: exe/idevices/forumelement.py:239
 #: exe/idevices/flashmovieblock.py:77
-#: exe/xului/templates/packageproperties.xul:<menuitem value="None"
-#: id="ppminone" label="None">
+#: value="None" id="ppminone" label="None">
 msgid "None"
-msgstr "Semmi"
+msgstr "Egyik sem"
 
 #: exe/webui/preferencespage.py:93
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:307
-#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:414
+#: exe/engine/idevicestore.py:298
+#: exe/engine/idevicestore.py:307
+#: exe/engine/idevicestore.py:405
+#: exe/engine/idevicestore.py:414
 msgid "Objectives"
-msgstr "Célkitűzések"
+msgstr "Célok"
 
-#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:408
+#: exe/engine/idevicestore.py:301
+#: exe/engine/idevicestore.py:408
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr ""
+"Az oktatási célok írják le a tanuló számára, hogy milyen tudással fognak rendelkezni \n"
+"a tananyagegység elsajátítása után. Mire lesznek képesek, milyen készségeket fejleszt \n"
+"a tananyag"
 
-#: exe/engine/field.py:664 exe/engine/field.py:728
+#: exe/engine/field.py:664
+#: exe/engine/field.py:728
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr ""
-"Kizárólag .flv (Flash Video) kiterjesztésű file-okat \n"
-"használj az iDevice-hez."
+"Csak .flv (Flash video) fájlt válasszon \n"
+"ehhez az iDevice modulhoz."
 
-#: exe/engine/field.py:600 exe/engine/field.py:644
+#: exe/engine/field.py:600
+#: exe/engine/field.py:644
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr ""
-"Kizárólag .swf (Shockwave Flash) kiterjesztésű file-okat \n"
-"használj az iDevice-hez."
+"Csak .swf (Flash animáció) fájlt válasszon \n"
+"ehhez az iDevice modulhoz."
 
-#: exe/webui/element.py:1340 exe/webui/element.py:1428
-#: exe/webui/element.py:1433 exe/idevices/testquestionelement.py:95
+#: exe/webui/element.py:1340
+#: exe/webui/element.py:1428
+#: exe/webui/element.py:1433
+#: exe/idevices/testquestionelement.py:95
 msgid "Option"
 msgstr "Beállítás"
 
-#: exe/webui/element.py:1336 exe/idevices/testquestionelement.py:91
+#: exe/webui/element.py:1336
+#: exe/idevices/testquestionelement.py:91
 msgid "Options"
 msgstr "Beállítások"
 
-#: exe/webui/wikipediablock.py:108 exe/idevices/appletblock.py:89
+#: exe/webui/wikipediablock.py:108
+#: exe/idevices/appletblock.py:89
 #: exe/idevices/forumelement.py:266
 msgid "Other"
 msgstr "Másik"
 
 #: exe/xului/outlinepane.py:244
-#, fuzzy
 msgid "Outline"
-msgstr "Körvonal"
+msgstr "Tervező nézet"
 
 #: exe/webui/wikipediablock.py:120
 msgid "Own site"
@@ -1315,77 +1563,80 @@ msgstr "Saját oldal"
 #: exe/xului/mainpage.py:529
 #, python-format
 msgid "Package extracted to: %s"
-msgstr "A csomag kitömörítése a(z) %s útvonalra megtörtént."
+msgstr "A csomag ki lett bontva a következő helyre: %s"
 
 #: exe/xului/mainpage.py:293
 #, python-format
 msgid "Package saved to: %s"
-msgstr "A csomag mentése a(z) %s útvonalra megtörtént."
+msgstr "A csomag el lett mentve a következő helyre: %s"
 
-#: exe/webui/block.py:235 exe/webui/editorpane.py:366
+#: exe/webui/block.py:235
+#: exe/webui/editorpane.py:366
 msgid "Pedagogical Help"
-msgstr "Nevelési segítség"
+msgstr "Pedagógiai súgó"
 
 #: exe/webui/editorpane.py:322
 msgid "Pedagogical Tip"
-msgstr "Nevelési tipp"
+msgstr "Pedagógiai tipp"
 
 #: exe/idevices/forumblock.py:133
 msgid "Please enter a discussion topic name.\n"
-msgstr "Kérem adja meg a vita topic nevét.\n"
+msgstr "Kérem, adja meg a téma nevét!\n"
 
 #: exe/idevices/forumblock.py:119
 msgid "Please enter a name for the forum\n"
-msgstr "Kérem adjon nevet a fórumnak\n"
+msgstr "Kérem, adjon nevet a fórumnak!\n"
 
 #: exe/webui/editorpage.py:104
 msgid "Please enter an idevice name."
-msgstr "Kérem adjon meg egy idevice nevet."
+msgstr "Kérem, adjon nevet az új iDevice modulnak!"
 
 #: exe/webui/editorpane.py:191
-#, fuzzy
 msgid "Please enter<br />an idevice name."
-msgstr "Kérem adjon meg egy idevice nevet."
+msgstr "Kérem, adjon nevet <br />az új iDevice modulnak!"
 
 #: exe/idevices/forumblock.py:128
 msgid "Please select LMS.\n"
-msgstr "Kérem válassza az LMS-t. \n"
+msgstr "Kérem, válasszon LMS-t!\n"
 
 #: exe/webui/element.py:1034
-#, fuzzy
 msgid "Please select a .flv file."
-msgstr "Kérem válasszon ki egy fórumot."
+msgstr "Kérem, válasszon egy .flv állományt!"
 
 #: exe/idevices/forumelement.py:258
 msgid "Please select a LMS"
-msgstr "Kérem válassza az LMS-t"
+msgstr "Kérem, válasszon egy LMS-t"
 
-#: exe/webui/multichoiceblock.py:85 exe/idevices/quiztestblock.py:93
+#: exe/webui/multichoiceblock.py:85
+#: exe/idevices/quiztestblock.py:93
 msgid "Please select a correct answer for each question."
-msgstr "Kérem válassza ki a helyes választ mindegyik kérdéshez."
+msgstr "Válassza ki a helyes választ mindegyik kérdésben!"
 
 #: exe/idevices/forumblock.py:114
 msgid "Please select a forum.\n"
-msgstr "Kérem válasszon ki egy fórumot.\n"
+msgstr "Kérem válasszon egy fórumot!\n"
 
 #: exe/idevices/appletblock.py:71
 msgid "Please upload a .ggb file."
-msgstr ""
+msgstr "Kérem, töltsön fel egy .ggb állományt!"
 
 #: exe/webui/wikipediablock.py:99
 msgid "Polish Wikipedia Article"
-msgstr "Lengyel Wikipedia cikk"
+msgstr "Lengyel nyelvű Wikipédia szócikk"
 
 #: exe/webui/wikipediablock.py:100
 msgid "Portugese Wikipedia Article"
-msgstr "Portugál Wikipedia cikk"
+msgstr "Portugál nyelvű Wikipédia szócikk"
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:321
-#: exe/engine/idevicestore.py:418 exe/engine/idevicestore.py:428
+#: exe/engine/idevicestore.py:311
+#: exe/engine/idevicestore.py:321
+#: exe/engine/idevicestore.py:418
+#: exe/engine/idevicestore.py:428
 msgid "Preknowledge"
 msgstr "Előismeret"
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:314
+#: exe/engine/idevicestore.py:421
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1393,48 +1644,59 @@ msgid ""
 "<li>        Learners must have level 4 English </li>\n"
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
+"Az előismeret modulban sorolhatja fel azokat az előfeltételeket, és \n"
+"azokat az ismereteket, amelyekkel tanulónak a már rendelkeznie kell a \n"
+"tannyagegysék sikeres teljesítéséhez. Példák az előfeltételre: <ul>\n"
+"<li>        Az \"Európai alkotmány és parlamentarizmustörténet\" tantárgy teljesítése. </li>\n"
+"<li>        Ismerjék a klasszikus logika alapfogalmait. </li>\n"
+"<li>        A tantárgy nincs elismerethez kötve. </li></ul>\n"
 
-#: exe/webui/editorpane.py:259 exe/webui/element.py:1175
+#: exe/webui/editorpane.py:259
+#: exe/webui/element.py:1175
 msgid "Preview"
 msgstr "Előnézet"
 
-#: exe/engine/galleryidevice.py:565 exe/export/scormexport.py:311
+#: exe/engine/galleryidevice.py:565
+#: exe/export/scormexport.py:311
 #: exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Előző"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:317
+#: exe/engine/multimediaidevice.py:71
+#: exe/engine/field.py:317
 #: exe/engine/field.py:364
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
-"Adjon feliratot az MP3 file-nak. \n"
-"Ez fog látszódni a lejátszó fejlécében."
+"Adjon meg egy feliratot az MP3-as állományhoz. \n"
+"Ez fog megjelenni a lejátszól címsorában."
 
 #: exe/engine/imagemagnifieridevice.py:59
 msgid ""
 "Provide a caption for the \n"
 "image to be magnified."
 msgstr ""
-"Adjon feliratot a képhez, \n"
-"amely nagyítva lesz."
+"Adjon meg egy feiratot \n"
+"a nagyítandó képhez."
 
-#: exe/idevices/flashmovieidevice.py:57 exe/idevices/flashmovieidevice.py:78
+#: exe/idevices/flashmovieidevice.py:57
+#: exe/idevices/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr ""
-"Adjon feliratot a flash videóhoz, \n"
-"melyet most illesztett be."
+"Adjon meg egy feliratot a \n"
+"beillesztett Flash videóhoz."
 
-#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
+#: exe/engine/flashwithtextidevice.py:55
+#: exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr ""
-"Adjon feliratot a flash videóhoz, \n"
-"                                  melyet most illesztett be."
+"Adjon meg egy feliratot a \n"
+"                                  beillesztett Flash animációhoz."
 
 #: exe/engine/imagewithtextidevice.py:67
 #: exe/engine/imagewithtextidevice.py:114
@@ -1442,73 +1704,78 @@ msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
 msgstr ""
-"Adjon feliratot a képhez, \n"
-"melyet most illesztett be."
+"Adjon meg egy feliratot \n"
+"a beillesztett képhez."
 
-#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
+#: exe/engine/truefalseidevice.py:81
+#: exe/engine/truefalseidevice.py:168
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
-msgstr ""
+msgstr "Adjon meg egy utasítást, hogy hogyan lehet teljesíteni ezt az Igaz/Hamis kérdést!"
 
 #: exe/engine/clozeidevice.py:115
 msgid ""
 "Provide instruction on how the cloze activity should be \n"
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr ""
+"Itt adja meg a teszt megoldására vonatkozó utasításait! \n"
+"Ha nem ír be saját szöveget, az alapértelmezett szöveg jelenik meg.\n"
 
 #: exe/engine/casestudyidevice.py:103
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr ""
-"A helyzet tárgyához kapcsolódó \n"
-"visszajelzést adjon meg."
+msgstr "Adjon meg egy a helyzethez illő visszajelzést!"
 
 #: exe/webui/block.py:249
 msgid "Purpose"
-msgstr "Cél"
+msgstr "Hogyan használjuk a modult?"
 
 #: exe/engine/clozeidevice.py:148
 msgid "Put instructions for learners here"
-msgstr "Írjon ide útmutatást a tanulóknak"
+msgstr "Itt adja meg a tanulóknak szóló utasításokat!"
 
-#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:119
-#, fuzzy
+#: exe/engine/multiselectidevice.py:78
+#: exe/engine/multichoiceidevice.py:119
 msgid "Question"
-msgstr "Kérdés:"
+msgstr "Kérdés"
 
-#: exe/webui/truefalseelement.py:79 exe/webui/element.py:1326
-#: exe/webui/element.py:1544 exe/idevices/testquestionelement.py:81
+#: exe/webui/truefalseelement.py:79
+#: exe/webui/element.py:1326
+#: exe/webui/element.py:1544
+#: exe/idevices/testquestionelement.py:81
 msgid "Question:"
 msgstr "Kérdés:"
 
-#: exe/engine/rssidevice.py:39 exe/engine/rssidevice.py:47
+#: exe/engine/rssidevice.py:39
+#: exe/engine/rssidevice.py:47
 msgid "RSS"
 msgstr "RSS"
 
 #: exe/engine/clozeidevice.py:149
 msgid "Read the paragraph below and fill in the missing words"
-msgstr ""
+msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat!"
 
-#: exe/engine/truefalseidevice.py:170 exe/engine/clozeidevice.py:118
+#: exe/engine/truefalseidevice.py:170
+#: exe/engine/clozeidevice.py:118
 msgid "Read the paragraph below and fill in the missing words."
-msgstr ""
+msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat."
 
-#: exe/engine/idevicestore.py:222 exe/engine/idevicestore.py:240
+#: exe/engine/idevicestore.py:222
+#: exe/engine/idevicestore.py:240
 #: exe/engine/genericidevice.py:197
-#, fuzzy
 msgid "Reading Activity"
-msgstr "Tevékenység"
+msgstr "Olvasnivaló"
 
-#: exe/engine/idevicestore.py:348 exe/engine/genericidevice.py:195
-#, fuzzy
+#: exe/engine/idevicestore.py:348
+#: exe/engine/genericidevice.py:195
 msgid "Reading Activity 0.11"
-msgstr "Tevékenység"
+msgstr "Olvasnivaló 0.11"
 
 #: exe/engine/reflectionidevice.py:43
 msgid "Reflection"
-msgstr "Észrevétel"
+msgstr "Reflexió"
 
 #: exe/engine/reflectionidevice.py:45
 msgid ""
@@ -1519,50 +1786,61 @@ msgid ""
 "are useful tools for collecting observation data. Rubrics and guides can be \n"
 "effective feedback tools."
 msgstr ""
+"A reflexiót - mint tanítási módszert - gyakran használjuk az elmélet és a \n"
+"gyakorlat közötti kapcsolat megteremtéséhez. Az ilyen feladatok lehetővé \n"
+"teszik a tanulóknak, hogy figyeljenek és mérlegeljék megfigyeléseiket mielőtt \n"
+"tudományos munkaként bemutatnák azoket. A feljegyzések, naplók, profilok \n"
+"és portfóliók hasznos eszközök a megfigyelési adatok gyűjtésére. \n"
+"A magyarázatok és az útmutatók pedig hatásos visszacsatolási eszközök."
 
 #: exe/webui/reflectionblock.py:69
 msgid "Reflective question:"
-msgstr "Gondolkodtató kérdés:"
+msgstr "Gondolatébresztő kérdés:"
 
 #: exe/webui/element.py:878
 msgid "Restart"
-msgstr "Újrakezd"
+msgstr "Újraindítás"
 
-#: exe/webui/imagemagnifierblock.py:86 exe/webui/imagewithtextblock.py:76
-#: exe/webui/flashwithtextblock.py:76 exe/webui/multimediablock.py:80
-#: exe/webui/editorelement.py:218 exe/idevices/flashmovieblock.py:76
+#: exe/webui/imagemagnifierblock.py:86
+#: exe/webui/imagewithtextblock.py:76
+#: exe/webui/flashwithtextblock.py:76
+#: exe/webui/multimediablock.py:80
+#: exe/webui/editorelement.py:218
+#: exe/idevices/flashmovieblock.py:76
 msgid "Right"
-msgstr "Jobb"
+msgstr "Jobbra igazítás"
 
 #: exe/xului/mainpage.py:286
 msgid "SAVE FAILED!"
-msgstr "Mentés sikertelen!"
+msgstr "SIKERTELEN MENTÉS!"
 
-#: exe/xului/mainpage.py:290 exe/xului/mainpage.py:569
+#: exe/xului/mainpage.py:290
+#: exe/xului/mainpage.py:569
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "%s"
 msgstr ""
-"Mentés sikertelen!\n"
+"SIKERTELEN MENTÉS!\n"
 "%s"
 
-#: exe/engine/package.py:238 exe/engine/package.py:245
+#: exe/engine/package.py:238
+#: exe/engine/package.py:245
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
 "Last succesful save is %s."
 msgstr ""
-"Mentés sikertelen!\n"
-"Az utolsó helyes mentés: %s."
+"SIKERTELEN MENTÉS!\n"
+"Az utolsó sikeres mentés: %s."
 
 #: exe/idevices/quiztestidevice.py:117
 msgid "SCORM Quiz"
-msgstr "SCORM teszt"
+msgstr "SCORM Teszt"
 
 #: exe/idevices/quiztestblock.py:137
 msgid "SUBMIT ANSWERS"
-msgstr "Válaszok elküldése"
+msgstr "VÁLASZ KÜLDÉSE"
 
 #: exe/webui/editorpage.py:235
 msgid "Save"
@@ -1570,77 +1848,80 @@ msgstr "Mentés"
 
 #: exe/engine/package.py:81
 msgid "Section"
-msgstr "Ágazat"
+msgstr "Szakasz"
 
-#: exe/webui/element.py:970 exe/webui/editorelement.py:265
+#: exe/webui/element.py:970
+#: exe/webui/editorelement.py:265
 msgid "Select Flash Object"
-msgstr "Válasszon Flash objektumot"
+msgstr "Válasszon egy Flash animációt"
 
+# exe/xului/templates/dublincore.xul:<menulist
 #: exe/webui/preferencespage.py:86
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
-#: 'blue'" id="dc_language" label="Select Language">
+#: onchange="this.style.color = 'blue'"
+#: id="dc_language" label="Select Language">
 msgid "Select Language"
 msgstr "Válasszon nyelvet"
 
 #: exe/webui/editorelement.py:319
-#, fuzzy
 msgid "Select MP3 file"
-msgstr "Válasszon ki egy file-t"
+msgstr "Válasszon egy MP3 állományt"
 
 #: exe/idevices/forumelement.py:211
 msgid "Select a Forum"
-msgstr "Válasszon fórumot"
+msgstr "Válasszon egy fórumot"
 
 #: exe/webui/attachmentblock.py:92
 msgid "Select a file"
-msgstr "Válasszon ki egy file-t"
+msgstr "Válasszon egy állományt"
 
 #: exe/webui/element.py:1050
 msgid "Select a flash video"
-msgstr "Válasszon ki egy flash videót"
+msgstr "Válasszon egy Flash videót"
 
 #: exe/webui/element.py:1161
 msgid "Select a font size: "
-msgstr "Válassza ki a betűméretet:"
+msgstr "Válasszon egy betűméretet:"
 
 #: exe/webui/element.py:404
 msgid "Select an MP3"
-msgstr "Válasszon ki egy MP3-at"
+msgstr "Válasszon egy MP3-at"
 
 #: exe/webui/element.py:320
 msgid "Select an image"
-msgstr "Válasszon ki egy képet"
+msgstr "Válasszon egy képet"
 
 #: exe/webui/element.py:637
 msgid "Select an image (JPG file)"
-msgstr "Válasszon ki egy képet (JPG file)"
+msgstr "Válaszzon egy képet (JPG fájl)"
 
 #: exe/engine/field.py:904
-#, fuzzy
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
 msgstr ""
-"Válassza ki a helyes opciót a \n"
-"rádió gombra kattintva."
+"Több helyes válasz kiválasztásához kattintson a \n"
+"jó válaszik melletti választónégyzetébe."
 
 #: exe/idevices/quiztestblock.py:104
 msgid "Select pass rate: "
-msgstr "Válassza ki a sikeres letétel szintjét:"
+msgstr "Határozza meg teszt elfogadásának szintjét:"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:227
+#: exe/engine/wikipediaidevice.py:69
+#: exe/engine/wikipediaidevice.py:227
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
 msgstr ""
+"Válassza ki a Wikipédiának azt a nyelvi változatát, \n"
+"amelyben keresni szeretne és keressen egy kifejezésre!"
 
 #: exe/engine/multichoiceidevice.py:95
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
 msgstr ""
-"Válassza ki a helyes opciót a \n"
-"rádió gombra kattintva."
+"A helyes válasz kiválasztásához kattintson a \n"
+"jó válasz rádiógombjára/választónégyzetére."
 
 #: exe/engine/imagemagnifieridevice.py:71
 msgid "Select the size of the magnifying glass"
@@ -1648,17 +1929,16 @@ msgstr "Válassza ki a nagyító méretét"
 
 #: exe/idevices/forumelement.py:88
 msgid "Separate groups"
-msgstr "Csoportok szétválasztása"
+msgstr "Különálló csoportok"
 
 #: exe/engine/imagemagnifieridevice.py:67
 #: exe/engine/imagemagnifieridevice.py:89
-#, fuzzy
 msgid ""
 "Set the initial level of zoom \n"
 "when the IDevice loads, as a percentage of the original image size"
 msgstr ""
-"Válassza ki a maximális zoom értékét, \n"
-"az eredeti kép méretéhez képest százalékban"
+"Állítsa be a nagyítás kezdeti mértékét \n"
+"az eredeti képméret százalékában megadva!"
 
 #: exe/engine/imagemagnifieridevice.py:69
 #: exe/engine/imagemagnifieridevice.py:91
@@ -1666,12 +1946,12 @@ msgid ""
 "Set the maximum level of zoom, \n"
 "as a percentage of the original image size"
 msgstr ""
-"Válassza ki a maximális zoom értékét, \n"
-"az eredeti kép méretéhez képest százalékban"
+"Állítsa be a nagyítás maximális értékét \n"
+"az eredeti képméret százalékos arányában."
 
 #: exe/xului/propertiespage.py:200
 msgid "Settings saved"
-msgstr "Beállítások el lettek mentve"
+msgstr "A beállítások el lettek mentve"
 
 #: exe/idevices/forumelement.py:91
 msgid "Show"
@@ -1692,7 +1972,7 @@ msgstr "Mutassa a visszajelzést"
 
 #: exe/webui/element.py:869
 msgid "Show/Clear Answers"
-msgstr "Mutatja/Kitörli a válaszokat"
+msgstr "Mutatja/Törli a válaszolat"
 
 #: exe/webui/element.py:864
 msgid "Show/Hide Feedback"
@@ -1704,24 +1984,26 @@ msgstr "Oldal"
 
 #: exe/webui/imagemagnifierblock.py:137
 msgid "Size of magnifying glass: "
-msgstr "Nagyító mérete:"
+msgstr "A nagyító mérete:"
 
 #: exe/webui/wikipediablock.py:101
 msgid "Slovenian Wikipedia Article"
-msgstr "Szlovák Wikipedia cikk"
+msgstr "Szlovén nyelvű Wikipédia szócikk"
 
 #: exe/webui/imagemagnifierblock.py:133
 msgid "Small"
 msgstr "Kicsi"
 
-#: exe/webui/wikipediablock.py:130 exe/webui/editorpane.py:329
-#: exe/webui/rssblock.py:92 exe/webui/multimediablock.py:92
+#: exe/webui/wikipediablock.py:130
+#: exe/webui/editorpane.py:329
+#: exe/webui/rssblock.py:92
+#: exe/webui/multimediablock.py:92
 msgid "Some emphasis"
-msgstr "Némi hangsúly"
+msgstr "Kiemelés"
 
 #: exe/xului/mainpage.py:733
 msgid "Sorry, wrong file format"
-msgstr "Rossz file formátum"
+msgstr "Sajnálom, rossz fájlformátum"
 
 #: exe/xului/mainpage.py:731
 #, python-format
@@ -1729,16 +2011,16 @@ msgid ""
 "Sorry, wrong file format:\n"
 "%s"
 msgstr ""
-"Rossz file formátum:\n"
+"Sajnálom, rossz fájlformátum:\n"
 "%s"
 
 #: exe/webui/wikipediablock.py:102
 msgid "Spanish Wikipedia Article"
-msgstr "Spanyol Wikipedia cikk"
+msgstr "Spanyol nyelvű Wikipédia szócikk"
 
 #: exe/idevices/forumelement.py:77
 msgid "Standard forum for general use"
-msgstr "Alapvető fórum általános használatra"
+msgstr "Fórum általános használatra"
 
 #: exe/webui/casestudyblock.py:83
 msgid "Story:"
@@ -1746,26 +2028,29 @@ msgstr "Történet:"
 
 #: exe/webui/element.py:784
 msgid "Strict Marking?"
-msgstr "Szigorú megjelölés?"
+msgstr "Pontos értékelés?"
 
-#: exe/webui/common.py:222 exe/webui/editorpane.py:417
+#: exe/webui/common.py:222
+#: exe/webui/editorpane.py:417
 #: exe/webui/element.py:873
 msgid "Submit"
 msgstr "Elküld"
 
-#: exe/webui/element.py:1374 exe/idevices/quiztestblock.py:355
+#: exe/webui/element.py:1374
+#: exe/idevices/quiztestblock.py:355
 msgid "Submit Answer"
 msgstr "Válasz elküldése"
 
 #: exe/webui/wikipediablock.py:103
 msgid "Swedish Wikipedia Article"
-msgstr "Svéd Wikipedia cikk"
+msgstr "Svéd nyelvű Wikipédia szócikk"
 
 #: exe/engine/idevicestore.py:356
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "Ez az iDevice használata közben, a tanárok a felsoroltakra figyeljenek oda: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
+msgstr "A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegység tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. Kerülje a túl sok különböző típusú vagy besorolású tevékenység használatát, mert a tanulókat megzavarhatja. Általában három négy különböző típus több, mint megfelelő egy tananyagegységen belül .</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik nyújt többet. </li></ol>"
 
-#: exe/engine/multimediaidevice.py:64 exe/engine/imagewithtextidevice.py:61
+#: exe/engine/multimediaidevice.py:64
+#: exe/engine/imagewithtextidevice.py:61
 #: exe/engine/imagemagnifieridevice.py:53
 msgid "Text"
 msgstr "Szöveg"
@@ -1776,11 +2061,11 @@ msgstr "Szövegdoboz"
 
 #: exe/webui/editorpane.py:242
 msgid "Text Line"
-msgstr "Szöveghatár"
+msgstr "Szövegsor"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr ""
+msgstr "Az MP3 iDevice modul lehetőséget ad egy MP3-as állomány csatolására a hozzá kapcsolódó utasításokkal, leírásokkal együtt."
 
 #: exe/engine/rssidevice.py:41
 msgid ""
@@ -1788,10 +2073,13 @@ msgid ""
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
+"Az RSS iDevice modult arra használjuk, hogy az egyes portálokon \n"
+" megjelenő új tartalmakról hírt kapjanak. Ezzel a modullal az általunk \n"
+"kiválasztott hírcsatornákhoz biztosíthatunk hivatkozásokat a tanulók számára."
 
 #: exe/engine/attachmentidevice.py:43
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr ""
+msgstr "Az \"Állomány csatolása\" iDevice modul.... Például ha egy PDF dokumentumot, egy Power Point bemutatót, vagy valamilyen más dokumentumot szeretneneelérhetővé tenni a tanulóknak, csatolja a tananyaghoz és lássa el címkével, amely utal a dokumentum tartalmára és méretére. A tanulóknak a csatolt állomány letöltéséhez a csatolás hivatkozására kell kattintani."
 
 #: exe/engine/externalurlidevice.py:39
 msgid ""
@@ -1801,6 +2089,10 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
+"A külső weboldal iDevice modul betölti a megadott weboldalt \n"
+"egy keretbe (frame-be) az eXe tartalomba, nem pedig felugró ablakban \n"
+"jeleníti meg azt. Ez azt jelenti, hogy tanulóknak nem kell ablakokkal bűvészkedniük. \n"
+"Ezt a modult akkor használjuk, ha online tartalmat akarunk megjeleníteni."
 
 #: exe/engine/flashwithtextidevice.py:42
 msgid ""
@@ -1809,6 +2101,12 @@ msgid ""
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
 msgstr ""
+"A Flash animáció iDevice modul lehetőséget teremt arra, \n"
+"hogy a szöveges információkat összekapcsoljuk egy animációval. A Flash \n"
+"animációkkal hozzájárulhatunk ahhoz, hogy a tanulók összefüggéseiben \n"
+"értsék meg a tananyagot. Az animációkkal folyamatokat mutathatunk be, \n"
+"akár a tanuló is interaktív módon részt vehet azok alakításában, így az \n"
+"élményen túl, mélyebben megismeri a dolgok működését."
 
 #: exe/engine/imagemagnifieridevice.py:42
 msgid ""
@@ -1816,6 +2114,9 @@ msgid ""
 " learners to magnify the view of the image they have been given. Moving the \n"
 "magnifying glass over the image allows larger detail to be studied."
 msgstr ""
+"A \"Nagyító\" egy nagyító eszköz, ami lehetővé teszi \n"
+"a tanulók számára, hogy nagyíthassák a kapott képet. A nagyítólencsét \n"
+"a kép fölött mozgatva megfigyelhetik annak részleteit."
 
 #: exe/engine/freetextidevice.py:39
 msgid ""
@@ -1824,9 +2125,12 @@ msgid ""
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
 msgstr ""
+"A tananyagok többsége szöveges alapú. \n"
+"A szöveg tartalmazza a szükséges információkat és az azokra vonatkozó utasításokat.\n"
+"Ezek a szövegekbiztosítják a tanulási tevékenység alapját, erre épülnek a tanulói \n"
+"tevékenységek."
 
 #: exe/engine/mathidevice.py:37
-#, fuzzy
 msgid ""
 "The mathematical language LATEX has been \n"
 "                        used to enable your to insert mathematical formula \n"
@@ -1837,27 +2141,28 @@ msgid ""
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
 msgstr ""
-"Egy matematikai nyelv a LATEX lehetővé teszi, hogy \n"
-"matematikai formulákat illesszünk a tartalomba. Ezt úgy érik el,\n"
-"hogy a LATEX-et átfordítják képpe, melyet az eXe nélkül is meg lehet \n"
-"jeleníteni. Ajánlott az iDevice-t használni, hogy magyarázó \n"
-" szövegekkel és tanulási instrukciókkal lássuk el a grafikát."
+"A LATEX egy matematikai nyel, melynek segítségével \n"
+"                        matematikai formulákat, képleteket szúrhat be \n"
+"                        a tananyagba. A LATEX lefordítja a beírt kódot \n"
+"                        és képként jeleníti meg azt az eXe tananyagban.\n"
+"                        Használja a \"Képletszerkesztőt\" a \"Szöveg\" modullal \n"
+"                        együtt és írjon a tanulók számára magyarázó \n"
+"                        megjegyzéseket, illetve tanulási instrukciókat \n"
+"                        az ábrázolt formulához."
 
 #: exe/webui/editorpane.py:68
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
-msgstr ""
+msgstr "A társalgás lehetőséget teret az ön számára, hogy megossza más felhasználókkal, hogy milyen céllal hozta létre a modult."
 
 #: exe/webui/wikipediablock.py:194
 msgid "This article is licensed under the "
-msgstr "Ez a cikk engedélyezve van a(z)"
+msgstr "Ez a cikk a következő licenc alá esik: "
 
 #: exe/engine/imagemagnifieridevice.py:93
 msgid ""
 "This chooses the initial size \n"
 "of the magnifying glass"
-msgstr ""
-"Ez kiválasztja a kezdeti méretét \n"
-"a nagyítónak"
+msgstr "Itt választhatja meg a nagyító kezdeti méretét."
 
 #: exe/idevices/flashmovieidevice.py:41
 msgid ""
@@ -1867,42 +2172,41 @@ msgid ""
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
-"Ez az iDevice kizárólag Flash Video (.FLV) file formátumot támogat, és nem fogad el\n"
-"másféle videó formátumokat. Azonban átkonvertálhatjuk a másik videó formátumunkat \n"
-"(pl. mov, wmf stb.) .FLV formátumba egy külső kódoló segítségével. Ezek\n"
-"nem részei az eXe-nek. A felhasználóknak szükségük lehet a Flash 8 lejátszó letöltésére,\n"
-" ahhoz hogy lejátsszák a videót, melyet a http://www.macromedia.com/ oldalon találnak meg."
+"Ez az iDevice modul csak a Flash Video (.FLV) formátumot támogatja és nem \n"
+"fogad el más video formátumokat.Az egyéb filmformátumokat (pl.: .mov, .wmf, stb.) \n"
+"konvertálnia kell .FLV formátumuvá. Az eXe nem biztosítja a lejátszó plugint (Flash 8 player), \n"
+"azt a felhasználónak kell letöltenie a http://www.macromedia.com címről."
 
 #: exe/engine/freetextidevice.py:68
 msgid "This is a free text field general learning content can be entered."
-msgstr ""
+msgstr "Ez egy szövegmező a tananyag beírásához."
 
 #: exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "Ez egy szöveg mező."
+msgstr "Ez egy szövegmező"
 
 #: exe/idevices/exampleidevice.py:41
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
 msgstr ""
-"Ez egy példa a felhasználó által készített \n"
-"iDevice kiegészítőre."
+"Ez egy példa arra, hogy of \n"
+"iDevice modul létrehozására."
 
 #: exe/webui/editorpane.py:67
 msgid "This is an optional field."
-msgstr "Ez egy opcionális mező."
+msgstr "Ez egy válastható mező."
 
 #: exe/webui/block.py:209
-#, fuzzy
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr ""
-"Ezzel letörli ezt az iDevice-t.\n"
-"Biztos, hogy ezt akarja?"
+"Törölni fogja ezt az iDevice modult.\n"
+" Valóban ezt akarja?"
 
-#: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
+#: exe/idevices/forumelement.py:352
+#: exe/idevices/forumelement.py:369
 msgid "Thread: "
 msgstr "Szál:"
 
@@ -1914,17 +2218,21 @@ msgstr "Tipp:"
 msgid "Title"
 msgstr "Cím"
 
-#: exe/idevices/quiztestidevice.py:67 exe/idevices/quiztestidevice.py:102
+#: exe/idevices/quiztestidevice.py:67
+#: exe/idevices/quiztestidevice.py:102
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
 msgstr ""
+"A helyes válasz megjelöléséhez kattintson \n"
+"a rádiógombon a megfelelő válasz sorában."
 
 #: exe/engine/package.py:81
 msgid "Topic"
 msgstr "Téma"
 
-#: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
+#: exe/webui/truefalseelement.py:82
+#: exe/webui/truefalseelement.py:153
 msgid "True"
 msgstr "Igaz"
 
@@ -1939,15 +2247,18 @@ msgid ""
 "well for factual information and information that lends itself to either/or \n"
 "responses."
 msgstr ""
+"Az Igaz/Hamis kérdés megoldása során a tanulónak egy állításról kell eldöntenie, \n"
+"hogy igaz-e. Ez a kérdéstrípus jól használható tényszerű információk esetében, \n"
+"amikor a válasz vagy-vagy alapon dől el."
 
-#: exe/engine/field.py:740 exe/idevices/forumidevice.py:151
-#, fuzzy
+#: exe/engine/field.py:740
+#: exe/idevices/forumidevice.py:151
 msgid "Type a discussion topic here."
-msgstr "Vita téma/szál"
+msgstr "Írja be a megbeszélés témáját!"
 
 #: exe/idevices/forumidevice.py:107
 msgid "Type a forum name here"
-msgstr "Adjon meg egy forum nevet"
+msgstr "Írja be a fórum nevét ide."
 
 #: exe/engine/multichoiceidevice.py:100
 msgid ""
@@ -1957,6 +2268,11 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong answer\"\n"
 "for the other options."
 msgstr ""
+"Gépeljen be visszajelzésként azokat a szövegeket, amelyeket a \n"
+"tanuló kap, ha eg bizonyos választ választott. Ha nem tölti ki ezt a mezőt, \n"
+"az eXe automatikusan a következő visszajelzéseket fogja adni: \"Helyes \n"
+"válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\",\n"
+"ha mást választott a tanuló."
 
 #: exe/engine/truefalseidevice.py:148
 msgid ""
@@ -1966,16 +2282,22 @@ msgid ""
 "\"Correct answer\" as indicated by the selection for the correct answer; or \n"
 "\"Wrong answer\" for the other alternatives."
 msgstr ""
+"Gépeljen be visszajelzésként azokat a szövegeket, amelyeket a \n"
+"tanuló kap, ha eg bizonyos választ választott. Ha nem tölti ki ezt a mezőt, \n"
+"az eXe automatikusan a következő visszajelzéseket fogja adni: \"Helyes \n"
+"válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\",\n"
+"ha mást választott a tanuló."
 
 #: exe/engine/field.py:907
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
-msgstr ""
+msgstr "Írjon a tanulók számára egy visszajelzés!"
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:415
+#: exe/engine/idevicestore.py:308
+#: exe/engine/idevicestore.py:415
 msgid "Type the learning objectives for this resource."
-msgstr "Írjon tanulási célkitűzéseket ehhez a témakörhöz."
+msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
 #: exe/engine/truefalseidevice.py:69
 msgid ""
@@ -1983,33 +2305,50 @@ msgid ""
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
 "be ambiguous."
 msgstr ""
+"Gépelje be a kérdést! A kérdés \n"
+"legyen világos és egyértelmű. Kerülje a negatív feltételeket, \n"
+"mert kétértelműek lehetnek."
 
 #: exe/webui/externalurlblock.py:60
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97
+#: exe/engine/wikipediaidevice.py:109
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
-msgstr "Nem tudok innen letölteni %s <br/>Kérem ellenőrizze a helyesírást és a kapcsolatot, majd próbálja újból."
+msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen írta-e, vagy rendben van-e az internetkapcsolata és próbálja újra."
 
 #: exe/engine/package.py:81
 msgid "Unit"
 msgstr "Egység"
 
-#: exe/engine/externalurlidevice.py:38 exe/engine/reflectionidevice.py:44
-#: exe/engine/galleryidevice.py:361 exe/engine/wikipediaidevice.py:52
-#: exe/engine/truefalseidevice.py:60 exe/engine/flashwithtextidevice.py:41
-#: exe/engine/imagewithtextidevice.py:40 exe/engine/attachmentidevice.py:42
-#: exe/engine/imagemagnifieridevice.py:41 exe/engine/multiselectidevice.py:42
-#: exe/engine/clozeidevice.py:45 exe/engine/freetextidevice.py:38
-#: exe/engine/multichoiceidevice.py:58 exe/engine/casestudyidevice.py:75
-#: exe/engine/idevicestore.py:242 exe/engine/idevicestore.py:300
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:350
-#: exe/engine/idevicestore.py:407 exe/engine/idevicestore.py:435
-#: exe/engine/mathidevice.py:36 exe/idevices/forumidevice.py:41
-#: exe/idevices/exampleidevice.py:40 exe/idevices/quiztestidevice.py:118
-#: exe/idevices/flashmovieidevice.py:40 exe/idevices/appletidevice.py:53
+#: exe/engine/externalurlidevice.py:38
+#: exe/engine/reflectionidevice.py:44
+#: exe/engine/galleryidevice.py:361
+#: exe/engine/wikipediaidevice.py:52
+#: exe/engine/truefalseidevice.py:60
+#: exe/engine/flashwithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:40
+#: exe/engine/attachmentidevice.py:42
+#: exe/engine/imagemagnifieridevice.py:41
+#: exe/engine/multiselectidevice.py:42
+#: exe/engine/clozeidevice.py:45
+#: exe/engine/freetextidevice.py:38
+#: exe/engine/multichoiceidevice.py:58
+#: exe/engine/casestudyidevice.py:75
+#: exe/engine/idevicestore.py:242
+#: exe/engine/idevicestore.py:300
+#: exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:350
+#: exe/engine/idevicestore.py:407
+#: exe/engine/idevicestore.py:435
+#: exe/engine/mathidevice.py:36
+#: exe/idevices/forumidevice.py:41
+#: exe/idevices/exampleidevice.py:40
+#: exe/idevices/quiztestidevice.py:118
+#: exe/idevices/flashmovieidevice.py:40
+#: exe/idevices/appletidevice.py:53
 msgid "University of Auckland"
 msgstr "Aucklandi Egyetem"
 
@@ -2021,25 +2360,35 @@ msgid ""
 "time to learn and practice using the information or skill.\n"
 " "
 msgstr ""
+"A feleletválasztós tesztektől eltérően a SCORM tesztet arra használjuk, \n"
+"hogy felmérjük a tanulók tudását egy témában anélkül, hogy visszajelzést \n"
+"biztosítanánk számukra. Az LMS rendszerek SCORM lejátszójának viszont \n"
+"a kérdések részleteit is átadja (megfelelt-e, jó vagy rossz volt-e a válasz, \n"
+"a jelölt válasz sorszáma). "
 
 #: exe/idevices/appletblock.py:110
 msgid "Upload"
 msgstr "Feltöltés"
 
-#: exe/engine/idevicestore.py:292 exe/engine/idevicestore.py:400
+#: exe/engine/idevicestore.py:292
+#: exe/engine/idevicestore.py:400
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
 "or providing a statement to begin a debate."
 msgstr ""
+"A visszacsatolást arra használjuk, hogy összefoglaljuk azokat a pontokat, \n"
+"amelyeket az olvasmányok lefednek, vagy kérdéseket tegyünk fel ezzel biztosítva \n"
+"kiindulópontot az olvasnivaló elemzéséhez, vagy kijelentéseket fogalmazunk meg a \n"
+"vita elindításához."
 
 #: exe/engine/galleryidevice.py:365
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "Használja ezt az Idevice-t, ha sok képet akar megjeleníteni."
+msgstr "Akkor használja ezt az iDevice modult, ha több képet szeretne bemutatni."
 
 #: exe/webui/editorpane.py:75
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
-msgstr ""
+msgstr "Ebbena a mezőben írja le, hogy milyen pedagógiai megfontolásból és milyen felhasználási céllal hozta létre az iDevice modult. Ez a leírás hasznos lehet más felhasználóknak, ha alkalmazni szeretnék ezt az iDevice modult."
 
 #: exe/engine/freetextidevice.py:45
 msgid ""
@@ -2047,10 +2396,13 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
+"Használja ezt a mezőt a szöveg (tananyag) bevitelére. \n"
+"Ez az iDevice modul nem kap kimelést és korlátozott formázási \n"
+"lehetőségeink vannak. "
 
 #: exe/webui/editorpane.py:71
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr ""
+msgstr "Ezt a legördülő menüt használhatja arra, hogy a modul megjelenését. Ha meg szeretné különböztetni a modult a környezetéstől, válassza a \"Kiemelés\" opciót. Ilyenkor a modult ikonnal azonosítja, s keretben jelenik meg."
 
 #: exe/idevices/forumelement.py:89
 msgid "Visible groups"
@@ -2058,13 +2410,15 @@ msgstr "Látható csoportok"
 
 #: exe/idevices/forumelement.py:124
 msgid "Visible to students:"
-msgstr "Látható a hallgatók számára:"
+msgstr "A tanulók láthatják:"
 
-#: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:391
+#: exe/engine/idevicestore.py:283
+#: exe/engine/idevicestore.py:391
 msgid "What to read"
-msgstr "Mit olvassak"
+msgstr "Amit olvasnia kell"
 
-#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56
+#: exe/engine/multichoiceidevice.py:72
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -2078,15 +2432,23 @@ msgid ""
 "<li> Distractors should be incorrect but plausible </li>\n"
 "</ul>\n"
 msgstr ""
+"Amikor feleletválasztós kérdést készítünk, a következőkre ügyeljünk: <ul>\n"
+"<li> Olyan kifejezéseket használjunk, amelyeket a tanulók ismernek \n"
+"és tanulmányaik során találkozhattak vele </li>\n"
+"<li> A válaszok legyenek tömörek </li>\n"
+"<li> A kérdés és a válaszok között legyen összefüggés </li>\n"
+"<li> Biztosítson megfelelő számú választási lehetőséget, hogy a tanulónak gondolkodnia kelljen a válaszon\n"
+"</li>\n"
+"<li> A helyes válaszok ne legyenek részletesebbek a többi válasznál<li> A megtévezstő válaszok legyenek helytelenek, de hihetőek </li>\n"
+"</ul>\n"
 
 #: exe/engine/wikipediaidevice.py:51
-#, fuzzy
 msgid "Wiki Article"
-msgstr "Wikibooks cikk"
+msgstr "Wiki szócikk"
 
 #: exe/webui/wikipediablock.py:104
 msgid "Wikibooks Article"
-msgstr "Wikibooks cikk"
+msgstr "Bikibooks szócikk"
 
 #: exe/webui/wikipediablock.py:107
 msgid "Wikieducator Content"
@@ -2094,7 +2456,7 @@ msgstr "Wikieducator tartalom"
 
 #: exe/webui/wikipediablock.py:105
 msgid "Wikiversity"
-msgstr ""
+msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:106
 msgid "Wiktionary"
@@ -2102,71 +2464,77 @@ msgstr "Wiktionary"
 
 #: exe/webui/element.py:1483
 msgid "Wrong"
-msgstr "Helytelen"
+msgstr "Rossz"
 
 #: exe/idevices/forumelement.py:84
 msgid "Yes, forever"
-msgstr "Igen, örökre"
+msgstr "Igen, mindig"
 
 #: exe/idevices/forumelement.py:85
 msgid "Yes, initially"
-msgstr "Igen, kezdetben"
+msgstr "Igen, eleinte"
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
-msgstr ""
+msgstr "Használhatja az eszköztárat, vagy begépeélheti kézzel a latex képletet a szövegdobozba."
 
 #: exe/webui/editorpane.py:63
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
-msgstr ""
+msgstr "Az Ön új iDevice modulja ezzel a névvel fog megjelenni az iDevice panelben. Ezt a mezőt kötelezően ki kell tölteni. Adjon meg egy nevet, mert e nélkül nem hozhatja létre a modult."
 
 #: exe/webui/wikipediablock.py:209
 msgid "article "
 msgstr "cikk"
 
-#: exe/webui/element.py:335 exe/webui/element.py:655
+#: exe/webui/element.py:335
+#: exe/webui/element.py:655
 msgid "blank for original size"
-msgstr "hagyja üresen az eredeti mérethez"
+msgstr "Hagyja üresen, ha a képet az eredeti méretben akarja megjeleníteni."
 
 #: exe/idevices/forumblock.py:124
 msgid "duplicate forum name.\n"
-msgstr "már létező fórum név.\n"
+msgstr "Fórumnév duplázása.\n"
 
 #: exe/idevices/forumblock.py:137
 msgid "duplicate topic name."
-msgstr "már létező téma név."
+msgstr "Téma nevének duplázása."
 
-#: exe/export/scormexport.py:276 exe/export/imsexport.py:188
+#: exe/export/scormexport.py:276
+#: exe/export/imsexport.py:188
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:77
+#: exe/webui/common.py:67
+#: exe/webui/preferencespage.py:77
 #: exe/webui/editorpage.py:211
 msgid "eXe : elearning XHTML editor"
-msgstr "eXe : elearning XHTML szerkesztő"
+msgstr "eXe: eLearning XHTML szerkesztő"
 
 #: exe/idevices/appletidevice.py:86
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "a %s file-nak nincsen szülő csomópontja"
+msgstr "Fájl %s nincs szülőcsomópont"
 
 #: exe/engine/wikipediaidevice.py:181
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:100 exe/idevices/appletidevice.py:87
+#: exe/engine/attachmentidevice.py:100
+#: exe/idevices/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
-msgstr "%s iDevice-nek nincsen csomagja"
+msgstr "iDeice %s nincs csomag"
 
-#: exe/engine/package.py:370 exe/xului/templates/mainpage.xul:<menuitem
-#: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: exe/engine/package.py:370
+#: oncommand="toolsEditor()" label="iDevice Editor">
 msgid "iDevice Editor"
 msgstr "iDevice szerkesztő"
 
 #: exe/webui/block.py:303
 msgid "iDevice icon"
-msgstr "iDevice icon"
+msgstr "iDevice ikon"
 
 #: exe/webui/renderable.py:250
 msgid "key"
@@ -2174,16 +2542,15 @@ msgstr "kulcs"
 
 #: exe/webui/renderable.py:252
 msgid "keycode"
-msgstr "keycode"
+msgstr "kulcskód"
 
 #: exe/webui/renderable.py:243
 msgid "label"
 msgstr "címke"
 
 #: exe/webui/element.py:1158
-#, fuzzy
 msgid "newline"
-msgstr "újsor"
+msgstr "új sor"
 
 #: exe/webui/element.py:1157
 msgid "text"
@@ -2193,103 +2560,127 @@ msgstr "szöveg"
 msgid "title"
 msgstr "cím"
 
-#: exe/xului/templates/dublincore.xul:<caption id="dcCaptionMetadata"
-#: label="Dublin Core Metadata">
+# exe/xului/templates/dublincore.xul:<caption
+#: id="dcCaptionMetadata" label="Dublin Core Metadata">
 msgid "Dublin Core Metadata"
-msgstr "Dublin Metadata mag"
+msgstr "Dublin Core metaadat"
 
-#: exe/xului/templates/exportproperties.xul:<caption id="ppScolinks"
-#: label="SCORM 1.2 Options">
+# exe/xului/templates/exportproperties.xul:<caption
+#: id="ppScolinks" label="SCORM 1.2 Options">
 msgid "SCORM 1.2 Options"
-msgstr "SCORM 1.2 beállítások"
+msgstr "SCORM 1.2 opciók"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="insertPackage()" label="Insert Package">
 msgid "Insert Package"
 msgstr "Csomag beszúrása"
 
-#: exe/xului/templates/metadata.xul:<tab label="Dublin Core">
+# exe/xului/templates/metadata.xul:<tab
+#: label="Dublin Core">
 msgid "Dublin Core"
-msgstr "Dublin mag"
+msgstr "Dublin Core"
 
-#: exe/xului/templates/packageproperties.xul:<caption id="pptitle"
-#: label="Project Properties">
+# exe/xului/templates/packageproperties.xul:<caption
+#: id="pptitle" label="Project Properties">
 msgid "Project Properties"
-msgstr "Project tulajdonságai"
+msgstr "Projektbeállítások"
 
-#: exe/xului/templates/properties.xul:<tab id="tabPackage" label="Package">
+# exe/xului/templates/properties.xul:<tab
+#: id="tabPackage" label="Package">
 msgid "Package"
 msgstr "Csomag"
 
-#: exe/xului/templates/dublincore.xul:<label value="Title:" id="dcTitle"
-#: style="width:8em" tooltiptext="The name given to the resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Title:"
+#: id="dcTitle" style="width:8
+#: em" tooltiptext="The name given to the
+#: resource.">
 msgid "Title:"
 msgstr "Cím:"
 
-#: exe/xului/templates/exportproperties.xul:<checkbox
+# exe/xului/templates/exportproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_scolinks" label="Add
 #: Previous/Next links within SCOs?" tooltiptext="Checking this box will cause
 #: eXe to add Previous and Next individual pages your SCO. The LMS also still
 #: kind of functionality." checked="false">
 msgid "Add Previous/Next links within SCOs?"
-msgstr "Előző/Következő linket akar hozzáadni az SCO-n belül?"
+msgstr "Adja az SCO-hoz az Előző/Következő hivatkozást?"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="extractPackage()" label="Extract Package">
 msgid "Extract Package"
-msgstr "Csomag kitömörítése"
+msgstr "Kicsomagolás"
 
-#: exe/xului/templates/metadata.xul:<tab label="IEEE LOM">
+# exe/xului/templates/metadata.xul:<tab
+#: label="IEEE LOM">
 msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Project Title:"
-#: id="ppProjectTitle" style="width:8em" tooltiptext="The project's title.">
+# exe/xului/templates/packageproperties.xul:<label
+# value="Project Title:"
+#: value="Project id="ppProjectTitle" style="width:8
+#: em" tooltiptext="The
+#: project's title.">
 msgid "Project Title:"
-msgstr "Project cím:"
+msgstr "A projekt címe:"
 
-#: exe/xului/templates/properties.xul:<tab id="tabMetadata" label="Metadata">
+# exe/xului/templates/properties.xul:<tab
+#: id="tabMetadata" label="Metadata">
 msgid "Metadata"
-msgstr "Metadata"
+msgstr "Metaadat"
 
-#: exe/xului/templates/dublincore.xul:<label value="Creator:" id="dcCreator"
-#: style="width:8em" tooltiptext="An entity primarily responsible for making
-#: the content of resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Creator:"
+#: id="dcCreator" style="width:8
+#: em" tooltiptext="An entity primarily
+#: responsible for making the content of resource.">
 msgid "Creator:"
-msgstr "Szerző:"
+msgstr "Alkotó:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="addChild"
+# exe/xului/templates/mainpage.xul:<key
+# n:render="addChild"
 #: keycode="VK_INSERT" id="addChildKey">
 msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em" tooltiptext="Background image for a
-#: header (an 100px high is recommended).">
+# exe/xului/templates/packageproperties.xul:<label
+# value="Header Background:"
+#: value="Header id="ppBackgroundImg" style="width:8
+#: em"
+#: tooltiptext="Background image for a header (an 100px high is
+#: recommended).">
 msgid "Header Background:"
-msgstr "Háttérkép fejléce:"
+msgstr "Élőfej háttere:"
 
-#: exe/xului/templates/properties.xul:<tab id="tabExport" label="Export">
+# exe/xului/templates/properties.xul:<tab
+#: id="tabExport" label="Export">
 msgid "Export"
-msgstr "Export"
+msgstr "Exportálás"
 
-#: exe/xului/templates/dublincore.xul:<label value="Subject:" id="dcSubject"
-#: style="width:8em" tooltiptext="The topic of the content resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Subject:"
+#: id="dcSubject" style="width:8
+#: em" tooltiptext="The topic of the content
+#: resource.">
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="delNode"
+# exe/xului/templates/mainpage.xul:<key
+# n:render="delNode"
 #: keycode="VK_DELETE" id="delNodeKey">
 msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
-#: exe/xului/templates/packageproperties.xul:<button
+# exe/xului/templates/packageproperties.xul:<button
 #: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
 #: Image">
 msgid "Load Image"
 msgstr "Kép betöltése"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescSubject">
+# exe/xului/templates/dublincore.xul:<description
+#: id="dcDescSubject">
 msgid ""
 "\n"
 "                Typically, Subject will be expressed as keywords, key phrases or\n"
@@ -2298,70 +2689,90 @@ msgid ""
 "                vocabulary or formal classification scheme.\n"
 "             "
 msgstr ""
+"\n"
+"                A tárgyat jellemzően kulcsszóként, kulcskifejezésként vagy\n"
+"                a forrás témáját leíró besorolási kódként foghatjuk fel.\n"
+"                A jó gyakorlat kialakításához javasolt, hogy az értékeket egy \n"
+"                szabályozott szókészletből, vagy formális besorolási sémából kapjon.\n"
+"             "
 
-#: exe/xului/templates/mainpage.xul:<key n:render="renNode" key="R"
-#: modifiers="control" id="renNodeKey">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="renNode"
+#: key="R" modifiers="control" id="renNodeKey">
 msgid "R"
 msgstr "R"
 
-#: exe/xului/templates/packageproperties.xul:<button
+# exe/xului/templates/packageproperties.xul:<button
 #: oncommand="clearImage('pp_backgroundImg');" id="clearImage" label="Clear
 #: Image">
 msgid "Clear Image"
 msgstr "Kép törlése"
 
-#: exe/xului/templates/dublincore.xul:<label value="Publisher:"
-#: id="dcPublisher" style="width:8em" tooltiptext="An entity responsible for
+# exe/xului/templates/dublincore.xul:<label
+# value="Publisher:"
+#: id="dcPublisher" style="width:8
+#: em" tooltiptext="An entity responsible for
 #: making the resource available.">
 msgid "Publisher:"
 msgstr "Kiadó:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="promote" keycode="VK_LEFT"
-#: modifiers="control" id="promoteKey">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="promote"
+#: keycode="VK_LEFT" modifiers="control" id="promoteKey">
 msgid "VK_LEFT"
 msgstr "VK_LEFT"
 
-#: exe/xului/templates/packageproperties.xul:<checkbox
+# exe/xului/templates/packageproperties.xul:<checkbox
 #: oncommand="this.style.color = 'blue';" id="pp_backgroundImgTile"
 #: label="Tile background image?" checked="false">
 msgid "Tile background image?"
-msgstr "Mozaik elrendezésben használjam a háttérképet?"
+msgstr "Kitöltés mozaikszerűen?"
 
-#: exe/xului/templates/dublincore.xul:<label value="Contributors:"
-#: id="dcContributors" style="width:8em" tooltiptext="An entity responsible
+# exe/xului/templates/dublincore.xul:<label
+# value="Contributors:"
+#: id="dcContributors" style="width:8
+#: em" tooltiptext="An entity responsible
 #: for making contributions to the content of resource.">
 msgid "Contributors:"
 msgstr "Közreműködők:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="demote" keycode="VK_RIGHT"
-#: modifiers="control" id="demoteKey">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="demote"
+#: keycode="VK_RIGHT" modifiers="control" id="demoteKey">
 msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
-#: exe/xului/templates/packageproperties.xul:<label value="Author:"
-#: id="ppAuthor" style="width:8em" tooltiptext="Primary author of the
+# exe/xului/templates/packageproperties.xul:<label
+# value="Author:"
+#: id="ppAuthor" style="width:8
+#: em" tooltiptext="Primary author of the
 #: resource.">
 msgid "Author:"
 msgstr "Szerző:"
 
-#: exe/xului/templates/dublincore.xul:<label value="Date:" id="dcDate"
-#: style="width:8em" tooltiptext="A date of an event in the lifecycle
-#: resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Date:"
+#: id="dcDate" style="width:8
+#: em" tooltiptext="A date of an event in the
+#: lifecycle resource.">
 msgid "Date:"
 msgstr "Dátum:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="up" key="U"
-#: modifiers="control" id="upKey">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="up"
+#: key="U" modifiers="control" id="upKey">
 msgid "U"
 msgstr "U"
 
-#: exe/xului/templates/packageproperties.xul:<label value="License:"
-#: id="ppLicense" style="width:8em" tooltiptext="Select a license.">
-#, fuzzy
+# exe/xului/templates/packageproperties.xul:<label
+# value="License:"
+#: id="ppLicense" style="width:8
+#: em" tooltiptext="Select a license.">
 msgid "License:"
-msgstr "Válasszon nyelvet"
+msgstr "Licenc:"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+# exe/xului/templates/dublincore.xul:<description
+#: id="dcDescDate">
 msgid ""
 "\n"
 "                 Typically, Date will be associated with the creation or\n"
@@ -2369,1275 +2780,1280 @@ msgid ""
 "                 encoding the date value is defined in a profile called\n"
 "                 "
 msgstr ""
+"\n"
+"                 Jellemzően, a dátumnak a készítés időpontjára kell utalnia \n"
+"                 vagy a forrás elérhetőségére. A jó gyakorlat kialakításához\n"
+"                 javasolt, hogy a dátum értékét a következő szabvány szerint \n"
+"                 adjuk meg:                 "
 
-#: exe/xului/templates/mainpage.xul:<key n:render="down" key="D"
-#: modifiers="control" id="downKey">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="down"
+#: key="D" modifiers="control" id="downKey">
 msgid "D"
 msgstr "D"
 
-#: exe/xului/templates/packageproperties.xul:<menulist
+# exe/xului/templates/packageproperties.xul:<menulist
 #: onchange="this.style.color = 'blue'" id="pp_license" label="Select
 #: License">
-#, fuzzy
 msgid "Select License"
-msgstr "Válasszon nyelvet"
+msgstr "Válasszon licenctípust"
 
-#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
-#: style="width:8em" tooltiptext="The nature or genre of the content
-#: resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Type:"
+#: id="dcType" style="width:8
+#: em" tooltiptext="The nature or genre of the
+#: content resource.">
 msgid "Type:"
 msgstr "Típus:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="N"
-#: modifiers="control" id="file-new-key" oncommand="fileNew()">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="translate"
+#: key="N" modifiers="control" id="file-new-key" oncommand="fileNew()">
 msgid "N"
 msgstr "N"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution 2.5 License" id="ppcca1" label="Creative License">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution 2.5 License" id="ppcca1"
+#: label="Creative License">
 msgid "Creative Commons Attribution 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+# exe/xului/templates/dublincore.xul:<description
+#: id="dcDescType">
 msgid ""
 "\n"
 "              Type includes terms describing general categories, functions, or\n"
 "              genres, for content. Recommended best practice is to select a value\n"
 "              from a controlled vocabulary or controlled classification scheme."
 msgstr ""
+"\n"
+"              A típus olyan kifejezéseket taratlmaz, melyek leírják a tartalom általános kategóriáját, \n"
+"              rendeltetését, műfaját. A jó gyakorlat kialakításához javasolt, hogy az értékeket egy \n"
+"              szabályozott szókészletből, vagy formális besorolási sémából kapjon.\n"
+"             "
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="S"
-#: modifiers="control" id="file-save-key" oncommand="fileSave()">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="translate"
+#: key="S" modifiers="control" id="file-save-key" oncommand="fileSave()">
 msgid "S"
 msgstr "S"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-ShareAlike 2.5 License" id="ppcca2" label="Creative License">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-ShareAlike 2.5 License" id="ppcca2"
+#: label="Creative License">
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-ShareAlike 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
-#: style="width:8em" tooltiptext="Select a Format.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Format:"
+#: id="dcFormat" style="width:8
+#: em" tooltiptext="Select a Format.">
 msgid "Format:"
-msgstr "Formátum"
+msgstr "Formátum:"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="O"
-#: modifiers="control" id="file-open-key" oncommand="fileOpen()">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="translate"
+#: key="O" modifiers="control" id="file-open-key" oncommand="fileOpen()">
 msgid "O"
 msgstr "O"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NoDerivs 2.5 License" id="ppcca3" label="Creative License">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NoDerivs 2.5 License" id="ppcca3"
+#: label="Creative License">
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NoDerivs 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
-#: 'blue'" id="dc_format" label="Select Format">
+# exe/xului/templates/dublincore.xul:<menulist
+#: onchange="this.style.color = 'blue'" id="dc_format" label="Select Format">
 msgid "Select Format"
-msgstr "Formátum kiválasztása"
+msgstr "Válasszo formátumot"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
-#: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="translate"
+#: key="Q" modifiers="control" id="file-quit-key" oncommand="fileQuit()">
 msgid "Q"
 msgstr "Q"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial 2.5 License" id="ppcca4" label="Creative
-#: License">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NonCommercial 2.5 License" id="ppcca4"
+#: label="Creative License">
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
-#: label="XHTML">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="XHTML" id="dcmiXHTML" label="XHTML">
 msgid "XHTML"
 msgstr "XHTML"
 
-#: exe/xului/templates/mainpage.xul:<key n:render="translate" key="P"
-#: modifiers="control" id="file-print-key" oncommand="filePrint()">
+# exe/xului/templates/mainpage.xul:<key
+# n:render="translate"
+#: key="P" modifiers="control" id="file-print-key" oncommand="filePrint()">
 msgid "P"
-msgstr ""
+msgstr "P"
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-ShareAlike 2.5 License" id="ppcca5"
-#: label="Creative License">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
+#: id="ppcca5" label="Creative License">
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
-#: id="dcmiSCORM" label="SCORM 1.2">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="SCORM 1.2" id="dcmiSCORM" label="SCORM 1.2">
 msgid "SCORM 1.2"
 msgstr "SCORM 1.2"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="file-menu"
-#: accesskey="f" label="File">
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
+#: id="file-menu" accesskey="f" label="File">
 msgid "label=\"File\" accesskey=\"f\""
-msgstr "label=\"File\" accesskey=\"f\""
+msgstr "label=\"Fájl\" accesskey=\"f\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Creative Commons
-#: Attribution-NonCommercial-NoDerivs 2.5 License" id="ppcca6" label="Creative
-#: License">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
+#: id="ppcca6" label="Creative License">
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
-msgstr ""
+msgstr "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
-#: label="IMS Content Package 1.1.3">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="IMS-CP" id="dcmiIMS" label="IMS Content Package 1.1.3">
 msgid "IMS Content Package 1.1.3"
-msgstr "IMS tartalmú csomag 1.1.3"
+msgstr "IMS tartalomcsomag 1.1.3"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"Új\" accesskey=\"n\""
+msgstr "label=\"Új\" accesskey=\"ú\""
 
-#: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
-#: Nations 2.0" id="ppdn" label="Developing 2.0">
+# exe/xului/templates/packageproperties.xul:<menuitem
+#: value="Developing Nations 2.0" id="ppdn" label="Developing 2.0">
 msgid "Developing Nations 2.0"
-msgstr ""
+msgstr "Fejlődő országok 2.0"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="Web Site"
-#: id="dcmiWebSite" label="Web Site"> exe/xului/templates/mainpage.xul:<menu
-#: n:render="translate" id="website"
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="Web Site" id="dcmiWebSite" label="Web Site"> id="website"
 msgid "Web Site"
 msgstr "Weboldal"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: key="file-open-key" oncommand="fileOpen()" accesskey="o" label="Open">
 msgid "label=\"Open\" accesskey=\"o\""
-msgstr "label=\"Megnyit\" accesskey=\"o\""
+msgstr "label=\"Megnyitás...\" accesskey=\"n\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Footer:"
-#: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
+# exe/xului/templates/packageproperties.xul:<label
+# value="Footer:"
+#: id="ppFooter" style="width:8
+#: em" tooltiptext="Web pages footer.">
 msgid "Footer:"
-msgstr ""
+msgstr "Élőláb:"
 
-#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
-#: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
+# exe/xului/templates/dublincore.xul:<label
+# value="Identifier:"
+#: id="dcIdentifier" style="width:8
+#: em" tooltiptext="An unambiguous reference
 #: to the resource within a given context.">
 msgid "Identifier:"
 msgstr "Azonosító:"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
-#, fuzzy
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"Frissít\" accesskey=\"r\""
+msgstr "label=\"Legutóbbi projektek...\" accesskey=\"r\""
 
-#: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
-#: label="Taxonomy">
+# exe/xului/templates/packageproperties.xul:<caption
+#: id="ppCaptionTaxonomy" label="Taxonomy">
 msgid "Taxonomy"
-msgstr "Osztályozás"
+msgstr "Tartalomegységek"
 
-#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
-#: style="width:8em" tooltiptext="A Reference to a resource from which the
-#: present is derived.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Source:"
+#: id="dcSource" style="width:8
+#: em" tooltiptext="A Reference to a resource
+#: from which the present is derived.">
 msgid "Source:"
 msgstr "Forrás:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: key="file-save-key" oncommand="fileSave()" accesskey="s" label="Save">
 msgid "label=\"Save\" accesskey=\"s\""
-msgstr "label=\"Mentés\" accesskey=\"s\""
+msgstr "label=\"Mentés\" accesskey=\"m\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 1:"
-#: id="ppLevel1" style="width:8em" tooltiptext="Default name for level 1
-#: nodes">
+# exe/xului/templates/packageproperties.xul:<label
+# value="Level 1:"
+#: value="Level id="ppLevel1" style="width:8
+#: em" tooltiptext="Default name for
+#: level 1 nodes">
 msgid "Level 1:"
-msgstr "Szint 1:"
+msgstr "1. szint"
 
-#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
-#: style="width:8em" tooltiptext="Select a language.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Language:"
+#: id="dcLanguage" style="width:8
+#: em" tooltiptext="Select a language.">
 msgid "Language:"
 msgstr "Nyelv:"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="fileSaveAs()" accesskey="a" label="Save As...">
 msgid "label=\"Save As...\" accesskey=\"a\""
-msgstr "label=\"Mentés másként...\" accesskey=\"a\""
+msgstr "label=\"Mentés másként...\" accesskey=\"á\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 2:"
-#: id="ppLevel2" style="width:8em" tooltiptext="Default name for level 2
-#: nodes">
+# exe/xului/templates/packageproperties.xul:<label
+# value="Level 2:"
+#: value="Level id="ppLevel2" style="width:8
+#: em" tooltiptext="Default name for
+#: level 2 nodes">
 msgid "Level 2:"
-msgstr "Szint 2:"
+msgstr "2. szint"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
-#: label="Abkhazian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ab" id="dcmiab" label="Abkhazian ">
 msgid "Abkhazian "
-msgstr "Abkháziai"
+msgstr "Abház"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
-#, fuzzy
 msgid "label=\"Print\" accesskey=\"p\""
-msgstr "label=\"Kilépés\" accesskey=\"q\""
+msgstr "label=\"Nyomtatás\" accesskey=\"n\""
 
-#: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
-#: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
-#: nodes">
+# exe/xului/templates/packageproperties.xul:<label
+# value="Level 3:"
+#: value="Level id="ppLevel3" style="width:8
+#: em" tooltiptext="Default name for
+#: level 3 nodes">
 msgid "Level 3:"
-msgstr "Szint 3:"
+msgstr "3. szint"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
-#: label="Afar ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="aa" id="dcmiaa" label="Afar ">
 msgid "Afar "
-msgstr "Afar "
+msgstr "Afar"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
 #: id="export-menu" accesskey="e" label="Export">
 msgid "label=\"Export\" accesskey=\"e\""
 msgstr "label=\"Export\" accesskey=\"e\""
 
-#: exe/xului/templates/packageproperties.xul:<button flex="0"
-#: oncommand="submitForm(this.parentNode.parentNode,
-#: 'window.parent.location.reload(true);');" id="ppBtnUpdateTree"
-#: label="Update Tree" tooltiptext="Submit changes and update the tree
-#: display">
+# exe/xului/templates/packageproperties.xul:<button
+# flex="0" oncommand="submitForm(this.parentNode.parentNode, 'window.parent.location.reload(true);');" id="ppBtnUpdateTree" label="Update Tree" tooltiptext="Submit changes and update the tree display">
+#: flex="0" oncommand="submitForm(this.parentNode.parentNode
 msgid "Update Tree"
 msgstr "Fa frissítése"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
-#: label="Afrikaans ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="af" id="dcmiaf" label="Afrikaans ">
 msgid "Afrikaans "
-msgstr "Afrikai"
+msgstr "Afriakai"
 
-#: exe/xului/templates/mainpage.xul:<menuitem
-#: oncommand="exportPackage('scorm','')" accesskey="s" label="SCORM 1.2">
+# exe/xului/templates/mainpage.xul:<menuitem
+#: oncommand="exportPackage('scorm'
 msgid "label=\"SCORM 1.2\" accesskey=\"s\""
 msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
-#: label="Albanian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sq" id="dcmisq" label="Albanian ">
 msgid "Albanian "
 msgstr "Albán"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('ims','')" accesskey="i" label="IMS Content
-#: Package">
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: oncommand="exportPackage('ims'
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS tartalmú csomag\" accesskey=\"i\""
+msgstr "label=\"IMS tartalomcsomag\" accesskey=\"i\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
-#: label="Amharic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="am" id="dcmiam" label="Amharic ">
 msgid "Amharic "
-msgstr "Amharic "
+msgstr "Amharic"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('webSite','')" label="Self-contained Folder">
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: oncommand="exportPackage('webSite'
 msgid "Self-contained Folder"
-msgstr "Könyvtár létrehozása"
+msgstr "Könyvtárba rendezve"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
-#: label="Arabic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ar" id="dcmiar" label="Arabic ">
 msgid "Arabic "
 msgstr "Arab"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('zipFile','')" label="Zip File">
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: oncommand="exportPackage('zipFile'
 msgid "Zip File"
-msgstr "Zip file"
+msgstr "Zip állomány"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
-#: label="Armenian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="hy" id="dcmihy" label="Armenian ">
 msgid "Armenian "
 msgstr "Örmény"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('singlePage','')" accesskey="p" label="Single
-#: Page">
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: oncommand="exportPackage('singlePage'
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Önálló oldal\" accesskey=\"p\""
+msgstr "label=\"Egyetlen oldal\" accesskey=\"o\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
-#: label="Assamese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="as" id="dcmias" label="Assamese ">
 msgid "Assamese "
-msgstr "Assamese "
+msgstr "Assami"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="exportPackage('textFile','')" accesskey="t" label="Text File">
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
+#: oncommand="exportPackage('textFile'
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Szöveges file\" accesskey=\"t\""
+msgstr "label=\"Szöveges fájl\" accesskey=\"z\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
-#: label="Avestan ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ae" id="dcmiae" label="Avestan ">
 msgid "Avestan "
-msgstr "Avestán"
+msgstr "Avesztáni"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
 msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Összeillesztés\" accesskey=\"m\""
+msgstr "label=\"Egyesítés\" accesskey=\"g\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
-#: label="Aymara ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ay" id="dcmiay" label="Aymara ">
 msgid "Aymara "
-msgstr "Aymara "
+msgstr "Aymara"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
-msgstr "label=\"Csomag beillesztése\" accesskey=\"i\""
+msgstr "label=\"Csomag beszúrása\" accesskey=\"b\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
-#: label="Azerbaijani ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="az" id="dcmiaz" label="Azerbaijani ">
 msgid "Azerbaijani "
-msgstr "Azerbajdzsáni"
+msgstr "Azerbajdzsán"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="extractPackage()" accesskey="E" label="Extract Package">
 msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Csomag kitömörítése\" accesskey=\"E\""
+msgstr "label=\"Csomag kibontása\" accesskey=\"k\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ba" id="dcmiba" label="Bashkir ">
 msgid "Bashkir "
-msgstr "Bashkir "
+msgstr "Baskír"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Kilépés\" accesskey=\"q\""
+msgstr "label=\"Kilépés\" accesskey=\"k\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="eu" id="dcmieu" label="Basque ">
 msgid "Basque "
 msgstr "Baszk"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
+#: id="tools-menu" accesskey="t" label="Tools">
 msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Eszközök\" accesskey=\"t\""
+msgstr "label=\"Eszközök\" accesskey=\"e\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
-#: label="Bengali; Bangla ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="bn" id="dcmibn" label="Bengali; Bangla ">
 msgid "Bengali; Bangla "
 msgstr "Bengáli"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr "Tulajdonságok"
+msgstr "Beállítások"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
-#: label="Bihari ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="bh" id="dcmibh" label="Bihari ">
 msgid "Bihari "
-msgstr "Bihari "
+msgstr "Bihari"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate"
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
-msgstr "label=\"Stílusok\" accesskey=\"s\""
+msgstr "label=\"Stílus\" accesskey=\"t\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
-#: label="Bislama ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="bi" id="dcmibi" label="Bislama ">
 msgid "Bislama "
-msgstr "Bislama "
+msgstr "Bislama"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="window.location = window.location" id="refresh-menu"
 #: accesskey="r" label="Refresh">
 msgid "label=\"Refresh\" accesskey=\"r\""
-msgstr "label=\"Frissít\" accesskey=\"r\""
+msgstr "label=\"Képernyő frissítése\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="bs" id="dcmibs" label="Bosnian ">
 msgid "Bosnian "
-msgstr "Boszniai"
+msgstr "Bosnyák"
 
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
-#: accesskey="h" label="Help">
+# exe/xului/templates/mainpage.xul:<menu
+# n:render="translate"
+#: id="help-menu" accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Segítség\" accesskey=\"h\""
+msgstr "label=\"Súgó\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="br" id="dcmibr" label="Breton ">
 msgid "Breton "
-msgstr "Breton "
+msgstr "Breton"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About">
 msgid "label=\"About\" accesskey=\"a\""
-msgstr "label=\"Névjegy\" accesskey=\"a\""
+msgstr "label=\"Névjegy\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="be" id="dcmibe" label="Byelorussian; Belarusian ">
 msgid "Byelorussian; Belarusian "
 msgstr "Belorusz"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="reportIssue()" accesskey="R" label="Report an Issue">
 msgid "label=\"Report an Issue\" accesskey=\"R\""
-msgstr "label=\"Eredmény jelentése\" accesskey=\"R\""
+msgstr "label=\"Hibabejelentés\" accesskey=\"h\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="bg" id="dcmibg" label="Bulgarian ">
 msgid "Bulgarian "
-msgstr "Bulgár"
+msgstr "Bolgár"
 
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+# exe/xului/templates/mainpage.xul:<menuitem
+# n:render="translate"
 #: oncommand="liveChatPage()" accesskey="c" label="eXe Live Chat">
-#, fuzzy
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"Szöveges file\" accesskey=\"t\""
+msgstr "label=\"eXe online csevegés\" accesskey=\"c\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="my" id="dcmimy" label="Burmese ">
 msgid "Burmese "
-msgstr "Burméze"
+msgstr "Burmai"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="debugInfo"
+# exe/xului/templates/mainpage.xul:<label
+# n:render="debugInfo"
 #: value="debugInfo">
 msgid "debugInfo"
-msgstr "debug-információ"
+msgstr "nyomkövetési információ"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ca" id="dcmica" label="Catalan ">
 msgid "Catalan "
 msgstr "Katalán"
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# n:render="addChild"
 #: key="addChildKey" label="Add Page">
 msgid "Add Page"
-msgstr "Oldal hozzáadása"
+msgstr "Új lap"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ch" id="dcmich" label="Chamorro ">
 msgid "Chamorro "
-msgstr "Chamorro "
+msgstr "Kamorró"
 
-#: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
-msgstr "Átnevez"
+msgstr "Átnevezés"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ce" id="dcmice" label="Chechen ">
 msgid "Chechen "
 msgstr "Csecsen"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
-#: value="outlinePane">
-#, fuzzy
+# exe/xului/templates/mainpage.xul:<label
+# n:render="outlinePane"
+#: flex="1" value="outlinePane">
 msgid "outlinePane"
-msgstr "Körvonal"
+msgstr "Tervező nézet"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="zh" id="dcmizh" label="Chinese ">
 msgid "Chinese "
 msgstr "Kínai"
 
-#: exe/xului/templates/mainpage.xul:<label value="iDevices"
-#: style="margin-top:5px;">
-#, fuzzy
+# exe/xului/templates/mainpage.xul:<label
+#: value="iDevices" style="margin-top:5
+#: px;">
 msgid "iDevices"
-msgstr "Új iDevice"
+msgstr "iDevice modulok"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="cu" id="dcmicu" label="Church Slavic ">
 msgid "Church Slavic "
-msgstr ""
+msgstr "Egyházi szláv"
 
-#: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
-#: value="iDevicePane">
+# exe/xului/templates/mainpage.xul:<label
+# n:render="idevicePane"
+#: flex="1" value="iDevicePane">
 msgid "iDevicePane"
-msgstr "iDevicePane"
+msgstr "iDevice modulok"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="cv" id="dcmicv" label="Chuvash ">
 msgid "Chuvash "
-msgstr "Chuvash "
+msgstr "Csuvas"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+# exe/xului/templates/mainpage.xul:<tab
+# n:render="translate"
 #: label="Authoring">
 msgid "Authoring"
-msgstr "Szerkesztő"
+msgstr "Szerzői nézet"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="kw" id="dcmikw" label="Cornish ">
 msgid "Cornish "
-msgstr "Ír"
+msgstr "Cornish"
 
-#: exe/xului/templates/mainpage.xul:<tab n:render="translate"
+# exe/xului/templates/mainpage.xul:<tab
+# n:render="translate"
 #: label="Properties">
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="co" id="dcmico" label="Corsican ">
 msgid "Corsican "
 msgstr "Korzikai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="hr" id="dcmihr" label="Croatian ">
 msgid "Croatian "
 msgstr "Horvát"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
-#: label="Czech ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="cs" id="dcmics" label="Czech ">
 msgid "Czech "
 msgstr "Cseh"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
-#: label="Danish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="da" id="dcmida" label="Danish ">
 msgid "Danish "
 msgstr "Dán"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
-#: label="Dzongkha; Bhutani ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="dz" id="dcmidz" label="Dzongkha; Bhutani ">
 msgid "Dzongkha; Bhutani "
-msgstr "Dzongkha; Bhutani "
+msgstr "Dzongkha"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
-#: label="English ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="en" id="dcmien" label="English ">
 msgid "English "
 msgstr "Angol"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
-#: label="Esperanto ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="eo" id="dcmieo" label="Esperanto ">
 msgid "Esperanto "
 msgstr "Eszperantó"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
-#: label="Estonian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="et" id="dcmiet" label="Estonian ">
 msgid "Estonian "
 msgstr "Észt"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fi" id="dcmifi"
-#: label="Finnish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="fi" id="dcmifi" label="Finnish ">
 msgid "Finnish "
 msgstr "Finn"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fj" id="dcmifj"
-#: label="Fijian; Fiji ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="fj" id="dcmifj" label="Fijian; Fiji ">
 msgid "Fijian; Fiji "
-msgstr "Fiji"
+msgstr "Fidzsi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fo" id="dcmifo"
-#: label="Faroese ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="fo" id="dcmifo" label="Faroese ">
 msgid "Faroese "
-msgstr "Maltéze"
+msgstr "Faroese"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fr" id="dcmifr"
-#: label="French ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="fr" id="dcmifr" label="French ">
 msgid "French "
 msgstr "Francia"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fy" id="dcmify"
-#: label="Frisian ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="fy" id="dcmify" label="Frisian ">
 msgid "Frisian "
-msgstr "Perzsa"
+msgstr "Fríz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gd" id="dcmigd"
-#: label="Scots; Gaelic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="gd" id="dcmigd" label="Scots; Gaelic ">
 msgid "Scots; Gaelic "
-msgstr "Skót; Gall"
+msgstr "Skót"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gl" id="dcmigl"
-#: label="Gallegan; Galician ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="gl" id="dcmigl" label="Gallegan; Galician ">
 msgid "Gallegan; Galician "
-msgstr "Galíciai"
+msgstr "Gallíciai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ka" id="dcmika"
-#: label="Georgian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ka" id="dcmika" label="Georgian ">
 msgid "Georgian "
 msgstr "Grúz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="de" id="dcmide"
-#: label="German ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="de" id="dcmide" label="German ">
 msgid "German "
 msgstr "Német"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gn" id="dcmign"
-#: label="Guarani ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="gn" id="dcmign" label="Guarani ">
 msgid "Guarani "
-msgstr "Guarani "
+msgstr "Guarani"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gu" id="dcmigu"
-#: label="Gujarati ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="gu" id="dcmigu" label="Gujarati ">
 msgid "Gujarati "
-msgstr "Gujaráti "
+msgstr "Gujarati"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ha" id="dcmiha"
-#: label="Hausa (?) ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ha" id="dcmiha" label="Hausa (?) ">
 msgid "Hausa (?) "
-msgstr "Hausa (?) "
+msgstr "Hausa"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="he" id="dcmihe"
-#: label="Hebrew (formerly iw) ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="he" id="dcmihe" label="Hebrew (formerly iw) ">
 msgid "Hebrew (formerly iw) "
 msgstr "Héber"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hi" id="dcmihi"
-#: label="Hindi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="hi" id="dcmihi" label="Hindi ">
 msgid "Hindi "
-msgstr "Hindi "
+msgstr "Hindi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ho" id="dcmiho"
-#: label="Hiri Motu ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ho" id="dcmiho" label="Hiri Motu ">
 msgid "Hiri Motu "
-msgstr "Hiri Motu "
+msgstr "Hiri Motu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hu" id="dcmihu"
-#: label="Hungarian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="hu" id="dcmihu" label="Hungarian ">
 msgid "Hungarian "
 msgstr "Magyar"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hz" id="dcmihz"
-#: label="Herero ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="hz" id="dcmihz" label="Herero ">
 msgid "Herero "
-msgstr "Herero "
+msgstr "Herero"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ia" id="dcmiia"
-#: label="Interlingua ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ia" id="dcmiia" label="Interlingua ">
 msgid "Interlingua "
-msgstr "Olasz"
+msgstr "Nemzetközi nyelv"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="id" id="dcmiid"
-#: label="Indonesian (formerly in) ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="id" id="dcmiid" label="Indonesian (formerly in) ">
 msgid "Indonesian (formerly in) "
 msgstr "Indonéz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ie" id="dcmiie"
-#: label="Interlingue ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ie" id="dcmiie" label="Interlingue ">
 msgid "Interlingue "
-msgstr "Olasz"
+msgstr "Occidental nyelv"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ik" id="dcmiik"
-#: label="Inupiak ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ik" id="dcmiik" label="Inupiak ">
 msgid "Inupiak "
-msgstr "Inupiak "
+msgstr "Inupiak"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="io" id="dcmiio"
-#: label="Ido ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="io" id="dcmiio" label="Ido ">
 msgid "Ido "
-msgstr "Ido "
+msgstr "Ido"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="is" id="dcmiis"
-#: label="Icelandic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="is" id="dcmiis" label="Icelandic ">
 msgid "Icelandic "
 msgstr "Izlandi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ga" id="dcmiga"
-#: label="Irish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ga" id="dcmiga" label="Irish ">
 msgid "Irish "
 msgstr "Ír"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="it" id="dcmiit"
-#: label="Italian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="it" id="dcmiit" label="Italian ">
 msgid "Italian "
 msgstr "Olasz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="iu" id="dcmiiu"
-#: label="Inuktitut ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="iu" id="dcmiiu" label="Inuktitut ">
 msgid "Inuktitut "
-msgstr ""
+msgstr "Inuktitut"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ja" id="dcmija"
-#: label="Japanese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ja" id="dcmija" label="Japanese ">
 msgid "Japanese "
 msgstr "Japán"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="jv" id="dcmijv"
-#: label="Javanese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="jv" id="dcmijv" label="Javanese ">
 msgid "Javanese "
 msgstr "Jávai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ki" id="dcmiki"
-#: label="Kikuyu ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ki" id="dcmiki" label="Kikuyu ">
 msgid "Kikuyu "
-msgstr "Kikuyu "
+msgstr "Kikuyu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kj" id="dcmikj"
-#: label="Kuanyama ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="kj" id="dcmikj" label="Kuanyama ">
 msgid "Kuanyama "
-msgstr "Kuanyama "
+msgstr "Kuanyama"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kk" id="dcmikk"
-#: label="Kazakh ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="kk" id="dcmikk" label="Kazakh ">
 msgid "Kazakh "
 msgstr "Kazah"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kl" id="dcmikl"
-#: label="Kalaallisut; Greenlandic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="kl" id="dcmikl" label="Kalaallisut; Greenlandic ">
 msgid "Kalaallisut; Greenlandic "
-msgstr ""
+msgstr "Kalaalisut; Gröllandi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="km" id="dcmikm"
-#: label="Khmer; Cambodian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="km" id="dcmikm" label="Khmer; Cambodian ">
 msgid "Khmer; Cambodian "
-msgstr ""
+msgstr "Kmer; kambodzsai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kn" id="dcmikn"
-#: label="Kannada ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="kn" id="dcmikn" label="Kannada ">
 msgid "Kannada "
-msgstr "Kuanyama "
+msgstr "Kanadai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ko" id="dcmiko"
-#: label="Korean ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ko" id="dcmiko" label="Korean ">
 msgid "Korean "
-msgstr "Kóreai"
+msgstr "Koreai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ks" id="dcmiks"
-#: label="Kashmiri ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ks" id="dcmiks" label="Kashmiri ">
 msgid "Kashmiri "
-msgstr "Kashmir"
+msgstr "Kasmíri"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rw" id="dcmirw"
-#: label="Kinyarwanda ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="rw" id="dcmirw" label="Kinyarwanda ">
 msgid "Kinyarwanda "
-msgstr "Kinyarwanda "
+msgstr "Kinyarwanda"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ky" id="dcmiky"
-#: label="Kirghiz ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ky" id="dcmiky" label="Kirghiz ">
 msgid "Kirghiz "
 msgstr "Kirgiz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kv" id="dcmikv"
-#: label="Komi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="kv" id="dcmikv" label="Komi ">
 msgid "Komi "
-msgstr "Komi "
+msgstr "Komi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ku" id="dcmiku"
-#: label="Kurdish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ku" id="dcmiku" label="Kurdish ">
 msgid "Kurdish "
 msgstr "Kurd"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="la" id="dcmila"
-#: label="Latin ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="la" id="dcmila" label="Latin ">
 msgid "Latin "
 msgstr "Latin"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lb" id="dcmilb"
-#: label="Letzeburgesch ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="lb" id="dcmilb" label="Letzeburgesch ">
 msgid "Letzeburgesch "
-msgstr "Letzeburgesch "
+msgstr "Letzeburgesch"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ln" id="dcmiln"
-#: label="Lingala ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ln" id="dcmiln" label="Lingala ">
 msgid "Lingala "
-msgstr ""
+msgstr "Lingala"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lo" id="dcmilo"
-#: label="Lao; Laotian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="lo" id="dcmilo" label="Lao; Laotian ">
 msgid "Lao; Laotian "
-msgstr "Lao; Laotian "
+msgstr "Lao"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lt" id="dcmilt"
-#: label="Lithuanian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="lt" id="dcmilt" label="Lithuanian ">
 msgid "Lithuanian "
 msgstr "Litván"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="lv" id="dcmilv"
-#: label="Latvian; Lettish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="lv" id="dcmilv" label="Latvian; Lettish ">
 msgid "Latvian; Lettish "
-msgstr ""
+msgstr "Lett"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mg" id="dcmimg"
-#: label="Malagasy ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mg" id="dcmimg" label="Malagasy ">
 msgid "Malagasy "
-msgstr "Malagasy "
+msgstr "Malagesi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="gv" id="dcmigv"
-#: label="Manx ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="gv" id="dcmigv" label="Manx ">
 msgid "Manx "
-msgstr "Man szigeti"
+msgstr "Manx"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mh" id="dcmimh"
-#: label="Marshall ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mh" id="dcmimh" label="Marshall ">
 msgid "Marshall "
-msgstr "Marshall "
+msgstr "Marshall szigeteki"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mi" id="dcmimi"
-#: label="Maori ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mi" id="dcmimi" label="Maori ">
 msgid "Maori "
-msgstr "Maori "
+msgstr "Maori"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mk" id="dcmimk"
-#: label="Macedonian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mk" id="dcmimk" label="Macedonian ">
 msgid "Macedonian "
-msgstr "Macedón"
+msgstr "Makedón"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mr" id="dcmimr"
-#: label="Marathi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mr" id="dcmimr" label="Marathi ">
 msgid "Marathi "
-msgstr "Marathi "
+msgstr "Marathi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ml" id="dcmiml"
-#: label="Malayalam ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ml" id="dcmiml" label="Malayalam ">
 msgid "Malayalam "
-msgstr "Malayalam "
+msgstr "Malayalam"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mo" id="dcmimo"
-#: label="Moldavian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mo" id="dcmimo" label="Moldavian ">
 msgid "Moldavian "
 msgstr "Moldáv"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mn" id="dcmimn"
-#: label="Mongolian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mn" id="dcmimn" label="Mongolian ">
 msgid "Mongolian "
-msgstr "Mongól"
+msgstr "Mongol"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ms" id="dcmims"
-#: label="Malay ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ms" id="dcmims" label="Malay ">
 msgid "Malay "
 msgstr "Maláj"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="mt" id="dcmimt"
-#: label="Maltese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="mt" id="dcmimt" label="Maltese ">
 msgid "Maltese "
-msgstr "Maltéze"
+msgstr "Máltai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="na" id="dcmina"
-#: label="Nauru ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="na" id="dcmina" label="Nauru ">
 msgid "Nauru "
-msgstr "Nauru "
+msgstr "Nauru"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nb" id="dcminb"
-#: label="Norwegian Bokmål ">
-msgid "Norwegian Bokmål "
-msgstr "Norvég Bokmål "
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="nb" id="dcminb" label="Norwegian BokmÃ¥l ">
+msgid "Norwegian BokmÃ¥l "
+msgstr "Norvég"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nd" id="dcmind"
-#: label="Ndebele, North ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+# value="nd" id="dcmind" label="Ndebele, North ">
+#: value="nd" id="dcmind" label="Ndebele
 msgid "Ndebele, North "
-msgstr "Ndebele, South "
+msgstr "Ndebele észak"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ne" id="dcmine"
-#: label="Nepali ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ne" id="dcmine" label="Nepali ">
 msgid "Nepali "
 msgstr "Nepáli"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ng" id="dcming"
-#: label="Ndonga ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ng" id="dcming" label="Ndonga ">
 msgid "Ndonga "
-msgstr "Tsonga "
+msgstr "Ndonga"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nl" id="dcminl"
-#: label="Dutch ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="nl" id="dcminl" label="Dutch ">
 msgid "Dutch "
-msgstr "Dán"
+msgstr "Holland"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nn" id="dcminn"
-#: label="Norwegian Nynorsk ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="nn" id="dcminn" label="Norwegian Nynorsk ">
 msgid "Norwegian Nynorsk "
-msgstr "Norvég Bokmål "
+msgstr "Norvég"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="no" id="dcmino"
-#: label="Norwegian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="no" id="dcmino" label="Norwegian ">
 msgid "Norwegian "
 msgstr "Norvég"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nr" id="dcminr"
-#: label="Ndebele, South ">
+# exe/xului/templates/dublincore.xul:<menuitem
+# value="nr" id="dcminr" label="Ndebele, South ">
+#: value="nr" id="dcminr" label="Ndebele
 msgid "Ndebele, South "
-msgstr "Ndebele, South "
+msgstr "Ndebele déli"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="nv" id="dcminv"
-#: label="Navajo ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="nv" id="dcminv" label="Navajo ">
 msgid "Navajo "
-msgstr "Navajo "
+msgstr "Navaho"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ny" id="dcminy"
-#: label="Chichewa; Nyanja ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ny" id="dcminy" label="Chichewa; Nyanja ">
 msgid "Chichewa; Nyanja "
-msgstr "Chichewa; Nyanja "
+msgstr "Csikeva"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="oc" id="dcmioc"
-#: label="Occitan; Provençal ">
-msgid "Occitan; Provençal "
-msgstr "Occitan; Provençal "
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="oc" id="dcmioc" label="Occitan; ProvenÃ§al ">
+msgid "Occitan; ProvenÃ§al "
+msgstr "Provanszál"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="om" id="dcmiom"
-#: label="(Afan) Oromo ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="om" id="dcmiom" label="(Afan) Oromo ">
 msgid "(Afan) Oromo "
-msgstr "(Afan) Oromo "
+msgstr "Oromo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="or" id="dcmior"
-#: label="Oriya ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="or" id="dcmior" label="Oriya ">
 msgid "Oriya "
-msgstr "Oriya "
+msgstr "Oriya"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="os" id="dcmios"
-#: label="Ossetian; Ossetic ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="os" id="dcmios" label="Ossetian; Ossetic ">
 msgid "Ossetian; Ossetic "
 msgstr "Oszét"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pa" id="dcmipa"
-#: label="Panjabi; Punjabi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="pa" id="dcmipa" label="Panjabi; Punjabi ">
 msgid "Panjabi; Punjabi "
-msgstr "Panjabi; Punjabi "
+msgstr "Pandzsabi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pi" id="dcmipi"
-#: label="Pali ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="pi" id="dcmipi" label="Pali ">
 msgid "Pali "
-msgstr "Páli"
+msgstr "Pali"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="fa" id="dcmifa"
-#: label="Persian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="fa" id="dcmifa" label="Persian ">
 msgid "Persian "
 msgstr "Perzsa"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pl" id="dcmipl"
-#: label="Polish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="pl" id="dcmipl" label="Polish ">
 msgid "Polish "
-msgstr "Lenygel"
+msgstr "Lengyel"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ps" id="dcmips"
-#: label="Pashto, Pushto ">
+# exe/xului/templates/dublincore.xul:<menuitem
+# value="ps" id="dcmips" label="Pashto, Pushto ">
+#: value="ps" id="dcmips" label="Pashto
 msgid "Pashto, Pushto "
-msgstr "Pashto, Pushto "
+msgstr "Pastu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="pt" id="dcmipt"
-#: label="Portuguese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="pt" id="dcmipt" label="Portuguese ">
 msgid "Portuguese "
 msgstr "Portugál"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="qu" id="dcmiqu"
-#: label="Quechua ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="qu" id="dcmiqu" label="Quechua ">
 msgid "Quechua "
 msgstr "Kecsua"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rm" id="dcmirm"
-#: label="Rhaeto-Romance ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="rm" id="dcmirm" label="Rhaeto-Romance ">
 msgid "Rhaeto-Romance "
-msgstr "Rétó-Román"
+msgstr "Rhaeto-Romance"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="rn" id="dcmirn"
-#: label="Rundi; Kirundi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="rn" id="dcmirn" label="Rundi; Kirundi ">
 msgid "Rundi; Kirundi "
-msgstr "Rundi; Kirundi "
+msgstr "Rundi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ro" id="dcmiro"
-#: label="Romanian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ro" id="dcmiro" label="Romanian ">
 msgid "Romanian "
 msgstr "Román"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ru" id="dcmiru"
-#: label="Russian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ru" id="dcmiru" label="Russian ">
 msgid "Russian "
 msgstr "Orosz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sa" id="dcmisa"
-#: label="Sanskrit ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sa" id="dcmisa" label="Sanskrit ">
 msgid "Sanskrit "
 msgstr "Szanszkrit"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sc" id="dcmisc"
-#: label="Sardinian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sc" id="dcmisc" label="Sardinian ">
 msgid "Sardinian "
 msgstr "Szardíniai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="se" id="dcmise"
-#: label="Northern Sami ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="se" id="dcmise" label="Northern Sami ">
 msgid "Northern Sami "
-msgstr "Északi Sémi"
+msgstr "Észak számi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sm" id="dcmism"
-#: label="Samoan ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sm" id="dcmism" label="Samoan ">
 msgid "Samoan "
-msgstr "Samoén "
+msgstr "Szamoai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sg" id="dcmisg"
-#: label="Sango; Sangro ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sg" id="dcmisg" label="Sango; Sangro ">
 msgid "Sango; Sangro "
-msgstr "Sango; Sangro "
+msgstr "Sango"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="st" id="dcmist"
-#: label="Sesotho; Sotho, Southern ">
+# exe/xului/templates/dublincore.xul:<menuitem
+# value="st" id="dcmist" label="Sesotho; Sotho, Southern ">
+#: value="st" id="dcmist" label="Sesotho; Sotho
 msgid "Sesotho; Sotho, Southern "
-msgstr "Sesotho; Sotho, Southern "
+msgstr "Sesotoi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sn" id="dcmisn"
-#: label="Shona ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sn" id="dcmisn" label="Shona ">
 msgid "Shona "
-msgstr "Shona "
+msgstr "Shona"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sd" id="dcmisd"
-#: label="Sindhi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sd" id="dcmisd" label="Sindhi ">
 msgid "Sindhi "
-msgstr "Sindhi "
+msgstr "Shindi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sr" id="dcmisr"
-#: label="Serbian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sr" id="dcmisr" label="Serbian ">
 msgid "Serbian "
 msgstr "Szerb"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="si" id="dcmisi"
-#: label="Sinhalese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="si" id="dcmisi" label="Sinhalese ">
 msgid "Sinhalese "
-msgstr "Sinhalese "
+msgstr "Szingaléz"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sk" id="dcmisk"
-#: label="Slovak ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sk" id="dcmisk" label="Slovak ">
 msgid "Slovak "
 msgstr "Szlovák"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sl" id="dcmisl"
-#: label="Slovenian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sl" id="dcmisl" label="Slovenian ">
 msgid "Slovenian "
 msgstr "Szlovén"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="so" id="dcmiso"
-#: label="Somali ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="so" id="dcmiso" label="Somali ">
 msgid "Somali "
 msgstr "Szomáli"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="es" id="dcmies"
-#: label="Spanish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="es" id="dcmies" label="Spanish ">
 msgid "Spanish "
 msgstr "Spanyol"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ss" id="dcmiss"
-#: label="Swati; Siswati ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ss" id="dcmiss" label="Swati; Siswati ">
 msgid "Swati; Siswati "
-msgstr "Swati; Siswati "
+msgstr "Swati"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="su" id="dcmisu"
-#: label="Sundanese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="su" id="dcmisu" label="Sundanese ">
 msgid "Sundanese "
-msgstr "Sundanéz"
+msgstr "Szudáni"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sw" id="dcmisw"
-#: label="Swahili ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sw" id="dcmisw" label="Swahili ">
 msgid "Swahili "
-msgstr "Swahili "
+msgstr "Swahili"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sv" id="dcmisv"
-#: label="Swedish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="sv" id="dcmisv" label="Swedish ">
 msgid "Swedish "
 msgstr "Svéd"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tl" id="dcmitl"
-#: label="Tagalog ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tl" id="dcmitl" label="Tagalog ">
 msgid "Tagalog "
-msgstr "Tagalog "
+msgstr "Tagalog"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ty" id="dcmity"
-#: label="Tahitian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ty" id="dcmity" label="Tahitian ">
 msgid "Tahitian "
 msgstr "Tahiti"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tg" id="dcmitg"
-#: label="Tajik ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tg" id="dcmitg" label="Tajik ">
 msgid "Tajik "
-msgstr "Tadzsik"
+msgstr "Tadzsig"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ta" id="dcmita"
-#: label="Tamil ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ta" id="dcmita" label="Tamil ">
 msgid "Tamil "
-msgstr "Tamil "
+msgstr "Tamil"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tt" id="dcmitt"
-#: label="Tatar ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tt" id="dcmitt" label="Tatar ">
 msgid "Tatar "
 msgstr "Tatár"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="te" id="dcmite"
-#: label="Telugu ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="te" id="dcmite" label="Telugu ">
 msgid "Telugu "
-msgstr "Telugu "
+msgstr "Telugu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="th" id="dcmith"
-#: label="Thai ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="th" id="dcmith" label="Thai ">
 msgid "Thai "
-msgstr "Thai "
+msgstr "Thai"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bo" id="dcmibo"
-#: label="Tibetan ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="bo" id="dcmibo" label="Tibetan ">
 msgid "Tibetan "
 msgstr "Tibeti"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ti" id="dcmiti"
-#: label="Tigrinya ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ti" id="dcmiti" label="Tigrinya ">
 msgid "Tigrinya "
-msgstr "Tigrinya "
+msgstr "Tigrinya"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ts" id="dcmits"
-#: label="Tsonga ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ts" id="dcmits" label="Tsonga ">
 msgid "Tsonga "
-msgstr "Tsonga "
+msgstr "Tsonga"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tn" id="dcmitn"
-#: label="Tswana; Setswana ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tn" id="dcmitn" label="Tswana; Setswana ">
 msgid "Tswana; Setswana "
-msgstr "Tswana; Setswana "
+msgstr "Tswana"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="to" id="dcmito"
-#: label="Tongan ">
-#, fuzzy
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="to" id="dcmito" label="Tongan ">
 msgid "Tongan  "
-msgstr "Tsonga "
+msgstr "Tongan"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tr" id="dcmitr"
-#: label="Turkish ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tr" id="dcmitr" label="Turkish ">
 msgid "Turkish "
 msgstr "Török"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tk" id="dcmitk"
-#: label="Turkmen ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tk" id="dcmitk" label="Turkmen ">
 msgid "Turkmen "
-msgstr "Türk"
+msgstr "Türkmén"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="tw" id="dcmitw"
-#: label="Twi ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="tw" id="dcmitw" label="Twi ">
 msgid "Twi "
-msgstr "Twi "
+msgstr "Twi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ug" id="dcmiug"
-#: label="Uighur ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ug" id="dcmiug" label="Uighur ">
 msgid "Uighur "
-msgstr "Uighur "
+msgstr "Uighur"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="uk" id="dcmiuk"
-#: label="Ukrainian ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="uk" id="dcmiuk" label="Ukrainian ">
 msgid "Ukrainian "
 msgstr "Ukrán"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ur" id="dcmiur"
-#: label="Urdu ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="ur" id="dcmiur" label="Urdu ">
 msgid "Urdu "
-msgstr "Urdu "
+msgstr "Urdu"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="uz" id="dcmiuz"
-#: label="Uzbek ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="uz" id="dcmiuz" label="Uzbek ">
 msgid "Uzbek "
 msgstr "Üzbég"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="vi" id="dcmivi"
-#: label="Vietnamese ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="vi" id="dcmivi" label="Vietnamese ">
 msgid "Vietnamese "
 msgstr "Vietnámi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="vo" id="dcmivo"
-#: label="Volapük; Volapuk ">
-msgid "Volapük; Volapuk "
-msgstr "Volapük; Volapuk "
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="vo" id="dcmivo" label="VolapÃ¼k; Volapuk ">
+msgid "VolapÃ¼k; Volapuk "
+msgstr "Volapuk"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="wa" id="dcmiwa"
-#: label="Walloon ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="wa" id="dcmiwa" label="Walloon ">
 msgid "Walloon "
-msgstr "Walloon "
+msgstr "Wallon"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cy" id="dcmicy"
-#: label="Welsh ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="cy" id="dcmicy" label="Welsh ">
 msgid "Welsh "
 msgstr "Welszi"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="wo" id="dcmiwo"
-#: label="Wolof ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="wo" id="dcmiwo" label="Wolof ">
 msgid "Wolof "
-msgstr "Wolof "
+msgstr "Wolof"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="xh" id="dcmixh"
-#: label="Xhosa ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="xh" id="dcmixh" label="Xhosa ">
 msgid "Xhosa "
-msgstr "Xhosa "
+msgstr "Xhosa"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="yi" id="dcmiyi"
-#: label="Yiddish (formerly ji) ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="yi" id="dcmiyi" label="Yiddish (formerly ji) ">
 msgid "Yiddish (formerly ji) "
-msgstr "Yiddish"
+msgstr "Jiddis"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="yo" id="dcmiyo"
-#: label="Yoruba ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="yo" id="dcmiyo" label="Yoruba ">
 msgid "Yoruba "
-msgstr "Yoruba "
+msgstr "Yoroba"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="za" id="dcmiza"
-#: label="Zhuang ">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="za" id="dcmiza" label="Zhuang ">
 msgid "Zhuang "
-msgstr "Zhuang "
+msgstr "Zhuang"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zu" id="dcmizu"
-#: label="Zulu.">
+# exe/xului/templates/dublincore.xul:<menuitem
+#: value="zu" id="dcmizu" label="Zulu.">
 msgid "Zulu."
 msgstr "Zulu"
 
-#: exe/xului/templates/dublincore.xul:<label value="Relation:" id="dcRelation"
-#: style="width:8em" tooltiptext="A reference to a related resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Relation:"
+#: id="dcRelation" style="width:8
+#: em" tooltiptext="A reference to a related
+#: resource.">
 msgid "Relation:"
 msgstr "Kapcsolat:"
 
-#: exe/xului/templates/dublincore.xul:<label value="Coverage:" id="dcCoverage"
-#: style="width:8em" tooltiptext="The extent or scope of the content
-#: resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Coverage:"
+#: id="dcCoverage" style="width:8
+#: em" tooltiptext="The extent or scope of the
+#: content resource.">
 msgid "Coverage:"
-msgstr "Terjedelem:"
+msgstr "Átfedés:"
 
-#: exe/xului/templates/dublincore.xul:<label value="Rights:" id="dcRights"
-#: style="width:8em" tooltiptext="Information about rights held in and over
-#: the resource.">
+# exe/xului/templates/dublincore.xul:<label
+# value="Rights:"
+#: id="dcRights" style="width:8
+#: em" tooltiptext="Information about rights held
+#: in and over the resource.">
 msgid "Rights:"
 msgstr "Jogok:"
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
+# exe/xului/templates/dublincore.xul:<description
+#: id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
-msgstr ""
+msgstr "Jellemzően a \"Jogok\" elem tartalmazza a forrás jogkezelésére vonatkozó álláspontokat, vagy hivatkozik egy ide vonatkozó szolgáltatásra. A jogok gyakran tartalmazzák a szellemi tulajdonjogot,a szerzői jogot és egyéb tulajdonjogokat. Ha a \"Jogok\" elem hiányzik, nincs feltétel, amely alapján megállapítható lenne a forrás jogállása és egyéb jogok."
 
-#~ msgid "Add"
-#~ msgstr "Hozzáad"
-
-#~ msgid "Author"
-#~ msgstr "Szerző"
-
-#, fuzzy
-#~ msgid ""
-#~ "EXPORT FAILED.\n"
-#~ "\"%s\" already exists.\n"
-#~ "Please try again with a different filename"
-#~ msgstr ""
-#~ "\"%s\" már létezik.\n"
-#~ "Kérem próbálja újból egy másik file-névvel"
-
-#, fuzzy
-#~ msgid "Feedback Image"
-#~ msgstr "Visszajelzés"
-
-#, fuzzy
-#~ msgid "Question(s)"
-#~ msgstr "Kérdés"
-
-#~ msgid "Save as"
-#~ msgstr "Mentés másként"
-
-#, fuzzy
-#~ msgid "Type the question stem."
-#~ msgstr "Kérdés törlése"
-
-#~ msgid "Wikipedia Article"
-#~ msgstr "Wikipedia cikk"
-
-#, fuzzy
-#~ msgid "label=\"Merging\" accesskey=\"e\""
-#~ msgstr "label=\"Összeillesztés\" accesskey=\"m\""
-
-#~ msgid "label=\"Register Online\" accesskey=\"R\""
-#~ msgstr "label=\"Online regisztráció\" accesskey=\"R\""
-
-#~ msgid "Greek "
-#~ msgstr "Görög"
-
-#~ msgid "Tonga (?) "
-#~ msgstr "Tonga (?) "
-
-#, fuzzy
-#~ msgid "label=\"SCORM 2004\" accesskey=\"c\""
-#~ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
-
-#~ msgid ""
-#~ "%s\n"
-#~ "%s unchanged"
-#~ msgstr ""
-#~ "%s\n"
-#~ "%s változatlan"
-
-#~ msgid "Quiz"
-#~ msgstr "Teszt"
