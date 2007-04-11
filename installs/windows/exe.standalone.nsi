@@ -3,9 +3,12 @@
 ; When running extracts them all to a temp dir and runs from there.
 
 !ifndef EXE_VERSION
-  !define EXE_VERSION "0.20.alpha2"
+  !define EXE_VERSION "0.23.1"
 !endif
 !define APPNAMEANDVERSION "eXe Standalone ${EXE_VERSION}"
+!ifndef EXE_BUILD
+  !define EXE_BUILD "${EXE_VERSION}.${EXE_REVISION}"
+!endif
 !ifndef EXE_SPLASH
   !define EXE_SPLASH "splash1.jpg"
 !endif
@@ -67,11 +70,11 @@ Section main
     GetDLLVersion "$TEMP\exe\exe.exe" $R0 $R1
     IntOp $R2 $R0 / 0x00010000 ; $R2 major version
     IntOp $R3 $R0 & 0x0000FFFF ; $R3 minor version
-    IntOp $R4 $R1 / 0x00010000 ; $R4 release
-    IntOp $R5 $R1 & 0x0000FFFF ; $R5 build
+    IntOp $R4 $R1 / 0x00010000 ; $R4 local version
+    IntOp $R5 $R1 & 0x0000FFFF ; $R5 build (svn revision)
     StrCpy "$0" "$R2.$R3.$R4.$R5"
     ; If its version is ok
-    StrCmp "$0" ${EXE_VERSION} Splash CleanUp
+    StrCmp "$0" ${EXE_BUILD} Splash CleanUp
   CleanUp:
     ; Clean up
     RMDir /r "$TEMP\exe"

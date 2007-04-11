@@ -22,6 +22,7 @@
 """
 Version Information
 """
+import re
 
 project        = "exe"
 release        = "0.23.1"
@@ -33,9 +34,17 @@ except ImportError:
     pass
 
 # avoid using ':' in pathnames built from revision
-revision = revision.sub(':', '-')
+revision = revision.replace(':', '-')
 
 version        = release + "." + revision
 
+# use the first numeric part of revision to make the build number
+# major.minor.local.revison
+mo = re.match('(\d+)\D+', revision)
+if mo:
+    build = release + '.' + mo.group(1)
+else:
+    build = version
+
 if __name__ == '__main__':
-    print project, version
+    print project, version, build
