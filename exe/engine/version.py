@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # ===========================================================================
 # eXe
-# Copyright 2004-2006, University of Auckland
+# Copyright 2004-2006 University of Auckland
+# Copyright 2006-2007 Tairawhiti Polytechnic
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +21,6 @@
 
 """
 Version Information
-2006-04-03
 """
 
 project        = "exe"
@@ -31,6 +31,9 @@ try:
     from version_svn import revision
 except ImportError:
     pass
+
+# avoid using ':' in pathnames built from revision
+revision = revision.sub(':', '-')
 
 version        = release + "." + revision
 
