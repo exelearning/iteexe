@@ -251,6 +251,8 @@ class MagnifierField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
+    persistenceVersion = 1
+    
     def __init__(self, name, instruc=""):
         """
         """
@@ -262,6 +264,7 @@ class MagnifierField(Field):
         self.glassSize     = "2"
         self.initialZSize  = "100"
         self.maxZSize      = "150"
+        self.message       = ""
 
 
     def setImage(self, imagePath):
@@ -297,6 +300,12 @@ class MagnifierField(Field):
         # another package).  We should probably revisit this.
         if self.defaultImage:
             self.setImage(self.defaultImage)
+            
+    def _upgradeFieldToVersion1(self):
+        """
+        Upgrades to exe v0.24
+        """
+        self.message   = ""
             
 #===============================================================================
 

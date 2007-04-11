@@ -621,14 +621,24 @@ class MagnifierElement(Element):
         """
         Process arguments from the web server.
         """
+        self.field.message = ""
         if "path"+self.id in request.args:
-            self.field.setImage(request.args["path"+self.id][0])
+            path = request.args["path"+self.id][0]
+            if path.lower().endswith(".jpg") or path.lower().endswith(".jpeg"):
+                self.field.setImage(request.args["path"+self.id][0])
+            elif path <> "":
+                self.field.message = _(u"Please select a .jpg file.")
+                self.field.idevice.edit = True
 
         if "width"+self.id in request.args:
             self.field.width = request.args["width"+self.id][0]
 
         if "height"+self.id in request.args:
             self.field.height = request.args["height"+self.id][0]
+            
+        if "action" in request.args and request.args["action"][0]=="addJpgImage" and \
+           request.args["object"][0]==self.id:
+            self.field.idevice.edit = True
             
             
 
@@ -663,6 +673,8 @@ class MagnifierElement(Element):
         html += u'<input type="button" class="block" '
         html += u' onclick="addJpgImage(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select an image (JPG file)")
+        if self.field.message <> "":
+            html += '<span style="color:red">' + self.field.message + '</span>'
         
         html += u'<div class="block"><b>%s</b>' % _(u"Display as:")
         html += common.elementInstruc(self.field.idevice.dimensionInstruc)
