@@ -1,4 +1,0 @@
-
-		<resource identifier="$identifier" type="webcontent" href="$href">
-			<file href="$filehref"/>
-		</resource>

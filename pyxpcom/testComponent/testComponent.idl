@@ -1,9 +1,0 @@
-#include "nsISupports.idl"
-[scriptable, uuid(ee147fa8-c8a7-11db-90df-000c76eeac0f)]
-interface nsIEXESimple : nsISupports
-{
-    attribute wstring yourName;
-    void write();
-    void change(in wstring aValue);
-};
-

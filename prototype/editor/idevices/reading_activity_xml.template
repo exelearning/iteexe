@@ -1,7 +1,0 @@
-  <reading_activity>        
-        <description>$description</description>
-		<url>$url</url>
-		<instruction>$instruction</instruction>
-		<feedback>$feedback</feedback>
-		<subunitidentifier>$subunitidentifier</subunitidentifier>
-   </reading_activity>

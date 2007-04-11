@@ -1,6 +1,0 @@
-	<idevice>       
-		<idevice_name>activity</idevice_name>
-		<actname>$actname</actname>
-		<description>$description</description>
-		<subunitidentifier>$subunitidentifier</subunitidentifier>
-	</idevice>

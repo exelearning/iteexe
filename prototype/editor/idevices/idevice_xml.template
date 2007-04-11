@@ -1,6 +1,0 @@
-  <idevice>
-	<idevice_id>$ideviceid</idevice_id>
-	<idevice_name>$idevice_name</idevice_name>
-	<idevice_shortname>$idevice_shortname</idevice_shortname>
-	<idevice_description>$idevice_description</idevice_description>
-  </idevice>

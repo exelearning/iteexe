@@ -1,1 +1,0 @@
-After running "sudo scons install" in parent directory, copy the 'testComponent.py' and 'testComponent.xpt' into /usr/lib/firefox/components, then restart ff2 and navigate to the 'runtest.html' page and play with the controls.

@@ -1,9 +1,0 @@
-    <course>
-        <title>$title</title>
-        <shorttitle>$shorttitle</shorttitle>
-		<coursetype>$coursetype</coursetype>
-		<parse_h3>$parse_h3</parse_h3>
-        <graphic>$graphic</graphic>
-        <courseidentifier>$courseidentifier</courseidentifier>
-        <description>$description</description>
-    </course>
