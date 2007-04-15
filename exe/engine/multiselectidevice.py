@@ -64,7 +64,7 @@ encountered in their study </li>
 distractors </li>
 <li> Distractors should be incorrect but plausible </li>
 </ul>
-"""), u"", "question")
+"""), u"question")
         self.emphasis   = Idevice.SomeEmphasis
         self.questions  = []
         self.addQuestion()
