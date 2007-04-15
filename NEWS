@@ -1,3 +1,13 @@
+* Rewrite anchor tags in textareas when in preview mode to use local browser
+* Restrict Image Magnifier selection to jpg images
+* Fix position of idevice edit button in preview mode
+* Fix Reading Activity display after changing language preference
+* Fix alignment of attachment idevice in edit mode
+* Improve version check for ready2run deletion/extraction
+* Improve check for a copy of eXe server already running on launch
+* Updated translations
+* Update to BeautifulSoup 2.1.1 for wiki parsing
+
 Version 0.23 (r2729)
 * Change FLV player to FlowPlayer
 * Move Refresh menu button to a Tools menu item
