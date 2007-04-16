@@ -1,9 +1,0 @@
-# Pootle preferences for project exe, language de
-
-rights:
-	default = u'view, suggest, translate, archive, pocompile, commit'
-	nobody  = u'view'
-	jim = u'view, suggest, translate, review, archive, pocompile, assign, commit'
-	ralf = u'view, suggest, translate, archive, pocompile, commit'
-	cs301 = u'view, suggest, translate, archive, pocompile, commit'
-

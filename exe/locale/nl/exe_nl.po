@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-03-22 22:16+0000\n"
-"PO-Revision-Date: 2007-03-30 12:14+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-04-03 02:31+1200\n"
+"Last-Translator: Dolf Gagestein <d.gagestein@aps.nl>\n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,20 +27,24 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+"<p>Als de applet gemaakt is \n"
+"met een programma in deze lijst, selecteer deze dan \n"
+"en voeg de data/applet toe. </p>\n"
+"<p>b.v. bij Geogebra applets: selecteer geogebra en voeg het .ggb bestand toe \n"
+"dat gemaakt is met Geogebra.</p>"
 
 #: exe/xului/mainpage.py:259
 #: exe/xului/mainpage.py:517
 #: exe/xului/mainpage.py:635
 #: exe/xului/mainpage.py:657
 #: exe/xului/mainpage.py:678
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"OPSLAAN MISLUKT.\n"
 "\"%s\" bestaat al.\n"
-"Probeer opnieuw met andere bestandsnaam"
+"Probeer opnieuw een andere bestandsnaam"
 
 #: exe/idevices/appletidevice.py:64
 msgid ""
@@ -50,7 +54,7 @@ msgid ""
 msgstr ""
 "\"Zoek het .txt-bestand (in het appletbestand) \n"
 "en open het. Kopieer de inhoud met <ctrl A, ctrl C> naar het codeveld \n"
-"van het applet."
+"van de applet."
 
 #: exe/webui/block.py:230
 msgid "---Move To---"
@@ -145,14 +149,13 @@ msgid "<p>If this option is checked, submitted answers with different capitaliza
 msgstr "<p>Vink deze optie aan om bij het verbeteren ook op hoofd- en kleine letters te letten.</p>"
 
 #: exe/engine/field.py:532
-#, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 "<p>Als deze optie is aangevinkt, worden alle woorden\n"
-" onmiddellijk na het intypen verbeterd, en niet pas als de invoer wordt afgesloten.\n"
+"tijdens het intypen verbeterd en niet pas bij het afronden van de oefening.\n"
 "</p>"
 
 #: exe/engine/field.py:769
@@ -188,9 +191,9 @@ msgid ""
 msgstr ""
 "<p>Met het Wikipedia iDevice kunt u trefwoorden\n"
 "opzoeken in Wikipedia en een artikel rechtstreeks opnemen in eXe.\n"
-"Het iDevice kopieert de inhoud van het artikel zoals hij is: latere aanpassingen\n"
+"Het iDevice kopieert de inhoud van het artikel van dat moment: latere aanpassingen\n"
 "in Wikipedia worden niet automatisch overgenomen. Als u de inhoud wijzigt in\n"
-"eXe worden die aanpassingen evenmin overgenomen in Wikipedia.</p><p>Artikels uit Wikipedia vallen onder de regels van GNU free documentation</p>"
+"eXe, dan worden die aanpassingen evenmin overgenomen in Wikipedia.</p><p>Artikelen uit Wikipedia vallen onder de regels van GNU free documentation</p>"
 
 #: exe/engine/idevicestore.py:351
 msgid ""
@@ -273,9 +276,8 @@ msgid "Activity"
 msgstr "Activiteit"
 
 #: exe/webui/editorpane.py:241
-#, fuzzy
 msgid "Add Field"
-msgstr "Bestanden toevoegen"
+msgstr "Veld toevoegen"
 
 #: exe/webui/element.py:298
 msgid "Add Image"
@@ -289,19 +291,16 @@ msgid "Add JPEG Image"
 msgstr "JPEG-afbeelding toevoegen"
 
 #: exe/webui/editorpane.py:90
-#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr "Voeg interactieve feedback toe aan uw iDevice."
+msgstr "Voeg Flash video toe aan uw iDevice."
 
 #: exe/webui/editorpane.py:80
-#, fuzzy
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr "Een tekstregel toevoegen aan een iDevice. Dit laat toe een label op te nemen in het iDevice."
+msgstr "Een tekstregel toevoegen aan een iDevice. Handig om een label mee toe te voegen aan het iDevice."
 
 #: exe/webui/editorpane.py:83
-#, fuzzy
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr "Invoerveld voor tekst toevoegen. Gebruikt voor invoer van beschrijving."
+msgstr "Invoerveld voor tekst toevoegen. Gebruikt voor invoer van grotere teksten."
 
 #: exe/idevices/appletidevice.py:61
 msgid ""
@@ -314,19 +313,16 @@ msgstr ""
 "Zodra ze geladen zijn, worden de bestanden onder het codeveld getoond."
 
 #: exe/webui/editorpane.py:86
-#, fuzzy
 msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr "Afbeelding toevoegen aan iDevice. Laat toe een afbeelding te kiezen uit de opgeslagen bestanden."
+msgstr "Afbeelding toevoegen aan iDevice."
 
 #: exe/webui/editorpane.py:89
-#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
 msgstr "Voeg interactieve feedback toe aan uw iDevice."
 
 #: exe/webui/editorpane.py:91
-#, fuzzy
 msgid "Add an mp3 file to your iDevice."
-msgstr "Voeg interactieve feedback toe aan uw iDevice."
+msgstr "Voeg een MP3 bestand toe aan uw iDevice."
 
 #: exe/webui/element.py:1351
 #: exe/idevices/testquestionelement.py:106
@@ -339,9 +335,8 @@ msgid "Add another Question"
 msgstr "Nieuwe vraag toevoegen"
 
 #: exe/webui/casestudyblock.py:97
-#, fuzzy
 msgid "Add another activity"
-msgstr "Nieuw alternatief toevoegen"
+msgstr "Nieuwe activiteit toevoegen"
 
 #: exe/webui/element.py:1563
 msgid "Add another option"
@@ -375,17 +370,16 @@ msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
 msgstr ""
-"Met uitlijning bepaalt u waar\n"
-"de afbeelding op het scherm staat."
+"Met uitlijning bepaalt u waar \n"
+"de afbeelding op het scherm komt."
 
 #: exe/engine/multimediaidevice.py:74
-#, fuzzy
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
 msgstr ""
-"Met uitlijning bepaalt u waar\n"
-"de afbeelding op het scherm staat."
+"Met uitlijning bepaalt u waar \n"
+"de mediaspeler op het scherm komt."
 
 #: exe/engine/field.py:570
 msgid ""
@@ -4455,29 +4449,28 @@ msgid "Typically, a Rights element will contain a rights management statement fo
 msgstr ""
 
 #~ msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
-#~ msgstr "Gebruik Nadruk om het belang te beklemtonen van de informatie die het iDevice bevat."
-#~ msgid "Add"
-#~ msgstr "Toevoegen"
-#~ msgid "Author"
-#~ msgstr "Auteur"
-#~ msgid ""
+#~ "Add"
+#~ "Author"
+#~ ""
 #~ "EXPORT FAILED.\n"
 #~ "\"%s\" already exists.\n"
 #~ "Please try again with a different filename"
 #~ "Error loading package \"%s\": %s"
-#~ msgstr "Toevoegen"
+#~ "Error loading package \"%s\": %s"
+#~ msgstr "Gebruik Nadruk om het belang te beklemtonen van de informatie die het iDevice bevat."
+#~ "Toevoegen"
+#~ "Auteur"
+#~ "Toevoegen"
 #~ "Auteur"
 #~ ""
 #~ "EXPORTEREN MISLUKT\n"
 #~ "\"%s\" bestaat al.\n"
 #~ "Probeer opnieuw met andere bestandsnaam."
-#~ msgid "Error loading package \"%s\": %s"
-#~ msgstr "Fout bij laden pakket \"%s\": %s"
+#~ "Fout bij laden pakket \"%s\": %s"
 
 #, fuzzy
 #~ msgid "Feedback Image"
-#~ msgstr "Feedback"
-#~ msgid ""
+#~ ""
 #~ "For use if you need to include an external\n"
 #~ "web page into your content. Rather than popup an external window, which can have some\n"
 #~ "problematic usability consequences, this iDevice loads the appropriate content \n"
@@ -4489,40 +4482,41 @@ msgstr ""
 #~ "%s"
 #~ "Type the question stem."
 #~ "Wikipedia Article"
+#~ "Question(s)"
+#~ "Save as"
+#~ ""
+#~ "There was an error in the export:\n"
+#~ "%s"
+#~ "Type the question stem."
+#~ "Wikipedia Article"
 #~ msgstr "Feedback"
+#~ "Feedback"
 #~ ""
 #~ "Om een extrene webpagina toe te voegen.\n"
 #~ "Het iDevice gebruikt geen extra pop-up-venster maar toont de pagina in een frame.\n"
 #~ "Alleen te gebruiken als de opgegeven inhoud ook effectief on line is."
-#~ msgid "Question(s)"
-#~ msgstr "Vraag/vragen"
-#~ msgid "Save as"
-#~ msgstr "Opslaan als"
-#~ msgid ""
-#~ "There was an error in the export:\n"
-#~ "%s"
-#~ msgstr ""
+#~ "Vraag/vragen"
+#~ "Opslaan als"
+#~ ""
 #~ "Fout bij het exporteren:\n"
 #~ "%s"
-#~ msgid "Type the question stem."
-#~ msgstr "Typ de vraag in."
-#~ msgid "Wikipedia Article"
-#~ msgstr "Wikipedia-artikel"
+#~ "Typ de vraag in."
+#~ "Wikipedia-artikel"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menu
 #~ msgid "label=\"Merging\" accesskey=\"e\""
 #~ msgstr "label=\"Samenvoegen\" accesskey=\"m\""
-# exe/xului/templates/mainpage.xul:<menu
+
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menuitem
 #~ msgid "label=\"Register Online\" accesskey=\"R\""
 #~ "Greek "
+#~ "Greek "
 #~ msgstr "label=\"Registreren\" accesskey=\"r\""
-#~ msgid "Greek "
-#~ msgstr "Grieks"
-# exe/xului/templates/mainpage.xul:<menuitem
+#~ "Grieks"
+
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #, fuzzy
@@ -4535,13 +4529,13 @@ msgstr ""
 #~ "MP3 file."
 #~ "Strong emphasis"
 #~ "Unable to connect to "
+#~ "Strong emphasis"
+#~ "Unable to connect to "
 #~ msgstr ""
 #~ "Geef een bijschrift voor de\n"
 #~ "in te zoomen afbeelding."
-#~ msgid "Strong emphasis"
-#~ msgstr "Sterke nadruk"
-#~ msgid "Unable to connect to "
-#~ msgstr "Kan niet verbinden met"
+#~ "Sterke nadruk"
+#~ "Kan niet verbinden met"
 
 #, fuzzy
 #~ msgid ""
@@ -4584,17 +4578,17 @@ msgstr ""
 #~ "Level 3: "
 #~ "Project title:"
 #~ "SCORM Multiple Choice Quiz:"
+#~ "Level 1: "
+#~ "Level 2: "
+#~ "Level 3: "
+#~ "Project title:"
+#~ "SCORM Multiple Choice Quiz:"
 #~ msgstr "Forumnaam:"
-#~ msgid "Level 1: "
-#~ msgstr "Niveau 1:"
-#~ msgid "Level 2: "
-#~ msgstr "Niveau 2:"
-#~ msgid "Level 3: "
-#~ msgstr "Niveau 3:"
-#~ msgid "Project title:"
-#~ msgstr "Titel project:"
-#~ msgid "SCORM Multiple Choice Quiz:"
-#~ msgstr "Meerkeuzetoets SCORM"
+#~ "Niveau 1:"
+#~ "Niveau 2:"
+#~ "Niveau 3:"
+#~ "Titel project:"
+#~ "Meerkeuzetoets SCORM"
 
 #, fuzzy
 #~ msgid "SCORM Quiz Experimental"
@@ -4606,28 +4600,28 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Canno  access directory named "
-#~ msgstr "Geen toegang tot de map"
-#~ msgid "Instructions for completion"
-#~ msgstr "Aanwijzingen voor invullen"
-#~ msgid "Provide a brief description of the file"
-#~ msgstr "Geef een korte omschrijving van het bestand"
-#~ msgid ""
+#~ "Instructions for completion"
+#~ "Provide a brief description of the file"
+#~ ""
 #~ "Enter the image display \n"
 #~ "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 #~ "The width and height dimensions will alter proportionally."
 #~ "ImageMagnifier"
 #~ "Magnify initial zoom? "
+#~ "ImageMagnifier"
+#~ "Magnify initial zoom? "
 #~ msgstr "Geen toegang tot de map"
+#~ "Aanwijzingen voor invullen"
+#~ "Geef een korte omschrijving van het bestand"
+#~ "Geen toegang tot de map"
 #~ "Aanwijzingen voor invullen"
 #~ "Geef een korte omschrijving van het bestand"
 #~ ""
 #~ "Geef de afmetingen voor\n"
 #~ "het weergeven van de afbeelding (in pixels). Bepaal ook de uitlijning van de\n"
 #~ "afbeelding op het scherm. Breedte en hoogte worden proportioneel aangepast."
-#~ msgid "ImageMagnifier"
-#~ msgstr "Vergrootglas"
-#~ msgid "Magnify initial zoom? "
-#~ msgstr "Originele toestand?"
+#~ "Vergrootglas"
+#~ "Originele toestand?"
 
 #, fuzzy
 #~ msgid "Project Properties Updated"
@@ -4639,9 +4633,9 @@ msgstr ""
 #, fuzzy
 #~ msgid "Properties Updated"
 #~ "Yes"
+#~ "Yes"
 #~ msgstr "Eigenschappen"
-#~ msgid "Yes"
-#~ msgstr "Ja"
+#~ "Ja"
 
 #, fuzzy
 #~ msgid "select a language"
@@ -4651,9 +4645,8 @@ msgstr ""
 #~ msgid "Select a flash file"
 #~ "<strong>Frame Height:</strong> "
 #~ "<strong>url:</strong> "
+#~ "<strong>Frame Height:</strong> "
+#~ "<strong>url:</strong> "
 #~ msgstr "Kies een Flash-film"
-#~ msgid "<strong>Frame Height:</strong> "
-#~ msgstr "<strong>Framehoogte:</strong> "
-#~ msgid "<strong>url:</strong> "
-#~ msgstr "<strong>url:</strong> "
-
+#~ "<strong>Framehoogte:</strong> "
+#~ "<strong>url:</strong> "
