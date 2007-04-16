@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-04-13 15:55+1200\n"
+"PO-Revision-Date: 2007-04-17 11:15+1200\n"
 "Last-Translator: \n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
 "MIME-Version: 1.0\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-EXE-Language: magyar nyelv\n"
+"X-EXE-Language: Magyar\n"
 
 #: exe/idevices/appletidevice.py:67
 msgid ""
@@ -4056,3 +4056,4 @@ msgstr "Jogok:"
 #: id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Jellemzően a \"Jogok\" elem tartalmazza a forrás jogkezelésére vonatkozó álláspontokat, vagy hivatkozik egy ide vonatkozó szolgáltatásra. A jogok gyakran tartalmazzák a szellemi tulajdonjogot,a szerzői jogot és egyéb tulajdonjogokat. Ha a \"Jogok\" elem hiányzik, nincs feltétel, amely alapján megállapítható lenne a forrás jogállása és egyéb jogok."
+
