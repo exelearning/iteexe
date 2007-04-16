@@ -1,7 +1,0 @@
-# Pootle preferences for project exe, language tt
-
-rights:
-  david = u'view, suggest, translate, review, archive, pocompile'
-  default = u'view, suggest, commit, translate, archive, pocompile'
-  nobody = u'view'
-  matiu = u'view, suggest, translate, review, archive, pocompile'

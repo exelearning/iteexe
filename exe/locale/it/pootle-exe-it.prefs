@@ -1,9 +1,0 @@
-# Pootle preferences for project exe, language it
-
-rights:
-	default = u'view, suggest, translate, archive, pocompile, commit'
-	nobody  = u'view'
-	gand = u'view, suggest, translate, archive, pocompile, commit'
-	myhns = u'view, suggest, translate, archive, pocompile, commit'
-	augustocostantini = u'view, suggest, translate, archive, pocompile, commit'
-

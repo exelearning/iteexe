@@ -1,6 +1,0 @@
-# Pootle preferences for project exe, language en
-
-rights:
-	default = u'view, translate, suggest, commit, archive, pocompile'
-	nobody  = u'view'
-
