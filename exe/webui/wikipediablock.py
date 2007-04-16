@@ -96,6 +96,7 @@ class WikipediaBlock(Block):
                  (_(u"Greek Wikipedia Article"), "http://el.wikipedia.org/wiki/"),
                  (_(u"Italian Wikipedia Article"), "http://it.wikipedia.org/wiki/"),
                  (_(u"Japanese Wikipedia Article"),"http://ja.wikipedia.org/wiki/"),
+                 (_(u"Magyar Wikipedia Article"),"http://hu.wikipedia.org/wiki/"),
                  (_(u"Polish Wikipedia Article"),  "http://pl.wikipedia.org/wiki/"),
                  (_(u"Portugese Wikipedia Article"), "http://pt.wikipedia.org/wiki/"),
                  (_(u"Slovenian Wikipedia Article"), "http://sl.wikipedia.org/wiki/"),
