@@ -139,8 +139,6 @@ function addFeedbackImage(elementId) {
         var width = document.getElementById('width'+elementId);
         width.value = "100"
         changeImageWidth(elementId)
-      //  var height = document.getElementById('height'+elementId);
-      //  height.value = "100"
         theForm.submit()
     }
 }

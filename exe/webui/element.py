@@ -1611,14 +1611,14 @@ class QuizQuestionElement(Element):
         return html
 
     
-    def renderView(self,img):
+    def renderView(self, img1, img2):
         """
         Returns an XHTML string for viewing this element
         """
         html  = self.field.question+" &nbsp;&nbsp;\n"
         if self.field.hint:
             html += '<span '
-            html += ' style="background-image:url(\'%s\');">' % img
+            html += ' style="background-image:url(\'%s\');">' % img1
             html += '\n<a onmousedown="javascript:updateCoords(event);'
             html += 'showMe(\'hint%s\', 350, 100);" ' % self.id
             html += 'style="cursor:help;align:center;vertical-align:middle;" '
@@ -1629,7 +1629,7 @@ class QuizQuestionElement(Element):
             html += 'style="display:none; z-index:99;">'
             html += '<div style="float:right;" >'
             html += '<img alt="%s" ' % _('Close')
-            html += 'src="/images/stock-stop.png" title="%s"' % _('Close')
+            html += 'src="%s" title="%s"' % (img2, _('Close'))
             html += " onmousedown=\"javascript:hideMe();\"/></div>"
             html += '<div class="popupDivLabel">'
             html += _("Hint")

@@ -31,7 +31,7 @@ from exe                  import globals as G
 log = logging.getLogger(__name__)
 
 # Constants
-DEFAULT_IMAGE = 'empty.gif'#'exe_logo.png' #
+DEFAULT_IMAGE = 'empty.gif'
 
 # ===========================================================================
 class Question(Persistable):
