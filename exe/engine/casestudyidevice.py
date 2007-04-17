@@ -31,7 +31,7 @@ from exe                  import globals as G
 log = logging.getLogger(__name__)
 
 # Constants
-DEFAULT_IMAGE = 'empty.gif'
+DEFAULT_IMAGE = 'empty.gif'#'exe_logo.png' #
 
 # ===========================================================================
 class Question(Persistable):
@@ -39,7 +39,7 @@ class Question(Persistable):
     A Case iDevice is built up of question and options.  Each option can 
     be rendered as an XHTML element
     """
-
+    persistenceVersion = 1
     def __init__(self, idevice):
         """
         Initialize 
@@ -57,6 +57,14 @@ class Question(Persistable):
                                     "on completion of this question")) 
         self.image.idevice = idevice
         self.image.defaultImage = idevice.defaultImage
+        self.image.isFeedback   = True
+        
+    def upgradeToVersion1(self):
+        """
+        Upgrades to version 0.24
+        """
+        log.debug(u"Upgrading iDevice")
+        self.image.isFeedback   = True
     
 
 # ===========================================================================

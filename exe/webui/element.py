@@ -344,7 +344,12 @@ class ImageElement(Element):
 
         html += u'<div class="block">'
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addImage(\'%s\')"' % self.id
+        function = ""
+        if self.field.isFeedback:
+            function = "addFeedbackImage"
+        else:
+            function = "addImage"
+        html += u'<input type="button" onclick="%s(\'%s\')"' % (function, self.id)
         html += u' value="%s" />' % _(u"Select an image")
         html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
         html += u"<input type=\"text\" "

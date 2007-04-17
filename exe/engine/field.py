@@ -43,7 +43,7 @@ class Field(Persistable):
     rendered as an XHTML element
     """
     # Class attributes
-    persistenceVersion = 2
+    persistenceVersion = 3
     nextId = 1
 
     def __init__(self, name, instruc=""):
@@ -113,6 +113,12 @@ class Field(Persistable):
         Called from Idevices to upgrade fields to exe v0.12
         """
         pass
+    
+    def _upgradeFieldToVersion3(self):
+        """
+        Called from Idevices to upgrade fields to exe v0.24
+        """
+        pass
 
 # ===========================================================================
 class TextField(Field):
@@ -177,7 +183,7 @@ class ImageField(Field):
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
-
+    persistenceVersion = 3
     # Default value
     isDefaultImage = True
 
@@ -190,6 +196,7 @@ class ImageField(Field):
         self.imageResource = None
         self.defaultImage  = ""
         self.isDefaultImage = True
+        self.isFeedback    = False
 
     def setImage(self, imagePath):
         """
@@ -243,7 +250,12 @@ class ImageField(Field):
         else:
             self.imageResource = None
         del self.imageName
-
+        
+    def _upgradeFieldToVersion3(self):
+        """
+        Upgrades to exe v0.24
+        """
+        self.isFeedback    = False
 # ===========================================================================
 
 class MagnifierField(Field):

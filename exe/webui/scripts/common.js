@@ -120,6 +120,31 @@ function addImage(elementId) {
     }
 }
 
+// Called by the user to provide an image feedback to add to a case study idevice question
+function addFeedbackImage(elementId) {
+    var imagePath = askUserForImage()
+    if (imagePath != "") {
+        var image = document.getElementById('img'+elementId);
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        var path  = document.getElementById('path'+elementId);
+        path.value = imagePath;
+        image.src  = 'file://'+imagePath;
+        var theForm = top["authoringIFrame1"].document.getElementById('contentForm')
+        if (!theForm) {
+            theForm = document.getElementById('contentForm')
+        }
+        theForm.action.value = "addImage"
+        theForm.object.value = elementId 
+        var width = document.getElementById('width'+elementId);
+        width.value = "100"
+        changeImageWidth(elementId)
+      //  var height = document.getElementById('height'+elementId);
+      //  height.value = "100"
+        theForm.submit()
+    }
+}
+
 // Called by the user to provide an image or flash file name to add to the package
 function addJpgImage(elementId) {
     var imagePath = askUserForJpgImage()
