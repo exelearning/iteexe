@@ -1,11 +1,15 @@
 * Rewrite anchor tags in textareas when in preview mode to use local browser
 * Restrict Image Magnifier selection to jpg images
-* Fix position of idevice edit button in preview mode
+* Fix position of iDevice edit button in preview mode
+* Fix Multi-Select iDevice icon
 * Fix Reading Activity display after changing language preference
-* Fix alignment of attachment idevice in edit mode
+* Fix alignment of attachment iDevice in edit mode
+* Fix Case Study image size
+* Fix SCORM Quiz icon export
+* Add Hungarian Wikipedia
 * Improve version check for ready2run deletion/extraction
 * Improve check for a copy of eXe server already running on launch
-* Updated translations
+* Updated translations and added Hungarian and Ukranian
 * Update to BeautifulSoup 2.1.1 for wiki parsing
 
 Version 0.23 (r2729)

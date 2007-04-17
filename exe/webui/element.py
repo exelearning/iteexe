@@ -489,12 +489,12 @@ class MultimediaElement(Element):
         codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab
         #version=6,0,0,0"
         id="mp3player" height="15" width="400"> 
-        <param name="movie" value="%(mp3player)s?song_url=%(url)s&song_title=%(caption)s"> 
-        <param name="quality" value="high"> 
-        <param name="bgcolor" value="#ffffff"> 
+        <param name="movie" value="%(mp3player)s?song_url=%(url)s&song_title=%(caption)s" /> 
+        <param name="quality" value="high" /> 
+        <param name="bgcolor" value="#ffffff" /> 
         <embed src="%(mp3player)s?song_url=%(url)s&song_title=%(caption)s" quality="high"
         bgcolor="#FFFFFF" name="mp3player" type="application/x-shockwave-flash"
-        pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="400">
+        pluginspage="http://www.macromedia.com/go/getflashplayer" height="15" width="400" />
             </object>
         
         """ % {'mp3player': mp3player,

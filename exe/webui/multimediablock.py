@@ -152,7 +152,7 @@ class MultimediaBlock(Block):
        # html += u"<br/>" + self.idevice.media.caption + "</div>"
         html += self.textElement.renderView()
         html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += u"</div></div>\n"
         html += u"</div>\n"
         return html
     
