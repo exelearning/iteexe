@@ -317,6 +317,12 @@ class ImageElement(Element):
 
         if not self.field.imageResource:
             self.field.setDefaultImage()
+            
+        function = ""
+        if self.field.isFeedback:
+            function = "addFeedbackImage"
+        else:
+            function = "addImage"
 
         html  = u'<div class="block">'
         html += u'<b>'+self.field.name+':</b>\n'
@@ -325,7 +331,7 @@ class ImageElement(Element):
         html += u'<div class="block">'
         html += u'<img alt="%s" ' % _('Add Image')
         html += u'id="img%s" ' % self.id
-        html += u"onclick=\"addImage('"+self.id+"');\" "
+        html += u"onclick=\"%s('%s');\" " % (function, self.id)
         if self.field.imageResource:
             html += u'src="./resources/'+self.field.imageResource.storageName+'" '
         else:
@@ -344,11 +350,7 @@ class ImageElement(Element):
 
         html += u'<div class="block">'
         html += common.textInput("path"+self.id, "", 50)
-        function = ""
-        if self.field.isFeedback:
-            function = "addFeedbackImage"
-        else:
-            function = "addImage"
+        
         html += u'<input type="button" onclick="%s(\'%s\')"' % (function, self.id)
         html += u' value="%s" />' % _(u"Select an image")
         html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")

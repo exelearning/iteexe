@@ -137,9 +137,13 @@ function addFeedbackImage(elementId) {
         theForm.action.value = "addImage"
         theForm.object.value = elementId 
         var width = document.getElementById('width'+elementId);
+        var height = document.getElementById('height'+elementId);
         width.value = "100"
+        height.value = ""
+        theForm.submit()
         changeImageWidth(elementId)
         theForm.submit()
+        
     }
 }
 
