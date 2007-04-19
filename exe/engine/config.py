@@ -77,6 +77,8 @@ class Config:
         self.styles      = []
         # The documents that we've recently looked at
         self.recentProjects = []
+        # canonical (English) names of iDevices not to show in the iDevice pane
+        self.hiddeniDevices = []
         # Let our children override our defaults depending
         # on the OS that we're running on
         self._overrideDefaultVals()
@@ -225,6 +227,17 @@ class Config:
             for key, path in recentProjectsSection.items():
                 self.recentProjects.append(path)
                 
+        # Load the list of "hidden" iDevices
+        self.hiddeniDevices = []
+        if self.configParser.has_section('idevices'):
+            idevicesSection = self.configParser.idevices
+            for key,value in idevicesSection.items():
+                # emulate standard library's getboolean()
+                value = value.strip().lower()
+                if value == "0" or value == "no" or value == "false" or \
+                        value == "off":
+                    self.hiddeniDevices.append(key.lower())
+
         # Load the "user" section
         if self.configParser.has_section('user'):
             if self.configParser.user.has_option('locale'):

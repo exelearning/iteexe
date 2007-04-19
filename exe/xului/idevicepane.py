@@ -23,6 +23,7 @@ IdevicePane is responsible for creating the XHTML for iDevice links
 
 import logging
 from exe.webui.renderable import Renderable
+from exe import globals as G
 from nevow import stan
 import cgi
 
@@ -98,7 +99,8 @@ class IdevicePane(Renderable):
             return cmp(pt1.title, pt2.title)
         prototypes.sort(sortfunc)
         for prototype in prototypes:
-            html += self.__renderPrototype(prototype)
+            if prototype._title.lower() not in G.application.config.hiddeniDevices:
+                html += self.__renderPrototype(prototype)
 
         html += u"</listbox>\n"
         html += u"<!-- IDevice Pane End -->\n"
@@ -110,8 +112,8 @@ class IdevicePane(Renderable):
         Add the list item for an iDevice prototype in the iDevice pane
         """
         log.debug("Render "+prototype.title)
+        log.debug("_title "+prototype._title)
         log.debug("of type "+repr(type(prototype.title)))
-        #xul  = u"  <listitem label=\"" + prototype.title.replace('&', '&amp;').replace('"', '&quot;') + "\" "
         xul  = u"  <listitem label=\"" + prototype.title + "\" "
         xul += u"onclick=\"submitLink('AddIdevice', "
         xul += u"'" + prototype.id + "', 1)\"/>"""
