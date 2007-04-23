@@ -23,7 +23,7 @@ An iDevice built up from simple fields.
 
 from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
-from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField
+from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField, ImageField
 import logging
 log = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ class GenericIdevice(Idevice):
     can have a multitude of different forms all of which are just simple
     XHTML fields.
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
     
     def __init__(self, title, class_, author, purpose, tip):
         """
@@ -204,6 +204,14 @@ class GenericIdevice(Idevice):
         Upgrades to v0.20
         """
         self.nextFieldId = 0
+        
+    def upgradeToVersion9(self):
+        """
+        Upgrades to v0.24
+        """
+        for field in self.fields:
+            if isinstance(field, ImageField):
+                field.isFeedback = False
 
         
 

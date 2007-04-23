@@ -33,7 +33,7 @@ class ImageMagnifierIdevice(Idevice):
     A ImageMagnifier Idevice is one built up from an image and free text.
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
     
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
@@ -92,4 +92,10 @@ when the IDevice loads, as a percentage of the original image size""")
 as a percentage of the original image size""")
         self._glassSizeInstruc           = x_(u"""This chooses the initial size 
 of the magnifying glass""")
+        
+    def upgradeToVersion2(self):
+        """
+        Upgrades to v0.24
+        """
+        self.imageMagnifier.isDefaultImage = False
 # ===========================================================================

@@ -353,6 +353,8 @@ class ImageElement(Element):
         
         html += u'<input type="button" onclick="%s(\'%s\')"' % (function, self.id)
         html += u' value="%s" />' % _(u"Select an image")
+        if self.field.imageResource  and not self.field.isDefaultImage:
+            html += '<p style="color: red;">'+ self.field.imageResource.storageName + '</P>'
         html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
@@ -440,7 +442,7 @@ class MultimediaElement(Element):
         
         
         if self.field.mediaResource:
-            html += '<p style="color: red;">'+ self.field.mediaResource.userName + '</P>'
+            html += '<p style="color: red;">'+ self.field.mediaResource.storageName + '</P>'
             
         html += '<br/><b>%s</b><br/>' % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.field.caption)
@@ -680,6 +682,8 @@ class MagnifierElement(Element):
         html += u'<input type="button" class="block" '
         html += u' onclick="addJpgImage(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select an image (JPG file)")
+        if self.field.imageResource and not self.field.isDefaultImage:
+            html += '<p style="color: red;">'+ self.field.imageResource.storageName + '</P>'
         if self.field.message <> "":
             html += '<span style="color:red">' + self.field.message + '</span>'
         
@@ -1016,6 +1020,8 @@ class FlashElement(Element):
         html += u'<input type="button" onclick="addFlash(\'%s\')"' % self.id
         html += u' value="%s" />' % _(u"Select Flash Object")
         html += common.elementInstruc(self.field.fileInstruc)
+        if self.field.flashResource:
+            html += '<p style="color: red;">'+ self.field.flashResource.storageName + '</P>'
         html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
         html += u"<input type=\"text\" "
         html += u"id=\"width"+self.id+"\" "
@@ -1095,6 +1101,8 @@ class FlashMovieElement(Element):
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a flash video")
+        if self.field.flashResource:
+            html += '<p style="color: red;">'+ self.field.flashResource.storageName + '</P>'
         if self.field.message <> "":
             html += '<span style="color:red">' + self.field.message + '</span>'
 
