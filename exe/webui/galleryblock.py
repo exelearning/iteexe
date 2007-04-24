@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2007 New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -69,7 +70,7 @@ class GalleryBlock(Block):
             if i == 1:
                 html += ['    <tr>']
             html += [u'      <td width="%spx">' % (width+6)]
-            html += perCell(image)
+            html += perCell(image, i-1)
             html += [u'      </td>']
             if i == self.thumbnailsPerRow:
                 html += ['    </tr>']
@@ -189,7 +190,7 @@ class GalleryBlock(Block):
                      _(u'No Images Loaded'),
                      u'</div>']
         else:
-            def genCell(image):
+            def genCell(image, i):
                 """Generates a single cell of our table"""
                 def submitLink(method):
                     """Makes submitLink javascript code"""
@@ -277,7 +278,7 @@ class GalleryBlock(Block):
                     _(u'No Images Loaded'),
                     u'</div>']
         else:
-            def genCell(image):
+            def genCell(image, i):
                 """
                 Generates a single table cell
                 """
@@ -286,7 +287,7 @@ class GalleryBlock(Block):
                 return [u'        <a title="%s" ' % title,
                         u'         href="#"',
                         u'         onclick="window.open(',
-                        u"'%s', 'galleryImage', " % self.idevice.htmlSrc +
+                        u"'%s?i=%d', 'galleryImage', " % (self.idevice.htmlSrc, i) +
                         u"'menubar=no,alwaysRaised=yes,dependent=yes," +
                         u"width=640," +
                         u"height=480,scrollbars=yes," +

@@ -6,9 +6,11 @@
 * Fix alignment of attachment iDevice in edit mode
 * Fix Case Study image size
 * Fix SCORM Quiz icon export
+* Add image and media filenames when re-editing iDevices
 * Add Hungarian Wikipedia
 * Add Quit button to iDevice editor
 * Add [idevices] section to exe.conf to prevent some from showing in list
+* Change Image Gallery popup Javascript to start at image other than first
 * Improve version check for ready2run deletion/extraction
 * Improve check for a copy of eXe server already running on launch
 * Updated translations and added Hungarian and Ukranian
