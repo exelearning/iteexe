@@ -79,7 +79,7 @@ class AttachmentBlock(Block):
         if self.idevice.userResources:
             label += u': '
             label += u'<span style="text-decoration:underline">'
-            label += self.idevice.userResources[0].userName
+            label += self.idevice.userResources[0].storageName
             label += u'</span>\n'
         html += u'<div>' 
         html += common.formField('textInput',
