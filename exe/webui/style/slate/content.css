@@ -74,6 +74,9 @@ input.feedbackbutton {
     padding-top: 10px;
 }
 
+.iDevice li {
+	list-style-position: outside;
+}
 
 /* styles for image with text iDevice */
 

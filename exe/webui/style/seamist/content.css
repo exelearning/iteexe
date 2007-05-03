@@ -90,7 +90,11 @@ div#nodeDecoration {
     font-size: 17px;
     letter-spacing: 1px;
     font-weight: normal;
-}    
+}  
+
+.iDevice li {
+	list-style-position: outside;
+}
 
 input.feedbackbutton {
     background: #C6E2FA;

@@ -107,6 +107,10 @@ div#nodeDecoration {
    padding-left: 10px;
 }
 
+.iDevice li {
+	list-style-position: outside;
+}
+
 p.reading_reference {
    font-style: italic;        
 }

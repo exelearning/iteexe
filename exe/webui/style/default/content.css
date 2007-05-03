@@ -68,7 +68,7 @@ div#nodeDecoration {
 
 
 .iDevice li {
-	list-style-position: inside;
+	list-style-position: outside;
 }
 
 .iDeviceTitle {

@@ -123,6 +123,10 @@ p.reading_feedback {
     padding-top: 60px;
 }
 
+.iDevice li {
+	list-style-position: outside;
+}
+
 /* styles for image with text iDevice */
 
 .image_text { 
