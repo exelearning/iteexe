@@ -23,7 +23,8 @@ An iDevice built up from simple fields.
 
 from exe.engine.idevice import Idevice
 # For backward compatibility Jelly expects to find a Field class
-from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField, ImageField
+from exe.engine.field   import Field, TextField, TextAreaField, FeedbackField 
+from exe.engine.field   import ImageField, AttachmentField
 import logging
 log = logging.getLogger(__name__)
 

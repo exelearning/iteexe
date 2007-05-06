@@ -446,7 +446,7 @@ class MultimediaElement(Element):
             
         html += '<br/><b>%s</b><br/>' % _(u"Caption:")
         html += common.textInput("caption" + self.id, self.field.caption)
-        html += common.elementInstruc(self.field.captionInstruc)
+        html += common.elementInstruc(self.field.captionInstruc)+ '<br/>'
 
 
         return html
@@ -613,7 +613,60 @@ pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaP
   
 
 #============================================================================
+class AttachmentElement(Element):
+    """
+    for attachment element processing
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
 
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if "path"+self.id in request.args:
+            self.field.setAttachment(request.args["path"+self.id][0])
+        
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        log.debug("renderEdit")
+
+        html  = ""
+        label = _(u'Filename:')
+        if self.field.attachResource:
+            label += u': '
+            label += u'<span style="text-decoration:underline">'
+            label += self.field.attachResource.storageName
+            label += u'</span>\n'
+        html += '<b>%s</b>' % label
+        html += common.elementInstruc(self.field.instruc)+'<br/>'
+        html += common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += u' value="%s" /><br/>\n' % _(u"Select a file")
+
+        return html
+
+    def renderView(self):
+        """
+        Returns an XHTML string for previewing this image
+        """
+        html = ""
+        if self.field.attachResource:
+            html += u"<a style=\"cursor: pointer;\" "
+            html += u" onclick=\"window.open('resources/"
+            html += self.field.attachResource.storageName
+            html += u"', '_blank');\" >"
+            html += self.field.attachResource.storageName
+            html += u"</a><br/>\n"
+        return html
+    
+#================================================================================
 
 class MagnifierElement(Element):
     """

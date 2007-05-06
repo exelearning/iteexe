@@ -23,9 +23,10 @@ a given field.
 
 import logging
 from exe.engine.field  import TextField, TextAreaField, ImageField, FeedbackField
-from exe.engine.field  import MultimediaField, FlashField
+from exe.engine.field  import MultimediaField, FlashField, AttachmentField
 from exe.webui.element import TextElement, TextAreaElement, ImageElement
 from exe.webui.element import FeedbackElement, MultimediaElement, FlashElement
+from exe.webui.element import AttachmentElement
 
 log = logging.getLogger(__name__)
 
@@ -45,7 +46,8 @@ class ElementFactory(object):
                                ImageField:     ImageElement,
                                FeedbackField:  FeedbackElement,
                                FlashField:     FlashElement,
-                               MultimediaField: MultimediaElement}
+                               MultimediaField: MultimediaElement,
+                               AttachmentField: AttachmentElement}
 
     def createElement(self, field):
         """

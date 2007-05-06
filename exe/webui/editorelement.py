@@ -324,3 +324,42 @@ class MultimediaEditorElement(EditorElement):
         html += common.elementInstruc(self.field.captionInstruc)
         html += "<br/>\n"
         return html
+    
+#==================================================================================
+
+class AttachmentEditorElement(EditorElement):
+    """ 
+    AttachmentElement is an attachment
+    """
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        html  = common.textInput("name"+self.id, self.field.name, 25)
+        html += common.submitImage("deleteField", self.id, 
+                                   "/images/stock-cancel.png", 
+                                   _("Delete"), 1)
+        html += "<br/>\n"
+
+        html += common.formField('richTextArea', '','instruc',
+                                 self.id, '',
+                                 self.field.instruc)
+        return html
+    
+
+    def renderPreview(self):
+        """
+        Returns an XHTML string with the form element for previewing this field
+        """
+        html  = "<b>" + self.field.name + "</b> "
+        
+        html += "<br/>" 
+        html += common.textInput("path"+self.id, "", 50)
+        html += u'<input type="button" ' 
+        html += u' value="%s" />' % _(u"Select a file")
+        if self.field.instruc != "":
+            html += common.elementInstruc(self.field.instruc)
+        html += "<br/>\n"
+        return html
+

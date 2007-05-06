@@ -946,7 +946,40 @@ to provide the learner with.""")
         option.question = self
         option.idevice  = self.idevice
         self.options.append(option)
-        
+     
+# ===========================================================================
+
+class AttachmentField(Field):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+    """
+
+    def __init__(self, name, instruc=""):
+        """
+        """
+        Field.__init__(self, name, instruc)
+        self.attachResource = None
+
+    def setAttachment(self, attachPath):
+        """
+        Store the attachment file in the package
+        Needs to be in a package to work.
+        """
+        log.debug(u"setAttachment "+unicode(attachPath))
+        resourceFile = Path(attachPath)
+
+        assert(self.idevice.parentNode,
+               'Attach '+self.idevice.id+' has no parentNode')
+        assert(self.idevice.parentNode.package,
+               'iDevice '+self.idevice.parentNode.id+' has no package')
+
+        if resourceFile.isfile():
+            if self.attachResource:
+                self.attachResource.delete()
+            self.attachResource = Resource(self.idevice, resourceFile)
+        else:
+            log.error('File %s is not a file' % resourceFile)
         
 
 # ===========================================================================

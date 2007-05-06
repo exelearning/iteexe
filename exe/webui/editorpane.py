@@ -24,13 +24,14 @@ The EditorPane is responsible for creating new idevice
 import logging
 from exe.webui                 import common
 from exe.engine.field          import TextField, TextAreaField, ImageField, FlashField
-from exe.engine.field          import FeedbackField, MultimediaField
+from exe.engine.field          import FeedbackField, MultimediaField, AttachmentField
 from exe.webui.editorelement   import TextEditorElement
 from exe.webui.editorelement   import TextAreaEditorElement
 from exe.webui.editorelement   import ImageEditorElement
 from exe.webui.editorelement   import FeedbackEditorElement
 from exe.webui.editorelement   import FlashEditorElement
 from exe.webui.editorelement   import MultimediaEditorElement
+from exe.webui.editorelement   import AttachmentEditorElement
 from exe.engine.idevice        import Idevice
 from exe.engine.genericidevice import GenericIdevice
 from exe.engine.path           import Path
@@ -87,8 +88,9 @@ class EditorPane(object):
                                  u"the user to insert an image into the  "
                                  u"iDevice.")
         self._feedbackInstruc = x_(u"Add an interactive feedback field to your iDevice.")
-        self._flashInstruc = x_(u"Add a flash video to your iDevice.")
-        self._mp3Instruc = x_(u"Add an mp3 file to your iDevice.")
+        self._flashInstruc    = x_(u"Add a flash video to your iDevice.")
+        self._mp3Instruc      = x_(u"Add an mp3 file to your iDevice.")
+        self._attachInstruc   = x_(u"Add an attachment file to your iDevice.")
 
         self.style            = "default"
    
@@ -105,6 +107,7 @@ class EditorPane(object):
     feedbackInstruc = lateTranslate('feedbackInstruc')
     flashInstruc    = lateTranslate('flashInstruc')
     mp3Instruc      = lateTranslate('mp3Instruc')
+    attachInstruc   = lateTranslate('attachInstruc')
     
     def setIdevice(self, idevice):
         """
@@ -144,12 +147,14 @@ class EditorPane(object):
                  _(u"Enter instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
+            self.idevice.edit = True
         
         if "addTextArea" in request.args:
             field = TextAreaField(_(u"Enter the label here"), 
                  _(u"Enter the instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
+            self.idevice.edit = True
            
                 
         if "addImage" in request.args:
@@ -159,6 +164,7 @@ class EditorPane(object):
             field.defaultImage = unicode(imagePath.abspath())
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
+            self.idevice.edit = True
             
             
         if "addFeedback" in request.args:
@@ -167,6 +173,7 @@ class EditorPane(object):
 data is entered into this field."""))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
+            self.idevice.edit = True
             
         #if "addFlash" in request.args:
             #print "add a flash"
@@ -181,6 +188,15 @@ data is entered into this field."""))
                  _(u"Enter the instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
+            self.idevice.edit = True
+            
+        if "addAttachment" in request.args:
+
+            field = AttachmentField(_(u"Enter the label here"), 
+                 _(u"Enter the instructions for completion here"))
+            field.setIDevice(self.idevice)
+            self.idevice.addField(field)
+            self.idevice.edit = True
             
         if ("action" in request.args and 
             request.args["action"][0] == "selectIcon"):
@@ -212,12 +228,13 @@ data is entered into this field."""))
         Building up element array
         """
         self.elements  = []
-        elementTypeMap = {TextField:      TextEditorElement,
-                          TextAreaField:  TextAreaEditorElement,
-                          ImageField:     ImageEditorElement,
-                          FeedbackField:  FeedbackEditorElement,
+        elementTypeMap = {TextField:       TextEditorElement,
+                          TextAreaField:   TextAreaEditorElement,
+                          ImageField:      ImageEditorElement,
+                          FeedbackField:   FeedbackEditorElement,
                           MultimediaField: MultimediaEditorElement,
-                          FlashField:     FlashEditorElement}
+                          FlashField:      FlashEditorElement,
+                          AttachmentField: AttachmentEditorElement}
         
         for field in self.idevice.fields:
             elementType = elementTypeMap.get(field.__class__)
@@ -247,8 +264,8 @@ data is entered into this field."""))
         html += common.elementInstruc(self.imageInstruc) + "<br/>"
         html += common.submitButton("addFeedback", _("Feedback"))
         html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
-        #html += common.submitButton("addFlash", _("Flash"))
-        #html += common.elementInstruc(self.flashInstruc) + "<br/>"
+        html += common.submitButton("addAttachment", _("Attachment"))
+        html += common.elementInstruc(self.attachInstruc) + "<br/>"
         html += common.submitButton("addMP3", _("MP3"))
         html += common.elementInstruc(self.mp3Instruc) + "<br/>"
         html += "</fieldset>\n"
