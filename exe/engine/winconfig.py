@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe config
 # Copyright 2004-2006, University of Auckland
+# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -102,5 +103,16 @@ class WinConfig(Config):
         except WindowsError:
             return Path('')
 
+    def getLongPathName(self, path):
+        """
+        Convert from Win32 short pathname to long pathname
+        """
+        from ctypes import windll, create_unicode_buffer
+        buf = create_unicode_buffer(260)
+        r = windll.kernel32.GetLongPathNameW(unicode(path), buf, 260)
+        if r == 0 or r > 260:
+            return path
+        else:
+            return buf.value
 
 # ===========================================================================

@@ -2,6 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
+# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -82,6 +83,10 @@ class Application:
         """
         self.processArgs()
         self.loadConfiguration()
+        # if a document was double clicked to launch on Win32,
+        #   make sure we have the long pathname
+        if sys.platform[:3] == "win" and self.packagePath is not None:
+            self.packagePath = self.config.getLongPathName(self.packagePath)
         installSafeTranslate()
         self.preLaunch()
         # preLaunch() has now called the server's find_port(), setting config.port >= 0 if valid:
