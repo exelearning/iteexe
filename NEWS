@@ -6,6 +6,10 @@
 * Fix alignment of attachment iDevice in edit mode
 * Fix Case Study image size
 * Fix SCORM Quiz icon export
+* Fix Win32: starting application by double-clicking long document name
+* Fix bullet point text wrap
+* Close eXe server discarding changes if Firefox window closed
+* Add attachment button/field to iDevice editor
 * Add image and media filenames when re-editing iDevices
 * Add Hungarian Wikipedia
 * Add Quit button to iDevice editor
