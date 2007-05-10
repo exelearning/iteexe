@@ -59,7 +59,7 @@ if (userAgent.indexOf("msie") != -1) {
     window.attachEvent("onbeforeunload", function() { liveevil_unload = true; } )
 } else if (document.implementation && document.implementation.createDocument) {
     /* Mozilla specific stuff (onbeforeunload is in v1.7+ only) */
-    window.addEventListener("beforeunload", function() { window.parent.doQuit(); liveevil_unload = true; }, false)
+    window.addEventListener("beforeunload", function() { liveevil_unload = true; }, false)
 }
 
 
