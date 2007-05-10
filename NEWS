@@ -8,6 +8,7 @@
 * Fix SCORM Quiz icon export
 * Fix Win32: starting application by double-clicking long document name
 * Fix bullet point text wrap
+* Fix unique resource names (bug most often seen in Image Gallery hanging)
 * Close eXe server discarding changes if Firefox window closed
 * Add attachment button/field to iDevice editor
 * Add image and media filenames when re-editing iDevices

@@ -651,6 +651,7 @@ class Path(unicode):
         path = Path(self)
         while path.exists():
             path = Path(self.dirname()/self.namebase + '.' + str(i) + self.ext)
+            i = i + 1
         return path
 
     def lines(self, encoding=None, errors='strict', retain=True):
