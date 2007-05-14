@@ -120,7 +120,7 @@ class MultimediaBlock(Block):
             html += u"</span>\n"
         html += u"<div class=\"iDevice_inner\"> "
         html += u"<div class=\"media\">\n"
-        html += self.mediaElement.renderPreview()
+        html += self.mediaElement.renderPreview()+ "</div>\n"
        # html += u"<br />" + self.idevice.media.caption + "</div>\n"
         html += self.textElement.renderPreview()
         html += u"<br/>\n"        
@@ -147,7 +147,7 @@ class MultimediaBlock(Block):
             html += self.idevice.title
             html += u"</span>\n"
         html += u"<div class=\"iDevice_inner\"> "
-        html += u"<div class=\"media\">\n"
+        html += u"<div class=\"media\">\n" + "</div>"
         html += self.mediaElement.renderView()
        # html += u"<br/>" + self.idevice.media.caption + "</div>"
         html += self.textElement.renderView()
