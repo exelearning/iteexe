@@ -29,6 +29,7 @@ from exe.webui.editorpane      import EditorPane
 from exe.webui.renderable      import RenderableResource
 from exe.engine.package        import Package
 from exe.engine.path           import Path
+from exe.engine.field          import MultimediaField
 
 log = logging.getLogger(__name__)
 
@@ -155,6 +156,7 @@ class EditorPage(RenderableResource):
         idevice.fields   = copyIdevice.fields
         idevice.emphasis = copyIdevice.emphasis
         idevice.icon     = copyIdevice.icon
+        idevice.systemResources = copyIdevice.systemResources 
         
     def __importIdevice(self, filename):
         

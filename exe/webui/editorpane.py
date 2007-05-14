@@ -188,6 +188,8 @@ data is entered into this field."""))
                  _(u"Enter the instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
+            if not 'xspf_player.swf' in self.idevice.systemResources:
+                self.idevice.systemResources += ['xspf_player.swf']
             self.idevice.edit = True
             
         if "addAttachment" in request.args:
