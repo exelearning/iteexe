@@ -9,7 +9,6 @@
 * Fix Win32: starting application by double-clicking long document name
 * Fix bullet point text wrap
 * Fix unique resource names (bug most often seen in Image Gallery hanging)
-* Close eXe server discarding changes if Firefox window closed
 * Add attachment button/field to iDevice editor
 * Add image and media filenames when re-editing iDevices
 * Add Hungarian Wikipedia
@@ -18,6 +17,7 @@
 * Change Image Gallery popup Javascript to start at image other than first
 * Improve version check for ready2run deletion/extraction
 * Improve check for a copy of eXe server already running on launch
+* Improve Gallery slideshow feature
 * Updated translations and added Hungarian and Ukranian
 * Update to Python 2.5.1
 * Update to BeautifulSoup 2.1.1 for wiki parsing

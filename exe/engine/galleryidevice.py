@@ -1,7 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007 New Zealand Tertiary Education Commission
+# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -359,7 +359,7 @@ class GalleryIdevice(_ShowsResources, Idevice):
         """
         Idevice.__init__(self, 
                          x_(u"Image Gallery"), 
-                         x_(u"University of Auckland"), 
+                         x_(u"eXe Project"), 
                          x_(u"""<p>Where you have a number of images that relate 
 to each other or to a particular learning exercise you may wish to display 
 these in a gallery context rather then individually.</p>"""),
@@ -451,22 +451,22 @@ these in a gallery context rather then individually.</p>"""),
                    T.script[
                      raw(
                          '\n'.join([
-                            '  imgObj = new Image();',
-                            '  imgObj.src = "%s";' % img.imageSrc,
-                            '  imageExpanded = true;',
-                            '  maxWidth = %s;' % self.previewSize[0],
-                            '  maxHeight = %s;' % self.previewSize[1],
-                            '  images = %s;' % [img.imageSrc.encode('utf-8') for img in self.images],
-                            '  titles = %s;' % [img.caption.encode('utf-8') for img in self.images],
-                            '  imageIdx = 0;',
+                            '  var maxWidth = %s;' % self.previewSize[0],
+                            '  var maxHeight = %s;' % self.previewSize[1],
+                            '  var thWidth = maxWidth; var thHeight = maxHeight;',
+                            '  var images = %s;' % [img.imageSrc.encode('utf-8') for img in self.images],
+                            '  var titles = %s;' % [img.caption.encode('utf-8') for img in self.images],
+                            '  var imageIdx = 0;',
                             '  var p = window.location.href.search(/=(\d+)$/);',
                             '  if (p >= 0) {',
                             '    imageIdx = parseInt(window.location.href.substr(p+1));',
                             '    if ((imageIdx < 0) || (imageIdx > (images.length - 1))) { imageIdx = 0; }',
                             '  }',
+                            '  var imageExpanded = false;',
+                            '  var imgObj = new Image();',
+                            '  imgObj.onload = function () { getShrinkMod(); toggleZoom(); }',
                             '  imgObj.src = images[imageIdx];',
                             '',
-                            '// set thumbnail size for current image',
                             'function getShrinkMod() {',
                             '  thWidth = imgObj.width;',
                             '  thHeight = imgObj.height;',
@@ -478,8 +478,7 @@ these in a gallery context rather then individually.</p>"""),
                             '    thWidth = thWidth * maxHeight / thHeight;',
                             '    thHeight = maxHeight;',
                             '  }',
-                            '}', 
-                            '',
+                            '}',
                             'function toggleZoom() {',
                             '  var imgEle = document.getElementById("the_image");',
                             '  if (imageExpanded) {',
@@ -526,11 +525,8 @@ these in a gallery context rather then individually.</p>"""),
                             '    }',
                             '    // Update image',
                             '    var imgEle = document.getElementById("the_image");',
-                            '    imgEle.setAttribute("src", images[imageIdx]);',
-                            '    imgObj = new Image();',
                             '    imgObj.src = images[imageIdx];',
-                            '    getShrinkMod();',
-                            '    toggleZoom();',
+                            '    imgEle.src = images[imageIdx];',
                             '    // Update title',
                             '    var title = document.getElementById("nodeTitle");',
                             '    title.innerHTML = titles[imageIdx];',
@@ -540,16 +536,6 @@ these in a gallery context rather then individually.</p>"""),
                    T.h1(id='nodeTitle')[img.caption],
                    T.p(align='center') [
                      T.table(width="100%")[
-                       T.tr[
-                         T.td(width="100%", align="center", colspan=3)[
-                             T.a(href="javascript:toggleZoom()")[
-                                 T.img(id='the_image',
-                                       src=unicode(img.imageSrc),
-                                       width=min(img.size[0], self.previewSize[0]),
-                                       height=min(img.size[1], self.previewSize[1]))
-                             ]
-                         ]
-                       ],
                        T.tr[
                          T.td(align="right", width="33%")[
                            T.a(href='javascript:prev()', id='btnPrev')[_('Previous')]
@@ -561,6 +547,16 @@ these in a gallery context rather then individually.</p>"""),
                          ],
                          T.td(align="left", width="33%")[
                             T.a(href='javascript:next()', id='btnNext')[_('Next')]
+                         ]
+                       ],
+                       T.tr[
+                         T.td(width="100%", align="center", colspan=3)[
+                             T.a(href="javascript:toggleZoom()")[
+                                 T.img(id='the_image',
+                                       src=unicode(img.imageSrc),
+                                       width=min(img.size[0], self.previewSize[0]),
+                                       height=min(img.size[1], self.previewSize[1]))
+                             ]
                          ]
                        ]
                      ]
