@@ -16,21 +16,20 @@ g_files = { '/usr/share/exe': ["README",
 g_oldBase = "exe/webui"
 g_newBase = "/usr/share/exe"
 
-def dataFiles(dirs):
+def dataFiles(dirs, excludes=[]):
     """Recursively get all the files in these directories"""
     import os.path
     import glob
     global dataFiles, g_oldBase, g_newBase, g_files
     for file in dirs:
         if not os.path.basename(file[0]).startswith("."):
-            if os.path.isfile(file):
+            if os.path.isfile(file) and file not in excludes:
                 path = file[len(g_oldBase)+1:]
                 dir  = g_newBase + "/" + os.path.dirname(path)
                 if dir in g_files:
                     g_files[dir].append(file)
                 else:
                     g_files[dir] = [file]
-
             elif os.path.isdir(file):
                 dataFiles(glob.glob(file+"/*"))
 
@@ -41,7 +40,8 @@ dataFiles(["exe/webui/style",
            "exe/webui/scripts",
            "exe/webui/templates",
            "exe/webui/linux-profile",
-           "exe/webui/firefox"])
+           "exe/webui/firefox"],
+	  excludes = ["mimetex.64.cgi", "mimetex-darwin.cgi", "mimetex.exe"])
 
 g_oldBase = "exe"
 g_newBase = "/usr/share/exe"
