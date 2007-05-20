@@ -2098,7 +2098,7 @@ msgstr "是, 永远"
 
 #: exe/idevices/forumelement.py:85
 msgid "Yes, initially"
-msgstr "是, 最初"
+msgstr "是, 最初 "
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
