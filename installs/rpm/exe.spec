@@ -5,7 +5,7 @@
 Summary: EXELearning SCORM course editor
 Name: exe
 Version: %{release}%{?revision:.%{revision}}
-Release: 9%{?dist}
+Release: 1%{?dist:.%{dist}}
 Source0: exe-%{version}-source.tgz
 License: GPL
 Group: Applications/Editors
