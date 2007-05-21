@@ -28,6 +28,21 @@ except OSError:
 sys.path.insert(0, os.path.join(SRCDIR, 'exe'))
 from exe.engine import version
 
+# get the distribution
+pipe = subprocess.Popen('uname -r', shell = True, stdout = subprocess.PIPE).stdout
+dist = pipe.read().strip()
+dist = dist[dist.rfind('.')+1:]
+
+# find the first release that doesn't exist
+relno = 1
+while 1:
+    clrelease = "%d.%s" % (relno, dist)
+    if not os.path.isfile(os.path.join(TOPDIR, 'RPMS/i386',
+                                       'exe-%s-%s.i386.rpm' % (version.version, clrelease))):
+        break
+    relno = relno + 1
+print "Making version: %s release: %s" % (version.version, clrelease)
+
 # create the source tarball
 os.chdir(SRCDIR)
 tarball = os.path.join(TOPDIR, 'SOURCES', 'exe-' + version.version + '-source.tgz')
@@ -40,14 +55,9 @@ try:
 except OSError, e:
     print >>sys.stderr, "Execution of tar failed:", e
 
-# get the distribution
-pipe = subprocess.Popen('uname -r', shell = True, stdout = subprocess.PIPE).stdout
-dist = pipe.read().strip()
-dist = dist[dist.rfind('.')+1:]
-
 try:
-    ret = subprocess.call('rpmbuild -tb --define="dist %s" --define="revision %s" %s' % 
-                          (dist, version.revision, tarball), shell = True)
+    ret = subprocess.call('rpmbuild -tb --define="clversion %s" --define="clrelease %s" %s' % 
+                          (version.version, clrelease, tarball), shell = True)
     if ret < 0:
         print >>sys.stderr, "Unable to run rpmbuild, signal", -ret
         sys.exit(ret)

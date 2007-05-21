@@ -1,11 +1,11 @@
-%define release 0.23.1
+%define ver 0.23.1
 
 %define pyver  %(%{__python} -c 'import sys ; print sys.version[:3]')
 
 Summary: EXELearning SCORM course editor
 Name: exe
-Version: %{release}%{?revision:.%{revision}}
-Release: 2%{?dist:.%{dist}}
+Version: %{?clversion}%{!?clversion:%{ver}}
+Release: %{?clrelease}%{!?clrelease:1%{?dist:.%{dist}}}
 Source0: exe-%{version}-source.tgz
 License: GPL
 Group: Applications/Editors
@@ -63,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Tue May 22 2007 Jim Tittsler <jim@exelearning.org>
+- optional clversion and clrelease defines to improve automation
 - remove more spurious binaries for other platforms
 - require firefox
 
