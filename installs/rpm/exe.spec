@@ -5,7 +5,7 @@
 Summary: EXELearning SCORM course editor
 Name: exe
 Version: %{release}%{?revision:.%{revision}}
-Release: 1%{?dist:.%{dist}}
+Release: 2%{?dist:.%{dist}}
 Source0: exe-%{version}-source.tgz
 License: GPL
 Group: Applications/Editors
@@ -18,6 +18,7 @@ BuildRequires: python-devel
 BuildRequires: python >= 2.4
 Requires: python-abi = %{pyver}
 Requires: python-imaging, python-zope-interface
+Requires: firefox
 Obsoletes: exe-twisted
 
 %description
@@ -32,6 +33,8 @@ eXe can be used by any Learning Management System.
 rm -f exe/webui/templates/mimetex.64.cgi exe/webui/templates/mimetex.exe
 rm -f exe/webui/templates/mimetex-darwin.cgi
 rm -f exe/msvcr71.dll
+rm -f twisted/spread/cBanana.so
+rm -f twisted/protocols/_c_urlarg.so
 
 %build
 rm -rf $RPM_BUILD_ROOT
@@ -59,6 +62,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING NEWS README
 
 %changelog
+* Tue May 22 2007 Jim Tittsler <jim@exelearning.org>
+- remove more spurious binaries for other platforms
+- require firefox
+
 * Mon May 21 2007 Jim Tittsler <jim@exelearning.org>
 - make 'Release:' distribution specific
 
