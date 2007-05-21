@@ -26,7 +26,7 @@ user_pref("capability.principal.codebase.p2.subjectName", "");
 user_pref("dom.allow_scripts_to_close_windows", true);
 user_pref("dom.popup_allowed_events", "change click dblclick mouseup reset submit keypress contextmenu");
 user_pref("dom.disable_open_during_load", false);
-user_pref("extensions.lastAppVersion", "2.0");
+user_pref("extensions.lastAppVersion", "1.5.0.10");
 user_pref("general.open_location.last_url", "about:config");
 user_pref("general.open_location.last_window_choice", 0);
 user_pref("intl.charsetmenu.browser.cache", "UTF-8");
