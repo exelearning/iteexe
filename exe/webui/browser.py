@@ -41,15 +41,21 @@ def launchBrowser(config, packageName):
     url     = u'http://127.0.0.1:%d/%s' % (config.port, quote(packageName))
     log.info(u"url "+url)
 
-    profile    = "linux-profile"
+    profile_src = "linux-profile"
+    if sys.platform[:3] == u"win":
+        profile     = "linux-profile"
+    else:
+        # workaround Debian/Ubuntu firefox launching script that requires
+        # ':/' in the pathname
+        profile = "linux-profile:"
 
     if (config.configDir/profile).exists():
         (config.configDir/profile).rmtree()
     log.info("Creating FireFox profile copied from"+
-             config.webDir/profile+" to "+
+             config.webDir/profile_src+" to "+
              config.configDir/profile)
     # Copy over the tree
-    (config.webDir/profile).copytreeFilter(config.configDir/profile, filterDir=lambda dirName: dirName.basename() != '.svn')
+    (config.webDir/profile_src).copytreeFilter(config.configDir/profile, filterDir=lambda dirName: dirName.basename() != '.svn')
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)
@@ -72,7 +78,7 @@ def launchBrowser(config, packageName):
         # Set LOGNAME so exe doesn't conflict with Firefox
         launchString  = 'LOGNAME=eXe7913 '
         launchString += config.browserPath
-        launchString += ' -profile "' + config.configDir/profile + '" '
+        launchString += ' -profile "' + config.configDir/profile + '/" '
         launchString += url
         launchString += "&"
         log.info(u'Launching firefox with: ' + launchString)
