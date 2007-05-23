@@ -39,7 +39,7 @@ if 'sftp-edu' in sys.argv or 'sftp-sf' in sys.argv:
         print
         print 'To upload you need to install paramiko python library from:'
         print 'http://www.lag.net/paramiko',
-        print 'or go: apt-get install python2.4-paramiko'
+        print 'or go: apt-get install python-paramiko'
         print 'Or remove "sftp-edu", "sft-sf" and username from command line'
         print
         sys.exit(2)
@@ -73,27 +73,24 @@ if 'build' in sys.argv:
         raise Exception('exe/debian directory/file already exists, aborting....')
     Path('debian').abspath().symlink(newDir)
     exeDir.chdir()
-    if os.path.exists(exeDir/'exe/webui/firefox'):
-        ok = True
-        print
-        if not os.path.exists('/usr/bin/fakeroot'):
-            ok = False
-            print '"fakeroot" not found. Go: sudo apt-get install fakeroot'
-        if not os.path.exists('/usr/bin/make'):
-            ok = False
-            print '"make" not found. Go: sudo apt-get install make'
-        if not os.path.exists('/usr/bin/dh_testdir'):
-            ok = False
-            print '"dh_testdir" not found. Go: sudo apt-get install dh-make'
-        if not os.path.exists('/usr/bin/ncftpget'):
-            ok = False
-            print '"ncftpget" not found. Go: sudo apt-get install ncftp'
-        if not ok:
-            sys.exit(1)
-        # If all is good do it!
-        os.system('fakeroot debian/rules binary')
-    else:
-        raise Exception('You need to copy the firefox installation to "exe/webui/firefox"')
+    ok = True
+    print
+    if not os.path.exists('/usr/bin/fakeroot'):
+        ok = False
+        print '"fakeroot" not found. Go: sudo apt-get install fakeroot'
+    if not os.path.exists('/usr/bin/make'):
+        ok = False
+        print '"make" not found. Go: sudo apt-get install make'
+    if not os.path.exists('/usr/bin/dh_testdir'):
+        ok = False
+        print '"dh_testdir" not found. Go: sudo apt-get install dh-make'
+    if not os.path.exists('/usr/bin/ncftpget'):
+        ok = False
+        print '"ncftpget" not found. Go: sudo apt-get install ncftp'
+    if not ok:
+        sys.exit(1)
+    # If all is good do it!
+    os.system('fakeroot debian/rules binary')
 
 packages = (exeDir/'..').glob('*.deb')
 if not packages:

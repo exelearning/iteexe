@@ -1,3 +1,87 @@
+python-exe (0.23.1-ubuntu1) unstable; urgency=low
+    * Rewrite anchor tags in textareas when in previ    ew mode to use local browser
+    * Restrict Image Magnifier selection to jpg images
+    * Fix position of iDevice edit button in preview mode
+    * Fix Multi-Select iDevice icon
+    * Fix Reading Activity display after changing language preference
+    * Fix alignment of attachment iDevice in edit mode
+    * Fix Case Study image size
+    * Fix SCORM Quiz icon export
+    * Fix Win32: starting application by double-clicking long document name
+    * Fix bullet point text wrap
+    * Fix unique resource names (bug most often seen in Image Gallery hanging)
+    * Add attachment button/field to iDevice editor
+    * Add image and media filenames when re-editing iDevices
+    * Add Hungarian Wikipedia
+    * Add Quit button to iDevice editor
+    * Add [idevices] section to exe.conf to prevent some from showing in list
+    * Change Image Gallery popup Javascript to start at image other than first
+    * Improve version check for ready2run deletion/extraction
+    * Improve check for a copy of eXe server already running on launch
+    * Improve Gallery slideshow feature
+    * Updated translations and added Hungarian and Ukranian
+    * Update to Python 2.5.1
+    * Update to BeautifulSoup 2.1.1 for wiki parsing
+
+ -- Jim Tittsler <jim@exelearning.org>  Wed, 23 May 2007 14:37:52 +1200
+
+python-exe (0.23.0-ubuntu1) unstable; urgency=low
+    * Change FLV player to FlowPlayer
+    * Move Refresh menu button to a Tools menu item
+    * Add links to online manual, tips and tricks, and release notes to Help menu
+    * Add iPod Notes format export
+    * Add Wikiversity
+    * Add "Clear Recent Projects" menu item
+    * Add check for existing eXe server when starting new one
+    * Allow translations for some Javascript message strings
+    * Fix Styles menu to display capitalized, alphabetized list
+    * Fix Styles menu to accept normal click-select-release
+    * Disable Nevow timeout exceptions that could be triggered by Firefox dialogs
+    * Update to TinyMCE 2.1.0
+
+ -- Jim Tittsler <jim@exelearning.org>  Mon, 02 Apr 2007 15:38:52 +1200
+
+python-exe (0.22.0-ubuntu1) unstable; urgency=low
+    * Add File... Print to print an entire course (same as export singlepage)
+    * Add attachment icon in preview mode
+    * Add Slate style
+    * Add help tips for multi-select iDevice
+    * Don't add unneeded large files to SCORM exports
+    * Fix maintaining language preference across starts
+    * Fix Merge Import and Extract
+    * Fix maths iDevice input file descriptor on Windows
+    * Fix uploads of non-ASCII filenames
+    * Fix line endings in text exports
+    * Fix file copying in applet iDevice
+    * Fix &raquo; in web export
+    * Changing to another node does not mark package as needing saving
+    * Updated translations
+    * Updated build scripts for Windows and OS X
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:59:52 +1300
+
+python-exe (0.21.0-ubuntu1) unstable; urgency=low
+    * Enabled rich text editor context menu cut/copy/paste
+    * Add import/export features for iDevice editor
+    * Update parsing of Wikipedia articles
+    * Improve text export
+    * Optimize internal resource handling
+    * Windows: removed console window
+    * Updated translations
+    * Include SCORM Quiz iDevice in Windows ready2run version
+    * fix FLV player dimensions
+    * fix web export CSS for MSIE
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:58:52 +1300
+
+python-exe (0.20.2-0ubuntu1) unstable; urgency=low
+    * Improved Japanese translation
+    * Add Live Chat to Help menu to open link that connects to IRC CGI
+    * Fix to allow use of iDevices created in 0.19
+    * OS X: Add SCORM 1.2 export schema
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 02 Feb 2007 18:57:53 +1300
+
 python-exe (0.20.1-0.1ubuntu1) unstable; urgency=low
     * Improved ability to upgrade projects made with version 0.19 and earlier
     * Updated Japanese and Chinese translations

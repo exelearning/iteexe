@@ -1,13 +1,14 @@
 Source: python-exe
-Maintainer: Matthew Sherborne <matthew@exelearning.org>
+Maintainer: Jim Tittsler <jim@eXeLearning.org>
 Section: python
+XS-Python-Version: all
 Priority: optional
 Standards-Version: 3.6.1
-Build-Depends-Indep: debhelper (>= 4.1.67), python2.4-dev
+Build-Depends-Indep: debhelper (>= 4.1.67), python-all-dev
 
 Package: python-exe
-Architecture: all
-Depends: python2.4-exe (= ${Source-Version}), python (>= 2.4), python-zopeinterface (>=3.0.0-6), python-twisted (>=2.2.0)
+Architecture: i386
+Depends: python2.4-exe (= ${Source-Version}), python (>= 2.4), python-zopeinterface (>=3.0.0-6), python-imaging
 Description: eLearning XHTML editor [dummy package]
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.
@@ -17,9 +18,18 @@ Description: eLearning XHTML editor [dummy package]
  built for Debian's default Python version.
 
 Package: python2.4-exe
-Architecture: all
-Depends: python (>= 2.4), python2.4-zopeinterface (>=3.0.0-6), python2.4-twisted (>=2.2.0)
+Architecture: i386
+Depends: python (>= 2.4), python-zopeinterface (>=3.0.0-6), python-imaging
 Description: eLearning XHTML editor
  The eXe project is an authoring environment to enable teachers to publish
  web content without the need to become proficient in HTML or XML markup.
  Content generated using eXe can be used by any Learning Management System.
+
+Package: python2.5-exe
+Architecture: i386
+Depends: python (>= 2.5), python-zopeinterface (>=3.0.0-6), python-imaging
+Description: eLearning XHTML editor
+ The eXe project is an authoring environment to enable teachers to publish
+ web content without the need to become proficient in HTML or XML markup.
+ Content generated using eXe can be used by any Learning Management System.
+

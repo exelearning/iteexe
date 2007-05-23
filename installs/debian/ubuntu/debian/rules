@@ -9,7 +9,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-PYTHON_VERSIONS	= 2.4
+PYTHON_VERSIONS	= 2.4 2.5
 IS_PURE		= yes
 HAVE_DH_PYTHON	= yes
 DUMMY_PACKAGE	= python-exe
