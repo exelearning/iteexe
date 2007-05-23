@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2005, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -361,10 +362,11 @@ class MainPage(RenderableLivePage):
         get_printdir_relative2webdir() will merely strip off the initial portions of the absolute pathname
         which precede the webdir, such that the calling javascript may give an http url relative to the server path.
         """
-        web_dirname = self.config.webDir.abspath().encode('utf-8')
+        web_dirname = G.application.tempWebDir
         # at this point, go ahead and strip off this much of the exported_dir [replace it with ""], 
         # leaving "temp_print_dirs" and below, but preceding it with the local web server
-        http_relative_pathname = "http://127.0.0.1:"+str(self.config.port)+exported_dir.replace(web_dirname, "", 1)
+        http_relative_pathname = "http://127.0.0.1:"+str(self.config.port)+exported_dir.replace(G.application.tempWebDir, "", 1)
+        log.debug('printdir http_relative_pathname=' + http_relative_pathname)
         return http_relative_pathname
 
 
@@ -379,7 +381,7 @@ class MainPage(RenderableLivePage):
         # Create the parent temp print dir as hardcoded under the webdir, as: http://temp_print_dirs
         # (eventually may want to allow this information to be configured by the user, stored in globals, etc.)
         #
-        web_dirname = self.config.webDir.abspath().encode('utf-8')
+        web_dirname = G.application.tempWebDir
         under_dirname = os.path.join(web_dirname,"temp_print_dirs")
         clear_tempdir = 0
         dir_warnings = ""

@@ -2,6 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
+# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This module is for the TwiSteD web server.
 #
@@ -25,6 +26,7 @@ WebServer module
 """
 
 # Redirect std err for importing twisted and nevow
+import os
 import sys
 import socket  # to test ports already in use...
 from cStringIO import StringIO
@@ -61,6 +63,7 @@ class WebServer:
         """
         self.application = application
         self.config      = application.config
+        self.tempWebDir  = application.tempWebDir
         self.root        = PackageRedirectPage(self)   
         self.editor      = EditorPage(self.root)
         self.preferences = PreferencesPage(self.root)
@@ -161,7 +164,7 @@ class WebServer:
         self.root.putChild("style",       static.File(webDir+"/style"))
         self.root.putChild("docs",        static.File(webDir+"/docs"))
         self.root.putChild("temp_print_dirs",
-                                          static.File(webDir+"/temp_print_dirs"))
+                                          static.File(self.tempWebDir+"/temp_print_dirs"))
 
         # xul resources
         xulDir = self.config.xulDir

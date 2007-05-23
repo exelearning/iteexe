@@ -25,6 +25,8 @@ Main application class, pulls together everything and runs it.
 
 import os
 import sys
+import shutil
+from tempfile import mkdtemp
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
     sys.path.insert(0, '/usr/share/exe')
@@ -74,6 +76,7 @@ class Application:
         self.packagePath  = None
         self.webServer    = None
         self.standalone   = False # Used for the ready to run exe
+        self.tempWebDir   = mkdtemp('.eXe')
         assert globals.application is None, "You tried to instantiate two Application objects"
         globals.application = self
 
@@ -97,7 +100,7 @@ class Application:
             log.info('done serving')
         else:
             log.error('looks like the eXe server was not able to find a valid port; terminating...')
-
+        shutil.rmtree(self.tempWebDir, True)
 
     def processArgs(self):
         """
