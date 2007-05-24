@@ -6,8 +6,10 @@ Home-page: http://exelearning.org
 Author: University of Auckland
 Author-email: exe@exelearning.org
 License: GPL
-Description: The eXe project is an authoring environment to enable teachers to publish
-        web content without the need to become proficient in HTML or XML markup.
-        Content generated using eXe can be used by any Learning Management System.
+Description: The eXe project is an authoring environment to enable teachers
+        to publish web content without the need to become proficient in HTML
+        or XML markup.  Content generated using eXe can be used by any
+        Learning Management System.
         
-Platform: UNKNOWN
+Platform: i386
+

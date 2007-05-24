@@ -1,6 +1,5 @@
-This package was automatically debianized by Matthew Sherborne
-<matthew@exelearning.org> on Tuesday, 27 September, 2005 using
-dh_make (distutils 2.4.1)
+This package was converted to python-support format to match
+the new Debian Python policy.
 
 The homepage for the original package is http://exelearning.org/
 
