@@ -355,21 +355,17 @@ class MainPage(RenderableLivePage):
         if (int(rm_top_dir) != 0):
             os.rmdir(tempdir)
 
-
     def get_printdir_relative2web(self, exported_dir):
         """
-        related to the following ClearParentTempPrintDirs(), 
-        get_printdir_relative2webdir() will merely strip off the initial portions of the absolute pathname
-        which precede the webdir, such that the calling javascript may give an http url relative to the server path.
+        related to the following ClearParentTempPrintDirs(), return a
+        local URL corresponding to the exported_dir
         """
-        web_dirname = G.application.tempWebDir
-        # at this point, go ahead and strip off this much of the exported_dir [replace it with ""], 
-        # leaving "temp_print_dirs" and below, but preceding it with the local web server
-        http_relative_pathname = "http://127.0.0.1:"+str(self.config.port)+exported_dir.replace(G.application.tempWebDir, "", 1)
+        rel_name = exported_dir.replace(G.application.tempWebDir, "", 1)
+        if sys.platform[:3] == "win":
+            rel_name = rel_name.replace('\\', '/')
+        http_relative_pathname = "http://127.0.0.1:"+str(self.config.port)+'/'+rel_name
         log.debug('printdir http_relative_pathname=' + http_relative_pathname)
         return http_relative_pathname
-
-
 
     def ClearParentTempPrintDirs(self, client, log_dir_warnings):
         """
