@@ -43,8 +43,6 @@ python rpm-setup.py build
 %install
 python rpm-setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 cp -a twisted nevow formless $RPM_BUILD_ROOT%{_datadir}/exe
-rm -rf $RPM_BUILD_ROOT%{_datadir}/exe/temp_print_dirs
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/exe/temp_print_dirs
 echo %{_datadir}/exe/twisted >> INSTALLED_FILES
 echo %{_datadir}/exe/nevow >> INSTALLED_FILES
 echo %{_datadir}/exe/formless >> INSTALLED_FILES
@@ -58,10 +56,12 @@ rm -rf $RPM_BUILD_ROOT
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
 %attr(755,root,root) %{_datadir}/exe/templates/mimetex.cgi
-%attr(777,root,root) %{_datadir}/exe/temp_print_dirs
 %doc COPYING NEWS README
 
 %changelog
+* Thu May 24 2007 Jim Tittsler <jim@exelearning.org>
+- remove temp_print_dirs workaround from datadir/exe
+
 * Tue May 22 2007 Jim Tittsler <jim@exelearning.org>
 - optional clversion and clrelease defines to improve automation
 - remove more spurious binaries for other platforms
