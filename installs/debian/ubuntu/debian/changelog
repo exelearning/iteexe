@@ -1,3 +1,8 @@
+python-exe (0.23.1.2826-ubuntu1) unstable; urgency=low
+    * use python-support to build packages
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 25 May 2007 08:59:52 +1200
+
 python-exe (0.23.1.2824-ubuntu1) unstable; urgency=low
     * use python-support to build packages
 

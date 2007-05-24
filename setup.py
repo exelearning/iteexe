@@ -80,17 +80,19 @@ setup(name         = version.project,
       version      = version.release,
       description  = "eLearning XHTML editor",
       long_description = """\
-The eXe project is an authoring environment to enable teachers to publish 
-web content without the need to become proficient in HTML or XML markup.
-Content generated using eXe can be used by any Learning Management System.  
+The eXe project is an authoring environment to enable teachers
+to publish web content without the need to become proficient in
+HTML or XML markup.  Content generated using eXe can be used by
+any Learning Management System.  
 """,
       url          = "http://exelearning.org",
-      author       = "University of Auckland",
+      author       = "eXe Project",
       author_email = "exe@exelearning.org",
       license      = "GPL",
       scripts      = ["exe/exe", "exe/run-exe.sh"],
       packages     = ["exe", "exe.webui", "exe.xului", 
                       "exe.engine", "exe.export"],
       data_files   = files.items(),
+      doc_files    = ["NEWS", "Changelog", "COPYING", "README"],
       options      = opts
      )

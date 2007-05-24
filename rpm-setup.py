@@ -65,7 +65,7 @@ web content without the need to become proficient in HTML or XML markup.
 Content generated using eXe can be used by any Learning Management System.  
 """,
       url          = "http://exelearning.org",
-      author       = "University of Auckland",
+      author       = "eXe Project",
       author_email = "exe@exelearning.org",
       license      = "GPL",
       scripts      = ["exe/exe"],

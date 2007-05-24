@@ -3,13 +3,12 @@ Name: exe
 Version: 0.23.1
 Summary: eLearning XHTML editor
 Home-page: http://exelearning.org
-Author: University of Auckland
+Author: eXe Project
 Author-email: exe@exelearning.org
 License: GPL
 Description: The eXe project is an authoring environment to enable teachers
-        to publish web content without the need to become proficient in HTML
-        or XML markup.  Content generated using eXe can be used by any
-        Learning Management System.
+        to publish web content without the need to become proficient in
+        HTML or XML markup.  Content generated using eXe can be used by
+        any Learning Management System.
         
-Platform: i386
-
+Platform: UNKNOWN
