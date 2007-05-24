@@ -46,7 +46,6 @@ cp -a twisted nevow formless $RPM_BUILD_ROOT%{_datadir}/exe
 echo %{_datadir}/exe/twisted >> INSTALLED_FILES
 echo %{_datadir}/exe/nevow >> INSTALLED_FILES
 echo %{_datadir}/exe/formless >> INSTALLED_FILES
-echo %{_datadir}/exe/temp_print_dirs >> INSTALLED_FILES
 
 sed -i.bak -e 's/ /\ /g' INSTALLED_FILES
 
