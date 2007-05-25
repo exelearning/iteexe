@@ -2,6 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
+# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This module is for the TwiSteD web server.
 #
@@ -26,12 +27,31 @@ Browser module
 
 import os
 import sys
+import re
 import logging
 from urllib import quote
 from twisted.internet import reactor
  
 log = logging.getLogger(__name__)
 
+
+def setBrowserVersion(browserPath, profile_dir):
+    version = os.popen(browserPath + " -v", "r").read()
+    log.info(u"Firefox version: " + version)
+    vs = re.search(r"(?P<vs>\d+\.\d+\.\d+\.\d+)", version)
+    if vs:
+        prefs = os.path.join(profile_dir, "prefs.js")
+        try:
+            lines = open(prefs, 'rt').readlines()
+            prefs = open(prefs, 'wt')
+            for line in lines:
+                if line.find("extensions.lastAppVersion") > -1:
+                    line = re.sub(r'\d+\.\d+\.\d+\.\d+',
+                            vs.group('vs'), line, 1)
+                    log.info(u"updated browser version in prefs: " + line)
+                prefs.write(line)
+        except IOError:
+            log.info(u"Unable to update version number in Firefox preferences")
 
 def launchBrowser(config, packageName):
     """
@@ -59,6 +79,11 @@ def launchBrowser(config, packageName):
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)
+
+    # if using the system Firefox, set the version so user doesn't see
+    # the extension update check
+    if sys.platform[:5] == u"linux":
+        setBrowserVersion(config.browserPath, config.configDir/profile)
 
     if sys.platform[:3] == u"win":
         try:

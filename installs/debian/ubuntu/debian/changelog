@@ -1,3 +1,7 @@
+python-exe (0.23.1.2827-ubuntu1) unstable; urgency=low
+    * modify Firefox lastAppVersion in prefs on launch
+
+ -- Jim Tittsler <jim@exelearning.org>  Fri, 25 May 2007 08:59:52 +1200
 python-exe (0.23.1.2826-ubuntu1) unstable; urgency=low
     * use python-support to build packages
 
