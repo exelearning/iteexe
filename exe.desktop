@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=eXe
+Comment=eLearning XHTML editor
+Exec=exe %f
+Icon=exe.png
+Terminal=false
+MimeType=application/x-exe
+Categories=Application;Utility;Editor;
+StartupWMClass=eXe
+X-Desktop-File-Install-Version=0.10
+

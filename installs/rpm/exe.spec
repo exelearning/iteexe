@@ -43,6 +43,13 @@ python rpm-setup.py build
 %install
 python rpm-setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 cp -a twisted nevow formless $RPM_BUILD_ROOT%{_datadir}/exe
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps
+cp exe_48x48.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/exe.png
+echo %{_datadir}/icons/hicolor/48x48/apps/exe.png >> INSTALLED_FILES
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
+cp exe.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 echo %{_datadir}/exe/twisted >> INSTALLED_FILES
 echo %{_datadir}/exe/nevow >> INSTALLED_FILES
 echo %{_datadir}/exe/formless >> INSTALLED_FILES
@@ -55,9 +62,18 @@ rm -rf $RPM_BUILD_ROOT
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
 %attr(755,root,root) %{_datadir}/exe/templates/mimetex.cgi
+%config %{_datadir}/mime/packages/exe.xml
+%config %{_datadir}/applications/exe.desktop
 %doc COPYING NEWS README
 
+%post
+/usr/bin/update-mime-database /usr/share/mime &> /dev/null
+
 %changelog
+* Mon May 28 2007 Jim Tittsler <jim@exelearning.org>
+- add desktop file and icon
+- add MIME type and .elp glob to associate file types
+
 * Thu May 24 2007 Jim Tittsler <jim@exelearning.org>
 - remove temp_print_dirs workaround from datadir/exe
 
