@@ -56,6 +56,7 @@ configure-stamp:
 
 build: build-stamp $(PKG_INFO)
 build-stamp: configure-stamp
+	rm -rf build  dist
 	dh_testdir
 	$(call foreach_python_version, SETUP_BUILD)
 	touch build-stamp
