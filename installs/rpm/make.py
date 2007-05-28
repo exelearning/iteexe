@@ -11,7 +11,8 @@ import subprocess
 TOPDIR = os.path.join(os.environ['HOME'], '.rpm')
 
 # where the SVN exe source directory is
-SRCDIR = '/usr/local/src'
+#SRCDIR = '/usr/local/src'
+SRCDIR = os.path.abspath('../../..')
 
 # this is done in a way consistent with the other builds...
 #   even though we have the info without doing the import
