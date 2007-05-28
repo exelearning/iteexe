@@ -105,6 +105,7 @@ real-packages:
 	dh_installchangelogs $(CHANGELOG)
 	dh_installdocs -A $(PKG_INFO)
 	dh_installexamples
+	dh_installmenu
 	dh_installman
 ifndef IS_PURE        
 	dh_strip
