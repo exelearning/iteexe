@@ -30,14 +30,10 @@ g_files = { '.': ["README",
                   "NEWS", 
                   "ChangeLog",
                   "eXe_icon.ico",
-                  "Planets-HighQuality.flv",
                   "exe/webui/mr_x.gif",
                   "exe/msvcr71.dll",
                   "doc/eXe-tutorial.elp", 
-                  "installs/windows/exeLicense.txt",                  
-                  "installs/windows/eXe_applet_update.exe",
-                  "installs/windows/eXe_scormquiz_update.exe",
-                  "installs/windows/eXe_flashmovie_update.exe"]}
+                  "installs/windows/exeLicense.txt",]}
 g_oldBase = "exe/webui"
 g_newBase = "."
 def dataFiles(dirs, excludes=[]):

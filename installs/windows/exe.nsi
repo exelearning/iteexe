@@ -96,6 +96,9 @@ Section "exe" Section2
     ; Set Section Files and Shortcuts
     SetOutPath "$INSTDIR\"
     File /r "..\..\dist\*.*"
+    File "eXe_applet_update.exe"
+    File "eXe_flashmovie_update.exe"
+    File "eXe_scormquiz_update.exe"
     CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
     CreateDirectory "$SMPROGRAMS\exe"
     CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
