@@ -85,7 +85,7 @@ Section main
     ; Decompress the stuff
     File /R "..\..\dist\*.*"
     SetOutPath "$TEMP\exe\config\idevices"
-    File "..\..\exe\idevices\*test*.py"
+    File "..\..\exe\idevices\*.*"
     SetOutPath "$TEMP\exe\firefox"
     File /R "..\..\exe\webui\Mozilla Firefox\*.*"
     ; Remove the splash screen
