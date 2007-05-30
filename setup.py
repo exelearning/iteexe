@@ -37,7 +37,10 @@ files = { '/usr/share/exe': ["README",
                              "NEWS", 
                              "ChangeLog",
                              "doc/eXe-tutorial.elp",
-                             "exe/webui/mr_x.gif"]}
+                             "exe/webui/mr_x.gif"],
+          '/usr/share/applications': ["exe.desktop"],
+          '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
+        }
 
 def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
     """Recursively get all the files in these directories"""

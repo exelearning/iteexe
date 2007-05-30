@@ -44,7 +44,7 @@ python rpm-setup.py build
 python rpm-setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 cp -a twisted nevow formless $RPM_BUILD_ROOT%{_datadir}/exe
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps
-cp exe_48x48.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/exe.png
+cp exe.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/
 echo %{_datadir}/icons/hicolor/48x48/apps/exe.png >> INSTALLED_FILES
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
