@@ -1,3 +1,4 @@
+Version 0.24 (r2857)
 * Rewrite anchor tags in textareas when in preview mode to use local browser
 * Restrict Image Magnifier selection to jpg images
 * Fix position of iDevice edit button in preview mode
@@ -15,6 +16,7 @@
 * Add Hungarian Wikipedia
 * Add Quit button to iDevice editor
 * Add [idevices] section to exe.conf to prevent some from showing in list
+* Add exe.desktop and icon files to the Linux builds
 * Change Image Gallery popup Javascript to start at image other than first
 * Move temp_print_dirs to a temporary directory
 * Improve version check for ready2run deletion/extraction

@@ -2,7 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006 University of Auckland
-# Copyright 2006-2007 Tairawhiti Polytechnic
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ Version Information
 import re
 
 project        = "exe"
-release        = "0.23.1"
+release        = "0.24.0"
 revision       = "$Revision$"[11:-2]
 # if it is available, get the SVN revision
 try:
