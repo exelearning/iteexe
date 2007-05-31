@@ -25,10 +25,12 @@ cl.write("python-exe (%s-ubuntu1) unstable; urgency=low\n" % version.version)
 news = open(os.path.join(EXEDIR,'NEWS'))
 while True:
     nl = news.readline()
-    if nl[0] == '*': 
-        cl.write('    ' + news.readline())
-    else:
+    if nl.strip() == "":
         break
+    elif nl.startswith("Version"):
+        pass
+    else:
+        cl.write('    ' + nl)
 news.close()
 
 cl.write("\n")
