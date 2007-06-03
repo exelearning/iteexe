@@ -39,6 +39,9 @@ from exe.webui.mathblock              import MathBlock
 from exe.webui.multimediablock        import MultimediaBlock
 from exe.webui.rssblock               import RssBlock
 from exe.webui.multiselectblock       import MultiSelectBlock
+from exe.webui.appletblock            import AppletBlock
+from exe.webui.flashmovieblock        import FlashMovieBlock
+from exe.webui.quiztestblock          import QuizTestBlock
 
 # ===========================================================================
 
