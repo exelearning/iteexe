@@ -110,7 +110,7 @@ class IdeviceStore:
         """
         Load the Extended iDevices (iDevices coded in Python)
         """
-        self.__loadUserExtended()
+      #  self.__loadUserExtended()
 
         from exe.engine.freetextidevice       import FreeTextIdevice
         from exe.engine.multimediaidevice     import MultimediaIdevice
