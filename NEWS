@@ -1,3 +1,6 @@
+* Java applet, SCORM Quiz, and Flash Movie are now regular iDevices not plugins
+* Fix position of iDevice edit button for SCORM Quiz
+
 Version 0.24 (r2857)
 * Rewrite anchor tags in textareas when in preview mode to use local browser
 * Restrict Image Magnifier selection to jpg images
