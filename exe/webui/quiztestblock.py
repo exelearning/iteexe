@@ -359,9 +359,9 @@ class QuizTestBlock(Block):
 
         self.idevice.score = -1
         
-        html += u"</div></div>\n"
+        html += u"</div>\n"
         html += self.renderViewButtons()
-        html += u"<br/></div>\n"
+        html += u"</div>\n"
         return html
     
 
