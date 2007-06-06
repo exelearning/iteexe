@@ -53,7 +53,6 @@ class TestQuestion(Persistable):
         """
         Initialize 
         """
-        self.question             = question
         self.options              = []
         self.correctAns           = -2
         self.userAns              = -1
@@ -67,6 +66,11 @@ Click on the &lt;Add another option&gt; button to add another answer.""")
         self._correctAnswerInstruc = x_(u"""To indicate the correct answer, 
 click the radio button next to the correct option.""")
     
+        self.question             = question
+        # r3m0: will need to convert these strings into TextAreaFields,
+        # BUT - wait until this SCORM quiz loads properly from an .elp,
+        # before making changes to its upgrade path...
+        #self.questionTextArea      = TextAreaField(x_(u'Question....')
     
     # Properties
     questionInstruc      = lateTranslate('questionInstruc')

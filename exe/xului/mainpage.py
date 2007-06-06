@@ -490,8 +490,9 @@ class MainPage(RenderableLivePage):
         callback_errors = ""
         errors = 0
 
-        webDir     = Path(self.config.webDir)
+        webDir     = Path(G.application.tempWebDir)
         previewDir  = webDir.joinpath('previews')
+
         if not previewDir.exists():
             log.debug("image previews directory does not yet exist; " \
                     + "creating as %s " % previewDir)

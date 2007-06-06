@@ -182,13 +182,14 @@ class WebServer:
         # web resources
         webDir = self.config.webDir
         self.root.putChild("images",      static.File(webDir+"/images"))
-        self.root.putChild("previews",      static.File(webDir+"/previews"))
         self.root.putChild("css",         static.File(webDir+"/css"))   
         self.root.putChild("scripts",     static.File(webDir+"/scripts"))
         self.root.putChild("style",       static.File(webDir+"/style"))
         self.root.putChild("docs",        static.File(webDir+"/docs"))
         self.root.putChild("temp_print_dirs",
-                                          static.File(self.tempWebDir+"/temp_print_dirs"))
+                              static.File(self.tempWebDir+"/temp_print_dirs"))
+        self.root.putChild("previews",    
+                              static.File(self.tempWebDir+"/previews"))
 
         # xul resources
         xulDir = self.config.xulDir
