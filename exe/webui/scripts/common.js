@@ -222,14 +222,8 @@ function changeGalleryImage(galleryId, imageId) {
     }
 }
 
-// REMO: after cleaning this up, be sure to check out
-// OLD code in the webui?xului?/scripts/mainpage.js 
-// and see if it needs cleaning, too!
-//////////////////////////////////////
-
-
-//// Called by the tinyMCE (as per the user's request) to provide an 
-//// image file name to add to the package's field and idevice
+// Called by the tinyMCE (as per the user's request) to provide an 
+// image file name to add to the package's field and idevice
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
 
     var local_imagePath = askUserForImage(true);
@@ -239,17 +233,18 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     }
 
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-    var full_image_url = "file://"+local_imagePath;
     // UNescape, to remove the %20's for spaces, etc.:
     var unescaped_local_imagePath = unescape(local_imagePath);
     var oldImageStr = new String(unescaped_local_imagePath);
-    var RegExp1 = /\%/g;
+
+    // replace any previously existing :'s or %'s with %%:
+    var RegExp1 = /[\%\:]/g;
     var ReplaceStr1 = new String("%%");
-    // firstly, replace any previously existing %'s with %%:
     var oldImageStr1 = oldImageStr.replace(RegExp1, ReplaceStr1);
+
+    // and replace any path delimiters with %:
     var RegExp2 = /[\\\/]/g;
     var ReplaceStr2 = new String("%");
-    // and secondly, replace any path delimiters with %:
     var newImageStr = oldImageStr1.replace(RegExp2, ReplaceStr2);
 
     preview_imageName = newImageStr;
