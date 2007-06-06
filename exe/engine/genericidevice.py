@@ -214,7 +214,28 @@ class GenericIdevice(Idevice):
             if isinstance(field, ImageField):
                 field.isFeedback = False
 
-        
 
+    def upgradeToVersion9(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        Taking the old unicode string fields, and converting them 
+        into image-enabled TextAreaFields:
+        [see also the upgrade in field.py's FeedbackField and 
+         idevicestore.py's  __upgradeGeneric() ]
+        """
+        # Upgrade reading activity's FeedbackField
+        # which will PROBABLY already go through the proper upgrade path
+        # from its own field persistence, BUT since this is a generic idevice
+        # and is often handled differently, with generic.data and whatnot,
+        # go ahead and throw in this possibly redundant upgrade check:
+        if self.class_ == 'reading':
+            # Upgrade the FeedbackField
+            for i, field in enumerate(self.fields):
+                if isinstance(field, FeedbackField):
+                    if not hasattr(field,"content"): 
+                        # this FeedbackField has NOT been upgraded: 
+                        field.content = field.feedback 
+                        field.content_w_resourcePaths = field.feedback 
+                        field.content_wo_resourcePaths = field.feedback
 
 # ===========================================================================

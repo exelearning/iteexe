@@ -19,11 +19,14 @@
 """
 Classes to XHTML elements.  Used by GenericBlock
 """
+import os 
 import logging
 import re
 from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
+from exe.engine.galleryidevice  import GalleryImage 
+from exe.engine.galleryidevice  import GalleryImages
 
 log = logging.getLogger(__name__)
 
@@ -90,6 +93,171 @@ class Element(object):
 
 
 # ===========================================================================
+class ElementWithResources(Element):
+    """
+    Another Base class for a XHTML element.  
+    Used by TextAreaElement, FeedbackElement, and ClozeElement,
+    to handle all processing of the multiple images (and any other resources)
+    which can now be included by the tinyMCE RichTextArea.
+    """
+
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        Element.__init__(self, field)
+
+        # using GalleryImages' ease in handling all the resource details.
+        # the following are expected by GalleryImages:
+        self.images = GalleryImages(self)
+        self.nextImageId       = 0
+        self.parentNode = field.idevice.parentNode
+
+        # and hold onto the field's idevice for easy furture reference:
+        self.field_idevice = field.idevice
+
+    # genImageId is needed for GalleryImage:
+    def genImageId(self): 
+        """Generate a unique id for an image. 
+        Called by 'GalleryImage'""" 
+        self.nextImageId += 1 
+        return '%s.%s' % (self.id, self.nextImageId - 1)
+
+
+    # AND, also include:
+    def ProcessPreviewedImages(self, content):
+        """
+        to build up the corresponding resources from any images (etc.) added
+        in by the tinyMCE image-browser plug-in,
+        which will have put them into src="../previews/"
+        """
+        new_content = content
+
+        # By this point, tinyMCE's javascript file browser handler:
+        #         common.js's: chooseImage_viaTinyMCE() 
+        # has already copied the file into the web-server's relative 
+        # directory "/previews", BUT, something in tinyMCE's handler 
+        # switches "/previews" to "../previews", so beware.....
+        # 
+        # At least it does NOT quote anything, and shows it as, for example: 
+        #   <img src="../previews/%Users%r3m0w%Pictures%Remos_MiscPix% \
+        #        SampleImage.JPG" height="161" width="215" /> 
+        # old quoting-handling is still included in the following parsing,
+        # which HAD allowed users to manually enter src= "file://..." URLs, 
+        # but with the image now copied into previews, such URLS are no more.
+
+        # DESIGN NOTE: eventually the following processing should be
+        # enhanced to look at the HTML tags passed in, and ensure that
+        # what is being found as 'src="../previews/.."' is really within
+        # an IMG tag, etc.
+        # For now, though, this easy parsing is working well:
+        search_str = "src=\"../previews/" 
+        found_pos = new_content.find(search_str) 
+        while found_pos >= 0: 
+            end_pos = new_content.find('\"', found_pos+len(search_str)) 
+            if end_pos == -1: 
+                # now unlikely that this has already been quoted out, 
+                # since the search_str INCLUDES a \", but check anyway:
+                end_pos = new_content.find('&quot', found_pos+1) 
+            else: 
+                # okay, the end position \" was found, BUT beware of this 
+                # strange case, where the image file:/// URLs 
+                # were entered manually in one part of it 
+                # (and therefore escaped to &quot), AND another quote occurs 
+                # further below (perhaps even in a non-quoted file:/// via 
+                # a tinyMCE browser, but really from anything!) 
+                # So..... see if a &quot; is found in the file-name, and 
+                # if so, back the end_pos up to there.  
+                # NOTE: until actually looking at the HTML tags, and/or
+                # we might be able to do this more programmatically by 
+                # first seeing HOW the file:// is initially quoted, 
+                # whether by a \" or by &quot;, but for now, 
+                # just check this one.
+                end_pos2 = new_content.find('&quot', found_pos+1) 
+                if end_pos2 > 0 and end_pos2 < end_pos:
+                    end_pos = end_pos2
+            if end_pos >= found_pos:
+               # next, extract the actual file url, to be replaced later 
+               # by the local resource file:
+               file_url_str = new_content[found_pos:end_pos] 
+               # and to get the actual file path, 
+               # rather than the complete URL:
+               input_file_name_str = file_url_str[len(search_str):]
+
+               log.debug("ProcessPreviewedImages: found file = " \
+                           + input_file_name_str)
+    
+               # now put this into a full-path name:
+               webDir     = Path(G.application.config.webDir)
+               previewDir  = webDir.joinpath('previews')
+               server_filename = previewDir.joinpath(input_file_name_str);
+
+               # and now, extract just the filename string back out of that:
+               file_name_str = server_filename.abspath().encode('utf-8');
+
+               # Be sure to check that this file even exists before even 
+               # attempting to create a corresponding GalleryImage resource:
+               if os.path.exists(file_name_str) \
+               and os.path.isfile(file_name_str): 
+                   # note: the middle GalleryImage field is an used caption:
+                   new_GalleryImage = GalleryImage(self, '', file_name_str)
+                   new_GalleryImageResource = new_GalleryImage._imageResource
+                   resource_path = new_GalleryImageResource._storageName
+                   # and re-concatenate from the global resources name, 
+                   # to build the webUrl to the resource:
+                   resource_url = new_GalleryImage.resourcesUrl+resource_path
+                   # and finally, go ahead and replace the filename:
+                   new_content = new_content.replace(file_url_str, 
+                                                     "src=\""+resource_url)
+                   log.debug("ProcessPreviewedImages: built resource: " \
+                           + resource_url)
+               else:
+                   log.warn("file '"+file_name_str+"' does not exist; " \
+                           + "unable to include it as a possible image " \
+                           + "resource for this TextAreaElement.")
+                   # IDEALLY: would like to replace the entire 
+                   #  <img src=.....> tag with text saying "[WARNING:...]",
+                   # but this requires more parsing than we have already done
+                   # and should really wait until the full-on HTML tags
+                   # are checked, in which case an ALT tag can be used.
+                   # For now, merely replacing the filename itself with some
+                   # warning text that includes the filename:
+                   filename_warning = "src=\"WARNING_FILE="+file_name_str \
+                           +"=DOES_NOT_EXIST"
+                   new_content = new_content.replace(file_url_str, 
+                                                     filename_warning)
+                   # note: while this technique IS less than ideal, 
+                   # also remember that files will typically be
+                   # selected using the Image browser, and "should" 
+                   # therefore "always" exist. :-)
+    
+                   # DESIGN NOTE: see how GalleryImage's _saveFiles() does
+                   # the "No Thumbnail Available. Could not load original..."
+            else:
+               # end_pos < found_pos (probably == -1)
+               log.warn("ProcessPreviewedImages: file URL string appears " \
+                        + "to NOT have a terminating quote.")
+    
+            # Find the next source image in the content, continuing the loop:
+            found_pos = new_content.find(search_str, found_pos+1) 
+        
+        return new_content
+
+    
+    def MassageImageContentForRenderView(self, content):
+        """
+        Returns an XHTML string for viewing this resource-laden element 
+        upon export, since the resources will be flattened no longer exist 
+        in the system resources directory....
+        """
+        # this is used for exports/prints, etc., and needs to ensure that 
+        # any resource paths are removed:
+        resources_url_src = "src=\"resources/"
+        exported_src = "src=\""
+        export_content = content.replace(resources_url_src,exported_src)
+        return export_content
+
+# ===========================================================================
 class TextElement(Element):
     """
     TextElement is a single line of text
@@ -125,57 +293,9 @@ class TextElement(Element):
         """
         return self.field.content
 
-
 # ===========================================================================
 
-class FeedbackElement(Element):
-    """
-    FeedbackElement is a text which can be show and hide
-    """
-    def __init__(self, field):
-        """
-        Initialize
-        """
-        Element.__init__(self, field)
-
-
-    def process(self, request):
-        """
-        Process arguments from the web server.
-        """
-        if self.id in request.args:
-            self.field.feedback = request.args[self.id][0]
-
-
-    def renderEdit(self):
-        """
-        Returns an XHTML string with the form element for editing this field
-        """
-        html = common.formField('richTextArea',self.field.name,'',
-                                self.id, self.field.instruc,
-                                self.field.feedback)
-        return html
-
-
-    def renderView(self):
-        """
-        Returns an XHTML string for viewing or previewing this element
-        """
-        html = ""
-        if self.field.feedback != "":
-            html += '<div class="block">\n '
-            html += common.feedbackButton('btn' + self.id,
-                self.field.buttonCaption,
-                onclick="toggleFeedback('%s')" % self.id)
-            html += '</div>\n '
-            html += '<div id="fb%s" class="feedback" style="display: none;"> ' % self.id
-            html += self.field.feedback
-            html += "</div>\n"
-        return html
-
-# ===========================================================================
-
-class TextAreaElement(Element):
+class TextAreaElement(ElementWithResources):
     """
     TextAreaElement is responsible for a block of text
     """
@@ -183,10 +303,12 @@ class TextAreaElement(Element):
         """
         Initialize
         """
-        Element.__init__(self, field)
+        ElementWithResources.__init__(self, field)
+
         self.width  = "100%"
         if (hasattr(field.idevice, 'class_') and
-            field.idevice.class_ in ("activity", "objectives", "preknowledge")):
+            field.idevice.class_ in \
+                    ("activity", "objectives", "preknowledge")):
             self.height = 250
         else:
             self.height = 100
@@ -197,13 +319,24 @@ class TextAreaElement(Element):
         Process arguments from the web server.
         """
         if self.id in request.args:
-            self.field.content = request.args[self.id][0]
+            # process any new images and other resources courtesy of tinyMCE:
+            self.field.content_w_resourcePaths \
+                    = self.ProcessPreviewedImages(request.args[self.id][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths \
+                    = self.MassageImageContentForRenderView( \
+                                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.content = self.field.content_w_resourcePaths
 
 
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
         """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.content = self.field.content_w_resourcePaths
+
         log.debug("renderEdit content="+self.field.content+
                   ", height="+unicode(self.height))
         html = common.formField('richTextArea',self.field.name,'',
@@ -213,11 +346,18 @@ class TextAreaElement(Element):
         return html
 
     def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this element
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.content = self.field.content_w_resourcePaths
+
         content = re.sub(r'(?i)<\s*a[^>]+>', replaceLinks,
                 self.field.content)
-        return self.renderView(content=content)
+        return self.renderView(content=content, preview=True)
 
-    def renderView(self, visible=True, class_="block", content=None):
+    def renderView(self, visible=True, class_="block", content=None, 
+                    preview=False):
         """
         Returns an XHTML string for viewing or previewing this element
         """
@@ -226,10 +366,93 @@ class TextAreaElement(Element):
         else:
             visible = 'style="display:none"'
         if content is None:
+            if preview:
+                # render the resource content with resource paths: 
+                self.field.content = self.field.content_w_resourcePaths
+            else:
+                # render with the flattened content, withOUT resource paths: 
+                self.field.content = self.field.content_wo_resourcePaths
             content = self.field.content
         return '<div id="ta%s" class="%s" %s>%s</div>' % (
             self.id, class_, visible, content)
+   
+
+
+# ===========================================================================
+class FeedbackElement(ElementWithResources):
+    """
+    FeedbackElement is a text which can be show and hide
+    """
+    def __init__(self, field):
+        """
+        Initialize
+        """
+        ElementWithResources.__init__(self, field)
+
+    def process(self, request):
+        """
+        Process arguments from the web server.
+        """
+        if self.id in request.args:
+            # process any new images and other resources courtesy of tinyMCE:
+            self.field.content_w_resourcePaths = \
+                    self.ProcessPreviewedImages(request.args[self.id][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                    self.MassageImageContentForRenderView( \
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.feedback = self.field.content_w_resourcePaths
+
+    def renderEdit(self):
+        """
+        Returns an XHTML string with the form element for editing this field
+        """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.feedback = self.field.content_w_resourcePaths
+
+        html = common.formField('richTextArea',self.field.name,'',
+                                self.id, self.field.instruc,
+                                self.field.feedback)
+        return html
+
+    def renderView(self):
+        """
+        Returns an XHTML string for viewing this question element
+        """
+        return self.doRender(preview=False)
     
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this question element
+        """
+        return self.doRender(preview=True)
+
+    def doRender(self, preview=False):
+        """
+        Returns an XHTML string for viewing or previewing this element
+        """
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.feedback = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.feedback = self.field.content_wo_resourcePaths
+
+        html = ""
+        if self.field.feedback != "": 
+            html += '<div class="block">\n '
+            html += common.feedbackButton('btn' + self.id,
+                self.field.buttonCaption,
+                onclick="toggleFeedback('%s')" % self.id)
+            html += '</div>\n '
+            html += '<div id="fb%s" class="feedback" style="display: none;"> '\
+                    % self.id
+            html += self.field.feedback
+            html += "</div>\n"
+        return html
+
+
 # ===========================================================================
 
 class PlainTextAreaElement(Element):
@@ -404,6 +627,7 @@ class ImageElement(Element):
         return html
 
     
+# ===========================================================================
 class MultimediaElement(Element):
     """
     for media element processing
@@ -820,8 +1044,8 @@ class MagnifierElement(Element):
                 'FlashVars': flashVars})
         
 
-
-class ClozeElement(Element):
+#============================================================================
+class ClozeElement(ElementWithResources):
     """
     Allows the user to enter a passage of text and declare that some words
     should be added later by the student
@@ -858,7 +1082,16 @@ class ClozeElement(Element):
         Sets the encodedContent of our field
         """
         if self.editorId in request.args:
-            self.field.encodedContent = request.args[self.editorId][0]
+            # process any new images and other resources courtesy of tinyMCE:
+            self.field.content_w_resourcePaths = \
+                  self.ProcessPreviewedImages(request.args[self.editorId][0])
+            # likewise determining the paths for exports, etc.:
+            self.field.content_wo_resourcePaths = \
+                  self.MassageImageContentForRenderView(\
+                         self.field.content_w_resourcePaths)
+            # and begin by choosing the content for preview mode, WITH paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+
             self.field.strictMarking = \
                 'strictMarking%s' % self.id in request.args
             self.field.checkCaps = \
@@ -870,6 +1103,9 @@ class ClozeElement(Element):
         """
         Enables the user to set up their passage of text
         """
+        # to render, choose the content with the preview-able resource paths:
+        self.field.encodedContent = self.field.content_w_resourcePaths
+
         html = [
             # Render the iframe box
             common.formField('richTextArea', _('Cloze Text'),'',
@@ -904,10 +1140,26 @@ class ClozeElement(Element):
             ]
         return '\n    '.join(html)
 
-    def renderView(self, feedbackId=None):
+    def renderPreview(self, feedbackId=None, preview=True):
+        """
+        Just a front-end wrapper around renderView..
+        """
+        # set up the content for preview mode:
+        preview = True
+        return self.renderView(feedbackId, preview)
+
+    def renderView(self, feedbackId=None, preview=False):
         """
         Shows the text with inputs for the missing parts
         """
+
+        if preview: 
+            # to render, use the content with the preview-able resource paths:
+            self.field.encodedContent = self.field.content_w_resourcePaths
+        else:
+            # to render, use the flattened content, withOUT resource paths: 
+            self.field.encodedContent = self.field.content_wo_resourcePaths
+
         html = ['<div id="cloze%s">' % self.id]
         # Store our args in some hidden fields
         def storeValue(name):
@@ -1319,6 +1571,7 @@ class SelectOptionElement(Element):
     """
     SelectOptionElement is responsible for a block of option.  Used by
     SelectQuestionElement.
+    Which is used as part of the Multi-Select iDevice.
     """
     def __init__(self, field):
         """
@@ -1327,15 +1580,19 @@ class SelectOptionElement(Element):
         Element.__init__(self, field)
         self.index = 0
 
+        self.answerElement = TextAreaElement(field.answerTextArea)
+        self.answerId = "ans"+self.id
+        self.answerElement.id = self.answerId
+
     def process(self, request):
         """
-        Process arguments from the web server.  Return any which apply to this 
-        element.
+        Process arguments from the web server.  
+        Return any which apply to this element.
         """
         log.debug("process " + repr(request.args))
         
-        if "ans"+self.id in request.args:
-            self.field.answer = request.args["ans"+self.id][0]
+        if self.answerId in request.args:
+            self.answerElement.process(request)
                         
         if "c"+self.id in request.args:
             self.field.isCorrect = True 
@@ -1353,7 +1610,9 @@ class SelectOptionElement(Element):
         Returns an XHTML string for editing this option element
         """
         html = u"<tr><td>"
-        html += common.textArea("ans"+self.id, self.field.answer,rows="4")
+
+        html += self.answerElement.renderEdit()
+
         html += "</td><td align=\"center\">\n"
         html += common.checkbox("c"+self.id, 
                               self.field.isCorrect, self.index)
@@ -1362,21 +1621,26 @@ class SelectOptionElement(Element):
                                    "/images/stock-cancel.png",
                                    _(u"Delete option"))
         html += "</td></tr>\n"
+
         return html
 
 
-    def renderView(self):
+    def renderView(self, preview=False):
         """
         Returns an XHTML string for viewing this option element
         """
-        log.debug("renderView called")
+        log.debug("renderView called with preview = " + str(preview))
         ident = self.field.question.id + str(self.index)
         html  = '<tr><td>'      
         html += u'<input type="checkbox" id="%s"' % ident
         html += u' value="%s" >\n' %str(self.field.isCorrect)
         ansIdent = "ans" + self.field.question.id + str(self.index)
         html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
-        html += self.field.answer + "</div></td></tr>\n"
+        if preview: 
+            html += self.answerElement.renderPreview()
+        else:
+            html += self.answerElement.renderView()
+        html += "</div></td></tr>\n"
        
         return html
     
@@ -1386,6 +1650,7 @@ class SelectquestionElement(Element):
     """
     SelectQuestionElement is responsible for a block of question.  
     Used by QuizTestBlock
+    Which is used as part of the Multi-Select iDevice.
     """
             
     def __init__(self, field):
@@ -1393,7 +1658,14 @@ class SelectquestionElement(Element):
         Initialize
         """
         Element.__init__(self, field)
-        #self.index = index
+
+        self.questionElement = TextAreaElement(field.questionTextArea)
+        self.questionId = "question"+self.id
+        self.questionElement.id = self.questionId
+        self.feedbackElement = TextAreaElement(field.feedbackTextArea)
+        self.feedbackId = "feedback"+self.id 
+        self.feedbackElement.id = self.feedbackId
+
         self.options    = []
         i = 0
         for option in self.field.options:
@@ -1408,15 +1680,15 @@ class SelectquestionElement(Element):
         """
         log.info("process " + repr(request.args))
         
-        if "question"+self.id in request.args:
-            self.field.question = request.args["question"+self.id][0]
+        if self.questionId in request.args:
+            self.questionElement.process(request)
             
         if ("addOption"+unicode(self.id)) in request.args: 
             self.field.addOption()
             self.field.idevice.edit = True
             
-        if "feedback"+self.id in request.args:
-            self.field.feedback = request.args["feedback"+self.id][0]
+        if self.feedbackId in request.args:
+            self.feedbackElement.process(request)
             
         if "action" in request.args and \
            request.args["action"][0] == "del" + self.id:
@@ -1433,11 +1705,17 @@ class SelectquestionElement(Element):
         html  = u"<div class=\"iDevice\">\n"
         html += u"<b>" + _("Question:") + " </b>" 
         html += common.elementInstruc(self.field.questionInstruc)
-        html += u" " + common.submitImage("del" + self.id, self.field.idevice.id, 
+        html += u" " + common.submitImage("del" + self.id, 
+                                   self.field.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
-        html += common.textArea("question"+self.id, 
-                                    self.field.question, rows="4")
+        # rather than using questionElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format 
+        # (an extra delete-question X to the right of the question-mark)
+        html += common.richTextArea("question"+self.id, 
+                       self.questionElement.field.content_w_resourcePaths)
+
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
         html += u"<tr>"
@@ -1450,33 +1728,49 @@ class SelectquestionElement(Element):
         html += u"</tr>"
         html += u"</thead>"
         html += u"<tbody>"
-
+        
         for element in self.options:
             html += element.renderEdit() 
             
         html += u"</tbody>"
         html += u"</table>\n"
+
         value = _(u"Add another Option")    
         html += common.submitButton("addOption"+self.id, value)
         html += u"<br />"
-        html += common.formField('richTextArea', _(u'Feedback:'),
-                                 'feedback', self.id,
-                                 self.field.feedbackInstruc,
-                                 self.field.feedback)
+
+        html += self.feedbackElement.renderEdit()
+
         html += u"</div>\n"
 
         return html
 
+    def renderView(self,img=None):
+        """ 
+        Returns an XHTML string for viewing this question element 
+        """ 
+        return self.doRender(img, preview=False)
+
+    def renderPreview(self,img=None):
+        """ 
+        Returns an XHTML string for viewing this question element 
+        """ 
+        return self.doRender(img, preview=True)
     
-    def renderView(self):
+
+    def doRender(self, img, preview=False):
         """
         Returns an XHTML string for viewing this element
         """
 
-        html  = "<b>" + self.field.question +"</b><br/>\n"
+        if preview: 
+            html  = self.questionElement.renderPreview()
+        else: 
+            html  = self.questionElement.renderView()
+
         html += "<table>"
         for element in self.options:
-            html += element.renderView()      
+            html += element.renderView(preview)      
         html += "</table>"   
         html += '<input type="button" name="submitSelect"' 
         html += ' value="%s" ' % _("Submit Answer")
@@ -1484,7 +1778,12 @@ class SelectquestionElement(Element):
                                                        self.field.id)
         html += "<br/>\n"
         html += '<div id="%s" style="display:none">' % ("f"+self.field.id)
-        html += self.field.feedback
+
+        if preview: 
+            html  += self.feedbackElement.renderPreview()
+        else: 
+            html  += self.feedbackElement.renderView()
+
         html += '</div><br/>'
 
         return html
@@ -1496,6 +1795,7 @@ class QuizOptionElement(Element):
     """
     QuizOptionElement is responsible for a block of option.  Used by
     QuizQuestionElement.
+    Which is used as part of the Multi-Choice iDevice.
     """
 
     def __init__(self, field):
@@ -1505,18 +1805,25 @@ class QuizOptionElement(Element):
         Element.__init__(self, field)
         self.index = 0
 
+        self.answerElement = TextAreaElement(field.answerTextArea)
+        self.answerId = "ans"+self.id
+        self.answerElement.id = self.answerId
+        self.feedbackElement = TextAreaElement(field.feedbackTextArea)
+        self.feedbackId = "f"+self.id
+        self.feedbackElement.id = self.feedbackId
+
     def process(self, request):
         """
-        Process arguments from the web server.  Return any which apply to this 
-        element.
+        Process arguments from the web server.  
+        Return any which apply to this element.
         """
         log.debug("process " + repr(request.args))
         
-        if "ans"+self.id in request.args:
-            self.field.answer = request.args["ans"+self.id][0]
+        if self.answerId in request.args: 
+            self.answerElement.process(request)
             
-        if "f"+self.id in request.args:
-            self.field.feedback = request.args["f"+self.id][0]
+        if self.feedbackId in request.args: 
+            self.feedbackElement.process(request)
                         
         if ("c"+self.field.question.id in request.args and 
             request.args["c"+self.field.question.id][0]==str(self.index)):
@@ -1536,14 +1843,20 @@ class QuizOptionElement(Element):
         html  = u"<tr><td align=\"center\"><b>%s</b>" % _("Option")
         html += common.elementInstruc(self.field.idevice.answerInstruc)
         header = ""
-        
+
         if self.index == 0:
             header = _("Correct") + "<br/>" + _("Option")
-            
         html += u"</td><td align=\"center\"><b>%s</b>\n" % header
         html += common.elementInstruc(self.field.idevice.keyInstruc)
         html += "</td><td></td></tr><tr><td>\n" 
-        html += common.textArea("ans"+self.id, self.field.answer, rows="4")
+
+        # rather than using answerElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format 
+        # (in a table, with an extra delete-option X to the right)
+        html += common.richTextArea("ans"+self.id, 
+                          self.answerElement.field.content_w_resourcePaths)
+        
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.field.question.id, 
                               self.field.isCorrect, self.index)   
@@ -1554,45 +1867,61 @@ class QuizOptionElement(Element):
         html += "</td></tr><tr><td align=\"center\"><b>%s</b>" % _("Feedback")
         html += common.elementInstruc(self.field.idevice.feedbackInstruc)
         html += "</td><td></td><td></td></tr><tr><td>\n" 
-        html += common.richTextArea('f'+self.id, self.field.feedback)
+        
+        # likewise, rather than using feedbackElement.renderEdit(),
+        # access the appropriate content_w_resourcePaths attribute directly,
+        # since this is in a customised output format 
+        # (though less so, only difference being the header is centered)
+        html += common.richTextArea('f'+self.id, 
+                         self.feedbackElement.field.content_w_resourcePaths)
+        
         html += "</td><td></td><td></td></tr>\n"
 
         return html
     
-    def renderAnswerView(self):
+    def renderAnswerView(self, preview=False):
         """
         Returns an XHTML string for viewing and previewing this option element
         """
-        log.debug("renderView called")
+        log.debug("renderView called with preview = " + str(preview))
   
         length = len(self.field.question.options)
         html  = '<tr><td>'
-        html += '<input type="radio" name="option%s" ' % self.field.question.id
+        html += '<input type="radio" name="option%s" ' \
+                            % self.field.question.id
         html += 'id="i%s" ' % self.id
-        html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' % (self.index, 
-                                                length, self.field.question.id)
+        html += 'onclick="getFeedback(%d,%d,\'%s\',\'multi\')"/>' \
+                            % (self.index, length, self.field.question.id)
         html += '</td><td>\n'
-        html += self.field.answer + "</td></tr>\n"
+        if preview:
+            html += self.answerElement.renderPreview()
+        else:
+            html += self.answerElement.renderView()
+        html += "</td></tr>\n"
        
         return html
     
 
-    def renderFeedbackView(self):
+    def renderFeedbackView(self, preview=False):
         """
         return xhtml string for display this option's feedback
         """
         feedbackStr = ""
-        if self.field.feedback != "":
-            feedbackStr = self.field.feedback
+        if self.feedbackElement.field.content != "": 
+            if preview: 
+                feedbackStr = self.feedbackElement.renderPreview() 
+            else: 
+                feedbackStr = self.feedbackElement.renderView()
         else:
             if self.field.isCorrect:
                 feedbackStr = _("Correct")
             else:
                 feedbackStr = _("Wrong")
-        html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' % (str(self.index), 
-                                                                      self.field.question.id)
+        html  = '<div id="sa%sb%s" style="color: rgb(0, 51, 204);' \
+                      % (str(self.index), self.field.question.id)
         html += 'display: none;">' 
-        html += feedbackStr + '</div>\n'
+        html += feedbackStr 
+        html += '</div>\n'
         
         return html
 
@@ -1603,6 +1932,7 @@ class QuizQuestionElement(Element):
     """
     QuizQuestionElement is responsible for a block of question.  
     Used by QuizTestBlock
+    Which is used as part of the Multi-Choice iDevice.
     """
             
     def __init__(self, field):
@@ -1610,7 +1940,14 @@ class QuizQuestionElement(Element):
         Initialize
         """
         Element.__init__(self, field)
-        #self.index = index
+
+        self.questionElement = TextAreaElement(field.questionTextArea)
+        self.questionId = "question"+self.id
+        self.questionElement.id = self.questionId
+        self.hintElement = TextAreaElement(field.hintTextArea)
+        self.hintId = "hint"+self.id
+        self.hintElement.id = self.hintId
+
         self.options    = []
         i = 0
         for option in self.field.options:
@@ -1625,11 +1962,11 @@ class QuizQuestionElement(Element):
         """
         log.info("process " + repr(request.args))
         
-        if "question"+self.id in request.args:
-            self.field.question = request.args["question"+self.id][0]
+        if self.questionId in request.args: 
+            self.questionElement.process(request)
             
-        if "hint"+self.id in request.args:
-            self.field.hint = request.args["hint"+self.id][0]
+        if self.hintId in request.args: 
+            self.hintElement.process(request)
             
         if ("addOption"+unicode(self.id)) in request.args: 
             self.field.addOption()
@@ -1648,19 +1985,11 @@ class QuizQuestionElement(Element):
         """
         Returns an XHTML string with the form element for editing this element
         """
-        #html  = u"<div class=\"iDevice\">\n"
-        html  = u"<b>" + _("Question:") + " </b>" 
-        html += common.elementInstruc(self.field.idevice.questionInstruc)
-        html += u" " + common.submitImage("del" + self.id, self.field.idevice.id, 
-                                   "/images/stock-cancel.png",
-                                   _("Delete question"))
-        html += common.textArea("question"+self.id, 
-                                    self.field.question, rows="6")
-        html += common.formField('textArea',_(u'Hint:'),'hint',
-                                self.id, self.field.idevice.hintInstruc,
-                                self.field.hint, rows="4")
+        html = self.questionElement.renderEdit()
+
+        html += self.hintElement.renderEdit()
+
         html += "<table width =\"100%%\">"
-    
         html += "<tbody>"
 
         for element in self.options:
@@ -1668,18 +1997,35 @@ class QuizQuestionElement(Element):
             
         html += "</tbody>"
         html += "</table>\n"
+
         value = _("Add another option")    
         html += common.submitButton("addOption"+unicode(self.id), value)
 
         return html
 
+    def renderView(self, img1=None, img2=None):
+        """ 
+        Returns an XHTML string for viewing this question element 
+        """ 
+        return self.doRender(img1, img2, preview=False)
+
+    def renderPreview(self, img1=None, img2=None):
+        """ 
+        Returns an XHTML string for viewing this question element 
+        """ 
+        return self.doRender(img1, img2, preview=True)
     
-    def renderView(self, img1, img2):
+    def doRender(self, img1, img2, preview=False):
         """
         Returns an XHTML string for viewing this element
         """
-        html  = self.field.question+" &nbsp;&nbsp;\n"
-        if self.field.hint:
+        if preview: 
+            html  = self.questionElement.renderPreview()
+        else:
+            html  = self.questionElement.renderView()
+        html += " &nbsp;&nbsp;\n"
+
+        if self.hintElement.field.content:
             html += '<span '
             html += ' style="background-image:url(\'%s\');">' % img1
             html += '\n<a onmousedown="javascript:updateCoords(event);'
@@ -1697,18 +2043,23 @@ class QuizQuestionElement(Element):
             html += '<div class="popupDivLabel">'
             html += _("Hint")
             html += '</div>\n'
-            html += self.field.hint
+
+            if preview: 
+                html  += self.hintElement.renderPreview()
+            else: 
+                html  += self.hintElement.renderView()
+
             html += "</div>\n"
         html += "<table>\n"
         html += "<tbody>\n"
 
         for element in self.options:
-            html += element.renderAnswerView()
+            html += element.renderAnswerView(preview)
             
         html += "</tbody>\n"
         html += "</table>\n"
             
         for element in self.options:
-            html += element.renderFeedbackView()
+            html += element.renderFeedbackView(preview)
 
         return html

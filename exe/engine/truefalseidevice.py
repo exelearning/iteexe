@@ -34,22 +34,57 @@ class TrueFalseQuestion(Persistable):
     A TrueFalse iDevice is built up of questions.  Each question can
     be rendered as an XHTML element
     """
-    def __init__(self, question="", isCorrect=False, feedback="", hint=""):
+
+    def __init__(self, idevice, question="", isCorrect=False, feedback="", hint=""):
         """
         Initialize 
         """
-        self.question  = question
+
+        self.idevice = idevice
+        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+                                    self.idevice.questionInstruc, question)
+        self.questionTextArea.idevice = idevice
         self.isCorrect = isCorrect
-        self.feedback  = feedback
-        self.hint      = hint
-        
+        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+                                    self.idevice.feedbackInstruc, feedback)
+        self.feedbackTextArea.idevice = idevice
+        self.hintTextArea = TextAreaField(x_(u'Hint'), 
+                                self.idevice.hintInstruc, hint)
+        self.hintTextArea.idevice = idevice
+
+    def upgrade_setIdevice(self, idevice):
+        """
+        While some of this might typically be done in an automatic upgrade
+        method called from in increased persistence version, the problem
+        with that approach is that the idevice was not previously stored,
+        and cannot easily be gotten at that stage of operation. 
+
+        Rather than making such an upgrade method more messy than necessary,
+        this method allows the parent TrueFalseIdevice to merely set
+        itself on each of its TrueFalseQuestions during its own upgrade.
+
+        Helps upgrade to somewhere before version 0.25 (post-v0.24),
+        taking the old unicode string fields, 
+        and converting them into a image-enabled TextAreaFields:
+        """
+
+        self.idevice = idevice
+        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+                                    self.idevice.questionInstruc, self.question)
+        self.questionTextArea.idevice = self.idevice
+        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+                                    self.idevice.feedbackInstruc, self.feedback)
+        self.feedbackTextArea.idevice = self.idevice
+        self.hintTextArea = TextAreaField(x_(u'Hint'), 
+                                self.idevice.hintInstruc, self.hint)
+        self.hintTextArea.idevice = self.idevice
 
 # ===========================================================================
 class TrueFalseIdevice(Idevice):
     """
     A TrueFalse Idevice is one built up from question and options
     """
-    persistenceVersion = 8
+    persistenceVersion = 9
 
     def __init__(self):
         """
@@ -73,7 +108,7 @@ be ambiguous.""")
         self._feedbackInstruc = x_(u"""Enter any feedback you wish to provide 
 to the learner. This field may be left blank. if this field is left blank 
 default feedback will be provided.""")
-        self.questions.append(TrueFalseQuestion())
+        self.questions.append(TrueFalseQuestion(self))
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
         self.instructionsForLearners = TextAreaField(
@@ -96,7 +131,7 @@ completed."""),
         """
         Add a new question to this iDevice. 
         """
-        self.questions.append(TrueFalseQuestion())
+        self.questions.append(TrueFalseQuestion(self))
 
 
     def upgradeToVersion1(self):
@@ -170,5 +205,15 @@ completed."""),
             x_(u'Read the paragraph below and '
                 'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
-    
+   
+
+    def upgradeToVersion9(self):
+        """ 
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        Taking the TrueFalseQuestions' old unicode string fields, 
+        and converting them into a image-enabled TextAreaFields:
+        """
+        for question in self.questions: 
+            question.upgrade_setIdevice(self)
+
 # ===========================================================================

@@ -100,7 +100,7 @@ class MultiSelectBlock(Block):
         html += u'<div class="iDevice_inner">\n'
 
         for element in self.questionElements:
-            html += element.renderView() + "<br/>"
+            html += element.renderPreview() + "<br/>"
         html += self.renderViewButtons()
         
 

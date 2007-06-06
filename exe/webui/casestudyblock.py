@@ -25,6 +25,8 @@ from exe.webui.block               import Block
 from exe.webui.questionelement     import QuestionElement
 from exe.webui.element             import ImageElement
 from exe.webui                     import common
+from exe.webui.element             import TextAreaElement
+
 
 log = logging.getLogger(__name__)
 
@@ -41,7 +43,9 @@ class CasestudyBlock(Block):
         Block.__init__(self, parent, idevice)
         self.idevice           = idevice
         self.questionElements  = []
-        self.story             = idevice.story
+
+        self.storyElement      = TextAreaElement(idevice.storyTextArea)
+
         self.questionInstruc   = idevice.questionInstruc
         self.storyInstruc      = idevice.storyInstruc
         self.feedbackInstruc   = idevice.feedbackInstruc
@@ -58,9 +62,8 @@ class CasestudyBlock(Block):
         Process the request arguments from the web server
         """
         Block.process(self, request)
-        storyId = u"story" + unicode(self.id)
-        if storyId in request.args:
-            self.idevice.story = request.args[storyId][0]
+
+        self.storyElement.process(request)
             
         if (u"addQuestion"+unicode(self.id)) in request.args: 
             self.idevice.addQuestion()
@@ -78,18 +81,12 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
+        self.previewing = True
+
         html  = u'<div class="iDevice"><br/>\n'
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += common.formField('richTextArea', _(u'Story:'),
-                                 'story', self.id,
-                                 self.storyInstruc,
-                                 self.story)
+        html += self.storyElement.renderEdit()
 
-#        html += u'<div class="block">'
-#        html += u"<strong>%s</strong>" % _("Question(s)")
-#        html += u'</div>'
-        html += u'<table width ="100%">\n'
-        
         for element in self.questionElements:
             html += element.renderEdit() 
          
@@ -120,13 +117,18 @@ class CasestudyBlock(Block):
         """
         Returns an XHTML string for this block
         """
+        log.debug("renderViewContent called with previewing mode = " + str(self.previewing))
+
         html  = u"<div class=\"iDevice_inner\">\n"
-        html += self.story + u"<br/>\n"
-            
+
         if self.previewing:
+            html += self.storyElement.renderPreview()
+            html + u"<br/>\n"
             for element in self.questionElements:
                 html += element.renderPreview()
         else:
+            html += self.storyElement.renderView()
+            html + u"<br/>\n"
             for element in self.questionElements:
                 html += element.renderView()
 

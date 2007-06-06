@@ -66,6 +66,7 @@ class Block(Renderable):
             if request.args[u"action"][0] != u"changeNode":
                 self.package.isChanged = 1
                 log.debug(u"package.isChanged action="+request.args[u"action"][0])
+
             if request.args[u"action"][0] == u"done":               
                 self.processDone(request)
                 

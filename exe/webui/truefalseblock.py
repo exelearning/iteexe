@@ -50,7 +50,8 @@ class TrueFalseBlock(Block):
         
         i = 0
         for question in idevice.questions:
-            self.questionElements.append(TrueFalseElement(i, idevice, question))
+            self.questionElements.append(TrueFalseElement(i, idevice, 
+                                                           question))
             i += 1
 
     def process(self, request):
@@ -105,11 +106,11 @@ class TrueFalseBlock(Block):
         html += u"<span class=\"iDeviceTitle\">"       
         html += self.idevice.title+"</span><br/>\n"     
         html += u"<div class=\"iDevice_inner\">\n"
-        html += self.instructionElement.renderView()
+        html += self.instructionElement.renderPreview()
         
         for element in self.questionElements:
             html += element.renderQuestionPreview()
-            html += element.renderFeedbackView()
+            html += element.renderFeedbackPreview()
             
         html += "</div>\n"    
         html += self.renderViewButtons()

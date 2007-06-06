@@ -135,10 +135,13 @@ class TextField(Field):
 
 
 # ===========================================================================
-class TextAreaField(Field):
+class FieldWithResources(Field):
     """
     A Generic iDevice is built up of these fields.  Each field can be
-    rendered as an XHTML element
+    rendered as an XHTML element.
+    Used by TextAreaField, FeedbackField, and ClozeField to encapsulate 
+    all the multi-resource handling which can now be included 
+    via the tinyMCE RichTextArea.
     """
     def __init__(self, name, instruc="", content=""):
         """
@@ -147,24 +150,75 @@ class TextAreaField(Field):
         Field.__init__(self, name, instruc)
         self.content = content
 
+        # to allow the easiest transition into using this FieldWithResources
+        # to hold any number of image (and other) resources, the above
+        # content field will still be the main attribute of this object,
+        # used in the initial process() as well as output in the selected
+        # View/Preview contexts.  But to hold the proper resource paths
+        # for these View/Preview contexts, a couple more attributes are
+        # introduced:
+
+        # 1, with the paths relative to the resource tree (for Preview)
+        self.content_w_resourcePaths = content
+        # 2, the paths for AFTER the resources have been exported & flattened:
+        self.content_wo_resourcePaths = content
+
+        # Note: usually the element's render* methods can be used,
+        # and the above two content_[w/wo]_resourcePaths not used directly,
+        # but there will be times in some idevices where specialized
+        # rendering might be necessary.
 
 
 # ===========================================================================
-class FeedbackField(Field):
+class TextAreaField(FieldWithResources):
+    """
+    A Generic iDevice is built up of these fields.  Each field can be
+    rendered as an XHTML element
+
+    Note that TextAreaFields can now hold any number of image resources,
+    which will typically be inserted by way of tinyMCE.
+    """
+    persistenceVersion = 1
+
+    def __init__(self, name, instruc="", content=""):
+        """
+        Initialize 
+        """
+        FieldWithResources.__init__(self, name, instruc, content)
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect that TextAreaField now inherits from FieldWithResources,
+        and will need its corresponding fields populated from content.
+        """ 
+        self.content_w_resourcePaths = self.content 
+        self.content_wo_resourcePaths = self.content
+        # NOTE: we don't need to actually process any of those contents for 
+        # image paths, either, since this is an upgrade from pre-images!
+
+# ===========================================================================
+class FeedbackField(FieldWithResources):
     """
     A Generic iDevice is built up of these fields.  Each field can be
     rendered as an XHTML element
     """
 
-    persistenceVersion = 1
+    persistenceVersion = 2
 
     def __init__(self, name, instruc=""):
         """
         Initialize 
         """
-        Field.__init__(self, name, instruc)
+        FieldWithResources.__init__(self, name, instruc)
+
         self._buttonCaption = x_(u"Click Here")
+
         self.feedback      = ""
+        # Note: now that FeedbackField extends from FieldWithResources,
+        # the above feedback attribute will likely be used much less than
+        # the following new content attribute, but remains in case needed.
+        self.content      = ""
     
     # Properties
     buttonCaption = lateTranslate('buttonCaption')
@@ -175,6 +229,20 @@ class FeedbackField(Field):
         """
         self.buttonCaption = self.__dict__['buttonCaption']
 
+    def upgradeToVersion2(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect that FeedbackField now inherits from FieldWithResources,
+        and will need its corresponding fields populated from content.
+        [see also the related (and likely redundant) upgrades to FeedbackField 
+         in: idevicestore.py's  __upgradeGeneric() for readingActivity, 
+         and: genericidevice.py's upgradeToVersion9() for the same]
+        """ 
+        self.content = self.feedback 
+        self.content_w_resourcePaths = self.feedback 
+        self.content_wo_resourcePaths = self.feedback
+        # NOTE: we don't need to actually process any of those contents for 
+        # image paths, either, since this is an upgrade from pre-images!
 
 # ===========================================================================
 
@@ -503,20 +571,20 @@ class ClozeHTMLParser(HTMLParser):
 
 
 # ===========================================================================
-
-class ClozeField(Field):
+class ClozeField(FieldWithResources):
     """
     This field handles a passage with words that the student must fill in
+    And can now support multiple images (and any other resources) via tinyMCE
     """
 
     regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
-    persistenceVersion = 2
+    persistenceVersion = 3
 
     def __init__(self, name, instruc):
         """
         Initialise
         """
-        Field.__init__(self, name, instruc)
+        FieldWithResources.__init__(self, name, instruc)
         self.parts = []
         self._encodedContent = ''
         self.rawContent = ''
@@ -605,6 +673,18 @@ exercise.</p>""")
         del self.autoCompletionInstruc
         self._setVersion2Attributes()
         self.strictMarking = strictMarking
+
+    def upgradeToVersion3(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect that ClozeField now inherits from FieldWithResources,
+        and will need its corresponding fields populated from content.
+        """ 
+        self.content = self.encodedContent
+        self.content_w_resourcePaths = self.encodedContent
+        self.content_wo_resourcePaths = self.encodedContent
+        # NOTE: we don't need to actually process any of those contents for 
+        # image paths, either, since this is an upgrade from pre-images!
 
 # ===========================================================================
 
@@ -853,84 +933,157 @@ class QuizOptionField(Field):
     """
     A Question is built up of question and options.  Each
     option can be rendered as an XHTML element
+    Used by the QuizQuestionField, as part of the Multi-Choice iDevice.
     """
-    def __init__(self, name="", instruc=""):
+
+    persistenceVersion = 1
+
+    def __init__(self, question, idevice, name="", instruc=""):
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.question  = None
-        self.answer    = ""
         self.isCorrect = False
-        self.feedback  = ""
-        
+        self.question  = question
+        self.idevice = idevice
+
+        self.answerTextArea = TextAreaField(x_(u'Option'), 
+                                  idevice._answerInstruc, x_(u''))
+        self.answerTextArea.idevice = idevice
+
+        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+                                    idevice._feedbackInstruc, x_(u''))
+        self.feedbackTextArea.idevice = idevice
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect the new TextAreaFields now in use for images.
+        """ 
+        self.answerTextArea = TextAreaField(x_(u'Option'), 
+                                  self.idevice._answerInstruc, self.answer)
+        self.answerTextArea.idevice = self.idevice
+        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+                                    self.idevice._feedbackInstruc, 
+                                    self.feedback)
+        self.feedbackTextArea.idevice = self.idevice
+
 #===============================================================================
 
 class QuizQuestionField(Field):
     """
     A Question is built up of question and Options.
+    Used as part of the Multi-Choice iDevice.
     """
+
+    persistenceVersion = 1
     
-    def __init__(self, name, instruc=""):
+    def __init__(self, idevice, name, instruc=""):
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.question             = ""
-        self.hint                 = ""
+
         self.options              = []
+        self.idevice              = idevice
+        self.questionTextArea     = TextAreaField(x_(u'Question'), 
+                                        idevice._questionInstruc, x_(u''))
+        self.questionTextArea.idevice     = idevice
+        self.hintTextArea         = TextAreaField(x_(u'Hint'), 
+                                        idevice._hintInstruc, x_(u''))
+        self.hintTextArea.idevice         = idevice
 
     def addOption(self):
         """
         Add a new option to this question. 
         """
-        option = QuizOptionField()
-        option.question = self
-        option.idevice  = self.idevice
+        option = QuizOptionField(self, self.idevice)
         self.options.append(option)
-        
-        
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect the new TextAreaFields now in use for images.
+        """ 
+        self.questionTextArea     = TextAreaField(x_(u'Question'), 
+                                        self.idevice._questionInstruc, 
+                                        self.question)
+        self.questionTextArea.idevice = self.idevice
+        self.hintTextArea         = TextAreaField(x_(u'Hint'), 
+                                        self.idevice._hintInstruc, self.hint)
+        self.hintTextArea.idevice  = self.idevice
+
 # ===========================================================================
 class SelectOptionField(Field):
     """
     A Question is built up of question and options.  Each
     option can be rendered as an XHTML element
+    Used by the SelectQuestionField, as part of the Multi-Select iDevice.
     """
-    def __init__(self, name="", instruc=""):
+    persistenceVersion = 1
+
+    def __init__(self, question, idevice, name="", instruc=""):
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.question  = None
-        self.answer    = ""
         self.isCorrect = False
-        
-        
+        self.question  = question
+        self.idevice = idevice
+
+        self.answerTextArea    = TextAreaField(x_(u'Options'), 
+                                     question._optionInstruc, x_(u''))
+        self.answerTextArea.idevice = idevice
+
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect the new TextAreaFields now in use for images.
+        """ 
+        self.answerTextArea    = TextAreaField(x_(u'Options'), 
+                                     self.question._optionInstruc, 
+                                     self.answer)
+        self.answerTextArea.idevice = self.idevice
+
 #===============================================================================
 
 class SelectQuestionField(Field):
     """
     A Question is built up of question and Options.
+    Used as part of the Multi-Select iDevice.
     """
+
+    persistenceVersion = 1
     
-    def __init__(self, name, instruc=""):
+    def __init__(self, idevice, name, instruc=""):
         """
         Initialize 
         """
         Field.__init__(self, name, instruc)
-        self.question             = ""
-        self.options              = []
+
+        self.idevice              = idevice
+
         self._questionInstruc      = x_(u"""Enter the question stem. 
 The question should be clear and unambiguous. Avoid negative premises as these 
 can tend to confuse learners.""")
+        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+                                    self.questionInstruc, x_(u''))
+        self.questionTextArea.idevice = idevice
+
+        self.options              = []
         self._optionInstruc        = x_(u"""Enter the available choices here. 
 You can add options by clicking the "Add another option" button. Delete options by 
 clicking the red X next to the option.""")
+
         self._correctAnswerInstruc = x_(u"""Select as many correct answer 
 options as required by clicking the check box beside the option.""")
-        self.feedback              = ""
+
         self.feedbackInstruc       = x_(u"""Type in the feedback you want 
 to provide the learner with.""")
+        self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
+                                    self.feedbackInstruc, x_(u''))
+        self.feedbackTextArea.idevice = idevice
     
     
     # Properties
@@ -942,11 +1095,22 @@ to provide the learner with.""")
         """
         Add a new option to this question. 
         """
-        option = SelectOptionField()
-        option.question = self
-        option.idevice  = self.idevice
+        option = SelectOptionField(self, self.idevice)
         self.options.append(option)
-     
+
+    def upgradeToVersion1(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        to reflect the new TextAreaFields now in use for images.
+        """ 
+        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+                                    self.questionInstruc, self.question)
+        self.questionTextArea.idevice = self.idevice
+        self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
+                                    self.feedbackInstruc, self.feedback)
+        self.feedbackTextArea.idevice = self.idevice
+
+
 # ===========================================================================
 
 class AttachmentField(Field):
@@ -981,5 +1145,5 @@ class AttachmentField(Field):
         else:
             log.error('File %s is not a file' % resourceFile)
         
-
 # ===========================================================================
+

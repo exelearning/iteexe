@@ -17,12 +17,15 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 """
-QuestionElement is responsible for a block of option.  Used by MultichoiceBlock
+QuestionElement is responsible for a block of option.  
+Used by MultichoiceBlock and CaseStudyBlock
 """
 
 import logging
 from exe.webui           import common
 from exe.webui.element   import ImageElement
+from exe.webui.element             import TextAreaElement
+
 
 log = logging.getLogger(__name__)
 # ===========================================================================
@@ -31,7 +34,7 @@ log = logging.getLogger(__name__)
 class QuestionElement(object):
     """
     QuestionElment is responsible for a block of question. 
-    Used by CasestudyBlock.
+    Used by MultichoiceBlock CasestudyBlock.
     """
 
     def __init__(self, index, idevice, question):
@@ -44,10 +47,23 @@ class QuestionElement(object):
         self.index        = index
         self.id           = "q" + unicode(index) + "b" + idevice.id        
         self.idevice      = idevice
-        self.question     = question
+
+
         self.quesId       = "quesQuestion" + unicode(index) + "b" + idevice.id
         self.feedbackId   = "quesFeedback" + unicode(index) + "b" + idevice.id
+
+        # Although the image is now perhaps unnecessary with the new
+        # TextArea fields now capable of holding images directly,
+        # don't remove the image information until a proper upgrade path,
+        # and this has been further discussed - perhaps it's still good?
         self.imageElement = ImageElement(question.image)
+
+        self.question     = question
+        # also split out each part for a separate TextAreaElement:
+        self.question_question = TextAreaElement(question.questionTextArea)
+        self.question_question.id = self.quesId 
+        self.question_feedback = TextAreaElement(question.feedbackTextArea)
+        self.question_feedback.id = self.feedbackId 
 
     def process(self, request):
         """
@@ -57,10 +73,10 @@ class QuestionElement(object):
         log.debug("process " + repr(request.args))
         
         if self.quesId in request.args:
-            self.question.question = request.args[self.quesId][0]
+            self.question_question.process(request)
                         
         if self.feedbackId in request.args:
-            self.question.feedback = request.args[self.feedbackId][0]
+            self.question_feedback.process(request)
             self.imageElement.process(request)
 
         if "action" in request.args and request.args["action"][0] == self.id:
@@ -73,14 +89,14 @@ class QuestionElement(object):
 
         html  = "<tr><td><b>%s</b>\n" % _("Activity")
         html += common.elementInstruc(self.idevice.questionInstruc)
-        html += common.richTextArea(self.quesId, self.question.question)
+        html += self.question_question.renderEdit()
         html += self.imageElement.renderEdit()
         html += "<b>%s</b>\n" % _("Feedback")
         html += common.elementInstruc(self.idevice.feedbackInstruc)
-        html += common.richTextArea(self.feedbackId, self.question.feedback)
+        html += self.question_feedback.renderEdit()
+
         if self.imageElement.field.imageResource is None:
             self.imageElement.field.setDefaultImage()
-        
 
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
@@ -96,10 +112,15 @@ class QuestionElement(object):
         """
         log.debug("renderView called")
               
-        html  = self.question.question 
+        if preview: 
+            html  = self.question_question.renderPreview()
+        else:
+            html  = self.question_question.renderView()
+
         field = self.imageElement.field
        
-        if  not field.isDefaultImage or self.question.feedback != "" :            
+        if  not field.isDefaultImage \
+            or self.question_feedback.field.content != "" :            
             html += '<div id="view%s" style="display:block;">' % self.id
             html += common.feedbackButton('btnshow' + self.id,
                         _(u"Show Feedback"),
@@ -122,7 +143,12 @@ class QuestionElement(object):
             html += '</div>'
             html += '<div id="s%s" class="feedback" style=" ' % self.id
             html += 'display: none;">'
-            html += self.question.feedback
+
+            if preview: 
+                html  += self.question_feedback.renderPreview() 
+            else: 
+                html  += self.question_feedback.renderView()
+
             html += "</div><br/>\n"
         else:
             html += "<br/>\n"

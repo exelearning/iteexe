@@ -25,6 +25,7 @@ from exe.engine.idevice   import Idevice
 from exe.engine.path      import Path
 from exe.engine.translate import lateTranslate
 from exe.engine.resource  import Resource
+from exe.engine.field     import TextAreaField
 
 import logging
 log = logging.getLogger(__name__)
@@ -34,7 +35,7 @@ class AttachmentIdevice(Idevice):
     """
     An Attachment Idevice allows a file to be attached to a package.
     """
-    persistenceVersion = 3
+    persistenceVersion = 4
     
     def __init__(self):
         Idevice.__init__(self, 
@@ -51,7 +52,17 @@ class AttachmentIdevice(Idevice):
 
         self.emphasis           = Idevice.NoEmphasis
         self.label              = u''
-        self.description        = u''
+
+        self._descriptionInstruc = x_(u"Enter the text you wish to associate "
+                                      u"with the downloaded file. You might "
+                                      u"want to provide instructions on what "
+                                      u"you require the learner to do once "
+                                      u"the file is downloaded or how the "
+                                      u"material should be used.")
+
+        self.descriptionTextArea   = TextAreaField(x_(u'Description:'), 
+                                          self._descriptionInstruc, x_(u''))
+        self.descriptionTextArea.idevice = self
 
         self._filenameInstruc   = x_(u'Click <strong>Select a file</strong>, '
                                     'browse to the file you want '
@@ -72,12 +83,6 @@ class AttachmentIdevice(Idevice):
                                     "For example: "
                                     "<code>Sales Forecast.doc (500kb)</code>"
                                     "</p>")
-        self._descriptionInstruc = x_(u"Enter the text you wish to associate "
-                                      u"with the downloaded file. You might "
-                                      u"want to provide instructions on what "
-                                      u"you require the learner to do once "
-                                      u"the file is downloaded or how the "
-                                      u"material should be used.")
 
 
     # Properties
@@ -134,5 +139,16 @@ class AttachmentIdevice(Idevice):
         if self.filename and self.parentNode:
             Resource(self, Path(self.filename))
         del self.filename
+
+    def upgradeToVersion4(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24)
+        Taking the old .description unicode string field, 
+        and converting it into an image-enabled TextAreaField:
+        """
+        self.descriptionTextArea   = TextAreaField(x_(u'Description:'), 
+                                         self._descriptionInstruc, 
+                                         self.description)
+        self.descriptionTextArea.idevice = self
 
 # ===========================================================================

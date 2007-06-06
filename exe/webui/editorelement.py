@@ -169,7 +169,9 @@ class FeedbackEditorElement(EditorElement):
         if self.field.instruc != "":
             html += common.elementInstruc(self.field.instruc)
         html += "<br/>\n" 
+
         html += common.textArea(self.id, self.field.feedback)
+
         html += "<br/>\n"
         return html
 

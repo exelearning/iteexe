@@ -21,7 +21,8 @@ TrueFalseElement is responsible for a block of question. Used by TrueFalseBlock.
 """
 
 import logging
-from exe.webui import common
+from exe.webui         import common
+from exe.webui.element import TextAreaElement
 
 log = logging.getLogger(__name__)
 # ===========================================================================
@@ -37,12 +38,23 @@ class TrueFalseElement(object):
         self.index      = index
         self.id         = unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
+
         self.question   = question
-        self.questionId = "question"+ unicode(index) + "b" + idevice.id
-        self.keyId      = "Key" + unicode(index) + "b" + idevice.id       
-        self.feedbackId = "feedback" + unicode(index) + "b" + idevice.id 
-        self.hintId     = "hint" + unicode(index) + "b" + idevice.id 
+        # also split out each part for a separate TextAreaElement:
+        self.question_question = TextAreaElement(question.questionTextArea)
+        self.question_feedback = TextAreaElement(question.feedbackTextArea)
+        self.question_hint = TextAreaElement(question.hintTextArea)
+        # and also its non-TextAreaElement, also split out for consistency:
+        self.question_isCorrect = question.isCorrect
         
+        self.questionId = "question"+ unicode(index) + "b" + idevice.id
+        self.question_question.id = self.questionId
+        self.feedbackId = "feedback" + unicode(index) + "b" + idevice.id 
+        self.question_feedback.id = self.feedbackId
+        self.hintId     = "hint" + unicode(index) + "b" + idevice.id 
+        self.question_hint.id = self.hintId
+        self.keyId      = "Key" + unicode(index) + "b" + idevice.id       
+        # note: self.question_isCorrectId not necessary since not a TextArea
 
     def process(self, request):
         """
@@ -52,50 +64,42 @@ class TrueFalseElement(object):
         log.debug("process " + repr(request.args))
         
         if self.questionId in request.args:
-            self.question.question = request.args[self.questionId][0]
+            self.question_question.process(request)
             
         if self.hintId in request.args:
-            self.question.hint = request.args[self.hintId][0]
+            self.question_hint.process(request)
                         
         if self.keyId in request.args:
             if request.args[self.keyId][0] == "true":
-                self.question.isCorrect = True 
-                log.debug("question " + repr(self.question.isCorrect))
+                self.question_isCorrect = True 
+                log.debug("question " + repr(self.question_isCorrect))
             else:
-                self.question.isCorrect = False        
+                self.question_isCorrect = False        
         
         if self.feedbackId in request.args:
-            self.question.feedback = request.args[self.feedbackId][0]
+            self.question_feedback.process(request)
             
         if "action" in request.args and request.args["action"][0] == self.id:
             self.idevice.questions.remove(self.question)
-
 
     def renderEdit(self):
         """
         Returns an XHTML string for editing this option element
         """
         
-        html  = common.formField('richTextArea',_(u'Question:'),'',
-                                self.questionId, self.idevice.questionInstruc,
-                                self.question.question)
+        html = self.question_question.renderEdit()
+
         html += _("True") + " " 
-        html += common.option(self.keyId, self.question.isCorrect, "true") 
+        html += common.option(self.keyId, self.question_isCorrect, "true") 
         html += _("False") + " " 
-        html += common.option(self.keyId, not self.question.isCorrect, "false")
+        html += common.option(self.keyId, not self.question_isCorrect, "false") 
+
         html += "<br/><br/>\n"
 
         html += common.elementInstruc(self.idevice.keyInstruc)
         
-        html += common.formField('richTextArea',_(u'Feedback'),'',
-                                self.feedbackId, self.idevice.feedbackInstruc,
-                                self.question.feedback)
-    
-                                    
-        html += common.formField('richTextArea',_(u'Hint'),'',
-                                self.hintId, self.idevice.hintInstruc,
-                                self.question.hint)
-
+        html += self.question_feedback.renderEdit()
+        html += self.question_hint.renderEdit()
         
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
@@ -107,8 +111,9 @@ class TrueFalseElement(object):
         """
         Returns an XHTML string for viewing this question element
         """
-        html  = self.renderQuestion()
-        if self.question.hint:
+        is_preview = 0
+        html  = self.renderQuestion(is_preview)
+        if self.question_hint: 
             html += u'<span '
             html += u'style="background-image:url(\'panel-amusements.png\');">'
             html += u'\n<a onmousedown="Javascript:updateCoords(event);'
@@ -126,7 +131,7 @@ class TrueFalseElement(object):
             html += u'<div class="popupDivLabel">'
             html += _(u"Hint")
             html += u'</div>\n'
-            html += self.question.hint
+            html += self.question_hint.renderView()
             html += u"</div>\n"
         
         return html
@@ -136,20 +141,27 @@ class TrueFalseElement(object):
         """
         Returns an XHTML string for previewing this question element
         """
-        html  = self.renderQuestion()
+        is_preview = 1
+        html  = self.renderQuestion(is_preview)
         html += " &nbsp;&nbsp;\n"
-        html += common.elementInstruc(self.question.hint, 
+
+        html += common.elementInstruc(self.question_hint.field.content, 
                                       "panel-amusements.png", "Hint")
         return html
 
-    def renderQuestion(self):
+    def renderQuestion(self, is_preview):
         """
         Returns an XHTML string for viewing and previewing this question element
         """
-        log.debug("renderPreview called")
+        log.debug("renderPreview called in the form of renderQuestion")
     
         html  = u"<br/><br/><b>" +unicode(self.index + 1) + ". " 
-        html += self.question.question + "</b><br/><br/>"
+
+        if is_preview:
+            html += self.question_question.renderPreview() + "</b><br/><br/>" 
+        else: 
+            html += self.question_question.renderView() + "</b><br/><br/>"
+
         html += _("True") + " " 
         html += self.__option(0, 2, "true") + " \n"
         html += _("False") + " " 
@@ -165,13 +177,34 @@ class TrueFalseElement(object):
                 index, length, self.id)
         return html
     
-    def renderFeedbackView(self):
+    def renderFeedbackPreview(self):
+        """
+        Merely a front-end to renderFeedbackView(), setting preview mode.
+        Note: this won't really matter all that much, since these won't yet
+        show up in exported printouts, BUT the image paths will be correct.
+        """
+        is_preview=1
+        return self.renderFeedbackView(is_preview)
+
+    def renderFeedbackView(self, is_preview=0):
         """
         return xhtml string for display this option's feedback
         """
-        feedbackStr1 = _(u"Correct!") + " " + self.question.feedback
-        feedbackStr2 = _(u"Incorrect!") + " " + self.question.feedback
-        if not self.question.isCorrect:
+        if is_preview:
+            feedbackStr1 = _(u"Correct!") + " " \
+                    + self.question_feedback.renderPreview()
+        else: 
+            feedbackStr1 = _(u"Correct!") + " " \
+                    + self.question_feedback.renderView()
+
+        if is_preview:
+            feedbackStr2 = _(u"Incorrect!") + " " \
+                    + self.question_feedback.renderPreview()
+        else: 
+            feedbackStr2 = _(u"Incorrect!") + " " \
+                    + self.question_feedback.renderView()
+
+        if not self.question_isCorrect:
             feedbackStr1, feedbackStr2 = feedbackStr2, feedbackStr1 
             
         feedbackId1 = "0" + "b" + self.id

@@ -68,7 +68,7 @@ class FreeTextBlock(Block):
         html  = u"<div class=\"iDevice "
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
         html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += self.contentElement.renderView()
+        html += self.contentElement.renderPreview()
         html += self.renderViewButtons()
         html += "</div>\n"
         return html

@@ -149,7 +149,8 @@ class MultichoiceBlock(Block):
         html += "<div class=\"iDevice_inner\">\n"
         
         for element in self.questionElements:
-            html += element.renderView("/images/panel-amusements.png", "/images/stock-stop.png") 
+            html += element.renderPreview("/images/panel-amusements.png", 
+                                          "/images/stock-stop.png") 
             html += "<br/>"
             
         html += self.renderViewButtons()

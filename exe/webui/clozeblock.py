@@ -45,6 +45,7 @@ class ClozeBlock(Block):
         self.clozeElement = ClozeElement(idevice.content)
         self.feedbackElement = \
             TextAreaElement(idevice.feedback)
+        self.previewing        = False # In view or preview render
 
     def process(self, request):
         """
@@ -77,6 +78,22 @@ class ClozeBlock(Block):
             ]
         return u'\n    '.join(html)
     
+    def renderPreview(self, style):
+        """ 
+        Remembers if we're previewing or not, 
+        then implicitly calls self.renderViewContent (via Block.renderPreview) 
+        """ 
+        self.previewing = True 
+        return Block.renderPreview(self, style)
+
+    def renderView(self, style):
+        """ 
+        Remembers if we're previewing or not, 
+        then implicitly calls self.renderViewContent (via Block.renderPreview) 
+        """ 
+        self.previewing = False 
+        return Block.renderView(self, style)
+
     def renderViewContent(self):
         """
         Returns an XHTML string for this block
@@ -84,16 +101,33 @@ class ClozeBlock(Block):
         # Only show feedback button if feedback is present
         if self.feedbackElement.field.content:
             # Cloze Idevice needs id of div for feedback content
-            clozeContent = self.clozeElement.renderView(self.feedbackElement.id)
+            feedbackID = self.feedbackElement.id
+            if self.previewing: 
+                clozeContent = self.clozeElement.renderPreview(feedbackID)
+            else: 
+                clozeContent = self.clozeElement.renderView(feedbackID)
         else:
-            clozeContent = self.clozeElement.renderView()
+            if self.previewing: 
+                clozeContent = self.clozeElement.renderPreview()
+            else:
+                clozeContent = self.clozeElement.renderView()
+        instruction_html = ""
+        if self.previewing: 
+            instruction_html = self.instructionElement.renderPreview()
+        else:
+            instruction_html = self.instructionElement.renderView()
         html = [
             u'<script type="text/javascript" src="common.js"></script>\n',
             u'<div class="iDevice_inner">\n',
-            self.instructionElement.renderView(),
+            instruction_html,
             clozeContent]
-        if self.feedbackElement.field.content:
-            html.append(self.feedbackElement.renderView(False, class_="feedback"))
+        if self.feedbackElement.field.content: 
+            if self.previewing: 
+                html.append(self.feedbackElement.renderPreview(False, 
+                                                     class_="feedback"))
+            else:
+                html.append(self.feedbackElement.renderView(False, 
+                                                     class_="feedback"))
         html += [
             u'</div>\n',
             ]
@@ -105,11 +139,21 @@ class ClozeBlock(Block):
         Returns an XHTML string for text file export.
         """
         
-        html = '<p>' +  self.instructionElement.renderView() +'</p>'
+        if self.previewing: 
+            html = '<p>' +  self.instructionElement.renderPreview() +'</p>'
+        else:
+            html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % _(u"Feedback")
-            html += '<p>' +self.feedbackElement.renderView(False, class_="feedback") +'</p>'
+            html += '<p>%s:</P>' % _(u"Feedback") 
+            if self.previewing: 
+                html += '<p>' +self.feedbackElement.renderPreview(False, 
+                                                        class_="feedback") 
+                html += '</p>'
+            else:
+                html += '<p>' +self.feedbackElement.renderView(False, 
+                                                        class_="feedback") 
+                html += '</p>'
         html += self.clozeElement.renderAnswers()
         return html
     

@@ -20,7 +20,7 @@
 AuthoringPage is responsible for creating the XHTML for the authoring
 area of the eXe web user interface.  
 """
-
+import os
 import logging
 from twisted.web.resource    import Resource
 from exe.webui               import common
@@ -29,6 +29,8 @@ import exe.webui.builtinblocks
 from exe.webui.blockfactory  import g_blockFactory
 from exe.engine.error        import Error
 from exe.webui.renderable    import RenderableResource
+from exe.engine.path         import Path
+from exe                     import globals as G
 
 log = logging.getLogger(__name__)
 
@@ -73,6 +75,16 @@ class AuthoringPage(RenderableResource):
             log.debug(u"package name: " + self.package.name)
         for block in self.blocks:
             block.process(request)
+        # now that each block and corresponding elements have been processed,
+        # it's finally safe to remove any images/etc which made it into 
+        # tinyMCE's previews directory, as they have now had their 
+        # corresponding resources created:
+        webDir     = Path(G.application.config.webDir) 
+        previewDir  = webDir.joinpath('previews')
+        for root, dirs, files in os.walk(previewDir, topdown=False): 
+            for name in files: 
+                os.remove(os.path.join(root, name))
+
         log.debug(u"After authoringPage process" + repr(request.args))
 
     def render_GET(self, request=None):
@@ -158,11 +170,14 @@ class AuthoringPage(RenderableResource):
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
-        html += u" theme_advanced_buttons2 : \"tablecontrols,separator,"
+        html += u" theme_advanced_buttons2 : \"image,tablecontrols,separator,"
         html += u"link,unlink,separator,undo,redo,separator,"
         html += u" charmap,removeformat,cleanup,code,help\",\n"
+
+        # the image-handling callback function for tinyMCE's image button:
+        html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
+        
         html += u" theme_advanced_buttons3 : \"\",\n"
-      
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
         html += u"    theme_advanced_resize_horizontal : false,\n"
         html += u"    theme_advanced_resizing : true\n"

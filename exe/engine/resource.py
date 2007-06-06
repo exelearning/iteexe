@@ -25,11 +25,12 @@ import os
 from copy                 import deepcopy
 from string               import Template
 from exe.engine.persist   import Persistable
-from exe.engine.path      import Path, toUnicode
+from exe.engine.path      import Path, toUnicode 
 
 log = logging.getLogger(__name__)
 
 # ===========================================================================
+
 
 class _Resource(Persistable):
     """
@@ -62,15 +63,27 @@ class _Resource(Persistable):
         self._originalFile = resourceFile
         try:
             self.checksum = resourceFile.md5
-            from exe.engine.idevice import Idevice
+            from exe.engine.idevice   import Idevice 
+            from exe.webui.element    import ElementWithResources
             if isinstance(owner, Idevice):
                 self._idevice     = owner
                 if owner.parentNode:
                     self.package  = owner.parentNode.package
                 else:
                     self.package  = None
-            else:
-                self._idevice = None
+            elif isinstance(owner, ElementWithResources):
+                # for support of images (and other media) via tinyMCE,
+                # now allow not just idevice's to have resources, 
+                # but also TextAreaElements (and any others, as needed,
+                # all inheriting from ElementWithResources)
+                # to hold the resources necessary in GalleryImages:
+                self._idevice = owner.field_idevice
+                if owner.parentNode:
+                    self.package  = owner.parentNode.package
+                else:
+                    self.package  = None 
+            else: 
+                self._idevice = None 
                 self.package = owner
         finally:
             # Don't need to save the original file name between sessions

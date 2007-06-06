@@ -78,6 +78,13 @@ display them as links in your content. From here you can edit the bookmarks and 
                     rssDic['entries'][i].link, rssDic['entries'][i].title)          
 
         self.rss.content = unicode(content)
+        # now that these are supporting images, any direct manipulation
+        # of the content field must also store this updated information
+        # into the other corresponding fields of TextAreaField:
+        # (perhaps eventually a property should be made for TextAreaField 
+        #  such that these extra set's are not necessary, but for now, here:)
+        self.rss.content_w_resourcePaths = self.rss.content
+        self.rss.content_wo_resourcePaths = self.rss.content
 
 
 

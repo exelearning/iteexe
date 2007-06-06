@@ -222,6 +222,68 @@ function changeGalleryImage(galleryId, imageId) {
     }
 }
 
+// REMO: after cleaning this up, be sure to check out
+// OLD code in the webui?xului?/scripts/mainpage.js 
+// and see if it needs cleaning, too!
+//////////////////////////////////////
+
+
+//// Called by the tinyMCE (as per the user's request) to provide an 
+//// image file name to add to the package's field and idevice
+function chooseImage_viaTinyMCE(field_name, url, type, win) {
+
+    var local_imagePath = askUserForImage(true);
+    // if the user hits CANCEL, then bail immediately:
+    if (local_imagePath == "") {
+       return;
+    }
+
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var full_image_url = "file://"+local_imagePath;
+    // UNescape, to remove the %20's for spaces, etc.:
+    var unescaped_local_imagePath = unescape(local_imagePath);
+    var oldImageStr = new String(unescaped_local_imagePath);
+    var RegExp1 = /\%/g;
+    var ReplaceStr1 = new String("%%");
+    // firstly, replace any previously existing %'s with %%:
+    var oldImageStr1 = oldImageStr.replace(RegExp1, ReplaceStr1);
+    var RegExp2 = /[\\\/]/g;
+    var ReplaceStr2 = new String("%");
+    // and secondly, replace any path delimiters with %:
+    var newImageStr = oldImageStr1.replace(RegExp2, ReplaceStr2);
+
+    preview_imageName = newImageStr;
+    full_previewImage_url = "/previews/"+preview_imageName;
+    // pass the file information on to the server,
+    // to copy it into the server's "previews" directory:
+    window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, 
+                  '', win, win.name, field_name, unescaped_local_imagePath, 
+                  preview_imageName)
+
+
+    // first, clear out any old value in the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = "";
+    win.showPreviewImage(" ");
+
+    // set the tinyMCE image filename field:
+    win.document.forms[0].elements[field_name].value = full_previewImage_url;
+    // then force its onchange event:
+    win.showPreviewImage(full_previewImage_url);
+    // this onchange works, but it's dirty because it is hardcoding the 
+    // onChange=".." event of that field, and if that were to ever change 
+    // in tinyMCE, then this would be out of sync.
+
+    // and finally, be sure to update the tinyMCE window's image data:
+    if (win.getImageData) {
+        win.getImageData();
+    }
+    else {
+        if (window.tinyMCE.getImageData) {
+           window.tinyMCE.getImageData();
+        }
+    }    
+}
+
 
 function magnifierImageChanged(event) {
     var id = event.currentTarget.getAttribute('id');
@@ -494,6 +556,7 @@ function submitLink(action, object, changed)
     theForm.object.value    = object;
     theForm.isChanged.value = changed;
     runFuncArray(beforeSubmitHandlers)
+
     theForm.submit();
 }
 

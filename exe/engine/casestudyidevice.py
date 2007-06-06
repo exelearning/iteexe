@@ -27,6 +27,7 @@ from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
 from exe.engine.path      import toUnicode
 from exe                  import globals as G
+from exe.engine.field     import TextAreaField
 
 log = logging.getLogger(__name__)
 
@@ -44,8 +45,17 @@ class Question(Persistable):
         """
         Initialize 
         """
-        self.question  = u''
-        self.feedback  = u''
+        self.questionTextArea = TextAreaField(x_(u''), x_(u''), x_(u''))
+        self.questionTextArea.idevice = idevice 
+
+        self.feedbackTextArea = TextAreaField(x_(u''), x_(u''), x_(u''))
+        self.feedbackTextArea.idevice = idevice
+
+        # Although the image is now perhaps unnecessary with the above
+        # TextArea fields now capable of holding images directly
+        # (and could therefore be shown in the feedbackTextArea itself),
+        # don't remove the image information until a proper upgrade path,
+        # and this has been further discussed - perhaps it's still good?
         self.setupImage(idevice)
 
     def setupImage(self, idevice):
@@ -72,7 +82,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
 
     def __init__(self, story="", defaultImage=None):
         """
@@ -98,12 +108,15 @@ of the case and if so how are ideas feed back to the class</li></ul>"""),
                          u"casestudy")
         self.emphasis     = Idevice.SomeEmphasis
         
-        self.story        = story
-        self.questions    = []
         self._storyInstruc = x_(u"""Create the case story. A good case is one 
 that describes a controversy or sets the scene by describing the characters 
 involved and the situation. It should also allow for some action to be taken 
 in order to gain resolution of the situation.""")
+        self.storyTextArea = TextAreaField(x_(u'Story:'), self._storyInstruc, story)
+        self.storyTextArea.idevice = self
+
+
+        self.questions    = []
         self._questionInstruc = x_(u"""Describe the activity tasks relevant 
 to the case story provided. These could be in the form of questions or 
 instructions for activity which may lead the learner to resolving a dilemma 
@@ -175,6 +188,23 @@ situation.""")
         self.defaultImage = toUnicode(G.application.config.webDir/'images'/DEFAULT_IMAGE)
         for question in self.questions:
             question.setupImage(self)
+
+    def upgradeToVersion7(self):
+        """
+        Upgrades to somewhere before version 0.25 (post-v0.24)
+        Taking the old unicode string fields, 
+        and converting them into a image-enabled TextAreaFields:
+        """
+        self.storyTextArea = TextAreaField(x_(u'Story:'), 
+                                 self._storyInstruc, self.story)
+        self.storyTextArea.idevice = self
+        for question in self.questions:
+            question.questionTextArea = TextAreaField(x_(u''), 
+                                            x_(u''), question.question)
+            question.questionTextArea.idevice = self
+            question.feedbackTextArea = TextAreaField(x_(u''), 
+                                            x_(u''), question.feedback)
+            question.feedbackTextArea.idevice = self
 
 
 # ===========================================================================

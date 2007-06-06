@@ -84,9 +84,15 @@ distractors </li>
         self.emphasis         = Idevice.SomeEmphasis
         self.questions        = []
         self.options          = []
+
+
+        # question and hint appear to be left over, and no longer applicable,
+        # since they are now on a per-question basis, and part of the child
+        # QuizQuestionField, but here their old attributes remain:
         self.question         = ""
         self.hint             = ""
-        self.addQuestion()
+        # eventually: somebody should confirm this and remove them, will you?
+
         self._hintInstruc     = x_(u"""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
         self._questionInstruc      = x_(u"""Enter the question stem. 
@@ -105,19 +111,22 @@ for the other options.""")
         self.systemResources += ["common.js", "libot_drag.js",
                                  "panel-amusements.png", "stock-stop.png"]
         self.message          = ""
+
+        self.addQuestion()
+
     # Properties
     hintInstruc     = lateTranslate('hintInstruc')
     questionInstruc = lateTranslate('questionInstruc')
     keyInstruc      = lateTranslate('keyInstruc')
     answerInstruc   = lateTranslate('answerInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')
+
         
     def addQuestion(self):
         """
         Add a new question to this iDevice. 
         """
-        question = QuizQuestionField(x_(u'Question'))
-        question.idevice = self
+        question = QuizQuestionField(self, x_(u'Question'))
         question.addOption()
         self.questions.append(question)
 

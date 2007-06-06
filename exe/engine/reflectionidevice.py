@@ -25,6 +25,7 @@ before they look at the answer/s
 import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
+from exe.engine.field     import TextAreaField
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -33,7 +34,7 @@ class ReflectionIdevice(Idevice):
     A Reflection Idevice presents question/s for the student to think about
     before they look at the answer/s
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
     
     def __init__(self, activity = "", answer = ""):
         """
@@ -49,14 +50,20 @@ these as a piece of academic work. Journals, diaries, profiles and portfolios
 are useful tools for collecting observation data. Rubrics and guides can be 
 effective feedback tools."""), u"", u"reflection")
         self.emphasis         = Idevice.SomeEmphasis
-        self.activity         = activity
-        self.answer           = answer
         self._activityInstruc = x_(u"""Enter a question for learners 
 to reflect upon.""")
         self._answerInstruc   = x_(u"""Describe how learners will assess how 
 they have done in the exercise. (Rubrics are useful devices for providing 
 reflective feedback.)""")
         self.systemResources += ["common.js"]
+        
+        self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 
+                                    self._activityInstruc, activity)
+        self.activityTextArea.idevice = self
+
+        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
+                                   self._answerInstruc, answer)
+        self.answerTextArea.idevice = self
 
     # Properties
     activityInstruc = lateTranslate('activityInstruc')
@@ -109,5 +116,19 @@ reflective feedback.)""")
         """
         self._upgradeIdeviceToVersion2()
         self.systemResources += ["common.js"]
+
+
+    def upgradeToVersion7(self):
+        """ 
+        Upgrades to somewhere before version 0.25 (post-v0.24) 
+        Taking the old unicode string fields, and converting them 
+        into image-enabled TextAreaFields:
+        """
+        self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 
+                                    self._activityInstruc, self.activity)
+        self.activityTextArea.idevice = self
+        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
+                                  self._answerInstruc, self.answer)
+        self.answerTextArea.idevice = self
 
 # ===========================================================================

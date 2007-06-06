@@ -23,6 +23,8 @@ AttachmentBlock can render and process AttachmentIdevices as XHTML
 import os.path
 from exe.webui.block   import Block
 from exe.webui         import common
+from exe.webui.element             import TextAreaElement
+
 
 import logging
 log = logging.getLogger(__name__)
@@ -37,7 +39,9 @@ class AttachmentBlock(Block):
         """
         Initialize
         """
+
         Block.__init__(self, parent, idevice)
+        self.descriptionElement = TextAreaElement(idevice.descriptionTextArea)
 
 
     def process(self, request):
@@ -53,9 +57,7 @@ class AttachmentBlock(Block):
             if u"label" + self.id in request.args:
                 self.idevice.label = request.args[u"label" + self.id][0]
                 
-            if u"description" + self.id in request.args:
-                self.idevice.description = (request.args[u"description" + 
-                                            self.id][0])
+            self.descriptionElement.process(request)
 
             if "path" + self.id in request.args:
                 attachmentPath = request.args["path"+self.id][0]
@@ -97,11 +99,7 @@ class AttachmentBlock(Block):
         html += common.elementInstruc(self.idevice.labelInstruc)
         html += u'</div>\n'
         html += common.textInput(u'label'+self.id, self.idevice.label)
-        html += common.formField('richTextArea', _(u'Description:'),
-                                 'description', self.id,
-                                 self.idevice.descriptionInstruc,
-                                 self.idevice.description)
-
+        html += self.descriptionElement.renderEdit()
         html += u'<div class="block">\n'
         html += self.renderEditButtons()
         html += u'</div>\n'
@@ -128,7 +126,7 @@ class AttachmentBlock(Block):
             html += u"</a>\n"
 
         html += u'<div class="block">\n'
-        html += self.idevice.description 
+        html += self.descriptionElement.renderPreview()
         html += u"</div>\n"
         html += self.renderViewButtons()
         html += u"</div>\n"
@@ -154,7 +152,7 @@ class AttachmentBlock(Block):
             html += u"</a> \n"
 
         html += u'<div class="block">\n'
-        html += self.idevice.description
+        html += self.descriptionElement.renderView()
         html += u"</div>"
         html += u"</div>\n"
 

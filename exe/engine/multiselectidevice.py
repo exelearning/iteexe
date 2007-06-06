@@ -75,8 +75,7 @@ distractors </li>
         """
         Add a new question to this iDevice. 
         """
-        question = SelectQuestionField(x_(u'Question'))
-        question.idevice = self
+        question = SelectQuestionField(self, x_(u'Question'))
         question.addOption()
         self.questions.append(question)
 

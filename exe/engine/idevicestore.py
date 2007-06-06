@@ -226,6 +226,24 @@ class IdeviceStore:
                 if readingActivitiesFound == 0:
                     # Rename the first one we find
                     idevice.title = x_(u"Reading Activity")
+                    # and also upgrade its feedback field from using a simple
+                    # string, to a subclass of TextAreaField.
+                    # While this will have been initially handled by the
+                    # field itself, and if not, then by the genericidevice's
+                    # upgrade path, this is included here as a possibly
+                    # painfully redundant safety check due to the extra
+                    # special handing of generic idevices w/ generic.dat
+                    for field in idevice.fields:
+                        if isinstance(field, FeedbackField):
+                            # must check for the upgrade manually, since
+                            # persistence versions not used here.
+                            # (but note that the persistence versioning
+                            #  will probably have ALREADY happened anyway!)
+                            if not hasattr(field,"content"): 
+                                # this FeedbackField has NOT been upgraded:
+                                field.content = field.feedback 
+                                field.content_w_resourcePaths = field.content
+                                field.content_wo_resourcePaths = field.content
                 else:
                     # Destroy the second
                     self.generic.remove(idevice)
@@ -406,7 +424,6 @@ This helps demonstrate relevance for learners.""")))
 _(u"""Use feedback to provide a summary of the points covered in the reading, 
 or as a starting point for further analysis of the reading by posing a question 
 or providing a statement to begin a debate.""")))
-        self.generic.append(readingAct)
     
         objectives = GenericIdevice(_(u"Objectives"), 
                                     u"objectives",

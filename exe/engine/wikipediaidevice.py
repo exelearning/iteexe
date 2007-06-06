@@ -136,6 +136,13 @@ within Wikipedia.""")
             # show up in edit mode inside FCKEditor
             imageTag['src'] = (u"/" + self.parentNode.package.name + u"/resources/" + imageName)
         self.article.content = self.reformatArticle(netloc, unicode(content))
+        # now that these are supporting images, any direct manipulation
+        # of the content field must also store this updated information
+        # into the other corresponding fields of TextAreaField:
+        # (perhaps eventually a property should be made for TextAreaField 
+        #  such that these extra set's are not necessary, but for now, here:)
+        self.article.content_w_resourcePaths = self.article.content
+        self.article.content_wo_resourcePaths = self.article.content
 
     def reformatArticle(self, netloc, content):
         """

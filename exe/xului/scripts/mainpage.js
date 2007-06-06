@@ -432,51 +432,54 @@ function fileSaveAs(onDone) {
     }
 }
 
-// print the package:
+
+// the first in a multi-function sequence for printing:
 function filePrint() {
-   // filePrint step#1: create a temporary print directory, and return that to filePrint2, which will then call exportPackage():
+   // filePrint step#1: create a temporary print directory, 
+   // and return that to filePrint2, which will then call exportPackage():
    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
    var tmpdir_suffix = ""
    var tmpdir_prefix = "eXeTempPrintDir_"
-   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, tmpdir_prefix, 'filePrint2')
-   // note: as discussed below, at the end of filePrint3_openPrintWin(), the above makeTempPrintDir also removes any previous print jobs
+   nevow_clientToServerEvent('makeTempPrintDir', this, '', tmpdir_suffix, 
+                              tmpdir_prefix, 'filePrint2')
+   // note: as discussed below, at the end of filePrint3_openPrintWin(), 
+   // the above makeTempPrintDir also removes any previous print jobs
 }
 
-// continue to print the package:
 function filePrint2(tempPrintDir, printDir_warnings) {
-   // first see if there's even a message, but for now, straight out:
    if (printDir_warnings.length > 0) {
       alert(printDir_warnings)
    }
-
    exportPackage('printSinglePage', tempPrintDir, "filePrint3_openPrintWin");
 }
 
-
-// and continue to print the package:
 function filePrint3_openPrintWin(tempPrintDir, tempExportedDir, webPrintDir) {
-    // okay, at this point, exportPackage() has already been called and the exported file created, complete with its printing Javascript
-    // into the tempPrintDir was created (and everything below it, and including it, will need to be removed),
-    // the actual files for printing were exported into tempExportedDir/index.html, where tempExportedDir is typically a subdirectory of tempDir,
-    // named as the package name.
-    // Now also passing in the http:// webdir, such that a file:// URL is no longer necessary!
+    // okay, at this point, exportPackage() has already been called and the 
+    // exported file created, complete with its printing Javascript
+    // into the tempPrintDir was created (and everything below it, and 
+    // including it, will need to be removed), the actual files for printing 
+    // were exported into tempExportedDir/index.html, where tempExportedDir 
+    // is typically a subdirectory of tempDir, named as the package name.
 
    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
 
     // Still needs to be (a) opened, printed, and closed:
-    //
     var features = "width=680,height=440,status=1,resizable=1,left=260,top=200";
     print_url = webPrintDir+"/index.html"
 
-    printWin = window.open (print_url, APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN, features);
+    printWin = window.open (print_url, 
+                  APPARENTLY_USELESS_TITLE_WHICH_IS_OVERRIDDEN, features);
 
 
     // and that's all she wrote!
 
-    // note that due to difficulty with timing issues, the files are not (yet!) immediately removed upon completion of the print job 
+    // note that due to difficulty with timing issues, the files are not 
+    // (yet!) immediately removed upon completion of the print job 
     // the hope is for this to be resolved someday, somehow, 
-    // but for now the nevow_clientToServerEvent('makeTempPrintDir',...) call in filePrint() also clears out any previous print jobs,
-    // and this is called upon Quit of eXe as well, leaving *at most* one temporary print job sitting around.
+    // but for now the nevow_clientToServerEvent('makeTempPrintDir',...) 
+    // call in filePrint() also clears out any previous print jobs,
+    // and this is called upon Quit of eXe as well, leaving *at most* 
+    // one temporary print job sitting around.
 } // function filePrint3_openPrintWin()
 
 

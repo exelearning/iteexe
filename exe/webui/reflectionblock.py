@@ -23,6 +23,7 @@ ReflectionBlock can render and process ReflectionIdevices as XHTML
 import logging
 from exe.webui.block               import Block
 from exe.webui                     import common
+from exe.webui.element      import TextAreaElement
 
 log = logging.getLogger(__name__)
 
@@ -37,10 +38,13 @@ class ReflectionBlock(Block):
         Initialize a new Block object
         """
         Block.__init__(self, parent, idevice)
-        self.activity        = idevice.activity 
-        self.answer          = idevice.answer
         self.activityInstruc = idevice.activityInstruc
         self.answerInstruc   = idevice.answerInstruc
+
+        self.activityElement  = TextAreaElement(idevice.activityTextArea)
+        self.answerElement    = TextAreaElement(idevice.answerTextArea)
+
+        self.previewing        = False # In view or preview render
 
 
     def process(self, request):
@@ -49,11 +53,9 @@ class ReflectionBlock(Block):
         """
         Block.process(self, request)
         
-        if "activity"+self.id in request.args:
-            self.idevice.activity = request.args["activity"+self.id][0]
+        self.activityElement.process(request)
 
-        if "answer"+self.id in request.args:
-            self.idevice.answer = request.args["answer"+self.id][0]
+        self.answerElement.process(request)
         
         if "title"+self.id in request.args:
             self.idevice.title = request.args["title"+self.id][0]
@@ -65,16 +67,27 @@ class ReflectionBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
-        
-        html += common.formField('richTextArea',_(u'Reflective question:'),
-                                 'activity', self.id, self.activityInstruc,
-                                 self.activity)
-        html += common.formField('richTextArea',_(u'Feedback:'),
-                                 'answer', self.id, self.answerInstruc,
-                                 self.answer)
+        html += self.activityElement.renderEdit()
+        html += self.answerElement.renderEdit()
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
         return html
+
+    def renderPreview(self, style):
+        """ 
+        Remembers if we're previewing or not, 
+        then implicitly calls self.renderViewContent (via Block.renderPreview) 
+        """ 
+        self.previewing = True 
+        return Block.renderPreview(self, style)
+
+    def renderView(self, style): 
+        """ 
+        Remembers if we're previewing or not, 
+        then implicitly calls self.renderViewContent (via Block.renderPreview) 
+        """ 
+        self.previewing = False 
+        return Block.renderView(self, style)
 
 
     def renderViewContent(self):
@@ -84,7 +97,11 @@ class ReflectionBlock(Block):
         html  = u'<script type="text/javascript" src="common.js"></script>\n'
         html += u'<div class="iDevice_inner">\n'
     
-        html += self.activity   
+        if self.previewing: 
+            html += self.activityElement.renderPreview()
+        else:
+            html += self.activityElement.renderView()
+
         html += '<div id="view%s" style="display:block;">' % self.id
         html += common.feedbackButton("btnshow"+self.id, _(u"Click here"),
                     onclick="showAnswer('%s',1)" % self.id)
@@ -95,7 +112,12 @@ class ReflectionBlock(Block):
         html += '</div>\n'
         html += '<div id="s%s" class="feedback" style=" ' % self.id
         html += 'display: none;">'
-        html += self.answer
+
+        if self.previewing: 
+            html += self.answerElement.renderPreview()
+        else:
+            html += self.answerElement.renderView()
+
         html += "</div>\n"
         html += "</div>\n"
         return html
