@@ -146,6 +146,7 @@ class AttachmentBlock(Block):
         html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
 
         if self.idevice.userResources:
+            html += u"<img src='stock-attach.png'> "
             html += u"<a href=\"#\" onclick=\"window.open('"
             html += self.idevice.userResources[0].storageName
             html += u"', '_blank');\" >"
