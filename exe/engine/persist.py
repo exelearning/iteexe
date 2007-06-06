@@ -125,7 +125,7 @@ def decodeObjectRaw(toDecode):
     Decodes the object the same as decodeObject but doesn't upgrade it.
     """
     jellyData = decodeToList(toDecode)
-    fixDataForMovedObjects(jellyData)
+   # fixDataForMovedObjects(jellyData)
     decoded = jelly.unjelly(jellyData[0])
     return decoded
 
