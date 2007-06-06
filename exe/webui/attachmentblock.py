@@ -88,8 +88,7 @@ class AttachmentBlock(Block):
                                  label,
                                  'path'+self.id, '',
                                  self.idevice.filenameInstruc,
-                                 size=50)
-        html += u'</div"><div style="padding-top:28px;" >'
+                                 size=40)
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" />\n' % _(u"Select a file")
         html += u'</div><br style="clear:both;" />' 
