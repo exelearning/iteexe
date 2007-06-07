@@ -186,7 +186,7 @@ class ElementWithResources(Element):
 
                log.debug("ProcessPreviewedImages: found file = " \
                            + input_file_name_str)
-    
+
                webDir     = Path(G.application.tempWebDir)
                previewDir  = webDir.joinpath('previews')
                server_filename = previewDir.joinpath(input_file_name_str);

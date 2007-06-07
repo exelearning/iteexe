@@ -249,6 +249,8 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
 
     preview_imageName = newImageStr;
     full_previewImage_url = "/previews/"+preview_imageName;
+
+
     // pass the file information on to the server,
     // to copy it into the server's "previews" directory:
     window.parent.nevow_clientToServerEvent('previewTinyMCEimage', this, 
@@ -257,13 +259,25 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
 
 
     // first, clear out any old value in the tinyMCE image filename field:
-    win.document.forms[0].elements[field_name].value = "";
-    win.showPreviewImage(" ");
+    win.document.forms[0].elements[field_name].value = ""; 
+
+    // PreviewImage is only available for images:
+    if (type == "image") {
+       win.showPreviewImage(" ");
+    }
+    // NEED: a proper way of previewing the media resources as well!
+
 
     // set the tinyMCE image filename field:
     win.document.forms[0].elements[field_name].value = full_previewImage_url;
     // then force its onchange event:
-    win.showPreviewImage(full_previewImage_url);
+
+    // PreviewImage is only available for images:
+    if (type == "image") {
+       win.showPreviewImage(full_previewImage_url);
+    }
+    // NEED: a proper way of previewing the media resources as well!
+
     // this onchange works, but it's dirty because it is hardcoding the 
     // onChange=".." event of that field, and if that were to ever change 
     // in tinyMCE, then this would be out of sync.

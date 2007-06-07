@@ -24,7 +24,6 @@ import logging
 from exe.webui.block                 import Block
 from exe.webui.testquestionelement   import TestquestionElement
 from exe.webui                       import common
-
 log = logging.getLogger(__name__)
 
 
@@ -116,8 +115,7 @@ class QuizTestBlock(Block):
 
         return html
 
-    
-    def renderView(self, style):
+    def renderView(self, style, preview=False):
         """
         Returns an XHTML string for viewing this block
         """
@@ -131,7 +129,10 @@ class QuizTestBlock(Block):
         html += self.idevice.title+'</span>\n'
         html += u'<div class="iDevice_inner">\n'
         for element in self.questionElements:
-            html += element.renderView() + "<br/>"  
+            if preview: 
+                html += element.renderPreview() + "<br/>"  
+            else:
+                html += element.renderView() + "<br/>"  
         
         html += '<input type="submit" name="submitB" '
         html += 'value="%s"/>\n' % _(u"SUBMIT ANSWERS")
@@ -348,7 +349,7 @@ class QuizTestBlock(Block):
         html += u'<div class="iDevice_inner">\n'
 
         for element in self.questionElements:
-            html += element.renderView() + "<br/>"
+            html += element.renderPreview() + "<br/>"
        
         html += '<input type="submit" name="submitScore"'
         html += ' value="%s"/> ' % _("Submit Answer")

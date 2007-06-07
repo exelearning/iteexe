@@ -23,6 +23,7 @@ TestquestionElement.
 
 import logging
 from exe.webui import common
+from exe.webui.element import TextAreaElement
 
 log = logging.getLogger(__name__)
 # ===========================================================================
@@ -43,6 +44,9 @@ class TestoptionElement(object):
         self.answerId   = "optionAnswer"+ unicode(index) + "q" + questionId
         self.keyId      = "key" + questionId   
         self.idevice    = idevice
+
+        self.answerElement = TextAreaElement(option.answerTextArea)
+        self.answerElement.id = self.answerId
   
         
 
@@ -54,7 +58,7 @@ class TestoptionElement(object):
         log.debug("process " + repr(request.args))
         
         if self.answerId in request.args:
-            self.option.answer = request.args[self.answerId][0]
+            self.answerElement.process(request)
                         
         if "c"+self.keyId in request.args:
             if request.args["c"+self.keyId][0] == self.id:
@@ -77,7 +81,7 @@ class TestoptionElement(object):
         Returns an XHTML string for editing this option element
         """
         html = u"<tr><td>"
-        html += common.richTextArea(self.answerId, self.option.answer)
+        html += self.answerElement.renderEdit()
         html += "</td><td align=\"center\">\n"
         html += common.option("c"+self.keyId, self.option.isCorrect, self.id)
         html += "</td><td>\n"
@@ -87,8 +91,13 @@ class TestoptionElement(object):
         html += "</td></tr>\n"
         return html
 
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this option element
+        """
+        return self.renderView(preview=True)
 
-    def renderView(self):
+    def renderView(self, preview=False):
         """
         Returns an XHTML string for viewing this option element
         """
@@ -97,7 +106,11 @@ class TestoptionElement(object):
         html  = '<tr><td>'
         html += common.option(self.keyId, 0, unicode(self.index))
         html += '</td><td>\n'
-        html += self.option.answer + "</td></tr>\n"
+        if preview: 
+            html += self.answerElement.renderPreview()
+        else:
+            html += self.answerElement.renderView()
+        html += "</td></tr>\n"
        
         return html
     

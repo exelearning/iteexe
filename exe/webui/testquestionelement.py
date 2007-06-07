@@ -24,6 +24,7 @@ Used by QuizTestBlock
 import logging
 from testoptionelement   import TestoptionElement
 from exe.webui           import common
+from exe.webui.element   import TextAreaElement
 
 log = logging.getLogger(__name__)
 
@@ -41,7 +42,13 @@ class TestquestionElement(object):
         self.index      = index
         self.id         = unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
+
+        self.questionElement = TextAreaElement(question.questionTextArea)
         self.question   = question
+
+        self.questionId = "question"+self.id
+        self.questionElement.id = self.questionId
+
         self.options    = []
         self.keyId      = "key" + self.id
         i = 0
@@ -58,9 +65,8 @@ class TestquestionElement(object):
         Process the request arguments from the web server
         """
         log.info("process " + repr(request.args))
-        questionId = "question"+self.id
-        if questionId in request.args:
-            self.question.question = request.args[questionId][0]
+        if self.questionId in request.args: 
+            self.questionElement.process(request)
             
         if ("addOption"+unicode(self.id)) in request.args: 
             self.question.addOption()
@@ -78,13 +84,8 @@ class TestquestionElement(object):
         Returns an XHTML string with the form element for editing this element
         """
         html  = u"<div class=\"iDevice\">\n"
-        html += u"<b>" + _("Question:") + " </b>" 
-        html += common.elementInstruc(self.question.questionInstruc)
-        html += u" " + common.submitImage(self.id, self.idevice.id, 
-                                   "/images/stock-cancel.png",
-                                   _("Delete question"))
-        html += common.richTextArea("question"+self.id, 
-                                    self.question.question)
+        html += self.questionElement.renderEdit()
+
         html += u"<table width =\"100%%\">"
         html += u"<thead>"
         html += u"<tr>"
@@ -111,19 +112,31 @@ class TestquestionElement(object):
         return html
 
     
-    def renderView(self):
+    def renderPreview(self):
+        """
+        Returns an XHTML string for previewing this element
+        """
+        return self.renderView(preview=True)
+
+    def renderView(self, preview=False):
         """
         Returns an XHTML string for viewing this element
         """
+        html  = "<b>"
+        if preview: 
+            html += self.questionElement.renderPreview()
+        else:
+            html += self.questionElement.renderView()
+        html += "</b><br/>\n"
 
-        html  = "<b>" + self.question.question +"</b><br/>\n"
         html += "<table>"
         for element in self.options:
-            html += element.renderView()      
+            if preview: 
+                html += element.renderPreview()      
+            else:
+                html += element.renderView()      
         html += "</table>"   
         
-        #html += "</div>\n"
-
         return html
     
     

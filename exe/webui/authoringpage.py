@@ -171,6 +171,8 @@ class AuthoringPage(RenderableResource):
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
         html += u" theme_advanced_buttons2 : \"image,tablecontrols,separator,"
+        # r3m0, WILL BE trying to add movies/flash with the media plugin, with:
+        #html += u" theme_advanced_buttons2 : \"image,media,tablecontrols,separator,"
         html += u"link,unlink,separator,undo,redo,separator,"
         html += u" charmap,removeformat,cleanup,code,help\",\n"
 
