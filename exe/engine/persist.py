@@ -112,20 +112,20 @@ def fixDataForMovedObjects(jellyData):
             # Recurse
             fixDataForMovedObjects(element)
         elif isinstance(element, str):
-            if element in ('exe.engine.flashmovieidevice.FlashMovieIdevice',
-                           'exe.engine.quiztestidevice.QuizTestIdevice',
-                           'exe.engine.quiztestidevice.TestQuestion',
-                           'exe.engine.quiztestidevice.AnswerOption'):
-                mod, cls = element.split('.')[-2:]
-                jellyData[i] = '%s.%s' % (mod, cls)
-
+            if element in ('flashmovieidevice.FlashMovieIdevice',
+                           'quiztestidevice.QuizTestIdevice',
+                           'quiztestidevice.TestQuestion',
+                           'quiztestidevice.AnswerOption',
+                           'appletidevice.AppletIdevice'):
+                mod, cls = element.split('.')
+                jellyData[i] = 'exe.engine.%s.%s' % (mod, cls) 
 
 def decodeObjectRaw(toDecode):
     """
     Decodes the object the same as decodeObject but doesn't upgrade it.
     """
     jellyData = decodeToList(toDecode)
-   # fixDataForMovedObjects(jellyData)
+    fixDataForMovedObjects(jellyData)
     decoded = jelly.unjelly(jellyData[0])
     return decoded
 

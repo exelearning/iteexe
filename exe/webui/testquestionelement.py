@@ -22,8 +22,8 @@ Used by QuizTestBlock
 """
 
 import logging
-from testoptionelement   import TestoptionElement
-from exe.webui           import common
+from exe.webui.testoptionelement   import TestoptionElement
+from exe.webui                     import common
 from exe.webui.element   import TextAreaElement
 
 log = logging.getLogger(__name__)
