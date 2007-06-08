@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-08 13:45+1200\n"
-"PO-Revision-Date: 2006-03-27 15:46+1200\n"
-"Last-Translator: EXE Team <exe@exelearning.org>\n"
+"PO-Revision-Date: 2007-06-07 23:19+1200\n"
+"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Catalan\n"
 "X-EXE-Language: Català\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:146
 msgid ""
@@ -25,6 +26,10 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+"<p> Si l'aplicació que has afegit ha estat generada \n"
+" per un dels programes de la pestanya de sota , per favor selecciona'l , \n"
+" llavors afegeixes l'arxiu dada / aplicació generat pel programa. </p> \n"
+"<p> ex. Per Geogebra aplicacions , selecciona geogebra, després afegeixes el fitxer .ggb que heu creat en Geogebra. </p> "
 
 #: exe/xului/mainpage.py:275 exe/xului/mainpage.py:642
 #: exe/xului/mainpage.py:763 exe/xului/mainpage.py:819
@@ -34,6 +39,8 @@ msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
+"\"%s\" realment existeix. \n"
+" Si-us-plau proveu altra vegada amb un nom diferent"
 
 #: exe/engine/appletidevice.py:64
 msgid ""
@@ -41,23 +48,26 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
+"\"Trobeu l'arxiu .txt ( a l'arxiu aplicació ) \n"
+" i obriu-lo. Copieu els continguts d'aquest arxiu <ctrl A, ctrl C> dins \n"
+" del camp de l'aplicació."
 
 #: exe/webui/block.py:231
 msgid "---Move To---"
-msgstr ""
+msgstr "---Moveu cap a---"
 
 #: exe/xului/mainpage.py:293 exe/xului/mainpage.py:551
 #: exe/xului/mainpage.py:634
 msgid ". Please use ASCII names."
-msgstr ""
+msgstr ". Si-us-plau empreu normes ASCII."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
-msgstr ""
+msgstr "<dl>  <dt>Si el vostre objectiu és provar a comprendre els conceptes de base o la comprensió lectora  </dt>  <dd> <p> Escriviu un resum del concepte o de la lectura bastant llarg per provar adequadament la comprensió del objectiu, però quelcom més curt per no avorrir. Menys de una pàgina escrita és probablement adequat, però probablement serà considerat poc per joves estudiants o principiants. </p>   <p> Seleccioneu paraules al text per entendre conceptes. Aquests seran probablement verbs, noms, i adverbis. Escolliu alternatives amb una resposta clara.  </p>  </dd>  <dt> Si el vostre objectiu és provar el coneixement de vocabulari  </dt>  <dd><p>Escriviu un text utilitzant l'objectiu vocabulari. Aquest text hauria de ser coherent i comprensiu  i tindre una longitud apropiada. Marqueu les paraules objectiu al text. Escolliu alternatives amb una resposta.</p> </dd>  <dt>Si el vostre objectiu és provar les funcions sintàctiques/gramàtica:  </dt>  <dd>  <p>Escriviu un text utilitzant l'objectiu formularis. Aquest text hauria de ser coherent , cohesionat , i tindre una longitud apropiada. Recorda que l'objectiu no és un coneixement del vocabulari, tanmateix el significat de l'arrel de les paraules haurien de ser ben sabudes pels estudiants.</p>  <p>Marqueu les paraules objectiu al text. Preveieu alternatives amb la mateixa arrel, però diferents afixes. És una bona idea tindre un company per provar que ho fas bé i no tindre sorpreses ! </p>  </dd></dl> "
 
 #: exe/engine/multimediaidevice.py:50
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
-msgstr ""
+msgstr "<ol>  <li>Premeu &lt;Seleccioneu un MP3&gt; i navegueu cap el fitxer MP3 que voleu inserir</li>  <li>Premeu en la pestanya de sota per seleccionar la posició         en la qual veieu l'arxiu marcat en la pantalla.</li>  <li>Entreu un subtítol opcional pel vostre arxiu.</li>  <li>Associeu qualsevol text rellevant al arxiu MP3.</li><li>Escolliu el tipus d'estil que voldrieu mostrar al iDevice. Ex: 'Some emphasis' aplica una vora i una icona al contingut del iDevice mostrat. </li></ol>"
 
 #: exe/engine/imagewithtextidevice.py:41
 msgid ""
@@ -78,14 +88,22 @@ msgid ""
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
 msgstr ""
+"<p>\n"
+" La imatge amb text IDevice pot ser emprada en un nombre de llocs per suportar conjuntament la tasca emocional ( afectiva ) i tasques d'aprenentatge (cognitives) al continguts de eXe . \n"
+"</p><p>\n"
+" Integracions visuals amb resums verbals</b>\n"
+"Coneixements psicològics  indiquen que els aprenents presents amb una\n"
+"imatge representativa i un resum verbal ( que es presentat simultaneament )  poden reduir la carrega cognitiva i augmentar el nivell de retenció.\n"
+"Aquest iDevice pot ser emprat per presentar una imatge (fotografia , diagrama, o gràfic ) amb un breu resum que cobrisca els principals punts relatius a la imatge. Per exemple, si esteu ensenyant les funcions del motor de combustió interna  , /n podríeu  tindre una representació visual de les quatre posicions del pistó amb un breu resum dels aspectes de cada representació visual. \n"
+"</p>"
 
 #: exe/engine/attachmentidevice.py:70
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
-msgstr ""
+msgstr "<p>Assigneu una etiqueta per cada enviament. És útil incloure el tipus d'arxiu. Ex: pdf, doc (odt) , ppt (odp ) etc.</p> <p> Incloure la mida és molt recomanable per tal que quan siga exportat el vostre arxiu a un lloc web , la gent tinga una idea del temps que tardarà en baixar-se el vostre enviament.</p> <p> Per exemple: <code> Vendes.odt (500kb) </code> </p>"
 
 #: exe/engine/clozeidevice.py:46
 msgid "<p>Cloze exercises are texts or sentences where students must fill in missing words. They are often used for the following purposes:</p><ol><li>To check knowledge of core course concepts (this could be a pre-check, formative exercise, or summative check).</li><li>To check reading comprehension.</li><li>To check vocabulary knowledge.</li><li>To check word formation and/or grammatical competence. </li></ol>"
-msgstr ""
+msgstr "<p> El exercicis de buits són texts o frases on els estudiants han d'emplenar les paraules que falten. S'utilitzen sovint pels propòsits següents: :</p><ol><li> Per comprovar els coneixements dels conceptes de base  ( així poden fer un preexamen , un exercici formatiu , o una avaluació sumativa).</li><li>Per comprovar la comprensió lectora.</li><li> Per comprovar la comprensió del vocabulari.</li><li> Per comprovar la formació de frases o la competència gramatical.></li></ol>"
 
 #: exe/engine/clozeidevice.py:122
 msgid ""
@@ -94,29 +112,31 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
+"<p>Entreu el text per l'activitat de buits al camp de buits\n"
+" pegant el text des d'un altra font o teclejant el text directament al camp.</p><p> Per seleccionar paraules per amagar, feu doble clic sobre la paraula per seleccionar-la i premeu al botó ocultar paraules de sota.</p>"
 
 #: exe/engine/field.py:599
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr ""
+msgstr "<p>Si ho deixeu no seleccionat un nombre petit d'errors seran acceptats. Si ho deixeu seleccionat sols s'acceptarà una comparació exacta.. </p><p><strong>Per exemple:</strong> Si la paraula correcta és <code>Elefant</code> i poseu <code>elefant</code> serà jutjat com<em>\"close enough\" incorrecta</em> pel algoritme sols si té una lletra incorrecta, sempre que \"Check capitalization\" estiga seleccionat.</p><p>Si la casella \"Check capitalization\" no està  seleccionada al exemple d'abans , la lletra<code>e</code> no serà considerada un error i <code>elefant</code> serà acceptada.</p><p> Si seleccioneu \"Strict Marking\" i \"Check Capitalization\" al mateix temps , la única paraula correcta serà \"Elefant\". Si sols seleccioneu \"Strict Marquing\" i \"Check Capitalization\" no ho està, \"elefant\" també serà acceptada.</p>"
 
 #: exe/engine/field.py:620
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr ""
+msgstr "<p>Si aquesta opció està seleccionada, posar respostes amb un recompte d'errors superior a un serà considerat un error.</p>"
 
 #: exe/engine/field.py:625
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
-msgstr ""
+msgstr "<p>Si marqueu aquesta opció, cada paraula serà marcada com l'estudiant l'escriu, tanmateix totes les paraules seran marcades al final de l'exercici.</p>"
 
 #: exe/engine/field.py:874
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr ""
+msgstr "<p>Seleccioneu símbols des de l'editor de text o entreu LATEX manualment per crear la formula matemàtica. Per veure com el vostre LATEX és mostrat empreu el botó &lt;Vista prèvia&gt;  de sota.</p>"
 
 #: exe/engine/idevicestore.py:272
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr ""
+msgstr "<p>Els professors haurien de tindre en ment el següent mentre empren aquest iDevice:</p><ol><li>Pensa en planejar un nombre diferent d'activitats per fer el contingut visualment atractiu. Utilitzar massa diferents tipus d'activitats pot confondre a l'estudiant. Normalment tres o quatre tipus diferents són adequats per aprendre un recurs.</li><li> Des d'una perspectiva de disseny visual tindre dos iDevices seguits immediatament sense text entre mig és lleig. Si us calen dos iDevices ajunteu dos qüestions dins el mateix iDevice </li><li>Penseu en activitats que siguen percebudes com atractives i beneficioses , tant com invertir temps i esforç en completar-les.</li></ol>"
 
 #: exe/engine/idevicestore.py:267
 msgid ""
@@ -126,6 +146,11 @@ msgid ""
 "the reading, or by having them complete some other possibly more physical task \n"
 "based on the reading.</p>"
 msgstr ""
+"<p>L'activitat de lectura serà utlitzada \n"
+" per comprovar la comprensió lectora del text donat a l'alumne. Això és pot fer \n"
+" preguntant a l'alumne per qüestions que reflectisquen  la comprensió lectora, \n"
+" o completant tasques possiblement més físiques  \n"
+" basades en la lectura.</p>"
 
 #: exe/engine/wikipediaidevice.py:53
 msgid ""
@@ -137,6 +162,11 @@ msgid ""
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU free documentation license.</p>"
 msgstr ""
+"<p> El iDevice Wikipèdia us permet localitzar un article que estiga a la Wikipèdia i \n"
+" baixar-lo al recurs eXe. El iDevice Wikipèdia pren una copia de del contingut de l'article. \n"
+" Els canvis en la Wikipèdia no són actualitzats automàticament en la còpia que heu pres, us caldrà tornar a prendre la còpia de l'article si voleu la seva \n"
+" actualització. Així mateix , els canvis fets a l'article en eXe no seran actualitzats a la Wikipèdia. \n"
+" </p><p> El contingut de la Wikipèdia està cobert per la llicència de documentació lliure GNU FDL.</p> "
 
 #: exe/engine/idevicestore.py:375
 msgid ""
@@ -146,6 +176,10 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>L'activitat de lectura, com el seu nom \n"
+" suggereix, sols demanar a l'alumne un esforç per fer alguna activitat.  Aquesta activitat \n"
+" hauria d'estar relacionada directament amb el contingut del text llegit. \n"
+" L'realimentació de l'activitat és molt apropiada doncs proporciona una guia per reflexionar i no cometre el mateix error. </p>"
 
 #: exe/engine/galleryidevice.py:363
 msgid ""
@@ -153,10 +187,13 @@ msgid ""
 "to each other or to a particular learning exercise you may wish to display \n"
 "these in a gallery context rather then individually.</p>"
 msgstr ""
+"<p>On tens un nombre d'imatges que pots relacionar \n"
+" entre elles o un particular exercici d'aprenentatge on pots mostrar   \n"
+" aquestes imatges en la galeria  individualment.</p>"
 
 #: exe/engine/package.py:207
 msgid "?????"
-msgstr ""
+msgstr "?????"
 
 #: exe/engine/casestudyidevice.py:94
 msgid ""
@@ -174,47 +211,66 @@ msgid ""
 "if run in a classroom situation can teams be setup to work on different aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
+"Un cas d'estudi és un iDevice que proveeix els alumnes \n"
+" d'una simulació d'un concepte bàsic. Consisteix generalment \n"
+" en preguntar als alumnes per demostrar o descriure les accions que farien \n"
+" per completar la tasca o resoldre la situació. El cas d'estudi \n"
+" permet als alumnes aplicar els seus coneixements i experiència per completar les tasques \n"
+" assignades. En dissenyar el cas d'estudi considereu el següent:<ul> \n"
+"<li>\t Quins punts educatius són tractats en la història</li>\n"
+"<li>\t Quina preparació prèvia li cal a l'alumne per resoldre el cas d'estudi. </li>\n"
+"<li>\t On ajustar el cas d'estudi en la resta del curs.</li>\n"
+"<li>\t Com interaccionen els alumnes amb amb els materials i amb els altres alumnes. \n"
+" Ex:Quan entra l'aula en una situació poden els equips començar a treballar diferents aspectes del cas, \n"
+" i si ho fan així com realimentem les idees de la resta de la classe</li></ul> "
 
 #: exe/engine/truefalseidevice.py:101
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
-msgstr ""
+msgstr "Es pot proporcionar a l'alumne una pista per respondre la qüestió."
 
+<<<<<<< .mine
+#: exe/idevices/forumelement.py:75
+msgid "A single simple discussion"
+msgstr "Una discussió senzilla i sola."
+
+=======
+>>>>>>> .r2889
 #: exe/webui/editorpane.py:275
 msgid "Actions"
-msgstr ""
+msgstr "Accions "
 
 #: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:350
 #: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:419
 #: exe/engine/idevicestore.py:456 exe/engine/idevicestore.py:464
 #: exe/webui/questionelement.py:90
 msgid "Activity"
-msgstr ""
+msgstr "Activitat"
 
 #: exe/webui/editorpane.py:260
 msgid "Add Field"
-msgstr ""
+msgstr "Afegir camp "
 
 #: exe/webui/element.py:554
 msgid "Add Image"
-msgstr ""
+msgstr "Afegir imatge "
 
 #: exe/webui/element.py:944
 msgid "Add JPEG Image"
-msgstr ""
+msgstr "Afegir imatge JPEG"
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr ""
+msgstr "Afegir un vídeo flash al teu iDevice."
 
 #: exe/webui/editorpane.py:81
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr ""
+msgstr "Afegir una simple línia de text a un iDevice. Útil si vols col·locar una etiqueta dins d'un iDevice. "
 
 #: exe/webui/editorpane.py:84
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr ""
+msgstr "Afegir una caixa d'entrada de text a un iDevice. Utilitzada per entrar quantitats més grans de text."
 
 #: exe/engine/appletidevice.py:61
 msgid ""
@@ -222,79 +278,84 @@ msgid ""
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
+"Afegir tots els arxius proporcionats per l'aplicació \n"
+" excepte l'arxiu .txt , al mateix temps usat per afegir arxius o carregar botons . \n"
+" Els arxius una vegada carregats són mostrats sota el camp de codi de l'aplicació."
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr ""
+msgstr "Afegir un enviament d'un fitxer al teu iDevice."
 
 #: exe/webui/editorpane.py:87
 msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr ""
+msgstr "Afegir una imatge al teu iDevice. Permetre a l'usuari inserir una imatge dins de l'iDevice."
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr ""
+msgstr "Afegir un camp de realimentació interactiva al tei iDevice."
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr ""
+msgstr "Afegir un arxiu mp3 al teu iDevice."
 
 #: exe/webui/testquestionelement.py:107 exe/webui/element.py:1737
 msgid "Add another Option"
-msgstr ""
+msgstr "Afegir una altra opció."
 
 #: exe/webui/quiztestblock.py:100 exe/webui/multiselectblock.py:78
 msgid "Add another Question"
-msgstr ""
+msgstr "Afegir un altra pregunta."
 
 #: exe/webui/casestudyblock.py:94
 msgid "Add another activity"
-msgstr ""
+msgstr "Afegir un altra activitat."
 
 #: exe/webui/element.py:2000
 msgid "Add another option"
-msgstr ""
+msgstr "Afegir un altra opció."
 
 #: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:89
 msgid "Add another question"
-msgstr ""
+msgstr "Afegir un altra pregunta."
 
 #: exe/webui/appletblock.py:108
 msgid "Add files"
-msgstr ""
+msgstr "Afegir arxius."
 
 #: exe/webui/galleryblock.py:183
 msgid "Add images"
-msgstr ""
+msgstr "Afegir imatges."
 
 #: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
 #: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:108
 #: exe/webui/flashmovieblock.py:78 exe/webui/imagewithtextblock.py:79
 msgid "Align:"
-msgstr ""
+msgstr "Alinear:"
 
 #: exe/engine/imagemagnifieridevice.py:65
 #: exe/engine/imagemagnifieridevice.py:87
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the image will be positioned."
-msgstr ""
+msgstr "L'alineament et permet escollir on serà col·locada la imatge en la pantalla."
 
 #: exe/engine/multimediaidevice.py:74
 msgid ""
 "Alignment allows you to \n"
 "choose where on the screen the media player will be positioned."
-msgstr ""
+msgstr "L'alineament et permet escollir on serà col·locat el reproductor multimèdia  en la pantalla."
 
 #: exe/engine/field.py:663
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
 msgstr ""
+"Permet autocompletar quan \n"
+" l'usuari omple els buits."
 
 #: exe/engine/clozeidevice.py:161
 msgid "Allow auto completion when user filling the gaps."
-msgstr ""
+msgstr "Permet autocompletar quan l'usuari omple els buits."
 
 #: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
 msgid ""
@@ -313,6 +374,16 @@ msgid ""
 "</ul>\n"
 " "
 msgstr ""
+"Tot i que més sovint s'empren en proves més formals, \n"
+" les situacions MCQs poden ser utilitzades com a eina per estimular la discussió de situacions que els estudiants són reticents a respondre. |n\n"
+"Quan dissenyem una prova MCQ considerarem el següent: \n"
+"<ul>\n"
+"<li>Quins resultats d'aprenentatge ens donaran les preguntes de la prova</li>\n"
+"<li>Quines habilitats intel·lectuals seran provades</li>\n"
+"<li>Les habilitats lingüístiques de l'audiència.</li>\n"
+"<li>Genere i nivell cultural</li>\n"
+"<li>Evitar expressions i estructures que puguen proporcionar pistes</li>\n"
+"</ul>\n"
 
 #: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
 msgid ""
@@ -320,82 +391,100 @@ msgid ""
 "complete. Provide a clear statement of the task and consider any conditions\n"
 "that may help or hinder the learner in the performance of the task."
 msgstr ""
+"Una activitat pot ser definida com una tasca o conjunt de tasques \n"
+" que l'alumne ha de realitzar. Donar una redacció clara de la tasca i considereu \n"
+" el que pot ajudar o obstaculitzar l'assoliment de la tasca."
 
 #: exe/webui/element.py:1275
 msgid "Answsers"
-msgstr ""
+msgstr "Respostes"
 
 #: exe/webui/appletblock.py:114
 msgid "Applet Code:"
-msgstr ""
+msgstr "Codi de l'aplicació:"
 
 #: exe/webui/appletblock.py:90
 msgid "Applet Type"
-msgstr ""
+msgstr "Tipus d'aplicació"
 
 #: exe/engine/wikipediaidevice.py:63
 msgid "Article"
-msgstr ""
+msgstr "Article"
 
 #: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:269
 msgid "Attachment"
-msgstr ""
+msgstr "Adjuntar"
 
 #: exe/engine/attachmentidevice.py:103
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr ""
+msgstr "Adjunció %s no té node pare."
 
 #: exe/engine/rssidevice.py:40 exe/engine/multimediaidevice.py:41
 msgid "Auckland University of Technology"
-msgstr ""
+msgstr "Universitat de Tecnologia de Auckland"
 
 #: exe/webui/editorelement.py:145
 msgid "Button Caption"
-msgstr ""
+msgstr "Subtítol del botó"
 
+<<<<<<< .mine
+#: exe/idevices/forumelement.py:103
+msgid "Can a student post to this forum?:"
+msgstr "Pot un estudiant escriure en aquest fòrum ?"
+
+#: exe/webui/editorpane.py:283 exe/webui/preferencespage.py:94
+=======
 #: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:283
+>>>>>>> .r2889
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel·lar"
 
 #: exe/xului/mainpage.py:293 exe/xului/mainpage.py:549
 #: exe/xului/mainpage.py:634
 msgid "Cannot access directory named "
-msgstr ""
+msgstr "No podeu accedir al directori anomenat"
 
 #: exe/webui/flashwithtextblock.py:84 exe/webui/editorelement.py:324
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/flashmovieblock.py:83
 #: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:670
 msgid "Caption:"
-msgstr ""
+msgstr "Subtítol:"
 
 #: exe/engine/casestudyidevice.py:92
 msgid "Case Study"
-msgstr ""
+msgstr "Cas d'estudi"
 
 #: exe/webui/galleryblock.py:201 exe/webui/galleryblock.py:219
 msgid "Change Image"
-msgstr ""
+msgstr "Canviar imatge"
 
 #: exe/webui/element.py:1128
 msgid "Check Caps?"
-msgstr ""
+msgstr "Comprovar els controls ?"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Chinese Wikipedia Article"
-msgstr ""
+msgstr "Article de la Wikipèdia chinesa"
 
+<<<<<<< .mine
+#: exe/idevices/forumidevice.py:113
+msgid "Choose a LMS"
+msgstr "Escolliu un LMS"
+
+=======
+>>>>>>> .r2889
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
-msgstr ""
+msgstr "Escolliu una imatge"
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr ""
+msgstr "Escolliu un arxiu MP3"
 
 #: exe/engine/casestudyidevice.py:66
 msgid "Choose an optional image to be shown to the student on completion of this question"
-msgstr ""
+msgstr "Escolliu una imatge opcionalment per ser mostrada al estudiant al completar aquesta pregunta"
 
 #: exe/engine/imagemagnifieridevice.py:61
 msgid ""
@@ -404,10 +493,13 @@ msgid ""
 "pixels equals approximately 3cm. Leave both fields blank if you want the \n"
 "image to display at its original size."
 msgstr ""
+"Escolliu la mida que voleu \n"
+" per la imatge que mostrareu. Les mesures són en pixels. generalment , 100 \n"
+" pixels quadrats equivalen a 3 cm. Deixeu els dos camps en blanc si voleu que la imatge és mostre amb la seva mida original."
 
 #: exe/xului/mainpage.py:211
 msgid "Clear Recent Projects List"
-msgstr ""
+msgstr "Esborrar la llista de projectes recents"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid ""
@@ -415,32 +507,37 @@ msgid ""
 "on the picture below or the \"Add Image\" button to select an image file to be \n"
 "magnified."
 msgstr ""
+"Premeu \n"
+" en la fotografia de sota o al botó \"Afegir imatge\" per \n"
+" seleccionar un arxiu a ampliar."
 
 #: exe/engine/attachmentidevice.py:67
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr ""
+msgstr "Premeu <strong>Seleccioneu un arxiu</strong>, navegueu fins aquest arxiu que voleu adjuntar i seleccioneu-lo."
 
 #: exe/engine/field.py:215
 msgid "Click Here"
-msgstr ""
+msgstr "Prem Ací"
 
 #: exe/webui/common.py:293 exe/webui/common.py:296
 msgid "Click for completion instructions"
-msgstr ""
+msgstr "Prem per mirar les instruccions de emplenat"
 
 #: exe/webui/reflectionblock.py:106
 msgid "Click here"
-msgstr ""
+msgstr "Prem ací"
 
 #: exe/engine/field.py:882
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr ""
+"Premeu al botó de Vista prèvia per convertir \n"
+" el latex en una imatge."
 
 #: exe/engine/galleryidevice.py:376
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
-msgstr ""
+msgstr "Premeu al botó Afegir imatges per seleccionar un arxiu d'una imatge. La imatge apareixerà a sota on podràs etiquetar-la. És sempre una bona idea posar la mida de la imatge a l'etiqueta."
 
 #: exe/engine/galleryidevice.py:545 exe/webui/truefalseelement.py:128
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
@@ -449,32 +546,41 @@ msgstr ""
 #: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
 #: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
 msgid "Close"
-msgstr ""
+msgstr "Tanca"
 
 #: exe/engine/clozeidevice.py:121
 msgid "Cloze"
-msgstr ""
+msgstr "Buits"
 
 #: exe/engine/clozeidevice.py:44
 msgid "Cloze Activity"
-msgstr ""
+msgstr "Activitat de buits"
 
 #: exe/webui/element.py:1110
 msgid "Cloze Text"
-msgstr ""
+msgstr "Text amb buits"
 
+<<<<<<< .mine
+#: exe/webui/common.py:252
+msgid "Confirm and submit"
+msgstr "Confirmar i enviar"
+
+#: exe/webui/element.py:1446 exe/webui/element.py:1541
+#: exe/webui/element.py:1589 exe/idevices/testquestionelement.py:93
+=======
 #: exe/webui/testquestionelement.py:94 exe/webui/element.py:1723
 #: exe/webui/element.py:1847 exe/webui/element.py:1916
+>>>>>>> .r2889
 msgid "Correct"
-msgstr ""
+msgstr "Correcte"
 
 #: exe/webui/truefalseelement.py:194 exe/webui/truefalseelement.py:197
 msgid "Correct!"
-msgstr ""
+msgstr "Correcte !"
 
 #: exe/xului/mainpage.py:890
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
-msgstr ""
+msgstr "No es pot carregar l'arxiu, si-us-plau envieu un e-mail a bugs@exelearning.org"
 
 #: exe/engine/casestudyidevice.py:111
 msgid ""
@@ -483,6 +589,10 @@ msgid ""
 "involved and the situation. It should also allow for some action to be taken \n"
 "in order to gain resolution of the situation."
 msgstr ""
+"Creat el cas història. Un bon cas és aquell \n"
+" que descriu una controvèrsia o mostra una escena descrivint els caràcters \n"
+" involucrats en la situació. Hauria de permetre les accions \n"
+" tendents a resoldre el conflicte de la situació."
 
 #: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
 #: exe/webui/editorelement.py:152 exe/webui/editorelement.py:193
@@ -492,32 +602,32 @@ msgstr ""
 #: exe/webui/editorpage.py:236 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" label="Delete">
 msgid "Delete"
-msgstr ""
+msgstr "Esborrar"
 
 #: exe/webui/appletblock.py:127
 msgid "Delete File"
-msgstr ""
+msgstr "Esborrar Arxiu"
 
 #: exe/webui/galleryblock.py:250
 msgid "Delete Image"
-msgstr ""
+msgstr "Esborrar Imatge"
 
 #: exe/webui/testoptionelement.py:90 exe/webui/element.py:1621
 #: exe/webui/element.py:1865
 msgid "Delete option"
-msgstr ""
+msgstr "Esborrar opció"
 
 #: exe/webui/questionelement.py:104 exe/webui/truefalseelement.py:106
 #: exe/webui/element.py:1710
 msgid "Delete question"
-msgstr ""
+msgstr "Esborrar pregunta"
 
 #: exe/engine/reflectionidevice.py:55
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr ""
+msgstr "Descriu com els alumnes determinen el que han aprés. ( Les rubriques són útils per proporcionar una realimentació i reflexionar.)"
 
 #: exe/engine/casestudyidevice.py:120
 msgid ""
@@ -526,72 +636,97 @@ msgid ""
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
 msgstr ""
+"Descriu les tasques rellevants al cas història \n"
+" proporcionat. Aquestes poden ser en forma de preguntes o instruccions \n"
+" amb les quals l'alumne pot resoldre el dilema presentat."
 
 #: exe/engine/idevicestore.py:346 exe/engine/idevicestore.py:452
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr ""
+"Descriu els coneixements requerits pels alumnes \n"
+" que haurien de tindre per completar aquest aprenentatge. "
 
 #: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
-msgstr ""
+msgstr "Descriu les tasques que els alumnes haurien d'aprendre. Aquesta ajuda mostra la rellevància per als alumnes."
 
 #: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
 msgid "Describe the tasks the learners should complete."
-msgstr ""
+msgstr "Descriu les tasques que els alumnes haurien de completar."
 
 #: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
-msgstr ""
+msgstr "Descripció"
 
 #: exe/engine/attachmentidevice.py:63 exe/engine/attachmentidevice.py:149
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "Description:"
-msgstr ""
+msgstr "Descripció:"
 
+<<<<<<< .mine
+#: exe/idevices/forumidevice.py:40
+msgid "Discussion Activity"
+msgstr "Activitat discussió"
+
+#: exe/idevices/forumelement.py:233
+msgid "Discussion Topic/Thread:"
+msgstr "Tema de discussió/Fil:"
+
+#: exe/idevices/forumidevice.py:147
+msgid "Discussion topic/Thread"
+msgstr "Tema de discussió/Fil"
+
+#: exe/idevices/forumelement.py:79
+msgid "Discussions and replies are allowed"
+msgstr "Discussió i comentaris estan permesos"
+
+#: exe/webui/element.py:358 exe/webui/element.py:743 exe/webui/element.py:1078
+=======
 #: exe/webui/element.py:580 exe/webui/element.py:966 exe/webui/element.py:1329
+>>>>>>> .r2889
 msgid "Display as:"
-msgstr ""
+msgstr "Mostra com:"
 
 #: exe/webui/block.py:207 exe/xului/templates/exportproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
 #: label="Done">
 msgid "Done"
-msgstr ""
+msgstr "Fet"
 
 #: exe/webui/wikipediablock.py:93
 msgid "Dutch Wikipedia Article"
-msgstr ""
+msgstr "Article de la Wikipèdia Holandesa"
 
 #: exe/webui/element.py:64
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.process called directly with %s class"
 
 #: exe/webui/element.py:73
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.renderEdit called directly with %s class"
 
 #: exe/webui/element.py:90
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr ""
+msgstr "ERROR Element.renderView called directly with %s class"
 
 #: exe/webui/block.py:319
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr ""
+msgstr "ERROR: Block.renderViewContent called directly"
 
 #: exe/xului/mainpage.py:576 exe/xului/mainpage.py:583
 #: exe/xului/mainpage.py:586 exe/xului/mainpage.py:589
 #: exe/xului/mainpage.py:747
 msgid "EXPORT FAILED!"
-msgstr ""
+msgstr "Exportació errònia !"
 
 #: exe/xului/mainpage.py:737 exe/xului/mainpage.py:751
 #: exe/xului/mainpage.py:764 exe/xului/mainpage.py:770
@@ -603,6 +738,8 @@ msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
+"Exportació errònia !\n"
+"%s"
 
 #: exe/export/imsexport.py:325 exe/export/scormexport.py:440
 #: exe/export/websiteexport.py:87
@@ -611,6 +748,8 @@ msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
+"Exportació errònia !\n"
+"Darrera èxit en la exportació és %s."
 
 #: exe/xului/mainpage.py:643 exe/xului/mainpage.py:652
 #, python-format
@@ -618,52 +757,68 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
+"Extracció errònia!\n"
+"%s"
 
+<<<<<<< .mine
+#: exe/idevices/forumelement.py:76
+msgid "Each person posts one discussion"
+msgstr "Cada persona envia una discussió"
+
+#: exe/webui/editorpane.py:280 exe/webui/block.py:327
+=======
 #: exe/webui/block.py:328 exe/webui/editorpane.py:280
+>>>>>>> .r2889
 #: exe/webui/editorpage.py:266
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
 #: exe/webui/rssblock.py:94 exe/webui/editorpane.py:344
 msgid "Emphasis"
-msgstr ""
+msgstr "Énfasis"
 
 #: exe/webui/wikipediablock.py:91
 msgid "English Wikipedia Article"
-msgstr ""
+msgstr "Article de la Wikipèdia anglesa"
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
 msgstr ""
+"Entreu \n"
+" el text que voleu associar amb l'arxiu."
 
 #: exe/engine/multichoiceidevice.py:96
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
 msgstr ""
+"Escriviu una pista ací. Si no voleu  donar \n"
+" cap pista, deixeu en blanc aquest camp."
 
 #: exe/engine/multichoiceidevice.py:141
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr ""
+msgstr "Escriviu una pista ací. Si no voleu  donar cap pista, deixeu en blanc aquest camp."
 
 #: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:236
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
 msgstr ""
+"Escriu una frase o paraula que voleu buscar \n"
+" a la Wikipèdia."
 
 #: exe/engine/reflectionidevice.py:53
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr ""
+msgstr "Escriviu una pregunta per tal que els alumnes hi reflexionen."
 
 #: exe/engine/galleryidevice.py:375
 msgid "Enter a title for the gallery"
-msgstr ""
+msgstr "Escriviu el títol per la galeria. "
 
 #: exe/engine/rssidevice.py:50
 msgid ""
@@ -677,6 +832,16 @@ msgid ""
 "display them as links in your content. From here you can edit the bookmarks and add\n"
 " instructions or additional learning information."
 msgstr ""
+"Escriviu la URL de la alimentació remota RSS \n"
+" que esteu afegint als continguts. Les alimentacions remotes estan sovint \n"
+" identificades per icones gràfiques ( molt sovint semblants a <img src=\"/images/feed-icon.png\" /> ) o pel text \"RSS\". \n"
+" Premeu sobre la icona o sobre el text que mostra l'alimentació remota RSS al vostre navegador. \n"
+" Podeu copiar i pegar la URL dins d'aquest camp. Alternativament ,  premeu amb el botó dret del ratolí sobre sobre el enllaç o gràfic a la caixa del menú; \n"
+" premeu sobre COPIAR L'ENLLAÇ o còpia la drecera. Torneu a eXe i obriu la llibreta d'adreces RSS iDevice i pegueu la URL dins \n"
+" del camp alimentació remota URL RSS i premeu el botó CARREGA. \n"
+" Aquest extraurà les capçaleres de l'alimetació \n"
+" i mostrarà els enllaços amb el seu contingut.  A partir d'ara podeu editar les llistes \n"
+" d'adreces i afegir instruccions o informació addicional per l'aprenentatge."
 
 #: exe/engine/quiztestidevice.py:95 exe/engine/quiztestidevice.py:122
 msgid ""
@@ -684,6 +849,9 @@ msgid ""
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
 "Click on the &lt;Add another option&gt; button to add another answer."
 msgstr ""
+"Entreu una opció de resposta. Proporcioneu \n"
+" un rang raonable de respostes falses ( normalment 3-4 ) i la resposta correcta.\n"
+" Premeu sobre el botó &lt;Afegir una altra opció&gt; per afegir una altra resposta."
 
 #: exe/engine/truefalseidevice.py:108
 msgid ""
@@ -691,20 +859,23 @@ msgid ""
 "to the learner. This field may be left blank. if this field is left blank \n"
 "default feedback will be provided."
 msgstr ""
+"Escriviu qualsevol realimentació que vulgau \n"
+" proporcionar a l'alumne. Si aquest camp   el deixeu en blanc  cap realimentació \n"
+" li serà proporcionada a l'alumne quan done una resposta incorrecta."
 
 #: exe/engine/clozeidevice.py:128
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
-msgstr ""
+msgstr "Escriviu qualsevol realimentació que vulgau proporcionar a l'alumne dins del camp realimentació. Podeu deixar aquest  camp buit."
 
 #: exe/webui/editorpane.py:147
 msgid "Enter instructions for completion here"
-msgstr ""
+msgstr "Entreu les instruccions per completar l'exercici ací"
 
 #: exe/engine/externalurlidevice.py:48 exe/engine/externalurlidevice.py:70
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
-msgstr ""
+msgstr "Entreu la URL que vulgau mostrar i seleccioneu la mida a l'àrea per mostrar-la."
 
 #: exe/engine/multichoiceidevice.py:103
 msgid ""
@@ -712,6 +883,9 @@ msgid ""
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
 "by clicking the red \"X\" next to the Option."
 msgstr ""
+"Entreu les opcions disponibles ací. \n"
+" Podeu afegir opcions prement el botó \"Afegir un altra opció\". Podeu esborrar opcions \n"
+" prement la \"X\" roja al costat de la opció."
 
 #: exe/engine/field.py:1075
 msgid ""
@@ -719,6 +893,9 @@ msgid ""
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
 "clicking the red X next to the option."
 msgstr ""
+"Entreu les opcions disponibles ací. \n"
+"Podeu afegir opcions prement el botó \"Afegir un altra opció\". Podeu esborrar opcions \n"
+"prement la \"X\" roja al costat de la opció."
 
 #: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:416
 msgid ""
@@ -726,6 +903,9 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr ""
+"Entreu els detalls de la lectura incloent-hi detalls de referència. L'estil de referència \n"
+" a emprar dependrà de la preferència de la vostra facultat o \n"
+" departament."
 
 #: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
@@ -733,17 +913,20 @@ msgid ""
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr ""
+"Entreu les dimensions a mostrar (en pixels) i \n"
+" determineu l'alineament de la imatge en la pantalla. \n"
+" L'amplada i l'alçada s'alteraran proporcionalment."
 
 #: exe/webui/editorpane.py:154 exe/webui/editorpane.py:162
 #: exe/webui/editorpane.py:188 exe/webui/editorpane.py:198
 msgid "Enter the instructions for completion here"
-msgstr ""
+msgstr "Entreu ací les instruccions per completar l'exercici "
 
 #: exe/webui/editorpane.py:146 exe/webui/editorpane.py:153
 #: exe/webui/editorpane.py:161 exe/webui/editorpane.py:171
 #: exe/webui/editorpane.py:187 exe/webui/editorpane.py:197
 msgid "Enter the label here"
-msgstr ""
+msgstr "Escriviu l'etiqueta ací"
 
 #: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:92
 #: exe/engine/quiztestidevice.py:130
@@ -752,6 +935,9 @@ msgid ""
 "The quest should be clear and unambiguous. Avoid negative premises \n"
 "as these can tend to be ambiguous."
 msgstr ""
+"Entrem a l'arrel de la qüestió. \n"
+" La pregunta hauria de ser clara i inequívoca. Evita premisses negatives \n"
+" doncs aquestes tendeixen a ser ambigues."
 
 #: exe/engine/field.py:1067
 msgid ""
@@ -765,53 +951,59 @@ msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
 msgstr ""
+"Escriu el text que vols \n"
+"associar a la imatge."
 
 #: exe/engine/flashwithtextidevice.py:50
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
 msgstr ""
+"Escriu el text que vols \n"
+"associar a la imatge."
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
 msgstr ""
+"Escriu el text que vols \n"
+"associar a l'arxiu."
 
 #: exe/engine/attachmentidevice.py:56
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
-msgstr ""
+msgstr "Escriu el text que vols associar amb la baixada de l'arxiu. Pots donar instruccions sobre que fer amb l'arxiu baixat o com utilitzar el material."
 
 #: exe/idevices/exampleidevice.py:44
 msgid "Example"
-msgstr ""
+msgstr "Exemple"
 
 #: exe/idevices/exampleidevice.py:39
 msgid "Example Example"
-msgstr ""
+msgstr "Exemple Exemple"
 
 #: exe/webui/editorpage.py:246
 msgid "Export iDevice"
-msgstr ""
+msgstr "Exportar iDevice"
 
 #: exe/xului/mainpage.py:753 exe/xului/mainpage.py:772
 #: exe/xului/mainpage.py:806 exe/xului/mainpage.py:828
 #: exe/xului/mainpage.py:849
 #, python-format
 msgid "Exported to %s"
-msgstr ""
+msgstr "Exportat el %s"
 
 #: exe/engine/externalurlidevice.py:37
 msgid "External Web Site"
-msgstr ""
+msgstr "Lloc web extern"
 
 #: exe/webui/imagemagnifierblock.py:136
 msgid "Extra large"
-msgstr ""
+msgstr "Molt gran"
 
 #: exe/webui/truefalseelement.py:94 exe/webui/truefalseelement.py:167
 msgid "False"
-msgstr ""
+msgstr "Fals"
 
 #: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
@@ -821,95 +1013,124 @@ msgstr ""
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
 #: exe/webui/element.py:1866 exe/webui/editorpane.py:267
 msgid "Feedback"
-msgstr ""
+msgstr "Realimentació"
 
 #: exe/webui/editorpane.py:172
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr ""
+"El botó d'alimentació no apareixerà si la \n"
+" data no la poses en aquest camp."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
 #: exe/engine/field.py:1084 exe/engine/field.py:1109
 msgid "Feedback:"
-msgstr ""
+msgstr "Realimentació:"
 
 #: exe/xului/mainpage.py:886
 #, python-format
 msgid "File %s does not exist or is not readable."
-msgstr ""
+msgstr "L'arxiu %s no existeix o no és pot llegir."
 
 #: exe/xului/mainpage.py:682 exe/xului/mainpage.py:724
 #: exe/xului/mainpage.py:791
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
-msgstr ""
+msgstr "L'arxiu anomenat %s és un arxiu, i no pot ser reemplaçat"
 
 #: exe/webui/attachmentblock.py:80 exe/webui/element.py:864
 msgid "Filename:"
-msgstr ""
+msgstr "Nom d'arxiu:"
 
 #: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
-msgstr ""
+msgstr "Pel·lícula  flash "
 
 #: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
-msgstr ""
+msgstr "Flash amb Text"
 
 #: exe/xului/mainpage.py:688 exe/xului/mainpage.py:730
 #: exe/xului/mainpage.py:797
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
-msgstr ""
+msgstr "La carpeta nomenada %s realment existeix. Si-us-plau escolliu-ne una altra o esborreu-la si continueu endavant"
 
+<<<<<<< .mine
+#: exe/idevices/forumelement.py:110
+msgid "Force everyone to be subscribed?:"
+msgstr "Forcem a tothom a subscriure's ?"
+
+#: exe/idevices/forumelement.py:202
+msgid "Forum Name:"
+msgstr "Nom del Fòrum:"
+
+#: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
+msgid "Forum Name: "
+msgstr "Nom del Fòrum:"
+
+#: exe/idevices/forumelement.py:96
+msgid "Forum type:"
+msgstr "Tipus de fòrum:"
+
+=======
+>>>>>>> .r2889
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
-msgstr ""
+msgstr "Alçada del Marc:"
 
 #: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
-msgstr ""
+msgstr "Text Lliure"
 
 #: exe/webui/wikipediablock.py:94
 msgid "French Wikipedia Article"
-msgstr ""
+msgstr "Article Francès de la Wikipèdia"
 
 #: exe/webui/wikipediablock.py:198
 #: exe/xului/templates/packageproperties.xul:<menuitem value="GNU Free
 #: Documentation License" id="ppmigfdl" label="GNU License">
 msgid "GNU Free Documentation License"
-msgstr ""
+msgstr "Llicència de Documentació Lliure de GNU"
 
 #: exe/webui/appletblock.py:88
 msgid "Geogebra"
-msgstr ""
+msgstr "Geogebra"
 
 #: exe/webui/wikipediablock.py:95
 msgid "German Wikipedia Article"
-msgstr ""
+msgstr "Article Alemany de la Wikipèdia "
 
 #: exe/webui/element.py:1213
 msgid "Get score"
-msgstr ""
+msgstr "Aconsegueix puntació"
 
 #: exe/webui/galleryblock.py:227
 msgid "Go Back"
-msgstr ""
+msgstr "Torna enrere:"
 
 #: exe/webui/galleryblock.py:239
 msgid "Go Forward"
-msgstr ""
+msgstr "Ves cap avant"
 
 #: exe/webui/galleryblock.py:246
 msgid "Go Forward (Not Available)"
-msgstr ""
+msgstr "Anar cap avant ( No permès )"
 
 #: exe/webui/wikipediablock.py:96
 msgid "Greek Wikipedia Article"
-msgstr ""
+msgstr "Article Grec de la Viquipèdia "
 
+<<<<<<< .mine
+#: exe/idevices/forumelement.py:117
+msgid "Group mode:"
+msgstr "Mode de grup:"
+
+#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
+=======
 #: exe/webui/reflectionblock.py:110
+>>>>>>> .r2889
 msgid "Hide"
 msgstr ""
 
