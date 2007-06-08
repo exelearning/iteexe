@@ -227,14 +227,15 @@ function changeGalleryImage(galleryId, imageId) {
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
 
     var local_imagePath = askUserForImage(true);
-    // if the user hits CANCEL, then bail immediately:
+    // fix for #859 on Windows (and why DOES the dialog move behind?)
+    // force the tinyMCE image dialog back to the front:
+    win.focus();
+
+    // if the user hits CANCEL, then bail "immediately",
+    // i.e., after bringing the tinyMCE image dialog back into focus, above.
     if (local_imagePath == "") {
        return;
     }
-
-    //alert("r3m0 says: Welcome to chooseImage_viaTinyMCE, now regain focus!");
-    // test fix for Window's, force the tinyMCE image dialog back to the front:
-    win.focus();
 
     netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
     // UNescape, to remove the %20's for spaces, etc.:
