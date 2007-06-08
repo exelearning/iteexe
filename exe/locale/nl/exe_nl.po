@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-18 15:21+1200\n"
+"POT-Creation-Date: 2007-06-08 13:45+1200\n"
 "PO-Revision-Date: 2007-04-17 10:39+1200\n"
 "Last-Translator: \n"
 "Language-Team: Dutch <exe@exelearning.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Pootle 0.10.1\n"
 
-#: exe/idevices/appletidevice.py:67 exe/idevices/appletidevice.py:146
+#: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:146
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -33,9 +33,9 @@ msgstr ""
 "<p>b.v. bij Geogebra applets: selecteer geogebra en voeg het .ggb bestand toe \n"
 "dat gemaakt is met Geogebra.</p>"
 
-#: exe/xului/mainpage.py:264 exe/xului/mainpage.py:537
-#: exe/xului/mainpage.py:655 exe/xului/mainpage.py:711
-#: exe/xului/mainpage.py:732
+#: exe/xului/mainpage.py:275 exe/xului/mainpage.py:642
+#: exe/xului/mainpage.py:763 exe/xului/mainpage.py:819
+#: exe/xului/mainpage.py:840
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -44,7 +44,7 @@ msgstr ""
 "\"%s\" bestaat al.\n"
 "Probeer opnieuw een andere bestandsnaam"
 
-#: exe/idevices/appletidevice.py:64
+#: exe/engine/appletidevice.py:64
 msgid ""
 "\"Find the .txt file (in the applet file) \n"
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
@@ -54,12 +54,12 @@ msgstr ""
 "en open het. Kopieer de inhoud met <ctrl A, ctrl C> naar het codeveld \n"
 "van de applet."
 
-#: exe/webui/block.py:230
+#: exe/webui/block.py:231
 msgid "---Move To---"
 msgstr "---Verplaats naar---"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:454
-#: exe/xului/mainpage.py:529
+#: exe/xului/mainpage.py:293 exe/xului/mainpage.py:551
+#: exe/xului/mainpage.py:634
 msgid ". Please use ASCII names."
 msgstr ". Gebruik alleen ASCII-tekens."
 
@@ -117,7 +117,7 @@ msgstr ""
 "begeleid door een korte tekst die uitlegt wat er gebeurt.\n"
 "</p>"
 
-#: exe/engine/attachmentidevice.py:59
+#: exe/engine/attachmentidevice.py:70
 msgid "<p>Assign a label for the attachment. It is useful to include the type of file. Eg. pdf, ppt, etc.</p><p>Including the size is also recommended so that after your package is exported to a web site, people will have an idea how long it would take to download this attachment.</p><p>For example: <code>Sales Forecast.doc (500kb)</code></p>"
 msgstr "<p>Geef de bijlage een naam. Het is handig om het bestandstype te vermelden, bijv. pdf, ppt enz.</p><p>Best geeft u ook de omvang van de bijlage aan: het geeft een idee van de tijd die nodig is om ze te downloaden.</p><p>Voorbeeld: <code>Verkoopsverwachtingen.doc (500kb)</code></p>"
 
@@ -136,16 +136,16 @@ msgstr ""
 " Selecteer een woord om te verbergen door erop te dubbelklikken en de knop\n"
 " <i>Toon/verberg woord</i> aan te klikken.</p>"
 
-#: exe/engine/field.py:531
+#: exe/engine/field.py:599
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Als deze optie uitstaat, zijn een klein aantal spelfouten toegestaan. Als ze aanstaat, moet het antwoord qua spelling en hoofdlettergebruik volledig correct zijn.</p><p><strong>Voorbeeld:</strong> Als het juiste antwoord <code>Olifant</code> is, worden zowel <code>olifant</code> als <code>Olipant</code> aanvaard als <em>\"voldoende juist\"</em> omdat er maar één letter fout is, zelfs als \"Hoofdlettergevoelig\" geactiveerd is.</p><p>Als \"Hoofdlettergevoelig\" uitstaat, wordt de kleine <code>e</code> natuurlijk ook genegeerd als fout. Bovendien wordt <code>Olipant</code> aanvaard, omdat het maar één spelfout bevat.</p><p>Maar met zowel \"Streng verbeteren\" en \"Hoofdlettergevoelig\" ingeschakeld, is het enige juiste antwoord \"Olifant\". Zet u nu \"Hoofdlettergevoelig\" uit, dan wordt ook \"olifant\" aanvaard.</p>"
 
-#: exe/engine/field.py:552
+#: exe/engine/field.py:620
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Vink deze optie aan om bij het verbeteren ook op hoofd- en kleine letters te letten.</p>"
 
-#: exe/engine/field.py:557
+#: exe/engine/field.py:625
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -155,15 +155,15 @@ msgstr ""
 "tijdens het intypen verbeterd en niet pas bij het afronden van de oefening.\n"
 "</p>"
 
-#: exe/engine/field.py:794
+#: exe/engine/field.py:874
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
-#: exe/engine/idevicestore.py:248
+#: exe/engine/idevicestore.py:272
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Als u dit iDevice gebruikt, hou dan rekening met volgende overwegingen: <ol><li>1. Beperk het aantal verschillende soorten van activiteiten dat in het materiaal op een visuele manier wordt aangegeven. Meestal volstaan drie of vier verschillende types.</li><li>2. Uit visueel oogpunt bekeken is het beter niet twee iDevices onmiddellijk na elkaar te zetten die niet gescheiden zijn door tekst. Als dat het geval is, plaats dan twee vragen of activiteiten in eenzelfde iDevice</li><li>3.Ontwerp activiteiten waarvan het nut opweegt tegen de tijd en moeite die het kost om ze tot een goed einde te brengen. </li></ol>"
 
-#: exe/engine/idevicestore.py:243
+#: exe/engine/idevicestore.py:267
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -192,7 +192,7 @@ msgstr ""
 "in Wikipedia worden niet automatisch overgenomen. Als u de inhoud wijzigt in\n"
 "eXe, dan worden die aanpassingen evenmin overgenomen in Wikipedia.</p><p>Artikelen uit Wikipedia vallen onder de regels van GNU free documentation</p>"
 
-#: exe/engine/idevicestore.py:351
+#: exe/engine/idevicestore.py:375
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -218,7 +218,7 @@ msgstr ""
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:84
+#: exe/engine/casestudyidevice.py:94
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -246,7 +246,7 @@ msgstr ""
 "kunnen in een klassituatie groepen worden gevormd rond bepaalde aspecten\n"
 "van de zaak en hoe wordt hun inbreng dan gecommuniceerd naar de anderen</li></ul>"
 
-#: exe/engine/truefalseidevice.py:66
+#: exe/engine/truefalseidevice.py:101
 msgid ""
 "A hint may be provided to assist the \n"
 "learner in answering the question."
@@ -254,18 +254,14 @@ msgstr ""
 "U kan een tip toevoegen die helpt\n"
 "om de vraag te beantwoorden."
 
-#: exe/idevices/forumelement.py:75
-msgid "A single simple discussion"
-msgstr "Een enkele discussie"
-
 #: exe/webui/editorpane.py:275
 msgid "Actions"
 msgstr "Acties"
 
-#: exe/engine/idevicestore.py:287 exe/engine/idevicestore.py:326
-#: exe/engine/idevicestore.py:334 exe/engine/idevicestore.py:395
-#: exe/engine/idevicestore.py:433 exe/engine/idevicestore.py:441
-#: exe/webui/questionelement.py:74
+#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:350
+#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:419
+#: exe/engine/idevicestore.py:456 exe/engine/idevicestore.py:464
+#: exe/webui/questionelement.py:90
 msgid "Activity"
 msgstr "Activiteit"
 
@@ -273,14 +269,14 @@ msgstr "Activiteit"
 msgid "Add Field"
 msgstr "Veld toevoegen"
 
-#: exe/webui/element.py:332
+#: exe/webui/element.py:554
 msgid "Add Image"
 msgstr "Afbeelding toevoegen"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/element.py:721
+#: exe/webui/element.py:944
 msgid "Add JPEG Image"
 msgstr "JPEG-afbeelding toevoegen"
 
@@ -296,7 +292,7 @@ msgstr "Een tekstregel toevoegen aan een iDevice. Handig om een label mee toe te
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
 msgstr "Invoerveld voor tekst toevoegen. Gebruikt voor invoer van grotere teksten."
 
-#: exe/idevices/appletidevice.py:61
+#: exe/engine/appletidevice.py:61
 msgid ""
 "Add all the files provided for the applet\n"
 "except the .txt file one at a time using the add files and upload buttons. The \n"
@@ -323,27 +319,27 @@ msgstr "Voeg interactieve feedback toe aan uw iDevice."
 msgid "Add an mp3 file to your iDevice."
 msgstr "Voeg een MP3 bestand toe aan uw iDevice."
 
-#: exe/webui/element.py:1459 exe/idevices/testquestionelement.py:106
+#: exe/webui/testquestionelement.py:107 exe/webui/element.py:1737
 msgid "Add another Option"
 msgstr "Nieuw alternatief toevoegen"
 
-#: exe/webui/multiselectblock.py:78 exe/idevices/quiztestblock.py:101
+#: exe/webui/quiztestblock.py:100 exe/webui/multiselectblock.py:78
 msgid "Add another Question"
 msgstr "Nieuwe vraag toevoegen"
 
-#: exe/webui/casestudyblock.py:97
+#: exe/webui/casestudyblock.py:94
 msgid "Add another activity"
 msgstr "Nieuwe activiteit toevoegen"
 
-#: exe/webui/element.py:1671
+#: exe/webui/element.py:2000
 msgid "Add another option"
 msgstr "Nieuw alternatief toevoegen"
 
-#: exe/webui/truefalseblock.py:88 exe/webui/multichoiceblock.py:104
+#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:89
 msgid "Add another question"
 msgstr "Nieuwe vraag toevoegen"
 
-#: exe/idevices/appletblock.py:108
+#: exe/webui/appletblock.py:108
 msgid "Add files"
 msgstr "Bestanden toevoegen"
 
@@ -351,9 +347,9 @@ msgstr "Bestanden toevoegen"
 msgid "Add images"
 msgstr "Afbeeldingen toevoegen"
 
-#: exe/webui/imagewithtextblock.py:79 exe/webui/editorelement.py:221
-#: exe/webui/multimediablock.py:83 exe/webui/flashwithtextblock.py:79
-#: exe/webui/imagemagnifierblock.py:108 exe/idevices/flashmovieblock.py:78
+#: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:108
+#: exe/webui/flashmovieblock.py:78 exe/webui/imagewithtextblock.py:79
 msgid "Align:"
 msgstr "Uitlijnen:"
 
@@ -374,7 +370,7 @@ msgstr ""
 "Met uitlijning bepaalt u waar \n"
 "de mediaspeler op het scherm komt."
 
-#: exe/engine/field.py:595
+#: exe/engine/field.py:663
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -386,7 +382,7 @@ msgstr ""
 msgid "Allow auto completion when user filling the gaps."
 msgstr "Zet automatisch aanvullen aan bij invullen van gatentekst."
 
-#: exe/engine/multichoiceidevice.py:59 exe/engine/multiselectidevice.py:43
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -418,7 +414,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:436
+#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -428,16 +424,16 @@ msgstr ""
 "moet afwerken. Geef een duidelijke omschrijving van de opdracht en\n"
 "let op elementen die de student kunnen helpen of hinderen bij het uitvoeren."
 
-#: exe/webui/element.py:1024
+#: exe/webui/element.py:1275
 #, fuzzy
 msgid "Answsers"
 msgstr "Toon antwoorden"
 
-#: exe/idevices/appletblock.py:114
+#: exe/webui/appletblock.py:114
 msgid "Applet Code:"
 msgstr "Appletcode:"
 
-#: exe/idevices/appletblock.py:90
+#: exe/webui/appletblock.py:90
 #, fuzzy
 msgid "Applet Type"
 msgstr "Appletcode:"
@@ -446,16 +442,16 @@ msgstr "Appletcode:"
 msgid "Article"
 msgstr "Artikel"
 
-#: exe/engine/attachmentidevice.py:41 exe/webui/editorpane.py:269
+#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:269
 msgid "Attachment"
 msgstr "Bijlage"
 
-#: exe/engine/attachmentidevice.py:98
+#: exe/engine/attachmentidevice.py:103
 #, python-format
 msgid "Attachment %s has no parentNode"
 msgstr "Bijlage %s zonder parentNode"
 
-#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:40
+#: exe/engine/rssidevice.py:40 exe/engine/multimediaidevice.py:41
 msgid "Auckland University of Technology"
 msgstr ""
 
@@ -463,26 +459,22 @@ msgstr ""
 msgid "Button Caption"
 msgstr "Opschrift knop"
 
-#: exe/idevices/forumelement.py:103
-msgid "Can a student post to this forum?:"
-msgstr "Kan student bijdrage posten op dit forum?"
-
-#: exe/webui/editorpane.py:283 exe/webui/preferencespage.py:94
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:283
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: exe/xului/mainpage.py:282 exe/xului/mainpage.py:452
-#: exe/xului/mainpage.py:529
+#: exe/xului/mainpage.py:293 exe/xului/mainpage.py:549
+#: exe/xului/mainpage.py:634
 msgid "Cannot access directory named "
 msgstr "Geen toegang tot de map"
 
-#: exe/webui/imagewithtextblock.py:84 exe/webui/editorelement.py:322
-#: exe/webui/flashwithtextblock.py:84 exe/webui/element.py:447
-#: exe/webui/imagemagnifierblock.py:92 exe/idevices/flashmovieblock.py:83
+#: exe/webui/flashwithtextblock.py:84 exe/webui/editorelement.py:324
+#: exe/webui/imagemagnifierblock.py:92 exe/webui/flashmovieblock.py:83
+#: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:670
 msgid "Caption:"
 msgstr "Bijschrift:"
 
-#: exe/engine/casestudyidevice.py:82
+#: exe/engine/casestudyidevice.py:92
 msgid "Case Study"
 msgstr "Gevalstudie"
 
@@ -490,17 +482,13 @@ msgstr "Gevalstudie"
 msgid "Change Image"
 msgstr "Wijzig afbeelding"
 
-#: exe/webui/element.py:893
+#: exe/webui/element.py:1128
 msgid "Check Caps?"
 msgstr "Hoofdlettergevoelig?"
 
 #: exe/webui/wikipediablock.py:92
 msgid "Chinese Wikipedia Article"
 msgstr "Chinees Wikipedia-artikel"
-
-#: exe/idevices/forumidevice.py:113
-msgid "Choose a LMS"
-msgstr "Selecteer een LMS"
 
 #: exe/engine/imagemagnifieridevice.py:48
 msgid "Choose an Image"
@@ -511,7 +499,7 @@ msgstr "Selecteer een afbeelding"
 msgid "Choose an MP3 file"
 msgstr "Selecteer een LMS"
 
-#: exe/engine/casestudyidevice.py:56
+#: exe/engine/casestudyidevice.py:66
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr ""
 
@@ -527,7 +515,7 @@ msgstr ""
 "overeen met ca. 3 cm. Laat beide velden leeg om de afbeelding in de\n"
 "originele grootte te tonen."
 
-#: exe/xului/mainpage.py:207
+#: exe/xului/mainpage.py:211
 msgid "Clear Recent Projects List"
 msgstr ""
 
@@ -541,11 +529,11 @@ msgstr ""
 "op de afbeelding beneden of op de knop \"Afbeelding toevoegen\" om een\n"
 "afbeedling te vergroten."
 
-#: exe/engine/attachmentidevice.py:56
+#: exe/engine/attachmentidevice.py:67
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klik op <strong>Kies een bestand</strong> en blader naar een bestand om het te selecteren."
 
-#: exe/engine/field.py:166
+#: exe/engine/field.py:215
 msgid "Click Here"
 msgstr "Klik hier"
 
@@ -553,11 +541,11 @@ msgstr "Klik hier"
 msgid "Click for completion instructions"
 msgstr "Klik voor aanwijzingen"
 
-#: exe/webui/reflectionblock.py:89
+#: exe/webui/reflectionblock.py:106
 msgid "Click here"
 msgstr "Klik hier"
 
-#: exe/engine/field.py:802
+#: exe/engine/field.py:882
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -570,12 +558,12 @@ msgstr ""
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "Klik op de knop Afbeelding toevoegen om een afbeelding te selecteren. De afbeelding wordt getoond en u kan een label toevoegen. Tip: vermeld de bestandsgrootte in het label."
 
-#: exe/engine/galleryidevice.py:545 exe/webui/truefalseelement.py:123
-#: exe/webui/truefalseelement.py:124 exe/webui/editorpane.py:372
-#: exe/webui/editorpane.py:373 exe/webui/editorpane.py:393
-#: exe/webui/editorpane.py:394 exe/webui/block.py:243 exe/webui/block.py:244
-#: exe/webui/common.py:301 exe/webui/common.py:302 exe/webui/element.py:1694
-#: exe/webui/element.py:1695
+#: exe/engine/galleryidevice.py:545 exe/webui/truefalseelement.py:128
+#: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
+#: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
+#: exe/webui/element.py:2039 exe/webui/element.py:2040
+#: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
+#: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
 msgid "Close"
 msgstr "Sluiten"
 
@@ -587,28 +575,24 @@ msgstr "Cloze"
 msgid "Cloze Activity"
 msgstr "Cloze-activiteit"
 
-#: exe/webui/element.py:875
+#: exe/webui/element.py:1110
 msgid "Cloze Text"
 msgstr "Cloze-tekst"
 
-#: exe/webui/common.py:252
-msgid "Confirm and submit"
-msgstr "Bevestigen en versturen"
-
-#: exe/webui/element.py:1446 exe/webui/element.py:1541
-#: exe/webui/element.py:1589 exe/idevices/testquestionelement.py:93
+#: exe/webui/testquestionelement.py:94 exe/webui/element.py:1723
+#: exe/webui/element.py:1847 exe/webui/element.py:1916
 msgid "Correct"
 msgstr "Juist"
 
-#: exe/webui/truefalseelement.py:172
+#: exe/webui/truefalseelement.py:194 exe/webui/truefalseelement.py:197
 msgid "Correct!"
 msgstr "Juist!"
 
-#: exe/xului/mainpage.py:782
+#: exe/xului/mainpage.py:890
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
-#: exe/engine/casestudyidevice.py:103
+#: exe/engine/casestudyidevice.py:111
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -623,11 +607,11 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/block.py:214 exe/webui/editorelement.py:76
-#: exe/webui/editorelement.py:111 exe/webui/editorelement.py:152
-#: exe/webui/editorelement.py:191 exe/webui/editorelement.py:242
-#: exe/webui/editorelement.py:296 exe/webui/editorelement.py:342
-#: exe/webui/galleryblock.py:252 exe/webui/editorpage.py:233
+#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:152 exe/webui/editorelement.py:193
+#: exe/webui/editorelement.py:244 exe/webui/editorelement.py:298
+#: exe/webui/editorelement.py:344 exe/webui/galleryblock.py:252
+#: exe/webui/block.py:215 exe/webui/editorpage.py:233
 #: exe/webui/editorpage.py:236 exe/xului/templates/mainpage.xul:<toolbarbutton
 #: n:render="delNode" key="delNodeKey" label="Delete">
 msgid "Delete"
@@ -636,7 +620,7 @@ msgstr "Verwijderen"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/idevices/appletblock.py:127
+#: exe/webui/appletblock.py:127
 msgid "Delete File"
 msgstr "Bestand verwijderen"
 
@@ -644,18 +628,17 @@ msgstr "Bestand verwijderen"
 msgid "Delete Image"
 msgstr "Afbeelding verwijderen"
 
-#: exe/webui/element.py:1363 exe/webui/element.py:1553
-#: exe/idevices/testoptionelement.py:86
+#: exe/webui/testoptionelement.py:90 exe/webui/element.py:1621
+#: exe/webui/element.py:1865
 msgid "Delete option"
 msgstr "Alternatief verwijderen"
 
-#: exe/webui/truefalseelement.py:102 exe/webui/element.py:1438
-#: exe/webui/element.py:1656 exe/webui/questionelement.py:88
-#: exe/idevices/testquestionelement.py:85
+#: exe/webui/questionelement.py:104 exe/webui/truefalseelement.py:106
+#: exe/webui/element.py:1710
 msgid "Delete question"
 msgstr "Vraag verwijderen"
 
-#: exe/engine/reflectionidevice.py:56
+#: exe/engine/reflectionidevice.py:55
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
@@ -665,7 +648,7 @@ msgstr ""
 "kan beoordelen. (Rubrics zijn meestal goede instrumenten voor\n"
 "reflectieve feedback.)"
 
-#: exe/engine/casestudyidevice.py:107
+#: exe/engine/casestudyidevice.py:120
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -676,7 +659,7 @@ msgstr ""
 "case story horen. Dit kan in de vorm van vragen of instructies voor acties\n"
 "die de leerling kunnen helpen om tot een oplossing van het probleem te komen."
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:429
+#: exe/engine/idevicestore.py:346 exe/engine/idevicestore.py:452
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -684,7 +667,7 @@ msgstr ""
 "Beschrijf de voorkennis die nodig is om de leeropdacht tot een goed\n"
 "einde te kunnen brengen."
 
-#: exe/engine/idevicestore.py:288 exe/engine/idevicestore.py:396
+#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -692,42 +675,26 @@ msgstr ""
 "Omschrijf welke acties de leerling moet uitvoeren met betrekking\n"
 "tot de leesopdracht. Dit helpt de reden van de leesactiviteit verduidelijken."
 
-#: exe/engine/idevicestore.py:335 exe/engine/idevicestore.py:442
+#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
 msgid "Describe the tasks the learners should complete."
 msgstr "Beschrijf de opdracht die moet worden uitgevoerd."
 
-#: exe/engine/flashwithtextidevice.py:49 exe/idevices/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "Beschrijving"
 
-#: exe/webui/attachmentblock.py:100
+#: exe/engine/attachmentidevice.py:63 exe/engine/attachmentidevice.py:149
 #: exe/xului/templates/packageproperties.xul:<label value="Description:"
 #: id="ppDescription" style="width:8em" tooltiptext="An account of the content
 #: resource."> exe/xului/templates/dublincore.xul:<label id="dcDescription"
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: exe/idevices/forumidevice.py:40
-msgid "Discussion Activity"
-msgstr "Discussie-activiteit"
-
-#: exe/idevices/forumelement.py:233
-msgid "Discussion Topic/Thread:"
-msgstr "Discussie-onderwerp:"
-
-#: exe/idevices/forumidevice.py:147
-msgid "Discussion topic/Thread"
-msgstr "Discussie-onderwerp"
-
-#: exe/idevices/forumelement.py:79
-msgid "Discussions and replies are allowed"
-msgstr "Nieuwe discussies en antwoorden toegelaten"
-
-#: exe/webui/element.py:358 exe/webui/element.py:743 exe/webui/element.py:1078
+#: exe/webui/element.py:580 exe/webui/element.py:966 exe/webui/element.py:1329
 msgid "Display as:"
 msgstr "Toon als:"
 
-#: exe/webui/block.py:206 exe/xului/templates/exportproperties.xul:<button
+#: exe/webui/block.py:207 exe/xului/templates/exportproperties.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="exportPropsDone"
 #: label="Done">
 msgid "Done"
@@ -737,68 +704,64 @@ msgstr "Klaar"
 msgid "Dutch Wikipedia Article"
 msgstr "Nederlandstalig Wikipedia-artikel"
 
-#: exe/webui/element.py:61
+#: exe/webui/element.py:64
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "FOUT Element.process rechtstreeks aangeroepen met klasse %s"
 
-#: exe/webui/element.py:70
+#: exe/webui/element.py:73
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "FOUT Element.renderEdit rechtstreeks aangeroepen met klasse %s"
 
-#: exe/webui/element.py:87
+#: exe/webui/element.py:90
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "FOUT Element.renderView rechtstreeks aangeroepen met klasse %s"
 
-#: exe/webui/block.py:318
+#: exe/webui/block.py:319
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "FOUT Block.renderViewContent rechtstreeks aangeroepen"
 
-#: exe/xului/mainpage.py:475 exe/xului/mainpage.py:482
-#: exe/xului/mainpage.py:485 exe/xului/mainpage.py:488
-#: exe/xului/mainpage.py:639
+#: exe/xului/mainpage.py:576 exe/xului/mainpage.py:583
+#: exe/xului/mainpage.py:586 exe/xului/mainpage.py:589
+#: exe/xului/mainpage.py:747
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:629 exe/xului/mainpage.py:643
-#: exe/xului/mainpage.py:656 exe/xului/mainpage.py:662
-#: exe/xului/mainpage.py:696 exe/xului/mainpage.py:712
-#: exe/xului/mainpage.py:718 exe/xului/mainpage.py:733
-#: exe/xului/mainpage.py:739
+#: exe/xului/mainpage.py:737 exe/xului/mainpage.py:751
+#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:770
+#: exe/xului/mainpage.py:804 exe/xului/mainpage.py:820
+#: exe/xului/mainpage.py:826 exe/xului/mainpage.py:841
+#: exe/xului/mainpage.py:847
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:325 exe/export/websiteexport.py:87
-#: exe/export/scormexport.py:440
+#: exe/export/imsexport.py:325 exe/export/scormexport.py:440
+#: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:538 exe/xului/mainpage.py:547
+#: exe/xului/mainpage.py:643 exe/xului/mainpage.py:652
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
 
-#: exe/idevices/forumelement.py:76
-msgid "Each person posts one discussion"
-msgstr "Ieder lid ken slechts een discussie starten"
-
-#: exe/webui/editorpane.py:280 exe/webui/block.py:327
+#: exe/webui/block.py:328 exe/webui/editorpane.py:280
 #: exe/webui/editorpage.py:266
 msgid "Edit"
 msgstr "Bewerken"
 
-#: exe/webui/editorpane.py:344 exe/webui/multimediablock.py:94
-#: exe/webui/wikipediablock.py:133 exe/webui/rssblock.py:94
+#: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
+#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:344
 msgid "Emphasis"
 msgstr "Nadruk"
 
@@ -806,7 +769,7 @@ msgstr "Nadruk"
 msgid "English Wikipedia Article"
 msgstr "Engels Wikipedia-artikel"
 
-#: exe/idevices/flashmovieidevice.py:52
+#: exe/engine/flashmovieidevice.py:52
 msgid ""
 "Enter \n"
 "the text you wish to associate with the file."
@@ -814,7 +777,7 @@ msgstr ""
 "Geef \n"
 "de tekst die bij het nieuwe bestand hoort."
 
-#: exe/engine/multichoiceidevice.py:90
+#: exe/engine/multichoiceidevice.py:96
 msgid ""
 "Enter a hint here. If you\n"
 "do not want to provide a hint, leave this field blank."
@@ -822,11 +785,11 @@ msgstr ""
 "Vul een hint in. Laat\n"
 "het veld leeg om geen hint te geven."
 
-#: exe/engine/multichoiceidevice.py:132
+#: exe/engine/multichoiceidevice.py:141
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Geef een hint op. Laat het veld leeg om geen hint te geven."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:229
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:236
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -834,7 +797,7 @@ msgstr ""
 "Geef een term of omschrijving die u wil\n"
 "opzoeken in Wikipedia."
 
-#: exe/engine/reflectionidevice.py:54
+#: exe/engine/reflectionidevice.py:53
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
@@ -859,7 +822,7 @@ msgid ""
 " instructions or additional learning information."
 msgstr ""
 
-#: exe/idevices/quiztestidevice.py:64 exe/idevices/quiztestidevice.py:86
+#: exe/engine/quiztestidevice.py:95 exe/engine/quiztestidevice.py:122
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -869,7 +832,7 @@ msgstr ""
 "naast het juiste antwoord ook een aantal aanvaardbare afleiders (meestal 3-4).\n"
 "Klik op <Alternatief toevoegen> om een extra antwoord toe te voegen."
 
-#: exe/engine/truefalseidevice.py:73
+#: exe/engine/truefalseidevice.py:108
 msgid ""
 "Enter any feedback you wish to provide \n"
 "to the learner. This field may be left blank. if this field is left blank \n"
@@ -894,7 +857,7 @@ msgstr ""
 "Geef de URL die u wil tonen\n"
 "en de grootte van het gebied waarin hij getoond wordt."
 
-#: exe/engine/multichoiceidevice.py:97
+#: exe/engine/multichoiceidevice.py:103
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add Another Option\" button. Delete options \n"
@@ -905,7 +868,7 @@ msgstr ""
 "de knop \"VOEG ALTERNATIEF TOE\". Wis een alternatief door te klikken op de\n"
 "\"x\" naast een alternatief."
 
-#: exe/engine/field.py:926
+#: exe/engine/field.py:1075
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -917,7 +880,7 @@ msgstr ""
 "de knop \"VOEG ALTERNATIEF TOE\". Wis een alternatief door te klikken op de\n"
 "\"x\" naast een alternatief."
 
-#: exe/engine/idevicestore.py:284 exe/engine/idevicestore.py:392
+#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:416
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -948,8 +911,8 @@ msgstr "Geef aanwijzingen voor uitvoeren"
 msgid "Enter the label here"
 msgstr "Voer hier de tekst van het label in"
 
-#: exe/engine/multichoiceidevice.py:92 exe/idevices/quiztestidevice.py:61
-#: exe/idevices/quiztestidevice.py:94
+#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:92
+#: exe/engine/quiztestidevice.py:130
 msgid ""
 "Enter the question stem. \n"
 "The quest should be clear and unambiguous. Avoid negative premises \n"
@@ -959,7 +922,7 @@ msgstr ""
 "De vraag moet duidelijk en ondubbelzinnig zijn. Vermijd negatieve beweringen\n"
 "want deze zijn vaak misleidend."
 
-#: exe/engine/field.py:923
+#: exe/engine/field.py:1067
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -994,7 +957,7 @@ msgstr ""
 "Geef de tekst die bij dit bestand\n"
 "hoort."
 
-#: exe/engine/attachmentidevice.py:75
+#: exe/engine/attachmentidevice.py:56
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
 msgstr "Geef de tekst die bij het gedownloade bestand hoort. Het is een goed idee hier te vermelden wat met het materiaal moet worden gedaan na het downloaden."
 
@@ -1014,9 +977,9 @@ msgstr "Voorbeeld Voorbeeld"
 msgid "Export iDevice"
 msgstr "iDevices"
 
-#: exe/xului/mainpage.py:645 exe/xului/mainpage.py:664
-#: exe/xului/mainpage.py:698 exe/xului/mainpage.py:720
-#: exe/xului/mainpage.py:741
+#: exe/xului/mainpage.py:753 exe/xului/mainpage.py:772
+#: exe/xului/mainpage.py:806 exe/xului/mainpage.py:828
+#: exe/xului/mainpage.py:849
 #, python-format
 msgid "Exported to %s"
 msgstr "Geëxporteerd naar %s"
@@ -1029,16 +992,17 @@ msgstr "Externe website"
 msgid "Extra large"
 msgstr "Extra groot"
 
-#: exe/webui/truefalseelement.py:84 exe/webui/truefalseelement.py:155
+#: exe/webui/truefalseelement.py:94 exe/webui/truefalseelement.py:167
 msgid "False"
 msgstr "Fout"
 
-#: exe/engine/clozeidevice.py:127 exe/engine/clozeidevice.py:152
-#: exe/engine/idevicestore.py:291 exe/engine/idevicestore.py:399
-#: exe/engine/genericidevice.py:188 exe/webui/truefalseelement.py:90
-#: exe/webui/editorpane.py:267 exe/webui/common.py:206
-#: exe/webui/element.py:1554 exe/webui/questionelement.py:78
-#: exe/webui/clozeblock.py:111
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
+#: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
+#: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:954
+#: exe/engine/field.py:966 exe/webui/clozeblock.py:148
+#: exe/webui/questionelement.py:94 exe/webui/common.py:206
+#: exe/webui/element.py:1866 exe/webui/editorpane.py:267
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -1050,17 +1014,18 @@ msgstr ""
 "Als u in dit veld niets invult, wordt er\n"
 "geen Feedback-knop getoond."
 
-#: exe/webui/reflectionblock.py:72 exe/webui/element.py:1462
+#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
+#: exe/engine/field.py:1084 exe/engine/field.py:1109
 msgid "Feedback:"
 msgstr "Feedback:"
 
-#: exe/xului/mainpage.py:778
+#: exe/xului/mainpage.py:886
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:576 exe/xului/mainpage.py:616
-#: exe/xului/mainpage.py:683
+#: exe/xului/mainpage.py:682 exe/xului/mainpage.py:724
+#: exe/xului/mainpage.py:791
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
@@ -1068,12 +1033,12 @@ msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/element.py:641 exe/webui/attachmentblock.py:78
+#: exe/webui/attachmentblock.py:80 exe/webui/element.py:864
 #, fuzzy
 msgid "Filename:"
 msgstr "Bestandsnaam"
 
-#: exe/idevices/flashmovieidevice.py:39 exe/idevices/flashmovieidevice.py:50
+#: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
 msgstr "Flash-film"
 
@@ -1081,27 +1046,11 @@ msgstr "Flash-film"
 msgid "Flash with Text"
 msgstr "Flash met tekst"
 
-#: exe/xului/mainpage.py:582 exe/xului/mainpage.py:622
-#: exe/xului/mainpage.py:689
+#: exe/xului/mainpage.py:688 exe/xului/mainpage.py:730
+#: exe/xului/mainpage.py:797
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
-
-#: exe/idevices/forumelement.py:110
-msgid "Force everyone to be subscribed?:"
-msgstr "Moet iedereen lid zijn?"
-
-#: exe/idevices/forumelement.py:202
-msgid "Forum Name:"
-msgstr "Forumnaam:"
-
-#: exe/idevices/forumelement.py:279 exe/idevices/forumelement.py:296
-msgid "Forum Name: "
-msgstr "Forumnaam:"
-
-#: exe/idevices/forumelement.py:96
-msgid "Forum type:"
-msgstr "Forumtype:"
 
 #: exe/webui/externalurlblock.py:71
 msgid "Frame Height:"
@@ -1121,7 +1070,7 @@ msgstr "Frans Wikipedia-artikel"
 msgid "GNU Free Documentation License"
 msgstr ""
 
-#: exe/idevices/appletblock.py:88
+#: exe/webui/appletblock.py:88
 msgid "Geogebra"
 msgstr ""
 
@@ -1129,7 +1078,7 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Duits Wikipedia-artikel"
 
-#: exe/webui/element.py:962
+#: exe/webui/element.py:1213
 msgid "Get score"
 msgstr "Bepaal de score"
 
@@ -1150,30 +1099,24 @@ msgstr "Ga verder (niet beschikbaar)"
 msgid "Greek Wikipedia Article"
 msgstr "Frans Wikipedia-artikel"
 
-#: exe/idevices/forumelement.py:117
-msgid "Group mode:"
-msgstr "Groepsmodus:"
-
-#: exe/webui/reflectionblock.py:93 exe/idevices/forumelement.py:92
+#: exe/webui/reflectionblock.py:110
 msgid "Hide"
 msgstr "Verbergen"
 
-#: exe/webui/questionelement.py:110
+#: exe/webui/questionelement.py:131
 msgid "Hide Feedback"
 msgstr "Toon/verbergen feedback"
 
-#: exe/webui/element.py:883
+#: exe/webui/element.py:1118
 msgid "Hide/Show Word"
 msgstr "Toon/verberg woord"
 
-#: exe/webui/truefalseelement.py:95 exe/webui/truefalseelement.py:117
-#: exe/webui/truefalseelement.py:127 exe/webui/element.py:1698
+#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
+#: exe/engine/field.py:992 exe/engine/field.py:1012
+#: exe/webui/truefalseelement.py:122 exe/webui/truefalseelement.py:132
+#: exe/webui/element.py:2043
 msgid "Hint"
 msgstr "Hint"
-
-#: exe/webui/element.py:1659
-msgid "Hint:"
-msgstr "Hint:"
 
 #: exe/engine/package.py:102
 msgid "Home"
@@ -1182,9 +1125,9 @@ msgstr "Start"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/block.py:282 exe/webui/genericblock.py:78
+#: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
 #: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:326
-#: exe/webui/multichoiceblock.py:144
+#: exe/webui/block.py:283
 msgid "IDevice Icon"
 msgstr "iDevice-pictogram"
 
@@ -1195,7 +1138,7 @@ msgstr "iDevice Vraag-pictogram"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/block.py:171
+#: exe/webui/block.py:172
 #, fuzzy
 msgid "IDevice broken"
 msgstr "iDevice-pictogram"
@@ -1204,7 +1147,7 @@ msgstr "iDevice-pictogram"
 msgid "Icons"
 msgstr "Pictogrammen"
 
-#: exe/engine/casestudyidevice.py:55 exe/engine/imagewithtextidevice.py:58
+#: exe/engine/imagewithtextidevice.py:58 exe/engine/casestudyidevice.py:65
 #: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "Afbeelding"
@@ -1216,6 +1159,11 @@ msgstr "Afbeeldingengalerij"
 #: exe/engine/imagemagnifieridevice.py:40
 msgid "Image Magnifier"
 msgstr "Vergrootglas afbeeldingen"
+
+#: exe/xului/mainpage.py:514
+#, fuzzy, python-format
+msgid "Image file %s is not found, cannot preview it"
+msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
 
 #: exe/engine/imagewithtextidevice.py:39
 msgid "Image with Text"
@@ -1229,7 +1177,7 @@ msgstr "Afbeelding met tekst"
 msgid "Import iDevice"
 msgstr "iDevices"
 
-#: exe/webui/truefalseelement.py:173
+#: exe/webui/truefalseelement.py:201 exe/webui/truefalseelement.py:204
 msgid "Incorrect!"
 msgstr "Verkeerd!"
 
@@ -1240,7 +1188,7 @@ msgstr "Verkeerd!"
 msgid "Info"
 msgstr "Info"
 
-#: exe/webui/block.py:239
+#: exe/webui/block.py:240
 msgid "Information"
 msgstr "Aanwijzingen"
 
@@ -1248,22 +1196,18 @@ msgstr "Aanwijzingen"
 msgid "Initial Zoom"
 msgstr "Beginzoom"
 
-#: exe/webui/element.py:898
+#: exe/webui/element.py:1133
 msgid "Instant Marking?"
 msgstr "Onmiddellijk verbeteren?"
 
-#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:80
-#: exe/engine/truefalseidevice.py:167 exe/webui/common.py:287
+#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:115
+#: exe/engine/truefalseidevice.py:202 exe/webui/common.py:287
 msgid "Instructions"
 msgstr "Aanwijzingen"
 
 #: exe/engine/clozeidevice.py:147
 msgid "Instructions For Learners"
 msgstr "Aanwijzigen voor studenten"
-
-#: exe/idevices/forumelement.py:227
-msgid "Introduction"
-msgstr "Inleiding"
 
 #: exe/webui/wikipediablock.py:199
 msgid "It uses material from the "
@@ -1277,11 +1221,11 @@ msgstr "Italiaans Wikipedia-artikel"
 msgid "Japanese Wikipedia Article"
 msgstr "Japans Wikipedia-artikel"
 
-#: exe/idevices/appletidevice.py:52
+#: exe/engine/appletidevice.py:52
 msgid "Java Applet"
 msgstr "Java Applet"
 
-#: exe/webui/attachmentblock.py:96
+#: exe/webui/attachmentblock.py:97
 #, fuzzy
 msgid "Label:"
 msgstr "Label"
@@ -1290,17 +1234,9 @@ msgstr "Label"
 msgid "Large"
 msgstr "Groot"
 
-#: exe/idevices/forumidevice.py:164
-msgid "Learning Management System"
-msgstr "Learning Management System"
-
-#: exe/idevices/forumelement.py:253
-msgid "Learning Management System:"
-msgstr "Learning Management System:"
-
-#: exe/webui/imagewithtextblock.py:75 exe/webui/editorelement.py:217
-#: exe/webui/multimediablock.py:79 exe/webui/flashwithtextblock.py:75
-#: exe/webui/imagemagnifierblock.py:85 exe/idevices/flashmovieblock.py:75
+#: exe/webui/flashwithtextblock.py:75 exe/webui/multimediablock.py:79
+#: exe/webui/editorelement.py:219 exe/webui/imagemagnifierblock.py:85
+#: exe/webui/flashmovieblock.py:75 exe/webui/imagewithtextblock.py:75
 msgid "Left"
 msgstr "Links"
 
@@ -1308,10 +1244,6 @@ msgstr "Links"
 #, fuzzy
 msgid "Licensed under the "
 msgstr "Dit artikel valt onder de licensiebepalingen van"
-
-#: exe/idevices/forumidevice.py:167
-msgid "Link to the forum"
-msgstr "Link naar het forum"
 
 #: exe/webui/wikipediablock.py:126 exe/webui/rssblock.py:87
 msgid "Load"
@@ -1339,11 +1271,7 @@ msgstr "Maximale zoom"
 msgid "Medium"
 msgstr "Middel"
 
-#: exe/idevices/forumelement.py:262
-msgid "Moodle"
-msgstr "Moodle"
-
-#: exe/webui/block.py:228
+#: exe/webui/block.py:229
 msgid "Move Down"
 msgstr "Omlaag"
 
@@ -1355,7 +1283,7 @@ msgstr "Verplaats afbeelding links"
 msgid "Move Image Right"
 msgstr "Verplaats afbeelding rechts"
 
-#: exe/webui/block.py:221
+#: exe/webui/block.py:222
 msgid "Move Up"
 msgstr "Omhoog"
 
@@ -1372,27 +1300,15 @@ msgstr ""
 msgid "Name"
 msgstr "Naam"
 
-#: exe/idevices/forumelement.py:215
-msgid "New Forum"
-msgstr "Nieuw forum"
-
-#: exe/idevices/forumelement.py:243
-msgid "New Topic"
-msgstr "Nieuw item"
-
 #: exe/webui/editorpage.py:271
 #, fuzzy
 msgid "New iDevice"
 msgstr "Nieuw iDevice"
 
 #: exe/engine/galleryidevice.py:549 exe/export/ipodpage.py:115
-#: exe/export/websitepage.py:192 exe/export/scormexport.py:312
+#: exe/export/scormexport.py:312 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "Volgende"
-
-#: exe/idevices/forumelement.py:83
-msgid "No"
-msgstr "Nee"
 
 #: exe/webui/galleryblock.py:190 exe/webui/galleryblock.py:278
 msgid "No Images Loaded"
@@ -1410,27 +1326,14 @@ msgstr "Geen miniatuur: kon afbeelding niet verkleinen"
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Geen miniatuur: kon afbeelding niet verkleinen"
 
-#: exe/idevices/forumelement.py:80
-msgid "No discussions, but replies are allowed"
-msgstr "Geen discussies, wel antwoorden toegestaan"
-
-#: exe/idevices/forumelement.py:81
-msgid "No discussions, no replies"
-msgstr "Geen discussies en geen antwoorden toegestaan"
-
-#: exe/webui/editorpane.py:347 exe/webui/multimediablock.py:91
-#: exe/webui/wikipediablock.py:130 exe/webui/rssblock.py:91
+#: exe/webui/wikipediablock.py:130 exe/webui/multimediablock.py:91
+#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:347
 msgid "No emphasis"
 msgstr "Geen nadruk"
 
-#: exe/idevices/forumelement.py:87
-msgid "No groups"
-msgstr "Geen groepen"
-
-#: exe/webui/imagewithtextblock.py:77 exe/webui/editorelement.py:219
-#: exe/webui/multimediablock.py:81 exe/webui/flashwithtextblock.py:77
-#: exe/webui/imagemagnifierblock.py:87 exe/idevices/forumelement.py:239
-#: exe/idevices/flashmovieblock.py:77
+#: exe/webui/flashwithtextblock.py:77 exe/webui/multimediablock.py:81
+#: exe/webui/editorelement.py:221 exe/webui/imagemagnifierblock.py:87
+#: exe/webui/flashmovieblock.py:77 exe/webui/imagewithtextblock.py:77
 #: exe/xului/templates/packageproperties.xul:<menuitem value="None"
 #: id="ppminone" label="None">
 msgid "None"
@@ -1440,12 +1343,12 @@ msgstr "Geen"
 msgid "OK"
 msgstr "Okee"
 
-#: exe/engine/idevicestore.py:298 exe/engine/idevicestore.py:307
-#: exe/engine/idevicestore.py:405 exe/engine/idevicestore.py:414
+#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:331
+#: exe/engine/idevicestore.py:428 exe/engine/idevicestore.py:437
 msgid "Objectives"
 msgstr "Doelstellingen"
 
-#: exe/engine/idevicestore.py:301 exe/engine/idevicestore.py:408
+#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:431
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1455,7 +1358,7 @@ msgstr ""
 "Deze geven aan wat de student heeft bijgeleerd na het voltooien van de\n"
 "leeropdrachten."
 
-#: exe/engine/field.py:689 exe/engine/field.py:753
+#: exe/engine/field.py:769 exe/engine/field.py:833
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1463,7 +1366,7 @@ msgstr ""
 "Alleen .flv (Flash-videobestanden)\n"
 "voor dit iDevice."
 
-#: exe/engine/field.py:625 exe/engine/field.py:669
+#: exe/engine/field.py:705 exe/engine/field.py:749
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1471,17 +1374,19 @@ msgstr ""
 "Alleen .swf (Flash-objecten) voor\n"
 "dit iDevice."
 
-#: exe/webui/element.py:1448 exe/webui/element.py:1536
-#: exe/webui/element.py:1541 exe/idevices/testquestionelement.py:95
+#: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
+#: exe/engine/field.py:950 exe/engine/field.py:963
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1725
+#: exe/webui/element.py:1842 exe/webui/element.py:1847
 msgid "Option"
 msgstr "Alternatief"
 
-#: exe/webui/element.py:1444 exe/idevices/testquestionelement.py:91
+#: exe/engine/field.py:1034 exe/engine/field.py:1044
+#: exe/webui/testquestionelement.py:92 exe/webui/element.py:1721
 msgid "Options"
 msgstr "Alternatieven"
 
-#: exe/webui/wikipediablock.py:109 exe/idevices/appletblock.py:89
-#: exe/idevices/forumelement.py:266
+#: exe/webui/wikipediablock.py:109 exe/webui/appletblock.py:89
 msgid "Other"
 msgstr "Overig"
 
@@ -1493,31 +1398,23 @@ msgstr "Schema"
 msgid "Own site"
 msgstr ""
 
-#: exe/xului/mainpage.py:549
+#: exe/xului/mainpage.py:654
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "Pakket opgeslagen naar: %s"
 
-#: exe/xului/mainpage.py:298
+#: exe/xului/mainpage.py:309
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Pakket opgeslagen naar: %s"
 
-#: exe/webui/editorpane.py:385 exe/webui/block.py:235
+#: exe/webui/block.py:236 exe/webui/editorpane.py:385
 msgid "Pedagogical Help"
 msgstr "Pedagogische hulp"
 
 #: exe/webui/editorpane.py:341
 msgid "Pedagogical Tip"
 msgstr "Pedagogische tip"
-
-#: exe/idevices/forumblock.py:133
-msgid "Please enter a discussion topic name.\n"
-msgstr "Geef een naam van een discussie-onderwerp .\n"
-
-#: exe/idevices/forumblock.py:119
-msgid "Please enter a name for the forum\n"
-msgstr "Geef een naam voor het forum\n"
 
 #: exe/webui/editorpage.py:107
 msgid "Please enter an idevice name."
@@ -1528,33 +1425,21 @@ msgstr "Geef naam iDevice op"
 msgid "Please enter<br />an idevice name."
 msgstr "Geef naam iDevice op"
 
-#: exe/idevices/forumblock.py:128
-msgid "Please select LMS.\n"
-msgstr "Selecteer een LMS.\n"
-
-#: exe/webui/element.py:1140
+#: exe/webui/element.py:1391
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "Selecteer een fichier de .flv."
 
-#: exe/webui/element.py:692
+#: exe/webui/element.py:915
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "Selecteer een fichier de .flv."
 
-#: exe/idevices/forumelement.py:258
-msgid "Please select a LMS"
-msgstr "Selecteer een LMS"
-
-#: exe/webui/multichoiceblock.py:85 exe/idevices/quiztestblock.py:93
+#: exe/webui/multichoiceblock.py:85 exe/webui/quiztestblock.py:92
 msgid "Please select a correct answer for each question."
 msgstr "Selecteer een juist antwoord voor iedere vraag"
 
-#: exe/idevices/forumblock.py:114
-msgid "Please select a forum.\n"
-msgstr "Selecteer een forum.\n"
-
-#: exe/idevices/appletblock.py:71
+#: exe/webui/appletblock.py:71
 msgid "Please upload a .ggb file."
 msgstr ""
 
@@ -1566,12 +1451,12 @@ msgstr "Pools Wikipedia-artikel"
 msgid "Portugese Wikipedia Article"
 msgstr "Portugees Wikipedia-artikel"
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:321
-#: exe/engine/idevicestore.py:418 exe/engine/idevicestore.py:428
+#: exe/engine/idevicestore.py:335 exe/engine/idevicestore.py:345
+#: exe/engine/idevicestore.py:441 exe/engine/idevicestore.py:451
 msgid "Preknowledge"
 msgstr "Voorkennis"
 
-#: exe/engine/idevicestore.py:314 exe/engine/idevicestore.py:421
+#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1585,17 +1470,22 @@ msgstr ""
 "<li>        De student moet vlot Engels kunnen lezen, schrijven en spreken </li>\n"
 "<li>        De student moet een elektrisch schema kunnen tekenen en lezen </li></ul>\n"
 
-#: exe/webui/editorpane.py:278 exe/webui/element.py:1283
+#: exe/webui/element.py:1534 exe/webui/editorpane.py:278
 msgid "Preview"
 msgstr "Voorbeeld"
 
+#: exe/xului/mainpage.py:502
+#, fuzzy, python-format
+msgid "Preview directory %s is a file, cannot replace it"
+msgstr "Bestandsnaam %s bestaat al, kan niet vervangen"
+
 #: exe/engine/galleryidevice.py:541 exe/export/ipodpage.py:109
-#: exe/export/websitepage.py:186 exe/export/scormexport.py:311
+#: exe/export/scormexport.py:311 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "Vorige"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:342
-#: exe/engine/field.py:389
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:410
+#: exe/engine/field.py:457
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1609,7 +1499,7 @@ msgstr ""
 "Geef een bijschrift voor de\n"
 "in te zoomen afbeelding."
 
-#: exe/idevices/flashmovieidevice.py:57 exe/idevices/flashmovieidevice.py:78
+#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
@@ -1634,7 +1524,7 @@ msgstr ""
 "Geef een bijschrift voor de\n"
 "toegevoegde afbeelding."
 
-#: exe/engine/truefalseidevice.py:81 exe/engine/truefalseidevice.py:168
+#: exe/engine/truefalseidevice.py:116 exe/engine/truefalseidevice.py:203
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1650,7 +1540,7 @@ msgstr ""
 "Leg uit hoe de cloze-oefening ingevuld moet worden.\n"
 "Als u dit veld niet verandert, wordt een standaardtekst getoond.\n"
 
-#: exe/engine/casestudyidevice.py:111
+#: exe/engine/casestudyidevice.py:124
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1658,7 +1548,7 @@ msgstr ""
 "Geef relevante feedback over de\n"
 "situatie."
 
-#: exe/webui/block.py:249
+#: exe/webui/block.py:250
 msgid "Purpose"
 msgstr "Doelstelling"
 
@@ -1666,13 +1556,15 @@ msgstr "Doelstelling"
 msgid "Put instructions for learners here"
 msgstr "Geef aanwijzingen voor de studenten"
 
-#: exe/engine/multichoiceidevice.py:119 exe/engine/multiselectidevice.py:78
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/field.py:989 exe/engine/field.py:1008
 #, fuzzy
 msgid "Question"
 msgstr "Vraag:"
 
-#: exe/webui/truefalseelement.py:79 exe/webui/element.py:1434
-#: exe/webui/element.py:1652 exe/idevices/testquestionelement.py:81
+#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
+#: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
+#: exe/engine/field.py:1070 exe/engine/field.py:1106 exe/webui/element.py:1705
 msgid "Question:"
 msgstr "Vraag:"
 
@@ -1689,24 +1581,24 @@ msgstr ""
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "Lees de alinea hieronder en vul de ontbrekende woorden in"
 
-#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:170
+#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:205
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Lees de alinea hieronder en vul de ontbrekende woorden in."
 
-#: exe/engine/idevicestore.py:222 exe/engine/idevicestore.py:240
+#: exe/engine/idevicestore.py:228 exe/engine/idevicestore.py:264
 #: exe/engine/genericidevice.py:198
 msgid "Reading Activity"
 msgstr "Leesactiviteit"
 
-#: exe/engine/idevicestore.py:348 exe/engine/genericidevice.py:196
+#: exe/engine/idevicestore.py:372 exe/engine/genericidevice.py:196
 msgid "Reading Activity 0.11"
 msgstr "Leesactiviteit 0.11"
 
-#: exe/engine/reflectionidevice.py:43
+#: exe/engine/reflectionidevice.py:44
 msgid "Reflection"
 msgstr "Reflectie"
 
-#: exe/engine/reflectionidevice.py:45
+#: exe/engine/reflectionidevice.py:46
 msgid ""
 "Reflection is a teaching method often used to \n"
 "connect theory to practice. Reflection tasks often provide learners with an \n"
@@ -1722,25 +1614,26 @@ msgstr ""
 "nuttige instrumenten om waarnemingen te verzamelen. Rubrics zijn efficiënte\n"
 "middelen voor feedback."
 
-#: exe/webui/reflectionblock.py:69
+#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:127
 msgid "Reflective question:"
 msgstr "Reflectieve vraag:"
 
-#: exe/webui/element.py:982
+#: exe/webui/element.py:1233
 msgid "Restart"
 msgstr "Herstarten"
 
-#: exe/webui/imagewithtextblock.py:76 exe/webui/editorelement.py:218
-#: exe/webui/multimediablock.py:80 exe/webui/flashwithtextblock.py:76
-#: exe/webui/imagemagnifierblock.py:86 exe/idevices/flashmovieblock.py:76
+#: exe/webui/flashwithtextblock.py:76 exe/webui/multimediablock.py:80
+#: exe/webui/editorelement.py:220 exe/webui/imagemagnifierblock.py:86
+#: exe/webui/flashmovieblock.py:76 exe/webui/imagewithtextblock.py:76
 msgid "Right"
 msgstr "Rechts"
 
-#: exe/xului/mainpage.py:291
+#: exe/xului/mainpage.py:302
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:295 exe/xului/mainpage.py:589
+#: exe/xului/mainpage.py:306 exe/xului/mainpage.py:530
+#: exe/xului/mainpage.py:696
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1754,11 +1647,11 @@ msgid ""
 "Last succesful save is %s."
 msgstr ""
 
-#: exe/idevices/quiztestidevice.py:117
+#: exe/engine/quiztestidevice.py:187
 msgid "SCORM Quiz"
 msgstr "SCORM-toets"
 
-#: exe/idevices/quiztestblock.py:137
+#: exe/webui/quiztestblock.py:138
 msgid "SUBMIT ANSWERS"
 msgstr "VERZEND ANTWOORDEN"
 
@@ -1770,7 +1663,7 @@ msgstr "Opslaan"
 msgid "Section"
 msgstr "Sectie"
 
-#: exe/webui/editorelement.py:265 exe/webui/element.py:1074
+#: exe/webui/editorelement.py:267 exe/webui/element.py:1325
 msgid "Select Flash Object"
 msgstr "Kies een Flash-bestand"
 
@@ -1780,43 +1673,39 @@ msgstr "Kies een Flash-bestand"
 msgid "Select Language"
 msgstr "Kies de taal"
 
-#: exe/webui/editorelement.py:319
+#: exe/webui/editorelement.py:321
 #, fuzzy
 msgid "Select MP3 file"
 msgstr "Kies een bestand"
 
-#: exe/idevices/forumelement.py:211
-msgid "Select a Forum"
-msgstr "Kies een forum"
-
-#: exe/webui/editorelement.py:360 exe/webui/element.py:651
-#: exe/webui/attachmentblock.py:92
+#: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
+#: exe/webui/element.py:874
 msgid "Select a file"
 msgstr "Kies een bestand"
 
-#: exe/webui/element.py:1156
+#: exe/webui/element.py:1407
 msgid "Select a flash video"
 msgstr "Kies een Flash-film"
 
-#: exe/webui/element.py:1269
+#: exe/webui/element.py:1520
 #, fuzzy
 msgid "Select a font size: "
 msgstr "Kies een bestand"
 
-#: exe/webui/element.py:441
+#: exe/webui/element.py:664
 #, fuzzy
 msgid "Select an MP3"
 msgstr "Kies een bestand"
 
-#: exe/webui/element.py:355
+#: exe/webui/element.py:577
 msgid "Select an image"
 msgstr "Kies een afbeelding"
 
-#: exe/webui/element.py:737
+#: exe/webui/element.py:960
 msgid "Select an image (JPG file)"
 msgstr "Kies een afbeelding (JPG-bestand)"
 
-#: exe/engine/field.py:929
+#: exe/engine/field.py:1079
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1825,11 +1714,11 @@ msgstr ""
 "Duid het juiste alternatief aan\n"
 "door het keuzerondje aan te klikken."
 
-#: exe/idevices/quiztestblock.py:104
+#: exe/webui/quiztestblock.py:103
 msgid "Select pass rate: "
 msgstr "Kies slaagpercentage:"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:227
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:234
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1837,7 +1726,7 @@ msgstr ""
 "Selecteer de gewenste taalversie van\n"
 "Wikipedia en voer de zoekterm in."
 
-#: exe/engine/multichoiceidevice.py:95
+#: exe/engine/multichoiceidevice.py:101
 msgid ""
 "Select the correct option by clicking \n"
 "on the radio button."
@@ -1849,10 +1738,6 @@ msgstr ""
 #, fuzzy
 msgid "Select the size of the magnifying glass"
 msgstr "Grootte van vergrootglas:"
-
-#: exe/idevices/forumelement.py:88
-msgid "Separate groups"
-msgstr "Gescheiden groepen"
 
 #: exe/engine/imagemagnifieridevice.py:67
 #: exe/engine/imagemagnifieridevice.py:89
@@ -1876,29 +1761,25 @@ msgstr ""
 msgid "Settings saved"
 msgstr "Instellingen opgeslagen"
 
-#: exe/idevices/forumelement.py:91
-msgid "Show"
-msgstr "Tonen"
-
 #: exe/webui/galleryblock.py:286
 #, python-format
 msgid "Show %s Image"
 msgstr "Toon afbeelding %s"
 
-#: exe/webui/element.py:989
+#: exe/webui/element.py:1240
 msgid "Show Answers"
 msgstr "Toon antwoorden"
 
-#: exe/webui/questionelement.py:105
+#: exe/webui/questionelement.py:126
 #, fuzzy
 msgid "Show Feedback"
 msgstr "Toon/verberg feedback"
 
-#: exe/webui/element.py:973
+#: exe/webui/element.py:1224
 msgid "Show/Clear Answers"
 msgstr "Toon/wis antwoorden"
 
-#: exe/webui/element.py:968
+#: exe/webui/element.py:1219
 msgid "Show/Hide Feedback"
 msgstr "Toon/verberg feedback"
 
@@ -1918,12 +1799,12 @@ msgstr "Sloveens Wikipedia-artikel"
 msgid "Small"
 msgstr "Klein"
 
-#: exe/webui/editorpane.py:348 exe/webui/multimediablock.py:92
-#: exe/webui/wikipediablock.py:131 exe/webui/rssblock.py:92
+#: exe/webui/wikipediablock.py:131 exe/webui/multimediablock.py:92
+#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:348
 msgid "Some emphasis"
 msgstr "Lichte nadruk"
 
-#: exe/xului/mainpage.py:787
+#: exe/xului/mainpage.py:895
 msgid "Sorry, wrong file format"
 msgstr "Sorry, fout bestandsformaat"
 
@@ -1932,7 +1813,7 @@ msgstr "Sorry, fout bestandsformaat"
 msgid "Sorry, wrong file format."
 msgstr "Sorry, fout bestandsformaat"
 
-#: exe/xului/mainpage.py:785
+#: exe/xului/mainpage.py:893
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1945,24 +1826,19 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "Spaans Wikipedia-artikel"
 
-#: exe/idevices/forumelement.py:77
-msgid "Standard forum for general use"
-msgstr "Standaardforum voor algemeen gebruik"
-
-#: exe/webui/casestudyblock.py:83
+#: exe/engine/casestudyidevice.py:115 exe/engine/casestudyidevice.py:198
 msgid "Story:"
 msgstr "Verhaal:"
 
-#: exe/webui/element.py:888
+#: exe/webui/element.py:1123
 msgid "Strict Marking?"
 msgstr "Streng verbeteren?"
 
-#: exe/webui/editorpane.py:436 exe/webui/common.py:222
-#: exe/webui/element.py:977
+#: exe/webui/element.py:1228 exe/webui/editorpane.py:436
 msgid "Submit"
 msgstr "Verzend antwoord"
 
-#: exe/webui/element.py:1482 exe/idevices/quiztestblock.py:355
+#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1775
 msgid "Submit Answer"
 msgstr "Verzend antwoord"
 
@@ -1970,12 +1846,12 @@ msgstr "Verzend antwoord"
 msgid "Swedish Wikipedia Article"
 msgstr "Zweeds Wikipedia-artikel"
 
-#: exe/engine/idevicestore.py:356
+#: exe/engine/idevicestore.py:380
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Als u dit iDevice gebruikt, hou dan rekening met volgende overwegingen: <ol><li>1. Beperk het aantal verschillende soorten van activiteiten dat in het materiaal op een visuele manier wordt aangegeven. Meestal volstaan drie of vier verschillende types.</li><li>2. Uit visueel oogpunt bekeken is het beter niet twee iDevices onmiddellijk na elkaar te zetten die niet gescheiden zijn door tekst. Als dat het geval is, plaats dan twee vragen of activiteiten in eenzelfde iDevice</li><li>3.Ontwerp activiteiten waarvan het nut opweegt tegen de tijd en moeite die het kost om ze tot een goed einde te brengen. </li></ol>"
 
-#: exe/engine/imagemagnifieridevice.py:53
-#: exe/engine/imagewithtextidevice.py:61 exe/engine/multimediaidevice.py:64
+#: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagemagnifieridevice.py:53 exe/engine/multimediaidevice.py:64
 msgid "Text"
 msgstr "Tekst"
 
@@ -1998,7 +1874,7 @@ msgid ""
 "iDevice you can provide links from a feed you select for learners to view."
 msgstr ""
 
-#: exe/engine/attachmentidevice.py:43
+#: exe/engine/attachmentidevice.py:44
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
 msgstr "Het iDevice \"Bijlage\" dient om bestanden toe te voegen aan .elp-materiaal. Dit kan bijv. een PDF- of PPT-bestand zijn dat de studenten moeten kunnen openen. U kan dit toevoegen als bijlage en in het bijschrift aangeven wat de inhoud en de omvang van het bestand is. Studenten kunnen het bestand openen door de link aan te klikken."
 
@@ -2072,7 +1948,7 @@ msgstr ""
 "Dit bepaalt de begininstelling\n"
 "van het vergrootglas"
 
-#: exe/idevices/flashmovieidevice.py:41
+#: exe/engine/flashmovieidevice.py:41
 msgid ""
 "This iDevice only supports the Flash Video File (.FLV) format, and will not\n"
 "accept other video formats. You can however convert other movie formats\n"
@@ -2106,18 +1982,14 @@ msgstr ""
 msgid "This is an optional field."
 msgstr "Dit veld is facultatief."
 
-#: exe/webui/block.py:209
+#: exe/webui/block.py:210
 #, fuzzy
 msgid ""
 "This will delete this iDevice.\n"
 "Do you really want to do this?"
 msgstr "iDevice wordt verwijderd.\\nWeet u dit zeker?"
 
-#: exe/idevices/forumelement.py:352 exe/idevices/forumelement.py:369
-msgid "Thread: "
-msgstr "Discussiedraad:"
-
-#: exe/webui/block.py:253
+#: exe/webui/block.py:254
 msgid "Tip:"
 msgstr "Tip:"
 
@@ -2125,7 +1997,7 @@ msgstr "Tip:"
 msgid "Title"
 msgstr "Titel"
 
-#: exe/idevices/quiztestidevice.py:67 exe/idevices/quiztestidevice.py:102
+#: exe/engine/quiztestidevice.py:98 exe/engine/quiztestidevice.py:138
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -2137,15 +2009,15 @@ msgstr ""
 msgid "Topic"
 msgstr "Topic"
 
-#: exe/webui/truefalseelement.py:82 exe/webui/truefalseelement.py:153
+#: exe/webui/truefalseelement.py:92 exe/webui/truefalseelement.py:165
 msgid "True"
 msgstr "Waar"
 
-#: exe/engine/truefalseidevice.py:59
+#: exe/engine/truefalseidevice.py:94
 msgid "True-False Question"
 msgstr "Waar/onwaar-vraag"
 
-#: exe/engine/truefalseidevice.py:61
+#: exe/engine/truefalseidevice.py:96
 msgid ""
 "True/false questions present a statement where \n"
 "the learner must decide if the statement is true. This type of question works \n"
@@ -2156,15 +2028,11 @@ msgstr ""
 "moet beslissen of deze bewering juist of fout is. Dit soort vraag is o.m. geschikt\n"
 "voor feitelijke informatie en voor ofwel/ofwel-antwoorden."
 
-#: exe/engine/field.py:765 exe/idevices/forumidevice.py:151
+#: exe/engine/field.py:845
 msgid "Type a discussion topic here."
 msgstr "Geef een discussie-onderwerp."
 
-#: exe/idevices/forumidevice.py:107
-msgid "Type a forum name here"
-msgstr "Voer een forumnaam in"
-
-#: exe/engine/multichoiceidevice.py:100
+#: exe/engine/multichoiceidevice.py:106
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular option. If you don't complete this \n"
@@ -2178,7 +2046,7 @@ msgstr ""
 "\"Juist antwoord\" bij het antwoord dat als zodanig is aangeduid; of \n"
 "\"Fout antwoord\" bij de andere alternatieven."
 
-#: exe/engine/truefalseidevice.py:148
+#: exe/engine/truefalseidevice.py:183
 msgid ""
 "Type in the feedback that you want the \n"
 "student to see when selecting the particular question. If you don't complete\n"
@@ -2192,17 +2060,17 @@ msgstr ""
 "\"Juist antwoord\" bij het antwoord dat als zodanig is aangeduid; of \n"
 "\"Fout antwoord\" bij de andere alternatieven."
 
-#: exe/engine/field.py:932
+#: exe/engine/field.py:1082
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:415
+#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
 msgid "Type the learning objectives for this resource."
 msgstr "Geef de leerdoelstellingen voor deze bron."
 
-#: exe/engine/truefalseidevice.py:69
+#: exe/engine/truefalseidevice.py:104
 msgid ""
 "Type the question stem. The question \n"
 "should be clear and unambiguous. Avoid negative premises as these can tend to \n"
@@ -2225,23 +2093,22 @@ msgstr ""
 msgid "Unit"
 msgstr "Unit"
 
-#: exe/engine/imagemagnifieridevice.py:41 exe/engine/multichoiceidevice.py:58
-#: exe/engine/casestudyidevice.py:83 exe/engine/externalurlidevice.py:38
-#: exe/engine/clozeidevice.py:45 exe/engine/imagewithtextidevice.py:40
-#: exe/engine/reflectionidevice.py:44 exe/engine/truefalseidevice.py:60
-#: exe/engine/idevicestore.py:242 exe/engine/idevicestore.py:300
-#: exe/engine/idevicestore.py:328 exe/engine/idevicestore.py:350
-#: exe/engine/idevicestore.py:407 exe/engine/idevicestore.py:435
-#: exe/engine/multiselectidevice.py:42 exe/engine/wikipediaidevice.py:52
-#: exe/engine/freetextidevice.py:38 exe/engine/attachmentidevice.py:42
-#: exe/engine/mathidevice.py:36 exe/engine/flashwithtextidevice.py:41
-#: exe/idevices/quiztestidevice.py:118 exe/idevices/appletidevice.py:53
-#: exe/idevices/forumidevice.py:41 exe/idevices/exampleidevice.py:40
-#: exe/idevices/flashmovieidevice.py:40
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
+#: exe/engine/idevicestore.py:266 exe/engine/idevicestore.py:324
+#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:374
+#: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:458
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
+#: exe/engine/attachmentidevice.py:43 exe/engine/multichoiceidevice.py:58
+#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
+#: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:52
+#: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
+#: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:188
+#: exe/engine/casestudyidevice.py:93 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Universiteit van Auckland"
 
-#: exe/idevices/quiztestidevice.py:119
+#: exe/engine/quiztestidevice.py:189
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2255,11 +2122,11 @@ msgstr ""
 "kunnen instuderen of de vaardigheid heeft kunnen oefenen.\n"
 " "
 
-#: exe/idevices/appletblock.py:110
+#: exe/webui/appletblock.py:110
 msgid "Upload"
 msgstr "Uploaden"
 
-#: exe/engine/idevicestore.py:292 exe/engine/idevicestore.py:400
+#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2293,19 +2160,11 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
 
-#: exe/idevices/forumelement.py:89
-msgid "Visible groups"
-msgstr "Zichtbare groepen"
-
-#: exe/idevices/forumelement.py:124
-msgid "Visible to students:"
-msgstr "Zichtbaar voor studenten:"
-
-#: exe/engine/idevicestore.py:283 exe/engine/idevicestore.py:391
+#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:415
 msgid "What to read"
 msgstr "Wat gelezen moet worden"
 
-#: exe/engine/multichoiceidevice.py:72 exe/engine/multiselectidevice.py:56
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -2352,17 +2211,9 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1591
+#: exe/webui/element.py:1918
 msgid "Wrong"
 msgstr "Fout"
-
-#: exe/idevices/forumelement.py:84
-msgid "Yes, forever"
-msgstr "Ja, voor altijd"
-
-#: exe/idevices/forumelement.py:85
-msgid "Yes, initially"
-msgstr "Ja, in het begin"
 
 #: exe/engine/mathidevice.py:49
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -2377,23 +2228,15 @@ msgstr "Uw iDevice verschijnt in het iDevice-paneel met deze benaming. Dit veld 
 msgid "article "
 msgstr "artikel"
 
-#: exe/webui/element.py:372 exe/webui/element.py:759
+#: exe/webui/element.py:594 exe/webui/element.py:982
 msgid "blank for original size"
 msgstr "leeg voor originele afmetingen"
-
-#: exe/idevices/forumblock.py:124
-msgid "duplicate forum name.\n"
-msgstr "forumnaam bestaat al.\n"
-
-#: exe/idevices/forumblock.py:137
-msgid "duplicate topic name."
-msgstr "ondererpsnaam bestaat al."
 
 #: exe/export/imsexport.py:188 exe/export/scormexport.py:276
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/common.py:67 exe/webui/preferencespage.py:77
+#: exe/webui/preferencespage.py:77 exe/webui/common.py:67
 #: exe/webui/editorpage.py:217
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : elearning XHTML-editor"
@@ -2402,16 +2245,16 @@ msgstr "eXe : elearning XHTML-editor"
 msgid "eXe Project"
 msgstr ""
 
-#: exe/idevices/appletidevice.py:86
+#: exe/engine/appletidevice.py:86
 #, python-format
 msgid "file %s has no parentNode"
 msgstr "bestand %s zonder parentNode"
 
-#: exe/engine/wikipediaidevice.py:181
+#: exe/engine/wikipediaidevice.py:188
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:100 exe/idevices/appletidevice.py:87
+#: exe/engine/attachmentidevice.py:105 exe/engine/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s heeft geen inhoud"
@@ -2427,7 +2270,7 @@ msgstr "iDevice-editor"
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/block.py:303
+#: exe/webui/block.py:304
 msgid "iDevice icon"
 msgstr "iDevice-pictogram"
 
@@ -2443,12 +2286,12 @@ msgstr "keycode"
 msgid "label"
 msgstr "label"
 
-#: exe/webui/element.py:1266
+#: exe/webui/element.py:1517
 #, fuzzy
 msgid "newline"
 msgstr "Interlingua "
 
-#: exe/webui/element.py:1265
+#: exe/webui/element.py:1516
 #, fuzzy
 msgid "text"
 msgstr "Volgende"
@@ -2669,11 +2512,11 @@ msgstr "D"
 msgid "Select License"
 msgstr "Kies de taal"
 
-#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
-#: style="width:8em" tooltiptext="The nature or genre of the content
-#: resource.">
-msgid "Type:"
-msgstr "Type:"
+#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
+msgid ""
+" \n"
+"                 "
+msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2688,12 +2531,11 @@ msgstr "N"
 msgid "Creative Commons Attribution 2.5 License"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+#: exe/xului/templates/dublincore.xul:<description id="dcDescDate">
 msgid ""
 "\n"
-"              Type includes terms describing general categories, functions, or\n"
-"              genres, for content. Recommended best practice is to select a value\n"
-"              from a controlled vocabulary or controlled classification scheme."
+"                 and includes (among others) dates of the form YYYY-MM-DD.\n"
+"            "
 msgstr ""
 
 # exe/xului/templates/mainpage.xul:<key
@@ -2709,10 +2551,11 @@ msgstr "S"
 msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
-#: style="width:8em" tooltiptext="Select a Format.">
-msgid "Format:"
-msgstr "Formaat:"
+#: exe/xului/templates/dublincore.xul:<label value="Type:" id="dcType"
+#: style="width:8em" tooltiptext="The nature or genre of the content
+#: resource.">
+msgid "Type:"
+msgstr "Type:"
 
 # exe/xului/templates/mainpage.xul:<key
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2727,10 +2570,13 @@ msgstr "O"
 msgid "Creative Commons Attribution-NoDerivs 2.5 License"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
-#: 'red'" id="dc_format" label="Select Format">
-msgid "Select Format"
-msgstr "Kies een formaat"
+#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+msgid ""
+"\n"
+"              Type includes terms describing general categories, functions, or\n"
+"              genres, for content. Recommended best practice is to select a value\n"
+"              from a controlled vocabulary or controlled classification scheme."
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="Q"
 #: modifiers="control" id="file-quit-key" oncommand="fileQuit()">
@@ -2743,10 +2589,13 @@ msgstr ""
 msgid "Creative Commons Attribution-NonCommercial 2.5 License"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
-#: label="XHTML">
-msgid "XHTML"
-msgstr "XHTML"
+#: exe/xului/templates/dublincore.xul:<description id="dcDescType">
+msgid ""
+"\n"
+"              To describe the physical or digital manifestation of the resource,\n"
+"              use the FORMAT element.\n"
+"            "
+msgstr ""
 
 #: exe/xului/templates/mainpage.xul:<key n:render="translate" key="P"
 #: modifiers="control" id="file-print-key" oncommand="filePrint()">
@@ -2759,10 +2608,10 @@ msgstr ""
 msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
-#: id="dcmiSCORM" label="SCORM 1.2">
-msgid "SCORM 1.2"
-msgstr "SCORM 1.2"
+#: exe/xului/templates/dublincore.xul:<label value="Format:" id="dcFormat"
+#: style="width:8em" tooltiptext="Select a Format.">
+msgid "Format:"
+msgstr "Formaat:"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -2778,11 +2627,10 @@ msgstr "label=\"Bestand\" accesskey=\"b\""
 msgid "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License"
 msgstr ""
 
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
-#: label="IMS Content Package 1.1.3">
-msgid "IMS Content Package 1.1.3"
-msgstr "IMS 1.1.3-pakket"
+#: exe/xului/templates/dublincore.xul:<menulist onchange="this.style.color =
+#: 'red'" id="dc_format" label="Select Format">
+msgid "Select Format"
+msgstr "Kies een formaat"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2797,11 +2645,10 @@ msgstr "label=\"Nieuw\" accesskey=\"n\""
 msgid "Developing Nations 2.0"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
-#: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
-#: to the resource within a given context.">
-msgid "Identifier:"
-msgstr "Identifier:"
+#: exe/xului/templates/dublincore.xul:<menuitem value="XHTML" id="dcmiXHTML"
+#: label="XHTML">
+msgid "XHTML"
+msgstr "XHTML"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2816,11 +2663,10 @@ msgstr "label=\"Openen\" accesskey=\"o\""
 msgid "Footer:"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
-#: style="width:8em" tooltiptext="A Reference to a resource from which the
-#: present is derived.">
-msgid "Source:"
-msgstr "Bron:"
+#: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
+#: id="dcmiSCORM" label="SCORM 1.2">
+msgid "SCORM 1.2"
+msgstr "SCORM 1.2"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2836,10 +2682,11 @@ msgstr "label=\"Vernieuwen\" accesskey=\"v\""
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
-#: style="width:8em" tooltiptext="Select a language.">
-msgid "Language:"
-msgstr "Taal:"
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/dublincore.xul:<menuitem value="IMS-CP" id="dcmiIMS"
+#: label="IMS Content Package 1.1.3">
+msgid "IMS Content Package 1.1.3"
+msgstr "IMS 1.1.3-pakket"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2855,11 +2702,11 @@ msgstr "label=\"Opslaan\" accesskey=\"s\""
 msgid "Level 1:"
 msgstr "Niveau 1:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
-#: label="Abkhazian ">
-#, fuzzy
-msgid "Abkhazian "
-msgstr "Albanees"
+#: exe/xului/templates/dublincore.xul:<label value="Identifier:"
+#: id="dcIdentifier" style="width:8em" tooltiptext="An unambiguous reference
+#: to the resource within a given context.">
+msgid "Identifier:"
+msgstr "Identifier:"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2875,11 +2722,11 @@ msgstr "label=\"Opslaan als...\" accesskey=\"l\""
 msgid "Level 2:"
 msgstr "Niveau 2:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
-#: label="Afar ">
-#, fuzzy
-msgid "Afar "
-msgstr "Amharic "
+#: exe/xului/templates/dublincore.xul:<label value="Source:" id="dcSource"
+#: style="width:8em" tooltiptext="A Reference to a resource from which the
+#: present is derived.">
+msgid "Source:"
+msgstr "Bron:"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2895,10 +2742,10 @@ msgstr "label=\"Afdrukken\" accesskey=\"i\""
 msgid "Level 3:"
 msgstr "Niveau 3:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
-#: label="Afrikaans ">
-msgid "Afrikaans "
-msgstr "Afrikaans "
+#: exe/xului/templates/dublincore.xul:<label value="Language:" id="dcLanguage"
+#: style="width:8em" tooltiptext="Select a language.">
+msgid "Language:"
+msgstr "Taal:"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -2916,9 +2763,10 @@ msgstr "label=\"Exporteren\" accesskey=\"e\""
 msgid "Update Tree"
 msgstr "Boomstructuur bijwerken"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
-#: label="Albanian ">
-msgid "Albanian "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ab" id="dcmiab"
+#: label="Abkhazian ">
+#, fuzzy
+msgid "Abkhazian "
 msgstr "Albanees"
 
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2937,9 +2785,10 @@ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 msgid "Apply"
 msgstr "Appletcode:"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
-#: label="Amharic ">
-msgid "Amharic "
+#: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
+#: label="Afar ">
+#, fuzzy
+msgid "Afar "
 msgstr "Amharic "
 
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -2951,10 +2800,10 @@ msgstr "Amharic "
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
 msgstr "label=\"IMS Content Package\" accesskey=\"i\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
-#: label="Arabic ">
-msgid "Arabic "
-msgstr "Arabisch"
+#: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
+#: label="Afrikaans ">
+msgid "Afrikaans "
+msgstr "Afrikaans "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="website"
 #: label="Web Site"> exe/xului/templates/dublincore.xul:<menuitem value="Web
@@ -2962,35 +2811,30 @@ msgstr "Arabisch"
 msgid "Web Site"
 msgstr "Website"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
-#: label="Armenian ">
-msgid "Armenian "
-msgstr "Armeens"
+#: exe/xului/templates/dublincore.xul:<menuitem value="sq" id="dcmisq"
+#: label="Albanian ">
+msgid "Albanian "
+msgstr "Albanees"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('webSite','','')" label="Self-contained Folder">
 msgid "Self-contained Folder"
 msgstr ""
 
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
-# exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
-#: label="Assamese ">
-#, fuzzy
-msgid "Assamese "
-msgstr "Vietnamees"
+#: exe/xului/templates/dublincore.xul:<menuitem value="am" id="dcmiam"
+#: label="Amharic ">
+msgid "Amharic "
+msgstr "Amharic "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('zipFile','','')" label="Zip File">
 msgid "Zip File"
 msgstr ""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
-#: label="Avestan ">
-#, fuzzy
-msgid "Avestan "
-msgstr "Tibetaans"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ar" id="dcmiar"
+#: label="Arabic ">
+msgid "Arabic "
+msgstr "Arabisch"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3001,11 +2845,10 @@ msgstr "Tibetaans"
 msgid "label=\"Single Page\" accesskey=\"p\""
 msgstr "label=\"Webpagina\" accesskey=\"p\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
-#: label="Aymara ">
-#, fuzzy
-msgid "Aymara "
-msgstr "Amharic "
+#: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
+#: label="Armenian ">
+msgid "Armenian "
+msgstr "Armeens"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3017,10 +2860,14 @@ msgstr "Amharic "
 msgid "label=\"Text File\" accesskey=\"t\""
 msgstr "label=\"Bestand\" accesskey=\"b\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
-#: label="Azerbaijani ">
-msgid "Azerbaijani "
-msgstr "Azerbeidjaans"
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
+# exe/xului/templates/mainpage.xul:<toolbarbutton
+#: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
+#: label="Assamese ">
+#, fuzzy
+msgid "Assamese "
+msgstr "Vietnamees"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3031,10 +2878,11 @@ msgstr "Azerbeidjaans"
 msgid "label=\"iPod Notes\" accesskey=\"n\""
 msgstr "label=\"Nieuw\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
-#: label="Bashkir ">
-msgid "Bashkir "
-msgstr ""
+#: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
+#: label="Avestan ">
+#, fuzzy
+msgid "Avestan "
+msgstr "Tibetaans"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3045,10 +2893,11 @@ msgstr ""
 msgid "label=\"Merging\" accesskey=\"m\""
 msgstr "label=\"Samenvoegen\" accesskey=\"m\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
-#: label="Basque ">
-msgid "Basque "
-msgstr "Baskisch"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
+#: label="Aymara ">
+#, fuzzy
+msgid "Aymara "
+msgstr "Amharic "
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3057,6 +2906,45 @@ msgstr "Baskisch"
 #: oncommand="insertPackage()" accesskey="i" label="Insert Package">
 msgid "label=\"Insert Package\" accesskey=\"i\""
 msgstr "label=\"Pakket invoegen\" accesskey=\"i\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="az" id="dcmiaz"
+#: label="Azerbaijani ">
+msgid "Azerbaijani "
+msgstr "Azerbeidjaans"
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
+msgid "label=\"Extract Package\" accesskey=\"E\""
+msgstr "label=\"Pakket uitpakken\" accesskey=\"u\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="ba" id="dcmiba"
+#: label="Bashkir ">
+msgid "Bashkir "
+msgstr ""
+
+# exe/xului/templates/mainpage.xul:<menuitem
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
+# exe/xului/templates/mainpage.xul:<menuitem
+#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
+#: oncommand="fileQuit()" accesskey="q" label="Quit">
+msgid "label=\"Quit\" accesskey=\"q\""
+msgstr "label=\"Afsluiten\" accesskey=\"i\""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
+#: label="Basque ">
+msgid "Basque "
+msgstr "Baskisch"
+
+# exe/xului/templates/mainpage.xul:<menu
+# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
+# exe/xului/templates/mainpage.xul:<menu
+#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
+#: accesskey="t" label="Tools">
+msgid "label=\"Tools\" accesskey=\"t\""
+msgstr "label=\"Extra\" accesskey=\"e\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bn" id="dcmibn"
 #: label="Bengali; Bangla ">
@@ -3067,9 +2955,9 @@ msgstr "Bengaals"
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="extractPackage()" accesskey="E" label="Extract Package">
-msgid "label=\"Extract Package\" accesskey=\"E\""
-msgstr "label=\"Pakket uitpakken\" accesskey=\"u\""
+#: oncommand="toolsPreferences()" label="Preferences">
+msgid "Preferences"
+msgstr "Voorkeuren"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
@@ -3081,9 +2969,11 @@ msgstr "Amharic "
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
-msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Afsluiten\" accesskey=\"i\""
+#: oncommand="window.location = window.location" id="refresh-menu"
+#: accesskey="r" label="Refresh Display">
+#, fuzzy
+msgid "label=\"Refresh Display\" accesskey=\"r\""
+msgstr "label=\"Vernieuwen\" accesskey=\"v\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bi" id="dcmibi"
 #: label="Bislama ">
@@ -3093,56 +2983,15 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
-#: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="tools-menu"
-#: accesskey="t" label="Tools">
-msgid "label=\"Tools\" accesskey=\"t\""
-msgstr "label=\"Extra\" accesskey=\"e\""
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
-#: label="Bosnian ">
-msgid "Bosnian "
-msgstr "Bosnisch"
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
-msgid "Preferences"
-msgstr "Voorkeuren"
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
-#: label="Breton ">
-msgid "Breton "
-msgstr "Bretoens"
-
-# exe/xului/templates/mainpage.xul:<menuitem
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-# exe/xului/templates/mainpage.xul:<menuitem
-#: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
-#: oncommand="window.location = window.location" id="refresh-menu"
-#: accesskey="r" label="Refresh Display">
-#, fuzzy
-msgid "label=\"Refresh Display\" accesskey=\"r\""
-msgstr "label=\"Vernieuwen\" accesskey=\"v\""
-
-#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
-#: label="Byelorussian; Belarusian ">
-msgid "Byelorussian; Belarusian "
-msgstr "Wit-Russisch"
-
-# exe/xului/templates/mainpage.xul:<menu
-# installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-# exe/xului/templates/mainpage.xul:<menu
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="styles-menu" accesskey="s" label="Styles">
 msgid "label=\"Styles\" accesskey=\"s\""
 msgstr "label=\"Stijlen\" accesskey=\"s\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
-#: label="Bulgarian ">
-msgid "Bulgarian "
-msgstr "Bulgaars"
+#: exe/xului/templates/dublincore.xul:<menuitem value="bs" id="dcmibs"
+#: label="Bosnian ">
+msgid "Bosnian "
+msgstr "Bosnisch"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3152,10 +3001,10 @@ msgstr "Bulgaars"
 msgid "label=\"Help\" accesskey=\"h\""
 msgstr "label=\"Help\" accesskey=\"h\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
-#: label="Burmese ">
-msgid "Burmese "
-msgstr "Burmees"
+#: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
+#: label="Breton ">
+msgid "Breton "
+msgstr "Bretoens"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3167,10 +3016,10 @@ msgstr "Burmees"
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
 msgstr "label=\"Openen\" accesskey=\"o\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
-#: label="Catalan ">
-msgid "Catalan "
-msgstr "Catalaans"
+#: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
+#: label="Byelorussian; Belarusian ">
+msgid "Byelorussian; Belarusian "
+msgstr "Wit-Russisch"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3182,10 +3031,10 @@ msgstr "Catalaans"
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
 msgstr "label=\"Extra\" accesskey=\"e\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
-#: label="Chamorro ">
-msgid "Chamorro "
-msgstr ""
+#: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
+#: label="Bulgarian ">
+msgid "Bulgarian "
+msgstr "Bulgaars"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3197,10 +3046,10 @@ msgstr ""
 msgid "label=\"Release Notes\" accesskey=\"n\""
 msgstr "label=\"Nieuw\" accesskey=\"n\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
-#: label="Chechen ">
-msgid "Chechen "
-msgstr "Tsjetjeens"
+#: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
+#: label="Burmese ">
+msgid "Burmese "
+msgstr "Burmees"
 
 # exe/xului/templates/mainpage.xul:<menu
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3212,10 +3061,10 @@ msgstr "Tsjetjeens"
 msgid "label=\"Report an Issue\" accesskey=\"r\""
 msgstr "label=\"Rapporteren\" accesskey=\"r\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
-#: label="Chinese ">
-msgid "Chinese "
-msgstr "Chinees"
+#: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
+#: label="Catalan ">
+msgid "Catalan "
+msgstr "Catalaans"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3227,9 +3076,9 @@ msgstr "Chinees"
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
 msgstr "label=\"Website\" accesskey=\"w\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
-#: label="Church Slavic ">
-msgid "Church Slavic "
+#: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
+#: label="Chamorro ">
+msgid "Chamorro "
 msgstr ""
 
 # exe/xului/templates/mainpage.xul:<menuitem
@@ -3241,10 +3090,10 @@ msgstr ""
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"Info\" accesskey=\"i\""
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
-#: label="Chuvash ">
-msgid "Chuvash "
-msgstr ""
+#: exe/xului/templates/dublincore.xul:<menuitem value="ce" id="dcmice"
+#: label="Chechen ">
+msgid "Chechen "
+msgstr "Tsjetjeens"
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3254,10 +3103,10 @@ msgstr ""
 msgid "debugInfo"
 msgstr "debugInfo"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
-#: label="Cornish ">
-msgid "Cornish "
-msgstr "Cornwallisch"
+#: exe/xului/templates/dublincore.xul:<menuitem value="zh" id="dcmizh"
+#: label="Chinese ">
+msgid "Chinese "
+msgstr "Chinees"
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3267,10 +3116,10 @@ msgstr "Cornwallisch"
 msgid "Add Page"
 msgstr "Nieuwe pagina"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
-#: label="Corsican ">
-msgid "Corsican "
-msgstr "Corsicaans"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
+#: label="Church Slavic ">
+msgid "Church Slavic "
+msgstr ""
 
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3280,10 +3129,10 @@ msgstr "Corsicaans"
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
-#: label="Croatian ">
-msgid "Croatian "
-msgstr "Kroatisch"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
+#: label="Chuvash ">
+msgid "Chuvash "
+msgstr ""
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3293,10 +3142,10 @@ msgstr "Kroatisch"
 msgid "outlinePane"
 msgstr "overzichtspaneel"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
-#: label="Czech ">
-msgid "Czech "
-msgstr "Tsjechisch"
+#: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
+#: label="Cornish ">
+msgid "Cornish "
+msgstr "Cornwallisch"
 
 #: exe/xului/templates/mainpage.xul:<label value="iDevices"
 #: style="margin-top:5px;">
@@ -3304,10 +3153,10 @@ msgstr "Tsjechisch"
 msgid "iDevices"
 msgstr "Nieuw iDevice"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
-#: label="Danish ">
-msgid "Danish "
-msgstr "Deens"
+#: exe/xului/templates/dublincore.xul:<menuitem value="co" id="dcmico"
+#: label="Corsican ">
+msgid "Corsican "
+msgstr "Corsicaans"
 
 # exe/xului/templates/mainpage.xul:<label
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3317,10 +3166,10 @@ msgstr "Deens"
 msgid "iDevicePane"
 msgstr "iDevice-paneel"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
-#: label="Dzongkha; Bhutani ">
-msgid "Dzongkha; Bhutani "
-msgstr ""
+#: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
+#: label="Croatian ">
+msgid "Croatian "
+msgstr "Kroatisch"
 
 # exe/xului/templates/mainpage.xul:<tab
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
@@ -3330,10 +3179,10 @@ msgstr ""
 msgid "Authoring"
 msgstr "Opstellen"
 
-#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
-#: label="English ">
-msgid "English "
-msgstr "Engels"
+#: exe/xului/templates/dublincore.xul:<menuitem value="cs" id="dcmics"
+#: label="Czech ">
+msgid "Czech "
+msgstr "Tsjechisch"
 
 # exe/xului/templates/mainpage.xul:<tab
 # installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
@@ -3342,6 +3191,21 @@ msgstr "Engels"
 #: label="Properties">
 msgid "Properties"
 msgstr "Eigenschappen"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="da" id="dcmida"
+#: label="Danish ">
+msgid "Danish "
+msgstr "Deens"
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="dz" id="dcmidz"
+#: label="Dzongkha; Bhutani ">
+msgid "Dzongkha; Bhutani "
+msgstr ""
+
+#: exe/xului/templates/dublincore.xul:<menuitem value="en" id="dcmien"
+#: label="English ">
+msgid "English "
+msgstr "Engels"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
@@ -4044,6 +3908,135 @@ msgstr "Rechten:"
 #: exe/xului/templates/dublincore.xul:<description id="dcDescRights">
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+
+#~ msgid "A single simple discussion"
+#~ msgstr "Een enkele discussie"
+
+#~ msgid "Can a student post to this forum?:"
+#~ msgstr "Kan student bijdrage posten op dit forum?"
+
+#~ msgid "Choose a LMS"
+#~ msgstr "Selecteer een LMS"
+
+#~ msgid "Confirm and submit"
+#~ msgstr "Bevestigen en versturen"
+
+#~ msgid "Discussion Activity"
+#~ msgstr "Discussie-activiteit"
+
+#~ msgid "Discussion Topic/Thread:"
+#~ msgstr "Discussie-onderwerp:"
+
+#~ msgid "Discussion topic/Thread"
+#~ msgstr "Discussie-onderwerp"
+
+#~ msgid "Discussions and replies are allowed"
+#~ msgstr "Nieuwe discussies en antwoorden toegelaten"
+
+#~ msgid "Each person posts one discussion"
+#~ msgstr "Ieder lid ken slechts een discussie starten"
+
+#~ msgid "Force everyone to be subscribed?:"
+#~ msgstr "Moet iedereen lid zijn?"
+
+#~ msgid "Forum Name:"
+#~ msgstr "Forumnaam:"
+
+#~ msgid "Forum Name: "
+#~ msgstr "Forumnaam:"
+
+#~ msgid "Forum type:"
+#~ msgstr "Forumtype:"
+
+#~ msgid "Group mode:"
+#~ msgstr "Groepsmodus:"
+
+#~ msgid "Hint:"
+#~ msgstr "Hint:"
+
+#~ msgid "Introduction"
+#~ msgstr "Inleiding"
+
+#~ msgid "Learning Management System"
+#~ msgstr "Learning Management System"
+
+#~ msgid "Learning Management System:"
+#~ msgstr "Learning Management System:"
+
+#~ msgid "Link to the forum"
+#~ msgstr "Link naar het forum"
+
+#~ msgid "Moodle"
+#~ msgstr "Moodle"
+
+#~ msgid "New Forum"
+#~ msgstr "Nieuw forum"
+
+#~ msgid "New Topic"
+#~ msgstr "Nieuw item"
+
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgid "No discussions, but replies are allowed"
+#~ msgstr "Geen discussies, wel antwoorden toegestaan"
+
+#~ msgid "No discussions, no replies"
+#~ msgstr "Geen discussies en geen antwoorden toegestaan"
+
+#~ msgid "No groups"
+#~ msgstr "Geen groepen"
+
+#~ msgid "Please enter a discussion topic name.\n"
+#~ msgstr "Geef een naam van een discussie-onderwerp .\n"
+
+#~ msgid "Please enter a name for the forum\n"
+#~ msgstr "Geef een naam voor het forum\n"
+
+#~ msgid "Please select LMS.\n"
+#~ msgstr "Selecteer een LMS.\n"
+
+#~ msgid "Please select a LMS"
+#~ msgstr "Selecteer een LMS"
+
+#~ msgid "Please select a forum.\n"
+#~ msgstr "Selecteer een forum.\n"
+
+#~ msgid "Select a Forum"
+#~ msgstr "Kies een forum"
+
+#~ msgid "Separate groups"
+#~ msgstr "Gescheiden groepen"
+
+#~ msgid "Show"
+#~ msgstr "Tonen"
+
+#~ msgid "Standard forum for general use"
+#~ msgstr "Standaardforum voor algemeen gebruik"
+
+#~ msgid "Thread: "
+#~ msgstr "Discussiedraad:"
+
+#~ msgid "Type a forum name here"
+#~ msgstr "Voer een forumnaam in"
+
+#~ msgid "Visible groups"
+#~ msgstr "Zichtbare groepen"
+
+#~ msgid "Visible to students:"
+#~ msgstr "Zichtbaar voor studenten:"
+
+#~ msgid "Yes, forever"
+#~ msgstr "Ja, voor altijd"
+
+#~ msgid "Yes, initially"
+#~ msgstr "Ja, in het begin"
+
+#~ msgid "duplicate forum name.\n"
+#~ msgstr "forumnaam bestaat al.\n"
+
+#~ msgid "duplicate topic name."
+#~ msgstr "ondererpsnaam bestaat al."
 
 #~ msgid ""
 #~ "Use Emphasis to distinguish the importance  of the information being presented in the iDevice.AddAuthorEXPORT FAILED.\n"
