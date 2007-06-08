@@ -55,7 +55,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
 <window title="Package Properties"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:n="http://nevow.com/ns/nevow/0.1"
-        onload="fillInForms(); translate(document.documentElement);">
+        onload="fillInForms(); translate(document.documentElement, 0);">
 
 <n:invisible n:render="liveid"/>
 <n:invisible n:render="liveglue"/>
@@ -69,9 +69,9 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
   regEx = /[a-z][a-z]_\w+/
 
   // Translates all the nodes in the document
-  function translate(start) {
+  function translate(start, part) {
     if (start.nodeName == '#text') {
-        nevow_clientToServerEvent('translate', this, '', start.parentNode.id, '!contents!', start.data)
+	nevow_clientToServerEvent('translate', this, '', start.parentNode.id, '!contents!'+part, start.data)
     } else if (start.hasAttribute('label')) {
       nevow_clientToServerEvent('translate', this, '', start.id, 'label', start.label)
     } else if (start.nodeName == 'label') {
@@ -88,7 +88,7 @@ this.parentNode to do auto updates of just this field (and any siblings) if you 
     // Drill down
     for (var i=0; i < start.childNodes.length; i++) {
         var node = start.childNodes[i];
-        translate(node);
+        translate(node, i);
     }
   }
 

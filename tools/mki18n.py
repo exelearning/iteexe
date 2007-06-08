@@ -392,6 +392,22 @@ def makeXulPO(applicationDirectoryPath,  applicationDomain=None, verbose=0):
     pot.touch() 
     dict2pot(messages, 'exe/locale/messages.pot')
 
+def doTranslate(node, toTranslate, messages, seq, filename):
+    """Add message to be translated to the messages dict
+    """
+    attributes = ' '.join(['%s="%s"' % (attr.name, attr.value) for attr
+                           in node.attributes.values()])
+    tagStr = '<%s %s>' % (node.nodeName, attributes)
+    if toTranslate in messages:
+        order, comments, msgStr = messages[toTranslate]
+        comments += ('#: %s:%s' % (filename, tagStr),)
+        messages[toTranslate] = order, comments, msgStr
+    else:
+        messages[toTranslate] = seq, \
+            ('#: %s:%s' % (filename, tagStr),), ''
+        seq += 1
+    return messages, seq
+
 def xul2dict(doc, messages, seq, filename):
     """Recursively translates some "stan" contexts and
     fills out the messages dict, which should be passed to dict2pot later
@@ -418,7 +434,12 @@ def xul2dict(doc, messages, seq, filename):
             break
         toTranslate = None
         if node.nodeName == 'description':
-            toTranslate = node.firstChild.data
+            for subnode in node.childNodes:
+                if subnode.nodeName == '#text':
+                    messages, seq = doTranslate(node, subnode.data,
+                            messages, seq, filename)
+            # mark that we've handled all the parts here
+            toTranslate = None
         elif node.hasAttribute('label'):
             if node.hasAttribute('accesskey'):
                 toTranslate = 'label="%s" accesskey="%s"' % (
@@ -435,19 +456,12 @@ def xul2dict(doc, messages, seq, filename):
                 toTranslate = node.getAttribute('keycode')
         elif node.hasAttribute('window'):
             toTranslate = node.getAttribute('title')
+
         if toTranslate:
             # Write it in the file
-            attributes = ' '.join(['%s="%s"' % (attr.name, attr.value) for attr
-                                   in node.attributes.values()])
-            tagStr = '<%s %s>' % (node.nodeName, attributes)
-            if toTranslate in messages:
-                order, comments, msgStr = messages[toTranslate]
-                comments += ('#: %s:%s' % (filename, tagStr),)
-                messages[toTranslate] = order, comments, msgStr
-            else:
-                messages[toTranslate] = seq, \
-                    ('#: %s:%s' % (filename, tagStr),), ''
-                seq += 1
+            messages, seq = doTranslate(node, toTranslate,
+                    messages, seq, filename)
+
         # Next node
         node = walker.nextNode()
 

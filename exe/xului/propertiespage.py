@@ -211,10 +211,16 @@ class PropertiesPage(RenderableLivePage):
             if newText != data and elementId != '':
                 newText = newText.replace('\\', '\\\\').replace("'", "\\'").replace('\n', '\\n')
                 if elementId:
-                    if attribute == '!contents!':
-                        client.sendScript(js(
-                            "document.getElementById(\"%s\").firstChild.data = '%s';" % 
-                                (elementId, newText.encode('utf-8'))))
+                    if attribute.startswith('!contents!'):
+                        child = int(attribute[10:])
+                        if child == 0:
+                            client.sendScript(js(
+                                "document.getElementById(\"%s\").firstChild.data = '%s';" % 
+                                    (elementId, newText.encode('utf-8'))))
+                        else:
+                            client.sendScript(js(
+                                "var snode=0; for (subnode in document.getElementById(\"%s\").childNodes) { if ((snode == %d) && (subnode.nodeName == \"#text\")) { subnode.data = \"%s\" }; snode = snode + 1; };" %
+                                    (elementId, child, newText.encode('utf-8'))))
                     else:
                         client.sendScript(js(
                             "document.getElementById(\"%s\").setAttribute('%s', '%s');" % 
