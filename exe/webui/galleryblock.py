@@ -90,10 +90,14 @@ class GalleryBlock(Block):
         """
         log.debug("process " + repr(request.args))
         # If the commit is not to do with us forget it
+        
+        obj = request.args.get('object', [''])[0]
+        
         if "title"+self.id in request.args:
             self.idevice.title = request.args["title"+self.id][0]
-            
-        obj = request.args.get('object', [''])[0]
+            if obj != self.id:
+                self.idevice.recreateResources()
+                    
         if obj != self.id:
             Block.process(self, request)
             return 
