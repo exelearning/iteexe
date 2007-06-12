@@ -97,6 +97,7 @@ class GalleryBlock(Block):
             self.idevice.title = request.args["title"+self.id][0]
             if obj != self.id:
                 self.idevice.recreateResources()
+                self.processCaptions(request)
                     
         if obj != self.id:
             Block.process(self, request)
