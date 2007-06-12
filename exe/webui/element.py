@@ -344,7 +344,7 @@ class TextAreaElement(ElementWithResources):
                                 str(self.width), str(self.height))
         return html
 
-    def renderPreview(self):
+    def renderPreview(self, visible=True, class_="block"):
         """
         Returns an XHTML string for previewing this element
         """
@@ -353,7 +353,8 @@ class TextAreaElement(ElementWithResources):
 
         content = re.sub(r'(?i)<\s*a[^>]+>', replaceLinks,
                 self.field.content)
-        return self.renderView(content=content, preview=True)
+        return self.renderView(content=content, visible=visible, \
+                               class_=class_, preview=True)
 
     def renderView(self, visible=True, class_="block", content=None, 
                     preview=False):
