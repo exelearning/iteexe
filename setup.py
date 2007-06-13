@@ -61,7 +61,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs):
     
 # Add all the webui dirs
 dataFiles('exe/webui', '/usr/share/exe', 
-          ['style', 'css', 'docs', 'images', 'scripts',
+          ['style', 'css', 'docs', 'images', 'schemas', 'scripts',
            'linux-profile', 'templates'])
 
 # Add in the locale directory
