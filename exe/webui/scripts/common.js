@@ -242,15 +242,11 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     var unescaped_local_imagePath = unescape(local_imagePath);
     var oldImageStr = new String(unescaped_local_imagePath);
 
-    // replace any previously existing :'s or %'s with %%:
-    var RegExp1 = /[\%\:]/g;
-    var ReplaceStr1 = new String("%%");
-    var oldImageStr1 = oldImageStr.replace(RegExp1, ReplaceStr1);
 
-    // and replace any path delimiters with %:
-    var RegExp2 = /[\\\/]/g;
-    var ReplaceStr2 = new String("%");
-    var newImageStr = oldImageStr1.replace(RegExp2, ReplaceStr2);
+    // and replace any path delimiters (':', '\', or '/') or '%' with _:
+    var RegExp1 = /[\\\/\:\%]/g;
+    var ReplaceStr1 = new String("_");
+    var newImageStr = oldImageStr.replace(RegExp1, ReplaceStr1);
 
     preview_imageName = newImageStr;
     full_previewImage_url = "/previews/"+preview_imageName;
