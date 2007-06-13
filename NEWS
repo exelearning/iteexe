@@ -1,5 +1,9 @@
+* Add ability to embed images in text areas with TinyMCE
 * Java applet, SCORM Quiz, and Flash Movie are now regular iDevices not plugins
 * Fix position of iDevice edit button for SCORM Quiz
+* Fix include content package schemas in RPM/DPKG packages
+* Fix gallery slideshow to include caption for last image
+* Fix gallery iDevice so it doesn't require clicking done check to register
 
 Version 0.24 (r2857)
 * Rewrite anchor tags in textareas when in preview mode to use local browser
