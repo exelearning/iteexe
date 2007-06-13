@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: eXe Learning 0.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-08 13:45+1200\n"
-"PO-Revision-Date: 2006-09-20 11:29+1200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2007-06-12 20:24+1200\n"
+"Last-Translator: Aleksander POTOCNIK <Aleksander.Potocnik@siol.net>\n"
 "Language-Team: Institut OKO, iztok Osredkar, Mira Cvar <okoinfo@institut-oko.si>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-EXE-Language: Slovenščina\n"
 "X-Poedit-Country: SLOVENIA\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:146
 msgid ""
@@ -55,7 +56,7 @@ msgstr "---Premakni v---"
 #: exe/xului/mainpage.py:293 exe/xului/mainpage.py:551
 #: exe/xului/mainpage.py:634
 msgid ". Please use ASCII names."
-msgstr ".Prosimo uporabljajte ASCII imena."
+msgstr ".Prosimo, uporabljajte ASCII imena."
 
 #: exe/engine/clozeidevice.py:58
 msgid "<dl>  <dt>If your goal is to test understanding of core concepts or reading comprehension  </dt>  <dd>    <p>  Write a summary of the concept or reading long  enough to adequately test the target's knowledge, but short enough not to induce fatigue. Less than one typed page is probably adequate, but probably considerably less for young students or beginners.    </p>    <p>Select words in the text thatare key to understanding the concepts. Thesewill probably be verbs, nouns, and key adverbs.Choose alternatives with one clear answer.    </p>  </dd>  <dt>If your goal is to test vocabulary knowledge  </dt>  <dd><p>Write a text using the target vocabulary. This text should be coherent and cohesive, and be of an appropriate length. Highlight the target words in the text. Choose alternatives with one clear answer.</p>  </dd>  <dt>If your goal is to test word formation/grammar:  </dt>  <dd>  <p>Write a text using the target forms. This text should be coherent and cohesive, and be of an appropriate length. Remember that the goal is not vocabulary knowledge, so the core meanings of the stem words should be well known to the students.  </p>  <p>Highlight the target words in the text. Provide alternatives with the same word stem, but different affixes. It is a good idea to get a colleague to test the test/exercise to make sure there are no surprises!  </p>  </dd></dl>"
@@ -138,9 +139,8 @@ msgstr ""
 "<i>Skrij/Prikaži besedo. </p>"
 
 #: exe/engine/field.py:599
-#, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr "<p>Če ostane nepregledano, se majhno število napak v črkovanju in velikih črkah sprejme. Če se pregleda, se sprejme le natančno ujemanje s črkovanjem in velikimi črkami.</p><p><strong>Na primer:</strong> Če je pravilni odgovor <code>Elephant</code>, se upošteva oboje, <code>elephant</code> in <code>Eliphant</code> <em>\"dovolj blizu\"</em> po algoritmu, saj je napačna le ena črka, četudi  je vklopljeno  \"Preverjanje velikih črk\".</p><p>Če je preverjanje velikih črk izklopljeno v zgornjem primeru, se  podnapisani <code>e</code> ne bo štel  kot napaka in <code>eliphant</code>  se tudi sprejme. </p><p>Če je nastavljeno oboje \"Strogo označevanje\" in \"Preverjaj velike črke\", je edini pravilni odgovor \"Elephant\". Če se preverja le \"Strogo označevanje\", \"Velike črke\" pa ne, se \"elephant\" tudi sprejme.</p>"
+msgstr "<p>Če ostane neizbrano, se majhno število napak v črkovanju in velikih črkah sprejme. Če se izbere, se sprejme le natančno ujemanje s črkovanjem in velikimi črkami.</p><p><strong>Na primer:</strong> Če je pravilni odgovor <code>Elephant</code>, se upošteva oboje, <code>elephant</code> in <code>Eliphant</code> <em>\"dovolj blizu\"</em> po algoritmu, saj je napačna le ena črka, četudi  je vklopljeno  \"Preverjanje velikih črk\".</p><p>Če je preverjanje velikih črk izklopljeno v zgornjem primeru, se  podnapisani <code>e</code> ne bo štel  kot napaka in <code>eliphant</code>  se tudi sprejme. </p><p>Če je nastavljeno oboje \"Strogo označevanje\" in \"Preverjaj velike črke\", je edini pravilni odgovor \"Elephant\". Če se preverja le \"Strogo označevanje\", \"Velike črke\" pa ne, se \"elephant\" tudi sprejme.</p>"
 
 #: exe/engine/field.py:620
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
@@ -159,7 +159,7 @@ msgstr ""
 
 #: exe/engine/field.py:874
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr ""
+msgstr "<p>V besedilnem urejevalniku spodaj izberite simbole ali ročno vpišite LATEX ukaze za zapis matematične enačbeal formula. Za predogled, kako bo videti vaša LATEX enačba,pritisnite  spodnji gumb &lt;Preview&gt; below.</p>"
 
 #: exe/engine/idevicestore.py:272
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
