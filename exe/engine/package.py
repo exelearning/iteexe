@@ -314,6 +314,8 @@ class Package(Persistable):
             if unicode(fn, 'utf8') != u"content.data":
                 outFile = open(resourceDir/fn, "wb")
                 outFile.write(zippedFile.read(fn))
+                outFile.flush()
+                outFile.close()
 
         try:
             newPackage = decodeObjectRaw(toDecode)
