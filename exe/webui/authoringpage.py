@@ -170,9 +170,15 @@ class AuthoringPage(RenderableResource):
         html += u"justifyleft,justifycenter,justifyright,justifyfull,"
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
+        ##########
         html += u" theme_advanced_buttons2 : \"image,tablecontrols,separator,"
-        # r3m0, WILL BE trying to add movies/flash with the media plugin, with:
+        # r3m0, WILL BE adding movies/flash with the media plugin, via:
         #html += u" theme_advanced_buttons2 : \"image,media,tablecontrols,separator,"
+        # Note these default media plugin supports:
+        #  [media_types]
+        #  Name/Value list of format mappings to file extensions, Defaults to: 
+        # flash=swf;shockwave=dcr;qt=mov,qt,mpg,mp3,mp4,mpeg;shockwave=dcr;wmp=avi,wmv,wm,asf,asx,wmx,wvx;rmp=rm,ra,ram.
+        ########
         html += u"link,unlink,separator,undo,redo,separator,"
         html += u" charmap,removeformat,cleanup,code,help\",\n"
 

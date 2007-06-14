@@ -227,8 +227,6 @@ function changeGalleryImage(galleryId, imageId) {
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
     
     var local_imagePath = askUserForImage(true);
-    // fix for #859 on Windows (and why DOES the dialog move behind?)
-    // force the tinyMCE image dialog back to the front:
     win.focus();
 
     // if the user hits CANCEL, then bail "immediately",
@@ -266,7 +264,9 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     if (type == "image") {
        win.showPreviewImage(" ");
     }
-    // NEED: a proper way of previewing the media resources as well!
+    else if (type == "media") {
+       win.generatePreview(" ");
+    }
 
 
     // set the tinyMCE image filename field:
@@ -277,7 +277,9 @@ function chooseImage_viaTinyMCE(field_name, url, type, win) {
     if (type == "image") {
        win.showPreviewImage(full_previewImage_url);
     }
-    // NEED: a proper way of previewing the media resources as well!
+    else if (type == "media") {
+       win.generatePreview(full_previewImage_url);
+    }
 
     // this onchange works, but it's dirty because it is hardcoding the 
     // onChange=".." event of that field, and if that were to ever change 

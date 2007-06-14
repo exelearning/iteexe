@@ -64,20 +64,16 @@ class _Resource(Persistable):
         try:
             self.checksum = resourceFile.md5
             from exe.engine.idevice   import Idevice 
-            from exe.webui.element    import ElementWithResources
+            from exe.engine.field     import FieldWithResources
             if isinstance(owner, Idevice):
                 self._idevice     = owner
                 if owner.parentNode:
                     self.package  = owner.parentNode.package
                 else:
                     self.package  = None
-            elif isinstance(owner, ElementWithResources):
-                # for support of images (and other media) via tinyMCE,
-                # now allow not just idevice's to have resources, 
-                # but also TextAreaElements (and any others, as needed,
-                # all inheriting from ElementWithResources)
-                # to hold the resources necessary in GalleryImages:
-                self._idevice = owner.field_idevice
+            elif isinstance(owner, FieldWithResources):
+                # support of embedded images, on the field itself:
+                self._idevice = owner.idevice
                 if owner.parentNode:
                     self.package  = owner.parentNode.package
                 else:

@@ -170,12 +170,6 @@ class QuizTestIdevice(Idevice):
     """
     A QuizTestIdevice Idevice is one built up from question and options
     """
-    #persistenceVersion = 6
-    # r3m0, try:
-    #persistenceVersion = 7
-    ###### WHOAAAAH!!!!!!!
-    # possible bugfix for Jim? the above SHOULD have been at 7 already!
-    # so now:
     persistenceVersion = 8
 
 
@@ -252,7 +246,7 @@ time to learn and practice using the information or skill.
         """
         Upgrades to v0.14
         """
-        # r3m0: note, the following doesn't appear to exist anymore,
+        # Note: the following routine doesn't appear to exist anymore,
         # so now that the persistence version is finally upgrading to 7,
         # (and then, actually on to 8) this is no longer works, go figure!
         #####

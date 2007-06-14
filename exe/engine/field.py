@@ -30,7 +30,8 @@ from exe.engine.mimetex   import compile
 from HTMLParser           import HTMLParser
 from exe.engine.flvreader import FLVReader
 from htmlentitydefs       import name2codepoint
-
+from exe                  import globals as G
+import os
 import re
 import urllib
 log = logging.getLogger(__name__)
@@ -143,6 +144,9 @@ class FieldWithResources(Field):
     all the multi-resource handling which can now be included 
     via the tinyMCE RichTextArea.
     """
+
+    persistenceVersion = 1
+
     def __init__(self, name, instruc="", content=""):
         """
         Initialize 
@@ -163,10 +167,208 @@ class FieldWithResources(Field):
         # 2, the paths for AFTER the resources have been exported & flattened:
         self.content_wo_resourcePaths = content
 
-        # Note: usually the element's render* methods can be used,
+        # Note: usually the corresponding element's render methods can be used,
         # and the above two content_[w/wo]_resourcePaths not used directly,
         # but there will be times in some idevices where specialized
         # rendering might be necessary.
+
+
+        # Not sure why this can't be imported up top, but it gives 
+        # ImportError: cannot import name GalleryImages,
+        # so here it be:
+        from exe.engine.galleryidevice  import GalleryImages
+        ############
+        # using GalleryImages' ease in handling all the resource details.
+        # the following are expected by GalleryImages:
+        self.images = GalleryImages(self)
+        self.nextImageId       = 0
+        self.parentNode = None
+        if hasattr(self.idevice, 'parentNode'): 
+            self.parentNode = self.idevice.parentNode
+        ############
+            
+    # genImageId is needed for GalleryImage:    
+    def genImageId(self): 
+        """
+        Generate a unique id for an image. 
+        Called by 'GalleryImage'
+        """ 
+        self.nextImageId += 1 
+        return '%s.%s' % (self.id, self.nextImageId - 1)
+
+    def setParentNode(self):
+        """
+        Mechanism by which the idevice's parentNode is triggered
+        into being recognized by this field.  Normally not needed
+        until the addition of resources using GalleryImage, this
+        is because the field appears to be intially constructed 
+        on a cloneable idevice, which doesn't yet have a parentNode
+        even defined!
+        NOTE: a property might be a MUCH better approach to this.
+        """
+        self.parentNode = None
+        if hasattr(self.idevice, 'parentNode'): 
+            self.parentNode = self.idevice.parentNode
+
+    def ProcessPreviewedImages(self, content):
+        """
+        to build up the corresponding resources from any images (etc.) added
+        in by the tinyMCE image-browser plug-in,
+        which will have put them into src="../previews/"
+        """
+        new_content = content
+
+        # By this point, tinyMCE's javascript file browser handler:
+        #         common.js's: chooseImage_viaTinyMCE() 
+        # has already copied the file into the web-server's relative 
+        # directory "/previews", BUT, something in tinyMCE's handler 
+        # switches "/previews" to "../previews", so beware.....
+        # 
+        # At least it does NOT quote anything, and shows it as, for example: 
+        #   <img src="../previews/%Users%r3m0w%Pictures%Remos_MiscPix% \
+        #        SampleImage.JPG" height="161" width="215" /> 
+        # old quoting-handling is still included in the following parsing,
+        # which HAD allowed users to manually enter src= "file://..." URLs, 
+        # but with the image now copied into previews, such URLS are no more.
+
+        # DESIGN NOTE: eventually the following processing should be
+        # enhanced to look at the HTML tags passed in, and ensure that
+        # what is being found as 'src="../previews/.."' is really within
+        # an IMG tag, etc.
+        # For now, though, this easy parsing is working well:
+        search_str = "src=\"../previews/" 
+        found_pos = new_content.find(search_str) 
+        while found_pos >= 0: 
+            end_pos = new_content.find('\"', found_pos+len(search_str)) 
+            if end_pos == -1: 
+                # now unlikely that this has already been quoted out, 
+                # since the search_str INCLUDES a \", but check anyway:
+                end_pos = new_content.find('&quot', found_pos+1) 
+            else: 
+                # okay, the end position \" was found, BUT beware of this 
+                # strange case, where the image file:/// URLs 
+                # were entered manually in one part of it 
+                # (and therefore escaped to &quot), AND another quote occurs 
+                # further below (perhaps even in a non-quoted file:/// via 
+                # a tinyMCE browser, but really from anything!) 
+                # So..... see if a &quot; is found in the file-name, and 
+                # if so, back the end_pos up to there.  
+                # NOTE: until actually looking at the HTML tags, and/or
+                # we might be able to do this more programmatically by 
+                # first seeing HOW the file:// is initially quoted, 
+                # whether by a \" or by &quot;, but for now, 
+                # just check this one.
+                end_pos2 = new_content.find('&quot', found_pos+1) 
+                if end_pos2 > 0 and end_pos2 < end_pos:
+                    end_pos = end_pos2
+            if end_pos >= found_pos:
+               # next, extract the actual file url, to be replaced later 
+               # by the local resource file:
+               file_url_str = new_content[found_pos:end_pos] 
+               # and to get the actual file path, 
+               # rather than the complete URL:
+               input_file_name_str = file_url_str[len(search_str):]
+
+               log.debug("ProcessPreviewedImages: found file = " \
+                           + input_file_name_str)
+
+               webDir     = Path(G.application.tempWebDir)
+               previewDir  = webDir.joinpath('previews')
+               server_filename = previewDir.joinpath(input_file_name_str);
+
+               # and now, extract just the filename string back out of that:
+               file_name_str = server_filename.abspath().encode('utf-8');
+
+               # Be sure to check that this file even exists before even 
+               # attempting to create a corresponding GalleryImage resource:
+               if os.path.exists(file_name_str) \
+               and os.path.isfile(file_name_str): 
+                   # in passing GalleryImage into the FieldWithResources,
+                   # this field needs to be sure to have an updated
+                   # parentNode, courtesy of its idevice:
+                   self.setParentNode()
+                   
+                   # Not sure why this can't be imported up top, but it gives 
+                   # ImportError: cannot import name GalleryImages, 
+                   # so here it be:
+                   from exe.engine.galleryidevice  import GalleryImage
+
+                   # note: the middle GalleryImage field is an used caption:
+                   new_GalleryImage = GalleryImage(self, \
+                                                    '', file_name_str)
+                   new_GalleryImageResource = new_GalleryImage._imageResource
+                   resource_path = new_GalleryImageResource._storageName
+                   # and re-concatenate from the global resources name, 
+                   # to build the webUrl to the resource:
+                   resource_url = new_GalleryImage.resourcesUrl+resource_path
+                   # and finally, go ahead and replace the filename:
+                   new_content = new_content.replace(file_url_str, 
+                                                     "src=\""+resource_url)
+                   log.debug("ProcessPreviewedImages: built resource: " \
+                           + resource_url)
+               else:
+                   log.warn("file '"+file_name_str+"' does not exist; " \
+                           + "unable to include it as a possible image " \
+                           + "resource for this TextAreaElement.")
+                   # IDEALLY: would like to replace the entire 
+                   #  <img src=.....> tag with text saying "[WARNING:...]",
+                   # but this requires more parsing than we have already done
+                   # and should really wait until the full-on HTML tags
+                   # are checked, in which case an ALT tag can be used.
+                   # For now, merely replacing the filename itself with some
+                   # warning text that includes the filename:
+                   filename_warning = "src=\"WARNING_FILE="+file_name_str \
+                           +"=DOES_NOT_EXIST"
+                   new_content = new_content.replace(file_url_str, 
+                                                     filename_warning)
+                   # note: while this technique IS less than ideal, 
+                   # also remember that files will typically be
+                   # selected using the Image browser, and "should" 
+                   # therefore "always" exist. :-)
+    
+                   # DESIGN NOTE: see how GalleryImage's _saveFiles() does
+                   # the "No Thumbnail Available. Could not load original..."
+            else:
+               # end_pos < found_pos (probably == -1)
+               log.warn("ProcessPreviewedImages: file URL string appears " \
+                        + "to NOT have a terminating quote.")
+    
+            # Find the next source image in the content, continuing the loop:
+            found_pos = new_content.find(search_str, found_pos+1) 
+        
+        return new_content
+
+    
+    def MassageImageContentForRenderView(self, content):
+        """
+        Returns an XHTML string for viewing this resource-laden element 
+        upon export, since the resources will be flattened no longer exist 
+        in the system resources directory....
+        """
+        # this is used for exports/prints, etc., and needs to ensure that 
+        # any resource paths are removed:
+        resources_url_src = "src=\"resources/"
+        exported_src = "src=\""
+        export_content = content.replace(resources_url_src,exported_src)
+        return export_content
+
+
+    def upgradeToVersion1(self):
+        """
+        Upgrade to allow the images embedded via tinyMCE to
+        persist with this field
+        """
+        # Not sure why this can't be imported up top, but it gives 
+        # ImportError: cannot import name GalleryImages,
+        # so here it be:
+        from exe.engine.galleryidevice  import GalleryImages
+
+        self.images = GalleryImages(self)
+        self.nextImageId       = 0
+        self.parentNode = None
+        if hasattr(self.idevice, 'parentNode'): 
+            self.parentNode = self.idevice.parentNode
+
 
 
 # ===========================================================================
