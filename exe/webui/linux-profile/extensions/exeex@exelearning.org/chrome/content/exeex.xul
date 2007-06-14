@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<overlay id="exeex"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+// This imports our javascript.
+
+<script type="application/x-javascript" src="chrome://exeex/content/exeex.js">
+
+</script>
+
+
+// This is for the right click menu.
+
+<popup id="contentAreaContextMenu">
+  <menuitem id="exeex" label="Hello world!" accesskey="H" 
+  insertafter="context-stop" oncommand="hello();"/>
+</popup>
+
+
+// This is for the Tools menu.
+
+<menupopup id="menu_ToolsPopup">
+	<menuitem insertafter="devToolsSeparator" label="Hello world!"
+	accesskey="H" oncommand="hello();" />	
+</menupopup>
+
+// remove some Firefox menus we don't need
+<menupopup id="menu_FilePopup" removeelement="true"/>
+<menupopup id="menu_EditPopup" removeelement="true"/>
+<menupopup id="menu_viewPopup" removeelement="true"/>
+<menupopup id="menu_BookmarksPopup" removeelement="true"/>
+<menupopup id="menu_GoPopup" removeelement="true"/>
+<menupopup id="menu_WindowPopup" removeelement="true"/>
+<menupopup id="menu_HelpPopup" removeelement="true"/>
+
+</overlay>
+

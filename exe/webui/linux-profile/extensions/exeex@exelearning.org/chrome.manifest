@@ -1,0 +1,6 @@
+content exeex chrome/content/
+overlay chrome://browser/content/browser.xul chrome://exeex/content/exeex.xul
+
+skin exeex classic/1.0 chrome/skin/
+
+
