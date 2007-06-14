@@ -225,7 +225,7 @@ class EditorPage(RenderableResource):
         html += common.hiddenField("action")
         html += common.hiddenField("object")
         html += common.hiddenField("isChanged", "1") 
-        html += "<font color=\"red\"<b>"+self.message+"</b></font>"
+        html += "<font color=\"red\"><b>"+self.message+"</b></font>"
         html += "<div id=\"editorButtons\"> \n"     
         html += self.renderList()
         html += self.editorPane.renderButtons(request)

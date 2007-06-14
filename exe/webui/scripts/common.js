@@ -225,7 +225,7 @@ function changeGalleryImage(galleryId, imageId) {
 // Called by the tinyMCE (as per the user's request) to provide an 
 // image file name to add to the package's field and idevice
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
-
+    
     var local_imagePath = askUserForImage(true);
     // fix for #859 on Windows (and why DOES the dialog move behind?)
     // force the tinyMCE image dialog back to the front:

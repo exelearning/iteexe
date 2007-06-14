@@ -255,7 +255,7 @@ data is entered into this field."""))
         """
         Render the idevice being edited
         """
-        html = "<font color=\"red\"<b>"+self.message+"</b></font>"
+        html = "<font color=\"red\"><b>"+self.message+"</b></font>"
         
         html += "<fieldset><legend><b>" + _("Add Field")+ "</b></legend>"
         html += common.submitButton("addText", _("Text Line"))
