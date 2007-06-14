@@ -241,8 +241,8 @@ class Manifest(object):
         self.resStr += "\n"
         fileStr = ""
 
-        for resource in page.node.getResources():
-            fileStr += "    <file href=\""+resource+"\"/>\n"
+        for resource in page.node.getResources():            
+            fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
 
         self.resStr += fileStr
         self.resStr += "</resource>\n"
@@ -363,6 +363,7 @@ class ScormExport(object):
 
         # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
+      
             
         # Export the package content
         self.pages = [ ScormPage("index", 1, package.root) ]

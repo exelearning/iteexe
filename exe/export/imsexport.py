@@ -152,7 +152,7 @@ class Manifest(object):
         fileStr = ""
 
         for resource in page.node.getResources():
-            fileStr += "    <file href=\""+resource+"\"/>\n"
+            fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
 
         self.resStr += fileStr
         self.resStr += "</resource>\n"
