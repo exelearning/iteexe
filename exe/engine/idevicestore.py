@@ -117,8 +117,8 @@ class IdeviceStore:
         from exe.engine.reflectionidevice     import ReflectionIdevice
         from exe.engine.casestudyidevice      import CasestudyIdevice
         from exe.engine.truefalseidevice      import TrueFalseIdevice
-        # r3m0, WILL BE converting ImageWithTextIdevice -> FreeTextIdevice:
-        from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
+        # converting ImageWithTextIdevice -> FreeTextIdevice:
+        #from exe.engine.imagewithtextidevice  import ImageWithTextIdevice
         from exe.engine.wikipediaidevice      import WikipediaIdevice
         from exe.engine.attachmentidevice     import AttachmentIdevice
         from exe.engine.titleidevice          import TitleIdevice
@@ -147,8 +147,8 @@ class IdeviceStore:
         
         defaultImage = unicode(self.config.webDir/"images"/"sunflowers.jpg")
 
-        # r3m0, WILL BE converting ImageWithTextIdevice -> FreeTextIdevice:
-        self.extended.append(ImageWithTextIdevice(defaultImage))
+        # converting ImageWithTextIdevice -> FreeTextIdevice:
+        #self.extended.append(ImageWithTextIdevice(defaultImage))
 
         self.extended.append(ImageMagnifierIdevice(defaultImage))
         

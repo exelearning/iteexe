@@ -25,6 +25,7 @@ import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.field     import TextAreaField, ImageField
 from exe.engine.translate import lateTranslate
+from exe.engine.freetextidevice   import FreeTextIdevice
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -32,7 +33,7 @@ class ImageWithTextIdevice(Idevice):
     """
     A ImageWithText Idevice is one built up from an image and free text.
     """
-    persistenceVersion = 7
+    persistenceVersion = 8
 
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
@@ -120,5 +121,86 @@ you have just inserted.""")
         """
         self.image.isFeedback = False
 
+    def upgradeToVersion8(self):
+        """
+        Converting ImageWithTextIdevice -> FreeTextIdevice,
+        now that FreeText can hold embeddded images
+        """
 
+        new_content = ""
+
+        if self.image.imageResource:
+            new_content += "<img src=\"resources/" \
+                    + self.image.imageResource.storageName + "\" " 
+            if self.image.height:
+                new_content += "height=\"" + self.image.height + "\" " 
+            if self.image.width:
+                new_content += "width=\"" + self.image.width + "\" " 
+            new_content += "/> \n"
+
+        if self.caption != "": 
+            new_content += "<BR>\n[" + self.caption + "]\n"
+
+        if self.text.content != "": 
+            new_content += "<P>\n" + self.text.content + "\n"
+        # note: this is given a text field which itself did NOT yet have
+        # any embedded media! easier, eh?
+
+        #HERE: try to move the following import up top!
+        # will probably need to import FreeText:
+        #from exe.engine.freetextidevice   import FreeTextIdevice
+        replacementIdev = FreeTextIdevice(new_content)
+
+
+        ###########
+        # now, copy that content field's content into its _w_resourcePaths,
+        # and properly remove the resource directory via Massage....
+        # for its _wo_resourcePaths:
+        # note that replacementIdev's content field's content 
+        # is automatically set at its constructor (above),
+        # as is the default content_w_resourcePaths (a copy of content)
+        # AND the default content_wo_resourcePaths (a copy of content),
+        # so only need to update the content_wo_resourcePaths:
+        replacementIdev.content.content_wo_resourcePaths = \
+                replacementIdev.content.MassageImageContentForRenderView( \
+                    replacementIdev.content.content_w_resourcePaths)
+        # Design note: ahhhhh, the above is a good looking reason to possibly
+        # have the MassageImageContentForRenderView() method
+        # just assume its content_w_resourcePaths as the input
+        # and write the output to its content_wo_resourcePaths.....
+        #######
+        
+        # next step, add the new IDevice into the same node as this one
+        self.parentNode.addIdevice(replacementIdev)
+        
+        # in passing GalleryImage into the FieldWithResources, 
+        # that content field needs to be sure to have an updated 
+        # parentNode, courtesy of its idevice: 
+        replacementIdev.content.setParentNode()
+
+        # and semi-manually add/create the current image
+        # resource into the FreeTextIdevice's TextAreaField, content.
+        # the content text will have already been taken care of above,
+        # including the ideal <img src=...> including resources path,
+        # but still need the actual image resource:
+        
+        if self.image.imageResource: 
+            # Not sure why this can't be imported up top, but it gives 
+            # ImportError: cannot import name GalleryImages, 
+            # so here it be: 
+            from exe.engine.galleryidevice  import GalleryImage
+
+            full_image_path = self.image.imageResource.path
+            new_GalleryImage = GalleryImage(replacementIdev.content, \
+                    self.caption,  full_image_path)
+
+        # and move it up to the position following this node!
+        while ( self.parentNode.idevices.index(replacementIdev) \
+                > ( (self.parentNode.idevices.index(self) + 1))):
+            replacementIdev.movePrev()
+
+        # finally: delete THIS idevice itself, deleting it from the node
+        self.delete()
+
+                
 # ===========================================================================
