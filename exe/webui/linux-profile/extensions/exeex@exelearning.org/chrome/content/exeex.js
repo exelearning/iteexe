@@ -11,7 +11,7 @@ function eXeWindowIsClosing() {
 }
 
 function eXeTryToClose(arg) {
-  alert("eXe TryToClose");
+  alert("Please use eXe's\n   File... Quit\nmenu to close eXe.");
   // don't let him close!  :-)
   return false;
 }
