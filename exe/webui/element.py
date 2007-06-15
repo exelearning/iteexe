@@ -399,7 +399,7 @@ class ImageElement(Element):
             self.field.setDefaultImage()
             
         function = ""
-        if self.field.isFeedback:
+        if hasattr(self.field, 'isFeedback') and self.field.isFeedback:
             function = "addFeedbackImage"
         else:
             function = "addImage"
