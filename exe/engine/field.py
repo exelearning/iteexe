@@ -302,8 +302,27 @@ class FieldWithResources(Field):
                    # to build the webUrl to the resource:
                    resource_url = new_GalleryImage.resourcesUrl+resource_path
                    # and finally, go ahead and replace the filename:
+                   new_src_string = "src=\""+resource_url
+
+                   ##########################################################
+                   # POSSIBLE CODE FOR JIMT & COUNTRYMIKE FOR CSS & ALIGNMENT:
+                   ###
+                   #new_src_string = "class=\"eXe_image\" " + new_src_string
+                   ###
+                   # BUT BEWARE:
+                   # while this will prepend the "class=" to the "src=" string,
+                   # these will be re-arranged with further processing of the
+                   # field's element, and WORSE:
+                   # if tinyMCE is RMB-opened on that image while editting the
+                   # element (e.g., to change its size), that class attribute
+                   # will no longer exist!
+                   # SO: this might be another please to do true tag-based
+                   # processing, and not only for new images, but existing too.
+                   # OR: is there a way for tinyMCE to recognize+keep classes?
+                   ##########################################################
+
                    new_content = new_content.replace(file_url_str, 
-                                                     "src=\""+resource_url)
+                                                     new_src_string)
                    log.debug("ProcessPreviewedImages: built resource: " \
                            + resource_url)
                else:
