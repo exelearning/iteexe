@@ -1,6 +1,7 @@
 // ===========================================================================
 // eXe
 // Copyright 2004-2005, University of Auckland
+// Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -489,11 +490,6 @@ function fileQuit() {
     // Call file - save as
     saveWorkInProgress()
     askDirty('doQuit()')
-}
-
-function onclose(aEvent) {
-    alert("closing");
-    return false;
 }
 
 // Closes the window and stops the server
