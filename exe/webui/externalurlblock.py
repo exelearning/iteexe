@@ -46,7 +46,8 @@ class ExternalUrlBlock(Block):
             self.idevice.url = request.args["url"+self.id][0]
             if (self.idevice.url and 
                 not self.idevice.url.startswith("http://") and 
-                not self.idevice.url.startswith("https://")):
+                not self.idevice.url.startswith("https://") and
+                not self.idevice.url.startswith("ftp://")):
                 self.idevice.url = "http://" + self.idevice.url
 
         if "height"+self.id in request.args:
