@@ -3,7 +3,9 @@
 window.addEventListener("load", eXeexInit, true);
 
 function eXeWindowIsClosing() {
-  if (content.document.title == 'exelearning') {
+  // get a string containing the window location (not a property)
+  var loc = content.document.location + '';
+  if (loc.search(/^http:\/\/[^:]+:\d+\/editor$/) == -1) {
     alert("Please use eXe's\n   File... Quit\nmenu to close eXe.");
     return false;
   }

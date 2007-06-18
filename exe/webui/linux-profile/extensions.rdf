@@ -9,7 +9,7 @@
   </RDF:Seq>
   <RDF:Description RDF:about="urn:mozilla:item:exeex@exelearning.org"
                    NS1:installLocation="app-profile"
-                   NS1:version="0.3.0.200706121137"
+                   NS1:version="0.4.0"
                    NS1:name="eXe extension"
                    NS1:description="eXe eLearning XHTML editor extension"
                    NS1:creator="eXe Project"
