@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXELearning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-14 21:50+1200\n"
+"POT-Creation-Date: 2007-06-20 22:18+1200\n"
 "PO-Revision-Date: 2006-11-07 11:05+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Matthew Sherborne <msherborne@gmail.com.>\n"
@@ -66,7 +66,7 @@ msgstr "<dl>  <dt>Pokud vaším cílem je otestovt pochopení jádra konceptu č
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
 msgstr "<ol>  <li>Klkněte &lt; vyberte an MP3&gt; a označte soubor MP3, ktertý chete vkládat</li> <li>Klikněte do rozbalovacího menu a vyberte pozici.</li>  <li>Vložte popisku souboru.</li> <li>Popište obsah mp3 souboru.</li> <li>Vyberte styl zobrazení např. 'Zvýraznění' vytvoří ikonu a okraj  k Idevice.</li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:42
 msgid ""
 "<p>\n"
 "The image with text iDevice can be used in a number of ways to support both\n"
@@ -122,16 +122,16 @@ msgstr ""
 "polí.</p><p> Slova, která chcete skrýt, vyberte dvojklikem na požadované slovo. Poté  \n"
 "klikněte na tlačítko Skryj/Ukaž slovo umístěné dole.</p>"
 
-#: exe/engine/field.py:599
+#: exe/engine/field.py:820
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "Pokud nezatrhnete, drobné překlepy a rozdíly ve velikosti písmen budou akceptovány. Pokud zatrhnete, bude přijata pouze přesná shoda.</p><p><strong>Například:</strong> Pokud je správná odpověď <code>Slon</code> pak <code>slon</code> i <code>Slom</code> bude algoritmus posouzen jako <em>\"dostatečně blízký\"</em>  protože je jen jedno písmeno špatně, stejně jako v případě velkých písmen.</p><p>Pokud je kontrola velkých písmen vypnuta v předešlém příkladě pak písmeno <code>m</code> nebude považováno za chybu a <code>slom</code> bude také přijat</p><p>Pokud je zapnuto \"Přesné označení\" i \"Kontrola velkých písmen\", jedinou správnou odpovědí \"Slon\". Pokud je kontrolováno pouze \"Přesné označení\" a \"Kontrola velkých písmen\" není zapnuta, pak \"slon\" bude přijat.</p>"
 
-#: exe/engine/field.py:620
+#: exe/engine/field.py:841
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Je-li volba vybrána, odeslané odpovědi s jinou velikostí písmen budou označeny jako chybné (neplatné).</p>"
 
-#: exe/engine/field.py:625
+#: exe/engine/field.py:846
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -142,16 +142,16 @@ msgstr ""
 "doporučují studenti - je to lépe než aby byla všechna  slova vyznačena na konci cvičení.\n"
 "</p>"
 
-#: exe/engine/field.py:874
+#: exe/engine/field.py:1095
 #, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
 
-#: exe/engine/idevicestore.py:272
+#: exe/engine/idevicestore.py:276
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "<p>Učitelé by při užívání iDevice měli myslet na následující: </p><ol><li> Přemýšlejte nad množstvím různých zamýšlených aktivit, které budou v obsahu vizuálně označeny. Vyhněte se příliš velkému množství různých typů či třídění aktivit, protože to může vést ke zmatení studentů. Obvykle tři až čtyři různé typy přesahují adekvátnost výukových zdrojů.</li><li> Z obrazového hlediska se vyvarujte dvou ihned po sobě následujících iDevice bez vloženého textu mezi nimi. Pokud je to možné, raději shrňte dvě otázky či případy do jedné iDevice.</li><li> Přemýšlejte o aktivitách, u kterých je možné si uvědomit jejich přínos a výtěžek a snažte se, aby plán prací byl sestaven z takových aktivit. </li></ol>"
 
-#: exe/engine/idevicestore.py:267
+#: exe/engine/idevicestore.py:271
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -182,7 +182,7 @@ msgstr ""
 "změny provedené v eXe souboru nebudou přenášeny doWikipedia. </p> <p>Wikipedia obsah \n"
 "je krytý  GNU free documentation license.</p>"
 
-#: exe/engine/idevicestore.py:375
+#: exe/engine/idevicestore.py:379
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -246,9 +246,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Akce"
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:350
-#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:419
-#: exe/engine/idevicestore.py:456 exe/engine/idevicestore.py:464
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:354
+#: exe/engine/idevicestore.py:362 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:460 exe/engine/idevicestore.py:468
 #: exe/webui/questionelement.py:90
 msgid "Activity"
 msgstr "Aktivity"
@@ -258,11 +258,11 @@ msgstr "Aktivity"
 msgid "Add Field"
 msgstr "Přidat soubory"
 
-#: exe/webui/element.py:555
+#: exe/webui/element.py:412
 msgid "Add Image"
 msgstr "Vložit obrázek"
 
-#: exe/webui/element.py:945
+#: exe/webui/element.py:802
 msgid "Add JPEG Image"
 msgstr "Vložit obrázek ve formátu JPG"
 
@@ -311,7 +311,7 @@ msgstr "Přidat interaktivní zpětnou vazbu do iDevice."
 msgid "Add an mp3 file to your iDevice."
 msgstr "Přidat interaktivní zpětnou vazbu do iDevice."
 
-#: exe/webui/testquestionelement.py:107 exe/webui/element.py:1738
+#: exe/webui/testquestionelement.py:107 exe/webui/element.py:1597
 msgid "Add another Option"
 msgstr "Přidat další volbu."
 
@@ -324,7 +324,7 @@ msgstr "Přidat další otázku"
 msgid "Add another activity"
 msgstr "Přidat další volbu."
 
-#: exe/webui/element.py:2001
+#: exe/webui/element.py:1860
 msgid "Add another option"
 msgstr "Přidat další volbu"
 
@@ -363,7 +363,7 @@ msgstr ""
 "Zarovnání umožňuje \n"
 "zvolit umístění obrázku na obrazovce."
 
-#: exe/engine/field.py:663
+#: exe/engine/field.py:884
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -406,7 +406,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
+#: exe/engine/idevicestore.py:357 exe/engine/idevicestore.py:463
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -415,7 +415,7 @@ msgstr ""
 "Aktivita může být definována jako úkol nebo sada úkolů, které musí student splnit.\n"
 " Poskytuje prostý stav úkolu a bere zřetel na kteroukoliv podmínku, která může pomoci  nebo bránit studentovi v provedení úkolu."
 
-#: exe/webui/element.py:1276
+#: exe/webui/element.py:1135
 #, fuzzy
 msgid "Answsers"
 msgstr "Ukázat odpovědi"
@@ -461,7 +461,7 @@ msgstr "Nemohu číst z daného adresáře"
 
 #: exe/webui/flashwithtextblock.py:84 exe/webui/editorelement.py:324
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/flashmovieblock.py:83
-#: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:671
+#: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:528
 msgid "Caption:"
 msgstr "Titulek"
 
@@ -473,7 +473,7 @@ msgstr "Případová studie"
 msgid "Change Image"
 msgstr "Změnit obrázek"
 
-#: exe/webui/element.py:1129
+#: exe/webui/element.py:988
 msgid "Check Caps?"
 msgstr "Zkontrolovat velká písmena?"
 
@@ -523,7 +523,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Klikněte na <strong>Vybrat soubor</strong>,najděte soubor, který chcete načíst a označte jej."
 
-#: exe/engine/field.py:215
+#: exe/engine/field.py:436
 msgid "Click Here"
 msgstr "Klikněte sem"
 
@@ -535,7 +535,7 @@ msgstr "Klikněte pro doplnění instrukcí"
 msgid "Click here"
 msgstr "Klikněte sem"
 
-#: exe/engine/field.py:882
+#: exe/engine/field.py:1103
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
@@ -549,9 +549,15 @@ msgstr "Pro vložení obrázku klikněte na tlačítko \"Přidat obrázky\". Obr
 #: exe/engine/galleryidevice.py:545 exe/webui/truefalseelement.py:128
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
-#: exe/webui/element.py:2040 exe/webui/element.py:2041
+#: exe/webui/element.py:1899 exe/webui/element.py:1900
 #: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
 #: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: oncommand="window.close();" label="Close">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 msgid "Close"
 msgstr "Zavřít"
 
@@ -563,12 +569,12 @@ msgstr "Zkušební test"
 msgid "Cloze Activity"
 msgstr "Aktivita zkušební test"
 
-#: exe/webui/element.py:1111
+#: exe/webui/element.py:970
 msgid "Cloze Text"
 msgstr "Text zkušebního testu"
 
-#: exe/webui/testquestionelement.py:94 exe/webui/element.py:1724
-#: exe/webui/element.py:1848 exe/webui/element.py:1917
+#: exe/webui/testquestionelement.py:94 exe/webui/element.py:1583
+#: exe/webui/element.py:1707 exe/webui/element.py:1776
 msgid "Correct"
 msgstr "Správně"
 
@@ -611,13 +617,13 @@ msgstr "Smazat soubor"
 msgid "Delete Image"
 msgstr "Smazat obrázek"
 
-#: exe/webui/testoptionelement.py:90 exe/webui/element.py:1622
-#: exe/webui/element.py:1866
+#: exe/webui/testoptionelement.py:90 exe/webui/element.py:1481
+#: exe/webui/element.py:1725
 msgid "Delete option"
 msgstr "Smazat volbu"
 
 #: exe/webui/questionelement.py:104 exe/webui/truefalseelement.py:106
-#: exe/webui/element.py:1711
+#: exe/webui/element.py:1570
 msgid "Delete question"
 msgstr "Smazat otázku"
 
@@ -643,7 +649,7 @@ msgstr ""
 " instrukcí pro činnost, která by měla studenty navést k řešení prezentovaného \n"
 "  dilematu."
 
-#: exe/engine/idevicestore.py:346 exe/engine/idevicestore.py:452
+#: exe/engine/idevicestore.py:350 exe/engine/idevicestore.py:456
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -651,7 +657,7 @@ msgstr ""
 "Popište nezbytné znalosti, které by studenti měli mít pro efektivní\n"
 " dokončení této činnosti."
 
-#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
+#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -659,7 +665,7 @@ msgstr ""
 "Popište úkoly vztahující se k četbě, kterou by se studenti měli zabývat. \n"
 "To pomůže studentům poukázat na důležitost."
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:469
 msgid "Describe the tasks the learners should complete."
 msgstr "Popište úkol, který má student dokončit."
 
@@ -684,7 +690,7 @@ msgstr "Popis"
 msgid "Description:"
 msgstr "Popis:"
 
-#: exe/webui/element.py:581 exe/webui/element.py:967 exe/webui/element.py:1330
+#: exe/webui/element.py:438 exe/webui/element.py:824 exe/webui/element.py:1189
 msgid "Display as:"
 msgstr "Zobrazit jako:"
 
@@ -703,17 +709,17 @@ msgstr "Hotovo"
 msgid "Dutch Wikipedia Article"
 msgstr "Článek Wikipedie v Holandštině"
 
-#: exe/webui/element.py:64
+#: exe/webui/element.py:62
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "CHYBA: Element.process volán přímo s %s class"
 
-#: exe/webui/element.py:73
+#: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "CHYBA: Element.renderEdit volán přímo s %s class"
 
-#: exe/webui/element.py:90
+#: exe/webui/element.py:88
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "CHYBA: Element.renderView volán přímo s %s class"
@@ -739,7 +745,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/export/imsexport.py:325 exe/export/scormexport.py:440
+#: exe/export/imsexport.py:325 exe/export/scormexport.py:441
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -869,7 +875,7 @@ msgstr ""
 "Tlačítkem \"Přidat další volbu\" vytvoříte další volbu. Smazat položku můžete klikem na červené \"X\" \n"
 " vedle odpovědi, kterou si přejete odstranit."
 
-#: exe/engine/field.py:1075
+#: exe/engine/field.py:1296
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -880,7 +886,7 @@ msgstr ""
 "Tlačítkem \"Přidat další volbu\" vytvoříte další volbu. Smazat položku můžete klikem na červené \"X\" \n"
 " vedle odpovědi, kterou si přejete odstranit."
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:416
+#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -922,7 +928,7 @@ msgstr ""
 "Zadání by mělo být jasné a jednoznačné. Vyvarujte se negativních formulací\n"
 "a také těch, které vyznívají nejednoznačně."
 
-#: exe/engine/field.py:1067
+#: exe/engine/field.py:1288
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -933,7 +939,7 @@ msgstr ""
 "Zadání by mělo být jasné a jednoznačné. Vyvarujte se negativních formulací\n"
 "a také těch, které vyznívají nejednoznačně."
 
-#: exe/engine/imagewithtextidevice.py:62
+#: exe/engine/imagewithtextidevice.py:63
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
@@ -987,13 +993,13 @@ msgstr "Velmi velké"
 msgid "False"
 msgstr "Ne"
 
-#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:954
-#: exe/engine/field.py:966 exe/webui/clozeblock.py:148
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
+#: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
-#: exe/webui/element.py:1867 exe/webui/editorpane.py:267
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:267
 msgid "Feedback"
 msgstr "Zpětná vazba"
 
@@ -1006,7 +1012,7 @@ msgstr ""
 " data nebudou vložena do tohoto pole."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1084 exe/engine/field.py:1109
+#: exe/engine/field.py:1305 exe/engine/field.py:1330
 msgid "Feedback:"
 msgstr "Zpětná vazba:"
 
@@ -1021,7 +1027,7 @@ msgstr ""
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Název souboru %s už je použit, nelze jej nahradit"
 
-#: exe/webui/attachmentblock.py:80 exe/webui/element.py:865
+#: exe/webui/attachmentblock.py:80 exe/webui/element.py:722
 #, fuzzy
 msgid "Filename:"
 msgstr "Jméno souboru"
@@ -1040,7 +1046,7 @@ msgstr "Flash s popisem"
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
 
-#: exe/webui/externalurlblock.py:71
+#: exe/webui/externalurlblock.py:72
 msgid "Frame Height:"
 msgstr "Výška rámečku:"
 
@@ -1070,7 +1076,7 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "Německý Wikipedia článek"
 
-#: exe/webui/element.py:1214
+#: exe/webui/element.py:1073
 msgid "Get score"
 msgstr "Zjisti skóre"
 
@@ -1099,14 +1105,14 @@ msgstr "Skrýt"
 msgid "Hide Feedback"
 msgstr "Skrýt zpětnou vazbu"
 
-#: exe/webui/element.py:1119
+#: exe/webui/element.py:978
 msgid "Hide/Show Word"
 msgstr "Skrýt/Ukázat slovo"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:992 exe/engine/field.py:1012
+#: exe/engine/field.py:1213 exe/engine/field.py:1233
 #: exe/webui/truefalseelement.py:122 exe/webui/truefalseelement.py:132
-#: exe/webui/element.py:2044
+#: exe/webui/element.py:1903
 msgid "Hint"
 msgstr "Nápověda"
 
@@ -1133,7 +1139,7 @@ msgstr "IDevice ikona"
 msgid "Icons"
 msgstr "Ikony"
 
-#: exe/engine/imagewithtextidevice.py:58 exe/engine/casestudyidevice.py:65
+#: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
 #: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "Obrázky"
@@ -1151,7 +1157,7 @@ msgstr "Lupa"
 msgid "Image file %s is not found, cannot preview it"
 msgstr "Název souboru %s už je použit, nelze jej nahradit"
 
-#: exe/engine/imagewithtextidevice.py:39
+#: exe/engine/imagewithtextidevice.py:40
 msgid "Image with Text"
 msgstr "Obrázek s textem"
 
@@ -1176,7 +1182,7 @@ msgstr "Informace"
 msgid "Initial Zoom"
 msgstr "Počáteční Zoom"
 
-#: exe/webui/element.py:1134
+#: exe/webui/element.py:993
 msgid "Instant Marking?"
 msgstr "Instantní označení?"
 
@@ -1325,12 +1331,12 @@ msgstr "Nic"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:331
-#: exe/engine/idevicestore.py:428 exe/engine/idevicestore.py:437
+#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:335
+#: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:441
 msgid "Objectives"
 msgstr "Cíle"
 
-#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:431
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:435
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1339,7 +1345,7 @@ msgstr ""
 "Cíle popisují očekávané výstupy výuky a měly by\n"
 " definovat, cob by měli studenti zvládnout po dokončení výuky."
 
-#: exe/engine/field.py:769 exe/engine/field.py:833
+#: exe/engine/field.py:990 exe/engine/field.py:1054
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1347,21 +1353,21 @@ msgstr ""
 "Vkládat videa je možné pouze ve formátu  .flv (Flash Video Files) \n"
 "."
 
-#: exe/engine/field.py:705 exe/engine/field.py:749
+#: exe/engine/field.py:926 exe/engine/field.py:970
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "Lze vkládat pouze .swf(Flash Objects) soubory."
 
 #: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:950 exe/engine/field.py:963
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1726
-#: exe/webui/element.py:1843 exe/webui/element.py:1848
+#: exe/engine/field.py:1171 exe/engine/field.py:1184
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1585
+#: exe/webui/element.py:1702 exe/webui/element.py:1707
 msgid "Option"
 msgstr "Volba"
 
-#: exe/engine/field.py:1034 exe/engine/field.py:1044
-#: exe/webui/testquestionelement.py:92 exe/webui/element.py:1722
+#: exe/engine/field.py:1255 exe/engine/field.py:1265
+#: exe/webui/testquestionelement.py:92 exe/webui/element.py:1581
 msgid "Options"
 msgstr "Volby"
 
@@ -1404,12 +1410,12 @@ msgstr "Vyplňte prosím idevice jméno"
 msgid "Please enter<br />an idevice name."
 msgstr "Vyplňte prosím idevice jméno"
 
-#: exe/webui/element.py:1392
+#: exe/webui/element.py:1251
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "Vyberte prosím forum."
 
-#: exe/webui/element.py:916
+#: exe/webui/element.py:773
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "Vyberte prosím forum."
@@ -1430,12 +1436,12 @@ msgstr "Polský Wikipedia článek"
 msgid "Portugese Wikipedia Article"
 msgstr "Portugalský Wikipedia článek"
 
-#: exe/engine/idevicestore.py:335 exe/engine/idevicestore.py:345
-#: exe/engine/idevicestore.py:441 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:349
+#: exe/engine/idevicestore.py:445 exe/engine/idevicestore.py:455
 msgid "Preknowledge"
 msgstr "Předešlá znalost"
 
-#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:448
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1449,7 +1455,7 @@ msgstr ""
 "<li> Studenti musí mít level 4 v Angličtině </li>\n"
 "<li> Studenti musí být schopní shromáždit standardní množství nástrojů</li></ul>\n"
 
-#: exe/webui/element.py:1535 exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:278
 msgid "Preview"
 msgstr "Náhled"
 
@@ -1463,8 +1469,8 @@ msgstr "Název souboru %s už je použit, nelze jej nahradit"
 msgid "Previous"
 msgstr "Předchozí"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:410
-#: exe/engine/field.py:457
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:631
+#: exe/engine/field.py:678
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1494,8 +1500,8 @@ msgstr ""
 "Doplnit text k flash ukázce,\n"
 "kterou jste právě vložil."
 
-#: exe/engine/imagewithtextidevice.py:67
-#: exe/engine/imagewithtextidevice.py:114
+#: exe/engine/imagewithtextidevice.py:68
+#: exe/engine/imagewithtextidevice.py:115
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
@@ -1534,14 +1540,14 @@ msgid "Put instructions for learners here"
 msgstr "Sem vložte instrukce pro studenty"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:989 exe/engine/field.py:1008
+#: exe/engine/field.py:1210 exe/engine/field.py:1229
 #, fuzzy
 msgid "Question"
 msgstr "Otázka:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1070 exe/engine/field.py:1106 exe/webui/element.py:1706
+#: exe/engine/field.py:1291 exe/engine/field.py:1327 exe/webui/element.py:1565
 msgid "Question:"
 msgstr "Otázka:"
 
@@ -1562,12 +1568,12 @@ msgstr "Přečtěte se následující odstavec a doplňte chybějící slova"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Přečtěte se následující odstavec a doplňte chybějící slova."
 
-#: exe/engine/idevicestore.py:228 exe/engine/idevicestore.py:264
+#: exe/engine/idevicestore.py:232 exe/engine/idevicestore.py:268
 #: exe/engine/genericidevice.py:198
 msgid "Reading Activity"
 msgstr "Čtení"
 
-#: exe/engine/idevicestore.py:372 exe/engine/genericidevice.py:196
+#: exe/engine/idevicestore.py:376 exe/engine/genericidevice.py:196
 msgid "Reading Activity 0.11"
 msgstr "Čtení 0.11"
 
@@ -1595,7 +1601,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Reflektující otázka:"
 
-#: exe/webui/element.py:1234
+#: exe/webui/element.py:1093
 msgid "Restart"
 msgstr "Restart"
 
@@ -1624,7 +1630,7 @@ msgid ""
 "Last succesful save is %s."
 msgstr ""
 
-#: exe/engine/quiztestidevice.py:187
+#: exe/engine/quiztestidevice.py:181
 msgid "SCORM Quiz"
 msgstr "SCORM Quiz"
 
@@ -1640,7 +1646,7 @@ msgstr "Uložit"
 msgid "Section"
 msgstr "Kapitola"
 
-#: exe/webui/editorelement.py:267 exe/webui/element.py:1326
+#: exe/webui/editorelement.py:267 exe/webui/element.py:1185
 msgid "Select Flash Object"
 msgstr "Vyberte Flash objekt"
 
@@ -1661,31 +1667,31 @@ msgid "Select MP3 file"
 msgstr "Vyberte soubor"
 
 #: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
-#: exe/webui/element.py:875
+#: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "Vyberte soubor"
 
-#: exe/webui/element.py:1408
+#: exe/webui/element.py:1267
 msgid "Select a flash video"
 msgstr "Vyberte flash video"
 
-#: exe/webui/element.py:1521
+#: exe/webui/element.py:1380
 msgid "Select a font size: "
 msgstr "Vyberte velikost fontu: "
 
-#: exe/webui/element.py:665
+#: exe/webui/element.py:522
 msgid "Select an MP3"
 msgstr "Vyberte soubor MP3"
 
-#: exe/webui/element.py:578
+#: exe/webui/element.py:435
 msgid "Select an image"
 msgstr "Vyberte obrázek"
 
-#: exe/webui/element.py:961
+#: exe/webui/element.py:818
 msgid "Select an image (JPG file)"
 msgstr "Vyberte obrázek (JPG file)"
 
-#: exe/engine/field.py:1079
+#: exe/engine/field.py:1300
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1745,7 +1751,7 @@ msgstr "Nastavení uloženo"
 msgid "Show %s Image"
 msgstr "Ukázat %s obrázek"
 
-#: exe/webui/element.py:1241
+#: exe/webui/element.py:1100
 msgid "Show Answers"
 msgstr "Ukázat odpovědi"
 
@@ -1753,11 +1759,11 @@ msgstr "Ukázat odpovědi"
 msgid "Show Feedback"
 msgstr "Ukázatb zpětnou vazbu"
 
-#: exe/webui/element.py:1225
+#: exe/webui/element.py:1084
 msgid "Show/Clear Answers"
 msgstr "Ukázat/vymazat odpovědi"
 
-#: exe/webui/element.py:1220
+#: exe/webui/element.py:1079
 msgid "Show/Hide Feedback"
 msgstr "Ukázat/skrýt zpětnou vazbu"
 
@@ -1808,15 +1814,15 @@ msgstr "Španělský Wikipedia článek"
 msgid "Story:"
 msgstr "Příspěvek:"
 
-#: exe/webui/element.py:1124
+#: exe/webui/element.py:983
 msgid "Strict Marking?"
 msgstr "Přísná klasifikace?"
 
-#: exe/webui/element.py:1229 exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:436
 msgid "Submit"
 msgstr "Předložit"
 
-#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1776
+#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1635
 msgid "Submit Answer"
 msgstr "Předložit odpověď"
 
@@ -1824,11 +1830,11 @@ msgstr "Předložit odpověď"
 msgid "Swedish Wikipedia Article"
 msgstr "Švédský Wikipedia článek"
 
-#: exe/engine/idevicestore.py:380
+#: exe/engine/idevicestore.py:384
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "Učitelé by při užívání iDevice měli myslet na následující: <ol><li> Přemýšlejte nad množstvím různých zamýšlených aktivit, které budou v obsahu vizuálně označeny. Vyhněte se příliš velkému množství různých typů či klasifikací aktivit, protože to může vést ke zmatení studentů. Obvykle tři až čtyři různé typy přesahují adekvátnost výukových zdrojů.</li><li> Z obrazového hlediska  se vyvarujte dvou ihned po sobě následujících iDevice bez vloženého textu mezi nimi. Pokud je to možné, raději shrňte dvě otázky či případy do jedné iDevice.</li><li> Přemýšlejte o aktivitách, u kterých je možné si uvědomit jejich přínos a výtěžek a snažte se, aby plán prací byl sestaven z takových aktivit. </li></ol>  "
 
-#: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagewithtextidevice.py:62
 #: exe/engine/imagemagnifieridevice.py:53 exe/engine/multimediaidevice.py:64
 msgid "Text"
 msgstr "Text"
@@ -2011,7 +2017,7 @@ msgstr ""
 " u faktických informací a u informací poskytujících buď/nebo \n"
 " odpověď."
 
-#: exe/engine/field.py:845
+#: exe/engine/field.py:1066
 msgid "Type a discussion topic here."
 msgstr "Zde vepište diskuzní téma."
 
@@ -2043,13 +2049,13 @@ msgstr ""
 " \"Správná odpověď\" při výběru správné odpovědi; nebo \n"
 " \"Špatná odpověď\" pro ostatní alternativy."
 
-#: exe/engine/field.py:1082
+#: exe/engine/field.py:1303
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr ""
 
-#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
+#: exe/engine/idevicestore.py:336 exe/engine/idevicestore.py:442
 msgid "Type the learning objectives for this resource."
 msgstr "Vepište výukové plány pro tento zdroj."
 
@@ -2063,7 +2069,7 @@ msgstr ""
 " by měla být položena jasně a jednoznačně. Vyhněte se mylnému výchozímu předpokladu, že jsou \n"
 " jednoznačné. "
 
-#: exe/webui/externalurlblock.py:60
+#: exe/webui/externalurlblock.py:61
 msgid "URL:"
 msgstr "URL:"
 
@@ -2076,22 +2082,22 @@ msgstr "Nelze stáhnout %s <br/>Překontrolujte zadaný název a zkuste znovu."
 msgid "Unit"
 msgstr "Podkapitola"
 
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:41
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
-#: exe/engine/idevicestore.py:266 exe/engine/idevicestore.py:324
-#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:374
-#: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:270 exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:356 exe/engine/idevicestore.py:378
+#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:462
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:43 exe/engine/multichoiceidevice.py:58
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:52
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:188
+#: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:182
 #: exe/engine/casestudyidevice.py:93 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Univerzita Auckland"
 
-#: exe/engine/quiztestidevice.py:189
+#: exe/engine/quiztestidevice.py:183
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2109,7 +2115,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Načtení souboru"
 
-#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
+#: exe/engine/idevicestore.py:320 exe/engine/idevicestore.py:428
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2141,7 +2147,7 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr ""
 
-#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:415
+#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:419
 msgid "What to read"
 msgstr "Co číst"
 
@@ -2190,7 +2196,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1919
+#: exe/webui/element.py:1778
 msgid "Wrong"
 msgstr "Špatně"
 
@@ -2207,7 +2213,7 @@ msgstr "Vaše nové iDevice se bude zobrazovat na panelu iDevice s tímto názve
 msgid "article "
 msgstr "článek"
 
-#: exe/webui/element.py:595 exe/webui/element.py:983
+#: exe/webui/element.py:452 exe/webui/element.py:840
 msgid "blank for original size"
 msgstr "pokud nazadáte, bude použita původní velikost"
 
@@ -2238,7 +2244,7 @@ msgstr "http://cs.wikipedia.org/"
 msgid "iDevice %s has no package"
 msgstr "iDevice %s neobsahuje balíček"
 
-#: exe/engine/package.py:370
+#: exe/engine/package.py:372
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2264,11 +2270,11 @@ msgstr "kód klávesy"
 msgid "label"
 msgstr "popiska"
 
-#: exe/webui/element.py:1518
+#: exe/webui/element.py:1377
 msgid "newline"
 msgstr "nový řádek "
 
-#: exe/webui/element.py:1517
+#: exe/webui/element.py:1376
 msgid "text"
 msgstr "text"
 

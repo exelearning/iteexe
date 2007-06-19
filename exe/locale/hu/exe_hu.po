@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-14 21:50+1200\n"
+"POT-Creation-Date: 2007-06-20 22:18+1200\n"
 "PO-Revision-Date: 2007-04-17 11:15+1200\n"
 "Last-Translator: \n"
 "Language-Team: CONSEDU <info@consedu.hu>\n"
@@ -65,7 +65,7 @@ msgstr "<dl>  <dt>Ha az a célja, hogy az alapfogalmak, az olvasottak megértés
 msgid "<ol>  <li>Click &lt;Select an MP3&gt; and browse to the MP3       file you wish to insert</li> <li>Click on the dropdown menu to select the position        that you want the file displayed on screen.</li>  <li>Enter an optional caption for your file.</li> <li>Associate any relevant text to the MP3 file.</li> <li>Choose the type of style you would like the iDevice to       display e.g. 'Some emphasis' applies a border and icon to the iDevice content displayed.</li></ol>"
 msgstr "<ol>  <li>Kattintson az &lt;Válasszon egy MP3-at&gt; gombra és keresse meg azt az állomámyt, amelyet be kíván szúrni</li> <li>Kattintson a legördülő menüre és válassza ki, hogy hova legyen igazítva az állomány a képernyőn.</li>  <li>Adjon egy felirtot az állományhoz.</li> <li>A \"Szöveg\" mezőbe írja be a tárgyhoz tartozó szöveget.</li> <li>Válassza ki a modul megjelenési stílusát. Ha a 'Kiemelés' opciót választja, a modul kerettel és ikonnal jelenik meg a képernyőn.</li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:41
+#: exe/engine/imagewithtextidevice.py:42
 msgid ""
 "<p>\n"
 "The image with text iDevice can be used in a number of ways to support both\n"
@@ -121,15 +121,15 @@ msgstr ""
 "</p><p> Válassza ki az elrejteni kívánt szavakat, és a \"Szó elrejtése/megjelenítése\" \n"
 "gombra kattintva rejtse el azokat.</p>"
 
-#: exe/engine/field.py:599
+#: exe/engine/field.py:820
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>Ha ez az opció <strong>nincs</strong> beállítva, az eXe néhány helyesírási hiba, elírás esetén is elfogadja a választ. Ha <strong>be van jelölve</strong>, csak a helyesírásilag kifogástalan és a megfelelő betűméretű (kis/nagy) alakot fogadja el.</p> <p><strong>Példa:</strong> Ha a helyes válasz a Mihály, mindkét szó a <em>Míhály</em> és a <em>Mihaly</em> is elfogadásra kerül. Az algoritmus csak egy betű eltérést enged meg, ha a nagybetűs írásmód ellenőrzése be van kapcsolva.</p> <p>Ha a nagybetűs írásmód figyelése ki van kapcsolva a kis <em>m</em>-mel írott <em>mihaly</em> szót is helyesként fogadja el az eXe. </p> <p>Ha mind a  \"Pontos értékelés\" mind a \"Nagybetűs írásmód ellenőrzése\" be van állítva, csak a helyes Mihály szó kerül elfogadásra. ha csak a \"Pontos értékelés\" van beállítva, de a \"Nagybetűs írásmód ellenőrzése\" nem, a \"mihály\" szót is elfogadja.</p>"
 
-#: exe/engine/field.py:620
+#: exe/engine/field.py:841
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>Ha ez az opció be van állítva, az eXe  különbséget tesz a kis- és nagybetűs írásmód között.Az eredetitől eltérő írásmód esetén hibásnak jelöli a választ. </p>"
 
-#: exe/engine/field.py:625
+#: exe/engine/field.py:846
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
@@ -139,15 +139,15 @@ msgstr ""
 "Ahogy a tanuló gépeli a szavakat, az eXe színnel jelöli, hogy helyes-e. \n"
 "Sőt, az utolsó betűket automatikusan kitölti.</p>"
 
-#: exe/engine/field.py:874
+#: exe/engine/field.py:1095
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>Válasszon egy szimbólumot az alábbi szövegből vagy írja be a kézzel a matematikai formulát LATEX formátumban. A végső megjelenés megtekintéséhez kattintson az &lt;Előnézet&gt; gombra.</p>"
 
-#: exe/engine/idevicestore.py:272
+#: exe/engine/idevicestore.py:276
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegység tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. Kerülje a túl sok különböző típusú vagy besorolású tevékenység használatát, mert a tanulókat megzavarhatja. Általában három négy különböző típus több, mint megfelelő egy tananyagegységen belül .</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik nyújt többet. </li></ol>"
 
-#: exe/engine/idevicestore.py:267
+#: exe/engine/idevicestore.py:271
 msgid ""
 "<p>The Reading Activity will primarily \n"
 "be used to check a learner's comprehension of a given text. This can be done \n"
@@ -179,7 +179,7 @@ msgstr ""
 "az eXe-ban végrehajtott változtatások sem fognak frissülni a Wikipédiában. </p> <p>A Wikipédia tartalmak \n"
 "a GNU Szabad Dokumentáció licenc alá esnek.</p>"
 
-#: exe/engine/idevicestore.py:375
+#: exe/engine/idevicestore.py:379
 msgid ""
 "<p>The reading activity, as the name \n"
 "suggests, should ask the learner to perform some form of activity. This activity \n"
@@ -249,9 +249,9 @@ msgstr ""
 msgid "Actions"
 msgstr "Tevékenységek"
 
-#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:350
-#: exe/engine/idevicestore.py:358 exe/engine/idevicestore.py:419
-#: exe/engine/idevicestore.py:456 exe/engine/idevicestore.py:464
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:354
+#: exe/engine/idevicestore.py:362 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:460 exe/engine/idevicestore.py:468
 #: exe/webui/questionelement.py:90
 msgid "Activity"
 msgstr "Tevékenység"
@@ -260,11 +260,11 @@ msgstr "Tevékenység"
 msgid "Add Field"
 msgstr "Mező hozzáadása"
 
-#: exe/webui/element.py:555
+#: exe/webui/element.py:412
 msgid "Add Image"
 msgstr "Kép hozzáadása"
 
-#: exe/webui/element.py:945
+#: exe/webui/element.py:802
 msgid "Add JPEG Image"
 msgstr "JPEG kép hozzáadása"
 
@@ -307,7 +307,7 @@ msgstr "Visszajelzés hozzáadása az iDevice modulhoz."
 msgid "Add an mp3 file to your iDevice."
 msgstr "MP3 állomány hozzáadása az iDevice modulhoz."
 
-#: exe/webui/testquestionelement.py:107 exe/webui/element.py:1738
+#: exe/webui/testquestionelement.py:107 exe/webui/element.py:1597
 msgid "Add another Option"
 msgstr "Új válasz hozzáadása"
 
@@ -319,7 +319,7 @@ msgstr "Új kérdés hozzáadása"
 msgid "Add another activity"
 msgstr "Új tevékenység hozzáadása"
 
-#: exe/webui/element.py:2001
+#: exe/webui/element.py:1860
 msgid "Add another option"
 msgstr "Új opció hozzáadása"
 
@@ -358,7 +358,7 @@ msgstr ""
 "Az igazítás lehetővé teszi \n"
 "hogy meghatározzuk, hogy a médialejátszó hol helyezkedjen el a képernyőn."
 
-#: exe/engine/field.py:663
+#: exe/engine/field.py:884
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -402,7 +402,7 @@ msgstr ""
 "</ul>\n"
 " "
 
-#: exe/engine/idevicestore.py:353 exe/engine/idevicestore.py:459
+#: exe/engine/idevicestore.py:357 exe/engine/idevicestore.py:463
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -413,7 +413,7 @@ msgstr ""
 "feltételt figyelembe vesznek, amik a tanulót segíthetik, vagy akadályozhatják\n"
 "a feladat teljesítésében."
 
-#: exe/webui/element.py:1276
+#: exe/webui/element.py:1135
 msgid "Answsers"
 msgstr "Válaszok"
 
@@ -457,7 +457,7 @@ msgstr "Nem nevezheti át a könyvtárat"
 
 #: exe/webui/flashwithtextblock.py:84 exe/webui/editorelement.py:324
 #: exe/webui/imagemagnifierblock.py:92 exe/webui/flashmovieblock.py:83
-#: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:671
+#: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:528
 msgid "Caption:"
 msgstr "Felirat:"
 
@@ -469,7 +469,7 @@ msgstr "Esettanulmány"
 msgid "Change Image"
 msgstr "Kép cseréje"
 
-#: exe/webui/element.py:1129
+#: exe/webui/element.py:988
 msgid "Check Caps?"
 msgstr "Kis/nagybetűs írásmód különböző?"
 
@@ -524,7 +524,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "Kattintson a <strong>Válasszon egy állományt</strong> gombra, majd keresse meg a csatolni kívánt állományt és válassza ki."
 
-#: exe/engine/field.py:215
+#: exe/engine/field.py:436
 msgid "Click Here"
 msgstr "Kattintson ide"
 
@@ -536,7 +536,7 @@ msgstr "A teljes utasítás megjelenítéséhez kattintson egyet!"
 msgid "Click here"
 msgstr "Kattintson ide"
 
-#: exe/engine/field.py:882
+#: exe/engine/field.py:1103
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -551,9 +551,15 @@ msgstr "Kattintson a \"Kép hozzáadása\" gombra és válasszon egy képet. A k
 #: exe/engine/galleryidevice.py:545 exe/webui/truefalseelement.py:128
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
-#: exe/webui/element.py:2040 exe/webui/element.py:2041
+#: exe/webui/element.py:1899 exe/webui/element.py:1900
 #: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
 #: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
+#: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: oncommand="window.close();" label="Close">
+#: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
+#: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 msgid "Close"
 msgstr "Bezárás"
 
@@ -565,12 +571,12 @@ msgstr "Bezárás"
 msgid "Cloze Activity"
 msgstr "Szókitöltős teszt"
 
-#: exe/webui/element.py:1111
+#: exe/webui/element.py:970
 msgid "Cloze Text"
 msgstr "Szöveg"
 
-#: exe/webui/testquestionelement.py:94 exe/webui/element.py:1724
-#: exe/webui/element.py:1848 exe/webui/element.py:1917
+#: exe/webui/testquestionelement.py:94 exe/webui/element.py:1583
+#: exe/webui/element.py:1707 exe/webui/element.py:1776
 msgid "Correct"
 msgstr "Helyes"
 
@@ -619,13 +625,13 @@ msgstr "Állomány törlése"
 msgid "Delete Image"
 msgstr "Kép törlése"
 
-#: exe/webui/testoptionelement.py:90 exe/webui/element.py:1622
-#: exe/webui/element.py:1866
+#: exe/webui/testoptionelement.py:90 exe/webui/element.py:1481
+#: exe/webui/element.py:1725
 msgid "Delete option"
 msgstr "Opció törlése"
 
 #: exe/webui/questionelement.py:104 exe/webui/truefalseelement.py:106
-#: exe/webui/element.py:1711
+#: exe/webui/element.py:1570
 msgid "Delete question"
 msgstr "Kérdés törlése"
 
@@ -650,7 +656,7 @@ msgstr ""
 "tevékenységeket. Adja meg azoknak az utasításokat, \n"
 "amelyek rávezethetik a tanulót egy dilemma megoldására."
 
-#: exe/engine/idevicestore.py:346 exe/engine/idevicestore.py:452
+#: exe/engine/idevicestore.py:350 exe/engine/idevicestore.py:456
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
@@ -658,7 +664,7 @@ msgstr ""
 "Írja le azokat a tanuló számára szükséges előismereteket, amelyek a \n"
 "soron következő tananyag hatékony elsajátításához szükségesek."
 
-#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
+#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
@@ -666,7 +672,7 @@ msgstr ""
 "Írja le a tanuló által vállalt ovasmányokhoz kapcsolódó feladatokat. \n"
 "Ez hasznos segítség a tanuló számára."
 
-#: exe/engine/idevicestore.py:359 exe/engine/idevicestore.py:465
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:469
 msgid "Describe the tasks the learners should complete."
 msgstr "Írja le azokat a feladatokat, amelyeket a tanulónak teljesíteni kell!"
 
@@ -694,7 +700,7 @@ msgstr "Leírás"
 msgid "Description:"
 msgstr "Leírás:"
 
-#: exe/webui/element.py:581 exe/webui/element.py:967 exe/webui/element.py:1330
+#: exe/webui/element.py:438 exe/webui/element.py:824 exe/webui/element.py:1189
 msgid "Display as:"
 msgstr "Megjelenítés:"
 
@@ -716,17 +722,17 @@ msgstr "Rendben"
 msgid "Dutch Wikipedia Article"
 msgstr "Holland nyelvű Wikipédia szócikk"
 
-#: exe/webui/element.py:64
+#: exe/webui/element.py:62
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
 msgstr "HIBA Az Element.process közvetlenül hívta a %s osztályt"
 
-#: exe/webui/element.py:73
+#: exe/webui/element.py:71
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
 msgstr "HIBA Az Element.renderEdit közvetlenül hívta a %s osztályt"
 
-#: exe/webui/element.py:90
+#: exe/webui/element.py:88
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
 msgstr "HIBA Az Element.renderView közvetlenül hívta a %s osztályt"
@@ -754,7 +760,7 @@ msgstr ""
 "SIKERTELEN EXPORTÁLÁS!\n"
 "%s"
 
-#: exe/export/imsexport.py:325 exe/export/scormexport.py:440
+#: exe/export/imsexport.py:325 exe/export/scormexport.py:441
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -893,7 +899,7 @@ msgstr ""
 "Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
 "az piros \"X\"-re kattintva a válasz sorában."
 
-#: exe/engine/field.py:1075
+#: exe/engine/field.py:1296
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -903,7 +909,7 @@ msgstr ""
 "Újabb opciókat adhat hozzá az \"Új opció hozzáadása\"gombra kattintva, és törölheti \n"
 "a piros \"X\"-re kattintva a válasz sorában."
 
-#: exe/engine/idevicestore.py:308 exe/engine/idevicestore.py:416
+#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
@@ -944,7 +950,7 @@ msgstr ""
 "Írja be a kérdést! \n"
 "Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a kétértelmű fogylmazást!"
 
-#: exe/engine/field.py:1067
+#: exe/engine/field.py:1288
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -953,7 +959,7 @@ msgstr ""
 "Írja be a kérdést! \n"
 "Ügyeljen arra, hogy kérdése egyértelmű és világos legyen! Kerülje a kétértelmű fogalmazást!"
 
-#: exe/engine/imagewithtextidevice.py:62
+#: exe/engine/imagewithtextidevice.py:63
 msgid ""
 "Enter the text you wish to \n"
 "                                                associate with the image."
@@ -1013,13 +1019,13 @@ msgstr "Extra nagy"
 msgid "False"
 msgstr "Hamis"
 
-#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:954
-#: exe/engine/field.py:966 exe/webui/clozeblock.py:148
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
+#: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
-#: exe/webui/element.py:1867 exe/webui/editorpane.py:267
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:267
 msgid "Feedback"
 msgstr "Visszajelzés"
 
@@ -1032,7 +1038,7 @@ msgstr ""
 "ha nem írnak adatokat ebbe a mezőbe."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1084 exe/engine/field.py:1109
+#: exe/engine/field.py:1305 exe/engine/field.py:1330
 msgid "Feedback:"
 msgstr "Visszajelzés:"
 
@@ -1047,7 +1053,7 @@ msgstr "A(z) %s állomány nem létezik vagy nem olvasható."
 msgid "Filename %s is a file, cannot replace it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/webui/attachmentblock.py:80 exe/webui/element.py:865
+#: exe/webui/attachmentblock.py:80 exe/webui/element.py:722
 msgid "Filename:"
 msgstr "Állománynév:"
 
@@ -1065,7 +1071,7 @@ msgstr "Flash animáció"
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "A %s könyvtárnév már létezik. Kérem, válasszon más nevet, vagy törölje a létező könyvtárat, s próbálja újra!"
 
-#: exe/webui/externalurlblock.py:71
+#: exe/webui/externalurlblock.py:72
 msgid "Frame Height:"
 msgstr "Keret (frame) magassága"
 
@@ -1096,7 +1102,7 @@ msgstr "GeoGebra"
 msgid "German Wikipedia Article"
 msgstr "Német nyelvű Wikipédia szócikk"
 
-#: exe/webui/element.py:1214
+#: exe/webui/element.py:1073
 msgid "Get score"
 msgstr "Pontozás"
 
@@ -1124,14 +1130,14 @@ msgstr "Elrejtés"
 msgid "Hide Feedback"
 msgstr "Visszajelzés elrejtése"
 
-#: exe/webui/element.py:1119
+#: exe/webui/element.py:978
 msgid "Hide/Show Word"
 msgstr "Szó elrejtése/megjelenítése"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:992 exe/engine/field.py:1012
+#: exe/engine/field.py:1213 exe/engine/field.py:1233
 #: exe/webui/truefalseelement.py:122 exe/webui/truefalseelement.py:132
-#: exe/webui/element.py:2044
+#: exe/webui/element.py:1903
 msgid "Hint"
 msgstr "Útmutató"
 
@@ -1157,7 +1163,7 @@ msgstr "Az iDevice modul elromlott"
 msgid "Icons"
 msgstr "Ikonok"
 
-#: exe/engine/imagewithtextidevice.py:58 exe/engine/casestudyidevice.py:65
+#: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
 #: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "Kép"
@@ -1175,7 +1181,7 @@ msgstr "Nagyító"
 msgid "Image file %s is not found, cannot preview it"
 msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 
-#: exe/engine/imagewithtextidevice.py:39
+#: exe/engine/imagewithtextidevice.py:40
 msgid "Image with Text"
 msgstr "Kép szöveggel"
 
@@ -1200,7 +1206,7 @@ msgstr "Információ"
 msgid "Initial Zoom"
 msgstr "Kezdeti nagyítás"
 
-#: exe/webui/element.py:1134
+#: exe/webui/element.py:993
 msgid "Instant Marking?"
 msgstr "Azonnali értékelés?"
 
@@ -1347,12 +1353,12 @@ msgstr "Egyik sem"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:322 exe/engine/idevicestore.py:331
-#: exe/engine/idevicestore.py:428 exe/engine/idevicestore.py:437
+#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:335
+#: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:441
 msgid "Objectives"
 msgstr "Célok"
 
-#: exe/engine/idevicestore.py:325 exe/engine/idevicestore.py:431
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:435
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
@@ -1362,7 +1368,7 @@ msgstr ""
 "a tananyagegység elsajátítása után. Mire lesznek képesek, milyen készségeket fejleszt \n"
 "a tananyag"
 
-#: exe/engine/field.py:769 exe/engine/field.py:833
+#: exe/engine/field.py:990 exe/engine/field.py:1054
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
@@ -1370,7 +1376,7 @@ msgstr ""
 "Csak .flv (Flash video) fájlt válasszon \n"
 "ehhez az iDevice modulhoz."
 
-#: exe/engine/field.py:705 exe/engine/field.py:749
+#: exe/engine/field.py:926 exe/engine/field.py:970
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
@@ -1379,14 +1385,14 @@ msgstr ""
 "ehhez az iDevice modulhoz."
 
 #: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:950 exe/engine/field.py:963
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1726
-#: exe/webui/element.py:1843 exe/webui/element.py:1848
+#: exe/engine/field.py:1171 exe/engine/field.py:1184
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1585
+#: exe/webui/element.py:1702 exe/webui/element.py:1707
 msgid "Option"
 msgstr "Beállítás"
 
-#: exe/engine/field.py:1034 exe/engine/field.py:1044
-#: exe/webui/testquestionelement.py:92 exe/webui/element.py:1722
+#: exe/engine/field.py:1255 exe/engine/field.py:1265
+#: exe/webui/testquestionelement.py:92 exe/webui/element.py:1581
 msgid "Options"
 msgstr "Beállítások"
 
@@ -1428,11 +1434,11 @@ msgstr "Kérem, adjon nevet az új iDevice modulnak!"
 msgid "Please enter<br />an idevice name."
 msgstr "Kérem, adjon nevet <br />az új iDevice modulnak!"
 
-#: exe/webui/element.py:1392
+#: exe/webui/element.py:1251
 msgid "Please select a .flv file."
 msgstr "Kérem, válasszon egy .flv állományt!"
 
-#: exe/webui/element.py:916
+#: exe/webui/element.py:773
 #, fuzzy
 msgid "Please select a .jpg file."
 msgstr "Kérem, válasszon egy .flv állományt!"
@@ -1453,12 +1459,12 @@ msgstr "Lengyel nyelvű Wikipédia szócikk"
 msgid "Portugese Wikipedia Article"
 msgstr "Portugál nyelvű Wikipédia szócikk"
 
-#: exe/engine/idevicestore.py:335 exe/engine/idevicestore.py:345
-#: exe/engine/idevicestore.py:441 exe/engine/idevicestore.py:451
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:349
+#: exe/engine/idevicestore.py:445 exe/engine/idevicestore.py:455
 msgid "Preknowledge"
 msgstr "Előismeret"
 
-#: exe/engine/idevicestore.py:338 exe/engine/idevicestore.py:444
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:448
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1473,7 +1479,7 @@ msgstr ""
 "<li>        Ismerjék a klasszikus logika alapfogalmait. </li>\n"
 "<li>        A tantárgy nincs elismerethez kötve. </li></ul>\n"
 
-#: exe/webui/element.py:1535 exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:278
 msgid "Preview"
 msgstr "Előnézet"
 
@@ -1487,8 +1493,8 @@ msgstr "A %s fájlnév már létezik, az állományt nem lehet lecserélni."
 msgid "Previous"
 msgstr "Előző"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:410
-#: exe/engine/field.py:457
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:631
+#: exe/engine/field.py:678
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1520,8 +1526,8 @@ msgstr ""
 "Adjon meg egy feliratot a \n"
 "                                  beillesztett Flash animációhoz."
 
-#: exe/engine/imagewithtextidevice.py:67
-#: exe/engine/imagewithtextidevice.py:114
+#: exe/engine/imagewithtextidevice.py:68
+#: exe/engine/imagewithtextidevice.py:115
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
@@ -1558,13 +1564,13 @@ msgid "Put instructions for learners here"
 msgstr "Itt adja meg a tanulóknak szóló utasításokat!"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:989 exe/engine/field.py:1008
+#: exe/engine/field.py:1210 exe/engine/field.py:1229
 msgid "Question"
 msgstr "Kérdés"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1070 exe/engine/field.py:1106 exe/webui/element.py:1706
+#: exe/engine/field.py:1291 exe/engine/field.py:1327 exe/webui/element.py:1565
 msgid "Question:"
 msgstr "Kérdés:"
 
@@ -1585,12 +1591,12 @@ msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat!"
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "Olvasse el az alábbi bekezdést, és pótolja a hiányzó szavakat."
 
-#: exe/engine/idevicestore.py:228 exe/engine/idevicestore.py:264
+#: exe/engine/idevicestore.py:232 exe/engine/idevicestore.py:268
 #: exe/engine/genericidevice.py:198
 msgid "Reading Activity"
 msgstr "Olvasnivaló"
 
-#: exe/engine/idevicestore.py:372 exe/engine/genericidevice.py:196
+#: exe/engine/idevicestore.py:376 exe/engine/genericidevice.py:196
 msgid "Reading Activity 0.11"
 msgstr "Olvasnivaló 0.11"
 
@@ -1618,7 +1624,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "Gondolatébresztő kérdés:"
 
-#: exe/webui/element.py:1234
+#: exe/webui/element.py:1093
 msgid "Restart"
 msgstr "Újraindítás"
 
@@ -1651,7 +1657,7 @@ msgstr ""
 "SIKERTELEN MENTÉS!\n"
 "Az utolsó sikeres mentés: %s."
 
-#: exe/engine/quiztestidevice.py:187
+#: exe/engine/quiztestidevice.py:181
 msgid "SCORM Quiz"
 msgstr "SCORM Teszt"
 
@@ -1667,7 +1673,7 @@ msgstr "Mentés"
 msgid "Section"
 msgstr "Szakasz"
 
-#: exe/webui/editorelement.py:267 exe/webui/element.py:1326
+#: exe/webui/editorelement.py:267 exe/webui/element.py:1185
 msgid "Select Flash Object"
 msgstr "Válasszon egy Flash animációt"
 
@@ -1688,31 +1694,31 @@ msgid "Select MP3 file"
 msgstr "Válasszon egy MP3 állományt"
 
 #: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
-#: exe/webui/element.py:875
+#: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "Válasszon egy állományt"
 
-#: exe/webui/element.py:1408
+#: exe/webui/element.py:1267
 msgid "Select a flash video"
 msgstr "Válasszon egy Flash videót"
 
-#: exe/webui/element.py:1521
+#: exe/webui/element.py:1380
 msgid "Select a font size: "
 msgstr "Válasszon egy betűméretet:"
 
-#: exe/webui/element.py:665
+#: exe/webui/element.py:522
 msgid "Select an MP3"
 msgstr "Válasszon egy MP3-at"
 
-#: exe/webui/element.py:578
+#: exe/webui/element.py:435
 msgid "Select an image"
 msgstr "Válasszon egy képet"
 
-#: exe/webui/element.py:961
+#: exe/webui/element.py:818
 msgid "Select an image (JPG file)"
 msgstr "Válaszzon egy képet (JPG fájl)"
 
-#: exe/engine/field.py:1079
+#: exe/engine/field.py:1300
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1771,7 +1777,7 @@ msgstr "A beállítások el lettek mentve"
 msgid "Show %s Image"
 msgstr "Mutassa a %s képet"
 
-#: exe/webui/element.py:1241
+#: exe/webui/element.py:1100
 msgid "Show Answers"
 msgstr "Mutassa a válaszokat"
 
@@ -1779,11 +1785,11 @@ msgstr "Mutassa a válaszokat"
 msgid "Show Feedback"
 msgstr "Mutassa a visszajelzést"
 
-#: exe/webui/element.py:1225
+#: exe/webui/element.py:1084
 msgid "Show/Clear Answers"
 msgstr "Mutatja/Törli a válaszolat"
 
-#: exe/webui/element.py:1220
+#: exe/webui/element.py:1079
 msgid "Show/Hide Feedback"
 msgstr "Mutatja/Elrejti a visszajelzést"
 
@@ -1834,15 +1840,15 @@ msgstr "Spanyol nyelvű Wikipédia szócikk"
 msgid "Story:"
 msgstr "Történet:"
 
-#: exe/webui/element.py:1124
+#: exe/webui/element.py:983
 msgid "Strict Marking?"
 msgstr "Pontos értékelés?"
 
-#: exe/webui/element.py:1229 exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:436
 msgid "Submit"
 msgstr "Elküld"
 
-#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1776
+#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1635
 msgid "Submit Answer"
 msgstr "Válasz elküldése"
 
@@ -1850,11 +1856,11 @@ msgstr "Válasz elküldése"
 msgid "Swedish Wikipedia Article"
 msgstr "Svéd nyelvű Wikipédia szócikk"
 
-#: exe/engine/idevicestore.py:380
+#: exe/engine/idevicestore.py:384
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
 msgstr "A tanároknak észben kellene tartaniuk a következőt mikor használja ezt az iDevice modult:  <ol><li>Gondoljon arra a tananyagegység tevékenységeinek tervezésekor, hogy vizuálisan is jelölje a tartalmat. Kerülje a túl sok különböző típusú vagy besorolású tevékenység használatát, mert a tanulókat megzavarhatja. Általában három négy különböző típus több, mint megfelelő egy tananyagegységen belül .</li><li>A vizuális megjelenés tervezése során kerülje, hogy közvetlenül egymás után két iDevice kövesse egymást szöveges elválasztás nélkül. Ha ez mégis előfordul, fontolja meg, hogan lehet egyetlen iDevice modullal megoldani ugyanazt! </li><li>Gondolja végig, hogy a különböző esetekben melyik modul lehet hatékonyabb, melyik milyen előnyoket kínál, melyik nyújt többet. </li></ol>"
 
-#: exe/engine/imagewithtextidevice.py:61
+#: exe/engine/imagewithtextidevice.py:62
 #: exe/engine/imagemagnifieridevice.py:53 exe/engine/multimediaidevice.py:64
 msgid "Text"
 msgstr "Szöveg"
@@ -2048,7 +2054,7 @@ msgstr ""
 "hogy igaz-e. Ez a kérdéstrípus jól használható tényszerű információk esetében, \n"
 "amikor a válasz vagy-vagy alapon dől el."
 
-#: exe/engine/field.py:845
+#: exe/engine/field.py:1066
 msgid "Type a discussion topic here."
 msgstr "Írja be a megbeszélés témáját!"
 
@@ -2080,13 +2086,13 @@ msgstr ""
 "válasz\", ha a helyes válasz lett kiválasztva; vagy \"Helytelen válasz\",\n"
 "ha mást választott a tanuló."
 
-#: exe/engine/field.py:1082
+#: exe/engine/field.py:1303
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
 msgstr "Írjon a tanulók számára egy visszajelzés!"
 
-#: exe/engine/idevicestore.py:332 exe/engine/idevicestore.py:438
+#: exe/engine/idevicestore.py:336 exe/engine/idevicestore.py:442
 msgid "Type the learning objectives for this resource."
 msgstr "Gépelje be a tananyagegységhez tartozó oktatási célokat!"
 
@@ -2100,7 +2106,7 @@ msgstr ""
 "legyen világos és egyértelmű. Kerülje a negatív feltételeket, \n"
 "mert kétértelműek lehetnek."
 
-#: exe/webui/externalurlblock.py:60
+#: exe/webui/externalurlblock.py:61
 msgid "URL:"
 msgstr "URL:"
 
@@ -2113,22 +2119,22 @@ msgstr "Nnem képes letölteni a %s-t <br/>Kérem ellenőrízze, hogy helyesen �
 msgid "Unit"
 msgstr "Egység"
 
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:40
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:41
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
-#: exe/engine/idevicestore.py:266 exe/engine/idevicestore.py:324
-#: exe/engine/idevicestore.py:352 exe/engine/idevicestore.py:374
-#: exe/engine/idevicestore.py:430 exe/engine/idevicestore.py:458
+#: exe/engine/idevicestore.py:270 exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:356 exe/engine/idevicestore.py:378
+#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:462
 #: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
 #: exe/engine/attachmentidevice.py:43 exe/engine/multichoiceidevice.py:58
 #: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:52
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:188
+#: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:182
 #: exe/engine/casestudyidevice.py:93 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "Aucklandi Egyetem"
 
-#: exe/engine/quiztestidevice.py:189
+#: exe/engine/quiztestidevice.py:183
 msgid ""
 "Unlike the MCQ the SCORM quiz is used to test \n"
 "the learners knowledge on a topic without providing the learner with feedback \n"
@@ -2146,7 +2152,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Feltöltés"
 
-#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
+#: exe/engine/idevicestore.py:320 exe/engine/idevicestore.py:428
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2179,7 +2185,7 @@ msgstr ""
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr "Ezt a legördülő menüt használhatja arra, hogy a modul megjelenését. Ha meg szeretné különböztetni a modult a környezetéstől, válassza a \"Kiemelés\" opciót. Ilyenkor a modult ikonnal azonosítja, s keretben jelenik meg."
 
-#: exe/engine/idevicestore.py:307 exe/engine/idevicestore.py:415
+#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:419
 msgid "What to read"
 msgstr "Amit olvasnia kell"
 
@@ -2227,7 +2233,7 @@ msgstr "Wikiversity"
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: exe/webui/element.py:1919
+#: exe/webui/element.py:1778
 msgid "Wrong"
 msgstr "Rossz"
 
@@ -2243,7 +2249,7 @@ msgstr "Az Ön új iDevice modulja ezzel a névvel fog megjelenni az iDevice pan
 msgid "article "
 msgstr "cikk"
 
-#: exe/webui/element.py:595 exe/webui/element.py:983
+#: exe/webui/element.py:452 exe/webui/element.py:840
 msgid "blank for original size"
 msgstr "Hagyja üresen, ha a képet az eredeti méretben akarja megjeleníteni."
 
@@ -2276,7 +2282,7 @@ msgstr "iDeice %s nincs csomag"
 
 # exe/xului/templates/mainpage.xul:<menuitem
 # n:render="translate"
-#: exe/engine/package.py:370
+#: exe/engine/package.py:372
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2302,11 +2308,11 @@ msgstr "kulcskód"
 msgid "label"
 msgstr "címke"
 
-#: exe/webui/element.py:1518
+#: exe/webui/element.py:1377
 msgid "newline"
 msgstr "új sor"
 
-#: exe/webui/element.py:1517
+#: exe/webui/element.py:1376
 msgid "text"
 msgstr "szöveg"
 
