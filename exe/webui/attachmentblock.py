@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,8 +24,8 @@ AttachmentBlock can render and process AttachmentIdevices as XHTML
 import os.path
 from exe.webui.block   import Block
 from exe.webui         import common
-from exe.webui.element             import TextAreaElement
-
+from exe.webui.element import TextAreaElement
+from exe               import globals as G
 
 import logging
 log = logging.getLogger(__name__)
@@ -118,9 +119,12 @@ class AttachmentBlock(Block):
 
         if self.idevice.userResources:
             html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
-            html += u" onclick=\"window.open('resources/"
+            html += u" onclick=\"window.parent.browseURL('"
+            html += u"http://127.0.0.1:%d/" % (G.application.config.port)
+            html += self.package.name
+            html += u"/resources/"
             html += self.idevice.userResources[0].storageName
-            html += u"', '_blank');\" >"
+            html += u"');\" >"
             html += self.idevice.label
             html += u"</a>\n"
 
