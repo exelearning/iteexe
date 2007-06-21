@@ -84,9 +84,6 @@ class EditorPane(object):
         self._textBoxInstruc  = x_(u"Add a text entry box to an iDevice. "
                                  u"Used for entering larger amounts of textual "
                                  u"content.")
-        self._imageInstruc    = x_(u"Add an image to your iDevice. Enables "
-                                 u"the user to insert an image into the  "
-                                 u"iDevice.")
         self._feedbackInstruc = x_(u"Add an interactive feedback field to your iDevice.")
         self._flashInstruc    = x_(u"Add a flash video to your iDevice.")
         self._mp3Instruc      = x_(u"Add an mp3 file to your iDevice.")
@@ -103,7 +100,6 @@ class EditorPane(object):
     tipInstruc      = lateTranslate('tipInstruc')
     lineInstruc     = lateTranslate('lineInstruc')
     textBoxInstruc  = lateTranslate('textBoxInstruc')
-    imageInstruc    = lateTranslate('imageInstruc')
     feedbackInstruc = lateTranslate('feedbackInstruc')
     flashInstruc    = lateTranslate('flashInstruc')
     mp3Instruc      = lateTranslate('mp3Instruc')
@@ -152,16 +148,6 @@ class EditorPane(object):
         if "addTextArea" in request.args:
             field = TextAreaField(_(u"Enter the label here"), 
                  _(u"Enter the instructions for completion here"))
-            field.setIDevice(self.idevice)
-            self.idevice.addField(field)
-            self.idevice.edit = True
-           
-                
-        if "addImage" in request.args:
-            field = ImageField(_(u"Enter the label here"),
-                               _(u"Enter the instructions for completion here"))
-            imagePath = self.webDir/"images"/ImageEditorElement.DefaultImage
-            field.defaultImage = unicode(imagePath.abspath())
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
             self.idevice.edit = True
@@ -262,8 +248,6 @@ data is entered into this field."""))
         html += common.elementInstruc(self.lineInstruc) + "<br/>"
         html += common.submitButton("addTextArea", _("Text Box"))
         html += common.elementInstruc(self.textBoxInstruc) + "<br/>"
-        html += common.submitButton("addImage", _("Image"))  
-        html += common.elementInstruc(self.imageInstruc) + "<br/>"
         html += common.submitButton("addFeedback", _("Feedback"))
         html += common.elementInstruc(self.feedbackInstruc) + "<br/>"
         html += common.submitButton("addAttachment", _("Attachment"))
