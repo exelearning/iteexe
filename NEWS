@@ -1,9 +1,20 @@
+Next Release
+* Display warning when user tries to close main eXe window
 * Add ability to embed images in text areas with TinyMCE
+* Remove Image With Text iDevice, migrates to Free Text iDevice
+* Remove image field from iDevice editor
 * Java applet, SCORM Quiz, and Flash Movie are now regular iDevices not plugins
+* Opening attachments in preview mode now uses preferred browser
+* Add FTP to possible external web sites
 * Fix position of iDevice edit button for SCORM Quiz
 * Fix include content package schemas in RPM/DPKG packages
 * Fix gallery slideshow to include caption for last image
 * Fix gallery iDevice so it doesn't require clicking done check to register
+* Fix iDevice editor display in French
+* Fix packaging of CP and SCORM schemas in RPM and DPKG
+* Workaround French Wikipedia parsing of &#160; in attributes
+* Translation updates, including addition of Catalan
+* Update to BeautifulSoup 3.0.4
 
 Version 0.24 (r2857)
 * Rewrite anchor tags in textareas when in preview mode to use local browser
