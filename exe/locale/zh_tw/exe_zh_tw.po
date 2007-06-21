@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 22:18+1200\n"
+"POT-Creation-Date: 2007-06-22 21:01+1200\n"
 "PO-Revision-Date: 2006-07-31 14:47+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -192,7 +192,7 @@ msgid ""
 "learner in answering the question."
 msgstr "可提供提示來輔助學生回答問題。"
 
-#: exe/webui/editorpane.py:275
+#: exe/webui/editorpane.py:259
 msgid "Actions"
 msgstr "動作"
 
@@ -203,7 +203,7 @@ msgstr "動作"
 msgid "Activity"
 msgstr "學習作用中"
 
-#: exe/webui/editorpane.py:260
+#: exe/webui/editorpane.py:246
 #, fuzzy
 msgid "Add Field"
 msgstr "加入文件"
@@ -219,7 +219,7 @@ msgstr "加入圖片"
 msgid "Add JPEG Image"
 msgstr "加入JPEG圖片"
 
-#: exe/webui/editorpane.py:91
+#: exe/webui/editorpane.py:88
 #, fuzzy
 msgid "Add a flash video to your iDevice."
 msgstr "加入互動式評語。"
@@ -241,22 +241,17 @@ msgid ""
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr "載入除.txt文件外所有的applet文件。使用\"加入文件\"和\"上傳\"按鈕,一次載入一個文件。已上傳的文件將顯示在Applet code欄欄位下面。"
 
-#: exe/webui/editorpane.py:93
+#: exe/webui/editorpane.py:90
 #, fuzzy
 msgid "Add an attachment file to your iDevice."
 msgstr "加入互動式評語。"
 
 #: exe/webui/editorpane.py:87
 #, fuzzy
-msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr "加入圖片，可從您的圖像函式庫中選出。"
-
-#: exe/webui/editorpane.py:90
-#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
 msgstr "加入互動式評語。"
 
-#: exe/webui/editorpane.py:92
+#: exe/webui/editorpane.py:89
 #, fuzzy
 msgid "Add an mp3 file to your iDevice."
 msgstr "加入互動式評語。"
@@ -363,7 +358,7 @@ msgstr "Applet Code:"
 msgid "Article"
 msgstr "文章"
 
-#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:269
+#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "附屬應用程式"
 
@@ -380,7 +375,7 @@ msgstr ""
 msgid "Button Caption"
 msgstr "按鈕標籤:"
 
-#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:283
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:267
 msgid "Cancel"
 msgstr "取消"
 
@@ -474,8 +469,8 @@ msgstr "點擊\"加入圖片\"按鈕來選擇圖片文件.所選圖片將顯示�
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
 #: exe/webui/element.py:1899 exe/webui/element.py:1900
-#: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
-#: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
+#: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
+#: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -681,13 +676,13 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/webui/block.py:328 exe/webui/editorpane.py:280
+#: exe/webui/block.py:328 exe/webui/editorpane.py:264
 #: exe/webui/editorpage.py:266
 msgid "Edit"
 msgstr "編輯"
 
 #: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
-#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:344
+#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:328
 msgid "Emphasis"
 msgstr "強調"
 
@@ -711,7 +706,7 @@ msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此輸入提示，如果您不想提供提示，就讓此欄空白。"
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:236
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:245
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -758,7 +753,7 @@ msgstr "用評語欄輸入評語提供給學生。此欄可空白。"
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "用評語欄輸入評語提供給學生。此欄可空白。"
 
-#: exe/webui/editorpane.py:147
+#: exe/webui/editorpane.py:143
 msgid "Enter instructions for completion here"
 msgstr "在此輸入完成說明"
 
@@ -797,14 +792,14 @@ msgid ""
 "The width and height dimensions will alter proportionally."
 msgstr "輸入顯示flash的尺寸並選擇向哪邊對齊。flash的長和寬會按比例自動調節。"
 
-#: exe/webui/editorpane.py:154 exe/webui/editorpane.py:162
-#: exe/webui/editorpane.py:188 exe/webui/editorpane.py:198
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
+#: exe/webui/editorpane.py:184
 msgid "Enter the instructions for completion here"
 msgstr "在此輸入完成說明"
 
-#: exe/webui/editorpane.py:146 exe/webui/editorpane.py:153
-#: exe/webui/editorpane.py:161 exe/webui/editorpane.py:171
-#: exe/webui/editorpane.py:187 exe/webui/editorpane.py:197
+#: exe/webui/editorpane.py:142 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:157 exe/webui/editorpane.py:173
+#: exe/webui/editorpane.py:183
 msgid "Enter the label here"
 msgstr "在此輸入標題"
 
@@ -884,11 +879,11 @@ msgstr "錯"
 #: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
 #: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
-#: exe/webui/element.py:1726 exe/webui/editorpane.py:267
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "評語"
 
-#: exe/webui/editorpane.py:172
+#: exe/webui/editorpane.py:158
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
@@ -914,7 +909,7 @@ msgstr "檔案名稱%s是個文件，無法覆寫它"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/attachmentblock.py:80 exe/webui/element.py:722
+#: exe/webui/attachmentblock.py:81 exe/webui/element.py:722
 #, fuzzy
 msgid "Filename:"
 msgstr "檔案名稱"
@@ -1029,12 +1024,11 @@ msgstr "IDevice問題圖示"
 msgid "IDevice broken"
 msgstr "iDevice 圖示"
 
-#: exe/webui/editorpane.py:375
+#: exe/webui/editorpane.py:359
 msgid "Icons"
 msgstr "圖示"
 
 #: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
-#: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "圖像"
 
@@ -1067,7 +1061,7 @@ msgstr "不正確!"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
-#: exe/webui/editorpane.py:389
+#: exe/webui/editorpane.py:373
 msgid "Info"
 msgstr "資訊"
 
@@ -1108,7 +1102,7 @@ msgstr "日文Wikipedia 文章"
 msgid "Java Applet"
 msgstr "Java Applet"
 
-#: exe/webui/attachmentblock.py:97
+#: exe/webui/attachmentblock.py:98
 #, fuzzy
 msgid "Label:"
 msgstr "標籤"
@@ -1132,7 +1126,7 @@ msgstr "This article is licensed under the "
 msgid "Load"
 msgstr "載入"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:271
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:255
 msgid "MP3"
 msgstr ""
 
@@ -1179,7 +1173,7 @@ msgstr "選擇題"
 msgid "Multi-select"
 msgstr ""
 
-#: exe/webui/editorpane.py:337
+#: exe/webui/editorpane.py:321
 msgid "Name"
 msgstr "名稱"
 
@@ -1209,7 +1203,7 @@ msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "No Thumbnail Available。Could not shrink image。"
 
 #: exe/webui/wikipediablock.py:130 exe/webui/multimediablock.py:91
-#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:347
+#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:331
 msgid "No emphasis"
 msgstr "不強調"
 
@@ -1287,11 +1281,11 @@ msgstr "教材存至: %s"
 msgid "Package saved to: %s"
 msgstr "教材存至: %s"
 
-#: exe/webui/block.py:236 exe/webui/editorpane.py:385
+#: exe/webui/block.py:236 exe/webui/editorpane.py:369
 msgid "Pedagogical Help"
 msgstr "教學輔助"
 
-#: exe/webui/editorpane.py:341
+#: exe/webui/editorpane.py:325
 msgid "Pedagogical Tip"
 msgstr "教學提示"
 
@@ -1299,7 +1293,7 @@ msgstr "教學提示"
 msgid "Please enter an idevice name."
 msgstr "請填入iDevice名稱。"
 
-#: exe/webui/editorpane.py:209
+#: exe/webui/editorpane.py:195
 #, fuzzy
 msgid "Please enter<br />an idevice name."
 msgstr "請填入iDevice名稱。"
@@ -1344,7 +1338,7 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr "預備知識是指學生為完成此課所應具備的知識.\n"
 
-#: exe/webui/element.py:1394 exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "預覽"
 
@@ -1539,7 +1533,7 @@ msgstr "選擇語言"
 msgid "Select MP3 file"
 msgstr "選擇文件"
 
-#: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
+#: exe/webui/attachmentblock.py:94 exe/webui/editorelement.py:362
 #: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "選擇文件"
@@ -1577,7 +1571,7 @@ msgstr "點擊選項旁的點選鈕來選擇正確選項。"
 msgid "Select pass rate: "
 msgstr "選擇及格線"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:234
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:243
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1651,7 +1645,7 @@ msgid "Small"
 msgstr "小"
 
 #: exe/webui/wikipediablock.py:131 exe/webui/multimediablock.py:92
-#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:348
+#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:332
 msgid "Some emphasis"
 msgstr "一般強調"
 
@@ -1685,7 +1679,7 @@ msgstr "事件:"
 msgid "Strict Marking?"
 msgstr "嚴格評分?"
 
-#: exe/webui/element.py:1088 exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "提交"
 
@@ -1706,11 +1700,11 @@ msgstr ""
 msgid "Text"
 msgstr "文字"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "多列文字"
 
-#: exe/webui/editorpane.py:261
+#: exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "單列文字"
 
@@ -1898,7 +1892,7 @@ msgstr "輸入問題。問題的陳述應是清楚而不含糊的。"
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:118
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
@@ -2049,7 +2043,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:188
+#: exe/engine/wikipediaidevice.py:197
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -4970,6 +4964,10 @@ msgstr "權限:"
 #: exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
+#~ msgstr "加入圖片，可從您的圖像函式庫中選出。"
 
 #~ msgid "A single simple discussion"
 #~ msgstr "限每人發表一篇文章的討論區"

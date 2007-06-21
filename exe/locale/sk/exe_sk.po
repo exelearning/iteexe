@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 22:18+1200\n"
+"POT-Creation-Date: 2007-06-22 21:01+1200\n"
 "PO-Revision-Date: 2007-03-26 14:18+1200\n"
 "Last-Translator: \n"
 "Language-Team: Slovak <rhorvath@truni.sk>\n"
@@ -195,7 +195,7 @@ msgstr ""
 "Na pomoc môže byť žiakovi poskytnutý \n"
 "tip, ako odpovedať na otázku."
 
-#: exe/webui/editorpane.py:275
+#: exe/webui/editorpane.py:259
 msgid "Actions"
 msgstr "Akcie"
 
@@ -206,7 +206,7 @@ msgstr "Akcie"
 msgid "Activity"
 msgstr "Aktivity"
 
-#: exe/webui/editorpane.py:260
+#: exe/webui/editorpane.py:246
 #, fuzzy
 msgid "Add Field"
 msgstr "Pridať súbory"
@@ -219,7 +219,7 @@ msgstr "Pridať obrázok"
 msgid "Add JPEG Image"
 msgstr "Pridať obrázok JPEG"
 
-#: exe/webui/editorpane.py:91
+#: exe/webui/editorpane.py:88
 #, fuzzy
 msgid "Add a flash video to your iDevice."
 msgstr "Pridať interaktívnu spätnú väzbu do prostriedku iDevice."
@@ -241,22 +241,17 @@ msgid ""
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
 
-#: exe/webui/editorpane.py:93
+#: exe/webui/editorpane.py:90
 #, fuzzy
 msgid "Add an attachment file to your iDevice."
 msgstr "Pridať interaktívnu spätnú väzbu do prostriedku iDevice."
 
 #: exe/webui/editorpane.py:87
 #, fuzzy
-msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr "Pridá do prostriedku iDevice obrázok. Umožní výber súboru obrázka z vašich rezerv."
-
-#: exe/webui/editorpane.py:90
-#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
 msgstr "Pridať interaktívnu spätnú väzbu do prostriedku iDevice."
 
-#: exe/webui/editorpane.py:92
+#: exe/webui/editorpane.py:89
 #, fuzzy
 msgid "Add an mp3 file to your iDevice."
 msgstr "Pridať interaktívnu spätnú väzbu do prostriedku iDevice."
@@ -372,7 +367,7 @@ msgstr "Kód Applet-u:"
 msgid "Article"
 msgstr "Článok"
 
-#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:269
+#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "Príloha"
 
@@ -389,7 +384,7 @@ msgstr ""
 msgid "Button Caption"
 msgstr "Nadpis tlačidla"
 
-#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:283
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:267
 msgid "Cancel"
 msgstr "Zrušiť"
 
@@ -488,8 +483,8 @@ msgstr ""
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
 #: exe/webui/element.py:1899 exe/webui/element.py:1900
-#: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
-#: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
+#: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
+#: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -691,13 +686,13 @@ msgid ""
 "%s"
 msgstr ""
 
-#: exe/webui/block.py:328 exe/webui/editorpane.py:280
+#: exe/webui/block.py:328 exe/webui/editorpane.py:264
 #: exe/webui/editorpage.py:266
 msgid "Edit"
 msgstr "Upraviť"
 
 #: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
-#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:344
+#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:328
 msgid "Emphasis"
 msgstr "Zvýraznenie"
 
@@ -725,7 +720,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Sem vložte tip. Ak nechcete tip poskytnúť, nechajte toto pole prázdne."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:236
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:245
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -782,7 +777,7 @@ msgstr ""
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "Vložte spätnú väzbu, ktorú si želáte poskytnúť, do poľa «spätná väzba». Toto pole môže zostať prázdne."
 
-#: exe/webui/editorpane.py:147
+#: exe/webui/editorpane.py:143
 msgid "Enter instructions for completion here"
 msgstr "Sem vložte pokyny pre vyplnenie"
 
@@ -822,14 +817,14 @@ msgid ""
 "The width and height dimensions will alter proportionally."
 msgstr ""
 
-#: exe/webui/editorpane.py:154 exe/webui/editorpane.py:162
-#: exe/webui/editorpane.py:188 exe/webui/editorpane.py:198
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
+#: exe/webui/editorpane.py:184
 msgid "Enter the instructions for completion here"
 msgstr "Sem vložte pokyny pre vyplnenie "
 
-#: exe/webui/editorpane.py:146 exe/webui/editorpane.py:153
-#: exe/webui/editorpane.py:161 exe/webui/editorpane.py:171
-#: exe/webui/editorpane.py:187 exe/webui/editorpane.py:197
+#: exe/webui/editorpane.py:142 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:157 exe/webui/editorpane.py:173
+#: exe/webui/editorpane.py:183
 msgid "Enter the label here"
 msgstr "Sem vložte menovku "
 
@@ -914,11 +909,11 @@ msgstr "Lož"
 #: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
 #: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
-#: exe/webui/element.py:1726 exe/webui/editorpane.py:267
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Spätná väzba"
 
-#: exe/webui/editorpane.py:172
+#: exe/webui/editorpane.py:158
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
@@ -940,7 +935,7 @@ msgstr ""
 msgid "Filename %s is a file, cannot replace it"
 msgstr ""
 
-#: exe/webui/attachmentblock.py:80 exe/webui/element.py:722
+#: exe/webui/attachmentblock.py:81 exe/webui/element.py:722
 #, fuzzy
 msgid "Filename:"
 msgstr "Premenovať"
@@ -1049,12 +1044,11 @@ msgstr "Ikona otáznika pros. iDevice"
 msgid "IDevice broken"
 msgstr "Ikona prostriedku iDevice"
 
-#: exe/webui/editorpane.py:375
+#: exe/webui/editorpane.py:359
 msgid "Icons"
 msgstr "Ikony"
 
 #: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
-#: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "Obrázok"
 
@@ -1084,7 +1078,7 @@ msgstr "Prostriedky iDevice"
 msgid "Incorrect!"
 msgstr "Nesprávne!"
 
-#: exe/webui/editorpane.py:389
+#: exe/webui/editorpane.py:373
 msgid "Info"
 msgstr "Informácia"
 
@@ -1125,7 +1119,7 @@ msgstr "Japonský článok vo formáte Wikipedia"
 msgid "Java Applet"
 msgstr "Java Applet"
 
-#: exe/webui/attachmentblock.py:97
+#: exe/webui/attachmentblock.py:98
 #, fuzzy
 msgid "Label:"
 msgstr "Menovka"
@@ -1149,7 +1143,7 @@ msgstr "Tento článok spadá pod licenciu "
 msgid "Load"
 msgstr "Nahrať"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:271
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:255
 msgid "MP3"
 msgstr ""
 
@@ -1196,7 +1190,7 @@ msgstr "Otázka „Viacnásobná voľba“"
 msgid "Multi-select"
 msgstr ""
 
-#: exe/webui/editorpane.py:337
+#: exe/webui/editorpane.py:321
 msgid "Name"
 msgstr "Meno"
 
@@ -1226,7 +1220,7 @@ msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Ukážka nedostupná. Nebolo možné zmenšiť originálny obrázok."
 
 #: exe/webui/wikipediablock.py:130 exe/webui/multimediablock.py:91
-#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:347
+#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:331
 msgid "No emphasis"
 msgstr "Žiadne zvýraznenie"
 
@@ -1309,11 +1303,11 @@ msgstr "Balík uložený do: %s"
 msgid "Package saved to: %s"
 msgstr "Balík uložený do: %s"
 
-#: exe/webui/block.py:236 exe/webui/editorpane.py:385
+#: exe/webui/block.py:236 exe/webui/editorpane.py:369
 msgid "Pedagogical Help"
 msgstr "Pedagogický pomocník"
 
-#: exe/webui/editorpane.py:341
+#: exe/webui/editorpane.py:325
 msgid "Pedagogical Tip"
 msgstr "Pedagogický tip"
 
@@ -1321,7 +1315,7 @@ msgstr "Pedagogický tip"
 msgid "Please enter an idevice name."
 msgstr "Prosím, vložte názov prostriedku iDevice."
 
-#: exe/webui/editorpane.py:209
+#: exe/webui/editorpane.py:195
 #, fuzzy
 msgid "Please enter<br />an idevice name."
 msgstr "Prosím, vložte názov prostriedku iDevice."
@@ -1366,7 +1360,7 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr ""
 
-#: exe/webui/element.py:1394 exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "Ukážka"
 
@@ -1571,7 +1565,7 @@ msgstr "Zvoľte jazyk"
 msgid "Select MP3 file"
 msgstr "Vyberte súbor"
 
-#: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
+#: exe/webui/attachmentblock.py:94 exe/webui/editorelement.py:362
 #: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "Vyberte súbor"
@@ -1608,7 +1602,7 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "Zvoľte hranicu úspešnosti:"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:234
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:243
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1688,7 +1682,7 @@ msgid "Small"
 msgstr "Malý"
 
 #: exe/webui/wikipediablock.py:131 exe/webui/multimediablock.py:92
-#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:348
+#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:332
 msgid "Some emphasis"
 msgstr "Nejaké zvýraznenie"
 
@@ -1722,7 +1716,7 @@ msgstr "Príbeh: "
 msgid "Strict Marking?"
 msgstr "Presne dodržať označenie?"
 
-#: exe/webui/element.py:1088 exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "Potvrdiť"
 
@@ -1743,11 +1737,11 @@ msgstr ""
 msgid "Text"
 msgstr "Text"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "Textové pole"
 
-#: exe/webui/editorpane.py:261
+#: exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "Riadok textu"
 
@@ -1943,7 +1937,7 @@ msgstr ""
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:118
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr ""
@@ -2086,7 +2080,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "súbor %s nemá „parentNode“ (rodičovský uzol)"
 
-#: exe/engine/wikipediaidevice.py:188
+#: exe/engine/wikipediaidevice.py:197
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -4843,6 +4837,10 @@ msgstr "Práva: "
 #: exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
+#~ msgstr "Pridá do prostriedku iDevice obrázok. Umožní výber súboru obrázka z vašich rezerv."
 
 #~ msgid "A single simple discussion"
 #~ msgstr "Jednoduchá diskusia"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EXE Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 22:18+1200\n"
+"POT-Creation-Date: 2007-06-22 21:01+1200\n"
 "PO-Revision-Date: 2007-06-08 16:37+1200\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -204,7 +204,7 @@ msgid ""
 "learner in answering the question."
 msgstr "Un indice ou un conseil peut être donné à l'apprenant pour l'aider à répondre à la question posée."
 
-#: exe/webui/editorpane.py:275
+#: exe/webui/editorpane.py:259
 msgid "Actions"
 msgstr "Actions"
 
@@ -215,7 +215,7 @@ msgstr "Actions"
 msgid "Activity"
 msgstr "Activité"
 
-#: exe/webui/editorpane.py:260
+#: exe/webui/editorpane.py:246
 msgid "Add Field"
 msgstr "Ajouter un champ"
 
@@ -227,7 +227,7 @@ msgstr "Ajouter une image"
 msgid "Add JPEG Image"
 msgstr "Ajouter une image au format jpeg"
 
-#: exe/webui/editorpane.py:91
+#: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
 msgstr "Ajouter un une vidéo flash à votre outil"
 
@@ -248,20 +248,16 @@ msgstr ""
 "Ajouter tous les fichiers de l'applet\n"
 " sauf le .txt les uns après les autres en utilisant les boutons \"ajouter fichiers\" et \"télécharger\".Les fichiers, une fois chargés, seront ouverts et le contenu inséré dans le champ prévu pour le code de l'Applet."
 
-#: exe/webui/editorpane.py:93
+#: exe/webui/editorpane.py:90
 #, fuzzy
 msgid "Add an attachment file to your iDevice."
 msgstr "Ajouter un fichier mp3 à votre outil"
 
 #: exe/webui/editorpane.py:87
-msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr "Ajouter une image à votre outil pédagogique. Permet à l'utilisateur d'insérer une image au sein de l'outil"
-
-#: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
 msgstr "Ajouter un \"écho en retour\" interactif à votre outil"
 
-#: exe/webui/editorpane.py:92
+#: exe/webui/editorpane.py:89
 msgid "Add an mp3 file to your iDevice."
 msgstr "Ajouter un fichier mp3 à votre outil"
 
@@ -374,7 +370,7 @@ msgstr "Type de l'applet:"
 msgid "Article"
 msgstr "Article"
 
-#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:269
+#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "fichier attaché"
 
@@ -391,7 +387,7 @@ msgstr "Université de Technologie d'Auckland"
 msgid "Button Caption"
 msgstr "bouton de légende"
 
-#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:283
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:267
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -483,8 +479,8 @@ msgstr "Clicquer sur le bouton \"Ajouter l' image\" afin de sélectionner le fic
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
 #: exe/webui/element.py:1899 exe/webui/element.py:1900
-#: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
-#: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
+#: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
+#: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -690,13 +686,13 @@ msgstr ""
 "L'EXTRACTION A ECHOUE!\n"
 "%s"
 
-#: exe/webui/block.py:328 exe/webui/editorpane.py:280
+#: exe/webui/block.py:328 exe/webui/editorpane.py:264
 #: exe/webui/editorpage.py:266
 msgid "Edit"
 msgstr "Editer"
 
 #: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
-#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:344
+#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:328
 msgid "Emphasis"
 msgstr "Importance"
 
@@ -724,7 +720,7 @@ msgstr ""
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "Rédigez ici une indication. Si vous ne voulez pas donner d'indice, laissez ce champ en blanc."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:236
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:245
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -773,7 +769,7 @@ msgstr "Rédigez tout \"écho en retour\" que vous souhaitez donner à l'apprena
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "Rédigez tout \"écho en retour\" que vous souhaitez donner à l'apprenant au sein du champ \"écho\". Ce champ peut être laissé vide."
 
-#: exe/webui/editorpane.py:147
+#: exe/webui/editorpane.py:143
 msgid "Enter instructions for completion here"
 msgstr "Rédigez ici les consignes de réalisation"
 
@@ -817,14 +813,14 @@ msgstr ""
 "Donnez les dimensions (en pixels) de la fenêtre d'édition de votre document Flash et déterminez sa mise en page à l'écran.\n"
 " La largeur et la hauteur de la fenêtre d'édition se redimensionneront proportionnellement."
 
-#: exe/webui/editorpane.py:154 exe/webui/editorpane.py:162
-#: exe/webui/editorpane.py:188 exe/webui/editorpane.py:198
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
+#: exe/webui/editorpane.py:184
 msgid "Enter the instructions for completion here"
 msgstr "Rédigez ici les consignes de réalisation"
 
-#: exe/webui/editorpane.py:146 exe/webui/editorpane.py:153
-#: exe/webui/editorpane.py:161 exe/webui/editorpane.py:171
-#: exe/webui/editorpane.py:187 exe/webui/editorpane.py:197
+#: exe/webui/editorpane.py:142 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:157 exe/webui/editorpane.py:173
+#: exe/webui/editorpane.py:183
 msgid "Enter the label here"
 msgstr "Rédigez ici la légende"
 
@@ -903,11 +899,11 @@ msgstr "Faux"
 #: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
 #: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
-#: exe/webui/element.py:1726 exe/webui/editorpane.py:267
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "\"Echo en retour\""
 
-#: exe/webui/editorpane.py:172
+#: exe/webui/editorpane.py:158
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
@@ -929,7 +925,7 @@ msgstr "Le fichier %s n'existe pas ou n'est pas lisible."
 msgid "Filename %s is a file, cannot replace it"
 msgstr "le nom de fichier %s est un fichier, et ne peut être remplacé."
 
-#: exe/webui/attachmentblock.py:80 exe/webui/element.py:722
+#: exe/webui/attachmentblock.py:81 exe/webui/element.py:722
 msgid "Filename:"
 msgstr "Nom de fichier:"
 
@@ -1034,12 +1030,11 @@ msgstr "Icône de l'outil pédagogique Question"
 msgid "IDevice broken"
 msgstr "Outil pédagogique corrompu"
 
-#: exe/webui/editorpane.py:375
+#: exe/webui/editorpane.py:359
 msgid "Icons"
 msgstr "Icônes"
 
 #: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
-#: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "Image"
 
@@ -1069,7 +1064,7 @@ msgstr "Importation d'outils pédagogiques"
 msgid "Incorrect!"
 msgstr "Incorrect !"
 
-#: exe/webui/editorpane.py:389
+#: exe/webui/editorpane.py:373
 msgid "Info"
 msgstr "Info"
 
@@ -1110,7 +1105,7 @@ msgstr "Article de l'encyclopédie Wikipédia en japonais"
 msgid "Java Applet"
 msgstr "Applet Java"
 
-#: exe/webui/attachmentblock.py:97
+#: exe/webui/attachmentblock.py:98
 msgid "Label:"
 msgstr "Légende:"
 
@@ -1132,7 +1127,7 @@ msgstr "Régi pour les droits associés par la licence"
 msgid "Load"
 msgstr "Charger"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:271
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:255
 msgid "MP3"
 msgstr "MP3"
 
@@ -1177,7 +1172,7 @@ msgstr "Choix Multiple "
 msgid "Multi-select"
 msgstr "Sélection multiple"
 
-#: exe/webui/editorpane.py:337
+#: exe/webui/editorpane.py:321
 msgid "Name"
 msgstr "Nom"
 
@@ -1207,7 +1202,7 @@ msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Aucune description disponible. L'image d'origine ne peut être réduite."
 
 #: exe/webui/wikipediablock.py:130 exe/webui/multimediablock.py:91
-#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:347
+#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:331
 msgid "No emphasis"
 msgstr "Pas d'accentuation"
 
@@ -1285,11 +1280,11 @@ msgstr "Dossier extrait vers:%s"
 msgid "Package saved to: %s"
 msgstr "Dossier sauvegardé sous:%s"
 
-#: exe/webui/block.py:236 exe/webui/editorpane.py:385
+#: exe/webui/block.py:236 exe/webui/editorpane.py:369
 msgid "Pedagogical Help"
 msgstr "Aide pédagogique"
 
-#: exe/webui/editorpane.py:341
+#: exe/webui/editorpane.py:325
 msgid "Pedagogical Tip"
 msgstr "Conseil pédagogique"
 
@@ -1297,7 +1292,7 @@ msgstr "Conseil pédagogique"
 msgid "Please enter an idevice name."
 msgstr "SVP: Rédigez un titre d'outil pédagogique."
 
-#: exe/webui/editorpane.py:209
+#: exe/webui/editorpane.py:195
 msgid "Please enter<br />an idevice name."
 msgstr "SVP: Rédigez un titre d'outil pédagogique."
 
@@ -1343,7 +1338,7 @@ msgstr ""
 "<li> les apprenants doivent avoir le niveau 4 en langue anglaise</li>\n"
 "<li> Les apprenants doivent être capables d'assembler des éléments de base</li></ul>\n"
 
-#: exe/webui/element.py:1394 exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "Prévisualisation"
 
@@ -1548,7 +1543,7 @@ msgstr "Choisissez une langue"
 msgid "Select MP3 file"
 msgstr "Sélectionnez un fichier MP3"
 
-#: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
+#: exe/webui/attachmentblock.py:94 exe/webui/editorelement.py:362
 #: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "Sélectionnez un fichier"
@@ -1583,7 +1578,7 @@ msgstr "Sélectionnez autant d'options correctes que nécessaire en clicquant su
 msgid "Select pass rate: "
 msgstr "Choisissez un taux de réussite"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:234
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:243
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1655,7 +1650,7 @@ msgid "Small"
 msgstr "Petit"
 
 #: exe/webui/wikipediablock.py:131 exe/webui/multimediablock.py:92
-#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:348
+#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:332
 msgid "Some emphasis"
 msgstr "Importance"
 
@@ -1689,7 +1684,7 @@ msgstr "histoire:"
 msgid "Strict Marking?"
 msgstr "Marquage strict?"
 
-#: exe/webui/element.py:1088 exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "Valider "
 
@@ -1710,11 +1705,11 @@ msgstr "Les formateurs utilisant cet outil pédagogique doivent garder ce qui su
 msgid "Text"
 msgstr "Texte"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "Boite de texte"
 
-#: exe/webui/editorpane.py:261
+#: exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "Ligne de texte"
 
@@ -1905,7 +1900,7 @@ msgstr "Rédigez la question de base. Celle-ci doit être claire et sans ambigui
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:118
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Impossible de télécharger depuis %s <br/>Vérifiez l'adresse et la connection et réessayez."
@@ -2053,7 +2048,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "Le fichier %s n'a pas de lienParent ou parentNode"
 
-#: exe/engine/wikipediaidevice.py:188
+#: exe/engine/wikipediaidevice.py:197
 msgid "http://en.wikipedia.org/"
 msgstr "http://fr.wikipedia.org/"
 
@@ -4697,6 +4692,9 @@ msgstr "Droits:"
 #: exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Un élément d'information de DROITS comprend communément un énoncé des règles de droits attachés à la ressource. L'information sur les droits englobe souvent les droits de propriété intellectuelle, le Copyright et différents droits de propriété et/ou d'usage. Si l'élément d'information de DROITS est non renseigné, aucune hypothèse ne peut être faite à propos de ceux-ci dans le respect de la ressource."
+
+#~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
+#~ msgstr "Ajouter une image à votre outil pédagogique. Permet à l'utilisateur d'insérer une image au sein de l'outil"
 
 #~ msgid "A single simple discussion"
 #~ msgstr "une simple question-réponse"

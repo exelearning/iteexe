@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 22:18+1200\n"
+"POT-Creation-Date: 2007-06-22 21:01+1200\n"
 "PO-Revision-Date: 2007-06-21 10:57+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -18,8 +18,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Pootle 0.6.3.20060116\n"
 
-#: exe/engine/appletidevice.py:67
-#: exe/engine/appletidevice.py:146
+#: exe/engine/appletidevice.py:67 exe/engine/appletidevice.py:146
 msgid ""
 " <p>If the applet you're adding was generated \n"
 "by one of the programs in this drop down, please select it, \n"
@@ -28,10 +27,8 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr " "
 
-#: exe/xului/mainpage.py:275
-#: exe/xului/mainpage.py:642
-#: exe/xului/mainpage.py:763
-#: exe/xului/mainpage.py:819
+#: exe/xului/mainpage.py:275 exe/xului/mainpage.py:642
+#: exe/xului/mainpage.py:763 exe/xului/mainpage.py:819
 #: exe/xului/mainpage.py:840
 #, python-format
 msgid ""
@@ -50,8 +47,7 @@ msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet co
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:293
-#: exe/xului/mainpage.py:551
+#: exe/xului/mainpage.py:293 exe/xului/mainpage.py:551
 #: exe/xului/mainpage.py:634
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
@@ -194,21 +190,18 @@ msgid ""
 "learner in answering the question."
 msgstr "可提供提示来帮助学生回答问题."
 
-#: exe/webui/editorpane.py:275
+#: exe/webui/editorpane.py:259
 msgid "Actions"
 msgstr "动作"
 
-#: exe/engine/idevicestore.py:315
-#: exe/engine/idevicestore.py:354
-#: exe/engine/idevicestore.py:362
-#: exe/engine/idevicestore.py:423
-#: exe/engine/idevicestore.py:460
-#: exe/engine/idevicestore.py:468
+#: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:354
+#: exe/engine/idevicestore.py:362 exe/engine/idevicestore.py:423
+#: exe/engine/idevicestore.py:460 exe/engine/idevicestore.py:468
 #: exe/webui/questionelement.py:90
 msgid "Activity"
 msgstr "学习活动"
 
-#: exe/webui/editorpane.py:260
+#: exe/webui/editorpane.py:246
 msgid "Add Field"
 msgstr "添加栏目"
 
@@ -223,7 +216,7 @@ msgstr "添加图片"
 msgid "Add JPEG Image"
 msgstr "添加JPEG图片"
 
-#: exe/webui/editorpane.py:91
+#: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
 msgstr "添加flash video."
 
@@ -242,29 +235,23 @@ msgid ""
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr "加载除.txt文档外所有的applet文档. 使用\"添加文档\"和\"上载\"按钮,一次加载一个文档. 已上载的文档将显示在Applet code栏域下面."
 
-#: exe/webui/editorpane.py:93
+#: exe/webui/editorpane.py:90
 msgid "Add an attachment file to your iDevice."
 msgstr "添加附件."
 
 #: exe/webui/editorpane.py:87
-msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr "添加图片至你的 iDevice, 使用者可插图至该 iDevice."
-
-#: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
 msgstr "添加互动式评语."
 
-#: exe/webui/editorpane.py:92
+#: exe/webui/editorpane.py:89
 msgid "Add an mp3 file to your iDevice."
 msgstr "添加mp3文档."
 
-#: exe/webui/testquestionelement.py:107
-#: exe/webui/element.py:1597
+#: exe/webui/testquestionelement.py:107 exe/webui/element.py:1597
 msgid "Add another Option"
 msgstr "添加选项"
 
-#: exe/webui/quiztestblock.py:100
-#: exe/webui/multiselectblock.py:78
+#: exe/webui/quiztestblock.py:100 exe/webui/multiselectblock.py:78
 msgid "Add another Question"
 msgstr "添加问题"
 
@@ -276,8 +263,7 @@ msgstr "添加另一项活动"
 msgid "Add another option"
 msgstr "添加选项"
 
-#: exe/webui/multichoiceblock.py:104
-#: exe/webui/truefalseblock.py:89
+#: exe/webui/multichoiceblock.py:104 exe/webui/truefalseblock.py:89
 msgid "Add another question"
 msgstr "添加问题"
 
@@ -289,12 +275,9 @@ msgstr "添加文档"
 msgid "Add images"
 msgstr "添加图片"
 
-#: exe/webui/flashwithtextblock.py:79
-#: exe/webui/multimediablock.py:83
-#: exe/webui/editorelement.py:223
-#: exe/webui/imagemagnifierblock.py:108
-#: exe/webui/flashmovieblock.py:78
-#: exe/webui/imagewithtextblock.py:79
+#: exe/webui/flashwithtextblock.py:79 exe/webui/multimediablock.py:83
+#: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:108
+#: exe/webui/flashmovieblock.py:78 exe/webui/imagewithtextblock.py:79
 msgid "Align:"
 msgstr "对齐:"
 
@@ -321,8 +304,7 @@ msgstr "当学生填空时, 允许自动完成."
 msgid "Allow auto completion when user filling the gaps."
 msgstr "当学生填空时, 允许自动完成."
 
-#: exe/engine/multiselectidevice.py:43
-#: exe/engine/multichoiceidevice.py:59
+#: exe/engine/multiselectidevice.py:43 exe/engine/multichoiceidevice.py:59
 msgid ""
 "Although more often used in formal testing \n"
 "situations MCQs can be used as a testing tool to stimulate thought and  \n"
@@ -340,8 +322,7 @@ msgid ""
 " "
 msgstr " "
 
-#: exe/engine/idevicestore.py:357
-#: exe/engine/idevicestore.py:463
+#: exe/engine/idevicestore.py:357 exe/engine/idevicestore.py:463
 msgid ""
 "An activity can be defined as a task or set of tasks a learner must\n"
 "complete. Provide a clear statement of the task and consider any conditions\n"
@@ -364,8 +345,7 @@ msgstr "Applet 类别"
 msgid "Article"
 msgstr "文章"
 
-#: exe/engine/attachmentidevice.py:42
-#: exe/webui/editorpane.py:269
+#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "附件"
 
@@ -374,8 +354,7 @@ msgstr "附件"
 msgid "Attachment %s has no parentNode"
 msgstr "Attachment %s has no parentNode"
 
-#: exe/engine/rssidevice.py:40
-#: exe/engine/multimediaidevice.py:41
+#: exe/engine/rssidevice.py:40 exe/engine/multimediaidevice.py:41
 msgid "Auckland University of Technology"
 msgstr "奥克兰技术大学"
 
@@ -383,23 +362,18 @@ msgstr "奥克兰技术大学"
 msgid "Button Caption"
 msgstr "按钮标签:"
 
-#: exe/webui/preferencespage.py:94
-#: exe/webui/editorpane.py:283
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:267
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:293
-#: exe/xului/mainpage.py:549
+#: exe/xului/mainpage.py:293 exe/xului/mainpage.py:549
 #: exe/xului/mainpage.py:634
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
-#: exe/webui/flashwithtextblock.py:84
-#: exe/webui/editorelement.py:324
-#: exe/webui/imagemagnifierblock.py:92
-#: exe/webui/flashmovieblock.py:83
-#: exe/webui/imagewithtextblock.py:84
-#: exe/webui/element.py:528
+#: exe/webui/flashwithtextblock.py:84 exe/webui/editorelement.py:324
+#: exe/webui/imagemagnifierblock.py:92 exe/webui/flashmovieblock.py:83
+#: exe/webui/imagewithtextblock.py:84 exe/webui/element.py:528
 msgid "Caption:"
 msgstr "标题:"
 
@@ -407,8 +381,7 @@ msgstr "标题:"
 msgid "Case Study"
 msgstr "案例分析"
 
-#: exe/webui/galleryblock.py:206
-#: exe/webui/galleryblock.py:224
+#: exe/webui/galleryblock.py:206 exe/webui/galleryblock.py:224
 msgid "Change Image"
 msgstr "改换图片"
 
@@ -459,8 +432,7 @@ msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意
 msgid "Click Here"
 msgstr "点击"
 
-#: exe/webui/common.py:293
-#: exe/webui/common.py:296
+#: exe/webui/common.py:293 exe/webui/common.py:296
 msgid "Click for completion instructions"
 msgstr "点击看完成说明."
 
@@ -478,19 +450,12 @@ msgstr "点击预览按钮显示数学符号."
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "点击\"添加图片\"按钮来选择图片文档.所选图片将显示在下面,你可为其加上标签. 最好在标签上加上文档大小."
 
-#: exe/engine/galleryidevice.py:545
-#: exe/webui/truefalseelement.py:128
-#: exe/webui/truefalseelement.py:129
-#: exe/webui/common.py:301
-#: exe/webui/common.py:302
-#: exe/webui/block.py:244
-#: exe/webui/block.py:245
-#: exe/webui/element.py:1899
-#: exe/webui/element.py:1900
-#: exe/webui/editorpane.py:372
-#: exe/webui/editorpane.py:373
-#: exe/webui/editorpane.py:393
-#: exe/webui/editorpane.py:394
+#: exe/engine/galleryidevice.py:545 exe/webui/truefalseelement.py:128
+#: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
+#: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
+#: exe/webui/element.py:1899 exe/webui/element.py:1900
+#: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
+#: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -512,15 +477,12 @@ msgstr "填空练习"
 msgid "Cloze Text"
 msgstr "填空题"
 
-#: exe/webui/testquestionelement.py:94
-#: exe/webui/element.py:1583
-#: exe/webui/element.py:1707
-#: exe/webui/element.py:1776
+#: exe/webui/testquestionelement.py:94 exe/webui/element.py:1583
+#: exe/webui/element.py:1707 exe/webui/element.py:1776
 msgid "Correct"
 msgstr "正确"
 
-#: exe/webui/truefalseelement.py:194
-#: exe/webui/truefalseelement.py:197
+#: exe/webui/truefalseelement.py:194 exe/webui/truefalseelement.py:197
 msgid "Correct!"
 msgstr "正确!"
 
@@ -540,20 +502,14 @@ msgstr "拟写案例故事.一个好的案例描述有争议性的,或不同人�
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/editorelement.py:76
-#: exe/webui/editorelement.py:111
-#: exe/webui/editorelement.py:152
-#: exe/webui/editorelement.py:193
-#: exe/webui/editorelement.py:244
-#: exe/webui/editorelement.py:298
-#: exe/webui/editorelement.py:344
-#: exe/webui/galleryblock.py:257
-#: exe/webui/block.py:215
-#: exe/webui/editorpage.py:233
+#: exe/webui/editorelement.py:76 exe/webui/editorelement.py:111
+#: exe/webui/editorelement.py:152 exe/webui/editorelement.py:193
+#: exe/webui/editorelement.py:244 exe/webui/editorelement.py:298
+#: exe/webui/editorelement.py:344 exe/webui/galleryblock.py:257
+#: exe/webui/block.py:215 exe/webui/editorpage.py:233
 #: exe/webui/editorpage.py:236
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
-#: n:render="delNode"
-#: key="delNodeKey" label="Delete">
+#: n:render="delNode" key="delNodeKey" label="Delete">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -573,14 +529,12 @@ msgstr "删除文档"
 msgid "Delete Image"
 msgstr "删除图片"
 
-#: exe/webui/testoptionelement.py:90
-#: exe/webui/element.py:1481
+#: exe/webui/testoptionelement.py:90 exe/webui/element.py:1481
 #: exe/webui/element.py:1725
 msgid "Delete option"
 msgstr "删除选项"
 
-#: exe/webui/questionelement.py:104
-#: exe/webui/truefalseelement.py:106
+#: exe/webui/questionelement.py:104 exe/webui/truefalseelement.py:106
 #: exe/webui/element.py:1570
 msgid "Delete question"
 msgstr "删除问题"
@@ -600,36 +554,29 @@ msgid ""
 "presented. "
 msgstr "描述学生应完成的阅读任务."
 
-#: exe/engine/idevicestore.py:350
-#: exe/engine/idevicestore.py:456
+#: exe/engine/idevicestore.py:350 exe/engine/idevicestore.py:456
 msgid ""
 "Describe the prerequisite knowledge learners should have to effectively\n"
 "complete this learning."
 msgstr "用于描述学生为完成此课所应具备的知识."
 
-#: exe/engine/idevicestore.py:316
-#: exe/engine/idevicestore.py:424
+#: exe/engine/idevicestore.py:316 exe/engine/idevicestore.py:424
 msgid ""
 "Describe the tasks related to the reading learners should undertake. \n"
 "This helps demonstrate relevance for learners."
 msgstr "描述学生应完成的阅读任务."
 
-#: exe/engine/idevicestore.py:363
-#: exe/engine/idevicestore.py:469
+#: exe/engine/idevicestore.py:363 exe/engine/idevicestore.py:469
 msgid "Describe the tasks the learners should complete."
 msgstr "描述学生需要完成的学习任务."
 
-#: exe/engine/flashwithtextidevice.py:49
-#: exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "描述"
 
-#: exe/engine/attachmentidevice.py:63
-#: exe/engine/attachmentidevice.py:149
+#: exe/engine/attachmentidevice.py:63 exe/engine/attachmentidevice.py:149
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Description:"
-#: id="ppDescription" style="width:8em"
-#: tooltiptext="An
+#: value="Description:" id="ppDescription" style="width:8em" tooltiptext="An
 #: account of the content resource.">
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
 #: id="dcDescription"
@@ -644,9 +591,7 @@ msgstr "描述"
 msgid "Description:"
 msgstr "描述:"
 
-#: exe/webui/element.py:438
-#: exe/webui/element.py:824
-#: exe/webui/element.py:1189
+#: exe/webui/element.py:438 exe/webui/element.py:824 exe/webui/element.py:1189
 msgid "Display as:"
 msgstr "显示为:"
 
@@ -684,22 +629,16 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:576
-#: exe/xului/mainpage.py:583
-#: exe/xului/mainpage.py:586
-#: exe/xului/mainpage.py:589
+#: exe/xului/mainpage.py:576 exe/xului/mainpage.py:583
+#: exe/xului/mainpage.py:586 exe/xului/mainpage.py:589
 #: exe/xului/mainpage.py:747
 msgid "EXPORT FAILED!"
 msgstr "导出失败!"
 
-#: exe/xului/mainpage.py:737
-#: exe/xului/mainpage.py:751
-#: exe/xului/mainpage.py:764
-#: exe/xului/mainpage.py:770
-#: exe/xului/mainpage.py:804
-#: exe/xului/mainpage.py:820
-#: exe/xului/mainpage.py:826
-#: exe/xului/mainpage.py:841
+#: exe/xului/mainpage.py:737 exe/xului/mainpage.py:751
+#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:770
+#: exe/xului/mainpage.py:804 exe/xului/mainpage.py:820
+#: exe/xului/mainpage.py:826 exe/xului/mainpage.py:841
 #: exe/xului/mainpage.py:847
 #, python-format
 msgid ""
@@ -709,8 +648,7 @@ msgstr ""
 "导出失败!\n"
 "%s"
 
-#: exe/export/imsexport.py:325
-#: exe/export/scormexport.py:441
+#: exe/export/imsexport.py:325 exe/export/scormexport.py:441
 #: exe/export/websiteexport.py:87
 #, python-format
 msgid ""
@@ -720,8 +658,7 @@ msgstr ""
 "导出失败!\n"
 "最后一次成功的导出是 %s."
 
-#: exe/xului/mainpage.py:643
-#: exe/xului/mainpage.py:652
+#: exe/xului/mainpage.py:643 exe/xului/mainpage.py:652
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -730,16 +667,13 @@ msgstr ""
 "引出失败!\n"
 "%s"
 
-#: exe/webui/block.py:328
-#: exe/webui/editorpane.py:280
+#: exe/webui/block.py:328 exe/webui/editorpane.py:264
 #: exe/webui/editorpage.py:266
 msgid "Edit"
 msgstr "编辑"
 
-#: exe/webui/wikipediablock.py:133
-#: exe/webui/multimediablock.py:94
-#: exe/webui/rssblock.py:94
-#: exe/webui/editorpane.py:344
+#: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
+#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:328
 msgid "Emphasis"
 msgstr "强调"
 
@@ -763,8 +697,7 @@ msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
 msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
 
-#: exe/engine/wikipediaidevice.py:71
-#: exe/engine/wikipediaidevice.py:236
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:245
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -793,8 +726,7 @@ msgid ""
 " instructions or additional learning information."
 msgstr " "
 
-#: exe/engine/quiztestidevice.py:95
-#: exe/engine/quiztestidevice.py:122
+#: exe/engine/quiztestidevice.py:95 exe/engine/quiztestidevice.py:122
 msgid ""
 "Enter an answer option. Provide \n"
 "a range of plausible distractors (usually 3-4) as well as the correct answer. \n"
@@ -812,12 +744,11 @@ msgstr "用评语栏输入评语提供给学生. 此栏可空白."
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "用评语栏输入评语提供给学生. 此栏可空白."
 
-#: exe/webui/editorpane.py:147
+#: exe/webui/editorpane.py:143
 msgid "Enter instructions for completion here"
 msgstr "在此输入完成说明"
 
-#: exe/engine/externalurlidevice.py:48
-#: exe/engine/externalurlidevice.py:70
+#: exe/engine/externalurlidevice.py:48 exe/engine/externalurlidevice.py:70
 msgid ""
 "Enter the URL you wish to display\n"
 "and select the size of the area to display it in."
@@ -837,40 +768,32 @@ msgid ""
 "clicking the red X next to the option."
 msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
 
-#: exe/engine/idevicestore.py:312
-#: exe/engine/idevicestore.py:420
+#: exe/engine/idevicestore.py:312 exe/engine/idevicestore.py:420
 msgid ""
 "Enter the details of the reading including reference details. The \n"
 "referencing style used will depend on the preference of your faculty or \n"
 "department."
 msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校所采用的模式."
 
-#: exe/engine/flashwithtextidevice.py:57
-#: exe/engine/flashwithtextidevice.py:85
+#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 "The width and height dimensions will alter proportionally."
 msgstr "输入显示flash的尺寸并选择向哪边对齐. flash的长和宽会按比例自动调节."
 
-#: exe/webui/editorpane.py:154
-#: exe/webui/editorpane.py:162
-#: exe/webui/editorpane.py:188
-#: exe/webui/editorpane.py:198
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
+#: exe/webui/editorpane.py:184
 msgid "Enter the instructions for completion here"
 msgstr "在此输入完成说明"
 
-#: exe/webui/editorpane.py:146
-#: exe/webui/editorpane.py:153
-#: exe/webui/editorpane.py:161
-#: exe/webui/editorpane.py:171
-#: exe/webui/editorpane.py:187
-#: exe/webui/editorpane.py:197
+#: exe/webui/editorpane.py:142 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:157 exe/webui/editorpane.py:173
+#: exe/webui/editorpane.py:183
 msgid "Enter the label here"
 msgstr "在此输入标题"
 
-#: exe/engine/multichoiceidevice.py:98
-#: exe/engine/quiztestidevice.py:92
+#: exe/engine/multichoiceidevice.py:98 exe/engine/quiztestidevice.py:92
 #: exe/engine/quiztestidevice.py:130
 msgid ""
 "Enter the question stem. \n"
@@ -897,8 +820,7 @@ msgid ""
 "                                 associate with the image."
 msgstr "输入有关图片的描述."
 
-#: exe/engine/imagemagnifieridevice.py:54
-#: exe/engine/multimediaidevice.py:65
+#: exe/engine/imagemagnifieridevice.py:54 exe/engine/multimediaidevice.py:65
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
@@ -920,10 +842,8 @@ msgstr "例子"
 msgid "Export iDevice"
 msgstr "输出iDevice"
 
-#: exe/xului/mainpage.py:753
-#: exe/xului/mainpage.py:772
-#: exe/xului/mainpage.py:806
-#: exe/xului/mainpage.py:828
+#: exe/xului/mainpage.py:753 exe/xului/mainpage.py:772
+#: exe/xului/mainpage.py:806 exe/xului/mainpage.py:828
 #: exe/xului/mainpage.py:849
 #, python-format
 msgid "Exported to %s"
@@ -937,38 +857,28 @@ msgstr "外部网页"
 msgid "Extra large"
 msgstr "特大"
 
-#: exe/webui/truefalseelement.py:94
-#: exe/webui/truefalseelement.py:167
+#: exe/webui/truefalseelement.py:94 exe/webui/truefalseelement.py:167
 msgid "False"
 msgstr "错"
 
-#: exe/engine/idevicestore.py:319
-#: exe/engine/idevicestore.py:427
-#: exe/engine/genericidevice.py:188
-#: exe/engine/clozeidevice.py:127
-#: exe/engine/clozeidevice.py:152
-#: exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75
-#: exe/engine/field.py:1175
-#: exe/engine/field.py:1187
-#: exe/webui/clozeblock.py:148
-#: exe/webui/questionelement.py:94
-#: exe/webui/common.py:206
-#: exe/webui/element.py:1726
-#: exe/webui/editorpane.py:267
+#: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
+#: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
+#: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
+#: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
+#: exe/webui/questionelement.py:94 exe/webui/common.py:206
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "评语"
 
-#: exe/webui/editorpane.py:172
+#: exe/webui/editorpane.py:158
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
 msgstr "如果此栏空白, 评语按钮将不显示."
 
-#: exe/engine/reflectionidevice.py:64
-#: exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1305
-#: exe/engine/field.py:1330
+#: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
+#: exe/engine/field.py:1305 exe/engine/field.py:1330
 msgid "Feedback:"
 msgstr "评语:"
 
@@ -977,8 +887,7 @@ msgstr "评语:"
 msgid "File %s does not exist or is not readable."
 msgstr "文档%s不存在或不可读."
 
-#: exe/xului/mainpage.py:682
-#: exe/xului/mainpage.py:724
+#: exe/xului/mainpage.py:682 exe/xului/mainpage.py:724
 #: exe/xului/mainpage.py:791
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
@@ -988,23 +897,19 @@ msgstr "文件名%s是个文档, 无法覆盖它"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
-#: exe/webui/attachmentblock.py:80
-#: exe/webui/element.py:722
+#: exe/webui/attachmentblock.py:81 exe/webui/element.py:722
 msgid "Filename:"
 msgstr "文件名:"
 
-#: exe/engine/flashmovieidevice.py:39
-#: exe/engine/flashmovieidevice.py:50
+#: exe/engine/flashmovieidevice.py:39 exe/engine/flashmovieidevice.py:50
 msgid "Flash Movie"
 msgstr "Flash 电影"
 
-#: exe/engine/flashwithtextidevice.py:40
-#: exe/engine/flashwithtextidevice.py:47
+#: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
 msgid "Flash with Text"
 msgstr "文字及Flash"
 
-#: exe/xului/mainpage.py:688
-#: exe/xului/mainpage.py:730
+#: exe/xului/mainpage.py:688 exe/xului/mainpage.py:730
 #: exe/xului/mainpage.py:797
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
@@ -1014,8 +919,7 @@ msgstr "文件夹%s 已存在,请选择另一个或删除已有的,然后再试.
 msgid "Frame Height:"
 msgstr "页框高:"
 
-#: exe/engine/freetextidevice.py:37
-#: exe/engine/freetextidevice.py:44
+#: exe/engine/freetextidevice.py:37 exe/engine/freetextidevice.py:44
 msgid "Free Text"
 msgstr "自由文本"
 
@@ -1073,12 +977,9 @@ msgstr "隐藏 评语"
 msgid "Hide/Show Word"
 msgstr "隐藏/显示 文字"
 
-#: exe/engine/truefalseidevice.py:51
-#: exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1213
-#: exe/engine/field.py:1233
-#: exe/webui/truefalseelement.py:122
-#: exe/webui/truefalseelement.py:132
+#: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
+#: exe/engine/field.py:1213 exe/engine/field.py:1233
+#: exe/webui/truefalseelement.py:122 exe/webui/truefalseelement.py:132
 #: exe/webui/element.py:1903
 msgid "Hint"
 msgstr "提示"
@@ -1090,10 +991,8 @@ msgstr "首页"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
-#: exe/webui/multichoiceblock.py:144
-#: exe/webui/genericblock.py:78
-#: exe/webui/genericblock.py:104
-#: exe/webui/galleryblock.py:331
+#: exe/webui/multichoiceblock.py:144 exe/webui/genericblock.py:78
+#: exe/webui/genericblock.py:104 exe/webui/galleryblock.py:331
 #: exe/webui/block.py:283
 msgid "IDevice Icon"
 msgstr "iDevice 图标"
@@ -1109,13 +1008,11 @@ msgstr "IDevice问题图标"
 msgid "IDevice broken"
 msgstr "IDevice broken"
 
-#: exe/webui/editorpane.py:375
+#: exe/webui/editorpane.py:359
 msgid "Icons"
 msgstr "图标"
 
-#: exe/engine/imagewithtextidevice.py:59
-#: exe/engine/casestudyidevice.py:65
-#: exe/webui/editorpane.py:265
+#: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
 msgid "Image"
 msgstr "图像"
 
@@ -1140,15 +1037,14 @@ msgstr "文字及插图"
 msgid "Import iDevice"
 msgstr "输入iDevice"
 
-#: exe/webui/truefalseelement.py:201
-#: exe/webui/truefalseelement.py:204
+#: exe/webui/truefalseelement.py:201 exe/webui/truefalseelement.py:204
 msgid "Incorrect!"
 msgstr "不正确!"
 
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
-#: exe/webui/editorpane.py:389
+#: exe/webui/editorpane.py:373
 msgid "Info"
 msgstr "资讯"
 
@@ -1164,10 +1060,8 @@ msgstr "初始放大倍数"
 msgid "Instant Marking?"
 msgstr "快速评分?"
 
-#: exe/engine/clozeidevice.py:114
-#: exe/engine/truefalseidevice.py:115
-#: exe/engine/truefalseidevice.py:202
-#: exe/webui/common.py:287
+#: exe/engine/clozeidevice.py:114 exe/engine/truefalseidevice.py:115
+#: exe/engine/truefalseidevice.py:202 exe/webui/common.py:287
 msgid "Instructions"
 msgstr "说明"
 
@@ -1191,7 +1085,7 @@ msgstr "日文Wikipedia 文章"
 msgid "Java Applet"
 msgstr "Java Applet"
 
-#: exe/webui/attachmentblock.py:97
+#: exe/webui/attachmentblock.py:98
 msgid "Label:"
 msgstr "标签:"
 
@@ -1199,27 +1093,21 @@ msgstr "标签:"
 msgid "Large"
 msgstr "大"
 
-#: exe/webui/flashwithtextblock.py:75
-#: exe/webui/multimediablock.py:79
-#: exe/webui/editorelement.py:219
-#: exe/webui/imagemagnifierblock.py:85
-#: exe/webui/flashmovieblock.py:75
-#: exe/webui/imagewithtextblock.py:75
+#: exe/webui/flashwithtextblock.py:75 exe/webui/multimediablock.py:79
+#: exe/webui/editorelement.py:219 exe/webui/imagemagnifierblock.py:85
+#: exe/webui/flashmovieblock.py:75 exe/webui/imagewithtextblock.py:75
 msgid "Left"
 msgstr "左"
 
-#: exe/export/pages.py:68
-#: exe/export/textexport.py:53
+#: exe/export/pages.py:68 exe/export/textexport.py:53
 msgid "Licensed under the "
 msgstr "Licensed under the "
 
-#: exe/webui/wikipediablock.py:126
-#: exe/webui/rssblock.py:87
+#: exe/webui/wikipediablock.py:126 exe/webui/rssblock.py:87
 msgid "Load"
 msgstr "载入"
 
-#: exe/engine/multimediaidevice.py:40
-#: exe/webui/editorpane.py:271
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:255
 msgid "MP3"
 msgstr "MP3"
 
@@ -1227,8 +1115,7 @@ msgstr "MP3"
 msgid "Magyar Wikipedia Article"
 msgstr "马札儿语Wikipedia 文章"
 
-#: exe/engine/mathidevice.py:35
-#: exe/engine/mathidevice.py:48
+#: exe/engine/mathidevice.py:35 exe/engine/mathidevice.py:48
 msgid "Maths"
 msgstr "数学公式"
 
@@ -1264,7 +1151,7 @@ msgstr "选择题"
 msgid "Multi-select"
 msgstr "多项选择题"
 
-#: exe/webui/editorpane.py:337
+#: exe/webui/editorpane.py:321
 msgid "Name"
 msgstr "名称"
 
@@ -1272,15 +1159,12 @@ msgstr "名称"
 msgid "New iDevice"
 msgstr "新的 iDevice"
 
-#: exe/engine/galleryidevice.py:549
-#: exe/export/ipodpage.py:115
-#: exe/export/scormexport.py:312
-#: exe/export/websitepage.py:192
+#: exe/engine/galleryidevice.py:549 exe/export/ipodpage.py:115
+#: exe/export/scormexport.py:312 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "下一页"
 
-#: exe/webui/galleryblock.py:195
-#: exe/webui/galleryblock.py:283
+#: exe/webui/galleryblock.py:195 exe/webui/galleryblock.py:283
 msgid "No Images Loaded"
 msgstr "无图像显示"
 
@@ -1296,19 +1180,14 @@ msgstr "No Thumbnail Available. Could not shrink image."
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "No Thumbnail Available. Could not shrink image."
 
-#: exe/webui/wikipediablock.py:130
-#: exe/webui/multimediablock.py:91
-#: exe/webui/rssblock.py:91
-#: exe/webui/editorpane.py:347
+#: exe/webui/wikipediablock.py:130 exe/webui/multimediablock.py:91
+#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:331
 msgid "No emphasis"
 msgstr "不强调"
 
-#: exe/webui/flashwithtextblock.py:77
-#: exe/webui/multimediablock.py:81
-#: exe/webui/editorelement.py:221
-#: exe/webui/imagemagnifierblock.py:87
-#: exe/webui/flashmovieblock.py:77
-#: exe/webui/imagewithtextblock.py:77
+#: exe/webui/flashwithtextblock.py:77 exe/webui/multimediablock.py:81
+#: exe/webui/editorelement.py:221 exe/webui/imagemagnifierblock.py:87
+#: exe/webui/flashmovieblock.py:77 exe/webui/imagewithtextblock.py:77
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
 #: value="None" id="ppminone" label="None">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<menuitem
@@ -1322,55 +1201,43 @@ msgstr "无"
 msgid "OK"
 msgstr "OK"
 
-#: exe/engine/idevicestore.py:326
-#: exe/engine/idevicestore.py:335
-#: exe/engine/idevicestore.py:432
-#: exe/engine/idevicestore.py:441
+#: exe/engine/idevicestore.py:326 exe/engine/idevicestore.py:335
+#: exe/engine/idevicestore.py:432 exe/engine/idevicestore.py:441
 msgid "Objectives"
 msgstr "目的"
 
-#: exe/engine/idevicestore.py:329
-#: exe/engine/idevicestore.py:435
+#: exe/engine/idevicestore.py:329 exe/engine/idevicestore.py:435
 msgid ""
 "Objectives describe the expected outcomes of the learning and should\n"
 "define what the learners will be able to do when they have completed the\n"
 "learning tasks."
 msgstr "用于描述学习此课的目的及将要达到的结果."
 
-#: exe/engine/field.py:990
-#: exe/engine/field.py:1054
+#: exe/engine/field.py:990 exe/engine/field.py:1054
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "只能选用.flv (Flash Video Files)."
 
-#: exe/engine/field.py:926
-#: exe/engine/field.py:970
+#: exe/engine/field.py:926 exe/engine/field.py:970
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "只能选用.swf (Flash Object)."
 
-#: exe/engine/quiztestidevice.py:46
-#: exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:1171
-#: exe/engine/field.py:1184
-#: exe/webui/testquestionelement.py:96
-#: exe/webui/element.py:1585
-#: exe/webui/element.py:1702
-#: exe/webui/element.py:1707
+#: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
+#: exe/engine/field.py:1171 exe/engine/field.py:1184
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1585
+#: exe/webui/element.py:1702 exe/webui/element.py:1707
 msgid "Option"
 msgstr "选项"
 
-#: exe/engine/field.py:1255
-#: exe/engine/field.py:1265
-#: exe/webui/testquestionelement.py:92
-#: exe/webui/element.py:1581
+#: exe/engine/field.py:1255 exe/engine/field.py:1265
+#: exe/webui/testquestionelement.py:92 exe/webui/element.py:1581
 msgid "Options"
 msgstr "选项"
 
-#: exe/webui/wikipediablock.py:109
-#: exe/webui/appletblock.py:89
+#: exe/webui/wikipediablock.py:109 exe/webui/appletblock.py:89
 msgid "Other"
 msgstr "其它"
 
@@ -1392,12 +1259,11 @@ msgstr "课件存至: %s"
 msgid "Package saved to: %s"
 msgstr "课件存至: %s"
 
-#: exe/webui/block.py:236
-#: exe/webui/editorpane.py:385
+#: exe/webui/block.py:236 exe/webui/editorpane.py:369
 msgid "Pedagogical Help"
 msgstr "教学帮助"
 
-#: exe/webui/editorpane.py:341
+#: exe/webui/editorpane.py:325
 msgid "Pedagogical Tip"
 msgstr "教学提示"
 
@@ -1405,7 +1271,7 @@ msgstr "教学提示"
 msgid "Please enter an idevice name."
 msgstr "请填入iDevice名称."
 
-#: exe/webui/editorpane.py:209
+#: exe/webui/editorpane.py:195
 msgid "Please enter<br />an idevice name."
 msgstr "请填入iDevice名称."
 
@@ -1417,8 +1283,7 @@ msgstr "请选择 .flv 文档."
 msgid "Please select a .jpg file."
 msgstr "请选择.jpg 文档."
 
-#: exe/webui/multichoiceblock.py:85
-#: exe/webui/quiztestblock.py:92
+#: exe/webui/multichoiceblock.py:85 exe/webui/quiztestblock.py:92
 msgid "Please select a correct answer for each question."
 msgstr "请为每个问题选择一个正确的答案."
 
@@ -1434,15 +1299,12 @@ msgstr "波兰文Wikipedia 文章"
 msgid "Portugese Wikipedia Article"
 msgstr "葡萄牙文Wikipedia 文章"
 
-#: exe/engine/idevicestore.py:339
-#: exe/engine/idevicestore.py:349
-#: exe/engine/idevicestore.py:445
-#: exe/engine/idevicestore.py:455
+#: exe/engine/idevicestore.py:339 exe/engine/idevicestore.py:349
+#: exe/engine/idevicestore.py:445 exe/engine/idevicestore.py:455
 msgid "Preknowledge"
 msgstr "预备知识"
 
-#: exe/engine/idevicestore.py:342
-#: exe/engine/idevicestore.py:448
+#: exe/engine/idevicestore.py:342 exe/engine/idevicestore.py:448
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -1451,8 +1313,7 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr "预备知识是指学生为完成此课所应具备的知识.\n"
 
-#: exe/webui/element.py:1394
-#: exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "预览"
 
@@ -1461,15 +1322,12 @@ msgstr "预览"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "予览文件夹%s是个文档, 无法取代它"
 
-#: exe/engine/galleryidevice.py:541
-#: exe/export/ipodpage.py:109
-#: exe/export/scormexport.py:311
-#: exe/export/websitepage.py:186
+#: exe/engine/galleryidevice.py:541 exe/export/ipodpage.py:109
+#: exe/export/scormexport.py:311 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前一页"
 
-#: exe/engine/multimediaidevice.py:71
-#: exe/engine/field.py:631
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:631
 #: exe/engine/field.py:678
 msgid ""
 "Provide a caption for the \n"
@@ -1482,15 +1340,13 @@ msgid ""
 "image to be magnified."
 msgstr "为插图提供标题."
 
-#: exe/engine/flashmovieidevice.py:57
-#: exe/engine/flashmovieidevice.py:78
+#: exe/engine/flashmovieidevice.py:57 exe/engine/flashmovieidevice.py:78
 msgid ""
 "Provide a caption for the flash movie \n"
 "you have just inserted."
 msgstr "为 flash电影提供标题."
 
-#: exe/engine/flashwithtextidevice.py:55
-#: exe/engine/flashwithtextidevice.py:83
+#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1503,8 +1359,7 @@ msgid ""
 "you have just inserted."
 msgstr "为插图提供标题."
 
-#: exe/engine/truefalseidevice.py:116
-#: exe/engine/truefalseidevice.py:203
+#: exe/engine/truefalseidevice.py:116 exe/engine/truefalseidevice.py:203
 msgid ""
 "Provide instruction on how the True/False Question should be \n"
 "completed."
@@ -1530,20 +1385,14 @@ msgstr "用途"
 msgid "Put instructions for learners here"
 msgstr "在此输入完成说明"
 
-#: exe/engine/multiselectidevice.py:78
-#: exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1210
-#: exe/engine/field.py:1229
+#: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
+#: exe/engine/field.py:1210 exe/engine/field.py:1229
 msgid "Question"
 msgstr "问题"
 
-#: exe/engine/truefalseidevice.py:44
-#: exe/engine/truefalseidevice.py:72
-#: exe/engine/quiztestidevice.py:101
-#: exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1291
-#: exe/engine/field.py:1327
-#: exe/webui/element.py:1565
+#: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
+#: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
+#: exe/engine/field.py:1291 exe/engine/field.py:1327 exe/webui/element.py:1565
 msgid "Question:"
 msgstr "问题:"
 
@@ -1551,8 +1400,7 @@ msgstr "问题:"
 msgid "Quit"
 msgstr "退出"
 
-#: exe/engine/rssidevice.py:39
-#: exe/engine/rssidevice.py:47
+#: exe/engine/rssidevice.py:39 exe/engine/rssidevice.py:47
 msgid "RSS"
 msgstr "RSS"
 
@@ -1560,19 +1408,16 @@ msgstr "RSS"
 msgid "Read the paragraph below and fill in the missing words"
 msgstr "阅读以下段落并填空"
 
-#: exe/engine/clozeidevice.py:118
-#: exe/engine/truefalseidevice.py:205
+#: exe/engine/clozeidevice.py:118 exe/engine/truefalseidevice.py:205
 msgid "Read the paragraph below and fill in the missing words."
 msgstr "阅读以下段落并填空."
 
-#: exe/engine/idevicestore.py:232
-#: exe/engine/idevicestore.py:268
+#: exe/engine/idevicestore.py:232 exe/engine/idevicestore.py:268
 #: exe/engine/genericidevice.py:198
 msgid "Reading Activity"
 msgstr "阅读活动"
 
-#: exe/engine/idevicestore.py:376
-#: exe/engine/genericidevice.py:196
+#: exe/engine/idevicestore.py:376 exe/engine/genericidevice.py:196
 msgid "Reading Activity 0.11"
 msgstr "阅读活动 0.11"
 
@@ -1590,8 +1435,7 @@ msgid ""
 "effective feedback tools."
 msgstr "立时回应是一种常用于联系理论和实践的教学方式. 立时回应常给学生在提交一份学术工作前提供一个观察及对所观察的事物回应的机会."
 
-#: exe/engine/reflectionidevice.py:60
-#: exe/engine/reflectionidevice.py:127
+#: exe/engine/reflectionidevice.py:60 exe/engine/reflectionidevice.py:127
 msgid "Reflective question:"
 msgstr "问题:"
 
@@ -1599,12 +1443,9 @@ msgstr "问题:"
 msgid "Restart"
 msgstr "重新开始"
 
-#: exe/webui/flashwithtextblock.py:76
-#: exe/webui/multimediablock.py:80
-#: exe/webui/editorelement.py:220
-#: exe/webui/imagemagnifierblock.py:86
-#: exe/webui/flashmovieblock.py:76
-#: exe/webui/imagewithtextblock.py:76
+#: exe/webui/flashwithtextblock.py:76 exe/webui/multimediablock.py:80
+#: exe/webui/editorelement.py:220 exe/webui/imagemagnifierblock.py:86
+#: exe/webui/flashmovieblock.py:76 exe/webui/imagewithtextblock.py:76
 msgid "Right"
 msgstr "右"
 
@@ -1612,8 +1453,7 @@ msgstr "右"
 msgid "SAVE FAILED!"
 msgstr "保存失败!"
 
-#: exe/xului/mainpage.py:306
-#: exe/xului/mainpage.py:530
+#: exe/xului/mainpage.py:306 exe/xului/mainpage.py:530
 #: exe/xului/mainpage.py:696
 #, python-format
 msgid ""
@@ -1623,8 +1463,7 @@ msgstr ""
 "保存失败!\n"
 "%s"
 
-#: exe/engine/package.py:238
-#: exe/engine/package.py:245
+#: exe/engine/package.py:238 exe/engine/package.py:245
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1649,8 +1488,7 @@ msgstr "保存"
 msgid "Section"
 msgstr "节"
 
-#: exe/webui/editorelement.py:267
-#: exe/webui/element.py:1185
+#: exe/webui/editorelement.py:267 exe/webui/element.py:1185
 msgid "Select Flash Object"
 msgstr "选择flash文档"
 
@@ -1671,8 +1509,7 @@ msgstr "选择语言"
 msgid "Select MP3 file"
 msgstr "选择MP3 文档"
 
-#: exe/webui/attachmentblock.py:93
-#: exe/webui/editorelement.py:362
+#: exe/webui/attachmentblock.py:94 exe/webui/editorelement.py:362
 #: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "选择文档"
@@ -1707,8 +1544,7 @@ msgstr "选择所有正确选项."
 msgid "Select pass rate: "
 msgstr "选择及格线"
 
-#: exe/engine/wikipediaidevice.py:69
-#: exe/engine/wikipediaidevice.py:234
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:243
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1779,10 +1615,8 @@ msgstr "斯洛法尼亚文Wikipedia 文章"
 msgid "Small"
 msgstr "小"
 
-#: exe/webui/wikipediablock.py:131
-#: exe/webui/multimediablock.py:92
-#: exe/webui/rssblock.py:92
-#: exe/webui/editorpane.py:348
+#: exe/webui/wikipediablock.py:131 exe/webui/multimediablock.py:92
+#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:332
 msgid "Some emphasis"
 msgstr "一般强调"
 
@@ -1790,8 +1624,7 @@ msgstr "一般强调"
 msgid "Sorry, wrong file format"
 msgstr "对不起, 文件格式错误"
 
-#: exe/webui/editorpage.py:169
-#: exe/webui/editorpage.py:181
+#: exe/webui/editorpage.py:169 exe/webui/editorpage.py:181
 msgid "Sorry, wrong file format."
 msgstr "对不起, 文件格式错误"
 
@@ -1808,8 +1641,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "西班牙文Wikipedia 文章"
 
-#: exe/engine/casestudyidevice.py:115
-#: exe/engine/casestudyidevice.py:198
+#: exe/engine/casestudyidevice.py:115 exe/engine/casestudyidevice.py:198
 msgid "Story:"
 msgstr "事件:"
 
@@ -1817,13 +1649,11 @@ msgstr "事件:"
 msgid "Strict Marking?"
 msgstr "严格评分?"
 
-#: exe/webui/element.py:1088
-#: exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "提交"
 
-#: exe/webui/quiztestblock.py:355
-#: exe/webui/element.py:1635
+#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1635
 msgid "Submit Answer"
 msgstr "提交答案"
 
@@ -1836,16 +1666,15 @@ msgid "Teachers should keep the following in mind when using this iDevice: <ol><
 msgstr "  "
 
 #: exe/engine/imagewithtextidevice.py:62
-#: exe/engine/imagemagnifieridevice.py:53
-#: exe/engine/multimediaidevice.py:64
+#: exe/engine/imagemagnifieridevice.py:53 exe/engine/multimediaidevice.py:64
 msgid "Text"
 msgstr "文字"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "多行文字"
 
-#: exe/webui/editorpane.py:261
+#: exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "单行文字"
 
@@ -1963,8 +1792,7 @@ msgstr "提示:"
 msgid "Title"
 msgstr "标题"
 
-#: exe/engine/quiztestidevice.py:98
-#: exe/engine/quiztestidevice.py:138
+#: exe/engine/quiztestidevice.py:98 exe/engine/quiztestidevice.py:138
 msgid ""
 "To indicate the correct answer, \n"
 "click the radio button next to the correct option."
@@ -1974,8 +1802,7 @@ msgstr "要指明正确答案, 点击正确选项旁的点选按钮."
 msgid "Topic"
 msgstr "课题"
 
-#: exe/webui/truefalseelement.py:92
-#: exe/webui/truefalseelement.py:165
+#: exe/webui/truefalseelement.py:92 exe/webui/truefalseelement.py:165
 msgid "True"
 msgstr "对"
 
@@ -2019,8 +1846,7 @@ msgid ""
 "to provide the learner with."
 msgstr "输入给学生的评语。"
 
-#: exe/engine/idevicestore.py:336
-#: exe/engine/idevicestore.py:442
+#: exe/engine/idevicestore.py:336 exe/engine/idevicestore.py:442
 msgid "Type the learning objectives for this resource."
 msgstr "学习此课的目的"
 
@@ -2035,8 +1861,7 @@ msgstr "输入问题. 问题的陈述应是清楚而不含糊的."
 msgid "URL:"
 msgstr "URL:"
 
-#: exe/engine/wikipediaidevice.py:97
-#: exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:118
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
@@ -2045,30 +1870,18 @@ msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
 msgid "Unit"
 msgstr "单元"
 
-#: exe/engine/flashwithtextidevice.py:41
-#: exe/engine/imagewithtextidevice.py:41
-#: exe/engine/reflectionidevice.py:45
-#: exe/engine/multiselectidevice.py:42
-#: exe/engine/idevicestore.py:270
-#: exe/engine/idevicestore.py:328
-#: exe/engine/idevicestore.py:356
-#: exe/engine/idevicestore.py:378
-#: exe/engine/idevicestore.py:434
-#: exe/engine/idevicestore.py:462
-#: exe/engine/imagemagnifieridevice.py:41
-#: exe/engine/flashmovieidevice.py:40
-#: exe/engine/attachmentidevice.py:43
-#: exe/engine/multichoiceidevice.py:58
-#: exe/engine/clozeidevice.py:45
-#: exe/engine/truefalseidevice.py:95
-#: exe/engine/appletidevice.py:53
-#: exe/engine/wikipediaidevice.py:52
-#: exe/engine/externalurlidevice.py:38
-#: exe/engine/freetextidevice.py:38
-#: exe/engine/mathidevice.py:36
-#: exe/engine/quiztestidevice.py:182
-#: exe/engine/casestudyidevice.py:93
-#: exe/idevices/exampleidevice.py:40
+#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:41
+#: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
+#: exe/engine/idevicestore.py:270 exe/engine/idevicestore.py:328
+#: exe/engine/idevicestore.py:356 exe/engine/idevicestore.py:378
+#: exe/engine/idevicestore.py:434 exe/engine/idevicestore.py:462
+#: exe/engine/imagemagnifieridevice.py:41 exe/engine/flashmovieidevice.py:40
+#: exe/engine/attachmentidevice.py:43 exe/engine/multichoiceidevice.py:58
+#: exe/engine/clozeidevice.py:45 exe/engine/truefalseidevice.py:95
+#: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:52
+#: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
+#: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:182
+#: exe/engine/casestudyidevice.py:93 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "奥克兰大学"
 
@@ -2085,8 +1898,7 @@ msgstr " "
 msgid "Upload"
 msgstr "上载"
 
-#: exe/engine/idevicestore.py:320
-#: exe/engine/idevicestore.py:428
+#: exe/engine/idevicestore.py:320 exe/engine/idevicestore.py:428
 msgid ""
 "Use feedback to provide a summary of the points covered in the reading, \n"
 "or as a starting point for further analysis of the reading by posing a question \n"
@@ -2112,13 +1924,11 @@ msgstr " "
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
 msgstr " "
 
-#: exe/engine/idevicestore.py:311
-#: exe/engine/idevicestore.py:419
+#: exe/engine/idevicestore.py:311 exe/engine/idevicestore.py:419
 msgid "What to read"
 msgstr "阅读资料"
 
-#: exe/engine/multiselectidevice.py:56
-#: exe/engine/multichoiceidevice.py:72
+#: exe/engine/multiselectidevice.py:56 exe/engine/multichoiceidevice.py:72
 msgid ""
 "When building an MCQ consider the following: <ul>\n"
 "<li> Use phrases that learners are familiar with and have \n"
@@ -2177,18 +1987,15 @@ msgstr "你新的iDevice将以此名称列在iDevice栏中. 这是一个必须�
 msgid "article "
 msgstr "文章"
 
-#: exe/webui/element.py:452
-#: exe/webui/element.py:840
+#: exe/webui/element.py:452 exe/webui/element.py:840
 msgid "blank for original size"
 msgstr "空白为原来的大小尺寸"
 
-#: exe/export/imsexport.py:188
-#: exe/export/scormexport.py:276
+#: exe/export/imsexport.py:188 exe/export/scormexport.py:276
 msgid "eXe"
 msgstr "eXe"
 
-#: exe/webui/preferencespage.py:77
-#: exe/webui/common.py:67
+#: exe/webui/preferencespage.py:77 exe/webui/common.py:67
 #: exe/webui/editorpage.py:217
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 编辑器"
@@ -2202,12 +2009,11 @@ msgstr "eXe项目"
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:188
+#: exe/engine/wikipediaidevice.py:197
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
-#: exe/engine/attachmentidevice.py:105
-#: exe/engine/appletidevice.py:87
+#: exe/engine/attachmentidevice.py:105 exe/engine/appletidevice.py:87
 #, python-format
 msgid "iDevice %s has no package"
 msgstr "iDevice %s has no package"
@@ -2218,8 +2024,7 @@ msgstr "iDevice %s has no package"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: exe/engine/package.py:372
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="toolsEditor()" label="iDevice Editor">
+#: n:render="translate" oncommand="toolsEditor()" label="iDevice Editor">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2283,8 +2088,7 @@ msgstr "SCORM 1.2 选项"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="insertPackage()" label="Insert Package">
+#: n:render="translate" oncommand="insertPackage()" label="Insert Package">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2325,9 +2129,7 @@ msgid "Package"
 msgstr "课件"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Title:"
-#: id="dcTitle" style="width:8em"
-#: tooltiptext="The name given
+#: value="Title:" id="dcTitle" style="width:8em" tooltiptext="The name given
 #: to the resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2354,8 +2156,7 @@ msgstr "在SCOs中添加前一页/后一页链接?"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="extractPackage()" label="Extract Package">
+#: n:render="translate" oncommand="extractPackage()" label="Extract Package">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2374,8 +2175,7 @@ msgid "IEEE LOM"
 msgstr "IEEE LOM"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Project Title:"
-#: id="ppProjectTitle" style="width:8em"
+#: value="Project Title:" id="ppProjectTitle" style="width:8em"
 #: tooltiptext="The project's title.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -2395,9 +2195,7 @@ msgid "Metadata"
 msgstr "元数据"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Creator:"
-#: id="dcCreator" style="width:8em"
-#: tooltiptext="An entity
+#: value="Creator:" id="dcCreator" style="width:8em" tooltiptext="An entity
 #: primarily responsible for making the content of resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2411,8 +2209,7 @@ msgstr "创作者:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="addChild"
-#: keycode="VK_INSERT" id="addChildKey">
+#: n:render="addChild" keycode="VK_INSERT" id="addChildKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2421,8 +2218,7 @@ msgid "VK_INSERT"
 msgstr "VK_INSERT"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Header Background:"
-#: id="ppBackgroundImg" style="width:8em"
+#: value="Header Background:" id="ppBackgroundImg" style="width:8em"
 #: tooltiptext="Background image for a header (an 100px high is
 #: recommended).">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -2445,9 +2241,7 @@ msgstr "导出"
 # exe/xului/templates/dublincore.xul:<label
 # value="Subject:"
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Subject:"
-#: id="dcSubject" style="width:8em"
-#: tooltiptext="The topic of
+#: value="Subject:" id="dcSubject" style="width:8em" tooltiptext="The topic of
 #: the content resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2461,8 +2255,7 @@ msgstr "课目:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="delNode"
-#: keycode="VK_DELETE" id="delNodeKey">
+#: n:render="delNode" keycode="VK_DELETE" id="delNodeKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2507,8 +2300,7 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="renNode"
-#: key="R" modifiers="control" id="renNodeKey">
+#: n:render="renNode" key="R" modifiers="control" id="renNodeKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2529,9 +2321,7 @@ msgstr "清除图像"
 # exe/xului/templates/dublincore.xul:<label
 # value="Publisher:"
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Publisher:"
-#: id="dcPublisher" style="width:8em"
-#: tooltiptext="An
+#: value="Publisher:" id="dcPublisher" style="width:8em" tooltiptext="An
 #: entity responsible for making the resource available.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2545,8 +2335,7 @@ msgstr "出版商:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="promote"
-#: keycode="VK_LEFT" modifiers="control" id="promoteKey">
+#: n:render="promote" keycode="VK_LEFT" modifiers="control" id="promoteKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2567,9 +2356,7 @@ msgstr "标题背景图像?"
 # exe/xului/templates/dublincore.xul:<label
 # value="Contributors:"
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Contributors:"
-#: id="dcContributors" style="width:8em"
-#: tooltiptext="An
+#: value="Contributors:" id="dcContributors" style="width:8em" tooltiptext="An
 #: entity responsible for making contributions to the content of resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2583,8 +2370,7 @@ msgstr "贡献者:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="demote"
-#: keycode="VK_RIGHT" modifiers="control" id="demoteKey">
+#: n:render="demote" keycode="VK_RIGHT" modifiers="control" id="demoteKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2593,9 +2379,7 @@ msgid "VK_RIGHT"
 msgstr "VK_RIGHT"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Author:"
-#: id="ppAuthor" style="width:8em"
-#: tooltiptext="Primary author
+#: value="Author:" id="ppAuthor" style="width:8em" tooltiptext="Primary author
 #: of the resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -2607,9 +2391,7 @@ msgstr "作者"
 # exe/xului/templates/dublincore.xul:<label
 # value="Date:"
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Date:"
-#: id="dcDate" style="width:8em"
-#: tooltiptext="A date of an event
+#: value="Date:" id="dcDate" style="width:8em" tooltiptext="A date of an event
 #: in the lifecycle resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2623,8 +2405,7 @@ msgstr "日期:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="up"
-#: key="U" modifiers="control" id="upKey">
+#: n:render="up" key="U" modifiers="control" id="upKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2633,9 +2414,7 @@ msgid "U"
 msgstr "U"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="License:"
-#: id="ppLicense" style="width:8em"
-#: tooltiptext="Select a
+#: value="License:" id="ppLicense" style="width:8em" tooltiptext="Select a
 #: license.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -2669,8 +2448,7 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="down"
-#: key="D" modifiers="control" id="downKey">
+#: n:render="down" key="D" modifiers="control" id="downKey">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2707,8 +2485,7 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="N" modifiers="control" id="file-new-key"
+#: n:render="translate" key="N" modifiers="control" id="file-new-key"
 #: oncommand="fileNew()">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2747,8 +2524,7 @@ msgstr ""
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="S" modifiers="control" id="file-save-key"
+#: n:render="translate" key="S" modifiers="control" id="file-save-key"
 #: oncommand="fileSave()">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2768,9 +2544,7 @@ msgid "Creative Commons Attribution-ShareAlike 2.5 License"
 msgstr "Creative Commons Attribution-ShareAlike 2.5 License"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Type:"
-#: id="dcType" style="width:8em"
-#: tooltiptext="The nature or
+#: value="Type:" id="dcType" style="width:8em" tooltiptext="The nature or
 #: genre of the content resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2784,8 +2558,7 @@ msgstr "类别:"
 # exe/xului/templates/mainpage.xul:<key
 # exe/xului/templates/mainpage.xul:<key
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="O" modifiers="control" id="file-open-key"
+#: n:render="translate" key="O" modifiers="control" id="file-open-key"
 #: oncommand="fileOpen()">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2823,8 +2596,7 @@ msgstr ""
 "              from a controlled vocabulary or controlled classification scheme."
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="Q" modifiers="control" id="file-quit-key"
+#: n:render="translate" key="Q" modifiers="control" id="file-quit-key"
 #: oncommand="fileQuit()">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2861,8 +2633,7 @@ msgstr ""
 "            "
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
-#: n:render="translate"
-#: key="P" modifiers="control" id="file-print-key"
+#: n:render="translate" key="P" modifiers="control" id="file-print-key"
 #: oncommand="filePrint()">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<key
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<key
@@ -2882,9 +2653,7 @@ msgid "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 msgstr "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Format:"
-#: id="dcFormat" style="width:8em"
-#: tooltiptext="Select a
+#: value="Format:" id="dcFormat" style="width:8em" tooltiptext="Select a
 #: Format.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -2898,8 +2667,7 @@ msgstr "格式:"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="file-menu" accesskey="f" label="File">
+#: n:render="translate" id="file-menu" accesskey="f" label="File">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -2933,8 +2701,7 @@ msgstr "选择格式"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: key="file-new-key" oncommand="fileNew()" accesskey="n"
+#: n:render="translate" key="file-new-key" oncommand="fileNew()" accesskey="n"
 #: label="New">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2967,8 +2734,7 @@ msgstr "XHTML"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: key="file-open-key" oncommand="fileOpen()"
+#: n:render="translate" key="file-open-key" oncommand="fileOpen()"
 #: accesskey="o" label="Open">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -2978,9 +2744,7 @@ msgid "label=\"Open\" accesskey=\"o\""
 msgstr "label=\"打开\" accesskey=\"o\""
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Footer:"
-#: id="ppFooter" style="width:8em"
-#: tooltiptext="Web pages
+#: value="Footer:" id="ppFooter" style="width:8em" tooltiptext="Web pages
 #: footer.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -3003,8 +2767,7 @@ msgstr "SCORM 1.2"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="recent-projects-menu" accesskey="r" label="Recent
+#: n:render="translate" id="recent-projects-menu" accesskey="r" label="Recent
 #: Projects...">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3040,8 +2803,7 @@ msgstr "IMS Content Package 1.1.3"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: key="file-save-key" oncommand="fileSave()"
+#: n:render="translate" key="file-save-key" oncommand="fileSave()"
 #: accesskey="s" label="Save">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3051,9 +2813,7 @@ msgid "label=\"Save\" accesskey=\"s\""
 msgstr "label=\"保存\" accesskey=\"s\""
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Level 1:"
-#: id="ppLevel1" style="width:8em"
-#: tooltiptext="Default name
+#: value="Level 1:" id="ppLevel1" style="width:8em" tooltiptext="Default name
 #: for level 1 nodes">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -3063,9 +2823,7 @@ msgid "Level 1:"
 msgstr "一级:"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Identifier:"
-#: id="dcIdentifier" style="width:8em"
-#: tooltiptext="An
+#: value="Identifier:" id="dcIdentifier" style="width:8em" tooltiptext="An
 #: unambiguous reference to the resource within a given context.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -3079,8 +2837,7 @@ msgstr "课件码:"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="fileSaveAs()" accesskey="a" label="Save
+#: n:render="translate" oncommand="fileSaveAs()" accesskey="a" label="Save
 #: As...">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3090,9 +2847,7 @@ msgid "label=\"Save As...\" accesskey=\"a\""
 msgstr "label=\"另存为...\" accesskey=\"a\""
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Level 2:"
-#: id="ppLevel2" style="width:8em"
-#: tooltiptext="Default name
+#: value="Level 2:" id="ppLevel2" style="width:8em" tooltiptext="Default name
 #: for level 2 nodes">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -3102,9 +2857,7 @@ msgid "Level 2:"
 msgstr "二级:"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Source:"
-#: id="dcSource" style="width:8em"
-#: tooltiptext="A Reference to
+#: value="Source:" id="dcSource" style="width:8em" tooltiptext="A Reference to
 #: a resource from which the present is derived.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -3118,8 +2871,7 @@ msgstr "来源:"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: key="file-print-key" oncommand="filePrint()"
+#: n:render="translate" key="file-print-key" oncommand="filePrint()"
 #: accesskey="p" label="Print">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3129,9 +2881,7 @@ msgid "label=\"Print\" accesskey=\"p\""
 msgstr "label=\"打印\" accesskey=\"p\""
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
-#: value="Level 3:"
-#: id="ppLevel3" style="width:8em"
-#: tooltiptext="Default name
+#: value="Level 3:" id="ppLevel3" style="width:8em" tooltiptext="Default name
 #: for level 3 nodes">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/packageproperties.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/packageproperties.xul:<label
@@ -3143,9 +2893,7 @@ msgstr "三级:"
 # exe/xului/templates/dublincore.xul:<menulist
 # id="dc:language"
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Language:"
-#: id="dcLanguage" style="width:8em"
-#: tooltiptext="Select a
+#: value="Language:" id="dcLanguage" style="width:8em" tooltiptext="Select a
 #: language.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -3159,8 +2907,7 @@ msgstr "语言:"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="export-menu" accesskey="e" label="Export">
+#: n:render="translate" id="export-menu" accesskey="e" label="Export">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3232,8 +2979,7 @@ msgstr "阿法尔 语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="exportPackage('ims','','')" accesskey="i"
+#: n:render="translate" oncommand="exportPackage('ims','','')" accesskey="i"
 #: label="IMS Content Package">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3252,8 +2998,7 @@ msgid "Afrikaans "
 msgstr "南非荷兰语"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="website" label="Web Site">
+#: n:render="translate" id="website" label="Web Site">
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<menuitem
 #: value="Web Site" id="dcmiWebSite"
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3278,8 +3023,7 @@ msgid "Albanian "
 msgstr "阿尔巴尼亚语"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="exportPackage('webSite','','')"
+#: n:render="translate" oncommand="exportPackage('webSite','','')"
 #: label="Self-contained Folder">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3298,8 +3042,7 @@ msgid "Amharic "
 msgstr "阿比西尼亚语"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="exportPackage('zipFile','','')" label="Zip
+#: n:render="translate" oncommand="exportPackage('zipFile','','')" label="Zip
 #: File">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3322,8 +3065,7 @@ msgstr "阿拉伯语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="exportPackage('singlePage','','')"
+#: n:render="translate" oncommand="exportPackage('singlePage','','')"
 #: accesskey="p" label="Single Page">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3347,8 +3089,7 @@ msgstr "亚美尼亚语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="exportPackage('textFile','','')"
+#: n:render="translate" oncommand="exportPackage('textFile','','')"
 #: accesskey="t" label="Text File">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3371,8 +3112,7 @@ msgstr "阿萨姆语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="exportPackage('ipod', '', '')"
+#: n:render="translate" oncommand="exportPackage('ipod', '', '')"
 #: accesskey="n" label="iPod Notes">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3395,8 +3135,7 @@ msgstr "阿维斯陀语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="merging-menu" accesskey="m" label="Merging">
+#: n:render="translate" id="merging-menu" accesskey="m" label="Merging">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3418,8 +3157,7 @@ msgstr "艾马拉语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="insertPackage()" accesskey="i"
+#: n:render="translate" oncommand="insertPackage()" accesskey="i"
 #: label="Insert Package">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3443,8 +3181,7 @@ msgstr "阿塞拜疆语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="extractPackage()" accesskey="E"
+#: n:render="translate" oncommand="extractPackage()" accesskey="E"
 #: label="Extract Package">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3467,8 +3204,7 @@ msgstr "巴什基尔语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="fileQuit()" accesskey="q" label="Quit">
+#: n:render="translate" oncommand="fileQuit()" accesskey="q" label="Quit">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3490,8 +3226,7 @@ msgstr "巴斯克语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="tools-menu" accesskey="t" label="Tools">
+#: n:render="translate" id="tools-menu" accesskey="t" label="Tools">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3513,8 +3248,7 @@ msgstr "孟加拉语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="toolsPreferences()" label="Preferences">
+#: n:render="translate" oncommand="toolsPreferences()" label="Preferences">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3536,8 +3270,7 @@ msgstr "比哈里 语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="window.location = window.location"
+#: n:render="translate" oncommand="window.location = window.location"
 #: id="refresh-menu" accesskey="r" label="Refresh Display">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3560,8 +3293,7 @@ msgstr "比斯拉马语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="styles-menu" accesskey="s" label="Styles">
+#: n:render="translate" id="styles-menu" accesskey="s" label="Styles">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3583,8 +3315,7 @@ msgstr "波西尼亚语"
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
-#: n:render="translate"
-#: id="help-menu" accesskey="h" label="Help">
+#: n:render="translate" id="help-menu" accesskey="h" label="Help">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menu
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menu
@@ -3607,8 +3338,7 @@ msgstr "不列塔尼语"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/manual.php')"
-#: accesskey="m"
+#: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
 #: label="Online eXe Manual">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3632,8 +3362,7 @@ msgstr "白俄罗斯语"
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/tips.php')"
-#: accesskey="t"
+#: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
 #: label="Tips and Tricks">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3658,8 +3387,7 @@ msgstr "保加利亚语"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/Release_Notes')"
-#: accesskey="n"
+#: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
 #: label="Release Notes">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3683,8 +3411,7 @@ msgstr "缅甸语"
 # exe/xului/templates/mainpage.xul:<menu
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/issue.php')"
-#: accesskey="r"
+#: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3709,8 +3436,7 @@ msgstr "加泰罗尼亚语"
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: n:render="translate"
-#: oncommand="browseURL('http://exelearning.org/irc.php')"
-#: accesskey="c"
+#: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3733,8 +3459,7 @@ msgstr "查莫罗语"
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
-#: n:render="translate"
-#: oncommand="aboutPage()" accesskey="a" label="About
+#: n:render="translate" oncommand="aboutPage()" accesskey="a" label="About
 #: eXe">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<menuitem
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<menuitem
@@ -3757,8 +3482,7 @@ msgstr "车臣语"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
-#: n:render="debugInfo"
-#: value="debugInfo">
+#: n:render="debugInfo" value="debugInfo">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3780,8 +3504,7 @@ msgstr "中文"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
-#: n:render="addChild"
-#: key="addChildKey" label="Add Page">
+#: n:render="addChild" key="addChildKey" label="Add Page">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3803,8 +3526,7 @@ msgstr "教会斯拉夫语"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
-#: n:render="renNode"
-#: key="renNodeKey" id="btnRename" label="Rename">
+#: n:render="renNode" key="renNodeKey" id="btnRename" label="Rename">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<toolbarbutton
@@ -3826,8 +3548,7 @@ msgstr "楚瓦什语"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
-#: n:render="outlinePane"
-#: flex="1" value="outlinePane">
+#: n:render="outlinePane" flex="1" value="outlinePane">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3867,8 +3588,7 @@ msgstr "科西嘉语"
 # exe/xului/templates/mainpage.xul:<label
 # exe/xului/templates/mainpage.xul:<label
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
-#: n:render="idevicePane"
-#: flex="1" value="iDevicePane">
+#: n:render="idevicePane" flex="1" value="iDevicePane">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<label
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<label
@@ -3890,8 +3610,7 @@ msgstr "克罗地亚语"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
-#: n:render="translate"
-#: label="Authoring">
+#: n:render="translate" label="Authoring">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<tab
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<tab
@@ -3913,8 +3632,7 @@ msgstr "捷克语"
 # exe/xului/templates/mainpage.xul:<tab
 # exe/xului/templates/mainpage.xul:<tab
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
-#: n:render="translate"
-#: label="Properties">
+#: n:render="translate" label="Properties">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<tab
 #: debian/python2.4-exe/usr/share/exe/templates/mainpage.xul:<tab
 #: debian/python2.5-exe/usr/share/exe/templates/mainpage.xul:<tab
@@ -5160,9 +4878,7 @@ msgid "Zulu "
 msgstr "祖鲁语"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Relation:"
-#: id="dcRelation" style="width:8em"
-#: tooltiptext="A
+#: value="Relation:" id="dcRelation" style="width:8em" tooltiptext="A
 #: reference to a related resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -5174,9 +4890,7 @@ msgstr "关系:"
 # exe/xului/templates/dublincore.xul:<label
 # value="Coverage:"
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Coverage:"
-#: id="dcCoverage" style="width:8em"
-#: tooltiptext="The extent
+#: value="Coverage:" id="dcCoverage" style="width:8em" tooltiptext="The extent
 #: or scope of the content resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -5186,9 +4900,7 @@ msgid "Coverage:"
 msgstr "范围:"
 
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
-#: value="Rights:"
-#: id="dcRights" style="width:8em"
-#: tooltiptext="Information
+#: value="Rights:" id="dcRights" style="width:8em" tooltiptext="Information
 #: about rights held in and over the resource.">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/templates/dublincore.xul:<label
 #: debian/python2.4-exe/usr/share/exe/templates/dublincore.xul:<label
@@ -5207,66 +4919,99 @@ msgstr "权限:"
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr " "
 
+#~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
+#~ msgstr "添加图片至你的 iDevice, 使用者可插图至该 iDevice."
+
 #~ msgid "A single simple discussion"
 #~ msgstr "限每人发表一篇文章的讨论区"
+
 #~ msgid "Can a student post to this forum?:"
 #~ msgstr "学生能否在此论坛发表文章"
+
 #~ msgid "Choose a LMS"
 #~ msgstr "选择学习管理系统"
+
 #~ msgid "Confirm and submit"
 #~ msgstr "确认及提交"
+
 #~ msgid "Discussion Activity"
 #~ msgstr "论坛"
+
 #~ msgid "Discussion Topic/Thread:"
 #~ msgstr "讨论主题:"
+
 #~ msgid "Discussion topic/Thread"
 #~ msgstr "讨论主题:"
+
 #~ msgid "Discussions and replies are allowed"
 #~ msgstr "允许发表及回复文章"
+
 #~ msgid "Each person posts one discussion"
 #~ msgstr "限每人发表一次"
+
 #~ msgid "Force everyone to be subscribed?:"
 #~ msgstr "使每个会员均加入?:"
+
 #~ msgid "Forum Name:"
 #~ msgstr "论坛名称:"
+
 #~ msgid "Forum Name: "
 #~ msgstr "论坛名称:"
+
 #~ msgid "Forum type:"
 #~ msgstr "论坛类别:"
+
 #~ msgid "Group mode:"
 #~ msgstr "分组类别:"
+
 #~ msgid "Hint:"
 #~ msgstr "提示:"
+
 #~ msgid "Introduction"
 #~ msgstr "说明"
+
 #~ msgid "Learning Management System"
 #~ msgstr "学习管理系统"
+
 #~ msgid "Learning Management System:"
 #~ msgstr "学习管理系统:"
+
 #~ msgid "Link to the forum"
 #~ msgstr "链接至论坛"
+
 #~ msgid "Moodle"
 #~ msgstr "Moodle"
+
 #~ msgid "New Forum"
 #~ msgstr "新论坛"
+
 #~ msgid "New Topic"
 #~ msgstr "新主题"
+
 #~ msgid "No"
 #~ msgstr "不"
+
 #~ msgid "No discussions, but replies are allowed"
 #~ msgstr "不能发表文章, 但可回复"
+
 #~ msgid "No discussions, no replies"
 #~ msgstr "不能发表文章, 不能回复"
+
 #~ msgid "No groups"
 #~ msgstr "不分组"
+
 #~ msgid "Please enter a discussion topic name.\n"
 #~ msgstr "请填入讨论主题名称.\n"
+
 #~ msgid "Please enter a name for the forum\n"
 #~ msgstr "请填入论坛名称.\n"
+
 #~ msgid "Please select LMS.\n"
 #~ msgstr "请选择学习管理系统.\n"
+
 #~ msgid "Please select a LMS"
 #~ msgstr "请选择学习管理系统."
+
 #~ msgid "Please select a forum.\n"
 #~ msgstr "请选择论坛.\n"
 
@@ -5274,93 +5019,125 @@ msgstr " "
 # id="dc:format"
 #~ msgid "Select a Forum"
 #~ msgstr "选择论坛"
+
 #~ msgid "Separate groups"
 #~ msgstr "分组"
+
 #~ msgid "Show"
 #~ msgstr "显示"
+
 #~ msgid "Standard forum for general use"
 #~ msgstr "标准论坛"
+
 #~ msgid "Thread: "
 #~ msgstr "Thread: "
+
 #~ msgid "Type a forum name here"
 #~ msgstr "在此输入论坛标题"
+
 #~ msgid "Visible groups"
 #~ msgstr "组别可视性"
+
 #~ msgid "Visible to students:"
 #~ msgstr "学生可看:"
+
 #~ msgid "Yes, forever"
 #~ msgstr "是, 永远"
+
 #~ msgid "Yes, initially"
 #~ msgstr "是, 最初 "
+
 #~ msgid "duplicate forum name.\n"
 #~ msgstr "此论坛标题已被使用, 请输入其它标题.\n"
+
 #~ msgid "duplicate topic name."
 #~ msgstr "重复的主题名"
+
 #~ msgid "Use Emphasis to distinguish the importance  of the information being presented in the iDevice."
 #~ msgstr "用强调程度来区别该 iDevice所呈现信息的重要性."
+
 #~ msgid "Add"
 #~ msgstr "添加"
+
 #~ msgid "Author"
 #~ msgstr "作者"
+
 #~ msgid ""
 #~ "EXPORT FAILED.\n"
 #~ "\"%s\" already exists.\n"
 #~ "Please try again with a different filename"
 #~ msgstr "%s 已存在, 请使用别的文件名."
+
 #~ msgid "Error loading package \"%s\": %s"
 #~ msgstr "载入课件错误  \"%s\": %s"
+
 #~ msgid "Feedback Image"
 #~ msgstr "评语插图"
+
 #~ msgid ""
 #~ "For use if you need to include an external\n"
 #~ "web page into your content. Rather than popup an external window, which can have some\n"
 #~ "problematic usability consequences, this iDevice loads the appropriate content \n"
 #~ "into an inline frame. Use only if your content will be online."
 #~ msgstr "只有当课件内容需要包含一个在线的外部网页时使用它."
+
 #~ msgid "Question(s)"
 #~ msgstr "问题"
+
 #~ msgid "Save as"
 #~ msgstr "另存为"
+
 #~ msgid ""
 #~ "There was an error in the export:\n"
 #~ "%s"
 #~ msgstr ""
 #~ "导出错误:\n"
 #~ "%s"
+
 #~ msgid "Type the question stem."
 #~ msgstr "输入问题"
+
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 # exe/xului/templates/mainpage.xul:<menu
 #~ msgid "label=\"Merging\" accesskey=\"e\""
 #~ msgstr "label=\"合并\" accesskey=\"e\""
+
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #~ msgid "label=\"Register Online\" accesskey=\"R\""
 #~ msgstr "label=\"在线注册\" accesskey=\"R\""
+
 #~ msgid "Greek "
 #~ msgstr "希腊语"
+
 #~ msgid "Tonga (?) "
 #~ msgstr "汤加语 "
+
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 # exe/xului/templates/mainpage.xul:<menuitem
 #~ msgid "label=\"SCORM 2004\" accesskey=\"c\""
 #~ msgstr "label=\"SCORM 2004\" accesskey=\"c\""
+
 #~ msgid ""
 #~ "Provide a caption for the \n"
 #~ "MP3 file."
 #~ msgstr "为MP3提供标题."
+
 #~ msgid "Strong emphasis"
 #~ msgstr "特别强调"
+
 #~ msgid "Unable to connect to "
 #~ msgstr "无法连接至"
+
 #~ msgid "some help tip here."
 #~ msgstr " "
+
 #, fuzzy
 #~ msgid ""
 #~ "Click \n"
@@ -5395,12 +5172,16 @@ msgstr " "
 #, fuzzy
 #~ msgid "Forum name:"
 #~ msgstr "论坛名称:"
+
 #~ msgid "Level 1: "
 #~ msgstr "一级"
+
 #~ msgid "Level 2: "
 #~ msgstr "二级"
+
 #~ msgid "Level 3: "
 #~ msgstr "三级"
+
 #~ msgid "Project title:"
 #~ msgstr "课件标题:"
 
@@ -5417,10 +5198,13 @@ msgstr " "
 #, fuzzy
 #~ msgid "Subject"
 #~ msgstr "课目:"
+
 #~ msgid "Canno  access directory named "
 #~ msgstr "不能识别路径名称"
+
 #~ msgid "Instructions for completion"
 #~ msgstr "完成说明"
+
 #~ msgid "Provide a brief description of the file"
 #~ msgstr "提供文件的简单描述."
 
@@ -5433,15 +5217,18 @@ msgstr " "
 #, fuzzy
 #~ msgid "Solvenian"
 #~ msgstr "Slovenian. "
+
 #~ msgid ""
 #~ "Enter the image display \n"
 #~ "dimensions (in pixels) and determine the alignment of the image on screen. \n"
 #~ "The width and height dimensions will alter proportionally."
 #~ msgstr " "
+
 #~ msgid "ImageMagnifier"
 #~ msgstr "图像放大器"
+
 #~ msgid "Magnify initial zoom? "
 #~ msgstr "初始放大?"
+
 #~ msgid "Project Properties Updated"
 #~ msgstr "课件属性更新"
-

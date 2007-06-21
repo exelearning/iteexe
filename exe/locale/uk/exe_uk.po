@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning Ukraine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 22:18+1200\n"
+"POT-Creation-Date: 2007-06-22 21:01+1200\n"
 "PO-Revision-Date: 2007-04-18 12:29+1200\n"
 "Last-Translator: \n"
 "Language-Team: IP-Team <solomon@ip-team.org>\n"
@@ -238,7 +238,7 @@ msgstr ""
 "Підказку можна добавити, щоб допомогти \n"
 "учневі відповісти на питання."
 
-#: exe/webui/editorpane.py:275
+#: exe/webui/editorpane.py:259
 msgid "Actions"
 msgstr "Дії"
 
@@ -249,7 +249,7 @@ msgstr "Дії"
 msgid "Activity"
 msgstr "Діяльність"
 
-#: exe/webui/editorpane.py:260
+#: exe/webui/editorpane.py:246
 msgid "Add Field"
 msgstr "Додати Поле"
 
@@ -261,7 +261,7 @@ msgstr "Додати Зображення"
 msgid "Add JPEG Image"
 msgstr "Додати JPEG Зображення"
 
-#: exe/webui/editorpane.py:91
+#: exe/webui/editorpane.py:88
 msgid "Add a flash video to your iDevice."
 msgstr "Додати флеш ролик до вашого iDevice."
 
@@ -285,20 +285,16 @@ msgstr ""
 "<strong>Завантажити</strong>. Вже завантажені файли \n"
 "будуть перечислені внизу під кодовим полем аплету."
 
-#: exe/webui/editorpane.py:93
+#: exe/webui/editorpane.py:90
 #, fuzzy
 msgid "Add an attachment file to your iDevice."
 msgstr "Додати mp3 файл до вашого iDevice."
 
 #: exe/webui/editorpane.py:87
-msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
-msgstr "Зображення - надає можливість користувачу додавати зображення до пакету."
-
-#: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
 msgstr "Додає інтерактивне поле зворотнього зв'язку до вашого пакету."
 
-#: exe/webui/editorpane.py:92
+#: exe/webui/editorpane.py:89
 msgid "Add an mp3 file to your iDevice."
 msgstr "Додати mp3 файл до вашого iDevice."
 
@@ -419,7 +415,7 @@ msgstr "Тип Аплету "
 msgid "Article"
 msgstr "Стаття"
 
-#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:269
+#: exe/engine/attachmentidevice.py:42 exe/webui/editorpane.py:253
 msgid "Attachment"
 msgstr "Прикріплення"
 
@@ -436,7 +432,7 @@ msgstr "Auckland University of Technology"
 msgid "Button Caption"
 msgstr "Заголовок Кнопки"
 
-#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:283
+#: exe/webui/preferencespage.py:94 exe/webui/editorpane.py:267
 msgid "Cancel"
 msgstr "Відміна"
 
@@ -537,8 +533,8 @@ msgstr "Клацніть на <strong>Додати зображення</strong>
 #: exe/webui/truefalseelement.py:129 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:244 exe/webui/block.py:245
 #: exe/webui/element.py:1899 exe/webui/element.py:1900
-#: exe/webui/editorpane.py:372 exe/webui/editorpane.py:373
-#: exe/webui/editorpane.py:393 exe/webui/editorpane.py:394
+#: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
+#: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: installs/debian/ubuntu/debian/python2.4-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
 #: oncommand="window.close();" label="Close">
 #: installs/debian/ubuntu/debian/python2.5-exe/usr/share/exe/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -761,13 +757,13 @@ msgstr ""
 "Помилка!\n"
 "%s"
 
-#: exe/webui/block.py:328 exe/webui/editorpane.py:280
+#: exe/webui/block.py:328 exe/webui/editorpane.py:264
 #: exe/webui/editorpage.py:266
 msgid "Edit"
 msgstr "Редагувати"
 
 #: exe/webui/wikipediablock.py:133 exe/webui/multimediablock.py:94
-#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:344
+#: exe/webui/rssblock.py:94 exe/webui/editorpane.py:328
 msgid "Emphasis"
 msgstr "Акцент"
 
@@ -795,7 +791,7 @@ msgstr ""
 "Введіть допоміжний натяк. Якщо ви \n"
 "не хочете додавати допоміжну інформацію, залиште це поле пустим."
 
-#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:236
+#: exe/engine/wikipediaidevice.py:71 exe/engine/wikipediaidevice.py:245
 msgid ""
 "Enter a phrase or term you wish to search \n"
 "within Wikipedia."
@@ -855,7 +851,7 @@ msgstr ""
 msgid "Enter any feedback you wish to provide the learner with-in the feedback field. This field can be left blank."
 msgstr "Введіть будь-який зворотний зв'язок, що ви хочете надати учням. Це поле можна залишити порожнім."
 
-#: exe/webui/editorpane.py:147
+#: exe/webui/editorpane.py:143
 msgid "Enter instructions for completion here"
 msgstr "Введіть інструкції що до завершення тут"
 
@@ -902,14 +898,14 @@ msgstr ""
 "(в пікселях) та виберіть вирівнювання зображення на екрані. \n"
 "Висота і ширина будуть автоматично підігнані пропорційно."
 
-#: exe/webui/editorpane.py:154 exe/webui/editorpane.py:162
-#: exe/webui/editorpane.py:188 exe/webui/editorpane.py:198
+#: exe/webui/editorpane.py:150 exe/webui/editorpane.py:174
+#: exe/webui/editorpane.py:184
 msgid "Enter the instructions for completion here"
 msgstr "Введіть інструкції що до завершення тут"
 
-#: exe/webui/editorpane.py:146 exe/webui/editorpane.py:153
-#: exe/webui/editorpane.py:161 exe/webui/editorpane.py:171
-#: exe/webui/editorpane.py:187 exe/webui/editorpane.py:197
+#: exe/webui/editorpane.py:142 exe/webui/editorpane.py:149
+#: exe/webui/editorpane.py:157 exe/webui/editorpane.py:173
+#: exe/webui/editorpane.py:183
 msgid "Enter the label here"
 msgstr "Введіть назву тут"
 
@@ -994,11 +990,11 @@ msgstr "Неправильно"
 #: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
 #: exe/engine/field.py:1187 exe/webui/clozeblock.py:148
 #: exe/webui/questionelement.py:94 exe/webui/common.py:206
-#: exe/webui/element.py:1726 exe/webui/editorpane.py:267
+#: exe/webui/element.py:1726 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "Зворотний зв'язок"
 
-#: exe/webui/editorpane.py:172
+#: exe/webui/editorpane.py:158
 msgid ""
 "Feedback button will not appear if no \n"
 "data is entered into this field."
@@ -1022,7 +1018,7 @@ msgstr "Файл %s не існує або його неможливо проч�
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Файл з назвою %s вже існує, його неможливо замінити"
 
-#: exe/webui/attachmentblock.py:80 exe/webui/element.py:722
+#: exe/webui/attachmentblock.py:81 exe/webui/element.py:722
 msgid "Filename:"
 msgstr "Назва файлу:"
 
@@ -1128,12 +1124,11 @@ msgstr "IDevice іконка питання"
 msgid "IDevice broken"
 msgstr "IDevice пошкоджено"
 
-#: exe/webui/editorpane.py:375
+#: exe/webui/editorpane.py:359
 msgid "Icons"
 msgstr "Іконки"
 
 #: exe/engine/imagewithtextidevice.py:59 exe/engine/casestudyidevice.py:65
-#: exe/webui/editorpane.py:265
 msgid "Image"
 msgstr "Зображення"
 
@@ -1163,7 +1158,7 @@ msgstr "Імпортувати iDevices"
 msgid "Incorrect!"
 msgstr "Неправильно!"
 
-#: exe/webui/editorpane.py:389
+#: exe/webui/editorpane.py:373
 msgid "Info"
 msgstr "Інфо"
 
@@ -1204,7 +1199,7 @@ msgstr "Wikipedia - Японський"
 msgid "Java Applet"
 msgstr "JAVA Аплет"
 
-#: exe/webui/attachmentblock.py:97
+#: exe/webui/attachmentblock.py:98
 msgid "Label:"
 msgstr "Назва:"
 
@@ -1226,7 +1221,7 @@ msgstr "Ліцензія належить "
 msgid "Load"
 msgstr "Завантажити"
 
-#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:271
+#: exe/engine/multimediaidevice.py:40 exe/webui/editorpane.py:255
 msgid "MP3"
 msgstr "MP3"
 
@@ -1271,7 +1266,7 @@ msgstr "Мульти-можливість"
 msgid "Multi-select"
 msgstr "Мульти-вибір"
 
-#: exe/webui/editorpane.py:337
+#: exe/webui/editorpane.py:321
 msgid "Name"
 msgstr "Ім'я"
 
@@ -1301,7 +1296,7 @@ msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "Немає доступних Thumbnail. Неможливо змінити оригінальне зображення."
 
 #: exe/webui/wikipediablock.py:130 exe/webui/multimediablock.py:91
-#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:347
+#: exe/webui/rssblock.py:91 exe/webui/editorpane.py:331
 msgid "No emphasis"
 msgstr "Нема акценту"
 
@@ -1384,11 +1379,11 @@ msgstr "Пакет розпаковано в: %s"
 msgid "Package saved to: %s"
 msgstr "Пакет збережено в: %s"
 
-#: exe/webui/block.py:236 exe/webui/editorpane.py:385
+#: exe/webui/block.py:236 exe/webui/editorpane.py:369
 msgid "Pedagogical Help"
 msgstr "Педагогічна Допомога"
 
-#: exe/webui/editorpane.py:341
+#: exe/webui/editorpane.py:325
 msgid "Pedagogical Tip"
 msgstr "Педагогічна Порада"
 
@@ -1396,7 +1391,7 @@ msgstr "Педагогічна Порада"
 msgid "Please enter an idevice name."
 msgstr "Будь ласка введіть назву для iDevice."
 
-#: exe/webui/editorpane.py:209
+#: exe/webui/editorpane.py:195
 msgid "Please enter<br />an idevice name."
 msgstr "Будь ласка введіть <br />назву для iDevice."
 
@@ -1444,7 +1439,7 @@ msgstr ""
 "<li>        Учні повинні манти 4 рівень Англійської мови </li>\n"
 "<li>        Учні повинні вміти використовувати прилади </li></ul>\n"
 
-#: exe/webui/element.py:1394 exe/webui/editorpane.py:278
+#: exe/webui/element.py:1394 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "Попередній перегляд"
 
@@ -1651,7 +1646,7 @@ msgstr "Вибрати мову"
 msgid "Select MP3 file"
 msgstr "Вибрати MP3 файл"
 
-#: exe/webui/attachmentblock.py:93 exe/webui/editorelement.py:362
+#: exe/webui/attachmentblock.py:94 exe/webui/editorelement.py:362
 #: exe/webui/element.py:732
 msgid "Select a file"
 msgstr "Вибрати файл"
@@ -1686,7 +1681,7 @@ msgstr "Відмітьте всі правильні відповіді, ста�
 msgid "Select pass rate: "
 msgstr "Вибрати прохідний бал:"
 
-#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:234
+#: exe/engine/wikipediaidevice.py:69 exe/engine/wikipediaidevice.py:243
 msgid ""
 "Select the appropriate language version \n"
 "of Wikipedia to search and enter search term."
@@ -1767,7 +1762,7 @@ msgid "Small"
 msgstr "Малий"
 
 #: exe/webui/wikipediablock.py:131 exe/webui/multimediablock.py:92
-#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:348
+#: exe/webui/rssblock.py:92 exe/webui/editorpane.py:332
 msgid "Some emphasis"
 msgstr "Певний акцент"
 
@@ -1801,7 +1796,7 @@ msgstr "Історія:"
 msgid "Strict Marking?"
 msgstr "Перевірити Читабельність?"
 
-#: exe/webui/element.py:1088 exe/webui/editorpane.py:436
+#: exe/webui/element.py:1088 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "Підтвердити"
 
@@ -1822,11 +1817,11 @@ msgstr "Використовуючи цей iDevice, викладачі пови
 msgid "Text"
 msgstr "Текст"
 
-#: exe/webui/editorpane.py:263
+#: exe/webui/editorpane.py:249
 msgid "Text Box"
 msgstr "Текстова Коробка"
 
-#: exe/webui/editorpane.py:261
+#: exe/webui/editorpane.py:247
 msgid "Text Line"
 msgstr "Текстова Лінія"
 
@@ -2044,7 +2039,7 @@ msgstr "Введіть питання. Питання мусить бути зр
 msgid "URL:"
 msgstr "Адреса (URL):"
 
-#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:109
+#: exe/engine/wikipediaidevice.py:97 exe/engine/wikipediaidevice.py:118
 #, python-format
 msgid "Unable to download from %s <br/>Please check the spelling and connection and try again."
 msgstr "Неможливо завантажити з %s <br/>Будь ласка перевірте правельність написання, та налаштування з'єднання після чого пробуйте знов."
@@ -2199,7 +2194,7 @@ msgstr ""
 msgid "file %s has no parentNode"
 msgstr "file %s has no parentNode"
 
-#: exe/engine/wikipediaidevice.py:188
+#: exe/engine/wikipediaidevice.py:197
 msgid "http://en.wikipedia.org/"
 msgstr "http://en.wikipedia.org/"
 
@@ -5215,6 +5210,9 @@ msgstr "Права:"
 #: exe/xului/templates/dublincore.xul:<description
 msgid "Typically, a Rights element will contain a rights management statement for the resource, or reference a service providing such information. Rights information often encompasses Intellectual Property Rights (IPR), Copyright, and various Property Rights. If the Rights element is absent, no assumptions can be made about the status of these and other rights with respect to the resource."
 msgstr "Зазвичай елемент Права містить систему керування правами для ресурсів, або посилання на сервіс що забезпечує такі можливості. Інформація про права часто містить в собі Права Інтелектуальної Власності (IPR), авторське право (Copyright), та інші права власності. Якщо елемент Права відсутній, немлжливо буде дізнатись про права що стосуються даного ресурсу."
+
+#~ msgid "Add an image to your iDevice. Enables the user to insert an image into the  iDevice."
+#~ msgstr "Зображення - надає можливість користувачу додавати зображення до пакету."
 
 #~ msgid "A single simple discussion"
 #~ msgstr "Єдине просте обговорення"
