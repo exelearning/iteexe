@@ -3,6 +3,7 @@ import signal
 import logging
 import warnings
 import subprocess
+from tempfile import mkstemp
 from exe.engine.path import Path
 from exe import globals as G
 
@@ -56,8 +57,8 @@ def compile(latex, fontsize=4):
     finally:
         if hasattr(signal, 'SIGCHLD'):
             signal.signal(signal.SIGCHLD, oldsig)
-    outputFileName = os.tmpnam()
-    outputFile = open(outputFileName, 'wb')
+    (outputfd, outputFileName) = mkstemp()
+    outputFile = os.fdopen(outputfd, 'a')
     shutil.copyfileobj(process.stdout, outputFile)
     outputFile.close()
     process.stderr.close()
