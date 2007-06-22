@@ -34,24 +34,26 @@ from twisted.internet import reactor
  
 log = logging.getLogger(__name__)
 
+def setVersionInPrefs(version_string, profile_dir):
+    prefs = os.path.join(profile_dir, "prefs.js")
+    try:
+        lines = open(prefs, 'rt').readlines()
+        prefs = open(prefs, 'wt')
+        for line in lines:
+            if line.find("extensions.lastAppVersion") > -1:
+                line = re.sub(r'\d+\.\d+\.\d+\.\d+',
+                        version_string, line, 1)
+                log.info(u"updated browser version in prefs: " + line)
+            prefs.write(line)
+    except IOError:
+        log.info(u"Unable to update version number in Firefox preferences")
 
 def setBrowserVersion(browserPath, profile_dir):
     version = os.popen(browserPath + " -v", "r").read()
     log.info(u"Firefox version: " + version)
     vs = re.search(r"(?P<vs>\d+\.\d+\.\d+\.\d+)", version)
     if vs:
-        prefs = os.path.join(profile_dir, "prefs.js")
-        try:
-            lines = open(prefs, 'rt').readlines()
-            prefs = open(prefs, 'wt')
-            for line in lines:
-                if line.find("extensions.lastAppVersion") > -1:
-                    line = re.sub(r'\d+\.\d+\.\d+\.\d+',
-                            vs.group('vs'), line, 1)
-                    log.info(u"updated browser version in prefs: " + line)
-                prefs.write(line)
-        except IOError:
-            log.info(u"Unable to update version number in Firefox preferences")
+        setVersionInPrefs(vs.group('vs'), profile_dir)
 
 def launchBrowser(config, packageName):
     """
@@ -84,6 +86,8 @@ def launchBrowser(config, packageName):
     # the extension update check
     if sys.platform[:5] == u"linux":
         setBrowserVersion(config.browserPath, config.configDir/profile)
+    elif sys.platform[:3] == u"win":
+        setVersionInPrefs('2.0.0.1', config.configDir/profile)
 
     if sys.platform[:3] == u"win":
         try:
