@@ -12,6 +12,7 @@ Next Release
 * Fix gallery iDevice so it doesn't require clicking done check to register
 * Fix iDevice editor display in French
 * Fix packaging of CP and SCORM schemas in RPM and DPKG
+* Change how Maths iDevice temporary file is created
 * Workaround French Wikipedia parsing of &#160; in attributes
 * Translation updates, including addition of Catalan
 * Update to BeautifulSoup 3.0.4
