@@ -949,7 +949,6 @@ class Path(unicode):
         'filterDir' will be called passing each source directory name, if it returns False, the directory will not be copied.
         'filterFile' will be called passing each source file name, if it returns False, the file will not be copied.
         """
-        print self, dst
         dst = Path(dst)
         names = self.listdir()
         dst.mkdir()
