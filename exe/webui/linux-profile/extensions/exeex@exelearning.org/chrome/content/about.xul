@@ -10,7 +10,7 @@
 <groupbox align="center" orient="horizontal">
 <vbox>
   <text value="eXe Extension" style="font-weight: bold; font-size: x-large;"/>
-  <text value="ver. 0.3.0"/>
+  <text value="ver. 0.4.0"/>
   <separator class="thin"/>
   <text value="Created By:" style="font-weight: bold;"/>
   <text value="eXe Project" class="url"
