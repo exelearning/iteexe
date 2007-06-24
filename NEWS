@@ -1,9 +1,9 @@
-Next Release
-* Display warning when user tries to close main eXe window
+Version 0.95 (r2931)
 * Add ability to embed images in text areas with TinyMCE
 * Remove Image With Text iDevice, migrates to Free Text iDevice
 * Remove image field from iDevice editor
-* Java applet, SCORM Quiz, and Flash Movie are now regular iDevices not plugins
+* Java applet, SCORM Quiz, and Flash Movie now regular iDevices not plugins
+* Display warning when user tries to close main eXe window
 * Opening attachments in preview mode now uses preferred browser
 * Add FTP to possible external web sites
 * Fix position of iDevice edit button for SCORM Quiz
@@ -18,7 +18,7 @@ Next Release
 * Update to BeautifulSoup 3.0.4
 
 Version 0.24 (r2857)
-* Rewrite anchor tags in textareas when in preview mode to use local browser
+* Rewrite anchor tags in textareas in preview mode to use local browser
 * Restrict Image Magnifier selection to jpg images
 * Fix position of iDevice edit button in preview mode
 * Fix Multi-Select iDevice icon
