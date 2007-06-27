@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: EXELearning 0.12\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-22 21:01+1200\n"
-"PO-Revision-Date: 2007-06-07 20:38+1200\n"
-"Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
+"PO-Revision-Date: 2007-06-27 03:41+1200\n"
+"Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,16 +28,19 @@ msgid ""
 "<p>eg. For Geogebra applets, select geogebra, then add the .ggb file that \n"
 "you created in Geogebra.</p>"
 msgstr ""
+" <p>Kui lisatav applet on loodud ühega \n"
+"alltoodud rippmenüüs oleva rakendusega, \n"
+"siis lisa selles rakenduses genereeritud andme/appleti fail. </p>\n"
+"<p>Näiteks Geogebra appletit puhul, vali geogebra, ja siis lisa .ggb fail.</p>"
 
 #: exe/xului/mainpage.py:275 exe/xului/mainpage.py:642
 #: exe/xului/mainpage.py:763 exe/xului/mainpage.py:819
 #: exe/xului/mainpage.py:840
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\"%s\" already exists.\n"
 "Please try again with a different filename"
 msgstr ""
-"SALVESTAMINE EBAÕNNESTUS.\n"
 "\"%s\" on juba olemas. \n"
 "Palun proovi uuesti muudetud failinimega"
 
@@ -141,7 +144,7 @@ msgstr ""
 
 #: exe/engine/field.py:1095
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr ""
+msgstr "<p>Vali alltoodud tekstiredaktoris vajalikud sümbolid või sisesta LATEX-kood käsitsi, et luua matemaatilist valemit. Sisestatud valemite eelvaateks kliki alltoodud nupul &lt;PEelvaade&gt;.</p>"
 
 #: exe/engine/idevicestore.py:276
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -250,9 +253,8 @@ msgid "Activity"
 msgstr "Tegevus"
 
 #: exe/webui/editorpane.py:246
-#, fuzzy
 msgid "Add Field"
-msgstr "Lisa fail"
+msgstr "Lisa väli"
 
 #: exe/webui/element.py:412
 msgid "Add Image"
@@ -263,9 +265,8 @@ msgid "Add JPEG Image"
 msgstr "Lisa JPEG-pilt"
 
 #: exe/webui/editorpane.py:88
-#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr "Lisa oma iDevice-le interaktiivset tagasisidet."
+msgstr "Lisa oma iDevice-le Flash-video."
 
 #: exe/webui/editorpane.py:81
 #, fuzzy
@@ -273,9 +274,8 @@ msgid "Add a single text line to an iDevice. Useful if you want the ability to p
 msgstr "Lisa iDevice'i üks tekstirida. Kasulik kui soovid lisada märgise võimalust iDevice'i sees."
 
 #: exe/webui/editorpane.py:84
-#, fuzzy
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr "Lisa iDevice-i teksti kast. Kasutatakse sisestamaks kirjeldavat tekstisisu."
+msgstr "Lisa iDevice-i teksti kast. Kasutatakse sisestamaks suuremahulist tekstisisu."
 
 #: exe/engine/appletidevice.py:61
 msgid ""
