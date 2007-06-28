@@ -732,6 +732,20 @@ class AttachmentElement(Element):
         html += u' value="%s" /><br/>\n' % _(u"Select a file")
 
         return html
+    
+    def renderPreiew(self):
+        """
+        Returns an XHTML string for previewing this image
+        """
+        html = ""
+        if self.field.attachResource:
+            html += u"<a style=\"cursor: pointer;\" "
+            html += u" onclick=\"window.open('resources/"
+            html += self.field.attachResource.storageName
+            html += u"', '_blank');\" >"
+            html += self.field.attachResource.storageName
+            html += u"</a><br/>\n"
+        return html
 
     def renderView(self):
         """
@@ -740,7 +754,7 @@ class AttachmentElement(Element):
         html = ""
         if self.field.attachResource:
             html += u"<a style=\"cursor: pointer;\" "
-            html += u" onclick=\"window.open('resources/"
+            html += u" onclick=\"window.open('"
             html += self.field.attachResource.storageName
             html += u"', '_blank');\" >"
             html += self.field.attachResource.storageName
