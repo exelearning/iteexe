@@ -92,6 +92,7 @@ class _Resource(Persistable):
         """
         if package is self._package: return
         oldPackage = self._package
+
         if self._package:
             # Remove our self from old package's list of resources
             siblings = self._package.resources[self.checksum]

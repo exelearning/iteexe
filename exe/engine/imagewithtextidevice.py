@@ -124,9 +124,23 @@ you have just inserted.""")
     def upgradeToVersion8(self):
         """
         Converting ImageWithTextIdevice -> FreeTextIdevice,
-        now that FreeText can hold embeddded images
-        """
+        now that FreeText can hold embeddded images.
 
+        BUT - due to the inconsistent loading of the objects via unpickling,
+        since the resources aren't necessarily properly loaded and upgraded,
+        NOR is the package necessarily, as it might not even have a list of
+        resources yet, all of this conversion code must be done in an
+        afterUpgradeHandler
+        """ 
+        package = self.parentNode.package
+        package.afterUpgradeHandlers.append(self.convertToFreeText)
+
+    def convertToFreeText(self):
+        """
+        Actually do the Converting of 
+              ImageWithTextIdevice -> FreeTextIdevice,
+        now that FreeText can hold embeddded images.
+        """
         new_content = ""
 
         if self.image.imageResource:
@@ -146,9 +160,6 @@ you have just inserted.""")
         # note: this is given a text field which itself did NOT yet have
         # any embedded media! easier, eh?
 
-        #HERE: try to move the following import up top!
-        # will probably need to import FreeText:
-        #from exe.engine.freetextidevice   import FreeTextIdevice
         replacementIdev = FreeTextIdevice(new_content)
 
 
@@ -188,8 +199,8 @@ you have just inserted.""")
             # Not sure why this can't be imported up top, but it gives 
             # ImportError: cannot import name GalleryImages, 
             # so here it be: 
-            from exe.engine.galleryidevice  import GalleryImage
-
+            from exe.engine.galleryidevice  import GalleryImage 
+            
             full_image_path = self.image.imageResource.path
             new_GalleryImage = GalleryImage(replacementIdev.content, \
                     self.caption,  full_image_path)
