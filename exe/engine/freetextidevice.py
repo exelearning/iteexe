@@ -31,7 +31,7 @@ class FreeTextIdevice(Idevice):
     """
     FreeTextIdevice: just has a block of text
     """
-    persistenceVersion = 6
+    persistenceVersion = 7
 
     def __init__(self, content=""):
         Idevice.__init__(self, x_(u"Free Text"), 
@@ -97,6 +97,13 @@ x_(u"This is a free text field general learning content can be entered."),
         Upgrades to v0.12
         """
         self._upgradeIdeviceToVersion2()
+
+    def upgradeToVersion7(self):
+        """
+        Attach the idevice to the TextAreaField for tinyMCE image embedding:
+        """
+        self.content.idevice = self
+   
    
 # ===========================================================================
 

@@ -35,6 +35,11 @@ class FreeTextBlock(Block):
     """
     def __init__(self, parent, idevice):
         Block.__init__(self, parent, idevice)
+        if idevice.content.idevice is None: 
+            # due to the loading process's timing, idevice wasn't yet set; 
+            # set it here for the TextAreaElement's tinyMCE editor 
+            idevice.content.idevice = idevice
+
         self.contentElement = TextAreaElement(idevice.content)
         self.contentElement.height = 250
 

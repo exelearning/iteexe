@@ -136,6 +136,11 @@ class Idevice(Persistable):
         """
         # Clear out old user resources
         while self.userResources:
+            # r3m0: possible bug fix, due to order of loading:
+            # first ensure that this idevice IS attached to the resource:
+            if self.userResources[0]._idevice is None:
+                self.userResources[0]._idevice = self
+            # and NOW we can finally properly delete it!
             self.userResources[0].delete()
 
         if self.parentNode:
