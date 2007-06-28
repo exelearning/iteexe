@@ -733,7 +733,7 @@ class AttachmentElement(Element):
 
         return html
     
-    def renderPreiew(self):
+    def renderPreview(self):
         """
         Returns an XHTML string for previewing this image
         """
