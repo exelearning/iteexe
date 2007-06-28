@@ -1,3 +1,7 @@
+Next Release
+* Add ability to edit (delete) broken iDevices in a package
+* Fix rendering of attachment elements of custom iDevices
+
 Version 0.95 (r2931)
 * Add ability to embed images in text areas with TinyMCE
 * Remove Image With Text iDevice, migrates to Free Text iDevice
