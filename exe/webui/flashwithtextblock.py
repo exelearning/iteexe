@@ -42,6 +42,12 @@ class FlashWithTextBlock(Block):
         """
         Block.__init__(self, parent, idevice)
         self.flashElement = FlashElement(idevice.flash)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        # (only applies to the image-embeddable ones, not FlashElement)
+        if idevice.text.idevice is None: 
+            idevice.text.idevice = idevice
         self.textElement  = TextAreaElement(idevice.text)
 
 

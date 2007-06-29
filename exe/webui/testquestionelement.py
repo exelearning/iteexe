@@ -43,6 +43,10 @@ class TestquestionElement(object):
         self.id         = unicode(index) + "b" + idevice.id        
         self.idevice    = idevice
 
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if question.questionTextArea.idevice is None: 
+            question.questionTextArea.idevice = idevice
         self.questionElement = TextAreaElement(question.questionTextArea)
         self.question   = question
 

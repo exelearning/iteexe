@@ -43,6 +43,12 @@ class MultimediaBlock(Block):
         """
         Block.__init__(self, parent, idevice)
         self.mediaElement = MultimediaElement(idevice.media)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        # (only applies to the image-embeddable ones, not MultimediaElement)
+        if idevice.text.idevice is None: 
+            idevice.text.idevice = idevice
         self.textElement  = TextAreaElement(idevice.text)
 
 

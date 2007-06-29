@@ -246,6 +246,16 @@ class Resource(_Resource):
         Returns the path to the resource
         """
         if self._package:
+            # r3m0: debugging package CM-KT1-WP1.elp, which apparently
+            # loads without a resourceDir, since the package has not yet
+            # been upgraded:
+            #######
+            if not hasattr(self._package,"resourceDir"):
+                import pdb
+                pbd.set_trace()
+                # and set a bogus variable for now, to see this:
+                bad_situation = 1
+            #######
             return self._package.resourceDir/self._storageName
         else:
             return self._storageName

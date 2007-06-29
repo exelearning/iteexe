@@ -40,6 +40,12 @@ class RssBlock(Block):
         Initialize
         """
         Block.__init__(self, parent, idevice)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.rss.idevice is None: 
+            idevice.rss.idevice = idevice
+
         self.rssElement = TextAreaElement(idevice.rss)
         self.rssElement.height = 300
 

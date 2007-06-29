@@ -1453,6 +1453,10 @@ class SelectOptionElement(Element):
         Element.__init__(self, field)
         self.index = 0
 
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if field.answerTextArea.idevice is None: 
+            field.answerTextArea.idevice = idevice
         self.answerElement = TextAreaElement(field.answerTextArea)
         self.answerId = "ans"+self.id
         self.answerElement.id = self.answerId
@@ -1531,6 +1535,13 @@ class SelectquestionElement(Element):
         Initialize
         """
         Element.__init__(self, field)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if field.questionTextArea.idevice is None: 
+            field.questionTextArea.idevice = idevice
+        if field.feedbackTextArea.idevice is None: 
+            field.feedbackTextArea.idevice = idevice
 
         self.questionElement = TextAreaElement(field.questionTextArea)
         self.questionId = "question"+self.id
@@ -1678,6 +1689,13 @@ class QuizOptionElement(Element):
         Element.__init__(self, field)
         self.index = 0
 
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if field.answerTextArea.idevice is None: 
+            field.answerTextArea.idevice = idevice
+        if field.feedbackTextArea.idevice is None: 
+            field.feedbackTextArea.idevice = idevice
+
         self.answerElement = TextAreaElement(field.answerTextArea)
         self.answerId = "ans"+self.id
         self.answerElement.id = self.answerId
@@ -1813,6 +1831,13 @@ class QuizQuestionElement(Element):
         Initialize
         """
         Element.__init__(self, field)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if field.questionTextArea.idevice is None: 
+            field.questionTextArea.idevice = idevice
+        if field.hintTextArea.idevice is None: 
+            field.hintTextArea.idevice = idevice
 
         self.questionElement = TextAreaElement(field.questionTextArea)
         self.questionId = "question"+self.id

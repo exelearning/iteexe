@@ -41,6 +41,13 @@ class ReflectionBlock(Block):
         self.activityInstruc = idevice.activityInstruc
         self.answerInstruc   = idevice.answerInstruc
 
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.activityTextArea.idevice is None: 
+            idevice.activityTextArea.idevice = idevice
+        if idevice.answerTextArea.idevice is None: 
+            idevice.answerTextArea.idevice = idevice
+
         self.activityElement  = TextAreaElement(idevice.activityTextArea)
         self.answerElement    = TextAreaElement(idevice.answerTextArea)
 

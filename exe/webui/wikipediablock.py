@@ -40,6 +40,11 @@ class WikipediaBlock(Block):
         Initialize
         """
         Block.__init__(self, parent, idevice)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.article.idevice is None: 
+            idevice.article.idevice = idevice
         self.articleElement = TextAreaElement(idevice.article)
         self.articleElement.height = 300
 

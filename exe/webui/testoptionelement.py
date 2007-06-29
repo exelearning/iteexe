@@ -45,6 +45,11 @@ class TestoptionElement(object):
         self.keyId      = "key" + questionId   
         self.idevice    = idevice
 
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        # (only applies to the image-embeddable ones, not FlashElement)
+        if option.answerTextArea.idevice is None: 
+            option.answerTextArea.idevice = idevice
         self.answerElement = TextAreaElement(option.answerTextArea)
         self.answerElement.id = self.answerId
   

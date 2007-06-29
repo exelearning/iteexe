@@ -45,6 +45,11 @@ class TrueFalseBlock(Block):
         self.keyInstruc      = idevice.keyInstruc
         self.feedbackInstruc = idevice.feedbackInstruc
         self.hintInstruc     = idevice.hintInstruc 
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.instructionsForLearners.idevice is None: 
+            idevice.instructionsForLearners.idevice = idevice
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
         

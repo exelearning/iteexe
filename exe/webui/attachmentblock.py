@@ -41,7 +41,13 @@ class AttachmentBlock(Block):
         Initialize
         """
 
-        Block.__init__(self, parent, idevice)
+        Block.__init__(self, parent, idevice) 
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.descriptionTextArea.idevice is None: 
+            idevice.descriptionTextArea.idevice = idevice
+        
         self.descriptionElement = TextAreaElement(idevice.descriptionTextArea)
 
 

@@ -44,6 +44,11 @@ class CasestudyBlock(Block):
         self.idevice           = idevice
         self.questionElements  = []
 
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.storyTextArea.idevice is None: 
+            idevice.storyTextArea.idevice = idevice
+
         self.storyElement      = TextAreaElement(idevice.storyTextArea)
 
         self.questionInstruc   = idevice.questionInstruc

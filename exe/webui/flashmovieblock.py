@@ -42,6 +42,12 @@ class FlashMovieBlock(Block):
         """
         Block.__init__(self, parent, idevice)
         self.flashMovieElement = FlashMovieElement(idevice.flash)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        # (only applies to the image-embeddable ones, not FlashMovieElement)
+        if idevice.text.idevice is None: 
+            idevice.text.idevice = idevice
         self.textElement  = TextAreaElement(idevice.text)
 
 

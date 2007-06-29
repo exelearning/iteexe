@@ -40,6 +40,16 @@ class ClozeBlock(Block):
         Pre-create our field ids
         """
         Block.__init__(self, parent, idevice)
+
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set:
+        if idevice.instructionsForLearners.idevice is None: 
+            idevice.instructionsForLearners.idevice = idevice
+        if idevice.content.idevice is None: 
+            idevice.content.idevice = idevice
+        if idevice.feedback.idevice is None: 
+            idevice.feedback.idevice = idevice
+
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
         self.clozeElement = ClozeElement(idevice.content)

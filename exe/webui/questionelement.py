@@ -60,6 +60,15 @@ class QuestionElement(object):
 
         self.question     = question
         # also split out each part for a separate TextAreaElement:
+
+        # but first....  
+        # to compensate for the strange unpickling timing when objects are 
+        # loaded from an elp, ensure that proper idevices are set: 
+        if question.questionTextArea.idevice is None: 
+            question.questionTextArea.idevice = idevice 
+        if question.feedbackTextArea.idevice is None: 
+            question.feedbackTextArea.idevice = idevice
+
         self.question_question = TextAreaElement(question.questionTextArea)
         self.question_question.id = self.quesId 
         self.question_feedback = TextAreaElement(question.feedbackTextArea)
