@@ -97,6 +97,7 @@ within Wikipedia.""")
             self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
             return
 
+        page = unicode(page, "utf8")
         # FIXME avoid problems with numeric entities in attributes
         page = page.replace(u'&#160;', u'&nbsp;')
 
@@ -104,7 +105,7 @@ within Wikipedia.""")
         # cleanup was causing a "concatenating Null+Str" error,
         # and Wikipedia's HTML doesn't need cleaning up.
         # BeautifulSoup is faster this way too.
-        soup = BeautifulSoup(unicode(page, "utf8"), False)
+        soup = BeautifulSoup(page, False)
         content = soup.first('div', {'id': "content"})
 
         # remove the wiktionary, wikimedia commons, and categories boxes
