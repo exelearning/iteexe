@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,6 +23,7 @@ i.e. the "package".
 """
 
 import logging
+import time
 import zipfile 
 from exe.engine.path           import Path, TempDirPath, toUnicode
 from exe.engine.node           import Node
@@ -274,8 +276,13 @@ class Package(Persistable):
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
             for resourceFile in self.resourceDir.files():
-                zippedFile.write(unicode(resourceFile.normpath()), resourceFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
-            zippedFile.writestr("content.data", encodeObject(self))
+                zippedFile.write(unicode(resourceFile.normpath()),
+                        resourceFile.name.encode('utf8'), zipfile.ZIP_DEFLATED)
+
+            zinfo = zipfile.ZipInfo(filename='content.data',
+                    date_time=time.localtime()[0:6])
+            zinfo.external_attr = 0100644<<16L
+            zippedFile.writestr(zinfo, encodeObject(self))
         finally:
             zippedFile.close()
 
