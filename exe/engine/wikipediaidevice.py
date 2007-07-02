@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -95,6 +96,8 @@ within Wikipedia.""")
         except IOError, error:
             log.warning(unicode(error))
             self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+            self.article.content_w_resourcePaths = self.article.content
+            self.article.content_wo_resourcePaths = self.article.content
             return
 
         page = unicode(page, "utf8")
@@ -117,6 +120,9 @@ within Wikipedia.""")
         if not content:
             log.error("no content")
             self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+            # set the other elements as well
+            self.article.content_w_resourcePaths = self.article.content
+            self.article.content_wo_resourcePaths = self.article.content
             return
 
         # clear out any old images
