@@ -1883,7 +1883,11 @@ class QuizQuestionElement(Element):
         """
         Returns an XHTML string with the form element for editing this element
         """
-        html = self.questionElement.renderEdit()
+        html = u" "+common.submitImage("del"+self.id, self.field.idevice.id,  
+                "/images/stock-cancel.png", 
+                _("Delete question")) 
+
+        html += self.questionElement.renderEdit()
 
         html += self.hintElement.renderEdit()
 
