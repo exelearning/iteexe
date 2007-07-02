@@ -1,5 +1,7 @@
 Next Release
 * Add ability to edit (delete) broken iDevices in a package
+* Fix ability to delete iDevices with missing resources
+* Fix unicode parsing of Wikipedia pages
 * Fix rendering of attachment elements of custom iDevices
 
 Version 0.95 (r2931)
