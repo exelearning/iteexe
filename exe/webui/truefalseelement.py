@@ -55,8 +55,9 @@ class TrueFalseElement(object):
         self.question_feedback = TextAreaElement(question.feedbackTextArea)
         self.question_hint = TextAreaElement(question.hintTextArea)
 
-        # and also its non-TextAreaElement, also split out for consistency:
-        self.question_isCorrect = question.isCorrect
+        # note, question.isCorrect is left as it was, and not split out.
+        # because there are low-level mechanisms in place somewhere 
+        # with the radio buttons or ??? expecting that as such.
         
         self.questionId = "question"+ unicode(index) + "b" + idevice.id
         self.question_question.id = self.questionId
@@ -65,7 +66,6 @@ class TrueFalseElement(object):
         self.hintId     = "hint" + unicode(index) + "b" + idevice.id 
         self.question_hint.id = self.hintId
         self.keyId      = "Key" + unicode(index) + "b" + idevice.id       
-        # note: self.question_isCorrectId not necessary since not a TextArea
 
     def process(self, request):
         """
@@ -82,10 +82,10 @@ class TrueFalseElement(object):
                         
         if self.keyId in request.args:
             if request.args[self.keyId][0] == "true":
-                self.question_isCorrect = True 
-                log.debug("question " + repr(self.question_isCorrect))
+                self.question.isCorrect = True 
+                log.debug("question " + repr(self.question.isCorrect))
             else:
-                self.question_isCorrect = False        
+                self.question.isCorrect = False        
         
         if self.feedbackId in request.args:
             self.question_feedback.process(request)
@@ -101,9 +101,9 @@ class TrueFalseElement(object):
         html = self.question_question.renderEdit()
 
         html += _("True") + " " 
-        html += common.option(self.keyId, self.question_isCorrect, "true") 
+        html += common.option(self.keyId, self.question.isCorrect, "true") 
         html += _("False") + " " 
-        html += common.option(self.keyId, not self.question_isCorrect, "false") 
+        html += common.option(self.keyId, not self.question.isCorrect, "false") 
 
         html += "<br/><br/>\n"
 
@@ -215,7 +215,7 @@ class TrueFalseElement(object):
             feedbackStr2 = _(u"Incorrect!") + " " \
                     + self.question_feedback.renderView()
 
-        if not self.question_isCorrect:
+        if not self.question.isCorrect:
             feedbackStr1, feedbackStr2 = feedbackStr2, feedbackStr1 
             
         feedbackId1 = "0" + "b" + self.id
