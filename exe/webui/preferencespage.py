@@ -69,7 +69,7 @@ class PreferencesPage(RenderableResource):
         
         # Rendering
         html  = common.docType()
-        html += u"<html debug=\"true\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(/css/exe.css);\n"
