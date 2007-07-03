@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -68,12 +69,18 @@ class PreferencesPage(RenderableResource):
         
         # Rendering
         html  = common.docType()
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += u"<html debug=\"true\" xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head>\n"
         html += u"<style type=\"text/css\">\n"
         html += u"@import url(/css/exe.css);\n"
         html += u'@import url(/style/base.css);\n'
         html += u"@import url(/style/standardwhite/content.css);</style>\n"
+        html += u'''<script language="javascript" type="text/javascript">
+            function setLocale(l) {
+                opener.nevow_clientToServerEvent('setLocale', this, '', l)
+                window.close()
+            }
+        </script>'''
         html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
         html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
         html += u" charset=UTF-8\"></meta>\n";
@@ -90,8 +97,11 @@ class PreferencesPage(RenderableResource):
 
         html += u"<div id=\"editorButtons\"> \n"     
         html += u"<br/>" 
-        html += common.submitButton("ok", _("OK"))
-        html += common.submitButton("cancel", _("Cancel"))
+        html += common.button("ok", _("OK"), enabled=True,
+                _class="button",
+                onClick="setLocale(document.forms.contentForm.locale.value)")
+        html += common.button("cancel", _("Cancel"), enabled=True,
+                _class="button", onClick="window.close()")
         html += u"</div>\n"
         html += u"</div>\n"
         html += u"<br/></form>\n"
@@ -102,15 +112,11 @@ class PreferencesPage(RenderableResource):
 
     def render_POST(self, request):
         """
-        Process the preferences selection
+        function replaced by nevow_clientToServerEvent to avoid POST message
         """
         log.debug("render_POST " + repr(request.args))
         
-        if "ok" in request.args:
-            self.config.locale = request.args["locale"][0]
-            self.config.locales[self.config.locale].install(unicode=True)
-            self.config.configParser.set('user', 'locale', self.config.locale)
-
+        # should not be invoked, but if it is... refresh
         html  = common.docType()
         html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         html += u"<head></head>\n"

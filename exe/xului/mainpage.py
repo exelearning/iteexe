@@ -122,6 +122,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleRemoveTempDir,   'removeTempDir')
         setUpHandler(self.handleTinyMCEimageChoice,   'previewTinyMCEimage')
         setUpHandler(self.handleTestPrintMsg,    'testPrintMessage')
+        setUpHandler(self.handleSetLocale,       'setLocale')
 
         self.idevicePane.client = client
         # Render the js 
@@ -341,6 +342,16 @@ class MainPage(RenderableLivePage):
         # rerender the menus
         client.sendScript('top.location = "/%s"' % self.package.name.encode('utf8'))
 
+    def handleSetLocale(self, client, locale):
+        """
+        Set locale using Nevow instead of a POST
+        """
+        G.application.config.locale = locale
+        G.application.config.locales[locale].install(unicode=True)
+        G.application.config.configParser.set('user', 'locale', locale)
+        client.sendScript((u'top.location = "/%s"' % \
+                          self.package.name).encode('utf8'))
+ 
     def handleRemoveTempDir(self, client, tempdir, rm_top_dir):
         """
         Removes a temporary directory and any contents therein

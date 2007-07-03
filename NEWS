@@ -1,8 +1,10 @@
 Next Release
 * Add ability to edit (delete) broken iDevices in a package
+* Allow preferences to change locale without triggering POSTDATA message
 * Fix ability to delete iDevices with missing resources
 * Fix unicode parsing of Wikipedia pages
 * Fix rendering of attachment elements of custom iDevices
+* Fix deletion of file resources when deleting applet iDevice
 
 Version 0.95 (r2931)
 * Add ability to embed images in text areas with TinyMCE
