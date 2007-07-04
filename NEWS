@@ -1,9 +1,11 @@
 Next Release
 * Add ability to edit (delete) broken iDevices in a package
 * Allow preferences to change locale without triggering POSTDATA message
+* Greatly improve the ability to load packages created with older versions
 * Fix ability to delete iDevices with missing resources
 * Fix unicode parsing of Wikipedia pages
 * Fix rendering of attachment elements of custom iDevices
+* Fix display True/False hint icon only if there is a hint
 * Fix deletion of file resources when deleting applet iDevice
 
 Version 0.95 (r2931)
