@@ -136,20 +136,20 @@ class Ephemeral:
 versionedsToUpgrade = {}
 upgraded = {}
 
-def doUpgrade():
+def doUpgrade(newPackage=None):
     global versionedsToUpgrade, upgraded
     for versioned in versionedsToUpgrade.values():
-        requireUpgrade(versioned)
+        requireUpgrade(versioned, newPackage)
     versionedsToUpgrade = {}
     upgraded = {}
 
-def requireUpgrade(obj):
+def requireUpgrade(obj, newPackage=None):
     """Require that a Versioned instance be upgraded completely first.
     """
     objID = id(obj)
     if objID in versionedsToUpgrade and objID not in upgraded:
         upgraded[objID] = 1
-        obj.versionUpgrade()
+        obj.versionUpgrade(newPackage)
         return obj
 
 from twisted.python import reflect
@@ -204,7 +204,7 @@ class Versioned:
                 dct['%s.persistenceVersion' % reflect.qual(base)] = base.persistenceVersion
         return dct
 
-    def versionUpgrade(self):
+    def versionUpgrade(self, newPackage=None):
         """(internal) Do a version upgrade.
         """
         bases = _aybabtu(self.__class__)
@@ -212,6 +212,7 @@ class Versioned:
         # will be called first.
         bases.reverse()
         bases.append(self.__class__) # don't forget me!!
+
         # first let's look for old-skool versioned's
         if self.__dict__.has_key("persistenceVersion"):
             
@@ -235,7 +236,58 @@ class Versioned:
                     highestVersion = base.persistenceVersion
             if highestBase:
                 self.__dict__['%s.persistenceVersion' % reflect.qual(highestBase)] = pver
+
         for base in bases:
+            #################################
+            # bogus-extraction support: 
+            # (for extracted elps from v0.21? maybe r2556?-r2665? see node.py)
+            # Apparently some versions of the eXe code had problems
+            # with Extract Package, and would still generate all of the
+            # available objects, even if only a small subset were in use
+            # by the newly extracted package.  Those objects which were
+            # not in use would still be saved, linked to the old, complete,
+            # package object.  Look for any of these Resources or Nodes and
+            # force them to use the new, proper, package object.  Their
+            # subsequent afterUpgradeHandlers (for Resources) will take
+            # care of the rest.  
+            # Please note that this fix will merely allow such corrupt .elps
+            # to load without error, but all the old objects will still exist.
+            # To trim down the size and loading time of this .elp, then
+            # be sure to do another Extract Package on the root node
+            # of this file, which will NOW work properly ;-)
+            #
+            if repr(self.__class__)=="<class 'exe.engine.resource.Resource'>":
+                if newPackage is not None and self._package != newPackage:
+                    # swap to a proper package on resources, IF the
+                    # current package is NOT the one that we're really using:
+                    ##### warning: this goes into Twisted's logs, not eXe's:
+                    log.msg("Resource ",repr(self), \
+                           "linked to extraneous old package; relinking.")
+                    #####
+                    self._package = newPackage
+
+            elif repr(self.__class__) == "<class 'exe.engine.node.Node'>":
+                if newPackage is not None and self._package != newPackage:
+                    # swap to a proper package on Nodes, IF the
+                    # current package is NOT the one that we're really using:
+                    ##### warning: this goes into Twisted's logs, not eXe's:
+                    log.msg("Node ", repr(self) , \
+                           "linked to extraneous old package; relinking.")
+                    #####
+                    self._package = newPackage
+
+            elif repr(self.__class__)=="<class 'exe.engine.package.Package'>":
+                # see here if this package is the same as the newPackage
+                if newPackage is not None and self != newPackage:
+                    ##### warning: this goes into Twisted's logs, not eXe's:
+                    log.msg("Package ", repr(self) , \
+                          "appears to be extraneous old package; ignoring.")
+                    #####
+            #
+            # end of bogus-extraction support
+            #################################
+
+
             # ugly hack, but it's what the user expects, really
             if (Versioned not in base.__bases__ and
                 not base.__dict__.has_key('persistenceVersion')):
@@ -254,3 +306,4 @@ class Versioned:
                     method(self)
                 else:
                     log.msg( 'Warning: cannot upgrade %s to version %s' % (base, persistVers) )
+

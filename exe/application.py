@@ -77,6 +77,7 @@ class Application:
         self.webServer    = None
         self.standalone   = False # Used for the ready to run exe
         self.tempWebDir   = mkdtemp('.eXe')
+        self.afterUpgradeHandlers = []
         assert globals.application is None, "You tried to instantiate two Application objects"
         globals.application = self
 
