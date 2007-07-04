@@ -138,8 +138,8 @@ class Idevice(Persistable):
         # use reverse for loop to delete old user resources
         length=len(self.userResources) 
         for i in range(length-1, -1, -1):
-            # r3m0: possible bug fix, due to order of loading:
-            # first ensure that this idevice IS attached to the resource:
+            # possible bug fix, due to inconsistent order of loading:
+            # ensure that this idevice IS attached to the resource:
             if self.userResources[i]._idevice is None:
                 self.userResources[i]._idevice = self
             # and NOW we can finally properly delete it!

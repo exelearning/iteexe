@@ -26,6 +26,8 @@ from copy                 import deepcopy
 from string               import Template
 from exe.engine.persist   import Persistable
 from exe.engine.path      import Path, toUnicode 
+from exe                       import globals as G
+
 
 log = logging.getLogger(__name__)
 
@@ -93,6 +95,20 @@ class _Resource(Persistable):
         if package is self._package: return
         oldPackage = self._package
 
+        # new safety mechanism for old corrupt packages which
+        # have non-existent resources that are being deleted:
+        if not hasattr(self, 'checksum'):
+            if package is None:
+                log.warn("Resource " + repr(self) + " has no checksum " \
+                        + "(probably no source file), but is being removed "\
+                        + "anyway, so ignoring.")
+            else:
+                log.warn("Resource " + repr(self) + " has no checksum " \
+                        + "(probably no source file), and was being added to "\
+                        + "package " + repr(package) + "; setting to None.")
+                package = None
+            return
+
         if self._package:
             # Remove our self from old package's list of resources
             siblings = self._package.resources[self.checksum]
@@ -133,6 +149,26 @@ class _Resource(Persistable):
         Don't call if self._package is None.
         Does no copying or anything. Just sticks us in the list and sets our storage name
         """
+        # new safety mechanism for old corrupt packages which
+        # have non-existent resources that are being deleted and such:
+        if not hasattr(self, 'checksum'):
+            if self._package is None:
+                log.warn("Resource " + repr(self) + " has no checksum " \
+                        + "(probably no source file), but is being removed "\
+                        + "anyway, so ignoring.")
+                return
+            else:
+                if oldPath.isfile():
+                    log.warn("Resource " + repr(self) + " has no checksum; " \
+                            + " adding and continuing...")
+                    # see if a few basic checks here can get it going to add:
+                    self.checksum = oldPath.md5
+                else: 
+                    log.warn("Resource " + repr(self) + " has no checksum " \
+                        + "(and no source file), and was being added to "\
+                        + "package " + repr(self._package) + "; ignoring.")
+                    return
+
         # Add ourselves to our new package's list of resources
         siblings = self._package.resources.setdefault(self.checksum, [])
         if siblings:
@@ -246,23 +282,23 @@ class Resource(_Resource):
         Returns the path to the resource
         """
         if self._package:
-            # r3m0: debugging package CM-KT1-WP1.elp, which apparently
-            # loads without a resourceDir, since the package has not yet
-            # been upgraded:
-            #######
-            if not hasattr(self._package,"resourceDir"):
-                import pdb
-                pbd.set_trace()
-                # and set a bogus variable for now, to see this:
-                bad_situation = 1
-            #######
             return self._package.resourceDir/self._storageName
         else:
             return self._storageName
 
     def upgradeToVersion2(self):
         """
-        For upgrades to version 0.20 of exe.
+        a wrapper to addSelfToPackageList(self), such that it might be called
+        after the package has been loaded and upgraded.  Otherwise, due 
+        to the seemingly random upgrading of the package and resource objects,
+        this might be called too early.
+        """
+        G.application.afterUpgradeHandlers.append(self.addSelfToPackageList)
+
+
+    def addSelfToPackageList(self):
+        """
+        For upgradeToVersion2, to version 0.20 of exe.
         Puts user resources in our package's list
         """
         # List our selves in our package's resources list

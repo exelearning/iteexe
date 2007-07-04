@@ -36,6 +36,8 @@ from nevow.stan           import raw
 from nevow.flat           import flatten
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
+from exe    import globals as G
+import os
 
 log = logging.getLogger(__name__)
 
@@ -102,6 +104,20 @@ class GalleryImage(_ShowsResources):
         thumbnail resources from the existing image resource.
         """
         package = self.parent.parentNode.package
+
+        # protect against corrupt elps with images/resources which have 
+        # somehow gone missing (appears to have been due to faulty Extracts)
+        if originalImagePath is not None:
+            if not os.path.exists(originalImagePath) \
+            or not os.path.isfile(originalImagePath):
+                # If we can't find the image, apologize to the user...
+                log.error("Couldn't find image: %s\n" % (originalImagePath))
+                # and then gracefully bow out of the rest of this:
+                originalImagePath = None
+                # IDEALLY: want to also load and place a "broken image" here,
+                # but for now, at least exit gracefully, yah?
+                return
+
         if originalImagePath is not None:
             originalImagePath = Path(originalImagePath)
             # Copy the original image
@@ -273,8 +289,7 @@ class GalleryImage(_ShowsResources):
         """
         Upgrades to verison 0.20
         """
-        package = self.parent.parentNode.package
-        package.afterUpgradeHandlers.append(self._deleteHTMLResource)
+        G.application.afterUpgradeHandlers.append(self._deleteHTMLResource)
 
 
 # ===========================================================================
@@ -606,8 +621,7 @@ these in a gallery context rather then individually.</p>"""),
         Upgrades to v0.13
         """
         # Recreate all the html and thumbnail resources
-        package = self.parentNode.package
-        package.afterUpgradeHandlers.append(self.recreateResources)
+        G.application.afterUpgradeHandlers.append(self.recreateResources)
 
     def upgradeToVersion5(self):
         """
@@ -622,10 +636,19 @@ these in a gallery context rather then individually.</p>"""),
         Some packages were corrupted (See #601).
         """
         # TODO: See what caused this corruption. See #601.
-        package = self.parentNode.package
-        package.afterUpgradeHandlers.append(self._killBadImages)
+        G.application.afterUpgradeHandlers.append(self._killBadImages)
 
     def upgradeToVersion7(self):
+        """ 
+        a wrapper to upgrade_recreateResources(self), such that it might be called 
+        after the package has been loaded and upgraded.  Otherwise, due 
+        to the seemingly random upgrading of the package and resource objects, 
+        this might be called too early.
+        """
+        G.application.afterUpgradeHandlers.append(self.upgrade_recreateResources)
+
+
+    def upgrade_recreateResources(self):
         """
         Upgrades to Version 0.20
         """

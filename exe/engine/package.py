@@ -326,9 +326,10 @@ class Package(Persistable):
 
         try:
             newPackage = decodeObjectRaw(toDecode)
-            newPackage.afterUpgradeHandlers = []
+            G.application.afterUpgradeHandlers = []
             newPackage.resourceDir = resourceDir
-            doUpgrade()
+            doUpgrade(newPackage)
+
         except:
             import traceback
             traceback.print_exc()
@@ -343,9 +344,37 @@ class Package(Persistable):
             newPackage.filename = Path(filename)
 
         # Let idevices and nodes handle any resource upgrading they may need to
-        for handler in newPackage.afterUpgradeHandlers:
-            handler()
-        del newPackage.afterUpgradeHandlers
+        # Note: Package afterUpgradeHandlers *must* be done after Resources'
+        # and the package should be updated before everything else,
+        # so, prioritize with a 3-pass, 3-level calling setup
+        # in order of: 1) resources, 2) package, 3) anything other objects
+        for handler_priority in range(3):
+          for handler in G.application.afterUpgradeHandlers:
+
+            if handler_priority == 0 and \
+            repr(handler.im_class)=="<class 'exe.engine.resource.Resource'>":
+                # level-0 handlers: Resource
+                handler()
+
+            elif handler_priority == 1 and \
+            repr(handler.im_class)=="<class 'exe.engine.package.Package'>":
+                # level-1 handlers: Package (requires resources first)
+                if handler.im_self == newPackage: 
+                    handler()
+                else:
+                    log.warn("Extra package object found, " \
+                       + "ignoring its afterUpgradeHandler: " \
+                       + repr(handler))
+
+            elif handler_priority == 2 and \
+            repr(handler.im_class)!="<class 'exe.engine.resource.Resource'>" \
+            and \
+            repr(handler.im_class)!="<class 'exe.engine.package.Package'>":
+                # level-2 handlers: all others
+                handler()
+
+        G.application.afterUpgradeHandlers = []
+
         newPackage.updateRecentDocuments(newPackage.filename)
         newPackage.isChanged = False
         return newPackage
@@ -358,6 +387,17 @@ class Package(Persistable):
         # Only really needed for upgrading to version 0.20,
         # but upgrading of resources and package happens in no particular order
         # and must be done after all resources have been upgraded
+
+        # some earlier .elp files appear to have been corrupted with 
+        # two packages loaded, *possibly* from some strange extract/merge
+        # functionality in earlier eXe versions?
+        # Regardless, only the real package will have a resourceDir,
+        # and the other will fail.
+        # For now, then, put in this quick and easy safety check:
+        if not hasattr(self,'resourceDir'):
+            log.warn("cleanUpResources called on a redundant package")
+            return
+
         existingFiles = set([fn.basename() for fn in self.resourceDir.files()])
         usedFiles = set([reses[0].storageName for reses in self.resources.values()])
         for fn in existingFiles - usedFiles:
@@ -494,7 +534,6 @@ class Package(Persistable):
             # The hasattr is needed, because sometimes, Resource instances are upgraded
             # first and they also set this attribute on the package
             self.resources = {}
-        self.afterUpgradeHandlers.append(self.cleanUpResources)
+        G.application.afterUpgradeHandlers.append(self.cleanUpResources)
 
 # ===========================================================================
-

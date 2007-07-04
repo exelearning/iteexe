@@ -26,6 +26,9 @@ from exe.engine.idevice   import Idevice
 from exe.engine.field     import TextAreaField, ImageField
 from exe.engine.translate import lateTranslate
 from exe.engine.freetextidevice   import FreeTextIdevice
+from exe                       import globals as G
+import os
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -132,8 +135,8 @@ you have just inserted.""")
         resources yet, all of this conversion code must be done in an
         afterUpgradeHandler
         """ 
-        package = self.parentNode.package
-        package.afterUpgradeHandlers.append(self.convertToFreeText)
+        G.application.afterUpgradeHandlers.append(self.convertToFreeText)
+
 
     def convertToFreeText(self):
         """
@@ -143,7 +146,21 @@ you have just inserted.""")
         """
         new_content = ""
 
+        # ensure that an image resource still exists on this ImageWithText,
+        # before trying to add it into the FreeText idevice.
+        # Why?  corrupt packages have been seen missing resources...
+        # (usually in with extra package objects as well, probably
+        # from old code doing faulty Extracts, or somesuch nonesense)
+        imageResource_exists = False
         if self.image.imageResource:
+            if os.path.exists(self.image.imageResource.path) and \
+            os.path.isfile(self.image.imageResource.path): 
+                imageResource_exists = True
+            else:
+                log.warn("Couldn't find ImageWithText image when upgrading "\
+                        + self.image.imageResource.storageName)
+
+        if imageResource_exists:
             new_content += "<img src=\"resources/" \
                     + self.image.imageResource.storageName + "\" " 
             if self.image.height:
@@ -151,6 +168,10 @@ you have just inserted.""")
             if self.image.width:
                 new_content += "width=\"" + self.image.width + "\" " 
             new_content += "/> \n"
+        elif self.image.imageResource:
+            new_content += "<BR>\n[WARNING: missing image: " \
+                    + self.image.imageResource.storageName + "]\n"
+
 
         if self.caption != "": 
             new_content += "<BR>\n[" + self.caption + "]\n"
@@ -195,7 +216,7 @@ you have just inserted.""")
         # including the ideal <img src=...> including resources path,
         # but still need the actual image resource:
         
-        if self.image.imageResource: 
+        if imageResource_exists:
             # Not sure why this can't be imported up top, but it gives 
             # ImportError: cannot import name GalleryImages, 
             # so here it be: 
