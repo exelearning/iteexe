@@ -124,7 +124,7 @@ class TrueFalseElement(object):
         """
         is_preview = 0
         html  = self.renderQuestion(is_preview)
-        if self.question_hint: 
+        if self.question.hintTextArea.content<>"":
             html += u'<span '
             html += u'style="background-image:url(\'panel-amusements.png\');">'
             html += u'\n<a onmousedown="Javascript:updateCoords(event);'
