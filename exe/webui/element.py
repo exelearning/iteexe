@@ -712,6 +712,7 @@ class AttachmentElement(Element):
         if "path"+self.id in request.args:
             self.field.setAttachment(request.args["path"+self.id][0])
         
+        
     def renderEdit(self):
         """
         Returns an XHTML string with the form element for editing this field
@@ -719,6 +720,7 @@ class AttachmentElement(Element):
         log.debug("renderEdit")
 
         html  = ""
+        
         label = _(u'Filename:')
         if self.field.attachResource:
             label += u': '
@@ -730,21 +732,24 @@ class AttachmentElement(Element):
         html += common.textInput("path"+self.id, "", 50)
         html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
         html += u' value="%s" /><br/>\n' % _(u"Select a file")
-
+        
         return html
     
     def renderPreview(self):
         """
         Returns an XHTML string for previewing this image
         """
-        html = ""
+        html = ""    
         if self.field.attachResource:
-            html += u"<a style=\"cursor: pointer;\" "
-            html += u" onclick=\"window.open('resources/"
+            html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
+            html += u" onclick=\"window.parent.browseURL('"
+            html += u"http://127.0.0.1:%d/" % (G.application.config.port)
+            html += self.field.idevice.parentNode.package.name 
+            html += u"/resources/"
             html += self.field.attachResource.storageName
-            html += u"', '_blank');\" >"
+            html += u"');\" >"
             html += self.field.attachResource.storageName
-            html += u"</a><br/>\n"
+            html += u"</a>\n"
         return html
 
     def renderView(self):
@@ -753,6 +758,7 @@ class AttachmentElement(Element):
         """
         html = ""
         if self.field.attachResource:
+            html += u"<img src='stock-attach.png'> "
             html += u"<a style=\"cursor: pointer;\" "
             html += u" onclick=\"window.open('"
             html += self.field.attachResource.storageName
