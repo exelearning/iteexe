@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -166,12 +167,12 @@ class TrueFalseElement(object):
         """
         log.debug("renderPreview called in the form of renderQuestion")
     
-        html  = u"<br/><br/><b>" +unicode(self.index + 1) + ". " 
+        html  = u"<br/><br/>"
 
         if is_preview:
-            html += self.question_question.renderPreview() + "</b><br/><br/>" 
+            html += self.question_question.renderPreview() + "<br/>" 
         else: 
-            html += self.question_question.renderView() + "</b><br/><br/>"
+            html += self.question_question.renderView() + "<br/>"
 
         html += _("True") + " " 
         html += self.__option(0, 2, "true") + " \n"
