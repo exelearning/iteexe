@@ -1516,7 +1516,7 @@ class SelectOptionElement(Element):
         ident = self.field.question.id + str(self.index)
         html  = '<tr><td>'      
         html += u'<input type="checkbox" id="%s"' % ident
-        html += u' value="%s" >\n' %str(self.field.isCorrect)
+        html += u' value="%s" />\n' %str(self.field.isCorrect)
         ansIdent = "ans" + self.field.question.id + str(self.index)
         html += '</td><td><div id="%s" style="color:black">\n' % ansIdent
         if preview: 
