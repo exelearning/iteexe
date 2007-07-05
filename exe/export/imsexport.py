@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2005, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -67,7 +68,7 @@ class Manifest(object):
         template = open(templateFilename, 'rb').read()
         xml = template % self.package.dublinCore.__dict__
         out = open(self.outputDir/'dublincore.xml', 'wb')
-        out.write(xml)
+        out.write(xml.encode('utf8'))
         out.close()
 
     def createXML(self):
@@ -101,7 +102,7 @@ class Manifest(object):
         xmlStr += "<organization identifier=\""+orgId
         xmlStr += "\" structure=\"hierarchical\">  \n"
         title  = escape(self.package.root.titleShort)
-        xmlStr += "<title>"+title+"</title>\n"
+        xmlStr += u"<title>"+title+"</title>\n"
         
         depth = 0
         for page in self.pages:
@@ -262,7 +263,7 @@ class IMSExport(object):
         styleFiles += self.styleDir.files("*.html")
         self.styleDir.copylist(styleFiles, outputDir)
 
-        # Copy the package's resource files
+        # copy the package's resource files
         package.resourceDir.copyfiles(outputDir)
             
         # Export the package content
@@ -319,7 +320,7 @@ class IMSExport(object):
             videofile = (self.templatesDir/'xspf_player.swf')
             videofile.copyfile(outputDir/'xspf_player.swf')
 
-        # copy a copy of the GNU Free Documentation Licence
+        # Copy a copy of the GNU Free Documentation Licence
         (self.templatesDir/'fdl.html').copyfile(outputDir/'fdl.html')
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
@@ -332,7 +333,8 @@ class IMSExport(object):
         """
         zipped = ZipFile(fileObj, "w")
         for scormFile in outputDir.files():
-            zipped.write(scormFile, scormFile.basename().encode('utf8'), ZIP_DEFLATED)
+            zipped.write(scormFile,
+                    scormFile.basename().encode('utf8'), ZIP_DEFLATED)
         zipped.close()
 
     def generatePages(self, node, depth):
