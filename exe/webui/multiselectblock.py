@@ -1,6 +1,7 @@
 # ===========================================================================
 # eXe 
 # Copyright 2004-2006, University of Auckland
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -101,10 +102,10 @@ class MultiSelectBlock(Block):
 
         for element in self.questionElements:
             html += element.renderPreview() + "<br/>"
-        html += self.renderViewButtons()
         
-
-        html += u"</div></div>\n"
+        html += u"</div>\n"
+        html += self.renderViewButtons()
+        html += u"</div>\n"
         return html
     
     
