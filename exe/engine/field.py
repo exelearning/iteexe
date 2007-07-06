@@ -34,6 +34,7 @@ from exe                  import globals as G
 import os
 import re
 import urllib
+import shutil
 log = logging.getLogger(__name__)
 
 
@@ -283,6 +284,52 @@ class FieldWithResources(Field):
                # attempting to create a corresponding GalleryImage resource:
                if os.path.exists(file_name_str) \
                and os.path.isfile(file_name_str): 
+
+                   # Although full filenames (including flatted representations
+                   # of their source directory tree) were used to help keep the
+                   # filenames here in previewDir unique, this does cause
+                   # problems with the filenames being too long, if they
+                   # are kept that way.
+                   # So.... if an optional .exe_info file is coupled to
+                   # this one, go ahead and read in its original basename,
+                   # in order to rename the file back to something shorter.
+                   # After all, the resource process has its own uniqueifier.
+
+                   # test for the optional .exe_info:
+                   basename_value = ""
+                   descrip_file_path = Path(server_filename + ".exe_info")
+                   if os.path.exists(descrip_file_path) \
+                   and os.path.isfile(descrip_file_path): 
+                       descrip_file = open(descrip_file_path, 'rb')
+                       basename_info = descrip_file.read()
+                       # split out the value of this "basename=file" key 
+                       basename_key_str = "basename="
+                       basename_found_pos = basename_info.find(basename_key_str) 
+                       # should be right there at the very beginning:
+                       if basename_found_pos == 0: 
+                           basename_value = \
+                                   basename_info[len(basename_key_str):] 
+                           # BEWARE: don't just change its name here in this 
+                           # dir, since it might be needed multiple times, and 
+                           # we won't want to delete it yet, but not deleting 
+                           # it might lead to name collision, so, make a 
+                           # temporary subdir bases, &: 
+
+                           # copy previewDir/longfile to
+                           #             previewDir/bases/basename
+                           # (don't worry if this overwrites a previous one)
+                           bases_dir = previewDir.joinpath('allyourbase')
+                           if not bases_dir.exists():
+                               bases_dir.makedirs()
+                           base_file_name = bases_dir.joinpath(basename_value)
+                           base_file_str = \
+                                   base_file_name.abspath().encode('utf-8')
+                           shutil.copyfile(file_name_str, base_file_str)
+                        
+                           # finally, change the name that's used in the 
+                           # resource creation in the below GalleryImage
+                           file_name_str = base_file_str
+
                    # in passing GalleryImage into the FieldWithResources,
                    # this field needs to be sure to have an updated
                    # parentNode, courtesy of its idevice:

@@ -227,6 +227,7 @@ function changeGalleryImage(galleryId, imageId) {
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
     
     var local_imagePath = askUserForImage(true);
+
     win.focus();
 
     // if the user hits CANCEL, then bail "immediately",

@@ -537,6 +537,34 @@ class MainPage(RenderableLivePage):
                     + server_filename.abspath().encode('utf-8') + "\'.");
             shutil.copyfile(local_filename, \
                     server_filename.abspath().encode('utf-8'));
+
+            # new optional description file to provide the 
+            # actual base filename, such that once it is later processed
+            # copied into the resources directory, it can be done with
+            # only the basename.   Otherwise the resource filenames
+            # are too long for some users, preventing them from making
+            # backup CDs of the content, for example.
+            # 
+            # Remember that the full path of the
+            # file is only used here as an easy way to keep the names
+            # unique WITHOUT requiring a roundtrip call from the Javascript
+            # to this server, and back again, a process which does not
+            # seem to work with tinyMCE in the mix.  BUT, once tinyMCE's
+            # part is done, and this image processed, it can be returned
+            # to just its basename, since the resource parts have their
+            # own unique-ification mechanisms already in place.
+
+            descrip_file_path = Path(server_filename+".exe_info")
+            log.debug("handleTinyMCEimageChoice creating preview " \
+                    + "description file \'" \
+                    + descrip_file_path.abspath().encode('utf-8') + "\'.");
+            descrip_file = open(descrip_file_path, 'wb')
+
+            descrip_file.write("basename="+os.path.basename(local_filename))
+
+            descrip_file.flush()
+            descrip_file.close()
+
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s' % str(e)))
             log.error("handleTinyMCEimageChoice unable to copy local image "\

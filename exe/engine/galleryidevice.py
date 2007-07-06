@@ -245,6 +245,14 @@ class GalleryImage(_ShowsResources):
         """
         self._caption.content = value
 
+    def __repr__(self):
+        """
+        Represents 'GalleryImage' as a string for the programmer
+        """
+        return '<GalleryImage for "' + self.get_imageFilename() + '">' 
+
+
+
     # Properties
 
     imageFilename = property(get_imageFilename, set_imageFilename)
@@ -352,6 +360,12 @@ class GalleryImages(Persistable, list):
         for image in self:
             result.append(deepcopy(image, memo))
         return result
+
+    def __repr__(self):
+        """
+        Represents 'GalleryImages' as a string for the programmer
+        """
+        return '<GalleryImages for "' + repr(self.idevice) + '">'
 
 
 # ===========================================================================
