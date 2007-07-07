@@ -211,6 +211,110 @@ class FieldWithResources(Field):
         if hasattr(self.idevice, 'parentNode'): 
             self.parentNode = self.idevice.parentNode
 
+    
+    def RemoveZombieResources(self, resources_in_use):
+        """
+        Given the list of resources still in use, compare to this
+        still listed in the images[] resource list, and remove
+        any zombies, resources in images[] that are longer in use.
+
+        # note: when deleting a resource which was embedded multiple times
+        # in this same field, note that the following algorithm will really
+        # only acknowledge when the FINAL deletion of the that resource
+        # occurs, and will therefore print a REMOVING message for each
+        # occurrence that the resource HAD, even if those had already
+        # been previously removed.  While this could be modified to
+        # only print that final message once (or even further modified
+        # to remove extra resource objects when they become no longer used,
+        # and the corresponding extra "confirmed resource" messages),
+        # it is deemed that AT THIS POINT in time, that anything beyond the
+        # writing of this comment just isn't really worth the time :-)
+        """
+
+        # that said, now check each of the resources currently stored, 
+        # and see which of these are still in use:
+        # (looking for both %20-escaped spaces and non-escaped spaces)
+
+        # use reverse for loop to delete old user resources 
+        num_images=len(self.images)  
+        for image_num in range(num_images-1, -1, -1): 
+            embedded_resource = self.images[image_num]
+            embedded_res_name = embedded_resource._imageResource.storageName
+            if embedded_res_name in resources_in_use or  \
+               embedded_res_name.replace(" ", "%20") in resources_in_use:
+                log.debug("confirmed resource is still active in this field: "\
+                        + embedded_res_name) 
+            else:
+                log.debug("resource no longer used in this field, REMOVING: "\
+                        + embedded_res_name) 
+                # now, delete this resource from the list AND the actual
+                # resource directory, if it's not still in use elsewhere:
+                del self.images[image_num]
+
+    def ListActiveImageResources(self, content):
+        """
+        Find and return the name of all active image resources,
+        to help find those no longer in use and in need of purging.
+        """
+        resources_in_use =  []
+
+        search_str = "src=\"resources/" 
+        found_pos = content.find(search_str) 
+        while found_pos >= 0: 
+            end_pos = content.find('\"', found_pos+len(search_str)) 
+            # assume well-formed with matching quote:
+            if end_pos > 0: 
+                # extract the actual resource name, after src=\"resources:
+                resource_str = content[found_pos+len(search_str):end_pos] 
+                # NEXT: add it to the resources_in_use, if not already!
+                resources_in_use.append(resource_str)
+                # ====> may need to test with an element using same image 2x
+                # AND be sure to save the same string used in images[],
+                # if that means keeping the resources/ bit for storageName?
+                # AND, beware of possibly needing to escape/unescape spaces.
+            
+            # Find the next source image in the content, continuing the loop:
+            found_pos = content.find(search_str, found_pos+1) 
+
+        return resources_in_use
+
+    def ProcessPreviewed(self, content): 
+        """
+        to build up the corresponding resources from any images (etc.) added
+        in by the tinyMCE image-browser plug-in,
+        which will have put them into src="../previews/"
+        This is a wrapper around the specific types of previews,
+        images, media, etc..
+        """
+
+        #################################
+        # Part 1: process any newly added resources
+        new_content = self.ProcessPreviewedImages(content)
+        # and eventually:
+        #new_content = ProcessPreviewedMedia(new_content)
+
+        #################################
+        # Part 2: remove any freshly removed resources via
+        # a new resource counting mechanism, to determine which
+        # resources are no longer in use, and need purging.
+
+        resources_in_use = self.ListActiveImageResources(new_content)
+        # and eventually, maybe something like:
+        #new_content.append(ProcessPreviewedMedia(new_content))
+
+        self.RemoveZombieResources(resources_in_use)
+
+        return new_content
+
+    # A note on the eventual ProcessPreviewedMedia(): 
+    # since these are no longer IMAGES, per se, to be stored as resources,
+    # they might NOT work as well with GalleryImage, especially since
+    # thumbnails will not need to be, nor be able to be, created.
+    # So, start of down the path of non-GalleryImage-embedded resources
+    # for media, and if all works out well, it might be very well worth
+    # revisiting the ProcessPreviewedImages and moving those away from
+    # the GalleryImage resources as well.
+
     def ProcessPreviewedImages(self, content):
         """
         to build up the corresponding resources from any images (etc.) added
@@ -402,6 +506,20 @@ class FieldWithResources(Field):
             # Find the next source image in the content, continuing the loop:
             found_pos = new_content.find(search_str, found_pos+1) 
         
+        return new_content
+
+
+    def MassageContentForRenderView(self, content): 
+        """
+        Returns an XHTML string for viewing this resource-laden element 
+        upon export, since the resources will be flattened no longer exist 
+        in the system resources directory....
+        This is a wrapper around the specific types of previews,
+        images, media, etc..
+        """
+        new_content = self.MassageImageContentForRenderView(content)
+        # and soon:
+        #new_content = self.MassageMediaContentForRenderView(new_content)
         return new_content
 
     

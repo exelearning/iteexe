@@ -176,10 +176,10 @@ class TextAreaElement(ElementWithResources):
             # process any new images and other resources courtesy of tinyMCE:
 
             self.field.content_w_resourcePaths \
-                = self.field.ProcessPreviewedImages(request.args[self.id][0])
+                = self.field.ProcessPreviewed(request.args[self.id][0])
             # likewise determining the paths for exports, etc.:
             self.field.content_wo_resourcePaths \
-                    = self.field.MassageImageContentForRenderView( \
+                    = self.field.MassageContentForRenderView( \
                                          self.field.content_w_resourcePaths)
             # and begin by choosing the content for preview mode, WITH paths:
             self.field.content = self.field.content_w_resourcePaths
@@ -253,10 +253,10 @@ class FeedbackElement(ElementWithResources):
             # process any new images and other resources courtesy of tinyMCE:
 
             self.field.content_w_resourcePaths = \
-                self.field.ProcessPreviewedImages(request.args[self.id][0])
+                self.field.ProcessPreviewed(request.args[self.id][0])
             # likewise determining the paths for exports, etc.:
             self.field.content_wo_resourcePaths = \
-                    self.field.MassageImageContentForRenderView( \
+                    self.field.MassageContentForRenderView( \
                          self.field.content_w_resourcePaths)
             # and begin by choosing the content for preview mode, WITH paths:
             self.field.feedback = self.field.content_w_resourcePaths
@@ -962,11 +962,10 @@ class ClozeElement(ElementWithResources):
             # process any new images and other resources courtesy of tinyMCE:
 
             self.field.content_w_resourcePaths = \
-                self.field.ProcessPreviewedImages( \
-                                            request.args[self.editorId][0])
+                self.field.ProcessPreviewed(request.args[self.editorId][0])
             # likewise determining the paths for exports, etc.:
             self.field.content_wo_resourcePaths = \
-                  self.field.MassageImageContentForRenderView(\
+                  self.field.MassageContentForRenderView(\
                          self.field.content_w_resourcePaths)
             # and begin by choosing the content for preview mode, WITH paths:
             self.field.encodedContent = self.field.content_w_resourcePaths

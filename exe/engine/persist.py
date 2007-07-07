@@ -92,13 +92,14 @@ def decodeToList(toDecode):
     """
     Decodes an object to a list of jelly strings, but doesn't unjelly them
     """
-    log.debug(u"decodeObjectRaw")
+    log.debug(u"decodeObjectRaw starting decodeToList")
     decoder = Banana()
     decoder.connectionMade()
     decoder._selectDialect(u"none")
     jellyData = []
     decoder.expressionReceived = jellyData.append
     decoder.dataReceived(toDecode)
+    log.debug(u"decodeObjectRaw ending decodeToList")
     return jellyData
 
 def fixDataForMovedObjects(jellyData):
