@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe Learning\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-06 23:27+1200\n"
+"POT-Creation-Date: 2007-07-09 20:36+1200\n"
 "PO-Revision-Date: 2007-02-27 14:54+1200\n"
 "Last-Translator: \n"
 "Language-Team: Jun Iwata <iwata@matsue-ct.ac.jp>\n"
@@ -32,9 +32,9 @@ msgstr ""
 "<p>例：　Geogebra アプレットを追加する場合、「geogebra」を選択し、\n"
 "あなたがGeogebraで作成した .ggb ファイルを追加してください。</p>"
 
-#: exe/xului/mainpage.py:276 exe/xului/mainpage.py:653
-#: exe/xului/mainpage.py:774 exe/xului/mainpage.py:830
-#: exe/xului/mainpage.py:851
+#: exe/xului/mainpage.py:276 exe/xului/mainpage.py:681
+#: exe/xului/mainpage.py:802 exe/xului/mainpage.py:858
+#: exe/xului/mainpage.py:879
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -56,8 +56,8 @@ msgstr ""
 msgid "---Move To---"
 msgstr "---移動します---"
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:562
-#: exe/xului/mainpage.py:645
+#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:590
+#: exe/xului/mainpage.py:673
 msgid ". Please use ASCII names."
 msgstr ". アスキーネームを利用してください."
 
@@ -117,16 +117,16 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "<p>空所補充のフィールドに空所補充による学習活動で用いるテキストを入力してください。他のリソースからコピーしたものを貼付け（ペースト）ることもできますし、直接フィールドに入力することもできます。</p><p>空所とする単語を選択するには、単語をダブルクリックし、その後、下にある「単語を隠す／表示する」ボタンをクリックしてください。</p>"
 
-#: exe/engine/field.py:820
+#: exe/engine/field.py:985
 #, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr "<p>この機能をチェックしない場合は、いくらかのスペルや大文字小文字のエラーは許容されます。この機能をチェックした場合、スペル、大文字小文字の区別とも完璧にマッチした場合のみ正解として許容されます。</p><p><strong>例：</strong>もし正解が<code>Elephant</code>の場合、<code>elephant</code>や<code>Eliphant</code>は、一字しか違っていないことから、アルゴリズムにより<em>\"ほぼ正解\"</em>とみなされます。これは仮に\"大文字小文字を区別する\" 設定となっている場合もそうです。</p><p>上の例で「大文字小文字を区別する」が設定されてない場合、, 小文字の<code>e</code>は、間違いと見なされません。また<code>eliphant</code>についても許容されます。</p><p>\"厳しく採点する\"と\"大文字小文字をチェックする\"の両方が設定されている場合、\"Elephant\"が唯一の正解となります。.\"厳しく採点する\"が設定され、 \"大文字小文字をチェックする\"の設定がされていない場合のみ、 \"elephant\"は許容されます。</p>"
 
-#: exe/engine/field.py:841
+#: exe/engine/field.py:1006
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr "<p>このオプションをチェックした場合、提出された解答は,大文字小文字が一致しない場合、「不正解」として採点されます。</p>"
 
-#: exe/engine/field.py:846
+#: exe/engine/field.py:1011
 #, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
@@ -134,7 +134,7 @@ msgid ""
 "exercise.</p>"
 msgstr "<p>このオプションが設定された場合, 学習者が全問題を解答後一括採点するのではなく、解答を入力する度採点されます。</p>"
 
-#: exe/engine/field.py:1095
+#: exe/engine/field.py:1260
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "<p>数式を作成するため下のテキストエディターから記号を選んでください。それぞれの記号はディスプレイ上で、下の&lt;プレビュー&gt;ボタンを利用することで、数学用言語LATEXで見ることができます。</P>"
 
@@ -171,7 +171,7 @@ msgid ""
 "reflective guidance.</p>"
 msgstr "<p>「リーディング活動」は、その名が示すように、学習者にリーディングした内容について学習活動をさせるものです。適所でフィードバックを与えることで、学習者に学習内容について考察させることできます。</p>"
 
-#: exe/engine/galleryidevice.py:378
+#: exe/engine/galleryidevice.py:392
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -281,7 +281,7 @@ msgstr "iDeviceにインタラクティブなフィードバックを追加"
 msgid "Add an mp3 file to your iDevice."
 msgstr "iDeviceにmp3ファイルを追加"
 
-#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1628
+#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1627
 msgid "Add another Option"
 msgstr "別のオプションを追加"
 
@@ -293,7 +293,7 @@ msgstr "別の質問を追加"
 msgid "Add another activity"
 msgstr "別のアクティビティーを追加"
 
-#: exe/webui/element.py:1909
+#: exe/webui/element.py:1908
 msgid "Add another option"
 msgstr "別のオプションを追加"
 
@@ -328,7 +328,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "「配置」により、画面のどの部分にメディアプレーヤーを配置するか決めることができます。"
 
-#: exe/engine/field.py:884
+#: exe/engine/field.py:1049
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -379,7 +379,7 @@ msgstr ""
 "明確な説明を与え、タスクを実行する上で、支援するような状況、あるいはタスクの妨げと\n"
 "なるような状況については、よく考慮してください。"
 
-#: exe/webui/element.py:1155
+#: exe/webui/element.py:1154
 msgid "Answsers"
 msgstr "解答"
 
@@ -416,8 +416,8 @@ msgstr "ボタンキャプション"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:560
-#: exe/xului/mainpage.py:645
+#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:588
+#: exe/xului/mainpage.py:673
 msgid "Cannot access directory named "
 msgstr "という名前のディレクトリーにアクセスできません"
 
@@ -435,7 +435,7 @@ msgstr "ケーススタディー"
 msgid "Change Image"
 msgstr "画像の変更"
 
-#: exe/webui/element.py:1008
+#: exe/webui/element.py:1007
 msgid "Check Caps?"
 msgstr "大文字と小文字の区別をしますか"
 
@@ -483,7 +483,7 @@ msgstr ""
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "<strong>ファイルの選択</strong>をクリックし, 添付するファイルを探し、そのファイルを選択してください。"
 
-#: exe/engine/field.py:436
+#: exe/engine/field.py:601
 msgid "Click Here"
 msgstr "ここをクリックする"
 
@@ -495,7 +495,7 @@ msgstr "ガイドを表示するため、クリックしてください"
 msgid "Click here"
 msgstr "ここをクリックする"
 
-#: exe/engine/field.py:1103
+#: exe/engine/field.py:1268
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
@@ -503,14 +503,14 @@ msgstr ""
 "LATEXを記号イメージに変換するため\n"
 "　　　　　　　　　　　　　　　　　「プレビューボタン」をクリックしてください。"
 
-#: exe/engine/galleryidevice.py:391
+#: exe/engine/galleryidevice.py:405
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "「画像の追加」をクリックし、画像ファイルを選択してください。画像が下に表示され、ラベルの記入ができます。ラベルにファイルサイズを記入しておくと利用者にとって便利です。"
 
-#: exe/engine/galleryidevice.py:560 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:574 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:248 exe/webui/block.py:249
-#: exe/webui/element.py:1948 exe/webui/element.py:1949
+#: exe/webui/element.py:1947 exe/webui/element.py:1948
 #: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
 #: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -526,12 +526,12 @@ msgstr "空所補充"
 msgid "Cloze Activity"
 msgstr "空所補充"
 
-#: exe/webui/element.py:990
+#: exe/webui/element.py:989
 msgid "Cloze Text"
 msgstr "空所補充用テキスト"
 
-#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1614
-#: exe/webui/element.py:1745 exe/webui/element.py:1814
+#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1613
+#: exe/webui/element.py:1744 exe/webui/element.py:1813
 msgid "Correct"
 msgstr "正解"
 
@@ -539,7 +539,7 @@ msgstr "正解"
 msgid "Correct!"
 msgstr "正解！"
 
-#: exe/xului/mainpage.py:901
+#: exe/xului/mainpage.py:929
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr "ファイルをロードできませんでした。bugs@exelearning.orgにメールで連絡してください。"
 
@@ -572,13 +572,13 @@ msgstr "ファイルの削除"
 msgid "Delete Image"
 msgstr "画像の削除"
 
-#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1505
-#: exe/webui/element.py:1763
+#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1504
+#: exe/webui/element.py:1762
 msgid "Delete option"
 msgstr "オプションの削除"
 
 #: exe/webui/questionelement.py:113 exe/webui/truefalseelement.py:118
-#: exe/webui/element.py:1601 exe/webui/element.py:1894
+#: exe/webui/element.py:1600 exe/webui/element.py:1893
 msgid "Delete question"
 msgstr "質問の削除"
 
@@ -626,7 +626,7 @@ msgstr "記述"
 msgid "Description:"
 msgstr "記述："
 
-#: exe/webui/element.py:438 exe/webui/element.py:844 exe/webui/element.py:1209
+#: exe/webui/element.py:438 exe/webui/element.py:844 exe/webui/element.py:1208
 msgid "Display as:"
 msgstr "として表示"
 
@@ -659,17 +659,17 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:587 exe/xului/mainpage.py:594
-#: exe/xului/mainpage.py:597 exe/xului/mainpage.py:600
-#: exe/xului/mainpage.py:758
+#: exe/xului/mainpage.py:615 exe/xului/mainpage.py:622
+#: exe/xului/mainpage.py:625 exe/xului/mainpage.py:628
+#: exe/xului/mainpage.py:786
 msgid "EXPORT FAILED!"
 msgstr "エクスポートに失敗しました！"
 
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:762
-#: exe/xului/mainpage.py:775 exe/xului/mainpage.py:781
-#: exe/xului/mainpage.py:815 exe/xului/mainpage.py:831
-#: exe/xului/mainpage.py:837 exe/xului/mainpage.py:852
-#: exe/xului/mainpage.py:858
+#: exe/xului/mainpage.py:776 exe/xului/mainpage.py:790
+#: exe/xului/mainpage.py:803 exe/xului/mainpage.py:809
+#: exe/xului/mainpage.py:843 exe/xului/mainpage.py:859
+#: exe/xului/mainpage.py:865 exe/xului/mainpage.py:880
+#: exe/xului/mainpage.py:886
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -688,7 +688,7 @@ msgstr ""
 "エキスポートに失敗しました！\n"
 "最後に成功したエキスポートは次のものです %s."
 
-#: exe/xului/mainpage.py:654 exe/xului/mainpage.py:663
+#: exe/xului/mainpage.py:682 exe/xului/mainpage.py:691
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -743,7 +743,7 @@ msgid ""
 "to reflect upon."
 msgstr "考察に役立つような質問を入力してください。"
 
-#: exe/engine/galleryidevice.py:390
+#: exe/engine/galleryidevice.py:404
 msgid "Enter a title for the gallery"
 msgstr "画像集にタイトルを入力してください。"
 
@@ -816,7 +816,7 @@ msgstr ""
 "オプションの追加ができます。オプションの横にある赤い \"X\" をクリック \n"
 "するとオプションが削除できます。"
 
-#: exe/engine/field.py:1296
+#: exe/engine/field.py:1461
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -869,7 +869,7 @@ msgstr ""
 "質問は明確に、またあいまいにならないようにしてください。消極的な表現は避け、\n"
 "あいまいな表現にならないように、明確に記述してください。"
 
-#: exe/engine/field.py:1288
+#: exe/engine/field.py:1453
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -915,9 +915,9 @@ msgstr "例"
 msgid "Export iDevice"
 msgstr "iDevicesのエキスポート"
 
-#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:783
-#: exe/xului/mainpage.py:817 exe/xului/mainpage.py:839
-#: exe/xului/mainpage.py:860
+#: exe/xului/mainpage.py:792 exe/xului/mainpage.py:811
+#: exe/xului/mainpage.py:845 exe/xului/mainpage.py:867
+#: exe/xului/mainpage.py:888
 #, python-format
 msgid "Exported to %s"
 msgstr "エキスポートする%s"
@@ -937,10 +937,10 @@ msgstr "間違い"
 #: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
-#: exe/engine/field.py:1187 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1340
+#: exe/engine/field.py:1352 exe/webui/clozeblock.py:158
 #: exe/webui/questionelement.py:103 exe/webui/common.py:206
-#: exe/webui/element.py:1764 exe/webui/editorpane.py:251
+#: exe/webui/element.py:1763 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "フィードバック"
 
@@ -953,17 +953,17 @@ msgstr ""
 "フィードバックボタンは表示されません。"
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1305 exe/engine/field.py:1330
+#: exe/engine/field.py:1470 exe/engine/field.py:1495
 msgid "Feedback:"
 msgstr "フィードバック："
 
-#: exe/xului/mainpage.py:897
+#: exe/xului/mainpage.py:925
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "ファイル %s は存在しないか、読み込むことができません。"
 
-#: exe/xului/mainpage.py:693 exe/xului/mainpage.py:735
-#: exe/xului/mainpage.py:802
+#: exe/xului/mainpage.py:721 exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:830
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
@@ -980,8 +980,8 @@ msgstr "フラッシュムービー"
 msgid "Flash with Text"
 msgstr "テクスト付フラッシュ"
 
-#: exe/xului/mainpage.py:699 exe/xului/mainpage.py:741
-#: exe/xului/mainpage.py:808
+#: exe/xului/mainpage.py:727 exe/xului/mainpage.py:769
+#: exe/xului/mainpage.py:836
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "フォルダー名　%s は既に存在しています。他の名前にするか、現存するフォルダを削除し、再度試してください。"
@@ -1012,7 +1012,7 @@ msgstr "Geogebra"
 msgid "German Wikipedia Article"
 msgstr "ドイツ語ウィキペディア記事"
 
-#: exe/webui/element.py:1093
+#: exe/webui/element.py:1092
 msgid "Get score"
 msgstr "スコアを表示"
 
@@ -1040,14 +1040,14 @@ msgstr "隠す"
 msgid "Hide Feedback"
 msgstr "フィードバックを隠す"
 
-#: exe/webui/element.py:998
+#: exe/webui/element.py:997
 msgid "Hide/Show Word"
 msgstr "単語を隠す／表示する"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1213 exe/engine/field.py:1233
+#: exe/engine/field.py:1378 exe/engine/field.py:1398
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:1952
+#: exe/webui/element.py:1951
 msgid "Hint"
 msgstr "ヒント"
 
@@ -1077,7 +1077,7 @@ msgstr "アイコン"
 msgid "Image"
 msgstr "画像"
 
-#: exe/engine/galleryidevice.py:376
+#: exe/engine/galleryidevice.py:390
 msgid "Image Gallery"
 msgstr "画像集"
 
@@ -1115,7 +1115,7 @@ msgstr "情報"
 msgid "Initial Zoom"
 msgstr "イニシャルズーム"
 
-#: exe/webui/element.py:1013
+#: exe/webui/element.py:1012
 msgid "Instant Marking?"
 msgstr "即時に採点しますか？"
 
@@ -1219,7 +1219,7 @@ msgstr "名前"
 msgid "New iDevice"
 msgstr "新しい iDeｖice"
 
-#: exe/engine/galleryidevice.py:564 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:578 exe/export/ipodpage.py:115
 #: exe/export/scormexport.py:312 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "次へ"
@@ -1271,27 +1271,27 @@ msgstr ""
 "「目的」では、学習者の期待される学習結果を記述するとともに、学習タスクの\n"
 "終了後、学習者が何ができるようになるかを定義する必要があります。"
 
-#: exe/engine/field.py:990 exe/engine/field.py:1054
+#: exe/engine/field.py:1155 exe/engine/field.py:1219
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "このiDeviceでは.flv（フラッシュムービーファイル）のみ選択できます。"
 
-#: exe/engine/field.py:926 exe/engine/field.py:970
+#: exe/engine/field.py:1091 exe/engine/field.py:1135
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "このiDeviceでは.swf（フラッシュオブジェクト）のみ選択できます。"
 
 #: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:1171 exe/engine/field.py:1184
-#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1616
-#: exe/webui/element.py:1740 exe/webui/element.py:1745
+#: exe/engine/field.py:1336 exe/engine/field.py:1349
+#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1615
+#: exe/webui/element.py:1739 exe/webui/element.py:1744
 msgid "Option"
 msgstr "オプション"
 
-#: exe/engine/field.py:1255 exe/engine/field.py:1265
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1612
+#: exe/engine/field.py:1420 exe/engine/field.py:1430
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1611
 msgid "Options"
 msgstr "オプション"
 
@@ -1307,7 +1307,7 @@ msgstr "概要"
 msgid "Own site"
 msgstr "独自のサイト"
 
-#: exe/xului/mainpage.py:665
+#: exe/xului/mainpage.py:693
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "パッケージが次の場所に解凍されました: %s"
@@ -1333,7 +1333,7 @@ msgstr "iDeviceの名前を記入してください。"
 msgid "Please enter<br />an idevice name."
 msgstr "<br />iDeviceの名前を記入してください。"
 
-#: exe/webui/element.py:1271
+#: exe/webui/element.py:1270
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "フォーラムを選択してください"
@@ -1377,7 +1377,7 @@ msgstr ""
 "<li> 学習者はレベル４の英語力を必要とする </li>\n"
 "<li> 学習者は基本的な工具の組み立てができなければならない </li></ul>\n"
 
-#: exe/webui/element.py:1414 exe/webui/editorpane.py:262
+#: exe/webui/element.py:1413 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "プレビュー"
 
@@ -1386,13 +1386,13 @@ msgstr "プレビュー"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "Filename %s はファイルです。取り替えることはできません。"
 
-#: exe/engine/galleryidevice.py:556 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:570 exe/export/ipodpage.py:109
 #: exe/export/scormexport.py:311 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前へ"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:631
-#: exe/engine/field.py:678
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:796
+#: exe/engine/field.py:843
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1454,13 +1454,13 @@ msgid "Put instructions for learners here"
 msgstr "学習者への指示をここに記入してください"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1210 exe/engine/field.py:1229
+#: exe/engine/field.py:1375 exe/engine/field.py:1394
 msgid "Question"
 msgstr "質問"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1291 exe/engine/field.py:1327 exe/webui/element.py:1596
+#: exe/engine/field.py:1456 exe/engine/field.py:1492 exe/webui/element.py:1595
 msgid "Question:"
 msgstr "質問："
 
@@ -1513,7 +1513,7 @@ msgstr ""
 msgid "Reflective question:"
 msgstr "考察用質問："
 
-#: exe/webui/element.py:1113
+#: exe/webui/element.py:1112
 msgid "Restart"
 msgstr "再起動"
 
@@ -1527,8 +1527,8 @@ msgstr "右"
 msgid "SAVE FAILED!"
 msgstr "保存に失敗しました！"
 
-#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:541
-#: exe/xului/mainpage.py:707
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:569
+#: exe/xului/mainpage.py:735
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1562,7 +1562,7 @@ msgstr "保存"
 msgid "Section"
 msgstr "セクション"
 
-#: exe/webui/editorelement.py:267 exe/webui/element.py:1205
+#: exe/webui/editorelement.py:267 exe/webui/element.py:1204
 msgid "Select Flash Object"
 msgstr "フラッシュオブジェクトの選択"
 
@@ -1581,11 +1581,11 @@ msgstr "ＭＰ３ファイルの選択"
 msgid "Select a file"
 msgstr "ファイルの選択"
 
-#: exe/webui/element.py:1287
+#: exe/webui/element.py:1286
 msgid "Select a flash video"
 msgstr "フラッシュビデオの選択"
 
-#: exe/webui/element.py:1400
+#: exe/webui/element.py:1399
 msgid "Select a font size: "
 msgstr "フォントサイズの選択"
 
@@ -1601,7 +1601,7 @@ msgstr "画像の選択"
 msgid "Select an image (JPG file)"
 msgstr "画像（jpegファイル）の選択"
 
-#: exe/engine/field.py:1300
+#: exe/engine/field.py:1465
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1657,7 +1657,7 @@ msgstr "設定が保存されました"
 msgid "Show %s Image"
 msgstr "表示 %s　画像 "
 
-#: exe/webui/element.py:1120
+#: exe/webui/element.py:1119
 msgid "Show Answers"
 msgstr "解答を表示する"
 
@@ -1665,11 +1665,11 @@ msgstr "解答を表示する"
 msgid "Show Feedback"
 msgstr "フィードバックを表示する"
 
-#: exe/webui/element.py:1104
+#: exe/webui/element.py:1103
 msgid "Show/Clear Answers"
 msgstr "解答を表示する／クリアする"
 
-#: exe/webui/element.py:1099
+#: exe/webui/element.py:1098
 msgid "Show/Hide Feedback"
 msgstr "フィードバックを表示する／表示しない"
 
@@ -1694,7 +1694,7 @@ msgstr "小"
 msgid "Some emphasis"
 msgstr "強調する"
 
-#: exe/xului/mainpage.py:906
+#: exe/xului/mainpage.py:934
 msgid "Sorry, wrong file format"
 msgstr "ファイルのフォーマットが違っています"
 
@@ -1703,7 +1703,7 @@ msgstr "ファイルのフォーマットが違っています"
 msgid "Sorry, wrong file format."
 msgstr "ファイルのフォーマットが違っています"
 
-#: exe/xului/mainpage.py:904
+#: exe/xului/mainpage.py:932
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1720,15 +1720,15 @@ msgstr "スペイン語ウィキペディア記事"
 msgid "Story:"
 msgstr "ストーリー："
 
-#: exe/webui/element.py:1003
+#: exe/webui/element.py:1002
 msgid "Strict Marking?"
 msgstr "厳しく採点しますか？"
 
-#: exe/webui/element.py:1108 exe/webui/editorpane.py:420
+#: exe/webui/element.py:1107 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "提出する"
 
-#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1666
+#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1665
 msgid "Submit Answer"
 msgstr "解答を提出する"
 
@@ -1921,7 +1921,7 @@ msgstr ""
 "質問形式です。この種類の質問形式は、事実に基づいた情報や、正しいか間違って\n"
 "いるかの判断がしやすい情報を利用する際に効果があります。"
 
-#: exe/engine/field.py:1066
+#: exe/engine/field.py:1231
 msgid "Type a discussion topic here."
 msgstr "ここにディスカッション用のトピックをタイプしてください。"
 
@@ -1951,7 +1951,7 @@ msgstr ""
 "自動的に提示します。\n"
 " 正答の場合、\"正解\"、正答以外のオプションを選んだ場合、\"不正解\""
 
-#: exe/engine/field.py:1303
+#: exe/engine/field.py:1468
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -2025,7 +2025,7 @@ msgstr ""
 "また、質問をしたり、議論を始めるための状況を提供することで、リーディング \n"
 "内容の詳細な分析を促すためにも利用できます。"
 
-#: exe/engine/galleryidevice.py:381
+#: exe/engine/galleryidevice.py:395
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "表示する画像が多いときにはこのiDeviceを利用してください。"
 
@@ -2096,7 +2096,7 @@ msgstr "Wikiversity"
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: exe/webui/element.py:1816
+#: exe/webui/element.py:1815
 msgid "Wrong"
 msgstr "不正解"
 
@@ -2126,7 +2126,7 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe : ｅラーニングXHTMLエディター"
 
-#: exe/engine/galleryidevice.py:377
+#: exe/engine/galleryidevice.py:391
 msgid "eXe Project"
 msgstr ""
 
@@ -2165,11 +2165,11 @@ msgstr "キーコード"
 msgid "label"
 msgstr "ラベル"
 
-#: exe/webui/element.py:1397
+#: exe/webui/element.py:1396
 msgid "newline"
 msgstr "新規のライン"
 
-#: exe/webui/element.py:1396
+#: exe/webui/element.py:1395
 msgid "text"
 msgstr "テキスト"
 

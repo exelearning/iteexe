@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exe 0.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-06 23:27+1200\n"
+"POT-Creation-Date: 2007-07-09 20:36+1200\n"
 "PO-Revision-Date: 2006-07-31 14:47+1200\n"
 "Last-Translator: Matthew Sherborne <msherborne@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -29,9 +29,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr ""
 
-#: exe/xului/mainpage.py:276 exe/xului/mainpage.py:653
-#: exe/xului/mainpage.py:774 exe/xului/mainpage.py:830
-#: exe/xului/mainpage.py:851
+#: exe/xului/mainpage.py:276 exe/xului/mainpage.py:681
+#: exe/xului/mainpage.py:802 exe/xului/mainpage.py:858
+#: exe/xului/mainpage.py:879
 #, fuzzy, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -49,8 +49,8 @@ msgstr "找到.txt文件並開啟它,複製所有內容,然後貼上至applet co
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:562
-#: exe/xului/mainpage.py:645
+#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:590
+#: exe/xului/mainpage.py:673
 msgid ". Please use ASCII names."
 msgstr "。請使用ASCII碼，如英文、拼音等來命名路徑，包括其中所有的檔案夾。"
 
@@ -98,22 +98,22 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "輸入填空練習的內容。按兩下所要隱藏的字，然後點擊<i>隱藏/顯示 文字</i> 按鈕使之變為空格。"
 
-#: exe/engine/field.py:820
+#: exe/engine/field.py:985
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
 
-#: exe/engine/field.py:841
+#: exe/engine/field.py:1006
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr ""
 
-#: exe/engine/field.py:846
+#: exe/engine/field.py:1011
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
 
-#: exe/engine/field.py:1095
+#: exe/engine/field.py:1260
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr ""
 
@@ -150,7 +150,7 @@ msgid ""
 "reflective guidance.</p>"
 msgstr " <P>檢視作用中，顧名思義是要學生完成一些任務。此作用中須與檢視內容直接相關。可給學生一些相對的評語，提供回答問題的指引.</P>"
 
-#: exe/engine/galleryidevice.py:378
+#: exe/engine/galleryidevice.py:392
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -256,7 +256,7 @@ msgstr "加入互動式評語。"
 msgid "Add an mp3 file to your iDevice."
 msgstr "加入互動式評語。"
 
-#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1628
+#: exe/webui/testquestionelement.py:111 exe/webui/element.py:1627
 msgid "Add another Option"
 msgstr "加入選項"
 
@@ -269,7 +269,7 @@ msgstr "加入問題"
 msgid "Add another activity"
 msgstr "加入選項"
 
-#: exe/webui/element.py:1909
+#: exe/webui/element.py:1908
 msgid "Add another option"
 msgstr "加入選項"
 
@@ -305,7 +305,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "對齊可用於選擇圖像顯示的位置。"
 
-#: exe/engine/field.py:884
+#: exe/engine/field.py:1049
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -340,7 +340,7 @@ msgid ""
 "that may help or hinder the learner in the performance of the task."
 msgstr "學習作用中可被定義為學生必須完成的一個或一組任務。提供清晰的任務陳述以及考慮任何條件會輔助或阻礙學生完成任務。"
 
-#: exe/webui/element.py:1155
+#: exe/webui/element.py:1154
 #, fuzzy
 msgid "Answsers"
 msgstr "顯示 答案"
@@ -379,8 +379,8 @@ msgstr "按鈕標籤:"
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:560
-#: exe/xului/mainpage.py:645
+#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:588
+#: exe/xului/mainpage.py:673
 msgid "Cannot access directory named "
 msgstr "不能識別路徑名稱"
 
@@ -398,7 +398,7 @@ msgstr "案例分析"
 msgid "Change Image"
 msgstr "改換圖片"
 
-#: exe/webui/element.py:1008
+#: exe/webui/element.py:1007
 msgid "Check Caps?"
 msgstr "檢查大小寫?"
 
@@ -442,7 +442,7 @@ msgstr "點擊圖片或\"加入圖片\"按鈕來選擇所要放大的圖片文�
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "點擊<strong>選擇文件</strong>，選擇您要上傳的檔案。注意:檔案名稱不可含有中文字，否則該軟體無法識別。"
 
-#: exe/engine/field.py:436
+#: exe/engine/field.py:601
 msgid "Click Here"
 msgstr "點擊"
 
@@ -454,21 +454,21 @@ msgstr "點擊看完成說明。"
 msgid "Click here"
 msgstr "點擊這裡"
 
-#: exe/engine/field.py:1103
+#: exe/engine/field.py:1268
 #, fuzzy
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr "輸入有關圖片的描述。"
 
-#: exe/engine/galleryidevice.py:391
+#: exe/engine/galleryidevice.py:405
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "點擊\"加入圖片\"按鈕來選擇圖片文件.所選圖片將顯示在下面,您可為其加上標籤。最好在標籤上加上文件大小。"
 
-#: exe/engine/galleryidevice.py:560 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:574 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:248 exe/webui/block.py:249
-#: exe/webui/element.py:1948 exe/webui/element.py:1949
+#: exe/webui/element.py:1947 exe/webui/element.py:1948
 #: exe/webui/editorpane.py:356 exe/webui/editorpane.py:357
 #: exe/webui/editorpane.py:377 exe/webui/editorpane.py:378
 #: exe/webui/linux-profile/extensions/exeex@exelearning.org/chrome/content/about.xul:<button
@@ -484,12 +484,12 @@ msgstr "填空題"
 msgid "Cloze Activity"
 msgstr "填空練習"
 
-#: exe/webui/element.py:990
+#: exe/webui/element.py:989
 msgid "Cloze Text"
 msgstr "填空題"
 
-#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1614
-#: exe/webui/element.py:1745 exe/webui/element.py:1814
+#: exe/webui/testquestionelement.py:98 exe/webui/element.py:1613
+#: exe/webui/element.py:1744 exe/webui/element.py:1813
 msgid "Correct"
 msgstr "正確"
 
@@ -497,7 +497,7 @@ msgstr "正確"
 msgid "Correct!"
 msgstr "正確!"
 
-#: exe/xului/mainpage.py:901
+#: exe/xului/mainpage.py:929
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 
@@ -535,13 +535,13 @@ msgstr "刪除文件"
 msgid "Delete Image"
 msgstr "刪除圖片"
 
-#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1505
-#: exe/webui/element.py:1763
+#: exe/webui/testoptionelement.py:95 exe/webui/element.py:1504
+#: exe/webui/element.py:1762
 msgid "Delete option"
 msgstr "刪除選項"
 
 #: exe/webui/questionelement.py:113 exe/webui/truefalseelement.py:118
-#: exe/webui/element.py:1601 exe/webui/element.py:1894
+#: exe/webui/element.py:1600 exe/webui/element.py:1893
 msgid "Delete question"
 msgstr "刪除問題"
 
@@ -587,7 +587,7 @@ msgstr "描述"
 msgid "Description:"
 msgstr "描述:"
 
-#: exe/webui/element.py:438 exe/webui/element.py:844 exe/webui/element.py:1209
+#: exe/webui/element.py:438 exe/webui/element.py:844 exe/webui/element.py:1208
 msgid "Display as:"
 msgstr "顯示為:"
 
@@ -620,17 +620,17 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:587 exe/xului/mainpage.py:594
-#: exe/xului/mainpage.py:597 exe/xului/mainpage.py:600
-#: exe/xului/mainpage.py:758
+#: exe/xului/mainpage.py:615 exe/xului/mainpage.py:622
+#: exe/xului/mainpage.py:625 exe/xului/mainpage.py:628
+#: exe/xului/mainpage.py:786
 msgid "EXPORT FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:748 exe/xului/mainpage.py:762
-#: exe/xului/mainpage.py:775 exe/xului/mainpage.py:781
-#: exe/xului/mainpage.py:815 exe/xului/mainpage.py:831
-#: exe/xului/mainpage.py:837 exe/xului/mainpage.py:852
-#: exe/xului/mainpage.py:858
+#: exe/xului/mainpage.py:776 exe/xului/mainpage.py:790
+#: exe/xului/mainpage.py:803 exe/xului/mainpage.py:809
+#: exe/xului/mainpage.py:843 exe/xului/mainpage.py:859
+#: exe/xului/mainpage.py:865 exe/xului/mainpage.py:880
+#: exe/xului/mainpage.py:886
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -645,7 +645,7 @@ msgid ""
 "Last succesful export is %s."
 msgstr ""
 
-#: exe/xului/mainpage.py:654 exe/xului/mainpage.py:663
+#: exe/xului/mainpage.py:682 exe/xului/mainpage.py:691
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -694,7 +694,7 @@ msgid ""
 "to reflect upon."
 msgstr "輸入問題。"
 
-#: exe/engine/galleryidevice.py:390
+#: exe/engine/galleryidevice.py:404
 msgid "Enter a title for the gallery"
 msgstr "輸入標題為圖像畫廊。"
 
@@ -746,7 +746,7 @@ msgid ""
 "by clicking the red \"X\" next to the Option."
 msgstr "輸入各個選項以讓學生從其間選擇最合適的一項。點擊\"新增選項\" 按鈕來增加選項。點擊選項旁邊的\"x\" 可刪除這個選項。"
 
-#: exe/engine/field.py:1296
+#: exe/engine/field.py:1461
 #, fuzzy
 msgid ""
 "Enter the available choices here. \n"
@@ -787,7 +787,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr "輸入問題。問題的陳述要清晰而不含糊。"
 
-#: exe/engine/field.py:1288
+#: exe/engine/field.py:1453
 #, fuzzy
 msgid ""
 "Enter the question stem. \n"
@@ -830,9 +830,9 @@ msgstr "例子 例子"
 msgid "Export iDevice"
 msgstr "iDevice"
 
-#: exe/xului/mainpage.py:764 exe/xului/mainpage.py:783
-#: exe/xului/mainpage.py:817 exe/xului/mainpage.py:839
-#: exe/xului/mainpage.py:860
+#: exe/xului/mainpage.py:792 exe/xului/mainpage.py:811
+#: exe/xului/mainpage.py:845 exe/xului/mainpage.py:867
+#: exe/xului/mainpage.py:888
 #, python-format
 msgid "Exported to %s"
 msgstr "匯出至 %s"
@@ -852,10 +852,10 @@ msgstr "錯"
 #: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1175
-#: exe/engine/field.py:1187 exe/webui/clozeblock.py:158
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1340
+#: exe/engine/field.py:1352 exe/webui/clozeblock.py:158
 #: exe/webui/questionelement.py:103 exe/webui/common.py:206
-#: exe/webui/element.py:1764 exe/webui/editorpane.py:251
+#: exe/webui/element.py:1763 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "評語"
 
@@ -866,17 +866,17 @@ msgid ""
 msgstr "如果此欄空白，評語按鈕將不顯示。"
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1305 exe/engine/field.py:1330
+#: exe/engine/field.py:1470 exe/engine/field.py:1495
 msgid "Feedback:"
 msgstr "評語:"
 
-#: exe/xului/mainpage.py:897
+#: exe/xului/mainpage.py:925
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr ""
 
-#: exe/xului/mainpage.py:693 exe/xului/mainpage.py:735
-#: exe/xului/mainpage.py:802
+#: exe/xului/mainpage.py:721 exe/xului/mainpage.py:763
+#: exe/xului/mainpage.py:830
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
@@ -898,8 +898,8 @@ msgstr "Flash 電影"
 msgid "Flash with Text"
 msgstr "文字及Flash"
 
-#: exe/xului/mainpage.py:699 exe/xului/mainpage.py:741
-#: exe/xului/mainpage.py:808
+#: exe/xului/mainpage.py:727 exe/xului/mainpage.py:769
+#: exe/xului/mainpage.py:836
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr ""
@@ -930,7 +930,7 @@ msgstr ""
 msgid "German Wikipedia Article"
 msgstr "德文Wikipedia 文章"
 
-#: exe/webui/element.py:1093
+#: exe/webui/element.py:1092
 msgid "Get score"
 msgstr "得分"
 
@@ -960,14 +960,14 @@ msgstr "隱藏"
 msgid "Hide Feedback"
 msgstr "顯示/隱藏 評語"
 
-#: exe/webui/element.py:998
+#: exe/webui/element.py:997
 msgid "Hide/Show Word"
 msgstr "隱藏/顯示 文字"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1213 exe/engine/field.py:1233
+#: exe/engine/field.py:1378 exe/engine/field.py:1398
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
-#: exe/webui/element.py:1952
+#: exe/webui/element.py:1951
 msgid "Hint"
 msgstr "提示"
 
@@ -1004,7 +1004,7 @@ msgstr "圖示"
 msgid "Image"
 msgstr "圖像"
 
-#: exe/engine/galleryidevice.py:376
+#: exe/engine/galleryidevice.py:390
 msgid "Image Gallery"
 msgstr "圖像畫廊"
 
@@ -1045,7 +1045,7 @@ msgstr "資訊"
 msgid "Initial Zoom"
 msgstr "初始放大倍數"
 
-#: exe/webui/element.py:1013
+#: exe/webui/element.py:1012
 msgid "Instant Marking?"
 msgstr "快速評分?"
 
@@ -1153,7 +1153,7 @@ msgstr "名稱"
 msgid "New iDevice"
 msgstr "新的 iDevice"
 
-#: exe/engine/galleryidevice.py:564 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:578 exe/export/ipodpage.py:115
 #: exe/export/scormexport.py:312 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "下一頁"
@@ -1203,27 +1203,27 @@ msgid ""
 "learning tasks."
 msgstr "用於描述學習此課的目的及將要達到的結果。"
 
-#: exe/engine/field.py:990 exe/engine/field.py:1054
+#: exe/engine/field.py:1155 exe/engine/field.py:1219
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "只能選用.flv (Flash Video Files)。"
 
-#: exe/engine/field.py:926 exe/engine/field.py:970
+#: exe/engine/field.py:1091 exe/engine/field.py:1135
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "只能選用.swf (Flash Object)。"
 
 #: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:1171 exe/engine/field.py:1184
-#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1616
-#: exe/webui/element.py:1740 exe/webui/element.py:1745
+#: exe/engine/field.py:1336 exe/engine/field.py:1349
+#: exe/webui/testquestionelement.py:100 exe/webui/element.py:1615
+#: exe/webui/element.py:1739 exe/webui/element.py:1744
 msgid "Option"
 msgstr "選項"
 
-#: exe/engine/field.py:1255 exe/engine/field.py:1265
-#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1612
+#: exe/engine/field.py:1420 exe/engine/field.py:1430
+#: exe/webui/testquestionelement.py:96 exe/webui/element.py:1611
 msgid "Options"
 msgstr "選項"
 
@@ -1239,7 +1239,7 @@ msgstr "目錄"
 msgid "Own site"
 msgstr ""
 
-#: exe/xului/mainpage.py:665
+#: exe/xului/mainpage.py:693
 #, fuzzy, python-format
 msgid "Package extracted to: %s"
 msgstr "教材存至: %s"
@@ -1266,7 +1266,7 @@ msgstr "請填入iDevice名稱。"
 msgid "Please enter<br />an idevice name."
 msgstr "請填入iDevice名稱。"
 
-#: exe/webui/element.py:1271
+#: exe/webui/element.py:1270
 #, fuzzy
 msgid "Please select a .flv file."
 msgstr "請選擇論壇."
@@ -1306,7 +1306,7 @@ msgid ""
 "<li>        Learners must be able to assemble standard power tools </li></ul>\n"
 msgstr "預備知識是指學生為完成此課所應具備的知識.\n"
 
-#: exe/webui/element.py:1414 exe/webui/editorpane.py:262
+#: exe/webui/element.py:1413 exe/webui/editorpane.py:262
 msgid "Preview"
 msgstr "預覽"
 
@@ -1315,13 +1315,13 @@ msgstr "預覽"
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "檔案名稱%s是個文件，無法覆寫它"
 
-#: exe/engine/galleryidevice.py:556 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:570 exe/export/ipodpage.py:109
 #: exe/export/scormexport.py:311 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前一頁"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:631
-#: exe/engine/field.py:678
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:796
+#: exe/engine/field.py:843
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1379,14 +1379,14 @@ msgid "Put instructions for learners here"
 msgstr "在此輸入完成說明"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1210 exe/engine/field.py:1229
+#: exe/engine/field.py:1375 exe/engine/field.py:1394
 #, fuzzy
 msgid "Question"
 msgstr "問題:"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1291 exe/engine/field.py:1327 exe/webui/element.py:1596
+#: exe/engine/field.py:1456 exe/engine/field.py:1492 exe/webui/element.py:1595
 msgid "Question:"
 msgstr "問題:"
 
@@ -1434,7 +1434,7 @@ msgstr "立時回應是一種常用於洽詢理論和實踐的教學方式。立
 msgid "Reflective question:"
 msgstr "問題:"
 
-#: exe/webui/element.py:1113
+#: exe/webui/element.py:1112
 msgid "Restart"
 msgstr "重新開始"
 
@@ -1448,8 +1448,8 @@ msgstr "右"
 msgid "SAVE FAILED!"
 msgstr ""
 
-#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:541
-#: exe/xului/mainpage.py:707
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:569
+#: exe/xului/mainpage.py:735
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1479,7 +1479,7 @@ msgstr "儲存"
 msgid "Section"
 msgstr "區段"
 
-#: exe/webui/editorelement.py:267 exe/webui/element.py:1205
+#: exe/webui/editorelement.py:267 exe/webui/element.py:1204
 msgid "Select Flash Object"
 msgstr "選擇flash文件"
 
@@ -1501,11 +1501,11 @@ msgstr "選擇文件"
 msgid "Select a file"
 msgstr "選擇文件"
 
-#: exe/webui/element.py:1287
+#: exe/webui/element.py:1286
 msgid "Select a flash video"
 msgstr "選擇flash電影文件"
 
-#: exe/webui/element.py:1400
+#: exe/webui/element.py:1399
 #, fuzzy
 msgid "Select a font size: "
 msgstr "選擇文件"
@@ -1523,7 +1523,7 @@ msgstr "選擇圖片"
 msgid "Select an image (JPG file)"
 msgstr "選擇圖片 (JPG 文件)"
 
-#: exe/engine/field.py:1300
+#: exe/engine/field.py:1465
 #, fuzzy
 msgid ""
 "Select as many correct answer \n"
@@ -1574,7 +1574,7 @@ msgstr "設定已儲存"
 msgid "Show %s Image"
 msgstr "顯示 %s 圖像"
 
-#: exe/webui/element.py:1120
+#: exe/webui/element.py:1119
 msgid "Show Answers"
 msgstr "顯示 答案"
 
@@ -1583,11 +1583,11 @@ msgstr "顯示 答案"
 msgid "Show Feedback"
 msgstr "顯示/隱藏 評語"
 
-#: exe/webui/element.py:1104
+#: exe/webui/element.py:1103
 msgid "Show/Clear Answers"
 msgstr "顯示/清除 答案"
 
-#: exe/webui/element.py:1099
+#: exe/webui/element.py:1098
 msgid "Show/Hide Feedback"
 msgstr "顯示/隱藏 評語"
 
@@ -1612,7 +1612,7 @@ msgstr "小"
 msgid "Some emphasis"
 msgstr "一般強調"
 
-#: exe/xului/mainpage.py:906
+#: exe/xului/mainpage.py:934
 msgid "Sorry, wrong file format"
 msgstr "對不起，檔案格式錯誤"
 
@@ -1621,7 +1621,7 @@ msgstr "對不起，檔案格式錯誤"
 msgid "Sorry, wrong file format."
 msgstr "對不起，檔案格式錯誤"
 
-#: exe/xului/mainpage.py:904
+#: exe/xului/mainpage.py:932
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1638,15 +1638,15 @@ msgstr "西班牙文Wikipedia 文章"
 msgid "Story:"
 msgstr "事件:"
 
-#: exe/webui/element.py:1003
+#: exe/webui/element.py:1002
 msgid "Strict Marking?"
 msgstr "嚴格評分?"
 
-#: exe/webui/element.py:1108 exe/webui/editorpane.py:420
+#: exe/webui/element.py:1107 exe/webui/editorpane.py:420
 msgid "Submit"
 msgstr "提交"
 
-#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1666
+#: exe/webui/quiztestblock.py:355 exe/webui/element.py:1665
 msgid "Submit Answer"
 msgstr "提交答案"
 
@@ -1812,7 +1812,7 @@ msgid ""
 "responses."
 msgstr "是非題提供一個陳述句，讓學生判斷其陳述是否正確。"
 
-#: exe/engine/field.py:1066
+#: exe/engine/field.py:1231
 msgid "Type a discussion topic here."
 msgstr "輸入討論主題:"
 
@@ -1834,7 +1834,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "輸入評語，可讓學生在點選次項時看見。如果您不輸入，eXe將會自動提供以下評語:\"回答正確 \"給正確選項; \"回答錯誤 \"給其他選項。"
 
-#: exe/engine/field.py:1303
+#: exe/engine/field.py:1468
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1899,7 +1899,7 @@ msgid ""
 "or providing a statement to begin a debate."
 msgstr "這個欄目是可靈活使用的。可用它來提供所涉及檢視資料的重點概括，也可以提出問題或辯論話題做為下一步檢視分析的起點。"
 
-#: exe/engine/galleryidevice.py:381
+#: exe/engine/galleryidevice.py:395
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "用此可展示許多圖片。"
 
@@ -1967,7 +1967,7 @@ msgstr ""
 msgid "Wiktionary"
 msgstr ""
 
-#: exe/webui/element.py:1816
+#: exe/webui/element.py:1815
 msgid "Wrong"
 msgstr "錯誤"
 
@@ -1997,7 +1997,7 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 編輯器"
 
-#: exe/engine/galleryidevice.py:377
+#: exe/engine/galleryidevice.py:391
 msgid "eXe Project"
 msgstr ""
 
@@ -2043,12 +2043,12 @@ msgstr "keycode"
 msgid "label"
 msgstr "標籤"
 
-#: exe/webui/element.py:1397
+#: exe/webui/element.py:1396
 #, fuzzy
 msgid "newline"
 msgstr "國際語"
 
-#: exe/webui/element.py:1396
+#: exe/webui/element.py:1395
 #, fuzzy
 msgid "text"
 msgstr "下一頁"
