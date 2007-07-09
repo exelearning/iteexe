@@ -1,4 +1,4 @@
-Next Release
+Version 0.96 (r2976)
 * Add ability to edit (delete) broken iDevices in a package
 * Allow preferences to change locale without triggering POSTDATA message
 * Greatly improve the ability to load packages created with older versions
