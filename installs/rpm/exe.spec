@@ -1,8 +1,8 @@
-%define ver 0.23.1
+%define ver 0.95.1
 
 %define pyver  %(%{__python} -c 'import sys ; print sys.version[:3]')
 
-Summary: EXELearning SCORM course editor
+Summary: eXe eLearning XHTML editor
 Name: exe
 Version: %{?clversion}%{!?clversion:%{ver}}
 Release: %{?clrelease}%{!?clrelease:1%{?dist:.%{dist}}}
@@ -23,9 +23,10 @@ Obsoletes: exe-twisted
 
 %description
 eXe, the eLearning XHTML editor, is an authoring environment which enables
-teachers to publish web content in standard package formats without the
-need to become proficient in HTML or XML markup.  Content generated using
-eXe can be used by any Learning Management System.
+teachers to publish web content in standard package formats (like IMS
+Content Packages and SCORM) without the need to become proficient in HTML
+or XML markup.  Content generated using eXe can be used by any Learning
+Management System.
 
 %prep
 %setup -n exe
@@ -41,27 +42,25 @@ rm -rf $RPM_BUILD_ROOT
 python rpm-setup.py build
 
 %install
-python rpm-setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+python rpm-setup.py install --root=$RPM_BUILD_ROOT
 cp -a twisted nevow formless $RPM_BUILD_ROOT%{_datadir}/exe
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps
 cp exe.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/
-echo %{_datadir}/icons/hicolor/48x48/apps/exe.png >> INSTALLED_FILES
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 cp exe.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages/
-echo %{_datadir}/exe/twisted >> INSTALLED_FILES
-echo %{_datadir}/exe/nevow >> INSTALLED_FILES
-echo %{_datadir}/exe/formless >> INSTALLED_FILES
-
-sed -i.bak -e 's/ /\ /g' INSTALLED_FILES
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f INSTALLED_FILES
+%files
 %defattr(-,root,root)
 %attr(755,root,root) %{_datadir}/exe/templates/mimetex.cgi
+%{_bindir}/exe
+%{_libdir}/python%{pyver}/site-packages/exe
+%{_datadir}/exe
+%{_datadir}/icons/hicolor/48x48/apps/exe.png
 %config %{_datadir}/mime/packages/exe.xml
 %config %{_datadir}/applications/exe.desktop
 %doc COPYING NEWS README
@@ -70,6 +69,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/update-mime-database /usr/share/mime &> /dev/null
 
 %changelog
+* Mon Jul 09 2007 Jim Tittsler <jim@exelearning.org>
+- update spec file to work with Fedora 7
+- use files list instead of recording INSTALLED_FILES in setup.py to catch .pyo files
+
 * Mon May 28 2007 Jim Tittsler <jim@exelearning.org>
 - add desktop file and icon
 - add MIME type and .elp glob to associate file types
