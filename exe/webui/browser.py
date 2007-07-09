@@ -91,7 +91,8 @@ def launchBrowser(config, packageName):
 
     if sys.platform[:3] == u"win":
         try:
-            # Set MOZ_NO_REMOTE so exe doesn't conflict with Firefox
+            # Set MOZ_NO_REMOTE so that eXe doesn't conflict with
+            # other versions or profiles of Firefox.
             os.environ["MOZ_NO_REMOTE"] = "1"
             os.spawnl(os.P_DETACH, 
                       config.browserPath,

@@ -93,7 +93,7 @@ class Application:
             self.packagePath = self.config.getLongPathName(self.packagePath)
         installSafeTranslate()
         self.preLaunch()
-        # preLaunch() has now called the server's find_port(), setting config.port >= 0 if valid:
+        # preLaunch() has called find_port() to set config.port (the IP port #)
         if self.config.port >= 0:
             self.launch()
             log.info('serving')
