@@ -2,7 +2,7 @@
 # ===========================================================================
 # eXe
 # Copyright 2004-2006, University of Auckland
-# Copyright 2007 eXe Project, New Zealand Tertiary Education Commission
+# Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 #
 # This module is for the TwiSteD web server.
 #
@@ -167,20 +167,11 @@ class WebServer:
                 log.error("find_port(): found another eXe server running " \
                             + "on port# %d; only one eXe server allowed " \
                             + "to run at a time", test_port_num)
-                assert 0, "ERROR CODE 1234: It appears that you are already " \
-                  + "running the eXe application in another window. Please " \
-                  + "close the other application before opening a new one."
             else:
                 log.error("find_port(): Can't listen on interface 127.0.0.1"\
                         + ", ports %s-%s, last exception: %s" % \
                          (self.config.port, test_port_num,  \
                           unicode(last_exception)))
-                assert 0, "ERROR CODE 1235: It is highly possible that " \
-                  + "you are already " \
-                  + "running the eXe application in another window. Please " \
-                  + "check and close the other application before opening a " \
-                  + "new one. Otherwise, it is also possible that there is " \
-                  + "no network device setup on your computer";
 
     def run(self):
         """

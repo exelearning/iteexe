@@ -6,7 +6,12 @@ Next Release
 * Fix unicode parsing of Wikipedia pages
 * Fix rendering of attachment elements of custom iDevices
 * Fix display True/False hint icon only if there is a hint
+* Fix IMS CP export if metadata contains non-ASCII characters
 * Fix deletion of file resources when deleting applet iDevice
+* Fix deletion of resources when no longer referencing them in textareas
+* Change to just use shorter basename for filename of images in textareas
+* Change custom iDevices to open attachments in preferred browser
+* Change spec file so RPM can be built on F7 in addition to FC6
 
 Version 0.95 (r2931)
 * Add ability to embed images in text areas with TinyMCE
