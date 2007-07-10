@@ -3,11 +3,10 @@
 =========================================
 $Revision$
 $Date$
-$Id$
 
 ===========================================================================
 Copyright 2004-2005, University of Auckland
-Copyright 2006-2007, Auckland University of Technology
+Copyright 2006-2007 eXe Project, New Zealand Tertiary Education Commission
 All rights reserved, see COPYING for details.
 
 This program is free software; you can redistribute it and/or modify
@@ -74,30 +73,22 @@ To install it, simply drag the app to your Applications folder.
 FEDORA LINUX 
 =============
 
-The eXe Fedora Linux install consists of two RPMs which have been tested
-to work on Fedora Core 4.  (They may work on other RPM based distros
-but that hasn't been tested.)
+The eXe Fedora Linux install consists of a single RPM.  There are separate
+RPMs for Fedora Core 6 (Python 2.4) and Fedora 7 (Python 2.5).  Each of
+these RPMs requires python-zope-interface (version 3.0.1 or newer) and
+python imaging (version 1.1.5 or newer).
+These RPMs might work on other RPM based Linux distributions, but that
+hasn't been tested.
 
-* exe-0.15-1.noarch.rpm - includes the eXe editor and bundled Firefox
-* exe-twisted-2.0-1.noarch.rpm - includes Twisted, ZopeInterface and Nevow used for the webserver by eXe
-
-From the command line type exe to start.
+From the command line type exe to start.  If you are using a standard
+window manager, you should find an eXe entry in your Accessories menu.
 
 
 UBUNTU LINUX 
 ============
 
-The eXe Ubuntu Linux install consists of 
-* python2.4-exe_0.20.1-0.1ubuntu1_all.deb
-
-Add:
-deb http://exe.sourceforge.net/ubuntu current main
-
-to your /etc/apt/sources.list
-and then:
-
-apt-get updated
-apt-get install python2.4-exe
+There are separate DPKGs for Dapper/Edgy (Python 2.4) and Feisty (Python
+2.5).
 
 From the command line type exe to start.
 
