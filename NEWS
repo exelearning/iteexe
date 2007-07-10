@@ -1,3 +1,6 @@
+Next Release
+* Add ability to embed media in text areas using TinyMCE toolbar
+
 Version 0.96 (r2976)
 * Add ability to edit (delete) broken iDevices in a package
 * Allow preferences to change locale without triggering POSTDATA message
