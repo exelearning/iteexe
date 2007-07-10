@@ -171,9 +171,9 @@ class AuthoringPage(RenderableResource):
         html += u"separator,bullist,numlist,indent,outdent,separator,"
         html += u"cut,copy,paste,pastetext,pasteword\",\n"
         ##########
-        html += u" theme_advanced_buttons2 : \"image,tablecontrols,separator,"
+        #html += u" theme_advanced_buttons2 : \"image,tablecontrols,separator,"
         # r3m0, WILL BE adding movies/flash with the media plugin, via:
-        #html += u" theme_advanced_buttons2 : \"image,media,tablecontrols,separator,"
+        html += u" theme_advanced_buttons2 : \"image,media,tablecontrols,separator,"
         # Note these default media plugin supports:
         #  [media_types]
         #  Name/Value list of format mappings to file extensions, Defaults to: 

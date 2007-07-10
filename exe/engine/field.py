@@ -291,7 +291,7 @@ class FieldWithResources(Field):
         # Part 1: process any newly added resources
         new_content = self.ProcessPreviewedImages(content)
         # and eventually:
-        #new_content = ProcessPreviewedMedia(new_content)
+        new_content = self.ProcessPreviewedMedia(new_content)
 
         #################################
         # Part 2: remove any freshly removed resources via
@@ -314,6 +314,237 @@ class FieldWithResources(Field):
     # for media, and if all works out well, it might be very well worth
     # revisiting the ProcessPreviewedImages and moving those away from
     # the GalleryImage resources as well.
+
+    # typical media embedded using the following sort of structure:
+    ########################################################################
+    #<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" \
+    # codebase="http://www.apple.com/qtactivex/qtplugin.cab#version=6,0,2,0" \
+    # width="100" height="100">
+    #    <param name="width" value="100" />
+    #    <param name="height" value="100" />
+    #    <param name="scale" value="tofit" />
+    #    <param name="src" value="/previews/morphines_shame.mov" />
+    #    <embed type="video/quicktime" width="100" height="100" scale="tofit" \
+    #       src="/previews/morphines_shame.mov"></embed>
+    #</object>
+    ########################################################################
+    # So, going with two assumptions for the tinyMCE-embedded preview media:
+    # 1) that the previewed filename will first show up as:
+    #       <param name="src" value="/previews/MEDIA_FILE" />
+    # 2) that it will soon thereafter follow, with the same name, in:
+    #       <embed .... src="/previews/MEDIA_FILE"></embed>
+    #####
+    # Perhaps once this implementation is created and is working,
+    # and especially once moving into the proper XHTML tag-based parsing,
+    # a re-combination of the Media and Images can take place.
+    # But for now, at least, do just process them separately.
+    #####
+    def ProcessPreviewedMedia(self, content):
+        """
+        STOLEN from ProcessPreviewedImages(), the functionality here is
+        EXTREMELY close, yet just different enough to make it worth
+        processing in a separate pass.
+
+        To build up the corresponding resources from any media (etc.) added
+        in by the tinyMCE media-browser plug-in,
+        which will have put them into src="/previews/"
+        NOTE: subtle difference from images that go into src="../previews/"
+        AND: rather than a simple <img src="../previews/IMAGEFILE"> tag,
+        the media will be embedded in a more complex multi-line multi-tag,
+        as shown above before this routine.
+        """
+        new_content = content
+
+        # By this point, tinyMCE's javascript file browser handler:
+        #         common.js's: chooseImage_viaTinyMCE() 
+        # has already copied the file into the web-server's relative 
+        # directory "/previews", BUT, something in tinyMCE's handler 
+        # switches "/previews" to "../previews", so beware.....
+        # 
+        # At least it does NOT quote anything, and shows it as, for example: 
+        #   <img src="../previews/%Users%r3m0w%Pictures%Remos_MiscPix% \
+        #        SampleImage.JPG" height="161" width="215" /> 
+        # old quoting-handling is still included in the following parsing,
+        # which HAD allowed users to manually enter src= "file://..." URLs, 
+        # but with the image now copied into previews, such URLS are no more.
+
+        # DESIGN NOTE: eventually the following processing should be
+        # enhanced to look at the HTML tags passed in, and ensure that
+        # what is being found as 'src="../previews/.."' is really within
+        # an IMG tag, etc.
+        # For now, though, this easy parsing is working well:
+
+        # image was: search_str = "src=\"../previews/" 
+        # 1st media string, look for <param name="src" value="/previews/...":
+        search_str = "<param name=\"src\" value=\"/previews/" 
+
+        found_pos = new_content.find(search_str) 
+        while found_pos >= 0: 
+            end_pos = new_content.find('\"', found_pos+len(search_str)) 
+            if end_pos == -1: 
+                # now unlikely that this has already been quoted out, 
+                # since the search_str INCLUDES a \", but check anyway:
+                end_pos = new_content.find('&quot', found_pos+1) 
+            else: 
+                # okay, the end position \" was found, BUT beware of this 
+                # strange case, where the image file:/// URLs 
+                # were entered manually in one part of it 
+                # (and therefore escaped to &quot), AND another quote occurs 
+                # further below (perhaps even in a non-quoted file:/// via 
+                # a tinyMCE browser, but really from anything!) 
+                # So..... see if a &quot; is found in the file-name, and 
+                # if so, back the end_pos up to there.  
+                # NOTE: until actually looking at the HTML tags, and/or
+                # we might be able to do this more programmatically by 
+                # first seeing HOW the file:// is initially quoted, 
+                # whether by a \" or by &quot;, but for now, 
+                # just check this one.
+                end_pos2 = new_content.find('&quot', found_pos+1) 
+                if end_pos2 > 0 and end_pos2 < end_pos:
+                    end_pos = end_pos2
+            if end_pos >= found_pos:
+               # next, extract the actual file url, to be replaced later 
+               # by the local resource file:
+               file_url_str = new_content[found_pos:end_pos] 
+               # which may now be:
+               # "<param name="src" value="/previews/MEDIA_FILE"
+
+               # and to get the actual file path, 
+               # rather than the complete URL:
+               input_file_name_str = file_url_str[len(search_str):]
+               # which may now be: "MEDIA_FILE"
+
+               log.debug("ProcessPreviewedMedia: found file = " \
+                           + input_file_name_str)
+
+               webDir     = Path(G.application.tempWebDir)
+               previewDir  = webDir.joinpath('previews')
+               server_filename = previewDir.joinpath(input_file_name_str);
+
+               # and now, extract just the filename string back out of that:
+               file_name_str = server_filename.abspath().encode('utf-8');
+
+               # Be sure to check that this file even exists before even 
+               # attempting to create a corresponding GalleryImage resource:
+               if os.path.exists(file_name_str) \
+               and os.path.isfile(file_name_str): 
+
+                   # Although full filenames (including flatted representations
+                   # of their source directory tree) were used to help keep the
+                   # filenames here in previewDir unique, this does cause
+                   # problems with the filenames being too long, if they
+                   # are kept that way.
+                   # So.... if an optional .exe_info file is coupled to
+                   # this one, go ahead and read in its original basename,
+                   # in order to rename the file back to something shorter.
+                   # After all, the resource process has its own uniqueifier.
+
+                   # test for the optional .exe_info:
+                   basename_value = ""
+                   descrip_file_path = Path(server_filename + ".exe_info")
+                   if os.path.exists(descrip_file_path) \
+                   and os.path.isfile(descrip_file_path): 
+                       descrip_file = open(descrip_file_path, 'rb')
+                       basename_info = descrip_file.read()
+                       # split out the value of this "basename=file" key 
+                       basename_key_str = "basename="
+                       basename_found_pos = basename_info.find(basename_key_str) 
+                       # should be right there at the very beginning:
+                       if basename_found_pos == 0: 
+                           basename_value = \
+                                   basename_info[len(basename_key_str):] 
+                           # BEWARE: don't just change its name here in this 
+                           # dir, since it might be needed multiple times, and 
+                           # we won't want to delete it yet, but not deleting 
+                           # it might lead to name collision, so, make a 
+                           # temporary subdir bases, &: 
+
+                           # copy previewDir/longfile to
+                           #             previewDir/bases/basename
+                           # (don't worry if this overwrites a previous one)
+                           bases_dir = previewDir.joinpath('allyourbase')
+                           if not bases_dir.exists():
+                               bases_dir.makedirs()
+                           base_file_name = bases_dir.joinpath(basename_value)
+                           base_file_str = \
+                                   base_file_name.abspath().encode('utf-8')
+                           shutil.copyfile(file_name_str, base_file_str)
+                        
+                           # finally, change the name that's used in the 
+                           # resource creation in the below GalleryImage
+                           file_name_str = base_file_str
+
+                   # in passing GalleryImage into the FieldWithResources,
+                   # this field needs to be sure to have an updated
+                   # parentNode, courtesy of its idevice:
+                   self.setParentNode()
+                   
+                   # Not sure why this can't be imported up top, but it gives 
+                   # ImportError: cannot import name GalleryImages, 
+                   # so here it be:
+                   from exe.engine.galleryidevice  import GalleryImage
+
+                   # note: the middle GalleryImage field is an used caption:
+                   log.error("Embedding a media object, rather than an " \
+                           + "image (as GalleryImage currently expects), "\
+                           + "so you may ignore the following error:") 
+                   new_GalleryImage = GalleryImage(self, \
+                                                    '', file_name_str)
+                   new_GalleryImageResource = new_GalleryImage._imageResource
+                   resource_path = new_GalleryImageResource._storageName
+                   # and re-concatenate from the global resources name, 
+                   # to build the webUrl to the resource:
+                   resource_url = new_GalleryImage.resourcesUrl+resource_path
+                   # and finally, go ahead and replace the filename for:
+                   #search_str = "<param name=\"src\" value=\"/previews/" 
+                   new_src_string = "<param name=\"src\" value=\""+resource_url
+                   new_content = new_content.replace(file_url_str, 
+                                                     new_src_string)
+                   log.debug("ProcessPreviewedMedia: built resource: " \
+                           + resource_url)
+
+                   ########
+                   # and since the media object is listed twice, also
+                   # do a replace for its corresponding <embed> tag.
+                   # NOTE: definitely being lax about the following search;
+                   # ideally we would ensure that it's within an <embed>
+                   # tag that is within the same <object> tag as this, etc.,
+                   # before applying the full replace.
+                   # BUT, since we'll also be replacing this entire tag-
+                   # parsing mechanism, no worries, just do it:
+                   #######
+                   embed_search_str = "src=\"/previews/"+input_file_name_str
+                   embed_replace_str = "src=\"" + resource_url
+                   new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+
+               else:
+                   log.warn("file '"+file_name_str+"' does not exist; " \
+                           + "unable to include it as a possible media " \
+                           + "resource for this TextAreaElement.")
+                   ########
+                   # But, let's just go ahead and leave the old src attributes
+                   # untouched..... at least for this case of the media.
+                   # again, a better scheme is to be put into place here
+                   # once the tag-parsing mechanism is brought into place.
+                   ########
+
+                   # IDEALLY: would like to replace the entire 
+                   #  <img src=.....> tag with text saying "[WARNING:...]",
+                   # but this requires more parsing than we have already done
+                   # and should really wait until the full-on HTML tags
+                   # are checked, in which case an ALT tag can be used.
+            else:
+               # end_pos < found_pos (probably == -1)
+               log.warn("ProcessPreviewedMedia: file URL string appears " \
+                        + "to NOT have a terminating quote.")
+    
+            # Find the next source image in the content, continuing the loop:
+            found_pos = new_content.find(search_str, found_pos+1) 
+        
+        return new_content
+        # end ProcessPreviewedMedia()
+
 
     def ProcessPreviewedImages(self, content):
         """
@@ -342,6 +573,12 @@ class FieldWithResources(Field):
         # an IMG tag, etc.
         # For now, though, this easy parsing is working well:
         search_str = "src=\"../previews/" 
+        # BEWARE OF THE ABOVE in regards to ProcessPreviewedMedia(),
+        # which takes advantage of the fact that the embedded media
+        # actually gets stored as src="previews/".
+        # If this little weirdness of Images being stored as src="../previews/"
+        # even changes to src="previews/", so more processing will be needed!
+
         found_pos = new_content.find(search_str) 
         while found_pos >= 0: 
             end_pos = new_content.find('\"', found_pos+len(search_str)) 
@@ -507,6 +744,7 @@ class FieldWithResources(Field):
             found_pos = new_content.find(search_str, found_pos+1) 
         
         return new_content
+        # end ProcessPreviewedImages()
 
 
     def MassageContentForRenderView(self, content): 
@@ -519,8 +757,30 @@ class FieldWithResources(Field):
         """
         new_content = self.MassageImageContentForRenderView(content)
         # and soon:
-        #new_content = self.MassageMediaContentForRenderView(new_content)
-        return new_content
+        new_content = self.MassageMediaContentForRenderView(new_content)
+        return new_content 
+    
+    
+    def MassageMediaContentForRenderView(self, content):
+        """
+        Stolen and Modified straight from MassageImageContentForRenderView()
+        Returns an XHTML string for viewing this resource-laden element 
+        upon export, since the resources will be flattened no longer exist 
+        in the system resources directory....
+        """
+        # this is used for exports/prints, etc., and needs to ensure that 
+        # any resource paths are removed:
+        resources_url_src = "src=\"resources/"
+        exported_src = "src=\""
+        export_content = content.replace(resources_url_src,exported_src)
+        # for embedded media, that takes care of the <embed> tag part,
+        # but there's another media occurrence that contains the src param:
+        #     "<param name=\"src\" value=\""+resource_url
+        resources_url_src = "<param name=\"src\" value=\"resources/"
+        exported_src = "<param name=\"src\" value=\""
+        export_content = export_content.replace(resources_url_src,exported_src)
+
+        return export_content
 
     
     def MassageImageContentForRenderView(self, content):
