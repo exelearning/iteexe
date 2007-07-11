@@ -77,7 +77,22 @@ def launchBrowser(config, packageName):
              config.webDir/profile_src+" to "+
              config.configDir/profile)
     # Copy over the tree
-    (config.webDir/profile_src).copytreeFilter(config.configDir/profile, filterDir=lambda dirName: dirName.basename() != '.svn')
+    (config.webDir/profile_src).copytreeFilter(config.configDir/profile,
+            filterDir=lambda dirName: dirName.basename() != '.svn')
+
+    # if in debug mode, don't allow eXeex to remove all the Firefox "debug" features
+    # lines containing 'debug' are deleted from the XUL file
+    if log.getEffectiveLevel() == logging.DEBUG:
+        try:
+            exeex_xul = config.configDir/profile/"extensions/exeex@exelearning.org/chrome/content/exeex.xul"
+            exxul = open(exeex_xul, 'rt').readlines()
+            outf = open(exeex_xul, 'wt')
+            for line in exxul:
+                if line.find('debug') < 0:
+                    outf.write(line)
+            outf.close()
+        except IOError:
+            log.debug(u"Unable to modify eXeex for debug mode")
 
     log.info("setupMoz configDir "+config.configDir+ " profile "+profile)
     log.info(u"profile = " + config.configDir/profile)
