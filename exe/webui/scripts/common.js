@@ -41,6 +41,12 @@ FLASH_MOVIE        = "Flash Movie";
 FLASH_OBJECT       = "Flash Object";
 SELECT_AN_MP3_FILE = "Select an mp3 file";
 MP3_AUDIO          = "MP3 Audio";
+SHOCKWAVE_FILES    = "Shockwave Director Files"
+QUICKTIME_FILES    = "Quicktime Files"
+WINDOWSMEDIA_FILES = "Windows Media Player Files"
+REALMEDIA_AUDIO    = "RealMedia Audio Files"
+
+
 SELECT_A_PACKAGE   = "Select a package";
 YOUR_SCORE_IS      = "Your score is ";
 
@@ -95,6 +101,29 @@ function askUserForImage(multiple) {
         } else {
             return fp.file.path;
         }
+    } else {
+        return ""
+    }
+}
+
+// Asks the user for a media file, returns the path or an empty string
+function askUserForMedia() {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    var mode = nsIFilePicker.modeOpen;
+    fp.init(window, SELECT_A_FILE, mode);
+    // default filter to ALL:
+    fp.appendFilters(nsIFilePicker.filterAll);
+    // but also add filters for each media type supported by tinyMCE's media plugin:
+    fp.appendFilter(FLASH_OBJECT, "*.swf");
+    fp.appendFilter(QUICKTIME_FILES, "*.mov; *.qt; *.mpg; *.mp3; *.mp4; *.mpeg");
+    fp.appendFilter(SHOCKWAVE_FILES, "*.dcr");
+    fp.appendFilter(WINDOWSMEDIA_FILES, "*.avi; *.wmv; *.wm; *.asf; *.asx; *.wmx; *.wvx");
+    fp.appendFilter(REALMEDIA_AUDIO, "*.rm; *.ra; *.ram; *.mp3");
+    var res = fp.show();
+    if (res == nsIFilePicker.returnOK) {
+        return fp.file.path;
     } else {
         return ""
     }
@@ -226,7 +255,15 @@ function changeGalleryImage(galleryId, imageId) {
 // image file name to add to the package's field and idevice
 function chooseImage_viaTinyMCE(field_name, url, type, win) {
     
-    var local_imagePath = askUserForImage(true);
+    var local_imagePath = ""
+    // ask user for iamge or media, depending on type requested:
+    if (type == "image") {
+       local_imagePath = askUserForImage(false);
+    }
+    else if (type == "media") {
+       local_imagePath = askUserForMedia();
+    }
+
 
     win.focus();
 
