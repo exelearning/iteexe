@@ -137,12 +137,12 @@ class PropertiesPage(RenderableLivePage):
                 'document.getElementById("%s").checked = %s' % \
                     (fieldId, str(value).lower())))
         elif fieldId in self.imgFieldNames:
-            encoded = ''
-            for char in value:
-                encoded += '%%u%04x' % ord(char[0])
-            client.sendScript(js(
-                'document.getElementById("%s").src = unescape("%s")' % \
-                    (fieldId, encoded)))
+            path = ""
+            if self.package.backgroundImg:
+                path += "resources/%s" % self.package.backgroundImg.basename()
+                client.sendScript(js(
+                    'document.getElementById("%s").src = "%s"' % \
+                        (fieldId, path)))          
         else:
             # Remove enters
             encoded = ''
