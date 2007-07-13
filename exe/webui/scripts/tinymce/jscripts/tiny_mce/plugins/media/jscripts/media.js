@@ -522,7 +522,9 @@ function generatePreview(c) {
 		case "wmp":
 			cls = tinyMCE.getParam('media_wmp6_compatible') ? 'clsid:05589FA1-C356-11CE-BF01-00AA0055595A' : 'clsid:6BF52A52-394A-11D3-B153-00C04F79FAA6';
 			codebase = 'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701';
-			type = 'application/x-mplayer2';
+			//type = 'application/x-mplayer2';
+                        // r3m0: Windows Media Player hack, appears to actually need:
+                        type = 'video/x-ms-wmv';
 			break;
 
 		case "rmp":
@@ -551,7 +553,17 @@ function generatePreview(c) {
 	pl.name = !pl.name ? 'eobj' : pl.name;
 	pl.align = !pl.align ? '' : pl.align;
 
-	h += '<object classid="clsid:' + cls + '" codebase="' + codebase + '" width="' + pl.width + '" height="' + pl.height + '" id="' + pl.id + '" name="' + pl.name + '" align="' + pl.align + '">';
+	//h += '<object classid="clsid:' + cls + '" codebase="' + codebase + '" width="' + pl.width + '" height="' + pl.height + '" id="' + pl.id + '" name="' + pl.name + '" align="' + pl.align + '">';
+        // r3m0: Windows Media Player hack:
+	h += '<object';
+	if (f.media_type.options[f.media_type.selectedIndex].value == "wmp") {
+            // r3m0: WMP is a slightly different format, no classid, but instead, replace it with the type and data src (yes, both redundant):
+            h += ' type="' + type + '" data="' + pl.src + '"';
+        }
+        else {
+            h += ' classid="clsid:' + cls + '"';
+        }
+	h += ' codebase="' + codebase + '" width="' + pl.width + '" height="' + pl.height + '" id="' + pl.id + '" name="' + pl.name + '" align="' + pl.align + '">';
 
 	for (n in pl) {
 		h += '<param name="' + n + '" value="' + pl[n] + '">';

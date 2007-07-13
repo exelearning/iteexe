@@ -184,7 +184,9 @@ var TinyMCE_MediaPlugin = {
 							case 'mceItemWindowsMedia':
 								ci = tinyMCE.getParam('media_wmp6_compatible') ? '05589FA1-C356-11CE-BF01-00AA0055595A' : '6BF52A52-394A-11D3-B153-00C04F79FAA6';
 								cb = 'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701';
-								mt = 'application/x-mplayer2';
+								//mt = 'application/x-mplayer2';
+                                                                // r3m0 testing WMP hack:
+								mt = 'video/x-ms-wmv';
 								break;
 
 							case 'mceItemQuickTime':
@@ -351,7 +353,18 @@ var TinyMCE_MediaPlugin = {
 		p.width = at.width ? at.width : p.width;
 		p.height = at.height ? at.height : p.height;
 
-		h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"';
+		//h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"'; 
+		h += '<object '
+		// r3m0 testing WMP hack: 
+		if (mt = 'video/x-ms-wmv') {
+		    h += ' type="' + mt + '" data="' + p.src + '"';
+		}
+		else
+		{
+		    h += ' classid="clsid:' + cls + '"'
+		}
+		h += ' codebase="' + cb + '"'; 
+
 		h += typeof(p.id) != "undefined" ? ' id="' + p.id + '"' : '';
 		h += typeof(p.name) != "undefined" ? ' name="' + p.name + '"' : '';
 		h += typeof(p.width) != "undefined" ? ' width="' + p.width + '"' : '';
@@ -364,7 +377,9 @@ var TinyMCE_MediaPlugin = {
 				h += '<param name="' + n + '" value="' + p[n] + '" />';
 
 				// Add extra url parameter if it's an absolute URL on WMP
-				if (n == 'src' && p[n].indexOf('://') != -1 && mt == 'application/x-mplayer2')
+				//if (n == 'src' && p[n].indexOf('://') != -1 && mt == 'application/x-mplayer2')
+				// r3m0 testing WMP hack:
+				if (n == 'src' && p[n].indexOf('://') != -1 && mt == 'video/x-ms-wmv')
 					h += '<param name="url" value="' + p[n] + '" />';
 			}
 		}
@@ -376,7 +391,9 @@ var TinyMCE_MediaPlugin = {
 				continue;
 
 			// Skip url parameter for embed tag on WMP
-			if (!(n == 'url' && mt == 'application/x-mplayer2'))
+			//if (!(n == 'url' && mt == 'application/x-mplayer2'))
+			// r3m0 testing WMP hack:
+			if (!(n == 'url' && mt == 'video/x-ms-wmv'))
 				h += ' ' + n + '="' + p[n] + '"';
 		}
 

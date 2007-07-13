@@ -40,10 +40,12 @@ function writeRealMedia(p) {
 
 function writeWindowsMedia(p) {
 	p.url = p.src;
+        // r3m0: Windows Media Player hack, appears to need type = 'video/x-ms-wmv' rather than 'application/x-mplayer2'
 	writeEmbed(
 		'6BF52A52-394A-11D3-B153-00C04F79FAA6',
 		'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701',
-		'application/x-mplayer2',
+		//'application/x-mplayer2',
+		'video/x-ms-wmv',
 		p
 	);
 }
@@ -51,7 +53,17 @@ function writeWindowsMedia(p) {
 function writeEmbed(cls, cb, mt, p) {
 	var h = '', n;
 
-	h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"';
+	//h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"';
+        // r3m0: media type == Windows Media Player hack:
+        if (mt == 'video/x-ms-wmv') {
+            // WMP doesn't want classid, but instead needs type and data source:
+	    h += ' type="' + mt + '" data="' + p.src + '"';
+        }
+        else {
+	    h += ' classid="clsid:' + cls + '"';
+        }
+        h += ' codebase="' + cb + '"';
+
 	h += typeof(p.id) != "undefined" ? 'id="' + p.id + '"' : '';
 	h += typeof(p.name) != "undefined" ? 'name="' + p.name + '"' : '';
 	h += typeof(p.width) != "undefined" ? 'width="' + p.width + '"' : '';

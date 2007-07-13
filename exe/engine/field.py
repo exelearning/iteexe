@@ -518,6 +518,18 @@ class FieldWithResources(Field):
                    new_content = new_content.replace(embed_search_str,
                                                      embed_replace_str)
 
+                   ######
+                   # and one more place that it needs to change, in the 
+                   # case of the Windows Media Player, which has been
+                   # hacked in tinyMCE to now include a data source
+                   # in the initial object tag, and now using media
+                   # type = x-ms-wmv
+                   ######
+                   embed_search_str = "x-ms-wmv\" data=\"/previews/"+input_file_name_str
+                   embed_replace_str = "x-ms-wmv\" data=\"" + resource_url
+                   new_content = new_content.replace(embed_search_str,
+                                                     embed_replace_str)
+
                else:
                    log.warn("file '"+file_name_str+"' does not exist; " \
                            + "unable to include it as a possible media " \
@@ -773,6 +785,7 @@ class FieldWithResources(Field):
         resources_url_src = "src=\"resources/"
         exported_src = "src=\""
         export_content = content.replace(resources_url_src,exported_src)
+
         # for embedded media, that takes care of the <embed> tag part,
         # but there's another media occurrence that contains the src param:
         #     "<param name=\"src\" value=\""+resource_url
@@ -780,6 +793,12 @@ class FieldWithResources(Field):
         exported_src = "<param name=\"src\" value=\""
         export_content = export_content.replace(resources_url_src,exported_src)
 
+        # and now, for Windows Media Player, there's another hack 
+        # that requires yet another data massaging: 
+        resources_url_src = "x-ms-wmv\" data=\"resources/" 
+        exported_src = "x-ms-wmv\" data=\"" 
+        export_content = export_content.replace(resources_url_src,exported_src)
+        
         return export_content
 
     
