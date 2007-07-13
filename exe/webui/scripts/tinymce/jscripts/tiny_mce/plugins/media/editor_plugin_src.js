@@ -20,6 +20,7 @@ var TinyMCE_MediaPlugin = {
 	},
 
 	initInstance : function(inst) {
+		//alert('r3m0 test: media just called init()');
 		// Warn if user has flash plugin and media plugin at the same time
 		if (inst.hasPlugin('flash') && !tinyMCE.flashWarn) {
 			alert('Flash plugin is deprecated and should not be used together with the media plugin.');
@@ -40,6 +41,7 @@ var TinyMCE_MediaPlugin = {
 	},
 
 	execCommand : function(editor_id, element, command, user_interface, value) {
+		//alert('r3m0 test: media just called execCommand()');
 		// Handle commands
 		switch (command) {
 			case "mceMedia":
@@ -61,6 +63,8 @@ var TinyMCE_MediaPlugin = {
 
 	cleanup : function(type, content, inst) {
 		var nl, img, i, ne, d, s, ci;
+
+		//alert('r3m0 test: media just called cleanup()');
 
 		switch (type) {
 			case "insert_to_editor":
@@ -84,6 +88,7 @@ var TinyMCE_MediaPlugin = {
 					}
 				}
 
+		                //alert('r3m0 test: media just about to call hasCSSClass()');
 				nl = tinyMCE.selectElements(content, 'DIV', function (n) {return tinyMCE.hasCSSClass(n, 'mceItemObject');});
 				for (i=0; i<nl.length; i++) {
 					ci = tinyMCE.getAttrib(nl[i], "classid").toLowerCase().replace(/\s+/g, '');
@@ -97,7 +102,9 @@ var TinyMCE_MediaPlugin = {
 							nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemShockWave', d, nl[i]), nl[i]);
 							break;
 
-						case 'clsid:6bf52a52-394a-11d3-b153-00c04f79faa6':
+						//case 'clsid:6bf52a52-394a-11d3-b153-00c04f79faa6':
+						// r3m0 testing WMP hack: 
+						case 'BOGUS_CLASSID_FOR_WINDOWSMEDIA_EMBEDDED_VIA_TINYMCE':
 							nl[i].parentNode.replaceChild(TinyMCE_MediaPlugin._createImg('mceItemWindowsMedia', d, nl[i]), nl[i]);
 							break;
 
@@ -114,6 +121,7 @@ var TinyMCE_MediaPlugin = {
 				}
 
 				// Handle embed (if any)
+		                //alert('r3m0 test: media just about to call select Nodes className thingy()');
 				nl = tinyMCE.selectNodes(content, function (n) {return n.className == 'mceItemObjectEmbed';});
 				for (i=0; i<nl.length; i++) {
 					switch (tinyMCE.getAttrib(nl[i], 'type')) {
@@ -125,7 +133,9 @@ var TinyMCE_MediaPlugin = {
 							TinyMCE_MediaPlugin._createImgFromEmbed(nl[i], d, 'mceItemShockWave');
 							break;
 
-						case 'application/x-mplayer2':
+						//case 'application/x-mplayer2': 
+						// r3m0 testing WMP hack: 
+						case 'video/x-ms-wmv':
 							TinyMCE_MediaPlugin._createImgFromEmbed(nl[i], d, 'mceItemWindowsMedia');
 							break;
 
@@ -182,7 +192,9 @@ var TinyMCE_MediaPlugin = {
 								break;
 
 							case 'mceItemWindowsMedia':
-								ci = tinyMCE.getParam('media_wmp6_compatible') ? '05589FA1-C356-11CE-BF01-00AA0055595A' : '6BF52A52-394A-11D3-B153-00C04F79FAA6';
+								//ci = tinyMCE.getParam('media_wmp6_compatible') ? '05589FA1-C356-11CE-BF01-00AA0055595A' : '6BF52A52-394A-11D3-B153-00C04F79FAA6';
+                                                                // r3m0 testing WMP hack:
+								ci = 'BOGUS_CLASSID_FOR_WINDOWSMEDIA_EMBEDDED_VIA_TINYMCE'
 								cb = 'http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701';
 								//mt = 'application/x-mplayer2';
                                                                 // r3m0 testing WMP hack:
@@ -219,6 +231,8 @@ var TinyMCE_MediaPlugin = {
 								break;
 
 							case 'mceItemWindowsMedia':
+							        // r3m0 testing:
+								//alert ('r3m0 test: about to call writeWindowsMedai!!!')
 								s = 'writeWindowsMedia';
 								break;
 
@@ -258,6 +272,7 @@ var TinyMCE_MediaPlugin = {
 	},
 
 	handleNodeChange : function(editor_id, node, undo_index, undo_levels, visual_aid, any_selection) {
+		//alert('r3m0 test: media just called handleNodeChange()');
 		if (node == null)
 			return;
 
@@ -275,6 +290,7 @@ var TinyMCE_MediaPlugin = {
 
 	_createImgFromEmbed : function(n, d, cl) {
 		var ne, at, i, ti = '', an;
+		//alert('r3m0 test: media just called _createImgFromEmbed()');
 
 		ne = d.createElement('img');
 		ne.src = tinyMCE.getParam("theme_href") + '/images/spacer.gif';
@@ -306,6 +322,7 @@ var TinyMCE_MediaPlugin = {
 
 	_createImg : function(cl, d, n) {
 		var i, nl, ti = "", an, av, al = new Array();
+		//alert('r3m0 test: media just called _createImg()');
 
 		ne = d.createElement('img');
 		ne.src = tinyMCE.getParam("theme_href") + '/images/spacer.gif';
@@ -349,14 +366,20 @@ var TinyMCE_MediaPlugin = {
 
 	_getEmbed : function(cls, cb, mt, p, at) {
 		var h = '', n;
+		//alert('r3m0 test: media just called _getEmbed()');
 
 		p.width = at.width ? at.width : p.width;
 		p.height = at.height ? at.height : p.height;
 
 		//h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"'; 
-		h += '<object '
-		// r3m0 testing WMP hack: 
+		h += '<object'
+		// r3m0 testing WMP hack for WindowsMedia: 
 		if (mt == 'video/x-ms-wmv') {
+		    //h += ' type="' + mt + '" data="' + p.src + '"';
+		    // the above works the first time, but doesn't allow round-trip editing.
+		    // trying using the now included, but bogus classid, after all: 
+		    // ci = 'BOGUS_CLASSID_FOR_WINDOWSMEDIA_EMBEDDED_VIA_TINYMCE'
+		    h += ' classid="clsid:' + cls + '"'
 		    h += ' type="' + mt + '" data="' + p.src + '"';
 		}
 		else
@@ -409,6 +432,7 @@ var TinyMCE_MediaPlugin = {
 		var withInValue;
 		var attributes = new Array();
 		var whiteSpaceRegExp = new RegExp('^[ \n\r\t]+', 'g');
+		//alert('r3m0 test: media just called _parseAttributes()');
 
 		if (attribute_string == null || attribute_string.length < 2)
 			return null;
