@@ -139,8 +139,21 @@ function currentOutlineLabel() {
 // Returns the _exe_nodeid attribute of the currently selected row item
 function currentOutlineId(index)
 {
+    disableButtons(true)
     var treeitem = currentOutlineItem()
     return treeitem.getElementsByTagName('treerow')[0].getAttribute('_exe_nodeid')
+}
+
+var outlineButtons = new Array('btnAdd', 'btnDel', 'btnRename', 'btnPromote', 'btnDemote', 'btnUp', 'btnDown')
+
+function disableButtons(state) {
+    for (button in outlineButtons) {
+        document.getElementById(outlineButtons[button]).disabled = state
+    }
+}
+
+function enableButtons() {
+    disableButtons(false)
 }
 
 // Confirms the deletion of the currently selected node.

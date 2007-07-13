@@ -24,7 +24,7 @@
 var objBrowse = navigator.appName;
 
 // An array of js strings to evaluate on document load
-var onLoadHandlers = [clearHidden];
+var onLoadHandlers = [clearHidden, window.parent.enableButtons];
 var beforeSubmitHandlers = new Array();
 
 // Called on document load

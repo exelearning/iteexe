@@ -80,6 +80,8 @@ class OutlinePane(Renderable):
             self.package.currentNode = newNode = node.createChild()
             log.debug("XHAddChildTreeItem %s %s" % (newNode.id, newNode.title))
             client.call('XHAddChildTreeItem', newNode.id, newNode.title)
+        else:
+            client.call('enableButtons')
 
 
     def handleDelNode(self, client, confirm, nodeId):
@@ -100,12 +102,16 @@ class OutlinePane(Renderable):
                 node.delete()
             else:
                 log.error("deleteNode cannot locate " + nodeId)
+                client.call('enableButtons')
+        else:
+            client.call('enableButtons')
 
 
     def handleRenNode(self, client, nodeId, newName):
         """Called from xmlhttp"""
         log.debug("handleRenNode nodeId=%s newName=%s" % (nodeId, newName))
         if newName in ('', 'null'): 
+            client.call('enableButtons')
             return
         node = self.package.findNode(nodeId)
         node.title = unicode(newName, 'utf8')
@@ -114,6 +120,7 @@ class OutlinePane(Renderable):
         command = u'XHRenNode("%s", "%s", "%s")' % tuple(params)
         log.debug(command)
         client.sendScript(command.encode('utf-8'))
+        client.call('enableButtons')
 
 
     def handleSetTreeSelection(self, client):
@@ -193,7 +200,8 @@ class OutlinePane(Renderable):
         if node.promote():
             self._doJsMove(client, node)
             self._doJsRename(client, node)
-
+        else:
+            client.call('enableButtons')
 
     def handleDemote(self, client, sourceNodeId):
         """Demotes a node"""
@@ -201,6 +209,8 @@ class OutlinePane(Renderable):
         if node.demote():
             self._doJsMove(client, node)
             self._doJsRename(client, node)
+        else:
+            client.call('enableButtons')
 
 
     def handleUp(self, client, sourceNodeId):
@@ -209,6 +219,8 @@ class OutlinePane(Renderable):
         if node.up():
             self._doJsMove(client, node)
             self._doJsRename(client, node)
+        else:
+            client.call('enableButtons')
 
 
     def handleDown(self, client, sourceNodeId):
@@ -217,6 +229,8 @@ class OutlinePane(Renderable):
         if node.down():
             self._doJsMove(client, node)
             self._doJsRename(client, node)
+        else:
+            client.call('enableButtons')
 
 
     def render(self, ctx, data):

@@ -116,8 +116,8 @@
            <vbox>
               <toolbox grippyhidden="true">
                   <toolbar grippyhidden="true">
-                      <toolbarbutton n:render="addChild" key="addChildKey" label="Add Page"/>
-                      <toolbarbutton n:render="delNode" key="delNodeKey" label="Delete"/>
+                      <toolbarbutton id="btnAdd" n:render="addChild" key="addChildKey" label="Add Page"/>
+                      <toolbarbutton id="btnDel" n:render="delNode" key="delNodeKey" label="Delete"/>
                       <toolbarbutton id="btnRename" n:render="renNode" key="renNodeKey" label="Rename"/>
                   </toolbar>
               </toolbox>
@@ -131,10 +131,10 @@
                <!-- buttons for promoting/demoting and moving nodes -->
               <toolbox>
                 <toolbar grippyhidden="true">
-                   <toolbarbutton n:render="promote" key="promoteKey" image="/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
-                   <toolbarbutton n:render="demote" key="demoteKey" image="/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
-                   <toolbarbutton n:render="up" key="upKey" image="/images/stock-go-up.png" tooltiptext="Move node up"/>
-                   <toolbarbutton n:render="down" key="downKey" image="/images/stock-go-down.png" tooltiptext="Move node down"/>
+                   <toolbarbutton id="btnPromote" n:render="promote" key="promoteKey" image="/images/stock-goto-first.png" tooltiptext="Promote node up in heirarchy"/>
+                   <toolbarbutton id="btnDemote" n:render="demote" key="demoteKey" image="/images/stock-goto-last.png" tooltiptext="Demote node down in heirarchy"/>
+                   <toolbarbutton id="btnUp" n:render="up" key="upKey" image="/images/stock-go-up.png" tooltiptext="Move node up"/>
+                   <toolbarbutton id="btnDown" n:render="down" key="downKey" image="/images/stock-go-down.png" tooltiptext="Move node down"/>
                  </toolbar>
               </toolbox>
 
