@@ -161,9 +161,7 @@ class AuthoringPage(RenderableResource):
         html += u" mode : \"textareas\",\n"
         html += u" editor_selector : \"mceEditor\",\n"
         html += u" plugins : \"table,save,advhr,advimage,advlink,emotions,media,"
-        # r3m0, playing with templates, for eburnett:
-        #html += u" contextmenu,paste,directionality\","
-        html += u" contextmenu,paste,directionality,template\","
+        html += u" contextmenu,paste,directionality\","
         #
         html += u" theme : \"advanced\",\n"
         html += u" theme_advanced_layout_manager : \"SimpleLayout\",\n"
@@ -189,14 +187,7 @@ class AuthoringPage(RenderableResource):
         # the image-handling callback function for tinyMCE's image button:
         html += u"file_browser_callback : \"chooseImage_viaTinyMCE\",\n"
         
-        #html += u" theme_advanced_buttons3 : \"\",\n"
-        # r3m0, playing with templates, for eburnett:
-        html += u" theme_advanced_buttons3 : \"template\",\n"
-
-        # r3m0, playing with templates, for eburnett:
-        #html += u"template_external_list_url : \"example_template_list.js\",\n"
-        # the above gets passed in as http://127.0.0.1:51235/newPackage/example_template_list.js"
-        html += u"template_external_list_url : \"/scripts/example_template_list.js\",\n"
+        html += u" theme_advanced_buttons3 : \"\",\n"
 
         html += u"theme_advanced_statusbar_location : \"bottom\",\n"
         html += u"    theme_advanced_resize_horizontal : false,\n"
