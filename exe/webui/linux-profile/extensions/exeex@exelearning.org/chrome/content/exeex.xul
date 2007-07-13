@@ -17,7 +17,6 @@
 <menupopup id="menu_WindowPopup" removeelement="true"/>
 <menupopup id="menu_HelpPopup" removeelement="true"/>
 <toolbox id="navigator-toolbox" removeelement="true"/>      //debug
-<popup id="contentAreaContextMenu" removeelement="true"/>   //debug
 
 </overlay>
 
