@@ -356,7 +356,7 @@ var TinyMCE_MediaPlugin = {
 		//h += '<object classid="clsid:' + cls + '" codebase="' + cb + '"'; 
 		h += '<object '
 		// r3m0 testing WMP hack: 
-		if (mt = 'video/x-ms-wmv') {
+		if (mt == 'video/x-ms-wmv') {
 		    h += ' type="' + mt + '" data="' + p.src + '"';
 		}
 		else
