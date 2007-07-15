@@ -297,7 +297,7 @@ class Versioned:
             persistVers = (self.__dict__.get(pverName) or 0)
             if persistVers:
                 del self.__dict__[pverName]
-            assert persistVers <=  currentVers, "Sorry, can't go backwards in time."
+            assert persistVers <=  currentVers, x_("Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again.")
             while persistVers < currentVers:
                 persistVers = persistVers + 1
                 method = base.__dict__.get('upgradeToVersion%s' % persistVers, None)
