@@ -194,10 +194,10 @@ you have just inserted.""")
         # AND the default content_wo_resourcePaths (a copy of content),
         # so only need to update the content_wo_resourcePaths:
         replacementIdev.content.content_wo_resourcePaths = \
-                replacementIdev.content.MassageImageContentForRenderView( \
+                replacementIdev.content.MassageContentForRenderView( \
                     replacementIdev.content.content_w_resourcePaths)
         # Design note: ahhhhh, the above is a good looking reason to possibly
-        # have the MassageImageContentForRenderView() method
+        # have the MassageContentForRenderView() method
         # just assume its content_w_resourcePaths as the input
         # and write the output to its content_wo_resourcePaths.....
         #######
