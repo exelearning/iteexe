@@ -79,7 +79,7 @@ class AuthoringPage(RenderableResource):
         # it's finally safe to remove any images/etc which made it into 
         # tinyMCE's previews directory, as they have now had their 
         # corresponding resources created:
-        webDir     = Path(G.application.config.webDir) 
+        webDir     = Path(G.application.tempWebDir) 
         previewDir  = webDir.joinpath('previews')
         for root, dirs, files in os.walk(previewDir, topdown=False): 
             for name in files: 
