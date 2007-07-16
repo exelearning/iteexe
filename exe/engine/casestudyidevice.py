@@ -28,6 +28,7 @@ from exe.engine.translate import lateTranslate
 from exe.engine.path      import toUnicode
 from exe                  import globals as G
 from exe.engine.field     import TextAreaField
+import os
 
 log = logging.getLogger(__name__)
 
@@ -56,7 +57,11 @@ class Question(Persistable):
         # (and could therefore be shown in the feedbackTextArea itself),
         # don't remove the image information until a proper upgrade path,
         # and this has been further discussed - perhaps it's still good?
+        #############
+        # r3m0: getting ready for that future upgrade path (following v0.97)
+        # and then remove the following:
         self.setupImage(idevice)
+        ############
 
     def setupImage(self, idevice):
         """
@@ -77,12 +82,88 @@ class Question(Persistable):
         self.image.isFeedback   = True
     
 
+    def embedImageInFeedback(self):
+        """
+        Actually do the Converting of each question's
+              CaseStudyIdevice's image -> embedded in its feedback field,
+        now that its TextField can hold embeddded images.
+        """
+
+        new_content = ""
+
+        # if no image resource even exists, then no need to continue:
+        # is there a defined?
+        if self.image is None or self.image.imageResource is None:
+            return
+
+        # likewise, only proceed if the image resource file is found:
+        if not os.path.exists(self.image.imageResource.path) \
+        or not os.path.isfile(self.image.imageResource.path):
+            return
+
+        # and if it's just the default image, then go straight to deleting it:
+        if self.image.isDefaultImage:
+            #del self.image
+            #self.image = None
+            return
+
+        # get the current image resource info:
+        new_content += "<img src=\"resources/" \
+                + self.image.imageResource.storageName + "\" "
+        if self.image.height: 
+            new_content += "height=\"" + self.image.height + "\" "
+        if self.image.width: 
+            new_content += "width=\"" + self.image.width + "\" "
+        new_content += "/> \n"
+
+        # is there already feedback content defined??
+        # if so, just prepend the image to it, using
+        # its content WITH the resources path:
+        new_content += "<BR>\n"
+        new_content += self.feedbackTextArea.content_w_resourcePaths
+        self.feedbackTextArea.content_w_resourcePaths = new_content
+
+        # and set that to its default content:
+        self.feedbackTextArea.content = \
+                self.feedbackTextArea.content_w_resourcePaths
+
+        # and massage its content for exporting without resource paths:
+        self.feedbackTextArea.content_wo_resourcePaths = \
+                self.feedbackTextArea.MassageContentForRenderView( \
+                   self.feedbackTextArea.content_w_resourcePaths)
+
+        # Not sure why this can't be imported up top, but it gives 
+        # ImportError: cannot import name GalleryImages, 
+        # so here it be: 
+        from exe.engine.galleryidevice  import GalleryImage
+
+        full_image_path = self.image.imageResource.path
+        # note: unapplicable caption set to '' in the 2nd parameter:
+        new_GalleryImage = GalleryImage(self.feedbackTextArea, \
+                '',  full_image_path, mkThumbnail=False)
+
+        # finally, go ahead and remove the current image
+        #del self.image
+        # maybe best to NOT delete it?
+        # OR, there's got to be a SAFER way of doing so,
+        # that leaves the resource still connected to the new feedback field.
+        #self.image = None
+        #########
+        # note: all of the above end up causing problems, so maybe the
+        # safest bet is to just set the image back to the default image:
+        self.image.setDefaultImage()
+        
 # ===========================================================================
 class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 7
+    persistenceVersion = 7 
+    ############# 
+    # r3m0: getting ready for that future upgrade path (following v0.97) 
+    # and then set the following:
+    #persistenceVersion = 8
+    #############
 
     def __init__(self, story="", defaultImage=None):
         """
@@ -206,5 +287,27 @@ situation.""")
                                             x_(u''), question.feedback)
             question.feedbackTextArea.idevice = self
 
+    def upgradeToVersion8(self):
+        """
+        Converting CaseStudyIdevice's image -> embedded image in its feedback
+        field, a TextField than can now hold embedded images.
+
+        BUT - due to the inconsistent loading of the objects via unpickling,
+        since the resources aren't necessarily properly loaded and upgraded,
+        NOR is the package necessarily, as it might not even have a list of
+        resources yet, all of this conversion code must be done in an
+        afterUpgradeHandler  
+        (as perhaps should have been done for the previous upgradeToVersion7)
+        """
+        G.application.afterUpgradeHandlers.append(self.embedImagesInFeedback)
+
+    def embedImagesInFeedback(self):
+        """
+        Loop through each question, to call their conversion:
+              CaseStudyIdevice's image -> embedded in its feedback field,
+        now that its TextField can hold embeddded images.
+        """
+        for question in self.questions:
+            question.embedImageInFeedback()
 
 # ===========================================================================

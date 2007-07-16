@@ -56,7 +56,14 @@ class QuestionElement(object):
         # TextArea fields now capable of holding images directly,
         # don't remove the image information until a proper upgrade path,
         # and this has been further discussed - perhaps it's still good?
-        self.imageElement = ImageElement(question.image)
+        ##########
+        # r3m0: getting ready for that future upgrade path (following v0.97) 
+        # and then remove the following:
+        #########
+        self.imageElement = None
+        if not question.image is None:
+            self.imageElement = ImageElement(question.image)
+        ##########
 
         self.question     = question
         # also split out each part for a separate TextAreaElement:
@@ -86,7 +93,13 @@ class QuestionElement(object):
                         
         if self.feedbackId in request.args:
             self.question_feedback.process(request)
-            self.imageElement.process(request)
+            ##########
+            # r3m0: getting ready for that future upgrade path (following v0.97)
+            # and then remove the following:
+            ##########
+            if not self.imageElement is None:
+                self.imageElement.process(request)
+            ##########
 
         if "action" in request.args and request.args["action"][0] == self.id:
             self.idevice.questions.remove(self.question)
@@ -99,13 +112,25 @@ class QuestionElement(object):
         html  = "<tr><td><b>%s</b>\n" % _("Activity")
         html += common.elementInstruc(self.idevice.questionInstruc)
         html += self.question_question.renderEdit()
-        html += self.imageElement.renderEdit()
+        ##########
+        # r3m0: getting ready for that future upgrade path (following v0.97) 
+        # and then remove the following:
+        #########
+        if not self.imageElement is None:
+            html += self.imageElement.renderEdit()
+        ##########
+
         html += "<b>%s</b>\n" % _("Feedback")
         html += common.elementInstruc(self.idevice.feedbackInstruc)
         html += self.question_feedback.renderEdit()
 
+        ##########
+        # r3m0: getting ready for that future upgrade path (following v0.97) 
+        # and then remove the following:
+        #########
         if self.imageElement.field.imageResource is None:
             self.imageElement.field.setDefaultImage()
+        ##########
 
         html += "</td><td>\n"
         html += common.submitImage(self.id, self.idevice.id, 
@@ -126,10 +151,20 @@ class QuestionElement(object):
         else:
             html  = self.question_question.renderView()
 
-        field = self.imageElement.field
-       
-        if  not field.isDefaultImage \
-            or self.question_feedback.field.content != "" :            
+        ##########
+        # r3m0: getting ready for that future upgrade path (following v0.97) 
+        # and then remove the following:
+        ###########
+        field = None
+        if not self.imageElement is None:
+            field = self.imageElement.field
+        # and, the if will become:
+        #if  self.question_feedback.field.content != "" :            
+        ##########
+        if not field is None and \
+            (not field.isDefaultImage \
+            or self.question_feedback.field.content != "") :            
+            #####
             html += '<div id="view%s" style="display:block;">' % self.id
             html += common.feedbackButton('btnshow' + self.id,
                         _(u"Show Feedback"),
@@ -141,12 +176,17 @@ class QuestionElement(object):
                         onclick = "showAnswer('%s',0)" % self.id)
             html += '<p>'
 
+            ##########
+            # r3m0: getting ready for that future upgrade path (following v0.97)
+            # and then remove the following:
+            #########
             if self.imageElement.field.imageResource is None:
                 self.imageElement.field.setDefaultImage()
             if preview:
                 html += self.imageElement.renderPreview()
             else:
                 html += self.imageElement.renderView()
+            #########`
                     
             html += '</p>'
             html += '</div>'
