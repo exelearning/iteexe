@@ -73,8 +73,6 @@ class GalleryImage(_ShowsResources):
     Holds a gallery image and its caption. Can produce a thumbnail
     and a preview, popup window.
     """
-    persistenceVersion = 2
-    # r3m0: try adding the make_thumbnail parameter
     persistenceVersion = 3
 
     # Default attribute values
@@ -98,7 +96,6 @@ class GalleryImage(_ShowsResources):
         self._caption            = TextField(caption)
         self._imageResource     = None
         self._thumbnailResource = None
-        # r3m0: testing:
         self.makeThumbnail = mkThumbnail
         self._saveFiles(originalImagePath)
 
@@ -129,7 +126,6 @@ class GalleryImage(_ShowsResources):
             # Copy the original image
             self._imageResource = Resource(self.parent, originalImagePath)
         # Create the thumbnail
-        # r3m0: testing:
         if not self.makeThumbnail:
             return
         try:
@@ -206,8 +202,6 @@ class GalleryImage(_ShowsResources):
         """
         if self._imageResource:
             self._imageResource.delete()
-        # r3m0: testing:
-        #if self._thumbnailResource:
         if self.makeThumbnail and self._thumbnailResource:
             self._thumbnailResource.delete()
         self.parent = None # This also removes our self from our parent's list
@@ -241,7 +235,6 @@ class GalleryImage(_ShowsResources):
         """
         if self._imageResource:
             self._imageResource.delete()
-            # r3m0: testing:
             if self.makeThumbnail and self._thumbnailResource: 
                 self._thumbnailResource.delete()
         self._saveFiles(filename)
@@ -250,7 +243,6 @@ class GalleryImage(_ShowsResources):
         """
         Returns the full path to the thumbnail
         """
-        # r3m0: testing:
         if (not self.makeThumbnail) or (not self._thumbnailResource): 
             return None
         return self._thumbnailResource.path
@@ -319,7 +311,6 @@ class GalleryImage(_ShowsResources):
         """
         G.application.afterUpgradeHandlers.append(self._deleteHTMLResource)
 
-    # r3m0: testing:
     def upgradeToVersion3(self):
         """
         Adds new makeThumnail, to support non-image media
