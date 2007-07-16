@@ -484,12 +484,11 @@ class FieldWithResources(Field):
                    # so here it be:
                    from exe.engine.galleryidevice  import GalleryImage
 
-                   # note: the middle GalleryImage field is an used caption:
-                   log.error("Embedding a media object, rather than an " \
-                           + "image (as GalleryImage currently expects), "\
-                           + "so you may ignore the following error:") 
+                   # note: the middle GalleryImage field is currently
+                   # an unused caption:
                    new_GalleryImage = GalleryImage(self, \
-                                                    '', file_name_str)
+                                                    '', file_name_str, \
+                                                    mkThumbnail=False)
                    new_GalleryImageResource = new_GalleryImage._imageResource
                    resource_path = new_GalleryImageResource._storageName
                    # and re-concatenate from the global resources name, 
@@ -693,9 +692,11 @@ class FieldWithResources(Field):
                    # so here it be:
                    from exe.engine.galleryidevice  import GalleryImage
 
-                   # note: the middle GalleryImage field is an used caption:
+                   # note: the middle GalleryImage field is currently
+                   # an unused caption:
                    new_GalleryImage = GalleryImage(self, \
-                                                    '', file_name_str)
+                                                    '', file_name_str, \
+                                                    mkThumbnail=False)
                    new_GalleryImageResource = new_GalleryImage._imageResource
                    resource_path = new_GalleryImageResource._storageName
                    # and re-concatenate from the global resources name, 

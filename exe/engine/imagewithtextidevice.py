@@ -224,7 +224,7 @@ you have just inserted.""")
             
             full_image_path = self.image.imageResource.path
             new_GalleryImage = GalleryImage(replacementIdev.content, \
-                    self.caption,  full_image_path)
+                    self.caption,  full_image_path, mkThumbnail=False)
 
         # and move it up to the position following this node!
         while ( self.parentNode.idevices.index(replacementIdev) \

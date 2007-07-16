@@ -74,6 +74,8 @@ class GalleryImage(_ShowsResources):
     and a preview, popup window.
     """
     persistenceVersion = 2
+    # r3m0: try adding the make_thumbnail parameter
+    persistenceVersion = 3
 
     # Default attribute values
     _parent       = None
@@ -84,16 +86,20 @@ class GalleryImage(_ShowsResources):
     bgColour      = 0x808080
 
 
-    def __init__(self, parent, caption, originalImagePath):
+    def __init__(self, parent, caption, originalImagePath, mkThumbnail=True):
         """
         'parent' is a GalleryIdevice instance
         'caption' is some text that will be displayed with the image
         'originalImagePath' is the local path to the image
+        'mkThumbnail' allows easier other, non-image, embedding
+                      by not attempting a thumbnail where not applicable.
         """
         self.parent             = parent
         self._caption            = TextField(caption)
         self._imageResource     = None
         self._thumbnailResource = None
+        # r3m0: testing:
+        self.makeThumbnail = mkThumbnail
         self._saveFiles(originalImagePath)
 
     def _saveFiles(self, originalImagePath=None):
@@ -123,6 +129,9 @@ class GalleryImage(_ShowsResources):
             # Copy the original image
             self._imageResource = Resource(self.parent, originalImagePath)
         # Create the thumbnail
+        # r3m0: testing:
+        if not self.makeThumbnail:
+            return
         try:
             image = Image.open(toUnicode(self._imageResource.path))
         except Exception, e:
@@ -197,7 +206,9 @@ class GalleryImage(_ShowsResources):
         """
         if self._imageResource:
             self._imageResource.delete()
-        if self._thumbnailResource:
+        # r3m0: testing:
+        #if self._thumbnailResource:
+        if self.makeThumbnail and self._thumbnailResource:
             self._thumbnailResource.delete()
         self.parent = None # This also removes our self from our parent's list
 
@@ -230,13 +241,18 @@ class GalleryImage(_ShowsResources):
         """
         if self._imageResource:
             self._imageResource.delete()
-            self._thumbnailResource.delete()
+            # r3m0: testing:
+            if self.makeThumbnail and self._thumbnailResource: 
+                self._thumbnailResource.delete()
         self._saveFiles(filename)
 
     def get_thumbnailFilename(self):
         """
         Returns the full path to the thumbnail
         """
+        # r3m0: testing:
+        if (not self.makeThumbnail) or (not self._thumbnailResource): 
+            return None
         return self._thumbnailResource.path
 
     def set_caption(self, value):
@@ -260,7 +276,11 @@ class GalleryImage(_ShowsResources):
     caption = property(lambda self: self._caption.content, set_caption)
     parent  = property(lambda self: self._parent, set_parent)
     imageSrc = property(lambda self: '%s%s' % (self.resourcesUrl , self._imageResource.storageName))
+
     thumbnailSrc = property(lambda self: '%s%s' % (self.resourcesUrl, self._thumbnailResource.storageName))
+    # r3m0: note that the above thumbnailSrc should also have some 
+    # error checking for cases where self.makeThumbnail == false
+
     # id is unique on this page even out side of the block
     id = property(lambda self: self._id)
     index = property(lambda self: self.parent.images.index(self))
@@ -299,6 +319,12 @@ class GalleryImage(_ShowsResources):
         """
         G.application.afterUpgradeHandlers.append(self._deleteHTMLResource)
 
+    # r3m0: testing:
+    def upgradeToVersion3(self):
+        """
+        Adds new makeThumnail, to support non-image media
+        """
+        self.makeThumbnail = True
 
 # ===========================================================================
 class GalleryImages(Persistable, list):

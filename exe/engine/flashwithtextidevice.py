@@ -229,7 +229,7 @@ The width and height dimensions will alter proportionally.""")
 
             full_flash_path = self.flash.flashResource.path
             new_GalleryImage = GalleryImage(replacementIdev.content, \
-                    self.caption,  full_flash_path)
+                    self.caption,  full_flash_path, mkThumbnail=False)
 
         # and move it up to the position following this node!
         while ( self.parentNode.idevices.index(replacementIdev) \
