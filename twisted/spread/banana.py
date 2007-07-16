@@ -23,6 +23,9 @@ from twisted.python import log
 
 import types, copy, cStringIO, struct
 
+import logging
+log = logging.getLogger(__name__)
+
 class BananaError(Exception):
     pass
 
@@ -92,7 +95,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                 if obj in self.knownDialects:
                     self._selectDialect(obj)
                 else:
-                    # the client just selected a protocol that I did not suggest.
+                    # the client selected a protocol that I did not suggest
                     log.msg('freaky losing')
                     self.transport.loseConnection()
 
@@ -110,75 +113,91 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
             self.callExpressionReceived(item)
 
     buffer = ''
-
+    
+    #Pynana
+    #XXXXXXXXX
     def dataReceived(self, chunk):
-        buffer = self.buffer + chunk
+        buf = self.buffer + chunk
+        buflen = len(buf)
         listStack = self.listStack
         gotItem = self.gotItem
-        while buffer:
-            assert self.buffer != buffer, "This ain't right: %s %s" % (repr(self.buffer), repr(buffer))
-            self.buffer = buffer
+        log.info("Banana/Pynana buffer: " + `buflen`)
+        bufPointer = 0
+        bufOuterPointer=0
+        while (buflen > bufPointer):
             pos = 0
-            for ch in buffer:
+            #for ch in range(bufPointer,buflen):
+            #    if buf[ch] >= HIGH_BIT_SET:
+            for ch in buf[bufPointer:]:
                 if ch >= HIGH_BIT_SET:
                     break
                 pos = pos + 1
             else:
                 if pos > 64:
-                    raise BananaError("Security precaution: more than 64 bytes of prefix")
+                    raise BananaError("security: more than 64 bytes of prefix")
                 return
-            num = buffer[:pos]
-            typebyte = buffer[pos]
-            rest = buffer[pos+1:]
+
+            bufOuterPointer = bufPointer + pos
+
+            num = buf[bufPointer:bufOuterPointer]
+
+            typebyte = buf[bufOuterPointer]
+
             if len(num) > 64:
-                raise BananaError("Security precaution: longer than 64 bytes worth of prefix")
+                raise BananaError("Security precaution: prefix >  64 bytes")
+
             if typebyte == LIST:
+                bufPointer += pos + 1
                 num = b1282int(num)
                 if num > SIZE_LIMIT:
                     raise BananaError("Security precaution: List too long.")
                 listStack.append((num, []))
-                buffer = rest
             elif typebyte == STRING:
+                bufPointer += pos + 1
                 num = b1282int(num)
                 if num > SIZE_LIMIT:
                     raise BananaError("Security precaution: String too long.")
-                if len(rest) >= num:
-                    buffer = rest[num:]
-                    gotItem(rest[:num])
+                if (buflen-bufPointer) >= num:
+                    pn=bufPointer+int(num)
+                    gotItem(buf[bufPointer:pn])
+                    bufPointer = pn
                 else:
                     return
             elif typebyte == INT:
-                buffer = rest
+                bufPointer += pos + 1
                 num = b1282int(num)
                 gotItem(int(num))
             elif typebyte == LONGINT:
-                buffer = rest
+                bufPointer += pos + 1
                 num = b1282int(num)
                 gotItem(long(num))
             elif typebyte == LONGNEG:
-                buffer = rest
+                bufPointer += len(num) + 1
                 num = b1282int(num)
                 gotItem(-long(num))
             elif typebyte == NEG:
-                buffer = rest
+                bufPointer += pos + 1
                 num = -b1282int(num)
                 gotItem(num)
             elif typebyte == VOCAB:
-                buffer = rest
+                bufPointer += pos + 1
                 num = b1282int(num)
                 gotItem(self.incomingVocabulary[num])
             elif typebyte == FLOAT:
-                if len(rest) >= 8:
-                    buffer = rest[8:]
-                    gotItem(struct.unpack("!d", rest[:8])[0])
+                if (buflen-bufPointer) >= 8:
+                    pn = bufPointer + 8
+                    gotItem(struct.unpack("!d", buf[bufPointer:pn])[0])
+                    bufPointer += 8 + 1
                 else:
                     return
             else:
-                raise NotImplementedError(("Invalid Type Byte %r" % (typebyte,)))
+                raise NotImplementedError(("Invalid Typebyte %r" % (typebyte,)))
+
             while listStack and (len(listStack[-1][1]) == listStack[-1][0]):
                 item = listStack.pop()[1]
                 gotItem(item)
-        self.buffer = ''
+        log.info("Banana: Pynana bufPointer: " + `bufPointer`)
+        buf = ''
 
 
     def expressionReceived(self, lst):
@@ -299,6 +318,7 @@ class Canana(Pynana):
         rv = self.cbuf.get()
         self.transport.write(rv)
 
+    #Canana
     def dataReceived(self, chunk):
         buffer = self.buffer + chunk
         processed = cBanana.dataReceived(self.state, buffer, self.callExpressionReceived)
