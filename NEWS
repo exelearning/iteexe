@@ -1,5 +1,9 @@
 Next Release
 * Add ability to embed media in text areas using TinyMCE toolbar
+* Fix display of header image in Properties... Package
+* Fix rapid clicking of outline pane buttons
+* Improve loading time of large packages
+* Upgrade TinyMCE to 2.1.1.1
 
 Version 0.96 (r2976)
 * Add ability to edit (delete) broken iDevices in a package
