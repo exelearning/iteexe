@@ -118,15 +118,15 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
     #XXXXXXXXX
     def dataReceived(self, chunk):
         buf = self.buffer + chunk
-        buflen = len(buf)
+        bufLen = len(buf)
         listStack = self.listStack
         gotItem = self.gotItem
-        log.info("Banana/Pynana buffer: " + `buflen`)
+        log.info("Banana/Pynana buffer: " + `bufLen`)
         bufPointer = 0
         bufOuterPointer=0
-        while (buflen > bufPointer):
+        while (bufLen > bufPointer):
             pos = 0
-            #for ch in range(bufPointer,buflen):
+            #for ch in range(bufPointer,bufLen):
             #    if buf[ch] >= HIGH_BIT_SET:
             for ch in buf[bufPointer:]:
                 if ch >= HIGH_BIT_SET:
@@ -157,7 +157,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                 num = b1282int(num)
                 if num > SIZE_LIMIT:
                     raise BananaError("Security precaution: String too long.")
-                if (buflen-bufPointer) >= num:
+                if (bufLen-bufPointer) >= num:
                     pn=bufPointer+int(num)
                     gotItem(buf[bufPointer:pn])
                     bufPointer = pn
@@ -184,7 +184,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
                 num = b1282int(num)
                 gotItem(self.incomingVocabulary[num])
             elif typebyte == FLOAT:
-                if (buflen-bufPointer) >= 8:
+                if (bufLen-bufPointer) >= 8:
                     pn = bufPointer + 8
                     gotItem(struct.unpack("!d", buf[bufPointer:pn])[0])
                     bufPointer += 8 + 1
