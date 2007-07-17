@@ -497,7 +497,7 @@ these in a gallery context rather then individually.</p>"""),
                     '@import url(base.css);'],
                    T.style(type="text/css")[
                     '@import url(content.css);'],
-                   T.script[
+                   T.script(type="text/javascript")[
                      raw(
                          '\n'.join([
                             '  var maxWidth = %s;' % self.previewSize[0],
