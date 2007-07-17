@@ -127,7 +127,7 @@ class GalleryImage(_ShowsResources):
             # Copy the original image
             self._imageResource = Resource(self.parent, originalImagePath)
         # Create the thumbnail
-        if not self.makeThumbnail: # or self._thumbnailResource is not None:
+        if not self.makeThumbnail or self._thumbnailResource is not None:
             return
         try:
             image = Image.open(toUnicode(self._imageResource.path))
