@@ -52,20 +52,11 @@ class Question(Persistable):
         self.feedbackTextArea = TextAreaField(x_(u''), x_(u''), x_(u''))
         self.feedbackTextArea.idevice = idevice
 
-        # Although the image is now perhaps unnecessary with the above
-        # TextArea fields now capable of holding images directly
-        # (and could therefore be shown in the feedbackTextArea itself),
-        # don't remove the image information until a proper upgrade path,
-        # and this has been further discussed - perhaps it's still good?
-        #############
-        # r3m0: getting ready for that future upgrade path (following v0.97)
-        # and then remove the following:
-        self.setupImage(idevice)
-        ############
-
     def setupImage(self, idevice):
         """
-        Creates our image field
+        Creates our image field: no longer needed for new content since 
+        images are now embedded straight into the feedbackTextArea,
+        but this routine is kept around for upgrade paths from old elps.
         """
         self.image = ImageField(x_(u"Image"),
                                 x_(u"Choose an optional image to be shown to the student "
@@ -101,10 +92,8 @@ class Question(Persistable):
         or not os.path.isfile(self.image.imageResource.path):
             return
 
-        # and if it's just the default image, then go straight to deleting it:
+        # and if it's just the default blank image, then nothing to do either:
         if self.image.isDefaultImage:
-            #del self.image
-            #self.image = None
             return
 
         # get the current image resource info:
@@ -116,14 +105,13 @@ class Question(Persistable):
             new_content += "width=\"" + self.image.width + "\" "
         new_content += "/> \n"
 
-        # is there already feedback content defined??
-        # if so, just prepend the image to it, using
-        # its content WITH the resources path:
+        # prepend the new image content to any already existing feedback, 
+        # using its content WITH the resources path:
         new_content += "<BR>\n"
         new_content += self.feedbackTextArea.content_w_resourcePaths
         self.feedbackTextArea.content_w_resourcePaths = new_content
 
-        # and set that to its default content:
+        # set that to its default content:
         self.feedbackTextArea.content = \
                 self.feedbackTextArea.content_w_resourcePaths
 
@@ -131,6 +119,14 @@ class Question(Persistable):
         self.feedbackTextArea.content_wo_resourcePaths = \
                 self.feedbackTextArea.MassageContentForRenderView( \
                    self.feedbackTextArea.content_w_resourcePaths)
+
+        # in passing GalleryImage into feedbackTextArea, a FieldWithResources,
+        # the field needs to be sure to have an updated parentNode, 
+        # courtesy of its idevice: 
+        self.feedbackTextArea.setParentNode()
+        # (note: FieldWithResources *usually* take care of this automatically
+        # within ProcessPreviewedImages(), but here in this upgrade
+        # path, we are bypassing the general purpose ProcessPreviewed().)
 
         # Not sure why this can't be imported up top, but it gives 
         # ImportError: cannot import name GalleryImages, 
@@ -142,15 +138,8 @@ class Question(Persistable):
         new_GalleryImage = GalleryImage(self.feedbackTextArea, \
                 '',  full_image_path, mkThumbnail=False)
 
-        # finally, go ahead and remove the current image
-        #del self.image
-        # maybe best to NOT delete it?
-        # OR, there's got to be a SAFER way of doing so,
-        # that leaves the resource still connected to the new feedback field.
-        #self.image = None
-        #########
-        # note: all of the above end up causing problems, so maybe the
-        # safest bet is to just set the image back to the default image:
+        # finally, go ahead and clear out the current image object,
+        # which is best (and most safely) done by setting it back to default:
         self.image.setDefaultImage()
         
 # ===========================================================================
@@ -158,12 +147,7 @@ class CasestudyIdevice(Idevice):
     """
     A multichoice Idevice is one built up from question and options
     """
-    persistenceVersion = 7 
-    ############# 
-    # r3m0: getting ready for that future upgrade path (following v0.97) 
-    # and then set the following:
-    #persistenceVersion = 8
-    #############
+    persistenceVersion = 8
 
     def __init__(self, story="", defaultImage=None):
         """
