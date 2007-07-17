@@ -577,6 +577,7 @@ these in a gallery context rather then individually.</p>"""),
                             '    var title = document.getElementById("nodeTitle");',
                             '    title.innerHTML = titles[imageIdx];',
                             '}', ])),
+                   ],
                  ],
                  T.body(onLoad="updateWindow()")[
                    T.h1(id='nodeTitle')[img.caption],
@@ -609,8 +610,7 @@ these in a gallery context rather then individually.</p>"""),
                    ]
                  ]
                ]
-             ]
-           )
+             )
         finally:
             _ShowsResources.preview()
         # Create the HTML popup window
