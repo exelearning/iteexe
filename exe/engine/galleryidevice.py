@@ -36,6 +36,7 @@ from nevow.stan           import raw
 from nevow.flat           import flatten
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
+from exe.webui.common     import docType
 from exe    import globals as G
 import os
 
@@ -480,10 +481,12 @@ these in a gallery context rather then individually.</p>"""),
                 styleDir = 'default'
             # Render!
             img = self.images[0]
-            data = flatten(
+            data = docType() + flatten(
                T.html[
                  T.head[
                    T.title[self.title],
+                   T.meta(**{'http-equiv': 'content-type',
+                       'content': "text/html; charset=UTF-8"}),
                    # One style import for preview mode
                    T.style(type="text/css")[
                     '@import url(/style/base.css);'],
