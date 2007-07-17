@@ -497,8 +497,7 @@ these in a gallery context rather then individually.</p>"""),
                     '@import url(base.css);'],
                    T.style(type="text/css")[
                     '@import url(content.css);'],
-                   T.script(type="text/javascript")[
-                     raw(
+                   T.inlineJS(
                          '\n'.join([
                             '  var maxWidth = %s;' % self.previewSize[0],
                             '  var maxHeight = %s;' % self.previewSize[1],
@@ -580,7 +579,6 @@ these in a gallery context rather then individually.</p>"""),
                             '    var title = document.getElementById("nodeTitle");',
                             '    title.innerHTML = titles[imageIdx];',
                             '}', ])),
-                   ],
                  ],
                  T.body(onLoad="updateWindow()")[
                    T.h1(id='nodeTitle')[img.caption],
