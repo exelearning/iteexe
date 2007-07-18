@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: EXELearning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-19 04:56+1200\n"
-"PO-Revision-Date: 2007-07-18 21:52+1200\n"
+"PO-Revision-Date: 2007-07-19 02:47+1200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team: Matthew Sherborne <msherborne@gmail.com.>\n"
 "MIME-Version: 1.0\n"
@@ -48,8 +48,8 @@ msgid ""
 "and open it. Copy the contents of this file <ctrl A, ctrl C> into the applet \n"
 "code field."
 msgstr ""
-"\"Najděte soubor s koncovkou .txt  (v souboru s appletem) \n"
-"a  otevřete jej. Zkopírujte obsah souboru (Ctrl a, Ctrl c) a \n"
+"\"Najděte soubor s koncovkou .txt (v souboru s appletem) \n"
+"a otevřete jej. Zkopírujte obsah souboru (Ctrl a, Ctrl c) a \n"
 "vložte do pole pro kód appletu."
 
 #: exe/webui/block.py:235
@@ -120,19 +120,18 @@ msgid ""
 "field.</p><p> To select words to hide, double click on the word to select it and \n"
 "click on the Hide/Show Word button below.</p>"
 msgstr ""
-"<p>Vložte text pro zkušební činnost do testovních polí. \n"
-"Text můžete přenést do každého zvlášť z připraveného dokumentu nebo vepsat přímo do připraveených\n"
-"polí.</p><p> Slova, která chcete skrýt, vyberte dvojklikem na požadované slovo. Poté  \n"
-"klikněte na tlačítko Skryj/Ukaž slovo umístěné dole.</p>"
+"<p>Vložte text pro zkušební aktivitu do testového políčka. \n"
+"Buď jej můžete zkopírovat z jiného zdroje, nebo jej do políčka přímo napsat. \n"
+"polí.</p><p> Slova, která chcete skrýt, vyberte dvojklikem. \n"
+" Poté klikněte na tlačítko Skryj/zobraz slovo umístěné níže.</p>"
 
 #: exe/engine/field.py:1265
-#, fuzzy
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
-msgstr "Pokud nezatrhnete, drobné překlepy a rozdíly ve velikosti písmen budou akceptovány. Pokud zatrhnete, bude přijata pouze přesná shoda.</p><p><strong>Například:</strong> Pokud je správná odpověď <code>Slon</code> pak <code>slon</code> i <code>Slom</code> bude algoritmus posouzen jako <em>\"dostatečně blízký\"</em>  protože je jen jedno písmeno špatně, stejně jako v případě velkých písmen.</p><p>Pokud je kontrola velkých písmen vypnuta v předešlém příkladě pak písmeno <code>m</code> nebude považováno za chybu a <code>slom</code> bude také přijat</p><p>Pokud je zapnuto \"Přesné označení\" i \"Kontrola velkých písmen\", jedinou správnou odpovědí \"Slon\". Pokud je kontrolováno pouze \"Přesné označení\" a \"Kontrola velkých písmen\" není zapnuta, pak \"slon\" bude přijat.</p>"
+msgstr "Pokud zůstane nezatrženo, drobné překlepy a rozdíly ve velikosti písmen budou tolerovány. Pokud bude zatrženo, je očekávána přesná shoda ve velikosti písmen a bez překlepů.</p><p><strong>Například:</strong> Pokud je správná odpověď <code>Slon</code>, pak <code>slon</code> i <code>Slom</code> bude posouzen jako <em>\"dostatečně blízký\"</em>, protože je špatně jen jedno písmeno, dokonce i v případě, že se kontroluje velikost písmen.</p><p>Pokud je kontrola velikosti písmen v předešlém příkladě vypnuta, pak písmeno <code>m</code> nebude považováno za chybu a <code>slom</code> bude také přijat.</p><p>Pokud je zapnuto \"Přesné označení\" i \"Kontrola velkých písmen\", jedinou správnou odpovědí je \"Slon\". Pokud je zatrženo pouze \"Přesné označení\" a \"Kontrola velkých písmen\" není zapnuta, pak bude přijat také \"slon\".</p>"
 
 #: exe/engine/field.py:1286
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
-msgstr "<p>Je-li volba vybrána, odeslané odpovědi s jinou velikostí písmen budou označeny jako chybné (neplatné).</p>"
+msgstr "<p>Je-li volba vybrána, odpovědi s odlišnou velikostí písmen budou označeny jako chybné (neplatné).</p>"
 
 #: exe/engine/field.py:1291
 msgid ""
@@ -141,7 +140,7 @@ msgid ""
 "exercise.</p>"
 msgstr ""
 "<p>Je-li volba vybrána, každé slovo bude označeno ihned, jakmile ho student napíše. \n"
-"Je to lepší, než aby byla všechna  slova označena na konci cvičení.\n"
+"Je to lepší, než aby byla všechna slova označena na konci cvičení.\n"
 "</p>"
 
 #: exe/engine/field.py:1540
@@ -257,32 +256,28 @@ msgid "Activity"
 msgstr "Aktivity"
 
 #: exe/webui/editorpane.py:246
-#, fuzzy
 msgid "Add Field"
-msgstr "Přidat soubory"
+msgstr "Přidat pole"
 
 #: exe/webui/element.py:412
 msgid "Add Image"
-msgstr "Vložit obrázek"
+msgstr "Přidat obrázek"
 
 #: exe/webui/element.py:822
 msgid "Add JPEG Image"
-msgstr "Vložit obrázek ve formátu JPG"
+msgstr "Přidat obrázek ve formátu JPG"
 
 #: exe/webui/editorpane.py:88
-#, fuzzy
 msgid "Add a flash video to your iDevice."
-msgstr "Přidat interaktivní zpětnou vazbu do iDevice."
+msgstr "Přidat do iDevice flash video."
 
 #: exe/webui/editorpane.py:81
-#, fuzzy
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr "Vložit jednoduchý textovou linku do iDevice. Je to užitečné, pokud umožnit vkládat popisek do device."
+msgstr "Vložit do iDevice vstupní řádek. Má to význam, pokud chcete mít možnost umístit uvnitř iDevice popisek."
 
 #: exe/webui/editorpane.py:84
-#, fuzzy
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr "Vložit textový box do iDevice. Používá se pro vložení textového popisu obsahu."
+msgstr "Vložit do iDevice textový box. Používá se pro vkládání většího množství textu."
 
 #: exe/engine/appletidevice.py:61
 msgid ""
@@ -290,24 +285,21 @@ msgid ""
 "except the .txt file one at a time using the add files and upload buttons. The \n"
 "files, once loaded will be displayed beneath the Applet code field."
 msgstr ""
-"Přidejte všechny soubory připravené pro aplet\n"
-" kromě .txt souboru s použitím tlačítek pro připojení a načtení. \n"
-" Soubory jednou již načtené se zobrazí v poli aplet kódu."
+"Připojte naráz všechny soubory připravené pro applet\n"
+" kromě .txt souboru pomocí tlačítek pro připojení a načtení. \n"
+" Až se soubory načtou, zobrazí se pod polem s kódem appletu."
 
 #: exe/webui/editorpane.py:90
-#, fuzzy
 msgid "Add an attachment file to your iDevice."
-msgstr "Přidat interaktivní zpětnou vazbu do iDevice."
+msgstr "Přiložit k iDevice přílohu."
 
 #: exe/webui/editorpane.py:87
-#, fuzzy
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "Přidat interaktivní zpětnou vazbu do iDevice."
+msgstr "Přidat do iDevice interaktivní zpětnou vazbu."
 
 #: exe/webui/editorpane.py:89
-#, fuzzy
 msgid "Add an mp3 file to your iDevice."
-msgstr "Přidat interaktivní zpětnou vazbu do iDevice."
+msgstr "Vložit do iDevice soubor MP3."
 
 #: exe/webui/testquestionelement.py:111 exe/webui/element.py:1627
 msgid "Add another Option"
@@ -331,11 +323,11 @@ msgstr "Přidat další otázku"
 
 #: exe/webui/appletblock.py:108
 msgid "Add files"
-msgstr "Přidat soubory"
+msgstr "Připojit soubory"
 
 #: exe/webui/galleryblock.py:188
 msgid "Add images"
-msgstr "Přidat obrázky"
+msgstr "Vložit obrázky"
 
 #: exe/webui/flashwithtextblock.py:85 exe/webui/multimediablock.py:89
 #: exe/webui/editorelement.py:223 exe/webui/imagemagnifierblock.py:114
@@ -413,9 +405,8 @@ msgstr ""
 " Poskytuje prostý stav úkolu a bere zřetel na kteroukoliv podmínku, která může pomoci  nebo bránit studentovi v provedení úkolu."
 
 #: exe/webui/element.py:1154
-#, fuzzy
 msgid "Answsers"
-msgstr "Ukázat odpovědi"
+msgstr "Odpovědi"
 
 #: exe/webui/appletblock.py:114
 msgid "Applet Code:"
@@ -2545,7 +2536,7 @@ msgstr "Vybrat formátování"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-new-key" oncommand="fileNew()" accesskey="n" label="New">
 msgid "label=\"New\" accesskey=\"n\""
-msgstr "label=\"Novinky\" accesskey=\"n\""
+msgstr "label=\"Nový\" accesskey=\"n\""
 
 #: exe/xului/templates/packageproperties.xul:<menuitem value="Developing
 #: Nations 2.0" id="ppdn" label="Developing 2.0">
@@ -2565,7 +2556,7 @@ msgstr "label=\"Otevřít\" accesskey=\"o\""
 #: exe/xului/templates/packageproperties.xul:<label value="Footer:"
 #: id="ppFooter" style="width:8em" tooltiptext="Web pages footer.">
 msgid "Footer:"
-msgstr ""
+msgstr "Zápatí:"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="SCORM 1.2"
 #: id="dcmiSCORM" label="SCORM 1.2">
@@ -2574,9 +2565,8 @@ msgstr "SCORM 1.2"
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="recent-projects-menu" accesskey="r" label="Recent Projects...">
-#, fuzzy
 msgid "label=\"Recent Projects...\" accesskey=\"r\""
-msgstr "label=\"Obnovit\" accesskey=\"o\""
+msgstr "label=\"Poslední projekty\" accesskey=\"r\""
 
 #: exe/xului/templates/packageproperties.xul:<caption id="ppCaptionTaxonomy"
 #: label="Taxonomy">
@@ -2624,9 +2614,8 @@ msgstr "Zdroj:"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: key="file-print-key" oncommand="filePrint()" accesskey="p" label="Print">
-#, fuzzy
 msgid "label=\"Print\" accesskey=\"p\""
-msgstr "label=\"Ukončit\" accesskey=\"o\""
+msgstr "label=\"Tisk...\" accesskey=\"t\""
 
 #: exe/xului/templates/packageproperties.xul:<label value="Level 3:"
 #: id="ppLevel3" style="width:8em" tooltiptext="Default name for level 3
@@ -2666,9 +2655,8 @@ msgstr "label=\"SCORM 1.2\" accesskey=\"s\""
 #: oncommand="submitForm(this.parentNode.parentNode);" id="ppBtnDone"
 #: label="Apply"> exe/xului/templates/dublincore.xul:<button
 #: oncommand="submitForm(this.parentNode.parentNode)" id="dcBtnDone"
-#, fuzzy
 msgid "Apply"
-msgstr "Kód appletu:"
+msgstr "Použít"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="aa" id="dcmiaa"
 #: label="Afar ">
@@ -2679,7 +2667,7 @@ msgstr "afarština"
 #: oncommand="exportPackage('ims','','')" accesskey="i" label="IMS Content
 #: Package">
 msgid "label=\"IMS Content Package\" accesskey=\"i\""
-msgstr "label=\"IMS Balíček\" accesskey=\"i\""
+msgstr "label=\"IMS balíček\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="af" id="dcmiaf"
 #: label="Afrikaans ">
@@ -2721,7 +2709,7 @@ msgstr "arabština"
 #: oncommand="exportPackage('singlePage','','')" accesskey="p" label="Single
 #: Page">
 msgid "label=\"Single Page\" accesskey=\"p\""
-msgstr "label=\"Jedna strana\" accesskey=\"s\""
+msgstr "label=\"Jedna strana\" accesskey=\"j\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hy" id="dcmihy"
 #: label="Armenian ">
@@ -2731,9 +2719,8 @@ msgstr "arménština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('textFile','','')" accesskey="t" label="Text
 #: File">
-#, fuzzy
 msgid "label=\"Text File\" accesskey=\"t\""
-msgstr "label=\"Textový soubor\" accesskey=\"s\""
+msgstr "label=\"Textový soubor\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="as" id="dcmias"
 #: label="Assamese ">
@@ -2742,9 +2729,8 @@ msgstr "ásámština"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="exportPackage('ipod', '', '')" accesskey="n" label="iPod Notes">
-#, fuzzy
 msgid "label=\"iPod Notes\" accesskey=\"n\""
-msgstr "label=\"Novinky\" accesskey=\"n\""
+msgstr "label=\"Poznámky iPod\" accesskey=\"i\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ae" id="dcmiae"
 #: label="Avestan ">
@@ -2753,9 +2739,8 @@ msgstr "Avestan "
 
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate"
 #: id="merging-menu" accesskey="m" label="Merging">
-#, fuzzy
 msgid "label=\"Merging\" accesskey=\"m\""
-msgstr "label=\"Spojení\" accesskey=\"e\""
+msgstr "label=\"Sloučení\" accesskey=\"l\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ay" id="dcmiay"
 #: label="Aymara ">
@@ -2784,9 +2769,8 @@ msgstr "baškirština"
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="fileQuit()" accesskey="q" label="Quit">
-#, fuzzy
 msgid "label=\"Quit\" accesskey=\"q\""
-msgstr "label=\"Ukončit\" accesskey=\"o\""
+msgstr "label=\"Konec\" accesskey=\"k\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="eu" id="dcmieu"
 #: label="Basque ">
@@ -2806,7 +2790,7 @@ msgstr "bengálština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="toolsPreferences()" label="Preferences">
 msgid "Preferences"
-msgstr "Preference"
+msgstr "Nastavení"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bh" id="dcmibh"
 #: label="Bihari ">
@@ -2838,7 +2822,7 @@ msgstr "bosenština"
 #: exe/xului/templates/mainpage.xul:<menu n:render="translate" id="help-menu"
 #: accesskey="h" label="Help">
 msgid "label=\"Help\" accesskey=\"h\""
-msgstr "label=\"Help\" accesskey=\"p\""
+msgstr "label=\"Nápověda\" accesskey=\"n\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="br" id="dcmibr"
 #: label="Breton ">
@@ -2848,9 +2832,8 @@ msgstr "bretonština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/manual.php')" accesskey="m"
 #: label="Online eXe Manual">
-#, fuzzy
 msgid "label=\"Online eXe Manual\" accesskey=\"m\""
-msgstr "label=\"Otevřít\" accesskey=\"o\""
+msgstr "label=\"Online eXe manuál\" accesskey=\"m\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="be" id="dcmibe"
 #: label="Byelorussian; Belarusian ">
@@ -2860,9 +2843,8 @@ msgstr "běloruština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/tips.php')" accesskey="t"
 #: label="Tips and Tricks">
-#, fuzzy
 msgid "label=\"Tips and Tricks\" accesskey=\"t\""
-msgstr "label=\"Nástroje\" accesskey=\"t\""
+msgstr "label=\"Tipy a triky\" accesskey=\"t\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="bg" id="dcmibg"
 #: label="Bulgarian ">
@@ -2872,9 +2854,8 @@ msgstr "bulharština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/Release_Notes')" accesskey="n"
 #: label="Release Notes">
-#, fuzzy
 msgid "label=\"Release Notes\" accesskey=\"n\""
-msgstr "label=\"Novinky\" accesskey=\"n\""
+msgstr "label=\"Poznámky k vydání\" accesskey=\"p\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="my" id="dcmimy"
 #: label="Burmese ">
@@ -2884,9 +2865,8 @@ msgstr "barmština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/issue.php')" accesskey="r"
 #: label="Report an Issue">
-#, fuzzy
 msgid "label=\"Report an Issue\" accesskey=\"r\""
-msgstr "label=\"Ohlásit chybu\" accesskey=\"R\""
+msgstr "label=\"Ohlásit chybu\" accesskey=\"b\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ca" id="dcmica"
 #: label="Catalan ">
@@ -2896,9 +2876,8 @@ msgstr "katalánština"
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="browseURL('http://exelearning.org/irc.php')" accesskey="c"
 #: label="eXe Live Chat">
-#, fuzzy
 msgid "label=\"eXe Live Chat\" accesskey=\"c\""
-msgstr "label=\"Web Site\" accesskey=\"w\""
+msgstr "label=\"eXe chat\" accesskey=\"x\""
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="ch" id="dcmich"
 #: label="Chamorro ">
@@ -2907,7 +2886,6 @@ msgstr "Chamorro "
 
 #: exe/xului/templates/mainpage.xul:<menuitem n:render="translate"
 #: oncommand="aboutPage()" accesskey="a" label="About eXe">
-#, fuzzy
 msgid "label=\"About eXe\" accesskey=\"a\""
 msgstr "label=\"O programu\" accesskey=\"o\""
 
@@ -2929,7 +2907,7 @@ msgstr "čínština"
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
 #: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
-msgstr "přidat stranu"
+msgstr "Vložit stranu"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cu" id="dcmicu"
 #: label="Church Slavic ">
@@ -2939,7 +2917,7 @@ msgstr "církevní slovanština"
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="renNode"
 #: key="renNodeKey" id="btnRename" label="Rename">
 msgid "Rename"
-msgstr "přejmenovat"
+msgstr "Přejmenovat"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="cv" id="dcmicv"
 #: label="Chuvash ">
@@ -2949,7 +2927,7 @@ msgstr "čvanština"
 #: exe/xului/templates/mainpage.xul:<label n:render="outlinePane" flex="1"
 #: value="outlinePane">
 msgid "outlinePane"
-msgstr "pole osnovy"
+msgstr "panel osnovy"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="kw" id="dcmikw"
 #: label="Cornish ">
@@ -2969,7 +2947,7 @@ msgstr "korsičtina"
 #: exe/xului/templates/mainpage.xul:<label n:render="idevicePane" flex="1"
 #: value="iDevicePane">
 msgid "iDevicePane"
-msgstr "iDevice pole"
+msgstr "iDevice panel"
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="hr" id="dcmihr"
 #: label="Croatian ">
@@ -3009,7 +2987,7 @@ msgstr "angličtina"
 #: exe/xului/templates/dublincore.xul:<menuitem value="eo" id="dcmieo"
 #: label="Esperanto ">
 msgid "Esperanto "
-msgstr "Esperanto "
+msgstr "esperanto "
 
 #: exe/xului/templates/dublincore.xul:<menuitem value="et" id="dcmiet"
 #: label="Estonian ">
