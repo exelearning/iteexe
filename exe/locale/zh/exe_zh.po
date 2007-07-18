@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXe trunk (pre-0.8)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-09 20:36+1200\n"
+"POT-Creation-Date: 2007-07-19 04:56+1200\n"
 "PO-Revision-Date: 2007-06-21 10:57+1200\n"
 "Last-Translator: Jenny Lin <jenny.lin.nz@yahoo.com>\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -27,9 +27,9 @@ msgid ""
 "you created in Geogebra.</p>"
 msgstr " "
 
-#: exe/xului/mainpage.py:276 exe/xului/mainpage.py:681
-#: exe/xului/mainpage.py:802 exe/xului/mainpage.py:858
-#: exe/xului/mainpage.py:879
+#: exe/xului/mainpage.py:276 exe/xului/mainpage.py:683
+#: exe/xului/mainpage.py:804 exe/xului/mainpage.py:860
+#: exe/xului/mainpage.py:881
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -47,8 +47,8 @@ msgstr "找到.txt文档并打开它,复制所有内容,然后粘贴至applet co
 msgid "---Move To---"
 msgstr "---移至---"
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:590
-#: exe/xului/mainpage.py:673
+#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:592
+#: exe/xului/mainpage.py:675
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
 
@@ -96,22 +96,22 @@ msgid ""
 "click on the Hide/Show Word button below.</p>"
 msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>隐藏/显示 文字</i> 按钮使之变为空格."
 
-#: exe/engine/field.py:985
+#: exe/engine/field.py:1265
 msgid "<p>If left unchecked a small number of spelling and capitalization errors will be accepted. If checked only an exact match in spelling and capitalization will be accepted.</p><p><strong>For example:</strong> If the correct answer is <code>Elephant</code> then both <code>elephant</code> and <code>Eliphant</code> will be judged <em>\"close enough\"</em> by the algorithm as it only has one letter wrong, even if \"Check Capitilization\" is on.</p><p>If capitalization checking is off in the above example, the lowercase <code>e</code> will not be considered a mistake and <code>eliphant</code> will also be accepted.</p><p>If both \"Strict Marking\" and \"Check Capitalization\" are set, the only correct answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr " "
 
-#: exe/engine/field.py:1006
+#: exe/engine/field.py:1286
 msgid "<p>If this option is checked, submitted answers with different capitalization will be marked as incorrect.</p>"
 msgstr " "
 
-#: exe/engine/field.py:1011
+#: exe/engine/field.py:1291
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr " "
 
-#: exe/engine/field.py:1260
+#: exe/engine/field.py:1540
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
 msgstr "  "
 
@@ -148,7 +148,7 @@ msgid ""
 "reflective guidance.</p>"
 msgstr " <P>阅读活动, 顾名思义是要学生完成一些任务. 此活动须与阅读内容直接相关. 可给学生一些相应的评语, 提供回答问题的指导.</P>"
 
-#: exe/engine/galleryidevice.py:392
+#: exe/engine/galleryidevice.py:410
 msgid ""
 "<p>Where you have a number of images that relate \n"
 "to each other or to a particular learning exercise you may wish to display \n"
@@ -159,7 +159,7 @@ msgstr "当有一组相关的图片要展示时或对一个特定的练习,要�
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/casestudyidevice.py:94
+#: exe/engine/casestudyidevice.py:159
 msgid ""
 "A case study is a device that provides learners \n"
 "with a simulation that has an educational basis. It takes a situation, generally \n"
@@ -197,7 +197,7 @@ msgstr "动作"
 #: exe/engine/idevicestore.py:315 exe/engine/idevicestore.py:354
 #: exe/engine/idevicestore.py:362 exe/engine/idevicestore.py:423
 #: exe/engine/idevicestore.py:460 exe/engine/idevicestore.py:468
-#: exe/webui/questionelement.py:99
+#: exe/webui/questionelement.py:92
 msgid "Activity"
 msgstr "学习活动"
 
@@ -294,7 +294,7 @@ msgid ""
 "choose where on the screen the media player will be positioned."
 msgstr "对齐可用于选择播放器显示的位置."
 
-#: exe/engine/field.py:1049
+#: exe/engine/field.py:1329
 msgid ""
 "Allow auto completion when \n"
 "                                       user filling the gaps."
@@ -366,8 +366,8 @@ msgstr "按钮标签:"
 msgid "Cancel"
 msgstr "取消"
 
-#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:588
-#: exe/xului/mainpage.py:673
+#: exe/xului/mainpage.py:294 exe/xului/mainpage.py:590
+#: exe/xului/mainpage.py:675
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
@@ -377,7 +377,7 @@ msgstr "不能识别路径名称"
 msgid "Caption:"
 msgstr "标题:"
 
-#: exe/engine/casestudyidevice.py:92
+#: exe/engine/casestudyidevice.py:157
 msgid "Case Study"
 msgstr "案例分析"
 
@@ -401,7 +401,7 @@ msgstr "选择图片"
 msgid "Choose an MP3 file"
 msgstr "选择MP3文档"
 
-#: exe/engine/casestudyidevice.py:66
+#: exe/engine/casestudyidevice.py:62
 msgid "Choose an optional image to be shown to the student on completion of this question"
 msgstr "选择一个用于在学生完成问题时显示的图案"
 
@@ -428,7 +428,7 @@ msgstr "点击图片或\"添加图片\"按钮来选择所要放大的图片文�
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
 msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意:文件名不可含有中文字, 否则该软件不识别."
 
-#: exe/engine/field.py:601
+#: exe/engine/field.py:881
 msgid "Click Here"
 msgstr "点击"
 
@@ -440,17 +440,17 @@ msgstr "点击看完成说明."
 msgid "Click here"
 msgstr "点击这里"
 
-#: exe/engine/field.py:1268
+#: exe/engine/field.py:1548
 msgid ""
 "Click on Preview button to convert \n"
 "                                  the latex into an image."
 msgstr "点击预览按钮显示数学符号."
 
-#: exe/engine/galleryidevice.py:405
+#: exe/engine/galleryidevice.py:423
 msgid "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label."
 msgstr "点击\"添加图片\"按钮来选择图片文档.所选图片将显示在下面,你可为其加上标签. 最好在标签上加上文档大小."
 
-#: exe/engine/galleryidevice.py:574 exe/webui/truefalseelement.py:140
+#: exe/engine/galleryidevice.py:593 exe/webui/truefalseelement.py:140
 #: exe/webui/truefalseelement.py:141 exe/webui/common.py:301
 #: exe/webui/common.py:302 exe/webui/block.py:248 exe/webui/block.py:249
 #: exe/webui/element.py:1947 exe/webui/element.py:1948
@@ -482,11 +482,11 @@ msgstr "正确"
 msgid "Correct!"
 msgstr "正确!"
 
-#: exe/xului/mainpage.py:929
+#: exe/xului/mainpage.py:931
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr " "
 
-#: exe/engine/casestudyidevice.py:111
+#: exe/engine/casestudyidevice.py:176
 msgid ""
 "Create the case story. A good case is one \n"
 "that describes a controversy or sets the scene by describing the characters \n"
@@ -504,7 +504,7 @@ msgstr "拟写案例故事.一个好的案例描述有争议性的,或不同人�
 #: exe/webui/editorelement.py:344 exe/webui/galleryblock.py:257
 #: exe/webui/block.py:219 exe/webui/editorpage.py:233
 #: exe/webui/editorpage.py:236 exe/xului/templates/mainpage.xul:<toolbarbutton
-#: n:render="delNode" key="delNodeKey" label="Delete">
+#: n:render="delNode" key="delNodeKey" id="btnDel" label="Delete">
 msgid "Delete"
 msgstr "删除"
 
@@ -525,7 +525,7 @@ msgstr "删除图片"
 msgid "Delete option"
 msgstr "删除选项"
 
-#: exe/webui/questionelement.py:113 exe/webui/truefalseelement.py:118
+#: exe/webui/questionelement.py:103 exe/webui/truefalseelement.py:118
 #: exe/webui/element.py:1600 exe/webui/element.py:1893
 msgid "Delete question"
 msgstr "删除问题"
@@ -537,7 +537,7 @@ msgid ""
 "reflective feedback.)"
 msgstr "描述学生应怎样评估和完成练习."
 
-#: exe/engine/casestudyidevice.py:120
+#: exe/engine/casestudyidevice.py:185
 msgid ""
 "Describe the activity tasks relevant \n"
 "to the case story provided. These could be in the form of questions or \n"
@@ -561,7 +561,7 @@ msgstr "描述学生应完成的阅读任务."
 msgid "Describe the tasks the learners should complete."
 msgstr "描述学生需要完成的学习任务."
 
-#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashmovieidevice.py:52
+#: exe/engine/flashwithtextidevice.py:58 exe/engine/flashmovieidevice.py:52
 msgid "Description"
 msgstr "描述"
 
@@ -605,17 +605,17 @@ msgstr "ERROR Element.renderView called directly with %s class"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERROR: Block.renderViewContent called directly"
 
-#: exe/xului/mainpage.py:615 exe/xului/mainpage.py:622
-#: exe/xului/mainpage.py:625 exe/xului/mainpage.py:628
-#: exe/xului/mainpage.py:786
+#: exe/xului/mainpage.py:617 exe/xului/mainpage.py:624
+#: exe/xului/mainpage.py:627 exe/xului/mainpage.py:630
+#: exe/xului/mainpage.py:788
 msgid "EXPORT FAILED!"
 msgstr "导出失败!"
 
-#: exe/xului/mainpage.py:776 exe/xului/mainpage.py:790
-#: exe/xului/mainpage.py:803 exe/xului/mainpage.py:809
-#: exe/xului/mainpage.py:843 exe/xului/mainpage.py:859
-#: exe/xului/mainpage.py:865 exe/xului/mainpage.py:880
-#: exe/xului/mainpage.py:886
+#: exe/xului/mainpage.py:778 exe/xului/mainpage.py:792
+#: exe/xului/mainpage.py:805 exe/xului/mainpage.py:811
+#: exe/xului/mainpage.py:845 exe/xului/mainpage.py:861
+#: exe/xului/mainpage.py:867 exe/xului/mainpage.py:882
+#: exe/xului/mainpage.py:888
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -634,7 +634,7 @@ msgstr ""
 "导出失败!\n"
 "最后一次成功的导出是 %s."
 
-#: exe/xului/mainpage.py:682 exe/xului/mainpage.py:691
+#: exe/xului/mainpage.py:684 exe/xului/mainpage.py:693
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -685,7 +685,7 @@ msgid ""
 "to reflect upon."
 msgstr "输入问题."
 
-#: exe/engine/galleryidevice.py:404
+#: exe/engine/galleryidevice.py:422
 msgid "Enter a title for the gallery"
 msgstr "输入标题为图象画廊."
 
@@ -737,7 +737,7 @@ msgid ""
 "by clicking the red \"X\" next to the Option."
 msgstr "输入各个选项以让学生从其间选择最合适的一项. 点击\"新增选项\" 按钮来增加选项. 点击选项旁边的\"x\" 可删除该选项."
 
-#: exe/engine/field.py:1461
+#: exe/engine/field.py:1741
 msgid ""
 "Enter the available choices here. \n"
 "You can add options by clicking the \"Add another option\" button. Delete options by \n"
@@ -751,7 +751,7 @@ msgid ""
 "department."
 msgstr "提供此阅读内容所引用的参考文献的详细咨讯. 参考文献的格式取决于你们院校所采用的模式."
 
-#: exe/engine/flashwithtextidevice.py:57 exe/engine/flashwithtextidevice.py:85
+#: exe/engine/flashwithtextidevice.py:66 exe/engine/flashwithtextidevice.py:94
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -777,7 +777,7 @@ msgid ""
 "as these can tend to be ambiguous."
 msgstr "输入问题. 问题的陈述要清晰而不含糊."
 
-#: exe/engine/field.py:1453
+#: exe/engine/field.py:1733
 msgid ""
 "Enter the question stem. \n"
 "The question should be clear and unambiguous. Avoid negative premises as these \n"
@@ -790,7 +790,7 @@ msgid ""
 "                                                associate with the image."
 msgstr "输入有关图象的描述."
 
-#: exe/engine/flashwithtextidevice.py:50
+#: exe/engine/flashwithtextidevice.py:59
 msgid ""
 "Enter the text you wish to \n"
 "                                 associate with the image."
@@ -818,9 +818,9 @@ msgstr "例子"
 msgid "Export iDevice"
 msgstr "输出iDevice"
 
-#: exe/xului/mainpage.py:792 exe/xului/mainpage.py:811
-#: exe/xului/mainpage.py:845 exe/xului/mainpage.py:867
-#: exe/xului/mainpage.py:888
+#: exe/xului/mainpage.py:794 exe/xului/mainpage.py:813
+#: exe/xului/mainpage.py:847 exe/xului/mainpage.py:869
+#: exe/xului/mainpage.py:890
 #, python-format
 msgid "Exported to %s"
 msgstr "导出至 %s"
@@ -840,9 +840,9 @@ msgstr "错"
 #: exe/engine/idevicestore.py:319 exe/engine/idevicestore.py:427
 #: exe/engine/genericidevice.py:188 exe/engine/clozeidevice.py:127
 #: exe/engine/clozeidevice.py:152 exe/engine/truefalseidevice.py:48
-#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1340
-#: exe/engine/field.py:1352 exe/webui/clozeblock.py:158
-#: exe/webui/questionelement.py:103 exe/webui/common.py:206
+#: exe/engine/truefalseidevice.py:75 exe/engine/field.py:1620
+#: exe/engine/field.py:1632 exe/webui/clozeblock.py:158
+#: exe/webui/questionelement.py:96 exe/webui/common.py:206
 #: exe/webui/element.py:1763 exe/webui/editorpane.py:251
 msgid "Feedback"
 msgstr "评语"
@@ -854,17 +854,17 @@ msgid ""
 msgstr "如果此栏空白, 评语按钮将不显示."
 
 #: exe/engine/reflectionidevice.py:64 exe/engine/reflectionidevice.py:130
-#: exe/engine/field.py:1470 exe/engine/field.py:1495
+#: exe/engine/field.py:1750 exe/engine/field.py:1775
 msgid "Feedback:"
 msgstr "评语:"
 
-#: exe/xului/mainpage.py:925
+#: exe/xului/mainpage.py:927
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "文档%s不存在或不可读."
 
-#: exe/xului/mainpage.py:721 exe/xului/mainpage.py:763
-#: exe/xului/mainpage.py:830
+#: exe/xului/mainpage.py:723 exe/xului/mainpage.py:765
+#: exe/xului/mainpage.py:832
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "文件名%s是个文档, 无法覆盖它"
@@ -881,12 +881,12 @@ msgstr "文件名:"
 msgid "Flash Movie"
 msgstr "Flash 电影"
 
-#: exe/engine/flashwithtextidevice.py:40 exe/engine/flashwithtextidevice.py:47
+#: exe/engine/flashwithtextidevice.py:49 exe/engine/flashwithtextidevice.py:56
 msgid "Flash with Text"
 msgstr "文字及Flash"
 
-#: exe/xului/mainpage.py:727 exe/xului/mainpage.py:769
-#: exe/xului/mainpage.py:836
+#: exe/xului/mainpage.py:729 exe/xului/mainpage.py:771
+#: exe/xului/mainpage.py:838
 #, python-format
 msgid "Folder name %s already exists. Please choose another one or delete existing one then try again."
 msgstr "文件夹%s 已存在,请选择另一个或删除已有的,然后再试."
@@ -941,7 +941,7 @@ msgstr "希腊文Wikipedia 文章"
 msgid "Hide"
 msgstr "隐藏"
 
-#: exe/webui/questionelement.py:140
+#: exe/webui/questionelement.py:127
 msgid "Hide Feedback"
 msgstr "隐藏 评语"
 
@@ -950,7 +950,7 @@ msgid "Hide/Show Word"
 msgstr "隐藏/显示 文字"
 
 #: exe/engine/truefalseidevice.py:51 exe/engine/truefalseidevice.py:78
-#: exe/engine/field.py:1378 exe/engine/field.py:1398
+#: exe/engine/field.py:1658 exe/engine/field.py:1678
 #: exe/webui/truefalseelement.py:134 exe/webui/truefalseelement.py:144
 #: exe/webui/element.py:1951
 msgid "Hint"
@@ -984,11 +984,11 @@ msgstr "IDevice broken"
 msgid "Icons"
 msgstr "图标"
 
-#: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:65
+#: exe/engine/imagewithtextidevice.py:62 exe/engine/casestudyidevice.py:61
 msgid "Image"
 msgstr "图像"
 
-#: exe/engine/galleryidevice.py:390
+#: exe/engine/galleryidevice.py:408
 msgid "Image Gallery"
 msgstr "图象画廊"
 
@@ -996,7 +996,7 @@ msgstr "图象画廊"
 msgid "Image Magnifier"
 msgstr "图像放大器"
 
-#: exe/xului/mainpage.py:525
+#: exe/xului/mainpage.py:527
 #, python-format
 msgid "Image file %s is not found, cannot preview it"
 msgstr "无法找到图象文件 %s, 不能予览"
@@ -1131,7 +1131,7 @@ msgstr "名称"
 msgid "New iDevice"
 msgstr "新的 iDevice"
 
-#: exe/engine/galleryidevice.py:578 exe/export/ipodpage.py:115
+#: exe/engine/galleryidevice.py:597 exe/export/ipodpage.py:115
 #: exe/export/scormexport.py:312 exe/export/websitepage.py:192
 msgid "Next"
 msgstr "下一页"
@@ -1140,15 +1140,15 @@ msgstr "下一页"
 msgid "No Images Loaded"
 msgstr "无图像显示"
 
-#: exe/engine/galleryidevice.py:132
+#: exe/engine/galleryidevice.py:138
 msgid "No Thumbnail Available. Could not load original image."
 msgstr "No Thumbnail Available. Could not load original image."
 
-#: exe/engine/galleryidevice.py:166
+#: exe/engine/galleryidevice.py:172
 msgid "No Thumbnail Available. Could not shrink image."
 msgstr "No Thumbnail Available. Could not shrink image."
 
-#: exe/engine/galleryidevice.py:140
+#: exe/engine/galleryidevice.py:146
 msgid "No Thumbnail Available. Could not shrink original image."
 msgstr "No Thumbnail Available. Could not shrink image."
 
@@ -1181,26 +1181,26 @@ msgid ""
 "learning tasks."
 msgstr "用于描述学习此课的目的及将要达到的结果."
 
-#: exe/engine/field.py:1155 exe/engine/field.py:1219
+#: exe/engine/field.py:1435 exe/engine/field.py:1499
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
 msgstr "只能选用.flv (Flash Video Files)."
 
-#: exe/engine/field.py:1091 exe/engine/field.py:1135
+#: exe/engine/field.py:1371 exe/engine/field.py:1415
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
 msgstr "只能选用.swf (Flash Object)."
 
 #: exe/engine/quiztestidevice.py:46 exe/engine/quiztestidevice.py:70
-#: exe/engine/field.py:1336 exe/engine/field.py:1349
+#: exe/engine/field.py:1616 exe/engine/field.py:1629
 #: exe/webui/testquestionelement.py:100 exe/webui/element.py:1615
 #: exe/webui/element.py:1739 exe/webui/element.py:1744
 msgid "Option"
 msgstr "选项"
 
-#: exe/engine/field.py:1420 exe/engine/field.py:1430
+#: exe/engine/field.py:1700 exe/engine/field.py:1710
 #: exe/webui/testquestionelement.py:96 exe/webui/element.py:1611
 msgid "Options"
 msgstr "选项"
@@ -1209,7 +1209,7 @@ msgstr "选项"
 msgid "Other"
 msgstr "其它"
 
-#: exe/xului/outlinepane.py:244
+#: exe/xului/outlinepane.py:258
 msgid "Outline"
 msgstr "目录"
 
@@ -1217,7 +1217,7 @@ msgstr "目录"
 msgid "Own site"
 msgstr "自定义网页"
 
-#: exe/xului/mainpage.py:693
+#: exe/xului/mainpage.py:695
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "课件存至: %s"
@@ -1285,18 +1285,18 @@ msgstr "预备知识是指学生为完成此课所应具备的知识.\n"
 msgid "Preview"
 msgstr "预览"
 
-#: exe/xului/mainpage.py:513
+#: exe/xului/mainpage.py:515
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "予览文件夹%s是个文档, 无法取代它"
 
-#: exe/engine/galleryidevice.py:570 exe/export/ipodpage.py:109
+#: exe/engine/galleryidevice.py:589 exe/export/ipodpage.py:109
 #: exe/export/scormexport.py:311 exe/export/websitepage.py:186
 msgid "Previous"
 msgstr "前一页"
 
-#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:796
-#: exe/engine/field.py:843
+#: exe/engine/multimediaidevice.py:71 exe/engine/field.py:1076
+#: exe/engine/field.py:1123
 msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
@@ -1314,7 +1314,7 @@ msgid ""
 "you have just inserted."
 msgstr "为 flash电影提供标题."
 
-#: exe/engine/flashwithtextidevice.py:55 exe/engine/flashwithtextidevice.py:83
+#: exe/engine/flashwithtextidevice.py:64 exe/engine/flashwithtextidevice.py:92
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
@@ -1339,7 +1339,7 @@ msgid ""
 "completed. Default text will be entered if there are no changes to this field.\n"
 msgstr "提供怎样完成填空题的说明.\n"
 
-#: exe/engine/casestudyidevice.py:124
+#: exe/engine/casestudyidevice.py:189
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
@@ -1354,13 +1354,13 @@ msgid "Put instructions for learners here"
 msgstr "在此输入完成说明"
 
 #: exe/engine/multiselectidevice.py:78 exe/engine/multichoiceidevice.py:129
-#: exe/engine/field.py:1375 exe/engine/field.py:1394
+#: exe/engine/field.py:1655 exe/engine/field.py:1674
 msgid "Question"
 msgstr "问题"
 
 #: exe/engine/truefalseidevice.py:44 exe/engine/truefalseidevice.py:72
 #: exe/engine/quiztestidevice.py:101 exe/engine/quiztestidevice.py:157
-#: exe/engine/field.py:1456 exe/engine/field.py:1492 exe/webui/element.py:1595
+#: exe/engine/field.py:1736 exe/engine/field.py:1772 exe/webui/element.py:1595
 msgid "Question:"
 msgstr "问题:"
 
@@ -1421,8 +1421,8 @@ msgstr "右"
 msgid "SAVE FAILED!"
 msgstr "保存失败!"
 
-#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:569
-#: exe/xului/mainpage.py:735
+#: exe/xului/mainpage.py:307 exe/xului/mainpage.py:571
+#: exe/xului/mainpage.py:737
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -1497,7 +1497,7 @@ msgstr "选择图片"
 msgid "Select an image (JPG file)"
 msgstr "选择图片 (JPG 文档)"
 
-#: exe/engine/field.py:1465
+#: exe/engine/field.py:1745
 msgid ""
 "Select as many correct answer \n"
 "options as required by clicking the check box beside the option."
@@ -1550,7 +1550,7 @@ msgstr "显示 %s 图象"
 msgid "Show Answers"
 msgstr "显示 答案"
 
-#: exe/webui/questionelement.py:135
+#: exe/webui/questionelement.py:122
 msgid "Show Feedback"
 msgstr "显示评语"
 
@@ -1583,7 +1583,7 @@ msgstr "小"
 msgid "Some emphasis"
 msgstr "一般强调"
 
-#: exe/xului/mainpage.py:934
+#: exe/xului/mainpage.py:936
 msgid "Sorry, wrong file format"
 msgstr "对不起, 文件格式错误"
 
@@ -1591,7 +1591,7 @@ msgstr "对不起, 文件格式错误"
 msgid "Sorry, wrong file format."
 msgstr "对不起, 文件格式错误"
 
-#: exe/xului/mainpage.py:932
+#: exe/xului/mainpage.py:934
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -1604,7 +1604,7 @@ msgstr ""
 msgid "Spanish Wikipedia Article"
 msgstr "西班牙文Wikipedia 文章"
 
-#: exe/engine/casestudyidevice.py:115 exe/engine/casestudyidevice.py:198
+#: exe/engine/casestudyidevice.py:180 exe/engine/casestudyidevice.py:263
 msgid "Story:"
 msgstr "事件:"
 
@@ -1665,7 +1665,7 @@ msgid ""
 "will be viewed by learners online."
 msgstr " "
 
-#: exe/engine/flashwithtextidevice.py:42
+#: exe/engine/flashwithtextidevice.py:51
 msgid ""
 "The flash with text idevice allows you to \n"
 "associate additional textual information to a flash file. This may be useful \n"
@@ -1781,7 +1781,7 @@ msgid ""
 "responses."
 msgstr "是非题提供一个陈述句, 让学生判断其陈述是否正确."
 
-#: exe/engine/field.py:1231
+#: exe/engine/field.py:1511
 msgid "Type a discussion topic here."
 msgstr "输入讨论主题:"
 
@@ -1803,7 +1803,7 @@ msgid ""
 "\"Wrong answer\" for the other alternatives."
 msgstr "输入评语, 可让学生在点选次项时看见. 如果你不输入, eXe将会自动提供以下评语:\"回答正确 \"给正确选项; \"回答错误 \"给其它选项. "
 
-#: exe/engine/field.py:1468
+#: exe/engine/field.py:1748
 msgid ""
 "Type in the feedback you want \n"
 "to provide the learner with."
@@ -1833,7 +1833,7 @@ msgstr "无法从%s下载<br/>请检查拼写, 然后再连接."
 msgid "Unit"
 msgstr "单元"
 
-#: exe/engine/flashwithtextidevice.py:41 exe/engine/imagewithtextidevice.py:44
+#: exe/engine/flashwithtextidevice.py:50 exe/engine/imagewithtextidevice.py:44
 #: exe/engine/reflectionidevice.py:45 exe/engine/multiselectidevice.py:42
 #: exe/engine/idevicestore.py:270 exe/engine/idevicestore.py:328
 #: exe/engine/idevicestore.py:356 exe/engine/idevicestore.py:378
@@ -1844,7 +1844,7 @@ msgstr "单元"
 #: exe/engine/appletidevice.py:53 exe/engine/wikipediaidevice.py:53
 #: exe/engine/externalurlidevice.py:38 exe/engine/freetextidevice.py:38
 #: exe/engine/mathidevice.py:36 exe/engine/quiztestidevice.py:182
-#: exe/engine/casestudyidevice.py:93 exe/idevices/exampleidevice.py:40
+#: exe/engine/casestudyidevice.py:158 exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "奥克兰大学"
 
@@ -1868,7 +1868,7 @@ msgid ""
 "or providing a statement to begin a debate."
 msgstr "这个栏目是可灵活使用的. 可用它来提供所涉及阅读资料的重点概括, 也可以提出问题或辩论话题作为下一步阅读分析的起点."
 
-#: exe/engine/galleryidevice.py:395
+#: exe/engine/galleryidevice.py:413
 msgid "Use this Idevice if you have a lot of images to show."
 msgstr "用此可展示许多图片."
 
@@ -1963,7 +1963,7 @@ msgstr "eXe"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 编辑器"
 
-#: exe/engine/galleryidevice.py:391
+#: exe/engine/galleryidevice.py:409
 msgid "eXe Project"
 msgstr "eXe项目"
 
@@ -2141,8 +2141,8 @@ msgid "VK_DELETE"
 msgstr "VK_DELETE"
 
 #: exe/xului/templates/packageproperties.xul:<button
-#: oncommand="addImage('pp_backgroundImg');" id="loadImage" label="Load
-#: Image">
+#: oncommand="addImage('pp_backgroundImg',this.parentNode.parentNode);"
+#: id="loadImage" label="Load Image">
 msgid "Load Image"
 msgstr "装载图像"
 
@@ -2916,7 +2916,7 @@ msgstr "中文"
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 # exe/xului/templates/mainpage.xul:<toolbarbutton
 #: exe/xului/templates/mainpage.xul:<toolbarbutton n:render="addChild"
-#: key="addChildKey" label="Add Page">
+#: key="addChildKey" id="btnAdd" label="Add Page">
 msgid "Add Page"
 msgstr "添加页面"
 
