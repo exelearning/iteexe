@@ -140,9 +140,9 @@ class PropertiesPage(RenderableLivePage):
             path = ""
             if self.package.backgroundImg:
                 path += "resources/%s" % self.package.backgroundImg.basename()
-                client.sendScript(js(
-                    'document.getElementById("%s").src = "%s"' % \
-                        (fieldId, path)))          
+            client.sendScript(js(
+                'document.getElementById("%s").src = "%s"' % \
+                    (fieldId, path)))          
         else:
             # Remove enters
             encoded = ''
@@ -188,7 +188,8 @@ class PropertiesPage(RenderableLivePage):
         if fieldId in self.booleanFieldNames:
             setattr(obj, name, decoded[0].lower() == 't')
         elif fieldId in self.imgFieldNames:
-            setattr(obj, name, toUnicode(decoded))
+            if not decoded.startswith("resources"):
+                setattr(obj, name, toUnicode(decoded))
         else:
             # Must be a string
             setattr(obj, name, toUnicode(decoded))
