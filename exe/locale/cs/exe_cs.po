@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: EXELearning\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-19 04:56+1200\n"
-"PO-Revision-Date: 2007-07-18 02:51+1200\n"
+"PO-Revision-Date: 2007-07-18 21:52+1200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language-Team: Matthew Sherborne <msherborne@gmail.com.>\n"
 "MIME-Version: 1.0\n"
@@ -135,20 +135,18 @@ msgid "<p>If this option is checked, submitted answers with different capitaliza
 msgstr "<p>Je-li volba vybrána, odeslané odpovědi s jinou velikostí písmen budou označeny jako chybné (neplatné).</p>"
 
 #: exe/engine/field.py:1291
-#, fuzzy
 msgid ""
 "<p>If this option is set, each word will be marked as the \n"
 "learner types it rather than all the words being marked the end of the \n"
 "exercise.</p>"
 msgstr ""
-"<p>Je-li volba vybrána, každé slovo bude vyznačeno, jak \n"
-"doporučují studenti - je to lépe než aby byla všechna  slova vyznačena na konci cvičení.\n"
+"<p>Je-li volba vybrána, každé slovo bude označeno ihned, jakmile ho student napíše. \n"
+"Je to lepší, než aby byla všechna  slova označena na konci cvičení.\n"
 "</p>"
 
 #: exe/engine/field.py:1540
-#, fuzzy
 msgid "<p>Select symbols from the text editor below or enter LATEX manually to create mathematical formula. To preview your LATEX as it will display use the &lt;Preview&gt; button below.</p>"
-msgstr "<p>Select symbols from the text editor below to create mathematical formula. Each symbol will be viewed in the display field in the mathematical language LATEX which can be previewed using the &lt;Preview&gt; button below."
+msgstr "<p>Pokud chcete vytvořit matematickou rovnici, vyberte symboly z textového editoru. Každý symbol se zobrazí v náhledu pomocí jazyka LaTeX, náhled zobrazíte pomocí tlačítka.</p>"
 
 #: exe/engine/idevicestore.py:276
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
@@ -193,10 +191,11 @@ msgid ""
 "Feedback to the activity where appropriate, can provide the learner with some \n"
 "reflective guidance.</p>"
 msgstr ""
-"<p> Čtecí aktivita nazvaná jako \n"
-" návrhy by měla vyžadovat od studenta předvedení určité formy aktivity. Tato činnost \n"
+"<p> Čtecí aktivita, jak název napovídá, \n"
+" by měla vyžadovat od studenta předvedení určité formy aktivity. Tato činnost \n"
 " by měla mít přímou souvislost s textem, k jehož přečtení byl student vyzván.\n"
-" Zpětná vazba tam, kde je to patřičné, by měla studentovi poskytnout určité vedení.</p>"
+" Zpětná vazba by měla tam, kde je to vhodné,\n"
+" studentovi poskytnout určité vedení.</p>"
 
 #: exe/engine/galleryidevice.py:410
 msgid ""
@@ -205,7 +204,8 @@ msgid ""
 "these in a gallery context rather then individually.</p>"
 msgstr ""
 "<p> Pokud máte určité obrázky vztahující se \n"
-"k sobě navzájem nebo k  nějaké části cvičení, můžete si zvolit jejich společné zobrazení v galerii raději než individuálně.</p>"
+"k sobě navzájem nebo k nějaké části cvičení, \n"
+" bude jejich zobrazení ve společné galerii lepší než zobrazení samostatně.</p>"
 
 #: exe/engine/package.py:209
 msgid "?????"
