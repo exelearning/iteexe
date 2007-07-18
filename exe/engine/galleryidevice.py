@@ -622,6 +622,8 @@ these in a gallery context rather then individually.</p>"""),
             htmlFile = open(htmlPath, 'wb')
             htmlFile.write(data)
             htmlFile.close()
+            if not self._htmlResource is None:
+                self._htmlResource.delete()
             self._htmlResource = Resource(self, htmlPath)
         finally:
             htmlPath.remove()
